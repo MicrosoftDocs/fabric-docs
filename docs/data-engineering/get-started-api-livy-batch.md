@@ -219,11 +219,11 @@ By default, this Livy API session runs against the default starter pool for the 
 
 ```python
 payload_data = {
-"name":"livybatchdemo_with"+ newlakehouseName,
-"file":"abfss://YourABFSPathToYourPayload.py", 
-"conf": {
-    "spark.targetLakehouse": "Fabric_LakehouseID",
-    "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
+    "name":"livybatchdemo_with"+ newlakehouseName,
+    "file":"abfss://YourABFSPathToYourPayload.py", 
+    "conf": {
+        "spark.targetLakehouse": "Fabric_LakehouseID",
+        "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
         }
     }
 ```
