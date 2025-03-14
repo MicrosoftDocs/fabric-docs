@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/14/2025
 ---
 
-# Add a Solace PubSub+ queue or topic as source in Real-Time hub
+# Add a Solace PubSub+ queue or topic as source in Real-Time hub (Preview)
 This article describes how to add a Solace PubSub+ queue or topic as an event source in Fabric Real-Time hub. 
 
 [!INCLUDE [solace-pub-sub-source-description-prerequisites](../real-time-intelligence/event-streams/includes/solace-pub-sub-source-description-prerequisites.md)]
