@@ -1,7 +1,7 @@
 ---
 title: Deploy a Fabric Workload to Azure
 description: Learn how to deploy a Microsoft Fabric Workload to Azure.
-author: Tas Devani and Lila Molyva
+author: tasdevani21
 ms.author: tadevani
 ms.topic: how-to
 ms.custom:
@@ -50,7 +50,7 @@ This containerized approach allows for consistent and scalable deployments, with
 This service provides built-in auto-scaling, load balancing, and streamlined CI/CD integration with Docker Hub, Azure Container Registry, and GitHub.
 
 The Azure App Service can be used to deploy the Fabric backend C# application as a container.
-The Docker image for this application is stored in [Azure Container Registry](#Azure-Container-Registry) and is pulled by the App Service during deployment.
+The Docker image for this application is stored in [Azure Container Registry](#azure-container-registry) and is pulled by the App Service during deployment.
 
 This pattern ensures a consistent and reliable deployment process, as the platform takes care of OS patching, capacity provisioning, and load balancing.
 Additionally, App Service supports both Linux and Windows containers, giving the flexibility to choose the best environment for the workload.
