@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 09/18/2024
 ---
 
-# Configure high concurrency mode for Fabric notebooks in pipelines
+# Configure high concurrency mode for Fabric notebooks in pipelines (Preview)
 
 When you execute a notebook step within a pipeline, an Apache Spark session is started and is used to run the queries submitted from the notebook. When you enable high concurrency mode for pipelines, your notebooks will be automatically packed into the existing spark sessions.
 
@@ -58,6 +58,9 @@ Fabric workspace admins can enable the high concurrency mode for pipelines using
 4. After the session tag is added, the notebook sharing uses this tag as matching criteria bundling all notebooks with the same session tag.
 
    :::image type="content" source="media/high-concurrency-for-notebooks-in-pipelines/session-tag-high-concurrency-pipelines.png" alt-text="Screenshot showing the option to start a new high concurrency session in Notebook Menu." lightbox="media/high-concurrency-for-notebooks-in-pipelines/session-tag-high-concurrency-pipelines.png":::
+
+> [!NOTE]
+> To optimize performance, a single high-concurrency session can share resources across a maximum of 5 notebooks identified by the same session tag. When more than 5 notebooks are submitted with the same tag, the system will automatically create a new high-concurrency session to host the subsequent notebook steps. This allows for efficient scaling and load balancing by distributing the workload across multiple sessions.
 
 ## Monitor and debug notebooks triggered by pipelines
 

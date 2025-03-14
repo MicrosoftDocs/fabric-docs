@@ -75,6 +75,21 @@ Once you complete these steps, the lakehouse destination is available for visual
 
 :::image type="content" source="media/add-destination-lakehouse/live-view.png" alt-text="A screenshot of the lakehouse destination and the table optimization button in Live view." lightbox="media/add-destination-lakehouse/live-view.png":::
 
+> [!NOTE]  
+> When configuring an Eventstream, the source, transformation logic, and destination are typically added together. By default, when publishing the Eventstream, the backend services for both data ingestion and data routing start with **Now** respectively. However, data ingestion may begin faster than data routing, causing some data to be ingested into Eventstream before routing is fully initialized. As a result, this data may not be routed to the destination.  
+>  
+> A common example is a database CDC source, where initial snapshot data could remain in Eventstream without being routed to the destination.  
+>  
+> To mitigate this, follow these steps:  
+> 1. When configuring an **Eventhouse (Event processing before ingestion)** or **Lakehouse** destination, uncheck **Activate ingestion** after adding the data source. 
+>
+>    :::image type="content" source="media/add-destination-kql-database/untick-activate.png" alt-text="A screenshot of the KQL Database without selecting Activate ingesting after adding the data source." lightbox="media/add-destination-kql-database/untick-activate.png":::
+> 1. Manually activate ingestion after the Eventstream is published.  
+> 1.  Use the **Custom time** option to select an earlier timestamp, ensuring initial data is properly processed and routed.  
+> 
+> :::image type="content" source="media/add-destination-lakehouse/resume-lakehouse.png" alt-text="A screenshot of resuming Lakehouse destination." lightbox="media/add-destination-lakehouse/resume-lakehouse.png":::
+> For more information, see [Pause and resume data streams](pause-resume-data-streams.md)
+
 ## Related content
 
 To learn how to add other destinations to an eventstream, see the following articles:

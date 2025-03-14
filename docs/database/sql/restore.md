@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: strrodic
 ms.date: 11/07/2024
 ms.topic: how-to
-ms.custom:
+ms.search.form: Backup and Restore
 ---
 # Restore from a backup in SQL database in Microsoft Fabric
 
@@ -48,7 +48,7 @@ For more information, see [Microsoft Fabric roles](../../fundamentals/roles-work
 You can restore any database to an earlier point in time within its retention period. By performing this operation, you're actually creating a new SQL database in Fabric. When the restore is complete, Fabric creates a new database in the same workspace as the original database.
 
 > [!NOTE]
-> You cannot overwrite an existing database with a restore.
+> You can't overwrite an existing database with a restore.
 
 The core use case of point-in-time restore is to recover from human accident by restoring a SQL database to an earlier point in time. You can treat the restored database as a replacement for the original database, or use it as a data source to update the original database.
 
@@ -68,7 +68,7 @@ The core use case of point-in-time restore is to recover from human accident by 
    :::image type="content" source="media/restore/restore-database-notifications-progress.png" alt-text="Screenshot of the Notifications tab of the Fabric portal, showing database restore progress.":::
 
    > [!NOTE]
-   > You cannot open the new database until the restore operation is finished.
+   > You can't open the new database until the restore operation is finished.
 
 ## View SQL database restore points in Microsoft Fabric
 
@@ -86,9 +86,9 @@ You can restore a database into any point in time between these two restore poin
 Current limitations in restore for SQL database:
 
 - Retention of backups is seven days for a live database.
-- Restoring backups from dropped databases is not currently possible after the retention period of seven days.
-- Cross-workspace restore is not supported.
-- Cross-region restore is not supported.
+- Restoring backups from dropped databases isn't currently possible after the retention period of seven days.
+- Cross-workspace restore isn't supported.
+- Cross-region restore isn't supported.
 - If you delete the database during the restore, the restore operation is canceled. You can't recover the data from deleted database.
 
 ## Related content
