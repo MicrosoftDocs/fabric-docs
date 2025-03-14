@@ -39,54 +39,54 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Navigate to the **Livy endpoint** section.
 
-    :::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png" :::
+   :::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png" :::
 
 1. Copy the Session job connection string (first red box in the image) to your code.
 
 1. Navigate to [Microsoft Entra admin center](https://entra.microsoft.com/) and copy both the Application (client) ID and Directory (tenant) ID to your code.
 
-    :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox = "media/livy-api/entra-app-overview.png" :::
+   :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox = "media/livy-api/entra-app-overview.png" :::
 
 ## Create a Livy API Spark session
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
-    ```python
-    from msal import PublicClientApplication
-    import requests
-    import time
+   ```python
+   from msal import PublicClientApplication
+   import requests
+   import time
 
-    tenant_id = "Entra_TenantID"
-    client_id = "Entra_ClientID"
+   tenant_id = "Entra_TenantID"
+   client_id = "Entra_ClientID"
 
-    workspace_id = "Fabric_WorkspaceID"
-    lakehouse_id = "Fabric_LakehouseID"
+   workspace_id = "Fabric_WorkspaceID"
+   lakehouse_id = "Fabric_LakehouseID"
 
-    app = PublicClientApplication(
-        client_id,
-        authority="https://login.microsoftonline.com/"Entra_TenantID"
+   app = PublicClientApplication(
+      client_id,
+      authority="https://login.microsoftonline.com/"Entra_TenantID"
     )
 
-    result = None
+   result = None
 
-    # If no cached tokens or user interaction needed, acquire tokens interactively
-    if not result:
-        result = app.acquire_token_interactive(scopes=["https://api.fabric.microsoft.com/Lakehouse.Execute.All", "https://api.fabric.microsoft.com/Lakehouse.Read.All", "https://api.fabric.microsoft.com/Item.ReadWrite.All", 
-                                                   "https://api.fabric.microsoft.com/Workspace.ReadWrite.All", "https://api.fabric.microsoft.com/Code.AccessStorage.All", "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All", 
-                                                   "https://api.fabric.microsoft.com/Code.AccessAzureDataExplorer.All", "https://api.fabric.microsoft.com/Code.AccessAzureDataLake.All", "https://api.fabric.microsoft.com/Code.AccessFabric.All"])
+   # If no cached tokens or user interaction needed, acquire tokens interactively
+   if not result:
+   result = app.acquire_token_interactive(scopes=["https://api.fabric.microsoft.com/Lakehouse.Execute.All", "https://api.fabric.microsoft.com/Lakehouse.Read.All", "https://api.fabric.microsoft.com/Item.ReadWrite.All", 
+                                                 "https://api.fabric.microsoft.com/Workspace.ReadWrite.All", "https://api.fabric.microsoft.com/Code.AccessStorage.All", "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All", 
+                                                 "https://api.fabric.microsoft.com/Code.AccessAzureDataExplorer.All", "https://api.fabric.microsoft.com/Code.AccessAzureDataLake.All", "https://api.fabric.microsoft.com/Code.AccessFabric.All"])
     
-    # Print the access token (you can use it to call APIs)
-    if "access_token" in result:
-        print(f"Access token: {result['access_token']}")
-    else:
-        print("Authentication failed or no access token obtained.")
+   # Print the access token (you can use it to call APIs)
+   if "access_token" in result:
+      print(f"Access token: {result['access_token']}")
+   else:
+      print("Authentication failed or no access token obtained.")
 
-    if "access_token" in result:
-        access_token = result['access_token']
-        api_base_url_mist='https://api.fabric.microsoft.com/v1'
-        livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/sessions"
-        headers = {"Authorization": "Bearer " + access_token}
-    ```
+   if "access_token" in result:
+      access_token = result['access_token']
+      api_base_url_mist='https://api.fabric.microsoft.com/v1'
+      livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/sessions"
+      headers = {"Authorization": "Bearer " + access_token}
+   ```
 
 1. Run the notebook cell, a popup should appear in your browser allowing you to choose the identity to sign-in with.
 

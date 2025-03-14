@@ -107,25 +107,26 @@ By default, this Livy API session runs against the default starter pool for the 
 
 To use a Fabric Environment in a Livy Spark session, simply update the json to include this payload.
 
-    ```python
+   ```python
     create_livy_session = requests.post(livy_base_url, headers=headers, json={
         "conf" : {
             "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID""}"}
         }
     )
-    ```
+   ```
+
 To use a Fabric Environment in a Livy Spark batch session, simply update the json payload as shown below.
 
-    ```python
+   ```python
     payload_data = {
     "name":"livybatchdemo_with"+ newlakehouseName,
     "file":"abfss://YourABFSPathToYourPayload.py", 
     "conf": {
         "spark.targetLakehouse": "Fabric_LakehouseID",
-         "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
+        "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
       }
     }
-    ```
+   ```
 
 ## How to monitor the request history
 
