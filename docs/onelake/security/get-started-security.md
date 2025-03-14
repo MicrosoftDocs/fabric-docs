@@ -72,7 +72,9 @@ In the following example, a user is given read-only access to a lakehouse throug
 
 ## OneLake security (preview)
 
-OneLake security is a public preview feature that allows users to define granular role-based security to data stored in OneLake, and enforce that security consistently across all compute engines in Fabric.
+OneLake security allows users to define granular role-based security to data stored in OneLake, and enforce that security consistently across all compute engines in Fabric.
+
+[!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
 
 OneLake security replaces the existing OneLake data access roles (preview) feature that was released in April 2024.
 
@@ -84,6 +86,12 @@ Fabric users in the Admin, Member, or Contributor roles can create OneLake secur
 * **Constraints**: What, if any, components of the data are excluded from role access, such as specific rows or columns.
 
 Users that aren't part of a role can't see any data in that lakehouse.
+
+## OneLake Data access roles (preview)
+
+OneLake data access roles is a new feature that enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, and assign them to users or groups. The access permissions determine what folders users see when accessing the lake view of the data through the lakehouse UX, notebooks, or OneLake APIs.  
+
+Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that are not part of a data access role will see no data in that lakehouse.
 
 Learn more about creating data access roles in [Get Started with Data Access Roles](./get-started-data-access-roles.md).
 

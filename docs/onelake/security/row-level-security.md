@@ -5,10 +5,89 @@ ms.reviewer: aamerril
 ms.author: kgremban
 author: kgremban
 ms.topic: how-to
-ms.custom:
+ms.custom: references_regions
 ms.date: 05/09/2024
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
 # Row-level security in OneLake (preview)
 
+Row-level security (RLS) is a feature of OneLake security (preview) that allows for defining row-level data restrictions for tabular data stored in OneLake. Users can define roles in OneLake that contain rules for filtering rows of data for members of that role. When a member of an RLS ole goes to query that data, the RLS rules are evaluated and only allowed rows are returned.
+
+[!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
+
+RLS rules are based on Boolean statements. Users can see a row if the RLS rule evaluates to true, and can't see a row if the rule evaluates to false for that rule. Users who have multiple RLS roles assigned to them have the rules from each role combined with an OR.
+
+During preview, RLS isn't available in the following Fabric regions:
+
+* West US 2
+* West US 3
+* South central US
+
+## Enforce row-level security
+
+OneLake security RLS gets enforced in one of two ways: 
+
+* **Filtered tables in Fabric engines:** Queries to the list of supported Fabric engines, like Spark notebooks, result in the user seeing only the rows they are allowed to see per the RLS rules.
+* **Blocked access to tables:** Tables with RLS rules applied to them can't be read outside of supported Fabric engines.
+
+For filtered tables, the following behaviors apply:
+
+* Users in the Admin, Member, and Contributor roles aren't restricted by RLS rules. 
+* If the RLS rule has a mismatch with the table it is defined on, the query fails and no rows will be returned. For example, if the RLS rule references a column that isn't part of the table.
+* Queries of RLS tables fail with an error if a user is part of two different roles and one of the roles has column-level security (CLS). 
+* RLS rules can only be enforced for objects that are Delta parquet tables. 
+  * RLS rules that are applied to non-Delta table objects instead block access to the entire table for members of the role. 
+
+## Define row-level security rules
+
+You can define row-level security rules as part of any OneLake security role that grants access to table data in Delta parquet format. Rows are a concept only relevant to tabular data, so RLS definitions aren't allowed for non-table folders or unstructured data.  
+
+RLS rules use SQL syntax to specify the rows that a user can see. This syntax takes the form of a SQL `SELECT` statement with the RLS rules defined in the `WHERE` clause. RLS rules only support a subset of the SQL language as defined in [Syntax rules](#syntax-rules). Queries with invalid RLS syntax or RLS syntax that doesn't match the underlying table result in no rows being shown to users. 
+
+Use the following steps to define RLS rules: 
+
+1. Open the manage roles UX from the item where you are defining security. 
+
+1. Select the role you want to define RLS for. 
+
+1. Select more options (**...**) next to the table you want to define RLS for, then select **Row security**. 
+
+1. Type the SQL statement for defining which rows you want users to see in the code editor. Use the [Syntax rules](#syntax-rules) section for guidance. 
+
+1. Once you have entered the RLS expression, select **Save** in the ribbon.
+
+## Syntax rules
+
+All row-level security rules take the form of `SELECT * FROM {schema_name}.{table_name} WHERE {column_level_boolean_1}{column_level_boolean_2}...{column_level_boolean_N}`. For example: `SELECT * FROM Sales WHERE Amount>'50000' AND State='CA'`.
+
+The maximum number of characters in a row-level security rule is 1000.
+
+| Placeholder | Description |
+| ----------- | ---------- |
+| {schema_name} | The name of the schema where {table_name} is located. If the artifact supports schemas, then {schema_name} is required. |
+| {table_name} | The name of the table that the RLS predicate gets applied to. This value must be an exact match with the name of the table, or the RLS results in no rows being shown. |
+| {column_level_boolean} | A Boolean statement containing the following:<br><br>* Column name: The name of a column in {table_name} as specified in the Delta log schema. Column names can be formatted either as {column_name} or {table_name}.{column_name}.<br>* Operator: One of the [Supported operators](#supported-operators) that evaluates the column name and value to a Boolean value.<br>* Value: A static value or set of values to be evaluated against.<br><br>You can have one or more Boolean statements separated by AND or OR. |
+
+### Supported operators
+
+Row-level security rules support the following list of operators and keywords:
+
+| Operator | Description |
+| -------- | ----------- |
+| = (equals) | Evaluates to true if the two values are the same data type and exact matches. |
+| <> (not equals) | Evaluates to true if the two values are not the same data type and not exact matches. |
+| > (greater than) | Evaluates to true if the column value is greater than the evaluation value. For string values, this operator uses bitwise comparison to determine if one string is greater than the other. |
+| >= (greater than or equal to) | Evaluates to true if the column value is greater than or equal to the evaluation value. For string values, this operator uses bitwise comparison to determine if one string is greater than or equal to the other. |
+| < (less than) | Evaluates to true if the column value is less than the evaluation value. For string values, this operator uses bitwise comparison to determine if one string is less than the other. |
+| <= (less than or equal to) | Evaluates to true if the column value is less than or equal to the evaluation value. For string values, this operator uses bitwise comparison to determine if one string is less than or equal to the other. |
+| IN | Evaluates to true if any of the evaluation values are the same data type and exactly match the column value. |
+| NOT | Evaluates to true if any of the evaluation values are not the same data type or not an exact match of the column value. |
+| AND | Combines the previous statement and the subsequent statement using a Boolean AND operation. Both statements must be true for the entire predicate to be true. |
+| OR | Combines the previous statement and the subsequent statement using a Boolean OR operation. One of the statements must be true for the entire predicate to be true. |
+| TRUE | The Boolean expression for true. |
+| FALSE | The Boolean expression for false. |
+| BLANK | The blank data type, which can be used with the IS operator. For example, `row IS BLANK`.|
+| NULL | The null data type, which can be used with the IS operator. For example, `row IS NULL`.|
+
+[!INCLUDE [onelake-rls-cls](../../includes/onelake-rls-cls.md)]
