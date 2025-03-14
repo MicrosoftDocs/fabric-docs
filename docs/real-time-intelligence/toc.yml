@@ -117,6 +117,8 @@ items:
         href: event-streams/add-source-azure-blob-storage.md
       - name: MQTT
         href: event-streams/add-source-mqtt.md
+      - name: Solace PubSub+
+        href: event-streams/add-source-solace-pub-sub.md
     - name: Add destinations to eventstreams
       items:
       - name: Add and manage a destination
