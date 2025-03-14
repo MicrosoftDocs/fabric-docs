@@ -13,7 +13,9 @@ ms.date: 05/13/2024
 
 Data engineering in Microsoft Fabric enables users to design, build, and maintain infrastructures and systems that enable their organizations to collect, store, process, and analyze large volumes of data.
 
-Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and of high-quality. From the data engineering homepage, you can:
+Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and of high-quality.
+
+To access the data engineering homepage, select **Workloads** from the navigation pane, then select the **Data Engineering** tile. From the data engineering homepage, you can:
 
 - Create and manage your data using a lakehouse
 
@@ -24,8 +26,6 @@ Microsoft Fabric provides various data engineering capabilities to ensure that y
 - Use notebooks to write code for data ingestion, preparation, and transformation
 
   :::image type="content" source="media\data-engineering-overview\data-engineering-artifacts.png" alt-text="Screenshot showing Data Engineering objects.":::
-
-To access the data engineering homepage, select **Workloads** from the navigation pane, then select the **Data Engineering** tile.
 
 ## Lakehouse
 
