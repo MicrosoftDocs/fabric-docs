@@ -6,7 +6,7 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: conceptual
 ms.search.form: Get started with the Livy API for Data Engineering
-ms.date: 11/19/2024
+ms.date: 03/14/2025
 ---
 
 # Use the Livy API to submit and execute Spark jobs
@@ -48,7 +48,7 @@ There are many Microsoft Entra scope permissions required to execute Livy jobs. 
 * Lakehouse.Execute.All
 * Workspace.ReadWrite.All
 
-:::image type="content" source="media/livy-api/entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-API-permissions.png" :::
+    :::image type="content" source="media/livy-api/entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-API-permissions.png" :::
 
 > [!NOTE]
 > During public preview we will be adding a few additional granular scopes, and if you use this approach, when we add these additional scopes your Livy app will break. Please check this list as it will be updated with the additional scopes.
@@ -71,7 +71,7 @@ Some customers want more granular permissions than the prior list. You could rem
 
 When you've registered your application, you'll need both the Application (client) ID and the Directory (tenant) ID.
 
-:::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center.":::
+    :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center.":::
 
 The authenticated user calling the Livy API needs to be a workspace member where both the API and data source items are located with a Contributor role. For more information, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
 
@@ -79,11 +79,11 @@ The authenticated user calling the Livy API needs to be a workspace member where
 
 A Lakehouse artifact is required to access the Livy endpoint. Once the Lakehouse is created, the Livy API endpoint can be located within the settings panel.
 
-:::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png":::
+    :::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png":::
 
 The endpoint of the Livy API would follow this pattern:
 
-https://api.fabric.microsoft.com/v1/workspaces/<ws_id>/lakehouses/<lakehouse_id>/livyapi/versions/2023-12-01/
+<https://api.fabric.microsoft.com/v1/workspaces/><ws_id>/lakehouses/<lakehouse_id>/livyapi/versions/2023-12-01/
 
 The URL is appended with either \<sessions> or \<batches> depending on what you choose.
 
@@ -107,17 +107,17 @@ By default, this Livy API session runs against the default starter pool for the 
 
 To use a Fabric Environment in a Livy Spark session, simply update the json to include this payload.
 
-   ```python
+    ```python
     create_livy_session = requests.post(livy_base_url, headers=headers, json={
         "conf" : {
             "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID""}"}
         }
     )
-   ```
+    ```
 
 To use a Fabric Environment in a Livy Spark batch session, simply update the json payload as shown below.
 
-   ```python
+    ```python
     payload_data = {
     "name":"livybatchdemo_with"+ newlakehouseName,
     "file":"abfss://YourABFSPathToYourPayload.py", 
@@ -126,7 +126,7 @@ To use a Fabric Environment in a Livy Spark batch session, simply update the jso
         "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
       }
     }
-   ```
+    ```
 
 ## How to monitor the request history
 

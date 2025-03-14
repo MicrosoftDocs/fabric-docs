@@ -6,7 +6,7 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: how-to
 ms.search.form: Get started with batch jobs with the Livy API for Data Engineering
-ms.date: 11/19/2024
+ms.date: 03/14/2025
 ---
 
 # Use the Livy API to submit and execute Livy batch jobs
@@ -51,7 +51,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code
 
-    ```python
+```python
     import sys
     import os
 
@@ -82,7 +82,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
  
     deltaTablePath = "abfss:<YourABFSSpath>"+str(targetLakehouse)+".Lakehouse/Tables/CleanedTransactions"
     df_valid_totalPrice_plus_year.write.mode('overwrite').format('delta').save(deltaTablePath)
-    ```
+```
 
 1. Save the Python file locally. This Python code payload contains two Spark statements that work on data in a Lakehouse and needs to be uploaded to your Lakehouse.  You'll need the ABFS path of the payload to reference in your Livy API batch job in Visual Studio Code and your Lakehouse table name in the Select SQL statement..
 
@@ -102,7 +102,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
-    ```python
+```python
 
     from msal import PublicClientApplication
     import requests
@@ -138,7 +138,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         api_base_url_mist='https://api.fabric.microsoft.com/v1'
         livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"
         headers = {"Authorization": "Bearer " + access_token}
-    ```
+```
 
 1. Run the notebook cell, a popup should appear in your browser allowing you to choose the identity to sign-in with.
 
@@ -158,7 +158,8 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Add another notebook cell and insert this code.
 
-    ```python
+```python
+
     # call get batch API
 
     get_livy_get_batch = livy_base_url
@@ -166,10 +167,10 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     if get_batch_response.status_code == 200:
         print("API call successful")
         print(get_batch_response.json())
-   else:
+    else:
         print(f"API call failed with status code: {get_batch_response.status_code}")
         print(get_batch_response.text)
-    ```
+```
 
 1. Run the notebook cell, you should see two lines printed as the Livy batch job is created.
 
@@ -179,7 +180,8 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Add another notebook cell and insert this code.
 
-    ```python
+```python
+
     # submit payload to existing batch session
 
     print('Submit a spark job via the livy batch API to ') 
@@ -197,16 +199,16 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     payload_data = {
         "name":"livybatchdemo_with"+ newlakehouseName,
         "file":"abfss://YourABFSPathToYourPayload.py", 
-    "conf": {
-        "spark.targetLakehouse": "Fabric_LakehouseID"
-    }
+        "conf": {
+            "spark.targetLakehouse": "Fabric_LakehouseID"
+        }
     }
 
     get_batch_response = requests.post(get_livy_get_batch, headers=headers, json=payload_data)
 
     print("The Livy batch job submitted successful")
     print(get_batch_response.json())
-    ```
+```
 
 1. Run the notebook cell, you should see several lines printed as the Livy Batch job is created and run.
 
@@ -224,10 +226,10 @@ By default, this Livy API session runs against the default starter pool for the 
     "file":"abfss://YourABFSPathToYourPayload.py", 
     "conf": {
         "spark.targetLakehouse": "Fabric_LakehouseID",
-         "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
+        "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
+        }
     }
-    }
-   ```
+```
 
 ## View your jobs in the Monitoring hub
 
