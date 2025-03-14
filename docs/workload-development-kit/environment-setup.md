@@ -22,7 +22,7 @@ To start developing workloads, you need to be granted permissions in the Fabric 
 
 ### Ensure you have admin access on the workspace you plan to work with
 
-To begin development and connect your local machine to a Fabric [workspace](../enterprise/licenses.md#workspace), you can either create a new workspace or ask to be added as an admin on an existing one. Developers must have admin permissions on the workspace to register their workload.
+To begin development and connect your local machine to a Fabric [workspace](../enterprise/licenses.md#workspace), you can either create a new workspace or ask to be added as an admin on an existing one. Developers must have admin permissions on the workspace to register their workload. The workspace you will be using for development needs to be on an F capacity.
 
 ### Enable the development tenant setting
 

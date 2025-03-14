@@ -25,6 +25,8 @@ This sample demonstrates storing and reading data from and to lakehouses. To do 
 
 * [.NET 6.0 Runtime](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-6.0.31-windows-x64-installer) - .NET is used to build the sample workload.
 
+* A [development workspace](environment-setup.md) attached to an F capacity.
+
 ## Step 1: Setup Azure storage
 
 You need consent to use Azure Storage. In this step you check whether Azure Storage is installed in the tenant, and if it isn't you install it.
