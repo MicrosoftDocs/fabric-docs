@@ -115,6 +115,8 @@ items:
         href: event-streams/add-source-fabric-job.md
       - name: Azure Blob Storage events
         href: event-streams/add-source-azure-blob-storage.md
+      - name: MQTT
+        href: event-streams/add-source-mqtt.md
     - name: Add destinations to eventstreams
       items:
       - name: Add and manage a destination

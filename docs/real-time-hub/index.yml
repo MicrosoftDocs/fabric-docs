@@ -78,7 +78,10 @@ landingContent:
             url: add-source-confluent-kafka.md
           - text: Amazon Managed Streaming for Kafka
             url: add-source-amazon-managed-streaming-for-kafka.md
-
+          - text: Confluent Cloud Kafka
+            url: add-source-confluent-kafka.md
+          - text: MQTT
+            url: add-source-mqtt.md
   # Card 
   - title: Process and analyze data streams
     linkLists:
