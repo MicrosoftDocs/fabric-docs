@@ -14,6 +14,10 @@ This article describes how to add an MQTT topic as an event source in Fabric Rea
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
+    On the **Data sources** page, search for **MQTT**, and select **Connect** on the **MQTT** tile. 
+
+    :::image type="content" source="./media/add-source-mqtt/select-connect-mqtt.png" alt-text="Screenshot that shows the Data sources page with Connect on the MQTT tile selected.":::
+
 ## Add MQTT topic as a source
 
 [!INCLUDE [mqtt-source-connector](../real-time-intelligence/event-streams/includes/mqtt-source-connector.md)]
