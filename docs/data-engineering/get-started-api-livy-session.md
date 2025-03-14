@@ -35,17 +35,17 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Select **Lakehouse Settings** in your Fabric Lakehouse.
 
-    :::image type="content" source="media/livy-api/Lakehouse-settings.png" alt-text="Screenshot showing Lakehouse settings." lightbox="media/livy-api/Lakehouse-settings.png" :::
+:::image type="content" source="media/livy-api/Lakehouse-settings.png" alt-text="Screenshot showing Lakehouse settings." lightbox="media/livy-api/Lakehouse-settings.png" :::
 
 1. Navigate to the **Livy endpoint** section.
 
-    :::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png" :::
+:::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png" :::
 
 1. Copy the Session job connection string (first red box in the image) to your code.
 
 1. Navigate to [Microsoft Entra admin center](https://entra.microsoft.com/) and copy both the Application (client) ID and Directory (tenant) ID to your code.
 
-    :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox = "media/livy-api/entra-app-overview.png" :::
+:::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox = "media/livy-api/entra-app-overview.png" :::
 
 ## Create a Livy API Spark session
 
@@ -89,19 +89,19 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Run the notebook cell, a popup should appear in your browser allowing you to choose the identity to sign-in with.
 
-    :::image type="content" source="media/livy-api/entra-logon-user.png" alt-text="Screenshot showing logon screen to Microsoft Entra app." lightbox="media/livy-api/entra-logon-user.png" :::
+:::image type="content" source="media/livy-api/entra-logon-user.png" alt-text="Screenshot showing logon screen to Microsoft Entra app." lightbox="media/livy-api/entra-logon-user.png" :::
 
 1. After you choose the identity to sign-in with, you'll also be asked to approve the Microsoft Entra app registration API permissions.
 
-    :::image type="content" source="media/livy-api/entra-logon.png" alt-text="Screenshot showing Microsoft Entra app API permissions." lightbox="media/livy-api/entra-logon.png" :::
+:::image type="content" source="media/livy-api/entra-logon.png" alt-text="Screenshot showing Microsoft Entra app API permissions." lightbox="media/livy-api/entra-logon.png" :::
 
 1. Close the browser window after completing authentication.
 
-    :::image type="content" source="media\livy-api\entra-authentication-complete.png" alt-text="Screenshot showing authentication complete." lightbox="media\livy-api\entra-authentication-complete.png" :::
+:::image type="content" source="media\livy-api\entra-authentication-complete.png" alt-text="Screenshot showing authentication complete." lightbox="media\livy-api\entra-authentication-complete.png" :::
 
 1. In Visual Studio Code, you should see the Microsoft Entra token returned.
 
-    :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell and logging in." lightbox= "media/livy-api/Livy-session-entra-token.png":::
+:::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell and logging in." lightbox= "media/livy-api/Livy-session-entra-token.png":::
 
 1. Add another notebook cell and insert this code.
 
@@ -117,7 +117,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Run the notebook cell, you should see one line printed as the Livy session is created.
 
-    :::image type="content" source="media\livy-api\livy-api-session-start.png" alt-text="Screenshot showing the results of the first notebook cell execution." lightbox="media\livy-api\livy-api-session-start.png" :::
+:::image type="content" source="media\livy-api\livy-api-session-start.png" alt-text="Screenshot showing the results of the first notebook cell execution." lightbox="media\livy-api\livy-api-session-start.png" :::
 
 1. You can verify that the Livy session is created by using the [View your jobs in the Monitoring hub](#View your jobs in the Monitoring hub).
 
@@ -175,7 +175,7 @@ By default, this Livy API session runs against the default starter pool for the 
 
 1. Run the notebook cell, you should see several incremental lines printed as the job is submitted and the results returned.
 
-    :::image type="content" source="media\livy-api\livy-api-session-1-results.png" alt-text="Screenshot showing the results of the first notebook cell with Spark.sql execution." lightbox="media\livy-api\livy-api-session-1-results.png" :::
+:::image type="content" source="media\livy-api\livy-api-session-1-results.png" alt-text="Screenshot showing the results of the first notebook cell with Spark.sql execution." lightbox="media\livy-api\livy-api-session-1-results.png" :::
 
 ### Submit a second spark.sql statement using the Livy API Spark session
 
@@ -220,7 +220,7 @@ By default, this Livy API session runs against the default starter pool for the 
 
 1. Run the notebook cell, you should see several incremental lines printed as the job is submitted and the results returned.
 
-    :::image type="content" source="media\livy-api\livy-api-session-2-results.png" alt-text="Screenshot showing the results of the second notebook cell execution." lightbox="media\livy-api\livy-api-session-2-results.png" :::
+:::image type="content" source="media\livy-api\livy-api-session-2-results.png" alt-text="Screenshot showing the results of the second notebook cell execution." lightbox="media\livy-api\livy-api-session-2-results.png" :::
 
 ### Close the Livy session with a third statement
 
@@ -242,15 +242,15 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
 1. When the session is in progress or in completed state, you can view the session status by navigating to Monitor.
 
-    :::image type="content" source="media\livy-api\Livy-monitoring-hub.png" alt-text="Screenshot showing previous Livy API submissions in the Monitoring hub." :::
+:::image type="content" source="media\livy-api\Livy-monitoring-hub.png" alt-text="Screenshot showing previous Livy API submissions in the Monitoring hub." :::
 
 1. Select and open most recent activity name.
 
-    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub." :::
+:::image type="content" source="media\livy-api\Livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub." :::
 
 1. In this Livy API session case, you can see your previous sessions submissions, run details, Spark versions, and configuration. Notice the stopped status on the top right.
 
-    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub." lightbox="media\livy-api\Livy-monitoring-hub-last-activity-details.png" :::
+:::image type="content" source="media\livy-api\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub." lightbox="media\livy-api\Livy-monitoring-hub-last-activity-details.png" :::
 
 To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), an Microsoft Entra app token, Livy API endpoint URL, authentication against your Lakehouse, and finally a Session Livy API.
 

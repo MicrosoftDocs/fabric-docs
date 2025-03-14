@@ -71,7 +71,7 @@ Some customers want more granular permissions than the prior list. You could rem
 
 When you've registered your application, you'll need both the Application (client) ID and the Directory (tenant) ID.
 
-    :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center.":::
+:::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center.":::
 
 The authenticated user calling the Livy API needs to be a workspace member where both the API and data source items are located with a Contributor role. For more information, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
 
@@ -79,7 +79,7 @@ The authenticated user calling the Livy API needs to be a workspace member where
 
 A Lakehouse artifact is required to access the Livy endpoint. Once the Lakehouse is created, the Livy API endpoint can be located within the settings panel.
 
-    :::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png":::
+:::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png":::
 
 The endpoint of the Livy API would follow this pattern:
 
@@ -108,25 +108,25 @@ By default, this Livy API session runs against the default starter pool for the 
 To use a Fabric Environment in a Livy Spark session, simply update the json to include this payload.
 
 ```python
-    create_livy_session = requests.post(livy_base_url, headers=headers, json={
-        "conf" : {
-            "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID""}"}
-        }
-    )
+create_livy_session = requests.post(livy_base_url, headers=headers, json={
+    "conf" : {
+        "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID""}"}
+    }
+)
 ```
 
 To use a Fabric Environment in a Livy Spark batch session, simply update the json payload as shown below.
 
-    ```python
-    payload_data = {
-    "name":"livybatchdemo_with"+ newlakehouseName,
-    "file":"abfss://YourABFSPathToYourPayload.py", 
-    "conf": {
-        "spark.targetLakehouse": "Fabric_LakehouseID",
-        "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
-        }
+```python
+payload_data = {
+"name":"livybatchdemo_with"+ newlakehouseName,
+"file":"abfss://YourABFSPathToYourPayload.py", 
+"conf": {
+    "spark.targetLakehouse": "Fabric_LakehouseID",
+    "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
     }
-    ```
+}
+```
 
 ## How to monitor the request history
 
