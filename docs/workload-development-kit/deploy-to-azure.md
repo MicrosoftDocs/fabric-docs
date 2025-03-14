@@ -1,3 +1,13 @@
+---
+title: Deploy a Fabric Workload to Azure
+description: Learn how to deploy a Microsoft Fabric Workload to Azure.
+author: Tas Devani and Lila Molyva
+ms.author: tadevani
+ms.topic: how-to
+ms.custom:
+ms.date: 03/14/2025
+---
+
 # Deploy a Fabric Workload to Azure
 
 This document describes a deployment pattern for the Fabric Workload on Azure.
