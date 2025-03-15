@@ -59,7 +59,7 @@ The following table presents features supported in Power BI dataflow and/or Fabr
 | **Connectivity** |||
 | Support for all [Power Query data sources](/power-query/connectors/) | Yes | Yes |
 | Connect to, and load data from, dataflows in Power BI Desktop, Excel, or Power Apps | Yes | Yes |
-| [DirectQuery via dataflows](/power-bi/transform-model/dataflows/dataflows-directquery.md) to connect directly to a dataflow, bypassing data import into a semantic model | Yes | No <sup>1</sup> |
+| [DirectQuery via dataflows](/power-bi/transform-model/dataflows/dataflows-directquery) to connect directly to a dataflow, bypassing data import into a semantic model | Yes | No <sup>1</sup> |
 | **Scalability** |||
 | [Fast copy](dataflows-gen2-fast-copy.md), which supports large-scale data ingestion, utilizing the data pipeline [Copy activity](copy-data-activity.md) within dataflows | No | Yes |
 | [Scheduled refresh](dataflow-gen2-refresh.md), which keeps data current | Yes | Yes |
