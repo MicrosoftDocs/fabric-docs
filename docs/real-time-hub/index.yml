@@ -82,6 +82,8 @@ landingContent:
             url: add-source-confluent-kafka.md
           - text: MQTT
             url: add-source-mqtt.md
+          - text: Solace PubSub+
+            url: add-source-solace-pub-sub.md
   # Card 
   - title: Process and analyze data streams
     linkLists:

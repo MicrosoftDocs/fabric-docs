@@ -73,6 +73,8 @@ items:
       href: add-source-confluent-kafka.md
     - name: MQTT
       href: add-source-mqtt.md
+    - name: Solace PubSub+
+      href: add-source-solace-pub-sub.md
   - name: Fabric events
     items:    
     - name: Create streams for Fabric workspace item events
