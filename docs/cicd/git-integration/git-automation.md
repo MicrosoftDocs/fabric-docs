@@ -68,30 +68,78 @@ This section describes the steps involved in connecting and updating a workspace
 
 For the complete script, see [Connect and update from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1).
 
-1. **Sign in and get access token** - Sign in to Fabric as a *user* (not a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to sign in.
-To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command.
+1. **Connect to Azure account and get access token** - Sign in to Fabric as a user (or, if using GitHub, a user or a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to connect.
+To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command, and [convert the secure string token to plain text](/powershell/azure/faq#how-can-i-convert-a-securestring-to-plain-text-in-powershell-)
 
-    Your code should look something like this:
+Your code should look something like this:
+
+   #### [User principal](#tab/user)
 
     ```powershell
     $global:resourceUrl = "https://api.fabric.microsoft.com"
-
+ 
     $global:fabricHeaders = @{}
 
     function SetFabricHeaders() {
+ 
+      #Login to Azure
+      Connect-AzAccount | Out-Null
+ 
+      # Get authentication
+      $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
 
-        #Login to Azure
-        Connect-AzAccount | Out-Null
-
-        # Get authentication
-        $fabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
-
-    $global:fabricHeaders = @{
-            'Content-Type' = "application/json"
-            'Authorization' = "Bearer {0}" -f $fabricToken
-        }
+        # Convert secure string to plain test
+	    $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
+      try {
+          $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
+      } finally {
+          [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
+      }
+	    $global:fabricHeaders = @{
+        'Content-Type' = "application/json"
+        'Authorization' = "Bearer {0}" -f $fabricToken
     }
+}
     ```
+
+   #### [Service principal (GitHub only)](#tab/service-principal)
+
+   ```powershell
+   $global:resourceUrl = "https://api.fabric.microsoft.com"
+ 
+   $global:fabricHeaders = @{}
+ 
+   function SetFabricHeaders() {
+ 
+      $clientId = "<CLIENT ID>"
+      $tenantId = "<TENANT ID>"
+      $secret = "<SECRET VALUE>"
+ 
+      $secureSecret  = ConvertTo-SecureString -String $secret -AsPlainText -Force
+     $credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $clientId
+   $secureSecret
+ 
+    #Login to Azure using service principal
+    Connect-AzAccount -ServicePrincipal -TenantId $tenantId -Credential $credential | Out-Null
+ 
+    # Get authentication
+    $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
+ 
+    # Convert secure string to lain text
+    $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
+    try {
+        $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
+    } finally {
+        [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
+    }
+	$global:fabricHeaders = @{
+        'Content-Type' = "application/json"
+        'Authorization' = "Bearer {0}" -f $fabricToken
+    }
+}
+   ```
+
+   ---
 
 1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
 
@@ -248,7 +296,7 @@ For the complete script, see [Poll a long running operation](https://github.com/
 ## Considerations and limitations
 
 * Git integration using APIs is subject to the same [limitations](./git-integration-process.md#considerations-and-limitations) as the Git integration user interface.
-* Service principal isn't supported.
+* Service principal is only supported for GitHub.
 * Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git *diff* after each refresh.
 
 ## Related content
