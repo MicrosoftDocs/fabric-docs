@@ -77,7 +77,7 @@ Your code should look something like this:
 
    #### [User principal](#tab/user)
 
-    ```powershell
+   ```powershell
     $global:resourceUrl = "https://api.fabric.microsoft.com"
  
     $global:fabricHeaders = @{}
@@ -101,8 +101,8 @@ Your code should look something like this:
         'Content-Type' = "application/json"
         'Authorization' = "Bearer {0}" -f $fabricToken
     }
-}
-    ```
+   }
+   ```
 
    #### [Service principal (GitHub only)](#tab/service-principal)
 
@@ -138,7 +138,7 @@ Your code should look something like this:
         'Content-Type' = "application/json"
         'Authorization' = "Bearer {0}" -f $fabricToken
     }
-}
+   }
    ```
 
    ---
