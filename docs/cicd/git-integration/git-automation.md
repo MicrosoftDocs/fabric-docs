@@ -293,6 +293,16 @@ For the complete script, see [Poll a long running operation](https://github.com/
 1. Retrieve the operationId from the [Update From Git](/rest/api/fabric/core/git/update-from-git) or the [Commit to Git](/rest/api/fabric/core/git/commit-to-git) script.
 1. Call the [Get LRO Status](/rest/api/fabric/core/git/get-status) API at specified intervals (in seconds) and print the status.
 
+## Get Git provider credentials
+
+### To connect to an existing connection
+
+### To create a new connection
+
+#### To connect to a specific repo
+
+#### To coneect to Git withot specifying a repo
+
 ## Considerations and limitations
 
 * Git integration using APIs is subject to the same [limitations](./git-integration-process.md#considerations-and-limitations) as the Git integration user interface.
