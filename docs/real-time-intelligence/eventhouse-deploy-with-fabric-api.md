@@ -1,6 +1,6 @@
 ---
-title: Deploy an eventhouse using Fabric APIs
-description: Learn how to use Fabric APIs for Eventhouse and KQL Database to automate deployments, manage data efficiently, and enhance your development workflow
+title: Deploy an Eventhouse using Fabric APIs
+description: Learn how to use Fabric APIs for Eventhouse and KQL Database to automate deployments, manage data efficiently, and enhance your development workflow.
 author: shsagir
 ms.author: shsagir
 ms.reviewer: bwatts
@@ -9,7 +9,7 @@ ms.date: 03/09/2025
 ms.custom:
 #customer intent: As a developer, I want to use the Eventhouse and KQL APIs so that I can automate deployments and manage data efficiently.
 ---
-# Deploy an eventhouse using Fabric APIs
+# Deploy an Eventhouse using Fabric APIs
 
 You can fully automate the deployment of your Eventhouses with KQL Databases using APIs. Fabric APIs allow you to create, update, and delete items within your workspace. You can manage your Eventhouses and Databases by performing actions such as creating tables and changing policies using one of the following methods:
 
@@ -21,13 +21,13 @@ In this article, you learn to:
 > [!div class="checklist"]
 >
 > * Set up your environment
-> * Create an eventhouse
+> * Create an Eventhouse
 > * Create a KQL database and schema
 > * Monitor the operation for completion
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
 * Your workspace ID. For more information, see [Identify your workspace ID](../admin/portal-workspace.md#identify-your-workspace-id).
 
 ## Choose the right method
@@ -79,15 +79,15 @@ Setting up your environment:
     uuid = uuid.uuid4()
     ```
 
-## Create an eventhouse
+## Create an Eventhouse
 
-1. Add a variable for the eventhouse name.
+1. Add a variable for the Eventhouse name.
 
     ```python
     eventhouse_name = f"{'SampleEventhouse'}_{uuid}"
     ```
 
-1. Use the [Fabric Create Eventhouse API](/rest/api/fabric/eventhouse/items/create-eventhouse) to create a new eventhouse. Set the eventhouse ID in a variable:
+1. Use the [Fabric Create Eventhouse API](/rest/api/fabric/eventhouse/items/create-eventhouse) to create a new Eventhouse. Set the Eventhouse ID in a variable:
 
     ```python
     url = f"v1/workspaces/{workspace_id}/eventhouses"
@@ -137,7 +137,7 @@ Create the base64 string for the database properties. The database properties se
 
 Create the base64 string for the database schema. The database schema script contains the commands to run to create database entities. You use the definition as part of the database creation API call to create a new KQL database.
 
-1. Create a base64 string for the database schema:
+Create a base64 string for the database schema:
 
     ```python
     database_schema=""".create-merge table T(a:string, b:string)
@@ -211,7 +211,7 @@ else:
 
 ### [Kusto API](#tab/kusto-api)
 
-Create a KQL database and schema in the eventhouse you created earlier.
+Create a KQL database and schema in the Eventhouse you created earlier.
 
 ### Create a KQL database
 
@@ -223,7 +223,7 @@ Create a KQL database and schema in the eventhouse you created earlier.
     database_storage = "30d"
     ```
 
-1. Use the Fabric [Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) to add a new database to this eventhouse.
+1. Use the Fabric [Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) to add a new database to this Eventhouse.
 
     ```python
     url = f"v1/workspaces/{workspace_id}/kqlDatabases"
@@ -241,7 +241,7 @@ Create a KQL database and schema in the eventhouse you created earlier.
 
 ### Create a table
 
-1. Use the [Fabric Get Eventhouse API](/rest/api/fabric/eventhouse/items/get-eventhouse) to get the Query URI for your eventhouse:
+1. Use the [Fabric Get Eventhouse API](/rest/api/fabric/eventhouse/items/get-eventhouse) to get the Query URI for your Eventhouse:
 
     ```python
     url = f"v1/workspaces/{workspace_id}/eventhouses/{eventhouseId}"
