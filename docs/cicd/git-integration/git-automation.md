@@ -42,17 +42,19 @@ You can use the REST APIs without PowerShell, but the scripts in this article us
 
 The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve the continuous integration and continuous delivery (CI/CD) of your content. Here are a few examples of what can be done by using the APIs:
 
-* See which items have incoming changes and which items have changes that weren't yet committed to Git with the [**Git status**](/rest/api/fabric/core/git/get-status) API.
+* [**Connect**](/rest/api/fabric/core/git/connect) and [**disconnect**](/rest/api/fabric/core/git/disconnect) a specific workspace from the Git repository and branch connected to it.
 
 * [**Get connection**](/rest/api/fabric/core/git/get-connection) details for the specified workspace.
 
-* [**Connect**](/rest/api/fabric/core/git/connect) and [**disconnect**](/rest/api/fabric/core/git/disconnect) a specific workspace from the Git repository and branch connected to it.
+* [**Store Git credentials** in Fabric](https://github.com/microsoft/fabric-samples/tree/main/features-samples/git-integration/GitIntegration-StoreGitProviderCredentials.ps1)
 
 * [**Update my Git credentials**](/rest/api/fabric/core/git/update-my-git-credentials) to update your Git credentials configuration details.
 
 * [**Get my Git credentials**](/rest/api/fabric/core/git/get-my-git-credentials) to get your Git credentials configuration details.
 
 * [**Initialize a connection**](/rest/api/fabric/core/git/initialize-connection) for a workspace that is connected to Git.
+
+* See which items have incoming changes and which items have changes that weren't yet committed to Git with the [**Git status**](/rest/api/fabric/core/git/get-status) API.
 
 * [**Commit**](/rest/api/fabric/core/git/commit-to-git) the changes made in the workspace to the connected remote branch.
 
@@ -202,6 +204,8 @@ Your code should look something like this:
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
 
+    For information on how to obtain the Connection Id, refer to [Get or create Git provider credentials connectio](#get-or-create-git-provider-credentials-connection)
+
     ---
 
 1. Call the [Initialize Connection](/rest/api/fabric/core/git/initialize-connection) API to initialize the connection between the workspace and the Git repository/branch.
@@ -293,15 +297,137 @@ For the complete script, see [Poll a long running operation](https://github.com/
 1. Retrieve the operationId from the [Update From Git](/rest/api/fabric/core/git/update-from-git) or the [Commit to Git](/rest/api/fabric/core/git/commit-to-git) script.
 1. Call the [Get LRO Status](/rest/api/fabric/core/git/get-status) API at specified intervals (in seconds) and print the status.
 
-## Get Git provider credentials
-
-### To connect to an existing connection
+## Get or create Git provider credentials connection
 
 ### To create a new connection
 
-#### To connect to a specific repo
+Use your Personal Access Token (PAT) to create a GitHub connection.
 
-#### To coneect to Git withot specifying a repo
+#### To create a Git coneection that is not scoped to a specific repo
+
+You can use your PAT to create a Git connection without specifying a repo. This allows you to connect to any repo you have access to.
+
+Call the [Create connection API] with the following request body:
+
+```http
+POST https://api.fabric.microsoft.com/v1/connections
+{
+  "connectivityType": "ShareableCloud",
+  "displayName": "<Enter your connection display Name>",
+  "connectionDetails": {
+    "type": "GitHubSourceControl",
+    "creationMethod": "GitHubSourceControl.Contents"
+  },
+  "credentialDetails": {
+    "credentials": {
+      "credentialType": "Key",
+      "key": "<Enter your GitHub Personal Access Token>"
+    }
+  }
+}
+```
+
+#### To connect to a specific repo in Git
+
+To use your PAT to connect to a specific repo, call the [Create connection API] with the following request body:
+
+```http
+POST https://api.fabric.microsoft.com/v1/connections
+{
+  "connectivityType": "ShareableCloud",
+  "displayName": "<Enter your connection display Name>",
+  "connectionDetails": {
+    "type": "GitHubSourceControl",
+    "creationMethod": "GitHubSourceControl.Contents",
+    "parameters": [
+      {
+        "dataType": "Text",
+        "name": "url",
+        "value": "<Enter Repository URL>"
+      }
+    ]
+  },
+  "credentialDetails": {
+    "credentials": {
+      "credentialType": "Key",
+      "key": "<Enter your GitHub Personal Access Token>"
+    }
+  }
+}
+```
+
+Here's a sample response with the connection Id:
+
+```http
+{
+    "connectionDetails": {
+        "path": "https://github.com",
+        "type": "GitHubSourceControl"
+    },
+    "connectivityType": "ShareableCloud",
+    "credentialDetails": {
+        "connectionEncryption": "NotEncrypted",
+        "credentialType": "Key",
+        "singleSignOnType": "None",
+        "skipTestConnection": false
+    },
+    "displayName": "Name",
+    "gatewayId": null,
+    "id": "e3607d15-6b41-4d11-b8f4-57cdcb19ffc8",
+    "privacyLevel": "Organizational"
+}
+```
+
+### To connect to an existing Git connection
+
+Use the [List connections API](/rest/api/fabric/core/connections/list-connections) to get a list of existing connnections.
+
+```http
+POST https://api.fabric.microsoft.com/v1/connections
+```
+
+You can then select the Id of the connection you want. Here's a sample response:
+
+```http
+{
+	"value": [
+		{
+			"id": "e3607d15-6b41-4d11-b8f4-57cdcb19ffc8",
+			"displayName": "GitHubScopedToRepo",
+			"gatewayId": null,
+			"connectivityType": "ShareableCloud",
+			"connectionDetails": {
+				"path": "https://github.com",
+				"type": "GitHubSourceControl"
+			},
+			"privacyLevel": "Organizational",
+			"credentialDetails": {
+				"credentialType": "Key",
+				"singleSignOnType": "None",
+				"connectionEncryption": "NotEncrypted",
+				"skipTestConnection": false
+			}
+		},
+		{
+			"id": "3aba8f7f-d1ba-42b1-bb41-980029d5a1c1",
+			"displayName": "Name2",
+			"gatewayId": null,
+			"connectivityType": "ShareableCloud",
+			"connectionDetails": {
+				"path": "https://github.com/OrganizationName/RepositoryName",
+				"type": "GitHubSourceControl"
+			},
+			"privacyLevel": "Organizational",
+			"credentialDetails": {
+				"credentialType": "Key",
+				"singleSignOnType": "None",
+				"connectionEncryption": "NotEncrypted",
+				"skipTestConnection": false
+			}
+		}
+	]
+}
+```
 
 ## Considerations and limitations
 
