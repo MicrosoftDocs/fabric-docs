@@ -34,7 +34,7 @@ The following table describes the columns.
 |**Link name** | A guid that is assigned to the external data share when it's created. |
 |**Status** | Share status.<br>- Pending: Share invitation sent but not yet accepted.<br>- Active: Share accepted.<br>- Expired: Share sent but not accepted within 90 days of it being created.<br>- Revoked: Share revoked. Data no longer accessible via this share.|
 |**Shared with** |The user to whom the external data invitation was sent. |
-|**Contents** |A summary of the the tables or files that were shared. The locations can be viewed in a tooltip by hovering over the information icon|
+|**Contents** |A summary of the tables or files that were shared. The locations can be viewed in a tooltip by hovering over the information icon|
 |**Created** | Creation date of the external data share.|
 |**Created by** |The user who created the external data share.|
 |**Permissions** |Permissions granted by the external share.|
