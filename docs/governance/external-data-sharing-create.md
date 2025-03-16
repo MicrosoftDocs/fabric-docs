@@ -17,7 +17,7 @@ Before sharing data with a user in another tenant via external data sharing, be 
 
 ## Prerequisites
 
-* A lakehouse with at least one folder or table.
+* A [supported Fabric item](./external-data-sharing-overview.md#supported-fabric-item-types) with at least one folder or table.
 * Standard Fabric read and reshare permissions on the item you're sharing.
 
 ## Create an external data share
@@ -28,7 +28,7 @@ Before sharing data with a user in another tenant via external data sharing, be 
 
     :::image type="content" source="./media/external-data-sharing-create/external-data-share-option.png" alt-text="Screenshot showing the external data share option in an item's options menu.":::
 
-1. In the **New external data share** dialog that opens, choose the folder or table to be shared and select **Save and continue**.
+1. In the **New external data share** dialog that opens, choose the folders and/or tables to be shared and select **Save and continue**.
 
     :::image type="content" source="./media/external-data-sharing-create/new-external-data-share-dialog.png" alt-text="Screenshot showing the New external data share dialog.":::
  

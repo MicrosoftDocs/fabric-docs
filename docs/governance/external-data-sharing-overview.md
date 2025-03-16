@@ -32,7 +32,7 @@ External data share links don't work for users who are in the tenant where the e
 
 The Fabric item types that can be used in external data sharing are listed below.
 
-* **Creating an external data share (provider tenant)**: External data shares can be created only for data residing in tables or files in lakehouses and mirrored databases.
+* **Creating an external data share (provider tenant)**: External data shares can be created for tables or files in lakehouses and warehouses, and in KQL, SQL, and mirrored databases.
 
 * **Accepting an external data share (consuming tenant)**: Only lakehouses can be chosen as the location of the external data share shortcut when accepting an external data share.
 
@@ -57,10 +57,6 @@ With this understanding in mind, be aware of the following:
 ## Considerations and limitations
 
 * **Shortcuts:** Shortcuts contained in folders that are shared via external data sharing won't resolve in the consumer tenant.
-
-* **Sharing schemas**: Sharing an entire schema doesn't work: Lakehouse supports database schemas, but if you share one, it won't work.
-
-* **External data shares in non-home regions**: External data shares can only be accepted in a capacity that is located in the same region as the tenant. For example, if a tenant is in East US and has two capacities, one in East US and one in West US, users won't be able to accept shares in Lakehouses that use the West US capacity.
 
 ## Related content
 
