@@ -13,7 +13,7 @@ ms.custom:
 
 You can fully automate the deployment of your Eventhouses with KQL Databases using APIs. Fabric APIs allow you to create, update, and delete items within your workspace. You can manage your Eventhouses and Databases by performing actions such as creating tables and changing policies using one of the following methods:
 
-* **Database schema script**: You can specify a database schema script as part of the [KQL Database definition](/rest/api/fabric/articles/item-management/definitions/kql-database-definition) to configure your database.
+* **Fabric API with definition**: You can specify a database schema script as part of the [KQL Database definition](/rest/api/fabric/articles/item-management/definitions/kql-database-definition) to configure your database.
 * **Kusto API**: You can use the Kusto API to execute [management commands](/kusto/management/?view=microsoft-fabric&preserve-view=true) to configure your database.
 
 In this article, you learn to:
@@ -34,7 +34,7 @@ In this article, you learn to:
 
 When choosing the right method to manage your Eventhouse and KQL Database, consider these points:
 
-* **Database schema script**: Use this method if you want to define the schema of your database as part of the database definition. This method is useful when you want to define the schema of your database in a single place.
+* **Fabric API with definition**: Use this method if you want to define the schema of your database as part of the database definition. This method is useful when you want to define the schema of your database using a single consistent API for the entire deployment.
 * **Kusto API**: Use this method if you want to execute management commands to configure your database. This method is useful when you want to execute management commands to configure your database.
 
 ## Set up your environment
@@ -47,7 +47,7 @@ Setting up your environment:
 
 1. In a code cell, enter code to import the packages:
 
-    ### [Database schema script](#tab/schema-script)
+    ### [Fabric API with definition](#tab/fabric-definition)
 
     ```python
     !pip install semantic-link --q
@@ -101,7 +101,7 @@ Setting up your environment:
 
 ## Create a KQL database and schema
 
-### [Database schema script](#tab/schema-script)
+### [Fabric API with definition](#tab/fabric-definition)
 
 The [Fabric Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) uses [item definitions](/rest/api/fabric/articles/item-management/definitions/kql-database-definition) for database properties and schemas that require base64 strings. The properties set the database level retention policies and database schema script contains the commands to run to create database entities.
 
@@ -178,6 +178,37 @@ payload = {
 response = client.post(url, json=payload)
 ```
 
+## Monitor the operation for completion
+
+Creating an item with a definition is a long-running operation that runs asynchronously. You can monitor the operation using *status_code* and *location* information in the response object from the Create KQL Database API call, as follows:
+
+```python
+print(f"Create request status code: {response.status_code}")
+print(response.headers['Location'])
+async_result_polling_url = response.headers['Location']
+
+while True:
+  async_response = client.get(async_result_polling_url)
+  async_status = async_response.json().get('status').lower()
+  print(f"Long running operation status: {async_status}")
+  if async_status != 'running':
+    break
+
+  time.sleep(3)
+
+print(f"Long running operation reached terminal state: '{async_status}'")
+
+if async_status == 'succeeded':
+  print("The operation completed successfully.")
+  final_result_url= async_response.headers['Location']
+  final_result = client.get(final_result_url)
+  print(f"Final result: {final_result.json()}")
+elif async_status == 'failed':
+  print("The operation failed.")
+else:
+  print(f"The operation is in an unexpected state: {status}")
+```
+
 ### [Kusto API](#tab/kusto-api)
 
 Create a KQL database and schema in the eventhouse you created earlier.
@@ -201,12 +232,7 @@ Create a KQL database and schema in the eventhouse you created earlier.
       "displayName": f"{database_name}",
       "creationPayload": {
         "databaseType": "ReadWrite",
-        "parentEventhouseItemId": f"{eventhouseId}",
-
-        "//TODO": "BRAD, do we need to add the following for parity?",
-
-        "oneLakeCachingPeriod": f"{database_cache}",
-        "oneLakeStandardStoragePeriod": f"{database_storage}"
+        "parentEventhouseItemId": f"{eventhouseId}"
       }
     }
 
@@ -248,39 +274,6 @@ Create a KQL database and schema in the eventhouse you created earlier.
     ```
 
 ---
-
-## Monitor the operation for completion
-
-//TODO: Brad, do we need to add Kusto API monitoring for parity?
-
-Creating an item with a definition is a long-running operation that runs asynchronously. You can monitor the operation using *status_code* and *location* information in the response object from the Create KQL Database API call, as follows:
-
-```python
-print(f"Create request status code: {response.status_code}")
-print(response.headers['Location'])
-async_result_polling_url = response.headers['Location']
-
-while True:
-  async_response = client.get(async_result_polling_url)
-  async_status = async_response.json().get('status').lower()
-  print(f"Long running operation status: {async_status}")
-  if async_status != 'running':
-    break
-
-  time.sleep(3)
-
-print(f"Long running operation reached terminal state: '{async_status}'")
-
-if async_status == 'succeeded':
-  print("The operation completed successfully.")
-  final_result_url= async_response.headers['Location']
-  final_result = client.get(final_result_url)
-  print(f"Final result: {final_result.json()}")
-elif async_status == 'failed':
-  print("The operation failed.")
-else:
-  print(f"The operation is in an unexpected state: {status}")
-```
 
 ## Related content
 
