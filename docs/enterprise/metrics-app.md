@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 11/04/2024
+ms.date: 03/16/2025
 ---
 
 # What is the Microsoft Fabric Capacity Metrics app?
@@ -28,6 +28,8 @@ To install the app, follow the instructions in [Install the Microsoft Fabric Cap
 ## Considerations and limitations
 
 When using the Microsoft Fabric Capacity Metrics app, consider the following considerations and limitations:
+
+* The report doesn't show application IDs.
 
 * To hide user emails in the app, disable the [Show user data in the Fabric Capacity Metrics app and reports](../admin/service-admin-portal-audit-usage.md#show-user-data-in-the-fabric-capacity-metrics-app-and-reports) setting in the Admin portal.
 
