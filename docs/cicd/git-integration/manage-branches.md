@@ -61,7 +61,7 @@ For a developer who works in the web, the flow would be as follows:
 
     :::image type="content" source="./media/manage-branches/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 
-1. Specify if you want to create a new workspace or switch to an existing one. Specify the names of the new branch and workspace, or select the existing workspace from the dropdown list.
+1. Specify if you want to create a new workspace or switch to an existing one. Specify the names of the new branch and workspace, or select the existing workspace from the dropdown list. **When you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you commit any items you want to keep before branching out.**
 
    :::image type="content" source="./media/manage-branches/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
 
