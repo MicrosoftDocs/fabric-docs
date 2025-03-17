@@ -307,7 +307,7 @@ Use your Personal Access Token (PAT) to create a GitHub connection.
 
 You can use your PAT to create a Git connection without specifying a repo. This allows you to connect to any repo you have access to.
 
-Call the [Create connection API] with the following request body:
+Call the [Create connection API](/rest/api/fabric/core/git/connect) with the following request body:
 
 ```http
 POST https://api.fabric.microsoft.com/v1/connections
@@ -329,7 +329,7 @@ POST https://api.fabric.microsoft.com/v1/connections
 
 #### Create a connection to a specific Git repo
 
-To use your PAT to connect to a specific repo, call the [Create connection API] with the following request body:
+To use your PAT to connect to a specific repo, call the [Create connection API](/rest/api/fabric/core/git/connect) with the following request body:
 
 ```http
 POST https://api.fabric.microsoft.com/v1/connections
