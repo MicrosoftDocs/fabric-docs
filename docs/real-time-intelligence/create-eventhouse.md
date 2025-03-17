@@ -40,15 +40,15 @@ In this article, you learn how to create an eventhouse, add new databases to an 
 
 1. From the explorer, select the **New database** [**+**].
 
-    :::image type="content" source="media/eventhouse/add-database.png" alt-text="Screenshot showing the selector to add a new database.":::
+   :::image type="content" source="media/eventhouse/add-database.png" alt-text="Screenshot showing the selector to add a new database.":::
 
 1. Enter a database name, and select **Create**.
 
-    :::image type="content" source="media/eventhouse/name-new-database.png" alt-text="Screenshot showing the pop-up box to name your new database.":::
+   :::image type="content" source="media/eventhouse/name-new-database.png" alt-text="Screenshot showing the pop-up box to name your new database.":::
 
 1. The [Database details](create-database.md#database-details) page for your new database opens in the main view area.
 
-    ::image type="content" source="media/eventhouse/database-details.png" alt-text="Screenshot of the database details page for your new database. lightbox="media/eventhouse/database-details.png"":::
+    :::image type="content" source="media/eventhouse/database-details.png" alt-text="Screeshot of the database details page for your new database." lightbox="media/eventhouse/database-details.png":::
 
 To learn more about creating KQL databases, see [Create a KQL database](create-database.md).
 

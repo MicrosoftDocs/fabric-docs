@@ -102,9 +102,6 @@ You can filter by user, application, and/or query status to refine the database 
 | | Daily query duration percentiles over time|  |
 | | Cache hit misses over time|  |
 | | Top queries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
-
-:::image type="content" source="media/histogram-dashboard.png" alt-text="View of hover over histogram showing total ingestion rows and total queries per query status."lightbox="media/histogram-dashboard.png":::<!--Add new image here-->
-
 <!--|**Ingestion failures**|
 | | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|-->
 
