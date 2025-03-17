@@ -73,36 +73,36 @@ For the complete script, see [Connect and update from Git](https://github.com/mi
 1. **Connect to Azure account and get access token** - Sign in to Fabric as a user (or, if using GitHub, a user or a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to connect.
 To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command, and [convert the secure string token to plain text](/powershell/azure/faq#how-can-i-convert-a-securestring-to-plain-text-in-powershell-)
 
-  Your code should look something like this:
+   Your code should look something like this:
 
-    #### [User principal](#tab/user)
+   #### [User principal](#tab/user)
 
-    ```powershell
-     $global:resourceUrl = "https://api.fabric.microsoft.com"
+     ```powershell
+      $global:resourceUrl = "https://api.fabric.microsoft.com"
  
-     $global:fabricHeaders = @{}
+      $global:fabricHeaders = @{}
 
-     function SetFabricHeaders() {
+      function SetFabricHeaders() {
  
-       #Login to Azure
-       Connect-AzAccount | Out-Null
+        #Login to Azure
+        Connect-AzAccount | Out-Null
  
-       # Get authentication
-        $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
+        # Get authentication
+         $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
 
-        # Convert secure string to plain test
-	     $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
-       try {
-          $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
-      } finally {
-          [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
-      }
-	     $global:fabricHeaders = @{
-         'Content-Type' = "application/json"
+         # Convert secure string to plain test
+	      $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
+        try {
+           $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
+       } finally {
+           [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
+       }
+	      $global:fabricHeaders = @{
+          'Content-Type' = "application/json"
          'Authorization' = "Bearer {0}" -f $fabricToken
-     }
-   }
-    ```
+      }
+    }
+     ```
 
    #### [Service principal (GitHub only)](#tab/service-principal)
 
