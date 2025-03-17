@@ -107,9 +107,16 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
    #### [Service principal (GitHub only)](#tab/service-principal)
 
      ```powershell
-     $global:resourceUrl = "https://api.fabric.microsoft.com"
+
+    $workspaceName = "<WORKSPACE NAME>"
+    $getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
+
+    # Find the workspace by display name
+    $workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
  
-     $global:fabricHeaders = @{}
+    $global:resourceUrl = "https://api.fabric.microsoft.com"
+ 
+    $global:fabricHeaders = @{}
  
      function SetFabricHeaders() {
  
@@ -145,9 +152,15 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
 1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
 
-    ### [Azure DevOps](#tab/ADO)
+    ### [Azure DevOps (User principal)](#tab/ADO)
 
     ```powershell
+
+    $workspaceName = "<WORKSPACE NAME>"
+    $getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
+
+    # Find the workspace by display name
+    $workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
 
     # Connect to Git
 
@@ -173,7 +186,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
 
-    ### [GitHub](#tab/github)
+    ### [GitHub (User or service prinicipal)](#tab/github)
 
     ```powershell
 
@@ -309,8 +322,9 @@ You can use your PAT to create a Git connection without specifying a repo. This 
 
 Call the [Create connection API](/rest/api/fabric/core/connections/create-connection) with the following request body:
 
-```http
 POST https://api.fabric.microsoft.com/v1/connections
+
+```http
 {
   "connectivityType": "ShareableCloud",
   "displayName": "<Enter your connection display Name>",
@@ -331,8 +345,9 @@ POST https://api.fabric.microsoft.com/v1/connections
 
 To use your PAT to connect to a specific repo, call the [Create connection API](/rest/api/fabric/core/connections/create-connection) with the following request body:
 
-```http
 POST https://api.fabric.microsoft.com/v1/connections
+
+```http
 {
   "connectivityType": "ShareableCloud",
   "displayName": "<Enter your connection display Name>",
@@ -382,9 +397,7 @@ Here's a sample response with the connection Id:
 
 Use the [List connections API](/rest/api/fabric/core/connections/list-connections) to get a list of existing connections.
 
-```http
 POST https://api.fabric.microsoft.com/v1/connections
-```
 
 You can then select the Id of the connection you want. Here's a sample response:
 
