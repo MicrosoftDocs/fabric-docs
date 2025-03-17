@@ -31,7 +31,7 @@ While **OneLake availability** is turned on, you can't do the following tasks:
 If you need to do any of these tasks, use the following steps:
 
 > [!IMPORTANT]
-> Turning off **OneLake availability** soft deletes your data from OneLake. When you turn availability back on, all data is made available in OneLake, including historic backfill of the.
+> Turning off **OneLake availability** soft deletes your data from OneLake. When you turn availability back on, all data is made available in OneLake, including historic backfill.
 
 1. Turn off **OneLake availability**.
 
