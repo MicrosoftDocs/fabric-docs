@@ -127,7 +127,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
       # Get authentication
       $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
    
-      # Convert secure string to lain text
+      # Convert secure string to plain text
       $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
       try {
           $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
@@ -299,11 +299,11 @@ For the complete script, see [Poll a long running operation](https://github.com/
 
 ## Get or create Git provider credentials connection
 
-### To create a new connection
+### Create a new connection
 
 Use your Personal Access Token (PAT) to create a GitHub connection.
 
-#### To create a Git connection that is not scoped to a specific repo
+#### Create a Git connection that is not scoped to a specific repo
 
 You can use your PAT to create a Git connection without specifying a repo. This allows you to connect to any repo you have access to.
 
@@ -327,7 +327,7 @@ POST https://api.fabric.microsoft.com/v1/connections
 }
 ```
 
-#### To connect to a specific repo in Git
+#### Create a connection to a specific Git repo
 
 To use your PAT to connect to a specific repo, call the [Create connection API] with the following request body:
 
@@ -378,7 +378,7 @@ Here's a sample response with the connection Id:
 }
 ```
 
-### To connect to an existing Git connection
+### Connect to an existing Git connection
 
 Use the [List connections API](/rest/api/fabric/core/connections/list-connections) to get a list of existing connections.
 
