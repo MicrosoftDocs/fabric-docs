@@ -1,8 +1,8 @@
 ---
 title: Get data for Activator from Real-Time Hub
 description: Learn how to get data from Real-Time Hub and use it in Activator to enhance your application's functionality.
-author: kfollis
-ms.author: kfollis
+author: spelluru
+ms.author: spelluru
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 11/08/2024
