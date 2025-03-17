@@ -50,7 +50,7 @@ Once you're logged in, you'll be working in a Fabric CLI shell in the Command Pr
 To log out of Fabric, run the command:
 
 ```python
-exit
+auth 
 ```
 
 ## Commands
