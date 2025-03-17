@@ -1,7 +1,7 @@
 ---
 title: Data Factory end-to-end scenario - introduction and architecture
 description: This article introduces an end-to-end data integration tutorial that provides step-by-step guidance to help you complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
