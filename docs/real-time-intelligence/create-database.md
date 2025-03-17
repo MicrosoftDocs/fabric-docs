@@ -53,7 +53,7 @@ When you create a new KQL database, an attached environment is automatically cre
 
 The main page of your KQL database shows an overview of the contents of your database. The following tables list the available information in the center and right information panes.
 
-:::image type="content" source="media/create-database/database-dashboard-new.png" alt-text="Screenshot of KQL database main page showing the database details cards." lightbox="media/create-database/database-dashboard-new.png":::<!-- TODO: Update the image when dev is complete-->
+:::image type="content" source="media/create-database/database-dashboard-new.png" alt-text="Screenshot of KQL database main page showing the database details cards." lightbox="media/create-database/database-dashboard-new.png":::
 
 ### Database right pane details
 
