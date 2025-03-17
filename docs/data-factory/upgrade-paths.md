@@ -1,7 +1,7 @@
 ---
 title: Migrate to Data Factory
 description: This article provides details on how customers of Azure Data Factory (ADF) and Power BI can migrate their existing solutions to Data Factory in Microsoft Fabric.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: weetok
 author: dcstwh
 ms.topic: conceptual

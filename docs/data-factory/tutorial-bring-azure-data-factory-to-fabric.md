@@ -1,7 +1,7 @@
 ---
 title: Bring Azure Data Factory to Fabric
 description: Learn steps to bring Azure Data Factory to Fabric
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: lle
 author: lrtoyou1223
 ms.topic: tutorial

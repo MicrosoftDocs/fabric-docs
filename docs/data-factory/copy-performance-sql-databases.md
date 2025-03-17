@@ -1,7 +1,7 @@
 ---
 title: Copy activity performance with SQL databases
 description: Learn about settings and practices to optimize Data pipeline Copy activities for SQL databases in Data Factory for Microsoft Fabric.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: makromer
 author: kromerm
 ms.topic: best-practice

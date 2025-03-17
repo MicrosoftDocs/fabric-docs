@@ -2,8 +2,8 @@
 title: Activity overview
 description: Learn about activities.
 ms.reviewer: pennyzhou-msft
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: overview
 ms.date: 09/16/2024
 ms.search.form: Pipeline Activity Overview

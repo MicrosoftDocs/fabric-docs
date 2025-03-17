@@ -2,8 +2,8 @@
 title: Fail activity
 description: Learn how to add a Fail activity to cause pipeline execution to fail with a customized error message and error code.
 ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: how-to
 ms.date: 12/18/2024
 ---

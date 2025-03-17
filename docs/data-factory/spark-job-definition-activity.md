@@ -2,8 +2,8 @@
 title: Spark Job Definition activity
 description: Learn how to transform data by running a Spark Job Definition activity in a data pipeline in Data Factory for Microsoft Fabric.
 ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: how-to
 ms.custom:
   - build-2024
