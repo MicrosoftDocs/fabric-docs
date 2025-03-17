@@ -188,7 +188,7 @@ This two APIs can get the Spark compute configurations and properties of the env
 
     ```HTTP
     GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}/sparkcompute
-    ``
+    ```
 
 - Original sample response
 
@@ -342,7 +342,7 @@ This API is for updating the Spark compute and properties of an Environment, the
         "id": "78942136-106c-4f3e-80fc-7ff4eae11603"
       },
       "driverCores": "4",
-          "driverMemory": "56G",
+      "driverMemory": "56G",
       "executorCores": "4",
       "executorMemory": "56G",
       "dynamicExecutorAllocation": {
