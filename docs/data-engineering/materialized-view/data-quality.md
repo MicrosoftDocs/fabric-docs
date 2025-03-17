@@ -36,7 +36,7 @@ The following actions can be taken when constraints are defined.
 
 The following example defines the constraint `cust_blank`, which verifies if the `customerName` field isn't blank. If it's blank, MV excludes those rows from processing. 
 
-```
+```SQL
 CREATE MATERIALIZED VIEW IF NOT EXISTS silver.customers_enriched  
 
 (CONSTRAINT cust_blank CHECK (customerName is not null) on MISMATCH DROP) 

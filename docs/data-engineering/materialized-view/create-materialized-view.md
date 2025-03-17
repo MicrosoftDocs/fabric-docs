@@ -50,7 +50,7 @@ There are two ways to get started with Materialized view creation.
 
 The following outlines the syntax for declaring a materialized Lakeview using SQL. 
 
-```
+```SQL
 CREATE MATERIALIZED VIEW [IF NOT EXISTS][workspace.lakehouse.schema].MV_Identifier 
 
 [( 
@@ -87,7 +87,7 @@ AS select_statement
 
 A materialized view can be defined from any table or another materialized view within the Lakehouse. The following example illustrates the definition of a materialized view named “customers_enriched” by joining the **customers** table with the **orders** table.
 
-```
+```SQL
 CREATE MATERIALIZED VIEW IF NOT EXISTS silver.customers_enriched AS 
 
 SELECT 
