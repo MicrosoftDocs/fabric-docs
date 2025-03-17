@@ -46,7 +46,7 @@ The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve 
 
 * [**Get connection**](/rest/api/fabric/core/git/get-connection) details for the specified workspace.
 
-* [**Store Git credentials** in Fabric](https://github.com/microsoft/fabric-samples/tree/main/features-samples/git-integration/GitIntegration-StoreGitProviderCredentials.ps1)
+* [**Store Git credentials** in Fabric](#get-or-create-git-provider-credentials-connection)
 
 * [**Update my Git credentials**](/rest/api/fabric/core/git/update-my-git-credentials) to update your Git credentials configuration details.
 
@@ -73,75 +73,75 @@ For the complete script, see [Connect and update from Git](https://github.com/mi
 1. **Connect to Azure account and get access token** - Sign in to Fabric as a user (or, if using GitHub, a user or a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to connect.
 To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command, and [convert the secure string token to plain text](/powershell/azure/faq#how-can-i-convert-a-securestring-to-plain-text-in-powershell-)
 
-Your code should look something like this:
+  Your code should look something like this:
 
-   #### [User principal](#tab/user)
+    #### [User principal](#tab/user)
 
-   ```powershell
-    $global:resourceUrl = "https://api.fabric.microsoft.com"
+    ```powershell
+     $global:resourceUrl = "https://api.fabric.microsoft.com"
  
-    $global:fabricHeaders = @{}
+     $global:fabricHeaders = @{}
 
-    function SetFabricHeaders() {
+     function SetFabricHeaders() {
  
-      #Login to Azure
-      Connect-AzAccount | Out-Null
+       #Login to Azure
+       Connect-AzAccount | Out-Null
  
-      # Get authentication
-      $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
+       # Get authentication
+        $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
 
         # Convert secure string to plain test
-	    $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
-      try {
+	     $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
+       try {
           $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
       } finally {
           [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
       }
-	    $global:fabricHeaders = @{
-        'Content-Type' = "application/json"
-        'Authorization' = "Bearer {0}" -f $fabricToken
-    }
+	     $global:fabricHeaders = @{
+         'Content-Type' = "application/json"
+         'Authorization' = "Bearer {0}" -f $fabricToken
+     }
    }
-   ```
+    ```
 
    #### [Service principal (GitHub only)](#tab/service-principal)
 
-   ```powershell
-   $global:resourceUrl = "https://api.fabric.microsoft.com"
+     ```powershell
+     $global:resourceUrl = "https://api.fabric.microsoft.com"
  
-   $global:fabricHeaders = @{}
+     $global:fabricHeaders = @{}
  
-   function SetFabricHeaders() {
+     function SetFabricHeaders() {
  
-      $clientId = "<CLIENT ID>"
-      $tenantId = "<TENANT ID>"
-      $secret = "<SECRET VALUE>"
+       $clientId = "<CLIENT ID>"
+       $tenantId = "<TENANT ID>"
+       $secret = "<SECRET VALUE>"
  
-      $secureSecret  = ConvertTo-SecureString -String $secret -AsPlainText -Force
-     $credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $clientId
-   $secureSecret
+       $secureSecret  = ConvertTo-SecureString -String $secret -AsPlainText -Force
+      $credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $clientId
+     $secureSecret
  
-    #Login to Azure using service principal
-    Connect-AzAccount -ServicePrincipal -TenantId $tenantId -Credential $credential | Out-Null
+      #Login to Azure using service principal
+      Connect-AzAccount -ServicePrincipal -TenantId $tenantId -Credential $credential | Out-Null
  
-    # Get authentication
-    $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
- 
-    # Convert secure string to lain text
-    $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
-    try {
-        $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
-    } finally {
-        [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
-    }
-	$global:fabricHeaders = @{
-        'Content-Type' = "application/json"
-        'Authorization' = "Bearer {0}" -f $fabricToken
-    }
-   }
-   ```
+      # Get authentication
+      $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
+   
+      # Convert secure string to lain text
+      $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
+      try {
+          $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
+      } finally {
+         [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
+      }
+   	$global:fabricHeaders = @{
+         'Content-Type' = "application/json"
+         'Authorization' = "Bearer {0}" -f $fabricToken
+      }
+     }
+     ```
 
-   ---
+    ---
 
 1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
 
@@ -303,7 +303,7 @@ For the complete script, see [Poll a long running operation](https://github.com/
 
 Use your Personal Access Token (PAT) to create a GitHub connection.
 
-#### To create a Git coneection that is not scoped to a specific repo
+#### To create a Git connection that is not scoped to a specific repo
 
 You can use your PAT to create a Git connection without specifying a repo. This allows you to connect to any repo you have access to.
 
@@ -380,7 +380,7 @@ Here's a sample response with the connection Id:
 
 ### To connect to an existing Git connection
 
-Use the [List connections API](/rest/api/fabric/core/connections/list-connections) to get a list of existing connnections.
+Use the [List connections API](/rest/api/fabric/core/connections/list-connections) to get a list of existing connections.
 
 ```http
 POST https://api.fabric.microsoft.com/v1/connections
