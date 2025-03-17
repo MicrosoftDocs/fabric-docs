@@ -244,7 +244,7 @@ In addition to drawing charts with libraries, the [built-in visualization](noteb
    :::image type="content" source="media\use-python-experience-on-notebook\display-in-python.png" alt-text="Screenshot showing visualization experience in Python notebook." lightbox="media\use-python-experience-on-notebook\display-in-python.png":::
 
 > [!NOTE]
-> The chart configurations will be persisted in Python notebook, which means after reruning the code cell, if the target dataframe schema hasn't change, the saved charts are still persisted.
+> The chart configurations will be persisted in Python notebook, which means after rerunning the code cell, if the target dataframe schema hasn't change, the saved charts are still persisted.
 
 ## Code intelliSense
 
