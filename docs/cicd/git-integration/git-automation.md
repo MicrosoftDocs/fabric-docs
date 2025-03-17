@@ -83,20 +83,21 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
       $global:fabricHeaders = @{}
 
       function SetFabricHeaders() {
+  
+         #Login to Azure
+         Connect-AzAccount | Out-Null
  
-        #Login to Azure
-        Connect-AzAccount | Out-Null
- 
-        # Get authentication
+         # Get authentication
          $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
 
          # Convert secure string to plain test
-	      $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
-        try {
-           $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
-       } finally {
-           [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
-       }
+	       $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
+         try {
+             $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
+         } finally {
+             [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
+        }
+
 	      $global:fabricHeaders = @{
           'Content-Type' = "application/json"
          'Authorization' = "Bearer {0}" -f $fabricToken
@@ -115,36 +116,35 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     $workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
  
     $global:resourceUrl = "https://api.fabric.microsoft.com"
- 
     $global:fabricHeaders = @{}
  
-     function SetFabricHeaders() {
+    function SetFabricHeaders() {
  
        $clientId = "<CLIENT ID>"
        $tenantId = "<TENANT ID>"
        $secret = "<SECRET VALUE>"
  
        $secureSecret  = ConvertTo-SecureString -String $secret -AsPlainText -Force
-      $credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $clientId
-     $secureSecret
+       $credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $clientId, $secureSecret
  
-      #Login to Azure using service principal
-      Connect-AzAccount -ServicePrincipal -TenantId $tenantId -Credential $credential | Out-Null
+       #Login to Azure using service principal
+       Connect-AzAccount -ServicePrincipal -TenantId $tenantId -Credential $credential | Out-Null
  
-      # Get authentication
-      $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
+       # Get authentication
+       $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
    
-      # Convert secure string to plain text
-      $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
-      try {
-          $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
-      } finally {
-         [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
-      }
-   	$global:fabricHeaders = @{
-         'Content-Type' = "application/json"
-         'Authorization' = "Bearer {0}" -f $fabricToken
-      }
+       # Convert secure string to plain text
+       $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
+       try {
+           $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
+       } finally {
+          [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
+       }
+
+    	 $global:fabricHeaders = @{
+          'Content-Type' = "application/json"
+          'Authorization' = "Bearer {0}" -f $fabricToken
+       }
      }
      ```
 
@@ -163,13 +163,11 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     $workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
 
     # Connect to Git
-
     Write-Host "Connecting the workspace '$workspaceName' to Git."
 
     $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
 
     # AzureDevOps details
-
     $azureDevOpsDetails = @{
         gitProviderType = "AzureDevOps"
         organizationName = "<ORGANIZATION NAME>"
@@ -191,13 +189,11 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     ```powershell
 
     # Connect to Git
-
     Write-Host "Connecting the workspace '$workspaceName' to Git."
 
     $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
 
     # GitHub details
-
     $gitHubDetails = @{
         gitProviderType = "GitHub"
         ownerName = "<OWNER NAME>"
@@ -224,7 +220,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 1. Call the [Initialize Connection](/rest/api/fabric/core/git/initialize-connection) API to initialize the connection between the workspace and the Git repository/branch.
 
     ```powershell
-     # Initialize Connection
+    # Initialize Connection
 
     Write-Host "Initializing Git connection for workspace '$workspaceName'."
 
