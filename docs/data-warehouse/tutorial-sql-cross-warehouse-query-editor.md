@@ -7,8 +7,6 @@ ms.reviewer: prlangad
 ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ---
 
 # Tutorial: Create a cross-warehouse query in Warehouse
@@ -37,9 +35,7 @@ In this task, learn how to work with the SQL query editor to write cross-warehou
 
     :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses.png" alt-text="Screenshot of the Explorer pane, highlighting the + Warehouse button." border="false":::
 
-1. In the **OneLake catalog** window, select the `Shortcut_Exercise` SQL analytics endpoint. You created the SQL analytics endpoint in the [Analyze data with a notebook](tutorial-analyze-data-notebook.md) tutorial.
-
-    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" alt-text="Screenshot of the OneLake catalog window, highlighting the SQL analytics endpoint." lightbox="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" border="false":::
+1. In the **OneLake catalog** window, select the `Shortcut_Exercise` SQL analytics endpoint.
 
 1. Select **Confirm**.
 
@@ -80,9 +76,6 @@ In this task, learn how to run the cross-warehouse query. Specifically, you will
     :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/query-result.png" alt-text="Screenshot of the query result of the cross-warehouse query." border="false":::
 
 1. When execution completes, rename the query as `Cross-warehouse Query`.
-
-> [!NOTE]
-> You can also run cross-warehouse queries that span data from a warehouse in a different workspace. However, cross-warehouse cross-workspace querying is only supported for queries _within the same region_.
 
 ## Next step
 

@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
-ms.date: 12/22/2024
+ms.date: 02/02/2025
 ---
 
 # Microsoft Fabric features parity
@@ -14,21 +14,21 @@ Microsoft Fabric is a cloud-based platform with a rich set of features. The avai
 
 ## Features parity list
 
-The following table lists Fabric features according to SKU type. The table lists features that are only supported in specific SKUs. Unless otherwise noted, none of these features are supported when using a [trial capacity](../get-started/fabric-trial.md).
+The following table lists Fabric features according to SKU type. The table lists features that are only supported in specific SKUs. Unless otherwise noted, none of these features are supported when using a [trial capacity](../fundamentals/fabric-trial.md).
 
 | Feature                                                                                               | F SKU         | P SKUs       |
 |-------------------------------------------------------------------------------------------------------|:-------------:|:------------:|
 | [AI Skills](../data-science/concept-ai-skill.md)                                                      | F64 or higher | &#x2705;     |
 | [ARM APIs and Terraform](/azure/developer/terraform/overview-azapi-provider)                          | &#x2705;      | &#x274C;     |
-| [Copilot](../get-started/copilot-fabric-overview.md)                                                  | F64 or higher | &#x2705;     |
+| [Copilot](../fundamentals/copilot-fabric-overview.md)                                                 | F64 or higher | &#x2705;     |
 | [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)<sup>1</sup>   | &#x2705;      | &#x274C;     |
 | [On-demand resizing](scale-capacity.md)                                                               | &#x2705;      | &#x274C;     |
 | [Pause and resume your capacity](pause-resume.md)                                                     | &#x2705;      | &#x274C;     |
 | [Power BI Autoscale](/power-bi/enterprise/service-premium-auto-scale)                                 | &#x274C;      | &#x2705;     |
 | [Trusted workspace access](../security/security-trusted-workspace-access.md)                          | &#x2705;      | &#x274C;     |
-| View Power BI items without a per user license                                                        | F64 or higher | &#x2705;     |
+| View Power BI items with a Microsoft Fabric free license<sup>1</sup>                                  | F64 or higher | &#x2705;     |
 
-<sup>1</sup> Supported in a Fabric [trial capacity](../get-started/fabric-trial.md).
+<sup>1</sup> Supported in a Fabric [trial capacity](../fundamentals/fabric-trial.md).
 
 ## Related content
 

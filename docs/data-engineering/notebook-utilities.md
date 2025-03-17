@@ -6,10 +6,6 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
 ms.date: 07/25/2024
 ---
@@ -252,7 +248,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 ### Reference run multiple notebooks in parallel
 
 > [!IMPORTANT]
-> This feature is in [preview](../get-started/preview.md).
+> This feature is in [preview](../fundamentals/preview.md).
 
 The method `notebookutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the reference notebook runs share the compute resources.
 

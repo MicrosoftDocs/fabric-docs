@@ -7,8 +7,6 @@ ms.reviewer: midesa
 reviewer: midesa
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 04/16/2024
 ms.search.form: Python Language
 #customer intent: As a data analyst, I want to understand how Spark applications in Synapse can analyze data.

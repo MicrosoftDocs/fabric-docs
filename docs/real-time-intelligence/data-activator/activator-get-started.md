@@ -1,12 +1,12 @@
 ---
 title: Get started using Activator
 description: Learn how to get started using Activator and unleash the power of data-driven decision making in your organization.
-author: mihart
-ms.author: mihart
+author: kfollis
+ms.author: kfollis
 ms.topic: how-to
-ms.custom: FY25Q1-Linter, ignite-2024
+ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Getting Started
-ms.date: 11/26/2024
+ms.date: 01/20/2025
 #customer intent: As a Fabric user I want to get started with Activator.
 ---
 
@@ -52,4 +52,4 @@ To learn how to get different types of data into an activator, read through thes
 ## Related content
 
 - [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](activator-introduction.md)
-- [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+- [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

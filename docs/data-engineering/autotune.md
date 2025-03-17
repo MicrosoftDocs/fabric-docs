@@ -2,12 +2,10 @@
 title: Configure autotune for Apache Spark
 description: Learn how autotune automatically adjusts Apache Spark configurations, minimizing workload execution time and optimizing performance.
 ms.reviewer: snehagunda
-ms.author: eskot
-author: ekote
+ms.author: sngun
+author: SnehaGunda
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 10/20/2023
 ---
 

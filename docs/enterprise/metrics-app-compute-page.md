@@ -5,10 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - build-2024
-ms.date: 02/21/2024
+ms.date: 02/26/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -31,7 +28,7 @@ The multi metric column ribbon displays the following four values. You see the t
 
 * **Operations** - The number of operations that took place.
 
-* **Users** - The number of users that performed operations.
+* **Users** - The number of unique users that performed operations, including service principals
 
 ## Capacity utilization and throttling
 

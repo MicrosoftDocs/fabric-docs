@@ -6,7 +6,6 @@ ms.author: abnarain
 author: abnarain
 ms.topic: how-to
 ms.custom:
-  - build-2024
 ms.date: 03/25/2024
 ---
 

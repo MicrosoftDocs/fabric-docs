@@ -6,8 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: tutorial
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.date: 11/28/2024
 ms.subservice: rti-core
 ms.search.form: Get started

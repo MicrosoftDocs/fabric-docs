@@ -6,9 +6,7 @@ ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 09/05/2024
+ms.date: 01/16/2025
 ms.search.form: lakehouse api
 ---
 
@@ -209,7 +207,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{la
     "mode": "overwrite", 
     "formatOptions": 
     { 
-        "header": true, 
+        "header": "true", 
         "delimiter": ",", 
         "format": "CSV" 
     } 
@@ -251,7 +249,7 @@ Possible operation status for load to tables:
 
 ## Table maintenance
 
-This API surfaces the capabilities of the Lakehouse [table maintenance feature](lakehouse-table-maintenance.md). With this API, it's possible to apply bin-compaction, V-Order, and unreferenced old files cleanup.
+This API surfaces the capabilities of the Lakehouse [table maintenance feature](lakehouse-table-maintenance.md). With this API, it's possible to apply bin-compaction, V-Order, and unreferenced old files cleanup (vacuum).
 
 This API is asynchronous, so two steps are required:
 
@@ -269,8 +267,9 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehou
 {
     "executionData": {
         "tableName": "{table_name}",
+        "schemaName": "{schema_name}",
         "optimizeSettings": {
-            "vOrder": true,
+            "vOrder": "true",
             "zOrderBy": [
                 "tipAmount"
             ]
@@ -286,6 +285,9 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehou
 The response header contains the URI to poll the status of the asynchronous operations. The URI is in the __Location__ variable of the response header.
 
 The Location variable contains an URI as following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b``. The guid ``f2d65699-dd22-4889-980c-15226deb0e1b`` is the operation ID to query the status of running table maintenance operations as described in the next section.
+
+> [!IMPORTANT]
+> Setting a shorter retention period impacts Delta's time travel capabilities. It's a general best practice to set a retention interval to at least seven days, because old snapshots and uncommitted files can still be in use by the concurrent table readers and writers. Cleaning up active files with the VACUUM command might lead to reader failures or even table corruption if the uncommitted files are removed. Table maintenance experiences in the user interface and in the Public APIs __will fail__ by default when intervals are less than 7 days. In order to __force__ lower retention intervals for the vacuum command, configure the ```spark.databricks.delta.retentionDurationCheck.enabled``` to ```false``` in the workspace. Table Maintenance jobs will then pick-up the configuration and allow the lower rentention during the job execution.
 
 ### Monitoring table maintenance operations
 

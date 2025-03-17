@@ -5,8 +5,6 @@ author: kromerm
 ms.author: makromer
 ms.topic: concept-article
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.date: 09/16/2024
 ---
 

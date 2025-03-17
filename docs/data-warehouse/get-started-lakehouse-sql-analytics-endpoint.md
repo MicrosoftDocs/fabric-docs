@@ -7,15 +7,13 @@ ms.reviewer: cynotebo
 ms.date: 12/19/2024
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # Better together: the lakehouse and warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-This article explains the data warehousing workload with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing. For a decision guide on choosing to develop warehouse data, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md).
+This article explains the data warehousing workload with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing. For a decision guide on choosing to develop warehouse data, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md).
 
 ## What is a Lakehouse SQL analytics endpoint?
 
@@ -139,7 +137,7 @@ A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analyt
 ## Related content
 
 - [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
-- [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md)
+- [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md)
 - [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md)
 - [Default Power BI semantic models](semantic-models.md)
 - [Load data into the lakehouse](../data-engineering/load-data-lakehouse.md)

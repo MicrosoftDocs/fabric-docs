@@ -25,15 +25,15 @@ To collect diagnostic logs and metrics, you can use an existing Azure Storage ac
 #### Option 1: Configure with Azure Storage URI and Access key   
 
 1. Create a Fabric Environment Artifact in Fabric
-2. Add the following **Spark properties** with the appropriate values to the environment artifact, or select **Add from .yml** in the ribbon to download the [sample yaml file](https://sparklighter.blob.core.windows.net/package/FabricSparkMonitorConfiguration/azure_storage_spark_property_option_1.yml), which already containing the following properties.  
+2. Add the following **Spark properties** with the appropriate values to the environment artifact, or select **Add from .yml** in the ribbon to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/azure_storage_spark_property_option_1.yml), which already containing the following properties.  
 
    ```properties
    spark.synapse.diagnostic.emitters: MyStorageBlob
    spark.synapse.diagnostic.emitter.MyStorageBlob.type: "AzureStorage"
    spark.synapse.diagnostic.emitter.MyStorageBlob.categories: "DriverLog,ExecutorLog,EventLog,Metrics"
    spark.synapse.diagnostic.emitter.MyStorageBlob.uri:  "https://<my-blob-storage>.blob.core.windows.net/<container-name>/<folder-name>"
-   spark.synapse.diagnostic.emitter.MyDestination1.auth: "AccessKey"
-   spark.synapse.diagnostic.emitter.MyDestination1.secret: <storage-access-key>
+   spark.synapse.diagnostic.emitter.MyStorageBlob.auth: "AccessKey"
+   spark.synapse.diagnostic.emitter.MyStorageBlob.secret: <storage-access-key>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
@@ -43,9 +43,6 @@ To collect diagnostic logs and metrics, you can use an existing Azure Storage ac
 
 > [!NOTE]
 >
-> **Known issue**: Unable to start a session using Option 2 provisionally.
-> Currently, storing secrets in Key Vault prevents Spark sessions from starting. Please prioritize configuring it using the method outlined in Option 1.
-> 
 > Ensure that users who submit Apache Spark applications are granted read secret permissions. For more information, see [Provide access to Key Vault keys, certificates, and secrets with an Azure role-based access control](/azure/key-vault/general/rbac-guide).
 
 To configure Azure Key Vault for storing the workspace key:
@@ -57,7 +54,7 @@ To configure Azure Key Vault for storing the workspace key:
    - **Value**: Enter the `<storage-access-key>` for the secret.
    - Leave the other values to their defaults. Then select **Create**.
 4. Create a Fabric Environment Artifact in Fabric.
-5. Add the following **Spark properties**. Or select **Add from .yml** on the ribbon to upload the [sample yaml file](https://sparklighter.blob.core.windows.net/package/FabricSparkMonitorConfiguration/azure_storage_spark_property_option_2.yml) which includes following Spark properties.
+5. Add the following **Spark properties**. Or select **Add from .yml** on the ribbon to upload the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/azure_storage_spark_property_option_2.yml) which includes following Spark properties.
 
    ```properties
    spark.synapse.diagnostic.emitters: <MyStorageBlob>
@@ -65,16 +62,22 @@ To configure Azure Key Vault for storing the workspace key:
    spark.synapse.diagnostic.emitter.MyStorageBlob.categories: "DriverLog,ExecutorLog,EventLog,Metrics"
    spark.synapse.diagnostic.emitter.MyStorageBlob.uri:  "https://<my-blob-storage>.blob.core.windows.net/<container-name>/<folder-name>"
    spark.synapse.diagnostic.emitter.MyStorageBlob.auth: "AccessKey"
-   spark.synapse.diagnostic.emitter.MyStorageBlob.secret.keyVault: <AZURE_KEY_VAULT_NAME>
+   spark.synapse.diagnostic.emitter.MyStorageBlob.secret.keyVault: <AZURE_KEY_VAULT_URI>
    spark.synapse.diagnostic.emitter.MyStorageBlob.secret.keyVault.secretName: <AZURE_KEY_VAULT_SECRET_KEY_NAME>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
-   Fill in the following parameters in the configuration file: `<my-blob-storage>`, `<container-name>`, `<folder-name>`,  `<AZURE_KEY_VAULT_NAME>`, `<AZURE_KEY_VAULT_SECRET_KEY_NAME>`. For more details on these parameters, see [Azure Storage configurations](#available-configurations).
+   Fill in the following parameters in the configuration file: `<my-blob-storage>`, `<container-name>`, `<folder-name>`,  `<AZURE_KEY_VAULT_URI>`, `<AZURE_KEY_VAULT_SECRET_KEY_NAME>`. For more details on these parameters, see [Azure Storage configurations](#available-configurations).
 
 6. Save and publish changes.
 
 ### Step 3: Attach the environment artifact to notebooks or spark job definitions, or set it as the workspace default
+
+   > [!NOTE]
+   >
+   > Only workspace admins can designate an environment as the default for a workspace.
+   >
+   > Once set, it becomes the default environment for all notebooks and Spark job definitions within the workspace. For more details, see [Fabric Workspace Settings](../fundamentals/workspaces.md).
 
 **To attach the environment to Notebooks or Spark job definitions**:
 
@@ -87,10 +90,6 @@ To configure Azure Key Vault for storing the workspace key:
 1. Navigate to Workspace Settings in Fabric.
 2. Find the **Spark settings** in your Workspace settings **(Workspace setting -> Data Engineering/Science -> Spark settings)**.
 3. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and click **Save**.
-
-> [!NOTE]
->
-> Only workspace admins can manage workspace configurations. Changes made here will apply to all notebooks and Spark job definitions attached to the workspace settings. For more information, see [Fabric Workspace Settings](../get-started/workspaces.md).
 
 ### Step 4: View the logs files in Azure storage account
 
@@ -106,12 +105,12 @@ After submitting a job to the configured Spark session, you can view the logs an
 | `spark.synapse.diagnostic.emitter.<destination>.auth`                       | Required. `AccessKey` for using storage account [access key](/azure/storage/common/storage-account-keys-manage) authorization. `SAS` for [shared access signatures](/azure/storage/common/storage-sas-overview) authorization. |
 | `spark.synapse.diagnostic.emitter.<destination>.uri`                        | Required. The destination blob container folder uri. Should match pattern `https://<my-blob-storage>.blob.core.windows.net/<container-name>/<folder-name>`. |
 | `spark.synapse.diagnostic.emitter.<destination>.secret`                     | Optional. The secret (AccessKey or SAS) content. |
-| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secret` isn't specified. The [Azure Key vault](/azure/key-vault/general/overview) name where the secret (AccessKey or SAS) is stored. |
+| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secret` isn't specified. The [Azure Key vault](/azure/key-vault/general/overview) uri where the secret (AccessKey or SAS) is stored. |
 | `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault.secretName` | Required if `.secret.keyVault` is specified. The Azure Key vault secret name where the secret (AccessKey or SAS) is stored. |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.eventName.match`     | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerApplicationStart,SparkListenerApplicationEnd` |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match`    | Optional. The comma-separated Log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger` |
 | `spark.synapse.diagnostic.emitter.<destination>.filter.metricName.match`    | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used` |
-| `spark.fabric.pools.skipStarterPools`    | Required. This Spark property is used to force an on-demand Spark session. You should set the value to `True` when using the default pool in order to trigger the libraries to emit logs and metrics.  |
+| `spark.fabric.pools.skipStarterPools`    | Required. This Spark property is used to force an on-demand Spark session. You should set the value to `true` when using the default pool in order to trigger the libraries to emit logs and metrics.  |
 
 ## Log data sample 
 
@@ -119,12 +118,13 @@ Here's a sample log record in JSON format:
 
 ```json
 {
-  "timestamp": "2024-09-06T03:09:37.235Z",
+  "timestamp": "2025-02-28T09:13:57.978Z",
   "category": "Log|EventLog|Metrics",
   "fabricLivyId": "<fabric-livy-id>",
   "applicationId": "<application-id>",
   "applicationName": "<application-name>",
   "executorId": "<driver-or-executor-id>",
+  "userId": "<the-submitter-user-id>",
   "fabricTenantId": "<my-fabric-tenant-id>",
   "capacityId": "<my-fabric-capacity-id>",
   "artifactType": "SynapseNotebook|SparkJobDefinition",
@@ -136,12 +136,12 @@ Here's a sample log record in JSON format:
   "isHighConcurrencyEnabled": "true|false",
   "properties": {
     // The message properties of logs, events and metrics.
-    "timestamp": "2024-09-06T03:09:37.235Z",
-    "message": "Initialized BlockManager: BlockManagerId(1, vm-04b22223, 34319, None)",
-    "logger_name": "org.apache.spark.storage.BlockManager",
+    "timestamp": "2025-02-28T09:13:57.941Z",
+    "message": "ApplicationAttemptId: appattempt_1740734011890_0001_000001",
+    "logger_name": "org.apache.spark.deploy.yarn.ApplicationMaster",
     "level": "INFO",
-    "thread_name": "dispatcher-Executor"
-    //...
+    "thread_name": "main"
+    // ...
   }
 }
 ```

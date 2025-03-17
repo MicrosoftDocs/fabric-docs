@@ -27,9 +27,8 @@ This article describes how to use the Copy job in Data Factory for Microsoft Fab
 
 Complete the following steps to create a new Copy job:
 
-1. [Create a new workspace](../get-started/create-workspaces.md) or use an existing workspace.
-1. Go to the Data Factory home page in Fabric.
-1. Select the **Copy job (preview)** icon to create a new Copy job.
+1. [Create a new workspace](../fundamentals/create-workspaces.md) or use an existing workspace.
+1. Select **+ New Item**, and then choose the **Copy job (preview)** icon to create a new Copy job.
 
    :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new Copy job (preview).":::
 
@@ -73,9 +72,9 @@ Complete the following steps to create a new Copy job:
 ## Known limitations
 
 - Monitor button isn't available yet to see the aggregated read/written row counts per table and database in Copy job life-cycle.
-- Configure Copy button isn't available yet for advanced settings including incremental copy without full load, override or upsert data in destination.
-- Incremental copy mode can't work with Fabric Lakehouse as source.
+- Incremental copy mode can't work with some data stores including Fabric Lakehouse as source yet. These will come soon.
 - Row deletion can't be captured from source store.
+- When copying files to storage locations, empty files will be created at the destination if no data is loaded from the source.
 
 ## Related content
 

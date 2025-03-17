@@ -5,8 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
-ms.date: 11/19/2024
+ms.date: 01/06/2024
 #customer intent: As a Fabric administrator, data creator, or data consumer, I want to learn about sharing data stored in OneLake from one tenant to another, so that data doesn't have to be copied when it is shared.
 ---
 
@@ -33,7 +32,7 @@ External data share links don't work for users who are in the tenant where the e
 
 The Fabric item types that can be used in external data sharing are listed below.
 
-* **Creating an external data share (provider tenant)**: External data shares can be created only for data residing in tables or files in lakehouses and mirrored databases.
+* **Creating an external data share (provider tenant)**: External data shares can be created for tables or files in lakehouses and warehouses, and in KQL, SQL, and mirrored databases.
 
 * **Accepting an external data share (consuming tenant)**: Only lakehouses can be chosen as the location of the external data share shortcut when accepting an external data share.
 
@@ -49,7 +48,7 @@ Data is shared across tenants using Fabric-internal security mechanisms. The sha
 
 With this understanding in mind, be aware of the following:
 
-* The sharer can't control who has access to the data in the consumer's tenant.
+* The sharer can't control who has access to the data in the consumer's tenant. For more information about how access control applied in the consumer tenant is enforced, see [Information protection in Microsoft Fabric and Power BI: Access control](/fabric/governance/information-protection#access-control).
 
 * The consumer can grant access to the data to anyone, even guest users from outside the consumer's organization.
 
@@ -58,10 +57,6 @@ With this understanding in mind, be aware of the following:
 ## Considerations and limitations
 
 * **Shortcuts:** Shortcuts contained in folders that are shared via external data sharing won't resolve in the consumer tenant.
-
-* **Sharing schemas**: Sharing an entire schema doesn't work: Lakehouse supports database schemas, but if you share one, it won't work.
-
-* **External data shares in non-home regions**: External data shares can only be accepted in a capacity that is located in the same region as the tenant. For example, if a tenant is in East US and has two capacities, one in East US and one in West US, users won't be able to accept shares in Lakehouses that use the West US capacity.
 
 ## Related content
 

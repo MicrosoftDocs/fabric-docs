@@ -6,8 +6,6 @@ ms.author: lle
 author: lrtoyou1223
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 08/25/2024
 ms.search.form: Pipeline tutorials
 ---
@@ -22,7 +20,7 @@ To get started, you must complete the following prerequisites:
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
 
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
 - Enable the preview on your Microsoft Fabric tenant from the Fabric admin portal. Enable the Azure Data Factory preview using admin portal or reach out to your Fabric admin.
 

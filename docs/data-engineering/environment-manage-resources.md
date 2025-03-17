@@ -5,7 +5,7 @@ ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
 ms.date: 05/01/2024
-ms.search.for: Manage the resources in Fabric environment
+ms.search.form: Manage the resources in Fabric environment
 ---
 
 # Manage the resources in Fabric environment

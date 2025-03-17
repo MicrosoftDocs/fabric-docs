@@ -7,7 +7,6 @@ ms.reviewer: alsavelv
 reviewer: alsavelv
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 09/27/2023
 ---
 
@@ -30,7 +29,8 @@ In this tutorial, you learn how to:
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 * Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
 
-* Download the [_Customer Profitability Sample.pbix_](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets/Customer%20Profitability%20Sample.pbix) semantic model from the [fabric-samples GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets) and upload it to your workspace.
+* Download the [_Customer Profitability Sample.pbix_](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets/Customer%20Profitability%20Sample.pbix) semantic model from the [fabric-samples GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets).
+* In your workspace, select __Import__ > __Report or Paginated Report__ > __From this computer__ to upload the _Customer Profitability Sample.pbix_ file to your workspace.
 
 ### Follow along in the notebook
 
