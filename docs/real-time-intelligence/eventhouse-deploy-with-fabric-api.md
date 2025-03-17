@@ -1,5 +1,5 @@
 ---
-title: Deploy an Eventhouse using Fabric APIs
+title: Deploy an eventhouse using Fabric APIs
 description: Learn how to use Fabric APIs for Eventhouse and KQL Database to automate deployments, manage data efficiently, and enhance your development workflow.
 author: shsagir
 ms.author: shsagir
@@ -9,7 +9,7 @@ ms.date: 03/09/2025
 ms.custom:
 #customer intent: As a developer, I want to use the Eventhouse and KQL APIs so that I can automate deployments and manage data efficiently.
 ---
-# Deploy an Eventhouse using Fabric APIs
+# Deploy an eventhouse using Fabric APIs
 
 You can fully automate the deployment of your Eventhouses with KQL Databases using APIs. Fabric APIs allow you to create, update, and delete items within your workspace. You can manage your Eventhouses and Databases by performing actions such as creating tables and changing policies using one of the following methods:
 
@@ -21,7 +21,7 @@ In this article, you learn to:
 > [!div class="checklist"]
 >
 > * Set up your environment
-> * Create an Eventhouse
+> * Create an eventhouse
 > * Create a KQL database and schema
 > * Monitor the operation for completion
 
@@ -79,9 +79,9 @@ Setting up your environment:
     uuid = uuid.uuid4()
     ```
 
-## Create an Eventhouse
+## Create an eventhouse
 
-1. Add a variable for the Eventhouse name.
+1. Add a variable for the eventhouse name.
 
     ```python
     eventhouse_name = f"{'SampleEventhouse'}_{uuid}"
@@ -139,16 +139,16 @@ Create the base64 string for the database schema. The database schema script con
 
 Create a base64 string for the database schema:
 
-    ```python
-    database_schema=""".create-merge table T(a:string, b:string)
-    .alter table T policy retention @'{"SoftDeletePeriod":"10.00:00:00","Recoverability":"Enabled"}'
-    .alter table T policy caching hot = 3d
-    """
+```python
+database_schema=""".create-merge table T(a:string, b:string)
+.alter table T policy retention @'{"SoftDeletePeriod":"10.00:00:00","Recoverability":"Enabled"}'
+.alter table T policy caching hot = 3d
+"""
 
-    database_schema_string = database_schema.encode('utf-8')
-    database_schema_bytes = base64.b64encode(database_schema_string)
-    database_schema_string = database_schema_bytes.decode('utf-8')
-    ```
+database_schema_string = database_schema.encode('utf-8')
+database_schema_bytes = base64.b64encode(database_schema_string)
+database_schema_string = database_schema_bytes.decode('utf-8')
+```
 
 ### Run the database creation API
 
@@ -211,7 +211,7 @@ else:
 
 ### [Kusto API](#tab/kusto-api)
 
-Create a KQL database and schema in the Eventhouse you created earlier.
+Create a KQL database and schema in the eventhouse you created earlier.
 
 ### Create a KQL database
 
@@ -223,7 +223,7 @@ Create a KQL database and schema in the Eventhouse you created earlier.
     database_storage = "30d"
     ```
 
-1. Use the Fabric [Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) to add a new database to this Eventhouse.
+1. Use the Fabric [Create KQL Database API](/rest/api/fabric/kqldatabase/items/create-kql-database) to add a new database to this eventhouse.
 
     ```python
     url = f"v1/workspaces/{workspace_id}/kqlDatabases"
@@ -241,7 +241,7 @@ Create a KQL database and schema in the Eventhouse you created earlier.
 
 ### Create a table
 
-1. Use the [Fabric Get Eventhouse API](/rest/api/fabric/eventhouse/items/get-eventhouse) to get the Query URI for your Eventhouse:
+1. Use the [Fabric Get Eventhouse API](/rest/api/fabric/eventhouse/items/get-eventhouse) to get the Query URI for your eventhouse:
 
     ```python
     url = f"v1/workspaces/{workspace_id}/eventhouses/{eventhouseId}"
