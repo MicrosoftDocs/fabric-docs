@@ -139,16 +139,16 @@ Create the base64 string for the database schema. The database schema script con
 
 Create a base64 string for the database schema:
 
-    ```python
-    database_schema=""".create-merge table T(a:string, b:string)
-    .alter table T policy retention @'{"SoftDeletePeriod":"10.00:00:00","Recoverability":"Enabled"}'
-    .alter table T policy caching hot = 3d
-    """
+```python
+database_schema=""".create-merge table T(a:string, b:string)
+.alter table T policy retention @'{"SoftDeletePeriod":"10.00:00:00","Recoverability":"Enabled"}'
+.alter table T policy caching hot = 3d
+"""
 
-    database_schema_string = database_schema.encode('utf-8')
-    database_schema_bytes = base64.b64encode(database_schema_string)
-    database_schema_string = database_schema_bytes.decode('utf-8')
-    ```
+database_schema_string = database_schema.encode('utf-8')
+database_schema_bytes = base64.b64encode(database_schema_string)
+database_schema_string = database_schema_bytes.decode('utf-8')
+```
 
 ### Run the database creation API
 
