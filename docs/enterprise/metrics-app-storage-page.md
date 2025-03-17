@@ -78,7 +78,7 @@ User can export the report's data by selecting Export Data. Selecting Export Dat
 
 ## Considerations and limitations
 
-* [OneLake soft delete](../onelake/onelake-disaster-recovery.md#soft-delete-for-onelake-files) storage is charged at the same rate as regular storage. For more information about OneLake soft delete, see [OneLake Storage](../onelake/onelake-capacity-consumption.md#onelake-storage).
+[OneLake soft delete](../onelake/onelake-disaster-recovery.md#soft-delete-for-onelake-files) storage is charged at the same rate as regular storage. For more information about OneLake soft delete, see [OneLake Storage](../onelake/onelake-capacity-consumption.md#onelake-storage).
 
 ## Related content
 
