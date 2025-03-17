@@ -79,7 +79,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
 1. From the **Eventhouse** explorer, select **System overview**.
 
-    :::image type="content" source="media/eventhouse/fabcon-figma.png" alt-text="Screenshot of the system overview page in Real-Time Intelligence." lightbox="media/eventhouse/fabcon-figma.png":::
+    :::image type="content" source="media/eventhouse/system-overview.png" alt-text="Screenshot of the system overview page in Real-Time Intelligence." lightbox="media/eventhouse/system-overview.png":::
 
     The system overview page displays the following information:
 
@@ -114,13 +114,13 @@ The system overview page provides a snapshot of the current state of the eventho
 
     * **Ingested Rows**: Shows the number of ingested rows and the number of databases along a time line. The information can help you understand the efficiency with which data is being ingested into the eventhouse.
 
-    * **Top 5 users activity in minutes**: Shows the total compute minutes of the most active users. The information can help you understand the efficiency with which users are utilizing compute units.
+    * **Activity in minutes - top 5 users**: Shows the total compute minutes of the most active users. The information can help you understand the efficiency with which users are utilizing compute units.
 
-    * **Top queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, the duration, and the cache misses per database. The information can assist you in obtaining a comprehensive overview of the efficiency with which databases are utilizing compute units.
+    * **Top 10 queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, the duration, and the cache misses per database. The information can assist you in obtaining a comprehensive overview of the efficiency with which databases are utilizing compute units.
 
-    * **Top ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows.
+    * **Top 10 ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows.
 
-    * **What's new**: Highlights database owners and recent eventhouse events, such as the following operations:
+    * **What's new - Last 7 days**: Highlights database owners and recent eventhouse events, such as the following operations:
 
         * Create or delete a database
         * Create, alter, or delete a table
