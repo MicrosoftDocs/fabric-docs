@@ -6,9 +6,6 @@ summary: Learn about Activator, and how to create events and triggers for your d
 metadata:
   title: Activator documentation
   description: Browse the Activator documentation.
-  ms.service: fabric  #Required; use either service or product per approved list.
-  ms.subservice: real-time-intelligence
-  ms.custom:
   ms.topic: landing-page
   author: spelluru
   ms.author: spelluru
