@@ -225,7 +225,7 @@ df = conn.query("SELECT * FROM sys.schemas;")
 ```
 
 > [!NOTE]
-> The Data utilities in NotebookUtils is only available on Python notebook for now.
+> The Data utilities in NotebookUtils are only available on Python notebook for now.
 
 ## Browse code snippets
 
