@@ -10,9 +10,9 @@ ms.date: 03/17/2025
 
 # Fabric command line interface
 
-Microsoft Fabric has a command line interface (CLI) that you can use for a range of Fabric tasks. This article shows how to get the CLI and use it to log into Fabric. The article also lists some of the commands you can use, and 
+Microsoft Fabric has a command line interface (CLI) that you can use for a range of Fabric tasks. This article shows how to get the CLI and use it to log into Fabric.
 
-Any Fabric user can use the CLI and it's especially useful for admins and developers who are comfortable working in a command line interface.
+Any Fabric user can use the CLI. The CLI is useful for admins and developers who are comfortable working in a command line interface. You can also use the CLI as a [service principal](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) for automation tasks.
 
 ## Prerequisites
 
