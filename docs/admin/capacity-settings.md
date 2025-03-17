@@ -4,7 +4,7 @@ description: Learn how to manage your Microsoft Fabric capacity and understand t
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.date: 02/05/2025
+ms.date: 03/17/2025
 ---
 
 # Manage your Fabric capacity
@@ -201,7 +201,7 @@ You can't change a Fabric capacity's name.
 
 ### Add and remove admins
 
-To add and remove admins from your capacity, you need to be a capacity admin.
+To add and remove admins from your capacity, you need to be a capacity admin. Only users that belong to the tenant the capacity is part of, can be added as admins to the capacity.
 
 # [Power BI Premium](#tab/power-bi-premium)
 

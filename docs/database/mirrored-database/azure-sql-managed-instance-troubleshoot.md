@@ -4,7 +4,7 @@ description: Troubleshooting for mirrored databases from Azure SQL Managed Insta
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 11/19/2024
+ms.date: 03/14/2025
 ms.topic: troubleshooting
 ---
 # Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance (Preview)
@@ -13,12 +13,13 @@ This article covers troubleshooting steps troubleshooting for mirroring Azure SQ
 
 ## Changes to Fabric capacity or workspace
 
+Learn more from [Changes to Fabric capacity](troubleshooting.md#changes-to-fabric-capacity). 
+
+In addition, note the following for Azure SQL Managed Instance specifically:
+
 | Cause    | Result | Recommended resolution     |
 |:--|:--|:--|
-| Fabric capacity paused/deleted | Mirroring stops | 1. Resume or assign capacity from the Azure portal <br> 2. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**.<br> 3. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
-| Fabric capacity resumed | Mirroring isn't resumed | 1. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**. <br> 2. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
-| Workspace deleted | Mirroring stops automatically | 1. If mirroring is still active on the Azure SQL Managed Instance, execute the following stored procedure on your Azure SQL Managed Instance: `exec sp_change_feed_disable_db;`. |
-| Fabric trial capacity expired |  Mirroring stops automatically | See [Fabric trial capacity expires](../../fundamentals/fabric-trial.md#the-trial-expires). |
+| Workspace deleted | Mirroring stops automatically and disables the change feed in Azure SQL Managed Instance | In case the mirroring is still active on the Azure SQL Managed Instance, execute the following stored procedure on your Azure SQL Managed Instance: `exec sp_change_feed_disable_db;`. |
 
 ## T-SQL queries for troubleshooting
 
