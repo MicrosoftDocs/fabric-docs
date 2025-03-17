@@ -4,7 +4,7 @@ description: Learn about the open mirrored databases partner ecosystem in Micros
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur, ulrichchrist
-ms.date: 01/15/2025
+ms.date: 02/26/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -48,6 +48,12 @@ For the technical documentation of dab Nexus, see [Quickstart Guide Managed App 
 
 Simplement Roundhouse is an SAP-certified solution for data extraction from various SAP source systems. It supports near real-time data integration into Microsoft Fabric via open mirroring.
 For more information, see [Simplement integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/simplement-overview).
+
+## SNP
+
+SNP Glue is a data integration solution certified for various SAP source systems including SAP S/4HANA (on-premises and Private Cloud Edition). With release 2502, it supports open mirroring for near real-time data integration into Microsoft Fabric. For more information, see [SNP Glue release note](https://aka.ms/mirroring/snp-mirroring-doc).
+
+For more information on SNP Glue, see the [SNP Glue documentation](https://aka.ms/mirroring/snp-overview).
 
 ## Related content
 
