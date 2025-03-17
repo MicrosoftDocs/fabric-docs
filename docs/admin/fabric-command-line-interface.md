@@ -50,12 +50,12 @@ Once you're logged in, you'll be working in a Fabric CLI shell in the Command Pr
 To log out of Fabric, run the command:
 
 ```python
-auth 
+auth logout
 ```
 
 ## Commands
 
-To see a list of available commands, run the command `help`. For a full list of commands, see the Fabric SLI [cheatsheet](https://github.com/microsoft/fabric-cli/blob/main/docs/cheatsheet.md).
+To see a list of available commands, run the command `help`. For a full list of commands, see the Fabric CLI [cheatsheet](https://github.com/microsoft/fabric-cli/blob/main/docs/cheatsheet.md).
 
 To see the flags a command has, use the `--help` flag. For example, to see the flags for the `open` command, run the command `open --help`.
 
@@ -66,5 +66,4 @@ You can view examples for ways to use the Fabric CLI in the GitHub [examples](ht
 ## Related content
 
 * [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
-* [Microsoft Fabric Workload Development Kit](../workload-development-kit/development-kit-overview.md)
-* [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
+* [Microsoft Fabric REST API](https://learn.microsoft.com/en-us/rest/api/fabric/articles/)
