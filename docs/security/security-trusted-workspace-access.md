@@ -210,7 +210,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 
 ### Use semantic models to access data from a storage account with trusted access
 
-With the workspace identity configured in Fabric and trusted access enabled in your ADLS Gen2 storage account, you can import a Power BI report into a Fabric workspace and refresh the model. You can also combine this with workspace identity authentication. Users with Admin, Member, and Contributor workspace roles, can use semantic models to access data from storage accounts with trusted access.
+With the workspace identity configured in Fabric and trusted access enabled in your ADLS Gen2 storage account, you can import a Power BI report into a Fabric workspace and refresh the model. You can also combine this with workspace identity authentication. Users with Admin, Member, and Contributor workspace roles can use semantic models to access data from storage accounts with trusted access.
 
 ### Restrictions and Considerations
 
