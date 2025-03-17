@@ -68,17 +68,26 @@ You will also see a banner prompting these two buttons when there are pending ch
 > An environment accepts only one publish at a time. No further changes can be made to the libraries or the Spark compute section during an ongoing publish.
 > Publishing doesn't impact adding, deleting, or editing the files and folders in **Resources** section. The actions to manage resources are in real-time, publish doesn't block changes in resources section.
 
+## Share an existing environment
+
+Microsoft Fabric supports sharing an item with different level of permissions.
+
+:::image type="content" source="media\environment-introduction\environment-sharing.png" alt-text="Screenshot of showing how to share an environment." lightbox="media\environment-introduction\environment-sharing.png":::
+
+When you share an environment item, recipients automatically receive **Read permission**. With this permission, they can explore the environment’s configurations and attach it to notebooks or Spark jobs. For smooth code execution, ensure to grant read permissions for attached environments when sharing notebooks and Spark job definitions.
+
+Additionally, you can share the environment with **Share** and **Edit** permissions. Users with **Share permission** can continue sharing the environment with others. Meanwhile, recipients with **Edit permission** can update the environment’s content.
+
 ## Attach an environment
 
 Microsoft Fabric environment can be attached to your **Data Engineering/Science** workspaces or your notebooks and Spark job definitions.
 
 ### Attach an environment as workspace default
 
+> [!IMPORTANT]
+> Once an environment is selected as workspace default, only workspace admins can update the contents of the default environment.
+
 Find the **Environment** tab by selecting **Workspace settings** > **Data Engineering/Science** > **Spark settings**.
-
-#### New workspaces
-
-When you're working in a workspace that's either new or doesn't have the library and Spark settings set up, the following **Spark settings** screen appears.
 
 :::image type="content" source="media\environment-introduction\env-workspace-setting-default.png" alt-text="Screenshot of the Workspace settings Set default environment screen.":::
 
@@ -89,28 +98,16 @@ The **Set default environment** toggle can enhance the user experience. By defau
 
 :::image type="content" source="media\environment-introduction\env-workspace-toggle-on.png" alt-text="Screenshot of default environment selection.":::
 
-#### Workspaces with existing library or Spark properties
-
-The environment feature is a big upgrade to the **Data Engineering/Data Science** section in **Workspace settings**. As part of this upgrade, Fabric no longer supports library management and adding new Spark properties at the workspace level. You can migrate your existing libraries and Spark properties to an environment and attach it as the workspace default. For more information, see [Migrate workspace libraries and Spark properties to a default environment](environment-workspace-migration.md).
-
 ### Attach an environment to a notebook or a Spark job definition
 
-The **Environment** menu appears in both the notebook and Spark job definition Home tabs. Available environments are listed in the menu. If you select an environment, the Spark compute and libraries configured in it are effective after you start a Spark session.
+The **Environment**  is available in both the Notebook and Spark Job Definition Home tabs. Attaching to an environment enables Notebooks and Spark job definitions to access its libraries, compute configurations, and resources. The explorer will list all available environments, including those shared with you, from the current workspace, and from other workspaces you have access to.
 
-:::image type="content" source="media\environment-introduction\env-notebook-selection.png" alt-text="Screenshot showing where to attach an environment in a notebook." lightbox="media\environment-introduction\env-notebook-selection.png":::
+:::image type="content" source="media\environment-introduction\env-notebook-selection.gif" alt-text="Screenshot showing where to attach an environment in a notebook." lightbox="media\environment-introduction\env-notebook-selection.gif":::
 
 >[!NOTE]
-> If you switch to a different environment while in an active session, the newly selected environment will not take effect until the next session.
-
-## Share an existing environment
-
-Microsoft Fabric supports sharing an item with different level of permissions.
-
-:::image type="content" source="media\environment-introduction\environment-sharing.png" alt-text="Screenshot of showing how to share an environment." lightbox="media\environment-introduction\environment-sharing.png":::
-
-When you share an environment item, recipients automatically receive **Read permission**. With this permission, they can explore the environment’s configurations and attach it to notebooks or Spark jobs. For smooth code execution, ensure to grant read permissions for attached environments when sharing notebooks and Spark job definitions.
-
-Additionally, you can share the environment with **Share** and **Edit** permissions. Users with **Share permission** can continue sharing the environment with others. Meanwhile, recipients with **Edit permission** can update the environment’s content.
+> If you switch to a different environment during an active session, the newly selected environment will not take effect until the next session.
+> When you attach an environment from another workspace, both workspaces must have the **same capacity** and **network security settings**. Although you can select environments from workspaces with different capacities or network security settings, the session will fail to start.
+> When you attach an environment from another workspace, the compute configuration in that environment is ignored. Instead, the pool and compute configurations will default to the settings of your current workspace.
 
 ## Related content
 
