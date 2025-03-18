@@ -4,7 +4,7 @@ description: T-SQL surface area of the SQL analytics endpoint and warehouse in M
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, jovanpop
-ms.date: 03/07/2025
+ms.date: 03/12/2025
 ms.topic: conceptual
 ms.custom:
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
@@ -42,6 +42,7 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - `BULK LOAD`
 - `CREATE ROLE`
 - `CREATE USER`
+- `FOR JSON` must be the last operator in the query, and so is not allowed inside subqueries
 - IDENTITY Columns
 - Manually created multi-column stats
 - Materialized views
