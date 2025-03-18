@@ -14,8 +14,8 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 
 > [!IMPORTANT]
 >
-> - The roll-out of API changes starting on **April 4th, 2025**. The new release includes new APIs, API deprecations, and changes of API response/request contract. The table at following section summarize all API changes.
-> - The APIs that are about to be deprecated will continue the support until June 30th, 2025. The changes of response/request contract will be effective immediately once the the release lands.
+> - The new release includes new APIs, API deprecations, and changes of API response/request contract. The table at following section summarizes all API changes.
+> - The APIs that are about to be deprecated will continue the support until June 30, 2025. The changes of response/request contract will be effective immediately once the release lands.
 >
 
 ## Summary of environment APIs
@@ -35,7 +35,7 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 |Staging|List staging libraries|Get the full staging library list. This list includes the published and pending libraries.|**Response contract update**|
 |Staging|Import external libraries|Upload external libraries as an environment.yml file into environment. It overrides the list of existing external libraries in environment.|**New API**|
 |Staging|Export external libraries|Get the full external libraries as an environment.yml file.|**New API**|
-|Staging|Remove external library|Delete a external library from an environment. This API accepts one library at a time|**New API**|
+|Staging|Remove external library|Delete an external library from an environment. This API accepts one library at a time|**New API**|
 |Staging|Upload custom library|Upload a custom package in environment. This API allows one file upload at a time. The supported file formats are .jar, .py, .whl, and .tar.gz.|**New API**|
 |Staging|Delete custom library|Delete a custom package from the environment. Put the custom package full name with the extension in the API request to get it removed.|**New API**|
 |Staging|Upload staging libraries|Adding one custom library or one/multiple public library in the environment.|**To be Deprecated**|
@@ -164,7 +164,7 @@ Publish environment API will support long running operations starting from the r
 
 ### List staging/published libraries
 
-This two APIs can get the full list of staging/published libraries of the environment. The endpoints remain the same for sending requests, while the libraries will be returned with different structure.
+These two APIs can get the full list of staging/published libraries of the environment. The endpoints remain the same for sending requests, while the libraries will be returned with different structure.
 
 - Interfaces
 
@@ -244,7 +244,7 @@ This two APIs can get the full list of staging/published libraries of the enviro
 
 ### List staging/published Spark settings
 
-This two APIs can get the Spark compute configurations and properties of the environment. The endpoints remain the same for sending requests, while the configurations will be returned with different structure. The Spark properties will be changed to a list.
+These two APIs can get the Spark compute configurations and properties of the environment. The endpoints remain the same for sending requests, while the configurations will be returned with different structure. The Spark properties will be changed to a list.
 
 - Interfaces
 
@@ -434,7 +434,7 @@ This API is for updating the Spark compute and properties of an Environment, the
 
 > [!IMPORTANT]
 >
-> The new APIs and contract changes are not included in this section.
+> The new APIs and contract changes aren't included in this section.
 >
 
 This section demonstrates how to use the currently available APIs to achieve specific goals. You can replace the `{WORKSPACE_ID}` and `{ARTIFACT_ID}` in the following examples with appropriate values.
@@ -496,8 +496,8 @@ The API for uploading staging library accepts one file at a time. The supported 
 
 > [!NOTE]
 >
-> - In order to manipulate the public library more efficiently, it's highly recommend to compose all expected libraries from PyPI and conda in an ***environment.yml*** file.
-> - The uploading API allows up to 200 MB file in one request, library that exceeds this size limit is currently not supported in public API.
+> - In order to manipulate the public library more efficiently, it's highly recommended composing all expected libraries from PyPI and conda in an ***environment.yml*** file.
+> - The uploading API allows up to 200-MB file in one request, library that exceeds this size limit is currently not supported in public API.
 
 - Sample requests
 
@@ -511,7 +511,7 @@ By specifying the full library file name with the type suffix, you can delete on
 
 > [!NOTE]
 >
-> - If you specify `environment.yml` as the file to be deleted, you are removing all public libraries.
+> - If you specify `environment.yml` as the file to be deleted, you're removing all public libraries.
 > - If you want to remove a subset of existing public library, please use the [upload library](environment-public-api.md#uploading-the-libraries) instead and upload an *environment.yml* that contains only the expected libraries. The uploaded *environment.yml* replaces the existing public library section entirely.
 
 - Sample requests
@@ -606,7 +606,7 @@ The environment can accept one publish at a time. Before publishing your environ
     GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/
     ```
 
-    In the response body, you can tell clearly the state of the environment. Make sure there is no ongoing publish before you move to next step.
+    In the response body, you can tell clearly the state of the environment. Make sure there's no ongoing publish before you move to next step.
 
 - **Step 2: get the staging libraries/Spark compute to have a final review**
 
