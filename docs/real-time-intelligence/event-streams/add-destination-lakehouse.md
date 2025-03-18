@@ -24,6 +24,10 @@ This article shows you how to add a lakehouse as a destination to an eventstream
 > When output is written to a new delta table, the table schema is created based on the first record. All records of the output data are projected onto the schema of the existing table.
 > 
 > If the incoming data has columns that aren't in the existing table schema, the extra columns aren't included in the data written to the table. Likewise, if the incoming data is missing columns that are in the existing table schema, the missing columns write to the table with the values set to null.
+>
+>If there's no intersection between the schema of the delta table and the schema of a record, it's considered an instance of schema conversion failure. It isn't the only case that's considered schema conversion failure.
+>
+> With this in mind, if the schema of the incoming data is changing, there might be some data loss in certain columns or the entire record. 
 
 
 ::: zone pivot="enhanced-capabilities"  
