@@ -97,7 +97,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
     * **Eventhouse storage**: Shows the storage capacity and cache misses of the eventhouse. The storage capacity is divided into categories:
         * **Original size**: The uncompressed original data size of the eventhouse.
-        * **Compressed size**: The compressed size of the eventhouse, giving you a snapshot of the data footprint.
+        * **Compressed size**: The compressed data size of the eventhouse
         * **Premium**: The total high-performance storage tier utilized by the Eventhouse and accessed for real-time processing and analysis. For more information, review your [caching policy](data-policies.md#caching-policy).
         <!--  * **Cache misses**
             * **Cache misses**: The current percentage of cache misses from the last hour.
