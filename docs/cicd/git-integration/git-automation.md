@@ -320,7 +320,7 @@ For the complete script, see [Poll a long running operation](https://github.com/
 
 To create a connection to Git, you need a connection ID.
 
-* If you're [creating a new connection](#create-a-new-connection), the ID is provided in the API response.
+* When you [creating a new connection](#create-a-new-github-source-control-connection), the ID is provided in the API response.
 * If you want to join an existing connection, provide the connection ID of that connection. [Get a list of existing connections](#get-a-list-of-existing-connections).
 
 ### Create a new GitHub source control connection
