@@ -46,7 +46,7 @@ The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve 
 
 * [**Get connection**](/rest/api/fabric/core/git/get-connection) details for the specified workspace.
 
-* [**Store Git credentials** in Fabric](#get-or-create-git-provider-credentials-connection)
+* [**Get or create Git provider credentials connection**](#get-or-create-git-provider-credentials-connection).
 
 * [**Update my Git credentials**](/rest/api/fabric/core/git/update-my-git-credentials) to update your Git credentials configuration details.
 
@@ -91,16 +91,16 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
          $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
 
          # Convert secure string to plain test
-	       $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
+         $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
          try {
              $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
          } finally {
              [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
         }
 
-	      $global:fabricHeaders = @{
+       $global:fabricHeaders = @{
           'Content-Type' = "application/json"
-         'Authorization' = "Bearer {0}" -f $fabricToken
+          'Authorization' = "Bearer {0}" -f $fabricToken
       }
     }
      ```
@@ -109,12 +109,6 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
      ```powershell
 
-    $workspaceName = "<WORKSPACE NAME>"
-    $getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
-
-    # Find the workspace by display name
-    $workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
- 
     $global:resourceUrl = "https://api.fabric.microsoft.com"
     $global:fabricHeaders = @{}
  
@@ -141,7 +135,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
           [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
        }
 
-    	 $global:fabricHeaders = @{
+      $global:fabricHeaders = @{
           'Content-Type' = "application/json"
           'Authorization' = "Bearer {0}" -f $fabricToken
        }
@@ -157,7 +151,8 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     ```powershell
 
     $workspaceName = "<WORKSPACE NAME>"
-    $getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
+    $getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl 
+    $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
 
     # Find the workspace by display name
     $workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
@@ -178,13 +173,13 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     }
 
     $connectToGitBody = @{
-        gitProviderDetails =$azureDevOpsDetails
+        gitProviderDetails = $azureDevOpsDetails
     } | ConvertTo-Json
 
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
 
-    ### [GitHub (User or service prinicipal)](#tab/github)
+    ### [GitHub (User or service prinicipals)](#tab/github)
 
     ```powershell
 
@@ -310,17 +305,17 @@ For the complete script, see [Poll a long running operation](https://github.com/
 
 ### Create a new connection
 
-Use your Personal Access Token (PAT) to create a GitHub connection.
+Use your [Personal Access Token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to create a GitHub connection.
 
 #### Create a Git connection that is not scoped to a specific repo
 
-You can use your PAT to create a Git connection without specifying a repo. This allows you to connect to any repo you have access to.
+You can create a Git connection without specifying a repo. This allows you to connect to any repo you have access to.
 
 Call the [Create connection API](/rest/api/fabric/core/connections/create-connection) with the following request body:
 
+```http
 POST https://api.fabric.microsoft.com/v1/connections
 
-```http
 {
   "connectivityType": "ShareableCloud",
   "displayName": "<Enter your connection display Name>",
@@ -337,13 +332,13 @@ POST https://api.fabric.microsoft.com/v1/connections
 }
 ```
 
-#### Create a connection to a specific Git repo
+#### Create a connection to a specific repo
 
-To use your PAT to connect to a specific repo, call the [Create connection API](/rest/api/fabric/core/connections/create-connection) with the following request body:
-
-POST https://api.fabric.microsoft.com/v1/connections
+To create a connection to a specific repo, call the [Create connection API](/rest/api/fabric/core/connections/create-connection) with the following request body:
 
 ```http
+POST https://api.fabric.microsoft.com/v1/connections
+
 {
   "connectivityType": "ShareableCloud",
   "displayName": "<Enter your connection display Name>",
@@ -389,15 +384,21 @@ Here's a sample response with the connection Id:
 }
 ```
 
-### Connect to an existing Git connection
+### Get a list of existing connections
 
 Use the [List connections API](/rest/api/fabric/core/connections/list-connections) to get a list of existing connections.
 
+#### Sample request
+
+```http
 POST https://api.fabric.microsoft.com/v1/connections
+```
+
+#### Sample response
 
 You can then select the Id of the connection you want. Here's a sample response:
 
-```http
+```json
 {
 	"value": [
 		{
