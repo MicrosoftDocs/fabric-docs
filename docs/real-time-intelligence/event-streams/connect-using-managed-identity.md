@@ -4,7 +4,7 @@ description: Learn how to send data from Azure Logic Apps to Eventstream using M
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
-ms.topic: security
+ms.topic: how-to
 ms.custom:
 ms.date: 3/11/2025
 ms.search.form: Eventstreams authentication
@@ -17,7 +17,7 @@ Eventstream’s Custom Endpoint is a powerful feature that allows you to send an
 - **Microsoft Entra ID**: Simplifies access by tying user permissions directly to Fabric workspace access. It also supports Managed Identity authentication for Azure services like Logic Apps, eliminating the need for secret management and enhancing security.
 - **Shared access signature (SAS) Keys:** Enables quick integration by allowing you to copy Eventstream credentials directly into your application using the provided sample code.
 
-In this tutorial, you’ll learn how to enable identity in Azure Logic Apps, assign workspace permissions to the identity, and send data to Fabric Eventstream using Managed Identity authentication.
+In this tutorial, you learn how to enable identity in Azure Logic Apps, assign workspace permissions to the identity, and send data to Fabric Eventstream using Managed Identity authentication.
 
 ## Prerequisites
 
@@ -29,42 +29,42 @@ Before you start, you must complete the following prerequisites:
 
 ## Step 1: Enable Managed Identity in Azure Logic Apps
 
-1. Open your **Azure Logic App** in the Azure Portal.
+1. Open your **Azure Logic App** in the Azure portal.
 2. Under the **Identity** section, enable either:
-   - **System-assigned managed identity:** auto-created by Azure.
+   - **System-assigned managed identity:** autocreated by Azure.
    - **User-assigned managed identity:** can be shared across multiple resources and managed separately.
     :::image type="content" border="true" source="media\connect-using-managed-identity\enable-logic-app-identity.png" alt-text="Screenshot of enabling identity in Azure Logic app.":::
-3. Click Save to apply the changes.
+3. Select **Save** to apply the changes.
 
 ## Step 2: Assign Fabric Workspace Permissions
 
 1. Go to **Microsoft Fabric** and locate your Fabric Workspace.
-2. Open **Manage access**, select **Add people or groups**, search for the Logic App’s managed identity e.g., alex-logicapp2.
+2. Open **Manage access**, select **Add people or groups**, search for the Logic App’s managed identity for example, *alex-logicapp2*.
 3. Assign the **Contributor or** higher permission to the identity for the Eventstream access.
 
 :::image type="content" border="true" source="media\connect-using-managed-identity\assign-workspace-permission.png" alt-text="Screenshot of assigning workspace permission in Fabric.":::
 
-## Step 3: Copy Event Hub credentials in Eventstream
+## Step 3: Copy Event Hubs credentials in Eventstream
 
 1. Open your Eventstream in the workspace.
-2. Locate the Custom Endpoint node within Eventstream.
-3. Select Entra ID authentication, then copy the Event Hub credentials for later use.  
+2. Locate the **Custom Endpoint** node within Eventstream.
+3. Select **Entra ID authentication**, then copy the Event Hubs credentials for later use.  
 
 :::image type="content" border="true" source="media\connect-using-managed-identity\custom-endpoint-entra-id.png" alt-text="Screenshot of Entra ID authentication in Eventstream Custom Endpoint.":::
 
-## Step 4:  Add an Event Hub action in Logic Apps
+## Step 4:  Add an Event Hubs action in Logic Apps
 
-1. Open a workflow in **Azure Logic Apps** and add a HTTP trigger.
-2. Search for **Event Hub** action and select **Send event**.
-3. Create a new connection, select **Logic Apps Managed Identity** as the authentication type, and enter the Event Hub credentials you saved in the previous step.
+1. Open a workflow in **Azure Logic Apps** and add an HTTP trigger.
+2. Search for **Event Hubs** action and select **Send event**.
+3. Create a new connection, select **Logic Apps Managed Identity** as the authentication type, and enter the Event Hubs credentials you saved in the previous step.
     :::image type="content" border="true" source="media\connect-using-managed-identity\logic-app-authentication.png" alt-text="Screenshot of selecting Managed Identity authentication in Logic Apps.":::
-4. Select Save and Run the workflow.  
+4. Select **Save** and **Run** the workflow.  
 
 You’re all set! Go back to your Eventstream and select **Data Preview** to check for incoming data.
 
 :::image type="content" border="true" source="media\connect-using-managed-identity\data-preview.png" alt-text="Screenshot of data preview in Eventstream.":::
 
-By leveraging Managed Identity authentication, customers can securely connect Azure Logic Apps to Fabric Eventstream without worrying about secret or key management. This approach enhances security, simplifies permission management, and improves operational efficiency.
+With **Managed Identity** authentication, you can securely connect Azure Logic Apps to Fabric Eventstream without worrying about secret or key management. This approach enhances security, simplifies permission management, and improves operational efficiency.
 
 ## Related content
 
