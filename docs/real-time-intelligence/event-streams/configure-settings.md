@@ -94,7 +94,7 @@ The following table shows the throughput upper limit for different nodes.
 1. The source event sender, consumer, and Eventstream are in the same data center to ensure that network throughput is not a bottleneck.
 1. Events are in JSON format, each 1KB in size. Events are batched in groups of 100 before being sent or received.
 1. The source event data was sent using thousands of threads to continuously send data via EventHubProducerClient which should utilize the full bandwidth of the network throughput.
-1. The test setup followed a 'One Source → One Eventstream → One Destination' structure. No processing operators were applied before data routed the Lakehouse or Eventhouse (pre-ingestion processing) destinations.
+1. The test setup followed a 'One Source → One Eventstream → One Destination' structure. No processing operators were applied before data routed the Lakehouse or Eventhouse (in mode of pre-ingestion processing) destinations.
 
 
 
