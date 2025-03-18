@@ -1,5 +1,5 @@
 ---
-title: AI skill tenant setting (preview)
+title: AI skill tenant settings (preview)
 description: Learn how to configure AI skill tenant settings for Power BI Semantic Models.
 author: fbsolo-ms1
 ms.author: amjafari
@@ -8,7 +8,7 @@ reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "how-to".
-ms.date: 03/03/2025
+ms.date: 03/14/2025
 ms.collection: ce-skilling-ai-copilot
 
 ---
