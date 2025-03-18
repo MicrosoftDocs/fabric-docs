@@ -208,7 +208,7 @@ Writer version 2 is supported. You can find the corresponding supported Delta La
 
 - Write data to an existing delta lake table with `delta.columnMapping.mode` set to `name` or `id`.
 - Auto-create a table with `delta.columnMapping.mode` set to `name` when the destination table does not exist and the source columns include special characters and whitespaces.
-- Auto-create a table with `delta.columnMapping.mode` set to `name` when **Table action** is **Overwrite** and the source dataset columns include special characters and whitespaces.
+- Auto-create a table with `delta.columnMapping.mode` set to `name` when the table action is overwrite and the source dataset columns include special characters and whitespaces.
 
 ## Table summary
 
