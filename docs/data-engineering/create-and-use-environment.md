@@ -102,7 +102,7 @@ The **Set default environment** toggle can enhance the user experience. By defau
 
 The **Environment**  is available in both the Notebook and Spark Job Definition Home tabs. Attaching to an environment enables Notebooks and Spark job definitions to access its libraries, compute configurations, and resources. The explorer will list all available environments, including those shared with you, from the current workspace, and from other workspaces you have access to.
 
-:::image type="content" source="media\environment-introduction\env-notebook-selection.gif" alt-text="Screenshot showing where to attach an environment in a notebook." lightbox="media\environment-introduction\env-notebook-selection.gif":::
+:::image type="content" source="media\environment-introduction\env-notebook-selection.png" alt-text="Screenshot showing where to attach an environment in a notebook." lightbox="media\environment-introduction\env-notebook-selection.png":::
 
 >[!NOTE]
 > If you switch to a different environment during an active session, the newly selected environment will not take effect until the next session.
