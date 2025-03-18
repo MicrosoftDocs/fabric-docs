@@ -131,7 +131,19 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | **VNet Service endpoint** | Yes, see [virtual network service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Global peering** | Yes, using [Private IP and service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview) | Yes, using [Private links](../../security/security-private-links-overview.md)  |
+|**Connectivity Policy**|Yes, using [Redirect, Proxy & Default ](/azure/azure-sql/database/connectivity-architecture?view=azuresql)|No, Redirect is the only option available at this time.|
 
+## Note: To resolve on-premises gateway firewall is blocking the connection issues.
+
+
+- **Redirect:** Clients establish connections directly to the node hosting the database, leading to reduced latency and improved throughput. For connections to use this mode, clients need to:
+
+  - Allow outbound communication from the client to all Azure SQL IP addresses in the region on ports in the range of 11000 to 11999. Use the Service Tags for SQL to make this easier to manage. If you are using Private Link, see [Use Redirect connection policy with private endpoints](/azure/azure-sql/database/private-endpoint-overview?view=azuresql) for the port ranges to allow.
+  
+  - Allow outbound communication from the client to Azure SQL Database gateway IP addresses on port 1433.
+  
+  - When using the Redirect connection policy, refer to the [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) for a list of your region's IP addresses to allow.
+  
 ## Resource limits
 
 The following table compares the maximum resource limits available for Azure SQL Database and SQL database in Fabric:
