@@ -49,15 +49,15 @@ Select **Copy data assistant** on the canvas to open the **copy assistant** tool
 
 ### Step 3: Configure your destination
 
-1. Select the **Workspace** tab and choose **Lakehouse**.  Then select **Next**.
+1. Select **Lakehouse**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination.":::
 
-1. Select **Create new Lakehouse** and enter **LHDemo** for the name, then select **Next**.
+1. Enter **LHDemo** for the Lakehouse name, then select **Create and connect**.
 
-   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/create-new-lakehouse.png" alt-text="Screenshot showing the Create new lakehouse option with the name LHDemo specified for the new Lakehouse.":::
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/create-new-lakehouse.png" alt-text="Screenshot showing the specified name for the new Lakehouse.":::
 
-1. Configure and map your source data to the destination Lakehouse table by entering **Table name**, then select **Next** one more time.
+1. Configure and map your source data to the destination Lakehouse table. Select **Tables** for the **Root folder** and **Load to new table** for **Load settings**. Provide a **Table** name and select **Next**.
 
    :::image type="content" source="media/tutorial-load-data-lakehouse-transform/specify-table-name.png" alt-text="Screenshot showing the table name to create in the Lakehouse destination.":::
 
