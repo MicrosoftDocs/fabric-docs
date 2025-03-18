@@ -102,40 +102,39 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
           'Content-Type' = "application/json"
           'Authorization' = "Bearer {0}" -f $fabricToken
       }
-    }
+     }
      ```
 
    #### [Service principal (GitHub only)](#tab/service-principal)
 
      ```powershell
-
-    $global:resourceUrl = "https://api.fabric.microsoft.com"
-    $global:fabricHeaders = @{}
+     $global:resourceUrl = "https://api.fabric.microsoft.com"
+     $global:fabricHeaders = @{}
  
-    function SetFabricHeaders() {
+     function SetFabricHeaders() {
  
-       $clientId = "<CLIENT ID>"
-       $tenantId = "<TENANT ID>"
-       $secret = "<SECRET VALUE>"
+        $clientId = "<CLIENT ID>"
+        $tenantId = "<TENANT ID>"
+        $secret = "<SECRET VALUE>"
  
-       $secureSecret  = ConvertTo-SecureString -String $secret -AsPlainText -Force
-       $credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $clientId, $secureSecret
+        $secureSecret  = ConvertTo-SecureString -String $secret -AsPlainText -Force
+        $credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $clientId, $secureSecret
  
-       #Login to Azure using service principal
-       Connect-AzAccount -ServicePrincipal -TenantId $tenantId -Credential $credential | Out-Null
+        #Login to Azure using service principal
+        Connect-AzAccount -ServicePrincipal -TenantId $tenantId -Credential $credential | Out-Null
  
-       # Get authentication
-       $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
+        # Get authentication
+        $secureFabricToken = (Get-AzAccessToken -AsSecureString -ResourceUrl $global:resourceUrl).Token
    
-       # Convert secure string to plain text
-       $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
-       try {
-           $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
-       } finally {
-          [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
-       }
+        # Convert secure string to plain text
+        $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureFabricToken)
+        try {
+            $fabricToken = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)
+        } finally {
+           [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
+        }
 
-      $global:fabricHeaders = @{
+       $global:fabricHeaders = @{
           'Content-Type' = "application/json"
           'Authorization' = "Bearer {0}" -f $fabricToken
        }
@@ -149,7 +148,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     ### [Azure DevOps (User principal)](#tab/ADO)
 
     ```powershell
-
+    $global:baseUrl = "https://api.fabric.microsoft.com/v1"
     $workspaceName = "<WORKSPACE NAME>"
     $getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl 
     $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
@@ -182,6 +181,13 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     ### [GitHub (User or service prinicipals)](#tab/github)
 
     ```powershell
+    $global:baseUrl = "https://api.fabric.microsoft.com/v1"
+    $workspaceName = "<WORKSPACE NAME>"
+    $getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl 
+    $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
+
+    # Find the workspace by display name
+    $workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
 
     # Connect to Git
     Write-Host "Connecting the workspace '$workspaceName' to Git."
@@ -197,11 +203,20 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
         directoryName = "<DIRECTORY NAME>"
     }
 
+    $connectionName = "<CONNECTION Name>"
+
+    # Get connections 
+    $getConnectionsUrl = "$global:baseUrl/connections"
+    $connections = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getConnectionsUrl -Method GET).value
+
+    # Find the connection by name
+    $connection = $connections | Where-Object {$_.DisplayName -eq $connectionName}
+
     $connectToGitBody = @{
         gitProviderDetails = $gitHubDetails
         myGitCredentials = @{
             source = "ConfiguredConnection"
-            connectionId = "<CONNECTION ID>"
+            connectionId = $connection.id
         }
     } | ConvertTo-Json
 
