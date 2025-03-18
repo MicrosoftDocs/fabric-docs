@@ -119,7 +119,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
     * **Top 10 queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, the duration, and the cache misses rate per database. The information can assist you in obtaining a comprehensive overview of which databases are utilizing compute units.
 
-    * **Top 10 ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows.
+    * **Top 10 ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows. Currently only partial ingestion errors are reported. 
 
     * **What's new - Last 7 days**: Highlights database owners and recent eventhouse events, such as the following operations:
 
