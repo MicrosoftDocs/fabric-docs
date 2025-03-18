@@ -24,6 +24,10 @@ During preview, RLS isn't available in the following Fabric regions:
 * West US 3
 * South central US
 
+## Prerequisites
+
+* A Lakehouse in OneLake with OneLake data access roles turned on. For more information, see [Get started with OneLake data access roles](get-started-data-access-roles.md).
+
 ## Enforce row-level security
 
 OneLake security RLS gets enforced in one of two ways: 
@@ -47,15 +51,17 @@ RLS rules use SQL syntax to specify the rows that a user can see. This syntax ta
 
 Use the following steps to define RLS rules: 
 
-1. Open the manage roles UX from the item where you are defining security. 
+1. Navigate to your Lakehouse and select **Manage OneLake data access (preview)**.
 
-1. Select the role you want to define RLS for. 
+1. Select an existing role that you want to define table or folder security for, or select **New** to create a new role.
 
-1. Select more options (**...**) next to the table you want to define RLS for, then select **Row security**. 
+1. On the role details page, select more options (**...**) next to the table you want to define RLS for, then select **Row security (preview)**. 
+
+   :::image type="content" source="./media/row-level-security/select-row-security.png" alt-text="Screenshot that shows selecting 'row security' to edit permissions on a table.":::
 
 1. Type the SQL statement for defining which rows you want users to see in the code editor. Use the [Syntax rules](#syntax-rules) section for guidance. 
 
-1. Once you have entered the RLS expression, select **Save** in the ribbon.
+1. Select **Save** to confirm the row security rules.
 
 ## Syntax rules
 

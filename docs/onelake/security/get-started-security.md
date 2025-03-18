@@ -78,7 +78,7 @@ OneLake security allows users to define granular role-based security to data sto
 
 OneLake security replaces the existing OneLake data access roles (preview) feature that was released in April 2024.
 
-Fabric users in the Admin, Member, or Contributor roles can create OneLake security roles roles to grant users access to data within an item. Each role has four components:
+Fabric users in the Admin, Member, or Contributor roles can create OneLake security roles to grant users access to data within an item. Each role has four components:
 
 * **Data**: What tables or folders can users access.
 * **Permission**: What permission do users have on the data.
@@ -87,15 +87,17 @@ Fabric users in the Admin, Member, or Contributor roles can create OneLake secur
 
 Users that aren't part of a role can't see any data in that lakehouse.
 
-## OneLake Data access roles (preview)
+Learn more about creating OneLake security roles for [Tables and folders](./table-folder-security.md), [Columns](./column-level-security.md), and [Rows](./row-level-security.md).
+
+## OneLake data access roles (preview)
 
 OneLake data access roles is a new feature that enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, and assign them to users or groups. The access permissions determine what folders users see when accessing the lake view of the data through the lakehouse UX, notebooks, or OneLake APIs.  
 
 Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that are not part of a data access role will see no data in that lakehouse.
 
-Learn more about creating data access roles in [Get Started with Data Access Roles](./get-started-data-access-roles.md).
+Learn more about creating data access roles in [Get started with data access roles](./get-started-data-access-roles.md).
 
-Learn more about the security model for access roles [Data Access Control Model](./data-access-control-model.md).
+Learn more about the security model for access roles [Data access control model](./data-access-control-model.md).
 
 ## Shortcut security
 

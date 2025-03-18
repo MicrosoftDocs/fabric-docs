@@ -16,6 +16,10 @@ Column-level security (CLS) is a feature of OneLake security (preview) that allo
 
 [!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
 
+## Prerequisites
+
+* A Lakehouse in OneLake with OneLake data access roles turned on. For more information, see [Get started with OneLake data access roles](get-started-data-access-roles.md).
+
 ## Enforce column-level security
 
 OneLake security CLS gets enforced in one of two ways:
@@ -44,24 +48,24 @@ Users can define column-level security as part of a OneLake security role for an
 
 Use the following steps to define column-level security:
 
-1. Open the manage roles UX from the item where you are defining security. 
+1. Navigate to your Lakehouse and select **Manage OneLake data access (preview)**.
 
-1. Select the role that you want to define CLS for. 
+1. Select an existing role that you want to define table or folder security for, or select **New** to create a new role.
 
-1. Select more options (**...**) next to the table that you want to define CLS for, then select **Column security**. 
+1. On the role details page, select more options (**...**) next to the table you want to define CLS for, then select **Column security (preview)**. 
+
+   :::image type="content" source="./media/column-level-security/select-column-security.png" alt-text="Screenshot that shows selecting 'column security' to edit permissions on a table.":::
 
 1. By default, CLS for a table is disabled. Select **Enable CLS** or **New rule** to enable it. 
 
    The UI populates with a list of columns for that table that the users are allowed to see. This starts as all of the columns. 
 
-1. To restrict access to a column, select the checkbox next to the column name. At least one column must be left unchecked. 
-
-1. Select **Remove** to delete the rules for those columns. 
+1. To restrict access to a column, select the checkbox next to the column name, then select **Remove**. At least one column must remain in the list of allowed columns. 
 
 1. Select **Save** to update the role. 
 
-1. If you want to re-add a column, select **New rule**. This action adds a new CLS rule entry to the end of the list. You can then use the dropdown to choose the column you want to include in the access. 
+1. If you want to re-add a column, select **New rule**. This action adds a new CLS rule entry to the end of the list. Then, use the dropdown to choose the column you want to include in the access. 
 
-1. Once complete your changes, select **Save** to publish the role. 
+1. Once you complete your changes, select **Save**. 
 
 [!INCLUDE [onelake-rls-cls](../../includes/onelake-rls-cls.md)]
