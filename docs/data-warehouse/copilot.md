@@ -11,7 +11,7 @@ ms.collection:
 ms.custom:
   - copilot-learning-hub
 ---
-# Overview of Copilot for Data Warehouse
+# Overview of Copilot for Data Warehouse (Preview)
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
