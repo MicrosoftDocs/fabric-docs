@@ -318,38 +318,18 @@ For the complete script, see [Poll a long running operation](https://github.com/
 
 ## Get or create Git provider credentials connection
 
+To create a connection to Git, you need a connection Id.
+
+* If you're [creating a new connection](#create-a-new-connection), the Id is provided in the API response.
+* If you want to join an existing connection, provide the connection Id of that connection. [Get a list of existing connections](#get-a-list-of-existing-connections).
+
 ### Create a new connection
 
 Use your [Personal Access Token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to create a GitHub connection.
 
-#### Create a Git connection that is not scoped to a specific repo
+If you provide the name of a specific repo, you can connect only to that repo. If you don't provide the name of any repo, you get access to all repos you have permission for.
 
-You can create a Git connection without specifying a repo. This allows you to connect to any repo you have access to.
-
-Call the [Create connection API](/rest/api/fabric/core/connections/create-connection) with the following request body:
-
-```http
-POST https://api.fabric.microsoft.com/v1/connections
-
-{
-  "connectivityType": "ShareableCloud",
-  "displayName": "<Enter your connection display Name>",
-  "connectionDetails": {
-    "type": "GitHubSourceControl",
-    "creationMethod": "GitHubSourceControl.Contents"
-  },
-  "credentialDetails": {
-    "credentials": {
-      "credentialType": "Key",
-      "key": "<Enter your GitHub Personal Access Token>"
-    }
-  }
-}
-```
-
-#### Create a connection to a specific repo
-
-To create a connection to a specific repo, call the [Create connection API](/rest/api/fabric/core/connections/create-connection) with the following request body:
+To create a new GitHub connection, call the [Create connection API](/rest/api/fabric/core/connections/create-connection) with the following request body. The *parameters* section is optional and only needed if you want to connect to a specific repo.
 
 ```http
 POST https://api.fabric.microsoft.com/v1/connections
@@ -401,17 +381,15 @@ Here's a sample response with the connection Id:
 
 ### Get a list of existing connections
 
-Use the [List connections API](/rest/api/fabric/core/connections/list-connections) to get a list of existing connections.
+Use the [List connections API](/rest/api/fabric/core/connections/list-connections) to get a list of existing connections and their properties.
 
 #### Sample request
 
 ```http
-POST https://api.fabric.microsoft.com/v1/connections
+GET https://api.fabric.microsoft.com/v1/connections
 ```
 
 #### Sample response
-
-You can then select the Id of the connection you want. Here's a sample response:
 
 ```json
 {
@@ -453,6 +431,8 @@ You can then select the Id of the connection you want. Here's a sample response:
 	]
 }
 ```
+
+Copy the id of the connection you want and use it in the [Get connection API](/rest/api/fabric/core/connections/get-connection).
 
 ## Considerations and limitations
 
