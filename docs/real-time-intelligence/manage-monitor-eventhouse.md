@@ -112,7 +112,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
         In the case where 78 queries and 173 ingest operations run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units used is still only 5 minutes.
 
-    * **Ingested Rows**: Shows the number of ingested rows and the number of databases along a time line. The information can help you understand the efficiency with which data is being ingested into the eventhouse.
+    * **Ingested Rows**: Shows the number of ingested rows and the number of databases that the data was ingested to. The information can help you understand the amount of data that is ingested into the eventhouse over time. 
 
     * **Activity in minutes - top 5 users**: Shows the total compute minutes of the most active users. The information can help you understand the efficiency with which users are utilizing compute units.
 
