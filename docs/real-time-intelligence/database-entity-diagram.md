@@ -2,11 +2,9 @@
 title: View an entity diagram in KQL database (preview)
 description: Learn how to access an entity diagram in KQL database to view the relationship between items in Real-Time Intelligence.
 ms.reviewer: guregini
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
 ms.date: 11/04/2024
 ms.search.form: KQL Database
 #Customer intent: Learn how to use the entity diagram in KQL database to manage and optimize database relationships and dependencies.
