@@ -80,7 +80,7 @@ The following table shows the throughput upper limit for different nodes.
 |                            |              | Medium           | 150 MB/s             |
 |                            |              | High             | 200 MB/s             |
 | **Lakehouse**              | Destination  | Low              | 40 MB/s              |
-|                            |              | Medium           | 150 MB/s             |
+|                            |              | Medium           | 120 MB/s             |
 |                            |              | High             | 200 MB/s             |
 | **Eventhouse (Direct Ingestion)** | Destination | Low       | 10 MB/s              |
 |                            |              | Medium           | 50 MB/s              |
@@ -89,11 +89,11 @@ The following table shows the throughput upper limit for different nodes.
 |                            |              | Medium           | 100 MB/s             |
 |                            |              | High             | 200 MB/s             |
 
-**\*Note#1**: The above throughput limits were tested under these conditions:
+**\*Note**: The above throughput data was tested under these conditions:
 
-1. The source event sender and Eventstream are in the same data center.
+1. The source event sender, consumer, and Eventstream are in the same data center to ensure that network throughput is not a bottleneck.
 1. Events are in JSON format, each 1KB in size. Events are batched in groups of 100 before being sent or received.
-1. The source event data was sent using thousands of threads to continuously send data via EventHubProducerClient.
+1. The source event data was sent using thousands of threads to continuously send data via EventHubProducerClient which should utilize the full bandwidth of the network throughput.
 1. The test setup followed a 'One Source → One Eventstream → One Destination' structure. No processing operators were applied before data routed the Lakehouse or Eventhouse (pre-ingestion processing) destinations.
 
 
