@@ -103,7 +103,7 @@ Learn more about the security model for access roles [Data access control model]
 
 Shortcuts in Microsoft Fabric allow for simplified data management. OneLake folder security applies to OneLake shortcuts based on roles defined in the lakehouse where the data is stored.
 
-For more information on shortcut security considerations, see [OneLake access control model](./security/data-access-control-model.md).
+For more information on shortcut security considerations, see [OneLake access control model](./data-access-control-model.md).
 
 For information on access and authentication details for specific shortcuts, see [OneLake shortcuts > Types of shortcuts](../onelake-shortcuts.md#types-of-shortcuts).
 
