@@ -25,6 +25,7 @@ This article shows you how to add a lakehouse as a destination to an eventstream
 > 
 > If the incoming data has columns that aren't in the existing table schema, the extra columns aren't included in the data written to the table. Likewise, if the incoming data is missing columns that are in the existing table schema, the missing columns write to the table with the values set to null.
 
+
 ::: zone pivot="enhanced-capabilities"  
 
 
@@ -51,7 +52,7 @@ To add a lakehouse destination to a default or derived eventstream, follow these
    1. Select the **Workspace** that contains your lakehouse.
    1. Select an existing **Lakehouse** from the workspace you specified.
    1. Select an existing **Delta table**, or create a new one to receive data.
-   1. Select the **Input data format** that is sent to your lakehouse. The supported data formats are JSON, Avro, and CSV (with header).
+   1. Select the **Input data format** that is sent to your lakehouse. The supported data formats are JSON, Avro, and CSV.
 
    :::image type="content" border="true" source="media/add-destination-lakehouse/lakehouse-screen.png" alt-text="A screenshot of the top part of the Lakehouse configuration screen.":::
 
