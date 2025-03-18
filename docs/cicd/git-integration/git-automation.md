@@ -318,64 +318,66 @@ For the complete script, see [Poll a long running operation](https://github.com/
 
 ## Get or create Git provider credentials connection
 
-To create a connection to Git, you need a connection Id.
+To create a connection to Git, you need a connection ID.
 
-* If you're [creating a new connection](#create-a-new-connection), the Id is provided in the API response.
-* If you want to join an existing connection, provide the connection Id of that connection. [Get a list of existing connections](#get-a-list-of-existing-connections).
+* If you're [creating a new connection](#create-a-new-connection), the ID is provided in the API response.
+* If you want to join an existing connection, provide the connection ID of that connection. [Get a list of existing connections](#get-a-list-of-existing-connections).
 
-### Create a new connection
+### Create a new GitHub source control connection
 
 Use your [Personal Access Token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to create a GitHub connection.
 
-If you provide the name of a specific repo, you can connect only to that repo. If you don't provide the name of any repo, you get access to all repos you have permission for.
+If you provide the name of a specific repo, your connection is scoped to that repo. If you don't provide the name of any repo, you get access to all repos you have permission for.
 
-To create a new GitHub connection, call the [Create connection API](/rest/api/fabric/core/connections/create-connection) with the following request body. The *parameters* section is optional and only needed if you want to connect to a specific repo.
+To create a new GitHub connection, call the [Create connection API](/rest/api/fabric/core/connections/create-connection) with the following request body. The *parameters* section is optional and only needed if you want your connection scoped to a specific repo.
+
+**Sample request**
 
 ```http
 POST https://api.fabric.microsoft.com/v1/connections
 
-{
-  "connectivityType": "ShareableCloud",
-  "displayName": "<Enter your connection display Name>",
-  "connectionDetails": {
-    "type": "GitHubSourceControl",
-    "creationMethod": "GitHubSourceControl.Contents",
-    "parameters": [
-      {
-        "dataType": "Text",
-        "name": "url",
-        "value": "<Enter Repository URL>"
-      }
-    ]
-  },
-  "credentialDetails": {
-    "credentials": {
-      "credentialType": "Key",
-      "key": "<Enter your GitHub Personal Access Token>"
-    }
+ {
+   "connectivityType": "ShareableCloud",
+   "displayName": "TestGitHubConnection2",
+   "connectionDetails": {
+  "type": "GitHubSourceControl",
+  "creationMethod": "GitHubSourceControl.Contents",
+  "parameters": [
+  {
+   "dataType": "Text",
+   "name": "url",
+   "value": "https://github.com/OrganizationName/RepositoryName"
   }
-}
+     ]
+   },
+   "credentialDetails": {
+  "credentials": {
+    "credentialType": "Key",
+    "key": "*********" // Enter your GitHub Personal Access Token
+  }
+   }
+ }
 ```
 
-Here's a sample response with the connection Id:
+**Sample response:**
 
-```http
+```json
 {
-    "connectionDetails": {
-        "path": "https://github.com",
-        "type": "GitHubSourceControl"
-    },
-    "connectivityType": "ShareableCloud",
-    "credentialDetails": {
-        "connectionEncryption": "NotEncrypted",
-        "credentialType": "Key",
-        "singleSignOnType": "None",
-        "skipTestConnection": false
-    },
-    "displayName": "Name",
-    "gatewayId": null,
-    "id": "e3607d15-6b41-4d11-b8f4-57cdcb19ffc8",
-    "privacyLevel": "Organizational"
+  "id": "3aba8f7f-d1ba-42b1-bb41-980029d5a1c1",
+   "connectionDetails": {
+       "path": "https://github.com/OrganizationName/RepositoryName",
+       "type": "GitHubSourceControl"
+   },
+   "connectivityType": "ShareableCloud",
+   "credentialDetails": {
+       "connectionEncryption": "NotEncrypted",
+       "credentialType": "Key",
+       "singleSignOnType": "None",
+       "skipTestConnection": false
+   },
+   "displayName": "TestGitHubConnection2",
+   "gatewayId": null,
+   "privacyLevel": "Organizational"
 }
 ```
 
@@ -393,46 +395,46 @@ GET https://api.fabric.microsoft.com/v1/connections
 
 ```json
 {
-	"value": [
-		{
-			"id": "e3607d15-6b41-4d11-b8f4-57cdcb19ffc8",
-			"displayName": "GitHubScopedToRepo",
-			"gatewayId": null,
-			"connectivityType": "ShareableCloud",
-			"connectionDetails": {
-				"path": "https://github.com",
-				"type": "GitHubSourceControl"
-			},
-			"privacyLevel": "Organizational",
-			"credentialDetails": {
-				"credentialType": "Key",
-				"singleSignOnType": "None",
-				"connectionEncryption": "NotEncrypted",
-				"skipTestConnection": false
-			}
-		},
-		{
-			"id": "3aba8f7f-d1ba-42b1-bb41-980029d5a1c1",
-			"displayName": "Name2",
-			"gatewayId": null,
-			"connectivityType": "ShareableCloud",
-			"connectionDetails": {
-				"path": "https://github.com/OrganizationName/RepositoryName",
-				"type": "GitHubSourceControl"
-			},
-			"privacyLevel": "Organizational",
-			"credentialDetails": {
-				"credentialType": "Key",
-				"singleSignOnType": "None",
-				"connectionEncryption": "NotEncrypted",
-				"skipTestConnection": false
-			}
-		}
-	]
+ "value": [
+  {
+   "id": "e3607d15-6b41-4d11-b8f4-57cdcb19ffc8",
+   "displayName": "GitHubScopedToRepo",
+   "gatewayId": null,
+   "connectivityType": "ShareableCloud",
+   "connectionDetails": {
+    "path": "https://github.com",
+    "type": "GitHubSourceControl"
+   },
+   "privacyLevel": "Organizational",
+   "credentialDetails": {
+    "credentialType": "Key",
+    "singleSignOnType": "None",
+    "connectionEncryption": "NotEncrypted",
+    "skipTestConnection": false
+   }
+  },
+  {
+   "id": "3aba8f7f-d1ba-42b1-bb41-980029d5a1c1",
+   "displayName": "Name2",
+   "gatewayId": null,
+   "connectivityType": "ShareableCloud",
+   "connectionDetails": {
+    "path": "https://github.com/OrganizationName/RepositoryName",
+    "type": "GitHubSourceControl"
+   },
+   "privacyLevel": "Organizational",
+   "credentialDetails": {
+    "credentialType": "Key",
+    "singleSignOnType": "None",
+    "connectionEncryption": "NotEncrypted",
+    "skipTestConnection": false
+   }
+  }
+ ]
 }
 ```
 
-Copy the id of the connection you want and use it in the [Get connection API](/rest/api/fabric/core/connections/get-connection).
+Copy the ID of the connection you want and use it in the [Get connection API](/rest/api/fabric/core/connections/get-connection).
 
 ## Considerations and limitations
 
