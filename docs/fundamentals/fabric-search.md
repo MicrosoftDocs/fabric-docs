@@ -17,7 +17,7 @@ When you're new to [!INCLUDE [product-name](../includes/product-name.md)], you h
 At the top of Home, the global search box finds items by title, name, or keyword. Sometimes, the fastest way to find an item is to search for it. For example, if a dashboard you didn't use in a while isn't showing up on your Home canvas. Or, if your colleague shared something with you, but you don't remember what it's named or what type of content they shared. Sometimes, you might have so much content that it's easier to search for it rather than scrolling or sorting.
 
 > [!NOTE]
-> Global search may not be available in all regions. See [Considerations and limitations](#considerations-and-limitations) for more detail.
+> Global search might not be available in all regions. See [Considerations and limitations](#considerations-and-limitations) for more detail.
 >
 > Global search isn't available in sovereign clouds.
 
