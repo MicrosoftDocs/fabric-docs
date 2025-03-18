@@ -1,6 +1,6 @@
 ---
 title: Known issue - Database mirroring error that source table doesn't exist
-description: A known issue is posted where you receive a database mirroring error that source table doesn't exist
+description: A known issue is posted where you receive a database mirroring error that source table doesn't exist.
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
