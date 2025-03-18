@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 03/13/2025
+ms.date: 03/18/2025
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -97,7 +97,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
     * **Eventhouse storage**: Shows the storage capacity and cache misses of the eventhouse. The storage capacity is divided into categories:
         * **Original size**: The uncompressed original data size of the eventhouse.
-        * **Compressed size**: The compressed data size of the eventhouse
+        * **Compressed size**: The compressed data size of the eventhouse.
         * **Premium**: The amount of Premium storage utilized. This is the high-performance storage tier for your most active data, ensuring the fastest possible access for real-time processing and analysis. If all data is not stored in the Premium cache, query latency may be negatively impacted.. For more information, review your [caching policy](data-policies.md#caching-policy).
 
         <!--  * **Cache misses**
@@ -119,7 +119,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
     * **Top 10 queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, the duration, and the cache misses rate per database. The information can assist you in obtaining a comprehensive overview of which databases are utilizing compute units.
 
-    * **Top 10 ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows. Currently only partial ingestion errors are reported. 
+    * **Top 10 ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows. Currently only partial ingestion errors are reported.
 
     * **What's new - Last 7 days**: Highlights database owners and recent eventhouse events, such as the following operations:
 
