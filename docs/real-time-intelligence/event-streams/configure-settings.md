@@ -55,7 +55,7 @@ When the partition count is 4, 16, or 32, throughput depends on the selected lev
 
 ### Streaming connector sources
 
-The throughput for streaming connector sources is up to **30 MB/s**. If higher throughput is needed, please contact product group team.
+The throughput for streaming connector sources is up to **30 MB/s**. If higher throughput is needed (except the database CDC sources), please contact product group team via [this form](https://aka.ms/EventStreamsConnThroughputRequest).
 
 **Streaming connector sources include**:
 - Azure SQL Database Change Data Capture (CDC)

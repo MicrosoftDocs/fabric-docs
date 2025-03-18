@@ -25,9 +25,9 @@ This article shows you how to add a lakehouse as a destination to an eventstream
 > 
 > If the incoming data has columns that aren't in the existing table schema, the extra columns aren't included in the data written to the table. Likewise, if the incoming data is missing columns that are in the existing table schema, the missing columns write to the table with the values set to null.
 >
->If there's no intersection between the schema of the delta table and the schema of a record, it's considered an instance of schema conversion failure. It isn't the only case that's considered schema conversion failure.
+> If the schema of a Delta table and an incoming record have no intersection, it results in a schema conversion failure. However, this is not the only scenario that can cause such a failure.
 >
-> With this in mind, if the schema of the incoming data is changing, there might be some data loss in certain columns or the entire record. 
+> **If the schema of incoming data changes (i.e., the new data record's schema does not align with the first record), certain columns or entire records may be lost when writing to the lakehouse**. Therefore, using a lakehouse to receive such streaming data, such as database CDC data, is not recommended.
 
 
 ::: zone pivot="enhanced-capabilities"  
