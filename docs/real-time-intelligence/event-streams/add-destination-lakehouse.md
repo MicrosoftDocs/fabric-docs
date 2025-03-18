@@ -6,7 +6,7 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 03/18/2025
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -19,15 +19,15 @@ This article shows you how to add a lakehouse as a destination to an eventstream
 [!INCLUDE [select-view](./includes/select-view.md)]
 
 > [!IMPORTANT]
-> There is *schema enforcement* for writing data into a lakehouse destination table. All new writes to the table must be compatible with the target table's schema at write time, ensuring data quality.
+> There's *schema enforcement* for writing data into a lakehouse destination table. All new writes to the table must be compatible with the target table's schema at write time, ensuring data quality.
 > 
 > When output is written to a new delta table, the table schema is created based on the first record. All records of the output data are projected onto the schema of the existing table.
 > 
 > If the incoming data has columns that aren't in the existing table schema, the extra columns aren't included in the data written to the table. Likewise, if the incoming data is missing columns that are in the existing table schema, the missing columns write to the table with the values set to null.
 >
-> If the schema of a Delta table and an incoming record have no intersection, it results in a schema conversion failure. However, this is not the only scenario that can cause such a failure.
+> If the schema of a Delta table and an incoming record have no intersection, it results in a schema conversion failure. However, this isn't the only scenario that can cause such a failure.
 >
-> **If the schema of incoming data changes (i.e., the new data record's schema does not align with the first record), certain columns or entire records may be lost when writing to the lakehouse**. Therefore, using a lakehouse to receive such streaming data, such as database CDC data, is not recommended.
+> **If the schema of incoming data changes (i.e., the new data record's schema does not align with the first record), certain columns or entire records may be lost when writing to the lakehouse**. Therefore, using a lakehouse to receive such streaming data, such as database CDC data, isn't recommended.
 
 
 ::: zone pivot="enhanced-capabilities"  
@@ -133,7 +133,7 @@ If you have a lakehouse created in your workspace, follow these steps to add the
    1. **Delta table**: Select an existing delta table or create a new one to receive data.
 
       > [!NOTE]
-      > When writing data into the lakehouse table, there is **Schema enforcement**. This means all new writes to a table must be compatible with the target table's schema at write time, ensuring data quality.
+      > When writing data into the lakehouse table, there's **Schema enforcement**. This means all new writes to a table must be compatible with the target table's schema at write time, ensuring data quality.
       >
       > All records of the output data are projected onto the schema of the existing table. When writing the output to a new delta table, the table schema is created based on the first record. If the incoming data has an additional column compared to the existing table schema, it writes to the table without including the extra column. Conversely, if the incoming data is missing a column compared to the existing table schema, it writes to the table with the column's value set to null.
    1. **Input data format**: Select the format for the data (input data) that is sent to your lakehouse.
