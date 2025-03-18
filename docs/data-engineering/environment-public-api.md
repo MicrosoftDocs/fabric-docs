@@ -14,7 +14,7 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 
 > [!IMPORTANT]
 >
-> - The roll-out of API changes starting on **April 4th, 2025**. The new release includes new APIs, API deprecations, and changes of API response/request contract.
+> - The roll-out of API changes starting on **April 4th, 2025**. The new release includes new APIs, API deprecations, and changes of API response/request contract. The table at following section summarize all API changes.
 > - The APIs that are about to be deprecated will continue the support until June 30th, 2025. The changes of response/request contract will be effective immediately once the the release lands.
 >
 
@@ -26,7 +26,7 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 |Item operation|Create environment with Definition |Create a new environment with Definition.|**New API**|
 |Item operation|Delete environment |Delete an existing environment.|No change|
 |Item operation|List environment|Get the list of environment in a workspace.|No change|
-|Item operation|Get environment|Get the metadata of an environment. The response includes the status of the environment.|No change|
+|Item operation|Get environment|Get the metadata of an environment. The response includes the status of the environment.|**Response contract update**|
 |Item operation|Get environment Definition|Get the definition of an environment. |**New API**|
 |Item operation|Update environment|Update the metadata of an environment, like name and description.|No change|
 |Item operation|Update environment definition|Update the definition of an environment.|**New API**|
@@ -52,9 +52,79 @@ Learn more about the existing environment public APIs in [Item APIs - Environmen
 
 This section describes the upcoming updates for existing APIs.
 
+### Get Environment
+
+In the response of Get Environment API, the 'startTime' will become 'startDateTime' and the 'endTime' will become 'endDateTime'. They represent the start/end time of publish operation.
+
+> [!NOTE]
+> 'startTime' and 'endTime' are using the **Date-Time** format, while the 'startDateTime' and 'endDateTime' will be **String**, which is in UTC and using the YYYY-MM-DDTHH:mm:ssZ format.
+>
+
+- Interface
+
+    ```HTTP
+    GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/environments/{environmentId}
+    ```
+
+- Original sample response
+
+    ```JSON
+    {
+      "displayName": "Environment_1",
+      "description": "An Environment description",
+      "type": "Environment",
+      "workspaceId": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+      "id": "5b218778-e7a5-4d73-8187-f10824047715",
+      "properties": {
+        "publishDetails": {
+          "state": "Success",
+          "targetVersion": "46838a80-5450-4414-bea0-40fb6f3e0c0d",
+          "startTime": "2024-03-29T14:17:09.0697022Z",
+          "endTime": "2024-03-29T14:48:09.0697022Z",
+          "componentPublishInfo": {
+            "sparkLibraries": {
+              "state": "Success"
+            },
+            "sparkSettings": {
+              "state": "Success"
+            }
+          }
+        }
+      }
+    }
+    ```
+
+- New sample response
+
+    ```JSON
+    {
+      "displayName": "Environment_1",
+      "description": "An Environment description",
+      "type": "Environment",
+      "workspaceId": "cfafbeb1-8037-4d0c-896e-a46fb27ff229",
+      "id": "5b218778-e7a5-4d73-8187-f10824047715",
+      "properties": {
+        "publishDetails": {
+          "state": "Success",
+          "targetVersion": "46838a80-5450-4414-bea0-40fb6f3e0c0d",
+          "startDateTime": "2024-03-29T14:17:09Z",
+          "endDateTime": "2024-03-29T14:48:09Z",
+          "componentPublishInfo": {
+            "sparkLibraries": {
+              "state": "Success"
+            },
+            "sparkSettings": {
+              "state": "Success"
+            }
+          }
+        }
+      }
+    }
+    ```
+
 ### Publish environment
 
-Publish environment API supports long running operations starting from the release, the contract of the response will change. The endpoint remains the same for sending requests.
+Publish environment API will support long running operations starting from the release, the contract of the response will change. The endpoint remains the same for sending requests.
 
 - Interface
 
