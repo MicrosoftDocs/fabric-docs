@@ -117,7 +117,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
     * **Activity in minutes - top 5 users**: Shows the total compute minutes of the most active users. The information can help you understand the efficiency with which users are utilizing compute units.
 
-    * **Top 10 queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, the duration, and the cache misses per database. The information can assist you in obtaining a comprehensive overview of the efficiency with which databases are utilizing compute units.
+    * **Top 10 queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, the duration, and the cache misses rate per database. The information can assist you in obtaining a comprehensive overview of which databases are utilizing compute units.
 
     * **Top 10 ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows.
 
