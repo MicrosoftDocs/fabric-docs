@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 02/17/2025
+ms.date: 03/19/2025
 ms.search.form: KQL Database
 ---
 # Create a KQL database
