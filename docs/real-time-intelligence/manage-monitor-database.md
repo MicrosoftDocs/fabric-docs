@@ -168,9 +168,9 @@ From the table in the explorer pane, select the  *More menu** [**...**], or sele
 
 You can perform the following actions:
 
-* Visually explore the table data
+* Visually explore the table data. To learn more, see [Explore your data visually in Real-Time Dashboards](user-flow-4.md)
 * Write and run queries on the selected table. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
-* Create a Power BI report, Dashboard, or Notebook.
+* [Create a Power BI report](create-powerbi-report.md), [Dashboard](dashboard-real-time-create.md#create-a-new-dashboard), or [Notebook](notebooks.md#create-a-notebook-from-a-kql-database).
 * Rename a table, delete a table, and hide or view the table details.
 
 ### Table details
