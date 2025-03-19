@@ -149,7 +149,7 @@ The center database information pane depicts a histogram of the ingestion data, 
 | | Columns | For each column in a table, shows insights for column values, such as date ranges, minimum and maximum values, or the number of unique values.|
 | | Top 10 | Select a column listed in the *Columns* section to display the top 10 values for that column.|
 
-:::image type="content" source="media/create-database/table-dashboard.png" alt-text="Screenshot of KQL table page showing the table details cards.":::<!-- TODO: Update the image when dev is complete-->-->
+:::image type="content" source="media/create-database/table-dashboard.png" alt-text="Screenshot of KQL table page showing the table details cards.":::<!-- TODO: Update the image when dev is complete-->
 
 ## Related content
 
