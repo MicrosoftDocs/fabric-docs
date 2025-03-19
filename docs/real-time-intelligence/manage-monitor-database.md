@@ -120,7 +120,6 @@ The database activity tracker displays the number of rows loaded into the databa
 
 | Item| Description|
 |---|---|
-|**Menu** |
 | Ingestion | The number of rows loaded into the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only ingestion data. |
 | Queries | The number of queries run in the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only query data.|
 | Last run | The time when the histogram was last generated.|
@@ -135,12 +134,9 @@ This section of the database main area displays a list of tables in the database
 
 | Item| Description|
 |---|---|
-|**Tables**|
-| Tables display | View table information by **Cards** or by **List** view. </br></br>Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, Caching*, *Retention*, *OneLake* status, and *Created on*. |
-|**Data preview**|
+| Tables | View table information by **Cards** or by **List** view. </br></br>Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, Caching*, *Retention*, *OneLake* status, and *Created on*. |
 | Data preview | Shows a preview of the top 200 records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view.|
-|**Query insights - top 100 queries**|
-| Query insights| Shows the top 100 records from the last year. |
+| Query insights - top 100 queries| Shows the top 100 records from the last year. |
 <!--| | Cache hit misses over time|  |
 | | Top queries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
 |**Ingestion failures**|
@@ -164,9 +160,9 @@ B. **Main view area**: The main view area displays the main table name, table da
 
 C. **Details area**: The details area provides additional information about the table.
 
-### Manage a table
+## Manage a table
 
-From the table in the explorer pane, select the  *More menu** [**...**], or select the option from the [table ribbon](#table-ribbon) to manage the tables in the database.
+From the table in the explorer pane, select the  *More menu** [**...**], or select the option from the table ribbon to manage the tables in the database.
 
 :::image type="content" source="media/create-database/manage-tables.png" alt-text="Screenshot of table main view area." lightbox="media/create-database/manage-tables.png":::
 
@@ -181,17 +177,26 @@ You can perform the following actions:
 
 The right information pane displays the details of the selected table.
 
+**Size**
+
 | Item| Description|
 |---|---|
-| **Size**|
 | Compressed | Total size of compressed data.|
 | Original size | Total size of uncompressed data.|
-| **OneLake**|
+
+**OneLake**
+
+| Item| Description|
+|---|---|
 | Availability | Set OneLake availability to **Enabled** or **Disabled**. When OneLake availability is turned on, tables can't be renamed. |
 | Latency| The maximum time until table data is available in OneLake.|
 | Since | The start time from when availability is recorded. |
 | OneLake path | OneLake folder path that can be used for creating shortcuts.|
-|**Overview**|
+
+**Overview**
+
+| Item| Description|
+|---|---|
 | Row count | The number of rows in the table.|
 | Rows ingested last 24h | The number of rows ingested in the last 24 hours.|
 | Schema last altered by | When the schema was last altered and by whom.|
@@ -203,18 +208,27 @@ The right information pane displays the details of the selected table.
 
 The center table information pane depicts a histogram of the ingestion data, table information, and a means to preview the table data and schema insights.
 
+**Data Activity Tracker**
+
 | Item| Description|
 |---|---|
-|**Data Activity Tracker** |
 | Ingestion | The number of rows ingested into the database.|
 | Last run | The time when the histogram was last generated.|
 | Time range | The time range of the histogram display. Set ranges for one hour, 6 hours, three days, 7 days, or 30 days. |
 | Interval |Set the interval of the histogram display. Set intervals by one hour, six hours, one day, three days, 7 days, and 30 day intervals. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time. |
 | Refresh | Refresh your histogram.|
 | Histogram | The ingestion histogram displays data by the time range and interval chosen.|
-|**Data preview** |
+
+**Data preview**
+
+| Item| Description|
+|---|---|
 | Quick query | Shows a preview of the table ingestion results. Displays Ingestion time, TableName, and Record. Select **Columns** to select columns and values for a Pivot view.|
-|**Schema insights** |
+
+**Schema insights**
+
+| Item| Description|
+|---|---|
 | Columns | For each column in a table, shows insights for column values, such as date ranges, minimum and maximum values, or the number of unique values.|
 | Top 10 | To display the top 10 values for that column, select a column listed in the *Columns* section.|
 
