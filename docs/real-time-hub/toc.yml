@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Real-Time hub?
     href: real-time-hub-overview.md
+  - name: What are Fabric Events?
+    href: fabric-events-overview.md
   - name: What's new?
     href: whats-new.md
 - name: Get started
@@ -104,7 +106,9 @@ items:
   - name: Explore my data streams
     href: explore-my-data-streams.md
   - name: Explore Microsoft sources
-    href: explore-microsoft-sources.md    
+    href: explore-microsoft-sources.md
+  - name: Subscribe permission for Fabric/Azure events
+    href: fabric-events-subscribe-permission.md    
   - name: Explore Azure events
     items:
     - name: Azure events page
