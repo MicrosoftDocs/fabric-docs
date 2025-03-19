@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.collection:
   - ce-skilling-ai-copilot
 ---
-# Copilot for SQL database in Microsoft Fabric (preview)
+# Copilot for SQL database in Microsoft Fabric (Preview)
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
