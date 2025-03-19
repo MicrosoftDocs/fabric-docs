@@ -75,7 +75,7 @@ The right pane displays the details of the selected database.
 
 ## Main view area
 
-The main database information pane tracks data activity, allows you to preview table details and data, and to view query insights. <!-- and, ingestion failures. Add post fabcon -->
+The main database information pane tracks data activity, allows you to preview table details and data, and to view query insights.
 
 At the top of the main view area, you can select these options:
 

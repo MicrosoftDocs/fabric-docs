@@ -179,3 +179,4 @@ You can perform the following actions:
 * [Eventhouse overview](eventhouse.md)
 * [Create an eventhouse](create-eventhouse.md)
 * [Eventhouse monitoring overview](monitor-eventhouse.md)
+* [Manage and monitor a database](manage-monitor-database.md)

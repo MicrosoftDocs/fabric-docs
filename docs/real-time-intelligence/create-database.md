@@ -153,6 +153,7 @@ The center database information pane depicts a histogram of the ingestion data, 
 
 ## Related content
 
+* [Manage and monitor ad database](manage-monitor-database.md)
 * [Get data from Azure storage](get-data-azure-storage.md)
 * [Get data from Amazon S3](get-data-amazon-s3.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)
