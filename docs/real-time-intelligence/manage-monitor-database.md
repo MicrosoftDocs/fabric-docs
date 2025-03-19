@@ -84,7 +84,7 @@ At the top of the main view area, you can select these options:
 * **Overview** - select to view the database activity tracker and database tables in the main view area.
 * **Entity diagram (preview)** - select to view the database as an [entity diagram](database-entity-diagram.md).
 
-#### Database activity tracker
+### Database activity tracker
 
 The database activity tracker displays the number of rows loaded into the database and the number or queries, in the selected time range.
 
@@ -101,7 +101,7 @@ The database activity tracker displays the number of rows loaded into the databa
 | | Refresh | Refresh your histogram.|
 | | Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram.<br/>The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time. Hover over the histogram to display total rows ingested and total queries per status. |
 
-#### Tables
+### Tables
 
 The tables section displays a list of tables in the database, with the following information:
 
