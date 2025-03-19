@@ -300,7 +300,7 @@ When someone shares a lakehouse, they can also grant access to the SQL analytics
 | **Sharing Option** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** | **Can view and build Semantic Models?** |
 |----------|----------|----------|----------|-----|
 | *No additional permissions selected* | No by default, use OneLake RBAC to grant access. |  No | No | No |
-| Read all Apache Spark | Yes by default. Use OneLake RBAC to restrict the access. |  No | No | No |
+| Read all Apache Spark and subscribe to events | Yes by default. Use OneLake RBAC to restrict the access. |  No | No | No |
 | Read all SQL endpoint data | No by default, use OneLake RBAC to grant access. |  No | Yes | No |
 | Build  reports on the default dataset | Yes by default. Use OneLake RBAC to restrict the access. | No | No | Yes |
 
