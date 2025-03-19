@@ -56,10 +56,16 @@ Use notebookutils.fs.help("methodName") for more info about a method.
 
 NotebookUtils works with the file system in the same way as Spark APIs. Take *notebookutils.fs.mkdirs()* and Fabric lakehouse usage for example:
 
-| **Usage** | **Cache time in local file system** | **Relative path from HDFS root** | **Absolute path for local file system in driver node** | **Absolute path for ABFS file system** |
-|---|---|---|---|---|
-| Non-default lakehouse | 120s | Not supported | *notebookutils.fs.mkdirs("file:/<new_dir>")* | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | 
-| Default lakehouse | 120s | Directory under “Files” or “Tables”: *notebookutils.fs.mkdirs("Files/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* |
+| **Usage** | Non-default lakehouse | Default lakehouse |
+|---|---|---|
+| **Cache time in local file system** | 120s | 120s |
+| **Relative path from HDFS root** | Not supported         | Directory under “Files” or “Tables”: *notebookutils.fs.mkdirs("Files/<new_dir>")* |
+| **Absolute path for ABFS file system** | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")*  | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* |
+| **Absolute path for local file system in driver node** | *notebookutils.fs.mkdirs("file:/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
+
+
+> [!NOTE]
+> The parameter, [*fileCacheTimeout*](#mount-via-shared-access-signature-token-or-account-key), could be set to change the default time-out time. 
 
 ### List files
 
