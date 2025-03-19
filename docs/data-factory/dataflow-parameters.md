@@ -28,11 +28,11 @@ Parameters in Dataflow Gen2 allow you to dynamically control and customize dataf
 * **Dataflows with the public parameters mode enabled cannot be manually triggered through the Fabric Workspace list or lineage view.** The only exception is a Dataflow with no required parameters set.
 * **Parameters that affect the resource path of a data source or a destination are not supported.** Connections are linked to the exact data source path defined in the authored Dataflow and can't be currently override to use other connections or resource paths.
 * **Dataflows with incremental refresh can't leverage this new mode.**
-* **Only parameters of the type *decimal number*, *whole number*, *text* and *true/false* can be passed for override.**  Any other data types will not produce a refresh request in the refresh history but will be shown in the monitoring hub. 
+* **Only parameters of the type *decimal number*, *whole number*, *text* and *true/false* can be passed for override.**  Any other data types don't produce a refresh request in the refresh history but show in the monitoring hub. 
 * **The public parameters mode allows users to modify the logic defined within the Dataflow by overriding the parameter values.** It  would allow others who have permissions to the Dataflow to refresh the data with other values, resulting in different outputs from the data sources used in the Dataflow.
-* **Refresh history doen't display information about the parameters passed during the invocation of the Dataflow.**
-* **Monitoring hub doen't display information about the parameters passed during the invocation of the Dataflow.**
-* **Staged queries will only keep the last data refresh of a Dataflow stored in the Staging Lakehouse.** Users are able to look at the data from the Staging Lakehouse using the Dataflows connector to determine what was data is stored. However, it's highly encouraged to use explicit data destinations when using the public parameters mode.
+* **Refresh history does not display information about the parameters passed during the invocation of the Dataflow.**
+* **Monitoring hub does not display information about the parameters passed during the invocation of the Dataflow.**
+* **Staged queries will only keep the last data refresh of a Dataflow stored in the Staging Lakehouse.** Users are able to look at the data from the Staging Lakehouse using the Dataflows connector to determine what was data is stored. Defining explicit data destinations when using the public parameters mode is highly encouraged.
 * **When submitting a duplicated request for the same parameter values, only the first request will be accepted and subsequent will be rejected until the first request finishes its evaluation.**
 
 ## Enabling the public parameter mode
@@ -73,7 +73,7 @@ You can select the Dataflow that you wish to use and set the parameters that you
 
 ![Screenshot of the Dataflow activity within Fabric Data pipelines that allows to pass parameters for refresh](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
 
-In the Dataflow parameters section you can pass the name of the parameter, the type of value that you wish to pass and the value to pass. You can manually add all the supported parameters that you wish to override.
+In the Dataflow parameters section, you can pass the name of the parameter, the type of value that you wish to pass and the value to pass. You can manually add all the supported parameters that you wish to override.
 
 >[!IMPORTANT]
 >Be sure to pass the name of the parameters exactly as typed inside of the Dataflow as parameter names are case sensitive.
