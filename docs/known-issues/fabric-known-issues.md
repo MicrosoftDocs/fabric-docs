@@ -20,6 +20,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1059  | Data Factory | [Copilot installation script not included in notebook](./known-issue-1059-copilot-installation-script-not-included-notebook.md) | March 18, 2025 |
+|  1056  | Data Factory | [Database mirroring error that source table doesn't exist](./known-issue-1056-database-mirroring-error-source-table-not-exist.md) | March 18, 2025 |
 |  1058  | OneLake | [Workspaces created during Fabric preview only support limited OneLake features](./known-issue-1058-workspaces-created-during-preview-limited-onelake-features.md) | March 12, 2025 |
 |  1055  | Data Factory | [Spark Job Definition activity incorrectly shows failure status](./known-issue-1055-spark-job-definition-activity-incorrectly-shows-failure-status.md) | March 12, 2025 |
 |  1047  | Data Science | [AI skill creation fails when tenant settings restricted to security groups](./known-issue-1047-ai-skill-creation-fails-tenant-settings-restricted-security-groups.md) | March 5, 2025 |
@@ -34,7 +36,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1028  | Data Engineering | [Slow Spark session startup caused by Native Execution Engine](./known-issue-1028-slow-spark-session-startup-native-execution-engine.md) | February 19, 2025 |
 |  1027  | Data Factory | [Mirroring fails for tables with unique index on unsupported data type](./known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md) | February 19, 2025 |
 |  1024  | Data Factory | [CopyJob item deletion fails with error](./known-issue-1024-copy-job-item-deletion-fails-error.md) | February 14, 2025 |
-|  1023  | Data Factory | [Preview destination data on a pipeline's copy activity fails](./known-issue-1023-preview-destination-data-pipeline-copy-activity-fails.md) | February 14, 2025 |
 |  1017  | Data Engineering | [Unsupported error for legacy timestamp in Fabric Runtime 1.3](./known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md) | February 5, 2025 |
 |  1004  | Data Engineering | [Notebook and SJD job statuses are in progress in monitor hub](./known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md) | January 29, 2025 |
 |  1003  | Databases | [Copilot sidecar chat fails with certain private link settings](./known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md) | January 28, 2025 |
@@ -50,14 +51,13 @@ Select the **Title** to view more information about that specific known issue.
 |  975  | Power BI | [Create report doesn't work on Eventhouse monitoring KQL database](./known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database.md) | January 6, 2025 |
 |  974  | Real-Time Intelligence | [Show table command in KQL Queryset editor fails](./known-issue-974-show-table-kql-queryset-editor-fails.md) | January 6, 2025 |
 |  968  | Power BI  | [Export data option is disabled for Q&A visual in the service](./known-issue-968-export-data-option-disabled-qa-visual.md) | December 10, 2024 |
-|  967  | Data Factory | [Pipeline activities don't save if their data warehouse connection is changed](./known-issue-967-pipeline-activities-not-save-warehouse-connection.md) | December 10, 2024 |
 |  965  | Databases | [SQL database creation fails to create child items when item with same name exists](./known-issue-965-sql-database-creation-fails-create-child-items-same-name.md) | December 10, 2024 |
 |  957  | Data Factory | [Creation failure for Copy job item in empty workspace](./known-issue-957-creation-failure-copy-job-item-empty-workspace.md) | December 5, 2024 |
 |  954  | Data Factory | [Create, configure, or delete a mirror fails](./known-issue-954-create-configure-delete-mirror-fails.md) | December 2, 2024 |
 |  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](./known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 |
 |  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](./known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 |
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](./known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
-|  923  | Power BI | [Tenant migrations paused through March 2025](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
+|  923  | Power BI | [Tenant migration requests stopped](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](./known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
 |  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](./known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
 |  903  | Data Warehouse | [Data warehouse data preview might fail if multiple data warehouse items](./known-issue-903-warehouse-preview-fail-multiple-warehouse.md) | October 28, 2024 |
@@ -98,6 +98,8 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1023  | Data Factory | [Preview destination data on a pipeline's copy activity fails](./known-issue-1023-preview-destination-data-pipeline-copy-activity-fails.md) | February 14, 2025 | Fixed: March 14, 2025 |
+|  967  | Data Factory | [Pipeline activities don't save if their data warehouse connection is changed](./known-issue-967-pipeline-activities-not-save-warehouse-connection.md) | December 10, 2024 | Fixed: March 14, 2025 |
 |  976  | Power BI  | [Export-to-data disabled for a visual with visual calculation](./known-issue-976-export-to-data-disabled-visual-calculation.md) | December 17, 2024 | Fixed: March 12, 2025 |
 |  940  | Data Factory | [Pipeline copy data to Kusto using an on-premises data gateway doesn't work](./known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md) | November 22, 2024 | Fixed: March 12, 2025 |
 |  1046  | Power BI | [Custom visuals using dialog or download API don't work in February Desktop](./known-issue-1046-custom-visuals-dialog-api-not-work-desktop.md) | March 5, 2025 | Fixed: March 10, 2025 |
@@ -114,9 +116,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  902  | Power BI | [INFO.VIEW.MEASURES() in calculated table might cause errors](./known-issue-902-info-view-measures-calculated-table-cause-errors.md) | October 31, 2024 | Fixed: February 10, 2025 |
 |  955  | Data Factory | [Create Gateway public API doesn't work for service principals](./known-issue-955-create-gateway-public-api-not-work-service-principals.md) | December 5, 2024 | Fixed: February 5, 2025 |
 |  1005  | Data Engineering | [Git operations and deployment pipelines don't work with lakehouses](./known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md) | January 22, 2025 | Fixed: February 4, 2025 |
-|  898  | OneLake | [External data sharing OneLake shortcuts don't show in SQL analytics endpoint](./known-issue-898-data-sharing-shortcuts-not-show-endpoint.md) | October 25, 2024 |  Fixed: January 28, 2025 |
-|  846  | OneLake | [OneLake BCDR write transactions aren't categorized correctly for billing](./known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md) | September 17, 2024 |  Fixed: January 28, 2025 |
-|  823  | Data Warehouse | [Concurrent stored procedures block each other in data warehouse](./known-issue-823-concurrent-stored-procedures-block-warehouse.md) | September 4, 2024 | Fixed: January 28, 2025 |
 
 ## Related content
 
