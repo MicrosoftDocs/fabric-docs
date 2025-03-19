@@ -65,8 +65,7 @@ This section shows the artifacts using Fabric workspace item events. Here are th
 | Microsoft.Fabric.ItemUpdateFailed | This event is activated when an update operation on resource fails. For example, an event produced when a dataflow failed during the update. |
 | Microsoft.Fabric.ItemDeleteSucceeded | This event is activated when a delete operation on resource succeeds. For example, an event produced when a dataflow is deleted successfully. |
 | Microsoft.Fabric.ItemDeleteFailed | This event is activated when a delete operation on resource fails. For example, an event produced when a dataflow failed during deletion. |
-| Microsoft.Fabric.ItemReadSucceeded | This event is activated when a read operation on resource succeeds. For example, an event produced when an artifact is read successfully. |
-| Microsoft.Fabric.ItemReadFailed | This event is activated when a read operation on resource fails. For example, an event produced when an artifact failed during the read. |
+
 
 ### Schemas
 An event has the following top-level data:
