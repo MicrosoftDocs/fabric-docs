@@ -92,7 +92,7 @@ The database activity tracker displays the number of rows loaded into the databa
 
 |Card | Item| Description|
 |---|---|---|
-|**Menu**|
+|**Menu** |
 | | Ingestion | The number of rows loaded into the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only ingestion data. |
 | | Queries | The number of queries run in the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only query data.|
 | | Last run | The time when the histogram was last generated.|
@@ -138,6 +138,7 @@ C. **Details area**: The details area provides additional information about the 
 
 ### Table ribbon
 
+From the table page ribbon you can visually explore the table, query with code, create a Power BI report, rename a table, delete a table, and hide or view the table details.
 
 ### Table details
 

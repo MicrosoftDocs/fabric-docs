@@ -35,7 +35,7 @@ In this article, you learn how to create a new KQL database. Once your KQL datab
 
     :::image type="content" source="media/create-database/new-database.png" alt-text="Screenshot of the New KQL Database window showing the database name. The Create button is highlighted.":::
 
-The KQL database is created within the context of the selected eventhouse.
+The KQL database is created within the context of the selected eventhouse. You can also [Create an empty table](create-empty-table.md).
 
 ### Explore your KQL database
 
@@ -49,7 +49,7 @@ When you create a new KQL database, an attached environment is automatically cre
 
     :::image type="content" source="media/create-database/rename-queryset.png" alt-text="Screenshot of the Rename queryset window showing the queryset name and the Pencil icon.":::
 
-## Database details
+<!--## Database details
 
 The main page of your KQL database shows an overview of the contents of your database. The following tables list the available information in the center and right information panes.
 
@@ -59,7 +59,7 @@ The main page of your KQL database shows an overview of the contents of your dat
 
 The right information pane displays the details of the selected database.
 <!--| Size? | Compression ratio | Compression ratio of the data.|
--->
+
 |Card | Item| Description|
 |---|---|---|
 | **Size** |
@@ -82,7 +82,7 @@ The right information pane displays the details of the selected database.
 
 ### Database center information pane
 
-The center database information pane depicts data activity, table information including query insights. <!-- and, ingestion failures. Add post fabcon -->
+The center database information pane depicts data activity, table information including query insights. <!-- and, ingestion failures. Add post fabcon
 
 You can filter by user, application, and/or query status to refine the database overview data.
 
@@ -103,7 +103,7 @@ You can filter by user, application, and/or query status to refine the database 
 <!--|**Ingestion failures**|
 | | Daily query duration percentiles over time|  |
 | | Cache hit misses over time|  |
-| | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|-->
+| | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.
 
 ## Table details
 
@@ -149,7 +149,7 @@ The center database information pane depicts a histogram of the ingestion data, 
 | | Columns | For each column in a table, shows insights for column values, such as date ranges, minimum and maximum values, or the number of unique values.|
 | | Top 10 | Select a column listed in the *Columns* section to display the top 10 values for that column.|
 
-:::image type="content" source="media/create-database/table-dashboard.png" alt-text="Screenshot of KQL table page showing the table details cards.":::<!-- TODO: Update the image when dev is complete-->
+:::image type="content" source="media/create-database/table-dashboard.png" alt-text="Screenshot of KQL table page showing the table details cards.":::<!-- TODO: Update the image when dev is complete-->-->
 
 ## Related content
 
