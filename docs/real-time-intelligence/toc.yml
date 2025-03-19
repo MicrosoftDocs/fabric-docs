@@ -270,6 +270,8 @@ items:
     - name: Access an existing KQL database
       displayName: copy URI, copy query URI, copy ingestion URI
       href: access-database-copy-uri.md
+    - name: Manange and monitor a KQL database    
+      href: manage-monitor-database.md
     - name: Create a database shortcut
       href: database-shortcut.md
     - name: Create an empty table
