@@ -324,7 +324,7 @@ In order to [connect](/rest/api/fabric/core/git/connect) to a Git repository or 
 
 ### Create a new connection that stores your GitHub credentials
 
-Use your [Personal Access Token (PAT)](./git-get-started?tabs=github%2CAzure%2Ccommit-to-git#git-prerequisites) to create a GitHub connection.
+Use your [Personal Access Token (PAT)](./git-get-started.md?tabs=github%2CAzure%2Ccommit-to-git#git-prerequisites) to create a GitHub connection.
 
 If you provide the name of a specific repo, your connection is scoped to that repo. If you don't provide the name of any repo, you get access to all repos you have permission for.
 
