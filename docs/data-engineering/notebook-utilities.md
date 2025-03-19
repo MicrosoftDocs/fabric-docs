@@ -56,10 +56,10 @@ Use notebookutils.fs.help("methodName") for more info about a method.
 
 NotebookUtils works with the file system in the same way as Spark APIs. Take *notebookutils.fs.mkdirs()* and Fabric lakehouse usage for example:
 
-| **Usage** | **Relative path from HDFS root** | **Absolute path for ABFS file system** |**Absolute path for local file system in driver node** |
-|---|---|---|---|
-| Non-default lakehouse | Not supported | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
-| Default lakehouse | Directory under “Files” or “Tables”: *notebookutils.fs.mkdirs("Files/<new_dir>")* | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* |*notebookutils.fs.mkdirs("file:/<new_dir>")*|
+| **Usage** | **Cache time in local file system** | **Relative path from HDFS root** | **Absolute path for local file system in driver node** | **Absolute path for ABFS file system** |
+|---|---|---|---|---|
+| Non-default lakehouse | 120s | Not supported | *notebookutils.fs.mkdirs("file:/<new_dir>")* | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | 
+| Default lakehouse | 120s | Directory under “Files” or “Tables”: *notebookutils.fs.mkdirs("Files/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* |
 
 ### List files
 
