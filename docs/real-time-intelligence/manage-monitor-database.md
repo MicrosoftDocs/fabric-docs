@@ -12,7 +12,7 @@ ms.search.form: Database
 ---
 # Manage and monitor a database
 
-The main page of your KQL database shows an overview of the contents and activity of your database. You track database activity, preview tables, gain insights into the database table schemas. This article provides an overview of the main page of a KQL database and how to navigate to a database table page.
+The main page of your KQL database shows an overview of the contents and activity of your database. You track database activity, preview tables, gain insights into the database table schemas.
 
 ## Prerequisites
 
@@ -40,15 +40,15 @@ C. **Main view area**: The main view area displays the main database activities,
 
 D. **Details area**: The details area provides additional information about the database.
 
-## Database ribbon
+### Database ribbon
 
 The database ribbon is your quick-access action bar, offering a convenient way to manage your database. From here, you can get data, query with code, add a new related item such as a notebook or dashboard, explore data policies, and if available, open OneLake.
 
-## Explorer pane
+### Explorer pane
 
 The database explorer provides an intuitive interface for navigating between the databases in your Eventhouse. You can also use the more menu in the explorer pane to [Manage the database](manage-monitor-eventhouse.md#manage-kql-databases).
 
-## Database details
+### Database details
 
 The right pane displays the details of the selected database.
 
@@ -72,7 +72,7 @@ The right pane displays the details of the selected database.
 | | Caching Policy | The time period in which data is cached and kept in local SSD storage. For more information, see [Caching policy](/fabric/real-time-intelligence/data-policies#caching-policy).|
 | | Retention Policy | The time period after which data is automatically removed from tables or materialized views. For more information, see [Data retention policy](/fabric/real-time-intelligence/data-policies#data-retention-policy).|
 
-## Main view area
+### Main view area
 
 The main database information pane tracks data activity, allows you to preview table details and data, and to view query insights.
 
@@ -84,7 +84,7 @@ At the top of the main view area, you can select these options:
 * **Overview** - select to view the database activity tracker and database tables in the main view area.
 * **Entity diagram (preview)** - select to view the database as an [entity diagram](database-entity-diagram.md).
 
-### Database activity tracker
+#### Database activity tracker
 
 The database activity tracker displays the number of rows loaded into the database and the number or queries, in the selected time range.
 
@@ -101,7 +101,7 @@ The database activity tracker displays the number of rows loaded into the databa
 | | Refresh | Refresh your histogram.|
 | | Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram.<br/>The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time. Hover over the histogram to display total rows ingested and total queries per status. |
 
-### Tables
+#### Tables
 
 The tables section displays a list of tables in the database, with the following information:
 
