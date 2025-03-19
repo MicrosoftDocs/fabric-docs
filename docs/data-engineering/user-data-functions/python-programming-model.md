@@ -9,7 +9,7 @@ ms.search.form: Writing new User Data Functions
 ---
 
 
-# Overview of Fabric user data functions programming model (Preview)
+# Fabric User Data Functions programming model overview (Preview)
 
 The Fabric User Data Functions programming model is an SDK that provides the necessary functionality to author and publish runnable functions in Fabric. The SDK also allows you to seamlessly integrate with other items in the Fabric ecosystem, such as Fabric data sources. This library is [publicly available in PyPI](https://pypi.org/project/fabric-user-data-functions/) and is pre-installed in your User Data Functions items.
 
