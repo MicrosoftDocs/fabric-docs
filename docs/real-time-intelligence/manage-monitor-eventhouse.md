@@ -105,7 +105,7 @@ The system overview page provides a snapshot of the current state of the eventho
             * **Last 24 hours**: The percentage change from 1 hour to 24 hours ago​.
             * **Last week**: The percentage change from 1 hour to one week ago​. -->
 
-    * *Storage resources**: Shows a snapshot of the storage breakdown by database. You can drilldown into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
+    * **Storage resources**: Shows a snapshot of the storage breakdown by database. You can drilldown into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
 
     * **Activity in minutes**: Shows the duration in minutes to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
 
@@ -148,31 +148,7 @@ The databases page provides a summary of all the databases in the eventhouse.
 
     :::image type="content" source="media/eventhouse/list-tile-view.png" alt-text="Screenshot showing the eventhouse details page with the tile and list view buttons surrounded by a red box.":::
 
-1. To explore a specific database, select the name of this database from the list.
-
-## Manage KQL Databases
-
-In the Eventhouse explorer, under **KQL Databases**, you can manage all the databases in the eventhouse.
-
-:::image type="content" source="media/eventhouse/manage-databases.png" alt-text="Screenshot showing the eventhouse KQL Databases section.":::
-
-You can perform the following actions:
-
-* To create either a KQL database or a [database shortcut](database-shortcut.md):
-
-    1. Select **New database +**.
-
-    1. Enter a database name, and select **Create**.
-
-* To filter the list of databases, use the search box.
-* To open an existing database, select the database from the list.
-* To query tables in a database, hover over the desired database > select **More menu** [**...**] > **Query data**. The **Explore your data** pane opens where you can write and run queries on the selected database. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
-* To ingest data into a database, hover over the desired database > select **More menu** [**...**] > **Get data** > select the desired ingest method. To learn more, see [data formats](ingestion-supported-formats.md) and the corresponding ingestion methods.
-* To delete a database, hover over the desired database > select **More menu** [**...**] > **Delete** > **Delete database**.
-* To share access to a database, select the database from the list and [share the database link](access-database-copy-uri.md#share-a-kql-database-link).
-
-> [!NOTE]
-> Sharing multiple databases or sharing the Eventhouse is not supported.
+1. To explore a specific database, select the name of this database from the list. For more information, see [Manage and monitor a database](manage-monitor-database.md).
 
 ## Related content
 
