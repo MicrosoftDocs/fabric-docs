@@ -11,7 +11,7 @@ ms.date: 02/27/2025
 # Introduction to Fabric events
 This overview provides a comprehensive understanding of Fabric events and their capabilities.
 
-Fabric events allow users to subscribe to events produced by Fabric and Azure resources. Fabric events allows downstream processes that have subscribed to these events to be triggered in near real-time, providing an efficient communication model at high scale and higher fault tolerance.
+Fabric events allow users to subscribe to events produced by Fabric and Azure resources. Fabric events allow downstream processes that have subscribed to these events to be triggered in near real-time, providing an efficient communication model at high scale and higher fault tolerance.
 
 ## Key features
 **Event sources**: Fabric events support event-driven scenarios where events can be published by various sources, including events produced by your OneLake, items in your workspace or jobs in your tenant. You can also subscribe to events produced from external sources like your Azure blob storage accounts.
@@ -20,7 +20,7 @@ Fabric events allow users to subscribe to events produced by Fabric and Azure re
  
 ## Common scenarios
 
-### Using Workspace item events
+### Use Workspace item events
 
 Workspace item events are generated when changes occur to items within a Fabric workspace. These events can be triggered by actions such as creating, updating, or deleting workspace items like datasets, reports, or dashboards.
 
@@ -30,38 +30,38 @@ With workspace item events, I can set up an alert mechanism using the activator 
 
 By utilizing these alerts, I can stay informed about critical updates and respond quickly, ensuring the integrity and accuracy of the workspace items.
 
-### Using Job events
+### Use Job events
 
-Job events are generated when an item in Fabric runs a job. Such as a refresh of a semantic model, a scheduled run of a pipeline, or manually clicking “run” in a notebook. Each of these can generate a corresponding job, which in turn generates a set of corresponding job events. 
+Job events are generated when an item in Fabric runs a job. Such as a refresh of a semantic model, a scheduled run of a pipeline, or manually selecting **Run** in a notebook. Each of these actions can generate a corresponding job, which in turn generates a set of corresponding job events. 
 
-As a data engineer. My daily work is to develop and maintain pipelines and notebooks. I will often run and test my code, so I also frequently visit monitoring hubs to check the result of the job. However, when I take a lunch break or leave my computer for some other reasons, I can't monitor the job results in time.
+As a data engineer. My daily work is to develop and maintain pipelines and notebooks. I often run and test my code, so I also frequently visit monitoring hubs to check the result of the job. However, when I take a lunch break or leave my computer for some other reasons, I can't monitor the job results in time.
 
-With job events, I can set up an alert mechanism in conjunction with the activator trigger. For example, when the scheduler triggers a new job, or a job fails, I can receive an email alert. This way, even if I'm not in front of the computer, I can still get the information I care about. 
+With job events, I can set up an alert mechanism with the activator trigger. For example, when the scheduler triggers a new job, or a job fails, I can receive an email alert. This way, even if I'm not in front of the computer, I can still get the information I care about. 
 
-### Using OneLake events
+### Use OneLake events
 
 OneLake events are generated when changes occur in your data lake, such as the creation, modification, or deletion of files and folders. These events are particularly beneficial in scenarios where immediate awareness of data changes is critical, such as in fraud detection, data processing, or real-time analytics.
  
-As a data engineer, you manage customer data for a marketing team. Whenever new customer data is added or existing data is updated, you need to ensure that the data is transformed and standardized for analysis. By setting up OneLake events, you can initiate data transformation tasks automatically whenever there are updates to the customer data. This ensures that the marketing team always has access to the latest and most accurate customer profiles, enabling them to create personalized marketing campaigns and improve customer engagement.
+As a data engineer, you manage customer data for a marketing team. Whenever new customer data is added or existing data is updated, you need to ensure that the data is transformed and standardized for analysis. By setting up OneLake events, you can initiate data transformation tasks automatically whenever there are updates to the customer data. This approach ensures that the marketing team always has access to the latest and most accurate customer profiles, enabling them to create personalized marketing campaigns and improve customer engagement.
  
 With OneLake events, you can set up alerts to notify your team of critical data changes, enabling proactive monitoring and quick response to potential issues. You can also automate your workflows to initiate data transformation tasks whenever existing data is updated, ensuring your analytics are always based on the latest information.
  
 By staying ahead of data modifications, you can ensure your operations remain efficient and responsive.
 
-### Using Azure events
+### Use Azure events
 
 Azure Blob Storage events are generated when actions occur on blobs within an Azure 
-storage account. These events can be triggered by actions such as creating, updating, or deleting blobs.
+storage account. These events are triggered by actions such as creating, updating, or deleting blobs.
 
 As a data engineer, my daily work involves managing and processing data stored in Azure Blob Storage. I frequently upload new data, update existing blobs, and delete outdated files. 
 
 With Azure Blob Storage events in Real-Time Hub, I can set up an alert mechanism using the activator trigger. For example, when a new blob is uploaded or an existing blob is deleted, I can receive an email alert. This way, even if I'm not actively monitoring the storage account, I can stay informed about the latest changes in my storage account.
 
-By leveraging these alerts, I can ensure that I am always aware of critical updates and can respond promptly, maintaining the integrity and accuracy of the data stored in Azure Blob Storage.
+With these alerts, I can ensure that I'm always aware of critical updates and can respond promptly, maintaining the integrity and accuracy of the data stored in Azure Blob Storage.
 
 ## Related content
 
-See the following references for more details:
+For more information, see the following articles:
 - [Explore Fabric Job events](explore-fabric-job-events.md).</br>
 - [Explore Fabric OneLake events](explore-fabric-onelake-events.md).</br>
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md).</br>
