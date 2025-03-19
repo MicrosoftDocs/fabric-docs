@@ -318,7 +318,7 @@ For the complete script, see [Poll a long running operation](https://github.com/
 
 ## Get or create Git provider credentials connection
 
-When you connect to Git, you can:
+When you create a , you can:
 
 * [Create a new connection](#create-a-new-github-source-control-connection)
 * Connect to an existing connection. For this, you need provide the connection ID of that connection. [Get a list of existing connections](#get-a-list-of-existing-connections).
