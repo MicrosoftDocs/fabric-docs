@@ -13,11 +13,11 @@ ms.search.form: Variable library overview
 
 # What is a Variable library? (preview)
 
-The Microsoft Fabric Variable Library presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages. It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline.
+The Microsoft Fabric Variable Library presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages. It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline. Bucket of variables that can be consumed by other items in the ws
 
 The Fabric Variable library:
 
-* Is compatible with CI/CD processes, allowing [integration with Git](../git-integration/intro-to-git-integration.md) and deployment through [Deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md).
+* Is compatible with CI/CD processes, allowing [integration with Git](../git-integration/intro-to-git-integration.md#supported-items) and deployment through [Deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md#supported-items).
 * Supports automation via Microsoft Fabric public APIs.
 
 > [!NOTE]
@@ -53,6 +53,8 @@ All variables must have a default value. If the variable type is *String*, the d
 ### Alternative value sets
 
 Value sets define the values of each variable in the Variable library. A Variable library typically contains multiple value sets. Choose which value set to use in each workspace by setting it to be active. The active (or effective) value set is the one that is used in the current workspace stage. An active value set of a Variable library isn't changed during deployment or update from Git.
+
+This is that value that the consumer items receives.....
 
 :::image type="content" source="./media/variable-library-overview/alternative-values.png" alt-text="Screenshot of variable library with several alternative value sets.":::
 

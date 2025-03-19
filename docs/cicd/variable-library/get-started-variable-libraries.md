@@ -15,7 +15,7 @@ ms.search.form: Create and use Variable library
 
 # Create and use Variable libraries (preview)
 
-The Microsoft Fabric Variable library is a tool that allows you to customize and share item configurations in a workspace. This article explains how to create a Variable library item and add variables to it.
+The Microsoft Fabric Variable library is a tool that allows you to customize and share item configurations in a workspace. This article explains how to create and manage Variable library items.
 
 ## Prerequisites
 
