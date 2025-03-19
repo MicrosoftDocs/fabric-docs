@@ -1,5 +1,5 @@
 ---
-title: Manage and monitor an KQL database
+title: Manage and monitor a KQL database
 description: Learn how to manage and monitor a KQL database and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: shsagir
@@ -82,7 +82,7 @@ At the top of the main view area, you can select these options:
 * **Refresh** - use this button to manually refresh the database, when live view is disabled.
 * **Query with code** - select to open the queryset for the database.
 * **Overview** - select to view the database activity tracker and database tables in the main view area.
-* **Entity diagram (preview)** - select to view the dtatabase as an [entiity diagram](database-entity-diagram.md).
+* **Entity diagram (preview)** - select to view the database as an [entity diagram](database-entity-diagram.md).
 
 ### Database activity tracker
 
@@ -92,18 +92,21 @@ The database activity tracker displays the number of rows loaded into the databa
 
 |Card | Item| Description|
 |---|---|---|
-| | Ingestion | The number of rows loaded into the database in the selected time range. You can toggle between viewing both query and ingestion data, or only ingestion data. |
-| | Query | The number of queries run in the database in the selected time range. You can toggle between viewing both query and ingestion data, or only query data.|
+|**Menu**|
+| | Ingestion | The number of rows loaded into the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only ingestion data. |
+| | Queries | The number of queries run in the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only query data.|
 | | Last run | The time when the histogram was last generated.|
 | | Time range | The time raqge of the histogram display. Set ranges for one hour, 6 hours, three days, 7 days, or 30 days. |
 | | Interval | Set the interval of the histogram display. Set intervals by one minute, five minutes, one hour, 12 hours, one day, three days, and 30 days. |
 | | Refresh | Refresh your histogram.|
-| | Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram. The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time. Hover over the histogram to display total rows ingested and total queries per status. |
+| | Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram.<br/>The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time. Hover over the histogram to display total rows ingested and total queries per status. |
 
 ### Tables
 
 The tables section displays a list of tables in the database, with the following information:
 
+|Card | Item| Description|
+|---|---|---|
 |**Tables**|
 | | Tables display | View table information by **Cards** or by **List** view. </br></br>Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, Caching*, *Retention*, *OneLake* status, and *Created on*. |
 |**Data preview**|
@@ -115,19 +118,26 @@ The tables section displays a list of tables in the database, with the following
 |**Ingestion failures**|
 | | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|-->
 
-## Navigate to a database table page
+## Navigate to a table page
 
-1. Browse to your database from your list of KQL databases.  
+1. Browse to your database from your list of **KQL databases**.  
 
 1. In the Explorer pane, expand **Tables**. A list of tables in your database is displayed.
 
-1. Select a table from the list. Alternatively, in the main view area > Tables tab > seect a table name.
+1. Select a table from the list. Alternatively, in the main view area browse to the **Tables** area and in the table card select the table name.
+
+:::image type="content" source="media/create-database/database-table-details.png" alt-text="Screenshot of table main view area." lightbox="media/create-database/database-table-details.png":::
 
 The table page is divided into the following sections:
 
-A. **Main view area**: The main view area displays the main table name, table data activity tracler, a preview of the data in the table, and the table schema insights.
+A. **Table ribbon**: The ribbon provides quick access to essential actions within the table.
 
-B. **Details area**: The details area provides additional information about the table.
+B. **Main view area**: The main view area displays the main table name, table data activity tracler, a preview of the data in the table, and the table schema insights.
+
+C. **Details area**: The details area provides additional information about the table.
+
+### Table ribbon
+
 
 ### Table details
 
@@ -140,9 +150,9 @@ The right information pane displays the details of the selected table.
 | | Original size | Total size of uncompressed data.|
 | **OneLake**|
 | | Availability | Set OneLake availability to **Enabled** or **Disabled**. When OneLake availability is turned on, tables can't be renamed. |
-<!--| | Latency| The maximum time until table data is available in OneLake.|
+| | Latency| The maximum time until table data is available in OneLake.|
 | | Since | The start time from when availability is recorded. |
-| | OneLake path | OneLake folder path that can be used for creating shortcuts.|-->
+| | OneLake path | OneLake folder path that can be used for creating shortcuts.|
 |**Overview**|
 | | Row count | The number of rows in the table.|
 | | Rows ingested last 24h | The number of rows ingested in the last 24 hours.|
@@ -155,20 +165,18 @@ The right information pane displays the details of the selected table.
 
 The center table information pane depicts a histogram of the ingestion data, table information, and a means to preview the table data and schema insights.
 
-:::image type="content" source="media/create-database/database-table-details.png" alt-text="Screenshot of table main view area." lightbox="media/create-database/database-table-details.png":::
-
 |Card | Item| Description|
 |---|---|---|
-|**Histogram**|
-| | ingestion | The number of rows ingested into the database.|
+|**Data Activity Tracker** |
+| | Ingestion | The number of rows ingested into the database.|
 | | Last run | The time when the histogram was last generated.|
 | | Time range | The time raqge of the histogram display. Set ranges for one hour, 6 hours, three days, 7 days, or 30 days. |
 | | Interval |Set the interval of the histogram display. Set intervals by one hour, six hours, one day, three days, 7 days, and 30 day intervals. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time. |
 | | Refresh | Refresh your histogram.|
 | | Histogram | The ingestion histogram displays data by the time range and interval chosen.|
-|**Data preview**|
+|**Data preview** |
 | | Quick query | Shows a preview of the table ingestion results. Displays Ingestion time, TableName, and Record. Select **Columns** to select columns and values for a Pivot view.|
-|**Schema insights**|
+|**Schema insights** |
 | | Columns | For each column in a table, shows insights for column values, such as date ranges, minimum and maximum values, or the number of unique values.|
 | | Top 10 | Select a column listed in the *Columns* section to display the top 10 values for that column.|
 
