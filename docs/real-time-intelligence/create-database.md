@@ -99,10 +99,10 @@ You can filter by user, application, and/or query status to refine the database 
 |**Data preview**|
 | | Data preview | Shows a preview of the last 100 records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view.|
 |**Query insights - top 100 queries**|
-| | Daily query duration percentiles over time|  |
-| | Cache hit misses over time|  |
 | | Top queries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
 <!--|**Ingestion failures**|
+| | Daily query duration percentiles over time|  |
+| | Cache hit misses over time|  |
 | | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|-->
 
 ## Table details

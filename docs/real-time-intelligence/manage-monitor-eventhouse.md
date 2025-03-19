@@ -95,7 +95,7 @@ The system overview page provides a snapshot of the current state of the eventho
         * **Suspended capacity**: The capacity used for this eventhouse was suspended. To [reverse the suspension](../enterprise/pause-resume.md), contact your capacity admin.
         * **Unknown**: For unknown reasons, the eventhouse is unavailable.
 
-    * **Eventhouse storage**: Shows the storage capacity and cache misses of the eventhouse. The storage capacity is divided into categories:
+    * **Eventhouse storage**: Shows the storage capacity of the eventhouse. The storage capacity is divided into categories:
         * **Original size**: The uncompressed original data size of the eventhouse.
         * **Compressed size**: The compressed data size of the eventhouse.
         * **Premium**: The amount of Premium storage utilized. This is the high-performance storage tier for your most active data, ensuring the fastest possible access for real-time processing and analysis. If all data is not stored in the Premium cache, query latency may be negatively impacted.. For more information, review your [caching policy](data-policies.md#caching-policy).

@@ -42,21 +42,20 @@ D. **Details area**: The details area provides additional information about the 
 
 ## Database ribbon
 
-The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within a database. From here, you can get data, query with code, add a new related item such as a notebook or dashbooard, explore data policies, and if available, open OneLake.
+The database ribbon is your quick-access action bar, offering a convenient way to manage your database. From here, you can get data, query with code, add a new related item such as a notebook or dashboard, explore data policies, and if available, open OneLake.
 
 ## Explorer pane
 
-The database explorer provides an intuitive interface for navigating between the databases in your Eventhouse. You can also use the more menu in the explorer pane to [Manage and monitor an eventhouse](manage-monitor-eventhouse.md#manage-kql-databases).
+The database explorer provides an intuitive interface for navigating between the databases in your Eventhouse. You can also use the more menu in the explorer pane to [Manage the database](manage-monitor-eventhouse.md#manage-kql-databases).
 
 ## Database details
 
 The right pane displays the details of the selected database.
-<!--| Size? | Compression ratio | Compression ratio of the data.|-->
 
 |Card | Item| Description|
 |---|---|---|
 | **Size** |
-| | Compressed| Total size of compressed data.|
+| | Compressed | Total size of compressed data.|
 | | Original | Total size of uncompressed data.|
 | **OneLake** |
 | | Availability| Set OneLake availability to **Enabled** or **Disabled**. When OneLake availability is enabled, tables can't be renamed.|
