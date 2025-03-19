@@ -181,6 +181,10 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Copilot installation script not included in notebook
+      href: ../known-issues/known-issue-1059-copilot-installation-script-not-included-notebook.md
+    - name: Database mirroring error that source table doesn't exist
+      href: ../known-issues/known-issue-1056-database-mirroring-error-source-table-not-exist.md
     - name: Workspaces created during Fabric preview only support limited OneLake features
       href: ../known-issues/known-issue-1058-workspaces-created-during-preview-limited-onelake-features.md
     - name: Spark Job Definition activity incorrectly shows failure status
@@ -285,7 +289,7 @@ items:
       href: ../known-issues/known-issue-934-external-data-sharing-not-work-different-region.md
     - name: The default environment's resources folder doesn't work in notebooks
       href: ../known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md
-    - name: Tenant migrations paused through March 2025
+    - name: Tenant migration requests stopped
       href: ../known-issues/known-issue-923-tenant-migrations-paused-january-2025.md
     - name: More options menu on a visual doesn't open in unsaved reports
       href: ../known-issues/known-issue-918-more-options-not-open-unsaved-reports.md

@@ -3,7 +3,7 @@ title: Until activity
 description: The Until activity in Data Factory pipelines in Microsoft Fabric executes a set of activities in a loop until the condition associated with the activity evaluates to true or it times out.
 author: kromerm
 ms.author: makromer
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.topic: how-to
 ms.custom:
 ms.date: 11/15/2023

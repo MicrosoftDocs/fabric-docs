@@ -1,8 +1,8 @@
 ---
 title: "Activator throttling"
 description: This article explains how Fabric capacity throttling impacts Activator background operations and shows up in the UI.
-author: kfollis
-ms.author: kfollis
+author: spelluru
+ms.author: spelluru
 ms.reviewer: 'galir'
 ms.service: fabric
 ms.subservice: rti-activator
