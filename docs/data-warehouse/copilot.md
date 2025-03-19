@@ -71,11 +71,11 @@ Here are some tips for maximizing productivity with Copilot.
 > [!NOTE]  
 > AI powers Copilot, so surprises and mistakes are possible.
 
-## Responsible use of Copilot in Fabric
+## Responsible use of Copilot
 
-Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE5cmFl). These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to proactively address emerging issues.
+To view Microsoft's guidelines for responsible AI in Fabric Data Warehouse, see [Privacy, security, and responsible use of Copilot](/fabric/fundamentals/copilot-data-warehouse-privacy-security).
 
-For information about using Copilot responsibly, visit [Privacy, security, and responsible use of Copilot in Fabric](../fundamentals/copilot-privacy-security.md)
+Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://www.microsoft.com/ai/responsible-ai). These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to proactively address emerging issues.
 
 ## Limitations
 
