@@ -5,7 +5,7 @@ author: ptyx507x
 ms.author: miescobar
 ms.reviewer: 
 ms.topic: conceptual
-ms.date: 03/12/2025
+ms.date: 04/6/2025
 ---
 
 # Using public parameters in Dataflow Gen2 (Preview)
@@ -28,11 +28,12 @@ Parameters in Dataflow Gen2 allow you to dynamically control and customize dataf
 * **Dataflows with the public parameters mode enabled cannot be manually triggered through the Fabric Workspace list or lineage view.** The only exception is a Dataflow with no required parameters set.
 * **Parameters that affect the resource path of a data source or a destination are not supported.** Connections are linked to the exact data source path defined in the authored Dataflow and can't be currently override to use other connections or resource paths.
 * **Dataflows with incremental refresh can't leverage this new mode.**
-* **Only parameters of the type *decimal number*, *whole number*, *text* and *true/false* can be passed for override.** Any other 
+* **Only parameters of the type *decimal number*, *whole number*, *text* and *true/false* can be passed for override.**  Any other data types will not produce a refresh request in the refresh history but will be shown in the monitoring hub. 
 * **The public parameters mode allows users to modify the logic defined within the Dataflow by overriding the parameter values.** It  would allow others who have permissions to the Dataflow to refresh the data with other values, resulting in different outputs from the data sources used in the Dataflow.
 * **Refresh history doen't display information about the parameters passed during the invocation of the Dataflow.**
 * **Monitoring hub doen't display information about the parameters passed during the invocation of the Dataflow.**
 * **Staged queries will only keep the last data refresh of a Dataflow stored in the Staging Lakehouse.** Users are able to look at the data from the Staging Lakehouse using the Dataflows connector to determine what was data is stored. However, it's highly encouraged to use explicit data destinations when using the public parameters mode.
+* **When submitting a duplicated request for the same parameter values, only the first request will be accepted and subsequent will be rejected until the first request finishes its evaluation.**
 
 ## Enabling the public parameter mode
 
@@ -56,30 +57,24 @@ Once the public parameter mode has been enabled, you can go ahead and save your 
 
 ## Passing custom parameter values for refresh
 
-You can use the [Fabric Public REST API](https://aka.ms/DFG2PublicParametersAPI) to trigger a refresh of your Dataflow Gen2 with CI/CD support and pass parameters.
-
-For example, you could create a Notebook in Fabric that applies a PySpark cell and uses a sample code as the one shown below that passes a single parameter with the name Region and the value Western to be refreshed:
-
-```python
-import sempy.fabric as fabric
-
-client = fabric.FabricRestClient()
-workspace_id  =  "Your workspace ID"
-item_id = "Your Dataflow ID"
-json_data = {"executionData": {"parameters": {"Region": {"value": "Western"} }}}
-response = client.post(f"/v1/workspaces/{workspace_id}/items/{item_id}/jobs/instances?jobType=Refresh", json= (json_data))
-print (response)
-```
-
->[!NOTE]
-> Native experiences within Fabric to trigger the refresh of a Dataflow by passing parameters come later in the calendar year 2025.
-
-The public parameter mode follows the definition of the parameters for the Dataflow where there's a distinction between required and nonrequired parameters.
+The public parameter mode follows the definition of the parameters inside the Dataflow where there's a distinction between required and nonrequired parameters.
 
 * **Required parameters**: if a parameter is set as required, in order to refresh the Dataflow a value needs to be passed to the refresh job. The refresh fails if no value is passed for a parameter that is set to required.
 * **Non-required parameters**: these are also called ***optional*** parameters and no value is required to be passed for a refresh to be triggered. If no value is passed, the **Current value** defined within your parameter used for refresh. However, you can always pass an override value which is used for refresh.
 
-## More resources
+## Using the Dataflow refresh activity within Data Pipelines
 
-Check out the [documentation for the Fabric REST API to trigger a refresh with parameters for a Dataflow Gen2 with CI/CD](https://aka.ms/DFG2PublicParametersAPI).
+>[!NOTE]
+>We recommend reading more about the [Dataflow activity from Fabric Data pipelines](dataflow-activity.md) to understand all its capabilities. 
+
+When you create a Pipeline in Fabric, you can use the Dataflow refresh activity to trigger the refresh of a Dataflow Gen2 with CI/CD support that has the public parameters mode enabled. 
+
+You can select the Dataflow that you wish to use and set the parameters that you wish to use in the **Dataflow parameters** section.
+
+![Screenshot of the Dataflow activity within Fabric Data pipelines that allows to pass parameters for refresh](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
+
+In the Dataflow parameters section you can pass the name of the parameter, the type of value that you wish to pass and the value to pass. You can manually add all the supported parameters that you wish to override.
+
+>[!IMPORTANT]
+>Be sure to pass the name of the parameters exactly as typed inside of the Dataflow as parameter names are case sensitive.
  
