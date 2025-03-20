@@ -19,7 +19,7 @@ This article describes how to get events from an Azure Event Grid namespace into
 
 
 ## Get events from an Azure Event Grid namespace
-You can get events from an Azure Event Grid namespace into Real-Time hub using the [**Data sources** page](#data-sources-page)
+You can get events from an Azure Event Grid namespace into Real-Time hub using the [**Data sources** page](#data-sources-page).
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 

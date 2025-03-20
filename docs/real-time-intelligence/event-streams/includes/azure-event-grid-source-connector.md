@@ -27,7 +27,7 @@ On the **Configure connection settings** page, follow these steps:
     1. For **eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected Event Grid namespace as a source.
     1. The **Stream name** is automatically generated for you by appending **-stream** to the name of the eventstream. You can see this stream on the Real-time hub **All data streams** page when the wizard finishes.  
 
-        :::image type="content" source="./media/azure-event-grid-source-connector/stream-name.png" alt-text="Screenshot that shows the Stream details section for the Event Grid namespace" :::             
+        :::image type="content" source="./media/azure-event-grid-source-connector/stream-name.png" alt-text="Screenshot that shows the Stream details section for the Event Grid namespace." :::             
 1. If you're using the Eventstream editor to add an Event Grid namespace as a source to an event stream, select **pencil** button under **Source name**, and enter a source name. 
 1. Select **Next** at the bottom of the page.
 1. On the **Review + connect** page, review settings, and select **Connect**.
