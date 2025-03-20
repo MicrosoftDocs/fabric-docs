@@ -88,7 +88,6 @@ The following items currently support Git integration:
 
 * Power BI items:
 
-  * Dashboard *(preview)*
   * Metrics Set *(preview)*
   * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
   * [Paginated report](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
