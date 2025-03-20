@@ -6,17 +6,15 @@ ms.author: kgremban
 author: kgremban
 ms.topic: how-to
 ms.custom: references_regions
-ms.date: 05/09/2024
+ms.date: 03/20/2025
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
 # Row-level security in OneLake (preview)
 
-Row-level security (RLS) is a feature of OneLake security (preview) that allows for defining row-level data restrictions for tabular data stored in OneLake. Users can define roles in OneLake that contain rules for filtering rows of data for members of that role. When a member of an RLS ole goes to query that data, the RLS rules are evaluated and only allowed rows are returned.
+Row-level security (RLS) is a feature of OneLake security (preview) that allows for defining row-level data restrictions for tabular data stored in OneLake. Users can define roles in OneLake that contain rules for filtering rows of data for members of that role. When a member of an RLS role goes to query that data, the RLS rules are evaluated and only allowed rows are returned.
 
 [!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
-
-RLS rules are based on Boolean statements. Users can see a row if the RLS rule evaluates to true, and can't see a row if the rule evaluates to false for that rule. Users who have multiple RLS roles assigned to them have the rules from each role combined with an OR.
 
 During preview, RLS isn't available in the following Fabric regions:
 
@@ -41,13 +39,14 @@ For filtered tables, the following behaviors apply:
 * If the RLS rule has a mismatch with the table it is defined on, the query fails and no rows will be returned. For example, if the RLS rule references a column that isn't part of the table.
 * Queries of RLS tables fail with an error if a user is part of two different roles and one of the roles has column-level security (CLS). 
 * RLS rules can only be enforced for objects that are Delta parquet tables. 
-  * RLS rules that are applied to non-Delta table objects instead block access to the entire table for members of the role. 
+  * RLS rules that are applied to non-Delta table objects instead block access to the entire table for members of the role.
+* Access to a table might be blocked if the RLS statement contains syntax errors that prevent it from being evaluated.
 
 ## Define row-level security rules
 
 You can define row-level security rules as part of any OneLake security role that grants access to table data in Delta parquet format. Rows are a concept only relevant to tabular data, so RLS definitions aren't allowed for non-table folders or unstructured data.  
 
-RLS rules use SQL syntax to specify the rows that a user can see. This syntax takes the form of a SQL `SELECT` statement with the RLS rules defined in the `WHERE` clause. RLS rules only support a subset of the SQL language as defined in [Syntax rules](#syntax-rules). Queries with invalid RLS syntax or RLS syntax that doesn't match the underlying table result in no rows being shown to users. 
+RLS rules use SQL syntax to specify the rows that a user can see. This syntax takes the form of a SQL `SELECT` statement with the RLS rules defined in the `WHERE` clause. RLS rules only support a subset of the SQL language as defined in [Syntax rules](#syntax-rules). Queries with invalid RLS syntax or RLS syntax that doesn't match the underlying table result in no rows being shown to users, or query errors in the SQL analytics endpoint. 
 
 Use the following steps to define RLS rules: 
 
