@@ -62,7 +62,7 @@ NotebookUtils works with the file system in the same way as Spark APIs. Take *no
 | Default lakehouse | Directory under “Files” or “Tables”: *notebookutils.fs.mkdirs("Files/<new_dir>")* | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
 
 > [!NOTE]
-> The local file system cache lasts 120 seconds by default. You can change this by setting the [*fileCacheTimeout*](#mount-via-shared-access-signature-token-or-account-key) parameter.
+> For both default and non default Lakehouses, the files cache in local file system for 120 seconds. You can change this by setting the [*fileCacheTimeout*](#mount-via-shared-access-signature-token-or-account-key) parameter.
 
 ### List files
 
