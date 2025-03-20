@@ -32,10 +32,10 @@ This table lists regions where all Fabric workloads are available.
 | Americas                     | Europe                     | Middle East | Africa             | Asia Pacific                    |
 |:-----------------------------|:---------------------------|:------------|:-------------------|:--------------------------------|
 | Brazil South                 | North Europe               | UAE North   | South Africa North | Australia East                  |
-| Canada Central               | West Europe                |             |                    | Australia Southeast<sup>*</sup> |
+| Canada Central               | West Europe                |             |                    | Australia Southeast|
 | Canada East                  | France Central             |             |                    | Central India                   |
 | Central US                   | Germany West Central       |             |                    | East Asia                       |
-| East US                      | Italy North<sup>*</sup>    |             |                    | Japan East<sup>*</sup>          |
+| East US                      | Italy North<sup>*</sup>    |             |                    | Japan East       |
 | East US 2                    | Norway East                |             |                    | Korea Central                   |
 | North Central US             | Poland Central<sup>*</sup> |             |                    | Southeast Asia                  |
 | South Central US<sup>**</sup>| Sweden Central             |             |                    | South India                     |
@@ -79,7 +79,7 @@ This table lists regions where public preview features are available, according 
 | Germany West Central | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x274C; | &#x2705; |
 | Italy North | &#x274C; | &#x274C; | &#x2705; |
 | Japan East | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
-| Korea Central | <li>Dataflows</li><li>Synapse Notebook</li> | &#x274C; | &#x274C; | |
+| Korea Central | <li>Dataflows</li><li>Synapse Notebook</li> | &#x274C; | &#x2705; | |
 | North Central US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; |
 | North Europe | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
 | Norway East | &#x274C; | &#x274C; | &#x2705; |
