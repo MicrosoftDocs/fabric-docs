@@ -103,7 +103,7 @@ The following items currently support Git integration:
 
 * Industry solutions:
 
-  * Healthcare *(preview)* 
+  * Healthcare *(preview)*
   * HealthCare Cohort *(preview)*
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren't saved or synced, but they're not deleted either. They appear in the source control panel but you can't commit or update them.
