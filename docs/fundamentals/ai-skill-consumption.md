@@ -22,9 +22,9 @@ Requests to the AI Skill consume Fabric Capacity Units (CU). The table below def
 In addition to token consumption, the AI Skill may generate and execute queries as part of answering user requests. The execution of these queries is billed separately to the corresponding query engine artifact. For example, if a query is generated for a Data Warehouse, its execution is billed through the SQL Query operation.
 
 ## Monitor the usage  
-The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for AI Skill operations under the name "AI Query" Additionally, AI Skill users are able to view a summary of their billing charges for the AI skill usage under the invoicing item "AI Query."
+The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for AI Skill operations under the name "AI Query" Additionally, AI Skill users are able to view a summary of their billing charges for the AI skill usage under the "LlmPlugin" item kind.
 
-:::image type="content" border="true" source="./media/copilot-consumption/capacity-metrics-app.png" alt-text="Screenshot of Fabric Capacity Metrics.":::
+:::image type="content" border="true" source="./media/copilot-consumption/ai-skill-billing.png" alt-text="Screenshot of Fabric Capacity Metrics.":::
 
 
 ## Capacity utilization type 
