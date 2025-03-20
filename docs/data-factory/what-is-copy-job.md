@@ -29,8 +29,6 @@ Some advantages of the Copy job over other data movement methods include:
 
 Currently, you can use the Copy job for cloud data transfer or copying data from an on-premises data store via gateway. The Copy job supports the following data stores as both source and destination:
 
-:::image type="icon" source="media/data-pipeline-support/no.png":::
-
 | Connector | Source | Destination | Full copy | Incremental copy (Preview) | On-premises data gateway |
 | --- | --- | --- | --- | --- | --- | 
 | Azure SQL DB | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
@@ -50,7 +48,6 @@ Currently, you can use the Copy job for cloud data transfer or copying data from
 | Google Cloud Storage | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
 | MySQL | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
 | Azure MySQL | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
-
 
 > [!NOTE]
 > - Some connectors don't yet support incremental copy, but those will be available soon.
