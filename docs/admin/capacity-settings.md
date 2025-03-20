@@ -4,7 +4,7 @@ description: Learn how to manage your Microsoft Fabric capacity and understand t
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.date: 03/17/2025
+ms.date: 03/20/2025
 ---
 
 # Manage your Fabric capacity
@@ -398,6 +398,7 @@ This table summarizes the actions you can take in the details section.
 | Disaster Recovery                    | Enable [disaster recovery](/azure/reliability/reliability-fabric#set-up-disaster-recovery) for the capacity |
 | Capacity usage report                | The usage report is replaced with the [capacity metrics app](../enterprise/metrics-app.md) |
 | Notifications                        | Enable [notification](service-admin-premium-capacity-notifications.md) for your capacity |
+| Copilot capacity                     | Designate this capacity as a [Fabric Copilot capacity](../enterprise/fabric-copilot-capacity.md) |
 | Contributor permissions              | Set up the ability to add workspaces to the capacity. Select one of these two options:<li>The entire organization</li><li>Specific users or security groups</li> |
 | Admin permissions                    | Give specific users the ability to do the following:<li>Change capacity settings</li><li>Add contributors to the capacity</li><li>Add or remove workspaces from the capacity</li> |
 | Power BI workloads                   | Configure [Power BI workloads](/power-bi/enterprise/service-admin-premium-workloads) for:<li>[Semantic models](/power-bi/enterprise/service-admin-premium-workloads#semantic-models)</li><li>[Paginated reports](/power-bi/enterprise/service-admin-premium-workloads#paginated-reports)</li><li>[AI](/power-bi/enterprise/service-admin-premium-workloads#ai-preview)</li> |
