@@ -22,7 +22,7 @@ Some advantages of the Copy job over other data movement methods include:
 
 - **Intuitive Experience**: Experience seamless data copying with no compromises, making it easier than ever.
 - **Efficiency**: Enable incremental copying effortlessly, reducing manual intervention. This efficiency translates to less resource utilization and faster copy durations.
-- **Flexibility**: While enjoy the simplicity, you also have the flexibility to control your data movement. Choose which tables and columns to copy, map the data, define read/write behavior, and set schedules that fit your needs, whether for a one-time task or recurring operation.
+- **Flexibility**: While enjoying the simplicity, you also have the flexibility to control your data movement. Choose which tables and columns to copy, map the data, define read/write behavior, and set schedules that fit your needs, whether for a one-time task or recurring operation.
 - **Robust performance**: A serverless setup enabling data transfer with large-scale parallelism, maximizing data movement throughput for your system. 
 
 ## Supported connectors
