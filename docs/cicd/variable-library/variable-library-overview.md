@@ -13,7 +13,11 @@ ms.search.form: Variable library overview
 
 # What is a Variable library? (preview)
 
-The Microsoft Fabric Variable Library presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages. It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline. Bucket of variables that can be consumed by other items in the ws
+A Microsoft Fabric Variable library is a bucket of variables that can be consumed by other workspace items. It presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages. It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline.
+
+Variable library values aren't tied to deployment. Rather, value resolution is done by each consumer item using [data pipelines](../../data-factory/pipeline-landing-page.md).
+
+The Variable library experience differs based on the variable type, but the core concept remains the same: it allows you to define and manage variables that can be used in other items.
 
 The Fabric Variable library:
 
@@ -35,7 +39,7 @@ Variable libraries enable customers to:
 
 * Share configurations
 
-  Variable libraries provide a centralized way to manage configurations across the workspace items. For example, Lakehouses in the workspace using the same shortcut can share the same configuration across the workspace.
+  Variable libraries provide a centralized way to manage configurations across the workspace items. For example, if you have several Lakehouses in the workspace and each one has a shortcut that points to the same datasource, you can create a Variable library with that datasource as one of the variables. That way, if you want to change the data source, only have to change it one in the Variable library instead of changing it in each Lakehouse separately.
 
 ## Variable library structure
 

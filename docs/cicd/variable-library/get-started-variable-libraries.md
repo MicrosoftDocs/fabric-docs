@@ -1,21 +1,21 @@
 ---
 title: Get started with Variable libraries
-description: Learn how to use Microsoft Fabric Variable libraries to customize and share item configurations in a workspace.
+description: Learn how to mange Microsoft Fabric Variable libraries to customize and share item configurations in a workspace.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: quickstart
-ms.date: 03/04/2025
+ms.date: 03/20/2025
 ms.search.form: Create and use Variable library
 #customer intent: As a developer, I want to learn how to use the Microsoft Fabric Variable library tool to customize and share item configurations in a workspace so that I can manage my content lifecycle.
 
 ---
 
-# Create and use Variable libraries (preview)
+# Create and manage Variable libraries (preview)
 
-The Microsoft Fabric Variable library is a tool that allows you to customize and share item configurations in a workspace. This article explains how to create and manage Variable library items.
+Microsoft Fabric Variable libraries enable developers to customize and share item configurations within a workspace, streamlining content lifecycle management. This article explains how to create, manage, and consume Variable libraries. For a more detailed walkthrough of the process, see the [Variable library tutorial](./tutorial-variable-library.md).
 
 ## Prerequisites
 
@@ -36,9 +36,8 @@ Before you create a Variable library, make sure you understand who will have [pe
 ## Create a Variable library item
 
 You can create a Variable library item from the Fabric home page or from inside your workspace.
-    
-**From Home page:**
-<!--- ### [From home page](#tab/home-page) --->
+
+### [From home page](#tab/home-page)
 
 1. From the side navigation bar, select **Create** (If it’s not there, select the three dots -> Create)
 
@@ -48,8 +47,7 @@ You can create a Variable library item from the Fabric home page or from inside 
 
 1. Name the new Variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./variable-types.md#variable-library-item-name).
 
-<!--- ### [From workspace](#tab/workspace) --->
-**From workspace:**
+### [From workspace](#tab/workspace)
 
 1. Select **+ New item**
 1. Scroll down to the **Develop data** section, and select **Variable library**
@@ -57,8 +55,8 @@ You can create a Variable library item from the Fabric home page or from inside 
    :::image type="content" source="./media/get-started-with-variable-libraries/create-from-workspace.png" alt-text="Screenshot of UI for creating a Variable library item from an existing workspace.":::
 
 1. Name the new Variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./variable-types.md#variable-library-item-name).
-<!---
---- --->
+
+---
 
 An empty Variable library appears. You can now add variables to it.
 
