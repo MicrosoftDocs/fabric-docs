@@ -167,8 +167,10 @@ items:
       items:
       - name: Secure outbound using managed private endpoints
         href: event-streams/set-up-private-endpoint.md
-      - name: Microsoft Entra ID authentication
+      - name: Authenticate an application using Entra ID
         href: event-streams/custom-endpoint-entra-id-auth.md
+      - name: Authenticate with a managed identity
+        href: event-streams/connect-using-managed-identity.md
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
