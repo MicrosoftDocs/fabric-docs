@@ -117,7 +117,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
     * **Activity in minutes - top 5 users**: Shows the total compute minutes of the most active users. The information can help you understand the efficiency with which users are utilizing compute units.
 
-    * **Top 10 queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, the duration, and the cache misses rate per database. The information can assist you in obtaining a comprehensive overview of which databases are utilizing compute units.
+    * **Top 10 queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, and the duration per database. The information can assist you in obtaining a comprehensive overview of which databases are utilizing compute units.
 
     * **Top 10 ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows. Currently only partial ingestion errors are reported.
 
@@ -127,7 +127,7 @@ The system overview page provides a snapshot of the current state of the eventho
         * Create, alter, or delete a table
         * Create or delete an external table
         * Create, alter, or delete a materialized view
-        * Create, alter, or delete a functionpoih njbyv
+        * Create, alter, or delete a function
         * Alter a caching policy, retention policy, or table update policy
 
 1. Optionally, select one of the tabs at the top of a card to filter its date by time range. These tabs allow you to filter by one hour (1H), one day (1D), one week (7D), one month (30D).

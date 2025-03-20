@@ -65,7 +65,7 @@ The database ribbon is your quick-access action bar, offering a convenient way t
 
 ### Explorer pane
 
-The database explorer provides an intuitive interface for navigating between the databases in your Eventhouse. You can also use the more menu in the explorer pane to [Manage the database](manage-monitor-eventhouse.md#manage-kql-databases).
+The database explorer provides an intuitive interface for navigating between the databases in your Eventhouse. You can also use the more menu in the explorer pane to [Manage the database](#manage-kql-databases).
 
 ### Database details
 
@@ -164,7 +164,7 @@ C. **Details area**: The details area provides additional information about the 
 
 From the table in the explorer pane, select the  *More menu** [**...**], or select the option from the table ribbon to manage the tables in the database.
 
-:::image type="content" source="media/create-database/manage-tables.png" alt-text="Screenshot of table main view area." lightbox="media/create-database/manage-tables.png":::
+:::image type="content" source="media/create-database/manage-tables.png" alt-text="Screenshot of the more menu in the table main view area." lightbox="media/create-database/manage-tables.png":::
 
 You can perform the following actions:
 
