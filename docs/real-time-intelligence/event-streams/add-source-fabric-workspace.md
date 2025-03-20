@@ -17,7 +17,7 @@ This article shows you how to add Fabric workspace item event source to an event
 
 
 [!INCLUDE [consume-fabric-events-regions](../../real-time-hub/includes/consume-fabric-events-regions.md)]
-
+[!INCLUDE [deprecated-fabric-workspace-events](../../real-time-hub/includes/deprecated-fabric-workspace-events.md)]
 
 Fabric workspace item events are discrete Fabric events that occur when contents of your Fabric Workspace is changed. These changes include creating, updating, or deleting of Fabric items except for the item types listed in the note.
 [!INCLUDE [unsupported-itemtypes-in-workspaceevents](../../real-time-hub/includes/unsupported-itemtypes-in-workspaceevents.md)]
