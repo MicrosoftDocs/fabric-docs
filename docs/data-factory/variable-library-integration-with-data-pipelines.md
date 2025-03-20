@@ -27,23 +27,33 @@ The Variable library is a new item type in Microsoft Fabric that allows users to
 
 1. Navigate to your workspace and create a new item.
 
-   :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" lightbox="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/create-new-artifact.png" lightbox="media/variable-library-integration-with-data-pipelines/create-new-artifact.png" alt-text="Screenshot showing where to add a new item in your Fabric workspace highlighted.":::
  
 2. Use the filter to find Variable library or scroll down to the Develop data section.
 
-   :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" lightbox="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/create-new-variable-library.png" lightbox="media/variable-library-integration-with-data-pipelines/create-new-variable-library.png" alt-text="Screenshot showing the filter for a new Variable library item.":::
  
 3. Select Variable library (preview) to create a new Variable library. Choose a name and hit Create.
 
-   :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" lightbox="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/set-variable-library-name.png" lightbox="media/variable-library-integration-with-data-pipelines/set-variable-library-name.png" alt-text="Screenshot showing a new Variable library item with a name set and the Create button highlighted.":::
  
-4. Once the Variable library is created, you can create new variables using the New button and set the Name, Type, and Default value sets. Add Alternative value sets as you need (e.g. different values for different deployment pipeline environments). 
+4. Once the Variable library is created, you will be taken to the homepage. Click **+ New** to add a new variable.
 
-    :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" lightbox="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-new-variables.png" lightbox="media/variable-library-integration-with-data-pipelines/add-new-variables.png" alt-text="Screenshot showing the start page for a new Variable library item.":::
 
-5.	Save your changes.
+5. Once you add a new variable, you can configure your variable and set the Name, Type, and Default value set. You can also add Notes. 
 
-   :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" lightbox="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/variable-configurations.png" lightbox="media/variable-library-integration-with-data-pipelines/variable-configurations.png" alt-text="Screenshot showing the configurations to set for a new variable.":::
+
+6. Add Alternative value sets as you need (e.g. different values for different deployment pipeline environments). After you set a name and click **Create**, you can edit the variable values and choose value set to make active. 
+
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-value-sets.png" lightbox="media/variable-library-integration-with-data-pipelines/add-value-sets.png" alt-text="Screenshot highlighting where to add new value sets for a variable.":::
+
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/create-and-add-value-set.png" lightbox="media/variable-library-integration-with-data-pipelines/create-and-add-value-set.png" alt-text="Screenshot showing how to add a name for a new value set.":::
+   
+7.	Save your changes once you're done.
+
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/save-variables.png" lightbox="media/variable-library-integration-with-data-pipelines/save-variables.png" alt-text="Screenshot showing the Save button highlighted in the top left corner.":::
 
 ### Use Variable library variables in your pipeline
 
