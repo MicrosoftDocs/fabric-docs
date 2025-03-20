@@ -30,7 +30,7 @@ You can get events from an Azure Event Grid namespace into Real-Time hub using t
     Now, follow instructions from the [Connect to an Azure Event Grid namespace](#configure-and-connect-to-the-azure-event-grid-namespace) section.
 
 ## Configure and connect to the Azure Event Grid namespace
-[!INCLUDE [azure-event-grid-source-connector](./includes/azure-event-grid-source-connector.md)]
+[!INCLUDE [azure-event-grid-source-connector](../real-time-intelligence/event-streams/includes/azure-event-grid-source-connector.md)]
 
 ## View data stream details
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Event Grid namespace as a source. To close the wizard, select **Finish** at the bottom of the page.

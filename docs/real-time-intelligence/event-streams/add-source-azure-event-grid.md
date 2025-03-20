@@ -38,15 +38,8 @@ On the **Select a data source** page, search for and select **Connect** on the *
 1. You see that the Event Grid source is added to your eventstream on the canvas in the **Edit** mode. To implement this newly added Azure Event Grid namespace, select **Publish** on the ribbon. 
 
     :::image type="content" source="./media/add-source-azure-event-grid/publish.png" alt-text="Screenshot that shows the editor with Publish button selected." lightbox="./media/add-source-azure-event-grid/publish.png":::
-1. After you complete these steps, the Azure Event Grid namespace is available for visualization in the **Live view**. Select the **Event Grid Namespace** tile in the diagram to see the page similar to the following one.
-
-    :::image type="content" source="./media/add-source-azure-event-grid/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
+1. After you complete these steps, the Azure Event Grid namespace is available for visualization in the **Live view**. Select the **Event Grid Namespace** tile in the diagram to see details about the source.
 
 
 ## Related content
-
-To learn about consuming data streams, see the following articles:
-
-- [Process data streams](process-data-streams-using-transformations.md)
-- [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
-- [Set alerts on data streams](set-alerts-data-streams.md)
+To learn how to add other sources to an eventstream, see the following article: [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md).
