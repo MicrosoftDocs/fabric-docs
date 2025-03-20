@@ -9,9 +9,9 @@ ms.custom:
 ms.date: 03/18/2025
 ---
 
-# Variable library integration with Data pipelines (Preview) in [!INCLUDE [product-name](../includes/product-name.md)]
+# Variable library integration with Data pipelines (Preview)
 
-This document describes how to use Variable library in your pipelines for Data Factory in Fabric.
+This document describes how to use Variable library in your pipelines in Data Factory in Fabric.
 
 ## Introduction
 
@@ -25,15 +25,25 @@ The Variable library is a new item type in Microsoft Fabric that allows users to
 
 ### Create a Variable Library
 
-1. Navigate to your workspace and create a new item. 
+1. Navigate to your workspace and create a new item.
+
+   :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" lightbox="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
  
-2. Use the filter to find Variable library or scroll down to the Develop data section. 
+2. Use the filter to find Variable library or scroll down to the Develop data section.
+
+   :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" lightbox="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
  
-3. Select Variable library (preview) to create a new Variable library. Choose a name and hit Create. 
+3. Select Variable library (preview) to create a new Variable library. Choose a name and hit Create.
+
+   :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" lightbox="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
  
 4. Once the Variable library is created, you can create new variables using the New button and set the Name, Type, and Default value sets. Add Alternative value sets as you need (e.g. different values for different deployment pipeline environments). 
- 
-5.	Save your changes. 
+
+    :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" lightbox="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
+
+5.	Save your changes.
+
+   :::image type="content" source="media/cicd-data-pipelines/workspace-git-status.png" lightbox="media/cicd-data-pipelines/workspace-git-status.png" alt-text="Screenshot showing the Fabric workspace with Git status and other details reported for pipelines.":::
 
 ### Use Variable library variables in your pipeline
 
