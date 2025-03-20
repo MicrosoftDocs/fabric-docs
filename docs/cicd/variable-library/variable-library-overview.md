@@ -39,7 +39,7 @@ Variable libraries enable customers to:
 
 * Share configurations
 
-  Variable libraries provide a centralized way to manage configurations across the workspace items. For example, if you have several Lakehouses in the workspace and each one has a shortcut that points to the same datasource, you can create a Variable library with that datasource as one of the variables. That way, if you want to change the data source, only have to change it one in the Variable library instead of changing it in each Lakehouse separately.
+  Variable libraries provide a centralized way to manage configurations across the workspace items. For example, if you have several Lakehouses in the workspace and each one has a shortcut that uses the same datasource, you can create a Variable library with that datasource as one of the variables. That way, if you want to change the data source, only have to change it one in the Variable library instead of changing it in each Lakehouse separately.
 
 ## Variable library structure
 
@@ -51,14 +51,12 @@ Variable libraries contain one or more variables. Each variable has a name, type
 
 ### Default value
 
-The default value is the value that is used by default unless you specifically define a [different value to use](#value-sets).  
+The default value is the value that is used unless you specifically define a [different value to use](#alternative-value-sets).  
 All variables must have a default value. If the variable type is *String*, the default value can be null.
 
 ### Alternative value sets
 
-Value sets define the values of each variable in the Variable library. A Variable library typically contains multiple value sets. Choose which value set to use in each workspace by setting it to be active. The active (or effective) value set is the one that is used in the current workspace stage. An active value set of a Variable library isn't changed during deployment or update from Git.
-
-This is that value that the consumer items receives.....
+Value sets define the values of each variable in the Variable library. A Variable library typically contains multiple value sets. The active (or effective) value set contains the value the consumer items receives for that workspace. In each workspace you select a value set to be active. The active value set of a workspace doesn't change during deployment or update from Git.
 
 :::image type="content" source="./media/variable-library-overview/alternative-values.png" alt-text="Screenshot of variable library with several alternative value sets.":::
 
