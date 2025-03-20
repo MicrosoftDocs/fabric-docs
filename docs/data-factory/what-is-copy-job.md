@@ -29,6 +29,12 @@ Some advantages of the Copy job over other data movement methods include:
 
 Currently, you can use the Copy job for cloud data transfer or copying data from an on-premises data store via gateway. The Copy job supports the following data stores as both source and destination:
 
+:::image type="icon" source="media/data-pipeline-support/no.png":::
+
+| Connector | Source | Destination | Batch copy | Incremental copy (Preview) | On-premises data gateway |
+| --- | --- | --- | --- | --- | --- | 
+| Azure SQL DB | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+
 - Azure SQL DB
 - Oracle
 - On-premises SQL Server  
@@ -59,7 +65,7 @@ You can choose from the following data delivery styles.
 - **Incremental copy mode**: The initial job run copies all data, and subsequent job runs only copies changes since the last run. The changed data is appended to your destination store.
 
    > [!NOTE]
-   > Incremental copy mode is still in Preview but will be generally available soon.
+   > Incremental copy mode is still in Preview.
 
 You can also choose how data is written to your destination store.
 
