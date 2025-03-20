@@ -71,11 +71,11 @@ The following items currently support Git integration:
   * [Dataflow gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
   * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
   * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-git-integration)
-  * Mount ADF
+  * Mount ADF *(preview)*
 
 * Real-time Intelligence items:
 
-  * Activator *preview*
+  * Activator *(preview)*
   * [Eventhouse](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md#eventhouse-files)
   * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md)
   * [KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md#kql-database-files)
