@@ -88,7 +88,7 @@ The following items currently support Git integration:
 * Power BI items:
 
   * Dashboard *(preview)*
-  * [Metrics Set](../../data-warehouse/metrics-set/metrics-set-cicd.md) *(preview)*
+  * Metrics Set *(preview)*
   * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
   * [Paginated report](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
   * [Report](./source-code-format.md#report-files) (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview), or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) *(preview)*
