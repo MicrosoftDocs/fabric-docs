@@ -8,8 +8,8 @@ ms.custom:
 ms.date: 03/19/2025
 ---
 
-# Get events from Azure Event Grid namespace
-This article describes how to get events from an Azure Event Grid namespace into Real-Time hub.
+# Get events from Azure Event Grid namespace into Fabric Real-Time hub
+This article describes how to get events from an Azure Event Grid namespace into Fabric Real-Time hub.
 
 ## Prerequisites
 
@@ -23,13 +23,13 @@ You can get events from an Azure Event Grid namespace into Real-Time hub using t
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-4. On the **Data sources** page, search for **Azure Event Grid namespace**, and then select **Connect** on the **Azure Event Grid Namespace** tile. 
+5. On the **Data sources** page, search for **Azure Event Grid namespace**, and then select **Connect** on the **Azure Event Grid Namespace** tile. 
 
     :::image type="content" source="./media/add-source-azure-event-grid/select-azure-event-grid.png" alt-text="Screenshot that shows the selection of Azure Event Grid namespace as the source type in the Data sources page.":::
     
     Now, follow instructions from the [Connect to an Azure Event Grid namespace](#configure-and-connect-to-the-azure-event-grid-namespace) section.
 
-## Configure and connect to the Azure Event Grid namespace
+## Configure and connect to the Event Grid namespace
 [!INCLUDE [azure-event-grid-source-connector](../real-time-intelligence/event-streams/includes/azure-event-grid-source-connector.md)]
 
 ## View data stream details
