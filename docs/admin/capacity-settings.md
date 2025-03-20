@@ -391,7 +391,8 @@ To view the settings of a specific capacity, follow these steps:
 This table summarizes the actions you can take in the details section.
 
 >[!NOTE]
->Trail capacities only have some of the settings listed in the table
+>* Some of the features in the table are only available if they are enabled in the tenant.
+>* Trail capacities only have some of the settings listed in the table
 
 | Details setting name                 | Description |
 |--------------------------------------|-------------|
