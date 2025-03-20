@@ -12,16 +12,14 @@ ms.date: 03/20/2025
 This page contains information on how the Fabric Copilot usage is billed and reported. AI Skill usage is measured by the number of tokens processed. Tokens can be thought of as pieces of words. Approximately 1,000 tokens are about 750 words. Prices are calculated per 1,000 tokens, and input and output tokens are consumed at different rates.
 
 ## Consumption rate
-The requests to AI Skill consume Fabric Capacity Units. This table defines how many capacity units (CU) are consumed when AI skill is used. 
+Requests to the AI Skill consume Fabric Capacity Units (CU). The table below defines the CU consumption specifically for the tokens used when the AI Skill leverages Azure OpenAI models to process and generate responses.
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
 |AI Query |The input prompt |Per 1,000 Tokens |100 CU seconds|
 |AI Query |The output completion |Per 1,000 Tokens|400 CU seconds|
 
-Each request processes tokens, which are billed based on the operation specified in the table. In addition to token consumption, the AI Skill generates and executes queries as part of answering user requests. The execution of these queries is billed separately to the corresponding query engine item. 
-
-For example, if a query is generated for a Lakehouse, then the execution of that query is billed through the SQL Endpoint Query operation.
+In addition to token consumption, the AI Skill may generate and execute queries as part of answering user requests. The execution of these queries is billed separately to the corresponding query engine artifact. For example, if a query is generated for a Data Warehouse, its execution is billed through the SQL Query operation.
 
 ## Monitor the usage  
 The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for AI Skill operations under the name "AI Query" Additionally, AI Skill users are able to view a summary of their billing charges for the AI skill usage under the invoicing item "AI Query."
@@ -51,6 +49,5 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 ## Related content
 
-- [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)
-- [Copilot in Fabric: FAQ](../fundamentals/copilot-faq-fabric.yml)
+- [Overview of Copilot in Fabric](../data-science/concept-ai-skill)
 - [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
