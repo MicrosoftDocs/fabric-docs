@@ -99,7 +99,9 @@ The Variable library is a new item type in Microsoft Fabric that allows users to
 The following known limitations apply to the integration of Variable library in pipelines in Data Factory in Microsoft Fabric:
 
 - It is required for you to set a name for your variable reference within the pipeline canvas in order to use your Variable library variables in data pipeline. Unique names must be set for your variable references.
-- Connection parameterization is **not** supported with Variable library integrated with data pipelines. You can, however, parameterize internal workspace artifact IDs which includes Lakehouse, Warehouse, KQL Database, SQL Database (preview). 
+- The Variable library supports Boolean, Datetime, Guid, Integer, Number, and String as data types. In your data pipeline, you will see Boolean as Bool type, Datetime as String type, Guid as String type, Integer as Int type, and String as String type. Number types are not supported in data pipelines. 
+- Connection parameterization is **not** supported with Variable library integrated with data pipelines. You can, however, parameterize internal workspace artifact IDs which includes Lakehouse, Warehouse, KQL Database, SQL Database (preview).
+- If you choose to parameterize with a Library variable, please note that you will not be able to preview your data or use the drop-down selection to see existing tables or files.
 - Currently, you are unable to view what value has been set for the Variable library variable in the pipeline canvas. 
 
 
