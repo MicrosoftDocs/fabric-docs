@@ -9,7 +9,7 @@ ms.date: 03/20/2025
 
 # AI Skill in Fabric consumption
 
-This page contains information on how the Fabric Copilot usage is billed and reported. AI Skill usage is measured by the number of tokens processed. Tokens can be thought of as pieces of words. Approximately 1,000 tokens are about 750 words. Prices are calculated per 1,000 tokens, and input and output tokens are consumed at different rates.
+This page contains information on how the Fabric AI Skill usage is billed and reported. AI Skill usage is measured by the number of tokens processed. Tokens can be thought of as pieces of words. Approximately 1,000 tokens are about 750 words. Prices are calculated per 1,000 tokens, and input and output tokens are consumed at different rates.
 
 ## Consumption rate
 Requests to the AI Skill consume Fabric Capacity Units (CU). The table below defines the CU consumption specifically for the tokens used when the AI Skill leverages Azure OpenAI models to process and generate responses.
