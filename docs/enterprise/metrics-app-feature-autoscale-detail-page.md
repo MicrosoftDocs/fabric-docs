@@ -1,12 +1,14 @@
 ---
 title: Understand Autoscale compute for Spark detail page
-description: Learn how to read the Microsoft Fabric Capacity Metrics app's explore page.
+description: Learn how to read the Microsoft Fabric Capacity Metrics app's Autoscale compute for Spark detail page.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date:
+ms.date: 03/20/2025
 no-loc: [Copilot]
+
+# Customer intent: As a Fabric admin, I want to understand how to read the Microsoft Fabric Capacity Metrics app's Autoscale compute for Spark detail page.
 ---
  
 # Understand Autoscale compute for Spark detail page
@@ -60,8 +62,9 @@ A table showing capacity usage in CUs for Spark operations in the viewed timepoi
  
 * **Operation ID** - A unique identifier assigned to an individual operation.
  
- 
+
 ## Related content
  
-* [Understand the metrics app Autoscale compute for Spark page](metrics-app-autoscale-page.md)
+* [Understand the metrics app Autoscale compute for Spark page](metrics-app-feature-autoscale-page.md)
+
 * [Understand the metrics app compute page?](metrics-app-compute-page.md)
