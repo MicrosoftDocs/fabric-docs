@@ -59,7 +59,15 @@ This section is divided into Fabric experience. Each experience had a table that
 
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
-| Copilot in Fabric                            | Compute cost associated with input prompts and output completion      | Multiple | Copilot in Fabric CU | Background |
+| Copilot in Fabric                            | Compute cost associated with input prompts and output completion      | Multiple | Copilot and AI | Background |
+
+### AI Skill in Fabric
+
+[AI Skill](../data-science/concept-ai-skill) operations are listed in this table. You can find the consumption rates for the AI Skill in [AI Skill consumption](../fundamentals/copilot-fabric-consumption.md).
+
+| Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
+| ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
+| AI query                            | Compute cost associated with input prompts and output completion      | Multiple | Copilot and AI| Background |
 
 ### Data Factory
 
