@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/20/2025
+ms.date: 03/20/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -188,9 +188,9 @@ You can find the consumption rates for Fabric events in [Microsoft Fabric and Az
 
 You can find the consumption rates for KQL Database in [KQL Database consumption](../real-time-intelligence/kql-database-consumption.md).
 
-| Operation   | Description                                          | Item                         | Azure billing meter | Type        |
-| ----------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
-| Eventhouse UpTime | Measure of the time that Eventhouse is Active  | Eventhouse | Eventhouse Capacity Usage CU         | Interactive |
+| Operation         | Description                                          | Item                         | Azure billing meter | Type        |
+| ----------------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
+| Eventhouse UpTime | Measure of the time that Eventhouse is Active        | Eventhouse  | Eventhouse Capacity Usage CU         | Background  |
 
 ### Spark
 
