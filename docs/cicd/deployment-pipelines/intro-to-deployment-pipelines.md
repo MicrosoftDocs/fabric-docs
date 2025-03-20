@@ -39,9 +39,11 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Data Engineering items:
 
   * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#deployment-pipeline-for-environment)
+  * GraphQL *(preview)*
   * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#lakehouse-in-deployment-pipelines) *(preview)*
   * [Notebook](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
   * Spark Job Definitions *(preview)*
+  * User Data Functions *(preview)*
 
 * Data Factory items:
 
@@ -50,15 +52,16 @@ When you deploy content from one pipeline stage to another, the copied content c
   * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
   * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-in-deployment-pipelines)
   * Mount ADF *(preview)*
+  * Variable library *(preview)*
 
 * Real-time Intelligence items:
 
   * Activator *(preview)*
-  * Eventhouse
+  * [Eventhouse](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
   * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
-  * KQL database
-  * KQL Queryset
-  * Real-time Dashboard
+  * [KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
+  * [KQL Queryset](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
+  * [Real-time Dashboard](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
 
 * Data Warehouse items:
 
@@ -78,19 +81,10 @@ When you deploy content from one pipeline stage to another, the copied content c
 
   * [SQL database](../../database/sql/deployment-pipelines.md) *(preview)*
 
-* AppDev items:
-
-  * Data Functions *(preview)*
-  * GraphQL *(preview)*
-
 * Industry solutions:
 
-  * Healthcare *(preview)* 
+  * Healthcare *(preview)*
   * HealthCare Cohort *(preview)*
-
-* Platform
-
-  * Variable library *(preview)*
 
 ## Pipeline structure
 

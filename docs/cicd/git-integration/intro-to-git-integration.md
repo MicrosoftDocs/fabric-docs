@@ -61,9 +61,11 @@ The following items currently support Git integration:
 * Data Engineering items:
 
   * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#git-integration-for-microsoft-fabric-environment)
+  * GraphQL *(preview)*
   * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#lakehouse-git-integration) *(preview)*
   * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
   * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
+  * User Data Functions *(preview)*
 
 * Data Factory items:
 
@@ -72,6 +74,7 @@ The following items currently support Git integration:
   * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
   * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-git-integration)
   * Mount ADF *(preview)*
+  * Variable library *(preview)*
 
 * Real-time Intelligence items:
 
@@ -98,19 +101,10 @@ The following items currently support Git integration:
 
   * [SQL database](../../database/sql/source-control.md) *(preview)*
 
-* AppDev items:
-
-  * Data Functions *(preview)*
-  * GraphQL *(preview)*
-
 * Industry solutions:
 
   * Healthcare *(preview)* 
   * HealthCare Cohort *(preview)*
-
-* Platform
-
-  * Variable library *(preview)*
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren't saved or synced, but they're not deleted either. They appear in the source control panel but you can't commit or update them.
 
