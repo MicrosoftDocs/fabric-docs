@@ -58,32 +58,59 @@ The following Git providers are supported:
 
 The following items currently support Git integration:
 
-* Activator
-* [Copy Job](../../data-factory/cicd-copy-job.md#get-started-with-git-integration-for-copy-job) *(preview)*
-* User Data Functions *(preview)*
-* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
-* [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md) *(preview)*
-* [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
-* [Eventhouse and KQL database](../../real-time-intelligence//eventhouse-git-deployment-pipelines.md)
-* [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md)
-* GraphQL *(preview)*
-* HealthCare Cohort *(preview)*
-* KQL Queryset
-* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
-* Metrics Set
-* [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md)
-* Mount ADF
-* [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
-* [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
-* [Paginated report](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
-* Reflex *(preview)*
-* Real-time Dashboard
-* [Report](./source-code-format.md#report-files) (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview), or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) *(preview)*
-* [Semantic model](./source-code-format.md#semantic-model-files) (except push datasets, live connections to Analysis Services, model v1) *(preview)*
-* [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
-* [SQL database](../../database/sql/source-control.md) *(preview)*
-* Variable library *(preview)*
-* [Warehouse](../../data-warehouse/source-control.md#git-integration) *(preview)*
+* Data Engineering items:
+
+  * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
+  * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+  * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
+  * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
+
+* Data Factory items:
+
+  * [Copy Job](../../data-factory/cicd-copy-job.md#get-started-with-git-integration-for-copy-job) *(preview)*
+  * [Dataflow gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
+  * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
+  * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md)
+  * Mount ADF
+
+* Real-time Intelligence items:
+
+  * Activator *(preview)
+  * [Eventhouse](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
+  * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md)
+  * KQL Queryset
+  * Real-time Dashboard
+
+* Data Warehouse items:
+
+  * [Warehouse](../../data-warehouse/source-control.md#git-integration) *(preview)*
+
+* Power BI items:
+
+  * Dashboard *(preview)*
+  * [Metrics Set](../../data-warehouse/metrics-set/metrics-set-cicd.md) *(preview)*
+  * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
+  * [Paginated report](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
+  * [Report](./source-code-format.md#report-files) (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview), or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) *(preview)*
+  * [Semantic model](./source-code-format.md#semantic-model-files) (except push datasets, live connections to Analysis Services, model v1) *(preview)*
+
+* Database items:
+
+  * [SQL database](../../database/sql/source-control.md) *(preview)*
+
+* AppDev items:
+
+  * Data Functions *(preview)*
+  * GraphQL *(preview)*
+
+* Industry solutions:
+
+  * Healthcare *(preview)* 
+  * HealthCare Cohort *(preview)*
+
+* Platform
+
+  * Variable library *(preview)*
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren't saved or synced, but they're not deleted either. They appear in the source control panel but you can't commit or update them.
 

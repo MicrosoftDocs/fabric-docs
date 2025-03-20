@@ -36,32 +36,61 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
-* Activator
-* [Copy Job](../../data-factory/cicd-copy-job.md#get-started-with-deployment-pipelines-for-git) *(preview)*
-* Dashboard
-* User Data Functions *(preview)*
-* [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
-* [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md) *(preview)*
+* Data Engineering items:
+
+  * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
+  * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+  * [Notebook](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
+  * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
+
+* Data Factory items:
+
+  * [Copy Job](../../data-factory/cicd-copy-job.md#get-started-with-deployment-pipelines-for-git) *(preview)*
+  * [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
+  * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
+  * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md)
+  * Mount ADF
+
+* Real-time Intelligence items:
+
+  * Activator *(preview)*
+  * [Eventhouse](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
+  * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
+  * KQL Queryset
+  * Real-time Dashboard
+
+* Data Warehouse items:
+
+  * [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
+
+* Power BI items:
+
+  * Dashboard *(preview)*
+  * Dataflow *(preview)*
+  * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
+  * Paginated report *(preview)*
+  * Report (based on supported semantic models) *(preview)*
+  * Semantic model (that originates from a .pbix file and isn't a PUSH dataset) *(preview)*
+
+* Database items:
+
+  * [SQL database](../../database/sql/deployment-pipelines.md) *(preview)*
+
+* AppDev items:
+
+  * Data Functions *(preview)*
+  * GraphQL *(preview)*
+
+* Industry solutions:
+
+  * Healthcare *(preview)* 
+  * HealthCare Cohort *(preview)*
+
+* Platform
+
+  * Variable library *(preview)*
+
 * [Datamart](/power-bi/transform-model/datamarts/datamarts-get-started#datamarts-and-deployment-pipelines) *(preview)*
-* [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
-* [Eventhouse and KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
-* [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
-* GraphQL *(preview)*
-* HealthCare Cohort *(preview)*
-* KQL Queryset
-* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
-* [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md)
-* Mount ADF
-* [Notebook](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
-* Paginated report *(preview)*
-* Power BI Dataflow *(preview)*
-* Real-time Dashboard
-* Report (based on supported semantic models)
-* Semantic model (that originates from a .pbix file and isn't a PUSH dataset)
-* [SQL database](../../database/sql/deployment-pipelines.md) *(preview)*
-* Variable library *(preview)*
-* [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
 
 ## Pipeline structure
 
