@@ -67,6 +67,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 
   * Dashboard *(preview)*
   * Dataflow *(preview)*
+  * [Datamart](/power-bi/transform-model/datamarts/datamarts-get-started#datamarts-and-deployment-pipelines) *(preview)*
   * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
   * Paginated report *(preview)*
   * Report (based on supported semantic models) *(preview)*
@@ -89,8 +90,6 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Platform
 
   * Variable library *(preview)*
-
-* [Datamart](/power-bi/transform-model/datamarts/datamarts-get-started#datamarts-and-deployment-pipelines) *(preview)*
 
 ## Pipeline structure
 
