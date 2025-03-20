@@ -14,7 +14,7 @@ ms.search.form: SQL database Overview
 
 Current limitations in the SQL database in Fabric are listed in this page. This page is subject to change.
 
-These limitations apply to SQL database in Fabric only. For the warehouse and SQL analytics endpoint items in Fabric Data Warehouse, see [Limitations of Fabric Data Warehouse](../../data-warehouse/limitations.md).
+This article applies to SQL database in Fabric only. For the warehouse and SQL analytics endpoint items in Fabric Data Warehouse, see [Limitations of Fabric Data Warehouse](../../data-warehouse/limitations.md).
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
