@@ -60,8 +60,8 @@ The following items currently support Git integration:
 
 * Data Engineering items:
 
-  * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
-  * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+  * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#git-integration-for-microsoft-fabric-environment)
+  * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#lakehouse-git-integration) *(preview)*
   * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
   * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
 
@@ -70,16 +70,17 @@ The following items currently support Git integration:
   * [Copy Job](../../data-factory/cicd-copy-job.md#get-started-with-git-integration-for-copy-job) *(preview)*
   * [Dataflow gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
   * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
-  * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md)
+  * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-git-integration)
   * Mount ADF
 
 * Real-time Intelligence items:
 
   * Activator *(preview)
-  * [Eventhouse](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
+  * [Eventhouse](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md#eventhouse-files)
   * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md)
-  * KQL Queryset
-  * Real-time Dashboard
+  * [KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md##kql-database-files)
+  * [KQL Queryset](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md##kql-queryset-files)
+  * [Real-time Dashboard](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md###real-time-dashboard-files)
 
 * Data Warehouse items:
 

@@ -38,24 +38,25 @@ When you deploy content from one pipeline stage to another, the copied content c
 
 * Data Engineering items:
 
-  * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
-  * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
+  * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#deployment-pipeline-for-environment)
+  * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#lakehouse-in-deployment-pipelines) *(preview)*
   * [Notebook](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-  * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
+  * Spark Job Definitions *(preview)*
 
 * Data Factory items:
 
   * [Copy Job](../../data-factory/cicd-copy-job.md#get-started-with-deployment-pipelines-for-git) *(preview)*
   * [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
   * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
-  * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md)
+  * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-in-deployment-pipelines)
   * Mount ADF
 
 * Real-time Intelligence items:
 
   * Activator *(preview)*
-  * [Eventhouse](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
+  * Eventhouse
   * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
+  * KQL database
   * KQL Queryset
   * Real-time Dashboard
 
@@ -67,7 +68,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 
   * Dashboard *(preview)*
   * Dataflow *(preview)*
-  * [Datamart](/power-bi/transform-model/datamarts/datamarts-get-started#datamarts-and-deployment-pipelines) *(preview)*
+  * [Datamart](/power-bi/transform-model/datamarts/datamarts-get-started.md#datamarts-and-deployment-pipelines) *(preview)*
   * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
   * Paginated report *(preview)*
   * Report (based on supported semantic models) *(preview)*
