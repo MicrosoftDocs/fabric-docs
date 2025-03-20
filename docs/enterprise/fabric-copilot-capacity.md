@@ -61,7 +61,7 @@ Once a user is assigned to a Fabric Copilot capacity, no additional steps are re
 
 * Data is processed in the region where you're using Copilot and AI Skills. Usage and billing records that contain the metadata of the Fabric items or workspaces, are available to the Copilot capacity administrator.
 
-## ## Related content
+## Related content
 
 * [Microsoft Fabric concepts and licenses](licenses.md)
 
