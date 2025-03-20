@@ -57,20 +57,41 @@ The Variable library is a new item type in Microsoft Fabric that allows users to
 
 ### Use Variable library variables in your pipeline
 
-1. Create a new pipeline or navigate to an existing pipeline.
+1. To use a Variable library variable in your pipeline, ceate a new pipeline or navigate to an existing pipeline.
 
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/create-new-data-pipeline.png" lightbox="media/variable-library-integration-with-data-pipelines/create-new-data-pipeline.png" alt-text="Screenshot highlighting the create new item button in the top left corner and the Data pipeline item highlighted.":::
 
-2. Create a reference to your variable library variables.
+2. In your data pipeine, you'll need to create a reference to your variable library variable in the bottom panel.
 
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/new-variable-library-reference-in-pipeline.png" lightbox="media/variable-library-integration-with-data-pipelines/new-variable-library-reference-in-pipeline.png" alt-text="Screenshot highlighting the Library variables (preview) tab and the +New button in the bottom panel of the pipeline canvas.":::
 
-3. Add your pipeline activities.
+3. After you click **+ New**, you'll need to add a name for your variable reference, then use the drop-down to select your Variable library and Variable name in your Variable library.
 
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-new-variable-library-reference.png" lightbox="media/variable-library-integration-with-data-pipelines/add-new-variable-library-reference.png" alt-text="Screenshot showing the configuration settings for a new Library variable reference.":::
 
-4. Use the expression builder to select your Library variables.
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/configure-new-variable-library-reference.png" lightbox="media/variable-library-integration-with-data-pipelines/configure-new-variable-library-reference.png" alt-text="Screenshot showing the configuration set for a new Library variable reference.":::
 
+4. Once you have add your Library variable references, add your pipeline activities. In the activity settings, click **Add dynamic content** for the setting you want to parameterize. 
 
-5. Run your pipeline and verify that it runs successfully and that the variable value is the same as it is in your Variable library. 
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-dynamic-content.png" lightbox="media/variable-library-integration-with-data-pipelines/add-dynamic-content.png" alt-text="Screenshot showing Add dynamic content highlighted in the settings of a Lookup activity.":::
 
+5. The expression builder will open. If you don't see **Library variables (preview)**, click the 3 dots next to **Functions** and select **Library variables (preview)**. 
+
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/pipeline-expression-builder.png" lightbox="media/variable-library-integration-with-data-pipelines/pipeline-expression-builder.png" alt-text="Screenshot showing the 3 dots next to Functions in the expression builder and the Library variables (preview) tab highlighted.":::
+
+6. Click on your Library variable reference to add a new expression to the expression builder. Then, click **Ok** to add your expression. 
+
+   :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-expression.png" lightbox="media/variable-library-integration-with-data-pipelines/add-expression.png" alt-text="Screenshot showing a Library variable reference highlighted to be added to the expression builder."
+
+      :::image type="content" source="media/variable-library-integration-with-data-pipelines/add-expression-final.png" lightbox="media/variable-library-integration-with-data-pipelines/add-expression-final.png" alt-text="Screenshot showing the expression set in the expression builder.":::
+
+8. You'll now see that the dynamic content is added to your activity setting. 
+
+      :::image type="content" source="media/variable-library-integration-with-data-pipelines/dynamic-content-populated.png" lightbox="media/variable-library-integration-with-data-pipelines/dynamic-content-populated.png" alt-text="Screenshot showing the expression set as dynamic content in the Lookup activity settings.":::
+
+9. Save and run your pipeline as you normally would. You'll see that the value passed is whatever value is set as Active in your Variable library. 
+
+      :::image type="content" source="media/variable-library-integration-with-data-pipelines/save-and-run.png" lightbox="media/variable-library-integration-with-data-pipelines/save-and-run.png" alt-text="Screenshot showing the Save and Run settings highlighted on the pipeline canvas.":::
 
 
 ## Known limitations
