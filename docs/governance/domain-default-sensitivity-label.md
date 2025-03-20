@@ -35,7 +35,7 @@ The tenant setting **Domain admins can set default sensitivity labels for their 
 
 ## Limitations
 
-Reports, semantic models, dataflows, dashboards, scorecards, and some additional item types aren't currently supported.
+Dataflows, dashboards, scorecards, and some additional item types aren't currently supported.
 
 ## Related content
 
