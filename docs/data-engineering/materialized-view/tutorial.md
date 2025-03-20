@@ -11,7 +11,7 @@ ms.date: 03/20/2025
 # Introduction
 This tutorial outlines the steps and considerations for implementing a medallion architecture for a sales analytics pipeline Fabric Materialized Views. By the end of this tutorial, you will understand the key features and capabilities of Fabric Materialized Views and be able to create an automated data transformation workflow.
 ## Overview
-Fabric Materialized Views are designed to simplify the implementation of the Medallion architecture using Spark SQL. These views allow for automated creation, scheduling, and execution of materialized views, optimizing data transformations through a declarative approach. By offering declarative pipelines, ensuring high data quality, managing dependencies, automating data processing workflows, and offering robust visualization and monitoring capabilities, Fabric Materialized Views help data professionals in their data transformation journey.
+Fabric Materialized Views are designed to simplify the implementation of the Medallion architecture using Spark SQL. These views allow for automated creation, scheduling, and execution of materialized views, optimizing data transformations through a declarative approach. Fabric materialized views offers declarative pipelines, manages dependencies, automates data processing workflows, and  robust monitoring capabilities to help data professionals in their data transformation journey.
 
 ## Key features and benefits
 *	Declarative Pipelines: They help manage data transformations through a declarative approach, optimizing execution as opposed to manually setting up and managing pipelines individually.
