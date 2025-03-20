@@ -37,7 +37,9 @@ You can learn how to use the deployment pipelines tool by following these links.
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
 * Activator
+* [Copy Job](../../data-factory/cicd-copy-job.md#get-started-with-deployment-pipelines-for-git) *(preview)*
 * Dashboard
+* User Data Functions *(preview)*
 * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
 * [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md) *(preview)*
 * [Datamart](/power-bi/transform-model/datamarts/datamarts-get-started#datamarts-and-deployment-pipelines) *(preview)*
@@ -49,16 +51,16 @@ When you deploy content from one pipeline stage to another, the copied content c
 * KQL Queryset
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
 * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md)
-* Mounted ADF
+* Mount ADF
 * [Notebook](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* Org app *(preview)*
+* [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
 * Paginated report *(preview)*
 * Power BI Dataflow *(preview)*
 * Real-time Dashboard
 * Report (based on supported semantic models)
 * Semantic model (that originates from a .pbix file and isn't a PUSH dataset)
-* SQL database *(preview)*
-* User Data Functions *(preview)*
+* [SQL database](../../database/sql/deployment-pipelines.md) *(preview)*
+* Variable library *(preview)*
 * [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
 
 ## Pipeline structure
