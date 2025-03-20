@@ -2,11 +2,10 @@
 title: "Data quality in Fabric Materialized View"
 description: Learn about Data quality in Fabric Materialized View
 author: abhishjain002 
-ms.author: abhishjain 
+ms.author: abhishjain
+ms.reviwer: nijelsf
 ms.topic: conceptual
-author: apurbasroy
-ms.author: apsinhar
-ms.reviwer: nijelsf, v-sreeiyer03/06/2025
+ms.date: 03/06/2025
 ---
 
 # Data quality in Fabric Materialized View
