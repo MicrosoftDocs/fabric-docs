@@ -49,5 +49,5 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 ## Related content
 
-- [Overview of the AI Skill in Fabric](../data-science/concept-ai-skill)
+- [Overview of the AI Skill in Fabric](../data-science/concept-ai-skill.md)
 - [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
