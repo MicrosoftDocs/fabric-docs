@@ -57,7 +57,7 @@ You can perform the following actions:
 * To share access to a database, select the database from the list and [share the database link](access-database-copy-uri.md#share-a-kql-database-link).
 
     > [!NOTE]
-    > Sharing multiple databases is not supported.
+    > Sharing multiple databases isn't supported.
 
 ### Database ribbon
 
@@ -67,7 +67,7 @@ The database ribbon is your quick-access action bar, offering a convenient way t
 
 The database explorer provides an intuitive interface for navigating between the databases in your Eventhouse. You can also use the more menu in the explorer pane to [Manage the database](#manage-kql-databases).
 
-### Database details
+## Database details
 
 The right pane displays the details of the selected database.
 
@@ -100,7 +100,7 @@ The right pane displays the details of the selected database.
 | Caching Policy | The time period in which data is cached and kept in local SSD storage. For more information, see [Caching policy](/fabric/real-time-intelligence/data-policies#caching-policy).|
 | Retention Policy | The time period after which data is automatically removed from tables or materialized views. For more information, see [Data retention policy](/fabric/real-time-intelligence/data-policies#data-retention-policy).|
 
-### Main view area
+## Main view area
 
 The main database information pane tracks data activity, allows you to preview table details and data, and to view query insights.
 
@@ -121,20 +121,20 @@ The database activity tracker displays the number of rows loaded into the databa
 | Item| Description|
 |---|---|
 | Ingestion | The number of rows loaded into the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only ingestion data. |
-| Queries | The number of queries run in the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only query data.|
+| Queries | The number of queries that ran in the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only query data.|
 | Last run | The time when the histogram was last generated.|
-| Time range | The time range of the histogram display. Set ranges for one hour, 6 hours, three days, 7 days, or 30 days. |
+| Time range | The time range of the histogram display. Set ranges for one hour, six hours, three days, 7 days, or 30 days. |
 | Interval | Set the interval of the histogram display. Set intervals by one minute, five minutes, one hour, 12 hours, one day, three days, and 30 days. |
 | Refresh | Refresh your histogram.|
 | Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram.<br/>The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time. Hover over the histogram to display total rows ingested and total queries per status. |
 
 ### Tables
 
-This section of the database main area displays a list of tables in the database, with the following information:
+This section of the database page main area displays a list of tables in the database, with the following information:
 
 | Item| Description|
 |---|---|
-| Tables | View table information by **Cards** or by **List** view. </br></br>Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, Caching*, *Retention*, *OneLake* status, and *Created on*. |
+| Tables | View table information by **Cards** or by **List** view. Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, *Caching*, *Retention*, *OneLake* status, and *Created on*. |
 | Data preview | Shows a preview of the top 200 records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view.|
 | Query insights - top 100 queries| Shows the top 100 records from the last year. |
 <!--| | Cache hit misses over time|  |
@@ -142,98 +142,9 @@ This section of the database main area displays a list of tables in the database
 |**Ingestion failures**|
 | | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|-->
 
-## Navigate to a table page
-
-1. Browse to your database from your list of **KQL databases**.  
-
-1. In the Explorer pane, expand **Tables**. A list of tables in your database is displayed.
-
-1. Select a table from the list. Alternatively, in the main view area browse to the **Tables** area and in the table card select the table name.
-
-:::image type="content" source="media/create-database/database-table-details.png" alt-text="Screenshot of table main view area." lightbox="media/create-database/database-table-details.png":::
-
-The table page is divided into the following sections:
-
-A. **Table ribbon**: The ribbon provides quick access to essential actions within the table.
-
-B. **Main view area**: The main view area displays the main table name, table data activity tracker, a preview of the data in the table, and the table schema insights.
-
-C. **Details area**: The details area provides additional information about the table.
-
-## Manage a table
-
-From the table in the explorer pane, select the  *More menu** [**...**], or select the option from the table ribbon to manage the tables in the database.
-
-:::image type="content" source="media/create-database/manage-tables.png" alt-text="Screenshot of the more menu in the table main view area." lightbox="media/create-database/manage-tables.png":::
-
-You can perform the following actions:
-
-* Visually explore the table data. To learn more, see [Explore your data visually in Real-Time Dashboards](user-flow-4.md)
-* Write and run queries on the selected table. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
-* [Create a Power BI report](create-powerbi-report.md), [Dashboard](dashboard-real-time-create.md#create-a-new-dashboard), or [Notebook](notebooks.md#create-a-notebook-from-a-kql-database).
-* Rename a table, delete a table, and hide or view the table details.
-
-### Table details
-
-The right information pane displays the details of the selected table.
-
-**Size**
-
-| Item| Description|
-|---|---|
-| Compressed | Total size of compressed data.|
-| Original size | Total size of uncompressed data.|
-
-**OneLake**
-
-| Item| Description|
-|---|---|
-| Availability | Set OneLake availability to **Enabled** or **Disabled**. When OneLake availability is turned on, tables can't be renamed. |
-| Latency| The maximum time until table data is available in OneLake.|
-| Since | The start time from when availability is recorded. |
-| OneLake path | OneLake folder path that can be used for creating shortcuts.|
-
-**Overview**
-
-| Item| Description|
-|---|---|
-| Row count | The number of rows in the table.|
-| Rows ingested last 24h | The number of rows ingested in the last 24 hours.|
-| Schema last altered by | When the schema was last altered and by whom.|
-| Ingestion URI | The date of the last data ingestion and the URI that can be used to get data.|
-| Caching Policy | The time period in which data is cached and kept in local SSD storage. For more information, see [Caching policy](/fabric/real-time-intelligence/data-policies#caching-policy).|
-| Retention Policy | The time period after which data is automatically removed from tables or materialized views. For more information, see [Data retention policy](/fabric/real-time-intelligence/data-policies#data-retention-policy).|
-
-### Main view area
-
-The center table information pane depicts a histogram of the ingestion data, table information, and a means to preview the table data and schema insights.
-
-**Data Activity Tracker**
-
-| Item| Description|
-|---|---|
-| Ingestion | The number of rows ingested into the database.|
-| Last run | The time when the histogram was last generated.|
-| Time range | The time range of the histogram display. Set ranges for one hour, 6 hours, three days, 7 days, or 30 days. |
-| Interval |Set the interval of the histogram display. Set intervals by one hour, six hours, one day, three days, 7 days, and 30 day intervals. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time. |
-| Refresh | Refresh your histogram.|
-| Histogram | The ingestion histogram displays data by the time range and interval chosen.|
-
-**Data preview**
-
-| Item| Description|
-|---|---|
-| Quick query | Shows a preview of the table ingestion results. Displays Ingestion time, TableName, and Record. Select **Columns** to select columns and values for a Pivot view.|
-
-**Schema insights**
-
-| Item| Description|
-|---|---|
-| Columns | For each column in a table, shows insights for column values, such as date ranges, minimum and maximum values, or the number of unique values.|
-| Top 10 | To display the top 10 values for that column, select a column listed in the *Columns* section.|
-
 ## Related content
 
 * [Create a KQL database](create-database.md)
 * [Create an empty table](create-empty-table.md)
+* [Manage and monitor tables](manage-monitor-tables.md)
 * [Data management](data-management.md)

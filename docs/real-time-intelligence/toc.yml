@@ -276,6 +276,8 @@ items:
       href: database-shortcut.md
     - name: Create an empty table
       href: create-empty-table.md
+    - name: Manange and monitor database tables    
+      href: manage-monitor-tables.md  
     - name: Data management
       items:
       - name: Data management overview

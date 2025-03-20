@@ -29,7 +29,7 @@ For advanced analytic insights, see [Eventhouse monitoring overview](monitor-eve
 
 1. Select an eventhouse from your list of items in the workspace.
 
-:::image type="content" source="media/eventhouse/event-house-page.png" alt-text="Screenshot showing the main Eventhouse page." lightbox="media/eventhouse/event-house-page.png"::: <!-- TODO: Update the image when dev is complete-->
+:::image type="content" source="media/eventhouse/event-house-page.png" alt-text="Screenshot showing the main Eventhouse page." lightbox="media/eventhouse/event-house-page.png":::
 
 This page is divided into the following sections:
 
@@ -142,11 +142,11 @@ The databases page provides a summary of all the databases in the eventhouse.
 
     A window opens with details about all the databases in this eventhouse.
 
-    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in an eventhouse in Real-Time Intelligence.":::
+    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in an eventhouse in Real-Time Intelligence." lightbox="media/eventhouse/browse-all-databases.png:::
 
 1. Toggle between list and tile view using the buttons on the top right of the page.
 
-    :::image type="content" source="media/eventhouse/list-tile-view.png" alt-text="Screenshot showing the eventhouse details page with the tile and list view buttons surrounded by a red box.":::
+    :::image type="content" source="media/eventhouse/list-tile-view.png" alt-text="Screenshot showing the eventhouse details page with the tile and list view buttons surrounded by a red box." lightbox="media/eventhouse/list-tile-view.png:::
 
 1. To explore a specific database, select the name of this database from the list. For more information, see [Manage and monitor a database](manage-monitor-database.md).
 
