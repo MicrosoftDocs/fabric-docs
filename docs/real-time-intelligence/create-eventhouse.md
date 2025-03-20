@@ -49,7 +49,7 @@ In this article, you learn how to create an eventhouse, add new databases to an 
 
    :::image type="content" source="media/eventhouse/name-new-database.png" alt-text="Screenshot showing the pop-up box to name your new database.":::
 
-1. The [Database details](create-database.md#database-details) page for your new database opens in the main view area.
+1. The [Database details](manage-monitor-database.md#database-details) page for your new database opens in the main view area.
 
     :::image type="content" source="media/eventhouse/database-details.png" alt-text="Screeshot of the database details page for your new database." lightbox="media/eventhouse/database-details.png":::
 
