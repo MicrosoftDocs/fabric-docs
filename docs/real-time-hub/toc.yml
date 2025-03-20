@@ -41,6 +41,8 @@ items:
     href: add-source-sample-data.md
   - name: Microsoft sources
     items:
+    - name: Azure Event Grid
+      href: add-source-azure-event-grid.md
     - name: Azure Event Hubs
       href: add-source-azure-event-hubs.md
     - name: Azure Service Bus
