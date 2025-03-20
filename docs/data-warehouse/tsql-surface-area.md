@@ -4,7 +4,7 @@ description: T-SQL surface area of the SQL analytics endpoint and Warehouse in M
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, jovanpop
-ms.date: 01/06/2025
+ms.date: 03/12/2025
 ms.topic: conceptual
 ms.custom:
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
@@ -39,8 +39,8 @@ At this time, the following list of commands is NOT currently supported. Don't t
       - ADD or DROP PRIMARY KEY, UNIQUE, and FOREIGN_KEY column constraints, but only if the NOT ENFORCED option has been specified. All other ALTER TABLE operations are blocked.
       - There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
 - `BULK LOAD`
-- `CREATE ROLE`
 - `CREATE USER`
+- `FOR JSON` must be the last operator in the query, and so is not allowed inside subqueries
 - Hints
 - IDENTITY Columns
 - Manually created multi-column stats

@@ -4,7 +4,7 @@ description: This article compares the database engine features of Azure SQL Dat
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur, drskwier
-ms.date: 01/16/2025
+ms.date: 03/18/2025
 ms.topic: conceptual
 ms.search.form: SQL database Overview
 ---
@@ -40,7 +40,7 @@ The following table lists the major features of SQL Server and provides informat
 | [BULK INSERT statement](/sql/relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server) | Yes, but just from Azure Blob storage as a source. | No|
 | [Certificates and asymmetric keys](/sql/relational-databases/security/sql-server-certificates-and-asymmetric-keys) | Yes | Yes |
 | [Change data capture - CDC](/sql/relational-databases/track-changes/about-change-data-capture-sql-server) | Yes, for S3 tier and above. Basic, S0, S1, S2 aren't supported. | No  |
-| [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, SQL_Latin1_General_CP1_CI_AS. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name) and can't be updated. Collations on individual columns are supported.| By default, SQL_Latin1_General_CP1_CI_ASC and can't be updated. Collations on individual columns are supported.|
+| [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, `SQL_Latin1_General_CP1_CI_AS`. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name) and can't be updated. Collations on individual columns are supported.| By default, `SQL_Latin1_General_CP1_CI_AS` and can't be updated. Collations on individual columns are supported.|
 | [Column encryption](/sql/relational-databases/security/encryption/encrypt-a-column-of-data) | Yes | Yes |
 | [Columnstore indexes, clustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes, but the table cannot be mirrored to OneLake. |
 | [Columnstore indexes, nonclustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes |
@@ -131,6 +131,7 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | **VNet Service endpoint** | Yes, see [virtual network service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Global peering** | Yes, using [Private IP and service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview) | Yes, using [Private links](../../security/security-private-links-overview.md)  |
+| **Connectivity Policy**|[Redirect, Proxy, or Default](/azure/azure-sql/database/connectivity-architecture?view=azuresql-db&preserve-view=true)|[Redirect](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true)|
 
 ## Resource limits
 

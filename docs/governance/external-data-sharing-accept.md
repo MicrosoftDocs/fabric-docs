@@ -14,7 +14,7 @@ When someone invites you to share OneLake data from their organization, you rece
 
 ## Prerequisites
 
-To be able to accept and use an external data share, you need standard Fabric write and reshare permissions on the lakehouse item where you want to create the shortcut to the shared data. That item must have at least one folder or table.
+To be able to accept and use an external data share, you need standard Fabric write and reshare permissions on the lakehouse item where you want to create the shortcut to the shared data.
 
 ## Accept a share
 
@@ -27,7 +27,7 @@ To accept a share:
     > [!NOTE] 
     > The link only works for users who aren't in the tenant where the shared data is stored. If you're in the sharing tenant, contact the person who sent you the link and ask them to share with you using a OneLake shortcut instead. For more information, see [How does external data sharing work](./external-data-sharing-overview.md#how-does-external-data-sharing-work).
 
-1. Select **Accept and select a location**. This opens the OneLake data hub. Select a lakehouse, select **Next**, select the table or folder location in which to create the incoming share shortcut, and then select **Apply**.
+1. Select **Accept and select a location**. This opens the OneLake catalog. Select a lakehouse, select **Next**, select the table or folder location in which to create the incoming share shortcuts, and then select **Apply**.
 
     :::image type="content" source="./media/external-data-sharing-accept/select-share-destination-dialog.png" alt-text="Screenshot showing the dialog for choosing the location where the external data share shortcut will be created.":::
 

@@ -59,6 +59,7 @@ The following table presents features supported in Power BI dataflow and/or Fabr
 | **Connectivity** |||
 | Support for all [Power Query data sources](/power-query/connectors/) | Yes | Yes |
 | Connect to, and load data from, dataflows in Power BI Desktop, Excel, or Power Apps | Yes | Yes |
+| [DirectQuery via dataflows](/power-bi/transform-model/dataflows/dataflows-directquery) to connect directly to a dataflow, bypassing data import into a semantic model | Yes | No <sup>1</sup> |
 | **Scalability** |||
 | [Fast copy](dataflows-gen2-fast-copy.md), which supports large-scale data ingestion, utilizing the data pipeline [Copy activity](copy-data-activity.md) within dataflows | No | Yes |
 | [Scheduled refresh](dataflow-gen2-refresh.md), which keeps data current | Yes | Yes |
@@ -66,15 +67,15 @@ The following table presents features supported in Power BI dataflow and/or Fabr
 | [Data pipeline orchestration](dataflow-activity.md), which allows you to add a [Dataflow activity](dataflow-activity.md) to a data pipeline and create orchestrated conditional events | No | Yes |
 | **Artificial intelligence** |||
 | [Copilot for Data Factory](../fundamentals/copilot-fabric-data-factory.md), which provides intelligent code generation to transform data with ease, and generates code explanations to help better understand complex tasks | No | Yes |
-| [Cognitive Services](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration), which use artificial intelligence (AI) to apply different algorithms from Azure Cognitive Services to enrich self-service data preparation | Yes | No <sup>1</sup> |
-| [Automated machine learning (AutoML)](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration), which enables business analysts to train, validate, and invoke machine learning (ML) models directly in Fabric | Deprecated <sup>2</sup> ||
-| [Azure Machine Learning](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration) integration, which exposes custom models as dynamic Power Query functions that users can invoke in the Power Query Editor | Yes | No <sup>1</sup> |
+| [Cognitive Services](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration), which use artificial intelligence (AI) to apply different algorithms from Azure Cognitive Services to enrich self-service data preparation | Yes | No <sup>2</sup> |
+| [Automated machine learning (AutoML)](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration), which enables business analysts to train, validate, and invoke machine learning (ML) models directly in Fabric | Deprecated <sup>3</sup> ||
+| [Azure Machine Learning](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration) integration, which exposes custom models as dynamic Power Query functions that users can invoke in the Power Query Editor | Yes | No <sup>2</sup> |
 | **Content management** |||
 | [Data lineage view](../governance/lineage.md), which help users understand and assess dataflow item dependencies | Yes | Yes |
 | [Deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md), which manage the lifecycle of Fabric content | Yes | Yes |
 | **Platform scalability and resiliency** |||
 | [Premium capacity](../enterprise/licenses.md) architecture, which supports increased scale and performance | Yes | Yes |
-| [Multi-Geo](../admin/service-admin-premium-multi-geo.md) support, which helps multinational customers address regional, industry-specific, or organizational data residency requirements | Yes <sup>3</sup> | Yes |
+| [Multi-Geo](../admin/service-admin-premium-multi-geo.md) support, which helps multinational customers address regional, industry-specific, or organizational data residency requirements | Yes <sup>4</sup> | Yes |
 | **Security** |||
 | [Virtual network (VNet) data gateway](/data-integration/vnet/overview) connectivity, which allows Fabric to work seamlessly in an organization's virtual network | No | Yes |
 | [On-premises data gateway](/data-integration/gateway/service-gateway-onprem) connectivity, which allows for secure access of data between an organization's on-premises data sources and Fabric | Yes | Yes |
@@ -89,11 +90,13 @@ The following table presents features supported in Power BI dataflow and/or Fabr
 | [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md), which provides monitoring capabilities for Fabric capacity | Yes | Yes |
 | [Audit log](../admin/track-user-activities.md), which tracks user activities across Fabric and Microsoft 365 | Yes | Yes |
 
-<sup>1</sup> To learn how to create custom functions that call Azure AI API endpoints, see [Tutorial: Extract key phrases from text stored in Power BI](/azure/ai-services/language-service/key-phrase-extraction/tutorials/integrate-power-bi).
+<sup>1</sup> It is recommended to leverage data destinations and connect directly to the output tables, see [this article](dataflow-gen2-data-destinations-and-managed-settings.md).
 
-<sup>2</sup> Automated Machine Learning (AutoML) has been deprecated. For more information, see [this official announcement](https://powerbi.microsoft.com/blog/deprecation-of-automl-in-power-bi-using-dataflows-v1/).
+<sup>2</sup> To learn how to create custom functions that call Azure AI API endpoints, see [Tutorial: Extract key phrases from text stored in Power BI](/azure/ai-services/language-service/key-phrase-extraction/tutorials/integrate-power-bi).
 
-<sup>3</sup> To configure Power BI dataflow storage to use Azure Data Lake Storage (ADLS) Gen2, see [this article](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration).
+<sup>3</sup> Automated Machine Learning (AutoML) has been deprecated. For more information, see [this official announcement](https://powerbi.microsoft.com/blog/deprecation-of-automl-in-power-bi-using-dataflows-v1/).
+
+<sup>4</sup> To configure Power BI dataflow storage to use Azure Data Lake Storage (ADLS) Gen2, see [this article](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration).
 
 ## Considerations
 
