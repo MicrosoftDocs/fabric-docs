@@ -213,7 +213,7 @@ The following properties are returned:
 | Request payload length | 4 MB | The maximum size of all request parameters combined. |
 | Request execution timeout | 240 seconds | The maximum amount of time a function can run for. |
 | Response size limit | 30 MB | The maximum size of the response's return value of a function. | 
-| Log retention | 28 days | The number of days that historical invocation logs will be retained for by default. | 
+| Log retention | 30 days | The number of days that historical invocation logs will be retained for by default. | 
 
 ## Next steps
 - [Create user data functions](./create-user-data-functions-portal.md)
