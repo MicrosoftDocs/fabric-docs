@@ -57,7 +57,7 @@ None
 
 | Name | Type | Description |
 | --- | --- | --- |
-| 200 OK | [FileMetadata ](bookmark://_FileMetadata_1) | Request completed successfully |
+| 200 OK | FileMetadata | Request completed successfully |
 
 ### Examples
 
@@ -122,7 +122,8 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 ### Responses
 
 | Name | Type | Description|
-| 200 OK | --- | Request completed successfully |
+| ---- | ---- | ---- |
+| 200 OK |  | Request completed successfully |
 
 ### Examples
 

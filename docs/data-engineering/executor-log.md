@@ -81,7 +81,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 
 | Name | Type | Description |
 | --- | --- | --- |
-| 200 OK | A list of [ContainerLogMeta](bookmark://_ContainerLogMeta) | Request completed successfully |
+| 200 OK | A list of ContainerLogMeta | Request completed successfully |
 
 ### Examples
 

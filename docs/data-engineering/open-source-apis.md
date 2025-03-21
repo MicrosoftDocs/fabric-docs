@@ -47,13 +47,15 @@ This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-
 | User | Yes |
 | [Service principal](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) and [Managed identities](/entra/identity/managed-identities-azure-resources/overview) | Yes |
 
-## Sampe request for Spark Jobs
+## Examples
+
+### Sampe request for Spark Jobs
 
 ```
 GET https://api.fabric.microsoft.com/v1/workspaces/00bb0307-033d-415b-9917-e0b19df28539/notebooks/46884990-6ea1-4dbf-93e5-daf2608930d6/livySessions/b90eee82-765c-4393-b3da-2a11eeb73b34/applications/application_1742369571479_0001/jobs/1 
 ```
 
-## Sample response
+### Sample response 1
 
 Status code: 200
 
@@ -90,7 +92,7 @@ Status code: 200
 GET  https://api.fabric.microsoft.com/v1/workspaces/00bb0307-033d-415b-9917-e0b19df28539/notebooks/46884990-6ea1-4dbf-93e5-daf2608930d6/livySessions/b90eee82-765c-4393-b3da-2a11eeb73b34/applications/application_1742369571479_0001/sql/1?details=false 
 ```
 
-## Sample response
+## Sample response 2
 
 Status code: 200
 
@@ -113,7 +115,7 @@ Status code: 200
 } 
 ```
 
-## Sampe request for Event Log 
+### Sampe request for Event Log 
 
 ```
 GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/application_1741176604085_0001/1/logs  
