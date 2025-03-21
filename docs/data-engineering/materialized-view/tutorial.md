@@ -21,6 +21,10 @@ Fabric Materialized Views are designed to simplify the implementation of the Med
 
 ## Medallion architecture for sales analytics use case
 
+:::image type="content" source="./media/tutorial/sales-lakehouse.png" alt-text="Screenshot showing medallion architecture." border="true" lightbox="./media/tutorial/sales-lakehouse.png":::
+
+:::image type="content" source="./media/tutorial/maintain-pipeline.png" alt-text="Screenshot showing challenges in maintaining pipeline." border="true" lightbox="./media/tutorial/maintain-pipeline.png":::
+
 **Layers**
 * Bronze Layer: Ingests raw data
 * Silver Layer: Cleanses data
@@ -39,5 +43,29 @@ As prerequisites to this tutorial, complete the following steps:
 1.	Create a Microsoft Fabric enabled Workspace: Create a workspace.
 1.	Select a workspace from the Workspaces tab, then select + New item, and choose Data engineering. Provide a pipeline name. Then select Create.
 1.	Create a Lakehouse titled SalesLakehouse and load the sample data files for raw data into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
+
+:::image type="content" source="./media/tutorial/notebook-table.png" alt-text="Screenshot showing run notebook." border="true" lightbox="./media/tutorial/notebook-table.png":::
+
+:::image type="content" source="./media/tutorial/create-silver-layer.png" alt-text="Screenshot showing silver materialized view creation." border="true" lightbox="./media/tutorial/create-silver-layer.png":::
+
+:::image type="content" source="./media/tutorial/create-bronze-layer.png" alt-text="Screenshot showing creating bronze layer." border="true" lightbox="./media/tutorial/create-bronze-layer.png":::
+
+:::image type="content" source="./media/tutorial/run-notebook.png" alt-text="Screenshot showing run notebook." border="true" lightbox="./media/tutorial/run-notebook.png":::
+
+:::image type="content" source="./media/tutorial/managed-materialized-view-1.png" alt-text="Screenshot showing materialized view." border="true" lightbox="./media/tutorial/managed-materialized-view-1.png":::
+
+:::image type="content" source="./media/tutorial/managed-materialized-view-2.png" alt-text="Screenshot showing creation of dag." border="true" lightbox="./media/tutorial/managed-materialized-view-2.png":::
+
+:::image type="content" source="./media/tutorial/run-dag.png" alt-text="Screenshot showing scheduling run dag." border="true" lightbox="./media/tutorial/run-dag.png":::
+
+:::image type="content" source="./media/tutorial/dropdown-menu.png" alt-text="Screenshot showing scheduling dag execution." border="true" lightbox="./media/tutorial/dropdown-menu.png":::
+
+:::image type="content" source="./media/tutorial/latest-run.png" alt-text="Screenshot showing latest run." border="true" lightbox="./media/tutorial/latest-run.png":::
+
+:::image type="content" source="./media/tutorial/execution details.png" alt-text="Screenshot showing execution details." border="true" lightbox="./media/tutorial/execution details.png":::
+
+:::image type="content" source="./media/tutorial/execution-detail-logs.png" alt-text="Screenshot showing execution detail logs." border="true" lightbox="./media/tutorial/execution-detail-logs.png":::
+
+:::image type="content" source="./media/tutorial/spark-logs.png" alt-text="Screenshot showing spark logs." border="true" lightbox="./media/tutorial/spark-logs.png":::
 
 ## Next steps
