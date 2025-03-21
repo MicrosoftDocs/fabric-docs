@@ -49,7 +49,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 ### Configuring clusters
 
 1. Select the **Cluster** tab. Then you can choose an existing or create a new **Azure Databricks connection**, and then pick a **new job cluster**, an **existing interactive cluster**, or an **existing instance pool**.
-2. Depending on what you pick for the cluster, fill out the corresponding fields as presented.
+1. Depending on what you pick for the cluster, fill out the corresponding fields as presented.
     - Under **new job cluster** and **existing instance pool**, you also have the ability to configure the number of **workers** and enable **spot instances**.
 3. You can also specify additional cluster settings, such as **Cluster policy**, **Spark configuration**, **Spark environment variables**, and **custom tags**, as required for the cluster you are connecting to. **Databricks init scripts** and **Cluster Log destination path** can also be added under the additional cluster settings.
 
