@@ -11,7 +11,7 @@ ms.date: 03/19/2025
 # Add Azure Data Explorer Database (DB) source to an eventstream (preview)   
 This article shows you how to add an Azure Data Explorer DB source to an eventstream.  
 
-[!INCLUDE [azure-data-explorer-description-prerequisites](../real-time-intelligence/event-streams/includes/azure-data-explorer-description-prerequisites.md)]
+[!INCLUDE [azure-data-explorer-description-prerequisites](./includes/azure-data-explorer-description-prerequisites.md)]
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 

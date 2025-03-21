@@ -76,7 +76,7 @@ items:
       - name: Add and manage an event source
         href: event-streams/add-manage-eventstream-sources.md
       - name: Azure Data Explorer 
-        href: event-streams/add-source-azure-data-explorer.md
+        href: event-streams/add-source-azure-data-explorer-database.md
       - name: Azure Event Hubs
         href: event-streams/add-source-azure-event-hubs.md
       - name: Azure Event Grid

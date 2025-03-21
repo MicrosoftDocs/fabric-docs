@@ -12,7 +12,7 @@ ms.date: 05/21/2024
 | --------------- | ---------- |
 | [Azure Event Hubs](../add-source-azure-event-hubs.md) | If you have an Azure event hub, you can ingest event hub data into Microsoft Fabric using Eventstream.  |
 | [Azure Event Grid](../add-source-azure-event-grid.md) | If you have an Azure Event Grid namespace, you can ingest MQTT or non-MQTT event data into Microsoft Fabric using Eventstream.  |
-| [Azure Data Explorer](../add-source-azure-data-explorer.md) | If you have an Azure Data Explorer database and a table, you can ingest data from thet able into Microsoft Fabric using Eventstream.  |
+| [Azure Data Explorer](../add-source-azure-data-explorer-database.md) | If you have an Azure Data Explorer database and a table, you can ingest data from thet able into Microsoft Fabric using Eventstream.  |
 | [Azure IoT Hub](../add-source-azure-iot-hub.md) | If you have an Azure IoT hub, you can ingest IoT data into Microsoft Fabric using Eventstream.  |
 | [Azure SQL Database Change Data Capture (CDC)](../add-source-azure-sql-database-change-data-capture.md) | The Azure SQL Database CDC source connector allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data. |
 | [PostgreSQL Database CDC](../add-source-postgresql-database-change-data-capture.md) | The PostgreSQL Database Change Data Capture (CDC) source connector allows you to capture a snapshot of the current data in a PostgreSQL database. The connector then monitors and records any future row-level changes to this data. |

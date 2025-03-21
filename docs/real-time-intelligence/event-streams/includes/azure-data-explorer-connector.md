@@ -39,7 +39,7 @@ ms.date: 03/21/2025
         :::image type="content" source="./media/azure-data-explorer-connector/stream-name.png" alt-text="Screenshot that shows the Stream details section for the Azure Data Explorer connection settings." :::             
 1. If you're using the **Eventstream editor** to add an Azure Data Explorer database table as a source to an event stream, select **pencil** button under **Source name**, and enter a source name. 
 
-    :::image type="content" source="./media/azure-data-explorer-connector/stream-details.png" alt-text="Screenshot that shows the connection settings completed.":::                
+    :::image type="content" source="./media/azure-data-explorer-connector/stream-details.png" alt-text="Screenshot that shows the Stream details section.":::                
 1. Select **Next** at the bottom of the page.
 1. On the **Review + connect** page, review settings, and select **Connect** (Fabric Real-Time hub) or **Add** (Fabric Eventstream).
 
