@@ -17,7 +17,7 @@ In this quickstart, you learn how to create a User Data Functions item in Visual
 ## Prerequisites
 - [A Fabric Workspace](../../get-started/create-workspaces.md)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Python](https://www.python.org/downloads/)
+- [Python](https://www.python.org/downloads/release/python-3110/)
 - [Azure Functions Core Tools v4](/azure/azure-functions/functions-run-local)
 - [Microsoft Fabric Extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric) 
 - [User data functions extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-functions)
