@@ -22,11 +22,11 @@ Due to data protection requirements, the streaming source may be in a private ne
 
 Below are the approaches that can help with this purpose.
 
-### IP Whitelist
+### IP allowlist
 
-Eventstream's streaming connector in each region has a single outbound IP address. If your company’s network policy permits whitelisting this IP address, Eventstream’s connector can bring real-time data into Fabric, though the transmission occurs over a public network.
+Eventstream's streaming connector in each region has a single outbound IP address. If your company’s network policy permits allowlisting this IP address, Eventstream’s connector can bring real-time data into Fabric, though the transmission occurs over a public network.
 
-This solution is applicable to all streaming connector sources. If you're interested in implementing this solution, kindly reach out to the product team by completing the following form: [RTI Eventstream Streaming Connector IP Whitelist Request](https://aka.ms/EventStreamsConnIPWhitelistRequest)
+This solution is applicable to all streaming connector sources. If you're interested in implementing this solution, kindly reach out to the product team by completing the following form: [RTI Eventstream Streaming Connector IP allowlist Request](https://aka.ms/EventStreamsConnIPWhitelistRequest)
 
 ### Mirroring Kafka Topics to Eventstream or Azure Event Hubs
 
@@ -38,7 +38,7 @@ Learn more about the MPE, see [Connect to Azure resources securely using managed
 
 ### Leveraging Azure Stream Analytics
 
-Azure Stream Analytics is a fully managed engine for processing large volumes of streaming data. It supports reading data from a Kafka topic using [Kafka input](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-define-kafka-input) and can output data to an Azure event hub with the [Azure Event Hubs output](https://learn.microsoft.com/azure/stream-analytics/event-hubs-output). The job can run in an Azure virtual network to access your resources privately within the virtual network. If your Kafka clusters reside within on-premises networks or third-party cloud virtual networks, you may create an Azure virtual network to connect your private network and then run an Azure Stream Analytics job in your Azure virtual network to read the data from your Kafka and output the data to the [Event hub endpoint](add-source-custom-app?pivots=standard-capabilities#event-hub-1) offered by Eventstream’s source custom endpoint.
+Azure Stream Analytics is a fully managed engine for processing large volumes of streaming data. It supports reading data from a Kafka topic using [Kafka input](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-define-kafka-input) and can output data to an Azure event hub with the [Azure Event Hubs output](https://learn.microsoft.com/azure/stream-analytics/event-hubs-output). The job can run in an Azure virtual network to access your resources privately within the virtual network. If your Kafka clusters reside within on-premises networks or third-party cloud virtual networks, you may create an Azure virtual network to connect your private network and then run an Azure Stream Analytics job in your Azure virtual network to read the data from your Kafka and output the data to the [Event hub endpoint](add-source-custom-app.md#event-hub-1) offered by Eventstream’s source custom endpoint.
 
 ### Leveraging Kafka Sink Connector
 
