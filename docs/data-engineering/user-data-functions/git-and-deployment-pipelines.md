@@ -12,7 +12,7 @@ ms.search.form: Use Git and deployment pipelines in user data functions
 
 This article explains how Git integration and deployment pipelines work for user data functions in Microsoft Fabric. Fabric User data functions offer Git integration for source control with Azure DevOps repositories. With Git integration, you can version control your user data functions item, collaborate using Git branches, and manage your user data functions content lifecycle entirely within Fabric.
 
-Learn more about the process of integrating Git with your Microsoft Fabric workspace in [Basic concepts in Git integration]](../../cicd/git-integration/git-integration-process.md).
+Learn more about the process of integrating Git with your Microsoft Fabric workspace in [Basic concepts in Git integration](../../cicd/git-integration/git-integration-process.md).
 
 ## Set up a connection
 
@@ -26,11 +26,12 @@ After you successfully commit the user data functions items to the Git repo, you
 
 The following image shows an example of the file structure of each user data functions item in the repo:
 
-:::image type="content" source="..\media\user-data-functions-git-deployment\udf-folder-structure.png" alt-text="Screenshot showing folder structure for a user data functions item in the repository." lightbox="..\media\user-data-functions-git-deployment\udf-folder-structure.png":::
+:::image type="content" source="..\media\user-data-functions-git-deployment\udf-folder-structure.png" alt-text="Screenshot showing folder structure for a user data functions item in the repository.":::
 
 The folder structure includes the following elements:
 
 - **.platform**: The `.platform` file contains the following attributes:
+
     :::image type="content" source="..\media\user-data-functions-git-deployment\platform-json-file.png" alt-text="Screenshot showing .platform file for a user data functions item." lightbox="..\media\user-data-functions-git-deployment\platform-json-file.png":::
 
     - **version**: Version number of the system files. This number is used to enable backwards compatibility. The version number of the item might be different.
@@ -39,12 +40,15 @@ The folder structure includes the following elements:
     - **displayName**: Represents the name of the item. When the user data functions item is renamed, this displayName is updated.
 
 - **definitions.json**: This file shares all the user data functions item definitions such as connections, libraries, etc. as a representation of the user data functions item properties.
+
     :::image type="content" source="..\media\user-data-functions-git-deployment\definitions-json-file.png" alt-text="Screenshot showing definitions.json file for a user data functions item." lightbox="..\media\user-data-functions-git-deployment\definitions-json-file.png":::
 
 - **function-app.py**: This file is your functions code. Any code changes you make to the user data functions item is synced into the repo with this file. You can perform various Git operations to manage the code development cycle.
+
     :::image type="content" source="..\media\user-data-functions-git-deployment\function-app-python-file.png" alt-text="Screenshot showing function-app.py file for a user data functions item." lightbox="..\media\user-data-functions-git-deployment\function-app-python-file.png":::
 
 - **resources**: The folder contains a functions.json file with all the metadata such as connections, libraries, and functions within this item. **DO NOT UPDATE THIS FILE** manually. `functions.json` allows Fabric to create or recreate the user data functions item in a workspace.
+
     :::image type="content" source="..\media\user-data-functions-git-deployment\functions-json-file.png" alt-text="Screenshot showing function.json file in resources folder for a user data functions item." lightbox="..\media\user-data-functions-git-deployment\functions-json-file.png":::
 
 ## User data functions in deployment pipelines
@@ -68,5 +72,5 @@ Use the following steps to complete your notebook deployment using the deploymen
 
 ## Related content
 
-- [Introduction to Git integration](../../cicd/git-integration/intro-to-git-integration.md)
+- [Introduction to Microsoft Fabric Git integration](../../cicd/git-integration/intro-to-git-integration.md)
 - [Introduction to deployment pipelines](../../cicd/deployment-pipelines/intro-to-deployment-pipelines.md)

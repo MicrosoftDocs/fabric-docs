@@ -1,16 +1,16 @@
 ---
-title: Overview - Fabric User Data Functions (preview)
-description: Learn about Fabric User Data Functions.
+title: Overview - Fabric User data functions (preview)
+description: Learn about Fabric User data functions.
 ms.author: luisbosquez
 author: luisbosquez
 ms.topic: overview
 ms.date: 03/27/2025
-ms.search.form: User Data Functions overview
+ms.search.form: User data functions overview
 ---
 
-# What is Fabric User Data Functions (Preview)?
+# What is Fabric User data functions (Preview)?
 
-Fabric User Data Functions is a platform that allows you to host and run applications on Fabric. This empowers data developers to write custom logic and embed it into their Fabric ecosystem. This feature supports the [Python 3.11 runtime](https://www.python.org/downloads/release/python-3110/) and allows you to use [public libraries from PyPI](https://pypi.org/).
+Fabric User data functions is a platform that allows you to host and run applications on Fabric. This empowers data developers to write custom logic and embed it into their Fabric ecosystem. This feature supports the [Python 3.11 runtime](https://www.python.org/downloads/release/python-3110/) and allows you to use [public libraries from PyPI](https://pypi.org/).
 
 :::image type="content" source="..\media\user-data-functions-overview\user-data-functions-overview.gif" alt-text="Animated GIF showing the interface of Fabric User Data Functions." lightbox="..\media\user-data-functions-overview\user-data-functions-overview.gif":::
 
@@ -18,18 +18,18 @@ You can use the native Fabric integrations to connect to your Fabric data source
 
 **Ready to get started?** Follow this guide to [create a new User data functions item](./create-user-data-functions-portal.md) or [use the VS Code extension](./create-user-data-functions-vs-code.md).
 
-## Why use Fabric User Data Functions?
+## Why use Fabric User data functions?
 
-Fabric User Data Functions provides a platform to host your custom logic and reference from different types of Fabric items and data sources. You can use this service to write your business logic, internal algorithms, and libraries. You can also integrate it into your Fabric architectures to customize the behavior of your solutions.
+Fabric User data functions provides a platform to host your custom logic and reference from different types of Fabric items and data sources. You can use this service to write your business logic, internal algorithms, and libraries. You can also integrate it into your Fabric architectures to customize the behavior of your solutions.
 
-The following are some of the benefits for logic using Fabric User Data Functions:
+The following are some of the benefits for logic using user data functions:
 
 - **Reusability**: Invoke your functions from other Fabric items and create libraries of standardized functionality that can be used in many solutions within your organization.
 - **Customization**: Use Python and public libraries from PyPI to create powerful applications that are tailored to your needs.
 - **Encapsulation**: Create functions that perform several tasks to build sophisticated workflows.
-- **External connectivity**: Invoke your User Data Functions from external client applications using a REST endpoint, opening up possibilities for integrations with external systems.
+- **External connectivity**: Invoke your user data functions from external client applications using a REST endpoint, opening up possibilities for integrations with external systems.
 
 ## Next steps
 
-- [Create a new User data functions item](./create-user-data-functions-portal.md) or [use the VS Code extension](./create-user-data-functions-vs-code.md).
+- [Create a new User data functions item in Fabric](./create-user-data-functions-portal.md) or [use the VS Code extension](./create-user-data-functions-vs-code.md)
 - [Learn about the User data functions programming model](./python-programming-model.md)

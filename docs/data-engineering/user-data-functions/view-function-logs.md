@@ -60,4 +60,4 @@ logger.critical('This is a CRITICAL message')
 ## Next steps
 
 - [Learn about the User data functions programming model](./python-programming-model.md)
-- [Tutorial: Invoke a function from a Python application](./tutorial-invoke-from-python-app.md)
+- [Tutorial: Invoke user data functionc from a Python application](./tutorial-invoke-from-python-app.md)

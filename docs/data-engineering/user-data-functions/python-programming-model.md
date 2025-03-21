@@ -4,14 +4,14 @@ description: Overview of the Fabric User data functions programming model for Py
 ms.author: sumuth
 author: mksuni
 ms.topic: overview
-ms.date: 03/20/2025
+ms.date: 03/21/2025
 ms.search.form: Write new user data functions items
 ---
 
 
 # Fabric User data functions programming model overview (Preview)
 
-The Fabric User data functions programming model is an SDK that provides the necessary functionality to author and publish runnable functions in Fabric. The SDK also allows you to seamlessly integrate with other items in the Fabric ecosystem, such as Fabric data sources. This library is [publicly available in PyPI](https://pypi.org/project/fabric-user-data-functions/) and is pre-installed in your user data functions items.
+The Fabric User data functions programming model is an SDK that provides the necessary functionality to author and publish runnable functions in Fabric. The SDK also allows you to seamlessly integrate with other items in the Fabric ecosystem, such as Fabric data sources. [This library is publicly available in PyPI](https://pypi.org/project/fabric-user-data-functions/) and is pre-installed in your user data functions items.
 
 ## User data functions SDK
 
@@ -116,7 +116,7 @@ def read_from_sql_db(demosqldatabase: fn.FabricSqlConnection)-> list:
   return results
 ```
 
-## Get invocation properties using UserDataFunctionContext
+## Get invocation properties using `UserDataFunctionContext`
 
 The programming model also includes the `UserDataFunctionContext` object. This object contains the function invocation metadata and can be used to create specific app logic for certain invocation mechanisms.
 
@@ -146,7 +146,7 @@ def getContext(myContext: fabric.functions.UserDataFunctionContext)-> str:
     return f"Hello oid = {context.executing_user['Oid']}, TenantId = {context.executing_user['TenantId']}, PreferredUsername = {context.executing_user['PreferredUsername']}, InvocationId = {context.invocation_id}"
 ```
 
-## Throw a handled error with UserThrownError
+## Throw a handled error with `UserThrownError`
 
 When developing your function, you can throw an expected error response by using the `UserThrownError` method available in the Python programming model. One use of this method is managing cases where the user-provided inputs fail to pass business validation rules.
 
@@ -165,15 +165,15 @@ def raise_userthrownerror(age: int)-> str:
 The `UserThrownError` method takes two parameters:
 
 - `Message`: This string will be returned as the error message to the application invoking this function.
-- A dictionary of properties that will be returned to the application that is invoking this function.
+- A dictionary of properties that will be returned to the application invoking this function.
 
 ## Invoking a function from an external application
 
-Functions can be invoked by issuing a REST call to the endpoint URL. In the **Funcions explorer**, hover over the function you want to invoke. Select **Copy public URL** to get the URL. Use the **Properties** command to enable or disable the ability to use this URL externally.
+Functions can be invoked by issuing a REST call to the endpoint URL. In the **Functions explorer**, hover over the function you want to invoke. Select **Copy public URL** to get the URL. Use the **Properties** command to enable or disable the ability to use this URL externally.
 
-:::image type="content" source="..\media\user-data-functions-python-programming-model\python-programming-model-1.png" alt-text="Screenshot showing how to debug locally with breakpoints." lightbox="..\media\user-data-functions-python-programming-model\python-programming-model-1.png":::
+:::image type="content" source="..\media\user-data-functions-python-programming-model\python-programming-model-1.png" alt-text="Screenshot showing how to debug locally with breakpoints.":::
 
-Next, use this URL in your application to invoke the function. See [Invoke user data functions from an application](./tutorial-invoke-from-python-app.md) for details.
+Next, use this URL in your application to invoke the function. See [Tutorial: Invoke user data functions from a Python application](./tutorial-invoke-from-python-app.md) for details.
 
 ### Output schema
 
@@ -226,5 +226,5 @@ The following properties are returned:
 
 ## Next steps
 
-- [Create a new Fabric User data functions item](./create-user-data-functions-portal.md)
+- [Create a Fabric User data functions item](./create-user-data-functions-portal.md)
 - [User data functions samples](https://github.com/microsoft/fabric-user-data-functions-samples)

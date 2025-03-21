@@ -1,11 +1,11 @@
 ---
-title: Quickstart - Create a new User data functions item in Visual Studio Code
-description: Add a new User data functions item in VS Code 
+title: Quickstart - Create a User data functions item in Visual Studio Code
+description: Add a user data functions item in VS Code 
 ms.author: sumuth
 author: mksuni
 ms.topic: quickstart
 ms.date: 03/27/2025
-ms.search.form: Fabric User data functions, VSCode
+ms.search.form: Fabric User data functions, VS Code
 ---
 
 # Create a user data functions item in Visual Studio Code (Preview)
@@ -29,7 +29,7 @@ In this quickstart, you learn how to create a user data functions item in Visual
 1. In Fabric, **open your Fabric workspace** or **create a new workspace**.
 1. Select **+ New item** to open the New item pane.
 1. In the New item pane, under **Develop data**, select the **User data functions** item type.
-1. Provide a name for the new user data functions item and select **Create**. A new user data function set in Fabric is created.
+1. Provide a name for the new user data functions item and select **Create**. The new user data functions item is created.
 1. In the ribbon, select **Python** as the runtime language.
 1. Create a virtual environment for this user data functions item.
 1. Select the Python runtime version. User data functions requires Python Version 3.11.
@@ -59,9 +59,9 @@ def hello_fabric(name: str) -> str:
 
 You can view the user data functions item in the Fabric explorer in VS Code within the currently opened workspace.
 
-:::image type="content" source="..\media\user-data-functions-create-in-vs-code\fabric-explorer-local-folder-views.png" alt-text="Screenshot showing fabric explorer view and local folder view." lightbox="..\media\user-data-functions-create-in-vs-code\fabric-explorer-local-folder-views.png":::
+:::image type="content" source="..\media\user-data-functions-create-in-vs-code\fabric-explorer-local-folder-views.png" alt-text="Screenshot showing fabric explorer view and local folder view.":::
 
-All the functions in the Fabric workspace can be opened in the Explorer in VS Code to start editing. Select the function you want to open and select **Open in Explorer**. You can see connections, libraries, and all the functions written within the user data functions item.
+All the functions in the Fabric workspace can be opened in the Explorer in VS Code to start editing. Choose the function you want to open, then select **Open in Explorer**. You can see connections, libraries, and all the functions written within the user data functions item.
 
 ### Manage connections and libraries
 
@@ -75,9 +75,9 @@ All the functions in the Fabric workspace can be opened in the Explorer in VS Co
 
 ## Local folder to manage your user data functions
 
-The user data functions item, opened in VS Code explorer is visible in the Local folder view. The local folder allows you test and sees the local changes made to the user data function item. It allows you to:
+The user data functions item opened in VS Code explorer is visible in the Local folder view. The local folder allows you test and see the local changes made to the user data function item.
 
-- **Functions**: You can view all the functions that are in your local `function_app.py` file. To start with a sample, right select on **Functions** and select **Add a function** to add a sample function.
+- **Functions**: You can view all the functions that are in your local `function_app.py` file. To start with a sample, right-click on **Functions** and select **Add a function** to add a sample function.
 
     :::image type="content" source="..\media\user-data-functions-create-in-vs-code\add-a-new-function-sample.png" alt-text="Screenshot showing how to add a new function in a user data functions item for local development." lightbox="..\media\user-data-functions-create-in-vs-code\add-a-new-function-sample.png":::
 

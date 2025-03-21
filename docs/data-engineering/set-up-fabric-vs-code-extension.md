@@ -36,11 +36,11 @@ To sign in to your Fabric account, press F1 and type `Fabric: Sign in`. You're p
 
 ### Command palette
 
-You can access almost all Azure Services provided by these extensions through the Command palette. Press `F1`, then type in `Fabric` to find the available commands.
+You can access almost all Azure Services provided by these extensions through the Command palette in VS Code. Press `F1`, then type in `Fabric` to find the available commands.
 
 ## Fabric User data functions (Preview)
 
-[Fabric User data functions (Preview)](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-functions) extension for VS Code extends the Microsoft Fabric extension with more functionality for authoring, testing, and deploying user data functions in Fabric.
+The [Fabric User data functions (Preview)](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-functions) extension supplies additional functionality for authoring, testing, and deploying user data functions in Fabric.
 
 ### Requirements
 
