@@ -60,7 +60,7 @@ You can view the user data functions in Fabric explorer in VS Code within the cu
 All the functions in Fabric workspace, can be opened in Explorer in VS Code to start editing. Select the function you want to open and select **Open in Explorer**. You can see connections, libraries and all the functions written within the user data functions item. 
 
 ### Manage connections and libraries 
-- **Connections**: All the data connections added for your user data function can be viewed here in Fabric explorer. You can right-click and select **Manage connections in Fabric** to add new libraries for the user data functions items in the Fabric portal.
+- **Connections**: All the data connections added for your user data function can be viewed here in Fabric explorer. You can right-click and select **Manage connections in Fabric** for the user data functions items in the Fabric portal.
 
 - **Libraries**: All the libraries added for your user data function can be viewed here in Fabric explorer. You can right-click and select **Manage libraries in Fabric** to add new libraries for the user data functions items in the Fabric portal. 
 
