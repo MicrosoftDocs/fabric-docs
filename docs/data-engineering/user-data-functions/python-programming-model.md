@@ -212,7 +212,7 @@ The following properties are returned:
 | Limit | Value | Description |
 |-------|-------------|----|
 | Request payload length | 2 MB | The maximum size of all request parameters combined. |
-| Request execution timeout | 4 minutes | The maximum amount of time a function can run for.|
+| Request execution timeout | 200 seconds | The maximum amount of time a function can run for.|
 | Response size limit | 30MB | The maximum size of the response's return value of a function.| 
 
 ## Next steps
