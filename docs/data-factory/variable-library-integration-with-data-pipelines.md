@@ -4,7 +4,7 @@ description: Learn about how to use Variable library with data pipelines.
 ms.reviewer: whhender
 ms.author: noelleli
 author: n0elleli
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 03/18/2025
 ---
