@@ -49,7 +49,7 @@ In the **Settings** tab, you can configure your connection, workspace, and Spark
 
 :::image type="content" source="media/spark-job-definition-activity/create-new-spark-job-from-activity.png" lightbox="media/spark-job-definition-activity/create-new-spark-job-from-activity.png" alt-text="Screenshot showing the +New button next to the Spark job definition selection box in the Settings tab of the Spark Job definition properties pages in the pipeline editor window.":::
 
-After you set a name and click create, you will be taken to your Spark job definition to set your configurations. 
+After you set a name and select create, you will be taken to your Spark job definition to set your configurations. 
 
 :::image type="content" source="media/spark-job-definition-activity/set-new-name-spark-job-from-activity.png" lightbox="media/spark-job-definition-activity/set-new-name-spark-job-from-activity.png" alt-text="Screenshot showing a pop up to name and create a new Spark job defintion.":::
 
