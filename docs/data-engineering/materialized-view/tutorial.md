@@ -5,7 +5,7 @@ ms.author: rkottackal
 author: rkottackal 
 ms.reviewer: nijelsf
 ms.topic: tutorial
-ms.date: 03/20/2025
+ms.date: 03/21/2025
 ---
 
 # Introduction
@@ -44,7 +44,7 @@ As prerequisites to this tutorial, complete the following steps:
 1.	Select a workspace from the Workspaces tab, then select + New item, and choose Data engineering. Provide a pipeline name. Then select Create.
 1.	Create a Lakehouse titled SalesLakehouse and load the sample data files for raw data into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
 
-:::image type="content" source="./media/tutorial/notebook-table.png" alt-text="Screenshot showing notebook." border="true" lightbox="./media/tutorial/notebook-table.png":::
+    :::image type="content" source="./media/tutorial/notebook-table.png" alt-text="Screenshot showing notebook." border="true" lightbox="./media/tutorial/notebook-table.png":::
 
 :::image type="content" source="./media/tutorial/create-silver-layer.png" alt-text="Screenshot showing silver materialized view creation." border="true" lightbox="./media/tutorial/create-silver-layer.png":::
 
