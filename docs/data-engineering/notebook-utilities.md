@@ -59,11 +59,11 @@ NotebookUtils works with the file system in the same way as Spark APIs. Take *no
 | **Usage** | **Relative path from HDFS root** | **Absolute path for ABFS file system** | **Absolute path for local file system in driver node** |
 |---|---|---|---|
 | Non-default lakehouse | Not supported |  *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
-| Default lakehouse | Directory under “Files” or “Tables”: *notebookutils.fs.mkdirs("Files/<new_dir>")* | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
+| Default lakehouse | Directory under 'Files' or 'Tables': *notebookutils.fs.mkdirs("Files/<new_dir>")* | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
 
 > [!NOTE]
 > - For the default Lakehouse, file paths are mounted in your Notebook with a default file cache timeout of 120 seconds. This means that files are cached in the Notebook's local temporary folder for 120 seconds, even if they are removed from the Lakehouse. If you want to change the timeout rule, you can unmount the default Lakehouse file paths and mount them again with different [*fileCacheTimeout*](#mount-via-shared-access-signature-token-or-account-key) value.
-> - For non-default Lakehouse configurations, you can set the appropriate [*fileCacheTimeout*](#mount-via-shared-access-signature-token-or-account-key) parameter during the mounting of the Lakehouse paths.  Setting the timeout to 0 ensures that the latest file is fetched from the Lakehouse server.
+> - For non-default Lakehouse configurations, you can set the appropriate [*fileCacheTimeout*](#mount-via-shared-access-signature-token-or-account-key) parameter during the mounting of the Lakehouse paths. Setting the timeout to 0 ensures that the latest file is fetched from the Lakehouse server.
 
 ### List files
 
@@ -171,7 +171,7 @@ notebookutils.fs.append("file path", "content to append", True) # Set the last p
 
 > [!NOTE] 
 > - ```notebookutils.fs.append()``` and ```notebookutils.fs.put()``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
-> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend adding a ```sleep``` statement around 0.5s ~ 1s between the recurring writes. This recommendation is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
+> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend adding a ```sleep``` statement around 0.5 s ~ 1 s between the recurring writes. This recommendation is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
 
 ### Delete file or directory
 
