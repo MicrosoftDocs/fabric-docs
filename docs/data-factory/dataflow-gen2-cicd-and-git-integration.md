@@ -15,7 +15,7 @@ Dataflow Gen2 now supports Continuous Integration/Continuous Deployment (CI/CD) 
 
 ## New features
 
-With Dataflow Gen2 (CI/CD preview), you can now:
+With Dataflow Gen2 (CI/CD), you can now:
 
 - Use Git integration support for Dataflow Gen2.
 - Use the deployment pipelines feature to automate the deployment of dataflows from your workspace to other workspaces.
