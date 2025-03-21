@@ -25,7 +25,7 @@ Parameters in Dataflow Gen2 allow you to dynamically control and customize dataf
 ## Considerations and limitations
 
 * **Dataflows with the public parameters mode enabled cannot be scheduled for refresh through the Fabric scheduler.** The only exception is a dataflow with no required parameters set.
-* **Dataflows with the public parameters mode enabled cannot be manually triggered through the Fabric Workspace list or lineage view.** The only exception is a Dataflow with no required parameters set.
+* **Dataflows with the public parameters mode enabled cannot be manually triggered through the Fabric Workspace list or lineage view.** The only exception is a dataflow with no required parameters set.
 * **Parameters that affect the resource path of a data source or a destination are not supported.** Connections are linked to the exact data source path defined in the authored Dataflow and can't be currently override to use other connections or resource paths.
 * **Dataflows with incremental refresh can't leverage this new mode.**
 * **Only parameters of the type *decimal number*, *whole number*, *text* and *true/false* can be passed for override.**  Any other data types don't produce a refresh request in the refresh history but show in the monitoring hub. 
