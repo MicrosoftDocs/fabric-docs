@@ -165,6 +165,8 @@ items:
         href: event-streams/set-up-private-endpoint.md
       - name: Microsoft Entra ID authentication
         href: event-streams/custom-endpoint-entra-id-auth.md
+      - name: Connect to streaming sources in private network with Eventstream 
+        href: event-streams/connect-connecots-in-virtual-network-on-premises.md        
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
