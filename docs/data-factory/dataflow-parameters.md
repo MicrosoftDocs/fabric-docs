@@ -76,5 +76,5 @@ You can select the Dataflow that you wish to use and set the parameters that you
 In the Dataflow parameters section, you can pass the name of the parameter, the type of value that you wish to pass and the value to pass. You can manually add all the supported parameters that you wish to override.
 
 >[!IMPORTANT]
->Be sure to pass the name of the parameters exactly as typed inside of the Dataflow as parameter names are case sensitive.
+>Be sure to pass the name of the parameters exactly as typed inside of the dataflow as parameter names are case sensitive.
  
