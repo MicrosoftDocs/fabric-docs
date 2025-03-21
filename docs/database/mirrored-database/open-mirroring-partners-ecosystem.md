@@ -55,6 +55,10 @@ SNP Glue is a data integration solution certified for various SAP source systems
 
 For more information on SNP Glue, see the [SNP Glue documentation](https://aka.ms/mirroring/snp-overview).
 
+### CleudIn
+
+CluedIn is a Master Data Management and data quality platform that enables enterprises to unify, clean, and govern their data at scale. By integrating with Open Mirroring, CluedIn streamlines the ingestion and harmonization of enterprise data, ensuring it remains accurate, consistent, and ready for analytics in Fabric.
+
 ## Related content
 
 - [Tutorial: Configure Microsoft Fabric open mirrored databases](open-mirroring-tutorial.md)
