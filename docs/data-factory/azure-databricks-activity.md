@@ -58,7 +58,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
     :::image type="content" source="media/azure-databricks-activity/databricks-activity-cluster.png" alt-text="Screenshot showing the Cluster settings tab of the Azure Databricks activity.":::
 
-4. The Azure Databricks Activity now also supports **Cluster Policy and Unity Catalog support**.
+1. The Azure Databricks Activity now also supports **Cluster Policy and Unity Catalog support**.
     - Under advanced settings, you have the option to choose the **Cluster Policy** so you can specify which cluster configurations are permitted.
     - Also, under advanced settings, you have the option to configure the **Unity Catalog Access Mode** for added security. The available [access mode types](/azure/databricks/compute/access-mode-limitations) are:
       - **Single User Access Mode** This mode is designed for scenarios where each cluster is used by a single user. It ensures that the data access within the cluster is restricted to that user only. This mode is useful for tasks that require isolation and individual data handling.
