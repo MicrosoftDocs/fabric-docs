@@ -35,7 +35,7 @@ Parameters in Dataflow Gen2 allow you to dynamically control and customize dataf
 * **Staged queries will only keep the last data refresh of a Dataflow stored in the Staging Lakehouse.** Users are able to look at the data from the Staging Lakehouse using the Dataflows connector to determine what was data is stored. Defining explicit data destinations when using the public parameters mode is highly encouraged.
 * **When submitting a duplicated request for the same parameter values, only the first request will be accepted and subsequent will be rejected until the first request finishes its evaluation.**
 
-## Enabling the public parameter mode
+## Enable the public parameter mode
 
 As the author of the Dataflow, open the Dataflow. Inside the Home tab of the ribbon, select the **Options** button.
 
