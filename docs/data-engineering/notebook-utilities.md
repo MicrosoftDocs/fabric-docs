@@ -16,7 +16,7 @@ Notebook Utilities (NotebookUtils) is a built-in package to help you easily perf
 
 > [!NOTE]
 >
-> - MsSparkUtils is officially renamed to **NotebookUtils**. The existing code remains **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
+> - MsSparkUtils is officially renamed to **NotebookUtils**. The existing code remains **backward compatible** and does not cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
 > - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates are exclusively supported with notebookutils namespace going forward.
 
 ## File system utilities
@@ -518,7 +518,7 @@ Fabric supports the following mount scenarios in the Microsoft Spark Utilities p
 
 The following example illustrates how to mount Azure Data Lake Storage Gen2. Mounting Blob Storage works similarly.
 
-This example assumes that you have one Data Lake Storage Gen2 account named *storegen2*, and the account has one container named *mycontainer* that you want to mount to */test* into your notebook Spark session.
+This example assumes that you have one Data Lake Storage Gen2 account named *storegen2*, which has a container named *mycontainer* that you want to mount to */test*  in your notebook Spark session.
 
 :::image type="content" source="media\notebook-utilities\mount-container-example.png" alt-text="Screenshot showing where to select a container to mount." lightbox="media\notebook-utilities\mount-container-example.png":::
 
