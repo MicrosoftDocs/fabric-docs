@@ -55,7 +55,7 @@ After you set a name and select create, you will be taken to your Spark job defi
 
 :::image type="content" source="media/spark-job-definition-activity/configure-spark-job-definition.png" lightbox="media/spark-job-definition-activity/configure-spark-job-definition.png" alt-text="Screenshot showing a new Fabric Spark job defintion item.":::
 
-Within the **Settings** tab, you can configure additional settings under **Advanced settings**. 
+Within the **Settings** tab, you can configure more settings under **Advanced settings**. 
 
 :::image type="content" source="media/spark-job-definition-activity/spark-job-definition-advanced-settings.png" lightbox="media/spark-job-definition-activity/spark-job-definition-advanced-settings.png" alt-text="Screenshot showing the Advanced settings in the Spark Job Definition activity settings on the pipeline editor canvas.":::
 
