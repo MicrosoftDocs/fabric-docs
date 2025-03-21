@@ -88,6 +88,9 @@ This is an example of how to add a new function from the `Insert sample` menu. I
 1. Select **Library management** to add the libraries that your function requires. 
 
    :::image type="content" source="..\media\user-data-functions-manage-libraries\select-library-management.png" alt-text="Screenshot showing how to manage libraries." lightbox="..\media\user-data-functions-manage-libraries\select-library-management.png":::
+   
+   >[!NOTE]
+   > `fabric_user_data_functions` library is added by default and can't be removed. This library is required for the functionality of User data functions. You need to update the version of this library for any future releases of this SDK.
 
 2. Select **pandas** library and select the version. Once the library is added, it's automatically saved in your User Data Functions item.
 
