@@ -64,7 +64,6 @@ You can define input parameters for the function such as primitive data types li
 | **Numbers**| int, float |
 | **Array** | list[], example list[int]|
 | **Object**	| dict |
-| **null**| None |
 
 ## Output types supported 
 The output data types supported are:
@@ -196,9 +195,9 @@ The following properties are returned:
 - **output**: The output value returned by the function. 
 - **errors**: If any errors were captured, this will return a list of each error with their name, error message and error properties.
 
-## Error codes
+## Response codes
 
-| **Error code** | **Description** |
+| **Response code** | **Description** |
 | ------------------- | ------------------------ |
 | 200 OK (Success)| The request was successful|
 | 403 (Forbidden) | The response was too large and the invocation failed.|
