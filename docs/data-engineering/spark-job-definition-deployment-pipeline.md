@@ -9,7 +9,7 @@ ms.date: 03/21/2025
 ms.search.form: Spark job definition deployment pipeline
 ---
 
-# Spark job definition deployment pipeline integration (Preview)
+# Spark job definition deployment pipeline integration (preview)
 
 This article explains how deployment pipeline integration works for Spark job definitions (SJDs) in Microsoft Fabric. Learn how to use deployment pipelines to deploy your SJDs across different environments/workspaces and synchronize changes between them.
 
