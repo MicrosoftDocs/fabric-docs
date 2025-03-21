@@ -1,6 +1,6 @@
 ---
 title: Connect to Streaming Sources in Virtual Network or On-Premises with Eventstream
-description: Learn how to connect to streaming sources in virtual network or on-premises with Eventstream
+description: Learn how to connect to streaming sources in virtual network or on-premises with Eventstream with workarounds
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -20,7 +20,7 @@ Due to data protection requirements, the streaming source may be in a private ne
 
 ## Workarounds
 
-Below are the approaches that can help with this purpose.
+Below are the approaches that can help with this purpose before the native private connectivity solution becomes available.
 
 ### IP allowlist
 
@@ -40,6 +40,8 @@ Learn more about the MPE, see [Connect to Azure resources securely using managed
 
 Azure Stream Analytics is a fully managed engine for processing large volumes of streaming data. It supports reading data from a Kafka topic using [Kafka input](https://learn.microsoft.com/azure/stream-analytics/stream-analytics-define-kafka-input) and can output data to an Azure event hub with the [Azure Event Hubs output](https://learn.microsoft.com/azure/stream-analytics/event-hubs-output). The job can run in an Azure virtual network to access your resources privately within the virtual network. If your Kafka clusters reside within on-premises networks or third-party cloud virtual networks, you may create an Azure virtual network to connect your private network and then run an Azure Stream Analytics job in your Azure virtual network to read the data from your Kafka and output the data to the [Event hub endpoint](add-source-custom-app.md#event-hub-1) offered by Eventstream’s source custom endpoint.
 
+Learn more about how to run an ASA job in VNET, see [Run Azure Stream Analytics job in virtual network](./azure/stream-analytics/run-job-in-virtual-network).
+
 ### Leveraging Kafka Sink Connector
 
 Kafka sink connector is a Kafka Connect connector that reads data from Apache Kafka and sends it to another Kafka topic. Fabric Eventstream provides an [Apache Kafka endpoint](overview.md#apache-kafka-on-fabric-event-streams) for receiving data via the Kafka protocol. By deploying a Kafka sink connector in the Kafka cluster and pointing it to [Eventstream’s source custom endpoint](add-source-custom-app.md#kafka-1), data can be read from the Kafka cluster and written to the Eventstream endpoint. It's necessary to ensure that outbound communication is allowed in your private network for the data to be written to Eventstream.
@@ -50,4 +52,4 @@ Azure Functions is a serverless service that allows you to run small pieces of c
 
 ## Additional Resources
 
-Eventstream in Real-Time Intelligence will support connectivity to streaming sources behind private networks in the future. Keep an eye on [Microsoft Fabric and Power BI release plan](https://aka.ms/fabricroadmap) for updates on this. In some cases, if a feature is planned to be released in the near term, waiting for the feature may make more sense than implementing a workaround and undoing the work later after the feature is released. It may also be acceptable to use a workaround to move a POC forward, but you want to deploy production after the feature is released. This allows us to move forward proving the power of Fabric without being slowed down by a missing feature.
+Eventstream in Real-Time Intelligence will support connectivity to streaming sources behind private networks in near future. Keep an eye on [Microsoft Fabric and Power BI release plan](https://aka.ms/fabricroadmap) for updates on this. In some cases, if a feature is planned to be released in the near term, waiting for the feature may make more sense than implementing a workaround and undoing the work later after the feature is released. It may also be acceptable to use a workaround to move a POC forward, but you want to deploy production after the feature is released. This allows us to move forward proving the power of Fabric without being slowed down by a missing feature.
