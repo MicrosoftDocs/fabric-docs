@@ -7,7 +7,7 @@ author: mksuni
 ms.topic: overview
 ms.custom:
 ms.date: 03/27/2025
-ms.search.form: VSCodeExtension
+ms.search.form: VS Code extension
 ---
 
 # Microsoft Fabric extensions for Visual Studio Code

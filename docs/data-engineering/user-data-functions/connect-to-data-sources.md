@@ -10,7 +10,7 @@ ms.search.form: Add new data connections to user data functions items
 
 # Connect to data sources from your Fabric User data functions item (Preview)
 
-Fabric User data functions provides native data source connections by using the `Manage connections` feature in the Fabric portal. This feature allows you to connect to your Fabric data sources without having to create connection strings or manage access credentials.
+Fabric User data functions provides native data source connections by using the Manage connections feature in the Fabric portal. This feature allows you to connect to your Fabric data sources without having to create connection strings or manage access credentials.
 
 In this article, you learn how to:
 
@@ -31,7 +31,7 @@ The following data sources are currently supported for Fabric User data function
 
 Any data connections you add are associated with your user data functions item and can be referenced in the code of any of your functions. To follow this guide, you need an existing Fabric User data functions item and an existing Fabric data source.
 
-### 1. Open the `Manage connections` menu from the Functions portal
+### 1. Open the Manage connections menu from the Functions portal
 
 Find and select **Manage connections** in the ribbon of the Functions portal editor.
 
@@ -41,7 +41,7 @@ The pane that opens contains any data connections you created. Select **Add data
 
 :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-2.png" alt-text="Screenshot of side pane with the connections tab selected and no connections listed." lightbox="..\media\user-data-functions-manage-connections\manage-connections-2.png":::
 
-### 2. Select your data connection from the OneLake Catalog
+### 2. Select your data connection from the OneLake catalog
 
 When you select **Add data connection**, the OneLake catalog opens with a list of all the data sources your user account has access to. The list is filtered to include only supported data sources, some of which might be in other workspaces.
 

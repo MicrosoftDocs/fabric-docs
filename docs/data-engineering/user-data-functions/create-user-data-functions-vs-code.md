@@ -1,5 +1,5 @@
 ---
-title: Quickstart - Create a User data functions item in Visual Studio Code
+title: Quickstart - Create a Fabric User data functions item in Visual Studio Code
 description: Add a user data functions item in VS Code 
 ms.author: sumuth
 author: mksuni
@@ -8,7 +8,7 @@ ms.date: 03/27/2025
 ms.search.form: Fabric User data functions, VS Code
 ---
 
-# Create a user data functions item in Visual Studio Code (Preview)
+# Create a Fabric User data functions item in Visual Studio Code (Preview)
 
 Fabric User data functions is a serverless solution that enables you to quickly and easily develop applications on top of Fabric-native data sources. The advantages are increased flexibility and cost-effectiveness of serverless computing in Fabric. User data functions are invoked as HTTP requests to a service-provided endpoint and they operate on your Fabric-native data sources.
 

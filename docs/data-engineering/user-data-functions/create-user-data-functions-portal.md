@@ -63,7 +63,7 @@ udf = fn.UserDataFunctions()
 
 ## Add a new data function
 
-Each runnable function starts with a `@udf.function()` decorator before the function definition. Read more about our [Python Programming model](./python-programming-model.md). To write a new function, use the decorator `@udf.function()` at the beginning to declare it as a runnable function. Here's a sample function:
+Each runnable function starts with a `@udf.function()` decorator before the function definition. Read more about our [Python programming model](./python-programming-model.md). To write a new function, use the decorator `@udf.function()` at the beginning to declare it as a runnable function. Here's a sample function:
 
 ```python
 # This sample allows you to pass a credit card number as an integer and mask it, leaving the last 4 digits. 
@@ -100,7 +100,7 @@ This example shows you how to add a new function from the Insert sample menu. We
 
 1. Select **pandas** library and select the version. Once the library is added, it's automatically saved in your user data functions item.
 
-   :::image type="content" source="..\media\user-data-functions-manage-libraries\add-pandas-library.png" alt-text="Screenshot showing how to add pandas library." lightbox="..\media\user-data-functions-manage-libraries\add-pandas-library.png":::
+   :::image type="content" source="..\media\user-data-functions-manage-libraries\add-pandas-library.png" alt-text="Screenshot showing how to add pandas library.":::
 
 1. Select **Insert sample** > **Data Manipulation** > **Manipulate data with pandas library**. This action inserts sample code at the end of your user data functions code file.
 
@@ -164,11 +164,11 @@ After the code is removed, you can select **Publish** to save your changes. Once
   
 1. Select **Run** to run the function.
 
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\data-function-successfully-executed.png" alt-text="Screenshot showing the output when a function is successfully executed." lightbox="..\media\user-data-functions-create-in-portal\data-function-successfully-executed.png":::
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\data-function-successfully-executed.png" alt-text="Screenshot showing the output when a function is successfully executed.":::
 
 1. You can view the live logs and the output to validate if the function ran successfully. Alternatively, you see an error message and logs from your function invocation.
 
 ## Next steps
 
-- [Create a user data functions item in Visual Studio Code](./create-user-data-functions-vs-code.md)
+- [Create a Fabric User data functions item in Visual Studio Code](./create-user-data-functions-vs-code.md)
 - [Learn about the User data functions programming model](./python-programming-model.md)

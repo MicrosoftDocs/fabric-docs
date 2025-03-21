@@ -16,7 +16,7 @@ Fabric User data functions is a platform that allows you to host and run applica
 
 You can use the native Fabric integrations to connect to your Fabric data sources, such as Fabric Warehouse, Fabric Lakehouse or Fabric SQL Databases, or invoke your functions from Fabric notebooks, Power BI reports, or data pipelines. You can edit your functions directly in the Fabric portal using the in-browser tooling, or with the dedicated Visual Studio (VS) Code extension.
 
-**Ready to get started?** Follow this guide to [create a new User data functions item](./create-user-data-functions-portal.md) or [use the VS Code extension](./create-user-data-functions-vs-code.md).
+**Ready to get started?** Follow this guide to [create a new user data functions item](./create-user-data-functions-portal.md) or [use the VS Code extension](./create-user-data-functions-vs-code.md).
 
 ## Why use Fabric User data functions?
 
@@ -31,5 +31,5 @@ The following are some of the benefits for logic using user data functions:
 
 ## Next steps
 
-- [Create a new User data functions item in Fabric](./create-user-data-functions-portal.md) or [use the VS Code extension](./create-user-data-functions-vs-code.md)
+- [Create a Fabric User data functions item](./create-user-data-functions-portal.md) or [use the VS Code extension](./create-user-data-functions-vs-code.md)
 - [Learn about the User data functions programming model](./python-programming-model.md)
