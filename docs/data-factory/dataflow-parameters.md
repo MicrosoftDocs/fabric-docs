@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 04/6/2025
 ---
 
-# Using public parameters in Dataflow Gen2 (Preview)
+# Use public parameters in Dataflow Gen2 (Preview)
 
 >[!NOTE]
 >Public parameters in Fabric Dataflow Gen2 are available as a preview feature. Only Dataflow Gen2 with CI/CD support have the experience enabled.
