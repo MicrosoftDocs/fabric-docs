@@ -108,6 +108,6 @@ The following known limitations apply to the integration of Variable library in 
 
 ## Related content
 
-- [CI/CD for pipelines in Data Factory](../datafactory/cicd-pipelines.md)
-- [Parameters in pipelines](../datafactory/parameters.md)
+- [CI/CD for pipelines in Data Factory](../data-factory/cicd-pipelines.md)
+- [Parameters in pipelines](../data-factory/parameters.md)
 - [Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric](../cicd/cicd-overview.md?source=recommendations)
