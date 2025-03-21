@@ -273,13 +273,13 @@ items:
   items:
   - name: Fabric extensions for VS Code  
     items:
-    - name: Fabric extensions for VS Code  
+    - name: Overview
       href: set-up-fabric-vs-code-extension.md
     - name: Develop user data functions in VS Code
       href: ./user-data-functions/create-user-data-functions-vs-code.md
   - name: Synapse VS Code extension
     items:
-    - name: Synapse VS Code extension
+    - name: Overview
       href: setup-vs-code-extension.md
     - name: VS Code extension with Docker image
       href: set-up-vs-code-extension-with-docker-image.md
