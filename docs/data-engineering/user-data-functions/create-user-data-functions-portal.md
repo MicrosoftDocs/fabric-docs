@@ -1,18 +1,18 @@
 ---
-title: Quickstart - Create a new Fabric User Data Functions item (Preview)
-description: Learn how to create a Fabric User Data Functions item in the portal.
+title: Quickstart - Create a new Fabric User data functions item (Preview)
+description: Learn how to create a Fabric User data functions item in the portal.
 ms.author: sumuth
 author: mksuni
 ms.topic: quickstart
 ms.date: 03/27/2025
-ms.search.form: Get started with User Data Functions
+ms.search.form: Create a new user data functions item
 ---
 
-# Create a new Fabric User Data Functions item from the Fabric portal (Preview)
+# Create a new Fabric User data functions item (Preview)
 
-In this guide, we'll create a new User Data Functions item and write new functions in it. Each User Data Functions item contains a code file that includes one or many functions that you can run individually.
+In this guide, we'll create a new User data functions item and write new functions in it. Each User data functions item contains a code file that includes one or many functions that you can run individually.
 
-1. Create a new Fabric User Data functions item.
+1. Create a new user data functions item.
 2. Write a new function.
 3. Manage functions.
 4. Run your function.
@@ -22,15 +22,15 @@ In this guide, we'll create a new User Data Functions item and write new functio
 - A Microsoft Fabric capacity. If you don't have one, you can create a [trial capacity for free](../../get-started/fabric-trial.md).
 - A [Fabric workspace](../../get-started/create-workspaces.md) linked to the capacity.
 
-## Create a new Fabric User Data Functions item
+## Create a new user data functions item
 
 1. In your workspace, select **+ New item**.
 
-2. In the panel that opens, search for **User data functions**, then select the tile.
+2. In the pane that opens, search for **User data functions**, then select the tile.
 
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\select-user-data-functions.png" alt-text="Screenshot showing how to select a user data functions item." lightbox="..\media\user-data-functions-create-in-portal\select-user-data-functions.png":::
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\select-user-data-functions.png" alt-text="Screenshot showing user data functions tile in the new item pane." lightbox="..\media\user-data-functions-create-in-portal\select-user-data-functions.png":::
 
-3. Provide a **Name** for the User Data Functions item.
+3. Provide a **Name** for the user data functions item.
 
 4. Select **New function** to create a ``hello_fabric`` Python function template. The Functions explorer shows all the functions that are published and ready to be invoked.
 
@@ -44,7 +44,7 @@ In this guide, we'll create a new User Data Functions item and write new functio
 
 ### Programming model key concepts
 
-Your User Data Functions item uses the [User Data Functions Python Programming model](./python-programming-model.md) to create, run, debug, and modify individual functions. All the functions within a User Data Functions item are written to a file called `function_app.py` that you can open in VS Code.
+Your user data functions item uses the [User data functions programming model](./python-programming-model.md) to create, run, debug, and modify individual functions. All the functions within a user data functions item are written to a file called `function_app.py` that you can open in Visual Studio Code.
 
 The first lines of the code for a User Data Functions item import the libraries needed to run your functions. Your **functions will not work properly** if any of these libraries are missing.
 
@@ -168,5 +168,5 @@ After the code is removed, you can select **publish** to save your changes. Once
 
 ## Next steps
 
-- [Develop User Data Function items in VS Code](./create-user-data-functions-vs-code.md)
-- Learn about the [User Data Functions programming model](./python-programming-model.md)
+- [Develop user data function items in Visual Studio Code](./create-user-data-functions-vs-code.md)
+- [Learn about the User data functions programming model](./python-programming-model.md)
