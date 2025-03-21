@@ -27,11 +27,11 @@ Complete the following steps to deploy SJDs using deployment pipelines:
 
 1. Select items to deploy, including SJDs. Use the **Compared to source** column to identify differences between source and target stages.
 
-    :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-view.png" alt-text="Screenshot of deployment pipeline view.":::
+    :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-view.png" alt-text="Screenshot of deployment pipeline view." lightbox="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-view.png":::
 
 1. Select **Deploy** to deploy selected items to the target stage.
 
-    :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deploy.png" alt-text="Screenshot of run deployment.":::
+    :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deploy.png" alt-text="Screenshot of run deployment." lightbox="media\spark-job-definition-deployment-pipeline\spark-job-definition-deploy.png":::
 
 1. Optionally, you can create a deployment rule to overwrite the default bindings between the SJD and other items in the target stage.
 
@@ -45,7 +45,7 @@ Complete the following steps to deploy SJDs using deployment pipelines:
 
       :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-options.png" alt-text="Screenshot of deployment rule options.":::
 
-    * To overwrite the default binding, provide the **LakehouseId**, **LakehouseName**, and the **WorkspaceId** for the target lakehouse. Make sure the **LakehouseId**, **LakehouseName**, and **LakehouseWorksapceId** correspond to each other. You can get the LakehouseId and LakehouseWorkspaceId values from the item URL link.
+    * To overwrite the default binding, provide the **LakehouseId**, **LakehouseName**, and the **WorkspaceId** for the target lakehouse. Make sure the LakehouseId, LakehouseName, and LakehouseWorksapceId values correspond to each other. You can get the LakehouseId and LakehouseWorkspaceId values from the item URL link.
 
       :::image type="content" source="media\spark-job-definition-deployment-pipeline\spark-job-definition-deployment-rule-detail.png" alt-text="Screenshot of deployment rule detail.":::
 
