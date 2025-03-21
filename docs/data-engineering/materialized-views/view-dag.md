@@ -23,12 +23,12 @@ After the creation of materialized view by the user, click on Manage Materialize
 ## Job Graph
 
 The Job Graph(the MV flow) is as per the code written by the user in the notebook, after the MV end to end flow is created.
-:::image type="content" source="./media/view-dag/job-graph.png" alt-text="Screenshot showing a job graph in DAG ." border="true" lightbox="./media/view-dag/job-graph.png":::
+:::image type="content" source="./media/view-dag/job-graph.png" alt-text="Screenshot showing a job graph in DAG." border="true" lightbox="./media/view-dag/job-graph.png":::
 
 To run the DAG, the user has to schedule the DAG as per their requirement and
 once the Job Graph is scheduled, navigate to the current run and check the DAG view.
 
-:::image type="content" source="./media/view-dag/dag-view.png" alt-text="Screenshot showing a executed dag view ." border="true" lightbox="./media/view-dag/dag-view.png":::
+:::image type="content" source="./media/view-dag/dag-view.png" alt-text="Screenshot showing an executed dag view." border="true" lightbox="./media/view-dag/dag-view.png":::
 
 ## Understand the DAG view
 
@@ -39,14 +39,14 @@ The DAG UI also has the following functionalities:
 > [!NOTE]
 > This is a DAG UI refresh only and not for data refresh.
 
-:::image type="content" source="./media/view-dag/dag-refresh.png" alt-text="Screenshot showing how to refresh a DAG UI ." border="true" lightbox="./media/view-dag/dag-refresh.png":::
+:::image type="content" source="./media/view-dag/dag-refresh.png" alt-text="Screenshot showing how to refresh a DAG UI." border="true" lightbox="./media/view-dag/dag-refresh.png":::
 
 *	New Materialized view: User can open a notebook to make changes to the Materialized Views as per their requirements.
 
 > [!NOTE]
 > These notebooks aren't directly linked to a DAG and are just used to create a Materialized View
 
-:::image type="content" source="./media/view-dag/new-materialized-view.png" alt-text="Screenshot showing a new materialized view ." border="true" lightbox="./media/view-dag/new-materialized-view.png":::
+:::image type="content" source="./media/view-dag/new-materialized-view.png" alt-text="Screenshot showing a new materialized view." border="true" lightbox="./media/view-dag/new-materialized-view.png":::
 
 *	Schedule: User can schedule a run as per their business requirements as and when they require the Materialized Views to be refreshed when new data is present
 
@@ -55,7 +55,7 @@ The DAG UI also has the following functionalities:
 * Toggle View: User can now toggle the view to Portrait or Landscape view depending on the size of the DAG. 
 * User also has the option to adjust the DAG UI according to the screen size using the Reset DAG button.
 
-:::image type="content" source="./media/view-dag/switch-layout.png" alt-text="Screenshot showing how to switch DAG view layout ." border="true" lightbox="./media/view-dag/switch-layout.png":::
+:::image type="content" source="./media/view-dag/switch-layout.png" alt-text="Screenshot showing how to switch DAG view layout." border="true" lightbox="./media/view-dag/switch-layout.png":::
 
 
   ## Next steps
