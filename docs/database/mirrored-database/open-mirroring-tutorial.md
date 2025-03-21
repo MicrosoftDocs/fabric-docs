@@ -32,14 +32,26 @@ In this section, we provide a brief overview of how to create a new open mirrore
 
 :::image type="content" source="media/open-mirroring-tutorial/landing-zone-url.png" alt-text="Screenshot from the Fabric portal showing the Landing zone URL location in the Home page of the mirrored database item." lightbox="media/open-mirroring-tutorial/landing-zone-url.png":::
 
-## Write change data into the landing zone
+### Start replicating data using the Fabric Portal
+
+Once you've created a Mirror DB, you can now start uploading your CSV or parquet files into the Mirror DB from the Fabric portal. 
+
+1. Upload a Parquet or CSV file format using drag and drop or by using our upload dialog. From there, you can give the table a name and specify a primary key. You can also see a preview of the data you are about to upload.
+
+1. Once you’re done uploading, your data immediately starts to replicate into OneLake. You can view the files you uploaded and the files that have been replicated in OneLake by simply selecting a file from ‘Uploaded Files’ or a table “Tables in OneLake”
+
+1. From the replication status, you can see how many rows have been replicated and any errors associated with the data you are mirroring into OneLake
+
+1. If you have change data in a Parquet or CSV format for exiting tables in your Mirror DB, you can upload or drag and drop these change files and the changes are automatically reflected in OneLake. 
+
+## Write change data into the landing zone using other mechanisms
 
 Your application can now write initial load and incremental change data into the landing zone.
 
 - Follow the [Connecting to Microsoft OneLake](../../onelake/onelake-access-api.md) to authorize and write to the mirrored database landing zone in OneLake.
 - Review the [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md) specifications.
 
-## Start mirroring process
+#### Start mirroring process
 
 1. The **Configure mirroring** screen allows you to mirror all data in the database, by default.
     - **Mirror all data** means that any new tables created after Mirroring is started will be mirrored.
