@@ -69,7 +69,7 @@ The public parameter mode follows the definition of the parameters inside the Da
 
 When you create a Pipeline in Fabric, you can use the Dataflow refresh activity to trigger the refresh of a Dataflow Gen2 with CI/CD support that has the public parameters mode enabled. 
 
-You can select the Dataflow that you wish to use and set the parameters that you wish to use in the **Dataflow parameters** section.
+You can select the dataflow that you want to use and set the parameters that you want to use in the **Dataflow parameters** section.
 
 ![Screenshot of the Dataflow activity within Fabric Data pipelines that allows to pass parameters for refresh](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
 
