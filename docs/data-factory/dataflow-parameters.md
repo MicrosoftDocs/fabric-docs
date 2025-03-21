@@ -20,7 +20,7 @@ Parameters in Dataflow Gen2 allow you to dynamically control and customize dataf
 ## Prerequisites
 
 * **A Dataflow Gen2 with CI/CD support**
-* **Parameters must be set within your Dataflow.** [Learn more on how to set Query parameters in Dataflow](https://learn.microsoft.com/power-query/power-query-query-parameters).
+* **Parameters must be set within your Dataflow.** [Learn more on how to set Query parameters in Dataflow](/power-query/power-query-query-parameters).
 
 ## Considerations and limitations
 
