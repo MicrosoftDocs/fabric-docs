@@ -5,8 +5,7 @@ author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/21/2025
-ms.custom: known-issue-1062
-ms.custom: references_regions
+ms.custom: 'known-issue-1062, references_regions'
 ---
 
 # Known issue - Virtual network data gateway doesn't start certain regions
