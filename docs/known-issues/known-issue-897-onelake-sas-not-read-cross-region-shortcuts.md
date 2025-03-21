@@ -1,7 +1,7 @@
 ---
 title: Known issue - OneLake Shared Access Signature (SAS) can't read cross-region shortcuts
 description: A known issue is posted where OneLake Shared Access Signature (SAS) can't read cross-region shortcuts.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 10/25/2024

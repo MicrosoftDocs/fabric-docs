@@ -1,7 +1,7 @@
 ---
 title: Known issue - Inserting nulls into Data Warehouse tables fail with incorrect error message
 description: A known issue is posted where inserting nulls into Data Warehouse tables fail with incorrect error message.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 08/16/2024
