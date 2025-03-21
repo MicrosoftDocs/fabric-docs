@@ -17,7 +17,7 @@ In this quickstart, you learn how to create a User Data Functions item in Visual
 ## Prerequisites
 - [A Fabric Workspace](../../get-started/create-workspaces.md)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Python](https://www.python.org/downloads/)
+- [Python](https://www.python.org/downloads/release/python-3110/)
 - [Azure Functions Core Tools v4](/azure/azure-functions/functions-run-local)
 - [Microsoft Fabric Extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric) 
 - [User data functions extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-functions)
@@ -60,7 +60,7 @@ You can view the user data functions in Fabric explorer in VS Code within the cu
 All the functions in Fabric workspace, can be opened in Explorer in VS Code to start editing. Select the function you want to open and select **Open in Explorer**. You can see connections, libraries and all the functions written within the user data functions item. 
 
 ### Manage connections and libraries 
-- **Connections**: All the data connections added for your user data function can be viewed here in Fabric explorer. You can right-click and select **Manage connections in Fabric** to add new libraries for the user data functions items in the Fabric portal.
+- **Connections**: All the data connections added for your user data function can be viewed here in Fabric explorer. You can right-click and select **Manage connections in Fabric** for the user data functions items in the Fabric portal.
 
 - **Libraries**: All the libraries added for your user data function can be viewed here in Fabric explorer. You can right-click and select **Manage libraries in Fabric** to add new libraries for the user data functions items in the Fabric portal. 
 
