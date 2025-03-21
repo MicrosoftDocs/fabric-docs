@@ -61,8 +61,10 @@ items:
       href: add-source-azure-sql-managed-instance-cdc.md
     - name: SQL Server on Virtual Machine Database CDC
       href: add-source-sql-server-on-vm-db-cdc.md
-    - name: Azure Data Explorer
+    - name: Azure Data Explorer shortcut
       href: add-source-azure-data-explorer.md
+    - name: Azure Data Explorer database table
+      href: add-source-azure-data-explorer-database.md
   - name: External sources 
     items:
     - name: Google Cloud Pub/Sub
