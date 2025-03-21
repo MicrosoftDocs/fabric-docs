@@ -20,7 +20,7 @@ From your workspace settings, you can easily set up a connection to your repo to
 
 :::image type="content" source="..\media\user-data-functions-git-deployment\udf-source-control-view.png" alt-text="Screenshot showing user data functions item with uncommitted changes in source control." lightbox="..\media\user-data-functions-git-deployment\udf-source-control-view.png":::
 
-After you successfully commit the user data functions items to the Git repo, you see the user data functions folders in the repository. You can now execute future operations, like create pull request.
+After you successfully commit the user data functions items to the Git repo, you see the user data functions folders in the repository. You can now execute future operations, like create a pull request.
 
 ## User data functions representation in Git
 

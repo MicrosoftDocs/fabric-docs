@@ -5,12 +5,12 @@ ms.author: sumuth
 author: mksuni
 ms.topic: quickstart
 ms.date: 03/27/2025
-ms.search.form: Create a user data functions item
+ms.search.form: Create Fabric User data functions
 ---
 
 # Create a Fabric User data functions item (Preview)
 
-In this guide, we'll create a User data functions item and write new functions in it. Each User data functions item contains a code file that includes one or many functions that you can run individually.
+In this guide, we'll create a user data functions item and write new functions in it. Each user data functions item contains a code file that includes one or many functions that you can run individually.
 
 Specifically, you learn how to:
 
@@ -28,7 +28,7 @@ Specifically, you learn how to:
 
 1. In your workspace, select **+ New item**.
 
-1. In the pane that opens, search for `User data functions`, then select the tile.
+1. In the pane that opens, search for `user data functions`, then select the tile.
 
    :::image type="content" source="..\media\user-data-functions-create-in-portal\select-user-data-functions.png" alt-text="Screenshot showing user data functions tile in the new item pane." lightbox="..\media\user-data-functions-create-in-portal\select-user-data-functions.png":::
 
@@ -59,7 +59,7 @@ udf = fn.UserDataFunctions()
 ```
 
 - To create, run, and manage functions, you need the `fabric.functions` SDK and a few other important libraries such as `logging` to write custom logs.
-- `udf=fn.UserDataFunctions()` is the construct to define functions within a user data fnctions item.
+- `udf=fn.UserDataFunctions()` is the construct to define functions within a user data functions item.
 
 ## Add a new data function
 

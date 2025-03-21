@@ -36,7 +36,7 @@ To sign in to your Fabric account, press F1 and type `Fabric: Sign in`. You're p
 
 ### Command palette
 
-You can access almost all Azure Services provided by these extensions through the Command palette in VS Code. Press `F1`, then type in `Fabric` to find the available commands.
+You can access almost all Azure services provided by these extensions through the Command palette in VS Code. Press **F1**, then type in `Fabric` to find the available commands.
 
 ## Fabric User data functions (Preview)
 

@@ -133,7 +133,7 @@ The `ExecutingUser` object contains the following information:
 |----------------| ----------------|-----------------------------------------|
 | Oid | string (GUID) | The user's object ID, which is an immutable identifier for the requestor. This is the verified identity of the user or service principal used to invoke this function across applications. |
 | TenantId | string (GUID) | The ID of the tenant that the user is signed into. |
-| PreferredUsername | string | The preferred username of the invoking user, as set by th user. This value is mutable. |
+| PreferredUsername | string | The preferred username of the invoking user, as set by the user. This value is mutable. |
 
 To access the `UserDataFunctionContext` parameter, you must use the following decorator at the top of the function definition: `@udf.context(argName="<parameter name>")`
 

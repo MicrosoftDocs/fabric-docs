@@ -31,7 +31,7 @@ The following data sources are currently supported for Fabric User data function
 
 Any data connections you add are associated with your user data functions item and can be referenced in the code of any of your functions. To follow this guide, you need an existing Fabric User data functions item and an existing Fabric data source.
 
-### 1. Open the Manage connections menu from the Functions portal
+### 1. Access the Manage connections feature from the Functions portal
 
 Find and select **Manage connections** in the ribbon of the Functions portal editor.
 
@@ -52,7 +52,7 @@ Choose your data source, then select **Connect**.
 > [!NOTE]
 > If you can't find the data source you're looking for, make sure you have the right permissions to connect to it. Alternatively, make sure you're using a supported data source, as listed at the beginning of this article.
 
-Once created, the new connection to the data source you selected is shown in the side pane on the **Connections** tab. Once you see the connection, take note of the **Alias field** that was generated for it. You need this alias to reference the connection from any function in your user data functions item.
+Once created, the new connection to the data source you selected is shown in the side pane on the **Connections** tab. When you see the connection, take note of the **Alias field** that was generated for it. You need this alias to reference the connection from any function in your user data functions item.
 
 :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-4.png" alt-text="Screenshot of the connections side pane with a new data source connection created." lightbox="..\media\user-data-functions-manage-connections\manage-connections-4.png":::
 
