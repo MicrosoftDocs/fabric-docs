@@ -37,41 +37,41 @@ Parameters in Dataflow Gen2 allow you to dynamically control and customize dataf
 
 ## Enable the public parameter mode
 
-As the author of the Dataflow, open the Dataflow. Inside the Home tab of the ribbon, select the **Options** button.
+As the author of the dataflow, open the Dataflow. Inside the Home tab of the ribbon, select the **Options** button.
 
-![Screenshot of the Options button found within the Home tab of the ribbon for the Power Query Editor](media/dataflow-parameters/options-button.png)
+![Screenshot of the Options button found within the Home tab of the ribbon for the Power Query Editor.](media/dataflow-parameters/options-button.png)
 
-Clicking the button opens a new **Options** dialog. In the vertical menu, select the option with the label *Parameters* inside of the *Dataflow* group. Within the Parameters section you can enable the option that reads ***"Enable parameters to be discovered and override for execution"*** to enable the public parameters mode.
+Selecting the button opens a new **Options** dialog. In the vertical menu, select the option with the label *Parameters* inside of the *dataflow* group. Within the Parameters section you can enable the option that reads ***"Enable parameters to be discovered and override for execution"*** to enable the public parameters mode.
 
-![Screenshot of the Options dialog to enabling the public parameters mode](media/dataflow-parameters/enable-public-parameters-mode.png)
+![Screenshot of the Options dialog to enabling the public parameters mode.](media/dataflow-parameters/enable-public-parameters-mode.png)
 
-You can select the OK button to commit these changes.
+Select the **OK** button to commit these changes.
 
-When this mode is enabled, you get a notification in the Manage parameters dialog that reads "Public parameter mode is enabled" at the top of the dialog.
+When this mode is enabled, you get a notification in the **Manage parameters** dialog that reads "Public parameter mode is enabled" at the top of the dialog.
 
-![Screenshot of the manage parameters dialog showing the notification that the public parameter mode is enabled](media/dataflow-parameters/manage-parameters-dialog.png)
+![Screenshot of the manage parameters dialog showing the notification that the public parameter mode is enabled.](media/dataflow-parameters/manage-parameters-dialog.png)
 
-Once the public parameter mode has been enabled, you can go ahead and save your Dataflow.
+Once the public parameter mode has been enabled, you can save your dataflow.
 
-![Screenshot of the options to save a Dataflow within the home tab of the ribbon](media/dataflow-parameters/save-dataflow.png)
+![Screenshot of the options to save a dataflow within the home tab of the ribbon.](media/dataflow-parameters/save-dataflow.png)
 
-## Passing custom parameter values for refresh
+## Pass custom parameter values for refresh
 
-The public parameter mode follows the definition of the parameters inside the Dataflow where there's a distinction between required and nonrequired parameters.
+The public parameter mode follows the definition of the parameters inside the dataflow where there's a distinction between required and nonrequired parameters.
 
-* **Required parameters**: if a parameter is set as required, in order to refresh the Dataflow a value needs to be passed to the refresh job. The refresh fails if no value is passed for a parameter that is set to required.
+* **Required parameters**: if a parameter is set as required, in order to refresh the dataflow a value needs to be passed to the refresh job. The refresh fails if no value is passed for a parameter that is set to required.
 * **Non-required parameters**: these are also called ***optional*** parameters and no value is required to be passed for a refresh to be triggered. If no value is passed, the **Current value** defined within your parameter used for refresh. However, you can always pass an override value which is used for refresh.
 
-## Using the Dataflow refresh activity within Data Pipelines
+## Use the Dataflow refresh activity within Data Pipelines
 
 >[!NOTE]
->We recommend reading more about the [Dataflow activity from Fabric Data pipelines](dataflow-activity.md) to understand all its capabilities. 
+>We recommend reading more about the [dataflow activity from Fabric data pipelines](dataflow-activity.md) to understand all its capabilities. 
 
 When you create a pipeline in Fabric, you can use the dataflow refresh activity to trigger the refresh of a Dataflow Gen2 with CI/CD support that has the public parameters mode enabled. 
 
 You can select the dataflow that you want to use and set the parameters that you want to use in the **Dataflow parameters** section.
 
-![Screenshot of the Dataflow activity within Fabric Data pipelines that allows to pass parameters for refresh](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
+![Screenshot of the dataflow activity within Fabric Data pipelines that allows to pass parameters for refresh.](media/dataflow-parameters/dataflow-activity-pipeline-parameters.png)
 
 In the **Dataflow parameters** section, you can pass the name of the parameter, the type of value that you want to pass, and the value to pass. You can manually add all the supported parameters that you want to override.
 
