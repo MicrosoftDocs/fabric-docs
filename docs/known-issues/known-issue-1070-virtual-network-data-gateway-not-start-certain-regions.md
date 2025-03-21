@@ -6,6 +6,7 @@ ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/21/2025
 ms.custom: known-issue-1062
+ms.custom: references_regions
 ---
 
 # Known issue - Virtual network data gateway doesn't start certain regions
@@ -20,7 +21,7 @@ You couldn't start your virtual network data gateway in the following regions du
 
 This issue was due to a change in the way we authenticate against Cosmos DB, which didn't work for the impacted regions. The incident is currently mitigated with the change rolled back.
 
-**Status:** Open
+**Status:** Fixed: March 21, 2025
 
 **Product Experience:** Power BI
 
