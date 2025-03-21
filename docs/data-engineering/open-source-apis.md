@@ -92,7 +92,7 @@ Status code: 200
 GET  https://api.fabric.microsoft.com/v1/workspaces/00bb0307-033d-415b-9917-e0b19df28539/notebooks/46884990-6ea1-4dbf-93e5-daf2608930d6/livySessions/b90eee82-765c-4393-b3da-2a11eeb73b34/applications/application_1742369571479_0001/sql/1?details=false 
 ```
 
-## Sample response 2
+### Sample response 2
 
 Status code: 200
 
