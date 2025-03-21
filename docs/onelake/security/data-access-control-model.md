@@ -291,23 +291,24 @@ In Microsoft Fabric, when the user creates a lakehouse, the system also provisio
 
 #### Lakehouse Sharing and OneLake RBAC Permissions
 
-When user shares a lakehouse, they grant other users or a group of users access to a lakehouse without giving access to the workspace and the rest of its items. Shared lakehouse can be found through Data Hub or the Shared with Me section in Microsoft Fabrics.
+When user shares a lakehouse, they grant other users or a group of users access to a lakehouse without giving access to the workspace and the rest of its items.
 
-When someone shares a lakehouse, they can also grant access to the SQL analytics endpoint and associated default semantic model.
+When someone shares a lakehouse, they can also grant the following additional permissions:
 
-:::image type="content" source=".\media\lakehouse-sharing.png" alt-text="A screenshot of the lakehouse Grant people access screen.":::
+* ReadData permission on the SQL analytics endpoint
+* ReadAll permission on the lakehouse
+* Build permission on the default semantic model
+
+For more information, see [How Lakehouse sharing works](../../data-engineering/lakehouse-sharing.md)
+
+The SQL analytics endpoint is a warehouse. For more information about its permission model, see [Share Warehouse data and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md)
 
 | **Sharing Option** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** | **Can view and build Semantic Models?** |
 |----------|----------|----------|----------|-----|
 | *No additional permissions selected* | No by default, use OneLake RBAC to grant access. |  No | No | No |
-| Read all Apache Spark and subscribe to events | Yes by default. Use OneLake RBAC to restrict the access. |  No | No | No |
 | Read all SQL endpoint data | No by default, use OneLake RBAC to grant access. |  No | Yes | No |
-| Build  reports on the default dataset | Yes by default. Use OneLake RBAC to restrict the access. | No | No | Yes |
-
-Learn more about data sharing permissions model:
-
-- [How lakehouse sharing works](../../data-engineering/lakehouse-sharing.md)
-- [Share your data and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md)
+| Read all Apache Spark and subscribe to events | Yes by default. Use OneLake RBAC to restrict the access. |  No | No | No |
+| Build reports on the default dataset | Yes by default. Use OneLake RBAC to restrict the access. | No | No | Yes |
 
 ## Shortcuts
 
