@@ -66,7 +66,7 @@ Before you begin, make sure you have the following ready:
 
 1. Review the **Details** to see the adjustments that were made to the objects.
 
-   :::image type="content" source="media/migration-assistant-guide/show-migrated-objects-list.png" alt-text="Screenshot from the Fabric portal of the Migration Assistant's metadata migration summary and the list of migrated objects." lightbox="media/migration-assistant/show-migrated-objects-list.png":::
+   :::image type="content" source="media/migration-assistant-guide/show-migrated-objects-list.png" alt-text="Screenshot from the Fabric portal of the Migration Assistant's metadata migration summary and the list of migrated objects." lightbox="media/migration-assistant-guide/show-migrated-objects-list.png":::
 
    The **State** column indicates if the object's metadata was adjusted during the translation to be supported in Fabric Warehouse. For example, you might see that certain column datatypes or T-SQL language constructs are automatically converted to the ones that are supported in Fabric. The **Details** column shows the information about the adjustments that were made to the objects. 
 
