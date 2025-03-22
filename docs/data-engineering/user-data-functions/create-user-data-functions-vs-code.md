@@ -18,7 +18,7 @@ In this quickstart, you learn how to create a user data functions item in Visual
 
 - A [Fabric workspace](../../get-started/create-workspaces.md)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Python](https://www.python.org/downloads/)
+- [Python](https://www.python.org/downloads/release/python-3110/)
 - [Azure Functions Core Tools v4](/azure/azure-functions/functions-run-local)
 - [Microsoft Fabric extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric)
 - [User data functions extension](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-functions)
@@ -65,9 +65,10 @@ All the functions in the Fabric workspace can be opened in the Explorer in VS Co
 
 ### Manage connections and libraries
 
-- **Connections**: All the data connections added for your user data function can be viewed here in Fabric explorer. You can right-click and select **Manage connections in Fabric** to add new libraries for the user data functions items in the Fabric portal.
+### Manage connections and libraries 
+- **Connections**: All the data connections added for your user data function can be viewed from Fabric explorer. Right-click and select **Manage connections in Fabric** for the user data functions items.
 
-- **Libraries**: All the libraries added for your user data functions item can be viewed here in Fabric explorer. You can right-click and select **Manage libraries in Fabric** to add new libraries for the user data functions items in the Fabric portal.
+- **Libraries**: All the libraries added for your user data functions item can be viewed from Fabric explorer. Right-click and select **Manage libraries in Fabric** to add new libraries for the user data functions items.
 
 - **Functions**: You can view all the published functions here. Select a function and perform these actions:
     - **Run and test** to test the function in VS Code without having to use API testing tools.

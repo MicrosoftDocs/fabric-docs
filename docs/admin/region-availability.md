@@ -31,22 +31,23 @@ This table lists regions where all Fabric workloads are available.
 
 | Americas                     | Europe                     | Middle East | Africa             | Asia Pacific                    |
 |:-----------------------------|:---------------------------|:------------|:-------------------|:--------------------------------|
-| Brazil South                 | North Europe               | UAE North   | South Africa North | Australia East                  |
-| Canada Central               | West Europe                |             |                    | Australia Southeast<sup>*</sup> |
-| Canada East                  | France Central             |             |                    | Central India                   |
-| Central US                   | Germany West Central       |             |                    | East Asia                       |
-| East US                      | Italy North<sup>*</sup>    |             |                    | Japan East<sup>*</sup>          |
-| East US 2                    | Norway East                |             |                    | Korea Central                   |
-| North Central US             | Poland Central<sup>*</sup> |             |                    | Southeast Asia                  |
-| South Central US<sup>**</sup>| Sweden Central             |             |                    | South India                     |
-| West US                      | Switzerland North          |             |                    |                                 |
-| West US 2                    | Switzerland West           |             |                    |                                 |
-| West US 3\* \***     | UK South                   |             |                    |                                 |
-|                              | UK West<sup>*</sup>        |             |                    |                                 |
+| Brazil South<sup>****</sup>                 | North Europe               | UAE North<sup>****</sup>   | South Africa North<sup>****</sup> | Australia East                  |
+| Canada Central<sup>****</sup>               | West Europe                |             |                    | Australia Southeast<sup>****</sup>|
+| Canada East<sup>****</sup>                  | France Central<sup>****</sup>             |             |                    | Central India<sup>****</sup>                   |
+| Central US<sup>****</sup>                   | Germany West Central<sup>****</sup>       |             |                    | East Asia                       |
+| East US                      | Italy North<sup>*</sup>,<sup>****</sup>    |             |                    | Japan East<sup>****</sup>       |
+| East US 2                    | Norway East<sup>****</sup>                |             |                    | Korea Central<sup>****</sup>                   |
+| North Central US<sup>****</sup>             | Poland Central<sup>*</sup>, <sup>****</sup> |             |                    | Southeast Asia                  |
+| South Central US<sup>**</sup>| Sweden Central             |             |                    | South India<sup>****</sup>                     |
+| West US<sup>****</sup>                      | Switzerland North<sup>****</sup>          |             |                    |                                 |
+| West US 2                    | Switzerland West<sup>****</sup>           |             |                    |                                 |
+| West US 3 \*, \*** ,<sup>****</sup>     | UK South                   |             |                    |                                 |
+|                              | UK West<sup>\*</sup>,<sup>****</sup>        |             |                    |                                 |
 
 \* [Fabric SQL database](../database/sql/overview.md) isn't  available in this region.
 \*\* [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) isn't available in this region.
 \*\*\* [Fabric API for GraphQL](../data-engineering/api-graphql-overview.md) isn't  available in this region.
+\*\*\*\* [Fabric User Data Functions](../data-engineering/user-data-functions/user-data-functions-overview.md) isn't  available in these regions.
 
 ### Power BI
 
@@ -79,7 +80,7 @@ This table lists regions where public preview features are available, according 
 | Germany West Central | <li>Dataflows</li><li>Synapse Notebook</li>  | &#x274C; | &#x2705; |
 | Italy North | &#x274C; | &#x274C; | &#x2705; |
 | Japan East | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
-| Korea Central | <li>Dataflows</li><li>Synapse Notebook</li> | &#x274C; | &#x274C; | |
+| Korea Central | <li>Dataflows</li><li>Synapse Notebook</li> | &#x274C; | &#x2705; | |
 | North Central US | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705; | &#x2705; |
 | North Europe | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li>  | &#x2705; | &#x2705; |
 | Norway East | &#x274C; | &#x274C; | &#x2705; |

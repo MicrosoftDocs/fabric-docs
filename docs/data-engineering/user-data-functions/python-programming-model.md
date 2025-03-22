@@ -66,7 +66,6 @@ You can define input parameters for the function such as primitive data types li
 | **Numbers**| int, float |
 | **Array** | list[], example list[int]|
 | **Object**	| dict |
-| **null**| None |
 
 ## Supported output types
 
@@ -205,9 +204,9 @@ The following properties are returned:
 - **output**: The output value returned by the function.
 - **errors**: If any errors were captured, this returns a list of each error with their name, the error message, and error properties.
 
-## Error codes
+## Response codes
 
-| **Error code** | **Description** |
+| **Response code** | **Description** |
 | ------------------- | ------------------------ |
 | 200 OK (Success)| The request was successful.|
 | 403 (Forbidden) | The response was too large and the invocation failed.|
@@ -220,9 +219,10 @@ The following properties are returned:
 
 | Limit | Value | Description |
 |-------|-------------|----|
-| Request payload length | 2 MB | The maximum size of all request parameters combined. |
-| Request execution timeout | 200 seconds | The maximum amount of time a function can run for.|
-| Response size limit | 30MB | The maximum size of the response's return value of a function.|
+| Request payload length | 4 MB | The maximum size of all request parameters combined. |
+| Request execution timeout | 240 seconds | The maximum amount of time a function can run for. |
+| Response size limit | 30 MB | The maximum size of the response's return value of a function. | 
+| Log retention | 30 days | The number of days that historical invocation logs will be retained for by default. | 
 
 ## Next steps
 
