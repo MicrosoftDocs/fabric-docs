@@ -17,7 +17,7 @@ The Fabric Migration Assistant is a migration experience built natively into Fab
 The Migration Assistant copies metadata and data from the source database, automatically converting the source schema to Fabric Data Warehouse. AI-powered assistance provides quick solutions for migration incompatibility or errors.
 
 > [!TIP]
-> For a step-by-step guide to migrate with the Migration Assistant, see [Migrate Data with the Fabric Migration Assistant for Data Warehouse](migration-assistant-guide.md).
+> For a step-by-step guide to migrate with the Migration Assistant, see [Migrate Data with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md).
 >
 > For more information on strategy and planning your migration, see [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md).
 
@@ -103,9 +103,9 @@ Other currently unsupported features you might see:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Migrate Data with the Fabric Migration Assistant for Data Warehouse](migration-assistant-guide.md)
+> [Migrate Data with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md)
 
 ## Related content
 
-- [Migrate Data with the Fabric Migration Assistant for Data Warehouse](migration-assistant-guide.md)
+- [Migrate Data with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md)
 - [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md)

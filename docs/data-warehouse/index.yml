@@ -60,7 +60,7 @@ landingContent:
           - text: Migration assistant 
             url: migration-assistant.md
           - text: Migration assisant guide
-            url: migration-assistant-guide.md
+            url: migrate-with-migration-assistant.md
           - text: Migrate planning for Azure Synapse Analytics dedicated SQL pools
             url: migration-synapse-dedicated-sql-pool-warehouse.md
           - text: Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools
