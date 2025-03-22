@@ -57,7 +57,7 @@ Before you begin, make sure you have the following ready:
 
    :::image type="content" source="media/migration-assistant-guide/review.png" alt-text="Screenshot from the Fabric portal of the Review page of the Migration Assistant. The source is a DACPAC file and the Destination is a new warehouse item named AdventureWorks.":::
 
-   During this step, the tool translates T-SQL metadata to supported T-SQL syntax in Fabric data warehouse. Once the metadata migration is complete, the Migration assistant opens. You can access the Migration Assistant at any time using the **Migration** button in the Home tab of the warehouse ribbon.
+   During this step, the Migration Assistant translates T-SQL metadata to supported T-SQL syntax in Fabric data warehouse. Once the metadata migration is complete, the Migration assistant opens. You can access the Migration Assistant at any time using the **Migration** button in the Home tab of the warehouse ribbon.
 
 1. Review the metadata migration summary in the Migration Assistant. You'll see the count of migrated objects and the objects that need to be fixed before they can be migrated.
 1. Select **Show migrated objects** to expand the section and see a list of objects that have been successfully migrated to your Fabric warehouse.
@@ -72,7 +72,7 @@ Before you begin, make sure you have the following ready:
 
 ### Fix problems using Migration Assistant
 
-Some database object metadata might fail to migrate. Commonly, this is because the tool couldn't translate the T-SQL metadata into those that are supported in a Fabric warehouse or the translated code failed to apply to T-SQL. 
+Some database object metadata might fail to migrate. Commonly, this is because the Migration Assistant couldn't translate the T-SQL metadata into those that are supported in a Fabric warehouse or the translated code failed to apply to T-SQL. 
 
 Let's fix these scripts with help from the Migration Assistant.
 
@@ -112,11 +112,11 @@ Copy data helps with migrating data used by the objects you migrate. You can use
 
 ### Reroute connections
 
-In the final step, the ETL/reporting tools that are connected to your source need to be reconnected to your new Fabric warehouse.
+In the final step, the data loading/reporting platforms that are connected to your source need to be reconnected to your new Fabric warehouse.
 
-1. Update the connections to the Reporting tools to point to your Fabric warehouse. 
+1. Update the connections to your reporting platforms to point to your Fabric warehouse. 
 1. Test the Fabric warehouse with some reporting before rerouting. Perform comparison and data validation tests in your reporting platforms.
-1. Update the connections for ETL tools to point to your Fabric warehouse.
+1. Update the connections for data loading (ETL/ELT) platforms to point to your Fabric warehouse.
    - For Power BI/Fabric pipelines:
       - Use the [List Connections REST API](/rest/api/fabric/core/connections/list-connections?tabs=HTTP) to find connections to your old data source, the Azure Synapse Analytics dedicated SQL pool.
       - Update the connections to the new Fabric data warehouse using **Manage Connections and Gateways** experience under the **Settings** gear.

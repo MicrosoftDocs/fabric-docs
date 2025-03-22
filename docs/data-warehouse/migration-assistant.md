@@ -93,7 +93,7 @@ The workarounds for some of the common unsupported features:
 The following unsupported features are no longer needed in Microsoft Fabric Data Warehouse:
 
 - Indexes
-- Transparent data encryption (TDE): TDE isn't needed in Fabric because Fabric already encrypts data through more advanced means.
+- Transparent data encryption (TDE): Not needed in Fabric because Fabric already encrypts data through more advanced means.
 
 Other currently unsupported features you might see:
 
