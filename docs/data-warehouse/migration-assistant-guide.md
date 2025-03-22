@@ -14,7 +14,7 @@ ms.search.form: Migration Assistant
 
 The Fabric Migration Assistant is a migration experience to copy SQL pools in Azure Synapse Analytics seamlessly into Microsoft Fabric Data Warehouse. 
 
-This guide will walk you through the steps to migrate from an Azure Synapse Analytics dedicated SQL pool to Fabric warehouse using a DACPAC file. 
+This guide walks you through the steps to migrate from an Azure Synapse Analytics dedicated SQL pool to Fabric warehouse using a DACPAC file. 
 
 > [!TIP]
 > For more information on the Migration Assistant's features and capabilities, see [Fabric Migration Assistant for Data Warehouse](migration-assistant.md).
@@ -23,7 +23,7 @@ This guide will walk you through the steps to migrate from an Azure Synapse Anal
 
 ## Prerequisites
 
-Before you begin, make sure you have the following:
+Before you begin, make sure you have the following ready:
 
 1. A Fabric workspace with an active capacity or trial capacity.
 1. [Create a workspace](../fundamentals/create-workspaces.md) or select an existing workspace you want to migrate into. The Migration Assistant will create a new warehouse for you.
@@ -53,26 +53,26 @@ Before you begin, make sure you have the following:
 
 1. Provide the name of the new Fabric warehouse item you would like to migrate into. Select **Next**.
 
-1. Review your inputs and select **Migrate**. A new warehouse item will be created, and the metadata migration will begin.
+1. Review your inputs and select **Migrate**. A new warehouse item will be created, and the metadata migration begins.
 
    :::image type="content" source="media/migration-assistant-guide/review.png" alt-text="Screenshot from the Fabric portal of the Review page of the Migration Assistant. The source is a DACPAC file and the Destination is a new warehouse item named AdventureWorks.":::
 
-   During this step, the tool translates T-SQL metadata to those supported in Fabric data warehouse. Once the metadata migration is complete, the Migration assistant opens. You can access the Migration Assistant at any time using the **Migration** button in the Home tab of the warehouse ribbon.
+   During this step, the tool translates T-SQL metadata to supported T-SQL syntax in Fabric data warehouse. Once the metadata migration is complete, the Migration assistant opens. You can access the Migration Assistant at any time using the **Migration** button in the Home tab of the warehouse ribbon.
 
-1. Review the metadata migration summary in the Migration Assistant. You will see the count of migrated objects and the objects that need to be fixed before they can be migrated.
+1. Review the metadata migration summary in the Migration Assistant. You'll see the count of migrated objects and the objects that need to be fixed before they can be migrated.
 1. Select **Show migrated objects** to expand the section and see a list of objects that have been successfully migrated to your Fabric warehouse.
 
    :::image type="content" source="media/migration-assistant-guide/show-migrated-objects.png" alt-text="Screenshot from the Fabric portal of the Migration Assistant's metadata migration summary. The Show migrated objects option is highlighted.":::
 
 1. Review the **Details** to see the adjustments that were made to the objects.
 
-   :::image type="content" source="media/migration-assistant-guide/show-migrated-objects-list.png" alt-text="Screenshot from the Fabric portal of hte Migration Assistant's metadata migration summary and the list of migrated objects." lightbox="media/migration-assistant/show-migrated-objects-list.png":::
+   :::image type="content" source="media/migration-assistant-guide/show-migrated-objects-list.png" alt-text="Screenshot from the Fabric portal of the Migration Assistant's metadata migration summary and the list of migrated objects." lightbox="media/migration-assistant/show-migrated-objects-list.png":::
 
    The **State** column indicates if the object's metadata was adjusted during the translation to be supported in Fabric Warehouse. For example, you might see that certain column datatypes or T-SQL language constructs are automatically converted to the ones that are supported in Fabric. The **Details** column shows the information about the adjustments that were made to the objects. 
 
 ### Fix problems using Migration Assistant
 
-Some database object metadata may fail to migrate. Commonly, this is because the tool could not translate the T-SQL metadata into those that are supported in a Fabric warehouse or the translated code failed to apply to T-SQL. 
+Some database object metadata might fail to migrate. Commonly, this is because the tool couldn't translate the T-SQL metadata into those that are supported in a Fabric warehouse or the translated code failed to apply to T-SQL. 
 
 Let's fix these scripts with help from the Migration Assistant.
 
@@ -83,18 +83,18 @@ Let's fix these scripts with help from the Migration Assistant.
 1. Select a database object that failed to migrate. A new query opens under the **Shared queries** in the **Explorer**. This new query shows the metadata definition and the adjustments that were made to it as automatic comments added to the T-SQL code.
 1. Review the comments in the beginning of the script to see the adjustments that were made to the script.
 1. Review and fix the broken scripts using the error information and documentation.
-1. To use Copilot for AI-powered assistance in fixing the errors, select **Fix query errors** in the **Suggested action** section. Copilot will update the script with suggestions.Mistakes can happen as Copilot uses AI, so verify code suggestions and make any adjustments you need.
+1. To use Copilot for AI-powered assistance in fixing the errors, select **Fix query errors** in the **Suggested action** section. Copilot updates the script with suggestions.Mistakes can happen as Copilot uses AI, so verify code suggestions and make any adjustments you need.
 
    :::image type="content" source="media/migration-assistant-guide/fix-query-errors.png" alt-text="Screenshot from the Fabric portal of the Query editor showing T-SQL queries that failed to migrate, and the comments and fixes suggested by Copilot.":::
 
 1. Select **Run** to validate and create the object.
 1. The next script to be fixed opens.
-1. Continue to fix the rest of the scripts. You can choose to skip fixing scripts that you do not need during this step.
+1. Continue to fix the rest of the scripts. You can choose to skip fixing scripts that you don't need during this step.
 1. When all desired metadata is ready for migration, select the back button in the **Fix problems** pane to return the top-level view of the Migration assistant. Check the **2. Fix problems** step in the Migration assistant. 
 
 ### Copy data using Migration Assistant
 
-Copy data helps with migrating data used by the objects you migrate. You can use a [Fabric Data Factory copy job](../data-factory/create-copy-job.md) to do it manually, or follow the steps below for the copy job integration in the Migration assistant.
+Copy data helps with migrating data used by the objects you migrate. You can use a [Fabric Data Factory copy job](../data-factory/create-copy-job.md) to do it manually, or follow these steps for the copy job integration in the Migration assistant.
 
 1. Select the **Copy data** step in the Migration Assistant.
 1. Select **Use a copy job** button.
@@ -120,9 +120,9 @@ In the final step, the ETL/reporting tools that are connected to your source nee
    - For Power BI/Fabric pipelines:
       - Use the [List Connections REST API](/rest/api/fabric/core/connections/list-connections?tabs=HTTP) to find connections to your old data source, the Azure Synapse Analytics dedicated SQL pool.
       - Update the connections to the new Fabric data warehouse using **Manage Connections and Gateways** experience under the **Settings** gear.
-1. Once complete, check the **Reroute connections** step in the Migration assistant. You are now ready to start using the warehouse.
+1. Once complete, check the **Reroute connections** step in the Migration assistant. You're now ready to start using the warehouse.
 
-   :::image type="content" source="media/migration-assistant-guide/migration-complete.png" alt-text="Screenshot from the Fabric portal Migration Assistant showing all four job steps complete and a congrulations popup.":::
+   :::image type="content" source="media/migration-assistant-guide/migration-complete.png" alt-text="Screenshot from the Fabric portal Migration Assistant showing all four job steps complete and a congratulations popup.":::
 
 ### Related content
 

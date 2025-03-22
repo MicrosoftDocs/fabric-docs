@@ -37,19 +37,6 @@ landingContent:
             url: tutorial-introduction.md            
           - text: Create a Warehouse quickstart
             url: create-warehouse.md
-  # Card 
-  - title: Migration
-    linkLists:
-      - linkListType: tutorial
-        links:
-          - text: Migration assistant 
-            url: migration-assistant.md
-          - text: Migration assisant guide
-            url: migration-assistant-guide.md
-          - text: Migrate planning for Azure Synapse Analytics dedicated SQL pools
-            url: migration-synapse-dedicated-sql-pool-warehouse.md
-          - text: Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools
-            url: migration-synapse-dedicated-sql-pool-methods.md
 
   # Card 
   - title: Get started with SQL analytics endpoint
@@ -70,6 +57,15 @@ landingContent:
             url: ../data-factory/copy-data-activity.md
           - text: How to move data into Lakehouse via Copy assistant
             url: ../data-factory/tutorial-move-data-lakehouse-copy-assistant.md
+          - text: Migration assistant 
+            url: migration-assistant.md
+          - text: Migration assisant guide
+            url: migration-assistant-guide.md
+          - text: Migrate planning for Azure Synapse Analytics dedicated SQL pools
+            url: migration-synapse-dedicated-sql-pool-warehouse.md
+          - text: Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools
+            url: migration-synapse-dedicated-sql-pool-methods.md
+
   # Card 
   - title: Security
     linkLists:
