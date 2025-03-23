@@ -46,7 +46,7 @@ Here’s how different nodes perform at each throughput level.
 
 For Azure Event Hubs sources, throughput depends on both the selected throughput level and the number of Azure Event Hubs source partitions. When the Azure Event Hubs source partition count is less than 4, throughput is limited by the partition count, regardless of the selected throughput level. The throughput upper limits are as follows:
 
-| Partition Count | Throughput (up-to) |
+| Partition Count | Approximate Throughput (up-to) |
 |-----------------|-----------------|
 | 1               | 9 MB/s            |
 | 3               | 10 MB/s           |
@@ -74,7 +74,7 @@ The throughput for streaming connector sources is up to **30 MB/s**. If higher t
 ### Other eventstream sources and destinations
 The following table shows the approximate throughput upper limit for custom endpoint source and different destinations, based on internal lab testing.
 
-| Node                       |  Type        | Throughput Level | Throughput  (up-to)   |
+| Node                       |  Type        | Throughput level | Approximate throughput (up-to)   |
 |----------------------------|--------------|------------------|-----------------------|
 | **Custom Endpoint**        | Source / Destination      | Low              | 100 MB/s             |
 |                            |              | Medium           | 150 MB/s             |
