@@ -72,7 +72,7 @@ The throughput for streaming connector sources is up to **30 MB/s**. If higher t
 - Amazon MSK Kafka
 
 ### Other eventstream sources and destinations
-The following table shows the throughput upper limit for different nodes. 
+The following table shows the approximate throughput upper limit for custom endpoint source and different destinations, based on internal lab testing.
 
 | Node                       |  Type        | Throughput Level | Throughput  (up-to)   |
 |----------------------------|--------------|------------------|-----------------------|
