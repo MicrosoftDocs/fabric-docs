@@ -368,7 +368,7 @@ items:
   - name: Migration Assistant
     href: migration-assistant.md
   - name: Migration Assistant guide for Azure Synapse Analytics SQL pools
-    href: migration-assistant-guide.md
+    href: migrate-with-migration-assistant.md
   - name: Planning and strategiy for migration from Azure Synapse Analytics
     href: migration-synapse-dedicated-sql-pool-warehouse.md
   - name: Methods for migration from Azure Synapse Analytics

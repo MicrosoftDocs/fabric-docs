@@ -56,7 +56,7 @@ Consider the following activities as a planning runbook for your migration from 
         1. Identify upskilling needs and training assets, including [Microsoft Learn](/training/paths/get-started-fabric/).
 1. **Plan and Design**
     1. Define the desired architecture. 
-    1. Select the [method/tools for the migration](migration-synapse-dedicated-sql-pool-methods.md#schema-code-and-data-migration-methods) to accomplish the following tasks:
+    1. Select the [method/tools for the migration](migration-synapse-dedicated-sql-pool-methods.md) to accomplish the following tasks:
         1. Data extraction from the source.
         1. Schema (DDL) conversion, including metadata for tables and views
         1. Data ingestion, including historical data.
@@ -127,7 +127,7 @@ Performance optimizations in the source environment, such as indexes, indicate w
 
 ### T-SQL considerations
 
-There are several Data Manipulation Language (DML) syntax differences to be aware of. Refer to [T-SQL surface area in Microsoft Fabric](tsql-surface-area.md). Consider also a [code assessment when choosing method(s) of migration for the database code (DML)](migration-synapse-dedicated-sql-pool-methods.md#schema-code-and-data-migration-methods).
+There are several Data Manipulation Language (DML) syntax differences to be aware of. Refer to [T-SQL surface area in Microsoft Fabric](tsql-surface-area.md). Consider also a [code assessment when choosing method(s) of migration for the database code (DML)](migration-synapse-dedicated-sql-pool-methods.md).
 
 Depending on the parity differences at the time of the migration, you might need to rewrite parts of your T-SQL DML code.
 
