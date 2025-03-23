@@ -33,7 +33,6 @@ In this tutorial, you:
 
 * A Fabric tenant account with an active subscription. [Create an account for free](../../get-started/fabric-trial.md).
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
-* A workspace with datasources
 * The following [tenant switches](../../admin/about-tenant-settings.md) must be enabled from the Admin portal:
   * [Users can create Fabric items](../../admin/fabric-switch.md)
   * Users can create variable libraries
@@ -42,7 +41,9 @@ In this tutorial, you:
 
 ## Before you begin: Prepare data sources (optional)
 
-For the purposes of this tutorial, we will create a workspace called *Sources LHs* with some source data to use in the Variable library. If you already have a workspace with lakehouse items you want to use, you can skip this step.
+For the purposes of this tutorial, we need to create some sample data to use in the Variable library. If you already have a workspace with lakehouse items you want to use, you can skip this step.
+
+We will create a workspace called *Sources LHs* with some lakehouses to use as source data in the Variable library
 
 1. [Create a workspace](../../fundamentals/create-workspaces.md) called *Sources LHs*.
 1. [Create a lakehouse](../../onelake/create-lakehouse-onelake.md) item in the workspace, called *SourceLH_Dev*.
@@ -111,7 +112,7 @@ Now that the value-sets are defined, set the rules for the active value-set. For
 1. Set the Root folder to *Tables*.
 1. To set the table name, check the box that says Enter manually, and type *PublicHolidays*.
 
-   :::image type="content" source="./media/tutorial-variable-library/source-table-name.png" alt-text="Screenshot of the data pipeline source connection."::: 
+   :::image type="content" source="./media/tutorial-variable-library/source-table-name.png" alt-text="Screenshot of the data pipeline source connection.":::
 
 1. Select **Save** to save the source connection.
 
@@ -131,7 +132,11 @@ Now that the value-sets are defined, set the rules for the active value-set. For
 1. Select **OK** to save the dynamic value as the Table name.
 1. Save.
 
-## Step 5: Connect workspace to Git (optional)
+Notice, also, that the *artifactId* of the lakehouse is set to the value of the *SourceLH* variable in the *pipeline-content.json* file.
+
+:::image type="content" source="./media/tutorial-variable-library/item-id-git.png" alt-text="Screenshot of file containing a line showing that the artifact ID is set to  a dynamic variable source lakehouse.":::
+
+## Step 5: Customize the variable values in Git (optional)
 
 To see how the variable library is [represented in Git](./variable-library-cicd.md), or to edit the variables from a Git repository, connect the workspace to a Git repository.
 
@@ -143,13 +148,43 @@ The git repo has a folder for each item in the workspace. The Variable library i
 
 :::image type="content" source="./media/tutorial-variable-library/git-contents.png" alt-text="Screenshot of Git folder containing the content of the workspace.":::
 
-Compare the ProdVS.jason and the TestVS.json files in the valueSets folder and confirm that the variableOverrides are set to the different values.
+Compare the ProdVS.jason and the TestVS.json files in the valueSets folder and confirm that the variableOverrides are set to the different values. You can edit these values directly in the UI or by editing this file in Git and updating it to the workspace.
 
-Notice, also, that the *artifactId* of the lakehouse is set to the value of the *SourceLH* variable in the *pipeline-content.json* file.
+```json
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/VariablesLibrary/definition/valueSets/1.0.0/schema.json",
+  "valueSetName": "Test VS",
+  "overrides": [
+    {
+      "name": "Source_LH",
+      "value": "e4b2b710-a3fd-4845a262-df815dbec6d0"
+    },
+    {
+      "name": "DestinationTableName",
+      "value": "TestCopiedData"
+    }
+  ]
+}
+```
 
-:::image type="content" source="./media/tutorial-variable-library/item-id-git.png" alt-text="Screenshot of file containing a line showing that the artifact ID is set to  a dynamic variable source lakehouse.":::
+```json
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/VariablesLibrary/definition/valueSets/1.0.0/schema.json",
+  "valueSetName": "Prod VS",
+  "overrides": [
+    {
+      "name": "Source_LH",
+      "value": "e4b2b710-a3fd-4845a262-df815dbec6d0"
+    },
+    {
+      "name": "DestinationTableName",
+      "value": "ProdCopiedData"
+    }
+  ]
+}
+```
 
-These values can be edited in the Git repository and updated to the workspace.
+You can edit these values in the Git repository and update them to the workspace.
 
 ## Step 6: Create deployment pipeline
 
@@ -158,6 +193,11 @@ Now that the data pipeline is set up, create a deployment pipeline to deploy the
 1. From the *Copy with Variables WS* workspace, [create a new deployment pipeline](../deployment-pipelines/get-started-with-deployment-pipelines.md#step-1---create-a-deployment-pipeline). The workspace is automatically assigned to the deployment pipeline. (If you create the deployment pipeline from outside workspace, you need to assign the workspace to the deployment pipeline manually).
 1. [Deploy](../deployment-pipelines/get-started-with-deployment-pipelines.md#step-5---deploy-to-an-empty-stage) the content of the workspace to the *Test* and *Production* stages of the deployment pipeline.
 1. From the Test stage, [set the active value-set](./get-started-variable-libraries.md#edit-a-value-set) in the *WS Variables* library to *Test VS*. From the *Production* stage, set the active value-set in the *WS Variables* library to *Prod VS*.
+
+   :::image type="content" source="./media/tutorial-variable-library/test-active.png" alt-text="Screenshot of the variable library with the test value set as active.":::
+
+   :::image type="content" source="./media/tutorial-variable-library/prod-active.png" alt-text="Screenshot of the variable library with the prod value set as active.":::
+
 1. Run the pipeline from different stages to see the values it has in each stage. (Close the pipeline and open it again from each stage to see the values reload). Check the input value to see the value of each variable in that stage.
 
 ## Considerations and limitations

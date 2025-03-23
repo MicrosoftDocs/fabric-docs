@@ -19,10 +19,9 @@ Variable libraries make it easy to manage configurations across different stages
 
 ## Variable libraries and deployment pipelines
 
-Variable libraries and their values can be deployed in deployment pipelines to manage variable values across different stages. The active value set for each stage is selected independently and can be changed at any time. While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the deployment pipeline.
+Variable libraries and their values can be deployed in deployment pipelines to manage variable values across different stages. All value sets in the Variable library are available to all stages of the deployment pipeline. The active value set for each stage is selected independently and can be changed anytime. While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the deployment pipeline. The consumer item (for example, a pipeline) automatically receives the correct value from the active value set.
 
-<!--- * Permissions for Item reference are checked during deployment.
-* --->
+When you create a deployment pipeline, you can select a Variable library item to use. The selected Variable library item is stored in the deployment pipeline and is used to populate the variable values in that stage. You can also change the active value set for each stage of the deployment pipeline.
 
 If you update the Variable library variables or value set, the item will appear as different in a when you [compare](../deployment-pipelines/compare-pipeline-content.md) them.
 For example, the following changes in the Variable library are reflected as *different* in the deployment pipeline:
@@ -34,7 +33,7 @@ For example, the following changes in the Variable library are reflected as *dif
 
 :::image type="content" source="./media/variable-library-cicd/variable-library-compare.png" alt-text="Screenshot of compare in deployment pipelines with the variable library showing as different in the two stages.":::
 
-Changes to the **active** value set doesn't register as in a *different* when you compare since the active value set is stored in the deployment pipeline, and not in the Variable library itself.
+Changes to the active value set don't register as in a *different* when you compare since the active value set is stored in the deployment pipeline, and not in the Variable library itself.
 
 ## Variable libraries and Git integration
 
@@ -66,14 +65,14 @@ For example:
   "variables": [
     {
       "name": "WaitTime",
+      "note": "Wait time in minutes",
       "type": "integer",
-      "defaultValue": 1,
-      "note": "Wait time in minutes"
+      "Value": 3
     },
     {
       "name": "var2",
       "type": "string",
-      "defaultValue": "value2"
+      "Value": "value2"
     }
   ],
 }
@@ -81,7 +80,7 @@ For example:
 
 ### Value set
 
-The variable library folder contains a subfolder called ValueSets. This folder contains a JSON file for each value set. The JSON file contains only the variable values for *non default* values in that value set. 
+The variable library folder contains a subfolder called ValueSets. This folder contains a JSON file for each value set. The JSON file contains only the variable values for *non default* values in that value set.
 
 * name
 * value
@@ -90,11 +89,16 @@ For example:
 
 ```json
 {
-  "name": "TestVL",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/valueSet/1.0.0/schema.json",
+  "name": "Test",
   "variableOverrides": [
     {
-      "name": "WaitTime",
-      "value": "3"
+      "name": "Var1",
+      "value": 2
+    },
+    {
+      "name": "var2",
+      "value": 4
     }
   ]
 }
