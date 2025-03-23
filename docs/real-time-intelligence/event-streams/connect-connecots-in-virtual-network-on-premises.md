@@ -16,7 +16,7 @@ Eventstream’s streaming connector enables seamless connection of external real
 
 ## The Challenge
 
-Due to data protection requirements, the streaming source may be in a private network, such as cloud virtual networks or on-premises networks. Now, Eventstream’s streaming connector can't directly access sources within these network environments. While Eventstream plans to support private connectivity in the future, the following workarounds can help bring real-time data from the private network to Fabric to unblock your streaming and real-time needs now.
+Due to data protection requirements, the streaming source may be in a private network, such as cloud virtual networks or on-premises networks. At the moment, Eventstream’s streaming connector can't directly access sources within these network environments, except the Azure Event Hubs and IoT Hub sources. To connect to these Azure resources within Azure virtua network, please refer to [Connect to Azure resources securely using managed private endpoints](./set-up-private-endpoint.md). While Eventstream plans to support private connectivity for more sources in the future, the following workarounds can help bring real-time data from the private network to Fabric to unblock your streaming and real-time needs for now.
 
 ## Workarounds
 
