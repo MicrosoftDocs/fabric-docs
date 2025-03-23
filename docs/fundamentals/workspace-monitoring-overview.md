@@ -47,7 +47,7 @@ After you install [workspace monitoring](enable-workspace-monitoring.md), you ca
 
 Workload monitoring sample queries are available from [workspace-monitoring](https://github.com/microsoft/fabric-samples/tree/main/workspace-monitoring) in the Fabric samples GitHub repository.
 
-## Power BI reports and Real-Time Dashboard templates
+## Templates
 
 You can explore workspace monitoring using Power BI reports and Real-time dashboard templates available from [workspace-monitoring-dashboards](https://github.com/microsoft/fabric-toolbox/tree/main/monitoring/workspace-monitoring-dashboards).
 
