@@ -14,9 +14,11 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
 
-This article details the methods of migration of data warehousing in Azure Synapse Analytics dedicated SQL pools to Microsoft Fabric Warehouse. 
+This article details the methods of migration of data warehousing in Azure Synapse Analytics dedicated SQL pools to Microsoft Fabric Warehouse.  
 
 > [!TIP]
+> For more information on strategy and planning your migration, see [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md).
+>
 > An automated experience for migration from Azure Synapse Analytics dedicated SQL pools is available using the [Fabric Migration Assistant for Data Warehouse](migration-assistant.md). The rest of this article contains more manual migration steps.
 
 This table summarizes information for data schema (DDL), database code (DML), and data migration methods. We expand further on each scenario later in this article, linked in the **Option** column.

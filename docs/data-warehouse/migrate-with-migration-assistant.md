@@ -27,13 +27,7 @@ Before you begin, make sure you have the following ready:
 
 1. A Fabric workspace with an active capacity or trial capacity.
 1. [Create a workspace](../fundamentals/create-workspaces.md) or select an existing workspace you want to migrate into. The Migration Assistant will create a new warehouse for you.
-1. DACPAC file extracted from Azure Synapse Analytics dedicated SQL pool.
-
-   A [DACPAC](/sql/tools/sql-database-projects/concepts/data-tier-applications/overview#dacpac-operations) (data-tier application package) file is built from SQL database projects and contains the metadata of database objects, including the schema of tables, views, stored procedures, functions, and more. Options for extracting a DACPAC include:
-
-   1. [Visual Studio Code](/sql/tools/sql-database-projects/tutorials/start-from-existing-database)
-   1. [SQL Server Data Tools](/sql/tools/sql-database-projects/concepts/data-tier-applications/extract-dacpac-from-database)
-   1. [SqlPackage command-line utility](/sql/tools/sqlpackage/sqlpackage-extract)
+1. DACPAC file extracted from Azure Synapse Analytics dedicated SQL pool. A [DACPAC](/sql/tools/sql-database-projects/concepts/data-tier-applications/overview#dacpac-operations) (data-tier application package) file is built from SQL database projects and contains the metadata of database objects, including the schema of tables, views, stored procedures, functions, and more. Options for extracting a DACPAC include [Visual Studio Code](/sql/tools/sql-database-projects/tutorials/start-from-existing-database), [SQL Server Data Tools](/sql/tools/sql-database-projects/concepts/data-tier-applications/extract-dacpac-from-database), and the [SqlPackage command-line utility](/sql/tools/sqlpackage/sqlpackage-extract).
 
 ### Copy metadata
 
@@ -120,7 +114,9 @@ In the final step, the data loading/reporting platforms that are connected to yo
    - For Power BI/Fabric pipelines:
       - Use the [List Connections REST API](/rest/api/fabric/core/connections/list-connections?tabs=HTTP) to find connections to your old data source, the Azure Synapse Analytics dedicated SQL pool.
       - Update the connections to the new Fabric data warehouse using **Manage Connections and Gateways** experience under the **Settings** gear.
-1. Once complete, check the **Reroute connections** step in the Migration assistant. You're now ready to start using the warehouse.
+1. Once complete, check the **Reroute connections** step in the Migration assistant.
+
+Congratulations! You're now ready to start using the warehouse.
 
    :::image type="content" source="media/migration-assistant-guide/migration-complete.png" alt-text="Screenshot from the Fabric portal Migration Assistant showing all four job steps complete and a congratulations popup.":::
 
