@@ -1,6 +1,6 @@
 ---
 title: Get started with Variable libraries
-description: Learn how to mange Microsoft Fabric Variable libraries to customize and share item configurations in a workspace.
+description: Learn how to manage Microsoft Fabric Variable libraries to customize and share item configurations in a workspace.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
@@ -45,7 +45,7 @@ You can create a Variable library item from the Fabric home page or from inside 
 
 1. In the **Data Factory** section, select **Variable library**
 
-   :::image type="content" source="./media/get-started-variable-libraries/create-from-home.png" alt-text="Screenshot of UI showing the location of variable libraries in the data factory section.":::
+   :::image type="content" source="./media/get-started-variable-libraries/create-from-home.png" alt-text="Screenshot of UI showing the location of variable libraries in the data factory section." lightbox="./media/get-started-variable-libraries/create-from-home.png":::
 
 1. Name the new Variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./variable-types.md#variable-library-item-name).
 
@@ -54,7 +54,7 @@ You can create a Variable library item from the Fabric home page or from inside 
 1. Select **+ New item**
 1. Scroll down to the **Develop data** section, and select **Variable library**
 
-   :::image type="content" source="./media/get-started-variable-libraries/create-from-workspace.png" alt-text="Screenshot of UI for creating a Variable library item from an existing workspace.":::
+   :::image type="content" source="./media/get-started-variable-libraries/create-from-workspace.png" alt-text="Screenshot of UI for creating a Variable library item from an existing workspace." lightbox="./media/get-started-variable-libraries/create-from-workspace.png":::
 
 1. Name the new Variable library and select **Create**. Make sure the name conforms to the required [naming conventions](./variable-types.md#variable-library-item-name).
 
@@ -76,7 +76,7 @@ To add a new variable to the library:
 
 1. Select **+ New variable**
 1. Enter a name (make sure it follows the [naming conventions](./variable-types.md#variable-name))
-1. Select a type from the drop-down list (See a list of [suppoerted variable types](./variable-types.md#variable-types))
+1. Select a type from the drop-down list (See a list of [supported variable types](./variable-types.md#variable-types))
 1. Enter a default value
 1. Add a note explaining what the variable is for or how to use it (optional)
 1. Select **Save**
@@ -92,7 +92,7 @@ To add a new variable to the library:
 
 ### Add a value set
 
-To add another value set that can be used a different stage:
+To add another value set that can be used in a different stage:
 
 1. Select **Add value set**
 1. Name the value set (make sure it follows the [naming conventions](./variable-types.md#variable-types)) and give it a description (optional) of up to 2,048 characters.
