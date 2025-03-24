@@ -5,14 +5,14 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 02/26/2025
+ms.date: 03/23/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
 
 # Understand the metrics app compute page
 
-The Microsoft Fabric Capacity Metrics app's compute page provides an overview of your capacity's performance. It's divided into the three visuals listed in the following sections. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
+The Microsoft Fabric Capacity Metrics app's compute page provides an overview of your capacity's performance, showing data for the last 14 days. It's divided into the three visuals listed in the following sections. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
 
 At the top of each page, the **Capacity Name** field allows you to select the capacity the app shows results for.
 
