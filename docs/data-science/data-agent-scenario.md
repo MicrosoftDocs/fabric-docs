@@ -180,7 +180,11 @@ After you validate the performance of the Fabric data agent, you might decide to
 
 :::image type="content" source="./media/data-agent-scenario/ai-select-publish.png" alt-text="Screenshot showing selection of the Publish option." lightbox="./media/data-agent-scenario/ai-select-publish.png":::
 
-The published URL for the Fabric data agent appears, as shown in this screenshot:
+The **Publish data agent** box opens, as shown in this screenshot:
+
+:::image type="content" source="./media/data-agent-scenario/publish-data-agent.png" alt-text="Screenshot showing the publish data agent feature." lightbox="./media/data-agent-scenario/publish-data-agent.png":::
+
+In this box, select **Publish** to publish the Fabric data agent. The published URL for the Fabric data agent appears, as shown in this screenshot:
 
 :::image type="content" source="./media/data-agent-scenario/fabric-notebook-ai-skill-published-url-value.png" alt-text="Screenshot showing the published URL." lightbox="./media/data-agent-scenario/fabric-notebook-ai-skill-published-url-value.png":::
 

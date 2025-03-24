@@ -167,15 +167,11 @@ The Fabric data agent offers several configuration options that allow users to c
 
 ### Provide instructions
 
-You can provide specific instructions to guide the AI's behavior. To add them, select **Data agent instructions** as shown in the following screenshot:
+You can provide specific instructions to guide the AI's behavior. To add them in the Fabric data agent instructions pane, select **Data agent instructions** as shown in the following screenshot:
 
 <!-- <img src="./media/how-to-create-data-agent/select-adding-instructions.png" alt="Screenshot showing selection of the AI instructions button." width="300"/> -->
 
 :::image type="content" source="./media/how-to-create-data-agent/select-adding-instructions.png" alt-text="Screenshot showing selection of the Data agent instructions button." lightbox="./media/how-to-create-data-agent/select-adding-instructions.png":::
-
-The Fabric data agent instructions pane opens, as shown in this screenshot:
-
-:::image type="content" source="./media/how-to-create-data-agent/ai-skill-adding-instructions.png" alt-text="Screenshot showing where you can edit the instructions you provide to the AI." lightbox="./media/how-to-create-data-agent/ai-skill-adding-instructions.png":::
 
 Here, you can write up to 15,000 characters in plain English-language text, to instruct the AI about how to handle queries.
 

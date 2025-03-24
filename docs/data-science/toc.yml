@@ -53,7 +53,7 @@ items:
       href: ./ai-functions/generate-response.md
     - name: Customize AI function configurations
       href: ./ai-functions/configuration.md
-- name: AI skill
+- name: Fabric data agent
   items: 
     - name: What is the Fabric data agent?
       href: concept-data-agent.md
