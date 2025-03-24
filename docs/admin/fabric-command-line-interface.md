@@ -23,7 +23,7 @@ You need to have Python 3.10 or higher installed.
 Open *Command Prompt* (cmd) and run the following command to install the CLI.
 
 ```python
-pip install fabric
+pip install ms-fabric-cli
 ```
 
 ## Log into Fabric
@@ -41,21 +41,23 @@ To log into Fabric, follow these steps:
 3. Select the login method using the arrow keys, and then press **Enter**.
 
     * **Interactive with web browser** - Use this method to login as a user. You'll be prompted to login using your browser.
-    * **Service principal authentication** - Use this method to login as a service principal. You'll be prompted to enter your service principal credentials.
+    * **Service principal authentication with secret** - Use this method to login as a service principal. You'll be prompted to enter your service principal credentials.
+    * **Service principal authentication with certificate** - Use this method to login as a service principal with a certificate. You'll be prompted to select your certificate.
+    * **Managed identity authentication**​ - Use this method to login using a managed identity.
 
-Once you're logged in, you'll be working in a Fabric CLI shell in the Command Prompt.
+Once you're logged in, you'll be working in a command line mode in the Command Prompt.
 
 ## Log out of Fabric
 
 To log out of Fabric, run the command:
 
 ```python
-auth logout
+fab auth logout
 ```
 
 ## Commands
 
-To see a list of available commands, run the command `help`. For a full list of commands, see the Fabric CLI [cheatsheet](https://github.com/microsoft/fabric-cli/blob/main/docs/cheatsheet.md).
+To see a list of available commands, run the command `help`.
 
 To see the flags a command has, use the `--help` flag. For example, to see the flags for the `open` command, run the command `open --help`.
 
