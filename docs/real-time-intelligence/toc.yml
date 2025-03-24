@@ -161,10 +161,12 @@ items:
           href: event-streams/api-update-eventstream-definition.md
     - name: Security
       items:
-      - name: Secure outbound using managed private endpoints
+      - name: Connect to Azure Event Hubs and IoT Hub sources using managed private endpoints
         href: event-streams/set-up-private-endpoint.md
+      - name: Connect to streaming sources in private network with Eventstream
+        href: event-streams/connect-connecots-in-virtual-network-on-premises.md
       - name: Microsoft Entra ID authentication
-        href: event-streams/custom-endpoint-entra-id-auth.md
+        href: event-streams/custom-endpoint-entra-id-auth.md      
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
@@ -255,6 +257,8 @@ items:
       href: eventhouse.md
     - name: Create an eventhouse
       href: create-eventhouse.md
+    - name: Deploy an eventhouse using APIs
+      href: eventhouse-deploy-with-fabric-api.md
     - name: Manage and monitor an eventhouse
       href: manage-monitor-eventhouse.md
   - name: KQL Database
@@ -315,6 +319,8 @@ items:
       href: create-query-set.md
     - name: Query data in a KQL queryset
       href: kusto-query-set.md
+    - name: Share queries
+      href: kusto-share-queries.md
     - name: Access the data profile of a table
       href: data-profile.md
     - name: Customize results in the KQL Queryset results grid

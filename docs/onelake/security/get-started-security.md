@@ -6,13 +6,13 @@ ms.author: aamerril
 author: aamerril
 ms.topic: concept-article
 ms.custom:
-ms.date: 11/15/2023
+ms.date: 03/24/2025
 #customer intent: As a OneLake user, I want to understand the core concepts and capabilities of data security in OneLake so that I can use them to protect my data stored and accessed in OneLake.
 ---
 
 # OneLake security overview
 
-OneLake is a hierarchical data lake, like Azure Data Lake Storage (ADLS) Gen2 or the Windows file system. You can set security at each of the levels within the data lake. However, some levels in the hierarchy are given special treatment because they correlate with Fabric concepts. All data access to OneLake data is controlled by OneLake security with different permissions inherited from the parent item or workspace permissions.
+OneLake is a hierarchical data lake, like Azure Data Lake Storage (ADLS) Gen2 or the Windows file system. You can set security at each of the levels within the data lake. However, some levels in the hierarchy are given special treatment because they correlate with Fabric concepts. OneLake security controls all access to OneLake data with different permissions inherited from the parent item or workspace permissions.
 
 <!--TODO: Introduce the two security models: OneLake security and engine security. Table summary of different workload types and what they support. -->
 
@@ -58,13 +58,13 @@ With the [sharing](../../fundamentals/share-items.md) feature, you can give a us
 
 *Not applicable to items with OneLake data access roles (preview) enabled. If the preview is enabled, ReadAll only grants access if the DefaultReader role is in use. If the DefaultReader role is edited or deleted, access is instead granted based on what data access roles the user is part of.
 
-Another way to configure permissions is via an item's **Manage permissions** page. Using this page, you can add or remove individual item permission for users or groups. The exact permissions available are determined by the item type.
+Another way to configure permissions is via an item's **Manage permissions** page. Using this page, you can add or remove individual item permission for users or groups. The item type determines which permissions are available.
 
 ### Compute permissions
 
 You can also give data access through the SQL compute engine in Microsoft Fabric. The access granted through SQL only applies to users accessing data through SQL, but you can use this security to give more selective access to certain users. In its current state, SQL supports restricting access to specific tables and schemas, as well as row and column level security.
 
-Users accessing data through SQL may see different results than accessing data directly in OneLake depending on the compute permissions applied. To prevent this, ensure that a user's item permissions are configured to only grant them access to either the SQL analytics endpoint (using ReadData) or OneLake (using ReadAll or data access roles (preview)).
+Users might see different results when they access data through SQL compared to when they access data directly in OneLake, depending on the compute permissions applied. To prevent this mismatch, ensure that a user's item permissions are configured to only grant them access to either the SQL analytics endpoint (using ReadData) or OneLake (using ReadAll or data access roles (preview)).
 
 In the following example, a user is given read-only access to a lakehouse through item sharing. The user is granted SELECT permission on a table through the SQL analytics endpoint. When that user tries to read data through the OneLake APIs, they're denied access because they don't have sufficient permissions. The user can successfully read through SQL SELECT statements.
 
@@ -80,10 +80,10 @@ OneLake security replaces the existing OneLake data access roles (preview) featu
 
 Fabric users in the Admin, Member, or Contributor roles can create OneLake security roles to grant users access to data within an item. Each role has four components:
 
-* **Data**: What tables or folders can users access.
-* **Permission**: What permission do users have on the data.
-* **Members**: Which users are members of the role.
-* **Constraints**: What, if any, components of the data are excluded from role access, such as specific rows or columns.
+* **Data**: The tables or folders that users can access.
+* **Permission**: The permissions that users have on the data.
+* **Members**: The users that are members of the role.
+* **Constraints**: The components of the data, if any, that are excluded from role access, such as specific rows or columns.
 
 Users that aren't part of a role can't see any data in that lakehouse.
 
@@ -91,9 +91,9 @@ Learn more about creating OneLake security roles for [Tables and folders](./tabl
 
 ## OneLake data access roles (preview)
 
-OneLake data access roles is a new feature that enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, and assign them to users or groups. The access permissions determine what folders users see when accessing the lake view of the data through the lakehouse UX, notebooks, or OneLake APIs.  
+OneLake data access roles is a feature that enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, and assign them to users or groups. The access permissions determine what folders users see when accessing the lake view of the data through the lakehouse UX, notebooks, or OneLake APIs.  
 
-Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that are not part of a data access role will see no data in that lakehouse.
+Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that aren't part of a data access role can see no data in that lakehouse.
 
 Learn more about creating data access roles in [Get started with data access roles](./get-started-data-access-roles.md).
 
@@ -122,7 +122,7 @@ To view your OneLake audit logs, follow the instructions in [Track user activiti
 
 ### Data at Rest
 
-Data stored in OneLake is encrypted at rest by default using Microsoft-managed keys. Microsoft-managed keys are rotated appropriately. Data in OneLake is encrypted and decrypted transparently and it is FIPS 140-2 compliant.
+Data stored in OneLake is encrypted at rest by default using Microsoft-managed keys. Microsoft-managed keys are rotated appropriately. Data in OneLake is encrypted and decrypted transparently and is FIPS 140-2 compliant.
 
 Encryption at rest using customer-managed keys currently isn't supported. You can submit a request for this feature on [Microsoft Fabric ideas](https://ideas.fabric.microsoft.com/).
 
@@ -140,7 +140,7 @@ To configure private links in Fabric, see [Set up and use private links](/fabric
 
 OneLake allows you to restrict access to data from applications running outside of Fabric environments. Admins can find the setting in the [OneLake section of the tenant admin portal](../../admin/tenant-settings-index.md#onelake-settings).
 
-When you turn this setting on, users can access data via all sources. When you turn this setting off, users can't access data via applications running outside of Fabric environments. For example, users can access data via applications using Azure Data Lake Storage (ADLS) APIs or OneLake file explorer.
+When you turn on this setting, users can access data via all sources. When you turn off this setting, users can't access data via applications running outside of Fabric environments. For example, users can access data via applications using Azure Data Lake Storage (ADLS) APIs or OneLake file explorer.
 
 ## Related content
 

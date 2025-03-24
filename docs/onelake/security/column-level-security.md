@@ -6,13 +6,13 @@ ms.author: kgremban
 author: kgremban
 ms.topic: how-to
 ms.custom:
-ms.date: 03/13/2025
+ms.date: 03/24/2025
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
 # Column-level security in OneLake (preview)
 
-Column-level security (CLS) is a feature of OneLake security (preview) that allows users to have access to selected columns in a table instead of full access to the table. CLS allows for specifying a subset of tables that users have access to. Any columns that are removed from the list aren't visible to users. These CLS rules are part of a OneLake security role and apply to all members of that role.
+Column-level security (CLS) is a feature of OneLake security (preview) that allows users to have access to selected columns in a table instead of full access to the table. CLS allows for specifying a subset of tables that users have access to. Any columns that are removed from the list aren't visible to users.
 
 [!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
 
@@ -24,13 +24,13 @@ Column-level security (CLS) is a feature of OneLake security (preview) that allo
 
 OneLake security CLS gets enforced in one of two ways:
 
-* **Filtered tables in Fabric engines:** Queries to the list of supported Fabric engines, like Spark notebooks, result in the user seeing only the columns they are allowed to see per the CLS rules.
+* **Filtered tables in Fabric engines:** Queries to the list of supported Fabric engines, like Spark notebooks, result in the user seeing only the columns they're allowed to see per the CLS rules.
 * **Blocked access to tables:** Tables with CLS rules applied to them can't be read outside of supported Fabric engines.
 
 For filtered tables, the following behaviors apply:
 
-* Users in the Admin, Member, and Contributor roles aren't restricted by CLS rules. 
-* If the CLS rule has a mismatch with the table it is defined on, the query fails and no columns will be returned. For example, if CLS is defined for a column that isn't part of the table.
+* CLS rules don't restirct access for users in the Admin, Member, and Contributor roles.
+* If the CLS rule has a mismatch with the table it's defined on, the query fails and no columns are returned. For example, if CLS is defined for a column that isn't part of the table.
 * Queries of CLS tables fail with an error if a user is part of two different roles and one of the roles has row-level security (RLS). 
 * CLS rules can only be enforced for objects that are Delta parquet tables. 
   * CLS rules that are applied to non-Delta table objects instead block access to the entire table for members of the role. 
@@ -64,7 +64,7 @@ Use the following steps to define column-level security:
 
 1. Select **Save** to update the role. 
 
-1. If you want to re-add a column, select **New rule**. This action adds a new CLS rule entry to the end of the list. Then, use the dropdown to choose the column you want to include in the access. 
+1. If you want to readd a column, select **New rule**. This action adds a new CLS rule entry to the end of the list. Then, use the dropdown to choose the column you want to include in the access. 
 
 1. Once you complete your changes, select **Save**. 
 

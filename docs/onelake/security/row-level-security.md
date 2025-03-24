@@ -6,7 +6,7 @@ ms.author: kgremban
 author: kgremban
 ms.topic: how-to
 ms.custom: references_regions
-ms.date: 03/20/2025
+ms.date: 03/24/2025
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
@@ -30,13 +30,13 @@ During preview, RLS isn't available in the following Fabric regions:
 
 OneLake security RLS gets enforced in one of two ways: 
 
-* **Filtered tables in Fabric engines:** Queries to the list of supported Fabric engines, like Spark notebooks, result in the user seeing only the rows they are allowed to see per the RLS rules.
+* **Filtered tables in Fabric engines:** Queries to the list of supported Fabric engines, like Spark notebooks, result in the user seeing only the rows they're allowed to see per the RLS rules.
 * **Blocked access to tables:** Tables with RLS rules applied to them can't be read outside of supported Fabric engines.
 
 For filtered tables, the following behaviors apply:
 
-* Users in the Admin, Member, and Contributor roles aren't restricted by RLS rules. 
-* If the RLS rule has a mismatch with the table it is defined on, the query fails and no rows will be returned. For example, if the RLS rule references a column that isn't part of the table.
+* RLS rules don't restrict access for users in the Admin, Member, and Contributor roles.
+* If the RLS rule has a mismatch with the table it's defined on, the query fails and no rows are returned. For example, if the RLS rule references a column that isn't part of the table.
 * Queries of RLS tables fail with an error if a user is part of two different roles and one of the roles has column-level security (CLS). 
 * RLS rules can only be enforced for objects that are Delta parquet tables. 
   * RLS rules that are applied to non-Delta table objects instead block access to the entire table for members of the role.
@@ -64,7 +64,13 @@ Use the following steps to define RLS rules:
 
 ## Syntax rules
 
-All row-level security rules take the form of `SELECT * FROM {schema_name}.{table_name} WHERE {column_level_boolean_1}{column_level_boolean_2}...{column_level_boolean_N}`. For example: `SELECT * FROM Sales WHERE Amount>'50000' AND State='CA'`.
+All row-level security rules take the following form:
+
+```SELECT * FROM {schema_name}.{table_name} WHERE {column_level_boolean_1}{column_level_boolean_2}...{column_level_boolean_N}```
+
+For example:
+
+```SELECT * FROM Sales WHERE Amount>'50000' AND State='CA'```
 
 The maximum number of characters in a row-level security rule is 1000.
 
@@ -72,7 +78,7 @@ The maximum number of characters in a row-level security rule is 1000.
 | ----------- | ---------- |
 | {schema_name} | The name of the schema where {table_name} is located. If the artifact supports schemas, then {schema_name} is required. |
 | {table_name} | The name of the table that the RLS predicate gets applied to. This value must be an exact match with the name of the table, or the RLS results in no rows being shown. |
-| {column_level_boolean} | A Boolean statement containing the following:<br><br>* Column name: The name of a column in {table_name} as specified in the Delta log schema. Column names can be formatted either as {column_name} or {table_name}.{column_name}.<br>* Operator: One of the [Supported operators](#supported-operators) that evaluates the column name and value to a Boolean value.<br>* Value: A static value or set of values to be evaluated against.<br><br>You can have one or more Boolean statements separated by AND or OR. |
+| {column_level_boolean} | A Boolean statement containing the following components:<br><br>* Column name: The name of a column in {table_name} as specified in the Delta log schema. Column names can be formatted either as {column_name} or {table_name}.{column_name}.<br>* Operator: One of the [Supported operators](#supported-operators) that evaluates the column name and value to a Boolean value.<br>* Value: A static value or set of values to be evaluated against.<br><br>You can have one or more Boolean statements separated by AND or OR. |
 
 ### Supported operators
 
@@ -81,13 +87,13 @@ Row-level security rules support the following list of operators and keywords:
 | Operator | Description |
 | -------- | ----------- |
 | = (equals) | Evaluates to true if the two values are the same data type and exact matches. |
-| <> (not equals) | Evaluates to true if the two values are not the same data type and not exact matches. |
+| <> (not equals) | Evaluates to true if the two values aren't the same data type and not exact matches. |
 | > (greater than) | Evaluates to true if the column value is greater than the evaluation value. For string values, this operator uses bitwise comparison to determine if one string is greater than the other. |
 | >= (greater than or equal to) | Evaluates to true if the column value is greater than or equal to the evaluation value. For string values, this operator uses bitwise comparison to determine if one string is greater than or equal to the other. |
 | < (less than) | Evaluates to true if the column value is less than the evaluation value. For string values, this operator uses bitwise comparison to determine if one string is less than the other. |
 | <= (less than or equal to) | Evaluates to true if the column value is less than or equal to the evaluation value. For string values, this operator uses bitwise comparison to determine if one string is less than or equal to the other. |
 | IN | Evaluates to true if any of the evaluation values are the same data type and exactly match the column value. |
-| NOT | Evaluates to true if any of the evaluation values are not the same data type or not an exact match of the column value. |
+| NOT | Evaluates to true if any of the evaluation values aren't the same data type or not an exact match of the column value. |
 | AND | Combines the previous statement and the subsequent statement using a Boolean AND operation. Both statements must be true for the entire predicate to be true. |
 | OR | Combines the previous statement and the subsequent statement using a Boolean OR operation. One of the statements must be true for the entire predicate to be true. |
 | TRUE | The Boolean expression for true. |

@@ -6,7 +6,7 @@ ms.author: kgremban
 author: kgremban
 ms.topic: how-to
 ms.custom:
-ms.date: 05/09/2024
+ms.date: 03/24/2025
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
@@ -34,8 +34,6 @@ Use the following steps to define security roles for tables or folders.
 
    :::image type="content" source="./media/table-folder-security/add-data.png" alt-text="Screenshot that shows selecting 'add data' to edit a security role.":::
 
-1. For data items that support unstructured data, you will see a Files top level folder in addition to the Tables folder. 
-
 1. Expand the **Tables** or **Files** directories to browse to the items you want to include in the role. 
 
    * For tables, you can expand schemas to choose individual tables. 
@@ -49,7 +47,3 @@ Use the following steps to define security roles for tables or folders.
    :::image type="content" source="./media/table-folder-security/add-selected-data.png" alt-text="Screenshot that shows selecting 'add data' to confirm data selection for a security role.":::
 
    Your changes to the role are saved automatically.
-
-## Differences between tables and folders
-
-<!--TODO-->
