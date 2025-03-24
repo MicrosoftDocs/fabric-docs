@@ -42,30 +42,92 @@ D. **Details area**: The details area provides additional information about the 
 
 ## Manage KQL Databases
 
-In the Eventhouse [explorer](#explorer-pane), under **KQL Databases** or in the [Database ribbon](#database-ribbon), you can manage the databases in the eventhouse.
-
-:::image type="content" source="media/eventhouse/manage-databases.png" alt-text="Screenshot showing the eventhouse KQL Databases section.":::
-
-You can perform the following actions:
-
-* To create either a [KQL database](create-database.md) or a [database shortcut](database-shortcut.md), select the plus sign next to **KQL databases**.
-* To filter the list of databases, use the **search** box.
-* To open an existing database, select the database from the list.
-* To query tables in a database, hover over the desired database > select **More menu** [**...**] > **Query data**. The **Queryset** pane opens where you can write and run queries on the selected database. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
-* To ingest data into a database, hover over the desired database > select **More menu** [**...**] > **Get data** > select the desired ingest method. To learn more, see [data formats](ingestion-supported-formats.md) and the corresponding ingestion methods.
-* To delete a database, hover over the desired database > select **More menu** [**...**] > **Delete** > **Delete database**.
-* To share access to a database, select the database from the list and [share the database link](access-database-copy-uri.md#share-a-kql-database-link).
-
-    > [!NOTE]
-    > Sharing multiple databases isn't supported.
+You can manage the databases in the eventhouse using the options n the the [Database ribbon](#database-ribbon) or in the [explorer](#explorer-pane) under **KQL Databases**.
 
 ### Database ribbon
 
-The database ribbon is your quick-access action bar, offering a convenient way to manage your database. From here, you can get data, query with code, add a new related item such as a notebook or dashboard, explore data policies, and if available, open OneLake.
+The database ribbon is your quick-access action bar, offering a convenient way to manage your database.
+
+:::image type="content" source="media/create-database/database-tool-bar.png" alt-text="Screenshot showing the KQL Database toolbar icons.":::
+
+From here, you can:
+
+* Enable **Live View**: to continually refresh the database automaticaly, enable Live View. Disable to manually refresh the database.
+
+* **Get data**: select the desired ingest method. To learn more, see [data formats](ingestion-supported-formats.md) and the corresponding ingestion methods.
+
+* **Query with code**: use this option to open the queryset pane where you can write and run queries on the selected database. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+
+* Add a new [**KQL Queryset**](create-query-set.md), [**Notebook**](notebooks.md#create-a-notebook-from-a-kql-database), or [**Real-Time Dashboard**](dashboard-real-time-create.md#create-a-new-dashboard).
+
+* Manage **Data policies**: For more information, see [Data retention policy](/fabric/real-time-intelligence/data-policies#data-retention-policy)
+
+* View **OneLake**: if available, view the data in [OneLake](event-house-onelake-availability.md).
 
 ### Explorer pane
 
-The database explorer provides an intuitive interface for navigating between the databases in your Eventhouse. You can also use the more menu in the explorer pane to [Manage the database](#manage-kql-databases).
+Here you can:
+
+* navigate between the databases in your Eventhouse.
+
+* select the plus sign next to **KQL databases** to [create a new KQL database](create-database.md) or [create a new database shortcut](database-shortcut.md).
+
+* use the **search** box to filter the list of databases.
+
+* open an existing database by selecting the database from the list.
+
+You can perform the following actions when you hover over the **more menu** in the explorer pane to [Manage the database](#manage-kql-databases).
+
+:::image type="content" source="media/eventhouse/manage-databases.png" alt-text="Screenshot showing the eventhouse KQL Databases section.":::
+
+* To query tables in a database, select  **Query data**
+* To create a new related item, select **New related item** > and then select [**KQL Queryset**](create-query-set.md), [**Notebook**](notebooks.md#create-a-notebook-from-a-kql-database), or [**Real-Time Dashboard**](dashboard-real-time-create.md#create-a-new-dashboard)
+* To ingest data into a database, select **Get data**
+
+## Main view area
+
+The main database information pane tracks data activity, allows you to preview table details and data, and to view query insights.
+
+At the top of the main view area, you can select these options:
+
+* **Refresh**: use this button to manually refresh the database, when live view is disabled.
+* **Query with code**: select to open the queryset for the database.
+* **Overview**: select to view the database activity tracker and database tables in the main view area.
+* **Entity diagram (preview)**: select to view the database as an [entity diagram](database-entity-diagram.md).
+* **Share**: to share access to a database, select the database from the list and [share the database link](access-database-copy-uri.md#share-a-kql-database-link).
+
+    > [!NOTE]
+    > Sharing multiple databases at once isn't supported.
+
+### Database activity tracker
+
+The database activity tracker displays the number of rows loaded into the database and the number or queries, in the selected time range.
+
+:::image type="content" source="media/create-database/database-activity-tracker-tooltip.png" alt-text="Screenshot of KQL database activity tracker area." lightbox="media/create-database/database-activity-tracker-tooltip.png":::
+
+| Item| Description|
+|---|---|
+| **Ingestion** | The number of rows loaded into the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only ingestion data. |
+| **Queries** | The number of queries that ran in the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only query data. <br></br> In the case of failoed, throttled, or cancelled querires, there is a drop-down to view them as a percentage compared to the completed queries. <br></br> :::image type="content" source="media/create-database/queries-cancelled-menu.png" alt-text="Screenshot of queries menu to see percentage of querires completed." lightbox="media/create-database/queries-cancelled-menu.png":::|
+| **Last run** | The time when the histogram was last generated.|
+| Time range | The time range of the histogram display. Set ranges for one hour, six hours, three days, 7 days, or 30 days. |
+| Interval | Set the interval of the histogram display. Set intervals by one minute, five minutes, one hour, 12 hours, one day, three days, and 30 days. |
+| Refresh | Refresh your histogram.|
+| Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram.<br><br/>The ingestion histogram displays data by the interval chosen, and displays in UTC time. Hover over the histogram to display total rows ingested and total queries per status. |
+
+### Tabs - Tables / Data preview / Query Insights
+
+This section of the database page main area displays a list of tables in the database, with the following information:
+
+| Item| Description|
+|---|---|
+| **Tables** | View table information by **Cards** or by **List** view. Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, *Caching*, *Retention*, *OneLake* status, and *Created on*. |
+| **Data preview** | Shows a preview of the top 200 records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view.|
+| **Query insights - top 100 queries** | Shows the top queries that can be sorted according to most recent, longest duration, highest CPU usage, highest cold storage usage, or highest memory peak usage. To sort, use the Top by: menu. </br></br>  :::image type="content" source="media/create-database/queries-top-by-menu.png" alt-text="Screenshot of queries menu to see percentage of querires completed." lightbox="media/create-database/queries-top-by-menu.png"::: |
+<!--| | Cache hit misses over time|  |
+| | Top queries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
+|**Ingestion failures**|
+| | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|-->
 
 ## Database details
 
@@ -99,48 +161,6 @@ The right pane displays the details of the selected database.
 | Ingestion URI | The date of the last data ingestion and the URI that can be used to get data.|
 | Caching Policy | The time period in which data is cached and kept in local SSD storage. For more information, see [Caching policy](/fabric/real-time-intelligence/data-policies#caching-policy).|
 | Retention Policy | The time period after which data is automatically removed from tables or materialized views. For more information, see [Data retention policy](/fabric/real-time-intelligence/data-policies#data-retention-policy).|
-
-## Main view area
-
-The main database information pane tracks data activity, allows you to preview table details and data, and to view query insights.
-
-At the top of the main view area, you can select these options:
-
-* **Live View**: toggle between the options to manually refresh the database or if the interface with continually refresh the database.
-* **Refresh**: use this button to manually refresh the database, when live view is disabled.
-* **Query with code**: select to open the queryset for the database.
-* **Overview**: select to view the database activity tracker and database tables in the main view area.
-* **Entity diagram (preview)**: select to view the database as an [entity diagram](database-entity-diagram.md).
-
-### Database activity tracker
-
-The database activity tracker displays the number of rows loaded into the database and the number or queries, in the selected time range.
-
-:::image type="content" source="media/create-database/database-activity-tracker-tooltip.png" alt-text="Screenshot of KQL database activity tracker area." lightbox="media/create-database/database-activity-tracker-tooltip.png":::
-
-| Item| Description|
-|---|---|
-| Ingestion | The number of rows loaded into the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only ingestion data. |
-| Queries | The number of queries that ran in the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only query data.|
-| Last run | The time when the histogram was last generated.|
-| Time range | The time range of the histogram display. Set ranges for one hour, six hours, three days, 7 days, or 30 days. |
-| Interval | Set the interval of the histogram display. Set intervals by one minute, five minutes, one hour, 12 hours, one day, three days, and 30 days. |
-| Refresh | Refresh your histogram.|
-| Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram.<br/>The ingestion histogram displays data by the interval chosen. The interval is calculated by a full coordinated universal time (UTC) day, but displays according to the local time. Hover over the histogram to display total rows ingested and total queries per status. |
-
-### Tables
-
-This section of the database page main area displays a list of tables in the database, with the following information:
-
-| Item| Description|
-|---|---|
-| Tables | View table information by **Cards** or by **List** view. Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, *Caching*, *Retention*, *OneLake* status, and *Created on*. |
-| Data preview | Shows a preview of the top 200 records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view.|
-| Query insights - top 100 queries| Shows the top 100 records from the last year. |
-<!--| | Cache hit misses over time|  |
-| | Top queries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
-|**Ingestion failures**|
-| | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|-->
 
 ## Related content
 
