@@ -88,7 +88,7 @@ In the Explorer pane you can:
 
     * To create a new related item, select **New related item** > and then select [KQL Queryset](create-query-set.md), [Notebook](notebooks.md#create-a-notebook-from-a-kql-database), or [Real-Time Dashboard](dashboard-real-time-create.md#create-a-new-dashboard).
 
-    * To ingest data into a database, select **Get data**ץ.
+    * To ingest data into a database, select **Get data**.
 
 ## Main view area
 
@@ -113,8 +113,8 @@ The database activity tracker displays the number of rows loaded into the databa
 
 | Item| Description|
 |---|---|
-| **Ingestion** | The number of rows loaded into the database in the selected time range. Select to view both query and ingestion data. Select again to view only ingestion data. |
-| **Queries** | The number of queries that ran in the database in the selected time range. Select to view both query and ingestion data. Select again to view only query data. <br></br> If there are failed, throttled, or canceled queries, there's a drop-down to view them as a percentage compared to the total queries. <br></br> :::image type="content" source="media/create-database/queries-cancelled-menu.png" alt-text="Screenshot of percentage of querires completed.":::|
+| **Ingestion** | The number of rows loaded into the database in the selected time range. Select **Ingestion** to view only ingestion data. Select again to view both query and ingestion data. |
+| **Queries** | The number of queries that ran in the database in the selected time range. Select **Queries**  to view only query data. Select again to view both query and ingestion data . <br></br> If there are failed, throttled, or canceled queries, you can open the drop-down menu to view them as a percentage compared to the total queries. <br></br> :::image type="content" source="media/create-database/queries-cancelled-menu.png" alt-text="Screenshot of percentage of querires completed.":::|
 | **Last run** | The time when the histogram was last generated.|
 | Time range | The time range of the histogram display. Set ranges for one hour, six hours, three days, 7 days, or 30 days. |
 | Interval | Set the data aggregation interval for the histogram display. Set intervals by one minute, five minutes, one hour, 12 hours, one day, three days, and 30 days. |
@@ -129,7 +129,7 @@ This section of the database page main area displays a list of tables in the dat
 |---|---|
 | **Tables** | View table information as **Cards** or as a **List**. Cards and lists view table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>* Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>* The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, *Caching*, *Retention*, *OneLake* status, and *Created on*. |
 | **Data preview** | Shows a preview of the top records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view. You can also search for keywords and use the filter tables option.|
-| **Query insights - top 100 queries** | Shows the top queries that can be sorted according to most recent, longest duration, highest CPU usage, highest cold storage usage, or highest memory peak usage. To sort, use the Top by: menu. </br></br>  :::image type="content" source="media/create-database/queries-top-by-menu.png" alt-text="Screenshot of queries menu to see percentage of querires completed."::: |
+| **Query insights - top 100 queries** | Shows the top queries that can be sorted according to most recent, longest duration, highest CPU usage, highest cold storage usage, or highest memory peak usage. To sort, use the **Top by:** menu. </br></br>  :::image type="content" source="media/create-database/queries-top-by-menu.png" alt-text="Screenshot of queries menu to see percentage of querires completed."::: |
 <!--| | Cache hit misses over time|  |
 | | Top queries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
 |**Ingestion failures**|
