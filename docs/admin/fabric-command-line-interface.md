@@ -68,4 +68,5 @@ You can view examples for ways to use the Fabric CLI in the GitHub [examples](ht
 ## Related content
 
 * [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
-* [Microsoft Fabric REST API](https://learn.microsoft.com/rest/api/fabric/articles/)
+
+* [Microsoft Fabric REST API](/rest/api/fabric/articles/)
