@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 03/19/2025
+ms.date: 03/24/2025
 ms.search.form: Database
 #customer intent: As a user, I want to learn how to manage and monitor a KQL  database so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -113,8 +113,8 @@ The database activity tracker displays the number of rows loaded into the databa
 
 | Item| Description|
 |---|---|
-| **Ingestion** | The number of rows loaded into the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only ingestion data. |
-| **Queries** | The number of queries that ran in the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only query data. <br></br> If there are failed, throttled, or canceled queries, there's a drop-down to view them as a percentage compared to the completed queries. <br></br> :::image type="content" source="media/create-database/queries-cancelled-menu.png" alt-text="Screenshot of percentage of querires completed.":::|
+| **Ingestion** | The number of rows loaded into the database in the selected time range. Select to view both query and ingestion data. Select again to view only ingestion data. |
+| **Queries** | The number of queries that ran in the database in the selected time range. Select to view both query and ingestion data. Select again to view only query data. <br></br> If there are failed, throttled, or canceled queries, there's a drop-down to view them as a percentage compared to the total queries. <br></br> :::image type="content" source="media/create-database/queries-cancelled-menu.png" alt-text="Screenshot of percentage of querires completed.":::|
 | **Last run** | The time when the histogram was last generated.|
 | Time range | The time range of the histogram display. Set ranges for one hour, six hours, three days, 7 days, or 30 days. |
 | Interval | Set the data aggregation interval for the histogram display. Set intervals by one minute, five minutes, one hour, 12 hours, one day, three days, and 30 days. |
