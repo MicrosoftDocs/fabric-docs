@@ -89,7 +89,7 @@ The following table shows the approximate throughput upper limit for custom endp
 |                            |              | Medium           | 100 MB/s             |
 |                            |              | High             | 200 MB/s             |
 
-**\*Note**: The above throughput data was tested under these conditions:
+**\*Note**: The throughput data above was tested under specific conditions below. Results may vary with different configurations.
 
 1. The source event sender, consumer, and Eventstream are in the same data center to ensure that network throughput is not a bottleneck.
 1. Events are in JSON format, each 1KB in size. Events are batched in groups of 100 before being sent or received.
