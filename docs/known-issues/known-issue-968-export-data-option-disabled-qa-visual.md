@@ -4,7 +4,7 @@ description: A known issue is posted where the export data option is disabled fo
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 12/10/2024
+ms.date: 03/21/2025
 ms.custom: known-issue-968
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-968
 
 The export data option is disabled for the Q&A visual in the Power BI service.
 
-**Status:** Open
+**Status:** Fixed: March 21, 2025
 
 **Product Experience:** Power BI
 
