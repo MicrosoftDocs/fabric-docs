@@ -15,7 +15,9 @@ ms.search.form: Create and use Variable library
 
 # Create and manage Variable libraries (preview)
 
-Microsoft Fabric Variable libraries enable developers to customize and share item configurations within a workspace, streamlining content lifecycle management. This article explains how to create, manage, and consume Variable libraries. For a more detailed walkthrough of the process, see the [Variable library tutorial](./tutorial-variable-library.md).
+Microsoft Fabric Variable libraries enable developers to customize and share item configurations within a workspace, streamlining content lifecycle management. This article explains how to create, manage, and consume Variable libraries.
+
+<!--- For a more detailed walkthrough of the process, see the [Variable library tutorial](./tutorial-variable-library.md). --->
 
 ## Prerequisites
 
