@@ -35,12 +35,12 @@ For the **event throughput** setting, you can select the throughput level for in
 :::image type="content" source="./media/create-manage-an-eventstream/throughput-setting.png" alt-text="Screenshot that shows the throughput setting for an eventstream.":::
 
 > [!NOTE]
-> To update the throughput setting, if your eventstream contains no nodes that support pause and resume, you can update throughput directly. Otherwise, deactivate all nodes that support pause and resume, then reactivate them after the update. The update won't be blocked if only nodes that don't support deactivation remain active, but you may need to update the data client if custom endpoints are used, as the partition count will increase. See the [detailed table of  nodes that support pause and resume functionality](pause-resume-data-streams.md#activating-or-deactivating-a-node-using-the-switch-toggle).
+> To update the throughput setting, if your eventstream contains no node (source or destination) that support pause and resume, you can update throughput setting directly. Otherwise, deactivate all nodes that support pause and resume, then reactivate them after the update. The update won't be blocked if only nodes that don't support deactivation remain active, but you may need to update the data client if custom endpoints are used, as the partition count will increase. See the [detailed table of  nodes that support pause and resume functionality](pause-resume-data-streams.md#activating-or-deactivating-a-node-using-the-switch-toggle).
 
-Here’s how different nodes perform at each throughput level.
+Here’s how different sources and destinations perform at each throughput level.
 
 > [!NOTE]
-> The throughput upper limits listed here are based on ideal results from lab testing. 
+> The throughput upper limits listed here are based on the results from lab testing under specific configuration. Results may vary with different configurations.
 
 ### Azure Event Hubs source
 
