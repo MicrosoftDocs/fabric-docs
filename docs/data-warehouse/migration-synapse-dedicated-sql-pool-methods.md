@@ -203,10 +203,10 @@ You can get the [code samples at microsoft/fabric-migration on GitHub.com](https
 
 What Migration Stored Procedures can do:
 
-1. Convert the schema (DDL) to Fabric Warehouse syntax.
-1. Create the schema (DDL) on Fabric Warehouse.
-1. Extract data from Synapse dedicated SQL pool to ADLS.
-1. Flag nonsupported Fabric syntax for T-SQL codes (stored procedures, functions, views).
+- Convert the schema (DDL) to Fabric Warehouse syntax.
+- Create the schema (DDL) on Fabric Warehouse.
+- Extract data from Synapse dedicated SQL pool to ADLS.
+- Flag nonsupported Fabric syntax for T-SQL codes (stored procedures, functions, views).
 
 #### Recommended use
 
@@ -234,10 +234,10 @@ This is a great option for those who prefer to use SQL Database Project for thei
 
 A SQL Database Project can:
 
-1. Convert the schema (DDL) to Fabric Warehouse syntax.
-1. Create the schema (DDL) on Fabric Warehouse.
-1. Extract data from Synapse dedicated SQL pool to ADLS.
-1. Flag nonsupported syntax for T-SQL codes (stored procedures, functions, views).
+- Convert the schema (DDL) to Fabric Warehouse syntax.
+- Create the schema (DDL) on Fabric Warehouse.
+- Extract data from Synapse dedicated SQL pool to ADLS.
+- Flag nonsupported syntax for T-SQL codes (stored procedures, functions, views).
 
 For the data migration, you'll then use either COPY INTO or Data Factory to ingest the data into Fabric Warehouse. 
 
@@ -275,9 +275,9 @@ In this section, we discuss dbt option for those customers who are already using
 
 What dbt can do:
 
-1. Convert the schema (DDL) to Fabric Warehouse syntax.
-1. Create the schema (DDL) on Fabric Warehouse.
-1. Convert database code (DML) to Fabric syntax.
+- Convert the schema (DDL) to Fabric Warehouse syntax.
+- Create the schema (DDL) on Fabric Warehouse.
+- Convert database code (DML) to Fabric syntax.
 
 The dbt framework generates DDL and DML (SQL scripts) on the fly with each execution. With model files expressed in SELECT statements, the DDL/DML can be translated instantly to any target platform by changing the profile (connection string) and the adapter type.
 

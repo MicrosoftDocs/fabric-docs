@@ -61,7 +61,7 @@ For instance, table A has two dependencies on views B and C, view B has one depe
 
 ### Fix migration errors
 
-Review and fix the broken scripts using the error information manually, or use Copilot for AI-powered assistance. ([Copilot must be enabled](copilot.md#enable-copilot).) Copilot analyzes your query and try to find the best way to fix it. Copilot leaves comments to explain what it fixed and why. Mistakes can happen as Copilot uses AI, so verify code suggestions before running them.
+Review and fix the broken scripts using the error information manually, or use Copilot for AI-powered assistance. ([Copilot must be enabled](copilot.md#enable-copilot).) Copilot analyzes your query and tries to find the best way to fix it. Copilot leaves comments to explain what it fixed and why. Mistakes can happen as Copilot uses AI, so verify code suggestions before running them.
 
 Once you have made any adjustments you need to run the query, Migration Assistant validates and migrates the object and its dependencies. After the fixed object is migrated, the **Primary objects** tab is updated with a new prioritized list of objects. Fixing a primary object could result in the count of primary objects staying the same or even going up. For example, object B is broken because of a dependency on multiple other broken objects, including object A. In this scenario, fixing object A would fix some, but not all, errors in B and result in B changing from a dependent object into a primary object.
 

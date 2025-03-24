@@ -25,9 +25,9 @@ This guide walks you through the steps to migrate from an Azure Synapse Analytic
 
 Before you begin, make sure you have the following ready:
 
-1. A Fabric workspace with an active capacity or trial capacity.
-1. [Create a workspace](../fundamentals/create-workspaces.md) or select an existing workspace you want to migrate into. The Migration Assistant will create a new warehouse for you.
-1. DACPAC file extracted from Azure Synapse Analytics dedicated SQL pool. A [DACPAC](/sql/tools/sql-database-projects/concepts/data-tier-applications/overview#dacpac-operations) (data-tier application package) file is built from SQL database projects and contains the metadata of database objects, including the schema of tables, views, stored procedures, functions, and more. Options for extracting a DACPAC include [Visual Studio Code](/sql/tools/sql-database-projects/tutorials/start-from-existing-database), [SQL Server Data Tools](/sql/tools/sql-database-projects/concepts/data-tier-applications/extract-dacpac-from-database), and the [SqlPackage command-line utility](/sql/tools/sqlpackage/sqlpackage-extract).
+- A Fabric workspace with an active capacity or trial capacity.
+- [Create a workspace](../fundamentals/create-workspaces.md) or select an existing workspace you want to migrate into. The Migration Assistant will create a new warehouse for you.
+- DACPAC file extracted from Azure Synapse Analytics dedicated SQL pool. A [DACPAC](/sql/tools/sql-database-projects/concepts/data-tier-applications/overview#dacpac-operations) (data-tier application package) file is built from SQL database projects and contains the metadata of database objects, including the schema of tables, views, stored procedures, functions, and more. Options for extracting a DACPAC include [Visual Studio Code](/sql/tools/sql-database-projects/tutorials/start-from-existing-database), [SQL Server Data Tools](/sql/tools/sql-database-projects/concepts/data-tier-applications/extract-dacpac-from-database), and the [SqlPackage command-line utility](/sql/tools/sqlpackage/sqlpackage-extract).
 
 ### Copy metadata
 
@@ -77,7 +77,7 @@ Let's fix these scripts with help from the Migration Assistant.
 1. Select a database object that failed to migrate. A new query opens under the **Shared queries** in the **Explorer**. This new query shows the metadata definition and the adjustments that were made to it as automatic comments added to the T-SQL code.
 1. Review the comments in the beginning of the script to see the adjustments that were made to the script.
 1. Review and fix the broken scripts using the error information and documentation.
-1. To use Copilot for AI-powered assistance in fixing the errors, select **Fix query errors** in the **Suggested action** section. Copilot updates the script with suggestions.Mistakes can happen as Copilot uses AI, so verify code suggestions and make any adjustments you need.
+1. To use Copilot for AI-powered assistance in fixing the errors, select **Fix query errors** in the **Suggested action** section. Copilot updates the script with suggestions. Mistakes can happen as Copilot uses AI, so verify code suggestions and make any adjustments you need.
 
    :::image type="content" source="media/migration-assistant-guide/fix-query-errors.png" alt-text="Screenshot from the Fabric portal of the Query editor showing T-SQL queries that failed to migrate, and the comments and fixes suggested by Copilot.":::
 
@@ -120,6 +120,6 @@ Congratulations! You're now ready to start using the warehouse.
 
    :::image type="content" source="media/migration-assistant-guide/migration-complete.png" alt-text="Screenshot from the Fabric portal Migration Assistant showing all four job steps complete and a congratulations popup.":::
 
-### Related content
+## Related content
 
 - [Fabric Migration Assistant for Data Warehouse](migration-assistant.md)
