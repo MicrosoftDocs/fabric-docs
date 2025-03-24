@@ -161,7 +161,7 @@ items:
           href: event-streams/api-update-eventstream-definition.md
     - name: Security
       items:
-      - name: Coonect to Azure Event Hubs and IoT Hub sources using managed private endpoints
+      - name: Connect to Azure Event Hubs and IoT Hub sources using managed private endpoints
         href: event-streams/set-up-private-endpoint.md
       - name: Connect to streaming sources in private network with Eventstream
         href: event-streams/connect-connecots-in-virtual-network-on-premises.md
