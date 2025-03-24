@@ -56,7 +56,7 @@ All variables must have a default value. If the variable type is *String*, the d
 
 ### Alternative value sets
 
-Value sets define the values of each variable in the Variable library. A Variable library typically contains multiple value sets. The active (or effective) value set contains the value the consumer items receives for that workspace. In each workspace you select a value set to be active. The active value set of a workspace doesn't change during deployment or update from Git.
+Value sets define the values of each variable in the Variable library. A Variable library typically contains multiple value sets. The active (or effective) value set contains the value the consumer items receives for that workspace. In each workspace, you select a value set to be active. The active value set of a workspace doesn't change during deployment or update from Git.
 
 :::image type="content" source="./media/variable-library-overview/alternative-values.png" alt-text="Screenshot of variable library with several alternative value sets.":::
 

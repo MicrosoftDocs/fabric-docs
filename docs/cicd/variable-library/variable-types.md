@@ -65,14 +65,14 @@ The variables in the Variable library can be any of the following types:
 - DateTime: The date and time are represented using **ISO 8601 standard**, yyyy-MM-ddTHH:mm:ss.xxxZ, where:
   - *yyyy-MM-dd* is the four-digit year, followed by the two-digit month, and two-digit day
   - *T* separates the date and the time
-  - *HH:mm:ss.xxx* is the two-digit hour in 24-hour format, followed by the two-digit minute, two-digit second and 3 digit millisecond
+  - *HH:mm:ss.xxx* is the two-digit hour in 24-hour format, followed by the two-digit minute, two-digit second, and three-digit millisecond
   - *Z* indicates that the time is in Coordinated Universal Time (UTC)
   For example, 2025-01-14T16:15:20.123Z.
 - Number: Any number.
 - GUID: Use this type to represent GUIDs.
 - Integer: A whole number that can be positive, negative, or zero.
 
-Once a variable has a defined valu, if you try to change its type, a consent dialog will pop up alerting the user that all the variable values will be reset and that this change could be a breaking change on the consumer item side. 
+Once a variable has a defined value, if you try to change its type, a consent dialog pops up alerting the user that all the variable values will be reset and that this change could be a breaking change on the consumer item side.
 
 ## Alternative value sets
 
