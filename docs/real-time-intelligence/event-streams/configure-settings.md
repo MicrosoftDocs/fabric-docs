@@ -35,12 +35,12 @@ For the **event throughput** setting, you can select the throughput level for in
 :::image type="content" source="./media/create-manage-an-eventstream/throughput-setting.png" alt-text="Screenshot that shows the throughput setting for an eventstream.":::
 
 > [!NOTE]
-> To update the throughput setting, if your eventstream contains no nodes that support pause and resume, you can update throughput directly. Otherwise, deactivate all nodes that support pause and resume, then reactivate them after the update. The update won't be blocked if only nodes that don't support deactivation remain active, but you may need to update the data client if custom endpoints are used, as the partition count will increase. See the [detailed table of  nodes that support pause and resume functionality](pause-resume-data-streams.md#activating-or-deactivating-a-node-using-the-switch-toggle).
+> To update the throughput setting, if your eventstream contains no node (source or destination) that support pause and resume, you can update throughput setting directly. Otherwise, deactivate all nodes that support pause and resume, then reactivate them after the update. The update won't be blocked if only nodes that don't support deactivation remain active, but you may need to update the data client if custom endpoints are used, as the partition count will increase. See the [detailed table of  nodes that support pause and resume functionality](pause-resume-data-streams.md#activating-or-deactivating-a-node-using-the-switch-toggle).
 
-Here’s how different nodes perform at each throughput level.
+Here’s how different sources and destinations perform at each throughput level.
 
 > [!NOTE]
-> The throughput upper limits listed here are based on ideal results from lab testing. 
+> The throughput upper limits listed here are based on the results from lab testing under specific configuration. Results may vary with different configurations.
 
 ### Azure Event Hubs source
 
@@ -89,7 +89,7 @@ The following table shows the approximate throughput upper limit for custom endp
 |                            |              | Medium           | 100 MB/s             |
 |                            |              | High             | 200 MB/s             |
 
-**Note**: The above throughput data was tested under these conditions:
+**Note**: The throughput data above was tested under specific conditions below. Results may vary with different configurations.
 
 - The source event sender, consumer, and Eventstream are in the same data center to ensure that network throughput is not a bottleneck.
 - Events are in JSON format, each 1KB in size. Events are batched in groups of 100 before being sent or received.
