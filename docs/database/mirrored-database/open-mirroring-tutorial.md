@@ -40,7 +40,7 @@ Once you've created a mirrored database, start uploading your CSV or parquet fil
 
 To upload initial data and/or incremental changed data for open mirroring:
 
-1. Select the **Upload files** on the home page of the mirrored datase.
+1. Select the **Upload files** on the home page of the mirrored database.
 
    :::image type="content" source="media/open-mirroring-tutorial/upload-files.png" alt-text="Screenshot from the Fabric portal of the Upload Files options on the home screen of an open mirrored database." lightbox="media/open-mirroring-tutorial/upload-files.png":::
 
