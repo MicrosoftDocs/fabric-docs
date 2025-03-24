@@ -42,7 +42,7 @@ D. **Details area**: The details area provides additional information about the 
 
 ## Manage KQL Databases
 
-You can manage the databases in the eventhouse using the options n the the [Database ribbon](#database-ribbon) or in the [explorer](#explorer-pane) under **KQL Databases**.
+You can manage the databases in the eventhouse using the options in the [Database ribbon](#database-ribbon) or in the [explorer](#explorer-pane) under **KQL Databases**.
 
 ### Database ribbon
 
@@ -52,7 +52,7 @@ The database ribbon is your quick-access action bar, offering a convenient way t
 
 From here, you can:
 
-* Enable **Live View**: to continually refresh the database automaticaly, enable Live View. Disable to manually refresh the database.
+* Enable **Live View**: to continually refresh the database automatically, enable Live View. Disable to manually refresh the database.
 
 * **Get data**: select the desired ingest method. To learn more, see [data formats](ingestion-supported-formats.md) and the corresponding ingestion methods.
 
@@ -108,11 +108,11 @@ The database activity tracker displays the number of rows loaded into the databa
 | Item| Description|
 |---|---|
 | **Ingestion** | The number of rows loaded into the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only ingestion data. |
-| **Queries** | The number of queries that ran in the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only query data. <br></br> In the case of failoed, throttled, or cancelled querires, there is a drop-down to view them as a percentage compared to the completed queries. <br></br> :::image type="content" source="media/create-database/queries-cancelled-menu.png" alt-text="Screenshot of queries menu to see percentage of querires completed." lightbox="media/create-database/queries-cancelled-menu.png":::|
+| **Queries** | The number of queries that ran in the database in the selected time range. Select to toggle between viewing both query and ingestion data, or only query data. <br></br> If there are failed, throttled, or canceled queries, there's a drop-down to view them as a percentage compared to the completed queries. <br></br> :::image type="content" source="media/create-database/queries-cancelled-menu.png" alt-text="Screenshot of queries menu to see percentage of querires completed." lightbox="media/create-database/queries-cancelled-menu.png":::|
 | **Last run** | The time when the histogram was last generated.|
 | Time range | The time range of the histogram display. Set ranges for one hour, six hours, three days, 7 days, or 30 days. |
-| Interval | Set the interval of the histogram display. Set intervals by one minute, five minutes, one hour, 12 hours, one day, three days, and 30 days. |
-| Refresh | Refresh your histogram.|
+| Interval | Set the data aggregation interval for the histogram display. Set intervals by one minute, five minutes, one hour, 12 hours, one day, three days, and 30 days. |
+| Refresh | Refresh your histogram manually.|
 | Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram.<br><br/>The ingestion histogram displays data by the interval chosen, and displays in UTC time. Hover over the histogram to display total rows ingested and total queries per status. |
 
 ### Tabs - Tables / Data preview / Query Insights
@@ -121,8 +121,8 @@ This section of the database page main area displays a list of tables in the dat
 
 | Item| Description|
 |---|---|
-| **Tables** | View table information by **Cards** or by **List** view. Cards and list view both display table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, *Caching*, *Retention*, *OneLake* status, and *Created on*. |
-| **Data preview** | Shows a preview of the top 200 records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view.|
+| **Tables** | View table information as **Cards** or as a **List**. Cards and lists view table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>* Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>* The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, *Caching*, *Retention*, *OneLake* status, and *Created on*. |
+| **Data preview** | Shows a preview of the top records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view. You can also search for keywords and use the filter tables option.|
 | **Query insights - top 100 queries** | Shows the top queries that can be sorted according to most recent, longest duration, highest CPU usage, highest cold storage usage, or highest memory peak usage. To sort, use the Top by: menu. </br></br>  :::image type="content" source="media/create-database/queries-top-by-menu.png" alt-text="Screenshot of queries menu to see percentage of querires completed." lightbox="media/create-database/queries-top-by-menu.png"::: |
 <!--| | Cache hit misses over time|  |
 | | Top queries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
@@ -131,7 +131,7 @@ This section of the database page main area displays a list of tables in the dat
 
 ## Database details
 
-The right pane displays the details of the selected database.
+The right pane displays details of the selected database.
 
  **Size**
 
