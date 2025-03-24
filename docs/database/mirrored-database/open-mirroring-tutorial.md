@@ -40,17 +40,21 @@ Once you've created a mirrored database, start uploading your CSV or parquet fil
 
 To upload initial data and/or incremental changed data for open mirroring:
 
-1. Upload a Parquet or CSV file using drag and drop, or by using the upload dialog in the Fabric portal. From there, you can give the table a name and specify a primary key. You can also see a preview of the data you are about to upload.
+1. Select the **Upload files** on the home page of the mirrored datase.
 
-1. Once uploaded, your data immediately starts to replicate into OneLake. You can view the files you uploaded and the files that have been replicated in OneLake by selecting a file from **Uploaded Files** or a table in **Tables in OneLake**.
+1. On the **Upload files** page, upload a Parquet or CSV file using the upload dialog in the Fabric portal.
 
-1. From the replication status in **Mirroring Status**, you can see how many rows have been replicated and any errors associated with the data you are mirroring into OneLake.
+1. On the **Preview data** page, you can see a preview of the data you are about to upload. Provide the **Table name** a name and specify **Primary key column(s)**. Select **Create table**.
+
+1. Once uploaded, your data immediately starts to replicate into OneLake. After a few minutes, in the **Explorer**, you can view the files that have been replicated in OneLake by selecting a file from **Uploaded files** or a table in **Tables in OneLake**.
+
+1. From the **Replication status** in the **Explorer**, you can see how many rows have been replicated and any errors associated with the data you are mirroring into OneLake.
 
 1. If you have changed data in a Parquet or CSV format for existing tables in your mirrored database, you can upload or drag and drop these change files. The changes are automatically reflected in OneLake. 
 
 ### Write change data into the landing zone using other mechanisms
 
-Your application can now write initial load and incremental change data into the landing zone.
+Your application can now write initial load and incremental change data into the landing zone URL, which is your specific open mirroring path to the OneLake. 
 
 - Follow [Connecting to Microsoft OneLake](../../onelake/onelake-access-api.md) to authorize and write to the mirrored database landing zone in OneLake, using the [ADLS Gen2 API](/rest/api/storageservices/data-lake-storage-gen2).
 - Review the [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md) specifications.
