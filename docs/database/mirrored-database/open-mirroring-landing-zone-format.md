@@ -160,7 +160,7 @@ To rename a column, delete the table folder and recreate the folder with all the
 
 ### Cleanup process
 
-A cleanup process for opening mirroring moves all proceesed files to a separate folder called `_ProcessedFiles` or `_FilesReadyToDelete`. After 7 days, the files are removed from this folder. 
+A cleanup process for opening mirroring moves all processed files to a separate folder called `_ProcessedFiles` or `_FilesReadyToDelete`. After seven days, the files are removed from this folder. 
 
 ## Next step
 

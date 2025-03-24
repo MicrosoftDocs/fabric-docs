@@ -3,8 +3,8 @@ title: "Open Mirroring (Preview) Partner Ecosystem"
 description: Learn about the open mirrored databases partner ecosystem in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: tinglee, sbahadur, ulrichchrist
-ms.date: 02/26/2025
+ms.reviewer: tinglee, sbahadur, ulrichchrist, maraki-ketema
+ms.date: 03/24/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -47,6 +47,7 @@ For the technical documentation of dab Nexus, see [Quickstart Guide Managed App 
 ## Simplement
 
 Simplement Roundhouse is an SAP-certified solution for data extraction from various SAP source systems. It supports near real-time data integration into Microsoft Fabric via open mirroring.
+
 For more information, see [Simplement integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/simplement-overview).
 
 ## SNP
@@ -55,9 +56,11 @@ SNP Glue is a data integration solution certified for various SAP source systems
 
 For more information on SNP Glue, see the [SNP Glue documentation](https://aka.ms/mirroring/snp-overview).
 
-### CleudIn
+### CluedIn
 
 CluedIn is a Master Data Management and data quality platform that enables enterprises to unify, clean, and govern their data at scale. By integrating with Open Mirroring, CluedIn streamlines the ingestion and harmonization of enterprise data, ensuring it remains accurate, consistent, and ready for analytics in Fabric.
+
+For more information on CluedIn for Microsoft Fabric, see [Microsoft Fabric & CluedIn](https://aka.ms/mirroring/cluedin).
 
 ## Related content
 
