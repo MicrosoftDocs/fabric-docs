@@ -290,6 +290,24 @@ items:
       - name: FAQ about Mirroring Azure Databricks
         displayName: Frequently asked questions about Mirroring Azure Databricks
         href: ../database/mirrored-database/azure-databricks-faq.yml
+  - name: Mirroring PostgreSQL
+    items: 
+      - name: Mirrored databases from PostgreSQL
+        href: ../database/mirrored-database/azure-database-postgresql.md
+      - name: PostgreSQL tutorial
+        href: ../database/mirrored-database/azure-database-postgresql-tutorial.md
+      - name: FAQ about mirrored PostgreSQL
+        displayName: Frequently asked questions about mirrored PostgreSQL
+        href: ../database/mirrored-database/azure-database-postgresql-mirroring-faq.yml
+      - name: Secure data
+        displayName: Secure data in mirrored PostgreSQL
+        href: ../database/mirrored-database/azure-database-postgresql-how-to-data-security.md
+      - name: Limitations
+        displayName: Limitations in mirrored PostgreSQL
+        href: ../database/mirrored-database/azure-database-postgresql-limitations.md
+      - name: Troubleshoot
+        displayName: Troubleshoot mirrored PostgreSQL
+        href: ../database/mirrored-database/azure-database-postgresql-troubleshoot.md
   - name: Mirroring Snowflake
     items: 
       - name: Mirrored warehouses from Snowflake
