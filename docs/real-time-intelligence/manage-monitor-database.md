@@ -42,7 +42,7 @@ D. **Details area**: The details area provides additional information about the 
 
 ## Manage KQL Databases
 
-You can manage the databases in the eventhouse using the options in the [Database ribbon](#database-ribbon) or in the [explorer](#explorer-pane) under **KQL Databases**.
+You can manage the databases in the eventhouse using the options in the [Database ribbon](#database-ribbon) or in the [Explorer pane](#explorer-pane) under **KQL Databases**.
 
 ### Database ribbon
 
@@ -52,37 +52,43 @@ The database ribbon is your quick-access action bar, offering a convenient way t
 
 From here, you can:
 
-* Enable **Live View**: to continually refresh the database automatically, enable Live View. Disable to manually refresh the database.
+* **Refresh**: use this button to manually refresh the database, when live view is disabled.
+
+* Enable **Live view**: to continually refresh the database automatically, enable Live View. Disable to manually refresh the database.
+
+* Create a **New** item in the database. This includes a table, a materialized view, a table update policy, and a OneLake shortcut.
 
 * **Get data**: select the desired ingest method. To learn more, see [data formats](ingestion-supported-formats.md) and the corresponding ingestion methods.
 
 * **Query with code**: use this option to open the queryset pane where you can write and run queries on the selected database. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
-* Add a new [**KQL Queryset**](create-query-set.md), [**Notebook**](notebooks.md#create-a-notebook-from-a-kql-database), or [**Real-Time Dashboard**](dashboard-real-time-create.md#create-a-new-dashboard).
+* Add a new [KQL Queryset](create-query-set.md), [Notebook](notebooks.md#create-a-notebook-from-a-kql-database), or [Real-Time Dashboard](dashboard-real-time-create.md#create-a-new-dashboard).
 
-* Manage **Data policies**: For more information, see [Data retention policy](/fabric/real-time-intelligence/data-policies#data-retention-policy)
+* Manage **Data policies**: For more information, see [Data retention policy](/fabric/real-time-intelligence/data-policies#data-retention-policy).
 
 * View **OneLake**: if available, view the data in [OneLake](event-house-onelake-availability.md).
 
 ### Explorer pane
 
-Here you can:
-
-* navigate between the databases in your Eventhouse.
-
-* select the plus sign next to **KQL databases** to [create a new KQL database](create-database.md) or [create a new database shortcut](database-shortcut.md).
-
-* use the **search** box to filter the list of databases.
-
-* open an existing database by selecting the database from the list.
-
-You can perform the following actions when you hover over the **more menu** in the explorer pane to [Manage the database](#manage-kql-databases).
+In the Explorer pane you can:
 
 :::image type="content" source="media/eventhouse/manage-databases.png" alt-text="Screenshot showing the eventhouse KQL Databases section.":::
 
-* To query tables in a database, select  **Query data**
-* To create a new related item, select **New related item** > and then select [**KQL Queryset**](create-query-set.md), [**Notebook**](notebooks.md#create-a-notebook-from-a-kql-database), or [**Real-Time Dashboard**](dashboard-real-time-create.md#create-a-new-dashboard)
-* To ingest data into a database, select **Get data**
+* Navigate between the databases in your Eventhouse.
+
+* Select the plus sign next to **KQL databases** to [create a new KQL database](create-database.md) or [create a new database shortcut](database-shortcut.md).
+
+* **Search** for a database from the list of databases.
+
+* Open an existing database by selecting the database from the list.
+
+* Hover over the **more menu** in the explorer pane to [Manage the database](#manage-kql-databases). You can perform the following actions:
+
+    * To query tables in a database, select  **Query data**
+
+    * To create a new related item, select **New related item** > and then select [**KQL Queryset**](create-query-set.md), [**Notebook**](notebooks.md#create-a-notebook-from-a-kql-database), or [**Real-Time Dashboard**](dashboard-real-time-create.md#create-a-new-dashboard)
+
+    * To ingest data into a database, select **Get data**
 
 ## Main view area
 
@@ -90,10 +96,10 @@ The main database information pane tracks data activity, allows you to preview t
 
 At the top of the main view area, you can select these options:
 
-* **Refresh**: use this button to manually refresh the database, when live view is disabled.
 * **Query with code**: select to open the queryset for the database.
-* **Overview**: select to view the database activity tracker and database tables in the main view area.
-* **Entity diagram (preview)**: select to view the database as an [entity diagram](database-entity-diagram.md).
+
+* **Overview** or **Entity diagram (preview)**: View an overview of the [Database activity tracker](#database-activity-tracker) and [Tabs - Tables / Data preview / Query Insights](#tabs---tables--data-preview--query-insights) in the main view area, or view the database as an [entity diagram](database-entity-diagram.md).
+
 * **Share**: to share access to a database, select the database from the list and [share the database link](access-database-copy-uri.md#share-a-kql-database-link).
 
     > [!NOTE]
@@ -164,7 +170,6 @@ The right pane displays details of the selected database.
 
 ## Related content
 
-* [Create a KQL database](create-database.md)
 * [Create an empty table](create-empty-table.md)
 * [Manage and monitor tables](manage-monitor-tables.md)
 * [Data management](data-management.md)
