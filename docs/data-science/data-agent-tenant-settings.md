@@ -34,10 +34,6 @@ Once you are in **Tenant Settings**, you can proceed with enabling the necessary
 
 For a Fabric data agent to function properly, the [**Copilot and Azure OpenAI Service**](../admin/service-admin-portal-copilot.md#users-can-use-copilot-and-other-features-powered-by-azure-openai) tenant settings must be enabled. These settings control user access and data processing policies.
 
-> [!NOTE]
-> Fabric data agent creation isn't supported when Copilot and Azure OpenAI Services tenant setting is restricted to security groups. To create a Fabric data agent, this setting must be enabled for the entire organization.
-During Fabric data agent creation, if your organization operates outside the EU and US data boundary, the Cross-Geo Processing and Cross-Geo Storage settings must also be enabled for the entire organization. We know about this limitation and we're actively working on a solution. <br> **Workaround:** As a temporary solution, enable the necessary required settings for the entire organization. If you don't want to keep the setting on for the entire organization for a longer period, you can turn it on, create Fabric data agents, and then revert the settings back to a specific security group. This allows you to evaluate existing Fabric data agents without the feature being enabled for the entire organization.
-
 ### Required settings
 
 - **Users can use Copilot and other features powered by Azure OpenAI**:
