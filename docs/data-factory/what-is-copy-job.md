@@ -22,29 +22,32 @@ Some advantages of the Copy job over other data movement methods include:
 
 - **Intuitive Experience**: Experience seamless data copying with no compromises, making it easier than ever.
 - **Efficiency**: Enable incremental copying effortlessly, reducing manual intervention. This efficiency translates to less resource utilization and faster copy durations.
-- **Flexibility**: While enjoy the simplicity, you also have the flexibility to control your data movement. Choose which tables and columns to copy, map the data, define read/write behavior, and set schedules that fit your needs, whether for a one-time task or recurring operation.
+- **Flexibility**: While enjoying the simplicity, you also have the flexibility to control your data movement. Choose which tables and columns to copy, map the data, define read/write behavior, and set schedules that fit your needs, whether for a one-time task or recurring operation.
 - **Robust performance**: A serverless setup enabling data transfer with large-scale parallelism, maximizing data movement throughput for your system. 
 
 ## Supported connectors
 
 Currently, you can use the Copy job for cloud data transfer or copying data from an on-premises data store via gateway. The Copy job supports the following data stores as both source and destination:
 
-- Azure SQL DB
-- Oracle
-- On-premises SQL Server  
-- Fabric Warehouse
-- Fabric Lakehouse
-- Amazon S3
-- Azure Data Lake Storage Gen2
-- Azure Blob Storage
-- Azure SQL MI
-- Snowflake
-- Azure Synapse Analytics
-- Azure Data Explorer
-- Azure PostgreSQL
-- Google Cloud Storage
-- MySQL
-- Azure MySQL
+| Connector | Source | Destination | Full copy | Incremental copy (Preview) | On-premises data gateway |
+| --- | --- | --- | --- | --- | --- | 
+| Azure SQL DB | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Oracle | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| On-premises SQL Server | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Fabric Warehouse | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Fabric Lakehouse table | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Fabric Lakehouse file | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Amazon S3 | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Azure Data Lake Storage Gen2 | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Azure Blob Storage | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Azure SQL Managed Instance | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Snowflake | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Azure Synapse Analytics | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Azure Data Explorer | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Azure PostgreSQL | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |
+| Google Cloud Storage | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| MySQL | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
+| Azure MySQL | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
 
 > [!NOTE]
 > - Some connectors don't yet support incremental copy, but those will be available soon.
@@ -59,7 +62,7 @@ You can choose from the following data delivery styles.
 - **Incremental copy mode**: The initial job run copies all data, and subsequent job runs only copies changes since the last run. The changed data is appended to your destination store.
 
    > [!NOTE]
-   > Incremental copy mode is still in Preview but will be generally available soon.
+   > Incremental copy mode is still in Preview.
 
 You can also choose how data is written to your destination store.
 
