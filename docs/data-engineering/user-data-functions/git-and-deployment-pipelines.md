@@ -32,7 +32,7 @@ The folder structure includes the following elements:
 
 - **.platform**: The `.platform` file contains the following attributes:
 
-    :::image type="content" source="..\media\user-data-functions-git-deployment\platform-json-file.png" alt-text="Screenshot showing .platform file for a user data functions item." lightbox="..\media\user-data-functions-git-deployment\platform-json-file.png":::
+    :::image type="content" source="..\media\user-data-functions-git-deployment\platform-json-file.png" alt-text="Screenshot showing a platform file for a user data functions item." lightbox="..\media\user-data-functions-git-deployment\platform-json-file.png":::
 
     - **version**: Version number of the system files. This number is used to enable backwards compatibility. The version number of the item might be different.
     - **logicalId**: An automatically generated cross-workspace identifier representing an item and its source control representation.
@@ -66,7 +66,7 @@ Use the following steps to complete your notebook deployment using the deploymen
 
 1. Select, view, and compare items including user data functions items between different stages.
 
-1. Select **Deploy** to deploy your user data functions item to your test environment. You can add a note to provide details on the changes for this deployment. Similarly,you can push changes across the Development, Test, and Production stages.
+1. Select **Deploy** to deploy your user data functions item to your test environment. You can add a note to provide details on the changes for this deployment. Similarly, you can push changes across the Development, Test, and Production stages.
 
 1. Monitor the deployment status from **Deployment history**.
 

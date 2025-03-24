@@ -88,7 +88,7 @@ This module allows you to reference the [data connections](./connect-to-data-sou
 - **fabric.functions.FabricSqlConnection:** Allows you to work with SQL databases in Fabric, including SQL Analytics endpoints and Fabric warehouses.
 - **fabric.functions.FabricLakehouseClient:** Lets you work with Lakehouses, with a way to connect to both Lakehouse tables and Lakehouse files.
 
-To reference a connection to a data source, you need to use the `@udf.connection` decorator. You can applye it in any of the following formats:
+To reference a connection to a data source, you need to use the `@udf.connection` decorator. You can apply it in any of the following formats:
 
 - `@udf.connection(alias="<alias for data connection>", argName="sqlDB")`
 - `@udf.connection("<alias for data connection>", "<argName>")`

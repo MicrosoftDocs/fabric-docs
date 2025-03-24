@@ -17,7 +17,7 @@ Microsoft Fabric has two extensions for Visual Studio (VS) Code that help you ma
 - [Microsoft Fabric (Preview)](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric)
 - [Fabric User data functions (Preview)](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric-functions)
 
-## Microsft Fabric (Preview)
+## Microsoft Fabric (Preview)
 
 The [Microsoft Fabric (Preview)](https://marketplace.visualstudio.com/items?itemName=fabric.vscode-fabric) extension for VS Code allows you to access, view, and manage a Fabric workspace within VS Code. The Fabric extension is the core extension that enables other Fabric extensions to support more features and enhance your developer productivity.
 
