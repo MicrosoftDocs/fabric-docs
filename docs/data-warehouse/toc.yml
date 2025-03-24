@@ -141,6 +141,8 @@ items:
   - name: Service principals
     href: service-principals.md
     displayName: SPN
+  - name: SQL Audit Logs
+    href: sql-audit-logs.md
   - name: Microsoft Entra ID authentication
     href: entra-id-authentication.md
   - name: Workspace roles
@@ -163,6 +165,8 @@ items:
       href: tutorial-row-level-security.md
     - name: Implement dynamic data masking
       href: howto-dynamic-data-masking.md
+    - name: Configure SQL Audit Logs
+      href: configure-sql-audit-logs.md
 - name: Query the warehouse
   items:
   - name: Query using Visual Query editor
