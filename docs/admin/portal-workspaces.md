@@ -67,7 +67,6 @@ The ribbon at the top of the list and the More options (...) menus of the indivi
 
 ## Workspace limits
 
-Workspaces can contain a maximum of 1,000 Fabric and Power BI items.
 Workspaces can contain a maximum of 1,000 Fabric and Power BI items. This includes both parent and child items.
 
 Users attempting to create new items after this limit is reached get an error in the item creation flow. To develop a plan for managing item counts in workspaces, Fabric admins can review the total count of items per workspace in the admin monitoring workspace. See the [total number of items in a workspace](./feature-usage-adoption.md#measures).
