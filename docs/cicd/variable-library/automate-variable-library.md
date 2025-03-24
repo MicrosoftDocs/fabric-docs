@@ -15,13 +15,12 @@ You can use the [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fab
 
 If you're using the APIs as part of your lifecycle management, permissions for item reference are checked during Git Update and deployment pipeline deployment.
 
-
 ## Prerequisites
 
 To use the APIs, you need:
 
 - The same prerequisites as for the [Variable library item](./get-started-variable-libraries.md#prerequisites).
-- A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
+- A Microsoft Entra token for Fabric service. Use the token in the authorization header of the API call. For information about how to get a token, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
 
 ## Variable library APIs
 
