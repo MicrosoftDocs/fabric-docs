@@ -387,8 +387,14 @@ items:
     href: workload-management.md
 - name: Migrate
   items:
-  - name: Migrate Azure Synapse Analytics dedicated SQL pools to Fabric Warehouse
+  - name: Migration Assistant
+    href: migration-assistant.md
+  - name: Migration Assistant guide for Azure Synapse Analytics SQL pools
+    href: migrate-with-migration-assistant.md
+  - name: Planning and strategy for migration from Azure Synapse Analytics
     href: migration-synapse-dedicated-sql-pool-warehouse.md
+  - name: Methods for migration from Azure Synapse Analytics
+    href: migration-synapse-dedicated-sql-pool-methods.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse
