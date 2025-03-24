@@ -181,6 +181,10 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: SQL analytics endpoint sync failure when columnMapping is enabled
+      href: ../known-issues/known-issue-1069-sql-analytics-endpoint-sync-failure-column-mapping-enabled.md
+    - name: Pipeline activities fail with Dynamics or Dataverse connections through OPDG
+      href: ../known-issues/known-issue-1063-pipeline-activities-fail-dynamics-dataverse-connections-opdg.md
     - name: Virtual network data gateway doesn't start certain regions
       href: ../known-issues/known-issue-1070-virtual-network-data-gateway-not-start-certain-regions.md
     - name: Workspace identity tagged as preview for ADLS Gen2 connections
