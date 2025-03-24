@@ -4,7 +4,7 @@ description: A known issue is posted where Dataverse shortcut creation and read 
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 10/23/2024
+ms.date: 03/21/2025
 ms.custom: known-issue-895
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-895
 
 You can use a shortcut to see data from your Dataverse in a lakehouse. However, when the Dataverse organization is moved to a new storage location, the shortcut stops working.
 
-**Status:** Open
+**Status:** Fixed: March 21, 2025
 
 **Product Experience:** OneLake
 
