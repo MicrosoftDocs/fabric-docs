@@ -83,7 +83,79 @@ https://fabric.microsoft.com/groups/<**workspace_id**>/aiskills/<**artifact-id**
 
 Finally, assign a name to your connection, and choose whether to make it available to all projects in Azure AI Foundry or to restrict it to the current project.
 
-**Add Fabric data agent programmatically**: You can refer to learn how to add Fabric data agent programmatically to your Azure AI agent.
+**Add Fabric data agent programmatically**: You can follow below to learn how to add Fabric data agent programmatically to your Azure AI agent in Python. For other languages (C#, Javascript) you can refer to [here](https://aka.ms/AgentFabricDoc).
+
+#### Step 1: Create a project client
+
+Create a client object, which will contain the connection string for connecting to your AI project and other resources.
+
+```python
+import os
+from azure.ai.projects import AIProjectClient
+from azure.identity import DefaultAzureCredential
+from azure.ai.projects.models import FabricTool
+```
+
+#### Step 2: Create an Agent with the Microsoft Fabric tool enabled
+
+To make the Fabric data agent tool available to your Azure AI agent, use a connection to initialize the tool and attach it to the agent. You can find your connection in the **connected resources** section of your project in the Azure AI Foundry portal.
+
+```python
+# The Fabric connection ID can be found in the Azure AI Foundry project as a property of the Fabric tool
+# Your connection ID is in the format /subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group>/providers/Microsoft.MachineLearningServices/workspaces/<your-project-name>/connections/<your-fabric-connection-name>
+conn_id = "your-connection-id"
+
+# Initialize agent Fabric tool and add the connection ID
+fabric = FabricTool(connection_id=conn_id)
+
+# Create agent with the Fabric tool and process assistant run
+with project_client:
+    agent = project_client.agents.create_agent(
+        model="gpt-4o",
+        name="my-assistant",
+        instructions="You are a helpful assistant",
+        tools=fabric.definitions,
+        headers={"x-ms-enable-preview": "true"},
+    )
+    print(f"Created agent, ID: {agent.id}")
+```
+#### Step 3: Create a thread
+
+
+```python
+# Create thread for communication
+thread = project_client.agents.create_thread()
+print(f"Created thread, ID: {thread.id}")
+
+# Create message to thread
+# Remember to update the message with your data
+message = project_client.agents.create_message(
+    thread_id=thread.id,
+    role="user",
+    content="what is top sold product in Contoso last month?",
+)
+print(f"Created message, ID: {message.id}")
+```
+#### Step 4: Create a run and check the output
+
+Create a run and observe that the model uses the Fabric data agent tool to provide a response to the user's question.
+
+```python
+# Create and process agent run in thread with tools
+run = project_client.agents.create_and_process_run(thread_id=thread.id, assistant_id=agent.id)
+print(f"Run finished with status: {run.status}")
+
+if run.status == "failed":
+    print(f"Run failed: {run.last_error}")
+
+# Delete the assistant when done
+project_client.agents.delete_agent(agent.id)
+print("Deleted agent")
+
+# Fetch and log all messages
+messages = project_client.agents.list_messages(thread_id=thread.id)
+print(f"Messages: {messages}")
+```
 
 ## Related content
 
