@@ -42,7 +42,7 @@ Some GitHub Enterprise settings aren't supported. For example:
 
 - Only the workspace admin can manage the connections to the [Git Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  
   Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.
-- [MyWorkspace](../admin/portal-workspaces#govern-my-workspaces) can't connect to a Git provider.
+- [MyWorkspace](../admin/portal-workspaces.md#govern-my-workspaces) can't connect to a Git provider.
 
 ### Branch and folder limitations
 
