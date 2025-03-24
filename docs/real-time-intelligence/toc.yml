@@ -89,6 +89,8 @@ items:
         href: event-streams/add-source-custom-app.md
       - name: Sample data
         href: event-streams/add-source-sample-data.md
+      - name: Real-time weather
+        href: event-streams/add-source-realtime-weather.md       
       - name: Azure SQL Database Change Data Capture
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
       - name: PostgreSQL Database Change Data Capture
