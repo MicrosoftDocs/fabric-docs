@@ -89,12 +89,12 @@ The following table shows the approximate throughput upper limit for custom endp
 |                            |              | Medium           | 100 MB/s             |
 |                            |              | High             | 200 MB/s             |
 
-**Note**: The throughput data above was tested under specific conditions below. Results may vary with different configurations.
-
-- The source event sender, consumer, and Eventstream are in the same data center to ensure that network throughput is not a bottleneck.
-- Events are in JSON format, each 1KB in size. Events are batched in groups of 100 before being sent or received.
-- The source event data was sent using thousands of threads to continuously send data via EventHubProducerClient which should utilize the full bandwidth of the network throughput.
-- The test setup followed a 'One Source → One Eventstream → One Destination' structure. No processing operators were applied before data routed the Lakehouse or Eventhouse (using 'Event processing before ingestion' option) destinations. Eventhouse received data in batch mode.
+>[!Note]
+> The throughput data above was tested under specific conditions below. Results may vary with different configurations.
+>- The source event sender, consumer, and Eventstream are in the same data center to ensure that network throughput is not a bottleneck.
+>- Events are in JSON format, each 1KB in size. Events are batched in groups of 100 before being sent or received.
+>- The source event data was sent using thousands of threads to continuously send data via EventHubProducerClient which should utilize the full bandwidth of the network throughput.
+>- The test setup followed a 'One Source → One Eventstream → One Destination' structure. No processing operators were applied before data routed the Lakehouse or Eventhouse (using 'Event processing before ingestion' option) destinations. Eventhouse received data in batch mode.
 
 
 
