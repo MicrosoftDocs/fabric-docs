@@ -14,7 +14,7 @@ Fabric Spark History Server APIs follow the same structure, query parameters, an
 
 > [!NOTE]
 >
-> The /applications endpoint, which retrieves a list of all applications, is the only endpoint not supported here. However, you can obtain a list of Spark applications for a specific Fabric workspace or item using other available monitoring APIs. For more details, please refer to: xxx.
+> The /applications endpoint, which retrieves a list of all applications, is the only endpoint not supported here. However, you can obtain a list of Spark applications for a specific Fabric workspace or item using other available monitoring APIs. 
 
 ## Permissions 
 
