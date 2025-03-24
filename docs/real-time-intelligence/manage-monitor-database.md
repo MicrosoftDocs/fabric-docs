@@ -82,13 +82,13 @@ In the Explorer pane you can:
 
 * Open an existing database by selecting the database from the list.
 
-* Hover over the **more menu** in the explorer pane to [Manage the database](#manage-kql-databases). You can perform the following actions:
+* Hover over the **more menu** in the explorer pane to perform the following actions:
 
-    * To query tables in a database, select  **Query data**
+    * To query tables in a database, select  **Query data**.
 
-    * To create a new related item, select **New related item** > and then select [**KQL Queryset**](create-query-set.md), [**Notebook**](notebooks.md#create-a-notebook-from-a-kql-database), or [**Real-Time Dashboard**](dashboard-real-time-create.md#create-a-new-dashboard)
+    * To create a new related item, select **New related item** > and then select [KQL Queryset](create-query-set.md), [Notebook](notebooks.md#create-a-notebook-from-a-kql-database), or [Real-Time Dashboard](dashboard-real-time-create.md#create-a-new-dashboard).
 
-    * To ingest data into a database, select **Get data**
+    * To ingest data into a database, select **Get data**ץ.
 
 ## Main view area
 
