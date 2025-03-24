@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 03/20/2025
+ms.date: 03/24/2025
 
 # Customer intent: As a Fabric admin, I want to understand how to read the Microsoft Fabric Capacity Metrics app's Autoscale compute for Spark page.
 ---
@@ -43,7 +43,7 @@ The CU (s) usage over time chart displays the following elements:
 
 * **Non-Billable** - Red columns represent the CU consumption used during non-billable operations in a one-minute period.
 
-* **Maximum CU Limit** - A grey dotted line that shows the threshold of the allowed CU consumption for the selected capacity. Columns that stretch above this line, represent timepoints where the capacity is overloaded.
+* **Max CU Limit 1 Minute** - A grey dotted line that shows the threshold of the allowed CU consumption for the selected capacity.
 
 Filters applied to the page in the [CU metric ribbon chart](#cu-metric-ribbon-chart), affect this chart's display as follows:
 
