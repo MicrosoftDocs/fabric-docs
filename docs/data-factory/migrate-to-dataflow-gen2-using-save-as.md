@@ -4,7 +4,7 @@ description: This article describes the procedure for migrating Dataflow Gen1, D
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 3/17/2025
+ms.date: 3/25/2025
 ms.custom:
   - template-how-to
 ---
@@ -49,14 +49,14 @@ To use the Save As feature:
 
 ## Known limitations
 
-The following tables contain the known limitations for the Save As feature.
+The following tables contain the known limitations for the Save As feature. Check back here for the current status.
 
 | Feature/Limitation | Dataflow Gen1 | Dataflow Gen2 |
 | ------------------ | ------------- | ------------- |
-| You're required to reconnect to data sources | Coming soon | Coming soon |
-| You're required to reconnect to the output destination | N/A | Coming soon |
-| Scheduled refresh settings aren't copied | Coming soon | Coming soon |
-| Incremental refresh settings aren't copied |Coming soon | Coming soon |
+| You're required to reconnect to data sources | √ | √ |
+| You're required to reconnect to the output destination | N/A | √ |
+| Scheduled refresh settings aren't copied | √ | √ |
+| Incremental refresh settings aren't copied | √ | √ |
 
 Dataflow Gen1 capabilities that aren't applicable in Dataflow Gen2 (CI/CD) and therefore aren't copied.
 
