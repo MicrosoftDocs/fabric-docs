@@ -98,7 +98,7 @@ At the top of the main view area, you can select these options:
 
 * **Query with code**: select to open the queryset for the database.
 
-* **Overview** or **Entity diagram (preview)**: View an overview of the [Database activity tracker](#database-activity-tracker) and [Tabs - Tables / Data preview / Query Insights](#tabs---tables--data-preview--query-insights) in the main view area, or view the database as an [entity diagram](database-entity-diagram.md).
+* **Overview** or **Entity diagram (preview)**: View an overview of the [Database activity tracker](#database-activity-tracker) and [Tabs - Tables / Data preview / Query Insights](#tables-list) in the main view area, or view the database as an [entity diagram](database-entity-diagram.md).
 
 * **Share**: to share access to a database, select the database from the list and [share the database link](access-database-copy-uri.md#share-a-kql-database-link).
 
