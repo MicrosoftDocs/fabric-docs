@@ -18,7 +18,7 @@ ms.date: 03/20/2025
 
 1. Expand **Files** or **Tables** to view the available subfolders. Subfolders in the tables directory that contain valid Delta or Iceberg tables are indicated with a table icon. Files or unidentified folders in the tables section are indicated with a folder icon.
 
-   :::image type="content" source="media/onelake-shortcuts/table-folder-icons.png" alt-text="Screenshot that shows the expanded Tables and Files directories of a lakehouse.":::
+   :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/table-folder-icons.png" alt-text="Screenshot that shows the expanded Tables and Files directories of a lakehouse.":::
 
 
 1. Select one or more subfolders to connect to, then select **Next**.
