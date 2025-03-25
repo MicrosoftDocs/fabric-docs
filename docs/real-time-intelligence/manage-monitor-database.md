@@ -98,7 +98,7 @@ At the top of the main view area, you can select these options:
 
 * **Query with code**: select to open the queryset for the database.
 
-* **Overview** or **Entity diagram (preview)**: View an overview of the [Database activity tracker](#database-activity-tracker) and [Tabs - Tables / Data preview / Query Insights](#tables-list) in the main view area, or view the database as an [entity diagram](database-entity-diagram.md).
+* **Overview** or **Entity diagram (preview)**: View an overview of the [Database activity tracker](#database-activity-tracker) and the [Tabs - Tables / Data preview / Query Insights](#data-insights) in the main view area, or view the database as an [entity diagram](database-entity-diagram.md).
 
 * **Share**: to share access to a database, select the database from the list and [share the database link](access-database-copy-uri.md#share-a-kql-database-link).
 
@@ -121,7 +121,7 @@ The database activity tracker displays the number of rows loaded into the databa
 | Refresh | Refresh your histogram manually.|
 | Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram.<br><br/>The ingestion histogram displays data by the interval chosen, and displays in UTC time. Hover over the histogram to display total rows ingested and total queries per status. |
 
-### Tables list
+### Data insights
 
 This section of the database page main area displays a list of tables in the database, with the tabs showing the following information:
 
