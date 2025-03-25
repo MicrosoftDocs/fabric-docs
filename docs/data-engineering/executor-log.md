@@ -75,7 +75,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the id of last attempt is used. | 
 | containerId  | query  | False  | string  | The specific container ID to filter. If not specified, no filter is applied onto container id. |
 | filenamePrefix | query | False | string | The prefix of log file names to filter.  If not specified, no filter is applied onto file names. |
-| offset, maxResults | query | False | int | The starting index and amount of log files to get: <br> - For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0 <br> - For maxResults, the valid range is 0 to 3,000. The default value is 3,000|
+| offset, maxResults | query | False | int | The starting index and amount of log files to get: <br> - For offset, it starts from 0. The minimum is 0. The default value is 0 <br> - For maxResults, the valid range is 1 to 3,000. The default value is 3,000|
 
 ### Responses
 
@@ -154,11 +154,6 @@ Get log file content of an executor of a Spark application.
 
 ### Interface
 
-With attemptId
-```HTTP
-https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=executor&containerId={containerId}&fileName={fileName}
-```
-
 Without attemptId
 ```HTTP
 https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/logs?type=executor&containerId={containerId}&fileName={fileName}
@@ -166,13 +161,9 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 
 With optional parameters:
 
-With attemptId
-```HTTP
-https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/logs?type=executor&containerId={containerId}&fileName={fileName} 
-```
 Without attemptId
 ```HTTP
-https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/logs?type=executor&containerId={containerId}&fileName={fileName}
+https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/logs?type=executor&containerId={containerId}&fileName={fileName}&size={size}
 ```
 
 ### URI Parameters
@@ -183,7 +174,6 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. | 
 | livyId | path | True | string uuid | The Livy session ID. | 
 | appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | 
-| attemptId | path | False | int | The attempt ID of that application ID. If not specified, the id of last attempt is used. | 
 | containerId   | query | Ture | string | The specific container ID where executor is hosted. |
 | fileName | query | Ture  | string | The specific file name to get the content of |
 | size | query | False  | long | The size (in byte) to read from the beginning of the file content. The default value is 1M (1024*1024) bytes |
