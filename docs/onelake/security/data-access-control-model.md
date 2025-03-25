@@ -7,7 +7,7 @@ author: yuturchi
 ms.topic: concept-article
 ms.custom:
   - onelake-data-access-public-preview-april-2024
-ms.date: 03/18/2025
+ms.date: 03/25/2025
 #customer intent: As a OneLake user, I want to understand how OneLake secures data with role-based access control and the impact on Fabric permissions so that I can protect data stored and accessed in OneLake.
 ---
 
@@ -323,7 +323,11 @@ RLS combines with an OR between SQL statements. Like CLS, any RLS rules unioned 
 
 * If you assign a OneLake security role to a B2B guest user, you must [configure your external collaboration settings for B2B in Microsoft Entra External ID](/entra/external-id/external-collaboration-settings-configure). The **Guest user access** setting must be set to **Guest users have the same access as members (most inclusive)**.
 
-* OneLake security doesn't work with cross-region shortcuts. Any attempts to access a shortcut to data in another region fails if OneLake security is enabled on the lakehouse.
+* OneLake security doesn't support cross-region shortcuts. Any attempts to access shortcut to data across different capacity regions result in 404 errors.
+
+* If you add a distribution list to a role in OneLake security, the SQL endpoint can't resolve the members of the list to enforce access. The result is that users appear not to be members of the role when they access the SQL endpoint.
+
+* Semantic models don't support shortcuts pointing to other lakehouses that don't have OneLake security enabled.
 
 * The following table provides the limitations of OneLake data access roles.
 
@@ -337,3 +341,4 @@ RLS combines with an OR between SQL statements. Like CLS, any RLS rules unioned 
 
 * Changes to role definitions take about 5 minutes to apply.
 * Changes to a user group in a OneLake security role take about an hour for OneLake to apply the role's permissions on the updated user group.
+  * Some Fabric engines have their own caching layer, so might require an additional hour to update access in all systems.

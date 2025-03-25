@@ -14,8 +14,6 @@ ms.date: 03/24/2025
 
 OneLake is a hierarchical data lake, like Azure Data Lake Storage (ADLS) Gen2 or the Windows file system. You can set security at each of the levels within the data lake. However, some levels in the hierarchy are given special treatment because they correlate with Fabric concepts. OneLake security controls all access to OneLake data with different permissions inherited from the parent item or workspace permissions.
 
-<!--TODO: Introduce the two security models: OneLake security and engine security. Table summary of different workload types and what they support. -->
-
 - **Workspace**: a collaborative environment for creating and managing items.
 
 - **Item**: a set of capabilities bundled together into a single component. A data item is a subtype of item that allows data to be stored within it using OneLake.
