@@ -8,7 +8,7 @@ reviewer: midesa
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
-ms.date: 02/19/2025
+ms.date: 03/25/2025
 ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As an Analyst, I want to create a Fabric data agent that relies on generative AI, that my colleagues and I can use to have conversations about our data.
@@ -28,7 +28,7 @@ With a data agent in Microsoft Fabric, you can create conversational AI experien
 - [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- A warehouse, lakehouse, Power BI semantic models, and KQL databases with data.
+- At least one of these: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
 - [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
 
 ## End-to-End Flow for creating and consuming Fabric data agents
@@ -85,7 +85,7 @@ Questions similar to these examples should also work:
 
 Questions like this are suitable because the system can translate them into structured queries (T-SQL, DAX, or KQL), execute them against databases, and then return concrete answers based on stored data.
 
-However, like these are out of scope:
+However, questions like these are out of scope:
 
 - "Why is our factory productivity lower in Q2 2024?"
 - "What is the root cause of our sales spike?"
@@ -124,7 +124,7 @@ The agent underlying the Fabric data agent executes the query and ensures that t
 
 :::image type="content" source="./media/how-to-create-data-agent/answer.png" alt-text="Screenshot showing the answer to the question by a Fabric data agent." lightbox="./media/how-to-create-data-agent/answer.png":::
 
-The agent presents both the result and the intermediate steps that the Fabric data agent took to retrieve the final answer. This approach enhances transparency and allows validation of those steps, if necessary. Users can expand the dropdown for the steps to view all the steps the Fabric data agent took to retrieve the answer, as shown in the following screenshot:
+The agent presents both the result and the intermediate steps that it took to retrieve the final answer. This approach enhances transparency and allows validation of those steps, if necessary. Users can expand the dropdown for the steps to view all the steps the Fabric data agent took to retrieve the answer, as shown in the following screenshot:
 
 :::image type="content" source="./media/how-to-create-data-agent/answer-steps.png" alt-text="Screenshot showing the steps taken by a Fabric data agent." lightbox="./media/how-to-create-data-agent/answer-steps.png":::
 
@@ -183,7 +183,7 @@ For example, you can specify the exact data source to use for certain types of q
 
 These instructions ensure that the AI generates appropriate queries, whether SQL, DAX, or KQL, based on your guidance and the context of the questions.
 
-If your AI resource consistently misinterprets certain words, acronyms, or terms, you can provide clear definitions in this section, to ensure that the AI understands and processes them correctly. This becomes especially useful for domain-specific terminology or unique business jargon.
+If your AI resource consistently misinterprets certain words, acronyms, or terms, you can try to provide clear definitions in this section, to ensure that the AI understands and processes them correctly. This becomes especially useful for domain-specific terminology or unique business jargon.
 
 By tailoring these instructions and defining terms, you enhance the AI's ability to deliver precise and relevant insights, in full alignment with your data strategy and business requirements.
 
@@ -196,7 +196,9 @@ When you provide the AI with sample query/question pairs, it references these ex
 Power BI semantic model data don't support adding sample query/question pairs at this time. However, for supported data sources such as lakehouse, warehouse, and KQL databases, providing more examples can significantly improve the AI’s ability to generate precise queries when its default performance needs adjustment.
 
 > [!TIP]
-> A diverse set of example queries enhances the ability of a Fabric data agent to generate accurate and relevant SQL/KQL queries. To add or edit example queries, select the **Example queries** button to open the example queries pane, as shown in the following screenshot:
+> A diverse set of example queries enhances the ability of a Fabric data agent to generate accurate and relevant SQL/KQL queries.
+
+To add or edit example queries, select the **Example queries** button to open the example queries pane, as shown in the following screenshot:
 
 :::image type="content" source="./media/how-to-create-data-agent/ai-skill-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/how-to-create-data-agent/ai-skill-adding-examples.png":::
 
@@ -213,7 +215,7 @@ After you test the performance of your Fabric data agent across various question
 
 :::image type="content" source="./media/how-to-create-data-agent/publish-ai-skill.png" alt-text="Screenshot showing publication of a Fabric data agent." lightbox="./media/how-to-create-data-agent/publish-ai-skill.png":::
 
-This step opens a window that asks for a description of the Fabric data agent. Here, provide a detailed description of what the Fabric data agent does. These details guide your colleagues about the functionality of the Fabric data agent, and assist other AI systems/orchestrators to effectively invoke that Fabric data agent.
+This step opens a window that asks for a description of the Fabric data agent. Here, provide a detailed description of what the Fabric data agent does. These details guide your colleagues about the functionality of the Fabric data agent, and assist other AI systems/orchestrators to effectively invoke the Fabric data agent.
 
 After you publish the Fabric data agent, you'll have two versions of it. One version is the current draft version, which you can continue to refine and improve. The second version is the published version, which you can share with your colleagues who want to query the Fabric data agent to get answers to their questions. You can incorporate feedback from your colleagues into your current draft version as you develop it, to further enhance the Fabric data agent’s performance.
 

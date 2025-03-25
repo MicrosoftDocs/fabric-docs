@@ -5,7 +5,7 @@ author: fbsolo-ms1
 ms.author: amjafari
 ms.reviewer: franksolomon
 ms.topic: concept-article
-ms.date: 02/18/2025
+ms.date: 03/25/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,7 +20,7 @@ ms.collection: ce-skilling-ai-copilot
 - [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- A warehouse, lakehouse, Power BI semantic models, and KQL databases with data.
+- At least one of these: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
 - [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
 
 ## Publishing and versioning
@@ -31,7 +31,7 @@ Creation of a data agent in Microsoft Fabric is an iterative process. It involve
 - Fabric data agent instruction definition
 - production of example queries for each data source
 
-As you make adjustments to enhance the performance of the Fabric data agent performance, you can eventually publish that Fabric data agent. Once published, a read-only version is generated, which you can share with others.
+As you make adjustments to enhance the performance of the Fabric data agent, you can eventually publish that Fabric data agent. Once published, a read-only version is generated, which you can share with others.
 
 When you try to publish the Fabric data agent, you can include a description that explains what the Fabric data agent does. The description is available to consumers of the Fabric data agent, to help them understand its purpose and functionality. Other automated systems and orchestrators can also use the description, to invoke the Fabric data agent outside of Microsoft Fabric.
 

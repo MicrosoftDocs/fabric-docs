@@ -9,7 +9,7 @@ reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "conceptual".
-ms.date: 02/18/2025
+ms.date: 03/25/2025
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Fabric data agent Concepts
 
@@ -32,7 +32,7 @@ You can also add organization-specific instructions, examples, and guidance to f
 - [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- A warehouse, lakehouse, Power BI semantic models, and KQL databases with data.
+- At least one of these: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
 - [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
 
 ## How the Fabric data agent works
@@ -43,7 +43,7 @@ Here’s how it works in detail:
 
 **Question Parsing & Validation**: The Fabric data agent applies Azure OpenAI Assistant APIs as the underlying agent to process user questions. This approach ensures that the question complies with security protocols, responsible AI (RAI) policies, and user permissions. The Fabric data agent strictly enforces read-only access, maintaining read-only data connections to all data sources.
 
-**Data Source Identification**: The Fabric data agent uses the user's credentials to access the schema of the data source. This ensures that the system fetches data structure information that the user has permission to view. It then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), and KQL databases. It might also reference user-provided Fabric data agents to determine the most relevant data source.
+**Data Source Identification**: The Fabric data agent uses the user's credentials to access the schema of the data source. This ensures that the system fetches data structure information that the user has permission to view. It then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), and KQL databases. It might also reference user-provided data agent instructions to determine the most relevant data source.
 
 **Tool Invocation & Query Generation**: Once the correct data source or sources are identified, the Fabric data agent rephrases the question for clarity and structure, and then invokes the corresponding tool to generate a structured query:
 
@@ -55,7 +55,7 @@ The selected tool generates a query based on the provided schema, metadata, and 
 
 **Query Validation**: The tool performs validation to ensure the query is correctly formed and adheres to its own security protocols, and RAI policies.
 
-**Query Execution & Response:**: Once validated, the Fabric data agent executes the query against the chosen data source. The results are formatted into a human-readable response, which might include structured data such as tables, summaries, or key insights.
+**Query Execution & Response**: Once validated, the Fabric data agent executes the query against the chosen data source. The results are formatted into a human-readable response, which might include structured data such as tables, summaries, or key insights.
 
 This approach ensures that users can interact with their data using natural language, while the Fabric data agent handles the complexities of query generation, validation, and execution—all without requiring users to write SQL, DAX, or KQL themselves.
 

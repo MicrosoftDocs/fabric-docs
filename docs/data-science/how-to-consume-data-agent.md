@@ -8,7 +8,7 @@ reviewer: midesa
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
-ms.date: 03/21/2025
+ms.date: 03/25/2025
 ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As an Analyst, I want to consume Fabric data agent within Azure AI Agent Services in Azure AI Foundry.
@@ -28,7 +28,7 @@ Data agent in Microsoft Fabric transforms enterprise data into conversational Q&
 - [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- A warehouse, lakehouse, Power BI semantic models, and KQL databases with data.
+- At least one of these: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
 - [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
 - Developers and end users must at least have `AI Developer` ​Role-Based Access Control (RBAC) role.
 

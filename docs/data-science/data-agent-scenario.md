@@ -8,7 +8,7 @@ reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "how-to".
-ms.date: 02/18/2025
+ms.date: 03/25/2025
 ms.collection: ce-skilling-ai-copilot
 
 ---
@@ -26,7 +26,7 @@ This article describes how to set up a data agent in Microsoft Fabric, using a l
 - [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- A warehouse, lakehouse, Power BI semantic models, and KQL databases with data.
+- At least one of these: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
 - [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
 
 ## Create a lakehouse with AdventureWorksLH
@@ -61,7 +61,7 @@ If you already have an instance of AdventureWorksLH in a lakehouse (or a warehou
 
 1. Select **Run all**.
 
-   :::image type="content" source="./media/data-agent-scenario/notebook-run-all.png" alt-text="Screenshot showing a notebook with the AdventureWorks upload code." lightbox="./media/data-agent-scenario/notebook-run-all.png":::
+:::image type="content" source="./media/data-agent-scenario/notebook-run-all.png" alt-text="Screenshot showing a notebook with the AdventureWorks upload code." lightbox="./media/data-agent-scenario/notebook-run-all.png":::
 
 After a few minutes, the lakehouse populates with the necessary data.
 
@@ -69,17 +69,21 @@ After a few minutes, the lakehouse populates with the necessary data.
 
 To create a new Fabric data agent, navigate to your workspace and select the **+ New Item** button, as shown in this screenshot:
 
-   :::image type="content" source="./media/data-agent-scenario/create-ai-skill.png" alt-text="Screenshot showing where to create Fabric data agents." lightbox="./media/data-agent-scenario/create-ai-skill.png":::
+:::image type="content" source="./media/data-agent-scenario/create-ai-skill.png" alt-text="Screenshot showing where to create Fabric data agents." lightbox="./media/data-agent-scenario/create-ai-skill.png":::
 
 In the All items tab, search for **Fabric data agent** to locate the appropriate option. Once selected, a prompt asks you to provide a name for your Fabric data agent, as shown in this screenshot:
 
-   :::image type="content" source="./media/data-agent-scenario/name-ai-skill.png" alt-text="Screenshot showing where to provide name for the Fabric data agent." lightbox="./media/data-agent-scenario/name-ai-skill.png":::
+:::image type="content" source="./media/data-agent-scenario/name-ai-skill.png" alt-text="Screenshot showing where to provide name for the Fabric data agent." lightbox="./media/data-agent-scenario/name-ai-skill.png":::
 
 After you enter the name, proceed with the following steps to align the Fabric data agent with your specific requirements.
 
 ## Select the data
 
-Select the lakehouse you created in the previous step, and then select **Add**. Once the lakehouse is added as a data source, the **Explorer** pane on the left side of the Fabric data agent page shows the lakehouse name. Select the lakehouse to view all available tables. Use the checkboxes to select the tables you want to make available to the AI. For this scenario, select these tables:
+Select the lakehouse you created in the previous step, and then select **Add**, as shown in the following screenshot:
+
+:::image type="content" source="./media/data-agent-scenario/select-and-add-lakehouse.png" alt-text="Screenshot showing the add a lakehouse step." lightbox="./media/data-agent-scenario/select-and-add-lakehouse.png":::
+
+Once the lakehouse is added as a data source, the **Explorer** pane on the left side of the Fabric data agent page shows the lakehouse name. Select the lakehouse to view all available tables. Use the checkboxes to select the tables you want to make available to the AI. For this scenario, select these tables:
 
 - `dimcustomer`
 - `dimdate`
