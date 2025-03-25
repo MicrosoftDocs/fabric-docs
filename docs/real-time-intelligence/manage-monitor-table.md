@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.custom:
 ms.date: 03/20/2025
 ms.search.form: Database
-#customer intent: As a user, I want to learn how to manage and monitor tables in a KQL  database so that I can effectively utilize Real-Time Intelligence.
+#customer intent: As a user, I want to learn how to manage and monitor a table in a KQL  database so that I can effectively utilize Real-Time Intelligence.
 ---
-# Manage and monitor tables
+# Manage and monitor a table
 
-The main page of your KQL database shows an overview of the contents and activity of your database. You track database activity, preview tables, gain insights into the database table schemas.
+The main page of your KQL database shows an overview of the contents and activity of your database. You track data activity, preview tables, gain insights into the database table schemas.
 
 ## Prerequisites
 
