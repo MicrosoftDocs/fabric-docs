@@ -24,27 +24,30 @@ To use the APIs, you need:
 
 ## Variable library APIs
 
-The following table lists the APIs available for the variable library in Fabric.
+The [Variable library REST APIs](/rest/api/fabric/variablelibrary/items) allow you to perform the following functions:
 
-| Request | Action                          |
-|---------|---------------------------------|
-| [Create Variable Library](/rest/api/fabric/variablelibrary/items/create-variable-library)  | Create a Variable library in the specified workspace. |
-| [Get Variable Library](/rest/api/fabric/variablelibrary/items/get-variable-library)     | Returns properties of the specified Variable library. |
-| [Update Variable Library](/rest/api/fabric/variablelibrary/items/update-variable-library)  | Updates the properties of the specified Variable library. |
-| [Delete Variable Library](/rest/api/fabric/variablelibrary/items/delete-variable-library)  | Delete the specified Variable library. |
-| [List Variable Libraries](/rest/api/fabric/variablelibrary/items/list-variable-libraries) | Returns a list of VariableLibraries from the specified workspace. |
-| [Get Variable Library Definition](/rest/api/fabric/variablelibrary/items/get-variable-library-definition) | Returns the specified Variable library public definition. |
-| [Update Variable Library Definition](/rest/api/fabric/variablelibrary/items/update-variable-library-definition) | Import                |
-|          | Import with change |
-| Get + active value set |                  |
-| Set value set | Set/change active value set |
-| Create with definition | create Variable Library with content (definition/ payloads) |
-|          | Test conflict name (already exist) |
-| Location | Status Failed                  |
-| Result   | Get result                     |
-|          | Base64       |
+- [Create Variable Library](/rest/api/fabric/variablelibrary/items/create-variable-library): Create a Variable library in the specified workspace.
+- [Get Variable Library](/rest/api/fabric/variablelibrary/items/get-variable-library): Returns properties of the specified Variable library.
+- [Update Variable Library](/rest/api/fabric/variablelibrary/items/update-variable-library): Updates the properties of the specified Variable library.
+- [Delete Variable Library](/rest/api/fabric/variablelibrary/items/delete-variable-library): Delete the specified Variable library.
+- [List Variable Libraries](/rest/api/fabric/variablelibrary/items/list-variable-libraries): Returns a list of VariableLibraries from the specified workspace.
+- [Get Variable Library Definition](/rest/api/fabric/variablelibrary/items/get-variable-library-definition): Returns the specified Variable library public definition.
+- [Update Variable Library Definition](/rest/api/fabric/variablelibrary/items/update-variable-library-definition): Import 
 
-The Variable library item REST APIs support service principle.
+The Variable library item REST APIs support service principles.
+
+## Examples
+
+Here are some examples of how to use the APIs:
+
+|          | Import with change
+| Get + active value set |   
+| Set value set | Set/change active value set
+| Create with definition | create Variable Library with content (definition/ payloads)
+|          | Test conflict name (already exist)
+| Location | Status Failed   
+| Result   | Get result  
+|          | Base64
 
 ## Considerations and limitations
 
