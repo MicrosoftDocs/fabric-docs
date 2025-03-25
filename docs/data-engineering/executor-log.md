@@ -75,7 +75,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the id of last attempt is used. | 
 | containerId  | query  | False  | string  | The specific container ID to filter. If not specified, no filter is applied onto container id. |
 | filenamePrefix | query | False | string | The prefix of log file names to filter.  If not specified, no filter is applied onto file names. |
-| offset, maxResults | query | False | int | The starting index and amount of log files to get: <br> - For offset, it starts from 0. The minimum is 0. The default value is 0 <br> - For maxResults, the valid range is 1 to 3,000. The default value is 3,000|
+| offset, maxResults | query | False | int | The starting index and amount of log files to get: <br> - For offset, the minimum is 0. The default value is 0. <br> - For maxResults, the valid range is 1 to 3,000. The default value is 3,000|
 
 ### Responses
 
