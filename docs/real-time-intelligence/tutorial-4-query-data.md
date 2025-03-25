@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: tutorial
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 03/23/2025
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Get started
@@ -21,7 +21,7 @@ In this part of the tutorial, you learn how to query your streaming data using K
 
 ## Write a KQL query
 
-The name of the table you created from the update policy in a previous step is *TransformedData*. Use this (case-sensitive) name as the data source for your query.
+The name of the table you created from the update policy in a previous step is *TransformedData*. Use this table name (case-sensitive) as the data source for your query.
 
 > [!TIP]
 > If you have a sufficient subscription, you can use the Copilot feature to help you write queries. Copilot provides queries based on data in your table and natural language prompts. For more information, see [Copilot for Real-Time Intelligence (preview)](../fundamentals/copilot-real-time-intelligence.md)
@@ -64,7 +64,7 @@ In this step, you create a materialized view, which returns an up-to-date result
 You will use this query in the next step to create a Real-Time dashboard.
 
 > [!IMPORTANT]
-> If you have missed any of the steps used to create the tables, update policy, function, or materialized views, use this script to create all required resources: [Tutorial commands script](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/tutorial-commands-script.kql).
+> If you missed any of the steps used to create the tables, update policy, function, or materialized views, use this script to create all required resources: [Tutorial commands script](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/tutorial-commands-script.kql).
 
 ## Related content
 
