@@ -1,8 +1,8 @@
 ---
 title: Search and find your content using global search
 description: Learn how to use the search and filter tools in Fabric to quickly find the content you want.
-author: kfollis
-ms.author: kfollis
+author: julcsc
+ms.author: juliacawthra
 ms.topic: overview
 ms.custom:
 ms.date: 03/18/2025
