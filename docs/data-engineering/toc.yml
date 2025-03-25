@@ -67,6 +67,8 @@ items:
     href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
 - name: Copilot
   items:
+  - name: Overview of Copilot for Data Science and Data Engineering in Microsoft Fabric (preview)
+    href: copilot-notebooks-overview.md
   - name: Copilot for Data Science and Data Engineering
     href: copilot-notebooks-overview.md
   - name: Chat-magics in notebooks (preview)
