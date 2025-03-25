@@ -17,9 +17,9 @@ A Microsoft Fabric Variable library can be thought of as bucket of variables tha
 
 For example, a Variable library can contain variables that hold different values for:
 
-* Different values for an integer to be used in a wait activity in a pipeline.
-* Different values of a lakehouse reference to be the source in *Copy data* activity. Each value is used in a different pipeline based on the release stage the pipeline is in.
-* Different values of lakehouse reference to be configured as a Notebook default lakhouse. Each value is used in a different pipeline based on the release stage the notebook is in.
+* An integer to be used in a wait activity in a pipeline.
+* A lakehouse reference to be the source in *Copy data* activity. Each value is used in a different pipeline based on the release stage the pipeline is in.
+* A lakehouse reference to be configured as a Notebook default lakhouse. Each value is used in a different pipeline based on the release stage the notebook is in.
 
 Value resolution in a consumer item isn't necessarily tied to its deployment. Rather, each consumer item resolves the value based on its own context.
 
