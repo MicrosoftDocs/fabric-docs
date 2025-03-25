@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Invoke user data functions from a Python application
+title: Tutorial - Invoke user data functions from a Python application
 description: Learn how to invoke User data functions from a Python web application.
 ms.author: sumuth
 author: mksuni
