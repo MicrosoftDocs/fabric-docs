@@ -1,5 +1,5 @@
 ---
-title: Fabric command linke interface
+title: Fabric command line interface
 description: This article provides an overview of the Microsoft Fabric command line interface (CLI) and lists some of its use cases.
 author: KesemSharabi
 ms.author: kesharab
@@ -40,10 +40,10 @@ To log into Fabric, follow these steps:
 
 3. Select the login method using the arrow keys, and then press **Enter**.
 
-    * **Interactive with web browser** - Use this method to login as a user. You'll be prompted to login using your browser.
-    * **Service principal authentication with secret** - Use this method to login as a service principal. You'll be prompted to enter your service principal credentials.
-    * **Service principal authentication with certificate** - Use this method to login as a service principal with a certificate. You'll be prompted to select your certificate.
-    * **Managed identity authentication**​ - Use this method to login using a managed identity.
+    * **Interactive with web browser** - Use this method to log in as a user. You'll be prompted to log in using your browser.
+    * **Service principal authentication with secret** - Use this method to log in as a service principal. You'll be prompted to enter your service principal credentials.
+    * **Service principal authentication with certificate** - Use this method to log in as a service principal with a certificate. You'll be prompted to select your certificate.
+    * **Managed identity authentication**​ - Use this method to log in using a managed identity.
 
 Once you're logged in, you'll be working in a command line mode in the Command Prompt.
 
