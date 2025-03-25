@@ -13,9 +13,15 @@ ms.search.form: Variable library overview
 
 # What is a Variable library? (preview)
 
-A Microsoft Fabric Variable library is a bucket of variables that can be consumed by other workspace items. It presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages. It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline.
+A Microsoft Fabric Variable library can be thought of as bucket of variables that can be consumed by other items in the workspace. It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline. It presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages.
 
-Variable library values aren't tied to deployment. Rather, value resolution is done by each consumer item using [data pipelines](../../data-factory/pipeline-landing-page.md).
+For example, a Variable library can contain variables that hold different values for:
+
+* Different values for an integer to be used in a wait activity in a pipeline.
+* Different values of a lakehouse reference to be the source in *Copy data* activity. Each value is used in a different pipeline based on the release stage the pipeline is in.
+* Different values of lakehouse reference to be configured as a Notebook default lakhouse. Each value is used in a different pipeline based on the release stage the notebook is in.
+
+Value resolution in a consumer item isn't necessarily tied to its deployment. Rather, each consumer item resolves the value based on its own context.
 
 The Variable library experience differs based on the variable type, but the core concept remains the same: it allows you to define and manage variables that can be used in other items.
 

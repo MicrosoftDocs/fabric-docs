@@ -29,6 +29,8 @@ To create Variable library items in Fabric, you need:
   * [Users can create Fabric items](../../admin/fabric-switch.md)
   * Users can create variable libraries
 
+  :::image type="content" source="./media/get-started-variable-libraries/variable-library-switch" alt-text="Screenshot of Variable library tenant switch.":::
+
   These switches can be enabled by the tenant admin, capacity admin, or workspace admin, depending on your [organization's settings](../../admin/delegate-settings.md).
 
 ## Before you begin
