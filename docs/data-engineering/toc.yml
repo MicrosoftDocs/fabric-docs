@@ -353,8 +353,10 @@ items:
      href: ./user-data-functions/create-user-data-functions-portal.md
    - name: Connect to data sources
      href: ./user-data-functions/connect-to-data-sources.md
-   - name: Integration with data pipelines
+   - name: Integration with Fabric data pipelines
      href: ./user-data-functions/create-functions-activity-data-pipelines.md
+   - name: Integration with Fabric notebooks
+     href: ./notebook-utilities.md
    - name: Service details and limitations
      href: ./user-data-functions/user-data-functions-service-limits.md
    - name: Source control and deployment pipelines

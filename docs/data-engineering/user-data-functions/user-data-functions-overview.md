@@ -29,6 +29,13 @@ The following are some of the benefits for logic using user data functions:
 - **Encapsulation**: Create functions that perform several tasks to build sophisticated workflows.
 - **External connectivity**: Invoke your user data functions from external client applications using a REST endpoint, opening up possibilities for integrations with external systems.
 
+## Fabric integrations
+Fabric User Data Functions can seamlessly connect with other Fabric items to create rich end-to-end experiences. There are two kinds of integrations:
+- [Fabric data sources](./connect-to-data-sources.md)
+- Fabric items that invoke User Data Functions:
+    - [Fabric Data Pipelines](./create-functions-activity-data-pipelines.md)
+    - [Fabric Notebooks](../notebook-utilities.md)
+
 ## Next steps
 
 - [Create a Fabric User data functions item](./create-user-data-functions-portal.md) or [use the VS Code extension](./create-user-data-functions-vs-code.md)
