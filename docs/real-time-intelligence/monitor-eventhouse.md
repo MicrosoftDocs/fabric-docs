@@ -40,11 +40,11 @@ There are two monitoring templates available:
 
 * [Real-Time Dashboard template](https://github.com/microsoft/fabric-toolbox/blob/main/monitoring/workspace-monitoring-dashboards/Fabric%20Workspace%20Monitoring%20Dashboard.json)
 
-:::image type="content" source="media/eventhouse/event-house-dashboard.png" alt-text="Screenshot of the real-time intelligence dashboard based on the template" lightbox="media/eventhouse/event-house-dashboard.png":::
+:::image type="content" source="media/eventhouse/eventhouse-dashboard.png" alt-text="Screenshot of the real-time intelligence dashboard based on the template." lightbox="media/eventhouse/eventhouse-dashboard.png":::
 
 * [Power BI report template](https://github.com/microsoft/fabric-toolbox/blob/main/monitoring/workspace-monitoring-dashboards/Fabric%20Workspace%20Monitoring.pbit)
 
-:::image type="content" source="media/eventhouse/event-house-dashboard-power-bi.png" alt-text="Screenshot of the Power BI dashboard based on the template" lightbox="media/eventhouse/event-house-dashboard-power-bi.png":::
+:::image type="content" source="media/eventhouse/eventhouse-dashboard-power-bi.png" alt-text="Screenshot of the Power BI dashboard based on the template." lightbox="media/eventhouse/eventhouse-dashboard-power-bi.png":::
 
 ## Related content
 
