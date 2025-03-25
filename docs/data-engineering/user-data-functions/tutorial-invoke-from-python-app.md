@@ -91,7 +91,7 @@ To invoke Fabric User data function items (Preview) from a console application i
     ```
 
     > [!NOTE]
-    > The example is for **development only** . Update the application to use Microsoft Entra ID authentication before using the application for a production use case. 
+    > The example is for **development purposes only**. Update the application to use Microsoft Entra ID authentication before using the application for a production use case. 
 
 ## Invoking a function from an external application
 Functions can be invoked by issuing a REST call to the endpoint URL. Select the function you want to invoke in the **Functions explorer** and select **Copy Function URL**. You can also turn on or off the ability to use this URL externally from the **Properties** menu.
@@ -130,7 +130,6 @@ The following properties are returned:
 
 ## Response codes
 The function will return the following HTTP codes as a result of the execution.
-
 | **Response code** | **Description** |
 | ------------------- | ------------------------ |
 | 200 OK (Success)| The request was successful|

@@ -59,7 +59,7 @@ Once created, the new connection to the data source you selected is shown in the
 ### 3. Use your connection alias in your function code
 Once you're back in the portal editor, you need to add the alias of the connection you created in the `Manage Connections` tab to your code. In this case we will use a code sample called "Read data from a table in SQL Database". You can find this sample by clicking on the Edit tab, then clicking on the "Insert sample" button and navigating to "SQL Database".
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-3.png" alt-text="Screenshot of Insert Sample data catalog with a list of data sources." lightbox="..\media\user-data-functions-manage-connections\manage-connections-5.png":::
+:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-5.png" alt-text="Screenshot of Insert Sample data catalog with a list of data sources." lightbox="..\media\user-data-functions-manage-connections\manage-connections-5.png":::
 
 This is the sample code that was inserted:
 
@@ -105,11 +105,11 @@ def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
 
 After modifying the code, publish your function using the Publish button in the toolbar. This operation may take a few minutes.
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-3.png" alt-text="Screenshot of the 'Publish' button." lightbox="..\media\user-data-functions-manage-connections\manage-connections-6.png":::
+:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-6.png" alt-text="Screenshot of the 'Publish' button." lightbox="..\media\user-data-functions-manage-connections\manage-connections-6.png":::
 
 Once the publishing is completed, you can run your function by hovering on its name in the Functions Explorer list, and clicking on the "Run" button in the side panel. The bottom panel "Output" will show the outcome of running the function.
 
-:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-3.png" alt-text="Screenshot of the side panel used to Run a function." lightbox="..\media\user-data-functions-manage-connections\manage-connections-7.png":::
+:::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-7.png" alt-text="Screenshot of the side panel used to Run a function." lightbox="..\media\user-data-functions-manage-connections\manage-connections-7.png":::
 
 And that's all you need to connect to a data source from your Fabric User Data Functions. 
 
