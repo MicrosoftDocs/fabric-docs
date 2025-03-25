@@ -65,6 +65,28 @@ This is an example of how to add a new function from the `Insert sample` menu. I
 
    :::image type="content" source="..\media\user-data-functions-create-in-portal\sample-added-to-function-editor.png" alt-text="Screenshot showing code snippet of the sample in the editor." lightbox="..\media\user-data-functions-create-in-portal\test-data-function-2.png":::
 
+### Run your function 
+1. Select **Run** icon that shows up when you hover over a function in the Functions explorer list. 
+
+    :::image type="content" source="..\media\user-data-functions-create-in-portal\test-data-function.png" alt-text="Screenshot showing how to test the data functions." lightbox="..\media\user-data-functions-create-in-portal\test-data-function.png":::
+
+1. Pass the required parameters in presented as a form in the Functions explorer. In this case, we are going to run the `manipulate_data` function which requires a JSON string as a parameter.   
+   ```json
+   [
+    {
+     "Name": "John",
+     "Age": 22,
+     "Gender": "male"
+    }
+   ]
+   ```
+  
+5. Select **Run** to run the function.
+
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\data-function-successfully-executed.png" alt-text="Screenshot showing the output when a function is successfully executed." lightbox="..\media\user-data-functions-create-in-portal\data-function-successfully-executed.png":::
+
+6. You can see the live logs and the output for the function to validate if it ran successfully. Alternatively, you'll see an error message and logs from your function invocation.
+
 
 ## Write a new function
 Every runnable function starts with a `@udf.function()` decorator before the function definition. Read more about our [Python Programming model](./python-programming-model.md). To write a new function, use the decorator `@udf.function()` at the beginning to declare it as a runnable function. Here's an example function: 
@@ -140,27 +162,7 @@ def hello_fabric(name: str) -> str:
 
 After the code is removed, you can select **publish** to save your changes. Once the publish completes, you see an updated list of available functions in the Functions explorer.
 
-## Run your function 
-1. Select **Run** icon that shows up when you hover over a function in the Functions explorer list. 
 
-    :::image type="content" source="..\media\user-data-functions-create-in-portal\test-data-function.png" alt-text="Screenshot showing how to test the data functions." lightbox="..\media\user-data-functions-create-in-portal\test-data-function.png":::
-
-1. Pass the required parameters in presented as a form in the Functions explorer. In this case, we are going to run the `manipulate_data` function which requires a list in a JSON format as a parameter.   
-   ```json
-   [
-    {
-     "Name": "John",
-     "Age": 22,
-     "Gender": "male"
-    }
-   ]
-   ```
-  
-5. Select **Run** to run the function.
-
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\data-function-successfully-executed.png" alt-text="Screenshot showing the output when a function is successfully executed." lightbox="..\media\user-data-functions-create-in-portal\data-function-successfully-executed.png":::
-
-6. You can see the live logs and the output for the function to validate if it ran successfully. Alternatively, you'll see an error message and logs from your function invocation.
 
 ## Next steps
 - [Develop user data functions in VS Code](./create-user-data-functions-vs-code.md)
