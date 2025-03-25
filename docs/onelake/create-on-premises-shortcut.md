@@ -22,14 +22,6 @@ This feature is available for the following shortcut types:
 * Amazon S3
 * S3 compatible
 * Google Cloud Storage
-* Fabric items
-  * Lakehouse
-  * Warehouse
-  * Mirrored Azure Databricks Catalog
-  * Mirrored Database
-  * Semantic model
-  * SQL database
-  * Warehouse snapshot
 
 You can use this feature in any Fabric-enabled workspace.
 

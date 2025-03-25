@@ -33,7 +33,7 @@ A lakehouse in OneLake. If you don't have a lakehouse, create one by following t
 
 [!INCLUDE [onelake-shortcut](../includes/onelake-shortcut.md)]
 
-The lakehouse automatically refreshes. The shortcut(s) appears under the selected directory in the **Explorer** pane. You can differentiate a regular file or table from the shortcut from its properties. The properties have a **Shortcut Type** parameter that indicates the item is a shortcut.
+The lakehouse automatically refreshes. The shortcut appears under the selected directory in the **Explorer** pane. You can differentiate a regular file or table from the shortcut from its properties. The properties have a **Shortcut Type** parameter that indicates the item is a shortcut.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 
@@ -49,7 +49,7 @@ Editing shortcuts requires write permission on the item being edited. The admin,
 
    * **Target connection**
 
-     Not all shortcut types use the targt connection feature.
+     Not all shortcut types use the target connection feature.
 
    * **Target location** and **Target subpath**
 
