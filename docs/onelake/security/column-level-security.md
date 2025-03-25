@@ -29,7 +29,7 @@ OneLake security CLS gets enforced in one of two ways:
 
 For filtered tables, the following behaviors apply:
 
-* CLS rules don't restirct access for users in the Admin, Member, and Contributor roles.
+* CLS rules don't restrict access for users in the Admin, Member, and Contributor roles.
 * If the CLS rule has a mismatch with the table it's defined on, the query fails and no columns are returned. For example, if CLS is defined for a column that isn't part of the table.
 * Queries of CLS tables fail with an error if a user is part of two different roles and one of the roles has row-level security (RLS). 
 * CLS rules can only be enforced for objects that are Delta parquet tables. 
