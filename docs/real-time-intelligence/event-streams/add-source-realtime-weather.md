@@ -12,7 +12,7 @@ ms.search.form: Source and Destination
 
 # Add a Real-time weather source to an eventstream
 
-You can add a real-time weather source to an eventstream to stream real-time weather data from different locations. This source allows you to select specific cities or latitude and longitude coordinates to receive weather information. This article shows you how to add a real-time weather source to an eventstream.
+You can add a real-time weather source to an eventstream to stream real-time weather data from different locations. This source allows you to select specific city or latitude and longitude coordinates to receive weather information. This article shows you how to add a real-time weather source to an eventstream.
 
 ## Prerequisites
 
@@ -35,9 +35,12 @@ On the **Select a data source** page, search for and select **Connect** on the *
 1. You see the Real-time weather source added to your eventstream in **Edit mode**. Select **Publish** to publish the changes and begin streaming Real-time weather data to the eventstream.
 
     :::image type="content" source="media/add-source-realtime-weather/edit-mode.png" alt-text="A screenshot of the added Real-time weather source in Edit mode with the Publish button highlighted.":::
-1. You see the eventstream in Live mode. Select **Edit** on the ribbon to get back to the Edit mode to update the eventstream. Currently, the Real-time weather source does not support **Data preview**, you can preview data in the stream node.
+1. After you complete these steps, the source is available for visualization in the **Live view**. Select the **Real-time weather** tile in the diagram to see the page similar to the following one.
 
     :::image type="content" source="media/add-source-realtime-weather/live-view.png" alt-text="A screenshot of the published eventstream with Real-time weather source in Live View.":::
+
+[!INCLUDE [sources-do-not-support-data-preview](./includes/sources-do-not-support-data-preview.md)]
+
 
 ## Related content
 To learn how to add other sources to an eventstream, see the following article: [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md).
