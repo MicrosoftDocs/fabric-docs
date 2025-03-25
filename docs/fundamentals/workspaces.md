@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom:
 ms.search.form: product-trident, Manage your workspace
 #customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
-ms.date: 07/27/2024
+ms.date: 02/26/2025
 
 ---
 
@@ -16,7 +16,7 @@ ms.date: 07/27/2024
 
 *Workspaces* are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports, and to create task flows. This article describes workspaces, how to manage access to them, and what settings are available.
 
-Ready to get started? Read [Create a workspace](../fundamentals/create-workspaces.md).
+If you're just interested in creating a workspace, see [Create a workspace](../fundamentals/create-workspaces.md).
 
 :::image type="content" source="media/workspaces/fabric-workspace-page.png" alt-text="Screenshot showing a workspace with folders." lightbox="media/workspaces/fabric-workspace-page.png":::
 

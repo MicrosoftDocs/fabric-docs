@@ -1,15 +1,15 @@
 ---
-title: Overview of Copilot for SQL database (preview)
+title: "Overview of Copilot for SQL Database (Preview)"
 description: "Learn more about the Microsoft Copilot for SQL database in Fabric, an AI assistant designed to streamline your database tasks."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: yoleichen, sukkaur
-ms.date: 01/16/2025
+ms.date: 02/20/2025
 ms.topic: conceptual
-ms.custom:
-ms.collection: ce-skilling-ai-copilot
+ms.collection:
+  - ce-skilling-ai-copilot
 ---
-# Copilot for SQL database in Microsoft Fabric (preview)
+# Copilot for SQL database in Microsoft Fabric (Preview)
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
@@ -21,15 +21,15 @@ Copilot for SQL database utilizes table and view names, column names, primary ke
 
 Key features of Copilot for SQL database include:  
 
-- [**Code completion**](copilot-code-completion.md): Start writing T-SQL in the SQL query editor and Copilot will automatically generate a code suggestion to help complete your query. The **Tab** key accepts the code suggestion or keeps typing to ignore the suggestion. 
+- [How to: Use the Copilot Code Completion for SQL database in Fabric](copilot-code-completion.md): Start writing T-SQL in the SQL query editor and Copilot will automatically generate a code suggestion to help complete your query. The **Tab** key accepts the code suggestion or keeps typing to ignore the suggestion. 
 
-- **[Quick actions](copilot-quick-actions.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
+- **[How to: Use the Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
 
   - **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios can include incorrect/unsupported T-SQL code, wrong spellings, and more. Copilot will also provide comments that explain the changes and suggest SQL best practices.
   
   - **Explain:** Copilot can provide natural language explanations of your SQL query and database schema in comments format.
   
-- **[Chat pane](copilot-chat-pane.md)**: Use the chat pane to ask questions to Copilot through natural language. Copilot responds with a generated SQL query or natural language based on the question asked.
+- **[How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)**: Use the chat pane to ask questions to Copilot through natural language. Copilot responds with a generated SQL query or natural language based on the question asked.
 
   - **Natural Language to SQL**: Generate T-SQL code from plain text requests, allowing users to query data without needing to know SQL syntax. 
     
@@ -76,7 +76,7 @@ Here are the current limitations of Copilot for SQL database:
 
 ## Related content
 
-- [How to: Use the Copilot chat pane for SQL database](copilot-chat-pane.md)
-- [How to: Use Copilot code completion for SQL database](copilot-code-completion.md)
-- [How to: Use Copilot quick actions for SQL database](copilot-quick-actions.md)
+- [How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)
+- [How to: Use the Copilot Code Completion for SQL database in Fabric](copilot-code-completion.md)
+- [How to: Use the Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md)
 - [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)

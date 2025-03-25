@@ -4,7 +4,7 @@ description: A known issue is posted where pipeline activities don't save if the
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 12/10/2024
+ms.date: 03/18/2025
 ms.custom: known-issue-967
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-967
 
 In a pipeline, you can add a stored procedure or script activity that uses a data warehouse connection. If you change the data warehouse connection to point to a new data warehouse connection in the activity, you can't save the connection in the activity.
 
-**Status:** Open
+**Status:** Fixed: March 18, 2025
 
 **Product Experience:** Data Factory
 

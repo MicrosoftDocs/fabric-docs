@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/09/2025
+ms.date: 02/27/2025
 ---
 
 # Scale your capacity
@@ -13,6 +13,9 @@ ms.date: 02/09/2025
 This article shows how to scale a Microsoft Fabric capacity in Azure. Scaling allows you to increase or decrease the size of your capacity.
 
 You are charged pay as you go hourly rates according to the capacity size you scale up or down to. However, scaling below your reserved instance capacity doesn't affect your bill.
+
+>[!NOTE]
+>Scaling up or down between SKUs smaller or equal to F256 and equal or higher than F512, might result in a slower experience.
 
 ## Prerequisites
 

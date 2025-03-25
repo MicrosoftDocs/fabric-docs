@@ -26,7 +26,7 @@ When monitoring your eventhouse, you can query the following tables:
 
 ## Sample queries
 
-You can find sample queries in the [fabric-samples](https://github.com/microsoft/fabric-samples) GitHub repository.
+You can find sample queries in the [workspace-monitoring](https://github.com/microsoft/fabric-samples/tree/main/workspace-monitoring) folder of the *fabric-samples* GitHub repository.
 
 ## Eventhouse monitoring templates
 

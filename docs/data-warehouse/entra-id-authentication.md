@@ -4,7 +4,7 @@ description: Learn more about Microsoft Entra authentication, an alternative to 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: frnuson, kadejo, jaszymas
-ms.date: 02/06/2025
+ms.date: 02/14/2025
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
@@ -147,9 +147,15 @@ application. For more information, see [Feature dependencies of the Microsoft JD
 
 For a java code snippet using JDBC with SPN-based authentication, see [fabrictoolbox/dw_connect.java](https://github.com/microsoft/fabric-toolbox/blob/d87627f96d7867d46e585f82fddb2f57c42d585d/data-warehousing/dw-connectivity/jdbc/src/main/java/com/fabrictoolbox/dw_connect.java) and [sample pom file pom.xml](https://github.com/microsoft/fabric-toolbox/blob/d87627f96d7867d46e585f82fddb2f57c42d585d/data-warehousing/dw-connectivity/jdbc/pom.xml).
 
-### Microsoft.Data.SqlClient in .NET Core (C#)
+### Microsoft.Data.SqlClient in .NET
 
-The [Microsoft.Data.SqlClient](/sql/connect/ado-net/introduction-microsoft-data-sqlclient-namespace) is a data provider for Microsoft SQL Server and Azure SQL Database. It is a union of the two `System.Data.SqlClient` components that live independently in .NET Framework and .NET Core, providing a set of classes for accessing Microsoft SQL Server databases. `Microsoft.Data.SqlClient` is recommended for all new and future development.
+This library [Microsoft.Data.SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient/6.0.1) is the newer, cross-platform data provider for SQL Server, intended to replace the older `System.Data.SqlClient` which was Windows-only. 
+
+Supported platforms:
+-	.NET 8.0 and later
+-	.NET Framework 4.6.2 and later
+
+[Microsoft.Data.SqlClient](/sql/connect/ado-net/introduction-microsoft-data-sqlclient-namespace) is a union of the two `System.Data.SqlClient` components, providing a set of classes for accessing SQL Database Engine databases. `Microsoft.Data.SqlClient` is recommended for all new development.
 
   | Authentication Mode   | More information                         |
   |:-------------------------------|:--------------------------------------------------|

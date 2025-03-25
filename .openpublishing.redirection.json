@@ -1,6 +1,5 @@
 {
     "comment": "DO NOT USE this redirection file. Instead use the redirection files in each /docs/ subfolder. If one does not exist, create it and add it to .openpublishing.publish.config.json.",
     "redirections": [
-
     ]
 }
