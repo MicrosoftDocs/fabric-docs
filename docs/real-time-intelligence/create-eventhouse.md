@@ -37,7 +37,7 @@ In this article, you learn how to create an eventhouse, add new databases to an 
     :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of system overview in the main view area." lightbox="media/eventhouse/choose-eventhouse.png":::
 
     > [!NOTE]
-    > Sharing the Eventhouse is not supported. You can share individual databases only.
+    > Sharing the Eventhouse isn't supported. You can share individual databases only.
 
 ## Add a new database to an eventhouse
 
