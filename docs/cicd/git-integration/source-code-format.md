@@ -127,7 +127,7 @@ In version 2, instead of having two source files in each item directory, the *.p
 The `.platform` file contains the following attributes:
 
 - `version`: Version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
-- `logicalId`: An automatically generated cross-workspace identifier representing an item and its source control representation.
+- `logicalId`: (string) An automatically generated cross-workspace identifier representing an item and its source control representation.
 - `type`: (string) The item’s type (semantic model, report etc.)
 - `displayName`: (string) The name of the item.
 - `description`: (optional string) Description of the item.
