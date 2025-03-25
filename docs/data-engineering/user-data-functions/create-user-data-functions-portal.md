@@ -1,48 +1,75 @@
 ---
-title: Quickstart - Create a new Fabric User Data Functions item (Preview)
-description: Learn how to create a Fabric User Data Functions in the portal 
+title: Quickstart - Create a Fabric User data functions item (Preview)
+description: Learn how to create a Fabric User data functions item in the portal.
 ms.author: sumuth
 author: mksuni
 ms.topic: quickstart
 ms.date: 03/27/2025
-ms.search.form: Getting started with User Data Functions
+ms.search.form: Create Fabric User data functions
 ---
 
-# Create a new Fabric user data functions item from the Fabric portal (Preview)
+# Create a Fabric User data functions item (Preview)
 
+<<<<<<< HEAD
 In this guide, we will create a new User Data Functions item and write new functions in it. Each User Data Functions item contains code that defines one or many functions that you can run individually.
+=======
+In this guide, we'll create a user data functions item and write new functions in it. Each user data functions item contains a code file that includes one or many functions that you can run individually.
+>>>>>>> 752c6db4d562f17d5f4f7915811d535d0efef466
 
-1. Create a new Fabric User Data functions item
-2. Write a new function
-3. Manage functions 
-4. Run your function
+Specifically, you learn how to:
 
+- Create a user data functions item.
+- Write a new function.
+- Manage functions.
+- Run your function.
 
 ## Prerequisites
+<<<<<<< HEAD
 - A Microsoft Fabric capacity in one of [the supported regions](../../admin/region-availability.md). If you don't have a Fabric capacity, you can create a [trial capacity for free](../../get-started/fabric-trial.md).
 - A [Fabric Workspace](../../get-started/create-workspaces.md) linked to that capacity
  
 ## Create a new Fabric User Data Functions item
 1. Select your workspace, and select on **+ New item**. 
 2. Select Item type as **All items**. Search for and select **User data functions**.
+=======
 
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\select-user-data-functions.png" alt-text="Screenshot showing selecting a user data functions item." lightbox="..\media\user-data-functions-create-in-portal\select-user-data-functions.png":::
+- A Microsoft Fabric capacity. If you don't have one, you can create a [trial capacity for free](../../get-started/fabric-trial.md).
+- A [Fabric workspace](../../get-started/create-workspaces.md) linked to the capacity.
+>>>>>>> 752c6db4d562f17d5f4f7915811d535d0efef466
 
-3. Provide a **name** for the User data functions item.
- 
-4. Select **New function** to create a ``hello_fabric`` Python function template. The functions explorer shows all the functions that are published and ready to be invoked.
+## Create a new user data functions item
 
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\new-functions-to-create-template.png" alt-text="Screenshot creating a new function using a template." lightbox="..\media\user-data-functions-create-in-portal\new-functions-to-create-template.png":::
+1. In your workspace, select **+ New item**.
 
-5. Once the `hello_fabric` function is published, you can run it from the list of functions in the Functions explorer.
+1. In the pane that opens, search for `user data functions`, then select the tile.
+
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\select-user-data-functions.png" alt-text="Screenshot showing user data functions tile in the new item pane." lightbox="..\media\user-data-functions-create-in-portal\select-user-data-functions.png":::
+
+1. Provide a **Name** for the user data functions item.
+
+1. Select **New function** to create a ``hello_fabric`` Python function template. The Functions explorer shows all the functions that are published and ready to be invoked.
+
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\new-functions-to-create-template.png" alt-text="Screenshot showing how to create a new function using a template." lightbox="..\media\user-data-functions-create-in-portal\new-functions-to-create-template.png":::
+
+1. Once the `hello_fabric` function is published, you can run it from the list of functions in the Functions explorer.
 
    :::image type="content" source="..\media\user-data-functions-create-in-portal\hello-fabric-template.png" alt-text="Screenshot showing the code for hello-fabric function." lightbox="..\media\user-data-functions-create-in-portal\hello-fabric-template.png":::
 
+<<<<<<< HEAD
 
 ### Add a new function from sample 
 This is an example of how to add a new function from the `Insert sample` menu. In this case, we will add a function called **Manipulate data with pandas library** that uses the `pandas` library as a requirement. Follow the steps to add this sample function:
 
 1. Select **Library management** to add the libraries that your function requires. 
+=======
+   :::image type="content" source="..\media\user-data-functions-create-in-portal\run-1.png" alt-text="Screenshot of hello_fabric function listed in functions explorer.":::
+
+### Programming model key concepts
+
+Your user data functions item uses the [User data functions programming model](./python-programming-model.md) to create, run, debug, and modify individual functions. All the functions within a user data functions item are written to a file called `function_app.py` that you can open in Visual Studio Code.
+
+The first lines of the code for a user data functions item import the libraries needed to run your functions. Your **functions will not work properly** if any of these libraries are missing.
+>>>>>>> 752c6db4d562f17d5f4f7915811d535d0efef466
 
    :::image type="content" source="..\media\user-data-functions-manage-libraries\select-library-management.png" alt-text="Screenshot showing how to manage libraries." lightbox="..\media\user-data-functions-manage-libraries\select-library-management.png":::
    
@@ -92,7 +119,7 @@ This is an example of how to add a new function from the `Insert sample` menu. I
 Every runnable function starts with a `@udf.function()` decorator before the function definition. Read more about our [Python Programming model](./python-programming-model.md). To write a new function, use the decorator `@udf.function()` at the beginning to declare it as a runnable function. Here's an example function: 
 
 ```python
-# This sample allows you to pass a credit card as integer and mask the card leaving the last 4 digits. 
+# This sample allows you to pass a credit card number as an integer and mask it, leaving the last 4 digits. 
 
 @udf.function()
 def maskCreditCard(cardNumber: int)-> str:
@@ -131,11 +158,11 @@ udf = fn.UserDataFunctions()
 - `udf=fn.UserDataFunctions()` is the construct to define functions within a User data functions item. 
 
 ## Manage data functions
-You can add, rename, or remove functions from a User data functions item by modifying the code directly. You need to publish your functions every time you make a modification for the changes to be committed.
-
 
 ### Rename a function
+
 1. Select into the code editor and update the name of the function. For example, rename `hello_fabric` to `hello_fabric1`. Here's an example:
+
    ```python
    @udf.function()
    def hello_fabric1(name: str) -> str:
@@ -144,13 +171,15 @@ You can add, rename, or remove functions from a User data functions item by modi
       return f"Welcome to Fabric Functions, {name}, at {datetime.datetime.now()}!"
    ```
 
-2. After changing the name, select **publish** to save these changes. 
-3. Once the changes are published, you can view the new name for the function in the Functions explorer. 
+1. After changing the name, select **Publish** to save these changes.
 
-### Delete a function 
-To delete a function, select function code in the code editor and remove the entire code section. Publish the changes to delete it entirely from the user data functions item. 
+1. Once the changes are published, you can view the new name for the function in the Functions explorer.
 
-For example, to delete the `hello_fabric` function, remove the following code block: 
+### Delete a function
+
+To delete a function, select function code in the code editor and remove the entire code section. Publish the changes to delete it entirely from the user data functions item.
+
+For example, to delete the `hello_fabric` function, remove the following code block:
 
 ```python
 @udf.function()
@@ -160,13 +189,9 @@ def hello_fabric(name: str) -> str:
     return f"Welcome to Fabric Functions, {name}, at {datetime.datetime.now()}!"
 ```
 
-After the code is removed, you can select **publish** to save your changes. Once the publish completes, you see an updated list of available functions in the Functions explorer.
-
-
+After the code is removed, you can select **Publish** to save your changes. Once the publish completes, you see an updated list of available functions in the Functions explorer.
 
 ## Next steps
-- [Develop user data functions in VS Code](./create-user-data-functions-vs-code.md)
-- [Learn about User data functions programming model](./python-programming-model.md)
 
-
-
+- [Create a Fabric User data functions item in Visual Studio Code](./create-user-data-functions-vs-code.md)
+- [Learn about the User data functions programming model](./python-programming-model.md)

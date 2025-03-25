@@ -272,27 +272,31 @@ items:
 - name: VS Code integration 
   items:
   - name: Fabric extensions for VS Code  
-    href: set-up-fabric-vs-code-extension.md
+    items:
+    - name: Overview
+      href: set-up-fabric-vs-code-extension.md
+    - name: Develop user data functions in VS Code
+      href: ./user-data-functions/create-user-data-functions-vs-code.md
   - name: Synapse VS Code extension
-    href: setup-vs-code-extension.md
-  - name: VS Code extension with Docker image
-    href: set-up-vs-code-extension-with-docker-image.md
-  - name: Manage environment artifact with VS Code extension
-    href: manage-environment-with-vs-code.md  
-  - name: Notebook with VS Code extension
-    href: author-notebook-with-vs-code.md
-  - name: Notebook resource with VS Code extension
-    href: author-notebook-resource-with-vs-code.md
-  - name: Spark job definition with VS Code extension
-    href: author-sjd-with-vs-code.md
-  - name: Explore lakehouse with VS Code extension
-    href: explore-lakehouse-with-vs-code.md
-  - name: Develop notebook with VS Code web experience
-    href: author-notebook-with-vs-code-web.md
-  - name: Develop notebook with Fabric runtime
-    href: fabric-runtime-in-vscode.md
-  - name: Develop user data functions in VS Code
-    href: ./user-data-functions/create-user-data-functions-vs-code.md
+    items:
+    - name: Overview
+      href: setup-vs-code-extension.md
+    - name: VS Code extension with Docker image
+      href: set-up-vs-code-extension-with-docker-image.md
+    - name: Manage environment artifact with VS Code extension
+      href: manage-environment-with-vs-code.md  
+    - name: Notebook with VS Code extension
+      href: author-notebook-with-vs-code.md
+    - name: Notebook resource with VS Code extension
+      href: author-notebook-resource-with-vs-code.md
+    - name: Spark job definition with VS Code extension
+      href: author-sjd-with-vs-code.md
+    - name: Explore lakehouse with VS Code extension
+      href: explore-lakehouse-with-vs-code.md
+    - name: Develop notebook with VS Code web experience
+      href: author-notebook-with-vs-code-web.md
+    - name: Develop notebook with Fabric runtime
+      href: fabric-runtime-in-vscode.md
 - name: Migrate to Fabric
   items:
   - name: From Azure Synapse

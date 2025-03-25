@@ -1,43 +1,52 @@
 ---
 title: Tutorial - Invoke user data functions from a Python application
-description: Learn how to invoke user data functions from a python web application
+description: Learn how to invoke user data functions from a Python web application.
 ms.author: sumuth
 author: mksuni
 ms.topic: quickstart
 ms.date: 03/27/2025
-ms.search.form: Fabric Data Functions
+ms.search.form: Fabric User data functions
 ---
 
+<<<<<<< HEAD
 # Tutorial: Invoke user data functions from a Python console application
+=======
+# Tutorial: Invoke user data functions from a Python application
+>>>>>>> 752c6db4d562f17d5f4f7915811d535d0efef466
 
-To invoke user data functions (Preview) from a front-end app in python, you can send HTTP requests to the function endpoint that needs to be executed. In this quickstart, you learn how to set up a Python app using VS Code. 
+To invoke Fabric User data function items (Preview) from a front-end app in Python, you can send HTTP requests to the function endpoint that needs to be executed. In this quickstart, you learn how to set up a Python app using Visual Studio (VS) Code.
 
 ## Prerequisites
-- Install [Visual Studio Code](https://code.visualstudio.com/download). Download [Python 3.1](https://www.python.org/downloads/release/python-3110/) on your local machine.
-- Create a [Microsoft Fabric Account for free](https://www.microsoft.com/microsoft-fabric/getting-started) if you don't have one. 
-- [Create a workspace](../../fundamentals/create-workspaces.md)
-- Create a user data functions item and publish. See [how to create in VS Code](./create-user-data-functions-vs-code.md) or [how to create in portal](./create-user-data-functions-portal.md). Publish the changes so its ready to be invoked. 
+
+- Install [Visual Studio Code](https://code.visualstudio.com/download).
+- Download [Python 3.1](https://www.python.org/downloads/release/python-3110/) on your local machine.
+- Create a [Microsoft Fabric account for free](https://www.microsoft.com/microsoft-fabric/getting-started) if you don't have one.
+- [Create a workspace](../../fundamentals/create-workspaces.md).
+- Create a user data functions item and publish it. Check these articles on [how to create one in VS Code](./create-user-data-functions-vs-code.md) or [how to create one in the portal](./create-user-data-functions-portal.md). Publish the changes so the user data functions item is ready to be invoked.
 
 ## Create a console application to invoke the function
 
-1. Function must be publicly accessible. Select properties and enable **Public access**. Make a note of the **Public URL** to use in your python application. 
+1. The function must be publicly accessible. In the Functions explorer, hover over the name of the function and select the ellipses icon (...) that appears, then select **Properties**. In the Properties pane that opens, enable **Public access**. You should also make a note of the **Public URL** to use in your Python application.
 
-2. Create a new folder for your python app, for example **my-data-app**. Open the folder in VS Code. 
-3. Setup Python virtual environment in VS Code. To create local environments in VS Code, you can open the **Command Palette (Ctrl+Shift+P)**, search for the Python: Create Environment command, and select it.
-    - The command presents a list of environment types and selects **Venv**.
-    - Select thePython interpreter to be **Python 3.11** version. 
+1. Create a new folder for your Python app, for example **my-data-app**. Open the folder in VS Code.
 
-3. Run the command to activate the virtual environment in VS Code terminal.
+1. Set up the Python virtual environment in VS Code. To create local environments in VS Code, open the **Command palette** with **Ctrl+Shift+P**, then search for and select the Python: Create Environment command.
+   - The command presents a list of environment types and selects **Venv**.
+   - Select the Python interpreter version **Python 3.11**.
+
+1. Run the following command to activate the virtual environment in the VS Code terminal.
+
     ```bash
     venv\Scripts\activate.bat
     ```
-4. Run the command to install python libraries needed for this example.
 
-    ```python 
+1. Next, run the command to install the Python libraries needed for this example.
+
+    ```python
     pip install azure-identity, requests 
     ```
-   
-5. Create a `app.py` file and use the code to invoke the user data function. 
+
+1. Create an `app.py` file and use the code to invoke the user data functions item.
 
     ```python
     from azure.identity import InteractiveBrowserCredential
@@ -46,8 +55,8 @@ To invoke user data functions (Preview) from a front-end app in python, you can 
 
     # Acquire a token
     # DO NOT USE IN PRODUCTION.
-    # Below code to acquire token is for development purpose only to test the GraphQL endpoint
-    # For production, always register an application in a Microsoft Entra ID tenant and use the appropriate client_id and scopes
+    # Below code to acquire token is to test the GraphQL endpoint and is for the purpose of development only.
+    # For production, always register an application in a Microsoft Entra ID tenant and use the appropriate client_id and scopes.
     # https://learn.microsoft.com/fabric/data-engineering/connect-apps-api-graphql#create-a-microsoft-entra-app
 
     app = InteractiveBrowserCredential()
@@ -94,7 +103,6 @@ Functions can be invoked by issuing a REST call to the endpoint URL. Select the 
 :::image type="content" source="..\media\user-data-functions-python-programming-model\python-programming-model-1.png" alt-text="Screenshot showing how to debug locally with breakpoints." lightbox="..\media\user-data-functions-python-programming-model\python-programming-model-1.png":::
 
 Then, use this URL in your application to invoke the function. See [Invoke user data functions from an application](./tutorial-invoke-from-python-app.md)
-
 
 ### Output schema 
 When invoking a User Data Function from an external application, the output schema will have the following format: 

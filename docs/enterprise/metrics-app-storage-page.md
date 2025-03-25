@@ -5,12 +5,12 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 01/16/2025
+ms.date: 03/23/2025
 ---
 
 # Understand the metrics app storage page
 
-The Microsoft Fabric Capacity Metrics app's storage page provides capacity storage information.
+The Microsoft Fabric Capacity Metrics app's storage page provides capacity storage information, showing data for the last 30 days.
 
 ## Filters
 
