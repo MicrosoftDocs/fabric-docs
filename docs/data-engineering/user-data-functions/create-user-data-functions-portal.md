@@ -10,11 +10,7 @@ ms.search.form: Create Fabric User data functions
 
 # Create a Fabric User data functions item (Preview)
 
-<<<<<<< HEAD
 In this guide, we will create a new User Data Functions item and write new functions in it. Each User Data Functions item contains code that defines one or many functions that you can run individually.
-=======
-In this guide, we'll create a user data functions item and write new functions in it. Each user data functions item contains a code file that includes one or many functions that you can run individually.
->>>>>>> 752c6db4d562f17d5f4f7915811d535d0efef466
 
 Specifically, you learn how to:
 
@@ -24,18 +20,12 @@ Specifically, you learn how to:
 - Run your function.
 
 ## Prerequisites
-<<<<<<< HEAD
 - A Microsoft Fabric capacity in one of [the supported regions](../../admin/region-availability.md). If you don't have a Fabric capacity, you can create a [trial capacity for free](../../get-started/fabric-trial.md).
 - A [Fabric Workspace](../../get-started/create-workspaces.md) linked to that capacity
  
 ## Create a new Fabric User Data Functions item
 1. Select your workspace, and select on **+ New item**. 
 2. Select Item type as **All items**. Search for and select **User data functions**.
-=======
-
-- A Microsoft Fabric capacity. If you don't have one, you can create a [trial capacity for free](../../get-started/fabric-trial.md).
-- A [Fabric workspace](../../get-started/create-workspaces.md) linked to the capacity.
->>>>>>> 752c6db4d562f17d5f4f7915811d535d0efef466
 
 ## Create a new user data functions item
 
@@ -55,21 +45,11 @@ Specifically, you learn how to:
 
    :::image type="content" source="..\media\user-data-functions-create-in-portal\hello-fabric-template.png" alt-text="Screenshot showing the code for hello-fabric function." lightbox="..\media\user-data-functions-create-in-portal\hello-fabric-template.png":::
 
-<<<<<<< HEAD
 
 ### Add a new function from sample 
 This is an example of how to add a new function from the `Insert sample` menu. In this case, we will add a function called **Manipulate data with pandas library** that uses the `pandas` library as a requirement. Follow the steps to add this sample function:
 
 1. Select **Library management** to add the libraries that your function requires. 
-=======
-   :::image type="content" source="..\media\user-data-functions-create-in-portal\run-1.png" alt-text="Screenshot of hello_fabric function listed in functions explorer.":::
-
-### Programming model key concepts
-
-Your user data functions item uses the [User data functions programming model](./python-programming-model.md) to create, run, debug, and modify individual functions. All the functions within a user data functions item are written to a file called `function_app.py` that you can open in Visual Studio Code.
-
-The first lines of the code for a user data functions item import the libraries needed to run your functions. Your **functions will not work properly** if any of these libraries are missing.
->>>>>>> 752c6db4d562f17d5f4f7915811d535d0efef466
 
    :::image type="content" source="..\media\user-data-functions-manage-libraries\select-library-management.png" alt-text="Screenshot showing how to manage libraries." lightbox="..\media\user-data-functions-manage-libraries\select-library-management.png":::
    

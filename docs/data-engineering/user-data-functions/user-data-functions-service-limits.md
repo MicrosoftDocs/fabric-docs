@@ -3,7 +3,7 @@ title: Service details and limitations
 description: Overview of the User data functions programming model for Python
 ms.author: luisbosquez
 author: luisbosquez
-ms.topic: servicelimits
+ms.topic: overview
 ms.date: 02/20/2025
 ms.search.form: Service limits
 ---
@@ -13,10 +13,10 @@ ms.search.form: Service limits
 
 This article details the service detials and current limitations of Fabric User Data Functions. 
 
-# Capacity reporting
+## Capacity reporting
 The usage of Fabric User Data Functions will be reported in the Fabric Capacity Metrics application. The capacity reports account for the creation, publishing, execution and storage of Fabric User Data Functions. To learn more about the meters reported in the Fabric Capacity Metrics app, visit [Fabric operations](../../enterprise/fabric-operations.md#fabric-user-data-functions).
 
-# Limitations
+## Limitations
 
 The following are current limitations for Fabric User Data Functions (preview):
 
@@ -28,7 +28,7 @@ The following are current limitations for Fabric User Data Functions (preview):
 
 - **"Manage connections" only supports Fabric data sources**: The "Manage connections" feature only supports connecting to Fabric-native data sources at this moment. To learn more, visit [Connect to data sources](./connect-to-data-sources.md).
 
-# Service limits
+## Service limits
 The following list details the service limits for User Data Functions items. 
 
 | Limit | Value | Description |
