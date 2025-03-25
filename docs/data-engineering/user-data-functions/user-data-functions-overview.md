@@ -34,7 +34,7 @@ Fabric User Data Functions can seamlessly connect with other Fabric items to cre
 - [Fabric data sources](./connect-to-data-sources.md)
 - Fabric items that invoke User Data Functions:
     - [Fabric Data Pipelines](./create-functions-activity-data-pipelines.md)
-    - [Fabric Notebooks](../notebook-utilities.md#user-data-function-udf-utilities)
+    - [Fabric Notebooks](../notebook-utilities.md)
 
 ## Next steps
 
