@@ -61,10 +61,6 @@ To see a list of available commands, run the command `help`.
 
 To see the flags a command has, use the `--help` flag. For example, to see the flags for the `open` command, run the command `open --help`.
 
-## Examples
-
-You can view examples for ways to use the Fabric CLI in the GitHub [examples](https://github.com/microsoft/fabric-cli/tree/main/docs/examples) folder.
-
 ## Related content
 
 * [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
