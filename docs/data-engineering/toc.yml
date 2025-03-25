@@ -355,7 +355,7 @@ items:
      href: ./user-data-functions/git-and-deployment-pipelines.md
    - name: Python programming model
      href: ./user-data-functions/python-programming-model.md
-   - name: Tutorial - Invoke functions using Python
+   - name: Invoke functions using Python
      href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: View logs
      href: ./user-data-functions/view-function-logs.md

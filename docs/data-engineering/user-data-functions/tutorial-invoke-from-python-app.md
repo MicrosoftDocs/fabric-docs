@@ -8,7 +8,7 @@ ms.date: 03/27/2025
 ms.search.form: Fabric Data Functions
 ---
 
-# Tutorial - Invoke user data functions from a Python application
+# Tutorial: Invoke user data functions from a Python console application
 
 To invoke user data functions (Preview) from a front-end app in python, you can send HTTP requests to the function endpoint that needs to be executed. In this quickstart, you learn how to set up a Python app using VS Code. 
 
@@ -18,7 +18,7 @@ To invoke user data functions (Preview) from a front-end app in python, you can 
 - [Create a workspace](../../fundamentals/create-workspaces.md)
 - Create a user data functions item and publish. See [how to create in VS Code](./create-user-data-functions-vs-code.md) or [how to create in portal](./create-user-data-functions-portal.md). Publish the changes so its ready to be invoked. 
 
-## Create a front-end application to invoke the function
+## Create a console application to invoke the function
 
 1. Function must be publicly accessible. Select properties and enable **Public access**. Make a note of the **Public URL** to use in your python application. 
 
@@ -85,8 +85,60 @@ To invoke user data functions (Preview) from a front-end app in python, you can 
 
     ```
 
+    > [!NOTE]
+    > The example is for **development only** . Update the application to use Microsoft Entra ID authentication before using the application for a production use case. 
+
+## Invoking a function from an external application
+Functions can be invoked by issuing a REST call to the endpoint URL. Select the function you want to invoke in the **Functions explorer** and select **Copy Function URL**. You can also turn on or off the ability to use this URL externally from the **Properties** menu.
+
+:::image type="content" source="..\media\user-data-functions-python-programming-model\python-programming-model-1.png" alt-text="Screenshot showing how to debug locally with breakpoints." lightbox="..\media\user-data-functions-python-programming-model\python-programming-model-1.png":::
+
+Then, use this URL in your application to invoke the function. See [Invoke user data functions from an application](./tutorial-invoke-from-python-app.md)
+
+
+### Output schema 
+When invoking a User Data Function from an external application, the output schema will have the following format: 
+
+```json
+{
+  "functionName": "hello_fabric",
+  "invocationId": "1234567890", 
+  "status": "Succeeded | BadRequest | Failed | Timeout | ResponseTooLarge",
+  "output": /*shows the result of the function dependeing on the output type*/,
+  "errors": [
+     {
+       "name": "Error name",
+       "message": "Error message",
+       "properties": {
+          /*Key value pairs custom to error*/
+       }
+     },
+  ]
+}
+```
+
+The following properties are returned:
+- **functionName**: The name of the function that was executed.
+- **invocationId**: The invocation ID for execution of a function.
+- **status**: The outcome of the function's execution. This can have any of the following values: `Succeeded`, `BadRequest`, `Failed`, `Timeout` and `ResponseTooLarge`.
+- **output**: The output value returned by the function. 
+- **errors**: If any errors were captured, this will return a list of each error with their name, error message and error properties.
+
+## Response codes
+The function will return the following HTTP codes as a result of the execution.
+
+| **Response code** | **Description** |
+| ------------------- | ------------------------ |
+| 200 OK (Success)| The request was successful|
+| 403 (Forbidden) | The response was too large and the invocation failed.|
+| 408 (Request Timeout) | The request failed due to the execution taking more than 200 seconds. |
+| 409 (Conflict) | The request threw an exception during the execution. |
+| 400 (Bad Request)| The request failed due to invalid or missing input parameters.|
+| 500 (Internal Server Error)| The request failed due to an internal error.|
+
 ## Debugging and testing 
 Debug the application in VS Code using python debugger. Add breakpoints if needed to debug if any issues. [Learn more](https://code.visualstudio.com/docs/languages/python#_debugging)
 
 ## Next steps
-The example is for **development only** . Update the application to use Microsoft Entra ID authentication before using the application for production use case. 
+- [Create user data functions](./create-user-data-functions-portal.md)
+- [User data functions samples](https://github.com/microsoft/fabric-user-data-functions-samples)
