@@ -24,9 +24,6 @@ In addition to token consumption, the AI Skill may generate and execute queries 
 ## Monitor the usage  
 The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for AI Skill operations under the name "AI Query" Additionally, AI Skill users are able to view a summary of their billing charges for the AI skill usage under the "LlmPlugin" item kind.
 
-:::image type="content" border="true" source="./media/copilot-consumption/ai-skill-billing.png" alt-text="Screenshot of Fabric Capacity Metrics.":::
-
-
 ## Capacity utilization type 
 
 The AI-related activity within the AI skill is classified as "background jobs" to handle a higher volume of AI skill requests during peak hours.
