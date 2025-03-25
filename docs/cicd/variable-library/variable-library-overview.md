@@ -21,7 +21,7 @@ For example, a Variable library can contain variables that hold different values
 * A lakehouse reference to be the source in *Copy data* activity. Each value is used in a different pipeline based on the release stage the pipeline is in.
 * A lakehouse reference to be configured as a Notebook default lakhouse. Each value is used in a different pipeline based on the release stage the notebook is in.
 
-Value resolution in a consumer item isn't necessarily tied to its deployment. Rather, each consumer item resolves the value based on its own context.
+Value resolution in the consumer item isn't necessarily tied to its deployment. Rather, each consumer item resolves the value based on its own context.
 
 The Variable library experience differs based on the variable type, but the core concept remains the same: it allows you to define and manage variables that can be used in other items.
 
