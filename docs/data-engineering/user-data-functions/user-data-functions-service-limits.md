@@ -9,12 +9,12 @@ ms.search.form: Service limits
 ---
 
 
-# Service detals and limitations of Fabric User Data Functions
+# Service details and limitations of Fabric User Data Functions
 
-This article details the service detials and current limitations of Fabric User Data Functions. 
+This article details the service details and current limitations of Fabric User Data Functions. 
 
 ## Capacity reporting
-The usage of Fabric User Data Functions will be reported in the Fabric Capacity Metrics application. The capacity reports account for the creation, publishing, execution and storage of Fabric User Data Functions. To learn more about the meters reported in the Fabric Capacity Metrics app, visit [Fabric operations](../../enterprise/fabric-operations.md#fabric-user-data-functions).
+The usage of Fabric User Data Functions is reported in the Fabric Capacity Metrics application. The capacity reports account for the creation, publishing, execution, and storage of Fabric User Data Functions. To learn more about the meters reported in the Fabric Capacity Metrics app, visit [Fabric operations](../../enterprise/fabric-operations.md#fabric-user-data-functions).
 
 ## Limitations
 
@@ -36,7 +36,7 @@ The following list details the service limits for User Data Functions items.
 | Request payload length | 4 MB | The maximum size of all request parameters combined. |
 | Request execution timeout | 240 seconds | The maximum amount of time a function can run for. |
 | Response size limit | 30 MB | The maximum size of the response's return value of a function. | 
-| Log retention | 30 days | The number of days that historical invocation logs will be retained for by default. | 
+| Log retention | 30 days | The number of days that historical invocation logs are retained for by default. | 
 
 ## Next steps
 - [Create a new User Data Functions item from the Fabric portal](./create-user-data-functions-portal.md) or by using [the VS Code extension](./create-user-data-functions-vs-code.md).

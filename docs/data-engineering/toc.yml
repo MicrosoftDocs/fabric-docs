@@ -355,6 +355,8 @@ items:
      href: ./user-data-functions/connect-to-data-sources.md
    - name: Integration with data pipelines
      href: ./user-data-functions/create-functions-activity-data-pipelines.md
+   - name: Service details and limitations
+     href: ./user-data-functions/user-data-functions-service-limits.md
    - name: Source control and deployment pipelines
      href: ./user-data-functions/git-and-deployment-pipelines.md
    - name: Python programming model
