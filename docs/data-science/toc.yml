@@ -67,6 +67,8 @@ items:
       href: data-agent-tenant-settings.md
     - name: Fabric data agent sharing
       href: data-agent-sharing.md
+    - name: Fabric data agent SDK
+      href: fabric-data-agent-sdk.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
