@@ -19,7 +19,7 @@ For example, a Variable library can contain variables that hold different values
 
 * An integer to be used in a wait activity in a pipeline.
 * A lakehouse reference to be the source in *Copy data* activity. Each value is used in a different pipeline based on the release stage the pipeline is in.
-* A lakehouse reference to be configured as a Notebook default lakhouse. Each value is used in a different pipeline based on the release stage the notebook is in.
+* A lakehouse reference to be configured as a Notebook default lakehouse. Each value is used in a different pipeline based on the release stage the notebook is in.
 
 Value resolution in the consumer item isn't necessarily tied to its deployment. Rather, each consumer item resolves the value based on its own context.
 
