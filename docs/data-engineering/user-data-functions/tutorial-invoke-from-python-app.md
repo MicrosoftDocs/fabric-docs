@@ -1,6 +1,6 @@
 ---
-title: Tutorial - Invoke user data functions from a Python application
-description: Learn how to invoke user data functions from a Python web application.
+title: Tutorial: Invoke user data functions from a Python application
+description: Learn how to invoke User data functions from a Python web application.
 ms.author: sumuth
 author: mksuni
 ms.topic: quickstart
@@ -130,6 +130,7 @@ The following properties are returned:
 
 ## Response codes
 The function will return the following HTTP codes as a result of the execution.
+
 | **Response code** | **Description** |
 | ------------------- | ------------------------ |
 | 200 OK (Success)| The request was successful|
