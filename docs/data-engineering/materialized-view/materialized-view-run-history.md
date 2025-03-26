@@ -1,7 +1,6 @@
 ---
-title: Run history of materialized views
+title: Run history of Microsoft Fabric materialized views
 description: Learn how to check run history of Fabric materialized views
-ms.service: 
 ms.topic: how-to
 author: apurbasroy
 ms.author: apsinhar
