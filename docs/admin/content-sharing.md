@@ -96,7 +96,7 @@ To drill into the details of a specific workspace:
 
 2. After drilling through, you can see detailed metrics for the selected workspace, with the ability to drill through even further to the *Details* page.
 
-3. Once on the Workspace page, users can select additional attributes from the available slicers or the filters pane to further manipulate the data.
+3. Once on the Workspace page, users can select attributes from the available slicers or the filters pane to further manipulate the data.
 
 In addition to drilling through, users can also access the *Workspace* page directly using the page navigation buttons.
 
@@ -111,7 +111,7 @@ You can export data from the Details page, or any other visual, by clicking _Mor
 You can also navigate directly to an item or its workspace using the hyperlinks in the data table.
 
 > [!NOTE]
-> Workspaces can only be accessed if you have a valid workspace role, else you'll be redirected to your *My workspace*. Item urls currently only support legacy Power BI items and some Fabric items.
+> Workspaces can only be accessed if you have a valid workspace role, else you are redirected to your *My workspace*. Item urls currently only support legacy Power BI items and some Fabric items.
 
 ## Measures
 
