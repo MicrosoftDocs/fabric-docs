@@ -1,5 +1,5 @@
 ---
-title: Driver log.
+title: Get Spark driver logs.
 description: Learn how to retrieve Spark driver logs.  
 author: jejiang
 ms.author: jejiang
@@ -8,9 +8,9 @@ ms.topic: tutorial
 ms.date: 03/18/2025
 ---
 
-# Driver log
+# Get Spark driver logs
 
-Retrieve Spark driver logs. 
+This article explains how to get Spark driver logs. 
 
 ## Permissions 
 
@@ -18,7 +18,7 @@ The caller must have "read" permission on the item.
 
 ## Required Delegated Scopes
 
-Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according to the item which triggered the Spark application).
+Item.Read.All or Item.ReadWrite.All or one of the following three groups (according to the item which triggered the Spark application).
 
 - Notebook.Read.All or Notebook.ReadWrite.All 
 - SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All 
@@ -74,7 +74,7 @@ None
 
 ### Examples
 
-### Sampe request
+### Sample request
 
 ```HTTP
 GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/applications/application_1741176604085_0001/logs?type=driver&meta=true&fileName=stderr 
@@ -100,7 +100,7 @@ Status code: 200
 
 ## Get rolling driver log metadata
 
-Get metadata(s) of rolling log file(s) of driver of a Spark application.
+Get metadata of rolling log files of driver of a Spark application.
 
 ### Interface
 
@@ -140,7 +140,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | 
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the id of last attempt is used. | 
 | filenamePrefix  | query | False  | string | The prefix of log file names to filter, could be either "stdout" or "stderr". |
-| offset, maxResults   | query | False  | int |  The starting index and amount of log files to get:<br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br><br>- For maxResults, the valid range is 1 to 3,000. The default value is 3,000. |
+| offset, maxResults   | query | False  | int |  The starting index and number of log files to get:<br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br><br>- For maxResults, the valid range is 1 to 3,000. The default value is 3,000. |
 
 ### Request Body
 
@@ -154,7 +154,7 @@ None
 
 ### Examples
 
-### Sampe request
+### Sample request
 
 ``` HTTP
 GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/application_1725346176782_0001/logs?type=rollingdriver &meta=true&filenamePrefix=stderr
@@ -228,7 +228,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | 
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the id of last attempt is used. | 
 | fileName | query | True | string | The specific file name to get the content of |
-| containerId | query | False | string | The specific driver container ID. Leave it not specified if you are not sure what the driver container id is. |
+| containerId | query | False | string | The specific driver container ID. Leave it not specified if you aren't sure what the driver container id is. |
 | isDownload | query | False | bool | True to download the log file as a stream. Default as false. |
 | isPartial | query | False | bool | Only take effect when isDownload is true. True to download a part of file content according to the given offset and size. Default as false to download the whole file. |
 | offset, size   | query | False  | long | The starting offset (in byte) and the size (in byte) to read the file content. Only take effect when isDownload = true and isPartial = true <br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br><br>- For size, the default value is 1M (1024*1024) bytes. |
@@ -245,7 +245,7 @@ None
 
 ### Examples
 
-### Sampe request
+### Sample request
 
 ``` HTTP
 GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/application_1731308630223_0001/logs?type=driver&fileName=stderr&isDownload=true&isPartial=true&offset=100&size=1000
