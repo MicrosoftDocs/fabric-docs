@@ -113,7 +113,8 @@ mssparkutils.fs.fastcp('source file or directory', 'destination file or director
 This method returns up to the first 'maxBytes' bytes of the given file as a String encoded in UTF-8.
 
 ```python
-mssparkutils.fs.head('file path', maxBytes to read)
+# Set the second parameter as an integer for the maxBytes to read
+mssparkutils.fs.head('file path', <maxBytes>)
 ```
 
 ### Move file
