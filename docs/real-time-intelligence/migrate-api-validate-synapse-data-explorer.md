@@ -5,7 +5,7 @@ author: shsagir
 ms.author: shsagir
 ms.reviewer: sharmaanshul
 ms.topic: reference
-ms.date: 02/06/2025
+ms.date: 03/26/2025
 ---
 # Validate migration from Azure Synapse Data Explorer to Eventhouse - REST API (preview)
 

@@ -5,7 +5,7 @@ author: shsagir
 ms.author: shsagir
 ms.reviewer: sharmaanshul
 ms.topic: how-to
-ms.date: 02/06/2025
+ms.date: 03/26/2025
 #customer intent: As a data engineer, I want to understand the migration process from Azure Synapse Data Explorer to Fabric Eventhouse so that I can effectively transition my workloads.
 ---
 
