@@ -45,7 +45,7 @@ As prerequisites to this tutorial, complete the following steps:
 1.	Create a Lakehouse titled SalesLakehouse and load the sample data files for raw data into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
 
 **Sample Data**
-Contoso is leveraging a medallion architecture for data analytics to gain actionable insights into its retail sales operations. By organizing their data into three layers—bronze (raw data), silver (cleaned and enriched data), and gold (aggregated and analyzed data); Contoso aims to streamline the analysis process and generate deeper insights into business performance.
+Contoso is leveraging a medallion architecture for data analytics to gain actionable insights into its retail sales operations. Contoso aims to streamline the analysis process and generate deeper insights into business performance by organizing their data into three layers—bronze (raw data), silver (cleaned and enriched data), and gold (aggregated and analyzed data).
 
 **Entities and Analytics Objectives**
 1.	**Orders**: This entity includes details about each customer order, such as order date, shipment details, product category, and subcategory. Insights can be drawn to optimize shipping strategies, identify popular product categories, and improve order management.
