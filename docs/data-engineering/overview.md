@@ -1,5 +1,5 @@
 ---
-title: Spark Monitoring APIs to get Spark application details 
+title: Spark monitoring APIs to get Spark application details 
 description: Learn more about monitoring API to retrieve key information about a single Spark application.
 author: jejiang
 ms.author: jejiang
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 03/18/2025
 ---
 
-# Spark Monitoring APIs to get Spark application details 
+# Get Spark application details using Spark monitoring APIs 
 
 This section provides documentation on monitoring APIs used to retrieve key information for a single Spark application. 
 
