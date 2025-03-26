@@ -45,9 +45,10 @@ As prerequisites to this tutorial, complete the following steps:
 1.	Create a Lakehouse titled SalesLakehouse and load the sample data files for raw data into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
 
 **Sample Data**
+
 Contoso is leveraging a medallion architecture for data analytics to gain actionable insights into its retail sales operations. Contoso aims to streamline the analysis process and generate deeper insights into business performance by organizing their data into three layers—bronze (raw data), silver (cleaned and enriched data), and gold (aggregated and analyzed data).
 
-**Entities and Analytics Objectives**
+**Entities**
 1.	**Orders**: This entity includes details about each customer order, such as order date, shipment details, product category, and subcategory. Insights can be drawn to optimize shipping strategies, identify popular product categories, and improve order management.
 1.	**Sales**: By analyzing sales data, Contoso can assess key metrics like total revenue, profit margins, order priorities, and discounts. Correlations between these factors provide a clearer understanding of customer purchasing behaviors and the efficiency of discount strategies.
 1.	**Location**: This captures the geographical dimension of sales and orders, including cities, states, regions, and customer segments. It helps Contoso identify high-performing regions, address low-performing areas, and personalize strategies for specific customer segments.
@@ -55,6 +56,7 @@ Contoso is leveraging a medallion architecture for data analytics to gain action
 1.	**Agent commissions**: Incorporating commission data ensures transparency and enables better cost management. Understanding the correlation between commission rates and agent performance helps refine incentive systems.
 
 **Dataset**
+
 Contoso has the raw data of its retail operations stored in CSV format at ADLS Gen2. Contoso hopes to leverage these to create the bronze layer of medallion architecture. It has created Spark SQL commands in a Notebook to create Fabric materialized views forming the silver and gold layers of the medallion architecture. 
 Note: these data models and reports aren't yet available,
 
