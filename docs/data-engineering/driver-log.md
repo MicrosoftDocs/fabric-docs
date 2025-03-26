@@ -1,5 +1,5 @@
 ---
-title: Get Spark driver logs.
+title: Get Spark driver logs using Spark monitoring APIs.
 description: Learn how to retrieve Spark driver logs.  
 author: jejiang
 ms.author: jejiang
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 03/18/2025
 ---
 
-# Get Spark driver logs
+# Get Spark driver logs using Spark monitoring APIs
 
 This article explains how to get Spark driver logs. 
 
