@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 03/06/2025
 ---
 
-# Data quality in Fbric materialized view
+# Data quality in Fabric materialized view
 
 In the era of big data, the Medallion Architecture has gained prominence as a robust framework for managing and processing data across different stages of refinement, from raw data to highly curated datasets. This structured approach not only enhances data manageability but also ensures that data quality is maintained throughout the data lifecycle.
 
