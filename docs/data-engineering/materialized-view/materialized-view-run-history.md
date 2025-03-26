@@ -1,5 +1,5 @@
 ---
-title: Run history of Fabric materialized views
+title: Run history of materialized views
 description: Learn how to check run history of Fabric materialized views
 ms.service: 
 ms.topic: how-to
