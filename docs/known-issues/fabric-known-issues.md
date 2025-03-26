@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 03/21/2025
+ms.date: 03/24/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,10 +20,12 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1069  | Data Warehouse | [SQL analytics endpoint sync failure when columnMapping is enabled](./known-issue-1069-sql-analytics-endpoint-sync-failure-column-mapping-enabled.md) | March 24, 2025 |
+|  1063  | Data Factory | [Pipeline activities fail with Dynamics or Dataverse connections through OPDG](./known-issue-1063-pipeline-activities-fail-dynamics-dataverse-connections-opdg.md) | March 24, 2025 |
 |  1062  | Administration & Management | [Workspace identity tagged as preview for ADLS Gen2 connections](./known-issue-1062-workspace-identity-tagged-preview-adls-gen2-connections.md) | March 21, 2025 |
 |  1061  | Power BI | [Issues publishing or importing reports in Pro workspaces](./known-issue-1061-issues-publishing-importing-reports-pro-workspaces.md) | March 21, 2025 |
 |  1051  | Real-Time Intelligence | [Eventstream data sources might be inactivated and can't be reactivated](./known-issue-1051-eventstream-data-sources-inactivated-not-reactivated.md) | March 21, 2025 |
-|  1059  | Data Factory | [Copilot installation script not included in notebook](./known-issue-1059-copilot-installation-script-not-included-notebook.md) | March 18, 2025 |
+|  1059  | Data Science | [Copilot installation script not included in notebook](./known-issue-1059-copilot-installation-script-not-included-notebook.md) | March 18, 2025 |
 |  1056  | Data Factory | [Database mirroring error that source table doesn't exist](./known-issue-1056-database-mirroring-error-source-table-not-exist.md) | March 18, 2025 |
 |  1058  | OneLake | [Workspaces created during Fabric preview only support limited OneLake features](./known-issue-1058-workspaces-created-during-preview-limited-onelake-features.md) | March 12, 2025 |
 |  1055  | Data Factory | [Spark Job Definition activity incorrectly shows failure status](./known-issue-1055-spark-job-definition-activity-incorrectly-shows-failure-status.md) | March 12, 2025 |
@@ -61,7 +63,6 @@ Select the **Title** to view more information about that specific known issue.
 |  923  | Power BI | [Tenant migration requests stopped](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](./known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
 |  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](./known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
-|  897  | OneLake | [OneLake Shared Access Signature (SAS) can't read cross-region shortcuts](./known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md) | October 25, 2024 |
 |  894  | Data Engineering | [Pipeline fails when getting a token to connect to Kusto](./known-issue-894-pipeline-fails-getting-token-connect-kusto.md) | October 25, 2024 |
 |  893  | Power BI | [Can't connect to semantic model from Excel or use Analyze in Excel](./known-issue-893-not-connect-semantic-model-analyze-excel.md) | October 23, 2024 |
 |  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](./known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 |
@@ -92,6 +93,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  897  | OneLake | [OneLake Shared Access Signature (SAS) can't read cross-region shortcuts](./known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md) | October 25, 2024 | Fixed: March 24, 2025 |
 |  1070  | Power BI  | [Virtual network data gateway doesn't start certain regions](./known-issue-1070-virtual-network-data-gateway-not-start-certain-regions.md) | March 21, 2025 | Fixed: March 21, 2025 |
 |  968  | Power BI  | [Export data option is disabled for Q&A visual in the service](./known-issue-968-export-data-option-disabled-qa-visual.md) | December 10, 2024 | Fixed: March 21, 2025 |
 |  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](./known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 | Fixed: March 21, 2025 |
@@ -118,8 +120,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  765  | Data Factory | [Dataflows Gen2 staging warehouse doesn't work in deployment pipelines](./known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md) | July 2, 2024 | Fixed: February 14, 2025 |
 |  591  | Data Factory | [Type mismatch when writing decimals and dates to lakehouse using a dataflow](./known-issue-591-type-mismatch-lakehouse-using-dataflow.md) | February 16, 2024 | Fixed: February 14, 2025 |
 |  902  | Power BI | [INFO.VIEW.MEASURES() in calculated table might cause errors](./known-issue-902-info-view-measures-calculated-table-cause-errors.md) | October 31, 2024 | Fixed: February 10, 2025 |
-|  955  | Data Factory | [Create Gateway public API doesn't work for service principals](./known-issue-955-create-gateway-public-api-not-work-service-principals.md) | December 5, 2024 | Fixed: February 5, 2025 |
-|  1005  | Data Engineering | [Git operations and deployment pipelines don't work with lakehouses](./known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md) | January 22, 2025 | Fixed: February 4, 2025 |
 
 ## Related content
 
