@@ -731,6 +731,8 @@
         href: pipeline-runs.md
       - name: Storage event triggers (Preview)
         href: pipeline-storage-event-triggers.md
+      - name: Variable library integration (Preview)
+        href: variable-library-integration-with-data-pipelines.md
     - name: How-to
       items:
       - name: Use the pipeline landing page
