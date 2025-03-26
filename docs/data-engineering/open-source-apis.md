@@ -35,7 +35,7 @@ Item.Read.All or Item.ReadWrite.All or one of the following three groups (accord
 | workspaceId | path | True | string uuid | The workspace ID. |
 | itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. |
 | livyId | path | True | string uuid | The Livy session ID. |
-| appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | ]
+| appId | path | True | string | The Spark application ID, like application_1704417105000_0001. |
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
 
 ## Microsoft Entra supported identities
