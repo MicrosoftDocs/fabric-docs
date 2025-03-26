@@ -50,7 +50,7 @@ The DAG UI also has the following functionalities:
 
 *	Schedule: User can schedule a run as per their business requirements as and when they require the Materialized Views to be refreshed when new data is present
 
-:::image type="content" source="./media/view-dag/schedule-button.png" alt-text="Screenshot showing the schedule button ." border="true" lightbox="./media/view-dag/schedule-button.png":::
+:::image type="content" source="./media/view-dag/schedule-button.png" alt-text="Screenshot showing the schedule button." border="true" lightbox="./media/view-dag/schedule-button.png":::
 
 * Toggle View: User can now toggle the view to Portrait or Landscape view depending on the size of the DAG. 
 * User also has the option to adjust the DAG UI according to the screen size using the Reset DAG button.
