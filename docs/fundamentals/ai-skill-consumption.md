@@ -12,7 +12,7 @@ ms.date: 03/20/2025
 This page contains information on how the Fabric AI Skill usage is billed and reported. AI Skill usage is measured by the number of tokens processed. When you query AI Skill using natural language, Fabric generates tokens that represent the number of words in the query. For every 750 words, approximately 1,000 tokens are generated.
 
 ## Consumption rate
-Requests to the AI Skill consume Fabric Capacity Units (CU). The table below defines the CU consumption specifically for the tokens used when the AI Skill leverages Azure OpenAI models to process and generate responses.
+The table below defines consumption in Capacity Units (CUs), when AI Skill leverages Azure OpenAI models to process and generate responses.
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
