@@ -6,7 +6,7 @@ author: shsagir
 ms.author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 12/24/2024
+ms.date: 03/26/2025
 ms.search.form: KQL Queryset
 #customer intent: As a data scientist, I want to detect anomalies across multiple metrics so that I can proactively identify complex issues.
 ---
