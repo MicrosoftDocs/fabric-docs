@@ -62,6 +62,9 @@ The following are built-in reporting areas of the Performance Dashboard.
 
 The **CPU consumption** graph is plotted by vCore seconds. The **Top Consuming CPU queries** identifies the queries in the desired time interval that have been most responsible for vCore consumption.
 
+>[!NOTE]
+>The vCores displayed in the Performance Dashboard (CPU Consumption tab) represent only CPU usage. They do not include vCores consumed due to memory usage, which may be considered for billing calculations. 
+
 #### User connections
 
 The **User connections** graph tracks user current connections to the database, with information about each connection. The **User connections (current)** table lists the current user connections in the table.
