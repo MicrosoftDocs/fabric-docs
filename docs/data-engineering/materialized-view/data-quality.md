@@ -71,4 +71,4 @@ To update the Data quality constraints, you need to recreate the MV.
  
 ## Next step
 
-* [Refresh Fabric materialzed view](./refresh-fabric-materialzed-view.md)
+* [Refresh Fabric materialized view](./refresh-fabric-materialzed-view.md)

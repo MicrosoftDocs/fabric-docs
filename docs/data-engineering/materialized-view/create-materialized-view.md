@@ -183,4 +183,4 @@ Example
 ## Next steps
 
 * [Data quality in Fabric materialized view](./data-quality.md)
-* [Refresh Fabric materialzed view](./refresh-fabric-materialzed-view.md)
+* [Refresh Fabric materialized view](./refresh-fabric-materialzed-view.md)
