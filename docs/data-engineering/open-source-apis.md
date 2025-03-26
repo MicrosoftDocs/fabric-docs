@@ -1,6 +1,6 @@
 ---
-title: Open-Source APIs.
-description: Learn more retrieve Spark application details.
+title:  Get Spark application details using Apache Spark Open-Source APIs.
+description: Learn more on how to retrieve Spark application details.
 author: jejiang
 ms.author: jejiang
 ms.reviewer: whhender
@@ -8,35 +8,35 @@ ms.topic: tutorial
 ms.date: 03/18/2025
 ---
 
-# Open-Source APIs
+# Get Spark application details using Apache Spark Open-Source APIs
 
-Fabric Spark History Server APIs follow the same structure, query parameters, and contract as [Spark open source monitoring REST API](https://spark.apache.org/docs/3.5.1/monitoring.html#rest-api) and provide the same set of endpoints for retrieving Spark application details, including basic application information, stages, jobs, tasks, executors, storage, streaming, and more. 
+Fabric Spark History Server APIs follow the same structure, query parameters, and contract as [Spark open source monitoring REST API](https://spark.apache.org/docs/3.5.1/monitoring.html#rest-api) and provide the same set of endpoints for retrieving Spark application details, including basic application information, stages, jobs, tasks, executors, storage, streaming, and more.
 
 > [!NOTE]
 >
-> The /applications endpoint, which retrieves a list of all applications, is the only endpoint not supported here. However, you can obtain a list of Spark applications for a specific Fabric workspace or item using other available monitoring APIs. 
+> The /applications endpoint, which retrieves a list of all applications, is the only endpoint not supported here. However, you can obtain a list of Spark applications for a specific Fabric workspace or item using other available monitoring APIs.
 
-## Permissions 
+## Permissions
 
-The caller must have "read" permission on the item 
+The caller must have "read" permission on the item
 
-## Required Delegated Scopes
+## Required delegated scopes
 
-Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according to the item which triggered the Spark application) 
+Item.Read.All or Item.ReadWrite.All or one of the following three groups (according to the item which triggered the Spark application)
 
-- Notebook.Read.All or Notebook.ReadWrite.All 
-- SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All 
-- Lakehouse.Read.All or Lakehouse.ReadWrite.All 
+- Notebook.Read.All or Notebook.ReadWrite.All
+- SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All
+- Lakehouse.Read.All or Lakehouse.ReadWrite.All
 
-## URI Parameters
+## URI parameters
 
 | Name | In | Required | Type | Description |
 | --- | --- | --- | --- | --- |
-| workspaceId | path | True | string uuid | The workspace ID. | 
-| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. | 
-| livyId | path | True | string uuid | The Livy session ID. | 
-| appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | 
-| attemptId | path | False | int | The attempt ID of that application ID. If not specified, the id of last attempt is used. | 
+| workspaceId | path | True | string uuid | The workspace ID. |
+| itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. |
+| livyId | path | True | string uuid | The Livy session ID. |
+| appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | ]
+| attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
 
 ## Microsoft Entra supported identities
 
@@ -49,7 +49,7 @@ This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-
 
 ## Examples
 
-### Sampe request for Spark Jobs
+### Sample request for Spark jobs
 
 ```
 GET https://api.fabric.microsoft.com/v1/workspaces/00bb0307-033d-415b-9917-e0b19df28539/notebooks/46884990-6ea1-4dbf-93e5-daf2608930d6/livySessions/b90eee82-765c-4393-b3da-2a11eeb73b34/applications/application_1742369571479_0001/jobs/1 
@@ -115,7 +115,7 @@ Status code: 200
 } 
 ```
 
-### Sampe request for Event Log 
+### Sample request for event log
 
 ```
 GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/application_1741176604085_0001/1/logs  

@@ -1,6 +1,6 @@
 ---
 title: Get Spark Livy Logs using Spark monitoring APIs.
-description: Learn more how to retrieve Spark Livy Logs.
+description: Learn more on how to retrieve Spark Livy Logs.
 author: jejiang
 ms.author: jejiang
 ms.reviewer: whhender

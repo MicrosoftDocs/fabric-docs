@@ -1,6 +1,6 @@
 ---
 title: Get Spark executor logs using Spark monitoring APIs.
-description: Learn more how to retrieve Spark Executor Logs.
+description: Learn more on how to retrieve Spark Executor Logs.
 author: jejiang
 ms.author: jejiang
 ms.reviewer: whhender
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 03/18/2025
 ---
 
-# Get Spark executor Logs using Spark monitoring APIs
+# Get Spark executor logs using Spark monitoring APIs
 
 This article explains how to get Spark Executor Logs.
 
@@ -24,7 +24,7 @@ Item.Read.All or Item.ReadWrite.All or one of the following three groups (accord
 - SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All 
 - Lakehouse.Read.All or Lakehouse.ReadWrite.All 
 
-## Microsoft entra supported identities
+## Microsoft Entra supported identities
 
 This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-support) listed in this section.
 

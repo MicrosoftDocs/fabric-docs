@@ -16,7 +16,7 @@ This article explains how to get Spark driver logs.
 
 The caller must have "read" permission on the item.
 
-## Required Delegated Scopes
+## Required delegated scopes
 
 Item.Read.All or Item.ReadWrite.All or one of the following three groups (according to the item which triggered the Spark application).
 
@@ -62,7 +62,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the id of last attempt is used. | 
 | fileName | query | True | string | The specific file name to get the metadata of. | 
 
-### Request Body
+### Request body
 
 None
 
@@ -130,7 +130,7 @@ Without attemptId
 https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/logs?type=rollingdriver&meta=true&filenamePrefix={filenamePrefix}&offset={offset}&maxResults={maxResults}
 ```
 
-### URI Parameters
+### URI parameters
 
 | Name | In | Required | Type | Description |
 | --- | --- | --- | --- | --- |
@@ -142,7 +142,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | filenamePrefix  | query | False  | string | The prefix of log file names to filter, could be either "stdout" or "stderr". |
 | offset, maxResults   | query | False  | int |  The starting index and number of log files to get:<br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br><br>- For maxResults, the valid range is 1 to 3,000. The default value is 3,000. |
 
-### Request Body
+### Request body
 
 None
 
@@ -218,7 +218,7 @@ Without attemptId
 https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/logs?type=driver&fileName={fileName}&containerId={containerId}&isDownload={isDownload}&isPartial={isPartial}&offset={offset}&size={size}
 ```
 
-### URI Parameters
+### URI parameters
 
 | Name | In | Required | Type | Description |
 | --- | --- | --- | --- | --- |
@@ -233,7 +233,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | isPartial | query | False | bool | Only take effect when isDownload is true. True to download a part of file content according to the given offset and size. Default as false to download the whole file. |
 | offset, size   | query | False  | long | The starting offset (in byte) and the size (in byte) to read the file content. Only take effect when isDownload = true and isPartial = true <br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br><br>- For size, the default value is 1M (1024*1024) bytes. |
 
-### Request Body
+### Request body
 
 None
 
