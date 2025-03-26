@@ -4,7 +4,7 @@ description: Tutorial showing how to connect a web app to Azure SQL Database in 
 #customer intent: As a web app developer I want to connect an App Service resource to Azure SQL Database in Fabric so that my app can reach the SQL database in Microsoft Fabric.
 author: maud-lv
 ms.author: malev
-ms.service: service-connector
+ms.custom: service-connector
 ms.topic: tutorial
 ms.date: 03/26/2025
 ---
@@ -33,7 +33,7 @@ Create a new service connection to Azure SQL Database in Fabric from the App Ser
 
     | Setting             | Example           | Description                                                                                                                                               |
     |---------------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | **Service type**    | *Fabric SQL*      | Target service type. If you don't have an App Configuration store, [create one](../azure-app-configuration/quickstart-azure-app-configuration-create.md). |
+    | **Service type**    | *Fabric SQL*      | Target service type: this is SQL Database in Microsoft Fabric. |
     | **Connection name** | *fabricsql_8293d* | The connection name that identifies the connection between your App Service and SQL database.                                                             |
     | **Workspace**       | *My Workspace*    | The Microsoft Fabric Workspace that contains the SQL database.                                                                                            |
     | **SQL database**    | *my_sql_database* | The target SQL database you want to connect to.                                                                                                           |
@@ -62,7 +62,7 @@ In this step, you grant your managed identity access to the database.
 
 When no longer needed, delete the resource group and all related resources created for this tutorial. To do so, select the resource group or the individual resources you created and select **Delete**.
 
-## Next steps
+## Related content
 
 > [!div class="nextstepaction"]
-> [Service Connector internals](./concept-service-connector-internals.md)
+> [Service Connector internals](/azure/service-connector/quickstart-portal-app-service-connection)
