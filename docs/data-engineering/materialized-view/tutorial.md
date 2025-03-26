@@ -70,7 +70,7 @@ Note: these data models and reports aren't yet available,
 
 ## Create silver and gold layers of Sales Analytics Medallion Architecture
 
-1.	Download the Notebook file <<>> and upload it to your workspace.
+1.	Download the Notebook file and upload it to your workspace.
 
     :::image type="content" source="./media/tutorial/create-silver-layer.png" alt-text="Screenshot showing silver materialized view creation." border="true" lightbox="./media/tutorial/create-silver-layer.png":::
 
