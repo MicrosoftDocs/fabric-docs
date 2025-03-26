@@ -14,7 +14,7 @@ This page contains information on how the Fabric AI Skill usage is billed and re
 ## Consumption rate
 The table below defines consumption in Capacity Units (CUs), when AI Skill leverages Azure OpenAI models to process and generate responses.
 
-| **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
+| **Metrics App Operation Name** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
 |AI Query |The input prompt |Per 1,000 Tokens |100 CU seconds|
 |AI Query |The output completion |Per 1,000 Tokens|400 CU seconds|
@@ -22,13 +22,11 @@ The table below defines consumption in Capacity Units (CUs), when AI Skill lever
 In addition to token consumption, the AI Skill may generate and execute queries as part of answering user requests. The execution of these queries is billed separately to the corresponding query engine artifact. For example, if a query is generated for a Data Warehouse, its execution is billed through the SQL Query operation.
 
 ## Monitor the usage  
-The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for AI Skill operations under the name "AI Query" Additionally, AI Skill users are able to view a summary of their billing charges for the AI skill usage under the "LlmPlugin" item kind.
+The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for AI Skill operations under the name *AI Query* Additionally, AI Skill users are able to view a summary of their billing charges for the AI skill usage under the "LlmPlugin" item kind.
 
 ## Capacity utilization type 
 
-The AI-related activity within the AI skill is classified as "background jobs" to handle a higher volume of AI skill requests during peak hours.
-
-Fabric is designed to provide lightning-fast performance by allowing operations to access more CU (Capacity Units) resources than are allocated to capacity. Fabric smooths or averages the CU usage of an "interactive job" over a minimum of 5 minutes and a "background job" over a 24-hour period. According to the Fabric throttling policy, the first phase of throttling begins when a capacity has consumed all its available CU resources for the next 10 minutes.
+The AI-related activity within the AI skill is classified as *background jobs* to handle a higher volume of AI skill requests during peak hours.
 
 For example, assume each AI Skill request has 2,000 input tokens and 500 output tokens. The price for one AI Skill request is calculated as follows: (2,000 × 100 + 500 × 400) / 1,000 = 400.00 CU seconds = 6.67 CU minutes. The cost of executing the AI-generated queries is billed through the corresponding query engine running the query.
 
@@ -36,7 +34,7 @@ Since AI Skill is a background job, each AI Skill request (~6.67 CU minute job) 
 
 ## Region mapping 
 
-The AI Skill is powered by Azure OpenAI large language models that are currently deployed to [limited data centers](../data-science/ai-services/ai-services-overview.md#available-regions). However, customers can [enable cross-geo process tenant settings](../admin/service-admin-portal-copilot.md) to use Copilot and the AI Skill by processing their data in another region where Azure OpenAI Service is available. This region could be outside of the user's geographic region, compliance boundary, or national cloud instance. While performing region mapping, we prioritize data residency as the foremost consideration and attempt to map to a region within the same geographic area whenever feasible. 
+The AI Skill is powered by Azure OpenAI large language models that are deployed to [limited data centers](../data-science/ai-services/ai-services-overview.md#available-regions). However, customers can [enable cross-geo process tenant settings](../admin/service-admin-portal-copilot.md) to use Copilot and the AI Skill. This setting enables customer data to be processed in another region where the Azure OpenAI Service is available. This region could be outside of the user's geographic region, compliance boundary, or national cloud instance. While performing region mapping, we prioritize data residency as the foremost consideration and attempt to map to a region within the same geographic area whenever feasible. 
 
 The cost of Fabric Capacity Units can vary depending on the region. Regardless of the consumption region where GPU capacity is utilized, customers are billed based on the Fabric Capacity Units pricing in their billing region. For example, if a customer's requests are mapped from `region 1` to `region 2`, with `region 1` being the billing region and `region 2` being the consumption region, the customer is charged based on the pricing in `region 1`.
 
@@ -47,4 +45,4 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 ## Related content
 
 - [Overview of the AI Skill in Fabric](../data-science/concept-ai-skill.md)
-- [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
+- [Background jobs in Fabric](../enterprise/fabric-operations#background-operations.md)
