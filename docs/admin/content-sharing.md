@@ -24,7 +24,7 @@ The report is designed for admins to analyze their Fabric inventory in various w
 
 Use the slicers pane on the left side of the report to filter inventory on key attributes such as workspace, item type, and capacity. The filters pane on the right side of the report provides more options to further manipulate the data.
 
-To switch pages, use the navigation buttons at the top right of the report. Some buttons are enabled only after a certain action is taken. The Details page button is enabled after any visual element is selected, allowing users to drill through for a tabular view of their data. The Workspace page button enables only when a  _Workspace name_ value is selected on a visual.
+To switch pages, use the navigation buttons at the top right of the report. Some buttons are enabled only after a certain action is taken. The Details page button is enabled after any visual element is selected, allowing users to drill through for a tabular view of their data.
 
 ## Report pages
 
@@ -56,9 +56,11 @@ Use the Inventory Overview page to quickly answer questions such as:
 
 On the Analysis page, you're provided with a decomposition tree visual to aggregate and drill into your inventory.
 
-Using the toggle at the top of the page, you can decide whether to break down your inventory by total items or by total access count. Definitions for these measures are provided in the [Measures](#measures) section.
+Using the toggle at the bottom left of the page, you can decide whether to break down your inventory by total items or by total access count. Definitions for these measures are provided in the [Measures](#measures) section.
 
-You can break down either measure across different item-related dimensions, including item type, workspace name, endorsement, and more.
+You can then break down either measure across different item-related dimensions, including item type, workspace name, endorsement, and more.
+
+The Analysis page can be accessed directly using the page navigation buttons, or by drilling through from other pages in the report.
 
 #### Example
 
@@ -66,11 +68,13 @@ In a large organization, the Analysis page can be helpful for analyzing item dis
 
 To drill into the details of a specific scenario from the decomposition tree visual:
 
-1. Right-click the data point on the decomposition tree visual that you want to drill into.
+1. With the *Analyze by* toggle set to *Total items*, you select the following dimensions: *Capacity name*, *Workspace name*, and *Item type*.
 
-2. From the *Drill through* menu, select the Workspace or Details page.
+2. Right-click the data point on the decomposition tree visual that you want to drill into.
 
-After you drill through, the target page and its visuals are prefiltered to the specific subset of data selected in the previous page.
+3. From the *Drill through* menu, select the Workspace or Details page.
+
+After you drill through, the target page and its visuals are prefiltered to the subset of data selected from the Analysis page.
 
 ### Workspace page
 
@@ -92,25 +96,26 @@ To drill into the details of a specific workspace:
 
 2. After drilling through, you can see detailed metrics for the selected workspace, with the ability to drill through even further to the *Details* page.
 
-3. Once on the Workspace page, users can select the _Reset filters_ button to analyze metrics for other workspaces or for the entire tenant.
+3. Once on the Workspace page, users can select additional attributes from the available slicers or the filters pane to further manipulate the data.
 
-You can only get to the *Workspace* page by drilling through from another page. In the next release, the Workspace page will be enabled as a summary page for easier access.
+In addition to drilling through, users can also access the *Workspace* page directly using the page navigation buttons.
 
 ### Details page
 
 The Details page highlights item distribution in a tabular format.
 
-You can only navigate to the *Details* page by drilling through from other pages in the report. To drill through, right-click a value in any visual, then select the *Details* page from the "Drill through" menu. After drilling through to the *Details* page, you can see information for the specific subset of items.
+You can only navigate to the *Details* page by drilling through from other pages in the report. To drill through, right-click a value in any visual, then select the *Details* page from the *Drill through* menu. After drilling through to the *Details* page, you can see information for the specific subset of items.
 
 You can export data from the Details page, or any other visual, by clicking _More options_ in the visual header and selecting _Export data_.
+
+You can also navigate directly to an item or its workspace using the hyperlinks in the data table.
+
+> [!NOTE]
+> Workspaces can only be accessed if you have a valid workspace role, else you'll be redirected to your *My workspace*. Item urls currently only support legacy Power BI items and some Fabric items.
 
 ## Measures
 
 The following measures are used in visuals throughout the *content sharing* report and are also available in the semantic model.
-
-Measure calculations consider filter context, so measure values change as you apply filters or interact with other visuals.
-
-Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts also include service principals and sharing links for a specific persons or group.
 
 | Measure name    | Description |
 | -------- | ------- |
@@ -119,22 +124,11 @@ Access counts include access to an item through _Manage permissions_, or access 
 | Total capacities    | The number of capacities across the entire tenant.    |
 | Total workspaces  | The number of workspaces across the entire tenant.    |
 | User access count | The number of individual users and service principals with access to an item.    |
-| Group access count    | The number of group members and service principals with access to an item.   |
-| Total access count    | The number of individual users, service principals, and group members with access to an item.   |
+| Group access count    | The number of group members and service principals with access to an item. Group owners aren't included in *group access counts*. Group access counts are calculated by flattening membership of all nested groups, so users aren't double counted if they're members of multiple groups in a nest. *Group access counts* also include +1 for each nested group in a nest. |
+| Total access count    | The number of individual users, service principals, and group members with access to an item. *Total access counts* for workspaces, capacities, and domains are a sum of access counts for all underlying items, not the container itself. *Total access counts* include both individual access to an item and access through a group, so users are double counted if they have access to an item in both scenarios.   |
 
-Group owners aren't included in *group access counts*. Group access counts are calculated by flattening membership of all nested groups, so users aren't double counted if they're members of multiple groups in a nest. *Group access counts* also include +1 for each nested group in a nest.
-
-*Access counts* for workspaces, capacities, and domains are a sum of access counts for all underlying items, not the container itself.
-
-*Total access counts* include both individual access to an item and access through a group, so users are double counted if they have access to an item in both scenarios.
-
-## Upcoming fixes and enhancements
-
-* To drill through from the Analysis page decomp visual, you must right-click a node and select the desired drill through target page. The page navigation buttons don't always enable even when decomp visual elements are selected.
-
-* In the next release of the report, the Workspace page will always be enabled, and its drill through fields will be extended to other workspace-related fields such as *Workspace type*. The Analysis page will be enabled as a drill through page.
-
-* More fields will be added to the Analysis page decomp visual. 
+> [!NOTE]
+> Access counts include access to an item through _Manage permissions_, or access inherited through a workspace role. Access counts also include service principals and sharing links for a specific persons or group.
 
 ## Considerations and limitations
 
@@ -149,6 +143,8 @@ This section lists the report's considerations and limitations.
 * Deleted workspaces with extended retention don't appear in the report after 30 days. They can be seen in the admin portal until they're permanently deleted.
 
 * Items created and deleted within a 24 hour period may have incomplete information.
+
+* To drill through from the Analysis page decomp visual, you must right-click a node and select the desired drill through target page. The page navigation buttons don't always enable even when decomp visual elements are selected.
 
 * Reports and dashboards embedded in apps appear twice. Use the _Item ID_ value to differentiate.
 
