@@ -25,7 +25,7 @@ You can add a real-time weather source to an eventstream to stream real-time wea
 
 On the **Select a data source** page, search for and select **Connect** on the **Real-time weather** tile.
 
-:::image type="content" source="./media/add-source-realtime-weather/select-realtime-weather.png" alt-text="Screenshot that shows the selection of Real-time weather as the source type in the Select a data source wizard." lightbox="./media/add-source-realtime-weather/select-realtime-weather.png":::
+:::image type="content" source="./media/add-source-real-time-weather/select-real-time-weather.png" alt-text="Screenshot that shows the selection of Real-time weather as the source type in the Select a data source wizard." lightbox="./media/add-source-real-time-weather/select-real-time-weather.png":::
 
 ## Configure Real-time weather
 
@@ -34,12 +34,12 @@ On the **Select a data source** page, search for and select **Connect** on the *
 ## View updated eventstream
 1. You see the Real-time weather source added to your eventstream in **Edit mode**. Select **Publish** to publish the changes and begin streaming Real-time weather data to the eventstream.
 
-    :::image type="content" source="media/add-source-realtime-weather/edit-mode.png" alt-text="A screenshot of the added Real-time weather source in Edit mode with the Publish button highlighted.":::
+    :::image type="content" source="media/add-source-real-time-weather/edit-mode.png" alt-text="A screenshot of the added Real-time weather source in Edit mode with the Publish button highlighted.":::
 1. After you complete these steps, the source is available for visualization in the **Live view**. Select the **Real-time weather** tile in the diagram to see the page similar to the following one.
 
-    :::image type="content" source="media/add-source-realtime-weather/live-view.png" alt-text="A screenshot of the published eventstream with Real-time weather source in Live View.":::
+    :::image type="content" source="media/add-source-real-time-weather/live-view.png" alt-text="A screenshot of the published eventstream with Real-time weather source in Live View.":::
 
-[!INCLUDE [sources-do-not-support-data-preview](./includes/sources-do-not-support-data-preview.md)]
+[!INCLUDE [sources-do-not-support-data-preview](./includes/sources-don't-supported-data-preview.md)]
 
 
 ## Related content
