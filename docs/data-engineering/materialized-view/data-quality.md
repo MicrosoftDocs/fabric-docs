@@ -1,6 +1,6 @@
 ---
-title: "Data quality in Fabric Materialized View"
-description: Learn about Data quality in Fabric Materialized View
+title: "Data quality in Fabric materialized view"
+description: Learn about data quality in Fabric materialized view
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviwer: nijelsf
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 03/06/2025
 ---
 
-# Data quality in Fabric Materialized View
+# Data quality in Fbric materialized view
 
 In the era of big data, the Medallion Architecture has gained prominence as a robust framework for managing and processing data across different stages of refinement, from raw data to highly curated datasets. This structured approach not only enhances data manageability but also ensures that data quality is maintained throughout the data lifecycle.
 
@@ -37,7 +37,7 @@ The following actions can be taken when constraints are defined.
 
 The following example defines the constraint `cust_blank`, which verifies if the `customerName` field isn't blank. If it's blank, MV excludes those rows from processing. 
 
-```
+```SQL
 CREATE MATERIALIZED VIEW IF NOT EXISTS silver.customers_enriched  
 
 (CONSTRAINT cust_blank CHECK (customerName is not null) on MISMATCH DROP) 
@@ -69,4 +69,6 @@ ON c.customerID = o.customerID;
 
 To update the Data quality constraints, you need to recreate the MV.
  
-## Next steps
+## Next step
+
+* [Refresh Fabric materialzed view](./refresh-fabric-materialzed-view.md)

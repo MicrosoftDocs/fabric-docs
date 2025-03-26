@@ -1,6 +1,6 @@
 ---
-title: "Create Materialized View"
-description: Learn How to create a materialized view.
+title: "Create Fabric materialized view"
+description: Learn how to create a Fabric materialized view.
 ms.topic: how-to
 author: abhishjain002 
 ms.author: abhishjain
@@ -8,10 +8,10 @@ ms.reviwer: nijelsf
 ms.date: 03/09/2025
 ---
 
-# Create Materialized View
+# Create Fabric materialized view
 
 A materialized view is a stored result of a query. Unlike a regular view, which dynamically retrieves data from underlying tables, a materialized view physically stores precomputed data. This improves performance for complex queries or large datasets.
-For more information on Fabric Materialized Views, see overview of Fabric Materialized View.
+For more information on Fabric Materialized Views, see overview of Fabric materialized view.
 In this article, you learn how to create materialized views in Lakehouse in Microsoft Fabric.
 
 ## Prerequisites
@@ -19,7 +19,7 @@ In this article, you learn how to create materialized views in Lakehouse in Micr
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * A Lakehouse with [Lakehouse Schemas](../lakehouse-schemas.md) enabled
 
-## Create Materialized View
+## Create materialized view
 
 There are two ways to get started with Materialized view creation.
 
@@ -47,11 +47,11 @@ There are two ways to get started with Materialized view creation.
        :::image type="content" source="./media/create-materialized-view/open-notebook.png" alt-text="Screenshot showing how to open notebook." border="true" lightbox="./media/create-materialized-view/open-notebook.png":::
  
 
-## Materialized View with SQL Syntax
+## Materialized view with SQL syntax
 
 The following outlines the syntax for declaring a materialized Lakeview using SQL. 
 
-```
+```SQL
 CREATE MATERIALIZED VIEW [IF NOT EXISTS][workspace.lakehouse.schema].MV_Identifier 
 
 [( 
@@ -84,11 +84,11 @@ AS select_statement
 | COMMENT | string literal to describe the table.  |Optional  |
 | AS select_statement  | Query to populate the data in the MV using select statement | 	Mandatory  |
 
-## Define a Materialized view  
+## Define a materialized view  
 
 A materialized view can be defined from any table or another materialized view within the Lakehouse. The following example illustrates the definition of a materialized view named “customers_enriched” by joining the **customers** table with the **orders** table.
 
-```
+```SQL
 CREATE MATERIALIZED VIEW IF NOT EXISTS silver.customers_enriched AS 
 
 SELECT 
@@ -116,7 +116,7 @@ ON c.customerID = o.customerID;
  
 The example defines a materialized view called "customers_enriched," partitioned by the "city" column.
 
-```
+```SQL
 CREATE MATERIALIZED VIEW IF NOT EXISTS silver.customers_enriched 
 
 COMMENT "This is sample materilzied view for testing" 
@@ -178,8 +178,9 @@ Example
 
 ## Limitations 
 
-* DML statements aren't supported with Materialized Views. 
- 
+* DML statements aren't supported with materialized views. 
 
+## Next steps
 
-
+* [Data quality in Fabric materialized view](./data-quality.md)
+* [Refresh Fabric materialzed view](./refresh-fabric-materialzed-view.md)
