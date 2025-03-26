@@ -51,7 +51,7 @@ Without attemptId
 https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/logs?type=driver&meta=true&fileName={fileName} 
 ```
 
-### URI Parameters
+### URI parameters
 
 | Name | In | Required | Type | Description |
 | --- | --- | --- | --- | --- |
@@ -59,7 +59,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. | 
 | livyId | path | True | string uuid | The Livy session ID. | 
 | appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | 
-| attemptId | path | False | int | The attempt ID of that application ID. If not specified, the id of last attempt is used. | 
+| attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. | 
 | fileName | query | True | string | The specific file name to get the metadata of. | 
 
 ### Request body
@@ -138,7 +138,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. | 
 | livyId | path | True | string uuid | The Livy session ID. | 
 | appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | 
-| attemptId | path | False | int | The attempt ID of that application ID. If not specified, the id of last attempt is used. | 
+| attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. | 
 | filenamePrefix  | query | False  | string | The prefix of log file names to filter, could be either "stdout" or "stderr". |
 | offset, maxResults   | query | False  | int |  The starting index and number of log files to get:<br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br><br>- For maxResults, the valid range is 1 to 3,000. The default value is 3,000. |
 
@@ -226,9 +226,9 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. | 
 | livyId | path | True | string uuid | The Livy session ID. | 
 | appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | 
-| attemptId | path | False | int | The attempt ID of that application ID. If not specified, the id of last attempt is used. | 
+| attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. | 
 | fileName | query | True | string | The specific file name to get the content of |
-| containerId | query | False | string | The specific driver container ID. Leave it not specified if you aren't sure what the driver container id is. |
+| containerId | query | False | string | The specific driver container ID. Leave it not specified if you aren't sure what the driver container ID is. |
 | isDownload | query | False | bool | True to download the log file as a stream. Default as false. |
 | isPartial | query | False | bool | Only take effect when isDownload is true. True to download a part of file content according to the given offset and size. Default as false to download the whole file. |
 | offset, size   | query | False  | long | The starting offset (in byte) and the size (in byte) to read the file content. Only take effect when isDownload = true and isPartial = true <br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br><br>- For size, the default value is 1M (1024*1024) bytes. |

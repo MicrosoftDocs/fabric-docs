@@ -207,7 +207,7 @@ items:
     href: azure-fabric-diagnostic-emitters-log-analytics.md
   - name: Collect Spark logs and metrics with Azure Storage Account
     href: azure-fabric-diagnostic-emitters-azure-storage.md
-  - name: Collect Spark logs and metrics with Azure Event Hub 
+  - name: Collect Spark logs and metrics with Azure Event Hubs 
     href: azure-fabric-diagnostic-emitters-azure-event-hub.md
   - name: Spark Connectors
     items:

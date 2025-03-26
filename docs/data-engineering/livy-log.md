@@ -24,7 +24,7 @@ Item.Read.All or Item.ReadWrite.All or one of the following three groups (accord
 - SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All 
 - Lakehouse.Read.All or Lakehouse.ReadWrite.All 
 
-## Microsoft entra supported identities
+## Microsoft Entra supported identities
 
 This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-support) listed in this section.
 

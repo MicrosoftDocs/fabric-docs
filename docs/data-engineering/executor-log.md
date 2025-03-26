@@ -166,7 +166,7 @@ Without attemptId
 https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/logs?type=executor&containerId={containerId}&fileName={fileName}&size={size}
 ```
 
-### URI Parameters
+### URI parameters
 
 | Name | In | Required | Type | Description |
 | --- | --- | --- | --- | --- |
