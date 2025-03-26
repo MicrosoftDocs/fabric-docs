@@ -94,7 +94,7 @@ To understand the considerations and limitations of various lifecycle management
 
 **Description of problem**: I don't see the workspace I want to connect to in the branching out tab of the **Source control** panel.  
 **Cause**: The branching out list only shows workspaces that you have permission to view.  
-**Solution**: Check that the workspace you want exists and that you have permission to view it. If not, ask the owner of the workspace to give you permission to see [Branch limitations](./git-integration/git-integration-process.md#branching-out-limitations) for more information.
+**Solution**: Check that the workspace you want exists and that you have permission to view it. If not, ask the owner of the workspace to give you permission. See [Branch limitations](./git-integration/git-integration-process.md#branching-out-limitations) for more information.
 
 #### Branching out: My new workspace wasn’t synced with my Git repository
 
