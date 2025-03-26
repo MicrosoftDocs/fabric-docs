@@ -71,7 +71,7 @@ items:
         href: enable-workspace-monitoring.md      
 - name: Find Fabric items with the OneLake catalog
   href: ../governance/onelake-catalog.md
-- name: Copilot & AI in Fabric
+- name: Copilot and AI in Fabric
   items:
   - name: Copilot in Fabric overview
     href: copilot-fabric-overview.md
