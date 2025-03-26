@@ -125,6 +125,8 @@ items:
       href: ../data-science/ai-skill-tenant-switch.md
     - name: Copilot settings
       href: service-admin-portal-copilot.md
+    - name: Azure Maps settings
+      href: service-admin-portal-azure-maps-services.md
     - name: Integration settings
       href: service-admin-portal-integration.md
     - name: Power BI visuals
