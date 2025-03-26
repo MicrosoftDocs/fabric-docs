@@ -179,7 +179,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
 
-   ### [GitHub (User or service prinicipals)](#tab/github)
+   ### [GitHub (User or service principal)](#tab/github)
 
     ```powershell
     $global:baseUrl = "https://api.fabric.microsoft.com/v1"
