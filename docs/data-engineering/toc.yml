@@ -349,3 +349,11 @@ items:
     items:   
     - name: Data quality in Fabric Materialized View
       href: ./materialized-view/data-quality.md
+  - name: Manage Fabric materialized view
+    items:   
+    - name: View DAG
+      href: ./materialized-view/view-dag.md
+  - name: Tutorial
+    items:   
+    - name: Microsoft Fabric materialized views tutorial
+      href: ./materialized-view/tutorial.md 
