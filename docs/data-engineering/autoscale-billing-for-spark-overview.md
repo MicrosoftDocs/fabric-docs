@@ -15,9 +15,6 @@ Autoscale Billing for Spark introduces a new pay-as-you-go billing model for Apa
 
 This model complements the existing capacity-based model in Fabric, allowing organizations to choose the right compute model for their workloads.
 
-> [!NOTE]
-> Autoscale Billing is available for workspaces hosted on F2 capacity or higher and must be explicitly enabled per workspace.
-
 ## Choosing between Autoscale Billing and Capacity Model
 
 | Feature               | Capacity Model                        | Autoscale Billing for Spark            |
