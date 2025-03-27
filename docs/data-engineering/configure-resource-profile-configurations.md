@@ -74,9 +74,8 @@ spark.conf.set("spark.fabric.resourceProfile", "readHeavyForSpark")
 
 This approach provides runtime flexibility to change behavior based on job logic, schedule, or workload type—allowing different profiles for different parts of a notebook.
 
-
-
-[!NOTE] If both environment and runtime configurations are set, runtime settings take precedence.
+> [!NOTE]  
+> If both environment and runtime configurations are set, runtime settings take precedence.
 
 
 ## What happens by default?
