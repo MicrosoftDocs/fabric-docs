@@ -4,7 +4,7 @@ description: This article contains a list of current limitations in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: joanpo
-ms.date: 09/26/2024
+ms.date: 03/22/2025
 ms.topic: conceptual
 ms.custom:
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
@@ -30,11 +30,12 @@ For more limitations in specific areas, see:
 - [Clone table](clone-table.md#limitations)
 - [Connectivity](connectivity.md#considerations-and-limitations)
 - [Data types in Microsoft Fabric](data-types.md)
-- [Semantic models](semantic-models.md#limitations)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
+- [Migration Assistant](migration-assistant.md#limitations)
 - [Pause and resume in Fabric data warehousing](pause-resume.md#considerations-and-limitations)
+- [Semantic models](semantic-models.md#limitations)
 - [Share your data and manage permissions](share-warehouse-manage-permissions.md#limitations)
-- [Limitations in source control](source-control.md#limitations-in-source-control)
+- [Source control](source-control.md#limitations-in-source-control)
 - [Statistics](statistics.md#limitations)
 - [Tables](tables.md#limitations)
 - [Transactions](transactions.md#limitations)
