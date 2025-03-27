@@ -14,7 +14,7 @@ Operational run details encompass the various parameters and metrics tracked dur
 
 ## Activity Panel
 
-The Activity Panel is the  bottom panel where user can get the information of the following:
+The Activity Panel is the  bottom panel in the DAG UI where user can get the information of the following:
 
 *	Materialized Views which are a part of the DAG
 *	The Status of the DAG
