@@ -71,7 +71,7 @@ If your data engineering or data science workloads require a higher quota than y
 5. Edit the quota limit by entering the new CU limit that you intend to acquire.
 6. Submit your quota request.
 
-:::image type="content" source="media\autoscale-billing-overview\autoscale-quotas.gif" alt-text="Diagram showing how Autoscale Billing for Spark operates separately from Fabric capacity." lightbox="media\autoscale-billing-overview\autoscale-quotas.gif":::
+:::image type="content" source="media\autoscale-billing-overview\autoscale-quotas.gif" alt-text="Diagram showing the Autoscale setting as part of the capacity settings page with a toggle and a slider to set the maximum capacity units." lightbox="media\autoscale-billing-overview\autoscale-quotas.gif":::
 
 Once the request is approved, the new CU limits will be refreshed and applied to your Fabric capacity. This ensures that your Autoscale Billing model can accommodate increased demand without interrupting Spark workloads.
 
@@ -79,4 +79,3 @@ Once the request is approved, the new CU limits will be refreshed and applied to
 ## Next steps
 
 - [Configure Autoscale Billing for Spark](configure-autoscale-billing.md)
-- [Monitor usage and optimize spend](monitor-autoscale-usage.md)
