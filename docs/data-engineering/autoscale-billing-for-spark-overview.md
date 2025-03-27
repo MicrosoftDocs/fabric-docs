@@ -42,8 +42,6 @@ When enabled, Autoscale Billing changes how Spark workloads are handled:
 - Once the CU limit is reached, Spark jobs will queue (batch) or throttle (interactive).
 - Spark usage and cost are reported separately in the **Fabric Capacity Metrics App** and **Azure Cost Analysis**.
 
-:::image type="content" source="media\autoscale-billing-overview\autoscale-billing-diagram.gif" alt-text="Diagram showing how Autoscale Billing for Spark operates separately from Fabric capacity." lightbox="media\autoscale-billing-overview\autoscale-billing-diagram.gif":::
-
 > [!IMPORTANT]
 > Autoscale Billing is **opt-in per Capacity** and **does not burst from or fall back to** the Fabric capacity. It is purely serverless and pay-as-you-go. You enable the autoscale billing and you set the max limits and only get charged for CUs consumed by the jobs that you run.
 
