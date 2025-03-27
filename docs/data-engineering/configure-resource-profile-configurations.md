@@ -74,6 +74,8 @@ spark.conf.set("spark.fabric.resourceProfile", "readHeavyForSpark")
 
 This approach provides runtime flexibility to change behavior based on job logic, schedule, or workload type—allowing different profiles for different parts of a notebook.
 
+
+
 [!NOTE] If both environment and runtime configurations are set, runtime settings take precedence.
 
 
@@ -81,12 +83,10 @@ This approach provides runtime flexibility to change behavior based on job logic
 
 All newly created workspaces in Microsoft Fabric default to the writeHeavy profile. This ensures:
 
-> Efficient handling of data ingestion pipelines
-
-> Optimized throughput for batch and streaming jobs
-
-> Better out-of-the-box performance for common ETL workloads
-
+- Efficient handling of data ingestion pipelines  
+- Optimized throughput for batch and streaming jobs  
+- Better out-of-the-box performance for common ETL workloads
+  
 If your workload differs (e.g., interactive queries, dashboard serving), you can update the default settings at the environment level or override them dynamically during execution.
 
 
