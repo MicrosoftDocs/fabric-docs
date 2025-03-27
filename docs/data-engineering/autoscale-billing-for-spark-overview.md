@@ -60,6 +60,22 @@ The queue size is directly tied to the CU limit:
 
 This model ensures that resource allocation remains predictable and controllable while still supporting high-volume, bursty workloads.
 
+## Request additional quotas
+
+If your data engineering or data science workloads require a higher quota than your current maximum Capacity Unit (CU) limit, you can request an increase via the Azure Quotas page:
+
+1. Navigate to the [Azure portal](https://portal.azure.com) and sign in.
+2. In the search bar, type and select **Azure Quotas**.
+3. Choose **Microsoft Fabric** from the list of available services.
+4. Select the subscription associated with your Fabric capacity.
+5. Edit the quota limit by entering the new CU limit that you intend to acquire.
+6. Submit your quota request.
+
+:::image type="content" source="media\autoscale-billing-overview\autoscale-quotas.gif" alt-text="Diagram showing how Autoscale Billing for Spark operates separately from Fabric capacity." lightbox="media\autoscale-billing-overview\autoscale-quotas.gif":::
+
+Once the request is approved, the new CU limits will be refreshed and applied to your Fabric capacity. This ensures that your Autoscale Billing model can accommodate increased demand without interrupting Spark workloads.
+
+
 ## Next steps
 
 - [Configure Autoscale Billing for Spark](configure-autoscale-billing.md)
