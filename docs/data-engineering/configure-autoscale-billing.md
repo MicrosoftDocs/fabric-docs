@@ -99,5 +99,4 @@ Once the request is approved, the new CU limits will be refreshed and applied to
 
 ## Related content
 
-- [Overview of Autoscale Billing for Spark](autoscale-billing-overview.md)
-- [Monitor usage and optimize spend](monitor-autoscale-usage.md)
+- [Overview of Autoscale Billing for Spark](autoscale-billing-for-spark-overview.md)
