@@ -70,6 +70,7 @@ You can also override the default resource profile during notebook execution or 
 
 ```python
 spark.conf.set("spark.fabric.resourceProfile", "readHeavyForSpark")
+```
 
 This approach provides runtime flexibility to change behavior based on job logic, schedule, or workload type—allowing different profiles for different parts of a notebook.
 
