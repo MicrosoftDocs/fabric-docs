@@ -7,9 +7,7 @@ ms.topic: how-to
 ms.date: 11/13/2024
 ---
 
-# Set alerts on OneLake events in Real-Time hub (preview)
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+# Set alerts on OneLake events in Real-Time hub
 
 This article describes how to set alerts on OneLake events in Real-Time hub.
 
@@ -65,7 +63,7 @@ On the **Set alert** page, follow these steps:
             :::image type="content" source="./media/create-streams-onelake-events/select-tables.png" alt-text="Screenshot that shows the selection of all tables." lightbox="./media/create-streams-onelake-events/select-tables.png":::       
 
         > [!NOTE]
-        > OneLake events are supported for data in OneLake. However, events for data in OneLake via shortcuts are not yet available.
+        > OneLake events are supported for data in OneLake. However, events for data in OneLake via shortcuts aren't yet available.
     
     1. Now, on the **Configure connection settings** page, you can add filters to set the filter conditions by selecting fields to watch and the alert value. To add a filter:
         1. Select **+ Filter**. 

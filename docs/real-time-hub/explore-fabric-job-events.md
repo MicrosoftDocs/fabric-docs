@@ -7,9 +7,7 @@ ms.topic: how-to
 ms.date: 11/12/2024
 ---
 
-# Explore Job events in Fabric Real-Time hub (preview)
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+# Explore Job events in Fabric Real-Time hub
 
 Real-Time hub allows you to discover and subscribe to changes produced when Fabric runs a job. For example, you can react to changes when refreshing a semantic model, running a scheduled pipeline, or running a notebook. Each of these activities can generate a corresponding job, which in turn generates a set of corresponding job events. 
 
@@ -98,6 +96,9 @@ The `data` object has the following properties:
 | `data.jobScheduleTime` | timestamp | The job's schedule time. | `2017-06-26T18:41:00.9584103Z` |
 | `data.jobStartTime` | timestamp | The job's start time. | `2017-06-26T18:41:00.9584103Z` |
 | `data.jobEndTime` | timestamp | The job's end time. | `2017-06-26T18:41:00.9584103Z` |
+
+## Subscribe permission
+For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
 
 ## Related content
 
