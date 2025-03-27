@@ -78,6 +78,23 @@ After enabling Autoscale Billing, use Azure’s built-in cost management tools t
 
    :::image type="content" source="media/autoscale-configure/autoscale-cost-analysis.png" alt-text="Screenshot showing how to track Spark usage in Azure Cost Analysis." lightbox="media/autoscale-configure/autoscale-cost-analysis.png":::
 
+
+## Request additional quotas
+
+If your data engineering or data science workloads require a higher quota than your current maximum Capacity Unit (CU) limit, you can request an increase via the Azure Quotas page:
+
+1. Navigate to the [Azure portal](https://portal.azure.com) and sign in.
+2. In the search bar, type and select **Azure Quotas**.
+3. Choose **Microsoft Fabric** from the list of available services.
+4. Select the subscription associated with your Fabric capacity.
+5. Edit the quota limit by entering the new CU limit that you intend to acquire.
+6. Submit your quota request.
+
+:::image type="content" source="media/autoscale-configure/autoscale-quotas.gif" alt-text="Screenshot showing how to track Spark usage in Azure Cost Analysis." lightbox="media/autoscale-configure/autoscale-quotas.gif":::
+
+Once the request is approved, the new CU limits will be refreshed and applied to your Fabric capacity. This ensures that your Autoscale Billing model can accommodate increased demand without interrupting Spark workloads.
+
+---
 ---
 
 ## Related content
