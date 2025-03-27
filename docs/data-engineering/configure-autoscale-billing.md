@@ -94,8 +94,6 @@ If your data engineering or data science workloads require a higher quota than y
 
 Once the request is approved, the new CU limits will be refreshed and applied to your Fabric capacity. This ensures that your Autoscale Billing model can accommodate increased demand without interrupting Spark workloads.
 
----
----
 
 ## Related content
 
