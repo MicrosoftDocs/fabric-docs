@@ -15,7 +15,7 @@ LocalizationGroup: Administration
 
 Azure Maps services and related features are managed through settings in the **Azure Maps services** tenant settings group. There are various settings that govern user access and data processing policies. Some of these settings are enabled by default, while others need to be activated by the Fabric tenant administrator.
 
-For information about how to get to the Fabric tenant settings, see [How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
+For information about how to get to the Fabric tenant settings, see [How to get to the tenant settings](https://go.microsoft.com/fwlink/?linkid=2310613).
 
 ## Users can use Azure Maps services
 
