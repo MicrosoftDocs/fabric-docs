@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 03/26/2025
 ---
 
-# Configure Resource Profile Configurations in Microsoft Fabric (Preview)
+# Configure Resource Profile Configurations in Microsoft Fabric
 
 Microsoft Fabric now supports **predefined Spark resource profiles**—a simple and powerful way for data engineers to optimize Spark configurations based on workload needs. These profiles enable users to quickly apply tuning best practices for common patterns like read-heavy, write-heavy, or hybrid workloads using a property bag-based approach.
 
