@@ -90,7 +90,7 @@ If your data engineering or data science workloads require a higher quota than y
 5. Edit the quota limit by entering the new CU limit that you intend to acquire.
 6. Submit your quota request.
 
-:::image type="content" source="media/autoscale-configure/autoscale-quotas.gif" alt-text="Screenshot showing how to track Spark usage in Azure Cost Analysis." lightbox="media/autoscale-configure/autoscale-quotas.gif":::
+:::image type="content" source="media/autoscale-configure/autoscale-quotas.gif" alt-text="Graphic showing how to increase quota for your Fabric resource by acquiring more quotas using the Azure Quotas page in Azure Portal." lightbox="media/autoscale-configure/autoscale-quotas.gif":::
 
 Once the request is approved, the new CU limits will be refreshed and applied to your Fabric capacity. This ensures that your Autoscale Billing model can accommodate increased demand without interrupting Spark workloads.
 
