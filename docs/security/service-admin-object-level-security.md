@@ -24,11 +24,11 @@ To create roles on **Power BI Desktop** semantic models, use [external tools](/p
 
 1. On the **External Tools** ribbon, select **Tabular Editor**. If you don’t see the Tabular Editor button, install the [program](https://tabulareditor.com). When open, Tabular Editor automatically connects to your model.
 
-  :::image type="content" source="./media/service-admin-object-level-security/external-tools.png" alt-text="Screenshot of External tools Menu.":::
+   :::image type="content" source="./media/service-admin-object-level-security/external-tools.png" alt-text="Screenshot of External tools Menu.":::
 
 1. In the **Model** view, select the drop-down menu under **Roles**. The roles you created in step 1 appear.
 
-  :::image type="content" source="./media/service-admin-object-level-security/display-roles.png" alt-text="Screenshot of roles names being displayed under roles folder in model view.":::
+   :::image type="content" source="./media/service-admin-object-level-security/display-roles.png" alt-text="Screenshot of roles names being displayed under roles folder in model view.":::
 
 1. Select the role you want to enable an OLS definition for, and expand the **Table Permissions**.
 
@@ -55,7 +55,7 @@ To create roles on **Power BI Desktop** semantic models, use [external tools](/p
 
 1. After you define object-level security for the roles, save your changes.
 
-  :::image type="content" source="./media/service-admin-object-level-security/save-roles.png" alt-text="Screenshot of saving role definitions.":::
+   :::image type="content" source="./media/service-admin-object-level-security/save-roles.png" alt-text="Screenshot of saving role definitions.":::
 
 1. In Power BI Desktop, publish your semantic model to the Power BI Service.
 
