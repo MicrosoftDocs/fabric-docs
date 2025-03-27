@@ -39,7 +39,7 @@ Use the following steps to enable and manage Autoscale Billing settings for a Fa
    
    c. Use the slider to set the **Maximum Capacity Units (CU)** you want to allocate to Spark jobs.
 
-      - You can set up to a maximum limit on the slider and this limit is based on the Quota approved for your Azure subscription and its also based on the type of subscription you are using. You could increase the quota by following the stepe mentioned in the **Quota Management** section in this document.
+      - You can set up to a maximum limit on the slider and this limit is based on the Quota approved for your Azure subscription and it’s also based on the type of subscription you are using. You could increase the quota by following the steps mentioned in the **Quota Management** section in this document.
       - You are only billed for the compute used, up to this limit.
 
    :::image type="content" source="media/autoscale-configure/autoscale-billing-settings.png" alt-text="Screenshot showing the Autoscale Billing toggle and CU slider in Capacity Settings." lightbox="media/autoscale-configure/autoscale-billing-settings.png":::
@@ -53,7 +53,7 @@ Use the following steps to enable and manage Autoscale Billing settings for a Fa
 
 After enabling Autoscale Billing, you can downsize your Fabric capacity if Spark workloads are no longer using it. Follow these steps in the **Azure portal**:
 
-1. Go to the [Azure Portal](https://ms.portal.azure.com/auth/login/).
+1. Go to the [Azure portal](https://ms.portal.azure.com/auth/login/).
 2. Search for and select your **Fabric capacity**.
 3. Click **Pause** to temporarily stop the capacity.
 
@@ -90,7 +90,7 @@ If your data engineering or data science workloads require a higher quota than y
 5. Edit the quota limit by entering the new CU limit that you intend to acquire.
 6. Submit your quota request.
 
-:::image type="content" source="media/autoscale-configure/autoscale-quotas.gif" alt-text="Graphic showing how to increase quota for your Fabric resource by acquiring more quotas using the Azure Quotas page in Azure Portal." lightbox="media/autoscale-configure/autoscale-quotas.gif":::
+:::image type="content" source="media/autoscale-configure/autoscale-quotas.gif" alt-text="Graphic showing how to increase quota for your Fabric resource by acquiring more quotas using the Azure Quotas page in Azure portal." lightbox="media/autoscale-configure/autoscale-quotas.gif":::
 
 Once the request is approved, the new CU limits will be refreshed and applied to your Fabric capacity. This ensures that your Autoscale Billing model can accommodate increased demand without interrupting Spark workloads.
 
