@@ -22,12 +22,13 @@ The Activity Panel is the  bottom panel in the DAG UI where user can get the inf
 *	The Duration of the DAG
 *	Search Bar for the nodes
 
-**Image1**
+:::image type="content" source="./media/operational-run-details/activity-panel.png" alt-text="Screenshot showing activity panel in a DAG UI." border="true" lightbox="./media/operational-run-details/activity-panel.png":::
+
 
 User can click on any node in the DAG UI or the Materialized View name in the Activity Panel
 to zoom in on the end to end flow of a particular node.
 
-**Image2**
+:::image type="content" source="./media/operational-run-details/activity-panel-node.png" alt-text="Screenshot showing end to end flow of a node, on clicking a node name in activity panel in a DAG UI." border="true" lightbox="./media/operational-run-details/activity-panel-node.png":::
 
 ## Details Panel
 
@@ -42,7 +43,7 @@ user clicks on a particular node. The Details panel has the following informatio
 *	Status
 *	Detailed Logs with link to Monitoring hub for debugging
 
-**Image3**
+:::image type="content" source="./media/operational-run-details/end-to-end.png" alt-text="Screenshot showing details panel in a DAG UI." border="true" lightbox="./media/operational-run-details/end-to-end.png":::
 
 On clicking the **More Details** link, the user is navigated to the Monitoring Hub Page for job level monitoring.
 
