@@ -53,7 +53,7 @@ The following section lists various cores-based limits for Spark workloads based
 
 
 > [!Important]
-> The above table only applies when using Fabric Capacity for your Spark jobs. If you have enabled Autoscale based billing the Spark jobs are offloaded from your Fabric capacity and there will be no bursting on smoothing. The total spark vcores will be 2x the Maximum Capacity Units you have configured as part of your Autoscale settings in the Capacity settings page.
+> The table applies only to Spark jobs running on Fabric Capacity. With autoscale billing enabled, Spark jobs run separately from Fabric capacity, avoiding bursting or smoothing. The total Spark vCores will be twice the maximum capacity Units set in autoscale settings.
 
 Example calculation:
 *F64 SKU* offers *128 Spark VCores*. The burst factor applied for a F64 SKU is 3, which gives a total of 384 Spark Vcores. The burst factor is only applied to help with concurrency and does not increase the max cores available for a single Spark job.  That means *a single Notebook or Spark job definition or lakehouse job* can use a pool configuration of max 128 vCores and 3 jobs with the same configuration can be run concurrently. If notebooks are using a smaller compute configuration, they can be run concurrently till the max utilization reaches the 384 SparkVcore limit.
