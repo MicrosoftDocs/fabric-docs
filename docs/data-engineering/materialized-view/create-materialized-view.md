@@ -78,7 +78,7 @@ AS select_statement
 | MV_Identifier|	Name of the materialized view|	Mandatory |
 | CONSTRAINT  |	Keyword to define the constraint for data quality. Follows with a user defined constraint name. Constraint is at MV level  |	Optional |
 | CHECK  |	Used to enforce the condition defined based on the certain column values. 	 |Optional |
-| ON MISMATCH  |	Used to define the action to be taken if the given constraint is violated. Default behavior without this clause is FAIL action.	 | Optioanl  |
+| ON MISMATCH  |	Used to define the action to be taken if the given constraint is violated. Default behavior without this clause is FAIL action.	 | Optional  |
 | PARTITIONED BY	 | Partitions are created based on the column specified	  | Optional  |
 | TBLPROPERTIES	 | list of key-value pairs that is used to tag the table definition.  |	Optional  |
 | COMMENT | string literal to describe the table.  |Optional  |
