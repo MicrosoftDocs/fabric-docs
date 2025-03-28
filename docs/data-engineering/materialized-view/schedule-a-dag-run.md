@@ -23,12 +23,12 @@ The schedule for running the DAG depends on various factors, such as:
 
 Click on the Schedule button on the Lakehouse in the DAG view
 
-Image 1
+:::image type="content" source="./media/schedule-a-dag-run/schedule-run.png" alt-text="Screenshot showing the schedule button in DAG UI ." border="true" lightbox="./media/schedule-a-dag-run/schedule-run.png":::
 
 
 The schedule UI opens and is visible to the user.
 
-Image2
+:::image type="content" source="./media/schedule-a-dag-run/schedule-inputs.png" alt-text="Screenshot showing the schedule UI where user sends their inputs for scheduling." border="true" lightbox="./media/schedule-a-dag-run/schedule-inputs.png":::
 
 
 Click on the Schedule Refresh **On** button.
@@ -43,4 +43,4 @@ Select the following from the schedule UI:
 **Click on Apply**
 The schedule is set for the particular DAG.
 
-![Note] The scheduler will reflect the users local time.
+[!Note] The scheduler will reflect the users local time.
