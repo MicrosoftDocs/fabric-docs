@@ -4,7 +4,7 @@ description: Learn how to create a Fabric User data functions item in the portal
 ms.author: sumuth
 author: mksuni
 ms.topic: quickstart
-ms.date: 03/27/2025
+ms.date: 03/31/2025
 ms.search.form: Create Fabric User data functions
 ---
 

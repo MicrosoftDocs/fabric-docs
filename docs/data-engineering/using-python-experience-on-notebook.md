@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom:
 ms.search.form: Create and use notebooks
-ms.date: 11/25/2024
+ms.date: 03/31/2025
 ---
 
 # Use Python experience on Notebook

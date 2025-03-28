@@ -5,7 +5,7 @@ author: jejiang
 ms.author: jejiang
 ms.reviewer: whhender
 ms.topic: tutorial
-ms.date: 03/18/2025
+ms.date: 03/31/2025
 ---
 
 # Get Spark executor logs using Spark monitoring APIs

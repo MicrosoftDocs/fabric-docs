@@ -4,7 +4,7 @@ description: Learn how to create, configure, and use a Fabric environment in you
 ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
-ms.date: 05/01/2024
+ms.date: 03/31/2025
 ms.search.form: Create and use Environment
 ---
 

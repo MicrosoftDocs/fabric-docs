@@ -4,7 +4,7 @@ description: Overview of the Fabric User data functions programming model for Py
 ms.author: sumuth
 author: mksuni
 ms.topic: overview
-ms.date: 03/21/2025
+ms.date: 03/31/2025
 ms.search.form: Write new user data functions items
 ---
 
