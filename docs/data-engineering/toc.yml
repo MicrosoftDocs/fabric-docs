@@ -121,6 +121,12 @@ items:
       href: job-admission-management.md
     - name: Job queueing for Fabric Spark
       href: job-queueing-for-fabric-spark.md
+    - name: Autoscale Spark billing
+      href: autoscale-billing-for-spark-overview.md
+    - name: Configure Autoscale Billing 
+      href: configure-autoscale-billing.md
+    - name: Resource profile configurations
+      href: configure-resource-profile-configurations.md
 - name: Apache Spark
   items:
   - name: Apache Spark Runtimes
