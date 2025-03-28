@@ -345,6 +345,10 @@ items:
       href: ./materialized-view/create-materialized-view.md 
     - name: Refresh a Fabric Materialized View
       href: ./materialized-view/refresh-fabric-materialzed-view.md
+  - name: Monitoring Hub
+    items:   
+    - name: Monitor Materialized view runs
+      href: ./materialized-view/monitoring-materialized-views.md
   - name: Data quality
     items:   
     - name: Data quality in Fabric Materialized View
