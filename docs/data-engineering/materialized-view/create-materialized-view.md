@@ -5,7 +5,7 @@ ms.topic: how-to
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviwer: nijelsf
-ms.date: 03/09/2025
+ms.date: 03/28/2025
 ---
 
 # Create Fabric materialized view
