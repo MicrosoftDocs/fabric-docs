@@ -28,29 +28,33 @@ Introduction
 Create a new service connection to Azure SQL Database in Fabric from the App Service resource in the Azure portal.
 
 1. Open your App Service resource in the Azure portal.
-1. Select **Settings** > **Service Connector** from the left menu. <!-- will it be marked as "Preview"?-->
+1. Select **Settings** > **Service Connector** from the left menu.
 2. Select **Create**, and select or enter the following settings in the **Create connection** panel that opens.
 
     | Setting             | Example           | Description                                                                                                                                               |
     |---------------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
     | **Service type**    | *Fabric SQL*      | Target service type. If you don't have an App Configuration store, [create one](../azure-app-configuration/quickstart-azure-app-configuration-create.md). |
-    | **Connection name** | *fabricsql_8293d* | The connection name that identifies the connection between your App Service and SQL database.                                                             |
+    | **Connection name** | *fabricsql_8293d* | The connection name that identifies the connection between your App Service and SQL database. Optionally edit the connection name suggested by default by Service Connector.                                                              |
     | **Workspace**       | *My Workspace*    | The Microsoft Fabric Workspace that contains the SQL database.                                                                                            |
     | **SQL database**    | *my_sql_database* | The target SQL database you want to connect to.                                                                                                           |
     | **Client type**     | *.NET*            | The application's tech stack or library.                                                                                                                  |
-    
+        
     :::image type="content" source="./media/tutorial-service-connector/basics-tab.png" alt-text="Screenshot of the Azure portal, showing the Basics tab in the Create connection pane.":::
 
 1. Select **Next: Authentication** and select the system-assigned managed identity authentication option, available through the Azure CLI. User-assigned managed identities are also supported.
 1. Select **Next: Networking** > **Review + Create** to review your connection configuration.
-1. Check the box stating that you understand that additional manual steps are required to configure this service connection, and select **Create On Cloud Shell**. Alternatively run on your local machine the CLI commands that are now displayed right above the checkbox.
-1. Once the command finishes running, close the **Create connection** pane select **Refresh** in the Service Connector menu to the view your new connection.
+1. Check the box stating that you understand that additional manual steps are required to configure this service connection, and select **Create On Cloud Shell**. Alternatively, if you have the [Azure CLI installed](/azure/install-azure-cli-windows), run on your local machine the CLI commands that are now displayed right above the checkbox.
+1. Once the command finishes running, close the **Create connection** pane.
 
 ## Share access to SQL database in Fabric
 
 In this step, you grant your managed identity access to the database.
 
-1. In the Microsoft Fabric portal, in the **Security** tab, select **Manage SQL security**.
+1. In the Service Connector menu, select **Refresh** to display your new connection.
+1. Under Resource name, click on your connection's **SQL Database** hyperlink. This opens your SQL database in the Microsoft Fabric portal.
+    :::image type="content" source="./media/tutorial-service-connector/access-security-settings.png" alt-text="Screenshot of the Azure portal, showing the SQL Database link.":::
+
+1. Navigate to the **Security** tab and select **Manage SQL security**.
 
     :::image type="content" source="./media/tutorial-service-connector/fabric-portal-manage-security.png" alt-text="Screenshot of the Fabric portal, showing the security tab.":::
 
@@ -62,7 +66,7 @@ In this step, you grant your managed identity access to the database.
 
 When no longer needed, delete the resource group and all related resources created for this tutorial. To do so, select the resource group or the individual resources you created and select **Delete**.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Service Connector internals](./concept-service-connector-internals.md)
