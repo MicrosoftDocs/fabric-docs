@@ -51,13 +51,13 @@ Efficient data access is essential to IDEAS, and Microsoft Fabric has become a k
 
 IDEAS employs the [medallion architecture](../onelake/onelake-medallion-lakehouse-architecture.md) to organize data across three layers: Bronze (raw data), Silver (cleaned and enriched data for analysis), and Gold (curated, aggregated data for business intelligence and reporting with tools like Power BI and Excel).
 
-:::image type="content" source="./media/ideas-data-platform-integration/ideas-medallion-architecture.png" alt-text="Screenshot showing the medallion architecture of IDEAS and the size of data in each layer.":::
+:::image type="content" source="./media/ideas-data-platform-integration/ideas-medallion-architecture.png" alt-text="Screenshot showing the medallion architecture of IDEAS and the size of data in each layer." lightbox="./media/ideas-data-platform-integration/ideas-medallion-architecture.png":::
 
 By making our gold and silver layers available as UDM assets in Fabric through Delta Lake, we enhanced the Microsoft 365 Copilot analytics plane. We provided direct access to preprocessed Silver layer Microsoft 365 Copilot data as Delta Lake tables in OneLake. It dramatically improved query performance and dashboard rendering by eliminating repeated transformations.
 
 Furthermore, exposing our Gold layer Microsoft 365 Copilot metrics as Delta Lake tables simplified data discovery and usability. It enabled the creation of rich dashboards that support business leaders and product teams with Copilot’s adoption, performance, and growth. This approach reduced data movement, streamlined the data graph, and cut infrastructure costs. As a result, Microsoft 365 Copilot analytics, now powered by Fabric, plays a vital role in several Microsoft projects.
 
-:::image type="content" source="./media/ideas-data-platform-integration/ideas-intelligenc-platform-architecture.png" alt-text="Screenshot showing the Ideas intelligence platform architecture":::
+:::image type="content" source="./media/ideas-data-platform-integration/ideas-intelligenc-platform-architecture.png" alt-text="Screenshot showing the Ideas intelligence platform architecture" lightbox="./media/ideas-data-platform-integration/ideas-intelligenc-platform-architecture.png":::
 
 ## Scaling governance and automation in Fabric
 
@@ -96,7 +96,7 @@ We have created dedicated "semantic workspaces" for semantic models and reportin
 
 Our semantic model lifecycle involves individuals making changes within a workspace dedicated to this category of development. Following validation, Fabric's Git integration commits these changes to the appropriate preproduction branch. Through Azure DevOps (ADO) release pipelines, these changes are then promoted to the production Git branch and later synchronized to the production semantic workspaces This ensures that the production semantic workspaces (where end-user-facing models and reports reside) always reflects validated and approved changes. This way it contributes to the stability and reliability of our services.
 
-:::image type="content" source="./media/ideas-data-platform-integration/ideas-cicd.png" alt-text="Screenshot showing the IDEAS semantic model's CICD cycle":::
+:::image type="content" source="./media/ideas-data-platform-integration/ideas-cicd.png" alt-text="Screenshot showing the IDEAS semantic model's CICD cycle" lightbox="./media/ideas-data-platform-integration/ideas-cicd.png:::
 
 To further enhance the reliability of our Fabric deployment, we developed a user experience and performance dashboard using workspace telemetry. The Fabric workspace analytics logs provide data on query execution times and errors in semantic models and Power BI reports. Our dashboard, built on Fabric event houses, tracks key query performance metrics and monitors error categories and rates for each query.
 
