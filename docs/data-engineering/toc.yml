@@ -348,7 +348,7 @@ items:
   - name: Monitoring hub
     items:   
     - name: Monitor materialized view runs
-      href: ./materialized-view/monitoring-materialized-views.md
+      href: ./materialized-view/monitor-materialized-views.md
   - name: Data quality
     items:   
     - name: Data quality in Fabric Materialized View
