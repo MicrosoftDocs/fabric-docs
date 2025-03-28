@@ -121,7 +121,7 @@ items:
       href: ./sql/monitor.md
     - name: Performance Dashboard
       href: sql/performance-dashboard.md
-    - name: Capacity usage reporting
+    - name: Capacity usage reporting and billing
       href: ./sql/usage-reporting.md
   - name: Secure
     items:
