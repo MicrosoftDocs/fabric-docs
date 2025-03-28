@@ -1,6 +1,6 @@
 ---
 title: "Monitoring Fabric materialized views"
-description: Learn how to Monitoring Fabric materialized views.
+description: Learn how to monitor Fabric materialized views.
 author: yeturis
 ms.author: sairamyeturi
 ms.reviewer: nijelsf
