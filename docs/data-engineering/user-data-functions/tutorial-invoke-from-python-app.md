@@ -4,7 +4,7 @@ description: Learn how to invoke User data functions from a Python web applicati
 ms.author: sumuth
 author: mksuni
 ms.topic: quickstart
-ms.date: 03/27/2025
+ms.date: 03/31/2025
 ms.search.form: Fabric User data functions
 ---
 

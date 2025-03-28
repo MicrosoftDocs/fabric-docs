@@ -4,7 +4,7 @@ description: Overview of the User data functions programming model for Python
 ms.author: luisbosquez
 author: luisbosquez
 ms.topic: overview
-ms.date: 02/20/2025
+ms.date: 02/31/2025
 ms.search.form: Service limits
 ---
 

@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom:
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
-ms.date: 07/25/2024
+ms.date: 03/31/2025
 ---
 
 # NotebookUtils (former MSSparkUtils) for Fabric

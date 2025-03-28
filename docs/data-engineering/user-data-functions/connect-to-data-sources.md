@@ -4,7 +4,7 @@ description: Learn how to connect your Fabric User data function items to data s
 ms.author: luisbosquez
 author: luisbosquez
 ms.topic: overview
-ms.date: 03/27/2025
+ms.date: 03/31/2025
 ms.search.form: Add new data connections to user data functions items
 ---
 
