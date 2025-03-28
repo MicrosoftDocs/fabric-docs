@@ -56,10 +56,10 @@ The following section lists various cores-based limits for Spark workloads based
 > The table applies only to Spark jobs running on Fabric Capacity. With autoscale billing enabled, Spark jobs run separately from Fabric capacity, avoiding bursting or smoothing. The total Spark vCores will be twice the maximum capacity Units set in autoscale settings.
 
 Example calculation:
-*F64 SKU* offers *128 Spark VCores*. The burst factor applied for a F64 SKU is 3, which gives a total of 384 Spark Vcores. The burst factor is only applied to help with concurrency and does not increase the max cores available for a single Spark job.  That means *a single Notebook or Spark job definition or lakehouse job* can use a pool configuration of max 128 vCores and 3 jobs with the same configuration can be run concurrently. If notebooks are using a smaller compute configuration, they can be run concurrently till the max utilization reaches the 384 SparkVcore limit.
+*F64 SKU* offers *128 Spark VCores*. The burst factor applied for a F64 SKU is 3, which gives a total of 384 Spark Vcores. The burst factor is only applied to help with concurrency and doesn't increase the max cores available for a single Spark job.  That means *a single Notebook or Spark job definition or lakehouse job* can use a pool configuration of max 128 vCores and 3 jobs with the same configuration can be run concurrently. If notebooks are using a smaller compute configuration, they can be run concurrently till the max utilization reaches the 384 SparkVcore limit.
 
 > [!NOTE]
-> The jobs have a queue expiration period of 24 hours, after which they are cancelled, and users must resubmit them for job execution.
+> The jobs have a queue expiration period of 24 hours, after which they're canceled, and users must resubmit them for job execution.
 
 Spark for Fabric throttling doesn't have enforced arbitrary jobs-based limits, and the throttling is only based on the number of cores allowed for the purchased Fabric capacity SKU.
 The job admission by default will be an optimistic admission control, where the jobs are admitted based on their minimum cores requirement. Learn more about the optimistic job admission [Job Admission and Management](job-admission-management.md)
@@ -69,7 +69,7 @@ Learn more about the default starter pool configurations based on the Fabric Cap
 
 ## Job level bursting 
 
-Admins can configure their Apache Spark pools to utilize the max Spark cores with burst factor available for the entire capacity. For example a workspace admin having their workspace attached to a F64 Fabric capacity can now configure their Spark pool (Starter pool or Custom pool) to 384 Spark VCores, where the max nodes of Starter pools can be set to 48 or admins can set up an XX Large node size pool with 6 max nodes. 
+Admins can configure their Apache Spark pools to utilize the max Spark cores with burst factor available for the entire capacity. For example a workspace admin having their workspace attached to a F64 Fabric capacity can now configure their Spark pool (Starter pool or Custom pool) to 384 Spark VCores, where the max nodes of Starter pools can be set to 48 or admins can set up an XX Large node size pool with six max nodes. 
 
 ## Related content
 
