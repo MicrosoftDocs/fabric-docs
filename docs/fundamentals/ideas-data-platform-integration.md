@@ -1,10 +1,11 @@
 ---
 title: IDEAS journey to a modern data platform with Fabric.
 description: Learn how IDEAS uses Microsoft Fabric to build a modern data platform, consolidating data sources, enhancing analytics, and driving AI innovation.
-author: SnehaGunda
+author: guyinacube
 ms.topic: concept-article
 ms.date: 03/27/2025
-ms.author: sngun
+ms.author: asaxton
+ms.custom: fabric-cat
 ---
 
 # IDEAS journey to a modern data platform with Microsoft Fabric - from petabytes to insights
