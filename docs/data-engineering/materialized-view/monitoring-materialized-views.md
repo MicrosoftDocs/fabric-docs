@@ -35,14 +35,14 @@ To search for DAG Runs, you can enter certain keywords in the search box located
  
 ## Manage a DAG run
 
-When you hover over an DAG run row, you can see various row-level actions that enable you to manage a particular run.
+When you hover over a DAG run row, you can see various row-level actions that enable you to manage a particular run.
 View the detail pane
 
-You can hover over an DAG run row and click the **View details** icon to open the **Detail** pane and view more details.
+You can hover over a DAG run row and click the **View details** icon to open the **Detail** pane and view more details.
  
 ## Cancel a DAG run
 
-If you need to cancel an in-progress DAG run, hover over its row and click the **Cancel** icon.
+If you need to cancel an in-progress DAG run, hover over its row and click the `Cancel` icon.
  
 ## Navigate to DAG detail view
 
