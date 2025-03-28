@@ -10,15 +10,15 @@ ms.custom: fabric-cat
 
 # IDEAS journey to a modern data platform with Microsoft Fabric - from petabytes to insights
 
-Microsoft Fabric is an AI-powered SaaS platform for end-to-end enterprise analytics. It efficiently supports various data roles across an organization. To optimize data consistency and accessibility, Microsoft used Fabric to enhance its internal analytics infrastructure amid rapid AI advancements. Microsoft established IDEAS (Insights, Data, Engineering, Analytics, Systems) organization to build and maintain a comprehensive data analytics platform. IDEAS aims to unify data sources, eliminate silos, and create a single source of truth, boosting productivity and AI adoption across Microsoft. Initially supporting Office products, IDEAS now powers data-driven insights across Microsoft 365, Security, and 600+ internal teams that drive AI adoption and productivity. This article details IDEAS’s journey with adopting Fabric.
+Microsoft Fabric is an AI-powered SaaS platform for end-to-end enterprise analytics. It efficiently supports various data roles across an organization. To optimize data consistency and accessibility, Microsoft used Fabric to enhance its internal analytics infrastructure during rapid AI advancements. Microsoft established IDEAS (Insights, Data, Engineering, Analytics, Systems) organization to build and maintain a comprehensive data analytics platform. IDEAS aims to unify data sources, eliminate silos, and create a single source of truth, boosting productivity and AI adoption across Microsoft. Initially supporting Office products, IDEAS now powers data-driven insights across Microsoft 365, Security, and over 600 internal teams driving AI adoption and productivity. This article details IDEAS’s journey with adopting Fabric.
 
-A key function of IDEAS is to serve as the central data and growth engine for the Experiences and Devices(E+D) and Security divisions. IDEAS also acts as the central data plane for all Copilot experiences, driving Copilot's success by aggregating key insights, enabling research, and powering AI experiences across Microsoft. It manages 420 PiB(Pebibyte) of data from 2,700 sources, personalizing experiences across 350+ product surfaces and billions of customer interactions annually.
+A key function of IDEAS is to serve as the central data and growth engine for the Experiences and Devices(E+D) and Security divisions. IDEAS also acts as the central data plane for all Copilot experiences, driving Copilot's success by aggregating key insights, enabling research, and powering AI experiences across Microsoft. It manages 420 PiB (Pebibyte) of data from 2,700 sources, personalizing experiences across more than 350 product surfaces and billions of customer interactions annually.
 
 Because of its scale and role in powering key Microsoft initiatives like Copilot, IDEAS serves as a real-world testing ground for emerging data technologies. IDEAS is a pilot user and strategic 'customer zero' for Microsoft Fabric. It provides valuable feedback and validates the Fabric's capabilities at a various levels. IDEAS provides key insights that shape Fabric's development, while Fabric enables IDEAS to achieve its vision for the future of its AI-driven data platform. Specifically, Fabric offers key benefits in following four key areas:
 
 * **Activating data for AI innovation:** Fabric’s seamless integration with Microsoft tools like Office and Azure AI accelerates the creation of custom AI models and solutions.
 
-* **Streamlining analytics with a unified toolchain:** By providing a unified toolchain for all data roles, Fabric empowers everyone within IDEAS, to enhance collaboration, streamline workflows, and maximize the data value.
+* **Streamlining analytics with a unified toolchain:** By providing a unified toolchain for all data roles, Fabric empowers everyone within IDEAS to enhance collaboration, streamline workflows, and maximize the data value.
 
 * **Increasing collaboration and flexibility:** Fabric enables collaboration across different data personas using the same datasets and tools. This flexibility simplifies working with diverse data formats, locations, optimizes engineering processes, and enables teams to work more effectively.
 
@@ -70,7 +70,7 @@ Next sections will delve into our semantic workspaces that are dedicated to host
 
 ## Simplifying reporting with Direct Lake
 
-One of the primary drivers for IDEAS's early adoption of Fabric is the [Direct Lake semantic model](direct-lake-overview.md). This feature enables unified reporting and eliminating the need to manage separate SQL and SSAS infrastructure and allowing users to work in an integrated Fabric interface.
+One of the primary drivers for IDEAS's early adoption of Fabric is the [Direct Lake semantic model](direct-lake-overview.md). This feature enables unified reporting, eliminating the need to manage separate SQL and SSAS infrastructure and allowing users to work in an integrated Fabric interface.
 
 IDEAS utilizes semantic models for a various use cases, which include:
 
