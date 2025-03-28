@@ -4,7 +4,7 @@ description: This article explains the overview of using SQL database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/14/2024
+ms.date: 03/25/2025
 ms.custom:
   - template-how-to
 ---
@@ -24,6 +24,8 @@ The SQL database connector supports the following capabilities in data pipelines
 | **Copy activity (Source/Destination)** | None <br> On-premises | User Auth |
 | **Lookup activity** | None <br> On-premises | User Auth |
 | **GetMetadata activity** | None <br> On-premises | User Auth |
+| **Script activity** | None <br> On-premises | User Auth |
+| **Stored procedure activity** | None <br> On-premises | User Auth |
 
 To learn about how to connect to SQL Database in data pipelines, go to [Set up your SQL Database connection](connector-sql-database.md).
 

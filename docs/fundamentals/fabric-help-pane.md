@@ -1,9 +1,9 @@
 ---
 title: Use the Fabric contextual Help pane.
 description: "Learn how to use feature-aware help pane in Fabric "
-ms.reviewer: liudan66
-author: JulCsc
+author: liudan66
 ms.author: juliacawthra
+ms.reviewer: juliacawthra
 ms.topic: how-to
 ms.custom:
 ms.date: 01/15/2025

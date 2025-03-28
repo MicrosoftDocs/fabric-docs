@@ -4,7 +4,7 @@ description: A known issue is posted where you see an intermittent refresh failu
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/25/2024
+ms.date: 03/21/2025
 ms.custom: known-issue-844
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-844
 
 You might experience intermittent refresh failures for semantic models and dataflows through the on-premises data gateway. Failures happen regardless of how the refresh was triggered, whether scheduled, manually, or over the REST API.
 
-**Status:** Open
+**Status:** Fixed: March 21, 2025
 
 **Product Experience:** Power BI
 

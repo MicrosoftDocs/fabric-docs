@@ -4,7 +4,7 @@ description: A known issue is posted where data warehouse data preview might fai
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 10/28/2024
+ms.date: 03/21/2025
 ms.custom: known-issue-903
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-903
 
 The data warehouse data preview in the user experience might fail if there's more than one data warehouse item in the Object Explorer.
 
-**Status:** Open
+**Status:** Fixed: March 21, 2025
 
 **Product Experience:** Data Warehouse
 
