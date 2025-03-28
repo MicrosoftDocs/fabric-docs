@@ -75,8 +75,12 @@ items:
       items:
       - name: Add and manage an event source
         href: event-streams/add-manage-eventstream-sources.md
+      - name: Azure Data Explorer 
+        href: event-streams/add-source-azure-data-explorer-database.md
       - name: Azure Event Hubs
         href: event-streams/add-source-azure-event-hubs.md
+      - name: Azure Event Grid
+        href: event-streams/add-source-azure-event-grid.md
       - name: Azure Service Bus
         href: event-streams/add-source-azure-service-bus.md
       - name: Azure IoT Hub
@@ -85,6 +89,8 @@ items:
         href: event-streams/add-source-custom-app.md
       - name: Sample data
         href: event-streams/add-source-sample-data.md
+      - name: Real-time weather
+        href: event-streams/add-source-real-time-weather.md       
       - name: Azure SQL Database Change Data Capture
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
       - name: PostgreSQL Database Change Data Capture
@@ -115,6 +121,10 @@ items:
         href: event-streams/add-source-fabric-job.md
       - name: Azure Blob Storage events
         href: event-streams/add-source-azure-blob-storage.md
+      - name: MQTT
+        href: event-streams/add-source-mqtt.md
+      - name: Solace PubSub+
+        href: event-streams/add-source-solace-pub-sub.md
     - name: Add destinations to eventstreams
       items:
       - name: Add and manage a destination
@@ -163,10 +173,12 @@ items:
       items:
       - name: Connect to Azure Event Hubs and IoT Hub sources using managed private endpoints
         href: event-streams/set-up-private-endpoint.md
-      - name: Connect to streaming sources in private network with Eventstream
-        href: event-streams/connect-connecots-in-virtual-network-on-premises.md
-      - name: Microsoft Entra ID authentication
-        href: event-streams/custom-endpoint-entra-id-auth.md      
+      - name: Authenticate an application using Entra ID
+        href: event-streams/custom-endpoint-entra-id-auth.md
+      - name: Authenticate with a managed identity
+        href: event-streams/connect-using-managed-identity.md
+      - name: Connect to streaming sources in private network with Eventstream 
+        href: event-streams/connect-connecots-in-virtual-network-on-premises.md        
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
@@ -268,10 +280,14 @@ items:
     - name: Access an existing KQL database
       displayName: copy URI, copy query URI, copy ingestion URI
       href: access-database-copy-uri.md
+    - name: Manage and monitor a KQL database    
+      href: manage-monitor-database.md
     - name: Create a database shortcut
       href: database-shortcut.md
     - name: Create an empty table
       href: create-empty-table.md
+    - name: Manage and monitor database tables    
+      href: manage-monitor-table.md  
     - name: Data management
       items:
       - name: Data management overview
@@ -340,7 +356,7 @@ items:
       href: vector-database.md
     - name: "Tutorial: Use an Eventhouse as a vector database"
       href: vector-database-eventhouse.md
-  - name: Timeseries anomaly detection
+  - name: Time series anomaly detection
     items:
     - name: Univariate anomaly detection and forecasting
       href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
@@ -447,5 +463,15 @@ items:
       href: monitor-logs-ingestion-results.md
     - name: Query logs
       href: monitor-logs-query.md
+- name: Migrate
+  items:
+  - name: From Azure Synapse Data Explorer
+    href: migrate-synapse-data-explorer.md
+  - name: API endpoints
+    items:
+    - name: Validate migration
+      href: migrate-api-validate-synapse-data-explorer.md
+    - name: Migrate to Eventhouse
+      href: migrate-api-to-eventhouse.md
 - name: KQL reference
   href: kusto-tocs/query/toc.yml
