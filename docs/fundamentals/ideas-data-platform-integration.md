@@ -1,9 +1,9 @@
 ---
-title: IDEAS journey to a modern data platform with Fabric.
+title: IDEAS journey to a modern data platform with Fabric
 description: Learn how IDEAS uses Microsoft Fabric to build a modern data platform, consolidating data sources, enhancing analytics, and driving AI innovation.
 author: guyinacube
 ms.topic: concept-article
-ms.date: 03/27/2025
+ms.date: 03/31/2025
 ms.author: asaxton
 ms.custom: fabric-cat
 ---
@@ -36,9 +36,9 @@ Power BI's Direct Lake mode enhances this unified experience by enabling fast qu
 
 To apply these capabilities within IDEAS, the first step was to ensure the data integration pipelines could seamlessly generate Delta Lake tables. IDEAS uses the following two ISO-certified data engineering systems:
 
-1. **[Pharos](https://medium.com/data-science-at-microsoft/leveraging-ai-for-next-level-data-productivity-in-ideas-part-1-1878ae2d0d1e):** A low-code platform for data preparation and staging. It simplifies data transformation by focusing on well-defined data shapes with consistent metadata, and declarative definitions for output generation.
+* **[Pharos](https://medium.com/data-science-at-microsoft/leveraging-ai-for-next-level-data-productivity-in-ideas-part-1-1878ae2d0d1e):** A low-code platform for data preparation and staging. It simplifies data transformation by focusing on well-defined data shapes with consistent metadata, and declarative definitions for output generation.
 
-1. **[Nitro Hubs](https://medium.com/data-science-at-microsoft/leveraging-ai-for-next-level-data-productivity-in-ideas-part-1-1878ae2d0d1e):** A comprehensive data engineering system for pipeline authoring and management, with strong data privacy and compliance controls.
+* **[Nitro Hubs](https://medium.com/data-science-at-microsoft/leveraging-ai-for-next-level-data-productivity-in-ideas-part-1-1878ae2d0d1e):** A comprehensive data engineering system for pipeline authoring and management, with strong data privacy and compliance controls.
 
 IDEAS enhanced these services to generate optimized Delta Lake outputs using the Fabric Spark engine, employing techniques like [v-order](../data-engineering/delta-optimization-and-v-order.md), partitioning, and appropriate row group sizes. When storing data, IDEAS focuses on organizing it for fast and efficient retrieval, as the workloads are read-intensive. Integrating this capability with core services that manage thousands of pipelines enabled the quick writing of several thousand data assets to ADLS Gen2 storage.
 
@@ -58,7 +58,7 @@ By making our gold and silver layers available as UDM assets in Fabric through D
 
 Furthermore, exposing our Gold layer Microsoft 365 Copilot metrics as Delta Lake tables simplified data discovery and usability. It enabled the creation of rich dashboards that support business leaders and product teams with Copilot’s adoption, performance, and growth. This approach reduced data movement, streamlined the data graph, and cut infrastructure costs. As a result, Microsoft 365 Copilot analytics, now powered by Fabric, plays a vital role in several Microsoft projects.
 
-:::image type="content" source="./media/ideas-data-platform-integration/ideas-intelligenc-platform-architecture.png" alt-text="Screenshot showing the Ideas intelligence platform architecture" lightbox="./media/ideas-data-platform-integration/ideas-intelligenc-platform-architecture.png":::
+:::image type="content" source="./media/ideas-data-platform-integration/ideas-intelligence-platform-architecture.png" alt-text="Screenshot showing the Ideas intelligence platform architecture." lightbox="./media/ideas-data-platform-integration/ideas-intelligenc-platform-architecture.png":::
 
 ## Scaling governance and automation in Fabric
 
@@ -81,11 +81,11 @@ IDEAS utilizes semantic models for a various use cases, which include:
 
 Our validation of the Direct Lake approach involved migrating existing reports and models to Fabric, yielding several key findings, which include:
 
-1. The importance of effective data modeling. For models containing billions of rows, a robust star schema with numeric keys is crucial to achieve optimal query performance.
+* The importance of effective data modeling. For models containing billions of rows, a robust star schema with numeric keys is crucial to achieve optimal query performance.
 
-1. Optimizing data with V-Order during creation using Fabric Spark is critical for maximizing Direct Lake performance.
+* Optimizing data with V-Order during creation using Fabric Spark is critical for maximizing Direct Lake performance.
 
-1. Proper Delta table partitioning and row group sizing is vital for optimizing both cold and warm cache query performance.
+* Proper Delta table partitioning and row group sizing is vital for optimizing both cold and warm cache query performance.
 
 This effort led to the full migration of the Microsoft 365 Copilot analytics plane to Fabric in December 2024. This plane now delivers key business insights for Microsoft 365 Copilot across Microsoft.
 
@@ -93,11 +93,11 @@ This effort led to the full migration of the Microsoft 365 Copilot analytics pla
 
 IDEAS ensures compliance and reliability through strict change management, production isolation, and validation. To meet these requirements within Fabric, we implemented a robust development lifecycle using Git integration and a well-defined workspace organization. This approach ensures that changes are thoroughly tested and validated before reaching production, minimizing disruptions, and preserving data integrity.
 
-We have created dedicated "semantic workspaces" for semantic models and reporting artifacts, ensuring clear separation of concerns. As previously mentioned, lakehouse artifacts reside in a secure, read-only, production-class workspace, with semantic workspaces referring these centralized data assets. This architecture supports both compliance and performance.
+We have created dedicated "semantic workspaces" for semantic models and reporting artifacts, ensuring clear separation of concerns. As previously mentioned, lakehouse artifacts reside in a secure, read-only, production workspace, with semantic workspaces referring to these centralized data assets. This architecture supports both compliance and performance.
 
 Our semantic model lifecycle involves individuals making changes within a workspace dedicated to this category of development. Following validation, Fabric's Git integration commits these changes to the appropriate preproduction branch. Through Azure DevOps (ADO) release pipelines, these changes are then promoted to the production Git branch and later synchronized to the production semantic workspaces This ensures that the production semantic workspaces (where end-user-facing models and reports reside) always reflects validated and approved changes. This way it contributes to the stability and reliability of our services.
 
-:::image type="content" source="./media/ideas-data-platform-integration/ideas-cicd.png" alt-text="Screenshot showing the IDEAS semantic model's CICD cycle" lightbox="./media/ideas-data-platform-integration/ideas-cicd.png":::
+:::image type="content" source="./media/ideas-data-platform-integration/ideas-continuous-integration-lifecycle.png" alt-text="Screenshot showing the IDEAS semantic model's CICD cycle." lightbox="./media/ideas-data-platform-integration/ideas-cicd.png":::
 
 To further enhance the reliability of our Fabric deployment, we developed a user experience and performance dashboard using workspace telemetry. The Fabric workspace analytics logs provide data on query execution times and errors in semantic models and Power BI reports. Our dashboard, built on Fabric event houses, tracks key query performance metrics and monitors error categories and rates for each query.
 
