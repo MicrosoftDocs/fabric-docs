@@ -162,7 +162,10 @@ The monitor tab displays activities for the item. Press **Show** on a record to 
 
 ### Permissions tab
 
-The permissions tab is available if you're a member of the Admin or Member workspace roles. The permissions tab lists the users who have access to the item and shows what kind of permission they have. You can modify users' permissions and also grant access to users who don't have access.
+The permissions tab is available if you're a member of the Admin or Member workspace roles. The permissions tab lists the users who have access to the item and shows what kind of permission they have.
+
+* To grant access to a user who doesn't have access to the item, select **+ Add user**.
+* To modify a user's permissions, hover of the user, select **More options (...)**, and add or remove access as appropriate.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-permissions-tab.png" alt-text="Screenshot of the explore tab item view permissions tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-permissions-tab.png":::
 
