@@ -105,7 +105,10 @@ Use the tags selector to display items tagged with the tags you select.
 
 Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading in the filters pane. The items you're allowed to see in that workspace will be displayed in the items list.
 
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-workspace-filter.png" alt-text="Screenshot of the explore tab's workspaces filter.":::
+> [!TIP]
+> The workspace filter can help you find the workspace your looking for. Select the magnifying glass icon to open the filter.
+
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-workspace-filter.png" alt-text="Screenshot of the explore tab's workspaces filter." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-workspace-filter.png":::
 
 The preceding image shows the *Sales Org* workspace selected in the Workspaces section. Because the item classification selector is set to *Data types*, only semantic models are shown (as no other type of data items are present in this workspace). The semantic model *Contoso FY21 goals* is selected, and its details are shown in the item details view. To explore the details of other items in the list, just select them. The item details view stays open until you dismiss it. This makes it easy to browse the details of items one after another, without losing your list context.
 
