@@ -43,7 +43,7 @@ To create roles on **Power BI Desktop** semantic models, use [external tools](/p
 
    Set categories under *Table permissions* to *None*.
 
-    :::image type="content" source="./media/service-admin-object-level-security/define-rule-table.png" alt-text="Screenshot of setting OLS rule to none for the entire table.":::
+     :::image type="content" source="./media/service-admin-object-level-security/define-rule-table.png" alt-text="Screenshot of setting OLS rule to none for the entire table.":::
 
    ### [To secure a **specific column**](#tab/column)
 
@@ -51,7 +51,7 @@ To create roles on **Power BI Desktop** semantic models, use [external tools](/p
 
     :::image type="content" source="./media/service-admin-object-level-security/define-rule-column.png" alt-text="Screenshot of setting OLS rule to none for the address column." lightbox="./media/service-admin-object-level-security/define-rule-column.png":::
   
-   ---
+    ---
 
 1. After you define object-level security for the roles, save your changes.
 
