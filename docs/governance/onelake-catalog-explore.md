@@ -117,9 +117,11 @@ The preceding image shows the *Sales Org* workspace selected in the Workspaces s
 
 ## Open an item's options menu
 
-Each item in the items list has an options menu that enables you to do things, such as open the item's settings, manage item permissions, etc. The options available depend on the item and your permissions on the item.
+From the items list, you can open the item for editing or viewing (depending on the item type), and you can open the item's options menu. The options menu enables you to perform actions such as opening the item's settings, managing the item's permissions, etc. The options available depend on the type of item and your permissions on the item.
 
-To display the options menu, hover over the item whose options menu you want to see and select **More options (...)**.
+* To open the item for editing or viewing: Hover over the item in the items list and select the **Open <item type>** icon that appears.
+
+* To open the the item's options menu: Hover over the item and select **More options (...)**.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false" lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png":::
 
@@ -162,10 +164,12 @@ The monitor tab displays activities for the item. Press **Show** on a record to 
 
 ### Permissions tab
 
-The permissions tab is available if you're a member of the Admin or Member workspace roles. The permissions tab lists the users who have access to the item and shows what kind of permission they have.
+The permissions tab is available if you're a member of the Admin or Member workspace roles. The permissions tab shows who has direct access to the item, what links exist that permit access to the item, and also what related items enable access to the item. You can modify user permissions, audit links and remove them if necessary, and also modify access from related items.
 
-* To grant access to a user who doesn't have access to the item, select **+ Add user**.
-* To modify a user's permissions, hover of the user, select **More options (...)**, and add or remove access as appropriate.
+* To grant access to a user who doesn't have access to the item, so the **Direct access** tab select **+ Add user**.
+* To modify a user's permissions, hover of the user, on the **Direct access**  tab, select **More options (...)**, and add or remove access as appropriate.
+
+You can use the filter to sharpen the focus of your search.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-permissions-tab.png" alt-text="Screenshot of the explore tab item view permissions tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-permissions-tab.png":::
 
