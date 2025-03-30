@@ -121,7 +121,7 @@ Each item in the items list has an options menu that enables you to do things, s
 
 To display the options menu, hover over the item whose options menu you want to see and select **More options (...)**.
 
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false" lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png":::
 
 ## View item details
 
