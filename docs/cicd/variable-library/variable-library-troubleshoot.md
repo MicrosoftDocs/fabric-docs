@@ -42,13 +42,19 @@ This article describes common errors and issues that you might encounter when wo
 
 ## Update Variable library failed
 
+***Description of problem**: I tried to update the Variable library (using the *Update* API ot through the UI), but it failed.
+**Cause**: The update cam fail for any of several reasons, including:
 
-### Error message: Update failed during Deployment pipelines
+- You forgot to save the variable in the Variable library
+- The variable was deleted or renamed.  
+**Solution**: Go back to the variable library, and check the names of the existing variables. If the variable you want exists but wasn't saved, save it. If you need to create it, create it. If it has a different name, remove the current reference, and replace it with the correct name in the data pipeline.
 
+
+### Error message: Update failed during when using APIs
 
 ### Error message: Update failed during Git update
 
-**Description of problem**: I tried to update the Variable library, but it failed.
+**Description of problem**: I tried to update the Variable library from my workspace through the UI, using the Update from Git.
 
 ## Deployment failed
 
@@ -56,15 +62,17 @@ This article describes common errors and issues that you might encounter when wo
 
 :::image type="content" source="./media/variable-library-troubleshoot/cant-start-deployment.png" alt-text="Screenshot of error message that says Can't start deployment.":::
 
-**Description of problem**: I tried to deploy the Variable library, but I got a message that says "Can't start deployment."
-**Cause**: The selected active value set in the target stage is missing in the deployed Variable library. You might have removed or renamed the active value set in the source stage or in Git, so the active value set in the target stage is invalid.  
-**Solution**: Change the name of the active value set in the target stage to one that exists in the Variable library. You can do this manually (through the UI), with the *Update API*, or update from Git. Then, re-deploy the Variable library.
+**Description of problem**: I tried to deploy the Variable library, but I got a message that says *Can't start deployment*.
+**Cause**: The selected active value set in the target stage is missing in the deployed Variable library. You might have removed or renamed the active value set in the source or target stage, so the active value set in the target stage is invalid.  
+**Solution**: Change the name of the active value set in the target stage to one that exists in the source.
 
-### Error message: Variable not found
+### Error message: Added variable can't be referenced
 
-**Description of problem**: I added a variable to the Variable library, but I can't find it in the data pipeline.  
-**Cause**: You might have forgotten to save the variable in the Variable library.  
-**Solution**: Create the variable again and save select save.  
+:::image type="content" source="./media/variable-library-troubleshoot/variable-not-found.png" alt-text="Screenshot of error message that says Can't start deployment.":::
+
+**Description of problem**: I can't find the variable I want in the data pipeline.  
+**Cause**: You might have forgotten to save the variable in the Variable library, or it might have been deleted or renamed.  
+**Solution**: Go back to the variable library, and check the names of the existing variables. If the variable you want exists but wasn't saved, save it. If you need to create it, create it. If it has a different name, remove the current reference, and replace it with the correct name in the data pipeline.
 
 ### Active value set not changed
 
