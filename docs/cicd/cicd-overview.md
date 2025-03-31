@@ -35,7 +35,7 @@ For the most efficient lifecycle management experience in Fabric, connect your d
 
 ## Variable library
 
-With Variable libraries, customers can:
+With [Variable libraries](./variable-library/variable-library-overview.md), customers can:
 
 * Define and manage variables (user-defined variables) in a unified way for all workspace items.
 * Use the variables in different places in the product: In item definitions (such as queries), as reference to other items (Lakehouse ID), and more.
