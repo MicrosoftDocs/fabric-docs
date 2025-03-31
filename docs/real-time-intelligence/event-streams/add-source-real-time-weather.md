@@ -12,12 +12,7 @@ ms.search.form: Source and Destination
 
 # Add a real-time weather source to an eventstream
 
-You can add a real-time weather source to an eventstream to stream real-time weather data from different locations. This source allows you to select specific city or latitude and longitude coordinates to receive weather information. This article shows you how to add a real-time weather source to an eventstream.
-
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
+[!INCLUDE [real-time-weather-source-description-prerequisites](./includes/real-time-weather-source-description-prerequisites.md)] 
 
 ## Add a real-time weather as a source
 
