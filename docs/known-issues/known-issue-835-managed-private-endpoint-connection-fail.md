@@ -1,7 +1,7 @@
 ---
 title: Known issue - Managed private endpoint connection could fail
 description: A known issue is posted where a managed private endpoint connection could fail.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 09/13/2024

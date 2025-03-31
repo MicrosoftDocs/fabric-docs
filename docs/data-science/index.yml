@@ -42,7 +42,7 @@ landingContent:
             url: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 
 # Card 
-  - title: AI skill (preview)
+  - title: Fabric data agent (preview)
     linkLists:
       - linkListType: overview
         links:

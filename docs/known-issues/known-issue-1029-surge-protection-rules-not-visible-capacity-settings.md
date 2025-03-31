@@ -1,7 +1,7 @@
 ---
 title: Known issue - Existing preview surge protection rules aren't visible in Capacity settings
 description: A known issue is posted where existing preview surge protection rules aren't visible in Capacity settings.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/25/2025

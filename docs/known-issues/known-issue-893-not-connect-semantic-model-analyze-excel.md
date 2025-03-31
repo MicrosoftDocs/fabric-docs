@@ -1,7 +1,7 @@
 ---
 title: Known issue - Can't connect to semantic model from Excel or use Analyze in Excel
 description: A known issue is posted where you can't connect to semantic model from Excel or use Analyze in Excel.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 10/23/2024

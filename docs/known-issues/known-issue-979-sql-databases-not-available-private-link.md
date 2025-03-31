@@ -1,7 +1,7 @@
 ---
 title: Known issue - SQL databases not available with private link through January 2025
 description: A known issue is posted where SQL databases aren't available in tenants with private link enabled through January 2025.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/06/2025

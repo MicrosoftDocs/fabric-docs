@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom:
 ms.search.form: Develop and run notebooks
-ms.date: 11/15/2023
+ms.date: 03/31/2025
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks

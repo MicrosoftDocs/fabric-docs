@@ -1,7 +1,7 @@
 ---
 title: Known issue - Preview destination data on a pipeline's copy activity fails
 description: A known issue is posted where previewing destination data on a pipeline's copy activity fails.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/18/2025

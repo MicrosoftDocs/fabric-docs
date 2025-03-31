@@ -4,7 +4,7 @@ description: Learn how to enable CI/CD for user data functions items in Fabric.
 ms.author: sumuth
 author: mksuni
 ms.topic: how-to
-ms.date: 03/27/2025
+ms.date: 03/31/2025
 ms.search.form: Use Git and deployment pipelines in user data functions
 ---
 

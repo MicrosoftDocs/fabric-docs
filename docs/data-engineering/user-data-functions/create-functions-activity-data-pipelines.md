@@ -4,7 +4,7 @@ description: Learn how to add user data functions activity to a data pipeline an
 ms.author: sumuth
 author: mksuni
 ms.topic: how-to
-ms.date: 03/21/2025
+ms.date: 03/31/2025
 ---
 
 # Create and run user data functions activity in data pipelines (Preview)
