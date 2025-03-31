@@ -148,11 +148,14 @@ The item details view has a number of tabs that to help you explore your selecte
 The overview tab shows the following information:
 
 * **Location**: The workspace the item is located in. Selecting the workspace navigates to the workspace.
-* **Data updated**: Last update time.
+* **Data freshness**: Last refresh or update time.
 * **Owner**: The item owner. Selecting the owner opens an email to them.
 * **Sensitivity label**: The name of the sensitivity label applied to the item, if any.
 
 Data items such as semantic models and lakehouses show the underlying table and column schema for exploration purposes.
+
+* To help locate the table or column you're looking for, use the Filter by keyword box.
+* To further explore a table or column using [Power BI's exploration exerience](/power-bi/consumer/explore-data-service), hover over it and select the binoculars icon.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-overview-tab.png" alt-text="Screenshot of the explore tab item view overview tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-overview-tab.png":::
 
