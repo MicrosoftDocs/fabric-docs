@@ -23,7 +23,7 @@ The schedule for running the DAG depends on various factors, such as:
 
 Click on the Schedule button on the Lakehouse in the DAG view
 
-:::image type="content" source="./media/schedule-a-dag-run/schedule-run.png" alt-text="Screenshot showing the schedule button in DAG UI ." border="true" lightbox="./media/schedule-a-dag-run/schedule-run.png":::
+:::image type="content" source="./media/schedule-a-dag-run/schedule-run.png" alt-text="Screenshot showing the schedule button in DAG UI." border="true" lightbox="./media/schedule-a-dag-run/schedule-run.png":::
 
 
 The schedule UI opens and is visible to the user.
