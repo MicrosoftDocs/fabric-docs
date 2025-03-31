@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 01/20/2025
+ms.date: 03/31/2025
 ms.custom: 
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to use OneLake catalog's Explore to discover, manage, and use the content I need.
 ---
@@ -117,13 +117,21 @@ The preceding image shows the *Sales Org* workspace selected in the Workspaces s
 
 ## Open an item's options menu
 
-From the items list, you can open the item for editing or viewing (depending on the item type), and you can open the item's options menu. The options menu enables you to perform actions such as opening the item's settings, managing the item's permissions, etc. The options available depend on the type of item and your permissions on the item.
+Each item in the items list has an options menu that enables you to do things, such as open the item's settings, manage item permissions, etc. The options available depend on the item and your permissions on the item.
 
-* To open the item for editing or viewing: Hover over the item in the items list and select the **Open <item type>** icon that appears.
-
-* To open the the item's options menu: Hover over the item and select **More options (...)**.
+To display the options menu, hover over the item whose options menu you want to see and select **More options (...)**.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false" lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png":::
+
+## Open an item for editing or viewing
+
+You can open the item for editing or viewing (depending on the item type) from both the items list and from the [items details view](#view-item-details).
+
+* To open the item for editing or viewing from the items list, hover over the item in the items list and select the **Open** icon that appears.
+
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-edit-view-mode.png" alt-text="Screenshot of an item's open icon in the OneLake catalog." border="false" lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-edit-view-mode.png":::
+
+To open the item for editing or viewing, from the [item details view](#view-item-details), select the **Open** button in the view.
 
 ## View item details
 
