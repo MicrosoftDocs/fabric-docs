@@ -100,11 +100,6 @@ The system overview page provides a snapshot of the current state of the eventho
         * **Compressed size**: The compressed data size of the eventhouse.
         * **Premium**: The amount of Premium storage utilized. This is the high-performance storage tier for your most active data, ensuring the fastest possible access for real-time processing and analysis. If all data is not stored in the Premium cache, query latency may be negatively impacted.. For more information, review your [caching policy](data-policies.md#caching-policy).
 
-        <!--  * **Cache misses**
-            * **Cache misses**: The current percentage of cache misses from the last hour.
-            * **Last 24 hours**: The percentage change from 1 hour to 24 hours ago​.
-            * **Last week**: The percentage change from 1 hour to one week ago​. -->
-
     * **Storage resources**: Shows a snapshot of the storage breakdown by database. You can drilldown into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
 
     * **Activity in minutes**: Shows the duration in minutes to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.

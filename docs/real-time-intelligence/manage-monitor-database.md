@@ -98,7 +98,7 @@ At the top of the main view area, you can select these options:
 
 * **Query with code**: select to open the queryset for the database.
 
-* **Overview** or **Entity diagram (preview)**: View an overview of the [Database activity tracker](#database-activity-tracker) and [Tabs - Tables / Data preview / Query Insights](#tables-list) in the main view area, or view the database as an [entity diagram](database-entity-diagram.md).
+* **Overview** or **Entity diagram (preview)**: View an overview of the [Database activity tracker](#database-activity-tracker) and the [Tabs - Tables / Data preview / Query Insights](#data-insights) in the main view area, or view the database as an [entity diagram](database-entity-diagram.md).
 
 * **Share**: to share access to a database, select the database from the list and [share the database link](access-database-copy-uri.md#share-a-kql-database-link).
 
@@ -121,7 +121,7 @@ The database activity tracker displays the number of rows loaded into the databa
 | Refresh | Refresh your histogram manually.|
 | Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram.<br><br/>The ingestion histogram displays data by the interval chosen, and displays in UTC time. Hover over the histogram to display total rows ingested and total queries per status. |
 
-### Tables list
+### Data insights
 
 This section of the database page main area displays a list of tables in the database, with the tabs showing the following information:
 
@@ -130,10 +130,6 @@ This section of the database page main area displays a list of tables in the dat
 | **Tables** | View table information as **Cards** or as a **List**. Cards and lists view table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>* Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>* The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, *Caching*, *Retention*, *OneLake* status, and *Created on*. To explore a specific table, select the name of this table from the list. For more information, see [Manage and monitor a table](manage-monitor-table.md). |
 | **Data preview** | Shows a preview of the top records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view. You can also search for keywords and use the filter tables option.|
 | **Query insights - top 100 queries** | Shows the top queries that can be sorted according to most recent, longest duration, highest CPU usage, highest cold storage usage, or highest memory peak usage. To sort, use the **Top by:** menu. </br></br>  :::image type="content" source="media/create-database/queries-top-by-menu.png" alt-text="Screenshot of queries menu to see percentage of querires completed."::: |
-<!--| | Cache hit misses over time|  |
-| | Top queries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
-|**Ingestion failures**|
-| | Ingestion failures | Highlights permanent failures only. Shows the time, table, and details of the ingestion failure.|-->
 
 ## Database details
 
