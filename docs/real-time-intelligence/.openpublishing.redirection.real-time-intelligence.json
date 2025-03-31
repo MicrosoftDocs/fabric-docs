@@ -669,6 +669,11 @@
       "source_path_from_root": "/docs/data-activator/index.yml",
       "redirect_url": "/fabric/real-time-intelligence/data-activator/index",
       "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/eventhouse-git-deployment-pipelines.md",
+      "redirect_url": "/fabric/real-time-intelligence/git-deployment-pipelines",
+      "redirect_document_id": true
     }
   ]
 }

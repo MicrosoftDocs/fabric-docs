@@ -1,10 +1,10 @@
 ---
 title: Known issue - Data warehouses don't show button friendly names
 description: A known issue is posted where data warehouses don't show button friendly names.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 10/03/2024
+ms.date: 03/21/2025
 ms.custom: known-issue-872
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-872
 
 The data warehouse user interface might not show the correct button names. You can still use button functionality as expected.
 
-**Status:** Open
+**Status:** Fixed: March 21, 2025
 
 **Product Experience:** Data Warehouse
 

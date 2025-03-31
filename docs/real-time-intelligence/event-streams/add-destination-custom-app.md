@@ -98,6 +98,8 @@ The **Sample code** page on the **Kafka** tab provides ready-made code, includin
 
 :::image type="content" source="./media/add-destination-custom-app-enhanced/kafka-sample-code.png" alt-text="Screenshot that shows Kafka sample code on the Details pane of the eventstream live view.":::
 
+For a clear guide on using the custom endpoint with the Kafka protocol, refer to [this tutorial](stream-consume-events-use-kafka-endpoint.md). It provides detailed steps for streaming and consuming events using the custom endpoint with the Kafka protocol.
+
 ### AMQP
 
 The AMQP format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between various platforms and languages. You can use this format to connect to your eventstream by using the AMQP protocol.

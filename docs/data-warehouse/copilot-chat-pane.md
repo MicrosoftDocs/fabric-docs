@@ -1,14 +1,15 @@
 ---
-title: "How to: Use the Copilot chat pane for Fabric Data Warehouse"
+title: "How To: Use the Copilot Chat Pane for Fabric Data Warehouse"
 description: Learn more about Microsoft Copilot chat pane for Fabric Data Warehouse, to ask questions specific to your warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: salilkanade
-ms.date: 08/01/2024
+author: markingmyname
+ms.author: maghan
+ms.reviewer: salilkanade, wiassaf
+ms.date: 03/31/2025
 ms.topic: how-to
-ms.collection: ce-skilling-ai-copilot
-ms.custom:
+ms.collection:
+  - ce-skilling-ai-copilot
 ---
+
 # How to: Use the Copilot chat pane for Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
@@ -40,6 +41,7 @@ The supported capabilities of interacting through chat include:
 
 1. In the **Data warehouse** workload, open a warehouse, and open a new SQL query.
 1. To open the Copilot chat pane, select the **Copilot** button.
+
     :::image type="content" source="media/copilot-chat-pane/copilot-button.png" alt-text="Screenshot from the Fabric portal showing the Copilot button in the ribbon." lightbox="media/copilot-chat-pane/copilot-button.png":::
 
 1. The chat pane offers helpful starter prompts to get started and familiar with Copilot. Select any option to ask Copilot a question. The **Ask a question** button provides example questions that are tailored specifically to your warehouse.
@@ -47,6 +49,7 @@ The supported capabilities of interacting through chat include:
 1. You can also type a request of your choice in the chat box and Copilot responds accordingly.
 
 1. To find documentation related to your request, select the **Help** button.
+
     :::image type="content" source="media/copilot-chat-pane/copilot-chat.png" alt-text="Screenshot from the Fabric portal showing the Copilot chat.":::
 
 ## More powerful use cases
@@ -69,7 +72,7 @@ You can ask Copilot questions about the warehouse normally and it should respond
 
 ## Related content
 
-- [Microsoft Copilot for Fabric Data Warehouse](copilot.md)
+- [Overview of Copilot for Data Warehouse](copilot.md)
 - [How to: Use Copilot code completion for Fabric Data Warehouse](copilot-code-completion.md)
 - [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)
 - [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../fundamentals/copilot-data-warehouse-privacy-security.md)

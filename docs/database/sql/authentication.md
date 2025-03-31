@@ -6,7 +6,6 @@ ms.author: jaszymas
 ms.reviewer: wiassaf
 ms.date: 11/20/2024
 ms.topic: conceptual
-ms.custom:
 ---
 # Authentication in SQL database in Microsoft Fabric
 
@@ -108,6 +107,7 @@ EXEC (@cmd);
 
 - Microsoft Entra ID is the only identity provider SQL database in Fabric supports. Specifically, SQL authentication isn't supported.
 - Logins (server principals) aren't supported.
+- Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. For more information, see [Connection policy](limitations.md#connection-policy).
 
 ## Related content
 

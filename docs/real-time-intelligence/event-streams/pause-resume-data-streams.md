@@ -45,6 +45,20 @@ The table below describes the available resume options:
 
 :::image type="content" source="./media/pause-resume-data-streams/pause-resume-switch-toggle.png" alt-text="Screenshot showing switch toggle on the node and details." lightbox="./media/pause-resume-data-streams/pause-resume-switch-toggle.png" :::
 
+> [!NOTE]  
+> When configuring an Eventstream, the source, transformation logic, and destination are typically added together. By default, when publishing the Eventstream, the backend services for both data ingestion and data routing start with **Now** respectively. However, data ingestion may begin faster than data routing, causing some data to be ingested into Eventstream before routing is fully initialized. As a result, this data may not be routed to the destination.  
+>  
+> A common example is a database CDC source, where some initial snapshot data could remain in Eventstream without being routed to the destination.  
+>  
+> To mitigate this, follow these steps:  
+> 1. When configuring an **Eventhouse (Event processing before ingestion)** or **Lakehouse** destination, uncheck **Activate ingestion** after adding the data source. 
+>
+>    :::image type="content" source="media/add-destination-kql-database/untick-activate.png" alt-text="A screenshot of the KQL Database without selecting Activate ingesting after adding the data source." lightbox="media/add-destination-kql-database/untick-activate.png":::
+> 1. Manually activate ingestion after the Eventstream is published.  
+> 1. Use the **Custom time** option to select an earlier timestamp, ensuring initial data is properly processed and routed.  
+> 
+>    :::image type="content" source="media/add-destination-kql-database/resume-kusto.png" alt-text="A screenshot of resuming the KQL Database." lightbox="media/add-destination-kql-database/resume-kusto.png":::
+
 Here's a detailed table of the nodes that support pause and resume functionality along with the available resume options:
 
 ::: zone pivot="enhanced-capabilities"  
@@ -80,6 +94,7 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Eventhouse (Direct Ingestion)                           | Destination   | NO                        |                                             |
 | Fabric Activator                                          | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                          |
 | Derived stream                                            | Destination   | NO                        |                                             |
+
 
 ::: zone-end
 

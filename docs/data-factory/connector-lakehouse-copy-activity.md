@@ -4,9 +4,11 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 03/18/2025
 ms.custom:
   - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Configure Lakehouse in a copy activity
@@ -70,8 +72,6 @@ The following properties are **required**:
       - **Timestamp**: Specify to query an older snapshot by timestamp.
       - **Version**: Specify to query an older snapshot by version.
       - **Additional columns**: Add additional data columns to the store source files' relative path or static value. Expression is supported for the latter.
-      
-    Reader version 1 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
 
   - If you select **Files**:
     - **File path type**: You can choose **File path**, **Wildcard file path**, or **List of files** as your file path type. The following list describes the configuration of each setting：
@@ -101,7 +101,7 @@ The following properties are **required**:
         - **Partition root path**: When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns.
       - **Max concurrent connections**: Indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
-## Destination
+### Destination
 
 The following properties are supported for Lakehouse under the **Destination** tab of a copy activity.
 
@@ -140,8 +140,6 @@ The following properties are **required**:
           It supports [Delta Lake time travel](https://docs.delta.io/latest/delta-batch.html#-deltatimetravel). The overwritten table has delta logs for the previous versions, which you can access in your Lakehouse. You can also copy the previous version table from Lakehouse, by specifying **Version** in the copy activity source.
 
       - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
-
-    Writer version 2 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
 
   - If you select **Files**:
     - **File path**: Select **Browse** to choose the file that you want to copy, or fill in the path manually.
@@ -186,6 +184,31 @@ If you choose Binary as your file format, mapping isn't supported.
 ### Settings
 
 For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+## Delta Lake table support
+
+In the sections below, you will find detailed information on Delta Lake table support for both the source and destination.
+
+### Source
+
+Reader version 1 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
+
+[Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) is supported when you apply reader version 2 or reader version 3 with `columnMapping` in `readerFeatures` in your Lakehouse table. 
+
+Delta table's column mapping capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can read data from an existing delta Lake table with `delta.columnMapping.mode` set to `name` or `id`.
+
+[Deletion vectors](https://docs.delta.io/latest/delta-deletion-vectors.html) is supported 
+when you apply reader version 3 with `deletionVectors` in `readerFeatures` in your Lakehouse table. Rows that are soft deleted are marked in deletion vector files and skipped when reading the delta lake table. 
+
+### Destination
+
+Writer version 2 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
+
+[Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) is supported. This capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can:
+
+- Write data to an existing delta lake table with `delta.columnMapping.mode` set to `name` or `id`.
+- Auto-create a table with `delta.columnMapping.mode` set to `name` when the destination table does not exist and the source columns include special characters and whitespaces.
+- Auto-create a table with `delta.columnMapping.mode` set to `name` when the table action is overwrite and the source dataset columns include special characters and whitespaces.
 
 ## Table summary
 

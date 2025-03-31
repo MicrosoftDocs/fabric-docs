@@ -1,8 +1,8 @@
 ---
 title: Salesforce Service Cloud connector overview
 description: This article provides an overview of the supported capabilities of the Salesforce Service Cloud connector.
-author: jonburchel
-ms.author: jburchel
+author: whhender
+ms.author: whhender
 ms.topic: how-to
 ms.date: 02/11/2025
 ms.custom:
@@ -24,5 +24,6 @@ The Salesforce Service Cloud connector supports the following capabilities in da
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None <br> On-premises | Organizational account |
+| **Lookup activity** | None <br> On-premises | Organizational account |
 
 To learn more about the copy activity configuration for Salesforce Service Cloud in data pipelines, go to [Configure in a data pipeline copy activity](connector-salesforce-service-cloud-copy-activity.md).

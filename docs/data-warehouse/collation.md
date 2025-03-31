@@ -62,7 +62,7 @@ You can easily create a new warehouse with case-insensitive collation using [Vis
     }
    ```
 1. Replace the placeholder values:
-   - `<workspaceID>`: Find the workspace GUID in the URL after the `/groups/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse.
+   - `<workspaceID>`: Find the workspace GUID in the URL after the `/groups/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse. If your `/groups/` URL is followed by `/me/`, you're using the default workspace, and currently this feature is not supported in the default workspace. 
    - `<bearer token>`: Obtain this by following these steps:
       1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge or Google Chrome).
       1. Press **F12** to open Developer Tools. 
@@ -71,7 +71,7 @@ You can easily create a new warehouse with case-insensitive collation using [Vis
       1. Paste it in place of `<bearer token>`.
 
       > [!NOTE]
-      > In some scenarios, `copy(powerBIAccessToken)` may fail with the error `uncaught TypeError: copy is not a function` if there is any element id named "copy" in the page. In such cases, manually remove the element id using the following command before using the "copy" function: `document.querySelector('#copy').remove()`.
+      > In some scenarios, `copy(powerBIAccessToken)` can fail with the error `uncaught TypeError: copy is not a function` if there is any element ID named "copy" in the page. In such cases, manually remove the element ID using the following command before using the "copy" function: `document.querySelector('#copy').remove()`.
 
    - `<Warehouse name here>`: Enter the desired warehouse name.
    - `<Warehouse description here>`: Enter the desired warehouse description.

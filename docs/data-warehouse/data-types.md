@@ -4,7 +4,7 @@ description: Learn about the T-SQL data types supported the SQL analytics endpoi
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, jovanpop
-ms.date: 01/23/2025
+ms.date: 03/19/2025
 ms.topic: conceptual
 ms.custom:
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
@@ -16,7 +16,7 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This artic
 Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the most commonly used T-SQL data types.
 
 - For more information on table creation, see [Tables](tables.md).
-- The supported data types of Warehouse are different from the [supported data types of SQL Database in Fabric](../database/sql/limitations.md#column-level).
+- The supported data types of Warehouse are different from the [supported data types of SQL database in Fabric](../database/sql/limitations.md#column-level).
 - For syntax, see [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true)
 
 ## Data types in Warehouse
@@ -36,7 +36,7 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 
 \*\* The **uniqueidentifier** data type is a T-SQL data type without a matching data type in Delta Parquet. As a result, it's stored as a binary type. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports storing and reading **uniqueidentifier** columns, but these values can't be read on the [!INCLUDE [fabric-dw](includes/fabric-se.md)]. Reading **uniqueidentifier** values in the lakehouse displays a binary representation of the original values. As a result, features such as cross-joins between [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-dw](includes/fabric-se.md)] using a **uniqueidentifier** column don't work as expected.
 
-\*\*\* Support for **varchar (max)** and **varbinary (max)** is currently in preview for the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The string columns from the underlying Delta Lake files in One Lake are represented as **varchar(8000)** instead of **varchar(max)** in the [!INCLUDE [fabric-dw](includes/fabric-se.md)].
+\*\*\* Support for **varchar (max)** and **varbinary (max)** is currently in preview for the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The string columns from the underlying Delta Lake files in One Lake are represented as **varchar(8000)** instead of **varchar(max)** in the [!INCLUDE [fabric-dw](includes/fabric-se.md)]. The limit for storage in **varchar(max)** is currently 1 MB in Fabric Data Warehouse.
 
 For more information about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric).
 

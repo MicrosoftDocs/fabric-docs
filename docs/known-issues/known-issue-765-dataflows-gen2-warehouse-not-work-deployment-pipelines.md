@@ -1,7 +1,7 @@
 ---
 title: Known issue - Dataflows Gen2 staging warehouse doesn't work in deployment pipelines
 description: A known issue is posted where Dataflows Gen2 staging warehouse doesn't work in deployment pipelines.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/14/2025

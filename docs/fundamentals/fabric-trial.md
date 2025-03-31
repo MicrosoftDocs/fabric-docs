@@ -1,9 +1,9 @@
 ---
 title: Fabric trial capacity
 description: Understand how the Fabric trial works. This includes starting a trial, ending a trial, and sharing a trial.
-author: kfollis
+author: julcsc
 ms.reviewer: mihirwagle
-ms.author: kfollis
+ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
@@ -11,8 +11,6 @@ ms.date: 01/29/2025
 ---
 
 # Microsoft Fabric trial capacity
-
-[!INCLUDE [new user recruitment](../includes/fabric-new-user-research.md)]
 
 Microsoft Fabric is provided free of charge when you sign up for a Microsoft Fabric trial capacity. Your use of the Microsoft Fabric trial capacity includes access to the Fabric product workloads and the resources to create and host Fabric items. The Fabric trial lasts for 60 days unless canceled sooner.
 

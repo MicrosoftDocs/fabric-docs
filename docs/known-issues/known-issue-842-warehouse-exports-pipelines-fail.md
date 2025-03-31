@@ -1,10 +1,10 @@
 ---
 title: Known issue - Data warehouse exports using deployment pipelines or git fail
 description: A known issue is posted where data warehouse exports using deployment pipelines or git fail.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/23/2024
+ms.date: 03/21/2025
 ms.custom: known-issue-842
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-842
 
 You might have a data warehouse that you use in a deployment pipeline or store in a Git repository. When you run the deployment pipelines or update the Git repository, you might receive an error.
 
-**Status:** Open
+**Status:** Fixed: March 21, 2025
 
 **Product Experience:** Data Warehouse
 

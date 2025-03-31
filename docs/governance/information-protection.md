@@ -81,11 +81,11 @@ The following table summarizes the information protection capabilities in Fabric
 When you enable sensitivity labels on your tenant, you specify which users can apply sensitivity labels. While the other information protection capabilities described in this article can ensure that most items get labeled without someone having to manually apply a label, manual labeling makes it possible for users to change labels on items. For more information about how to manually apply sensitivity labels to Fabric items, see [How to apply sensitivity labels](../fundamentals/apply-sensitivity-labels.md).
 
 > [!NOTE]
-> For a user to be able to apply sensitivity labels to Fabric items, it's not enough just to include the user in the list of specified users. The sensitivity label must also be published to the user as part of the label's policy definitions in the Microsoft Purview compliance center. For more information, see [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels).
+> For a user to be able to apply sensitivity labels to Fabric items, it's not enough just to include the user in the list of specified users. The sensitivity label must also be published to the user as part of the label's policy definitions in the Microsoft Purview compliance portal. For more information, see [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels).
 
 ### Default labeling
 
-Default labeling is fully supported in Power BI and is described in [Default label policy for Power BI](service-security-sensitivity-label-default-label-policy.md). In Fabric, there are some limitations.
+Default labeling is fully supported in Power BI and is described in [Default label policy for Power BI](sensitivity-label-default-label-policy.md). In Fabric, there are some limitations.
 
 * When a non-Power BI Fabric item is created, if there's a clear, substantive create dialog, the default sensitivity label will be applied to the item if the user doesn't choose a label. If the item is created in a process where there's no clear create dialog, the default label **won't** be applied.
 

@@ -1,7 +1,7 @@
 ---
 title: Known issue - The default environment's resources folder doesn't work in notebooks
 description: A known issue is posted where the default environment's resources folder doesn't work in notebooks.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 11/12/2024

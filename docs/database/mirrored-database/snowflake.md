@@ -60,7 +60,9 @@ For more information, see Snowflake documentation on [Access Control Privileges 
 
 ## Mirrored Snowflake cost considerations
 
-Fabric doesn't charge for network data ingress fees into OneLake for Mirroring. There are no mirroring costs when your Snowflake data is being replicated into OneLake.
+Fabric compute used to replicate your data into Fabric OneLake is free. The Mirroring storage cost is free up to a limit based on capacity. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute for querying data using SQL, Power BI, or Spark is charged at regular rates.
+
+Fabric doesn't charge for network data ingress fees into OneLake for Mirroring.
 
 There are Snowflake compute and cloud query costs when data is being mirrored: virtual warehouse compute and cloud services compute.
 

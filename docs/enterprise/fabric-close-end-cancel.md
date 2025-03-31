@@ -1,13 +1,14 @@
 ---
 title: Fabric and Power BI, end, close, cancel
-description: Learn how to end a trial, cancel a subscription, and close an account in Fabric and Power BI. 
-author: kfollis
-ms.author: kfollis
-ms.reviewer: ''
+description: Learn how to end a Microsoft Fabric or Power BI trial, cancel a subscription, and close an account in Fabric and Power BI. 
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
-ms.date: 04/30/2024
+ms.date: 03/06/2025
 ms.custom: licensing support
 LocalizationGroup: Get started
+
+#customer intent: As a user or an admin, I want to know how to close my account, cancel my subscription, or end my trial in Microsoft Fabric and Power BI.
 ---
 
 # Close your account, cancel your subscription, end your trial
@@ -80,13 +81,13 @@ If a Premium subscription or capacity license expires, you have 90 days of full 
 
 ## Subscriptions
 
-Fabric and Power BI subscriptions can be canceled in several different ways. The subscriptions remain active until the expiration date, so Global and Billing administrators should remind users to save their data. 
+Fabric and Power BI subscriptions can be canceled in several different ways. The subscriptions remain active until the expiration date, so administrators should remind users to save their data. 
 
 ### Cancel a capacity subscription
 
 Cancel a P SKU or EM SKU capacity subscription in the Microsoft 365 admin portal. If you're within your grace period, select **Billing** > **Your products** > **Subscription status** > **Cancel subscription** . If you're outside the grace period, turn off recurring billing. See [Cancel your subscription in the Microsoft 365 admin center.](/microsoft-365/commerce/subscriptions/cancel-your-subscription)
 
-The subscription remains active until it expires. Only the Global administrator or someone with billing permissions can cancel the subscription. Remember to ask users to save their data. 
+The subscription remains active until it expires. Only an administrator with billing permissions can cancel the subscription. Remember to ask users to save their data.
 
 Cancel an A SKU subscription in Azure.  
 
@@ -99,7 +100,8 @@ Cancel an A SKU subscription in Azure.
 Fabric administrators can turn off Fabric for an entire organization, individuals, and security groups. See [Can I disable Microsoft Fabric?](../admin/fabric-switch.md#can-i-disable-microsoft-fabric). At the tenant level, the Fabric admin uses the Admin portal **Settings.** The Fabric administrator can also delegate a Capacity administrator to disable Fabric at the capacity level using the Admin portal **Capacity settings.**
 
 ## Licenses
-If a Global or Billing administrator assigned the Fabric (Free) license, they can use the Admin portal to remover users' free licenses. The steps are the same as [Close your Power BI account.](#close-your-power-bi-account) If a Capacity administrator got the license themselves, they can use the Admin portal to remove that license. If a paid license expires you have a grace period for repurchasing.  
+
+If an administrator with billing permissions assigned the Fabric (Free) license, that administrator can use the Admin portal to remover users' free licenses. The steps are the same as [Close your Power BI account.](#close-your-power-bi-account) If a Capacity administrator got the license themselves, that administrator can use the Admin portal to remove that license. If a paid license expires you have a grace period for repurchasing.  
 
 ### Manage an expired license
 
@@ -110,7 +112,7 @@ When a paid license passes its expiration date, you have a grace period for repu
 The method for canceling a Power BI trial depends on how the trial was started. 
 
 - If a user started a Power BI trial of a paid license, the only way to cancel that trial is if an administrator submits a Support ticket.
-- To cancel a free organizational trial, the Global or Billing administrator can turn off recurring billing. 
+- To cancel a free organizational trial, an administrator with billing permissions can turn off recurring billing.
 
 ### Close your Power BI account
 

@@ -1,10 +1,10 @@
 ---
 title: Known issue - Renamed eventstream fails to open
 description: A known issue is posted where a renamed eventstream fails to open.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 12/17/2024
+ms.date: 02/20/2025
 ms.custom: known-issue-978
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-978
 
 After renaming an eventstream item, you can try to open it. You receive a pop-up notification indicating that the eventstream failed to open. Then, if you try to open another eventstream in the same workspace, the opening also fails, displaying the same error message. You can refresh the browser to allow the other eventstreams to open successfully, but the renamed eventstream remains inaccessible.
 
-**Status:** Open
+**Status:** Fixed: February 20, 2025
 
 **Product Experience:** Real-Time Intelligence
 

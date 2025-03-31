@@ -1,12 +1,12 @@
 ---
 title: Privacy, security, and responsible use of Copilot for SQL database (preview)
 description: Learn about privacy, security, and responsible use of Copilot for SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: yoleichen, maghan
+author: markingmyname
+ms.author: maghan
+ms.reviewer: yoleichen, wiassaf
 ms.topic: conceptual
 ms.custom:
-ms.date: 10/17/2024
+ms.date: 02/26/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 # Privacy, security, and responsible use of Copilot for SQL database in Microsoft Fabric (preview)
@@ -17,7 +17,7 @@ In this article, learn how [Microsoft Copilot for SQL databases](../database/sql
 
 With Copilot for SQL databases in Microsoft Fabric and other generative AI features, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in your database and other workloads.
 
-For limitations, see [Limitations of Copilot for SQL database](../database/sql/copilot.md#limitations-of-copilot-for-sql-database).
+For limitations, see [Limitations of Copilot for SQL database](../database/sql/copilot.md#limitations).
 
 ## Data use of Copilot for SQL databases
 

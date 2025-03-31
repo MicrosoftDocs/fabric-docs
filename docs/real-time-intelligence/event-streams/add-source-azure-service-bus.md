@@ -22,7 +22,7 @@ Azure Service Bus is a fully managed enterprise message broker with message queu
 Before you start, you must complete the following prerequisites: 
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
-- You need to have appropriate permission to get access keys for the Service Bus namespace. The Service Bus namespace must be publicly accessible and not behind a firewall or secured in a virtual network. 
+- You need to have appropriate permission to get access keys for Service Bus namespace, queues or topics. The Service Bus namespace must be publicly accessible and not behind a firewall or secured in a virtual network. 
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 ## Launch the Select a data source wizard
@@ -43,7 +43,7 @@ On the **Select a data source** page, search for and select **Connect** on the *
 1. You see that the Azure Service Bus source is added to your eventstream on the canvas in the **Edit** mode. To publish it to live, select **Publish** on the ribbon.
 
     :::image type="content" source="./media/add-source-azure-service-bus/event-stream-publish.png" alt-text="Screenshot that shows the editor with Publish button selected." lightbox="./media/add-source-azure-service-bus/event-stream-publish.png":::
-1. After you complete these steps, the Azure event hub is available for visualization in the **Live view**. Select the **Service Bus** tile in the diagram to see the page similar to the following one.
+1. After you complete these steps, the Azure service bus is available for visualization in the **Live view**. Select the **Service Bus** tile in the diagram to see the page similar to the following one.
 
     :::image type="content" source="./media/add-source-azure-service-bus/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
 

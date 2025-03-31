@@ -1,7 +1,7 @@
 ---
 title: Known issue - Dataflow Gen2 refresh fails due to missing SQL analytics endpoint
 description: A known issue is posted where Dataflow Gen2 refreshes fail due to missing staging SQL analytics endpoint.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/13/2025

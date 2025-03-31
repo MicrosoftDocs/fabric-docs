@@ -1,7 +1,7 @@
 ---
 title: Known issue - Unsupported error for legacy timestamp in Fabric Runtime 1.3
 description: A known issue is posted where there's an unsupported error for legacy timestamp in Fabric Runtime 1.3.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/05/2025
