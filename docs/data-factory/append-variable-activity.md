@@ -1,12 +1,11 @@
 ---
 title: Append variable activity
 description: Learn how to set the Append Variable activity to add a value to an existing array variable defined in Fabric pipeline.
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: makromer
 author: kromerm
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 12/18/2024
 ---
 

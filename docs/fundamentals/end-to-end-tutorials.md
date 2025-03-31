@@ -6,17 +6,11 @@ ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - build-2024
-  - ignite-2024
 ms.search.form: product-trident
 ms.date: 11/25/2024
 ---
 
 # End-to-end tutorials in Microsoft Fabric
-
-[!INCLUDE [new user recruitment](../includes/fabric-new-user-research.md)]
 
 In this article, you find a comprehensive list of end-to-end tutorials available in Microsoft Fabric. These tutorials guide you through a scenario that covers the entire process, from data acquisition to data consumption. They're designed to help you develop a foundational understanding of the Fabric UI, the various experiences supported by Fabric and their integration points, and the professional and citizen developer experiences that are available.
 

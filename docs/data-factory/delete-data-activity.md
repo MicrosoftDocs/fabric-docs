@@ -1,13 +1,11 @@
 ---
 title: Delete data activity
 description: Learn how to add a Delete data activity to a pipeline and use it to delete data from a data source.
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: yexu
 author: dearandyxu
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 12/18/2024
 ---
 

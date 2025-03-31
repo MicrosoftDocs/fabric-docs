@@ -6,8 +6,6 @@ ms.author: sgilley
 author: sdgilley
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 10/16/2023
 #  CustomerIntent: As a data scientist, I want to explore and visualize my data in a notebook.
 ---

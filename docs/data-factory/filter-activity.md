@@ -3,10 +3,9 @@ title: Filter activity
 description: Learn how to add a Filter activity to a pipeline and use it to filter data.
 author: kromerm
 ms.author: makromer
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 12/18/2024
 ---
 

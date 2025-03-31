@@ -1,14 +1,13 @@
 ---
-title: "How to: Use the Copilot Code Completion for SQL database"
+title: "How To: Use the Copilot Code Completion for SQL Database"
 description: Learn more about Microsoft Copilot Code Completion feature for SQL database in Microsoft Fabric, to ask questions specific about your database.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: yoleichen, sukkaur
-ms.date: 11/01/2024
+ms.date: 02/20/2025
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
-ms.collection: ce-skilling-ai-copilot
+ms.collection:
+  - ce-skilling-ai-copilot
 ---
 # How to: Use the Copilot Code Completion for SQL database in Fabric
 
@@ -33,7 +32,7 @@ As you start writing T-SQL code or comments in the editor, Copilot for SQL datab
      
    - If not enabled, then in your database **Settings**, select the **Copilot** pane. Enable the **Show Copilot completions** option is enabled.
    
-      :::image type="content" source="media/copilot-code-completion/copilot-setting-toggle.png" alt-text="Screenshot from the Fabric SQL database settings, showing the Copilot page and the Show Copilot completions setting.":::
+      :::image type="content" source="media/copilot-code-completion/copilot-setting-toggle.png" alt-text="Screenshot from the Fabric SQL database settings, showing the Copilot page and the Show Copilot completions setting." lightbox="media/copilot-code-completion/copilot-setting-toggle.png":::
 
 ## How can code completions help you?
 

@@ -7,7 +7,6 @@ ms.reviewer: marcozo
 reviewer: eisber
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 11/19/2024
 ms.search.form: Read write powerbi
 ---
@@ -105,6 +104,7 @@ To read data from semantic models:
        - the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model
        - the Spark driver node (visit [node sizes](../data-engineering/spark-compute.md#node-sizes) for more information) that' runs the notebook
     >- All requests are billed as [interactive requests](../enterprise/fabric-operations.md#interactive-operations)
+    >- The evaluate_dax function does not auto-refresh the semantic model. Visit [this page](/power-bi/connect-data/refresh-data) for more details.
 
 1. To add filters to the measure calculation, specify a list of permissible values for a particular column.
 

@@ -1,17 +1,13 @@
 ---
-title: "How to: Use Copilot code completion for Fabric Data Warehouse"
+title: "How To: Use Copilot Code Completion for Fabric Data Warehouse"
 description: Learn more about Microsoft Copilot code completion for Fabric Data Warehouse, to provide intelligent autocomplete-style code suggestions.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, jacinda-eng
-ms.date: 09/26/2024
+ms.date: 02/20/2025
 ms.topic: how-to
-ms.collection: ce-skilling-ai-copilot
-ms.custom:
-  - build-2024
-  - build-2024-dataai
-  - build-2024-fabric
-  - ignite-2024
+ms.collection:
+  - ce-skilling-ai-copilot
 ---
 # How to: Use Copilot code completion for Fabric Data Warehouse
 
@@ -38,13 +34,13 @@ Code completion enhances your productivity and workflow in Copilot for Data Ware
 
 1. Verify the **Show Copilot completions** setting in enabled in your warehouse settings.
    - You can also check the setting's status through the status bar at the bottom of the query editor. 
-      :::image type="content" source="media/copilot-code-completion/copilot-setting-status-bar.jpg" alt-text="Screenshot of the Copilot in-line completion status bar." lightbox="media/copilot-code-completion/copilot-setting-status-bar.jpg":::
+      :::image type="content" source="media/copilot-code-completion/copilot-setting-status-bar.jpg" alt-text="Screenshot of the Copilot in-line completion status bar.":::
    - If not enabled, then in your warehouse **Settings**, select the **Copilot** pane. Enable the **Show Copilot completions** option is enabled.
       :::image type="content" source="media/copilot-code-completion/copilot-setting.png" alt-text="Screenshot of the Copilot in-line completions setting in the setting pane." lightbox="media/copilot-code-completion/copilot-setting.png":::
 
 1. Start writing your query in the SQL query editor within the warehouse. As you type, Copilot will provide real-time code suggestions and completions of your query by presenting a dimmed ghost text.
 
-    :::image type="content" source="media/copilot-code-completion/code-completion-suggestion.png" alt-text="Screenshot from the query editor showing the dimmed text of a Copilot code suggestion." lightbox="media/copilot-code-completion/code-completion-suggestion.png":::
+    :::image type="content" source="media/copilot-code-completion/code-completion-suggestion.png" alt-text="Screenshot from the query editor showing the dimmed text of a Copilot code suggestion.":::
 
 1. You can then accept the suggestion with the **Tab** key, or dismiss it. If you do not want to accept an entire suggestion from Copilot, you can use the **Ctrl+Right** keyboard shortcut to accept the next word of a suggestion.
 
@@ -58,7 +54,7 @@ Code completion enhances your productivity and workflow in Copilot for Data Ware
 
 ## Related content
 
-- [Microsoft Copilot for Fabric Data Warehouse](copilot.md)
+- [Overview of Copilot for Data Warehouse](copilot.md)
 - [How to: Use the Copilot chat pane for Fabric Data Warehouse](copilot-chat-pane.md)
 - [How to: Use Copilot quick actions for Fabric Data Warehouse](copilot-quick-action.md)
 - [Privacy, security, and responsible use of Copilot for Data Warehouse (preview)](../fundamentals/copilot-data-warehouse-privacy-security.md)

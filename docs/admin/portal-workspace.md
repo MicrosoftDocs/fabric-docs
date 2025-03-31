@@ -6,8 +6,6 @@ ms.author: painbar
 ms.reviewer: ''
 ms.custom:
   - tenant-setting
-  - build-2023
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration

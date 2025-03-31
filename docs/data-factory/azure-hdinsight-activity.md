@@ -2,11 +2,10 @@
 title: Azure HDInsight activity
 description: Learn how to transform data by running an Azure HDInsight activity in a data pipeline in Data Factory for Microsoft Fabric.
 ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: how-to
 ms.custom:
-  - build-2024
 ms.date: 05/08/2024
 ---
 

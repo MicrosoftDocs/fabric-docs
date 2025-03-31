@@ -6,12 +6,7 @@ author: shsagir
 ms.author: shsagir
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
-  - ignite-2024
-ms.date: 11/19/2024
+ms.date: 03/03/2025
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
@@ -79,7 +74,7 @@ The following examples use data that is publicly available at [https://kustosamp
 
 The data source explorer allows you to switch between the data sources connected to the queryset tab that you are in.
 
-At the top of the data source explorer pane, under **Explorer** you can use the search bar to search for a specific data source. You can also use the database switcher below the search bar to expand the data source connections menu. Select the data source you want to use. If the tab name hasn't been edited previously, it's automatically named after the data source.
+At the top of the data source explorer pane, under **Explorer** you can use the search bar to search for a specific data source. You can also use the database switcher below the search bar to expand the data source connections menu. Select the data source you want to use. If the tab name wasn't edited previously, it's automatically named after the data source.
 
 :::image type="content" source="media/kusto-query-set/explorer-pane-switch-db.png" alt-text="Screenshot showing how to switch between data sources using the search bar and Database switcher in the Explorer pane." lightbox="media/kusto-query-set/explorer-pane-switch-db.png":::
 
@@ -111,7 +106,7 @@ Different actions are available for different item types.
 
 ### Available data sources
 
-The lower section of the data source explorer shows all the available data sources that have been added to the queryset.
+The lower section of the data source explorer shows all the available data sources that were added to the queryset.
 
 To open the action menu, hover over the data source name and select the **More actions** menu [...]. The menu shows the following options:
 
@@ -121,32 +116,7 @@ To open the action menu, hover over the data source name and select the **More a
 * Remove source: removes all the databases in that data source
 * Remove database: removes the selected database only
 
-:::image type="content" source="media/kusto-query-set/explorer-pane-lower-section.png" alt-text="Screenshot showing the lower section of the Explorer pane where all data sources that have been added to your queryset are listed." lightbox="media/kusto-query-set/explorer-pane-lower-section.png":::
-
-## Copy query
-
-You might want to copy and share the queries you create.
-
-1. At the top of the query window, select the **Home** tab.
-1. In the query pane, select **Copy query**.
-
-    :::image type="content" source="media/kusto-query-set/copy-query-results.png" alt-text="Screenshot of the Manage tab of the KQL Queryset showing the dropdown of the copy query or query results option.":::
-
-    The following table outlines the many options for how to copy a query.
-
-    |Action|Description|
-    |--|--|
-    |Copy query | Copy the query text.|
-    |Link to clipboard|Copy a deep link that can be used to run the query.|
-    |Link and query to clipboard|Copy a link that can be used to run the query and the text of the query.|
-    |Link, query and results to clipboard|Copy a link that can be used to run the query, the text of the query, and the results of the query.|
-    |Copy results|Copy the results of the query.|
-
-1. Select the desired action from the list.
-1. Paste this information to edit or share it, for example in Microsoft Word, Microsoft Teams, or Outlook.
-
-    > [!IMPORTANT]
-    > The user who is receiving the query link must have viewing permissions to the underlying data to execute the query and view results.
+:::image type="content" source="media/kusto-query-set/explorer-pane-lower-section.png" alt-text="Screenshot showing the lower section of the Explorer pane where all data sources that were added to your queryset are listed." lightbox="media/kusto-query-set/explorer-pane-lower-section.png":::
 
 ## Manage queryset tabs
 
@@ -161,19 +131,6 @@ You can manage your tabs in the following ways:
 * **Change tab positions**: Use drag and drop gestures.
 
 :::image type="content" source="media/kusto-query-set/multiple-tabs-menu-1.png" alt-text="Screenshot of the multiple tabs menu for managing multiple tabs in the KQL Queryset." lightbox="media/kusto-query-set/multiple-tabs-menu-1.png":::
-
-## Export query data as CSV
-
-Instead of simply copy-pasting the query output, you can also export the query results.
-
-This is a one-time method to export a CSV file containing the query results.
-
-1. At the top of the query window, select the **Home** tab.
-
-    :::image type="content" source="media/kusto-query-set/export-csv.png" alt-text="Screenshot of the Home tab of the KQL Queryset showing the highlighted option to export results to CSV.":::
-
-1. In the query pane, select **Export to CSV**.
-1. Save the CSV file locally.
 
 ## Delete KQL queryset
 

@@ -8,10 +8,13 @@ items:
     href: overview.md
   - name: Compare with Azure solutions
     href: real-time-intelligence-compare.md
-  - name: Git and deployment pipelines
-    href: eventhouse-git-deployment-pipelines.md
+  - name: Git integration and deployment pipelines
+    href: git-deployment-pipelines.md
+    displayName: alm, application lifecycle management, cicd, devops
   - name: Implement medallion architecture
     href: architecture-medallion.md
+  - name: End to end sample
+    href: sample-end-to-end.md
   - name: End to end tutorial
     items:
     - name: End to end tutorial - Introduction
@@ -50,7 +53,7 @@ items:
   items:
   - name: Get and process data in Eventstream
     items:
-    - name: What is Fabric event streams?
+    - name: Eventstream Overview
       href: event-streams/overview.md
     - name: What's new in Fabric event streams?
       href: event-streams/whats-new.md
@@ -158,8 +161,12 @@ items:
           href: event-streams/api-update-eventstream-definition.md
     - name: Security
       items:
-      - name: Connect to Azure resources using private endpoints
+      - name: Connect to Azure Event Hubs and IoT Hub sources using managed private endpoints
         href: event-streams/set-up-private-endpoint.md
+      - name: Connect to streaming sources in private network with Eventstream
+        href: event-streams/connect-connecots-in-virtual-network-on-premises.md
+      - name: Microsoft Entra ID authentication
+        href: event-streams/custom-endpoint-entra-id-auth.md      
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
@@ -250,6 +257,8 @@ items:
       href: eventhouse.md
     - name: Create an eventhouse
       href: create-eventhouse.md
+    - name: Deploy an eventhouse using APIs
+      href: eventhouse-deploy-with-fabric-api.md
     - name: Manage and monitor an eventhouse
       href: manage-monitor-eventhouse.md
   - name: KQL Database
@@ -268,6 +277,8 @@ items:
       - name: Data management overview
         displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin
         href: data-management.md
+      - name: Entity diagram view in KQL database
+        href: database-entity-diagram.md
       - name: Change data policies
         href: data-policies.md
       - name: Create a table update policy
@@ -308,6 +319,8 @@ items:
       href: create-query-set.md
     - name: Query data in a KQL queryset
       href: kusto-query-set.md
+    - name: Share queries
+      href: kusto-share-queries.md
     - name: Access the data profile of a table
       href: data-profile.md
     - name: Customize results in the KQL Queryset results grid
@@ -434,5 +447,15 @@ items:
       href: monitor-logs-ingestion-results.md
     - name: Query logs
       href: monitor-logs-query.md
+- name: Migrate
+  items:
+  - name: From Azure Synapse Data Explorer
+    href: migrate-synapse-data-explorer.md
+  - name: API endpoints
+    items:
+    - name: Validate migration
+      href: migrate-api-validate-synapse-data-explorer.md
+    - name: Migrate to Eventhouse
+      href: migrate-api-to-eventhouse.md
 - name: KQL reference
   href: kusto-tocs/query/toc.yml

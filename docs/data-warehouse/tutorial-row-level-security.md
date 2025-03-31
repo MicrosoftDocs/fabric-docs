@@ -7,7 +7,6 @@ ms.reviewer: dhsundar
 ms.date: 01/16/2025
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ---
 # Implement row-level security in Microsoft Fabric data warehousing
 

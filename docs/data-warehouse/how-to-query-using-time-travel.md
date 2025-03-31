@@ -5,7 +5,6 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish # Microsoft alias
 ms.custom:
-  - build-2024
 ms.topic: how-to
 ms.date: 10/23/2024
 ---

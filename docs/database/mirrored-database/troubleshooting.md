@@ -4,10 +4,9 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 01/27/2025
+ms.date: 03/14/2025
 ms.topic: troubleshooting
 ms.custom:
-  - ignite-2024
 ms.search.form: Fabric Mirroring
 ---
 
@@ -35,6 +34,16 @@ Review limitations documentation for each data source:
 - [Limitations in Microsoft Fabric mirrored databases from Snowflake](snowflake-limitations.md)
 - [Limitations in mirroring from Fabric SQL database](../sql/mirroring-limitations.md)
 
+## Changes to Fabric capacity
+
+| Scenario                      | Description                                                  |
+| ----------------------------- | ------------------------------------------------------------ |
+| Fabric capacity paused        | Mirroring is stopped and you cannot list or access the mirrored database item. Resume or reassign the capacity to your workspace. |
+| Fabric capacity resumed       | **Known limitation:** When capacity is resumed from a paused state, the mirrored database status appears as Running, but mirroring doesn’t start automatically. As a result, changes made in the source are not replicated to OneLake.<br>To resume mirroring, go to the mirrored database in the Fabric portal, select **Configure replication**, and click **Apply change**. Mirroring will continue from where it was paused. <br>Note if the capacity is paused for a long time, mirroring may not resume from its stopping point and will reseed data from the beginning. For example, this can occur if the transaction log for the database is full. |
+| Fabric capacity scaling       | Mirroring continues. If you scale down the capacity, be aware that the OneLake storage for the mirrored data is free up to a limit based on the capacity size, thus scaling down the capacity may incur additional storage charge. Learn more from [Cost of mirroring](overview.md#cost-of-mirroring). |
+| Fabric capacity throttled     | Wait until the overload state is over or update your capacity. Mirroring will continue once the capacity is restored. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling.md#actions-you-can-take-to-recover-from-overload-situations). |
+| Fabric trial capacity expired | Mirroring is stopped. To retain your mirrored database, purchase Fabric capacity. Learn more from [Fabric trial capacity expires](../../fundamentals/fabric-trial.md#the-trial-expires). |
+
 ## Stop replication
 
 When you select **Stop replication**, OneLake files remain as is, but incremental replication stops. You can restart the replication at any time by selecting **Start replication**. You might want to do stop/start replication when resetting the state of replication, after source database changes, or as a troubleshooting tool.  
@@ -56,6 +65,10 @@ For tables that are already under replication before this feature enabled, to in
 ## Take ownership of a mirrored database
 
 Currently, mirrored database doesn't support ownership change. If a mirrored database stops working because the item owner has left the organization or it's no longer valid, you need to recreate the mirrored database.
+
+## Supported regions
+
+[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Troubleshoot
 
@@ -98,7 +111,6 @@ These common error messages have explanations and mitigations:
 
 | **Error message** | **Reason** | **Mitigation** |
 |:--|:--|:--|
-| "The replication is being throttled due to destination space limit." | There's a maximum of 10 TB of storage space in destination per Mirrored database. The replication is being throttled due to destination space limit. | In the source database, drop tables, remove data, or shard. |
 | "The tables count may exceed the limit, there could be some tables missing."| There's a maximum of 500 tables. | In the source database, drop or filter tables. If the new table is the 500th table, no mitigation required. |
 | "The replication is being throttled and expected to continue at YYYY-MM-DDTHH:MM:ss." | There's a maximum of 1 TB of change data captured per Mirrored database per day. | Wait for throttling to end. |
 

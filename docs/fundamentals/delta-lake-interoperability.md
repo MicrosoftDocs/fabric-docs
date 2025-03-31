@@ -6,11 +6,7 @@ ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - build-2024
-  - ignite-2024
-ms.date: 11/15/2023
+ms.date: 2/20/2025
 ms.search.form: delta lake interoperability
 ---
 
@@ -60,6 +56,11 @@ Currently, Fabric doesn't support these Delta Lake features:
 * Delta Live Tables (proprietary Databricks feature)
 * RLE (Run Length Encoding) enabled on the checkpoint file
 
+## Special characters on table names
+
+Microsoft Fabric supports special characters as part of the table names. This allows the usage of unicode characters to compose table names in Microsoft Fabric experiences.
+
+The following special characters are either reserved or not compatible with at least one of Microsoft Fabric technologies and should not be used as part of a table name: " (double quotes), ' (single quote), #, %, +, :, ?, ` (backtick).
 
 ## Related content
 

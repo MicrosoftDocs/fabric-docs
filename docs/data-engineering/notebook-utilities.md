@@ -6,10 +6,6 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
 ms.date: 07/25/2024
 ---
@@ -20,7 +16,7 @@ Notebook Utilities (NotebookUtils) is a built-in package to help you easily perf
 
 > [!NOTE]
 >
-> - MsSparkUtils is officially renamed to **NotebookUtils**. The existing code remains **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
+> - MsSparkUtils is officially renamed to **NotebookUtils**. The existing code remains **backward compatible** and does not cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
 > - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates are exclusively supported with notebookutils namespace going forward.
 
 ## File system utilities
@@ -60,10 +56,14 @@ Use notebookutils.fs.help("methodName") for more info about a method.
 
 NotebookUtils works with the file system in the same way as Spark APIs. Take *notebookutils.fs.mkdirs()* and Fabric lakehouse usage for example:
 
-| **Usage** | **Relative path from HDFS root** | **Absolute path for ABFS file system** |**Absolute path for local file system in driver node** |
+| **Usage** | **Relative path from HDFS root** | **Absolute path for ABFS file system** | **Absolute path for local file system in driver node** |
 |---|---|---|---|
-| Non-default lakehouse | Not supported | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
-| Default lakehouse | Directory under “Files” or “Tables”: *notebookutils.fs.mkdirs("Files/<new_dir>")* | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* |*notebookutils.fs.mkdirs("file:/<new_dir>")*|
+| Non-default lakehouse | Not supported |  *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
+| Default lakehouse | Directory under 'Files' or 'Tables': *notebookutils.fs.mkdirs("Files/<new_dir>")* | *notebookutils.fs.mkdirs("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<new_dir>")* | *notebookutils.fs.mkdirs("file:/<new_dir>")* |
+
+> [!NOTE]
+> - For the default Lakehouse, file paths are mounted in your Notebook with a default file cache timeout of 120 seconds. This means that files are cached in the Notebook's local temporary folder for 120 seconds, even if they are removed from the Lakehouse. If you want to change the timeout rule, you can unmount the default Lakehouse file paths and mount them again with different [*fileCacheTimeout*](#mount-via-shared-access-signature-token-or-account-key) value.
+> - For non-default Lakehouse configurations, you can set the appropriate [*fileCacheTimeout*](#mount-via-shared-access-signature-token-or-account-key) parameter during the mounting of the Lakehouse paths. Setting the timeout to 0 ensures that the latest file is fetched from the Lakehouse server.
 
 ### List files
 
@@ -171,7 +171,7 @@ notebookutils.fs.append("file path", "content to append", True) # Set the last p
 
 > [!NOTE] 
 > - ```notebookutils.fs.append()``` and ```notebookutils.fs.put()``` do not support concurrent writing to the same file due to lack of atomicity guarantees.
-> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend adding a ```sleep``` statement around 0.5s ~ 1s between the recurring writes. This recommendation is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
+> - When using the ``` notebookutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend adding a ```sleep``` statement around 0.5 s ~ 1 s between the recurring writes. This recommendation is because the ```notebookutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
 
 ### Delete file or directory
 
@@ -336,7 +336,7 @@ This method exits a notebook with a value. You can run nesting function calls in
 
 - When you call an *exit()* function from a notebook interactively, the Fabric notebook throws an exception, skips running subsequent cells, and keeps the Spark session alive.
 
-- When you orchestrate a notebook in a pipeline that calls an exit() function, the notebook activity returns with an exit value.This completes the pipeline run and stops the Spark session.
+- When you orchestrate a notebook in a pipeline that calls an exit() function, the notebook activity returns with an exit value. This complete the pipeline run and stops the Spark session.
 
 - When you call an *exit()* function in a notebook that is being referenced, Fabric Spark will stop the further execution of the referenced notebook, and continue to run the next cells in the main notebook that calls the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
 
@@ -518,7 +518,7 @@ Fabric supports the following mount scenarios in the Microsoft Spark Utilities p
 
 The following example illustrates how to mount Azure Data Lake Storage Gen2. Mounting Blob Storage works similarly.
 
-This example assumes that you have one Data Lake Storage Gen2 account named *storegen2*, and the account has one container named *mycontainer* that you want to mount to */test* into your notebook Spark session.
+This example assumes that you have one Data Lake Storage Gen2 account named *storegen2*, which has a container named *mycontainer* that you want to mount to */test*  in your notebook Spark session.
 
 :::image type="content" source="media\notebook-utilities\mount-container-example.png" alt-text="Screenshot showing where to select a container to mount." lightbox="media\notebook-utilities\mount-container-example.png":::
 

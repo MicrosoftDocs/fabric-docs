@@ -5,9 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - build-2024
-ms.date: 03/18/2025
+ms.date: 07/10/2024
 ---
 
 # The Fabric throttling policy

@@ -6,7 +6,6 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/21/2024
 ms.search.form: Event Processor
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
@@ -228,7 +227,7 @@ Some data type conversions are possible, but not precise, such as int to real. T
 
 ## Transformation operators
 
-The event processor provides six operators, which you can use to transform your event data according to your business needs.
+The event processor provides seven operators, which you can use to transform your event data according to your business needs.
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-operators.png" alt-text="Screenshot showing the operators available to in the Operations menu.":::
 

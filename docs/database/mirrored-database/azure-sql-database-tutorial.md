@@ -4,10 +4,9 @@ description: Learn how to configure a mirrored database from Azure SQL Database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala
-ms.date: 01/15/2025
+ms.date: 03/19/2025
 ms.topic: tutorial
 ms.custom:
-  - ignite-2024
 ---
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database
@@ -48,16 +47,16 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 #### Use a login and mapped database user
 
-1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true). Connect to the `master` database.
-1. Create a server login and assign the appropriate permissions.
+1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
     - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
 
     ```sql
-    CREATE LOGIN fabric_login WITH PASSWORD = '<strong password>';
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER fabric_login;
+    CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
+    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [fabric_login];
     ```
 
-    - Or, create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+    - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
 
     ```sql
     CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
@@ -65,18 +64,20 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
     ```
 
 1. Connect to the Azure SQL Database your plan to mirror to Microsoft Fabric, using the [Azure portal query editor](/azure/azure-sql/database/query-editor), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
-1. Create a database user connected to the login:
+1. Connect to the user database that will be mirrored. Create a database user connected to the login and grant the minimum privileges necessary:
+
+    For a SQL Authentiated login:
 
     ```sql
-    CREATE USER fabric_user FOR LOGIN fabric_login;
-    GRANT CONTROL TO fabric_user;
+    CREATE USER [fabric_user] FOR LOGIN [fabric_login];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO [fabric_user];
     ```
     
-    Or,
+    Or, for a Microosft Entra authenticated login:
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT CONTROL TO [bob@contoso.com];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR TO [bob@contoso.com];
     ```
 
 ## Create a mirrored Azure SQL Database
@@ -99,7 +100,8 @@ To enable Mirroring, you will need to connect to the Azure SQL logical server fr
    - **Authentication kind**:
        - Basic (SQL Authentication)
        - Organization account (Microsoft Entra ID)  
-       - Tenant ID (Azure Service Principal)  
+       - Tenant ID (Azure Service Principal)
+          - You need service principal credentials, but not the service principal key. 
 1. Select **Connect**.
 
 ## Start mirroring process

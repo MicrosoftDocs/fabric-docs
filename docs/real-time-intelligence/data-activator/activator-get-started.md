@@ -1,10 +1,10 @@
 ---
 title: Get started using Activator
 description: Learn how to get started using Activator and unleash the power of data-driven decision making in your organization.
-author: mihart
-ms.author: mihart
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
-ms.custom: FY25Q1-Linter, ignite-2024
+ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Getting Started
 ms.date: 01/20/2025
 #customer intent: As a Fabric user I want to get started with Activator.

@@ -7,8 +7,8 @@ metadata:
   ms.reviewer: nzagorac, antho, sukkaur, amapatil
   ms.topic: faq
   ms.custom:
-    - ignite-2024
-  ms.date: 01/27/2025
+  ms.date: 01/31/2025
+  ms.search.form: SQL database Overview
 title: "Frequently asked questions for SQL database in Microsoft Fabric (preview)"
 summary: |
   **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
@@ -22,6 +22,11 @@ sections:
           How do I connect to SQL database in Fabric? 
         answer:
           You can connect to SQL database in Fabric in the same ways you connect to Azure SQL Database. For more information, see [Connect to SQL database in Fabric](connect.md).
+      - question: |
+          Which connection policies are supported for SQL database in Fabric?
+        answer:
+          Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. For more information, see [Connection policy](limitations.md#connection-policy).
+
 
   - name: About SQL database data in OneLake
     questions:
@@ -89,7 +94,7 @@ sections:
       - question: |
           What are the costs associated with SQL database in Fabric?
         answer: 
-          SQL database in Fabric completely is free until February 1, 2025. After this date, compute and data storage charges begin. Backup billing starts on March 1, 2025.
+          After February 1, 2025, compute and data storage are charged to your Fabric capacity. Additionally, backup billing will start after April 1, 2025.
       - question: |
           How do I monitor SQL database in Fabric consumption?
         answer: 
@@ -111,11 +116,6 @@ sections:
 
   - name: Licensing
     questions:
-
-      - question: |
-          Is SQL database in Fabric currently free, and if so, for how long?
-        answer:
-          SQL database in Fabric completely is free until February 1, 2025. After this date, compute and data storage charges begin. Backup billing starts on March 1, 2025.
 
       - question: |
           What are licensing options for SQL database in Fabric? 

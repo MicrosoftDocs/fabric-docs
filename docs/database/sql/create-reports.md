@@ -6,8 +6,7 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/01/2024
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
+ms.search.form: Create Power BI reports using SQL database
 ---
 # Create simple reports on your SQL database in Power BI
 

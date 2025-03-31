@@ -2,12 +2,10 @@
 title: Notebook activity
 description: Learn how to add a notebook activity to a pipeline and use it to invoke a notebook.
 ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 08/13/2024
 ---
 

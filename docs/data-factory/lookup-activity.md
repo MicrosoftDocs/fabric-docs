@@ -2,12 +2,10 @@
 title: Lookup activity
 description: Learn how to add a lookup activity to a pipeline and use it to look up data from a data source.
 ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 12/18/2024
 ---
 

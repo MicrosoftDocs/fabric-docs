@@ -4,8 +4,7 @@ description: Learn how to manage your Microsoft Fabric capacity and understand t
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.custom:
-ms.date: 01/12/2025
+ms.date: 03/20/2025
 ---
 
 # Manage your Fabric capacity
@@ -16,7 +15,7 @@ This article describes the Microsoft Fabric capacity settings. The article is ai
 
 To get to the capacity settings, follow these steps:
 
-1. In the Power BI service, select the gear icon (**&#9881;**), and then select **Admin portal**.
+1. In Microsoft Fabric, select the gear icon (**&#9881;**), and then select **Admin portal**.
 
 2. In the Admin portal, select **Capacity settings**.
 
@@ -42,6 +41,8 @@ The rest of this article is divided to sections based on the different capacity 
 This section lists basic capacity management tasks, such as creating a new capacity, changing a capacity's name and deleting a capacity.
 
 ### Create a new capacity
+
+To create a new capacity you need to be a [Microsoft Fabric admin](../admin/microsoft-fabric-admin.md).
 
 # [Power BI Premium](#tab/power-bi-premium)
 
@@ -156,6 +157,8 @@ To create a new Fabric capacity, follow these steps:
 
 ### Change the name of your capacity
 
+To change the name of your capacity, you need to be a capacity admin. To become a capacity admin, you need to be assigned the capacity admin role in the capacity settings. For more information, see [Add and remove admins](#add-and-remove-admins).
+
 # [Power BI Premium](#tab/power-bi-premium)
 
 To change the name of your Power BI Premium capacity, follow these steps:
@@ -197,6 +200,8 @@ You can't change a Fabric capacity's name.
 ---
 
 ### Add and remove admins
+
+To add and remove admins from your capacity, you need to be a capacity admin. Only users that belong to the tenant the capacity is part of, can be added as admins to the capacity.
 
 # [Power BI Premium](#tab/power-bi-premium)
 
@@ -250,6 +255,8 @@ To add or remove admins in a Fabric capacity, follow these steps:
 
 ### Resize a capacity
 
+To resize your capacity, you need to be a capacity admin. To become a capacity admin, you need to be assigned the capacity admin role in the capacity settings. For more information, see [Add and remove admins](#add-and-remove-admins).
+
 # [Power BI Premium](#tab/power-bi-premium)
 
 To resize a Power BI Premium capacity, follow these steps:
@@ -291,6 +298,8 @@ To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capac
 ---
 
 ### Delete a capacity
+
+To delete a capacity you need to be a [Microsoft Fabric admin](../admin/microsoft-fabric-admin.md).
 
 When you delete a Power BI Premium, Trial or Fabric Capacity, non-Power BI Fabric items in workspaces assigned to the capacity are soft deleted. These Fabric items can still be seen in Onelake Data Hub and in the workspace list, but can't be opened or used. If the workspace that holds these items is associated to a capacity (other than Power BI Embedded) from the same region as the deleted capacity within seven days, the deleted items are restored. This seven-day period is separate from the [workspace retention policy](portal-workspaces.md#workspace-retention).
 
@@ -382,13 +391,15 @@ To view the settings of a specific capacity, follow these steps:
 This table summarizes the actions you can take in the details section.
 
 >[!NOTE]
->Trail capacities only have some of the settings listed in the table
+>* Some of the features in the table are only available if they are enabled in the tenant.
+>* Trail capacities only have some of the settings listed in the table
 
 | Details setting name                 | Description |
 |--------------------------------------|-------------|
 | Disaster Recovery                    | Enable [disaster recovery](/azure/reliability/reliability-fabric#set-up-disaster-recovery) for the capacity |
 | Capacity usage report                | The usage report is replaced with the [capacity metrics app](../enterprise/metrics-app.md) |
 | Notifications                        | Enable [notification](service-admin-premium-capacity-notifications.md) for your capacity |
+| Copilot capacity                     | Designate this capacity as a [Fabric Copilot capacity](../enterprise/fabric-copilot-capacity.md) |
 | Contributor permissions              | Set up the ability to add workspaces to the capacity. Select one of these two options:<li>The entire organization</li><li>Specific users or security groups</li> |
 | Admin permissions                    | Give specific users the ability to do the following:<li>Change capacity settings</li><li>Add contributors to the capacity</li><li>Add or remove workspaces from the capacity</li> |
 | Power BI workloads                   | Configure [Power BI workloads](/power-bi/enterprise/service-admin-premium-workloads) for:<li>[Semantic models](/power-bi/enterprise/service-admin-premium-workloads#semantic-models)</li><li>[Paginated reports](/power-bi/enterprise/service-admin-premium-workloads#paginated-reports)</li><li>[AI](/power-bi/enterprise/service-admin-premium-workloads#ai-preview)</li> |

@@ -2,11 +2,10 @@
 title: Teams activity (Preview)
 description: Learn how to add a Teams activity to a pipeline and use it to send a Teams message.
 ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 12/18/2024
 ---
 

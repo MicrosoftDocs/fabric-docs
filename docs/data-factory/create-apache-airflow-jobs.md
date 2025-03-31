@@ -6,7 +6,6 @@ ms.author: abnarain
 author: nabhishek
 ms.topic: quickstart
 ms.custom:
-  - build-2024
 ms.date: 09/16/2024
 ---
 

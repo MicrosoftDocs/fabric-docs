@@ -5,7 +5,6 @@ author: shsagir
 ms.author: shsagir
 ms.topic: concept-article
 ms.custom:
-  - ignite-2024
 ms.date: 11/06/2024
 #customer intent: As a admin I want to monitor my eventhouse to gain insights into the usage and performance that I can optimize my eventhouse and improve the user experience.
 ---
@@ -27,7 +26,7 @@ When monitoring your eventhouse, you can query the following tables:
 
 ## Sample queries
 
-You can find sample queries in the [fabric-samples](https://github.com/microsoft/fabric-samples) GitHub repository.
+You can find sample queries in the [workspace-monitoring](https://github.com/microsoft/fabric-samples/tree/main/workspace-monitoring) folder of the *fabric-samples* GitHub repository.
 
 ## Related content
 

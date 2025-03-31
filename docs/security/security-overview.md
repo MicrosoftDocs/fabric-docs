@@ -5,7 +5,6 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom:
-  - ignite-2024
 ms.date: 08/18/2024
 ---
 
@@ -74,7 +73,7 @@ With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts secur
 
 #### Managed Private Endpoints
 
-[Managed private endpoints](security-managed-private-endpoints-overview.md) allow secure connections to data sources such Azure SQL databases without exposing them to the public network or requiring complex network configurations.  
+[Managed private endpoints](security-managed-private-endpoints-overview.md) allow secure connections to data sources such as Azure SQL databases without exposing them to the public network or requiring complex network configurations.  
 
 #### Managed virtual networks
 

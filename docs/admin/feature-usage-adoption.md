@@ -5,16 +5,14 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 08/07/2024
+ms.date: 03/06/2025
 ---
 
 # Feature usage and adoption report (preview)
 
 The feature usage and adoption report is aimed at admins who want to understand how Fabric features are utilized across the organization. As an admin, the report insights can help you govern your Fabric tenant and take action when needed.
 
-You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) or a [Microsoft 365 global administrator](/microsoft-365/admin/add-users/about-admin-roles).
+You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles).
 
 You can also have an admin share the report or semantic model directly with you. With build permissions to the semantic model, users can design a custom report that relies on the same underlying data.
 
@@ -22,11 +20,7 @@ You can also have an admin share the report or semantic model directly with you.
 
 The report is designed for admins to analyze Fabric activity in various ways. Use the date range slicer to filter activity data across all pages for a specific range of time over the last 30 days.
 
-:::image type="content" source="./media/admin-monitoring/date-slicer.png" alt-text="Screenshot of the date range slicer.":::
-
 Additionally, use the filter pane to filter activity data based on the desired analysis. Filters are available across different characteristics of activity, including capacity, user, and item-related info.
-
-:::image type="content" source="./media/admin-monitoring/filter-pane.png" alt-text="Screenshot of the filter pane.":::
     
 ## Report pages
 
@@ -75,8 +69,6 @@ To drill through to the [Activity Details](#activity-details-page) page:
 2. Select *Drill through*.
 
 3. Select *Activity Details*.
-
-:::image type="content" source="./media/feature-usage-adoption/analysis-drill-through-option.gif" alt-text="Animation that shows how to drill through from the Analysis page to the Activity Details page.":::
 
 ### Activity Details page
 
@@ -176,7 +168,9 @@ This section lists the report's considerations and limitations.
 
 * The report retains information for 30 days, including the activities and metadata of deleted capacities, workspaces, and other items.
 
-* Workspaces with retention periods longer than 30 days won't appear in the report, but can be seen in the admin portal workspaces menu.
+* Deleted workspaces with extended retention don't appear in the report after 30 days. They can be seen in the admin portal until they're permanently deleted.
+
+* Items created and deleted within a 24 hour period may have incomplete information.
   
 ### Pro and Premium Per User (PPU)
 

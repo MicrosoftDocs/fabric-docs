@@ -5,8 +5,6 @@ author: snehagunda
 ms.author: sngun
 ms.reviewer: shlindsay
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.topic: conceptual
 ms.date: 12/26/2024
 no-loc: [Copilot]
@@ -20,7 +18,7 @@ Copilot and other generative AI features in preview bring new ways to transform 
 **Copilot in Microsoft Fabric is enabled by default**. Administrators can be disable it from the admin portal if your organization isn't ready to adopt it. Administrators can refer to the [Copilot tenant settings (preview)](../admin/service-admin-portal-copilot.md) article for details. The following requirements must be met to use Copilot:
 
 - The F64 capacity must be in a supported region listed in [Fabric region availability](../admin/region-availability.md).
-- If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your admin enables the tenant setting in the Fabric Admin portal. Note that the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md).
+- If your tenant or capacity is outside the US or EU Data Boundary, Copilot is disabled by default unless your admin enables the tenant setting in the Fabric Admin portal. Note that the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md).
 - Copilot isn't supported for Fabric trial SKUs. Only paid SKUs (F64 or higher) are eligible.
 
 The following screenshot shows the tenant setting where Copilot can be enabled or disabled:

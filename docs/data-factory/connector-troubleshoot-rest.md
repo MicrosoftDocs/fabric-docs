@@ -1,14 +1,11 @@
 ---
 title: Troubleshoot the REST connector
 description: Learn how to troubleshoot issues with the REST connector in Data Factory in Microsoft Fabric.
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: troubleshooting
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.date: 11/15/2023
 ---
 

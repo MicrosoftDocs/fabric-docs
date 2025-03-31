@@ -4,7 +4,7 @@ description: Include file for the Edit column heading in the Get data hub in Rea
 author: shsagir
 ms.author: shsagir
 ms.topic: include
-ms.custom: build-2023
+ms.custom: 
 ms.date: 06/26/2023
 ---
 ### Edit columns

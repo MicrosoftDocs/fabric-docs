@@ -6,8 +6,7 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/01/2024
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
+ms.search.form: Develop and run queries in SQL editor
 ---
 # Query the SQL analytics endpoint of your SQL database in Fabric
 

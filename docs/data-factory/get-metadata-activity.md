@@ -1,13 +1,11 @@
 ---
 title: Get Metadata activity
 description: Learn how to add a Get Metadata activity to a pipeline and use it to look up data from a data source.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 12/18/2024
 ---
 

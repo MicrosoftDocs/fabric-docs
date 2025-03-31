@@ -5,8 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 03/19/2025
 ---
 
 # Get Fabric workspace item events in Real-Time hub (preview)
@@ -28,10 +27,10 @@ Here are the supported Fabric workspace events:
 - Microsoft.Fabric.ItemUpdateFailed
 - Microsoft.Fabric.ItemDeleteSucceeded
 - Microsoft.Fabric.ItemDeleteFailed
-- Microsoft.Fabric.ItemReadSucceeded
-- Microsoft.Fabric.ItemReadFailed
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+
+[!INCLUDE [deprecated-fabric-workspace-events](./includes/deprecated-fabric-workspace-events.md)]
 
 ## Prerequisites
 
