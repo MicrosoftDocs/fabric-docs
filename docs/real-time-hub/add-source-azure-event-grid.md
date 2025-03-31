@@ -38,6 +38,28 @@ You can get events from an Azure Event Grid namespace into Real-Time hub using t
 
     :::image type="content" source="./media/add-source-azure-event-grid/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub All data streams page with the stream you just created." lightbox="./media/add-source-azure-event-grid/verify-data-stream.png":::
 
+## Confidential and highly confidential sensitivity
+
+If you mark the eventstream with either **Confidential** or **Highly Confidential** sensitivity labels, follow these steps so that the Event Grid namespace's managed identity has the appropriate acces. 
+
+- Select **Settings** (gear icon) in the top-right corner.
+- Select **Admin portal** in the **Governance and insights** section. 
+
+    :::image type="content" source="../real-time-intelligence/event-streams/media/add-source-azure-event-grid/admin-portal-link.png" alt-text="Screenshot that shows the selection of Admin portal link in the Governance and insights section." lightbox="../real-time-intelligence/event-streams/media/add-source-azure-event-grid/admin-portal-link.png":::        
+
+- Activate the following tenant setting to grant the service principal access to Fabric APIs to create workspaces, connections, or deployment pipelines.
+    - On the **Tenant settings** page, in the **Developer settings** section, expand **Service principal can use Fabric API** option.
+    - Toggle to **Enabled**.
+    - Apply to **the entire organization**.
+    - Click **Apply**.
+    
+        :::image type="content" source="../real-time-intelligence/event-streams/media/add-source-azure-event-grid/developer-settings.png" alt-text="Screenshot that shows the developer settings." lightbox="../real-time-intelligence/event-streams/media/add-source-azure-event-grid/developer-settings.png":::              
+- Enable this option to access all other APIs (enabled by default for new tenants):
+    - On the **Tenant settings** page, in the **Developer settings** section, expand **Allow Service principals to create and use profiles** option.
+    - Toggle to **Enabled**.
+    - Apply to **the entire organization**.
+    - Click **Apply**.
+
 ## Related content
 
 To learn about consuming data streams, see the following articles:
