@@ -18,6 +18,26 @@ This article shows you how to add an Azure Event Grid Namespace source to an eve
 - If you want to receive Message Queuing Telemetry Transport (MQTT) data, enable [MQTT](/azure/event-grid/mqtt-publish-and-subscribe-portal) and [routing](/azure/event-grid/mqtt-routing) on the Event Grid namespace. 
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
+If the eventstream is marked with either **Confidential** or **Highly Confidential**, follow these steps so that the Event Grid namespace's managed identity has the appropriate acces. 
+
+- Select **Settings** (gear icon) in the top-right corner.
+- Select **Admin portal** in the **Governance and insights** section. 
+
+    :::image type="content" source="./media/add-source-azure-event-grid/admin-portal-link.png" alt-text="Screenshot that shows the selection of Admin portal link in the Governance and insights section." lightbox="./media/add-source-azure-event-grid/admin-portal-link.png":::        
+
+- Activate the following tenant setting to grant the service principal access to Fabric APIs to create workspaces, connections, or deployment pipelines.
+    - On the **Tenant settings** page, in the **Developer settings** section, expand **Service principal can use Fabric API** option.
+    - Toggle to **Enabled**.
+    - Apply to **the entire organization**.
+    - Click **Apply**.
+    
+        :::image type="content" source="./media/add-source-azure-event-grid/developer-settings.png" alt-text="Screenshot that shows the developer settings." lightbox="./media/add-source-azure-event-grid/developer-settings.png":::              
+- Enable this option to access all other APIs (enabled by default for new tenants):
+    - On the **Tenant settings** page, in the **Developer settings** section, expand **Allow Service principals to create and use profiles** option.
+    - Toggle to **Enabled**.
+    - Apply to **the entire organization**.
+    - Click **Apply**.
+
 ## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
