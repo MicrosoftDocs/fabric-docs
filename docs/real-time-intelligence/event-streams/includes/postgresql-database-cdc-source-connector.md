@@ -37,6 +37,9 @@ ms.date: 05/21/2024
         You can mix both formats using commas. Up to 100 tables can be entered, with each table name (including the schema name) limited to 128 characters if using full table identifiers directly.
 
     1. **Slot name（optional)**: Enter the name of the PostgreSQL logical decoding slot that was created for streaming changes from a particular plug-in for a particular database/schema. The server uses this slot to stream events to Eventstream streaming connector. It must contain only lowercase letters, numbers, and underscores.
+        
+        - If not specified, a GUID will be used to create the slot, requiring the appropriate database permissions.
+        - If a specified slot name exists, the connector will use it directly.
     1. Select **Next** at the bottom of the page.
 
         :::image type="content" source="media/postgresql-database-cdc-source-connector/connect-page-filled.png" alt-text="Screenshot that shows the Connect page filled for the Azure PostgreSQL database connector." lightbox="media/postgresql-database-cdc-source-connector/connect-page-filled.png":::

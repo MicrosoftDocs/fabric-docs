@@ -1,5 +1,5 @@
 ---
-title: How to create a Copy job (preview) in Data Factory
+title: How to create a Copy job in Data Factory
 description: This article guides you through how to create a copy job, execute it, and view the results.
 author: dearandyxu
 ms.author: yexu
@@ -8,19 +8,16 @@ ms.date: 08/30/2024
 ms.search.form: copy-job-tutorials 
 ---
 
-# Learn how to create a Copy job (preview) in Data Factory for Microsoft Fabric
+# Learn how to create a Copy job in Data Factory for Microsoft Fabric
 
 This article describes how to use the Copy job in Data Factory for Microsoft Fabric.
 
 ## Prerequisites
 
-- Enable the Copy job (preview) feature in your tenant.
-
-  > [!NOTE]
-  > Since the Copy job feature is still in preview, you need to enable it through your tenant administration. If you already see the Copy job, your tenant might already have the feature enabled.
+- Enable the Copy job feature in your tenant.
 
   1. Navigate to the [Admin portal](https://msit.powerbi.com/admin-portal) and select **Tenant settings**.
-  1. Under **Microsoft Fabric**, expand the **Users can create and use Copy job (preview)** section.
+  1. Under **Microsoft Fabric**, expand the **Users can create and use Copy job** section.
   1. Select **Apply**.
 
 ## Create a Copy job
@@ -28,9 +25,9 @@ This article describes how to use the Copy job in Data Factory for Microsoft Fab
 Complete the following steps to create a new Copy job:
 
 1. [Create a new workspace](../fundamentals/create-workspaces.md) or use an existing workspace.
-1. Select **+ New Item**, and then choose the **Copy job (preview)** icon to create a new Copy job.
+1. Select **+ New Item**, and then choose the **Copy job** icon to create a new Copy job.
 
-   :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new Copy job (preview).":::
+   :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new Copy job.":::
 
 1. Assign a name to the new job, then select **Create**.
 1. Choose the data stores to copy data from.

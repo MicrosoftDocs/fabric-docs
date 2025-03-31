@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom:
 ms.search.form: Create and use notebooks
-ms.date: 11/25/2024
+ms.date: 03/31/2025
 ---
 
 # Use Python experience on Notebook
@@ -62,6 +62,9 @@ You can monitor the Python notebook job run details on the ribbon tab **Run** ->
 ## Data interaction
 
 You can interact with Lakehouse, Warehouses, SQL endpoints, and built-in resources folders on Python notebook.
+
+ > [!NOTE]
+ > The Python Notebook runtime comes pre-installed with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, please note that some Delta Lake features may not be fully supported at this time. For more details and the latest updates, kindly refer to the official [delta‑rs](https://github.com/delta-io/delta-rs) and [duckdb](https://duckdb.org/docs/stable/extensions/delta.html) websites.
 
 ### Lakehouse interaction
 
@@ -222,7 +225,7 @@ df = conn.query("SELECT * FROM sys.schemas;")
 ```
 
 > [!NOTE]
-> The Data utilities in NotebookUtils is only available on Python notebook for now.
+> The Data utilities in NotebookUtils are only available on Python notebook for now.
 
 ## Browse code snippets
 
@@ -241,11 +244,11 @@ In addition to drawing charts with libraries, the [built-in visualization](noteb
    :::image type="content" source="media\use-python-experience-on-notebook\display-in-python.png" alt-text="Screenshot showing visualization experience in Python notebook." lightbox="media\use-python-experience-on-notebook\display-in-python.png":::
 
 > [!NOTE]
-> The chart configurations will be persisted in Python notebook, which means after reruning the code cell, if the target dataframe schema hasn't change, the saved charts are still persisted.
+> The chart configurations will be persisted in Python notebook, which means after rerunning the code cell, if the target dataframe schema hasn't change, the saved charts are still persisted.
 
 ## Code intelliSense
 
-Python notebook integrated Pylance to enhance the Python coding experience, Pylance is the default language service support for Python in Visual Studio Code. It provides a lot of easy-to-use functions like keyword highlighting, quick info, code completion, parameter info, and syntax error detection. Furthermore, the Pylance has better performance when notebook is long.
+Python notebook also uses Pylance as the language server. For more information, see [enhance Python Development with Pylance](./author-execute-notebook.md#ide-style-intellisense).
 
 ## Data science capabilities
 

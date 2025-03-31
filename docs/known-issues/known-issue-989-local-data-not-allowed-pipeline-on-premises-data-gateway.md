@@ -1,7 +1,7 @@
 ---
 title: Known issue - Local data access isn't allowed for pipeline using on-premises data gateway
 description: A known issue is posted where local data access isn't allowed for a pipeline using an on-premises data gateway.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/13/2025

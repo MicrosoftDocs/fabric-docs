@@ -1,7 +1,7 @@
 ---
 title: Known issue - Lakehouse ALM operations fail for Git using public APIs in UK South
 description: A known issue is posted where lakehouse ALM operations fail for Git using public APIs in UK South.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/25/2025

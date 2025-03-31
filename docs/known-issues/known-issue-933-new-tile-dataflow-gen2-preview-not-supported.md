@@ -1,7 +1,7 @@
 ---
 title: Known issue - New tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported
 description: A known issue is posted where the new tile for Dataflow Gen2 (CI/CD, preview) isn't yet supported.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/13/2025

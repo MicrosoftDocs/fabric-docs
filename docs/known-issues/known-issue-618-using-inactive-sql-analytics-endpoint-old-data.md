@@ -1,8 +1,8 @@
 ---
 title: Known issue - Using an inactive SQL analytics endpoint can show old data
 description: A known issue is posted where Using an inactive SQL analytics endpoint can show old data.
-author: kfollis
-ms.author: kfollis
+author: jessicammoss
+ms.author: jessicamo
 ms.topic: troubleshooting 
 ms.date: 01/06/2025
 ms.custom: known-issue-618
