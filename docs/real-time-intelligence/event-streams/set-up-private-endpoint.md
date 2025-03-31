@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 2/05/2025
+ms.date: 3/11/2025
 ms.search.form: fabric's manage private endpoints
 ms.custom: reference_regions
 ---
@@ -24,24 +24,18 @@ The following diagram shows a sample architecture for connecting Eventstream to 
   * **Azure Event Hubs**
   * **Azure IoT Hub**
 
-* **Supported regions for Eventstream managed virtual network**: Only selected Fabric tenant regions are supported for Eventstream managed virtual network. These regions include:
-  * Australia Southeast
-  * East US
-  * Canada Central
-  * East US 2
-  * North Central US
-  * North Europe
-  * West Europe
-  * West US
-  * Australia East
-  * Brazil South
-  * Central India
-  * France Central
-  * Japan East
-  * Southeast Asia
-  * UAE North
-  * UK South
-  * Central US
+* **Supported regions for Eventstream managed virtual network**: The table blow lists regions where Eventstream managed virtual network are available.
+
+    | Americas                     | Europe                     | Middle East | Africa             | Asia Pacific                    |
+    |:-----------------------------|:---------------------------|:------------|:-------------------|:--------------------------------|
+    | Brazil South                 | North Europe               | UAE North   | South Africa North | Australia East                  |
+    | Canada Central               | West Europe                |             |                    | Australia Southeast             |
+    | Central US                   | France Central             |             |                    | Central India                   |
+    | East US                      | Germany West Central       |             |                    | Japan East                      |
+    | East US 2                    | Sweden Central             |             |                    | Southeast Asia                  |
+    | North Central US             | UK South                   |             |                    | Korea Central                   |
+    | West US                      |                            |             |                    |                                 |
+    | West US 2                    |                            |             |                    |                                 |
 
 To learn more about the Managed Private Endpoints and supported data sources, visit [Managed Private Endpoints for Fabric](/fabric/security/security-managed-private-endpoints-overview).
 
