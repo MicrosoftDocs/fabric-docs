@@ -6,7 +6,7 @@ ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
 ms.custom:
-ms.date: 02/13/2025
+ms.date: 03/25/2025
 ---
 
 # Dataflow Gen2 with CI/CD and Git integration support (Preview)
@@ -93,7 +93,7 @@ If your dataflow needs to be refreshed on a regular interval, you can schedule t
 
 ## Refresh history and settings
 
-To view the refresh history of the dataflow, you can either select the refresh history tab in the dropdown menu or go into the monitor hub and select the dataflow you want to view the refresh history of.
+To view the refresh history of the dataflow, you can either select the recent runs tab in the dropdown menu or go into the monitor hub and select the dataflow you want to view the refresh history of.
 
 ## Settings for Dataflow Gen2 with CI/CD
 
@@ -103,17 +103,7 @@ Accessing the settings of the new Dataflow Gen2 with CI/CD and Git support is si
 
 While Dataflow Gen2 with CI/CD and Git support offers a powerful set of features for enterprise ready collaboration, this required us to rebuild the backend to the fabric architecture. This means that some features are not yet available or have limitations. We are actively working on improving the experience and will update this article as new features are added.
 
-- The staging artifacts are in some experiences visible like the ALM UI. The staging artifacts will be hidden in all experiences in the future.
 - When you delete the last Dataflow Gen2 with CI/CD and Git support, the staging artifacts become visible in the workspace and are safe to be deleted by the user.
-- Some experiences mention support for REST APIs, but these APIs aren't yet available. All Dataflow Gen2 with CI/CD and Git support will support the Fabric Public API in the future.
-- Orchestrating a refresh of a Dataflow Gen2 with CI/CD and Git support isn't possible in Fabric data pipelines.
 - Workspace view doesn't show if a refresh is ongoing for the dataflow.
-- You can't export the Dataflow.json from the workspace menu. Workarounds that allow you to export the Dataflow are:
-  - Use the Fabric Public API to get the Dataflow.json.
-  - Use the export power query template feature to export the dataflow definition.
-  - Use the OneLake explorer to the workspace to get the dataflow definition.
-- Dataflow Gen2 with CI/CD and Git support doesn't support the take ownership feature in the Fabric workspace. Therefore, only the creator of the dataflow can edit the dataflow. If you want to work together on a dataflow, you can use branches in the Git repository and create a pull request to merge the changes. For more information, go to [Scenario 2 - Develop using another workspace](/fabric/cicd/git-integration/manage-branches?tabs=azure-devops#scenario-2---develop-using-another-workspace).
 - When branching out to another workspace, a Dataflow Gen2 refresh might fail with the message that the staging lakehouse couldn't be found. When this happens, create a new Dataflow Gen2 with CI/CD and Git support in the workspace to trigger the creation of the staging lakehouse. After this, all other dataflows in the workspace should start to function again.
-- When syncing changes from GIT into the workspace, you need to open the new or updated dataflow and save changes manually with the editor. This triggers a publish action in the background to allow the changes to be used during refresh of your dataflow. 
-
-We are committed to continuously improving Dataflow Gen2 with CI/CD and Git support and appreciate your patience as we work on these enhancements.
+- When syncing changes from GIT into the workspace, you need to open the new or updated dataflow and save changes manually with the editor. This triggers a publish action in the background to allow the changes to be used during refresh of your dataflow.

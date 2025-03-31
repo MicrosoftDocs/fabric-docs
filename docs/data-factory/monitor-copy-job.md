@@ -1,6 +1,6 @@
 ---
-title: How to monitor a Copy job (preview) in Data Factory
-description: This article guides you through how to monitor a Copy job (preview) from either the Copy job panel or the Monitoring hub.
+title: How to monitor a Copy job in Data Factory
+description: This article guides you through how to monitor a Copy job from either the Copy job panel or the Monitoring hub.
 author: dearandyxu
 ms.author: yexu
 ms.topic: how-to
@@ -8,7 +8,7 @@ ms.date: 08/31/2024
 ms.search.form: copy-job-tutorials 
 ---
 
-# Learn how to monitor a Copy job (preview) in Data Factory for Microsoft Fabric
+# Learn how to monitor a Copy job in Data Factory for Microsoft Fabric
 
 After you execute a Copy job in Data Factory for Microsoft Fabric, you can monitor its progress and metrics through either the Copy job panel or the Monitoring hub. The Monitoring hub acts as a centralized portal for reviewing Copy job runs across various items.
 
