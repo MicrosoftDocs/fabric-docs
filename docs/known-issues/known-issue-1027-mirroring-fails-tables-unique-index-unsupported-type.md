@@ -1,7 +1,7 @@
 ---
 title: Known issue - Mirroring fails for tables with unique index on unsupported data type
 description: A known issue is posted where mirroring fails for tables with unique index on unsupported data type.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/19/2025

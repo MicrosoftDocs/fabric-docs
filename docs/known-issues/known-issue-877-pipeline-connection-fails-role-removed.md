@@ -1,7 +1,7 @@
 ---
 title: Known issue - Data pipeline connection fails after connection creator role is removed
 description: A known issue is posted where data pipeline connection fails after connection creator role is removed.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 10/09/2024

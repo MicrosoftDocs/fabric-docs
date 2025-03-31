@@ -9,7 +9,7 @@ ms.date: 11/13/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Fabric OneLake events to an eventstream (preview)
+# Add Fabric OneLake events to an eventstream 
 
 This article shows you how to add Fabric OneLake event source to an eventstream.
 
