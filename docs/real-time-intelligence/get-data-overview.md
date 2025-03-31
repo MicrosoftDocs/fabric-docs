@@ -12,7 +12,7 @@ ms.date: 03/31/2025
 
 This article summarizes the methods available to ingest data directly into an [Eventhouse](eventhouse.md) using the Get data experience.
 
-:::image type="content" source="media/get-data-overview/get-data-types.png" alt-text="Screenshot of the available data types in the get data experience in Eventhouses in Real-Time Intelligence.":::
+:::image type="content" source="media/get-data-overview/get-data-types.png" lightbox="media/get-data-overview/get-data-types.png" alt-text="Screenshot of the available data types in the get data experience in Eventhouses in Real-Time Intelligence.":::
 
 * [Local file](get-data-local-file.md)
 * [Azure storage](get-data-azure-storage.md)
