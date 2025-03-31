@@ -19,6 +19,8 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 You can secure your S3 buckets using customer-managed KMS keys. As long as the IAM user has encrypt/decrypt permissions for the bucket key, OneLake can access the encrypted data in the S3 bucket. For more information, see [Configuring your bucket to use an S3 Bucket Key with SSE-KMS for new objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/configuring-bucket-key.html).
 
+S3 shortcuts can take advantage of file caching to reduce egress costs associated with cross-cloud data access. For more information, see [OneLake shortcuts > Caching](onelake-shortcuts.md#caching).
+
 ## Prerequisites
 
 - If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
