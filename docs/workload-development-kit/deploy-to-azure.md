@@ -17,7 +17,7 @@ The deployment pattern is based on the following architecture diagram:
 
 ## Components
 
-The architecture consists of the following components/azure services that interact with each other to provide a complete solution for deploying the Fabric Workload on Azure.
+The architecture consists of the following components/Azure services that interact with each other to provide a complete solution for deploying the Fabric Workload on Azure.
 
 ### Azure Front Door
 
