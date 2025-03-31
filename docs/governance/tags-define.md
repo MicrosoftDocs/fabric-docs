@@ -6,7 +6,7 @@ ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 09/26/2024
+ms.date: 03/31/2025
 
 #customer intent: As a Fabric admin, I want to create and manage a set of tags so that data creators and data consumers can use them to better manage and find data.
 
