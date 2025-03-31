@@ -1,7 +1,7 @@
 ---
 title: Fabric known issues
 description: Identify issues that are affecting Microsoft Fabric.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
 ms.date: 03/26/2025

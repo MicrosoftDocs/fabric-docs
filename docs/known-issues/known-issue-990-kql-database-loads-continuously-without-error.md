@@ -1,7 +1,7 @@
 ---
 title: Known issue - KQL database loads continuously without an error
 description: A known issue is posted where a KQL database loads continuously without an error.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/28/2025

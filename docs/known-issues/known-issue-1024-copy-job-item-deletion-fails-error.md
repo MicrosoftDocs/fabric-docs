@@ -1,7 +1,7 @@
 ---
 title: Known issue - CopyJob item deletion fails with error
 description: A known issue is posted where trying to delete a CopyJob item fails with an error.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/14/2025

@@ -1,7 +1,7 @@
 ---
 title: Known issue - Multiple installations of on-premises data gateway causes pipelines to fail
 description: A known issue is posted where performing multiple installations of on-premises data gateway causes pipelines to fail.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 07/31/2024
