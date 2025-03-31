@@ -46,7 +46,7 @@ The schedule is set for the particular DAG.
 > [!Note]
 > The scheduler will reflect the users local time.
 
-## Next Steps
+## Next step
  
-[Microsoft Fabric materialized views tutorial](./tutorial.md)
+* [Microsoft Fabric materialized views tutorial](./tutorial.md)
  
