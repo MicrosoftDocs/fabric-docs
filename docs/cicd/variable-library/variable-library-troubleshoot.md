@@ -17,7 +17,7 @@ This article describes common errors and issues that you might encounter when wo
 
 ## Failure to create or update Variable library item or variables
 
-### I Can't find the Create Variable library icon
+### I Can't find the *Create Variable library* icon
 
 **Description of problem**: I want to create a Variable library, but I can't find the *Create Variable library* icon.
 **Cause**: The *Create Variable library* icon is only available if the *Users can create Create Variable libraries* tenant switch is enabled in the Admin portal.
