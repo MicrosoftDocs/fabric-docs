@@ -14,6 +14,8 @@ ms.search.form: Source and Destination
 
 [!INCLUDE [real-time-weather-source-description-prerequisites](./includes/real-time-weather-source-description-prerequisites.md)] 
 
+- [Create an eventstream](create-manage-an-eventstream.md) if you don't have one already. 
+
 ## Add a real-time weather as a source
 
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]

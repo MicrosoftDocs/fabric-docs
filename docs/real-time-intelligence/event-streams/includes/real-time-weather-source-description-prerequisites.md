@@ -15,5 +15,5 @@ You can add a real-time weather source to an eventstream to stream real-time wea
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- [Create an eventstream](create-manage-an-eventstream.md) if you don't have one already. 
+
 
