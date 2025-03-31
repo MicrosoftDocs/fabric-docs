@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom:
 ms.search.form: Create and use notebooks
-ms.date: 11/25/2024
+ms.date: 03/31/2025
 ---
 
 # Use Python experience on Notebook
@@ -248,7 +248,7 @@ In addition to drawing charts with libraries, the [built-in visualization](noteb
 
 ## Code intelliSense
 
-Python notebook integrated Pylance to enhance the Python coding experience, Pylance is the default language service support for Python in Visual Studio Code. It provides a lot of easy-to-use functions like keyword highlighting, quick info, code completion, parameter info, and syntax error detection. Furthermore, the Pylance has better performance when notebook is long.
+Python notebook also uses Pylance as the language server. For more information, see [enhance Python Development with Pylance](./author-execute-notebook.md#ide-style-intellisense).
 
 ## Data science capabilities
 
