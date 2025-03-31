@@ -6,12 +6,14 @@ author: shsagir
 ms.author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 03/03/2025
+ms.date: 03/31/2025
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
 
 In this article, you learn how to use a KQL queryset. The KQL Queryset is the item used to run queries, view, and customize query results on data from different data sources, such as Eventhouse, KQL database, and more.
+
+You can also query your Azure Monitor [Log Analytics](/azure/azure-monitor/logs/data-platform-logs) workspace or [Application Insights](/azure/azure-monitor/app/app-insights-overview) resource using KQL queryset tools and in a cross-service query.
 
 The KQL Queryset uses the Kusto Query Language for creating queries, and also supports many SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
@@ -26,7 +28,7 @@ Queries run in the context of a data source. You can change the associated data 
 
 Select the tab that corresponds with your desired data source type.
 
-## [KQL Database](#tab/kql-database)
+## [Eventhouse/KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
@@ -36,7 +38,7 @@ Select the tab that corresponds with your desired data source type.
 1. Select **Add data source**, then select **OneLake data hub**.
 1. In the **OneLake data hub** window that appears, select a KQL database to connect to your KQL queryset, and then select **Connect**. Alternatively, close the **OneLake data hub** window and use the **+ Add data source** menu to connect to a different data source.
 
-## [Azure Data Explorer cluster](#tab/azure-data-explorer-cluster)
+## [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
@@ -51,6 +53,36 @@ Select the tab that corresponds with your desired data source type.
     :::image type="content" source="media/kusto-query-set/connect-to-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect cluster button is highlighted.":::
 
 1. Under **Database**, select the dropdown menu to expand the list of data sources in your cluster, and then select a data source.
+1. Select **Connect**.
+
+## [Azure Monitor](#tab/azure-monitor)
+
+1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
+1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
+
+    :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
+
+1. Select **Add data source**, then select **Azure Monitor** > **Application Insights** or **Log Analytics**.
+1. Enter your connection details.
+
+    * **Connection URI**: the URL of the Log Analytics (LA) workspace or Application Insights (AI) resource.
+
+        * For Log Analytics workspace: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>`
+
+        * For Application Insights resource: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`
+
+        * To see all data sources in the LA or AI subscription: `https://ade.applicationinsights.io/subscriptions/<subscription-id>`
+
+    * **Subscription**: the subscription ID of the Log Analytics workspace or Application Insights resource
+
+    * **Resource group**: resource group name
+
+    * **Application insights**/**Log analytics**: select the relevant option
+
+    * **Database**: expand the list of data sources, and then select a data source.
+
+    :::image type="content" source="media/kusto-query-set/connect-to-monitor.png" alt-text="Screenshot of the connection window showing an Azure Monitor URI. The Connect cluster button is highlighted.":::
+
 1. Select **Connect**.
 
 ----
@@ -95,6 +127,7 @@ To open the action menu, hover over an item in the expanded list and select the 
 
 * Refresh database
 * View data profile
+* Explore data
 * Insert: to create and copy a script
 * Get data: to add a new data source
 * Create a dashboard
@@ -115,6 +148,7 @@ To open the action menu, hover over the data source name and select the **More a
 * Query in a new tab: open this data source in a new tab in the queryset
 * Remove source: removes all the databases in that data source
 * Remove database: removes the selected database only
+* Open in KQL database: opens this data source in a KQL database.
 
 :::image type="content" source="media/kusto-query-set/explorer-pane-lower-section.png" alt-text="Screenshot showing the lower section of the Explorer pane where all data sources that were added to your queryset are listed." lightbox="media/kusto-query-set/explorer-pane-lower-section.png":::
 
