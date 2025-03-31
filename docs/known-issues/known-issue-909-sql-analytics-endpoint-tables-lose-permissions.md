@@ -1,7 +1,7 @@
 ---
 title: Known issue - SQL analytics endpoint tables lose permissions
 description: A known issue is posted where tables in the SQL analytics endpoint lose permissions.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 10/31/2024

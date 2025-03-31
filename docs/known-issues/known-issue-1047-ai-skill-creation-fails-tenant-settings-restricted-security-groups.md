@@ -1,7 +1,7 @@
 ---
 title: Known issue - AI skill creation fails when tenant settings restricted to security groups
 description: A known issue is posted where AI skill creation fails when tenant settings are restricted to security groups.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/05/2025

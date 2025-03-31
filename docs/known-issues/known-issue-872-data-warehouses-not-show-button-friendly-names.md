@@ -1,7 +1,7 @@
 ---
 title: Known issue - Data warehouses don't show button friendly names
 description: A known issue is posted where data warehouses don't show button friendly names.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/21/2025
