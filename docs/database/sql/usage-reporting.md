@@ -108,7 +108,7 @@ Possible storage **Operation name** values are:
 - **Allocated SQL storage** is the total database size.
 - **SQL database Backup Storage** is the backup storage usage that exceeds the allocated size and will be billed accordingly.
 
-:::image type="content" source="media/usage-reporting/billable-storage.png" alt-text="Screenshot form the Fabric Capacity Usage app showing billable storage." lightbox="media/usage-reporting/billable-storage.png":::
+:::image type="content" source="media/usage-reporting/billable-storage.png" alt-text="Screenshot from the Fabric Capacity Usage app showing billable storage." lightbox="media/usage-reporting/billable-storage.png":::
 
 Current storage metrics align with a graph on the left to show average storage at a daily grain or an hourly grain if you drill in.
 
