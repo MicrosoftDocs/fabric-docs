@@ -30,9 +30,9 @@ The [Variable library REST APIs](/rest/api/fabric/variablelibrary/items) allow y
 - [Get Variable Library](/rest/api/fabric/variablelibrary/items/get-variable-library): Returns properties of the specified Variable library.
 - [Update Variable Library](/rest/api/fabric/variablelibrary/items/update-variable-library): Updates the properties of the specified Variable library.
 - [Delete Variable Library](/rest/api/fabric/variablelibrary/items/delete-variable-library): Delete the specified Variable library.
-- [List Variable Libraries](/rest/api/fabric/variablelibrary/items/list-variable-libraries): Returns a list of VariableLibraries from the specified workspace.
-- [Get Variable Library Definition](/rest/api/fabric/variablelibrary/items/get-variable-library-definition): Returns the specified Variable library public definition.
-- [Update Variable Library Definition](/rest/api/fabric/variablelibrary/items/update-variable-library-definition): Import 
+- [List Variable Libraries](/rest/api/fabric/variablelibrary/items/list-variable-libraries): Returns a list of Variable libraries from the specified workspace.
+- [Get Variable Library Definition](/rest/api/fabric/variablelibrary/items/get-variable-library-definition): Returns the specified Variable library public [definition](../git-integration/source-code-format.md).
+- [Update Variable Library Definition](/rest/api/fabric/variablelibrary/items/update-variable-library-definition): Updates the specified Variable library public [definition](../git-integration/source-code-format.md).
 
 The Variable library item REST APIs support service principles.
 
