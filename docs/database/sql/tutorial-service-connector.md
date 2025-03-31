@@ -66,8 +66,9 @@ Create a new service connection from App Service to Azure SQL Database in Fabric
 
 1. Select **Next: Authentication** and select the system-assigned managed identity authentication option, available through the Azure CLI. User-assigned managed identities are also supported.
 1. Select **Next: Networking** > **Review + Create** to review your connection configuration.
-1. Check the box stating that you understand that additional manual steps are required to configure this service connection, and select **Create On Cloud Shell**. Alternatively, if you have the [Azure CLI installed](/azure/install-azure-cli-windows), run on your local machine the CLI commands that are now displayed right above the checkbox.
+1. Check the box stating that you understand that additional manual steps are required to configure this service connection, and select **Create On Cloud Shell**. Alternatively, if you have the [Azure CLI installed](/cli/azure/install-azure-cli-windows), run on your local machine the CLI commands that are now displayed right above the checkbox.
 1. Once the command finishes running, close the **Create connection** pane.
+---
 
 ## Share access to SQL database in Fabric
 
