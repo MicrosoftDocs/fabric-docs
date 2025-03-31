@@ -10,7 +10,7 @@ ms.date: 03/31/2025
 ---
 # Get data overview
 
-This article summarizes the methods available to ingest data directly into an [Eventhouse](eventhouse.md) using the Get data experience. For an overview of all methods to get data into an Eventhouse, see [Eventhouse ingestion overview](eventhouse-ingestion-overview.md).
+This article summarizes the methods available to ingest data directly into an [Eventhouse](eventhouse.md) using the Get data experience.
 
 :::image type="content" source="media/eventhouse-ingestion-overview/get-data-types.png" alt-text="Screenshot of the available data types in the get data experience in Eventhouses in Real-Time Analytics.":::
 
