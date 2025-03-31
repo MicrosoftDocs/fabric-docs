@@ -5,7 +5,7 @@ ms.reviewer: aamerril
 ms.author: kgremban
 author: kgremban
 ms.topic: how-to
-ms.custom: references_regions
+ms.custom:
 ms.date: 03/24/2025
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
@@ -15,12 +15,6 @@ ms.date: 03/24/2025
 Row-level security (RLS) is a feature of OneLake security (preview) that allows for defining row-level data restrictions for tabular data stored in OneLake. Users can define roles in OneLake that contain rules for filtering rows of data for members of that role. When a member of an RLS role goes to query that data, the RLS rules are evaluated and only allowed rows are returned.
 
 [!INCLUDE [onelake-security-preview](../../includes/onelake-security-preview.md)]
-
-During preview, RLS isn't available in the following Fabric regions:
-
-* West US 2
-* West US 3
-* South central US
 
 ## Prerequisites
 
