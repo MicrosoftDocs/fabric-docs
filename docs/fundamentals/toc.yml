@@ -111,8 +111,8 @@ items:
     href: copilot-real-time-intelligence.md
   - name: Copilot in Fabric Consumption
     href: copilot-fabric-consumption.md
-  - name: AI Skill in Fabric Consumption
-    href: ai-skill-consumption.md
+  - name: Data agent in Fabric Consumption
+    href: data-agent-consumption.md
 - name: Direct Lake
   items:
   - name: Direct Lake overview
