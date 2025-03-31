@@ -38,16 +38,25 @@ The Variable library item REST APIs support service principles.
 
 ## Examples
 
-Here are some examples of how to use the APIs:
+Here are some examples of how to use the APIs to do somme common tasks:
 
-|          | Import with change
-| Get + active value set |   
-| Set value set | Set/change active value set
-| Create with definition | create Variable Library with content (definition/ payloads)
-|          | Test conflict name (already exist)
-| Location | Status Failed   
-| Result   | Get result  
-|          | Base64
+### Create a Variable library
+
+```http
+POST https://{region}.dev.fabric.microsoft.com/api/v1.0/variablelibrary/items/create-variable-library
+```
+
+### Get a Variable library definition
+
+```http
+GET https://{region}.dev.fabric.microsoft.com/api/v1.0/variablelibrary/items/get-variable-library?workspaceId={workspaceId}&itemId={itemId}
+```
+
+### Change the value of a variable in the Variable library
+
+```http
+POST https://{region}.dev.fabric.microsoft.com/api/v1.0/variablelibrary/items/update-variable-library-definition
+```
 
 ## Considerations and limitations
 
