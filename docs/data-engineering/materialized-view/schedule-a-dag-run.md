@@ -43,4 +43,10 @@ Select the following from the schedule UI:
 **Click on Apply**
 The schedule is set for the particular DAG.
 
-[!Note] The scheduler will reflect the users local time.
+> [!Note]
+> The scheduler will reflect the users local time.
+
+## Next Steps
+ 
+[Microsoft Fabric materialized views tutorial](./tutorial.md)
+ 
