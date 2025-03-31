@@ -4,7 +4,7 @@ description: A known issue is posted where there are intermittent failures on de
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 11/22/2024
+ms.date: 03/31/2025
 ms.custom: known-issue-945
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-945
 
 If you have a Fabric capacity hosted in the Southeast Asia or South Brazil region, you might receive intermittent failures when you attempt to deploy the Sustainability solution.
 
-**Status:** Open
+**Status:** Fixed: March 31, 2025
 
 **Product Experience:** Industry Solutions
 
