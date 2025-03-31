@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: shsagir
 author: shsagir
 ms.topic: concept-article
-ms.date: 12/23/2024
+ms.date: 03/31/2025
 # customer intent: As a customer, I want to learn about the different sources I can use to get data into an Eventhouse in Real-Time Intelligence.
 ---
 # Get data overview
@@ -14,18 +14,17 @@ This article summarizes the methods available to ingest data directly into an [E
 
 :::image type="content" source="media/eventhouse-ingestion-overview/get-data-types.png" alt-text="Screenshot of the available data types in the get data experience in Eventhouses in Real-Time Analytics.":::
 
-- [Local file](get-data-local-file.md)
-- [Azure storage](get-data-azure-storage.md)
-- [Amazon S3](get-data-amazon-s3.md)
-- [Azure Event Hubs](get-data-event-hub.md)
-- [Eventstream](get-data-eventstream.md)
-- [OneLake](get-data-onelake.md)
-- [Real-Time hub (preview)](get-data-real-time-hub.md)
-- [Data Factory copy](../data-factory/connector-kql-database-copy-activity.md)
-- [Dataflows](../data-factory/connector-azure-data-explorer.md)
+* [Local file](get-data-local-file.md)
+* [Azure storage](get-data-azure-storage.md)
+* [Amazon S3](get-data-amazon-s3.md)
+* [Azure Event Hubs](get-data-event-hub.md)
+* [Eventstream](get-data-eventstream.md)
+* [OneLake](get-data-onelake.md)
+* [Real-Time hub (preview)](get-data-real-time-hub.md)
+* [Data Factory copy](../data-factory/connector-kql-database-copy-activity.md)
+* [Dataflows](../data-factory/connector-azure-data-explorer.md)
 
 ## Related content
 
-* [Eventhouse ingestion overview](eventhouse-ingestion-overview.md)
 * [Overview of connectors for data ingestion](data-connectors/data-connectors.md)
 * [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md)
