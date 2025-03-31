@@ -185,8 +185,6 @@ You can use the filter to sharpen the focus of your search.
 
 ## Considerations and limitations
 
-* The explore tab doesn't currently support the following item types: AI Skill, Exploration, Graph, Metric Set, Org App, Real-Time Dashboard.
-
 * Streaming semantic models are being retired and thus aren't shown. For more information, see [Announcing the retirement of real-time streaming in Power BI](https://powerbi.microsoft.com/blog/announcing-the-retirement-of-real-time-streaming-in-power-bi/).
 
 ## Related content
