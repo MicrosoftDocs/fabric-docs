@@ -155,7 +155,7 @@ The overview tab shows the following information:
 Data items such as semantic models and lakehouses show the underlying table and column schema for exploration purposes.
 
 * To help locate the table or column you're looking for, use the Filter by keyword box.
-* To further explore a table or column using [Power BI's exploration exerience](/power-bi/consumer/explore-data-service), hover over it and select the binoculars icon.
+* To further explore a table or column using [Power BI's exploration experience](/power-bi/consumer/explore-data-service), hover over it and select the binoculars icon.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-overview-tab.png" alt-text="Screenshot of the explore tab item view overview tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-overview-tab.png":::
 
@@ -175,7 +175,7 @@ The monitor tab displays activities for the item. Press **Show** on a record to 
 
 ### Permissions tab
 
-The permissions tab is available if you're a member of the Admin or Member workspace roles. The permissions tab shows who has direct access to the item, what links exist that permit access to the item, what related items enable access to the item, and what access requests are pending. You can grant or modify user permissions, audit links and remove them if necessary, and take action on access requests.
+The permissions tab is available if you're a member of the Admin or Member workspace roles. The permissions tab shows who has direct access to the item, what links exist that permit access to the item, what related items enable access to the item, and what access requests are pending. You can grant or modify user permissions, audit links and remove them if necessary, and approve or reject access requests.
 
 The subtabs available on the permissions tab vary slightly from item type to item type. To see the actions you can perform on the rows of each subtab, hover over the row and select **More options (...)**.
 
