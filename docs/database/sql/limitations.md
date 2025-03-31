@@ -14,7 +14,7 @@ ms.search.form: SQL database Overview
 
 Current limitations in the SQL database in Fabric are listed in this page. This page is subject to change.
 
-These limitations apply to SQL database in Fabric only. For the warehouse and SQL analytics endpoint items in Fabric Data Warehouse, see [Limitations of Fabric Data Warehouse](../../data-warehouse/limitations.md).
+This article applies to SQL database in Fabric only. For the warehouse and SQL analytics endpoint items in Fabric Data Warehouse, see [Limitations of Fabric Data Warehouse](../../data-warehouse/limitations.md).
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -39,9 +39,21 @@ These limitations apply to SQL database in Fabric only. For the warehouse and SQ
 
 - Column names for a SQL table cannot contain spaces nor the following characters: `,` `;` `{` `}` `(` `)` `\n` `\t` `=`.
 
-### SQL analytics endpoint limitations  
+## SQL analytics endpoint limitations  
 
-- The SQL analytics endpoint of the SQL database in Fabric works just like the [Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience.
+The SQL analytics endpoint of the SQL database in Fabric works just like the [Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience.
+
+## Connection policy
+
+Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. In the **Redirect** policy, clients establish connections directly to the node hosting the database, leading to reduced latency and improved throughput. 
+
+For connections to use this mode, clients need to:
+
+  - Allow outbound communication from the client to all Azure SQL IP addresses in the region on ports in the range of 11000 to 11999. Use the Service Tags for SQL to make this easier to manage. Refer to the [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) for a list of your region's IP addresses to allow.
+  
+  - Allow outbound communication from the client to Azure SQL gateway IP addresses on port 1433.
+  
+For more information, see [Connectivity architecture - Connection policy](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true#connection-policy).
 
 ## Availability
 

@@ -1,12 +1,12 @@
 ---
 title: Copy sample data into Lakehouse and transform with dataflow
 description: This tutorial shows you how to first load data into a Lakehouse with a pipeline and then transform it using a dataflow with Data Factory in Microsoft Fabric.
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
 ms.custom:
-ms.date: 1/13/2025
+ms.date: 02/25/2025
 ---
 
 # Copy sample data into Lakehouse and transform with a dataflow with Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
@@ -33,7 +33,7 @@ Use the following steps to load sample data into Lakehouse.
 
 ### Step 1: Start with the Copy assistant
 
-Select **Copy Data** on the canvas, to open the **Copy assistant** tool to get started.
+Select **Copy data assistant** on the canvas to open the **copy assistant** tool to get started. Or Select **Use copy assistant** from the **Copy data** drop down list under the **Activities** tab on the ribbon.
 
 :::image type="content" source="media/tutorial-load-data-lakehouse-transform/copy-data.png" alt-text="Screenshot showing the Copy data button on a new pipeline.":::
 
@@ -49,15 +49,15 @@ Select **Copy Data** on the canvas, to open the **Copy assistant** tool to get s
 
 ### Step 3: Configure your destination
 
-1. Select the **Workspace** tab and choose **Lakehouse**.  Then select **Next**.
+1. Select **Lakehouse**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination.":::
 
-1. Select **Create new Lakehouse** and enter **LHDemo** for the name, then select **Next**.
+1. Enter **LHDemo** for the Lakehouse name, then select **Create and connect**.
 
-   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/create-new-lakehouse.png" alt-text="Screenshot showing the Create new lakehouse option with the name LHDemo specified for the new Lakehouse.":::
+   :::image type="content" source="media/tutorial-load-data-lakehouse-transform/create-new-lakehouse.png" alt-text="Screenshot showing the specified name for the new Lakehouse.":::
 
-1. Configure and map your source data to the destination Lakehouse table by entering **Table name**, then select **Next** one more time.
+1. Configure and map your source data to the destination Lakehouse table. Select **Tables** for the **Root folder** and **Load to new table** for **Load settings**. Provide a **Table** name and select **Next**.
 
    :::image type="content" source="media/tutorial-load-data-lakehouse-transform/specify-table-name.png" alt-text="Screenshot showing the table name to create in the Lakehouse destination.":::
 

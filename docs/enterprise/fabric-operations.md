@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/20/2025
+ms.date: 03/20/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -148,7 +148,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 | Operation | Description | Item | Azure billing meter | Type |
 |--|--|--|--|--|
-| Artificial intelligence (AI) | AI function evaluation  | AI | Power BI Capacity Usage CU | Background |
+| Artificial intelligence (AI) | AI function evaluation  | AI | Power BI Capacity Usage CU | Interactive |
 | Background query | Queries for refreshing tiles and creating report snapshots  | Semantic model | Power BI Capacity Usage CU | Background |
 | [Dataflow DirectQuery](/power-bi/transform-model/dataflows/dataflows-directquery) | Connect directly to a dataflow without the need to import the data into a semantic model  | Dataflow Gen1 | Power BI Capacity Usage CU | Interactive |
 | [Dataflow refresh](/power-bi/transform-model/dataflows/dataflows-understand-optimize-refresh) | An on-demand or scheduled background dataflow refresh, performed by the service or with REST APIs. | Dataflow Gen1 | Power BI Capacity Usage CU | Background |
@@ -188,9 +188,9 @@ You can find the consumption rates for Fabric events in [Microsoft Fabric and Az
 
 You can find the consumption rates for KQL Database in [KQL Database consumption](../real-time-intelligence/kql-database-consumption.md).
 
-| Operation   | Description                                          | Item                         | Azure billing meter | Type        |
-| ----------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
-| Eventhouse UpTime | Measure of the time that Eventhouse is Active  | Eventhouse | Eventhouse Capacity Usage CU         | Interactive |
+| Operation         | Description                                          | Item                         | Azure billing meter | Type        |
+| ----------------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
+| Eventhouse UpTime | Measure of the time that Eventhouse is Active        | Eventhouse  | Eventhouse Capacity Usage CU         | Background  |
 
 ### Spark
 

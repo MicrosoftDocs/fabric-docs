@@ -181,9 +181,29 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: SQL analytics endpoint sync failure when columnMapping is enabled
+      href: ../known-issues/known-issue-1069-sql-analytics-endpoint-sync-failure-column-mapping-enabled.md
+    - name: Pipeline activities fail with Dynamics or Dataverse connections through OPDG
+      href: ../known-issues/known-issue-1063-pipeline-activities-fail-dynamics-dataverse-connections-opdg.md
+    - name: Virtual network data gateway doesn't start certain regions
+      href: ../known-issues/known-issue-1070-virtual-network-data-gateway-not-start-certain-regions.md
+    - name: Workspace identity tagged as preview for ADLS Gen2 connections
+      href: ../known-issues/known-issue-1062-workspace-identity-tagged-preview-adls-gen2-connections.md
+    - name: Issues publishing or importing reports in Pro workspaces
+      href: ../known-issues/known-issue-1061-issues-publishing-importing-reports-pro-workspaces.md
+    - name: Eventstream data sources might be inactivated and can't be reactivated
+      href: ../known-issues/known-issue-1051-eventstream-data-sources-inactivated-not-reactivated.md
+    - name: Copilot installation script not included in notebook
+      href: ../known-issues/known-issue-1059-copilot-installation-script-not-included-notebook.md
+    - name: Database mirroring error that source table doesn't exist
+      href: ../known-issues/known-issue-1056-database-mirroring-error-source-table-not-exist.md
+    - name: Workspaces created during Fabric preview only support limited OneLake features
+      href: ../known-issues/known-issue-1058-workspaces-created-during-preview-limited-onelake-features.md
+    - name: Spark Job Definition activity incorrectly shows failure status
+      href: ../known-issues/known-issue-1055-spark-job-definition-activity-incorrectly-shows-failure-status.md
     - name: AI skill creation fails when tenant settings restricted to security groups
       href: ../known-issues/known-issue-1047-ai-skill-creation-fails-tenant-settings-restricted-security-groups.md
-    - name: Custom visuals using dialog API don't work in February Desktop
+    - name: Custom visuals using dialog or download API don't work in February Desktop
       href: ../known-issues/known-issue-1046-custom-visuals-dialog-api-not-work-desktop.md
     - name: Live connection to local model conversion resets report content in February Desktop
       href: ../known-issues/known-issue-1045-live-connection-local-model-resets-report-content-desktop.md
@@ -281,7 +301,7 @@ items:
       href: ../known-issues/known-issue-934-external-data-sharing-not-work-different-region.md
     - name: The default environment's resources folder doesn't work in notebooks
       href: ../known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md
-    - name: Tenant migrations paused through March 2025
+    - name: Tenant migration requests stopped
       href: ../known-issues/known-issue-923-tenant-migrations-paused-january-2025.md
     - name: More options menu on a visual doesn't open in unsaved reports
       href: ../known-issues/known-issue-918-more-options-not-open-unsaved-reports.md

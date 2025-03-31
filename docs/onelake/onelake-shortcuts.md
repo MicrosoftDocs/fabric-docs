@@ -142,7 +142,7 @@ Example: `https://bucketname.s3.region.amazonaws.com/`
 
 > [!NOTE]
 > You don't need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
-> 
+>
 > Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud.
 
 #### Authorization
@@ -154,6 +154,8 @@ The IAM user must have the following permissions on the bucket that the shortcut
 - `S3:GetObject`
 - `S3:GetBucketLocation`
 - `S3:ListBucket`
+
+S3 shortcuts support S3 buckets that use S3 Bucket Keys for SSE-KMS encryption. To access data encrypted with SSE-KMS encryption, the user must have encrypt/decrypt permissions for the bucket key, otherwise they receive a **"Forbidden" error (403)**. For more information, see [Configuring your bucket to use an S3 Bucket Key with SSE-KMS for new objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/configuring-bucket-key.html).
 
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
@@ -210,11 +212,13 @@ Dataverse shortcuts use a delegated authorization model. In this model, the shor
 
 ## Caching
 
-Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24 hrs it's purged from the cache. Individual files greater than 1 GB in size aren't cached.
+Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  The retention period for cached files can be set from 1-28 days.  Each time the file is accessed, the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will then be stored in cache.  If a file hasn’t been accessed for more than the selected retention period, it is purged from the cache. Individual files greater than 1GB in size are not cached.
 > [!NOTE]
 > Shortcut caching is currently only supported for GCS, S3 and S3 compatible shortcuts.
 
-To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and select **Save**.
+To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and select the **Retention Period**.
+
+The cache can also be cleared at anytime.  From the same settings page, click the **Rest cache** button.  This will removed all files from the shortcut cache in this workspace.
 
 :::image type="content" source="media\onelake-shortcuts\shortcut-cache-settings.png" alt-text="Screenshot of workspace settings panel with OneLake tab selected." lightbox="media\onelake-shortcuts\shortcut-cache-settings.png":::
 

@@ -116,7 +116,7 @@ Once you complete these steps, the eventstream with Eventhouse destination is av
 > [!NOTE]  
 > When configuring an Eventstream, the source, transformation logic, and destination are typically added together. By default, when publishing the Eventstream, the backend services for both data ingestion and data routing start with **Now** respectively. However, data ingestion may begin faster than data routing, causing some data to be ingested into Eventstream before routing is fully initialized. As a result, this data may not be routed to the destination.  
 >  
-> A common example is a database CDC source, where initial snapshot data could remain in Eventstream without being routed to the destination.  
+> A common example is a database CDC source, where some initial snapshot data could remain in Eventstream without being routed to the destination.  
 >  
 > To mitigate this, follow these steps:  
 > 1. When configuring an **Eventhouse (Event processing before ingestion)** or **Lakehouse** destination, uncheck **Activate ingestion** after adding the data source. 
