@@ -40,7 +40,7 @@ The cost of Fabric Capacity Units can vary depending on the region. Regardless o
 
 ## Changes to AI Skill in Fabric consumption rate
 
-Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s Release Notes or Microsoft Fabric Blog. If any change to a AI Skill in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use AI Skill in Fabric, customers can use the cancellation options available for the chosen payment method.
+Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice by email or through in-product notification. Changes become effective on the date stated in Microsoft’s Release Notes or Microsoft Fabric Blog. If any change to a AI Skill in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use AI Skill in Fabric, customers can use the cancellation options available for the chosen payment method.
 
 ## Related content
 
