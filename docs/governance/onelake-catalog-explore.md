@@ -172,10 +172,9 @@ The monitor tab displays activities for the item. Press **Show** on a record to 
 
 ### Permissions tab
 
-The permissions tab is available if you're a member of the Admin or Member workspace roles. The permissions tab shows who has direct access to the item, what links exist that permit access to the item, and also what related items enable access to the item. You can modify user permissions, audit links and remove them if necessary, and also modify access from related items.
+The permissions tab is available if you're a member of the Admin or Member workspace roles. The permissions tab shows who has direct access to the item, what links exist that permit access to the item, what related items enable access to the item, and what access requests are pending. You can modify user permissions, audit links and remove them if necessary, and take action on access requests.
 
-* To grant access to a user who doesn't have access to the item, so the **Direct access** tab select **+ Add user**.
-* To modify a user's permissions, hover of the user, on the **Direct access**  tab, select **More options (...)**, and add or remove access as appropriate.
+The subtabs available on the permissions tab vary slightly from item type to item type. To see the actions you can perform on the rows of each subtab, hover over the row and select **More options (...)**.
 
 You can use the filter to sharpen the focus of your search.
 
