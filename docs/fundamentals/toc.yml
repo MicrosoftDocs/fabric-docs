@@ -186,7 +186,7 @@ items:
     - name: Can't install or open on-premises data gateway after Windows update
       href: ../known-issues/known-issue-1078-not-install-open-on-premises-data-gateway-windows-update.md
     - name: Failure to scale AAS server or add admins through Azure portal
-      href: ../known-issues/known-issue-1077-failure-scale-aas-server-add-admins-azure-portal.md
+      href: ../known-issues/known-issue-1077-failure-scale-azure-analysis-services-add-admins.md
     - name: Eventstream sample data sources created from Real-Time hub are inactive
       href: ../known-issues/known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md
     - name: Multitasking for Dataflow Gen2 with CI/CD was inadvertently enabled

@@ -21,7 +21,7 @@ Select the **Title** to view more information about that specific known issue.
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
 |  1078  | Data Factory | [Can't install or open on-premises data gateway after Windows update](./known-issue-1078-not-install-open-on-premises-data-gateway-windows-update.md) | March 31, 2025 |
-|  1077  | Power BI | [Failure to scale AAS server or add admins through Azure portal](./known-issue-1077-failure-scale-aas-server-add-admins-azure-portal.md) | March 31, 2025 |
+|  1077  | Power BI | [Failure to scale AAS server or add admins through Azure portal](./known-issue-1077-failure-scale-azure-analysis-services-add-admins.md) | March 31, 2025 |
 |  1076  | Real-Time Intelligence | [Eventstream sample data sources created from Real-Time hub are inactive](./known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md) | March 31, 2025 |
 |  1075  | Data Factory | [Multitasking for Dataflow Gen2 with CI/CD was inadvertently enabled](./known-issue-1075-multitasking-dataflow-gen2-ci-cd-enabled.md) | March 31, 2025 |
 |  1067  | Data Engineering | [Environment REST API updates might cause your workflow to break](./known-issue-1067-environment-rest-api-updates-workflow-break.md) | March 26, 2025 |

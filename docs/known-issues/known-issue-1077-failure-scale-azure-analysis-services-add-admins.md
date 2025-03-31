@@ -4,7 +4,7 @@ description: A known issue is posted where there's a failure to scale an AAS ser
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/26/2025
+ms.date: 03/31/2025
 ms.custom: known-issue-1077
 ---
 
