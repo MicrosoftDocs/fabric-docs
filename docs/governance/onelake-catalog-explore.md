@@ -125,13 +125,13 @@ To display the options menu, hover over the item whose options menu you want to 
 
 ## Open an item for editing or viewing
 
-You can open the item for editing or viewing (depending on the item type) from both the items list and from the [items details view](#view-item-details).
+You can open the item for editing or viewing (depending on the item type) from both the items list and from the [item details view](#view-item-details).
 
-* To open the item for editing or viewing from the items list, hover over the item in the items list and select the **Open** icon that appears.
+* To open the item for editing or viewing from the items list, hover over the item and select the **Open** icon that appears.
 
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-edit-view-mode.png" alt-text="Screenshot of an item's open icon in the OneLake catalog." border="false" lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-edit-view-mode.png":::
+    :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-edit-view-mode.png" alt-text="Screenshot of an item's open icon in the OneLake catalog." border="false" lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-edit-view-mode.png":::
 
-To open the item for editing or viewing, from the [item details view](#view-item-details), select the **Open** button in the view.
+* To open the item for editing or viewing from the [item details view](#view-item-details), select the **Open** button in the view.
 
 ## View item details
 
