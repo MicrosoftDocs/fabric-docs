@@ -1,9 +1,9 @@
 ---
 title: What is Data Factory
 description: Overview of Data Factory dataflows and data pipelines.
-ms.reviewer: DougKlopfenstein
-ms.author: makromer
-author: kromerm
+ms.author: whhender
+author: whhender
+ms.reviewer: makromer
 ms.topic: overview
 ms.custom:
 ms.search.form: product-data-integration, Data_Factory_Overview, product-data-factory

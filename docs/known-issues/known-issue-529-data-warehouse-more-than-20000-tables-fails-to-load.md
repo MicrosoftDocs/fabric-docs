@@ -1,7 +1,7 @@
 ---
 title: Known issue - Data warehouse with more than 20,000 tables fails to load
 description: A known issue is posted where a data warehouse with more than 20,000 tables fails to load
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting
 ms.date: 11/11/2024
