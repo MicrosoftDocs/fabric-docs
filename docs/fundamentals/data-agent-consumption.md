@@ -19,24 +19,24 @@ The table below defines consumption in Capacity Units (CUs), when Data agent lev
 |AI Query |The input prompt |Per 1,000 Tokens |100 CU seconds|
 |AI Query |The output completion |Per 1,000 Tokens|400 CU seconds|
 
-In addition to token consumption, the Data agent may generate and execute queries as part of answering user requests. The execution of these queries is billed separately to the corresponding query engine artifact. For example, if a query is generated for a Data Warehouse, its execution is billed through the SQL Query operation.
+In addition to token consumption, the Data agent might generate and execute queries as part of answering user requests. The execution of these queries is billed separately to the corresponding query engine item. For example, if a query is generated for a Data Warehouse, its execution is billed through the SQL Query operation.
 
 ## Monitor the usage  
-The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for Data agent operations under the name *AI Query* Additionally, Data agent users are able to view a summary of their billing charges for the Data agent usage under the "LlmPlugin" item kind.
+The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for Data agent operations under the name *AI Query* Additionally, Data agent users are able to view a summary of their billing charges for the Data agent usage under the *LlmPlugin* item kind.
 
 ## Capacity utilization type 
 
-The AI-related activity within the Data agent is classified as *background jobs* to handle a higher volume of Data agent requests during peak hours.
+The AI related activity within the Data agent is classified as *background jobs* to handle a higher volume of Data agent requests during peak hours.
 
 For example, assume each Data agent request has 2,000 input tokens and 500 output tokens. The price for one Data agent request is calculated as follows: (2,000 × 100 + 500 × 400) / 1,000 = 400.00 CU seconds = 6.67 CU minutes. The cost of executing the AI-generated queries is billed through the corresponding query engine running the query.
 
-Since Data agent is a background job, each Data agent request (~6.67 CU minute job) consumes only one CU minute of each hour of a capacity. For a customer on F64 who has 64 * 24 CU Hours (1,536) in a day, and each Data agent job consumes (6.67 CU mins / 60 mins) = 0.11 CU Hours, customers can run over 13,824 requests before they exhaust the capacity. However, once the capacity is exhausted, all operations will shut down.
+Since Data agent is a background job, each Data agent request (~6.67 CU minute job) consumes only one CU minute of each hour of a capacity. If you're using an F64 SKU that has 64 * 24 = 1,536 CU hours a day, and each Data agent job consumes 6.67 CU mins / 60 mins = 0.11 CU hours, you can run over 13,824 requests before they exhaust the capacity. However, once the capacity is exhausted, all operations will shut down.
 
 ## Region mapping 
 
 The Data agent is powered by Azure OpenAI large language models, which are deployed to [a limited set of data centers](../data-science/ai-services/ai-services-overview.md#available-regions) Customers can [enable cross-geo processing in the tenant settings](../admin/service-admin-portal-copilot.md) to use Copilot and the Data agent. This setting allows data to be processed in a region where the Azure OpenAI Service is available. This region could be outside of the user's geographic region, compliance boundary, or national cloud instance. During region mapping, data residency is treated as the primary constraint. Regions are mapped within the same geographic area whenever possible.
 
-The cost of Fabric Capacity Units can vary depending on the region. Regardless of the consumption region where GPU capacity is utilized, customers are billed based on the Fabric Capacity Units pricing in their billing region. For example, if a customer's requests are mapped from `region 1` to `region 2`, with `region 1` being the billing region and `region 2` being the consumption region, the customer is charged based on the pricing in `region 1`.
+The cost of Fabric CUs can vary depending on the region. Regardless of the consumption region where GPU capacity is utilized, customers are billed based on the Fabric pricing in their billing region. For example, if a customer's requests are mapped from `region 1` to `region 2`, with `region 1` being the billing region and `region 2` being the consumption region, the customer is charged based on the pricing in `region 1`.
 
 ## Changes to Data agent in Fabric consumption rate
 
