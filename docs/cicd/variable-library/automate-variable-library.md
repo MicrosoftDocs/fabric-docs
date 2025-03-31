@@ -32,32 +32,14 @@ The [Variable library REST APIs](/rest/api/fabric/variablelibrary/items) allow y
 - [Delete Variable Library](/rest/api/fabric/variablelibrary/items/delete-variable-library): Delete the specified Variable library.
 - [List Variable Libraries](/rest/api/fabric/variablelibrary/items/list-variable-libraries): Returns a list of Variable libraries from the specified workspace.
 - [Get Variable Library Definition](/rest/api/fabric/variablelibrary/items/get-variable-library-definition): Returns the specified Variable library public [definition](./variable-library-cicd.md#variable-libraries-and-git-integration) including value sets.
-- [Update Variable Library Definition](/rest/api/fabric/variablelibrary/items/update-variable-library-definition): Updates the specified Variable library public [definition](./variable-library-cicd.md#variable-libraries-and-git-integration) including value sets.
-- Set active value set: Set the [active value set](./variable-library-overview.md#alternative-value-sets) for the specified Variable library.
+- [Update Variable Library Definition](/rest/api/fabric/variablelibrary/items/update-variable-library-definition): Overrides the [definition](./variable-library-cicd.md#variable-libraries-and-git-integration) of the specified Variable library, including value sets.
 
 The Variable library item REST APIs support service principles.
 
 ## Examples
 
-Here are some examples of how to use the APIs to do somme common tasks:
-
-### Create a Variable library
-
-```http
-POST https://{region}.dev.fabric.microsoft.com/api/v1.0/variablelibrary/items/create-variable-library
-```
-
-### Get a Variable library definition
-
-```http
-GET https://{region}.dev.fabric.microsoft.com/api/v1.0/variablelibrary/items/get-variable-library?workspaceId={workspaceId}&itemId={itemId}
-```
-
-### Change the value of a variable in the Variable library
-
-```http
-POST https://{region}.dev.fabric.microsoft.com/api/v1.0/variablelibrary/items/update-variable-library-definition
-```
+For some examples of how to use the APIs, see the [REST API documentation](/rest/api/fabric/variablelibrary/items) for each API.
+For a breakdown of the definition structure of the Variable library, see the [Variable library definition](/rest/api/fabric/articles/item-management/definitions/variable-library-definition).
 
 ## Considerations and limitations
 
