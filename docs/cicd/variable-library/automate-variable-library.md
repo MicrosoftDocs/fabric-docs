@@ -31,8 +31,9 @@ The [Variable library REST APIs](/rest/api/fabric/variablelibrary/items) allow y
 - [Update Variable Library](/rest/api/fabric/variablelibrary/items/update-variable-library): Updates the properties of the specified Variable library.
 - [Delete Variable Library](/rest/api/fabric/variablelibrary/items/delete-variable-library): Delete the specified Variable library.
 - [List Variable Libraries](/rest/api/fabric/variablelibrary/items/list-variable-libraries): Returns a list of Variable libraries from the specified workspace.
-- [Get Variable Library Definition](/rest/api/fabric/variablelibrary/items/get-variable-library-definition): Returns the specified Variable library public [definition](../git-integration/source-code-format.md).
-- [Update Variable Library Definition](/rest/api/fabric/variablelibrary/items/update-variable-library-definition): Updates the specified Variable library public [definition](../git-integration/source-code-format.md).
+- [Get Variable Library Definition](/rest/api/fabric/variablelibrary/items/get-variable-library-definition): Returns the specified Variable library public [definition](./variable-library-cicd.md#variable-libraries-and-git-integration) including value sets.
+- [Update Variable Library Definition](/rest/api/fabric/variablelibrary/items/update-variable-library-definition): Updates the specified Variable library public [definition](./variable-library-cicd.md#variable-libraries-and-git-integration) including value sets.
+- Set active value set: Set the [active value set](./variable-library-overview.md#alternative-value-sets) for the specified Variable library.
 
 The Variable library item REST APIs support service principles.
 
