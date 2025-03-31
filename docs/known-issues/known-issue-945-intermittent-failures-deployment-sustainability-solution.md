@@ -1,7 +1,7 @@
 ---
 title: Known issue - Intermittent failures on deployment of Sustainability solution
 description: A known issue is posted where there are intermittent failures on deployment of Sustainability solution.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/31/2025

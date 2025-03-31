@@ -6,7 +6,7 @@ ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 09/26/2024
+ms.date: 03/31/2025
 
 #customer intent: As a data creator, I want to apply tags to my items so as to facilitate data management and discovery.
 

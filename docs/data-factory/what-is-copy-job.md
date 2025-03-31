@@ -1,6 +1,6 @@
 ---
-title: What is Copy job (preview) in Data Factory
-description: This article explains the concept of the Copy job (preview) and the benefits it provides.
+title: What is Copy job in Data Factory
+description: This article explains the concept of the Copy job and the benefits it provides.
 author: dearandyxu
 ms.author: yexu
 ms.topic: how-to
@@ -8,7 +8,7 @@ ms.date: 08/30/2024
 ms.search.form: copy-job-tutorials 
 ---
 
-# What is the Copy job (preview) in Data Factory for Microsoft Fabric
+# What is the Copy job in Data Factory for Microsoft Fabric
 
 Data Factory in Fabric empowers users to seamlessly integrate data from over 100 built-in connectors - both sources and destinations - through a visually intuitive interface. The Copy activity, working within data pipelines, facilitates data ingestion. Meanwhile, Dataflow Gen2 supports data transformations, and pipelines orchestrate the flow of integration.
 

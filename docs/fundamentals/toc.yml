@@ -175,6 +175,8 @@ items:
     href: /power-bi/guidance/fabric-adoption-roadmap-change-management?context=/fabric/context/context
   - name: Conclusion
     href: /power-bi/guidance/fabric-adoption-roadmap-conclusion?context=/fabric/context/context
+  - name: IDEAS journey with Fabric
+    href: ideas-data-platform-integration.md
 - name: Known issues
   items:
     - name: Active known issues for Fabric + Power BI - chart

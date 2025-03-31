@@ -1,7 +1,7 @@
 ---
 title: Known issue - Data warehouse tables aren't accessible or updatable
 description: A known issue is posted where data warehouse tables aren't accessible or updatable.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/21/2025
