@@ -137,11 +137,11 @@ You can open the item for editing or viewing (depending on the item type) from b
 
 The items details view enables you to drill down and explore items. Select an item in the items list display its details.
 
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-item-details-view.png" alt-text="Screenshot of the explore tab item details view.":::
-
 The item details view has a number of tabs that to help you explore your selected item. The tabs are described in the following sections.
 
 To open the item for editing or viewing (depending on the item type), select **Open**.
+
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-item-details-view.png" alt-text="Screenshot of the explore tab item details view.":::
 
 ### Overview tab
 
