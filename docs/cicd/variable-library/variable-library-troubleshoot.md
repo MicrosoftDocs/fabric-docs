@@ -79,7 +79,7 @@ After you find and fix the problem, remove the current reference and replace it 
 
 ### Active value set not changed
 
-**Description of problem**: I changed the active value set in the Variable library, but I still get the value from the previous value set.  
+**Description of problem**: I changed the active value set in the Variable library, but I still get the value from the previous active value set.  
 **Cause**: You might have forgotten to save your changes in the Variable library.  
 **Solution**: Go back to the Variable library, ensure he correct value set is set to active, and save.  
 
