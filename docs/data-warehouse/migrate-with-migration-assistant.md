@@ -4,7 +4,7 @@ description: This tutorial provides a step-by-step guide for the Migration Assis
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: anphil
-ms.date: 03/22/2025
+ms.date: 03/27/2025
 ms.topic: how-to
 ms.search.form: Migration Assistant
 ---
@@ -108,6 +108,24 @@ Copy data helps with migrating data used by the objects you migrate. You can use
 
 In the final step, the data loading/reporting platforms that are connected to your source need to be reconnected to your new Fabric warehouse.
 
+1. Identify connections on your existing source warehouse. 
+   - For example, in Azure Synapse Analytics dedicated SQL pools, you can find session information including source application, who is connected in, where the connection is coming from, and if its using Microsoft Entra ID or SQL authentication: 
+   ```sql
+   SELECT DISTINCT CASE 
+            WHEN len(tt) = 0
+                THEN app_name
+            ELSE tt
+            END AS application_name
+        ,login_name
+        ,ip_address
+   FROM (
+        SELECT DISTINCT app_name
+            ,substring(client_id, 0, CHARINDEX(':', ISNULL(client_id, '0.0.0.0:123'))) AS ip_address
+            ,login_name
+            ,isnull(substring(app_name, 0, CHARINDEX('-', ISNULL(app_name, '-'))), 'h') AS tt
+        FROM sys.dm_pdw_exec_sessions
+        ) AS a;
+   ```
 1. Update the connections to your reporting platforms to point to your Fabric warehouse. 
 1. Test the Fabric warehouse with some reporting before rerouting. Perform comparison and data validation tests in your reporting platforms.
 1. Update the connections for data loading (ETL/ELT) platforms to point to your Fabric warehouse.
