@@ -28,16 +28,19 @@ Data agent in Microsoft Fabric transforms enterprise data into conversational Q&
 - [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- At least one of these: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
+- At least one of the following: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
 - [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
 - Developers and end users must at least have `AI Developer` ​Role-Based Access Control (RBAC) role.
+
+> [!NOTE]
+> At this time, the integration between Fabric data agent and Azure AI Foundry is supported only in the West US and Japan East regions, with more regions coming soon.
 
 ## How it works
 
 **Agent Setup**: In Azure AI Agent Service, create a new agent and add Fabric data agent as one of its knowledge sources. To establish this connection, you need the workspace ID and artifact ID for the Fabric data agent. The setup enables your Azure AI agent to evaluate available sources when it receives a query, ensuring that it invokes the correct tool to process the request. Currently, you can only add one Fabric data agent as a knowledge source to your Azure AI agent.
 
 > [!NOTE]
-> The model you select in Azure AI Agent setup is only used for Azure AI agent orchestration and response generation. It doesn't impact the model that Fabric data agent uses.
+> The model you select in Azure AI Agent setup is only used for Azure AI agent orchestration and response generation. It doesn't affect the model that Fabric data agent uses.
 
 **Query Processing**: When a user sends a query from the Foundry playground, the Azure AI Agent Service determines whether or not Fabric data agent is the best tool for the task. If it is, the Azure AI agent:
 
@@ -83,11 +86,11 @@ https://fabric.microsoft.com/groups/<**workspace_id**>/aiskills/<**artifact-id**
 
 Finally, assign a name to your connection, and choose whether to make it available to all projects in Azure AI Foundry or to restrict it to the current project.
 
-**Add Fabric data agent programmatically**: You can follow below to learn how to add Fabric data agent programmatically to your Azure AI agent in Python. For other languages (C#, Javascript) you can refer to [here](https://aka.ms/AgentFabricDoc).
+**Add Fabric data agent programmatically**: The following steps describe how to add Fabric data agent programmatically to your Azure AI agent in Python. For other languages (C#, JavaScript) you can refer to [here](https://aka.ms/AgentFabricDoc).
 
 #### Step 1: Create a project client
 
-Create a client object, which will contain the connection string for connecting to your AI project and other resources.
+Create a client object that contains the connection string to connect to your AI project and other resources.
 
 ```python
 import os
