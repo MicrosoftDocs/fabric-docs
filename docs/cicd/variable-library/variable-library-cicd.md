@@ -43,11 +43,39 @@ Item permissions are checked during Git Update and commit.
 
 The Variable library item schema is a JSON object that contains three parts:
 
-* [Variables](#variables)
 * [Value-sets](#value-set) folder
 * [platform.json](../git-integration/source-code-format.md#platform-file): Automatically generated file
+* [Variables](#variables)
 
 :::image type="content" source="./media/variable-library-cicd/git-files.png" alt-text="Screenshot of Git folder with variable library files in it.":::
+
+### Value set
+
+The variable library folder contains a subfolder called ValueSets. This folder contains a JSON file for each value set. The JSON file contains only the variable values for *non default* values in that value set.
+
+* name
+* value
+
+For example:
+
+```json
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/valueSet/1.0.0/schema.json",
+  "name": "Test",
+  "variableOverrides": [
+    {
+      "name": "Var1",
+      "value": 2
+    },
+    {
+      "name": "var2",
+      "value": 4
+    }
+  ]
+}
+```
+
+Values for variables not in this file are taken from the default value set.
 
 ### Variables
 
@@ -77,34 +105,6 @@ For example:
   ],
 }
 ```
-
-### Value set
-
-The variable library folder contains a subfolder called ValueSets. This folder contains a JSON file for each value set. The JSON file contains only the variable values for *non default* values in that value set.
-
-* name
-* value
-
-For example:
-
-```json
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/valueSet/1.0.0/schema.json",
-  "name": "Test",
-  "variableOverrides": [
-    {
-      "name": "Var1",
-      "value": 2
-    },
-    {
-      "name": "var2",
-      "value": 4
-    }
-  ]
-}
-```
-
-Values for variables not in this file are taken from the default value set.
 
 ## Considerations and limitations
 

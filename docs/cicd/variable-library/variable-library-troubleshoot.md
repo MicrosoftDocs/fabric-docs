@@ -21,9 +21,11 @@ This article describes common errors and issues that you might encounter when wo
 
 **Description of problem**: I want to create a Variable library, but I can't find the *Create Variable library* icon.
 
-**Cause**: The *Create Variable library* icon is only available if the *Users can create Create Variable libraries* tenant switch is enabled in the Admin portal.
+**Cause**: The *Create Variable library* icon is only available if the *Users can create Variable libraries* tenant switch is enabled in the Admin portal.
 
 **Solution**: If you're an admin, go to the Admin portal, and enable the *Users can create Variable libraries* [tenant switch](../../admin/service-admin-portal-microsoft-fabric-tenant-settings.md). If you're not an admin, contact your admin.
+
+:::image type="content" source="./media/variable-library-troubleshoot/create-variable-library-enabled.png" alt-text="Screenshot of Users can create Variable library tenant switch.":::
 
 ### I can't create a Variable Library item
 
@@ -36,6 +38,7 @@ This article describes common errors and issues that you might encounter when wo
 ### I can't save my Variable library
 
 **Description of problem**: I tried to save my Variable library, but it failed.
+
 **Cause**: There can be several reasons for this failure. Some reasons might include:
 
 - The name of the variable or value-set is invalid.
@@ -57,9 +60,9 @@ This article describes common errors and issues that you might encounter when wo
 
 :::image type="content" source="./media/variable-library-troubleshoot/cant-start-deployment.png" alt-text="Screenshot of error message that says Can't start deployment.":::
 
-**Cause**: The selected active value set in the target stage is missing in the deployed Variable library. This could happen if you removed or renamed the active value set in the source or target stage.
+**Cause**: The active value set in the target stage is missing in the deployed Variable library. This could happen if you removed or renamed the active value set in the source or target stage.
 
-**Solution**: Change the name of the active value set in the target stage to one that exists in the source.
+**Solution**: Change  the active value set in the target stage, or rename the current one to one that exists in the source.
 
 ## Variable reference failure
 
