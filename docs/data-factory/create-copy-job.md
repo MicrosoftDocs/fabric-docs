@@ -25,11 +25,11 @@ Complete the following steps to create a new Copy job to ingest data from a data
 
    :::image type="content" source="media/copy-job/choose-data-source.png" lightbox="media/copy-job/choose-data-source.png" alt-text="Screenshot showing where to choose a data source for the Copy job.":::
 
-1. Enter your credentials to connect to Azure SQL DB. You can copy data securely within a VNET environment using on-premises or VNET gateway. 
+1. Enter your **credentials** to connect to Azure SQL DB. You can copy data securely within a VNET environment using on-premises or VNET gateway. 
 
    :::image type="content" source="media/copy-job/enter-credentials-data-source.png" lightbox="media/copy-job/enter-credentials-data-source.png" alt-text="Screenshot showing where to enter credentials.":::
 
-1. Select the tables and columns to copy. Use the search box to quickly identify specific tables and columns you want to copy.
+1. Select the **tables** and **columns** to copy. Use the search box to quickly identify specific tables and columns you want to copy.
 
    :::image type="content" source="media/copy-job/select-tables-columns.png" lightbox="media/copy-job/select-tables-columns.png" alt-text="Screenshot showing where to select tables and columns for the Copy job.":::
 
@@ -37,13 +37,13 @@ Complete the following steps to create a new Copy job to ingest data from a data
 
    :::image type="content" source="media/copy-job/select-destination-store.png" lightbox="media/copy-job/select-destination-store.png" alt-text="Screenshot showing where to select the destination store for the Copy job.":::
 
-1. (Optional) Select update method on how you want to write data to the destination store. If choosing **Merge**, specify the required Key columns.
+1. (Optional) Select **Update method** on how you want to write data to the destination store. If choosing **Merge**, specify the required Key columns.
 
    :::image type="content" source="media/copy-job/update-method1.png" lightbox ="media/copy-job/update-method1.png" alt-text="Screenshot showing where to update method.":::
    
    :::image type="content" source="media/copy-job/update-method2.png" lightbox ="media/copy-job/update-method2.png" alt-text="Screenshot showing how to update method.":::
 
-1. (Optional) Configure table or column mapping to rename tables or columns in the destination or apply data type conversions. By default, data is copied with the same table name, column name, and data type as the source. 
+1. (Optional) Configure **table or column mapping** to rename tables or columns in the destination or apply data type conversions. By default, data is copied with the same table name, column name, and data type as the source. 
 
    :::image type="content" source="media/copy-job/specify-mappings.png" lightbox ="media/copy-job/specify-mappings.png" alt-text="Screenshot showing where to specify table mappings.":::
    
@@ -60,7 +60,7 @@ Complete the following steps to create a new Copy job to ingest data from a data
 
    :::image type="content" source="media/copy-job/review-save.png" lightbox="media/copy-job/review-save.png" alt-text="Screenshot showing where to review and save the newly created Copy job.":::
 
-1. You can easily execute and track the job's status. Click the **Run** button to trigger the copy job immediately, no matter it's configured to run once or on a schedule.
+1. You can easily execute and track the job's status. You have the flexibility to click the **Run** button to trigger the copy job at any time, whether it's configured to run once or on a schedule.
   
    The inline monitoring panel clearly displays key metrics from the latest run in real time, including row counts and copy duration for each table, etc. Learn more in [How to monitor a Copy job](monitor-copy-job.md)
 
