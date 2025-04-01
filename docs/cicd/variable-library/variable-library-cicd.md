@@ -45,7 +45,7 @@ The Variable library item schema is a JSON object that contains four parts:
 
 * [Value-sets](#value-set) folder
 * [Settings](#settings)
-* [platform.json](../git-integration/source-code-format.md#platform-file): Automatically generated file
+* [platform.json](/rest/api/fabric/articles/item-management/definitions/item-definition-overview#platform-file): Automatically generated file
 * [Variables](#variables)
 
 :::image type="content" source="./media/variable-library-cicd/git-files.png" alt-text="Screenshot of Git folder with variable library files in it.":::
@@ -54,75 +54,21 @@ The Variable library item schema is a JSON object that contains four parts:
 
 The variable library folder contains a subfolder called ValueSets. This folder contains a JSON file for each value set. This JSON file contains only the variable values for *non default* values in that value set. (The default values are in the [variables.json](#variables) file.)
 
-* name
-* value
-
-For example:
-
-```json
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/valueSet/1.0.0/schema.json",
-  "name": "Test",
-  "variableOverrides": [
-    {
-      "name": "Var1",
-      "value": 2
-    },
-    {
-      "name": "var2",
-      "value": 4
-    }
-  ]
-}
-```
+For more information about the value set file, including an example, see [value set example](/rest/api/fabric/articles/item-management/definitions/variable-library-definition#valueset).
 
 Values for variables not in this file are taken from the default value set.
 
 ### Settings
 
-The settings.json file contains settings for the Variable library. For example, the following snippet changes the order of the value sets:
+The settings.json file contains settings for the Variable library.
 
-```json
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/valueSet/1.0.0/schema.json",
-  "valueSetsOrder": [
-    "valueSet1",
-    "valueSet0",
-    "someOtherValueSet"
-  ]
-}
-```
-
-The value set order list can ba empty or partial (ony containing some of the value sets). Value sets not in this list will be added to the end of the list in alphabetical order. This list can't contain invalid value set names.
+For a sample settings file, see [settings.json example](/rest/api/fabric/articles/item-management/definitions/variable-library-definition#settingsjson-example-).
 
 ### Variables
 
-The variables.json file contains the variable names and their default values:
+The variables.json file contains the variable names and their default values.
 
-* name
-* type
-* defaultValue
-* note (optional)
-
-For example:
-
-```json
-{
-  "variables": [
-    {
-      "name": "WaitTime",
-      "note": "Wait time in minutes",
-      "type": "integer",
-      "Value": 3
-    },
-    {
-      "name": "var2",
-      "type": "string",
-      "Value": "value2"
-    }
-  ],
-}
-```
+For more information about the variables file, including an example, see [variables.json example](/rest/api/fabric/articles/item-management/definitions/variable-library-definition#variables).
 
 ## Considerations and limitations
 
