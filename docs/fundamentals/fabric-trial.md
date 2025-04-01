@@ -65,12 +65,12 @@ You can sign up for a trial capacity. You manage who else can use your trial by 
     :::image type="content" source="media/fabric-trial/me-control.png" lightbox="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
 
 1. If prompted, agree to the terms and then select **Start trial**.
-1. Within the **Activate your 60-day free Fabric trial** capacity prompt, review the **Trial capacity region**. You can either accept the default home region or update it to a new region location that best suits your needs. Once you have made your selection, agree to the terms and conditions, and then select **Activate**.
+1. Within the **Activate your 60-day free Fabric trial** capacity prompt, review the **Trial capacity region**. You can either accept the default home region or update it to a new region location that best suits your needs. Once you make your selection, agree to the terms and conditions, then select **Activate**.
 
    > [!IMPORTANT]
-   > When planning your region deployment for Fabric capacities, it is important to make the appropriate selection from the outset. If you decide to move a workspace containing Fabric items to a different region after your trial has been created, you will need to delete all existing Fabric items before proceeding. For detailed instructions, see [Moving your data around](../admin/portal-workspaces#moving-data-around).
+   > When planning your region deployment for Fabric capacities, it's important to make the appropriate selection from the outset. If you decide to move a workspace containing Fabric items to a different region after your trial is created, you need to delete all existing Fabric items before proceeding. For detailed instructions, see [Moving your data around](../admin/portal-workspaces#moving-data-around).
    >
-   > To ensure the best performance and resource management, it is recommended to deploy your capacity in a region where your existing resources are already located. This approach minimizes network latency, reduces ingress and egress charges, and enhances overall reliability.
+   > To ensure the best performance and resource management, it's recommended to deploy your capacity in a region where your existing resources are already located. This approach minimizes network latency, reduces ingress and egress charges, and enhances overall reliability.
 
 1. Once your trial capacity is ready, you receive a confirmation message. Select **Fabric Home Page** to begin a guided walkthrough of Fabric. You're now the Capacity administrator for that trial capacity. To learn how to share your trial capacity using workspaces, see [Share trial capacities](#share-trial-capacities)
 
@@ -185,7 +185,7 @@ If you want to retain your data and continue to use Microsoft Fabric, you can [p
 
 Here are some things to consider and answers to frequently asked questions about the Fabric trial.
 
-#### What if don't already have an assigned Power BI PPU?
+#### What if I don't already have an assigned Power BI PPU?
 
 If you don't already have an assigned Power BI [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) license, you receive a Power BI [Individual Trial](/power-bi/fundamentals/service-self-service-signup-purchase-for-power-bi?tabs=trial#start-a-trial) when initiating a Fabric trial capacity. This individual trial enables you to perform the actions and use the features that a PPU license enables. Your Account manager still displays the nontrial licenses assigned to you. But in order to make full use of Fabric, your Fabric trial includes the Power BI Individual trial.
 
@@ -194,7 +194,7 @@ If you don't already have an assigned Power BI [Premium Per User (PPU)](/power-b
 If you don't see the **Start trial** button in your Account manager:
 
 - Your Fabric administrator might disable access, and you can't start a Fabric trial. To request access, [contact your Fabric administrator](#look-up-the-trial-capacity-administrator). You can also start a trial using your own tenant. For more information, see [Sign up for Power BI with a new Microsoft 365 account](/power-bi/enterprise/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial).
-- You're an existing Power BI trial user, and you don't see **Start trial** in your Account manager. You can start a Fabric trial by attempting to [create a Fabric item](#other-ways-to-start-a-microsoft-fabric-trial). When you attempt to create a Fabric item, you receive a prompt to start a Fabric trial. If you don't see this prompt, it's possible that this action is deactivated by your Fabric administrator.
+- You're an existing Power BI trial user, and you don't see **Start trial** in your Account manager. You can start a Fabric trial by attempting to [create a Fabric item](#other-ways-to-start-a-microsoft-fabric-trial). When you attempt to create a Fabric item, you receive a prompt to start a Fabric trial. If you don't see this prompt, it's possible your Fabric administrator deactivated this action.
 
 If you don't have a work or school account but want to sign up for a free trial:
 
@@ -225,12 +225,12 @@ This bug occurs when the Fabric administrator turns off trials after you start a
 
 #### What is the region for my Fabric trial capacity?
 
-If you start the trial using the Account manager and did not changed the default region selection, your trial capacity is located in the home region for your tenant. See [Find your Fabric home region](../admin/find-fabric-home-region.md) for information about how to find your home region, where your data is stored.
+If you start the trial using the Account manager and didn't change the default region selection, your trial capacity is located in the home region for your tenant. See [Find your Fabric home region](../admin/find-fabric-home-region.md) for information about how to find your home region, where your data is stored.
 
 > [!NOTE]
-> In most cases, the default trial Capacity region will match your home region. However, in some cases, Fabric trials created in Central US were listed as being created in East US by default.
+> In most cases, the default trial Capacity region matches your home region. However, in some cases, Fabric trials created in Central US were listed as being created in East US by default.
 
-#### What impact does region have on my Fabric trial?
+#### What effect does region have on my Fabric trial?
 
 Not all regions are available for the Fabric trial. Start by [looking up your home region](../admin/find-fabric-home-region.md) and then check to [see if your region is supported for the Fabric trial](../admin/region-availability.md). If your home region doesn't have Fabric enabled, don't use the Account manager to start a trial. To start a trial in a region that isn't your home region, follow the steps in [Other ways to start a Fabric trial](#other-ways-to-start-a-microsoft-fabric-trial). If you already started a trial from Account manager, cancel that trial and follow the steps in [Other ways to start a Fabric trial](#other-ways-to-start-a-microsoft-fabric-trial) instead.
 
