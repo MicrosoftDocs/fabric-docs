@@ -56,7 +56,7 @@ Complete the following steps to create a new Copy job to ingest data from a data
 
    :::image type="content" source="media/copy-job/copy-job-mode.png" lightbox="media/copy-job/copy-job-mode.png" alt-text="Screenshot showing where to select the Copy job mode.":::
 
-1. Review the job summary, set the run option (one-time or scheduled), and click **Save + Run**.
+1. Review the job summary, set the run option to on schedule, and click **Save + Run**.
 
    :::image type="content" source="media/copy-job/review-save.png" lightbox="media/copy-job/review-save.png" alt-text="Screenshot showing where to review and save the newly created Copy job.":::
 
@@ -93,7 +93,7 @@ Complete the following steps to create a new Copy job to ingest files from a sto
 
    :::image type="content" source="media/copy-job/select-folder.png" lightbox="media/copy-job/select-folder.png" alt-text="Screenshot showing where to select folder for the Copy job.":::
 
-1. Select your destination store. In this example, choose another **Lakehouse**.
+1. Select your destination store. In this example, choose **Lakehouse**.
 
    :::image type="content" source="media/copy-job/select-destination-store1.png" lightbox="media/copy-job/select-destination-store1.png" alt-text="Screenshot1 showing where to select the destination store for the Copy job.":::
 
@@ -117,7 +117,7 @@ Complete the following steps to create a new Copy job to ingest files from a sto
 
    :::image type="content" source="media/copy-job/monitor-run-history1.png" lightbox="media/copy-job/monitor-run-history1.png" alt-text="Screenshot1 showing the Copy job panel where you can monitor run history.":::
 
-1. You can easily edit your Copy Job, including updating the folders and files to be copied, configuring the schedule, and more. Some changes, such as selecting a new folder from the source storage, will reset the incremental copy to start from an initial full load in the next run.
+1. You can easily edit your Copy Job, including updating the folders and files to be copied, configuring the schedule, and more. 
 
     :::image type="content" source="media/copy-job/edit-copy-job1.png" lightbox="media/copy-job/edit-copy-job1.png" alt-text="Screenshot1 showing how to edit Copy job.":::
 
