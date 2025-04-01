@@ -68,7 +68,7 @@ You can sign up for a trial capacity. You manage who else can use your trial by 
 1. Within the **Activate your 60-day free Fabric trial** capacity prompt, review the **Trial capacity region**. You can either accept the default home region or update it to a new region location that best suits your needs. Once you make your selection, agree to the terms and conditions, then select **Activate**.
 
    > [!IMPORTANT]
-   > When planning your region deployment for Fabric capacities, it's important to make the appropriate selection from the outset. If you decide to move a workspace containing Fabric items to a different region after your trial is created, you need to delete all existing Fabric items before proceeding. For detailed instructions, see [Moving your data around](../admin/portal-workspaces#moving-data-around).
+   > When planning your region deployment for Fabric capacities, it's important to make the appropriate selection from the outset. If you decide to move a workspace containing Fabric items to a different region after your trial is created, you need to delete all existing Fabric items before proceeding. For detailed instructions, see [Moving your data around](../admin/portal-workspaces.md#moving-data-around).
    >
    > To ensure the best performance and resource management, it's recommended to deploy your capacity in a region where your existing resources are already located. This approach minimizes network latency, reduces ingress and egress charges, and enhances overall reliability.
 
