@@ -59,7 +59,17 @@ This section is divided into Fabric experience. Each experience had a table that
 
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
-| Copilot in Fabric                            | Compute cost associated with input prompts and output completion      | Multiple | Copilot in Fabric CU | Background |
+| Copilot in Fabric                            | Compute cost associated with input prompts and output completion      | Multiple | Copilot and AI | Background |
+
+### Data agent in Fabric
+
+[Data agent](../data-science/concept-ai-skill.md) operations are listed in this table. In the metrics app's [matrix by item and operation table](metrics-app-compute-page.md), Data agent operations are listed under the *LlmPlugin* item kind.
+
+You can find the consumption rates for the Data agent in [Data agent consumption](../fundamentals/copilot-fabric-consumption.md).
+
+| Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
+| ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
+| AI query                            | Compute cost associated with input prompts and output completion      | LlmPlugin | Copilot and AI| Background |
 
 ### Data Factory
 
