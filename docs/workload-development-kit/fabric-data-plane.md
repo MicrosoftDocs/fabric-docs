@@ -140,6 +140,7 @@ For example:
 ```
 > [!Note]
 > SchemaVersion must be set to 1.101.0 (or later supported versions).
+
 The same SchemaVersion must be set in `WorkloadManifest.xml`:
 
 ```
