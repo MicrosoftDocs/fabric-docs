@@ -43,7 +43,7 @@ landingContent:
           - text: Get started with deployment pipelines
             url: deployment-pipelines/get-started-with-deployment-pipelines.md
           - text: Get started with Variable Libraries
-            url: variable-library/get-started-variable-library.md            
+            url: variable-library/get-started-variable-libraries.md            
       - linkListType: concept
         links:
           - text: Git integration concepts
