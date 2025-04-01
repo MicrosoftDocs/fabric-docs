@@ -22,7 +22,7 @@ To get started, you must complete the following prerequisites:
 - A workspace is created.
 
 > [!NOTE]
-> There are currently two Invoke Pipeline activities (legacy and preview). The legacy invoke pipeline only supports Fabric pipelines in the same workspace as your parent pipeline. You can also only monitor the parent pipeline and cannot invoke ADF or Synapse pipelines using the legacy activity. Using the new preview invoke pipeline activity will allow you to invoke pipelines across Fabric workspaces, from ADF or Synapse, and monitor child pipelines.There is a current known limitation with the preview activity that prohibits the use of pipeline return values. This issue is still being fixed and is temporary.
+> There are currently two Invoke Pipeline activities (legacy and preview). The legacy invoke pipeline only supports Fabric pipelines in the same workspace as your parent pipeline. You can also only monitor the parent pipeline and cannot invoke ADF or Synapse pipelines using the legacy activity. Using the new preview invoke pipeline activity will allow you to invoke pipelines across Fabric workspaces, from ADF or Synapse, and monitor child pipelines. There is a current known limitation with the preview activity that prohibits the use of pipeline return values. **This issue is still being fixed and is temporary**.
 
 ## Add an **Invoke pipeline activity** to a pipeline with UI
 
