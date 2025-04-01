@@ -58,24 +58,6 @@ The following Git providers are supported:
 
 The following items currently support Git integration:
 
-<<<<<<< HEAD
-* [Activator](../../real-time-intelligence/data-activator/activator-limitations.md#application-lifecycle-limitations)
-* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
-* [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md) *(preview)*
-* [Eventhouse and KQL database](../../real-time-intelligence//eventhouse-git-deployment-pipelines.md) *(preview)*
-* [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md) *(preview)*
-* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
-* [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md) *(preview)*
-* [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
-* [Paginated reports](/power-bi/paginated-reports/paginated-github-integration) *(preview)*
-* [Reports](./source-code-format.md#report-files) (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview), or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces)) *(preview)*
-* [Semantic models](./source-code-format.md#semantic-model-files) (except push datasets, live connections to Analysis Services, model v1) *(preview)*
-* [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
-* [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
-* [SQL database](../../database/sql/source-control.md) *(preview)*
-* [Warehouses](../../data-warehouse/data-warehousing.md) *(preview)*
-* [Variable libraries](../variable-library/variable-library-cicd.md#variable-libraries-and-git-integration) *(preview)*
-=======
 * Data Engineering items:
 
   * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#git-integration-for-microsoft-fabric-environment)
@@ -123,7 +105,10 @@ The following items currently support Git integration:
 
   * Healthcare *(preview)*
   * HealthCare Cohort *(preview)*
+<<<<<<< HEAD
 >>>>>>> f9dc36039af830851526f29cca2ebb34aee2ce39
+=======
+>>>>>>> f91c8f683ed88ed81636913d3e7423e84e16efb6
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren't saved or synced, but they're not deleted either. They appear in the source control panel but you can't commit or update them.
 
