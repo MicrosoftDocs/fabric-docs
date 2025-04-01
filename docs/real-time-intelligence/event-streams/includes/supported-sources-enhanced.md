@@ -12,7 +12,7 @@ ms.date: 03/31/2025
 | --------------- | ---------- |
 | [Azure Data Explorer](../add-source-azure-data-explorer-database.md) | If you have an Azure Data Explorer database and a table, you can ingest data from the table into Microsoft Fabric using Eventstream.  |
 | [Azure Event Hubs](../add-source-azure-event-hubs.md) | If you have an Azure event hub, you can ingest event hub data into Microsoft Fabric using Eventstream.  |
-| [Azure Event Grid](../add-source-azure-event-grid.md) | If you have an Azure Event Grid namespace, you can ingest MQTT or non-MQTT event data into Microsoft Fabric using Eventstream. |
+| [Azure Event Grid (preview)](../add-source-azure-event-grid.md) | If you have an Azure Event Grid namespace, you can ingest MQTT or non-MQTT event data into Microsoft Fabric using Eventstream. |
 | [Azure Service Bus (preview)](../add-source-azure-service-bus.md) | You can ingest data from an Azure Service Bus queue or a topic's subscription into Microsoft Fabric using Eventstream.  |
 | [Azure IoT Hub](../add-source-azure-iot-hub.md) | If you have an Azure IoT hub, you can ingest IoT data into Microsoft Fabric using Eventstream.  |
 | [Custom endpoint (that is, Custom App in standard capability)](../add-source-custom-app.md) | The custom endpoint feature allows your applications or Kafka clients to connect to Eventstream using a connection string, enabling the smooth ingestion of streaming data into Eventstream. |
