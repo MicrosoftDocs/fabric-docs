@@ -2,10 +2,10 @@
 title: Fabric trial capacity
 description: Understand how the Fabric trial works. This includes starting a trial, ending a trial, and sharing a trial.
 author: julcsc
-ms.reviewer: mihirwagle
+ms.reviewer: mihirwagle, alpowers
 ms.author: juliacawthra
 ms.topic: concept-article
-ms.custom:
+ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
 ms.date: 04/01/2025
 ---
@@ -65,11 +65,14 @@ You can sign up for a trial capacity. You manage who else can use your trial by 
     :::image type="content" source="media/fabric-trial/me-control.png" lightbox="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
 
 1. If prompted, agree to the terms and then select **Start trial**.
-1. Once your trial capacity is ready, you receive a confirmation message. Select **Got it** to begin working in Fabric. You're now the Capacity administrator for that trial capacity. To learn how to share your trial capacity using workspaces, see [Share trial capacities](#share-trial-capacities).
+1. Within the **Activate your 60-day free Fabric trial** capacity prompt, review the **Trial capacity region**. You can either accept the default home region or update it to a new region location that best suits your needs. Once you have made your selection, agree to the terms and conditions, and then select **Activate**.
 
-To see the status of your trial, open your Account manager again and look for the **Trial status**. Your Account manager keeps track of the number of days remaining in your trial. You also see the countdown in your Fabric menu bar when you work in a product workload.
+   > [!IMPORTANT]
+   > When planning your region deployment for Fabric capacities, it is important to make the appropriate selection from the outset. If you decide to move a workspace containing Fabric items to a different region after your trial has been created, you will need to delete all existing Fabric items before proceeding. For detailed instructions, see [Moving your data around](../admin/portal-workspaces#moving-data-around).
+   >
+   > To ensure the best performance and resource management, it is recommended to deploy your capacity in a region where your existing resources are already located. This approach minimizes network latency, reduces ingress and egress charges, and enhances overall reliability.
 
-:::image type="content" source="media/fabric-trial/trial-status-me-control.png" lightbox="media/fabric-trial/trial-status-me-control.png" alt-text="Screenshot of the Microsoft Fabric trial status.":::
+1. Once your trial capacity is ready, you receive a confirmation message. Select **Fabric Home Page** to begin a guided walkthrough of Fabric. You're now the Capacity administrator for that trial capacity. To learn how to share your trial capacity using workspaces, see [Share trial capacities](#share-trial-capacities)
 
 Congratulations. You now have a Fabric trial capacity that includes a Power BI individual trial (if you didn't already have a Power BI *paid* license) and a Fabric trial capacity. To share your capacity, see [Share trial capacities.](#share-trial-capacities)
 
@@ -99,6 +102,12 @@ To begin using your trial of a Fabric capacity, add items to **My workspace** or
 - **New Power BI users**: The Fabric trial requires a per-user Power BI license. Navigate to [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial) to sign up for a Fabric (Free) license. Once you have the free license, you can [begin participating in the Fabric capacity trial](#start-the-fabric-capacity-trial).  
   - You might already have a license and not realize it. For example, some versions of Microsoft 365 include a Fabric (Free) or Power BI Pro license. Open Fabric [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com) and select your Account manager to see if you already have a license, and which license it is. Read on to see how to open your Account manager.
 
+## Get the status of your trial
+
+To see the status of your trial, open your Account manager again and look for the **Trial status**. Your Account manager keeps track of the number of days remaining in your trial. You can also see the countdown in the Fabric menu bar.
+
+:::image type="content" source="media/fabric-trial/trial-status-me-control.png" lightbox="media/fabric-trial/trial-status-me-control.png" alt-text="Screenshot of the Microsoft Fabric trial status.":::
+
 ## Share trial capacities
 
 Each standard trial of a Fabric capacity includes 4 capacity units. The person who starts the trial becomes the Capacity administrator for that trial capacity. Other users on the same tenant can also start a Fabric trial and become the Capacity administrator for their own trial capacity. Hundreds of customers can use each trial capacity. But, Microsoft sets a limit on the number of trial capacities that can be created on a single tenant. To help others in your organization try out Fabric, share your trial capacity. There are several ways to share.  
@@ -110,7 +119,7 @@ Enabling the **Contributor permissions** setting allows other users to assign th
 1. From the top right section of the Fabric menubar, select the cog icon to open **Settings**.
 1. Select **Admin portal** > **Trial**. **Enabled for the entire organization** is set by default.
 
-Enabling **Contributor permissions** means that any user with an Admin role in a workspace can assign that workspace to the trial capacity and access Fabric features. Apply these permissions to the entire organization or apply them to only specific users or groups. 
+Enabling **Contributor permissions** means that any user with an Admin role in a workspace can assign that workspace to the trial capacity and access Fabric features. Apply these permissions to the entire organization or apply them to only specific users or groups.
 
 ### Share by assigning workspaces
 
@@ -216,7 +225,10 @@ This bug occurs when the Fabric administrator turns off trials after you start a
 
 #### What is the region for my Fabric trial capacity?
 
-If you start the trial using the Account manager, your trial capacity is located in the home region for your tenant. See [Find your Fabric home region](../admin/find-fabric-home-region.md) for information about how to find your home region, where your data is stored.
+If you start the trial using the Account manager and did not changed the default region selection, your trial capacity is located in the home region for your tenant. See [Find your Fabric home region](../admin/find-fabric-home-region.md) for information about how to find your home region, where your data is stored.
+
+> [!NOTE]
+> In most cases, the default trial Capacity region will match your home region. However, in some cases, Fabric trials created in Central US were listed as being created in East US by default.
 
 #### What impact does region have on my Fabric trial?
 
