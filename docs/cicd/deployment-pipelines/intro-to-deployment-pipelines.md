@@ -12,7 +12,7 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
 
-# What is deployment pipelines?
+# Introduction to Deployment pipelines
 
 > [!NOTE]
 > The articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
