@@ -4,6 +4,7 @@ description: Learn how to manage Microsoft Fabric Variable libraries to customiz
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.search.form: Create and use Variable library
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: quickstart
