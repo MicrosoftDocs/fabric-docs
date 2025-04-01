@@ -49,7 +49,7 @@ Complete the following steps to create a new Copy job to ingest data from a data
    
    :::image type="content" source="media/copy-job/specify-column-mappings.png" lightbox ="media/copy-job/specify-column-mappings.png" alt-text="Screenshot showing where to specify column mappings.":::
 
-1. Choose a copy mode: Full data copy or Incremental copy. In this example, select **Incremental copy** and specify an Incremental column for each table to track changes. Learn more on [Incremental column](what-is-copy-job?#incremental-column). Use the preview button to help select the right Incremental column.
+1. Choose a copy mode: Full data copy or Incremental copy. In this example, select **Incremental copy** and specify an Incremental column for each table to track changes. Learn more on [Incremental column](what-is-copy-job.md#incremental-column). Use the preview button to help select the right Incremental column.
 
    > [!NOTE]
    > - When you choose incremental copy mode, Data Factory initially performs a full load and subsequently carries out incremental copies in subsequent runs.
