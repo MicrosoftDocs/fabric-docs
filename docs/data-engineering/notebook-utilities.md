@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom:
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
-ms.date: 07/25/2024
+ms.date: 03/31/2025
 ---
 
 # NotebookUtils (former MSSparkUtils) for Fabric
@@ -440,6 +440,85 @@ is_deleted = notebookutils.notebook.delete("artifact_name", "optional_workspace_
 
 ```python
 artifacts_list = notebookutils.notebook.list("optional_workspace_id")
+```
+
+## User Data Function (UDF) utilities
+
+```notebookutils.udf``` provides utilities designed for integrating Notebook code with User Data Functions (UDFs). These utilities allow you to access functions from a UDF item within the same workspace or across different workspaces. You can then invoke functions within a UDF item as needed.
+
+Here is an overview of the available methods:
+
+```python
+# Get functions
+myFunctions = notebookutils.udf.getFunctions('UDFItemName') # Get functions from UDF within the same workspace
+myFunctions = notebookutils.udf.getFunctions('UDFItemName', 'workspaceId') # Get functions from UDF across different workspace
+
+# Additional helper method to return all functions, their respective parameters, and types.
+display(myFunctions.functionDetails)
+display(myFunctions.itemDetails)
+
+# Invoke the function
+myFunctions.functionName('value1', 'value2')
+myFunctions.functionName(parameter1='value1', parameter2='value2'...) # Another way to invoke the function
+```
+
+### Retrieve functions from a UDF
+
+```python
+myFunctions = notebookutils.udf.getFunctions('UDFItemName')
+myFunctions = notebookutils.udf.getFunctions('UDFItemName', 'workspaceId')
+```
+
+```scala
+var myFunctions = notebookutils.udf.getFunctions("UDFItemName")
+var myFunctions = notebookutils.udf.getFunctions("UDFItemName", "workspaceId")
+```
+
+```r
+myFunctions <- notebookutils.udf.getFunctions("UDFItemName")
+myFunctions <- notebookutils.udf.getFunctions("UDFItemName", "workspaceId")
+```
+
+### Invoke a function
+
+```python
+myFunctions.functionName('value1', 'value2'...)
+```
+
+```scala
+val res = myFunctions.functionName('value1', 'value2'...)
+```
+
+```r
+myFunctions$functionName('value1', 'value2'...)
+```
+
+### Display details for a UDF item
+
+```python
+display([myFunctions.itemDetails])
+```
+
+```scala
+display(Array(myFunctions.itemDetails))
+```
+
+```r
+myFunctions$itemDetails()
+```
+
+### Display function details for a UDF
+
+```python
+display(myFunctions.functionDetails)
+```
+
+```scala
+display(myFunctions.functionDetails)
+```
+
+```r
+myFunctions$functionDetails()
 ```
 
 ## Credentials utilities

@@ -51,6 +51,9 @@ Either Admin, Member, or Contributor roles can write data to OneLake through Spa
 **Read data from OneLake**
 A user needs to be a workspace Viewer, or have the Read permission and the ReadAll permission to read data from OneLake. For lakehouses with the OneLake data access roles (preview) feature enabled, access through a data access role is required instead of ReadAll.
 
+**Subscribe to OneLake events**
+A user needs SubscribeOneLakeEvents to be able to subscribe to events from a Fabric item. Admin, Member, and Contributor roles have this permission by default. You can add this permission for a user with Viewer role.
+
 ## Related content
 
 - [Fabric Security overview](../../security/security-overview.md)

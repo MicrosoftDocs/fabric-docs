@@ -15,18 +15,22 @@ ms.date: 02/16/2025
 
 This article describes common errors and issues that you might encounter when working with Variable libraries and provides solutions to help you resolve them.
 
-## Failure to create or update Variable library item or variables
+## Failure to manage Variable library
 
 ### I Can't find the *Create Variable library* icon
 
 **Description of problem**: I want to create a Variable library, but I can't find the *Create Variable library* icon.
+
 **Cause**: The *Create Variable library* icon is only available if the *Users can create Create Variable libraries* tenant switch is enabled in the Admin portal.
+
 **Solution**: If you're an admin, go to the Admin portal, and enable the *Users can create Variable libraries* [tenant switch](../../admin/service-admin-portal-microsoft-fabric-tenant-settings.md). If you're not an admin, contact your admin.
 
 ### I can't create a Variable Library item
 
-**Description of problem**: I tried to create a Variable library, but it failed.  
-**Cause**: The name of the Variable library is invalid.  
+**Description of problem**: I tried to create a Variable library, but it failed.
+
+**Cause**: The name of the Variable library is invalid.
+
 **Solution**: Rename the Variable library according to [naming conventions](./variable-types.md#variable-library-item-name).
 
 ### I can't save my Variable library

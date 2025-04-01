@@ -1,7 +1,7 @@
 ---
 title: Known issue - Create Gateway public API doesn't work for service principals
 description: A known issue is posted where the Create Gateway public API doesn't work for service principals.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/05/2025

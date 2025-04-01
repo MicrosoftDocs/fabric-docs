@@ -1,7 +1,7 @@
 ---
 title: Known issue - SQL analytics endpoint table queries fail due to RLE
 description: A known issue is posted where SQL analytics endpoint table queries fail due to RLE.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 07/24/2024

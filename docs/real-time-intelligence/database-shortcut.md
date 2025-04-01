@@ -130,9 +130,7 @@ Use the link to open Real-Time Intelligence showing the **New database shortcut*
 
 1. Select **Create**.
 
----
-
-Once the shortcut is created, you're taken to the [database details](create-database.md#database-details) view of the new database shortcut.
+Once the shortcut is created, you're taken to the [database details](manage-monitor-database.md#database-details) view of the new database shortcut.
 
 :::image type="content" source="media/database-shortcut/new-database-shortcut.png" alt-text="Screenshot of resulting database shortcut in Real-Time Intelligence." lightbox="media/database-shortcut/new-database-shortcut.png":::
 
