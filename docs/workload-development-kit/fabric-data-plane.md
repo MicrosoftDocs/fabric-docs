@@ -125,10 +125,10 @@ The SQL connection can also be used to carry out commands that insert data into 
 
 ## OneLake integration
 
-You may opt-in to use OneLake integration in your workloads.
+You may opt in to use OneLake integration in your workloads.
 If you do, when a new item is created for your workload, Fabric will automatically create folders for the new item.
 
-To, opt-in, your item's manifest XML must declare this by setting the `CreateOneLakeFoldersOnArtifactCreation` attribute to `true`.
+To opt in, your item's manifest XML must declare this by setting the `CreateOneLakeFoldersOnArtifactCreation` attribute to `true`.
 For example:
 ```
 <ItemManifestConfiguration xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="1.101.0">  
@@ -138,7 +138,8 @@ For example:
   </Item>
 </ItemManifestConfiguration>
 ```
-**Note**: SchemaVersion must be set to 1.101.0 (or later supported versions).
+> [!Note]
+> SchemaVersion must be set to 1.101.0 (or later supported versions).
 The same SchemaVersion must be set in `WorkloadManifest.xml`:
 
 ```
