@@ -25,7 +25,7 @@ Complete the following steps to create a new Copy job to ingest data from a data
 
    :::image type="content" source="media/copy-job/choose-data-source.png" lightbox="media/copy-job/choose-data-source.png" alt-text="Screenshot showing where to choose a data source for the Copy job.":::
 
-1. Enter your **credentials** to connect to Azure SQL DB. You can copy data securely within a VNET environment using on-premises or VNET gateway. 
+1. Enter your **server path** and **credentials** to connect to Azure SQL DB. You can copy data securely within a VNET environment using on-premises or VNET gateway. 
 
    :::image type="content" source="media/copy-job/enter-credentials-data-source.png" lightbox="media/copy-job/enter-credentials-data-source.png" alt-text="Screenshot showing where to enter credentials.":::
 
@@ -52,7 +52,7 @@ Complete the following steps to create a new Copy job to ingest data from a data
 1. Choose a copy mode: Full data copy or Incremental copy. In this example, select **Incremental copy** and specify an Incremental column for each table to track changes. Learn more on [Incremental column](what-is-copy-job.md#incremental-column). Use the preview button to help select the right Incremental column.
 
    > [!NOTE]
-   > - When you choose incremental copy mode, Data Factory initially performs a full load and subsequently carries out incremental copies in subsequent runs.
+   > - When you choose incremental copy mode, Copy Job initially performs a full load and subsequently carries out incremental copies in subsequent runs.
 
    :::image type="content" source="media/copy-job/copy-job-mode.png" lightbox="media/copy-job/copy-job-mode.png" alt-text="Screenshot showing where to select the Copy job mode.":::
 
@@ -60,7 +60,9 @@ Complete the following steps to create a new Copy job to ingest data from a data
 
    :::image type="content" source="media/copy-job/review-save.png" lightbox="media/copy-job/review-save.png" alt-text="Screenshot showing where to review and save the newly created Copy job.":::
 
-1. You can easily execute and track the job's status. You have the flexibility to click the **Run** button to trigger the copy job at any time, whether it's configured to run once or on a schedule.
+1. Your copy job will start immediately. The first run will copy an initial full snapshot, and subsequent runs will automatically copy only the changed data since the last run.
+  
+   You can easily execute and track the job's status. You have the flexibility to click the **Run** button to trigger the copy job at any time, whether it's configured to run once or on a schedule. When triggered on demand, it will also automatically copy only the changed data since the last run. 
   
    The inline monitoring panel clearly displays key metrics from the latest run in real time, including row counts and copy duration for each table, etc. Learn more in [How to monitor a Copy job](monitor-copy-job.md)
 
@@ -69,6 +71,55 @@ Complete the following steps to create a new Copy job to ingest data from a data
 1. You can easily edit your Copy job, including adding or removing tables and columns to be copied, configuring the schedule, or adjusting advanced settings. Some changes, such as updating the incremental column, will reset the incremental copy to start from an initial full load in the next run.
 
     :::image type="content" source="media/copy-job/edit-copy-job.png" lightbox="media/copy-job/edit-copy-job.png" alt-text="Screenshot showing how to edit Copy job.":::
+
+## Create a Copy job to ingest files from a storage
+
+Complete the following steps to create a new Copy job to ingest files from a storage successfully and easily:
+
+1. [Create a new workspace](../fundamentals/create-workspaces.md) or use an existing workspace.
+1. Select **+ New Item**, choose the **Copy job** icon,  name your Copy job, and click **Create**.
+
+   :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new Copy job.":::
+ 
+1. Choose the data stores to copy data from. In this example, choose **Azure Data Lake Storage Gen2**. 
+
+   :::image type="content" source="media/copy-job/choose-data-source1.png" lightbox="media/copy-job/choose-data-source1.png" alt-text="Screenshot1 showing where to choose a data source for the Copy job.":::
+
+1. Enter your **storage url** and **credentials** to connect to Azure Data Lake Storage Gen2. You can copy data securely within a VNET environment using on-premises or VNET gateway. 
+
+   :::image type="content" source="media/copy-job/enter-credentials-data-source1.png" lightbox="media/copy-job/enter-credentials-data-source1.png" alt-text="Screenshot1 showing where to enter credentials.":::
+
+1. Select the **folder** or **files** to copy. You can choose to copy an entire folder with all its files or a single file. Choose **Schema agnostic (binary copy)** if you want to copy files to another storage without parsing the schema, which significantly improves copy performance.
+
+   :::image type="content" source="media/copy-job/select-folder.png" lightbox="media/copy-job/select-folder.png" alt-text="Screenshot showing where to select folder for the Copy job.":::
+
+1. Select your destination store. In this example, choose another **Lakehouse**.
+
+   :::image type="content" source="media/copy-job/select-destination-store1.png" lightbox="media/copy-job/select-destination-store1.png" alt-text="Screenshot1 showing where to select the destination store for the Copy job.":::
+
+1. Select the **Folder path** in your destination storage. Choose **Preserve Hierarchy** to maintain the same folder structure as the source, or **Flatten Hierarchy** to place all files in a single folder.
+
+   :::image type="content" source="media/copy-job/select-destination-folder.png" lightbox ="media/copy-job/select-destination-folder.png" alt-text="Screenshot showing how to select destination folder.":::
+
+1. Choose a copy mode: Full data copy or Incremental copy. In this example, select **Incremental copy**. This means Copy Job will first perform a full load to copy all files, and then only copy new or updated files in subsequent runs.
+
+   :::image type="content" source="media/copy-job/copy-job-mode1.png" lightbox="media/copy-job/copy-job-mode1.png" alt-text="Screenshot1 showing where to select the Copy job mode.":::
+
+1. Review the job summary, set the run option to on schedule, and click **Save + Run**.
+
+   :::image type="content" source="media/copy-job/review-save1.png" lightbox="media/copy-job/review-save1.png" alt-text="Screenshot1 showing where to review and save the newly created Copy job.":::
+
+1. Your copy job will start immediately. The first run will perform a full load to copy all files, and then only copy new or updated files in subsequent runs.
+  
+   You can easily execute and track the job's status. You have the flexibility to click the **Run** button to trigger the copy job at any time, whether it's configured to run once or on a schedule. When triggered on demand, it will also automatically copy only new or updated files since the last run. 
+  
+   The inline monitoring panel clearly displays key metrics from the latest run in real time, including files counts and copy duration, etc. Learn more in [How to monitor a Copy job](monitor-copy-job.md)
+
+   :::image type="content" source="media/copy-job/monitor-run-history1.png" lightbox="media/copy-job/monitor-run-history1.png" alt-text="Screenshot1 showing the Copy job panel where you can monitor run history.":::
+
+1. You can easily edit your Copy Job, including updating the folders and files to be copied, configuring the schedule, and more. Some changes, such as selecting a new folder from the source storage, will reset the incremental copy to start from an initial full load in the next run.
+
+    :::image type="content" source="media/copy-job/edit-copy-job1.png" lightbox="media/copy-job/edit-copy-job1.png" alt-text="Screenshot1 showing how to edit Copy job.":::
 
 
 ## Known limitations
