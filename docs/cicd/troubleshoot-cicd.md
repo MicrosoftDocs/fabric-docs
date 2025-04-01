@@ -199,7 +199,7 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 
 **Description of problem**: When you try to commit changes to Git, you get an error message that says that there are duplicate logical IDs in the workspace.
 
-:::image type="content" source="./media/troubleshoot-cicd/fix-logical-ids.png" alt-text="Screenshot of error message when there are two or more items in the workspace with the same logical ID.":::
+:::image type="content" source="./media/troubleshoot-cicd/fix-logical-id.png" alt-text="Screenshot of error message when there are two or more items in the workspace with the same logical ID.":::
 
 **Cause**: The logical ID is a unique ID for each item in the workspace. When you copy an item in Git, the entire folder is duplicated exactly, including the logical ID. When you try to update the workspace, the system checks for duplicate logical IDs and prevents you from committing changes if it finds any.
 
