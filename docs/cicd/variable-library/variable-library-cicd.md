@@ -43,7 +43,7 @@ Item permissions are checked during Git Update and commit.
 
 The Variable library item schema is a JSON object that contains four parts:
 
-* [Value-sets](#value-set) folder
+* [Value sets](#value-set) folder
 * [Settings](#settings)
 * [platform.json](/rest/api/fabric/articles/item-management/definitions/item-definition-overview#platform-file): Automatically generated file
 * [Variables](#variables)
@@ -52,7 +52,7 @@ The Variable library item schema is a JSON object that contains four parts:
 
 ### Value set
 
-The variable library folder contains a subfolder called ValueSets. This folder contains a JSON file for each value set. This JSON file contains only the variable values for *non default* values in that value set. (The default values are in the [variables.json](#variables) file.)
+The variable library folder contains a subfolder called valueSets. This folder contains a JSON file for each value set. This JSON file contains only the variable values for *non default* values in that value set. (The default values are in the [variables.json](#variables) file.)
 
 For more information about the value set file, including an example, see [value set example](/rest/api/fabric/articles/item-management/definitions/variable-library-definition#valueset).
 
