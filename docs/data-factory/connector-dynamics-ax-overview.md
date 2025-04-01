@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/24/2024
+ms.date: 04/01/2025
 ms.custom:
   - template-how-to
 ---
@@ -23,7 +23,7 @@ The Dynamics AX connector supports the following capabilities in Data pipeline:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None <br>On-premises| Service principal |
-| **Lookup activity** | None <br>On-premises | Service principal |
+| **Copy activity (source/-)** | None <br>On-premises| Service principal <br>Workspace identity |
+| **Lookup activity** | None <br>On-premises | Service principal <br>Workspace identity |
 
 To learn more about the copy activity configuration for Dynamics AX in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-dynamics-ax-copy-activity.md).
