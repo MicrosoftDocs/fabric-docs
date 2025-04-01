@@ -45,7 +45,6 @@ The databases page of an eventhouse shows you database information either in lis
 * Database tables
 * Data preview
 * Query insights - top 100 queries
-<!--* Ingestion failures - add post-fabcon-->
 
 For more information, see [Database details](manage-monitor-database.md#database-details).
 

@@ -175,12 +175,18 @@ items:
     href: /power-bi/guidance/fabric-adoption-roadmap-change-management?context=/fabric/context/context
   - name: Conclusion
     href: /power-bi/guidance/fabric-adoption-roadmap-conclusion?context=/fabric/context/context
+  - name: IDEAS journey with Fabric
+    href: ideas-data-platform-integration.md
 - name: Known issues
   items:
     - name: Active known issues for Fabric + Power BI - chart
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Environment REST API updates might cause your workflow to break
+      href: ../known-issues/known-issue-1067-environment-rest-api-updates-workflow-break.md
+    - name: Environment Git integration imports for libraries don't work
+      href: ../known-issues/known-issue-1025-environment-git-integration-imports-libraries-not-work.md
     - name: SQL analytics endpoint sync failure when columnMapping is enabled
       href: ../known-issues/known-issue-1069-sql-analytics-endpoint-sync-failure-column-mapping-enabled.md
     - name: Pipeline activities fail with Dynamics or Dataverse connections through OPDG

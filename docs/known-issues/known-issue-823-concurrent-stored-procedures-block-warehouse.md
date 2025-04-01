@@ -1,7 +1,7 @@
 ---
 title: Known issue - Concurrent stored procedures block each other in data warehouse
 description: A known issue is posted where concurrent stored procedures block each other in data warehouse.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/28/2025

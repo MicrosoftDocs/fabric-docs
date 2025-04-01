@@ -1,7 +1,7 @@
 ---
 title: Known issue - Copy activity from Oracle to lakehouse fails for Number data type
 description: A known issue is posted where the copy activity from Oracle to lakehouse fails for Number data type.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 09/04/2024

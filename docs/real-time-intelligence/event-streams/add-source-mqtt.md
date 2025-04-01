@@ -36,6 +36,5 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
     :::image type="content" source="./media/add-source-mqtt/live-view.png" alt-text="Screenshot that shows the editor in the live view." lightbox="./media/add-source-mqtt/live-view.png":::
 
-
 ## Related content
 For a list of all supported sources, see [Add and manage an event source](add-manage-eventstream-sources.md).
