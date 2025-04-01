@@ -7,8 +7,6 @@ items:
     href: real-time-hub-overview.md
   - name: What are Fabric Events?
     href: fabric-events-overview.md
-  - name: What's new?
-    href: whats-new.md
 - name: Get started
   items:
   - name: Get started with Real-Time hub
@@ -81,6 +79,8 @@ items:
       href: add-source-mqtt.md
     - name: Solace PubSub+
       href: add-source-solace-pub-sub.md
+    - name: Real-time weather
+      href: add-source-real-time-weather.md
   - name: Fabric events
     items:    
     - name: Create streams for Fabric workspace item events
