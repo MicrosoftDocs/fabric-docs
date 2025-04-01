@@ -1,8 +1,8 @@
 ---
 title: Detection conditions in Activator
 description: Understand how detection settings in Activator rules operate and learn how to configure them effectively.
-author: mihart
-ms.author: mihart
+author: spelluru
+ms.author: spelluru
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 11/25/2024
@@ -91,4 +91,4 @@ To learn about the advanced settings, see [Latency in Activator](activator-laten
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

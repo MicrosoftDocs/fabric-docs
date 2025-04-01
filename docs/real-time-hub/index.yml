@@ -7,8 +7,6 @@ metadata:
   title: Real-Time hub in Microsoft Fabric documentation
   description: Microsoft Fabric Real-Time hub is single, tenant-wide, unified, logical place for streaming data-in-motion.
   ms.custom:
-    - build-2024
-    - ignite-2024
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
   author: spelluru
@@ -80,6 +78,14 @@ landingContent:
             url: add-source-confluent-kafka.md
           - text: Amazon Managed Streaming for Kafka
             url: add-source-amazon-managed-streaming-for-kafka.md
+          - text: Confluent Cloud Kafka
+            url: add-source-confluent-kafka.md
+          - text: MQTT
+            url: add-source-mqtt.md
+          - text: Solace PubSub+
+            url: add-source-solace-pub-sub.md
+          - text: Real-time weather
+            url: add-source-real-time-weather.md
 
   # Card 
   - title: Process and analyze data streams

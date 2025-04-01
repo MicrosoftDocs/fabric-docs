@@ -6,9 +6,6 @@ ms.author: xujiang1
 author: WenyangShi
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.date: 1/20/2025
 ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from my Power Automate and Logic Apps using Fabric event streams.

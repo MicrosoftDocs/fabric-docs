@@ -1,13 +1,11 @@
 ---
 title: Incrementally load data from Data Warehouse to Lakehouse
 description: Learn steps to incrementally load data from Data Warehouse to Lakehouse
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 12/18/2024
 ms.search.form: Pipeline tutorials
 ---

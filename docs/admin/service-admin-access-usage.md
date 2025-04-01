@@ -6,7 +6,6 @@ ms.author: kesharab
 ms.reviewer: ''
 
 ms.custom:
-  - ignite-2023
 ms.topic: how-to
 ms.date: 09/22/2024
 LocalizationGroup: Administration

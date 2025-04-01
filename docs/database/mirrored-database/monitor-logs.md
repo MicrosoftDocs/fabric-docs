@@ -9,7 +9,7 @@ ms.date: 01/20/2025
 
 # Mirrored database operation logs (Preview)
 
-Mirrored database operation logs are part of the [workspace monitoring](../../get-started/workspace-monitoring-overview.md) logs and are registered in the Eventhouse KQL database, which is part of the Real-Time Intelligence solution. You can use these logs to monitor the execution and performance of your mirrored database.
+Mirrored database operation logs are part of the [workspace monitoring](../../fundamentals/workspace-monitoring-overview.md) logs and are registered in the Eventhouse KQL database, which is part of the Real-Time Intelligence solution. You can use these logs to monitor the execution and performance of your mirrored database.
 
 ## Mirrored database table execution logs
 
@@ -43,7 +43,7 @@ The following table describes the columns stored in the **MirroredDatabaseTableE
 | WorkspaceMonitoringTableName | string | The name of the workspace monitoring table. Valid values: `MirroredDatabaseTableExecution`. |
 | OperationStartTime | datetime | The time (UTC) the operation started. |
 | OperationEndTime | datetime | The time (UTC) the operation ended. |
-| MirroringSourceType          | string   | The type of the source database, e.g. `AzureSqlDatabase`, `Snowflake`. |
+| MirroringSourceType          | string   | The type of the source database, e.g. `AzureSqlDatabase`, `AzurePostgreSql`, `Snowflake`. |
 | SourceTableName              | string   | The name of the source table.                                |
 | SourceSchemaName             | string   | The name of the source schema.                               |
 | ProcessedRows                | long     | The number of rows processed by the given operation.         |
@@ -58,5 +58,5 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 ## Related content
 
-* [What is workspace monitoring?](../../get-started/workspace-monitoring-overview.md)
-* [Enable monitoring in your workspace](../../get-started/enable-workspace-monitoring.md)
+* [What is workspace monitoring?](../../fundamentals/workspace-monitoring-overview.md)
+* [Enable monitoring in your workspace](../../fundamentals/enable-workspace-monitoring.md)

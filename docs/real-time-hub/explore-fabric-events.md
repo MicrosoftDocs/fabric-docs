@@ -5,11 +5,10 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/18/2024
 ---
 
-# Explore Fabric events in Fabric Real-Time hub (preview)
+# Explore Fabric events in Fabric Real-Time hub
 
 This article describes columns on the **Fabric events** page and actions available for each event. 
 

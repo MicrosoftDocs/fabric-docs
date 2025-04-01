@@ -1,12 +1,11 @@
 ---
 title: Invoke pipeline activity
 description: Learn how to add an Invoke pipeline activity to a pipeline and use it to run another pipeline.
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: makromer
 author: kromerm
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 08/13/2024
 ---
 
@@ -19,7 +18,7 @@ The Fabric **invoke pipeline activity** can execute another [!INCLUDE [product-n
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 > [!NOTE]

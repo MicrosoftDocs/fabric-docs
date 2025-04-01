@@ -19,7 +19,7 @@ ms.topic: tutorial
   - The source Azure SQL Managed Instance can be either a single SQL managed instance or a SQL managed instance belonging to an instance pool.
   - If you don't have an Azure SQL Managed Instance, [you can create a new SQL managed instance](/azure/azure-sql/managed-instance/instance-create-quickstart?view=azuresql&tabs=azure-portal&preserve-view=true). You can use the [Azure SQL Managed Instance free offer](/azure/azure-sql/managed-instance/free-offer?view=azuresql&preserve-view=true) if you like.
   - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Managed Instance](/azure/azure-sql/managed-instance/restore-sample-database-quickstart?view=azuresql&preserve-view=true).
-- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
   - The Fabric capacity needs to be active and running. A paused or deleted capacity impacts Mirroring and no data are replicated.
 - Enable the Fabric tenant setting [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis). To learn how to enable tenant settings, see [About tenant settings](../../admin/about-tenant-settings.md).
 - Networking requirements for Fabric to access your Azure SQL Managed Instance:

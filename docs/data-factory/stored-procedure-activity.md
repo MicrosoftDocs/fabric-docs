@@ -1,13 +1,11 @@
 ---
 title: How to use the Stored procedure activity
 description: Learn how to use Stored procedure activity to execute a SQL stored procedure with Microsoft Fabric.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 12/18/2024
 ---
 

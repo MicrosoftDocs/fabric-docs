@@ -6,8 +6,7 @@ ms.author: wiassaf
 ms.reviewer: antho, sukkaur
 ms.date: 10/07/2024
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
+ms.search.form: Develop and run queries in SQL editor
 ---
 # Create GraphQL API from your SQL database in the Fabric portal
 
@@ -17,9 +16,9 @@ Start building GraphQL APIs directly from within the Fabric SQL query editor. F
 
 ## Prerequisites
 
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
-- [Create a new workspace](../../get-started/workspaces.md) or use an existing Fabric workspace.
+- [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - [Create a new SQL database](create.md) or use an existing SQL database.
 
 ## Create an API for GraphQL

@@ -1,8 +1,8 @@
 ---
 title: Create Activator rules
 description: Learn how to create rules for Fabric Activator. Rules take action on your data, such as sending notifications and starting automated workflows. 
-author: mihart
-ms.author: mihart
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.custom: 
 ms.search.form: Data Activator Rule Creation
@@ -65,7 +65,7 @@ Finally, use the **Action** section to choose what to do when the condition is d
 
 :::image type="content" source="media/activator-create-activators/data-activator-create-triggers-design-mode-06.png" alt-text="Screenshot of selecting an action when a condition is detected.":::
 
-Different action types have different parameters. Some of those parameters are: the email address you want to send to, the workflow you want to start, subject line, or additional information.
+Different action types have different parameters. Some of those parameters are: the email address you want to send to, the workflow you want to start, subject line, or additional information. You can also tag properties to add context to the actions you send. Note that if you summarize on the property in the Monitor card, the original value of the property will be sent in the action rather than the summarized value.
 
 You can also select **Edit action** to see an editor with a preview of the message that the action sends and options to add more information to the action.
 

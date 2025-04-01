@@ -20,7 +20,7 @@ Submit Spark batch jobs using the Livy API for Fabric Data Engineering.
 
 ## Prerequisites
 
-* Fabric [Premium](/power-bi/enterprise/service-premium-per-user-faq) or [Trial capacity](../get-started/fabric-trial.md) with a Lakehouse.
+* Fabric [Premium](/power-bi/enterprise/service-premium-per-user-faq) or [Trial capacity](../fundamentals/fabric-trial.md) with a Lakehouse.
 
 * A remote client such as [Visual Studio Code](https://code.visualstudio.com/) with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/).
 

@@ -2,12 +2,11 @@
 title: Spark Job Definition activity
 description: Learn how to transform data by running a Spark Job Definition activity in a data pipeline in Data Factory for Microsoft Fabric.
 ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: how-to
 ms.custom:
-  - build-2024
-ms.date: 05/08/2024
+ms.date: 03/10/2025
 ---
 
 # Transform data by running a Spark Job Definition activity
@@ -18,7 +17,7 @@ The Spark Job Definition activity in Data Factory for Microsoft Fabric allows yo
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a Spark Job Definition activity to a pipeline with UI
@@ -44,14 +43,32 @@ To get started, you must complete the following prerequisites:
 
 Select the **Settings** tab in the activity properties pane, then select the Fabric Workspace that contains the Spark Job Definition you would like to run.
 
-:::image type="content" source="media/spark-job-definition-activity/spark-job-definition-settings.png" alt-text="Screenshot showing the Settings tab of the Spark Job Definition properties pages in the pipeline editor window.":::
+:::image type="content" source="media/spark-job-definition-activity/spark-job-definition-settings.png" lightbox="media/spark-job-definition-activity/spark-job-definition-settings.png" alt-text="Screenshot showing the Settings tab of the Spark Job Definition properties pages in the pipeline editor window.":::
+
+In the **Settings** tab, you can configure your connection, workspace, and Spark job definition. If no Spark iob definition exists yet, you can create a new Spark job definition from your pipeline editor by selecting the **+New** button next to **Spark job definition**.
+
+:::image type="content" source="media/spark-job-definition-activity/create-new-spark-job-from-activity.png" lightbox="media/spark-job-definition-activity/create-new-spark-job-from-activity.png" alt-text="Screenshot showing the +New button next to the Spark job definition selection box in the Settings tab of the Spark Job definition properties pages in the pipeline editor window.":::
+
+After you set a name and select create, you will be taken to your Spark job definition to set your configurations. 
+
+:::image type="content" source="media/spark-job-definition-activity/set-new-name-spark-job-from-activity.png" lightbox="media/spark-job-definition-activity/set-new-name-spark-job-from-activity.png" alt-text="Screenshot showing a pop up to name and create a new Spark job defintion.":::
+
+:::image type="content" source="media/spark-job-definition-activity/configure-spark-job-definition.png" lightbox="media/spark-job-definition-activity/configure-spark-job-definition.png" alt-text="Screenshot showing a new Fabric Spark job defintion item.":::
+
+Within the **Settings** tab, you can configure more settings under **Advanced settings**. 
+
+:::image type="content" source="media/spark-job-definition-activity/spark-job-definition-advanced-settings.png" lightbox="media/spark-job-definition-activity/spark-job-definition-advanced-settings.png" alt-text="Screenshot showing the Advanced settings in the Spark Job Definition activity settings on the pipeline editor canvas.":::
+
+You can also parameterize these setting fields to orchestrate your Spark job definition item. The values passed will override your Spark job definition original configurations.
+
+:::image type="content" source="media/spark-job-definition-activity/parameterize-spark-job-definition.png" lightbox="media/spark-job-definition-activity/parameterize-spark-job-definition.png" alt-text="Screenshot showing how to add dynamic content under Advanced settings.":::
+
+:::image type="content" source="media/spark-job-definition-activity/spark-job-definition-parameterized-expression.png" lightbox="media/spark-job-definition-activity/spark-job-definition-parameterized-expression.png" alt-text="Screenshot showing an expression set for a Main definition file under Advanced settings in the Spark Job Definition activity settings.":::
 
 ## Known limitations
 
 Current limitations in the Spark Job Definition activity for Fabric Data Factory are listed here. This section is subject to change.
 
-- We currently don't support creating a new Spark Job Definition activity within the activity (under Settings)
-- Parameterization support isn't available.
 - Although we support monitoring the activity via the output tab, you aren't able to monitor the Spark Job Definition at a more granular level yet. For example, links to the monitoring page, status, duration, and previous Spark Job Definition runs aren't available directly in the Data Factory. However, you can see more granular details in the [Spark Job Definition monitoring page](../data-engineering/monitor-spark-job-definitions.md).
 
 ## Save and run or schedule the pipeline

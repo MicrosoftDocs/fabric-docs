@@ -2,10 +2,10 @@
 title: Dataflow activity
 description: Learn how to add a Dataflow activity to a pipeline and use it to run a Dataflow Gen2.
 ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 03/18/2025
 ---
 
 # Use the Dataflow activity to run a Dataflow Gen2
@@ -16,7 +16,7 @@ The Dataflow activity in Data Factory for Microsoft Fabric allows you to run a D
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a Dataflow activity to a pipeline with UI
@@ -38,7 +38,11 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Dataflow activity settings
 
-Select the **Settings** tab, then select an existing workspace and dataflow to run. The notification option is disabled for now, but the feature is coming soon.
+Select the **Settings** tab, then select an existing workspace and dataflow to run. If you have made a [Dataflow Gen2 with CI/CD and Git integration support (Preview)](dataflow-gen2-cicd-and-git-integration.md), you can also select it from the dropdown. 
+
+   :::image type="content" source="media/dataflow-activity/select-a-dataflow.png" alt-text="Screenshot showing the dropdown with a list of dataflows to select in the Dataflow activity Settings tab":::
+
+The notification option is disabled for now, but the feature is coming soon.
 
    :::image type="content" source="media/dataflow-activity/dataflow-settings.png" alt-text="Screenshot showing the Dataflow activity Settings tab, and highlighting the tab.":::
 

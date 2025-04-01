@@ -3,13 +3,11 @@ title: "Limitations and Behaviors for Fabric Mirrored Databases From Azure SQL D
 description: A detailed list of limitations for mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: imotiwala, sbahadur
-ms.date: 01/15/2025
+ms.reviewer: imotiwala, sbahadur, drskwier
+ms.date: 03/31/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
-  - build-2024
-  - ignite-2024
 ---
 # Limitations in Microsoft Fabric mirrored databases from Azure SQL Database
 
@@ -27,6 +25,7 @@ For troubleshooting, see:
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently cannot be replicated.
   - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
+- `.dacpac` deployments to Azure SQL Database require the publish property `/p:DoNotAlterReplicatedObjects=False` to enable modifications to any mirrored tables. For more about publish settings available for `.dacpac` deployments, see the [SqlPackage publish documentation](/sql/tools/sqlpackage/sqlpackage-publish).
 
 ## Permissions in the source database
 
@@ -37,7 +36,6 @@ For troubleshooting, see:
 
 ## Network and connectivity security
 
-- The source SQL server needs to enable [Allow public network access](/azure/azure-sql/database/connectivity-settings#change-public-network-access) and [Allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect.
 - The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled and must be the primary identity.
 - The Azure SQL Database service principal name (SPN) contributor permissions should not be removed from the Fabric mirrored database item.
 - Mirroring across [Microsoft Entra](/entra/fundamentals/new-name) tenants is not supported where an Azure SQL Database and the Fabric workspace are in separate tenants.  
@@ -45,8 +43,6 @@ For troubleshooting, see:
 
 ## Table level
 
-- A table that does not have a defined primary key cannot be mirrored.
-    - A table using a primary key defined as nonclustered primary key cannot be mirrored.  
 - A table cannot be mirrored if the primary key is one of the data types: **sql_variant**, **timestamp**/**rowversion**.
 - Delta lake supports only six digits of precision.
    - Columns of SQL type **datetime2**, with precision of 7 fractional second digits, do not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss happens if columns of this type are mirrored and seventh decimal second digit will be trimmed.
@@ -60,12 +56,29 @@ For troubleshooting, see:
     - In-memory tables
     - Graph  
     - External tables  
-- The following table-level data definition language (DDL) operations aren't allowed on SQL database source tables when enabled for mirroring.  
+
+- The following table-level data definition language (DDL) operations aren't allowed on SQL database source tables when enabled for mirroring. 
     - Switch/Split/Merge partition
     - Alter primary key
 - When there is DDL change, a complete data snapshot is restarted for the changed table, and data is reseeded.
 - Currently, a table cannot be mirrored if it has the **json** or **vector** data type.
     - Currently, you cannot ALTER a column to the **vector** or **json** data type when a table is mirrored.
+- Starting in April 2025, a table can be mirrored even if it doesn't have a primary key. 
+    - Tables without primary keys prior to April 2025 weren't eligible to be mirrored. After April 2025, existing tables without primary keys won't automatically be added to mirroring, even if you had selected **Automatically mirror future tables**. 
+        - To start mirroring tables without primary keys when you have selected **Automatically mirror future tables**: 
+            1. Stop replication and start replication, which will reseed all tables, and detect the new tables eligible for mirroring. This is the recommended step.
+            1. As a workaround, create a new table in the source database. This triggers an inventory of tables for the source database and detects the tables that weren't mirrored previously, including those without primary keys. For example, the following script creates a table named `test_20250401`, then drops it after the `test_20250401` table is mirrored. This script assumes that a table named `dbo.test_20250401` does not already exist.
+               ```sql
+               --This script assumes that a table named dbo.test_20250401 does not already exist.
+               CREATE TABLE dbo.test (ID int not null);
+               ```
+
+               After it shows up in the mirrored tables list, you should see tables without primary keys as well. Then, you can drop the `test` table:
+
+               ```sql
+               DROP TABLE dbo.test_20250401;
+               ```
+        - To start mirroring tables without primary keys when you have not selected **Automatically mirror future tables**, add the tables to the list of selected tables in mirroring settings.
 
 ## Column level
 
@@ -79,11 +92,11 @@ For troubleshooting, see:
     - User Defined Types (UDT)
     - **geometry**
     - **geography**
-- Column names for a SQL table cannot contain spaces nor the following characters: `,` `;` `{` `}` `(` `)` `\n` `\t` `=`.
+- Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`). For tables under replication before this feature enabled, you need to update the mirrored database settings or restart mirroring to include those columns. Learn more from [Delta column mapping support](troubleshooting.md#delta-column-mapping-support).
 
 ## Warehouse limitations
 
-- Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this capability was enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database.
+- Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this feature enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database. Learn more from [Replicate source schema hierarchy](troubleshooting.md#replicate-source-schema-hierarchy).
 
 ## Mirrored item limitations
 

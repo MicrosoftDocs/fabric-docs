@@ -4,21 +4,19 @@ description: This article contains a list of current limitations in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: joanpo
-ms.date: 09/26/2024
+ms.date: 03/22/2025
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
+
 # Limitations of Microsoft Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article details the current limitations in [!INCLUDE [product-name](../includes/product-name.md)].
 
-These limitations apply only to Warehouse and SQL analytics endpoint items in Fabric Synapse Data Warehouse. For limitations of SQL Database in Fabric, see [Limitations in SQL Database in Microsoft Fabric (Preview)](../database/sql/limitations.md).
+These limitations apply only to Warehouse and SQL analytics endpoint items in Fabric Synapse Data Warehouse. For limitations of SQL database in Fabric, see [Limitations in SQL database in Microsoft Fabric (Preview)](../database/sql/limitations.md).
 
 ## Limitations
 
@@ -32,11 +30,12 @@ For more limitations in specific areas, see:
 - [Clone table](clone-table.md#limitations)
 - [Connectivity](connectivity.md#considerations-and-limitations)
 - [Data types in Microsoft Fabric](data-types.md)
-- [Semantic models](semantic-models.md#limitations)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
+- [Migration Assistant](migration-assistant.md#limitations)
 - [Pause and resume in Fabric data warehousing](pause-resume.md#considerations-and-limitations)
+- [Semantic models](semantic-models.md#limitations)
 - [Share your data and manage permissions](share-warehouse-manage-permissions.md#limitations)
-- [Limitations in source control](source-control.md#limitations-in-source-control)
+- [Source control](source-control.md#limitations-in-source-control)
 - [Statistics](statistics.md#limitations)
 - [Tables](tables.md#limitations)
 - [Transactions](transactions.md#limitations)
@@ -48,10 +47,8 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 - Data should be in Delta Parquet format to be autodiscovered in the [!INCLUDE [fabricse](includes/fabric-se.md)]. [Delta Lake is an open-source storage framework](https://delta.io/) that enables building Lakehouse architecture.
 
-- Tables with renamed columns aren't supported in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
-
-- [Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) by name is supported, but Delta column mapping by ID is not supported. For more information, see [Delta Lake features and Fabric experiences](../get-started/delta-lake-interoperability.md#delta-lake-features-and-fabric-experiences).
-    - [Delta column mapping in the SQL analytics endpoint](https://blog.fabric.microsoft.com/blog/fabric-september-2024-monthly-update?ft=All#post-14247-_Toc177485830) is currently in preview.
+- [Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) by name is supported, but Delta column mapping by ID is not supported. For more information, see [Delta Lake features and Fabric experiences](../fundamentals/delta-lake-interoperability.md#delta-lake-features-and-fabric-experiences).
+  - [Delta column mapping in the SQL analytics endpoint](https://blog.fabric.microsoft.com/blog/fabric-september-2024-monthly-update?ft=All#post-14247-_Toc177485830) is currently in preview.
 
 - Delta tables created outside of the `/tables` folder aren't available in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 

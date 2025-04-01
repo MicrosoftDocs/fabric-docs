@@ -10,8 +10,6 @@ ms.service: fabric
 ms.subservice: cicd
 ms.custom:
   - intro-deployment
-  - build-2023
-  - ignite-2023
 ms.search.form: Best practices for deployment pipelines, Create deployment pipeline, Introduction to Deployment pipelines, Best practices for Deployment pipelines
 ---
 

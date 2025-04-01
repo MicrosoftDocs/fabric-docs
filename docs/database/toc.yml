@@ -13,13 +13,10 @@ items:
   - name: "Decision guide: Which SQL database?"
     href: sql/decision-guide.md
   - name: "Decision guide: Choose a data store"
-    href: ../get-started/decision-guide-data-store.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
+    href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: Copilot
     items:
-    - name: FAQ
-      displayName: Frequently asked questions for Copilot in SQL database
-      href: ./sql/copilot-faq.yml
-    - name: Copilot in SQL database 
+    - name: What is Copilot for SQL database? 
       href: sql/copilot.md
     - name: Chat pane
       href: ./sql/copilot-chat-pane.md
@@ -27,6 +24,8 @@ items:
       href: sql/copilot-code-completion.md
     - name: Quick actions
       href: sql/copilot-quick-actions.md
+    - name: FAQ
+      href: ./sql/copilot-faq.yml
   - name: Get started
     items: 
     - name: Connect to your SQL database
@@ -121,7 +120,7 @@ items:
       href: ./sql/monitor.md
     - name: Performance Dashboard
       href: sql/performance-dashboard.md
-    - name: Capacity usage reporting
+    - name: Capacity usage reporting and billing
       href: ./sql/usage-reporting.md
   - name: Secure
     items:

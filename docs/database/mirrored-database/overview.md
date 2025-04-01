@@ -4,10 +4,9 @@ description: Learn about mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, tinglee, sbahadur
-ms.date: 11/20/2024
+ms.date: 02/26/2025
 ms.topic: overview
 ms.custom:
-  - ignite-2024
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
@@ -39,7 +38,7 @@ Mirroring in Fabric provides an easy experience to speed the time-to-value for i
 
 - Near real time replication of data and metadata into a SaaS data-lake, with built-in analytics built-in for BI and AI
 
-The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level. To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level. To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 
 Mirroring creates three items in your Fabric workspace:
 
@@ -65,6 +64,7 @@ Currently, the following external databases are available:
 |:--|:--|:--|
 | [Microsoft Fabric mirrored databases from Azure Cosmos DB (preview)](azure-cosmos-db.md) | Yes | Database mirroring | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure Databricks (preview)](azure-databricks.md) | Yes | Metadata mirroring | [Tutorial: Azure Databricks](azure-databricks-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (preview)](azure-database-postgresql.md) | Yes | Database mirroring | [Tutorial: Azure Database for PostgreSQL flexible server](azure-database-postgresql-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | Database mirroring | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Managed Instance (preview)](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](snowflake-tutorial.md) |
@@ -114,6 +114,13 @@ INNER JOIN Affiliation
 ON Affiliation.AffiliationId = Contoso.RecordTypeID;
 ```
 
+## Cost of mirroring
+
+For database mirroring and open mirroring, the Fabric compute and OneLake storage up to a capacity-based limit are free.
+
+- Storage for replicas is free up to a limit based on the capacity size. Mirroring offers a free terabyte of mirroring storage for every capacity unit (CU) you have purchased. For example, if you purchase an F64 capacity, you get 64 free terabytes worth of storage, exclusively used for mirroring. OneLake storage is billed if free Mirroring storage limit is exceeded, or when the capacity is paused. For more information, see [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+- Fabric compute used to replicate your data into Fabric OneLake is free and does not consume capacity. Requests to OneLake as part of the mirroring process consume capacity as normal OneLake compute consumption. The compute for querying data using SQL, Power BI, or Spark is charged at regular rates. 
+
 ## Data Engineering with your mirrored database data
 
 Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and high-quality. From [Fabric Data Engineering](../../data-engineering/data-engineering-overview.md), you can:
@@ -135,7 +142,7 @@ You can also directly create and manage a [SQL database in Microsoft Fabric (Pre
 
 ## Related content
 
-- [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+- [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 - [Model data in the default Power BI semantic model in Microsoft Fabric](../../data-warehouse/model-default-power-bi-dataset.md)
 - [What is the SQL analytics endpoint for a lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
-- [Direct Lake overview](../../get-started/direct-lake-overview.md)
+- [Direct Lake overview](../../fundamentals/direct-lake-overview.md)

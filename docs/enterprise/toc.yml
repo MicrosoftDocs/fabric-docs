@@ -8,7 +8,9 @@ items:
   - name: Features parity
     href: fabric-features.md   
   - name: Release management and deployment process
-    href: fabric-release-management.md       
+    href: fabric-release-management.md  
+  - name: Site reliability
+    href: fabric-site-reliability-engineering-model.md       
 - name: Get started
   items:
   - name: Buy a Microsoft Fabric subscription
@@ -19,6 +21,8 @@ items:
     href: fabric-close-end-cancel.md
 - name: Capacity operations
   items:
+  - name: Fabric Copilot capacity
+    href: fabric-copilot-capacity.md  
   - name: Understand your Azure bill
     href: azure-billing.md
   - name: Pause and resume your capacity
@@ -45,6 +49,10 @@ items:
       href: metrics-app-storage-page.md
     - name: Understand the metrics app timepoint page
       href: metrics-app-timepoint-page.md
+    - name: Understand the metrics app Autoscale compute for Spark page
+      href: metrics-app-feature-autoscale-page.md
+    - name: Understand Autoscale compute for Spark detail page
+      href: metrics-app-feature-autoscale-detail-page.md
     - name: Plan your capacity size
       href: plan-capacity.md    
     - name: Monitor a paused capacity

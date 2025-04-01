@@ -7,5 +7,5 @@ items:
         tocHref: /fabric/data-warehouse
         topicHref: /fabric/data-warehouse/index
       - name: Data Warehouse
-        tocHref: /fabric/get-started
+        tocHref: /fabric/fundamentals
         topicHref: /fabric/data-warehouse/index

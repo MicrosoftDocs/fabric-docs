@@ -6,7 +6,6 @@ ms.author: abnarain
 author: nabhishek
 ms.topic: quickstart
 ms.custom:
-  - build-2024
 ms.date: 09/16/2024
 ---
 
@@ -31,7 +30,7 @@ Apache Airflow Job provides a simple and efficient way to create and manage Apac
 
 ### Create an Apache Airflow Job
 
-1. You can use an existing workspace or [Create a new workspace](../get-started/create-workspaces.md).
+1. You can use an existing workspace or [Create a new workspace](../fundamentals/create-workspaces.md).
 
 2. Expand `+ New` dropdown -> Click on More Options -> Under `Data Factory` section -> Select Apache Airflow Job (preview)
 

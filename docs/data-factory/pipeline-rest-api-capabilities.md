@@ -1,21 +1,16 @@
 ---
-title: REST API capabilities for Fabric Data Factory (Preview)
+title: REST API capabilities for Fabric Data Factory
 description: This article describes the available REST APIs for pipelines in Microsoft Fabric Data Factory.
 author: conxu-ms
 ms.author: conxu
 ms.topic: conceptual
 ms.custom:
-  - ignite-2024
 ms.date: 10/24/2024
 ---
 
-# REST API capabilities for data pipelines in Fabric Data Factory (Preview)
+# REST API capabilities for data pipelines in Fabric Data Factory
 
 Fabric Data Factory provides a robust set of APIs that enable users to automate and manage their data pipelines efficiently. These APIs allow for seamless integration with various data sources and services, enabling users to create, update, and monitor their data workflows programmatically. The APIs support a wide range of operations, including pipeline CRUD (Create, Read, Update, and Delete), scheduling, and monitoring. This makes it easier for users to manage their data integration processes.
-
-## Mounting APIs
-
-The Mounting Public APIs are now available. These APIs allow you to seamlessly integrate and access various public data sources within your data pipelines.
 
 ## API use cases for data pipelines
 
@@ -37,7 +32,7 @@ To effectively use the APIs for pipelines in Fabric Data Factory, it's essential
 
 ### CRUD support
 
-CRUD stands for Create, Read, Update, and Delete, which are the four basic operations that can be performed on data. In Fabric Data Factory, the CRUD operations are supported through the Fabric API for Data Factory, which is currently in preview. These APIs allow users to manage their pipelines programmatically. Here are some key points about CRUD support:
+CRUD stands for Create, Read, Update, and Delete, which are the four basic operations that can be performed on data. In Fabric Data Factory, the CRUD operations are supported through the Fabric API for Data Factory. These APIs allow users to manage their pipelines programmatically. Here are some key points about CRUD support:
 
 - **Create**: Create new pipelines using the API. This involves defining the pipeline structure, specifying data sources, transformations, and destinations.
 - **Read**: Retrieve information about existing pipelines. This includes details about their configuration, status, and execution history.
@@ -157,48 +152,6 @@ Create a pipeline with a base64 definition in a specified workspace.
     "displayName": "My pipeline",
     "description": "My pipeline description",
     "workspaceId": "<Your workspaceId>"
-}
-```
-
-## Create a Mounted Data Factory
-
-Create a Mounted Data Factory using mounting APIs.
-
-**Sample request**:
-
-**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
-
-**Payload value**:
-
-```{"DataFactoryResourceId":"/subscriptions/<Your ADF subscription Id>/resourceGroups/<Your ADF resource group name>/providers/Microsoft.DataFactory/factories/<Your ADF name>"}```
-
-**Payload**:
-
-```rest
-{ 
-  "displayName": "pipeline_mdf", 
-  "type": " MountedDataFactory ", 
-  "definition": { 
-    "parts": [ 
-      { 
-        "path": "mountedDataFactory-content.json", 
-        "payload": <Your Base64 encoded payload value from above>, 
-        "payloadType": "InlineBase64" 
-      } 
-    ] 
-  } 
-}
-```
-
-**Sample response**:
-
-```rest
-{
-    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
-    "type": "MountedDataFactory", 
-    "displayName": "pipeline_mdf", 
-    "description": "", 
-    "workspaceId": "<Your workspaceId>”
 }
 ```
 
@@ -512,14 +465,26 @@ Response 200:
 ]
 ```
 
+## Service Principal Name (SPN) Support 
+
+Service Principal Name (SPN) is a security identity feature used by applications or services to access specific resources. In Fabric Data Factory, SPN support is crucial for enabling secure and automated access to data sources. Here are some key points about SPN support: 
+
+- **Authentication**: SPNs are used to authenticate applications or services when accessing data sources. This ensures that only authorized entities can access the data.
+- **Configuration**: To use SPNs, you need to create a service principal in Azure and grant it the necessary permissions to access the data source. For example, if you're using a data lake, the service principal needs storage blob data reader access.
+- **Connection**: When setting up a data connection in Fabric Data Factory, you can choose to authenticate using a service principal. This involves providing the tenant ID, client ID, and client secret of the service principal. 
+- **Security**: Using SPNs enhances security by avoiding the use of hardcoded credentials in your dataflows. It also allows for better management of access permissions and auditing of access activities. 
+
+For more detailed information on how to set up and use SPNs in Fabric Data Factory, refer to [SPN support in Data Factory](service-principals.md). 
+
 ## Current limitations
 
-- Platform Limitation: Service Principal authentication isn't supported at the moment.
 - JOB Limitation: Run APIs are invokable, but the actual run never succeeds (just like run/refresh from UI).
 - Non-Power BI Fabric Items: The workspace must be on a support Fabric capacity.
 - Creating an item: use either creationPayload or definition, but don't use both at the same time.
 
 ## Related content
+
+Refer to the following content for more information on REST APIs for data pipelines in Fabric Data Factory:
 
 ### Documentation
 

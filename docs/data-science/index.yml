@@ -9,7 +9,6 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-science
   ms.custom:
-    - ignite-2023
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
   author: sdgilley #Required; your GitHub user alias, with correct capitalization.
@@ -34,27 +33,27 @@ landingContent:
       - linkListType: overview
         links:
           - text: Overview
-            url: ../get-started/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+            url: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
           - text: Chat-magics in Notebooks
-            url: ../get-started/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+            url: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
       - linkListType: how-to-guide
         links:
           - text: Use the Copilot chat panel
-            url: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+            url: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 
 # Card 
-  - title: AI skill (preview)
+  - title: Fabric data agent (preview)
     linkLists:
       - linkListType: overview
         links:
-          - text: What is an AI skill (preview)?
-            url: concept-ai-skill.md
+          - text: What is a Fabric data agent (preview)?
+            url: concept-data-agent.md
       - linkListType: get-started
         links:
-          - text: AI skill over Adventure Works
-            url: ai-skill-scenario.md
-          - text: Get started with AI skills
-            url: how-to-create-ai-skill.md
+          - text: Fabric data agent over Adventure Works
+            url: data-agent-scenario.md
+          - text: Get started with Fabric data agents
+            url: how-to-create-data-agent.md
   
 # Card 
   - title: Get started

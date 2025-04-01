@@ -7,8 +7,6 @@ ms.reviewer: stevehow
 ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2024
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 
@@ -20,7 +18,7 @@ A Fabric capacity is a distinct pool of resources that's size (or SKU) determine
 
 ## Burstable capacity
 
-Burstable capacity has a direct correlation to the SKU that has been assigned to the Fabric capacity of the workspace. It also is a function of the workload. A non-demanding workload might never use burstable capacity units. The workload could achieve optimal performance within the baseline capacity that has been purchased. 
+Burstable capacity has a direct correlation to the SKU that has been assigned to the Fabric capacity of the workspace. It also is a function of the workload. A non-demanding workload might never use burstable capacity units. The workload could achieve optimal performance within the baseline capacity that has been purchased.
 
 To determine if your workload is using burstable capacity, the following formula can be used to calculate the scale factor for your workload: `Capacity Units (CU) / duration / Baseline CU = Scale factor`
 
@@ -36,23 +34,23 @@ Smoothing offers relief for customers who create sudden spikes during their peak
 
 Burstable capacity is finite. There's a limit applied to the backend compute resources to greatly reduce the risk of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] workloads causing [throttling](compute-capacity-smoothing-throttling.md).
 
-The limit (or guardrail) is a scale factor directly correlated to the Fabric Capacity SKU size that is assigned to the workspace.
+The limit is a scale factor directly correlated to the Fabric capacity SKU size that is assigned to the workspace.
 
 | Fabric SKU | Equivalent Premium SKU | Baseline Capacity Units (CU) | Burstable Scale Factor |
-|------------|-----------------------|------------------------------|------------------------|
-| F2         |                       | 2                            | 1x - 32x               |
-| F4         |                       | 4                            | 1x - 16x               |
-| F8         |                       | 8                            | 1x - 12x               |
-| F16        |                       | 16                           | 1x - 12x               |
-| F32        |                       | 32                           | 1x - 12x               |
-| F64        | P1                    | 64                           | 1x - 12x               |
-| F128       | P2                    | 128                          | 1x - 12x               |
-| F256       | P3                    | 256                          | 1x - 12x               |
-| F512       | P4                    | 512                          | 1x - 12x               |
-| F1024      | P5                    | 1024                         | 1x - 12x               |
-| F2048      |                       | 2048                         | 1x - 12x               |
+|------------|------------------------|------------------------------|------------------------|
+| F2         |                        | 2                            | 1x - 32x               |
+| F4         |                        | 4                            | 1x - 16x               |
+| F8         |                        | 8                            | 1x - 12x               |
+| F16        |                        | 16                           | 1x - 12x               |
+| F32        |                        | 32                           | 1x - 12x               |
+| F64        | P1                     | 64                           | 1x - 12x               |
+| F128       | P2                     | 128                          | 1x - 12x               |
+| F256       | P3                     | 256                          | 1x - 12x               |
+| F512       | P4                     | 512                          | 1x - 12x               |
+| F1024      | P5                     | 1024                         | 1x - 12x               |
+| F2048      |                        | 2048                         | 1x - 12x               |
 
-Smaller SKU sizes are often used for Dev/Test scenarios or ad hoc workloads. The larger scale factor shown in the table gives more processing power that aligns with lower overall utilization typically found in those environments.
+Smaller SKU sizes are often used for dev/test scenarios or ad hoc workloads. The larger scale factor shown in the table gives more processing power that aligns with lower overall utilization typically found in those environments.
 
 Larger SKU sizes have access to more total capacity units, allowing more complex workloads to run optimally and with more concurrency. Therefore, if desired performance of a workload is not being achieved, [increasing the capacity SKU size](../enterprise/scale-capacity.md) might be beneficial.
 

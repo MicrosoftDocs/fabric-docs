@@ -1,7 +1,7 @@
 ---
 title: Onboard to multitasking
-author: zainadr
-ms.author: zainadrawshy
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.date: 11/06/2024
 ---

@@ -5,8 +5,7 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: include
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 03/18/2025
 ---
 
 1. On the **Connect** screen, first select  **Event type(s)** of interest that you want to capture in the eventstream. By default, all supported events are captured.

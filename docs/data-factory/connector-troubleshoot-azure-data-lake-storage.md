@@ -1,14 +1,11 @@
 ---
 title: Troubleshoot the Azure Data Lake Storage connector
 description: Learn how to troubleshoot issues with the Azure Data Lake Storage connector in Data Factory in Microsoft Fabric.
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: troubleshooting
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.date: 10/23/2024
 ---
 
@@ -16,7 +13,7 @@ ms.date: 10/23/2024
 
 This article provides suggestions to troubleshoot common problems with the Azure Data Lake Storage connector in Data Factory in Microsoft Fabric.
 
-## Error message: The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.
+## Error message: The underlying connection was closed: Couldn't establish trust relationship for the SSL/TLS secure channel.
 
 - **Symptoms**: Copy activity fails with the following error:
 
@@ -46,7 +43,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
     `Failed to get access token by using service principal.  
     ADAL Error: service_unavailable, The remote server returned an error: (503) Server Unavailable.`
 
-- **Cause**: When the Service Token Server (STS) that's owned by Microsoft Entra ID is not available, that means it's too busy to handle requests, and it returns HTTP error 503. 
+- **Cause**: When the Service Token Server (STS) that's owned by Microsoft Entra ID isn't available, that means it's too busy to handle requests, and it returns HTTP error 503. 
 
 - **Resolution**: Rerun the copy activity after several minutes.
 
@@ -62,23 +59,23 @@ This article provides suggestions to troubleshoot common problems with the Azure
   | If the error message contains the string "Forbidden", the service principal or managed identity you use might not have sufficient permission to access Azure Data Lake Storage Gen2. | To troubleshoot this error, see [Copy and transform data in Azure Data Lake Storage Gen2](/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication). |
   | If the error message contains the string "InternalServerError", the error is returned by Azure Data Lake Storage Gen2. | The error might be caused by a transient failure. If so, retry the operation. If the issue persists, contact Azure Storage support and provide the request ID from the error message. |
   | If the error message is `Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host`, your Data Factory runtime has a network issue in connecting to Azure Data Lake Storage Gen2. | In the firewall rule setting of Azure Data Lake Storage Gen2, make sure Azure Data Factory IP addresses are in the allowed list. For more information, see [Configure Azure Storage firewalls and virtual networks](/azure/storage/common/storage-network-security). |
-  | If the error message is `This endpoint does not support BlobStorageEvents or SoftDelete`, you are using an Azure Data Lake Storage Gen2 connection to connect to an Azure Blob Storage account that enables Blob storage events or soft delete. | Try the following options：<br>1. If you still want to use an Azure Data Lake Storage Gen2 connection, upgrade your Azure Blob Storage to Azure Data Lake Storage Gen2. For more information, see [Upgrade Azure Blob Storage with Azure Data Lake Storage Gen2 capabilities](/azure/storage/blobs/upgrade-to-data-lake-storage-gen2-how-to).<br>2. Switch your connection to Azure Blob Storage.<br>3. Disable Blob storage events or soft delete in your Azure Blob Storage account. |
+  | If the error message is `This endpoint does not support BlobStorageEvents or SoftDelete`, you're using an Azure Data Lake Storage Gen2 connection to connect to an Azure Blob Storage account that enables Blob storage events or soft delete. | Try the following options：<br>1. If you still want to use an Azure Data Lake Storage Gen2 connection, upgrade your Azure Blob Storage to Azure Data Lake Storage Gen2. For more information, see [Upgrade Azure Blob Storage with Azure Data Lake Storage Gen2 capabilities](/azure/storage/blobs/upgrade-to-data-lake-storage-gen2-how-to).<br>2. Switch your connection to Azure Blob Storage.<br>3. Disable Blob storage events or soft delete in your Azure Blob Storage account. |
 
-## Request to Azure Data Lake Storage Gen2 account caused a timeout error
+## Request to Azure Data Lake Storage Gen2 account caused a time-ut error
 
 - **Message**: 
   * Error Code = `UserErrorFailedBlobFSOperation`
   * Error Message = `BlobFS operation failed for: A task was canceled.`
 
-- **Cause**: The issue is caused by the Azure Data Lake Storage Gen2 destination timeout error, which usually occurs on the Self-hosted Integration Runtime (IR) machine.
+- **Cause**: The issue is caused by the Azure Data Lake Storage Gen2 destination time-out error, which usually occurs on the Self-hosted Integration Runtime (IR) machine.
 
 - **Recommendation**: 
 
-  - Place your Self-hosted IR machine and target Azure Data Lake Storage Gen2 account in the same region, if possible. This can help avoid a random timeout error and produce better performance.
+  - Place your Self-hosted IR machine and target Azure Data Lake Storage Gen2 account in the same region, if possible. This can help avoid a random time-out error and produce better performance.
 
   - Check whether there's a special network setting, such as ExpressRoute, and ensure that the network has enough bandwidth. We suggest that you lower the Self-hosted IR concurrent jobs setting when the overall bandwidth is low. Doing so can help avoid network resource competition across multiple concurrent jobs.
 
-  - If the file size is moderate or small, use a smaller block size for nonbinary copy to mitigate such a timeout error. For more information, see [Blob Storage Put Block](/rest/api/storageservices/put-block).
+  - If the file size is moderate or small, use a smaller block size for nonbinary copy to mitigate such a time-out error. For more information, see [Blob Storage Put Block](/rest/api/storageservices/put-block).
 
     To specify the custom block size, edit the property in your JSON file editor as shown here:
 
@@ -92,9 +89,9 @@ This article provides suggestions to troubleshoot common problems with the Azure
     }
     ```
 
-## The copy activity is not able to pick files from Azure Data Lake Storage Gen2
+## The copy activity isn't able to pick files from Azure Data Lake Storage Gen2
 
-- **Symptoms**: The copy activity is not able to pick files from Azure Data Lake Storage Gen2 when the file name is "Asset_Metadata". The issue only occurs in the Parquet type data. Other types of data with the same file name work correctly.
+- **Symptoms**: The copy activity isn't able to pick files from Azure Data Lake Storage Gen2 when the file name is "Asset_Metadata". The issue only occurs in the Parquet type data. Other types of data with the same file name work correctly.
 
 - **Cause**: For the backward compatibility, `_metadata` is treated as a reserved substring in the file name. 
 
@@ -117,7 +114,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
     1. If you have enabled selected virtual networks and IP addresses in your Azure storage account network setting:
 
-        1. It's possible because some IP address ranges of your Data Factory runtime are not allowed by your storage account firewall settings. Add the Data Factory runtime IP addresses or the self-hosted integration runtime IP address to your storage account firewall. For Data Factory runtime IP addresses, see  [Data Factory runtime IP addresses](/azure/data-factory/azure-integration-runtime-ip-addresses), and to learn how to add IP ranges in the storage account firewall,   see [Managing IP network rules](/azure/storage/common/storage-network-security#managing-ip-network-rules).
+        1. It's possible because some IP address ranges of your Data Factory runtime aren't allowed by your storage account firewall settings. Add the Data Factory runtime IP addresses or the self-hosted integration runtime IP address to your storage account firewall. For Data Factory runtime IP addresses, see  [Data Factory runtime IP addresses](/azure/data-factory/azure-integration-runtime-ip-addresses), and to learn how to add IP ranges in the storage account firewall,   see [Managing IP network rules](/azure/storage/common/storage-network-security#managing-ip-network-rules).
 
         1. If you allow trusted Azure services to access this storage account in the firewall, you must use [managed identity authentication](/azure/data-factory/connector-azure-data-lake-storage#managed-identity) in copy activity.
 

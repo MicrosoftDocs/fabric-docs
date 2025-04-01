@@ -2,12 +2,10 @@
 title: Runtime 1.3 in Fabric
 description: Learn about Apache Spark-based runtime 1.3 in Fabric, including the unique features, capabilities, and best practices.
 ms.reviewer: snehagunda
-ms.author: eskot
-author: ekote
+ms.author: sngun
+author: SnehaGunda
 ms.topic: overview
 ms.custom:
-  - ignite-2023
-  - build-2024
 ms.date: 3/13/2024
 no-loc: [Copilot]
 ---

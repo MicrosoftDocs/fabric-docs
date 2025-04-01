@@ -1,11 +1,10 @@
 ---
 title: Activator - basic concepts
 description: "Definitions and descriptions of concepts used by Activator. These include: eventstreams, rules, events, objects, activators, and more."
-author: mihart
-ms.author: mihart
+author: spelluru
+ms.author: spelluru
 ms.topic: concept-article
 ms.custom:
-  - ignite-2024
 ms.date: 10/22/2024
 #customerIntent: As a new user of Fabric Activator, I need an understanding of the basic concepts of Activator. By understanding the pieces that make up Activator, I can more easily create and use Activator on my own.
 #customer intent: As a person creating activators and as someone consuming activators I want to understand how activators are created and how they work.

@@ -156,7 +156,7 @@ Take the following steps to use Git deployment pipelines with your Fabric worksp
 Before you get started, be sure to set up the following prerequisites:
 
 - An active [Microsoft Fabric subscription](../enterprise/licenses.md).
-- Admin access of a [Fabric workspace](../get-started/create-workspaces.md).
+- Admin access of a [Fabric workspace](../fundamentals/create-workspaces.md).
 
 ### Step 1: Create a deployment pipeline
 

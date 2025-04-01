@@ -1,8 +1,8 @@
 ---
 title: Get data for Activator from eventstreams
 description: Learn how to get data from eventstreams for use in Activator and integrate it into your applications.
-author: mihart
-ms.author: mihart
+author: spelluru
+ms.author: spelluru
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 11/19/2024
@@ -66,4 +66,4 @@ Once you connect your eventstream item to [!INCLUDE [fabric-activator](../includ
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

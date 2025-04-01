@@ -8,10 +8,8 @@ ms.date: 11/13/2024
 # Customer intent: I want to know how to create eventstreams for Job events in Fabric Real-Time hub. 
 ---
 
-# Get Job events in Real-Time hub (preview)
+# Get Job events in Real-Time hub
 This article describes how to get Job events as an eventstream in Fabric Real-Time hub.
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
 
 Real-Time hub allows you to discover and subscribe to changes produced when Fabric runs a job. For example, you can react to changes when refreshing a semantic model, running a scheduled pipeline, or running a notebook. Each of these activities can generate a corresponding job, which in turn generates a set of corresponding job events. 
 

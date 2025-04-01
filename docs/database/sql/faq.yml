@@ -7,8 +7,8 @@ metadata:
   ms.reviewer: nzagorac, antho, sukkaur, amapatil
   ms.topic: faq
   ms.custom:
-    - ignite-2024
-  ms.date: 01/17/2025
+  ms.date: 01/31/2025
+  ms.search.form: SQL database Overview
 title: "Frequently asked questions for SQL database in Microsoft Fabric (preview)"
 summary: |
   **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
@@ -22,6 +22,11 @@ sections:
           How do I connect to SQL database in Fabric? 
         answer:
           You can connect to SQL database in Fabric in the same ways you connect to Azure SQL Database. For more information, see [Connect to SQL database in Fabric](connect.md).
+      - question: |
+          Which connection policies are supported for SQL database in Fabric?
+        answer:
+          Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. For more information, see [Connection policy](limitations.md#connection-policy).
+
 
   - name: About SQL database data in OneLake
     questions:
@@ -89,7 +94,11 @@ sections:
       - question: |
           What are the costs associated with SQL database in Fabric?
         answer: 
-          During preview, there's no cost for SQL database in Fabric.
+          After February 1, 2025, compute and data storage are charged to your Fabric capacity. Additionally, backup billing will start after April 1, 2025.
+      - question: |
+          How do I monitor SQL database in Fabric consumption?
+        answer: 
+          For more information on consumption of your [Fabric Capacity](../../enterprise/licenses.md), see [Billing and utilization reporting for SQL database in Microsoft Fabric](usage-reporting.md). To understand your Fabric billing, see [Understand your Azure bill on a Fabric capacity](../../enterprise/azure-billing.md).
 
   - name: Monitoring
     questions: 
@@ -109,11 +118,6 @@ sections:
     questions:
 
       - question: |
-          Is SQL database in Fabric currently free, and if so, for how long?
-        answer:
-          SQL database in Fabric completely is free until February 1, 2025. After this date, compute and data storage charges begin. Backup billing starts on March 1, 2025.
-
-      - question: |
           What are licensing options for SQL database in Fabric? 
         answer:
           A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../../enterprise/licenses.md).
@@ -128,7 +132,7 @@ sections:
       - question: |
           Where is SQL database in Fabric available?
         answer:
-          SQL database in Fabric is available in regions where Microsoft Fabric is available. For more information, see [Fabric availability](../../admin/region-availability.md).
+          See [Fabric availability](../../admin/region-availability.md#all-workloads).
 
           Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
       - question: |

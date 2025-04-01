@@ -7,8 +7,6 @@ ms.reviewer: scbradl
 ms.date: 12/29/2024
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ---
 
 # Tutorial: Ingest data into a Warehouse

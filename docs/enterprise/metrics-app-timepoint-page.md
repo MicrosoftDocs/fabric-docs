@@ -5,9 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 07/29/2024
+ms.date: 02/27/2025
 no-loc: [Copilot]
 ---
 
@@ -83,7 +81,7 @@ Start and end times may occur before or after the displayed time period, due to 
 
 * **User** - The name of the user that triggered the interactive operation.
 
-* **Duration (s)** - The number of seconds the interactive operation took to complete.
+* **Duration (s)** - The number of seconds the interactive operation took to complete. Has no impact on the [throttling](throttling.md) assessment.
 
 * **Total CU (s)** - The number of CU seconds used by the interactive operation. This metric contributes to determine if the capacity exceeds the total number of CU seconds allowed for the capacity.
 

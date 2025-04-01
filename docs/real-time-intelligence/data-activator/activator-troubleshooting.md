@@ -1,10 +1,10 @@
 ---
 title: Troubleshooting errors in Activator
 description: Learn the meaning of errors in Activator, how to fix them, and troubleshoot common issues in this comprehensive troubleshooting guide
-author: mihart
-ms.author: mihart
+author: spelluru
+ms.author: spelluru
 ms.topic: concept-article
-ms.custom: FY25Q1-Linter, ignite-2024
+ms.custom: FY25Q1-Linter
 ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn to troubleshoot Activator errors.
 ---
@@ -122,4 +122,4 @@ This error code means that you have a rule that sends a Teams alert, and that th
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

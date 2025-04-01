@@ -3,8 +3,8 @@ title: "Open Mirroring (Preview) Landing Zone Requirements and Formats"
 description: Review the requirements for files in the landing for open mirroring in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: tinglee, sbahadur
-ms.date: 01/21/2025
+ms.reviewer: tinglee, sbahadur, maraki-ketema
+ms.date: 03/22/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -15,7 +15,7 @@ This article details the landing zone and table/column operation requirements fo
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
-Once you have created your open mirrored database via the Fabric portal or public API in your Fabric workspace, you get a landing zone URL in OneLake in the **Home** page of your mirrored database item. This landing zone is where your application to create a metadata file and land data in Parquet format (uncompressed, Snappy, GZIP, ZSTD).
+Once you have created your open mirrored database via the Fabric portal or public API in your Fabric workspace, you get a landing zone URL in OneLake in the **Home** page of your mirrored database item. This landing zone is where your application to create a metadata file and land data in Parquet format or CSV format (uncompressed, Snappy, GZIP, ZSTD). If the data is in a CSV format, the file must have header row in the first row.
 
 :::image type="content" source="media/open-mirroring-landing-zone-format/landing-zone-url.png" alt-text="Screenshot from the Fabric portal showing the Landing zone URL location in the Home page of the mirrored database item." lightbox="media/open-mirroring-landing-zone-format/landing-zone-url.png":::
 
@@ -48,18 +48,20 @@ If `keyColumns` or `_metadata.json` is not specified, then update/deletes are no
 
 ## Data file and format in the landing zone
 
-Open mirroring supports Parquet as the landing zone file format with or without compression. Supported compression formats include Snappy, GZIP, and ZSTD.
+Open mirroring supports Parquet and CSV as the landing zone file format with or without compression. Supported compression formats include Snappy, GZIP, and ZSTD.
 
-All the Parquet files written to the landing zone have the following format:
+All the Parquet and CSV files written to the landing zone have the following format:
 
-`<RowMarker><DataColumns>`
+`<rowMarker><DataColumns>`
 
-- `RowMarker`: column name is `__rowMarker__` (including two underscores before and after `rowMarker`). 
-   - `RowMaker` values:
-      - `0` for INSERT
-      - `1` for UPDATE
-      - `2` for DELETE
-      - `4` for UPSERT
+- `rowMarker`: column name is `__rowMarker__` (including two underscores before and after `rowMarker`). `RowMaker` values and behaviors:
+  
+   | RowMarker\Scenario | If row doesn't exist with same key column(s) in the destination | If row exists with same key column(s) in the destination |
+   |:--|:--|:--|
+   | 0 (Insert) | Insert the row to destination | Insert the row to destination, no validation for dup key column check. |
+   | 1 (Update) | Insert the row to destination, no validation/exception to check existence of row with same key column. | Update the row with same key column. |
+   | 2 (Delete) | No data change, no validation/exception to check existence of row with same key column. | Delete the row with same key column. |
+   | 4 (Upsert) | Insert the row to destination, no validation/exception to check existence of row with same key column. | Update the row with same key column. |
 
 - Row order: All the logs in the file should be in natural order as applied in transaction. This is important for the same row being updated multiple times. Open mirroring applies the changes using the order in the files.
 
@@ -69,11 +71,15 @@ All the Parquet files written to the landing zone have the following format:
 
 ### Initial load
 
-For the initial load of data into an open mirrored database, all rows should have INSERT as row marker. Without `RowMarker` data in a file, mirroring treats the entire file as an INSERT.
+For the initial load of data into an open mirrored database, `rowMarker` in the initial data file is optional and not recommended. Mirroring treats the entire file as an INSERT when `rowMarker` doesn't exist.
+
+For better performance and accurate metrics, `rowMarker` is a mandatory field only for incremental changes to apply update/delete/upsert operation. 
 
 ### Incremental changes
 
 Open mirroring reads incremental changes in order and applies them to the target Delta table. Order is implicit in the change log and in the order of the files.
+
+Data changes are considered as incremental changes once the `rowMarker` column is found from any row/file.
 
 Updated rows must contain the full row data, with all columns. 
 
@@ -87,7 +93,7 @@ __rowMarker__,EmployeeID,EmployeeLocation
 1,E0001,Bellevue
 ```
 
-If key columns are updated, then it should be presented by a DELETE on previous key columns and an INSERT rows with new key and data. For example, the row history to change the `RowMarker` unique identifier for `EmployeeID` E0001 to E0002. You don't need to provide all column data for a DELETE row, only the key columns.
+If key columns are updated, then it should be presented by a DELETE on previous key columns and an INSERT rows with new key and data. For example, the row history to change the `rowMarker` unique identifier for `EmployeeID` E0001 to E0002. You don't need to provide all column data for a DELETE row, only the key columns. 
 
 ```parquet
 __rowMarker__,EmployeeID,EmployeeLocation
@@ -136,7 +142,7 @@ For example, if you have schemas (`Schema1`, `Schema2`) and tables (`Table A`, `
 
 ### Add column
 
-If new columns are added to the parquet files, open mirroring adds the columns to the delta tables.
+If new columns are added to the parquet or CSV files, open mirroring adds the columns to the delta tables.
 
 ### Delete column
 
@@ -151,6 +157,10 @@ To change a column type, drop and recreate the folder with initial and increment
 ### Rename column
 
 To rename a column, delete the table folder and recreate the folder with all the data and with the new column name.
+
+### Cleanup process
+
+A cleanup process for opening mirroring moves all processed files to a separate folder called `_ProcessedFiles` or `_FilesReadyToDelete`. After seven days, the files are removed from this folder. 
 
 ## Next step
 

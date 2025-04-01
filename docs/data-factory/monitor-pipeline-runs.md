@@ -1,13 +1,11 @@
 ---
 title: How to monitor pipeline runs
 description: Learn how to monitor pipeline runs.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: noelleli
 author: n0elleli
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 12/18/2024
 ---
 

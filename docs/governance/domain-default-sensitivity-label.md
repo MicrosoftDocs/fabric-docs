@@ -5,7 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.custom:
-  - ignite-2024
 ms.topic: conceptual #Don't change
 ms.date: 11/11/2024
 #customer intent: As a Fabric administrator, security and compliance officer, Fabric domain administrator, or domain contributor, I want to understand what domain-level senistivity labels are and how they work.
@@ -36,7 +35,7 @@ The tenant setting **Domain admins can set default sensitivity labels for their 
 
 ## Limitations
 
-Reports, semantic models, dataflows, dashboards, scorecards, and some additional item types aren't currently supported.
+Dataflows, dashboards, scorecards, and some additional item types aren't currently supported.
 
 ## Related content
 

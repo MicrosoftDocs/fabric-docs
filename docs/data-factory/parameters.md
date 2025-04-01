@@ -2,12 +2,10 @@
 title: Parameters
 description: Learn about parameters for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 12/18/2024
 ai-usage: ai-assisted
 ---

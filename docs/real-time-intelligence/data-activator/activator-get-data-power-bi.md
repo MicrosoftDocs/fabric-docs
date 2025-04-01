@@ -1,10 +1,10 @@
 ---
 title: Create alerts in Power BI and use them in Fabric Activator
 description: Learn how to get data from Power BI for use in Activator, integrate it into your workflows, and take advantage of powerful data analysis capabilities.
-author: mihart
-ms.author: mihart
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
-ms.custom: FY25Q1-Linter, ignite-2024
+ms.custom: FY25Q1-Linter
 ms.date: 11/10/2024
 ms.search.form: Data Activator PBI Onramp
 #customer intent: As a Power BI user I want to learn how to get data from Power BI alerts into Activator where I can continue refining the alert.
@@ -25,8 +25,7 @@ Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to fine tune 
 
 ## Prerequisites
 
-Before you begin:
-
+* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * You need edit permissions to a Power BI report that is published online to a workspace.
 
 ## Create an alert for a Power BI report visual

@@ -1,10 +1,10 @@
 ---
 title: Get data for Activator from Real-Time Hub
 description: Learn how to get data from Real-Time Hub and use it in Activator to enhance your application's functionality.
-author: mihart
-ms.author: mihart
+author: spelluru
+ms.author: spelluru
 ms.topic: concept-article
-ms.custom: FY25Q1-Linter, ignite-2024
+ms.custom: FY25Q1-Linter
 ms.date: 11/08/2024
 #customer intent: As a Fabric user I want to learn to get data for Activator from Real-Time Hub.
 ---
@@ -19,9 +19,9 @@ You can get data for use in Fabric [!INCLUDE [fabric-activator](../includes/fabr
 * You can connect to Real-Time Hub events from an empty activator.
 * You can connect to Real-Time Hub events from an activator that already has events flowing into it.
 
-### Browse Real-Time Hub from [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
+### Browse Real-Time Hub from Activator
 
-To browse Real-Time Hub items from an activator, select **Get data** from the toolbar as shown in the following image.
+To browse Real-Time Hub items from an activator, select **Home** > **Get data** from the toolbar as shown in the following image.
 
 :::image type="content" source="media/activator-get-data-real-time-hub/data-activator-real-time-hub-01.png" alt-text="Screenshot of get data from Real-Time Hub.":::
 
@@ -40,4 +40,4 @@ For more information about connecting to data with Real-Time Hub, see the [Real-
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

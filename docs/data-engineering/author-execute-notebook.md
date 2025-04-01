@@ -6,10 +6,8 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.search.form: Develop and run notebooks
-ms.date: 11/15/2023
+ms.date: 03/31/2025
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -83,12 +81,21 @@ The IntelliSense features are at different levels of maturity for different lang
 | **Languages** | **Syntax highlight** | **Syntax error marker** | **Syntax code completion** | **Variable code completion** | **System function code completion** | **User function code completion** | **Smart indent** | **Code folding** |
 |---|---|---|---|---|---|---|---|---|
 | PySpark (Python) | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | Spark (Scala) | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | SparkSQL | Yes | Yes | Yes | Yes | Yes | No | Yes | Yes |
 | SparkR | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| T-SQL | Yes | Yes | Yes | No | Yes | Yes | Yes | Yes |
 
 > [!NOTE]
 > You must have an active Apache Spark session to use IntelliSense code completion.
+
+#### Enhance Python Development with Pylance
+ 
+> [!NOTE]
+> Currently, the feature is in preview.
+ 
+Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter auto-completion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
 
 ### Code snippets
 
