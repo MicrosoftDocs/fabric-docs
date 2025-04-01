@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot Variable libraries
-description: "[Article description]."
+description: Troubleshoot common errors and issues when working with Variable libraries in Microsoft Fabric.
 author: mberdugo
 ms.author: monaberdugo
 ms.service: fabric
@@ -17,7 +17,7 @@ This article describes common errors and issues that you might encounter when wo
 
 ## Failure to manage Variable library
 
-### I Can't find the *Create Variable library* icon
+### I can't find the *Create Variable library* icon
 
 **Description of problem**: I want to create a Variable library, but I can't find the *Create Variable library* icon.
 
