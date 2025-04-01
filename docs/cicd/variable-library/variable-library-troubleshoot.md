@@ -68,7 +68,9 @@ This article describes common errors and issues that you might encounter when wo
 
 ### Error message: I can't reference added variable
 
+<!---
 :::image type="content" source="./media/variable-library-troubleshoot/variable-not-found.png" alt-text="Screenshot of error message that says Variable not found.":::
+--->
 
 **Description of problem**: I can't find the variable I want to refer to in the data pipeline.  
 **Cause**: Some reasons a variable might not appear in the data pipeline include:
