@@ -71,7 +71,7 @@ items:
         href: enable-workspace-monitoring.md      
 - name: Find Fabric items with the OneLake catalog
   href: ../governance/onelake-catalog.md
-- name: Copilot in Fabric
+- name: Copilot and AI in Fabric
   items:
   - name: Copilot in Fabric overview
     href: copilot-fabric-overview.md
@@ -111,6 +111,8 @@ items:
     href: copilot-real-time-intelligence.md
   - name: Copilot in Fabric Consumption
     href: copilot-fabric-consumption.md
+  - name: Data agent in Fabric Consumption
+    href: data-agent-consumption.md
 - name: Direct Lake
   items:
   - name: Direct Lake overview
@@ -175,12 +177,26 @@ items:
     href: /power-bi/guidance/fabric-adoption-roadmap-change-management?context=/fabric/context/context
   - name: Conclusion
     href: /power-bi/guidance/fabric-adoption-roadmap-conclusion?context=/fabric/context/context
+  - name: IDEAS journey with Fabric
+    href: ideas-data-platform-integration.md
 - name: Known issues
   items:
     - name: Active known issues for Fabric + Power BI - chart
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Can't install or open on-premises data gateway after Windows update
+      href: ../known-issues/known-issue-1078-not-install-open-on-premises-data-gateway-windows-update.md
+    - name: Failure to scale AAS server or add admins through Azure portal
+      href: ../known-issues/known-issue-1077-failure-scale-azure-analysis-services-add-admins.md
+    - name: Eventstream sample data sources created from Real-Time hub are inactive
+      href: ../known-issues/known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md
+    - name: Multitasking for Dataflow Gen2 with CI/CD was inadvertently enabled
+      href: ../known-issues/known-issue-1075-multitasking-dataflow-gen2-ci-cd-enabled.md
+    - name: Environment REST API updates might cause your workflow to break
+      href: ../known-issues/known-issue-1067-environment-rest-api-updates-workflow-break.md
+    - name: Environment Git integration imports for libraries don't work
+      href: ../known-issues/known-issue-1025-environment-git-integration-imports-libraries-not-work.md
     - name: SQL analytics endpoint sync failure when columnMapping is enabled
       href: ../known-issues/known-issue-1069-sql-analytics-endpoint-sync-failure-column-mapping-enabled.md
     - name: Pipeline activities fail with Dynamics or Dataverse connections through OPDG

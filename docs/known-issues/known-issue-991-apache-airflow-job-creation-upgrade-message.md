@@ -1,7 +1,7 @@
 ---
 title: Known issue - Apache Airflow job creation shows Fabric upgrade message
 description: A known issue is posted where Apache Airflow job creation shows Fabric upgrade message.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/13/2025
