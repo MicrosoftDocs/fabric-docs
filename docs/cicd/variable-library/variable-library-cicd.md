@@ -41,9 +41,10 @@ Like other Fabric items, Variable libraries can be integrated with Git for sourc
 
 Item permissions are checked during Git Update and commit.
 
-The Variable library item schema is a JSON object that contains three parts:
+The Variable library item schema is a JSON object that contains four parts:
 
 * [Value-sets](#value-set) folder
+* [Settings](#settings)
 * [platform.json](../git-integration/source-code-format.md#platform-file): Automatically generated file
 * [Variables](#variables)
 
@@ -51,7 +52,7 @@ The Variable library item schema is a JSON object that contains three parts:
 
 ### Value set
 
-The variable library folder contains a subfolder called ValueSets. This folder contains a JSON file for each value set. The JSON file contains only the variable values for *non default* values in that value set.
+The variable library folder contains a subfolder called ValueSets. This folder contains a JSON file for each value set. This JSON file contains only the variable values for *non default* values in that value set. (The default values are in the [variables.json](#variables) file.)
 
 * name
 * value
@@ -77,9 +78,26 @@ For example:
 
 Values for variables not in this file are taken from the default value set.
 
+### Settings
+
+The settings.json file contains settings for the Variable library. For example, the following snippet changes the order of the value sets:
+
+```json
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/valueSet/1.0.0/schema.json",
+  "valueSetsOrder": [
+    "valueSet1",
+    "valueSet0",
+    "someOtherValueSet"
+  ]
+}
+```
+
+The value set order list can ba empty or partial (ony containing some of the value sets). Value sets not in this list will be added to the end of the list in alphabetical order. This list can't contain invalid value set names.
+
 ### Variables
 
-The variables.json file contains the variable names and their default values: 
+The variables.json file contains the variable names and their default values:
 
 * name
 * type
