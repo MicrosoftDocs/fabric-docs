@@ -23,10 +23,10 @@ Variable libraries and their values can be deployed in deployment pipelines to m
 
 When you create a deployment pipeline, you can select a Variable library item to use. The selected Variable library item is stored in the deployment pipeline and is used to populate the variable values in that stage. You can also change the active value set for each stage of the deployment pipeline.
 
-If you update the Variable library variables or value set, the item will appear as different in a when you [compare](../deployment-pipelines/compare-pipeline-content.md) them.
+If you update the Variable library variables or value set, the item appears as *different* a when you [compare](../deployment-pipelines/compare-pipeline-content.md) them.
 For example, the following changes in the Variable library are reflected as *different* in the deployment pipeline:
 
-* added, deleted or edited variables
+* added, deleted, or edited variables
 * added or deleted value sets
 * names of variables
 * order of variables
