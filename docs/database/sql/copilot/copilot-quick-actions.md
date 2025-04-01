@@ -28,7 +28,7 @@ Copilot uses information about your database schema, query tab contents, and exe
 
 ## Prerequisites
 
-[!INCLUDE [copilot-include](../../../../includes/copilot-include.md)]
+[!INCLUDE [copilot-include](../../../includes/copilot-include.md)]
 
 ## Get started
 
@@ -67,4 +67,4 @@ To get Copilot's help with fixing an error in your query, follow these steps:
 - [What is Copilot for SQL database in Microsoft Fabric?](copilot.md)
 - [How to: Use the Copilot Code Completion for SQL database in Fabric](copilot-code-completion.md)
 - [How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../../../fundamentals/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../../fundamentals/copilot-privacy-security.md)

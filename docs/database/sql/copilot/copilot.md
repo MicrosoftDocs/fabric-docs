@@ -77,7 +77,7 @@ Here are the current limitations of Copilot for SQL database in Fabric:
 
 ## Related content
 
-- [Privacy, security, and responsible use of Copilot in Fabric](../../../../fundamentals/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../../fundamentals/copilot-privacy-security.md)
 - [Frequently asked questions for Copilot for SQL database in Microsoft Fabric](copilot-faq.yml)
 - [How to: Use the Copilot Code Completion for SQL database in Fabric](copilot-code-completion.md)
 - [How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)

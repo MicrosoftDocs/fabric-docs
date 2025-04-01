@@ -33,7 +33,7 @@ The supported capabilities of interacting through chat include:
 
 ## Prerequisites
 
-[!INCLUDE [copilot-include](../../../../includes/copilot-include.md)]
+[!INCLUDE [copilot-include](../../../includes/copilot-include.md)]
 
 ## Get started
 
@@ -50,9 +50,9 @@ The supported capabilities of interacting through chat include:
 
 - The more specifically you describe your goals in your chat panel entries, the more accurate the Copilot responses.
 - To clear your conversation, select the broom icon :::image type="content" border="true" source="../../../../data-engineering/media/copilot-notebooks-chat-pane/broom-icon.png" alt-text="Screenshot from the Fabric portal showing the Copilot clean up prompt."::: to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it ends.
-- Read our [Privacy, security, and responsible use of Copilot for SQL databases (preview)](../../../../fundamentals/copilot-database-privacy-security.md) for details on data and algorithm use.
+- Read our [Privacy, security, and responsible use of Copilot for SQL databases (preview)](../../../fundamentals/copilot-database-privacy-security.md) for details on data and algorithm use.
 
 ## Related content
 
 - [What is Copilot for SQL database in Microsoft Fabric?](copilot.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../../../fundamentals/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../../fundamentals/copilot-privacy-security.md)

@@ -67,4 +67,4 @@ To begin using the Copilot Code Completion feature, follow these steps to enable
 - [What is Copilot for SQL database in Microsoft Fabric?](copilot.md)
 - [How to: Use the Copilot Chat Pane for SQL database in Microsoft Fabric](copilot-chat-pane.md)
 - [How to: Use the Copilot Explain and Fix quick action features for SQL database in Microsoft Fabric](copilot-quick-actions.md)
-- [Privacy, security, and responsible use of Copilot in Microsoft Fabric](../../../../fundamentals/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Microsoft Fabric](../../../fundamentals/copilot-privacy-security.md)
