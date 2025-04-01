@@ -85,10 +85,6 @@ When you deploy content from one pipeline stage to another, the copied content c
 
   * Healthcare *(preview)*
   * HealthCare Cohort *(preview)*
-<<<<<<< HEAD
->>>>>>> f9dc36039af830851526f29cca2ebb34aee2ce39
-=======
->>>>>>> f91c8f683ed88ed81636913d3e7423e84e16efb6
 
 ## Pipeline structure
 
