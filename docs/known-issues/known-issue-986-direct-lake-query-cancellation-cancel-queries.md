@@ -1,7 +1,7 @@
 ---
 title: Known issue - Direct Lake query cancellation might cancel other queries
 description: A known issue is posted where Direct Lake query cancellation might cancel other queries.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/07/2025

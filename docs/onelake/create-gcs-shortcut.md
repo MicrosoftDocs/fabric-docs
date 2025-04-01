@@ -13,9 +13,11 @@ ms.date: 03/15/2024
 
 # Create a Google Cloud Storage (GCS) shortcut
 
-In this article, you learn how to create a Google Cloud Storage(GCS) shortcut inside a Fabric lakehouse.
+In this article, you learn how to create a Google Cloud Storage (GCS) shortcut inside a Fabric lakehouse.
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
+
+GCS shortcuts can take advantage of file caching to reduce egress costs associated with cross-cloud data access. For more information, see [OneLake shortcuts > Caching](onelake-shortcuts.md#caching).
 
 ## Prerequisites
 

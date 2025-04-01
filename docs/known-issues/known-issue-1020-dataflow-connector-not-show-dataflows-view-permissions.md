@@ -1,7 +1,7 @@
 ---
 title: Known issue - Dataflow connector doesn't show dataflows with view only permissions
 description: A known issue is posted where the dataflow connector doesn't show dataflows with view only permissions.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/14/2025

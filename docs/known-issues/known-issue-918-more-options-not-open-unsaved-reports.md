@@ -1,7 +1,7 @@
 ---
 title: Known issue - More options menu on a visual doesn't open in unsaved reports
 description: A known issue is posted where the **More options** menu on a visual doesn't open in unsaved reports.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/13/2025
