@@ -37,20 +37,22 @@ Complete the following steps to create a new Copy job to ingest data from a data
 
    :::image type="content" source="media/copy-job/select-destination-store.png" lightbox="media/copy-job/select-destination-store.png" alt-text="Screenshot showing where to select the destination store for the Copy job.":::
 
-1. (Optional) Select update method on how you want to write data to the destination store. If choosing Merge, specify the required Key columns. 
+1. (Optional) Select update method on how you want to write data to the destination store. If choosing **Merge**, specify the required Key columns.
+
    :::image type="content" source="media/copy-job/update-method1.png" lightbox ="media/copy-job/update-method1.png" alt-text="Screenshot showing where to update method.":::
+   
    :::image type="content" source="media/copy-job/update-method2.png" lightbox ="media/copy-job/update-method2.png" alt-text="Screenshot showing how to update method.":::
 
 1. (Optional) Configure table or column mapping to rename tables or columns in the destination or apply data type conversions. By default, data is copied with the same table name, column name, and data type as the source. 
 
    :::image type="content" source="media/copy-job/specify-mappings.png" lightbox ="media/copy-job/specify-mappings.png" alt-text="Screenshot showing where to specify table mappings.":::
+   
    :::image type="content" source="media/copy-job/specify-column-mappings.png" lightbox ="media/copy-job/specify-column-mappings.png" alt-text="Screenshot showing where to specify column mappings.":::
 
-1. Choose a copy mode: Full data copy or Incremental copy. In this example, select **Incremental copy** and specify an Incremental column for each table to track changes. Use the Preview button to help select the right Incremental column.
+1. Choose a copy mode: Full data copy or Incremental copy. In this example, select **Incremental copy** and specify an Incremental column for each table to track changes. Learn more on [Incremental column](what-is-copy-job?#incremental-column). Use the preview button to help select the right Incremental column.
 
    > [!NOTE]
    > - When you choose incremental copy mode, Data Factory initially performs a full load and subsequently carries out incremental copies in subsequent runs.
-   > - The **Incremental column** is specific to the incremental copy mode. This column in your source data helps identify changes. Each time, the Copy job saves the value from this column as a watermark, only copying rows where the **Incremental column** value exceeds the previous one.
 
    :::image type="content" source="media/copy-job/copy-job-mode.png" lightbox="media/copy-job/copy-job-mode.png" alt-text="Screenshot showing where to select the Copy job mode.":::
 
@@ -58,7 +60,9 @@ Complete the following steps to create a new Copy job to ingest data from a data
 
    :::image type="content" source="media/copy-job/review-save.png" lightbox="media/copy-job/review-save.png" alt-text="Screenshot showing where to review and save the newly created Copy job.":::
 
-1. You can easily execute and track the job's status. Click the **Run** button to trigger the copy job immediately, no matter it's configured to run once or on a schedule. The inline monitoring panel clearly displays key metrics from the latest run in real time, including row counts and copy duration for each table, etc. Learn more in [How to monitor a Copy job](monitor-copy-job.md)
+1. You can easily execute and track the job's status. Click the **Run** button to trigger the copy job immediately, no matter it's configured to run once or on a schedule.
+  
+   The inline monitoring panel clearly displays key metrics from the latest run in real time, including row counts and copy duration for each table, etc. Learn more in [How to monitor a Copy job](monitor-copy-job.md)
 
    :::image type="content" source="media/copy-job/monitor-run-history.png" lightbox="media/copy-job/monitor-run-history.png" alt-text="Screenshot showing the Copy job panel where you can monitor run history.":::
 
