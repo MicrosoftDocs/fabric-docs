@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 11/17/2023
 ms.custom: template-how-to
 ---
 
@@ -18,7 +18,7 @@ The Dynamics CRM connector supports the following capabilities in Data pipeline:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | Service principal <br>Workspace identity |
-| **Lookup activity** | None <br> On-premises | Service principal <br>Workspace identity |
+| **Copy activity (source/destination)** | None <br> On-premises | Service principal |
+| **Lookup activity** | None <br> On-premises | Service principal|
 
 To learn more about the copy activity configuration for Dynamics CRM in Data pipeline, go to [Configure in a data pipeline copy activity](connector-dynamics-crm-copy-activity.md).
