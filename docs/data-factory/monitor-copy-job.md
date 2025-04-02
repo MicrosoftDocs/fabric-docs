@@ -62,8 +62,6 @@ The Monitoring hub serves as a central portal for overseeing Copy job runs acros
 
 - On the main Fabric navigation pane on the left of the Fabric site, select **Monitor**.
 
-   :::image type="content" source="media/copy-job/monitor-button.png" alt-text="Screenshot showing where to select the Monitor button on the Fabric navigation pane.":::
-
 Either of these bring you to the Monitoring hub, where you can see a list of all Copy jobs and their runs:
 
 :::image type="content" source="media/copy-job/monitor-pane.png" alt-text="Screenshot showing the monitor pane with several Copy jobs displayed.":::
