@@ -1,10 +1,10 @@
 ---
-title: Overview of Microsoft Copilot for SQL Database in Microsoft Fabric (Preview)
+title: "Overview of Microsoft Copilot for SQL Database in Microsoft Fabric (Preview)"
 description: "Learn more about the Microsoft Copilot for SQL database in Fabric, an AI assistant designed to streamline your database tasks."
 author: markingmyname
-ms.author:  maghan
+ms.author: maghan
 ms.reviewer: yoleichen, wiassaf
-ms.date: 3/31/2025
+ms.date: 04/02/2025
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
@@ -12,7 +12,7 @@ ms.collection:
 
 # What is Microsoft Copilot for SQL database in Microsoft Fabric (Preview)?
 
-**Applies to:** [!INCLUDE [fabric-sqldb](../../includes/applies-to-version/fabric-sqldb.md)]
+**Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
 Microsoft Copilot for SQL database in Microsoft Fabric is an AI tool designed to simplify the management and querying of SQL databases. Copilot offers intelligent code completion, quick actions, and natural language to SQL conversion. This article explores how Copilot can enhance productivity, accuracy, and learning for database administrators, developers, and data analysts.
 
@@ -34,7 +34,7 @@ Get started with Copilot for SQL database in Fabric:
 
 To enable Copilot for SQL database in Fabric, follow the steps below.
 
-[!INCLUDE [copilot-include](../../../../includes/copilot-include.md)]
+[!INCLUDE [copilot-include](../../includes/copilot-include.md)]
 
 ## Best practices for using Copilot for SQL database in Fabric
 
@@ -77,7 +77,7 @@ Here are the current limitations of Copilot for SQL database in Fabric:
 
 ## Related content
 
-- [Privacy, security, and responsible use of Copilot in Fabric](../../../fundamentals/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
 - [Frequently asked questions for Copilot for SQL database in Microsoft Fabric](copilot-faq.yml)
 - [How to: Use the Copilot Code Completion for SQL database in Fabric](copilot-code-completion.md)
 - [How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)

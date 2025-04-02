@@ -2,9 +2,9 @@
 title: "How To: Use the Copilot Explain and Fix Quick Action Features for SQL Database in Microsoft Fabric"
 description: Learn more about Microsoft Copilot Explain and Fix quick action features for SQL database in Fabric, to ask questions specific about your database.
 author: markingmyname
-ms.author:  maghan
+ms.author: maghan
 ms.reviewer: yoleichen, wiassaf
-ms.date: 3/31/2025
+ms.date: 04/02/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
@@ -12,7 +12,7 @@ ms.collection:
 
 # How to: Use the Copilot Explain and Fix quick action features for SQL database in Microsoft Fabric
 
-**Applies to:** [!INCLUDE [fabric-sqldb](../../includes/applies-to-version/fabric-sqldb.md)]
+**Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
 There are two AI-powered quick actions that are currently supported in Microsoft Copilot for SQL database in Microsoft Fabric: **Explain** and **Fix**.
 
@@ -22,13 +22,13 @@ Quick actions can accelerate productivity by helping you write and understand qu
 
 - The **Explain** quick action leaves a summary at the top of the query and in-line code comments throughout the query to describe what the query is doing.
 
-- The **Fix** quick action fixes errors in your query syntax or logic. After running a SQL query and being met with an error, you can fix your queries easily. Copilot will automatically take the SQL error message into context when fixing your query. Copilot will also leave a comment indicating where and how it has edited the T-SQL code.  
+- The **Fix** quick action fixes errors in your query syntax or logic. After running a SQL query and being met with an error, you can fix your queries easily. Copilot will automatically take the SQL error message into context when fixing your query. Copilot will also leave a comment indicating where and how it has edited the T-SQL code.
 
 Copilot uses information about your database schema, query tab contents, and execution results to give you relevant and useful feedback on your query.
 
 ## Prerequisites
 
-[!INCLUDE [copilot-include](../../../includes/copilot-include.md)]
+[!INCLUDE [copilot-include](../../includes/copilot-include.md)]
 
 ## Get started
 

@@ -2,9 +2,9 @@
 title: "How To: Use the Microsoft Copilot Chat Pane for SQL Database in Microsoft Fabric (Preview)"
 description: Learn more about Microsoft Copilot chat pane for SQL database in Microsoft Fabric, to ask questions specific about your database.
 author: markingmyname
-ms.author:  maghan
+ms.author: maghan
 ms.reviewer: yoleichen, wiassaf
-ms.date: 3/31/2025
+ms.date: 04/02/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
@@ -12,7 +12,7 @@ ms.collection:
 
 # How to: Use the Microsoft Copilot Chat Pane for SQL database in Microsoft Fabric (Preview)
 
-**Applies to:** [!INCLUDE [fabric-sqldb](../../includes/applies-to-version/fabric-sqldb.md)]
+**Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
 Microsoft Copilot for SQL database in Fabric includes a chat pane to interact with Copilot in natural language. In this interface, you can ask Copilot questions specific to your database or generally about SQL database. Depending on the question, Copilot responds with a generated SQL query or a natural language response.
 
@@ -33,7 +33,7 @@ The supported capabilities of interacting through chat include:
 
 ## Prerequisites
 
-[!INCLUDE [copilot-include](../../../includes/copilot-include.md)]
+[!INCLUDE [copilot-include](../../includes/copilot-include.md)]
 
 ## Get started
 
@@ -49,10 +49,10 @@ The supported capabilities of interacting through chat include:
 ## Regular usage of the chat pane
 
 - The more specifically you describe your goals in your chat panel entries, the more accurate the Copilot responses.
-- To clear your conversation, select the broom icon :::image type="content" border="true" source="../../../../data-engineering/media/copilot-notebooks-chat-pane/broom-icon.png" alt-text="Screenshot from the Fabric portal showing the Copilot clean up prompt."::: to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it ends.
-- Read our [Privacy, security, and responsible use of Copilot for SQL databases (preview)](../../../fundamentals/copilot-database-privacy-security.md) for details on data and algorithm use.
+- To clear your conversation, select the broom icon :::image type="content" source="../../data-engineering/media/copilot-chat-pane/broom-icon.png" border="true" alt-text="Screenshot from the Fabric portal showing the Copilot clean up prompt."::: to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it ends.
+- Read our [Privacy, security, and responsible use of Copilot for SQL databases (preview)](../../fundamentals/copilot-database-privacy-security.md) for details on data and algorithm use.
 
 ## Related content
 
 - [What is Copilot for SQL database in Microsoft Fabric?](copilot.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../../fundamentals/copilot-privacy-security.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
