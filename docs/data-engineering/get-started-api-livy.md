@@ -51,7 +51,7 @@ There are many Microsoft Entra scope permissions required to execute Livy jobs. 
     :::image type="content" source="media/livy-api/entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-API-permissions.png" :::
 
 > [!NOTE]
-> During public preview we will be adding a few additional granular scopes, and if you use this approach, when we add these additional scopes your Livy app will break. Please check this list as it will be updated with the additional scopes.
+> During public preview these scopes will change and we will be adding a few additional granular scopes.  Changes are highly likely to your app as we progress thru public preview and to GA. When these scope changes happen your Livy app may break. Please check this list as it will be updated with the additional scopes.
 
 Some customers want more granular permissions than the prior list. You could remove Item.ReadWrite.All and replacing with these more granular scope permissions:
 
