@@ -10,7 +10,7 @@ ms.date: 04/02/2025
 
 # How Copilot in Microsoft Fabric works
 
-Copilot in Microsoft Fabric is a generative AI assistant assistive technology that aims to enhance the data analytics experience in the Fabric platform. This article helps you understand how Copilot in Fabric works and provides some high-level guidance and considerations about how you might best use it.
+Copilot in Microsoft Fabric is a generative AI assistive technology that aims to enhance the data analytics experience in the Fabric platform. This article helps you understand how Copilot in Fabric works and provides some high-level guidance and considerations about how you might best use it.
 
 > [!NOTE]
 > Copilot's capabilities are evolving over time. If you plan to use Copilot, ensure that you keep up to date with the monthly updates to Fabric and any changes or announcements to the Copilot experiences.
@@ -87,7 +87,7 @@ Additionally, you can provide inputs in different services or applications:
 - **Power BI mobile app:** You can use Copilot in the Power BI mobile app if the report is in a supported workspace (or an app connected to that workspace) with Copilot enabled.
 
 > [!NOTE]
-> To use Copilot with Power BI Desktop, you must configure Power BI Desktop to use Copilot consumption from a supported workspace backed by Fabric capacity. Then you can use Copilot with semantic models published to any workspace, including PPU workspaces.
+> To use Copilot with Power BI Desktop, you must configure Power BI Desktop to use Copilot consumption from a supported workspace backed by Fabric capacity. Then you can use Copilot with semantic models published to any workspace, including Pro and PPU workspaces.
 
 While you can't alter the prompts that Copilot generates when you select a button with written prompts, you can ask questions and provide instructions using natural language. One of the most important ways to improve the results you get with Copilot is to write clear and descriptive prompts that accurately convey want you want to do.
 
@@ -173,7 +173,7 @@ All Copilot experiences are powered by the Azure OpenAI service.
 
 Copilot uses Azure OpenAI—not OpenAI's publicly available services—to process all data and return a response. As mentioned earlier, this response is produced by an *LLM*. LLMs are a specific approach to "narrow" AI that focus on using deep learning to find and reproduce patterns in unstructured data; specifically, text. Text in this context includes natural language, metadata, code, and any other semantically meaningful arrangement of characters.
 
-Copilot currently uses a combination of GPT models, including the Generative Pre-trained Transformer (GPT) series of models 3.5 (GPT-3.5), from OpenAI.
+Copilot currently uses a combination of GPT models, including the Generative Pre-trained Transformer (GPT) series of models from OpenAI.
 
 > [!NOTE]
 > You can't choose or change the models Copilot uses, including using other foundation models or your own models. Copilot in Fabric uses various models. It's also not possible for you to alter or configure the Azure OpenAI service to behave differently with Copilot in Fabric; this service is managed by Microsoft.
@@ -182,7 +182,7 @@ Copilot currently uses a combination of GPT models, including the Generative Pre
 
 The models used by Copilot in Fabric presently don't use any fine-tuning. The models instead rely on grounding data and meta-prompts to create more specific and useful outputs.
 
-Microsoft hosts the OpenAI models in Microsoft's Azure environment and the service doesn't interact with any public services by OpenAI (for example, ChatGPT or the public OpenAI APIs). Your data isn't used to train models and isn't available to other customers. For more information, see [Azure OpenAI](/azure/ai-services/openai/overview).
+Microsoft hosts the OpenAI models in Microsoft's Azure environment and the service doesn't interact with any public services by OpenAI (for example, ChatGPT or the public OpenAI APIs). Your data isn't used to train models and isn't available to other customers. For more information, see [Azure OpenAI Service](/azure/ai-services/openai/overview).
 
 #### Understand tokenization
 
@@ -219,7 +219,7 @@ It's important that you understand how an LLM in Azure OpenAI processes your dat
 > [!NOTE]
 > This article provides a simple, high-level overview of how the LLMs that Copilot uses (like GPTs) work. For technical details and a deeper understanding of how GPT models process input to produce a response, or about their architecture, read the research papers [*Attention Is All You Need*](https://arxiv.org/pdf/1706.03762v2) (2017) by Ashish Vaswani and others, and [*Language Models are Few-Shot Learners*](https://arxiv.org/abs/2005.14165) (2020) by Tom Brown and others.
 
-The purpose of Copilot (and LLMs in general) is to provide a context-appropriate, useful output, based on the input that a user provides and other relevant grounding data. An LLM does this by interpreting the meaning of tokens in a similar context, as seen in their training data. To get a meaningful semantic understanding of tokens, LLMs have been trained on massive datasets thought to [comprise both copyrighted and public domain information](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4963711). However, this training data is limited in terms of content freshness, quality, and scope, which creates limitations for LLMs and the tools that use them, such as Copilot. For more information about these limitations, see [understand the limitations of Copilot and LLMs](#understand-the-limitations-of-copilot-and-llms) later in this article.
+The purpose of Copilot (and LLMs in general) is to provide a context-appropriate, useful output, based on the input that a user provides and other relevant grounding data. An LLM does this by interpreting the meaning of tokens in a similar context, as seen in their training data. To get a meaningful semantic understanding of tokens, LLMs have been trained on massive datasets thought to [comprise both copyrighted and public domain information](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4963711). However, this training data is limited in terms of content freshness, quality, and scope, which creates limitations for LLMs and the tools that use them, such as Copilot. For more information about these limitations, see [Understand the limitations of Copilot and LLMs](#understand-the-limitations-of-copilot-and-llms) later in this article.
 
 The semantic meaning of a token is captured in a mathematical construct referred to as an [*embedding*](/dotnet/ai/conceptual/embeddings), which turns tokens into dense vectors of real numbers. In simpler terms, embeddings provide LLMs with the semantic meaning of a given token, based on the other tokens around it. This meaning depends on the LLM training data. Think of tokens like unique building blocks, while embeddings help an LLM know what block to use when.
 
@@ -328,7 +328,7 @@ To mitigate risks or challenges from LLM hallucinations in Copilot, consider the
 
 ## Privacy, security, and responsible AI
 
-Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE5cmFl). See [Privacy, security, and responsible use of Copilot in Fabric](copilot-privacy-security.md) for a detailed overview. See also [Data, privacy, and security for Azure OpenAI Service](https://learn.microsoft.com/legal/cognitive-services/openai/data-privacy?context=%2Fazure%2Fai-services%2Fopenai%2Fcontext%2Fcontext&tabs=azure-portal) for detailed information specific for Azure OpenAI.
+Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE5cmFl). See [Privacy, security, and responsible use of Copilot in Fabric](copilot-privacy-security.md) for a detailed overview. See also [Data, privacy, and security for Azure OpenAI Service](/legal/cognitive-services/openai/data-privacy?context=%2Fazure%2Fai-services%2Fopenai%2Fcontext%2Fcontext&tabs=azure-portal) for detailed information specific for Azure OpenAI.
 
 For an overview specifically for each Fabric workload, see the following articles:
 
@@ -367,11 +367,13 @@ Optimizing prompt tokens isn't likely to have a significant effect on your Copil
 Copilot performs various system optimizations to reduce input and output tokens. These optimizations depend on the Copilot experience that you're using. Examples of system optimizations include:
 
 - **Schema reduction:** Copilot doesn't send the entire schema of a semantic model or lakehouse table. Instead, it uses embeddings to determine which columns to send.
+
 - **Prompt augmentation:** When rewriting the prompt during preprocessing, Copilot tries to produce a final prompt that will return a more specific result.
 
 Additionally, there are various user optimizations that you can implement to limit what grounding data Copilot can see and use. These user optimizations depend on the item and experience that you're using. Some examples of user optimizations include:
 
 - **Hiding fields or marking tables as *private* in a semantic model:** Any hidden or private objects won't be considered by Copilot.
+
 - **Hiding report pages or visuals:** Similarly, any hidden report pages or visuals hidden behind a report bookmark are also not considered by Copilot.
 
 > [!TIP]
@@ -381,7 +383,7 @@ You have no visibility on the tokenization process, and you can only minimally i
 
 #### Copilot is a background operation that's smoothed
 
-Concurrent usage of Copilot in Fabric—when many individuals are using it at the same time—is handled by a process called *smoothing*. In Fabric, any operation classified as a [*background operation*](../enterprise/fabric-operations.md#background-operations) has its CU consumption divided over a 24-hour window, starting from the time of the operation to exactly 24 hours later. This is in contrast to [*interactive operations*](../enterprise/fabric-operations#interactive-operations), like semantic model queries from individuals using a Power BI report, which aren't smoothed.
+Concurrent usage of Copilot in Fabric—when many individuals are using it at the same time—is handled by a process called *smoothing*. In Fabric, any operation classified as a [*background operation*](../enterprise/fabric-operations.md#background-operations) has its CU consumption divided over a 24-hour window, starting from the time of the operation to exactly 24 hours later. This is in contrast to [*interactive operations*](../enterprise/fabric-operations.md#interactive-operations), like semantic model queries from individuals using a Power BI report, which aren't smoothed.
 
 > [!NOTE]
 > To simplify your understanding, background and interactive operations classify different things that happen in Fabric for billing purposes. They don't necessarily relate to whether an item or feature is *interactive for a user* or *happening in the background*, as their names might suggest.
@@ -414,7 +416,7 @@ Copilot consumes Fabric CUs, and even with smoothing, you might encounter situat
 
 An important way to ensure effective adoption of any tool is to equip users with sufficient mentoring and training, and to gradually roll out access as people complete such training. Effective training is a preventative measure to avoid high utilization and throttling preemptively, by educating users about how to use Copilot effectively and on what not to do.
 
-You can best control who can use Copilot in Fabric by creating an *allow list* of users with access to the feature from the Fabric tenant settings. This means that you enable Copilot in Fabric only for users who belong to specific security groups. If necessary, you might create separate security groups for each of the Fabric workloads where you can enable Copilot to obtain finer grain control over who can use which Copilot experiences. For more information about creating security groups, see [Create, edit, or delete a security group](/microsoft-365/admin/email/create-edit-or-delete-a-security-group).
+You can best control who can use Copilot in Fabric by creating an *allowlist* of users with access to the feature from the Fabric tenant settings. This means that you enable Copilot in Fabric only for users who belong to specific security groups. If necessary, you might create separate security groups for each of the Fabric workloads where you can enable Copilot to obtain finer grain control over who can use which Copilot experiences. For more information about creating security groups, see [Create, edit, or delete a security group](/microsoft-365/admin/email/create-edit-or-delete-a-security-group).
 
 Once you add specific security groups to the Copilot tenant settings, you can put together onboarding training for users. A Copilot training course should cover basic topics, such as the following.
 
