@@ -1,7 +1,7 @@
 ---
 title: Known issue - The Data Warehouse Object Explorer doesn't support case-sensitive object names
 description: A known issue is posted where the Data Warehouse Object Explorer doesn't support case-sensitive object names
-author: kfollis
+author: jessicammoss
 ms.author: anirmale
 ms.topic: troubleshooting 
 ms.date: 07/10/2023

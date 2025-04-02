@@ -17,4 +17,3 @@ ms.date: 02/26/2025
 | Large                | 26          | 5250-6000                         |
 | Extra large          | 34          | 7000-8000                         |
 | Extra extra large    | 50          | 10500-12000                       |
-| Custom               | 51          | 14680-3666330                     |

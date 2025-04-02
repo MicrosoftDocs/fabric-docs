@@ -1,7 +1,7 @@
 ---
 title: Known issue - Line chart value-axis zoom sliders don't work with markers enabled
 description: A known issue is posted where line chart value-axis zoom sliders don't work with markers enabled.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/21/2025

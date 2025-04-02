@@ -1,10 +1,10 @@
 ---
 title: Fabric known issues
 description: Identify issues that are affecting Microsoft Fabric.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 03/24/2025
+ms.date: 03/31/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,12 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1078  | Data Factory | [Can't install or open on-premises data gateway after Windows update](./known-issue-1078-not-install-open-on-premises-data-gateway-windows-update.md) | March 31, 2025 |
+|  1077  | Power BI | [Failure to scale AAS server or add admins through Azure portal](./known-issue-1077-failure-scale-azure-analysis-services-add-admins.md) | March 31, 2025 |
+|  1076  | Real-Time Intelligence | [Eventstream sample data sources created from Real-Time hub are inactive](./known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md) | March 31, 2025 |
+|  1075  | Data Factory | [Multitasking for Dataflow Gen2 with CI/CD was inadvertently enabled](./known-issue-1075-multitasking-dataflow-gen2-ci-cd-enabled.md) | March 31, 2025 |
+|  1067  | Data Engineering | [Environment REST API updates might cause your workflow to break](./known-issue-1067-environment-rest-api-updates-workflow-break.md) | March 26, 2025 |
+|  1025  | Data Engineering | [Environment Git integration imports for libraries don't work](./known-issue-1025-environment-git-integration-imports-libraries-not-work.md) | March 26, 2025 |
 |  1069  | Data Warehouse | [SQL analytics endpoint sync failure when columnMapping is enabled](./known-issue-1069-sql-analytics-endpoint-sync-failure-column-mapping-enabled.md) | March 24, 2025 |
 |  1063  | Data Factory | [Pipeline activities fail with Dynamics or Dataverse connections through OPDG](./known-issue-1063-pipeline-activities-fail-dynamics-dataverse-connections-opdg.md) | March 24, 2025 |
 |  1062  | Administration & Management | [Workspace identity tagged as preview for ADLS Gen2 connections](./known-issue-1062-workspace-identity-tagged-preview-adls-gen2-connections.md) | March 21, 2025 |
@@ -58,7 +64,6 @@ Select the **Title** to view more information about that specific known issue.
 |  965  | Databases | [SQL database creation fails to create child items when item with same name exists](./known-issue-965-sql-database-creation-fails-create-child-items-same-name.md) | December 10, 2024 |
 |  957  | Data Factory | [Creation failure for Copy job item in empty workspace](./known-issue-957-creation-failure-copy-job-item-empty-workspace.md) | December 5, 2024 |
 |  954  | Data Factory | [Create, configure, or delete a mirror fails](./known-issue-954-create-configure-delete-mirror-fails.md) | December 2, 2024 |
-|  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](./known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 |
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](./known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
 |  923  | Power BI | [Tenant migration requests stopped](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](./known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
@@ -93,6 +98,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](./known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 | Fixed: March 31, 2025 |
 |  897  | OneLake | [OneLake Shared Access Signature (SAS) can't read cross-region shortcuts](./known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md) | October 25, 2024 | Fixed: March 24, 2025 |
 |  1070  | Power BI  | [Virtual network data gateway doesn't start certain regions](./known-issue-1070-virtual-network-data-gateway-not-start-certain-regions.md) | March 21, 2025 | Fixed: March 21, 2025 |
 |  968  | Power BI  | [Export data option is disabled for Q&A visual in the service](./known-issue-968-export-data-option-disabled-qa-visual.md) | December 10, 2024 | Fixed: March 21, 2025 |
@@ -101,7 +107,7 @@ Select the **Title** to view more information about that specific known issue. K
 |  895  | OneLake | [Dataverse shortcut creation and read fails when organization is moved](./known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md) | October 23, 2024 | Fixed: March 21, 2025 |
 |  891  | Data Warehouse | [Data warehouse tables aren't accessible or updatable](./known-issue-891-warehouse-tables-not-accessible-updatable.md) | October 17, 2024 | Fixed: March 21, 2025 |
 |  872  | Data Warehouse | [Data warehouses don't show button friendly names](./known-issue-872-data-warehouses-not-show-button-friendly-names.md) | October 3, 2024 | Fixed: March 21, 2025 |
-|  844  | Power BI | [Intermittent refresh failure through on-premises data gateway](./known-issue-844-intermittent-refresh-failure-gateway.md) | September 25, 2024 | Fixed: March 21, 2025 |
+|  844  | Power BI | [Intermittent refresh failure through on-premises data gateway](./known-issue-844-intermittent-refresh-failure-gateway.md) | September 25, 2024 | Removed: March 21, 2025 |
 |  842  | Data Warehouse | [Data warehouse exports using deployment pipelines or git fail](./known-issue-842-warehouse-exports-pipelines-fail.md) | September 23, 2024 | Fixed: March 21, 2025 |
 |  810  | Data Warehouse | [Inserting nulls into Data Warehouse tables fail with incorrect error message](./known-issue-810-inserting-nulls-tables-fail-incorrect-error.md) | August 16, 2024 | Fixed: March 21, 2025 |
 |  1023  | Data Factory | [Preview destination data on a pipeline's copy activity fails](./known-issue-1023-preview-destination-data-pipeline-copy-activity-fails.md) | February 14, 2025 | Fixed: March 14, 2025 |
@@ -119,7 +125,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  769  | Data Factory | [Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines](./known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md) | July 2, 2024 | Fixed: February 14, 2025 |
 |  765  | Data Factory | [Dataflows Gen2 staging warehouse doesn't work in deployment pipelines](./known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md) | July 2, 2024 | Fixed: February 14, 2025 |
 |  591  | Data Factory | [Type mismatch when writing decimals and dates to lakehouse using a dataflow](./known-issue-591-type-mismatch-lakehouse-using-dataflow.md) | February 16, 2024 | Fixed: February 14, 2025 |
-|  902  | Power BI | [INFO.VIEW.MEASURES() in calculated table might cause errors](./known-issue-902-info-view-measures-calculated-table-cause-errors.md) | October 31, 2024 | Fixed: February 10, 2025 |
 
 ## Related content
 
