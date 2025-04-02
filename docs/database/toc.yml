@@ -17,15 +17,15 @@ items:
   - name: Copilot
     items:
     - name: What is Copilot for SQL database? 
-      href: database/copilot.md
+      href: copilot/copilot.md
     - name: Chat pane
-      href: database/copilot-chat-pane.md
+      href: copilot/copilot-chat-pane.md
     - name: Code completion
-      href: database/copilot-code-completion.md
+      href: copilot/copilot-code-completion.md
     - name: Quick actions
-      href: database/copilot-quick-actions.md
+      href: copilot/copilot-quick-actions.md
     - name: FAQ
-      href: database/copilot-faq.yml
+      href: copilot/copilot-faq.yml
   - name: Get started
     items: 
     - name: Connect to your SQL database
