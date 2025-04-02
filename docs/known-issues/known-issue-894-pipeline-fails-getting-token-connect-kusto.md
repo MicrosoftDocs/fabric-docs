@@ -1,7 +1,7 @@
 ---
 title: Known issue - Pipeline fails when getting a token to connect to Kusto
 description: A known issue is posted where pipeline fails when getting a token to connect to Kusto.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 10/25/2024
