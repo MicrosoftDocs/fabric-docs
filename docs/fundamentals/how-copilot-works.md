@@ -37,8 +37,8 @@ The diagram consists of the following parts and processes:
 | **3** | Copilot handles preprocessing and postprocessing of user inputs and large language model (LLM) responses, respectively. Certain specific steps done during preprocessing and postprocessing depend on which Copilot experience an individual is using. Copilot must be enabled by a Fabric administrator in the tenant settings to use it. |
 | **4** | During preprocessing, Copilot performs grounding to retrieve additional contextual information to improve the specificity and usefulness of the eventual LLM response. Grounding data might include metadata (such as the schema from a lakehouse or semantic model) or data points from items in a workspace, or the chat history from the current Copilot session. Copilot only retrieves grounding data that a user has access to. |
 | **5** | Preprocessing results in the final inputs: a final prompt and grounding data. Which data is sent depends on the specific Copilot experience and what the user is asking for. |
-| **6** | Copilot sends the input to the Azure OpenAI service. This service is managed by Microsoft and isn't configurable by the user. Azure OpenAI doesn't train models with your data. If Azure OpenAI isn't available in your geographical area and you've enabled the tenant setting [*Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*](copilot-fabric-overview.md#available-regions), then Copilot might send your data outside of these geographical areas. |
-| **7** | Azure OpenAI hosts LLMs like the GPT series of models. Azure OpenAI doesn't use the public services or APIs of OpenAI, and OpenAI doesn't have access to your data. These LLMs tokenize the input and use embeddings from their training data to process the inputs into a response. LLMs are limited in the scope and scale of their training data.<br><br>Azure OpenAI contains configuration that determines how the LLM processes the input and which response it returns. It's not possible for customers to view or change this configuration. The call to the OpenAI service is done via Azure, and not over the public internet. |
+| **6** | Copilot sends the input to the Azure OpenAI Service. This service is managed by Microsoft and isn't configurable by the user. Azure OpenAI doesn't train models with your data. If Azure OpenAI isn't available in your geographical area and you've enabled the tenant setting [*Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance), then Copilot might send your data outside of these geographical areas. |
+| **7** | Azure OpenAI hosts LLMs like the GPT series of models. Azure OpenAI doesn't use the public services or APIs of OpenAI, and OpenAI doesn't have access to your data. These LLMs tokenize the input and use embeddings from their training data to process the inputs into a response. LLMs are limited in the scope and scale of their training data.<br><br>Azure OpenAI contains configuration that determines how the LLM processes the input and which response it returns. It's not possible for customers to view or change this configuration. The call to the OpenAI Service is done via Azure, and not over the public internet. |
 | **8** | The LLM response is sent from Azure OpenAI to Copilot in Fabric. This response comprises text, which might be natural language, code, or metadata. The response might include inaccurate or low-quality information. It's also non-deterministic, meaning that a different response might be returned for the same input. |
 | **9** | Copilot postprocesses the LLM response. Postprocessing includes filtering for responsible AI, but also involves handling the LLM response and producing the final Copilot output. The specific steps taken during postprocessing depend on the Copilot experience an individual use. |
 | **10** | Copilot returns the final output to the user. The user checks the output before use, as the output contains no indication of reliability, accuracy, or trustworthiness. |
@@ -53,14 +53,14 @@ The following sections describe several examples of how a user can provide input
 
 #### Input via the Copilot chat panel
 
-With many Copilot experiences in Fabric, you can extend a Copilot chat panel to interact with Copilot using natural language, like you would with a chatbot or messaging service. In the Copilot chat panel, you can write a natural language prompt describing the action that you want Copilot to take. Alternatively, the Copilot chat panel might contain buttons with suggested prompts that you can select. Interacting with these buttons causes Copilot to generate a corresponding prompt.
+With many Copilot experiences in Fabric, you can extend a Copilot chat panel to interact with Copilot using natural language like you would with a chatbot or messaging service. In the Copilot chat panel, you can write a natural language prompt describing the action that you want Copilot to take. Alternatively, the Copilot chat panel might contain buttons with suggested prompts that you can select. Interacting with these buttons causes Copilot to generate a corresponding prompt.
 
 The following image shows an example of using the Copilot chat panel to ask a data question about a Power BI report.
 
 :::image type="content" source="media/how-copilot-works/copilot-chat-panel-prompt.svg" alt-text="Screenshot showing user prompt and response in Copilot chat panel.":::
 
 > [!NOTE]
-> If you use the  Microsoft Edgebrowser, you might also have access to Copilot there. [Copilot in Edge](/copilot/edge) can also open a Copilot chat panel (or sidebar) in your browser. The Copilot in Edge can't interact with or use any of the Copilot experiences in Fabric. While both Copilots have a similar user experience, Copilot in Edge is completely separate from Copilot in Fabric.
+> If you use the Microsoft Edge browser, you might also have access to Copilot there. [Copilot in Edge](/copilot/edge) can also open a Copilot chat panel (or sidebar) in your browser. The Copilot in Edge can't interact with or use any of the Copilot experiences in Fabric. While both Copilots have a similar user experience, Copilot in Edge is completely separate from Copilot in Fabric.
 
 #### Input via context-dependent pop-up windows
 
@@ -132,12 +132,12 @@ Once a user submits their input, Copilot proceeds to the next step.
 
 ### Step 2: Copilot preprocesses the input
 
-Before submitting a prompt to the Azure OpenAI service, Copilot *preprocesses* it. Preprocessing constitutes all actions that are handled by Copilot between when it receives the input and when this input is processed in the Azure OpenAI service. Preprocessing is necessary to ensure that Copilot's output is specific and appropriate to your instructions or questions.
+Before submitting a prompt to the Azure OpenAI Service, Copilot *preprocesses* it. Preprocessing constitutes all actions that are handled by Copilot between when it receives the input and when this input is processed in the Azure OpenAI Service. Preprocessing is necessary to ensure that Copilot's output is specific and appropriate to your instructions or questions.
 
 You can't affect what preprocessing is done by Copilot. However, it's important to understand preprocessing so that you know what data Copilot uses and how it gets it. This is pertinent to understanding the cost of Copilot in Fabric, and when you troubleshoot why it produces an incorrect or unexpected result.
 
 > [!TIP]
-> If In certain experiences, you can also make changes to items so that their grounding data is better structured for Copilot to use. An example is performing linguistic modeling in a semantic model, or adding synonyms and descriptions to semantic model measures and columns.
+> In certain experiences, you can also make changes to items so that their grounding data is better structured for Copilot to use. An example is performing linguistic modeling in a semantic model, or adding synonyms and descriptions to semantic model measures and columns.
 
 The following diagram depicts what happens during preprocessing by Copilot in Fabric.
 
@@ -155,28 +155,28 @@ After receiving user input, Copilot performs preprocessing, which involves the f
 
 - **Caching:** In certain scenarios, Copilot caches your prompt and the grounding data for 48 hours. Caching the prompt ensures that repeated prompts return the same results while cached, that they return these results faster, and that you aren’t consuming Fabric capacity just for repeating a prompt in the same context. Caching occurs in two different places:
   - The browser cache of the user.
-  - The first back-end cache in the home region of the tenant, where it's stored for auditing purposes. No data is cached in the Azure OpenAI service or the location of the GPUs. For more information about caching in Fabric, refer to the [Microsoft Fabric security whitepaper](../security/white-paper-landing-page.md).
+  - The first back-end cache in the home region of the tenant, where it's stored for auditing purposes. No data is cached in the Azure OpenAI Service or the location of the GPUs. For more information about caching in Fabric, refer to the [Microsoft Fabric security whitepaper](../security/white-paper-landing-page.md).
 
-- **Sending input to Azure OpenAI:** Copilot sends the augmented prompt and the relevant grounding data to the Azure OpenAI service.
+- **Sending input to Azure OpenAI:** Copilot sends the augmented prompt and the relevant grounding data to the Azure OpenAI Service.
 
 When Copilot performs grounding, it only collects information from data or items that a user can access normally. Copilot respects workspace roles, item permissions, and data security. Copilot also can't access data from other users; interactions with Copilot are specific to each individual user.
 
 The data that Copilot collects during the grounding process and what Azure OpenAI processes depends on the specific Copilot experience that you use. For more information, see [What data does Copilot use and how is it processed?](copilot-privacy-security.md#what-data-does-copilot-use-and-how-is-it-processed).
 
-After the preprocessing is finished and Copilot has sent the input to Azure OpenAI, the Azure OpenAI service can process that input to produce a response and output that's sent back to Copilot.
+After the preprocessing is finished and Copilot has sent the input to Azure OpenAI, the Azure OpenAI Service can process that input to produce a response and output that's sent back to Copilot.
 
 ### Step 3: Azure OpenAI processes the prompt and generates an output
 
-All Copilot experiences are powered by the Azure OpenAI service.
+All Copilot experiences are powered by the Azure OpenAI Service.
 
-#### Understand the Azure OpenAI service
+#### Understand the Azure OpenAI Service
 
 Copilot uses Azure OpenAI—not OpenAI's publicly available services—to process all data and return a response. As mentioned earlier, this response is produced by an *LLM*. LLMs are a specific approach to "narrow" AI that focus on using deep learning to find and reproduce patterns in unstructured data; specifically, text. Text in this context includes natural language, metadata, code, and any other semantically meaningful arrangement of characters.
 
 Copilot currently uses a combination of GPT models, including the Generative Pre-trained Transformer (GPT) series of models from OpenAI.
 
 > [!NOTE]
-> You can't choose or change the models Copilot uses, including using other foundation models or your own models. Copilot in Fabric uses various models. It's also not possible for you to alter or configure the Azure OpenAI service to behave differently with Copilot in Fabric; this service is managed by Microsoft.
+> You can't choose or change the models Copilot uses, including using other foundation models or your own models. Copilot in Fabric uses various models. It's also not possible for you to alter or configure the Azure OpenAI Service to behave differently with Copilot in Fabric; this service is managed by Microsoft.
 >
 > The models used by Copilot in Fabric presently don't use any fine-tuning. The models instead rely on grounding data and meta-prompts to create more specific and useful outputs.
 
@@ -196,7 +196,7 @@ To better understand what a token is and how a prompt becomes tokens, consider t
 
 In the example, each differently colored highlight indicates a single token. As mentioned previously, Azure OpenAI uses *subword* tokenization, so a token isn't a word, but it also isn't a character, or a fixed number of characters. For instance *"report"* is a single token, but *"."* is, too.
 
-To reiterate, you should understand what a token is because [the cost of Copilot (or its Fabric capacity consumption rate) is determined by tokens](copilot-fabric-consumption.md#consumption-rate). Therefore, understanding what a token is and how input and output tokens are created will help you to understand and anticipate how Copilot usage results in consumption of Fabric CUs. For more information about the [cost of Copilot in Fabric](#cost-of-copilot-in-fabric), see the appropriate section later in this article.
+To reiterate, you should understand what a token is because [the cost of Copilot (or its Fabric capacity consumption rate) is determined by tokens](copilot-fabric-consumption.md#consumption-rate). Therefore, understanding what a token is and how input and output tokens are created helps you understand and anticipate how Copilot usage results in consumption of Fabric CUs. For more information about the [cost of Copilot in Fabric](#cost-of-copilot-in-fabric), see the appropriate section later in this article.
 
 Copilot in Fabric uses both input and output tokens, as depicted in the following diagram.
 
@@ -252,7 +252,7 @@ It's important to keep the following considerations in mind when you use Copilot
 
 For more information, see [Security guidance for LLMs](/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/security/security-recommend).
 
-Once the Azure OpenAI service processes the input and produces a response, it returns this response as an output to Copilot.
+Once the Azure OpenAI Service processes the input and produces a response, it returns this response as an output to Copilot.
 
 ### Step 4: Copilot performs postprocessing on the output
 
@@ -356,7 +356,7 @@ Copilot consumes your available Fabric CUs, also commonly referred to as *capaci
 - *Input tokens:* Tokenization of your written prompt and grounding data.
 - *Output tokens:* Tokenization of the Azure OpenAI response, based on the input. Output tokens are [three times more expensive than input tokens](copilot-fabric-consumption.md#consumption-rate).
 
-You can limit the amount of input tokens by using shorter prompts, but you can't control what grounding data Copilot uses for preprocessing, or the amount of output tokens that the LLM in Azure OpenAI returns. For instance, you can expect that the [report creation experience](/power-bi/create-reports/copilot-create-desktop-report) for Copilot in Power BI will have a high consumption rate, since it might use grounding data (like your model schema) and might produce a verbose output (report metadata).
+You can limit the number of input tokens by using shorter prompts, but you can't control what grounding data Copilot uses for preprocessing, or the number of output tokens that the LLM in Azure OpenAI returns. For instance, you can expect that the [report creation experience](/power-bi/create-reports/copilot-create-desktop-report) for Copilot in Power BI will have a high consumption rate, since it might use grounding data (like your model schema) and might produce a verbose output (report metadata).
 
 #### Inputs, outputs, and grounding data are converted to tokens
 
@@ -402,8 +402,8 @@ Fabric administrators can monitor how much Copilot consumption is occurring in y
 
 > [!TIP]
 > Rather than considering abstract calculations like tokens to CUs, we recommend that you focus on the *percentage of your Fabric capacity* that you've utilized. This metric is the simplest to understand and act upon, because once you reach 100% utilization, you can experience [throttling](../enterprise/throttling.md).
-
-You can find this information on the [timepoint page of the app](../enterprise/metrics-app-timepoint-page.md).
+>
+> You can find this information on the [timepoint page of the app](../enterprise/metrics-app-timepoint-page.md).
 
 > [!NOTE]
 > When you pause a capacity, the smoothed usage is compacted into the timepoint in which the capacity becomes paused. This compaction of the smoothed consumption results in a peak of observed consumption, which doesn't reflect your actual usage. This peak will often produce notifications and warnings that you've exhausted your available Fabric capacity, but these are false positives.
@@ -423,7 +423,7 @@ Once you add specific security groups to the Copilot tenant settings, you can pu
 > [!TIP]
 > Consider creating an overview training for basic concepts about LLMs and generative AI, but then create workload-specific training for users. Not every individual needs to learn about every Fabric workload if it isn't necessarily relevant to them.
 
-- **LLMs:** Explain the basics of what an LLM is and how it works. You shouldn't go into technical details, but you should explain concepts like prompts, grounding, and tokens. You can also explain how LLMs can get meaning from input and produce context-appropriate responses because of their training data. Teaching this to users will help them understand how the technology works and what it can and can't do.
+- **LLMs:** Explain the basics of what an LLM is and how it works. You shouldn't go into technical details, but you should explain concepts like prompts, grounding, and tokens. You can also explain how LLMs can get meaning from input and produce context-appropriate responses because of their training data. Teaching this to users helps them understand how the technology works and what it can and can't do.
 
 - **What Copilot and other generative AI tools are used for:** You should explain that Copilot isn't an autonomous agent and isn't intended to replace humans in their tasks, but meant to augment individuals to potentially perform their current tasks better and faster. You should also emphasize cases where Copilot isn't suitable, using specific examples, and explain what other tools and information individuals might use to address their problems in those scenarios.
 
@@ -454,7 +454,7 @@ In scenarios where you expect a high usage of Copilot in Fabric (such as in larg
 
 The following diagram depicts an example of a split capacity strategy to isolate Copilot consumption with experiences like those in Copilot in Power BI Desktop.
 
-:::image type="content" source="media/how-copilot-works/copilot-fabric-consumption-smoothing.svg" alt-text="Diagram depicting strategy to manage Copilot consumption by delegating a separate Fabric Copilot capacity for Copilot consumption.":::
+:::image type="content" source="media/how-copilot-works/copilot-split-capacity-strategy.svg" alt-text="Diagram depicting strategy to manage Copilot consumption by delegating a separate Fabric Copilot capacity for Copilot consumption.":::
 
 You can also use a split-capacity solution by [assigning Copilot consumption to a separate capacity](https://www.microsoft.com/en-us/microsoft-fabric/blog/2024/11/19/accelerate-app-innovation-with-an-ai-powered-data-platform/#:~:text=Fabric%20billing%20and%20consumption%20updates). Assigning Copilot consumption to a separate capacity ensures that high utilization of Copilot doesn't impact your other Fabric workloads and the business-critical processes that depend on them. Of course, using any split capacity strategy requires that you already have two or more F64 or higher SKUs. As such, this strategy might not be manageable for smaller organizations or organizations with a limited budget to spend on their data platforms.
 
