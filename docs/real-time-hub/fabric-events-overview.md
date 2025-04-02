@@ -1,5 +1,5 @@
 ---
-title: Introduction to Fabric and Azure events
+title: Introduction to Azure and Fabric events
 description: This article describes what Fabric and Azure events in Real-Time hub are and how it can be used in near-realtime scenarios.
 author: robece
 ms.author: robece
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 02/27/2025
 ---
 
-# Introduction to Fabric and Azure events
+# Introduction to Azure and Fabric events
 This overview provides a comprehensive understanding of Fabric events and their capabilities.
 
 Fabric events allow users to subscribe to events produced by Fabric and Azure resources. Fabric events allow downstream processes that have subscribed to these events to be triggered in near real-time, providing an efficient communication model at high scale and higher fault tolerance.
