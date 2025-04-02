@@ -52,7 +52,7 @@ Complete the following steps to create a new Copy job to ingest data from a data
 1. Choose a copy mode: Full data copy or Incremental copy. In this example, select **Incremental copy** and specify an Incremental column for each table to track changes. Learn more on [Incremental column](what-is-copy-job.md#incremental-column). Use the preview button to help select the right Incremental column.
 
    > [!NOTE]
-   > - When you choose incremental copy mode, Copy Job initially performs a full load and subsequently carries out incremental copies in subsequent runs.
+   > When you choose incremental copy mode, Copy Job initially performs a full load and subsequently carries out incremental copies in subsequent runs.
 
    :::image type="content" source="media/copy-job/copy-job-mode.png" lightbox="media/copy-job/copy-job-mode.png" alt-text="Screenshot showing where to select the Copy job mode.":::
 
@@ -83,11 +83,11 @@ Complete the following steps to create a new Copy job to ingest files from a sto
  
 1. Choose the data stores to copy data from. In this example, choose **Azure Data Lake Storage Gen2**. 
 
-   :::image type="content" source="media/copy-job/choose-data-source1.png" lightbox="media/copy-job/choose-data-source1.png" alt-text="Screenshot1 showing where to choose a data source for the Copy job.":::
+   :::image type="content" source="media/copy-job/choose-data-source1.png" lightbox="media/copy-job/choose-data-source1.png" alt-text="Screenshot showing where to choose a storage source for the Copy job.":::
 
 1. Enter your **storage url** and **credentials** to connect to Azure Data Lake Storage Gen2. You can copy data securely within a VNET environment using on-premises or VNET gateway. 
 
-   :::image type="content" source="media/copy-job/enter-credentials-data-source1.png" lightbox="media/copy-job/enter-credentials-data-source1.png" alt-text="Screenshot1 showing where to enter credentials.":::
+   :::image type="content" source="media/copy-job/enter-credentials-data-source1.png" lightbox="media/copy-job/enter-credentials-data-source1.png" alt-text="Screenshot showing where to enter credentials for storage store.":::
 
 1. Select the **folder** or **files** to copy. You can choose to copy an entire folder with all its files or a single file. Choose **Schema agnostic (binary copy)** if you want to copy files to another storage without parsing the schema, which significantly improves copy performance.
 
@@ -95,7 +95,7 @@ Complete the following steps to create a new Copy job to ingest files from a sto
 
 1. Select your destination store. In this example, choose **Lakehouse**.
 
-   :::image type="content" source="media/copy-job/select-destination-store1.png" lightbox="media/copy-job/select-destination-store1.png" alt-text="Screenshot1 showing where to select the destination store for the Copy job.":::
+   :::image type="content" source="media/copy-job/select-destination-store1.png" lightbox="media/copy-job/select-destination-store1.png" alt-text="Screenshot showing where to select the storage destination store for the Copy job.":::
 
 1. Select the **Folder path** in your destination storage. Choose **Preserve Hierarchy** to maintain the same folder structure as the source, or **Flatten Hierarchy** to place all files in a single folder.
 
@@ -103,11 +103,11 @@ Complete the following steps to create a new Copy job to ingest files from a sto
 
 1. Choose a copy mode: Full data copy or Incremental copy. In this example, select **Incremental copy**. This means Copy Job will first perform a full load to copy all files, and then only copy new or updated files in subsequent runs.
 
-   :::image type="content" source="media/copy-job/copy-job-mode1.png" lightbox="media/copy-job/copy-job-mode1.png" alt-text="Screenshot1 showing where to select the Copy job mode.":::
+   :::image type="content" source="media/copy-job/copy-job-mode1.png" lightbox="media/copy-job/copy-job-mode1.png" alt-text="Screenshot showing where to select the Copy job mode for storage.":::
 
 1. Review the job summary, set the run option to on schedule, and click **Save + Run**.
 
-   :::image type="content" source="media/copy-job/review-save1.png" lightbox="media/copy-job/review-save1.png" alt-text="Screenshot1 showing where to review and save the newly created Copy job.":::
+   :::image type="content" source="media/copy-job/review-save1.png" lightbox="media/copy-job/review-save1.png" alt-text="Screenshot showing where to review and save the newly created Copy job for storage.":::
 
 1. Your copy job will start immediately. The first run will perform a full load to copy all files, and then only copy new or updated files in subsequent runs.
   
@@ -115,11 +115,11 @@ Complete the following steps to create a new Copy job to ingest files from a sto
   
    The inline monitoring panel clearly displays key metrics from the latest run in real time, including files counts and copy duration, etc. Learn more in [How to monitor a Copy job](monitor-copy-job.md)
 
-   :::image type="content" source="media/copy-job/monitor-run-history1.png" lightbox="media/copy-job/monitor-run-history1.png" alt-text="Screenshot1 showing the Copy job panel where you can monitor run history.":::
+   :::image type="content" source="media/copy-job/monitor-run-history1.png" lightbox="media/copy-job/monitor-run-history1.png" alt-text="Screenshot showing the Copy job panel where you can monitor run history for moving data between storage.":::
 
 1. You can easily edit your Copy Job, including updating the folders and files to be copied, configuring the schedule, and more. 
 
-    :::image type="content" source="media/copy-job/edit-copy-job1.png" lightbox="media/copy-job/edit-copy-job1.png" alt-text="Screenshot1 showing how to edit Copy job.":::
+    :::image type="content" source="media/copy-job/edit-copy-job1.png" lightbox="media/copy-job/edit-copy-job1.png" alt-text="Screenshot showing how to edit Copy job for storage store.":::
 
 
 ## Known limitations
