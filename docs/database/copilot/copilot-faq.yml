@@ -22,7 +22,7 @@ sections:
     questions:
     - question: "Where in SQL database in Fabric can I find Copilot?"
       answer: |
-        In the [SQL Query editor](query-editor.md), you can find Copilot at various locations:
+        In the [SQL Query editor](../sql/query-editor.md), you can find Copilot at various locations:
         
         - **Chat Pane**: Use the chat pane to ask questions to Copilot through natural language. Copilot responds with a generated SQL query or natural language based on the question asked.
           - [How to: Use the Copilot Chat Pane for SQL database](copilot-chat-pane.md)
