@@ -62,7 +62,9 @@ With these alerts, I can ensure that I'm always aware of critical updates and ca
 ## Related content
 
 For more information, see the following articles:
+- [Build event-driven workflows with Azure and Fabric Events](https://blog.fabric.microsoft.com/blog/build-event-driven-workflows-with-azure-and-fabric-events-now-generally-available)
 - [Explore Fabric Job events](explore-fabric-job-events.md).</br>
 - [Explore Fabric OneLake events](explore-fabric-onelake-events.md).</br>
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md).</br>
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md).
+
