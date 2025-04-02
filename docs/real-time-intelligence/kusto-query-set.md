@@ -13,7 +13,7 @@ ms.search.form: KQL Queryset
 
 In this article, you learn how to use a KQL queryset. The KQL Queryset is the item used to run queries, view, and customize query results on data from different data sources, such as Eventhouse, KQL database, and more.
 
-You can also query your Azure Monitor [Log Analytics](/azure/azure-monitor/logs/data-platform-logs) workspace or [Application Insights](/azure/azure-monitor/app/app-insights-overview) resource using KQL queryset tools and in a cross-service query.
+You can also use a KQL queryset to perform cross-service queries with data from an Azure Monitor [Log Analytics workspace](/azure/azure-monitor/logs/data-platform-logs) or from an [Application Insights resource](/azure/azure-monitor/app/app-insights-overview).
 
 The KQL Queryset uses the Kusto Query Language for creating queries, and also supports many SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
@@ -24,14 +24,14 @@ The KQL Queryset uses the Kusto Query Language for creating queries, and also su
 
 ## Select a data source
 
-Queries run in the context of a data source. You can change the associated data source at any point, and retain the queries saved in the query editor. You can associate your KQL queryset with multiple data sources of different types, including a KQL database or a data source from an Azure Data Explorer cluster.
+Queries run in the context of a data source. You can change the associated data source at any point, and retain the queries saved in the query editor. You can associate your KQL queryset with multiple data sources of different types, including a KQL database, Azure Data Explorer cluster, or Azure Monitor.
 
 Select the tab that corresponds with your desired data source type.
 
-## [Eventhouse/KQL Database](#tab/kql-database)
+## [Eventhouse / KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
+1. In the **Explorer** pane, under **Datasources**, expand the **more actions** menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
@@ -41,7 +41,7 @@ Select the tab that corresponds with your desired data source type.
 ## [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
+1. In the **Explorer** pane, under **Datasources**, expand the **more actions** menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
 
@@ -58,7 +58,7 @@ Select the tab that corresponds with your desired data source type.
 ## [Azure Monitor](#tab/azure-monitor)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the pane on the left-hand side of the query page, under **Explorer** and the search bar, use the database switcher to expand the data source connections menu.
+1. In the **Explorer** pane, under **Datasources**, expand the **more actions** menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
