@@ -1,14 +1,15 @@
 ---
 title: "How To: Use Copilot Code Completion for Fabric Data Warehouse"
 description: Learn more about Microsoft Copilot code completion for Fabric Data Warehouse, to provide intelligent autocomplete-style code suggestions.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: salilkanade, jacinda-eng
-ms.date: 02/20/2025
+author: markingmyname
+ms.author: maghan
+ms.reviewer: salilkanade, wiassaf
+ms.date: 03/31/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
 ---
+
 # How to: Use Copilot code completion for Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
@@ -33,9 +34,12 @@ Code completion enhances your productivity and workflow in Copilot for Data Ware
 ## Get started
 
 1. Verify the **Show Copilot completions** setting in enabled in your warehouse settings.
-   - You can also check the setting's status through the status bar at the bottom of the query editor. 
-      :::image type="content" source="media/copilot-code-completion/copilot-setting-status-bar.jpg" alt-text="Screenshot of the Copilot in-line completion status bar.":::
-   - If not enabled, then in your warehouse **Settings**, select the **Copilot** pane. Enable the **Show Copilot completions** option is enabled.
+
+    1. You can also check the setting's status through the status bar at the bottom of the query editor. 
+
+        :::image type="content" source="media/copilot-code-completion/copilot-setting-status-bar.jpg" alt-text="Screenshot of the Copilot in-line completion status bar.":::
+
+    1. If not enabled, then in your warehouse **Settings**, select the **Copilot** pane. Enable the **Show Copilot completions** option is enabled.
       :::image type="content" source="media/copilot-code-completion/copilot-setting.png" alt-text="Screenshot of the Copilot in-line completions setting in the setting pane." lightbox="media/copilot-code-completion/copilot-setting.png":::
 
 1. Start writing your query in the SQL query editor within the warehouse. As you type, Copilot will provide real-time code suggestions and completions of your query by presenting a dimmed ghost text.

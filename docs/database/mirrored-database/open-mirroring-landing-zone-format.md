@@ -3,8 +3,8 @@ title: "Open Mirroring (Preview) Landing Zone Requirements and Formats"
 description: Review the requirements for files in the landing for open mirroring in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: tinglee, sbahadur
-ms.date: 03/10/2025
+ms.reviewer: tinglee, sbahadur, maraki-ketema
+ms.date: 03/22/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -15,7 +15,7 @@ This article details the landing zone and table/column operation requirements fo
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
-Once you have created your open mirrored database via the Fabric portal or public API in your Fabric workspace, you get a landing zone URL in OneLake in the **Home** page of your mirrored database item. This landing zone is where your application to create a metadata file and land data in Parquet format (uncompressed, Snappy, GZIP, ZSTD).
+Once you have created your open mirrored database via the Fabric portal or public API in your Fabric workspace, you get a landing zone URL in OneLake in the **Home** page of your mirrored database item. This landing zone is where your application to create a metadata file and land data in Parquet format or CSV format (uncompressed, Snappy, GZIP, ZSTD). If the data is in a CSV format, the file must have header row in the first row.
 
 :::image type="content" source="media/open-mirroring-landing-zone-format/landing-zone-url.png" alt-text="Screenshot from the Fabric portal showing the Landing zone URL location in the Home page of the mirrored database item." lightbox="media/open-mirroring-landing-zone-format/landing-zone-url.png":::
 
@@ -48,9 +48,9 @@ If `keyColumns` or `_metadata.json` is not specified, then update/deletes are no
 
 ## Data file and format in the landing zone
 
-Open mirroring supports Parquet as the landing zone file format with or without compression. Supported compression formats include Snappy, GZIP, and ZSTD.
+Open mirroring supports Parquet and CSV as the landing zone file format with or without compression. Supported compression formats include Snappy, GZIP, and ZSTD.
 
-All the Parquet files written to the landing zone have the following format:
+All the Parquet and CSV files written to the landing zone have the following format:
 
 `<rowMarker><DataColumns>`
 
@@ -142,7 +142,7 @@ For example, if you have schemas (`Schema1`, `Schema2`) and tables (`Table A`, `
 
 ### Add column
 
-If new columns are added to the parquet files, open mirroring adds the columns to the delta tables.
+If new columns are added to the parquet or CSV files, open mirroring adds the columns to the delta tables.
 
 ### Delete column
 
@@ -160,7 +160,7 @@ To rename a column, delete the table folder and recreate the folder with all the
 
 ### Cleanup process
 
-A cleanup process for opening mirroring moves all proceesed files to a separate folder called `_ProcessedFiles` or `_FilesReadyToDelete`. After 7 days, the files are removed from this folder. 
+A cleanup process for opening mirroring moves all processed files to a separate folder called `_ProcessedFiles` or `_FilesReadyToDelete`. After seven days, the files are removed from this folder. 
 
 ## Next step
 

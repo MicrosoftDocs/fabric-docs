@@ -1,8 +1,8 @@
 ---
 title: Edit tables for Direct Lake semantic models
 description: Describes editing tables Direct Lake semantic models.
-author: kfollis
-ms.author: kfollis
+author: davidiseminger 
+ms.author: davidi
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium

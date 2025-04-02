@@ -70,3 +70,4 @@ You can explore workspace monitoring using Power BI reports and Real-time dashbo
 ## Related content
 
 * [Enable monitoring in your workspace](enable-workspace-monitoring.md)
+* [Eventhouse monitoring](../real-time-intelligence/monitor-eventhouse.md)

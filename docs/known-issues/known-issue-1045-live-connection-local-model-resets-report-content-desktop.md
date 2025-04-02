@@ -1,7 +1,7 @@
 ---
 title: Known issue - Live connection to local model conversion resets report content in February Desktop
 description: A known issue is posted where live connection to local model conversion resets report content in February Desktop.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/05/2025
