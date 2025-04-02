@@ -8,7 +8,7 @@ ms.date: 08/30/2024
 ms.search.form: copy-job-tutorials 
 ---
 
-# What is the Copy job in Data Factory for Microsoft Fabric
+# What is the Copy job in Data Factory for Microsoft Fabric?
 
 Data Factory in Fabric enables users to integrate data from over 100 built-in connectors, offering three key capabilities: data ingestion, data transformation, and data orchestration. Dataflow Gen2 handles data transformations, while pipelines and Airflow manage integration flows. Copy Job simplifies data ingestion with built-in patterns for batch and incremental copy, eliminating the need for pipeline creation.
 
@@ -20,7 +20,7 @@ While the Copy activity within data pipelines handles data ingestion with bulk/b
 
 Some advantages of the Copy job over other data movement methods include:
 
-- **Intuitive Experience**: No compromises experience for data copying including both configuration and monitoring, making it easier than ever.
+- **Intuitive experience**: No compromises experience for data copying including both configuration and monitoring, making it easier than ever.
 - **Efficiency**: Enable incremental copying effortlessly, reducing manual intervention. This efficiency translates to less resource utilization and faster copy durations.
 - **Flexibility**: While enjoying the simplicity, you also have the flexibility to control your data movement. Choose which tables and columns to copy, map the data, define read/write behavior, and set schedules that fit your needs, whether for a one-time task or recurring operation.
 - **Robust performance**: A serverless setup enabling data transfer with large-scale parallelism, maximizing data movement throughput for your system. 
@@ -50,7 +50,7 @@ You can use the Copy Job to move your data across cloud data stores or from on-p
 | Azure MySQL | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
 
 > [!NOTE]
-> - The product team is quickly adding more connectors and copy behaviors, so Submit your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
+> The product team is quickly adding more connectors and copy behaviors, so submit your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
 
 
 ## Copy behavior
@@ -68,7 +68,7 @@ You can also choose how data is written to your destination store.
 By default, Copy Job **appends** data to your destination, so that you won't miss any change history. But, you can also adjust the update method to **merge** or **overwrite**. When performing a merge, you need to provide a key column. By default, the primary key is used if it has.
 
 - When copy data to storage store: New rows from the tables or files are copied to new files in the destination. If a file with the same name already exists on target store, it will be overwritten.
-- When copy data to database: New rows from the tables or files are appended to destination tables. You can change the update method to merge (on Azure SQL DB, SQL Server，Azure SQL Managed Instance, Azure Synapse Analytics) or overwrite (on Fabric Lakehouse tables).
+- When copy data to database: New rows from the tables or files are appended to destination tables. You can change the update method to merge or overwrite for supported data stores.
 
 ## Incremental column
 
