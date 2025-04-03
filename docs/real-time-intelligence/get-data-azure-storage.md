@@ -120,9 +120,20 @@ Set the source to get data.
 
 1. Select **Next** to preview the data.
 
+1. To verify the connection, upload a new data file to the Azure storage account.
+
 ## [Existing continuous ingestion](#tab/exist-continuous-ingestion)
 
 This option is enabled when you have at least one continuous ingestion connection already turned on.
+
+1. Select a destination table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
+
+    > [!NOTE]
+    > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
+
+1. 
+
+1. 
 
 1. 
 
@@ -163,7 +174,7 @@ This option is enabled when you have at least one continuous ingestion connectio
 
 1. Select **Next** to preview the data.
 
-```
+---
 
 ## Inspect
 
