@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 04/03/2025
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -14,13 +14,69 @@ ms.search.form: Get data in a KQL Database
 
 In this article, you learn how to get data from Azure storage (ADLS Gen2 container, blob container, or individual blobs) into either a new or existing table.
 
+You can get data into your table in three ways:
+
+* **Non-continuous ingestion**. Use this method to retrieve the existing data from an Azure blob storage. Non-continuous ingestion from an Azure storage account is a one-time operation.
+
+* **Continuous ingestion**. Continuous data ingestion involves setting up an ingestion pipeline to ingest blob files that arrive to the Azure blob storage.
+
+    * An eventstream monitors for new and updated events in the Azure storage.
+
+    * When you configure a new connection, the storage data file mappings are ingested.
+
+    * Data that previously existed in the Azure blob storage isn't included.
+
+* **Connect to an existing continuous ingestion**. Connect to an Azure blob storage that is already set up for continuous ingestion.
+
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
 * A [storage account](/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal)
 
+For continuous ingestion you also require:
+
+* A [Workspace identity](../security/workspace-identity.md) for the Azure storage account to connect to.
+
+  Ensure the identity is for a workspace that isn't *My Workspace*. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
+
+* A data file is required when the storage blob is new or empty of data files.  
+
+  The file is uploaded to the storage account for connection to ingest the file's data schema. The file can be empty of data, but the schema needs to be defined. Use any format supported by KQL databases. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md)
+
+## Configure Azure storage for continuous ingestion
+
+To add the workspace identity to the storage account:
+
+1. Copy your workspace identity ID from the Workspace Settings in Fabric.
+
+1. Open the Azure portal, browse to your Azure storage account, and select **Access Control (IAM)**.
+
+1. Select **Add** > **Add role assignment**.
+
+1. Select **Storage Account Contributor**.
+
+1. In the *Add role assignment* dialogue, select **+Select members**.
+
+1. Paste in the workspace identity ID, select **Application**, and then **Select**.
+
+    :::image type="content" source="media/get-data-azure-storage/configure-add-role-assignment.png" alt-text="Screenshot of Azure portal open to the Add Role Assignment window." lightbox="media/get-data-azure-storage/configure-add-role-assignment.png":::
+
+1. Select **Review + assign** to move to the Review + assign tab.
+
+1. Select **Review + assign** again.
+
+To add a data file to an empty storage account:
+
+1. In the storage account, select **Containers**.
+
+1. Select **+ Container**, enter a name for the container and **Save**.
+
+1. Enter the container, select **upload**, and upload the data file prepared earlier.
+
 ## Source
+
+Set the source to get data.
 
 1. On the lower ribbon of your KQL database, select **Get Data**.
 
@@ -32,12 +88,60 @@ In this article, you learn how to get data from Azure storage (ADLS Gen2 contain
 
 ## Configure
 
-1. Select a target table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
+## [Continuous ingestion](#tab/continuous-ingestion)
+
+1. Select a destination table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
     > [!NOTE]
     > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
-1. To add your data source, paste your storage connection string in the **URI** field, and then select **+**. The following table lists the supported authentication methods and the permissions needed for ingesting data from Azure storage.
+1. Turn on **Continuous ingestion**. It's turned on by default.
+
+1. Select **Connect to an account**. It's selected by default.
+
+1. Configure the **Azure blob storage account**:
+
+    :::image type="content" source="media/get-data-azure-storage/configure-tab-continuous.png" alt-text="Screenshot of configure tab with Continuous ingestion and connect to an account selected." lightbox="media/get-data-azure-storage/configure-tab-continuous.png":::
+
+        | **Setting**                | **Field description**  |
+        |--------------------------|----------|
+        | Subscription               | The subscription ID where the storage account is located.     |
+        | Blob storage account      | The name that identifies your storage account.    |
+        | Container                  | The storage container you want to ingest.   |
+        | **File filters (optional)**       | |
+        | Folder path| Filters data to ingest files with a specific folder path. |
+        | File extension| Filters data to ingest files with a specific file extension only.|
+
+1. In the **Connection** field, open the drop-down and select **+ New connection**. The connection settings are prepopulated.
+
+    :::image type="content" source="media/get-data-azure-storage/configure-connection.png" alt-text="Screenshot of connection dialog with the settings prepopulated." lightbox="media/get-data-azure-storage/configure-connection.png":::
+
+1. Select **Save**, and then **Close**.
+
+1. Select **Next** to preview the data.
+
+## [Existing continuous ingestion](#tab/exist-continuous-ingestion)
+
+This option is enabled when you have at least one continuous ingestion connection already turned on.
+
+1. 
+
+## [Non-continuous ingestion](#tab/one-time-ingestion)
+
+1. Select a destination table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
+
+    > [!NOTE]
+    > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
+
+1. Turn off **Continuous ingestion**.
+
+1. Select **Use a SAS URL to ingest from a storage account**.
+
+    :::image type="content" source="media/get-data-azure-storage/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-azure-storage/configure-tab.png":::
+
+1. Paste your storage connection string in the **Enter SAS Url** field, and then select **+**.
+
+    The string consists of a blob URI with a SAS token or account key. The following table lists the supported authentication methods and the permissions needed for ingesting data from Azure storage.
 
     |Authentication method| Individual blob| Blob container | Azure Data Lake Storage Gen2|
     |----|----|----|----|
@@ -49,17 +153,17 @@ In this article, you learn how to get data from Azure storage (ADLS Gen2 contain
     > * You can either add up to 10 individual blobs, or ingest up to 5000 blobs from a single container. You can't ingest both at the same time.
     > * Each blob can be a max of 1 GB uncompressed.
 
-    1. If you pasted a connection string for a blob container or an Azure Data Lake Storage Gen2, you can then add the following optional filters:
+1. If you pasted a connection string for a blob container or an Azure Data Lake Storage Gen2, you can then add the following optional filters:
 
-        :::image type="content" source="media/get-data-azure-storage/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-azure-storage/configure-tab.png":::
+    | **Setting**  | **Field description** |
+    |-----|-----|
+    | **File filters (optional)**| |
+    | Folder path| Filters data to ingest files with a specific folder path. |
+    | File extension| Filters data to ingest files with a specific file extension only.|
 
-        | **Setting**  | **Field description** |
-        |-----|-----|
-        | **File filters (optional)**| |
-        | Folder path| Filters data to ingest files with a specific folder path. |
-        | File extension| Filters data to ingest files with a specific file extension only.|
+1. Select **Next** to preview the data.
 
-1. Select **Next**
+```
 
 ## Inspect
 
