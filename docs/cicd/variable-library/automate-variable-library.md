@@ -27,12 +27,12 @@ To use the APIs, you need:
 The [Variable library REST APIs](/rest/api/fabric/variablelibrary/items) allow you to perform the following functions:
 
 - [Create Variable Library](/rest/api/fabric/variablelibrary/items/create-variable-library): Create a Variable library in the specified workspace.
-- [Get Variable Library](/rest/api/fabric/variablelibrary/items/get-variable-library): Returns properties of the specified Variable library. You can also use the *VariableLibraryProperties* parameter of this API to get the active value set.
-- [Update Variable Library](/rest/api/fabric/variablelibrary/items/update-variable-library): Updates the properties of the specified Variable library. You can also use the *VariableLibraryProperties* parameter of this API to update the active value set.
+- [Get Variable Library](/rest/api/fabric/variablelibrary/items/get-variable-library): Retrieve properties of a Variable library. You can also retrieve the active value set using the *VariableLibraryProperties* parameter.
+- [Update Variable Library](/rest/api/fabric/variablelibrary/items/update-variable-library): Update a Variable library's properties. You can also update the active value set using the *VariableLibraryProperties* parameter.
 - [Delete Variable Library](/rest/api/fabric/variablelibrary/items/delete-variable-library): Delete the specified Variable library.
-- [List Variable Libraries](/rest/api/fabric/variablelibrary/items/list-variable-libraries): Returns a list of Variable libraries from the specified workspace.
-- [Get Variable Library Definition](/rest/api/fabric/variablelibrary/items/get-variable-library-definition): Returns the specified Variable library public [definition](./variable-library-cicd.md#variable-libraries-and-git-integration).
-- [Update Variable Library Definition](/rest/api/fabric/variablelibrary/items/update-variable-library-definition): Overrides the [definition](./variable-library-cicd.md#variable-libraries-and-git-integration) of the specified Variable library.
+- [List Variable Libraries](/rest/api/fabric/variablelibrary/items/list-variable-libraries): List Variable libraries in the specified workspace.
+- [Get Variable Library Definition](/rest/api/fabric/variablelibrary/items/get-variable-library-definition): Retrieve the public [definition](./variable-library-cicd.md#variable-libraries-and-git-integration) of a Variable library.
+- [Update Variable Library Definition](/rest/api/fabric/variablelibrary/items/update-variable-library-definition): Override the [definition](./variable-library-cicd.md#variable-libraries-and-git-integration) of a Variable library.
 
 The Variable library item REST APIs support service principles.
 
