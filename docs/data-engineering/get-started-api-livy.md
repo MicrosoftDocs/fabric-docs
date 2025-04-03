@@ -17,7 +17,7 @@ ms.date: 03/14/2025
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; authenticating with a Microsoft Entra app token; submit either batch or session jobs from a remote client to Fabric Spark compute. You'll discover the Livy API endpoint; submit jobs; and monitor the results.
+Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; authenticating with a Microsoft Entra app token; submit either batch or session jobs from a remote client to Fabric Spark compute; discover the Livy API endpoint; submit jobs; and monitor the results.
 
 ## Prerequisites
 
@@ -51,7 +51,7 @@ There are many Microsoft Entra scope permissions required to execute Livy jobs. 
     :::image type="content" source="media/livy-api/entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-API-permissions.png" :::
 
 > [!NOTE]
-> During public preview these scopes will change and we will be adding a few additional granular scopes.  Changes are highly likely to your app as we progress thru public preview and to GA. When these scope changes happen your Livy app may break. Please check this list as it will be updated with the additional scopes.
+> During public preview these scopes will change and we'll be adding a few more granular scopes. Changes are likely to your app as we progress thru public preview and towards GA. When these scope changes happen your Livy app may break. Check this list as it will be updated with the additional scopes.
 
 Some customers want more granular permissions than the prior list. You could remove Item.ReadWrite.All and replacing with these more granular scope permissions:
 
@@ -69,7 +69,7 @@ Some customers want more granular permissions than the prior list. You could rem
 * MLExperiment.ReadWrite.All
 * Dataset.ReadWrite.All
 
-When you've registered your application, you'll need both the Application (client) ID and the Directory (tenant) ID.
+When you register your application, you will need both the Application (client) ID and the Directory (tenant) ID.
 
 :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center.":::
 
@@ -103,7 +103,7 @@ Now that setup of the Livy API is complete, you can choose to submit either batc
 
 ### Integration with Fabric Environments
 
-By default, this Livy API session runs against the default starter pool for the workspace.  Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  
+By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  
 
 To use a Fabric Environment in a Livy Spark session, simply update the json to include this payload.
 
