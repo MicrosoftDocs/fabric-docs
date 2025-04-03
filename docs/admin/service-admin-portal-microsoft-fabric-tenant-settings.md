@@ -46,9 +46,9 @@ For more information, see [Learn about Microsoft Fabric feedback](../fundamental
 
 For more information, see [What is the Copy job (preview) in Data Factory for Microsoft Fabric](../data-factory/what-is-copy-job.md).
 
-## Users can create and share AI skill item types (preview)
+## Users can create and share Fabric data agents (preview)
 
-For more information, see [AI skill concepts (preview)](../data-science/concept-ai-skill.md).
+For more information, see [Fabric data agent creation (preview)](../data-science/concept-data-agent.md).
 
 ## Users can discover and use metrics (preview)
 
