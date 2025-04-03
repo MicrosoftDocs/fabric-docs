@@ -10,7 +10,6 @@ ms.topic: quickstart
 ms.date: 03/20/2025
 ms.search.form: Create and use Variable library
 #customer intent: As a developer, I want to learn how to use the Microsoft Fabric Variable library tool to customize and share item configurations in a workspace so that I can manage my content lifecycle.
-
 ---
 
 # Create and manage Variable libraries (preview)

@@ -5,7 +5,7 @@ items:
   items:
   - name: What is Real-Time hub?
     href: real-time-hub-overview.md
-  - name: What are Fabric Events?
+  - name: What are Azure and Fabric Events?
     href: fabric-events-overview.md
 - name: Get started
   items:
