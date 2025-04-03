@@ -21,11 +21,11 @@ In this guide, you learn how to connect an Azure App Service to an Azure SQL Dat
 
 * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free).
 * An app hosted on App Service. If you don't have one yet, [create and deploy an app to App Service](/azure/app-service/quickstart-dotnetcore)
-* An Azure SQL Database in Microsoft Fabric. If you don't have one, [create an Azure SQL Database in Fabric](./create.md).
+* A SQL database in Microsoft Fabric. If you don't have one, [create an SQL database](create.md).
 
 ## Create a service connection
 
-Create a new service connection from App Service to Azure SQL Database in Fabric, using the Azure CLI or the Azure platform.
+Create a new service connection from App Service to SQL database in Fabric, using the Azure CLI or the Azure platform.
 
 ### [Azure CLI](#tab/azure-cli)
 
@@ -35,7 +35,7 @@ Create a new service connection from App Service to Azure SQL Database in Fabric
     az extension add --name serviceconnector-passwordless --upgrade
     ```
 
-1. Add a service connector for SQL Database in Fabric with the `az webapp connection create fabric-sql` command. A connection string is used to authenticate the web app to the database resource.
+1. Add a service connector for SQL database in Microsoft Fabric with the `az webapp connection create fabric-sql` command. A connection string is used to authenticate the web app to the database resource.
 
     ```azurecli
     az webapp connection create fabric-sql \
@@ -46,7 +46,7 @@ Create a new service connection from App Service to Azure SQL Database in Fabric
 
     In the background, Service Connector enables a system-assigned managed identity for the app hosted by Azure App Service and adds a connection string to App Settings named `FABRIC_SQL_CONNECTIONSTRING`.
 
-    For more information about this command and additional options, go to [az webapp connection create](/cli/azure/webapp/connection/create#az-webapp-connection-create-postgres-flexible).
+    For more information about this command and additional options, see [az webapp connection create](/cli/azure/webapp/connection/create#az-webapp-connection-create-postgres-flexible).
 
 #### [Azure portal](#tab/az-portal)
 
@@ -78,7 +78,7 @@ In this step, you grant your managed identity access to the database.
 
     :::image type="content" source="./media/tutorial-service-connector/access-security-settings.png" alt-text="Screenshot of the Azure portal, showing the SQL Database link.":::
 
-1. Under Resource name, click on your connection's **SQL Database** hyperlink. This opens your SQL database in the Microsoft Fabric portal.
+1. Under Resource name, select your connection's **SQL Database** hyperlink. This opens your SQL database in the Microsoft Fabric portal.
 
 1. Navigate to the **Security** tab and select **Manage SQL security**.
 
@@ -95,4 +95,4 @@ When no longer needed, delete the resource group and all related resources creat
 ## Related content
 
 - [Connect App Services with Service Connector](/azure/service-connector/quickstart-portal-app-service-connection)
-- [Service Connector internals](/azure/service-connector/concept-service-connector-internals) <!--to be replaced with new SQL Fabric article in azure-docs-pr repo when feature documentation is released-->
+- [Service Connector internals](/azure/service-connector/concept-service-connector-internals) <!--to be replaced with new SQL database in Fabric article in azure-docs-pr repo when feature documentation is released-->
