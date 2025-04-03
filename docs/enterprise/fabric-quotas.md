@@ -11,7 +11,7 @@ ms.date: 04/03/2025
 
 # Microsoft Fabric capacity quotas
 
-Microsoft Fabric provides limits, also known as *quotas*, which determine the maximum number of Fabric Capacity Units (CUs) for each of the capacities on your subscription. Quotas depend on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). You're don't get charged for quotas, you're only charged for your capacities.
+Microsoft Fabric provides limits, also known as *quotas*, which determine the maximum number of Fabric Capacity Units (CUs) for each of the capacities on your subscription. Quotas depend on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). You don't get charged for quotas, you're only charged for your capacities.
 
 This article explains how to view and increase your quotas, using the Azure portal and the Azure Resource Manager (ARM) APIs.
 
