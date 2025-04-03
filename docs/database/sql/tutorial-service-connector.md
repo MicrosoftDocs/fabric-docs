@@ -56,7 +56,7 @@ Create a new service connection from App Service to SQL database in Fabric, usin
 
     | Setting             | Example           | Description                                                                                                                                               |
     |---------------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | **Service type**    | *Fabric SQL*      | Target service type: this is SQL Database in Microsoft Fabric. |
+    | **Service type**    | *Fabric SQL*      | Target service type: this is SQL database in Microsoft Fabric. |
     | **Connection name** | *fabricsql_8293d* | The connection name that identifies the connection between your App Service and SQL database. Optionally edit the connection name suggested by default by Service Connector. |
     | **Workspace**       | *My Workspace*    | The Microsoft Fabric Workspace that contains the SQL database.                                                                                            |
     | **SQL database**    | *my_sql_database* | The target SQL database you want to connect to.                                                                                                           |
