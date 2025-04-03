@@ -14,7 +14,7 @@ ms.search.form: Variable library tutorial
 
 # Tutorial: Use Variable libraries to customize and share item configurations (preview)
 
-This tutorial shows you how to use dynamic content in data pipelines. create a Variable library item and add variables to it so that you can automate different values for different stages of your deployment pipeline. In this tutorial we copy data from one lakehouse to another, and use the Variable library to set the source and destination values for the copy activity.
+This tutorial shows you how to use dynamic content in data pipelines. Create a Variable library item and add variables to it so that you can automate different values for different stages of your deployment pipeline. In this tutorial, we copy data from one lakehouse to another, and use the Variable library to set the source and destination values for the copy activity.
 
 In this tutorial, you:
 
@@ -43,20 +43,20 @@ In this tutorial, you:
 
 For the purposes of this tutorial, we need to create some sample data to use in the Variable library. If you already have a workspace with lakehouse items you want to use, you can skip this step.
 
-We will create a workspace called *Sources LHs* with some lakehouses to use as source data in the Variable library
+Create a workspace called *Sources LHs* with some lakehouses to use as source data in the Variable library
 
 1. [Create a workspace](../../fundamentals/create-workspaces.md) called *Sources LHs*.
 1. [Create a lakehouse](../../onelake/create-lakehouse-onelake.md) item in the workspace, called *SourceLH_Dev*.
 1. [Create a data pipeline with sample data from public holidays](../../data-factory/create-first-pipeline-with-sample-data.md) (steps 1-3). {10 minutes}
 1. Create another workspace called *Copy with Variables WS* [Dev]
-1. Create an empty lakehoue called This_WH_LH
+1. Create an empty Lakehouse called This_WH_LH
 1. Create two more lakehouses (*SourceLH_Test* and *SourceLH_Prod*) with sample data.
 
 ## Step 1: Create a workspace
 
-Now that we have our sample data, create a new workspace that will contain the Variable library item. To create the workspace:
+Now that we have our sample data, create a new workspace that contains the Variable library item. To create the workspace:
 
-1. [Create a workspace](../../fundamentals/create-workspaces.md). We'll call it *Copy with Variables WS*. Make it a type string and set the value to the object id of Lakehouse.
+1. [Create a workspace](../../fundamentals/create-workspaces.md). Call it *Copy with Variables WS*. Make it a type string and set the value to the object ID of Lakehouse.
 1. Create an empty lakehouse in the workspace called *This_WH_LH*.
 
 ## Step 2: Create a data pipeline
@@ -72,7 +72,7 @@ Now that we have our sample data, create a new workspace that will contain the V
 ## Step 3: Create a variable library with variables
 
 1. Create an empty Variable library item. Call it *WS variables*.
-1. Open the Variable library and add a variable called *SourceLH*. Give it the type *string*, and the value of the object id of the source lakehouse.
+1. Open the Variable library and add a variable called *SourceLH*. Give it the type *string*, and the value of the object ID of the source lakehouse.
 1. Create a variable called DestinationTableName with type *string*. Give it the value *DevCopiedData*. This is the name of the table where the data will be copied in the destination lakehouse (This_WS_LH).
 
 :::image type="content" source="./media/tutorial-variable-library/default-value-set.png" alt-text="Screenshot of the Variable library item with a variables and the default value set.":::
@@ -80,7 +80,7 @@ Now that we have our sample data, create a new workspace that will contain the V
 ### Add value-sets to the variables
 
 1. Create a value-set called *Test VS* and one called *Prod VS*.
-1. Set the values of *SourceLH* to the object ids of *SourceLH_Test* and *SourceLH_Prod* respectively.
+1. Set the values of *SourceLH* to the object IDs of *SourceLH_Test* and *SourceLH_Prod* respectively.
 1. Set the value of *DestinationTableName* to *TestCopiedData* and *ProdCopiedData* respectively.
 
 :::image type="content" source="./media/tutorial-variable-library/variable-library-values.png" alt-text="Screenshot of the variable library with the default value set and two alternative value sets.":::
@@ -89,9 +89,9 @@ Now that we have our sample data, create a new workspace that will contain the V
 
 Now that the value-sets are defined, we [declare the variables](../../data-factory/activity-overview.md#adding-activities-to-a-pipeline-with-the--ui) in the pipeline so that we can use them in the pipeline stages.
 
-1. In the data pipeline, click on the canvass to open the pipeline settings.
+1. In the data pipeline, select the canvass to open the pipeline settings.
 1. Select the **Library variables** tab.
-1. Enter a name for each variable, and enter its library, variable name and type.
+1. Enter a name for each variable, and enter its library, variable name, and type.
 
 :::image type="content" source="./media/tutorial-variable-library/declare-variable-library.png" alt-text="Screenshot of the data pipeline settings.":::
 
@@ -104,7 +104,7 @@ Now that the value-sets are defined, set the rules for the active value-set. For
 
    :::image type="content" source="./media/tutorial-variable-library/dynamic-content.png" alt-text="{alt-text}":::
 
-1. From the Add dynamic content pane, select *Library variables* and then *SourceLH*. This will set the value of the source lakehouse to the value of SourceLH in the active value set.
+1. From the Add dynamic content pane, select *Library variables* and then *SourceLH*. This sets the value of the source lakehouse to the value of SourceLH in the active value set.
 
    :::image type="content" source="./media/tutorial-variable-library/dynamic-source.png" alt-text="Screenshot of the pipeline expression builder with showing the dynamic source of the variable.":::
 
@@ -125,7 +125,7 @@ Now that the value-sets are defined, set the rules for the active value-set. For
 
    :::image type="content" source="./media/tutorial-variable-library/dynamic-content.png" alt-text="Screenshot of data pipeline source connection.":::
 
-1. From the pipeline expression builder, Go to Library variables and select DestTableName. This will set the value of the destination table to the value of of DestinationTableName in the active value set.
+1. From the pipeline expression builder, Go to Library variables and select DestTableName. This sets the value of the destination table to the value of DestinationTableName in the active value set.
 
    :::image type="content" source="./media/tutorial-variable-library/table-name.png" alt-text="Screenshot of the pipeline expression builder with the variable library variable selected.":::
 
