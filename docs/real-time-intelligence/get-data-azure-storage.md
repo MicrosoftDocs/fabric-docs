@@ -174,6 +174,8 @@ This option is enabled when you have at least one continuous ingestion connectio
 
 1. Select **Next** to preview the data.
 
+---
+
 ## Inspect
 
 The **Inspect** tab opens with a preview of the data.
