@@ -16,17 +16,23 @@ In this article, you learn how to get data from Azure storage (ADLS Gen2 contain
 
 You can get data into your table in three ways:
 
-* **Non-continuous ingestion**. Use this method to retrieve the existing data from an Azure blob storage. Non-continuous ingestion from an Azure storage account is a one-time operation.
+**Non-continuous ingestion**
 
-* **Continuous ingestion**. Continuous data ingestion involves setting up an ingestion pipeline to ingest blob files that arrive to the Azure blob storage.
+ Use this method to retrieve the existing data from an Azure blob storage. Non-continuous ingestion from an Azure storage account is a one-time operation.
 
-    * An eventstream monitors for new and updated events in the Azure storage.
+**Continuous ingestion**
 
-    * When you configure a new connection, the storage data file mappings are ingested.
+Continuous data ingestion involves setting up an ingestion pipeline to ingest data files from the Azure blob storage.
 
-    * Data that previously existed in the Azure blob storage isn't included.
+This eventstream monitors incoming events. When new or updated event files are available in storage, The KQL database receives a notification to fetch the data.
 
-* **Connect to an existing continuous ingestion**. Connect to an Azure blob storage that is already set up for continuous ingestion.
+> [!NOTE]
+>
+> Data that previously existed in the Azure blob storage isn't ingested. Use non-continuous ingestion to ingest the existing data.
+
+**Connect to an existing continuous ingestion**
+
+Connect a table to an Azure blob storage that is already set up for continuous ingestion.
 
 ## Prerequisites
 
