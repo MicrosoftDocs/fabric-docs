@@ -3,7 +3,7 @@ title: Microsoft Fabric quotas
 description: Learn how to view and manage your Microsoft Fabric quota which sets the number of Capacity Units (CUs) your subscribed capacity has.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept-article
+ms.topic: how-to
 ms.date: 04/03/2025
 
 # Customer intent: As an administrator or an executive, I want to learn how to manage my Microsoft Fabric quota.
@@ -11,7 +11,9 @@ ms.date: 04/03/2025
 
 # Microsoft Fabric capacity quotas
 
-Microsoft Fabric provides limits, also known as *quotas*, which determine the maximum number of Fabric Capacity Units (CUs) for each of the capacities on your subscription. Quotas depend on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). You can use CUs up to the quota limit on your capacity, without submitting a request to Microsoft. You're charged for your capacities, not for capacity quotas.
+Microsoft Fabric provides limits, also known as *quotas*, which determine the maximum number of Fabric Capacity Units (CUs) for each of the capacities on your subscription. Quotas depend on your [Azure subscription type](/azure/azure-resource-manager/management/azure-subscription-service-limits). You're don't get charged for quotas, you're only charged for your capacities.
+
+This article explains how to view and increase your quotas, using the Azure portal and the Azure Resource Manager (ARM) APIs.
 
 ## Prerequisites
 
@@ -21,7 +23,7 @@ Microsoft Fabric provides limits, also known as *quotas*, which determine the ma
 
 ## View your Fabric CU quota
 
-The following section outlines how to view your Fabric quota using the Azure portal and the Azure Resource Manager (ARM) APIs.
+The following section outlines how to view your Fabric quota using the Azure portal and the ARM APIs.
 
 # [Azure](#tab/Azure)
 
