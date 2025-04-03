@@ -212,20 +212,20 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Navigate back to your Lakehouse to see the changes.
 
-### Integration with Fabric Environments
+## Integration with Fabric Environments
 
 By default, this Livy API session runs against the default starter pool for the workspace.  Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  To use your Fabric Environment, simply update the prior notebook cell with this one line line change.
 
-    ```python
-    payload_data = {
-        "name":"livybatchdemo_with"+ newlakehouseName,
-        "file":"abfss://YourABFSPathToYourPayload.py", 
-        "conf": {
-            "spark.targetLakehouse": "Fabric_LakehouseID",
-            "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
-            }
+```python
+payload_data = {
+    "name":"livybatchdemo_with"+ newlakehouseName,
+    "file":"abfss://YourABFSPathToYourPayload.py", 
+    "conf": {
+        "spark.targetLakehouse": "Fabric_LakehouseID",
+        "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
         }
-    ```
+    }
+```
 
 ## View your jobs in the Monitoring hub
 
