@@ -35,7 +35,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1056  | Data Factory | [Database mirroring error that source table doesn't exist](./known-issue-1056-database-mirroring-error-source-table-not-exist.md) | March 18, 2025 |
 |  1058  | OneLake | [Workspaces created during Fabric preview only support limited OneLake features](./known-issue-1058-workspaces-created-during-preview-limited-onelake-features.md) | March 12, 2025 |
 |  1055  | Data Factory | [Spark Job Definition activity incorrectly shows failure status](./known-issue-1055-spark-job-definition-activity-incorrectly-shows-failure-status.md) | March 12, 2025 |
-|  1047  | Data Science | [AI skill creation fails when tenant settings restricted to security groups](./known-issue-1047-ai-skill-creation-fails-tenant-settings-restricted-security-groups.md) | March 5, 2025 |
 |  1045  | Power BI | [Live connection to local model conversion resets report content in February Desktop](./known-issue-1045-live-connection-local-model-resets-report-content-desktop.md) | March 5, 2025 |
 |  1043  | Real-Time Intelligence | [Pub/Sub subscriptions disappear from API response after creation](./known-issue-1043-pub-sub-subscriptions-disappear-api-response-creation.md) | March 5, 2025 |
 |  1039  | Data Warehouse | [Sync for data warehouse and SQL analytics endpoint fail in West Europe](./known-issue-1039-sync-warehouse-sql-endpoint-fail-west-europe.md) | March 3, 2025 |
