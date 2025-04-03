@@ -13,7 +13,7 @@ ms.search.form: Variable library overview
 
 # What is a Variable library? (preview)
 
-A Microsoft Fabric Variable library can be thought of as bucket of variables that can be consumed by other items in the workspace. It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline. It presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages.
+A Microsoft Fabric Variable library can be thought of as a bucket of variables that can be consumed by other items in the workspace. It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline. It presents a unified approach for customers to efficiently manage item configurations within a workspace, ensuring scalability and consistency across different lifecycle stages.
 
 For example, a Variable library can contain variables that hold different values for:
 
