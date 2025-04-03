@@ -191,14 +191,14 @@ items:
            href: spark-monitor-debug.md
          - name: Monitor Spark Job Definition Runs
            href: monitor-spark-job-definitions.md
-         - name: Leverage the Apache Spark Adviso
+         - name: Leverage the Apache Spark Advisor
            href: spark-advisor-introduction.md
       - name: Spark Application Run Series Analysis
         items: 
          - name: Run series analysis overview
            href: run-series-analyisis-overview.md
-         - name: Run series analysis overview
-           href: run-series-analyisis-overview.md
+         - name: Monitor run series
+           href: apache-spark-monitor-run-series.md
       - name: Single Spark Application Monitoring
         items: 
          - name: Monitor a Single Spark Application
