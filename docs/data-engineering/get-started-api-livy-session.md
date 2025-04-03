@@ -125,53 +125,53 @@ print(get_session_response.json())
 
 By default, this Livy API session runs against the default starter pool for the workspace.  Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  To use a Fabric Environment, simply update the prior notebook cell with this json payload.
 
-```python
-create_livy_session = requests.post(livy_base_url, headers=headers, json={
-    "conf" : {
-         "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID""}"}
-        }
-)
-```
+    ```python
+    create_livy_session = requests.post(livy_base_url, headers=headers, json={
+        "conf" : {
+             "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID""}"}
+            }
+    )
+    ```
 
 ### Submit a spark.sql statement using the Livy API Spark session
 
 1. Add another notebook cell and insert this code.
 
-```python
-# call get session API
-livy_session_id = create_livy_session.json()['id']
-livy_session_url = livy_base_url + "/" + livy_session_id
-get_session_response = requests.get(livy_session_url, headers=headers)
-
-print(get_session_response.json())
-while get_session_response.json()["state"] != "idle":
-    time.sleep(5)
+    ```python
+    # call get session API
+    livy_session_id = create_livy_session.json()['id']
+    livy_session_url = livy_base_url + "/" + livy_session_id
     get_session_response = requests.get(livy_session_url, headers=headers)
 
-execute_statement = livy_session_url + "/statements"
-payload_data ={
-    "code": "spark.sql(\"SELECT * FROM green_tripdata_2022_08 where fare_amount = 60\").show()",
-        "kind": "spark"
-    }
+    print(get_session_response.json())
+    while get_session_response.json()["state"] != "idle":
+        time.sleep(5)
+        get_session_response = requests.get(livy_session_url, headers=headers)
 
-execute_statement_response = requests.post(execute_statement, headers=headers, json=payload_data)
-print('the statement code is submitted as: ' + str(execute_statement_response.json()))
+    execute_statement = livy_session_url + "/statements"
+    payload_data ={
+        "code": "spark.sql(\"SELECT * FROM green_tripdata_2022_08 where fare_amount = 60\").show()",
+            "kind": "spark"
+        }
 
-statement_id = str(execute_statement_response.json()['id'])
-get_statement = livy_session_url+ "/statements/" + statement_id
-get_statement_response = requests.get(get_statement, headers=headers)
+    execute_statement_response = requests.post(execute_statement, headers=headers, json=payload_data)
+    print('the statement code is submitted as: ' + str(execute_statement_response.json()))
 
-while get_statement_response.json()["state"] != "available":
-    # Sleep for 5 seconds before making the next request
-    time.sleep(5)
-    print('the statement code is submitted and running : ' + str(execute_statement_response.json()))
+    statement_id = str(execute_statement_response.json()['id'])
+    get_statement = livy_session_url+ "/statements/" + statement_id
+    get_statement_response = requests.get(get_statement, headers=headers)
 
-# Make the next request
-get_statement_response = requests.get(get_statement, headers=headers)
+    while get_statement_response.json()["state"] != "available":
+        # Sleep for 5 seconds before making the next request
+        time.sleep(5)
+        print('the statement code is submitted and running : ' + str(execute_statement_response.json()))
 
-rst = get_statement_response.json()['output']['data']['text/plain']
-print(rst)
-```
+    # Make the next request
+    get_statement_response = requests.get(get_statement, headers=headers)
+
+    rst = get_statement_response.json()['output']['data']['text/plain']
+    print(rst)
+    ```
 
 1. Run the notebook cell, you should see several incremental lines printed as the job is submitted and the results returned.
 
