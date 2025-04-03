@@ -102,7 +102,7 @@ Now that the value-sets are defined, set the rules for the active value-set. For
 1. In the data pipeline, go to **Source > Connection** and delete the current connection (*SourceLH_Dev*).
 1. From the dropdown menu, select *Use dynamic content*.
 
-   :::image type="content" source="./media/tutorial-variable-library/dynamic-content.png" alt-text="{alt-text}":::
+   :::image type="content" source="./media/tutorial-variable-library/dynamic-content.png" alt-text="Screenshot of Destination tab with the table unselected.":::
 
 1. From the Add dynamic content pane, select *Library variables* and then *SourceLH*. This sets the value of the source lakehouse to the value of SourceLH in the active value set.
 
