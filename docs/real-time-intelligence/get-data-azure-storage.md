@@ -103,14 +103,14 @@ Set the source to get data.
 
     :::image type="content" source="media/get-data-azure-storage/configure-tab-continuous.png" alt-text="Screenshot of configure tab with Continuous ingestion and connect to an account selected." lightbox="media/get-data-azure-storage/configure-tab-continuous.png":::
 
-        | **Setting**                | **Field description**  |
-        |--------------------------|----------|
-        | Subscription               | The subscription ID where the storage account is located.     |
-        | Blob storage account      | The name that identifies your storage account.    |
-        | Container                  | The storage container you want to ingest.   |
-        | **File filters (optional)**       | |
-        | Folder path| Filters data to ingest files with a specific folder path. |
-        | File extension| Filters data to ingest files with a specific file extension only.|
+    |  | **Setting** | **Field description** |
+    |--|--|--|
+    |  | Subscription | The subscription ID where the storage account is located. |
+    |  | Blob storage account | The name that identifies your storage account. |
+    |  | Container | The storage container you want to ingest. |
+    |  | **File filters (optional)** |  |
+    |  | Folder path | Filters data to ingest files with a specific folder path. |
+    |  | File extension | Filters data to ingest files with a specific file extension only. |
 
 1. In the **Connection** field, open the drop-down and select **+ New connection**. The connection settings are prepopulated.
 
@@ -173,8 +173,6 @@ This option is enabled when you have at least one continuous ingestion connectio
     | File extension| Filters data to ingest files with a specific file extension only.|
 
 1. Select **Next** to preview the data.
-
----
 
 ## Inspect
 
