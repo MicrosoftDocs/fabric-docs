@@ -41,11 +41,11 @@ The process is straightforward and you can begin testing the Fabric data agent r
 
 To create a new Fabric data agent, first navigate to your workspace, and then select the **+ New Item** button. In the All items tab, search for **Fabric data agent** to locate the appropriate option, as shown in this screenshot:
 
-:::image type="content" source="./media/how-to-create-data-agent/create-ai-skill.png" alt-text="Screenshot showing creation of a Fabric data agent." lightbox="./media/how-to-create-data-agent/create-ai-skill.png":::
+:::image type="content" source="./media/how-to-create-data-agent/create-data-agent.png" alt-text="Screenshot showing creation of a Fabric data agent." lightbox="./media/how-to-create-data-agent/create-data-agent.png":::
 
 Once selected, you're prompted to provide a name for your Fabric data agent, as shown in this screenshot:
 
-:::image type="content" source="./media/how-to-create-data-agent/name-ai-skill.png" alt-text="Screenshot showing how to provide name for the Fabric data agent." lightbox="./media/how-to-create-data-agent/name-ai-skill.png":::
+:::image type="content" source="./media/how-to-create-data-agent/name-data-agent.png" alt-text="Screenshot showing how to provide name for the Fabric data agent." lightbox="./media/how-to-create-data-agent/name-data-agent.png":::
 
 Refer to the provided screenshot for a visual guide on naming the Fabric data agent. After entering the name, proceed with the configuration to align the Fabric data agent with your specific requirements.
 
@@ -200,11 +200,11 @@ Power BI semantic model data don't support adding sample query/question pairs at
 
 To add or edit example queries, select the **Example queries** button to open the example queries pane, as shown in the following screenshot:
 
-:::image type="content" source="./media/how-to-create-data-agent/ai-skill-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/how-to-create-data-agent/ai-skill-adding-examples.png":::
+:::image type="content" source="./media/how-to-create-data-agent/data-agent-adding-examples.png" alt-text="Screenshot showing where you can edit the examples you provide to the AI." lightbox="./media/how-to-create-data-agent/data-agent-adding-examples.png":::
 
 This pane provides options to add or edit example queries for all supported data sources except Power BI semantic models. For each data source, you can select **Add or Edit Example Queries** to input the relevant examples, as shown in the following screenshot:
 
-:::image type="content" source="./media/how-to-create-data-agent/ai-skill-adding-examples-sql.png" alt-text="Screenshot showing the SQL examples you provide to the AI." lightbox="./media/how-to-create-data-agent/ai-skill-adding-examples-sql.png":::
+:::image type="content" source="./media/how-to-create-data-agent/data-agent-adding-examples-sql.png" alt-text="Screenshot showing the SQL examples you provide to the AI." lightbox="./media/how-to-create-data-agent/data-agent-adding-examples-sql.png":::
 
 > [!NOTE]
 > The Fabric data agent only refers to queries that contain valid SQL/KQL syntax and that match the schema of the selected tables. The Fabric data agent doesn't use queries that haven't completed their validation. Make sure that all example queries are valid and correctly aligned with the schema to ensure that the Fabric data agent utilizes them effectively.
@@ -213,7 +213,7 @@ This pane provides options to add or edit example queries for all supported data
 
 After you test the performance of your Fabric data agent across various questions, and you confirm that it generates accurate SQL, DAX, OR KQL queries, you can share it with your colleagues. At that point, select **Publish**, as shown in the following screenshot:
 
-:::image type="content" source="./media/how-to-create-data-agent/publish-ai-skill.png" alt-text="Screenshot showing publication of a Fabric data agent." lightbox="./media/how-to-create-data-agent/publish-ai-skill.png":::
+:::image type="content" source="./media/how-to-create-data-agent/publish-data-agent.png" alt-text="Screenshot showing publication of a Fabric data agent." lightbox="./media/how-to-create-data-agent/publish-data-agent.png":::
 
 This step opens a window that asks for a description of the Fabric data agent. Here, provide a detailed description of what the Fabric data agent does. These details guide your colleagues about the functionality of the Fabric data agent, and assist other AI systems/orchestrators to effectively invoke the Fabric data agent.
 
