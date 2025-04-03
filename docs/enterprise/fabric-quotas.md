@@ -143,7 +143,7 @@ To create a support request for an increase to your quota, follow these steps:
 
 7.	Fill in the remaining details of your quota request.
 
-8.  Select **Next: Review + create>>**, and after reviewing the request details, select **Create** to submit the request.
+8.  Select **Next: Review + create**, and after reviewing the request details, select **Create** to submit the request.
 
 ## Related content
 
