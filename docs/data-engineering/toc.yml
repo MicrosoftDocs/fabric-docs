@@ -378,7 +378,7 @@ items:
    - name: Integration with Fabric data pipelines
      href: ./user-data-functions/create-functions-activity-data-pipelines.md
    - name: Integration with Fabric notebooks
-     href: ./notebook-utilities.md
+     href: ./notebook-utilities.md#user-data-function-udf-utilities
    - name: Service details and limitations
      href: ./user-data-functions/user-data-functions-service-limits.md
    - name: Source control and deployment pipelines
