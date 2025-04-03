@@ -174,7 +174,7 @@ Now that you configured the Fabric data agent, added Fabric data agent instructi
 
 You can use the Fabric data agent programmatically within a Fabric notebook. To determine whether or not the Fabric data agent has a published URL value, select **Settings**, as shown in this screenshot:
 
-:::image type="content" source="./media/data-agent-scenario/initial-data-agent-settings.png.png" alt-text="Screenshot showing selection of Fabric data agent settings." lightbox="./media/data-agent-scenario/initial-data-agent-settings.png.png":::
+:::image type="content" source="./media/data-agent-scenario/initial-data-agent-settings.png" alt-text="Screenshot showing selection of Fabric data agent settings." lightbox="./media/data-agent-scenario/initial-data-agent-settings.png":::
 
 Before you publish the Fabric data agent, it doesn't have a published URL value, as shown in this screenshot:
 
