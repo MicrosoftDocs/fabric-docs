@@ -1,20 +1,20 @@
 ---
-title: "How To: Use the Copilot Code Completion for SQL Database"
+title: "How To: Use the Microsoft Copilot Code Completion for SQL Database in Microsoft Fabric (Preview)"
 description: Learn more about Microsoft Copilot Code Completion feature for SQL database in Microsoft Fabric, to ask questions specific about your database.
 author: markingmyname
-ms.author:  maghan
+ms.author: maghan
 ms.reviewer: yoleichen, wiassaf
-ms.date: 3/31/2025
+ms.date: 04/02/2025
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
 ---
 
-# How to: Use the Copilot Code Completion for SQL database in Fabric
+# How to: Use the Microsoft Copilot Code Completion for SQL database in Microsoft Fabric (Preview)
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-Copilot for SQL database includes a code completion feature with Copilot.
+Microsoft Copilot for SQL database in Microsoft Fabric includes a code completion feature with Copilot.
 
 As you start writing T-SQL code or comments in the editor, Copilot for SQL database uses your database schema and query tab context to complement the existing IntelliSense with inline code suggestions.
 
@@ -41,9 +41,12 @@ Code completion enhances your productivity and workflow in Copilot for SQL datab
 ## Key capabilities
 
 - **Auto-complete partially written queries**: Copilot can provide context-aware SQL code suggestions or completions for your partially written SQL query.
+
 - **Generate suggestions from comments**: Guide Copilot using comments that describe your code logic and purpose using natural language. Leave the comment at the beginning of the query and Copilot generates the corresponding query.
 
 ## Get started
+
+To begin using the Copilot Code Completion feature, follow these steps to enable and utilize its capabilities effectively in the SQL query editor.
 
 1. Start writing your query in the SQL query editor within the database. As you type, Copilot provides real-time code suggestions and completions of your query by presenting a dimmed ghost text.
 
@@ -62,6 +65,6 @@ Code completion enhances your productivity and workflow in Copilot for SQL datab
 ## Related content
 
 - [What is Copilot for SQL database in Microsoft Fabric?](copilot.md)
-- [How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)
-- [How to: Use the Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
+- [How to: Use the Copilot Chat Pane for SQL database in Microsoft Fabric](copilot-chat-pane.md)
+- [How to: Use the Copilot Explain and Fix quick action features for SQL database in Microsoft Fabric](copilot-quick-actions.md)
+- [Privacy, security, and responsible use of Copilot in Microsoft Fabric](../../fundamentals/copilot-privacy-security.md)
