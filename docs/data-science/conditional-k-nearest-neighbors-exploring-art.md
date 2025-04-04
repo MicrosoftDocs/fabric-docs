@@ -1,5 +1,5 @@
 ---
-title: Conditional KNN (K-Nearest-Neighbors) Art Exploration Across Cultures
+title: Conditional k-NN (K-Nearest-Neighbors) Art Exploration Across Cultures
 description: A guideline for match-finding via k-nearest-neighbors.
 ms.topic: how-to
 ms.custom: 
@@ -10,7 +10,7 @@ reviewer: JessicaXYWang
 ms.date: 04/04/2025
 ---
 
-# Exploring Art across Culture and Medium with Fast, Conditional, k-Nearest Neighbors
+# Explore art across culture and mediums with the fast, conditional, k-nearest neighbors algorithm
 
 This article describes match-finding via the [k-nearest-neighbors algorithm](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm). You build code resources that allow queries involving cultures and mediums of art amassed from the Metropolitan Museum of Art in NYC and the Amsterdam Rijksmuseum.
 
@@ -20,7 +20,7 @@ This article describes match-finding via the [k-nearest-neighbors algorithm](htt
 
 ## Overview of the BallTree
 
-The KNN model relies on the [BallTree](https://en.wikipedia.org/wiki/Ball_tree) data structure. The BallTree is a recursive binary tree, where each node (or "ball") contains a partition, or subset, of the data points you want to query. To build a BallTree, determine the "ball" center (based on a certain specified feature) closest to each data point. Then, assign each data point to that corresponding closest "ball." Those assignments create a structure that allows for binary tree-like traversals, and lends itself to finding k-nearest neighbors at a BallTree leaf.
+The k-NN model relies on the [BallTree](https://en.wikipedia.org/wiki/Ball_tree) data structure. The BallTree is a recursive binary tree, where each node (or "ball") contains a partition, or subset, of the data points you want to query. To build a BallTree, determine the "ball" center (based on a certain specified feature) closest to each data point. Then, assign each data point to that corresponding closest "ball." Those assignments create a structure that allows for binary tree-like traversals, and lends itself to finding k-nearest neighbors at a BallTree leaf.
 
 ## Setup
 
@@ -70,7 +70,7 @@ The dataset comes from a table that contains artwork information from both the M
 - **Museum**: The museum hosting the actual art piece
 
 ```python
-# loads the dataset and the two trained CKNN models for querying by medium and culture
+# loads the dataset and the two trained conditional k-NN models for querying by medium and culture
 df = spark.read.parquet(
     "wasbs://publicwasb@mmlspark.blob.core.windows.net/met_and_rijks.parquet"
 )
@@ -79,7 +79,7 @@ display(df.drop("Norm_Features"))
 
 ## To build the query, define the categories
 
-Use two KNN models: one for culture, and one for medium:
+Use two k-NN models: one for culture, and one for medium:
 
 ```python
 # mediums = ['prints', 'drawings', 'ceramics', 'textiles', 'paintings', "musical instruments","glass", 'accessories', 'photographs',  "metalwork",
@@ -114,14 +114,14 @@ small_df = df.where(
 small_df.count()
 ```
 
-## Define and fit ConditionalKNN models
+## Define and fit conditional k-NN models
 
-Create ConditionalKNN models for both the medium and culture columns. Each model takes
+Create conditional k-NN models for both the medium and culture columns. Each model takes
 
 - an output column
 - a features column (feature vector)
 - a values column (cell values under the output column)
-- a label column (the quality that the respective KNN is conditioned on)
+- a label column (the quality that the respective k-NN is conditioned on)
 
 ```python
 medium_cknn = (
@@ -147,7 +147,7 @@ culture_cknn = (
 
 ## Define matching and visualizing methods
 
-After the initial dataset and category setup, prepare the methods to query and visualize the results of the conditional KNN:
+After the initial dataset and category setup, prepare the methods to query and visualize the results of the conditional k-NN:
 
 `addMatches()` creates a Dataframe with a handful of matches per category:
 
@@ -203,7 +203,7 @@ def plot_urls(url_arr, titles, filename):
 To take in
 
 - the data
-- the CKNN models
+- the conditional k-NN models
 - the art ID values to query on
 - the file path where the output visualization is saved
 
@@ -212,7 +212,7 @@ define a function called `test_all()`
 The medium and culture models were previously trained and loaded.
 
 ```python
-# main method to test a particular dataset with two CKNN models and a set of art IDs, saving the result to filename.png
+# main method to test a particular dataset with two conditional k-NN models and a set of art IDs, saving the result to filename.png
 
 def test_all(data, cknn_medium, cknn_culture, test_ids, root):
     is_nice_obj = udf(lambda obj: obj in test_ids, BooleanType())
