@@ -4,7 +4,7 @@ description: A guideline for match-finding via k-nearest-neighbors.
 ms.topic: how-to
 ms.custom: 
 ms.author: franksolomon
-author: ssalgadodev
+author: franksolomon
 ms.reviewer: fsolomon
 reviewer: JessicaXYWang
 ms.date: 04/04/2025
