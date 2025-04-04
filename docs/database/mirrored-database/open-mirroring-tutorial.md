@@ -45,6 +45,10 @@ To upload initial data and/or incremental changed data for open mirroring:
    :::image type="content" source="media/open-mirroring-tutorial/upload-files.png" alt-text="Screenshot from the Fabric portal of the Upload Files options on the home screen of an open mirrored database." lightbox="media/open-mirroring-tutorial/upload-files.png":::
 
 1. On the **Upload files** page, upload a Parquet or CSV file using the upload dialog in the Fabric portal.
+   
+> [!IMPORTANT]
+> The file name of the Parquet or CSV file needs to match the format and filename documented,   
+> For more information, see [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md).
 
 1. On the **Preview data** page, you can see a preview of the data you are about to upload. Provide the **Table name** a name and specify **Primary key column(s)**. Select **Create table**.
 
