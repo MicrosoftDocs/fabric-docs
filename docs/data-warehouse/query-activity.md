@@ -98,4 +98,4 @@ The same information regarding completed, failed, and canceled queries from Quer
 
 - [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md)
 - [Query insights in Fabric data warehousing](query-insights.md)
-- [Monitor connections, sessions, and requests using DMVs](query-activity.md)
+- [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
