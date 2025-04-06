@@ -39,7 +39,7 @@ For continuous ingestion you also require:
 
 * A [Workspace identity](../security/workspace-identity.md). *My Workspace* is not supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
 * A storage account with:
-    * Hierarchical namespace enabled
+    * The storage account with [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account?branch=main) enabled
     * A [container](/azure/storage/blobs/blob-containers-portal?branch=main) added to the storage account
     * Access Control role permissions assigned to the Workspace Identity. For instructions, see [Add the workspace identity to the storage account ###](#add-the-workspace-identity-to-the-storage-account-)
     * An initial sample [data file uploaded to the container](#add-a-data-file-to-an-empty-storage-account-). The file is used to define the data schema.  Use any format supported by KQL databases. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md)
