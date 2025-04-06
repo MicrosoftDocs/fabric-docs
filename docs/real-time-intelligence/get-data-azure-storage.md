@@ -12,9 +12,7 @@ ms.search.form: Get data in a KQL Database
 
 # Get data from Azure storage
 
-In this article, you learn how to get data from Azure storage (ADLS Gen2 container, blob container, or individual blobs) into either a new or existing table.
-
-You can get data into your table in three ways:
+In this article, you learn how to get data from Azure storage (ADLS Gen2 container, blob container, or individual blobs). You can get data into your table coninuously or non-continuoiusly:
 
 **Non-continuous ingestion**
 
@@ -22,17 +20,14 @@ You can get data into your table in three ways:
 
 **Continuous ingestion**
 
-Continuous data ingestion involves setting up an ingestion pipeline to ingest data files from the Azure blob storage.
+Continuous data ingestion involves setting up an ingestion pipeline to ingest new data files from the Azure blob storage. You can also connect a table to an Azure blob storage that is already set up for continuous ingestion.
 
 This eventstream monitors incoming events. When new or updated event files are available in storage, The KQL database receives a notification to fetch the data.
 
 > [!NOTE]
 >
 > Data that previously existed in the Azure blob storage isn't ingested. Use non-continuous ingestion to ingest the existing data.
-
-**Connect to an existing continuous ingestion**
-
-Connect a table to an Azure blob storage that is already set up for continuous ingestion.
+> Historical namespace must be enabled in the storage account.
 
 ## Prerequisites
 
@@ -42,43 +37,11 @@ Connect a table to an Azure blob storage that is already set up for continuous i
 
 For continuous ingestion you also require:
 
-* A [Workspace identity](../security/workspace-identity.md) for the Azure storage account to connect to.
+* A [Workspace identity](../security/workspace-identity.md). The Azure storage account connects using this identity. *My Workspace* is not supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
 
-  Ensure the identity is for a workspace that isn't *My Workspace*. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
+* A data file to upload to the storage account. This is used to define the data schema.  Use any format supported by KQL databases. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md)
 
-* A data file is required when the storage blob is new or empty of data files.  
-
-  The file is uploaded to the storage account for connection to ingest the file's data schema. The file can be empty of data, but the schema needs to be defined. Use any format supported by KQL databases. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md)
-
-## Configure Azure storage for continuous ingestion
-
-To add the workspace identity to the storage account:
-
-1. Copy your workspace identity ID from the Workspace Settings in Fabric.
-
-1. Open the Azure portal, browse to your Azure storage account, and select **Access Control (IAM)**.
-
-1. Select **Add** > **Add role assignment**.
-
-1. Select **Storage Account Contributor**.
-
-1. In the *Add role assignment* dialogue, select **+Select members**.
-
-1. Paste in the workspace identity ID, select **Application**, and then **Select**.
-
-    :::image type="content" source="media/get-data-azure-storage/configure-add-role-assignment.png" alt-text="Screenshot of Azure portal open to the Add Role Assignment window." lightbox="media/get-data-azure-storage/configure-add-role-assignment.png":::
-
-1. Select **Review + assign** to move to the Review + assign tab.
-
-1. Select **Review + assign** again.
-
-To add a data file to an empty storage account:
-
-1. In the storage account, select **Containers**.
-
-1. Select **+ Container**, enter a name for the container and **Save**.
-
-1. Enter the container, select **upload**, and upload the data file prepared earlier.
+* [Configure Azure storage for continuous ingestion](#configure-azure-storage-for-continuous-ingestion)
 
 ## Source
 
@@ -103,7 +66,9 @@ Set the source to get data.
 
 1. Turn on **Continuous ingestion**. It's turned on by default.
 
-1. Select **Connect to an account**. It's selected by default.
+1. To use an existing conenction, select **Select an account from the Real-Time hub**, then select the account already in use in Fabric.
+
+1. To create a new connection, select **Connect to an account**.
 
 1. Configure the **Azure blob storage account**:
 
@@ -112,7 +77,7 @@ Set the source to get data.
     |  | **Setting** | **Field description** |
     |--|--|--|
     |  | Subscription | The subscription ID where the storage account is located. |
-    |  | Blob storage account | The name that identifies your storage account. |
+    |  | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
     |  | Container | The storage container you want to ingest. |
     |  | **File filters (optional)** |  |
     |  | Folder path | Filters data to ingest files with a specific folder path. |
@@ -127,21 +92,6 @@ Set the source to get data.
 1. Select **Next** to preview the data.
 
 1. To verify the connection, upload a new data file to the Azure storage account.
-
-## [Existing continuous ingestion](#tab/exist-continuous-ingestion)
-
-This option is enabled when you have at least one continuous ingestion connection already turned on.
-
-1. Select a destination table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
-
-    > [!NOTE]
-    > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
-
-1. 
-
-1. 
-
-1. 
 
 ## [Non-continuous ingestion](#tab/one-time-ingestion)
 
@@ -181,6 +131,37 @@ This option is enabled when you have at least one continuous ingestion connectio
 1. Select **Next** to preview the data.
 
 ---
+## Configure Azure storage for continuous ingestion
+
+For a new get data connection with continuous ingestion, configure the following details in the Azure storage account.
+
+To add the workspace identity to the storage account:
+
+1. Copy your workspace identity ID from the Workspace Settings in Fabric.
+
+1. Open the Azure portal, browse to your Azure storage account, and select **Access Control (IAM)**.
+
+1. Select **Add** > **Add role assignment**.
+
+1. Select **Storage Account Contributor**.
+
+1. In the *Add role assignment* dialogue, select **+Select members**.
+
+1. Paste in the workspace identity ID, select **Application**, and then **Select**.
+
+    :::image type="content" source="media/get-data-azure-storage/configure-add-role-assignment.png" alt-text="Screenshot of Azure portal open to the Add Role Assignment window." lightbox="media/get-data-azure-storage/configure-add-role-assignment.png":::
+
+1. Select **Review + assign** to move to the Review + assign tab.
+
+1. Select **Review + assign** again.
+
+To add a data file to an empty storage account:
+
+1. In the storage account, select **Containers**.
+
+1. Select **+ Container**, enter a name for the container and **Save**.
+
+1. Enter the container, select **upload**, and upload the data file prepared earlier.
 
 ## Inspect
 
