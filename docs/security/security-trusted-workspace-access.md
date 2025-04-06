@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 11/26/2024
+ms.date: 04/06/2025
 ---
 
 # Trusted workspace access
@@ -220,7 +220,7 @@ With the workspace identity configured in Fabric and trusted access enabled in y
 * Pre-existing shortcuts created before October 10, 2023 don't support trusted workspace access.
 * Connections for trusted workspace access can't be created or modified in **Manage connections and gateways**.
 * Connections to firewall-enabled Storage accounts will have the status *Offline* in Manage connections and gateways.
-* If you reuse connections that support trusted workspace access in Fabric items other than shortcuts, pipelines, semantic models, or in other workspaces, they might not work.
+* If you reuse connections that support trusted workspace access in Fabric items other than shortcuts, pipelines, and semantic models, or in other workspaces, they might not work.
 * Only *organizational account*, *service principal*, and *workspace identity* must be used for authentication to storage accounts for trusted workspace access in shortcuts and pipelines.
 * Pipelines can't write to OneLake table shortcuts on storage accounts with trusted workspace access. This is a temporary limitation.
 * A maximum of 200 resource instance rules can be configured. For more information, see [Azure subscription limits and quotas - Azure Resource Manager](/azure/azure-resource-manager/management/azure-subscription-service-limits).
