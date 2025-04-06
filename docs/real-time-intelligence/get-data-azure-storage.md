@@ -40,7 +40,7 @@ For continuous ingestion you also require:
 * A [Workspace identity](../security/workspace-identity.md). *My Workspace* is not supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
 * A storage account with:
     * [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account?branch=main) enabled
-    * Access Control role permissions assigned to the Workspace Identity. For instructions, see [Add the workspace identity to the storage account ###](#add-the-workspace-identity-to-the-storage-account-)
+    * Access Control role permissions assigned to the Workspace Identity. For instructions, see [Add the workspace identity to the storage account](#add-the-workspace-identity-to-the-storage-account-)
     * A [container](/azure/storage/blobs/blob-containers-portal?branch=main) uploaded with a sample data file. For instructions, see [Create contianer with data file ###](#create-contianer-with-data-file-)
 
 ### Add the workspace identity to the storage account ###
