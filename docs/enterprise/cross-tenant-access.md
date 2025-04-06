@@ -4,13 +4,13 @@ description: An article
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: article
-ms.date: 02/26/2025
+ms.date: 04/06/2025
 ---
 
 # Data warehouse cross tenant access (preview)
 
 >[!IMPORTANT]
->Cross tenant access is a private preview feature. To participate in the preview as a provider of cross tenant data, contact your Microsoft representative. To participate in the preview as a guest tenant, you need to follow the steps listed in this document.
+>Cross tenant access is a private preview feature. To participate in the preview as a provider of cross tenant data, contact your Microsoft representative. To participate in the preview as a guest tenant, follow the steps listed in this document.
 
 The cross tenant access feature allows guest tenants to access data stored in a provider tenant’s Fabric data warehouses. This feature is useful for organizations that need to access data stored on a service provider's tenant. For example, when company A stores Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant.
 
@@ -91,7 +91,9 @@ Connect-PowerBIServiceAccount
 
 ### Provide consent
 
-Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the consent API to provide consent for cross tenant access for Fabric data warehouses with a specific provider. Provide the tenant ID of the provider in the request body. Note that the provider must participate in the private preview prior to this step.
+Providers must participate in the private preview before they provide consent.
+
+Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the consent API to provide consent for cross tenant access for Fabric data warehouses with a specific provider. Provide the tenant ID of the provider in the request body. 
 
 ```powershell
 $body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’
