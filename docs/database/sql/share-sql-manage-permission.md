@@ -4,7 +4,7 @@ description: Learn how to share a SQL database item in Fabric with others and ma
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sukkaur, jaszymas, mesrivas  # Microsoft alias
-ms.date: 03/13/2025
+ms.date: 04/06/2025
 ms.topic: how-to
 ms.custom:
 ---
