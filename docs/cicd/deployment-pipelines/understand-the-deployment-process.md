@@ -84,7 +84,7 @@ In the target stage, [item properties that aren't copied](understand-the-deploym
 
 ## Autobinding
 
-In Fabric, when items are connected, one of the items depends on the other. For example, a report always depends on the semantic model it's connected to. A semantic model can depend on another semantic model, and can also be connected to several reports that depend on it. If there's a connection between two items, deployment pipelines always tries to maintain this connection.
+In Fabric, when items are connected, one of the items depends on the other. For example, a report always depends on the semantic model connected to it. A semantic model can depend on another semantic model, and can also be connected to several reports that depend on it. If there's a connection between two items, deployment pipelines always tries to maintain this connection.
 
 ### Autobinding in the same workspace
 
@@ -108,7 +108,7 @@ Autobinding works only with items that are supported by deployment pipelines and
 
 ### Autobinding across workspaces
 
-Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item it's connected to in the other pipeline. For example, if you have a report in the test stage of pipeline A that's connected to a semantic model in the test stage of pipeline B, deployment pipelines recognizes this connection.
+Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item connected to it in the other pipeline. For example, if you have a report in the test stage of pipeline *A* that's connected to a semantic model in the test stage of pipeline *B*, deployment pipelines recognizes this connection.
 
 Here's an example with illustrations that to help demonstrate how autobinding across pipelines works:
 
@@ -214,11 +214,11 @@ Unless there's also a schema change, the option next to the label to open a *Cha
 
 * Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
 
-* Deploying one item out of several in a folder also updates the structure of the items that aren't deployed in the target stage even though the items themselves aren't be deployed.
+* Deploying one item out of several in a folder also updates the structure of the items that aren't deployed in the target stage even though the items themselves aren't deployed.
 
 ## Parent-child item representation
 
-These appear only in the new UI. Looks same as in the workspace. Child isn't deployed but recreated on the target stage
+Parent child relationships only appear in the new UI. They looks the same as in the workspace. The child isn't deployed but recreated on the target stage
 
 :::image type="content" source="media/understand-the-deployment-process/parent-child.png" alt-text="Screenshot showing the depiction of a parent child relationship in the new UI.":::
 
@@ -444,7 +444,7 @@ The following table lists required permissions for popular deployment pipeline a
 |Deploy items to the next stage (see note)   |<ul><li>Pipeline admin</li><li>Workspace contributor to both the source and target stages</li><li>To deploy datamarts or dataflows, you must be the owner of the deployed item</li><li>If the semantic model tenant admin switch is turned on and you're deploying a semantic model, you need to be the owner of the semantic model</li></ul>         |
 |View or set a rule     |<ul><li>Pipeline admin</li><li>Target workspace contributor, member, or admin</li><li>Owner of the item you're setting a rule for</li></ul>         |
 |Manage pipeline settings     |Pipeline admin         |
-|View a pipeline stage     |<ul><li>Pipeline admin</li><li>Workspace reader, contributor, member, or admin. You'll see the items that your workspace permissions grant access to.</li></ul>         |
+|View a pipeline stage     |<ul><li>Pipeline admin</li><li>Workspace reader, contributor, member, or admin. You see the items that your workspace permissions grant access to.</li></ul>         |
 |View the list of items in a stage     |Pipeline admin         |
 |Compare two stages     |<ul><li>Pipeline admin</li><li>Workspace contributor, member, or admin for both stages</li></ul>         |
 |View deployment history     |Pipeline admin         |
