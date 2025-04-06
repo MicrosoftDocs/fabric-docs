@@ -21,6 +21,8 @@ items:
     href: fabric-close-end-cancel.md
 - name: Capacity operations
   items:
+  - name: Microsoft Fabric capacity quotas
+    href: fabric-quotas.md
   - name: Fabric Copilot capacity
     href: fabric-copilot-capacity.md  
   - name: Understand your Azure bill
