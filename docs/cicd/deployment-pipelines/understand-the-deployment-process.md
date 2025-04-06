@@ -501,6 +501,8 @@ This section lists most of the limitations in deployment pipelines.
 
 * If you compare stages during a dataflow refresh, the results are unpredictable.
 
+* Autobinding isn't supported for dataflows Gen2.
+
 ### Datamart limitations
 
 * You can't deploy a datamart with sensitivity labels.
