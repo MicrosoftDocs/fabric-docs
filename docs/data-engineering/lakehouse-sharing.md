@@ -59,7 +59,7 @@ To create a new data access role:
 For more information, see [Get started with OneLake data access roles](../onelake/security/get-started-data-access-roles.md).
 
 ## Known issues
-* The sharing dialog for Lakehouses does now show option to subscribe to OneLake events. Permission to subscribe to OneLake events is granted along with the Read All Apache Spark permission. This is a temporary limitation.
+* The sharing dialog for lakehouse shows an option to subscribe to OneLake events. Permission to subscribe to this event is granted along with the *Read All* Apache Spark permission. This is a temporary limitation.
 
 
 ## Related content
