@@ -4,7 +4,7 @@ description: Learn how to view and manage your Microsoft Fabric quota which sets
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.date: 04/03/2025
+ms.date: 04/06/2025
 
 # Customer intent: As an administrator or an executive, I want to learn how to manage my Microsoft Fabric quota.
 ---
