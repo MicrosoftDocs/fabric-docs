@@ -32,9 +32,6 @@ Data agent in Microsoft Fabric transforms enterprise data into conversational Q&
 - [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
 - Developers and end users must at least have `AI Developer` ​Role-Based Access Control (RBAC) role.
 
-> [!NOTE]
-> At this time, the integration between Fabric data agent and Azure AI Foundry is supported only in the West US and Japan East regions, with more regions coming soon.
-
 ## How it works
 
 **Agent Setup**: In Azure AI Agent Service, create a new agent and add Fabric data agent as one of its knowledge sources. To establish this connection, you need the workspace ID and artifact ID for the Fabric data agent. The setup enables your Azure AI agent to evaluate available sources when it receives a query, ensuring that it invokes the correct tool to process the request. Currently, you can only add one Fabric data agent as a knowledge source to your Azure AI agent.
