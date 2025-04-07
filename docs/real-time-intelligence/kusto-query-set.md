@@ -41,28 +41,28 @@ Select the tab that corresponds with your desired data source type.
 ## [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the **Explorer** pane, under **Datasources**, expand the **more actions** menu.
+1. In the **Explorer** pane, under **Datasources**, expand the more actions **[...]** menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
 
-1. Select **Add data source**, then select **Azure Data Explorer**.
+1. Select **Add data source** > **Azure Data Explorer**.
 1. Under **Connection URI**, enter the cluster URI.
 
     To find the connection URI, go to your cluster resource in the [Azure portal](https://portal.azure.com/#home). The connection URI is the URI found in the Overview. To add a free sample cluster, specify "help" as the **Connection URI**.
 
     :::image type="content" source="media/kusto-query-set/connect-to-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect cluster button is highlighted.":::
 
-1. Under **Database**, select the dropdown menu to expand the list of data sources in your cluster, and then select a data source.
+1. Under **Database**, expand the list and select a data source.
 1. Select **Connect**.
 
 ## [Azure Monitor](#tab/azure-monitor)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the **Explorer** pane, under **Datasources**, expand the **more actions** menu.
+1. In the **Explorer** pane, under **Datasources**, expand the more actions **[...]** menu.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
-1. Select **Add data source**, then select **Azure Monitor** > **Application Insights** or **Log Analytics**.
+1. Select **Add data source** > **Azure Monitor** > **Application Insights** or **Log Analytics**.
 1. Enter your connection details.
 
     * **Connection URI**: the URL of the Log Analytics (LA) workspace or Application Insights (AI) resource.
@@ -73,13 +73,15 @@ Select the tab that corresponds with your desired data source type.
 
         * To see all data sources in the LA or AI subscription: `https://ade.applicationinsights.io/subscriptions/<subscription-id>`
 
-    * **Subscription**: the subscription ID of the Log Analytics workspace or Application Insights resource
+        Where: 
 
-    * **Resource group**: resource group name
+        | **Setting** | **Field description** |
+        |--|--|
+        | Subscription | The subscription ID of the Log Analytics workspace or Application Insights resource |
+        | Resource group | resource group name |
+        | Application insights / Log analytics | select the relevant option |
 
-    * **Application insights**/**Log analytics**: select the relevant option
-
-    * **Database**: expand the list of data sources, and then select a data source.
+    * **Database**: expand the list and select a data source.
 
     :::image type="content" source="media/kusto-query-set/connect-to-monitor.png" alt-text="Screenshot of the connection window showing an Azure Monitor URI. The Connect cluster button is highlighted.":::
 
@@ -141,7 +143,7 @@ Different actions are available for different item types.
 
 The lower section of the data source explorer shows all the available data sources that were added to the queryset.
 
-To open the action menu, hover over the data source name and select the **More actions** menu [...]. The menu shows the following options:
+To open the action menu, hover over the data source name and select the more actions **[...]** menu. The menu shows the following options:
 
 * Refresh database
 * Use this database: switch to use this data source in the current tab
