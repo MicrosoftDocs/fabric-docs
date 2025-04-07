@@ -22,7 +22,7 @@ Use this method to retrieve existing data from Azure Storage as a one-time opera
 
 Continuous ingestion involves setting up an ingestion pipeline that allows the Fabric workspace to listen to Azure Storage events. The pipeline notifies the workspace to pull information when subscribed events occur. The events include when a storasge blob is created or renamed. 
 
-During set up the table schema is created by reading the Azure Storage data file structure. See the [supported formats](ingestion-supported-formats.md) and [supported compressions](ingestion-supported-formats#supported-data-compression-formats).
+During set up the table schema is created by reading the Azure Storage data file structure. See the [supported formats](ingestion-supported-formats) and [supported compressions](ingestion-supported-formats#supported-data-compression-formats).
 
 
 > [!NOTE]
@@ -39,9 +39,9 @@ For continuous ingestion you also require:
 
 * A [Workspace identity](../security/workspace-identity.md). *My Workspace* is not supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
 * A storage account with:
-    * [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account?branch=main) must be enabled in the storage account for ingestion to be continuous
-    * Access Control role permissions assigned to the Workspace Identity. For instructions, see [Add the workspace identity to the storage account](#add-the-workspace-identity-to-the-storage-account)
-    * A [container](/azure/storage/blobs/blob-containers-portal) uploaded with a data file. The data file sctructure is used to define the table schema. For instructions, see [Create contianer with data file](#create-contianer-with-data-file).
+    * [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account.md) must be enabled in the storage account for ingestion to be continuous
+    * Access Control role permissions assigned to the workspace identity.
+    * A [container](/azure/storage/blobs/blob-containers-portal) uploaded with a data file. The data file sctructure is used to define the table schema.
 
 ### Add the workspace identity to the storage account
 
@@ -103,7 +103,7 @@ Set the source to get data.
     | Subscription | The subscription ID where the storage account is located. |
     | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
     | Container | The storage container containing the file you want to ingest. |
-    | Connection | Open the drop-down and select **+ New connection**. The connection settings are prepopulated. <br/> |
+    | Connection | Open the drop-down and select **+ New connection**. The connection settings are prepopulated.|
     | **File filters (optional)** |  |
     | Folder path | Filters data to ingest files with a specific folder path. |
     | File extension | Filters data to ingest files with a specific file extension only. | 
