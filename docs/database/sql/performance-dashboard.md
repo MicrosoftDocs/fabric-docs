@@ -3,8 +3,8 @@ title: "Performance Dashboard for SQL database"
 description: Learn about the Performance Dashboard for SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: sukkaur
-ms.date: 11/05/2024
+ms.reviewer: amapatil, subasak
+ms.date: 04/07/2025
 ms.topic: conceptual
 ms.search.form: Performance monitoring in SQL database
 ---
@@ -60,10 +60,9 @@ The following are built-in reporting areas of the Performance Dashboard.
 
 #### CPU consumption
 
-The **CPU consumption** graph is plotted by vCore seconds. The **Top Consuming CPU queries** identifies the queries in the desired time interval that have been most responsible for vCore consumption.
-
->[!NOTE]
->The vCores displayed in the Performance Dashboard (CPU Consumption tab) represent only CPU usage. The overall consumption, calculated in vCores, also displayed in Capacity units in the [Billing and Utilization reporting](usage-reporting#capacity-for-sql-database-in-microsoft-fabric.md), can be associated to **CPU consumption** or **memory consumption**. The memory consumption component is not displayed in the Performance Dashboard at present but is on our roadmap. 
+The **CPU consumption** graph displays CPU usage (in vCores) along the X-axis and time along the Y-axis. When you hover over the graph, you'll see details such as the event duration, status, and CPU usage within that specific time frame. Time ranges on the graph can be expanded to reveal more detail.
+ 
+The CPU trends shown in this dashboard represent usage by user queries only. They do not include CPU used for provisioning, system maintenance, or other background operations. The Performance Dashboard does not directly correlate to Fabric consumption. To track consumption, use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
 
 #### User connections
 
