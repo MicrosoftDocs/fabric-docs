@@ -167,6 +167,8 @@ There are several considerations to keep in mind while working with private endp
 
 * Private Links won't work with VNet Data Gateway download diagnostics.
 
+* The Microsoft Fabric Capacity Metrics app doesn't support Private Link.
+  
 * Private links resource REST APIs don't support tags.
 
 * The following URLs must be accessible from the client browser:
