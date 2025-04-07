@@ -12,7 +12,7 @@ ms.search.form: Get data in a KQL Database
 
 # Get data from Azure Storage
 
-In this article, you learn how to get data from Azure Storage (ADLS Gen2 container, blob container, or individual blobs). You can ingest data into your table coninuously or non-continuously. Once ingested, the data becomes available for query.
+In this article, you learn how to get data from Azure Storage (ADLS Gen2 container, blob container, or individual blobs). You can ingest data into your table coninuously or as a one-time ingestion. Once ingested, the data becomes available for query.
 
 **One-time ingestion**
 
@@ -103,11 +103,12 @@ Set the source to get data.
     | Subscription | The subscription ID where the storage account is located. |
     | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
     | Container | The storage container containing the file you want to ingest. |
-    | Connection | Open the drop-down and select **+ New connection**. The connection settings are prepopulated. <br/>
-      :::image type="content" source="media/get-data-azure-storage/configure-connection.png" alt-text="Screenshot of connection dialog with the settings prepopulated." lightbox="media/get-data-azure-storage/configure-connection.png":::
+    | Connection | Open the drop-down and select **+ New connection**. The connection settings are prepopulated. <br/> |
     | **File filters (optional)** |  |
     | Folder path | Filters data to ingest files with a specific folder path. |
-    | File extension | Filters data to ingest files with a specific file extension only. |
+    | File extension | Filters data to ingest files with a specific file extension only. | 
+
+    :::image type="content" source="media/get-data-azure-storage/configure-connection.png" alt-text="Screenshot of connection dialog with the settings prepopulated." lightbox="media/get-data-azure-storage/configure-connection.png":::
 
 1. Select **Save** > **Close**.
 
@@ -117,7 +118,7 @@ Set the source to get data.
 
 1. To verify the connection, upload a new data file to the Azure Storage account.
 
-## [Non-continuous ingestion](#tab/one-time-ingestion)
+## [One-time ingestion](#tab/one-time-ingestion)
 
 1. Select a destination table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
