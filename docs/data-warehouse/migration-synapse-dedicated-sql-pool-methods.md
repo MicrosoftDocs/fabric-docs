@@ -1,10 +1,10 @@
 ---
-title: Migration methods for ​​Azure Synapse dedicated SQL pools to Fabric Migration​
+title: Migration Methods for ​​Azure Synapse Dedicated SQL Pools to Fabric Migration​
 description: This article details the methods of migration of data warehousing in Azure Synapse dedicated SQL pools to Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: arturv, johoang
-ms.date: 03/22/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
@@ -78,7 +78,7 @@ To address improving the throughput to load larger fact tables using Fabric data
 
 You have the option of using the source table physical partitioning, if available. If table doesn't have physical partitioning, you must specify the partition column and supply min/max values to use dynamic partitioning. In the following screenshot, the data pipeline **Source** options are specifying a dynamic range of partitions based on the `ws_sold_date_sk` column.
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-source-partition-option.png" alt-text="Screenshot of a data pipeline, depicting the option to specify the primary key, or the date for the dynamic partition column.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-source-partition-option.png" alt-text="Screenshot of a data pipeline, depicting the option to specify the primary key, or the date for the dynamic partition column.":::
 
 While using partition can increase the throughput with the staging phase, there are considerations to make the appropriate adjustments:
 
@@ -117,7 +117,7 @@ The following code sample covers schema (DDL) migration with Data Factory.
 
 You can use Fabric Data Pipelines to easily migrate over your DDL (schemas) for table objects from any source Azure SQL Database or dedicated SQL pool. This data pipeline migrates over the schema (DDL) for the source dedicated SQL pool tables to Fabric Warehouse.
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-schema-migration.png" alt-text="Screenshot from Fabric Data Factory showing a Lookup object leading to a For Each Object. Inside the For Each Object, there are Activities to Migrate DDL.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-schema-migration.png" alt-text="Screenshot from Fabric Data Factory showing a Lookup object leading to a For Each Object. Inside the For Each Object, there are Activities to Migrate DDL.":::
 
 ##### Pipeline design: parameters
 
@@ -125,7 +125,7 @@ This Data Pipeline accepts a parameter `SchemaName`, which allows you to specify
 
 In the **Default value** field, enter  a comma-delimited list of table schema indicating which schemas to migrate: `'dbo','tpch'` to provide two schemas, `dbo` and `tpch`.
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a Data Pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a Data Pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated.":::
 
 ##### Pipeline design: Lookup activity
 
@@ -154,7 +154,7 @@ In the **Settings** tab:
     ')
     ```
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-query-dynamic-content.png" alt-text="Screenshot from Data Factory showing the Settings tab of a Data Pipeline. The 'Query' button is selected and code is pasted into the 'Query' field.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-query-dynamic-content.png" alt-text="Screenshot from Data Factory showing the Settings tab of a Data Pipeline. The 'Query' button is selected and code is pasted into the 'Query' field.":::
 
 ##### Pipeline design: ForEach Loop
 
@@ -164,7 +164,7 @@ For the ForEach Loop, configure the following options in the **Settings** tab:
 - Set **Batch count** to `50`, limiting the maximum number of concurrent iterations.
 - The Items field needs to use dynamic content to reference the output of the LookUp Activity. Use the following code snippet: `@activity('Get List of Source Objects').output.value`
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-settings-foreach-loop-items.png" alt-text="Screenshot showing the ForEach Loop Activity's settings tab.":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-settings-foreach-loop-items.png" alt-text="Screenshot showing the ForEach Loop Activity's settings tab.":::
  
 ##### Pipeline design: Copy Activity inside the ForEach Loop
 
@@ -177,7 +177,7 @@ In the **Source** tab:
 - Set **Use Query** to **Query**.
 - In the **Query** field, paste in the dynamic content query and use this expression which will return zero rows, only the table schema: `@concat('SELECT TOP 0 * FROM ',item().SchemaName,'.',item().TableName)`
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-foreach-copy-activity-source.png" alt-text="Screenshot from Data Factory showing the Source tab of the Copy Activity inside the ForEach Loop." lightbox="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-foreach-copy-activity-source.png":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-foreach-copy-activity-source.png" alt-text="Screenshot from Data Factory showing the Source tab of the Copy Activity inside the ForEach Loop." lightbox="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-foreach-copy-activity-source.png":::
 
 In the **Destination** tab:
 
@@ -187,7 +187,7 @@ In the **Destination** tab:
     - Schema refers to the current iteration's field, SchemaName with the snippet: `@item().SchemaName`
     - Table is referencing TableName with the snippet: `@item().TableName`
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-foreach-copy-activity-destination.png" alt-text="Screenshot from Data Factory showing the Destination tab of the Copy Activity inside each ForEach Loop." lightbox="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-foreach-copy-activity-destination.png":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-foreach-copy-activity-destination.png" alt-text="Screenshot from Data Factory showing the Destination tab of the Copy Activity inside each ForEach Loop." lightbox="media/migration-synapse-dedicated-sql-pool-methods/fabric-data-factory-foreach-copy-activity-destination.png":::
 
 ##### Pipeline design: Sink
 
