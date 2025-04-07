@@ -39,6 +39,7 @@ Select the tab that corresponds with your desired data source type.
 1. In the **OneLake data hub** window that appears, select a KQL database to connect to your KQL queryset, and then select **Connect**. Alternatively, close the **OneLake data hub** window and use the **+ Add data source** menu to connect to a different data source.
 
 ## [Azure Data Explorer](#tab/azure-data-explorer-cluster)
+## [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 1. In the **Explorer** pane, under **Datasources**, expand the **more actions** menu.
@@ -128,6 +129,7 @@ To open the action menu, hover over an item in the expanded list and select the 
 * Refresh database
 * View data profile
 * Explore data
+* Explore data
 * Insert: to create and copy a script
 * Get data: to add a new data source
 * Create a dashboard
@@ -148,6 +150,7 @@ To open the action menu, hover over the data source name and select the **More a
 * Query in a new tab: open this data source in a new tab in the queryset
 * Remove source: removes all the databases in that data source
 * Remove database: removes the selected database only
+* Open in KQL database: opens this data source in a KQL database.
 * Open in KQL database: opens this data source in a KQL database.
 
 :::image type="content" source="media/kusto-query-set/explorer-pane-lower-section.png" alt-text="Screenshot showing the lower section of the Explorer pane where all data sources that were added to your queryset are listed." lightbox="media/kusto-query-set/explorer-pane-lower-section.png":::
