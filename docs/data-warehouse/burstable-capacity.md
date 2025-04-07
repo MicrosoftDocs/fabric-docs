@@ -1,12 +1,11 @@
 ---
-title: Burstable capacity
+title: Burstable Capacity
 description: Learn more about how burstable capacity is used and limited with SKU guardrails in Fabric data warehousing.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: stevehow
-ms.date: 04/24/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 
@@ -75,5 +74,5 @@ The burstable scale factor can be achieved independently for ingestion at the sa
 
 - [Workload management](workload-management.md)
 - [Scale your capacity](../enterprise/scale-capacity.md)
-- [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
-- [Capacity settings](../admin/capacity-settings.md)
+- [Smoothing and throttling in Fabric Data Warehouse](compute-capacity-smoothing-throttling.md)
+- [Manage your Fabric capacity](../admin/capacity-settings.md)

@@ -4,9 +4,8 @@ description: T-SQL surface area of the SQL analytics endpoint and warehouse in M
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, jovanpop, twinklecyril
-ms.date: 03/31/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
 # T-SQL surface area in Fabric Data Warehouse
@@ -15,7 +14,7 @@ ms.search.form: T-SQL Surface area # This article's title should not change. If 
 
 This article covers the T-SQL language syntax capabilities of [!INCLUDE [product-name](../includes/product-name.md)], when querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
-For SQL database in Fabric, see [Features comparison](../database/sql/feature-comparison-sql-database-fabric.md) and [Limitations in SQL database (Preview)](../database/sql/limitations.md).
+For SQL database in Fabric, see [Features comparison: Azure SQL Database and SQL database in Microsoft Fabric (preview)](../database/sql/feature-comparison-sql-database-fabric.md) and [Limitations in SQL database (preview)](../database/sql/limitations.md).
 
 > [!NOTE]
 > For more information on upcoming feature development for Fabric Data Warehouse, see the [Fabric Data Warehouse release plan](/fabric/release-plan/data-warehouse).
@@ -63,4 +62,4 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - [Query insights in Fabric data warehousing](query-insights.md)
 - [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
 - [Data types in Microsoft Fabric](data-types.md)
-- [Limitations in Microsoft Fabric](limitations.md)
+- [Limitations of Microsoft Fabric Data Warehouse](limitations.md)
