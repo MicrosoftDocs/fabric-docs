@@ -179,7 +179,7 @@ items:
     items:
       - name: Apache Spark Core Monitoring Features
         items: 
-         - name: Apache Spark monitoring overview
+         - name: Apache Spark monitoring Overview
            href: spark-monitoring-overview.md
          - name: Monitor Spark Capacity Consumption
            href: monitor-spark-capacity-consumption.md
@@ -195,7 +195,7 @@ items:
            href: spark-advisor-introduction.md
       - name: Spark Application Run Series Analysis
         items: 
-         - name: Run series analysis overview
+         - name: Run series analysis Overview
            href: run-series-analyisis-overview.md
          - name: Monitor run series
            href: apache-spark-monitor-run-series.md
