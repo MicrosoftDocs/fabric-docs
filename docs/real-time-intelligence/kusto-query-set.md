@@ -125,7 +125,7 @@ The upper section of the data source explorer shows all the items that are inclu
 
 Select the arrow **>** to the left of the item you want to expand. You can drill down to show more details by selecting the arrow **>** to the left of items in subsequent list levels. For example, under **Tables**, select the arrow **>** to the left of a table to show the list of the columns in that table.
 
-To open the action menu, hover over an item in the expanded list and select the **More actions** menu [...]. The menu shows the following options:
+To open the action menu, hover over an item in the expanded list and select the **More menu** [**...**]. The menu shows the following options:
 
 * Refresh database
 * View data profile
@@ -143,7 +143,7 @@ Different actions are available for different item types.
 
 The lower section of the data source explorer shows all the available data sources that were added to the queryset.
 
-To open the action menu, hover over the data source name and select the more actions **[...]** menu. The menu shows the following options:
+To open the action menu, hover over the data source name and select the **More menu** [**...**]. The menu shows the following options:
 
 * Refresh database
 * Use this database: switch to use this data source in the current tab
