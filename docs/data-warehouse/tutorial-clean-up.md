@@ -1,12 +1,11 @@
 ---
-title: "Data warehouse tutorial: Clean up tutorial resources"
+title: "Data Warehouse Tutorial: Clean up Tutorial Resources"
 description: "In this tutorial, you will remove the workspace you created in the first tutorial."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 12/29/2024
+ms.date: 04/06/2025
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Tutorial: Clean up tutorial resources
@@ -26,13 +25,13 @@ In this task, you'll remove the workspace you created in the first tutorial.
 
 1. In the workspace landing page, select **Workspace settings**.
 
-   :::image type="content" source="media/tutorial-clean-up/select-workspace-settings.png" alt-text="Screenshot of the workspace landing page, highlighting the Workspace settings option."  border="false":::
+   :::image type="content" source="media/tutorial-clean-up/select-workspace-settings.png" alt-text="Screenshot of the workspace landing page, highlighting the Workspace settings option.":::
 
 1. In the **Workspace settings** pane, in the **General** tab, locate the **Manage** section.
 
 1. Select **Remove this workspace**.
 
-   :::image type="content" source="media/tutorial-clean-up/workspace-settings-remove-workspace.png" alt-text="Screenshot of the Workspace settings pane, highlighting the Remove this workspace button." border="false":::
+   :::image type="content" source="media/tutorial-clean-up/workspace-settings-remove-workspace.png" alt-text="Screenshot of the Workspace settings pane, highlighting the Remove this workspace button.":::
 
 1. When prompted to delete the workspace, select **Delete**.
 
