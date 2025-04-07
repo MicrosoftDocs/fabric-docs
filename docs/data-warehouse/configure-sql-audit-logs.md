@@ -1,5 +1,5 @@
 ---
-title: Configure SQL Audit Logs in Fabric Data Warehouse (Preview)
+title: "Configure SQL Audit Logs in Fabric Data Warehouse (Preview)"
 description: Step-by-step instructions to enable and configure SQL Audit Logs on Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf

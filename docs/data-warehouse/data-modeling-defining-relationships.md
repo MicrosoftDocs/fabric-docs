@@ -1,12 +1,11 @@
 ---
-title: Define relationships in data models for data warehousing
+title: Define Relationships in Data Models for Data Warehousing
 description: Learn how to define physical and logical relationships in your data models for data warehousing in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
-ms.date: 04/24/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Model view # This article's title should not change. If so, contact engineering.
 ---
 # Define relationships in data models for data warehousing in Microsoft Fabric
@@ -56,7 +55,9 @@ You only see the table names and columns from which you can choose, you aren't p
 
 Single or multi-selected relationships can also be deleted by pressing **Delete** on your keyboard. You can't undo the delete action, so a dialog prompts you to confirm deleting the relationships.
 
-### <a id="using-model-view-layouts"></a> Use model layouts
+<a id="using-model-view-layouts"></a>
+
+### Use model layouts
 
 During the session, users can create multiple tabs in the model layouts to depict multiple data warehouse schemas or further assist with database design.
 

@@ -63,7 +63,7 @@ This section is divided into Fabric experience. Each experience had a table that
 
 ### Data agent in Fabric
 
-[Data agent](../data-science/concept-ai-skill.md) operations are listed in this table. In the metrics app's [matrix by item and operation table](metrics-app-compute-page.md), Data agent operations are listed under the *LlmPlugin* item kind.
+[Data agent](../data-science/concept-data-agent.md) operations are listed in this table. In the metrics app's [matrix by item and operation table](metrics-app-compute-page.md), Data agent operations are listed under the *LlmPlugin* item kind.
 
 You can find the consumption rates for the Data agent in [Data agent consumption](../fundamentals/copilot-fabric-consumption.md).
 
