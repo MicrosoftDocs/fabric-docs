@@ -13,7 +13,7 @@ ms.date: 11/18/2024
 
     :::image type="content" source="./media/azure-service-bus-source-connector/new-connection-button.png" alt-text="Screenshot that shows the Connect page the New connection link highlighted." lightbox="./media/azure-service-bus-source-connector/new-connection-button.png":::     
 
-    If there's an existing connection to your Azure Service Bus resource, select that existing connection as shown in the following image, and then move on to the step to configure **Service Bus Type*** in the following steps.
+    If there's an existing connection to your Azure Service Bus resource, select that existing connection as shown in the following image, and then move on to the step to configure **Service Bus Type** in the following steps.
 
     :::image type="content" source="./media/azure-service-bus-source-connector/existing-connection.png" alt-text="Screenshot that shows the Connect page with an existing connection selected." lightbox="./media/azure-service-bus-source-connector/existing-connection.png":::     
 1. In the **Connection settings** section, for **Host Name**, enter the host name for your service bus, which you can get from the **Overview** page of your Service Bus namespace. It's in the form of `NAMESPACENAME.servicebus.windows.net`.
