@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 03/31/2025
+ms.date: 04/07/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1079  | Data Factory | [Pipelines fail with missing capacity error](./known-issue-1079-pipelines-fail-missing-capacity-error.md) | April 7, 2025 |
 |  1078  | Data Factory | [Can't install or open on-premises data gateway after Windows update](./known-issue-1078-not-install-open-on-premises-data-gateway-windows-update.md) | March 31, 2025 |
 |  1077  | Power BI | [Failure to scale AAS server or add admins through Azure portal](./known-issue-1077-failure-scale-azure-analysis-services-add-admins.md) | March 31, 2025 |
 |  1076  | Real-Time Intelligence | [Eventstream sample data sources created from Real-Time hub are inactive](./known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md) | March 31, 2025 |
@@ -45,7 +46,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1031  | Administration & Management | [Git integration undo action appears after initial sync fails](./known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md) | February 20, 2025 |
 |  1028  | Data Engineering | [Slow Spark session startup caused by Native Execution Engine](./known-issue-1028-slow-spark-session-startup-native-execution-engine.md) | February 19, 2025 |
 |  1027  | Data Factory | [Mirroring fails for tables with unique index on unsupported data type](./known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md) | February 19, 2025 |
-|  1024  | Data Factory | [CopyJob item deletion fails with error](./known-issue-1024-copy-job-item-deletion-fails-error.md) | February 14, 2025 |
 |  1017  | Data Engineering | [Unsupported error for legacy timestamp in Fabric Runtime 1.3](./known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md) | February 5, 2025 |
 |  1004  | Data Engineering | [Notebook and SJD job statuses are in progress in monitor hub](./known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md) | January 29, 2025 |
 |  1003  | Databases | [Copilot sidecar chat fails with certain private link settings](./known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md) | January 28, 2025 |
@@ -72,7 +72,6 @@ Select the **Title** to view more information about that specific known issue.
 |  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](./known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 |
 |  878  | Power BI | [Premium capacity doesn't add excess usage into carry forward](./known-issue-878-premium-capacity-not-add-usage-carry-forward.md) | October 10, 2024 |
 |  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](./known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 |
-|  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](./known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 |
 |  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](./known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
 |  837  | Data Engineering | [Monitoring hub displays incorrect queued duration](./known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md) | September 17, 2024 |
 |  835  | Data Engineering | [Managed private endpoint connection could fail](./known-issue-835-managed-private-endpoint-connection-fail.md) | September 13, 2024 |
@@ -97,6 +96,8 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1024  | Data Factory | [CopyJob item deletion fails with error](./known-issue-1024-copy-job-item-deletion-fails-error.md) | February 14, 2025 | Fixed: April 7, 2025 |
+|  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](./known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 | Fixed: April 7, 2025 |
 |  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](./known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 | Fixed: March 31, 2025 |
 |  897  | OneLake | [OneLake Shared Access Signature (SAS) can't read cross-region shortcuts](./known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md) | October 25, 2024 | Fixed: March 24, 2025 |
 |  1070  | Power BI  | [Virtual network data gateway doesn't start certain regions](./known-issue-1070-virtual-network-data-gateway-not-start-certain-regions.md) | March 21, 2025 | Fixed: March 21, 2025 |
@@ -119,11 +120,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  978  | Real-Time Intelligence  | [Renamed eventstream fails to open](./known-issue-978-renamed-eventstream-fails-open.md) | December 17, 2024 | Fixed: February 20, 2025 |
 |  966  | Power BI  | [Sync content from Git in workspace fails](./known-issue-966-sync-content-git-workspace-fails.md) | December 11, 2024 | Fixed: February 20, 2025 |
 |  962  | Real-Time Intelligence | [Eventstream publish fails when column contains empty array and operator is added](./known-issue-962-eventstream-publish-fails-column-empty-array-operator.md) | December 9, 2024 | Fixed: February 20, 2025 |
-|  1020  | Data Factory | [Dataflow connector doesn't show dataflows with view only permissions](./known-issue-1020-dataflow-connector-not-show-dataflows-view-permissions.md) | February 10, 2025 | Fixed: February 14, 2025 |
-|  934  | Power BI | [External data sharing doesn't work in a different region capacity lakehouse](./known-issue-934-external-data-sharing-not-work-different-region.md) | November 19, 2024 | Fixed: February 14, 2025 |
-|  769  | Data Factory | [Dataflows Gen2 staging lakehouse doesn't work in deployment pipelines](./known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md) | July 2, 2024 | Fixed: February 14, 2025 |
-|  765  | Data Factory | [Dataflows Gen2 staging warehouse doesn't work in deployment pipelines](./known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md) | July 2, 2024 | Fixed: February 14, 2025 |
-|  591  | Data Factory | [Type mismatch when writing decimals and dates to lakehouse using a dataflow](./known-issue-591-type-mismatch-lakehouse-using-dataflow.md) | February 16, 2024 | Fixed: February 14, 2025 |
 
 ## Related content
 
