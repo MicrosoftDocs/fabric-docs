@@ -6,7 +6,7 @@ ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: midesa
 reviewer: midesa
-ms.date: 05/07/2025
+ms.date: 04/07/2025
 ---
 
 # Perform hyperparameter tuning in Fabric (preview)
