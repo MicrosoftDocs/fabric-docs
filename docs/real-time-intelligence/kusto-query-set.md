@@ -66,18 +66,15 @@ Select the tab that corresponds with your desired data source type.
 1. Select **Add data source** > **Azure Monitor** > **Application Insights** or **Log Analytics**.
 1. Enter your connection details.
 
-    * **Connection URI**: the URL of the Log Analytics (LA) workspace or Application Insights (AI) resource.
-
-        * For Log Analytics workspace: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>`
-
-        * For Application Insights resource: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`
-
-        * To see all data sources in the LA or AI subscription: `https://ade.applicationinsights.io/subscriptions/<subscription-id>`
-
-        Where: 
-
         | **Setting** | **Field description** |
         |--|--|
+        | Connection URI | the URL of the Log Analytics (LA) workspace or Application Insights (AI) resource. </br>
+
+        * For Log Analytics workspace: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>` </br>
+
+        * For Application Insights resource: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>` </br>
+
+        * To see all data sources in the LA or AI subscription: `https://ade.applicationinsights.io/subscriptions/<subscription-id>`
         | Subscription | The subscription ID of the Log Analytics workspace or Application Insights resource |
         | Resource group | resource group name |
         | Application insights / Log analytics | select the relevant option |
