@@ -9,7 +9,7 @@ ms.date: 11/18/2024
 ms.search.form: Monitor Fabric events capacity consumption
 ---
 
-# Microsoft Azure and Fabric events capacity consumption
+# Azure and Fabric events capacity consumption
 
 Azure and Fabric events support event-driven scenarios like real-time alerting and triggering downstream actions. Publishers like Azure Storage or Fabric Workspaces emit events that are received by consumers like Activator or Eventstreams to enable you to monitor and react to events by triggering actions or workflows.
 
