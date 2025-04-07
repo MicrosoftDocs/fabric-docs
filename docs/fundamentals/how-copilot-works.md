@@ -26,7 +26,7 @@ The following diagram depicts an overview of how Copilot in Fabric works.
 > [!NOTE]
 > The following diagram depicts the general architecture of Copilot in Fabric. However, depending on the specific workload and experience, there might be additions or differences.
 
-:::image type="content" source="media/how-copilot-works/copilot-fabric-overview-diagram.svg" alt-text="Diagram showing the process flow of how Copilot in Fabric works.":::
+:::image type="content" source="media/how-copilot-works/copilot-fabric-overview-diagram.png" alt-text="Diagram showing the process flow of how Copilot in Fabric works.":::
 
 The diagram consists of the following parts and processes:
 
@@ -141,7 +141,7 @@ You can't affect what preprocessing is done by Copilot. However, it's important 
 
 The following diagram depicts what happens during preprocessing by Copilot in Fabric.
 
-:::image type="content" source="media/how-copilot-works/copilot-input-preprocessing-diagram.svg" alt-text="Diagram showing process flow of how Copilot preprocesses input.":::
+:::image type="content" source="media/how-copilot-works/copilot-input-preprocessing-diagram.png" alt-text="Diagram showing process flow of how Copilot preprocesses input.":::
 
 After receiving user input, Copilot performs preprocessing, which involves the following steps:
 

@@ -28,6 +28,8 @@ Copilot in Microsoft Fabric is rolling out gradually, ensuring all customers wit
 >
 > Also, it isn't possible to enable only specific Copilot experiences, like using Copilot in the DAX query view of Power BI semantic models. You can only control whether Copilot is enabled or not at the level of each workload.
 
+## Prerequisites
+
 Enabling Copilot in Fabric involves several prerequisites and steps, as described in the following table:
 
 | **Step** | **Where you take this step** | **Description**
