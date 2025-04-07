@@ -1,12 +1,11 @@
 ---
-title: "Data warehouse tutorial: Introduction"
+title: "Data Warehouse Tutorial: Introduction"
 description: "Learn about the purpose of the tutorial, the end-to-end scenario and architecture, the sample data, and the data model."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 12/29/2024
+ms.date: 04/06/2025
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Tutorial: Introduction
