@@ -1,7 +1,7 @@
 ---
 title: Known issue - Data activator events aren’t ingested for Reflex events
 description: A known issue is posted where Data activator events aren’t ingested for Reflex events
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/10/2025

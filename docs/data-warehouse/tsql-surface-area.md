@@ -1,12 +1,11 @@
 ---
-title: T-SQL surface area in Fabric Data Warehouse
-description: T-SQL surface area of the SQL analytics endpoint and Warehouse in Microsoft Fabric.
+title: T-SQL Surface Area in Fabric Data Warehouse
+description: T-SQL surface area of the SQL analytics endpoint and warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, jovanpop, twinklecyril
-ms.date: 03/31/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
 # T-SQL surface area in Fabric Data Warehouse
@@ -15,7 +14,7 @@ ms.search.form: T-SQL Surface area # This article's title should not change. If 
 
 This article covers the T-SQL language syntax capabilities of [!INCLUDE [product-name](../includes/product-name.md)], when querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
-These limitations apply only to Warehouse and SQL analytics endpoint items in Fabric Synapse Data Warehouse. For limitations of SQL database in Fabric, see [Limitations in SQL database in Microsoft Fabric (Preview)](../database/sql/limitations.md).
+For SQL database in Fabric, see [Features comparison: Azure SQL Database and SQL database in Microsoft Fabric (preview)](../database/sql/feature-comparison-sql-database-fabric.md) and [Limitations in SQL database (preview)](../database/sql/limitations.md).
 
 > [!NOTE]
 > For more information on upcoming feature development for Fabric Data Warehouse, see the [Fabric Data Warehouse release plan](/fabric/release-plan/data-warehouse).
@@ -29,6 +28,7 @@ These limitations apply only to Warehouse and SQL analytics endpoint items in Fa
 - For more about data types, see [Data types](data-types.md).
 - [TRUNCATE TABLE](/sql/t-sql/statements/truncate-table-transact-sql?view=fabric&preserve-view=true) is supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 - To change the name of the column in a user table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], use the `sp_rename` stored procedure. 
+- A subset of query and join hints are supported. For more information, see [Hints (Transact-SQL)](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true).
 
 ### Limitations
 
@@ -41,10 +41,8 @@ At this time, the following list of commands is NOT currently supported. Don't t
       - ADD or DROP PRIMARY KEY, UNIQUE, and FOREIGN_KEY column constraints, but only if the NOT ENFORCED option has been specified. All other ALTER TABLE operations are blocked.
       - There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
 - `BULK LOAD`
-- `CREATE ROLE`
 - `CREATE USER`
 - `FOR JSON` must be the last operator in the query, and so is not allowed inside subqueries
-- Hints
 - IDENTITY Columns
 - Manually created multi-column stats
 - Materialized views
@@ -66,4 +64,4 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - [Query insights in Fabric data warehousing](query-insights.md)
 - [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
 - [Data types in Microsoft Fabric](data-types.md)
-- [Limitations in Microsoft Fabric](limitations.md)
+- [Limitations of Microsoft Fabric Data Warehouse](limitations.md)

@@ -235,4 +235,4 @@ When you finish the tutorial, you can delete the resources, you created to avoid
 
 1. Browse to your workspace homepage.
 1. Delete the notebook created in this tutorial.
-1. Delete the Eventhouse or [database](manage-monitor-eventhouse.md#manage-kql-databases) used in this tutorial.
+1. Delete the Eventhouse or [database](manage-monitor-database.md#manage-kql-databases) used in this tutorial.

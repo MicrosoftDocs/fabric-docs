@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 01/20/2025
+ms.date: 03/31/2025
 ms.custom: 
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to use OneLake catalog's Explore to discover, manage, and use the content I need.
 ---
@@ -105,7 +105,10 @@ Use the tags selector to display items tagged with the tags you select.
 
 Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading in the filters pane. The items you're allowed to see in that workspace will be displayed in the items list.
 
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-workspace-filter.png" alt-text="Screenshot of the explore tab's workspaces filter.":::
+> [!TIP]
+> The workspace filter can help you find the workspace your looking for. Select the magnifying glass icon to open the filter.
+
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-workspace-filter.png" alt-text="Screenshot of the explore tab's workspaces filter." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-workspace-filter.png":::
 
 The preceding image shows the *Sales Org* workspace selected in the Workspaces section. Because the item classification selector is set to *Data types*, only semantic models are shown (as no other type of data items are present in this workspace). The semantic model *Contoso FY21 goals* is selected, and its details are shown in the item details view. To explore the details of other items in the list, just select them. The item details view stays open until you dismiss it. This makes it easy to browse the details of items one after another, without losing your list context.
 
@@ -118,28 +121,41 @@ Each item in the items list has an options menu that enables you to do things, s
 
 To display the options menu, hover over the item whose options menu you want to see and select **More options (...)**.
 
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false":::
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false" lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png":::
+
+## Open an item for editing or viewing
+
+You can open the item for editing or viewing (depending on the item type) from both the items list and from the [item details view](#view-item-details).
+
+* To open the item for editing or viewing from the items list, hover over the item and select the **Open** icon that appears.
+
+    :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-edit-view-mode.png" alt-text="Screenshot of an item's open icon in the OneLake catalog." border="false" lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-edit-view-mode.png":::
+
+* To open the item for editing or viewing from the [item details view](#view-item-details), select the **Open** button in the view.
 
 ## View item details
 
 The items details view enables you to drill down and explore items. Select an item in the items list display its details.
 
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-item-details-view.png" alt-text="Screenshot of the explore tab item details view.":::
-
-Tap **Open** to open the item's editor.
-
 The item details view has a number of tabs that to help you explore your selected item. The tabs are described in the following sections.
+
+To open the item for editing or viewing (depending on the item type), select **Open**.
+
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-item-details-view.png" alt-text="Screenshot of the explore tab item details view.":::
 
 ### Overview tab
 
 The overview tab shows the following information:
 
 * **Location**: The workspace the item is located in. Selecting the workspace navigates to the workspace.
-* **Data updated**: Last update time.
+* **Data freshness**: Last refresh or update time.
 * **Owner**: The item owner. Selecting the owner opens an email to them.
 * **Sensitivity label**: The name of the sensitivity label applied to the item, if any.
 
 Data items such as semantic models and lakehouses show the underlying table and column schema for exploration purposes.
+
+* To help locate the table or column you're looking for, use the Filter by keyword box.
+* To further explore a table or column using [Power BI's exploration experience](/power-bi/consumer/explore-data-service), hover over it and select the binoculars icon.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-overview-tab.png" alt-text="Screenshot of the explore tab item view overview tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-overview-tab.png":::
 
@@ -157,9 +173,17 @@ The monitor tab displays activities for the item. Press **Show** on a record to 
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-monitor-tab.png" alt-text="Screenshot of the explore tab item view monitor tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-monitor-tab.png":::
 
-## Considerations and limitations
+### Permissions tab
 
-* The explore tab doesn't currently support the following item types: AI Skill, Exploration, Graph, Metric Set, Org App, Real-Time Dashboard.
+The permissions tab is available if you're a member of the Admin or Member workspace roles. The permissions tab shows who has direct access to the item, what links exist that permit access to the item, what related items enable access to the item, and what access requests are pending. You can grant or modify user permissions, audit links and remove them if necessary, and approve or reject access requests.
+
+The subtabs available on the permissions tab vary slightly from item type to item type. To see the actions you can perform on the rows of each subtab, hover over the row and select **More options (...)**.
+
+You can use the filter to sharpen the focus of your search.
+
+:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-permissions-tab.png" alt-text="Screenshot of the explore tab item view permissions tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-permissions-tab.png":::
+
+## Considerations and limitations
 
 * Streaming semantic models are being retired and thus aren't shown. For more information, see [Announcing the retirement of real-time streaming in Power BI](https://powerbi.microsoft.com/blog/announcing-the-retirement-of-real-time-streaming-in-power-bi/).
 

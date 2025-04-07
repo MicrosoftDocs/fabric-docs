@@ -7,9 +7,7 @@ ms.topic: how-to
 ms.date: 11/17/2024
 ---
 
-# Explore OneLake events in Fabric Real-Time hub (preview)
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+# Explore OneLake events in Fabric Real-Time hub
 
 OneLake events inform you about changes in your data lake, such as the creation, modification, or deletion of files and folders.
 
@@ -96,6 +94,8 @@ The `data` object has the following properties:
 | `contentOffset` | number | The offset in bytes of a write operation taken at the point where the event-triggering application completed writing to the file. | 0 |
 | `sequencer` | string | An opaque string value representing the logical sequence of events. | `00000000000004420000000000028963` |
 
+## Subscribe permission
+For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
 
 ## Related content
 

@@ -11,9 +11,4 @@ ms.date: 09/18/2023
 
 Some data format mappings (Parquet, JSON, and Avro) support simple ingest-time transformations. To apply mapping transformations, create or update a column in the [Edit columns](#edit-columns) window.
 
-Mapping transformations can be performed on a column of type string or datetime, with the source having data type int or long. Supported mapping transformations are:
-
-* DateTimeFromUnixSeconds
-* DateTimeFromUnixMilliseconds
-* DateTimeFromUnixMicroseconds
-* DateTimeFromUnixNanoseconds
+Mapping transformations can be performed on a column of type string or datetime, with the source having data type int or long. For more information, see the full list of supported [mapping transformations](/kusto/management/mappings?&preserve-view=true#mapping-transformations).

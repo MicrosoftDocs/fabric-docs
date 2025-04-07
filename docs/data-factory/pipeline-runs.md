@@ -1,7 +1,7 @@
 ---
 title: Data pipeline runs
 description: Explanation of what a pipeline run is, including on-demand and scheduled runs.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: noelleli
 author: n0elleli
 ms.topic: conceptual

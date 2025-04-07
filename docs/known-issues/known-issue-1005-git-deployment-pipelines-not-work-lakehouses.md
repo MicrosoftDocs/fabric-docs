@@ -1,7 +1,7 @@
 ---
 title: Known issue - Git operations and deployment pipelines don't work with lakehouses
 description: A known issue is posted where Git operations and deployment pipelines don't work with lakehouses
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/04/2025
