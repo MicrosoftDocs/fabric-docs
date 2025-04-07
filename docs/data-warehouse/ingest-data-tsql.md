@@ -25,7 +25,7 @@ The `CREATE TABLE AS SELECT` (CTAS) statement allows you to create a new table i
 You can use the following options for the `SELECT` part of CTAS statement:
 - Reading a warehouse table, such as a staging table.
 - Reading a Lakehouse table auto-generated via SQL analytics endpoint for Lakehouse.
-- Reading data directly from external file using the `OPENROWSET` function (preview).
+- Reading data directly from external file using the `OPENROWSET` function.
 
 > [!NOTE]
 > The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
@@ -40,7 +40,7 @@ FROM [dbo].[bing_covid-19_data]
 WHERE DATEPART(YEAR,[updated]) = '2023';
 ```
 
-Instead of reading data from the staging `[bing_covid-19_data]` table, you can also create a new table directly from an external file using the `OPENROWSET` function (public preview):
+Instead of reading data from the staging `[bing_covid-19_data]` table, you can also create a new table directly from an external file using the `OPENROWSET` function:
 
 ```sql
 CREATE TABLE [dbo].[bing_covid-19_data_2022]
