@@ -1,12 +1,11 @@
 ---
-title: Caching in Fabric data warehousing
+title: Caching in Fabric Data Warehousing
 description: Learn more about fully transparent caching in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: fipopovi
 ms.date: 04/24/2024
 ms.topic: overview
-ms.custom:
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Caching in Fabric data warehousing

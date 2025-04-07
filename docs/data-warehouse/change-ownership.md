@@ -1,10 +1,10 @@
 ---
-title: Change ownership of Fabric Warehouse
+title: Change Ownership of Fabric Warehouse
 description: Learn how to change the owner of a Fabric Warehouse via API call.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: dhsundar
-ms.date: 09/13/2024
+ms.date: 04/06/2025
 ms.topic: how-to
 ---
 
@@ -14,7 +14,7 @@ ms.topic: how-to
 
 The Warehouse item uses the owner's identity when accessing data on OneLake. To change the owner of these items, currently the solution method is to use an API call as described in this article.
 
-This guide walks you through the steps to change your Warehouse owner to your Organizational account. The takeover APIs for each allow you to change this owner's identity to an SPN or other organization account (Microsoft Entra ID). For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
+This guide walks you through the steps to change your Warehouse owner to your Organizational account. The takeover APIs for each allow you to change this owner's identity to an SPN or other organization account (Microsoft Entra ID). For more information, see [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md).
 
 The takeover API only works for Warehouse, not the SQL analytics endpoint.
  
