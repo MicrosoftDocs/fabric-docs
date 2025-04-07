@@ -86,7 +86,7 @@ In this scenario, the new item owner can fix connections by going into the item 
 ### Dataflow Gen2 (CI/CD) 
 This is a separate item from Dataflows Gen1 and Gen2. Refer to the creation experience [here](/fabric/data-factory/dataflow-gen2-cicd-and-git-integration).
 1. Open the item and go to **Manage Connections**.
-2. Navigate to the relevant connection and select **Edit Connection**, to make updates.
+2. Navigate to the relevant connection and select **Edit Connection** to make updates.
 
 ## Considerations and limitations
 
