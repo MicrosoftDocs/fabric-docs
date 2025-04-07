@@ -4,7 +4,7 @@ description: An article
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: article
-ms.date: 04/06/2025
+ms.date: 04/07/2025
 ---
 
 # Data warehouse cross tenant access (preview)
@@ -91,7 +91,7 @@ Connect-PowerBIServiceAccount
 
 ### Provide consent
 
-Providers must participate in the private preview before they provide consent.
+Providers must participate in the private preview before a guest tenant can provide consent.
 
 Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the consent API to provide consent for cross tenant access for Fabric data warehouses with a specific provider. Provide the tenant ID of the provider in the request body. 
 
