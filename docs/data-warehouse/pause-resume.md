@@ -1,12 +1,11 @@
 ---
-title: Pause and resume in Fabric Data Warehouse
+title: Pause and Resume in Fabric Data Warehouse
 description: Learn more about the pause and resume capacity for Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
-ms.date: 04/24/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ---
 
 # Pause and resume in Fabric Data Warehouse
@@ -51,14 +50,14 @@ When a Fabric capacity is resumed, it restarts the warehouse compute resources w
 - Data warehouses do not report compute usage once pause workflow is initiated.
 - The OneLake storage billing meter is not paused. You continue to pay for storage when compute is paused.
 
-Learn more about billing implications here: [Understand your Fabric capacity Azure bill](../enterprise/azure-billing.md).
+Learn more about billing implications here: [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
 ### Considerations and limitations
 
 - In the event of pause, in-flight requests in client application tools like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) receive generic error messages that do not indicate the intent behind cancellation. A few sample error messages in this case would be (not limited to):
     - `An existing connection was forcibly closed by the remote host`
     - `Internal error. Unable to properly update physical metadata. Please try the operation again and contact Customer Support Services if this persists.`
-    - `A severe error occurred on the current command.  The results, if any, should be discarded.`
+    - `A severe error occurred on the current command. The results, if any, should be discarded.`
 - Once the capacity resumes, it might take a couple of minutes to start accepting new requests.
 - Background cleanup activity might be affected when compute is paused. The activities catch up once the capacity resumes.
 

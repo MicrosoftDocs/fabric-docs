@@ -1,6 +1,6 @@
 ---
-title: Warehouse performance guidelines
-description: This article contains a list of performance guidelines for warehouse.
+title: Warehouse Performance Guidelines
+description: This article contains a list of performance guidelines for the warehouse item in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: xiaoyul
