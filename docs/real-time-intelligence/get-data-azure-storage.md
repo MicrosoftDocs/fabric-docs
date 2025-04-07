@@ -6,27 +6,27 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 04/03/2025
+ms.date: 04/07/2025
 ms.search.form: Get data in a KQL Database
 ---
 
 # Get data from Azure storage
 
-In this article, you learn how to get data from Azure storage (ADLS Gen2 container, blob container, or individual blobs). You can get data into your table coninuously or non-continuoiusly:
+In this article, you learn how to get data from Azure storage (ADLS Gen2 container, blob container, or individual blobs). You can ingest data into your table coninuously or non-continuously.
 
-**Non-continuous ingestion**
+**One-time ingestion**
 
- Use this method to retrieve the existing data from an Azure storage. Non-continuous ingestion from an Azure storage account is a one-time operation.
+ Use this method to retrieve existing data from Azure Storage as a one-time operation.
 
 **Continuous ingestion**
 
-Continuous data ingestion involves setting up an ingestion pipeline to ingest new data files from the Azure storage. You can also connect a table to an Azure storage that is already set up for continuous ingestion.
+Continuous data ingestion involves setting up an ingestion pipeline to ingest new data files from the Azure Storage. You can also connect a table to an Azure storage that is already set up for continuous ingestion.
 
-This eventstream monitors incoming events. When new or updated event files are available in storage, The KQL database receives a notification to fetch the data.
+When new or updated event files are available in storage, The KQL database receives a notification to fetch the data.
 
 > [!NOTE]
 >
-> Data that previously existed in the Azure storage isn't ingested. Use non-continuous ingestion to ingest the existing data.
+> Data that previously existed in the Azure storage isn't ingested. Use one-time ingestion to ingest the existing data.
 > Historical namespace must be enabled in the storage account for ingestion to be continuous.
 
 ## Prerequisites
@@ -41,11 +41,11 @@ For continuous ingestion you also require:
 * A storage account with:
     * [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account?branch=main) enabled
     * Access Control role permissions assigned to the Workspace Identity. For instructions, see [Add the workspace identity to the storage account](#add-the-workspace-identity-to-the-storage-account-)
-    * A [container](/azure/storage/blobs/blob-containers-portal?branch=main) uploaded with a sample data file. For instructions, see [Create contianer with data file ###](#create-contianer-with-data-file-)
+    * A [container](/azure/storage/blobs/blob-containers-portal) uploaded with a sample data file. For instructions, see [Create contianer with data file](#create-contianer-with-data-file-)
 
-### Add the workspace identity to the storage account ###
+### Add the workspace identity to the storage account
 
-1. Copy your workspace identity ID from the Workspace Settings in Fabric.
+1. From the Workspace settings in Fabric, copy your workspace identity ID.
 
 1. Open the Azure portal, browse to your Azure storage account, and select **Access Control (IAM)**.
 
@@ -59,15 +59,13 @@ For continuous ingestion you also require:
 
     :::image type="content" source="media/get-data-azure-storage/configure-add-role-assignment.png" alt-text="Screenshot of Azure portal open to the Add Role Assignment window." lightbox="media/get-data-azure-storage/configure-add-role-assignment.png":::
 
-1. Select **Review + assign** to move to the Review + assign tab.
+1. Select **Review + assign**.
 
-1. Select **Review + assign** again.
-
-### Create contianer with data file ###
+### Create a container with data file
 
 1. In the storage account, select **Containers**.
 
-1. Select **+ Container**, enter a name for the container and **Save**.
+1. Select **+ Container**, enter a name for the container and Select **Save**.
 
 1. Enter the container, select **upload**, and upload the data file prepared earlier.
 
@@ -76,8 +74,6 @@ For continuous ingestion you also require:
 Set the source to get data.
 
 1. On the lower ribbon of your KQL database, select **Get Data**.
-
-    In the **Get data** window, the **Source** tab is selected.
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Azure storage**.
 
@@ -94,22 +90,20 @@ Set the source to get data.
 
 1. Turn on **Continuous ingestion**. It's turned on by default.
 
-1. To use an existing conenction, select **Select an account from the Real-Time hub**, then select the account already in use in Fabric.
-
-1. To create a new connection, select **Connect to an account**.
+1. To create a new connection, select **Connect to an account**. To use an existing connection, select **Select an account from the Real-Time hub**, then **Select the account already in use in Fabric**.
 
 1. Configure the **Azure blob storage account**:
 
     :::image type="content" source="media/get-data-azure-storage/configure-tab-continuous.png" alt-text="Screenshot of configure tab with Continuous ingestion and connect to an account selected." lightbox="media/get-data-azure-storage/configure-tab-continuous.png":::
 
-    |  | **Setting** | **Field description** |
-    |--|--|--|
-    |  | Subscription | The subscription ID where the storage account is located. |
-    |  | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
-    |  | Container | The storage container you want to ingest. |
-    |  | **File filters (optional)** |  |
-    |  | Folder path | Filters data to ingest files with a specific folder path. |
-    |  | File extension | Filters data to ingest files with a specific file extension only. |
+    | **Setting** | **Field description** |
+    |--|--|
+    | Subscription | The subscription ID where the storage account is located. |
+    | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
+    | Container | The storage container you want to ingest. |
+    | **File filters (optional)** |  |
+    | Folder path | Filters data to ingest files with a specific folder path. |
+    | File extension | Filters data to ingest files with a specific file extension only. |
 
 1. In the **Connection** field, open the drop-down and select **+ New connection**. The connection settings are prepopulated.
 
