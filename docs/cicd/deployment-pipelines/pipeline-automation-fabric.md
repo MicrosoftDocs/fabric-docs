@@ -14,8 +14,6 @@ ms.date: 05/09/2024
 
 The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) tool enables teams to build an efficient and reusable release process for their Fabric content.
 
-[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
-
 Use the [deployment pipelines Fabric REST APIs](/rest/api/fabric/core/deployment-pipelines) to integrate Fabric into your organization's automation process. Here are a few examples of what can be done by using the APIs:
 
 * Integrate Fabric into familiar DevOps tools such as Azure DevOps or GitHub Actions.
@@ -31,7 +29,7 @@ Use the [deployment pipelines Fabric REST APIs](/rest/api/fabric/core/deployment
 To work with deployment pipeline APIs, you need the following prerequisites:
 
 * The same [prerequisites you need to use deployment pipelines](./get-started-with-deployment-pipelines.md#prerequisites).
-* A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see Fabric API quickstart.
+* A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
 
 You can use the REST APIs without PowerShell, but the scripts in this article use PowerShell. To run the scripts, you need to install the following programs:
 
