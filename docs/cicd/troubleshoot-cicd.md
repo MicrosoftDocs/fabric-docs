@@ -94,7 +94,7 @@ To understand the considerations and limitations of various lifecycle management
 
 **Description of problem**: I don't see the workspace I want to connect to in the branching out tab of the **Source control** panel.  
 **Cause**: The branching out list only shows workspaces that you have permission to view.  
-**Solution**: Check that the workspace you want exists and that you have permission to view it. If not, ask the owner of the workspace to give you permission to see [Branch limitations](./git-integration/git-integration-process.md#branching-out-limitations) for more information.
+**Solution**: Check that the workspace you want exists and that you have permission to view it. If not, ask the owner of the workspace to give you permission. See [Branch limitations](./git-integration/git-integration-process.md#branching-out-limitations) for more information.
 
 #### Branching out: My new workspace wasn’t synced with my Git repository
 
@@ -194,6 +194,20 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace.
 
 ### Resolve error issues
+
+#### Fix duplicate logical IDs
+
+**Description of problem**: When you try to commit changes to Git, you get an error message that says that there are duplicate logical IDs in the workspace.
+
+:::image type="content" source="./media/troubleshoot-cicd/fix-logical-id.png" alt-text="Screenshot of error message when there are two or more items in the workspace with the same logical ID.":::
+
+**Cause**: The logical ID is a unique ID for each item in the workspace. When you copy an item in Git, the entire folder is duplicated exactly, including the logical ID. When you try to update the workspace, the system checks for duplicate logical IDs and prevents you from committing changes if it finds any.
+
+**Solution**: To fix the issue, you need to change the logical ID of one of the items.
+
+* If you have write permission to the repository, select **Fix with direct commit**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then commit the changes.
+
+* If you don't have write permission to the repository, select *Create branch and go to Git**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then create a pull request to merge the changes.
 
 ### Undo issues
 
@@ -514,7 +528,7 @@ If one of the rule options is greyed out, it could be because of the following r
 
 ## Troubleshooting errors
 
-Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-rules.md) you created. If you don't see a rule error message name, review the [deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations) and the [supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-semantic-model-rules), and try to reconfigure the rule.
+Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-rules.md) you created. If you don't see a rule error message name, review the [deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations) and the [supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-gen1-and-semantic-model-rules), and try to reconfigure the rule.
 
 |Error message |Solution |
 |--------------|---------|

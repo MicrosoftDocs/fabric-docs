@@ -123,6 +123,43 @@ Alternatively, you can use other Fabric workloads to write data to the platform.
 
 The SQL connection can also be used to carry out commands that insert data into tables.
 
+## OneLake integration
+
+You may opt in to use OneLake integration in your workloads.
+If you do, when a new item is created for your workload, Fabric will automatically create folders for the new item.
+
+To opt in, your item's manifest XML must declare this by setting the `CreateOneLakeFoldersOnArtifactCreation` attribute to `true`.
+For example:
+```
+<ItemManifestConfiguration xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="1.101.0">  
+  <Item TypeName="Org.WorkloadSample.SampleWorkloadItem" Category="Data" CreateOneLakeFoldersOnArtifactCreation="true">
+    <Workload WorkloadName="Org.WorkloadSample" />
+    ...
+  </Item>
+</ItemManifestConfiguration>
+```
+> [!Note]
+> SchemaVersion must be set to 1.101.0 (or later supported versions).
+
+The same SchemaVersion must be set in `WorkloadManifest.xml`:
+
+```
+<WorkloadManifestConfiguration xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="1.101.0">
+  <Workload WorkloadName="Org.WorkloadSample" HostingType="Remote">
+  ...
+  </Workload>
+</WorkloadManifestConfiguration>
+```
+
+When a new item is created, the following root folders are created in OneLake:
+
+`<WorkspaceID>/<ItemID>/Files`
+
+`<WorkspaceID>/<ItemID>/Tables`
+
+You can create additional folders under these, and use them for storing data in any format (under `Files` folder) or in parquet format (under `Tables` folder).
+Follow the [instructions](#how-to-read-and-write-data-in-microsoft-fabric) above to read/write from OneLake storage.
+
 ## Related content
 
 * [Microsoft Fabric Workload Development Kit](./index.yml)
