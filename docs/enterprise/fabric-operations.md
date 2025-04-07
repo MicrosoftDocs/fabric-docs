@@ -190,7 +190,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Eventstream](#eventstream), [Azure and Fabric events](#fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Eventstream](#eventstream), [Azure and Fabric events](#azure-and-fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
 #### Eventstream
 
@@ -200,7 +200,7 @@ You can find the consumption rates for Eventstream in [Monitor capacity consumpt
 
 #### Azure and Fabric events
 
-You can find the consumption rates for Azure and Fabric events in [Microsoft Azure and Fabric events capacity consumption](../real-time-hub/fabric-events-capacity-consumption.md).
+You can find the consumption rates for Azure and Fabric events in [Azure and Fabric events capacity consumption](../real-time-hub/fabric-events-capacity-consumption.md).
 
 | Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
 | ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
