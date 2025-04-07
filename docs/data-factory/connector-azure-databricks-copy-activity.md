@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure Databricks.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/03/2025
+ms.date: 04/07/2025
 ms.custom:
   - template-how-to
 ---
@@ -43,7 +43,7 @@ The following properties are **required**:
 
     - **Catalog**: A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables.
 
-    - **Database**: Select your database from the drop-down list.
+    - **Database**: Select your database from the drop-down list or type the database.
 
     - **Table**: Specify the name of the table to read data. Select the table from the drop-down list or type the table name.
 
@@ -73,9 +73,9 @@ The following properties are **required**:
 
 - **Catalog**: A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables.
 
-- **Database**: Select your database from the drop-down list.
+- **Database**: Select your database from the drop-down list or type the database.
 
-- **Table**: Select a table from the drop-down list or select **Edit** to manually enter it to write data.
+- **Table**: Specify the name of the table to write data. Select the table from the drop-down list or type the table name.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -100,27 +100,27 @@ The following tables contain more information about a copy activity in an Azure 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the source data store.|< your Azure Databricks connection >|Yes|connection|
-|**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.| • **Table**<br>  • **Query** |No| table<br> query|
+|**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.| • **Table**<br>  • **Query** |No| / |
 | For **Table** | | | | |
-| **Catalog** | A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables. | < your catalog > | No (will choose default catalog if it’s null) | catalog |
+| **Catalog** | A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables. | < your catalog > | No (choose default catalog if it’s null) | catalog |
 |**Database** | Your database that you use as source.|< your database >| No |database|
 |**Table** |Your source data table to read data.|< your table name >| No |table|
 | For **Query** | | | | |
 | **Query** | Specify the SQL query to read data. For the time travel control, follow the below pattern:<br>- `SELECT * FROM events TIMESTAMP AS OF timestamp_expression`<br>- `SELECT * FROM events VERSION AS OF version`| < your query > | No | query |
 | | | | | |
-|**Date format** |Format string to date type with a date format. Custom date formats follow the formats at [datetime pattern](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). If not specified, it uses the default value `yyyy-MM-dd`. | |No| dateFormat |
-|**Timestamp format** |Format string to timestamp type with a timestamp format. Custom date formats follow the formats at [datetime pattern](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). If not specified, it uses the default value `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]`.| |No| timestampFormat |
+|**Date format** |Format string to date type with a date format. Custom date formats follow the formats at [datetime pattern](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). If not specified, it uses the default value `yyyy-MM-dd`. | < your date format > |No| dateFormat |
+|**Timestamp format** |Format string to timestamp type with a timestamp format. Custom date formats follow the formats at [datetime pattern](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). If not specified, it uses the default value `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]`.| < your timestamp format > |No| timestampFormat |
 
 ### Destination information
 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the destination data store.|< your Azure Databricks connection >|Yes|connection|
-| **Catalog** | A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables. | < your catalog > | No (will choose default catalog if it’s null) | catalog |
+| **Catalog** | A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables. | < your catalog > | No (choose default catalog if it’s null) | catalog |
 |**Database** | Your database that you use as destination.|< your database >|Yes |database|
 |**Table** |Your destination data table to write data.|< your table name >|Yes|table|
 |**Pre-copy script** |  Specify a script for Copy Activity to execute before writing data into destination table in each run. You can use this property to clean up the pre-loaded data. | < your pre-copy script> |No| preCopyScript |
-|**Timestamp format** |Format string to timestamp type with a timestamp format. Custom date formats follow the formats at [datetime pattern](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). If not specified, it uses the default value `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]`.| |No| timestampFormat |
+|**Timestamp format** |Format string to timestamp type with a timestamp format. Custom date formats follow the formats at [datetime pattern](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). If not specified, it uses the default value `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]`.| < your timestamp format > |No| timestampFormat |
 
 ## Related content
 
