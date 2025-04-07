@@ -35,7 +35,7 @@ Your capacity allows you to:
 * Create Microsoft Fabric items and connect to other Microsoft Fabric items
 
     >[!NOTE]
-    >To create Power BI items in workspaces that are not *My workspace*, you need a *Pro* license.
+    >To create Power BI items in a workspace other than *My workspace*, you need a *Power BI Pro* or a *Premium Per-User (PPU)* license, or a *Power BI individual trial*.
 
 * Save your items to a workspace and share them with a user that has an appropriate license
 
@@ -43,20 +43,20 @@ Capacities are split into Stock Keeping Units (SKUs). Each SKU provides a set of
 
 The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU) are used to measure the compute power available for each SKU. For the benefit of customers that are familiar with Power BI, the table also includes Power BI Premium per capacity *P* SKUs and v-cores. Power BI Premium *P* SKUs support Microsoft Fabric. *A* and *EM* SKUs only support Power BI items.
 
-| SKU<sup>*</sup> | Capacity Units (CU) | Power BI SKU | Power BI v-cores |
-|--|--|--|--|
-| F2 | 2 | - | 0.25 |
-| F4 | 4 | - | 0.5 |
-| F8 | 8 | EM/A1 | 1 |
-| F16 | 16 | EM2/A2 | 2 |
-| F32 | 32 | EM3/A3 | 4 |
-| F64 | 64 | P1/A4 | 8 |
-| Trial | 64 | - | 8 |
-| F128 | 128 | P2/A5 | 16 |
-| F256 | 256 | P3/A6 | 32 |
-| F512 | 512 | P4/A7 | 64 |
-| F1024 | 1024 | P5/A8 | 128 |
-| F2048 | 2048 | - | 256 |
+| SKU<sup>*</sup> | Capacity Units (CU) | Power BI SKU | Power BI v-cores | Max Memory (GB)
+|--|--|--|--|--|
+| F2 | 2 | - | 0.25 | 3 |
+| F4 | 4 | - | 0.5 | 3 |
+| F8 | 8 | EM/A1 | 1 | 3 |
+| F16 | 16 | EM2/A2 | 2 | 5 |
+| F32 | 32 | EM3/A3 | 4 | 10 |
+| F64 | 64 | P1/A4 | 8 | 25 |
+| Trial | 64 | - | 8 | 25 |
+| F128 | 128 | P2/A5 | 16 | 50 |
+| F256 | 256 | P3/A6 | 32 | 100 |
+| F512 | 512 | P4/A7 | 64 | 200 |
+| F1024 | 1024 | P5/A8 | 128 | 400 |
+| F2048 | 2048 | - | 256 | 400 |
 
 <sup>*</sup>SKUs that are smaller than F64 require a Pro or Premium Per User (PPU) license, or a Power BI individual trial to consume Power BI content.
 
@@ -105,6 +105,7 @@ This table lists the main differences between the capabilities of per-user licen
 | Create Pro workspaces |&#x274C; | &#x2705; |&#x2705; |
 | Create, update, delete or manage Power BI items in workspaces other than their "My Workspace" | &#x274C; | &#x2705; |&#x2705; |
 | Create PPU workspaces |&#x274C; | &#x274C; |&#x2705; |
+| Create and Share Power BI items | &#x274C; | &#x2705; |&#x2705; |
 | Create non-Power BI Fabric items in Fabric / Trial capacity workspaces | &#x2705; | &#x2705; |&#x2705; |
 | Create non-Power BI Fabric items in Power BI Premium capacity workspaces | &#x2705; | &#x2705; |&#x2705; |
 | Share non-Power BI Fabric items | &#x2705; | &#x2705; |&#x2705; |
