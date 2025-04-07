@@ -21,8 +21,6 @@ This feature is available for Amazon S3, Google Cloud Storage, and S3 compatible
 
 In this document, we show you how to install and use these on-premises data gateways to create shortcuts to on-premises or network-restricted data.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 * Create or identify a Fabric lakehouse that will contain your shortcut(s).
