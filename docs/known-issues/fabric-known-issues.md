@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 04/07/2025
+ms.date: 04/08/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1089  | Power BI | [Dataflow Gen2 refresh fails with PowerBIEntityNotFound error](./known-issue-1089-dataflow-gen2-refresh-fails-error.md) | April 8, 2025 |
+|  1083  | Power BI | [Dataflow Gen2 refresh fails with type mismatch error](./known-issue-1083-dataflow-gen2-refresh-fails-type-mismatch-error.md) | April 8, 2025 |
+|  1080  | Data Factory | [Data pipeline run fails due to user auth token errors](./known-issue-1080-data-pipeline-run-fails-user-auth-token-errors.md) | April 8, 2025 |
 |  1079  | Data Factory | [Pipelines fail with missing capacity error](./known-issue-1079-pipelines-fail-missing-capacity-error.md) | April 7, 2025 |
 |  1078  | Data Factory | [Can't install or open on-premises data gateway after Windows update](./known-issue-1078-not-install-open-on-premises-data-gateway-windows-update.md) | March 31, 2025 |
 |  1077  | Power BI | [Failure to scale AAS server or add admins through Azure portal](./known-issue-1077-failure-scale-azure-analysis-services-add-admins.md) | March 31, 2025 |
@@ -28,7 +31,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1067  | Data Engineering | [Environment REST API updates might cause your workflow to break](./known-issue-1067-environment-rest-api-updates-workflow-break.md) | March 26, 2025 |
 |  1025  | Data Engineering | [Environment Git integration imports for libraries don't work](./known-issue-1025-environment-git-integration-imports-libraries-not-work.md) | March 26, 2025 |
 |  1069  | Data Warehouse | [SQL analytics endpoint sync failure when columnMapping is enabled](./known-issue-1069-sql-analytics-endpoint-sync-failure-column-mapping-enabled.md) | March 24, 2025 |
-|  1063  | Data Factory | [Pipeline activities fail with Dynamics or Dataverse connections through OPDG](./known-issue-1063-pipeline-activities-fail-dynamics-dataverse-connections-opdg.md) | March 24, 2025 |
 |  1062  | Administration & Management | [Workspace identity tagged as preview for ADLS Gen2 connections](./known-issue-1062-workspace-identity-tagged-preview-adls-gen2-connections.md) | March 21, 2025 |
 |  1061  | Power BI | [Issues publishing or importing reports in Pro workspaces](./known-issue-1061-issues-publishing-importing-reports-pro-workspaces.md) | March 21, 2025 |
 |  1051  | Real-Time Intelligence | [Eventstream data sources might be inactivated and can't be reactivated](./known-issue-1051-eventstream-data-sources-inactivated-not-reactivated.md) | March 21, 2025 |
@@ -41,7 +43,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1039  | Data Warehouse | [Sync for data warehouse and SQL analytics endpoint fail in West Europe](./known-issue-1039-sync-warehouse-sql-endpoint-fail-west-europe.md) | March 3, 2025 |
 |  1033  | Administration & Management | [FeatureNotAvailableError error in Network Security tab of Workspace Settings](./known-issue-1033-error-network-security-tab-workspace-settings.md) | February 28, 2025 |
 |  1035  | Data Engineering | [Lakehouse ALM operations fail for Git using public APIs in UK South](./known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md) | February 25, 2025 |
-|  1029  | Administration & Management | [Existing preview surge protection rules aren't visible in Capacity settings](./known-issue-1029-surge-protection-rules-not-visible-capacity-settings.md) | February 25, 2025 |
 |  1032  | Real-Time Intelligence | [Eventstream updates with Eventhouse destination causes error](./known-issue-1032-eventstream-updates-eventhouse-destination-error.md) | February 21, 2025 |
 |  1031  | Administration & Management | [Git integration undo action appears after initial sync fails](./known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md) | February 20, 2025 |
 |  1028  | Data Engineering | [Slow Spark session startup caused by Native Execution Engine](./known-issue-1028-slow-spark-session-startup-native-execution-engine.md) | February 19, 2025 |
@@ -61,7 +62,6 @@ Select the **Title** to view more information about that specific known issue.
 |  975  | Power BI | [Create report doesn't work on Eventhouse monitoring KQL database](./known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database.md) | January 6, 2025 |
 |  974  | Real-Time Intelligence | [Show table command in KQL Queryset editor fails](./known-issue-974-show-table-kql-queryset-editor-fails.md) | January 6, 2025 |
 |  965  | Databases | [SQL database creation fails to create child items when item with same name exists](./known-issue-965-sql-database-creation-fails-create-child-items-same-name.md) | December 10, 2024 |
-|  957  | Data Factory | [Creation failure for Copy job item in empty workspace](./known-issue-957-creation-failure-copy-job-item-empty-workspace.md) | December 5, 2024 |
 |  954  | Data Factory | [Create, configure, or delete a mirror fails](./known-issue-954-create-configure-delete-mirror-fails.md) | December 2, 2024 |
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](./known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
 |  923  | Power BI | [Tenant migration requests stopped](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
@@ -96,6 +96,9 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1063  | Data Factory | [Pipeline activities fail with Dynamics or Dataverse connections through OPDG](./known-issue-1063-pipeline-activities-fail-dynamics-dataverse-connections-opdg.md) | March 24, 2025 | Fixed: April 8, 2025 |
+|  1029  | Administration & Management | [Existing preview surge protection rules aren't visible in Capacity settings](./known-issue-1029-surge-protection-rules-not-visible-capacity-settings.md) | February 25, 2025 | Fixed: April 8, 2025 |
+|  957  | Data Factory | [Creation failure for Copy job item in empty workspace](./known-issue-957-creation-failure-copy-job-item-empty-workspace.md) | December 5, 2024 | Fixed: April 8, 2025 |
 |  1024  | Data Factory | [CopyJob item deletion fails with error](./known-issue-1024-copy-job-item-deletion-fails-error.md) | February 14, 2025 | Fixed: April 7, 2025 |
 |  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](./known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 | Fixed: April 7, 2025 |
 |  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](./known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 | Fixed: March 31, 2025 |
@@ -117,9 +120,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  1046  | Power BI | [Custom visuals using dialog or download API don't work in February Desktop](./known-issue-1046-custom-visuals-dialog-api-not-work-desktop.md) | March 5, 2025 | Fixed: March 10, 2025 |
 |  950  | Power BI | [Incorrect column names after column format or aggregation change](./known-issue-950-incorrect-column-names-column-format-aggregation-change.md) | December 2, 2024 | Fixed: March 5, 2025 |
 |  1011  | Power BI | [Models with specific gateway configuration might experience refresh issues](./known-issue-1011-models-specific-gateway-configuration-refresh-issues.md) | January 29, 2025 | Fixed: February 25, 2025 |
-|  978  | Real-Time Intelligence  | [Renamed eventstream fails to open](./known-issue-978-renamed-eventstream-fails-open.md) | December 17, 2024 | Fixed: February 20, 2025 |
-|  966  | Power BI  | [Sync content from Git in workspace fails](./known-issue-966-sync-content-git-workspace-fails.md) | December 11, 2024 | Fixed: February 20, 2025 |
-|  962  | Real-Time Intelligence | [Eventstream publish fails when column contains empty array and operator is added](./known-issue-962-eventstream-publish-fails-column-empty-array-operator.md) | December 9, 2024 | Fixed: February 20, 2025 |
 
 ## Related content
 
