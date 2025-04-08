@@ -106,7 +106,7 @@ Set the source to get data.
     | Connection | Open the drop-down and select **+ New connection**. The connection settings are prepopulated.|
     | **File filters (optional)** |  |
     | Folder path | Filters data to ingest files with a specific folder path. |
-    | File extension | Filters data to ingest files with a specific file extension only. | 
+    | File extension | Filters data to ingest files with a specific file extension only. |
 
     :::image type="content" source="media/get-data-azure-storage/configure-connection.png" alt-text="Screenshot of connection dialog with the settings prepopulated." lightbox="media/get-data-azure-storage/configure-connection.png":::
 
@@ -188,7 +188,7 @@ Optionally:
 **Tabular (CSV, TSV, PSV)**:
 
 * If you're ingesting tabular formats in an *existing table*, you can select **Table_mapping** > **Use existing schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
-* To use the first row as column names, select  **Advanced** > **First row is column header**.
+* To use the first row as column names, select  **First row header**.
 
     :::image type="content" source="media/get-data-azure-storage/advanced-csv.png" alt-text="Screenshot of advanced CSV options.":::
 
