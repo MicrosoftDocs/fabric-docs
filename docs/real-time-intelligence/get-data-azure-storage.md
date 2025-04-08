@@ -14,21 +14,21 @@ ms.search.form: Get data in a KQL Database
 
 In this article, you learn how to get data from Azure Storage (ADLS Gen2 container, blob container, or individual blobs). You can ingest data into your table continuously or as a one-time ingestion. Once ingested, the data becomes available for query.
 
-**One-time ingestion**
-
-Use this method to retrieve existing data from Azure Storage as a one-time operation.
-
 **Continuous ingestion**
 
 Continuous ingestion involves setting up an ingestion pipeline that allows the Fabric workspace to listen to Azure Storage events. The pipeline notifies the workspace to pull information when subscribed events occur. The events include when a storage blob is created, renamed, or moved.
 
 The destination table is populated with the Azure storage blob files.
 
-The table schema is inferred from a sample blob that is uploaded to the Azure storage container. See the [supported formats](ingestion-supported-formats) and [supported compressions](ingestion-supported-formats#supported-data-compression-formats).
+The table schema is inferred from a sample blob that is uploaded to the Azure storage container. 
 
 > [!NOTE]
 >
 > Data that exists in the Azure Storage up to the time that continuous ingestion is configured, isn't ingested. Use one-time ingestion to ingest the existing data.
+
+**One-time ingestion**
+
+Use this method to retrieve existing data from Azure Storage as a one-time operation.
 
 ## Prerequisites
 
@@ -42,7 +42,7 @@ For continuous ingestion you also require in Fabric:
 
 For continuous ingestion you also require in the Azure storage account:
 
-* [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account.md) must be enabled.
+* [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account) must be enabled.
 
 * Access Control role permissions assigned to the workspace identity.
 
@@ -79,6 +79,8 @@ For continuous ingestion you also require in the Azure storage account:
 1. Select **+ Container**, enter a name for the container and select **Save**.
 
 1. Enter the container, select **upload**, and upload the data file prepared earlier.
+
+For more information, see [supported formats](./ingestion-supported-formats.md) and [supported compressions](./ingestion-supported-formats.md#supported-data-compression-formats).
 
 ## Source
 
@@ -178,7 +180,7 @@ Set the source to get data.
     > * You can either add up to 10 individual blobs, or ingest up to 5,000 blobs from a single container. You can't ingest both at the same time.
     > * Each blob can be a max of 1 GB uncompressed.
 
-1. If you pasted a connection string for a blob container or an Azure Data Lake Storage Gen2, you can then add the following optional filters:
+1. You can  add the following optional filters:
 
     | **Setting**  | **Field description** |
     |-----|-----|
