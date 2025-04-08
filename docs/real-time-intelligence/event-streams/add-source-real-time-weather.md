@@ -10,7 +10,7 @@ ms.date: 3/24/2025
 ms.search.form: Source and Destination
 ---
 
-# Add a real-time weather source to an eventstream
+# Add a real-time weather source to an eventstream (preview)
 
 [!INCLUDE [real-time-weather-source-description-prerequisites](./includes/real-time-weather-source-description-prerequisites.md)] 
 
