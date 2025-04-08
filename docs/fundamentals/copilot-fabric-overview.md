@@ -6,8 +6,9 @@ ms.author: sngun
 ms.reviewer: 'guptamaya'
 ms.custom:
 - copilot-learning-hub
+- fabric-cat
 ms.topic: conceptual
-ms.date: 04/02/2025
+ms.date: 04/08/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
