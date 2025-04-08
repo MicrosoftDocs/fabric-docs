@@ -13,12 +13,12 @@ This article shows you how to add an Azure Event Grid Namespace source to an eve
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Member or higher permissions. 
 - Enable [managed identity](/azure/event-grid/event-grid-namespace-managed-identity) on the Event Grid namespace. 
 - Enable [MQTT](/azure/event-grid/mqtt-publish-and-subscribe-portal) and [routing](/azure/event-grid/mqtt-routing) on the Event Grid namespace, if you want to receive Message Queuing Telemetry Transport (MQTT) data. 
 - [Create an eventstream](create-manage-an-eventstream.md) if you don't have one. 
 
-If the eventstream is marked with either **Confidential** or **Highly Confidential** sensitivity labels, follow these steps so that the Event Grid namespace's managed identity has the appropriate access. 
+To ensure the managed identity of the Event Grid namespace has the required permissions, configure the necessary settings in the **Admin portal**：
 
 - Select **Settings** (gear icon) in the top-right corner.
 - Select **Admin portal** in the **Governance and insights** section. 
