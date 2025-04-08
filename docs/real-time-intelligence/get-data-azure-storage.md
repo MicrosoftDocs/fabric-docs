@@ -12,7 +12,7 @@ ms.search.form: Get data in a KQL Database
 
 # Get data from Azure Storage
 
-In this article, you learn how to get data from Azure Storage (ADLS Gen2 container, blob container, or individual blobs). You can ingest data into your table coninuously or as a one-time ingestion. Once ingested, the data becomes available for query.
+In this article, you learn how to get data from Azure Storage (ADLS Gen2 container, blob container, or individual blobs). You can ingest data into your table continuously or as a one-time ingestion. Once ingested, the data becomes available for query.
 
 **One-time ingestion**
 
@@ -20,14 +20,13 @@ Use this method to retrieve existing data from Azure Storage as a one-time opera
 
 **Continuous ingestion**
 
-Continuous ingestion involves setting up an ingestion pipeline that allows the Fabric workspace to listen to Azure Storage events. The pipeline notifies the workspace to pull information when subscribed events occur. The events include when a storasge blob is created or renamed. 
+Continuous ingestion involves setting up an ingestion pipeline that allows the Fabric workspace to listen to Azure Storage events. The pipeline notifies the workspace to pull information when subscribed events occur. The events include when a storage blob is created or renamed. 
 
-During set up the table schema is created by reading the Azure Storage data file structure. See the [supported formats](ingestion-supported-formats) and [supported compressions](ingestion-supported-formats#supported-data-compression-formats).
-
+The table schema is created by reading the Azure Storage data file structure. See the [supported formats](ingestion-supported-formats) and [supported compressions](ingestion-supported-formats#supported-data-compression-formats).
 
 > [!NOTE]
 >
-> Data that exists in the Azure Storage up to the time that continuous ingestion is setup, isn't ingested. Use one-time ingestion to ingest the existing data.
+> Data that exists in the Azure Storage up to the time that continuous ingestion is configured, isn't ingested. Use one-time ingestion to ingest the existing data.
 
 ## Prerequisites
 
@@ -37,11 +36,12 @@ During set up the table schema is created by reading the Azure Storage data file
 
 For continuous ingestion you also require:
 
-* A [Workspace identity](../security/workspace-identity.md). *My Workspace* is not supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
+* A [Workspace identity](../security/workspace-identity.md). *My Workspace* isn't supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
 * A storage account with:
     * [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account.md) must be enabled in the storage account for ingestion to be continuous
     * Access Control role permissions assigned to the workspace identity.
-    * A [container](/azure/storage/blobs/blob-containers-portal) uploaded with a data file. The data file sctructure is used to define the table schema.
+    * A [container](/azure/storage/blobs/blob-containers-portal) to hold the data files.
+    * A data file uploaded to the container. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
 
 ### Add the workspace identity to the storage account
 
@@ -86,7 +86,7 @@ Set the source to get data.
     > [!NOTE]
     > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
-1. Ensure that **Continuous ingestion** is turnhed on. It's turned on by default.
+1. Ensure that **Continuous ingestion** is turned on. It's turned on by default.
 
 1. Select one of the two options:
 
@@ -167,11 +167,15 @@ To complete the ingestion process, select **Finish**.
 
 Optionally:
 
-* Select **Command viewer** to view and copy the automatic commands generated from your inputs.
-* Use the **Schema definition file** dropdown to change the file that the schema is inferred from.
-* Change the automatically inferred data format by selecting the desired format from the dropdown. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
-* [Edit columns](#edit-columns).
-* Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
+* Use the schema definition file drop-down to change the file that the schema is inferred from.
+
+* Use the file type drop-down to explore [Advanced options based on data type](#advanced-options-based-on-data-type).
+
+* Use the **Table_mapping** drop-down to define a new mapping.
+
+* Select **</>** to open the command viewer to view and copy the automatic commands generated from your inputs. You can also open the commands in a Queryset
+
+* Select the pencil icon to [Edit columns](#edit-columns).
 
 [!INCLUDE [get-data-edit-columns](includes/get-data-edit-columns.md)]
 
@@ -183,21 +187,20 @@ Optionally:
 
 **Tabular (CSV, TSV, PSV)**:
 
-* If you're ingesting tabular formats in an *existing table*, you can select **Advanced** > **Keep table schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
+* If you're ingesting tabular formats in an *existing table*, you can select **Table_mapping** > **Use existing schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
 * To use the first row as column names, select  **Advanced** > **First row is column header**.
 
     :::image type="content" source="media/get-data-azure-storage/advanced-csv.png" alt-text="Screenshot of advanced CSV options.":::
 
 **JSON**:
 
-* To determine column division of JSON data, select **Advanced** > **Nested levels**, from 1 to 100.
-* If you select **Advanced** > **Skip JSON lines with errors**, the data is ingested in JSON format. If you leave this check box unselected, the data is ingested in multijson format.
+* To determine column division of JSON data, select **Nested levels**, from 1 to 100.
 
     :::image type="content" source="media/get-data-azure-storage/advanced-json.png" alt-text="Screenshot of advanced JSON options.":::
 
 ## Summary
 
-In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to query, drop the ingested data, or see a dashboard of your ingestion summary.
+In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to explore the data, delete the ingested data, or create a dashboard with key metrics.
 
 :::image type="content" source="media/get-data-azure-storage/summary.png" alt-text="Screenshot of summary page with successful ingestion completed." lightbox="media/get-data-azure-storage/summary.png":::
 
