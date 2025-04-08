@@ -63,7 +63,7 @@ This section is divided into Fabric experience. Each experience had a table that
 
 ### Data agent in Fabric
 
-[Data agent](../data-science/concept-ai-skill.md) operations are listed in this table. In the metrics app's [matrix by item and operation table](metrics-app-compute-page.md), Data agent operations are listed under the *LlmPlugin* item kind.
+[Data agent](../data-science/concept-data-agent.md) operations are listed in this table. In the metrics app's [matrix by item and operation table](metrics-app-compute-page.md), Data agent operations are listed under the *LlmPlugin* item kind.
 
 You can find the consumption rates for the Data agent in [Data agent consumption](../fundamentals/copilot-fabric-consumption.md).
 
@@ -190,22 +190,22 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Eventstream](#eventstream), [Fabric events](#fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Eventstream](#eventstream), [Azure and Fabric events](#azure-and-fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+
+#### Azure and Fabric events
+
+You can find the consumption rates for Azure and Fabric events in [Azure and Fabric events capacity consumption](../real-time-hub/fabric-events-capacity-consumption.md).
+
+| Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
+| ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
+| Event Operations | Publish, delivery, and filtering operations          | Multiple | Real-Time Intelligence - Event Operations         | Background |
+| Event Listener   | Uptime of the event listener                         | Multiple | Real-Time Intelligence – Event Listener and Alert | Background |
 
 #### Eventstream
 
 You can find the consumption rates for Eventstream in [Monitor capacity consumption for Microsoft Fabric Eventstream](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
 
 [!INCLUDE [operation-types](../real-time-intelligence/event-streams/includes/operation-types.md)]
-
-#### Fabric events
-
-You can find the consumption rates for Fabric events in [Microsoft Fabric and Azure events capacity consumption](../real-time-hub/fabric-events-capacity-consumption.md).
-
-| Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
-| ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
-| Event Operations | Publish, delivery, and filtering operations          | Multiple | Real-Time Intelligence - Event Operations         | Background |
-| Event Listener   | Uptime of the event listener                         | Multiple | Real-Time Intelligence – Event Listener and Alert | Background |
 
 #### KQL Database and KQL Queryset
 

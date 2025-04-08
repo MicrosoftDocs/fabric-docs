@@ -7,7 +7,7 @@ ms.reviewer: ''
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 02/20/2025
+ms.date: 04/06/2025
 ---
 
 # Microsoft Fabric tenant settings
@@ -26,10 +26,6 @@ Users can connect and test existing ADF pipelines in Microsoft Fabric. This sett
 
 For more information, see [Overview of discover and build cohorts (preview) in healthcare data solutions](/industry/healthcare/healthcare-data-solutions/discover-and-build-cohorts-overview)
 
-## Users can create and use Apache Airflow jobs (preview)
-
-For more information, see [Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md).
-
 ## SQL database (preview)
 
 For more information, see [SQL database in Microsoft Fabric (Preview)](../database/sql/overview.md).
@@ -42,13 +38,9 @@ For more information, see [Get started with org apps (preview)](/power-bi/consum
 
 For more information, see [Learn about Microsoft Fabric feedback](../fundamentals/feedback.md).
 
-## Copy Job (preview)
+## Users can create and share Data agent item types (preview)
 
-For more information, see [What is the Copy job (preview) in Data Factory for Microsoft Fabric](../data-factory/what-is-copy-job.md).
-
-## Users can create and share AI skill item types (preview)
-
-For more information, see [AI skill concepts (preview)](../data-science/concept-ai-skill.md).
+For more information, see [Fabric data agent creation (preview)](../data-science/concept-data-agent.md).
 
 ## Users can discover and use metrics (preview)
 
