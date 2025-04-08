@@ -4,7 +4,7 @@ description: A known issue is posted where pipeline activities fail with Dynamic
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/24/2025
+ms.date: 04/08/2025
 ms.custom: known-issue-1063
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1063
 
 You can use an on-premises data gateway (OPDG) to connect to Dynamics or Dataverse connections in a pipeline. If the OPDG is the August 2024 version or later, you see failures in the activities that use the Dynamics or Dataverse connections. The activities include the copy and lookup activities and the interactive authoring experiences such as test connection, preview data, and schema mapping.
 
-**Status:** Open
+**Status:** Fixed: April 8, 2025
 
 **Product Experience:** Data Factory
 
