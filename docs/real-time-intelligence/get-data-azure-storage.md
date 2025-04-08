@@ -165,7 +165,9 @@ Set the source to get data.
 1. To create a new connection, configure the **Blob storage account** as follows:
 
     1. Select **Connect to an account**.  
-    
+
+    :::image type="content" source="media/get-data-azure-storage/configure-one-time-select-account.png" alt-text="Screenshot of configure tab with continuous ingestion turned off, and connect to an account selected.":::
+
     1. Use the following descriptions to help fill in the fields.
 
     | **Setting** | **Field description** |
