@@ -11,13 +11,11 @@ ms.date: 03/14/2025
 
 # Use the Livy API to submit and execute session jobs
 
-> [!NOTE]
-> The Livy API for Fabric Data Engineering is in public preview.
-> The Livy API doesn't support Azure Service Principal (SPN), although we plan to add SPN support soon.
-
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Submit Spark batch jobs using the Livy API for Fabric Data Engineering.
+Learn how to submit Spark batch jobs using the Livy API for Fabric Data Engineering. The Livy API currently doesn't support Azure Service Principal (SPN).
+
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
