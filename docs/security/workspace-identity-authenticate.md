@@ -72,24 +72,7 @@ To create the data pipeline, follow the steps listed in [Module 1 - Create a pip
 
 ### Reports and semantic models
 
-1. Follow the steps listed in [Analyze data in Azure Data Lake Storage Gen2 by using Power BI](/power-query/connectors/analyze-data-in-adls-gen2) to create a Power BI report in Power BI Desktop using OAuth.
-  
-1. Import the model into a Fabric workspace that has the workspace identity.
-
-1. Navigate to the semantic model's settings and edit the data source credentials. 
-
-1. Select workspace identity as the authentication method and sign in. 
-
-1. Refresh the semantic model to finalize the setup.
-
-> [!NOTE]
-> If refresh fails, check the permissions that the workspace identity has on the storage account and validate the networking settings of the storage account.
-
-### Semantic models (import mode)
-
 You can use a semantic model (import mode) with workspace identity authentication and create models and reports on the data in ADLS Gen2 storage accounts.
-
-#### Steps
 
 1. Create the semantic model in Power BI Desktop that connects to the ADLS Gen2 storage account using the steps listed in [Analyze data in Azure Data Lake Storage Gen2 by using Power BI](/power-query/connectors/analyze-data-in-adls-gen2). You can use organizational account to connect to Azure Data Lake Storage Gen2 in Desktop.
 
@@ -97,9 +80,12 @@ You can use a semantic model (import mode) with workspace identity authenticatio
 
 1. Navigate to the model settings and expand the Gateway and cloud connections section.
 
-1. Under cloud connections, select a data connection that is configured with the workspace identity authentication method and the desired ADLS Gen2 storage account. You can either create this connection in the *Manage connections and gateways* experience, or use a preexisting connection created through the shortcut or data pipeline creation experiences. 
+1. Under cloud connections, select a data connection that is configured with the workspace identity authentication method and the desired ADLS Gen2 storage account. You can either create this connection in the *Manage connections and gateways* experience, or use a preexisting connection created through the shortcut or data pipeline creation experiences.
 
 1. Select **Apply** and then refresh the model to finalize the configuration.
+
+> [!NOTE]
+> If refresh fails, check the permissions that the workspace identity has on the storage account and validate the networking settings of the storage account.
 
 ## Considerations and limitations
 
