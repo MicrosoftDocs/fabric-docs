@@ -11,12 +11,11 @@ ms.date: 11/19/2024
 
 # Use the Livy API to submit and execute Spark jobs
 
-> [!NOTE]
-> The Livy API for Fabric Data Engineering is in preview.
-
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
 Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; authenticating with a Microsoft Entra app token; submit either batch or session jobs from a remote client to Fabric Spark compute. You'll discover the Livy API endpoint; submit jobs; and monitor the results.
+
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
