@@ -84,7 +84,7 @@ landingContent:
             url: cicd-tutorial.md
 
   # Card
-  - title: Automate your lifecycle management workflows
+  - title: Automate lifecycle management workflows using APIs
     linkLists:
       - linkListType: how-to-guide
         links:
