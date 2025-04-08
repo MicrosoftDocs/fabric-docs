@@ -1,12 +1,11 @@
 ---
-title: "Data warehouse tutorial: Create a workspace"
+title: "Data Warehouse Tutorial: Create a Workspace"
 description: "In this first tutorial, learn how to create a workspace to support the other tutorials in the series."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 12/29/2024
+ms.date: 04/06/2025
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Tutorial: Create a workspace
@@ -23,17 +22,17 @@ In this task, learn how to create a workspace. A workspace contains the items ne
 
 1. From the navigation pane, select **Workspaces**, and then select **+ New workspace**.
 
-   :::image type="content" source="media/tutorial-create-workspace/create-new-workspace.png" alt-text="Screenshot of Workspaces pane, highlighting the + New workspace button." border="false":::
+   :::image type="content" source="media/tutorial-create-workspace/create-new-workspace.png" alt-text="Screenshot of Workspaces pane, highlighting the + New workspace button.":::
 
 1. In the **Create a workspace** pane, in the **Name** box, enter `Data Warehouse Tutorial` (add some trailing characters if the name isn't available).
 
-   :::image type="content" source="media/tutorial-create-workspace/create-a-workspace-dialog.png" alt-text="Screenshot of the Create a workspace dialog box, showing where to enter the new workspace name." border="false":::
+   :::image type="content" source="media/tutorial-create-workspace/create-a-workspace-dialog.png" alt-text="Screenshot of the Create a workspace dialog box, showing where to enter the new workspace name.":::
 
 1. Expand the **Advanced** section.
 
 1. Choose either the **Fabric capacity** or **Trial** license mode.
 
-1. In the **Capacity** dropdown, choose a premium capacity you have access to.
+1. In the **Capacity** dropdown list, choose a premium capacity you have access to.
 
 1. Select **Apply** to create and open the new workspace.
 

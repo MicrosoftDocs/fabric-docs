@@ -4,7 +4,7 @@ description: This article explains the Migration Assistant experience for Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: anphil
-ms.date: 03/22/2025
+ms.date: 04/06/2025
 ms.topic: concept-article
 ms.search.form: Migration Assistant
 ---
@@ -17,7 +17,7 @@ The Fabric Migration Assistant is a migration experience built natively into Fab
 The Migration Assistant copies metadata and data from the source database, automatically converting the source schema to Fabric Data Warehouse. AI-powered assistance provides quick solutions for migration incompatibility or errors.
 
 > [!TIP]
-> For a step-by-step guide to migrate with the Migration Assistant, see [Migrate Data with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md).
+> For a step-by-step guide to migrate with the Migration Assistant, see [Migrate with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md).
 >
 > For more information on strategy and planning your migration, see [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md).
 
@@ -77,8 +77,8 @@ Before copying data, make sure to fix the security objects that failed to migrat
 
 Currently, there isn't full T-SQL compatibility between the source warehouse and Fabric warehouse. For more information, see: 
 
-- [Limitations of Microsoft Fabric Data Warehouse](limitations.md) 
-- [T-SQL surface area in Microsoft Fabric Data Warehouse](tsql-surface-area.md)
+- [Limitations of Fabric Data Warehouse](limitations.md) 
+- [T-SQL surface area in Fabric Data Warehouse](tsql-surface-area.md)
 
 The workarounds for some of the common unsupported features:
 
@@ -107,5 +107,5 @@ Other currently unsupported features you might see:
 
 ## Related content
 
-- [Migrate Data with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md)
+- [Migrate with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md)
 - [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md)
