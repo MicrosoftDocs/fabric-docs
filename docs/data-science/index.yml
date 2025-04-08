@@ -42,18 +42,18 @@ landingContent:
             url: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 
 # Card 
-  - title: AI skill (preview)
+  - title: Fabric data agent (preview)
     linkLists:
       - linkListType: overview
         links:
-          - text: What is an AI skill (preview)?
-            url: concept-ai-skill.md
+          - text: What is a Fabric data agent (preview)?
+            url: concept-data-agent.md
       - linkListType: get-started
         links:
-          - text: AI skill over Adventure Works
-            url: ai-skill-scenario.md
-          - text: Get started with AI skills
-            url: how-to-create-ai-skill.md
+          - text: Fabric data agent over Adventure Works
+            url: data-agent-scenario.md
+          - text: Get started with Fabric data agents
+            url: how-to-create-data-agent.md
   
 # Card 
   - title: Get started

@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/18/2024
 ---
 
-# Get Azure Blob Storage events into Real-Time hub (preview)
+# Get Azure Blob Storage events into Real-Time hub
 
 This article describes how to get Azure Blob Storage events into Fabric Real-Time hub.
 
@@ -69,7 +69,7 @@ You can create streams for Azure Blob Storage events in Real-Time hub using one 
 1. In the **Stream details** section, enter a **name for the eventstream** that the Wizard is going to create, and select the **workspace** where you want to save the eventstream.
 1. Then, select **Next** at the bottom of the page.
 
-    :::image type="content" source="./media/get-azure-blob-storage-events/connect-settings.png" alt-text="Screenshot that shows the Connect settings for an Azure Blob Storage account.":::
+    :::image type="content" source="./media/get-azure-blob-storage-events/connect-settings.png" alt-text="Screenshot that shows the connection settings for an Azure Blob Storage account.":::
 1. On the **Review + connect** page, review settings, and select **Connect**.
 
     :::image type="content" source="./media/get-azure-blob-storage-events/review-create-page.png" alt-text="Screenshot that shows the Review + connect page." lightbox="./media/get-azure-blob-storage-events/review-create-page.png":::

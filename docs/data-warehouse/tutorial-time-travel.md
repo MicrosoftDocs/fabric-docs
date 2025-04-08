@@ -1,11 +1,10 @@
 ---
-title: "Data warehouse tutorial: Time travel with T-SQL in a Warehouse"
+title: "Data Warehouse Tutorial: Time Travel with T-SQL in a Warehouse"
 description: "In this tutorial, learn how to use T-SQL statements to time travel in a warehouse table."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.date: 12/29/2024
-ms.custom:
+ms.date: 04/06/2025
 ms.topic: how-to
 ---
 
@@ -28,7 +27,7 @@ In this task, learn how to create a view of the top 10 customers by sales. You w
 
 1. On the **Home** ribbon, select **New SQL query**.
 
-   :::image type="content" source="media/tutorial-time-travel/ribbon-new-sql-query.png" alt-text="Screenshot of the New SQL query option on the ribbon." border="false":::
+   :::image type="content" source="media/tutorial-time-travel/ribbon-new-sql-query.png" alt-text="Screenshot of the New SQL query option on the ribbon." lightbox="media/tutorial-time-travel/ribbon-new-sql-query.png":::
 
 1. In the query editor, paste the following code. The code creates a view named `Top10Customers`. The view uses a query to retrieve the top 10 customers based on sales.
 
@@ -57,7 +56,7 @@ In this task, learn how to create a view of the top 10 customers by sales. You w
 
 1. In the **Explorer** pane, from inside the **Views** folder for the `dbo` schema, verify that the `Top10Customers` view exists.
 
-   :::image type="content" source="media/tutorial-time-travel/explorer-view.png" alt-text="Screenshot of the Explorer pane, highlighting the newly created view." border="false":::
+   :::image type="content" source="media/tutorial-time-travel/explorer-view.png" alt-text="Screenshot of the Explorer pane, highlighting the newly created view.":::
 
 1. Create a new query to work with time travel queries.
 
@@ -83,7 +82,7 @@ In this task, learn how to create a view of the top 10 customers by sales. You w
 
 1. In the **Results** pane, notice the timestamp value (your value will be the current UTC date and time).
 
-   :::image type="content" source="media/tutorial-time-travel/results-copy-timestamp.png" alt-text="Screenshot of the Results pane, highlighting the timestamp value to copy." border="false":::
+   :::image type="content" source="media/tutorial-time-travel/results-copy-timestamp.png" alt-text="Screenshot of the Results pane, highlighting the timestamp value to copy.":::
 
 1. To retrieve the top 10 customers _as of now_, in a new query editor, paste the following statement. The code retrieves the top 10 customers by using the `FOR TIMESTAMP AS OF` query hint.
 
@@ -98,7 +97,7 @@ In this task, learn how to create a view of the top 10 customers by sales. You w
 
 1. Return to the `Time Travel` query, and then use the **Copy** command to copy the query results.
 
-   :::image type="content" source="media/tutorial-time-travel/copy-results-command.png" alt-text="Screenshot of the Copy command, highlighting Copy Query results." border="false":::
+   :::image type="content" source="media/tutorial-time-travel/copy-results-command.png" alt-text="Screenshot of the Copy command, highlighting Copy Query results.":::
 
 1. Return to the `Time Travel Now` query, and then replace `YOUR_TIMESTAMP` with the timestamp you copied to the clipboard.
 

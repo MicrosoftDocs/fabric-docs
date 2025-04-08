@@ -72,7 +72,7 @@ The migration process is performed using Fabric REST API endpoints. The recommen
     > [!IMPORTANT]
     > Make sure to update queries and ingestion processes to point to new [Eventhouse endpoints](access-database-copy-uri.md#copy-uri) within 90 days of migration. After 90 days, the source cluster is deleted and its endpoints stop redirecting to the eventhouse and it will not be recoverable.
 
-The API endpoints can be called directly or in an automated PowerShell script. A sample PowerShell script is available in the [Microsoft Fabric GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/migrate-synapse-to-eventhouse.ps1). To run the script, in addition to the [prerequisites](#prerequisites), you must have the Az PowerShell module with at least version '2.64.0', which you can install by running 'Install-Module az' in PowerShell.
+The API endpoints can be called directly or in an automated PowerShell script. A sample PowerShell script is available in the [Microsoft Fabric GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/MigrateFromAzureToEventhouse.ps1). To run the script, in addition to the [prerequisites](#prerequisites), you must have the Az PowerShell module with at least version '2.64.0', which you can install by running 'Install-Module az' in PowerShell.
 
 ## Related content
 

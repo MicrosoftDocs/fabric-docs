@@ -1,8 +1,8 @@
 ---
 title: Known issue - Eventstream publish fails when column contains empty array and operator is added
 description: A known issue is posted where an eventstream publish fails when column contains empty array and operator is added.
-author: kfollis
-ms.author: kfollis
+author: jessicammoss
+ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/20/2025
 ms.custom: known-issue-962

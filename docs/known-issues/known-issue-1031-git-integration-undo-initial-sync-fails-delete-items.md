@@ -1,7 +1,7 @@
 ---
 title: Known issue - Git integration undo action appears after initial sync fails
 description: A known issue is posted where performing a Git integration undo action appears after initial sync fails.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/26/2025
