@@ -162,11 +162,23 @@ Set the source to get data.
 
 1. Turn off **Continuous ingestion**.
 
-1. Select **Use a SAS URL to ingest from a storage account**.
+1. To create a new connection, configure the **Blob storage account** as follows:
+
+    1. Select **Connect to an account**.  
+    
+    1. Use the following descriptions to help fill in the fields.
+
+    | **Setting** | **Field description** |
+    |--|--|
+    | Subscription | The subscription ID where the storage account is located. |
+    | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
+    | Container | The storage container containing the file you want to ingest. |
+
+1. To create a connection using a SAS URL, select **Use a SAS URL to ingest from a storage account**.
 
     :::image type="content" source="media/get-data-azure-storage/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-azure-storage/configure-tab.png":::
 
-1. Paste your storage connection string in the **Enter SAS Url** field, and then select **+**.
+    1. Paste your storage connection string in the **Enter SAS Url** field, and then select **+**.
 
     The string consists of a blob URI with a SAS token or account key. The following table lists the supported authentication methods and the permissions needed for ingesting data from Azure Storage.
 
