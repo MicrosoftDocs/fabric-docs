@@ -1,5 +1,5 @@
 ---
-title: "Limitations and Behaviors for Fabric Mirrored Databases From Azure Database for PostgreSQL flexible server"
+title: "Limitations of Fabric Mirrored Databases From Azure Database for PostgreSQL flexible server"
 description: A detailed list of limitations for mirrored databases from Azure Database for PostgreSQL flexible server in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -98,7 +98,7 @@ For troubleshooting, see:
 
 ## Supported regions
 
-[!INCLUDE [fabric-mirroredpg-supported-regions](../includes/fabric-mirroredpg-supported-regions.md)]
+[!INCLUDE [fabric-mirroredpg-supported-regions](includes/fabric-mirroredpg-supported-regions.md)]
 
 ## Next step
 

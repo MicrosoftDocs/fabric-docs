@@ -39,7 +39,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Snowflake ar
 
 ## Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Related content
 

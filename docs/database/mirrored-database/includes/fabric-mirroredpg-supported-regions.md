@@ -15,11 +15,13 @@ The following are the Fabric regions that support Azure Database for PostgreSQL 
     - Canada Central
     - West Central US
    :::column-end:::
+
    :::column span="":::
     **Asia Pacific**:
 
     - East Asia
    :::column-end:::
+
    :::column span="":::
     **Europe, the Middle East, and Africa**:
 
