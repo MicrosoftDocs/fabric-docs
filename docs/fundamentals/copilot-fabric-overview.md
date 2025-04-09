@@ -45,6 +45,34 @@ The following diagram depicts an overview of the different items that support Co
 
 :::image type="content" source="media/copilot-fabric-overview/fabric-items-copilot-support.svg" alt-text="Diagram showing the different Fabric items that support Copilot experiences across Fabric workloads.":::
 
+**Copilot for Data Science and Data Engineering**
+
+Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored to support data professionals in their workflow. It provides intelligent code completion, automates routine tasks, and supplies industry-standard code templates to facilitate building robust data pipelines and crafting complex analytical models. Utilizing advanced machine learning algorithms, Copilot offers contextual code suggestions that adapt to the specific task at hand, helping you code more effectively and with greater ease. From data preparation to insight generation, Microsoft Fabric Copilot acts as an interactive aide, lightening the load on engineers and scientists and expediting the journey from raw data to meaningful conclusions.
+
+**Copilot for Data Factory**
+
+Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks. For more information, see [Copilot for Data Factory](copilot-fabric-data-factory.md)
+
+**Copilot for Data Warehouse**
+
+Microsoft Copilot for Fabric Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Key features of Copilot for Warehouse include Natural Language to SQL, code completion, quick actions, and intelligent insights. For more information, see [Copilot for Data Warehouse](../data-warehouse/copilot.md).
+
+**Copilot for Power BI**
+
+Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. You can use Copilot for Power BI to generate a summary for the report page that you just created, and generate synonyms for better Q&A capabilities. 
+
+For more information on the features and how to use Copilot for Power BI, see [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction).
+
+**Copilot for Real-Time Intelligence**
+
+Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists.
+
+For more information, see [Copilot for Real-Time Intelligence overview](../fundamentals/copilot-real-time-intelligence.md).
+
+**Copilot for SQL database**
+
+Copilot for SQL database in Microsoft Fabric is an AI assistant designed to streamline your OLTP database tasks. Key features of Copilot for SQL database include Natural Language to SQL, code completion, quick actions, and document-based Q&A. For more information, see [Copilot for SQL database](../database/sql/copilot.md).
+
 ### Where to find the Copilot experiences in Fabric
 
 The following table provides an overview of the various Copilot experiences available in Fabric, and which workloads and items these experiences apply to. The links in the *Copilot experience* column take you to the documentation describing how to set up and use these features.
@@ -69,9 +97,6 @@ The following table provides an overview of the various Copilot experiences avai
 **Data Science and Data Engineering**
    :::column-end:::
    :::column span="1":::
-​Copilot for Data Science and Data Engineering is an AI-powered assistant designed to enhance data professionals' workflows by offering intelligent code completion, automating routine tasks, and providing industry-standard code templates. It integrates with Lakehouse tables, Power BI Datasets, and various dataframes to deliver contextual code suggestions. From data preparation to insight generation, Copilot serves as an interactive aide, streamlining the journey from raw data to meaningful conclusions.
-   :::column-end:::
-   :::column span="1":::
 Notebook (typically with lakehouses and other data items)
    :::column-end:::
    :::column span="1":::
@@ -83,16 +108,100 @@ Notebook (typically with lakehouses and other data items)
    :::column-end:::
 :::row-end:::
 ---
-
-| **Fabric workload** | **Supported items** | **Copilot experience** |  **Description** |
-|---|---|---|---|
-| **Data Science and Data Engineering** | Notebook (typically with lakehouses and other data items) | * [Copilot chat panel](../data-engineering/copilot-notebooks-chat-pane.md) vs [chat magics](../data-engineering/copilot-notebooks-chat-magics.md) in a notebook (GA).<br/> * [Generate code or markdown for a notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities). <br/> * [Add comments, fix errors, or debug notebook code (preview)](../data-engineering/copilot-notebooks-chat-magics.md#commenting-and-debugging).<br/> * [Analyze and visualize data from a lakehouse, semantic model, or dataframe in the notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md).<br/> * [Explain notebook contents or activities (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities). | Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored to support data professionals in their workflow. It provides intelligent code completion, automates routine tasks, and supplies industry-standard code templates to facilitate building robust data pipelines and crafting complex analytical models. Utilizing advanced machine learning algorithms, Copilot offers contextual code suggestions that adapt to the specific task at hand, helping you code more effectively and with greater ease. From data preparation to insight generation, Microsoft Fabric Copilot acts as an interactive aide, lightening the load on engineers and scientists and expediting the journey from raw data to meaningful conclusions. |
-| **Data Factory** | Dataflows gen2 | - [Suggest a new query (preview)](copilot-fabric-data-factory.md).<br>- [Suggest a new transformation step (preview)](copilot-fabric-data-factory.md).<br>- [Summarize a query and applied steps (preview)](copilot-fabric-data-factory.md).<br>- Generate and run a data pipeline.<br>- Summarize a data pipeline.<br>- Troubleshoot pipeline errors. | Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks. For more information, see [Copilot for Data Factory](copilot-fabric-data-factory.md). |
-| **Data Warehousing** | Data warehouse | - [Generate SQL queries (preview)](../data-warehouse/copilot-chat-pane.md).<br>- [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).<br>- [Fix code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md).<br> - [Explain code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md).<br> | Microsoft Copilot for Fabric Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Key features of Copilot for Warehouse include Natural Language to SQL, code completion, quick actions, and intelligent insights. For more information, see [Copilot for Data Warehouse](../data-warehouse/copilot.md). |
-| **Power BI** | Semantic models in Power BI Desktop or Power BI service | - Copilot experiences when developing a data model.<br>   - [Suggest linguistic model synonyms (GA)](/power-bi/natural-language/q-and-a-copilot-enhancements).<br>   - [Suggest measure descriptions (GA)](/power-bi/transform-model/desktop-measure-copilot-descriptions).<br>   - Copilot in TMDL scripting view (announced).<br><br>- Copilot experiences in the DAX query view.<br>   - [Suggest DAX for queries (GA)](/dax/dax-copilot).<br>   - [Suggest DAX for measures (GA)](/dax/dax-copilot).<br>   - [Explain DAX code or concept (GA)](/dax/dax-copilot).<br><br> - Copilot experiences to ask questions about a model.<br>   - Power BI home (announced).<br>   - [Ask questions about your data (preview)](/power-bi/create-reports/copilot-pane-summarize-content). | |
-| **Power BI** | Reports (with semantic models) in Power BI Desktop, the Power BI service, or the Power BI mobile app | - Power BI home (announced).<br> - [Suggest a report page (preview)](/power-bi/create-reports/copilot-create-desktop-report).<br>- [Suggest a visual (preview)](/power-bi/create-reports/copilot-create-report-service).<br>- [Summarize data in a narrative visual (GA)](/power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service).<br>- [Explain a report page or visual (GA)](/power-bi/create-reports/copilot-pane-summarize-content). | Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. You can use Copilot for Power BI to generate a summary for the report page that you created, as well as generate synonyms for better Q&A capabilities.<br><br>For more information on the features and how to use Copilot for Power BI, see [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction). |
-| **Real-Time Intelligence** | KQL queryset | - [Generate KQL queries (preview)](copilot-real-time-intelligence.md).<br>- [Modify or explore a previously generated KQL query (preview)](copilot-real-time-intelligence.md). | Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists.<br><br>For more information, see [Copilot for Real-Time Intelligence overview](../fundamentals/copilot-real-time-intelligence.md). |
-| **Real-Time Intelligence** | Real-time dashboards | - Generate a real-time dashboard (announced). | |
+---
+:::row:::
+   :::column span="1":::
+**Data Factory**
+   :::column-end:::
+   :::column span="1":::
+Dataflows gen2
+   :::column-end:::
+   :::column span="1":::
+* [Suggest a new query (preview)](copilot-fabric-data-factory.md).
+* [Suggest a new transformation step (preview)](copilot-fabric-data-factory.md).
+* [Summarize a query and applied steps (preview)](copilot-fabric-data-factory.md).
+* Generate and run a data pipeline.
+* Summarize a data pipeline.
+* Troubleshoot pipeline errors. | Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks. For more information, see [Copilot for Data Factory](copilot-fabric-data-factory.md).
+   :::column-end:::
+:::row-end:::
+---
+---
+:::row:::
+   :::column span="1":::
+**Data Warehousing**
+   :::column-end:::
+   :::column span="1":::
+Data warehouse
+   :::column-end:::
+   :::column span="1":::
+* [Generate SQL queries (preview)](../data-warehouse/copilot-chat-pane.md).
+* [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).
+* [Fix code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md).
+* [Explain code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md)
+   :::column-end:::
+:::row-end:::
+---
+---
+:::row:::
+   :::column span="1":::
+**Power BI**
+   :::column-end:::
+   :::column span="1":::
+Semantic models in Power BI Desktop or Power BI service
+   :::column-end:::
+   :::column span="1":::
+* [Generate SQL queries (preview)](../data-warehouse/copilot-chat-pane.md).
+* [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).
+* [Fix code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md).
+* [Explain code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md)
+   :::column-end:::
+:::row-end:::
+---
+---
+:::row:::
+   :::column span="1":::
+**Power BI**
+   :::column-end:::
+   :::column span="1":::
+Reports (with semantic models) in Power BI Desktop, the Power BI service, or the Power BI mobile app
+   :::column-end:::
+   :::column span="1":::
+* Power BI home (announced).
+* [Suggest a report page (preview)](/power-bi/create-reports/copilot-create-desktop-report).
+* [Suggest a visual (preview)](/power-bi/create-reports/copilot-create-report-service).
+* [Summarize data in a narrative visual (GA)](/power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service).
+* [Explain a report page or visual (GA)](/power-bi/create-reports/copilot-pane-summarize-content).
+   :::column-end:::
+:::row-end:::
+---
+---
+:::row:::
+   :::column span="1":::
+**Real-Time Intelligence**
+   :::column-end:::
+   :::column span="1":::
+KQL queryset
+   :::column-end:::
+   :::column span="1":::
+* [Generate KQL queries (preview)](copilot-real-time-intelligence.md).
+* [Modify or explore a previously generated KQL query (preview)](copilot-real-time-intelligence.md).
+   :::column-end:::
+:::row-end:::
+---
+---
+:::row:::
+   :::column span="1":::
+**Real-Time Intelligence**
+   :::column-end:::
+   :::column span="1":::
+Real-time dashboards
+   :::column-end:::
+   :::column span="1":::
+* Generate a real-time dashboard (announced).
+   :::column-end:::
+:::row-end:::
+---
 
 > [!NOTE]
 > Copilot's capabilities are evolving over time. More items and Copilot experiences will likely become available in the future.
