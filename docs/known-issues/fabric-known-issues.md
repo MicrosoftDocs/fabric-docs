@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 04/08/2025
+ms.date: 04/09/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1090  | Data Engineering | [PyPI packages in User data functions don't show in Library Management](./known-issue-1090-pypi-packages-functions-not-show-library-management.md) | April 9, 2025 |
+|  1087  | Data Factory | [Pipeline can't copy an empty table to lakehouse](./known-issue-1087-pipeline-not-copy-empty-table-lakehouse.md) | April 9, 2025 |
+|  1085  | Data Engineering | [Spark job submission failure with Library Management error](./known-issue-1085-spark-job-submission-failure-library-management-error.md) | April 9, 2025 |
 |  1089  | Power BI | [Dataflow Gen2 refresh fails with PowerBIEntityNotFound error](./known-issue-1089-dataflow-gen2-refresh-fails-error.md) | April 8, 2025 |
 |  1083  | Power BI | [Dataflow Gen2 refresh fails with type mismatch error](./known-issue-1083-dataflow-gen2-refresh-fails-type-mismatch-error.md) | April 8, 2025 |
 |  1080  | Data Factory | [Data pipeline run fails due to user auth token errors](./known-issue-1080-data-pipeline-run-fails-user-auth-token-errors.md) | April 8, 2025 |
@@ -31,18 +34,15 @@ Select the **Title** to view more information about that specific known issue.
 |  1067  | Data Engineering | [Environment REST API updates might cause your workflow to break](./known-issue-1067-environment-rest-api-updates-workflow-break.md) | March 26, 2025 |
 |  1025  | Data Engineering | [Environment Git integration imports for libraries don't work](./known-issue-1025-environment-git-integration-imports-libraries-not-work.md) | March 26, 2025 |
 |  1069  | Data Warehouse | [SQL analytics endpoint sync failure when columnMapping is enabled](./known-issue-1069-sql-analytics-endpoint-sync-failure-column-mapping-enabled.md) | March 24, 2025 |
-|  1062  | Administration & Management | [Workspace identity tagged as preview for ADLS Gen2 connections](./known-issue-1062-workspace-identity-tagged-preview-adls-gen2-connections.md) | March 21, 2025 |
 |  1061  | Power BI | [Issues publishing or importing reports in Pro workspaces](./known-issue-1061-issues-publishing-importing-reports-pro-workspaces.md) | March 21, 2025 |
 |  1051  | Real-Time Intelligence | [Eventstream data sources might be inactivated and can't be reactivated](./known-issue-1051-eventstream-data-sources-inactivated-not-reactivated.md) | March 21, 2025 |
 |  1059  | Data Science | [Copilot installation script not included in notebook](./known-issue-1059-copilot-installation-script-not-included-notebook.md) | March 18, 2025 |
 |  1056  | Data Factory | [Database mirroring error that source table doesn't exist](./known-issue-1056-database-mirroring-error-source-table-not-exist.md) | March 18, 2025 |
 |  1058  | OneLake | [Workspaces created during Fabric preview only support limited OneLake features](./known-issue-1058-workspaces-created-during-preview-limited-onelake-features.md) | March 12, 2025 |
 |  1055  | Data Factory | [Spark Job Definition activity incorrectly shows failure status](./known-issue-1055-spark-job-definition-activity-incorrectly-shows-failure-status.md) | March 12, 2025 |
-|  1045  | Power BI | [Live connection to local model conversion resets report content in February Desktop](./known-issue-1045-live-connection-local-model-resets-report-content-desktop.md) | March 5, 2025 |
 |  1043  | Real-Time Intelligence | [Pub/Sub subscriptions disappear from API response after creation](./known-issue-1043-pub-sub-subscriptions-disappear-api-response-creation.md) | March 5, 2025 |
 |  1039  | Data Warehouse | [Sync for data warehouse and SQL analytics endpoint fail in West Europe](./known-issue-1039-sync-warehouse-sql-endpoint-fail-west-europe.md) | March 3, 2025 |
 |  1033  | Administration & Management | [FeatureNotAvailableError error in Network Security tab of Workspace Settings](./known-issue-1033-error-network-security-tab-workspace-settings.md) | February 28, 2025 |
-|  1035  | Data Engineering | [Lakehouse ALM operations fail for Git using public APIs in UK South](./known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md) | February 25, 2025 |
 |  1032  | Real-Time Intelligence | [Eventstream updates with Eventhouse destination causes error](./known-issue-1032-eventstream-updates-eventhouse-destination-error.md) | February 21, 2025 |
 |  1031  | Administration & Management | [Git integration undo action appears after initial sync fails](./known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md) | February 20, 2025 |
 |  1028  | Data Engineering | [Slow Spark session startup caused by Native Execution Engine](./known-issue-1028-slow-spark-session-startup-native-execution-engine.md) | February 19, 2025 |
@@ -96,6 +96,9 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1062  | Administration & Management | [Workspace identity tagged as preview for ADLS Gen2 connections](./known-issue-1062-workspace-identity-tagged-preview-adls-gen2-connections.md) | March 21, 2025 | Fixed: April 9, 2025 |
+|  1045  | Power BI | [Live connection to local model conversion resets report content in February Desktop](./known-issue-1045-live-connection-local-model-resets-report-content-desktop.md) | March 5, 2025 | Fixed: April 9, 2025 |
+|  1035  | Data Engineering | [Lakehouse ALM operations fail for Git using public APIs in UK South](./known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md) | February 25, 2025 | Fixed: April 9, 2025 |
 |  1063  | Data Factory | [Pipeline activities fail with Dynamics or Dataverse connections through OPDG](./known-issue-1063-pipeline-activities-fail-dynamics-dataverse-connections-opdg.md) | March 24, 2025 | Fixed: April 8, 2025 |
 |  1029  | Administration & Management | [Existing preview surge protection rules aren't visible in Capacity settings](./known-issue-1029-surge-protection-rules-not-visible-capacity-settings.md) | February 25, 2025 | Fixed: April 8, 2025 |
 |  957  | Data Factory | [Creation failure for Copy job item in empty workspace](./known-issue-957-creation-failure-copy-job-item-empty-workspace.md) | December 5, 2024 | Fixed: April 8, 2025 |
