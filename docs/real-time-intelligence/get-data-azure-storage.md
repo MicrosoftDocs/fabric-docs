@@ -148,10 +148,10 @@ Set the source to get data.
 
     1. In the **Connection** field, open the drop-down and select the existing connection string from the list. Then click **Save** > **Close**.
 
-> [!NOTE]
->
-> Creating a new connection results in a new eventstream. The name is defined as <subscription>_<eventstream1>.
-> Ensure not to remove the continuous ingestion eventstream from the eventhouse.
+        > [!NOTE]
+        >
+        > Creating a new connection results in a new eventstream. The name is defined as *subscription>_eventstream1*.
+        > Ensure not to remove the continuous ingestion eventstream from the eventhouse.
 
 1. You can add the following optional filters:
 
