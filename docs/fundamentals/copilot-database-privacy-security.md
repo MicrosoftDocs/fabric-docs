@@ -1,6 +1,6 @@
 ---
 title: Privacy, Security, and Responsible Use of Microsoft Copilot in Microsoft Fabric in the SQL Database Workload
-description: Learn about privacy, security, and responsible use of Microsoft Copilot in Microsoft Fabric in the SQL database workload in Microsoft Fabric.
+description: Learn about privacy, security, and responsible AI use of Microsoft Copilot in Microsoft Fabric in the SQL database workload.
 author: markingmyname
 ms.author: maghan
 ms.reviewer: yoleichen, wiassaf

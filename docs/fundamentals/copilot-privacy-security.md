@@ -1,6 +1,6 @@
 ---
 title: "Privacy, Security, and Responsible AI Use of Copilot in Fabric"
-description: Learn about privacy, security, and responsible use for Copilot in Microsoft Fabric for data science.
+description: Learn about privacy, security, and responsible AI use for Copilot in Microsoft Fabric for data science.
 author: snehagunda
 ms.author: sngun
 ms.reviewer: guptamaya, maghan
