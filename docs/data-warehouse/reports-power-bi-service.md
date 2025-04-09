@@ -1,12 +1,11 @@
 ---
-title: Create reports in the Power BI
+title: Create Reports in the Power BI
 description: Follow steps to create reports in the Power BI Desktop and Power BI service in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanadey
-ms.date: 04/24/2024
+ms.date: 04/06/2025
 ms.topic: how-to
-ms.custom:
 ms.search.form: Reporting
 ---
 # Create reports in the Power BI service in Microsoft Fabric and Power BI Desktop
@@ -19,7 +18,7 @@ This article describes three different scenarios you can follow to create report
 
 From within Fabric Data Warehouse, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI semantic model.
 
-:::image type="content" source="media/reports-power-bi-service/new-report-ribbon.png" alt-text="Screenshot of new report in the ribbon.":::
+:::image type="content" source="media/reports-power-bi-service/new-report-ribbon.png" alt-text="Screenshot of new report in the ribbon." lightbox="media/reports-power-bi-service/new-report-ribbon.png":::
 
 If no tables have been added to the default Power BI semantic model, the dialog first automatically adds tables, prompting the user to confirm or manually select the tables included in the canonical default semantic model first, ensuring there's always data first.
 
@@ -29,7 +28,7 @@ With a default semantic model that has tables, the **New report** opens a browse
 
 Using the default semantic model and action menu in the workspace: In the [!INCLUDE [product-name](../includes/product-name.md)] workspace, navigate to the default Power BI semantic model and select the **More** menu (**...**) to create a report in the Power BI service.
 
-:::image type="content" source="media/reports-power-bi-service/create-report-ws.png" alt-text="Screenshot of new report in the workspace.":::
+:::image type="content" source="media/reports-power-bi-service/create-report-ws.png" alt-text="Screenshot of new report in the workspace." lightbox="media/reports-power-bi-service/create-report-ws.png":::
 
 Select **Create report** to open the report editing canvas to a new report on the semantic model. When you save your new report, it's saved in the workspace that contains the semantic model as long as you have write permissions on that workspace. If you don't have write permissions, or if you're a free user and the semantic model resides in a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace, the new report is saved in your **My workspace**.
 
@@ -55,12 +54,12 @@ The OneLake catalog integration in Power BI Desktop lets you connect to the Ware
 
 1. Use **Data hub** menu in the ribbon to get list of all items.
 1. Select the warehouse that you would like to connect
-1. On the **Connect** button, select the dropdown, and select **Connect to SQL endpoint**.
+1. On the **Connect** button, select the dropdown list, and select **Connect to SQL endpoint**.
 
    :::image type="content" source="media/reports-power-bi-service/data-hub-pbi-desktop.png" alt-text="Screenshot of the Data hub in Power BI Desktop." lightbox="media/reports-power-bi-service/data-hub-pbi-desktop.png":::
 
 ## Related content
 
-- [Connectivity](connectivity.md)
-- [Create reports](create-reports.md)
+- [Warehouse connectivity in Microsoft Fabric](connectivity.md)
+- [Create reports on data warehousing in Microsoft Fabric](create-reports.md)
 - [Tutorial: Get started creating in the Power BI service](/power-bi/fundamentals/service-get-started)

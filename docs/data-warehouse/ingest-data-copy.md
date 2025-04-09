@@ -1,12 +1,11 @@
 ---
-title: Ingest data into your Warehouse using the COPY statement
+title: Ingest Data into Your Warehouse Using the COPY Statement
 description: Follow steps to ingest data into a Warehouse with the COPY statement in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
-ms.date: 12/30/2024
+ms.date: 04/06/2025
 ms.topic: how-to
-ms.custom:
 ms.search.form: Ingesting data
 ---
 
@@ -91,7 +90,9 @@ WITH (
 );
 ```
 
-## <a id="checking-the-results"></a> Check the results
+<a id="checking-the-results"></a>
+
+## Check the results
 
 The COPY statement completes by ingesting 4,766,736 rows into your new table. You can confirm the operation ran successfully by running a query that returns the total number of rows in your table:
 
