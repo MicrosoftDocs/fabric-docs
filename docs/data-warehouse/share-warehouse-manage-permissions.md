@@ -50,13 +50,11 @@ Here's more detail about each of the permissions provided:
 
     - In the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse, **"Read all SQL Endpoint data"** is equivalent to **"Read all data using SQL"**.
 
-    - **"Subscribe to events" ("SubscribeOneLakeEvents" permissions)** - A shared recipient with this permission can subscribe to OneLake events generated for the warehouse in Fabric Real-Time Hub.
-
 - **"Read all data using Apache Spark" is selected ("ReadAll" permissions)** - The shared recipient should only be provided **ReadAll** if they want complete access to your warehouse's files using the Spark engine. A shared recipient with **ReadAll** permissions can find the [Azure Blob File System (ABFS) path](/azure/storage/blobs/data-lake-storage-introduction-abfs-uri) to the specific file in OneLake from the Properties pane in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor. The shared recipient can then use this path within a Spark Notebook to read this data. The recipient can also subscribe to OneLake events generated for the data warehouse in Real time hub.
 
-   For example, in the following screenshot, a user with **ReadAll** permissions can query the data in `FactSale` with a Spark query in a new notebook.
+    - **"Subscribe to events" ("SubscribeOneLakeEvents" permissions)** - A shared recipient with this permission can subscribe to OneLake events generated for the warehouse in Fabric Real-Time Hub.
 
-   :::image type="content" source="media/share-warehouse-manage-permissions/table-spark-open-new-notebook.png" alt-text="Screenshot from the Fabric portal where a user opens a Spark notebook to query the Warehouse shortcut.":::
+   For example, a user with **ReadAll** permissions can query the data in `FactSale` with a Spark query in a new notebook.
 
 - **"Build reports on the default dataset" is selected ("Build" permissions)** - The shared recipient can build reports on top of the default semantic model that is connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] to create Power BI reports on this data from the OneLake catalog or Power BI Desktop. The **Build** checkbox is selected by default, but can be unchecked.
 
