@@ -49,7 +49,42 @@ The following diagram depicts an overview of the different items that support Co
 
 The following table provides an overview of the various Copilot experiences available in Fabric, and which workloads and items these experiences apply to. The links in the *Copilot experience* column take you to the documentation describing how to set up and use these features.
 
-| **Fabric workload** | **Applicable item** | **Copilot experience** |  **Description** |
+:::row:::
+   :::column span="1"::: 
+**Fabric workload**
+   :::column-end:::
+   :::column span="1"::: 
+**Description**
+   :::column-end:::
+   :::column span="1"::: 
+**Supported items**
+   :::column-end:::
+   :::column span="1"::: 
+**Copilot experience**
+   :::column-end:::
+:::row-end:::
+---
+:::row:::
+   :::column span="1":::
+**Data Science and Data Engineering**
+   :::column-end:::
+   :::column span="1":::
+​Copilot for Data Science and Data Engineering is an AI-powered assistant designed to enhance data professionals' workflows by offering intelligent code completion, automating routine tasks, and providing industry-standard code templates. It integrates with Lakehouse tables, Power BI Datasets, and various dataframes to deliver contextual code suggestions. From data preparation to insight generation, Copilot serves as an interactive aide, streamlining the journey from raw data to meaningful conclusions.
+   :::column-end:::
+   :::column span="1":::
+Notebook (typically with lakehouses and other data items)
+   :::column-end:::
+   :::column span="1":::
+* [Copilot chat panel](../data-engineering/copilot-notebooks-chat-pane.md) vs [chat magics](../data-engineering/copilot-notebooks-chat-magics.md) in a notebook (GA).
+* [Generate code or markdown for a notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities).
+* [Add comments, fix errors, or debug notebook code (preview)](../data-engineering/copilot-notebooks-chat-magics.md#commenting-and-debugging).
+* [Analyze and visualize data from a lakehouse, semantic model, or dataframe in the notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md).
+* [Explain notebook contents or activities (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities).
+   :::column-end:::
+:::row-end:::
+---
+
+| **Fabric workload** | **Supported items** | **Copilot experience** |  **Description** |
 |---|---|---|---|
 | **Data Science and Data Engineering** | Notebook (typically with lakehouses and other data items) | * [Copilot chat panel](../data-engineering/copilot-notebooks-chat-pane.md) vs [chat magics](../data-engineering/copilot-notebooks-chat-magics.md) in a notebook (GA).<br/> * [Generate code or markdown for a notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities). <br/> * [Add comments, fix errors, or debug notebook code (preview)](../data-engineering/copilot-notebooks-chat-magics.md#commenting-and-debugging).<br/> * [Analyze and visualize data from a lakehouse, semantic model, or dataframe in the notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md).<br/> * [Explain notebook contents or activities (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities). | Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored to support data professionals in their workflow. It provides intelligent code completion, automates routine tasks, and supplies industry-standard code templates to facilitate building robust data pipelines and crafting complex analytical models. Utilizing advanced machine learning algorithms, Copilot offers contextual code suggestions that adapt to the specific task at hand, helping you code more effectively and with greater ease. From data preparation to insight generation, Microsoft Fabric Copilot acts as an interactive aide, lightening the load on engineers and scientists and expediting the journey from raw data to meaningful conclusions. |
 | **Data Factory** | Dataflows gen2 | - [Suggest a new query (preview)](copilot-fabric-data-factory.md).<br>- [Suggest a new transformation step (preview)](copilot-fabric-data-factory.md).<br>- [Summarize a query and applied steps (preview)](copilot-fabric-data-factory.md).<br>- Generate and run a data pipeline.<br>- Summarize a data pipeline.<br>- Troubleshoot pipeline errors. | Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks. For more information, see [Copilot for Data Factory](copilot-fabric-data-factory.md). |
