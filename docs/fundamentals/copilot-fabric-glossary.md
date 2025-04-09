@@ -45,3 +45,8 @@ This article provides an overview of selected key terms and their definitions in
 | *Token* | The smallest unit of information that an LLM uses. A token comprises one or more characters of frequently co-occurring text. Each token has a corresponding unique integer for a given LLM, known as a *Token ID*. Tokens are necessary to convert natural language into a numerical representation, which is what an LLM uses to process input and return a response. |
 | *Tokenization* | The process of converting natural language inputs to tokens. Tokenization is done by an LLM, and different LLMs tokenize inputs in different ways. |
 | *Workload* | The different functional areas of Fabric, like Data Engineering, Data Science, or Power BI. Different workloads in Fabric use different Copilots. There are different Copilot experiences in each workload. |
+
+## Related content
+
+- [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md)
+- [Copilot in Fabric: FAQ](../fundamentals/copilot-faq-fabric.yml)
