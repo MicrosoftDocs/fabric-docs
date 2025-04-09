@@ -14,7 +14,7 @@ ms.search.form: SQL database Overview
 
 Current limitations in the SQL database in Fabric are listed in this page. This page is subject to change.
 
-These limitations apply to SQL database in Fabric only. For the warehouse and SQL analytics endpoint items in Fabric Data Warehouse, see [Limitations of Fabric Data Warehouse](../../data-warehouse/limitations.md).
+This article applies to SQL database in Fabric only. For the warehouse and SQL analytics endpoint items in Fabric Data Warehouse, see [Limitations of Fabric Data Warehouse](../../data-warehouse/limitations.md).
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -72,7 +72,7 @@ For more limitations in specific areas, see:
 - [Limitations in backups in SQL database in Microsoft Fabric](backup.md#limitations)
 - [Limitations in restore from a backup in SQL database in Microsoft Fabric](restore.md#limitations)
 - [Limitations in share your SQL database and manage permission](share-sql-manage-permission.md#limitations).
-- [Limitations of Copilot for SQL database](copilot.md#limitations-of-copilot-for-sql-database)
+- [Limitations of Copilot for SQL database](copilot.md#limitations)
 
 ## Related content
 

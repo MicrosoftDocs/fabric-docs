@@ -1,7 +1,7 @@
 ---
 title: Known issue - Spark jobs might fail due to Runtime 1.3 updates for GA
 description: A known issue is posted where Spark jobs might fail due to Runtime 1.3 updates for GA. 
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 10/17/2024

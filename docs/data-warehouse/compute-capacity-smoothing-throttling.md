@@ -1,12 +1,11 @@
 ---
-title: Smoothing and throttling
+title: Smoothing and Throttling
 description: Learn about smoothing and throttling principles applicable for Microsoft Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
 ms.date: 10/07/2024
 ms.topic: conceptual
-ms.custom:
 ---
 
 # Smoothing and throttling in Fabric Data Warehouse

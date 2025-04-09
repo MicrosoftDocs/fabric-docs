@@ -12,7 +12,6 @@ ms.date: 02/26/2025
 
 - The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Fabric must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Fabric needs to require multifactor authentication as well.
 - Power BI Datasets connected to Analysis Services aren't supported at this time.
-- Workspaces with template apps installed can't be connected to Git.
 - Submodules aren't supported.
 - Sovereign clouds aren't supported.
 
@@ -37,13 +36,13 @@ ms.date: 02/26/2025
 Some GitHub Enterprise settings aren't supported. For example:
 
 - IP allowlist
-- Private networking
-- [Custom domains](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)
 
 ### Workspace limitations
 
 - Only the workspace admin can manage the connections to the [Git Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  
-Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.  
+  Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.
+- Workspaces with template apps installed can't be connected to Git.
+- [MyWorkspace](../admin/portal-workspaces.md#govern-my-workspaces) can't connect to a Git provider.
 
 ### Branch and folder limitations
 

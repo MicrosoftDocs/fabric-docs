@@ -6,17 +6,16 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: how-to
 ms.search.form: Get started with Session jobs with the Livy API for Data Engineering
-ms.date: 11/19/2024
+ms.date: 03/14/2025
 ---
 
 # Use the Livy API to submit and execute session jobs
 
-> [!NOTE]
-> The Livy API for Fabric Data Engineering is in preview.
-
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Submit Spark batch jobs using the Livy API for Fabric Data Engineering.
+Learn how to submit Spark batch jobs using the Livy API for Fabric Data Engineering. The Livy API currently doesn't support Azure Service Principal (SPN).
+
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -57,28 +56,26 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     tenant_id = "Entra_TenantID"
     client_id = "Entra_ClientID"
-
     workspace_id = "Fabric_WorkspaceID"
     lakehouse_id = "Fabric_LakehouseID"
 
     app = PublicClientApplication(
         client_id,
-        authority="https://login.microsoftonline.com/43a26159-4e8e-442a-9f9c-cb7a13481d48"
-    )
+            authority="https://login.microsoftonline.com/"Entra_TenantID"
+        )
 
-    result = None
+     result = None
 
-    # If no cached tokens or user interaction needed, acquire tokens interactively
-    if not result:
-        result = app.acquire_token_interactive(scopes=["https://api.fabric.microsoft.com/Lakehouse.Execute.All", "https://api.fabric.microsoft.com/Lakehouse.Read.All", "https://api.fabric.microsoft.com/Item.ReadWrite.All", 
-                                                   "https://api.fabric.microsoft.com/Workspace.ReadWrite.All", "https://api.fabric.microsoft.com/Code.AccessStorage.All", "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All", 
-                                                   "https://api.fabric.microsoft.com/Code.AccessAzureDataExplorer.All", "https://api.fabric.microsoft.com/Code.AccessAzureDataLake.All", "https://api.fabric.microsoft.com/Code.AccessFabric.All"])
-    
+     # If no cached tokens or user interaction needed, acquire tokens interactively
+     if not result:
+     result = app.acquire_token_interactive(scopes=["https://api.fabric.microsoft.com/Lakehouse.Execute.All", "https://api.fabric.microsoft.com/Lakehouse.Read.All", "https://api.fabric.microsoft.com/Item. ReadWrite.All", "https://api.fabric.microsoft.com/Workspace.ReadWrite.All", "https://api.fabric.microsoft.com/Code.AccessStorage.All", "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All", 
+     "https://api.fabric.microsoft.com/Code.AccessAzureDataExplorer.All", "https://api.fabric.microsoft.com/Code.AccessAzureDataLake.All", "https://api.fabric.microsoft.com/Code.AccessFabric.All"])
+
     # Print the access token (you can use it to call APIs)
     if "access_token" in result:
         print(f"Access token: {result['access_token']}")
     else:
-        print("Authentication failed or no access token obtained.")
+    print("Authentication failed or no access token obtained.")
 
     if "access_token" in result:
         access_token = result['access_token']
@@ -121,6 +118,18 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. You can verify that the Livy session is created by using the [View your jobs in the Monitoring hub](#View your jobs in the Monitoring hub).
 
+### Integration with Fabric Environments
+
+By default, this Livy API session runs against the default starter pool for the workspace.  Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  To use a Fabric Environment, simply update the prior notebook cell with this json payload.
+
+```python
+create_livy_session = requests.post(livy_base_url, headers=headers, json={
+    "conf" : {
+        "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID""}"}
+        }
+)
+```
+
 ### Submit a spark.sql statement using the Livy API Spark session
 
 1. Add another notebook cell and insert this code.
@@ -130,16 +139,18 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     livy_session_id = create_livy_session.json()['id']
     livy_session_url = livy_base_url + "/" + livy_session_id
     get_session_response = requests.get(livy_session_url, headers=headers)
+
     print(get_session_response.json())
     while get_session_response.json()["state"] != "idle":
         time.sleep(5)
         get_session_response = requests.get(livy_session_url, headers=headers)
 
     execute_statement = livy_session_url + "/statements"
-    payload_data =    {
+    payload_data ={
         "code": "spark.sql(\"SELECT * FROM green_tripdata_2022_08 where fare_amount = 60\").show()",
-        "kind": "spark"
+            "kind": "spark"
         }
+
     execute_statement_response = requests.post(execute_statement, headers=headers, json=payload_data)
     print('the statement code is submitted as: ' + str(execute_statement_response.json()))
 
@@ -152,8 +163,8 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         time.sleep(5)
         print('the statement code is submitted and running : ' + str(execute_statement_response.json()))
 
-        # Make the next request
-        get_statement_response = requests.get(get_statement, headers=headers)
+    # Make the next request
+    get_statement_response = requests.get(get_statement, headers=headers)
 
     rst = get_statement_response.json()['output']['data']['text/plain']
     print(rst)
@@ -173,6 +184,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     livy_session_id = create_livy_session.json()['id']
     livy_session_url = livy_base_url + "/" + livy_session_id
     get_session_response = requests.get(livy_session_url, headers=headers)
+
     print(get_session_response.json())
     while get_session_response.json()["state"] != "idle":
         time.sleep(5)
@@ -183,6 +195,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         "code": "spark.sql(\"SELECT * FROM green_tripdata_2022_08 where tip_amount = 10\").show()",
         "kind": "spark"
     }
+
     execute_statement_response = requests.post(execute_statement, headers=headers, json=payload_data)
     print('the statement code is submitted as: ' + str(execute_statement_response.json()))
 
@@ -195,8 +208,8 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         time.sleep(5)
         print('the statement code is submitted and running : ' + str(execute_statement_response.json()))
 
-        # Make the next request
-        get_statement_response = requests.get(get_statement, headers=headers)
+    # Make the next request
+    get_statement_response = requests.get(get_statement, headers=headers)
 
     rst = get_statement_response.json()['output']['data']['text/plain']
     print(rst)

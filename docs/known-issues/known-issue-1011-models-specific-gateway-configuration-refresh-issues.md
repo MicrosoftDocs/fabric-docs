@@ -1,7 +1,7 @@
 ---
 title: Known issue - Models with specific gateway configuration might experience refresh issues
 description: A known issue is posted where models with specific gateway configuration might experience refresh issues.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/25/2025

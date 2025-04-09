@@ -1,10 +1,10 @@
 ---
 title: Known issue - Existing preview surge protection rules aren't visible in Capacity settings
 description: A known issue is posted where existing preview surge protection rules aren't visible in Capacity settings.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 02/25/2025
+ms.date: 04/08/2025
 ms.custom: known-issue-1029
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1029
 
 You previously participated in the preview version (v1) of capacity [surge protection](/fabric/enterprise/surge-protection). If so, you can't see existing surge protection rules under the Fabric Admin Portal > **Capacity settings** > **Surge Protection**. The existing rules don't protect against the threshold set on the capacity.
 
-**Status:** Open
+**Status:** Fixed: April 8, 2025
 
 **Product Experience:** Administration & Management
 

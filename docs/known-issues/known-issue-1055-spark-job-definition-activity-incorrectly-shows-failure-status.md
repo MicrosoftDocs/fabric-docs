@@ -1,7 +1,7 @@
 ---
 title: Known issue - Spark Job Definition activity incorrectly shows failure status
 description: A known issue is posted where the Spark Job Definition activity incorrectly shows failure status.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/12/2025

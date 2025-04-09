@@ -1,14 +1,15 @@
 ---
 title: "Privacy, security, and responsible use of Copilot for Data Warehouse (preview)"
 description: Learn about privacy, security, and responsible use of Copilot for Warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: salilkanade
-ms.date: 06/02/2024
+author: markingmyname
+ms.author: maghan
+ms.reviewer: salilkanade, wiassaf
+ms.date: 02/26/2025
 ms.topic: conceptual
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
 ---
+
 # Privacy, security, and responsible use of Copilot for Data Warehouse (preview)
 
 **Applies to:** [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
@@ -17,7 +18,7 @@ In this article, learn how [Microsoft Copilot for Fabric Data Warehouse](../data
 
 With Copilot for Data Warehouse in Microsoft Fabric and other generative AI features, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in your warehouse and other workloads.
 
-For considerations and limitations, see [Limitations](../data-warehouse/copilot.md#limitations-of-copilot-for-data-warehouse).
+For considerations and limitations, see [Limitations](../data-warehouse/copilot.md#limitations).
 
 ## Data use of Copilot for Data Warehouse
 

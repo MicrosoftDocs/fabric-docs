@@ -1,7 +1,7 @@
 ---
 title: Known issue - OneLake BCDR write transactions aren't categorized correctly for billing
 description: A known issue is posted where OneLake BCDR write transactions aren't categorized correctly for billing.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/28/2025
