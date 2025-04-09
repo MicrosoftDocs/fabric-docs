@@ -16,7 +16,7 @@ items:
     href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: Copilot
     items:
-    - name: What is Copilot in Fabric in SQL database? 
+    - name: What is Copilot in Fabric SQL database? 
       href: copilot/copilot.md
     - name: Chat pane
       href: copilot/copilot-chat-pane.md
