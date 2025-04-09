@@ -21,24 +21,24 @@ seven days whichever comes first.
 
 :::image type="content" source="./media/materialized-view-run-history/view-all-past-runs.png" alt-text="Screenshot showing a view of the past twenty five runs." border="true" lightbox="./media/materialized-view-run-history/view-all-past-runs.png":::
 
-### Completed Materialized view DAG UI
+## Completed Materialized view DAG UI
 
 In this case, all the nodes are successful and in Completed state.
 
 :::image type="content" source="./media/materialized-view-run-history/completed-runs.png" alt-text="Screenshot showing a view of a completed DAG run." border="true" lightbox="./media/materialized-view-run-history/completed-runs.png":::
 
-### Failed Materialized view DAG UI
+## Failed Materialized view DAG UI
 
 In this case, one or more nodes are unsuccessful and are in Failed state. The node where the parent node is failed is in
 Skipped state.
 
 :::image type="content" source="./media/materialized-view-run-history/failed-runs.png" alt-text="Screenshot showing a view of a failed run." border="true" lightbox="./media/materialized-view-run-history/failed-runs.png":::
 
-### Skipped Materialized view DAG UI
+## Skipped Materialized view DAG UI
 
 In this case, the run is in skipped status since the previous schedule is still running.
 
 :::image type="content" source="./media/materialized-view-run-history/skipped-runs.png" alt-text="Screenshot showing a view of a skipped DAG run." border="true" lightbox="./media/materialized-view-run-history/skipped-runs.png":::
 
 
-## Next steps
+
