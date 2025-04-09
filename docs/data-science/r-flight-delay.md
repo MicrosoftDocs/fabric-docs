@@ -19,12 +19,12 @@ In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 > - Use [tidymodels](https://www.tidymodels.org/) packages 
-
+    ```http
     - [recipes](https://recipes.tidymodels.org/)
     - [parsnip](https://parsnip.tidymodels.org/)
     - [rsample](https://rsample.tidymodels.org/)
     - [workflows](https://workflows.tidymodels.org/)
-
+    ```
     to process data and train a machine learning model
 
 > - Write the output data to a lakehouse as a delta table
