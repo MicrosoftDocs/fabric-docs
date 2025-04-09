@@ -4,7 +4,7 @@ description: A known issue is posted where workspace identities tagged as previe
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/21/2025
+ms.date: 04/09/2025
 ms.custom: known-issue-1062
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1062
 
 When you use the workspace identity authentication method to connect to Azure Data Lake Storage (ADLS) Gen2, you see **Preview** tag next to **Workspace identity**. This tag is a temporary bug in the user experience. It doesn't affect the functionality of the workspace identity or the connection.
 
-**Status:** Open
+**Status:** Fixed: April 9, 2025
 
 **Product Experience:** Administration & Management
 
