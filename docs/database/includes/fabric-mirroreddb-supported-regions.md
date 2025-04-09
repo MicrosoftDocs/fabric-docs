@@ -1,7 +1,7 @@
 ---
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 04/09/2025
+ms.date: 01/13/2024
 ms.topic: include
 
 ---
@@ -9,6 +9,34 @@ ms.topic: include
 The following are the Fabric regions that support database mirroring and open mirroring:
 
 :::row:::
+   :::column span="":::
+    **Asia Pacific**:
+
+    - Australia East
+    - Australia Southeast
+    - Central India
+    - East Asia
+    - Japan East
+    - Korea Central
+    - Southeast Asia
+    - South India
+   :::column-end:::
+   :::column span="":::
+   **Europe**
+
+    - North Europe
+    - West Europe
+    - France Central
+    - Germany West Central
+    - Italy North
+    - Norway East
+    - Poland Central
+    - Sweden Central
+    - Switzerland North
+    - Switzerland West
+    - UK South
+    - UK West
+   :::column-end:::
    :::column span="":::
     **Americas**:
 
@@ -23,38 +51,10 @@ The following are the Fabric regions that support database mirroring and open mi
     - West US
     - West US2
    :::column-end:::
-
    :::column span="":::
-    **Asia Pacific**:
+    **Middle East and Africa**:
 
-    - East Asia
-    - Southeast Asia
-    - Australia East
-    - Australia Southeast
-    - Central India
-    - South India
-    - Japan East
-    - Korea Central
-
-   :::column-end:::
-
-   :::column span="":::
-   **Europe, the Middle East, and Africa**:
-
-    - North Europe
-    - West Europe
-    - France Central
-    - Germany West Central
-    - Italy North
-    - Norway East
-    - Poland Central
     - South Africa North
-    - Sweden Central
-    - Switzerland North
-    - Switzerland West
     - UAE North
-    - UK South
-    - UK West
    :::column-end:::
-
 :::row-end:::

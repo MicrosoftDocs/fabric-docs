@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: ''
 
 ms.topic: how-to
-ms.date: 03/08/2025
+ms.date: 07/08/2024
 ms.custom: ''
 LocalizationGroup: Administration
 ms.collection: ce-skilling-ai-copilot
