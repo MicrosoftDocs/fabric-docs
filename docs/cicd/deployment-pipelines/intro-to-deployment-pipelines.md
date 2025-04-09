@@ -52,7 +52,7 @@ When you deploy content from one pipeline stage to another, the copied content c
   * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
   * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-in-deployment-pipelines)
   * Mount ADF *(preview)*
-  * Variable library *(preview)*
+  * [Variable library](../variable-library/variable-library-cicd.md#variable-libraries-and-deployment-pipelines) *(preview)*
 
 * Real-time Intelligence items:
 
