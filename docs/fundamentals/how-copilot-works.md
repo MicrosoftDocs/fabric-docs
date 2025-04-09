@@ -15,6 +15,16 @@ Copilot in Microsoft Fabric is a generative AI assistive technology that aims to
 > [!NOTE]
 > Copilot's capabilities are evolving over time. If you plan to use Copilot, ensure that you keep up to date with the monthly updates to Fabric and any changes or announcements to the Copilot experiences.
 
+This article helps you to understand how Copilot in Fabric works, including its architecture and cost. The information in this article is intended to guide you and your organization to use and manage Copilot effectively. This article is primarily targeted at:
+
+* **BI and analytics directors or managers:** Decision makers who are responsible for overseeing the BI program and strategy, and who decide whether to enable and use Copilot in Fabric or other AI tools. 
+
+* **Fabric administrators:** The people in the organization who oversee Microsoft Fabric and its various workloads. Fabric administrators oversee who can use Copilot in Fabric for each of these workloads and monitor how Copilot usage affects available Fabric capacity.
+
+* **Data architects:** The people responsible for designing, building, and managing the platforms and architecture that support data and analytics in the organization. Data architects consider the usage of Copilot in architecture design.
+
+* **Center of Excellence (COE), IT, and BI teams:** The teams that are responsible for facilitating successful adoption and use of data platforms like Fabric in the organization. These teams and individuals might use AI tools like Copilot themselves, but also support and mentor self-service users in the organization to benefit from them, as well.
+
 ## Overview of how Copilot in Fabric works
 
 Copilot in Fabric works similar to the other Microsoft Copilots, such as [Microsoft 365 Copilot](/copilot/microsoft-365/microsoft-365-copilot-overview), [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot), and [Copilots and generative AI in Power Platform](/power-platform/copilot). However, there are several aspects that are specific to how Copilot in Fabric works.
