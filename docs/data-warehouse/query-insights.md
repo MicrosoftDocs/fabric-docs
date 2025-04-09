@@ -1,12 +1,11 @@
 ---
-title: Query insights
+title: Query Insights
 description: Query insights makes past query execution data and aggregated insights built on top of this data available to you via simple views.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: mariyaali
-ms.date: 02/10/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 
@@ -73,7 +72,7 @@ After your query completes execution, you see its execution data in the `queryin
 
 ## How are similar queries aggregated to generate insights?
 
-Queries are considered the same by the Query Insights if the queries have the same shape, even if the predicates may be different.
+Queries are considered the same by the Query Insights if the queries have the same shape, even if the predicates might be different.
 
 You can utilize the `query hash` column in the views to analyze similar queries and drill down to each execution.
 
@@ -119,7 +118,7 @@ You can determine if the large data scanning during query execution is slowing d
 Furthermore, you can assess the use of cache by examining the sum of `data_scanned_memory_mb` and `data_scanned_disk_mb`, and comparing it to the `data_scanned_remote_storage_mb` for past executions.
 
 > [!NOTE]
-> The data scanned values might not account the data moved during the intermediate stages of query execution. In some cases, the size of the data moved and CPU required to process may be larger than the data scanned value indicates.
+> The data scanned values might not account the data moved during the intermediate stages of query execution. In some cases, the size of the data moved and CPU required to process can be larger than the data scanned value indicates.
 >
 > Data scanned values will appear as `0` for `COPY INTO` statements.
 
