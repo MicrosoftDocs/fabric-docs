@@ -110,7 +110,7 @@ For troubleshooting, see:
 
 ## Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Next step
 
