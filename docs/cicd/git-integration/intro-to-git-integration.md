@@ -61,7 +61,7 @@ The following items currently support Git integration:
 * Data Engineering items:
 
   * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#git-integration-for-microsoft-fabric-environment)
-  * GraphQL *(preview)*
+  * [GraphQL](../../data-engineering/graphql-source-control-and-deployment.md#api-for-graphql-git-integration) *(preview)*
   * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#lakehouse-git-integration) *(preview)*
   * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
   * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
@@ -74,7 +74,7 @@ The following items currently support Git integration:
   * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
   * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-git-integration)
   * Mount ADF *(preview)*
-  * Variable library *(preview)*
+  * [Variable library](../variable-library/variable-library-cicd.md#variable-libraries-and-git-integration) *(preview)*
 
 * Real-time Intelligence items:
 
