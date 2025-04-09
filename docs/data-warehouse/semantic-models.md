@@ -1,12 +1,11 @@
 ---
-title: Default Power BI semantic models
+title: Default Power BI Semantic Models
 description: Learn more about default Power BI semantic models in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: chweb, salilkanade
-ms.date: 04/24/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Default semantic model overview # This article's title should not change. If so, contact engineering.
 ---
 
@@ -66,7 +65,7 @@ If you want to change this default behavior, you can:
     :::image type="content" source="media/semantic-models/default-manage.png" alt-text="Screenshot from the Fabric portal showing the default Manage the semantic model page, and the ability to manually pick more tables." lightbox="media/semantic-models/default-manage.png":::
 
 > [!NOTE]
-> In case you are not using the default Power BI semantic model for reporting purposes, manually disable the **Sync the default Power BI semantic model** setting to avoid adding objects automatically. The setting update will ensure that background sync will not get triggered and save on [Onelake consumption costs](../onelake/onelake-consumption.md).
+> In case you are not using the default Power BI semantic model for reporting purposes, manually disable the **Sync the default Power BI semantic model** setting to avoid adding objects automatically. The setting update will ensure that background sync will not get triggered and save on [OneLake compute and storage consumption](../onelake/onelake-consumption.md).
 
 ### Manually update the default Power BI semantic model
 
@@ -92,7 +91,9 @@ You can monitor and analyze activity on the semantic model with [SQL Server Prof
 
 SQL Server Profiler installs with [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), and allows tracing and debugging of semantic model events. Although officially deprecated for SQL Server, Profiler is still included in SSMS and remains supported for Analysis Services and Power BI. Use with the Fabric default Power BI semantic model requires SQL Server Profiler version 18.9 or higher. Users must specify the semantic model as the **initial catalog** when connecting with the XMLA endpoint. To learn more, see [SQL Server Profiler for Analysis Services](/analysis-services/instances/use-sql-server-profiler-to-monitor-analysis-services?view=power-bi-premium-current&preserve-view=true).
 
-### <a id="scripting-the-default-power-bi-semantic-model"></a> Script the default Power BI semantic model
+<a id="scripting-the-default-power-bi-semantic-model"></a>
+
+### Script the default Power BI semantic model
 
 You can script out the default Power BI semantic model from the XMLA endpoint with [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms). 
 
@@ -132,7 +133,7 @@ To create a Power BI semantic model in import or DirectQuery mode, follow these 
 
 1. Choose the SQL analytics endpoint of the lakehouse or warehouse.
 
-1. Select the Connect button dropdown and choose **Connect to SQL endpoint**.
+1. Select the Connect button dropdown list and choose **Connect to SQL endpoint**.
 
 1. Select import or DirectQuery storage mode and the tables to add to the semantic model.
 

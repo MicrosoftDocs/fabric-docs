@@ -5,12 +5,12 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept-article
 ms.custom:
-ms.date: 04/01/2025
+ms.date: 04/09/2025
 
 # Customer intent: As a Fabric developer, I want to know how to use the Fabric command line interface (CLI) to log into Fabric and see a list of available commands.
 ---
 
-# Fabric command line interface
+# Fabric command line interface (preview)
 
 Microsoft Fabric has a command line interface (CLI) that you can use for a range of Fabric tasks. This article shows how to get the CLI and use it to log into Fabric.
 

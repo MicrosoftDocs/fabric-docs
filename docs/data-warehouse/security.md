@@ -1,12 +1,11 @@
 ---
-title: Security for data warehousing
+title: Security for Data Warehousing
 description: Learn more about securing the SQL analytics endpoint and Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 09/25/2024
+ms.date: 04/06/2025
 ms.topic: overview
-ms.custom:
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 
@@ -14,11 +13,11 @@ ms.search.form: Warehouse roles and permissions # This article's title should no
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-This article covers security topics for securing the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the lakehouse and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+This article covers security topics for securing the [!INCLUDE [fabric-se](includes/fabric-se.md)] and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
 For information on [!INCLUDE [product-name](../includes/product-name.md)] security, see [Security in Microsoft Fabric](../security/security-overview.md).
 
-For information on connecting to the [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Connectivity](connectivity.md).
+For information on connecting to the [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Warehouse connectivity](connectivity.md).
 
 ## Warehouse access model
 
@@ -33,8 +32,8 @@ For information on connecting to the [!INCLUDE [fabric-se](includes/fabric-se.md
 
 Workspace roles are used for development team collaboration within a workspace. Role assignment determines the actions available to the user and applies to all items within the workspace.
 
-- For an overview of [!INCLUDE [product-name](../includes/product-name.md)] workspace roles, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
-- For instructions on assigning workspace roles, see [Give workspace access](../fundamentals/give-access-workspaces.md).
+- For an overview of [!INCLUDE [product-name](../includes/product-name.md)] workspace roles, see [Roles in workspaces in Microsoft Fabric](../fundamentals/roles-workspaces.md).
+- For instructions on assigning workspace roles, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
 
 For details on the specific Warehouse capabilities provided through workspace roles, see [Workspace roles in Fabric data warehousing](workspace-roles.md).
 
@@ -59,7 +58,7 @@ Microsoft Fabric data warehousing supports several data protection technologies 
 
 Object-level security is a security mechanism that controls access to specific database objects, such as tables, views, or procedures, based on user privileges or roles. It ensures that users or roles can only interact with and manipulate the objects they have been granted permissions for, protecting the integrity and confidentiality of the database schema and its associated resources.
 
-For details on the managing granular permissions in SQL, see [SQL granular permissions](sql-granular-permissions.md).
+For details on the managing granular permissions in SQL, see [SQL granular permissions in Microsoft Fabric](sql-granular-permissions.md).
 
 #### Row-level security
 
@@ -90,7 +89,7 @@ For more information on sharing, see [Share your data and manage permissions](sh
 When evaluating the permissions to assign to a user, consider the following guidance:
 
 - Only team members who are currently collaborating on the solution should be assigned to Workspace roles (Admin, Member, Contributor), as this provides them access to all Items within the workspace.
-- If they primarily require read only access, assign them to the Viewer role and grant read access on specific objects through T-SQL.  For more information, see [Manage SQL granular permissions](sql-granular-permissions.md).
+- If they primarily require read only access, assign them to the Viewer role and grant read access on specific objects through T-SQL. For more information, see [Manage SQL granular permissions](sql-granular-permissions.md).
 - If they are higher privileged users, assign them to Admin, Member, or Contributor roles. The appropriate role is dependent on the other actions that they need to perform.  
 - Other users, who only need access to an individual warehouse or require access to only specific SQL objects, should be given Fabric Item permissions and granted access through SQL to the specific objects.
 - You can manage permissions on Microsoft Entra ID (formerly Azure Active Directory) groups, as well, rather than adding each specific member. For more information, see [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md).
@@ -99,11 +98,11 @@ When evaluating the permissions to assign to a user, consider the following guid
 
 To track user activity in warehouse and SQL analytics endpoint for meeting regulatory compliance and records managements requirements, a set of audit activities are accessible via Microsoft Purview and PowerShell. You can use user audit logs to identify who is taking what action on your Fabric items.
 
-For more information on how to access user audit logs, see [Track user activities in Microsoft Fabric](../admin/track-user-activities.md) and [Operations list](../admin/operation-list.md).
+For more information on how to access user audit logs, see [Track user activities in Microsoft Fabric](../admin/track-user-activities.md) and [Operation list](../admin/operation-list.md).
 
 ## Related content
 
-- [Connectivity](connectivity.md)
+- [Warehouse connectivity in Microsoft Fabric](connectivity.md)
 - [SQL granular permissions in Microsoft Fabric](sql-granular-permissions.md)
-- [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
-- [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)
+- [Share your data and manage permissions](share-warehouse-manage-permissions.md)
+- [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md)
