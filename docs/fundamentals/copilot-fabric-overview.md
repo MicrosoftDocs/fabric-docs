@@ -82,9 +82,6 @@ The following table provides an overview of the various Copilot experiences avai
 **Fabric workload**
    :::column-end:::
    :::column span="1"::: 
-**Description**
-   :::column-end:::
-   :::column span="1"::: 
 **Supported items**
    :::column-end:::
    :::column span="1"::: 
