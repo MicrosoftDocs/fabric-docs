@@ -1,5 +1,5 @@
 ---
-title: Service principals in Fabric Data Warehouse
+title: Service Principals in Fabric Data Warehouse
 description: Learn about service principals (SPN) as security identities for applications and tools in Fabric warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
