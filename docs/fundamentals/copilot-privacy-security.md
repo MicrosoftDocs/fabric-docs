@@ -11,6 +11,7 @@ ms.date: 10/17/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
+
 # Privacy, security, and responsible use of Copilot in Fabric
 
 Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
@@ -25,7 +26,7 @@ This article provides answers to common questions related to business data secur
 - You retain control over where your data is processed. Data processed by Copilot in Fabric stays within your tenant's geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn't available in your region or availability is limited due to high demand. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
 - Copilot does not store your data for abuse monitoring. To enhance privacy and trust, we've updated our approach to abuse monitoring: previously, we retained data from Copilot in Fabric, containing prompt inputs and outputs, for up to 30 days to check for abuse or misuse. Following customer feedback, we've eliminated this 30-day retention. Now, we no longer store prompt related data, demonstrating our unwavering commitment to your privacy and security.
 
-### Check Copilot outputs before you use them
+### Check Copilot outputs
 
 - Copilot responses can include inaccurate or low-quality content, so make sure to review outputs before you use them in your work.
 - People who can meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
@@ -58,7 +59,7 @@ Interactions with Copilot are specific to each user. This means that Copilot can
 
 Copilot uses Azure OpenAI—not the publicly available OpenAI services—to process all data, including user inputs, grounding data, and Copilot outputs.  Copilot currently uses a combination of GPT models, including GPT 3.5. Microsoft hosts the OpenAI models in the Microsoft Azure environment, and the Service doesn't interact with any services by OpenAI, such as ChatGPT or the OpenAI API. Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
 
-## The Copilot process
+## Review the Copilot process
 
 These features follow the same general process:
 
@@ -70,7 +71,7 @@ These features follow the same general process:
 
 Just as each experience in Fabric is built for certain scenarios and personas—from data engineers to data analysts—each Copilot feature in Fabric has also been built with unique scenarios and users in mind. For capabilities, intended uses, and limitations of each feature, review the section for the experience you're working in.
 
-## Definitions 
+## Definitions
 
 ### Prompt or input
 
@@ -88,8 +89,8 @@ The content that Copilot returns to a user. For example, a response might be in 
 
 To generate a response, Copilot uses:
 
-- The user's prompt or input and, when appropriate, 
-- Additional data that is retrieved through the grounding process. 
+- The user's prompt or input and, when appropriate.
+- Additional data that is retrieved through the grounding process.
 
 This information is sent to Azure OpenAI Service, where it's processed and an output is generated. Therefore, data processed by Azure OpenAI can include:  
 
@@ -127,8 +128,8 @@ Privacy, security, and responsible use for:
 
 - [Copilot for Data Factory (preview)](copilot-data-factory-privacy-security.md)
 - [Copilot for Data Science (preview)](copilot-data-science-privacy-security.md)
-- [Copilot for Data Warehouse (preview)](copilot-data-warehouse-privacy-security.md)
-- [Copilot for SQL Databases (preview)](../fundamentals/copilot-database-privacy-security.md)
+- [Copilot in Fabric Data Warehouse (preview)](copilot-data-warehouse-privacy-security.md)
+- [Copilot in Fabric SQL databases (preview)](../fundamentals/copilot-database-privacy-security.md)
 - [Copilot for Power BI](../fundamentals/copilot-power-bi-privacy-security.md)
 - [Copilot for Real-Time Intelligence (preview)](../fundamentals/copilot-real-time-intelligence-privacy-security.md)
 
