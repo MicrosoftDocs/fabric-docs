@@ -83,7 +83,7 @@ Reducing query result set sizes helps you avoid client-side issues caused by lar
 
 ## Choose the best data type for performance
 
-When defining your tables, use the smallest data type that supports your data as doing so will improve query performance. This recommendation is important for **char**and **varchar** columns. If the longest value in a column is 25 characters, then define your column as **varchar(25)**. Avoid defining all character columns with a large default length.
+When defining your tables, use the smallest data type that supports your data as doing so will improve query performance. This recommendation is important for **char** and **varchar** columns. If the longest value in a column is 25 characters, then define your column as **varchar(25)**. Avoid defining all character columns with a large default length.
 
 Use integer-based data types if possible. Sort, join, and group by operations complete faster on integers than on character data.
 
