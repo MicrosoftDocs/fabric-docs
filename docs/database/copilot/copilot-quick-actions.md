@@ -1,6 +1,6 @@
 ---
 title: "How To: Use the Copilot Explain and Fix Quick Action Features for SQL Database in Microsoft Fabric"
-description: Learn more about Microsoft Copilot Explain and Fix quick action features for SQL database in Fabric, to ask questions specific about your database.
+description: Learn more about Microsoft Copilot Explain and Fix quick action features for Copilot in Fabric in SQL database, to ask questions specific about your database.
 author: markingmyname
 ms.author: maghan
 ms.reviewer: yoleichen, wiassaf
@@ -10,7 +10,7 @@ ms.collection:
   - ce-skilling-ai-copilot
 ---
 
-# How to: Use the Copilot Explain and Fix quick action features for SQL database in Microsoft Fabric
+# How to use the Copilot Explain and Fix quick action features for SQL database in Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
@@ -65,6 +65,6 @@ To get Copilot's help with fixing an error in your query, follow these steps:
 ## Related content
 
 - [What is Copilot for SQL database in Microsoft Fabric?](copilot.md)
-- [How to: Use the Copilot Code Completion for SQL database in Fabric](copilot-code-completion.md)
-- [How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
+- [How to: Use the Copilot Code Completion for Copilot in Fabric in SQL database](copilot-code-completion.md)
+- [How to: Use the Copilot Chat Pane for Copilot in Fabric in SQL database](copilot-chat-pane.md)
+- [Privacy, security, and responsible use of Copilot in Fabric](../fundamentals/copilot-privacy-security.md)
