@@ -185,6 +185,14 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Dataflow Gen2 refresh fails with PowerBIEntityNotFound error
+      href: ../known-issues/known-issue-1089-dataflow-gen2-refresh-fails-error.md
+    - name: Dataflow Gen2 refresh fails with type mismatch error
+      href: ../known-issues/known-issue-1083-dataflow-gen2-refresh-fails-type-mismatch-error.md
+    - name: Data pipeline run fails due to user auth token errors
+      href: ../known-issues/known-issue-1080-data-pipeline-run-fails-user-auth-token-errors.md
+    - name: Pipelines fail with missing capacity error
+      href: ../known-issues/known-issue-1079-pipelines-fail-missing-capacity-error.md
     - name: Can't install or open on-premises data gateway after Windows update
       href: ../known-issues/known-issue-1078-not-install-open-on-premises-data-gateway-windows-update.md
     - name: Failure to scale AAS server or add admins through Azure portal
