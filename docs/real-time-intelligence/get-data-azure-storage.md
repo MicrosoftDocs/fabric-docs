@@ -18,9 +18,7 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
 
 Continuous ingestion involves setting up an ingestion pipeline that allows the Fabric workspace to listen to Azure Storage events. The pipeline notifies the workspace to pull information when subscribed events occur. The events include when a storage blob is created, renamed, or moved.
 
-The destination table is populated with the Azure storage blob files.
-
-The table schema is inferred from a sample blob that is uploaded to the Azure storage container. 
+The destination table is populated with the Azure storage blob files. The table schema is inferred from a sample blob that is uploaded to the Azure storage container.
 
 > [!NOTE]
 >
@@ -44,11 +42,16 @@ For continuous ingestion you also require in the Azure storage account:
 
 * [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account) must be enabled.
 
-* Access Control role permissions assigned to the workspace identity.
+* *Storage Blob Data Reader* role permissions assigned to the workspace identity.
 
 * A [container](/azure/storage/blobs/blob-containers-portal) to hold the data files.
 
 * A data file uploaded to the container. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
+
+  > [!NOTE]
+  > You need to upload a data file:
+  > * before configuration to define the table schema during set-up.
+  > * and again after configuration to evoke the continuous ingestion, to preview data, and to verify the connection.
 
 ### Add the workspace identity to the storage account
 
@@ -56,7 +59,7 @@ For continuous ingestion you also require in the Azure storage account:
 
 1. In the Azure portal, browse to your Azure Storage account, and select **Access Control (IAM)** > **Add** > **Add role assignment**.
 
-1. Select **Storage Account Contributor**.
+1. Select **Storage Blob Data Reader**.
 
 1. In the *Add role assignment* dialogue, select **+Select members**.
 
@@ -80,11 +83,17 @@ For continuous ingestion you also require in the Azure storage account:
 
 1. Enter the container, select **upload**, and upload the data file prepared earlier.
 
-For more information, see [supported formats](./ingestion-supported-formats.md) and [supported compressions](./ingestion-supported-formats.md#supported-data-compression-formats).
+    For more information, see [supported formats](./ingestion-supported-formats.md) and [supported compressions](./ingestion-supported-formats.md#supported-data-compression-formats).
+
+1. From the context menu, **[...]**, select **Container properties**, and copy the URL to input during the configuration.
+
+    :::image type="content" source="media/get-data-azure-storage/container-properties.png" alt-text="The list of containers with the context menu open with container properties highlighted.":::
 
 ## Source
 
 Set the source to get data.
+
+1. From your Workspace, open the EventHouse, and select the database.
 
 1. On the KQL database ribbon, select **Get Data**.
 
@@ -99,43 +108,50 @@ Set the source to get data.
 1. Select a destination table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
     > [!NOTE]
-    > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
+    > Table names can be up to 1,024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
 1. Ensure that **Continuous ingestion** is turned on. It's turned on by default.
 
-1. To create a new connection, configure the **Blob storage account** as follows:
+1. Configure the **Blob storage account** by creating a new connection, or by connecting an existing Fabric account to Azure Storage.
+
+    To create a new connection:
 
     1. Select **Connect to an account**.  
 
-    :::image type="content" source="media/get-data-azure-storage/configure-tab-continuous.png" alt-text="Screenshot of configure tab with Continuous ingestion and connect to an account selected." lightbox="media/get-data-azure-storage/configure-tab-continuous.png":::
+        :::image type="content" source="media/get-data-azure-storage/configure-tab-continuous.png" alt-text="Screenshot of configure tab with Continuous ingestion and connect to an account selected." lightbox="media/get-data-azure-storage/configure-tab-continuous.png":::
 
     1. Use the following descriptions to help fill in the fields.
 
-    | **Setting** | **Field description** |
-    |--|--|
-    | Subscription | The subscription ID where the storage account is located. |
-    | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
-    | Container | The storage container containing the file you want to ingest. |
+        | **Setting** | **Field description** |
+        |--|--|
+        | Subscription | The subscription ID where the storage account is located. |
+        | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
+        | Container | The storage container containing the file you want to ingest. |
 
-    1. In the **Connection** field, open the drop-down and select **+ New connection**.
+    1. In the **Connection** field, open the drop-down and select **+ New connection**, then **Save** > **Close**.
 
-       The connection settings are prepopulated. You do not need to enter anything.
+       The connection settings are prepopulated. You don't need to enter anything.
 
-       Click **Save** > **Close**.
+    To use an existinging connection:
 
-1. To connect an existing Fabric account to Azure Storage, configure the **Blob storage account** as follows:
+    1. Select **Select an existing connection**.
 
-    1. Select **Select an account from Real-Time hub**.
-
-    :::image type="content" source="media/get-data-azure-storage/configure-tab-continuous-rth.png" alt-text="Screenshot of configure tab with Continuous ingestion and connect to an קסןexisting account." lightbox="media/get-data-azure-storage/configure-tab-continuous-rth.png":::
+        :::image type="content" source="media/get-data-azure-storage/configure-tab-continuous-rth.png" alt-text="Screenshot of configure tab with Continuous ingestion and connect to an existing account." lightbox="media/get-data-azure-storage/configure-tab-continuous-rth.png":::
 
     1. Use the following descriptions to help fill in the fields.
 
-    | **Setting** | **Field description** |
-    |--|--|
-    | Fabric account | A real-time hub account that already exists in Fabric. |
-    | Container | The storage container containing the file you want to ingest. |
-    | Connection | This is prepopulated with the connection string |
+        | **Setting** | **Field description** |
+        |--|--|
+        | Fabric account | A real-time hub account that already exists in Fabric. |
+        | Container | The storage container containing the file you want to ingest. |
+        | Connection | This is prepopulated with the connection string |
+
+    1. In the **Connection** field, open the drop-down and select the existing connection string from the list. Then click **Save** > **Close**.
+
+> [!NOTE]
+>
+> Creating a new connection results in a new eventstream. The name is defined as <subscription>_<eventstream1>.
+> Ensure not to remove the continuous ingestion eventstream from the eventhouse.
 
 1. You can add the following optional filters:
 
@@ -158,11 +174,13 @@ Set the source to get data.
 1. Select a destination table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
     > [!NOTE]
-    > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
+    > Table names can be up to 1,024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
 1. Turn off **Continuous ingestion**.
 
-1. To create a new connection, configure the **Blob storage account** as follows:
+1. To create a new connection, configure the **Blob storage account** by creating a new connection, or by connecting an existing Fabric account to Azure Storage.
+
+    To create a new connection:
 
     1. Select **Connect to an account**.  
 
@@ -176,7 +194,9 @@ Set the source to get data.
     | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
     | Container | The storage container containing the file you want to ingest. |
 
-1. To create a connection using a SAS URL, select **Use a SAS URL to ingest from a storage account**.
+    To connect an existing account:
+
+    1. To create a connection using a SAS URL, select **Use a SAS URL to ingest from a storage account**.
 
     :::image type="content" source="media/get-data-azure-storage/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-azure-storage/configure-tab.png":::
 
@@ -186,8 +206,8 @@ Set the source to get data.
 
     |Authentication method| Individual blob| Blob container | Azure Data Lake Storage Gen2|
     |----|----|----|----|
-    | [Shared Access (SAS) token](/azure/data-explorer/kusto/api/connection-strings/storage-connection-strings?context=/fabric/context/context) |Read and Write| Read and List | Read and List|
-    | [Storage account access key](/azure/data-explorer/kusto/api/connection-strings/storage-connection-strings#storage-account-access-key?context=/fabric/context/context) | | | |
+    | [Shared Access (SAS) token](/azure/data-explorer/kusto/api/connection-strings/storage-connection-strings?context=/fabric/context/context#shared-access-sas-token) |Read and Write| Read and List | Read and List|
+    | [Storage account access key](/azure/data-explorer/kusto/api/connection-strings/storage-connection-strings#storage-account-access-key?context=/fabric/context/context#storage-account-access-key) | | | |
 
     > [!NOTE]
     >
@@ -214,6 +234,10 @@ To complete the ingestion process, select **Finish**.
 
 :::image type="content" source="media/get-data-azure-storage/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-azure-storage/inspect-data.png":::
 
+> [!NOTE]
+>
+> To evoke continuous ingestion and preview data, ensure you uploaded a new storage blob after the configuration.
+
 Optionally:
 
 * Use the schema definition file drop-down to change the file that the schema is inferred from.
@@ -239,17 +263,17 @@ Optionally:
 * If you're ingesting tabular formats in an *existing table*, you can select **Table_mapping** > **Use existing schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
 * To use the first row as column names, select  **First row header**.
 
-    :::image type="content" source="media/get-data-azure-storage/advanced-csv.png" alt-text="Screenshot of advanced CSV options.":::
+  :::image type="content" source="media/get-data-azure-storage/advanced-csv.png" alt-text="Screenshot of advanced CSV options":::
 
 **JSON**:
 
 * To determine column division of JSON data, select **Nested levels**, from 1 to 100.
 
-    :::image type="content" source="media/get-data-azure-storage/advanced-json.png" alt-text="Screenshot of advanced JSON options.":::
+  :::image type="content" source="media/get-data-azure-storage/advanced-json.png" alt-text="Screenshot of advanced JSON options":::
 
 ## Summary
 
-In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to explore the data, delete the ingested data, or create a dashboard with key metrics.
+In the **Data preparation** window, all the steps are marked with green check marks when data ingestion finishes successfully. You can select a card to explore the data, delete the ingested data, or create a dashboard with key metrics.
 
 :::image type="content" source="media/get-data-azure-storage/summary.png" alt-text="Screenshot of summary page with successful ingestion completed." lightbox="media/get-data-azure-storage/summary.png":::
 
