@@ -1,6 +1,6 @@
 ---
 title: Microsoft Copilot in Microsoft Fabric in the SQL database workload Overview
-description: "Learn more about the Microsoft Microsoft Copilot in Microsoft Fabric in the SQL database workload, an AI assistant designed to streamline your database tasks."
+description: "Learn more about the Microsoft Copilot in Microsoft Fabric in the SQL database workload, an AI assistant designed to streamline your database tasks."
 author: markingmyname
 ms.author: maghan
 ms.reviewer: yoleichen, wiassaf
@@ -10,33 +10,33 @@ ms.collection:
   - ce-skilling-ai-copilot
 ---
 
-# What is Microsoft Copilot in Microsoft Fabric in the SQL database workload (Preview)?
+# What is Copilot in Fabric in the SQL database workload (Preview)?
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-Microsoft Copilot in Microsoft Fabric in the SQL database workload is an AI tool designed to simplify the management and querying of SQL databases. Copilot offers intelligent code completion, quick actions, and natural language to SQL conversion. This article explores how Copilot can enhance productivity, accuracy, and learning for database administrators, developers, and data analysts.
+Copilot in Fabric in the SQL database workload is an AI tool designed to simplify the management and querying of SQL databases. Copilot offers intelligent code completion, quick actions, and natural language to SQL conversion. This article explores how Copilot can enhance productivity, accuracy, and learning for database administrators, developers, and data analysts.
 
-## Features of Microsoft Copilot in Microsoft Fabric in the SQL database workload
+## Features of Copilot in Fabric SQL database
 
 Get started with Microsoft Copilot in Microsoft Fabric in the SQL database workload:
 
-- **[Copilot Chat Pane in Fabric in SQL database](copilot-chat-pane.md)**: Use the chat pane to ask Copilot questions through natural language.
+- **[Copilot chat pane in Fabric SQL database](copilot-chat-pane.md)**: Use the chat pane to ask Copilot questions through natural language.
   - **Natural Language to SQL**: Generate T-SQL code and get suggestions of questions to ask to accelerate your workflow.
   - **Documentation-based Q&A**: Ask Copilot questions about the capabilities of Microsoft Copilot in Microsoft Fabric in the SQL database workload and it provides answers in natural language along with relevant documentations.
 
-- **[Copilot Code Completion for Microsoft Copilot in Microsoft Fabric in the SQL database workload](copilot-code-completion.md)**: Start writing T-SQL in the SQL query editor, and Microsoft Copilot automatically generates a code suggestion to help complete your query. The **Tab** key accepts the code suggestion or keeps typing to ignore the suggestion. Copilot can also suggest code completions for table and column names, functions, and keywords.
+- **[Copilot code completion for Copilot in Fabric SQL database](copilot-code-completion.md)**: Start writing T-SQL in the SQL query editor, and Microsoft Copilot automatically generates a code suggestion to help complete your query. The **Tab** key accepts the code suggestion or keeps typing to ignore the suggestion. Copilot can also suggest code completions for table and column names, functions, and keywords.
 
-- **[Copilot Explain and Fix quick action features for Microsoft Copilot in Microsoft Fabric in the SQL database workload](copilot-quick-actions.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
+- **[Copilot Explain and Fix quick action features for Copilot in Fabric SQL database](copilot-quick-actions.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
   - **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios include incorrect/unsupported T-SQL code, wrong spellings, and more. Copilot also provides comments that explain the changes and suggest SQL best practices.
   - **Explain:** Copilot can provide natural language explanations of your SQL query and database schema in comments format.
 
-## Enable Microsoft Copilot in Microsoft Fabric in the SQL database workload
+## Enable Copilot in Fabric SQL database
 
 To enable Microsoft Copilot in Microsoft Fabric in the SQL database workload, follow the steps below.
 
 [!INCLUDE [copilot-include](../../includes/copilot-include.md)]
 
-## Best practices for using Microsoft Copilot in Microsoft Fabric in the SQL database workload
+## Best practices for using Copilot in Fabric SQL database
 
 Here are some tips for effectively maximizing productivity with Copilot:
 
@@ -77,8 +77,7 @@ Here are the current limitations of Microsoft Copilot in Microsoft Fabric in the
 
 ## Related content
 
-- [Privacy, security, and responsible use of Copilot in Fabric](../fundamentals/copilot-privacy-security.md)
-- [Frequently asked questions for Copilot for SQL database in Microsoft Fabric](copilot-faq.yml)
-- [How to: Use the Copilot Code Completion for Microsoft Copilot in Microsoft Fabric in the SQL database workload](copilot-code-completion.md)
-- [How to: Use the Copilot Chat Pane for Microsoft Copilot in Microsoft Fabric in the SQL database workload](copilot-chat-pane.md)
-- [How to: Use Copilot quick actions for SQL database](copilot-quick-actions.md)
+- [How to use the Copilot code completion for Copilot in Fabric in SQL database](copilot-code-completion.md)
+- [How to use the Copilot chat pane for Copilot in Fabric in SQL database](copilot-quick-actions.md)
+- [Frequently asked questions for Copilot in Fabric in SQL database](copilot-faq.yml)
+- [Privacy, security, and responsible AI use of Copilot in Fabric](../fundamentals/copilot-privacy-security.md)
