@@ -3,8 +3,8 @@ title: Share Your Warehouse and Manage Permissions
 description: Learn how to share your warehouse in Microsoft Fabric and manage its user permissions.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: jacindaeng
-ms.date: 03/31/2025
+ms.reviewer: mesrivas
+ms.date: 04/09/2025
 ms.topic: how-to
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
@@ -52,7 +52,9 @@ Here's more detail about each of the permissions provided:
 
     - In the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse, **"Read all SQL Endpoint data"** is equivalent to **"Read all data using SQL"**.
 
-- **"Read all data using Apache Spark" is selected ("ReadAll" permissions)** - The shared recipient should only be provided **ReadAll** if they want complete access to your warehouse's files using the Spark engine. A shared recipient with **ReadAll** permissions can find the [Azure Blob File System (ABFS) path](/azure/storage/blobs/data-lake-storage-introduction-abfs-uri) to the specific file in OneLake from the Properties pane in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor. The shared recipient can then use this path within a Spark Notebook to read this data.
+    - **"Subscribe to events" ("SubscribeOneLakeEvents" permissions)** - A shared recipient with this permission can subscribe to OneLake events generated for the warehouse in Fabric Real-Time Hub.
+
+- **"Read all data using Apache Spark" is selected ("ReadAll" permissions)** - The shared recipient should only be provided **ReadAll** if they want complete access to your warehouse's files using the Spark engine. A shared recipient with **ReadAll** permissions can find the [Azure Blob File System (ABFS) path](/azure/storage/blobs/data-lake-storage-introduction-abfs-uri) to the specific file in OneLake from the Properties pane in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor. The shared recipient can then use this path within a Spark Notebook to read this data. The recipient can also subscribe to OneLake events generated for the data warehouse in Real time hub.
 
    For example, in the following screenshot, a user with **ReadAll** permissions can query the data in `FactSale` with a Spark query in a new notebook.
 
@@ -118,6 +120,7 @@ Microsoft Fabric data warehousing supports several technologies that administrat
   - If accessed through [Direct Lake mode](../fundamentals/direct-lake-overview.md), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Direct Lake mode is the default connection type for semantic models that use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source. For more information, see [Direct Lake mode](semantic-models.md#direct-lake-mode). 
   - If accessed through [Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode) then no additional permissions are needed.
   - Currently, sharing a warehouse directly with an SPN is not supported.
+- The sharing dialog for warehouses provides the option to subscribe to OneLake events. Currently, permission to subscribe to OneLake events is granted along with the Read All Apache Spark permission. 
 
 ## Related content
 
