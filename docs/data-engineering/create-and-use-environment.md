@@ -61,13 +61,13 @@ On the **Home** tab, you can easily find **Save** and **Publish**. They're activ
 When pending changes are in the **Libraries** and **Spark compute** sections, you also see a banner that prompts you with **Save** and **Publish**. The functionalities are the same as for the buttons:
 
 - The unsaved changes are lost if you refresh or leave the browser open. Select **Save** to make sure that your changes are recorded before you leave. Saving doesn't apply the configuration but caches the changes in the system.
-- Select **Publish** to apply the changes to **Libraries** and **Spark compute**. The **Pending changes** page appears for final review before publishing. Next, select **Publish all** to initiate configuration in the Fabric environment. This process might take some time, especially if library changes are involved.
+- To apply the changes to **Libraries** and **Spark compute**, select **Publish**. The **Pending changes** page appears for final review before publishing. Next, select **Publish all** to initiate configuration in the Fabric environment. This process might take some time, especially if library changes are involved.
 - To cancel a publishing process, select **View progress** in the banner and cancel the operation.
 - A notification appears upon publishing completion. An error notification occurs if there are any issues during the process.
 
-> [!NOTE]
-> An environment accepts only one **Publish** action at a time. You can't make changes to the **Libraries** or **Spark compute** sections during an ongoing **Publish** action.
-> Publishing doesn't affect adding, deleting, or editing the files and folders in the **Resources** section. The actions to manage resources are in real time. The **Publish** action doesn't block changes in the **Resources** section.
+An environment accepts only one **Publish** action at a time. You can't make changes to the **Libraries** or **Spark compute** sections during an ongoing **Publish** action.
+
+Publishing doesn't affect adding, deleting, or editing the files and folders in the **Resources** section. The actions to manage resources are in real time. The **Publish** action doesn't block changes in the **Resources** section.
 
 ## Share an existing environment
 
@@ -106,10 +106,11 @@ The environment is available on both the **Notebook** and **Spark Job Definition
 
 :::image type="content" source="media\environment-introduction\env-notebook-selection.png" alt-text="Screenshot that shows where to attach an environment in a notebook." lightbox="media\environment-introduction\env-notebook-selection.png":::
 
-> [!NOTE]
-> If you switch to a different environment during an active session, the newly selected environment doesn't take effect until the next session.
-> When you attach an environment from another workspace, both workspaces must have the *same capacity and network security settings*. Although you can select environments from workspaces with different capacities or network security settings, the session fails to start.
-> When you attach an environment from another workspace, the compute configuration in that environment is ignored. Instead, the pool and compute configurations default to the settings of your current workspace.
+If you switch to a different environment during an active session, the newly selected environment doesn't take effect until the next session.
+
+When you attach an environment from another workspace, both workspaces must have the *same capacity and network security settings*. Although you can select environments from workspaces with different capacities or network security settings, the session fails to start.
+
+When you attach an environment from another workspace, the compute configuration in that environment is ignored. Instead, the pool and compute configurations default to the settings of your current workspace.
 
 ## Related content
 
