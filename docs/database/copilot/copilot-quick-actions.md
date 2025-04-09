@@ -71,4 +71,4 @@ To get Copilot's help with fixing an error in your query, follow these steps:
 - [What is Copilot in Fabric in the SQL database workload?](copilot.md)
 - [How to use the Copilot code completion for Copilot in Fabric in SQL database](copilot-code-completion.md)
 - [How to use the Copilot chat pane for Copilot in Fabric in SQL database](copilot-chat-pane.md)
-- [Privacy, security, and responsible AI use of Copilot in Fabric](../fundamentals/copilot-privacy-security.md)
+- [Privacy, security, and responsible AI use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)

@@ -80,4 +80,4 @@ Here are the current limitations of Microsoft Copilot in Microsoft Fabric in the
 - [How to use the Copilot code completion for Copilot in Fabric in SQL database](copilot-code-completion.md)
 - [How to use the Copilot chat pane for Copilot in Fabric in SQL database](copilot-quick-actions.md)
 - [Frequently asked questions for Copilot in Fabric in SQL database](copilot-faq.yml)
-- [Privacy, security, and responsible AI use of Copilot in Fabric](../fundamentals/copilot-privacy-security.md)
+- [Privacy, security, and responsible AI use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
