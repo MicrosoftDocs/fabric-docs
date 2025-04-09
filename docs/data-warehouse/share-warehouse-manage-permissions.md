@@ -23,8 +23,6 @@ After identifying the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] item you wou
 
 The following animated gif reviews the steps to select a warehouse to share, select the permissions to assign, and then finally **Grant** the permissions to another user.
 
-:::image type="content" source="media/share-warehouse-manage-permissions/share-warehouse.gif" alt-text="An animated gif showing interaction with the Fabric portal where a user shares a warehouse in Microsoft Fabric with another user." lightbox="media/share-warehouse-manage-permissions/share-warehouse.gif":::
-
 ## Share a warehouse
 
 1. You can share your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] from the **OneLake** or Warehouse item by choosing **Share** from quick action, as highlighted in the following image.
