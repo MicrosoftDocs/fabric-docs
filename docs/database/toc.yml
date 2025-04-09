@@ -16,7 +16,7 @@ items:
     href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: Copilot
     items:
-    - name: What is Copilot for SQL database? 
+    - name: What is Copilot in Fabric SQL database? 
       href: copilot/copilot.md
     - name: Chat pane
       href: copilot/copilot-chat-pane.md
@@ -112,7 +112,7 @@ items:
       displayName: Troubleshoot Fabric SQL database mirroring
       href: sql/mirroring-troubleshooting.md
     - name: Secure and share
-      displayName: Secure and share mirroring for SQL database data
+      displayName: Secure and share mirroring Copilot in Fabric in SQL database data
       href: sql/mirroring-secure.md
   - name: Monitor
     items:
