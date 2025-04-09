@@ -78,13 +78,13 @@ Copilot for SQL database in Microsoft Fabric is an AI assistant designed to stre
 The following table provides an overview of the various Copilot experiences available in Fabric, and which workloads and items these experiences apply to. The links in the *Copilot experience* column take you to the documentation describing how to set up and use these features.
 
 :::row:::
-   :::column span="1"::: 
+   :::column span="1":::
 **Fabric workload**
    :::column-end:::
-   :::column span="1"::: 
+   :::column span="1":::
 **Supported items**
    :::column-end:::
-   :::column span="1"::: 
+   :::column span="1":::
 **Copilot experience**
    :::column-end:::
 :::row-end:::
@@ -97,11 +97,11 @@ The following table provides an overview of the various Copilot experiences avai
 Notebook (typically with lakehouses and other data items)
    :::column-end:::
    :::column span="1":::
-* [Copilot chat panel](../data-engineering/copilot-notebooks-chat-pane.md) vs [chat magics](../data-engineering/copilot-notebooks-chat-magics.md) in a notebook (GA).
-* [Generate code or markdown for a notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities).
-* [Add comments, fix errors, or debug notebook code (preview)](../data-engineering/copilot-notebooks-chat-magics.md#commenting-and-debugging).
-* [Analyze and visualize data from a lakehouse, semantic model, or dataframe in the notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md).
-* [Explain notebook contents or activities (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities).
+ - [Copilot chat panel](../data-engineering/copilot-notebooks-chat-pane.md) vs [chat magics](../data-engineering/copilot-notebooks-chat-magics.md) in a notebook (GA).
+ - [Generate code or markdown for a notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities).
+ - [Add comments, fix errors, or debug notebook code (preview)](../data-engineering/copilot-notebooks-chat-magics.md#commenting-and-debugging).
+ - [Analyze and visualize data from a lakehouse, semantic model, or dataframe in the notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md).
+ - [Explain notebook contents or activities (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities).
    :::column-end:::
 :::row-end:::
 ---
@@ -114,12 +114,12 @@ Notebook (typically with lakehouses and other data items)
 Dataflows gen2
    :::column-end:::
    :::column span="1":::
-* [Suggest a new query (preview)](copilot-fabric-data-factory.md).
-* [Suggest a new transformation step (preview)](copilot-fabric-data-factory.md).
-* [Summarize a query and applied steps (preview)](copilot-fabric-data-factory.md).
-* Generate and run a data pipeline.
-* Summarize a data pipeline.
-* Troubleshoot pipeline errors. | Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks. For more information, see [Copilot for Data Factory](copilot-fabric-data-factory.md).
+ - [Suggest a new query (preview)](copilot-fabric-data-factory.md).
+ - [Suggest a new transformation step (preview)](copilot-fabric-data-factory.md).
+ - [Summarize a query and applied steps (preview)](copilot-fabric-data-factory.md).
+ - Generate and run a data pipeline.
+ - Summarize a data pipeline.
+ - Troubleshoot pipeline errors.
    :::column-end:::
 :::row-end:::
 ---
@@ -132,10 +132,10 @@ Dataflows gen2
 Data warehouse
    :::column-end:::
    :::column span="1":::
-* [Generate SQL queries (preview)](../data-warehouse/copilot-chat-pane.md).
-* [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).
-* [Fix code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md).
-* [Explain code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md)
+ - [Generate SQL queries (preview)](../data-warehouse/copilot-chat-pane.md).
+ - [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).
+ - [Fix code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md).
+ - [Explain code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md)
    :::column-end:::
 :::row-end:::
 ---
@@ -148,10 +148,10 @@ Data warehouse
 Semantic models in Power BI Desktop or Power BI service
    :::column-end:::
    :::column span="1":::
-* [Generate SQL queries (preview)](../data-warehouse/copilot-chat-pane.md).
-* [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).
-* [Fix code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md).
-* [Explain code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md)
+ - [Generate SQL queries (preview)](../data-warehouse/copilot-chat-pane.md).
+ - [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).
+ - [Fix code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md).
+ - [Explain code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md)
    :::column-end:::
 :::row-end:::
 ---
@@ -164,11 +164,11 @@ Semantic models in Power BI Desktop or Power BI service
 Reports (with semantic models) in Power BI Desktop, the Power BI service, or the Power BI mobile app
    :::column-end:::
    :::column span="1":::
-* Power BI home (announced).
-* [Suggest a report page (preview)](/power-bi/create-reports/copilot-create-desktop-report).
-* [Suggest a visual (preview)](/power-bi/create-reports/copilot-create-report-service).
-* [Summarize data in a narrative visual (GA)](/power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service).
-* [Explain a report page or visual (GA)](/power-bi/create-reports/copilot-pane-summarize-content).
+ - Power BI home (announced).
+ - [Suggest a report page (preview)](/power-bi/create-reports/copilot-create-desktop-report).
+ - [Suggest a visual (preview)](/power-bi/create-reports/copilot-create-report-service).
+ - [Summarize data in a narrative visual (GA)](/power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service).
+ - [Explain a report page or visual (GA)](/power-bi/create-reports/copilot-pane-summarize-content).
    :::column-end:::
 :::row-end:::
 ---
@@ -181,8 +181,8 @@ Reports (with semantic models) in Power BI Desktop, the Power BI service, or the
 KQL queryset
    :::column-end:::
    :::column span="1":::
-* [Generate KQL queries (preview)](copilot-real-time-intelligence.md).
-* [Modify or explore a previously generated KQL query (preview)](copilot-real-time-intelligence.md).
+ - [Generate KQL queries (preview)](copilot-real-time-intelligence.md).
+ - [Modify or explore a previously generated KQL query (preview)](copilot-real-time-intelligence.md).
    :::column-end:::
 :::row-end:::
 ---
@@ -195,7 +195,7 @@ KQL queryset
 Real-time dashboards
    :::column-end:::
    :::column span="1":::
-* Generate a real-time dashboard (announced).
+ - Generate a real-time dashboard (announced).
    :::column-end:::
 :::row-end:::
 ---
