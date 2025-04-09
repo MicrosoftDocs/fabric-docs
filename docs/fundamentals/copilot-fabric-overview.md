@@ -105,7 +105,6 @@ Notebook (typically with lakehouses and other data items)
    :::column-end:::
 :::row-end:::
 ---
----
 :::row:::
    :::column span="1":::
 **Data Factory**
@@ -123,7 +122,6 @@ Dataflows gen2
    :::column-end:::
 :::row-end:::
 ---
----
 :::row:::
    :::column span="1":::
 **Data Warehousing**
@@ -139,7 +137,6 @@ Data warehouse
    :::column-end:::
 :::row-end:::
 ---
----
 :::row:::
    :::column span="1":::
 **Power BI**
@@ -154,7 +151,6 @@ Semantic models in Power BI Desktop or Power BI service
  - [Explain code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md)
    :::column-end:::
 :::row-end:::
----
 ---
 :::row:::
    :::column span="1":::
@@ -172,7 +168,6 @@ Reports (with semantic models) in Power BI Desktop, the Power BI service, or the
    :::column-end:::
 :::row-end:::
 ---
----
 :::row:::
    :::column span="1":::
 **Real-Time Intelligence**
@@ -185,7 +180,6 @@ KQL queryset
  - [Modify or explore a previously generated KQL query (preview)](copilot-real-time-intelligence.md).
    :::column-end:::
 :::row-end:::
----
 ---
 :::row:::
    :::column span="1":::
