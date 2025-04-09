@@ -13,7 +13,7 @@ In Microsoft Fabric, the capability to [time travel](time-travel.md) unlocks the
 
 Warehouse tables can be queried up to a retention period of thirty calendar days using the `OPTION` clause, providing the date format `yyyy-MM-ddTHH:mm:ss[.fff]`.
 
-The following examples can be executed in the [SQL Query Editor](sql-query-editor.md), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [Azure Data Studio](/azure-data-studio/download-azure-data-studio), or any T-SQL query editor.
+The following examples can be executed in the [SQL Query Editor](sql-query-editor.md), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), or any T-SQL query editor.
 
 > [!NOTE]
 > Currently, only the Coordinated Universal Time (UTC) time zone is used for time travel.

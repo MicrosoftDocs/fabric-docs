@@ -69,7 +69,7 @@ Before you begin, make sure you have the following:
 
 Once the dynamic data masking rules are applied, you can test the masking by querying the table with a test user who does not have the Administrator, Member, or Contributor rights on the workspace, or elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
-1. Sign in to a tool like Azure Data Studio or SQL Server Management Studio as the test user, for example TestUser@contoso.com.
+1. Sign in to a tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true) as the test user, for example TestUser@contoso.com.
 1. As the test user, run a query against the table. The masked data is displayed according to the rules you defined.
     ```sql
     SELECT * FROM dbo.EmployeeData;

@@ -21,7 +21,7 @@ To get started with this tutorial, check the following prerequisites:
 
 - Alternatively, you can use any of these tools to connect to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#fabric-data-warehouse) via a T-SQL connection string. For more information, see [Connectivity](connectivity.md).
     - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
-    - [Download Azure Data Studio](https://aka.ms/azuredatastudio).
+    - Download and install both [Visual Studio Code and the mssql extension](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 
 > [!NOTE]
 > Review the [T-SQL surface area in Fabric Data Warehouse](tsql-surface-area.md) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].

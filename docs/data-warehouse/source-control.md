@@ -62,7 +62,7 @@ To download a local copy of your warehouse's schema, select **Download SQL datab
 The local copy of a database project that contains the definition of the warehouse schema. The database project can be used to:
 
 - Recreate the warehouse schema in another warehouse.
-- Further develop the warehouse schema in client tools, like Azure Data Studio or Visual Studio Code.
+- Further develop the warehouse schema in client tools, like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 
 ### Publish SQL database project to a new warehouse
 
