@@ -20,10 +20,10 @@ In this tutorial, you learn how to:
 > [!div class="checklist"]
 > - Use [tidymodels](https://www.tidymodels.org/) packages 
 
-      - [recipes](https://recipes.tidymodels.org/)
-      - [parsnip](https://parsnip.tidymodels.org/)
-      - [rsample](https://rsample.tidymodels.org/)
-      - [workflows](https://workflows.tidymodels.org/)
+    - [recipes](https://recipes.tidymodels.org/)
+    - [parsnip](https://parsnip.tidymodels.org/)
+    - [rsample](https://rsample.tidymodels.org/)
+    - [workflows](https://workflows.tidymodels.org/)
 
     to process data and train a machine learning model
 
