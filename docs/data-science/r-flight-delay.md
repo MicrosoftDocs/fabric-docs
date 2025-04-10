@@ -6,7 +6,7 @@ ms.author: franksolomon
 author: fbsolo-ms1
 ms.topic: tutorial
 ms.custom:
-ms.date: 04/09/2025
+ms.date: 04/10/2025
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model by using R so I can predict delays.
 ---
@@ -17,18 +17,16 @@ This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](inc
 
 In this tutorial, you learn how to:
 
-> [!div class="checklist"]
-> - Use [tidymodels](https://www.tidymodels.org/) packages 
-    ```http
-    - [recipes](https://recipes.tidymodels.org/)
-    - [parsnip](https://parsnip.tidymodels.org/)
-    - [rsample](https://rsample.tidymodels.org/)
-    - [workflows](https://workflows.tidymodels.org/)
-    ```
-    to process data and train a machine learning model
+- Use [tidymodels](https://www.tidymodels.org/) packages
 
-> - Write the output data to a lakehouse as a delta table
-> - Build a Power BI visual report to directly access data in that lakehouse
+  - [recipes](https://recipes.tidymodels.org/)
+  - [parsnip](https://parsnip.tidymodels.org/)
+  - [rsample](https://rsample.tidymodels.org/)
+  - [workflows](https://workflows.tidymodels.org/)
+
+  to process data and train a machine learning model
+- Write the output data to a lakehouse as a delta table
+- Build a Power BI visual report to directly access data in that lakehouse
 
 ## Prerequisites
 
