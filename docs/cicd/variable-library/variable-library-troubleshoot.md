@@ -23,7 +23,7 @@ This article describes common errors and issues that you might encounter when wo
 
 **Cause**: The *Create Variable library* icon is only available if the *Users can create Variable libraries* tenant switch is enabled in the Admin portal.
 
-**Solution**: If you're an admin, go to the Admin portal, and enable the *Users can create Variable libraries* [tenant switch](../../admin/service-admin-portal-microsoft-fabric-tenant-settings.md). If you're not an admin, contact your admin.
+**Solution**: If you're an admin, go to the Admin portal, and enable the *Users can create Variable libraries* [tenant switch](../../admin/service-admin-portal-microsoft-fabric-tenant-settings.md). If you're not an admin, contact your admin. Wait an while, refresh the browser and clean the cache, and check again. Note that it can take up to an hour for the change to take effect.
 
 :::image type="content" source="./media/variable-library-troubleshoot/create-variable-library-enabled.png" alt-text="Screenshot of Users can create Variable library tenant switch.":::
 
