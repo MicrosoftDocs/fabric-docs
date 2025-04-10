@@ -18,15 +18,12 @@ A common use case for invoking Data Factory data pipelines is to trigger a pipel
 
 1. Select the **Trigger** button on the **Home** ribbon at the top of the pipeline canvas editor window.
 
-   :::image type="content" source="media/pipeline-storage-event-triggers/set-trigger-button.png" alt-text="Screenshot showing the Trigger button on the Home ribbon of the pipeline canvas editor window.":::
-
 1. The **Set alert** panel opens where you can define source events for your trigger using the Reflex alert service.
 
    :::image type="content" source="media/pipeline-storage-event-triggers/set-alert-panel.png" alt-text="Screenshot showing the Set Alert panel.":::
 
 1. Here you select the type of events you wish to listen for. Pick ```OneLake``` events for ```OneLake``` file events, Azure Blob, and so on.
 
-   :::image type="content" source="media/pipeline-storage-event-triggers/trigger-events-001.png" alt-text="Screenshot showing the Select a data source dialog.":::
 
 1. Select **Source** and then **Select events** to select the storage events you wish to listen to in the trigger.
 
