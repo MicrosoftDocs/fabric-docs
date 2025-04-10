@@ -4,7 +4,7 @@ description: This article provides information about how to create a Teradata da
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 04/10/2025
 ms.custom:
   - template-how-to
 ---
@@ -20,8 +20,8 @@ The Teradata database connector supports the following authentication types for 
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Basic (Username/Password)| n/a | √ |
-|Windows| n/a | √ |
+|Basic (Username/Password)| √ | √ |
+|Windows| √ | √ |
 
 ## Set up your connection in Dataflow Gen2
 
