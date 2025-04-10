@@ -141,8 +141,10 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 - **Service principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account
 - **Workspace identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account
 
->[!NOTE]
->When workspace identity is enabled on the workspace, the **Generate a user delegation key** action isn't required on the delegated type for authentication. This action is automatically assigned when using Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account.
+If you use Entra ID delegated authorization types (organizational account, service principal, or workspace identity) to authenticate to ADLS, the Entra ID needs the **Generate a user delegation key** action assigned at the storage account level. This action is included as part of the Storage Blob Data Reader, Storage Blob Data Contributor, Storage Blob Data Owner, and Delegator roles. If the Delegator role is assigned at the storage account level, you can define detailed data access right using access control lists (ACLs) in ADLS.
+
+>[!IMPORTANT]
+>Currently, when workspace identity is used as the delegated authorization type for an ADLS shortcut, the user delegation isn't enforced. Any shortcut with a delegated identity that doesn't have the **Generate a user delegation key** action results in a failure.
 
 ### S3 shortcuts
 
