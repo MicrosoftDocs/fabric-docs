@@ -1,8 +1,8 @@
 ---
 title: Copilot in Fabric glossary and terms
 description: Learn the definitions of terms and key concepts related to Copilot functionality in Microsoft Fabric.
-author: SnehaGunda
-ms.author: sngun
+author: denglishbi
+ms.author: daengli
 ms.reviewer: sngun
 ms.topic: conceptual
 ms.date: 04/02/2025
