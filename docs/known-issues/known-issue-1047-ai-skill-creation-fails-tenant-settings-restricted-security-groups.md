@@ -4,7 +4,7 @@ description: A known issue is posted where AI skill creation fails when tenant s
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/05/2025
+ms.date: 04/10/2025
 ms.custom: known-issue-1047
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1047
 
 To work with the Data Science AI skills, you enable the **Copilot and Azure OpenAI Service** and **Users can create and share AI skill item types (preview)** tenant settings. If you restrict the settings to apply to specific security groups, AI skill creation fails. The AI skill is needed to add new AI-powered capabilities.
 
-**Status:** Open
+**Status:** Fixed: April 10, 2025
 
 **Product Experience:** Data Science
 
