@@ -1,6 +1,6 @@
 ---
-title: Enable Entra ID Authentication for an Application in Eventstream
-description: Learn how to add a Custom Endpoint source or destination to enable Entra ID Authentication for an Application in Eventstream.
+title: Connect to Eventstream using Entra ID Authentication
+description: Learn how to add a Custom Endpoint source or destination and connect a service principal app to Eventstream using Entra ID authentication
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
@@ -10,7 +10,7 @@ ms.date: 04/08/2025
 ms.search.form: Source and Destination
 ---
 
-# Enable Entra ID Authentication for an Application in Eventstream
+# Connect to Eventstream using Entra ID Authentication
 
 **Custom Endpoint** is a special type of Eventstream source or destination that allows your application to send and fetch data from Eventstream. It supports two authentication methods for connecting to your application: **SAS Keys** and **Entra ID** authentication.
 
@@ -23,7 +23,7 @@ This article guides you through creating a Service Principal application, settin
 
 Before you begin, make sure the following prerequisites are met:
 
-* Your **Tenant Admin** has enabled the following setting in the Admin portal. [Learn more](https://learn.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal)
+* Your **Tenant Admin** enabled the following setting in the Admin portal. [Learn more](https://learn.microsoft.com/power-bi/developer/embedded/embed-service-principal)
   * Service principals can call Fabric public APIs
 * You have **Member** or higher permissions in the workspace. This is required to manage workspace access and assign the necessary permissions to your service principal app.
 * An Eventstream item in your workspace with a Custom Endpoint source. Refer to [this guide](add-source-custom-app.md) for instructions on how to add a Custom Endpoint to Eventstream.
