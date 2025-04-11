@@ -217,6 +217,12 @@ If you're the Capacity or Fabric administrator, from the upper right corner of F
 
 :::image type="content" source="media/fabric-trial/fabric-admin.png" lightbox="media/fabric-trial/fabric-admin.png" alt-text="Screenshot of Admin center showing the Capacity settings screen.":::
 
+#### How do I look up the number of days remaining in my trial?
+
+If you're the Capacity or Fabric administrator, from the upper right corner of Fabric, select the gear icon. Select **Admin portal**. For a Fabric trial, select **Capacity settings** and then choose the **Trial** tab. The **DAYS LEFT** column tracks the remaining days for each trial.
+
+:::image type="content" source="media/fabric-trial/fabric-admin-days-left.png" lightbox="media/fabric-trial/fabric-admin-days-left.png" alt-text="Screenshot of Admin center showing the Capacity settings screen and days left for each trial.":::
+
 #### Why can't I assign a workspace to the trial capacity in my workspace settings?
 
 This bug occurs when the Fabric administrator turns off trials after you start a trial. To add your workspace to the trial capacity, open the Admin portal by selecting it from the gear icon in the top menu bar. Then, select **Trial > Capacity settings** and choose the name of the capacity. If you don't see your workspace assigned, add it here.
@@ -238,7 +244,7 @@ Not all regions are available for the Fabric trial. Start by [looking up your ho
 
 You can't move your organization's tenant between regions by yourself. If you need to change your organization's default data location from the current region to another region, you must contact support to manage the migration for you. For more information, see [Move between regions](/power-bi/support/service-admin-region-move).
 
-#### How an I see the Fabric trial capacity availability by Azure region?
+#### How can I see the Fabric trial capacity availability by Azure region?
 
 To learn more about regional availability for Fabric trials, see [Fabric trial capacities are available in all regions.](../admin/region-availability.md)
 

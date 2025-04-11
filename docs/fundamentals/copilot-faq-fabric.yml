@@ -43,9 +43,9 @@ sections:
           Copilot prompts can't be saved for future reference. The only experience where it's possible to view your prompts is by using the chat-magic function in notebooks. 
 
       - question: |
-          Does enabling Copilot and agreeing to the setting of "Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance" mean all my data is sent or processed outside my country?
+          Does enabling Copilot and agreeing to the setting of "Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance" mean all my data is sent or processed outside my country/region?
         answer: |
-          Not exactly. While the prompt itself is sent to Azure OpenAI, it doesn't mean your data is sent or processed outside your country. 
+          Not exactly. While the prompt itself is sent to Azure OpenAI, it doesn't mean your data is sent or processed outside your country/region. 
           
           The prompt isn't used to train any models.   
     
