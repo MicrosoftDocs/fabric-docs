@@ -6,7 +6,7 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-ms.date: 10/30/2024
+ms.date: 4/08/2025
 ms.search.form: cicd
 ---
 
@@ -72,6 +72,11 @@ If you make changes to your Eventstream item in the git repository, you see an *
 You can review the deployment history to see the last time content was deployed to each stage. Deployment history is useful for establishing when a stage was last updated. It can also be helpful if you want to track time between deployments.
 
 To learn more about deployment pipeline, visit [Get started with deployment pipelines](/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines)
+
+## Limitation
+
+* **Git Integration** and **Deployment Pipeline** have limited support for cross-workspace scenarios. To avoid issues, make sure all Eventstream destinations within the same workspace. Cross-workspace deployment may not work as expected.
+* If an Eventstream includes an Eventhouse destination using **Direct Ingestion** mode, you’ll need to manually reconfigure the connection after importing or deploying it to a new workspace.
 
 ## Related content
 
