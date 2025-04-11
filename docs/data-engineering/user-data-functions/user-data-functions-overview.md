@@ -10,7 +10,7 @@ ms.search.form: User data functions overview
 
 # What is Fabric User data functions (Preview)?
 
-Fabric User data functions is a platform that allows you to host and run applications on Fabric. This empowers data developers to write custom logic and embed it into their Fabric ecosystem. This feature supports the [Python 3.11 runtime](https://www.python.org/downloads/release/python-3110/) and allows you to use [public libraries from PyPI](https://pypi.org/).
+Fabric User data functions is a platform that allows you to host and run applications on Fabric. This empowers data developers to write custom logic and embed it into their Fabric ecosystem. This feature supports the [Python 3.11.9 runtime](https://www.python.org/downloads/release/python-3119/) and allows you to use [public libraries from PyPI](https://pypi.org/).
 
 :::image type="content" source="..\media\user-data-functions-overview\user-data-functions-overview.gif" alt-text="Animated GIF showing the interface of Fabric User Data Functions." lightbox="..\media\user-data-functions-overview\user-data-functions-overview.gif":::
 
