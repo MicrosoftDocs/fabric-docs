@@ -4,7 +4,7 @@ description: This article explains the overview of using SharePoint Online List.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 04/01/2025
 ms.custom:
   - template-how-to
 ---
@@ -23,8 +23,8 @@ The SharePoint Online List connector supports the following capabilities in data
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None <br> On-premises | Service principal |
-| **Lookup activity** | None <br> On-premises | Service principal |
+| **Copy activity (source/-)** | None <br> On-premises | Organizational account <br> Service principal |
+| **Lookup activity** | None <br> On-premises | Organizational account <br> Service principal |
 
 To learn about how to connect to a SharePoint Online List in data pipelines, go to [Set up your SharePoint Online List connection](connector-sharepoint-online-list.md#set-up-your-connection-in-a-data-pipeline).
 
