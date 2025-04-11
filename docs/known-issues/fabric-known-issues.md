@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 04/09/2025
+ms.date: 04/10/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1091  | Power BI | [New card visual conditional formatting rules don't work](./known-issue-1091-new-card-visual-conditional-formatting-rules-not-work.md) | April 10, 2025 |
 |  1090  | Data Engineering | [PyPI packages in User data functions don't show in Library Management](./known-issue-1090-pypi-packages-functions-not-show-library-management.md) | April 9, 2025 |
 |  1087  | Data Factory | [Pipeline can't copy an empty table to lakehouse](./known-issue-1087-pipeline-not-copy-empty-table-lakehouse.md) | April 9, 2025 |
 |  1085  | Data Engineering | [Spark job submission failure with Library Management error](./known-issue-1085-spark-job-submission-failure-library-management-error.md) | April 9, 2025 |
@@ -96,6 +97,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1047  | Data Science | [AI skill creation fails when tenant settings restricted to security groups](./known-issue-1047-ai-skill-creation-fails-tenant-settings-restricted-security-groups.md) | March 5, 2025 | Fixed: April 10, 2025 |
 |  1062  | Administration & Management | [Workspace identity tagged as preview for ADLS Gen2 connections](./known-issue-1062-workspace-identity-tagged-preview-adls-gen2-connections.md) | March 21, 2025 | Fixed: April 9, 2025 |
 |  1045  | Power BI | [Live connection to local model conversion resets report content in February Desktop](./known-issue-1045-live-connection-local-model-resets-report-content-desktop.md) | March 5, 2025 | Fixed: April 9, 2025 |
 |  1035  | Data Engineering | [Lakehouse ALM operations fail for Git using public APIs in UK South](./known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md) | February 25, 2025 | Fixed: April 9, 2025 |
