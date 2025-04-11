@@ -1,6 +1,6 @@
 ---
-title: Connect to Eventstream using Entra ID Authentication
-description: Learn how to add a Custom Endpoint source or destination and connect a service principal app to Eventstream using Entra ID authentication
+title: Connect to Eventstream using Microsoft Entra ID Authentication
+description: Learn how to add a Custom Endpoint source or destination and connect a service principal app to Eventstream using Microsoft Entra ID authentication.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
@@ -10,7 +10,7 @@ ms.date: 04/08/2025
 ms.search.form: Source and Destination
 ---
 
-# Connect to Eventstream using Entra ID Authentication
+# Connect to Eventstream using Microsoft Entra ID authentication
 
 **Custom Endpoint** is a special type of Eventstream source or destination that allows your application to send and fetch data from Eventstream. It supports two authentication methods for connecting to your application: **SAS Keys** and **Entra ID** authentication.
 
