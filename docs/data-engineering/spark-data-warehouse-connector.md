@@ -19,9 +19,6 @@ The Spark connector for Fabric Data Warehouse enables Spark developers and data 
 * While you're accessing a table or a view, the connector upholds security models defined at the SQL engine level. These models include object-level security (OLS), row-level security (RLS), and column-level security (CLS).
 * The connector comes preinstalled within the Fabric runtime, which eliminates the need for separate installation.
 
-> [!NOTE]
-> The connector is currently in preview. For more information, see the [current considerations](spark-data-warehouse-connector.md#considerations-for-using-this-connector) later in this article.  
-
 ## Authentication
 
 Microsoft Entra authentication is an integrated authentication approach. Users sign in to the Microsoft Fabric workspace, and their credentials are automatically passed to the SQL engine for authentication and authorization. The credentials are automatically mapped, and users aren't required to provide specific configuration options.
