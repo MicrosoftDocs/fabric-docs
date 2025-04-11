@@ -83,7 +83,7 @@ The SemPy Python library provides a set of built-in semantic functions that are 
 
 Semantic functions are designed for extensibility. You can define your own semantic functions within your notebook or as separate Python modules.
 
-To use a semantic function outside of a notebook, declare the semantic function within the `sempy.functions` module. The following code example shows the definition of a semantic function `_is_capital` that returns `true` if a city is the capital of a country.
+To use a semantic function outside of a notebook, declare the semantic function within the `sempy.functions` module. The following code example shows the definition of a semantic function `_is_capital` that returns `true` if a city is the capital/major city of a country.
 
 ```python
 from sempy.fabric import FabricDataFrame, FabricSeries
