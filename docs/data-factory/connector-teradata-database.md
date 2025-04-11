@@ -32,7 +32,3 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 - To connect to the Teradata database connector from Power Query, go to [Connect to a Teradata database from Power Query Online](/power-query/connectors/teradata#connect-to-a-teradata-database-from-power-query-online).
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
-
-## Set up your connection in a data pipeline
-
-Data Factory in Microsoft Fabric doesn't currently support a Teradata database in data pipelines.

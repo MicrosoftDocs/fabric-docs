@@ -4,7 +4,7 @@ description: This article explains how to copy data using Teradata database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/07/2025
+ms.date: 04/10/2025
 ms.custom:
   - template-how-to
 ---
@@ -118,7 +118,7 @@ If your source data store and format meet the criteria described in this section
 
 #### Staged copy to Teradata
 
-When your source data store or format isn't natively compatible with the Teradata COPY command, as mentioned in the last section, enable the built-in staged copy using an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service automatically converts the data to meet the data format requirements of Teradata. It then invokes the COPY command to load data into Teradata. Finally, it cleans up your temporary data from the blob storage. See [Staged copy](copy-activity-performance-features.md#staged-copy) for details about copying data using staging.
+When your source data store or format isn't natively compatible with the Teradata COPY command, as mentioned in the last section, enable the built-in staged copy using an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service automatically converts the data to meet the data format requirements of Teradata. It then invokes the COPY command to load data into Teradata. Finally, it cleans up your temporary data from the blob storage. 
 
 To use this feature, create an [Azure Blob storage connection](connector-azure-blob-storage.md) that refers to the Azure storage account as the interim staging. Then specify the `enableStaging` and `stagingSettings` properties in the Copy activity.
 

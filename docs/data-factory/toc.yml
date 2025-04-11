@@ -636,7 +636,7 @@
       - name: Set up your connection
         href: connector-teradata-database.md
       - name: Configure in a data pipeline Copy activity
-        href: connector-teradata-copy-activity.md
+        href: connector-teradata-database-copy-activity.md
     - name: Vertica
       items:
       - name: Vertica - Overview
