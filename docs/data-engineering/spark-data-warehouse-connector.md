@@ -6,7 +6,7 @@ ms.author: arali
 ms.topic: how-to
 ms.custom:
   - ignite-2024
-ms.date: 02/12/2025
+ms.date: 04/11/2025
 ---
 
 # Spark connector for Microsoft Fabric Data Warehouse
