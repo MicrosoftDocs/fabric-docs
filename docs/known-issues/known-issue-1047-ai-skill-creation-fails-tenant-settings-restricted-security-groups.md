@@ -18,7 +18,7 @@ To work with the Data Science Fabric Data Agents, you enable the **Copilot and A
 
 ## Symptoms
 
-When trying to create an Fabric Data Agent, the creation fails and you receive an error. The error message is similar to `TenantSwitch is disabled`.
+When trying to create a Fabric Data Agent, the creation fails and you receive an error. The error message is similar to `TenantSwitch is disabled`.
 
 ## Solutions and workarounds
 
