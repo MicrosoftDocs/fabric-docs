@@ -213,11 +213,11 @@ items:
             href: spark-monitoring-api-overview.md
           - name: Open-source APIs
             href: open-source-apis.md
-          - name: Livy logs API
+          - name: Livy log APIs
             href: livy-log.md
-          - name: Executor logs API
+          - name: Executor log APIs
             href: executor-log.md
-          - name: Driver logs API
+          - name: Driver log APIs
             href: driver-log.md
       - name: Collecting Spark Logs & Metrics
         items: 
