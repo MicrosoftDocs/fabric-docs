@@ -61,7 +61,7 @@ If you make changes to your Eventstream item in the git repository, you see an *
 
 1. In the workspace view, select Create deployment pipeline. You can also create a pipeline from the deployment pipelines entry point in Fabric (at the bottom of the workspace list).
     :::image type="content" source="./media/eventstream-cicd/create-pipeline.png" alt-text="Screenshot that shows where to create a pipeline." lightbox="./media/eventstream-cicd/create-pipeline.png":::
-2. You can define how many stages it should have and what they should be called. The number of stages are permanent and can't be changed after the pipeline is created.
+2. You can define how many stages it should have and what they should be called. The number of stages is permanent and can't be changed after the pipeline is created.
 3. Give a name to your pipeline. The default pipeline has three stages named **Development**, **Test**, and **Production**. You can rename the stages and have anywhere between 2-10 stages in a pipeline. Then select **Create and continue**.
     :::image type="content" source="./media/eventstream-cicd/name-pipeline.png" alt-text="Screenshot that shows name a pipeline and stage." lightbox="./media/eventstream-cicd/name-pipeline.png":::
 4. After creating a pipeline, you can assign a workspace to each stage.
