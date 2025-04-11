@@ -6,7 +6,7 @@ ms.author: arali
 ms.topic: how-to
 ms.custom:
   - ignite-2024
-ms.date: 02/12/2025
+ms.date: 04/11/2025
 ---
 
 # Spark connector for Microsoft Fabric Data Warehouse
@@ -18,9 +18,6 @@ The Spark connector for Fabric Data Warehouse enables Spark developers and data 
 * The connector has a simplified Spark API, abstracts the underlying complexity, and operates with just one line of code.
 * While you're accessing a table or a view, the connector upholds security models defined at the SQL engine level. These models include object-level security (OLS), row-level security (RLS), and column-level security (CLS).
 * The connector comes preinstalled within the Fabric runtime, which eliminates the need for separate installation.
-
-> [!NOTE]
-> The connector is currently in preview. For more information, see the [current considerations](spark-data-warehouse-connector.md#considerations-for-using-this-connector) later in this article.  
 
 ## Authentication
 
