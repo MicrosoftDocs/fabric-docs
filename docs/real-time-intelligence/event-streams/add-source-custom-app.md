@@ -24,9 +24,33 @@ This article shows you how to add a custom endpoint source or a custom app sourc
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
-- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
+Before you start, make sure you have access to the workspace where your eventstream is located. The workspace must be in **Fabric capacity** or **Trial** mode.
 
+- **Contributor** or higher permissions are required to edit the eventstream to add a **Custom endpoint** source.
+- If you want to use **Entra ID authentication** to connect your application, you need **Member** or higher permissions.
+
+If you're using **Entra ID authentication**, you also need to make sure the managed identity of the custom endpoint has the required permissions. To do this, configure the necessary settings in the **Admin portal**:
+
+1. Select **Settings** (gear icon) in the top-right corner.
+1. Select **Admin portal** under the **Governance and insights** section.
+
+    :::image type="content" source="./media/add-source-azure-event-grid/admin-portal-link.png" alt-text="Screenshot that shows the selection of Admin portal link in the Governance and insights section." lightbox="./media/add-source-azure-event-grid/admin-portal-link.png":::        
+
+1. Activate the following tenant setting to grant the service principal access to Fabric APIs for creating workspaces, connections, or deployment pipelines:
+    - On the **Tenant settings** page, in the **Developer settings** section, expand the **Service principal can use Fabric API** option.
+    - Toggle to **Enabled**.
+    - Apply to **the entire organization**.
+    - Select **Apply**.
+
+    :::image type="content" source="./media/add-source-azure-event-grid/developer-settings.png" alt-text="Screenshot that shows the developer settings." lightbox="./media/add-source-azure-event-grid/developer-settings.png":::              
+
+1. Enable this option to access all other APIs (enabled by default for new tenants):
+    - Still on the **Tenant settings** page, expand the **Allow Service principals to create and use profiles** option.
+    - Toggle to **Enabled**.
+    - Apply to **the entire organization**.
+    - Select **Apply**.
+  
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add custom endpoint data as a source
 1. To add a custom endpoint source, on the get-started page, select **Use custom endpoint**.    Or, if you already have a published eventstream and you want to add custom endpoint data as a source, switch to edit mode. On the ribbon, select **Add source** > **Custom endpoint**.   
@@ -110,33 +134,8 @@ For a list of supported sources, see [Add an event source in an eventstream](add
 
 ## Prerequisites
 
-Before you start, make sure you have access to the workspace where your eventstream is located. The workspace must be in **Fabric capacity** or **Trial** mode.
-
-- **Contributor** or higher permissions are required to edit the eventstream to add a **Custom endpoint** source.
-- If you want to use **Entra ID authentication** to connect your application, you need **Member** or higher permissions.
-
-If you're using **Entra ID authentication**, you also need to make sure the managed identity of the custom endpoint has the required permissions. To do this, configure the necessary settings in the **Admin portal**:
-
-1. Select **Settings** (gear icon) in the top-right corner.
-1. Select **Admin portal** under the **Governance and insights** section.
-
-    :::image type="content" source="./media/add-source-azure-event-grid/admin-portal-link.png" alt-text="Screenshot that shows the selection of Admin portal link in the Governance and insights section." lightbox="./media/add-source-azure-event-grid/admin-portal-link.png":::        
-
-1. Activate the following tenant setting to grant the service principal access to Fabric APIs for creating workspaces, connections, or deployment pipelines:
-    - On the **Tenant settings** page, in the **Developer settings** section, expand the **Service principal can use Fabric API** option.
-    - Toggle to **Enabled**.
-    - Apply to **the entire organization**.
-    - Select **Apply**.
-
-    :::image type="content" source="./media/add-source-azure-event-grid/developer-settings.png" alt-text="Screenshot that shows the developer settings." lightbox="./media/add-source-azure-event-grid/developer-settings.png":::              
-
-1. Enable this option to access all other APIs (enabled by default for new tenants):
-    - Still on the **Tenant settings** page, expand the **Allow Service principals to create and use profiles** option.
-    - Toggle to **Enabled**.
-    - Apply to **the entire organization**.
-    - Select **Apply**.
-  
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
+- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 ## Add a custom app as a source
 
