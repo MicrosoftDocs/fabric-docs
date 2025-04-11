@@ -392,7 +392,7 @@ display(
 
 ## Get information from arbitrary web APIs
 
-With HTTP on Spark, you can use any web service in your big data pipeline. The following code sample uses the [World Bank API](http://api.worldbank.org/v2/country/) to get information about various countries around the world.
+With HTTP on Spark, you can use any web service in your big data pipeline. The following code sample uses the [World Bank API](http://api.worldbank.org/v2/country/) to get information about various countries/regions around the world.
 
 ```python
 # Use any requests from the python requests library
