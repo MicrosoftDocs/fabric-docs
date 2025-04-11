@@ -38,7 +38,7 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 | Pause and Resume TTL (Time to live)                                                               | Yes                      | No                                    |
 | SaaSified Experience - 10 secs to get started - Authoring DAGs - Fabric Free Trial | Yes                      | No                                    |
 
-## Region availability (public preview)
+## Region availability
 
 - Australia East
 - Australia Southeast
