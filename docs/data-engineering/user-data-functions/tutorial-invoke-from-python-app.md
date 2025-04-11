@@ -78,12 +78,12 @@ To invoke Fabric User data function items (Preview) from a console application i
             }
 
     try:   
-    # Call the user data function public URL 
-    response = requests.post(FUNCTION_URL, json=data, headers=headers)
-    response.raise_for_status()
-    print(json.dumps(response.json()))
+        # Call the user data function public URL 
+        response = requests.post(FUNCTION_URL, json=data, headers=headers)
+        response.raise_for_status()
+        print(json.dumps(response.json()))
     except Exception as e:
-    print({"error": str(e)}, 500)
+        print({"error": str(e)}, 500)
 
     if __name__ == "__main__":
         app.run(debug=True)
