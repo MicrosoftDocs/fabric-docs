@@ -127,7 +127,6 @@ The following list shows some of the table features that aren't currently suppor
 - Sparse columns
 - Surrogate keys on number sequences with Identity columns
 - Synonyms
-- Temporary tables
 - Triggers
 - Unique indexes
 - User-defined types
