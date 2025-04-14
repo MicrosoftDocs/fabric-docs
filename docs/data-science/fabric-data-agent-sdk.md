@@ -42,7 +42,7 @@ pip install fabric-data-agent-sdk
 
 ## Quick Start Example
 
-For more information about the sample notebooks that show how to use the Fabric Data Agent Python SDK, visit [this GitHub repo](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science) resource.
+For more information about the sample notebooks that show how to use the Fabric Data Agent Python SDK, visit [this GitHub repo](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/Fabric-Data-Agent-SDK/Samples) resource.
 
 ## Related content
 
