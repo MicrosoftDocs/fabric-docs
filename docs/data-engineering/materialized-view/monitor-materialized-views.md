@@ -5,7 +5,7 @@ author: yeturis
 ms.author: sairamyeturi
 ms.reviewer: nijelsf
 ms.topic: tutorial
-ms.date: 03/28/2025
+ms.date: 04/14/2025
 ---
 
 # Monitoring Fabric materialized views
