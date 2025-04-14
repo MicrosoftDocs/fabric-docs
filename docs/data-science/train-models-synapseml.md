@@ -67,14 +67,14 @@ model = TrainClassifier(model=LogisticRegression(), labelCol=" income").fit(trai
 
 ## Score and evaluate the model
 
-Finally, score the model against the test set, and use the `synapse.ml.ComputeModelStatistics` class to compute
+Finally, score the model against the test set, and use the `synapse.ml.ComputeModelStatistics` class to compute:
 
-- accuracy
+- Accuracy
 - AUC
-- precision
-- recall
+- Precision
+- Recall
 
-metrics from the scored data:
+Metrics from the scored data:
 
 ```python
 from synapse.ml.train import ComputeModelStatistics
