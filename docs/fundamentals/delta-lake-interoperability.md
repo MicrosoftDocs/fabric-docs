@@ -44,17 +44,17 @@ Eventstreams|No|No|No|No|Yes|N/A (not applicable)|No|No|Reader: 1<br/>Writer: 2|
 
 > [!NOTE]
 >
-> * Fabric doesn't write name-based column mappings by default. The default Fabric experience generates tables that are compatible across the service. Delta lake, produced by third-party services, may have incompatible table features.
+> * Fabric doesn't write name-based column mappings by default. The default Fabric experience generates tables that are compatible across the service. Delta Lake tables produced by third-party services may have incompatible table features.
 > * Some Fabric experiences do not have inherited table optimization and maintenance capabilities, such as bin-compaction, V-order, and clean up of old unreferenced files. To keep Delta Lake tables optimal for analytics, follow the techniques in [Use table maintenance feature to manage delta tables in Fabric](../data-engineering/lakehouse-table-maintenance.md) for tables ingested using those experiences.
 
 ## Current limitations
 
 Currently, Fabric doesn't support these Delta Lake features:
 
-* Delta Lake 3.x Uniform
+* Delta Lake 3.x Uniform. This is supported in the Data Engineering Spark-compute only (Notebooks, Spark Jobs).
 * Identity columns writing (proprietary Databricks feature)
 * Delta Live Tables (proprietary Databricks feature)
-* RLE (Run Length Encoding) enabled on the checkpoint file
+* Delta Lake 4.x features: Type widening, collations, variant type, coordinated commits.
 
 ## Special characters on table names
 
