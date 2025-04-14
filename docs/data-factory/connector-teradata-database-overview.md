@@ -1,5 +1,5 @@
 ---
-title: Teradata database connector overview
+title: Teradata database connector overview (Preview)
 description: This article provides an overview of the supported capabilities of the Teradata database connector.
 author: DougKlopfenstein
 ms.author: dougklo
@@ -9,7 +9,7 @@ ms.custom:
   - template-how-to
 ---
 
-# Teradata database connector overview
+# Teradata database connector overview (Preview)
 
 The Teradata database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
@@ -29,4 +29,4 @@ The Teradata database connector supports the following capabilities in data pipe
 
 To learn about how to connect to Teradata database in data pipelines, go to [Set up your Teradata database connection](connector-teradata-database.md).
 
-To learn more about the copy activity configuration for Teradata database in data pipelines, go to [Configure in a data pipeline copy activity](connector-teradata-database-copy-activity.md).
+To learn more about the copy activity configuration for Teradata in data pipelines, go to [Configure in a data pipeline copy activity](connector-teradata-copy-activity.md).

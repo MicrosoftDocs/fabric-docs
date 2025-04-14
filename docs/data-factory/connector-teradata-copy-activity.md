@@ -1,6 +1,6 @@
 ---
-title: Configure Teradata database in a copy activity
-description: This article explains how to copy data using Teradata database.
+title: Configure Teradata in a copy activity (Preview)
+description: This article explains how to copy data using Teradata.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -9,9 +9,9 @@ ms.custom:
   - template-how-to
 ---
 
-# Configure Teradata database in a copy activity
+# Configure Teradata in a copy activity (Preview)
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to Teradata database.
+This article outlines how to use the copy activity in a data pipeline to copy data from and to Teradata.
 
 ## Supported configuration
 
@@ -32,31 +32,31 @@ For **General** tab configuration, go to [General](activity-overview.md#general-
 > [!TIP]
 > To load data from Teradata efficiently by using data partitioning, learn more from [Parallel copy from Teradata](#parallel-copy-from-teradata) section.
 
-The following properties are supported for Teradata database under the **Source** tab of a copy activity.
+The following properties are supported for Teradata under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-teradata-database/source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-teradata-database/source.png":::
+:::image type="content" source="./media/connector-teradata/source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-teradata/source.png":::
 
 The following properties are **required**:
 
-- **Connection**: Select a Teradata database connection from the connection list. If no connection exists, then create a new Teradata database connection.
+- **Connection**: Select a Teradata connection from the connection list. If no connection exists, then create a new Teradata connection.
 
 - **Use query**: Select **Table** or **Query**.
 
   - If you select **Table**:
 
-    - **Table**: Specify the name of the table in the Teradata database to read data. Select the table from the drop-down list or select **Enter manually** to enter the schema and table name.
+    - **Table**: Specify the name of the table in the Teradata to read data. Select the table from the drop-down list or select **Enter manually** to enter the schema and table name.
 
   - If you select **Query**:
 
     - **Query**: Specify the custom SQL query to read data.
 
-      :::image type="content" source="./media/connector-teradata-database/query.png" alt-text="Screenshot showing query." lightbox="./media/connector-teradata-database/query.png":::
+      :::image type="content" source="./media/connector-teradata/query.png" alt-text="Screenshot showing query." lightbox="./media/connector-teradata/query.png":::
 
 Under **Advanced**, you can specify the following fields:
 
 - **Partition option**: Specifies the data partitioning options used to load data from Teradata. Allow values are: **None** (default), **DynamicRange** and **Hash**. When a partition option is enabled (that is, not `None`), the degree of parallelism to concurrently load data from Teradata is controlled by the **Degree of copy parallelism** in the copy activity settings tab.
 
-  :::image type="content" source="./media/connector-teradata-database/query.png" alt-text="Screenshot showing query." lightbox="./media/connector-teradata-database/query.png":::
+  :::image type="content" source="./media/connector-teradata/query.png" alt-text="Screenshot showing query." lightbox="./media/connector-teradata/query.png":::
 
   - **None**: Choose this setting to not use a partition.
 
@@ -66,36 +66,36 @@ Under **Advanced**, you can specify the following fields:
     - **Partition upper bound**: Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result are partitioned and copied.
     - **Partition lower bound**: Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result are partitioned and copied.
 
-        :::image type="content" source="./media/connector-teradata-database/dynamic-range.png" alt-text="Screenshot showing dynamic range." lightbox="./media/connector-teradata-database/dynamic-range.png":::
+        :::image type="content" source="./media/connector-teradata/dynamic-range.png" alt-text="Screenshot showing dynamic range." lightbox="./media/connector-teradata/dynamic-range.png":::
 
   - **Hash**: When using query with parallel enabled, hash partition parameter (`?AdfHashPartitionCondition`) are needed. Sample query: `select * from <TableName> where ?AdfHashPartitionCondition`.
     - **Partition column name**: Specify the name of the source column in **integer or date/datetime** type (`int`, `smallint`, `bigint`, `date`, `smalldatetime`, `datetime`, `datetime2`, or `datetimeoffset`) that's used by range partitioning for parallel copy. If not specified, the index or the primary key of the table is autodetected and used as the partition column.
 
-        :::image type="content" source="./media/connector-teradata-database/hash.png" alt-text="Screenshot showing hash." lightbox="./media/connector-teradata-database/hash.png":::
+        :::image type="content" source="./media/connector-teradata/hash.png" alt-text="Screenshot showing hash." lightbox="./media/connector-teradata/hash.png":::
 
 - **Additional columns**: Add more data columns to store source files' relative path or static value. Expression is supported for the latter. For more information, go to [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).
 
 ## Destination
 
-The following properties are supported for Teradata database under the **Destination** tab of a copy activity.
+The following properties are supported for Teradata under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-teradata-database/destination.png" alt-text="Screenshot showing destination tab.":::
+:::image type="content" source="./media/connector-teradata/destination.png" alt-text="Screenshot showing destination tab.":::
 
 The following properties are **required**:
 
-- **Connection**: Select a Teradata database connection from the connection list. If no connection exists, then create a new Teradata database connection.
+- **Connection**: Select a Teradata connection from the connection list. If no connection exists, then create a new Teradata connection.
 
-- **Table**: Specify the name of the table in the Teradata database to write data. Select the table from the drop-down list or select **Enter manually** to enter the schema and table name.
+- **Table**: Specify the name of the table in the Teradata to write data. Select the table from the drop-down list or select **Enter manually** to enter the schema and table name.
 
 Under **Advanced**, you can specify the following fields:
 
 - **Additional Teradata format options**: Specify additional format options which will be used in COPY statement to load data. Examples: DATE_FORMAT, TIME_FORMAT, TIMESTAMP_FORMAT. For more information, see [Teradata DATE Format](https://www.teradatapoint.com/teradata/teradata-date-format.htm). This property only works for direct copy from DelimitedText format source to Teradata.
 
-#### Direct copy to Teradata database
+#### Direct copy to Teradata
 
 If your source data store and format meet the criteria described in this section, you can use the Copy activity to directly copy from source to Teradata. The service checks the settings and fails the Copy activity run if the following criteria isn't met:
 
-- The **source linked service** is [**Azure Blob storage**](connector-azure-blob-storage.md) and [**Azure Data Lake Storage Gen2**](connector-azure-data-lake-storage-gen2-copy-activity.md) with **account key** and **shared access signature** authentication.
+- The **source connection** is [**Azure Blob storage**](connector-azure-blob-storage.md) and [**Azure Data Lake Storage Gen2**](connector-azure-data-lake-storage-gen2.md) with **account key** and **shared access signature** authentication.
 
 - The **source data format** is **Parquet** and **DelimitedText** with the following configurations:
 
@@ -123,7 +123,7 @@ When your source data store or format isn't natively compatible with the Teradat
 To use this feature, create an [Azure Blob storage connection](connector-azure-blob-storage.md) that refers to the Azure storage account as the interim staging. Then specify the `enableStaging` and `stagingSettings` properties in the Copy activity.
 
 > [!NOTE]
-> The staging Azure Blob Storage linked service need to use **account key** or **shared access signature** authentication as required by the Teradata COPY command.
+> The staging Azure Blob Storage connection need to use **account key** or **shared access signature** authentication as required by the Teradata COPY command.
 
 ### Mapping
 
@@ -144,7 +144,7 @@ You are suggested to enable parallel copy with data partitioning especially when
 | Scenario                                                     | Suggested settings                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Full load from large table.                                   | **Partition option**: Hash. <br><br/>During execution, the service automatically detects the primary index column, applies a hash against it, and copies data by partitions. |
-| Load large amount of data by using a custom query.                 | **Partition option**: Hash.<br>**Query**: `SELECT * FROM <TABLENAME> WHERE ?AdfHashPartitionCondition AND <your_additional_where_clause>`.<br>**Partition column**: Specify the column used for apply hash partition. If not specified, the service automatically detects the PK column of the table you specified in the Teradata dataset.<br><br>During execution, the service replaces `?AdfHashPartitionCondition` with the hash partition logic, and sends to Teradata. |
+| Load large amount of data by using a custom query.                 | **Partition option**: Hash.<br>**Query**: `SELECT * FROM <TABLENAME> WHERE ?AdfHashPartitionCondition AND <your_additional_where_clause>`.<br>**Partition column**: Specify the column used for apply hash partition. If not specified, the service automatically detects the PK column of the table you specified in the Teradata data.<br><br>During execution, the service replaces `?AdfHashPartitionCondition` with the hash partition logic, and sends to Teradata. |
 | Load large amount of data by using a custom query, having an integer column with evenly distributed value for range partitioning. | **Partition options**: Dynamic range partition.<br>**Query**: `SELECT * FROM <TABLENAME> WHERE ?AdfRangePartitionColumnName <= ?AdfRangePartitionUpbound AND ?AdfRangePartitionColumnName >= ?AdfRangePartitionLowbound AND <your_additional_where_clause>`.<br>**Partition column**: Specify the column used to partition data. You can partition against the column with integer data type.<br>**Partition upper bound** and **partition lower bound**: Specify if you want to filter against the partition column to retrieve data only between the lower and upper range.<br><br>During execution, the service replaces `?AdfRangePartitionColumnName`, `?AdfRangePartitionUpbound`, and `?AdfRangePartitionLowbound` with the actual column name and value ranges for each partition, and sends to Teradata. <br>For example, if your partition column "ID" set with the lower bound as 1 and the upper bound as 80, with parallel copy set as 4, the service retrieves data by 4 partitions. Their IDs are between [1,20], [21, 40], [41, 60], and [61, 80], respectively. |
 
 **Example: query with hash partition**
@@ -177,35 +177,35 @@ You are suggested to enable parallel copy with data partitioning especially when
 
 ## Table summary
 
-The following tables contain more information about a copy activity in an Teradata database.
+The following tables contain more information about a copy activity in a Teradata.
 
 ### Source information
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Connection** |Your connection to the source data store.|< your Teradata database connection >|Yes|connection|
-|**Use query** |The way to read data from Teradata database. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.| • **Table**<br>  • **Query** |No| / |
-| For **Table** | | | | |
+|**Connection** |Your connection to the source data store.|< your Teradata connection >|Yes|connection|
+|**Use query** |The way to read data from Teradata. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.| • **Table**<br>  • **Query** |No| / |
+| For ***Table*** | | | | |
 |**schema name** |Name of the schema.|< your schema name >| No |schema|
 |**table name** |Name of the table.|< your table name >| No |table|
-| For **Query** | | | | |
+| For ***Query*** | | | | |
 | **Query** | Use the custom SQL query to read data. | < SQL queries > | No | query |
 | | | | | |
-| Partition option | The data partitioning options used to load data from Teradata. |• **None** <br>• **Dynamic range** <br>• Hash| No | / |
+| **Partition option** | The data partitioning options used to load data from Teradata. |• **None** <br>• **Dynamic range** <br>• **Hash** | No | / |
 | For ***Dynamic range*** | | | | |
 | **Partition column name** | Specify the name of the source column in **integer or date/datetime** type (`int`, `smallint`, `bigint`, `date`, `smalldatetime`, `datetime`, `datetime2`, or `datetimeoffset`) that's used by range partitioning for parallel copy.<br> If not specified, the index or the primary key of the table is autodetected and used as the partition column. | < your partition column names > | No | partitionColumnName |
 | **Partition upper bound** | Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result are partitioned and copied. | < your partition upper bound > | No | partitionUpperBound |
 | **Partition lower bound** | Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result are partitioned and copied. | < your partition lower bound > | No | partitionLowerBound |
-| | | | | |
 | For ***Hash*** | | | | |
 | **Partition column name** | Specify the name of the source column in **integer or date/datetime** type (`int`, `smallint`, `bigint`, `date`, `smalldatetime`, `datetime`, `datetime2`, or `datetimeoffset`) that's used by range partitioning for parallel copy.<br> If not specified, the index or the primary key of the table is autodetected and used as the partition column. | < your partition column names > | No | partitionColumnName |
+| | | | | |
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. |• Name <br>• Value | No | additionalColumns:<br> • name<br>• value|
 
 ### Destination information
 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Connection** |Your connection to the destination data store.|< your Teradata database connection >|Yes|connection|
+|**Connection** |Your connection to the destination data store.|< your Teradata connection >|Yes|connection|
 |**Table** |Your destination data table to write data.|< your table name >|Yes|/|
 |**schema name** |Name of the schema.|< your schema name >| No |schema|
 |**table name** |Name of the table.|< your table name >| No |table|
@@ -213,4 +213,4 @@ The following tables contain more information about a copy activity in an Terada
 
 ## Related content
 
-- [Teradata database connector overview](connector-teradata-database-overview.md)
+- [Teradata connector overview](connector-teradata-database-overview.md)
