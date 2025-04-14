@@ -107,11 +107,11 @@ def maskCreditCard(cardNumber: int)-> str:
     cardNumberStr = str(cardNumber)
     
     # Check if the card number is valid
-    if not cardNumber_str.isdigit() or not (13 <= len(cardNumber_str) <= 19):
+    if not cardNumberStr.isdigit() or not (13 <= len(cardNumberStr) <= 19):
         raise ValueError("Invalid credit card number")
     
     # Mask all but the last four digits
-    maskedNumber = '*' * (len(cardNumberStr) - 4) + cardNumber_str[-4:]
+    maskedNumber = '*' * (len(cardNumberStr) - 4) + cardNumberStr[-4:]
     
     return str(maskedNumber)
 
