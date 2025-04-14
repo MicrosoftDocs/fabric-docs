@@ -73,7 +73,7 @@ Under **Advanced**, you can specify the following fields:
 
         :::image type="content" source="./media/connector-teradata/hash.png" alt-text="Screenshot showing hash." lightbox="./media/connector-teradata/hash.png":::
 
-- **Additional columns**: Add more data columns to store source files' relative path or static value. Expression is supported for the latter. For more information, go to [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy).
+- **Additional columns**: Add more data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ## Destination
 
