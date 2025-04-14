@@ -401,25 +401,25 @@ items:
      href: ./user-data-functions/view-function-logs.md
 - name: Materialized view
   items:
-  - name: Create a Fabric Materialized View 
+  - name: Create a materialized view 
     items:   
-    - name: Create a Fabric Materialized View
+    - name: Create a materialized view
       href: ./materialized-view/create-materialized-view.md 
-    - name: Refresh a Fabric Materialized View
-      href: ./materialized-view/refresh-fabric-materialzed-view.md
+    - name: Refresh a materialized view
+      href: ./materialized-view/refresh-materialized-view.md
   - name: Monitoring hub
     items:   
     - name: Monitor materialized view runs
       href: ./materialized-view/monitor-materialized-views.md
   - name: Data quality
     items:   
-    - name: Data quality in Fabric Materialized View
+    - name: Data quality in materialized views
       href: ./materialized-view/data-quality.md
-  - name: Manage Fabric materialized view
+  - name: Manage materialized views
     items:   
     - name: View DAG
       href: ./materialized-view/view-dag.md
   - name: Tutorial
     items:   
-    - name: Microsoft Fabric materialized views tutorial
+    - name: Implement medallion architecture with materialized views
       href: ./materialized-view/tutorial.md 
