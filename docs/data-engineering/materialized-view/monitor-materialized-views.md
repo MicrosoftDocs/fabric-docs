@@ -50,5 +50,5 @@ If you need more information about DAG run and the Materialized view statistics,
 
 ## Next steps
 
-[Refresh a Fabric materialized view](./refresh-materialized-view.md)
+[Refresh a materialized view](./refresh-materialized-view.md)
   
