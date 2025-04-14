@@ -49,8 +49,8 @@ The following examples show how to to create, update, and manage pipelines using
 
 Before you use the other REST APIs, you need to have the bearer token.
 
-[!IMPORTANT]
-In the following examples, ensure the word 'Bearer ' (with a space) precedes the access token itself. When using an API client and selecting 'Bearer Token' as the authentication type, 'Bearer ' is automatically inserted for you, and only requires the access token to be provided.
+>[!IMPORTANT]
+>In the following examples, ensure the word 'Bearer ' (with a space) precedes the access token itself. When using an API client and selecting 'Bearer Token' as the authentication type, 'Bearer ' is automatically inserted for you, and only requires the access token to be provided.
 
 ### Option 1: Using MSAL.Net
 
