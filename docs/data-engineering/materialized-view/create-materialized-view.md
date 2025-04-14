@@ -57,16 +57,16 @@ A materialized view can be defined from any table or another materialized view w
 ```
  **Arguments**
 
-   |Parameter	|Description|	
+   |Parameter|Description|	
    |-|-|
-   | MV_Identifier|	Name of the materialized view|
-   | CONSTRAINT  |	Keyword to define the constraint for data quality. Follows with a user defined constraint name. Constraint is at materialized view level.  |
-   | CHECK  |	Use to enforce the condition defined based on the certain column values. Mandatory to use when defining constraint. |
-   | ON MISMATCH  |	Keyword to define the action to be taken if the given constraint is violated. Default behavior without this clause is FAIL action.	 |
-   | PARTITIONED BY	 | To create partitions based on the column specified.  |
-   | TBLPROPERTIES	 | A list of key-value pairs that is used to tag the materialized view definition.  |	
-   | COMMENT | A statement to describe the materialized view.  |
-   | AS select_statement  | A query to populate the data in the materialized view using select statement. | 
+   | MV_Identifier | Name of the materialized view.|
+   | CONSTRAINT | Keyword to define the constraint for data quality. Follows with a user defined constraint name. Constraint is at materialized view level.|
+   | CHECK | Use to enforce the condition defined based on the certain column values. Mandatory to use when defining constraint.|
+   | ON MISMATCH | Keyword to define the action to be taken if the given constraint is violated. Default behavior without this clause is FAIL action.|
+   | PARTITIONED BY | To create partitions based on the column specified.|
+   | TBLPROPERTIES | A list of key-value pairs that is used to tag the materialized view definition.|	
+   | COMMENT | A statement to describe the materialized view.|
+   | AS select_statement | A query to populate the data in the materialized view using select statement.| 
 
  The following example illustrates the definition of a materialized view named “customers_enriched” by joining the **customers** table with the **orders** table.
  
@@ -154,8 +154,8 @@ Example:
 ## What’s Not Supported 
 
 * DML statements aren't supported with materialized views.
-* Spark properties set at the session level are not applied during scheduled DAG refresh.
-* The creation of materialized view with delta time-travel is not supported.
+* Spark properties set at the session level aren't applied during scheduled DAG refresh.
+* The creation of materialized view with delta time-travel isn't supported.
 
 ## Next steps
 
