@@ -1,14 +1,14 @@
 ---
-title: "Microsoft Fabric materialized views tutorial"
+title: "Implement medallion architecture with materialized views"
 description: This tutorial outlines the steps and considerations for implementing a medallion architecture for a sales analytics pipeline Fabric materialized views.
 ms.author: rkottackal 
 author: rkottackal 
 ms.reviewer: nijelsf
 ms.topic: tutorial
-ms.date: 03/26/2025
+ms.date: 04/14/2025
 ---
 
-# Microsoft Fabric materialized views tutorial
+# Implement medallion architecture with materialized views
 This tutorial outlines the steps and considerations for implementing a medallion architecture for a sales analytics pipeline Fabric materialized views. By the end of this tutorial, you'll understand the key features and capabilities of Fabric materialized views and be able to create an automated data transformation workflow.
 ## Overview
 Fabric materialized views are designed to simplify the implementation of the Medallion architecture using Spark SQL. These views allow for automated creation, scheduling, and execution of materialized views, optimizing data transformations through a declarative approach. Fabric materialized views offers declarative pipelines, manages dependencies, automates data processing workflows, and  robust monitoring capabilities to help data professionals in their data transformation journey.
@@ -40,9 +40,9 @@ The high-level steps in module 1 are as follows:
 As prerequisites to this tutorial, complete the following steps:
 1.	Sign into your Power BI online account, or if you don't have an account yet, sign up for a free trial.
 1.	Enable Microsoft Fabric in your tenant. Select the default Power BI icon at the bottom left of the screen and select Fabric.
-1.	Create a Microsoft Fabric enabled Workspace: Create a workspace.
+1.	Create a Microsoft Fabric enabled Workspace.
 1.	Select a workspace from the Workspaces tab, then select + New item, and choose Data engineering. Provide a pipeline name. Then select Create.
-1.	Create a Lakehouse titled SalesLakehouse and load the sample data files for raw data into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
+1.	Create a Lakehouse with Schemas (SalesLakehouse) and load the sample data files for raw data into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
 
 **Sample Data**
 
@@ -57,8 +57,9 @@ Contoso is leveraging a medallion architecture for data analytics to gain action
 
 **Dataset**
 
-Contoso has the raw data of its retail operations stored in CSV format at ADLS Gen2. Contoso hopes to leverage these to create the bronze layer of medallion architecture. It has created Spark SQL commands in a Notebook to create Fabric materialized views forming the silver and gold layers of the medallion architecture. 
-Note: these data models and reports aren't yet available,
+Contoso has the raw data of its retail operations stored in CSV format at ADLS Gen2. Contoso hopes to leverage these to create the bronze layer of medallion architecture. It has created Spark SQL commands in a Notebook to create materialized views forming the silver and gold layers of the medallion architecture. 
+
+Note: These data models and reports aren't yet available,
 
 ## Create bronze layer of Sales Analytics Medallion Architecture
 
@@ -95,6 +96,7 @@ Note: these data models and reports aren't yet available,
   	:::image type="content" source="./media/tutorial/run-dag.png" alt-text="Screenshot showing scheduling run dag." border="true" lightbox="./media/tutorial/run-dag.png":::
 
 ## Monitoring and Troubleshooting
+
 1.	The dropdown menu will list the current and historical DAG runs. 
 
   	:::image type="content" source="./media/tutorial/dropdown-menu.png" alt-text="Screenshot showing scheduling dag execution." border="true" lightbox="./media/tutorial/dropdown-menu.png":::
@@ -116,10 +118,8 @@ Note: these data models and reports aren't yet available,
   	:::image type="content" source="./media/tutorial/spark-logs.png" alt-text="Screenshot showing spark logs." border="true" lightbox="./media/tutorial/spark-logs.png":::
 
 **Future Enhancements**
+
 *	Built-in data quality dashboard.
 *	PySpark support for materialized views.
 *	Incremental refresh of materialized views.
-*	Creation of live tables using extended SQL.
 *	Data quality alerts.
-
-## Next steps

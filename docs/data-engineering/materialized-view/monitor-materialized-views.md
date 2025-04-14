@@ -5,7 +5,7 @@ author: yeturis
 ms.author: sairamyeturi
 ms.reviewer: nijelsf
 ms.topic: tutorial
-ms.date: 03/28/2025
+ms.date: 04/14/2025
 ---
 
 # Monitoring Fabric materialized views
@@ -50,5 +50,5 @@ If you need more information about DAG run and the Materialized view statistics,
 
 ## Next steps
 
-[Refresh a Fabric materialized view](./refresh-fabric-materialzed-view.md)
+[Refresh a materialized view](./refresh-materialized-view.md)
   
