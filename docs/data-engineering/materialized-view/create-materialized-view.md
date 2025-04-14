@@ -8,7 +8,7 @@ ms.reviwer: nijelsf
 ms.date: 03/28/2025
 ---
 
-# Create Fabric materialized view
+# Create a materialized view
 
 A materialized view is a stored result of a query. Unlike a regular view, which dynamically retrieves data from underlying tables, a materialized view physically stores precomputed data. This improves performance for complex queries or large datasets.
 For more information on Fabric Materialized Views, see overview of Fabric materialized view.
