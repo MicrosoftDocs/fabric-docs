@@ -6,12 +6,12 @@ author: shsagir
 ms.author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 04/02/2025
+ms.date: 04/14/2025
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
 
-In this article, you learn how to use a KQL queryset. The KQL Queryset is the item used to run queries, view, and customize query results on data from different data sources, such as Eventhouse, KQL database, and more.
+In this article, you learn how to use a KQL queryset. The KQL queryset is the item used to run queries, view, and customize query results on data from different data sources, such as Eventhouse, KQL database, and more.
 
 You can also use a KQL queryset to perform cross-service queries with data from an Azure Monitor [Log Analytics workspace](/azure/azure-monitor/logs/data-platform-logs) or from an [Application Insights resource](/azure/azure-monitor/app/app-insights-overview).
 
@@ -31,7 +31,7 @@ Select the tab that corresponds with your desired data source type.
 ## [Eventhouse / KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the **Explorer** pane, under **Datasources**, expand the **more actions** menu.
+1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
@@ -41,7 +41,7 @@ Select the tab that corresponds with your desired data source type.
 ## [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the **Explorer** pane, under **Datasources**, expand the more actions **[...]** menu.
+1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
 
@@ -58,7 +58,7 @@ Select the tab that corresponds with your desired data source type.
 ## [Azure Monitor](#tab/azure-monitor)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the **Explorer** pane, under **Datasources**, expand the more actions **[...]** menu.
+1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
@@ -70,9 +70,6 @@ Select the tab that corresponds with your desired data source type.
     | **Setting** | **Field description** |
     |--|--|
     | Connection URI | the URL of the Log Analytics (LA) workspace or Application Insights (AI) resource:</br> - For Log Analytics workspace: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>`</br> - For Application Insights resource: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`</br> - To see all data sources in the LA or AI subscription: `<https://ade.applicationinsights.io/subscriptions/<subscription-id>` |
-    | Subscription | subscription ID of the Log Analytics workspace or Application Insights resource |
-    | Resource group | resource group name |
-    | Application insights / Log analytics | select the relevant option |
     | Database | expand the list and select a data source|
 
 1. Select **Connect**.
@@ -87,7 +84,7 @@ Now that you're connected to your data source, you can run queries on this data.
 
 The following examples use data that is publicly available at [https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv](https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv).
 
-1. Write or copy a query in the top pane of the KQL Queryset.
+1. Write or copy a query in the top pane of the KQL queryset.
 1. Select the **Run** button, or press **Shift**+**Enter** to run the query.
 
     The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query completed successfully, and the time used to compute the query results.
