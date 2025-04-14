@@ -29,6 +29,7 @@ For SQL database in Fabric, see [Features comparison: Azure SQL Database and SQL
 - [TRUNCATE TABLE](/sql/t-sql/statements/truncate-table-transact-sql?view=fabric&preserve-view=true) is supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 - To change the name of the column in a user table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], use the `sp_rename` stored procedure. 
 - A subset of query and join hints are supported. For more information, see [Hints (Transact-SQL)](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true).
+- Session-scoped distributed #temp tables are supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ### Limitations
 
@@ -56,7 +57,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - `SET ROWCOUNT`
 - `SET TRANSACTION ISOLATION LEVEL`
 - `sp_showspaceused`
-- Temporary tables
 - Triggers
 
 ## Related content
