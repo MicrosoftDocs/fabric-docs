@@ -1,0 +1,29 @@
+{
+    "redirections": [
+      {
+        "source_path_from_root": "/docs/database/sql/copilot.md",
+        "redirect_url": "/fabric/database/copilot/copilot",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/database/sql/copilot-faq.md",
+        "redirect_url": "/fabric/database/copilot/copilot-faq",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/database/sql/copilot-quick-actions.md",
+        "redirect_url": "/fabric/database/copilot/copilot-quick-actions",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/database/sql/copilot-code-completion.md",
+        "redirect_url": "/fabric/database/copilot/copilot-code-completion",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/database/sql/copilot-chat-pane.md",
+        "redirect_url": "/fabric/database/copilot/copilot-chat-pane",
+        "redirect_document_id": true
+      }
+    ]
+}

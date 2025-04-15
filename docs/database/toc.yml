@@ -16,17 +16,16 @@ items:
     href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: Copilot
     items:
-    - name: FAQ
-      displayName: Frequently asked questions for Copilot in SQL database
-      href: ./sql/copilot-faq.yml
-    - name: Copilot in SQL database 
-      href: sql/copilot.md
+    - name: What is Copilot in Fabric SQL database? 
+      href: copilot/copilot.md
     - name: Chat pane
-      href: ./sql/copilot-chat-pane.md
+      href: copilot/copilot-chat-pane.md
     - name: Code completion
-      href: sql/copilot-code-completion.md
+      href: copilot/copilot-code-completion.md
     - name: Quick actions
-      href: sql/copilot-quick-actions.md
+      href: copilot/copilot-quick-actions.md
+    - name: FAQ
+      href: copilot/copilot-faq.yml
   - name: Get started
     items: 
     - name: Connect to your SQL database
@@ -113,7 +112,7 @@ items:
       displayName: Troubleshoot Fabric SQL database mirroring
       href: sql/mirroring-troubleshooting.md
     - name: Secure and share
-      displayName: Secure and share mirroring for SQL database data
+      displayName: Secure and share mirroring Copilot in Fabric in SQL database data
       href: sql/mirroring-secure.md
   - name: Monitor
     items:
@@ -121,7 +120,7 @@ items:
       href: ./sql/monitor.md
     - name: Performance Dashboard
       href: sql/performance-dashboard.md
-    - name: Capacity usage reporting
+    - name: Capacity usage reporting and billing
       href: ./sql/usage-reporting.md
   - name: Secure
     items:

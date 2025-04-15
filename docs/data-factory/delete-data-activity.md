@@ -1,7 +1,7 @@
 ---
 title: Delete data activity
 description: Learn how to add a Delete data activity to a pipeline and use it to delete data from a data source.
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: yexu
 author: dearandyxu
 ms.topic: how-to
@@ -9,7 +9,7 @@ ms.custom:
 ms.date: 12/18/2024
 ---
 
-# Use the Delete data activity to look up data from a data source
+# Use the Delete data activity to delete data from a data source
 
 The Fabric Delete data activity can delete data from any of the data sources supported by [!INCLUDE [product-name](../includes/product-name.md)]. 
 

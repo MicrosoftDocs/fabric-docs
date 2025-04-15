@@ -17,9 +17,11 @@ In this article, you learn how to create an S3 compatible shortcut inside a Fabr
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
+S3 compatible shortcuts can take advantage of file caching to reduce egress costs associated with cross-cloud data access. For more information, see [OneLake shortcuts > Caching](onelake-shortcuts.md#caching).
+
 ## Prerequisites
 
-- If you don't have a lakehouse, create one by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
+- If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
 
 - Ensure your chosen S3 compatible bucket and secret key credentials meet the [access and authorization requirements for S3 shortcuts](onelake-shortcuts.md#s3-shortcuts).
 
@@ -37,27 +39,28 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
 1. Under **External sources**, select **Amazon S3 compatible**.
 
-    :::image type="content" source="media/create-s3-compatible-shortcut/s3-compatible-shortcut-card.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 Compatible is highlighted." lightbox="media/create-s3-compatible-shortcut/s3-compatible-shortcut-card.png":::
+   :::image type="content" source="media/create-s3-compatible-shortcut/s3-compatible-shortcut-card.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 Compatible is highlighted." lightbox="media/create-s3-compatible-shortcut/s3-compatible-shortcut-card.png":::
 
 1. Enter the **Connection settings** according to the following table:
 
-    :::image type="content" source="media/create-s3-compatible-shortcut/s3-compatible-shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials." lightbox="media/create-s3-compatible-shortcut/s3-compatible-shortcut-details.png":::
+   :::image type="content" source="media/create-s3-compatible-shortcut/s3-compatible-shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials." lightbox="media/create-s3-compatible-shortcut/s3-compatible-shortcut-details.png":::
 
-      |Field | Description| Value|
-      |-----|-----| -----|
-      | **URL**| The connection string for your S3 compatible endpoint. For this shortcut type, you must provide a non-bucket specific URL. This URL must allow path style bucket addressing, not just virtual hosted style. | `https://s3.contoso.com` |
-      |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If no connections exist, create a new connection.| *Create new connection* |
-      |**Connection name** | The S3 compatible connection name.| A name for your connection.|
-      |**Access Key ID**| The access key ID to be used when accessing the S3 compatible endpoint. | Your access key.|
-      |**Secret Access Key**| The secret key associated with the access key ID. | Your secret key.|
+   |Field | Description| Value|
+   |-----|-----| -----|
+   | **URL**| The connection string for your S3 compatible endpoint. For this shortcut type, you must provide a non-bucket specific URL. This URL must allow path style bucket addressing, not just virtual hosted style. | `https://s3.contoso.com` |
+   |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If no connections exist, create a new connection.| *Create new connection* |
+   |**Connection name** | The S3 compatible connection name.| A name for your connection.|
+   |**Access Key ID**| The access key ID to be used when accessing the S3 compatible endpoint. | Your access key.|
+   |**Secret Access Key**| The secret key associated with the access key ID. | Your secret key.|
 
 1. Select **Next**.
 
 1. Enter a name for your shortcut.
 
-    Optionally, you can enter a sub path to select a specific folder in your S3 bucket.
-    > [!NOTE]
-    > Shortcut paths are case sensitive.
+   Optionally, you can enter a sub path to select a specific folder in your S3 bucket.
+
+   > [!NOTE]
+   > Shortcut paths are case sensitive.
 
 1. Select **Create**.
 

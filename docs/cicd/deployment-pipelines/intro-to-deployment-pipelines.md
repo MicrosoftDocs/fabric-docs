@@ -12,7 +12,7 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
 
-# What is deployment pipelines?
+# Introduction to deployment pipelines
 
 > [!NOTE]
 > The articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
@@ -30,36 +30,65 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 * [Create and manage a deployment pipeline](/training/modules/power-bi-deployment-pipelines) - A Learn module that walks you through the entire process of creating a deployment pipeline.
 
-* [Get started with deployment pipelines](get-started-with-deployment-pipelines.md) - An article explaining how to create a pipeline and key functions such as deployment, comparing content in different stages, and creating deployment rules.
+* [Get started with deployment pipelines](./get-started-with-deployment-pipelines.md) - An article that explains how to create a pipeline and perform key functions such as deployment, comparing content in different stages, and creating deployment rules.
 
 ## Supported items
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
-* Activator
-* Dashboard
-* [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md) *(preview)*
-* [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md) *(preview)*
-* [Datamart](/power-bi/transform-model/datamarts/datamarts-get-started#datamarts-and-deployment-pipelines) *(preview)*
-* [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md) *(preview)*
-* [Eventhouse and KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
-* [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another) *(preview)*
-* KQL Queryset 
-* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md) *(preview)*
-* [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md) *(preview)*
-* [Notebook](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* Org app *(preview)*
-* Paginated report
-* Power BI Dataflow
-* Real-time Dashboard
-* Report (based on supported semantic models)
-* Semantic model (that originates from a .pbix file and isn't a PUSH dataset)
-* SQL database *(preview)*
-* [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
+* Data Engineering items:
+
+  * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#deployment-pipeline-for-environment)
+  * [GraphQL](../../data-engineering/graphql-source-control-and-deployment.md#api-for-graphql-in-deployment-pipeline) *(preview)*
+  * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#lakehouse-in-deployment-pipelines) *(preview)*
+  * [Notebook](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
+  * Spark Job Definitions *(preview)*
+  * User Data Functions *(preview)*
+
+* Data Factory items:
+
+  * [Copy Job](../../data-factory/cicd-copy-job.md#get-started-with-deployment-pipelines-for-git) *(preview)*
+  * [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
+  * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
+  * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-in-deployment-pipelines)
+  * Mount ADF *(preview)*
+  * [Variable library](../variable-library/variable-library-cicd.md#variable-libraries-and-deployment-pipelines) *(preview)*
+
+* Real-time Intelligence items:
+
+  * Activator *(preview)*
+  * [Eventhouse](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
+  * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
+  * [KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
+  * [KQL Queryset](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
+  * [Real-time Dashboard](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
+
+* Data Warehouse items:
+
+  * [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
+
+* Power BI items:
+
+  * Dashboard *(preview)*
+  * Dataflow *(preview)*
+  * Datamart *(preview)*
+  * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
+  * Paginated report *(preview)*
+  * Report (based on supported semantic models) *(preview)*
+  * Semantic model (that originates from a .pbix file and isn't a PUSH dataset) *(preview)*
+
+* Database items:
+
+  * [SQL database](../../database/sql/deployment-pipelines.md) *(preview)*
+
+* Industry solutions:
+
+  * Healthcare *(preview)*
+  * HealthCare Cohort *(preview)*
 
 ## Pipeline structure
 
-You decide how many stages you want in your deployment pipeline. There can be anywhere from two to ten stages. When you create a pipeline, the default three typical stages are given as a starting point, but you can add, delete, or rename the stages to suit your needs. Regardless of how many stages there are, the general concepts are the same:
+You decide how many stages you want in your deployment pipeline. There can be anywhere from two to 10 stages. When you create a pipeline, the default three typical stages are given as a starting point, but you can add, delete, or rename the stages to suit your needs. Regardless of how many stages there are, the general concepts are the same:
 
 * **<a name="development"></a>Development**
 
@@ -93,7 +122,7 @@ You decide how many stages you want in your deployment pipeline. There can be an
 
 Pairing is the process by which an item (such as a report, dashboard, or semantic model) in one stage of the deployment pipeline is associated with the same item in the adjacent stage. Pairing occurs when you assign a workspace to a deployment stage or when you deploy new unpaired content from one stage to another (a clean deploy).
 
-It's important to understand how pairing works, in order to understand when items are copied, when they're overwritten, and when a deployment fails when using the deploy function.
+A good understanding of pairing is crucial to help you understand when items are copied, when they're overwritten, and when a deployment fails.
 
 If items aren't paired, even if they appear to be the same (have the same name, type, and folder), they don't overwrite on a deployment. Instead, a duplicate copy is created and paired with the item in the previous stage.
 

@@ -1,7 +1,7 @@
 ---
 title: Known issue - Direct Lake query cancellation causes model to fall back to DirectQuery
 description: A known issue is posted where Direct Lake query cancellation causes model to fall back to DirectQuery
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/07/2025

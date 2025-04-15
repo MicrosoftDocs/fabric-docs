@@ -1,7 +1,7 @@
 ---
 title: Known issue - Export-to-data disabled for a visual with visual calculation
 description: A known issue is posted where the export-to-data command is disabled for a visual with visual calculation
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/12/2025

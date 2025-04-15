@@ -1,10 +1,10 @@
 ---
 title: Known issue - Live connection to local model conversion resets report content in February Desktop
 description: A known issue is posted where live connection to local model conversion resets report content in February Desktop.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/05/2025
+ms.date: 04/09/2025
 ms.custom: known-issue-1045
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1045
 
 You can convert your report from using a *live connection* to a local model. If you use the February 2025 Power BI Desktop version to perform the conversion, your report content might disappear. The content might disappear if you connect to a model in service using **Get Data**. Alternatively, the content might disappear if you open a file that used **Get Data** and then try to add another data source.
 
-**Status:** Open
+**Status:** Fixed: April 9, 2025
 
 **Product Experience:** Power BI
 

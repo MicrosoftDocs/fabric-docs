@@ -1,10 +1,10 @@
 ---
 title: Known issue - Lakehouse ALM operations fail for Git using public APIs in UK South
 description: A known issue is posted where lakehouse ALM operations fail for Git using public APIs in UK South.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 02/25/2025
+ms.date: 04/09/2025
 ms.custom: known-issue-1035
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1035
 
 You can use public APIs to interact with an application lifecycle management (ALM) connected workspace. The APIs can perform actions such as exporting a lakehouse to Git or using deployment pipelines. If you use these ALM public APIs in the UK South region, you receive an error and the APIs fail.
 
-**Status:** Open
+**Status:** Fixed: April 9, 2025
 
 **Product Experience:** Data Engineering
 

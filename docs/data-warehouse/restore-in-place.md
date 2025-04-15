@@ -1,12 +1,11 @@
 ---
-title: Restore in-place of a warehouse from a restore point
+title: Restore In-Place of a Warehouse from a Restore Point
 description: Learn about how to perform a restore in-place of a warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish, sosivara
-ms.date: 01/14/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Warehouse Restore # This article's title should not change. If so, contact engineering.
 ---
 # Restore in-place of a warehouse in Microsoft Fabric
@@ -49,7 +48,7 @@ System-created restore points can't be deleted, as the restore points are used t
 
 Any number of user-defined restore points aligned with your specific business or organizational recovery strategy can be created. User-defined restore points are available for thirty calendar days and are automatically deleted on your behalf after the expiry of the retention period.
 
-For more information about creating and managing restore points, see [Manage restore points in the Fabric portal](restore-in-place-portal.md).
+For more information about creating and managing restore points, see [Restore in-place in the Fabric portal](restore-in-place-portal.md).
 
 ### Restore point retention
 
@@ -86,9 +85,9 @@ If you encounter Error 5064 after requesting a restore, resubmit the restore aga
 
 - Any member of the Admin, Member, or Contributor [workspace roles](workspace-roles.md) can create, delete, or rename the user-defined restore points.
 
-- Any user that has the [workspace roles](/fabric/data-warehouse/workspace-roles) of a Workspace Administrator, Member, Contributor, or Viewer can see the list of system-created and user-defined restore points.
+- Any user that has the [workspace roles](workspace-roles.md) of a Workspace Administrator, Member, Contributor, or Viewer can see the list of system-created and user-defined restore points.
 
-- A data warehouse can be restored only by user that has [workspace roles](/fabric/data-warehouse/workspace-roles) of a Workspace Administrator, from a system-created or user-defined restore point.
+- A data warehouse can be restored only by user that has [workspace roles](workspace-roles.md) of a Workspace Administrator, from a system-created or user-defined restore point.
 
 ## Limitations
 
@@ -102,7 +101,7 @@ If you encounter Error 5064 after requesting a restore, resubmit the restore aga
 
 ## Related content
 
-- [Manage restore points in the Fabric portal](restore-in-place-portal.md)
+- [Restore in-place in the Fabric portal](restore-in-place-portal.md)
 - [Clone table in Microsoft Fabric](clone-table.md)
 - [Query data as it existed in the past](time-travel.md)
 - [Microsoft Fabric disaster recovery guide](../security/disaster-recovery-guide.md)

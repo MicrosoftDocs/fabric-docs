@@ -1,7 +1,7 @@
 ---
 title: Known issue - Incorrect column names after column format or aggregation change
 description: A known issue is posted where you see incorrect column names after column format or aggregation change.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/05/2025

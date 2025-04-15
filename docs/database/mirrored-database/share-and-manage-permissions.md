@@ -3,8 +3,8 @@ title: Share Your Mirrored Database and Manage Permissions
 description: Learn how to share a Fabric mirrored database and manage permissions.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: jingwang
-ms.date: 11/21/2024
+ms.reviewer: jingwang, mesrivas 
+ms.date: 04/06/2025
 ms.topic: conceptual
 ---
 # Share your mirrored database and manage permissions
@@ -24,7 +24,7 @@ By default, sharing a mirrored database grants users Read permission to the mirr
 
 - **"Read all SQL analytics endpoint data"**: Grants the recipient the ReadData permission for the SQL analytics endpoint, allowing the recipient to read all data via the SQL analytics endpoint using Transact-SQL queries.
 
-- **"Read all OneLake data"**: Grants the ReadAll permission to the recipient, allowing them to access the mirrored data in OneLake, for example, by using Spark or [OneLake Explorer](explore-data-directly.md).
+- **"Read all OneLake data"**: Grants the ReadAll and SubscribeOneLakeEvents permission to the recipient, allowing them to access the mirrored data in OneLake, for example, by using Spark or [OneLake Explorer](explore-data-directly.md), and subscribe to OneLake events in Fabric Real-Time Hub.
 
 - **"Build reports on the default semantic model"**: Grants the recipient the Build permission for the default semantic model, enabling users to create Power BI reports on top of the semantic model.
 
@@ -38,6 +38,10 @@ If you have the **Share** permission for a mirrored database, you can also use t
 
 > [!NOTE]
 > When mirroring data from Azure SQL Database or Azure SQL Managed Instance, its System Assigned Managed Identity needs to have "Read and write" permission to the mirrored database. If you create the mirrored database from the Fabric portal, the permission is granted automatically. If you use API to create the mirrored database, make sure you grant the permission following above instruction. You can search the recipient by specifying the name of your Azure SQL Database logical server or Azure SQL Managed Instance.
+
+## Known issues
+The sharing dialog for a mirrored database provides the option to subscribe to OneLake events. Currently, permission to subscribe to OneLake events is granted along with the Read All OneLake data permission.
+
 
 ## Related content
 

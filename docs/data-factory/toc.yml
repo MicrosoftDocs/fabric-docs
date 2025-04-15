@@ -89,6 +89,8 @@
         href: dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md  
       - name: Move queries from Dataflow Gen1 to Gen2
         href: move-dataflow-gen1-to-dataflow-gen2.md
+      - name: Migrate to Dataflow Gen2 using Save As
+        href: migrate-to-dataflow-gen2-using-save-as.md
   - name: Tutorials
     items:
     - name: End-to-end Data Factory tutorial
@@ -729,8 +731,10 @@
           href: expression-language.md
       - name: Data pipeline runs
         href: pipeline-runs.md
-      - name: Storage event triggers (Preview)
+      - name: Storage event triggers
         href: pipeline-storage-event-triggers.md
+      - name: Variable library integration (Preview)
+        href: variable-library-integration-with-data-pipelines.md
     - name: How-to
       items:
       - name: Use the pipeline landing page
