@@ -26,7 +26,8 @@ In this example, you will learn how to configure a secure connection to your Sno
   - `SELECT table`
   - `SHOW tables`
   - `DESCRIBE tables`
-- The user needs to have at least one role assigned that allows access to the Snowflake database.
+- The user needs to have at least one role assigned that allows access to the Snowflake instance.
+- Check your networking requirements for Fabric to access your Snowflake data source: If your Snowflake data source is not publicly accessible and is within a private network, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Snowflake instance via a private endpoint or is allowed by the firewall rule.
 
 ## Create a mirrored database
 
@@ -54,6 +55,7 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
     | **Warehouse** | From the **Warehouses** section from the resource menu in Snowflake, select **Warehouses**. The warehouse is the Snowflake Warehouse (Compute) and not the database.|
     | **Connection** | Create new connection. |
     | **Connection name** | Should be automatically filled out. Change it to a name that you would like to use. |
+    | **Data Gateway** | Select the default (None) or the name of virtual network data gateway / on-prem data gateway you set up according to your scenario. |
     | **Authentication kind** | Snowflake |
     | **Username** | Your Snowflake username that you created to sign into Snowflake.com. |
     | **Password** | Your Snowflake password that you created when you created your login information into Snowflake.com. |
