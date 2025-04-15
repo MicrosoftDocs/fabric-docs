@@ -56,8 +56,6 @@ Under **Advanced**, you can specify the following fields:
 
 - **Partition option**: Specifies the data partitioning options used to load data from Teradata. Allow values are: **None** (default), **DynamicRange** and **Hash**. When a partition option is enabled (that is, not `None`), the degree of parallelism to concurrently load data from Teradata is controlled by the **Degree of copy parallelism** in the copy activity settings tab.
 
-  :::image type="content" source="./media/connector-teradata/query.png" alt-text="Screenshot showing query." lightbox="./media/connector-teradata/query.png":::
-
   - **None**: Choose this setting to not use a partition.
 
   - **Dynamic range**: When you use a query with parallel enabled, the range partition parameter(`?DfDynamicRangePartitionCondition`) is needed. Sample query: `SELECT * FROM <TableName> WHERE ?DfDynamicRangePartitionCondition`.
