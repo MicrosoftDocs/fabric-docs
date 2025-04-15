@@ -5,7 +5,7 @@ ms.topic: how-to
 author: apurbasroy
 ms.author: apsinhar
 ms.reviewer: nijelsf
-ms.date: 03/28/2025
+ms.date: 04/15/2025
 ---
 
 # Schedule a DAG run
@@ -23,12 +23,12 @@ The schedule for running the DAG depends on various factors, such as:
 
 Click on the Schedule button on the Lakehouse in the DAG view
 
-:::image type="content" source="./media/schedule-a-dag-run/schedule-run.png" alt-text="Screenshot showing the schedule button in DAG UI." border="true" lightbox="./media/schedule-a-dag-run/schedule-run.png":::
+:::image type="content" source="./media/schedule-dag-run/schedule-run.png" alt-text="Screenshot showing the schedule button in DAG UI." border="true" lightbox="./media/schedule-dag-run/schedule-run.png":::
 
 
 The schedule UI opens and is visible to the user.
 
-:::image type="content" source="./media/schedule-a-dag-run/schedule-inputs.png" alt-text="Screenshot showing the schedule UI where user sends their inputs for scheduling." border="true" lightbox="./media/schedule-a-dag-run/schedule-inputs.png":::
+:::image type="content" source="./media/schedule-dag-run/schedule-inputs.png" alt-text="Screenshot showing the schedule UI where user sends their inputs for scheduling." border="true" lightbox="./media/schedule-dag-run/schedule-inputs.png":::
 
 
 Click on the Schedule Refresh **On** button.
