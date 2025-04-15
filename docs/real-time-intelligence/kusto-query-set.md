@@ -35,8 +35,8 @@ Select the tab that corresponds with your desired data source type.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
-1. Select **Add data source**, then select **OneLake data hub**.
-1. In the **OneLake data hub** window that appears, select a KQL database to connect to your KQL queryset, and then select **Connect**. Alternatively, close the **OneLake data hub** window and use the **+ Add data source** menu to connect to a different data source.
+1. Select **Add data source**, then select **Eventhouse / KQL Database**.
+1. In the **OneLake catalog** window that appears, select a KQL database to connect to your KQL queryset, and then select **Connect**. Alternatively, close the **OneLake data hub** window and use the **+ Add data source** menu to connect to a different data source.
 
 ## [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
