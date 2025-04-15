@@ -18,7 +18,7 @@ views status and node details with details for monitoring and troubleshooting.
 
 
 
-If the user clicks on **View more past runs**, they are able to see the last 25 runs for the DAG or the runs in the last 
+If the user clicks on **View more past runs**, they're able to see the last 25 runs for the DAG or the runs in the last 
 seven days whichever comes first.
 
 :::image type="content" source="./media/materialized-view-run-history/view-all-past-runs.png" alt-text="Screenshot showing a view of the past twenty five runs." border="true" lightbox="./media/materialized-view-run-history/view-all-past-runs.png":::
@@ -27,13 +27,13 @@ seven days whichever comes first.
 
 * **Completed**- When all the nodes run successfully, the DAG run is in **Completed** state.
 
-* **Failed**- When any one of the node fails, the DAG run is in **Failed** state. When the node is in Failed state the child node is shown in a Skipped state.
+* **Failed**- When any one of the nodes fails, the DAG run is in **Failed** state. When the node is in Failed state, the child node is shown in a Skipped state.
 
-* **Skipped**- When the previous run is still ongoing, the current schedule will be skipped that the DAG run is in **Skipped** state.
+* **Skipped**- When the previous run is still ongoing, the current schedule is skipped that the DAG run is in **Skipped** state.
 
-* **In Progress**- When the run has just started, the DAG run is in **In Progress** state.
+* **In Progress**- When the run has started and has not reached a terminal state, the DAG run is in **In Progress** state.
 
-* **Cancelled**- When the run has been manually cancelled by the user from monitoring hub, the DAG run is in **Cancelled** state.
+* **Canceled**- When the run has been manually canceled by the user from monitoring hub, the DAG run is in **Canceled** state.
 
 ## Completed Materialized view DAG UI
 
