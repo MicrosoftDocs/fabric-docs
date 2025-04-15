@@ -195,7 +195,7 @@ In this box, select **Publish** to publish the Fabric data agent. The published 
 You can then copy the published URL and use it in the Fabric notebook. This way, you can query the Fabric data agent by making calls to the Fabric data agent API in a Fabric notebook. Paste the copied URL in this code snippet. Then, replace the question with any query relevant to your Fabric data agent. This example uses `\<generic published URL value\>` as the URL.
 
 ```python
-%pip install "openai==1.14.1"
+%pip install "openai==1.1.70"
 ```
 
 ```python
