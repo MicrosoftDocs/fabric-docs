@@ -21,12 +21,12 @@ For information about how to get to the Fabric tenant settings, see [About tenan
 The following settings are enabled by default:
 
 * [Users can use Copilot and other features powered by Azure OpenAI](#users-can-use-copilot-and-other-features-powered-by-azure-openai)
-* [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
-* [Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
 
 The following setting is disabled by default:
 
 * [Capacities can be designated as Fabric Copilot capacities](#capacities-can-be-designated-as-fabric-copilot-capacities)
+* [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
+* [Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
 
 ## Users can use Copilot and other features powered by Azure OpenAI
 
@@ -46,7 +46,7 @@ This setting is only applicable for customers who want to use Copilot and AI fea
 
 For more information, visit the [Available regions](../fundamentals/copilot-fabric-overview.md#available-regions) resource.
 
-Default: Enabled
+Default: Disabled
 
 ## Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance
 
@@ -56,7 +56,7 @@ This setting is only applicable for customers who want to use Copilot in Noteboo
 
 For more information, visit the [Available regions](../fundamentals/copilot-fabric-overview.md#available-regions) resource.
 
-Default: Enabled
+Default: Disabled
 
 ## Capacities can be designated as Fabric Copilot capacities
 
