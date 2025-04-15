@@ -420,7 +420,7 @@ items:
     - name: View DAG
       href: ./materialized-view/view-dag.md
     - name: Schedule a DAG run
-      href: ./materialized-view/schedule-a-dag-run.md
+      href: ./materialized-view/schedule-dag-run.md
     - name: Run history of materialized views
       href: ./materialized-view/materialized-view-run-history.md
     - name: Operational Run details
