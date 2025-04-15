@@ -1,20 +1,20 @@
 ---
-title: "Data quality in Fabric materialized view"
-description: Learn about data quality in Fabric materialized view
+title: "Data quality in materialized views in lakehouse in Microsoft Fabric"
+description: Learn about data quality in materialized view in lakehouse in Microsoft Fabric
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviwer: nijelsf
 ms.topic: conceptual
-ms.date: 03/06/2025
+ms.date: 04/14/2025
 ---
 
-# Data quality in Fabric materialized view
+# Data quality in materialized view in Microsoft Fabric
 
-In the era of big data, the Medallion Architecture has gained prominence as a robust framework for managing and processing data across different stages of refinement, from raw data to highly curated datasets. This structured approach not only enhances data manageability but also ensures that data quality is maintained throughout the data lifecycle.
+In the era of big data, the medallion architecture has gained prominence as a robust framework for managing and processing data across different stages of refinement, from raw data to highly curated datasets. This structured approach not only enhances data manageability but also ensures that data quality is maintained throughout the data lifecycle.
 
-Ensuring data quality is essential at every stage of the Medallion Architecture, which is critical for making informed business decisions. Poor data quality can lead to incorrect insights and operational inefficiencies.
+Ensuring data quality is essential at every stage of the medallion architecture, which is critical for making informed business decisions. Poor data quality can lead to incorrect insights and operational inefficiencies.
  
-This article explains how to implement data quality in Fabric Materialized Views.
+This article explains how to implement data quality in materialized views in Microsoft Fabric.
 
 ## Implement data quality
 
@@ -24,51 +24,38 @@ Data quality is achieved by defining the constraints while defining the material
  
 The following actions can be taken when constraints are defined.
 
-**FAIL** – This action fails the MV execution upon any constraint violation, stopping at the first instance. It's the default action even if the user doesn't specify the FAIL keyword.
+**FAIL** – This action stops refreshing a materialized view if any constraint is violated, halting at the first instance. It is the default behavior, even without specifying the FAIL keyword.
  
-
-**DROP** – This action processes the materialized view (MV) and excludes records that don't meet the specified constraint. It also provides the count of excluded records in the Directed Acyclic Graph (DAG).
+**DROP** – This action processes the materialized view and removes records that do not meet the specified constraint. It also provides the count of removed records in the Directed Acyclic Graph (DAG).
 
 > [!NOTE]
-> If DROP and FAIL both actions are defined in the same MV then, FAIL action takes the precedence.
+> If both DROP and FAIL actions are defined in a materialized view, the FAIL action takes precedence.
 
 
-### Defining the Data quality checks in Materialized View
+### Defining the data quality checks in materialized view
 
-The following example defines the constraint `cust_blank`, which verifies if the `customerName` field isn't blank. If it's blank, MV excludes those rows from processing. 
+The following example defines the constraint `cust_blank`, which checks if the `customerName` field isn't null. Rows with a null `customerName` are excluded from processing.
 
 ```SQL
-CREATE MATERIALIZED VIEW IF NOT EXISTS silver.customers_enriched  
-
-(CONSTRAINT cust_blank CHECK (customerName is not null) on MISMATCH DROP) 
-
-AS 
-
-SELECT 
-
-    c.customerID, 
-
-    c.customerName, 
-
-    c.contact, 
-
-    CASE  
-
-        WHEN COUNT(o.orderID) OVER (PARTITION BY c.customerID) > 0 THEN TRUE  
-
-        ELSE FALSE  
-
-    END AS has_orders 
-
-FROM bronze.customers c LEFT JOIN bronze.orders o 
-
-ON c.customerID = o.customerID; 
+     CREATE MATERIALIZED VIEW IF NOT EXISTS silver.customers_enriched  
+     (CONSTRAINT cust_blank CHECK (customerName is not null) on MISMATCH DROP)
+     AS
+     SELECT
+         c.customerID,
+         c.customerName,
+         c.contact, 
+         CASE  
+            WHEN COUNT(o.orderID) OVER (PARTITION BY c.customerID) > 0 THEN TRUE  
+            ELSE FALSE  
+         END AS has_orders 
+     FROM bronze.customers c LEFT JOIN bronze.orders o 
+     ON c.customerID = o.customerID; 
 ```
 
-## Limitations
+## What’s Not Supported
 
-To update the Data quality constraints, you need to recreate the MV.
+* Updating data quality constraints after creating a materialized view is not supported. To update the data quality constraints, you must recreate the materialized view.
  
 ## Next step
 
-* [Refresh Fabric materialized view](./refresh-fabric-materialzed-view.md)
+* [Refresh a materialized view](./refresh-materialized-view.md)

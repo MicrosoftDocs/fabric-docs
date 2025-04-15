@@ -1,186 +1,163 @@
 ---
-title: "Create Fabric materialized view"
-description: Learn how to create a Fabric materialized view.
+title: "Create a materialized view in lakehouse in Microsoft Fabric"
+description: Learn how to create a materialized view in lakehouse in Microsoft Fabric.
 ms.topic: how-to
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviwer: nijelsf
-ms.date: 03/28/2025
+ms.date: 04/14/2025
 ---
 
-# Create Fabric materialized view
+# Create a materialized view in lakehouse in Microsoft Fabric 
 
-A materialized view is a stored result of a query. Unlike a regular view, which dynamically retrieves data from underlying tables, a materialized view physically stores precomputed data. This improves performance for complex queries or large datasets.
-For more information on Fabric Materialized Views, see overview of Fabric materialized view.
-In this article, you learn how to create materialized views in Lakehouse in Microsoft Fabric.
+In this article, you learn how to create materialized views in lakehouse in Microsoft Fabric.
 
 ## Prerequisites
 
-* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
-* A Lakehouse with [Lakehouse Schemas](../lakehouse-schemas.md) enabled
+* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
+* A lakehouse with [Lakehouse Schemas](../lakehouse-schemas.md) enabled.
 
-## Create materialized view
+## Get started with materialized view
 
-There are two ways to get started with Materialized view creation.
+There are two ways to get started with materialized view creation in lakehouse.
 
-* Create Materialized View from **Manage materialized views** option
-* Create a Materialized View directly from the Notebook attached to your Lakehouse.
+**Option 1**: Create materialized view from **Manage materialized views** option in the lakehouse explorer.
 
-1. Create Materialized View from **Manage materialized views** option.
+1. Go to your lakehouse, select **Manage materialized views**.
 
-    1. Go to your Lakehouse, select **Manage materialized views**.
-       
-       :::image type="content" source="./media/create-materialized-view/manage-materialized-views.png" alt-text="Screenshot showing materialized view." border="true" lightbox="./media/create-materialized-view/manage-materialized-views.png":::
+   :::image type="content" source="./media/create-materialized-view/manage-materialized-views.png" alt-text="Screenshot showing materialized view." border="true" lightbox="./media/create-materialized-view/manage-materialized-views.png":::
 
-    1. Select **New materialized view**, which opens a new notebook.
-        
-       :::image type="content" source="./media/create-materialized-view/new-materialized-view.png" alt-text="Screenshot showing how to create new materialized view." border="true" lightbox="./media/create-materialized-view/new-materialized-view.png":::
-       
-       :::image type="content" source="./media/create-materialized-view/materialized-view.png" alt-text="Screenshot showing how to new materialized view." border="true" lightbox="./media/create-materialized-view/materialized-view.png":::
+1. Select **New materialized view**, which opens a new notebook.
 
+   :::image type="content" source="./media/create-materialized-view/new-materialized-view.png" alt-text="Screenshot showing how to create new materialized view." border="true" lightbox="./media/create-materialized-view/new-materialized-view.png":::
+
+   :::image type="content" source="./media/create-materialized-view/materialized-view.png" alt-text="Screenshot showing how to new materialized view." border="true" lightbox="./media/create-materialized-view/materialized-view.png":::
+
+
+**Option 2**: Create a materialized view directly from the notebook attached to your lakehouse. 
+
+1. Go to your lakehouse, select **Open notebook** to create a new notebook.
+
+   :::image type="content" source="./media/create-materialized-view/open-notebook.png" alt-text="Screenshot showing how to open notebook." border="true" lightbox="./media/create-materialized-view/open-notebook.png":::
  
-    
-1. Create a Materialized View directly from the Notebook attached to your Lakehouse. 
+## Materialized view Spark SQL syntax
 
-    1. Go to your Lakehouse, select **Open notebook** to create a new notebook.
-       
-       :::image type="content" source="./media/create-materialized-view/open-notebook.png" alt-text="Screenshot showing how to open notebook." border="true" lightbox="./media/create-materialized-view/open-notebook.png":::
- 
-
-## Materialized view with SQL syntax
-
-The following outlines the syntax for declaring a materialized Lakeview using SQL. 
+A materialized view can be defined from any table or another materialized view within the lakehouse. The following outlines the syntax for declaring a materialized view using Spark SQL. 
 
 ```SQL
-CREATE MATERIALIZED VIEW [IF NOT EXISTS][workspace.lakehouse.schema].MV_Identifier 
-
-[( 
-
- CONSTRAINT constraint_name1 CHECK (condition expression1)[ON MISMATCH DROP | FAIL], 
-
-CONSTRAINT 2constraint_name2 CHECK (condition expression2)[ON MISMATCH DROP | FAIL] 
-
-)] 
-
-[PARTITIONED BY (col1, col2, ... )] 
-
-[COMMENT “table_comment”] 
-
-[TBLPROPERTIES (“key1”=”val1”, “key2”=”val2”, ... )] 
-
-AS select_statement 
+    CREATE MATERIALIZED VIEW [IF NOT EXISTS][workspace.lakehouse.schema].MV_Identifier 
+    [( 
+        CONSTRAINT constraint_name1 CHECK (condition expression1)[ON MISMATCH DROP | FAIL],  
+        CONSTRAINT 2constraint_name2 CHECK (condition expression2)[ON MISMATCH DROP | FAIL] 
+    )] 
+    [PARTITIONED BY (col1, col2, ... )] 
+    [COMMENT “description or comment”] 
+    [TBLPROPERTIES (“key1”=”val1”, “key2”=”val2”, ... )] 
+    AS select_statement 
 ```
+ **Arguments**
+
+   |Parameter|Description|	
+   |-|-|
+   | MV_Identifier | Name of the materialized view.|
+   | CONSTRAINT | Keyword to define the constraint for data quality. Follows with a user defined constraint name. Constraint is at materialized view level.|
+   | CHECK | Use to enforce the condition defined based on the certain column values. Mandatory to use when defining constraint.|
+   | ON MISMATCH | Keyword to define the action to be taken if the given constraint is violated. Default behavior without this clause is FAIL action.|
+   | PARTITIONED BY | To create partitions based on the column specified.|
+   | TBLPROPERTIES | A list of key-value pairs that is used to tag the materialized view definition.|	
+   | COMMENT | A statement to describe the materialized view.|
+   | AS select_statement | A query to populate the data in the materialized view using select statement.| 
+
+ The following example illustrates the definition of a materialized view named “customers_enriched” by joining the **customers** table with the **orders** table.
  
-**Arguments**
+ ```SQL
+     CREATE MATERIALIZED VIEW IF NOT EXISTS silver.customers_enriched AS 
+     SELECT 
+         c.customerID, 
+         c.customerName, 
+         c.contact, 
+         CASE  
+            WHEN COUNT(o.orderID) OVER (PARTITION BY c.customerID) > 0 THEN TRUE  
+            ELSE FALSE  
+            END AS has_orders 
+     FROM bronze.customers c LEFT JOIN bronze.orders o 
+     ON c.customerID = o.customerID; 
+ ```
 
-|Parameter	|Description	|Mandatory/Optional|
-|-|-|-|
-| MV_Identifier|	Name of the materialized view|	Mandatory |
-| CONSTRAINT  |	Keyword to define the constraint for data quality. Follows with a user defined constraint name. Constraint is at MV level  |	Optional |
-| CHECK  |	Used to enforce the condition defined based on the certain column values. 	 |Optional |
-| ON MISMATCH  |	Used to define the action to be taken if the given constraint is violated. Default behavior without this clause is FAIL action.	 | Optional  |
-| PARTITIONED BY	 | Partitions are created based on the column specified	  | Optional  |
-| TBLPROPERTIES	 | list of key-value pairs that is used to tag the table definition.  |	Optional  |
-| COMMENT | string literal to describe the table.  |Optional  |
-| AS select_statement  | Query to populate the data in the MV using select statement | 	Mandatory  |
-
-## Define a materialized view  
-
-A materialized view can be defined from any table or another materialized view within the Lakehouse. The following example illustrates the definition of a materialized view named “customers_enriched” by joining the **customers** table with the **orders** table.
+The following example defines a materialized view called "customers_enriched," partitioned by the "city" column.
 
 ```SQL
-CREATE MATERIALIZED VIEW IF NOT EXISTS silver.customers_enriched AS 
-
-SELECT 
-
-    c.customerID, 
-
-    c.customerName, 
-
-    c.contact, 
-
-    CASE  
-
-        WHEN COUNT(o.orderID) OVER (PARTITION BY c.customerID) > 0 THEN TRUE  
-
-        ELSE FALSE  
-
-    END AS has_orders 
-
-FROM bronze.customers c LEFT JOIN bronze.orders o 
-
-ON c.customerID = o.customerID; 
+    CREATE MATERIALIZED VIEW IF NOT EXISTS silver.customers_enriched 
+    COMMENT "This is a sample materialzied view" 
+    PARTITIONED BY (city)
+    SELECT 
+         c.customerID, 
+         c.customerName, 
+         c.contact, 
+         CASE  
+            WHEN COUNT(o.orderID) OVER (PARTITION BY c.customerID) > 0 THEN TRUE  
+            ELSE FALSE  
+            END AS has_orders 
+    FROM bronze.customers c LEFT JOIN bronze.orders o 
+    ON c.customerID = o.customerID; 
 ```
 
-## Define a Materialized view with Partition
+## Update a materialized view
  
-The example defines a materialized view called "customers_enriched," partitioned by the "city" column.
-
-```SQL
-CREATE MATERIALIZED VIEW IF NOT EXISTS silver.customers_enriched 
-
-COMMENT "This is sample materilzied view for testing" 
-
-PARTITIONED BY (city) 
-
-FROM bronze.customers c LEFT JOIN bronze.orders o 
-
-ON c.customerID = o.customerID; 
-```
-
-## Alter Materialized View
- 
-To update the definition of a materialized view (MV), it must be dropped and recreated. Alter statements are only supported for renaming an MV. 
- 
+To update the definition of a materialized view (MV), it must be dropped and recreated. Alter statement is only supported for renaming a materialized view. 
 
 Syntax: 
-
-`ALTER MATERIALIZED VIEW MV_Identifier RENAME TO MV_Identifier_New;`
-
+```SQL
+    ALTER MATERIALIZED VIEW MV_Identifier RENAME TO MV_Identifier_New;
+```
 Example: 
- 
+```SQL
+    ALTER MATERIALIZED VIEW customers_enriched RENAME TO customers_enriched_new;
+```
+## Get the list of materialized views 
 
-`ALTER MATERIALIZED VIEW customers_enriched RENAME TO customers_enriched_New;`
+To obtain the list of all materialized views in the lakehouse, use the following command. 
 
-## Get the list of Materialized Views 
-
-To obtain the list of all materialized views in the Lakehouse, use the following command. 
-
-Syntax 
-
-`SHOW MATERIALIZED VIEWS;`
-
-## Retrieve the CREATE Statement of a Materialized View 
+Syntax:
+```SQL
+    SHOW MATERIALIZED VIEWS <IN/FROM> Schema_Name;
+```
+Example: 
+```SQL
+    SHOW MATERIALIZED VIEWS IN silver;
+```
+## Retrieve the CREATE statement of a materialized view 
 
 To get the statement that created a materialized view, use this following command: 
 
 Syntax: 
+```SQL
+    SHOW CREATE MATERIALIZED VIEW MV_Identifier;
+```
+Example:
+```SQL
+    SHOW CREATE MATERIALIZED VIEW customers_enriched;
+```
+## Drop a materialized view 
 
-`SHOW CREATE MATERIALIZED VIEW MV_Identifier;`
-
-Example 
-
-`SHOW CREATE MATERIALIZED VIEW customers_enriched;`
-
-## Drop a Materialized View 
-
-The materialized view can be dropped using the Lakehouse object explorer delete option or by executing the following command in the notebook. 
+The materialized view can be dropped using the lakehouse object explorer delete option or by executing the following command in the notebook. 
 
 Syntax: 
+```SQL
+    DROP MATERIALIZED VIEW MV_Identifier;
+```
+Example:
+```SQL
+    DROP MATERIALIZED VIEW customers_enriched;
+```
 
-`DROP MATERIALIZED VIEW MV_Identifier;`
+## What’s Not Supported 
 
-Example 
-
-`DROP MATERIALIZED VIEW customers_enriched;`
-
- 
-
-## Limitations 
-
-* DML statements aren't supported with materialized views. 
+* DML statements aren't supported with materialized views.
+* Spark properties set at the session level aren't applied during scheduled DAG refresh.
+* The creation of materialized view with delta time-travel isn't supported.
 
 ## Next steps
 
-* [Data quality in Fabric materialized view](./data-quality.md)
-* [Refresh Fabric materialized view](./refresh-fabric-materialzed-view.md)
+* [Data quality in materialized view](./data-quality.md)
+* [Refresh a materialized view](./refresh-materialized-view.md)

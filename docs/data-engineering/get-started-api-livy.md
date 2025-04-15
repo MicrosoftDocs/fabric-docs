@@ -6,17 +6,16 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: conceptual
 ms.search.form: Get started with the Livy API for Data Engineering
-ms.date: 11/19/2024
+ms.date: 03/14/2025
 ---
 
 # Use the Livy API to submit and execute Spark jobs
 
-> [!NOTE]
-> The Livy API for Fabric Data Engineering is in preview.
-
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; authenticating with a Microsoft Entra app token; submit either batch or session jobs from a remote client to Fabric Spark compute. You'll discover the Livy API endpoint; submit jobs; and monitor the results.
+Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; authenticating with a Microsoft Entra app token; submit either batch or session jobs from a remote client to Fabric Spark compute; discover the Livy API endpoint; submit jobs; and monitor the results. The Livy API currently doesn't support Azure Service Principal (SPN).
+
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -45,13 +44,12 @@ There are many Microsoft Entra scope permissions required to execute Livy jobs. 
 * Code.AccessStorage.All
 * Item.ReadWrite.All
 * Lakehouse.Execute.All
-* Lakehouse.Read.All
 * Workspace.ReadWrite.All
 
-:::image type="content" source="media/livy-api/entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-API-permissions.png" :::
+    :::image type="content" source="media/livy-api/entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-API-permissions.png" :::
 
 > [!NOTE]
-> During public preview we will be adding a few additional granular scopes, and if you use this approach, when we add these additional scopes your Livy app will break. Please check this list as it will be updated with the additional scopes.
+> During public preview these scopes will change and we'll be adding a few more granular scopes. Changes are likely to your app as we progress thru public preview and towards GA. When these scope changes happen your Livy app may break. Check this list as it will be updated with the additional scopes.
 
 Some customers want more granular permissions than the prior list. You could remove Item.ReadWrite.All and replacing with these more granular scope permissions:
 
@@ -69,7 +67,7 @@ Some customers want more granular permissions than the prior list. You could rem
 * MLExperiment.ReadWrite.All
 * Dataset.ReadWrite.All
 
-When you've registered your application, you'll need both the Application (client) ID and the Directory (tenant) ID.
+When you register your application, you will need both the Application (client) ID and the Directory (tenant) ID.
 
 :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center.":::
 
@@ -83,13 +81,9 @@ A Lakehouse artifact is required to access the Livy endpoint. Once the Lakehouse
 
 The endpoint of the Livy API would follow this pattern:
 
-https://api.fabric.microsoft.com/v1/workspaces/<ws_id>/lakehouses/<lakehouse_id>/livyapi/versions/2023-12-01/
+<https://api.fabric.microsoft.com/v1/workspaces/><ws_id>/lakehouses/<lakehouse_id>/livyapi/versions/2023-12-01/
 
 The URL is appended with either \<sessions> or \<batches> depending on what you choose.
-
-## Integration with Fabric Environments
-
-For each Fabric workspace, a default starter pool is provisioned, the execution of all the spark code use this starter pool by default. You can use Fabric Environments to customize the Livy API Spark jobs.
 
 ## Download the Livy API Swagger files
 
@@ -104,6 +98,33 @@ Now that setup of the Livy API is complete, you can choose to submit either batc
 
 * [Submit Session jobs using the Livy API](get-started-api-livy-session.md)
 * [Submit Batch jobs using the Livy API](get-started-api-livy-batch.md)
+
+### Integration with Fabric Environments
+
+By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  
+
+To use a Fabric Environment in a Livy Spark session, simply update the json to include this payload.
+
+```python
+create_livy_session = requests.post(livy_base_url, headers=headers, json={
+    "conf" : {
+        "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID""}"}
+    }
+)
+```
+
+To use a Fabric Environment in a Livy Spark batch session, simply update the json payload as shown below.
+
+```python
+payload_data = {
+"name":"livybatchdemo_with"+ newlakehouseName,
+"file":"abfss://YourABFSPathToYourPayload.py", 
+"conf": {
+    "spark.targetLakehouse": "Fabric_LakehouseID",
+    "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
+    }
+}
+```
 
 ## How to monitor the request history
 

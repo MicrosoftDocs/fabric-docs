@@ -20,6 +20,7 @@ Review the troubleshooting section of frequently asked questions for each data s
 
 - [Troubleshoot Mirroring Azure SQL Database](azure-sql-database-troubleshoot.md) and [FAQ about Mirroring Azure SQL Database](azure-sql-database-mirroring-faq.yml)
 - [Troubleshoot Mirroring Azure SQL Managed Instance](azure-sql-managed-instance-troubleshoot.md) and [FAQ about Mirroring Azure SQL Managed Instance](azure-sql-managed-instance-faq.yml)
+- [Troubleshoot Mirroring Azure Database for PostgreSQL flexible server](azure-database-postgresql-troubleshoot.md) and [FAQ about Mirroring Azure Database for PostgreSQL flexible server](azure-database-postgresql-mirroring-faq.yml)
 - [Troubleshoot Mirroring Azure Cosmos DB](azure-cosmos-db-troubleshooting.yml) and [FAQ about Mirroring Azure Cosmos DB](azure-cosmos-db-faq.yml)
 - [Troubleshoot Mirroring Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
 - [FAQ about Mirroring Azure Databricks](azure-databricks-faq.yml)
@@ -29,6 +30,7 @@ Review limitations documentation for each data source:
 
 - [Limitations in Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](azure-sql-managed-instance-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (Preview)](azure-database-postgresql-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Snowflake](snowflake-limitations.md)
@@ -39,7 +41,7 @@ Review limitations documentation for each data source:
 | Scenario                      | Description                                                  |
 | ----------------------------- | ------------------------------------------------------------ |
 | Fabric capacity paused        | Mirroring is stopped and you cannot list or access the mirrored database item. Resume or reassign the capacity to your workspace. |
-| Fabric capacity resumed       | **Known limitation:** When capacity is resumed from a paused state, the mirrored database status appears as Running, but mirroring doesn’t start automatically. As a result, changes made in the source are not replicated to OneLake.<br>To resume mirroring, go to the mirrored database in the Fabric portal, select **Configure replication**, and click **Apply change**. Mirroring will continue from where it was paused. <br>Note if the capacity is paused for a long time, mirroring may not resume from its stopping point and will reseed data from the beginning. For example, this can occur if the transaction log for the database is full. |
+| Fabric capacity resumed       | **Known limitation:** When capacity is resumed from a paused state, the mirrored database status appears as Running, but mirroring doesn't start automatically. As a result, changes made in the source are not replicated to OneLake.<br>To resume mirroring, go to the mirrored database in the Fabric portal, select **Configure replication**, and click **Apply change**. Mirroring will continue from where it was paused. <br>Note if the capacity is paused for a long time, mirroring may not resume from its stopping point and will reseed data from the beginning. For example, this can occur if the transaction log for the database is full. |
 | Fabric capacity scaling       | Mirroring continues. If you scale down the capacity, be aware that the OneLake storage for the mirrored data is free up to a limit based on the capacity size, thus scaling down the capacity may incur additional storage charge. Learn more from [Cost of mirroring](overview.md#cost-of-mirroring). |
 | Fabric capacity throttled     | Wait until the overload state is over or update your capacity. Mirroring will continue once the capacity is restored. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling.md#actions-you-can-take-to-recover-from-overload-situations). |
 | Fabric trial capacity expired | Mirroring is stopped. To retain your mirrored database, purchase Fabric capacity. Learn more from [Fabric trial capacity expires](../../fundamentals/fabric-trial.md#the-trial-expires). |
@@ -68,7 +70,7 @@ Currently, mirrored database doesn't support ownership change. If a mirrored dat
 
 ## Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Troubleshoot
 

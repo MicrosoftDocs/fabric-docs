@@ -1,12 +1,11 @@
 ---
-title: Ingest data into your Warehouse using Transact-SQL
+title: Ingest Data into Your Warehouse Using Transact-SQL
 description: Follow steps to ingest data into a Warehouse table using Transact-SQL
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha, jovanpop
-ms.date: 02/10/2025
+ms.date: 04/06/2025
 ms.topic: how-to
-ms.custom:
 ms.search.form: Ingesting data
 ---
 
@@ -25,7 +24,7 @@ The `CREATE TABLE AS SELECT` (CTAS) statement allows you to create a new table i
 You can use the following options for the `SELECT` part of CTAS statement:
 - Reading a warehouse table, such as a staging table.
 - Reading a Lakehouse table auto-generated via SQL analytics endpoint for Lakehouse.
-- Reading data directly from external file using the `OPENROWSET` function (preview).
+- Reading data directly from external file using the `OPENROWSET` function.
 
 > [!NOTE]
 > The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
@@ -40,7 +39,7 @@ FROM [dbo].[bing_covid-19_data]
 WHERE DATEPART(YEAR,[updated]) = '2023';
 ```
 
-Instead of reading data from the staging `[bing_covid-19_data]` table, you can also create a new table directly from an external file using the `OPENROWSET` function (public preview):
+Instead of reading data from the staging `[bing_covid-19_data]` table, you can also create a new table directly from an external file using the `OPENROWSET` function:
 
 ```sql
 CREATE TABLE [dbo].[bing_covid-19_data_2022]
@@ -98,7 +97,9 @@ ORDER BY [confirmed_sum] DESC;
 
 For more examples and syntax reference, see [CREATE TABLE AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true).
 
-## <a id="ingesting-data-into-existing-tables-with-t-sql-queries"></a> Ingest data into existing tables with T-SQL queries
+<a id="ingesting-data-into-existing-tables-with-t-sql-queries"></a>
+
+## Ingest data into existing tables with T-SQL queries
 
 The previous examples create new tables based on the result of a query. To replicate the examples but on existing tables, the **INSERT...SELECT** pattern can be used. For example, the following code ingests new data into an existing table:
 
@@ -110,7 +111,9 @@ WHERE [updated] > '2023-02-28';
 
 The query criteria for the `SELECT` statement can be any valid query, as long as the resulting query column types align with the columns on the destination table. If column names are specified and include only a subset of the columns from the destination table, all other columns are loaded as `NULL`. For more information, see [Using INSERT INTO...SELECT to Bulk Import data with minimal logging and parallelism](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true#using-insert-intoselect-to-bulk-import-data-with-minimal-logging-and-parallelism).
 
-## <a id="ingesting-data-from-tables-on-different-warehouses-and-lakehouses"></a> Ingest data from tables on different warehouses and lakehouses
+<a id="ingesting-data-from-tables-on-different-warehouses-and-lakehouses"></a>
+
+## Ingest data from tables on different warehouses and lakehouses
 
 For both **CREATE TABLE AS SELECT** and **INSERT...SELECT**, the `SELECT` statement can also reference tables on warehouses that are different from the warehouse where your destination table is stored, by using **cross-warehouse queries**. This can be achieved by using the three-part naming convention `[warehouse_or_lakehouse_name.][schema_name.]table_name`. For example, suppose you have the following workspace assets:
 

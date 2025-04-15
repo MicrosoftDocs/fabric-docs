@@ -1,12 +1,11 @@
 ---
-title: Smoothing and throttling
+title: Smoothing and Throttling
 description: Learn about smoothing and throttling principles applicable for Microsoft Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
 ms.date: 10/07/2024
 ms.topic: conceptual
-ms.custom:
 ---
 
 # Smoothing and throttling in Fabric Data Warehouse
@@ -46,7 +45,7 @@ Most [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](inc
 - Warehouse operations are *background* except for scenarios that involves Modeling operations (such as creating a measure, adding or removing tables from a default semantic model, visualize results, etc.) or creating/updating Power BI semantic models (including a default semantic model) or reports. These operations continue to follow "Interactive Rejection" policy.
 - Just like most **Warehouse** operations, dynamic management views (DMVs) are also classified as *background* and covered by the "Background Rejection" policy. As a result, DMVs cannot be queried when capacity is throttled. Even though DMVs are not available, capacity admins can go to [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) to understand the root cause.
 - When the ["Background Rejection" policy](../enterprise/throttling.md#future-smoothed-consumption) is enabled, any activity on [the SQL query editor](sql-query-editor.md), [visual query editor](visual-query-editor.md), or modeling view, might see the error message: `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
-- When the "Background Rejection" policy is enabled, if you attempt to connect to a warehouse or run a new TSQL query in client applications like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) via SQL connection string, you might see SQL error code 24801 and the error text `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
+- When the "Background Rejection" policy is enabled, if you attempt to connect to a warehouse or run a new TSQL query in client applications like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true) via SQL connection string, you might see SQL error code 24801 and the error text `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
 
 ## Best practices to recover from overload situations
 

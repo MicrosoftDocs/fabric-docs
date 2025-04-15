@@ -17,6 +17,8 @@ In this article, you learn how to create an S3 compatible shortcut inside a Fabr
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
+S3 compatible shortcuts can take advantage of file caching to reduce egress costs associated with cross-cloud data access. For more information, see [OneLake shortcuts > Caching](onelake-shortcuts.md#caching).
+
 ## Prerequisites
 
 - If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).

@@ -1,7 +1,7 @@
 ---
 title: Known issue - Tenant migration requests stopped
 description: A known issue is posted where tenant migration requests are stopped.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/18/2025

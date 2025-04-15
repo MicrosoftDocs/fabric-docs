@@ -1,12 +1,11 @@
 ---
-title: "Data warehouse tutorial: Clone a table with T-SQL in a Warehouse"
+title: "Data Warehouse Tutorial: Clone a Table with T-SQL in Warehouse"
 description: "In this tutorial, learn how to clone a table with T-SQL."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl, prlangad
-ms.date: 12/29/2024
+ms.date: 04/06/2025
 ms.topic: tutorial
-ms.custom:
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 
@@ -38,7 +37,7 @@ In this task, learn how to clone a table within the same schema in the warehouse
 
 1. In the `Wide World Importers` warehouse, on the **Home** ribbon, select **New SQL query**.
 
-   :::image type="content" source="media/tutorial-clone-table/ribbon-new-sql-query.png" alt-text="Screenshot of the New SQL query option on the ribbon." border="false":::
+   :::image type="content" source="media/tutorial-clone-table/ribbon-new-sql-query.png" alt-text="Screenshot of the New SQL query option on the ribbon." lightbox="media/tutorial-clone-table/ribbon-new-sql-query.png":::
 
 1. In the query editor, paste the following code. The code creates a clone of the `dimension_city` table and the `fact_sale` table.
 
@@ -52,11 +51,11 @@ In this task, learn how to clone a table within the same schema in the warehouse
 
 1. To execute the query, on the query designer ribbon, select **Run**.
 
-   :::image type="content" source="media/tutorial-clone-table/run-to-execute.png" alt-text="Screenshot of the Run option on the query editor ribbon." border="false":::
+   :::image type="content" source="media/tutorial-clone-table/run-to-execute.png" alt-text="Screenshot of the Run option on the query editor ribbon.":::
 
 1. When the execution completes, to preview the loaded data, in the **Explorer** pane, select `dimension_city1`.
 
-   :::image type="content" source="media/tutorial-clone-table/explorer-select-table.png" alt-text="Screenshot of the Explorer pane, highlighting the dimension city 1 table." border="false":::
+   :::image type="content" source="media/tutorial-clone-table/explorer-select-table.png" alt-text="Screenshot of the Explorer pane, highlighting the dimension city 1 table.":::
 
 1. To create a table clone as of a _past point in time_, in the query editor, paste the following code **to replace the existing statements**. The code creates a clone of the `dimension_city` table and the `fact_sale` table at a certain point in time.
 
@@ -83,7 +82,7 @@ In this task, learn how to clone a table across schemas within the same warehous
 
 1. To create a new query, on the **Home** ribbon, select **New SQL query**.
 
-1. In the query editor, paste the following code. The code creates a schema, and then create a clone of the `fact_sale` table and the `dimension_city` table in the new schema.
+1. In the query editor, paste the following code. The code creates a schema, and then creates a clone of the `fact_sale` table and the `dimension_city` table in the new schema.
 
    ```sql
     --Create a new schema within the warehouse named dbo1.
@@ -101,7 +100,7 @@ In this task, learn how to clone a table across schemas within the same warehous
 
 1. When execution completes, preview the data loaded into the `dimension_city1` table in the `dbo1` schema.
 
-1. To create table clones as of a _previous point in time_, in the query editor, paste the following code **to replace the existing statements**. The code create a clone of the `dimension_city` table and the `fact_sale` table at certain points in time in the new schema.
+1. To create table clones as of a _previous point in time_, in the query editor, paste the following code **to replace the existing statements**. The code creates a clone of the `dimension_city` table and the `fact_sale` table at certain points in time in the new schema.
 
     ```sql
     --Create a clone of the dbo.dimension_city table in the dbo1 schema.
