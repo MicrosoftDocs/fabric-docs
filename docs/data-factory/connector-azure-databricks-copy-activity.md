@@ -61,6 +61,34 @@ Under **Advanced**, you can specify the following fields:
 
 - **Timestamp format**: Format timestamp type to string with a timestamp format. Custom date formats follow the formats at [datetime pattern](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). If not specified, it uses the default value `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]`.
 
+#### Direct copy from Azure Databricks
+
+If your destination data store and format meet the criteria described in this section, you can use the Copy activity to directly copy from Azure Databricks to destination. The service checks the settings and fails the Copy activity run if the following criteria is not met:
+
+- The **destination connection** is [Azure Blob storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md). The account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](connector-azure-databricks.md#prerequisites).
+
+- The **destination data format** is of **Parquet**, **DelimitedText**, or **Avro** with the following configurations, and points to a folder instead of file.
+
+    - For **Parquet** format, the compression codec is **None**, **snappy**, or **gzip**.
+    - For **DelimitedText** format:
+        - `rowDelimiter` is any single character.
+        - `compression` can be **None**, **bzip2**, **gzip**.
+        - `encodingName` UTF-7 is not supported.
+    - For **Avro** format, the compression codec is **None**, **deflate**, or **snappy**.
+
+- In the Copy activity source, `additionalColumns` is not specified.
+- If copying data to DelimitedText, in copy activity sink, `fileExtension` need to be ".csv".
+- In the Copy activity mapping, type conversion is not enabled.
+
+#### Staged copy from Azure Databricks
+
+When your sink data store or format does not match the direct copy criteria, as mentioned in the last section, enable the built-in staged copy using an interim Azure storage instance. The staged copy feature also provides you better throughput. The service exports data from Azure Databricks into staging storage, then copies the data to sink, and finally cleans up your temporary data from the staging storage. See [Staged copy](copy-activity-performance-features.md#staged-copy) for details about copying data by using staging.
+
+To use this feature, create an [Azure Blob storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md) that refers to the storage account as the interim staging. Then specify the `enableStaging` and `stagingSettings` properties in the Copy activity.
+
+>[!NOTE]
+>The staging storage account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](connector-azure-databricks.md#prerequisites).
+
 ## Destination
 
 The following properties are supported for Azure Databricks under the **Destination** tab of a copy activity.
@@ -82,6 +110,38 @@ Under **Advanced**, you can specify the following fields:
 - **Pre-copy script**:  Specify a script for Copy Activity to execute before writing data into destination table in each run. You can use this property to clean up the pre-loaded data.
 
 - **Timestamp format**: Format timestamp type to string with a timestamp format. Custom date formats follow the formats at [datetime pattern](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). If not specified, it uses the default value `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]`.
+
+#### Direct copy to Azure Databricks
+
+If your source data store and format meet the criteria described in this section, you can use the Copy activity to directly copy from source to Azure Databricks. The service checks the settings and fails the Copy activity run if the following criteria is not met:
+
+- The **source connection** is [Azure Blob storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md). The account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](connector-azure-databricks.md#prerequisites).
+
+- The **source data format** is of **Parquet**, **DelimitedText**, or **Avro** with the following configurations, and points to a folder instead of file.
+
+    - For **Parquet** format, the compression codec is **None**, **snappy**, or **gzip**.
+    - For **DelimitedText** format:
+        - `rowDelimiter` is default, or any single character.
+        - `compression` can be **None**, **bzip2**, **gzip**.
+        - `encodingName` UTF-7 is not supported.
+    - For **Avro** format, the compression codec is **None**, **deflate**, or **snappy**.
+
+- In the Copy activity source: 
+
+    - `wildcardFileName` only contains wildcard `*` but not `?`, and `wildcardFolderName` is not specified.
+    - `prefix`, `modifiedDateTimeStart`, `modifiedDateTimeEnd`, and `enablePartitionDiscovery` are not specified.
+    - `additionalColumns` is not specified.
+
+- In the Copy activity mapping, type conversion is not enabled.
+
+#### Staged copy to Azure Databricks
+
+When your source data store or format does not match the direct copy criteria, as mentioned in the last section, enable the built-in staged copy using an interim Azure storage instance. The staged copy feature also provides you better throughput. The service automatically converts the data to meet the data format requirements into staging storage, then load data into Azure Databricks from there. Finally, it cleans up your temporary data from the storage. See [Staged copy](copy-activity-performance-features.md#staged-copy) for details about copying data using staging.
+
+To use this feature, create an [Azure Blob storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md) that refers to the storage account as the interim staging. Then specify the `enableStaging` and `stagingSettings` properties in the Copy activity.
+
+>[!NOTE]
+>The staging storage account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](connector-azure-databricks.md#prerequisites).
 
 ### Mapping
 
