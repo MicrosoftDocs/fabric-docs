@@ -12,7 +12,7 @@ ms.topic: tutorial
 
 In this tutorial, you'll configure a Fabric mirrored database from Snowflake.
 
-In this example, you will learn how to configure a secure connection to your Snowflake data source(s) along with other helpful information to get you acquainted with and proficient with the concepts of Mirroring in Microsoft Fabric.
+In this example, you'll learn how to configure a secure connection to your Snowflake data source(s) along with other helpful information to get you acquainted with and proficient with the concepts of Mirroring in Microsoft Fabric.
 
 > [!NOTE]
 > While this example is specific to Snowflake, you can find detailed steps to configure Mirroring for other data sources, like Azure SQL Database or Azure Cosmos DB. For more information, see [What is Mirroring in Fabric?](overview.md)
@@ -21,13 +21,13 @@ In this example, you will learn how to configure a secure connection to your Sno
 
 - Create or use an existing Snowflake warehouse. You can connect to any version of Snowflake instance in any cloud, including Microsoft Azure.
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-- You will need user permissions for your Snowflake database that contains the following permissions. For more information, see Snowflake documentation on [Access Control Privileges for Streaming tables](https://docs.snowflake.com/user-guide/security-access-control-privileges#stream-privileges) and [Required Permissions for Streams](https://docs.snowflake.com/user-guide/streams-intro#required-access-privileges).
+- You'll need user permissions for your Snowflake database that contains the following permissions. For more information, see Snowflake documentation on [Access Control Privileges for Streaming tables](https://docs.snowflake.com/user-guide/security-access-control-privileges#stream-privileges) and [Required Permissions for Streams](https://docs.snowflake.com/user-guide/streams-intro#required-access-privileges).
   - `CREATE STREAM`
   - `SELECT table`
   - `SHOW tables`
   - `DESCRIBE tables`
 - The user needs to have at least one role assigned that allows access to the Snowflake instance.
-- Check your networking requirements for Fabric to access your Snowflake data source: If your Snowflake data source is not publicly accessible and is within a private network, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Snowflake instance via a private endpoint or is allowed by the firewall rule.
+- Check your networking requirements for Fabric to access your Snowflake data source: If your Snowflake data source isn't publicly accessible and is within a private network, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Snowflake instance via a private endpoint or is allowed by the firewall rule.
 
 ## Create a mirrored database
 
