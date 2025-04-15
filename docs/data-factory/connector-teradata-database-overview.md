@@ -18,7 +18,7 @@ The Teradata database connector is supported in Data Factory for [!INCLUDE [prod
 
 For information on how to connect to a Teradata database in Dataflow Gen2, go to [Set up your Teradata database connection](connector-teradata-database.md).
 
-## Support in data pipelines
+## Support in data pipelines (Preview)
 
 The Teradata database connector supports the following capabilities in data pipelines:
 
