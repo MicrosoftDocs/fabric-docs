@@ -5,7 +5,7 @@ ms.topic: how-to
 author: apurbasroy
 ms.author: apsinhar
 ms.reviewer: nijelsf
-ms.date: 03/26/2025
+ms.date: 04/15/2025
 ---
 
 # Run history of materialized views
@@ -16,10 +16,24 @@ views status and node details with details for monitoring and troubleshooting.
 
 :::image type="content" source="./media/materialized-view-run-history/view-past-runs.png" alt-text="Screenshot showing a view of the past runs." border="true" lightbox="./media/materialized-view-run-history/view-past-runs.png":::
 
+
+
 If the user clicks on **View more past runs**, they are able to see the last 25 runs for the DAG or the runs in the last 
 seven days whichever comes first.
 
 :::image type="content" source="./media/materialized-view-run-history/view-all-past-runs.png" alt-text="Screenshot showing a view of the past twenty five runs." border="true" lightbox="./media/materialized-view-run-history/view-all-past-runs.png":::
+
+## The following states can be displayed in  a DAG view:
+
+* **Completed**- When all the nodes run successfully, the DAG run is in **Completed** state.
+
+* **Failed**- When any one of the node fails, the DAG run is in **Failed** state. When the node is in Failed state the child node is shown in a Skipped state.
+
+* **Skipped**- When the previous run is still ongoing, the current schedule will be skipped that the DAG run is in **Skipped** state.
+
+* **In Progress**- When the run has just started, the DAG run is in **In Progress** state.
+
+* **Cancelled**- When the run has been manually cancelled by the user from monitoring hub, the DAG run is in **Cancelled** state.
 
 ## Completed Materialized view DAG UI
 
@@ -41,4 +55,8 @@ In this case, the run is in skipped status since the previous schedule is still 
 :::image type="content" source="./media/materialized-view-run-history/skipped-runs.png" alt-text="Screenshot showing a view of a skipped DAG run." border="true" lightbox="./media/materialized-view-run-history/skipped-runs.png":::
 
 
+
+## Next step
+
+* [Microsoft Fabric materialized views tutorial](./tutorial.md)
 
