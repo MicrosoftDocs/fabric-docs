@@ -22,7 +22,7 @@ To get started, you must complete the following prerequisites:
 - Enable Apache Airflow Job in your Tenant.
 
   > [!NOTE]
-  > Since Apache Airflow job is in preview, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it. Additionally, make sure Apache Airflow job is available in the capacity region you are using for your workspace. For more information, see [available capacity regions](../data-factory/apache-airflow-jobs-concepts.md#region-availability-public-preview).
+  > Make sure Apache Airflow job is available in the capacity region you are using for your workspace. For more information, see [available capacity regions](../data-factory/apache-airflow-jobs-concepts.md#region-availability).
 
   1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Job (preview)' section.
   2. Select Apply.
