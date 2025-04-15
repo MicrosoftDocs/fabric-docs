@@ -15,9 +15,9 @@ Scheduling the DAG runs is an option provided to the users to decide how frequen
 ## Determining the Schedule
 
 The schedule for running the DAG depends on various factors, such as:
-* Data update frequency: How often does the source data change?
-* Query performance requirements: How fresh does the data in the materialized view need to be?
-*	System load: What is the optimal time to run the DAG without overloading the system?
+* Data update frequency: The frequency of the data is updated.
+* Query performance requirements: Business requirement to refresh the data in set frequent intervals.
+*	System load: Optimizing the time to run the DAG without overloading the system
 
 ## Implementing the Schedule
 
