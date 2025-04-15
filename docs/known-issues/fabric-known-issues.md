@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 04/11/2025
+ms.date: 04/15/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,10 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1102  | Data Engineering | [Deletion of managed private endpoint connected to Key Vault doesn't work](./known-issue-1102-deletion-private-endpoint-connected-key-vault-not-work.md) | April 15, 2025 |
+|  1101  | Power BI | [Vertica connector throws invalid conversion error](./known-issue-1101-vertica-connector-throws-invalid-conversion-error.md) | April 15, 2025 |
+|  1100  | Power BI | [Snowflake Implementation="2.0" connector doesn't display views](./known-issue-1100-snowflake-implementation-connector-not-display-views.md) | April 15, 2025 |
+|  1097  | Power BI | [Azure map zooms out automatically even with auto zoom turned off](./known-issue-1097-azure-map-zooms-out-auto-zoom-turned-off.md) | April 15, 2025 |
 |  1092  | Data Factory | [Delayed data availability in SQL analytics endpoint when using a pipeline](./known-issue-1092-delayed-data-availability-analytics-endpoint-pipeline.md) | April 11, 2025 |
 |  1091  | Power BI | [New card visual conditional formatting rules don't work](./known-issue-1091-new-card-visual-conditional-formatting-rules-not-work.md) | April 10, 2025 |
 |  1090  | Data Engineering | [PyPI packages in User data functions don't show in Library Management](./known-issue-1090-pypi-packages-functions-not-show-library-management.md) | April 9, 2025 |
@@ -33,7 +37,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1077  | Power BI | [Failure to scale AAS server or add admins through Azure portal](./known-issue-1077-failure-scale-azure-analysis-services-add-admins.md) | March 31, 2025 |
 |  1076  | Real-Time Intelligence | [Eventstream sample data sources created from Real-Time hub are inactive](./known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md) | March 31, 2025 |
 |  1075  | Data Factory | [Multitasking for Dataflow Gen2 with CI/CD was inadvertently enabled](./known-issue-1075-multitasking-dataflow-gen2-ci-cd-enabled.md) | March 31, 2025 |
-|  1067  | Data Engineering | [Environment REST API updates might cause your workflow to break](./known-issue-1067-environment-rest-api-updates-workflow-break.md) | March 26, 2025 |
 |  1025  | Data Engineering | [Environment Git integration imports for libraries don't work](./known-issue-1025-environment-git-integration-imports-libraries-not-work.md) | March 26, 2025 |
 |  1069  | Data Warehouse | [SQL analytics endpoint sync failure when columnMapping is enabled](./known-issue-1069-sql-analytics-endpoint-sync-failure-column-mapping-enabled.md) | March 24, 2025 |
 |  1061  | Power BI | [Issues publishing or importing reports in Pro workspaces](./known-issue-1061-issues-publishing-importing-reports-pro-workspaces.md) | March 21, 2025 |
@@ -64,17 +67,13 @@ Select the **Title** to view more information about that specific known issue.
 |  974  | Real-Time Intelligence | [Show table command in KQL Queryset editor fails](./known-issue-974-show-table-kql-queryset-editor-fails.md) | January 6, 2025 |
 |  965  | Databases | [SQL database creation fails to create child items when item with same name exists](./known-issue-965-sql-database-creation-fails-create-child-items-same-name.md) | December 10, 2024 |
 |  954  | Data Factory | [Create, configure, or delete a mirror fails](./known-issue-954-create-configure-delete-mirror-fails.md) | December 2, 2024 |
-|  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](./known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 |
-|  923  | Power BI | [Tenant migration requests stopped](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 |
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](./known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
 |  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](./known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
 |  894  | Data Engineering | [Pipeline fails when getting a token to connect to Kusto](./known-issue-894-pipeline-fails-getting-token-connect-kusto.md) | October 25, 2024 |
 |  893  | Power BI | [Can't connect to semantic model from Excel or use Analyze in Excel](./known-issue-893-not-connect-semantic-model-analyze-excel.md) | October 23, 2024 |
-|  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](./known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 |
 |  878  | Power BI | [Premium capacity doesn't add excess usage into carry forward](./known-issue-878-premium-capacity-not-add-usage-carry-forward.md) | October 10, 2024 |
 |  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](./known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 |
 |  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](./known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
-|  837  | Data Engineering | [Monitoring hub displays incorrect queued duration](./known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md) | September 17, 2024 |
 |  835  | Data Engineering | [Managed private endpoint connection could fail](./known-issue-835-managed-private-endpoint-connection-fail.md) | September 13, 2024 |
 |  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](./known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 |
 |  816  | Data Factory | [Pipeline deployment fails when parent contains deactivated activity](./known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md) | August 23, 2024 |
@@ -97,6 +96,11 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1067  | Data Engineering | [Environment REST API updates might cause your workflow to break](./known-issue-1067-environment-rest-api-updates-workflow-break.md) | March 26, 2025 | Fixed: April 15, 2025 |
+|  923  | Power BI | [Tenant migration requests stopped](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 | Closed: April 15, 2025 |
+|  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](./known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 | Fixed: April 15, 2025 |
+|  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](./known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 | Fixed: April 15, 2025 |
+|  837  | Data Engineering | [Monitoring hub displays incorrect queued duration](./known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md) | September 17, 2024 | Fixed: April 15, 2025 |
 |  979  | Databases | [SQL databases not available with private link through January 2025](./known-issue-979-sql-databases-not-available-private-link.md) | January 6, 2025 | Fixed: April 11, 2025 |
 |  1047  | Data Science | [Data Agent creation fails when tenant settings restricted to security groups](./known-issue-1047-ai-skill-creation-fails-tenant-settings-restricted-security-groups.md) | March 5, 2025 | Fixed: April 10, 2025 |
 |  1062  | Administration & Management | [Workspace identity tagged as preview for ADLS Gen2 connections](./known-issue-1062-workspace-identity-tagged-preview-adls-gen2-connections.md) | March 21, 2025 | Fixed: April 9, 2025 |
@@ -125,7 +129,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  940  | Data Factory | [Pipeline copy data to Kusto using an on-premises data gateway doesn't work](./known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md) | November 22, 2024 | Fixed: March 12, 2025 |
 |  1046  | Power BI | [Custom visuals using dialog or download API don't work in February Desktop](./known-issue-1046-custom-visuals-dialog-api-not-work-desktop.md) | March 5, 2025 | Fixed: March 10, 2025 |
 |  950  | Power BI | [Incorrect column names after column format or aggregation change](./known-issue-950-incorrect-column-names-column-format-aggregation-change.md) | December 2, 2024 | Fixed: March 5, 2025 |
-|  1011  | Power BI | [Models with specific gateway configuration might experience refresh issues](./known-issue-1011-models-specific-gateway-configuration-refresh-issues.md) | January 29, 2025 | Fixed: February 25, 2025 |
 
 ## Related content
 
