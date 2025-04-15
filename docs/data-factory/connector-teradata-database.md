@@ -1,5 +1,5 @@
 ---
-title: Set up your Teradata database connection (Preview)
+title: Set up your Teradata database connection
 description: This article provides information about how to create a Teradata database connection in Microsoft Fabric.
 author: DougKlopfenstein
 ms.author: dougklo
@@ -9,7 +9,7 @@ ms.custom:
   - template-how-to
 ---
 
-# Set up your Teradata database connection (Preview)
+# Set up your Teradata database connection
 
 This article outlines the steps to create a Teradata database connection.
 
