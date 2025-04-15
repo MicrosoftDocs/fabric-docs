@@ -55,7 +55,7 @@ You can use an existing workspace (not My Workspace) or create a new workspace.
     | **Warehouse** | From the **Warehouses** section from the resource menu in Snowflake, select **Warehouses**. The warehouse is the Snowflake Warehouse (Compute) and not the database.|
     | **Connection** | Create new connection. |
     | **Connection name** | Should be automatically filled out. Change it to a name that you would like to use. |
-    | **Data Gateway** | Select the default (None) or the name of virtual network data gateway / on-prem data gateway you set up according to your scenario. |
+    | **Data Gateway** | Select the default (None) or the name of virtual network data gateway / on-premises data gateway you set up according to your scenario. |
     | **Authentication kind** | Snowflake |
     | **Username** | Your Snowflake username that you created to sign into Snowflake.com. |
     | **Password** | Your Snowflake password that you created when you created your login information into Snowflake.com. |
