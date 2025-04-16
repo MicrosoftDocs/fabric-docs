@@ -48,6 +48,10 @@ Private libraries refer to code built by you or your organization. User data fun
 
 :::image type="content" source="..\..\media\user-data-functions-manage-libraries\add-private-library.png" alt-text="Screenshot showing how to add-private-library" lightbox="..\..\media\user-data-functions-manage-libraries\add-private-library.png":::
 
+### Limitations of private libraries 
+1. The `.whl` file size must be less than 30MB.
+2. The `.whl` file must be OS agnostic. If the file is specific to an operating system for example `numpy-2.2.2-cp311-cp311-linux_armv6l.whl`, it will fail to upload. 
+
 ## Next steps
 Learn how to reference these libraries in your function's code. You can also learn how to view your logs after running a Fabric Data Function.
 
