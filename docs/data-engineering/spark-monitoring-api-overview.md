@@ -18,8 +18,8 @@ This section provides documentation on monitoring APIs used to retrieve key info
 | ----------------  | ----------------------------------------------------- |
 | [Open-source APIs](../data-engineering/open-source-apis.md) | Aligned with Spark History Server open-source APIs to retrieve Spark metrics.|
 | [Livy Log](../data-engineering/livy-log.md) | Retrieve Spark Livy Logs. |
+| [Driver Log](../data-engineering/driver-log.md) | Retrieve Spark Driver logs. |
 | [Executor Log](../data-engineering/executor-log.md) | Retrieve Spark Executor Logs. |
-| [Driver Log](../data-engineering/driver-log.md) | Retrieve Spark Driver logs.  |
 
 
 

@@ -215,10 +215,10 @@ items:
             href: open-source-apis.md
           - name: Livy log APIs
             href: livy-log.md
-          - name: Executor log APIs
-            href: executor-log.md
           - name: Driver log APIs
             href: driver-log.md
+          - name: Executor log APIs
+            href: executor-log.md
       - name: Collecting Spark Logs & Metrics
         items: 
           - name: Collect Logs & Metrics with Azure Log Analytics
