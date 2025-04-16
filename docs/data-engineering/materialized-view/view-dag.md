@@ -5,7 +5,7 @@ ms.author: apsinhar
 author: apurbasroy
 ms.reviewer: nijelsf
 ms.topic: tutorial
-ms.date: 03/21/2025
+ms.date: 04/17/2025
 ---
 
 # Manage Fabric materialized view DAG
@@ -60,3 +60,4 @@ The DAG UI also has the following functionalities:
 
   ## Next steps
   
+  * [Microsoft Fabric materialized views tutorial](./tutorial.md)
