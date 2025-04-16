@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 04/15/2025
 ---
 
-# What is materialized view in lakehouse in Microsoft Fabric
+# What is materialized view in lakehouse in Microsoft Fabric?
 
 Materialized views in Microsoft Fabric are designed to simplify the implementation of the Medallion architecture. These views allow for creation, scheduling, and scheduled execution of materialized views, optimizing data transformations through a declarative approach. 
 
