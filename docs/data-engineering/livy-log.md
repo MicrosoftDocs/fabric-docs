@@ -121,7 +121,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a8
 ## Definitions
 *FileMeta* 
 
-<span class="grey-text">Object</span>
+<span style="color: grey;">Object</span>
 
 Metadata of a log file
 
