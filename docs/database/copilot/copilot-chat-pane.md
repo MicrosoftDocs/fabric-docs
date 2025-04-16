@@ -10,11 +10,11 @@ ms.collection:
   - ce-skilling-ai-copilot
 ---
 
-# How to use the Copilot chat pane in Fabric in SQL database (Preview)
+# How to use the Copilot chat pane Fabric in the SQL database workload (Preview)
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-Copilot in Fabric in SQL database includes a chat pane to interact with Copilot in natural language. In this interface, you can ask Copilot questions specific to your database or generally about SQL database. Depending on the question, Copilot responds with a generated SQL query or a natural language response.
+Copilot in Fabric in the SQL database workload includes a chat pane to interact with Copilot in natural language. In this interface, you can ask Copilot questions specific to your database or generally about SQL database. Depending on the question, Copilot responds with a generated SQL query or a natural language response.
 
 Since Copilot is schema aware and contextualized, you can generate queries tailored to your database.
 

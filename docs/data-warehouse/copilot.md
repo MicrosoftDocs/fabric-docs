@@ -12,11 +12,11 @@ ms.custom:
   - copilot-learning-hub
 ---
 
-# What is Copilot in Fabric in Data Warehouse (Preview)?
+# What is Copilot in Fabric in the Data Warehouse workload (Preview)?
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Copilot in Fabric in Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Copilot integrates seamlessly with your data warehouse in Fabric, providing intelligent insights to help you along each step of the way in your T-SQL explorations.
+Copilot in Fabric in the Data Warehouse workload is an AI assistant designed to streamline your data warehousing tasks. Copilot integrates seamlessly with your data warehouse in Fabric, providing intelligent insights to help you along each step of the way in your T-SQL explorations.
 
 Copilot in Fabric Data Warehouse utilizes table and view names, column names, primary key, and foreign key metadata to generate T-SQL code. Copilot in Microsoft Fabric in Data Warehouse doesn't use data in tables to generate T-SQL suggestions.
 
