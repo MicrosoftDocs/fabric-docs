@@ -4,7 +4,7 @@ description: A known issue is posted where the default environment's resources f
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 11/12/2024
+ms.date: 04/15/2025
 ms.custom: known-issue-922
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-922
 
 Each Fabric environment item provides a resources folder. When a notebook attaches to an environment, you can read and write files from and to this folder. When you select an environment as workspace default and the notebook uses the workspace default, the resources folder of the default environment doesn't work.
 
-**Status:** Open
+**Status:** Fixed: April 15, 2025
 
 **Product Experience:** Data Engineering
 
