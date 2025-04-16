@@ -38,7 +38,7 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 | Pause and Resume TTL (Time to live)                                                               | Yes                      | No                                    |
 | SaaSified Experience - 10 secs to get started - Authoring DAGs - Fabric Free Trial | Yes                      | No                                    |
 
-## Region availability (public preview)
+## Region availability 
 
 - Australia East
 - Australia Southeast
@@ -65,14 +65,14 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 
 ## Supported Apache Airflow versions
 
-- 2.6.3
+- 2.10.5
 
 ## Support Python version
 
-- 3.8.17
+- 3.12
 
 > [!NOTE]
-> Changing the Apache Airflow version within an existing IR is not supported. Instead, the recommended solution is to create a new Airflow IR with the desired version
+> Changing the Apache Airflow version within an existing Apache Airflow job is not supported. Instead, the recommended solution is to create a new Apache Airflow job with the desired version
 
 ## Related Content
 

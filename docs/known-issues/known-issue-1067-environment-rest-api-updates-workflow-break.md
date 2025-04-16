@@ -4,7 +4,7 @@ description: A known issue is posted where environment REST API updates might ca
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/26/2025
+ms.date: 04/15/2025
 ms.custom: known-issue-1067
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1067
 
 We're releasing a new version for the environment REST APIs on April 6, 2025. This release introduces several new APIs, removes several APIs, and updates request and response contracts for existing APIs. The APIs to be removed are supported through June 30, 2025. The existing API contract updates to the contracts might break your current workflows.
 
-**Status:** Open
+**Status:** Fixed: April 15, 2025
 
 **Product Experience:** Data Engineering
 
