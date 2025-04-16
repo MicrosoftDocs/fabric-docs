@@ -5,12 +5,12 @@ ms.topic: how-to
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviwer: nijelsf
-ms.date: 04/14/2025
+ms.date: 04/16/2025
 ---
 
 # Create a materialized view in lakehouse in Microsoft Fabric 
 
-In this article, you learn how to create materialized views in lakehouse in Microsoft Fabric.
+In this article, you learn how to create materialized views in lakehouse in Microsoft Fabric. For more information about materialized views in lakehouse, see [overview of materialized views](./overview-materialized-lake-view.md).
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ There are two ways to get started with materialized view creation in lakehouse.
 
    :::image type="content" source="./media/create-materialized-view/manage-materialized-views.png" alt-text="Screenshot showing materialized view." border="true" lightbox="./media/create-materialized-view/manage-materialized-views.png":::
 
-1. Select **New materialized view**, which opens a new notebook.
+1. Select **New materialized view**, which allows you to use an existing or create a new notebook.
 
    :::image type="content" source="./media/create-materialized-view/new-materialized-view.png" alt-text="Screenshot showing how to create new materialized view." border="true" lightbox="./media/create-materialized-view/new-materialized-view.png":::
 
@@ -36,10 +36,13 @@ There are two ways to get started with materialized view creation in lakehouse.
 
 **Option 2**: Create a materialized view directly from the notebook attached to your lakehouse. 
 
-1. Go to your lakehouse, select **Open notebook** to create a new notebook.
+* Go to your lakehouse, select **Open notebook** to create a new notebook.
 
    :::image type="content" source="./media/create-materialized-view/open-notebook.png" alt-text="Screenshot showing how to open notebook." border="true" lightbox="./media/create-materialized-view/open-notebook.png":::
- 
+
+>[!Important]
+> Materialized views are compatible with Fabric [Runtime 1.3](../runtime-1-3.md).
+
 ## Materialized view Spark SQL syntax
 
 A materialized view can be defined from any table or another materialized view within the lakehouse. The following outlines the syntax for declaring a materialized view using Spark SQL. 
@@ -151,7 +154,7 @@ Example:
     DROP MATERIALIZED VIEW customers_enriched;
 ```
 
-## What’s Not Supported 
+## What’s not supported 
 
 * DML statements aren't supported with materialized views.
 * Spark properties set at the session level aren't applied during scheduled DAG refresh.

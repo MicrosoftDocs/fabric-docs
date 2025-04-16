@@ -5,7 +5,7 @@ author: abhishjain002
 ms.author: abhishjain
 ms.reviwer: nijelsf
 ms.topic: conceptual
-ms.date: 04/14/2025
+ms.date: 04/16/2025
 ---
 
 # Data quality in materialized view in Microsoft Fabric
@@ -52,7 +52,7 @@ The following example defines the constraint `cust_blank`, which checks if the `
      ON c.customerID = o.customerID; 
 ```
 
-## What’s Not Supported
+## What’s not supported
 
 * Updating data quality constraints after creating a materialized view is not supported. To update the data quality constraints, you must recreate the materialized view.
  

@@ -401,16 +401,14 @@ items:
      href: ./user-data-functions/view-function-logs.md
 - name: Materialized view
   items:
+  - name: Overview
+    href: ./materialized-view/overview-materialized-lake-view.md
   - name: Create a materialized view 
     items:   
     - name: Create a materialized view
       href: ./materialized-view/create-materialized-view.md 
     - name: Refresh a materialized view
       href: ./materialized-view/refresh-materialized-view.md
-  - name: Monitoring hub
-    items:   
-    - name: Monitor materialized view runs
-      href: ./materialized-view/monitor-materialized-views.md
   - name: Data quality
     items:   
     - name: Data quality in materialized views
@@ -423,7 +421,7 @@ items:
       href: ./materialized-view/schedule-dag-run.md
     - name: Run history of materialized views
       href: ./materialized-view/materialized-view-run-history.md
-    - name: Operational Run details
+    - name: Operational run details
       href: ./materialized-view/operational-run-details.md      
   - name: Tutorial
     items:   
