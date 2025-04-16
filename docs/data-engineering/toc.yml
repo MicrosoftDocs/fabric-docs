@@ -401,6 +401,8 @@ items:
      href: ./user-data-functions/view-function-logs.md
 - name: Materialized view
   items:
+  - name: Overview
+     href: ./materialized-view/overview-materialized-lake-view.md
   - name: Create a materialized view 
     items:   
     - name: Create a materialized view
