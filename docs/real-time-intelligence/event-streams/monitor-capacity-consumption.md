@@ -43,7 +43,7 @@ The [Microsoft Fabric Capacity Metric app](../../enterprise/metrics-app.md) 
 ## Important considerations
 Here are a few important points to consider:
 
-- We recommend using Microsoft Fabric Event Streams with a minimum of two capacity units (SKU: F2). Additional capacity units may be required if other Fabric items are used as Eventstream's destinations.
+- Microsoft Fabric Event Streams can operate with the smallest F capacity. However, additional capacity units may be required if other Fabric items are used as destinations.
 - Eventstream Flat, Data Traffic, and Processor operations are billed only when data is being ingested or processed. If no data flows in or out for more than two hours, these operations will not incur charges.
 
 ## Changes to Microsoft Fabric workload consumption rate 
