@@ -5,7 +5,7 @@ ms.author: apsinhar
 author: apurbasroy
 ms.reviewer: nijelsf
 ms.topic: tutorial
-ms.date: 03/21/2025
+ms.date: 04/17/2025
 ---
 
 # Manage Fabric materialized view DAG
@@ -38,6 +38,7 @@ The DAG UI also has the following functionalities:
 
 > [!NOTE]
 > This is a DAG UI refresh only and not for data refresh.
+> Auto refresh for the DAG UI is done every 2 minutes if there is an ongoing DAG run, provided that user is present in the browser tab.
 
 :::image type="content" source="./media/view-dag/dag-refresh.png" alt-text="Screenshot showing how to refresh a DAG UI." border="true" lightbox="./media/view-dag/dag-refresh.png":::
 
@@ -60,3 +61,4 @@ The DAG UI also has the following functionalities:
 
   ## Next steps
   
+  * [Microsoft Fabric materialized views tutorial](./tutorial.md)
