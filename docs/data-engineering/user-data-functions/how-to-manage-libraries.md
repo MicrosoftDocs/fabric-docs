@@ -1,6 +1,6 @@
 ---
 title: How to manage libraries for your Fabric User Data Functions
-description: Manage adding, deleting and updating version of public libraries from PyPI to use with User data functions in Fabric.
+description: Manage adding, deleting, and updating libraries with User data functions in Fabric.
 ms.author: sumuth
 author: mksuni
 ms.topic: how-to
@@ -12,7 +12,7 @@ ms.search.form: Fabric User Data Functions
 
 When developing custom business logic, you can use public libraries from PyPI or incorporate your own private libraries for data processing or transformation. User data functions enable the addition of two types of libraries necessary for writing functions:
 - Public libraries: Include any public library available on PyPI in the user data functions item.
-- Private libraries: Upload your private libraries as a .whl package to the user data functions item.
+- Private libraries: Upload your private libraries as a `.whl` package to the user data functions item.
 
 ## Add a public library 
 
@@ -22,14 +22,14 @@ When developing custom business logic, you can use public libraries from PyPI or
 
 3. Select **Library Management**
 
-   :::image type="content" source="..\media\user-data-functions-manage-libraries\select_library_management.png" alt-text="Screenshot showing how to manage libraries" lightbox="..\media\user-data-functions-manage-libraries\select_library_management.png":::
+   :::image type="content" source="..\..\media\user-data-functions-manage-libraries\select_library_management.png" alt-text="Screenshot showing how to manage libraries" lightbox="..\..\media\user-data-functions-manage-libraries\select_library_management.png":::
 
    >[!NOTE]
-   > `fabric_user_data_functions` library is added and can't be removed. It's required for the user data functions item. You can update the version if there are future releases of this SDK. 
+   > `fabric_user_data_functions` library is added and can't be removed. This is fabric functions library. You can update the version if there are future releases of this SDK. 
 
 4. Select **Add from PyPI** to add new library. Provide the library name and select a version, for example `pandas` with version `2.2.3`.
 
-   :::image type="content" source="..\media\user-data-functions-manage-libraries\add_pandas_library.png" alt-text="Screenshot showing how to add pandas library" lightbox="..\media\user-data-functions-manage-libraries\add_pandas_library.png":::
+   :::image type="content" source="..\..\media\user-data-functions-manage-libraries\add_pandas_library.png" alt-text="Screenshot showing how to add pandas library" lightbox="..\..\media\user-data-functions-manage-libraries\add_pandas_library.png":::
 
 6. Once a library is added to the User data functions item, it is in **Saved** state. The User data functions item needs to be published. All published libraries have **Published** state.
 
@@ -39,17 +39,17 @@ When developing custom business logic, you can use public libraries from PyPI or
 
 ## Manage public libraries
 - To update the version of an existing public library, navigate to your user data functions item and select **Library management**. Choose the required library, select the version drop-down, and update its version.
-- To delete the library select the trash option for each library appears when you hover over the corresponding row.
+- To delete the library, select the trash option for each library appears when you hover over the corresponding row.
 
 Publish the user data functions item whenever libraries are updated. 
 
 ## Add a private library 
 Private libraries refer to code built by you or your organization. User data functions allows you to upload a custom library file in `.whl` format. Select the **Upload** button to add private libraries. 
 
-:::image type="content" source="..\media\user-data-functions-manage-libraries\add-private-library.png" alt-text="Screenshot showing how to add-private-library" lightbox="..\media\user-data-functions-manage-libraries\add-private-library.png":::
+:::image type="content" source="..\..\media\user-data-functions-manage-libraries\add-private-library.png" alt-text="Screenshot showing how to add-private-library" lightbox="..\..\media\user-data-functions-manage-libraries\add-private-library.png":::
 
 ## Next steps
-Now that you have added a new library, learn how to reference it in your Fabric function code. You can also learn how to view your logs after running a Fabric Data Function.
+Learn how to reference these libraries in your function's code. You can also learn how to view your logs after running a Fabric Data Function.
 
-- [Python programming mode](./python-programming-model.md)
+- [Python programming model](./python-programming-model.md)
 - [Develop User data functions in VS Code](./create-user-data-functions-in-vs-code.md)
