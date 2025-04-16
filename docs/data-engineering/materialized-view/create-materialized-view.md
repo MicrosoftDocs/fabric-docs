@@ -5,12 +5,12 @@ ms.topic: how-to
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviwer: nijelsf
-ms.date: 04/15/2025
+ms.date: 04/16/2025
 ---
 
 # Create a materialized view in lakehouse in Microsoft Fabric 
 
-In this article, you learn how to create materialized views in lakehouse in Microsoft Fabric. For more information about materialized views in lakehosue, see [overview of materialized views](./overview-materialized-lake-view.md)
+In this article, you learn how to create materialized views in lakehouse in Microsoft Fabric. For more information about materialized views in lakehosue, see [overview of materialized views](./overview-materialized-lake-view.md).
 
 ## Prerequisites
 
@@ -154,7 +154,7 @@ Example:
     DROP MATERIALIZED VIEW customers_enriched;
 ```
 
-## What’s Not Supported 
+## What’s not supported 
 
 * DML statements aren't supported with materialized views.
 * Spark properties set at the session level aren't applied during scheduled DAG refresh.
