@@ -45,6 +45,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 ```
 
 ### URI parameters
+
 None
 
 ### Responses
@@ -107,7 +108,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 
 | Name | Type | Description|
 | ---- | ---- | ---- |
-| 200 OK |  | Request completed successfully |
+| 200 OK | [FileMeta](#definitions) | Request completed successfully |
 
 ### Examples
 
@@ -118,9 +119,10 @@ GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a8
 ```
 
 ## Definitions
+*FileMeta* 
 
-FileMeta 
 Object 
+
 Metadata of a log file
 
 | Name | Type | Description |

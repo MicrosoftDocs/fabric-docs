@@ -35,7 +35,7 @@ This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-
 
 ## Get executor log metadata
 
-Get metadata of a log file of driver of a Spark application.
+Get metadata(s) of log file(s) of executors of a Spark application.
 
 ### Interface
 
@@ -81,7 +81,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 
 | Name | Type | Description |
 | --- | --- | --- |
-| 200 OK | A list of [ContainerLogMeta](./driver-log#definitions) | Request completed successfully |
+| 200 OK | A list of [ContainerLogMeta](./driver-log.md#definitions) | Request completed successfully |
 
 ### Examples
 

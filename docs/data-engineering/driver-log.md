@@ -252,13 +252,14 @@ GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a8
 ```
 
 ## Definitions 
+*ContainerLogMeta* 
 
-ContainerLogMeta 
 Object 
+
 Metadata(s) of log file(s) with the corresponding container and node information 
 
 | Name | Type | Description |
 | --- | --- | --- |
 | containerId  | string | The container ID where driver or executor is hosted in |
 | nodeId | string | The node ID where the container locates |
-| containerLogMeta  | A single [FileMeta](./livy-log#definitions) or a list of [FileMeta](./livy-log#definitions) | The metadata(s) of a file or a list of files |
+| containerLogMeta  | A single [FileMeta](./livy-log.md#definitions) or a list of [FileMeta](./livy-log.md#definitions) | The metadata(s) of a file or a list of files |
