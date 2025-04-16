@@ -39,7 +39,10 @@ There are two ways to get started with materialized view creation in lakehouse.
 1. Go to your lakehouse, select **Open notebook** to create a new notebook.
 
    :::image type="content" source="./media/create-materialized-view/open-notebook.png" alt-text="Screenshot showing how to open notebook." border="true" lightbox="./media/create-materialized-view/open-notebook.png":::
- 
+
+>[!Important]
+> Materilaized views are compatible with Fabric [Runtime 1.3](../runtime-1-3.md).
+
 ## Materialized view Spark SQL syntax
 
 A materialized view can be defined from any table or another materialized view within the lakehouse. The following outlines the syntax for declaring a materialized view using Spark SQL. 
