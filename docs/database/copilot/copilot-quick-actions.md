@@ -10,11 +10,11 @@ ms.collection:
   - ce-skilling-ai-copilot
 ---
 
-# How to use the Copilot Explain and Fix quick action features in Fabric in SQL database (Preview)
+# How to use the Copilot Explain and Fix quick action features in Fabric in the SQL database workload (Preview)
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-There are two AI-powered quick actions that are currently supported in Copilot in Fabric in SQL database: **Explain** and **Fix**.
+There are two AI-powered quick actions that are currently supported in Copilot in Fabric in the SQL database workload: **Explain** and **Fix**.
 
 :::image type="content" source="media/copilot-quick-actions/explain-fix.png" alt-text="Screenshot from the Fabric portal showing the Explain and Fix buttons above a new empty SQL query tab." lightbox="media/copilot-quick-actions/explain-fix.png":::
 
