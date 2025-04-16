@@ -13,7 +13,7 @@ no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Overview of Copilot in Fabric
+# What is Copilot in Fabric?
 
 Copilot and other generative AI features in preview bring new ways to transform and analyze data, generate insights, and create visualizations and reports in Microsoft Fabric and Power BI. This article introduces you to Copilot in Fabric and tells you how it works in the different workloads. It also discusses data security and privacy, responsible use, and regional availability.
 
@@ -47,6 +47,7 @@ Before your business can start using Copilot capabilities in Microsoft Fabric, y
 > [!NOTE]
 > Copilot is not yet supported for sovereign clouds due to GPU availability.
 
+<<<<<<< HEAD
 ## Copilot experiences
 
 You can enable and use Copilot across the various Fabric workloads, and within those workloads you can use different Copilot experiences. While each of these Copilot experiences uses a similar common architecture, they work in distinct ways.
@@ -68,18 +69,41 @@ Copilot for Data Factory is an AI-enhanced toolset that supports both citizen an
 Microsoft Copilot for Fabric Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Key features of Copilot for Warehouse include Natural Language to SQL, code completion, quick actions, and intelligent insights. For more information, see [Copilot for Data Warehouse](../data-warehouse/copilot.md).
 
 ### Copilot for Power BI
+=======
+## Copilot in Fabric in the Data Science and Data Engineering workloads
+
+Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored to support data professionals in their workflow. It provides intelligent code completion, automates routine tasks, and supplies industry-standard code templates to facilitate building robust data pipelines and crafting complex analytical models. Utilizing advanced machine learning algorithms, Copilot offers contextual code suggestions that adapt to the specific task at hand, helping you code more effectively and with greater ease. From data preparation to insight generation, Microsoft Fabric Copilot acts as an interactive aide, lightening the load on engineers and scientists and expediting the journey from raw data to meaningful conclusions.
+
+## Copilot in Fabric in the Data Factory workload
+
+Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks. For more information, see [Copilot for Data Factory](copilot-fabric-data-factory.md)
+
+## Copilot in Fabric in the Data Warehouse workload
+
+Microsoft Copilot for Fabric Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Key features of Copilot for Warehouse include Natural Language to SQL, code completion, quick actions, and intelligent insights. For more information, see [Copilot for Data Warehouse](../data-warehouse/copilot.md).
+
+## Copilot in Fabric in the Power BI workload
+>>>>>>> 4fa7cebed880f698b82d6cb82c76e47e1f00ca77
 
 Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. You can use Copilot for Power BI to generate a summary for the report page that you just created, and generate synonyms for better Q&A capabilities.
 
 For more information on the features and how to use Copilot for Power BI, see [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction).
 
+<<<<<<< HEAD
 ### Copilot for Real-Time Intelligence
+=======
+## Copilot in Fabric in the Real-Time Intelligence workload
+>>>>>>> 4fa7cebed880f698b82d6cb82c76e47e1f00ca77
 
 Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists.
 
 For more information, see [Copilot for Real-Time Intelligence overview](../fundamentals/copilot-real-time-intelligence.md).
 
+<<<<<<< HEAD
 ### Copilot for SQL database
+=======
+## Copilot in the SQL database workload
+>>>>>>> 4fa7cebed880f698b82d6cb82c76e47e1f00ca77
 
 Copilot for SQL database in Microsoft Fabric is an AI assistant designed to streamline your OLTP database tasks. Key features of Copilot for SQL database include Natural Language to SQL, code completion, quick actions, and document-based Q&A. For more information, see [Copilot for SQL database](../database/sql/copilot.md).
 

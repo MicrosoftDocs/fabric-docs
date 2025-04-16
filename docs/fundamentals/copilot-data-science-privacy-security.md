@@ -4,14 +4,12 @@ description: Learn about privacy, security, and responsible use of Copilot for D
 author: snehagunda
 ms.author: sngun
 ms.reviewer: 'guptamaya'
-ms.custom:
 ms.topic: conceptual
 ms.date: 07/15/2024
-no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Privacy, security, and responsible use of Copilot for Data Science
+# Privacy, security, and responsible use of Copilot in the Data Science workload
 
 In this article, learn how [Microsoft Copilot for Data Science](../data-engineering/copilot-notebooks-overview.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot (preview)](../fundamentals/copilot-privacy-security.md).
 
@@ -31,7 +29,7 @@ For considerations and limitations, see [Limitations](../data-engineering/copilo
   - Schemas of data sources in the notebook.
   - Sample data from data sources in the notebook.
   - Schemas from external data sources in an attached lakehouse.
-    
+
 ## Evaluation of Copilot for Data Science
  
 - The product team has tested Copilot to see how well the system performs within the context of notebooks, and whether AI responses are insightful and useful.
