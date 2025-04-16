@@ -44,7 +44,8 @@ When developing custom business logic, you can use public libraries from PyPI or
 Publish the user data functions item whenever libraries are updated. 
 
 ## Add a private library 
-Private libraries refer to code built by you or your organization. User data functions allows you to upload a custom library file in `.whl` format. 
+Private libraries refer to code built by you or your organization. User data functions allows you to upload a custom library file in `.whl` format. Select the **Upload** button to add private libraries. 
+
 :::image type="content" source="..\media\user-data-functions-manage-libraries\add-private-library.png" alt-text="Screenshot showing how to add-private-library" lightbox="..\media\user-data-functions-manage-libraries\add-private-library.png":::
 
 ## Next steps
