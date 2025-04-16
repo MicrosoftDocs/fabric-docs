@@ -10,11 +10,11 @@ ms.collection:
   - ce-skilling-ai-copilot
 ---
 
-# How to use the Microsoft Copilot code completion in Fabric in SQL database (Preview)
+# How to use the Microsoft Copilot code completion in Fabric in the SQL database workload (Preview)
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-Copilot in Fabric in SQL database includes a code completion feature with Copilot.
+Copilot in Fabric in the SQL database workload includes a code completion feature with Copilot.
 
 As you start writing T-SQL code or comments in the editor, Copilot in Fabric SQL database uses your database schema and query tab context to complement the existing IntelliSense with inline code suggestions.
 
