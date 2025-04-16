@@ -19,14 +19,10 @@ In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric i
 
 To get started, you must complete the following prerequisites:
 
-- Enable Apache Airflow Job in your Tenant.
 
   > [!NOTE]
-  > Since Apache Airflow job is in preview, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it. Additionally, make sure Apache Airflow job is available in the capacity region you are using for your workspace. For more information, see [available capacity regions](../data-factory/apache-airflow-jobs-concepts.md#region-availability-public-preview).
+  > Make sure Apache Airflow job is available in the capacity region you are using for your workspace. For more information, see [available capacity regions](../data-factory/apache-airflow-jobs-concepts.md#region-availability).
 
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Job (preview)' section.
-  2. Select Apply.
-     :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - [Create a Microsoft Entra ID app](/azure/active-directory/develop/quickstart-register-app) if you don't have one.
 
