@@ -5,7 +5,7 @@ ms.author: rkottackal
 author: rkottackal 
 ms.reviewer: nijelsf
 ms.topic: tutorial
-ms.date: 04/15/2025
+ms.date: 04/16/2025
 ---
 
 # Implement medallion architecture with materialized views
@@ -23,7 +23,7 @@ As prerequisites to this tutorial, complete the following steps:
 
 ## Scenario overview
 
-In this tutorial, you'are going to take an example of a fictional retail orgnaization, Contoso, which leverages a medallion architecture for data analytics to gain actionable insights into its retail sales operations. It aims to streamline the analysis process and generate deeper insights into business performance by organizing their data into three layers—bronze (raw data), silver (cleaned and enriched data), and gold (aggregated and analyzed data).
+In this tutorial, you'are going to take an example of a fictional retail organization, Contoso, which leverages a medallion architecture for data analytics to gain actionable insights into its retail sales operations. It aims to streamline the analysis process and generate deeper insights into business performance by organizing their data into three layers—bronze (raw data), silver (cleaned and enriched data), and gold (aggregated and analyzed data).
 
 The following diagram represents different entities in each layer of medallion architecture in sales lakehouse:
 
