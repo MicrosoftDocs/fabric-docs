@@ -5,12 +5,12 @@ ms.topic: how-to
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviwer: nijelsf
-ms.date: 04/14/2025
+ms.date: 04/15/2025
 ---
 
 # Create a materialized view in lakehouse in Microsoft Fabric 
 
-In this article, you learn how to create materialized views in lakehouse in Microsoft Fabric.
+In this article, you learn how to create materialized views in lakehouse in Microsoft Fabric. To learn about materialized views in lakehosue, see [overview of materialized views](./overview-materialized-lake-view.md)
 
 ## Prerequisites
 
