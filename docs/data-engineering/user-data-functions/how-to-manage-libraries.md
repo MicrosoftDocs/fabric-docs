@@ -52,4 +52,4 @@ Private libraries refer to code built by you or your organization. User data fun
 Learn how to reference these libraries in your function's code. You can also learn how to view your logs after running a Fabric Data Function.
 
 - [Python programming model](./python-programming-model.md)
-- [Develop User data functions in VS Code](./create-user-data-functions-in-vs-code.md)
+- [Develop User data functions in VS Code](./create-user-data-functions-vs-code.md)
