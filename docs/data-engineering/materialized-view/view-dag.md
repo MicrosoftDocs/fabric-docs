@@ -38,6 +38,7 @@ The DAG UI also has the following functionalities:
 
 > [!NOTE]
 > This is a DAG UI refresh only and not for data refresh.
+> Auto refresh for the DAG UI is done every 2 minutes if there is an ongoing DAG run, provided that user is present in the browser tab.
 
 :::image type="content" source="./media/view-dag/dag-refresh.png" alt-text="Screenshot showing how to refresh a DAG UI." border="true" lightbox="./media/view-dag/dag-refresh.png":::
 
