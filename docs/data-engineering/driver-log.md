@@ -261,4 +261,4 @@ Metadata(s) of log file(s) with the corresponding container and node information
 | --- | --- | --- |
 | containerId  | string | The container ID where driver or executor is hosted in |
 | nodeId | string | The node ID where the container locates |
-| containerLogMeta  | A single [FileMeta](livy-log.md/#definitions) or a list of [FileMeta](livy-log.md/#definitions) | The metadata(s) of a file or a list of files |
+| containerLogMeta  | A single [FileMeta](./livy-log.md/#definitions) or a list of [FileMeta](./livy-log.md/#definitions) | The metadata(s) of a file or a list of files |
