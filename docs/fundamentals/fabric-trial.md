@@ -30,7 +30,7 @@ When you start a trial of a Fabric capacity, your trial [capacity](../enterprise
 One trial of a Fabric capacity offers you the following features:
 
 - Full access to all of the Fabric workloads and features
-  - However, there are a few key Fabric features that aren't available on trial capacities, such as [Copilot](./copilot-faq-fabric.yml), [trusted workspace access](../security/security-trusted-workspace-access.md), or [managed private endpoints](https://blog.fabric.microsoft.com/blog/introducing-managed-private-endpoints-for-microsoft-fabric-in-public-preview)
+  - However, there are a few key Fabric features that aren't available on trial capacities, such as [Copilot](./copilot-faq-fabric.yml), [trusted workspace access](../security/security-trusted-workspace-access.md), or [private link](../security/security-private-links-overview.md)
 - OneLake storage up to 1 TB
 - A license similar to Premium Per User (PPU)
 - One capacity per trial

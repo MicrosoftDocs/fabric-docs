@@ -4,13 +4,13 @@ description: "Learn how Copilot in Data Factory empowers customers to use natura
 author: snehagunda
 ms.author: sngun
 ms.reviewer: alpowers
-ms.topic: conceptual
+ms.topic: overview
 ms.date: 02/13/2025
 ms.custom:
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
-# Copilot for Data Factory overview
+# What is Copilot in Fabric in the Data Factory workload?
 
 Copilot in Fabric enhances productivity, unlocks profound insights, and facilitates the creation of custom AI experiences tailored to your data. As a component of the Copilot in Fabric experience, Copilot in Data Factory empowers customers to use natural language to articulate their requirements for creating data integration solutions using [Dataflow Gen2](../data-factory/data-factory-overview.md#dataflows).  Essentially, Copilot in Data Factory operates like a subject-matter expert (SME) collaborating with you to design your dataflows.
 
