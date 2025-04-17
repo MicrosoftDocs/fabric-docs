@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 04/15/2025
+ms.date: 04/17/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -96,7 +96,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
-|  1067  | Data Engineering | [Environment REST API updates might cause your workflow to break](./known-issue-1067-environment-rest-api-updates-workflow-break.md) | March 26, 2025 | Fixed: April 15, 2025 |
+|  1067  | Data Engineering | [Environment REST API update no longer happening](./known-issue-1067-environment-rest-api-updates-workflow-break.md) | March 26, 2025 | Removed: April 17, 2025 |
 |  923  | Power BI | [Tenant migration requests stopped](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 | Closed: April 15, 2025 |
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](./known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 | Fixed: April 15, 2025 |
 |  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](./known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 | Fixed: April 15, 2025 |
