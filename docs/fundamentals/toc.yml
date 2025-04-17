@@ -223,7 +223,7 @@ items:
       href: ../known-issues/known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md
     - name: Multitasking for Dataflow Gen2 with CI/CD was inadvertently enabled
       href: ../known-issues/known-issue-1075-multitasking-dataflow-gen2-ci-cd-enabled.md
-    - name: Environment REST API updates might cause your workflow to break
+    - name: Environment REST API update no longer happening
       href: ../known-issues/known-issue-1067-environment-rest-api-updates-workflow-break.md
     - name: Environment Git integration imports for libraries don't work
       href: ../known-issues/known-issue-1025-environment-git-integration-imports-libraries-not-work.md

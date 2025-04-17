@@ -61,6 +61,9 @@ To remove a data source, select the data source from the **Data** screen in **Ma
 
 After you add a cloud data source, you give users and security groups access to the specific data source. The access list for the data source controls only who is allowed to use the data source in items that include data from the data source.  
 
+> [!NOTE]
+> Sharing connections with other users risks unauthorized changes and potential data loss. Users with access to the data source can write to the data source, and connect, based on either the stored credentials or SSO you selected while creating a data source. Before you share a data source connection, always ensure the user or group account you’re sharing are trusted and has only the privileges it needs (ideally a service account with narrowly scoped rights).
+
 ## Add users to a data source
 
 1. From the page header in the Power BI service, select the **Settings** icon, and then select **Manage connections and gateways**.
