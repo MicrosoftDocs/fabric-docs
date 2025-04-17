@@ -319,6 +319,11 @@ In the pop-up, there's an option to reset the timeout to x amount of minutes or 
 
 Take your pick in how long you want an uninterrupted session, and hit apply. The session timeout will reset itself with the new value and you're good to go!
 
+You can also set timeout as following:
+
+- [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md#spark-session-configuration-magic-command)
+
 ### Inline Apache Spark job indicator
 
 The Fabric notebook is Apache Spark based. Code cells are executed on the Apache Spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar that appears to help you understand the job execution status. The number of tasks per each job or stage helps you to identify the parallel level of your Spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
@@ -665,5 +670,4 @@ To find all shortcut keys, select **View** on the notebook ribbon, and then sele
 
 - [Notebook visualization](notebook-visualization.md)
 - [Introduction of Fabric NotebookUtils](notebook-utilities.md)
-- [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md#spark-session-configuration-magic-command)
+
