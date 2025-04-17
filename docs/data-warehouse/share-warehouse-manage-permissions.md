@@ -116,7 +116,8 @@ Microsoft Fabric data warehousing supports several technologies that administrat
   - If accessed through [Direct Lake mode](../fundamentals/direct-lake-overview.md), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Direct Lake mode is the default connection type for semantic models that use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source. For more information, see [Direct Lake mode](semantic-models.md#direct-lake-mode). 
   - If accessed through [Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode) then no additional permissions are needed.
   - Currently, sharing a warehouse directly with an SPN is not supported.
-- The sharing dialog for warehouses provides the option to subscribe to OneLake events. Currently, permission to subscribe to OneLake events is granted along with the Read All Apache Spark permission. 
+- The sharing dialog for warehouses provides the option to subscribe to OneLake events. Currently, permission to subscribe to OneLake events is granted along with the Read All Apache Spark permission.
+- The warehose tables can be shared with users in the same tenant. Cross teannt share from warehouse is not supported.
 
 ## Related content
 
