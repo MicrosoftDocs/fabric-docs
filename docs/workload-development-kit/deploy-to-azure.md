@@ -15,9 +15,19 @@ The deployment pattern is based on the following architecture diagram:
 
 :::image type="content" source="./media/deploy-to-azure/fabric-workload-azure-deployment.png" alt-text="Screenshot of Azure Deployment." lightbox="./media/deploy-to-azure/fabric-workload-azure-deployment.png":::
 
-## Components
+## Overview
 
-The architecture consists of the following components/Azure services that interact with each other to provide a complete solution for deploying the Fabric Workload on Azure.
+The architecture diagram illustrates how the different components interact to deliver a seamless and integrated experience.
+
+Azure Front Door acts as the global entry point, routing user traffic to the stateless workload frontend.
+The frontend is served via an Azure Blob Storage static website and Azure Front Door, ensuring high availability and low latency for users.
+
+The workload backend uses Create, Read, Update, and Delete (CRUD) operations to create workload items and metadata. It is containerized and stored in Azure Container Registry (ACR), enabling efficient version control and deployment.
+The container is deployed as an Azure Web App, which provides auto-scaling and load balancing.
+
+Additional services like Azure Key Vault manage secrets securely, while Managed Identity ensures secure access to Azure resources without embedding credentials in the code. Together, these components form a cohesive architecture that supports the development, deployment, and operation of custom Fabric Workloads.
+
+## Architecture Components
 
 ### Azure Front Door
 
@@ -44,7 +54,7 @@ The backend image can be stored and managed using [Azure Container Registry (ACR
 The ACR serves as a private registry for storing Docker container images, making it simple to automate the process of building, testing, and deploying the backend application.
 This containerized approach allows for consistent and scalable deployments, with the added benefit of version control for the backend images.
 
-### App Service with Container
+### Web App onAzure App Service with Container
 
 [Azure App Service](/azure/app-service/configure-custom-container) with Container allows you to deploy and manage containerized applications on a fully managed platform.
 This service provides built-in auto-scaling, load balancing, and streamlined CI/CD integration with Docker Hub, Azure Container Registry, and GitHub.
