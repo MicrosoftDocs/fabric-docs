@@ -58,46 +58,47 @@ To remove a data source, select the data source from the **Data** screen in **Ma
 :::image type="content" source="media/data-source-management/remove-data-source.png" alt-text="Screenshot of where to select Remove.":::
 
 ## Retrieve a data source connection ID
-You can obtain a data source connection ID so that you can reference it directly in supported Microsoft Fabric items or call it from Fabric APIs. There are two methods:
+You can obtain a data source connection ID so that you can reference it directly in supported Microsoft Fabric items or call it from Fabric REST APIs. There are two methods:
 
-### Method1: From the **Manage connections and gateways** page on Microsoft Fabric service:
-1.	Select the data source from the **Connections** screen in **Manage connections and gateways**, and then select **Settings** from the top ribbon. 
+### Method 1: From the **Manage connections and gateways** page on Microsoft Fabric service:
+1.	Select the data source from the **Connections** screen in **Manage connections and gateways**, and then select **Settings** from the top ribbon.
+
    :::image type="content" source="media/data-source-management/settings-data-source.png" alt-text="Screenshot of where to select Settings.":::
 
-3.	Under the connection **Settings** screen, copy the connection ID of the data source. 
+3.	Under the connection **Settings** screen, copy the connection ID of the data source.
+
    :::image type="content" source="media/data-source-management/retrieve-data-source-connection-id.png" alt-text="Screenshot of retrieving connection ID from the connection settings.":::
 
 ### Method 2: By calling the [Fabric Core Connections REST API](/rest/api/fabric/core/connections)
-Use the [List Connections](/rest/api/fabric/core/connections/list-connections) endpoint to enumerate all connections and read each property.
+Use the [List Connections](/rest/api/fabric/core/connections/list-connections) endpoint to enumerate all connections and read each property:
 
 1.	Send an HTTP GET to the Fabric Connections API, including your token in the `Authorization` header:  
-```bash
-curl -X GET https://api.fabric.microsoft.com/v1/connections \
-  -H "Authorization: Bearer $ACCESS_TOKEN"
-```
+   ```bash
+   curl -X GET https://api.fabric.microsoft.com/v1/connections \
+   -H "Authorization: Bearer $ACCESS_TOKEN"
+   ```
 
 2.	A successful response returns a JSON payload similar to: 
-```json
-{
-  "value": [
-    {
-      "id": "6952a7b2-aea3-414f-9d85-6c0fe5d34539",
-      "displayName": "ContosoConnection1",
-      …
-    },
-    {
-      "id": "f6a39b76-9816-4e4b-b93a-f42e405017b7",
-      "displayName": "ContosoConnection2",
-      …
-    }
-  ],
-  "continuationToken": "…",
-  "continuationUri": "…"
-}
+   ```json
+   {
+   "value": [
+      {
+         "id": "6952a7b2-aea3-414f-9d85-6c0fe5d34539",
+         "displayName": "ContosoConnection1",
+         …
+      },
+      {
+         "id": "f6a39b76-9816-4e4b-b93a-f42e405017b7",
+         "displayName": "ContosoConnection2",
+         …
+      }
+   ],
+   "continuationToken": "…",
+   "continuationUri": "…"
+   }
 ```
 
-3. Each object’s `id` property under the `value` array is the connection ID. Extract the `id` property from the response as needed.
-Note: If you have more than 100 connections, use the `continuationToken` query parameter on subsequent requests to page through all results.
+3. Each object’s `id` property under the `value` array is the connection ID. Extract the `id` property from the response as needed. Note: If you have more than 100 connections, use the `continuationToken` query parameter on subsequent requests to page through all results.
 
 Sample Python snippet that uses `requests` and Microsoft Authentication Library (`msal`)  to call the `GET /v1/connections` endpoint and parse connection IDs:
 ```python
@@ -106,9 +107,9 @@ import msal
 
 # 1. Acquire token
 app = msal.ConfidentialClientApplication(
-    client_id="YOUR_CLIENT_ID",
-    client_credential="YOUR_CLIENT_SECRET",
-    authority="https://login.microsoftonline.com/YOUR_TENANT_ID"
+   client_id="YOUR_CLIENT_ID",
+   client_credential="YOUR_CLIENT_SECRET",
+   authority="https://login.microsoftonline.com/YOUR_TENANT_ID"
 )
 result = app.acquire_token_for_client(scopes=["https://api.fabric.microsoft.com/.default"])
 token = result["access_token"]
@@ -120,7 +121,7 @@ resp.raise_for_status()
 
 # 3. Parse IDs
 for conn in resp.json().get("value", []):
-    print(f"{conn['displayName']}: {conn['id']}")
+   print(f"{conn['displayName']}: {conn['id']}")
 ```
 
 ## Manage users
