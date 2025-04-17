@@ -24,6 +24,7 @@ This article applies to SQL database in Fabric only. For the warehouse and SQL a
 - SQL Audit is not currently supported in SQL database in Fabric.
 - Transparent Data Encryption (TDE) is not supported. SQL database in Fabric uses storage encryption with service-managed keys to protect all customer data at rest. Customer-managed keys are not supported.
 - In a [trial capacity](../../fundamentals/fabric-trial.md), you are limited to three databases. There is no limit on databases in other capacities.
+- Each database in the workspace must have a unique name. Once a database is deleted, it cannot be recreated with the same name.
 
 ## Table level  
 
