@@ -62,13 +62,13 @@ You can obtain a data source connection ID so that you can reference it directly
 
 ### Method1: From the **Manage connections and gateways** page on Microsoft Fabric service:
 1.	Select the data source from the **Connections** screen in **Manage connections and gateways**, and then select **Settings** from the top ribbon. 
-:::image type="content" source="media/data-source-management/settings-data-source.png" alt-text="Screenshot of where to select Settings":::
+   :::image type="content" source="media/data-source-management/settings-data-source.png" alt-text="Screenshot of where to select Settings.":::
 
 3.	Under the connection **Settings** screen, copy the connection ID of the data source. 
-:::image type="content" source="media/data-source-management/retrieve-data-source-connection-id.png" alt-text="Screenshot of retrieving connection ID":::
+   :::image type="content" source="media/data-source-management/retrieve-data-source-connection-id.png" alt-text="Screenshot of retrieving connection ID from the connection settings.":::
 
-### Method 2: By calling the [Fabric Core Connections REST API](https://review.learn.microsoft.com/en-us/rest/api/fabric/core/connections)
-Use the [List Connections](https://learn.microsoft.com/en-us/rest/api/fabric/core/connections/list-connections) endpoint to enumerate all connections and read each property.
+### Method 2: By calling the [Fabric Core Connections REST API](/rest/api/fabric/core/connections)
+Use the [List Connections](/rest/api/fabric/core/connections/list-connections) endpoint to enumerate all connections and read each property.
 
 1.	Send an HTTP GET to the Fabric Connections API, including your token in the `Authorization` header:  
 ```bash
