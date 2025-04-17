@@ -5,7 +5,7 @@ author: denglishbi
 ms.author: daengli
 ms.reviewer: sngun
 ms.topic: conceptual
-ms.date: 04/02/2025
+ms.date: 04/16/2025
 ---
 
 # How Copilot in Microsoft Fabric works
@@ -53,7 +53,7 @@ The diagram consists of the following parts and processes:
 | **9** | Copilot postprocesses the LLM response. Postprocessing includes filtering for responsible AI, but also involves handling the LLM response and producing the final Copilot output. The specific steps taken during postprocessing depend on the Copilot experience an individual use. |
 | **10** | Copilot returns the final output to the user. The user checks the output before use, as the output contains no indication of reliability, accuracy, or trustworthiness. |
 
-The next sections describe the five steps in [the Copilot process](copilot-privacy-security.md#the-copilot-process) depicted in the previous diagram. These steps explain in detail how Copilot goes from user input to user output.
+The next sections describe the five steps in the Copilot process depicted in the previous diagram. These steps explain in detail how Copilot goes from user input to user output.
 
 ### Step 1: A user provides input to Copilot
 
