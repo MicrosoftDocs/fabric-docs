@@ -73,8 +73,12 @@ items:
   href: ../governance/onelake-catalog.md
 - name: Copilot and AI in Fabric
   items:
-  - name: Copilot in Fabric overview
+  - name: 1 - Copilot in Fabric overview
     href: copilot-fabric-overview.md
+  - name: 2 - How Copilot works in Microsoft Fabric
+    href: how-copilot-works.md
+  - name: 3 - Copilot glossary and terms
+    href: copilot-fabric-glossary.md
   - name: Enable Copilot in Fabric
     href: copilot-enable-fabric.md
   - name: Copilot in Fabric FAQ

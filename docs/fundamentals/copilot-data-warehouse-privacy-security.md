@@ -10,11 +10,11 @@ ms.collection:
   - ce-skilling-ai-copilot
 ---
 
-# Privacy, security, and responsible AI use of Copilot in Fabric in Data Warehouse (Preview)
+# Privacy, security, and responsible AI use of Copilot in Fabric in the Data Warehouse workload (Preview)
 
 **Applies to:** [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
 
-In this article, you learn how [Copilot in Fabric in Data Warehouse works](../data-warehouse/copilot.md), keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For more information on Copilot in Fabric, see [Privacy, security, and responsible use for Copilot in Microsoft Fabric (preview)](copilot-privacy-security.md).
+In this article, you learn how [Copilot in Fabric in the Data Warehouse workload](../data-warehouse/copilot.md) works, keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For more information on Copilot in Fabric, see [Privacy, security, and responsible use for Copilot in Microsoft Fabric (preview)](copilot-privacy-security.md).
 
 With Copilot in Fabric in Data Warehouse and other generative AI features, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in your warehouse and other workloads.
 
