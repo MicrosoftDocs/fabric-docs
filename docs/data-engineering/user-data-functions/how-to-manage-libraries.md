@@ -29,7 +29,7 @@ When developing custom business logic, you can use public libraries from PyPI or
 
 4. Select **Add from PyPI** to add new library. Provide the library name and select a version, for example `pandas` with version `2.2.3`.
 
-   :::image type="content" source="..\media\user-data-functions-manage-libraries\add-pandas-library.png" alt-text="Screenshot showing how to add pandas library" lightbox="..\media\user-data-functions-manage-libraries\add_pandas_library.png":::
+   :::image type="content" source="..\media\user-data-functions-manage-libraries\add-pandas-library.png" alt-text="Screenshot showing how to add pandas library" lightbox="..\media\user-data-functions-manage-libraries\add-pandas-library.png":::
 
 6. Once a library is added to the User data functions item, it is in **Saved** state. The User data functions item needs to be published. All published libraries have **Published** state.
 
