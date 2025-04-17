@@ -65,7 +65,7 @@ You can obtain a data source connection ID so that you can reference it directly
 
    :::image type="content" source="media/data-source-management/settings-data-source.png" alt-text="Screenshot of where to select Settings.":::
 
-3.	Under the connection **Settings** screen, copy the connection ID of the data source.
+2.	Under the connection **Settings** screen, copy the connection ID of the data source.
 
    :::image type="content" source="media/data-source-management/retrieve-data-source-connection-id.png" alt-text="Screenshot of retrieving connection ID from the connection settings.":::
 
