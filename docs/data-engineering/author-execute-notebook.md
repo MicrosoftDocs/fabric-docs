@@ -311,11 +311,11 @@ A step-by-step cell execution status is displayed beneath the cell to help you s
 
 In the bottom left corner, you can click on the session status to get more information about the current session:
 
-![Session Information](./media/author-execute-notebook/session_info.png)
+![Screenshot that shows Session Information.](./media/author-execute-notebook/session-info.png)
 
 In the pop-up, there's an option to reset the timeout to x amount of minutes or hours.
 
-![Session timeout](./media/author-execute-notebook/session_timeout.png)
+![Screenshot that shows Session timeout.](./media/author-execute-notebook/session-timeout.png)
 
 Take your pick in how long you want an uninterrupted session, and hit apply. The session timeout will reset itself with the new value and you're good to go!
 
