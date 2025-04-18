@@ -73,7 +73,7 @@ The product team tested the data agent on various public and private benchmarks,
 
 - You can also provide sample question-query pairs to demonstrate how the Fabric Data Agent should respond to common queries. These examples serve as patterns for interpreting similar user inputs and generating accurate results. Sample question-query pairs aren't currently supported for Power BI semantic model data sources.
 
-- Refer to [here](https://learn.microsoft.com/en-us/fabric/data-science/concept-data-agent#limitations) for a full list of current limitations of the data agent.
+- Refer to [this resource](../data-science/concept-data-agent#limitations) for a full list of current limitations of the data agent.
 
 ### What operational factors and settings allow for effective and responsible use of Fabric data agent?
 
