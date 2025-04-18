@@ -1,10 +1,10 @@
 ---
-title: "Connect to your SQL database"
+title: "Connect to Your SQL Database"
 description: Learn about options to connect to your SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: antho, sukkaurk, imotiwala
-ms.date: 03/18/2025
+ms.reviewer: antho, sukkaurk, imotiwala, maghan
+ms.date: 04/18/2025
 ms.topic: how-to
 ms.search.form: product-databases, Connect to SQL database
 ---
@@ -37,7 +37,7 @@ In [!INCLUDE [product-name](../../includes/product-name.md)], the SQL analytics 
 
 To find the SQL connection string for your **Fabric SQL database**:
 
-- Go to the settings of your SQL database item. 
+- Go to the settings of your SQL database item.
 - Or, in the item list, select the `...` menu. Select **Settings** then **Connection strings**. Fabric provides complete connection strings for providers including ADO.NET, JDBC, ODBC, PHP, and Go.
 - Or, select the **Open in** button and **SQL Server Management Studio**. The server connection information is displayed.
 
@@ -50,9 +50,11 @@ To find the SQL connection string for the **SQL analytics endpoint** of your Fab
 
 You can easy connect to your SQL database with the **Open in** button in the Fabric portal [query editor](query-editor.md). Choose [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 
-:::image type="content" source="media/connect/open-in-connect-button.png" alt-text="Screenshot from the Fabric portal query editor showing the Open in button for easy connections with SSMS or the mssql extension in VS Code.":::
+:::image type="content" source="media/connect/open-in-connect-button.png" alt-text="Screenshot from the Fabric portal query editor showing the Open in button for easy connections with SSMS or the mssql extension in VS Code." lightbox="media/connect/open-in-connect-button.png":::
 
 ## Connect with SQL Server Management Studio manually
+
+:::image type="content" source="media/connect/sql-server-management-studio-settings.png" alt-text="Screenshot of SSMS settings." lightbox="media/connect/sql-server-management-studio-settings.png":::
 
 In [SQL Server Management Studio (SSMS)](https://aka.ms/ssms):
 
