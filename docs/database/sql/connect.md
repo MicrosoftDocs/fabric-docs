@@ -29,7 +29,7 @@ You can connect to the SQL database using the [web-based editor in the Fabric po
 
 The web-based editor for SQL database in Fabric provides a foundational object explorer and query execution interface. The integrated **Explorer** menu lists all database objects.
 
-A new SQL database in Fabric will automatically open into the web editor and an existing database can be opened in the web editor by selecting it in Fabric.
+A new SQL database in Fabric automatically opens into the web editor and an existing database can be opened in the web editor by selecting it in Fabric.
 
 ## Find SQL connection string
 
@@ -38,7 +38,7 @@ In [!INCLUDE [product-name](../../includes/product-name.md)], the SQL analytics 
 To find the SQL connection string for your **Fabric SQL database**:
 
 - Go to the settings of your SQL database item. 
-- Or, in the item list, select the `...` menu, select **Settings** then **Connection strings**. Fabric provides complete connection strings for providers including ADO.NET, JDBC, ODBC, PHP, and Go.
+- Or, in the item list, select the `...` menu. Select **Settings** then **Connection strings**. Fabric provides complete connection strings for providers including ADO.NET, JDBC, ODBC, PHP, and Go.
 - Or, select the **Open in** button and **SQL Server Management Studio**. The server connection information is displayed.
 
 To find the SQL connection string for the **SQL analytics endpoint** of your Fabric SQL database:
@@ -69,7 +69,7 @@ In [SQL Server Management Studio (SSMS)](https://aka.ms/ssms):
 
 ## Connect with sqlcmd
 
-You can connect to your SQL database in Fabric with [sqlcmd](/sql/tools/sqlcmd/sqlcmd-utility?view=fabric&preserve-view=true), just like any other SQL Database Engine product. [Use Microsoft Entra ID authentication](/sql/tools/sqlcmd/sqlcmd-authentication?view=fabric&preserve-view=true) with the `G` option. The Microsoft Entra authentication (`-G`) require at least version 13.1.
+You can connect to your SQL database in Fabric with [sqlcmd](/sql/tools/sqlcmd/sqlcmd-utility?view=fabric&preserve-view=true), just like any other SQL Database Engine product. [Use Microsoft Entra ID authentication](/sql/tools/sqlcmd/sqlcmd-authentication?view=fabric&preserve-view=true) with the `G` option. The Microsoft Entra authentication (`-G`) requires at least version 13.1.
 
 In the following example, replace `<server name>` with the long string of unique text that represents your SQL database in Fabric.
 
