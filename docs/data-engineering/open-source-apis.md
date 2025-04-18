@@ -28,6 +28,20 @@ Item.Read.All or Item.ReadWrite.All or one of the following three groups (accord
 - SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All
 - Lakehouse.Read.All or Lakehouse.ReadWrite.All
 
+## Interface
+
+With attemptId:
+
+```HTTP
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/...
+```
+
+Without attemptId:
+
+```HTTP
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/...
+```
+
 ## URI parameters
 
 | Name | In | Required | Type | Description |
