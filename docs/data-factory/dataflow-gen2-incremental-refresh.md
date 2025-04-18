@@ -3,7 +3,7 @@ title: Incremental refresh in Dataflow Gen2
 description: Learn about the incremental refresh feature in Dataflow Gen2 in Data Factory for Microsoft Fabric.
 author: luitwieler
 ms.topic: concept-article
-ms.date: 03/21/2025
+ms.date: 04/18/2025
 ms.author: jeluitwi
 ---
 
@@ -27,7 +27,6 @@ The following data destinations are supported for incremental refresh:
 - Fabric Warehouse
 - Azure SQL Database
 - Azure Synapse Analytics
-- Fabric Lakehouse (preview)
 
 Other destinations can be used in combination with incremental refresh by using a second query that references the staged data to update the data destination. This way you can still use incremental refresh to reduce the amount of data that needs to be processed and retrieved from the source system. But you need to do a full refresh from the staged data to the data destination.
 
