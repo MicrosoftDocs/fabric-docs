@@ -1,12 +1,11 @@
 ---
-title: "Data warehouse tutorial: Create a Warehouse"
+title: "Data Warehouse Tutorial: Create a Warehouse"
 description: "In this tutorial, learn how to create a Warehouse in Microsoft Fabric."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 12/29/2024
+ms.date: 04/06/2025
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Tutorial: Create a Warehouse
@@ -30,11 +29,11 @@ In this task, learn how to create a warehouse.
 
 1. In the **New warehouse** window, enter the name `Wide World Importers`.
 
-    :::image type="content" source="media/tutorial-create-warehouse/create-new-warehouse.png" alt-text="Screenshot of the New warehouse window, highlighting the entered name." border="false":::
+    :::image type="content" source="media/tutorial-create-warehouse/create-new-warehouse.png" alt-text="Screenshot of the New warehouse window, highlighting the entered name.":::
 
 1. Select **Create** to provision the warehouse. Provisioning is complete when the **Build a warehouse** landing page appears.
 
-   :::image type="content" source="media/tutorial-create-warehouse/build-a-warehouse.png" alt-text="Screenshot of the Build a warehouse landing page." lightbox="media/tutorial-create-warehouse/build-a-warehouse.png" border="false":::
+   :::image type="content" source="media/tutorial-create-warehouse/build-a-warehouse.png" alt-text="Screenshot of the Build a warehouse landing page." lightbox="media/tutorial-create-warehouse/build-a-warehouse.png":::
 
 ## Next step
 

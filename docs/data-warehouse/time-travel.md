@@ -1,12 +1,11 @@
 ---
-title: Time travel in Warehouse within Microsoft Fabric
-description: Learn how to Query data as it existed in the past with time travel in Warehouse in Microsoft Fabric.
+title: Time Travel
+description: Learn how to Query data as it existed in the past with time travel in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.custom:
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.date: 07/18/2024
 ---
 # Query data as it existed in the past
 

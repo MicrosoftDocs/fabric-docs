@@ -134,12 +134,15 @@ If your storage account is protected by a storage firewall, you can configure tr
 
 #### Authorization
 
-ADLS shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the ADLS shortcut and all access to that shortcut is authorized using that credential. The supported delegated types are Organizational account, Account Key, Shared Access Signature (SAS), and Service Principal.
+ADLS shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the ADLS shortcut and all access to that shortcut is authorized using that credential. ADLS shortcuts support the following delegated authorization types:
 
-- **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
+- **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account
 - **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute
-- **Service Principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
-- **Workspace Identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
+- **Service principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account
+- **Workspace identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account
+
+>[!NOTE]
+>When workspace identity is enabled on the workspace, the **Generate a user delegation key** action isn't required on the delegated type for authentication. This action is automatically assigned when using Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account.
 
 ### S3 shortcuts
 

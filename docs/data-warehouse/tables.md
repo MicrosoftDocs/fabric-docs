@@ -1,15 +1,14 @@
 ---
-title: Tables in data warehousing
+title: Tables
 description: Learn about tables in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: kecona
-ms.date: 10/09/2024
+ms.reviewer: xiaoyul
+ms.date: 04/06/2025
 ms.topic: how-to
-ms.custom:
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
-# Tables in data warehousing in Microsoft Fabric
+# Tables in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 

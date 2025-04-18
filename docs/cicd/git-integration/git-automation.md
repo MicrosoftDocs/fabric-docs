@@ -382,7 +382,7 @@ POST https://api.fabric.microsoft.com/v1/connections
 }
 ```
 
-Copy the ID and use it in the [Git - Get connection](/rest/api/fabric/core/git/get-connection) or [Git - Update My Git Credentials](/rest/api/fabric/core/git/update-my-git-credentials) API.
+Copy the ID and use it in the [Git - Connect](/rest/api/fabric/core/git/connect) or [Git - Update My Git Credentials](/rest/api/fabric/core/git/update-my-git-credentials) API.
 
 ### Get a list of existing connections
 
@@ -437,7 +437,7 @@ GET https://api.fabric.microsoft.com/v1/connections
 }
 ```
 
-Copy the ID of the connection you want and use it in the [Git - Get connection](/rest/api/fabric/core/git/get-connection) or [Git - Update My Git Credentials](/rest/api/fabric/core/git/update-my-git-credentials) API.
+Copy the ID of the connection you want and use it in the [Git - Connect](/rest/api/fabric/core/git/connect) or [Git - Update My Git Credentials](/rest/api/fabric/core/git/update-my-git-credentials) API.
 
 ## Considerations and limitations
 

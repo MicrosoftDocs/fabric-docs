@@ -4,13 +4,13 @@ description: An article
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: article
-ms.date: 02/26/2025
+ms.date: 04/07/2025
 ---
 
 # Data warehouse cross tenant access (preview)
 
 >[!IMPORTANT]
->Cross tenant access is a private preview feature. To participate in the preview, contact your Microsoft representative.
+>Cross tenant access is a private preview feature. To participate in the preview as a provider of cross tenant data, contact your Microsoft representative. To participate in the preview as a guest tenant, follow the steps listed in this document.
 
 The cross tenant access feature allows guest tenants to access data stored in a provider tenant’s Fabric data warehouses. This feature is useful for organizations that need to access data stored on a service provider's tenant. For example, when company A stores Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant.
 
@@ -91,12 +91,14 @@ Connect-PowerBIServiceAccount
 
 ### Provide consent
 
-Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the consent API to provide consent for cross tenant access for Fabric data warehouses with a specific provider. Provide the tenant ID of the provider in the request body.
+Providers must participate in the private preview before a guest tenant can provide consent.
+
+Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the consent API to provide consent for cross tenant access for Fabric data warehouses with a specific provider. Provide the tenant ID of the provider in the request body. 
 
 ```powershell
-$body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’
-$url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent”
-Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “application/json”
+$body ='{ "resourceTenantObjectId": "GUID_VAL" }'
+$url = "https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent"
+Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType "application/json"
 ```
 
 ## Disable cross tenant access
@@ -111,12 +113,4 @@ Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/i
 $body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’
 $url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/revokeConsent”
 Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “application/json”
-```
-
-## Considerations and limitations
-
-You might get a 403 (forbidden) error if the call is not routed to the correct cluster. When this happens, use the cluster URL of your tenant to call the consent API. For example:
-
-```http
-Example: https://{clusterUrl}/v1/ephemeral/crosstenantauth/consent 
 ```

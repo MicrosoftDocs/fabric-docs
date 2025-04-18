@@ -1,14 +1,13 @@
 ---
-title: SQL analytics endpoint performance considerations
+title: SQL Analytics Endpoint Performance Considerations
 description: Learn more about performance considerations for the SQL analytics endpoint of a lakehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: maprycem, amasingh
-ms.date: 11/04/2024
+ms.date: 04/06/2025
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # SQL analytics endpoint performance considerations
@@ -17,7 +16,7 @@ ms.search.form: Optimization # This article's title should not change. If so, co
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the lakehouse using T-SQL language and TDS protocol. Every lakehouse has one [!INCLUDE [fabric-se](includes/fabric-se.md)]. The number of SQL analytics endpoints in a workspace matches the number of [lakehouses](../data-engineering/lakehouse-overview.md) and [mirrored databases](../database/mirrored-database/overview.md) provisioned in that one workspace.
 
-A background process is responsible for scanning lakehouse for changes, and keeping [!INCLUDE [fabric-se](includes/fabric-se.md)] up-to-date for all the changes committed to lakehouses in a workspace. The sync process is transparently managed by Microsoft Fabric platform. When a change is detected in a lakehouse, a background process updates metadata and the [!INCLUDE [fabric-se](includes/fabric-se.md)] reflects the changes committed to lakehouse tables. Under normal operating conditions, the lag between a lakehouse and [!INCLUDE [fabric-se](includes/fabric-se.md)] is less than one minute. The actual length of time can vary from a few seconds to minutes depending on a number of factors that are dicussed in this article.
+A background process is responsible for scanning lakehouse for changes, and keeping [!INCLUDE [fabric-se](includes/fabric-se.md)] up-to-date for all the changes committed to lakehouses in a workspace. The sync process is transparently managed by Microsoft Fabric platform. When a change is detected in a lakehouse, a background process updates metadata and the [!INCLUDE [fabric-se](includes/fabric-se.md)] reflects the changes committed to lakehouse tables. Under normal operating conditions, the lag between a lakehouse and [!INCLUDE [fabric-se](includes/fabric-se.md)] is less than one minute. The actual length of time can vary from a few seconds to minutes depending on a number of factors that are discussed in this article.
 
 ### Automatically generated schema in the SQL analytics endpoint of the Lakehouse
 
@@ -38,9 +37,9 @@ You can manually force a refresh of the automatic metadata scanning in the Fabri
 - Automatic metadata discovery tracks changes committed to lakehouses, and is a single instance per Fabric workspace. If you are observing increased latency for changes to sync between lakehouses and [!INCLUDE [fabric-se](includes/fabric-se.md)], it could be due to large number of lakehouses in one workspace. In such a scenario, consider migrating each lakehouse to a separate workspace as this allows automatic metadata discovery to scale.
 - Parquet files are immutable by design. When there's an update or a delete operation, a Delta table will add new parquet files with the changeset, increasing the number of files over time, depending on frequency of updates and deletes. If there's no maintenance scheduled, eventually, this pattern creates a read overhead and this impacts time it takes to sync changes to [!INCLUDE [fabric-se](includes/fabric-se.md)]. To address this, schedule regular [lakehouse table maintenance operations](../data-engineering/lakehouse-table-maintenance.md#execute-ad-hoc-table-maintenance-on-a-delta-table-using-lakehouse).
 - In some scenarios, you might observe that changes committed to a lakehouse are not visible in the associated [!INCLUDE [fabric-se](includes/fabric-se.md)]. For example, you might have created a new table in lakehouse, but it's not listed in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. Or, you might have committed a large number of rows to a table in a lakehouse but this data is not visible in [!INCLUDE [fabric-se](includes/fabric-se.md)]. We recommend initiating an on-demand metadata sync, triggered from the SQL query editor **Refresh** ribbon option. This option forces an on-demand metadata sync, rather than waiting on the background metadata sync to finish.
-- Not all Delta features are understood by the automatic sync process.  For more information on the functionality supported by each engine in Fabric, see [Delta Lake Interoperability](../fundamentals/delta-lake-interoperability.md).
-- If there is an extremely large volumne of tables changes during the Extract Transform and Load (ETL) processing, an expected delay could occur until all the changes are processed.
-  
+- Not all Delta features are understood by the automatic sync process. For more information on the functionality supported by each engine in Fabric, see [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md).
+- If there is an extremely large volume of tables changes during the Extract Transform and Load (ETL) processing, an expected delay could occur until all the changes are processed.
+
 ## Partition size considerations
 
 The choice of partition column for a delta table in a lakehouse also affects the time it takes to sync changes to [!INCLUDE [fabric-se](includes/fabric-se.md)]. The number and size of partitions of the partition column are important for performance:

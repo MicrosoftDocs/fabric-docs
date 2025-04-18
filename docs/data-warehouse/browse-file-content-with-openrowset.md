@@ -1,15 +1,15 @@
 ---
-title: Browse file content before ingestion with the OPENROWSET function (Preview)
+title: "Browse File Content Before Ingestion with the OPENROWSET function"
 description: Learn how to browse the contents of files and discover their schema using the OPENROWSET function before ingesting them into a Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: jovanpop
-ms.date: 02/12/2025
+ms.date: 04/06/2025
 ms.topic: how-to
 ms.search.form: Ingesting data
 ---
 
-# Browse file content using OPENROWSET function (Preview)
+# Browse file content using OPENROWSET function
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -53,7 +53,9 @@ You don't need to specify the `FORMAT` option, as the `OPENROWSET` function will
 > [!Note]
 > In the results, you might notice that the first row in this file contains the column names instead of data. In this case, you will need to modify the query using the HEADER_ROW option to skip the row and use it only for the column names. This is part of the data exploration process, as you gradually adjust the file until it matches the underlying data.
 
-## Reading custom text files
+<a id="reading-custom-text-files"></a>
+
+## Read custom text files
 
 The OPENROWSET(BULK) function allows you to define various options for reading custom text files.
 For example, you can specify values for `ROWTERMINATOR` and `FIELDTERMINATOR` to indicate the underlying file format.

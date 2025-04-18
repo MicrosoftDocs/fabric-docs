@@ -15,7 +15,7 @@ ms.search.form: AI functions
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-With Microsoft Fabric, all business professionals—from developers to analysts—can derive more value from their enterprise data through Generative AI, using experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and [AI skills](../how-to-create-ai-skill.md). Thanks to a new set of AI functions for data engineering, Fabric users can now harness the power of industry-leading large language models (LLMs) to transform and enrich data seamlessly.
+With Microsoft Fabric, all business professionals—from developers to analysts—can derive more value from their enterprise data through Generative AI, using experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and [Fabric data agents](../how-to-create-data-agent.md). Thanks to a new set of AI functions for data engineering, Fabric users can now harness the power of industry-leading large language models (LLMs) to transform and enrich data seamlessly.
 
 AI functions harness the power of GenAI for summarization, classification, text generation, and so much more—all with a single line of code:
 

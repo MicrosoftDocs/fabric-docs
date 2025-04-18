@@ -4,9 +4,8 @@ description: Learn how to create a Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 12/30/2024
+ms.date: 04/06/2025
 ms.topic: how-to
-ms.custom:
 ms.search.form: Create a warehouse # This article's title should not change. If so, contact engineering.
 ---
 # Create a Warehouse in Microsoft Fabric
@@ -18,7 +17,9 @@ This article describes how to get started with [!INCLUDE [fabric-dw](includes/fa
 > [!TIP]
 > You can proceed with either a [new blank Warehouse](#how-to-create-a-blank-warehouse) or [a new Warehouse with sample data](#how-to-create-a-warehouse-sample) to continue this series of Get Started steps.
 
-<a id="how-to-create-a-warehouse"></a><a id="how-to-create-a-blank-warehouse"></a>
+<a id="how-to-create-a-warehouse"></a>
+
+<a id="how-to-create-a-blank-warehouse"></a>
 
 ## Create a warehouse
 
@@ -26,11 +27,11 @@ You can start creating your warehouse from the workspace. Select **+ New Item** 
 
 An empty warehouse is created for you to start creating objects in the warehouse. You can use either [sample data](/azure/open-datasets/dataset-catalog) to get a jump start or load your own test data if you prefer.
 
-:::image type="content" source="media/create-warehouse/warehouse-home-hub.png" alt-text="Screenshot showing the Sample warehouse and Warehouse cards in the New Item menu.":::
+:::image type="content" source="media/create-warehouse/warehouse-home-hub.png" alt-text="Screenshot showing the Sample warehouse and Warehouse cards in the New Item menu." lightbox="media/create-warehouse/warehouse-home-hub.png":::
 
 Another option available to create your warehouse is through the **Create** button in the navigation pane. Look for the **Warehouse** or **Sample warehouse** cards under **Data Warehouse**.
 
-Once initialized, you can load data into your warehouse. For more information about getting data into a warehouse, see [Ingesting data](ingest-data.md).
+Once initialized, you can load data into your warehouse. For more information about getting data into a warehouse, see [Ingest data into the Warehouse](ingest-data.md).
 
 <a id="how-to-create-a-warehouse-sample"></a>
 
@@ -42,7 +43,7 @@ In this section, we walk you through creating a sample [!INCLUDE [fabric-dw](inc
     - In your workspace, select **+ New Item** and look for the **Warehouse** or **Sample warehouse** card under the **Store data** section. 
     - Or, select **Create** in the navigation pane. Look for the **Warehouse** or **Sample warehouse** cards under **Data Warehouse**.
 
-   :::image type="content" source="media/create-warehouse/home-hub-warehouse-sample.png" alt-text="Screenshot showing the Warehouse and Sample warehouse cards.":::
+   :::image type="content" source="media/create-warehouse/home-hub-warehouse-sample.png" alt-text="Screenshot showing the Warehouse and Sample warehouse cards." lightbox="media/create-warehouse/home-hub-warehouse-sample.png":::
 
 1. Provide the name for your sample warehouse and select **Create**.
 
@@ -63,7 +64,7 @@ If you have an existing warehouse created that's empty, the following steps will
 1. The following sample T-SQL scripts can be used on the sample data in your new warehouse.
 
     > [!NOTE]
-    > It is important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) (for users who prefer to use T-SQL for the majority of their data processing needs). For more information, see [Connectivity](connectivity.md) or [Query a warehouse](query-warehouse.md).
+    > It is important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true) (for users who prefer to use T-SQL for the majority of their data processing needs). For more information, see [Connectivity](connectivity.md) or [Query the SQL analytics endpoint or Warehouse](query-warehouse.md).
 
     ```sql
     

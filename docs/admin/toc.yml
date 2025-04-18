@@ -40,6 +40,8 @@ items:
       href: monitoring-workspace.md
     - name: Feature usage and adoption report
       href: feature-usage-adoption.md
+    - name: Content sharing report
+      href: content-sharing.md
   - name: Use the Monitoring hub
     href: monitoring-hub.md 
   - name: Track user activities
@@ -123,8 +125,8 @@ items:
       href: service-admin-portal-discovery.md
     - name: App settings
       href: service-admin-portal-app.md
-    - name: How to switch an AI skill tenant
-      href: ../data-science/ai-skill-tenant-switch.md
+    - name: Fabric data agent tenant settings (preview)
+      href: ../data-science/data-agent-tenant-settings.md
     - name: Copilot settings
       href: service-admin-portal-copilot.md
     - name: Integration settings
