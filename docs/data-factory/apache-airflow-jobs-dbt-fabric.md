@@ -25,16 +25,6 @@ This tutorial illustrates how to create an Apache Airflow DAG that uses dbt to t
 
 To get started, you must complete the following prerequisites:
 
-- Enable Apache Airflow Job in your Tenant.
-
-  > [!NOTE]
-  > Since Apache Airflow job is in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it.
-
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Job (preview)" section.
-
-  2. Select Apply.
-     :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
-
 - [Create the Service Principal](/entra/identity-platform/howto-create-service-principal-portal). Add the service principal as the `Contributor` in the workspace where you create data warehouse.
 
 - If you don't have one, [Create a Fabric warehouse](../data-warehouse/create-warehouse.md). Ingest the sample data into the warehouse using data pipeline. For this tutorial, we use the <strong>NYC Taxi-Green</strong> sample.
