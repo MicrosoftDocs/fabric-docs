@@ -24,11 +24,11 @@ At the top of a visual that has a style present, you receive a warning icon. The
 
 As a workaround, follow these steps:
 
-1. Convert the visual to a table or matrix
-1. Select **Reset to default** on the **Style Preset** card
-1. Convert back to desired visual type
-1. Remove any stylePresets that contain a double wild card from any custom theme files
-1. Reimport the new custom theme file and publish
+1. Convert the visual to a table or matrix.
+1. Select **Reset to default** on the **Style Preset** card.
+1. Convert back to desired visual type.
+1. Remove any stylePresets that contain a double wild card from any custom theme files.
+1. Reimport the new custom theme file and publish.
 
 ## Next steps
 
