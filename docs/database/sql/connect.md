@@ -3,11 +3,12 @@ title: "Connect to your SQL database"
 description: Learn about options to connect to your SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: antho, sukkaur
+ms.reviewer: antho, sukkaurk, imotiwala
 ms.date: 03/18/2025
 ms.topic: how-to
 ms.search.form: product-databases, Connect to SQL database
 ---
+
 # Connect to your SQL database in Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
@@ -59,10 +60,10 @@ In [SQL Server Management Studio (SSMS)](https://aka.ms/ssms):
 1. Select **Settings**.
 1. Select **Connection strings**. Look for [the connection string to your SQL database](#find-sql-connection-string), including the `Data Source=`. For example, `tcp:<servername>.database.fabric.microsoft.com,1433`. The `Initial Catalog=` is the database name.
 1. In SSMS, open a **New connection**.
-1. Copy and paste the value from `Data Source=` into the **Server name**.
+1. From the Fabric dialog box, copy and paste the value from `Server Name` into the **Server name**.
 1. Choose **Authentication** type: **Microsoft Entra ID - Universal with MFA support**.
 1. Select **Options<<**.
-1. Copy and paste the value from `Initial Catalog=` into the **Connect to database** text box.
+1. Copy and paste the value from `Database Name` into the **Connect to database** text box.
 1. Select **Connect**.
 1. Sign in using **Microsoft Entra ID - Universal with MFA support**.
 
