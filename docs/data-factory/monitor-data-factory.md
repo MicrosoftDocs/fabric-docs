@@ -21,9 +21,9 @@ Refer to [How to monitor data pipeline runs](monitor-pipeline-runs.md) for detai
 
 Refer to [View refresh history and monitor your dataflows](dataflows-gen2-monitor.md) for details on how to monitor your dataflows.
 
-## Monitor Copy job
+## Monitor copy job
 
-Refer to [How to monitor a Copy job](monitor-copy-job.md) for details on how to monitor your copy job.
+Refer to [How to monitor a copy job](monitor-copy-job.md) for details on how to monitor your copy job.
 
 ## Related content
 
