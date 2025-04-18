@@ -4,7 +4,7 @@ description: A known issue is posted where OneLake under-reports transactions in
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/10/2025
+ms.date: 04/18/2025
 ms.custom: known-issue-718
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-718
 
 OneLake is currently under-reporting **OneLake Other Operations Via Redirect** transactions that occur when a lakehouse automatically detects Delta tables. HTTP 404 errors aren't currently billed. When we fix the issue, your usage for the **OneLake Other Operations Via Redirect** transactions might go up. If your usage exceeds your capacity limits, your capacity might be throttled.
 
-**Status:** Open
+**Status:** Fixed: April 18, 2025
 
 **Product Experience:** OneLake
 
