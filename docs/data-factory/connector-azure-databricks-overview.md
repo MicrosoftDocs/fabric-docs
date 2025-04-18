@@ -24,6 +24,5 @@ The Azure Databricks connector supports the following capabilities in data pipel
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None <br> On-premises | Personal Access Token |
-| **Lookup activity** | None <br> On-premises | Personal Access Token |
 
 To learn more about the copy activity configuration for Azure Databricks in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-databricks-copy-activity.md).

@@ -13,6 +13,38 @@ ms.custom:
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Databricks.
 
+## Prerequisites
+
+To use this Azure Databricks connector, you need to set up a cluster in Azure Databricks.
+
+- To copy data to Azure Databricks, Copy activity invokes Azure Databricks cluster to read data from an Azure Storage, which is either your original source or a staging area to where the service firstly writes the source data via built-in staged copy. Learn more from [Azure Databricks as the destination](connector-azure-databricks-copy-activity.md#destination).
+- Similarly, to copy data from Azure Databricks, Copy activity invokes Azure Databricks cluster to write data to an Azure Storage, which is either your original destination or a staging area from where the service continues to write data to final destination via built-in staged copy. Learn more from [Azure Databricks as the source](connector-azure-databricks-copy-activity.md#source).
+
+The Databricks cluster needs to have access to Azure Blob or Azure Data Lake Storage Gen2 account, both the storage container/file system used for source/destination/staging and the container/file system where you want to write the Azure Databricks tables.
+
+- To use **Azure Data Lake Storage Gen2**, you can configure a **service principal** on the Databricks cluster as part of the Apache Spark configuration. Follow the steps in [Access directly with service principal](/azure/databricks/data/data-sources/azure/azure-datalake-gen2#--access-directly-with-service-principal-and-oauth-20).
+
+- To use **Azure Blob storage**, you can configure a **storage account access key** or **SAS token** on the Databricks cluster as part of the Apache Spark configuration. Follow the steps in [Access Azure Blob storage using the RDD API](/azure/databricks/data/data-sources/azure/azure-storage#access-azure-blob-storage-using-the-rdd-api).
+
+During copy activity execution, if the cluster you configured has been terminated, the service automatically starts it. If you author pipeline using authoring UI, for operations like data preview, you need to have a live cluster, the service won't start the cluster on your behalf.
+
+### Specify the cluster configuration
+
+1. In the **Cluster Mode** drop-down, select **Standard**.
+
+2. In the **Databricks Runtime Version** drop-down, select a Databricks runtime version.
+
+3. Turn on [Auto Optimize](/azure/databricks/optimizations/auto-optimize) by adding the following properties to your [Spark configuration](/azure/databricks/clusters/configure#spark-config):
+
+   ```
+   spark.databricks.delta.optimizeWrite.enabled true
+   spark.databricks.delta.autoCompact.enabled true
+   ```
+
+4. Configure your cluster depending on your integration and scaling needs.
+
+For cluster configuration details, see [Configure clusters](/azure/databricks/clusters/configure).
+
 ## Supported configuration
 
 For the configuration of each tab under copy activity, go to the following sections respectively.
@@ -40,8 +72,6 @@ The following properties are **required**:
 - **Use query**: Select **Table** or **Query**.
 
   - If you select **Table**:
-
-    - **Catalog**: A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables.
 
     - **Database**: Select your database from the drop-down list or type the database.
 
@@ -76,7 +106,6 @@ If your destination data store and format meet the criteria described in this se
         - `encodingName` UTF-7 is not supported.
     - For **Avro** format, the compression codec is **None**, **deflate**, or **snappy**.
 
-- In the Copy activity source, `additionalColumns` is not specified.
 - If copying data to DelimitedText, in copy activity sink, `fileExtension` need to be ".csv".
 - In the Copy activity mapping, type conversion is not enabled.
 
@@ -98,8 +127,6 @@ The following properties are supported for Azure Databricks under the **Destinat
 The following properties are **required**:
 
 - **Connection**: Select an Azure Databricks connection from the connection list. If no connection exists, then create a new Azure Databricks connection.
-
-- **Catalog**: A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables.
 
 - **Database**: Select your database from the drop-down list or type the database.
 
@@ -130,7 +157,6 @@ If your source data store and format meet the criteria described in this section
 
     - `wildcardFileName` only contains wildcard `*` but not `?`, and `wildcardFolderName` is not specified.
     - `prefix`, `modifiedDateTimeStart`, `modifiedDateTimeEnd`, and `enablePartitionDiscovery` are not specified.
-    - `additionalColumns` is not specified.
 
 - In the Copy activity mapping, type conversion is not enabled.
 
@@ -162,7 +188,6 @@ The following tables contain more information about a copy activity in an Azure 
 |**Connection** |Your connection to the source data store.|< your Azure Databricks connection >|Yes|connection|
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.| • **Table**<br>  • **Query** |No| / |
 | For **Table** | | | | |
-| **Catalog** | A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables. | < your catalog > | No (choose default catalog if it’s null) | catalog |
 |**Database** | Your database that you use as source.|< your database >| No |database|
 |**Table** |Your source data table to read data.|< your table name >| No |table|
 | For **Query** | | | | |
@@ -176,7 +201,6 @@ The following tables contain more information about a copy activity in an Azure 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the destination data store.|< your Azure Databricks connection >|Yes|connection|
-| **Catalog** | A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables. | < your catalog > | No (choose default catalog if it’s null) | catalog |
 |**Database** | Your database that you use as destination.|< your database >|Yes |database|
 |**Table** |Your destination data table to write data.|< your table name >|Yes|table|
 |**Pre-copy script** |  Specify a script for Copy Activity to execute before writing data into destination table in each run. You can use this property to clean up the pre-loaded data. | < your pre-copy script> |No| preCopyScript |
