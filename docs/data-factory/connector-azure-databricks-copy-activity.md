@@ -95,7 +95,7 @@ Under **Advanced**, you can specify the following fields:
 
 If your destination data store and format meet the criteria described in this section, you can use the Copy activity to directly copy from Azure Databricks to destination. The service checks the settings and fails the Copy activity run if the following criteria is not met:
 
-- The **destination connection** is [Azure Blob storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md). The account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](connector-azure-databricks.md#prerequisites).
+- The **destination connection** is [Azure Blob storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md). The account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](#prerequisites).
 
 - The **destination data format** is of **Parquet**, **DelimitedText**, or **Avro** with the following configurations, and points to a folder instead of file.
 
@@ -116,7 +116,7 @@ When your sink data store or format does not match the direct copy criteria, as 
 To use this feature, create an [Azure Blob storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md) that refers to the storage account as the interim staging. Then specify the `enableStaging` and `stagingSettings` properties in the Copy activity.
 
 >[!NOTE]
->The staging storage account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](connector-azure-databricks.md#prerequisites).
+>The staging storage account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](#prerequisites).
 
 ## Destination
 
@@ -142,7 +142,7 @@ Under **Advanced**, you can specify the following fields:
 
 If your source data store and format meet the criteria described in this section, you can use the Copy activity to directly copy from source to Azure Databricks. The service checks the settings and fails the Copy activity run if the following criteria is not met:
 
-- The **source connection** is [Azure Blob storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md). The account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](connector-azure-databricks.md#prerequisites).
+- The **source connection** is [Azure Blob storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md). The account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](#prerequisites).
 
 - The **source data format** is of **Parquet**, **DelimitedText**, or **Avro** with the following configurations, and points to a folder instead of file.
 
@@ -167,7 +167,7 @@ When your source data store or format does not match the direct copy criteria, a
 To use this feature, create an [Azure Blob storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md) that refers to the storage account as the interim staging. Then specify the `enableStaging` and `stagingSettings` properties in the Copy activity.
 
 >[!NOTE]
->The staging storage account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](connector-azure-databricks.md#prerequisites).
+>The staging storage account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](#prerequisites).
 
 ### Mapping
 
