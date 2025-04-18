@@ -189,6 +189,12 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Eventstream real-time weather connector fails to load map in edit mode
+      href: ../known-issues/known-issue-1106-eventstream-weather-connector-fails-load-map-edit-mode.md
+    - name: Power BI visual warning about style preset not found
+      href: ../known-issues/known-issue-1104-visual-warning-style-preset-not-found.md
+    - name: Data warehouse in second workspace out of sync from Git
+      href: ../known-issues/known-issue-1103-data-warehouse-second-workspace-sync-git.md
     - name: Deletion of managed private endpoint connected to Key Vault doesn't work
       href: ../known-issues/known-issue-1102-deletion-private-endpoint-connected-key-vault-not-work.md
     - name: Vertica connector throws invalid conversion error
