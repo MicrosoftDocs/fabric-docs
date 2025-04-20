@@ -66,7 +66,7 @@ Select the tab that corresponds with your desired data source type.
 
     | **Setting** | **Field description** |
     |--|--|
-    | Connection URI | the URL of the Log Analytics (LA) workspace or Application Insights (AI) resource:</br> - For Log Analytics workspace: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>`</br> - for Application Insights resource: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`</br> - to see all data sources in the LA or AI subscription: `<https://ade.applicationinsights.io/subscriptions/<subscription-id>` |
+    | Connection URI | the URL of the Log Analytics (LA) workspace or Application Insights (AI) resource:</br> - For Log Analytics workspace: `https://ade.loganalytics.io/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.operationalinsights/workspaces/<WorkspaceName>`</br> - for Application Insights resource: `https://ade.applicationinsights.io/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.insights/components/<AIAppName>`</br> - to see all data sources in the LA or AI subscription: `<https://ade.applicationinsights.io/subscriptions/<SubscriptionID>` |
     | Database | expand the list and select a data source|
 
 1. Select **Connect**.
