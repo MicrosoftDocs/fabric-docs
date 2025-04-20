@@ -64,6 +64,8 @@ Select the tab that corresponds with your desired data source type.
 
     :::image type="content" source="media/kusto-query-set/connect-to-monitor.png" alt-text="Screenshot of the connection window showing an Azure Monitor URI. The Connect cluster button is highlighted.":::
 
+    | In the following descriptions, replace <SubscriptionID>, <WorkspaceName> and <ResourceGroupName> with your own values.
+
     | **Setting** | **Field description** |
     |--|--|
     | Connection URI | the URL of the Log Analytics (LA) workspace or Application Insights (AI) resource:</br> - For Log Analytics workspace: `https://ade.loganalytics.io/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.operationalinsights/workspaces/<WorkspaceName>`</br> - for Application Insights resource: `https://ade.applicationinsights.io/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.insights/components/<AIAppName>`</br> - to see all data sources in the LA or AI subscription: `<https://ade.applicationinsights.io/subscriptions/<SubscriptionID>` |
