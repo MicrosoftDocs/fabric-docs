@@ -31,21 +31,19 @@ Select the tab that corresponds with your desired data source type.
 ## [Eventhouse / KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::.
+1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::, and select **Add data source** > **Eventhouse / KQL Database**.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
-1. Select **Add data source**, then select **Eventhouse / KQL Database**.
 1. In the **OneLake catalog** window that appears, select a KQL database to connect to your KQL queryset, and then select **Connect**. Alternatively, close the **OneLake data hub** window and use the **+ Add data source** menu to connect to a different data source.
 
 ## [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::.
+1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::, and select **Add data source** > **Azure Data Explorer**.
 
-    :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
+    :::image type="content" source="media/kusto-query-set/expand-database-menu-2.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
 
-1. Select **Add data source** > **Azure Data Explorer**.
 1. Under **Connection URI**, enter the cluster URI.
 
     To find the connection URI, go to your cluster resource in the [Azure portal](https://portal.azure.com/#home). The connection URI is the URI found in the Overview. To add a free sample cluster, specify "help" as the **Connection URI**.
@@ -58,18 +56,17 @@ Select the tab that corresponds with your desired data source type.
 ## [Azure Monitor](#tab/azure-monitor)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::.
+1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::, and select **Add data source** > **Azure Monitor** > **Application Insights** or **Log Analytics**.
 
-    :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
+    :::image type="content" source="media/kusto-query-set/expand-database-menu-3.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
-1. Select **Add data source** > **Azure Monitor** > **Application Insights** or **Log Analytics**.
 1. Enter your connection details.
 
     :::image type="content" source="media/kusto-query-set/connect-to-monitor.png" alt-text="Screenshot of the connection window showing an Azure Monitor URI. The Connect cluster button is highlighted.":::
 
     | **Setting** | **Field description** |
     |--|--|
-    | Connection URI | the URL of the Log Analytics (LA) workspace or Application Insights (AI) resource:</br> - For Log Analytics workspace: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>`</br> - For Application Insights resource: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`</br> - To see all data sources in the LA or AI subscription: `<https://ade.applicationinsights.io/subscriptions/<subscription-id>` |
+    | Connection URI | the URL of the Log Analytics (LA) workspace or Application Insights (AI) resource:</br> - For Log Analytics workspace: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>`</br> - for Application Insights resource: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`</br> - to see all data sources in the LA or AI subscription: `<https://ade.applicationinsights.io/subscriptions/<subscription-id>` |
     | Database | expand the list and select a data source|
 
 1. Select **Connect**.
@@ -117,7 +114,6 @@ To open the action menu, hover over an item in the expanded list and select the 
 * Refresh database
 * View data profile
 * Explore data
-* Explore data
 * Insert: to create and copy a script
 * Get data: to add a new data source
 * Create a dashboard
@@ -138,7 +134,6 @@ To open the action menu, hover over the data source name and select the **More m
 * Query in a new tab: open this data source in a new tab in the queryset
 * Remove source: removes all the databases in that data source
 * Remove database: removes the selected database only
-* Open in KQL database: opens this data source in a KQL database.
 * Open in KQL database: opens this data source in a KQL database.
 
 :::image type="content" source="media/kusto-query-set/explorer-pane-lower-section.png" alt-text="Screenshot showing the lower section of the Explorer pane where all data sources that were added to your queryset are listed." lightbox="media/kusto-query-set/explorer-pane-lower-section.png":::
