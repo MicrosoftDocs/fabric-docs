@@ -23,7 +23,6 @@ In this tutorial, you learn how to:
   - [parsnip](https://parsnip.tidymodels.org/)
   - [rsample](https://rsample.tidymodels.org/)
   - [workflows](https://workflows.tidymodels.org/)
-
   to process data and train a machine learning model
 - Write the output data to a lakehouse as a delta table
 - Build a Power BI visual report to directly access data in that lakehouse
