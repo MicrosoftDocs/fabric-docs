@@ -146,7 +146,6 @@ One reason to cancel a trial capacity is when the capacity administrator of a tr
 
 If you don't move the workspaces and their contents to a new capacity that supports Fabric:
 
-- Microsoft can't extend the Fabric capacity trial, and you might not be able to start a new trial using your same user ID. Other users can still start their own Fabric trial capacity. 
 - All licenses return to their original versions. You no longer have the equivalent of a PPU license. The license mode of any workspaces assigned to that trial capacity changes to Power BI Pro. 
 - All Fabric items in the workspaces become unusable and are eventually deleted. Your Power BI items are unaffected and still available when the workspace license mode returns to Power BI Pro.  
 - You can't create workspaces that support Fabric capabilities.
