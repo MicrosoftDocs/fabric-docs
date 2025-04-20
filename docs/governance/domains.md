@@ -30,6 +30,9 @@ To group data into domains, workspaces are associated with domains. When a works
 
 > [!NOTE]
 > Domain assignment doesn't affect item visibility or accessibility for tenant users. Item discovery, visibility, and access depend on such things as workspace role and item permissions, but not domain assignment.
+>
+> Likewise, all users within a tenant can see all the domains defined in the tenant, regardless of their specific domain roles. For example, users who are neither contributors nor admins of a domain called "Finance" in their tenant can still see this domain in the [domains filter](./onelake-catalog-explore.md#scope-the-catalog-to-a-particular-domain) of the Onelake Catalog.
+
 
 ### Subdomains
 
