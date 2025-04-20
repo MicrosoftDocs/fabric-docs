@@ -53,7 +53,7 @@ The backend image can be stored and managed using [Azure Container Registry (ACR
 The ACR serves as a private registry for storing Docker container images, making it simple to automate the process of building, testing, and deploying the backend application.
 This containerized approach allows for consistent and scalable deployments, with the added benefit of version control for the backend images.
 
-### Web App onAzure App Service with Container
+### Web App on Azure App Service with Container
 
 [Azure App Service](/azure/app-service/configure-custom-container) with Container allows you to deploy and manage containerized applications on a fully managed platform.
 This service provides built-in auto-scaling, load balancing, and streamlined CI/CD integration with Docker Hub, Azure Container Registry, and GitHub.
