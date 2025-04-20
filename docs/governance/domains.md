@@ -44,10 +44,10 @@ There are three roles involved in the creation and management of domains:
 
 * **Domain contributor**: Domain contributors are [workspace admins](../fundamentals/roles-workspaces.md) whom a domain or Fabric admin has authorized to assign the workspaces they're the admins of to a domain, or to change the current domain assignment.
 
-    Domain contributors assign the workspaces they're an admin of in the settings of the workspace itself. They don't have access to the **Domains** tab in the admin portal.
-    
-    > [!NOTE]
-    > Remember, to be able to assign a workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../fundamentals/roles-workspaces.md) in the workspace).
+    Domain contributors assign the workspaces they're an admin of in the settings of the workspace itself. They don't have access to the **Domains** tab in the admin portal. Remember, to be able to assign a workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../fundamentals/roles-workspaces.md) in the workspace).
+
+> [!NOTE]
+> Domain labels on items are visible to everyone in the organization - domain label visibility does not depend on domain roles.
 
 ### Domain settings delegation
 
