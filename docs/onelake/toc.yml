@@ -67,7 +67,7 @@ items:
   items:
   - name: OneLake security overview
     href: ./security/get-started-security.md
-  - name: Onelake security features
+  - name: OneLake security features
     items:
     - name: Table and folder security
       href: ./security/table-folder-security.md
