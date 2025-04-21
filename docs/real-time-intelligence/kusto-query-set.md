@@ -33,7 +33,7 @@ Select the tab that corresponds with your desired data source type.
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::, and select **Add data source** > **Eventhouse / KQL Database**.
 
-    :::image type="content" source="media/kusto-query-set/expand-database-menu-1.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
+    :::image type="content" source="media/kusto-query-set/expand-database-menu-kql.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
 1. In the **OneLake catalog** window that appears, select a KQL database to connect to your KQL queryset, and then select **Connect**. Alternatively, close the **OneLake data hub** window and use the **+ Add data source** menu to connect to a different data source.
 
@@ -42,7 +42,7 @@ Select the tab that corresponds with your desired data source type.
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::, and select **Add data source** > **Azure Data Explorer**.
 
-    :::image type="content" source="media/kusto-query-set/expand-database-menu-2.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
+    :::image type="content" source="media/kusto-query-set/expand-database-menu-adx.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
 
 1. Under **Connection URI**, enter the cluster URI.
 
@@ -58,7 +58,7 @@ Select the tab that corresponds with your desired data source type.
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::, and select **Add data source** > **Azure Monitor** > **Application Insights** or **Log Analytics**.
 
-    :::image type="content" source="media/kusto-query-set/expand-database-menu-3.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
+    :::image type="content" source="media/kusto-query-set/expand-database-menu-azure-monitor.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
 1. Enter your connection details.
 
