@@ -18,18 +18,18 @@ When developing custom business logic, you can use public libraries from PyPI or
 
 1. Sign in to [Microsoft Fabric ](https://app.fabric.microsoft.com)
 
-2. Select the **User data function** item you are working on. 
+2. Select the **User data function** item you're working on. 
 
 3. Select **Library Management**
 
-   :::image type="content" source="..\media\user-data-functions-manage-libraries\select-library-management.png" alt-text="Screenshot showing how to manage libraries" lightbox="..\media\user-data-functions-manage-libraries\select-library-management.png":::
+   :::image type="content" source="..\media\user-data-functions-manage-libraries\select-library-management.png" alt-text="Screenshot showing how to manage libraries." lightbox="..\media\user-data-functions-manage-libraries\select-library-management.png":::
 
    >[!NOTE]
    > `fabric_user_data_functions` library is added and can't be removed. This is fabric functions library. You can update the version if there are future releases of this SDK. 
 
 4. Select **Add from PyPI** to add new library. Provide the library name and select a version, for example `pandas` with version `2.2.3`.
 
-   :::image type="content" source="..\media\user-data-functions-manage-libraries\add-pandas-library.png" alt-text="Screenshot showing how to add pandas library" lightbox="..\media\user-data-functions-manage-libraries\add-pandas-library.png":::
+   :::image type="content" source="..\media\user-data-functions-manage-libraries\add-pandas-library.png" alt-text="Screenshot showing how to add pandas library." lightbox="..\media\user-data-functions-manage-libraries\add-pandas-library.png":::
 
 6. Once a library is added to the User data functions item, it is in **Saved** state. The User data functions item needs to be published. All published libraries have **Published** state.
 
@@ -46,11 +46,11 @@ Publish the user data functions item whenever libraries are updated.
 ## Add a private library 
 Private libraries refer to code built by you or your organization. User data functions allows you to upload a custom library file in `.whl` format. Select the **Upload** button to add private libraries. 
 
-:::image type="content" source="..\media\user-data-functions-manage-libraries\add-private-library.png" alt-text="Screenshot showing how to add-private-library" lightbox="..\media\user-data-functions-manage-libraries\add-private-library.png":::
+:::image type="content" source="..\media\user-data-functions-manage-libraries\add-private-library.png" alt-text="Screenshot showing how to add-private-library." lightbox="..\media\user-data-functions-manage-libraries\add-private-library.png":::
 
 ### Limitations of private libraries 
-1. The `.whl` file size must be less than 30MB.
-2. The `.whl` file must be OS agnostic. If the file is specific to an operating system for example `numpy-2.2.2-cp311-cp311-linux_armv6l.whl`, it will fail to upload. 
+- The `.whl` file size must be less than 30MB.
+- The `.whl` file must be OS agnostic. If the file is specific to an operating system for example `numpy-2.2.2-cp311-cp311-linux_armv6l.whl`, it will fail to upload. 
 
 ## Next steps
 Learn how to reference these libraries in your function's code. You can also learn how to view your logs after running a Fabric Data Function.
