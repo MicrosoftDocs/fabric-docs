@@ -40,7 +40,6 @@ To show the organization of the tables, you could use `fact`, `dim`, or `int` as
 | City | Dimension | `wwi.DimCity` |
 | Order | Fact | `wwi.FactOrder` |
 
-- Table names are case sensitive. 
 - Table names can't contain `/` or `\` or end with a `.`.
 
 ## Create a table
