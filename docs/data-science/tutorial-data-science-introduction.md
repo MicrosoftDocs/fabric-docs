@@ -13,14 +13,14 @@ ms.date: 04/21/2025
 
 These tutorials present a complete end-to-end scenario in the Fabric data science experience. They cover each step, from
 
-- data ingestion
-- data cleaning
-- data preparation
+- Data ingestion
+- Data cleaning
+- Data preparation
 
 to
 
-- machine learning model training
-- insight generation
+- Machine learning model training
+- Insight generation
 
 and then cover consumption of those insights with visualization tools - for example, Power BI.
 
@@ -67,11 +67,11 @@ This tutorial series showcases a simplified end-to-end data science scenario inv
 
 **Data sources** - To ingest data with Fabric, you can easily and quickly connect to Azure Data Services, other cloud platforms, and on-premises data resources. With Fabric Notebooks, you can ingest data from these resources:
 
-- built-in Lakehouses
+- Built-in Lakehouses
 - Data Warehouses
-- semantic models
-- various Apache Spark data sources
-- various data sources that support Python
+- Semantic models
+- Various Apache Spark data sources
+- Various data sources that support Python
 
 This tutorial series focuses on data ingestion and loading from a lakehouse.
 
@@ -90,9 +90,9 @@ This tutorial series focuses on data ingestion and loading from a lakehouse.
 
 can visualize data persisted in a lakehouse. The SemPy library also supports data visualization. This library supports built-in rich, task-specific visualizations for
 
-- the semantic data model
-- dependencies and their violations
-- classification and regression use cases
+- The semantic data model
+- Dependencies and their violations
+- Classification and regression use cases
 
 ## Next step
 
