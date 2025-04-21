@@ -389,6 +389,8 @@ items:
      href: ./user-data-functions/create-functions-activity-data-pipelines.md
    - name: Integration with Fabric notebooks
      href: ./notebook-utilities.md#user-data-function-udf-utilities
+   - name: Manage public and private libraries
+     href: ./user-data-functions/how-to-manage-libraries.md
    - name: Service details and limitations
      href: ./user-data-functions/user-data-functions-service-limits.md
    - name: Source control and deployment pipelines
