@@ -125,7 +125,7 @@ Large-storage format semantic models shouldn't be moved from the region where th
   
 * Detailed semantic model metadata lives in the home tenant.
 
-* To use [dataflows gen1](/power-bi/transform-model/dataflows/dataflows-introduction-self-service) on Multi-Geo you must configure dataflow storage to use [Azure Data Lake Storage (ADLS) Gen2]((/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration)).
+* To use [dataflows gen1](/power-bi/transform-model/dataflows/dataflows-introduction-self-service) on Multi-Geo you must configure dataflow storage to use [Azure Data Lake Storage (ADLS) Gen2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration).
 
 * It's possible to create and maintain large-storage format semantic models in remote regions to meet data residency requirements. However, you can't move storage format semantic models to another region. Moving large-storage format semantic models from the region where they were created results in reports failing to load the semantic model. Move the large-storage semantic model back to its original region to make it available. If you must move such a model, deploy it as if it was a new model, and then delete the old model from the undesired region.
 
