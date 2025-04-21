@@ -21,7 +21,7 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 | DataFactory | Azure Data Factory | Both | No | Yes |
 | DataFactoryManagement| On premises data pipeline activity | Outbound | No | Yes |
 | EventHub | Azure Event Hubs | Outbound | Yes | Yes |
-| Power BI | Power BI and Microsoft Fabric | Both | No | Yes |
+| Power BI | Power BI and Microsoft Fabric | Both | Yes | Yes |
 | PowerQueryOnline | Power Query Online | Both | No | Yes |
 | KustoAnalytics | Real-Time Analytics | Both | No | No |
 | SQL | Warehouse | Outbound | Yes | Yes |
