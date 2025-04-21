@@ -64,7 +64,7 @@ Select the tab that corresponds with your desired data source type.
 
     :::image type="content" source="media/kusto-query-set/connect-to-monitor.png" alt-text="Screenshot of the connection window showing an Azure Monitor URI. The Connect cluster button is highlighted.":::
 
-    | In the following descriptions, replace <SubscriptionID>, <WorkspaceName> and <ResourceGroupName> with your own values.
+    | In the following descriptions, replace \<SubscriptionID\>, \<WorkspaceName\> and \<ResourceGroupName\> with your own values.
 
     | **Setting** | **Field description** |
     |--|--|
