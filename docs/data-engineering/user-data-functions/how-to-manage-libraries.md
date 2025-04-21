@@ -16,11 +16,11 @@ When developing custom business logic, you can use public libraries from PyPI or
 
 ## Add a public library 
 
-1. Sign in to [Microsoft Fabric ](https://app.fabric.microsoft.com)
+1. Sign in to [Microsoft Fabric ](https://app.fabric.microsoft.com).
 
 2. Select the **User data function** item you're working on. 
 
-3. Select **Library Management**
+3. Select **Library Management**.
 
    :::image type="content" source="..\media\user-data-functions-manage-libraries\select-library-management.png" alt-text="Screenshot showing how to manage libraries." lightbox="..\media\user-data-functions-manage-libraries\select-library-management.png":::
 
