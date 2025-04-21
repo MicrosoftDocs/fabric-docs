@@ -224,7 +224,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 
 | Setting name | Description |
 |------|-------|
-|Block republish and disable package refresh|Disable package refresh, and only allow the semantic model owner to publish updates.|
+|Block republish and disable package refresh|Disable package refresh, and only allow the semantic model owner to publish updates. When using the [XMLA Endpoint](/power-bi/enterprise/service-premium-connect-tools), a user can discover only those semantic models for which they are the owner.|
 
 ## [Advanced networking](service-admin-portal-advanced-networking.md)
 
