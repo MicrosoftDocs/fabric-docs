@@ -25,7 +25,7 @@ There are two different symptoms associated with this issue:
 
 ## Solutions and workarounds
 
-To work around this issue, create a new data warehouse table. Ensure the target and sources of the INSERT statement across databases [don't have the same object_id](/sql/t-sql/functions/object-id-transact-sql?view=sql-server-ver16).
+To work around this issue, create a new data warehouse table. Ensure the target and sources of the INSERT statement across databases [don't have the same object_id](/sql/t-sql/functions/object-id-transact-sql).
 
 ## Next steps
 
