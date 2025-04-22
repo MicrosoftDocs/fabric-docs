@@ -20,6 +20,11 @@ Column-level security (CLS) is a feature of OneLake security (preview) that allo
 
 * A Lakehouse in OneLake with OneLake data access roles turned on. For more information, see [Get started with OneLake data access roles](get-started-data-access-roles.md).
 
+  >[!IMPORTANT]
+  >To access OneLake security features during preview, add the following feature flags to the end of the Fabric URL in your browser
+  >
+  >*&tridentOneLakeSecurity=1&rowLevelSecurity=1&columnLevelSecurity=1&DmsUniversalSecurity=1*
+
 ## Enforce column-level security
 
 OneLake security CLS gets enforced in one of two ways:
@@ -66,6 +71,28 @@ Use the following steps to define column-level security:
 
 1. If you want to readd a column, select **New rule**. This action adds a new CLS rule entry to the end of the list. Then, use the dropdown to choose the column you want to include in the access. 
 
-1. Once you complete your changes, select **Save**. 
+1. Once you complete your changes, select **Save**.
+
+### Enabling OneLake security for SQL analytics endpoint
+
+Before you can use OneLake security with SQL Analytics endpoint, you must enable its **User's identity mode**. This is a one-time activity which you must perform if you want SQL analytics endpoint to inherit OneLake security permissions for table read access.
+
+> [!NOTE]
+> Enabling **User's identity mode** is a one-time activity per SQL analytics endpoint. If you have already enabled it as part of enabling RLS or CLS policy for a given SQL analytics endpoint then it is already configured to honour OneLake security.
+
+
+1. Navigate to SQL analytics endpoint.
+
+1. In SQL analytics endpoint experience, select **Security** tab in the top ribbon.
+
+1. Select **User's identity** under OneLake access mode.
+
+   :::image type="content" source="./media/column-level-security/sqlaep-enable-userid.png" alt-text="Screenshot that shows selecting 'user identity' to enable OneLake security for SQL analytics endpoint.":::
+
+1. In the prompt, select **Yes, use the user's identity**. 
+
+   :::image type="content" source="./media/column-level-security/sqlaep-prompt.png" alt-text="Screenshot that shows user prompt which must be accepted to enable OneLake security for table read access.":::
+
+This completes configuration process for SQL analytics endpoint and it's ready for use with OneLake security.
 
 [!INCLUDE [onelake-rls-cls](../../includes/onelake-rls-cls.md)]
