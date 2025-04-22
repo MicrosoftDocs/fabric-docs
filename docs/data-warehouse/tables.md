@@ -40,7 +40,6 @@ To show the organization of the tables, you could use `fact`, `dim`, or `int` as
 | City | Dimension | `wwi.DimCity` |
 | Order | Fact | `wwi.FactOrder` |
 
-- Table names are case sensitive. 
 - Table names can't contain `/` or `\` or end with a `.`.
 
 ## Create a table
@@ -127,7 +126,6 @@ The following list shows some of the table features that aren't currently suppor
 - Sparse columns
 - Surrogate keys on number sequences with Identity columns
 - Synonyms
-- Temporary tables
 - Triggers
 - Unique indexes
 - User-defined types
