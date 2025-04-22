@@ -1,8 +1,8 @@
 ---
 title: Activator tutorial using sample data
 description: Learn how Activator works using sample data. Activator is a powerful tool for working with data and creating rules based on specific conditions.
-author: kfollis
-ms.author: kfollis
+author: spelluru
+ms.author: spelluru
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter
 ms.date: 11/19/2024

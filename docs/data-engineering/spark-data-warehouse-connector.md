@@ -5,7 +5,8 @@ author: ms-arali
 ms.author: arali
 ms.topic: how-to
 ms.custom:
-ms.date: 09/30/2024
+  - ignite-2024
+ms.date: 04/11/2025
 ---
 
 # Spark connector for Microsoft Fabric Data Warehouse
@@ -17,9 +18,6 @@ The Spark connector for Fabric Data Warehouse enables Spark developers and data 
 * The connector has a simplified Spark API, abstracts the underlying complexity, and operates with just one line of code.
 * While you're accessing a table or a view, the connector upholds security models defined at the SQL engine level. These models include object-level security (OLS), row-level security (RLS), and column-level security (CLS).
 * The connector comes preinstalled within the Fabric runtime, which eliminates the need for separate installation.
-
-> [!NOTE]
-> The connector is currently in preview. For more information, see the [current limitations](spark-data-warehouse-connector.md#current-limitations) later in this article.  
 
 ## Authentication
 
@@ -62,17 +60,23 @@ spark.read.synapsesql("<warehouse/lakeshouse name>.<schema name>.<table or view 
 > [!IMPORTANT]
 > Run these import statements at the beginning of your notebook or before you start using the connector:
 
->  For Scala
->
-> `import com.microsoft.spark.fabric.tds.implicits.read.FabricSparkTDSImplicits._`
->
-> `import com.microsoft.spark.fabric.Constants`
+# [PySpark](#tab/pyspark)
 
->  For PySpark (Python)
->
-> `import com.microsoft.spark.fabric`
->
-> `from com.microsoft.spark.fabric.Constants import Constants`
+```python
+import com.microsoft.spark.fabric
+from com.microsoft.spark.fabric.Constants import Constants  
+```
+
+# [Scala Spark](#tab/scalaspark)
+
+```scala
+%%spark  
+import com.microsoft.spark.fabric.tds.implicits.read.FabricSparkTDSImplicits._
+import com.microsoft.spark.fabric.tds.implicits.write.FabricSparkTDSImplicits._
+import com.microsoft.spark.fabric.Constants
+import org.apache.spark.sql.SaveMode 
+```
+---
 
 The following code is an example to read data from a table or view in a Spark DataFrame:
 
@@ -124,15 +128,40 @@ df = spark.read.synapsesql("<warehouse/lakehouse name>.<schema name>.<table or v
 df.write.format("delta").saveAsTable("<Lakehouse table name>")
 ```
 
+### Write a Spark dataframe data to warehouse table
+This connector employs a two-phase write process to a Fabric DW table. Initially, it stages the Spark dataframe data into an intermediate storage, followed by using the `COPY INTO` command to ingest the data into the Fabric DW table. This approach ensures scalability with increasing data volume.
+
+#### Supported DataFrame save modes
+Following save modes are supported when writing source data of a dataframe to a destination table in warehouse:
+
+* ErrorIfExists (default save mode): If destination table exists, then the write is aborted with an exception returned to the callee. Else, a new table is created with data.
+* Ignore: If the destination table exists, then the write will ignore the write request without returning an error. Else, a new table is created with data.
+* Overwrite: If the destination table exists, then existing data in the destination is replaced with data. Else, a new table is created with data.
+* Append: If the destination table exists, then the new data is appended to it. Else, a new table is created with data.
+
+The following code shows examples of writing Spark dataframe's data to a Fabric DW table: 
+
+```python
+df.write.synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>") # this uses default mode - errorifexists
+
+df.write.mode("errorifexists").synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>")
+df.write.mode("ignore").synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>")
+df.write.mode("append").synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>")
+df.write.mode("overwrite").synapsesql("<warehouse/lakehouse name>.<schema name>.<table name>")
+```
+> [!NOTE]
+> The connector supports writing to a Fabric DW table only as the SQL analytics endpoint of a Lakehouse is read-only.
+
 ## Troubleshoot
 
 Upon completion, the read response snippet appears in the cell's output. Failure in the current cell also cancels subsequent cell executions of the notebook. Detailed error information is available in the Spark application logs.
 
-## Current limitations
+## Considerations for using this connector
 
 Currently, the connector:
 
-* Supports data retrieval from Fabric warehouses and SQL analytics endpoints of lakehouse items.
+* Supports data retrieval or read from Fabric warehouses and SQL analytics endpoints of lakehouse items.
+* Supports writing data to a warehouse table using different save modes - this is only available with the latest GA runtime, i.e., [Runtime 1.3](runtime-1-3.md). Also, currently write operation doesn't work when `Private Link` is enabled and `Public Access` is blocked.
 * Fabric DW now supports `Time Travel` however this connector doesn't work for a query with time travel syntax. 
 * Retains the usage signature like the one shipped with Apache Spark for Azure Synapse Analytics for consistency. However, it's not backward compatible to connect and work with a dedicated SQL pool in Azure Synapse Analytics.
 * Column names with special characters will be handled by adding escape character before the query, based on 3 part table/view name, is submitted. In case of a custom or passthrough-query based read, users are required to escape column names that would contain special characters.

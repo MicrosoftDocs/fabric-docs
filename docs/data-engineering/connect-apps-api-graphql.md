@@ -16,11 +16,11 @@ To connect an application to an API for GraphQL, you need three important pieces
 
 ## Prerequisites
 
+* Before you connect an application, you must have an API for GraphQL in Fabric. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
+
 * Currently API for GraphQL requires applications to use Microsoft Entra for authentication. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app).
   
-* The authenticated user calling the API requires Execute permissions to the GraphQL API (Run Queries and Mutations option when adding direct access permissions) and, if using Single sing-on (SSO) as the connectivity option in the API, read or write permissions are required in the data source of choice accordingly. For more information, see [Connect to a data source and build your schema](get-started-api-graphql.md).
-
-* Before you connect an application, you must have an API for GraphQL in Fabric. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md).
+* The authenticated credential (user principal, service principal, or managed identity) calling the API requires Execute permissions to the GraphQL API (Run Queries and Mutations option when adding direct access permissions) and, if using single sign-on (SSO) as the connectivity option in the API, read or write permissions are required in the data source of choice accordingly. For more information, see [Connect to a data source and build your schema](get-started-api-graphql.md).
 
 ## Create a Microsoft Entra app
 
@@ -29,7 +29,7 @@ In the following steps, we showcase how to configure support for a ReactJS appli
 1. Register an application using the steps described on [Quickstart: Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
 2. Your Microsoft Entra app **Application (client) ID** and **Directory (tenant) ID** values are displayed in the Summary box. Record these values as they're required later.
 1. Under the *Manage* list, select **API permissions**, then **Add permission**. 
-2. Add the **PowerBI Service**, select **Delegated permissions**, and select **GraphQL.Execute.All** permissions. Make sure admin consent isn't required.
+2. Add the **PowerBI Service**, select **Delegated permissions**, and select **GraphQLApi.Execute.All** permissions. Make sure admin consent isn't required.
 3.  Back to the *Manage* list, select **Authentication** > **Add a platform**, > **Single-page application**.
 4.  For local development purposes, add `http://localhost:3000` under **Redirect URIs** and confirm that the application is enabled for the [authorization code flow with Proof Key for Code Exchange (PKCE)](/azure/active-directory/develop/v2-oauth2-auth-code-flow). Select the **Configure** button to save your changes. In case the application receives an error related to cross-origin requests, add the **Mobile and desktop applications** platform in the previous step with the same redirect URI.
 5.  Back to **Authentication**, scroll down to **Advanced Settings** and, under **Allow public client flows**, select **Yes** for *Enable the following mobile and desktop flows*.
@@ -140,7 +140,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
      * https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
      */
     export const loginRequest = {
-        scopes: ["https://analysis.windows.net/powerbi/api/GraphQL.Execute.All"]
+        scopes: ["https://analysis.windows.net/powerbi/api/GraphQLApi.Execute.All"]
     };
     
     /**
@@ -152,7 +152,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     };
    ```
 
-   As you can see in the code above, it's important to use the correct scope to access the application. In our case `https://analysis.windows.net/powerbi/api/GraphQL.Execute.All`.
+   As you can see in the code above, it's important to use the correct scope to access the application. In our case `https://analysis.windows.net/powerbi/api/GraphQLApi.Execute.All`.
 
 1. Replace the following values with the values from the Microsoft Entra admin center.
     - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered Microsoft Entra application.
@@ -325,7 +325,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
 While the steps in the previous section are required to provide access to user principals, it's also possible to access the GraphQL API with a service principal:
 
-1. Follow the steps in the previous section to create a second Microsoft Entra app with similar permissions (**GraphQL.Execute.All** scope for the **PowerBI Service**). In the new app, add a client secret under **Certificates and Secrets**, for more information see [Register a Microsoft Entra app and create a service principal](/entra/identity-platform/howto-create-service-principal-portal).
+1. Follow the steps in the previous section to create a second Microsoft Entra app, but keep in mind that scopes are not needed for Service Principals. In the new app, add a client secret under **Certificates and Secrets**, for more information see [Register a Microsoft Entra app and create a service principal](/entra/identity-platform/howto-create-service-principal-portal).
 2. Make sure Tenant Administrators enabled the usage of Service Principals in Fabric. In the Tenant Admin portal, go to **Tenant Settings**. Under **Developer Settings** enable **Service Principals can use Fabric APIs**. With this setting enabled, the application will be visible in the Fabric Portal for role or permissions assignment. You can find more information on [Identity support](/rest/api/fabric/articles/identity-support#service-principal-tenant-setting).
 3. The service principal will need access to both the GraphQL API and the data source, more specifically *Execute* permission to the GraphQL API and read or write access required in the data source of choice accordingly. In the Fabric Portal, open the workspace and select the ellipsis next to API. Select *Manage permissions* for the API then *Add user*. Add the application and select *Run Queries and Mutations*, which will provide the required *Execute* permissions to the service principal.  For testing purposes, the easiest way to implement the required permissions for both the API and data source is by adding the application as a workspace member with a contributor role where both the GraphQL API and data source items are located.
 

@@ -1,8 +1,8 @@
 ---
 title: Create alerts in Power BI and use them in Fabric Activator
 description: Learn how to get data from Power BI for use in Activator, integrate it into your workflows, and take advantage of powerful data analysis capabilities.
-author: kfollis
-ms.author: kfollis
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
 ms.date: 11/10/2024

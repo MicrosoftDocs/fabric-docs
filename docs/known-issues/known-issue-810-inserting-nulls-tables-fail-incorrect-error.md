@@ -1,10 +1,10 @@
 ---
 title: Known issue - Inserting nulls into Data Warehouse tables fail with incorrect error message
 description: A known issue is posted where inserting nulls into Data Warehouse tables fail with incorrect error message.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/16/2024
+ms.date: 03/21/2025
 ms.custom: known-issue-810
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-810
 
 When you insert **NULL** values into **NOT NULL** columns in SQL tables, the SQL query fails as expected. However, the error message returned references the incorrect column.
 
-**Status:** Open
+**Status:** Fixed: March 21, 2025
 
 **Product Experience:** Data Warehouse
 

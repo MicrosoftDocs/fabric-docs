@@ -1,8 +1,8 @@
 ---
 title: Localize your workload
 description: Learn about how you can localize your workload and support different languages.
-author: michal-mano
-ms.author: michalmano
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
 ms.date: 08/14/2024

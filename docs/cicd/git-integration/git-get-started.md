@@ -6,8 +6,8 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: how-to
-ms.date: 01/05/2025
+ms.topic: quickstart
+ms.date: 03/05/2025
 ms.custom:
 ms.search.form: Connect to a Git repo, Update from Git, Commit changes to Git, Introduction to Git integration
 #customer intent: As a developer, I want to connect my workspace to a Git repo so that I can collaborate with others and leverage source control.
@@ -108,7 +108,8 @@ To keep your workspace synced with the Git branch, [commit any changes](#commit-
 ## Commit changes to git
 
 Once you successfully connect to a Git folder, edit your workspace as usual. Any changes you save are saved in the workspace only. When you’re ready, you can commit your changes to the Git branch, or you can undo the changes and revert to the previous status.  
-If any items in the workspace are in folders, the folder structure is preserved in the Git repository when you commit changes. Empty folders are ignored.  
+<!----
+If any items in the workspace are in folders, the folder structure is preserved in the Git repository when you commit changes. Empty folders are ignored.  --->
 Read more about [commits](git-integration-process.md#commit).
 
 ### [Commit to Git](#tab/commit-to-git)

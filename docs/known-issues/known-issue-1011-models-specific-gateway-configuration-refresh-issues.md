@@ -1,10 +1,10 @@
 ---
 title: Known issue - Models with specific gateway configuration might experience refresh issues
 description: A known issue is posted where models with specific gateway configuration might experience refresh issues.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 01/29/2025
+ms.date: 02/25/2025
 ms.custom: known-issue-1011
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1011
 
 If you're a Power BI premium customer, you can process models using a gateway. If the gateway configuration of **StreamBeforeRequestCompletes** is **true**, you might experience refresh issues, such as delays failures
 
-**Status:** Open
+**Status:** Fixed: February 25, 2025
 
 **Product Experience:** Power BI
 

@@ -61,7 +61,7 @@ Where:
 **Requirements for using PowerShell**
 
 * You need the Exchange Online PowerShell (EXO) module to run this command. For more information, see [About the Exchange Online PowerShell module](/powershell/exchange/exchange-online-powershell-v2#install-and-maintain-the-exchange-online-powershell-module).
-* A connection to the Purview portal is also required. For more information, see [Connect to Security & Compliance PowerShell using the EXO module](/powershell/exchange/connect-to-scc-powershell).
+* A connection to the Microsoft Purview portal is also required. For more information, see [Connect to Security & Compliance PowerShell using the EXO module](/powershell/exchange/connect-to-scc-powershell).
 
 ### Documentation
 
@@ -77,4 +77,4 @@ Where:
 
 ## Related content
 
-* [Default label policy for Fabric and Power BI](./service-security-sensitivity-label-default-label-policy.md)
+* [Default label policy for Fabric and Power BI](./sensitivity-label-default-label-policy.md)

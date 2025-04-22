@@ -10,16 +10,18 @@ ms.date: 11/18/2024
 
 # Add Azure SQL Database Change Data Capture (CDC) as source in Real-Time hub
 
-This article describes how to get events from Azure SQL Database Change Data Capture (CDC) into Fabric Real-Time hub. The Azure SQL Database CDC source connector allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data.
+This article describes how to get events from Azure SQL Database Change Data Capture (CDC) into Fabric Real-Time hub. 
 
+The Azure SQL Database CDC source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
+[!INCLUDE [new-sources-regions-unsupported](../real-time-intelligence/event-streams/includes/new-sources-regions-unsupported.md)]
 
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL server with an Azure SQL database.
-- Membership in the **sysadmin** fixed server role for the SQL Server, and **db_owner** role on the database.
-- CDC enabled on your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
+- Your Azure SQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Enabled CDC in your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
 
 >[!NOTE]
 >- Mirroring shouldn't be enabled in your database.

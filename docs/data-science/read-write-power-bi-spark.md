@@ -1,13 +1,13 @@
 ---
 title: Read data from semantic models and write data that semantic models can consume using Spark
 description: Learn how to read from semantic models and write data that can be used in semantic models using Spark.
-ms.author: mopeakande
-author: msakande
+ms.author: franksolomon
+author: fbsolo-ms1
 ms.reviewer: marcozo
 reviewer: eisber
 ms.topic: how-to
 ms.custom:
-ms.date: 01/10/2025
+ms.date: 03/22/2025
 ms.search.form: Read write powerbi
 ---
 
@@ -110,9 +110,9 @@ All Spark SQL commands can be executed in Python, R, and Scala. The semantic lin
 ## Read-access limitations
 
 The read access APIs have the following limitations:
-
+- Queries running longer than 10s in Analysis Service are not supported (Indication inside Spark: "java.net.SocketTimeoutException: PowerBI service comm failed ")
 - Power BI table access using Spark SQL is subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
-- Predicate pushdown for Spark *_Metrics* queries is limited to a single [IN](https://spark.apache.org/docs/latest/api/sql/index.html#in) expression. Extra IN expressions and unsupported predicates are evaluated in Spark after data transfer.
+- Predicate pushdown for Spark *_Metrics* queries is limited to a single [IN](https://spark.apache.org/docs/latest/api/sql/index.html#in) expression and requires at least two elements. Extra IN expressions and unsupported predicates are evaluated in Spark after data transfer.
 - Predicate pushdown for Power BI tables accessed using Spark SQL doesn't support the following expressions:
   - [ISNULL](https://spark.apache.org/docs/latest/api/sql/index.html#isnull)
   - [IS_NOT_NULL](https://spark.apache.org/docs/latest/api/sql/index.html#isnotnull)

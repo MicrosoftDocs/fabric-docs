@@ -26,7 +26,7 @@ Dataflow Gen2 is the new generation of dataflows. The new generation of dataflow
 | High-scale compute     | ✓ |   |
 | Get Data via Dataflows connector | ✓ | ✓ |
 | Direct Query via Dataflows connector |  | ✓ |
-| Incremental refresh       |   | ✓ |
+| Incremental refresh       | ✓ | ✓ |
 | AI Insights support |  | ✓ |
 
 ### Shorter authoring experience

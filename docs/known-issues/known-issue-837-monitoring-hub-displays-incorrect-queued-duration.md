@@ -1,10 +1,10 @@
 ---
 title: Known issue - Monitoring hub displays incorrect queued duration
 description: A known issue is posted where Monitoring hub displays incorrect queued duration.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 09/17/2024
+ms.date: 04/15/2025
 ms.custom: known-issue-837
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-837
 
 Spark Jobs get queued when the capacity usage reaches its [maximum compute limit on Spark](/fabric/data-engineering/job-queueing-for-fabric-spark). Once the limit is reached, jobs are added to the queue. The jobs are then processed when the cores become available in the capacity. This queueing capability is enabled for all background jobs on Spark, including Spark notebooks triggered from the job scheduler, pipelines, and spark job definitions. The time duration that the job is waiting in the queue isn't correctly represented in the Monitoring hub as queued duration.
 
-**Status:** Open
+**Status:** Fixed: April 15, 2025
 
 **Product Experience:** Data Engineering
 

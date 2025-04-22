@@ -4,7 +4,7 @@ description: Learn how to deploy a new SQL database in Microsoft Fabric using RE
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: dlevy
-ms.date: 01/14/2025
+ms.date: 03/03/2025
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor
 ---
@@ -21,6 +21,7 @@ The Fabric platform has a rich set of REST APIs that can be used to deploy and m
 - [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - You must be a member of the Admin or Member roles for the workspace to create a SQL database.
 - Install the golang version of [SQLCMD](/sql/tools/sqlcmd/sqlcmd-utility). Run `winget install sqlcmd` on Windows to install. For other operating systems, see [aka.ms/go-sqlcmd](https://aka.ms/go-sqlcmd).
+- PowerShell 5.1 or [PowerShell 7.4 and higher](/powershell/scripting/install/installing-powershell-on-windows)
 - The Az PowerShell module. Run `Install-Module az` in PowerShell to install.
 
 ## Create a new SQL database via REST API
@@ -30,7 +31,10 @@ This example script uses `Connect-AzAccount`, an alias of `az login` to prompt f
 The script creates a database named with the logged-in user's alias and the date. Currently, the REST API doesn't return a status so we must loop and check for the database to be created. After the database is created, SQLCMD is used to create some objects and then query for their existence. Finally, we delete the database.
 
 In the following script, replace `<your workspace id>` with your Fabric workspace ID. You can [find the ID of a workspace](../../admin/portal-workspace.md#identify-your-workspace-id) easily in the URL, it's the unique string inside two `/` characters after `/groups/` in your browser window. For example, `11aa111-a11a-1111-1abc-aa1111aaaa` in `https://fabric.microsoft.com/groups/11aa111-a11a-1111-1abc-aa1111aaaa/`.
- 
+
+
+### [PowerShell 5.1](#tab/5dot1)
+
 This script demonstrates:
  1. Retrieve an access token using [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) and [convert it from a secure string](/powershell/azure/faq?view=azps-13.1.0&preserve-view=true#how-can-i-convert-a-securestring-to-plain-text-in-powershell-). If using PowerShell 7, [ConvertFrom-SecureString](/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.4&preserve-view=true#example-4-convert-a-secure-string-directly-to-a-plaintext-string) is also an option.
  1. Create a new SQL database using the [Items - Create Item API](/rest/api/fabric/core/items/create-item).
@@ -41,7 +45,7 @@ This script demonstrates:
 ```powershell
 Import-Module Az.Accounts
 
-Connect-AzAccount
+az login
 
 $workspaceid = '<your workspace id>'
 
@@ -104,10 +108,14 @@ try {
 
     Write-Host 'Attempting to connect to the database.'
 
-    sqlcmd.exe -S $databaseProperties.ServerFqdn -d $databaseProperties.DatabaseName -G -Q 'create table test2 
-       ( 
-       id int 
-       )' 
+   sqlcmd.exe -S $databaseProperties.ServerFqdn -d $databaseProperties.DatabaseName -G -Q 'create table test2 
+    ( 
+    id int 
+    );
+    insert into test2 values (1);
+    insert into test2 values (2);
+    insert into test2 values (3);
+    select * from test2;' 
 
     #5. Delete the database
 
@@ -129,6 +137,102 @@ try {
     $parameters = [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
 }
 ```
+
+### [PowerShell 7.4+](#tab/7dot4)
+
+This script demonstrates:
+ 1. Retrieve an access token using [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) and convert it from a secure string using [ConvertFrom-SecureString](/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.4&preserve-view=true#example-4-convert-a-secure-string-directly-to-a-plaintext-string).
+ 1. Create a new SQL database using the [Items - Create Item API](/rest/api/fabric/core/items/create-item).
+ 1. List all SQL databases in a Fabric workspace.
+ 1. Connect to the database with [SQLCMD](/sql/tools/sqlcmd/sqlcmd-utility) to run a script to create an object.
+ 1. Delete the database using the [Items - Delete Item API](/rest/api/fabric/core/items/delete-item).
+
+```powershell
+Import-Module Az.Accounts
+
+az login
+
+$workspaceid = '<your workspace id>'
+
+$databaseid = $null 
+$headers = $null
+
+# 1. Get the access token and add it to the headers
+
+$access_token = (Get-AzAccessToken -AsSecureString -ResourceUrl https://api.fabric.microsoft.com) 
+
+$headers = @{ 
+    Authorization = $access_token.Type + ' ' + (ConvertFrom-SecureString -SecureString $access_token.Token -AsPlainText)
+}
+
+$access_token.UserId -match('^[^@]+') | Out-Null
+
+$body = @{
+    displayName = $matches[0] + (Get-Date -Format "MMddyyyy")
+    type = "SQLDatabase"
+    description = "Created using public api"
+}
+
+$parameters = @{
+    Method="Post"
+    Headers=$headers
+    ContentType="application/json"
+    Body=($body | ConvertTo-Json)
+    Uri = 'https://api.fabric.microsoft.com/v1/workspaces/' + $workspaceid + '/items'
+}
+
+ # 2. Create the database and wait for it to be created.
+
+Invoke-RestMethod @parameters -StatusCodeVariable statusCode -ResponseHeadersVariable responseHeader
+
+$operationId = $responseHeader.'x-ms-operation-id'
+
+While($statusCode -eq 202)
+{
+    Write-Host 'Waiting on database create.'
+    Start-Sleep -Seconds $responseHeader.'retry-after'[0]
+    $databaseid = (Invoke-RestMethod -Headers $headers -Uri https://api.fabric.microsoft.com/v1/operations/$($operationId)/result -StatusCodeVariable statusCode -ResponseHeadersVariable responseHeader).id
+}
+
+# 3. List all SQL databases in a Fabric workspace
+
+Write-Host 'Listing databases in workspace.'
+
+Invoke-RestMethod -Headers $headers -Uri https://api.fabric.microsoft.com/v1/workspaces/$($workspaceid)/items?type=SQlDatabase | select -ExpandProperty Value | ft
+
+$databaseProperties = (Invoke-RestMethod -Headers $headers -Uri https://api.fabric.microsoft.com/v1/workspaces/$($workspaceid)/SqlDatabases/$($databaseid) | select -ExpandProperty Properties)
+
+#4. Connnect to the database and create a table
+
+Write-Host 'Attempting to connect to the database.'
+
+sqlcmd.exe -S $databaseProperties.ServerFqdn -d $databaseProperties.DatabaseName -G -Q 'create table test2 
+    ( 
+    id int 
+    );
+    insert into test2 values (1);
+    insert into test2 values (2);
+    insert into test2 values (3);
+    select * from test2;' 
+
+#5. Delete the database
+
+Write-Host 'Cleaning up' $databaseProperties.DatabaseName
+
+$parameters = @{
+    Method="Delete"
+    Headers=$headers
+    ContentType="application/json"
+    Body=($body | ConvertTo-Json)
+    Uri = 'https://api.fabric.microsoft.com/v1/workspaces/' + $workspaceid + '/items/' + $databaseid
+}
+
+Invoke-RestMethod @parameters
+
+Write-Output 'Cleaned up: '$databaseProperties.DatabaseName
+```
+
+---
 
 ## Related content
 

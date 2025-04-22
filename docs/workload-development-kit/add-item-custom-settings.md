@@ -1,8 +1,8 @@
 ---
 title: Add customized item settings
 description: Learn about how you can add your own item settings tabs.
-author: matanSchaumberg
-ms.author: mschaumberg
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.date: 11/25/2024
 ---

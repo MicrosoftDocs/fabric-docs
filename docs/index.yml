@@ -390,17 +390,26 @@ conceptualContent:
         - title: Develop with APIs
           links:
             - url: /rest/api/fabric/articles/
-              itemType: concept
+              itemType: reference
               text: Fabric REST API
             - url: /rest/api/power-bi/
-              itemType: concept
+              itemType: reference
               text: Power BI REST API
             - url: /javascript/api/overview/powerbi/
-              itemType: concept
+              itemType: reference
               text: Power BI embedded analytics Client APIs
           footerLink:
               url: /rest/api/fabric/
               text: See more
+        # Card
+        - title: Developer tools
+          links:
+            - url: admin/fabric-command-line-interface.md
+              itemType: concept
+              text: Fabric command line interface
+            - url: https://registry.terraform.io/providers/microsoft/fabric/latest/docs/guides/getting_started
+              itemType: reference
+              text: Terraform provider for Fabric            
         # Card
         - title: Solutions for ISVs
           links:

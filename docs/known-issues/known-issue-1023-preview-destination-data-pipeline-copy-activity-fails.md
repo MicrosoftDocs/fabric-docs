@@ -1,10 +1,10 @@
 ---
 title: Known issue - Preview destination data on a pipeline's copy activity fails
 description: A known issue is posted where previewing destination data on a pipeline's copy activity fails.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 02/14/2025
+ms.date: 03/18/2025
 ms.custom: known-issue-1023
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1023
 
 In a pipeline, you can set up a copy activity. In the destination of the copy activity, you can preview the data. When you select on the preview button, it fails with an error.
 
-**Status:** Open
+**Status:** Fixed: March 18, 2025
 
 **Product Experience:** Data Factory
 

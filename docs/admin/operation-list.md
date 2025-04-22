@@ -4,7 +4,7 @@ description: This article provides a list of all the operations available in Fab
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.date: 02/04/2025
+ms.date: 03/02/2025
 ---
 
 # Operation list
@@ -75,7 +75,7 @@ The following operations are available in the audit logs.
 | Co Author Notebook | CoAuthorNotebook |   |
 | Commit Notebook | CommitNotebook |   |
 | Commit To Git | CommitToGit | Commit To Git is an artifact activity, which is generated when users commit artifact to Git.  |
-| Completed an artifact access request action in Power BI | ArtifactAccessRequest |   |
+| Completed an artifact access request action in Power BI | ArtifactAccessRequest | Tracks the notification sent to approvers when a request is created or denied.   |
 | Connect To Git | ConnectToGit | Connect To Git is a workspace activity, which is generated when users connect the workspace to Git.  |
 | Connected to Power BI semantic model from external app | ConnectFromExternalApplication |   |
 | Connected to a Warehouse or SQL analytics endpoint from an external app | ConnectWarehouseAndSqlAnalyticsEndpointLakehouseFromExternalApp | Previously named *Connected to a warehouse or default warehouse from an external app* (Operation name: *ConnectWarehouseAndDefaultWarehouseFromExternalApp*)  |
@@ -621,6 +621,7 @@ The following operations are available in the audit logs.
 | Took over Power BI semantic model | TakeOverDataset |   |
 | Took over a Power BI datasource | TakeOverDatasource |   |
 | Took ownership of Power BI dataflow | TookOverDataflow |   |
+| Take over a Fabric item | TakeOverArtifact |   |
 | Trial License Extension | TrialLicenseExtension | Extend user trials by user list or tenant  |
 | Unassign Workspace From Alm Pipeline | UnassignWorkspaceFromAlmPipeline |   |
 | Undelete blob | UndeleteBlob | OneLake operation. Restore a soft deleted blob. |

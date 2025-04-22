@@ -6,7 +6,7 @@ author: shsagir
 ms.author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 12/24/2024
+ms.date: 03/26/2025
 ms.search.form: KQL Queryset
 #customer intent: As a data scientist, I want to detect anomalies across multiple metrics so that I can proactively identify complex issues.
 ---
@@ -51,10 +51,9 @@ In this step, you create a Spark environment to run the Python notebook that tra
     :::image type="content" source="media/multivariate-anomaly-detection/create-environment.png" alt-text="Screenshot of the Environment tile in New item window." lightbox="media/multivariate-anomaly-detection/create-environment.png":::
 
 1. Enter the name *MVAD_ENV* for the environment and then select **Create**.
-1. From the **Home** tab of the environment, select **Runtime** > *1.2 (Spark 3.4, Delta 2.4)*.
 1. Under **Libraries**, select **Public libraries**.
 1. Select **Add from PyPI**.
-1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version. This tutorial was created using version 0.3.2.
+1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version. This tutorial was created using version 0.3.5.
 1. Select **Save**.
 
     :::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment." lightbox="media/multivariate-anomaly-detection/add-package.png":::
@@ -74,7 +73,7 @@ In this step, you create a Spark environment to run the Python notebook that tra
 1. Select **+ New table** and enter *demo_stocks_change* as the table name.
 1. In the upload data dialog, select **Browse for files** and upload the sample data file that was downloaded in the [Prerequisites](#prerequisites)
 1. Select **Next**.
-1. In the **Inspect the data** section, toggle **First row is column header** to **On**.
+1. In the **Inspect the data** section, verify that **First row is column header** is set to **On**.
 1. Select **Finish**.
 1. When the data is uploaded, select **Close**.
 
@@ -282,5 +281,5 @@ When you finish the tutorial, you can delete the resources, you created to avoid
 1. Browse to your workspace homepage.
 1. Delete the environment created in this tutorial.
 1. Delete the notebook created in this tutorial.
-1. Delete the Eventhouse or [database](manage-monitor-eventhouse.md#manage-kql-databases) used in this tutorial.
+1. Delete the Eventhouse or [database](manage-monitor-database.md#manage-kql-databases) used in this tutorial.
 1. Delete the KQL queryset created in this tutorial.

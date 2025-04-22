@@ -7,9 +7,7 @@ ms.topic: how-to
 ms.date: 11/13/2024
 ---
 
-# Set alerts on Job events in Real-Time hub (preview)
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+# Set alerts on Job events in Real-Time hub
 
 This article describes how to set alerts on Job events in Real-Time hub.
 

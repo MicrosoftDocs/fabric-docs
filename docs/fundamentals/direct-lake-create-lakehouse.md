@@ -2,8 +2,8 @@
 title: Learn how to create a lakehouse for Direct Lake in Microsoft Fabric
 
 description: Describes how to create a lakehouse for Direct Lake in Microsoft Fabric.
-author: kfollis
-ms.author: kfollis
+author: davidiseminger 
+ms.author: davidi
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium

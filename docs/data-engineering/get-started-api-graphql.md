@@ -51,7 +51,7 @@ At this point, the API is ready but it's not exposing any data. APIs for GraphQL
    Once selected these options are enforced for all data sources subsequently added to the API. It's not possible to mix single-sign on and saved credentials in the same API. Furthermore, while you can use User Principal Names (UPNs) or Service Principal Names (SPNs) to connect to your API, service principals only support single-sign on (SSO) currently. User principals can leverage either SSO or saved credentials, depending on your security requirements.
    
    > [!NOTE]
-   >API for GraphQL requires client applications to use Microsoft Entra ID for authentication. Your client application must be registered and configured adequately to execute API calls against Fabric. The app registered in Microsoft Entra ID requires *GraphQL.Execute.All* API permissions for the Power BI service. You can find an end-to-end tutorial with instructions and sample code for both user principals and service principals at [Connect Applications](connect-apps-api-graphql.md).
+   >API for GraphQL requires client applications to use Microsoft Entra ID for authentication. Your client application must be registered and configured adequately to execute API calls against Fabric. The app registered in Microsoft Entra ID requires *GraphQLApi.Execute.All* API permissions for the Power BI service. You can find an end-to-end tutorial with instructions and sample code for both user principals and service principals at [Connect Applications](connect-apps-api-graphql.md).
 
 3. The OneLake data hub appears; choose the data source you want to connect to. For the following example, we choose a AdventureWorks SQL analytics endpoint linked to a mirrored database. Select **Filter** to see only specific types of Fabric data sources, or search by a specific keyword. When you're ready, select **Connect**.
 
@@ -79,9 +79,9 @@ The table below summarizes the different supported permutations and minimum requ
 
 |API Caller        | Data source connectivity | Required GraphQL API permissions|Required Data Source permissions|Entra app scope|
 |------------------|--------------------------|---------------------------------|-------------------------------|-----------------|
-|User Principal (UPN)|Single sign-on (SSO)| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the UPN at the data source|*GraphQL.Execute.All*|
-|Service Principal (SPN)|Single sign-on (SSO)| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the SPN at the data source|*GraphQL.Execute.All*|
-|User Principal (UPN)|Saved credentials| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the saved credential (connection) at the data source|*GraphQL.Execute.All*|
+|User Principal (UPN)|Single sign-on (SSO)| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the UPN at the data source|*GraphQLApi.Execute.All*|
+|Service Principal (SPN)|Single sign-on (SSO)| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the SPN at the data source|Not Applicable|
+|User Principal (UPN)|Saved credentials| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the saved credential (connection) at the data source|*GraphQLApi.Execute.All*|
 |Service Principal (SPN)|Saved credentials| Currently not supported|Currently not supported|Currently not supported|
 
 

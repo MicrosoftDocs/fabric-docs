@@ -27,7 +27,12 @@ ms.date: 11/18/2024
     - Enter **Username** and **Password** for the SQL Server on VM.
 
 1. Select **Connect** at the bottom of the page.
-1. Now, on the **Connect** page, select **All tables**, or enter the **table names separated by commas**, such as: `dbo.table1, dbo.table2`.
+1. Now, on the **Connect** page, select **All tables** or **Enter table name(s)**. If you select the latter, specify tables using a comma-separated list of full table identifiers (`schemaName.tableName`) or valid regular expressions. For example:  
+
+    - Use `dbo.test.*` to select all tables whose names start with `dbo.test`.  
+    - Use `dbo\.(test1|test2)` to select `dbo.test1` and `dbo.test2`.  
+
+    You can mix both formats using commas. Up to 100 tables can be entered, with each table name (including the schema name) limited to 128 characters if using full table identifiers directly.
 1. Select **Next**.
 
     :::image type="content" source="media/azure-sql-managed-instance-cdc-source-connector/select-tables.png" alt-text="Screenshot that shows selection of All tables option." lightbox="media/azure-sql-managed-instance-cdc-source-connector/select-tables.png"::: 

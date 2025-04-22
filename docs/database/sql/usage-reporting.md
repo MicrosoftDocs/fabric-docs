@@ -1,10 +1,10 @@
 ---
-title: Billing and utilization reporting
-description: This article will share what customers can expect from the metrics app experience for SQL database in Fabric.
+title: Billing and Utilization Reporting
+description: Understand what customers can expect from the metrics app experience for SQL database in Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: amapatil # Microsoft alias
-ms.date: 01/31/2025
+ms.date: 03/28/2025
 ms.topic: conceptual
 ms.search.form: SQL database Billing and Utilization
 ---
@@ -27,6 +27,24 @@ Capacity is a dedicated set of resources that is available at a given time to be
 In the capacity-based SaaS model, SQL database aims to make the most of the purchased capacity and provide visibility into usage.
 
 In simple terms, 1 Fabric capacity unit = 0.383 SQL database vCores. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 24.512 SQL database vCores.
+
+### Cost
+
+The cost for SQL database in Fabric is the summation of compute cost and storage cost. The compute cost is based on vCore and memory used.
+ 
+A SQL database in Fabric autoscales compute and provisions a minimum of around 2 GB memory which helps performance and is billed as part of compute while the database is online. After a minimum of 15 minutes of minimum compute provisioned while the database is online, the compute bill is zero until activity later returns. 
+
+Consider a database with workload activity for two minutes and is otherwise inactive for a one-hour period. The database is billed for compute for two minutes, and kept online for another 15 minutes, for a total of 17 minutes. Only storage is billed throughout the hour.
+ 
+For example, the following sample bill in this example is calculated as follows:
+ 
+| Time Interval | vCores used each second | Memory GB used each second | Compute dimension billed   | vCore seconds billed over time interval |
+|:--|:--|:--|:--|:--|
+| 0:00-0:01     | 2                  | 3                          | vCores used                     | 2 vCores * 60 seconds * 2.611 CUs per vCore seconds = 313.3 CUs  |
+| 0:01-0:02     | 1                  | 6                          | Memory used                     | 6 GB * 1 vCore / 3GB * 60 seconds * 2.611 CUs per vCore seconds = 313.3 CUs |
+| 0:02-0:17     | 0                  | 0                          | Minimum memory provisioned      | 2 GB * 1/3 * 900 seconds * 2.611 CUs per vCore seconds = 1566.6 CUs |
+| 0:17-0:60     | 0                  | 0                          | No compute billed while paused  | 0 CUs    |
+| **Total CUs** |                    |                            |                                 | **2193 CUs*                 |
 
 ### Compute usage reporting
 
@@ -58,7 +76,7 @@ This graph in the Microsoft Fabric Capacity Metrics app shows utilization of res
 
 :::image type="content" source="media/usage-reporting/utilization-chart.jpg" alt-text="Screenshot from the Fabric Capacity Metrics app showing a graph of SQL database capacity utilization.":::
 
-In general, similar to Power BI, [operations are classified either as interactive or background](/fabric/enterprise/fabric-operations) and denoted by color. Most operations in __SQL database__ category are reported as *interactive* with 5 mins smoothening of activity.
+In general, similar to Power BI, [operations are classified either as interactive or background](/fabric/enterprise/fabric-operations) and denoted by color. Most operations in __SQL database__ category are reported as *interactive* with 5 minute smoothing of activity.
 
 ### Timepoint drill through graph
 
@@ -77,23 +95,35 @@ Top use cases for this view include:
 
 #### Considerations
 
-  Consider the following usage reporting nuances:
-  
+Consider the following usage reporting nuances:
+
 - **Duration(s)** field reported in Fabric Capacity Metrics App is for informational purposes only. It reflects the time window for current SQL usage corresponding to 60 seconds.
 
 ### Storage usage reporting
 
 Storage usage reporting helps admins to monitor storage consumption across their organization in capacity metrics. After selecting the capacity, adjust the date range to align with the storage emitted during a billing cycle. The experience slider helps you filter on the workload experience.
 
-:::image type="content" source="media/usage-reporting/storage-overall-view.jpg" alt-text="Screenshot from the Fabric Capacity Metrics app showing the storage view.":::
+Possible storage **Operation name** values are:
 
-The tiles give you a quick overview of the workspaces consuming storage on your capacity, and you can view both the current amount of storage consumed and the hourly average sent to meters for billing. Current storage metrics align with a graph on the left to show average storage at a daily grain or an hourly grain if you drill in.
+- **Allocated SQL storage** is the total database size.
+- **SQL database Backup Storage** is the backup storage usage that exceeds the allocated size and will be billed accordingly.
 
-Storage utilization reporting occurs at the workspace level. If you want more information about storage usage inside the database, see [Performance Dashboard](performance-dashboard.md).
+:::image type="content" source="media/usage-reporting/billable-storage.png" alt-text="Screenshot from the Fabric Capacity Usage app showing billable storage." lightbox="media/usage-reporting/billable-storage.png":::
 
-The billable storage is the sum of fractional storage emitted to the meters for billing. This is computed by taking the average storage used by the capacity every hour and dividing by the total number of hours in a month.
+Current storage metrics align with a graph on the left to show average storage at a daily grain or an hourly grain if you drill in.
 
-:::image type="content" source="media/usage-reporting/storage-cummulative-and-total.jpg" alt-text="Screenshot from the Fabric Capacity Metrics app showing cumulative and total storage utilization.":::
+Storage utilization reporting occurs at the workspace level. If you want more information about storage usage inside the database, see [Performance Dashboard for SQL database in Microsoft Fabric](performance-dashboard.md).
+
+### Backup storage billing
+
+SQL database in Microsoft Fabric provides [automatic backups](backup.md) from the moment a database is created. Backup billing is determined by the amount of storage consumed by the automated backup process.
+
+- By default, backup storage is free up to 100% of your provisioned database size. For example, a database with 100 GB of allocated storage automatically includes 100 GB of backup storage at no additional cost.
+- If backup storage usage exceeds the allocated database size, additional charges apply. You're billed only for the backup storage that exceeds the allocated  size.
+
+Backup storage usage is measured hourly and calculated as a cumulative total. At the end of each month, this value is aggregated and used to calculate your bill. Charges are based on the total GB/month. 
+
+For example, if a database accumulates 100 GB of allocated data storage and backup storage accumulates 150 GB of backup storage and stays constant for a month, you would be charged for 100 GB of data storage and additional 50 GB of the backup storage at the applicable rate. 
 
 ## Related content
 

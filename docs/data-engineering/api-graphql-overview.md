@@ -23,11 +23,18 @@ Exposing data sources to a GraphQL item in Microsoft Fabric is quick and easy. S
 Currently, the following supported data sources can be exposed through the Fabric API for GraphQL:
 
 - Microsoft Fabric Data Warehouse
+- Microsoft Fabric SQL database
 - Microsoft Fabric Lakehouse via SQL Analytics Endpoint
-- Microsoft Fabric Mirrored Databases via SQL Analytics Endpoint
-- Microsoft Fabric SQL databases
-- Azure SQL databases
-- Datamarts
+- Microsoft Fabric Mirrored Databases via SQL Analytics Endpoint, including:
+    - Mirrored databases from Azure SQL Database
+    - Mirrored databases from Azure SQL Managed Instance
+    - Mirrored databases from Azure Cosmos DB
+    - Mirrored databases from Microsoft Fabric SQL Database
+    - Mirrored databases from Azure Databricks
+    - Mirrored databases from Snowflake
+    - Open mirrored databases
+- Azure SQL database
+- Datamart
 
 ## Features
 
@@ -52,6 +59,10 @@ API for GraphQL includes an editor where you can easily develop and test your qu
 - A results pane to visualize the output of queries or mutations
 - Support for query or mutation parameters
 - Intellisense with support for GraphQL syntax and schema object names
+ 
+## Limitations
+
+Please refer to [ API for GraphQL Limitations](api-graphql-limits.md) for more information.
 
 ## Related content
 

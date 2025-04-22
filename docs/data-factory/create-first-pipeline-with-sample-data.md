@@ -1,12 +1,12 @@
 ---
 title: Create your first data pipeline to copy data
 description: Learn how to build and schedule a new data pipeline to copy sample data to a Lakehouse.
-ms.reviewer: jonburchel
-ms.author: xupzhou
-author: pennyzhou-msft
+ms.author: whhender
+ms.reviewer: xupzhou
+author: whhender
 ms.topic: quickstart
 ms.custom:
-ms.date: 12/18/2024
+ms.date: 02/25/2025
 ms.search.form: Pipeline Tutorials
 ---
 
@@ -57,15 +57,15 @@ In this session, you start to build your first pipeline by following below steps
 
 ### Step 3: Configure your destination
 
-1. Select **Lakehouse** and then **Next**.
+1. Select **Lakehouse**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination in the Copy data assistant.":::
 
-1. Enter a **Lakehouse name**, then select **Create and connect**.
+1. Enter a Lakehouse name, then select **Create and connect**.
 
-   :::image type="content" source="media/create-first-pipeline-with-sample-data/create-new-lakehouse.png" alt-text="Screenshot showing the Create new Lakehouse button selected on the Choose data destination page of the Copy data assistant.":::
+   :::image type="content" source="media/create-first-pipeline-with-sample-data/create-new-lakehouse.png" alt-text="Screenshot showing the specified name for the new Lakehouse.":::
 
-1. Configure and map your source data to the destination Lakehouse table. Select **Tables** for the **Root folder** and **Load to a new table** for **Load settings**. Provide a **Table** name and select **Next**.
+1. Configure and map your source data to the destination Lakehouse table. Select **Tables** for the **Root folder** and **Load to new table** for **Load settings**. Provide a **Table** name and select **Next**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/configure-lakehouse-tables.png" lightbox="media/create-first-pipeline-with-sample-data/configure-lakehouse-tables.png" alt-text="Screenshot showing the Connect to data destination page of the Copy data assistant with Tables selected and a table name for the sample data provided.":::
 

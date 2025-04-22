@@ -68,10 +68,11 @@ To learn more about how to obtain the Kafka endpoint details for sending events 
 
 Fabric Eventstream has the following general limitations. Before working with Eventstream, review these limitations to ensure they align with your requirements.
 
-| Limit | Size |
+| Limit | Value |
 | ----- | --------- |
 | Maximum message size |  1 MB |
 | Maximum retention period of event data | 90 days |
+| Event delivery guarantees | At-least-once |
 
 ## Related content
 

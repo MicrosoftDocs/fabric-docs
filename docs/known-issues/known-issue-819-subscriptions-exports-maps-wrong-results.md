@@ -1,7 +1,7 @@
 ---
 title: Known issue - Subscriptions and exports with maps might produce wrong results
 description: A known issue is posted where subscriptions and exports with maps might produce wrong results.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 10/10/2024

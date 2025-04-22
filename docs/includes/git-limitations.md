@@ -5,22 +5,22 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: include
 ms.custom: 
-ms.date: 12/26/2024
+ms.date: 02/26/2025
 ---
 
 ### General Git integration limitations
 
 - The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Fabric must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Fabric needs to require multifactor authentication as well.
 - Power BI Datasets connected to Analysis Services aren't supported at this time.
-- Workspaces with template apps installed can't be connected to Git.
 - Submodules aren't supported.
 - Sovereign clouds aren't supported.
 
 #### [Azure DevOps limitations](#tab/azure-devops)
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
+- Azure DevOps isn't supported if [Enable IP Conditional Access policy validation](/azure/devops/organizations/accounts/change-application-access-policies#cap-support-on-azure-devops) is enabled.
 - The tenant admin must enable [cross-geo exports](/fabric/admin/git-integration-admin-settings#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) if the workspace and Git repo are in two different geographical regions.
-- If your organization set up [conditional access](/appcenter/general/configuring-aad-conditional-access), make sure the **Power BI Service** has the same [conditions set](/fabric/security/security-conditional-access) for authentication to function as expected.
+- If your organization configured [conditional access](/appcenter/general/configuring-aad-conditional-access), make sure the **Power BI Service** has the same [conditions set](/fabric/security/security-conditional-access) for authentication to function as expected.
 - The commit size is limited to 125 MB.
 
 #### [GitHub limitations](#tab/github)
@@ -36,13 +36,13 @@ ms.date: 12/26/2024
 Some GitHub Enterprise settings aren't supported. For example:
 
 - IP allowlist
-- Private networking
-- [Custom domains](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)
 
 ### Workspace limitations
 
 - Only the workspace admin can manage the connections to the [Git Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  
-Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.  
+  Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.
+- Workspaces with template apps installed can't be connected to Git.
+- [MyWorkspace](../admin/portal-workspaces.md#govern-my-workspaces) can't connect to a Git provider.
 
 ### Branch and folder limitations
 
@@ -55,25 +55,32 @@ Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integr
   - Has more than 256 characters
   - Ends with a <kbd>.</kbd> or a space
   - Contains any forbidden characters as described in [directory name limitations](#directory-name-limitations)
+- When you connect a workspace that has folders to Git, you need to commit changes to the Git repo if that [folder structure](../cicd/git-integration/git-integration-process.md#folders) is different.
 
 ### Directory name limitations
 
 - The name of the directory that connects to the Git repository has the following naming restrictions:
 
   - The directory name can't begin or end with a space or tab.
-  - The directory name can't contain any of the following characters: <kbd>"</kbd> <kbd>/</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>
+  - The directory name can't contain any of the following characters: <kbd>"</kbd><kbd>/</kbd><kbd>:</kbd> <kbd><</kbd><kbd>></kbd><kbd>\\</kbd><kbd>*</kbd><kbd>?</kbd><kbd>|</kbd>
 
-- The item folder (the folder that contains the item files) can't contain any of the following characters: <kbd>"</kbd> <kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>\\</kbd> <kbd>*</kbd> <kbd>?</kbd> <kbd>|</kbd>. If you rename the folder to something that includes one of these characters, Git can't connect or sync with the workspace and an error occurs.
+- The item folder (the folder that contains the item files) can't contain any of the following characters: <kbd>"</kbd><kbd>:</kbd><kbd><</kbd><kbd>></kbd><kbd>\\</kbd><kbd>*</kbd><kbd>?</kbd><kbd>|</kbd>. If you rename the folder to something that includes one of these characters, Git can't connect or sync with the workspace and an error occurs.
 
 ### Branching out limitations
 
 - Branch out requires permissions listed in [permissions table](/fabric/cicd/git-integration/git-integration-process#fabric-permissions-needed-for-common-operations).
 - There must be an available capacity for this action.
 - All [workspace](#workspace-limitations) and [branch naming limitations](#branch-and-folder-limitations) apply when branching out to a new workspace.
-- When branching out, a new workspace is created and the settings from the original workspace aren't copied. Adjust any settings or definitions to ensure that the new workspace meets your organization's policies.
 - Only [Git supported items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items) are available in the new workspace.
 - The related branches list only shows branches and workspaces you have permission to view.
 - [Git integration](/fabric/admin/git-integration-admin-settings) must be enabled.
+- When branching out, a new branch is created and the settings from the original branch aren't copied. Adjust any settings or definitions to ensure that the new meets your organization's policies.
+- When branching out to an existing workspace:
+  - The target workspace must support a Git connection.
+  - The user must be an admin of the target workspace.
+  - The target workspace must have capacity.
+  - The workspace can't have template apps.
+- **Note that when you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you [commit](/fabric/cicd/git-integration/git-integration-process#commit-to-git) any items you want to keep before branching out.**
 
 ### Sync and commit limitations
 

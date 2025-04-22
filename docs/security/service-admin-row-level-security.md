@@ -1,12 +1,12 @@
 ---
 title: Row-level security (RLS) with Power BI
 description: How to configure row-level security for imported semantic models, and DirectQuery, within the Power BI service.
-author: emlisa
-ms.author: emlisa
+author: mberdugo
+ms.author: monaberdugo
 ms.reviewer: ''
 
 ms.topic: how-to
-ms.date: 07/08/2024
+ms.date: 03/08/2025
 ms.custom: ''
 LocalizationGroup: Administration
 ms.collection: ce-skilling-ai-copilot

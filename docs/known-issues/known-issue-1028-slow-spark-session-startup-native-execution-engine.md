@@ -1,7 +1,7 @@
 ---
 title: Known issue - Slow Spark session startup caused by Native Execution Engine
 description: A known issue is posted where the Spark session startup is intermittently slow caused by the Native Execution Engine.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/19/2025

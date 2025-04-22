@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/20/2025
+ms.date: 03/20/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -59,7 +59,17 @@ This section is divided into Fabric experience. Each experience had a table that
 
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
-| Copilot in Fabric                            | Compute cost associated with input prompts and output completion      | Multiple | Copilot in Fabric CU | Background |
+| Copilot in Fabric                            | Compute cost associated with input prompts and output completion      | Multiple | Copilot and AI | Background |
+
+### Data agent in Fabric
+
+[Data agent](../data-science/concept-data-agent.md) operations are listed in this table. In the metrics app's [matrix by item and operation table](metrics-app-compute-page.md), Data agent operations are listed under the *LlmPlugin* item kind.
+
+You can find the consumption rates for the Data agent in [Data agent consumption](../fundamentals/copilot-fabric-consumption.md).
+
+| Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
+| ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
+| AI query                            | Compute cost associated with input prompts and output completion      | LlmPlugin | Copilot and AI| Background |
 
 ### Data Factory
 
@@ -109,6 +119,19 @@ GraphQL operations are made up of requests performed on API for GraphQL items by
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
 | Query    | Compute charge for all generated GraphQL queries (reads) and mutations (writes) by clients within a GraphQL API     | GraphQL | API for GraphQL Query Capacity Usage CU      | Interactive |
 
+### Fabric User Data Functions
+
+[Fabric User Data Functions](https://aka.ms/ms-fabric-functions-docs) operations are made up of requests initiated by the Fabric portal, other Fabric artifacts, or client applications. Each request and response operation incurs a charge for the function execution, internal storage of the function metadata in OneLake, and associated read and write operations in OneLake.
+
+| Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
+| ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
+| User Data Functions Execution    | Compute charge for the execution of the function inside of the User Data Functions artifact. Memory consumption is allocated with a fixed 2GB used every second.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
+| User Data Functions Static Storage | Static storage of internal function metadata in a service-managed OneLake account. This is calculated with the compressed size of the User Data Functions item metadata. This is the cost of creating User Data Functions items even if they’re not used.  | OneLake Storage | OneLake Storage | Background |
+| User Data Functions Static Storage Read | Read operation of internal function metadata stored in a service-managed OneLake account. This operation is executed every time a function is executed after a period of inactivity. | OneLake Read Operations | OneLake Read Operations | Background |
+| User Data Functions Static Storage Write | Writes and updates of internal function metadata stored in a system-managed OneLake account. This operation is executed every time the User Data Functions item is published. | OneLake Write Operations | OneLake Write Operations | Background |
+| User Data Functions Static Storage Iterative Read | Read operations for internal function metadata stored in a service-managed OneLake account. This operation is executed every time the User Data Functions are listed. | OneLake Iterative Read Operations | OneLake Iterative Read Operations | Background |
+| User Data Functions Static Storage Other Operations | Storage operations for related to various function metadata in a service-managed OneLake account. | OneLake Other Operations | OneLake Other Operations | Background |
+
 ### OneLake
 
 One Lake compute operations represent the transactions performed on One Lake items. The consumption rate for each operation varies depending on its type. For more details, refer to [One Lake consumption](../onelake/onelake-consumption.md).
@@ -148,14 +171,14 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 | Operation | Description | Item | Azure billing meter | Type |
 |--|--|--|--|--|
-| Artificial intelligence (AI) | AI function evaluation  | AI | Power BI Capacity Usage CU | Background |
+| Artificial intelligence (AI) | AI function evaluation  | AI | Power BI Capacity Usage CU | Interactive |
 | Background query | Queries for refreshing tiles and creating report snapshots  | Semantic model | Power BI Capacity Usage CU | Background |
 | [Dataflow DirectQuery](/power-bi/transform-model/dataflows/dataflows-directquery) | Connect directly to a dataflow without the need to import the data into a semantic model  | Dataflow Gen1 | Power BI Capacity Usage CU | Interactive |
 | [Dataflow refresh](/power-bi/transform-model/dataflows/dataflows-understand-optimize-refresh) | An on-demand or scheduled background dataflow refresh, performed by the service or with REST APIs. | Dataflow Gen1 | Power BI Capacity Usage CU | Background |
 | Semantic model on-demand refresh | A background semantic model refresh initiated by the user, using the service, REST APIs, or public XMLA endpoints  | Semantic model | Power BI Capacity Usage CU | Background |
 | Semantic model scheduled refresh | A scheduled background semantic model refresh, performed by the service, REST APIs, or public XMLA endpoints  | Semantic model | Power BI Capacity Usage CU | Background |
 | Full report email subscription | A PDF or PowerPoint copy of an entire Power BI report, attached to an [email subscription](/power-bi/collaborate-share/end-user-subscribe)  | Report | Power BI Capacity Usage CU | Background |
-| Interactive query | Queries initiated by an on-demand data request. For example, loading a model when opening a report, user interaction with a report, or querying a dataset before rendering.| Semantic model | Power BI Capacity Usage CU | Interactive |
+| Interactive query | Queries initiated by an on-demand data request. For example, loading a model when opening a report, user interaction with a report, or querying a dataset before rendering. Loading a semantic model might be reported as a standalone interactive query operation. | Semantic model | Power BI Capacity Usage CU | Interactive |
 | PublicApiExport | A Power BI report exported with the [export report to file](/power-bi/developer/embedded/export-to) REST API | Report | Power BI Capacity Usage CU | Background |
 | Render | A Power BI paginated report exported with the [export paginated report to file](/power-bi/developer/embedded/export-paginated-report) REST API  | Paginated report | Power BI Capacity Usage CU | Background |
 | Render | A Power BI paginated report viewed in Power BI service   | Paginated report | Power BI Capacity Usage CU | Interactive |
@@ -167,7 +190,16 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Eventstream](#eventstream), [Fabric events](#fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Eventstream](#eventstream), [Azure and Fabric events](#azure-and-fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+
+#### Azure and Fabric events
+
+You can find the consumption rates for Azure and Fabric events in [Azure and Fabric events capacity consumption](../real-time-hub/fabric-events-capacity-consumption.md).
+
+| Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
+| ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
+| Event Operations | Publish, delivery, and filtering operations          | Multiple | Real-Time Intelligence - Event Operations         | Background |
+| Event Listener   | Uptime of the event listener                         | Multiple | Real-Time Intelligence – Event Listener and Alert | Background |
 
 #### Eventstream
 
@@ -175,22 +207,13 @@ You can find the consumption rates for Eventstream in [Monitor capacity consumpt
 
 [!INCLUDE [operation-types](../real-time-intelligence/event-streams/includes/operation-types.md)]
 
-#### Fabric events
-
-You can find the consumption rates for Fabric events in [Microsoft Fabric and Azure events capacity consumption](../real-time-hub/fabric-events-capacity-consumption.md).
-
-| Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
-| ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
-| Event Operations | Publish, delivery, and filtering operations          | Multiple | Real-Time Intelligence - Event Operations         | Background |
-| Event Listener   | Uptime of the event listener                         | Multiple | Real-Time Intelligence – Event Listener and Alert | Background |
-
 #### KQL Database and KQL Queryset
 
 You can find the consumption rates for KQL Database in [KQL Database consumption](../real-time-intelligence/kql-database-consumption.md).
 
-| Operation   | Description                                          | Item                         | Azure billing meter | Type        |
-| ----------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
-| Eventhouse UpTime | Measure of the time that Eventhouse is Active  | Eventhouse | Eventhouse Capacity Usage CU         | Interactive |
+| Operation         | Description                                          | Item                         | Azure billing meter | Type        |
+| ----------------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
+| Eventhouse UpTime | Measure of the time that Eventhouse is Active        | Eventhouse  | Eventhouse Capacity Usage CU         | Background  |
 
 ### Spark
 

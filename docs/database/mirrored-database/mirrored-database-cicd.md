@@ -1,13 +1,13 @@
 ---
-title: CI/CD for mirrored databases in Fabric (Preview)
+title: CI/CD for mirrored databases in Fabric
 description: This article describes how to set up continuous integration and delivery (CI/CD) for mirrored databases in Microsoft Fabric.
 author: linda33wj
 ms.author: jingwang
 ms.topic: how-to
-ms.date: 01/16/2025
+ms.date: 03/20/2025
 ---
 
-# CI/CD for mirrored databases in Fabric (Preview)
+# CI/CD for mirrored databases in Fabric
 
 This article explains how Git integration and deployment pipelines work for mirrored databases in Microsoft Fabric. Learn how to set up a connection to your repository, manage your mirrored databases through Git, and deploy them across different environments.
 

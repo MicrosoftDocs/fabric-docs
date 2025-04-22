@@ -20,7 +20,7 @@ This guide shows you how to use the Semantic model refresh activity to create co
 To get started, you must complete the following prerequisites:
 
 - A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+- A workspace with **Power BI Premium**, **Premium Per User**, or **Power BI Embedded capacities**.
 
 ## Add a Semantic model refresh activity to a pipeline with UI
 

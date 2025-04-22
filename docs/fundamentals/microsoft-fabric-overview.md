@@ -17,8 +17,6 @@ Microsoft Fabric is an enterprise-ready, end-to-end analytics platform. It unifi
 
 Fabric provides a seamless, user-friendly SaaS experience. It integrates separate components into a cohesive stack. It centralizes data storage with OneLake and embeds AI capabilities, eliminating the need for manual integration. With Fabric, you can efficiently transform raw data into actionable insights.
 
-[!INCLUDE [new user recruitment](../includes/fabric-new-user-research.md)]
-
 ## Capabilities of Fabric
 
 Microsoft Fabric enhances productivity, data management, and AI integration. Here are some of its key capabilities:
@@ -101,7 +99,8 @@ OneLake lets you instantly mount your existing PaaS storage accounts using the [
 
 ## Real-Time hub: the unification of data streams
 
-The Real-Time hub is a foundational location for data in motion. It provides a unified SaaS experience and tenant-wide logical place for streaming data. It lists data from every source, allowing users to discover, ingest, manage, and react to it. It contains both [streams](../real-time-intelligence/event-streams/overview.md) and [KQL database](../real-time-intelligence/create-database.md) tables. Streams include [**Data streams**](../real-time-intelligence/event-streams/create-manage-an-eventstream.md), **Microsoft sources** (like, [Azure Event Hubs](../real-time-hub/add-source-azure-event-hubs.md), [Azure IoT Hub](../real-time-hub/add-source-azure-iot-hub.md), [Azure SQL DB Change Data Capture (CDC)](../real-time-hub/add-source-azure-sql-database-cdc.md), [Azure Cosmos DB CDC](../real-time-hub/add-source-azure-cosmos-db-cdc.md), and [PostgreSQL DB CDC](../real-time-hub/add-source-postgresql-database-cdc.md)), and [**Fabric events**](../real-time-intelligence/event-streams/add-source-fabric-workspace.md) (Fabric events and external events from Azure, Microsoft 365, or other clouds).
+The Real-Time hub is a foundational location for data in motion. It provides a unified SaaS experience and tenant-wide logical place for streaming data. It lists data from every source, allowing users to discover, ingest, manage, and react to it. It contains both [streams](../real-time-intelligence/event-streams/overview.md) and [KQL database](../real-time-intelligence/create-database.md) tables. Streams include [**Data streams**](../real-time-intelligence/event-streams/create-manage-an-eventstream.md), **Microsoft sources** (such as [Azure Event Hubs](../real-time-hub/add-source-azure-event-hubs.md), [Azure IoT Hub](../real-time-hub/add-source-azure-iot-hub.md), [Azure SQL DB Change Data Capture (CDC)](../real-time-hub/add-source-azure-sql-database-cdc.md), [Azure Cosmos DB CDC](../real-time-hub/add-source-azure-cosmos-db-cdc.md), [Azure Data Explorer](../real-time-hub/add-source-azure-data-explorer.md), and [PostgreSQL DB CDC](../real-time-hub/add-source-postgresql-database-cdc.md)), **Fabric events** ([workspace item events](../real-time-hub/create-streams-fabric-workspace-item-events.md), [OneLake events](../real-time-hub/create-streams-fabric-onelake-events.md), and [Job events](../real-time-hub/create-streams-fabric-job-events.md)), and **Azure events**, including [Azure Blob Storage events](../real-time-hub/get-azure-blob-storage-events.md) and external events from Microsoft 365 or other clouds services.
+
 
 The Real-Time hub makes it easy discover, ingest, manage, and consume data-in-motion from a wide variety of sources to collaborate and develop streaming applications in one place. For more information, see [What is the Real-Time hub?](../real-time-hub/real-time-hub-overview.md)
 

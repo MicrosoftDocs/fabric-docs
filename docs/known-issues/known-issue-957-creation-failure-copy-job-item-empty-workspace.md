@@ -1,10 +1,10 @@
 ---
 title: Known issue - Creation failure for Copy job item in empty workspace
 description: A known issue is posted where the Copy job item isn't created in an empty workspace.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 12/05/2024
+ms.date: 04/08/2025
 ms.custom: known-issue-957
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-957
 
 You can create a Copy job item in a workspace. If no items are present in the workspace, so the Copy job would be the first artifact in the workspace, the Copy job item creation fails.
 
-**Status:** Open
+**Status:** Fixed: April 8, 2025
 
 **Product Experience:** Data Factory
 

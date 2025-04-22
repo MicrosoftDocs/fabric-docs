@@ -227,7 +227,7 @@ Some data type conversions are possible, but not precise, such as int to real. T
 
 ## Transformation operators
 
-The event processor provides six operators, which you can use to transform your event data according to your business needs.
+The event processor provides seven operators, which you can use to transform your event data according to your business needs.
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-operators.png" alt-text="Screenshot showing the operators available to in the Operations menu.":::
 

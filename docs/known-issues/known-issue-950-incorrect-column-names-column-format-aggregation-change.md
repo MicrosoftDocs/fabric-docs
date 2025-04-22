@@ -1,10 +1,10 @@
 ---
 title: Known issue - Incorrect column names after column format or aggregation change
 description: A known issue is posted where you see incorrect column names after column format or aggregation change.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 12/02/2024
+ms.date: 03/05/2025
 ms.custom: known-issue-950
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-950
 
 You might experience incorrect or random column names after changing the column format or aggregation.
 
-**Status:** Open
+**Status:** Fixed: March 5, 2025
 
 **Product Experience:** Power BI
 

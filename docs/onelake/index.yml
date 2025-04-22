@@ -27,7 +27,7 @@ landingContent:
           - text: What is OneLake?
             url: onelake-overview.md
           - text: OneLake security
-            url: ./security/fabric-onelake-security.md
+            url: ./security/get-started-security.md
           - text: OneLake catalog
             url: ../governance/onelake-catalog-overview.md
           - text: OneLake access and APIs

@@ -3,9 +3,9 @@ title: Create a workspace
 description: "Learn how you can create a workspace: a collection of items such as lakehouses, warehouses, and reports, with task flows built to deliver key metrics for your organization."
 author: paulinbar
 ms.author: painbar
-ms.reviewer: yicw, mesrivas
+ms.reviewer: yicw
 ms.topic: how-to
-ms.date: 04/15/2024
+ms.date: 02/26/2025
 ms.custom:
 #customer intent: As a report creator, I want use workspaces so that I can create collections of artifacts that are related.
 ---
@@ -15,13 +15,11 @@ This article explains how to create *workspaces* in [!INCLUDE [product-name](../
 
 To create a workspace:
 
-1. Select **Workspaces** > **New workspace**. The Create a workspace pane opens.
+1. In the nav pane, select **Workspaces**.
 
-    :::image type="content" source="media/create-workspaces/fabric-new-workspaces.png" alt-text="Screenshot of the Create a workspace option.":::
+1. At the bottom of the Workspace pane that opens, select **New workspace**.
 
-1. The Create a workspace pane opens.
-
-    :::image type="content" source="media/create-workspaces/create-workspace-side-pane.png" alt-text="Screenshot of the Create a workspace side pane.":::
+1. The **Create a workspace** pane opens.
 
     * Give the workspace a unique name (mandatory).
 

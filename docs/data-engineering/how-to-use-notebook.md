@@ -34,7 +34,7 @@ The execution of a notebook can be triggered by three different manners in Fabri
 
 The flexibility of these execution options with different security context allows you to meet different scenarios and requirements, but also requires you to be aware of the security context when you design and develop your notebook, otherwise it may cause unexpected behavior and even some security issues.
 
-The first time when a notebook is created, a warning message will be shown to remind you the risk of running the code without reviewing it.
+The first time when a notebook is created, a warning message is shown to remind you the risk of running the code without reviewing it.
 
 :::image type="content" source="media\how-to-use-notebook\notebook-security-warning.png" alt-text="Screenshot showing warning of running notebook.":::
 
@@ -106,7 +106,7 @@ The subfolder and files under the **Tables** and **Files** section of the **Lake
 
 ### Folder and file operations
 
-If you select a file (.csv, .parquet, .txt, .jpg, .png, etc.) with a right mouse click, you can use the Spark or Pandas API to load the data. A new code cell is generated and inserted beneath the focus cell.
+If you select a file (.csv,.parquet,.txt,.jpg,.png, etc.) with a right mouse click, you can use the Spark or Pandas API to load the data. A new code cell is generated and inserted beneath the focus cell.
 
 You can easily copy a path with a different format from the select file or folder and use the corresponding path in your code.
 
@@ -124,7 +124,7 @@ The notebook resource explorer provides a Unix-like file system to help you mana
 
 ### Built-in resources folder
 
-The built-in resources folder is a system predefined folder for each notebook item instance. Here are the key capabilities for the notebook resources.
+The built-in resources folder is a system-defined folder unique to each notebook. It is recommended to use built-in resource folder to storage any data used in the current notebook. Here are the key capabilities for the notebook resources.
 
 - You can use common operations such as create/delete, upload/download, drag/drop, rename, duplicate, and search through the UI.
 - You can use relative paths like `builtin/YourData.txt` for quick exploration. The `notebookutils.nbResPath` method helps you compose the full path.
@@ -148,7 +148,7 @@ Environment Resources Folder is a shared repository designed to streamline colla
 
 
 > [!NOTE]
-> Currently, reading/writing environment resource folder in notebook code is not supported in a [High concurrency session](../data-engineering/configure-high-concurrency-session-notebooks.md).
+> Reading/writing with a relative path is not functioning in a [High concurrency session](../data-engineering/configure-high-concurrency-session-notebooks.md).
 
 ### File editor
 
@@ -159,7 +159,7 @@ The file editor allows you to view and edit files directly within the notebook's
    :::image type="content" source="media\how-to-use-notebook\view-edit-file.png" alt-text="Screenshot showing where to view and edit files.":::
 
 - Content change on file editor needs to be saved manually by clicking the **Save** button or keyboard shortcut: **Ctrl+S**, file editor doesn't support autosave.
-- File editor is also affected by [notebook mode](#notebook-mode-switcher). You can only view files but cannot edit them if you are in the notebook mode without editing permission.
+- [notebook mode](#notebook-mode-switcher) also affects the file editor. You can only view files but cannot edit them if you are in the notebook mode without editing permission.
 
 > [!NOTE]
 > Here are some limitations for file editor.
@@ -225,12 +225,11 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
 ![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
 
 > [!NOTE]
-> For a comment item, the tagged user will not receive an Email notification anymore if you updates the comment within one hour. But it will send Email notification to the new tagged user.
+> For a comment item, the tagged user will not receive an Email notification anymore if you update the comment within one hour. But it sends Email notification to the new tagged user.
 
 ## Version history
 
-> [!NOTE]
-> Currently, the feature is in preview.
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 Version history allows you to easily version your live notebook changes. It supports history tracking and notebook management with robust built-in version control capabilities, which is especially helpful for collaborative work with multiple contributors on the same notebook.
 
@@ -251,13 +250,13 @@ Version history allows you to easily version your live notebook changes. It supp
 
    :::image type="content" source="media\how-to-use-notebook\checkpoint-diff-view.png" alt-text="Screenshot showing view diff."lightbox="media\how-to-use-notebook\checkpoint-diff-view.png":::
 
-1. You can manage the version from the checkpoint drop down menu, if you want to keep a pervious version, click **restore** from checkpoint and overwrite the current notebook, or using **save as copy** to clone it to a new notebook.
+1. You can manage the version from the checkpoint drop-down menu, if you want to keep a pervious version, click **restore** from checkpoint and overwrite the current notebook, or using **save as copy** to clone it to a new notebook.
 
    :::image type="content" source="media\how-to-use-notebook\more-options-with-the-checkpoint.png" alt-text="Screenshot showing more options with the checkpoint."lightbox="media\how-to-use-notebook\more-options-with-the-checkpoint.png":::
 
 > [!NOTE]
 >
-> - Known limitation: After clicking on the **Restore** button and navigate **Back to notebook**, the notebook won't be immediately recovered from the checkpoint. A message bar will prompt you to view the changes, you need to click the **View changes** button and select keeping the *Saved version* to finish the restore.
+> - Known limitation: After clicking on the **Restore** button and navigate **Back to notebook**, the notebook won't be immediately recovered from the checkpoint. A message bar prompts you to view the changes. You need to click the **View changes** button and select keeping the *Saved version* to finish the restore.
     :::image type="content" source="media\how-to-use-notebook\view-changes-messagebar.png" alt-text="Screenshot showing view changes after restore.":::
 > - System checkpoints will expire after **1** year.
 
