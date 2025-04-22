@@ -104,6 +104,34 @@ FOREIGN KEY is only supported when NOT ENFORCED is used.
 - For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true). 
 - For more information, see [Primary keys, foreign keys, and unique keys in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](table-constraints.md).
 
+## #temp tables in Fabric Data Warehouse
+Session-scoped temporary (#temp) tables can be created in Fabric Data Warehouse. These tables exist only within the session in which they are created and last for the duration of that session. They are not visible to other users or sessions and are automatically dropped from the system once the session ends or the #temp table is dropped. These tables are accessible to all users without requiring specific artifact-level permission.
+
+Two types of #temp tables can be created based on specific use cases - 
+
+Non-distributed #temp Table (mdf-backed) is the default type. The syntax for creating and using non-distributed #temp tables in Fabric Data Warehouse is similar to user tables, but you need to prefix the temp table name with #
+```sql
+ CREATE TABLE #table_name (
+   Col1 data_type1,
+   Col2 data_type2
+ );
+```
+
+Distributed #temp Tables (Parquet-Backed) can be created with the distribution equals round-robin keyword 
+```sql
+CREATE TABLE #table_name ( 
+Col1 data_type1, 
+Col2 data_type2
+) WITH (DISTRIBUTION=ROUND_ROBIN);
+```
+> [Note]
+> data_type1 and data_type2 are placeholders for the supported data types in [!INCLUDE fabric-dw] in [!INCLUDE product-name]] [Data types in Microsoft Fabric](data-types.md).
+  
+Using distributed #temp tables is recommended as it aligns fully with warehouse user tables in terms of unlimited storage, data types supported, operations we can perform on them. The syntax for the rest of the operations is like user tables in Fabric Data warehouse, with prefix ‘#’ added to the table name to indicate that the table is a session-scoped #temp table.
+
+> [Note]
+> Global temporary tables are currently not supported.
+
 ## Align source data with the data warehouse
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables are populated by loading data from another data source. To achieve a successful load, the number and data types of the columns in the source data must align with the table definition in the data warehouse.
