@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 04/15/2025
+ms.date: 04/18/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1106  | Real-Time Intelligence | [Eventstream real-time weather connector fails to load map in edit mode](./known-issue-1106-eventstream-weather-connector-fails-load-map-edit-mode.md) | April 18, 2025 |
+|  1104  | Power BI | [Power BI visual warning about style preset not found](./known-issue-1104-visual-warning-style-preset-not-found.md) | April 18, 2025 |
+|  1103  | Data Warehouse | [Data warehouse in second workspace out of sync from Git](./known-issue-1103-data-warehouse-second-workspace-sync-git.md) | April 18, 2025 |
 |  1102  | Data Engineering | [Deletion of managed private endpoint connected to Key Vault doesn't work](./known-issue-1102-deletion-private-endpoint-connected-key-vault-not-work.md) | April 15, 2025 |
 |  1101  | Power BI | [Vertica connector throws invalid conversion error](./known-issue-1101-vertica-connector-throws-invalid-conversion-error.md) | April 15, 2025 |
 |  1100  | Power BI | [Snowflake Implementation="2.0" connector doesn't display views](./known-issue-1100-snowflake-implementation-connector-not-display-views.md) | April 15, 2025 |
@@ -64,7 +67,6 @@ Select the **Title** to view more information about that specific known issue.
 |  986  | Power BI | [Direct Lake query cancellation might cancel other queries](./known-issue-986-direct-lake-query-cancellation-cancel-queries.md) | January 7, 2025 |
 |  985  | Power BI | [Direct Lake query cancellation causes model to fall back to DirectQuery](./known-issue-985-direct-lake-query-cancellation-fall-back-directquery.md) | January 7, 2025 |
 |  975  | Power BI | [Create report doesn't work on Eventhouse monitoring KQL database](./known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database.md) | January 6, 2025 |
-|  974  | Real-Time Intelligence | [Show table command in KQL Queryset editor fails](./known-issue-974-show-table-kql-queryset-editor-fails.md) | January 6, 2025 |
 |  965  | Databases | [SQL database creation fails to create child items when item with same name exists](./known-issue-965-sql-database-creation-fails-create-child-items-same-name.md) | December 10, 2024 |
 |  954  | Data Factory | [Create, configure, or delete a mirror fails](./known-issue-954-create-configure-delete-mirror-fails.md) | December 2, 2024 |
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](./known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
@@ -84,7 +86,6 @@ Select the **Title** to view more information about that specific known issue.
 |  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](./known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
 |  726  | Data Factory | [Pipeline using XML format copy gets stuck](./known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 |
 |  717  | Data Factory | [West India region doesn't support on-premises data gateway for data pipelines](./known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
-|  718  | OneLake | [OneLake under-reports transactions in the Other category](./known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 |
 |  643  | Data Engineering | [Tables not available to add in Power BI semantic model](./known-issue-643-tables-not-available-semantic-model.md) | February 27, 2024 |
 |  508  | Data Warehouse | [User column incorrectly shows as System in Fabric capacity metrics app](./known-issue-508-user-column-incorrectly-shows-system-metrics-app.md)  | October 5, 2023 |
 |  506  | Data Warehouse | [InProgress status shows in Fabric capacity metrics app for completed queries](./known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md)  | October 5, 2023 |
@@ -96,7 +97,9 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
-|  1067  | Data Engineering | [Environment REST API updates might cause your workflow to break](./known-issue-1067-environment-rest-api-updates-workflow-break.md) | March 26, 2025 | Fixed: April 15, 2025 |
+|  974  | Real-Time Intelligence | [Show table command in KQL Queryset editor fails](./known-issue-974-show-table-kql-queryset-editor-fails.md) | January 6, 2025 | Fixed: April 18, 2025 |
+|  718  | OneLake | [OneLake under-reports transactions in the Other category](./known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 | Fixed: April 18, 2025 |
+|  1067  | Data Engineering | [Environment REST API update no longer happening](./known-issue-1067-environment-rest-api-updates-workflow-break.md) | March 26, 2025 | Removed: April 17, 2025 |
 |  923  | Power BI | [Tenant migration requests stopped](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 | Closed: April 15, 2025 |
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](./known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 | Fixed: April 15, 2025 |
 |  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](./known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 | Fixed: April 15, 2025 |

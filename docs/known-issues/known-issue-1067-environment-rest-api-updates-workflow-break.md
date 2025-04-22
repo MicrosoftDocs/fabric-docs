@@ -1,41 +1,28 @@
 ---
-title: Known issue - Environment REST API updates might cause your workflow to break
-description: A known issue is posted where environment REST API updates might cause your workflow to break.
-author: kfollis
+title: Known issue - Environment REST API update no longer happening
+description: A known issue is posted where environment REST API update no longer happening.
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/15/2025
+ms.date: 04/17/2025
 ms.custom: known-issue-1067
 ---
 
-# Known issue - Environment REST API updates might cause your workflow to break
+# Known issue - Environment REST API update no longer happening
 
-We're releasing a new version for the environment REST APIs on April 6, 2025. This release introduces several new APIs, removes several APIs, and updates request and response contracts for existing APIs. The APIs to be removed are supported through June 30, 2025. The existing API contract updates to the contracts might break your current workflows.
+We previously announced an update to the environment REST APIs. The update required you to change your current workflows. We're no longer making this update, and you don't need to make any workflow changes.
 
-**Status:** Fixed: April 15, 2025
+**Status:** Removed: April 17, 2025
 
 **Product Experience:** Data Engineering
 
 ## Symptoms
 
-On April 6, 2025, your current workflows might break if you use one of the following APIs:
-
-- Get environment (Response contract)
-- Publish environment (Response contract)
-- List staging libraries (Response contract)
-- List staging Spark settings (Response contract)
-- List published libraries (Response contract)
-- List published Spark settings (Response contract)
-- Update Spark settings (Request and response contract)
-
-On June 30, 2025, the following APIs will no longer work:
-
-- Upload staging libraries
-- Delete staging libraries
+No longer applicable.
 
 ## Solutions and workarounds
 
-You need to fix your workflows to use the updated contracts and APIs. More details are provided in the [Environment Public API documentation](/fabric/data-engineering/environment-public-api).
+No longer applicable.
 
 ## Next steps
 

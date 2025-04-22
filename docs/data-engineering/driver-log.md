@@ -164,7 +164,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a8
 
 Status code: 200
 
-```Jeson
+```Json
 {
 	"containerId": "container_1725346176782_0001_01_000001",
 	"nodeId": "vm-fe289417:42885",
