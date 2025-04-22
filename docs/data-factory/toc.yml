@@ -115,6 +115,8 @@
       href: dataflow-support.md
     - name: Data pipeline connectors
       href: pipeline-support.md
+    - name: Copy job connectors
+      href: copy-job-support.md
     - name: Service principal support
       href: service-principals.md
     - name: Access database
@@ -635,6 +637,8 @@
         href: connector-teradata-database-overview.md
       - name: Set up your connection
         href: connector-teradata-database.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-teradata-copy-activity.md
     - name: Vertica
       items:
       - name: Vertica - Overview
@@ -731,7 +735,7 @@
           href: expression-language.md
       - name: Data pipeline runs
         href: pipeline-runs.md
-      - name: Storage event triggers (Preview)
+      - name: Storage event triggers
         href: pipeline-storage-event-triggers.md
       - name: Variable library integration (Preview)
         href: variable-library-integration-with-data-pipelines.md

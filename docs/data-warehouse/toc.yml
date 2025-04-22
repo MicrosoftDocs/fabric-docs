@@ -56,9 +56,9 @@ items:
   items: 
   - name: Connectivity
     href: connectivity.md
-- name: Copilot in Data Warehouse
+- name: Copilot in Fabric in Data Warehouse
   items:
-  - name: What is Copilot in Data Warehouse?
+  - name: What is Copilot in Fabric in Data Warehouse?
     href: copilot.md
   - name: Use the chat pane
     href: copilot-chat-pane.md

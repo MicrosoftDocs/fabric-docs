@@ -1,13 +1,14 @@
 ---
-title: "Connect to your SQL database"
+title: "Connect to Your SQL Database"
 description: Learn about options to connect to your SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: antho, sukkaur
-ms.date: 03/18/2025
+ms.reviewer: antho, sukkaurk, imotiwala, maghan
+ms.date: 04/18/2025
 ms.topic: how-to
 ms.search.form: product-databases, Connect to SQL database
 ---
+
 # Connect to your SQL database in Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
@@ -28,7 +29,7 @@ You can connect to the SQL database using the [web-based editor in the Fabric po
 
 The web-based editor for SQL database in Fabric provides a foundational object explorer and query execution interface. The integrated **Explorer** menu lists all database objects.
 
-A new SQL database in Fabric will automatically open into the web editor and an existing database can be opened in the web editor by selecting it in Fabric.
+A new SQL database in Fabric automatically opens into the web editor and an existing database can be opened in the web editor by selecting it in Fabric.
 
 ## Find SQL connection string
 
@@ -36,8 +37,8 @@ In [!INCLUDE [product-name](../../includes/product-name.md)], the SQL analytics 
 
 To find the SQL connection string for your **Fabric SQL database**:
 
-- Go to the settings of your SQL database item. 
-- Or, in the item list, select the `...` menu, select **Settings** then **Connection strings**. Fabric provides complete connection strings for providers including ADO.NET, JDBC, ODBC, PHP, and Go.
+- Go to the settings of your SQL database item.
+- Or, in the item list, select the `...` menu. Select **Settings** then **Connection strings**. Fabric provides complete connection strings for providers including ADO.NET, JDBC, ODBC, PHP, and Go.
 - Or, select the **Open in** button and **SQL Server Management Studio**. The server connection information is displayed.
 
 To find the SQL connection string for the **SQL analytics endpoint** of your Fabric SQL database:
@@ -49,9 +50,11 @@ To find the SQL connection string for the **SQL analytics endpoint** of your Fab
 
 You can easy connect to your SQL database with the **Open in** button in the Fabric portal [query editor](query-editor.md). Choose [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 
-:::image type="content" source="media/connect/open-in-connect-button.png" alt-text="Screenshot from the Fabric portal query editor showing the Open in button for easy connections with SSMS or the mssql extension in VS Code.":::
+:::image type="content" source="media/connect/open-in-connect-button.png" alt-text="Screenshot from the Fabric portal query editor showing the Open in button for easy connections with SSMS or the mssql extension in VS Code." lightbox="media/connect/open-in-connect-button.png":::
 
 ## Connect with SQL Server Management Studio manually
+
+:::image type="content" source="media/connect/sql-server-management-studio-settings.png" alt-text="Screenshot of SSMS settings." lightbox="media/connect/sql-server-management-studio-settings.png":::
 
 In [SQL Server Management Studio (SSMS)](https://aka.ms/ssms):
 
@@ -59,16 +62,16 @@ In [SQL Server Management Studio (SSMS)](https://aka.ms/ssms):
 1. Select **Settings**.
 1. Select **Connection strings**. Look for [the connection string to your SQL database](#find-sql-connection-string), including the `Data Source=`. For example, `tcp:<servername>.database.fabric.microsoft.com,1433`. The `Initial Catalog=` is the database name.
 1. In SSMS, open a **New connection**.
-1. Copy and paste the value from `Data Source=` into the **Server name**.
+1. From the Fabric dialog box, copy and paste the value from `Server Name` into the **Server name**.
 1. Choose **Authentication** type: **Microsoft Entra ID - Universal with MFA support**.
 1. Select **Options<<**.
-1. Copy and paste the value from `Initial Catalog=` into the **Connect to database** text box.
+1. Copy and paste the value from `Database Name` into the **Connect to database** text box.
 1. Select **Connect**.
 1. Sign in using **Microsoft Entra ID - Universal with MFA support**.
 
 ## Connect with sqlcmd
 
-You can connect to your SQL database in Fabric with [sqlcmd](/sql/tools/sqlcmd/sqlcmd-utility?view=fabric&preserve-view=true), just like any other SQL Database Engine product. [Use Microsoft Entra ID authentication](/sql/tools/sqlcmd/sqlcmd-authentication?view=fabric&preserve-view=true) with the `G` option. The Microsoft Entra authentication (`-G`) require at least version 13.1.
+You can connect to your SQL database in Fabric with [sqlcmd](/sql/tools/sqlcmd/sqlcmd-utility?view=fabric&preserve-view=true), just like any other SQL Database Engine product. [Use Microsoft Entra ID authentication](/sql/tools/sqlcmd/sqlcmd-authentication?view=fabric&preserve-view=true) with the `G` option. The Microsoft Entra authentication (`-G`) requires at least version 13.1.
 
 In the following example, replace `<server name>` with the long string of unique text that represents your SQL database in Fabric.
 

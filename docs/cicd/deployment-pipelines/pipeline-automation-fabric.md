@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 05/09/2024
+ms.date: 04/09/2025
 #customer intent: As a developer, I want to automate my deployment pipeline using Fabric APIs so that I can streamline the release process.
 ---
 
