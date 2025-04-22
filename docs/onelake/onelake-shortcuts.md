@@ -118,6 +118,7 @@ When a user accesses data through a shortcut to another OneLake location, OneLak
 > [!IMPORTANT]
 > When accessing shortcuts through Power BI semantic models or T-SQL, the calling user’s identity is not passed through to the shortcut target. The calling item owner’s identity is passed instead, delegating access to the calling user.
 
+<a id="adls-shortcuts"></a>
 ### Azure Data Lake Storage shortcuts
 
 When you create shortcuts to Azure Data Lake Storage (ADLS) Gen2 storage accounts, the target path can point to any folder within the hierarchical namespace. At a minimum, the target path must include a container name.
