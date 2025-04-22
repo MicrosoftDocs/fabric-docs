@@ -5,7 +5,7 @@ ms.reviewer: xupxhou
 ms.author: whhender
 author: whhender
 ms.topic: how-to
-ms.date: 03/18/2025
+ms.date: 4/15/2025
 ---
 
 # Use the Dataflow activity to run a Dataflow Gen2
@@ -45,6 +45,13 @@ Select the **Settings** tab, then select an existing workspace and dataflow to r
 The notification option is disabled for now, but the feature is coming soon.
 
    :::image type="content" source="media/dataflow-activity/dataflow-settings.png" alt-text="Screenshot showing the Dataflow activity Settings tab, and highlighting the tab.":::
+
+>[!NOTE]
+>Public parameters mode and support for parameters to be passed to a Dataflow is a preview feature only available for Dataflow Gen2 with CI/CD support.
+
+Inside the Dataflow parameters section you are able to enter the name of the parameter that you wish to pass as well as the type and value that you wish to pass.
+
+For more information on how to enable the Dataflow parameters capability on your Dataflow Gen2, check the article on [Public parameters for Dataflow Gen2](dataflow-parameters.md).
 
 ## Save and run or schedule the pipeline
 
