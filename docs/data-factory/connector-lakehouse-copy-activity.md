@@ -258,7 +258,7 @@ The following tables contain more information about a copy activity in Lakehouse
 |**Table action**| Append new values to an existing table, overwrite the existing data and schema in the table using the new values or insert new values to existing table and update existing values.|• **Append**<br>• **Overwrite**<br>• **Upsert**|No|tableActionOption:<br>• Append<br> • OverwriteSchema <br>• Upsert|
 |**Enable partitions**|This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".| Selected or unselected |No| partitionOption: <br> PartitionByKey or None|
 |**Partition columns**|The destination columns in schemas mapping.| \<your partition columns\> |No| partitionNameList|
-|**Key columns**|Insert new values to existing table and update existing values.|\<your key columns\>|No| keyColumns|
+|**Key columns**|Choose which column is used to determine if a row from the source matches a row from the destination.|\<your key columns\>|No| keyColumns|
 |**File path**|Write data to the path to a folder/file under destination data store.|\<file path>|No|• folderPath<br>• fileName|
 | **File format** | The file format for your destination data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes when you select **Files** in **Root folder** | / |
 |**Copy behavior** | The copy behavior defined when the source is files from a file-based data store.|• **Flatten hierarchy**<br>• **Merge files**<br>• **Preserve hierarchy**<br>• **Add dynamic content** |No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
