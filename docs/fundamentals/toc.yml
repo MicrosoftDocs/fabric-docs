@@ -189,6 +189,14 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Insert statements across tables in different data warehouses fail
+      href: ../known-issues/known-issue-1114-insert-statements-tables-different-data-warehouses-fail.md
+    - name: User data functions option not visible in data pipelines functions activity
+      href: ../known-issues/known-issue-1112-functions-option-not-visible-pipelines-functions-activity.md
+    - name: Can't read data warehouse tables from a notebook
+      href: ../known-issues/known-issue-1108-not-read-data-warehouse-tables-notebook.md
+    - name: Cross-region capacity migration might fail if items weren't deleted successfully
+      href: ../known-issues/known-issue-1107-cross-region-capacity-migration-fail-items-not-deleted-successfully.md
     - name: Eventstream real-time weather connector fails to load map in edit mode
       href: ../known-issues/known-issue-1106-eventstream-weather-connector-fails-load-map-edit-mode.md
     - name: Power BI visual warning about style preset not found
@@ -281,12 +289,8 @@ items:
       href: ../known-issues/known-issue-1024-copy-job-item-deletion-fails-error.md
     - name: Preview destination data on a pipeline's copy activity fails
       href: ../known-issues/known-issue-1023-preview-destination-data-pipeline-copy-activity-fails.md
-    - name: Dataflow connector doesn't show dataflows with view only permissions
-      href: ../known-issues/known-issue-1020-dataflow-connector-not-show-dataflows-view-permissions.md
     - name: Unsupported error for legacy timestamp in Fabric Runtime 1.3
       href: ../known-issues/known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md
-    - name: Models with specific gateway configuration might experience refresh issues
-      href: ../known-issues/known-issue-1011-models-specific-gateway-configuration-refresh-issues.md
     - name: Notebook and SJD job statuses are in progress in monitor hub
       href: ../known-issues/known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md
     - name: Copilot sidecar chat fails with certain private link settings
@@ -297,8 +301,6 @@ items:
       href: ../known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query.md
     - name: KQL database loads continuously without an error
       href: ../known-issues/known-issue-990-kql-database-loads-continuously-without-error.md
-    - name: Git operations and deployment pipelines don't work with lakehouses
-      href: ../known-issues/known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md
     - name: Apache Airflow job creation shows Fabric upgrade message
       href: ../known-issues/known-issue-991-apache-airflow-job-creation-upgrade-message.md
     - name: Local data access isn't allowed for pipeline using on-premises data gateway
@@ -327,8 +329,6 @@ items:
       href: ../known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md
     - name: Create, configure, or delete a mirror fails
       href: ../known-issues/known-issue-954-create-configure-delete-mirror-fails.md
-    - name: Incorrect column names after column format or aggregation change
-      href: ../known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md
     - name: Intermittent failures on deployment of Sustainability solution
       href: ../known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md
     - name: Pipeline copy data to Kusto using an on-premises data gateway doesn't work

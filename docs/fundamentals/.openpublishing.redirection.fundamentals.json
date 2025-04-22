@@ -1046,6 +1046,26 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1011-models-specific-gateway-configuration-refresh-issues.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1020-dataflow-connector-not-show-dataflows-view-permissions.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/copilot-faq-fabric.yml",
             "redirect_url": "/fabric/fundamentals/copilot-faq-fabric",
             "redirect_document_id": false
