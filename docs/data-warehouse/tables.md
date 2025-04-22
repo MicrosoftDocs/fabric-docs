@@ -3,8 +3,8 @@ title: Tables
 description: Learn about tables in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: xiaoyul
-ms.date: 04/06/2025
+ms.reviewer: xiaoyul, randolphwest
+ms.date: 04/22/2025
 ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
@@ -46,7 +46,7 @@ To show the organization of the tables, you could use `fact`, `dim`, or `int` as
 
 For [!INCLUDE [fabric-dw](includes/fabric-dw.md)], you can create a table as a new empty table. You can also create and populate a table with the results of a select statement. The following are the T-SQL commands for creating a table. 
 
-| T-SQL Statement | Description |
+| T-SQL statement | Description |
 |:----------------|:------------|
 | [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true) | Creates an empty table by defining all the table columns and options. |
 | [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) | Populates a new table with the results of a select statement. The table columns and data types are based on the select statement results. To import data, this statement can select from an external table. |
@@ -117,19 +117,20 @@ Non-distributed #temp Table (mdf-backed) is the default type. The syntax for cre
  );
 ```
 
-Distributed #temp Tables (Parquet-Backed) can be created with the distribution equals round-robin keyword 
+Distributed temp tables (Parquet-backed) can be created with the distribution equals round-robin keyword:
+
 ```sql
 CREATE TABLE #table_name ( 
 Col1 data_type1, 
 Col2 data_type2
 ) WITH (DISTRIBUTION=ROUND_ROBIN);
 ```
-> [Note]
-> data_type1 and data_type2 are placeholders for the supported data types in [!INCLUDE fabric-dw] in [!INCLUDE product-name]] [Data types in Microsoft Fabric](data-types.md).
-  
+
+`data_type1` and `data_type2` are placeholders for the supported data types in [!INCLUDE [fabricdw](includes/fabric-dw.md)]. For more information, see [Data types in Microsoft Fabric](data-types.md).
+
 Using distributed #temp tables is recommended as it aligns fully with warehouse user tables in terms of unlimited storage, data types supported, operations we can perform on them. The syntax for the rest of the operations is like user tables in Fabric Data warehouse, with prefix ‘#’ added to the table name to indicate that the table is a session-scoped #temp table.
 
-> [Note]
+> [!NOTE]
 > Global temporary tables are currently not supported.
 
 ## Align source data with the data warehouse
@@ -138,9 +139,7 @@ Using distributed #temp tables is recommended as it aligns fully with warehouse 
 
 If data is coming from multiple data stores, you can port the data into the data warehouse and store it in an integration table. Once data is in the integration table, you can use the power of data warehouse to implement transformation operations. Once the data is prepared, you can insert it into production tables.
 
-<a id="limitations"></a>
-
-### Limitations
+## Limitations
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports many, but not all, of the table features offered by other databases.
 
