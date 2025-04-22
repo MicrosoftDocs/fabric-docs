@@ -5,13 +5,13 @@ author: ptyx507x
 ms.author: miescobar
 ms.reviewer: whhender
 ms.topic: conceptual
-ms.date: 04/6/2025
+ms.date: 04/23/2025
 ---
 
 # Use public parameters in Dataflow Gen2 (Preview)
 
 >[!NOTE]
->Public parameters in Fabric Dataflow Gen2 are available as a preview feature. Only Dataflow Gen2 with CI/CD support have the experience enabled.
+>Public parameters in Fabric Dataflow Gen2 are available as a preview feature. Only Dataflow Gen2 with CI/CD support can apply this experience.
 
 Parameters in Dataflow Gen2 allow you to dynamically control and customize dataflows, making them more flexible and reusable by enabling different inputs and scenarios without modifying the dataflow itself. It helps keep things organized by reducing the need for multiple dataflows and centralizing control within a single, parameterized dataflow.
 
