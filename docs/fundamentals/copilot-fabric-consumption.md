@@ -1,8 +1,8 @@
 ---
 title: Copilot consumption
 description: Information on how Fabric Copilot usage affects your CU consumption.
-ms.author: rarikhy
-author: rrikhy
+author: SnehaGunda
+ms.author: sngun
 ms.topic: how-to
 ms.date: 01/23/2025
 no-loc: [Copilot]
