@@ -1,7 +1,7 @@
 ---
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 04/09/2025
+ms.date: 04/22/2025
 ms.topic: include
 
 ---
@@ -21,7 +21,8 @@ The following are the Fabric regions that support database mirroring and open mi
     - North Central US
     - South Central US
     - West US
-    - West US2
+    - West US 2
+    - West US 3
    :::column-end:::
 
    :::column span="":::
