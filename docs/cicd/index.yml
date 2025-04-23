@@ -97,7 +97,7 @@ landingContent:
           - text: Automate deployment pipelines
             url: deployment-pipelines/pipeline-automation-fabric.md
           - text: Automate Variable libraries
-            url: variable-library/variable-library-automation.md
+            url: variable-library/automate-variable-library.md
       - linkListType: reference
         links:
           - text: Fabric REST APIs
