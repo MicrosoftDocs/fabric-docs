@@ -70,7 +70,7 @@ Currently, mirrored database doesn't support ownership change. If a mirrored dat
 
 ## Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Troubleshoot
 

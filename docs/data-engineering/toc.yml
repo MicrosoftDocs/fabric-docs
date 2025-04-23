@@ -213,12 +213,12 @@ items:
             href: spark-monitoring-api-overview.md
           - name: Open-source APIs
             href: open-source-apis.md
-          - name: Livy logs API
+          - name: Livy log APIs
             href: livy-log.md
-          - name: Executor logs API
-            href: executor-log.md
-          - name: Driver logs API
+          - name: Driver log APIs
             href: driver-log.md
+          - name: Executor log APIs
+            href: executor-log.md
       - name: Collecting Spark Logs & Metrics
         items: 
           - name: Collect Logs & Metrics with Azure Log Analytics
@@ -365,6 +365,8 @@ items:
      href: multiple-data-sources-graphql.md
    - name: Monitoring GraphQL operations
      href: graphql-operations.md
+   - name: GraphQL source control and deployment pipelines
+     href: graphql-source-control-and-deployment.md
    - name: Monitoring dashboard and logging (preview)
      href: graphql-monitor-log.md
    - name: Frequently asked questions
@@ -387,6 +389,8 @@ items:
      href: ./user-data-functions/create-functions-activity-data-pipelines.md
    - name: Integration with Fabric notebooks
      href: ./notebook-utilities.md#user-data-function-udf-utilities
+   - name: Manage public and private libraries
+     href: ./user-data-functions/how-to-manage-libraries.md
    - name: Service details and limitations
      href: ./user-data-functions/user-data-functions-service-limits.md
    - name: Source control and deployment pipelines

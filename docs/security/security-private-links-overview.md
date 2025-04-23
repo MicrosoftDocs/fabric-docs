@@ -124,12 +124,6 @@ Limitations:
 
 Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. Within a tenant that has been enabled with a private link, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. This includes the ability to ingest healthcare data form various sources, such as Azure Storage accounts, and more.
 
-### Azure and Fabric Events
-Azure and Fabric events support private link such that when the **Block Public Internet Access** tenant setting is enabled:
-- Any new configuration to consume Azure events, like Azure Blob Storage events, would be blocked.
-- Existing configurations that are consuming Azure events will start losing any new events.
-
-### Other Fabric items
 
 Other Fabric items, such as Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 

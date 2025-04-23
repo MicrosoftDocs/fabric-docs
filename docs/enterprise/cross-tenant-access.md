@@ -96,9 +96,9 @@ Providers must participate in the private preview before a guest tenant can prov
 Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the consent API to provide consent for cross tenant access for Fabric data warehouses with a specific provider. Provide the tenant ID of the provider in the request body. 
 
 ```powershell
-$body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’
-$url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent”
-Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “application/json”
+$body ='{ "resourceTenantObjectId": "GUID_VAL" }'
+$url = "https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent"
+Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType "application/json"
 ```
 
 ## Disable cross tenant access

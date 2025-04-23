@@ -61,7 +61,7 @@ The following items currently support Git integration:
 * Data Engineering items:
 
   * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#git-integration-for-microsoft-fabric-environment)
-  * GraphQL *(preview)*
+  * [GraphQL](../../data-engineering/graphql-source-control-and-deployment.md#api-for-graphql-git-integration) *(preview)*
   * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#lakehouse-git-integration) *(preview)*
   * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
   * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md) *(preview)*
@@ -74,16 +74,16 @@ The following items currently support Git integration:
   * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
   * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-git-integration)
   * Mount ADF *(preview)*
-  * Variable library *(preview)*
+  * [Variable library](../variable-library/variable-library-cicd.md#variable-libraries-and-git-integration) *(preview)*
 
 * Real-time Intelligence items:
 
-  * Activator *(preview)*
-  * [Eventhouse](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md#eventhouse-files)
+  * [Activator](../../real-time-intelligence/git-deployment-pipelines.md) *(preview)*
+  * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md#eventhouse-files)
   * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md)
-  * [KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md#kql-database-files)
-  * [KQL Queryset](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md#kql-queryset-files)
-  * [Real-time Dashboard](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md#real-time-dashboard-files)
+  * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md#kql-database-files)
+  * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md#kql-queryset-files)
+  * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md#real-time-dashboard-files)
 
 * Data Warehouse items:
 
@@ -103,7 +103,7 @@ The following items currently support Git integration:
 
 * Industry solutions:
 
-  * Healthcare *(preview)*
+  * [Healthcare](/industry/healthcare/healthcare-data-solutions/application-lifecycle-management) *(preview)*
   * HealthCare Cohort *(preview)*
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren't saved or synced, but they're not deleted either. They appear in the source control panel but you can't commit or update them.

@@ -58,6 +58,10 @@ For more information, see Snowflake documentation on [Access Control Privileges 
 > Any granular security established in the source Snowflake warehouse must be re-configured in the mirrored database in Microsoft Fabric.
 > For more information, see [SQL granular permissions in Microsoft Fabric](../../data-warehouse/sql-granular-permissions.md).
 
+## Mirroring Snowflake behind firewall (Preview)
+Check your networking requirements for Fabric to access your Snowflake data source: If your Snowflake data source is not publicly accessible and is within a private network, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Snowflake instance via a private endpoint or is allowed by the firewall rule. Learn more from [the tutorial](snowflake-tutorial.md).
+
+
 ## Mirrored Snowflake cost considerations
 
 Fabric compute used to replicate your data into Fabric OneLake is free. The Mirroring storage cost is free up to a limit based on capacity. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute for querying data using SQL, Power BI, or Spark is charged at regular rates.

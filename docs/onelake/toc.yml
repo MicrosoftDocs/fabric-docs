@@ -9,14 +9,14 @@ items:
   items:
   - name: Bring your data to OneLake with Lakehouse
     href: create-lakehouse-onelake.md
-  - name: Implement medallion lakehouse architecture
-    href: onelake-medallion-lakehouse-architecture.md
   - name: Transform with Apache Spark and query data with SQL
     href: onelake-onecopy-quickstart.md
   - name: Connect to ADLS and transform data with Azure Databricks
     href: onelake-shortcuts-adb-quickstart.md
   - name: Ingest data and analyze with Azure Databricks
     href: onelake-open-access-quickstart.md
+  - name: Understand medallion lakehouse architecture
+    href: onelake-medallion-lakehouse-architecture.md
 - name: Shortcuts
   items:
   - name: What are shortcuts?
@@ -67,7 +67,7 @@ items:
   items:
   - name: OneLake security overview
     href: ./security/get-started-security.md
-  - name: Onelake security features
+  - name: OneLake security features
     items:
     - name: Table and folder security
       href: ./security/table-folder-security.md
