@@ -21,7 +21,7 @@ Row-level security (RLS) is a feature of OneLake security (preview) that allows 
 * A Lakehouse in OneLake with OneLake data access roles turned on. For more information, see [Get started with OneLake data access roles](get-started-data-access-roles.md).
 
   >[!IMPORTANT]
-  >To access OneLake security features during preview, add the following feature flags to the end of the Fabric URL in your browser
+  >To access OneLake security features during preview, add the following feature flags to the end of the Fabric URL in your browser:
   >
   >*&tridentOneLakeSecurity=1&rowLevelSecurity=1&columnLevelSecurity=1&DmsUniversalSecurity=1*
 
