@@ -61,12 +61,12 @@ Use the following steps to define RLS rules:
 
 1. Select **Save** to confirm the row security rules.
 
-### Enabling OneLake security for SQL analytics endpoint
+### Enable OneLake security for SQL analytics endpoint
 
-Before you can use OneLake security with SQL Analytics endpoint, you must enable its **User's identity mode**. This is a one-time activity which you must perform if you want SQL analytics endpoint to inherit OneLake security permissions for table read access.
+Before you can use OneLake security with SQL analytics endpoint, you must enable its **User's identity mode**. Newly created SQL analytics endpoints in a preview enabled workspace will default to user's identity mode, so these steps must be followed for existing SQL analytics endpoints.
 
 > [!NOTE]
-> Enabling **User's identity mode** is a one-time activity per SQL analytics endpoint. If you have already enabled it as part of enabling RLS or CLS policy for a given SQL analytics endpoint then it is already configured to honour OneLake security.
+> Switching to **User's identity** mode only needs to be done once per SQL analytics endpoint. Endpoints that are not switched to user's identity mode will continue to use a delegated identity to evaluate permissions.
 
 1. Navigate to SQL analytics endpoint.
 
