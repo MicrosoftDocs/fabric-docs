@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 04/18/2025
+ms.date: 04/22/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,10 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1114  | Data Warehouse | [Insert statements across tables in different data warehouses fail](./known-issue-1114-insert-statements-tables-different-data-warehouses-fail.md) | April 22, 2025 |
+|  1112  | Data Engineering | [User data functions option not visible in data pipelines functions activity](./known-issue-1112-functions-option-not-visible-pipelines-functions-activity.md) | April 22, 2025 |
+|  1108  | Data Warehouse | [Can't read data warehouse tables from a notebook](./known-issue-1108-not-read-data-warehouse-tables-notebook.md) | April 22, 2025 |
+|  1107  | Real-Time Intelligence | [Cross-region capacity migration might fail if items weren't deleted successfully](./known-issue-1107-cross-region-capacity-migration-fail-items-not-deleted-successfully.md) | April 22, 2025 |
 |  1106  | Real-Time Intelligence | [Eventstream real-time weather connector fails to load map in edit mode](./known-issue-1106-eventstream-weather-connector-fails-load-map-edit-mode.md) | April 18, 2025 |
 |  1104  | Power BI | [Power BI visual warning about style preset not found](./known-issue-1104-visual-warning-style-preset-not-found.md) | April 18, 2025 |
 |  1103  | Data Warehouse | [Data warehouse in second workspace out of sync from Git](./known-issue-1103-data-warehouse-second-workspace-sync-git.md) | April 18, 2025 |
@@ -131,7 +135,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  976  | Power BI  | [Export-to-data disabled for a visual with visual calculation](./known-issue-976-export-to-data-disabled-visual-calculation.md) | December 17, 2024 | Fixed: March 12, 2025 |
 |  940  | Data Factory | [Pipeline copy data to Kusto using an on-premises data gateway doesn't work](./known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md) | November 22, 2024 | Fixed: March 12, 2025 |
 |  1046  | Power BI | [Custom visuals using dialog or download API don't work in February Desktop](./known-issue-1046-custom-visuals-dialog-api-not-work-desktop.md) | March 5, 2025 | Fixed: March 10, 2025 |
-|  950  | Power BI | [Incorrect column names after column format or aggregation change](./known-issue-950-incorrect-column-names-column-format-aggregation-change.md) | December 2, 2024 | Fixed: March 5, 2025 |
 
 ## Related content
 
