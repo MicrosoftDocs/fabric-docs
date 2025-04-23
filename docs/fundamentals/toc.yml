@@ -43,6 +43,8 @@ items:
     href: fabric-search.md
   - name: Fabric settings
     href: fabric-settings.md 
+  - name: Find Fabric items with the OneLake catalog
+    href: ../governance/onelake-catalog.md
 - name: Workspaces
   items:
   - name: Workspaces
@@ -69,8 +71,6 @@ items:
         href: workspace-monitoring-overview.md
       - name: Enable monitoring in your workspace
         href: enable-workspace-monitoring.md      
-- name: Find Fabric items with the OneLake catalog
-  href: ../governance/onelake-catalog.md
 - name: Copilot and AI in Fabric
   items:
   - name: 1 - Copilot in Fabric overview
@@ -79,14 +79,14 @@ items:
     href: how-copilot-works.md
   - name: 3 - Copilot glossary and terms
     href: copilot-fabric-glossary.md
-  - name: 4 - Copilot in Power BI integration
-    href: /power-bi/create-reports/copilot-integration?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
-  - name: 5 - Use Copilot with semantic models
-    href: /power-bi/create-reports/copilot-semantic-models?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
-  - name: 6 - Use Copilot with Power BI reports
-    href: /power-bi/create-reports/copilot-reports-overview?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
-  - name: Enable Copilot in Fabric
+  - name: 4 - Enable Copilot in Fabric
     href: copilot-enable-fabric.md
+  - name: 5 - Copilot in Power BI integration
+    href: /power-bi/create-reports/copilot-integration?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+  - name: 6 - Use Copilot with semantic models
+    href: /power-bi/create-reports/copilot-semantic-models?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+  - name: 7 - Use Copilot with Power BI reports
+    href: /power-bi/create-reports/copilot-reports-overview?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
   - name: Copilot in Fabric FAQ
     href: copilot-faq-fabric.yml
   - name: Privacy, security, and responsible use for Copilot in Fabric
