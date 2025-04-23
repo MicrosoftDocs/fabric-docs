@@ -2,12 +2,12 @@
 title: Fabric trial capacity
 description: Understand how the Fabric trial works. This includes starting a trial, ending a trial, and sharing a trial.
 author: julcsc
-ms.reviewer: mihirwagle, alpowers
+ms.reviewer: alpowers, mibruhje
 ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
-ms.date: 04/01/2025
+ms.date: 04/22/2025
 ---
 
 # Microsoft Fabric trial capacity
@@ -126,9 +126,13 @@ Enabling **Contributor permissions** means that any user with an Admin role in a
 If you're the Capacity administrator, assign the trial capacity to multiple workspaces. Anyone with access to one of those workspaces is now also participating in the Fabric capacity trial.
 
 1. Open **Workspaces** and select the name of a Premium workspace.
-1. Select the ellipses (...), then select **Workspace settings** > **Premium** > **Trial**.
+1. Select **Workspace settings**, then **License info**.
+1. Select **Edit** in the **License configuration** section.
+1. Select the **Trial** license mode.
 
     :::image type="content" source="media/fabric-trial/migrate-trial.png" lightbox="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
+
+1. To apply your changes, select the **Select license** button.
 
 For more information, see [Use Workspace settings](workspaces.md#license-mode).  
 
