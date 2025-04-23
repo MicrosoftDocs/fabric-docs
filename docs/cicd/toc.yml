@@ -69,8 +69,8 @@ items:
       href: variable-library/variable-library-permissions.md
     - name: "CI/CD and Variable libraries"
       href: variable-library/variable-library-cicd.md
-  - name: "Tutorial: Use Variable libraries in CI/CD"
-    href: variable-library/tutorial-variable-library.md
+    - name: Automate Variable library management
+      href: variable-library/automate-variable-library.md
   - name: Variable library FAQ and Troubleshooting
     href: variable-library/variable-library-troubleshoot.md
 - name: Lifecycle management best practices
