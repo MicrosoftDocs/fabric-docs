@@ -32,7 +32,7 @@ This page is continuously updated with a recent review of what's new in [Microso
 The following table lists the features of Microsoft Fabric that are currently in preview. Preview features are sorted alphabetically.
 
 > [!NOTE]
-> Features currently in preview are available under [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Review for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability. Microsoft Fabric provides previews to give you a chance to evaluate and [share feedback with the product group](https://feedback.azure.com/d365community/forum/9b9ba8e4-0825-ec11-b6e6-000d3a4f07b8) on preview features before they become [generally available (GA)](#generally-available-features).
+> Features currently in preview are available under [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Review for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability. Microsoft Fabric provides previews to give you a chance to evaluate and [share feedback with the product group](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas) on preview features before they become [generally available (GA)](#generally-available-features).
 
 | **Feature** | **Learn more** |
 |:-- |:-- |
