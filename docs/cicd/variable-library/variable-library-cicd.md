@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-ms.date: 03/11/2025
+ms.date: 04/23/2025
 ms.search.form: CICD and Variable library
 #customer intent: As a developer, I want to learn how to use the Microsoft Fabric Variable library tool to manage my content lifecycle.
 ---
@@ -23,7 +23,7 @@ Variable libraries and their values can be deployed in deployment pipelines to m
 
 When you create a deployment pipeline, you can select a Variable library item to use. The selected Variable library item is stored in the deployment pipeline and is used to populate the variable values in that stage. You can also change the active value set for each stage of the deployment pipeline.
 
-When you update the variables or value set in one stage of a deployment pipeline, the Variable library appears as *different* when you [compare](../deployment-pipelines/compare-pipeline-content.md) it to the same item in a different stage.
+When you change the variables or value set in one stage of a deployment pipeline, the Variable library looks *different* [compared](../deployment-pipelines/compare-pipeline-content.md) to the same item in a different stage.
 For example, the following changes in the Variable library are reflected as *different* in the deployment pipeline:
 
 * added, deleted, or edited variables
