@@ -78,12 +78,12 @@ The following items currently support Git integration:
 
 * Real-time Intelligence items:
 
-  * Activator *(preview)*
-  * [Eventhouse](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md#eventhouse-files)
+  * [Activator](../../real-time-intelligence/git-deployment-pipelines.md) *(preview)*
+  * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md#eventhouse-files)
   * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md)
-  * [KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md#kql-database-files)
-  * [KQL Queryset](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md#kql-queryset-files)
-  * [Real-time Dashboard](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md#real-time-dashboard-files)
+  * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md#kql-database-files)
+  * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md#kql-queryset-files)
+  * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md#real-time-dashboard-files)
 
 * Data Warehouse items:
 
@@ -103,7 +103,7 @@ The following items currently support Git integration:
 
 * Industry solutions:
 
-  * Healthcare *(preview)*
+  * [Healthcare](/industry/healthcare/healthcare-data-solutions/application-lifecycle-management) *(preview)*
   * HealthCare Cohort *(preview)*
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren't saved or synced, but they're not deleted either. They appear in the source control panel but you can't commit or update them.
