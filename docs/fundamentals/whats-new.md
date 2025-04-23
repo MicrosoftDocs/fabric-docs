@@ -147,6 +147,7 @@ This section summarizes new Microsoft Fabric community opportunities for prospec
 - Visit the [Microsoft Fabric Career Hub](https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabric_careerhubblog_clp) for everything you need on your certification journey, including a 50% discount on exams.
 - Watch and subscribe to [Microsoft Fabric videos on YouTube](https://www.youtube.com/@MicrosoftFabric/featured).
 - Ask and answer questions in the [Microsoft Fabric community](https://community.fabric.microsoft.com/).
+- Spread your Fabric knowledge, insights, and best practices with others. To learn more, see the [Super User Program](https://aka.ms/SuperUsers).
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
