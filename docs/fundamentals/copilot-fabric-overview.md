@@ -213,7 +213,7 @@ Real-time dashboards
 
 ### Build your own copilots
 
-Using the [client advisor AI accelerator](https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator) tool, you can build custom copilot with your enterprise data. The client advisor AI accelerator uses Azure OpenAI Service, Azure AI Search, and Microsoft Fabric to create custom Copilot solutions. This all-in-one custom copilot empowers client advisors to use generative AI across structured and unstructured data optimizing daily tasks and fostering better interactions with clients. To learn more, see the [GitHub repo.](https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator)
+Using the client advisor AI accelerator tool, you can build custom copilot with your enterprise data. The client advisor AI accelerator uses Azure OpenAI Service, Azure AI Search, and Microsoft Fabric to create custom Copilot solutions. This all-in-one custom copilot empowers client advisors to use generative AI across structured and unstructured data optimizing daily tasks and fostering better interactions with clients. To learn more, see the [GitHub repo](https://github.com/microsoft/Build-your-own-copilot-Solution-Accelerator).
 
 ### Conversational knowledge mining solution accelerator
 
