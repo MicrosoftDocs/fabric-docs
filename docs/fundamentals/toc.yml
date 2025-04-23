@@ -86,7 +86,6 @@ items:
   - name: 6 - Use Copilot with Power BI reports
     href: /power-bi/create-reports/copilot-reports-overview?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
   - name: Enable Copilot in Fabric
-  - name: Enable Copilot in Fabric
     href: copilot-enable-fabric.md
   - name: Copilot in Fabric FAQ
     href: copilot-faq-fabric.yml
@@ -106,24 +105,28 @@ items:
       href: copilot-power-bi-privacy-security.md
     - name: Responsible use in Real-Time Intelligence
       href: copilot-real-time-intelligence-privacy-security.md
-  - name: Copilot for Data Factory
-    href: copilot-fabric-data-factory.md
-  - name: Copilot for Data Science and Data Engineering
+  - name: Copilot in Fabric experiences
     items:
+    - name: Copilot for Data Factory
+      href: copilot-fabric-data-factory.md
+    - name: Copilot for Data Warehouse
+      href: ../data-warehouse/copilot.md
+    - name: Copilot for Real-Time Intelligence
+      href: copilot-real-time-intelligence.md
     - name: Copilot for Data Science and Data Engineering
-      href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
-    - name: Overview of Chat-magics in Notebooks (preview)
-      href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
-    - name: Use the Copilot chat panel (preview)
-      href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
-  - name: Copilot for Data Warehouse
-    href: ../data-warehouse/copilot.md
-  - name: Copilot for Real-Time Intelligence
-    href: copilot-real-time-intelligence.md
-  - name: Copilot in Fabric Consumption
-    href: copilot-fabric-consumption.md
-  - name: Data agent in Fabric Consumption
-    href: data-agent-consumption.md
+      items:
+      - name: Copilot for Data Science and Data Engineering
+        href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
+      - name: Overview of Chat-magics in Notebooks (preview)
+        href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
+      - name: Use the Copilot chat panel (preview)
+        href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
+  - name: Copilot consumption
+    items:
+    - name: Copilot in Fabric - usage and billing
+      href: copilot-fabric-consumption.md
+    - name: Data agent in Fabric Consumption
+      href: data-agent-consumption.md
 - name: Direct Lake
   items:
   - name: Direct Lake overview
