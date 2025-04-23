@@ -70,7 +70,7 @@ Represent the configuration of a specific logical endpoint, for example, the bac
 * The resolved endpoint that is returned from the service must meet the following requirements:
   * The domain of the resolved endpoint must match the domain of the [resource ID](/fabric/workload-development-kit/workload-cloud-setup#microsoft-entra-id-app-resourceid-format) found in the WorkloadManifest.xml.
   * The resolved endpoint URL may have up to six extra subdomains before the main domain.
-  * Any subdomain after the first segment must belong to the list of verified domains of the publisher tenant.
+  * Any subdomain after the first segment must belong to the list of [verified domains](/entra/fundamentals/add-custom-domain) of the publisher tenant.
 
 #### Example
 
