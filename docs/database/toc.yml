@@ -88,6 +88,8 @@ items:
       href: sql/sqlpackage.md
     - name: Deploy via REST API
       href: sql/deploy-rest-api.md
+    - name: Connect App Service to SQL database in Fabric
+      href: tutorial-service-connector.md
   - name: Load data into a SQL database
     items:
     - name: Load data with data pipelines

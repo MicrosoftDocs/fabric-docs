@@ -1,31 +1,31 @@
 ---
-title: Connect App Service to Azure SQL Database in Fabric
-description: Tutorial showing how to connect a web app to Azure SQL Database in Microsoft Fabric using Service Connector
-#customer intent: As a web app developer I want to connect an App Service resource to Azure SQL Database in Fabric so that my app can reach the SQL database in Microsoft Fabric.
+title: Connect App Service to a SQL database in Fabric
+description: Tutorial showing how to connect a web app to a SQL database in Microsoft Fabric using Service Connector
+#customer intent: As a web app developer I want to connect an App Service resource to a SQL database in Fabric so that my app can reach the SQL database in Microsoft Fabric.
 author: maud-lv
 ms.author: malev
 ms.custom: service-connector
 ms.topic: tutorial
-ms.date: 03/26/2025
+ms.date: 04/23/2025
 ---
 
-# Tutorial: Connect an App Service to SQL Database in Microsoft Fabric using Service Connector
+# Tutorial: Connect an App Service to a SQL database in Fabric using Service Connector
 
-In this guide, you learn how to connect an Azure App Service to an Azure SQL Database in Microsoft Fabric using Service Connector. This setup enables your web app to seamlessly interact with the SQL database in Microsoft Fabric.
+In this guide, you learn how to connect an Azure App Service to a SQL database in Microsoft Fabric using Service Connector. This setup enables your web app to seamlessly interact with the SQL database in Microsoft Fabric.
 
 > [!div class="checklist"]
-> * Create a service connection to SQL Database in Fabric in Azure App Service
-> * Share access to SQL database in Fabric
+> * Create a service connection to a SQL database in Fabric in Azure App Service
+> * Share access to a SQL database in Fabric
 
 ## Prerequisites
 
 * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free).
 * An app hosted on App Service. If you don't have one yet, [create and deploy an app to App Service](/azure/app-service/quickstart-dotnetcore)
-* An Azure SQL Database in Microsoft Fabric. If you don't have one, [create an Azure SQL Database in Fabric](./create.md).
+* A SQL database in Microsoft Fabric. If you don't have one, [create a SQL database in Fabric](./create.md).
 
 ## Create a service connection
 
-Create a new service connection from App Service to Azure SQL Database in Fabric, using the Azure CLI or the Azure platform.
+Create a new service connection from App Service to a SQL database in Fabric, using the Azure CLI or the Azure platform.
 
 ### [Azure CLI](#tab/azure-cli)
 
@@ -35,7 +35,7 @@ Create a new service connection from App Service to Azure SQL Database in Fabric
     az extension add --name serviceconnector-passwordless --upgrade
     ```
 
-1. Add a service connector for SQL Database in Fabric with the `az webapp connection create fabric-sql` command. A connection string is used to authenticate the web app to the database resource.
+1. Add a service connector for SQL database in Fabric with the `az webapp connection create fabric-sql` command. A connection string is used to authenticate the web app to the database resource.
 
     ```azurecli
     az webapp connection create fabric-sql \
@@ -56,7 +56,7 @@ Create a new service connection from App Service to Azure SQL Database in Fabric
 
     | Setting             | Example           | Description                                                                                                                                               |
     |---------------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | **Service type**    | *Fabric SQL*      | Target service type: this is SQL Database in Microsoft Fabric. |
+    | **Service type**    | *Fabric SQL*      | Target service type: this is SQL database in Microsoft Fabric. |
     | **Connection name** | *fabricsql_8293d* | The connection name that identifies the connection between your App Service and SQL database. Optionally edit the connection name suggested by default by Service Connector. |
     | **Workspace**       | *My Workspace*    | The Microsoft Fabric Workspace that contains the SQL database.                                                                                            |
     | **SQL database**    | *my_sql_database* | The target SQL database you want to connect to.                                                                                                           |
@@ -76,9 +76,9 @@ In this step, you grant your managed identity access to the database.
 
 1. In the Azure portal, in the Service Connector menu of your App Service resource, select **Refresh** to display your new connection.
 
-    :::image type="content" source="./media/tutorial-service-connector/access-security-settings.png" alt-text="Screenshot of the Azure portal, showing the SQL Database link.":::
+    :::image type="content" source="./media/tutorial-service-connector/access-security-settings.png" alt-text="Screenshot of the Azure portal, showing the SQL database link.":::
 
-1. Under Resource name, click on your connection's **SQL Database** hyperlink. This opens your SQL database in the Microsoft Fabric portal.
+1. Under Resource name, click on your connection's **SQL database** hyperlink. This opens your SQL database in the Microsoft Fabric portal.
 
 1. Navigate to the **Security** tab and select **Manage SQL security**.
 
