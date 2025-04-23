@@ -73,7 +73,7 @@ Use the following steps to define column-level security:
 
 1. Once you complete your changes, select **Save**.
 
-### Enabling OneLake security for SQL analytics endpoint
+### Enable OneLake security for SQL analytics endpoint
 
 Before you can use OneLake security with SQL Analytics endpoint, you must enable its **User's identity mode**. This is a one-time activity which you must perform if you want SQL analytics endpoint to inherit OneLake security permissions for table read access.
 
