@@ -82,9 +82,9 @@ items:
   - name: 4 - Copilot in Power BI integration
     href: /power-bi/create-reports/copilot-integration?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
   - name: 5 - Use Copilot with semantic models
-    href: /power-bi/create-reports/copilot-semantic-models.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+    href: /power-bi/create-reports/copilot-semantic-models?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
   - name: 6 - Use Copilot with Power BI reports
-    href: /power-bi/create-reports/copilot-reports-overview.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+    href: /power-bi/create-reports/copilot-reports-overview?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
   - name: Enable Copilot in Fabric
   - name: Enable Copilot in Fabric
     href: copilot-enable-fabric.md
