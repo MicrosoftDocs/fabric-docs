@@ -5,7 +5,7 @@ author: nikkiwaghani
 ms.author: nikkiwaghani
 ms.topic: conceptual
 ms.custom:
-ms.date: 23/04/2025
+ms.date: 04/23/2025
 ---
 
 # On-premise and VNET data gateway considerations for data destinations in Dataflow Gen2
