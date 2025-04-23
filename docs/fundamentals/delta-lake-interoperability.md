@@ -51,6 +51,7 @@ Eventstreams|No|No|No|No|Yes|N/A (not applicable)|No|No|Reader: 1<br/>Writer: 2|
 
 Currently, Fabric doesn't support these Delta Lake features:
 
+* V2 Checkpoints are not uniformily available in all experiences. Only Spark notebooks and Spark jobs can read and write to tables with V2 Checkpoints. Lakehouse and SQL Analytics do not correctly list tables containing V2 Checkpoint files in the ```__delta_log``` folder.
 * Delta Lake 3.x Uniform. This is supported in the Data Engineering Spark-compute only (Notebooks, Spark Jobs).
 * Identity columns writing (proprietary Databricks feature)
 * Delta Live Tables (proprietary Databricks feature)
