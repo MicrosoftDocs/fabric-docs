@@ -28,6 +28,29 @@ Item.Read.All or Item.ReadWrite.All or one of the following three groups (accord
 - SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All
 - Lakehouse.Read.All or Lakehouse.ReadWrite.All
 
+## Microsoft Entra supported identities
+
+This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-support) listed in this section.
+
+| Identity | Support |
+| --- | --- |
+| User | Yes |
+| [Service principal](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) and [Managed identities](/entra/identity/managed-identities-azure-resources/overview) | Yes |
+
+## Interface
+
+With attemptId:
+
+```HTTP
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/...
+```
+
+Without attemptId:
+
+```HTTP
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/...
+```
+
 ## URI parameters
 
 | Name | In | Required | Type | Description |
@@ -37,15 +60,6 @@ Item.Read.All or Item.ReadWrite.All or one of the following three groups (accord
 | livyId | path | True | string uuid | The Livy session ID. |
 | appId | path | True | string | The Spark application ID, like application_1704417105000_0001. |
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
-
-## Microsoft Entra supported identities
-
-This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-support) listed in this section.
-
-| Identity | Support |
-| --- | --- |
-| User | Yes |
-| [Service principal](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) and [Managed identities](/entra/identity/managed-identities-azure-resources/overview) | Yes |
 
 ## Examples
 

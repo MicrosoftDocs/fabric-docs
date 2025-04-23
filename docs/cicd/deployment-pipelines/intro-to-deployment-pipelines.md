@@ -56,12 +56,12 @@ When you deploy content from one pipeline stage to another, the copied content c
 
 * Real-time Intelligence items:
 
-  * Activator *(preview)*
-  * [Eventhouse](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
+  * [Activator](../../real-time-intelligence/git-deployment-pipelines.md) *(preview)*
+  * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md)
   * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
-  * [KQL database](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
-  * [KQL Queryset](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
-  * [Real-time Dashboard](../../real-time-intelligence/eventhouse-git-deployment-pipelines.md)
+  * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
 
 * Data Warehouse items:
 
@@ -83,7 +83,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 
 * Industry solutions:
 
-  * Healthcare *(preview)*
+  * [Healthcare](/industry/healthcare/healthcare-data-solutions/application-lifecycle-management) *(preview)*
   * HealthCare Cohort *(preview)*
 
 ## Pipeline structure
