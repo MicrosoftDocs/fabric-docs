@@ -28,6 +28,12 @@ In Fabric, a domain is a way of logically grouping together all the data in an o
 
 To group data into domains, workspaces are associated with domains. When a workspace is associated with a domain, all the items in the workspace are also associated with the domain, and they receive a domain attribute as part of their metadata. Currently, the association of workspaces and the items in them with domains primarily enables a better consumption experience. For instance, in the [OneLake data hub](../governance/onelake-catalog-overview.md), users can filter content by domain in order find content that is relevant to them. In addition, some tenant-level settings for managing and governing data can be [delegated to the domain level](#domain-settings-delegation), thus allowing domain-specific configuration of those settings.
 
+> [!NOTE]
+> Domain assignment doesn't affect item visibility or accessibility for tenant users. Item discovery, visibility, and access depend on such things as workspace role and item permissions, but not domain assignment.
+>
+> Likewise, all users within a tenant can see all the domains defined in the tenant, regardless of their specific domain roles. For example, users who are neither contributors nor admins of a domain called "Finance" in their tenant can still see this domain in the [domains filter](./onelake-catalog-explore.md#scope-the-catalog-to-a-particular-domain) of the Onelake Catalog.
+
+
 ### Subdomains
 
 A subdomain is a way for fine tuning the logical grouping of your data. You can create subdomains under domains. For information about how to create subdomains, see [Create subdomains](#create-subdomains). 
@@ -45,7 +51,7 @@ There are three roles involved in the creation and management of domains:
 * **Domain contributor**: Domain contributors are [workspace admins](../fundamentals/roles-workspaces.md) whom a domain or Fabric admin has authorized to assign the workspaces they're the admins of to a domain, or to change the current domain assignment.
 
     Domain contributors assign the workspaces they're an admin of in the settings of the workspace itself. They don't have access to the **Domains** tab in the admin portal.
-    
+
     > [!NOTE]
     > Remember, to be able to assign a workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../fundamentals/roles-workspaces.md) in the workspace).
 

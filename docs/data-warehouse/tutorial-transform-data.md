@@ -1,12 +1,11 @@
 ---
-title: "Data warehouse tutorial: Transform data with a stored procedure in a Warehouse"
+title: "Data Warehouse Tutorial: Transform Data with a Stored Procedure in a Warehouse"
 description: "In this tutorial, learn how to create a stored procedure in a Warehouse to transform data in a table."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 12/29/2024
+ms.date: 04/06/2025
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Tutorial: Transform data with a stored procedure in a Warehouse
@@ -30,7 +29,7 @@ In this task, learn how to create a stored procedure to transform data in a ware
 
 1. On the **Home** ribbon, select **New SQL query**.
 
-   :::image type="content" source="media/tutorial-transform-data/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option." border="false":::
+   :::image type="content" source="media/tutorial-transform-data/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option." lightbox="media/tutorial-transform-data/ribbon-new-sql-query.png":::
 
 1. In the query editor, paste the following code. The code drops the stored procedure (if it exists), and it then creates a stored procedure named `populate_aggregate_sale_by_city`. The stored procedure logic creates a table named `aggregate_sale_by_date_city` and inserts data into it with a group-by query that joins the `fact_sale` and `dimension_city` tables.
 
@@ -90,7 +89,7 @@ In this task, learn how to create a stored procedure to transform data in a ware
 
 1. In the **Explorer** pane, from inside the **Stored Procedures** folder for the `dbo` schema, verify that the `aggregate_sale_by_date_city` stored procedure exists.
 
-   :::image type="content" source="media/tutorial-transform-data/explorer-stored-procedure.png" alt-text="Screenshot of the Explorer pane, highlighting the newly created stored procedure." border="false":::
+   :::image type="content" source="media/tutorial-transform-data/explorer-stored-procedure.png" alt-text="Screenshot of the Explorer pane, highlighting the newly created stored procedure.":::
 
 ## Run the stored procedure
 
@@ -112,9 +111,9 @@ In this task, learn how to execute the stored procedure to transform data in a w
 1. To preview the aggregated data, in the **Explorer** pane, select the `aggregate_sale_by_date_city` table.
 
     > [!NOTE]
-    > If the table doesn't appear, select the ellipsis (…) for the **Tables** folder, and then select **Refresh**.
+    > If the table doesn't appear, select the ellipsis (...) for the **Tables** folder, and then select **Refresh**.
 
-   :::image type="content" source="media/tutorial-transform-data/explorer-aggregate-table.png" alt-text="Screenshot of the Explorer pane, highlighting the newly created table." border="false":::
+   :::image type="content" source="media/tutorial-transform-data/explorer-aggregate-table.png" alt-text="Screenshot of the Explorer pane, highlighting the newly created table.":::
 
 ## Next step
 

@@ -1,7 +1,7 @@
 ---
 title: Known issue - SQL analytics endpoint tables lose statistics
 description: A known issue is posted where SQL analytics endpoint tables lose statistics.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 10/31/2024

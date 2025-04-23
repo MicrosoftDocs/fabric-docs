@@ -43,7 +43,7 @@ The following table describes the columns stored in the **MirroredDatabaseTableE
 | WorkspaceMonitoringTableName | string | The name of the workspace monitoring table. Valid values: `MirroredDatabaseTableExecution`. |
 | OperationStartTime | datetime | The time (UTC) the operation started. |
 | OperationEndTime | datetime | The time (UTC) the operation ended. |
-| MirroringSourceType          | string   | The type of the source database, e.g. `AzureSqlDatabase`, `Snowflake`. |
+| MirroringSourceType          | string   | The type of the source database, e.g. `AzureSqlDatabase`, `AzurePostgreSql`, `Snowflake`. |
 | SourceTableName              | string   | The name of the source table.                                |
 | SourceSchemaName             | string   | The name of the source schema.                               |
 | ProcessedRows                | long     | The number of rows processed by the given operation.         |

@@ -48,7 +48,7 @@ Microsoft Entra ID provides Fabric with [Conditional Access](/entra/identity/con
 
 * Use Multifactor Authentication (MFA).
 
-* Restrict traffic based on parameters such as country of origin or device type.
+* Restrict traffic based on parameters such as country/region of origin or device type.
 
 To configure conditional access, see [Conditional access in Fabric](security-conditional-access.md).
 

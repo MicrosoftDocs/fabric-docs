@@ -70,8 +70,7 @@ The output of SQL statement adopts the same output widget with _display()_ by de
 
 ### New rich dataframe chart view
 
- > [!NOTE]
- > Currently, the feature is in preview.
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 The improved chart view is available on _display()_ command. It provides a more intuitive and powerful experience for visualizing your data by using the _display()_ command.
 
@@ -254,9 +253,7 @@ svg
 
 ## Embed a Power BI report in a notebook
 
-> [!IMPORTANT]
-> This feature is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before it reached General Available. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 The [Powerbiclient](https://github.com/microsoft/powerbi-jupyter/tree/main) Python package is now natively supported in Fabric notebooks. You don’t need to do any extra setup (like authentication process) on Fabric notebook Spark runtime 3.4. Just import `powerbiclient` and then continue your exploration. To learn more about how to use the powerbiclient package, see the [powerbiclient documentation](https://github.com/microsoft/powerbi-jupyter/blob/main/DOCUMENTATION.md).
 

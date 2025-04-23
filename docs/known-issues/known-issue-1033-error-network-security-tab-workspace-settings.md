@@ -1,7 +1,7 @@
 ---
 title: Known issue - FeatureNotAvailableError error in Network Security tab of Workspace Settings
 description: A known issue is posted where a FeatureNotAvailableError error in Network Security tab of Workspace Settings.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/28/2025

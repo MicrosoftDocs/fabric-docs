@@ -1,7 +1,7 @@
 ---
 title: Known issue - Eventstream updates with Eventhouse destination causes error
 description: A known issue is posted where updating an eventstream with an Eventhouse destination causes an error.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/21/2025

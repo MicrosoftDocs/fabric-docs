@@ -1,7 +1,7 @@
 ---
 title: Known issue - Pipeline fails when copying data to data warehouse with staging
 description: A known issue is posted where a data pipeline fails when copying data to data warehouse with staging.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 09/25/2024

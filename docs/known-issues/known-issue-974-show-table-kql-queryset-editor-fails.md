@@ -1,10 +1,10 @@
 ---
 title: Known issue - Show table command in KQL Queryset editor fails
 description: A known issue is posted where the show table command in KQL Queryset editor fails.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 01/06/2025
+ms.date: 04/18/2025
 ms.custom: known-issue-974
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-974
 
 You can try to query a table in the KQL Queryset editor. If you execute the `.show table <tableName>` command, you receive an error.
 
-**Status:** Open
+**Status:** Fixed: April 18, 2025
 
 **Product Experience:** Real-Time Intelligence
 

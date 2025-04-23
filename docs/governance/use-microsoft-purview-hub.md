@@ -105,6 +105,9 @@ The tiles at the top of the Purview hub provide access to Purview's advanced gov
 * The Purview hub report and its associated semantic model are generated in the admin monitoring workspace the first time any admin opens the Purview hub.
 * The first time the report and semantic model are generated, it might take some time for them to appear.
 * Fabric admins can create new reports based on the semantic model, but they can't edit the report or semantic model directly.
+* The report retains information for 30 days, including the activities and metadata of deleted capacities, workspaces, and other items.
+* Deleted workspaces with extended retention don't appear in the report after 30 days. They can be seen in the admin portal until they're permanently deleted.
+* Items created and deleted within a 24 hour period may have incomplete information.
 
 ## Related content
 

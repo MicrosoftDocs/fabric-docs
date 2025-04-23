@@ -1,7 +1,7 @@
 ---
 title: Known issue - Sync for data warehouse and SQL analytics endpoint fail in West Europe
 description: A known issue is posted where syncs for data warehouse and SQL analytics endpoint fail in West Europe.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/10/2025

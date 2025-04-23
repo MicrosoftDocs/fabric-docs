@@ -16,8 +16,7 @@ This article shows you how to integrate notebooks into an app. This new integrat
 
 ## Notebook in Org app 
 
-> [!NOTE]
-> Currently, the feature is in preview.
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 You can now easily embed the Fabric Notebook in the Org app. With rich content like code and markdown cells, visuals, tables, charts, and widgets, the notebook can be a practical storytelling tool, similar to dashboards. By following the steps below, you'll be able to add a specific notebook to an Org app. The notebook will become read-only within the app context, but widgets like rich dataframe previews, built-in charts, and outputs from popular libraries like Plotly will remain interactive. This will enable app consumers to explore and interact with the notebook conveniently.
 

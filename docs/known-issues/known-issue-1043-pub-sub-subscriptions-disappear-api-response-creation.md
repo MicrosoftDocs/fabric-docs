@@ -1,7 +1,7 @@
 ---
 title: Known issue - Pub/Sub subscriptions disappear from API response after creation
 description: A known issue is posted where PubSub Subscriptions disappear from API response minutes after creation
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/05/2025

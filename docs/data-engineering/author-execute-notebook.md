@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom:
 ms.search.form: Develop and run notebooks
-ms.date: 11/15/2023
+ms.date: 03/31/2025
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -81,12 +81,21 @@ The IntelliSense features are at different levels of maturity for different lang
 | **Languages** | **Syntax highlight** | **Syntax error marker** | **Syntax code completion** | **Variable code completion** | **System function code completion** | **User function code completion** | **Smart indent** | **Code folding** |
 |---|---|---|---|---|---|---|---|---|
 | PySpark (Python) | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | Spark (Scala) | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | SparkSQL | Yes | Yes | Yes | Yes | Yes | No | Yes | Yes |
 | SparkR | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| T-SQL | Yes | Yes | Yes | No | Yes | Yes | Yes | Yes |
 
 > [!NOTE]
 > You must have an active Apache Spark session to use IntelliSense code completion.
+
+#### Enhance Python Development with Pylance
+ 
+> [!NOTE]
+> Currently, the feature is in preview.
+ 
+Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter auto-completion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
 
 ### Code snippets
 
@@ -295,6 +304,25 @@ To open or hide the variable explorer, select **Variables** on the notebook ribb
 A step-by-step cell execution status is displayed beneath the cell to help you see its current progress. Once the cell run is complete, an execution summary with the total duration and end time appears and is stored there for future reference.
 
 :::image type="content" source="media\author-execute-notebook\cell-run-status.png" alt-text="Screenshot showing an example of cell run status details." lightbox="media\author-execute-notebook\cell-run-status.png":::
+
+### Session status indicator
+
+#### Session timeout config
+
+In the bottom left corner, you can click on the session status to get more information about the current session:
+
+![Screenshot that shows Session Information.](./media/author-execute-notebook/session-info.png)
+
+In the pop-up, there's an option to reset the timeout to x amount of minutes or hours.
+
+![Screenshot that shows Session timeout.](./media/author-execute-notebook/session-timeout.png)
+
+Take your pick in how long you want an uninterrupted session, and hit apply. The session timeout will reset itself with the new value and you're good to go!
+
+You can also set timeout as following:
+
+- [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md#spark-session-configuration-magic-command)
 
 ### Inline Apache Spark job indicator
 
@@ -642,3 +670,4 @@ To find all shortcut keys, select **View** on the notebook ribbon, and then sele
 
 - [Notebook visualization](notebook-visualization.md)
 - [Introduction of Fabric NotebookUtils](notebook-utilities.md)
+

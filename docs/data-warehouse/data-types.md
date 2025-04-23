@@ -1,15 +1,14 @@
 ---
-title: Data types
+title: Data Types in Fabric Data Warehouse
 description: Learn about the T-SQL data types supported the SQL analytics endpoint and Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, jovanpop
-ms.date: 03/19/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
-# Data types in Microsoft Fabric
+# Data types in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -89,4 +88,4 @@ The columns that have the types that aren't listed in the table aren't represent
 
 ## Related content
 
-- [T-SQL Surface Area in Microsoft Fabric](tsql-surface-area.md)
+- [T-SQL Surface Area in Fabric Data Warehouse](tsql-surface-area.md)

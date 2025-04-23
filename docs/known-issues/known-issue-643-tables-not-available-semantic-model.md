@@ -1,7 +1,7 @@
 ---
 title: Known issue - Tables not available to add in Power BI semantic model
 description: A known issue is posted where tables aren't available to add into the Power BI semantic model.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 02/27/2024

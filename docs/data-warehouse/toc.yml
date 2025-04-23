@@ -56,11 +56,11 @@ items:
   items: 
   - name: Connectivity
     href: connectivity.md
-- name: Copilot for Data Warehouse
+- name: Copilot in Fabric in Data Warehouse
   items:
-  - name: Overview of Copilot for Data Warehouse
+  - name: What is Copilot in Fabric in Data Warehouse?
     href: copilot.md
-  - name: Use the Copilot chat pane
+  - name: Use the chat pane
     href: copilot-chat-pane.md
   - name: Use code completions
     href: copilot-code-completion.md
@@ -141,6 +141,8 @@ items:
   - name: Service principals
     href: service-principals.md
     displayName: SPN
+  - name: SQL Audit Logs
+    href: sql-audit-logs.md
   - name: Microsoft Entra ID authentication
     href: entra-id-authentication.md
   - name: Workspace roles
@@ -163,6 +165,8 @@ items:
       href: tutorial-row-level-security.md
     - name: Implement dynamic data masking
       href: howto-dynamic-data-masking.md
+    - name: Configure SQL Audit Logs
+      href: configure-sql-audit-logs.md
 - name: Query the warehouse
   items:
   - name: Query using Visual Query editor
@@ -290,6 +294,24 @@ items:
       - name: FAQ about Mirroring Azure Databricks
         displayName: Frequently asked questions about Mirroring Azure Databricks
         href: ../database/mirrored-database/azure-databricks-faq.yml
+  - name: Mirroring PostgreSQL
+    items: 
+      - name: Mirrored databases from PostgreSQL
+        href: ../database/mirrored-database/azure-database-postgresql.md
+      - name: PostgreSQL tutorial
+        href: ../database/mirrored-database/azure-database-postgresql-tutorial.md
+      - name: FAQ about mirrored PostgreSQL
+        displayName: Frequently asked questions about mirrored PostgreSQL
+        href: ../database/mirrored-database/azure-database-postgresql-mirroring-faq.yml
+      - name: Secure data
+        displayName: Secure data in mirrored PostgreSQL
+        href: ../database/mirrored-database/azure-database-postgresql-how-to-data-security.md
+      - name: Limitations
+        displayName: Limitations in mirrored PostgreSQL
+        href: ../database/mirrored-database/azure-database-postgresql-limitations.md
+      - name: Troubleshoot
+        displayName: Troubleshoot mirrored PostgreSQL
+        href: ../database/mirrored-database/azure-database-postgresql-troubleshoot.md
   - name: Mirroring Snowflake
     items: 
       - name: Mirrored warehouses from Snowflake
@@ -365,8 +387,14 @@ items:
     href: workload-management.md
 - name: Migrate
   items:
-  - name: Migrate Azure Synapse Analytics dedicated SQL pools to Fabric Warehouse
+  - name: Migration Assistant
+    href: migration-assistant.md
+  - name: Migration Assistant guide for Azure Synapse Analytics SQL pools
+    href: migrate-with-migration-assistant.md
+  - name: Planning and strategy for migration from Azure Synapse Analytics
     href: migration-synapse-dedicated-sql-pool-warehouse.md
+  - name: Methods for migration from Azure Synapse Analytics
+    href: migration-synapse-dedicated-sql-pool-methods.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse

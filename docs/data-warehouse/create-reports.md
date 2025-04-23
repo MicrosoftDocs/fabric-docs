@@ -1,12 +1,11 @@
 ---
-title: Create reports
+title: Create Reports
 description: Learn about reports in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
 ms.date: 07/26/2024
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Reporting # This article's title should not change. If so, contact engineering.
 ---
 # Create reports on data warehousing in Microsoft Fabric
@@ -37,7 +36,7 @@ If no tables have been added to the default Power BI semantic model, the dialog 
 
 With a default semantic model that has tables, the **New report** opens a browser tab to the report editing canvas to a new report that is built on the semantic model. When you save your new report you're prompted to choose a workspace, provided you have write permissions for that workspace. If you don't have write permissions, or if you're a free user and the semantic model resides in a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace, the new report is saved in your **My workspace**.
 
-For more information on how to create reports using the Power BI service, see [Create reports in the Power BI service](reports-power-bi-service.md).
+For more information on how to create reports using the Power BI service, see [Create reports in the Power BI service in Microsoft Fabric and Power BI Desktop](reports-power-bi-service.md).
 
 ## Create reports using Power BI Desktop
 

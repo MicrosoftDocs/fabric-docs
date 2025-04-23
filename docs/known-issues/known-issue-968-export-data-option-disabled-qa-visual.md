@@ -1,7 +1,7 @@
 ---
 title: Known issue - Export data option is disabled for Q&A visual in the service
 description: A known issue is posted where the export data option is disabled for Q&A visual in the service.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/21/2025

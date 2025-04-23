@@ -1,7 +1,7 @@
 ---
 title: Known issue - SQL analytics endpoint table sync fails when table contains linked functions
 description: A known issue is posted where the SQL analytics endpoint table sync fails when table contains linked functions.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 07/02/2024

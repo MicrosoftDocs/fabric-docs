@@ -1,7 +1,7 @@
 ---
 title: Known issue - SQL database creation fails to create child items when item with same name exists
 description: A known issue is posted where SQL database creation fails to create child items when item with same name exists.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 12/10/2024

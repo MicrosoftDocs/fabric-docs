@@ -1,7 +1,7 @@
 ---
 title: Known issue - Data warehouse deployment using deployment pipelines fails
 description: A known issue is posted where data warehouse deployment using deployment pipelines fails.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 07/05/2024

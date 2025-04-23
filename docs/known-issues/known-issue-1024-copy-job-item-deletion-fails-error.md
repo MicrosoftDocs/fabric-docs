@@ -1,10 +1,10 @@
 ---
 title: Known issue - CopyJob item deletion fails with error
 description: A known issue is posted where trying to delete a CopyJob item fails with an error.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 02/14/2025
+ms.date: 04/07/2025
 ms.custom: known-issue-1024
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1024
 
 When you attempt to delete a CopyJob item, the attempt to delete the CopyJob item doesn't work.
 
-**Status:** Open
+**Status:** Fixed: April 7, 2025
 
 **Product Experience:** Data Factory
 

@@ -4,7 +4,7 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 02/12/2025
+ms.date: 03/07/2025
 ---
 
 # Data Factory limitations overview
@@ -42,7 +42,7 @@ The following table describes the resource limitations for pipelines in Data Fac
 | External activities like stored procedure, Web, Web Hook, and others | 3,000 | 3,000 |
 | Pipeline activities execution for Lookup, GetMetadata, and Delete | 1,000 | 1,000 |
 | Concurrent authoring operations, including test connection, browse folder list and table list, preview data, and so on | 200 | 200 |
-| Maximum activities per pipeline, which includes inner activities for containers | 80 | 120 |
+| Maximum activities per pipeline, which includes inner activities for containers | 120 | 120 |
 | Maximum parameters per pipeline | 50 | 50 |
 | ForEach items | 100,000 | 100,000 |
 | ForEach parallelism | 20 | 50 |

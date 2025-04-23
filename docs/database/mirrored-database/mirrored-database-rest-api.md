@@ -47,6 +47,7 @@ The payload property in previous JSON body is Base64 encoded. You can use [Base6
 - [JSON definition example of Snowflake](#json-definition-example-of-snowflake)
 - [JSON definition example of Azure SQL Database](#json-definition-example-of-azure-sql-database)
 - [JSON definition example of Azure SQL Managed Instance](#json-definition-example-of-azure-sql-managed-instance)
+- [JSON definition example of Azure Database for PostgreSQL flexible server](#json-definition-example-of-azure-database-postgresql)
 - [JSON definition example of Azure Cosmos DB](#json-definition-example-of-azure-cosmos-db)
 - [JSON definition example of open mirroring](#json-definition-example-of-open-mirroring)
 
@@ -133,6 +134,34 @@ If you want to replicate selective tables instead of all the tables in the speci
     }
 }
 ```
+
+<a id="json-definition-example-of-azure-database-postgresql"></a>
+
+### JSON definition example of Azure Database for PostgreSQL flexible server
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "AzurePostgreSql",
+            "typeProperties": {
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "landingZone":{
+                    "type":"MountedRelationalDatabase"
+                }
+            }
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta"
+            }
+        }
+    }
+}
+```
+
 
 ### JSON definition example of Azure Cosmos DB
 

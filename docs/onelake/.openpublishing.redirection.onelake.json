@@ -17,7 +17,12 @@
         },
         {
             "source_path_from_root": "/docs/onelake/fabric-and-onelake-security.md",
-            "redirect_url": "/fabric/onelake/security/fabric-onelake-security",
+            "redirect_url": "/fabric/onelake/security/get-started-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/onelake/security/fabric-onelake-security.md",
+            "redirect_url": "/fabric/onelake/security/get-started-security",
             "redirect_document_id": false
         }   
     ]
