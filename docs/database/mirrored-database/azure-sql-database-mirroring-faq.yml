@@ -106,7 +106,9 @@ sections:
       - question: |
           What happens to Mirroring in an event of planned or unplanned Geo failover? 
         answer: 
-          Mirroring is disabled in an event of geo failover, whether planned or unplanned, as there are potential data loss scenarios. If this occurs, create a new mirror and configure it to point to the new logical SQL server and Azure SQL Database.
+          When you create the mirrored database, connect to the read-write listener of the SQL failover group. This way you would not need to recreate the mirrored database after the failover.
+          Once the mirrored database is created, go to the workspace item list, and click **Manage Permissions** for the mirrored database. Add the System Assigned Managed Identity (SAMI) for both the primary and secondary logical server of the failover group to have read/write access. If you create the mirrored database from the Fabric portal, the SAMI of the primary server should already be added automatically.
+          When failover happens, replication is disabled automatically on the SQL end. If you open the mirrored database in the Fabric portal however, you won't see anything special, but new data will not arrive. To recover, click **Stop Replication** and then **Start Replication** to restart the replication process. This will resync every table from scratch. The same is required after failing back.
   - name: Security
     questions:
       - question: |
