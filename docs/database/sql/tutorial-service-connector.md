@@ -46,7 +46,7 @@ Create a new service connection from App Service to a SQL database in Fabric, us
 
     In the background, Service Connector enables a system-assigned managed identity for the app hosted by Azure App Service and adds a connection string to App Settings named `FABRIC_SQL_CONNECTIONSTRING`.
 
-    For more information about this command and additional options, see [az webapp connection create](/cli/azure/webapp/connection/create#az-webapp-connection-create-postgres-flexible).
+    For more information about this command and more options, see [az webapp connection create](/cli/azure/webapp/connection/create#az-webapp-connection-create-postgres-flexible).
 
 #### [Azure portal](#tab/az-portal)
 
@@ -85,8 +85,8 @@ In this step, you grant your managed identity access to the database.
     :::image type="content" source="./media/tutorial-service-connector/fabric-portal-manage-security.png" alt-text="Screenshot of the Fabric portal, showing the security tab.":::
 
 1. Select the role **db_ddladmin**, then **Manage access**.
-1. Under **People, groups or apps in this role**, you should see the name of your managed identity with a service connection to this SQL database in Fabric. Select **Share database**. If you do not see the Share database option, you do not need to continue with the remaining steps.
-1. Enter and select the name of your managed identity as it appears on the Manage access pane, select the **Read all data using SQL database** checkbox, and finally select **Grant**.
+1. Under **People, groups or apps in this role**, you should see the name of your managed identity with a service connection to this SQL database in Fabric. Select **Share database**. If you don't see the Share database option, you don't need to continue with the remaining steps.
+1. Enter and select the name of your managed identity as it appears on the **Manage access** pane, select the **Read all data using SQL database** checkbox, and finally select **Grant**.
 
 ## Clean up resources
 
