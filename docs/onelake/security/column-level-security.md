@@ -83,7 +83,7 @@ Before you can use OneLake security with SQL Analytics endpoint, you must enable
 
 1. Navigate to SQL analytics endpoint.
 
-1. In SQL analytics endpoint experience, select **Security** tab in the top ribbon.
+1. In the SQL analytics endpoint experience, select the **Security** tab in the top ribbon.
 
 1. Select **User's identity** under OneLake access mode.
 
