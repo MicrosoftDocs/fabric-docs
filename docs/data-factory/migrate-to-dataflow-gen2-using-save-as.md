@@ -17,7 +17,7 @@ Data Factory in Microsoft Fabric now includes a Save As feature that lets you pe
 
 You can now use the new Save As feature to save a Dataflow Gen2 or Dataflow Gen2 (CI/CD) to a new Dataflow Gen2 (CI/CD). To use the Save As feature:
 
-1. In your workspace, select the ellipsis (...) next to an existing dataflow, and select **Save as Dataflow (CI/CD)** in the context menu.
+1. In your workspace, select the ellipsis (...) next to an existing dataflow, and select **Save as Dataflow Gen2 (CI/CD)** in the context menu.
 
    :::image type="content" source="media/migrate-to-dataflow-gen2-using-save-as/select-save-as.png" alt-text="Screenshot of the context menu under the ellipsis, showing the Save as Dataflow Gen2 (CI/CD) option.":::
 
