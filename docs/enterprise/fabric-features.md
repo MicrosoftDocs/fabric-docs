@@ -25,6 +25,7 @@ The following table lists Fabric features according to SKU type. The table lists
 | [On-demand resizing](scale-capacity.md)                                                               | &#x2705;      | &#x274C;     |
 | [Pause and resume your capacity](pause-resume.md)                                                     | &#x2705;      | &#x274C;     |
 | [Power BI Autoscale](/power-bi/enterprise/service-premium-auto-scale)                                 | &#x274C;      | &#x2705;     |
+| [Spark Autoscale Billing]([/fabric/data-engineering/autoscale-billing-for-spark-overview])            | &#x2705;      | &#x274C;     |
 | [Trusted workspace access](../security/security-trusted-workspace-access.md)                          | &#x2705;      | &#x274C;     |
 | View Power BI items with a Microsoft Fabric free license<sup>1</sup>                                  | F64 or higher | &#x2705;     |
 
