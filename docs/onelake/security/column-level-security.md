@@ -93,6 +93,6 @@ Before you can use OneLake security with SQL Analytics endpoint, you must enable
 
    :::image type="content" source="./media/column-level-security/sqlaep-prompt.png" alt-text="Screenshot that shows user prompt which must be accepted to enable OneLake security for table read access.":::
 
-This completes configuration process for SQL analytics endpoint and it's ready for use with OneLake security.
+Now the SQL analytics endpoint is ready to use with OneLake security.
 
 [!INCLUDE [onelake-rls-cls](../../includes/onelake-rls-cls.md)]
