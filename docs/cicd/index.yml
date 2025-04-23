@@ -68,6 +68,8 @@ landingContent:
             url: variable-library/variable-library-overview.md
           - text: Deployment pipelines new interface
             url: deployment-pipelines/deployment-pipelines-new-ui.md
+          - text: Supported items
+            url: deployment-pipelines/intro-to-deployment-pipelines.md
 
   # Card 
   - title: How to guides
@@ -93,7 +95,7 @@ landingContent:
           - text: Automate Git workflows
             url: git-integration/git-automation.md
           - text: Automate deployment pipelines
-            url: deployment-pipelines/pipeline-automation.md
+            url: deployment-pipelines/pipeline-automation-fabric.md
           - text: Automate Variable libraries
             url: variable-library/variable-library-automation.md
       - linkListType: reference
