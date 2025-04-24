@@ -12,9 +12,7 @@ items:
   - name: Governance and compliance documentation
     href: ../governance/index.yml      
   - name: Security documentation
-    href: ../security/index.yml    
-  - name: Fabric command line interface (CLI)
-    href: fabric-command-line-interface.md       
+    href: ../security/index.yml         
 - name: Get started
   items:
   - name: Enable Fabric for your organization
