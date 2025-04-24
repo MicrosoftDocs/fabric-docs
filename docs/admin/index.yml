@@ -49,9 +49,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: About tenant settings
-            url: tenant-settings-index.md
-          - text: Fabric command line interface (CLI)
-            url: fabric-command-line-interface.md            
+            url: tenant-settings-index.md      
       - linkListType: how-to-guide
         links:
           - text: Set up git integration
