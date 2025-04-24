@@ -1,12 +1,11 @@
 ---
 title: Module 1 - Create a pipeline with Data Factory
 description: This module covers creating a data pipeline, as part of an end-to-end data integration tutorial to complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
-ms.reviewer: jonburchel
-ms.author: xupzhou
-author: pennyzhou-msft
+ms.author: whhender
+ms.reviewer: xupzhou
+author: whhender
 ms.topic: tutorial
-ms.custom:
-ms.date: 12/18/2024
+ms.date: 02/25/2025
 ---
 
 # Module 1: Create a pipeline with Data Factory
@@ -54,15 +53,15 @@ Select **Copy data assistant** to open the copy assistant tool.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/preview-data.png" alt-text="Screenshot showing the preview data for the NYC Taxi - Green sample dataset.":::
 
-1. For the **Choose data destination** step of the copy assistant, select **Lakehouse** and then **Next**.
+1. For the **Choose data destination** step of the copy assistant, select **Lakehouse**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination on the Choose data destination tab of the Copy data assistant.":::
 
-1. Select **Create new Lakehouse** on the data destination configuration page that appears, and enter a name for the new Lakehouse. Then select **Next** again.
+1. Enter a Lakehouse name, then select **Create and connect**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/new-lakehouse-name.png" alt-text="Screenshot showing the data destination configuration page of the Copy assistant, choosing the Create new Lakehouse option and providing a Lakehouse name.":::
 
-1. Now configure the details of your Lakehouse destination on the **Select and map to folder path or table.** page. Select **Tables** for the **Root folder**, provide a table name, and choose the **Overwrite** action. Don't check the **Enable partition** checkbox that appears after you select the **Overwrite** table action.
+1. Now configure the details of your Lakehouse destination on the **Select and map to folder path or table.** page. Select **Tables** for the **Root folder** and **Load to new table** for **Load settings**. Provide a **Table** name and select **Next**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/choose-destination-table-details.png" alt-text="Screenshot showing the Connect to data destination tab of the Copy data assistant, on the Select and map to folder path or table step.":::
 

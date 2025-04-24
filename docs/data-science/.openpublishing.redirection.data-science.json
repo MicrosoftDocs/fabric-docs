@@ -49,6 +49,36 @@
         "source_path_from_root": "/docs/data-science/python-guide/python-library-management.md",
         "redirect_url": "/fabric/data-engineering/library-management",
         "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/ai-skill-tenant-switch.md",
+        "redirect_url": "/fabric/data-science/ai-skill-tenant-settings",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/ai-skill-scenario.md",
+        "redirect_url": "/fabric/data-science/data-agent-scenario",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/ai-skill-sharing.md",
+        "redirect_url": "/fabric/data-science/data-agent-sharing",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/ai-skill-tenant-settings.md",
+        "redirect_url": "/fabric/data-science/data-agent-tenant-settings",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/concept-ai-skill.md",
+        "redirect_url": "/fabric/data-science/concept-data-agent",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/how-to-create-ai-skill.md",
+        "redirect_url": "/fabric/data-science/how-to-create-data-agent",
+        "redirect_document_id": true
       }
     ]
 }

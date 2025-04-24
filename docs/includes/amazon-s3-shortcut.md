@@ -24,7 +24,8 @@ ms.date: 07/16/2023
       |**Access Key ID**| The *Identity and Access Management (IAM)* user key. For more information, see [Manage access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html). | Your access key.|
       |**Secret Access Key**| The *Identity and Access Management (IAM)* secret key. | Your secret key.|
 
-Select **Next**.
+1. Select **Next**.
+
 1. Browse to the target location for the shortcut.
 
     :::image type="content" source="../includes/media/onelake-shortcuts/aws-s3-shortcut/shortcut-browse.png" alt-text="Screenshot of the storage browse window with multiple folders selected." lightbox="../includes/media/onelake-shortcuts/aws-s3-shortcut/shortcut-browse.png":::

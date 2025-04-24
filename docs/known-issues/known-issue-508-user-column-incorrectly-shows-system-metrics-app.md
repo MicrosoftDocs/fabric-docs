@@ -1,7 +1,7 @@
 ---
 title: Known issue - User column incorrectly shows as System in Fabric capacity metrics app
 description: A known issue is posted where the user column incorrectly shows as System in Fabric capacity metrics app
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting 
 ms.date: 10/05/2023

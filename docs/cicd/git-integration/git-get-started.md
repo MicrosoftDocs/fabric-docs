@@ -6,8 +6,8 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: how-to
-ms.date: 07/10/2024
+ms.topic: quickstart
+ms.date: 03/05/2025
 ms.custom:
 ms.search.form: Connect to a Git repo, Update from Git, Commit changes to Git, Introduction to Git integration
 #customer intent: As a developer, I want to connect my workspace to a Git repo so that I can collaborate with others and leverage source control.
@@ -22,7 +22,7 @@ This article walks you through the following basic tasks in Microsoft Fabric’s
 - [Update from Git](#update-workspace-from-git)
 - [Disconnect from Git](#disconnect-a-workspace-from-git)
 
-It’s recommended to read the [overview of Git integration](./intro-to-git-integration.md) before you begin.
+We recommend reading the [overview of Git integration](./intro-to-git-integration.md) before you begin.
 
 ## Prerequisites
 
@@ -75,14 +75,11 @@ If the workspace is already connected to GitHub, follow the instructions for [Co
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
-    > [!NOTE]
-    > You can only connect a workspace to one branch and one folder at a time.
-
     - [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
     - [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
     - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project).
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
-    - Folder (Type in the name of an existing folder or enter a name to create a new folder. If you leave the folder name blank, content will be created in the root folder. You can only connect to one folder at a time.)
+    - Folder (Type in the name of an existing folder or enter a name to create a new folder. If you leave the folder name blank, content is created in the root folder. You can only connect to one folder at a time.)
 
 :::image type="content" source="./media/git-get-started/azure-connect-branch.png" alt-text="Screenshot to Azure connection.":::
 
@@ -90,12 +87,9 @@ If the workspace is already connected to GitHub, follow the instructions for [Co
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
-    > [!NOTE]
-    > You can only connect a workspace to one branch and one folder at a time.
-
     - [Repository URL](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project). If you connected to GitHub using a scoped token, the URL is automatically filled in and you can only connect to that repository.
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
-    - Folder (Type in the name of an existing folder or enter a name to create a new folder. If you leave the folder name blank, content will be created in the root folder. You can only connect to one folder at a time.)
+    - Folder (Type in the name of an existing folder or enter a name to create a new folder. If you leave the folder name blank, content is created in the root folder. You can only connect to one folder at a time.)
 
 :::image type="content" source="./media/git-get-started/github-connect-branch.png" alt-text="Screenshot to GitHub connection.":::
 
@@ -113,7 +107,10 @@ To keep your workspace synced with the Git branch, [commit any changes](#commit-
 
 ## Commit changes to git
 
-Once you successfully connect to a Git folder, edit your workspace as usual. Any changes you save are saved in the workspace only. When you’re ready, you can commit your changes to the Git branch, or you can undo the changes and revert to the previous status. Read more about [commits](git-integration-process.md#commit).
+Once you successfully connect to a Git folder, edit your workspace as usual. Any changes you save are saved in the workspace only. When you’re ready, you can commit your changes to the Git branch, or you can undo the changes and revert to the previous status.  
+<!----
+If any items in the workspace are in folders, the folder structure is preserved in the Git repository when you commit changes. Empty folders are ignored.  --->
+Read more about [commits](git-integration-process.md#commit).
 
 ### [Commit to Git](#tab/commit-to-git)
 
@@ -130,7 +127,7 @@ To commit your changes to the Git branch, follow these steps:
 
    :::image type="content" source="./media/git-get-started/commit-changes.png" alt-text="Screenshot of source control window with two changes selected to commit.":::
 
-After the changes are committed, the items that were committed are removed from the list, and the workspace will point to the new commit that it synced to.
+After the changes are committed, the items that were committed are removed from the list, and the workspace points to the new commit that it synced to.
 
 :::image type="content" source="./media/git-get-started/no-changes.png" alt-text="Screenshot of source control window stating that there are no changes to commit.":::
 
@@ -138,7 +135,7 @@ After the commit is completed successfully, the status of the selected items cha
 
 ### [Undo saved change](#tab/undo-save)
 
-After saving changes to the workspace, if you decide that you don’t want to commit those changes to git, you can undo the changes and revert those items to the previous status. To undo your changes, follow these steps:
+After saving changes to the workspace, if you decide that you don’t want to commit those changes to git, you can undo the changes and revert those items to their previous status. To undo your changes, follow these steps:
 
 1. Go to the workspace.
 1. Select the **Source control** button. This button also shows the number of uncommitted changes.
@@ -162,7 +159,7 @@ The selected items in your workspace revert to how they were when the workspace 
 
 ## Update workspace from Git
 
-Whenever anyone commits a new change to the connected Git branch, a notification appears in the relevant workspace. Use the **Source control** panel to pull the latest changes, merges, or reverts into the workspace and update live items. Read more about [updating](git-integration-process.md#update).
+Whenever anyone commits a new change to the connected Git branch, a notification appears in the relevant workspace. Use the **Source control** panel to pull the latest changes, merges, or reverts into the workspace and update live items. Changes to folders are also updated. Read more about [updating](git-integration-process.md#update).
 
 To update a workspace, follow these steps:
 
@@ -173,7 +170,7 @@ To update a workspace, follow these steps:
 
 :::image type="content" source="./media/git-get-started/source-control-update.png" alt-text="Screenshot of source control panel with the update tab open and the updating all button selected.":::
 
-After it updates successfully, the list of items is removed, and the workspace will point to the new commit that it's synced to.
+After it updates successfully, the list of items is removed, and the workspace points to the new workspace that it's synced to.
 
 :::image type="content" source="./media/git-get-started/no-updates.png" alt-text="Screenshot of source control window stating that you successfully updated the workspace.":::
 

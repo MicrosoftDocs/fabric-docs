@@ -1,7 +1,7 @@
 ---
 title: KQL activity
 description: Learn how to add a KQL activity to a pipeline and use it to connect to an Azure Data Explorer instance and run a query in Kusto Query Language (KQL).
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: abnarain
 author: nabhishek
 ms.topic: how-to

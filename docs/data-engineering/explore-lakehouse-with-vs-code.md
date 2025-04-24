@@ -6,13 +6,13 @@ ms.author: qixwang
 author: qixwang
 ms.topic: overview
 ms.custom:
-ms.date: 05/08/2023
+ms.date: 03/11/2025
 ms.search.form: VSCodeExtension
 ---
 
 # Explore Microsoft Fabric lakehouses in Visual Studio Code
 
-You can use the Synapse VS Code extension to explore the structure of your lakehouse in a workspace.
+You can use the Fabric Data Engineering VS Code extension to explore the structure of your lakehouse in a workspace.
 
 With the extension installed, Visual Studio (VS) Code displays the lakehouse structure in a tree view that includes the **Files** and **Tables** sections. All the lakehouses from the workspace you select appear under the lakehouse root tree node.
 

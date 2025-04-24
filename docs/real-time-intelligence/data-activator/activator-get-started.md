@@ -1,8 +1,8 @@
 ---
 title: Get started using Activator
 description: Learn how to get started using Activator and unleash the power of data-driven decision making in your organization.
-author: kfollis
-ms.author: kfollis
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Getting Started

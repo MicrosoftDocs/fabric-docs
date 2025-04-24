@@ -60,6 +60,10 @@ The source Azure SQL Managed Instance can be either a single SQL managed instanc
 
 - All service tiers in the [vCore purchasing model](/azure/azure-sql/managed-instance/service-tiers-managed-instance-vcore) are supported.
 
+## Pricing
+
+Fabric compute used to replicate your data into Fabric OneLake is free. Storage in OneLake is free of cost based the capacity size. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [OneLake pricing for mirroring](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute usage for querying data via SQL, Power BI, or Spark is still charged based on the Fabric Capacity. 
+
 ## Next step
 
 > [!div class="nextstepaction"]

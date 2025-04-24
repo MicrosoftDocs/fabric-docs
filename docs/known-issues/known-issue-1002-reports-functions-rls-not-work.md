@@ -1,7 +1,7 @@
 ---
 title: Known issue - Reports that use functions with RLS don't work
 description: A known issue is posted where reports that use functions with RLS don't work.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/28/2025

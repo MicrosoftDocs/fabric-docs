@@ -7,7 +7,7 @@ ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
-ms.date: 6/25/2024
+ms.date: 02/14/2025
 ms.search.form:
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -106,16 +106,16 @@ def ChatGPTRequest(system_msg:str, user_msg_box:list, bot_msg_box:list) -> (int,
 
 OpenAI input:
 
-```
+```copilot-prompt
     [System] You are an AI assistant that helps people find information.
     Q: Does Azure OpenAI support customer managed keys?
 ```
+
 OpenAI output:
 
-```    
+```console
     A: Yes, Azure OpenAI supports customer managed keys. It enables you to use your own encryption keys to protect your data at rest in the OpenAI GPT-3 service. With customer managed keys, you have full control over the keys used to encrypt and decrypt your data, providing an additional layer of security.
 ``` 
-
 
 
 ``` python
@@ -127,19 +127,18 @@ status_code, post_body, result  = ChatGPTRequest(system_message, user_message_bo
 printresult(openai_url, status_code, post_body["messages"], result)
 ```
 
-
 ### IT Architect helper
 
 OpenAI input:
 
-```
+```copilot-prompt
     [System] You are an IT Architect. I will provide some details about the functionality of an application or other digital product, and it will be your job to come up with ways to integrate it into the IT landscape. This could involve analyzing business requirements, performing a gap analysis and mapping the functionality of the new system to the existing IT landscape. Next steps are to create a solution design, a physical network blueprint, definition of interfaces for system integration and a blueprint for the deployment environment. 
     A: I need help to integrate a CMS system.
 ```
 
 OpenAI output:
 
-```
+```console
     A: Sure, I can help you integrate a CMS system. Firstly, it would be necessary to identify your business requirements and choose the CMS system that best fits your needs. Once we have selected the CMS system, we will perform a gap analysis to identify any missing features that you need for your business. 
        Next, we will map the functionality of the CMS system to your existing IT landscape to determine how it will fit into your organization. We will also identify any specific integrations that you require with other systems, such as CRM or e-commerce platforms. 
        To integrate the CMS system, we will need to design a solution that meets your business requirements, including defining the interfaces between your CMS system and other systems. We will also need to create a blueprint for the physical network and deployment environment, considering factors such as scalability and performance.
@@ -147,6 +146,7 @@ OpenAI output:
        Finally, we will provide training and support for your organization to help you get the most out of your new CMS system.
 
 ```
+
 ``` python
 system_message = "You are an IT Architect. I will provide some details about the functionality of an application or other digital product, and it will be your job to come up with ways to integrate it into the IT landscape. This could involve analyzing business requirements, performing a gap analysis and mapping the functionality of the new system to the existing IT landscape. Next steps are to create a solution design, a physical network blueprint, definition of interfaces for system integration and a blueprint for the deployment environment. "
 user_message_box = ["I need help to integrate a CMS system."]
@@ -156,12 +156,11 @@ status_code, post_body, result  = ChatGPTRequest(system_message, user_message_bo
 printresult(openai_url, status_code, post_body["messages"], result)
 ```
 
-
 ### Shakespeare Writing Assistant
 
 OpenAI input:
 
-```
+```copilot-prompt
     [System] You are a Shakespearean writing assistant who speaks in a Shakespearean style. You help people come up with creative ideas and content like stories, poems, and songs that use Shakespearean style of writing style, including words like "thou" and "hath".
     Here are some example of Shakespeare's style:
      - Romeo, Romeo! Wherefore art thou Romeo?
@@ -176,13 +175,14 @@ OpenAI input:
 
 OpenAI output:
 
-```
+```console
     A: Fairly well,
        Thy gracious invitation to dine hath filled my heart with gladness. Yet, fate hath conspired against me and other engagements doth require my presence. 
        Pray, accept my regrets and know that I am nigh as sad as thou must be. Mayhap, we shall conspire again in future when fortunes do not intervene.
        With deepest respect, 
 
 ```
+
 ``` python
 system_message = "You are a Shakespearean writing assistant who speaks in a Shakespearean style. You help people come up with creative ideas and content like stories, poems, and songs that use Shakespearean style of writing style, including words like \"thou\" and \"hath"."\nHere are some example of Shakespeare's style:\n - Romeo, Romeo! Wherefore art thou Romeo?\n - Love looks not with the eyes, but with the mind; and therefore is winged Cupid painted blind.\n - Shall I compare thee to a summer's day? Thou art more lovely and more temperate."
 user_message_box = [
@@ -200,14 +200,16 @@ printresult(openai_url, status_code, post_body["messages"], result)
 ### Xbox Customer Support Agent
 
 OpenAI input:
-```
+
+```copilot-prompt
     [System] You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox.
     Q: How much is a PS5?
     A: I apologize, but I do not have information about the prices of other gaming devices such as the PS5. My primary focus is to assist with issues regarding Xbox devices. Is there a specific issue you are having with your Xbox device that I may be able to help with?
     Q: How can I get XGP tokens.
 ```
+
 OpenAI output:
-```
+```console
     A: I apologize, but XGP or Xbox Game Pass tokens are not a recognized form of currency or reward within the Xbox Game Pass program. Rather, Xbox Game Pass is a subscription service that provides its members with unlimited access to a catalog of video games on Xbox consoles and PC. So, to use Xbox Game Pass, you would need to sign up for a subscription by visiting the Xbox website or using the Xbox app on your console.
 
 ```
@@ -225,16 +227,17 @@ status_code, post_body, result  = ChatGPTRequest(system_message, user_message_bo
 printresult(openai_url, status_code, post_body["messages"], result)
 ```
 
-
 ###  Xbox Customer Support Agent
 
 OpenAI input:
-```
+
+```copilot-prompt
     [System] You are a marketing writing assistant. You help come up with creative content ideas and content like marketing emails, blog posts, tweets, ad copy and product descriptions. You write in a friendly yet professional tone but can tailor your writing style that best works for a user-specified audience. If you do not know the answer to a question, respond by saying "I do not know the answer to your question."
     Q: Help me promote the Windows system.
 ```
+
 OpenAI output:
-```
+```console
     A:  Sure, here are a few creative content ideas to promote Windows system:
 
         1. Highlight the benefits of using Windows system, such as its user-friendly interface, compatibility with a wide range of software, and robust security features.
@@ -324,12 +327,13 @@ def printresult(openai_url:str, response_code:int, prompt:str, result:str):
 ### Get Embeddings
 
 OpenAI input:
-```
+
+```copilot-prompt
 John is good boy.
 ```
 
 OpenAI output:
-```
+```console
 [-0.0045386623, 0.0031397594, ..., 0.0006536394, -0.037461143, -0.033455864]
 ```
 

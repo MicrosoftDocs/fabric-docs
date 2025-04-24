@@ -4,9 +4,9 @@ description: A detailed list of limitations for SQL database in Microsoft Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur
-ms.date: 01/16/2025
+ms.date: 02/24/2025
 ms.topic: conceptual
-ms.custom:
+ms.search.form: SQL database Overview
 ---
 # Limitations in SQL database in Microsoft Fabric (preview)
 
@@ -14,7 +14,7 @@ ms.custom:
 
 Current limitations in the SQL database in Fabric are listed in this page. This page is subject to change.
 
-These limitations apply to SQL database in Fabric only. For the warehouse and SQL analytics endpoint items in Fabric Data Warehouse, see [Limitations of Fabric Data Warehouse](../../data-warehouse/limitations.md).
+This article applies to SQL database in Fabric only. For the warehouse and SQL analytics endpoint items in Fabric Data Warehouse, see [Limitations of Fabric Data Warehouse](../../data-warehouse/limitations.md).
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -23,6 +23,7 @@ These limitations apply to SQL database in Fabric only. For the warehouse and SQ
 - SQL database in Fabric does not support Change Data Capture (CDC) or Azure Synapse Link for SQL.
 - SQL Audit is not currently supported in SQL database in Fabric.
 - Transparent Data Encryption (TDE) is not supported. SQL database in Fabric uses storage encryption with service-managed keys to protect all customer data at rest. Customer-managed keys are not supported.
+- In a [trial capacity](../../fundamentals/fabric-trial.md), you are limited to three databases. There is no limit on databases in other capacities.
 
 ## Table level  
 
@@ -38,9 +39,21 @@ These limitations apply to SQL database in Fabric only. For the warehouse and SQ
 
 - Column names for a SQL table cannot contain spaces nor the following characters: `,` `;` `{` `}` `(` `)` `\n` `\t` `=`.
 
-### SQL analytics endpoint limitations  
+## SQL analytics endpoint limitations  
 
-- The SQL analytics endpoint of the SQL database in Fabric works just like the [Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience.
+The SQL analytics endpoint of the SQL database in Fabric works just like the [Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience.
+
+## Connection policy
+
+Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. In the **Redirect** policy, clients establish connections directly to the node hosting the database, leading to reduced latency and improved throughput. 
+
+For connections to use this mode, clients need to:
+
+  - Allow outbound communication from the client to all Azure SQL IP addresses in the region on ports in the range of 11000 to 11999. Use the Service Tags for SQL to make this easier to manage. Refer to the [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) for a list of your region's IP addresses to allow.
+  
+  - Allow outbound communication from the client to Azure SQL gateway IP addresses on port 1433.
+  
+For more information, see [Connectivity architecture - Connection policy](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true#connection-policy).
 
 ## Availability
 
@@ -59,7 +72,7 @@ For more limitations in specific areas, see:
 - [Limitations in backups in SQL database in Microsoft Fabric](backup.md#limitations)
 - [Limitations in restore from a backup in SQL database in Microsoft Fabric](restore.md#limitations)
 - [Limitations in share your SQL database and manage permission](share-sql-manage-permission.md#limitations).
-- [Limitations of Copilot for SQL database](copilot.md#limitations-of-copilot-for-sql-database)
+- [Limitations of Copilot for SQL database](copilot.md#limitations)
 
 ## Related content
 

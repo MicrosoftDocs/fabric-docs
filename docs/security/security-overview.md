@@ -48,7 +48,7 @@ Microsoft Entra ID provides Fabric with [Conditional Access](/entra/identity/con
 
 * Use Multifactor Authentication (MFA).
 
-* Restrict traffic based on parameters such as country of origin or device type.
+* Restrict traffic based on parameters such as country/region of origin or device type.
 
 To configure conditional access, see [Conditional access in Fabric](security-conditional-access.md).
 
@@ -73,7 +73,7 @@ With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts secur
 
 #### Managed Private Endpoints
 
-[Managed private endpoints](security-managed-private-endpoints-overview.md) allow secure connections to data sources such Azure SQL databases without exposing them to the public network or requiring complex network configurations.  
+[Managed private endpoints](security-managed-private-endpoints-overview.md) allow secure connections to data sources such as Azure SQL databases without exposing them to the public network or requiring complex network configurations.  
 
 #### Managed virtual networks
 

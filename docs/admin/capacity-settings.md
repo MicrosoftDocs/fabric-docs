@@ -4,7 +4,7 @@ description: Learn how to manage your Microsoft Fabric capacity and understand t
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.date: 02/05/2025
+ms.date: 03/20/2025
 ---
 
 # Manage your Fabric capacity
@@ -201,7 +201,7 @@ You can't change a Fabric capacity's name.
 
 ### Add and remove admins
 
-To add and remove admins from your capacity, you need to be a capacity admin.
+To add and remove admins from your capacity, you need to be a capacity admin. Only users that belong to the tenant the capacity is part of, can be added as admins to the capacity.
 
 # [Power BI Premium](#tab/power-bi-premium)
 
@@ -391,13 +391,15 @@ To view the settings of a specific capacity, follow these steps:
 This table summarizes the actions you can take in the details section.
 
 >[!NOTE]
->Trail capacities only have some of the settings listed in the table
+>* Some of the features in the table are only available if they are enabled in the tenant.
+>* Trail capacities only have some of the settings listed in the table
 
 | Details setting name                 | Description |
 |--------------------------------------|-------------|
 | Disaster Recovery                    | Enable [disaster recovery](/azure/reliability/reliability-fabric#set-up-disaster-recovery) for the capacity |
 | Capacity usage report                | The usage report is replaced with the [capacity metrics app](../enterprise/metrics-app.md) |
 | Notifications                        | Enable [notification](service-admin-premium-capacity-notifications.md) for your capacity |
+| Copilot capacity                     | Designate this capacity as a [Fabric Copilot capacity](../enterprise/fabric-copilot-capacity.md) |
 | Contributor permissions              | Set up the ability to add workspaces to the capacity. Select one of these two options:<li>The entire organization</li><li>Specific users or security groups</li> |
 | Admin permissions                    | Give specific users the ability to do the following:<li>Change capacity settings</li><li>Add contributors to the capacity</li><li>Add or remove workspaces from the capacity</li> |
 | Power BI workloads                   | Configure [Power BI workloads](/power-bi/enterprise/service-admin-premium-workloads) for:<li>[Semantic models](/power-bi/enterprise/service-admin-premium-workloads#semantic-models)</li><li>[Paginated reports](/power-bi/enterprise/service-admin-premium-workloads#paginated-reports)</li><li>[AI](/power-bi/enterprise/service-admin-premium-workloads#ai-preview)</li> |

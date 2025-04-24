@@ -1,5 +1,5 @@
 ---
-title: Fabric data pipeline public REST API (Preview)
+title: Fabric data pipeline public REST API
 description: This article describes the available REST APIs for pipelines in Data Factory for Microsoft Fabric.
 author: kromerm
 ms.author: makromer
@@ -7,10 +7,7 @@ ms.topic: conceptual
 ms.date: 09/16/2024
 ---
 
-# Microsoft Fabric data pipeline public REST API (Preview)
-
-> [!IMPORTANT]
-> The Microsoft Fabric API for Data Factory is currently in public preview. This information relates to a prerelease product that may be substantially modified before released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+# Microsoft Fabric data pipeline public REST API
 
 In Microsoft Fabric, Data Factory APIs consist solely of CRUD operations for pipelines and dataflows. Currently, only data pipelines are supported. Dataflows APIs are not yet available. Other common areas for data integration projects are in separate APIs: schedules, monitoring, connections, have their own APIs in Fabric. The primary online reference documentation for Microsoft Fabric REST APIs can be found in [Microsoft Fabric REST API references](/rest/api/fabric/articles/). Also refer to the [Core items API](/rest/api/fabric/core/items) and [Job scheduler](/rest/api/fabric/core/job-scheduler).
 
@@ -299,9 +296,6 @@ Body:
 
 Response 202: (No body)
 
-> [!NOTE]
-> There's no body returned currently, but the job Id should be returned. During the preview, it can be found in the returned headers, in the _Location_ property.
-
 ## Get item job instance
 
 [REST API - Items - Get item job instance](/rest/api/fabric/core/job-scheduler/get-item-job-instance)
@@ -397,9 +391,16 @@ Response 200:
 
 ```
 
-## Known limitations
+## Service Principal Name (SPN) Support 
 
-- Service Principal Auth (SPN) is currently not supported.
+Service Principal Name (SPN) is a security identity feature used by applications or services to access specific resources. In Fabric Data Factory, SPN support is crucial for enabling secure and automated access to data sources. Here are some key points about SPN support: 
+
+- **Authentication**: SPNs are used to authenticate applications or services when accessing data sources. This ensures that only authorized entities can access the data.
+- **Configuration**: To use SPNs, you need to create a service principal in Azure and grant it the necessary permissions to access the data source. For example, if you're using a data lake, the service principal needs storage blob data reader access.
+- **Connection**: When setting up a data connection in Fabric Data Factory, you can choose to authenticate using a service principal. This involves providing the tenant ID, client ID, and client secret of the service principal. 
+- **Security**: Using SPNs enhances security by avoiding the use of hardcoded credentials in your dataflows. It also allows for better management of access permissions and auditing of access activities. 
+
+For more detailed information on how to set up and use SPNs in Fabric Data Factory, refer to [SPN support in Data Factory](service-principals.md). 
 
 ## Related content
 

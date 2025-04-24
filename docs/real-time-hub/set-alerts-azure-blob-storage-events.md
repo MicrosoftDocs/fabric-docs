@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/18/2024
 ---
 
-# Set alerts on Azure Blob Storage events in Real-Time hub (preview)
+# Set alerts on Azure Blob Storage events in Real-Time hub
 
 This article describes how to set alerts on Azure Blob Storage events in Real-Time hub.
 

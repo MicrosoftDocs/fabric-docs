@@ -3,7 +3,7 @@ title: "Microsoft Fabric end-to-end security scenario"
 description: "Learn about Microsoft Fabric security concepts and features that can help you confidently build your own analytical solution with Fabric."
 author: KesemSharabi
 ms.author: kesharab
-ms.reviewer: v-myerspeter, vparasuraman
+ms.reviewer: vparasuraman
 ms.date: 12/12/2024
 ms.topic: conceptual
 ms.custom: fabric-cat, security-guidance
@@ -128,13 +128,13 @@ There are some considerations for using this pattern:
 
 - Use the pattern discussed here for data which has encryption at-rest requirement using CMK. Data which does not have this requirement can be encrypted at-rest using platform-managed keys, and that data can be stored natively on Microsoft Fabric OneLake.
 - [Fabric Lakehouse](../onelake/create-onelake-shortcut.md) and [KQL database](../real-time-intelligence/onelake-shortcuts.md) are the two workloads within Microsoft Fabric which support creation of shortcuts. In this pattern where data continues to reside on an external storage service where CMK is enabled, you can use shortcuts within Lakehouses and KQL databases to bring your data into Microsoft Fabric for analysis, but data is physically stored outside of OneLake where CMK encryption is enabled.
-- ADLS Gen2 shortcut supports write and using this shortcut type, you can also write data back out to storage service, and it’ll be encrypted at-rest using CMK. While using CMK with ADLS Gen2, following considerations for [Azure Key Vault (AKV)](/azure/key-vault/keys/byok-specification) and [Azure Storage](/azure/storage/common/customer-managed-keys-overview) apply.
+- ADLS Gen2 shortcut supports write and using this shortcut type, you can also write data back out to storage service, and it'll be encrypted at-rest using CMK. While using CMK with ADLS Gen2, the following considerations for [Azure Key Vault (AKV)](/azure/key-vault/keys/byok-specification) and [Azure Storage](/azure/storage/common/customer-managed-keys-overview) apply.
 - If you are using a third-party storage solution which is AWS S3 compatible (Cloudflare, Qumolo Core with public endpoint, Public MinIO and Dell ECS with public endpoint) and it has CMK enabled, the pattern discussed here in this document can be extended to these third-party storage solutions. Using [Amazon S3 compatible shortcut](../onelake/create-s3-compatible-shortcut.md), you can bring data into Fabric using a shortcut from these solutions. As with cloud-based storage services, you can store the data on external storage with CMK encryption, and perform in-place read operations.
 - AWS S3 supports encryption at-rest using [customer-managed keys](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html). Fabric can perform in-place reads on S3 buckets using [S3 shortcut](../onelake/create-s3-shortcut.md); however, write operations using a shortcut to AWS S3 are not supported.
 - Google cloud storage supports data encryption using [customer-managed keys](https://cloud.google.com/storage/docs/encryption). Fabric can perform in-place reads on GCS; however, write operations using a shortcut to GCS are not supported.
 - Enable [audit](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for Microsoft Fabric to keep track of activities.
 - In Microsoft Fabric, Power BI supports customer-managed key with [Bring your own encryption keys for Power BI](/power-bi/enterprise/service-encryption-byok).
-- Disable the [shortcut caching](../onelake/onelake-shortcuts.md#caching) feature for S3, GCS, and S3-compatible shortcuts. as the cached data is persisted on OneLake.
+- Disable the [shortcut caching](../onelake/onelake-shortcuts.md#caching) feature for S3, GCS, and S3-compatible shortcuts, as the cached data is persisted on OneLake.
 
 ## Data residency
 

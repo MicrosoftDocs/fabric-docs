@@ -931,6 +931,141 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/known-issues/known-issue-949-power-bi-copilot-retry-rare-error-scenarios.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-808-custom-visuals-blurry-zoomed-edge-browser.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-948-metrics-app-timepoint-details-missing-new-p2-capacities.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-823-concurrent-stored-procedures-block-warehouse.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-765-dataflows-gen2-warehouse-not-work-deployment-pipelines.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-769-dataflows-gen2-lakehouse-not-work-deployment-pipelines.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-809-dataflow-gen2-refresh-fails-missing-endpoint.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-821-schema-refresh-data-warehouse-model-fails.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-846-onelake-bcdr-write-transactions-not-correct-billing.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-898-data-sharing-shortcuts-not-show-endpoint.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-902-info-view-measures-calculated-table-cause-errors.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-918-more-options-not-open-unsaved-reports.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-933-new-tile-dataflow-gen2-preview-not-supported.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-934-external-data-sharing-not-work-different-region.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-955-create-gateway-public-api-not-work-service-principals.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-962-eventstream-publish-fails-column-empty-array-operator.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-966-sync-content-git-workspace-fails.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-977-export-excel-live-connection-show-items-no-data-fails.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-978-renamed-eventstream-fails-open.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1011-models-specific-gateway-configuration-refresh-issues.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1020-dataflow-connector-not-show-dataflows-view-permissions.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/copilot-faq-fabric.yml",
             "redirect_url": "/fabric/fundamentals/copilot-faq-fabric",
             "redirect_document_id": false

@@ -12,8 +12,9 @@ ms.date: 05/21/2024
 # Work with customer data in Fabric
 
 [Microsoft Fabric OneLake](../onelake/index.yml) is a unified, logical data lake for the entire organization, designed to be the single place for all analytics data. It comes automatically with every Microsoft Fabric tenant and is built on top of Azure Data Lake Storage (ADLS) Gen2. OneLake supports any type of file, structured or unstructured, and stores all tabular data in Delta Parquet format. It allows for collaboration across different business groups by providing a single data lake that is governed by default with distributed ownership for collaboration within a tenant's boundaries. Workspaces within a tenant enable different parts of the organization to distribute ownership and access policies, and all data in OneLake can be accessed through data items such as [Lakehouses and Warehouses](../data-warehouse/data-warehousing.md).
-
 In terms of data stores, OneLake serves as the common storage location for ingestion, transformation, real-time insights, and Business Intelligence visualizations. It centralizes the different Fabric services and is the storage for data items consumed by all workloads in Fabric.
+
+[Microsoft Fabric Eventhouse](/fabric/real-time-intelligence/eventhouse) provides a scalable solution for handling and analyzing large volumes of data, particularly in real-time analytics scenarios. Eventhouses efficiently manage real-time data streams, allowing organizations to ingest, process, and analyze data in near real-time. They're ideal for scenarios requiring timely insights and are the preferred engine for semistructured and free text analysis. An Eventhouse is a workspace of databases that can be shared across projects, optimizing performance, and cost by managing multiple databases at once. Eventhouses support data from multiple sources and formats, automatically indexing and partitioning data based on ingestion time.
 
 ## How to read and write data in Microsoft Fabric 
 
@@ -93,6 +94,25 @@ Alternatively, if you choose to utilize Azure SQL Database, you can implement th
 
 1. This connection can now be queried to access data from the Warehouse. For more information on utilizing the *Microsoft.Data.SqlClient* namespace, see [Microsoft.Data.SqlClient Namespace Documentation](/dotnet/api/microsoft.data.sqlclient).
 
+### Eventhouse API
+Once you authenticate, you can perform actions like create Eventhouse, delete Eventhouse, get a list of Eventhouses, etc.
+One way to do it is using the portal - [Eventhouse overview](/fabric/real-time-intelligence/eventhouse).
+
+The other way is using the Eventhouse Rest API - [Eventhouse Rest API overview](/rest/api/fabric/eventhouse/items).
+1. Authorize.
+1. Acquire a token with *FabricEventhouse.Read.All* scope on behalf of the user using the bearer token passed from the front end.
+1. Use the *Fabric* token to call the [Get Eventhouse API](/rest/api/fabric/eventhouse/items/get-eventhouse).
+1. Now with a list of the Databases of the Eventhouse, you can Query the specific DB you want, as described in the Query data section below.
+
+### Query data
+
+In order to query data from an Eventhouse KQL Database, follow these steps: First, authenticate using the appropriate method. Next, connect to the Eventhouse to retrieve the list of databases. Then, query the specific database you want to access. It's important to distinguish between query commands, such as `.show tables`, and data queries, such as `<TableName> | take 10`. For full documentation on the KQL REST API, see [KQL REST API documentation](/kusto/api/rest).
+
+The other way is using the Eventhouse Rest API - [Eventhouse Rest API overview](/rest/api/fabric/eventhouse/items).
+1. Authorize.
+1. Acquire a token with *KQLDatabase.ReadWrite.All* scope on behalf of the user using the bearer token passed from the front end.
+1. Use the *Kql* token to call the [KQL Rest API](/kusto/api/rest).
+
 ### Writing data 
 
 In addition to reading data using the token, you can also use ADLS APIs to write data into tables as described by the [Delta Lake protocol](https://github.com/delta-io/delta/blob/master/PROTOCOL.md).
@@ -102,6 +122,43 @@ You can also use the APIs to create files and directories.
 Alternatively, you can use other Fabric workloads to write data to the platform. For example, you can use Fabric's Lakehouse workload API to efficiently [load common file types to an optimized Delta table](../data-engineering/load-to-tables.md). This is done by sending a POST request to the [Tables - Load Table API endpoint](/rest/api/fabric/lakehouse/tables/load-table).
 
 The SQL connection can also be used to carry out commands that insert data into tables.
+
+## OneLake integration
+
+You may opt in to use OneLake integration in your workloads.
+If you do, when a new item is created for your workload, Fabric will automatically create folders for the new item.
+
+To opt in, your item's manifest XML must declare this by setting the `CreateOneLakeFoldersOnArtifactCreation` attribute to `true`.
+For example:
+```
+<ItemManifestConfiguration xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="1.101.0">  
+  <Item TypeName="Org.WorkloadSample.SampleWorkloadItem" Category="Data" CreateOneLakeFoldersOnArtifactCreation="true">
+    <Workload WorkloadName="Org.WorkloadSample" />
+    ...
+  </Item>
+</ItemManifestConfiguration>
+```
+> [!Note]
+> SchemaVersion must be set to 1.101.0 (or later supported versions).
+
+The same SchemaVersion must be set in `WorkloadManifest.xml`:
+
+```
+<WorkloadManifestConfiguration xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="1.101.0">
+  <Workload WorkloadName="Org.WorkloadSample" HostingType="Remote">
+  ...
+  </Workload>
+</WorkloadManifestConfiguration>
+```
+
+When a new item is created, the following root folders are created in OneLake:
+
+`<WorkspaceID>/<ItemID>/Files`
+
+`<WorkspaceID>/<ItemID>/Tables`
+
+You can create additional folders under these, and use them for storing data in any format (under `Files` folder) or in parquet format (under `Tables` folder).
+Follow the [instructions](#how-to-read-and-write-data-in-microsoft-fabric) above to read/write from OneLake storage.
 
 ## Related content
 

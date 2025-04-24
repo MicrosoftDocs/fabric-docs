@@ -8,9 +8,9 @@ ms.topic: how-to
 ms.date: 11/05/2024
 ---
 
-# CI/CD for Copy job (preview) in Data Factory in Microsoft Fabric
+# CI/CD for Copy job in Data Factory in Microsoft Fabric
 
-To build successful data analytics projects with Copy job, it is very important to have source control, continuous integration, continuous deployment, and collaborative development environments. 
+To build successful data analytics projects with Copy job, it is very important to have source control, continuous integration, continuous deployment, and collaborative development environments.
 
 In Fabric, there are two features we currently support in collaboration with the Application Lifecycle Management (ALM) team: Git integration and deployment pipelines. These features allow users to import/export workspace resources with individual updates.
 

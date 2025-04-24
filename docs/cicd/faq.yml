@@ -71,26 +71,26 @@ sections:
     questions:
       - question: What are some general deployment limitations to keep in mind?
         answer: |
-          These are some important considerations to keep in mind:
+          The following considerations are important to keep in mind:
           
           * [Deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations)
-          * [Supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-semantic-model-rules)
+          * [Supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-gen1-and-semantic-model-rules)
           * [Incremental refresh](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations)
-          * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)* Deployment pipelines can't be used to deploy items to a workspace that's in a different region.
+          * [Automation](deployment-pipelines/pipeline-automation.md#considerations-and-limitations)
           
       - question: How can I assign workspaces to all the stages in a pipeline?
         answer: You can either assign one workspace to your pipeline and deploy it across the pipeline, or assign a different workspace to each pipeline stage. For more information, see [assign a workspace to a deployment pipeline](deployment-pipelines/assign-pipeline.md).
 
-      - question: What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables?
+      - question: What can I do if I have a dataset with DirectQuery or Composite connectivity mode that uses variation or auto date/time tables?
         answer: |
-          Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables aren't supported in deployment pipelines. If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the methods listed below to edit your semantic model so that it works in deployment pipelines.
+          Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables aren't supported in deployment pipelines. If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the following methods to edit your semantic model so that it works in deployment pipelines.
 
           * In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand#import-mode) mode.
 
-          * Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables from your semantic model. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your semantic model model works as it may result in data corruption in your visuals.
+          * Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables from your semantic model. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation can invalidate user authored measures, calculated columns, and calculated tables. Use this method only if you understand how your semantic model model works as it can result in data corruption in your visuals.
           
       - question: Why aren't some tiles displaying information after deployment?
-        answer: When you pin a tile to a dashboard, if the tile relies on an unsupported item (any item not on this [list](deployment-pipelines/intro-to-deployment-pipelines.md#supported-items) is unsupported), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile won't render. For example, if you create a tile from a report that relies on a semantic model you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.
+        answer: When you pin a tile to a dashboard, if the tile relies on an unsupported item (any item not on [this list](deployment-pipelines/intro-to-deployment-pipelines.md#supported-items) is unsupported), or on an item that you don't have permissions to deploy, after deploying the dashboard the tile doesn't render. For example, if you create a tile from a report that relies on a semantic model you're not an admin on, when deploying the report you get an error warning. However, when deploying the dashboard with the tile, you don't an error message, the deployment will succeed, but the tile won't display any information.
 
   - name: Paginated reports
     questions:

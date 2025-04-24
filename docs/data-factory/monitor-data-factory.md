@@ -1,7 +1,7 @@
 ---
 title: Monitor activity in Data Factory
 description: Learn how to monitor pipeline runs and dataflows in Data Factory for Microsoft Fabric.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: noelleli
 author: n0elleli
 ms.topic: how-to
@@ -20,6 +20,10 @@ Refer to [How to monitor data pipeline runs](monitor-pipeline-runs.md) for detai
 ## Monitor dataflows
 
 Refer to [View refresh history and monitor your dataflows](dataflows-gen2-monitor.md) for details on how to monitor your dataflows.
+
+## Monitor copy job
+
+Refer to [How to monitor a copy job](monitor-copy-job.md) for details on how to monitor your copy job.
 
 ## Related content
 

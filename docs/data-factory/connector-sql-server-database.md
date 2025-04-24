@@ -4,7 +4,7 @@ description: This article provides information about how to create a SQL Server 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 01/23/2025
 ms.custom:
   - template-how-to
 ---
@@ -22,7 +22,7 @@ The SQL Server database connector supports the following authentication types fo
 |:---|:---|:---|
 |Basic (Username/Password)| √ | √ |
 |Organizational account| n/a | √ |
-|Windows| n/a | √ |
+|Windows| √ (When use on-premises data gateway) | √ |
 
 ## Set up your connection in Dataflow Gen2
 

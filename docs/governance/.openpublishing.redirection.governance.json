@@ -13,7 +13,12 @@
         {
             "source_path_from_root": "/docs/governance/onelake-catalog.md",
             "redirect_url": "/fabric/governance/onelake-catalog-overview",
-            "redirect_document_id": true
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/governance/service-security-sensitivity-label-default-label-policy.md",
+            "redirect_url": "/fabric/governance/sensitivity-label-default-label-policy",
+            "redirect_document_id": false
         }
     ]
 }

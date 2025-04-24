@@ -1,7 +1,7 @@
 ---
 title: Run a Script activity and send an output summary by email
 description: Learn how to add a run a Script activity in a pipeline and send output from the activity by email.
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: abnarain
 author: nabhishek
 ms.topic: how-to

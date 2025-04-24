@@ -1,7 +1,7 @@
 ---
 title: Load data to Lakehouse using partition
 description: Learn steps to load data to Lakehouse using partition.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
@@ -38,13 +38,13 @@ This tutorial helps you learn how to load data to Lakehouse using partition in a
 
 ## Load data to Lakehouse using partition columns
 
-1. Open your Data pipeline and add a copy activity by selecting **Add pipeline activity** -> **Copy data**. Under **Source**, select **Sample dataset**, and select **Browse**, then select **Public Holidays**.
+1. Open your Data pipeline and add a copy activity by selecting **Pipeline activity** -> **Copy data**. Under **Source**, select **More** at the bottom of the connection list, then select **Public Holidays** under **Sample data** tab.
 
-    :::image type="content" source="media/tutorial-lakehouse-partition/data-store-type-sample-dataset.png" lightbox="media/tutorial-lakehouse-partition/data-store-type-sample-dataset.png" alt-text="Screenshot of using sample dataset.":::
+    :::image type="content" source="media/tutorial-lakehouse-partition/connection-more.png" lightbox="media/tutorial-lakehouse-partition/connection-more.png" alt-text="Screenshot of using sample dataset.":::
 
     :::image type="content" source="media/tutorial-lakehouse-partition/sample-dataset-public-holidays.png" lightbox="media/tutorial-lakehouse-partition/sample-dataset-public-holidays.png" alt-text="Screenshot of selecting sample dataset.":::
 
-2. Under **Destination** tab, select **Workspace** in **Data store type**, then select **Lakehouse** in **Workspace data store type**, specify your Lakehouse or select **+ New** to create a new Lakehouse. Choose **Table** in **Root folder** and specify your table name. 
+2. Under **Destination** tab, select **More** at the bottom of the connection list, then select an existing **Lakehouse** in **OneLake** tab, specify your Lakehouse or create a new Lakehouse in **Home** tab. Choose **Table** in **Root folder** and specify your table name. 
 
     :::image type="content" source="media/tutorial-lakehouse-partition/destination.png" lightbox="media/tutorial-lakehouse-partition/destination.png" alt-text="Screenshot of destination configuration.":::
 

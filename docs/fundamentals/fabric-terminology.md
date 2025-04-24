@@ -20,7 +20,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Experience:** A collection of capabilities targeted to a specific functionality. The Fabric experiences include Fabric Data Warehouse, Fabric Data Engineering, Fabric Data Science, Real-Time Intelligence, Data Factory, and Power BI.
 
-- **Item:** An item a set of capabilities within an experience. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
+- **Item:** An item is a set of capabilities within an experience. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
 
 - **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with a Microsoft Entra ID.
 

@@ -8,6 +8,7 @@ metadata:
   ms.topic: faq
   ms.custom:
   ms.date: 01/31/2025
+  ms.search.form: SQL database Overview
 title: "Frequently asked questions for SQL database in Microsoft Fabric (preview)"
 summary: |
   **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
@@ -21,6 +22,11 @@ sections:
           How do I connect to SQL database in Fabric? 
         answer:
           You can connect to SQL database in Fabric in the same ways you connect to Azure SQL Database. For more information, see [Connect to SQL database in Fabric](connect.md).
+      - question: |
+          Which connection policies are supported for SQL database in Fabric?
+        answer:
+          Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. For more information, see [Connection policy](limitations.md#connection-policy).
+
 
   - name: About SQL database data in OneLake
     questions:

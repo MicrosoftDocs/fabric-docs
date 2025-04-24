@@ -27,7 +27,9 @@ landingContent:
           - text: What is OneLake?
             url: onelake-overview.md
           - text: OneLake security
-            url: ./security/fabric-onelake-security.md
+            url: ./security/get-started-security.md
+          - text: OneLake catalog
+            url: ../governance/onelake-catalog-overview.md
           - text: OneLake access and APIs
             url: onelake-access-api.md
       - linkListType: deploy
@@ -40,6 +42,8 @@ landingContent:
             url: create-lakehouse-onelake.md
           - text: OneLake file explorer
             url: onelake-file-explorer.md
+          - text: Find data in the OneLake catalog
+            url: ../governance/onelake-catalog-govern.md
           - text: Use Iceberg tables in OneLake
             url: onelake-iceberg-tables.md
 

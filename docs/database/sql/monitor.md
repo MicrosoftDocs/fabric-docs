@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: amar.patil # Microsoft alias
 ms.date: 01/22/2025
 ms.topic: conceptual
-ms.custom:
+ms.search.form: Performance monitoring in SQL database
 ---
 # Monitor SQL database in Microsoft Fabric
 

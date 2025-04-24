@@ -6,14 +6,14 @@ ms.author: yicw
 ms.reviewer: painbar
 ms.service: fabric
 ms.topic: how-to
-ms.date: 10/16/2024
+ms.date: 02/10/2025
 
 #CustomerIntent: AAs a user, I want to learn how to create items in workspaces so that I can build my data solution.
 ---
 
 # Create items in workspaces
 
-This article explains how to create items in workspaces in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about items and workspaces, see the [Microsoft Fabric terminology](../fundamentals/fabric-terminology.md) and [Workspaces](workspaces.md) article.
+This article explains how to create items in workspaces in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about items and workspaces, see the [Microsoft Fabric terminology](fabric-terminology.md) and [Workspaces](workspaces.md) article.
 
 ## Create an item in a workspace
 
@@ -48,6 +48,23 @@ This article explains how to create items in workspaces in [!INCLUDE [product-na
 4. By clicking on the star button again, you can unfavorite the item types.
 
     :::image type="content" source="media/create-items-in-workspaces/unfavorite-an-item-type.png" alt-text="Screenshot showing unfavorite an item type.":::
+
+## Import items
+You can also import files from outside Fabric to create Fabric items in a workspace.
+
+1. Select 'Import' in a workspace, you can see all item types you can create by importing the files from somewhere else.
+
+    :::image type="content" source="media/create-items-in-workspaces/import-entry-point.png" alt-text="Screenshot showing the entry point of import.":::
+
+2. Select the item type you want to import, and select the location where your files locate.
+
+    :::image type="content" source="media/create-items-in-workspaces/select-item-type-in-import.png" alt-text="Screenshots of selecting Notebook or Report and Paginated report to import.":::
+
+3. Select the file you want to import and confirm.
+   
+4. Check if new items are created in workspace and the import process is completed successfully.
+
+    :::image type="content" source="media/create-items-in-workspaces/create-notebook-by-importing.png" alt-text="Screenshots showing a Notebook is successfully created by importing.":::
 
 ## Related content
 

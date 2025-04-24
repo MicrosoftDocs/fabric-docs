@@ -3,13 +3,13 @@ title: Incremental refresh in Dataflow Gen2
 description: Learn about the incremental refresh feature in Dataflow Gen2 in Data Factory for Microsoft Fabric.
 author: luitwieler
 ms.topic: concept-article
-ms.date: 09/05/2024
+ms.date: 04/18/2025
 ms.author: jeluitwi
 ---
 
-# Incremental refresh in Dataflow Gen2 (Preview)
+# Incremental refresh in Dataflow Gen2
 
-In this article, we introduce incremental data refresh in Dataflow Gen2 for Microsoft Fabric’s Data Factory. When you use dataflows for data ingestion and transformation, there are scenarios where you specifically need to refresh only new or updated data—especially as your data continues to grow. The incremental refresh feature addresses this need by allowing you to reduce refresh times, enhance reliability by avoiding long-running operations, and minimize resource usage.
+In this article, we introduce incremental data refresh in Dataflow Gen2 for Microsoft Fabric’s Data Factory. When you use dataflows for data ingestion and transformation, there are scenarios where you specifically need to refresh only new or updated data&mdash;especially as your data continues to grow. The incremental refresh feature addresses this need by allowing you to reduce refresh times, enhance reliability by avoiding long-running operations, and minimize resource usage.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ The following data destinations are supported for incremental refresh:
 - Azure SQL Database
 - Azure Synapse Analytics
 
-Other destinations like Lakehouse can be used in combination with incremental refresh by using a second query that references the staged data to update the data destination. This way you can still use incremental refresh to reduce the amount of data that needs to be processed and retrieved from the source system. But you need to do a full refresh from the staged data to the data destination.
+Other destinations can be used in combination with incremental refresh by using a second query that references the staged data to update the data destination. This way you can still use incremental refresh to reduce the amount of data that needs to be processed and retrieved from the source system. But you need to do a full refresh from the staged data to the data destination.
 
 ## How to use incremental refresh
 
@@ -125,10 +125,6 @@ This setting is optional and specifies whether the query used for incremental re
 
 ## Limitations
 
-### Only SQL based data destinations are supported
-
-Currently, only SQL based data destinations are supported for incremental refresh. So, you can only use Fabric Warehouse, Azure SQL Database, or Azure Synapse Analytics as a data destination for incremental refresh. The reason for this limitation is that these data destinations support the SQL based operations that are required for incremental refresh. We use Delete and Insert operations to replace the data in the data destination, which can't be done in parallel on other data destinations.
-
 ### The data destination must be set to a fixed schema
 
 The data destination must be set to a fixed schema, which means that the schema of the table in the data destination must be fixed and can't change. If the schema of the table in the data destination is set to dynamic schema, you need to change it to fixed schema before you configure incremental refresh.
@@ -157,7 +153,7 @@ If you get a warning that you used the same column for detecting changes and fil
 
 ### I want to use incremental refresh with a data destination that isn't supported. What can I do?
 
-If you would like to use incremental refresh with a data destination that isn't supported, you can enable incremental refresh on your query and use a second query that references the staged data to update the data destination. This way, you can still use incremental refresh to reduce the amount of data that needs to be processed and retrieved from the source system, but you need to do a full refresh from the staged data to the data destination. Ensure that you set up the window and bucket size correctly as we don't guarantee that the data in staging is retained outside the bucket range.
+If you would like to use incremental refresh with a data destination that isn't supported, you can enable incremental refresh on your query and use a second query that references the staged data to update the data destination. This way, you can still use incremental refresh to reduce the amount of data that needs to be processed and retrieved from the source system, but you need to do a full refresh from the staged data to the data destination. Ensure that you set up the window and bucket size correctly as we don't guarantee that the data in staging is retained outside the bucket range. Another option is to use the pattern to incrementally amass data. We have a guide on how to do this here: [Incremental amass data with Dataflow Gen2](./tutorial-setup-incremental-refresh-with-dataflows-gen2.md)
 
 ### How do I know if my query has incremental refresh enabled?
 

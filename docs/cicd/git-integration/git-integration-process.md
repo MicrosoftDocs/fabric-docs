@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 10/29/2024
+ms.date: 03/02/2025
 ms.custom:
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
@@ -18,9 +18,9 @@ This article explains basic Git concepts and the process of integrating Git with
 
 ## Permissions
 
-- In order to use Git integration, your organization's administrator must [enable it](../../admin/git-integration-admin-settings.md) by your organization's administrator.
-- If the workspace and *Azure* repo are in two different regions, the tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations). This restriction doesn't apply to GitHub.
-- The actions you can take on a workspace depend on the permissions you have in both the workspace and Git, as listed in the next sections.
+- Your organization's administrator must [enable Git integration](../../admin/git-integration-admin-settings.md).
+- The tenant admin must [enable cross-geo export](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations) if the workspace and *Azure* repo are in two different regions. This restriction doesn't apply to GitHub.
+- The permissions you have in both the workspace and Git, as listed in the next sections, determine the actions you can take.
 
 ### Required Git permissions for popular actions
 
@@ -44,10 +44,10 @@ The following table describes the permissions needed in the Fabric workspace to 
 | Switch branch in the workspace (or any change in connection setting) | Admin                                                                                     |
 | View Git connection details                                          | Admin, Member, Contributor                                                                |
 | See workspace 'Git status'                                           | Admin, Member, Contributor                                                                |
-| Update from Git                                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
-| Commit workspace changes to Git                                      | All of the following:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
+| Update from Git                                                      | All of the following roles:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
+| Commit workspace changes to Git                                      | All of the following roles:<br/><br/> Contributor in the workspace (WRITE permission on all items)<br/><br/>Owner of the item (if the tenant switch blocks updates for nonowners)<br/><br/>BUILD on external dependencies (where applicable)   |
 | Create new Git branch from within Fabric                             | Admin                                                                                     |
-| Branch out to a new workspace                                            | Admin, Member, Contributor                                                                |
+| Branch out to another workspace                                      | Admin, Member, Contributor                                                                |
 
 #### Git roles
 
@@ -66,7 +66,7 @@ The following table describes the Git permissions needed to perform various comm
 | Update from Git                                                      | Read=Allow   |
 | Commit workspace changes to Git                                      | Read=Allow<br/>Contribute=Allow<br/>branch policy should allow direct commit  |
 | Create new Git branch from within Fabric                             | Role=Write<br/>Create branch=Allow            |
-| Branch out to a new workspace                                        | Read=Allow<br/>Create branch=Allow            |
+| Branch out to another workspace                                      | Read=Allow<br/>Create branch=Allow            |
                                     
 
 ##### [GitHub Repos](#tab/GitHub)
@@ -84,7 +84,7 @@ The following table describes the Git permissions needed to perform various comm
   | Update from Git                                                      | Contents= Access: Read                        |
   | Commit workspace changes to Git                                      | Contents= Access: Read and write<br/>branch policy should allow direct commit  |
   | Create new Git branch from within Fabric                             | Contents= Access: Read and write              |
-  | Branch out to a new workspace                                        | Content=Read and write                        |
+  | Branch out to another workspace                                      | Content=Read and write                        |
 
 - If you're using classic access token, the repo scope must be enabled:
 
@@ -108,11 +108,41 @@ If you don’t select which content to sync, you can’t continue to work.
 
 :::image type="content" source="./media/git-integration-process/sync-direction-continue.png" alt-text="Screenshot notification that you can't continue working until workspace is synced.":::
 
+### Folders
+
+Folders are not yet supported in Git. Currently, all items appear in the top level of the Git folder even if your workspace has folders.
+
+<!--- 
+When connected and synced, the workspace structure is mirrored in the Git repository, including folders structure. Workspace items in folders are exported to folders with the same name in the Git repo. Conversely, items in Git folders are imported to folders with the same name in the workspace.
+
+--->
+
+> [!NOTE]
+> If your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different. You get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace. If you update first, the Git folder structure **overwrites the workspace** folder structure. For more information, see [Handling folder changes safely](#handling-folder-changes-safely).
+
+<!---
+:::image type="content" source="./media/git-integration-process/git-subfolders.png" alt-text="Screenshot of workspace and corresponding Git branch with subfolders.":::
+
+* Empty folders aren't copied to Git. When you create or move items to a folder, the folder is created in Git.
+* Empty folders in Git are deleted automatically.
+* Empty folders in the workspace aren't deleted automatically even if all items are moved to different folders.
+* Folder structure is retained up to 10 levels deep.
+--->
+#### Handling folder changes safely
+
+If your workspace has folders and the connected Git folder doesn't yet have subfolders, they're considered to be different because the folder structure is different. When you connect a workspace that has folders to Git, you get an *uncommitted changes* status in the source control panel and you need to commit the changes to Git before updating the workspace.
+
+If you can't make changes to the connected branch directly, due to branch policy or permissions, we recommend using the *Checkout Branch* option:
+
+1. [Checkout a New Branch](./conflict-resolution.md#resolve-conflict-in-git): Use the checkout branch feature to create a branch with the updated state of your Fabric workspace.
+1. Commit Folder Changes: Any workspace folder changes can then be committed to this new branch.
+1. Merge Changes: Use your regular pull request (PR) and merge processes to integrate these updates back into the original branch.
+
 ### Connect to a shared workspace
 
 If you try connecting to a workspace that's already [connected to Git](./manage-branches.md), you might get the following message:
 
-:::image type="content" source="./media/git-integration-process/sign-into-git.png" alt-text="Screenshot of error message telling yo to sign in to a Git account.":::
+:::image type="content" source="./media/git-integration-process/sign-into-git.png" alt-text="Screenshot of error message telling you to sign in to a Git account.":::
 
 Go to the **Accounts** tab on the right side of the Source control panel, choose an account, and connect to it.
 
@@ -196,7 +226,7 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
 - **Actions you can take on the current branch**:
 
-  - [*Branch out to new workspace*](./manage-branches.md#scenario-2---develop-using-another-workspace) (any role): Creates a new workspace and new branch based on the last commit of the branch connected to the current workspace. It connects to the new workspace and new branch.
+  - [*Branch out to another workspace*](./manage-branches.md#scenario-2---develop-using-another-workspace) (contributor and above): Creates a new workspace, or switches to an existing workspace based on the last commit to the current workspace. It then connects to the target workspace and branch.
   - [*Checkout new branch*](./conflict-resolution.md#resolve-conflict-in-git) (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
   - [*Switch branch*](./manage-branches.md#switch-branches) (must be workspace admin): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
 
@@ -204,12 +234,12 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
 - **Related branches**.  
    The *Branches* tab also has a list of related workspaces you can select and switch to. A related workspace is one with the same connection properties as the current branch, such as the same organization, project, repository, and git folder.  
-   This allows you to navigate to workspaces connected to other branches related to the context of your current work, without having to look for them in your list of Fabric workspaces.  
-   Click on an item in the list to open the relevant workspace.
+   This feature allows you to navigate to workspaces connected to other branches related to the context of your current work, without having to look for them in your list of Fabric workspaces.  
+   To open the relevant workspace, select item in the list.
 
   :::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
 
-See [Branching out limitations](#branching-out-limitations) for more information.
+For more information, see [Branching out limitations](#branching-out-limitations).
 
 ### Account details
 

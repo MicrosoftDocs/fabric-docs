@@ -1,22 +1,16 @@
 ---
-title: On-premises data gateway considerations for data destinations in Dataflow Gen2
+title: On-premise and VNET data gateway considerations for data destinations in Dataflow Gen2
 description: Describes multiple considerations and limitations when using a data gateway and the data destination feature inside of Dataflow Gen2
 author: nikkiwaghani
 ms.author: nikkiwaghani
 ms.topic: conceptual
 ms.custom:
-ms.date: 12/18/2024
+ms.date: 04/23/2025
 ---
 
-# On-premises data gateway considerations for data destinations in Dataflow Gen2
+# On-premise and VNET data gateway considerations for data destinations in Dataflow Gen2
 
-This article tries to list the limitations and considerations when using the Data Gateway with data destinations scenarios in Dataflow Gen2.
-
-## Evaluation time outs
-
-Dataflows that use a Gateway and the data destination feature are limited to an evaluation or refresh time of one hour.
-
-Learn more about this limitation from the article on the [Troubleshoot the on-premises data gateway article](/data-integration/gateway/service-gateway-tshoot#limitations-and-considerations).
+This article lists the limitations and considerations when using the Data Gateway with data destinations scenarios in Dataflow Gen2.
 
 ## Network issues with port 1433
 
@@ -48,7 +42,7 @@ To troubleshoot the issue, follow these steps:
 ### Solution: Set new firewall rules on server running the gateway
 
 The firewall rules on the gateway server and/or customer's proxy servers need to be updated to allow outbound traffic from the gateway server to the below endpoints. If your firewall doesn't support wildcards, 
-then use the IP addresses from [Azure IP Ranges and Service Tags](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fdownload%2Fdetails.aspx%3Fid%3D56519&data=05%7C02%7CNikita.Waghani%40microsoft.com%7Caaa71e3a46df465f10ce08dc4a944869%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638467247942873812%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=gnMtWIOsUsZocKEu3zqPMs9e2d7gVIPH%2B28OqlIhLps%3D&reserved=0). They need to be kept in sync each month.
+then use the IP addresses from [Azure IP Ranges and Service Tags](https://www.microsoft.com/en-us/download/details.aspx?id=56519). They need to be kept in sync each month.
 
 * **Protocol**: TCP
 * **Endpoints**: *.datawarehouse.pbidedicated.windows.net, *.datawarehouse.fabric.microsoft.com, *.dfs.fabric.microsoft.com 

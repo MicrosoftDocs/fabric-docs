@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: antho, sukkaur
 ms.date: 10/07/2024
 ms.topic: how-to
-ms.custom:
+ms.search.form: Develop and run queries in SQL editor
 ---
 # Create GraphQL API from your SQL database in the Fabric portal
 

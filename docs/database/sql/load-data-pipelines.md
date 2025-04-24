@@ -6,8 +6,7 @@ ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
 ms.date: 01/02/2025
 ms.topic: how-to
-ms.custom:
-ms.search.form:
+ms.search.form: Ingesting data into SQL database
 ---
 # Load data with data pipelines into SQL database in Microsoft Fabric
 

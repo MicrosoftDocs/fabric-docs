@@ -4,10 +4,11 @@ description: Learn how to use the SQL database query editor in the Microsoft Fab
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: yoleichen
-ms.date: 12/19/2024
+ms.date: 03/12/2025
 ms.topic: how-to
-ms.custom:
+ms.search.form: Develop and run queries in SQL editor
 ---
+
 # Query with the SQL query editor
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
@@ -50,7 +51,7 @@ Select the schema name that you have access to create views, provide name of vie
 
 #### Download as Excel/JSON/CSV
 
-You can download your result set as an Microsoft Excel (.xlsx) file using the download button. You can also download JSON or CSV versions of the result set data, as well as copy/paste the result set to your clipboard.
+You can download your result set as a Microsoft Excel (.xlsx) file using the download button. You can also download JSON or CSV versions of the result set data, as well as copy/paste the result set to your clipboard.
 
 :::image type="content" source="media/query-editor/download-results-in-xlsx.png" alt-text="Screenshot from the Fabric portal of the SQL query editor showing the Download results button.":::
 
@@ -64,7 +65,7 @@ When you run multiple queries and those return multiple results, you can select 
 
 The SQL query editor is powered by [Copilot for SQL database](copilot.md). It is designed to accelerate database development by leveraging generative AI to simplify and automate database management and improving the efficiency of writing T-SQL queries. Copilot is contextualized to your database's schema and can generate answers catered for you.
 
-Copilot for SQL database offers a variety of features, detailed in the [Introduction to Copilot](copilot.md#introduction-to-copilot-for-sql-database).
+Copilot for SQL database offers a variety of features. For more information, visit [Features of Copilot for SQL database in Microsoft Fabric](copilot.md#features-of-copilot-for-sql-database-in-fabric).
 
 Before your business can start using Copilot for SQL database, you need to [enable Copilot](../../fundamentals/copilot-enable-fabric.md).
 
@@ -76,6 +77,7 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 |---|---| -------- |
 | New SQL query | `Ctrl + J` | `Cmd + J`|
 | Close current tab | `Ctrl + Shift + F4` | `Cmd + Shift + F4` |
+| Run SQL Script| `Ctrl + Enter, Shift +Enter`|`Cmd + Enter, Shift +Enter`|
 | Search string | `Ctrl + F` |`Cmd + F`|
 | Replace string | `Ctrl + H` | `Cmd + H`|
 | Undo | `Ctrl + Z` |`Cmd + Z`|
@@ -84,8 +86,6 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 | Go one word right | `Ctrl + Right arrow key` | `Cmd + Right arrow key` |
 | Indent increase | `Tab` | `Tab` |
 | Indent decrease | `Shift + Tab` | `Shift + Tab` |
-| Comment | `Ctrl + K`, `Ctrl + C` | `Cmd + K`,`Cmd + C` |
-| Uncomment | `Ctrl + K`, `Ctrl + U` | `Cmd + K`, `Cmd + U` |
 | Move cursor up | `↑` | `↑` |
 | Move cursor down | `↓` | `↓` |
 | Select All | `Ctrl + A` | `Cmd + A` |

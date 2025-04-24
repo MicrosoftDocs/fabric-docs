@@ -1,8 +1,8 @@
 ---
 title: Find content from Microsoft Fabric Home
 description: Open reports, workloads, and workspaces from the Microsoft Fabric Home. Learn how to change your layout and feature your important content.
-author: kfollis
-ms.author: kfollis
+author: julcsc
+ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom:
 ms.date: 01/14/2025
@@ -10,8 +10,6 @@ ms.date: 01/14/2025
 ---
 
 # Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
-
-[!INCLUDE [new user recruitment](../includes/fabric-new-user-research.md)]
 
 This article gives a high level view of navigating to your items and actions from [!INCLUDE [product-name](../includes/product-name.md)] Home. 
 

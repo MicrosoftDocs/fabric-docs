@@ -41,7 +41,7 @@ items:
       - name: Protected sensitivity labels
         href: protected-sensitivity-labels.md
       - name: Default label policy
-        href: service-security-sensitivity-label-default-label-policy.md
+        href: sensitivity-label-default-label-policy.md
       - name: Domain-level default sensitivity labels
         href: domain-default-sensitivity-label.md
       - name: Mandatory label policy

@@ -5,7 +5,7 @@ ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
 ms.date: 06/12/2024
-ms.search.for: Manage libraries in Environment
+ms.search.form: Manage libraries in Environment
 ---
 
 # Library management in Fabric environments

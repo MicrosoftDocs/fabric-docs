@@ -75,9 +75,13 @@ Data Sharing allows Fabric users to share data across different Fabric tenants w
 
 ### Database mirroring
 
-Mirroring provides a modern way of accessing and ingesting data continuously and seamlessly from external databases or data warehouse into the data warehousing experience in Microsoft Fabric. Mirroring is all in near real-time giving users immediate access to changes in the source. Learn more about [mirroring and the supported databases](../../database/mirrored-database/overview.md).
+Mirroring in Fabric provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing data into OneLake with the rest of your data in Microsoft Fabric. You can continuously replicate your existing data directly into Fabric's OneLake. In Fabric, you can unlock powerful Business Intelligence, Artificial Intelligence, Data Engineering, Data Science, and data sharing scenarios. 
+- Learn more about [mirroring and the supported databases](../../database/mirrored-database/overview.md).
 
 :::image type="content" source="media/partner-integration/database-mirroring.png" alt-text="Diagram showing database mirroring in Fabric." lightbox="media/partner-integration/database-mirroring.png":::
+
+Open mirroring enables **any application** to write change data directly into a mirrored database in Fabric. Open mirroring is designed to be extensible, customizable, and open. It's a powerful feature that extends mirroring in Fabric based on open Delta Lake table format. Once the data lands in OneLake in Fabric, open mirroring simplifies the handling of complex data changes, ensuring that all mirrored data is continuously up-to-date and ready for analysis. 
+- Learn more about [open mirroring and when to use it.](../../database/mirrored-database/open-mirroring.md)
 
 ## Develop on Fabric
 
@@ -101,9 +105,38 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 
 **Build a Fabric workload** model is designed to empower ISVs to create custom experiences on the Fabric platform. It provides ISVs with the necessary tools and capabilities to align their offerings with the Fabric ecosystem, optimizing the combination of their unique value propositions with Fabric's extensive capabilities.
 
-The **Microsoft Fabric Workload Development Kit** offers a comprehensive toolkit for developers to integrate applications into the Microsoft Fabric hub. This integration allows for the addition of new capabilities directly within the Fabric workspace, enhancing the analytics journey for users. It provides developers and ISVs with a new avenue to reach customers, delivering both familiar and new experiences, and leveraging existing data applications. Fabric admins gain the ability to manage access to the workload hub, enabling it for the entire tenant or assigning it with specific scope to control access within the organization.
+The [**Microsoft Fabric Workload Development Kit**](../../workload-development-kit/development-kit-overview.md) offers a comprehensive toolkit for developers to integrate applications into the Microsoft Fabric hub. This integration allows for the addition of new capabilities directly within the Fabric workspace, enhancing the analytics journey for users. It provides developers and ISVs with a new avenue to reach customers, delivering both familiar and new experiences, and leveraging existing data applications. Fabric admins have the ability to manage who can add workloads in an organization.
 
-## Related content
+### Workload Hub
 
-- [Learn more about Microsoft Fabric Workload Development Kit](https://aka.ms/FabricWorkloaddevelopmentkitblog)
-- [Get started with building your first workload](../../workload-development-kit/development-kit-overview.md)
+The [Workload Hub](https://app.fabric.microsoft.com/workloadhub) in Microsoft Fabric serves as a centralized interface where users can explore, manage, and access all available workloads. Each workload in Fabric is associated with a specific item type that can be created within Fabric workspaces. By navigating through the Workload Hub, users can easily discover and interact with various workloads, enhancing their analytical and operational capabilities.
+
+:::image type="content" source="media/partner-integration/workload-hub-overview.png" alt-text="Diagram showing fabric workload hub" lightbox="media/partner-integration/workload-hub-overview.png":::
+
+Users can leverage partner workloads listed under the **More Workloads** tab and use it within their analytical projects. Fabric administrators have the rights to [manage workload](../../workload-development-kit/more-workloads-add.md) availability, making them accessible across the entire tenant or within specific capacities. This extensibility ensures that Fabric remains a flexible and scalable platform, allowing organizations to tailor their workload environment to meet evolving data and business requirements. By integrating seamlessly with Fabric’s security and governance framework, the Workload Hub simplifies workload deployment and management.
+
+:::image type="content" source="media/partner-integration/isv-workloads.png" alt-text="Diagram showing partner workloads." lightbox="media/partner-integration/isv-workloads.png":::
+
+Currently, the Workload Hub offers five workloads in Public Preview, enabling organizations to enhance and extend Fabric’s capabilities. Every workload comes with a trial experience for users to quickly get started. These available workloads include:
+
+- **[2TEST](https://app.fabric.microsoft.com/workloadhub/detail/2bit.2TEST.Product?experience=fabric-developer)**: A comprehensive quality assurance workload that automates testing and data quality checks.
+
+    :::image type="content" source="media/partner-integration/2test-workload.png" alt-text="Screenshot showing 2test's workload." lightbox="media/partner-integration/2test-workload.png":::
+
+- **[Osmos AI Data Wrangler](https://app.fabric.microsoft.com/workloadhub/detail/Osmos.Osmos.Product?experience=fabric-developer)**: Automates data preparation with AI-powered data wranglers, making data transformation effortless.
+
+    :::image type="content" source="media/partner-integration/osmos-workload.png" alt-text="Screenshot showing osmos's workload." lightbox="media/partner-integration/osmos-workload.png":::
+
+- **[Power Designer](https://app.fabric.microsoft.com/workloadhub/detail/tips.tools.Product?experience=fabric-developer)**: A tool for company-wide styling and report template creation, improving Power BI report designs.
+
+    :::image type="content" source="media/partner-integration/pbitips-workload.png" alt-text="Screenshot showing pbitips's workload." lightbox="media/partner-integration/pbitips-workload.png":::
+
+- **[Quantexa Unify](https://app.fabric.microsoft.com/workloadhub/detail/Quantexa.Unify.Product?experience=fabric-developer)**: Enhances Microsoft OneLake data sources by providing a 360-degree view with advanced data resolution capabilities.
+
+    :::image type="content" source="media/partner-integration/quantexa-workload.png" alt-text="Screenshot showing quantexa's workload." lightbox="media/partner-integration/quantexa-workload.png":::
+
+- **[Teradata AI Unlimited](https://app.fabric.microsoft.com/workloadhub/detail/Teradata.AIUnlimited.AIUnlimited?experience=fabric-developer)**: Combines Teradata's analytic engine with Microsoft Fabric's data management capabilities through Teradata's in-database functions.
+
+    :::image type="content" source="media/partner-integration/teradata-workload.png" alt-text="Screenshot showing teradata's workload." lightbox="media/partner-integration/teradata-workload.png":::
+
+As more workloads become available, the Workload Hub will continue to serve as a dynamic space for discovering new capabilities, ensuring that users have the tools they need to scale and optimize their data-driven solutions.

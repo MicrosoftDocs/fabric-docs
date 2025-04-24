@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/01/2024
 ms.topic: how-to
-ms.custom:
+ms.search.form: Ingesting data into SQL database
 ---
 # Create a table in SQL database in Fabric
 

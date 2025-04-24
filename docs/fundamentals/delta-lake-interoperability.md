@@ -6,7 +6,7 @@ ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
 ms.custom:
-ms.date: 11/15/2023
+ms.date: 2/20/2025
 ms.search.form: delta lake interoperability
 ---
 
@@ -44,18 +44,24 @@ Eventstreams|No|No|No|No|Yes|N/A (not applicable)|No|No|Reader: 1<br/>Writer: 2|
 
 > [!NOTE]
 >
-> * Fabric doesn't write name-based column mappings by default. The default Fabric experience generates tables that are compatible across the service. Delta lake, produced by third-party services, may have incompatible table features.
+> * Fabric doesn't write name-based column mappings by default. The default Fabric experience generates tables that are compatible across the service. Delta Lake tables produced by third-party services may have incompatible table features.
 > * Some Fabric experiences do not have inherited table optimization and maintenance capabilities, such as bin-compaction, V-order, and clean up of old unreferenced files. To keep Delta Lake tables optimal for analytics, follow the techniques in [Use table maintenance feature to manage delta tables in Fabric](../data-engineering/lakehouse-table-maintenance.md) for tables ingested using those experiences.
 
 ## Current limitations
 
 Currently, Fabric doesn't support these Delta Lake features:
 
-* Delta Lake 3.x Uniform
+* V2 Checkpoints are not uniformily available in all experiences. Only Spark notebooks and Spark jobs can read and write to tables with V2 Checkpoints. Lakehouse and SQL Analytics do not correctly list tables containing V2 Checkpoint files in the ```__delta_log``` folder.
+* Delta Lake 3.x Uniform. This is supported in the Data Engineering Spark-compute only (Notebooks, Spark Jobs).
 * Identity columns writing (proprietary Databricks feature)
 * Delta Live Tables (proprietary Databricks feature)
-* RLE (Run Length Encoding) enabled on the checkpoint file
+* Delta Lake 4.x features: Type widening, collations, variant type, coordinated commits.
 
+## Special characters on table names
+
+Microsoft Fabric supports special characters as part of the table names. This allows the usage of unicode characters to compose table names in Microsoft Fabric experiences.
+
+The following special characters are either reserved or not compatible with at least one of Microsoft Fabric technologies and should not be used as part of a table name: " (double quotes), ' (single quote), #, %, +, :, ?, ` (backtick).
 
 ## Related content
 

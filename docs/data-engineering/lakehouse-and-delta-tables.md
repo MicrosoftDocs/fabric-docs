@@ -33,9 +33,9 @@ The following table contains the configuration differences between Azure Synapse
 |Apache Spark configuration|Microsoft Fabric value|Azure Synapse Analytics value|Notes|
 |---------|---------|---------|---------|
 |spark.sql.sources.default|delta|parquet|Default table format|
-|spark.sql.parquet.vorder.enabled|true|N/A|V-Order writer|
+|spark.sql.parquet.vorder.default|true|N/A|V-Order writer|
 |spark.sql.parquet.vorder.dictionaryPageSize|2 GB|N/A|Dictionary page size limit for V-Order|
-|spark.microsoft.delta.optimizeWrite.enabled|true|unset (false)|Optimize Write|
+|spark.databricks.delta.optimizeWrite.enabled|true|unset (false)|Optimize Write|
 
 ## Auto discovery of tables
 

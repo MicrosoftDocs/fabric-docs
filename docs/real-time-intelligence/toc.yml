@@ -8,10 +8,13 @@ items:
     href: overview.md
   - name: Compare with Azure solutions
     href: real-time-intelligence-compare.md
-  - name: Git and deployment pipelines
-    href: eventhouse-git-deployment-pipelines.md
+  - name: Git integration and deployment pipelines
+    href: git-deployment-pipelines.md
+    displayName: alm, application lifecycle management, cicd, devops
   - name: Implement medallion architecture
     href: architecture-medallion.md
+  - name: End to end sample
+    href: sample-end-to-end.md
   - name: End to end tutorial
     items:
     - name: End to end tutorial - Introduction
@@ -72,8 +75,12 @@ items:
       items:
       - name: Add and manage an event source
         href: event-streams/add-manage-eventstream-sources.md
+      - name: Azure Data Explorer 
+        href: event-streams/add-source-azure-data-explorer-database.md
       - name: Azure Event Hubs
         href: event-streams/add-source-azure-event-hubs.md
+      - name: Azure Event Grid
+        href: event-streams/add-source-azure-event-grid.md
       - name: Azure Service Bus
         href: event-streams/add-source-azure-service-bus.md
       - name: Azure IoT Hub
@@ -82,6 +89,8 @@ items:
         href: event-streams/add-source-custom-app.md
       - name: Sample data
         href: event-streams/add-source-sample-data.md
+      - name: Real-time weather
+        href: event-streams/add-source-real-time-weather.md       
       - name: Azure SQL Database Change Data Capture
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
       - name: PostgreSQL Database Change Data Capture
@@ -112,6 +121,10 @@ items:
         href: event-streams/add-source-fabric-job.md
       - name: Azure Blob Storage events
         href: event-streams/add-source-azure-blob-storage.md
+      - name: MQTT
+        href: event-streams/add-source-mqtt.md
+      - name: Solace PubSub+
+        href: event-streams/add-source-solace-pub-sub.md
     - name: Add destinations to eventstreams
       items:
       - name: Add and manage a destination
@@ -158,8 +171,14 @@ items:
           href: event-streams/api-update-eventstream-definition.md
     - name: Security
       items:
-      - name: Connect to Azure resources using private endpoints
+      - name: Use managed private endpoints
         href: event-streams/set-up-private-endpoint.md
+      - name: Authenticate an application using Entra ID
+        href: event-streams/custom-endpoint-entra-id-auth.md
+      - name: Authenticate with a managed identity
+        href: event-streams/connect-using-managed-identity.md
+      - name: Connect to streaming sources in private network 
+        href: event-streams/connect-connecots-in-virtual-network-on-premises.md        
     - name: Tutorials
       items:
       - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
@@ -176,8 +195,10 @@ items:
         href: event-streams/build-report-from-iot-hub.md
       - name: Explore and transform bike-sharing data for KQL database integration
         href: event-streams/transform-sample-data-and-route-to-kql.md
-  - name: Get data in a KQL Database
+  - name: Get data in an Eventhouse
     items:
+    - name: Get data overview
+      href: get-data-overview.md
     - name: Data formats
       href: ingestion-supported-formats.md
     - name: Schema optimization best practices
@@ -250,6 +271,8 @@ items:
       href: eventhouse.md
     - name: Create an eventhouse
       href: create-eventhouse.md
+    - name: Deploy an eventhouse using APIs
+      href: eventhouse-deploy-with-fabric-api.md
     - name: Manage and monitor an eventhouse
       href: manage-monitor-eventhouse.md
   - name: KQL Database
@@ -259,15 +282,21 @@ items:
     - name: Access an existing KQL database
       displayName: copy URI, copy query URI, copy ingestion URI
       href: access-database-copy-uri.md
+    - name: Manage and monitor a KQL database    
+      href: manage-monitor-database.md
     - name: Create a database shortcut
       href: database-shortcut.md
     - name: Create an empty table
       href: create-empty-table.md
+    - name: Manage and monitor database tables    
+      href: manage-monitor-table.md  
     - name: Data management
       items:
       - name: Data management overview
         displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin
         href: data-management.md
+      - name: Entity diagram view in KQL database
+        href: database-entity-diagram.md
       - name: Change data policies
         href: data-policies.md
       - name: Create a table update policy
@@ -308,6 +337,8 @@ items:
       href: create-query-set.md
     - name: Query data in a KQL queryset
       href: kusto-query-set.md
+    - name: Share queries
+      href: kusto-share-queries.md
     - name: Access the data profile of a table
       href: data-profile.md
     - name: Customize results in the KQL Queryset results grid
@@ -327,7 +358,7 @@ items:
       href: vector-database.md
     - name: "Tutorial: Use an Eventhouse as a vector database"
       href: vector-database-eventhouse.md
-  - name: Timeseries anomaly detection
+  - name: Time series anomaly detection
     items:
     - name: Univariate anomaly detection and forecasting
       href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
@@ -434,5 +465,15 @@ items:
       href: monitor-logs-ingestion-results.md
     - name: Query logs
       href: monitor-logs-query.md
+- name: Migrate
+  items:
+  - name: From Azure Synapse Data Explorer
+    href: migrate-synapse-data-explorer.md
+  - name: API endpoints
+    items:
+    - name: Validate migration
+      href: migrate-api-validate-synapse-data-explorer.md
+    - name: Migrate to Eventhouse
+      href: migrate-api-to-eventhouse.md
 - name: KQL reference
   href: kusto-tocs/query/toc.yml

@@ -1,7 +1,7 @@
 ---
 title: Known issue - Some SQL query syntax fails in a graph database query
 description: A known issue is posted where some SQL query syntax fails in a graph database query.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/28/2025

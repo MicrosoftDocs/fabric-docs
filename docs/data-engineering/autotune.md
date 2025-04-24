@@ -2,8 +2,8 @@
 title: Configure autotune for Apache Spark
 description: Learn how autotune automatically adjusts Apache Spark configurations, minimizing workload execution time and optimizing performance.
 ms.reviewer: snehagunda
-ms.author: eskot
-author: ekote
+ms.author: sngun
+author: SnehaGunda
 ms.topic: overview
 ms.custom:
 ms.date: 10/20/2023
@@ -12,6 +12,8 @@ ms.date: 10/20/2023
 # What is autotune for Apache Spark configurations in Fabric?
 
 Autotune automatically adjusts Apache Spark configuration to speed up workload execution and to optimize overall performance. Autotune saves time and resources compared to manual tuning which, requires extensive effort, resources, time, and experimentation. Autotune uses historical execution data from your workloads to iteratively discover and apply the most effective configurations for a specific workload.
+
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 > [!NOTE]
 > The autotune query tuning feature in Microsoft Fabric is currently in preview. Autotune is available across all production regions but is disabled by default. You can activate it through the Spark configuration setting within the environment or within a single session by including the respective Spark setting in your Spark notebook or Spark Job Definition code.

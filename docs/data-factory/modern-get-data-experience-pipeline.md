@@ -1,7 +1,7 @@
 ---
 title: The modern get data experience in data pipelines
 description: Learn how to easily connect to your data with the new modern get data experience for data pipelines.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: xupzhou
 author: PennyZhou-MSFT
 ms.topic: how-to

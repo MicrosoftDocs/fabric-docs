@@ -7,11 +7,10 @@ ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
-ms.date: 11/15/2023
+ms.date: 02/10/2025
 ms.search.form:
 ms.collection: ce-skilling-ai-copilot
 ---
-
 
 # Use prebuilt Azure AI Translator in Fabric with REST API and SynapseML (preview)
 
@@ -19,7 +18,7 @@ ms.collection: ce-skilling-ai-copilot
 
 [Azure AI Translator](/azure/ai-services/translator/) is an [Azure AI services](/azure/ai-services/) that enables you to perform language translation and other language-related operations.
 
-This sample demonstrates using prebuilt Azure AI translator in Fabric with RESTful APIs to:
+This sample shows use, with RESTful APIs, of the prebuilt Azure AI translator, in Fabric:
 
 -   Translate text
 -   Transliterate text
@@ -64,7 +63,7 @@ def printresponse(response):
 
 ``` Python
 import synapse.ml.core
-from synapse.ml.cognitive.translate import *
+from synapse.ml.services import *
 from pyspark.sql.functions import col, flatten
 ```
 
@@ -74,9 +73,7 @@ from pyspark.sql.functions import col, flatten
 
 # [Rest API](#tab/rest)
 
-
-
-The core operation of the Translator service is to translate text.
+Text translation is the core operation of the Translator service.
 
 
 ``` python
@@ -114,12 +111,9 @@ printresponse(response)
 
 ```
 
-
-
 # [SynapseML](#tab/synapseml)
 
-
-The core operation of the Translator service is to translate text.
+Text translation is the core operation of the Translator service.
 
 ``` Python
 df = spark.createDataFrame([
@@ -141,12 +135,11 @@ display(result.select("text", "translation"))
 
 ---
 
-## Text Transliterate
+## Text Transliteration
 
 # [Rest API](#tab/rest)
 
-Transliteration is the process of converting a word or phrase from the script (alphabet) of one language to another based on phonetic similarity.
-
+Transliteration converts a word or phrase from the script (alphabet) of one language to another, based on phonetic similarity.
 
 ``` python
 service_url = prebuilt_AI_base_host + "transliterate?api-version=3.0&language=ja&fromScript=Jpan&toScript=Latn"
@@ -179,7 +172,7 @@ printresponse(response)
 
 # [SynapseML](#tab/synapseml)
 
-Transliteration is the process of converting a word or phrase from the script (alphabet) of one language to another based on phonetic similarity.
+Transliteration converts a word or phrase from the script (alphabet) of one language to another, based on phonetic similarity.
 
 ``` Python
 transliterateDf =  spark.createDataFrame([
@@ -205,9 +198,7 @@ display(result.select("text", "script"))
 
 # [Rest API](#tab/rest)
 
-
-Gets a list of languages supported by the operations of Translator.
-
+Returns a list of languages that Translator operations support.
 
 ``` python
 service_url = prebuilt_AI_base_host + "languages?api-version=3.0"

@@ -3,11 +3,8 @@ title: Export and sharing tenant settings
 description: Learn how to configure export and sharing settings in Fabric.
 author: paulinbar
 ms.author: painbar
-ms.reviewer: ''
-
-ms.custom:
 ms.topic: how-to
-ms.date: 11/26/2024
+ms.date: 02/16/2025
 LocalizationGroup: Administration
 ---
 
@@ -289,4 +286,5 @@ Users can deliver reports to OneDrive or SharePoint. If the **Users can set up s
 
 ## Related content
 
-* [About tenant settings](tenant-settings-index.md)
+* [About tenant settings](about-tenant-settings.md)
+* [Tenant settings index](tenant-settings-index.md)

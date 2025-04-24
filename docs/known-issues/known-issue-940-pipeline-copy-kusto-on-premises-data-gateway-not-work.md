@@ -1,10 +1,10 @@
 ---
 title: Known issue - Pipeline copy data to Kusto using an on-premises data gateway doesn't work
 description: A known issue is posted where the pipeline copy data to Kusto using an on-premises data gateway doesn't work.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 11/22/2024
+ms.date: 03/12/2025
 ms.custom: known-issue-940
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-940
 
 You can use an on-premises data gateway for a source in a pipeline. If the pipeline's copy activity uses the on-premises source and a Kusto destination, the pipeline fails with an error.
 
-**Status:** Open
+**Status:** Fixed: March 12, 2025
 
 **Product Experience:** Data Factory
 

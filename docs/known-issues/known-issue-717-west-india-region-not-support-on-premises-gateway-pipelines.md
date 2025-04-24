@@ -1,7 +1,7 @@
 ---
 title: Known issue - West India region doesn't support on-premises data gateway for data pipelines
 description: A known issue is posted where West India region doesn't support on-premises data gateway for pipelines.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 05/23/2024

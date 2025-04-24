@@ -5,12 +5,12 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 01/16/2025
+ms.date: 03/23/2025
 ---
 
 # Understand the metrics app storage page
 
-The Microsoft Fabric Capacity Metrics app's storage page provides capacity storage information.
+The Microsoft Fabric Capacity Metrics app's storage page provides capacity storage information, showing data for the last 30 days.
 
 ## Filters
 
@@ -78,16 +78,10 @@ User can export the report's data by selecting Export Data. Selecting Export Dat
 
 ## Considerations and limitations
 
-* The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're stored in OneLake:
-
-  | Experience          | Fabric item |
-  |---------------------|-------------|
-  | Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)]      | Reflex      |
-  | Lakehouse           | Lakehouse   |
-  | Real-Time Intelligence | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
-
-* [OneLake soft delete](../onelake/onelake-disaster-recovery.md#soft-delete-for-onelake-files) storage is charged at the same rate as regular storage. For more information about OneLake soft delete, see [OneLake Storage](../onelake/onelake-capacity-consumption.md#onelake-storage).
+[OneLake soft delete](../onelake/onelake-disaster-recovery.md#soft-delete-for-onelake-files) storage is charged at the same rate as regular storage. For more information about OneLake soft delete, see [OneLake Storage](../onelake/onelake-capacity-consumption.md#onelake-storage).
 
 ## Related content
 
 - [Understand the metrics app compute page](metrics-app-compute-page.md)
+- [OneLake consumption](/fabric/onelake/onelake-consumption)
+- [OneLake capacity consumption example](/fabric/onelake/onelake-capacity-consumption)

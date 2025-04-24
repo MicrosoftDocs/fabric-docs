@@ -1,5 +1,5 @@
 ---
-title: "Privacy, security, and responsible use of Copilot for Data Factory (preview)"
+title: "Privacy, security, and responsible use of Copilot for Data Factory"
 description: Learn about privacy, security, and responsible use of Copilot for Data Factory in Microsoft Fabric.
 author: snehagunda
 ms.author: sngun
@@ -11,11 +11,11 @@ no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Privacy, security, and responsible use of Copilot for Data Factory (preview)
+# Privacy, security, and responsible use of Copilot in Fabric in the Data Factory workload
 
-In this article, learn how [Copilot for Data Factory overview](copilot-fabric-data-factory.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot (preview)](copilot-privacy-security.md).
+In this article, learn how [Copilot for Data Factory overview](copilot-fabric-data-factory.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For an overview of these topics for Copilot in Fabric, see [Privacy, security, and responsible use for Copilot](copilot-privacy-security.md).
 
-With Copilot for Data Factory in Microsoft Fabric and other generative AI features in preview, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Data Science and the other workloads.
+With Copilot for Data Factory in Microsoft Fabric and other generative AI features, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Data Science and the other workloads.
 
 For considerations and limitations, see [Limitations of Copilot for Data Factory](copilot-fabric-data-factory.md#limitations-of-copilot-for-data-factory).
 

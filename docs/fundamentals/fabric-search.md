@@ -1,11 +1,11 @@
 ---
 title: Search and find your content using global search
 description: Learn how to use the search and filter tools in Fabric to quickly find the content you want.
-author: kfollis
-ms.author: kfollis
-ms.topic: conceptual
+author: julcsc
+ms.author: juliacawthra
+ms.topic: overview
 ms.custom:
-ms.date: 01/15/2025
+ms.date: 03/18/2025
 ---
 
 # Global search
@@ -17,7 +17,9 @@ When you're new to [!INCLUDE [product-name](../includes/product-name.md)], you h
 At the top of Home, the global search box finds items by title, name, or keyword. Sometimes, the fastest way to find an item is to search for it. For example, if a dashboard you didn't use in a while isn't showing up on your Home canvas. Or, if your colleague shared something with you, but you don't remember what it's named or what type of content they shared. Sometimes, you might have so much content that it's easier to search for it rather than scrolling or sorting.
 
 > [!NOTE]
-> Global search is currently unavailable in sovereign clouds. 
+> Global search might not be available in all regions. See [Considerations and limitations](#considerations-and-limitations) for more detail.
+>
+> Global search isn't available in sovereign clouds.
 
 Search is available from Home and also most other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Just look for the search box or search icon. :::image type="icon" source="./media/fabric-search/fabric-search-icon.png":::
 
@@ -50,6 +52,10 @@ Not all columns can be sorted. Hover over the column headings to discover which 
 Another way to locate content quickly is to use the content list **Filter**. Display the filters by selecting **Filter** from the upper right corner. The filters available depend on your location in [!INCLUDE [product-name](../includes/product-name.md)]. This example is from a **Recent** content list. It allows you to filter the list by content **Type**, **Time**, or **Owner**.
 
 :::image type="content" source="./media/fabric-search/power-bi-sort-filters-new.png" alt-text="Screenshot of the filter on a Recent content list.":::
+
+## Considerations and limitations
+
+The Fabric global search uses [Azure AI Search](/azure/search/search-what-is-azure-search), and as a result, it isn't available in regions where Azure AI Search isn't supported. For a list of regions where Azure AI Search is supported, see [Azure AI Search regions list](/azure/search/search-region-support).
 
 ## Related content
 

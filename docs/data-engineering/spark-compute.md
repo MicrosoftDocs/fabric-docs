@@ -26,7 +26,33 @@ Starter pools have Apache Spark clusters that are always on and ready for your r
 
 :::image type="content" source="media/spark-compute/starter-pool.png" alt-text="Diagram showing the high-level design of starter pools.":::
 
-Starter pools also have default settings that let you install libraries quickly without slowing down the session start time. However, if you want to use extra custom Apache Spark properties or libraries from your workspace or capacity settings, Spark takes longer to get the nodes for you. When it comes to billing and capacity consumption, you're charged for the capacity consumption when you start executing your notebook or Apache Spark job definition. You aren't charged for the time the clusters are idle in the pool.
+When you use a Starter Pool **without any extra library dependencies or custom Spark properties**, your session typically starts in **5 to 10 seconds**. This fast startup is possible because the cluster is already running and doesn't require  provisioning time.
+
+However, there are several scenarios where your session might take longer to start:
+
+1. **You have custom libraries or Spark properties**  
+   If you've configured libraries or custom settings in your environment, Spark has to personalize the session once it's created. This process can add around **30 seconds to 5 minutes** to your startup time, depending on the number and size of your library dependencies.
+
+2. **Starter Pools in your region are fully used**  
+   In rare cases, a region's Starter Pools might be temporarily exhausted due to high traffic. When that happens, Fabric spins up a **new cluster** to accommodate your request, which takes about **2 to 5 minutes**. Once the new cluster is available, your session starts. If you also have custom libraries to install, you need to add the additional **30 seconds to 5 minutes** required for personalization.
+
+3. **Advanced networking or security features (Private Links or Managed VNets)**  
+   When your workspace has networking features such as **Tenant Private Links** or **Managed VNets**, Starter Pools aren't supported. In this situation, Fabric must create a cluster on demand, which adds **2 to 5 minutes** to your session start time. If you also have library dependencies, that personalization step can again add another **30 seconds to 5 minutes**.
+
+Here are a few example scenarios to illustrate potential start times:
+
+| Scenario                                           | Typical Startup Time                                     |
+|----------------------------------------------------|----------------------------------------------------------|
+| **Default settings, no libraries**                 | 5 – 10 seconds                                           |
+| **Default settings + library dependencies**        | 5 – 10 seconds + 30 seconds – 5 min (for library setup)           |
+| **High traffic in region, no libraries**           | 2 – 5 minutes                                            |
+| **High traffic + library dependencies**            | 2 – 5 minutes + 30 seconds – 5 min (for libraries)                |
+| **Network security (Private Links/VNet), no libraries**  | 2 – 5 minutes                                            |
+| **Network security + library dependencies**        | 2 – 5 minutes + 30 seconds – 5 min (for libraries)                |
+
+
+
+When it comes to billing and capacity consumption, you're charged for the capacity consumption when you start executing your notebook or Apache Spark job definition. You aren't charged for the time the clusters are idle in the pool.
 
 :::image type="content" source="media/spark-compute/starter-pool-billing-states-high-level.png" alt-text="Diagram showing the high-level stages in billing of starter pools." lightbox="media/spark-compute/starter-pool-billing-states-high-level.png":::
 

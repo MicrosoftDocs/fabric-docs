@@ -88,8 +88,8 @@ For more information about report folders and a complete list of their contents,
 
 Semantic model folders contain the following files:
 
-- definition.pbidataset
-- model.bim file (TMSL format) OR \definition folder (TMDL format)
+- definition.pbism
+- \definition folder with TMDL files
 
 For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project semantic model folder](/power-bi/developer/projects/projects-dataset).
 
@@ -127,10 +127,17 @@ In version 2, instead of having two source files in each item directory, the *.p
 The `.platform` file contains the following attributes:
 
 - `version`: Version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
-- `logicalId`: An automatically generated cross-workspace identifier representing an item and its source control representation.
+- `logicalId`: (string) An automatically generated cross-workspace identifier representing an item and its source control representation.
 - `type`: (string) The item’s type (semantic model, report etc.)
 - `displayName`: (string) The name of the item.
 - `description`: (optional string) Description of the item.
+
+To rename an item, change the `displayName`. Changing the name of the folder doesn’t change the display name of the item in the workspace.
+
+The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it’s essential not to change it in any way.
+
+> [!NOTE]
+> When you commit changes to Git in version 1, the system files are automatically updated to version 2 along with the changes. Also, any new files exported from Power BI Desktop developer mode will be saved in the version 2 file format.
 
 #### [Version 1](#tab/v1)
 

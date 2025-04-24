@@ -23,9 +23,7 @@ In this article, you learn how to query data from the sample gallery in Real-Tim
 ## Get data
 
 1. Select **Workloads** from the left navigation bar and then **Real-Time Intelligence**.
-1. From the Real-Time Intelligence workload, select **+ Connect data source**.
-1. On the **Real-Time Intelligence** homepage, on the Real-Time Intelligence Sample tile, select **Open**.
-    :::image type="content" source="media/sample-gallery/use-sample.png" alt-text="Screenshot of the Real-Time Intelligence homepage showing the different items that can be created in this experience. The Real-Time Intelligence Sample tile highlighted." lightbox="media/sample-gallery/use-sample.png":::
+1. On the **Real-Time Intelligence** homepage, on the *Explore Eventhouse samples* tile, choose **Select**.
 1. From the **Real-Time Intelligence Sample Gallery** window, select a sample scenario tile to load into your workspace. Once you select a tile, the data is loaded as a table in the KQL database, and a KQL queryset with sample queries unique to the semantic model is automatically generated.
 
     :::image type="content" source="media/sample-gallery/sample-gallery-tiles.png" alt-text="Screenshot of the Real-Time Intelligence sample gallery showing sample databases available for ingestion."  lightbox="media/sample-gallery/sample-gallery-tiles.png":::

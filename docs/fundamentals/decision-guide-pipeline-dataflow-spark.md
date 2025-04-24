@@ -1,31 +1,31 @@
 ---
-title:  Fabric decision guide - copy activity, dataflow, or Spark
-description: Review a reference table and some quick scenarios to help in choosing whether to use copy activity, dataflow, or Spark to work with your data in Fabric.
+title:  Fabric decision guide - copy activity, dataflow, Eventstream, or Spark
+description: Review a reference table and some quick scenarios to help in choosing whether to use copy activity, dataflow, Eventstream, or Spark to work with your data in Fabric.
 ms.reviewer: sngun
-ms.author: scbradl
-author: bradleyschacht
+ms.author: chschmidt
+author: christophermschmidt
 ms.topic: quickstart
 ms.custom:
-ms.date: 5/12/2023
+ms.date: 2/20/2025
 ---
 
-# Microsoft Fabric decision guide: copy activity, dataflow, or Spark
+# Microsoft Fabric decision guide: copy activity, dataflow, Eventstream, or Spark
 
-Use this reference guide and the example scenarios to help you in deciding whether you need a copy activity, a dataflow, or Spark for your Microsoft Fabric workloads.
+Use this reference guide and the example scenarios to help you in deciding whether you need a copy activity, a dataflow, an Eventstream, or Spark for your Microsoft Fabric workloads.
 
-## Copy activity, dataflow, and Spark properties
+## Copy activity, dataflow, Eventstream, and Spark properties
 
-| | **Pipeline copy activity** | **Dataflow Gen 2** | **Spark** |
-|---|:---:|:---:|:---:|
-| **Use case** | Data lake and data warehouse migration,<br>data ingestion,<br>lightweight transformation | Data ingestion,<br>data transformation,<br>data wrangling,<br>data profiling | Data ingestion,<br>data transformation,<br>data processing,<br>data profiling |
-| **Primary developer persona** | Data engineer,<br>data integrator | Data engineer,<br>data integrator,<br>business analyst | Data engineer,<br>data scientist,<br>data developer |
-| **Primary developer skill set** | ETL,<br>SQL,<br>JSON | ETL,<br>M,<br>SQL | Spark (Scala, Python, Spark SQL, R) |
-| **Code written** | No code,<br>low code | No code,<br>low code | Code |
-| **Data volume** | Low to high | Low to high | Low to high |
-| **Development interface** | Wizard,<br>canvas | Power query | Notebook,<br>Spark job definition |
-| **Sources** | 30+ connectors | 150+ connectors | Hundreds of Spark libraries |
-| **Destinations** | 18+ connectors | Lakehouse,<br>Azure SQL database,<br>Azure Data explorer,<br>Azure Synapse analytics | Hundreds of Spark libraries |
-| **Transformation complexity** | Low:<br>lightweight - type conversion, column mapping, merge/split files, flatten hierarchy | Low to high:<br>300+ transformation functions | Low to high:<br>support for native Spark and open-source libraries |
+| | **Pipeline copy activity** | **Dataflow Gen 2** | **Eventstream** | **Spark** |
+|---|:---:|:---:|:---:|:---:|
+| **Use case** | Data lake and data warehouse migration,<br>data ingestion,<br>lightweight transformation | Data ingestion,<br>data transformation,<br>data wrangling,<br>data profiling | event data ingestion,<br>event data transformation | Data ingestion,<br>data transformation,<br>data processing,<br>data profiling |
+| **Primary developer persona** | Data engineer,<br>data integrator | Data engineer,<br>data integrator,<br>business analyst | Data engineer,<br>data scientist,<br>data developer | Data integrator,<br>data engineer |
+| **Primary developer skill set** | ETL,<br>SQL,<br>JSON | ETL,<br>M,<br>SQL | SQL, JSON, messaging |Spark (Scala, Python, Spark SQL, R) |
+| **Code written** | No code,<br>low code | No code,<br>low code | No Code, <br>low code | Code |
+| **Data volume** | Low to high | Low to high | Medium to High | Low to high |
+| **Development interface** | Wizard,<br>canvas | Power query | Canvas | Notebook,<br>Spark job definition |
+| **Sources** | 30+ connectors | 150+ connectors | Database supporting CDC (Change Data Capture), Kafka, Messaging Systems that support publish and subscribe pattern, Event streams | Hundreds of Spark libraries |
+| **Destinations** | 18+ connectors | Lakehouse,<br>Azure SQL database,<br>Azure Data explorer,<br>Azure Synapse analytics | Eventhouse, Lakehouse, Activator Alert, Derived Stream, Custom Endpoint | Hundreds of Spark libraries |
+| **Transformation complexity** | Low:<br>lightweight - type conversion, column mapping, merge/split files, flatten hierarchy | Low to high:<br>300+ transformation functions | Low: <br>lightweight | Low to high:<br>support for native Spark and open-source libraries |
 
 Review the following three scenarios for help with choosing how to work with your data in Fabric.
 
@@ -43,6 +43,12 @@ Mary is an experienced Power Query user, and the data volume is in the low to me
 
 ## Scenario3
 
+Prashant, a data integrator with deep expertise in business processes and systems. An upstream team has successfully exposed event data from business applications as messages that can be consumed through downstream systems. Prashant has been assigned to integrate event data from business applications into Microsoft Fabric for real-time decision support.
+
+Given the medium to high data volume and the organization's preference for no-code solutions, Prashant seeks a way to seamlessly forward events as they occur without managing extraction schedules. To meet this need, he chooses **Eventstreams** in Microsoft Fabric. Eventstreams within the Real-Time Intelligence experience enables real-time data ingestion, transformation, and routing to various destinations—all without writing any code.
+
+## Scenario4
+
 Adam is a data engineer working for a large retail company that uses a lakehouse to store and analyze its customer data. As part of his job, Adam is responsible for building and maintaining the data pipelines that extract, transform, and load data into the lakehouse. One of the company's business requirements is to perform customer review analytics to gain insights into their customers' experiences and improve their services.
 
 Adam decides the best option is to use **Spark** to build the extract and transformation logic. Spark provides a distributed computing platform that can process large amounts of data in parallel. He writes a Spark application using Python or Scala, which reads structured, semi-structured, and unstructured data from OneLake for customer reviews and feedback. The application cleanses, transforms, and writes data to Delta tables in the lakehouse. The data is then ready to be used for downstream analytics.
@@ -52,3 +58,4 @@ Adam decides the best option is to use **Spark** to build the extract and transf
 - [How to copy data using copy activity](../data-factory/copy-data-activity.md)
 - [Quickstart: Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md)
 - [How to create an Apache Spark job definition in Fabric](../data-engineering/create-spark-job-definition.md)
+- [How to create an Eventstream in Fabric](../real-time-intelligence/event-streams/create-manage-an-eventstream.md)
