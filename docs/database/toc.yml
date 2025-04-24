@@ -99,7 +99,9 @@ items:
     - name: Mirroring to OneLake Overview
       displayName: Mirroring to OneLake
       href: sql/mirroring-overview.md
-    - name: Limitations
+    - name: SQL analytics endpoint
+      href: sql/sql-analytics-endpoint.md
+    - name: Mirroring limitations
       displayName: Limitations of Mirroring SQL database to OneLake
       href: sql/mirroring-limitations.md
     - name: Monitor
