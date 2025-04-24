@@ -46,7 +46,7 @@
             "redirect_document_id": false
         },
         {
-            "source_path_from_root": "fabric-command-line-interface.md",
+            "source_path_from_root": "/docs/admin/fabric-command-line-interface.md",
             "redirect_url": "/fabric/admin/fabric-command-line-interface",
             "redirect_document_id": false
         }                                
