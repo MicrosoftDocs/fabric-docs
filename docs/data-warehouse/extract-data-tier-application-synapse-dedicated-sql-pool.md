@@ -96,7 +96,7 @@ Right-click the Dedicated SQL Pool and select **"Extract Data-tier Application..
 3. Select **"Extract Data-tier Application..."**
 
 
-:::image type="content" source="media/migrate-with-migration-assistant/right-click-menu-options.png" alt-text="Right-click menu showing "Extract Data-tier Application...":::
+:::image type="content" source="media/migrate-with-migration-assistant/right-click-menu-options.png" alt-text="Right-click menu showing Extract Data-tier Application.":::
 
 ---
 
