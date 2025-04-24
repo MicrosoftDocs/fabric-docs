@@ -1,19 +1,19 @@
 ---
-title: Submit Spark session jobs using the Livy API
-description: Learn how to submit Spark session jobs using the Livy API.
+title: Submit Spark session jobs using the Livy API with a SPN
+description: Learn how to submit Spark session jobs using the Livy API with a SPN.
 ms.reviewer: sngun
 ms.author: guyhay
 author: GuyHay
 ms.topic: how-to
 ms.search.form: Get started with Session jobs with the Livy API for Data Engineering
-ms.date: 03/14/2025
+ms.date: 04/22/2025
 ---
 
-# Use the Livy API to submit and execute session jobs
+# Use the Livy API to submit and execute session jobs with a SPN
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Learn how to submit Spark session jobs using the Livy API for Fabric Data Engineering.
+Learn how to submit Spark session jobs using the Livy API for Fabric Data Engineering using a Service Principal (SPN).
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 

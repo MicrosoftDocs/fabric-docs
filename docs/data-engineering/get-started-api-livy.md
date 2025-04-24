@@ -1,15 +1,15 @@
 ---
-title: Create and run Spark jobs using the Livy API
-description: Learn how to submit and run Spark jobs in Fabric using the Livy API.
+title: Create and run Spark Session jobs using the Livy API
+description: Learn how to submit and run Spark session jobs in Fabric using the Livy API.
 ms.reviewer: sngun
 ms.author: guyhay
 author: GuyHay
 ms.topic: conceptual
 ms.search.form: Get started with the Livy API for Data Engineering
-ms.date: 03/14/2025
+ms.date: 04/22/2025
 ---
 
-# Use the Livy API to submit and execute Spark jobs
+# Use the Livy API to submit and execute Spark session jobs with user credentials
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
@@ -25,13 +25,15 @@ Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; a
 
 * A remote client such as Visual Studio Code with Jupyter notebook support, PySpark, and [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/)
 
-* A Microsoft Entra app token is required to access the Fabric Rest API. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app)
+* Either a Microsoft Entra app token is required to access the Fabric Rest API. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app) or
+
+* A Microsoft Entra SPN token is required to access the Fabric Rest API. [Add and manage application credentials in Microsoft Entra ID](entra/identity-platform/how-to-add-credentials?tabs=client-secret)
 
 ## Choosing a REST API client
 
 You can use various programming languages or GUI clients to interact with REST API endpoints. In this article, we use [Visual Studio Code](https://code.visualstudio.com/). Visual Studio Code needs to be configured with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/)
 
-## How to authorize the Livy API requests
+## How to authorize the Livy API requests with a EntraID app Token
 
 To work with Fabric APIs including the Livy API, you first need to create a Microsoft Entra application and obtain a token. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
 
@@ -72,6 +74,24 @@ When you register your application, you will need both the Application (client) 
 :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center.":::
 
 The authenticated user calling the Livy API needs to be a workspace member where both the API and data source items are located with a Contributor role. For more information, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
+
+## How to authorize the Livy API requests with a EntraID SPN Token
+
+To work with Fabric APIs including the Livy API, you first need to create a Microsoft Entra application and create a secret and use that secret in your code. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Add and manage application credentials in Microsoft Entra ID](entra/identity-platform/how-to-add-credentials?tabs=client-secret)
+
+Once you've created the app registration, create a client secret.
+
+:::image type="content" source="media/livy-api/Entra-SPN-add-client-secret.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media/livy-api/Entra-SPN-add-client-secret.png":::
+
+1. As you create the client secret, make sure to copy the value.  You'll need this later in the code, and the secret can't be seen again.  You'll also need the Application (client) ID and the Directory (tenant ID) in addition to the secret in your code.
+
+1. Next we need to add the client secret to our workspace
+
+:::image type="content" source="media\livy-api\Livy-manage-access-SPN.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media\livy-api\Livy-manage-access-SPN.png":::
+
+1. And add people of groups to add the newly created SPN.
+
+:::image type="content" source="media\livy-api\Entra-SPN-add-client-secret.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media\livy-api\Entra-SPN-add-client-secret.png":::
 
 ## How to discover the Fabric Livy API endpoint
 
