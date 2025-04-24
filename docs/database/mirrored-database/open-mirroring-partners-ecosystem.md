@@ -60,7 +60,7 @@ For more information on SNP Glue, see the [SNP Glue documentation](https://aka.m
 
 The ASAPIO Integration Add-on is an SAP-certified solution that connects SAP systems directly to Microsoft Fabric. It supports open mirroring to enable change data capture to Microsoft Fabric and comes with a data catalog of predefined data products for real-time and scheduled data replication.
 
-For more information, see ASAPIO Integration Add-on, Fabric Connector.
+For more information, see [ASAPIO Integration Add-on, Fabric Connector](https://aka.ms/mirroring/asapio-mirroring-overview).
 
 ## Theobald
 
