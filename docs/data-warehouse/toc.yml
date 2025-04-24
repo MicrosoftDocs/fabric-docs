@@ -395,6 +395,8 @@ items:
     href: migration-synapse-dedicated-sql-pool-warehouse.md
   - name: Methods for migration from Azure Synapse Analytics
     href: migration-synapse-dedicated-sql-pool-methods.md
+  - name: Extract Data tier application from Azure Synapse Analytics Dedicated SQL pool
+    href: extract-data-tier-application-synapse-dedicated-sql-pool.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse
