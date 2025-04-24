@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - build-2024
-ms.date: 01/24/2025
+ms.date: 04/24/2025
 ---
 
 # The Fabric throttling policy
@@ -24,13 +24,15 @@ Fabric is designed to deliver fast performance to its customers by allowing oper
 To ensure fast performance, Fabric uses _bursting_ to let operations run as fast as they can. This ensures users get results quickly without waiting. Bursting allows users can temporarily use more compute than the provisioned compute. It means that a smaller capacity can run larger jobs that would normally require a more expensive capacity. 
 
 ### Smoothing
-To avoid penalizing users when operations benefit from bursting, Fabric _smooths_ or averages the CU usage of an operation over a longer timeframe. This behavior ensures users can enjoy consistently fast performance without experiencing throttling. The usage is distributed over future _timepoints_ that are automatically managed by the capacity.
+To avoid penalizing users when operations benefit from bursting, Fabric _smooths_ or averages the CU usage of an operation over a longer timeframe. This behavior ensures users can enjoy consistently fast performance without experiencing throttling. 
 
-Microsoft Fabric divides operations into two types, *interactive* and *background*. You can find descriptions of these and the distinctions between them in [Fabric operations](fabric-operations.md).
+Smoothing distributes consumed CU usage over future _timepoints_ that are automatically managed by the capacity. Timepoints in Fabric are 30 seconds long. There are 2880 timepoints in a 24-hours.
 
-Interactive operations are smoothed over a minimum of five minutes, and up to 64 minutes depending on how much CU usage they consume. Background operations are smoothed over a 24-hour period because they typically have long runtimes and large CU consumption.
+An operation's utilization type determines the number of timepoints used for smoothing. Learn about [Fabric operations](fabric-operations.md).
+- Interactive operations are smoothed over a minimum of five minutes, and up to 64 minutes depending on how much CU usage they consume.
+- Background operations are smoothed over a 24-hour period because they typically have long runtimes and large CU consumption.
 
-Smoothed usage accumulates as job runs and is paid for by _future capacity_, which is the CU that is available in future timepoints because the capacity is running continuously. 
+Due to smoothing, only a portion of the CU usage for an operation applies to any individual timepoint, which reduces throttling overall. Smoothed CU usage accumulates as operations run and is paid for by _future capacity_, which is the CU that is available in future timepoints because the capacity is running continuously. 
 
 Bursting and smoothing work together to make it easier for capacity users to do their work. For example, data scientists and database administrators typically spend time scheduling jobs and spreading them out across the day. With smoothing, the compute cost for background jobs is smoothed over 24-hours. This means scheduled jobs can all run simultaneously without causing any spikes that would otherwise block jobs from starting. At the same time, users can enjoy consistently fast performance without waiting for slow jobs to complete or wasting time managing job schedules.
 
@@ -54,24 +56,44 @@ The table summarizes the throttling triggers and stages.
 | 60 minutes < Usage <= 24 hours	 | Interactive Rejection	 | User-requested interactive jobs are rejected. | 
 | Usage > 24 hours	 | Background Rejection	 | All requests are rejected. | 
 
+### Example of smoothing and throttling limits
+Here's an illustrative example for how smoothing works for one background operation that consumed 1 CUHr (it's usage was 1 CU for 1 hour).
+Background operations are smoothed over 24-hours. A background operation's contribution on any timepoint is # CUHrs for the operation / # of CUHrs at the SKU level. 
+For an F2, this job would contribute 1 CUHr / 48CUhrs = ~2.1% to each timepoint. The impact on the 10-minute and 60-minute throttling limits will be ~2.1%.
+
+Here's the detail supporting the example:
+
+1 CUHr = 3600 CUs (1 CU * 60 minutes per hour * 60 seconds per minute)
+
+Each time point is 30-seconds long. In 24 hours, there are 2880 timepoints (24 hours * 60 minutes * 2 timepoints per minute).
+
+Since the 3600 CUs are smoothed over 24 hours, the job contributes 3600CUs/2880 timepoints to each 30-second timepoint. So it contributes 1.25 CUs per timepoint.
+
+The 10-minute throttling percentage is based on the total CUs available in the next 10-minutes of capacity uptime.
+
+A F2 capacity has 2 CU for each second (or 2 CUs). In each timepoint, an F2 has 2 CUs * 30 seconds = 60 CUs of compute.
+
+The contribution of the background job to any individual timepoint is 1.25 CUs/60 CUs = ~2.1% of an individual timepoint.
+
+In 10-minutes, the F2 has 2 CU * 60 seconds * 10 minutes = 1,200 CUs of compute.
+
+The portion of the background job that was smoothed into the next 10-minutes of capacity is 1.25 CUs * 2 timepoints per minute * 10 minutes = 25 CUs.
+
+So, the 10-minute throttling percentage is 25 CUs / 1,200 CUs = ~2.1%. 
+
+Similarly, the  60-minute throttling percentage impact of the background job is also ~2.1%.
+
+Even though the background operation consumed more CUs than is available in the next 10-minute time span (it consumed 6 times the amount), the F2 capacity is not throttled because the total CUs are smoothed over 24-hours. This means that only a small portion of the consumed CUs apply to any individual timepoint. 
 
 ## Overages, carryforward, and burndown
 
-When operations use more capacity than the SKU supports in a single timepoint, an _overage_ is computed. 
+When operations use more capacity than the SKU supports in a single timepoint, an _overage_ is computed. Overages are computed after smoothing is applied. If there are overages that exceed the allowed 10-minute throttling window, then they become _carryforward_ CUs. 
 
-Let's look at a fictional example that's simplified to explain the core concepts. Each reported timepoint in Fabric is 30 seconds long. 
+The policy not to throttle until the 10-minute throttling window is full is called _overage protection_. It is designed to reduce the frequency of interactive delays due to temporary spikes in utilization.
 
-To start, let's consider an example with no smoothing. If your SKU allows 64 CU, and a background job used 144 CU in a single timepoint, there's an 80 CU _overage_. 
+The _carryforward_ CUs are applied to each subsequent timepoint. If a timepoint isn't full, then the unused CUs reduce the _carryforward_ CUs amount. The reduction is referred to as _burndown_.
 
-Fabric capacities smooth background jobs over 24 hours. For the sake of this example, let's assume each timepoint is 10 minutes long which means there are 144 timepoints in 24 hours. The 144 CU background job gets smoothed uniformly across the timepoints resulting in each timepoint having one CU. 
-
-Without smoothing, there was an overage, but with smoothing there isn't one. In fact, with smoothing the capacity could run 64 of these 144 CU background jobs before throttling occurred. 
-
-In practice, capacities usually have a mix of interactive and background jobs running at any time. The smoothing of these jobs fills the timepoints progressively. Coming back to our example, let's assume a 60 CU interactive job ran and was smoothed over one hour. Then, each of the six 10 minute timepoints in the next hour would get 10 CU. They'd each have a total of 11 CU in them because they each already had one CU from the background job. 
-
-Now after more background and interactive jobs run and are smoothed, our next 10 minutes long timepoint will become full when it has 64 CU in it already. The throttling stages start to apply but operations are still allowed to run. The CU reported by the running operations is smoothed over future timepoints. When a time point is already full, the excess CU becomes an _overage_ and is applied to the next timepoint as _carryforward_. 
-
-The _carryforward_ is applied to each future timepoint as it occurs. If a timepoint isn't full, then the unused capacity reduces the _carryforward_ amount. Let's say there's 84 CU of carryforward. Then if a timepoint only has 20 CU in it and the SKU size is 64 CU, then there's 44 CU of unused capacity in the timepoint. The carryforward would be reduced to 40 CU. The process continues until all of the carryforward is paid off by unused capacity in future timepoints. This process is referred to as _burndown_. 
+Throttling enforcement continues until all carryforward CUs are paid off by unused capacity. 
 
 ## Monitoring capacities for throttling
 Capacity admins can set up email alerts to be notified when a capacity consumes 100% of its provisioned CU resources. Admins can also use the capacity metrics app to review the throttling levels for their capacity.
