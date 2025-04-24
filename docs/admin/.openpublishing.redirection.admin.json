@@ -47,7 +47,7 @@
         },
         {
             "source_path_from_root": "/docs/admin/fabric-command-line-interface.md",
-            "redirect_url": "/fabric/admin/fabric-command-line-interface",
+            "redirect_url": "https://learn.microsoft.com/fabric/admin/fabric-command-line-interface",
             "redirect_document_id": false
         }                                
     ]
