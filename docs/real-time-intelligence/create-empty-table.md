@@ -27,21 +27,67 @@ You can create an empty table without a data source to use as a testing environm
 
     :::image type="content" source="media/empty-table/new-table.png" alt-text="Screenshot of lower ribbon that shows the dropdown menu of the New button in Real-Time Intelligence. The dropdown option titled Table is highlighted.":::
 
-1. Enter a name for your table.
-
-    :::image type="content" source="media/empty-table/table-name.png" alt-text="Screenshot of the Destination tab in the new table wizard in Real-Time Intelligence. The table name is highlighted.":::
+1. Enter a name and description for your table.
 
     > [!NOTE]
     > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
+    > There are no known [dependencies](#dependencies) until a table with references is created.
 
-1. Select **Next: Source**.
+     :::image type="content" source="media/empty-table/table-name.png" alt-text="Screenshot of the new table wizard in Real-Time Intelligence. The table name is highlighted.":::
 
-### Source
+1. Enter a column name. The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
 
-1. By default, the **Source type** is set to **None**. If you select **None**, you can manually define the table schema.
-1. Select **Next: Schema**.
+1. Select a data type for your column. The default column type is `string` but can be altered in the dropdown menu of the **Column type** field.
 
-:::image type="content" source="media/empty-table/table-source.png" alt-text="Screenshot of the Source tab that shows that the source type is set to None in the new table wizard in Real-Time Intelligence.":::
+1. You can manage the columns of the new table in this window. The options are:
+
+    * Select **Add column** to add more columns.
+    * Select the delete icon to delete a column.
+    * Toggle betwen the [Command viewer](#command-viewer) and the Add column view.
+
+    :::image type="content" source="media/empty-table/table-columns.png" alt-text="Screenshot of the new empty table wizard in Real-Time Intelligence. The Add column, delete, and command viewer options are highlighted.":::
+
+1. Select **Create**.
+
+1. In the success message you see you can **Close** the wizard and return to the event house and [Edit the table schema](#edit-the-table-schema) later, or you can select **Get Data** to start the ingestion process. For more information, see [Get data overview](get-data-overview.md).
+
+    :::image type="content" source="media/empty-table/table-success.png" alt-text="Screenshot of the success meassage.":::
+
+### Edit the table schema
+
+You can manually define or edit the table schema a table. Editing the schema does not change any data that is in the table. When editing the schema you can:
+
+* edit the table descrption
+* edit column names
+* add columns and define their type
+* remove columns
+
+> [!NOTE]
+> Table schema edit is not supported when there is an active OneLake connection.
+> You can't edit a column's type, as this would lead to data loss.
+> You many need to manually update [dependencies](#dependencies).
+
+
+
+
+
+1. Browse to your desired KQL database, and in the Explorer pane, expand Tables. A list of tables in your database is displayed.
+
+1. Select a table from the list, and open the More menu* [...]
+
+
+
+1. Enter a column name. The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
+1. Select a data type for your column. The default column type is `string` but can be altered in the dropdown menu of the **Column type** field.
+1. Select **Add column** to add more columns.
+
+### Dependencies
+
+Related mappings
+
+Editing the schema does not update the mapping of incoming data to table columns during ingestion. After adding columns, ensure you update the [mapping](kusto/management/mappings?view=microsoft-fabric&preserve-view=true) so data is ingested correctly.
+
+Related materialized views
 
 ### Schema
 
