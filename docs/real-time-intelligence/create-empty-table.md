@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 04/24/2025
 ms.search.form: Create a table
 ---
 # Create an empty table
