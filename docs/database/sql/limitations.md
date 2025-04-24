@@ -4,7 +4,7 @@ description: A detailed list of limitations for SQL database in Microsoft Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur
-ms.date: 02/24/2025
+ms.date: 04/24/2025
 ms.topic: conceptual
 ms.search.form: SQL database Overview
 ---
@@ -24,7 +24,7 @@ This article applies to SQL database in Fabric only. For the warehouse and SQL a
 - SQL Audit is not currently supported in SQL database in Fabric.
 - Transparent Data Encryption (TDE) is not supported. SQL database in Fabric uses storage encryption with service-managed keys to protect all customer data at rest. Customer-managed keys are not supported.
 - In a [trial capacity](../../fundamentals/fabric-trial.md), you are limited to three databases. There is no limit on databases in other capacities.
-- Each database in the workspace must have a unique name. Once a database is deleted, it cannot be recreated with the same name.
+- Each database in the workspace must have a unique name. If a database is deleted, another cannot be re-created with the same name.
 
 ## Table level  
 
