@@ -30,7 +30,7 @@ landingContent:
             url: git-integration/intro-to-git-integration.md 
           - text: What is deployment pipelines?
             url: deployment-pipelines/intro-to-deployment-pipelines.md  
-          - text: What is a Variable Library?
+          - text: What is a Variable library?
             url: variable-library/variable-library-overview.md
                           
   # Card 
@@ -42,7 +42,7 @@ landingContent:
             url: git-integration/git-get-started.md
           - text: Get started with deployment pipelines
             url: deployment-pipelines/get-started-with-deployment-pipelines.md
-          - text: Get started with Variable Libraries
+          - text: Get started with Variable libraries
             url: variable-library/get-started-variable-libraries.md            
       - linkListType: concept
         links:
