@@ -55,7 +55,7 @@ You can also use the global search to search by tags and see all the relevant re
 
 ## Microsoft Fabric REST Admin APIs for tags
 
-Some of the actions related to creating and managing tags in the UI are available through the Fabric REST Admin APIs for tags. For more information, see [Fabric REST Admin APIs for tags](https://learn.microsoft.com/rest/api/fabric/admin/tags).
+Some of the actions related to creating and managing tags in the UI are available through the Fabric REST Admin APIs for tags. For more information, see [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags).
 
 ## Considerations and limitations
 
@@ -69,4 +69,4 @@ Some of the actions related to creating and managing tags in the UI are availabl
 
 - [Create and manage a set of tags](tags-define.md)
 - [Apply tags](tags-apply.md)
-- [Microsoft Fabric REST Admin APIs for tags](https://learn.microsoft.com/rest/api/fabric/admin/tags)
+- [Microsoft Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags)
