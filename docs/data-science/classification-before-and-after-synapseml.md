@@ -12,17 +12,17 @@ ms.date: 04/07/2025
 
 # Classification tasks using SynapseML
 
-This article shows how to perform the same classification task with two methods. One uses plain **`pyspark`**, and one uses the **`synapseml`** library. Although the methods yield the same performance, they highlight the simplicity of `synapseml` compared to `pyspark`.
+This article shows how to perform a specific classification task with two methods. One method uses plain **`pyspark`**, and one method uses the **`synapseml`** library. Although the methods yield the same performance, they highlight the simplicity of `synapseml` as compared to `pyspark`.
 
-The task predicts whether a specific customer review of book sold on Amazon is good (rating > 3) or bad, based on the review text. To build the task, you train LogisticRegression learners with different hyperparameters, and then choose the best model.
+The task described in this article predicts whether or not a specific customer review of book sold on Amazon is good (rating > 3) or bad, based on the review text. To build the task, you train **LogisticRegression** learners with different hyperparameters, and then choose the best model.
 
 ## Prerequisites
 
-Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+Attach your notebook to a lakehouse. On the left side, you can select **Add** to add an existing lakehouse, or you can create a new lakehouse.
 
 ## Setup
 
-Import the necessary Python libraries and get a spark session.
+Import the necessary Python libraries, and get a Spark session:
 
 ```python
 from pyspark.sql import SparkSession
@@ -33,7 +33,7 @@ spark = SparkSession.builder.getOrCreate()
 
 ## Read the data
 
-Download and read in the data.
+Download, and read in the data:
 
 ```python
 rawData = spark.read.parquet(
@@ -44,7 +44,7 @@ rawData.show(5)
 
 ## Extract features and process data
 
-Real data has more complexity compared to the dataset we downloaded earlier. A dataset often has features of multiple types - for example, text, numeric, and categorical. To show the difficulties of working with these datasets, add two numerical features to the dataset: the **word count** of the review and the **mean word length**:
+Real data has more complexity, compared to the dataset we downloaded earlier. A dataset often has features of multiple types - for example, text, numeric, and categorical. To show the difficulties of working with these datasets, add two numerical features to the dataset: the **word count** of the review and the **mean word length**:
 
 ```python
 from pyspark.sql.functions import udf
@@ -104,7 +104,7 @@ To choose the best LogisticRegression classifier using the `pyspark` library, yo
    - Hash the tokenized column into a vector using hashing
    - Merge the numeric features with the vector
 1. To process the label column, cast that column into the proper type
-1. Train multiple LogisticRegression algorithms on the `train` dataset with different hyperparameters
+1. Train multiple LogisticRegression algorithms on the `train` dataset, with different hyperparameters
 1. Compute the area under the ROC curve for each of the trained models, and select the model with the highest metric as computed on the `test` dataset
 1. Evaluate the best model on the `validation` set
 
@@ -169,9 +169,9 @@ print(evaluator.evaluate(scoredVal))
 
 The `synapseml` option involves simpler steps:
 
-1. The **`TrainClassifier`** Estimator featurizes the data internally, as long as the columns selected in the `train`, `test`, `validation` dataset represent the features
+1. The **`TrainClassifier`** Estimator internally featurizes the data, as long as the columns selected in the `train`, `test`, `validation` dataset represent the features
 
-1. The **`FindBestModel`** Estimator finds the best model from a pool of trained models; to do this, it finds the model that performs best on the `test` dataset given the specified metric
+1. The **`FindBestModel`** Estimator finds the best model from a pool of trained models. To do this, it finds the model that performs best on the `test` dataset given the specified metric
 
 1. The **`ComputeModelStatistics`** Transformer computes the different metrics on a scored dataset (in our case, the `validation` dataset) at the same time
 
