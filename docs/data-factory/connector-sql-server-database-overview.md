@@ -30,4 +30,7 @@ The SQL Server database connector supports the following capabilities in Data pi
 | **Script activity** | None <br> On-premises | Basic <br> Service principal |
 | **Stored procedure activity** | None <br> On-premises | Basic <br> Service principal |
 
+> [!NOTE]
+> The Service principal authentication only applies to [SQL Server on Azure VMs](/azure/azure-sql/virtual-machines).
+
 To learn more about the copy activity configuration for SQL Server database in Data pipeline, go to [Configure in a data pipeline copy activity](connector-sql-server-copy-activity.md).
