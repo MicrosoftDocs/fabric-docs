@@ -4,7 +4,7 @@ description: Learn about the open mirrored databases partner ecosystem in Micros
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur, ulrichchrist, maraki-ketema
-ms.date: 03/24/2025
+ms.date: 04/24/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -29,6 +29,8 @@ For more information, see [Oracle GoldenGate 23ai integration into open mirrorin
 ## Striim
 
 SQL2Fabric-Mirroring is a Striim solution that reads data from SQL Server and writes it to Microsoft Fabric's mirroring landing zone in Delta-Parquet format. Microsoft's Fabric replication service frequently picks up these files and replicates the file contents into Fabric data warehouse tables.
+
+For more information, see [Striim integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/striim-docs).
 
 ## MongoDB
 
