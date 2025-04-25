@@ -190,7 +190,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Eventstream](#eventstream), [Azure and Fabric events](#azure-and-fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder-preview](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
 #### Azure and Fabric events
 
@@ -200,6 +200,15 @@ You can find the consumption rates for Azure and Fabric events in [Azure and Fab
 | ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
 | Event Operations | Publish, delivery, and filtering operations          | Multiple | Real-Time Intelligence - Event Operations         | Background |
 | Event Listener   | Uptime of the event listener                         | Multiple | Real-Time Intelligence – Event Listener and Alert | Background |
+
+#### Digital twin builder (preview)
+
+You can find the consumption rates for digital twin builder (preview) in [Digital twin builder (preview) capacity consumption, usage reporting, and billing](../real-time-intelligence/digital-twin-builder/resources-capacity-usage.md).
+
+| Operation        | Description                 | Item     | Azure billing meter              | Type       |
+| ---------------- | --------------------------- | -------- | -------------------------------- | ---------- |
+| Digital Twin Builder per hour | Usage based on the sum of all the customer-defined entity types, entity type relationships, entity instances, and entity instance relationships.  | Digital twin builder | Digital Twin Builder Capacity Usage CU  | Background |
+| Digital Twin Builder Operations | Usage for on-demand and scheduled digital twin builder flow operations.  | Digital twin builder flow | Digital Twin Builder Operation Capacity Usage CU | Background |
 
 #### Eventstream
 
