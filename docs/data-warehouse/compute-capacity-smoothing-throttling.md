@@ -49,7 +49,7 @@ Most [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](inc
 
 ## Best practices to recover from overload situations
 
-Review [actions you can take to recover from overload situations](../enterprise/throttling.md#actions-you-can-take-to-recover-from-overload-situations).
+Review [actions you can take to recover from overload situations](../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs).
 
 ## Monitor overload information with Fabric Capacity Metrics App
 
