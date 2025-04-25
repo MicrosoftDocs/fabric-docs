@@ -26,7 +26,7 @@ To ensure fast performance, Fabric uses _bursting_ to let operations run as fast
 ### Smoothing
 To avoid penalizing users when operations benefit from bursting, Fabric _smooths_, or averages, the CU usage of an operation over a longer timeframe. This behavior ensures users can enjoy consistently fast performance without experiencing throttling. 
 
-Smoothing distributes consumed CU usage over future _timepoints_. Timepoints in Fabric are 30 seconds long. There are 2,880 timepoints in a 24-hours. Fabric automatically manages the amount of consume CUs in each timepoint.
+Smoothing distributes consumed CU usage over future _timepoints_. Timepoints in Fabric are 30 seconds long. There are 2,880 timepoints in the next 24-hours. Fabric automatically manages the amount of consume CUs in each timepoint.
 
 An operation's utilization type determines the number of timepoints used for smoothing. Learn about [Fabric operations](fabric-operations.md).
 - Interactive operations are smoothed over a minimum of five minutes, and up to 64 minutes depending on how much CU usage they consume.
@@ -121,7 +121,7 @@ When a capacity is overloaded, a capacity admin can use the Fabric capacity metr
 ## How to stop throttling when it occurs
 Capacities are self-healing, so you can always wait until the overload state is over before submitting new requests.
 
-However, to stop throttling faster, you can use the strategies enumerated below.
+However, to stop throttling faster, you can use the strategies listed below.
 
 When using F SKU capacities, to stop throttling:
 - Temporarily increase the SKU. By increasing your SKU, you burndown carryforward faster because each timepoint has more idle capacity. 
