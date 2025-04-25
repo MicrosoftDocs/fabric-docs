@@ -12,9 +12,8 @@ ms.search.form: Manage the environment through public APIs
 
 The Microsoft Fabric REST API provides a service endpoint for the create, read, update, and delete (CRUD) operations of a Fabric item. This article describes the available environment REST APIs and their usage.
 
-The new release includes new APIs, APIs to be no longer supported, and changes to API response/request contracts. The following table summarizes all API changes.
-
-The APIs that are about to be no longer supported provide support until June 30, 2025. The changes to response/request contracts are effective immediately after the release is available.
+> [!IMPORTANT]
+> The new release includes new APIs, API deprecations, and changes of API response/request contract. The table in the following section summarizes all API changes.
 
 ## Summary of environment APIs
 

@@ -118,9 +118,10 @@ When a user accesses data through a shortcut to another OneLake location, OneLak
 > [!IMPORTANT]
 > When accessing shortcuts through Power BI semantic models or T-SQL, the calling user’s identity is not passed through to the shortcut target. The calling item owner’s identity is passed instead, delegating access to the calling user.
 
-### ADLS shortcuts
+<a id="adls-shortcuts"></a>
+### Azure Data Lake Storage shortcuts
 
-When you create shortcuts to ADLS Gen2 storage accounts, the target path can point to any folder within the hierarchical namespace. At a minimum, the target path must include a container name.
+When you create shortcuts to Azure Data Lake Storage (ADLS) Gen2 storage accounts, the target path can point to any folder within the hierarchical namespace. At a minimum, the target path must include a container name.
 
 > [!NOTE]
 > You must have hierarchical namespaces enabled on your ADLS Gen 2 storage account.
@@ -136,13 +137,15 @@ If your storage account is protected by a storage firewall, you can configure tr
 
 ADLS shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the ADLS shortcut and all access to that shortcut is authorized using that credential. ADLS shortcuts support the following delegated authorization types:
 
-- **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account
+- **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Service principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Workspace identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
 - **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute
-- **Service principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account
-- **Workspace identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account
 
->[!NOTE]
->When workspace identity is enabled on the workspace, the **Generate a user delegation key** action isn't required on the delegated type for authentication. This action is automatically assigned when using Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account.
+Entra ID delegated authorization types (organizational account, service principal, or workspace identity) require the **Generate a user delegation key** action at the storage account level. This action is included as part of the Storage Blob Data Reader, Storage Blob Data Contributor, Storage Blob Data Owner, and Delegator roles. If you don't want to give a user reader, contributor, or owner permissions for the whole storage account, assign them the Delegator role instead. Then, define detailed data access rights using [Access control lists (ACLs) in Azure Data Lake Storage](/azure/storage/blobs/data-lake-storage-access-control).
+
+>[!IMPORTANT]
+>Currently, when workspace identity is used as the delegated authorization type for an ADLS shortcut, users can authenticate directly to the storage account without needing to create a delegation key. However, this behavior will be restricted in the future. We recommend making sure that all users have the **Generate a user delegation key** action to ensure that your users' access isn't affected when this behavior changes.
 
 ### S3 shortcuts
 

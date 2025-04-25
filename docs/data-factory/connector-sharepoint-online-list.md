@@ -4,7 +4,7 @@ description: This article provides information about how to create a SharePoint 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 04/01/2025
 ms.custom:
   - template-how-to
 ---
@@ -19,7 +19,7 @@ The SharePoint Online List connector supports the following authentication types
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Organizational account| n/a | √|
+|Organizational account| √ | √|
 |Service Principal| √ | √ |
 
 ## Set up your connection in Dataflow Gen2

@@ -4,7 +4,7 @@ description: This tutorial provides a step-by-step guide for the Migration Assis
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: anphil
-ms.date: 04/06/2025
+ms.date: 04/09/2025
 ms.topic: how-to
 ms.search.form: Migration Assistant
 ---
@@ -27,7 +27,11 @@ Before you begin, make sure you have the following ready:
 
 - A Fabric workspace with an active capacity or trial capacity.
 - [Create a workspace](../fundamentals/create-workspaces.md) or select an existing workspace you want to migrate into. The Migration Assistant will create a new warehouse for you.
-- DACPAC file extracted from Azure Synapse Analytics dedicated SQL pool. A [DACPAC](/sql/tools/sql-database-projects/concepts/data-tier-applications/overview#dacpac-operations) (data-tier application package) file is built from SQL database projects and contains the metadata of database objects, including the schema of tables, views, stored procedures, functions, and more. Options for extracting a DACPAC include [Visual Studio Code](/sql/tools/sql-database-projects/tutorials/start-from-existing-database), [SQL Server Data Tools](/sql/tools/sql-database-projects/concepts/data-tier-applications/extract-dacpac-from-database), and the [SqlPackage command-line utility](/sql/tools/sqlpackage/sqlpackage-extract).
+- DACPAC file extracted from Azure Synapse Analytics dedicated SQL pool. A [DACPAC](/sql/tools/sql-database-projects/concepts/data-tier-applications/overview#dacpac-operations) (data-tier application package) file is built from SQL database projects and contains the metadata of database objects, including the schema of tables, views, stored procedures, functions, and more. Options for extracting a DACPAC include, [SQL Server Data Tools](/sql/tools/sql-database-projects/concepts/data-tier-applications/extract-dacpac-from-database) with Visual Studio and [SDK style database projects](/dotnet/core/project-sdk/overview) with VS Code and the [SqlPackage command-line utility](/sql/tools/sqlpackage/sqlpackage-extract).
+
+The AI-assisted migration features of the Migration Assistant to fix migration issues require Copilot to be activated:
+
+[!INCLUDE [copilot-include](../includes/copilot-include.md)]
 
 ### Copy metadata
 

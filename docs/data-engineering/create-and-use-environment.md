@@ -10,7 +10,7 @@ ms.search.form: Create and use Environment
 
 # Create, configure, and use an environment in Fabric
 
-A Microsoft Fabric environment is a consolidated item for all your hardware and software settings. In an environment, you can select different Spark runtimes, configure your compute resources, and install libraries from public repositories or a local directory.
+A Microsoft Fabric environment is a consolidated item for all your hardware and software settings. In an environment, you can select different Spark runtimes, configure your compute resources, install libraries from public repositories or a local directory, and set other settings.
 
 This article presents an overview of how to create, configure, and use an environment.
 

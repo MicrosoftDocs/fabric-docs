@@ -124,8 +124,13 @@ Instead of guessing the column types, the `OPENROWSET(BULK)` function will expli
 
 This way you can define more precise types, which can improve the performance of your queries.
 
+## Next steps
+
+After completing file exploration and creating destination tables, you can proceed with ingestion using one of the following methods:
+
+- [Ingest data using the COPY statement](ingest-data-copy.md)
+- [Ingest data using Data pipelines](ingest-data-pipelines.md)
+
 ## Related content
 
 - [OPENROWSET function](/sql/t-sql/functions/openrowset-transact-sql?view=fabric&preserve-view=true)
-- [Ingest data using the COPY statement](ingest-data-copy.md)
-- [Ingest data using Data pipelines](ingest-data-pipelines.md)

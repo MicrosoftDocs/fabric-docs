@@ -67,6 +67,10 @@ You can explore workspace monitoring using Power BI reports and Real-time dashbo
 
 * Workspace monitoring is billed based on the capacity consumed by the monitoring items. For more details, see [Eventhouse and KQL Database consumption](../real-time-intelligence/real-time-intelligence-consumption.md) and [Microsoft Fabric event streams capacity consumption](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
 
+* [Throttling](../enterprise/throttling.md)
+    * Monitoring Eventstream and Eventhouse operations arn't impacted by the state of the capacity. When the capacity is throttled, the queries on the monitoring Eventhouse and the Eventstream ingestion operations continue to function normally. There's also no impact to real-time dashboards built on top of the monitoring database.
+    * Power BI reports or data activator alerts, built on top of the monitoring database respect the capacity state and get throttled.
+
 ## Related content
 
 * [Enable monitoring in your workspace](enable-workspace-monitoring.md)

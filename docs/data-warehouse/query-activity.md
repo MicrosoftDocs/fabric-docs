@@ -1,12 +1,11 @@
 ---
-title: Monitor your running and completed queries using Query activity
+title: Monitor Your Running and Completed Queries Using Query Activity
 description: Learn about monitoring queries in your Fabric warehouse using Query activity.
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
 ms.date: 05/28/2024
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 # Monitor your running and completed T-SQL queries using Query activity

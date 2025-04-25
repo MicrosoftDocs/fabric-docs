@@ -64,7 +64,7 @@ If you have an existing warehouse created that's empty, the following steps will
 1. The following sample T-SQL scripts can be used on the sample data in your new warehouse.
 
     > [!NOTE]
-    > It is important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) (for users who prefer to use T-SQL for the majority of their data processing needs). For more information, see [Connectivity](connectivity.md) or [Query the SQL analytics endpoint or Warehouse](query-warehouse.md).
+    > It is important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true) (for users who prefer to use T-SQL for the majority of their data processing needs). For more information, see [Connectivity](connectivity.md) or [Query the SQL analytics endpoint or Warehouse](query-warehouse.md).
 
     ```sql
     

@@ -8,7 +8,7 @@ ms.date: 03/13/2025
 ms.search.form: Manage Spark compute in Environment
 ---
 
-# Manage Spark compute in Fabric environments
+# Spark compute configuration settings in Fabric environments
 
 Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. It includes starter pools and custom pools.
 
