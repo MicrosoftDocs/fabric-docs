@@ -34,7 +34,7 @@ An operation's utilization type determines the number of timepoints used for smo
 
 Due to smoothing, only a portion of the CU usage for an operation applies to any individual timepoint, which reduces throttling overall. Smoothed CU usage accumulates as operations run. Smoothed usage is paid for by _future capacity_, which is the CUs available in future timepoints, because the capacity is running continuously. 
 
-Bursting and smoothing work together to make it easier for capacity users to do their work. For example, data scientists and database administrators typically spend time scheduling jobs and spreading them out across the day. With smoothing, the compute cost for background jobs is smoothed over 24-hours. This means scheduled jobs can all run simultaneously without causing any spikes that would otherwise block jobs from starting. At the same time, users can enjoy consistently fast performance without waiting for slow jobs to complete or wasting time managing job schedules.
+Bursting and smoothing work together to make it easier for capacity users to do their work. For example, users typically spend time scheduling jobs and spreading them out across the day. With smoothing, the compute cost for background jobs is smoothed over 24-hours. This means scheduled jobs can all run simultaneously without causing any spikes that would otherwise block jobs from starting. At the same time, users can enjoy consistently fast performance without waiting for slow jobs to complete or wasting time managing job schedules.
 
 ## Throttle triggers and throttle stages
 
