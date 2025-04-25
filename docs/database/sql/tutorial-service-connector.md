@@ -68,7 +68,7 @@ Create a new service connection from App Service to a SQL database in Fabric, us
 1. Select **Next: Networking** > **Review + Create** to review your connection configuration.
 1. Check the box stating that you understand that additional manual steps are required to configure this service connection, and select **Create On Cloud Shell**. Alternatively, if you have the [Azure CLI installed](/cli/azure/install-azure-cli-windows), copy and run on your local machine the CLI commands that are now displayed right above the checkbox.
 
-    :::image type="content" source="./media/tutorial-service-connector/copy-CLI-command.png" alt-text="Screenshot of the Azure portal, showing the Basics tab in the Create connection pane.":::
+    :::image type="content" source="./media/tutorial-service-connector/copy-CLI-command.png" alt-text="Screenshot of the Azure portal, showing CLI commands.":::
 
 1. Once the command finishes running, close the **Create connection** pane.
 ---
