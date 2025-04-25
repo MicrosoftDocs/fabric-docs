@@ -408,7 +408,7 @@ loaded_model = mlflow.statsmodels.load_model(model_uri)
 
 ## Step 4: Score the model and save predictions
 
-The following code snippet integrates the actual values with the forecasted values, to create a Power BI report. Additionally it stores these results in a table within the lakehouse.
+The following code snippet integrates the actual values with the forecasted values, to create a Power BI report. Additionally, it stores these results in a table within the lakehouse.
 
 ```python
 # Data preparation for Power BI visualization
