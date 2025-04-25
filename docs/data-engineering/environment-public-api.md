@@ -15,7 +15,6 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 > [!IMPORTANT]
 >
 > - The new release includes new APIs, API deprecations, and changes of API response/request contract. The table at following section summarizes all API changes.
-> - The APIs that are about to be deprecated will continue the support until June 30, 2025. The changes of response/request contract will be effective immediately once the release lands.
 >
 
 ## Summary of environment APIs
