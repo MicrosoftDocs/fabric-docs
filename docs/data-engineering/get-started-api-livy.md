@@ -29,11 +29,29 @@ Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; a
 
 * Or
 
-* A Microsoft Entra SPN token. [Add and manage application credentials in Microsoft Entra ID](entra/identity-platform/how-to-add-credentials?tabs=client-secret)
+* A Microsoft Entra SPN token. [Add and manage application credentials in Microsoft Entra ID](/entra/identity-platform/how-to-add-credentials?tabs=client-secret)
 
 ## Choosing a REST API client
 
 You can use various programming languages or GUI clients to interact with REST API endpoints. In this article, we use [Visual Studio Code](https://code.visualstudio.com/). Visual Studio Code needs to be configured with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/)
+
+## How to authorize the Livy API requests with a EntraID SPN Token
+
+To work with Fabric APIs including the Livy API, you first need to create a Microsoft Entra application and create a secret and use that secret in your code. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Add and manage application credentials in Microsoft Entra ID](/entra/identity-platform/how-to-add-credentials?tabs=client-secret)
+
+Once you've created the app registration, create a client secret.
+
+    :::image type="content" source="media/livy-api/Entra-SPN-add-client-secret.png" alt-text="Screenshot showing Entra app registration and adding a client secret." lightbox="media/livy-api/Entra-SPN-add-client-secret.png":::
+
+1. As you create the client secret, make sure to copy the value. You'll need this later in the code, and the secret can't be seen again. You'll also need the Application (client) ID and the Directory (tenant ID) in addition to the secret in your code.
+
+1. Next we need to add the client secret to our workspace
+
+:::image type="content" source="media\livy-api\Livy-manage-access-SPN.png" alt-text="Screenshot showing Manage access options Lakehouse settings." lightbox="media\livy-api\Livy-manage-access-SPN.png":::
+
+1. Search for the Entra client secret, and add that secret to the workspace, and make sure the newly added secret has Admin permissions.
+
+:::image type="content" source="media\livy-api\Entra-SPN-add-people.png" alt-text="Screenshot showing adding the new SPN service principla to the workspace" lightbox="media\livy-api\Entra-SPN-add-people.png":::
 
 ## How to authorize the Livy API requests with a EntraID app token
 
@@ -73,31 +91,9 @@ Some customers want more granular permissions than the prior list. You could rem
 
 When you register your application, you will need both the Application (client) ID and the Directory (tenant) ID.
 
-    :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center.":::
+:::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center.":::
 
 The authenticated user calling the Livy API needs to be a workspace member where both the API and data source items are located with a Contributor role. For more information, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
-
-## How to authorize the Livy API requests with a EntraID SPN Token
-
-To work with Fabric APIs including the Livy API, you first need to create a Microsoft Entra application and create a secret and use that secret in your code. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Add and manage application credentials in Microsoft Entra ID](entra/identity-platform/how-to-add-credentials?tabs=client-secret)
-
-Once you've created the app registration, create a client secret.
-
-    :::image type="content" source="media/livy-api/Entra-SPN-add-client-secret.png" alt-text="Screenshot showing Entra app registration and adding a client secret." lightbox="media/livy-api/Entra-SPN-add-client-secret.png":::
-
-1. As you create the client secret, make sure to copy the value. You'll need this later in the code, and the secret can't be seen again. You'll also need the Application (client) ID and the Directory (tenant ID) in addition to the secret in your code.
-
-1. Next we need to add the client secret to our workspace
-
-:::image type="content" source="media\livy-api\Livy-manage-access-SPN.png" alt-text="Screenshot showing Manage access options Lakehouse settings." lightbox="media\livy-api\Livy-manage-access-SPN.png":::
-
-1. Search for the Entra client secret, and add that secret to the workspace.
-
-:::image type="content" source="\media\livy-api\Entra-SPN-add-people.png" alt-text="Screenshot showing adding the new SPN service principla to the workspace":::
-
-1. Make sure that the secret has Admin permissions
-1. 
-1. :::image type="content" source="media\livy-api\Entra-SPN-add-client-secret.png" alt-text="Screenshot showing Livy API endpoints in Lakehouse settings." lightbox="media\livy-api\Entra-SPN-add-client-secret.png":::
 
 ## How to discover the Fabric Livy API endpoint
 
