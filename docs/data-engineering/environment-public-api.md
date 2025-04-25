@@ -32,7 +32,7 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 |Staging|List staging libraries|Get the full staging library list. This list includes the published and pending libraries.|Response contract update.|
 |Staging|Import external libraries|Upload external libraries as an *environment.yml* file into environment. It overrides the list of existing external libraries in an environment.|New API.|
 |Staging|Export external libraries|Get the full external libraries as an *environment.yml* file.|New API.|
-|Staging|Remove external library|Delete an external library from an environment. This API accepts one library at a time|New API.|
+|Staging|Remove external library|Delete an external library from an environment. This API accepts one library at a time.|New API.|
 |Staging|Upload custom library|Upload a custom package in environment. This API allows one file upload at a time. The supported file formats are .jar, .py, .whl, and .tar.gz.|New API.|
 |Staging|Delete custom library|Delete a custom package from the environment. Put the custom package full name with the extension in the API request to get it removed.|New API.|
 |Staging|Upload staging libraries|Add one custom library or one/multiple public library in the environment.|To be no longer supported.|
