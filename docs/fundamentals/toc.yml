@@ -199,6 +199,10 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Gateway causes lakehouse tables with null values
+      href: ../known-issues/known-issue-1117-gateway-causes-lakehouse-tables-null-values.md
+    - name: API for GraphQL query fails when using variables with float value
+      href: ../known-issues/known-issue-1113-api-graphql-query-fails-variables-float-value.md
     - name: Insert statements across tables in different data warehouses fail
       href: ../known-issues/known-issue-1114-insert-statements-tables-different-data-warehouses-fail.md
     - name: User data functions option not visible in data pipelines functions activity
