@@ -69,9 +69,9 @@ You can set up a deployment pipeline by assigning the workspaces with different 
 You can find the deploying status after you set up the pipeline successfully. After you select **Deploy** with the environment selected, all contents of the environment are deployed to the destination workspaces. The status of the original environment is preserved in this process so that the published configurations stay in the published state and require no extra publishing.
 
 > [!IMPORTANT]
->
 > Currently, the custom pool isn't supported in deployment pipelines. If the environment selects the custom pool, the configurations of the **Compute** section in the destination environment are set with default values. In this case, the environments keep showing diff in the deployment pipeline even if the deployment is done successfully.
-> - Using deployment rules to specify different pools in a new workspace will be included in an upcoming release.
+> 
+> Using deployment rules to specify different pools in a new workspace will be included in an upcoming release.
 
 ## Related content
 
