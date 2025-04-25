@@ -98,4 +98,4 @@ When no longer needed, delete the resource group and all related resources creat
 ## Related content
 
 - [Connect App Services with Service Connector](/azure/service-connector/quickstart-portal-app-service-connection)
-- [Service Connector internals](/azure/service-connector/concept-service-connector-internals) <!--to be replaced with new SQL database in Fabric article in azure-docs-pr repo when feature documentation is released-->
+- [Integrate SQL database in Microsoft Fabric with Service Connector](/azure/service-connector/how-to-integrate-fabric-sql)
