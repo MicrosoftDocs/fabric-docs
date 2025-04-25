@@ -10,7 +10,7 @@ ms.search.form: Manage the resources in Fabric environment
 
 # Manage the resources in a Fabric environment
 
-Resources in a Fabric environment provide a file system that you can use to manage your files and folders. You can easily access the environment resources from notebooks and collaborate with others if the notebooks are attached to the same environment.
+Resources in a Microsoft Fabric environment provide a file system that you can use to manage your files and folders. You can easily access the environment resources from notebooks and collaborate with others if the notebooks are attached to the same environment.
 
 :::image type="content" source="media\environment-resources\environment-resources-overview.gif" alt-text="Screen recording of the environment Resources section.":::
 
@@ -25,5 +25,5 @@ If you drag and drop the file with supported type from the environment **Resourc
 
 ## Related content
 
-- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).
+- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md)
 - [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
