@@ -56,6 +56,18 @@ SNP Glue is a data integration solution certified for various SAP source systems
 
 For more information on SNP Glue, see the [SNP Glue documentation](https://aka.ms/mirroring/snp-overview).
 
+## ASAPIO
+
+The ASAPIO Integration Add-on is an SAP-certified solution that connects SAP systems directly to Microsoft Fabric. It supports open mirroring to enable change data capture to Microsoft Fabric and comes with a data catalog of predefined data products for real-time and scheduled data replication.
+
+For more information, see [ASAPIO Integration Add-on, Fabric Connector](https://aka.ms/mirroring/asapio-mirroring-overview).
+
+## Theobald
+
+Theobald Xtract Universal is an SAP-certified data integration solution supporting all standard SAP applications like SAP S/4HANA, SAP ECC and SAP BW. Starting with version 2025.3.26.15 it now supports open mirroring for [change data capture from SAP into Microsoft Fabric](https://aka.ms/mirroring/theobald-mirroring-overview).
+
+For more information on Theobald Xtract Universal, see [Theobald Xtract Universal](https://aka.ms/mirroring/theobald-xtract-universal-overview).
+
 ### CluedIn
 
 CluedIn is a Master Data Management and data quality platform that enables enterprises to unify, clean, and govern their data at scale. By integrating with Open Mirroring, CluedIn streamlines the ingestion and harmonization of enterprise data, ensuring it remains accurate, consistent, and ready for analytics in Fabric.
