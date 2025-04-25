@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 04/08/2025
+ms.date: 04/24/2025
 ms.topic: whats-new
 ms.collection:
   - ce-skilling-ai-copilot
@@ -147,6 +147,7 @@ This section summarizes new Microsoft Fabric community opportunities for prospec
 - Visit the [Microsoft Fabric Career Hub](https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabric_careerhubblog_clp) for everything you need on your certification journey, including a 50% discount on exams.
 - Watch and subscribe to [Microsoft Fabric videos on YouTube](https://www.youtube.com/@MicrosoftFabric/featured).
 - Ask and answer questions in the [Microsoft Fabric community](https://community.fabric.microsoft.com/).
+- Spread your Fabric knowledge, insights, and best practices with others. To learn more, see the [Super User Program](https://aka.ms/SuperUsers).
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
@@ -301,6 +302,7 @@ This section summarizes recent improvements and features for Microsoft Fabric Da
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|April 2025|**Power BI Desktop connection to SQL database in Fabric**|You can now use the OneLake catalog or Get Data experiences in Power BI Desktop to create reports on data from your SQL database in Microsoft Fabric. This Power BI Desktop feature is currently in preview. To get started, see [Create simple reports on your SQL database in Power BI](../database/sql/create-reports.md).|
 |April 2025|**OneLake shortcuts Fabric SQL databases**|[OneLake shortcuts now support connections to Fabric SQL databases](https://blog.fabric.microsoft.com/blog/whats-new-with-onelake-shortcuts?ft=All), allowing users to seamlessly integrate SQL data into their unified data lake environment using the OneLake catalog explorer.|
 |March 2025|**Backup storage billing** | Starting April 1, backup storage billing begins for SQL database in Microsoft Fabric. For more information, see [Backup Storage Billing for SQL Database in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/announcing-backup-storage-billing-for-sql-database-in-microsoft-fabric-what-you-need-to-know).|
 |March 2025|**SQL database enabled by default on March 28**|SQL database in Fabric will be enabled for all users in your tenant on March 28. For more information and potential opt-out, see [default checkbox changes on tenant settings for SQL database in Fabric](https://blog.fabric.microsoft.com/blog/extending-flexibility-default-checkbox-changes-on-tenant-settings-for-sql-database-in-fabric?ft=All).|
