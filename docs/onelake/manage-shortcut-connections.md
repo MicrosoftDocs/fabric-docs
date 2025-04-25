@@ -1,7 +1,7 @@
 ---
 title: Manage shortcut connections
 description: How to update the shared cloud connections that are created to enable OneLake shortcuts.
-ms.reviewer: TrevorLOlson
+ms.reviewer: trolson
 ms.author: kgremban
 author: kgremban
 ms.topic: how-to
@@ -18,7 +18,8 @@ Shortcuts in OneLake use shared cloud connections to access the cloud resources 
 
 You can view and manage all existing cloud connections for shortcuts in a single lakehouse.
 
-1. In to the [Microsoft Fabric portal](https://app.fabric.microsoft.com), navigate to your lakehouse.
+1. In the [Microsoft Fabric portal](https://app.fabric.microsoft.com), navigate to your lakehouse.
+
 1. Select **Settings**.
 
    :::image type="content" source="./media/manage-shortcut-connections/lakehouse-settings.png" alt-text="Screenshot that shows the settings icon in a lakehouse.":::
@@ -27,13 +28,21 @@ You can view and manage all existing cloud connections for shortcuts in a single
 
    :::image type="content" source="./media/manage-shortcut-connections/shortcut-connections.png" alt-text="Screenshot that shows the shortcut connections options in the lakehouse settings menu.":::
 
-On the **Manage OneLake shortcut connections** page, you can view all connections. The **Action required** section highlights any broken connections that need attention. You can also see how many shortcuts share each connection.
+1. On the **Manage OneLake shortcut connections** page, you can view all connections. The **Action required** section highlights any broken connections that need attention. You can also see how many shortcuts share each connection.
 
 ## Replace shortcut connections
 
-There are many reasons that you might have to replace a cloud connection. Maybe the connection is broken, maybe the user that created that connectione left your organization and you can't access the connection anymore, or maybe you want to switch to a different connection that uses a different authentication method. 
+There are many reasons that you might have to replace a cloud connection. Maybe the connection is broken, maybe the user that created that connection left your organization and you can't access the connection anymore, or maybe you want to switch to a different connection that uses a different authentication method. 
 
-1. One the **Manage Onelake shortcut connections** page, select **Replace** next to the connection that you want to update.
+1. On the **Manage OneLake shortcut connections** page, select **Replace** for the connection that you want to update.
+
+   :::image type="content" source="./media/manage-shortcut-connections/replace-connection.png" alt-text="Screenshot that shows the replace option for a shortcut connection.":::
+
 1. Select either **Existing connection** or **Create new connection**.
+
+1. Provide the new connection information.
+
    * For an existing connection, use the drop-down menu to select the connection, then select **Save**.
-   * For a new connection, provide the connection settings and credentials.
+   * For a new connection, provide the connection settings and credentials, then select **Save**.
+
+Once the new cloud connection is established, all of the shortcuts that used the old connection are updated to use the new connection.
