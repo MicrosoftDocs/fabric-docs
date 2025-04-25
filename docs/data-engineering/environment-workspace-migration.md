@@ -64,7 +64,7 @@ After publishing is complete, you successfully configured your environment.
 > [!IMPORTANT]
 > All existing configurations are *discarded* when you select **Enable environment**. Make sure that you downloaded all existing configurations and installed them successfully in an environment before you proceed.
 
-1. Go to **Workspace settings** > **Data Engineering/Science** > **Environment**, and select **Enable environment**. This action removes the existing configurations and begins your workspace-level environment experience.
+1. Go to **Workspace settings** > **Data Engineering/Science** > **Environment**, and then select **Enable environment**. This action removes the existing configurations and begins your workspace-level environment experience.
 
     The following screen appears after you successfully delete the existing configurations.
 
@@ -74,7 +74,7 @@ After publishing is complete, you successfully configured your environment.
 
     :::image type="content" source="media\environment-migration\enable-default-env-turn-on-toggle.png" alt-text="Screenshot that shows where to move the Customize environment toggle to the On position.":::
 
-1. Select the environment you configured in the previous steps as the workspace default, and select **Save**.
+1. Select the environment that you configured in the previous steps as the workspace default, and then select **Save**.
 
     :::image type="content" source="media\environment-migration\enable-default-env-attach-default.png" alt-text="Screenshot that shows where to select an environment to attach it as the default environment.":::
 
@@ -84,4 +84,4 @@ After publishing is complete, you successfully configured your environment.
 
 ## Related content
 
-- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).
+- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md)
