@@ -67,7 +67,7 @@ You can create a new Power BI Embedded capacity with an A SKU or an EM SKU.
 
 To create a new Power BI Embedded capacity with an A SKU, follow these steps:
 
-1. Log into Azure and search for **Power BI Embedded**.
+1. Log in to Azure and search for **Power BI Embedded**.
 1. Select **Create**.
 1. On the *Basics* tab, enter the following information:
    * **Subscription** - Select the Azure subscription you want to use for the capacity.
@@ -221,9 +221,9 @@ To resize a Power BI Premium capacity, follow these steps:
 To resize a Power BI Embedded capacity, follow these steps:
 
 1. From the list of Fabric capacities, select the gear icon (**&#9881;**) next to the capacity you want to delete.
-1. IOn the **Capacity settings** page, select the link **Manage fabric capacities in Azure**. A list of your Fabric capacities in Azure opens in a new tab.
+1. On the **Capacity settings** page, select the link **Manage fabric capacities in Azure**. A list of your Fabric capacities in Azure opens in a new tab.
 1. Select the capacity you want to resize.
-1. Fromn the *Scale* section, select **Change size**.
+1. From the *Scale* section, select **Change size**.
 1. Select the new size for the capacity.
 1. Select **Resize**.
 
@@ -241,7 +241,7 @@ To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capac
 
 To delete a capacity you need to be a [Microsoft Fabric admin](../admin/microsoft-fabric-admin.md).
 
-When you delete a Power BI Premium, Trial or Fabric Capacity, non-Power BI Fabric items in workspaces assigned to the capacity are soft deleted. These Fabric items can still be seen in Onelake Data Hub and in the workspace list, but can't be opened or used. If the workspace that holds these items is associated to a capacity (other than Power BI Embedded) from the same region as the deleted capacity within seven days, the deleted items are restored. This seven-day period is separate from the [workspace retention policy](portal-workspaces.md#workspace-retention).
+When you delete a Power BI Premium, Trial or Fabric Capacity, non-Power BI Fabric items in workspaces assigned to the capacity are soft deleted. These Fabric items can still be seen in OneLake Data Hub and in the workspace list, but can't be opened or used. If the workspace that holds these items is associated to a capacity (other than Power BI Embedded) from the same region as the deleted capacity within seven days, the deleted items are restored. This seven-day period is separate from the [workspace retention policy](portal-workspaces.md#workspace-retention).
 
 # [Power BI Premium](#tab/power-bi-premium)
 
