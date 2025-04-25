@@ -6,7 +6,7 @@ ms.author: franksolomon
 author: fbsolo-ms1
 ms.topic: tutorial
 ms.custom:
-ms.date: 04/22/2025
+ms.date: 04/25/2025
 ---
 
 # Tutorial Part 1: Use Apache Spark to ingest data into a Microsoft Fabric lakehouse
@@ -30,7 +30,7 @@ In this tutorial, you use the Apache Spark to:
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
--  [Add a lakehouse](./tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) to this notebook. In this tutorial, you download data from a public blob, then storing the data in the lakehouse resource.
+-  [Add a lakehouse](./tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) to this notebook. In this tutorial, you first download data from a public blob. Then, the data is stored in that lakehouse resource.
 
 ## Follow along in a notebook
 
