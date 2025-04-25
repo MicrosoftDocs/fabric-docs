@@ -44,7 +44,7 @@ The capacity automatically throttles new operations when it is overloaded. Throt
 
 Even when a capacity is operating above 100% utilization, Fabric doesn't immediately apply throttling. Instead, the capacity provides _overage protection_ that allows 10 minutes of future capacity to be consumed without throttling. This behavior offers a limited built-in protection from surges, while providing users consistently fast performance without disruptions.
 
-Throttling starts when a capacity uses up all its CU resources for the next 10 minutes. The first phase of throttling applies 20 seconds delays to new interactive operations. The second phase of throttling rejects new interactive operations when a capacity uses up all its CU resources for the next one-hour. During this phase, background operations are allowed to start and run. The third phase of throttling rejection all new requests, interactive and background, when the capacity uses up all its available CU resources for a the next 24-hours. The capacity continues to throttle requests until the consumed CU are paid off.
+Throttling starts when a capacity uses up all its CU resources for the next 10 minutes. The first phase of throttling applies 20 seconds delays to new interactive operations. The second phase of throttling rejects new interactive operations when a capacity uses up all its CU resources for the next one-hour. During this phase, background operations are allowed to start and run. The third phase of throttling rejection all new requests, interactive and background, when the capacity uses up all its available CU resources for the next 24-hours. The capacity continues to throttle requests until the consumed CU are paid off.
 
 >[!NOTE]
 >Microsoft tries to improve customer flexibility in using the service, while balancing the need to manage customer capacity usage. For this reason, Microsoft might change or update the Fabric throttling policy.
@@ -85,7 +85,7 @@ So, the 10-minute throttling percentage is 25 CUs / 1,200 CUs = ~2.1%.
 
 Similarly, the  60-minute throttling percentage impact of the background job is also ~2.1%.
 
-Even though the background operation consumed more CUs than is available in the next 10-minute time span (it consumed six times the amount), the F2 capacity isn't throttled because the total CUs are smoothed over 24-hours. Because of smoothing, only a small portion of the consumed CUs apply to any individual timepoint. 
+Even though the background operation consumed more CUs than is available in the next 10-minute time span (it consumed six times the amount), the F2 capacity isn't throttled because the total CUs are smoothed over 24-hours. Because of smoothing, only a small portion of the consumed CUs applies to any individual timepoint. 
 
 ## Overages, carryforward, and burndown
 
@@ -140,12 +140,12 @@ In Fabric, one operation often triggers other items or workloads to complete. Th
 
 When there's a chain of calls, there's a risk of _compound throttling_, which is when throttling is applied more than once to the same request. Fabric has a built-in compound throttling protection that reduces the likelihood of compound throttling occurring. Workloads can opt in to using this protection.
 
-When workloads support compound throttling protection, a request is throttled only once for each capacity that participates in the chain. The throttling decision occurs when the request starts and applies to all operations in the chain. So, if a request is delayed, it's only delayed once. 
+When workloads support compound throttling protection, a request is throttled only once for each capacity that participates in the chain. The throttling decision occurs when the request starts and applies to all operations in the chain. 
 
 If a chain relies on more than one capacity, then each capacity enforces it's throttling once for the first request it receives in the chain. 
 
 The following workload experiences support compound throttling:
-- Semantic model that connect to other semantic models using Direct Query. This applies when both models residing on the same capacity.
+- Semantic models that connect to other semantic models using Direct Query. 
 - DAX queries from paginated reports to semantic models.
 
 ## Throttling behavior is specific to Fabric workloads
@@ -154,7 +154,7 @@ While most Fabric products follow the previously mentioned throttling rules, the
 
 For example, Fabric eventstreams have many operations that can run for years once they're started. Throttling new eventstream operations wouldn’t make sense, so instead, the amount of CU resources allocated to keeping the stream open is reduced until the capacity is in good standing again.
 
-Another exception is Real-Time Intelligence, which wouldn’t be real-time if operations were delayed by 20 seconds. As a result, Real-Time Intelligence ignores the first stage of throttling with 20-second delays at 10 minutes of future capacity and waits until the rejection phase at 60 minutes of future capacity to begin throttling. This behavior ensures users can continue to enjoy real-time performance even during periods of high demand.
+Another exception is Real-Time Intelligence, which wouldn’t be real-time if operations were delayed by 20 seconds. As a result, Real-Time Intelligence doesn't apply the first stage of throttling with 20-second delays at 10 minutes of future capacity. Real-Time Intelligence waits until the rejection phase at 60 minutes of future capacity to begin throttling. This behavior ensures users can continue to enjoy real-time performance even during periods of high demand.
 
 Similarly, almost all operations in the **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. Classifying all data warehousing as *background* prevents peaks of CU utilization from triggering throttling too quickly. Some requests might trigger a chain of operations that are throttled differently. When an interactive operation starts a chain that includes a background operation, the background operation can become subject to throttling as an interactive operation.
 
