@@ -28,7 +28,7 @@ To set default libraries, you have to be the administrator of the workspace. As 
 
 1. [Create a new environment](create-and-use-environment.md#create-an-environment)
 2. [Install the required libraries in the environment](environment-manage-library.md)
-3. [Attach this environment as the workspace default](create-and-use-environment.md#attach-an-environment-as-workspace-default)
+3. [Attach this environment as the workspace default](create-and-use-environment.md#attach-an-environment-as-a-workspace-default)
 
 When your notebooks and Spark job definitions are attached to the **Workspace settings**, they start sessions with the libraries installed in the workspace's default environment.
 
