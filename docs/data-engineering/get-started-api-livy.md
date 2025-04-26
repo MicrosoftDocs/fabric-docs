@@ -41,7 +41,7 @@ To work with Fabric APIs including the Livy API, you first need to create a Micr
 
 Once you've created the app registration, create a client secret.
 
-    :::image type="content" source="media/livy-api/Entra-SPN-add-client-secret.png" alt-text="Screenshot showing Entra app registration and adding a client secret." lightbox="media/livy-api/Entra-SPN-add-client-secret.png":::
+:::image type="content" source="media/livy-api/Entra-SPN-add-client-secret.png" alt-text="Screenshot showing Entra app registration and adding a client secret." lightbox="media/livy-api/Entra-SPN-add-client-secret.png":::
 
 1. As you create the client secret, make sure to copy the value. You'll need this later in the code, and the secret can't be seen again. You'll also need the Application (client) ID and the Directory (tenant ID) in addition to the secret in your code.
 

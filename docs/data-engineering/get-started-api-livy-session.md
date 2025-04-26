@@ -83,19 +83,6 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/sessions"
         headers = {"Authorization": "Bearer " + access_token}
     ```
-
-1. Run the notebook cell, a popup should appear in your browser allowing you to choose the identity to sign-in with.
-
-    :::image type="content" source="media/livy-api/entra-logon-user.png" alt-text="Screenshot showing logon screen to Microsoft Entra app." lightbox="media/livy-api/entra-logon-user.png" :::
-
-1. After you choose the identity to sign-in with, you'll also be asked to approve the Microsoft Entra app registration API permissions.
-
-    :::image type="content" source="media/livy-api/entra-logon.png" alt-text="Screenshot showing Microsoft Entra app API permissions." lightbox="media/livy-api/entra-logon.png" :::
-
-1. Close the browser window after completing authentication.
-
-    :::image type="content" source="media\livy-api\entra-authentication-complete.png" alt-text="Screenshot showing authentication complete." lightbox="media\livy-api\entra-authentication-complete.png" :::
-
 1. In Visual Studio Code, you should see the Microsoft Entra token returned.
 
     :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell and logging in." lightbox= "media/livy-api/Livy-session-entra-token.png":::
