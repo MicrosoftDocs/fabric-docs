@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 03/19/2025
+ms.date: 04/27/2025
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -99,6 +99,11 @@ The system overview page provides a snapshot of the current state of the eventho
         * **Original size**: The uncompressed original data size of the eventhouse.
         * **Compressed size**: The compressed data size of the eventhouse.
         * **Premium**: The amount of Premium storage utilized. This is the high-performance storage tier for your most active data, ensuring the fastest possible access for real-time processing and analysis. If all data is not stored in the Premium cache, query latency may be negatively impacted.. For more information, review your [caching policy](data-policies.md#caching-policy).
+
+    * **Cache misses**
+            * **Cache misses**: The current percentage of cache misses from the last hour.
+            * **Last 24 hours**: The percentage change from 1 hour to 24 hours ago​.
+            * **Last week**: The percentage change from 1 hour to one week ago​.
 
     * **Storage resources**: Shows a snapshot of the storage breakdown by database. You can drilldown into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
 
