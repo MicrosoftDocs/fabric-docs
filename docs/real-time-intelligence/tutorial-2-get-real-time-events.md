@@ -105,7 +105,7 @@ In this section, you use a different kind of eventstream that contains Fabric Ev
 1. Under **Workspace**, select the workspace in which you created your resources.
 1. Select **Next**.
 
-    :::image type="content" source="media/tutorial/event-types.png" alt-text="Screenshot of workspace event configuration settings.":::
+    :::image type="content" source="media/tutorial/event-types.png" alt-text="Screenshot of workspace event configuration settings." lightbox="media/tutorial/event-types.png":::
 
 1. Select **Save**.
 
@@ -137,7 +137,7 @@ In this section, you can (optionally) customize the email message that is receiv
 
 1. Select **Apply**.
 
-    :::image type="content" source="media/tutorial/alert-changes.png" alt-text="Screenshot of customizing Activator Alert.":::
+    :::image type="content" source="media/tutorial/alert-changes.png" alt-text="Screenshot of customizing Activator Alert." lightbox="media/tutorial/alert-changes.png":::
 
 1. Select **Save and update**.
 

@@ -15,7 +15,7 @@ items:
     href: architecture-medallion.md
   - name: End to end sample
     href: sample-end-to-end.md
-  - name: End to end tutorial
+  - name: End to end tutorial - Real-Time-Intelligence
     items:
     - name: End to end tutorial - Introduction
       href: tutorial-introduction.md
