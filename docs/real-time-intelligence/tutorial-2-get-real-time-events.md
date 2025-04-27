@@ -16,7 +16,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Set up Eventhouse](tutorial-1-resources.md).
 
-In this part of the tutorial, you browse the Real-Time hub, create an eventstream, transform events, and create a destination to send the transformed events to a KQL database.
+In this part of the tutorial, you browse the Real-Time hub, create an eventstream, transform events, and create a destination to send the transformed events to a KQL database. You then subscribe to Fabric Events, so that you will receive an alert each time a new item is created in your workspace.
 
 ## Create an eventstream
 
@@ -87,6 +87,42 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
 
     The eventstream is now set up to transform events and send them to a KQL database.
 
+## Subscribe to Fabric Events
+
+In this section, you use a different kind of eventstream that contains Fabric Events. You set an Activator alert on top of the eventstream, so that you receive an email each time a new item is created in your workspace. In different scenarios, the Activator could also be used to trigger a Fabric item, such as a pipeline or a notebook.
+
+1. Browse to the Real-Time hub on the left navigation bar.
+1. In the left pane, select **Subscribe to** > **Fabric Events**.
+1. Hover over **Workspace item events** and select the alert icon.
+
+    :::image type="content" source="media/tutorial/fabric-events.png" alt-text="Screenshot of workspace item events in the Fabric events section of the Real-Time hub." lightbox="media/tutorial/fabric-events.png":::
+
+### Configure the events for the alert
+
+1. In the **Set alert** pane that opens, under **Monitor** > **Source**, select **Select events**.
+    The default selection is six types of events that include success and failure of item creation, deletion, and update.
+
+1. Under **Workspace**, select the workspace in which you created your resources.
+1. Select **Next**.
+
+    :::image type="content" source="media/tutorial/event-types.png" alt-text="Screenshot of workspace event configuration settings.":::
+
+1. Select **Save**.
+
+### Configure the alert
+
+1. Under **Save location** > **Workspace**, select the workspace in which you created your resources.
+1. Select **Item** > **Create a new item**.
+1. **Enter a name** for the item, such as **WorkspaceItemChange**.
+1. Select **Create**.
+    It may take a few moments for the item to be created.
+1. Once the item is created, select **Open**.
+
+A new tab opens in your browser with the Activator item you have just created. You can use this view to see the history of alerts, and to configure the alert further. 
+
+>[!NOTE]
+> If you are using a demo tenant and do not have access to the connected email, you may want to add a different email recipient to the alert. Do this by adding a new email address in the **To** field, and then selecting **Save and update**.
+
 ## Related content
 
 For more information about tasks performed in this tutorial, see:
@@ -94,6 +130,7 @@ For more information about tasks performed in this tutorial, see:
 * [Create and manage an eventstream](event-streams/create-manage-an-eventstream.md)
 * [Add a sample data as a source](event-streams/add-source-sample-data.md#add-sample-data-as-a-source)
 * [Add a KQL database as a destination](event-streams/add-destination-kql-database.md)
+* [Set alerts on Fabric workspace item events in Real-Time hub](../real-time-hub/set-alerts-fabric-workspace-item-events.md)
 
 ## Next step
 
