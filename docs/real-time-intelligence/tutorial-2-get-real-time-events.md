@@ -123,6 +123,24 @@ A new tab opens in your browser with the Activator item you have just created. Y
 >[!NOTE]
 > If you are using a demo tenant and do not have access to the connected email, you may want to add a different email recipient to the alert. Do this by adding a new email address in the **To** field, and then selecting **Save and update**.
 
+### Customize the message
+
+In this section, you can (optionally) customize the email message that is received to include information about the condition which set off the alert.
+
+1. In the **Definition** pane, under **Action** select **Edit action**.
+1. In the **Edit the action** window, click on the field next to **Context**.
+1. Select the checkboxes next to the following fields:
+
+    * itemName
+    * itemKind
+    * __type
+
+1. Select **Apply**.
+
+    :::image type="content" source="media/tutorial/alert-changes.png" alt-text="Screenshot of customizing Activator Alert.":::
+
+1. Select **Save and update**.
+
 ## Related content
 
 For more information about tasks performed in this tutorial, see:
