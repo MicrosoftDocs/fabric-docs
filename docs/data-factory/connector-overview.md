@@ -47,7 +47,7 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | Autodesk Construction Cloud | ✓/− |  |  | 
 | Automation Anywhere | ✓/− |  |  | 
 | Automy Analytics | ✓/− |  |  | 
-| Azure AI Search |  | ✓/✓ |  | 
+| Azure AI Search |  | −/✓ |  | 
 | Azure Analysis Services | ✓/− |  |  | 
 | [Azure Blobs](connector-azure-blob-storage-overview.md) | ✓/− | ✓/✓ | ✓/✓ | 
 | Azure Cosmos DB for MongoDB |  | ✓/✓ |  | 
