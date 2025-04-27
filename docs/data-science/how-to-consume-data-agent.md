@@ -30,10 +30,7 @@ Data agent in Microsoft Fabric transforms enterprise data into conversational Q&
 - [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
 - At least one of the following: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
 - [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
-- Developers and end users must at least have `AI Developer` ​Role-Based Access Control (RBAC) role.
-
-> [!NOTE]
-> At this time, the integration between Fabric data agent and Azure AI Foundry is supported only in the West US and Japan East regions, with more regions coming soon.
+- Developers and end users in Azure AI Foundry must at least have the `AI Developer` Role-Based Access Control (RBAC) role.
 
 ## How it works
 
@@ -47,6 +44,9 @@ Data agent in Microsoft Fabric transforms enterprise data into conversational Q&
 - Uses the end user’s identity to generate secure queries over the data sources the user is permitted to access within the Fabric data agent.
 - Invokes Fabric to fetch and process the data, to ensure a smooth, automated experience.
 - Combines the results from Fabric data agent with its own logic to generate comprehensive responses. Identity Passthrough (On-Behalf-Of) authorization secures this flow, to ensure robust security and proper access control across enterprise data.
+
+> [!NOTE]
+> The Fabric data agent and the Azure AI Foundry resources should be on the same tenant.
 
 ## Adding Fabric data agent to your Azure AI Agent
 

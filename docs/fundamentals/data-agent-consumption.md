@@ -44,5 +44,5 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 ## Related content
 
-- [Overview of the Data agent in Fabric](../data-science/concept-ai-skill.md)
+- [Overview of the Data agent in Fabric](../data-science/concept-data-agent.md)
 - [Background jobs in Fabric](../enterprise/fabric-operations.md)

@@ -404,7 +404,7 @@ conceptualContent:
         # Card
         - title: Developer tools
           links:
-            - url: admin/fabric-command-line-interface.md
+            - url: /fabric/admin/fabric-command-line-interface
               itemType: concept
               text: Fabric command line interface
             - url: https://registry.terraform.io/providers/microsoft/fabric/latest/docs/guides/getting_started

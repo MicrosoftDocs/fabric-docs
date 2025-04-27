@@ -69,11 +69,11 @@ After a few minutes, the lakehouse populates with the necessary data.
 
 To create a new Fabric data agent, navigate to your workspace and select the **+ New Item** button, as shown in this screenshot:
 
-:::image type="content" source="./media/data-agent-scenario/create-ai-skill.png" alt-text="Screenshot showing where to create Fabric data agents." lightbox="./media/data-agent-scenario/create-ai-skill.png":::
+:::image type="content" source="./media/data-agent-scenario/create-data-agent.png" alt-text="Screenshot showing where to create Fabric data agents." lightbox="./media/data-agent-scenario/create-data-agent.png":::
 
 In the All items tab, search for **Fabric data agent** to locate the appropriate option. Once selected, a prompt asks you to provide a name for your Fabric data agent, as shown in this screenshot:
 
-:::image type="content" source="./media/data-agent-scenario/name-ai-skill.png" alt-text="Screenshot showing where to provide name for the Fabric data agent." lightbox="./media/data-agent-scenario/name-ai-skill.png":::
+:::image type="content" source="./media/data-agent-scenario/name-data-agent.png" alt-text="Screenshot showing where to provide name for the Fabric data agent." lightbox="./media/data-agent-scenario/name-data-agent.png":::
 
 After you enter the name, proceed with the following steps to align the Fabric data agent with your specific requirements.
 
@@ -174,11 +174,11 @@ Now that you configured the Fabric data agent, added Fabric data agent instructi
 
 You can use the Fabric data agent programmatically within a Fabric notebook. To determine whether or not the Fabric data agent has a published URL value, select **Settings**, as shown in this screenshot:
 
-:::image type="content" source="./media/data-agent-scenario/initial-ai-skill-settings.png" alt-text="Screenshot showing selection of Fabric data agent settings." lightbox="./media/data-agent-scenario/initial-ai-skill-settings.png":::
+:::image type="content" source="./media/data-agent-scenario/initial-data-agent-settings.png" alt-text="Screenshot showing selection of Fabric data agent settings." lightbox="./media/data-agent-scenario/initial-data-agent-settings.png":::
 
 Before you publish the Fabric data agent, it doesn't have a published URL value, as shown in this screenshot:
 
-:::image type="content" source="./media/data-agent-scenario/fabric-notebook-ai-skill-no-published-url-value.png" alt-text="Screenshot showing that a Fabric data agent doesn't have a published URL value before publication." lightbox="./media/data-agent-scenario/fabric-notebook-ai-skill-no-published-url-value.png":::
+:::image type="content" source="./media/data-agent-scenario/fabric-notebook-data-agent-no-published-url-value.png" alt-text="Screenshot showing that a Fabric data agent doesn't have a published URL value before publication." lightbox="./media/data-agent-scenario/fabric-notebook-data-agent-no-published-url-value.png":::
 
 After you validate the performance of the Fabric data agent, you might decide to publish it so you can then share it with your colleagues who want to do Q&A over data. In this case, select **Publish**, as shown in this screenshot:
 
@@ -190,12 +190,12 @@ The **Publish data agent** box opens, as shown in this screenshot:
 
 In this box, select **Publish** to publish the Fabric data agent. The published URL for the Fabric data agent appears, as shown in this screenshot:
 
-:::image type="content" source="./media/data-agent-scenario/fabric-notebook-ai-skill-published-url-value.png" alt-text="Screenshot showing the published URL." lightbox="./media/data-agent-scenario/fabric-notebook-ai-skill-published-url-value.png":::
+:::image type="content" source="./media/data-agent-scenario/fabric-notebook-data-agent-published-url-value.png" alt-text="Screenshot showing the published URL." lightbox="./media/data-agent-scenario/fabric-notebook-data-agent-published-url-value.png":::
 
 You can then copy the published URL and use it in the Fabric notebook. This way, you can query the Fabric data agent by making calls to the Fabric data agent API in a Fabric notebook. Paste the copied URL in this code snippet. Then, replace the question with any query relevant to your Fabric data agent. This example uses `\<generic published URL value\>` as the URL.
 
 ```python
-%pip install "openai==1.14.1"
+%pip install "openai==1.70.0"
 ```
 
 ```python

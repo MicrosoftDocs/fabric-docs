@@ -37,7 +37,7 @@ Mirroring is only available for the Azure Cosmos DB account types listed here.
 
 ### Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Account and database limitations
 

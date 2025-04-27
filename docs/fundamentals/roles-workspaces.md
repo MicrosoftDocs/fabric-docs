@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: yicw, mesrivas
 ms.topic: conceptual
-ms.date: 09/25/2024
+ms.date: 04/06/2025
 ms.custom:
 ---
 
@@ -35,9 +35,10 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 | View and read content of data pipelines, notebooks, Spark job definitions, ML models and experiments, and eventstreams.                                        | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | View and read content of KQL databases, KQL query-sets, and real-time dashboards.                                                                               | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | Connect to SQL analytics endpoint of Lakehouse or the Warehouse                                                                                                 | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
-| Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> with T-SQL through TDS endpoint.                                                               | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
-| Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> through OneLake APIs and Spark.                                                                | &#x2705; | &#x2705; | &#x2705;    |          |
-| Read Lakehouse data through Lakehouse explorer.                                                                                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
+| Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> with T-SQL through TDS endpoint (ReadData).                                                               | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
+| Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> through OneLake APIs and Spark (ReadAll).                                                                | &#x2705; | &#x2705; | &#x2705;    |          |
+| Read Lakehouse data through Lakehouse explorer (ReadAll).                                                                                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
+| Subscribe to OneLake events.                                                                                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
 | Write or delete data pipelines, notebooks, Spark job definitions, ML models, and experiments, and eventstreams.                                                 | &#x2705; | &#x2705; | &#x2705;    |          |
 | Write or delete Eventhouses<sup>3</sup>, KQL Querysets, Real-Time Dashboards, and schema and data of KQL Databases, Lakehouses, data warehouses, and shortcuts. | &#x2705; | &#x2705; | &#x2705;    |          |
 | Execute or cancel execution of notebooks, Spark job definitions, ML models, and experiments.                                                                     | &#x2705; | &#x2705; | &#x2705;    |          |

@@ -1,16 +1,16 @@
 ---
-title: Enable Entra ID Authentication for an Application in Eventstream
-description: Learn how to add a Custom Endpoint source or destination to enable Entra ID Authentication for an Application in Eventstream.
+title: Connect to Eventstream using Microsoft Entra ID Authentication
+description: Learn how to add a Custom Endpoint source or destination and connect a service principal app to Eventstream using Microsoft Entra ID authentication.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-ms.date: 03/11/2025
+ms.date: 04/08/2025
 ms.search.form: Source and Destination
 ---
 
-# Enable Entra ID Authentication for an Application in Eventstream
+# Connect to Eventstream using Microsoft Entra ID authentication
 
 **Custom Endpoint** is a special type of Eventstream source or destination that allows your application to send and fetch data from Eventstream. It supports two authentication methods for connecting to your application: **SAS Keys** and **Entra ID** authentication.
 
@@ -21,7 +21,12 @@ This article guides you through creating a Service Principal application, settin
 
 ## Prerequisites
 
-* An Eventstream item in the workspace with Custom Endpoint source or destination. Refer to [this guide](add-source-custom-app.md) for adding Custom Endpoint to Eventstream.
+Before you begin, make sure the following prerequisites are met:
+
+* Your **Tenant Admin** enabled the following setting in the Admin portal. [Learn more](/power-bi/developer/embedded/embed-service-principal)
+  * Service principals can call Fabric public APIs
+* You have **Member** or higher permissions in the workspace. This is required to manage workspace access and assign the necessary permissions to your service principal app.
+* An Eventstream item in your workspace with a Custom Endpoint source. Refer to [this guide](add-source-custom-app.md) for instructions on how to add a Custom Endpoint to Eventstream.
 * Install [Visual Studio Code](https://code.visualstudio.com/Download).
 * Set up VS Code for Java development. Install [Coding pack for Java](https://code.visualstudio.com/docs/java/java-tutorial).
 
