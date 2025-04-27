@@ -105,7 +105,12 @@ If you are new to writing KQL, you can ask a question in natural language and Co
 
     The copilot will suggest a query based on your question.
 1. Select the **Insert** button to insert the query into the KQL editor.
+
+    :::image type="content" source="media/tutorial/copilot.png" alt-text="Screenshot of copilot dialog.":::
+
 1. Select **Run** to run the query.
+
+You can ask followup questions or change the scope of your query. Use this feature to help you learn KQL and to generate queries quickly.
 
 ## Related content
 
