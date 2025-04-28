@@ -32,9 +32,6 @@ sections:
       - question: How do I open a support ticket for API for GraphQL?
         answer: To get help from Microsoft Support on any issue related to Fabric API for GraphQL, visit our [Fabric Support site](https://support.fabric.microsoft.com/support/) and choose the **Data Engineering** option.
 
-      - question: Which regions aren't yet supported by the API for GraphQL?
-        answer: API for GraphQL is currently not supported in the West US 3 region.
-
       - question: Does API for GraphQL support Private Link?
         answer: API for GraphQL doesn't support Private Link at this time. However, we're planning to support this feature in the future and will provide updates as they become available.
 
