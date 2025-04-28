@@ -20,6 +20,8 @@ This article explains how to view and increase your quotas, using the Azure port
 * To view your Fabric quota, you need an Azure account with the contributor role, or another role that includes *contributor* access.
 
 * To manage your Fabric quota, you need the permissions listed in [Quota Request Operator](/azure/role-based-access-control/built-in-roles/management-and-governance#quota-request-operator)
+  
+* Before your first quota request, it's essential to register the resource provider using the Azure Resource Provider instructions [here](/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider)
 
 ## View your Fabric CU quota
 
