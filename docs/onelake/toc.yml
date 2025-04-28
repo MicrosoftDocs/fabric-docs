@@ -37,6 +37,8 @@ items:
     href: onelake-iceberg-tables.md
   - name: Shortcut security
     href: onelake-shortcut-security.md
+  - name: Manage cloud connections
+    href: manage-shortcut-connections.md
   - name: Access OneLake shortcuts in an Apache Spark notebook
     href: access-onelake-shortcuts.md
   - name: Use shortcuts REST API

@@ -7,7 +7,7 @@ ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
-ms.date: 04/07/2025
+ms.date: 04/23/2025
 ---
 
 # Classification tasks using SynapseML
