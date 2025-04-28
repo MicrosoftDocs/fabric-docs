@@ -18,7 +18,7 @@ As prerequisites to this tutorial, complete the following steps:
 1.	Sign into your Power BI online account, or if you don't have an account yet, sign up for a free trial.
 1.	Enable Microsoft Fabric in your tenant. Select the default Power BI icon at the bottom left of the screen and select Fabric.
 1.	Create a Microsoft Fabric enabled Workspace.
-1.	Select a workspace from the Workspaces tab, then select + New item, and choose Data Engineering. Provide a pipeline name. Then select "Create".
+1.	Select a workspace from the Workspaces tab, then select "+ New" item, and choose Data Engineering. Provide a pipeline name. Then select "Create".
 1.	Create a Lakehouse with schemas (SalesLakehouse) and load the sample data files for raw data into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
 
 ## Scenario overview
@@ -65,7 +65,7 @@ The high-level steps are as follows:
 
   	:::image type="content" source="./media/tutorial/create-bronze-layer.png" alt-text="Screenshot showing creating bronze layer." border="true" lightbox="./media/tutorial/create-bronze-layer.png":::
 
-1.	Run all cells of the otebook using Spark SQL to create Materialized lake views with data quality constraints. Once all cells are successfully executed, you can refresh the Saleslakehouse source to view the newly created Materialized lake views for silver and gold schema.
+1.	Run all cells of the notebook using Spark SQL to create materialized lake views with data quality constraints. Once all cells are successfully executed, you can refresh the Saleslakehouse source to view the newly created Materialized lake views for silver and gold schema.
 
   	:::image type="content" source="./media/tutorial/run-notebook.png" alt-text="Screenshot showing run notebook." border="true" lightbox="./media/tutorial/run-notebook.png":::
 
@@ -87,7 +87,7 @@ The high-level steps are as follows:
 
   	:::image type="content" source="./media/tutorial/dropdown-menu.png" alt-text="Screenshot showing scheduling execution." border="true" lightbox="./media/tutorial/dropdown-menu.png":::
 
-1.	By clicking on the latest run, you can find the Materialized lake view metrics on right side panel. The bottom activity panel will provide a high-level overview of node execution status.
+1.	By clicking on the latest run, you can find the materialized lake view metrics on right side panel. The bottom activity panel will provide a high-level overview of node execution status.
 
   	:::image type="content" source="./media/tutorial/latest-run.png" alt-text="Screenshot showing latest run." border="true" lightbox="./media/tutorial/latest-run.png":::
 
