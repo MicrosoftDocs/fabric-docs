@@ -20,7 +20,7 @@ The following table lists Fabric features according to SKU type. The table lists
 |-------------------------------------------------------------------------------------------------------|:-------------:|:------------:|
 | [Fabric data agent](../data-science/concept-data-agent.md)                                                      | F64 or higher | &#x2705;     |
 | [ARM APIs and Terraform](/azure/developer/terraform/overview-azapi-provider)                          | &#x2705;      | &#x274C;     |
-| [Copilot](../fundamentals/copilot-fabric-overview.md)                                                 | F64 or higher | &#x2705;     |
+| [Copilot](../fundamentals/copilot-fabric-overview.md)                                                 | &#x2705;      | &#x2705;     |
 | [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)<sup>1</sup>   | &#x2705;      | &#x274C;     |
 | [On-demand resizing](scale-capacity.md)                                                               | &#x2705;      | &#x274C;     |
 | [Pause and resume your capacity](pause-resume.md)                                                     | &#x2705;      | &#x274C;     |
