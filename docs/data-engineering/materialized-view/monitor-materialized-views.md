@@ -35,7 +35,7 @@ To search for Materialized lake view runs, you can enter certain keywords in the
 
 Materialized lake view runs on the Monitoring page appear with the syntax of MLV_JobInstanceID
  
-## Manage a DAG run
+## Manage a Materialized lake view run
 
 When you hover over a Materialized lake view run row, you can see various row-level actions that enable you to manage a particular run.
 
@@ -43,11 +43,11 @@ View the detail pane
 
 You can hover over a DAG run row and click the **View details** icon to open the **Detail** pane and view more details.
  
-## Cancel a DAG run
+## Cancel a Materialized lake view run
 
 If you need to cancel an in-progress DAG run, hover over its row and click the `Cancel` icon.
  
-## Navigate to DAG detail view
+## Navigate to Materialized lake view run
 
 If you need more information about Materialized lake view runs and the Materialized view statistics, access Apache Spark logs for individual Materialized lake views, or check input and output data, you can click on the name of any Materialized lake view run  to navigate to its corresponding scheduled run, and individual Materialized lake views in the lineage will direct you to the detailed log view.
 
