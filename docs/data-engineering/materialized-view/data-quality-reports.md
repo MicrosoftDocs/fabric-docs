@@ -14,7 +14,7 @@ ms.date: 04/28/2025
 Materialized lake views (MLV)  provides the option to view your data quality metrics at a snapshot through embedded data quality Power BI reports. The data quality report seamlessly integrates with the existing data model in MLV and presents a visual representation of your data quality metrics to help you uncover data trends and identify outliers in your data.  
 
 
-## Creating and accessing the report 
+## Create and access the report 
 
 To create/access the report, navigate to the Managed materialized lake views page and click on the "Data quality report" button. 
 
@@ -25,7 +25,7 @@ A semantic model and a Power BI report are created for the user in the backgroun
 Once ready, the report Power BI report is also simultaneously displayed on the same page as an embedded report and will present the synopsis of the data quality through two sections (pages on the Power BI report) – Overview and MLV Drilldown. 
 
  
-## Interpreting the data in the report
+## Interpret the data in the report
 
 The overview page shows the data trends from the last one week, displaying visuals for the MLVs and constraints that cause the most violations and drops.
 
@@ -40,7 +40,7 @@ The user can filter for a particular MLV and also look at data from beyond the l
 
  
  
-## Navigating to the original report in the workspace 
+## Navigate to the original report in the workspace 
 
 To use all the other default features offered in a standard Power BI report, the user can navigate to the original report in the workspace by clicking the "PowerBI report" button on the right-hand corner of the top navigation bar. 
 
@@ -64,4 +64,4 @@ You can set up alerts on the data quality report in Fabric Materialized lake vie
    These triggers could be when the measure changes by a value or percent (such as changes by, increases by, decreases by). It could also be when the measure becomes a value (such as greater than, greater than or equal to, less than, less than or equal to, equal to, not equal to, within range, outside of range).
    * Choose the preferred alert communication method, such as Teams or Outlook email. 
 
-1. Click on "Apply" button to apply the rule for the alerts. 
+1. Click the "Apply" button to apply the rule for the alerts. 
