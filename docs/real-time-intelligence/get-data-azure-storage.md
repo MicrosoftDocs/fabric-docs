@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 04/07/2025
+ms.date: 04/28/2025
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -138,7 +138,7 @@ Set the source to get data.
 
         | **Setting** | **Field description** |
         |--|--|
-        | RTOStorageAccount | A real-time hub account that already exists in Fabric. |
+        | RTAStorageAccount | A real-time hub account that already exists in Fabric. |
         | Container | The storage container containing the file you want to ingest. |
         | Connection | This is prepopulated with the connection string |
 
@@ -280,6 +280,8 @@ When you close the window, you can see the connection in the Explorer tab, under
 ## [One-time ingestion](#tab/one-time-ingestion)
 
 :::image type="content" source="media/get-data-azure-storage/summary.png" alt-text="Screenshot of summary page for one-time ingestion with successful ingestion completed." lightbox="media/get-data-azure-storage/summary.png":::
+
+---
 
 ## Related content
 
