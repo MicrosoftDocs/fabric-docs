@@ -55,7 +55,7 @@ Some GitHub Enterprise settings aren't supported. For example:
   - Has more than 256 characters
   - Ends with a <kbd>.</kbd> or a space
   - Contains any forbidden characters as described in [directory name limitations](#directory-name-limitations)
-- When you connect a workspace that has folders to Git, you need to commit changes to the Git repo if that [folder structure](./git-integration/git-integration-process.md#folders) is different.
+- When you connect a workspace that has folders to Git, you need to commit changes to the Git repo if that [folder structure](../git-integration/git-integration-process.md#folders) is different.
 
 ### Directory name limitations
 
