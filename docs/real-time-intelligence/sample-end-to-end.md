@@ -38,6 +38,8 @@ The sample end-to-end solution includes these components:
 
 * **Power BI**: is used to create real-time reports that display data from Eventstreams and KQL Databases managed by Real-Time Intelligence.
 
+* **Activator**: is a no-code experience in Microsoft Fabric for automatically taking actions when patterns or conditions are detected in changing data.
+
 ## Create an end-to-end sample
 
 These steps show how to create an end-to-end sample using the bike rental sample data.
@@ -71,7 +73,7 @@ These steps show how to create an end-to-end sample using the bike rental sample
 
     :::image type="content" source="media/sample-end-to-end-solution/end-to-end-sample-folder.png" alt-text="Screenshot of the Bike_sample folder in the workspace containing the Eventhouse, Eventstream, Queryset, and Dashboard.":::
 
-1. Select **Bike_Eventhouse**, **Bike_Eventstream**, **Bike_Queryset**, or **Bike_Dashboard** and explore the sample data. After you open each item for the first time, it appears in the left navigation bar for easy access.
+1. Select **Bike_Eventhouse**, **Bike_Eventstream**, **Bike_Queryset**, **Bike_Activator**, or **Bike_Dashboard** and explore the sample data. After you open each item for the first time, it appears in the left navigation bar for easy access.
 
     :::image type="content" source="media/sample-end-to-end-solution/end-to-end-sample-bike-db.png" alt-text="Screenshot of sample bike database and left navigation bar." lightbox="media/sample-end-to-end-solution/end-to-end-sample-bike-db.png":::
 

@@ -16,6 +16,8 @@ Real-Time Intelligence in Microsoft Fabric offers a sample data gallery containi
 
 In this article, you learn how to query data from the sample gallery in Real-Time Intelligence to get started with analyzing your data.
 
+To use the sample gallery to create an end-to-end real-time solution that shows how to stream, analyze, and visualize real-time data in a real-world context, see [End-to-end sample](sample-end-to-end.md).
+
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
@@ -62,3 +64,4 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 * [Data management](data-management.md)
 * [Customize results in the KQL Queryset results grid](customize-results.md)
+* [End-to-end sample](sample-end-to-end.md)
