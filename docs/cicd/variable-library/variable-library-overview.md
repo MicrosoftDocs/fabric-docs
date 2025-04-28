@@ -78,7 +78,7 @@ The following items support the Variable library:
 
 ## Considerations and limitations
 
- [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
+ [!INCLUDE [limitations](../includes/variable-library-limitations.md)]
 
 ## Related content
 
