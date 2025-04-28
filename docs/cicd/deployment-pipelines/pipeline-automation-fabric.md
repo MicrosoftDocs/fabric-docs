@@ -93,6 +93,20 @@ You can also download the entire [`Fabric-Samples`](https://github.com/microsoft
   * Items to deploy (items display name and item type)
   * Deployment notes (optional)
 
+* [Assign to new deployment pipeline and deploy](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/DeploymentPipelines-AssignToNewDeploymentPipelineAndDeploy.ps1)
+
+  Provide the following information:
+
+  * The ID of the development workspace
+  * The name of the *to-be-created* production workspace
+  * The name of the deployment pipeline
+  * The description of the deployment (optional)
+  * Principal type. Choose either "UserPrincipal" or "ServicePrincipal" If service proncipal:
+
+    * The application (client) ID of the service principal
+    * The directory (tenant) ID of the service principal
+    * #The secret value of the service principal
+
 ## Considerations and limitations
 
 When using the deployment pipelines APIs, consider the following limitations:
