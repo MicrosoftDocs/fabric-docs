@@ -1,15 +1,15 @@
 ---
 title: Create an empty table
-description: Learn how to create an empty table in Real-Time Intelligence.
+description: Learn how to create an empty table and edit the table schema in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
 ms.date: 04/24/2025
-ms.search.form: Create a table
+ms.search.form: Create a table and edit the table schema
 ---
-# Create an empty table
+# Create and edit a table schema
 
 Tables are named entities that hold data. A table has an ordered set of columns, and zero or more rows of data. Each row holds one data value for each of the columns of the table. The order of rows in the table is unknown, and doesn't in general affect queries, except for some tabular operators (such as the top operator) that are inherently undetermined.
 
@@ -53,45 +53,50 @@ You can create an empty table without a data source to use as a testing environm
 
     :::image type="content" source="media/empty-table/table-success.png" alt-text="Screenshot of the success meassage.":::
 
-### Edit the table schema
+## Edit the table schema
 
-You can manually define or edit the table schema a table. Editing the schema does not change any data that is in the table. When editing the schema you can:
+You can manually define or edit the table schema a table.  When editing the schema you can:
 
-* edit the table descrption
-* edit column names
-* add columns and define their type
-* remove columns
+* Edit the table name
+* Edit the table descrption
+* Edit column names
+* Add columns and define their type
+* Remove columns
 
-> [!NOTE]
-> Table schema edit is not supported when there is an active OneLake connection.
+> [!IMPORTANT]
+> Editing the schema does not change any data that is in the table.
+> Table schema edit is not supported when there is an active OneLake connection. Disable OneLake availability before editing the schema. You can enable it later.
 > You can't edit a column's type, as this would lead to data loss.
-> You many need to manually update [dependencies](#dependencies).
+> Table mappings and reference may need manual updating. Review [dependencies](#dependencies).
 
+1. Browse to your desired KQL database, and in the Explorer pane, expand **Tables**.
 
+1. Select a table from the list, and open the More menu* [...].
 
+    :::image type="content" source="media/empty-table/edit-schema.png" alt-text="Screenshot of the table more menu with Edit schema highlighted.":::
 
+1. In the **Edit table schema** window, you can edit the table name, edit the table decscription, and delete columns.
 
-1. Browse to your desired KQL database, and in the Explorer pane, expand Tables. A list of tables in your database is displayed.
+1. To add a new column, enter a column name at the bottom of the list of columns. The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
 
-1. Select a table from the list, and open the More menu* [...]
-
-
-
-1. Enter a column name. The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
 1. Select a data type for your column. The default column type is `string` but can be altered in the dropdown menu of the **Column type** field.
+
 1. Select **Add column** to add more columns.
+
+1. Manually update any [Dependencies](#dependencies).
 
 ### Dependencies
 
-Related mappings
+**Related mappings**
 
-Editing the schema does not update the mapping of incoming data to table columns during ingestion. After adding columns, ensure you update the [mapping](kusto/management/mappings?view=microsoft-fabric&preserve-view=true) so data is ingested correctly.
+Editing the schema does not update the mapping of incoming data to table columns during ingestion. After adding columns, ensure you update the [mapping](kusto/management/mappings) so data is ingested correctly.
 
-Related materialized views
+**Update materialized views**
 
-### Schema
+If the table being renamed is the source table of a [materialized view](materialized-view.md), you can use the toggle in the dependencies section. The table will be renamed and all materialized views referencing OldName will be updated to point to NewName, in a transactional way.
 
-The tool automatically infers the schema based on your data. To create a schema without a data source, you need to add columns under [Partial data preview](#partial-data-preview).
+> [!NOTE]
+> The command only works if the source table is referenced directly in the materialized view query. If the source table is referenced from a stored function invoked by the view query, you need to update the [materialized view](materialized-view.md) manually.
 
 #### Command viewer
 
@@ -100,14 +105,6 @@ The command viewer shows the commands for creating tables, mapping, and ingestin
 To open the command viewer, select the **v** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
 
 :::image type="content" source="media/empty-table/empty-command-viewer.png" alt-text="Screenshot of the Command viewer. The Expand button is highlighted." lightbox="media/empty-table/empty-command-viewer.png":::
-
-#### Partial data preview
-
-The partial data preview is automatically inferred based on your data.
-
-To add a new column, select **Add new column** under **Partial data preview**.
-
-:::image type="content" source="media/empty-table/schema-new-column.png" alt-text="Screenshot of the Schema tab in the new table wizard in Real-Time Intelligence. The Add new column button is highlighted." lightbox="media/empty-table/schema-new-column.png":::
 
 ##### Edit columns
 
