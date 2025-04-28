@@ -25,7 +25,7 @@ With Fabric, you can:
 
 ## Overview of the trial capacity
 
-When you start a trial of a Fabric capacity, your trial [capacity](../enterprise/licenses.md#capacity) is configured with 64 capacity units, giving you the equivalent of an F2 capacity.
+When you start a trial of a Fabric capacity, your trial [capacity](../enterprise/licenses.md#capacity) is configured with 64 capacity units, giving you the equivalent of an F64 capacity.
 
 One trial of a Fabric capacity offers you the following features:
 

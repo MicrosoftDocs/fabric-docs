@@ -30,7 +30,7 @@ The AI related activity within the Data agent is classified as *background jobs*
 
 For example, assume each Data agent request has 2,000 input tokens and 500 output tokens. The price for one Data agent request is calculated as follows: (2,000 × 100 + 500 × 400) / 1,000 = 400.00 CU seconds = 6.67 CU minutes. The cost of executing the AI-generated queries is billed through the corresponding query engine running the query.
 
-Since Data agent is a background job, each Data agent request (~6.67 CU minute job) consumes only one CU minute of each hour of a capacity. If you're using an F2 SKU that has 64 * 24 = 1,536 CU hours a day, and each Data agent job consumes 6.67 CU mins / 60 mins = 0.11 CU hours, you can run over 13,824 requests before they exhaust the capacity. However, once the capacity is exhausted, all operations will shut down.
+Since Data agent is a background job, each Data agent request (~6.67 CU minute job) consumes only one CU minute of each hour of a capacity. If you're using an F64 SKU that has 64 * 24 = 1,536 CU hours a day, and each Data agent job consumes 6.67 CU mins / 60 mins = 0.11 CU hours, you can run over 13,824 requests before they exhaust the capacity. However, once the capacity is exhausted, all operations will shut down.
 
 ## Region mapping 
 
