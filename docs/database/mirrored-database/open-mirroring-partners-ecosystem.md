@@ -4,7 +4,7 @@ description: Learn about the open mirrored databases partner ecosystem in Micros
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur, ulrichchrist, maraki-ketema
-ms.date: 03/24/2025
+ms.date: 04/24/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -30,6 +30,8 @@ For more information, see [Oracle GoldenGate 23ai integration into open mirrorin
 
 SQL2Fabric-Mirroring is a Striim solution that reads data from SQL Server and writes it to Microsoft Fabric's mirroring landing zone in Delta-Parquet format. Microsoft's Fabric replication service frequently picks up these files and replicates the file contents into Fabric data warehouse tables.
 
+For more information, see [Striim integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/striim-docs).
+
 ## MongoDB
 
 MongoDB integrated with open mirroring for a solution to bring operational data from MongoDB Atlas to Microsoft Fabric for Big data analytics, AI and BI, combining it with the rest of the data estate of the enterprise. Once mirroring is enabled for a MongoDB Atlas collection, the corresponding table in OneLake is kept in sync with the changes in source MongoDB Atlas collection, unlocking opportunities of varied analytics and AI and BI in near real-time.
@@ -53,6 +55,18 @@ For more information, see [Simplement integration into open mirroring in Microso
 SNP Glue is a data integration solution certified for various SAP source systems including SAP S/4HANA (on-premises and Private Cloud Edition). With release 2502, it supports open mirroring for near real-time data integration into Microsoft Fabric. For more information, see [SNP Glue release note](https://aka.ms/mirroring/snp-mirroring-doc).
 
 For more information on SNP Glue, see the [SNP Glue documentation](https://aka.ms/mirroring/snp-overview).
+
+## ASAPIO
+
+The ASAPIO Integration Add-on is an SAP-certified solution that connects SAP systems directly to Microsoft Fabric. It supports open mirroring to enable change data capture to Microsoft Fabric and comes with a data catalog of predefined data products for real-time and scheduled data replication.
+
+For more information, see [ASAPIO Integration Add-on, Fabric Connector](https://aka.ms/mirroring/asapio-mirroring-overview).
+
+## Theobald
+
+Theobald Xtract Universal is an SAP-certified data integration solution supporting all standard SAP applications like SAP S/4HANA, SAP ECC and SAP BW. Starting with version 2025.3.26.15 it now supports open mirroring for [change data capture from SAP into Microsoft Fabric](https://aka.ms/mirroring/theobald-mirroring-overview).
+
+For more information on Theobald Xtract Universal, see [Theobald Xtract Universal](https://aka.ms/mirroring/theobald-xtract-universal-overview).
 
 ### CluedIn
 
