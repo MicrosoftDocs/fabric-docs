@@ -97,15 +97,15 @@ You can also download the entire [`Fabric-Samples`](https://github.com/microsoft
 
   Provide the following information:
 
-  * The ID of the development workspace
-  * The name of the *to-be-created* production workspace
-  * The name of the deployment pipeline
-  * The description of the deployment (optional)
-  * Principal type. Choose either "UserPrincipal" or "ServicePrincipal" If service proncipal:
+  * ID of the development workspace
+  * Name of the *to-be-created* production workspace
+  * Name of the deployment pipeline
+  * Description of the deployment (optional)
+  * Principal type. Choose either *UserPrincipal* or *ServicePrincipal* If service principal:
 
-    * The application (client) ID of the service principal
-    * The directory (tenant) ID of the service principal
-    * #The secret value of the service principal
+    * Application (client) ID of the service principal
+    * Directory (tenant) ID of the service principal
+    * Secret value of the service principal
 
 ## Considerations and limitations
 
