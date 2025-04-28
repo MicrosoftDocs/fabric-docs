@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 04/16/2025
 ---
 
-  * Principal type. Choose either *UserPrincipal* or *ServicePrincipal* If service principal, also provide:
-    * Application (client) ID of the service principal
-    * Directory (tenant) ID of the service principal
-    * Secret value of the service principal
+     * Principal type. Choose either UserPrincipal or ServicePrincipal If service principal, also provide:
+         * Application (client) ID of the service principal
+         * Directory (tenant) ID of the service principal
+         * Secret value of the service principal
