@@ -33,7 +33,7 @@ It's seamless to incorporate these functions as part of data-science and data-en
 ## Prerequisites
 
 - To use AI functions with Fabric's built-in AI endpoint, your administrator needs to enable [the tenant switch for Copilot and other features powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
-- You also need an F64 or higher SKU or a P SKU. With a smaller capacity resource, you need to provide AI functions with your own Azure OpenAI resource [using custom configurations](./configuration.md).
+- You also need an F2 or higher SKU or a P SKU. With a smaller capacity resource, you need to provide AI functions with your own Azure OpenAI resource [using custom configurations](./configuration.md).
 - Depending on your location, you may need to enable a tenant setting for cross-geo processing. Learn more [here](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
 
 
