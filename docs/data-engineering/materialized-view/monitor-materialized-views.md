@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 04/14/2025
 ---
 
-# Monitoring Fabric materialized lake views
+# Monitoring Materialized lake views
 
 The Monitor pane serves as a centralized portal for browsing Materialized lake view runs in your Lakehouse. You can view status of the Materialized lake view runs. You can also search, and filter the runs based on different criteria. Additionally, you can cancel your in-progress run and drill down to view more execution details of any Materialized view run.
 
