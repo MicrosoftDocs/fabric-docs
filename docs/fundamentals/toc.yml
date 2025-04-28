@@ -43,6 +43,8 @@ items:
     href: fabric-search.md
   - name: Fabric settings
     href: fabric-settings.md 
+  - name: Find Fabric items with the OneLake catalog
+    href: ../governance/onelake-catalog.md
 - name: Workspaces
   items:
   - name: Workspaces
@@ -69,14 +71,22 @@ items:
         href: workspace-monitoring-overview.md
       - name: Enable monitoring in your workspace
         href: enable-workspace-monitoring.md      
-- name: Find Fabric items with the OneLake catalog
-  href: ../governance/onelake-catalog.md
 - name: Copilot and AI in Fabric
   items:
-  - name: Copilot in Fabric overview
+  - name: 1 - Copilot in Fabric overview
     href: copilot-fabric-overview.md
-  - name: Enable Copilot in Fabric
+  - name: 2 - How Copilot works in Microsoft Fabric
+    href: how-copilot-works.md
+  - name: 3 - Copilot glossary and terms
+    href: copilot-fabric-glossary.md
+  - name: 4 - Enable Copilot in Fabric
     href: copilot-enable-fabric.md
+  - name: 5 - Copilot in Power BI integration
+    href: /power-bi/create-reports/copilot-integration?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+  - name: 6 - Use Copilot with semantic models
+    href: /power-bi/create-reports/copilot-semantic-models?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
+  - name: 7 - Use Copilot with Power BI reports
+    href: /power-bi/create-reports/copilot-reports-overview?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
   - name: Copilot in Fabric FAQ
     href: copilot-faq-fabric.yml
   - name: Privacy, security, and responsible use for Copilot in Fabric
@@ -95,24 +105,28 @@ items:
       href: copilot-power-bi-privacy-security.md
     - name: Responsible use in Real-Time Intelligence
       href: copilot-real-time-intelligence-privacy-security.md
-  - name: Copilot for Data Factory
-    href: copilot-fabric-data-factory.md
-  - name: Copilot for Data Science and Data Engineering
+  - name: Copilot in Fabric experiences
     items:
+    - name: Copilot for Data Factory
+      href: copilot-fabric-data-factory.md
+    - name: Copilot for Data Warehouse
+      href: ../data-warehouse/copilot.md
+    - name: Copilot for Real-Time Intelligence
+      href: copilot-real-time-intelligence.md
     - name: Copilot for Data Science and Data Engineering
-      href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
-    - name: Overview of Chat-magics in Notebooks (preview)
-      href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
-    - name: Use the Copilot chat panel (preview)
-      href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
-  - name: Copilot for Data Warehouse
-    href: ../data-warehouse/copilot.md
-  - name: Copilot for Real-Time Intelligence
-    href: copilot-real-time-intelligence.md
-  - name: Copilot in Fabric Consumption
-    href: copilot-fabric-consumption.md
-  - name: Data agent in Fabric Consumption
-    href: data-agent-consumption.md
+      items:
+      - name: Copilot for Data Science and Data Engineering
+        href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
+      - name: Overview of Chat-magics in Notebooks (preview)
+        href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
+      - name: Use the Copilot chat panel (preview)
+        href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
+  - name: Copilot consumption
+    items:
+    - name: Copilot in Fabric - usage and billing
+      href: copilot-fabric-consumption.md
+    - name: Data agent in Fabric Consumption
+      href: data-agent-consumption.md
 - name: Direct Lake
   items:
   - name: Direct Lake overview
@@ -185,6 +199,32 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Gateway causes lakehouse tables with null values
+      href: ../known-issues/known-issue-1117-gateway-causes-lakehouse-tables-null-values.md
+    - name: API for GraphQL query fails when using variables with float value
+      href: ../known-issues/known-issue-1113-api-graphql-query-fails-variables-float-value.md
+    - name: Insert statements across tables in different data warehouses fail
+      href: ../known-issues/known-issue-1114-insert-statements-tables-different-data-warehouses-fail.md
+    - name: User data functions option not visible in data pipelines functions activity
+      href: ../known-issues/known-issue-1112-functions-option-not-visible-pipelines-functions-activity.md
+    - name: Can't read data warehouse tables from a notebook
+      href: ../known-issues/known-issue-1108-not-read-data-warehouse-tables-notebook.md
+    - name: Cross-region capacity migration might fail if items weren't deleted successfully
+      href: ../known-issues/known-issue-1107-cross-region-capacity-migration-fail-items-not-deleted-successfully.md
+    - name: Eventstream real-time weather connector fails to load map in edit mode
+      href: ../known-issues/known-issue-1106-eventstream-weather-connector-fails-load-map-edit-mode.md
+    - name: Power BI visual warning about style preset not found
+      href: ../known-issues/known-issue-1104-visual-warning-style-preset-not-found.md
+    - name: Data warehouse in second workspace out of sync from Git
+      href: ../known-issues/known-issue-1103-data-warehouse-second-workspace-sync-git.md
+    - name: Deletion of managed private endpoint connected to Key Vault doesn't work
+      href: ../known-issues/known-issue-1102-deletion-private-endpoint-connected-key-vault-not-work.md
+    - name: Vertica connector throws invalid conversion error
+      href: ../known-issues/known-issue-1101-vertica-connector-throws-invalid-conversion-error.md
+    - name: Snowflake Implementation="2.0" connector doesn't display views
+      href: ../known-issues/known-issue-1100-snowflake-implementation-connector-not-display-views.md
+    - name: Azure map zooms out automatically even with auto zoom turned off
+      href: ../known-issues/known-issue-1097-azure-map-zooms-out-auto-zoom-turned-off.md
     - name: Delayed data availability in SQL analytics endpoint when using a pipeline
       href: ../known-issues/known-issue-1092-delayed-data-availability-analytics-endpoint-pipeline.md
     - name: New card visual conditional formatting rules don't work
@@ -211,7 +251,7 @@ items:
       href: ../known-issues/known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md
     - name: Multitasking for Dataflow Gen2 with CI/CD was inadvertently enabled
       href: ../known-issues/known-issue-1075-multitasking-dataflow-gen2-ci-cd-enabled.md
-    - name: Environment REST API updates might cause your workflow to break
+    - name: Environment REST API update no longer happening
       href: ../known-issues/known-issue-1067-environment-rest-api-updates-workflow-break.md
     - name: Environment Git integration imports for libraries don't work
       href: ../known-issues/known-issue-1025-environment-git-integration-imports-libraries-not-work.md
@@ -263,12 +303,8 @@ items:
       href: ../known-issues/known-issue-1024-copy-job-item-deletion-fails-error.md
     - name: Preview destination data on a pipeline's copy activity fails
       href: ../known-issues/known-issue-1023-preview-destination-data-pipeline-copy-activity-fails.md
-    - name: Dataflow connector doesn't show dataflows with view only permissions
-      href: ../known-issues/known-issue-1020-dataflow-connector-not-show-dataflows-view-permissions.md
     - name: Unsupported error for legacy timestamp in Fabric Runtime 1.3
       href: ../known-issues/known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md
-    - name: Models with specific gateway configuration might experience refresh issues
-      href: ../known-issues/known-issue-1011-models-specific-gateway-configuration-refresh-issues.md
     - name: Notebook and SJD job statuses are in progress in monitor hub
       href: ../known-issues/known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md
     - name: Copilot sidecar chat fails with certain private link settings
@@ -279,8 +315,6 @@ items:
       href: ../known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query.md
     - name: KQL database loads continuously without an error
       href: ../known-issues/known-issue-990-kql-database-loads-continuously-without-error.md
-    - name: Git operations and deployment pipelines don't work with lakehouses
-      href: ../known-issues/known-issue-1005-git-deployment-pipelines-not-work-lakehouses.md
     - name: Apache Airflow job creation shows Fabric upgrade message
       href: ../known-issues/known-issue-991-apache-airflow-job-creation-upgrade-message.md
     - name: Local data access isn't allowed for pipeline using on-premises data gateway
@@ -309,8 +343,6 @@ items:
       href: ../known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md
     - name: Create, configure, or delete a mirror fails
       href: ../known-issues/known-issue-954-create-configure-delete-mirror-fails.md
-    - name: Incorrect column names after column format or aggregation change
-      href: ../known-issues/known-issue-950-incorrect-column-names-column-format-aggregation-change.md
     - name: Intermittent failures on deployment of Sustainability solution
       href: ../known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md
     - name: Pipeline copy data to Kusto using an on-premises data gateway doesn't work

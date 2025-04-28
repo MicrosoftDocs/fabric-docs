@@ -36,7 +36,7 @@ To ensure no gaps in functionality, create new activator items and recreate your
 
 ### How to check if your item needs to be migrated
 
-If the item shows Data and Design mode tabs in the lower left corner of the item, it needs to be migrated. If the Data and Design tabs are visible, recreate your rules in a new item to get all the newest capabilities.
+If the item shows Data and Design mode tabs in the lower left corner of the item, it needs to be migrated. If the Data and Design tabs are visible, [recreate your rules in a new item](activator-create-activators.md) to get all the newest capabilities.
 
 :::image type="content" source="media/activator-limitations/activator-migration.png" alt-text="Screenshot showing the screen with Data and Design. ":::
 

@@ -23,7 +23,7 @@ This article guides you through creating a Service Principal application, settin
 
 Before you begin, make sure the following prerequisites are met:
 
-* Your **Tenant Admin** enabled the following setting in the Admin portal. [Learn more](https://learn.microsoft.com/power-bi/developer/embedded/embed-service-principal)
+* Your **Tenant Admin** enabled the following setting in the Admin portal. [Learn more](/power-bi/developer/embedded/embed-service-principal)
   * Service principals can call Fabric public APIs
 * You have **Member** or higher permissions in the workspace. This is required to manage workspace access and assign the necessary permissions to your service principal app.
 * An Eventstream item in your workspace with a Custom Endpoint source. Refer to [this guide](add-source-custom-app.md) for instructions on how to add a Custom Endpoint to Eventstream.

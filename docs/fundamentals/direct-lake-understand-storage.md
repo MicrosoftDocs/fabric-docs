@@ -4,7 +4,7 @@ description: "Learn about storage concepts for Direct Lake semantic models and h
 author: peter-myers
 ms.author: phseamar
 ms.reviewer: davidi
-ms.date: 09/16/2024
+ms.date: 04/23/2025
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -140,7 +140,7 @@ At this point, a query of the Delta table returns the following result.
 > This example is simple because it involves a small table, just a few operations, and only minor modifications. Large tables that experience many write operations and that contain many rows of data will generate more than one Parquet file per version.
 
 > [!IMPORTANT]
-> Depending on how you define your Delta tables and the frequency of data modification operations, it might result in many Parquet files. Be aware that each Fabric capacity license has [guardrails](direct-lake-overview.md#fabric-capacity-guardrails-and-limitations). If the number of Parquet files for a Delta table exceeds the limit for your SKU, queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
+> Depending on how you define your Delta tables and the frequency of data modification operations, it might result in many Parquet files. Be aware that each Fabric capacity license has [guardrails](direct-lake-overview.md#fabric-capacity-requirements). If the number of Parquet files for a Delta table exceeds the limit for your SKU, queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
 >
 > To manage the number of Parquet files, see [Delta table maintenance](#delta-table-maintenance) later in this article.
 
@@ -205,7 +205,7 @@ For Direct Lake semantic models or the [SQL analytics endpoint](../data-engineer
 If you must optimize for write operations, consider using partitions to optimize write operations to Delta tables based on the partition key. However, be aware that over partitioning a Delta table can negatively impact on read performance. For this reason, we recommend that you test the read and write performance carefully, perhaps by creating multiple copies of the same Delta table with different configurations to compare timings.
 
 > [!WARNING]
-> If you partition on a high cardinality column, it can result in an excessive number of Parquet files. Be aware that every Fabric capacity license has [guardrails](direct-lake-overview.md#fabric-capacity-guardrails-and-limitations). If the number of Parquet files for a Delta table exceeds the limit for your SKU, queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
+> If you partition on a high cardinality column, it can result in an excessive number of Parquet files. Be aware that every Fabric capacity license has [guardrails](direct-lake-overview.md#fabric-capacity-requirements). If the number of Parquet files for a Delta table exceeds the limit for your SKU, queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
 
 ### Parquet files
 
@@ -283,7 +283,7 @@ This section describes various topics for optimizing Delta tables for semantic m
 
 ### Data volume
 
-While Delta tables can grow to store extremely large volumes of data, [Fabric capacity guardrails](direct-lake-overview.md#fabric-capacity-guardrails-and-limitations) impose limits on semantic models that query them. When those limits are exceeded, queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
+While Delta tables can grow to store extremely large volumes of data, [Fabric capacity guardrails](direct-lake-overview.md#fabric-capacity-requirements) impose limits on semantic models that query them. When those limits are exceeded, queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
 
 Therefore, consider limiting the row count of a large [fact table](../data-warehouse/dimensional-modeling-fact-tables.md) by raising its granularity (store summarized data), reducing dimensionality, or storing less history.
 
@@ -314,11 +314,11 @@ The number of rows in a row group influences how quickly Direct Lake can read th
 Generally, we don't recommend that you change the default row group size. However, you might consider changing the row group size for large Delta tables. Be sure to test the read and write performance carefully, perhaps by creating multiple copies of the same Delta tables with different configurations to compare timings.
 
 > [!IMPORTANT]
-> Be aware that every Fabric capacity license has [guardrails](direct-lake-overview.md#fabric-capacity-guardrails-and-limitations). If the number of row groups for a Delta table exceeds the limit for your SKU, queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
+> Be aware that every Fabric capacity license has [guardrails](direct-lake-overview.md#fabric-capacity-requirements). If the number of row groups for a Delta table exceeds the limit for your SKU, queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
 
 ## Delta table maintenance
 
-Over time, as write operations take place, Delta table versions accumulate. Eventually, you might reach a point at which a negative impact on read performance becomes noticeable. Worse, if the number of Parquet files per table, or row groups per table, or rows per table exceeds the [guardrails for your capacity](direct-lake-overview.md#fabric-capacity-guardrails-and-limitations), queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance. It's therefore important that you maintain Delta tables regularly.
+Over time, as write operations take place, Delta table versions accumulate. Eventually, you might reach a point at which a negative impact on read performance becomes noticeable. Worse, if the number of Parquet files per table, or row groups per table, or rows per table exceeds the [guardrails for your capacity](direct-lake-overview.md#fabric-capacity-requirements), queries will [fall back to DirectQuery](direct-lake-overview.md#directquery-fallback), which might result in slower query performance. It's therefore important that you maintain Delta tables regularly.
 
 ### OPTIMIZE
 
