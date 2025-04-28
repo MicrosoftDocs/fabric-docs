@@ -1,14 +1,14 @@
 ---
-title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure Database for PostgreSQL flexible server"
+title: "Tutorial: Configure Microsoft Fabric Mirrored Databases from Azure Database for PostgreSQL Flexible Server"
 description: Learn how to configure a mirrored database from Azure Database for PostgreSQL flexible server in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: scoriani
-ms.date: 03/22/2025
+ms.reviewer: scoriani, maghan
+ms.date: 04/23/2025
 ms.topic: tutorial
 ---
 
-# Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server
+# Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL
 
 [Mirroring in Fabric](overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored Azure Database for PostgreSQL flexible server, which creates a read-only, continuously replicated copy of your PostgreSQL data in OneLake.
 
@@ -26,13 +26,13 @@ ms.topic: tutorial
     - Currently, Mirroring doesn't support Azure Database for PostgreSQL flexible server behind an Azure Virtual Network or private networking. If you have your Azure Database for PostgreSQL flexible server behind a private network, you can't enable mirroring.
     - You need to update your Azure Database for PostgreSQL flexible server firewall rules to [Allow public network access](/azure/postgresql/flexible-server/how-to-networking-servers-deployed-public-access-enable-public-access), and enable the [Allow Azure services](/azure/postgresql/flexible-server/concepts-networking-public#allow-all-azure-ip-addresses) option to connect to your Azure Database for PostgreSQL flexible server.
 
-## Prepare your Azure Database for PostgreSQL 
+## Prepare your Azure Database for PostgreSQL
 
 Mirroring in Azure Database for PostgreSQL flexible server is based on Logical Replication and requires some specific prerequisites to be configured before being able to connect to your data.
 
 > [!IMPORTANT]
 > For guiding users in enabling these prerequisites, we created a specific Fabric Mirroring page in Azure portal that **automates all this for you**. For more information, see [Fabric mirroring concepts for PostgreSQL flexible server](/azure/postgresql/flexible-server/concepts-fabric-mirroring).
-> 
+>
 > - System-Assigned Managed Identity (SAMI) must be enabled.
 > - The `wal_level` server parameter for the write ahead log (WAL) must be set to **logical**.
 > - The extension (azure_cdc) is required, and must be allowlisted and preloaded (requires restart).
@@ -42,7 +42,7 @@ Mirroring in Azure Database for PostgreSQL flexible server is based on Logical R
 
 Next, you need to provide or create a PostgreSQL role for the Fabric service to connect to your Azure Database for PostgreSQL flexible server.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > In the current preview, using Microsoft Entra ID users and service principals to connect to the source database in Azure Database for PostgreSQL flexible server isn't supported. Use Basic (PostgreSQL Authentication).
 
 You can accomplish this by specifying a [database role](#use-a-database-role) for connecting to your source system.
@@ -57,19 +57,20 @@ You can accomplish this by specifying a [database role](#use-a-database-role) fo
     CREATE ROLE fabric_user  CREATEDB CREATEROLE LOGIN REPLICATION PASSWORD '<strong password>';
     GRANT azure_cdc_admin TO fabric_user;
     ```
-1. Database user created needs to be `owner` of the tables to replicate in the mirrored database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE xxx OWNER TO fabric_user;`. Notice that, for switching ownership to new user, you may need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](https://learn.microsoft.com/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html).
+
+1. Database user created needs to be `owner` of the tables to replicate in the mirrored database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE xxx OWNER TO fabric_user;`. Notice that, for switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html).
 
 ## Create a mirrored Azure Database for PostgreSQL flexible server
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
-1. Navigate to the **Create** pane. Select the **Create** icon.  
-1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure Database for PostgreSQL (preview)**. 
+1. Navigate to the **Create** pane. Select the **Create** icon.
+1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure Database for PostgreSQL (preview)**.
 1. Either select **Azure Database for PostgreSQL** under **New sources** to create a new connection for your source flexible server or select an existing connection under **OneLake catalog**.
 1. In the **New source** page, insert your flexible server name and database, then you can either select existing connection credentials or insert database role and password created in the previous step.
-1. Leave the **Use encrypted connection** checkbox selected and **Allow this connection to be utilized with either on-premises or VNet data gateways** unselected. 
+1. Leave the **Use encrypted connection** checkbox selected and **Allow this connection to be utilized with either on-premises or VNet data gateways** unselected.
 1. Select **Connect**.
-1. In the **Choose data** select the database tables you want to replicate in the Mirrored database in Fabric. 
+1. In the **Choose data** select the database tables you want to replicate in the Mirrored database in Fabric.
     - If any error or warning message will be displayed in this page, see [Troubleshoot Fabric mirrored databases from Azure Database for PostgreSQL flexible server](azure-database-postgresql-troubleshoot.md).
 
 ## Connect to your Azure Database for PostgreSQL flexible server
@@ -89,17 +90,12 @@ Next, connect to the Azure Database for PostgreSQL flexible server from Fabric. 
 ## Start mirroring process
 
 1. The **Configure mirroring** screen allows you to mirror all data in the database, by default.
-
-    - **Mirror all data** means that any new tables created after Mirroring is started will be mirrored. 
-
+    - **Mirror all data** means that any new tables created after Mirroring is started will be mirrored.
     - Optionally, choose only certain objects to mirror. Disable the **Mirror all data** option, then select individual tables from your database.
-
     For this tutorial, we select the **Mirror all data** option.
-
 1. Select **Mirror database**. Mirroring begins.
 1. Wait for 2-5 minutes. Then, select **Monitor replication** to see the status.
 1. After a few minutes, the status should change to *Running*, which means the tables are being synchronized.
-
     If you don't see the tables and the corresponding replication status, wait a few seconds and then refresh the panel.
 1. When they have finished the initial copying of the tables, a date appears in the **Last refresh** column.
 1. Now that your data is up and running, there are various analytics scenarios available across all of Fabric.

@@ -15,6 +15,7 @@ The Azure Databricks activity in Data Factory for Microsoft Fabric allows you to
 - Notebook
 - Jar
 - Python
+- Job
 
 This article provides a step-by-step walkthrough that describes how to create an Azure Databricks activity using the Data Factory interface.
 

@@ -27,7 +27,7 @@ Users assigned to a Fabric Copilot capacity can use it in these scenarios:
   * Data Warehouse
   * Data Science
   * Real-Time Analytics
-  * Data Activator
+  * Activator
 
 * AI Skills on a Fabric capacity workspace where the capacity SKU is smaller than F64.
 
