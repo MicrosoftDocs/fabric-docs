@@ -83,7 +83,10 @@ You can also download the entire [`Fabric-Samples`](https://github.com/microsoft
   * Target stage name
   * Deployment notes (optional)
 
- [!INCLUDE [principal](../includes/automate-service-principal.md)]
+  * Principal type. Choose either UserPrincipal or ServicePrincipal If service principal, also provide:
+    * Application (client) ID of the service principal
+    * Directory (tenant) ID of the service principal
+    * Secret value of the service principal
 
 * [Selective deploy](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/DeploymentPipelines-SelectiveDeploy.ps1)
 
@@ -94,7 +97,11 @@ You can also download the entire [`Fabric-Samples`](https://github.com/microsoft
   * Target stage name
   * Items to deploy (items display name and item type)
   * Deployment notes (optional)
- [!INCLUDE [principal](../includes/automate-service-principal.md)]
+
+  * Principal type. Choose either UserPrincipal or ServicePrincipal If service principal, also provide:
+    * Application (client) ID of the service principal
+    * Directory (tenant) ID of the service principal
+    * Secret value of the service principal
 
 * [Assign to new deployment pipeline and deploy](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/DeploymentPipelines-AssignToNewDeploymentPipelineAndDeploy.ps1)
 
@@ -105,7 +112,10 @@ You can also download the entire [`Fabric-Samples`](https://github.com/microsoft
   * Pipeline name
   * Deployment notes (optional)
 
-[!INCLUDE [principal](../includes/automate-service-principal.md)]
+  * Principal type. Choose either UserPrincipal or ServicePrincipal If service principal, also provide:
+    * Application (client) ID of the service principal
+    * Directory (tenant) ID of the service principal
+    * Secret value of the service principal
 
 ## Considerations and limitations
 
