@@ -74,5 +74,5 @@ The Weather connector retrieves a structured set of fields for each weather upda
 
 To learn more about weather data fields and concepts, check out:
 
-- [Weather - Get Current Conditions](https://learn.microsoft.com/rest/api/maps/weather/get-current-conditions)
-- [Weather service concepts](https://learn.microsoft.com/azure/azure-maps/weather-services-concepts)
+- [Weather - Get Current Conditions](/rest/api/maps/weather/get-current-conditions)
+- [Weather service concepts](/azure/azure-maps/weather-services-concepts)
