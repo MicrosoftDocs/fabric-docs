@@ -21,7 +21,7 @@ The following screenshot shows the tenant setting where Copilot can be enabled o
 
 :::image type="content" source="media/copilot-enable-fabric/enable-copilot.png" alt-text="Screenshot showing the tenant setting where copilot can be enabled and disabled.":::
 
-Copilot in Microsoft Fabric is rolling out gradually, ensuring all customers with paid Fabric capacities (F64 or higher) gain access. It automatically appears as a new setting in the Fabric admin portal when available for your tenant. Once billing starts for the Copilot in Fabric experiences, Copilot usage will count against your existing Fabric capacity.
+Copilot in Microsoft Fabric is rolling out gradually, ensuring all customers with paid Fabric capacities (F2 or higher) gain access. It automatically appears as a new setting in the Fabric admin portal when available for your tenant. Once billing starts for the Copilot in Fabric experiences, Copilot usage will count against your existing Fabric capacity.
 
 > [!WARNING]
 > Enabling Copilot in Fabric for your entire tenant without adequate planning and preparation can lead to higher Fabric capacity utilization and other potential risks. Consider enabling Copilot in Fabric for specific security groups and workspaces only after you take the appropriate steps to prepare.
@@ -46,7 +46,7 @@ Enabling Copilot in Fabric involves several prerequisites and steps, as describe
 > You don't need to enable Fabric to use Copilot in Power BI. You can enable Copilot for the Power BI workload without enabling the other Fabric workloads; for instance, if you have a P SKU.
 
 > [!IMPORTANT]
-> When scaling from a smaller capacity to F64 or above, allow up to 24 hours for Copilot for Power BI to activate.
+> When scaling from a smaller capacity to F2 or above, allow up to 24 hours for Copilot for Power BI to activate.
 
 See the article [Overview of Copilot in Fabric](copilot-fabric-overview.md) for details on its functionality across workloads, data security, privacy compliance, and responsible AI use.
 

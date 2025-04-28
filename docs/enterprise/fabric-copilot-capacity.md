@@ -21,7 +21,7 @@ Users assigned to a Fabric Copilot capacity can use it in these scenarios:
 
 * Copilot in Power BI on a Pro or Premium per-user workspace, or a Fabric capacity workspace.
 
-* Fabric Copilot on these supported workloads, on a Fabric capacity workspace where the capacity SKU is smaller than F64.
+* Fabric Copilot on these supported workloads, on a Fabric capacity workspace where the capacity SKU is smaller than F2.
   * Data Factory
   * Data Engineering
   * Data Warehouse
@@ -29,7 +29,7 @@ Users assigned to a Fabric Copilot capacity can use it in these scenarios:
   * Real-Time Analytics
   * Data Activator
 
-* AI Skills on a Fabric capacity workspace where the capacity SKU is smaller than F64.
+* AI Skills on a Fabric capacity workspace where the capacity SKU is smaller than F2.
 
 ## Set up Fabric Copilot capacity
 

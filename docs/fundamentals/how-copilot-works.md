@@ -457,16 +457,16 @@ When you experience throttling in Fabric due to Copilot consumption or other ope
 
 #### Split-capacity strategies
 
-In scenarios where you expect a high usage of Copilot in Fabric (such as in large organizations), you might consider isolating Copilot consumption from your other Fabric workloads. In this split-capacity scenario, you prevent Copilot consumption from negatively impacting other Fabric workloads by enabling Copilot only on a separate F64 or higher SKU, which you only use for dedicated Copilot experiences. This split-capacity strategy produces higher cost, but it might make it easier to manage and govern Copilot usage.
+In scenarios where you expect a high usage of Copilot in Fabric (such as in large organizations), you might consider isolating Copilot consumption from your other Fabric workloads. In this split-capacity scenario, you prevent Copilot consumption from negatively impacting other Fabric workloads by enabling Copilot only on a separate F2 or higher SKU, which you only use for dedicated Copilot experiences. This split-capacity strategy produces higher cost, but it might make it easier to manage and govern Copilot usage.
 
 > [!TIP]
-> You can use some Copilot experiences with items in other capacities that don't support or enable Copilot. For example, in Power BI Desktop, you can link to a workspace with an F64 SKU Fabric capacity, but then connect to a semantic model in an F2 or PPU workspace. Then, you can use Copilot experiences in Power BI Desktop, and the Copilot consumption will only affect the F64 SKU.
+> You can use some Copilot experiences with items in other capacities that don't support or enable Copilot. For example, in Power BI Desktop, you can link to a workspace with an F2 SKU Fabric capacity, but then connect to a semantic model in an F2 or PPU workspace. Then, you can use Copilot experiences in Power BI Desktop, and the Copilot consumption will only affect the F2 SKU.
 
 The following diagram depicts an example of a split-capacity strategy to isolate Copilot consumption with experiences like those in Copilot in Power BI Desktop.
 
 :::image type="content" source="media/how-copilot-works/copilot-split-capacity-strategy.svg" alt-text="Diagram depicting strategy to manage Copilot consumption by delegating a separate Fabric Copilot capacity for Copilot consumption.":::
 
-You can also use a split-capacity solution by [assigning Copilot consumption to a separate capacity](https://www.microsoft.com/en-us/microsoft-fabric/blog/2024/11/19/accelerate-app-innovation-with-an-ai-powered-data-platform/#:~:text=Fabric%20billing%20and%20consumption%20updates). Assigning Copilot consumption to a separate capacity ensures that high utilization of Copilot doesn't impact your other Fabric workloads and the business-critical processes that depend on them. Of course, using any split-capacity strategy requires that you already have two or more F64 or higher SKUs. As such, this strategy might not be manageable for smaller organizations or organizations with a limited budget to spend on their data platforms.
+You can also use a split-capacity solution by [assigning Copilot consumption to a separate capacity](https://www.microsoft.com/en-us/microsoft-fabric/blog/2024/11/19/accelerate-app-innovation-with-an-ai-powered-data-platform/#:~:text=Fabric%20billing%20and%20consumption%20updates). Assigning Copilot consumption to a separate capacity ensures that high utilization of Copilot doesn't impact your other Fabric workloads and the business-critical processes that depend on them. Of course, using any split-capacity strategy requires that you already have two or more F2 or higher SKUs. As such, this strategy might not be manageable for smaller organizations or organizations with a limited budget to spend on their data platforms.
 
 Irrespective of how you choose to manage Copilot, what's most important is that you monitor Copilot consumption in your Fabric capacity.
 
