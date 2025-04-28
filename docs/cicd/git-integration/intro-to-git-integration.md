@@ -110,7 +110,7 @@ If the workspace or Git directory has unsupported items, it can still be connect
 
 ## Considerations and limitations
 
-[!INCLUDE [limitations](../../includes/git-limitations.md)]
+[!INCLUDE [limitations](../includes/git-limitations.md)]
 
 ## Related content
 
