@@ -72,6 +72,8 @@ You can also use other [Fabric REST API](/rest/api/fabric/) calls, to complete r
 
 You can use the following PowerShell scripts to understand how to perform several automation processes. To view or copy the text in a PowerShell sample, use the links in this section.
 
+You can also download the entire [`Fabric-Samples`](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/DeploymentPipelines-AssignToNewDeploymentPipelineAndDeploy.ps1) GitHub folder.
+
 * [Deploy all](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/DeploymentPipelines-DeployAll.ps1)
 
   Provide the following information:
