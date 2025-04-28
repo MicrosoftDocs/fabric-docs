@@ -67,15 +67,12 @@ You will use this query in a later step to create a Real-Time dashboard.
 
 ## Query using T-SQL
 
-The query editor supports the use of T-SQL. To run a T-SQL query, begin the query with an empty T-SQL comment line: `--`. The `--` syntax tells the query editor to interpret the following query as T-SQL and not KQL.
+The query editor supports the use of T-SQL. 
 
 1. Enter the following query. Then press **Shift + Enter** to run the query.
     
     ```kusto
-    --
-    SELECT top(10) *
-    FROM AggregatedData
-    ORDER BY No_Bikes DESC
+
     ```
 
 This query returns the top 10 bike stations with the most bikes, sorted in descending order.
@@ -87,7 +84,6 @@ To get the equivalent KQL for a T-SQL SELECT statement, add the keyword `explain
 1. Enter the following query. Then press **Shift + Enter** to run the query.
 
     ```kusto
-    --
     explain
     SELECT top(10) *
     FROM AggregatedData

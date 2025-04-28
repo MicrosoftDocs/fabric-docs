@@ -89,7 +89,7 @@ In this part of the tutorial, you browse the Real-Time hub, create an eventstrea
 
 ## Subscribe to Fabric Events
 
-In this section, you use a different kind of eventstream that contains Fabric Events. You set an Activator alert on top of the eventstream, so that you receive an email each time a new item is created in your workspace. In different scenarios, the Activator could also be used to trigger a Fabric item, such as a pipeline or a notebook.
+To subscribe to any changes in your workspace, you can use Fabric events. In this section, you set alerts on Fabric Events so that you receive an email each time a new item is created, deleted, or updated in your workspace. In different scenarios, the Activator could also be used to trigger a Fabric item, such as a pipeline or a notebook.
 
 1. Browse to the Real-Time hub on the left navigation bar.
 1. In the left pane, select **Subscribe to** > **Fabric Events**.
@@ -120,7 +120,7 @@ In this section, you use a different kind of eventstream that contains Fabric Ev
 
 A new tab opens in your browser with the Activator item you have just created. You can use this view to see the history of alerts, and to configure the alert further. 
 
->[!NOTE]
+> [!NOTE]
 > If you are using a demo tenant and do not have access to the connected email, you may want to add a different email recipient to the alert. Do this by adding a new email address in the **To** field, and then selecting **Save and update**.
 
 ### Customize the message
