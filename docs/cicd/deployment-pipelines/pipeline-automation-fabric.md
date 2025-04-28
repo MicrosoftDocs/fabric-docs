@@ -94,7 +94,6 @@ You can also download the entire [`Fabric-Samples`](https://github.com/microsoft
   * Target stage name
   * Items to deploy (items display name and item type)
   * Deployment notes (optional)
-
  [!INCLUDE [principal](../includes/automate-service-principal.md)]
 
 * [Assign to new deployment pipeline and deploy](https://github.com/microsoft/fabric-samples/blob/main/features-samples/fabric-apis/DeploymentPipelines-AssignToNewDeploymentPipelineAndDeploy.ps1)
@@ -106,7 +105,7 @@ You can also download the entire [`Fabric-Samples`](https://github.com/microsoft
   * Pipeline name
   * Deployment notes (optional)
 
- [!INCLUDE [principal](../includes/automate-service-principal.md)]
+[!INCLUDE [principal](../includes/automate-service-principal.md)]
 
 ## Considerations and limitations
 
