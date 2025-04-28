@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala
 ms.topic: conceptual
-ms.date: 04/24/2025
+ms.date: 04/28/2025
 ---
 # What is the SQL analytics endpoint for a SQL database in Fabric?
 
@@ -15,7 +15,7 @@ Microsoft Fabric provides a SQL-based experience for SQL database in Fabric data
 
 To access SQL analytics endpoint, you select a corresponding item in the workspace view or switch to SQL analytics endpoint mode in SQL database in Fabric explorer.
 
-Creating a SQL database in Fabric creates a SQL analytics endpoint, which points to the SQL database in Fabric Delta table storage. Once you create a Delta table in the SQL database in Fabric, it's available for querying using the SQL analytics endpoint. Using similar technology, a database, [warehouse](../../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse), and [Fabric OneLake](../../data-engineering/lakehouse-sql-analytics-endpoint.md) all automatically provision a SQL analytics endpoint when created.
+Creating a SQL database in Fabric creates a SQL analytics endpoint, which points to the SQL database in Fabric Delta table storage. Once you create a transactional table in the SQL database in Fabric, it's available for querying using the SQL analytics endpoint. Using similar technology, a database, [warehouse](../../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse), and [Fabric OneLake](../../data-engineering/lakehouse-sql-analytics-endpoint.md) all automatically provision a SQL analytics endpoint when created.
 
 :::image type="content" source="media\sql-analytics-endpoint\workspace.png" alt-text="Screenshot of SQL database in Fabric SQL analytics endpoint workspace.":::
 
@@ -27,7 +27,7 @@ External Delta tables created with Spark code won't be visible to the SQL analyt
 
 ## Connect to the SQL analytics endpoint
 
-You can connect to the SQL analytics endpoint via Power BI desktop or client tools such as [SQL Server Management Studio](https://aka.ms/ssms) or [the mssql extension for Visual Studio Code](/sql/tools/visual-studio-code-extensions/mssql/mssql-extension-visual-studio-code). The SQL analytics endpoint connection string looks like `<server-unique-identifier>.<tenant>.fabric.microsoft.com` as opposed to the connection string of the SQL database itself, which looks like `<server-unique-identifer>.database.windows.net`. To find the connection strinng of the SQL analytics endpoint in the workspace, select the `...` menu and then **Copy SQL connection string**, or find the connection string in **Settings** in the **SQL endpoint** page.
+You can connect to the SQL analytics endpoint via Power BI desktop or client tools such as [SQL Server Management Studio](https://aka.ms/ssms) or [the mssql extension for Visual Studio Code](/sql/tools/visual-studio-code-extensions/mssql/mssql-extension-visual-studio-code). The SQL analytics endpoint connection string looks like `<server-unique-identifier>.<tenant>.fabric.microsoft.com` as opposed to the connection string of the SQL database itself, which looks like `<server-unique-identifer>.database.windows.net`. To find the connection string of the SQL analytics endpoint in the workspace, select the `...` menu and then **Copy SQL connection string**, or find the connection string in **Settings** in the **SQL endpoint** page.
 
 You can also query the SQL analytics endpoint in the [SQL query editor in the Fabric portal](query-editor.md) by selecting the **SQL analytics endpoint** from drop-down list, as shown in the following screenshot:
 
