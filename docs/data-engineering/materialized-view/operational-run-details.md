@@ -1,51 +1,49 @@
 ---
-title: Understand DAG UI operational run details
-description: Learn how to understand DAG UI operational run details
+title: Materialized lake views operational run details
+description: Learn how to understand materialized lake views operational run details
 ms.topic: how-to
 author: apurbasroy
 ms.author: apsinhar
 ms.reviewer: nijelsf
-ms.date: 04/15/2025
+ms.date: 04/28/2025
 ---
 
-# Understand DAG UI operational run details
+# Understand materialized lake views operational run details
 
-Operational run details encompass the various parameters and metrics tracked during the execution of a materialized view DAG.
+Operational run details encompass the various parameters and metrics tracked during the execution of a materialized lake view run in a lakehouse.
 
 ## Activity panel
 
-The Activity panel is the  bottom panel in the DAG UI where user can get the information of the following:
+The activity panel is a section below the lineage view, where user can get the information of the following:
 
-*	Materialized Views which are a part of the DAG
-*	The Status of the DAG
-*	The Start time of the DAG
-*	The Duration of the DAG
-*	Search Bar for the nodes
+*	Materialized lake views which are a part of the ongoing run
+*	Status of the materialized lake views
+*	Start time of the materialized lake views' execution
+*	Duration of the materialized lake views' execution
+*	Search bar for the materialized lake views
 
 :::image type="content" source="./media/operational-run-details/activity-panel.png" alt-text="Screenshot showing activity panel in a DAG UI." border="true" lightbox="./media/operational-run-details/activity-panel.png":::
 
 
-User can click on any node in the DAG UI or the Materialized View name in the Activity panel
-to zoom in on the end to end flow of a particular node.
+To view the lineage of materialized lake views within the lakehouse, you can click on a particular materialized lake view on the activity panel or in the lineage.
 
 :::image type="content" source="./media/operational-run-details/activity-panel-node.png" alt-text="Screenshot showing end to end flow of a node, on clicking a node name in activity panel in a DAG UI." border="true" lightbox="./media/operational-run-details/activity-panel-node.png":::
 
 ## Details panel
 
-The Details panel on the right side of the DAG UI contains the node level information and is completely available once the
-user clicks on a particular node. The Details panel has the following information:
+The materialized lake view details panel on the right side of the lineage view displays the individual materialized lake view information of the ongoing run. It contains the following:
 
-*	Name of the node
-*	Type of node
+*	Name
+*	Type
 *	Start Time
 *	Completion Time
 *	Duration
 *	Status
-*	Detailed Logs with link to Monitoring hub for debugging
+*	Detailed logs with link to monitor hub for debugging
 
 :::image type="content" source="./media/operational-run-details/end-to-end.png" alt-text="Screenshot showing details panel in a DAG UI." border="true" lightbox="./media/operational-run-details/end-to-end.png":::
 
-On clicking the **More Details** link, the user is navigated to the Monitoring Hub Page for job level monitoring.
+On clicking the **More Details** link, the user is navigated to the monitor hub page for job level monitoring.
 
 ## Next steps
 * [Microsoft Fabric materialized views tutorial](./tutorial.md)
