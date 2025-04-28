@@ -72,7 +72,9 @@ The query editor supports the use of T-SQL.
 1. Enter the following query. Then press **Shift + Enter** to run the query.
     
     ```kusto
-
+    SELECT top(10) *
+    FROM AggregatedData
+    ORDER BY No_Bikes DESC
     ```
 
 This query returns the top 10 bike stations with the most bikes, sorted in descending order.
@@ -106,7 +108,7 @@ If you are new to writing KQL, you can ask a question in natural language and Co
 
 1. Select **Run** to run the query.
 
-You can ask followup questions or change the scope of your query. Use this feature to help you learn KQL and to generate queries quickly.
+You can ask follow up questions or change the scope of your query. Use this feature to help you learn KQL and to generate queries quickly.
 
 ## Related content
 
