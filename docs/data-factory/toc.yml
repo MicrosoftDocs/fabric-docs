@@ -979,6 +979,15 @@
             href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
           - name: Transform data using dbt
             href: apache-airflow-jobs-dbt-fabric.md
+  - name: Azure Key Vault Reference (Preview)
+    items:
+      - name: Overview
+        href: azure-key-vault-reference-overview.md
+      - name: How to
+        items:
+          - name: Configure AKV references
+            href: akv-reference-configure.md
+
   - name: Best practices
     items:
     - name: Copy performance for SQL databases
