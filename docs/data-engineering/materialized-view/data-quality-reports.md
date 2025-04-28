@@ -16,9 +16,9 @@ Materialized lake views (MLV)  provides the option to view your data quality met
 
 ## Creating and accessing the report 
 
-To create/access the report, navigate to the Managed materialized lake views page and click on the ‘Data quality report’ button. 
+To create/access the report, navigate to the Managed materialized lake views page and click on the "Data quality report" button. 
 
-This opens the embedded report page. If a report has already been created, the user will be able to see it here. If no report has been previously created, the user can click on ‘Generate report’ and wait for the report to be created. 
+This opens the embedded report page. If a report has already been created, the user will be able to see it here. If no report has been previously created, the user can click on "Generate report" and wait for the report to be created. 
 
 
 A semantic model and a Power BI report are created for the user in the background and stored in their workspace. 
@@ -35,21 +35,21 @@ Hence the number of drops is always <= the number of violations for an MLV.
 
 
 
-The MLV drill down page allows the user to look at the data quality metrics at a deeper granularity instead of looking at only aggregates.
+The MLV Drilldown page allows the user to look at the data quality metrics at a deeper granularity instead of looking at only aggregates.
 The user can filter for a particular MLV and also look at data from beyond the last one week by adjusting the SchemaName, MLVName, and RefreshDate in the Power BI filters. 
 
  
  
 ## Navigating to the original report in the workspace 
 
-To leverage all the other default features offered in a standard Power BI report, the user can choose to navigate to the original report in the workspace by clicking the ‘PowerBI report’ button on the right-hand corner of the top navigation bar. 
+To leverage all the other default features offered in a standard Power BI report, the user can navigate to the original report in the workspace by clicking the "PowerBI report" button on the right-hand corner of the top navigation bar. 
 
 
 ## Set up alerts in data quality report 
 
 You can set up alerts on the data quality report in Fabric Materialized lake views using Data Activator service. Follow the steps below to set up alerts on your data quality report.  
 
-1. Click on “Set Alert” button on the top ribbon of the data quality report. 
+1. Click on "Set Alert" button on the top ribbon of the data quality report. 
 
 1. Select a measure of your choice to set up an alert on the chart of your choice.
    In the default data quality report, you can set alerts for events such as those listed below:
@@ -64,4 +64,4 @@ You can set up alerts on the data quality report in Fabric Materialized lake vie
    These could be when the measure changes (such as changes by, increases by, decreases by) by a value or percent or else becomes (such as greater than, greater than or equal to, less than, less than or equal to, equal to, not equal to, within range, outside of range) a value.
    * Choose the preferred alert communication method, such as Teams or Outlook email. 
 
-1. Click on “Apply” button to apply the rule for the alerts. 
+1. Click on "Apply" button to apply the rule for the alerts. 
