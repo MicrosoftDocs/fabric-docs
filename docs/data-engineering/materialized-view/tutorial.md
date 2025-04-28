@@ -1,6 +1,6 @@
 ---
-title: "Implement medallion architecture with materialized views"
-description: This tutorial outlines the steps and considerations for implementing a medallion architecture for a sales analytics pipeline Fabric materialized views.
+title: "Implement medallion architecture with materialized lake views"
+description: This tutorial outlines the steps and considerations for implementing a medallion architecture for a sales analytics pipeline materialized lake views.
 ms.author: rkottackal 
 author: rkottackal 
 ms.reviewer: nijelsf
@@ -8,9 +8,9 @@ ms.topic: tutorial
 ms.date: 04/16/2025
 ---
 
-# Implement medallion architecture with materialized views
+# Implement medallion architecture with materialized lake views
 
-This tutorial outlines the steps and considerations for implementing a medallion architecture using materialized views in Microsoft Fabric. By the end of this tutorial, you learn the key features and capabilities of materialized views and be able to create an automated data transformation workflow. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
+This tutorial outlines the steps and considerations for implementing a medallion architecture using materialized lake views. By the end of this tutorial, you learn the key features and capabilities of Materialized lake view and be able to create an automated data transformation workflow. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
 ## Prerequisites
 
@@ -18,8 +18,8 @@ As prerequisites to this tutorial, complete the following steps:
 1.	Sign into your Power BI online account, or if you don't have an account yet, sign up for a free trial.
 1.	Enable Microsoft Fabric in your tenant. Select the default Power BI icon at the bottom left of the screen and select Fabric.
 1.	Create a Microsoft Fabric enabled Workspace.
-1.	Select a workspace from the Workspaces tab, then select + New item, and choose Data engineering. Provide a pipeline name. Then select Create.
-1.	Create a Lakehouse with Schemas (SalesLakehouse) and load the sample data files for raw data into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
+1.	Select a workspace from the Workspaces tab, then select "+ New" item, and choose Data Engineering. Provide a pipeline name. Then select "Create".
+1.	Create a Lakehouse with schemas (SalesLakehouse) and load the sample data files for raw data into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
 
 ## Scenario overview
 
@@ -38,17 +38,16 @@ The following diagram represents different entities in each layer of medallion a
 
 **Sample dataset**
 
-Contoso maintains its retail operations raw data in CSV format within ADLS Gen2. Utilize this data to establish the bronze layer, followed by creating materialized views to form the silver and gold layers of the medallion architecture.
+Contoso maintains its retail operations raw data in CSV format within ADLS Gen2. Utilize this data to establish the bronze layer, followed by creating materialized lake views to form the silver and gold layers of the medallion architecture.
 
 ## Create the pipeline
 
 The high-level steps are as follows:
-1. **Bronze Layer**: Ingests raw data in the form of CSV files using Load to Table.
-1. **Silver Layer**: Cleanses data using materialized views.
-1. **Gold Layer**: Curates data for analytics and reporting using materialized views.
+1. **Bronze Layer**: Ingest raw data in the form of CSV files using Load to Table.
+1. **Silver Layer**: Cleanse data using materialized lake views.
+1. **Gold Layer**: Curate data for analytics and reporting using Materialized lake views.
 
-
-### Create bronze layer of Sales Analytics Medallion Architecture
+### Create bronze layer of sales analytics medallion architecture
 
 1.	Load the CSV files into the Lakehouse. For more information, see [Options to get data into the Lakehouse](/fabric/data-engineering/load-data-lakehouse).
 1.	Create a bronze schema. For more information, see [Lakehouse schemas](/fabric/data-engineering/lakehouse-schemas#create-a-lakehouse-schema).
@@ -56,43 +55,43 @@ The high-level steps are as follows:
 
     :::image type="content" source="./media/tutorial/notebook-table.png" alt-text="Screenshot showing notebook." border="true" lightbox="./media/tutorial/notebook-table.png":::
 
-### Create silver and gold layers of Sales Analytics Medallion Architecture
+### Create silver and gold layers of medallion architecture
 
 1.	Download the Notebook file and upload it to your workspace.
 
-    :::image type="content" source="./media/tutorial/create-silver-layer.png" alt-text="Screenshot showing silver materialized view creation." border="true" lightbox="./media/tutorial/create-silver-layer.png":::
+    :::image type="content" source="./media/tutorial/create-silver-layer.png" alt-text="Screenshot showing silver materialized lake view creation." border="true" lightbox="./media/tutorial/create-silver-layer.png":::
 
 1.	Open the Notebook from the Lakehouse. For more information, see [Explore the lakehouse data with a notebook](/fabric/data-engineering/lakehouse-notebook-explore). 
 
   	:::image type="content" source="./media/tutorial/create-bronze-layer.png" alt-text="Screenshot showing creating bronze layer." border="true" lightbox="./media/tutorial/create-bronze-layer.png":::
 
-1.	Run all cells of the notebook using Spark SQL to create Fabric materialized views with data quality constraints. Once all cells are successfully executed, you can refresh the Saleslakehouse source to view the newly created Materialized Views for silver and gold schema.
+1.	Run all cells of the notebook using Spark SQL to create materialized lake views with data quality constraints. Once all cells are successfully executed, you can refresh the Saleslakehouse source to view the newly created Materialized lake views for silver and gold schema.
 
   	:::image type="content" source="./media/tutorial/run-notebook.png" alt-text="Screenshot showing run notebook." border="true" lightbox="./media/tutorial/run-notebook.png":::
 
 ## Schedule the pipeline
 
-1.	Once the materialized views for silver and gold layers are created, click on the ‘Managed Materialized View’ button in the Lakehouse to view the plain directed acyclic graph (DAG) autogenerated based on dependencies. You can find that each dependent materialized view form a node of the DAG.
+1.	Once the materialized lake views for silver and gold layers are created, click on the ‘Managed materialized lake view’ button in the Lakehouse to see the lineage view autogenerated based on dependencies. You can find that each dependent materialized lake views form the nodes of the lineage.
 
-  	:::image type="content" source="./media/tutorial/managed-materialized-view-1.png" alt-text="Screenshot showing materialized view." border="true" lightbox="./media/tutorial/managed-materialized-view-1.png":::
+  	:::image type="content" source="./media/tutorial/managed-materialized-view-1.png" alt-text="Screenshot showing materialized lake view." border="true" lightbox="./media/tutorial/managed-materialized-view-1.png":::
 
-  	:::image type="content" source="./media/tutorial/managed-materialized-view-2.png" alt-text="Screenshot showing creation of dag." border="true" lightbox="./media/tutorial/managed-materialized-view-2.png":::
+  	:::image type="content" source="./media/tutorial/managed-materialized-view-2.png" alt-text="Screenshot showing creation of lineage." border="true" lightbox="./media/tutorial/managed-materialized-view-2.png":::
 
-1.	Turn on and configure schedule run for the DAG.
+1.	Turn on and configure schedule.
 
-  	:::image type="content" source="./media/tutorial/run-dag.png" alt-text="Screenshot showing scheduling run dag." border="true" lightbox="./media/tutorial/run-dag.png":::
+  	:::image type="content" source="./media/tutorial/run-dag.png" alt-text="Screenshot showing scheduling run the materialized lake views." border="true" lightbox="./media/tutorial/run-dag.png":::
 
 ## Monitoring and Troubleshooting
 
-1.	The dropdown menu will list the current and historical DAG runs. 
+1.	The dropdown menu will list the current and historical runs. 
 
-  	:::image type="content" source="./media/tutorial/dropdown-menu.png" alt-text="Screenshot showing scheduling dag execution." border="true" lightbox="./media/tutorial/dropdown-menu.png":::
+  	:::image type="content" source="./media/tutorial/dropdown-menu.png" alt-text="Screenshot showing scheduling execution." border="true" lightbox="./media/tutorial/dropdown-menu.png":::
 
-1.	By clicking on the latest run, you can find the DAG metrics on right side panel. The bottom activity panel will provide a high-level overview of node execution status.
+1.	By clicking on the latest run, you can find the materialized lake view metrics on right side panel. The bottom activity panel will provide a high-level overview of node execution status.
 
   	:::image type="content" source="./media/tutorial/latest-run.png" alt-text="Screenshot showing latest run." border="true" lightbox="./media/tutorial/latest-run.png":::
 
-1.	Clicking on any node in the DAG will provide the node execution details and link to detailed logs.
+1.	Clicking on any node in the lineage will provide the node execution details and link to detailed logs.
 
   	:::image type="content" source="./media/tutorial/execution details.png" alt-text="Screenshot showing execution details." border="true" lightbox="./media/tutorial/execution details.png":::
 
