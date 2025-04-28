@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Managed I
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 11/19/2024
+ms.date: 04/28/2025
 ms.topic: tutorial
 ---
 
@@ -67,14 +67,14 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
     ```sql
     CREATE USER <fabric_user> FOR LOGIN <fabric_login>;
-    GRANT CONTROL TO <fabric_user>;
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO <fabric_user>;
     ```
 
     Or, for Microsoft Entra logins,
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT CONTROL TO [bob@contoso.com];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO [bob@contoso.com];
     ```
 
 ## Create a mirrored Azure SQL Managed Instance database
