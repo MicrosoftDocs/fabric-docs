@@ -24,7 +24,7 @@ In this part of the tutorial, you learn how to query your streaming data. You us
 
 The name of the table you created from the update policy in a previous step is *TransformedData*. Use this table name (case-sensitive) as the data source for your query.
 
-1. Enter the following query. Then press **Shift + Enter** to run the query.
+- Enter the following query. Then press **Shift + Enter** to run the query.
 
     ```kusto
     TransformedData
@@ -59,7 +59,7 @@ In this step, you create a materialized view, which returns an up-to-date result
     | render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)
     ```
 
-You will use this query in a later step to create a Real-Time dashboard.
+You'll use this query in a later step to create a Real-Time dashboard.
 
 > [!IMPORTANT]
 > If you missed any of the steps used to create the tables, update policy, function, or materialized views, use this script to create all required resources: [Tutorial commands script](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/tutorial-commands-script.kql).
@@ -69,7 +69,7 @@ You will use this query in a later step to create a Real-Time dashboard.
 
 The query editor supports the use of T-SQL. 
 
-1. Enter the following query. Then press **Shift + Enter** to run the query.
+- Enter the following query. Then press **Shift + Enter** to run the query.
     
     ```kusto
     SELECT top(10) *
@@ -83,7 +83,7 @@ This query returns the top 10 bike stations with the most bikes, sorted in desce
 
 To get the equivalent KQL for a T-SQL SELECT statement, add the keyword `explain` before the query. The output will be the KQL version of the query, which can then be copied and run in the KQL query editor.
 
-1. Enter the following query. Then press **Shift + Enter** to run the query.
+- Enter the following query. Then press **Shift + Enter** to run the query.
 
     ```kusto
     explain
@@ -96,7 +96,7 @@ This query returns a KQL equivalent of the T-SQL query you entered. The KQL quer
     
 ## Use Copilot to generate a KQL query
 
-If you are new to writing KQL, you can ask a question in natural language and Copilot will generate the KQL query for you.
+If you're new to writing KQL, you can ask a question in natural language and Copilot will generate the KQL query for you.
 
 1. In the KQL queryset, select the **Copilot** icon from the menu bar.
 1. Enter a question in natural language. For example, "Which station has the most bikes right now. Use the materialized view for the most updated data." It can help to include the name of the materialized view in your question.
@@ -108,7 +108,7 @@ If you are new to writing KQL, you can ask a question in natural language and Co
 
 1. Select **Run** to run the query.
 
-You can ask follow up questions or change the scope of your query. Use this feature to help you learn KQL and to generate queries quickly.
+You can ask follow-up questions or change the scope of your query. Use this feature to help you learn KQL and to generate queries quickly.
 
 ## Related content
 
