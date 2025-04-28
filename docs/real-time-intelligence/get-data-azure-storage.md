@@ -142,12 +142,12 @@ Set the source to get data.
         | Container | The storage container containing the file you want to ingest. |
         | Connection | This is prepopulated with the connection string |
 
-    1. In the **Connection** field, open the drop-down and select the existing connection string from the list. Then click **Save** > **Close**.
+    1. In the **Connection** field, open the drop-down and select the existing connection string from the list. Then select **Save** > **Close**.
 
     > [!NOTE]
     >
-    > Creating a new connection results in a new eventstream. The name is defined as *<storate_account_name>_eventstream*.
-    > Ensure not to remove the continuous ingestion eventstream from the workspace.
+    > Creating a new connection results in a new Eventstream. The name is defined as *<storate_account_name>_eventstream*.
+    > Ensure not to remove the continuous ingestion Eventstream from the workspace.
 
 1. You can add the following optional filters:
 
@@ -267,13 +267,13 @@ Optionally:
 
 ## Summary
 
-In the **Data preparation** window, all the steps are marked with green check marks when data ingestion finishes successfully. You can select a card to explore the data, delete the ingested data, or create a dashboard with key metrics.
+In the **Summary** window, all the steps are marked with green check marks when data ingestion finishes successfully. You can select a card to explore the data, delete the ingested data, or create a dashboard with key metrics.
 
 ### [Continuous ingestion](#tab/continuous-ingestion)
 
-:::image type="content" source="media/get-data-azure-storage/summary-continuous.png" alt-text="Screenshot of summary page for conituous ingestion with successful ingestion completed." lightbox="media/get-data-azure-storage/summary-continuous.png":::
+:::image type="content" source="media/get-data-azure-storage/summary-continuous.png" alt-text="Screenshot of summary page for continuous ingestion with successful ingestion completed." lightbox="media/get-data-azure-storage/summary-continuous.png":::
 
-When you close the window, you can see the connection in the Explorer tab, under **Data streams**. From here you can filter the data streams and delete a data stream.
+When you close the window, you can see the connection in the Explorer tab, under **Data streams**. From here, you can filter the data streams and delete a data stream.
 
 :::image type="content" source="media/get-data-azure-storage/datastream-continuous-ingestion.png" alt-text="Screenshot of the KQL database explorer with Data streams highlighted." lightbox="media/get-data-azure-storage/datastream-continuous-ingestion.png":::
 
