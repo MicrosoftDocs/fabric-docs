@@ -1,11 +1,11 @@
 ---
-title: Run history of Microsoft Fabric lake materialized views
-description: Learn how to check run history of Fabric lake materialized views
+title: Run history of Microsoft Fabric materialized lake views
+description: Learn how to check run history of Fabric materialized lake views
 ms.topic: how-to
-author: apurbasroy
-ms.author: apsinhar
+author: rkottackal
+ms.author: rkottackal
 ms.reviewer: nijelsf
-ms.date: 04/15/2025
+ms.date: 04/28/2025
 ---
 
 # Run history of materialized lake views
@@ -18,7 +18,7 @@ If the user clicks on **View more past runs**, they're able to see the last 25 r
 
 :::image type="content" source="./media/materialized-view-run-history/view-all-past-runs.png" alt-text="Screenshot showing a view of the past twenty five runs." border="true" lightbox="./media/materialized-view-run-history/view-all-past-runs.png":::
 
-## The following states can be displayed in a DAG view:
+## Following are the possible states of a run in lineage view:
 
 * **Completed**- When all the nodes have been executed successfully, the run status is in **Completed** state.
 
@@ -34,7 +34,7 @@ If the user clicks on **View more past runs**, they're able to see the last 25 r
 
 In this case, all the nodes are successful and in Completed state.
 
-:::image type="content" source="./media/materialized-view-run-history/completed-runs.png" alt-text="Screenshot showing a view of a completed DAG run." border="true" lightbox="./media/materialized-view-run-history/completed-runs.png":::
+:::image type="content" source="./media/materialized-view-run-history/completed-runs.png" alt-text="Screenshot showing a view of a completed run." border="true" lightbox="./media/materialized-view-run-history/completed-runs.png":::
 
 ## Failed Materialized lake view
 
@@ -46,7 +46,7 @@ In this case, one or more nodes are unsuccessful and are in Failed state. The no
 
 In this case, the run is in skipped status since the previous schedule is still running.
 
-:::image type="content" source="./media/materialized-view-run-history/skipped-runs.png" alt-text="Screenshot showing a view of a skipped DAG run." border="true" lightbox="./media/materialized-view-run-history/skipped-runs.png":::
+:::image type="content" source="./media/materialized-view-run-history/skipped-runs.png" alt-text="Screenshot showing a view of a skipped run." border="true" lightbox="./media/materialized-view-run-history/skipped-runs.png":::
 
 
 
