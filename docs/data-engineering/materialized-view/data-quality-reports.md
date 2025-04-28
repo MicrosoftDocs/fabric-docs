@@ -18,7 +18,7 @@ Materialized lake views (MLV)  provides the option to view your data quality met
 
 To create/access the report, navigate to the Managed materialized lake views page and click on the "Data quality report" button. 
 
-This opens the embedded report page. If a report has already been created, the user will be able to see it here. If no report has been previously created, the user can click on "Generate report" and wait for the report to be created. 
+This opens the embedded report page. If a report is already created, the user is able to see it here. If no report is  created yet, the user can click on "Generate report" and wait for the report to be created. 
 
 
 A semantic model and a Power BI report are created for the user in the background and stored in their workspace. 
@@ -42,7 +42,7 @@ The user can filter for a particular MLV and also look at data from beyond the l
  
 ## Navigating to the original report in the workspace 
 
-To leverage all the other default features offered in a standard Power BI report, the user can navigate to the original report in the workspace by clicking the "PowerBI report" button on the right-hand corner of the top navigation bar. 
+To use all the other default features offered in a standard Power BI report, the user can navigate to the original report in the workspace by clicking the "PowerBI report" button on the right-hand corner of the top navigation bar. 
 
 
 ## Set up alerts in data quality report 
@@ -53,15 +53,15 @@ You can set up alerts on the data quality report in Fabric Materialized lake vie
 
 1. Select a measure of your choice to set up an alert on the chart of your choice.
    In the default data quality report, you can set alerts for events such as those listed below:
-   * Total violations (last 1 week)
-   * Total rows dropped across all MLVs in the Lakehouse (last 1 week)
-   * Total rows written across all MLVs in the Lakehouse (last 1 week)
-   * Total rows dropped from top 5 constraints contributing to the most number of violations (last 1 week)
-   * Total violations from top 5 MLVs contributing to the most number of violations (last 1 week) 
+   * Total violations (last one week)
+   * Total rows dropped across all MLVs in the Lakehouse (last one week)
+   * Total rows written across all MLVs in the Lakehouse (last one week)
+   * Total rows dropped from top 5 constraints contributing to the most number of violations (last one week)
+   * Total violations from top 5 MLVs contributing to the most number of violations (last one week) 
 
 1. Select the trigger upon which you want the alert to be triggered. 
 
-   These could be when the measure changes (such as changes by, increases by, decreases by) by a value or percent or else becomes (such as greater than, greater than or equal to, less than, less than or equal to, equal to, not equal to, within range, outside of range) a value.
+   These triggers could be when the measure changes by a value or percent (such as changes by, increases by, decreases by). It could also be when the measure becomes a value (such as greater than, greater than or equal to, less than, less than or equal to, equal to, not equal to, within range, outside of range).
    * Choose the preferred alert communication method, such as Teams or Outlook email. 
 
 1. Click on "Apply" button to apply the rule for the alerts. 
