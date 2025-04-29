@@ -18,7 +18,7 @@ In this article, you learn how to rename tables and edit the schema of a table b
 > * Existing ingestions, ingestion mappings, update polices, functions, exports, materialized views, and other related operations can fail when editing the table schema.
 > * Make sure you edit the implementation of the ingestion mappings, update polices, functions, export, and materialized views accordingly.
 
-## Table schema edits and dependencies
+## Dependencies
 
 Editing the table schema can cause ingestion and query failures due to dependencies that reference the table name or the table columns. The implications of schema edits are indicated in the following matrix.
 
@@ -26,7 +26,7 @@ Editing the table schema can cause ingestion and query failures due to dependenc
 |--|--|
 | **Renaming tables** | **Materialized views**: </br> * By default, all materialized views referencing the old table name directly are updated to point to the new name, in a transactional way.</br>* If the table name is referenced from a stored function invoked by the view query, you need to update the materialized view reference manually using [.alter materialized-view](/kusto/management/materialized-view-alter?view=microsoft-fabric&preserve-view=true). |
 | **Renaming columns** | * Renaming a column automatically updates all references to it in ingestion mappings.</br>* Renaming a column preserves any existing transformations in your mappings. |
-| **Adding columns** | * Adding a new column doesn't update ingestion mappings automatically. If you want the new column to be included, you have to manually update the mappings. </br>* Editing the schema doesn't update the mapping of incoming data to table columns during ingestion. After adding columns, ensure you update the [mapping](kusto/management/mappings?view=microsoft-fabric&preserve-view=true) so data is ingested correctly.</br> For more information about updating ingestion mapping, see [.alter ingestion mapping command](/kusto/management/alter-ingestion-mapping-command?view=microsoft-fabric&preserve-view=true) |
+| **Adding columns** | * Adding a new column doesn't update ingestion mappings automatically. If you want the new column to be included, you have to manually update the mappings. </br>* Editing the schema doesn't update the mapping of incoming data to table columns during ingestion. </br>* After adding columns, ensure you update the [mapping](kusto/management/mappings?view=microsoft-fabric&preserve-view=true) so data is ingested correctly.</br> For more information about updating ingestion mapping, see [.alter ingestion mapping command](/kusto/management/alter-ingestion-mapping-command?view=microsoft-fabric&preserve-view=true) |
 | **Column type** | Editing a column type isn't supported using the Edit table schema option, as changing a column type would lead to data loss. |
 | **Removing columns** | * Deleting a column removes the column from all ingestion mappings.</br>* Deleting a column is irreversible and causes data loss. You won't be able to query data in the removed column.</br>> [!CAUTION]</br>
 > * If you delete a column, save, and then add it again, the data isn't restored. It behaves as a new column and ingestion mappings aren't updated. You’ll need to manually update the ingestion mappings. |
@@ -39,7 +39,7 @@ Editing the table schema can cause ingestion and query failures due to dependenc
 
 ## Rename a table
 
-Renaming a table automatically updates all references to it in your ingestion mappings. In some cases, table mappings and references need manual updating. Review [Table schema edits and dependencies](#table-schema-edits-and-dependencies) before renaming a table.
+Renaming a table automatically updates all references to it in your ingestion mappings. In some cases, table mappings and references need manual updating. Review [Dependencies](#dependencies) before renaming a table.
 
 1. Browse to your desired KQL database, and in the Explorer pane, expand **Tables**.
 
@@ -53,7 +53,7 @@ Renaming a table automatically updates all references to it in your ingestion ma
 
     * By default, **Auto update Materialized views** is enabled. You can view the updates to the command in the [Command viewer](#command-viewer).
 
-    * If necessary, disable **Auto update Materialized views**. Ensure you review the implications in [Table schema edits and dependencies](#table-schema-edits-and-dependencies) and manually update the table ingestion mapping if necessary.
+    * If necessary, disable **Auto update Materialized views**. Ensure you review the implications in [Dependencies](#dependencies) and manually update the table ingestion mapping if necessary.
 
     :::image type="content" source="media/empty-table/table-name-update.png" alt-text="Screenshot of Command viewer and the dependencies section with the Auto update Materialized views toggle highlighted.":::
 
@@ -65,7 +65,7 @@ Renaming a table automatically updates all references to it in your ingestion ma
 
 ## Edit table columns
 
-Renaming and adding columns to a table automatically updates all references to it in your ingestion mappings. In some cases, table mappings and references need manual updating. Review [Table schema edits and dependencies](#table-schema-edits-and-dependencies) before editing the table columns.
+Renaming and adding columns to a table automatically updates all references to it in your ingestion mappings. In some cases, table mappings and references need manual updating. Review [Dependencies](#dependencies) before editing the table columns.
 
 1. Browse to your desired KQL database, and in the Explorer pane, expand **Tables**.
 
@@ -83,7 +83,7 @@ Renaming and adding columns to a table automatically updates all references to i
 
     * By default, **Auto update Mappings** is enabled. You can view the updates to the ingestion mapping command in the [Command viewer](create-empty-table.md#command-viewer).
 
-    * If necessary, disable **Auto update Mappings**. Ensure you review the implications in [Table schema edits and dependencies](#table-schema-edits-and-dependencies) and manually update the table ingestion mapping if necessary.
+    * If necessary, disable **Auto update Mappings**. Ensure you review the implications in [Dependencies](#dependencies) and manually update the table ingestion mapping if necessary.
 
     :::image type="content" source="media/empty-table/added-columns-mappings-command-viewer.png" alt-text="Screenshot of the command viewer with auto update mappings enabled in the dependencies section.":::
 
