@@ -13,7 +13,7 @@ ms.search.form: Create a table and edit the table schema
 
 Tables are named entities that hold data. A table has an ordered set of columns, and zero or more rows of data. Each row holds one data value for each column of the table. The order of rows in the table is unknown, and doesn't in general effect queries. The exceptions are some tabular operators, such as the `top` operator, that are inherently undetermined.
 
-You can create an empty table without a data source to use as a testing environment, or for ingesting data in a later stage. In this article, you learn how to create an empty table within the context of a KQL database, and how to edit the schema of an existing table.
+In this article, you learn how to create an empty table within the context of a KQL database, and how to edit the schema of an existing table.
 
 ## Prerequisites
 
@@ -23,6 +23,8 @@ You can create an empty table without a data source to use as a testing environm
 * Review all implications of editing a table schema in [Table schema edits and dependencies](#table-schema-edits-and-dependencies).
 
 ## Create an empty table in your KQL database
+
+You can create an empty table without a data source to use as a testing environment, or for ingesting data in a later stage.
 
 1. Browse to your desired KQL database.
 
@@ -41,8 +43,8 @@ You can create an empty table without a data source to use as a testing environm
 1. Start the table schema by entering a **Column name**, and a description (optional).
 
     > [!NOTE]
-    > The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
-    > You need to create at least one column. You can delete it later if needed.
+    > * The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
+    > * You need to create at least one column. You can delete it later if needed.
 
 1. Select a data **Type** for your column. The default column type is `string` but can be altered in the dropdown menu of the type field.
 
@@ -58,8 +60,8 @@ You can create an empty table without a data source to use as a testing environm
 
 1. In the success message you can select to add data now or later:
 
-    * Select **Close** to return to the Eventhouse and [Edit the table schema](#edit-the-table-schema) later.
-    * Select **Get Data** to start the ingestion process. For more information, see [Get data overview](get-data-overview.md).
+   * Select **Close** to return to the Eventhouse and [Edit the table schema](#edit-the-table-schema) later.
+   * Select **Get Data** to start the ingestion process. For more information, see [Get data overview](get-data-overview.md).
 
     :::image type="content" source="media/empty-table/table-success.png" alt-text="Screenshot of the success meassage.":::
 
@@ -91,7 +93,7 @@ Table schema edits aren't supported when there's an active OneLake connection. D
 
 * Editing the schema doesn't update the mapping of incoming data to table columns during ingestion. After adding columns, ensure you update the [mapping](kusto/management/mappings) so data is ingested correctly.
 
-For more information about updating ingestion mapping, see [.alter ingestion mapping command](/kusto/management/alter-ingestion-mapping-command?view=microsoft-fabric)
+  For more information about updating ingestion mapping, see [.alter ingestion mapping command](/kusto/management/alter-ingestion-mapping-command?view=microsoft-fabric)
 
 **Column type**
 
@@ -107,7 +109,7 @@ Editing a column type isn't supported, as changing a column type would lead to d
 
 ## Rename a table
 
-Renaming a table automatically updates all references to it in your ingestion mappings. In some cases, table mappings and references need manual updating. Review [Table schema edits and dependencies](#table-schema-edits-and-dependencies).
+Renaming a table automatically updates all references to it in your ingestion mappings. In some cases, table mappings and references need manual updating. Review [Table schema edits and dependencies](#table-schema-edits-and-dependencies) before renaming a table.
 
 1. Browse to your desired KQL database, and in the Explorer pane, expand **Tables**.
 
