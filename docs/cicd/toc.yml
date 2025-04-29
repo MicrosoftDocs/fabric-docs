@@ -5,7 +5,7 @@ items:
   href: cicd-overview.md
 - name: "Tutorial: End to end lifecycle management"
   href: cicd-tutorial.md
-- name: CI/CD workflow options in Fabric
+- name: "CI/CD workflow options in Fabric"
   href: manage-deployment.md
 - name: Continuous integration with Git
   items:
@@ -71,6 +71,8 @@ items:
       href: variable-library/variable-library-cicd.md
     - name: Automate Variable library management
       href: variable-library/automate-variable-library.md
+  - name: "Tutorial: Variable libraries in CI/CD"
+    href: variable-library/tutorial-variable-library.md
   - name: Variable library FAQ and Troubleshooting
     href: variable-library/variable-library-troubleshoot.md
 - name: Lifecycle management best practices

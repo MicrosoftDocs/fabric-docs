@@ -35,6 +35,8 @@ A new SQL database in Fabric automatically opens into the web editor and an exis
 
 In [!INCLUDE [product-name](../../includes/product-name.md)], the SQL analytics endpoint and SQL database are accessible through a Tabular Data Stream, or TDS endpoint, familiar to all modern web applications that interact with [a SQL Server TDS endpoint](/sql/relational-databases/security/networking/tds-8). This is referred to as the SQL connection string within the [!INCLUDE [product-name](../../includes/product-name.md)] user interface.
 
+The connection string of the SQL database is similar to the connection string of Azure SQL Database, `<server-unique-identifer>.database.windows.net`. The SQL analytics endpoint connection string looks like `<server-unique-identifier>.<tenant>.fabric.microsoft.com`.
+
 To find the SQL connection string for your **Fabric SQL database**:
 
 - Go to the settings of your SQL database item.
