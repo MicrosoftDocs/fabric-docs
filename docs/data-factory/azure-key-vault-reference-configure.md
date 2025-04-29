@@ -15,12 +15,12 @@ ms.search.form: Configure Azure Key Vault references
 
 1. Launch [fabric.microsoft.com](https://app.fabric.microsoft.com/) and click the top-right gear icon and navigate to “Manage Connections and Gateways” page. 
 2. Go to the “Azure Key Vault references” tab and click “New”.
-    :::image type="content" source="media/akv-reference/new-akv-reference.png" alt-text="Screenshot showing how to create a new AKV reference.":::
+    :::image type="content" source="media/akv-reference/new-azure-key-vault-reference.png" alt-text="Screenshot showing how to create a new AKV reference.":::
 
 3. Enter the Reference Alias (AKV reference name assigned in Fabric, it can be changed later) and the Account name (Key Vault name in Azure).
 4. Use OAuth 2.0 to authenticate to connect to your key vault.
 5. Click the ‘Create’ button and check its status to verify if it is online and connected to the key vault.
-    :::image type="content" source="media/akv-reference/created-akv-reference.png" alt-text="Screenshot showing a new AKV reference created.":::
+    :::image type="content" source="media/akv-reference/created-azure-key-vault-reference.png" alt-text="Screenshot showing a new AKV reference created.":::
 
 ## Use Azure Key Vault reference in connections
 1. Click the top-right gear icon and go to “Manage Connections and Gateways” page. Go to the “Connections tab” and click “new” from the top left corner.   
