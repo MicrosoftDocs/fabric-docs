@@ -71,7 +71,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
     GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO [fabric_user];
     ```
     
-    Or, for a Microosft Entra authenticated login:
+    Or, for a Microsoft Entra authenticated login:
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
