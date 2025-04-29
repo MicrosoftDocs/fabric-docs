@@ -61,7 +61,6 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
     ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
     ```
 
-1. Connect to the Azure SQL Database your plan to mirror to Microsoft Fabric, using the [Azure portal query editor](/azure/azure-sql/database/query-editor), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the user database that will be mirrored. Create a database user connected to the login and grant the minimum privileges necessary:
 
     For a SQL Authentiated login:
