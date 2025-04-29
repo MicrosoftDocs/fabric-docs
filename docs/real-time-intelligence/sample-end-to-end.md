@@ -6,13 +6,13 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 02/19/2025
+ms.date: 04/29/2025
 #customer intent: As a data analyst, I want to create an end-to-end real-time solution so that I can understand how Real-Time Intelligence components work together.
 ---
 
 # End-to-end sample
 
-This article explains how to use the End-to-end sample solution to automatically create a collection of sample components. It lets you explore the main features of Real-Time Intelligence with sample data. It provides a comprehensive end-to-end solution, demonstrating how Real-Time Intelligence components work together to stream, analyze, and visualize real-time data in a real-world context.
+This article explains how to use the End-to-end sample solution to automatically create a collection of sample components. It lets you explore the main features of Real-Time Intelligence with sample data. It provides a comprehensive end-to-end solution, demonstrating how Real-Time Intelligence components work together to stream, analyze, visualize, and alert real-time data in a real-world context.
 
 > [!Tip]
 > To implement this solution with your data, follow the [end-to-end tutorial](tutorial-introduction.md).
@@ -55,7 +55,7 @@ These steps show how to create an end-to-end sample using the bike rental sample
 1. Select the sample items to create. By default, all items are selected.
 
     > [!NOTE]
-    > Real-time Dashboard, Report, and Queryset are optional and can be cleared. However, we recommend creating the entire component set for the best experience.
+    > Real-time Dashboard, Report, Queryset, and Activator are optional and can be cleared. However, we recommend creating the entire component set for the best experience.
 
     :::image type="content" source="media/sample-end-to-end-solution/configure-bike-end-to-end-sample.png" alt-text="Screenshot of the Configure samples window showing the selected items and the Destination Location." lightbox="media/sample-end-to-end-solution/configure-bike-end-to-end-sample.png":::
 
