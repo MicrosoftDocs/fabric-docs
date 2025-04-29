@@ -48,6 +48,8 @@ Renaming a table automatically updates all references to it in your ingestion ma
 
 1. In the **Edit table schema** window, edit the table name and description (optional).
 
+    :::image type="content" source="media/empty-table/table-edit-schema-2.png" alt-text="Screenshot of the esit table schema with the table name field highlighted.":::
+
 1. In the **Dependencies** section, review the referenced objects.
 
     * By default, **Auto update Materialized views** is enabled. You can view the updates to the command in the [Command viewer](create-empty-table.md#command-viewer).
