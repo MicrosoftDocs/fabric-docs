@@ -82,7 +82,7 @@ You can also download the entire [`Fabric-Samples`](https://github.com/microsoft
   * Source stage name
   * Target stage name
   * Deployment notes (optional)
-  * Principal type. Choose either UserPrincipal or ServicePrincipal If service principal, also provide:
+  * Principal type. Choose either *UserPrincipal* or *ServicePrincipal*. If service principal, also provide:
     * Application (client) ID of the service principal
     * Directory (tenant) ID of the service principal
     * Secret value of the service principal
@@ -96,7 +96,7 @@ You can also download the entire [`Fabric-Samples`](https://github.com/microsoft
   * Target stage name
   * Items to deploy (items display name and item type)
   * Deployment notes (optional)
-  * Principal type. Choose either UserPrincipal or ServicePrincipal If service principal, also provide:
+  * Principal type. Choose either *UserPrincipal* or *ServicePrincipal*. If service principal, also provide:
     * Application (client) ID of the service principal
     * Directory (tenant) ID of the service principal
     * Secret value of the service principal
@@ -109,7 +109,7 @@ You can also download the entire [`Fabric-Samples`](https://github.com/microsoft
   * New production workspace name
   * Pipeline name
   * Deployment notes (optional)
-  * Principal type. Choose either UserPrincipal or ServicePrincipal If service principal, also provide:
+  * Principal type. Choose either *UserPrincipal* or *ServicePrincipal*. If service principal, also provide:
     * Application (client) ID of the service principal
     * Directory (tenant) ID of the service principal
     * Secret value of the service principal
