@@ -286,9 +286,11 @@ items:
       href: manage-monitor-database.md
     - name: Create a database shortcut
       href: database-shortcut.md
-    - name: Create and edit a table schema
+    - name: Create an empty table
       href: create-empty-table.md
-    - name: Manage and monitor database tables    
+    - name: Edit table schema
+      href: edit-table-schema.md
+    - name: Manage and monitor tables    
       href: manage-monitor-table.md  
     - name: Data management
       items:
