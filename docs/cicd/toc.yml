@@ -5,7 +5,7 @@ items:
   href: cicd-overview.md
 - name: "Tutorial: End to end lifecycle management"
   href: cicd-tutorial.md
-- name: CI/CD workflow options in Fabric
+- name: "CI/CD workflow options in Fabric"
   href: manage-deployment.md
 - name: Continuous integration with Git
   items:
