@@ -123,12 +123,19 @@ Notebook (typically with lakehouses and other data items)
 Dataflows gen2
    :::column-end:::
    :::column span="1":::
- - [Suggest a new query (preview)](copilot-fabric-data-factory.md).
- - [Suggest a new transformation step (preview)](copilot-fabric-data-factory.md).
- - [Summarize a query and applied steps (preview)](copilot-fabric-data-factory.md).
- - Generate and run a data pipeline.
- - Summarize a data pipeline.
- - Troubleshoot pipeline errors.
+ - [Generate a new query](copilot-fabric-data-factory.md#get-started-with-copilot-for-dataflow-gen2).
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="1":::
+   :::column-end:::
+   :::column span="1":::
+Data pipeline
+   :::column-end:::
+   :::column span="1":::
+ - [Generate and run a data pipeline](copilot-fabric-data-factory.md#generate-a-data-pipeline-with-copilot).
+ - [Summarize a data pipeline](copilot-fabric-data-factory.md#summarize-a-data-pipeline-with-copilot).
+ - [Troubleshoot pipeline errors](copilot-fabric-data-factory.md#troubleshoot-pipeline-errors-with-copilot).
    :::column-end:::
 :::row-end:::
 ---
