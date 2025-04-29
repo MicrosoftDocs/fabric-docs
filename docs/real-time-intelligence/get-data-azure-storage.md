@@ -120,7 +120,7 @@ Set the source to get data.
 
         | **Setting** | **Field description** |
         |--|--|
-        | Subscription | The subscription ID where the storage account is located. |
+        | Subscription | The subscription name where the storage account is located. |
         | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
         | Container | The storage container containing the file you want to ingest. |
 
@@ -184,7 +184,7 @@ Set the source to get data.
 
     | **Setting** | **Field description** |
     |--|--|
-    | Subscription | The subscription ID where the storage account is located. |
+    | Subscription | The subscription name where the storage account is located. |
     | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
     | Container | The storage container containing the file you want to ingest. |
 
