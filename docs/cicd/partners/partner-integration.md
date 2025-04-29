@@ -7,7 +7,7 @@ author: mberdugo
 ms.topic: overview
 ms.custom:
 ms.search.form:
-ms.date: 07/29/2024
+ms.date: 04/29/2025
 #customer intent: As an ISV, I want to learn about the different pathways to integrate with Microsoft Fabric so that I can leverage the platform's capabilities to build and deploy my solutions.
 ---
 
@@ -37,10 +37,12 @@ The following sections describe some of the ways you can get started with this m
 
 ### Real-Time Intelligence APIs
 
-Real-Time Intelligence streamlines data analysis and visualization, offering a centralized solution for immediate insights and actions on data in motion within an organization. It efficiently manages large volumes of data through robust querying, transformation, and storage capabilities.
+**Fabric Real-Time Intelligence** is a comprehensive solution designed to support the entire lifecycle of real-time data—from ingestion and stream processing to analytics, visualization, and action. Built to handle high-throughput streaming data, it offers robust capabilities for data ingestion, transformation, querying, and storage, enabling organizations to make timely, data-driven decisions.
 
-- Eventhouses are specifically designed for streaming data, compatible with Real-Time hub, and ideal for time-based events. Data is automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data that can be accessed in OneLake for use across Fabric's suite of experiences. Eventhouses support existing Eventhouse APIs and SDKs for direct interaction, allowing developers to read, write, and manage their data in Eventhouses. Learn more about [REST API](/azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context-rti&pivots=fabric).
-- Eventstreams enable you to bring real-time events from various sources and route them to various destinations, such as OneLake, KQL databases in eventhouses, and Fabric [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)]. Learn more about [eventstreams](../../real-time-intelligence/event-streams/overview.md) and [eventstreams API](#develop-on-fabric).
+- **Eventstreams** enable you to bring real-time events from various sources and route them to various destinations, such as Lakehouses, KQL databases in Eventhouse, and Fabric [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)]. Learn more about [Eventstreams](../../real-time-intelligence/event-streams/overview.md) and [Eventstreams API](#develop-on-fabric).
+- You can ingest streaming data in to Eventstreams via multiple protocols incl. Kafka, Event Hubs, AMQP and a growing list of connectors listed [here.](../../real-time-intelligence/event-streams/add-manage-eventstream-sources)
+- After processing the ingested events using either the no-code experience or using SQL operator (Preview), the result can be route to several Fabric destinations or to custom endpoints. Learn more about Eventstreams destinations [here.](../../real-time-intelligence/event-streams/add-manage-eventstream-destinations)
+- **Eventhouses** are specifically designed for streaming data, compatible with Real-Time hub, and ideal for time-based events. Data is automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data that can be accessed in OneLake for use across Fabric's suite of experiences. Eventhouses support existing Eventhouse APIs and SDKs for direct interaction, allowing developers to read, write, and manage their data in Eventhouses. Learn more about [REST API](/azure/data-explorer/kusto/api/rest/index?context=/fabric/context/context-rti&pivots=fabric).
 - If you're using Databricks or Jupyter Notebooks, you can utilize the Kusto Python Client Library to work with KQL databases in Fabric. Learn more about [Kusto Python SDK](/azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/context-rti&pivots=fabric).
 - You can utilize the existing [Microsoft Logic Apps](/azure/data-explorer/kusto/tools/logicapps), [Azure Data Factory](/azure/data-explorer/data-factory-integration), or [Microsoft Power Automate](/azure/data-explorer/flow) connectors to interact with your Eventhouses or KQL Databases.
 - [Database shortcuts in Real-Time Intelligence](../../real-time-intelligence/database-shortcut.md) are embedded references within an eventhouse to a source database. The source database can either be a KQL Database in Real-Time Intelligence or an Azure Data Explorer database. Shortcuts can be used for in place sharing of data within the same tenant or across tenants. Learn more about managing [database shortcuts using the API](#develop-on-fabric).
