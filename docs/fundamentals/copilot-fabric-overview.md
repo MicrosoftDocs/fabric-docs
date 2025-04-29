@@ -34,7 +34,7 @@ This article helps you to understand how Copilot in Fabric works, including its 
 > [!IMPORTANT]
 > Copilot in Fabric aims to *augment* the abilities and intelligence of human users. Copilot can't and doesn't aim to *replace* the people who today create and manage reports or other Fabric items. To get the most out of Copilot in Fabric, you should consider how you'll enable these individuals and teams to make their work more efficient or improve their outcomes.
 
-There are different Copilots in each of the Fabric workloads, like Data Factory, Data Science, and Power BI. Furthermore, Copilot experiences are also available from Power BI Desktop if users have access to a workspace that uses a Fabric capacity with an F64 or higher SKU.
+There are different Copilots in each of the Fabric workloads, like Data Factory, Data Science, and Power BI. Furthermore, Copilot experiences are also available from Power BI Desktop if users have access to a workspace that uses a Fabric capacity with an F2 or higher SKU.
 
 :::image type="content" source="media/copilot-fabric-overview/copilot-fabric-power-bi-diagram.svg" alt-text="Diagram showing how users can use Copilot experiences in Fabric and Power BI Desktop, which both consume Fabric capacity.":::
 
@@ -227,7 +227,7 @@ To learn how to use Copilot responsibly, see the guidance at [Privacy, security,
 
 ### Available regions for Azure OpenAI Service
 
-To access the prebuilt [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), including the [Copilot in Fabric](copilot-fabric-overview.md), you must have an F64 or higher SKU or a P SKU in the following [Fabric regions](../admin/region-availability.md). The Azure OpenAI Service isn't available on trial SKUs.
+To access the prebuilt [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), including the [Copilot in Fabric](copilot-fabric-overview.md), you must have an F2 or higher SKU or a P SKU in the following [Fabric regions](../admin/region-availability.md). The Azure OpenAI Service isn't available on trial SKUs.
 
 The Azure OpenAI Service used to power Fabric Copilot is currently deployed only in US datacenters (East US, East US2, South Central US, and West US) and one EU datacenter (France Central). This differs from the standard Azure OpenAI Service available in the Azure portal, which is accessible in many more regions. For details on standard Azure OpenAI region availability, see [Azure OpenAI Service region availability](/azure/ai-services/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions#model-summary-table-and-region-availability). If your data is outside the US or EU, the feature is disabled by default unless your tenant admin enables **Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance** tenant setting. To learn how to get to the tenant settings, see [About tenant settings](../admin/service-admin-portal-copilot.md).
 

@@ -338,7 +338,7 @@ To mitigate risks or challenges from LLM hallucinations in Copilot, consider the
 
 ## Privacy, security, and responsible AI
 
-Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE5cmFl). See [Privacy, security, and responsible use of Copilot in Fabric](copilot-privacy-security.md) for a detailed overview. See also [Data, privacy, and security for Azure OpenAI Service](/legal/cognitive-services/openai/data-privacy?context=%2Fazure%2Fai-services%2Fopenai%2Fcontext%2Fcontext&tabs=azure-portal) for detailed information specific for Azure OpenAI.
+Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://msblogs.thesourcemediaassets.com/sites/5/2022/06/Microsoft-Responsible-AI-Standard-v2-General-Requirements-3.pdf). See [Privacy, security, and responsible use of Copilot in Fabric](copilot-privacy-security.md) for a detailed overview. See also [Data, privacy, and security for Azure OpenAI Service](/legal/cognitive-services/openai/data-privacy?context=%2Fazure%2Fai-services%2Fopenai%2Fcontext%2Fcontext&tabs=azure-portal) for detailed information specific for Azure OpenAI.
 
 For an overview specifically for each Fabric workload, see the following articles:
 

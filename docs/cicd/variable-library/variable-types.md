@@ -82,4 +82,4 @@ You can change the order the value sets are displayed or change the value of a v
 
 ## Considerations and limitations
 
- [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
+ [!INCLUDE [limitations](../includes/variable-library-limitations.md)]
