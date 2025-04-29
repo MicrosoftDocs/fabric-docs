@@ -18,8 +18,9 @@ Copy jobs in Data Factory ingest data without the need to create a Fabric data p
 This quickstart guide walks you through how to copy data incrementally from a Fabric Warehouse table to a Fabric Lakehouse table using Copy job.  
 
 For more information about Copy jobs in general, see:
-    - [Supported connectors](what-is-copy-job.md#supported-connectors)
-    - [Known limitations](create-copy-job.md#known-limitations)
+
+- [Supported connectors](what-is-copy-job.md#supported-connectors)
+- [Known limitations](create-copy-job.md#known-limitations)
 
 ## Prerequisites
 
