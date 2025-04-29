@@ -986,8 +986,7 @@
       - name: How to
         items:
           - name: Configure AKV references
-            href: akv-reference-configure.md
-
+            href: azure-key-vault-reference-configure.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases
