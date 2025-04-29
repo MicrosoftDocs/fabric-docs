@@ -41,8 +41,8 @@ This table lists regions where all Fabric workloads are available.
 | South Central US<sup>2</sup>| Sweden Central|     |         | South India<sup>3</sup>     |
 | West US<sup>3</sup>  | Switzerland North<sup>3</sup>     |             |     |              |
 | West US 2    | Switzerland West<sup>3</sup>           |             |                    |           |
-| West US 3 <sup>3</sup>     | UK South           |             |             |        |
-|       | UK West<sup>1</sup>,<sup>3</sup>        |             |            |         |
+| West US 3<sup>3</sup>     | UK South           |             |             |        |
+|       | UK West<sup>1,3</sup>        |             |            |         |
 
 
   <sup>1</sup> [Fabric SQL database](../database/sql/overview.md) isn't  available in this region.
