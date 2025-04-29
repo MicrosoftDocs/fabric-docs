@@ -273,7 +273,7 @@ GitHub account details include:
 --->
 ## Considerations and limitations
 
-[!INCLUDE [limitations](../../includes/git-limitations.md)]
+[!INCLUDE [limitations](../includes/git-limitations.md)]
 
 ## Related content
 

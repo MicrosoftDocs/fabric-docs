@@ -43,4 +43,4 @@ For a breakdown of the definition structure of the Variable library, see the [Va
 
 ## Considerations and limitations
 
- [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
+ [!INCLUDE [limitations](../includes/variable-library-limitations.md)]
