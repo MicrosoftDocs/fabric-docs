@@ -6,12 +6,12 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 04/24/2025
+ms.date: 04/29/2025
 ms.search.form: Create a table and edit the table schema
 ---
 # Create and edit a table schema
 
-Tables are named entities that hold data. A table has an ordered set of columns, and zero or more rows of data. Each row holds one data value for each column of the table. The order of rows in the table is unknown, and doesn't in general effect queries. The exceptions are some tabular operators, such as the `top` operator, that are inherently undetermined.
+Tables are named entities that hold data. A table has an ordered set of columns, and zero or more rows of data. Each row holds one data value for each column of the table.
 
 In this article, you learn how to create an empty table within the context of a KQL database, and how to edit the schema of an existing table.
 
@@ -19,12 +19,13 @@ In this article, you learn how to create an empty table within the context of a 
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
-* Disable OneLake availability before [renaming a table](#rename-a-table) or [editing table columns](#edit-table-columns).
-* Review all implications of editing a table schema in [Table schema edits and dependencies](#table-schema-edits-and-dependencies).
+* Table schema edits aren't supported when there's an active OneLake connection. [Disable OneLake availability](event-house-onelake-availability.md) before [renaming a table](#rename-a-table) or [editing table columns](#edit-table-columns). You can enable it later, and a new copy is saved in OneLake.
 
 ## Create an empty table in your KQL database
 
 You can create an empty table without a data source to use as a testing environment, or for ingesting data in a later stage.
+
+If you have a data source or a sample file prepared, you can use Get data to ingest data directly into a new table. For more information, see [Get data overview](get-data-overview.md).
 
 1. Browse to your desired KQL database.
 
@@ -36,7 +37,7 @@ You can create an empty table without a data source to use as a testing environm
 
     > [!NOTE]
     > Table names can be up to 1,024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
-    > There are no known [dependencies](#dependencies) until a table with references is created.
+    > There are no known dependencies until a references to the table are created.
 
      :::image type="content" source="media/empty-table/table-name.png" alt-text="Screenshot of the new table wizard in Real-Time Intelligence. The table name and description is highlighted.":::
 
@@ -44,7 +45,7 @@ You can create an empty table without a data source to use as a testing environm
 
     > [!NOTE]
     > * The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
-    > * You need to create at least one column. You can delete it later if needed.
+    > * You need to create at least one column.
 
 1. Select a data **Type** for your column. The default column type is `string` but can be altered in the dropdown menu of the type field.
 
@@ -52,7 +53,7 @@ You can create an empty table without a data source to use as a testing environm
 
     * Select **+ Add column** to add more columns.
     * Select the delete icon to remove a column you just added.
-    * Toggle between the [Command viewer](#command-viewer) and the Add column view.
+    * To see a read-only view of the commands that will run to create the table, you can open the  [Command viewer](#command-viewer).
 
     :::image type="content" source="media/empty-table/table-columns.png" alt-text="Screenshot of the new empty table wizard in Real-Time Intelligence. The Add column, delete, and command viewer options are highlighted.":::
 
@@ -60,26 +61,25 @@ You can create an empty table without a data source to use as a testing environm
 
 1. In the success message you can select to add data now or later:
 
-   * Select **Close** to return to the Eventhouse and [Edit the table schema](#edit-the-table-schema) later.
+   * Select **Close** to return to the Eventhouse and [Edit the table schema](#edit-table-columns) later.
    * Select **Get Data** to start the ingestion process. For more information, see [Get data overview](get-data-overview.md).
 
     :::image type="content" source="media/empty-table/table-success.png" alt-text="Screenshot of the success meassage.":::
 
 ## Table schema edits and dependencies
 
-Table schema edits don't change the data in the table. However, editing the table schema can case ingestion and query failures. Existing ingestion update polices, functions, exports, and materialized views, and other related operations can also fail. Make sure you also edit accordingly the implementation of the update polices, functions, export, and materialized views.
+Editing the table schema can case ingestion and query failures due to dependencies that reference the table name or the table columns. The implications of schema edits include the following considerations:
 
-The implications of schema edits include the following considerations:
-
-**OneLake and schema edits**
-
-Table schema edits aren't supported when there's an active OneLake connection. Disable OneLake availability before renaming a table and editing table columns. You can enable it later.
+> [!CAUTION]
+>
+> * Existing ingestion update polices, functions, exports, materialized views, and other related operations can also fail.
+> * Make sure you also edit the implementation of the update polices, functions, export, and materialized views accordingly.
 
 **Renaming tables and Materialized views**
 
 * By default, all materialized views referencing the old table name directly are updated to point to the new name, in a transactional way.
 
-* If the table name is referenced from a stored function invoked by the view query, you need to update the materialized view reference manually. The command is `.rename table <OldName> to <NewName> with (updateMaterializedViews=true)`.
+* If the table name is referenced from a stored function invoked by the view query, you need to update the materialized view reference manually using [.alter materialized-view](/kusto/management/materialized-view-alter?view=microsoft-fabric).
 
 **Renaming columns**
 
@@ -97,11 +97,11 @@ Table schema edits aren't supported when there's an active OneLake connection. D
 
 **Column type**
 
-Editing a column type isn't supported, as changing a column type would lead to data loss.
+Editing a column type isn't supported using the edit table scheme interface, as changing a column type would lead to data loss.
 
 **Removing columns**
 
-* Deleting a column removes it from all ingestion mappings.
+* Deleting a column removes the column from all ingestion mappings.
 
 * Deleting a column is irreversible and causes data loss. You won't be able to query data in the removed column.
 
@@ -135,7 +135,7 @@ Renaming a table automatically updates all references to it in your ingestion ma
 
 ## Edit table columns
 
-Review [Table schema edits and dependencies](#table-schema-edits-and-dependencies) before editing the table columns.
+Renaming and adding columns to a table automatically updates all references to it in your ingestion mappings. In some cases, table mappings and references need manual updating. Review [Table schema edits and dependencies](#table-schema-edits-and-dependencies) before editing the table columns.
 
 1. Browse to your desired KQL database, and in the Explorer pane, expand **Tables**.
 
