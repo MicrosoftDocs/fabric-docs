@@ -75,6 +75,7 @@ To open the command viewer, select the **</>** button on the right side of the c
 
 ## Related content
 
+* [Edit a table schema](edit-table-schema.md)
 * [Get data from Azure storage](get-data-azure-storage.md)
 * [Get data from Amazon S3](get-data-amazon-s3.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)

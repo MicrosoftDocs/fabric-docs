@@ -11,7 +11,7 @@ ms.search.form: Edit the table schema
 ---
 # Edit a table schema
 
-In this article, you learn how to rename tables and edit the schema of an existing table.
+In this article, you learn how to rename tables and edit the schema of a table by adding, renaming, and removing columns. The implications and dependencies of table schema changes on referenced objects and mappings are outlined.
 
 > [!CAUTION]
 >
@@ -20,47 +20,16 @@ In this article, you learn how to rename tables and edit the schema of an existi
 
 ## Table schema edits and dependencies
 
-Editing the table schema can case ingestion and query failures due to dependencies that reference the table name or the table columns. The implications of schema edits are indicated in the following matrix.
+Editing the table schema can cause ingestion and query failures due to dependencies that reference the table name or the table columns. The implications of schema edits are indicated in the following matrix.
 
 | Schema edit | Dependency |
 |--|--|
 | **Renaming tables** | **Materialized views**: </br> * By default, all materialized views referencing the old table name directly are updated to point to the new name, in a transactional way.</br>* If the table name is referenced from a stored function invoked by the view query, you need to update the materialized view reference manually using [.alter materialized-view](/kusto/management/materialized-view-alter?view=microsoft-fabric&preserve-view=true). |
 | **Renaming columns** | * Renaming a column automatically updates all references to it in ingestion mappings.</br>* Renaming a column preserves any existing transformations in your mappings. |
 | **Adding columns** | * Adding a new column doesn't update ingestion mappings automatically. If you want the new column to be included, you have to manually update the mappings. </br>* Editing the schema doesn't update the mapping of incoming data to table columns during ingestion. After adding columns, ensure you update the [mapping](kusto/management/mappings?view=microsoft-fabric&preserve-view=true) so data is ingested correctly.</br> For more information about updating ingestion mapping, see [.alter ingestion mapping command](/kusto/management/alter-ingestion-mapping-command?view=microsoft-fabric&preserve-view=true) |
-| **Column type** | Editing a column type isn't supported using the edit table scheme interface, as changing a column type would lead to data loss. |
-| **Removing columns** | * Deleting a column removes the column from all ingestion mappings.</br>* Deleting a column is irreversible and causes data loss. You won't be able to query data in the removed column.</br>* If you delete a column, save, and then add it again, the data is not restored. It behaves as a new column and ingestion mappings aren't updated. You’ll need to manually update the ingestion mappings. |
-
-**Renaming tables and Materialized views**
-
-* By default, all materialized views referencing the old table name directly are updated to point to the new name, in a transactional way.
-
-* If the table name is referenced from a stored function invoked by the view query, you need to update the materialized view reference manually using [.alter materialized-view](/kusto/management/materialized-view-alter?view=microsoft-fabric&preserve-view=true).
-
-**Renaming columns**
-
-* Renaming a column automatically updates all references to it in ingestion mappings.
-
-* Renaming a column preserves any existing transformations in your mappings.
-
-**Adding columns**
-
-* Adding a new column doesn't update ingestion mappings automatically. If you want the new column to be included, you have to manually update the mappings.
-
-* Editing the schema doesn't update the mapping of incoming data to table columns during ingestion. After adding columns, ensure you update the [mapping](kusto/management/mappings?view=microsoft-fabric&preserve-view=true) so data is ingested correctly.
-
-  For more information about updating ingestion mapping, see [.alter ingestion mapping command](/kusto/management/alter-ingestion-mapping-command?view=microsoft-fabric&preserve-view=true)
-
-**Column type**
-
-Editing a column type isn't supported using the edit table scheme interface, as changing a column type would lead to data loss.
-
-**Removing columns**
-
-* Deleting a column removes the column from all ingestion mappings.
-
-* Deleting a column is irreversible and causes data loss. You won't be able to query data in the removed column.
-
-* If you delete a column, save, and then add it again, the data is not restored. It behaves as a new column and ingestion mappings aren't updated. You’ll need to manually update the ingestion mappings.
+| **Column type** | Editing a column type isn't supported using the Edit table schema option, as changing a column type would lead to data loss. |
+| **Removing columns** | * Deleting a column removes the column from all ingestion mappings.</br>* Deleting a column is irreversible and causes data loss. You won't be able to query data in the removed column.</br>> [!CAUTION]</br>
+> * If you delete a column, save, and then add it again, the data isn't restored. It behaves as a new column and ingestion mappings aren't updated. You’ll need to manually update the ingestion mappings. |
 
 ## Prerequisites
 
@@ -112,13 +81,13 @@ Renaming and adding columns to a table automatically updates all references to i
 
 1. In the **Dependencies** section, review the referenced objects.
 
-    * By defaut, **Auto update Mappings** is enabled. You can view the updates to the ingestion mapping command in the [Command viewer](#command-viewer).
+    * By default, **Auto update Mappings** is enabled. You can view the updates to the ingestion mapping command in the [Command viewer](#command-viewer).
 
-    * If required, disable **Auto update Mappings**. Ensure you review the implications in [Table schema edits and dependencies](#table-schema-edits-and-dependencies) and manually update the table ingestion mapping if necessary.
+    * If necessary, disable **Auto update Mappings**. Ensure you review the implications in [Table schema edits and dependencies](#table-schema-edits-and-dependencies) and manually update the table ingestion mapping if necessary.
 
     :::image type="content" source="media/empty-table/added-columns-mappings-command-viewer.png" alt-text="Screenshot of the command viewer with auto update mappings enabled in the dependencies section.":::
 
-1. If required, update the data ingestion [mapping](kusto/management/mappings?view=microsoft-fabric&preserve-view=true).
+1. If necessary, update the data ingestion [mapping](kusto/management/mappings?view=microsoft-fabric&preserve-view=true).
 
 ## Command viewer
 
@@ -130,5 +99,5 @@ To open the command viewer, select the **</>** button on the right side of the c
 
 ## Related content
 
-* [Create and edit a table schema](create-empty-table.md)
+* [Create an empty table](create-empty-table.md)
 * Data ingestion [mapping](kusto/management/mappings?view=microsoft-fabric&preserve-view=true)
