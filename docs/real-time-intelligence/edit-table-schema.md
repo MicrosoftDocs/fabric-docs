@@ -28,8 +28,7 @@ Editing the table schema can cause ingestion and query failures due to dependenc
 | **Renaming columns** | * Renaming a column automatically updates all references to it in ingestion mappings.</br>* Renaming a column preserves any existing transformations in your mappings. |
 | **Adding columns** | * Adding a new column doesn't update ingestion mappings automatically. If you want the new column to be included, you have to manually update the mappings. </br>* Editing the schema doesn't update the mapping of incoming data to table columns during ingestion. </br>* After adding columns, ensure you update the [mapping](kusto/management/mappings?view=microsoft-fabric&preserve-view=true) so data is ingested correctly.</br> For more information about updating ingestion mapping, see [.alter ingestion mapping command](/kusto/management/alter-ingestion-mapping-command?view=microsoft-fabric&preserve-view=true) |
 | **Column type** | Editing a column type isn't supported using the Edit table schema option, as changing a column type would lead to data loss. |
-| **Removing columns** | * Deleting a column removes the column from all ingestion mappings.</br>* Deleting a column is irreversible and causes data loss. You won't be able to query data in the removed column.</br>> [!CAUTION]</br>
-> * If you delete a column, save, and then add it again, the data isn't restored. It behaves as a new column and ingestion mappings aren't updated. You’ll need to manually update the ingestion mappings. |
+| **Removing columns** | * Deleting a column removes the column from all ingestion mappings.</br>* Deleting a column is irreversible and causes data loss. You won't be able to query data in the removed column.</br> * **Caution** If you delete a column, save, and then add it again, the data isn't restored. It behaves as a new column and ingestion mappings aren't updated. You’ll need to manually update the ingestion mappings. |
 
 ## Prerequisites
 
