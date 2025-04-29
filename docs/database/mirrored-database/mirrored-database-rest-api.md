@@ -93,10 +93,7 @@ If you want to replicate selective tables instead of all the tables in the speci
         "source": {
             "type": "AzureSqlDatabase",
             "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
-                "landingZone":{
-                    "type":"MountedRelationalDatabase"
-                }
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
             }
         },
         "target": {
@@ -118,10 +115,7 @@ If you want to replicate selective tables instead of all the tables in the speci
         "source": {
             "type": "AzureSqlMI",
             "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
-                "landingZone":{
-                    "type":"MountedRelationalDatabase"
-                }
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
             }
         },
         "target": {
@@ -145,10 +139,7 @@ If you want to replicate selective tables instead of all the tables in the speci
         "source": {
             "type": "AzurePostgreSql",
             "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
-                "landingZone":{
-                    "type":"MountedRelationalDatabase"
-                }
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
             }
         },
         "target": {
