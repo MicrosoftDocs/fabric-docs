@@ -34,9 +34,9 @@ In Microsoft Cost Management, your cost analysis and invoice show multiple meter
 | Digital Twin Builder Query                     | Represents Digital Twin Builder Query on your capacity                              | GA |
 | Eventhouse                                     | Represents Row Level Eventhouse on your capacity                                    | GA |
 | Eventstream Capacity Usage CU                  | Represents the ingestion or processing usage for eventstreams on your capacity      | GA |
-| Eventstream Connector                          | Represents Eventstream Row Level Connector ev your capacity                         | GA |
+| Eventstream Connector                          | Represents Eventstream Row Level Connector EV your capacity                         | GA |
 | Eventstream Data Traffic per GB Capacity Usage CU | Represents the data ingress and egress usage on your capacity                    | GA |
-| Eventstream Flat                               | Represents Eventstream Row Level Flat ev your capacity                              | GA |
+| Eventstream Flat                               | Represents Eventstream Row Level Flat EV your capacity                              | GA |
 | Eventstreams Processor Capacity Usage CU       | Represents the ASA processing usage on your capacity                                | GA |
 | KQL Database Capacity Usage CU                 | Represents the KQL database up time usage on your capacity                          | GA |
 | ML Model Endpoint                              | Represents ML Model Endpoint on your capacity                                       | GA |
