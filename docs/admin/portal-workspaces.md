@@ -65,7 +65,7 @@ The ribbon at the top of the list and the More options (...) menus of the indivi
 >
 > Admins can also control users' ability to create new workspace experience workspaces and classic workspaces. See [Workspace settings](./portal-workspace.md) in this article for details.
 
-## Workspace limits
+## Workspace Item limits
 
 Workspaces can contain a maximum of 1,000 Fabric and Power BI items. This includes both parent and child items.
 
