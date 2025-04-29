@@ -67,8 +67,10 @@ items:
       href: variable-library/variable-types.md
     - name: Permissions
       href: variable-library/variable-library-permissions.md
-    - name: CI/CD and Variable libraries
+    - name: "CI/CD and Variable libraries"
       href: variable-library/variable-library-cicd.md
+    - name: Automate Variable library management
+      href: variable-library/automate-variable-library.md
   - name: "Tutorial: Variable libraries in CI/CD"
     href: variable-library/tutorial-variable-library.md
   - name: Variable library FAQ and Troubleshooting

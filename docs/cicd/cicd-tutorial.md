@@ -4,6 +4,7 @@ description: Understand the workflow of using Git integration with deployment pi
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.search.form: Variable library tutorial
 ms.topic: tutorial
 ms.service: fabric
 ms.subservice: cicd

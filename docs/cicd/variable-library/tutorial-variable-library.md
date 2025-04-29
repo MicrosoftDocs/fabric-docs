@@ -49,7 +49,7 @@ Create a workspace called *Sources LHs* with some lakehouses to use as source da
 1. [Create a lakehouse](../../onelake/create-lakehouse-onelake.md) item in the workspace, called *SourceLH_Dev*.
 1. [Create a data pipeline with sample data from public holidays](../../data-factory/create-first-pipeline-with-sample-data.md) (steps 1-3). {10 minutes}
 1. Create another workspace called *Copy with Variables WS* [Dev]
-1. Create an empty Lakehouse called This_WH_LH
+1. Create an empty lakehouse called This_WH_LH
 1. Create two more lakehouses (*SourceLH_Test* and *SourceLH_Prod*) with sample data.
 
 ## Step 1: Create a workspace

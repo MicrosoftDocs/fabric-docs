@@ -1,12 +1,11 @@
 ---
-title: "Data warehouse tutorial: Create tables with T-SQL in a warehouse"
+title: "Data Warehouse Tutorial: Create Tables with T-SQL in a Warehouse"
 description: "In this tutorial, learn how to create tables in the warehouse with T-SQL."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 12/29/2024
+ms.date: 04/06/2025
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Tutorial: Create tables with T-SQL in a warehouse
@@ -32,7 +31,7 @@ In this task, learn how to create tables in the warehouse with T-SQL.
 
 1. On the **Home** ribbon, select **New SQL query**.
 
-   :::image type="content" source="media/tutorial-create-tables/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option." border="false":::
+   :::image type="content" source="media/tutorial-create-tables/ribbon-new-sql-query.png" alt-text="Screenshot of the Home ribbon, highlighting the New SQL query option." lightbox="media/tutorial-create-tables/ribbon-new-sql-query.png":::
 
 1. In the query editor, paste the following code. The code drops the `dimension_city` table (if it exists), and then creates the dimension table. It also drops the `fact_sale` table (if it exists), and creates the fact table.
 
@@ -94,15 +93,15 @@ In this task, learn how to create tables in the warehouse with T-SQL.
 
 1. To execute the query, on the query designer ribbon, select **Run**.
 
-   :::image type="content" source="media/tutorial-create-tables/run-to-execute.png" alt-text="Screenshot of the Run option on the query editor ribbon." border="false":::
+   :::image type="content" source="media/tutorial-create-tables/run-to-execute.png" alt-text="Screenshot of the Run option on the query editor ribbon.":::
 
 1. When the script execution completes, to rename the query, right-click on the query tab, and then select **Rename**.
 
-   :::image type="content" source="media/tutorial-create-tables/rename-query-option.png" alt-text="Screenshot of the Rename option available when right-clicking the query tab." border="false":::
+   :::image type="content" source="media/tutorial-create-tables/rename-query-option.png" alt-text="Screenshot of the Rename option available when right-clicking the query tab.":::
 
 1. In the **Rename** window, in the **Name** box, replace the default name with `Create Tables`.
 
-   :::image type="content" source="media/tutorial-create-tables/rename-script.png" alt-text="Screenshot of the Rename window, showing the script name entered." border="false":::
+   :::image type="content" source="media/tutorial-create-tables/rename-script.png" alt-text="Screenshot of the Rename window, showing the script name entered.":::
 
 1. Select **Rename**.
 
@@ -110,7 +109,7 @@ In this task, learn how to create tables in the warehouse with T-SQL.
 
 1. Verify that the two new tables are listed. The `dimension_customer` table was created in the [previous tutorial](tutorial-ingest-data.md).
 
-   :::image type="content" source="media/tutorial-create-tables/explorer-verify.png" alt-text="Screenshot of the Explorer pane, showing where to find your tables and newly created query." border="false":::
+   :::image type="content" source="media/tutorial-create-tables/explorer-verify.png" alt-text="Screenshot of the Explorer pane, showing where to find your tables and newly created query.":::
 
 ## Next step
 

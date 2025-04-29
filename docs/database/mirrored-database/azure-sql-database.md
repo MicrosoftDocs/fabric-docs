@@ -49,7 +49,7 @@ In addition to the [SQL query editor](../../data-warehouse/sql-query-editor.md),
 
 ## Mirroring Azure SQL Database behind firewall (Preview)
 
-If your Azure SQL Database is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can set up [virtual network data gateway](/en-us/data-integration/vnet/overview) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. Learn more from [the tutorial](azure-sql-database-tutorial.md).
+If your Azure SQL Database is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can set up [virtual network data gateway](/data-integration/vnet/overview) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. Learn more from [the tutorial](azure-sql-database-tutorial.md).
 
 ## Active transactions, workloads, and replicator engine behaviors
 

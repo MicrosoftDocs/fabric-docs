@@ -4,25 +4,25 @@ description: A known issue is posted where tenant migration requests are stopped
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/18/2025
+ms.date: 04/15/2025
 ms.custom: known-issue-923
 ---
 
 # Known issue - Tenant migration requests stopped
 
-Cross-region tenant migrations requests are stopped. We're not accepting new tenant migration cases and are evaluating existing requests.
+At Microsoft Fabric, we're committed to ensuring our platform meets the highest standards of consistency and security. We conducted a thorough review of the tenant migration processes to understand whether it aligns with our standards. Due to this review and the technical challenges associated with cross-region tenant migrations, we decided to no longer offer the tenant migration service.
 
-**Status:** Open
+**Status:** Closed: April 15, 2025
 
 **Product Experience:** Power BI
 
 ## Symptoms
 
-Existing cross-region tenant migration requests aren't being processed. We're not accepting new tenant migration requests.
+We no longer offer the cross-region tenant migration service.
 
 ## Solutions and workarounds
 
-This article will be updated once we have more information to share.
+You can use alternate methods for moving a tenant to another region, such as [multi-geo capacities or tenant remap](/power-bi/support/service-admin-region-move).
 
 ## Next steps
 

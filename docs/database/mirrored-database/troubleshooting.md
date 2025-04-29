@@ -43,7 +43,7 @@ Review limitations documentation for each data source:
 | Fabric capacity paused        | Mirroring is stopped and you cannot list or access the mirrored database item. Resume or reassign the capacity to your workspace. |
 | Fabric capacity resumed       | **Known limitation:** When capacity is resumed from a paused state, the mirrored database status appears as Running, but mirroring doesn't start automatically. As a result, changes made in the source are not replicated to OneLake.<br>To resume mirroring, go to the mirrored database in the Fabric portal, select **Configure replication**, and click **Apply change**. Mirroring will continue from where it was paused. <br>Note if the capacity is paused for a long time, mirroring may not resume from its stopping point and will reseed data from the beginning. For example, this can occur if the transaction log for the database is full. |
 | Fabric capacity scaling       | Mirroring continues. If you scale down the capacity, be aware that the OneLake storage for the mirrored data is free up to a limit based on the capacity size, thus scaling down the capacity may incur additional storage charge. Learn more from [Cost of mirroring](overview.md#cost-of-mirroring). |
-| Fabric capacity throttled     | Wait until the overload state is over or update your capacity. Mirroring will continue once the capacity is restored. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling.md#actions-you-can-take-to-recover-from-overload-situations). |
+| Fabric capacity throttled     | Wait until the overload state is over or update your capacity. Mirroring will continue once the capacity is restored. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). |
 | Fabric trial capacity expired | Mirroring is stopped. To retain your mirrored database, purchase Fabric capacity. Learn more from [Fabric trial capacity expires](../../fundamentals/fabric-trial.md#the-trial-expires). |
 
 ## Stop replication
@@ -70,7 +70,7 @@ Currently, mirrored database doesn't support ownership change. If a mirrored dat
 
 ## Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Troubleshoot
 
