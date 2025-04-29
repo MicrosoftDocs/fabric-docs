@@ -23,11 +23,15 @@ Learn how to submit Spark session jobs using the Livy API for Fabric Data Engine
 
 * A remote client such as [Visual Studio Code](https://code.visualstudio.com/) with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/).
 
-* A Microsoft Entra app token is required to access the Fabric Rest API. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
+* Either an Microsoft Entra app token is required to access the Fabric Rest API. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
+
+* Or
+
+* A Microsoft Entra SPN token. [Add and manage application credentials in Microsoft Entra ID](/entra/identity-platform/how-to-add-credentials?tabs=client-secret)
 
 * Some data in your lakehouse, this example uses [NYC Taxi & Limousine Commission](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page#:~:text=TLC%20Trip%20Record%20Data.%20Yellow%20and%20green%20taxi%20trip%20records) green_tripdata_2022_08 a parquet file loaded to the lakehouse.
 
-The Livy API defines a unified endpoint for operations. Replace the placeholders {Entra_TenantID}, {Entra_ClientID}, {Fabric_WorkspaceID}, and {Fabric_LakehouseID} with your appropriate values when you follow the examples in this article.
+The Livy API defines a unified endpoint for operations. Replace the placeholders {Entra_TenantID}, {Entra_ClientID}, {Fabric_WorkspaceID}, {Fabric_LakehouseID}, and {Entra_ClientSecret} with your appropriate values when you follow the examples in this article.
 
 ## Configure Visual Studio Code for your Livy API Session
 
@@ -45,7 +49,75 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox = "media/livy-api/entra-app-overview.png" :::
 
-## Create a Livy API Spark session
+## Authenticate a Livy API Spark session using either a Entra User Token or an Entra SPN token
+
+### Authenticate a Livy API Spark session using an Entra SPN token
+
+1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
+
+    ```python
+    from msal import ConfidentialClientApplication
+    import requests
+    import time
+
+    tenant_id = "Entra_TenantID" 
+    client_id = "Entra_ClientID"
+    client_secret = "Entra_ClientSecret"
+    audience = "https://api.fabric.microsoft.com/.default"  
+
+    workspace_id = "Fabric_WorkspaceID"
+    lakehouse_id = "Fabric_LakehouseID"
+
+    # Get the app-only token
+    def get_app_only_token(tenant_id, client_id, client_secret, audience):
+        """
+        Get an app-only access token for a Service Principal using OAuth 2.0 client credentials flow.
+
+        Args:
+            tenant_id (str): The Azure Active Directory tenant ID.
+            client_id (str): The Service Principal's client ID.
+            client_secret (str): The Service Principal's client secret.
+            audience (str): The audience for the token (e.g., resource-specific scope).
+
+        Returns:
+            str: The access token.
+        """
+        try:
+            # Define the authority URL for the tenant
+            authority = f"https://login.microsoftonline.com/{tenant_id}"
+
+            # Create a ConfidentialClientApplication instance
+            app = ConfidentialClientApplication(
+                client_id=client_id,
+                client_credential=client_secret,
+                authority=authority
+            )
+
+            # Acquire a token using the client credentials flow
+            result = app.acquire_token_for_client(scopes=[audience])
+
+            # Check if the token was successfully retrieved
+            if "access_token" in result:
+                return result["access_token"]
+            else:
+                raise Exception(f"Failed to retrieve tokexzn: {result.get('error_description', 'Unknown error')}")
+        except Exception as e:
+            print(f"Error retrieving token: {e}", file=sys.stderr)
+            sys.exit(1)
+
+    token = get_app_only_token(tenant_id, client_id, client_secret, audience)
+
+    api_base_url_mist='https://msitapi.fabric.microsoft.com/v1/'
+    livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"    
+    headers = {"Authorization": "Bearer " + token}
+
+    print(token)
+
+1. In Visual Studio Code, you should see the Microsoft Entra token returned.
+
+    :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell and logging in." lightbox= "media/livy-api/Livy-session-entra-token.png":::    ```
+
+### Authenticate a Livy API Spark session using an Entra User Token
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
@@ -83,9 +155,12 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/sessions"
         headers = {"Authorization": "Bearer " + access_token}
     ```
+
 1. In Visual Studio Code, you should see the Microsoft Entra token returned.
 
     :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell and logging in." lightbox= "media/livy-api/Livy-session-entra-token.png":::
+
+## Once authenticated, create a Livy API Spark session
 
 1. Add another notebook cell and insert this code.
 
