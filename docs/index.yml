@@ -458,6 +458,9 @@ conceptualContent:
             - url: https://community.fabric.microsoft.com/t5/Community-News/Fabric-Community-Update-March-2024/td-p/3744214
               itemType: concept
               text: Signup for the Fabric newsletter
+            - url: fundamentals/feedback.md#fabric-user-panel
+              itemType: concept
+              text: Microsoft Fabric user panel
             - url: https://aka.ms/LearnFAIAD
               itemType: concept
               text: Register for Fabric Analyst in a Day workshop
