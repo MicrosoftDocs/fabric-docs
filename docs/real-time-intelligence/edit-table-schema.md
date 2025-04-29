@@ -81,21 +81,13 @@ Renaming and adding columns to a table automatically updates all references to i
 
 1. In the **Dependencies** section, review the referenced objects.
 
-    * By default, **Auto update Mappings** is enabled. You can view the updates to the ingestion mapping command in the [Command viewer](#command-viewer).
+    * By default, **Auto update Mappings** is enabled. You can view the updates to the ingestion mapping command in the [Command viewer](create-empty-table.md#command-viewer).
 
     * If necessary, disable **Auto update Mappings**. Ensure you review the implications in [Table schema edits and dependencies](#table-schema-edits-and-dependencies) and manually update the table ingestion mapping if necessary.
 
     :::image type="content" source="media/empty-table/added-columns-mappings-command-viewer.png" alt-text="Screenshot of the command viewer with auto update mappings enabled in the dependencies section.":::
 
 1. If necessary, update the data ingestion [mapping](kusto/management/mappings?view=microsoft-fabric&preserve-view=true).
-
-## Command viewer
-
-The command viewer shows the commands for creating tables, mapping, and ingesting data in tables.
-
-To open the command viewer, select the **</>** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
-
-:::image type="content" source="media/empty-table/empty-command-viewer.png" alt-text="Screenshot of the Command viewer. The Expand button is highlighted." lightbox="media/empty-table/empty-command-viewer.png":::
 
 ## Related content
 
