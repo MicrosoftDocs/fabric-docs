@@ -11,63 +11,103 @@ ms.search.form: Create a table and edit the table schema
 ---
 # Create and edit a table schema
 
-Tables are named entities that hold data. A table has an ordered set of columns, and zero or more rows of data. Each row holds one data value for each of the columns of the table. The order of rows in the table is unknown, and doesn't in general affect queries, except for some tabular operators (such as the top operator) that are inherently undetermined.
+Tables are named entities that hold data. A table has an ordered set of columns, and zero or more rows of data. Each row holds one data value for each column of the table. The order of rows in the table is unknown, and doesn't in general effect queries. The exceptions are some tabular operators, such as the `top` operator, that are inherently undetermined.
 
-You can create an empty table without a data source to use as a testing environment, or for ingesting data in a later stage. In this article, you learn how to create an empty table within the context of a KQL database.
+You can create an empty table without a data source to use as a testing environment, or for ingesting data in a later stage. In this article, you learn how to create an empty table within the context of a KQL database, and how to edit the schema of an existing table.
 
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
+* Disable OneLake availability before [renaming a table](#rename-a-table) or [editing table columns](#edit-table-columns).
+* Review all implications of editing a table schema in [Table schema edits and dependencies](#table-schema-edits-and-dependencies).
 
 ## Create an empty table in your KQL database
 
 1. Browse to your desired KQL database.
+
 1. Select **+New** > **Table**.
 
     :::image type="content" source="media/empty-table/new-table.png" alt-text="Screenshot of lower ribbon that shows the dropdown menu of the New button in Real-Time Intelligence. The dropdown option titled Table is highlighted.":::
 
-1. Enter a name and description for your table.
+1. Enter a **Table name** and **Add a table description (optional)**.
 
     > [!NOTE]
-    > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
+    > Table names can be up to 1,024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
     > There are no known [dependencies](#dependencies) until a table with references is created.
 
-     :::image type="content" source="media/empty-table/table-name.png" alt-text="Screenshot of the new table wizard in Real-Time Intelligence. The table name is highlighted.":::
+     :::image type="content" source="media/empty-table/table-name.png" alt-text="Screenshot of the new table wizard in Real-Time Intelligence. The table name and description is highlighted.":::
 
-1. Enter a column name. The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
+1. Start the table schema by entering a **Column name**, and a description (optional).
 
-1. Select a data type for your column. The default column type is `string` but can be altered in the dropdown menu of the **Column type** field.
+    > [!NOTE]
+    > The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
+    > You need to create at least one column. You can delete it later if needed.
 
-1. You can manage the columns of the new table in this window. The options are:
+1. Select a data **Type** for your column. The default column type is `string` but can be altered in the dropdown menu of the type field.
 
-    * Select **Add column** to add more columns.
-    * Select the delete icon to delete a column.
-    * Toggle betwen the [Command viewer](#command-viewer) and the Add column view.
+1. You can continue to build the new table's schema. The options are:
+
+    * Select **+ Add column** to add more columns.
+    * Select the delete icon to remove a column you just added.
+    * Toggle between the [Command viewer](#command-viewer) and the Add column view.
 
     :::image type="content" source="media/empty-table/table-columns.png" alt-text="Screenshot of the new empty table wizard in Real-Time Intelligence. The Add column, delete, and command viewer options are highlighted.":::
 
 1. Select **Create**.
 
-1. In the success message you see you can **Close** the wizard and return to the event house and [Edit the table schema](#edit-the-table-schema) later, or you can select **Get Data** to start the ingestion process. For more information, see [Get data overview](get-data-overview.md).
+1. In the success message you can select to add data now or later:
+
+    * Select **Close** to return to the Eventhouse and [Edit the table schema](#edit-the-table-schema) later.
+    * Select **Get Data** to start the ingestion process. For more information, see [Get data overview](get-data-overview.md).
 
     :::image type="content" source="media/empty-table/table-success.png" alt-text="Screenshot of the success meassage.":::
 
-## Edit the table schema
+## Table schema edits and dependencies
 
-You can manually define or edit the table schema a table.  When editing the schema you can:
+Table schema edits don't change the data in the table. However, editing the table schema can case ingestion and query failures. Existing ingestion update polices, functions, exports, and materialized views, and other related operations can also fail. Make sure you also edit accordingly the implementation of the update polices, functions, export, and materialized views.
 
-* Edit the table name
-* Edit the table descrption
-* Edit column names
-* Add columns and define their type
-* Remove columns
+The implications of schema edits include the following considerations:
 
-> [!IMPORTANT]
-> Editing the schema does not change any data that is in the table.
-> Table schema edit is not supported when there is an active OneLake connection. Disable OneLake availability before editing the schema. You can enable it later.
-> You can't edit a column's type, as this would lead to data loss.
-> Table mappings and reference may need manual updating. Review [dependencies](#dependencies).
+**OneLake and schema edits**
+
+Table schema edits aren't supported when there's an active OneLake connection. Disable OneLake availability before renaming a table and editing table columns. You can enable it later.
+
+**Renaming tables and Materialized views**
+
+* By default, all materialized views referencing the old table name directly are updated to point to the new name, in a transactional way.
+
+* If the table name is referenced from a stored function invoked by the view query, you need to update the materialized view reference manually. The command is `.rename table <OldName> to <NewName> with (updateMaterializedViews=true)`.
+
+**Renaming columns**
+
+* Renaming a column automatically updates all references to it in ingestion mappings.
+
+* Renaming a column preserves any existing transformations in your mappings.
+
+**Adding columns**
+
+* Adding a new column doesn't update ingestion mappings automatically. If you want the new column to be included, you have to manually update the mappings.
+
+* Editing the schema doesn't update the mapping of incoming data to table columns during ingestion. After adding columns, ensure you update the [mapping](kusto/management/mappings) so data is ingested correctly.
+
+For more information about updating ingestion mapping, see [.alter ingestion mapping command](/kusto/management/alter-ingestion-mapping-command?view=microsoft-fabric)
+
+**Column type**
+
+Editing a column type isn't supported, as changing a column type would lead to data loss.
+
+**Removing columns**
+
+* Deleting a column removes it from all ingestion mappings.
+
+* Deleting a column is irreversible and causes data loss. You won't be able to query data in the removed column.
+
+* If you delete a column, save, and then add it again doesn't restore the data. It behaves as a new column and ingestion mappings aren't updated. You’ll need to manually update the ingestion mappings.
+
+## Rename a table
+
+Renaming a table automatically updates all references to it in your ingestion mappings. In some cases, table mappings and references need manual updating. Review [Table schema edits and dependencies](#table-schema-edits-and-dependencies).
 
 1. Browse to your desired KQL database, and in the Explorer pane, expand **Tables**.
 
@@ -75,7 +115,31 @@ You can manually define or edit the table schema a table.  When editing the sche
 
     :::image type="content" source="media/empty-table/edit-schema.png" alt-text="Screenshot of the table more menu with Edit schema highlighted.":::
 
-1. In the **Edit table schema** window, you can edit the table name, edit the table decscription, and delete columns.
+1. In the **Edit table schema** window, edit the table name and description (optional).
+
+1. In the **Dependencies** section, review the referenced objects.
+
+    * By default, **Auto update Materialized views** is enabled. You can view the updates to the command in the [Command viewer](#command-viewer).
+
+    * If necessary, disable **Auto update Materialized views**. Ensure you review the implications in [Table schema edits and dependencies](#table-schema-edits-and-dependencies) and manually update the table ingestion mapping if necessary.
+
+    :::image type="content" source="media/empty-table/table-name-update.png" alt-text="Screenshot of Command viewer and the dependencies section with the Auto update Materialized views toggle highlighted.":::
+
+1. Select **Update**, and in the confirmation dialogue, enter the table name again, and select **Edit table schema**.
+
+    :::image type="content" source="media/empty-table/table-name-update-confirm.png" alt-text="Screenshot of the confirmation dialogue with the table name field highlighted.":::
+
+    A table rename success message appears in the main Eventhouse window.
+
+## Edit table columns
+
+Review [Table schema edits and dependencies](#table-schema-edits-and-dependencies) before editing the table columns.
+
+1. Browse to your desired KQL database, and in the Explorer pane, expand **Tables**.
+
+1. Select a table from the list, and open the More menu* [...].
+
+    :::image type="content" source="media/empty-table/edit-schema.png" alt-text="Screenshot of the table more menu with Edit schema highlighted.":::
 
 1. To add a new column, enter a column name at the bottom of the list of columns. The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
 
@@ -83,53 +147,23 @@ You can manually define or edit the table schema a table.  When editing the sche
 
 1. Select **Add column** to add more columns.
 
-1. Manually update any [Dependencies](#dependencies).
+1. In the **Dependencies** section, review the referenced objects.
 
-### Dependencies
+    * By defaut, **Auto update Mappings** is enabled. You can view the updates to the ingestion mapping command in the [Command viewer](#command-viewer).
 
-**Related mappings**
+    * If required, disable **Auto update Mappings**. Ensure you review the implications in [Table schema edits and dependencies](#table-schema-edits-and-dependencies) and manually update the table ingestion mapping if necessary.
 
-Editing the schema does not update the mapping of incoming data to table columns during ingestion. After adding columns, ensure you update the [mapping](kusto/management/mappings) so data is ingested correctly.
+    :::image type="content" source="media/empty-table/added-columns-mappings-command-viewer.png" alt-text="Screenshot of the command viewer with auto update mappings enabled in the dependencies section.":::
 
-**Update materialized views**
+1. If required, update the data ingestion [mapping](kusto/management/mappings).
 
-If the table being renamed is the source table of a [materialized view](materialized-view.md), you can use the toggle in the dependencies section. The table will be renamed and all materialized views referencing OldName will be updated to point to NewName, in a transactional way.
-
-> [!NOTE]
-> The command only works if the source table is referenced directly in the materialized view query. If the source table is referenced from a stored function invoked by the view query, you need to update the [materialized view](materialized-view.md) manually.
-
-#### Command viewer
+## Command viewer
 
 The command viewer shows the commands for creating tables, mapping, and ingesting data in tables.
 
-To open the command viewer, select the **v** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
+To open the command viewer, select the **</>** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
 
 :::image type="content" source="media/empty-table/empty-command-viewer.png" alt-text="Screenshot of the Command viewer. The Expand button is highlighted." lightbox="media/empty-table/empty-command-viewer.png":::
-
-##### Edit columns
-
-1. Enter a column name. The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
-1. Select a data type for your column. The default column type is `string` but can be altered in the dropdown menu of the **Column type** field.
-1. Select **Add column** to add more columns.
-
-1. Select **Save** to add the columns to your table.
-
-    :::image type="content" source="media/empty-table/edit-columns.png" alt-text="Screenshot of  the Edit columns window showing filled column names and their data type in the new table wizard in Real-Time Intelligence." lightbox="media/empty-table/edit-columns.png":::
-
-    The Partial data preview  reflects the added columns:
-
-    :::image type="content" source="media/empty-table/added-columns.png" alt-text="Screenshot of Schema tab showing the added columns under the Partial data preview. The column names are highlighted." lightbox="media/empty-table/added-columns.png":::
-
-    > [!NOTE]
-    > Optionally, you can edit existing columns and  add new columns by selecting **Edit columns** or the **+** button on the right-hand column under **Partial data preview**.
-
-1. Select **Next: Summary** to create the table mapping.
-
-### Summary tab
-
-In the **Create table completed** window, the empty table is marked with a green check mark to indicate that it was created successfully.
-
-:::image type="content" source="media/empty-table/table-summary.png" alt-text="Screenshot of the Summary tab that shows that the table was created successfully in Real-Time Intelligence.":::
 
 ## Related content
 
