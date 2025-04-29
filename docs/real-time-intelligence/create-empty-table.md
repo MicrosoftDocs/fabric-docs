@@ -79,7 +79,7 @@ Editing the table schema can case ingestion and query failures due to dependenci
 
 * By default, all materialized views referencing the old table name directly are updated to point to the new name, in a transactional way.
 
-* If the table name is referenced from a stored function invoked by the view query, you need to update the materialized view reference manually using [.alter materialized-view](/kusto/management/materialized-view-alter?view=microsoft-fabric).
+* If the table name is referenced from a stored function invoked by the view query, you need to update the materialized view reference manually using [.alter materialized-view](/kusto/management/materialized-view-alter?view=microsoft-fabric&preserve-view=true).
 
 **Renaming columns**
 
@@ -91,9 +91,9 @@ Editing the table schema can case ingestion and query failures due to dependenci
 
 * Adding a new column doesn't update ingestion mappings automatically. If you want the new column to be included, you have to manually update the mappings.
 
-* Editing the schema doesn't update the mapping of incoming data to table columns during ingestion. After adding columns, ensure you update the [mapping](kusto/management/mappings) so data is ingested correctly.
+* Editing the schema doesn't update the mapping of incoming data to table columns during ingestion. After adding columns, ensure you update the [mapping](kusto/management/mappings?view=microsoft-fabric&preserve-view=true) so data is ingested correctly.
 
-  For more information about updating ingestion mapping, see [.alter ingestion mapping command](/kusto/management/alter-ingestion-mapping-command?view=microsoft-fabric)
+  For more information about updating ingestion mapping, see [.alter ingestion mapping command](/kusto/management/alter-ingestion-mapping-command?view=microsoft-fabric&preserve-view=true)
 
 **Column type**
 
@@ -157,7 +157,7 @@ Renaming and adding columns to a table automatically updates all references to i
 
     :::image type="content" source="media/empty-table/added-columns-mappings-command-viewer.png" alt-text="Screenshot of the command viewer with auto update mappings enabled in the dependencies section.":::
 
-1. If required, update the data ingestion [mapping](kusto/management/mappings).
+1. If required, update the data ingestion [mapping](/kusto/management/mappings?view=microsoft-fabric&preserve-view=true).
 
 ## Command viewer
 
