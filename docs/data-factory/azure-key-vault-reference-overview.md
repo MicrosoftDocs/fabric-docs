@@ -47,9 +47,9 @@ Since Fabric stores only an encrypted access token, no secret material is writte
 - Azure Key Vault references can be used only with cloud connections.
 - Virtual network data gateways and on-premises data gateways aren’t supported.
 - Fabric Lineage view isn't available for AKV references.
-- You can’t create or use AKV references with connection from the Modern “Get Data” pane in Fabric items. Learn how to [create Azure Key Vault references](../data-factory/azure-key-vault-reference-configure.md). 
+- You can’t create or use AKV references with connection from the Modern “Get Data” pane in Fabric items. Learn how to [create Azure Key Vault references](../data-factory/azure-key-vault-reference-configure.md) in Fabric from "Manage Connections & Gateways". 
 - Azure Key Vault references in Fabric always retrieve the current (latest) version of a secret; Azure Key Vault credential versioning is not supported. 
 
-# Related Content
+## Related Content
 - [Connectors overview](connector-overview.md)
 - [Data source management](data-source-management.md)
