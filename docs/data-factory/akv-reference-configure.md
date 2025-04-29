@@ -8,6 +8,9 @@ ms.date: 04/28/2025
 ms.search.form: Configure Azure Key Vault references
 ---
 
+>[!NOTE]
+>Azure Key Vault references in Fabric are available as a preview feature.
+
 ## Create an Azure Key Vault Reference
 
 1. Lauch [fabric.microsoft.com](fabric.microsoft.com) and click the top-right gear icon and navigate to “Manage Connections and Gateways” page. 
@@ -17,10 +20,16 @@ ms.search.form: Configure Azure Key Vault references
 3. Enter the Reference Alias (AKV reference name assigned in Fabric, it can be changed later) and the Account name (Key Vault name in Azure).
 4. Use OAuth 2.0 to authenticate to connect to your key vault.
 5. Click the ‘Create’ button and check its status to verify if it is online and connected to the key vault.
+    :::image type="content" source="media/akv-reference/created-akv-reference.png" alt-text="Screenshot showing a new AKV reference created.":::
 
 ## Use Azure Key Vault reference in connections
-
-
+1. Click the top-right gear icon and go to “Manage Connections and Gateways” page. Go to the “Connections tab” and click “new” from the top left corner.   
+2. Go to the “Cloud” tab, input connection name, select any [AKV reference supported connection type](/data-factory/azure-key-vault-reference-overview.md). 
+3. Provide all connection details and select one of the supported authentication type: Basic (Username/password), Service Principal, SAS/PAT token, or Account Key.
+4. Now, open the AKV reference list dialog by clicking on the 'AKV reference" icon next to the secret/password field.
+5. Select an existing AKV reference, input secret name and click apply.
+6. Once the connection is created using AKV authentication, use that connection in Fabric workloads to test this feature further. 
 
 ## Related content
-- [Azure Key Vault Reference Overview(../azure-key-vault-reference-overview.md)
+- [Azure Key Vault Reference Overview](../data-factory/azure-key-vault-reference-overview.md)
+- [Data source management](data-source-management.md)

@@ -1,5 +1,5 @@
 ---
-title: Azure Key Vault Reference overview
+title: Azure Key Vault Reference overview (Preview)
 description: Learn about Azure Key Vault Reference in Microsoft Fabric
 ms.author: adityajain2408
 author: adityajain2408
@@ -7,6 +7,11 @@ ms.topic: overview
 ms.date: 04/28/2025
 ms.search.form: Azure Key Vault Reference overview
 ---
+
+# Azure Key Vault references overview (Preview)
+
+>[!NOTE]
+>Azure Key Vault references in Fabric are available as a preview feature.
 
 [Azure Key Vault (AKV)](https://learn.microsoft.com/en-us/azure/key-vault/general/overview) is Microsoft’s cloud service for storing secrets, keys, and certificates centrally, so that applications never need to embed credentials in code or configuration. **Azure Key Vault** references extend this model to Microsoft Fabric. Instead of pasting passwords or connection strings into Fabric, you create a reference to the secret that lives in your vault; Fabric fetches the value just-in-time whenever a data connection in Fabric workloads needs it. 
 
@@ -24,16 +29,23 @@ Since Fabric stores only an encrypted access token—no secret material is writt
 ## Supported connectors and authentication types
 | Supported Connector | Category | Account key | Basic (Username/Password) | Token (Shared Access Signature or Personal Access Token) | Service Principal |
 | --- | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/data-pipeline-support/blobs-64.png":::<br/>**Azure Blob<br/>Storage**](connector-azure-blob-storage-copy-activity.md) | **Azure** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/yno.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/yes.png" | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png" |
-
-
+| [:::image type="icon" source="media/data-pipeline-support/blobs-64.png":::<br/>**Azure Blob<br/>Storage**](connector-azure-blob-storage-copy-activity.md) | **Azure** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/yes.png" | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png" |
+| [:::image type="icon" source="media/data-pipeline-support/blobs-64.png":::<br/>**Azure Data Lake<br/>Storage Gen2**](connector-azure-data-lake-storage-gen2-copy-activity.md) | **Azure** |  <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/yes.png" | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png" |
+| [:::image type="icon" source="media/data-pipeline-support/azure-table-64.png":::<br/>**Azure Table<br/>Storage**](connector-azure-table-storage-copy-activity.md) | **Azure** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/yes.png" | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png" |
+| [:::image type="icon" source="media/data-pipeline-support/dataverse-64.png":::<br/>**Dataverse**](connector-dataverse-copy-activity.md) | **Services and apps** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/no.png" | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png" |
+| [:::image type="icon" source="media/data-pipeline-support/odata-64.png":::<br/>**OData**](connector-odata.md) | **Generic protocol** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/no.png" | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/no.png" |
+| [:::image type="icon" source="media/data-pipeline-support/oracle-cloud-storage.png":::<br/>**Oracle Cloud Storage**](connector-oracle-cloud-storage-copy-activity.md) | **File** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/no.png" | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/no.png" |
+| [:::image type="icon" source="media/data-pipeline-support/postgresql-64.png":::<br/>**PostgreSQL**](connector-postgresql-copy-activity.md) | **Database** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/no.png" | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/no.png" |
+| [:::image type="icon" source="media/data-pipeline-support/sharepoint-64.png":::<br/>**SharePoint Online<br/>list**](connector-sharepoint-online-list-copy-activity.md) | **Services and apps** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/no.png" | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png" |
+| [:::image type="icon" source="media/data-pipeline-support/showflake-64.png":::<br/>**Snowflake**](connector-snowflake-copy-activity.md) | **Services and apps** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/no.png" | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/no.png" |
+| [:::image type="icon" source="media/data-pipeline-support/sql-server-64.png":::<br/>**SQL Server (Cloud)**](connector-sql-server-copy-activity.md) | **Database** | <!--AKV reference (Account key)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: |  <!--AKV reference (Basic)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--AKV reference (Token)-->:::image type="icon" source="media/data-pipeline-support/no.png" | <!--AKV reference (SPN)-->:::image type="icon" source="media/data-pipeline-support/yes.png" |
 
 ## Limitations and considerations
 
-- Only cloud connections are supported.
-- VNET and On-premises Data Gateways are not supported currently.
-- Lineage view for AKV references are not supported.
-- You can’t create or use AKV references using the Modern “Get Data” UI in Fabric artifacts.
-- Credential versioning is not supported with AKV references; currently, only the latest credentials are retrieved via AKV references.
+- Azure Key Vault references can be used only with cloud connections.
+- Virtual network data gateways and on-premises data gateways aren’t supported.
+- Fabric Lineage view isn't available for AKV references.
+- You can’t create or use AKV references with connection from the Modern “Get Data” pane in Fabric items. Learn how to [create Azure Key Vault references](/data-factory/akv-reference-configure.md). 
+- Azure Key Vault references in Fabric always retrieves the current (latest) version of a secret; Azure Key Vault credential versioning is not supported. 
 
 ## Related Content
