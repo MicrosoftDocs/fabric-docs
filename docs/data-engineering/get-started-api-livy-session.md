@@ -23,11 +23,9 @@ Learn how to submit Spark session jobs using the Livy API for Fabric Data Engine
 
 * A remote client such as [Visual Studio Code](https://code.visualstudio.com/) with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/).
 
-* Either an Microsoft Entra app token is required to access the Fabric Rest API. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
+* Either an Microsoft Entra app token is required to access the Fabric Rest API. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app). Or 
 
-* Or
-
-* A Microsoft Entra SPN token. [Add and manage application credentials in Microsoft Entra ID](/entra/identity-platform/how-to-add-credentials?tabs=client-secret)
+* A Microsoft Entra SPN token. [Add and manage application credentials in Microsoft Entra ID](/entra/identity-platform/how-to-add-credentials?tabs=client-secret).
 
 * Some data in your lakehouse, this example uses [NYC Taxi & Limousine Commission](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page#:~:text=TLC%20Trip%20Record%20Data.%20Yellow%20and%20green%20taxi%20trip%20records) green_tripdata_2022_08 a parquet file loaded to the lakehouse.
 
@@ -115,7 +113,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. In Visual Studio Code, you should see the Microsoft Entra token returned.
 
-    :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell and logging in." lightbox= "media/livy-api/Livy-session-entra-token.png":::    ```
+    :::image type="content" source="media/livy-api/Livy-session-entra-spn-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-spn-token.png":::    ```
 
 ### Authenticate a Livy API Spark session using an Entra User Token
 
@@ -158,7 +156,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. In Visual Studio Code, you should see the Microsoft Entra token returned.
 
-    :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell and logging in." lightbox= "media/livy-api/Livy-session-entra-token.png":::
+    :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-token.png":::
 
 ## Once authenticated, create a Livy API Spark session
 
