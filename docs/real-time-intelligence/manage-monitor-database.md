@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 03/24/2025
+ms.date: 04/29/2025
 ms.search.form: Database
 #customer intent: As a user, I want to learn how to manage and monitor a KQL  database so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -130,8 +130,6 @@ This section of the database page main area displays a list of tables in the dat
 | **Tables** | View table information as **Cards** or as a **List**. Cards and lists view table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>* Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>* The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, *Caching*, *Retention*, *OneLake* status, and *Created on*. To explore a specific table, select the name of this table from the list. For more information, see [Manage and monitor a table](manage-monitor-table.md). |
 | **Data preview** | Shows a preview of the top records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view. You can also search for keywords and use the filter tables option.|
 | **Query insights - top 100 queries** | Shows the top queries that can be sorted according to most recent, longest duration, highest CPU usage, highest cold storage usage, or highest memory peak usage. To sort, use the **Top by:** menu. </br></br>  :::image type="content" source="media/create-database/queries-top-by-menu.png" alt-text="Screenshot of queries menu to see percentage of querires completed."::: |
-| Cache hit misses over time|  |
-| Top queries | You can top by latest, duration, CPU time, cold storage access, or by memory peak. |
 
 ## Database details
 
