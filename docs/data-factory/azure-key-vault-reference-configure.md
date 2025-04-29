@@ -34,15 +34,15 @@ However, you can create a connection using an Azure Key Vault reference through 
 3. Provide all connection details and select one of the supported authentication type: Basic (Username/password), Service Principal, SAS/PAT token, or Account Key.
 4. Now, open the AKV reference list dialog by clicking on the 'AKV reference" icon next to the secret/password field.
 
-    :::image type="content" source="media/akv-reference/azure-key-vault-reference-icon.png" alt-text="Screenshot showing the use AKV reference icon while creating a new connection":::
+    :::image type="content" source="media/akv-reference/azure-key-vault-reference-icon.png" alt-text="Screenshot showing the use AKV reference icon while creating a new connection.":::
 
 5. Select an existing AKV reference, input secret name and click apply.
 
-    :::image type="content" source="media/akv-reference/azure-key-vault-reference-list-dialog.png" alt-text="Screenshot showing AKV reference list dialog":::
+    :::image type="content" source="media/akv-reference/azure-key-vault-reference-list-dialog.png" alt-text="Screenshot showing AKV reference list dialog.":::
 
 6. Once the connection is created using AKV authentication, use that existing connection to connect to your data source in Fabric items.
 
-    :::image type="content" source="media/akv-reference/selected-azure-key-vault-reference.png" alt-text="Screenshot showing the selected AKV reference while creating a new connection":::
+    :::image type="content" source="media/akv-reference/selected-azure-key-vault-reference.png" alt-text="Screenshot showing the selected AKV reference while creating a new connection.":::
 
 ## Related content
 
