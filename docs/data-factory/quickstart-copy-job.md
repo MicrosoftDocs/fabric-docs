@@ -13,55 +13,52 @@ ms.date: 04/29/2025
 
 # Quickstart: Create a Copy job
 
-With Copy Job in Data Factory within Microsoft Fabric, you can ingest data without the need to create a Fabric data pipeline. It brings together various copy patterns such as bulk or batch, incremental or continuous copy into a single, unified experience.  
+Copy jobs in Data Factory ingest data without the need to create a Fabric data pipeline. It brings together various copy patterns such as bulk or batch, incremental or continuous copy into a unified experience. If you only need to copy data without transformations, use a Copy job.
 
-This guide walks you through how to copy data incrementally from a Fabric Warehouse table to a Fabric Lakehouse table using Copy job.  
+This quickstart guide walks you through how to copy data incrementally from a Fabric Warehouse table to a Fabric Lakehouse table using Copy job.  
+
+For more information about Copy jobs in general, see:
+    - [Supported connectors](what-is-copy-job.md#supported-connectors)
+    - [Known limitations](create-copy-job.md#known-limitations)
 
 ## Prerequisites
 
-Before starting, ensure you have completed the following prerequisites:
+Before you start, complete these prerequisites:
 
-A Microsoft Fabric tenant with an active subscription. You can [create a free account](https://www.microsoft.com/fabric).
+- A Microsoft Fabric tenant with an active subscription. You can [create a free account](https://www.microsoft.com/fabric).
+- [A Microsoft Fabric workspace.](../fundamentals/create-workspaces.md).
+- [A Fabric Warehouse.](../data-warehouse/create-warehouse.md)
+- A table in your warehouse that includes an incremental column, like a timestamp or an increasing integer column, that can serve as a watermark for change detection. You can also use this script to create a sample Employee table:
 
-A Microsoft Fabric workspace. [Learn how to create a workspace](../fundamentals/create-workspaces.md).
+    ```sql
+    CREATE TABLE dbo.Employee 
+    
+    ( 
+        EmployeeID INT NOT NULL, 
+        FirstName VARCHAR(40), 
+        LastName VARCHAR(40), 
+        Position VARCHAR(60), 
+        ModifiedDate DATETIME2(3) 
+    ); 
+    ```
 
-A Fabric Warehouse with a table that includes an incremental column, such as a timestamp or an increasing integer column, that can serve as a watermark for change detection. [Learn how to create a warehouse](../data-warehouse/overview.md).
+    Insert sample data:
 
-For this guide, we'll use a sample Employee table that is created and populated using the following SQL.
+    ```sql
+    INSERT INTO dbo.Employee (EmployeeID, FirstName, LastName, Position, ModifiedDate) 
+    VALUES  
+    (1, 'Alice', 'Smith', 'Data Analyst', SYSDATETIME()), 
+    (2, 'Bob', 'Johnson', 'Engineer', SYSDATETIME()), 
+    (3, 'Carol', 'Lee', 'Manager', SYSDATETIME()), 
+    (4, 'David', 'Wong', 'Data Scientist', SYSDATETIME()), 
+    (5, 'Eve', 'Garcia', 'Product Owner', SYSDATETIME());
+    ```
 
-Create the employee table:
+    :::image type="content" source="media/quickstart-copy-job/sample-table.png" alt-text="Screenshot of the created employee table.":::
 
-```sql
-CREATE TABLE dbo.Employee 
+## Create a Copy job
 
-( 
-    EmployeeID INT NOT NULL, 
-    FirstName VARCHAR(40), 
-    LastName VARCHAR(40), 
-    Position VARCHAR(60), 
-    ModifiedDate DATETIME2(3) 
-); 
-```
-
-Insert sample data:
-
-```sql
-INSERT INTO dbo.Employee (EmployeeID, FirstName, LastName, Position, ModifiedDate) 
-VALUES  
-(1, 'Alice', 'Smith', 'Data Analyst', SYSDATETIME()), 
-(2, 'Bob', 'Johnson', 'Engineer', SYSDATETIME()), 
-(3, 'Carol', 'Lee', 'Manager', SYSDATETIME()), 
-(4, 'David', 'Wong', 'Data Scientist', SYSDATETIME()), 
-(5, 'Eve', 'Garcia', 'Product Owner', SYSDATETIME());
-```
-
-:::image type="content" source="media/quickstart-copy-job/sample-table.png" alt-text="Screenshot of the created employee table.":::
-
-## Create a Copy Job
-
-[Create a new workspace](../fundamentals/create-workspaces.md) or use an existing **workspace**.
-
-1. Select **+ New Item**, and under **Get data** choose **Copy Job**.
+1. In your [Microsoft Fabric workspace](../fundamentals/create-workspaces.md) select **+ New Item**, and under **Get data** choose **Copy Job**.
 
     :::image type="content" source="media/quickstart-copy-job/new-item.png" alt-text="Screenshot of the Fabric workspace with the new item button selected, and the copy job highlighted under get data.":::
 
@@ -71,7 +68,7 @@ VALUES
 
 ## Configure Incremental Copy
 
-1. In the **Choose data source** page of the Copy Job wizard, select the preconfigured Fabric Warehouse.
+1. In the **Choose data source** page of the Copy job wizard, select your Fabric Warehouse.
 
     :::image type="content" source="media/quickstart-copy-job/choose-data-source.png" alt-text="Screenshot of the choose data source page of the copy job creation wizard with a warehouse selected.":::
 
@@ -79,7 +76,7 @@ VALUES
 
     :::image type="content" source="media/quickstart-copy-job/select-warehouse-table.png" alt-text="Screenshot of the choose data page with the employee SQL table selected.":::
 
-1. In the **Choose data destination** page, select **Lakehouse** under New Fabric item.
+1. In the **Choose data destination** page, select **Lakehouse** under **New Fabric item.**
 
     :::image type="content" source="media/quickstart-copy-job/choose-data-destination.png" alt-text="Screenshot of the choose data destination page, with Lakehouse selected.":::
 
@@ -91,7 +88,7 @@ VALUES
 
     :::image type="content" source="media/quickstart-copy-job/map-to-destination.png" alt-text="Screenshot of the map to destination page with the employee table selected.":::
 
-1. In the **Settings** step, choose **Incremental copy** as the Copy Job mode. Select the column that serves as the incremental column, in our guide **ModifiedDate**.
+1. In the **Settings** step, choose **Incremental copy** as the Copy Job mode. Select the column that serves as the incremental column. For the sample table, that's **ModifiedDate**.
 
     :::image type="content" source="media/quickstart-copy-job/select-incremental-copy.png" alt-text="Screenshot of the settings page with incremental copy selected and the incremental column set to ModifiedDate.":::
 
@@ -110,7 +107,7 @@ VALUES
 
 ## Simulate changes with new data
 
-1. Use the following SQL query to insert new rows into the Source Fabric Warehouse table. Create the Employee table:
+1. If you used the sample table, use the following SQL query to insert new rows into the Source Fabric Warehouse table.
 
     ```sql
     INSERT INTO dbo.Employee (EmployeeID, FirstName, LastName, Position, ModifiedDate) VALUES (6, 'John', 'Miller', 'QA Engineer', SYSDATETIME()); 
@@ -118,11 +115,11 @@ VALUES
     INSERT INTO dbo.Employee (EmployeeID, FirstName, LastName, Position, ModifiedDate) VALUES (8, 'Michael', 'Brown', 'UX Designer', SYSDATETIME()); 
     ```
 
-1. These new rows are detected by the Copy Job during its next scheduled run.
+1. The Copy job uses the incremental column to detect these rows during its next scheduled run.
 
     :::image type="content" source="media/quickstart-copy-job/monitor-second-run.png" alt-text="Screenshot of the monitoring page showing the successful job with three rows read and three rows written.":::
 
-1. Querying the target Fabric Lakehouse table to confirm the table was moved.
+1. After the next run, query the target Fabric Lakehouse table to confirm the table was moved.
 
     :::image type="content" source="media/quickstart-copy-job/review-lakehouse-table.png" alt-text="Screenshot of the Fabric Lakehouse table, showing all rows written into the table.":::
 
