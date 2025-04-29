@@ -20,7 +20,7 @@ This article outlines a few distinct integration options, but many organizations
 
 ## Prerequisites
 
-[!INCLUDE [prerequisites](../../includes/github-prereqs.md)]
+[!INCLUDE [prerequisites](../includes/github-prereqs.md)]
 
 ## Development process
 
