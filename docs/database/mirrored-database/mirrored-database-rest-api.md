@@ -3,7 +3,7 @@ title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
-ms.date: 01/08/2025
+ms.date: 04/29/2025
 ms.topic: conceptual
 ---
 
@@ -93,10 +93,7 @@ If you want to replicate selective tables instead of all the tables in the speci
         "source": {
             "type": "AzureSqlDatabase",
             "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
-                "landingZone":{
-                    "type":"MountedRelationalDatabase"
-                }
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
             }
         },
         "target": {
@@ -118,10 +115,7 @@ If you want to replicate selective tables instead of all the tables in the speci
         "source": {
             "type": "AzureSqlMI",
             "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
-                "landingZone":{
-                    "type":"MountedRelationalDatabase"
-                }
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
             }
         },
         "target": {
@@ -145,10 +139,7 @@ If you want to replicate selective tables instead of all the tables in the speci
         "source": {
             "type": "AzurePostgreSql",
             "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
-                "landingZone":{
-                    "type":"MountedRelationalDatabase"
-                }
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
             }
         },
         "target": {
@@ -198,6 +189,7 @@ If you want to replicate selective tables instead of all the tables in the speci
         "target": {
             "type": "MountedRelationalDatabase",
             "typeProperties": {
+                "defaultSchema": "xxxx",
                 "format": "Delta"
             }
         }

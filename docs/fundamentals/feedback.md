@@ -4,7 +4,7 @@ description: Learn about giving feedback about Microsoft Fabric to Microsoft.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 04/30/2024
+ms.date: 04/23/2025
 ---
 
 # Learn about Microsoft Fabric feedback
@@ -34,6 +34,10 @@ There are a few ways you can give feedback while engaging with the Microsoft Fab
 * [Issues](https://community.fabric.microsoft.com/t5/Issues/idb-p/Issues) - Discuss issues and workarounds with the community.
 
 * [Community Feedback](https://community.fabric.microsoft.com/t5/Community-Feedback/bd-p/community-feedback) - Give feedback about Microsoft Fabric and vote for publicly submitted feedback. Top known feedback items remain available in the new portal.
+
+## Fabric user panel
+
+Join the [Microsoft Fabric user research](https://ux.microsoft.com/Panel/FabricUserPanel?utm_campaign=Fabric%20CAT%20User%20Research%20Panel&utm_source=Fabric%20Documentation&utm_medium=Link) panel to help shape the future of Microsoft Fabric and Power BI. By signing up, you can participate in user research studies such as surveys, interviews, early product testing, and share your feedback directly with the product teams. Your input plays a key role in improving the tools and experiences we build.
 
 ## What kind of feedback is best?
 
