@@ -63,7 +63,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 1. Connect to the user database that will be mirrored. Create a database user connected to the login and grant the minimum privileges necessary:
 
-    For a SQL Authentiated login:
+    For a SQL Authenticated login:
 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
