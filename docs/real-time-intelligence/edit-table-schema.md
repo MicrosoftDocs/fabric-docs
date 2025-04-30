@@ -41,7 +41,7 @@ Renaming a table automatically updates all references to it in your ingestion ma
 
 1. Browse to your desired KQL database, and in the Explorer pane, expand **Tables**.
 
-1. Select a table from the list, and open the More menu [...].
+1. Select a table from the list, and open the **More menu** [**...**].
 
     :::image type="content" source="media/empty-table/edit-schema.png" alt-text="Screenshot of the table more menu with Edit schema highlighted.":::
 
@@ -67,11 +67,11 @@ Renaming and adding columns to a table automatically updates all references to i
 
 1. Browse to your desired KQL database, and in the explorer pane, expand **Tables**.
 
-1. Select a table from the list, and open the More menu [...].
+1. Select a table from the list, and open the **More menu** [**...**].
 
     :::image type="content" source="media/empty-table/edit-schema.png" alt-text="Screenshot of the table more menu with Edit schema highlighted.":::
 
-1. To add a new column, enter a column name at the bottom of the list of columns. The column name mustfixed start with a letter, and can contain numbers, periods, hyphens, or underscores.
+1. To add a new column, enter a column name at the bottom of the list of columns. The column name must start with a letter, and can contain numbers, periods, hyphens, or underscores.
 
 1. Select a data type for your column. The default column type is `string` but can be altered in the dropdown menu of the **Column type** field.
 
