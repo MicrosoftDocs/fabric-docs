@@ -35,11 +35,11 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. Select **Lakehouse Settings** in your Fabric Lakehouse.
 
-    :::image type="content" source="media/livy-api/Lakehouse-settings.png" alt-text="Screenshot showing Lakehouse settings." lightbox="media/livy-api/Lakehouse-settings.png" :::
+    :::image type="content" source="media/livy-api/lakehouse-settings.png" alt-text="Screenshot showing Lakehouse settings." lightbox="media/livy-api/Lakehouse-settings.png" :::
 
 1. Navigate to the **Livy endpoint** section.
 
-    :::image type="content" source="media/livy-api/Lakehouse-settings-livy-endpoint.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png" :::
+    :::image type="content" source="media/livy-api/lakehouse-settings-livy-endpoint.png" alt-text="screenshot showing Lakehouse Livy endpoint and Session job connection string." lightbox="media/livy-api/Lakehouse-settings-livy-endpoint.png" :::
 
 1. Copy the Session job connection string (first red box in the image) to your code.
 
@@ -113,7 +113,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. In Visual Studio Code, you should see the Microsoft Entra token returned.
 
-    :::image type="content" source="media/livy-api/Livy-session-entra-spn-token.png" alt-text="Screenshot showing the Microsoft Entra SPN token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-spn-token.png":::    ```
+    :::image type="content" source="media/livy-api/livy-session-entra-spn-token.png" alt-text="Screenshot showing the Microsoft Entra SPN token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-spn-token.png":::    ```
 
 ### Authenticate a Livy API Spark session using an Entra user token
 
@@ -156,7 +156,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. In Visual Studio Code, you should see the Microsoft Entra token returned.
 
-    :::image type="content" source="media/livy-api/Livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra user token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-token.png":::
+    :::image type="content" source="media/livy-api/livy-session-entra-token.png" alt-text="Screenshot showing the Microsoft Entra user token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-token.png":::
 
 ## Create a Livy API Spark session
 
@@ -299,15 +299,15 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
 1. When the session is in progress or in completed state, you can view the session status by navigating to Monitor.
 
-    :::image type="content" source="media\livy-api\Livy-monitoring-hub.png" alt-text="Screenshot showing previous Livy API submissions in the Monitoring hub." :::
+    :::image type="content" source="media\livy-api\livy-monitoring-hub.png" alt-text="Screenshot showing previous Livy API submissions in the Monitoring hub." :::
 
 1. Select and open most recent activity name.
 
-    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub." :::
+    :::image type="content" source="media\livy-api\livy-monitoring-hub-last-run.png" alt-text="Screenshot showing most recent Livy API activity in the Monitoring hub." :::
 
 1. In this Livy API session case, you can see your previous sessions submissions, run details, Spark versions, and configuration. Notice the stopped status on the top right.
 
-    :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub." lightbox="media\livy-api\Livy-monitoring-hub-last-activity-details.png" :::
+    :::image type="content" source="media\livy-api\livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub." lightbox="media\livy-api\Livy-monitoring-hub-last-activity-details.png" :::
 
 To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), a Microsoft Entra app/SPN token, Livy API endpoint URL, authentication against your Lakehouse, and finally a Session Livy API.
 
