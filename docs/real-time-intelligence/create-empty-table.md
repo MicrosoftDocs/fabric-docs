@@ -7,7 +7,7 @@ author: shsagir
 ms.topic: how-to
 ms.custom:
 ms.date: 04/29/2025
-ms.search.form: Create an empty table in a KQL Database
+ms.search.form: Create a table
 ---
 # Create an empty table
 
