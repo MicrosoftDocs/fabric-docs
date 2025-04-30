@@ -92,7 +92,7 @@ A Contributor on the storage account (an Azure RBAC role) can configure resource
 
 ## How to use trusted workspace access in Fabric
 
-There are currently three ways to use trusted workspace access to access your data from Fabric in a secure manner:
+There are several ways to use trusted workspace access to access your data from Fabric in a secure manner:
 
 * You can [create a new ADLS shortcut](#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access) in a Fabric Lakehouse to start analyzing your data with Spark, SQL, and Power BI.
 
