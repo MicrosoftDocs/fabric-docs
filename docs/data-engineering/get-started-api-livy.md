@@ -6,7 +6,7 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: conceptual
 ms.search.form: Get started with the Livy API for Data Engineering
-ms.date: 04/22/2025
+ms.date: 04/30/2025
 ---
 
 # Use the Livy API to submit and execute Spark session jobs with user credentials
@@ -49,7 +49,7 @@ After creating the app registration, create a client secret.
 
 1. Search for the Entra client secret, and add that secret to the workspace, and make sure the newly added secret has Admin permissions.
 
-    :::image type="content" source="media\livy-api\Entra-SPN-add-people.png" alt-text="Screenshot showing adding the new SPN service principla to the workspace." lightbox="media\livy-api\Entra-SPN-add-people.png":::
+    :::image type="content" source="media\livy-api\Entra-SPN-add-people.png" alt-text="Screenshot showing adding the new SPN service principal to the workspace." lightbox="media\livy-api\Entra-SPN-add-people.png":::
 
 ## How to authorize the Livy API requests with a EntraID app token
 
@@ -121,7 +121,7 @@ Now that setup of the Livy API is complete, you can choose to submit either batc
 
 ### Integration with Fabric Environments
 
-By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  
+By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.
 
 To use a Fabric Environment in a Livy Spark session, simply update the json to include this payload.
 

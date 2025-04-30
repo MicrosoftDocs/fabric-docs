@@ -6,7 +6,7 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: how-to
 ms.search.form: Get started with Session jobs with the Livy API for Data Engineering
-ms.date: 03/14/2025
+ms.date: 04/30/2025
 ---
 
 # Use the Livy API to submit and execute session jobs
@@ -180,7 +180,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 ### Integration with Fabric Environments
 
-By default, this Livy API session runs against the default starter pool for the workspace.  Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs.  To use a Fabric Environment, simply update the prior notebook cell with this json payload.
+By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs. To use a Fabric Environment, simply update the prior notebook cell with this json payload.
 
 ```python
 create_livy_session = requests.post(livy_base_url, headers=headers, json={
