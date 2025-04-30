@@ -51,26 +51,6 @@ The entire endpoint name looks similar to the following example:
 
 `x6eps4xrq2xudenlfv6naeo3i4-l27nd6wdk4oephe4gz4j7mdzka.datawarehouse.pbidedicated.windows.net`
 
-### Workaround: Combine multiple queries into one or separate ingest and load dataflow
+### Workaround: Combine multiple queries into one or disable staging for the queries
 
-If you're unable to update the firewall rules, you can split the dataflow into two separate dataflows. The first dataflow is responsible for ingesting the data into the staging lakehouse. The second dataflow is responsible for loading the data from the staging lakehouse into the data destination. This workaround isn't ideal, as it requires the use of two separate dataflows, but it can be used as a temporary solution until the firewall rules can be updated.
-
-To implement this workaround, follow these steps:
-
-1. Remove the data destination from your current dataflow that ingests data via your gateway.
-
-    :::image type="content" source="media/gateway-considerations-output-destination/remove-destination.png" alt-text="Screenshot of the Power Query editor with the Lakehouse data destination being removed." lightbox="media/gateway-considerations-output-destination/remove-destination.png":::
-
-1. Create a new dataflow that uses the dataflow connector to connect to the ingested dataflow. This dataflow is responsible for ingesting the data from staging into the data destination.
-
-    :::image type="content" source="media/gateway-considerations-output-destination/get-data-dataflow-connector.png" alt-text="Screenshot of the Power Query editor with the Get Data option selected, and the Dataflow connector option emphasized." lightbox="media/gateway-considerations-output-destination/get-data-dataflow-connector.png":::
-
-    :::image type="content" source="media/gateway-considerations-output-destination/dataflow-connector-get-data.png" alt-text="Screenshot of the Get Data dialog with the Dataflow connector option selected." lightbox="media/gateway-considerations-output-destination/dataflow-connector-get-data.png":::
-
-1. Set the data destination to be the data destination of your choice for this new dataflow.
-
-    :::image type="content" source="media/gateway-considerations-output-destination/set-data-destination.png" alt-text="Screenshot of the Power Query editor with the Lakehouse data destination being set." lightbox="media/gateway-considerations-output-destination/set-data-destination.png":::
-
-1. Optionally, you can disable staging for this new dataflow. This change prevents the data from being copied to the staging lakehouse again and instead copies the data directly from the ingested dataflow to the data destination.
-
-    :::image type="content" source="media/gateway-considerations-output-destination/disable-staging.png" alt-text="Screenshot of the Power Query editor with the staging option being disabled." lightbox="media/gateway-considerations-output-destination/disable-staging.png":::
+If you're unable to update the firewall rules, you can combine the queries that reference each other into a single query or disable staging on all the queries that are being referenced. While this is not a final solution and may impact performance with complex transformation, but it can be used as a temporary solution until the firewall rules can be updated.
