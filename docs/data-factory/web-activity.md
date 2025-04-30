@@ -55,6 +55,17 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
    > [!NOTE]
    > The Connection name can be max 80 characters long.
+   
+### Using On-premises or VNET data gateway
+1.When creating your connection, you can now choose to use either an on-premises data gateway (OPDG) or a VNET data gateway. For guidance on creating and configuring your OPDG, refer to https://learn.microsoft.com/en-us/fabric/data-factory/how-to-access-on-premises-data.
+
+If you would like to use a VNET gateway, refer to https://learn.microsoft.com/en-us/data-integration/vnet/create-data-gateways for creating a VNET data gateway.
+
+Once you have successfully created and configured your gateway, it should appear under the Data Gateway dropdown in the connection dialog
+
+  :::image type="content" source="media/web-activity/create-new-data-gateway.png" alt-text="Screenshot showing the data gateway connection dialog for the Web activity.":::
+
+1. After choosing or creating your connection and data gateway, complete the remaining required fields, add any required headers, or set any advanced settings. The Web activity supports GET, POST, PUT, DELETE, and PATCH methods.
 
 1. After choosing or creating your connection, complete the remaining required fields, add any required headers, or set any advanced settings. The Web activity supports GET, POST, PUT, DELETE, and PATCH methods.
 
