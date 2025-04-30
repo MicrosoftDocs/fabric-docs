@@ -26,28 +26,22 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
 * A [KQL database](create-database.md) with editing permissions.
 * A [storage account](/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal).
 
-For continuous ingestion you also require in Fabric:
+For continuous ingestion you also require:
 
-* A [Workspace identity](../security/workspace-identity.md). *My Workspace* isn't supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
+    * A [workspace identity](../security/workspace-identity.md). *My Workspace* isn't supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
+    * [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account#enable-the-hierarchical-namespace) must be enabled.
 
-For continuous ingestion you also require in the Azure Storage account:
+        :::image type="content" source="media/get-data-azure-storage/storage-heirarchical-namespace-enabled.png" alt-text="Screenshot of Azure portal open to the Overview window.":::
 
-* [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account#enable-the-hierarchical-namespace) must be enabled.
+    * *Storage Blob Data Reader* role permissions assigned to the workspace identity.
+    * A [container](/azure/storage/blobs/blob-containers-portal) to hold the data files.
+    * A data file uploaded to the container. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
 
-For continuous ingestion you also require in the Azure Storage account:
-
-    :::image type="content" source="media/get-data-azure-storage/storage-heirarchical-namespace-enabled.png" alt-text="Screenshot of Azure portal open to the Overview window.":::
-
-* *Storage Blob Data Reader* role permissions assigned to the workspace identity.
-
-* A [container](/azure/storage/blobs/blob-containers-portal) to hold the data files.
-
-* A data file uploaded to the container. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
-
-  > [!NOTE]
-  > You need to upload a data file:
-  > * before configuration to define the table schema during set-up.
-  > * after configuration to evoke the continuous ingestion, to preview data, and to verify the connection.
+        > [!NOTE]
+        > You must upload a data file:
+        >
+        > * Before the [configuration](#configure) to define the table schema during set-up.
+        > * After the configuration to trigger the continuous ingestion, to preview data, and to verify the connection.
 
 ### Add the workspace identity role assignment to the storage account
 
@@ -95,7 +89,7 @@ Set the source to get data.
 
 ## Configure
 
-## [Continuous ingestion](#tab/continuous-ingestion)
+### [Continuous ingestion](#tab/continuous-ingestion)
 
 1. Select a destination table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
@@ -159,7 +153,7 @@ Set the source to get data.
 
 1. Select **Next** to preview the data.
 
-## [One-time ingestion](#tab/one-time-ingestion)
+### [One-time ingestion](#tab/one-time-ingestion)
 
 1. Select a destination table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
