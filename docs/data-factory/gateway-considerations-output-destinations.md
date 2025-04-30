@@ -14,18 +14,18 @@ This article lists the limitations and considerations when using the Data Gatewa
 
 ## Network issues with port 1433 when referencing queries
 
-When using Microsoft Fabric Dataflow Gen2 with an on-premises data gateway, you might encounter issues with the dataflow refresh process. The underlying problem occurs when the gateway is unable to connect to the dataflow staging Lakehouse in order to read the data before using it in the query that referenced the staged data. This issue is no longer a problem if you have a single query that is not referencing staged data and writes to a data destination.
+When using Microsoft Fabric Dataflow Gen2 with an on-premises data gateway, you might encounter issues with the dataflow refresh process. The underlying problem occurs when the gateway is unable to connect to the dataflow staging Lakehouse in order to read the data before using it in the query that referenced the staged data. This issue is no longer a problem if you have a single query that isn't referencing staged data and writes to a data destination.
 
 During the overall dataflow refresh, the tables refresh can show as "Succeeded," but the activities section shows as *"Failed"*. The error details for the activity `WriteToDatabaseTableFrom_...` indicate the following error:
 
 ```Mashup Exception Error: Couldn't refresh the entity because of an issue with the mashup document MashupException.Error: Microsoft SQL: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - An attempt was made to access a socket in a way forbidden by its access permissions.) Details: DataSourceKind = Lakehouse;DataSourcePath = Lakehouse;Message = A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - An attempt was made to access a socket in a way forbidden by its access permissions.);ErrorCode = -2146232060;Number = 10013```
 
 >[!NOTE]
->From an architectural perspective, the dataflow engine uses an outbound HTTPS (port 443) endpoint to write data into a Lakehouse. However, reading data from the Lakehouse requires the use of the TDS protocol (TCP over port 1433). This protocol is utilized to copy the data from the staging lakehouse to the referenced query for further processing. This explains why the first query succeeds, while the query referencing the first query may fail, even when both lakehouses are in the same OneLake instance.
+>From an architectural perspective, the dataflow engine uses an outbound HTTPS (port 443) endpoint to write data into a Lakehouse. However, reading data from the Lakehouse requires the use of the TDS protocol (TCP over port 1433). This protocol is utilized to copy the data from the staging lakehouse to the referenced query for further processing. This explains why the first query succeeds, while the query referencing the first query might fail, even when both lakehouses are in the same OneLake instance.
 
 ### Troubleshooting
 
-To troubleshoot the issue review the error details for the failed table or activity which provides information about the encountered error.
+To troubleshoot the issue, review the error details for the failed table or activity, which provides information about the encountered error.
 
    :::image type="content" source="media/gateway-considerations-output-destination/refresh-history-detail.png" alt-text="Screenshot of the WriteToDatabaseTablefrom activity showing the error message." lightbox="media/gateway-considerations-output-destination/refresh-history-detail.png":::
 
@@ -53,4 +53,4 @@ The entire endpoint name looks similar to the following example:
 
 ### Workaround: Combine multiple queries into one or disable staging for the queries
 
-If you're unable to update the firewall rules, you can combine the queries that reference each other into a single query or disable staging on all the queries that are being referenced. While this is not a final solution and may impact performance with complex transformation, but it can be used as a temporary solution until the firewall rules can be updated.
+If you're unable to update the firewall rules, you can combine the queries that reference each other into a single query or disable staging on all the queries being referenced. While this isn't a final solution and might impact performance with complex transformations, but it can be used as a temporary solution until the firewall rules can be updated.
