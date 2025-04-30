@@ -97,6 +97,8 @@ ML Model, Experiment, and AI skill supports private link.
 
 * If internet access is disabled, and if the Power BI semantic model, Datamart, or Dataflow Gen1 connects to a Power BI semantic model or Dataflow as a data source, the connection will fail.
 
+* Cloud connections to Fabric/Power BI data hosting solutions (Datamart, Data Warehouse, Lake House) from a Power BI Report's semantic model do not work when the tenant setting **Block Public Internet Access** is enabled in Fabric.
+
 * Publish to Web isn't supported when the tenant setting **Azure Private Link** is enabled in Fabric.
 
 * Email subscriptions aren't supported when the tenant setting **Block Public Internet Access** is enabled in Fabric.
