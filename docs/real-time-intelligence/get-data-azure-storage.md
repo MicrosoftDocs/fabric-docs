@@ -126,7 +126,7 @@ Set the source to get data.
 
     To use an existinging connection:
 
-       The connection settings are prepopulated.
+    1. Select **Select an existing storage account**.  
 
         :::image type="content" source="media/get-data-azure-storage/configure-tab-continuous-rth.png" alt-text="Screenshot of configure tab with Continuous ingestion and connect to an existing account." lightbox="media/get-data-azure-storage/configure-tab-continuous-rth.png":::
 
