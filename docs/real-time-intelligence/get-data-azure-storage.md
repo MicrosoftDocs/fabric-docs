@@ -1,7 +1,7 @@
 ---
 title: Get data from Azure Storage
 description: Learn how to get data from Azure Storage in a KQL database in Real-Time Intelligence.
-ms.reviewer: tzgitlin
+ms.reviewer: Akshay Dixit
 ms.author: shsagir
 author: shsagir
 ms.topic: how-to
@@ -14,15 +14,11 @@ ms.search.form: Get data in a KQL Database
 
 In this article, you learn how to get data from Azure Storage (ADLS Gen2 container, blob container, or individual blobs). You can ingest data into your table continuously or as a one-time ingestion. Once ingested, the data becomes available for query.
 
-**Continuous ingestion**
+* **Continuous ingestion**: Continuous ingestion involves setting up an ingestion pipeline that allows the Fabric Eventhouse to listen to Azure Storage events. The pipeline notifies the Eventhouse to pull information when subscribed events occur. The events  are blob created and blob renamed.
 
-Continuous ingestion involves setting up an ingestion pipeline that allows the Fabric Eventhouse to listen to Azure Storage events. The pipeline notifies the Eventhouse to pull information when subscribed events occur. The events  are blob created and blob renamed.
+    Continuous ingestion involves setting up an ingestion pipeline that allows an eventhouse to listen to Azure Storage events. The pipeline notifies the eventhouse to pull information when subscribed events occur. The events are blob created and blob renamed.
 
-The destination table is populated with the Azure storage blob files. The table schema is inferred from a sample blob that is uploaded to the Azure storage container.
-
-**One-time ingestion**
-
-Use this method to retrieve data from Azure Storage as a one-time operation.
+* **One-time ingestion**: Use this method to retrieve data from Azure Storage as a one-time operation.
 
 ## Prerequisites
 
@@ -38,7 +34,7 @@ For continuous ingestion you also require in the Azure storage account:
 
 * [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account#enable-the-hierarchical-namespace) must be enabled.
 
-    * From the Azure Storage account overview, verify that **Hierarchical namespace** is set to **Enabled**.
+For continuous ingestion you also require in the Azure Storage account:
 
     :::image type="content" source="media/get-data-azure-storage/storage-heirarchical-namespace-enabled.png" alt-text="Screenshot of Azure portal open to the Overview window.":::
 
@@ -63,11 +59,11 @@ For continuous ingestion you also require in the Azure storage account:
 
 1. Select **Storage Blob Data Reader**.
 
-1. In the *Add role assignment* dialogue, select **+Select members**.
+1. In the *Add role assignment* dialogue, select **+ Select members**.
 
 1. Paste in the workspace identity ID, select the application, and then **Select**.
 
-    :::image type="content" source="media/get-data-azure-storage/configure-add-role-assignment.png" alt-text="Screenshot of Azure portal open to the Add Role Assignment window." lightbox="media/get-data-azure-storage/configure-add-role-assignment.png":::
+1. In the *Add role assignment* dialogue, select **+ Select members**.
 
 1. Select **Review + assign**.
 
@@ -126,11 +122,11 @@ Set the source to get data.
 
     1. In the **Connection** field, open the drop-down and select **+ New connection**, then **Save** > **Close**.
 
-       The connection settings are prepopulated. You don't need to enter anything.
+       The connection settings are prepopulated.
 
     To use an existinging connection:
 
-    1. Select **Select a connected storage account**.
+       The connection settings are prepopulated.
 
         :::image type="content" source="media/get-data-azure-storage/configure-tab-continuous-rth.png" alt-text="Screenshot of configure tab with Continuous ingestion and connect to an existing account." lightbox="media/get-data-azure-storage/configure-tab-continuous-rth.png":::
 
@@ -153,7 +149,7 @@ Set the source to get data.
 
     | **Setting** | **Field description** |
     |--|--|
-    | **File filters (optional)** |  |
+    | File filters (optional) |  |
     | Folder path | Filters data to ingest files with a specific folder path. |
     | File extension | Filters data to ingest files with a specific file extension only. |
 
