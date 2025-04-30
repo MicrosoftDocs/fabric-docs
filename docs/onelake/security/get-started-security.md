@@ -93,6 +93,11 @@ OneLake data access roles is a feature that enables you to apply role-based acce
 
 Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that aren't part of a data access role can see no data in that lakehouse.
 
+>[NOTE]
+>To access shortcut data, users need the ReadAll permission on the target lakehouse in addition to access through a OneLake data access role.
+>
+>If you use Power BI semantic models or T-SQL to access shortcuts, keep in mind that the calling user’s identity isn't passed to the shortcut target path. Instead, the calling item owner’s identity is passed, which delegates access to the calling user.
+
 Learn more about creating data access roles in [Get started with data access roles](./get-started-data-access-roles.md).
 
 Learn more about the security model for access roles [Data access control model](./data-access-control-model.md).
