@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: reference
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 04/20/2025
+ms.date: 04/30/2025
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -56,7 +56,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |------|-------|
 |[Create workspaces](portal-workspace.md#create-workspaces-new-workspace-experience)|Users in the organization can create app workspaces to collaborate on dashboards, reports, and other content. Even if this setting is disabled, a workspace will be created when a template app is installed.|
 |[Use semantic models across workspaces](portal-workspace.md#use-semantic-models-across-workspaces)|Users in the organization can use semantic models across workspaces if they have the required Build permission.|
-|[Block users from reassigning personal workspaces (My Workspace)](portal-workspace.md#block-users-from-reassigning-personal-workspaces-my-workspace)|With this setting on, individual users cannot be added to any roles within the workspace or have items and folders shared with them. To add a user to a workspace role or to share an item or folder with a user, the user must be part of a security group. This setting affects all users in the tenant.  [Learn More](https://aka.ms/RestrictMyFolderCapacity)|
+|[Block users from reassigning personal workspaces (My Workspace)](portal-workspace.md#block-users-from-reassigning-personal-workspaces-my-workspace)|With this setting on, individual users cannot be added to any roles within the workspace or have items and folders shared with them. To add a user to a workspace role or to share an item or folder with a user, the user must be part of a security group. This setting affects all users in the tenant. [Learn More](https://aka.ms/RestrictMyFolderCapacity)|
 |[Define workspace retention period](portal-workspaces.md#workspace-retention)|Turn on this setting to define a retention period during which you can restore a deleted workspace and recover items in it. At the end of the retention period, the workspace is permanently deleted. By default, workspaces are always retained for a minimum of 7 days before they're permanently deleted.<br><br>Turn off this setting to accept the minimum retention period of 7 days. After 7 days the workspace and items in it will be permanently deleted.<br><br>Enter the number of days to retain a workspace before it's permanently deleted. My Workspace workspaces will be retained for 30 days automatically. Other workspaces can be retained for up to 90 days.|
 
 ## [Information protection](service-admin-portal-information-protection.md)

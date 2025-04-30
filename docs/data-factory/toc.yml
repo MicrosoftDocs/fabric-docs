@@ -53,6 +53,8 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
+    - name: Create a Copy job
+      href: quickstart-copy-job.md
     - name: Create an Apache Airflow Job
       href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
