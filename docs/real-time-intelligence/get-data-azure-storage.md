@@ -30,7 +30,7 @@ For continuous ingestion you also require in Fabric:
 
 * A [Workspace identity](../security/workspace-identity.md). *My Workspace* isn't supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
 
-For continuous ingestion you also require in the Azure storage account:
+For continuous ingestion you also require in the Azure Storage account:
 
 * [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account#enable-the-hierarchical-namespace) must be enabled.
 
