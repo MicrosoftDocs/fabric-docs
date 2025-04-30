@@ -33,7 +33,7 @@ Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; a
 
 You can use various programming languages or GUI clients to interact with REST API endpoints. In this article, we use [Visual Studio Code](https://code.visualstudio.com/). Visual Studio Code needs to be configured with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/)
 
-## How to authorize the Livy API requests with a Entra SPN Token
+## How to authorize the Livy API requests with an Entra SPN Token
 
 To work with Fabric APIs including the Livy API, you first need to create a Microsoft Entra application and create a secret and use that secret in your code. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Add and manage application credentials in Microsoft Entra ID](/entra/identity-platform/how-to-add-credentials?tabs=client-secret)
 
@@ -51,7 +51,7 @@ After creating the app registration, create a client secret.
 
     :::image type="content" source="media\livy-api\Entra-SPN-add-people.png" alt-text="Screenshot showing adding the new SPN service principal to the workspace." lightbox="media\livy-api\Entra-SPN-add-people.png":::
 
-## How to authorize the Livy API requests with a Entra app token
+## How to authorize the Livy API requests with an Entra app token
 
 To work with Fabric APIs including the Livy API, you first need to create a Microsoft Entra application and obtain a token. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
 
