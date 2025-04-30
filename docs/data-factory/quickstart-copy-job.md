@@ -55,13 +55,13 @@ Before you start, complete these prerequisites:
     (5, 'Eve', 'Garcia', 'Product Owner', SYSDATETIME());
     ```
 
-    :::image type="content" source="media/quickstart-copy-job/sample-table.png" alt-text="Screenshot of the created employee table.":::
+    :::image type="content" source="media/quickstart-copy-job/sample-table.png" alt-text="Screenshot of the created employee table." lightbox="media/quickstart-copy-job/sample-table.png":::
 
 ## Create a Copy job
 
 1. In your [Microsoft Fabric workspace](../fundamentals/create-workspaces.md) select **+ New Item**, and under **Get data** choose **Copy Job**.
 
-    :::image type="content" source="media/quickstart-copy-job/new-item.png" alt-text="Screenshot of the Fabric workspace with the new item button selected, and the copy job highlighted under get data.":::
+    :::image type="content" source="media/quickstart-copy-job/new-item.png" alt-text="Screenshot of the Fabric workspace with the new item button selected, and the copy job highlighted under get data." lightbox="media/quickstart-copy-job/new-item.png":::
 
 1. Name your Copy job, and select **Create**.
 
@@ -71,15 +71,15 @@ Before you start, complete these prerequisites:
 
 1. In the **Choose data source** page of the Copy job wizard, select your Fabric Warehouse.
 
-    :::image type="content" source="media/quickstart-copy-job/choose-data-source.png" alt-text="Screenshot of the choose data source page of the copy job creation wizard with a warehouse selected.":::
+    :::image type="content" source="media/quickstart-copy-job/choose-data-source.png" alt-text="Screenshot of the choose data source page of the copy job creation wizard with a warehouse selected." lightbox="media/quickstart-copy-job/choose-data-source.png":::
 
 1. In the **Choose data** page, select the source Warehouse table that includes the incremental column. Select **Next**.
 
-    :::image type="content" source="media/quickstart-copy-job/select-warehouse-table.png" alt-text="Screenshot of the choose data page with the employee SQL table selected.":::
+    :::image type="content" source="media/quickstart-copy-job/select-warehouse-table.png" alt-text="Screenshot of the choose data page with the employee SQL table selected." lightbox="media/quickstart-copy-job/select-warehouse-table.png":::
 
 1. In the **Choose data destination** page, select **Lakehouse** under **New Fabric item.**
 
-    :::image type="content" source="media/quickstart-copy-job/choose-data-destination.png" alt-text="Screenshot of the choose data destination page, with Lakehouse selected.":::
+    :::image type="content" source="media/quickstart-copy-job/choose-data-destination.png" alt-text="Screenshot of the choose data destination page, with Lakehouse selected." lightbox="media/quickstart-copy-job/choose-data-destination.png":::
 
 1. Provide a name for the new Lakehouse and select **Create and connect**.
 
@@ -87,24 +87,24 @@ Before you start, complete these prerequisites:
 
 1. On the **Map to destination** page, choose **Tables**, optionally rename the destination table, and select **Next**.
 
-    :::image type="content" source="media/quickstart-copy-job/map-to-destination.png" alt-text="Screenshot of the map to destination page with the employee table selected.":::
+    :::image type="content" source="media/quickstart-copy-job/map-to-destination.png" alt-text="Screenshot of the map to destination page with the employee table selected." lightbox="media/quickstart-copy-job/map-to-destination.png":::
 
 1. In the **Settings** step, choose **Incremental copy** as the Copy Job mode. Select the column that serves as the incremental column. For the sample table, that's **ModifiedDate**.
 
-    :::image type="content" source="media/quickstart-copy-job/select-incremental-copy.png" alt-text="Screenshot of the settings page with incremental copy selected and the incremental column set to ModifiedDate.":::
+    :::image type="content" source="media/quickstart-copy-job/select-incremental-copy.png" alt-text="Screenshot of the settings page with incremental copy selected and the incremental column set to ModifiedDate." lightbox="media/quickstart-copy-job/select-incremental-copy.png":::
 
 ## Run and monitor the Copy job
 
 1. On the **Review + save** page, verify your settings. Leave the default option to **Start data transfer immediately** and optionally set the Copy job run every 1 minute for faster change tracking.
 1. Save the Copy Job and start the first execution by selecting the **Save + Run** button.
 
-    :::image type="content" source="media/quickstart-copy-job/schedule-runs.png" alt-text="Screenshot of the review and save page, with the run options set to run on schedule every one minute.":::
+    :::image type="content" source="media/quickstart-copy-job/schedule-runs.png" alt-text="Screenshot of the review and save page, with the run options set to run on schedule every one minute." lightbox="media/quickstart-copy-job/schedule-runs.png":::
 
 1. Once the Copy job artifact is saved successfully, it starts the first run to bring in the initial data from the source table.
 
 1. Use the **Copy Job panel** or **Monitoring Hub** to monitor progress. [Learn more about monitoring Copy Jobs](monitor-copy-job.md).
 
-    :::image type="content" source="media/quickstart-copy-job/monitor-first-run.png" alt-text="Screenshot of the monitoring hub, showing the successful job with five rows read and five rows written.":::
+    :::image type="content" source="media/quickstart-copy-job/monitor-first-run.png" alt-text="Screenshot of the monitoring hub, showing the successful job with five rows read and five rows written." lightbox="media/quickstart-copy-job/monitor-first-run.png":::
 
 ## Simulate changes with new data
 
@@ -118,11 +118,11 @@ Before you start, complete these prerequisites:
 
 1. The Copy job uses the incremental column to detect these rows during its next scheduled run.
 
-    :::image type="content" source="media/quickstart-copy-job/monitor-second-run.png" alt-text="Screenshot of the monitoring page showing the successful job with three rows read and three rows written.":::
+    :::image type="content" source="media/quickstart-copy-job/monitor-second-run.png" alt-text="Screenshot of the monitoring page showing the successful job with three rows read and three rows written." lightbox="media/quickstart-copy-job/monitor-second-run.png":::
 
 1. After the next run, query the target Fabric Lakehouse table to confirm the table was moved.
 
-    :::image type="content" source="media/quickstart-copy-job/review-lakehouse-table.png" alt-text="Screenshot of the Fabric Lakehouse table, showing all rows written into the table.":::
+    :::image type="content" source="media/quickstart-copy-job/review-lakehouse-table.png" alt-text="Screenshot of the Fabric Lakehouse table, showing all rows written into the table." lightbox="media/quickstart-copy-job/review-lakehouse-table.png":::
 
 ## Related content
 
