@@ -25,9 +25,9 @@ Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; a
 
 * A remote client such as Visual Studio Code with Jupyter notebook support, PySpark, and [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/)
 
-* Either a Microsoft Entra app token. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app) or a
+* Either a Microsoft Entra app token. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app)
 
-* A Microsoft Entra SPN token. [Add and manage application credentials in Microsoft Entra ID](/entra/identity-platform/how-to-add-credentials?tabs=client-secret)
+* Or a Microsoft Entra SPN token. [Add and manage application credentials in Microsoft Entra ID](/entra/identity-platform/how-to-add-credentials?tabs=client-secret)
 
 ## Choosing a REST API client
 
