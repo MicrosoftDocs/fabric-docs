@@ -24,7 +24,7 @@ In this article, you learn how to create an empty table within the context of a 
 
 You can create an empty table without a data source to use as a testing environment, or for ingesting data in a later stage.
 
-If you have a data source or a sample file prepared, you can use Get data to ingest data directly into a new table. For more information, see [Get data overview](get-data-overview.md).
+If you have a data source or a sample file prepared, you can use **Get data** to ingest data directly into a new table. For more information, see [Get data overview](get-data-overview.md).
 
 1. Browse to your desired KQL database.
 
@@ -36,14 +36,13 @@ If you have a data source or a sample file prepared, you can use Get data to ing
 
     > [!NOTE]
     > Table names can be up to 1,024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
-    > There are no known dependencies until a references to the table are created.
 
      :::image type="content" source="media/empty-table/table-name.png" alt-text="Screenshot of the new table wizard in Real-Time Intelligence. The table name and description is highlighted.":::
 
 1. Start the table schema by entering a **Column name**, and a description (optional).
 
     > [!NOTE]
-    > * The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
+    > * The column name must start with a letter, and can contain numbers, periods, hyphens, or underscores.
     > * You need to create at least one column.
 
 1. Select a data **Type** for your column. The default column type is `string` but can be altered in the dropdown menu of the type field.
