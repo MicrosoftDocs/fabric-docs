@@ -23,7 +23,7 @@ Learn how to submit Spark session jobs using the Livy API for Fabric Data Engine
 
 * A remote client such as [Visual Studio Code](https://code.visualstudio.com/) with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/).
 
-* Either an Microsoft Entra app token is required to access the Fabric Rest API. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
+* Either a Microsoft Entra app token is required to access the Fabric Rest API. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
 
 * Or a Microsoft Entra SPN token. [Add and manage application credentials in Microsoft Entra ID](/entra/identity-platform/how-to-add-credentials?tabs=client-secret).
 
@@ -47,9 +47,9 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox = "media/livy-api/entra-app-overview.png" :::
 
-## Authenticate a Livy API Spark session using either a Entra User Token or an Entra SPN token
+## Authenticate a Livy API Spark session using either a Entra user token or a Entra SPN token
 
-### Authenticate a Livy API Spark session using an Entra SPN token
+### Authenticate a Livy API Spark session using a Entra SPN token
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
@@ -115,7 +115,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     :::image type="content" source="media/livy-api/Livy-session-entra-spn-token.png" alt-text="Screenshot showing the Microsoft Entra SPN token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-spn-token.png":::    ```
 
-### Authenticate a Livy API Spark session using an Entra User Token
+### Authenticate a Livy API Spark session using a Entra user token
 
 1. Create an `.ipynb` notebook in Visual Studio Code and insert the following code.
 
@@ -309,7 +309,7 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
     :::image type="content" source="media\livy-api\Livy-monitoring-hub-last-activity-details.png" alt-text="Screenshot showing most recent Livy API activity details in the Monitoring hub." lightbox="media\livy-api\Livy-monitoring-hub-last-activity-details.png" :::
 
-To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), an Microsoft Entra app token, Livy API endpoint URL, authentication against your Lakehouse, and finally a Session Livy API.
+To recap the whole process, you need a remote client such as [Visual Studio Code](https://code.visualstudio.com/), a Microsoft Entra app/SPN token, Livy API endpoint URL, authentication against your Lakehouse, and finally a Session Livy API.
 
 ## Related content
 
