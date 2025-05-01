@@ -1,15 +1,15 @@
 ---
-title: Set up a task flow (preview)
+title: Set up a task flow
 description: This article shows how to set up a task flow, both from scratch and by using one of Fabric's predesigned task flows.
 ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 01/10/2025
+ms.date: 05/01/2025
 #customer intent: As a data analytics solutions architect, I want to get started using a task flow to design my data analytics solution.
 ---
 
-# Set up a task flow (preview)
+# Set up a task flow
 
 This article describes how to start building a task flow, starting either from scratch or with one of Fabric's predefined task flows. It targets data analytics solution architects and others who want to create a visualization of a data project.
 
