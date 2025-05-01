@@ -50,7 +50,7 @@ Semantic models with Direct Lake tables created in Power BI Desktop use **Direct
 
 To add Direct Lake tables from other Fabric artifacts, take the following steps.
 
-1.	While live editing a Direct Lake on OneLake semantic model in Power BI Desktop, open the **OneLake catalog** and select another **Lakehouse** or **Warehouse**
+1.	While live editing a Direct Lake on OneLake semantic model in Power BI Desktop, open the **OneLake ** and select another **Lakehouse** or **Warehouse**
 2.	In the dialog, select the tables you want to include then press **OK**
 
 The tables are added to your semantic model and you can continue live editing 
@@ -59,7 +59,7 @@ The tables are added to your semantic model and you can continue live editing
 
 To edit a semantic model with Direct Lake tables later, take the following steps.
 
-1.	In a **new instance of Power BI Desktop**, open the **OneLake catalog** and select the **Power BI semantic model**
+1.	In a **new instance of Power BI Desktop**, open the **OneLake ** and select the **Power BI semantic model**
 2.	Select the **Connect drop-down button** and choose **Edit**.
 
 Now you are live editing the semantic model.
@@ -83,7 +83,7 @@ The report view is removed when live editing, unless you are [live editing with 
 To create a report, follow these steps in Power BI Desktop.
 
 1.	Go to **File** then **Blank report** to open a new instance of Power BI Desktop
-2.	Open the **OneLake catalog **and choose the **Power BI semantic model** you are live editing (it should show at the top of the list) and press **Connect**
+2.	Open the **OneLake catalog** and choose the **Power BI semantic model** you are live editing (it should show at the top of the list) and press **Connect**
 
 Now you can create the report. Save the PBIX file and publish to the Fabric workspace when ready.
 
