@@ -34,13 +34,13 @@ Creating semantic models with Direct Lake tables is in public preview, and you n
 
 To create a semantic model with Direct Lake tables, take the following steps.
 
-1.	Open Power BI Desktop and select OneLake catalog
-2.	Select a Lakehouse or Warehouse and press Connect
-3.	Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press OK.
+1.	Open **Power BI Desktop** and select **OneLake catalog**
+2.	Select a **Lakehouse** or **Warehouse** and press **Connect**
+3.	Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
 
 The semantic model is created in the Fabric workspace and now you are live editing the semantic model in Power BI Desktop.
 
-Semantic models with Direct Lake tables created in Power BI Desktop use Direct Lake on OneLake storage mode. The differences between Direct Lake on OneLake and Direct Lake on SQL are explained in the [Overview](direct-lake-overview.md).
+Semantic models with Direct Lake tables created in Power BI Desktop use **Direct Lake on OneLake** storage mode. The differences between Direct Lake on OneLake and Direct Lake on SQL are explained in the [Overview](direct-lake-overview.md).
 
 > [!Note]
 > Adding shortcut tables may cause an error. To use a shortcut table with Direct Lake on OneLake, onboarding to the early access or limited preview version of [OneLake security](/fabric/onelake/security/get-started-security#onelake-security-preview) is required. Using any table in a Lakehouse with only the public preview of OneLake security is not supported and will result in an error.
