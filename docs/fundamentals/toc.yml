@@ -131,18 +131,22 @@ items:
   items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
-  - name: Develop Direct Lake models
-    href: direct-lake-develop.md
-  - name: Manage Direct Lake models
-    href: direct-lake-manage.md
   - name: Understand storage for Direct Lake
     href: direct-lake-understand-storage.md
   - name: Direct Lake in Power BI Desktop (preview)
-    href: direct-lake-power-bi-desktop.md        
+    href: direct-lake-power-bi-desktop.md 
+  - name: Direct Lake in Power BI Project (PBIP) (preview)
+    href: direct-lake-power-bi-project.md     
+  - name: Direct Lake in Power BI web modeling (preview)
+    href: direct-lake-web-modeling.md     
   - name: Edit tables for Direct Lake semantic models
     href: direct-lake-edit-tables.md
   - name: Create a Lakehouse for Direct Lake
     href: direct-lake-create-lakehouse.md
+  - name: Develop Direct Lake models
+    href: direct-lake-develop.md
+  - name: Manage Direct Lake models
+    href: direct-lake-manage.md
   - name: Specify a fixed identity
     href: direct-lake-fixed-identity.md
   - name: Analyze query processing
