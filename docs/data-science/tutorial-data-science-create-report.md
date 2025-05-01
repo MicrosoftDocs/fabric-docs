@@ -77,7 +77,7 @@ Add some measures to the semantic model:
 
         :::image type="content" source="media/tutorial-data-science-create-report/select-checkmark.png" alt-text="Screenshot showing selection of the formula bar check mark." lightbox="media/tutorial-data-science-create-report/select-checkmark.png":::
     
-    The new measure appears in the data table, as shown in the following screenshot:
+        The new measure appears in the data table, as shown in the following screenshot:
 
         :::image type="content" source="media/tutorial-data-science-create-report/new-datatable-measure.png" alt-text="Screenshot showing the new measure in the data table." lightbox="media/tutorial-data-science-create-report/new-datatable-measure.png":::
     
@@ -133,7 +133,7 @@ Add some measures to the semantic model:
 
 Once you complete all of the operations described earlier, select **Create new report** in the top ribbon File option list to open the Power BI report authoring page, as shown in the following screenshot:
 
-    :::image type="content" source="media/tutorial-data-science-create-report/visualize-this-data.png" alt-text="Screenshot shows how to create a report.":::
+:::image type="content" source="media/tutorial-data-science-create-report/visualize-this-data.png" alt-text="Screenshot shows how to create a report.":::
 
 The report page appears in a new browser tab. Add these visuals to the report:
 
@@ -143,7 +143,7 @@ The report page appears in a new browser tab. Add these visuals to the report:
 
 Enter a title for the report, such as "Bank Customer Churn" as shown in the following screenshot:
 
-    :::image type="content" source="media/tutorial-data-science-create-report/build-textbox-value.png" alt-text="Screenshot showing entered value in a report textbox." lightbox="media/tutorial-data-science-create-report/build-textbox-value.png":::
+:::image type="content" source="media/tutorial-data-science-create-report/build-textbox-value.png" alt-text="Screenshot showing entered value in a report textbox." lightbox="media/tutorial-data-science-create-report/build-textbox-value.png":::
 
 Change the font size and background color in the Format panel. Adjust the font size and color by selecting the text and using the format bar.
 
@@ -185,7 +185,7 @@ Change the font size and background color in the Format panel. Adjust the font s
 
    Ensure that the Column y-axis field has only one instance of **Churn rate**. Delete everything else from this field.
 
-    :::image type="content" source="media/tutorial-data-science-create-report/configure-chart.png" alt-text="Screenshot that shows selection of Data pane options." lightbox="media/tutorial-data-science-create-report/configure-chart.png":::
+    :::image type="content" source="media/tutorial-data-science-create-report/configure-chart.png" alt-text="Screenshot that shows selection of Data pane and Visualization pane options." lightbox="media/tutorial-data-science-create-report/configure-chart.png":::
 
 1. In the Visualizations panel, select the **Line and stacked column chart** icon. With steps similar to the earlier Line and stacked column chart configuration, select **NumOfProducts** for x-axis, **Churn Rate** for column y-axis, and **Customers** for the line y-axis, as shown in the following screenshot:
 
