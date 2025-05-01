@@ -12,9 +12,9 @@ LocalizationGroup: Admin
 ---
 # Direct Lake in Power BI Project (preview)
 
-When working on a Power BI Project (PBIP) with a semantic model with Direct Lake tables, Power BI Desktop needs to connect to a semantic model in a Fabric workspace, also termed as a remote semantic model. This is still live editing, as all changes you make are immediately applied to the semantic model in the workspace. However, unlike live edit, you can save your semantic model and report definitions, or metadata, to your local PBIP files that can later be deployed to a Fabric workspace using a deployment mechanism such as Fabric Git Integration. Learn more about remote modeling with [Power BI Project (PBIP)](/power-bi/developer/projects/projects-overview).
+When working on a Power BI Project (PBIP) with a semantic model with Direct Lake tables, Power BI Desktop needs to connect to a semantic model in a Fabric workspace, also termed as a remote semantic model. Remote modeling is live editing, as all changes you make are immediately applied to the semantic model in the workspace. However, unlike live edit, you can save your semantic model and report definitions, or metadata, to your local PBIP files that can later be deployed to a Fabric workspace using a deployment mechanism such as Fabric Git Integration. Learn more about remote modeling with [Power BI Project (PBIP)](/power-bi/developer/projects/projects-overview).
 
-To support professional enterprise development workflows of semantic models in Direct Lake mode, you can export the definition of your semantic model after opening it for editing, which provides a local copy of the semantic model and report metadata that you can use with Fabric deployment mechanisms such as Fabric Git Integration. The Power BI Desktop report view becomes enabled letting you view and edit the local report, publish directly from Power BI Desktop isn't available but you can publish using Git integration. The Save button is also enabled to save the local model metadata and report in the Power BI Project folder.
+To support professional enterprise development workflows of semantic models in Direct Lake mode, you can export the definition of your semantic model after opening it for editing, which provides a local copy of the semantic model and report metadata that you can use with Fabric deployment mechanisms such as Fabric Git Integration. The Power BI Desktop **report view** becomes enabled letting you view and edit the local report. **Publish** directly from Power BI Desktop isn't available but you can publish using Git integration. The **Save** button is also enabled to save the local model metadata and report in the Power BI Project folder.
 
 ## Export to a Power BI Project
 
@@ -32,7 +32,7 @@ Selecting **Export** opens the folder containing the PBIP files of the exported 
 
 :::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-12.png" alt-text="Screen shot of exported folder containing the files of an exported semantic model in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-12.png":::
 
-After exporting you should open a new instance of Power BI Desktop and open the exported PBIP file to continue editing with a Power BI Project. When you open the PBIP file, Power BI Desktop prompts you to either create a new semantic model in a Fabric workspace, or select an existing semantic model for **remote modeling**.
+After exporting, you should open a new instance of Power BI Desktop and open the exported PBIP file to continue editing with a Power BI Project. When you open the PBIP file, Power BI Desktop prompts you to either create a new semantic model in a Fabric workspace, or select an existing semantic model for **remote modeling**.
 
 ### Remote modeling with a Power BI Project
 
