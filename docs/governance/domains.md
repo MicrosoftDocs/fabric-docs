@@ -63,7 +63,7 @@ To allow domain-specific configuration, some tenant-level settings for managing 
 
 When users look for data items in the OneLake catalog, they might want to see only the data items that belong to a particular domain. To do this, they can select the domain in the domain selector in the OneLake catalog to display only items belonging to that domain. To remind them which domain's data items they're seeing, you can choose an image to represent your domain. Then, when your domain is selected in the domain selector, the image becomes part of OneLake catalog's theme, as illustrated in the following image.
 
-:::image type="content" source="./media/domains/domain-image-onlake-catalog.png" alt-text="Screenshot of the OneLake catalog with a domain image.":::
+:::image type="content" source="./media/domains/domain-image-onelake-catalog.png" alt-text="Screenshot of the OneLake catalog with a domain image.":::
 
 For information about how to specify an image for a domain, see [Specify a domain image](#specify-a-domain-image).
 
