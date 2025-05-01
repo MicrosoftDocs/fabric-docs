@@ -19,7 +19,7 @@ LocalizationGroup: Admin
 | Creating       | Not yet available       | Select New semantic model from Lakehouse, SQL analytics endpoints, or Warehouses.       |
 | Editing       | Select Open data model from the semantic model details page or context menu. There are some limitations during public preview | Select Open data model from the semantic model details page or context menu.        |
 
-**Edit in Desktop **is available when web modeling to continue live editing any Direct Lake semantic model in Power BI Desktop. 
+**Edit in Desktop** is available when web modeling to continue live editing any Direct Lake semantic model in Power BI Desktop. 
 
 ## Create a semantic model in Direct Lake mode
 
