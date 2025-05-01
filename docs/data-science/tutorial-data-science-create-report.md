@@ -80,9 +80,8 @@ Add some measures to the semantic model:
         The new measure appears in the data table, as shown in the following screenshot:
 
         :::image type="content" source="media/tutorial-data-science-create-report/new-datatable-measure.png" alt-text="Screenshot showing the new measure in the data table." lightbox="media/tutorial-data-science-create-report/new-datatable-measure.png":::
-    
     The calculator icon indicates that it was created as a measure. Select the **Churn Rate** measure in the data table. Next, make the following selections, as shown in the following screenshot:
-    
+
     1. Change the format from **General** to **Percentage** in the **Properties** panel.
     
     1. Scroll down in the **Properties** panel to change the **Decimal places** to 1.
@@ -141,11 +140,11 @@ The report page appears in a new browser tab. Add these visuals to the report:
 
     :::image type="content" source="media/tutorial-data-science-create-report/select-textbox.png" alt-text="Screenshot showing where to find the text box option in the ribbon." lightbox="media/tutorial-data-science-create-report/select-textbox.png":::
 
-Enter a title for the report, such as "Bank Customer Churn" as shown in the following screenshot:
+   Enter a title for the report - for example, "Bank Customer Churn" as shown in the following screenshot:
 
-:::image type="content" source="media/tutorial-data-science-create-report/build-textbox-value.png" alt-text="Screenshot showing entered value in a report textbox." lightbox="media/tutorial-data-science-create-report/build-textbox-value.png":::
+    :::image type="content" source="media/tutorial-data-science-create-report/build-textbox-value.png" alt-text="Screenshot showing entered value in a report textbox." lightbox="media/tutorial-data-science-create-report/build-textbox-value.png":::
 
-Change the font size and background color in the Format panel. Adjust the font size and color by selecting the text and using the format bar.
+   Change the font size and background color in the Format panel. Adjust the font size and color by selecting the text and using the format bar.
 
 1. In the Visualizations panel, select the **Card** icon, as shown in the following screenshot:
 
