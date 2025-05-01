@@ -51,8 +51,8 @@ SQL database in Fabric creates three items in your Fabric workspace:
 
 - Data in your SQL database is automatically replicated of into the [OneLake](../../onelake/onelake-overview.md) and converted to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
 
-- A SQL analytics endpoint
-- A default semantic model
+- A [SQL analytics endpoint](sql-analytics-endpoint.md)
+- A [default semantic model](../../data-warehouse/default-power-bi-semantic-model.md)
 
 In addition to the [Fabric SQL database Query Editor](query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
 
@@ -142,7 +142,7 @@ Fabric SQL database doesn't support the Azure SQL Database elastic pools concept
 
 ## Related content
 
-- [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 - [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)
-- [What is the SQL analytics endpoint for a Lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
-- [Direct Lake](/power-bi/enterprise/directlake-overview)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+- [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)  
+- [What is the SQL analytics endpoint for a SQL database in Fabric?](sql-analytics-endpoint.md)
