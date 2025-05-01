@@ -63,3 +63,6 @@ Arin chooses [Azure SQL Database Hyperscale](/azure/azure-sql/database/service-t
 ## Related content
 
 - [Features comparison: Azure SQL Database and SQL database in Fabric (preview)](feature-comparison-sql-database-fabric.md)
+- [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+- [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)
