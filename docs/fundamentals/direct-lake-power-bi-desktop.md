@@ -42,6 +42,10 @@ The semantic model is created in the Fabric workspace and now you are live editi
 
 Semantic models with Direct Lake tables created in Power BI Desktop use Direct Lake on OneLake storage mode. The differences between Direct Lake on OneLake and Direct Lake on SQL are explained in the [Overview](direct-lake-overview.md).
 
+> [!Note]
+> Adding shortcut tables may cause an error. To use a shortcut table with Direct Lake on OneLake, onboarding to the early access or limited preview version of [OneLake security](/fabric/onelake/security/get-started-security#onelake-security-preview) is required. Using any table in a Lakehouse with only the public preview of OneLake security is not supported and will result in an error.
+
+
 ## Add Direct Lake tables from other Fabric artifacts
 
 To add Direct Lake tables from other Fabric artifacts, take the following steps.
