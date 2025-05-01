@@ -124,8 +124,34 @@ When working on a Power BI Project (PBIP) with a semantic model with Direct Lake
 
 Selecting the name of the semantic model in the top left corner of Power BI Desktop expands to show the location of the semantic model in the Fabric workspace. Selecting the workspace name or semantic model name navigates you to them in the web. Version history is also available.
 
+### TMDL view
+
+TMDL (Tabular Model Defintion Language) view can be used with Direct Lake semantic models. The TMDL scripts are not saved unless you are live editing with a [Power BI Project (PBIP)](direct-lake-power-bi-project.md). Learn more about [TMDL view](/power-bi/transform-model/desktop-tmdl-view). 
+
+### DAX query view
+
+DAX (Data Analysis Expressions) query view can be used with Direct Lake semantic models. The DAX queries are not saved unless you are live editing with a [Power BI Project (PBIP)](direct-lake-power-bi-project.md). Learn more about [DAX query view](/power-bi/transform-model/dax-query-view). 
 
 
+## Migrating Direct Lake on SQL semantic models to Direct Lake on OneLake
+
+If you already have an existing **Direct Lake on SQL** semantic model and want to migrate to **Direct Lake on OneLake**, you can using **TMDL view**. Direct Lake on OneLake offers the advantage of having tables from multiple sources and no fallback to DirectQuery. 
+
+This is not recommended if you are using views or shortcut tables in the Direct Lake on SQL semantic model.
+
+To change to Direct Lake on OneLake, follow these steps.
+
+1. **Live edit **the semantic model you want to migrate in Power BI Desktop.
+2. In the header, open the drop-down on the name and choose **Version history** to make a version to return to if you want to.
+3. Go to **TMDL view**.
+4. Drag the **Semantic model** node into the editor to script the entire model.
+5. Find the **Expression** toward the bottom of the script.
+6. Change <code>Sql.Database("SQL endpoint connection string", "ID of the SQL analytics endpoint")</code> to <code>AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/ID of the workspace/ID of the lakehouse or warehouse")</code>.
+7. If the source is a **Lakehouse without schemas**, remove all <code>schemaName</code> property references. Select **Find** in the ribbon to find one. Select it and use <code>CTRL+SHIFT+L</code> to select them all, then <code>CTRL+SHIFT+K</code> to remove all the lines at once.
+8. Then click **Apply**.
+9. On success, go to **Model view** to **Refresh** the model. You may need to go to the model in the web to adjust credentials in the **Settings** page.
+
+Now the semantic model is using Direct Lake on OneLake. If there are issues, you can restore to the version you created to return to Direct Lake on SQL storage mode.
 
 ## Requirements and permissions
 
@@ -149,6 +175,7 @@ Live edit of semantic models in Direct Lake mode in Power BI Desktop is currentl
 * You can open external tools, but the external tool must manage authentication to the remote semantic model.
 * Changing the data category to *barcode* won't allow reports linked to the semantic model to be filtered by barcodes.
 * Externally shared semantic models aren't eligible for live edit.
+* Adding shortcut tables may cause an error. To use a shortcut table with Direct Lake on OneLake, onboarding to the early access or limited preview version of [OneLake security](/fabric/onelake/security/get-started-security#onelake-security-preview) is required. Using any table in a Lakehouse with only the public preview of OneLake security is not supported and will result in an error.
 
 In additon to the current known issues and limitations of Direct Lake.
 
