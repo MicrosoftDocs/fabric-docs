@@ -51,8 +51,10 @@ If you're experiencing mirroring problems, perform the following database level 
 
     The key columns to look for here are the `table_name` and `state`. Any value besides `4` indicates a potential problem.
 
+1. Review [Troubleshoot Fabric mirrored databases](troubleshooting.md).
 1. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
 
 ## Related content
 
+- [Troubleshoot Fabric mirrored databases](troubleshooting.md)
 - [Frequently asked questions for Mirroring SQL Server in Microsoft Fabric](sql-server-faq.yml)
