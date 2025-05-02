@@ -5,8 +5,8 @@ author: denglishbi
 ms.author: daengli
 ms.reviewer: guptamaya, maghan
 ms.date: 05/02/2025
-ms.topic: overview
 ms.service: fabric
+ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
 ms.custom:
@@ -93,20 +93,20 @@ Here is the converted table in markdown format:
 
 | Fabric workload | Supported items | Copilot experience |
 | --- | --- | --- |
-| Data Science and Data Engineering | Notebook (typically with lakehouses and other data items) | - ../data-engineering/copilot-notebooks-chat-pane.md vs ../data-engineering/copilot-notebooks-chat-magics.md in a notebook. <br/> - ../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities. <br/> - ../data-engineering/copilot-notebooks-chat-magics.md#commenting-and-debugging. - ../data-engineering/copilot-notebooks-chat-pane.md. <br/> - ../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities. |
+| Data Science and Data Engineering | Notebook (typically with lakehouses and other data items) | - ../data-engineering/copilot-notebooks-chat-pane.md vs ../data-engineering/copilot-notebooks-chat-magics.md in a notebook.<br />- ../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities.<br />- ../data-engineering/copilot-notebooks-chat-magics.md#commenting-and-debugging. - ../data-engineering/copilot-notebooks-chat-pane.md.<br />- ../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities. |
 | Data Factory | Dataflows gen2 | - copilot-fabric-data-factory.md#get-started-with-copilot-for-dataflow-gen2. |
-| Data pipeline | - copilot-fabric-data-factory.md#generate-a-data-pipeline-with-copilot. <br/> - copilot-fabric-data-factory.md#summarize-a-data-pipeline-with-copilot. <br/> - copilot-fabric-data-factory.md#troubleshoot-pipeline-errors-with-copilot. |
-| Data Warehousing | Data warehouse | - ../data-warehouse/copilot-chat-pane.md. <br/> - ../data-warehouse/copilot-code-completion.md. <br/> - ../data-warehouse/copilot-quick-action.md. <br/> - ../data-warehouse/copilot-quick-action.md |
-| SQL database | SQL database | - ../database/sql/copilot-chat-pane.md. <br/> - ../database/sql/copilot-code-completion.md. <br/> - ../database/sql/copilot-quick-action.md. <br/> - ../database/sql/copilot-quick-action.md |
-| Power BI | Semantic models in Power BI Desktop or Power BI service | - ../data-warehouse/copilot-chat-pane.md. <br/> - ../data-warehouse/copilot-code-completion.md. <br/> - ../data-warehouse/copilot-quick-action.md. <br/> - ../data-warehouse/copilot-quick-action.md |
-| Power BI | Reports (with semantic models) in Power BI Desktop, the Power BI service, or the Power BI mobile app | - Power BI home (announced). <br/> - /power-bi/create-reports/copilot-create-desktop-report. <br/> - /power-bi/create-reports/copilot-create-report-service. <br/> - /power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service. <br/> - /power-bi/create-reports/copilot-pane-summarize-content. |
-| Real-Time Intelligence | KQL queryset | - copilot-real-time-intelligence.md. <br/> - copilot-real-time-intelligence.md. |
+| Data pipeline | - copilot-fabric-data-factory.md#generate-a-data-pipeline-with-copilot.<br />- copilot-fabric-data-factory.md#summarize-a-data-pipeline-with-copilot.<br />- copilot-fabric-data-factory.md#troubleshoot-pipeline-errors-with-copilot. |
+| Data Warehousing | Data warehouse | - ../data-warehouse/copilot-chat-pane.md.<br />- ../data-warehouse/copilot-code-completion.md.<br />- ../data-warehouse/copilot-quick-action.md.<br />- ../data-warehouse/copilot-quick-action.md |
+| SQL database | SQL database | - ../database/sql/copilot-chat-pane.md.<br />- ../database/sql/copilot-code-completion.md.<br />- ../database/sql/copilot-quick-action.md.<br />- ../database/sql/copilot-quick-action.md |
+| Power BI | Semantic models in Power BI Desktop or Power BI service | - ../data-warehouse/copilot-chat-pane.md.<br />- ../data-warehouse/copilot-code-completion.md.<br />- ../data-warehouse/copilot-quick-action.md.<br />- ../data-warehouse/copilot-quick-action.md |
+| Power BI | Reports (with semantic models) in Power BI Desktop, the Power BI service, or the Power BI mobile app | - Power BI home (announced).<br />- /power-bi/create-reports/copilot-create-desktop-report.<br />- /power-bi/create-reports/copilot-create-report-service.<br />- /power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service.<br />- /power-bi/create-reports/copilot-pane-summarize-content. |
+| Real-Time Intelligence | KQL queryset | - copilot-real-time-intelligence.md.<br />- copilot-real-time-intelligence.md. |
 | Real-Time Intelligence | Real-time dashboards | - Generate a real-time dashboard (announced). |
----
+| --- |
 
 > [!NOTE]  
 > Copilot's capabilities are evolving over time. More items and Copilot experiences will likely become available in the future.
->
+>  
 > The Copilot experiences which are in *preview* are subject to separate, [supplemental preview terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), and aren't meant for production use. For more information, see [Microsoft Fabric preview information](./preview.md). We recommend that you only use these preview experiences to test and evaluate Copilot's capabilities.
 
 ## Create your own AI solution accelerators
