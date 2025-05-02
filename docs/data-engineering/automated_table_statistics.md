@@ -11,6 +11,7 @@ ms.date: 05/01/2025
 ---
 
 # Configure and manage Automated Table Statistics in Fabric Spark
+**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
 Automated Table Statistics in Microsoft Fabric help Spark optimize query execution by automatically collecting detailed table-level metrics. These statistics include:
 
@@ -88,7 +89,7 @@ Disable auto-setting of table properties at creation:
 
     spark.conf.set("spark.microsoft.delta.stats.collect.extended.property.setAtTableCreation", "false")
 
-## 🔍 How to Check Statistics
+## How to Check Statistics
 
 You can inspect the collected table and column statistics using Spark’s APIs — useful for debugging or validation.
 
@@ -102,7 +103,7 @@ Check detailed column statistics:
       println(s"colName: $attrName distinctCount: ${colStat.distinctCount} min: ${colStat.min} max: ${colStat.max} nullCount: ${colStat.nullCount} avgLen: ${colStat.avgLen} maxLen: ${colStat.maxLen}")
     }
 
-## 🔄 Recomputing Statistics
+## Recomputing Statistics
 
 Sometimes statistics can become outdated or partial — for example, after schema changes or partial updates. You can recompute statistics using these methods.
 
@@ -119,7 +120,7 @@ If you’ve changed the columns or configuration:
     StatisticsStore.removeStatisticsData(spark, "testTable1")
     StatisticsStore.recomputeStatisticsWithCompaction(spark, "testTable1")
 
-## 💡 Using ANALYZE COMMAND
+## Using ANALYZE COMMAND
 
 The `ANALYZE TABLE` command provides a manual way to collect statistics across all columns, similar to open-source Spark.
 
@@ -137,7 +138,7 @@ Disable catalog statistics injection:
 
 ## ⚠️ Limitations
 
-It’s important to understand the current limitations of Fabric’s automated statistics so you can plan accordingly.
+It’s important to understand the current limitations of Fabric’s automated statistics so you can plan accordingly. 
 
 - Statistics collected only at **write time**
 - Updates or changes from **other engines** are not aggregated
@@ -149,4 +150,10 @@ It’s important to understand the current limitations of Fabric’s automated s
 - **No performance fallback** → stats can occasionally lead to regressions
 - `ANALYZE TABLE` only works with `FOR ALL COLUMNS`
 - Column ordering or configuration changes require full rewrite to refresh stats
+
+## Related content
+- [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
+- [Learn about Delta Optimizized Write and VOrder](delta-optimization-and-v-order.md)
+- [Learn how to configure Resource Profiles based on your workload requirements](configure-resource-profile-configurations.md)
+
 
