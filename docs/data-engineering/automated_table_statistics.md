@@ -145,7 +145,6 @@ It’s important to understand the current limitations of Fabric’s automated s
 - Statistics collected only at **write time**
 - Updates or changes from **other engines** are not aggregated
 - Only first **32 columns** included (including nested columns)
-- No support for **path-based Delta tables** (only catalog tables)
 - **Deletes or updates** may make statistics outdated
 - **No recompute** without rewriting the table or using the API
 - **No statistics injection** for nested columns
