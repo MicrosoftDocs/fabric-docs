@@ -13,7 +13,9 @@ ms.date: 11/15/2023
 
 All data in OneLake is accessed through data items. These data items can reside in different regions depending on their workspace, as a workspace is created under a capacity tied to a specific region.
 
-OneLake utilizes zone-redundant storage (ZRS) where available (see [Azure regions with availability zones](/azure/reliability/availability-zones-service-support#azure-regions-with-availability-zone-support)) and locally redundant storage (LRS) elsewhere. With both LRS and ZRS storage, your data is resilient to transient hardware failures within a data center. With ZRS, your data has fault tolerance to data center failures. This article provides guidance on how to further protect your data from rare region-wide outages.
+OneLake utilizes zone-redundant storage (ZRS) where available (see [Azure regions with availability zones](/azure/reliability/availability-zones-service-support#azure-regions-with-availability-zone-support)) and locally redundant storage (LRS) elsewhere. With both LRS and ZRS storage, your data is resilient to transient hardware failures within a data center. Just like for [Azure Storage](/azure/storage/common/storage-redundancy), LRS replicates data within a single data center in the primary region, providing at least 99.999999999% (11 nines) durability of objects over a given year. This protects against server rack and drive failures but not against data center disasters. Meanwhile, ZRS provides fault tolerance to data center failures by copying data synchronously across three Azure availability zones in the primary region, offering durability of at least 99.9999999999% (12 nines) over a given year.
+
+This article provides guidance on how to further protect your data from rare region-wide outages.
 
 ## Disaster recovery
 
