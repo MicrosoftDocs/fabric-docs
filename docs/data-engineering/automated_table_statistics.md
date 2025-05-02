@@ -1,5 +1,5 @@
-
 ---
+
 title: Configure and manage Automated Table Statistics in Fabric Spark
 description: Learn how to configure Automated Table Statistics in Fabric Spark to optimize performance for analytics workloads.
 ms.reviewer: snehagunda
@@ -8,9 +8,11 @@ author: santhoshravindran7
 ms.topic: how-to
 ms.custom:
 ms.date: 05/01/2025
+
 ---
 
 # Configure and manage Automated Table Statistics in Fabric Spark
+
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
 Automated Table Statistics in Microsoft Fabric help Spark optimize query execution by automatically collecting detailed table-level metrics. These statistics include:
