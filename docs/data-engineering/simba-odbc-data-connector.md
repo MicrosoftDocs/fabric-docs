@@ -4,7 +4,7 @@ description: Learn about the Simba ODBC Data Connector for Microsoft Fabric Data
 ms.reviewer: snehagunda
 ms.author: sngun
 author: SnehaGunda
-ms.topic: concept-article
+ms.topic: how-to
 ms.date: 05/02/2025
 #customer intent: As a Microsoft Fabric user I want to learn about the Simba ODBC Data Connector for Microsoft Fabric Data Engineering, detailing its features, installation, and configuration processes.
 ---
@@ -23,21 +23,103 @@ For complete information about the ODBC specification, see the ODBC API Referenc
 > [!NOTE]
 > The Simba ODBC Data Connector for Microsoft Fabric Spark is available for Microsoft® Windows® platform.
 
-## Enable ArcGIS GeoAnalytics
+## Here is a quick example of how it works
+
+Review this example of how this process works.
+
+:::image type="content" source="media\simba-odbc-data-connector\example.gif" alt-text="Animated example showing the Simba ODBC connector.":::
+
+### System Requirements
+
+Install the connector on client machines where the client application is installed. Before installing the connector, make sure that you have the following:
+
+- Administrator rights on your machine.
+- A machine that meets the following system requirements:
+  - Windows 10 or 11
+  - Windows Server 2025, 2022, 2019, or 2016
+  - 150 MB of available disk space
+
+The Simba ODBC Data Connector for Microsoft Fabric Spark supports Spark versions 3.5 and later for Microsoft Fabric Spark and version 3.4 and later for Azure Synapse.
+
+### Authentication
+
+You can download the Simba ODBC Data Connector for Microsoft Fabric Spark from Simba landing page: [Custom ODBC Driver SDK](https://insightsoftware.com/drivers/simba-sdk)
+
+On 64-bit Windows operating systems, you can execute both 32-bit and 64-bit applications. However, 64-bit applications must use 64-bit connectors, and 32-bit applications must use 32-bit connectors. Make sure that you use a connector whose bitness matches the bitness of the client application:
+
+- Simba Fabric Spark 0.9 32-bit.msi for 32-bit applications
+- Simba Fabric Spark 0.9 64-bit.msi for 64-bit applications
+
+To install the Simba ODBC Data Connector for Microsoft Fabric Spark on Windows:
+
+1. Depending on the bitness of your client application, double-click to run Simba Fabric Spark 0.9 32-bit.msi or Simba Fabric Spark 0.9 64-bit.msi.
+1. Click Next.
+1. Select the check box to accept the terms of the License Agreement if you agree, and then click Next.
+1. To change the installation location, click Change, then browse to the desired folder, and then click OK. To accept the installation location, click Next.
+1. Click Install.
+1. When the installation completes, click Finish.
+
+### Creating a Data Source Name on Windows
+
+Typically, after installing the Simba ODBC Data Connector for Microsoft Fabric Spark, you need to create a Data Source Name (DSN). A DSN is a data structure that stores connection information so that it can be used by the connector to connect to Spark.
+Alternatively, you can specify connection settings in a connection string. Settings in the connection string take precedence over settings in the DSN.
+The following instructions describe how to create a DSN. For information about specifying settings in a connection string, see Using a Connection String section of this documentation.
+To create a Data Source Name on Windows:
+
+> [!NOTE]
+> Make sure to select the ODBC Data Source Administrator that has the same bitness as the client application that you are using to connect to Spark.
+
+1. From the Start menu, go to ODBC Data Sources.
+1. In the ODBC Data Source Administrator, click the Drivers tab, and then scroll down as needed to confirm that the Simba ODBC Data Connector for Microsoft Fabric Spark appears in the alphabetical list of ODBC drivers that are installed on your system.
+1. Choose one:
+
+- To create a DSN that only the user currently logged into Windows can use, click the User DSN tab.
+- Or, to create a DSN that all users who log into Windows can use, click the System DSN tab.
+
+> [!NOTE]
+> It is recommended that you create a System DSN instead of a User DSN. Some applications load the data using a different user account and might not be able to detect User DSNs that are created under another user account.
+
+1. Click Add.
+1. In the Create New Data Source dialog box, select Simba ODBC Data Connector for Microsoft Fabric Spark and then click Finish. The Simba ODBC Data Connector for Microsoft Fabric Spark DSN Setup dialog box opens.
+1. In the Data Source Name field, type a name for your DSN.
+1. Optionally, in the Description field, type relevant details about the DSN.
+1. From the Spark Server Type drop-down list, select the appropriate server type for the version of Spark that you are running:
+
+- If you are connecting to Microsoft Fabric, then select FABRIC.
+- If you are connecting to Azure Synapse, then select SYNAPSE.
+
+1. In the Host(s), type in the hostname corresponding to the server.
+1. In the HTTP Path, type in the partial URL corresponding to the server.
+1. Optionally, in the Environment ID, type in the Environment ID that you wish to use. This is applicable to Microsoft Fabric only.
+1. In the Authentication area, configure authentication as needed. For more information, see Configuring Authentication on Windows.
+1. To configure the connector to connect to Spark through a proxy server, click Proxy Options. For more information, see Configuring a Proxy Connection on Windows.
+1. To configure client-server verification over SSL, click SSL Options. For more information, see Configuring SSL Verification on Windows.
+1. To configure advanced connector options, click Advanced Options. For more information, see Configuring Advanced Options on Windows.
+1. To configure server-side properties, click Advanced Options and then click Server Side Properties. For more information, see Configuring Server-Side Properties on Windows.
+1. To configure logging behavior for the connector, click Logging Options. For more information, see Configuring Logging Options on Windows.
+1. To test the connection, click Test. Review the results as needed, and then click OK.
+
+> [!NOTE]
+> If the connection fails, then confirm that the settings in the Simba Spark ODBC Driver DSN Setup dialog box are correct. Contact your Spark server administrator as needed.
+
+1. To save your settings and close the Simba ODBC Data Connector for Microsoft Fabric Spark DSN Setup dialog box, click OK.
+1. To close the ODBC Data Source Administrator, click OK.
+
+### Configuring Authentication on Windows
+
+You can specify authentication settings in a DSN, in a connection string, or as connector-wide settings. Settings in the connection string take precedence over settings in the DSN, and settings in the DSN take precedence over connector-wide settings.
+
+When connecting to Azure Synapse, the Client Credentials authentication workflow is the supported flow.
+When connecting to Microsoft Fabric, the Browser Based Authorization Code authentication workflow is the supported flow.
 
 
 
-## Licensing and cost
-
-ArcGIS GeoAnalytics for Microsoft Fabric is free to use during the public preview, with no license required.
 
 
 
-## Authentication
 
-The ArcGIS GeoAnalytics library is currently available only in [Fabric Runtime 1.3](runtime-1-3.md). During the public preview, no authentication is required. The library is preinstalled and preconfigured, so you can import the modules and start using it.
 
-# [Python](#tab/python)
+### [Python](#tab/python)
 
 ```python
 import geoanalytics fabric
