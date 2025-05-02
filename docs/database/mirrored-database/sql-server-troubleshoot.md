@@ -51,25 +51,7 @@ If you're experiencing mirroring problems, perform the following database level 
 
     The key columns to look for here are the `table_name` and `state`. Any value besides `4` indicates a potential problem.
 
-1. If replication is still not working, verify that the correct SAMI object has permissions.
-    1. In the Fabric portal, select the "..." ellipses option on the mirrored database item.
-    1. Select the **Manage Permissions** option.
-    1. Confirm that the SQL Server instance name shows with Read, Write permissions.
-    1. Ensure that AppId that shows up matches the ID of the SAMI of your SQL Server logical server.
-
 1. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
-
-## SPN permissions
-
-Do not remove SQL Server service principal name (SPN) contributor permissions on Fabric mirrored database item.
-
-If you accidentally remove the SPN permission, Mirroring SQL Server will not function as expected. No new data can be mirrored from the source database.
-
-If you remove SQL Server SPN permissions or permissions are not set up correctly, use the following steps.
-
-1. Add the SPN as a user by selecting the `...` ellipses option on the mirrored database item.
-1. Select the **Manage Permissions** option.
-1. Enter the name of the SQL Server logical server name. Provide **Read** and **Write** permissions.
 
 ## Related content
 
