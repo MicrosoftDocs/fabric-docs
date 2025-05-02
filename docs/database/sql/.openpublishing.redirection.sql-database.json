@@ -1,0 +1,9 @@
+{
+    "redirections": [
+      {
+        "source_path_from_root": "/docs/database/sql/copilot.md",
+        "redirect_url": "/fabric/database/sql/copilot-overview",
+        "redirect_document_id": true
+      }
+    ]
+}
