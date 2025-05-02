@@ -13,6 +13,8 @@ ms.custom:
 
 This guide helps you establish data security in your mirrored SQL Server in Microsoft Fabric.
 
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
+
 ## Security requirements
 
 1. Check the networking requirements to access your SQL Server instance data source. [Create a virtual network data gateway](/data-integration/gateway/service-gateway-install) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install). The Azure Virtual Network or the gateway machine's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
