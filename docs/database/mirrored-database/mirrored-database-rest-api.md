@@ -177,6 +177,29 @@ If you want to replicate selective tables instead of all the tables in the speci
 }
 ```
 
+### JSON definition example of SQL Server mirrored database
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "????",
+            "typeProperties": {
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "database": "xxxx"
+            }
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta"
+            }
+        }
+    }
+}
+```
+
 ### JSON definition example of open mirroring
 
 ```json
