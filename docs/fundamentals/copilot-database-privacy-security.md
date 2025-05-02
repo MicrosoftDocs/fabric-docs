@@ -14,11 +14,11 @@ ms.collection:
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../database/includes/applies-to-version/fabric-sqldb.md)]
 
-In this article, learn how [Copilot in Fabric in SQL database](../database/copilot/copilot.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For more information on Copilot in Fabric, see [Privacy, security, and responsible use of Copilot in Fabric](copilot-privacy-security.md).
+In this article, learn how [Copilot in Fabric in SQL database](../database/sql/copilot-sql-database.md) works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly. For more information on Copilot in Fabric, see [Privacy, security, and responsible use of Copilot in Fabric](copilot-privacy-security.md).
 
 With Copilot in Fabric SQL databases and other generative AI features, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in your database and other workloads.
 
-For limitations, see [Limitations of Copilot in Fabric in SQL database](../database/copilot/copilot.md#limitations).
+For limitations, see [Limitations of Copilot in Fabric in SQL database](../database/sql/copilot-sql-database.md#limitations).
 
 ## Data use of Copilot in Fabric in SQL database
 
@@ -46,4 +46,4 @@ The team also invested in additional harm mitigation, including technological ap
 ## Related content
 
 - [Privacy, security, and responsible use for Copilot in Microsoft Fabric](copilot-privacy-security.md)
-- [Copilot in Fabric in SQL database in Fabric](../database/copilot/copilot.md)
+- [Copilot in Fabric in SQL database in Fabric](../database/sql/copilot-sql-database.md)
