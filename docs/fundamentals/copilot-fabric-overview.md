@@ -166,7 +166,7 @@ SQL Queries in Data Warehouse
 SQL queries in SQL database
    :::column-end:::
    :::column span="1":::
-    - [Generate SQL queries (preview)][How to use the Copilot chat pane Fabric in the SQL database workload (Preview)](../database/sql/copilot-chat-pane.md).
+    - [Generate SQL queries (preview)](../database/sql/copilot-chat-pane.md).
     - [Suggest SQL code completions (preview)](../database/sql/copilot-code-completion.md).
     - [Fix code in SQL queries with quick actions (preview)](../database/sql/copilot-quick-actions.md).
     - [Explain code in SQL queries with quick actions (preview)](../database/sql/copilot-quick-actions.md).
