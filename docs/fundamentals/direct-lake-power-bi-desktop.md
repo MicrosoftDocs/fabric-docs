@@ -50,7 +50,7 @@ Semantic models with Direct Lake tables created in Power BI Desktop use **Direct
 
 To add Direct Lake tables from other Fabric artifacts, take the following steps.
 
-1.	While live editing a Direct Lake on OneLake semantic model in Power BI Desktop, open the **OneLake ** and select another **Lakehouse** or **Warehouse**
+1.	While live editing a Direct Lake on OneLake semantic model in Power BI Desktop, open the **OneLake catalog** and select another **Lakehouse** or **Warehouse**
 2.	In the dialog, select the tables you want to include then press **OK**
 
 The tables are added to your semantic model and you can continue live editing 
@@ -65,7 +65,7 @@ To edit a semantic model with Direct Lake tables later, take the following steps
 Now you are live editing the semantic model.
 
 > [!NOTE]
-> Non-Direct Lake storage modes are not yet supported. Selecting a semantic model with tables in other storage modes than Direct Lake results in an error.
+> Semantic models with Direct Lake storage modes are supported. Selecting a semantic model with tables in other storage modes results in an error.
 
 Alternatively, if you have [exported the semantic model to a Power BI Project (PBIP)](direct-lake-power-bi-project.md), take the following steps.
 
@@ -92,7 +92,7 @@ Now you can create the report. Save the PBIX file and publish to the Fabric work
 The table view is also removed when live editing, unless you have a [calculation group](https://aka.ms/calculationgroups) or [calculated table](/power-bi/transform-model/desktop-calculated-tables) in the semantic model. These derived tables use import storage mode. Calculated tables without direct references to Direct Lake table columns are allowed. A common example is using [INFO.VIEW DAX functions](/dax/info-functions-dax#infoview-dax-functions) to self-document the semantic model. 
 
 > [!NOTE]
-> Import tables from any data source may be added to the semantic model with Direct Lake on OneLake tables using XMLA but live editing Power BI Desktop is not yet supported in for this scenario.
+> Import tables from any data source may be added to the semantic model with Direct Lake on OneLake tables using XMLA but live editing Power BI Desktop is not yet supported for this scenario.
 
 ### Saving
 
@@ -102,7 +102,7 @@ As you make changes to your semantic model, your changes are automatically saved
 
 There is no PBIX file created but if you would like a local copy of the metadata, you can [export to a Power BI Project (PBIP)](direct-lake-power-bi-project.md) and continue live editing with a **Save** button for the local metadata. You can utilize local Git techniques to undo changes. To export to Power BI Project (PBIP), go to **File** then **Export**, and choose **Power BI Project (PBIP)**.
 
-If two or more users are live editing the same semantic model and a conflict occurs, Power BI Desktop alerts one of the users, and syncs the model to the latest version. Any changes you were trying to make will need to be performed again after the refresh. This behavior is the same behavior as [editing data models in the Power BI service](/power-bi/transform-model/service-edit-data-models), also called web modeling.
+If two or more users are live editing the same semantic model and a conflict occurs, Power BI Desktop alerts one of the users, and syncs the model to the latest version. Any changes you were trying to make will need to be performed again after the model sync. This behavior is the same behavior as [editing data models in the Power BI service](/power-bi/transform-model/service-edit-data-models), also called web modeling.
 
 ### Refresh
 
