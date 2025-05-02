@@ -58,7 +58,7 @@ In addition to the [SQL query editor](../../data-warehouse/sql-query-editor.md),
     - Fabric Mirroring for SQL Server 2025 is currently not supported in SQL Server on Linux.
 
 
-## Mirroring SQL Server behind firewall (Preview)
+## Mirroring SQL Server behind firewall
 
 Set up a [virtual network data gateway](/data-integration/vnet/overview) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. Learn more from [the mirrored SQL Server tutorial](sql-server-tutorial.md) and [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](sql-server-security.md).
 

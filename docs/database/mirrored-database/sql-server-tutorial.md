@@ -57,14 +57,14 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION, VIEW DATABASE SECURITY STATE TO [fabric_user];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION, VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE TO [fabric_user];
     ```
     
     Or, for a Microsoft Entra authenticated login (recommended):
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION, VIEW DATABASE SECURITY STATE TO [bob@contoso.com];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION, VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE TO [bob@contoso.com];
     ```
 
 ## Connect to your SQL Server
@@ -75,16 +75,19 @@ The instructions and requirements for configuring a Fabric Mirrored Database fro
 
 ### Connect server to Azure Arc
 
+> [!IMPORTANT]
+> For SQL Server instances running in an Always On availability group or failover cluster instance configuration, the steps in this section must to be implemented on all nodes.
+
 To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Server 2025 instance.
 
 1. Connect the server to Azure Arc. Follow the steps in [Quickstart - Connect hybrid machine with Azure Arc-enabled servers](/azure/azure-arc/servers/learn/quick-enable-hybrid-vm).
 
 1. Follow these steps to enable an Arc managed identity for SQL Server:
 
-    1. Grant **Read & execute** operating system permissions on the folder `C:\ProgramData\AzureConnectedMachineAgent\Tokens\` to the SQL Server 2025 instance service account. By default, the service account is `NT Service\MSSQLSERVER`, or for named instances, `NT Service\MSSQL$<instancename>`). 
+    1. Grant **Read & execute** operating system permissions on the folder `C:\ProgramData\AzureConnectedMachineAgent\Tokens\` to the SQL Server 2025 instance service account. By default, the service account is `NT Service\MSSQLSERVER`, or for named instances, `NT Service\MSSQL$<instancename>`. 
 
        > [!NOTE]  
-       > If you don't see the folder `C:\ProgramData`, set the Windows Explorer folder options to **Show hidden files and folders** or show **Hidden items**.
+       > If you don't see the folder `C:\ProgramData\`, set the Windows Explorer folder options to **Show hidden files and folders** or show **Hidden items**.
 
           :::image type="content" source="media/sql-server-tutorial/azure-connected-machine-agent-folder-permissions.png" alt-text="Screenshot from Windows Explorer, showing the steps to grant permissions to the c:\ProgramData\AzureConnectedMachineAgent\Tokens subfolder." lightbox="media/sql-server-tutorial/azure-connected-machine-agent-folder-permissions.png":::
 
@@ -114,6 +117,36 @@ To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Serv
 
    This should return 1 row with the correct `client_id` and `tenant_id`. `Identity_type` should be "System-assigned".
 
+### Add registry keys on the Windows Server of the SQL Server instance
+
+> [!CAUTION]  
+> This section contains steps that tell you how to modify the Windows registry. However, serious problems might occur if you modify the registry incorrectly. Therefore, make sure that you follow these steps carefully. For added protection, back up the registry before you modify it. Then, you can restore the registry if a problem occurs. For more information about how to back up and restore the registry, see [How to back up and restore the registry in Windows](/troubleshoot/windows-server/performance/windows-registry-advanced-users#back-up-the-registry).
+
+1. Open the Windows **Registry Editor**.
+
+   - For a default instance, look in the folder:
+
+      ```registry
+      HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL17.MSSQLSERVER\MSSQLServer\FederatedAuthentication
+      ```
+
+   - For a named instance, look in the folder:
+
+      ```registry
+      HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL17.Instancename\MSSQLServer\FederatedAuthentication
+      ```
+
+1. Create the `FederatedAuthentication` folder if not present.
+
+1. Add the following string keys:
+    - `ArcServerManagedIdentityClientId`, value of an empty string, with type string.
+    - `ArcServerSystemAssignedManagedIdentityClientId`, with the value of the Application ID of the Service Principal from previous steps.
+    - `ArcServerSystemAssignedManagedIdentityTenantID`, with the value of the Tenant ID of the Azure Arc Machine from previous steps.
+
+1. The SAMI of every node except the primary node needs to be granted permissions to the Fabric workspace.
+
+1. For SQL Server instances running in an Always On availability group or failover cluster instance configuration, the steps in this section must to be implemented on all nodes.
+
 ### Configure the on-premises data gateway
 
 Check your networking requirements for Fabric to access your SQL Server. You need to [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the on-premises gateway machine's network can [connect to the SQL Server instance](/troubleshoot/sql/database-engine/connect/resolve-connectivity-errors-overview). For more information, see [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](sql-server-security.md).
@@ -126,7 +159,8 @@ Check your networking requirements for Fabric to access your SQL Server. You nee
 
 ### Create a mirrored SQL Server
 
-1. Open the [Fabric portal](https://fabric.microsoft.com).
+<!-- 1. Open the [Fabric portal](https://fabric.microsoft.com).-->
+1. During the current preview, open the Fabric portal using this link: `https://<your_org_name>.powerbi.com/home?experience=power-bi&feature.dpe_madrid.mirrorSql2025=1`.
 1. Use an existing workspace, or create a new workspace.
 1. Navigate to the **Create** pane. Select the **Create** icon.  
 1. Scroll to select **Mirrored SQL Server database**. 
@@ -166,7 +200,8 @@ Check your networking requirements for Fabric to access your SQL Server. You nee
 
 ### Create a mirrored SQL Server
 
-1. Open the [Fabric portal](https://fabric.microsoft.com).
+<!-- 1. Open the [Fabric portal](https://fabric.microsoft.com).-->
+1. During the current preview, open the Fabric portal using this link: `https://<your_org_name>.powerbi.com/home?experience=power-bi&feature.dpe_madrid.mirrorSql2025=1`.
 1. Use an existing workspace, or create a new workspace.
 1. Navigate to the **Create** pane. Select the **Create** icon.  
 1. Scroll to select **Mirrored SQL Server database**. 
