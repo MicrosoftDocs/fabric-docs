@@ -12,14 +12,14 @@ LocalizationGroup: Admin
 ---
 # Direct Lake in web modeling (preview)
 
-**Open data model**, or web modeling, works with semantic models with Direct Lake tables. Direct Lake tables can be Direct Lake on SQL or Direct Lake on OneLake, which have different considerations when creating and editing in the web.
+**Open data model**, or web modeling, works with semantic models with Direct Lake tables. Direct Lake tables can be **Direct Lake on SQL** or **Direct Lake on OneLake**, which have different considerations when creating and editing in the web.
 
 | Scenario | Direct Lake on OneLake | Direct Lake on SQL |
 |:-----------|:------------|:  ------------|
-| Creating       | Not yet available       | Select New semantic model from Lakehouse, SQL analytics endpoints, or Warehouses.       |
-| Editing       | Select Open data model from the semantic model details page or context menu. There are some limitations during public preview | Select Open data model from the semantic model details page or context menu.        |
+| Creating in the web       | Not yet available       | Select **New semantic model** from Lakehouse, SQL analytics endpoints, or Warehouses.       |
+| Editing in the web       | Select **Open data model** from the semantic model details page or context menu. There are some limitations during public preview | Select **Open data model** from the semantic model details page or context menu.        |
 
-**Edit in Desktop** is available when web modeling to continue live editing any Direct Lake semantic model in Power BI Desktop. 
+**Edit in Desktop** is available when web modeling to continue [live editing any Direct Lake semantic model in Power BI Desktop](direct-lake-power-bi-desktop.md). 
 
 ## Create a semantic model in Direct Lake mode
 
