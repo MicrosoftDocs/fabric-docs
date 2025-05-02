@@ -3,11 +3,10 @@ title: "Fabric SQL database source control integration"
 description: Learn how to work with your SQL database with Fabric's git integration source control.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: antho, sukkaur
-ms.date: 10/07/2024
+ms.reviewer: antho, sukkaur, drskwier
+ms.date: 02/13/2025
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.search.form:
 ---
 # SQL database source control integration in Microsoft Fabric
@@ -36,9 +35,13 @@ This article presents a series of useful scenarios that can be used individually
 - [Create a branch workspace](#create-a-branch-workspace)
 - [Merge changes from one branch into another](#merge-changes-from-one-branch-into-another)
 
+The scenarios in this article are covered in an episode of Data Exposed. Watch the video for an overview of the source control integration in Fabric:
+
+> [!VIDEO https://learn-video.azurefd.net/vod/player?show=data-exposed&ep=introduction-to-the-source-control-built-in-with-sql-database-in-fabric-data-exposed]
+
 ## Prerequisites
 
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - Make sure that you [Enable SQL database in Fabric tenant settings](enable.md).
 - Make sure that you [Enable Git integration tenant settings](../../admin/git-integration-admin-settings.md).
 - Create a new workspace or use an existing Fabric workspace.
@@ -92,6 +95,15 @@ In this scenario, you'll be creating database objects as code in the SQL project
 
 > [!NOTE]
 > When making changes to the local SQL project, if there is a syntax error or use of unsupported features in Fabric, the database update will fail. You must manually revert the change in source control before you can continue.
+
+Updating a SQL database in Fabric from source control combines a SQL project build and SqlPackage publish operation. The SQL project build validates the syntax of the SQL files and generates a `.dacpac` file. The SqlPackage publish operation determined the changes necessary to update the database to match the `.dacpac` file. Because of the streamlined nature of the Fabric interface, the following options are applied to the SqlPackage publish operation:
+
+- `/p:ScriptDatabaseOptions = false`
+- `/p:DoNotAlterReplicatedObjects = false`
+- `/p:IncludeTransactionalScripts = true`
+- `/p:GenerateSmartDefaults = true`
+
+The source controlled SQL project can also be cloned to your local machine for editing in VS Code, Visual Studio, or other SQL project tools. The SQL project should be built locally to validate changes before committing them to source control.
 
 ## Create a branch workspace
 

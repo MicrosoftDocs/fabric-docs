@@ -49,7 +49,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: About tenant settings
-            url: tenant-settings-index.md
+            url: tenant-settings-index.md      
       - linkListType: how-to-guide
         links:
           - text: Set up git integration
@@ -63,7 +63,7 @@ landingContent:
           - text: Enable content certification
             url: service-admin-setup-certification.md
           - text: Enable service principal authentication
-            url: metadata-scanning-enable-read-only-apis.md
+            url: enable-service-principal-admin-apis.md
           - text: Configure Multi-Geo support
             url: service-admin-premium-multi-geo.md
 

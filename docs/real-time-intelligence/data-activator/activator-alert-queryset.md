@@ -1,20 +1,20 @@
 ---
 title: Create Activator alerts from a KQL Queryset
 description: Learn how to create a Fabric Activator alert from the results of a KQL query in a KQL Queryset in Real-Time Intelligence.
-author: yaelschuster
-ms.author: yaschust
+author: shsagir
+ms.author: shsagir
 ms.reviewer: guregini
 ms.topic: how-to
-ms.date: 11/08/2024
+ms.date: 11/27/2024
 ms.search.form: Activator KQL Queryset Onramp
 # CustomerIntent: As a customer, I want to learn how to create Activator alerts from a KQL Queryset so that I can trigger notifications when conditions are met on data in the query result.
 ---
-# Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a KQL Queryset in Real-Time Intelligence
+# Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a KQL Queryset 
 
 This article explains how to create Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a KQL Queryset. For more information, see [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-introduction.md).
 You can use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] on a KQL Queryset to trigger notifications in two modes: 
 - when a scheduled KQL query returns results
-- when a scheduled KQL query returns results that contain a visualization meets a defined set of conditions. 
+- when a scheduled KQL query returns results that contain a visualization that meets a defined set of conditions. 
 
 Send alert notifications either to yourself, or to others in your organization. Notifications can be sent by email or Microsoft Teams message.
 
@@ -23,18 +23,18 @@ Send alert notifications either to yourself, or to others in your organization. 
 Here are some ways you can use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts with KQL queries:
 
 * Suppose you have a KQL database and are storing application logs.
-    * You receive an alert when any records from the last 5 minutes contain the string `authorization error` in the table’s *message* column.
+    * You receive an alert when any records from the last five minutes contain the string `authorization error` in the table’s *message* column.
 * In a different scenario, you have streaming data for available bicycles in different neighborhoods. A KQL query is created to render a pie chart for the number of available bicycles per neighborhood.
     * You receive an alert when the number of available bicycles in any neighborhood falls below an acceptable number.
 
 ## Prerequisites
 
-* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
+* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * A [KQL database](../../real-time-intelligence/create-database.md) with data
 * A [KQL Queryset](../../real-time-intelligence/create-query-set.md) connected to the KQL database. For more information, see [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md).
 
 > [!IMPORTANT]
-> Only queries against KQL databases within an Eventhouse are supported. If your KQL queryset is connected to an [external Azure Data Explorer cluster](../kusto-query-set.md#select-a-database), creating an alert is not supported. 
+> Only queries against KQL databases within an Eventhouse are supported. If your KQL queryset is connected to an [external Azure Data Explorer cluster](../kusto-query-set.md#select-a-data-source), creating an alert is not supported. 
 
 The following steps show you how to create an alert on a query that creates a visualization, or on a query that doesn't create a visualization.
 
@@ -47,7 +47,8 @@ Choose the tab that corresponds to your desired workflow.
 > [!IMPORTANT]
 > [Timechart](/kusto/query/visualization-timechart?view=microsoft-fabric&preserve-view=true) visualizations are not supported in this scenario. They are supported in [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alerts from a Real-Time Dashboard](activator-get-data-real-time-dashboard.md).
 
-1. Browse to your KQL Queryset.
+1. Open the workspace that contains your KQL Queryset.
+1. Browse to your KQL Queryset and select it to open.
 1. Run a query that returns a visualization.
 1. Once the query returns results, select **Set Alert** on the top ribbon.
 
@@ -60,11 +61,11 @@ Choose the tab that corresponds to your desired workflow.
     | render columnchart
     ```
 
-    The query returns a column chart that shows the number of bikes available in each neighborhood, and this chart is used to set alert conditions.
+    The query returns a column chart that shows the number of bikes available in each neighborhood. Use this chart to set alert conditions.
 
 ## Define alert conditions
 
-1. Set a time frequency for how often the query is run. The default is 5 minutes.
+1. Set a time frequency for how often the query is run. The default is five minutes.
 1. In **Conditions**, specify your alert conditions as follows:
     * If your visualization has no dimensions, you can select the **On each event when** condition to monitor changes in the data stream by choosing a specific field to monitor.
     * If your visualization includes dimensions, you can select the **On each event grouped by** condition to monitor changes in the data stream by selecting a field for grouping, which divides the data into distinct groups
@@ -75,13 +76,14 @@ Choose the tab that corresponds to your desired workflow.
 1. In **Save location**, specify where to save your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alert. Choose an existing workspace, and save either in an existing activator or a new one.
 1. Select **Create** to create your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule.
 
-:::image type="content" source="media/activator-alert-queryset/conditions-with-visualization.png" alt-text="Screenshot of the set alert pane in the KQL queryset for creating an Activator alert.":::
+    :::image type="content" source="media/activator-alert-queryset/conditions-with-visualization.png" alt-text="Screenshot of the set alert pane in the KQL queryset for creating an Activator alert.":::
 
 ## [Without visualization](#tab/no-visualization)
 
 ## Set alert on a KQL Queryset
 
-1. Browse to your KQL Queryset.
+1. Open the workspace that contains your KQL Queryset.
+1. Browse to your KQL Queryset and select it to open.
 1. Run a query. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] checks the results of this query according to the time frequency set in a later step, and sends an alert for each record returned in the result set. For example, if a scheduled query returns five records, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] sends five alerts.
 1. Once the query completes running, select **Set Alert** on the top ribbon.
 
@@ -119,7 +121,7 @@ Next, define your alert conditions. In the **Set Alert** pane that appears, take
 1. In **Save location**, specify where to save your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] alert. Choose an existing workspace, and save either in an existing activator or a new one.
 1. Select **Create** to create your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule.
 
-:::image type="content" source="media/activator-alert-queryset/conditions-without-visualization.png" alt-text="Screenshot of conditions being set on a query that doesn't include a visualization.":::
+:::image type="content" source="media/activator-alert-queryset/conditions-without-visualizations.png" alt-text="Screenshot of conditions being set on a query that doesn't include a visualization.":::
 
 ---
 

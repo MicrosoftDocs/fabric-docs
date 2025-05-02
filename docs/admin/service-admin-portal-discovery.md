@@ -7,7 +7,6 @@ ms.reviewer: ''
 
 ms.custom:
   - tenant-setting
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration
@@ -33,7 +32,7 @@ Allow users in the organization who can [certify content](/power-bi/collaborate-
 
 Allow users to find and request access to content they don't have access to if it was made discoverable by its owners.
 
-To learn more, see [Find recommended items](../get-started/onelake-data-hub.md#find-recommended-items).
+To learn more, see [Find recommended items](../governance/onelake-catalog-overview.md).
 
 ## Related content
 

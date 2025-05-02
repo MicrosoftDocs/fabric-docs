@@ -5,7 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/19/2024
 #customer intent: As a data owner, I want to share data in my tenant's OneLake storage with an user in another Fabric tenant.
 ---
@@ -18,7 +17,7 @@ Before sharing data with a user in another tenant via external data sharing, be 
 
 ## Prerequisites
 
-* A lakehouse with at least one folder or table.
+* A [supported Fabric item](./external-data-sharing-overview.md#supported-fabric-item-types) with at least one folder or table.
 * Standard Fabric read and reshare permissions on the item you're sharing.
 
 ## Create an external data share
@@ -29,9 +28,9 @@ Before sharing data with a user in another tenant via external data sharing, be 
 
     :::image type="content" source="./media/external-data-sharing-create/external-data-share-option.png" alt-text="Screenshot showing the external data share option in an item's options menu.":::
 
-1. In the **New external data share** dialog that opens, choose the folder or table to be shared and select **Save and continue**.
+1. In the **New external data share** dialog that opens, choose the folders and/or tables to be shared and select **Save and continue**.
 
-    :::image type="content" source="./media/external-data-sharing-create/new-external-data-share-dialog.png" alt-text="Screenshot showing the New external data share dialog.":::
+    :::image type="content" source="./media/external-data-sharing-create/new-external-data-share-dialog.png" alt-text="Screenshot showing the New external data share dialog." lightbox="./media/external-data-sharing-create/new-external-data-share-dialog.png":::
  
 1. Enter the email address of the user you want to share the data with and select **Send**. An email will be sent to the user inviting them to accept the invitation to share. Alternatively, you can select **Copy link** and then paste it into an email that you yourself compose.
 

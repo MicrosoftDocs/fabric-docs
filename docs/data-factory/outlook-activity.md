@@ -2,10 +2,10 @@
 title: Office 365 Outlook activity (Preview)
 description: Learn how to add an Office 365 Outlook activity to a pipeline and use it to send a Teams message.
 ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: how-to
-ms.date: 12/07/2023
+ms.date: 12/18/2024
 ---
 
 # Use the Office 365 Outlook activity to send an email with Outlook (Preview)
@@ -19,7 +19,7 @@ The Office 365 Outlook activity in Data Factory for Microsoft Fabric allows you 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add an Office 365 Outlook activity to a pipeline with UI

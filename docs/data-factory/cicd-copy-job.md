@@ -8,9 +8,9 @@ ms.topic: how-to
 ms.date: 11/05/2024
 ---
 
-# CI/CD for Copy job (preview) in Data Factory in Microsoft Fabric
+# CI/CD for Copy job in Data Factory in Microsoft Fabric
 
-To build successful data analytics projects with Copy job, it is very important to have source control, continuous integration, continuous deployment, and collaborative development environments. 
+To build successful data analytics projects with Copy job, it is very important to have source control, continuous integration, continuous deployment, and collaborative development environments.
 
 In Fabric, there are two features we currently support in collaboration with the Application Lifecycle Management (ALM) team: Git integration and deployment pipelines. These features allow users to import/export workspace resources with individual updates.
 
@@ -27,8 +27,8 @@ To access Git with your Microsoft Fabric workspace, ensure the following prerequ
 - Either a [Power BI Premium license](/power-bi/enterprise/service-premium-what-is) or [Fabric capacity](../enterprise/licenses.md#capacity).
 - Enabled the following tenant switches from the admin portal:
   - [Users can create Fabric items](../admin/fabric-switch.md)
-  - [Users can synchronize workspace items with their Git repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-their-git-repositories-preview)
-  - (For GitHub users only) [Users can synchronize workspace items with GitHub repositories](../admin/git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories-preview)
+  - [Users can synchronize workspace items with their Git repositories](../admin/git-integration-admin-settings.md#users-can-synchronize-workspace-items-with-their-git-repositories)
+  - (For GitHub users only) [Users can synchronize workspace items with GitHub repositories](../admin/git-integration-admin-settings.md#users-can-sync-workspace-items-with-github-repositories)
 - Either an Azure DevOps organization or GitHub account.
   - For an Azure DevOps organization:
     - An active Azure account registered to the same user that is using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
@@ -100,7 +100,7 @@ Take the following steps to use Git deployment pipelines with your Fabric worksp
 Before you get started, be sure to set up the following prerequisites:
 
 - An active [Microsoft Fabric subscription](../enterprise/licenses.md).
-- Admin access of a [Fabric workspace](../get-started/create-workspaces.md).
+- Admin access of a [Fabric workspace](../fundamentals/create-workspaces.md).
 
 ### Step 1: Create a deployment pipeline
 

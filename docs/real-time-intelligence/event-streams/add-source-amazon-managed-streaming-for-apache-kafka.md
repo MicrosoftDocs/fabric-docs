@@ -7,7 +7,7 @@ author: alexlzx
 ms.topic: how-to
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
-ms.custom: references_regions, ignite-2024
+ms.custom: references_regions
 #Customer intent: I want to learn how to bring events from an Amazon Managed Streaming for Apache Kafka source into Microsoft Fabric.
 ---
 

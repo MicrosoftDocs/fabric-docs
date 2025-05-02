@@ -1,19 +1,15 @@
 ---
-title: Connectivity to data warehousing
-description: Follow steps to connect SSMS to data warehousing in your Microsoft Fabric workspace.
+title: Warehouse Connectivity
+description: Follow steps to connect SSMS to a warehouse item in your Microsoft Fabric workspace.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: salilkanade, stwynant, jacinda-eng
-ms.date: 10/10/2024
+ms.reviewer: salilkanade, dhsundar, jacinda-eng
+ms.date: 02/24/2025
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ---
 
-# Connectivity to data warehousing in Microsoft Fabric
+# Warehouse connectivity in Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -78,7 +74,7 @@ A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-s
 1. Choose entities.
 1. Load Data - choose a data connectivity mode: [import or DirectQuery](/power-bi/connect-data/desktop-directquery-about).
 
-For more information, see [Create reports in [!INCLUDE [product-name](../includes/product-name.md)]](create-reports.md).
+For more information, see [Create reports on data warehousing in Microsoft Fabric](create-reports.md).
 
 ## Connect using OLE DB
 
@@ -137,9 +133,12 @@ The `dbt` data platform-specific adapter plugins allow users to connect to the d
 
 Both adapters support Microsoft Entra ID authentication and allow developers to use `az cli authentication`. However, SQL authentication is not supported for `dbt-fabric`
 
-The DBT Fabric DW Adapter uses the `pyodbc` library to establish connectivity with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The `pyodbc` library is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/). The `pyodbc` library directly passes connection string to the database driver through SQLDriverConnect in the `msodbc` connection structure to [!INCLUDE [product-name](../includes/product-name.md)] using a TDS (Tabular Data Streaming) proxy service.
+The `dbt` Fabric DW Adapter uses the `pyodbc` library to establish connectivity with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The `pyodbc` library is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/). The `pyodbc` library directly passes connection string to the database driver through SQLDriverConnect in the `msodbc` connection structure to [!INCLUDE [product-name](../includes/product-name.md)] using a TDS (Tabular Data Streaming) proxy service.
 
-For more information, see the [Microsoft Fabric Data Warehouse dbt adapter setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [Microsoft Fabric Data Warehouse dbt adapter configuration](https://docs.getdbt.com/reference/resource-configs/fabric-configs).
+For more information, see the following resources:
+- [Connect Microsoft Fabric](https://docs.getdbt.com/docs/cloud/connect-data-platform/connect-microsoft-fabric) to connect in dbt Cloud.
+- [Microsoft Fabric Data Warehouse dbt adapter setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) to connect with dbt Core.
+- [Microsoft Fabric Data Warehouse dbt adapter configuration](https://docs.getdbt.com/reference/resource-configs/fabric-configs) for additional configuration details.
 
 ## Connectivity by other means
 
@@ -164,7 +163,6 @@ We recommend adding retries in your applications/ETL jobs to build resiliency. F
 - Multiple Active Result Sets (MARS) is unsupported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
 - If you receive this error "Couldn't complete the operation because we reached a system limit", it's due to the system token size reaching its limit. This issue can be caused if the workspace has too many warehouses/SQL analytics endpoints, if the user is part of too many Microsoft Entra groups, or a combination of the two. We recommend having 40 or fewer warehouses and SQL analytics endpoint per workspace to prevent this error. If the issue persists, contact support.
 - If you receive error code 24804 with the message "Couldn't complete the operation due to a system update. Close out this connection, sign in again, and retry the operation" or error code 6005 with the message "SHUTDOWN is in progress. Execution fail against sql server. Please contact SQL Server team if you need further support.", it's due to temporary connection loss, likely because of a system deployment or reconfiguration. To resolve this issue, sign in again and retry. To learn how to build resiliency and retries in your application, see [Best Practices](#best-practices).
-- If you receive the error code 18456: "Execution failed against SQL server, please contact SQL server team if you need further support.", refer to [Known issue - Data warehouse connection or query execution fails](../get-started/known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md).
 - Linked server connections from SQL Server are not supported.
 
 ## Related content
@@ -172,4 +170,4 @@ We recommend adding retries in your applications/ETL jobs to build resiliency. F
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)
 - [Add Fabric URLs to your allowlist](../security/fabric-allow-list-urls.md)
-- [Azure IP ranges and service tags for public clouds](https://www.microsoft.com/en-us/download/details.aspx?id=56519)
+- [Azure IP ranges and service tags for public clouds](https://www.microsoft.com/download/details.aspx?id=56519)

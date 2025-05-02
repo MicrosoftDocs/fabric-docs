@@ -6,8 +6,6 @@ ms.author: harmeetgill
 author: gillharmeet
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 09/27/2023
 #customer intent: As a data analyst, I want to learn how to connect to Azure Data Lake Storage (ADLS) with a shortcut to a Delta table so that I can transform ADLS data using an Azure Databricks notebook and build Power BI reports for data analysis.
 ---

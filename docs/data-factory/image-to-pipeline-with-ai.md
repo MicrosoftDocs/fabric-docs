@@ -28,7 +28,7 @@ Before you create the solution, ensure the following prerequisites are set up in
 
 ## Step 1: Upload your image to a Lakehouse
 
-Before you can analyze the image, you need to upload it to your Lakehouse. Sign in to your Microsoft Fabric account and navigate to your workspace. Select **+ New** and create a new Lakehouse.
+Before you can analyze the image, you need to upload it to your Lakehouse. Sign in to your Microsoft Fabric account and navigate to your workspace. Select **+ New item** and create a new Lakehouse.
 
 :::image type="content" source="media/image-to-pipeline-with-ai/create-new-lakehouse.png" alt-text="Screenshot showing where to create a new Lakehouse.":::
 

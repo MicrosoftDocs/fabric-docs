@@ -30,15 +30,15 @@ In this article, you learn how to:
 
 ## Create a T-SQL notebook
 
-To get started with this experience, you can create a T-SQL notebook in the following two ways:
+To get started with this experience, you can create a T-SQL notebook in the following ways:
 
-1. Create a T-SQL notebook from the Data Warehouse homepage: Navigate to the data warehouse experience, and choose **Notebook**.
+1. Create a T-SQL notebook from the Fabric workspace: select **New item**, then choose **Notebook** from the panel that opens.
 
-   :::image type="content" source="media\tsql-notebook\create-tsql-notebook-homepage.png" alt-text="Screenshot of creating t-sql notebook entry in DW homepage.":::
+   :::image type="content" source="media\tsql-notebook\create-tsql-notebook-homepage.png" alt-text="Screenshot of creating a new notebook from within a workspace.":::
 
-2. Create a T-SQL notebook from an existing warehouse editor:  Navigate to an existing warehouse, from the top navigation ribbon, select **New SQL query** and then **New T-SQL query notebook**
+2. Create a T-SQL notebook from an existing warehouse editor: navigate to an existing warehouse and, from the top navigation ribbon, select **New SQL query**, then **New T-SQL query notebook**.
 
-  :::image type="content" source="media\tsql-notebook\create-tsql-notebook-from-editor.png" alt-text="Screenshot of open notebook from DW SQL editor.":::
+   :::image type="content" source="media\tsql-notebook\create-tsql-notebook-from-editor.png" alt-text="Screenshot of open notebook from DW SQL editor.":::
 
 Once the notebook is created, T-SQL is set as the default language. You can add data warehouse or SQL analytics endpoints from the current workspace into your notebook.
 
@@ -46,7 +46,7 @@ Once the notebook is created, T-SQL is set as the default language. You can add 
 
 To add a Data Warehouse or SQL analytics endpoint into a notebook, from the notebook editor, select **+ Data sources** button and select **Warehouses**. From the **data-hub** panel, select the data warehouse or SQL analytics endpoint you want to connect to.
 
-:::image type="content" source="media\tsql-notebook\add-warehouse.png" alt-text="Screenshot of adding data warehouse or sql-endpoint into the notebook.":::
+:::image type="content" source="media\tsql-notebook\add-warehouse.png" alt-text="Screenshot of adding data warehouse or sql-endpoint into the notebook." lightbox="media\tsql-notebook\add-warehouse.png":::
 
 ### Set a primary warehouse
 
@@ -133,13 +133,13 @@ This dialog appears when you run all the code cells by clicking the **Run all** 
 - The **Recent Run** feature isn't yet supported in T-SQL notebook. You need to use the current data warehouse monitoring feature to check the execution history of the T-SQL notebook. See [Monitor Data Warehouse](../data-warehouse/monitoring-overview.md) article for more details.
 - The monitor URL inside the pipeline execution isn't yet supported in the T-SQL notebook.
 - The snapshot feature isn't yet supported in the T-SQL notebook.
-- Git and Deployment pipline support isn't yet supported in the T-SQL notebook.
+- Git and Deployment pipeline support isn't yet supported in the T-SQL notebook.
 
 
 ## Related content
 
 For more information about Fabric notebooks, see the following articles.
 
-- [What is data warehousing in Microsoft Fabric](../data-warehouse/data-warehousing.md)
+- [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
 - Questions? Try asking the [Fabric Community](https://community.fabric.microsoft.com/).
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).

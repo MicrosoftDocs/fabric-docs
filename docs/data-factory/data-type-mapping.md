@@ -5,8 +5,6 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 07/18/2024
 ---
 
@@ -26,7 +24,7 @@ See the following table for the setting details.
 |---------|---------|
 |**Allow data truncation** |Allow data truncation when converting source data to destination with different type during copy. For example, from decimal to integer, from DatetimeOffset to Datetime.  |
 |**Treat boolean as number** | Treat boolean as number. For example, treat true as 1. |
-|**Date format** |Format string when converting between dates and strings, for example "yyyy-MM-dd". For more information, see [Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings).<br><br>The date column can be read as date type for:<br>&nbsp;• [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)<br>&nbsp;• [Azure SQL Database](connector-azure-sql-database-copy-activity.md)<br>&nbsp;• [Azure SQL Managed Instance](connector-azure-sql-database-managed-instance-copy-activity.md)<br>&nbsp;• [Azure Synapse Analytics](connector-azure-synapse-analytics-copy-activity.md)<br>&nbsp;• [Delimited text format](format-delimited-text.md)<br>&nbsp;• [Lakehouse Table](connector-lakehouse-copy-activity.md)<br>&nbsp;• [Parquet format](format-parquet.md)<br>&nbsp;• [SQL server](connector-sql-server-copy-activity.md)|
+|**Date format** |Format string when converting between dates and strings, for example "yyyy-MM-dd". For more information, see [Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings).<br><br>The date column can be read as date type for:<br>&nbsp;• [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)<br>&nbsp;• [Azure SQL Database](connector-azure-sql-database-copy-activity.md)<br>&nbsp;• [Azure SQL Managed Instance](connector-azure-sql-managed-instance-copy-activity.md)<br>&nbsp;• [Azure Synapse Analytics](connector-azure-synapse-analytics-copy-activity.md)<br>&nbsp;• [Delimited text format](format-delimited-text.md)<br>&nbsp;• [Lakehouse Table](connector-lakehouse-copy-activity.md)<br>&nbsp;• [Parquet format](format-parquet.md)<br>&nbsp;• [SQL server](connector-sql-server-copy-activity.md)|
 |**DateTime format** |Format string when converting between dates without time zone offset and strings. For example, "yyyy-MM-dd HH:mm:ss.fff". |
 |**DateTimeOffset format** | Format string when converting between dates with time zone offset and strings. For example, "yyyy-MM-dd HH:mm:ss.fff zzz".|
 |**TimeSpan format**| Format string when converting between time periods and strings. For example, "dd\.hh\:mm\:ss".|

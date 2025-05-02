@@ -9,7 +9,7 @@ ms.date: 04/30/2024
 
 # Product feedback
 
-Product [feedback](../get-started/feedback.md) allows users to give Microsoft feedback about Microsoft Fabric. Product feedback is enabled by default.
+Product [feedback](../fundamentals/feedback.md) allows users to give Microsoft feedback about Microsoft Fabric. Product feedback is enabled by default.
 
 ## Disable product feedback
 
@@ -26,4 +26,4 @@ To disable product feedback, follow the following steps:
 ## Related content
 
 * [Admin overview](microsoft-fabric-admin.md)
-* [Learn about Microsoft Fabric feedback](../get-started/feedback.md)
+* [Learn about Microsoft Fabric feedback](../fundamentals/feedback.md)

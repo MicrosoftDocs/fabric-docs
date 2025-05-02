@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: fabric
 ms.topic: conceptual
-ms.date: 10/08/2024
+ms.date: 01/27/2025
 ---
 
 # Add Fabric URLs to your allowlist
@@ -19,8 +19,8 @@ Fabric requires only TCP Port 443 to be opened for the listed endpoints.
 
 The tables in this article use the following conventions:
 
-* Wildcards (*) represent all levels under the root domain.
-* N/A is used when information isn't available.
+* Wildcard (*): Represents all levels under the root domain.
+* N/A: No specific port required.
 
 The **Endpoint** column lists domain names and links to external sites, which contain further endpoint information.
 
@@ -40,7 +40,7 @@ The **Endpoint** column lists domain names and links to external sites, which co
 ## OneLake
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|For OneLake access for DFS APIs (default Onelake endpoint) |*.onelake.dfs.fabric.microsoft.com|TCP 1443|
+|For OneLake access for DFS APIs (default Onelake endpoint) |*.onelake.dfs.fabric.microsoft.com|TCP 443|
 |Onelake endpoint for calling Blob APIs|*.onelake.blob.fabric.microsoft.com|TCP 443|
 |**Optional**: Regional Endpoints for DFS APIs |*\<region\>-onelake.dfs.fabric.microsoft.com|TCP 443|
 |**Optional**: Regional Endpoints for Blob APIs |*\<region\>-onelake.blob.fabric.microsoft.com|TCP 443|
@@ -99,12 +99,13 @@ The **Endpoint** column lists domain names and links to external sites, which co
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|**Required**: Datamart SQL |datamart.fabric.microsoft.com|TCP 1433|
-|**Required**: Datamart SQL |datamart.pbidedicated.microsoft.com|TCP 1433|
+|**Required**: Datamart SQL |*.datamart.fabric.microsoft.com|TCP 1433|
+|**Required**: Datamart SQL |*.datamart.pbidedicated.microsoft.com|TCP 1433|
 |**Required**: Datamart SQL |*.pbidedicated.microsoft.com|TCP 1433|
-|**Required**: Fabric DW SQL |datawarehouse.fabric.microsoft.com|TCP 1433|
-|**Required**: Fabric DW SQL |datawarehouse.pbidedicated.microsoft.com|TCP 1433|
+|**Required**: Fabric DW SQL |*.datawarehouse.fabric.microsoft.com|TCP 1433|
+|**Required**: Fabric DW SQL |*.datawarehouse.pbidedicated.microsoft.com|TCP 1433|
 |**Required**: Fabric DW SQL |*.pbidedicated.microsoft.com|TCP 1433|
+|**Required**: Fabric DW SQL |*.pbidedicated.windows.net |TCP 1433|
 
 ## Data Science
 

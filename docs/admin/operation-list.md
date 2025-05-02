@@ -4,8 +4,7 @@ description: This article provides a list of all the operations available in Fab
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.custom:
-ms.date: 11/03/2024
+ms.date: 03/02/2025
 ---
 
 # Operation list
@@ -76,9 +75,9 @@ The following operations are available in the audit logs.
 | Co Author Notebook | CoAuthorNotebook |   |
 | Commit Notebook | CommitNotebook |   |
 | Commit To Git | CommitToGit | Commit To Git is an artifact activity, which is generated when users commit artifact to Git.  |
-| Completed an artifact access request action in Power BI | ArtifactAccessRequest |   |
+| Completed an artifact access request action in Power BI | ArtifactAccessRequest | Tracks the notification sent to approvers when a request is created or denied.   |
 | Connect To Git | ConnectToGit | Connect To Git is a workspace activity, which is generated when users connect the workspace to Git.  |
-| Connected to Power BI semantic model from external app | ConnectFromExternalApplication | Not currently used  |
+| Connected to Power BI semantic model from external app | ConnectFromExternalApplication |   |
 | Connected to a Warehouse or SQL analytics endpoint from an external app | ConnectWarehouseAndSqlAnalyticsEndpointLakehouseFromExternalApp | Previously named *Connected to a warehouse or default warehouse from an external app* (Operation name: *ConnectWarehouseAndDefaultWarehouseFromExternalApp*)  |
 | Convert Personal Workspace To Workspace | ConvertPersonalWorkspaceToWorkspace |   |
 | Copied Power BI dashboard | CopyDashboard |   |
@@ -146,7 +145,7 @@ The following operations are available in the audit logs.
 | Created Power BI gateway | CreateGateway |   |
 | Created Power BI group | CreateGroup |   |
 | Created Power BI report | CreateReport |   |
-| Created Power BI semantic model from external app | CreateDatasetFromExternalApplication | Not currently used  |
+| Created Power BI semantic model from external app | CreateDatasetFromExternalApplication |   |
 | Created Power BI semantic model | CreateDataset |   |
 | Created a Power BI metric value | CreateGoalValue |   |
 | Created a Power BI scorecard metric | CreateGoal |   |
@@ -221,8 +220,8 @@ The following operations are available in the audit logs.
 | Delete workspace role | DeleteWorkspaceRoleViaAdminApi | Delete workspace role |
 | DeleteDelete Workspace Delegation settings | DeleteWorkspaceTenantSettingDelegation | Delete Workspace Delegation settings.  |
 | Deleted Power BI comment | DeleteComment |   |
-| Deleted Power BI dashboard | DeleteDashboard | Not currently used  |
-| Deleted Power BI dataflow | DeleteDataflow | Not currently used  |
+| Deleted Power BI dashboard | DeleteDashboard |   |
+| Deleted Power BI dataflow | DeleteDataflow |   |
 | Deleted Power BI email subscription | DeleteEmailSubscription |   |
 | Deleted Power BI folder access | DeleteFolderAccess | Not currently used  |
 | Deleted Power BI gateway cluster datasource | DeleteGatewayClusterDatasource |   |
@@ -233,7 +232,7 @@ The following operations are available in the audit logs.
 | Deleted Power BI note | DeleteNote |   |
 | Deleted Power BI report | DeleteReport |   |
 | Deleted Power BI scorecard | DeleteScorecard |   |
-| Deleted Power BI semantic model from external app | DeleteDatasetFromExternalApplication | Not currently used  |
+| Deleted Power BI semantic model from external app | DeleteDatasetFromExternalApplication |   |
 | Deleted Power BI semantic model rows | DeleteDatasetRows | Indicates that the Push Datasets - Datasets DeleteRows API was called  |
 | Deleted Power BI semantic model | DeleteDataset |   |
 | Deleted Power BI template app or a workspace for a template app | DeleteTemplateApp |   |
@@ -259,6 +258,7 @@ The following operations are available in the audit logs.
 | Download Notebook Resource | DownloadNotebookResource | Delete resources in notebook.  |
 | Download Spark App Log | DownloadSparkAppLog |   |
 | Downloaded Power BI report | DownloadReport |   |
+| Downloaded Exported Power BI artifact file | ExportArtifactDownload | An export of the .pptx or .pdf file is complete |
 | Drop Lakehouse File | DropLakehouseFile |  |
 | Drop Lakehouse Folder | DropLakehouseFolder |  |
 | Drop Lakehouse Table | DropLakehouseTable |  |
@@ -276,7 +276,7 @@ The following operations are available in the audit logs.
 | Edited Power BI report endorsement | EditReportProperties |   |
 | Edited Power BI report | EditReport |   |
 | Edited Power BI semantic model endorsement | EditDatamartEndorsement |   |
-| Edited Power BI semantic model from external app | EditDatasetFromExternalApplication | Not currently used  |
+| Edited Power BI semantic model from external app | EditDatasetFromExternalApplication |   |
 | Edited Power BI semantic model properties | EditDatasetProperties |   |
 | Edited Power BI semantic model | EditDataset |   |
 | Enable/Disable   AllowedInUntrustedContexts settings | AllowedInUntrustedContextsViaApi | Enable or disable AllowedInUntrustedContexts settings |
@@ -503,10 +503,10 @@ The following operations are available in the audit logs.
 | Request Copilot features in   Fabric | RequestCopilot | Request Copilot features in Fabric |
 | Request OpenAI by Spark code   in Fabric | RequestSparkCodeFirst | Request OpenAI by Spark code in Fabric |
 | Request OpenAI model | RequestOpenAI | Request OpenAI models in ML workload.  |
-| Requested Power BI dataflow refresh | RequestDataflowRefresh | Not currently used  |
-| Requested Power BI semantic model refresh from external app | RefreshDatasetFromExternalApplication | Not currently used  |
+| Requested Power BI dataflow refresh | RequestDataflowRefresh | A dataflow refresh starts. The refresh can be scheduled or triggered manually from the portal or an API.  |
+| Requested Power BI semantic model refresh from external app | RefreshDatasetFromExternalApplication |   |
 | Requested Power BI semantic model refresh | RefreshDataset |   |
-| Requested SAS token for Power BI storage | AcquireStorageSASFromExternalApplication | Not currently used  |
+| Requested SAS token for Power BI storage | AcquireStorageSASFromExternalApplication |   |
 | Requested account key for Power BI storage | AcquireStorageAccountKey |   |
 | Restore container | RestoreContainer | OneLake operation. |
 | Restore deleted workspace | RestoreWorkspaceViaAdminApi | Restores the deleted workspace |
@@ -621,6 +621,7 @@ The following operations are available in the audit logs.
 | Took over Power BI semantic model | TakeOverDataset |   |
 | Took over a Power BI datasource | TakeOverDatasource |   |
 | Took ownership of Power BI dataflow | TookOverDataflow |   |
+| Take over a Fabric item | TakeOverArtifact |   |
 | Trial License Extension | TrialLicenseExtension | Extend user trials by user list or tenant  |
 | Unassign Workspace From Alm Pipeline | UnassignWorkspaceFromAlmPipeline |   |
 | Undelete blob | UndeleteBlob | OneLake operation. Restore a soft deleted blob. |

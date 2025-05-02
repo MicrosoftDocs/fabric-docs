@@ -8,7 +8,6 @@ ms.topic: how-to
 ms.date: 11/02/2023
 ms.custom:
   - template-how-to
-  - ignite-2023
 ---
 
 # Add custom branding to the Power BI service

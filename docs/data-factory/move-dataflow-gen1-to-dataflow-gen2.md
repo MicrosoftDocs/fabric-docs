@@ -4,18 +4,18 @@ description: This article describes the procedure for moving Dataflow Gen1 queri
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 3/17/2025
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Move queries from Dataflow Gen1 to Dataflow Gen2
 
-Dataflow Gen2 is the new generation of dataflows. However, many existing dataflows have been created over the years using the original version of dataflows  (now called *Dataflow Gen1* and listed as the **Dataflow** type in your workspace).  This article describes how you can reuse your older Dataflow Gen1 dataflows by importing Dataflow Gen1 dataflows into Dataflow Gen2 using the export template feature. It also includes information on how to copy the Gen1 queries and paste them into a new Dataflow Gen2.
+Dataflow Gen2 is the new generation of dataflows. However, many existing dataflows were created over the years using the original version of dataflows (now called *Dataflow Gen1* and listed as the **Dataflow** type in your workspace). This article describes three methods for migrating your older Dataflow Gen1 dataflows into Dataflow Gen2 (CI/CD): importing Dataflow Gen1 dataflows into Dataflow Gen2 using the export template feature, copy the Gen1 queries and paste them into a new Dataflow Gen2, or using the Save As feature for saving an existing Dataflow Gen1 as a new Dataflow Gen2 (CI/CD).
 
 ## Use the export template feature
+
+Use the export template feature if you're aiming to copy all queries in a dataflow, or all queries from another PowerQuery host such as Power Platform Dataflow or Excel Workbook.  
 
 To use the export template feature:
 
@@ -33,9 +33,9 @@ To use the export template feature:
 
 1. Select **OK** to save the template. The template is saved in your default Downloads folder.
 
-1. From your Data Factory workspace, select **New**, and then select **Dataflow Gen2**.
+1. From your Data Factory workspace, select **New item**, and then select **Dataflow Gen2**.
 
-   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/new-dataflow-gen2.png" alt-text="Screenshot with the New menu opened with Dataflow Gen2 emphasized.":::
+   :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/new-dataflow-gen2.png" alt-text="Screenshot with the New menu opened with Dataflow Gen2 emphasized." lightbox="./media/move-dataflow-gen1-to-dataflow-gen2/new-dataflow-gen2.png":::
 
 1. From the current view pane of the Power Query editor, select **Import from a Power Query template**.
 
@@ -47,9 +47,11 @@ To use the export template feature:
 
    :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/configure-your-connection.png" alt-text="Screenshot showing the Power Query editor with Configure connection emphasized." lightbox="./media/move-dataflow-gen1-to-dataflow-gen2/configure-your-connection.png":::
 
-Your Dataflow Gen1 has now been imported to Dataflow Gen2.
+Your Dataflow Gen1 is now imported to Dataflow Gen2.
 
 ## Copy and paste existing Dataflow Gen1 queries
+
+Use the copy existing Dataflow Gen1 queries if you're aiming to copy only a subset of your queries.
 
 To copy existing Dataflow Gen1 queries:
 
@@ -61,7 +63,7 @@ To copy existing Dataflow Gen1 queries:
 
    :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/copy-queries.png" alt-text="Screenshot showing the Power Query workspace with the Contoso Financial Sample query selected and the copy option emphasized.":::
 
-1. Open an existing Dataflow Gen2, or create a new Dataflow Gen2 in Data Factory. To create a new dataflow, open an existing workflow and select **New** > **Dataflow Gen2**.
+1. Open an existing Dataflow Gen2, or create a new Dataflow Gen2 in Data Factory. To create a new dataflow, open an existing workflow and select **New item** > **Dataflow Gen2**.
 
    :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/new-dataflow-gen2.png" alt-text="Screenshot showing the New menu opened with Dataflow Gen2 emphasized.":::
 
@@ -79,10 +81,33 @@ To copy existing Dataflow Gen1 queries:
 
 1. Select **Connect** to connect to your data.
 
-1. Once you've connected to your data, right-click the initial blank query, and then select **Delete** to remove the empty query.
+1. Once you connect to your data, right-click the initial blank query, and then select **Delete** to remove the empty query.
 
    :::image type="content" source="./media/move-dataflow-gen1-to-dataflow-gen2/clean-up-query.png" alt-text="Screenshot showing the blank query selected, with emphasis on the delete option in the query's menu.":::
+
+## Save an existing Dataflow Gen1 As a new Dataflow Gen2 (CI/CD)
+
+Use the Save As (preview) feature if you’re aiming to upgrade an entire Dataflow Gen1 to Dataflow Gen2 (CI/CD), including its settings (for more information, go to [Known limitations](migrate-to-dataflow-gen2-using-save-as.md#known-limitations)) and queries.  
+
+To use the Save As (preview) feature:
+
+1. In your workspace, select the ellipsis (...) next to an existing dataflow, and select **Save as Dataflow Gen2** in the context menu.
+
+   :::image type="content" source="media/move-dataflow-gen1-to-dataflow-gen2/select-save-as.png" alt-text="Screenshot of the context menu under the ellipsis, showing the Save as Dataflow Gen2 (CI/CD) option.":::
+
+2. In the **Save as** dialog, optionally change the default **Name**, and then select **Create**.
+
+   :::image type="content" source="media/move-dataflow-gen1-to-dataflow-gen2/create-new-dataflow.png" alt-text="Screenshot of the save as option where you can enter the name of the dataflow.":::
+
+   The new Dataflow Gen2 (CI/CD) is opened, enabling you to review and make any changes.
+
+   You're required to reconnect to data sources, which can be done by selecting the **Configure connection** button within the `Credentials are required` error message.
+
+   :::image type="content" source="media/migrate-to-dataflow-gen2-using-save-as/enter-credentials.png" alt-text="Screenshot showing where to enter your credentials for the new dataflow." lightbox="media/migrate-to-dataflow-gen2-using-save-as/enter-credentials.png":::
+
+3. Close the new Dataflow Gen2 (CI/CD), or select **Save** or **Save and run**.
 
 ## Related content
 
 - [Differences between Dataflow Gen1 and Gen2 in Microsoft Fabric](dataflows-gen2-overview.md)
+- [Migrate to Dataflow Gen2 (CI/CD) using Save As (Preview)](migrate-to-dataflow-gen2-using-save-as.md)

@@ -6,7 +6,6 @@ ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ms.date: 10/20/2023
 ---
 
@@ -29,6 +28,25 @@ As the session is already running, this provides users with an instant run exper
 >- Sessions should have the same Spark compute properties.
 
 As part of Spark session initialization, a REPL core is created. Every time a new item starts sharing the same session and the executors are allocated in FAIR based manner to these notebooks running in these REPL cores inside the Spark application preventing starvation scenarios.
+
+
+## Billing of High Concurrency Sessions
+
+When using high concurrency mode, **only the initiating session** that starts the shared Spark application is billed. All subsequent sessions that share the same Spark session **do not incur additional billing**. This approach enables cost optimization for teams and users running multiple concurrent workloads in a shared context.
+
+### 📌 Example:
+
+- A user starts **Notebook 1**, which initiates a Spark session in high concurrency mode.
+- The same session is then shared by **Notebook 2**, **Notebook 3**, **Notebook 4**, and **Notebook 5**.
+- In this case, **only Notebook 1 will be billed** for the Spark compute usage.
+- The shared notebooks (2 to 5) **will not be billed** individually.
+
+This billing behavior is also reflected in **Capacity Metrics** — usage will only be reported against the initiating notebook (Notebook 1 in this case).
+
+> [!NOTE]
+> The same billing behavior applies when high concurrency mode is used within **pipeline activities** — only the notebook or activity that initiates the Spark session is charged.
+
+
 
 ## Related content
 

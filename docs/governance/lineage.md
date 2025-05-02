@@ -5,8 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 11/06/2023
 ---
 
@@ -25,7 +23,7 @@ Every workspace automatically has a lineage view.
 
 ## Permissions
 
-Any user with a [role in a workspace](../get-started/roles-workspaces.md) can access that workspace's lineage view. However, users with the *Viewer* role won't see data sources.
+Any user with a [role in a workspace](../fundamentals/roles-workspaces.md) can access that workspace's lineage view. However, users with the *Viewer* role won't see data sources.
 
 ## Open lineage view
 
@@ -91,3 +89,4 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 ## Related content
 
 * [Impact analysis](./impact-analysis.md)
+* [Entity diagram view in KQL database](../real-time-intelligence/database-entity-diagram.md)

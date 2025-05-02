@@ -1,15 +1,11 @@
 ---
-title: Share your warehouse and manage permissions
+title: Share Your Warehouse and Manage Permissions
 description: Learn how to share your warehouse in Microsoft Fabric and manage its user permissions.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: jacindaeng
-ms.date: 09/27/2024
+ms.reviewer: mesrivas
+ms.date: 04/09/2025
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Share your data and manage permissions
@@ -26,8 +22,6 @@ Sharing is a convenient way to provide users read access to your data for downst
 After identifying the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] item you would like to share with another user in your Fabric workspace, select the quick action in the row to **Share**.
 
 The following animated gif reviews the steps to select a warehouse to share, select the permissions to assign, and then finally **Grant** the permissions to another user.
-
-:::image type="content" source="media/share-warehouse-manage-permissions/share-warehouse.gif" alt-text="An animated gif showing interaction with the Fabric portal where a user shares a warehouse in Microsoft Fabric with another user." lightbox="media/share-warehouse-manage-permissions/share-warehouse.gif":::
 
 ## Share a warehouse
 
@@ -49,32 +43,20 @@ Here's more detail about each of the permissions provided:
 
 - **If no additional permissions are selected** - The shared recipient by default receives "Read" permission, which only allows the recipient to *connect* to the [!INCLUDE [fabric-se](includes/fabric-se.md)], the equivalent of CONNECT permissions in SQL Server. The shared recipient won't be able to query any table or view or execute any function or stored procedure unless they're provided access to objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using T-SQL [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true) statement.
 
-> [!TIP]
-> **ReadData** (used by the warehouse for T-SQL permissions), **ReadAll** (used by OneLake and the SQL analytics endpoint), and **Build** (used by Power BI) are separate permissions that do not overlap.
+   > [!TIP]
+   > **ReadData** (used by the warehouse for T-SQL permissions), **ReadAll** (used by OneLake and the SQL analytics endpoint), and **Build** (used by Power BI) are separate permissions that do not overlap.
 
-- **"Read all data using SQL" is selected ("ReadData" permissions)**- The shared recipient can read all the objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **ReadData** is the equivalent of *db_datareader* role in SQL Server. The shared recipient can read data from all tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you want to further restrict and provide granular access to some objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], you can do this using T-SQL `GRANT`/`REVOKE`/`DENY` statements.
+- **"Read all data using SQL" is selected ("ReadData" permissions)** - The shared recipient can read all the tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in read-only mode. The shared recipient can also choose to copy the [!INCLUDE [fabric-se](includes/fabric-se.md)] provided and connect to a client tool to run these queries. **ReadData** is the equivalent of *db_datareader* role in SQL Server. If you want to further restrict and provide granular access to some objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], you can do this using T-SQL `GRANT`/`REVOKE`/`DENY` statements.
 
     - In the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse, **"Read all SQL Endpoint data"** is equivalent to **"Read all data using SQL"**.
 
-- **"Read all data using Apache Spark" is selected ("ReadAll" permissions)**- The shared recipient has read access to the underlying parquet files in OneLake, which can be consumed using Spark. **ReadAll** should be provided only if the shared recipient wants complete access to your warehouse's files using the Spark engine.
+- **"Read all data using Apache Spark" is selected ("ReadAll" permissions)** - The shared recipient should only be provided **ReadAll** if they want complete access to your warehouse's files using the Spark engine. A shared recipient with **ReadAll** permissions can find the [Azure Blob File System (ABFS) path](/azure/storage/blobs/data-lake-storage-introduction-abfs-uri) to the specific file in OneLake from the Properties pane in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor. The shared recipient can then use this path within a Spark Notebook to read this data. The recipient can also subscribe to OneLake events generated for the data warehouse in Real time hub.
 
-- **"Build reports on the default dataset" checkbox is selected ("Build" permissions)**- The shared recipient can build reports on top of the default semantic model that is connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **Build** should be provided if the shared recipient wants **Build** permissions on the default semantic model, to create Power BI reports on this data. The **Build** checkbox is selected by default, but can be unchecked.
+    - **"Subscribe to events" ("SubscribeOneLakeEvents" permissions)** - A shared recipient with this permission can subscribe to OneLake events generated for the warehouse in Fabric Real-Time Hub.
 
-### ReadData permissions
+   For example, a user with **ReadAll** permissions can query the data in `FactSale` with a Spark query in a new notebook.
 
-With **ReadData** permissions, the shared recipient can open the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor in read-only mode and query the tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The shared recipient can also choose to copy the [!INCLUDE [fabric-se](includes/fabric-se.md)] provided and connect to a client tool to run these queries.
-
-### ReadAll permissions
-
-A shared recipient with **ReadAll** permissions can find the [Azure Blob File System (ABFS) path](/azure/storage/blobs/data-lake-storage-introduction-abfs-uri) to the specific file in OneLake from the Properties pane in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor. The shared recipient can then use this path within a Spark Notebook to read this data.
-
-For example, in the following screenshot, a user with **ReadAll** permissions can query the data in `FactSale` with a Spark query in a new notebook.
-
-:::image type="content" source="media/share-warehouse-manage-permissions/table-spark-open-new-notebook.png" alt-text="Screenshot from the Fabric portal where a user opens a Spark notebook to query the Warehouse shortcut.":::
-
-### Build permissions
-
-With **Build** permissions, the shared recipient can create reports on top of the default semantic model that is connected to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The shared recipient can create Power BI reports from the OneLake catalog or also do the same using Power BI Desktop.
+- **"Build reports on the default dataset" is selected ("Build" permissions)** - The shared recipient can build reports on top of the default semantic model that is connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] to create Power BI reports on this data from the OneLake catalog or Power BI Desktop. The **Build** checkbox is selected by default, but can be unchecked.
 
 ## Manage permissions
 
@@ -84,16 +66,30 @@ If you're a member of the **Admin** or **Member** workspace roles, go to your wo
 
 :::image type="content" source="media/share-warehouse-manage-permissions/manage-permissions-workspace.png" alt-text="Screenshot showing a user selecting Manage permissions in the warehouse context menu." lightbox="media/share-warehouse-manage-permissions/manage-permissions-workspace.png":::
 
-For users who were provided workspace roles, you'll see the corresponding user, workspace role, and permissions. Members of the Admin, Member, and Contributor workspace roles have read/write access to items in this workspace. Viewers have **ReadData** permissions and can query all tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in that workspace. Item permissions **Read**, **ReadData**, and **ReadAll** can be provided to users.
+For users who were provided workspace roles, you'll see the corresponding user, workspace role, and permissions. 
 
 :::image type="content" source="media/share-warehouse-manage-permissions/manage-permissions-page.png" alt-text="Screenshot showing the Manage permissions page of the Warehouse in the Fabric portal." lightbox="media/share-warehouse-manage-permissions/manage-permissions-page.png":::
+
+The following table lists which permission each role has by default and whether the permission is shareable.
+
+| Permission | Given by default to | Shareable |
+| --- | --- | --- |
+| Read | Admin, Member, Contributor, Viewer| Yes |
+| ReadData | Admin, Member, Contributor, Viewer | Yes |
+| ReadAll | Admin, Member, Contributor | Yes |
+| Build | Admin, Member, Contributor | Yes |
+| Write | Admin, Member, Contributor | No |
+| Monitor | Admin, Member, Contributor | N/A - can't be granted on its own |
+| Audit| Admin | N/A - can't be granted on its own |
+| Reshare | Admin, Member | N/A - can't be granted on its own |
+| Restore | Admin | No |
 
 You can choose to add or remove permissions using **Manage permissions**:
 
 - **Remove access** removes all item permissions.
 - **Remove ReadData** removes the **ReadData** permissions.
 - **Remove ReadAll** removes **ReadAll** permissions.
-- **Remove build** removes **Build** permissions on the corresponding default semantic model.
+- **Remove Build** removes **Build** permissions on the corresponding default semantic model.
 
 :::image type="content" source="media/share-warehouse-manage-permissions/remove-readall-manage-permissions.png" alt-text="Screenshot showing a user removing the ReadAll permission of a shared recipient." lightbox="media/share-warehouse-manage-permissions/remove-readall-manage-permissions.png":::
 
@@ -117,9 +113,10 @@ Microsoft Fabric data warehousing supports several technologies that administrat
 - Shared recipients do not have permission to reshare a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 - If a report built on top of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is shared with another recipient, the shared recipient needs more permissions to access the report. This depends on the mode of [access to the semantic model by Power BI](semantic-models.md):
   - If accessed through [Direct query mode](/power-bi/connect-data/service-dataset-modes-understand#directquery-mode) then **ReadData** permissions (or [granular SQL permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
-  - If accessed through [Direct Lake mode](../get-started/direct-lake-overview.md), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Direct Lake mode is the default connection type for semantic models that use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source. For more information, see [Direct Lake mode](semantic-models.md#direct-lake-mode). 
+  - If accessed through [Direct Lake mode](../fundamentals/direct-lake-overview.md), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Direct Lake mode is the default connection type for semantic models that use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source. For more information, see [Direct Lake mode](semantic-models.md#direct-lake-mode). 
   - If accessed through [Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode) then no additional permissions are needed.
   - Currently, sharing a warehouse directly with an SPN is not supported.
+- The sharing dialog for warehouses provides the option to subscribe to OneLake events. Currently, permission to subscribe to OneLake events is granted along with the Read All Apache Spark permission. 
 
 ## Related content
 

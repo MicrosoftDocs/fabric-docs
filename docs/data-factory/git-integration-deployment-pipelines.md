@@ -7,10 +7,7 @@ ms.topic: conceptual
 ms.date: 04/18/2024
 ---
 
-# Git integration and deployment for data pipelines (Preview)
-
-> [!IMPORTANT]
-> Git integration and deployment for data pipelines in Data Factory for Microsoft Fabric are currently in preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+# Git integration and deployment for data pipelines
 
 In Fabric, continuous integration and development (CI/CD) features with Git Integration & deployment pipelines allow users to import/export workspace resources with individual updates, deviating from the Azure Data Factory model where whole factory updates using ARM template export methodology is preferred. This change in methodology allows customers to selectively choose which pipelines to update without pausing the whole factory. Both Git integration (bring-your-own Git) and deployment pipelines (built-in CI/CD) use the concept of associated a single workspace with a single environment. You need to map out different workspaces to your different environments such as dev, test, and production.
 
@@ -39,7 +36,7 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 ## Steps for testing deployment pipelines
 
 1. As opposed to Git Integration, no manual set-up is required by the user, you can start using deployment pipelines directly from your existing workspace.
-1. Select the **Deployment pipelines** icon on the app navigator on the left of the screen.
+1. Select **Workspaces** on the app navigator on the left of the screen, and then select the **Deployment pipelines** icon.
 
    :::image type="content" source="media/git-integration-deployment-pipelines/deployment-pipelines.png" alt-text="Screenshot showing where to select the Deployment pipelines button on the left-hand app navigator for Fabric.":::
 

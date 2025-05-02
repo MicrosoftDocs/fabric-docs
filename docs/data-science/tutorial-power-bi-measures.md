@@ -3,11 +3,10 @@ title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter noteboo
 description: This article shows how to use SemPy to calculate measures in Power BI semantic models.
 ms.reviewer: alsavelv
 reviewer: alsavelv
-ms.author: mopeakande
-author: msakande
+ms.author: franksolomon
+author: fbsolo-ms1
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 09/27/2023
 ---
 
@@ -143,7 +142,7 @@ Check out other tutorials for semantic link / SemPy:
 - [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
 - [Tutorial: Analyze functional dependencies in a sample semantic model](tutorial-power-bi-dependencies.md)
 - [Tutorial: Discover relationships in a semantic model, using semantic link](tutorial-power-bi-relationships.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link (preview)](tutorial-relationships-detection.md)
-- [Tutorial: Validate data using SemPy and Great Expectations (GX) (preview)](tutorial-great-expectations.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link](tutorial-relationships-detection.md)
+- [Tutorial: Validate data using SemPy and Great Expectations (GX)](tutorial-great-expectations.md)
 
 <!-- nbend -->

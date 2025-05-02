@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.topic: how-to #Don't change
-ms.date: 11/03/2024
+ms.date: 11/21/2024
 
 #customer intent: As a security admin or Fabric admin, I want to learn how to create protection policies for Microsoft Fabric. 
 
@@ -27,6 +27,10 @@ To create a protection policy, the following requirements must be met:
 
 * <a name="label-prerequisites"></a>At least one "appropriately configured" sensitivity label from Microsoft Purview Information Protection must exist in the tenant. "Appropriately configured" in the context of protection policies for Fabric means that when the label was configured, it was scoped to **Files & other data assets**, and its protection settings were set to include **Control access** (for information about sensitivity label configuration, see [Create and configure sensitivity labels and their policies](/purview/create-sensitivity-labels)). Only such "appropriately configured" sensitivity labels can be used to create the protection policies for Fabric.
 
+* If service principals need to access items protected by the protection policy you're configuring, add them to an Azure security group that you'll include in the policy. Service principals can't be added to the policy directly in the Microsoft Purview portal.
+
+   If you don't add service principals to the allowed list of users, service principals that currently have access to data will be denied access, potentially causing your application to break. For example, service principals might be used for application authentication to access semantic models.
+ 
 ## Create a protection policy for Fabric
 
 1. Open the **Protection policies (preview)** page in the Microsoft Purview portal.
@@ -62,7 +66,7 @@ To create a protection policy, the following requirements must be met:
     You can select either one option or both options. For each control, select **Add users and groups** to specify which users and/or groups the control should apply to.
 
     > [!NOTE]
-    > Service principals can't be added to the sets of users these controls apply to. This means that service principals are blocked from accessing items protected by protection policies. See [this note](./protection-policies-overview.md#service-principal-note) for more information.
+    > Service principals can't be added to protection policies directly via the Microsoft Purview portal. To enable service principals to access items protected by a protection policy, first add them to an Azure security group, and then add this group to the protection policy.
 
     :::image type="content" source="./media/protection-policies-create/define-access-control.png" alt-text="Screenshot of define access controls page in protection policy configuration.":::
 

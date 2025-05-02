@@ -1,20 +1,46 @@
 ---
 title: Dataflow Gen2 default destination
 description: Learn about default data destination configurations and settings in Dataflow Gen2.
-author: miquelladeboer
-ms.author: mideboer
+author: luitwieler
+ms.author: jeluitwi
 ms.reviewer: dougklo
 ms.topic: conceptual
-ms.date: 3/22/2024
+ms.date: 02/26/2025
 ---
 
 # Dataflow Gen2 default destination
 
 When you have a Lakehouse, Warehouse, or KQL Database and you want to load data into it, you can use Dataflow Gen2 as an easy, low-code way for landing your data with the right shape.
 
-You can always create a stand-alone Dataflow Gen2 from the workspace and use the data destinations to load your data in any Fabric Lakehouse, Warehouse, or KQL Database. But to speed up your development, there are some other easy ways to land your data faster.
+We have made it easier to get data into your Lakehouse, Warehouse, or KQL Database by creating a Dataflow Gen2 directly from the Lakehouse, Warehouse, or KQL Database experience. This is a great way to get started with Dataflow Gen2 and load data into your workspace. Additionally, you can use the new default destination experience within the editor to quickly set a default destination for your dataflow. This article describes the two ways to create a Dataflow Gen2 and set a default destination to speed up your dataflow creation process.
 
-This article describes the new experience and important changes that were made.
+## Set a default destination in Dataflow Gen2
+
+When you create a Dataflow Gen2, you can set a default destination for your dataflow. This helps you get started quickly by loading all queries to the same destination. You can set the default destination from the ribbon or the status bar in the editor. This speeds up your dataflow creation process.
+
+In the editor, you can find the default destination settings in the ribbon and the status bar.
+
+:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-ribbon.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination settings in the ribbon.":::
+
+:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-status-bar.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination entry point in the status bar.":::
+
+When you set a default destination, you will be prompted to choose a destination and select which queries to bind to it. You can set the default destination for all queries or only the selected ones.
+
+:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-bind-queries.png" alt-text="Screenshot of the Dataflow Gen2 editor with the prompt to bind the default destination to all queries or selected queries.":::
+
+Once finished, your query will have the default destination set as the data destination.
+
+:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-completed.png" alt-text="Screenshot of the Dataflow Gen2 editor with the default destination set as the data destination.":::
+
+If you later decide to set a default destination for a specific query, you can do so by selecting the query and then choosing the default destination as the data destination.
+
+:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-bind-in-query-settings.png" alt-text="Screenshot of the Dataflow Gen2 editor with the option to bind the default destination in the query settings.":::
+
+:::image type="content" source="media/dataflow-gen2-default-destination/default-destination-bind-in-diagram-view.png" alt-text="Screenshot of the Dataflow Gen2 editor with the option to bind the default destination in the diagram view.":::
+
+To update the default destination, delete the current default destination and set a new one.
+
+## Create a Dataflow Gen2 from the Lakehouse, Warehouse, or KQL Database experience
 
 Within the Lakehouse, Warehouse, or KQL Database experience, you can get data through various options.  
 
@@ -32,8 +58,5 @@ With the default destination, the settings are set to a default behavior that ca
 | -------- | --------- | --------- | --------- |
 | **Update method** |Replace | Append | Append |
 | **Schema change on publish** | Dynamic | Fixed | Fixed |
-
-> [!NOTE]
-> The previous update method for Lakehouse was **append**. This method is now changed to **replace**.
 
 To edit the settings of an individual data destination, use the gear icon in the Power Query **Data destination** pane to edit the destination. When you edit the individual data destination, this change only affects the specific query. Currently, it isn't possible to change the behavior of the default destination.

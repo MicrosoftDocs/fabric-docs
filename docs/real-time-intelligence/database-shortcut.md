@@ -2,12 +2,10 @@
 title: Create a database shortcut
 description: Learn how to create a database shortcut to data in another KQL Database or in Azure Data Explorer in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
-  - ignite-2024
 ms.date: 11/19/2024
 ms.search.form: KQL Database
 #Customer intent: To create a database shortcut in Real-Time Intelligence.
@@ -47,7 +45,7 @@ Select the desired tab that corresponds with the way you'd like to create a shor
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A source database. This can be an [Azure Data Explorer database](/azure/data-explorer/create-cluster-and-database) or a [KQL Database](create-database.md).
 * An [eventhouse](create-eventhouse.md)
 
@@ -87,7 +85,7 @@ To create a shortcut using a cluster URI and database name, make sure you have a
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A source database. This can be an [Azure Data Explorer database](/azure/data-explorer/create-cluster-and-database) or a [KQL Database](create-database.md).
 
 > [!IMPORTANT]
@@ -132,9 +130,7 @@ Use the link to open Real-Time Intelligence showing the **New database shortcut*
 
 1. Select **Create**.
 
----
-
-Once the shortcut is created, you're taken to the [database details](create-database.md#database-details) view of the new database shortcut.
+Once the shortcut is created, you're taken to the [database details](manage-monitor-database.md#database-details) view of the new database shortcut.
 
 :::image type="content" source="media/database-shortcut/new-database-shortcut.png" alt-text="Screenshot of resulting database shortcut in Real-Time Intelligence." lightbox="media/database-shortcut/new-database-shortcut.png":::
 

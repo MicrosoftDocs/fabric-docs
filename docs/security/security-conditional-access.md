@@ -5,9 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/07/2023
+ms.date: 04/27/2025
 ---
 
 # Conditional access in Fabric
@@ -24,7 +22,7 @@ For more information on the full capabilities of Conditional Access, see the art
 
 To ensure that conditional access for Fabric works as intended and expected, it's recommended to adhere to the following best practices:
 
-* Configure a single, common, conditional access policy for the Power BI Service, Azure Data Explorer, Azure SQL Database, and Azure Storage. Having a single, common policy significantly reduces unexpected prompts that might arise from different policies being applied to downstream services, and the consistent security posture provides the best user experience in Microsoft Fabric and its related products.
+* Configure a single, common, conditional access policy for the Power BI Service, Azure Data Explorer, Azure SQL Database, Azure Storage and Cosmos DB. Having a single, common policy significantly reduces unexpected prompts that might arise from different policies being applied to downstream services, and the consistent security posture provides the best user experience in Microsoft Fabric and its related products.
 
     The products to include in the policy are the following:
 
@@ -33,6 +31,7 @@ To ensure that conditional access for Fabric works as intended and expected, it'
     * Azure Data Explorer
     * Azure SQL Database
     * Azure Storage
+    * Cosmos DB
 
 * If you create a restrictive policy (such as one that blocks access for all apps except Power BI), certain features, such as dataflows, won't work.
 

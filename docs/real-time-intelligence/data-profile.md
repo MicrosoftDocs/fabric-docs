@@ -6,8 +6,6 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.date: 11/19/2024
 ---
 
@@ -17,7 +15,7 @@ The data profile feature in a KQL queryset allows you to quickly gain insights i
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
 * A [KQL database](create-database.md) with editing permissions and data.
 
 ## Open the data profile

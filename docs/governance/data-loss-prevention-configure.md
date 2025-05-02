@@ -6,7 +6,7 @@ ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 11/19/2024
+ms.date: 03/31/2025
 
 #customer intent: As a Purview compliance administrator, I want to learn how to configure DLP policies for Fabric so that my organization can detect leakage of sensitive data from Fabric items.
 
@@ -14,7 +14,7 @@ ms.date: 11/19/2024
 
 # Configure data loss prevention policies for Fabric
 
-Data loss prevention policies for Fabric help organizations protect their sensitive data by detecting upload of sensitive data in supported item types. When a policy violation occurs, data owners can see this indicated, and alerts can be sent to data owners and security admins, and violations can be investigated. For more information, see [Overview of data loss prevention policies for Fabric](./data-loss-prevention-overview.md).
+Data loss prevention policies for Fabric help organizations protect their sensitive data by detecting upload of sensitive data in supported item types. When a policy violation occurs, data owners can see this indicated, and alerts can be sent to data owners and security admins, and violations can be investigated. For more information, see [Get started with Data loss prevention policies for Fabric and Power BI](/purview/dlp-powerbi-get-started).
 
 This article describes how to configure Purview data loss prevention (DLP) policies for Fabric. The target audience is compliance administrators who are responsible for data loss prevention in their organization.
 
@@ -136,9 +136,6 @@ In the condition section, you define the conditions under which the policy will 
 If you want the policy to restrict access to items that trigger the policy, expand the **Restrict access or encrypt the content in Microsoft 365 locations** section and select **Block users from receiving email, or accessing shared SharePoint, OneDrive, and Teams files, and Power BI items.**. Then choose whether to block everyone or only people in your organization.
 
 When you enable the restrict access action, [user overrides](#user-overrides) are automatically allowed.
-
-> [!NOTE]
-> The restrict access action is enforced on semantic models only.
 
 ## User notifications
 

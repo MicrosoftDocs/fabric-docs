@@ -6,11 +6,8 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.search.form: Create and use notebooks
-ms.date: 11/11/2024
+ms.date: 07/25/2024
 ---
 
 # How to use Microsoft Fabric notebooks
@@ -37,7 +34,7 @@ The execution of a notebook can be triggered by three different manners in Fabri
 
 The flexibility of these execution options with different security context allows you to meet different scenarios and requirements, but also requires you to be aware of the security context when you design and develop your notebook, otherwise it may cause unexpected behavior and even some security issues.
 
-The first time when a notebook is created, a warning message will be shown to remind you the risk of running the code without reviewing it.
+The first time when a notebook is created, a warning message is shown to remind you the risk of running the code without reviewing it.
 
 :::image type="content" source="media\how-to-use-notebook\notebook-security-warning.png" alt-text="Screenshot showing warning of running notebook.":::
 
@@ -59,13 +56,13 @@ Like other standard Fabric item creation processes, you can easily create a new 
 
 ### Import existing notebooks
 
-You can import one or more existing notebooks from your local computer using the entry in the workspace toolbar. Fabric notebooks recognize the standard Jupyter Notebook .ipynb files, and source files like .py, .scala, and .sql, and create new notebook items accordingly.
+You can import one or more existing notebooks from your local computer using the entry in the workspace toolbar. Fabric notebooks recognize the standard Jupyter Notebook *.ipynb* files, and source files like *.py*, *.scala*, and *.sql*, and create new notebook items accordingly.
 
 :::image type="content" source="media\how-to-use-notebook\new-menu-notebook-options.png" alt-text="Screenshot showing where to find notebook options on the New menu.":::
 
 ## Export a notebook
 
-You can export your notebook to other standard formats. Notebooks can be exported into the following formats:
+You can export your notebook to other standard formats. Synapse notebook can be exported into:
 
 - The standard notebook file (.ipynb) that is used for Jupyter notebooks.
 - An HTML file (.html) that can be opened from a browser directly.  
@@ -109,7 +106,7 @@ The subfolder and files under the **Tables** and **Files** section of the **Lake
 
 ### Folder and file operations
 
-If you select a file (.csv, .parquet, .txt, .jpg, .png, etc.) with a right mouse click, you can use the Spark or Pandas API to load the data. A new code cell is generated and inserted beneath the focus cell.
+If you select a file (.csv,.parquet,.txt,.jpg,.png, etc.) with a right mouse click, you can use the Spark or Pandas API to load the data. A new code cell is generated and inserted beneath the focus cell.
 
 You can easily copy a path with a different format from the select file or folder and use the corresponding path in your code.
 
@@ -119,7 +116,7 @@ You can easily copy a path with a different format from the select file or folde
 
 The notebook resource explorer provides a Unix-like file system to help you manage your folders and files. It offers a writeable file system space where you can store small-sized files, such as code modules, semantic models, and images. You can easily access them with code in the notebook as if you were working with your local file system.
 
-:::image type="content" border="true" source="media/how-to-use-notebook/notebook-resources-operations.gif" alt-text="Animated GIF of notebook resources.":::
+![Animated GIF of notebook resources.](media/how-to-use-notebook/notebook-resources-operations.gif)
 
 > [!NOTE]
 > - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
@@ -127,11 +124,11 @@ The notebook resource explorer provides a Unix-like file system to help you mana
 
 ### Built-in resources folder
 
-The built-in resources folder is a system predefined folder for each notebook item instance. Here are the key capabilities for the notebook resources.
+The built-in resources folder is a system-defined folder unique to each notebook. It is recommended to use built-in resource folder to storage any data used in the current notebook. Here are the key capabilities for the notebook resources.
 
 - You can use common operations such as create/delete, upload/download, drag/drop, rename, duplicate, and search through the UI.
 - You can use relative paths like `builtin/YourData.txt` for quick exploration. The `notebookutils.nbResPath` method helps you compose the full path.
-- You can easily move your validated data to a lakehouse via the **Write to lakehouse** option. Fabric has embedded rich code snippets for common file types to help you quickly get started.
+- You can easily move your validated data to a lakehouse via the **Write to lakehouse** option. Fabric embeds rich code snippets for common file types to help you quickly get started.
 - These resources are also available for use in the [Reference notebook run](author-execute-notebook.md) case via ```notebookutils.notebook.run()```.
 
 ### Environment resources folder
@@ -146,8 +143,12 @@ Environment Resources Folder is a shared repository designed to streamline colla
    
    :::image type="content" source="media\how-to-use-notebook\environment-resources-folder.png" alt-text="Screenshot showing where to open environment resources folder.":::
 
-- You can also operate on the files/folders just same with the Built-in resources folder. 
-- The Environment resource path will be automatically mounted to the notebook cluster, you can use the relative path **/env** to access the environment resources.
+- You can also operate on the files/folders same with the Built-in resources folder. 
+- The Environment resource path is automatically mounted to the notebook cluster. You can use the relative path **/env** to access the environment resources.
+
+
+> [!NOTE]
+> Reading/writing with a relative path is not functioning in a [High concurrency session](../data-engineering/configure-high-concurrency-session-notebooks.md).
 
 ### File editor
 
@@ -157,8 +158,8 @@ The file editor allows you to view and edit files directly within the notebook's
 
    :::image type="content" source="media\how-to-use-notebook\view-edit-file.png" alt-text="Screenshot showing where to view and edit files.":::
 
-- Content change on file editor need to be saved manually by clicking the **Save** button or keyboard shortcut: **Ctrl+S**, file editor doesn't support auto-save.
-- File editor is also affected by [notebook mode](#notebook-mode-switcher). You can only view files but cannot edit them if you are in the notebook mode without editing permission.
+- Content change on file editor needs to be saved manually by clicking the **Save** button or keyboard shortcut: **Ctrl+S**, file editor doesn't support autosave.
+- [notebook mode](#notebook-mode-switcher) also affects the file editor. You can only view files but cannot edit them if you are in the notebook mode without editing permission.
 
 > [!NOTE]
 > Here are some limitations for file editor.
@@ -169,7 +170,7 @@ The file editor allows you to view and edit files directly within the notebook's
 
 The Fabric notebook is a collaborative item that supports multiple users editing the same notebook.
 
-When you open a notebook, you enter the co-editing mode by default, and every notebook edit is automatically saved. If your colleagues open the same notebook at the same time, you see their profile, run output, cursor indicator, selection indicator, and editing trace. By using the collaboration features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
+When you open a notebook, you enter the coediting mode by default, and every notebook edit is automatically saved. If your colleagues open the same notebook at the same time, you see their profile, run output, cursor indicator, selection indicator, and editing trace. By using the collaboration features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
 
 :::image type="content" source="media\how-to-use-notebook\collaboration.png" alt-text="Screenshot showing a code cell with another user editing.":::
 
@@ -217,18 +218,51 @@ Commenting is another useful feature for collaborative scenarios. Currently, Fab
  
 1. Share your insights and **Post** them.
  
-1. An Email notification will be triggered, and user clicks on **Open Comments** link to quickly locate this cell.
+1. An Email notification is triggered, and user clicks on **Open Comments** link to quickly locate this cell.
  
 1. Moreover, authorize and configure the permissions for users when tagging someone who doesn’t have access, ensuring that your code assets are well managed.
 
-:::image type="content" border="true" source="media/how-to-use-notebook/tagging-others-in-a-comment.gif" alt-text="Animated GIF of tagging others in a comment.":::
+![Animated GIF of tagging others in a comment.](media/how-to-use-notebook/tagging-others-in-a-comment.gif)
 
 > [!NOTE]
-> For a comment item, the tagged user will not receive an Email notification anymore if you updates the comment within one hour. But it will send Email notification to the new tagged user.
+> For a comment item, the tagged user will not receive an Email notification anymore if you update the comment within one hour. But it sends Email notification to the new tagged user.
+
+## Version history
+
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+
+Version history allows you to easily version your live notebook changes. It supports history tracking and notebook management with robust built-in version control capabilities, which is especially helpful for collaborative work with multiple contributors on the same notebook.
+
+1. Access version **history** from notebook global toolbar.
+
+   :::image type="content" source="media\how-to-use-notebook\history-access.png" alt-text="Screenshot showing history access.":::
+
+1. Notebook supports two ways of creating checkpoints.
+
+   - Manual checkpoint: You can manually **create new version** to record your development milestones, providing flexibility for managing your notebook versions.
+
+      :::image type="content" source="media\how-to-use-notebook\create-new-version.png" alt-text="Screenshot showing how to create new version.":::
+
+   - System checkpoint: These checkpoints are created automatically every 5 minutes based on editing time interval by Notebook system, ensuring that your work is consistently saved and versioned. You can find the modification records from all the contributors in the system checkpoint timeline list.
+      :::image type="content" source="media\how-to-use-notebook\expand-system-checkpoint.png" alt-text="Screenshot showing expand checkpoint list."lightbox="media\how-to-use-notebook\expand-system-checkpoint.png":::
+
+1. You can click on a checkpoint to open the **diff view**, it highlights the content differences between the selected checkpoint and the current live version, including the differences of cell content, cell output, and metadata. The version of this checkpoint can be managed individually in **'more options'** menu.
+
+   :::image type="content" source="media\how-to-use-notebook\checkpoint-diff-view.png" alt-text="Screenshot showing view diff."lightbox="media\how-to-use-notebook\checkpoint-diff-view.png":::
+
+1. You can manage the version from the checkpoint drop-down menu, if you want to keep a pervious version, click **restore** from checkpoint and overwrite the current notebook, or using **save as copy** to clone it to a new notebook.
+
+   :::image type="content" source="media\how-to-use-notebook\more-options-with-the-checkpoint.png" alt-text="Screenshot showing more options with the checkpoint."lightbox="media\how-to-use-notebook\more-options-with-the-checkpoint.png":::
+
+> [!NOTE]
+>
+> - Known limitation: After clicking on the **Restore** button and navigate **Back to notebook**, the notebook won't be immediately recovered from the checkpoint. A message bar prompts you to view the changes. You need to click the **View changes** button and select keeping the *Saved version* to finish the restore.
+    :::image type="content" source="media\how-to-use-notebook\view-changes-messagebar.png" alt-text="Screenshot showing view changes after restore.":::
+> - System checkpoints will expire after **1** year.
 
 ## Notebook mode switcher
 
-Fabric notebooks support four modes that you can easily switch: **Develop** mode，**Run only** mode, **Edit** mode and **View** mode. Each mode maps to a specific permission combination. When sharing the notebook to other team members, you can grant proper permissions to the recipients, and they will see the best available notebook mode according to their permission, and they will be able to switch between the mode they have permission to.
+Fabric notebooks support four modes that you can easily switch: **Develop** mode，**Run only** mode, **Edit** mode, and **View** mode. Each mode maps to a specific permission combination. When sharing the notebook to other team members, you can grant proper permissions to the recipients. They can see the best available notebook mode according to their permission, and they are able to switch between the mode they have permission to.
 
 :::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where switch modes.":::
 

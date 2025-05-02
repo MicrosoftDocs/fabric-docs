@@ -6,9 +6,6 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.date: 11/15/2023
 ms.search.form: Data Preview and Insights
 ---
@@ -22,7 +19,7 @@ Data preview provides you with a snapshot of your event data in your eventstream
 Before you start, you must complete the following prerequisites:
 
 - Get access to a workspace with Viewer or above permissions where your Eventstream item is located.
-- For a KQL database or lakehouse destination, get access to a workspace with Viewer or above permissions where your KQL database or Lakehouse item is located.
+- For an Eventhouse or lakehouse destination, get access to a workspace with Viewer or above permissions where your Eventhouse or Lakehouse item is located.
 
 ## Preview a source
 
@@ -32,21 +29,21 @@ To preview the source data of an event hub or sample data in the eventstream:
 
 1. In the lower pane, select the **Data preview** tab.
 
-1. If there's data inside the source, it appears in the tab. For example, the following image shows a preview of sample Yellow Taxi data.
+1. You see it appear in the tab if there's data inside the source. For example, the following image shows a preview of sample Yellow Taxi data.
 
    :::image type="content" source="./media/preview-data/preview-data-source.png" alt-text="Screenshot showing a sample Yellow Taxi data preview for a source node." lightbox="./media/preview-data/preview-data-source.png" :::
 
 ## Preview a destination
 
-To preview the destination data of a KQL database, Fabric activator or lakehouse in the eventstream:
+To preview the destination data of an Eventhouse, lakehouse, derived stream or Fabric activator in the eventstream:
 
 1. In the main editor canvas, select one of the destination nodes in your eventstream.
 
 1. In the lower pane, select the **Data preview** tab.
 
-1. If there's data inside the destination, it appears in the tab. For example, the following image shows the preview of a KQL database.
+1. You see it appear in the tab if there's data within the destination. For example, the following image shows the preview of an Eventhouse.
 
-   :::image type="content" source="./media/preview-data/preview-data-destination.png" alt-text="Screenshot showing a KQL database destination data preview." lightbox="./media/preview-data/preview-data-destination.png" :::
+   :::image type="content" source="./media/preview-data/preview-data-destination.png" alt-text="Screenshot showing an Eventhouse destination data preview." lightbox="./media/preview-data/preview-data-destination.png" :::
 
 ## Preview an eventstream
 
@@ -58,13 +55,13 @@ To preview your eventstream data:
 
 1. In the lower pane, select the **Data preview** tab.
 
-1. If there's data inside the eventstream, it appears in the tab.
+2. You see it appear in the tab if there's data within the eventstream.
 
-1. To preview data that has a different format, select the correct format from the **Data format** drop-down menu.
+3. To preview data that has a different format, select the correct format from the **Data format** drop-down menu.
 
    :::image type="content" source="./media/preview-data/preview-data-eventstream.png" alt-text="Screenshot showing the data preview for an eventstream." lightbox="./media/preview-data/preview-data-eventstream.png" :::
 
-1. To preview the most current event data, select **Refresh**.
+4. To preview the most current event data, select **Refresh**.
 
    :::image type="content" source="./media/preview-data/preview-data-refresh.png" alt-text="Screenshot showing where to select Refresh on the Data preview tab." lightbox="./media/preview-data/preview-data-refresh.png" :::
 

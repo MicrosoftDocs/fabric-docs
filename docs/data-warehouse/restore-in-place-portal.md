@@ -1,5 +1,5 @@
 ---
-title: Restore in-place of a warehouse from a restore point with the Fabric portal
+title: Restore In-Place of a Warehouse from a Restore Point with the Fabric Portal
 description: Learn about how to perform a restore in-place of a warehouse in the Fabric portal.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -88,4 +88,4 @@ For more information, see [Restore point retention](restore-in-place.md#restore-
 ## Related content
 
 - [Restore in-place of a warehouse in Microsoft Fabric](restore-in-place.md)
-- [Microsoft Fabric terminology](../get-started/fabric-terminology.md)
+- [Microsoft Fabric terminology](../fundamentals/fabric-terminology.md)

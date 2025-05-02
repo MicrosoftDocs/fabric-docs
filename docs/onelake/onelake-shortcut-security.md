@@ -7,9 +7,6 @@ author: aamerril
 ms.search.form: Shortcuts
 ms.topic: concept-article
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 05/09/2024
 #customer intent: As a security engineer, I want to understand security for OneLake shortcuts so that I can secure access to my data using roles and permissions.
 ---

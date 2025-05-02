@@ -7,7 +7,6 @@ ms.reviewer: ''
 
 ms.custom:
   - tenant-setting
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/04/2024
 LocalizationGroup: Administration
@@ -21,7 +20,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 Users in the organization can create and use metrics in Power BI.
 
-To learn more, see [Get started with metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
+To learn more, see [Get started with metrics in Power BI](/power-bi/create-reports/get-started-metrics).
 
 ## Metric sets setting (preview)
 
@@ -36,9 +35,6 @@ To turn on the Metrics set setting:
 1. Specify who can access metric sets in Power BI. 
 1. Select Apply to save your changes.
 
-## Copilot summaries
-
-If Copilot tenant settings are on, Copilot summaries of metrics are available. For more information about Copilot tenant settings, read [Copilot tenant settings](service-admin-portal-copilot.md).
 
 ## Related content
 

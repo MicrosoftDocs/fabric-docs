@@ -7,8 +7,6 @@ ms.topic: how-to
 ms.date: 09/16/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Set up your Azure Data Lake Storage Gen2 connection
@@ -75,7 +73,7 @@ To create a connection in a data pipeline:
 
 1. Grant the workspace identity, organizational account, or service principal access to the storage account. For more information, see [Create a OneLake shortcut to storage account with trusted workspace access](../security/security-trusted-workspace-access.md#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access)
 
-1. Configure a resource instance rule. For more information, see [Resource instance rule](../security/security-trusted-workspace-access.md#resource-instance-rule).
+1. Configure a resource instance rule. For more information, see [Resource instance rule](../security/security-trusted-workspace-access.md#configure-trusted-workspace-access-in-adls-gen2).
 
 1. Follow steps from [Set up your connection](#set-up-your-connection) to create the connection.
 

@@ -1,47 +1,55 @@
 ---
 title: Get started using Activator
 description: Learn how to get started using Activator and unleash the power of data-driven decision making in your organization.
-author: mihart
-ms.author: mihart
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
-ms.custom: FY25Q1-Linter, ignite-2024
-ms.search.form: Activator Getting Started
-ms.date: 09/24/2024
+ms.custom: FY25Q1-Linter
+ms.search.form: Data Activator Getting Started
+ms.date: 01/20/2025
 #customer intent: As a Fabric user I want to get started with Activator.
 ---
 
 # Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
-There are several different ways to create a Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] activator. This article teaches you how to create an activator from the left navigation bar (navbar).
+There are several different ways to create an activator using Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. This article teaches you how to create an activator using **Create** and the Microsoft *Package delivery* sample.
+
+> [!NOTE] 
+> Creating activators requires Microsoft Fabric to be enabled. One way to enable Fabric is by starting a free [Fabric trial](https://www.microsoft.com/microsoft-fabric/getting-started#:~:text=Sign%20in%20to%20app.fabric.microsoft.com%20with%20your%20Power%20BI,manager%20tool%20in%20the%20app%E2%80%94no%20credit%20card%20required.?msockid=0ac54d18fb8866d81ccc5e5bff8868a4).
+> If self-service sign-up for Fabric is disabled, ask your administrator to [enable Fabric for you](../../admin/fabric-switch.md). 
+>If you have delegated settings to other admins, you should also allow capacity admins to enable/disable.
 
 ## Create an Activator item
 
-In Microsoft Fabric, select **[!INCLUDE [fabric-activator](../includes/fabric-activator.md)]** from the workload switcher in the bottom left corner.
-
-:::image type="content" source="media/activator-get-started/data-activator-get-started-01.png" alt-text="Screenshot of Activator experience.":::
-
-As with all Fabric workloads, you can begin using [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] by creating an item in a Fabric workspace. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]’s items are called *activators.*
+Sign in to app.fabric.microsoft.com with your Power BI account information. This site gives you access to both Power BI and Fabric. As with all Fabric workloads, you can begin using [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] by creating an item in a Fabric workspace. And you can also create an item and a new workspace simultaneously. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]’s items are called *activators.* 
 
 An activator holds all the information necessary to connect to data, monitor for conditions, and act. You typically create an activator for each business process or area you monitor.
 
-1. Select a workplace to make it active.
-1. From the left navbar, select **Create**.
-1. From the **New** menu in the workspace, choose **Activator**.
+1. Ensure that you are in the Fabric workload. Check that the switcher in the bottom left corner is set to **Fabric**.
 
-    :::image type="content" source="media/activator-get-started/data-activator-new.png" alt-text="Screenshot of selecting a new activator.":::
+    :::image type="content" source="media/activator-get-started/activator-fabric-icon.png" alt-text="Screenshot showing the switcher set to Fabric.":::
 
-1. From here, you can start adding data to your activator or you can use our **Package delivery sample** to get familiar with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. The [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial](activator-tutorial.md) uses the sample to teach you how to create and use rules on objects in your live data.
+1. In Microsoft Fabric, from the left navigation pane (nav pane) select **Create** > **Real-Time Intelligence** > **Activator**. 
 
-    :::image type="content" source="media/activator-get-started/data-activator-new-reflex.png" alt-text="Screenshot of the new activator screen showing two options for creating an activator.":::
+    - If you don't see **Create**, select the ellipses(...) to display more icons.
+    - If you don't see the **Real-Time Intelligence** option, make sure you're in Fabric and not Power BI.
 
-Once you create an activator, populate it with data. Learn how to get data into your activator from these two articles:
+    :::image type="content" source="media/activator-get-started/activator-create.png" alt-text="Screenshot of Activator experience.":::
+
+2. Select **Try sample**. This loads the **Package delivery sample**. 
+
+    :::image type="content" source="media/activator-get-started/activator-sample.png" alt-text="Screenshot showing the Definition view of the sample activator.":::
+
+3. Explore the sample activator to familiarize yourself with the streams, objects, rules, and rule definitions. This sample is safe to use, the work you do with the sample here doesn't damage the source sample.
+
+Once you create and become familiar with this sample activator, continue learning with the [Activator tutorial](activator-tutorial.md). The tutorial uses the same **Package delivery events** sample to teach you how to create and use rules on objects in live data. 
+
+To learn how to get different types of data into an activator, read through these two articles:
 
 - [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from Power BI](activator-get-data-power-bi.md)
 - [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from eventstreams](activator-get-data-eventstreams.md)
 
-Alternatively, if you just want to learn how to use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] using sample data, try the [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md).
-
 ## Related content
 
 - [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](activator-introduction.md)
-- [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+- [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

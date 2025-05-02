@@ -2,10 +2,10 @@
 title: Dataflow activity
 description: Learn how to add a Dataflow activity to a pipeline and use it to run a Dataflow Gen2.
 ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.author: miescobar
+author: ptyx507x
 ms.topic: how-to
-ms.date: 12/07/2023
+ms.date: 4/15/2025
 ---
 
 # Use the Dataflow activity to run a Dataflow Gen2
@@ -16,7 +16,7 @@ The Dataflow activity in Data Factory for Microsoft Fabric allows you to run a D
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a Dataflow activity to a pipeline with UI
@@ -38,9 +38,20 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Dataflow activity settings
 
-Select the **Settings** tab, then select an existing workspace and dataflow to run. The notification option is disabled for now, but the feature is coming soon.
+Select the **Settings** tab, then select an existing workspace and dataflow to run. If you have made a [Dataflow Gen2 with CI/CD and Git integration support (Preview)](dataflow-gen2-cicd-and-git-integration.md), you can also select it from the dropdown. 
+
+   :::image type="content" source="media/dataflow-activity/select-a-dataflow.png" alt-text="Screenshot showing the dropdown with a list of dataflows to select in the Dataflow activity Settings tab":::
+
+The notification option is not currently available.
 
    :::image type="content" source="media/dataflow-activity/dataflow-settings.png" alt-text="Screenshot showing the Dataflow activity Settings tab, and highlighting the tab.":::
+
+>[!NOTE]
+>Public parameters mode and support for parameters to be passed to a Dataflow is a preview feature only available for Dataflow Gen2 with CI/CD support.
+
+Inside the Dataflow parameters section you are able to enter the name of the parameter that you wish to pass as well as the type and value that you wish to pass.
+
+For more information on how to enable the Dataflow parameters capability on your Dataflow Gen2, check the article on [Public parameters for Dataflow Gen2](dataflow-parameters.md).
 
 ## Save and run or schedule the pipeline
 

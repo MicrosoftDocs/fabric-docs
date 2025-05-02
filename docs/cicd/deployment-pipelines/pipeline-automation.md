@@ -7,8 +7,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-  - ignite-2023
-ms.date: 05/02/2024
+ms.date: 04/17/2025
 ms.search.form: Deployment pipelines APIs, Automate deployment pipelines, Power BI automation tools, Azure DevOps 
 #customer intent: As a developer, I want to automate my deployment pipeline using APIs and Azure DevOps so that I can streamline the release process.
 ---
@@ -38,11 +37,11 @@ You can use the [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pip
 
 ## Prerequisites
 
-Before you use the deployment pipelines APIs, make sure you have the following:
+Before you use the deployment pipelines APIs, make sure of the following:
 
-* The [*service principal*](/power-bi/developer/embedded/embed-service-principal), or the *user* that calls the APIs needs [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Microsoft Entra application](/entra/identity-platform/how-applications-are-added).
+* The *user* or *service principal* that calls the APIs has [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Microsoft Entra application](/entra/identity-platform/how-applications-are-added).
 
-* If you're going to use PowerShell scripts, install the Power BI PowerShell cmdlets [Install-Module MicrosoftPowerBIMgmt](/powershell/power-bi/overview).
+* If you're using PowerShell scripts, install the Power BI PowerShell cmdlets [Install-Module MicrosoftPowerBIMgmt](/powershell/power-bi/overview).
 
 ## Deployment pipelines API functions
 

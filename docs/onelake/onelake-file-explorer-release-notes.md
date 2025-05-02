@@ -6,8 +6,6 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 10/13/2023
 #customer intent: As a OneLake file explorer user, I want to stay informed about app updates and easily access release notes so that I can take advantage of new features and improvements.
 ---

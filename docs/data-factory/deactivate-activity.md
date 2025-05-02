@@ -5,7 +5,6 @@ author: kromerm
 ms.author: makromer
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ms.date: 11/15/2023
 ---
 

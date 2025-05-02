@@ -1,14 +1,12 @@
 ---
 title: Load Sample data to Data Warehouse
 description: Learn how to build and schedule a new data pipeline to copy sample data to a Data Warehouse.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 02/25/2025
 ms.search.form: Pipeline Tutorials
 ---
 
@@ -21,7 +19,7 @@ In this tutorial, you build a data pipeline to move a Sample dataset to the Data
 To get started, you must complete the following prerequisites:
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. Create an account for free.
-- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+- Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 - Make sure you have already created a Data Warehouse. To create it, refer to [Create a Data Warehouse](../data-warehouse/create-warehouse.md)
 
 ## Create a data pipeline
@@ -45,41 +43,37 @@ In this session, you start to build your pipeline by following below steps about
 
 ### Step 1: Start with the Copy assistant
 
-1. After selecting **Copy data** on the canvas,  the **Copy assistant** tool will be opened to get started.
+1. Select **Copy data assistant** on the canvas to open the **copy assistant** tool to get started. Or Select **Use copy assistant** from the **Copy data** drop down list under the **Activities** tab on the ribbon.
 
    :::image type="content" source="media/tutorial-load-data-lakehouse-transform/copy-data.png" alt-text="Screenshot showing the Copy data button on a new pipeline.":::
 
 ### Step 2: Configure your source
 
-1. Choose the **COVID-19 Data Lake** from the **Sample data** options for your data source, and then select **Next**.
+1. Choose the **NYC Taxi - Green** from the **Sample data** options for your data source.
 
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/covid-19-data-lake.png" alt-text="Screenshot showing the COVID-19 Data Lake sample data selection in the Copy data assistant.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/nyc-taxi-green.png" alt-text="Screenshot showing the NYC Taxi - Green sample data selection in the Copy data assistant.":::
 
-1. In the **Connect to data source** section of the **Copy data** assistant, a preview of the sample data **Bing COVID-19** is displayed. Select **Next** to move on to the data destination.
+1. In the **Connect to data source** section of the **Copy data** assistant, a preview of the sample data **NYC Taxi - Green** is displayed. Select **Next** to move on to the data destination.
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/preview-data.png" alt-text="Screenshot showing a preview of the Bing COVID-19 sample data.":::
 
 ### Step 3: Configure your destination
 
-1. Select the **Workspace** tab and choose **Data warehouse**. Then select **Next**.
+1. Select the **OneLake** tab and choose an existing **Warehouse**.
 
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/data-warehouse-destination.png" alt-text="Screenshot showing the selection of the Data Warehouse destination.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/data-warehouse-destination.png" alt-text="Screenshot showing the selection of the Warehouse destination.":::
+ 
+1. Configure and map your source data to the destination Warehouse table by entering **Table**, then select **Next** one more time.
 
-1. Select your Data Warehouse from the drop-down list, then select **Next**. 
-
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/select-data-warehouse.png" alt-text="Screenshot showing selecting Data warehouse.":::
-
-1. Configure and map your source data to the destination Data Warehouse table by entering **Destination table name**, then select **Next** one more time.
-
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/specify-table-name.png" alt-text="Screenshot showing the table name to create in the Data Warehouse destination.":::
+   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/specify-table-name.png" alt-text="Screenshot showing the table name to create in the Warehouse destination.":::
 
 1. Configure other settings on **Settings** page. In this tutorial, select **Next** directly since you don't need to use staging and copy command.
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/destination-settings.png" alt-text="Screenshot showing the destination settings.":::
 
-### Step 4: Review and create your copy activity
+### Step 4: Review and run your copy activity
 
-1. Review your copy activity settings in the previous steps and select **OK** to finish. Or you can revisit the previous steps in the tool to edit your settings, if needed.
+1. Review your copy activity settings in the previous steps and select **Save + Run** to start the activity. Or you can revisit the previous steps in the tool to edit your settings, if needed.
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/review-create-activity.png" alt-text="Screenshot of the Review + create page of the Copy data assistant highlighting source and destination.":::
 
@@ -87,11 +81,7 @@ In this session, you start to build your pipeline by following below steps about
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity in pipeline canvas.":::
 
-## Run and schedule your data pipeline
-
-1. Switch to the **Home** tab and select **Run**. A confirmation dialog is displayed. Then select **Save and run** to start the activity.
-
-   :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/save-and-run.png" alt-text="Screenshot showing the Run button on the Home tab, and the Save and run prompt displayed.":::
+## Schedule your data pipeline
 
 1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas.  Select the run details button (with the glasses icon highlighted) to view the run details.
 

@@ -3,12 +3,10 @@ title: Dynamic data masking in Fabric Data Warehouse
 description: Learn about the dynamic data masking data protection feature in Fabric data warehousing.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: stwynant
+ms.reviewer: dhsundar
 ms.date: 04/24/2024
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2024
 ---
 
 # Dynamic data masking in Fabric data warehousing

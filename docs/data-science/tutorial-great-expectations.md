@@ -1,12 +1,12 @@
 ---
 title: "Tutorial: Validate data using SemPy and Great Expectations (GX)"
 description: Illustrates how to use SemPy together with Great Expectations to perform data validation on Power BI semantic models.
-ms.author: mopeakande
-author: msakande
+ms.author: franksolomon
+author: fbsolo-ms1
 ms.reviewer: marcozo
 reviewer: eisber
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom: 
 ms.date: 08/29/2024
 #Customer intent: As a data scientist, I want to validate my data to ensure it meets my expectations.
 ---
@@ -30,7 +30,8 @@ This tutorial shows you how to:
 
 * Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
 * Download the [_Retail Analysis Sample PBIX.pbix_](https://download.microsoft.com/download/9/6/D/96DDC2FF-2568-491D-AAFA-AFDD6F763AE3/Retail%20Analysis%20Sample%20PBIX.pbix) file. 
-* In your workspace, use the **Upload** button to upload the _Retail Analysis Sample PBIX.pbix_ file to the workspace.
+* In your workspace, select __Import__ > __Report or Paginated Report__ > __From this computer__ to upload the _Retail Analysis Sample PBIX.pbix_ file to your workspace.
+
 
 ## Follow along in notebook
 

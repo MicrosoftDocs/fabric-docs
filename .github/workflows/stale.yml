@@ -1,0 +1,37 @@
+name: Mark stale pull requests
+
+permissions:
+  issues: write
+  pull-requests: write
+  
+on:
+  schedule:
+  - cron: "0 */6 * * *"
+
+jobs:
+  stale:
+
+    runs-on: ubuntu-latest
+   
+    steps:
+    - uses: actions/stale@v3
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        days-before-pr-stale: 14
+        days-before-pr-close: 14
+        stale-pr-label: inactive
+        close-pr-label: auto-close
+        exempt-pr-labels: keep-open
+        stale-pr-message: >
+          This pull request has been inactive for 14 days, and an `inactive` label has been added. If you are finished with your changes don't forget to sign off in the comments of the pull request to request a review and merge. If you want to continue working without merging, simply add a comment about why you want to keep this PR open. If this PR is inactive with no comments for 14 more days, it will be closed automatically.
+          <br/>
+          Thank you!<br/>
+          [Microsoft Fabric Docs team](mailto:fabric-docs-publish@microsoft.com)<br/>
+          PS: Mention us in the comments `@MicrosoftDocs/fabric-docs-team` if you need assistance.
+
+        close-pr-message: >
+          This pull request has been inactive for 28 days, and an `auto-close` label has been added. At this time, the system is closing the PR automatically. If you decide to continue working on your changes, that's no problem. At the bottom of the pull request, simply select the **Reopen pull request** button.
+          <br/>
+          Thank you!<br/>
+          [Microsoft Docs team](mailto:fabric-docs-publish@microsoft.com)<br/>
+          PS: Mention us in the comments `@MicrosoftDocs/fabric-docs-team` if you need assistance.

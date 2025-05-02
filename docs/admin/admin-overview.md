@@ -9,7 +9,7 @@ ms.date: 08/04/2024
 
 # Administration overview
 
-[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. Fabric unified administration enables you to [secure](../security/security-overview.md) and [govern](../governance/governance-compliance-overview.md) data across the platform, and [manage](#manage) Fabric features. Controlling feature access and capabilities allow you to comply with company policies and external rules and regulations. Fabric also allows admins to [delegate](#delegate-admin-rights) their responsibilities. Delegation lets you create different groups of admins for different tasks in your organization. Delegating admin responsibilities can reduce pressure that might cause one admin team to become a bottleneck for organizational processes.
+[Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. Fabric unified administration enables you to [secure](../security/security-overview.md) and [govern](../governance/governance-compliance-overview.md) data across the platform, and [manage](#manage) Fabric features. Controlling feature access and capabilities allow you to comply with company policies and external rules and regulations. Fabric also allows admins to [delegate](#delegate-admin-rights) their responsibilities. Delegation lets you create different groups of admins for different tasks in your organization. Delegating admin responsibilities can reduce pressure that might cause one admin team to become a bottleneck for organizational processes.
 
 This article uses the generic term "admin." For details about which types of admins can perform the tasks described here, visit these articles:
 - [Admin roles in Fabric](../admin/microsoft-fabric-admin.md).
@@ -59,7 +59,7 @@ Admins can assign and manage [Fabric admin roles](../admin/roles.md). Admin role
 
 Fabric is composed of tenants, capacities, and workspaces. Your organization might have one or more tenants, each with at least one capacity. Workspaces reside in capacities, and are where data is created, transformed, and consumed. Each organization can organize its tenants, capacities, and workspaces in accordance with their organizational structure. For example, in an organization with one tenant, capacities can be organized according to the organizational functions, and workspaces can be created according to each function's divisions.
 
-Admins can control these processes throughout the organization. For example, being an admin allows you to create and delete workspaces, and to control [workspace settings](../get-started/workspaces.md#workspace-settings) such as [Azure connections](../data-factory/dataflow-support.md), [Git integration](../cicd/git-integration/intro-to-git-integration.md) and [OneLake](../onelake/onelake-overview.md).
+Admins can control these processes throughout the organization. For example, being an admin allows you to create and delete workspaces, and to control [workspace settings](../fundamentals/workspaces.md#workspace-settings) such as [Azure connections](../data-factory/dataflow-support.md), [Git integration](../cicd/git-integration/intro-to-git-integration.md) and [OneLake](../onelake/onelake-overview.md).
 
 To distribute management across the organization, you can also use [domains](../governance/domains.md). With a domain, you create a logical grouping of workspaces. For example, your organization can create domains according to functions such as sales and marketing. Designated users can become admins and oversee Fabric functions related to the data in each domain. Using domains allows your organization to appoint the right admins at the right level. You no longer need Fabric administrators with lots of permissions and responsibilities to manage every single area in your organization. Using domains, you can allocate some admin rights to users who are closer to the domain's subject matter. By doing that, you free Fabric administrators to concentrate on organizational processes, and allow experts to directly manage data in their fields.
 
@@ -93,7 +93,7 @@ Capacity and workspace settings allow you to be more specific when you control y
 
 ### Grant permissions
 
-In Fabric, [workspace roles](../get-started/roles-workspaces.md) allow workspace admins to manage who can access data. Some of the things workspace roles determine, are which users can view, create, share, and delete Fabric items. As an admin, you can grant and revoke workspace roles, using them to control access to data in your organization. You can also create security groups and use them to control workspace access.
+In Fabric, [workspace roles](../fundamentals/roles-workspaces.md) allow workspace admins to manage who can access data. Some of the things workspace roles determine, are which users can view, create, share, and delete Fabric items. As an admin, you can grant and revoke workspace roles, using them to control access to data in your organization. You can also create security groups and use them to control workspace access.
 
 ## Monitor
 
@@ -129,7 +129,7 @@ This section provides a high level list of some of the admin capabilities mentio
 | [Feature usage and adoption report](../admin/feature-usage-adoption.md)        | Review the usage of Fabric features       |
 | [Tenant settings](../admin/about-tenant-settings.md)  | Control Fabric settings across your organization |
 | [Track user activities in Microsoft Fabric](../admin/track-user-activities.md) | Use log entries to view Fabric operations |
-| [workspace roles](../get-started/roles-workspaces.md) | Set up permissions for Fabric workspaces         |
+| [workspace roles](../fundamentals/roles-workspaces.md) | Set up permissions for Fabric workspaces         |
 
 ## Related content
 

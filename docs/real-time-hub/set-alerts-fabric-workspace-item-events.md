@@ -5,17 +5,15 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 03/18/2025
 ---
 
 # Set alerts on Fabric workspace item events in Real-Time hub
 This article describes how to set alerts on Fabric workspace item events in Real-Time hub.
 
-> [!NOTE]
-> This feature is currently in preview.
-
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+
+[!INCLUDE [deprecated-fabric-workspace-events](./includes/deprecated-fabric-workspace-events.md)]
 
 ## Launch the Set alert page
 

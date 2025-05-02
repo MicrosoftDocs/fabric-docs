@@ -1,11 +1,11 @@
 ---
 title: Create Activator alerts from a Real-Time Dashboard
 description: Learn how to create an Activator alert from a Real-Time Dashboard and receive real-time notifications when conditions are met.
-author: mihart
-ms.author: mihart
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.reviewer: guregini
-ms.custom: FY25Q1-Linter, ignite-2024
+ms.custom: FY25Q1-Linter
 ms.date: 09/15/2024
 ms.search.form: Real-Time Dashboard
 #Customer intent: As a customer, I want to learn how to create Activator alerts from a Real-Time Dashboard so that I can trigger notifications when conditions are met on daa in the dashboard.
@@ -20,7 +20,7 @@ Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to trigger no
 
 ## Prerequisites
 
-* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
+* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
 * A [Real-Time Dashboard](../../real-time-intelligence/dashboard-real-time-create.md) with at least one tile displaying data
 
 ## Create an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule using **Set alert**
@@ -94,4 +94,4 @@ The most common reason that a measure value can change over time is that the mos
 * [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](activator-create-activators.md)
 * [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-detection-conditions.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
-* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

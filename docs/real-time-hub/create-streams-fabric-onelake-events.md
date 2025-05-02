@@ -4,14 +4,12 @@ description: This article describes how to get OneLake events as a Fabric events
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 11/13/2024
+ms.date: 04/06/2025
 # Customer intent: I want to know how to create eventstreams for OneLake events in Fabric Real-Time hub. 
 ---
 
-# Get OneLake events in Fabric Real-Time hub (preview)
+# Get OneLake events in Fabric Real-Time hub
 This article describes how to get OneLake events as an eventstream in Fabric Real-Time hub.
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
 
 Real-Time hub allows you to discover and subscribe to changes in files and folders in OneLake, and then react to those changes in real-time. For example, you can react to changes in files and folders in Lakehouse and use Data Activator alerting capabilities to set up alerts based on conditions and specify actions to take when the conditions are met. This article explains how to explore OneLake events in Real-Time hub.
 
@@ -36,6 +34,7 @@ For more information, see [Explore OneLake events](explore-fabric-onelake-events
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
+- SusbcribeOneLakeEvent permission on the data sources.
 
 ## Create streams for OneLake events
 You can create streams for OneLake events in Real-Time hub using one of the ways:
@@ -85,6 +84,10 @@ Move the mouse over **OneLake events**, and select the **Create Eventstream** li
 1. Select all tables or a specific table that you're interested in, and then select **Add**. 
 
     :::image type="content" source="./media/create-streams-onelake-events/select-tables.png" alt-text="Screenshot that shows the selection of all tables." lightbox="./media/create-streams-onelake-events/select-tables.png":::       
+
+    > [!NOTE]
+    > OneLake events are supported for data in OneLake. However, events for data in OneLake via shortcuts are not yet available.
+
 1. Now, on the **Configure connection settings** page, you can add filters to set the filter conditions by selecting fields to watch and the alert value. To add a filter:
     1. Select **+ Filter**. 
     1. Select a field.

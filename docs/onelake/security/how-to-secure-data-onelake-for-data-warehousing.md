@@ -7,8 +7,6 @@ ms.reviewer: eloldag, wiassaf
 ms.date: 06/05/2024
 ms.topic: concept-article
 ms.custom:
-  - ignite-2023
-  - ignite-2024
 #customer intent: As a data engineer, I want to understand how to secure a lakehouse in Fabric for data warehousing so that I can ensure the data is protected and accessible only to authorized users.
 ---
 
@@ -78,7 +76,7 @@ For lakehouses that are not yet using the [OneLake data access roles](./get-star
 
 - [OneLake data access roles (preview)](./get-started-data-access-roles.md)
 - [OneLake data access control model](./data-access-control-model.md)
-- [Workspace roles](../../get-started/roles-workspaces.md)
+- [Workspace roles](../../fundamentals/roles-workspaces.md)
 - [How to secure data in OneLake for data science](./how-to-secure-data-onelake-for-data-science.md)
-- [Share items](../../get-started/share-items.md)
+- [Share items](../../fundamentals/share-items.md)
 - [Security for data warehousing in Microsoft Fabric](../../data-warehouse/security.md)

@@ -20,7 +20,7 @@ Here are some key concepts related to delegating settings in Fabric:
 
 * [Capacity](../enterprise/licenses.md#capacity) - A dedicated compute resource. Capacity admins can delegate settings concerning the performance and consumption of compute resources.  
 
-* [Workspace](../get-started/workspaces.md) - Collaborative environments where Fabric items are stored and shared. Certain tenant settings can be delegated to workspaces through a domain or a capacity.  
+* [Workspace](../fundamentals/workspaces.md) - Collaborative environments where Fabric items are stored and shared. Certain tenant settings can be delegated to workspaces through a domain or a capacity.  
 
 Domain, capacity and workspace admins can override tenant settings. Overriding tenant settings allows admins to modify their environment to meet specific requirements. When a setting is adjusted in a domain or capacity, it affects only the workspaces linked to those administrative units. Similarly, changes to a workspace impact only the items stored within that workspace.
 

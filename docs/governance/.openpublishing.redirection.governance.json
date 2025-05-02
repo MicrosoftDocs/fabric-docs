@@ -4,6 +4,26 @@
             "source_path_from_root": "/docs/governance/service-security-sensitivity-label-mandatory-label-policy.md",
             "redirect_url": "/fabric/governance/mandatory-label-policy",
             "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/governance/data-loss-prevention-overview.md",
+            "redirect_url": "/purview/dlp-powerbi-get-started",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/governance/onelake-catalog.md",
+            "redirect_url": "/fabric/governance/onelake-catalog-overview",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/governance/service-security-sensitivity-label-default-label-policy.md",
+            "redirect_url": "/fabric/governance/sensitivity-label-default-label-policy",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/governance/use-microsoft-purview-hub-data-owners.md",
+            "redirect_url": "/fabric/governance/onelake-catalog-govern",
+            "redirect_document_id": false
         }
     ]
 }

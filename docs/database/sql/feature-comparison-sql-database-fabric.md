@@ -4,10 +4,9 @@ description: This article compares the database engine features of Azure SQL Dat
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur, drskwier
-ms.date: 11/22/2024
+ms.date: 03/18/2025
 ms.topic: conceptual
-ms.custom:
-  - ignite-2024
+ms.search.form: SQL database Overview
 ---
 # Features comparison: Azure SQL Database and SQL database in Microsoft Fabric (preview)
 
@@ -15,14 +14,13 @@ ms.custom:
 
 Azure SQL Database and SQL database in Microsoft Fabric share a common code base with the latest stable version of the Microsoft SQL Database Engine. Most of the standard SQL language, query processing, and database management features are identical.
 
-- For a decision guide comparing Azure SQL Database to SQL database in Fabric, see [Microsoft Fabric decision guide: choose a SQL database](decision-guide.md).
-- For a decision guide comparing SQL database to other data stores in Microsoft Fabric, see [Microsoft Fabric decision guide: choose a data store](../../get-started/decision-guide-data-store.md).
+- For a decision guide comparing [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresql-db&preserve-view=true) to [SQL database in Fabric](overview.md), see [Microsoft Fabric decision guide: choose a SQL database](decision-guide.md).
+- For a decision guide comparing SQL database to other data stores in Microsoft Fabric, see [Microsoft Fabric decision guide: choose a data store](../../fundamentals/decision-guide-data-store.md).
 
 Many features are common between SQL Server and Azure SQL Database and SQL database in Fabric, for example:
 
 - Language features - [Control of flow language keywords](/sql/t-sql/language-elements/control-of-flow), [Cursors](/sql/t-sql/language-elements/cursors-transact-sql), [Data types](/sql/t-sql/data-types/data-types-transact-sql), [DML statements](/sql/t-sql/queries/queries), [Predicates](/sql/t-sql/queries/predicates), [Sequence numbers](/sql/relational-databases/sequence-numbers/sequence-numbers), [Stored procedures](/sql/relational-databases/stored-procedures/stored-procedures-database-engine), and [Variables](/sql/t-sql/language-elements/variables-transact-sql).
 - Database features - [Automatic tuning (plan forcing)](/sql/relational-databases/automatic-tuning/automatic-tuning), [Contained databases](/sql/relational-databases/databases/contained-databases), [Contained users](/sql/relational-databases/security/contained-database-users-making-your-database-portable), [Data compression](/sql/relational-databases/data-compression/data-compression), [Database configuration settings](/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql), [Online index operations](/sql/relational-databases/indexes/perform-index-operations-online), [Partitioning](/sql/relational-databases/partitions/partitioned-tables-and-indexes), and [Temporal tables](/sql/relational-databases/tables/temporal-tables).
-- Security features - [Application roles](/sql/relational-databases/security/authentication-access/application-roles), [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking), [row level security](/sql/relational-databases/security/row-level-security), and Threat detection.
 - Multi-model capabilities - [Graph processing](/sql/relational-databases/graphs/sql-graph-overview), [JSON data](/sql/relational-databases/json/json-data-sql-server), [OPENXML](/sql/t-sql/functions/openxml-transact-sql), [Spatial](/sql/relational-databases/spatial/spatial-data-sql-server), [OPENJSON](/sql/t-sql/functions/openjson-transact-sql), and [XML indexes](/sql/t-sql/statements/create-xml-index-transact-sql).
 
 ## Features of Azure SQL Database and Fabric SQL database
@@ -34,14 +32,15 @@ The following table lists the major features of SQL Server and provides informat
 | [Database compatibility](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level) | 100 - 160 | 160 |
 | [Accelerated database recovery (ADR)](/azure/azure-sql/accelerated-database-recovery) | Yes | Yes |
 | [Always Encrypted](/azure/azure-sql/database/always-encrypted-landing) | Yes | No |
+| [Application roles](/sql/relational-databases/security/authentication-access/application-roles) | Yes | No |
 | [Auditing](/sql/relational-databases/security/auditing/sql-server-audit-database-engine) | Yes, see [Auditing](/azure/azure-sql/database/auditing-overview)| Not currently |
 | Microsoft Entra authentication | [Yes](/azure/azure-sql/database/authentication-aad-overview) | [Yes](authentication.md) |
 | [BACKUP command](/sql/t-sql/statements/backup-transact-sql) | No, only [system-initiated automatic backups](/azure/azure-sql/database/automated-backups-overview?view=azuresql-db&preserve-view=true) | No, only [system-initiated automatic backups](backup.md) |
 | [Built-in functions](/sql/t-sql/functions/functions) | Most, see individual functions | Most, see individual functions |
-| [BULK INSERT statement](/sql/relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server) | Yes, but just from Azure Blob storage as a source. | Yes, from OneLake sources |
+| [BULK INSERT statement](/sql/relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server) | Yes, but just from Azure Blob storage as a source. | No|
 | [Certificates and asymmetric keys](/sql/relational-databases/security/sql-server-certificates-and-asymmetric-keys) | Yes | Yes |
 | [Change data capture - CDC](/sql/relational-databases/track-changes/about-change-data-capture-sql-server) | Yes, for S3 tier and above. Basic, S0, S1, S2 aren't supported. | No  |
-| [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, SQL_Latin1_General_CP1_CI_AS. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name) and can't be updated. Collations on individual columns are supported.| By default, SQL_Latin1_General_CP1_CI_ASC and can't be updated. Collations on individual columns are supported.|
+| [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, `SQL_Latin1_General_CP1_CI_AS`. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name) and can't be updated. Collations on individual columns are supported.| By default, `SQL_Latin1_General_CP1_CI_AS` and can't be updated. Collations on individual columns are supported.|
 | [Column encryption](/sql/relational-databases/security/encryption/encrypt-a-column-of-data) | Yes | Yes |
 | [Columnstore indexes, clustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes, but the table cannot be mirrored to OneLake. |
 | [Columnstore indexes, nonclustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes |
@@ -58,7 +57,7 @@ The following table lists the major features of SQL Server and provides informat
 | [Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking) | Yes | Yes |
 | [Elastic database client library](/azure/azure-sql/database/elastic-database-client-library) | Yes | No |
 | [Elastic query](/azure/azure-sql/database/elastic-query-overview) | Yes, with required RDBMS type (preview) | No |
-| [EXECUTE AS](/sql/t-sql/statements/execute-as-transact-sql) | Yes, but `EXECUTE AS LOGIN` isn't supported - use `EXECUTE AS USER` | Yes, but `EXECUTE AS LOGIN` isn't supported - use `EXECUTE AS USER` |
+| [EXECUTE AS](/sql/t-sql/statements/execute-as-transact-sql) | Yes, but `EXECUTE AS LOGIN` isn't supported - use `EXECUTE AS USER` | No |
 | [Event notifications](/sql/relational-databases/service-broker/event-notifications) | No | No |
 | [Expressions](/sql/t-sql/language-elements/expressions-transact-sql) | Yes | Yes |
 | [Extended events (XEvents)](/sql/relational-databases/extended-events/extended-events) | Some, see [Extended events in Azure SQL Database](/azure/azure-sql/database/xevent-db-diff-from-svr) | Some |
@@ -70,7 +69,7 @@ The following table lists the major features of SQL Server and provides informat
 | [Language elements](/sql/t-sql/language-elements/language-elements-transact-sql) | Most, see individual elements | Most, see individual elements  |
 | [Ledger](/sql/relational-databases/security/ledger/ledger-overview) | Yes | No |
 | [Linked servers](/sql/relational-databases/linked-servers/linked-servers-database-engine) | Yes, only as a target | Yes, only as a target |
-| [Logins and users](/sql/relational-databases/security/authentication-access/principals-database-engine) | Yes, but `CREATE` and `ALTER` login statements are limited. Windows logins are not supported. | Logins are not supported. Users are supported, but contained database users with `CREATE USER <user name> WITH PASSWORD` (SQL authentication) is not supported. |
+| [Logins and users](/sql/relational-databases/security/authentication-access/principals-database-engine) | Yes, but `CREATE` and `ALTER` login statements are limited. Windows logins are not supported. | Logins are not supported. Only users representing Microsoft Entra principals are supported. |
 | [Minimal logging in bulk import](/sql/relational-databases/import-export/prerequisites-for-minimal-logging-in-bulk-import) | No, only Full Recovery model is supported. | No, only Full Recovery model is supported. |
 | [Modifying system data](/sql/relational-databases/databases/system-databases) | No | No |
 | [OPENDATASOURCE](/sql/t-sql/functions/opendatasource-transact-sql)| No | No |
@@ -83,6 +82,7 @@ The following table lists the major features of SQL Server and provides informat
 | [RESTORE statements](/sql/t-sql/statements/restore-statements-for-restoring-recovering-and-managing-backups-transact-sql) | No | No |
 | [Restore database from backup](/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases#restore-data-backups) | [Restore from automated backups](/azure/azure-sql/database/recovery-using-backups) | [Restore automated backups](restore.md) |
 | [Restore database to SQL Server](/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases#restore-data-backups) | No. Use BACPAC or BCP instead of restore. | No. Use BACPAC or BCP instead of restore. |
+| [Row level security](/sql/relational-databases/security/row-level-security) | Yes | Yes |
 | [Service Broker](/sql/database-engine/configure-windows/sql-server-service-broker) | No | No |
 | [Server configuration settings](/sql/database-engine/configure-windows/server-configuration-options-sql-server) | No | No |
 | [Server-level roles](/azure/azure-sql/database/security-server-roles) | Yes | No |
@@ -132,6 +132,7 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | **VNet Service endpoint** | Yes, see [virtual network service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **VNet Global peering** | Yes, using [Private IP and service endpoints](/azure/azure-sql/database/vnet-service-endpoint-rule-overview?view=azuresql-db&preserve-view=true) | No |
 | **Private connectivity** | Yes, using [Private Link](/azure/private-link/private-endpoint-overview) | Yes, using [Private links](../../security/security-private-links-overview.md)  |
+| **Connectivity Policy**|[Redirect, Proxy, or Default](/azure/azure-sql/database/connectivity-architecture?view=azuresql-db&preserve-view=true)|[Redirect](/azure/azure-sql/database/connectivity-architecture?view=fabric&preserve-view=true)|
 
 ## Resource limits
 
@@ -164,6 +165,7 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 | [BCP](/sql/tools/bcp-utility) | Yes | Yes |
 | [BICEP](/azure/azure-resource-manager/bicep/overview) | Yes | No |
 | [Database watcher](/azure/azure-sql/database-watcher-overview) | Yes | Not currently |
+| [Data Factory in Microsoft Fabric connectors](../../data-factory/connector-overview.md) | Yes, see [Azure SQL Database connector overview](../../data-factory/connector-azure-sql-database-overview.md) | Yes, see [SQL database connector overview (Preview)](../../data-factory/connector-sql-database-overview.md) | 
 | [SMO](/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | Yes, see [SMO](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) | Yes, see [SMO](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) |
 | [SQL Server Data Tools (SSDT)](/sql/ssdt/download-sql-server-data-tools-ssdt) | Yes | Yes (minimum version is Visual Studio 2022 17.12) |
 | [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) | Yes | Yes |
@@ -176,5 +178,6 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 
 ## Related content
 
-- [What is Azure SQL Database?](/azure/azure-sql/database/sql-database-paas-overview?view=azuresql-db&preserve-view=true)
-- [What is SQL database in Fabric?](overview.md)
+- [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+- [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)

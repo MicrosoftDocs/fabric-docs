@@ -1,13 +1,11 @@
 ---
 title: Explore data in Real-Time Dashboard tiles
-description: Learn how to explore data in Real-Time Analytics tiles for more insights about the information rendered in the visual.
+description: Learn how to explore data in Real-Time Intelligence tiles for more insights about the information rendered in the visual.
 ms.reviewer: mibar
 author: shsagir
 ms.author: shsagir
 ms.topic: how-to
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.date: 11/19/2024
 ---
 # Explore data in Real-Time Dashboard tiles
@@ -20,7 +18,7 @@ This exploration can provide additional insights into your data, enhancing your 
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A dashboard with visuals. For more information, see [Create a Real-Time Dashboard](dashboard-real-time-create.md)
 
 ## Start your data exploration

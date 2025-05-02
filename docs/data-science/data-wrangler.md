@@ -6,7 +6,7 @@ author: fbsolo-ms1
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.custom: ignite-2024
+ms.custom: 
 ms.date: 08/12/2024
 
 ms.search.form: Data Wrangler
@@ -96,7 +96,7 @@ This table summarizes the operations that Data Wrangler currently supports:
 | **Sort** | Sort a column in ascending or descending order |
 | **Filter** | Filter rows based on one or more conditions |
 | **One-hot encode** | Create new columns for each unique value in an existing column, indicating the presence or absence of those values per row |
-| **One-hot encode with delimiter** | Split and one-hot encode categorical data using a delimiter |
+| **Multi-label binarizer** | Split data using a separator and create new columns for each category, marking 1 if a row has that category and 0 if it doesn’t. |
 | **Change column type** | Change the data type of a column |
 | **Drop column** | Delete one or more columns |
 | **Select column** | Choose one or more columns to keep, and delete the rest |

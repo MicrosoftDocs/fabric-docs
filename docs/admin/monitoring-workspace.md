@@ -5,8 +5,6 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 09/17/2024
 ---
 
@@ -55,6 +53,8 @@ By default, the admin monitoring workspace is a Pro-licensed workspace. To take 
 You can use the reports in the admin monitoring workspace for getting insights about user activity, content sharing, capacity performance, and more in your Fabric tenant. You can also connect to the semantic models in the workspace to create reporting solutions optimized for your organization's needs.
 
 ## Considerations and limitations
+
+* Private links aren't supported.
 
 * Only users whose admin roles are assigned directly can set up the admin monitoring workspace. If the workspace creator's admin role is assigned through a group, data refreshes in the workspace fail.
 

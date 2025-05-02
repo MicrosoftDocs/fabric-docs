@@ -5,7 +5,6 @@ author: paulinbar
 ms.author: painbar
 ms.service: fabric
 ms.custom:
-  - ignite-2024
 ms.topic: how-to
 ms.date: 11/19/2024
 #customer intent: As a Fabric administrator, I want to enable external data sharing in my Fabric tenant.

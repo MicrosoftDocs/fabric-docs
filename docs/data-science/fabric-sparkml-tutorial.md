@@ -5,7 +5,7 @@ ms.reviewer: midesa
 ms.author: franksolomon
 author: fbsolo-ms1
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom: 
 ms.date: 06/19/2024
 ---
 

@@ -1,13 +1,12 @@
 ---
 title: 'Tutorial: Discover relationships in a Power BI semantic model using semantic link'
 description: This article shows how to interact with Power BI from a Jupyter notebook with the help of the SemPy library.
-ms.author: mopeakande
-author: msakande
+ms.author: franksolomon
+author: fbsolo-ms1
 ms.reviewer: alsavelv
 reviewer: alsavelv
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
 ms.date: 09/27/2023
 ---
 
@@ -215,5 +214,5 @@ Check out other tutorials for semantic link / SemPy:
 - [Tutorial: Analyze functional dependencies in a sample semantic model](tutorial-power-bi-dependencies.md)
 - [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 - [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link](tutorial-relationships-detection.md)
-- [Tutorial: Validate data using SemPy and Great Expectations (GX) (preview)](tutorial-great-expectations.md)
+- [Tutorial: Validate data using SemPy and Great Expectations (GX)](tutorial-great-expectations.md)
 <!-- nbend -->

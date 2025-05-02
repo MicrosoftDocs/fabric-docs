@@ -1,13 +1,11 @@
 ---
 title: Pricing scenario - Dataflow Gen2 loads 2 GB on-premises CSV file to a Lakehouse table
 description: This article provides an example pricing scenario for loading 2 GB of on-premises CSV data to a Lakehouse table using Dataflow Gen2 for Data Factory in Microsoft Fabric.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 

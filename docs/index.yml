@@ -9,9 +9,6 @@ metadata:
   description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
   ms.service: fabric
   ms.custom:
-    - ignite-2023
-    - build-2024
-    - ignite-2024
   ms.topic: hub-page
   ms.collection: collection
   author: SnehaGunda
@@ -29,7 +26,7 @@ highlightedContent:
     # Card
     - title: Try Microsoft Fabric for free
       itemType: get-started
-      url: get-started/fabric-trial.md
+      url: fundamentals/fabric-trial.md
     # Card
     - title: Security in Microsoft Fabric
       itemType: overview
@@ -37,19 +34,19 @@ highlightedContent:
     # Card
     - title:  Choose a Fabric data store
       itemType: concept
-      url: get-started/decision-guide-data-store.md
+      url: fundamentals/decision-guide-data-store.md
     # Card
     - title: Copilot in Microsoft Fabric
       itemType: concept
-      url: get-started/copilot-fabric-overview.md 
+      url: fundamentals/copilot-fabric-overview.md 
     # Card
     - title: Build solutions with taskflows
       itemType: tutorial
-      url: get-started/task-flow-overview.md     
+      url: fundamentals/task-flow-overview.md     
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
-      url: get-started/end-to-end-tutorials.md
+      url: fundamentals/end-to-end-tutorials.md
     # Card
     - title: Fabric capacity and license types
       itemType: concept
@@ -112,21 +109,21 @@ conceptualContent:
         # Card
         - title: "Get started"
           links:
-          - url: get-started/fabric-home.md
+          - url: fundamentals/fabric-home.md
             itemType: concept
             text: Tour the Fabric portal        
-          - url: get-started/share-items.md
+          - url: fundamentals/share-items.md
             itemType: how-to-guide
             text: Collaborate and share items
-          - url: get-started/task-flow-overview.md
+          - url: fundamentals/task-flow-overview.md
             itemType: concept
             text: Use task flows
-          - url: get-started/copilot-enable-fabric.md
+          - url: fundamentals/copilot-enable-fabric.md
             itemType: concept
             text: Try Copilot in Fabric
           # footerLink (optional)
           footerLink:
-            url: get-started/index.yml
+            url: fundamentals/index.yml
             text: See more
         # Card
         - title: Migrate to Fabric
@@ -146,17 +143,17 @@ conceptualContent:
         # Card
         - title: Decision guides
           links:
-          - url: get-started/decision-guide-data-store.md
+          - url: fundamentals/decision-guide-data-store.md
             itemType: quickstart
             text: Choose a data store
-          - url: get-started/decision-guide-pipeline-dataflow-spark.md
+          - url: fundamentals/decision-guide-pipeline-dataflow-spark.md
             itemType: concept
             text: Copy Activity, Dataflow, or Spark Guide
-          - url: get-started/decision-guide-lakehouse-warehouse.md
+          - url: fundamentals/decision-guide-lakehouse-warehouse.md
             itemType: concept
             text: Warehouse and Lakehouse
           footerLink:
-            url: get-started/index.yml
+            url: fundamentals/index.yml
             text: See more
         # Card
         - title: Administer your resources
@@ -233,7 +230,7 @@ conceptualContent:
           - url: data-warehouse/query-warehouse.md
             itemType: how-to-guide
             text: Transform data in a warehouse
-          - url: get-started/copilot-notebooks-overview.md
+          - url: data-engineering/copilot-notebooks-overview.md
             itemType: overview
             text: Transform data with Copilot for notebooks
           - url: real-time-intelligence/event-streams/process-events-using-event-processor-editor.md
@@ -284,20 +281,20 @@ conceptualContent:
         # Card
         - title: Use AI capabilities and get insights with Copilot
           links:
-          - url: get-started/copilot-fabric-overview.md
+          - url: fundamentals/copilot-fabric-overview.md
             itemType: concept
             text: Overview of Copilot in Fabric
-          - url: get-started/copilot-privacy-security.md
+          - url: fundamentals/copilot-privacy-security.md
             itemType: concept
             text: Copilot privacy, security, and responsible use
-          - url: get-started/copilot-faq-fabric.yml
+          - url: fundamentals/copilot-faq-fabric.yml
             itemType: how-to-guide
             text: Copilot FAQ
-          - url: get-started/copilot-fabric-consumption.md
+          - url: fundamentals/copilot-fabric-consumption.md
             itemType: how-to-guide
             text: Copilot billing and reporting
           footerLink:
-            url: get-started/copilot-fabric-overview.md
+            url: fundamentals/copilot-fabric-overview.md
             text: See more
         # Card
         - title: Govern your resources
@@ -341,7 +338,7 @@ conceptualContent:
         # Card
         - title: Stay informed with product updates
           links:
-          - url: get-started/whats-new.md
+          - url: fundamentals/whats-new.md
             itemType: whats-new
             text: What's new in Microsoft Fabric?
           - url: /fabric/release-plan/
@@ -393,17 +390,26 @@ conceptualContent:
         - title: Develop with APIs
           links:
             - url: /rest/api/fabric/articles/
-              itemType: concept
+              itemType: reference
               text: Fabric REST API
             - url: /rest/api/power-bi/
-              itemType: concept
+              itemType: reference
               text: Power BI REST API
             - url: /javascript/api/overview/powerbi/
-              itemType: concept
+              itemType: reference
               text: Power BI embedded analytics Client APIs
           footerLink:
               url: /rest/api/fabric/
               text: See more
+        # Card
+        - title: Developer tools
+          links:
+            - url: /fabric/admin/fabric-command-line-interface
+              itemType: concept
+              text: Fabric command line interface
+            - url: https://registry.terraform.io/providers/microsoft/fabric/latest/docs/guides/getting_started
+              itemType: reference
+              text: Terraform provider for Fabric            
         # Card
         - title: Solutions for ISVs
           links:
@@ -452,6 +458,12 @@ conceptualContent:
             - url: https://community.fabric.microsoft.com/t5/Community-News/Fabric-Community-Update-March-2024/td-p/3744214
               itemType: concept
               text: Signup for the Fabric newsletter
+            - url: fundamentals/feedback.md#fabric-user-panel
+              itemType: concept
+              text: Microsoft Fabric user panel
+            - url: https://aka.ms/LearnFAIAD
+              itemType: concept
+              text: Register for Fabric Analyst in a Day workshop
         # Card
         - title: Get involved
           links:

@@ -9,7 +9,7 @@ ms.date: 11/13/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Fabric job events to an eventstream (preview)
+# Add Fabric job events to an eventstream
 
 This article shows you how to add Fabric job event source to an eventstream.
 

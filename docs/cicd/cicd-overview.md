@@ -1,14 +1,15 @@
 ---
-title: Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric
-description: An overview of the CI/CD continuous integration, continuous deployment as part of the ALM cycle process in Microsoft Fabric.
+title: Introduction to CI/CD in Microsoft Fabric
+description: An overview of the CI/CD continuous integration, continuous deployment as part of the Application lifecycle management (ALM) cycle process in Microsoft Fabric.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.topic: conceptual
-ms.date: 08/10/2023
+ms.topic: concept-article
+ms.service: fabric
+ms.subservice: cicd
+ms.date: 01/12/2025
+#customer intent: As a developer, I want to understand the CI/CD process in Microsoft Fabric so that I can efficiently manage the lifecycle of my applications.
 ---
 
 # What is lifecycle management in Microsoft Fabric?
@@ -19,7 +20,7 @@ Microsoft Fabric's lifecycle management tools provide a standardized system for 
 
 :::image type="content" source="./media/cicd-overview/git-flow.png" alt-text="Flowchart showing the connection between the remote Git branch and the live workspace.":::
 
-With Fabric's [Git integration](./git-integration/intro-to-git-integration.md) process, incremental workspace updates can be made frequently and reliably by multiple developers. By leveraging Git advantages and best practices, developers can collaborate and ensure that content changes get to the workspace quickly and reliably. When ready, the delivery process can then deliver the content to deployment pipelines for testing and distribution.
+With Fabric's [Git integration](./git-integration/intro-to-git-integration.md) process, incremental workspace updates can be made frequently and reliably by multiple developers. By applying Git advantages and best practices, developers can collaborate and ensure that content changes get to the workspace quickly and reliably. When ready, the delivery process can then deliver the content to deployment pipelines for testing and distribution.
 
 > [!NOTE]
 > Some of the items for CI/CD are in preview. See the list of supported item for the [Git integration](./git-integration/intro-to-git-integration.md#supported-items) and [deployment pipeline](./deployment-pipelines/intro-to-deployment-pipelines.md#supported-items) features.
@@ -30,7 +31,16 @@ With Fabric's [Git integration](./git-integration/intro-to-git-integration.md) p
 
 Fabric's [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) [automates the delivery](./deployment-pipelines/pipeline-automation.md) of modified content to environments like testing and production. It allows teams to produce updates in short cycles with high speed, frequency, and reliability. Content can be released at any time with a simple, repeatable deployment process.
 
-For the most efficient lifecycle management experience in Fabric, connect your developer workspace to Git, and deploy from there using deployment pipelines.
+For the most efficient lifecycle management experience in Fabric, connect your developer workspace to Git, and deploy from the connected workspace using deployment pipelines.
+
+## Variable library
+
+With [Variable libraries](./variable-library/variable-library-overview.md), customers can:
+
+* Define and manage variables (user-defined variables) in a unified way for all workspace items.
+* Use the variables in different places in the product: In item definitions (such as queries), as reference to other items (Lakehouse ID), and more.
+* Reuse variables across fabric workloads and items (for example, several items in the workspace can refer to the same variable).
+* CI/CD - Use variables to adjust values based on the release pipeline stage.
 
 ## Related content
 

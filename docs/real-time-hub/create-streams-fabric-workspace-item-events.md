@@ -5,16 +5,12 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 03/19/2025
 ---
 
-# Get Fabric workspace item events in Real-Time hub (preview)
+# Get Fabric workspace item events in Real-Time hub
 
 This article describes how to get Fabric workspace item events as an eventstream in Fabric Real-Time hub.
-
-> [!NOTE]
-> This feature is currently in preview.
 
 Fabric workspace item events are discrete Fabric events that occur when changes are made to your Fabric Workspace. These changes include creating, updating, or deleting a Fabric item.
 
@@ -31,10 +27,10 @@ Here are the supported Fabric workspace events:
 - Microsoft.Fabric.ItemUpdateFailed
 - Microsoft.Fabric.ItemDeleteSucceeded
 - Microsoft.Fabric.ItemDeleteFailed
-- Microsoft.Fabric.ItemReadSucceeded
-- Microsoft.Fabric.ItemReadFailed
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+
+[!INCLUDE [deprecated-fabric-workspace-events](./includes/deprecated-fabric-workspace-events.md)]
 
 ## Prerequisites
 

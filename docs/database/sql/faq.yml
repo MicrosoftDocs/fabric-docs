@@ -4,16 +4,16 @@ metadata:
   description: This article answers frequently asked questions about SQL database in Microsoft Fabric (preview).
   author: WilliamDAssafMSFT
   ms.author: wiassaf
-  ms.reviewer: nzagorac, antho, sukkaur
+  ms.reviewer: nzagorac, antho, sukkaur, amapatil
   ms.topic: faq
   ms.custom:
-    - ignite-2024
-  ms.date: 11/06/2024
+  ms.date: 01/31/2025
+  ms.search.form: SQL database Overview
 title: "Frequently asked questions for SQL database in Microsoft Fabric (preview)"
 summary: |
   **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-  This article answers frequently asked questions about SQL database in Microsoft Fabric.
+  This article answers frequently asked questions about SQL database in Microsoft Fabric. For more Q&A, engage with the [Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion).
 
 sections:
   - name: Connectivity
@@ -22,6 +22,11 @@ sections:
           How do I connect to SQL database in Fabric? 
         answer:
           You can connect to SQL database in Fabric in the same ways you connect to Azure SQL Database. For more information, see [Connect to SQL database in Fabric](connect.md).
+      - question: |
+          Which connection policies are supported for SQL database in Fabric?
+        answer:
+          Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. For more information, see [Connection policy](limitations.md#connection-policy).
+
 
   - name: About SQL database data in OneLake
     questions:
@@ -65,9 +70,9 @@ sections:
           For SQL database in Fabric, the replication of data to OneLake cannot be disabled. 
 
       - question: | 
-          Are system objects such as system views and dynamic management views the same as [Fabric database mirroring](../mirrored-database/overview.md)?
+          Are system objects such as system views and dynamic management views the same as Fabric database mirroring?
         answer: |
-          Yes, with the exception of objects that disable the replication. 
+          Yes, with the exception of objects that disable the replication.
 
   - name: Security
     questions:
@@ -79,13 +84,21 @@ sections:
           Is data staged outside of a customer environment? 
         answer: 
           No. Data isn't staged outside of customer environment, it's staged in the customer's OneLake.
+      - question: | 
+          Is Private Link available for SQL database in Fabric?
+        answer:
+          Yes. Private Links are available at the tenant level. For more information, see [Private links](../../security/security-private-links-overview.md).
 
-  - name: Cost Management 
+  - name: Cost management 
     questions:
       - question: |
           What are the costs associated with SQL database in Fabric?
         answer: 
-          During preview, there's no cost for SQL database in Fabric.
+          After February 1, 2025, compute and data storage are charged to your Fabric capacity. Additionally, backup billing will start after April 1, 2025.
+      - question: |
+          How do I monitor SQL database in Fabric consumption?
+        answer: 
+          For more information on consumption of your [Fabric Capacity](../../enterprise/licenses.md), see [Billing and utilization reporting for SQL database in Microsoft Fabric](usage-reporting.md). To understand your Fabric billing, see [Understand your Azure bill on a Fabric capacity](../../enterprise/azure-billing.md).
 
   - name: Monitoring
     questions: 
@@ -103,6 +116,7 @@ sections:
 
   - name: Licensing
     questions:
+
       - question: |
           What are licensing options for SQL database in Fabric? 
         answer:
@@ -112,7 +126,20 @@ sections:
           Is SQL database in Fabric billed with Fabric capacity or with Azure capacity?
         answer: 
           Billing for SQL database in Fabric is structured according to the [Fabric Capacity Model](../../enterprise/licenses.md).
-         
+
+  - name: Availability
+    questions: 
+      - question: |
+          Where is SQL database in Fabric available?
+        answer:
+          See [Fabric availability](../../admin/region-availability.md#all-workloads).
+
+          Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../mirrored-database/azure-sql-database-limitations.md#supported-regions).
+      - question: |
+          My capacity is in a supported region but I still do not see the option to enable SQL database. What should I do?
+        answer:
+          SQL database in Fabric must be available in the home region of the tenant as well as the capacity region. Check the home region of your tenant to ensure SQL database in Fabric is available in that region. For more information, see [Fabric availability](../../admin/region-availability.md).
+
   - name: Troubleshooting
     questions:
       - question: |
@@ -120,6 +147,10 @@ sections:
         answer:
           Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, users who try to create a new SQL database will receive an error message "SQL database failed to create."
  
+      - question: |
+          Where can I ask questions to the community about SQL database in Fabric?
+        answer:
+          Engage with the [Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion).
 
 
 additionalContent: |
@@ -127,5 +158,5 @@ additionalContent: |
   ## Related content
 
   - [SQL database in Fabric](overview.md)
-  - [Performance Dashboard for SQL database in Fabric](performance-dashboard.md)
-  
+  - [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+  - [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)  

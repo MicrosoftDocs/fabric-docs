@@ -6,10 +6,8 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.search.form: Develop and run notebooks
-ms.date: 11/15/2023
+ms.date: 03/31/2025
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -83,12 +81,21 @@ The IntelliSense features are at different levels of maturity for different lang
 | **Languages** | **Syntax highlight** | **Syntax error marker** | **Syntax code completion** | **Variable code completion** | **System function code completion** | **User function code completion** | **Smart indent** | **Code folding** |
 |---|---|---|---|---|---|---|---|---|
 | PySpark (Python) | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | Spark (Scala) | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | SparkSQL | Yes | Yes | Yes | Yes | Yes | No | Yes | Yes |
 | SparkR | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| T-SQL | Yes | Yes | Yes | No | Yes | Yes | Yes | Yes |
 
 > [!NOTE]
 > You must have an active Apache Spark session to use IntelliSense code completion.
+
+#### Enhance Python Development with Pylance
+ 
+> [!NOTE]
+> Currently, the feature is in preview.
+ 
+Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter auto-completion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
 
 ### Code snippets
 
@@ -127,7 +134,7 @@ Select **Undo** or **Redo**, or press **Z** or **Shift+Z** to revoke the most re
 
 Supported undo cell operations:
 
-- Insert or delete cell. You can revoke the delete operations by selecting **Undo** (the text content is kept along with the cell).
+- Insert or delete cell. You can revoke the deleted operations by selecting **Undo** (the text content is kept along with the cell).
 - Reorder cell.
 - Toggle parameter.
 - Convert between code cell and Markdown cell.
@@ -163,7 +170,7 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide outpu
 
 ### Cell output security
 
-Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table will see an unauthorized error during query execution.
+Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
 
 > [!IMPORTANT]
 > Security only applies during query execution and any notebook cells containing query results can be viewed by users that are not authorized to run queries against the data directly.
@@ -257,7 +264,7 @@ The ```%run``` command also allows you to run Python or SQL files that are store
 ``` %run [-b/--builtin -c/--current] [script_file.py/.sql] [variables ...] ```
 
 For options:
-- **-b/--builtin**: This option indicates that the command will find and run the specified script file from the notebook’s built-in resources.
+- **-b/--builtin**: This option indicates that the command finds and runs the specified script file from the notebook’s built-in resources.
 - **-c/--current**: This option ensures that the command always uses the current notebook’s built-in resources, even if the current notebook is referenced by other notebooks.
 
 Examples:
@@ -278,8 +285,8 @@ Usage example for nested run case:
     - **Notebook2**: Contains *script_file2.py* in its built-in resources
 - Let's use **Notebook1** work as a root notebook with the content: ``` %run Notebook2 ```.
 - Then in the **Notebook2** the usage instruction is:
-    - To run *script_file1.py* in **Notebook1**(the root Notebook) the code would be: ``` %run -b script_file1.py ```
-    - To run *script_file2.py* in **Notebook2**(the current Notebook) the code would be: ``` %run -b -c script_file2.py ```
+    - To run *script_file1.py* in **Notebook1**(the root Notebook), the code would be: ``` %run -b script_file1.py ```
+    - To run *script_file2.py* in **Notebook2**(the current Notebook), the code would be: ``` %run -b -c script_file2.py ```
 
 ### Variable explorer
 
@@ -297,6 +304,25 @@ To open or hide the variable explorer, select **Variables** on the notebook ribb
 A step-by-step cell execution status is displayed beneath the cell to help you see its current progress. Once the cell run is complete, an execution summary with the total duration and end time appears and is stored there for future reference.
 
 :::image type="content" source="media\author-execute-notebook\cell-run-status.png" alt-text="Screenshot showing an example of cell run status details." lightbox="media\author-execute-notebook\cell-run-status.png":::
+
+### Session status indicator
+
+#### Session timeout config
+
+In the bottom left corner, you can click on the session status to get more information about the current session:
+
+![Screenshot that shows Session Information.](./media/author-execute-notebook/session-info.png)
+
+In the pop-up, there's an option to reset the timeout to x amount of minutes or hours.
+
+![Screenshot that shows Session timeout.](./media/author-execute-notebook/session-timeout.png)
+
+Take your pick in how long you want an uninterrupted session, and hit apply. The session timeout will reset itself with the new value and you're good to go!
+
+You can also set timeout as following:
+
+- [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md#spark-session-configuration-magic-command)
 
 ### Inline Apache Spark job indicator
 
@@ -447,8 +473,8 @@ You can personalize your Spark session with the magic command **%%configure**. F
 %%configure
 {
     // You can get a list of valid parameters to config the session from https://github.com/cloudera/livy#request-body.
-    "driverMemory": "28g", // Recommended values: ["28g", "56g", "112g", "224g", "400g", "472g"]
-    "driverCores": 4, // Recommended values: [4, 8, 16, 32, 64, 80]
+    "driverMemory": "28g", // Recommended values: ["28g", "56g", "112g", "224g", "400g"]
+    "driverCores": 4, // Recommended values: [4, 8, 16, 32, 64]
     "executorMemory": "28g",
     "executorCores": 4,
     "jars": ["abfs[s]: //<file_system>@<account_name>.dfs.core.windows.net/<path>/myjar.jar", "wasb[s]: //<containername>@<accountname>.blob.core.windows.net/<path>/myjar1.jar"],
@@ -622,8 +648,8 @@ Using the following keystroke shortcuts, you can easily navigate and run code in
 
 | **Action** | **Notebook shortcuts** |
 |---|---|
-| Move cursor up | Up |
-| Move cursor down | Down |
+| Move up cursor | Up |
+| Move down cursor | Down |
 | Undo | Ctrl + Z |
 | Redo | Ctrl + Y |
 | Comment or Uncomment | Ctrl + / <br/> Comment: Ctrl + K + C <br/> Uncomment: Ctrl + K + U |
@@ -644,3 +670,4 @@ To find all shortcut keys, select **View** on the notebook ribbon, and then sele
 
 - [Notebook visualization](notebook-visualization.md)
 - [Introduction of Fabric NotebookUtils](notebook-utilities.md)
+

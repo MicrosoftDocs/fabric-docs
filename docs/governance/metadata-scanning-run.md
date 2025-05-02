@@ -22,7 +22,7 @@ The following are the scanner APIs. They support both public and sovereign cloud
 * [WorkspaceScanResult](/rest/api/power-bi/admin/workspace-info-get-scan-result)
 
 > [!IMPORTANT]
-> The app you develop for scanning can authenticate by using either a standard delegated admin access token or a service principal. The two authentication paths are mutually exclusive. **When running under a service principal, there must be no Power BI admin-consent-required permissions set on your app**. For more information, see [Enable service principal authentication for read-only admin APIs](../admin/metadata-scanning-enable-read-only-apis.md).
+> The app you develop for scanning can authenticate by using either a standard delegated admin access token or a service principal. The two authentication paths are mutually exclusive. **When running under a service principal, there must be no Power BI admin-consent-required permissions set on your app**. For more information, see [Enable service principal authentication for admin APIs](../admin/enable-service-principal-admin-apis.md).
 
 ## Step 1: Perform a full scan
 
@@ -66,6 +66,6 @@ Metadata scanning requires no special license. It works for all of your tenant's
 
 * [Metadata scanning overview](./metadata-scanning-overview.md)
 * [Set up metadata scanning](../admin/metadata-scanning-setup.md).
-* [Enable service principal authentication for read-only admin APIs](../admin/metadata-scanning-enable-read-only-apis.md).
+* [Enable service principal authentication for admin APIs](../admin/enable-service-principal-admin-apis.md).
 * Learn about [Power BI REST Admin APIs](/rest/api/power-bi/admin).
 * More questions? Ask the [Power BI Community](https://community.powerbi.com).

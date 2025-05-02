@@ -26,29 +26,57 @@ items:
 - name: Copilot for Data Science
   items:
   - name: Copilot for Data Science
-    href: ../get-started/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Overview of Chat-magics in Notebooks
-    href: ../get-started/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Use the Copilot chat panel
-    href: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
-- name: AI skill
+    href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+- name: AI functions
   items: 
-    - name: What is the AI skill?
-      href: concept-ai-skill.md
-    - name: How to create an AI skill
-      href: how-to-create-ai-skill.md
-    - name: AI skill scenario
-      href: ai-skill-scenario.md
-    - name: AI skill tenant switch
-      href: ai-skill-tenant-switch.md
-    - name: AI skill sharing
-      href: ai-skill-sharing.md
+    - name: Transform and enrich data with AI functions
+      href: ./ai-functions/overview.md
+    - name: ai.similarity
+      href: ./ai-functions/similarity.md
+    - name: ai.classify
+      href: ./ai-functions/classify.md
+    - name: ai.analyze_sentiment
+      href: ./ai-functions/analyze-sentiment.md
+    - name: ai.extract
+      href: ./ai-functions/extract.md
+    - name: ai.fix_grammar
+      href: ./ai-functions/fix-grammar.md
+    - name: ai.summarize
+      href: ./ai-functions/summarize.md
+    - name: ai.translate
+      href: ./ai-functions/translate.md
+    - name: ai.generate_response
+      href: ./ai-functions/generate-response.md
+    - name: Customize AI function configurations
+      href: ./ai-functions/configuration.md
+- name: Fabric data agent
+  items: 
+    - name: What is the Fabric data agent?
+      href: concept-data-agent.md
+    - name: How to create a Fabric data agent
+      href: how-to-create-data-agent.md
+    - name: Fabric data agent scenario
+      href: data-agent-scenario.md
+    - name: How to consume a Fabric data agent
+      href: how-to-consume-data-agent.md
+    - name: Fabric data agent tenant settings
+      href: data-agent-tenant-settings.md
+    - name: Fabric data agent sharing
+      href: data-agent-sharing.md
+    - name: Fabric data agent SDK
+      href: fabric-data-agent-sdk.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
     href: ../data-engineering/how-to-use-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Develop and run notebooks
     href: ../data-engineering/author-execute-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Use Python experience on notebook
+    href: ../data-engineering/using-python-experience-on-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Format code in notebooks
     href: ../data-engineering/author-notebook-format-code.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Run notebooks in high concurrency mode
@@ -113,6 +141,8 @@ items:
   items:
   - name: Read and write data with Pandas
     href: read-write-pandas.md
+  - name: Transform and enrich data seamlessly with AI functions
+    href: ./ai-functions/overview.md
   - name: Accelerate data prep with Data Wrangler
     href: data-wrangler.md
   - name: Explore and transform Spark data with Data Wrangler

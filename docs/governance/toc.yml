@@ -11,12 +11,14 @@ items:
     href: ../admin/index.yml
   - name: Standards compliance
     href: standards-compliance.md
-- name: Get started
-  items:
-  - name: Set up item certification
-    href: ../admin/endorsement-setup.md?toc=/fabric/governance/TOC.json&bc=/fabric/governance/breadcrumb/toc.json
 - name: OneLake catalog
-  href: onelake-catalog.md
+  items:
+  - name: OneLake catalog overview
+    href: onelake-catalog-overview.md
+  - name: Find and explore data
+    href: onelake-catalog-explore.md
+  - name: Govern your data
+    href: onelake-catalog-govern.md
 - name: Microsoft Purview
   items:
   - name: Microsoft Purview and Fabric
@@ -26,54 +28,56 @@ items:
         href: /purview/register-scan-fabric-tenant?context=/fabric/governance/context/context-purview
       - name: Connect cross-tenant
         href: /purview/register-scan-fabric-tenant-cross-tenant?context=/fabric/governance/context/context-purview
-  - name: Microsoft Purview Hub
+  - name: Microsoft Purview hub
     href: use-microsoft-purview-hub.md
-- name: Information protection
-  items:
-  - name: Information protection in Microsoft Fabric
-    href: information-protection.md
-  - name: Sensitivity labels
+  - name: Information protection
     items:
-    - name: Protected sensitivity labels
-      href: protected-sensitivity-labels.md
-    - name: Default label policy
-      href: service-security-sensitivity-label-default-label-policy.md
-    - name: Domain-level default sensitivity labels
-      href: domain-default-sensitivity-label.md
-    - name: Mandatory label policy
-      href: mandatory-label-policy.md
-    - name: Sensitivity label support for paginated reports
-      href: service-security-sensitivity-label-paginated-reports.md
-    - name: Programmatic labeling
-      href: service-security-sensitivity-label-inheritance-set-remove-api.md
-    - name: Downstream inheritance
-      href: service-security-sensitivity-label-downstream-inheritance.md
-    - name: Inheritance from data sources
-      href: service-security-sensitivity-label-inheritance-from-data-sources.md
-    - name: Audit schema for sensitivity labels
-      href: sensitivity-label-audit-schema.md
-    - name: Troubleshoot sensitivity labels
-      href: service-security-sensitivity-label-troubleshooting.md
+    - name: Information protection in Microsoft Fabric
+      href: information-protection.md
+    - name: Sensitivity labels
+      items:
+      - name: Protected sensitivity labels
+        href: protected-sensitivity-labels.md
+      - name: Default label policy
+        href: sensitivity-label-default-label-policy.md
+      - name: Domain-level default sensitivity labels
+        href: domain-default-sensitivity-label.md
+      - name: Mandatory label policy
+        href: mandatory-label-policy.md
+      - name: Sensitivity label support for paginated reports
+        href: service-security-sensitivity-label-paginated-reports.md
+      - name: Programmatic labeling
+        href: service-security-sensitivity-label-inheritance-set-remove-api.md
+      - name: Downstream inheritance
+        href: service-security-sensitivity-label-downstream-inheritance.md
+      - name: Inheritance from data sources
+        href: service-security-sensitivity-label-inheritance-from-data-sources.md
+      - name: Audit schema for sensitivity labels
+        href: sensitivity-label-audit-schema.md
+      - name: Troubleshoot sensitivity labels
+        href: service-security-sensitivity-label-troubleshooting.md
   - name: Protection policies
     items:
     - name: Protection polices overview
       href: protection-policies-overview.md
     - name: Create and manage protection policies
       href: protection-policies-create.md
-  - name: Microsoft Defender for Cloud Apps with Power BI
-    href: service-security-using-defender-for-cloud-apps-controls.md
-- name: Data loss prevention policies
+  - name: Data loss prevention policies
+    items:
+    - name: Get started with Data loss prevention policies for Fabric and Power BI
+      href: /purview/dlp-powerbi-get-started
+    - name: Configure a DLP policy for Fabric
+      href: data-loss-prevention-configure.md
+    - name: Respond to a DLP policy violation
+      href: data-loss-prevention-respond.md
+    - name: Monitor DLP policy violations
+      href: data-loss-prevention-monitor.md
+- name: Endorsement
   items:
   - name: Overview
-    href: data-loss-prevention-overview.md
-  - name: Configure a DLP policy for Fabric
-    href: data-loss-prevention-configure.md
-  - name: Respond to a DLP policy violation
-    href: data-loss-prevention-respond.md
-  - name: Monitor DLP policy violations
-    href: data-loss-prevention-monitor.md
-- name: Endorsement
-  href: endorsement-overview.md
+    href: endorsement-overview.md
+  - name: Set up item certification
+    href: ../admin/endorsement-setup.md?toc=/fabric/governance/TOC.json&bc=/fabric/governance/breadcrumb/toc.json
 - name: Domains
   items:
   - name: Domains
@@ -112,3 +116,5 @@ items:
     href: metadata-scanning-overview.md
   - name: Run metadata scanning
     href: metadata-scanning-run.md
+- name: Microsoft Defender for Cloud Apps with Power BI
+  href: service-security-using-defender-for-cloud-apps-controls.md

@@ -3,8 +3,8 @@ title: "Open Mirroring (Preview) Partner Ecosystem"
 description: Learn about the open mirrored databases partner ecosystem in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: tinglee, sbahadur
-ms.date: 11/19/2024
+ms.reviewer: tinglee, sbahadur, ulrichchrist, maraki-ketema
+ms.date: 04/24/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -18,11 +18,11 @@ The following are the open mirroring partners who have already built solutions t
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
-This page will be updated during the current preview.
+This page is updated during the current preview.
 
 ## Oracle GoldenGate 23ai
 
-Oracle GoldenGate 23ai integration into Microsoft Fabric via open mirroring. Now, any supported Oracle GoldenGate source including Oracle Database@Azure can replicate data into Mirrored Database in Microsoft Fabric. This powerful combination unlocks real-time data integration, continuously synchronizing data across your hybrid and multicloud environments. Mirrored Database in Microsoft Fabric as a destination is available through the GoldenGate for Distributed Applications and Analytics 23ai product.
+Oracle GoldenGate 23ai integration into Microsoft Fabric via open mirroring. Any supported Oracle GoldenGate source including Oracle Database@Azure can replicate data into Mirrored Database in Microsoft Fabric. This powerful combination unlocks real-time data integration, continuously synchronizing data across your hybrid and multicloud environments. Mirrored Database in Microsoft Fabric as a destination is available through the GoldenGate for Distributed Applications and Analytics 23ai product.
 
 For more information, see [Oracle GoldenGate 23ai integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/oracle-goldengate-23ai-docs).
 
@@ -37,6 +37,42 @@ For more information, see [Striim integration into open mirroring in Microsoft F
 MongoDB integrated with open mirroring for a solution to bring operational data from MongoDB Atlas to Microsoft Fabric for Big data analytics, AI and BI, combining it with the rest of the data estate of the enterprise. Once mirroring is enabled for a MongoDB Atlas collection, the corresponding table in OneLake is kept in sync with the changes in source MongoDB Atlas collection, unlocking opportunities of varied analytics and AI and BI in near real-time.
 
 For more information, see [MongoDB integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/mongodb-docs).
+
+## dab
+
+dab Nexus is an SAP-certified solution for data extraction from SAP ECC and SAP S/4HANA (on-premises and Private Cloud Edition). It integrates with open mirroring to support near real-time analytics on SAP data in Microsoft Fabric.
+For an overview of dab Nexus, see [Effortless SAP Data Integration in Microsoft Fabric](https://aka.ms/mirroring/dab-mirroring-overview).
+For the technical documentation of dab Nexus, see [Quickstart Guide Managed App - dab:Help](https://aka.ms/mirroring/dab-mirroring-doc).
+
+## Simplement
+
+Simplement Roundhouse is an SAP-certified solution for data extraction from various SAP source systems. It supports near real-time data integration into Microsoft Fabric via open mirroring.
+
+For more information, see [Simplement integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/simplement-overview).
+
+## SNP
+
+SNP Glue is a data integration solution certified for various SAP source systems including SAP S/4HANA (on-premises and Private Cloud Edition). With release 2502, it supports open mirroring for near real-time data integration into Microsoft Fabric. For more information, see [SNP Glue release note](https://aka.ms/mirroring/snp-mirroring-doc).
+
+For more information on SNP Glue, see the [SNP Glue documentation](https://aka.ms/mirroring/snp-overview).
+
+## ASAPIO
+
+The ASAPIO Integration Add-on is an SAP-certified solution that connects SAP systems directly to Microsoft Fabric. It supports open mirroring to enable change data capture to Microsoft Fabric and comes with a data catalog of predefined data products for real-time and scheduled data replication.
+
+For more information, see [ASAPIO Integration Add-on, Fabric Connector](https://aka.ms/mirroring/asapio-mirroring-overview).
+
+## Theobald
+
+Theobald Xtract Universal is an SAP-certified data integration solution supporting all standard SAP applications like SAP S/4HANA, SAP ECC and SAP BW. Starting with version 2025.3.26.15 it now supports open mirroring for [change data capture from SAP into Microsoft Fabric](https://aka.ms/mirroring/theobald-mirroring-overview).
+
+For more information on Theobald Xtract Universal, see [Theobald Xtract Universal](https://aka.ms/mirroring/theobald-xtract-universal-overview).
+
+### CluedIn
+
+CluedIn is a Master Data Management and data quality platform that enables enterprises to unify, clean, and govern their data at scale. By integrating with Open Mirroring, CluedIn streamlines the ingestion and harmonization of enterprise data, ensuring it remains accurate, consistent, and ready for analytics in Fabric.
+
+For more information on CluedIn for Microsoft Fabric, see [Microsoft Fabric & CluedIn](https://aka.ms/mirroring/cluedin).
 
 ## Related content
 

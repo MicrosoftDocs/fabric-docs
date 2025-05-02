@@ -6,18 +6,13 @@ ms.author: eloldag
 author: eloldag
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 07/25/2024
 #customer intent: As a data analyst, I want to understand the benefits of using OneLake so that I can effectively manage and analyze all the analytics data for my organization.
 ---
 
 # OneLake, the OneDrive for data
 
-OneLake is a single, unified, logical data lake for your whole organization. A data Lake processes large volumes of data from various sources. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. OneLake brings customers:
+OneLake is a single, unified, logical data lake for your whole organization. A data lake processes large volumes of data from various sources. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. OneLake brings customers:
 
 - **One data lake** for the entire organization
 - **One copy of data** for use with multiple analytical engines

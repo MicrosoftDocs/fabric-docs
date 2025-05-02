@@ -2,12 +2,11 @@
 title: Eventhouse overview
 description: Learn about eventhouse data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: yaschust
-author: YaelSchuster
+ms.author: shsagir
+author: shsagir
 ms.topic: concept-article
 ms.custom:
-  - ignite-2024
-ms.date: 11/19/2024
+ms.date: 02/12/2025
 ms.search.form: Eventhouse
 ---
 # Eventhouse overview
@@ -18,33 +17,36 @@ Eventhouses are tailored to time-based, streaming events with structured, semist
 
 ## When do I create an eventhouse?
 
-Use an eventhouse for any scenario that includes event-based data, for example, telemetry and log data, time series and IoT data, security and compliance logs, or financial records.
+Use an eventhouse for any scenario that includes event-based data. For example, telemetry and log data, time series and IoT data, security and compliance logs, or financial records.
 
-You can create a [KQL database](create-database.md) within an eventhouse. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). An exploratory [query environment](create-database.md#explore-your-kql-database) is created for each KQL Database, which can be used for exploration and data management. [Data availability in OneLake](one-logical-copy.md) can be enabled on a database or table level.
+You can create a [KQL database](create-database.md) within an eventhouse. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). An exploratory [query environment](create-database.md#explore-your-kql-database) is created for each KQL database, which can be used for exploration and data management. [Data availability in OneLake](one-logical-copy.md) can be enabled on a database or table level.
 
 ## What information do I see in an eventhouse?
 
 The system overview page of an eventhouse shows you the following information:
 
 * Eventhouse details
-* Running state of the eventhouse
-* OneLake storage usage
-* OneLake storage usage by database
+* Eventhouse storage
+* System resources
 * Compute usage
-* Compute usage by user
-* Most active databases
-* Recent events
+* Top user activity in minutes
+* Ingestion rate
+* Top queried databases
+* Top ingested databases
+* What's new
 
 For more information, see [View system overview details for an eventhouse](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse).
 
 The databases page of an eventhouse shows you database information either in list or tile view. The following information about each database is displayed in tile view:
 
 * Database name
-* A graph of queries that were run over the past week
-* Data size
-* Caching policy
-* Retention policy
-* Last ingestion date
+* Database details
+* Database Activity Tracker
+* Database tables
+* Data preview
+* Query insights - top 100 queries
+
+For more information, see [Database details](manage-monitor-database.md#database-details).
 
 ## Minimum consumption
 
@@ -54,7 +56,7 @@ Your eventhouse is designed to optimize cost by suspending the service when not 
 
 For instructions on how to enable minimum consumption, see [Enable minimum consumption](manage-monitor-eventhouse.md#enable-minimum-consumption).
 
-## Next step
+## Related content
 
 > [!div class="nextstepaction"]
 > [Create an eventhouse](create-eventhouse.md)

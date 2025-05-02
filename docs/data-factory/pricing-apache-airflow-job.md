@@ -1,7 +1,7 @@
 ---
 title: Pricing for Apache Airflow job
 description: This article provides details of the pricing model of Apache Airflow job for Data Factory in Microsoft Fabric.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: abnarain
 author: nabhishek
 ms.topic: conceptual

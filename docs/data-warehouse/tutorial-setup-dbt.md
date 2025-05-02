@@ -6,9 +6,6 @@ ms.author: wiassaf
 ms.reviewer: maprycem
 ms.date: 09/04/2024
 ms.topic: tutorial
-ms.custom:
-  - ignite-2023
-  - ignite-2024
 ---
 
 # Tutorial: Set up dbt for Fabric Data Warehouse
@@ -50,7 +47,7 @@ Follow this list to install and set up the dbt prerequisites:
 
     A long list of the packages and current versions should be returned from this command.
 
-1. If you don't already have one, create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. You can use the trial capacity for this exercise: [sign up for the Microsoft Fabric free trial](https://aka.ms/try-fabric), [create a workspace](../get-started/create-workspaces.md), and then [create a warehouse](create-warehouse.md).
+1. If you don't already have one, create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. You can use the trial capacity for this exercise: [sign up for the Microsoft Fabric free trial](https://aka.ms/try-fabric), [create a workspace](../fundamentals/create-workspaces.md), and then [create a warehouse](create-warehouse.md).
 
 ## Get started with dbt-fabric adapter
 
@@ -62,7 +59,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
     - Or, for example, you can use the `git clone` command:
 
     ```powershell
-    git clone https://github.com/dbt-labs/jaffle_shop.git
+    git clone https://github.com/dbt-labs/jaffle-shop-classic.git
     ```
 
 1. Open the `jaffle_shop` project folder in Visual Studio Code.
@@ -110,7 +107,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
 
     :::image type="content" source="media/tutorial-setup-dbt/dbt-seed.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt seed command." lightbox="media/tutorial-setup-dbt/dbt-seed.png":::
   
-1. Run `dbt run` to validate data against some tests.
+1. Run `dbt run` to run the models defined in the demo dbt project.
 
     ```powershell
     dbt run
@@ -118,7 +115,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
 
     :::image type="content" source="media/tutorial-setup-dbt/dbt-run.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt run command." lightbox="media/tutorial-setup-dbt/dbt-run.png":::
 
-1. Run `dbt test` to run the models defined in the demo dbt project.
+1. Run `dbt test` to validate data against some tests.
 
     ```powershell
     dbt test

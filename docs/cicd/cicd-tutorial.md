@@ -4,9 +4,11 @@ description: Understand the workflow of using Git integration with deployment pi
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
+ms.search.form: Variable library tutorial
 ms.topic: tutorial
+ms.service: fabric
+ms.subservice: cicd
 ms.custom:
-  - ignite-2023
 ms.date: 07/10/2024
 #customer intent: As a developer, I want to understand how to use Git integration with deployment pipelines to manage the lifecycle of my apps.
 ---
@@ -16,11 +18,11 @@ ms.date: 07/10/2024
 In this tutorial, you go through the whole process of loading data into your workspace, and using deployment pipelines together with Git integration to collaborate with others in the development, testing, and publication of your data and reports.
 
 > [!NOTE]
-> Some of the items for Git integration are in preview. For more information, see the list of [supported items](./git-integration/intro-to-git-integration.md#supported-items).
+> Some Git integration items are in preview. For more information, see the list of [supported items](./git-integration/intro-to-git-integration.md#supported-items).
 
 ## Prerequisites
 
-[!INCLUDE [github-prereqs](../includes/github-prereqs.md)]
+[!INCLUDE [github-prereqs](./includes/github-prereqs.md)]
 
 * Download the [FoodSales.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/cicd/FoodSales.pbix) file into a Git repo that you can edit. We use this sample file in this tutorial. Alternatively, you can use your own semantic model and report, if you prefer.
 
@@ -139,7 +141,7 @@ To create a deployment pipeline and assign the workspace to the development stag
 
 The development stage of the deployment pipeline shows one semantic model, one report, and one dashboard. The other stages are empty.
 
-   :::image type="content" source="media/cicd-tutorial/development-stage.png" alt-text="Screenshot of Development stage.":::
+   :::image type="content" source="media/cicd-tutorial/development-stage.png" alt-text="Screenshot of UI screen of Development stage.":::
 
 You can read more about creating deployment pipelines in [Deployment pipelines overview](./deployment-pipelines/assign-pipeline.md).
 
@@ -149,11 +151,11 @@ Now, deploy the content to the other stages of the pipeline.
 
 1. From the development stage of the deployment content view, select **Deploy**.
 
-   :::image type="content" source="media/cicd-tutorial/deploy-to-test.png" alt-text="Screenshot of Deploy to test stage.":::
+   :::image type="content" source="media/cicd-tutorial/deploy-to-test.png" alt-text="Screenshot of UI screen with Deploy to test stage.":::
 
 1. Confirm that you want to deploy the content to the test stage.
 
-   :::image type="content" source="media/cicd-tutorial/confirm-deploy.png" alt-text="Screenshot of Confirm deploy.":::
+:::image type="content" source="media/cicd-tutorial/confirm-deploy.png" alt-text="Screenshot of UI screen with Confirm deploy.":::
 
    The green check icon indicates that the contents of the two stages are identical, since you deployed the entire content of the pipeline.
 
@@ -236,6 +238,10 @@ The Git status of the semantic model changes to *Synced* and the workspace and G
 
 In the Git repo, [create a pull request](/azure/devops/repos/git/pull-requests#create-a-pull-request) to merge the *MyFoodEdits* branch with the *main* branch.
 
+This step can be done manually or automated:
+
+### [Manual merge PR](#tab/manual)
+
 1. Select **Create a pull request**.
 
    :::image type="content" source="media/cicd-tutorial/create-pull-request.png" alt-text="Screenshot of create pull request user interface.":::
@@ -250,6 +256,10 @@ In the Git repo, [create a pull request](/azure/devops/repos/git/pull-requests#c
 
 Once the changes have been merged to the main branch, you can safely delete the workspace, if you want. It's not deleted automatically.
 
+### [Automated merge PR](#tab/automated)
+
+---
+
 ## Step 10: Update shared workspace
 
 Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-premium-workspace)) and refresh the page.  
@@ -257,12 +267,19 @@ The source control icon now shows 1 because one item in the Git repo was changed
 
 :::image type="content" source="media/cicd-tutorial/update-required-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
 
+You can update the workspace manually or automated:
+
+### [Manual update workspace](#tab/manual)
+
 1. Select the source control icon to view the changed items in the Git repo. The semantic model shows a status of Modified.
 
 1. Select **Update all**.
 
    :::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of the update workspace user interface.":::
 
+### [Automated update workspace](#tab/automated)
+
+---
 The Git status of the semantic model changes to *Synced* and the workspace is synced with the *main* Git branch.
 
 ## Step 11: Compare stages in deployment pipeline
