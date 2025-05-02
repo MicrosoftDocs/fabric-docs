@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 04/27/2025
+ms.date: 05/02/2025
 ms.topic: whats-new
 ms.collection:
   - ce-skilling-ai-copilot
@@ -119,6 +119,7 @@ The following table lists the features of Microsoft Fabric that have recently tr
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|May 2025|**Open Mirroring GA**| [Open mirroring in Microsoft Fabric](../database/mirrored-database/open-mirroring.md) is now generally available.|
 |April 2025|**Session-scoped distributed #temp tables**|[Distributed session-scoped temporary tables](https://blog.fabric.microsoft.com/blog/announcing-the-general-availability-of-session-scoped-distributed-temp-tables-in-fabric-data-warehouse?ft=All) in Fabric Data Warehouse and Fabric Lakehouse SQL analytics endpoints are now generally available. Now, `#temp` tables are supported as session scoped or local temp tables.|
 |April 2025|**BULK INSERT support**|The T-SQL [BULK INSERT statement](/sql/t-sql/statements/bulk-insert-transact-sql?view=fabric&preserve-view=true) in Fabric Data Warehouse is now generally available. For more information, see [BULK INSERT statement is generally available](https://blog.fabric.microsoft.com/blog/bulk-insert-statement-is-generally-available?ft=All).| 
 |April 2025|**Multi-tenant organization (MTO)**|Support for multitenant organizations in Fabric is now generally available (GA). [Microsoft Entra ID users of type external member](/power-bi/enterprise/service-admin-azure-ad-b2b) are supported across the Fabric platform.|
@@ -352,6 +353,7 @@ This section summarizes recent improvements and features for [Fabric Data Wareho
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|May 2025|**Open Mirroring GA**| [Open mirroring in Microsoft Fabric](../database/mirrored-database/open-mirroring.md) is now generally available.|
 |May 2025|**Mirroring for SQL Server instances**|[Mirroring of databases from SQL Server instances](../database/mirrored-database/sql-server.md) is now in preview. |
 |April 2025|**Session-scoped distributed #temp tables**|[Distributed session-scoped temporary tables](https://blog.fabric.microsoft.com/blog/announcing-the-general-availability-of-session-scoped-distributed-temp-tables-in-fabric-data-warehouse?ft=All) in Fabric Data Warehouse and Fabric Lakehouse SQL analytics endpoints are now generally available. Now, `#temp` tables are supported as session scoped or local temp tables.|
 |April 2025|**BULK INSERT**|The T-SQL [BULK INSERT statement](/sql/t-sql/statements/bulk-insert-transact-sql?view=fabric&preserve-view=true) in Fabric Data Warehouse is now generally available. For more information, see [BULK INSERT statement is generally available](https://blog.fabric.microsoft.com/blog/bulk-insert-statement-is-generally-available?ft=All).| 
