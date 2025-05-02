@@ -28,7 +28,8 @@ For troubleshooting, see:
 ## Database level limitations
 
 - Fabric Mirroring for SQL Server is only supported on a primary database of an availability group.
-- The SQL Server database cannot be mirrored if the database already has: enabled Change Data Capture (CDC), Azure Synapse Link for SQL, or the database is already mirrored in another Fabric workspace.
+- The SQL Server database cannot be mirrored if the database already has been configured for Azure Synapse Link for SQL or the database is already mirrored in another Fabric workspace.
+    - SQL Server 2025 cannot be mirrored if Change Data Capture (CDC) is enabled on the source database.
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently cannot be replicated.
   - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.

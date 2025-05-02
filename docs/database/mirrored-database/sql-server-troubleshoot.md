@@ -27,9 +27,9 @@ In addition, note the following for SQL Server specifically:
 | Any other resource errors | Mirroring is disabled | To ensure your compute resources are not impacted and to minimize impact on the SQL Server, mirroring will be disabled on any persistent resource errors. |
 | "Users can access data stored in OneLake with apps external to Fabric" setting disabled | "Replicator - Tables Cannot Reach Replicating Status" | Enable the Tenant setting [Users can access data stored in OneLake with apps external to Fabric](../../admin/tenant-settings-index.md#onelake-settings).|
 
-## T-SQL queries for troubleshooting
+## Queries for troubleshooting in SQL Server 2025
 
-If you're experiencing mirroring problems, perform the following database level checks using Dynamic Management Views (DMVs) and stored procedures to validate configuration.
+If you're experiencing mirroring problems in SQL Server 2025, perform the following database level checks using Dynamic Management Views (DMVs) and stored procedures to validate configuration.
 
 1. Execute the following query to check if the changes properly flow:
 
@@ -51,6 +51,15 @@ If you're experiencing mirroring problems, perform the following database level 
 
     The key columns to look for here are the `table_name` and `state`. Any value besides `4` indicates a potential problem.
 
+1. Review [Troubleshoot Fabric mirrored databases](troubleshooting.md).
+1. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
+
+## Queries for troubleshooting in SQL Server 2016-2022
+
+Change Data Capture (CDC) is used for Fabric Mirroring in versions SQL Server 2025.
+
+1. Review [Known issues and errors in CDC](/sql/relational-databases/track-changes/known-issues-and-errors-change-data-capture?view=sql-server-ver16&preserve-view=true#troubleshooting-errors) for common error resolutions.
+1. Review [Administer and monitor CDC](/sql/relational-databases/track-changes/administer-and-monitor-change-data-capture-sql-server?view=sql-server-ver16&preserve-view=true) for diagnostic queries.
 1. Review [Troubleshoot Fabric mirrored databases](troubleshooting.md).
 1. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
 
