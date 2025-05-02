@@ -53,6 +53,8 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
+    - name: Create a Copy job
+      href: quickstart-copy-job.md
     - name: Create an Apache Airflow Job
       href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
@@ -89,6 +91,8 @@
         href: dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md  
       - name: Move queries from Dataflow Gen1 to Gen2
         href: move-dataflow-gen1-to-dataflow-gen2.md
+      - name: Migrate to Dataflow Gen2 using Save As
+        href: migrate-to-dataflow-gen2-using-save-as.md
   - name: Tutorials
     items:
     - name: End-to-end Data Factory tutorial
@@ -113,6 +117,8 @@
       href: dataflow-support.md
     - name: Data pipeline connectors
       href: pipeline-support.md
+    - name: Copy job connectors
+      href: copy-job-support.md
     - name: Service principal support
       href: service-principals.md
     - name: Access database
@@ -633,6 +639,8 @@
         href: connector-teradata-database-overview.md
       - name: Set up your connection
         href: connector-teradata-database.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-teradata-copy-activity.md
     - name: Vertica
       items:
       - name: Vertica - Overview
@@ -729,8 +737,10 @@
           href: expression-language.md
       - name: Data pipeline runs
         href: pipeline-runs.md
-      - name: Storage event triggers (Preview)
+      - name: Storage event triggers
         href: pipeline-storage-event-triggers.md
+      - name: Variable library integration (Preview)
+        href: variable-library-integration-with-data-pipelines.md
     - name: How-to
       items:
       - name: Use the pipeline landing page
@@ -789,6 +799,8 @@
         href: dataflows-gen2-monitor.md
       - name: Dataflow Gen2 refresh
         href: dataflow-gen2-refresh.md
+      - name: Public parameters in Dataflow Gen2 (Preview)
+        href: dataflow-parameters.md
       - name: Data in Dataflow Gen2 staging
         href: data-in-staging-artifacts.md
       - name: Dataflow Gen2 incremental refresh
@@ -969,6 +981,14 @@
             href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
           - name: Transform data using dbt
             href: apache-airflow-jobs-dbt-fabric.md
+  - name: Azure Key Vault Reference (Preview)
+    items:
+      - name: Overview
+        href: azure-key-vault-reference-overview.md
+      - name: How to
+        items:
+          - name: Configure AKV references
+            href: azure-key-vault-reference-configure.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases

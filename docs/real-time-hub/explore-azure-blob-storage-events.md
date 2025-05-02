@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 11/18/2024
 ---
 
-# Explore Azure blob storage events in Fabric Real-Time hub (preview)
+# Explore Azure blob storage events in Fabric Real-Time hub
 
 This article shows how to explore Azure blob storage events in Fabric Real-Time hub. Azure blob storage events allow you to receive notifications when certain actions occur on your blobs. For example, you can receive a notification when a new blob is created, or an existing blob is modified. These events can be used to set alert on other actions or workflows, such as updating a database or sending a notification. This article provides the properties and schema for Azure blob storage events.  
 
@@ -102,6 +102,8 @@ The `data` object has the following properties:
 | `identity` | string | A string value representing the identity associated with the event. For Secure File Transfer Protocol (SFTP), the value is the local user name. | `localuser` | 
 | `storageDiagnostics` | object | Diagnostic data occasionally included by the Azure Storage service. When present, event consumers should ignore it. | `{{Storage diagnostic object}}` |
 
+## Subscribe permission
+For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
 
 ## Related content
 

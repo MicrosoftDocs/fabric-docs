@@ -1,7 +1,7 @@
 ---
 title: Known issue - Copilot installation script not included in notebook
 description: A known issue is posted where the Copilot installation script not included in notebook.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/18/2025

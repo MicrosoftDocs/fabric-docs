@@ -10,7 +10,7 @@ ms.date: 03/18/2025
 ms.search.form: Source and Destination
 ---
 
-# Add Fabric workspace item events to an eventstream (preview)
+# Add Fabric workspace item events to an eventstream 
 
 This article shows you how to add Fabric workspace item event source to an eventstream.
 

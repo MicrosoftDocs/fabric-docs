@@ -3,8 +3,6 @@ title: Sensitivity label support for paginated reports
 description: Learn about using sensitivity labels from Microsoft Purview Information Protection with paginated reports.
 author: paulinbar
 ms.author: painbar
-manager: kfollis
-
 ms.topic: conceptual
 ms.custom:
 ms.date: 04/01/2024

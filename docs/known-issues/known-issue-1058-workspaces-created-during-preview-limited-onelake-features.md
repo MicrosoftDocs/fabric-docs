@@ -1,7 +1,7 @@
 ---
 title: Known issue - Workspaces created during Fabric preview only support limited OneLake features
 description: A known issue is posted where workspaces created during Fabric preview only support limited OneLake features.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/12/2025

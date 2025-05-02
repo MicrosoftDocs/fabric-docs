@@ -1,10 +1,10 @@
 ---
 title: Known issue - User column incorrectly shows as System in Fabric capacity metrics app
 description: A known issue is posted where the user column incorrectly shows as System in Fabric capacity metrics app
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 10/05/2023
+ms.date: 05/01/2023
 ms.custom: known-issue-508
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-508
 
 In a limited number of cases, when you make a user-initiated request to the data warehouse, the user identity isn't correctly reported to the Fabric capacity metrics app.  In the capacity metrics app, the **User** column shows as **System**.
 
-**Status:** Open
+**Status:** Fixed: May 1, 2025
 
 **Product Experience:** Data Warehouse
 

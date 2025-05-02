@@ -18,7 +18,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Block republish and disable package refresh
 
-Disable package refresh, and only allow the semantic model owner to publish updates.
+Disable package refresh, and only allow the semantic model owner to publish updates. When using the [XMLA Endpoint](/power-bi/enterprise/service-premium-connect-tools), a user can discover only those semantic models for which they are the owner.
 
 To learn more about semantic model security, see [Semantic model permissions](/power-bi/connect-data/service-datasets-permissions).
 

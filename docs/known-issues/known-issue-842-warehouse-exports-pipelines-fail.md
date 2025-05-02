@@ -1,7 +1,7 @@
 ---
 title: Known issue - Data warehouse exports using deployment pipelines or git fail
 description: A known issue is posted where data warehouse exports using deployment pipelines or git fail.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/21/2025

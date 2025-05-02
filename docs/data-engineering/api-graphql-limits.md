@@ -27,7 +27,8 @@ Current general product limitations for API for GraphQL in Microsoft Fabric are 
     - When a stored procedure parameter is specified both in the configuration file and in the URL query string, the parameter in the URL query string takes precedence.
     - Entities backed by a stored procedure don't have all the capabilities automatically provided for entities backed by tables or views.
     - Stored procedure backed entities don't support pagination, ordering, or filtering. Nor do such entities support returning items specified by primary key values.
-- The request timeout is currently 100 seconds. This means that if you issue a request that generates a data source query that takes longer than 100 seconds to complete, your request might fail and error out. 
+- The request timeout is currently 100 seconds. This means that if you issue a request that generates a data source query that takes longer than 100 seconds to complete, your request might fail and error out.
+- The maximum query depth supported is 10. Query depth is the nesting level of fields in a query, which can impact performance if too deep due to potential recursion and excessive data fetching.
 
 ## Known issues
 

@@ -1,5 +1,5 @@
 ---
-title: The Microsoft Purview hub in Microsoft Fabric - Fabric administrators
+title: The Microsoft Purview hub in Microsoft Fabric
 description: This article describes how Fabric administrators can use the Microsoft Purview hub in Microsoft Fabric to monitor and govern their organization's data estate.
 ms.reviewer: antonfr
 ms.author: painbar
@@ -9,15 +9,15 @@ ms.custom:
 ms.date: 12/08/2024
 ---
 
-# The Microsoft Purview hub for administrators (preview)
+# The Microsoft Purview hub (preview)
 
-Microsoft Purview hub for administrators is a centralized place in Fabric that helps Fabric administrators manage and govern their organization's Fabric data estate. It contains reports that provide insights about sensitive data, item endorsement, and domains, and also serves as a gateway to more advanced capabilities in the Microsoft Purview portal such as Data Catalog, Information Protection, Data Loss Prevention, and Audit.
+Microsoft Purview hub is a centralized place in Fabric that helps Fabric administrators manage and govern their organization's Fabric data estate. It contains reports that provide insights about sensitive data, item endorsement, and domains, and also serves as a gateway to more advanced capabilities in the Microsoft Purview portal such as Data Catalog, Information Protection, Data Loss Prevention, and Audit.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-view.png" alt-text="Screenshot of the Microsoft Purview hub admin view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-view.png":::
 
 ## Requirements
 
-Access to Purview hub for administrators requires the [Fabric administrator role](../admin/roles.md) or higher.
+Access to Purview hub requires the [Fabric administrator role](../admin/roles.md) or higher.
 
 ## Access the hub
 
@@ -105,6 +105,9 @@ The tiles at the top of the Purview hub provide access to Purview's advanced gov
 * The Purview hub report and its associated semantic model are generated in the admin monitoring workspace the first time any admin opens the Purview hub.
 * The first time the report and semantic model are generated, it might take some time for them to appear.
 * Fabric admins can create new reports based on the semantic model, but they can't edit the report or semantic model directly.
+* The report retains information for 30 days, including the activities and metadata of deleted capacities, workspaces, and other items.
+* Deleted workspaces with extended retention don't appear in the report after 30 days. They can be seen in the admin portal until they're permanently deleted.
+* Items created and deleted within a 24 hour period may have incomplete information.
 
 ## Related content
 

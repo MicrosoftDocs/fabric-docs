@@ -1,7 +1,7 @@
 ---
 title: Known issue - Pipeline deployment fails when parent contains deactivated activity
 description: A known issue is posted where a pipeline deployment fails when parent contains deactivated activity.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 08/23/2024

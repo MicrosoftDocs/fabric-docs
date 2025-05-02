@@ -1,7 +1,7 @@
 ---
 title: Known issue - Create report doesn't work on Eventhouse monitoring KQL database
 description: A known issue is posted where creating a report doesn't work on the Eventhouse monitoring KQL database.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 01/06/2025

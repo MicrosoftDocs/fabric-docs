@@ -7,7 +7,7 @@ ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
 ms.date: 12/02/2024
-#customer intent: As a Fabric user I want to learn about Activator limitations.
+#customer intent: As a Fabric user I want to learn about Activator limitations so that I can know when I can use it appropriately.
 ---
 
 # [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] limitations
@@ -36,7 +36,7 @@ To ensure no gaps in functionality, create new activator items and recreate your
 
 ### How to check if your item needs to be migrated
 
-If the item shows Data and Design mode tabs in the lower left corner of the item, it needs to be migrated. If the Data and Design tabs are visible, recreate your rules in a new item to get all the newest capabilities.
+If the item shows Data and Design mode tabs in the lower left corner of the item, it needs to be migrated. If the Data and Design tabs are visible, [recreate your rules in a new item](activator-create-activators.md) to get all the newest capabilities.
 
 :::image type="content" source="media/activator-limitations/activator-migration.png" alt-text="Screenshot showing the screen with Data and Design. ":::
 
@@ -122,7 +122,7 @@ Your organization might have up to 250 [!INCLUDE [fabric-activator](../includes/
 * Use an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item instead of creating a new item, or
 * Delete some of your existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items.
 
-## Application Life Cycle limitations
+## Application Lifecycle limitations
 
 The following components are currently not supported in Activator ALM:
 * Eventstream  (rolling out)

@@ -621,6 +621,7 @@ The following operations are available in the audit logs.
 | Took over Power BI semantic model | TakeOverDataset |   |
 | Took over a Power BI datasource | TakeOverDatasource |   |
 | Took ownership of Power BI dataflow | TookOverDataflow |   |
+| Take over a Fabric item | TakeOverArtifact |   |
 | Trial License Extension | TrialLicenseExtension | Extend user trials by user list or tenant  |
 | Unassign Workspace From Alm Pipeline | UnassignWorkspaceFromAlmPipeline |   |
 | Undelete blob | UndeleteBlob | OneLake operation. Restore a soft deleted blob. |

@@ -1,7 +1,7 @@
 ---
 title: Known issue - Data warehouse data preview might fail if multiple data warehouse items
 description: A known issue is posted where data warehouse data preview might fail if multiple data warehouse items.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 03/21/2025

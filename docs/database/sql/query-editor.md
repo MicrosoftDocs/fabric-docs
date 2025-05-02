@@ -8,6 +8,7 @@ ms.date: 03/12/2025
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor
 ---
+
 # Query with the SQL query editor
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
@@ -50,7 +51,7 @@ Select the schema name that you have access to create views, provide name of vie
 
 #### Download as Excel/JSON/CSV
 
-You can download your result set as an Microsoft Excel (.xlsx) file using the download button. You can also download JSON or CSV versions of the result set data, as well as copy/paste the result set to your clipboard.
+You can download your result set as a Microsoft Excel (.xlsx) file using the download button. You can also download JSON or CSV versions of the result set data, as well as copy/paste the result set to your clipboard.
 
 :::image type="content" source="media/query-editor/download-results-in-xlsx.png" alt-text="Screenshot from the Fabric portal of the SQL query editor showing the Download results button.":::
 
@@ -64,7 +65,7 @@ When you run multiple queries and those return multiple results, you can select 
 
 The SQL query editor is powered by [Copilot for SQL database](copilot.md). It is designed to accelerate database development by leveraging generative AI to simplify and automate database management and improving the efficiency of writing T-SQL queries. Copilot is contextualized to your database's schema and can generate answers catered for you.
 
-Copilot for SQL database offers a variety of features, detailed in the [Introduction to Copilot](copilot.md#introduction-to-copilot-for-sql-database).
+Copilot for SQL database offers a variety of features. For more information, visit [Features of Copilot for SQL database in Microsoft Fabric](copilot.md#features-of-copilot-for-sql-database-in-fabric).
 
 Before your business can start using Copilot for SQL database, you need to [enable Copilot](../../fundamentals/copilot-enable-fabric.md).
 

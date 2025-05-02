@@ -1,10 +1,10 @@
 ---
 title: Known issue - SQL analytics endpoint table sync fails when table contains linked functions
 description: A known issue is posted where the SQL analytics endpoint table sync fails when table contains linked functions.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/02/2024
+ms.date: 04/29/2025
 ms.custom: known-issue-767
 ---
 
@@ -29,6 +29,8 @@ To mitigate the issue, perform the following steps:
 1. Force the sync using the lakehouse or wait for the sync to complete automatically
 1. Run the SQL statement `ALTER SECURITY POLICY ADD FILTER PREDICATE ON <Table>` on the table where the sync failed
 1. Confirm the table is successfully synced by checking the data
+
+Alternatively, you can try dropping and recreating the function.
 
 ## Next steps
 

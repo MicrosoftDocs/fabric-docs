@@ -1,7 +1,7 @@
 ---
 title: Known issue - Pipelines don't support Role property for Snowflake connector
 description: A known issue is posted where pipelines don't support Role property for Snowflake connector.
-author: kfollis
+author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
 ms.date: 08/23/2024

@@ -27,7 +27,7 @@ To edit or remove permissions, see [Managing permissions](#managing-permissions)
 By default, sharing a lakehouse grants users read permission to the lakehouse, the associated SQL analytics endpoint, and the default semantic model. In addition to these default permissions, you can grant:
 
 - ReadData permission on SQL analytics endpoint to access data without SQL policy.
-- ReadAll permission on the lakehouse to access all data using Apache Spark.
+- ReadAll permission on the lakehouse to access all data using Apache Spark, and SubscribeOneLakeEvents permission to get OneLake events generated for the lakehouse.
 - Build permission on the default semantic model to allow building Power BI reports on top of the semantic model.
 
 ## Managing permissions
@@ -57,6 +57,10 @@ To create a new data access role:
 1. Review the assignee list under **Assigned people and groups**, remove any that you don't want on the list, and select **Save**.
 
 For more information, see [Get started with OneLake data access roles](../onelake/security/get-started-data-access-roles.md).
+
+## Known issues
+* The sharing dialog for lakehouse shows an option to subscribe to OneLake events. Permission to subscribe to this event is granted along with the *Read All* Apache Spark permission. This is a temporary limitation.
+
 
 ## Related content
 

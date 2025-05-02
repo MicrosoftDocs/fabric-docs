@@ -12,8 +12,6 @@ ms.search.form: Data Activator Eventstream Onramp
 # Set alerts on streams in Real-Time hub
 This article describes how to set alerts on streams in Real-Time hub.
 
-
-
 ## Launch Set alert page
 
 1. Navigate to the Real-Time hub.
