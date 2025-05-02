@@ -10,19 +10,18 @@ ms.date: 02/25/2025
 
 # Module 1: Create a pipeline with Data Factory
 
-This module takes 10 minutes, ingesting raw data from the source store into the Bronze table of a data Lakehouse using the Copy activity in a pipeline.
+This module takes 10 minutes, ingesting raw data from the source store into a [bronze](/azure/databricks/lakehouse/medallion#bronze) data table in a data Lakehouse using the Copy activity in a pipeline.
 
 The high-level steps in module 1 are as follows:
 
-1. Create a data pipeline.
-1. Use a Copy Activity in the pipeline to load sample data into a data Lakehouse.
+1. [Create a data pipeline.](#create-a-data-pipeline)
+1. [Use a Copy Activity in the pipeline to load sample data into a data Lakehouse.](#use-a-copy-activity-in-the-pipeline-to-load-sample-data-to-a-data-lakehouse)
 
 ## Create a data pipeline
 
 1. A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription is required. [Create a free account](https://azure.microsoft.com/free/).
 1. Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 1. Sign into [Power BI](https://app.powerbi.com/).
-
 
 1. Select the default Power BI icon at the bottom left of the screen, and select **Fabric**.
 
@@ -47,7 +46,6 @@ Select **Copy data assistant** to open the copy assistant tool.
 1. The **Copy data** dialog is displayed with the first step, **Choose data source**, highlighted. Select **Sample data** from the options at the top of the dialog, and then select **NYC Taxi - Green**.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/select-sample-data-source.png" alt-text="Screenshot showing the selection of the NYC Taxi - Green data in the copy assistant on the Choose data source tab.":::
-
 
 1. The data source preview appears next on the **Connect to data source** page. Review, and then select **Next**.
 
@@ -77,7 +75,7 @@ Select **Copy data assistant** to open the copy assistant tool.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/save-and-run.png" alt-text="Screenshot showing the Save and run dialog with the Save and run button highlighted.":::
 
-1. You can monitor the run and check the results on the **Output** tab below the pipeline canvas. Select the run details button (the "glasses" icon that appears when you hover over the running pipeline run) to view the run details.
+1. You can monitor the run and check the results on the **Output** tab below the pipeline canvas. Select name of the pipeline to view the run details.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/run-details-button.png" alt-text="Screenshot showing the run details button in the pipeline Output tab.":::
 
