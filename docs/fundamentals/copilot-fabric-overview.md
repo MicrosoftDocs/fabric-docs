@@ -185,11 +185,12 @@ Semantic models in Power BI Desktop or Power BI service
     - [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).
     - [Fix code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md).
     - [Explain code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md)
-   :::column-end:::
 :::row-end:::
-Reports (with semantic models) in Power BI Desktop, the Power BI service, or the Power BI mobile app
 :::row:::
    :::column span="1":::
+   :::column-end:::
+   :::column span="1":::
+Reports (with semantic models) in Power BI Desktop, the Power BI service, or the Power BI mobile app
    :::column-end:::
    :::column span="1":::
     - Power BI home (announced).
