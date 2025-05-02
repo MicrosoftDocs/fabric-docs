@@ -56,23 +56,12 @@ sections:
       - question: |
           How do I know Fabric is replicating data on my SQL Server? 
         answer: |
-           If you're experiencing mirroring problems, perform the following database level checks using Dynamic Management Views (DMVs) and stored procedures to validate configuration. 
-           - Execute the following query to check if the changes properly flow: 
-              ```sql
-              SELECT * FROM sys.dm_change_feed_log_scan_sessions 
-              ```
-
-           For troubleshooting steps, see [Troubleshoot](sql-server-troubleshoot.md). [Contact support](/power-bi/support/service-support-options) if troubleshooting is required. 
+           If you're experiencing mirroring problems, perform the following database level checks using Dynamic Management Views (DMVs) and stored procedures to validate configuration. See [Troubleshoot](sql-server-troubleshoot.md). [Contact support](/power-bi/support/service-support-options) if troubleshooting is required. 
 
       - question: |
           What are the replication statuses? 
         answer: 
           See [Monitor Fabric mirrored database replication](monitor.md).
-
-      - question: |
-          Can SQL Server mirroring be accessed through the Power BI Gateway or behind a firewall? 
-        answer: 
-          Currently, access through the Power BI Gateway or behind a firewall is unsupported.
 
       - question: |
           What steps does restarting the Mirroring include? 
@@ -120,10 +109,6 @@ sections:
           How are ingress fees handled? 
         answer: 
           Fabric doesn't charge for Ingress fees into OneLake for Mirroring.
-      - question: |
-          How are egress fees handled?
-        answer: 
-          If the SQL Server is located in a different region from your Fabric capacity, data egress will be charged. If in the same region, there is no data egress.
 
   - name: Licensing
     questions:
@@ -143,7 +128,10 @@ sections:
       - question: |
           How to stop/disable Mirroring from your SQL Server?  
         answer: |
-          If you're unable to Stop mirroring your SQL Server from the Fabric portal, or unable to delete your mirrored SQL Server item from Fabric, execute the following stored procedure on your SQL Server database: `exec sp_change_feed_disable_db;`
+          If you're unable to Stop mirroring your SQL Server from the Fabric portal, or unable to delete your mirrored SQL Server item from Fabric, use the following steps.
+
+          - In SQL Server 2025, execute the following stored procedure on your SQL Server database: `EXEC sp_change_feed_disable_db;`
+          - In SQL Server 2016-2022, disable change data capture (CDC) using the following command: `EXEC sys.sp_cdc_disable_db;`
 
       - question: | 
           What if I stop or pause my Fabric capacity?

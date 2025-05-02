@@ -3,7 +3,7 @@ title: "Limitations of Fabric Mirrored Databases From SQL Server"
 description: A detailed list of limitations for mirrored databases From SQL Server in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: ajayj
+ms.reviewer: ajayj, rajpo
 ms.date: 05/19/2025
 ms.topic: conceptual
 ms.custom:
@@ -13,19 +13,31 @@ ms.custom:
 
 Current limitations in the [Microsoft Fabric mirrored databases](overview.md) From SQL Server are listed in this page. This page is subject to change.
 
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
+
 For troubleshooting, see:
 
 - [Troubleshoot Fabric mirrored databases](troubleshooting.md)
 - [Troubleshoot Fabric mirrored databases From SQL Server](sql-server-troubleshoot.md)
 
+## Platform limitations
+
+- Fabric Mirroring for SQL Server 2025 is currently not supported for SQL Server 2025 instances running in an Azure Virtual Machine.
+- Fabric Mirroring for SQL Server 2025 is currently not supported in SQL Server on Linux.
+
 ## Database level limitations
 
 - Fabric Mirroring for SQL Server is only supported on a primary database of an availability group.
-- The SQL Server database cannot be mirrored if the database already has: enabled Change Data Capture (CDC), Azure Synapse Link for SQL, or the database is already mirrored in another Fabric workspace.
+- The SQL Server database cannot be mirrored if the database already has been configured for Azure Synapse Link for SQL or the database is already mirrored in another Fabric workspace.
+    - SQL Server 2025 cannot be mirrored if Change Data Capture (CDC) is enabled on the source database.
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently cannot be replicated.
   - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
 - `.dacpac` deployments to SQL Server require the publish property `/p:DoNotAlterReplicatedObjects=False` to enable modifications to any mirrored tables. For more about publish settings available for `.dacpac` deployments, see the [SqlPackage publish documentation](/sql/tools/sqlpackage/sqlpackage-publish).
+- Fabric Mirroring from SQL Server 2025 isn't supported when the following features are enabled:
+   - CDC
+      - Fabric Mirroring from SQL Server 2016-2022 requires CDC.
+   - Replication
 
 ## Permissions in the source database
 
@@ -65,16 +77,20 @@ For troubleshooting, see:
 
 ## Column level
 
+- Fabric Mirroring from SQL Server doesn't replicate the following data types:
+     - **CLR**
+     - **vector**
+     - **json**
+     - **geometry**
+     - **geography**
+     - **hierarchyid**
+     - **sql_variant**
+     - **timestamp**/**rowversion**
+     - **xml**
+     - User Defined Types (UDT)
+     - **image**
+     - **text**/**ntext**
 - If the source table contains computed columns, these columns cannot be mirrored to Fabric OneLake.  
-- If the source table contains columns with one of these data types, these columns cannot be mirrored to Fabric OneLake. The following data types are unsupported for mirroring:
-    - **image**
-    - **text**/**ntext**
-    - **xml** 
-    - **rowversion**/**timestamp**
-    - **sql_variant**
-    - User Defined Types (UDT)
-    - **geometry**
-    - **geography**
 - Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`). For tables under replication before this feature enabled, you need to update the mirrored database settings or restart mirroring to include those columns. Learn more from [Delta column mapping support](troubleshooting.md#delta-column-mapping-support).
 
 ## Warehouse limitations
