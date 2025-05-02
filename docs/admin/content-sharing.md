@@ -86,7 +86,7 @@ On the Workspace page, you're provided with details on how items within a specif
 
 * Items shared with the entire organization using links
 
-* Item deleted within the last 30 days
+* Item deleted within the last 28 days
 
 #### Example
 
