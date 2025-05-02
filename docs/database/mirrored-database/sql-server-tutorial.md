@@ -57,14 +57,16 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION, VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE TO [fabric_user];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION, 
+       VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE TO [fabric_user];
     ```
     
     Or, for a Microsoft Entra authenticated login (recommended):
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION, VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE TO [bob@contoso.com];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION, 
+       VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE TO [bob@contoso.com];
     ```
 
 ## Connect to your SQL Server
@@ -73,39 +75,117 @@ The instructions and requirements for configuring a Fabric Mirrored Database fro
 
 ## [SQL Server 2025](#tab/sql2025)
 
-### Connect server to Azure Arc
-
-> [!IMPORTANT]
-> For SQL Server instances running in an Always On availability group or failover cluster instance configuration, the steps in this section must to be implemented on all nodes.
+### Connect server to Azure Arc and enable manage identity
 
 To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Server 2025 instance.
 
 1. Connect the server to Azure Arc. Follow the steps in [Quickstart - Connect hybrid machine with Azure Arc-enabled servers](/azure/azure-arc/servers/learn/quick-enable-hybrid-vm).
 
-1. Follow these steps to enable an Arc managed identity for SQL Server:
+   For SQL Server instances running in an Always On availability group or failover cluster instance configuration, all nodes must be connected to Azure Arc. 
 
-    1. Grant **Read & execute** operating system permissions on the folder `C:\ProgramData\AzureConnectedMachineAgent\Tokens\` to the SQL Server 2025 instance service account. By default, the service account is `NT Service\MSSQLSERVER`, or for named instances, `NT Service\MSSQL$<instancename>`. 
+1. Three registry keys are needed on the Windows Server hosting the source SQL Server instance for Fabric Mirroring. The registry keys include information about the system-assigned managed identity (SAMI) for the Windows Server. The following Powershell script will add three registry keys for you, as well as necessary file system permissions, and managed identities.
+    
+    > [!NOTE]
+    > This section contains a script to modify the Windows registry. Make sure that you follow these steps carefully. For added protection, back up the registry before you modify it. Then, you can restore the registry if a problem occurs. For more information about how to back up and restore the registry, see [How to back up and restore the registry in Windows](/troubleshoot/windows-server/performance/windows-registry-advanced-users#back-up-the-registry).
+    
+    The three registry keys are added in the following location:    
+    - For a default instance: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL17.MSSQLSERVER\MSSQLServer\FederatedAuthentication`
+    - For a named instance: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL17.Instancename\MSSQLServer\FederatedAuthentication`
+    
+    The script adds the following keys:    
+    - `ArcServerManagedIdentityClientId`
+    - `ArcServerSystemAssignedManagedIdentityClientId`
+    - `ArcServerSystemAssignedManagedIdentityTenantID`
 
-       > [!NOTE]  
-       > If you don't see the folder `C:\ProgramData\`, set the Windows Explorer folder options to **Show hidden files and folders** or show **Hidden items**.
+   Run the following PowerShell script to configure the system-assigned managed identity (SAMI) and necessary registry keys on the Windows Server that hosts the source SQL Server instance.
 
-          :::image type="content" source="media/sql-server-tutorial/azure-connected-machine-agent-folder-permissions.png" alt-text="Screenshot from Windows Explorer, showing the steps to grant permissions to the c:\ProgramData\AzureConnectedMachineAgent\Tokens subfolder." lightbox="media/sql-server-tutorial/azure-connected-machine-agent-folder-permissions.png":::
-
-    1. Add the SQL Server service account to the **Hybrid agent extension applications** group.
-       1. Open Windows **Computer Management**.
-       1. Go to **Local Users and Groups** and select **Groups**.
-       1. Locate the **Hybrid agent extension applications** and open **Properties**.
-       1. Select **Add...** and add the SQL Server 2025 instance service account you identified in the previous step.
-
-    1. Find the **Tenant ID and Application ID** from the Azure portal.
-       1. Log into the Azure portal, navigate to **Azure Arc** then **All resources**.
-       1. In the **Azure Arc | All Azure Arc resources** view, find the Arc server that you created in the Azure Arc-enabled server Quickstart in Step 1. 
-       1. Select your Arc enabled server.
-       1. Select **JSON view**. In the **Resource JSON** list, locate the `identity` node. Copy the value for `"tenantId"`.
-       1. Copy the server name of the **Machine - Azure Arc** resource from the Azure portal.
-       1. Search for the server name in the Azure search box to find the **Service Principal** object in Azure under **Microsoft Entra ID**.
-       1. Open the **Microsoft Entra ID - Service Principal** object.
-       1. In the **Overview** of the **Enterprise Application** for the Azure Arc server, under **Properties**, copy the **Application ID**.
+   ```powershell
+    $apiVersion = "2020-06-01"
+    $resource = "https://storage.azure.com/"
+    $ep = $env:IDENTITY_ENDPOINT
+    $msi = "arc"
+    if (!$ep) {
+        $msi = "vm"
+        $ep = 'http://169.254.169.254/metadata/identity/oauth2/token'
+    }
+    $endpoint = "{0}?resource={1}&api-version={2}" -f $ep,$resource,$apiVersion
+    $secretFile = ""
+    try {
+        Invoke-WebRequest -Method GET -Uri $endpoint -Headers @{Metadata='True'} -UseBasicParsing > $null
+        $msi = "vm"
+    } catch {
+        if ($_.Exception.Response.Headers) {
+            $wwwAuthHeader = $_.Exception.Response.Headers["WWW-Authenticate"]
+            if ($wwwAuthHeader -match "Basic realm=.+") {
+                $secretFile = ($wwwAuthHeader -split "Basic realm=")[1]
+            }
+        }
+    }
+    $secret = ""
+    if ($secretFile) {
+        $msi = "arc"
+        $secret = cat -Raw $secretFile
+    }
+    try {
+        $response = Invoke-WebRequest -Method GET -Uri $endpoint -Headers @{Metadata='True'; Authorization="Basic $secret"} -UseBasicParsing
+    } catch {
+        Write-Output "Can not establish communication with IMDS service. You need either to have Azure Arc service installed or run this script on Azure VM."
+    }
+    if ($response) {
+        $parts = (ConvertFrom-Json -InputObject $response.Content).access_token -split "\."
+        $padLength = 4 - ($parts[1].Length % 4)
+        if ($padLength -ne 4) { $parts[1] += "=" * $padLength }
+        $payload = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($parts[1])) | ConvertFrom-Json
+        $regPath = "HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL"
+        $instance = ""
+        $regKey = Get-Item -Path $regPath
+        $regKey.GetValueNames() | Where-Object { $regKey.GetValue($_) -match 'MSSQL17' } | ForEach-Object {
+            $instance = $_
+            $service = if ($instance -eq "MSSQLSERVER") { "MSSQLSERVER" } else { "MSSQL$" + $instance }
+            $reginst = $regKey.GetValue($_)
+            $regFed = "HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\$($reginst)\MSSQLServer\FederatedAuthentication"
+            if (-not (Test-Path -Path $regFed)) {
+                New-Item -Path $regFed -Force > $null
+            }
+            if ($msi -eq "arc") {
+                Write-Host "Registering Azure Arc MSI service for SQL Server instance: " $instance `n
+                Set-ItemProperty -Path $regFed -Name "ArcServerManagedIdentityClientId" -Value ""
+                Set-ItemProperty -Path $regFed -Name "ArcServerSystemAssignedManagedIdentityClientId" -Value $($payload.appid)
+                Set-ItemProperty -Path $regFed -Name "ArcServerSystemAssignedManagedIdentityTenantId" -Value $($payload.tid)
+                $svcPath = "HKLM:\SYSTEM\CurrentControlSet\Services\$($service)"
+                if (Test-Path -Path $svcPath) {
+                    $keyPath = Split-Path $secretFile
+                    $svcKey = Get-Item -Path $svcPath
+                    $sqlAccount = $svcKey.GetValue("ObjectName")
+                    if ($sqlAccount -ne "LocalSystem") {
+                        Write-Host "Permissioning folder" $keyPath "for SQL Server account" $sqlAccount `n
+                        icacls $keyPath /grant "$($sqlAccount):(OI)(CI)R"
+                        $group = "Hybrid agent extension applications"
+                        $isMember = Get-LocalGroupMember -Group $group | Where-Object { $_.Name -eq $sqlAccount }
+                        if (-not $isMember) {
+                            Write-Host "Also adding SQL running account to local group: $group" `n
+                            Add-LocalGroupMember -Group $group -Member $sqlAccount
+                        } else {
+                            Write-Host ""
+                        }
+                    }
+                }
+            } else {
+                Write-Host "Registering Azure VM MSI service for SQL Server instance: " $instance `n
+                Set-ItemProperty -Path $regFed -Name "PrimaryAADTenant" -Value ""
+                Set-ItemProperty -Path $regFed -Name "OnBehalfOfAuthority" -Value "https://login.windows.net/"
+                Set-ItemProperty -Path $regFed -Name "FederationMetadataEndpoint" -Value "login.windows.net"
+                Set-ItemProperty -Path $regFed -Name "AzureVmManagedIdentityClientId" -Value ""
+                Set-ItemProperty -Path $regFed -Name "AzureVmSystemAssignedManagedIdentityClientId" -Value $($payload.appid)
+                Set-ItemProperty -Path $regFed -Name "AzureVmSystemAssignedManagedIdentityTenantId" -Value $($payload.tid)
+            }
+        }
+        Write-Host "Registeration complete for:" `n "Client ID: " $($payload.appid) `n "Tenant ID: " $($payload.tid) `n
+    } 
+   ```
+   
+   > [!IMPORTANT]
+   > For SQL Server instances running in an Always On availability group or failover cluster instance configuration, run the PowerShell script locally on each node. 
 
 1. Connect to your local SQL Server 2025 instance. When you connect, select **Trust server certificate**.
 1. View the managed identities:
@@ -117,35 +197,22 @@ To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Serv
 
    This should return 1 row with the correct `client_id` and `tenant_id`. `Identity_type` should be "System-assigned".
 
-### Add registry keys on the Windows Server of the SQL Server instance
+### Add managed identities permissions in Microsoft Fabric
 
-> [!CAUTION]  
-> This section contains steps that tell you how to modify the Windows registry. However, serious problems might occur if you modify the registry incorrectly. Therefore, make sure that you follow these steps carefully. For added protection, back up the registry before you modify it. Then, you can restore the registry if a problem occurs. For more information about how to back up and restore the registry, see [How to back up and restore the registry in Windows](/troubleshoot/windows-server/performance/windows-registry-advanced-users#back-up-the-registry).
+The managed identity of the SQL Server is created and granted permissions by Microsoft Fabric automatically.
 
-1. Open the Windows **Registry Editor**.
+However, for SQL Server instances running in an Always On availability group or failover cluster instance configuration, the system-assigned managed identity (SAMI) of every secondary node needs to be granted **Contributor** permissions to the Fabric workspace. A managed identity is created by the PowerShell script provided for each secondary node, and that must be granted Fabric permissions manually. 
 
-   - For a default instance, look in the folder:
+1. In the Fabric portal, grant Fabric permissions to each secondary node's managed identity.
+    1. In the Fabric workspace, select **Manage access**.
 
-      ```registry
-      HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL17.MSSQLSERVER\MSSQLServer\FederatedAuthentication
-      ```
+       :::image type="content" source="media/sql-server-tutorial/manage-access.png" alt-text="Screenshot from the Fabric portal of the Manage access button.":::
 
-   - For a named instance, look in the folder:
+    1. Select **Add people or groups**. 
+    1. In the **Add people** dialogue, find the server names for each node in the availability group or failover cluster. 
+    1. Grant each membership to the **Contributor** role.
 
-      ```registry
-      HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL17.Instancename\MSSQLServer\FederatedAuthentication
-      ```
-
-1. Create the `FederatedAuthentication` folder if not present.
-
-1. Add the following string keys:
-    - `ArcServerManagedIdentityClientId`, value of an empty string, with type string.
-    - `ArcServerSystemAssignedManagedIdentityClientId`, with the value of the Application ID of the Service Principal from previous steps.
-    - `ArcServerSystemAssignedManagedIdentityTenantID`, with the value of the Tenant ID of the Azure Arc Machine from previous steps.
-
-1. The SAMI of every node except the primary node needs to be granted permissions to the Fabric workspace.
-
-1. For SQL Server instances running in an Always On availability group or failover cluster instance configuration, the steps in this section must to be implemented on all nodes.
+       :::image type="content" source="media/sql-server-tutorial/add-people.png" alt-text="Screenshot of the Add people dialogue, where you add each node to the Fabric Contributor role.":::
 
 ### Configure the on-premises data gateway
 
