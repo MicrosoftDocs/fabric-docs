@@ -138,7 +138,7 @@ This section lists the report's considerations and limitations.
 
 * Items with the same name, or items deleted and recreated with the same name, might reflect as one item in certain visuals. To count the total number of unique items, use item IDs or the *Total items* measure.
 
-* The report retains information for 30 days, including deleted capacities, workspaces, and other items.
+* The report retains information for 28 days, including deleted capacities, workspaces, and other items.
 
 * Deleted workspaces with extended retention don't appear in the report after 30 days. They can be seen in the admin portal until they're permanently deleted.
 
