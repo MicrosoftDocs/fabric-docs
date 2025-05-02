@@ -206,7 +206,7 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
 1. After a few minutes, the status should change to *Running*, which means the tables are being synchronized.
 
     If you don't see the tables and the corresponding replication status, wait a few seconds and then refresh the panel.
-1. When Fabric Mirroring has finished the initial copy of the tables, a date appears in the **Last refresh** column.
+1. When they have finished the initial copying of the tables, a date appears in the **Last refresh** column.
 1. Now that your data is up and running, there are various analytics scenarios available across all of Fabric.
 
 ## Monitor Fabric Mirroring
@@ -222,7 +222,6 @@ For more information and details on the replication states, see [Monitor Fabric 
 With Fabric Mirroring up and running, you can now query from your SQL Server database in Microsoft Fabric. For possibilities, see [Explore data in your mirrored database using Microsoft Fabric](explore.md).
 
 :::image type="content" source="media/sql-server-tutorial/validate-data-in-onelake.png" alt-text="Screenshot of querying data in a mirrored SQL Server database with the SQL analytics endpoint." lightbox="media/sql-server-tutorial/validate-data-in-onelake.png" :::
-
 
 ## Related content
 
