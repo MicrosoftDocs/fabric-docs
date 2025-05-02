@@ -141,8 +141,8 @@ This is not recommended if you are using views or shortcut tables in the Direct 
 
 To change to Direct Lake on OneLake, follow these steps.
 
-1. **Live edit **the semantic model you want to migrate in Power BI Desktop.
-2. In the header, open the drop-down on the name and choose **Version history** to make a version to return to if you want to.
+1. **Live edit** the semantic model you want to migrate in Power BI Desktop.
+2. In the header, open the drop-down on the name and choose **Version history** to make a version to return to, if you want to have that option.
 3. Go to **TMDL view**.
 4. Drag the **Semantic model** node into the editor to script the entire model.
 5. Find the **Expression** toward the bottom of the script.
