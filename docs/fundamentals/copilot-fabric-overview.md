@@ -187,20 +187,16 @@ Semantic models in Power BI Desktop or Power BI service
     - [Explain code in SQL queries with quick actions (preview)](../data-warehouse/copilot-quick-action.md)
    :::column-end:::
 :::row-end:::
----
+Reports (with semantic models) in Power BI Desktop, the Power BI service, or the Power BI mobile app
 :::row:::
    :::column span="1":::
-**Power BI**
-   :::column-end:::
-   :::column span="1":::
-Reports (with semantic models) in Power BI Desktop, the Power BI service, or the Power BI mobile app
    :::column-end:::
    :::column span="1":::
     - Power BI home (announced).
     - [Suggest a report page (preview)](/power-bi/create-reports/copilot-create-desktop-report).
     - [Suggest a visual (preview)](/power-bi/create-reports/copilot-create-report-service).
-    - [Summarize data in a narrative visual (GA)](/power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service).
-    - [Explain a report page or visual (GA)](/power-bi/create-reports/copilot-pane-summarize-content).
+    - [Summarize data in a narrative visual](/power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service).
+    - [Explain a report page or visual](/power-bi/create-reports/copilot-pane-summarize-content).
    :::column-end:::
 :::row-end:::
 ---
