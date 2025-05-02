@@ -47,7 +47,7 @@ Enabling and effectively using Copilot in your organization requires deliberate 
 Before your business can start using Copilot capabilities in Microsoft Fabric, you need to [enable Copilot](copilot-enable-fabric.md).
 
 > [!NOTE]  
-> Copilot is not yet supported for sovereign clouds due to GPU availability.
+> Copilot isn't yet supported for sovereign clouds due to GPU availability.
 
 ## Copilot experiences
 
@@ -75,7 +75,7 @@ Copilot for SQL database in Microsoft Fabric is an AI assistant designed to stre
 
 ### Copilot in Fabric in the Power BI workload
 
-Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. You can use Copilot for Power BI to generate a summary for the report page that you just created, and generate synonyms for better Q&A capabilities.
+Power BI has introduced generative AI that allows you to create reports automatically by selecting the article for a report or by prompting Copilot for Power BI on a particular article. You can use Copilot for Power BI to generate a summary for the report page that you just created, and generate synonyms for better Q&A capabilities.
 
 For more information on the features and how to use Copilot for Power BI, see [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction).
 
@@ -89,7 +89,7 @@ For more information, see [Copilot for Real-Time Intelligence overview](../funda
 
 The following table provides an overview of the various Copilot experiences available in Fabric, and which workloads and items these experiences apply to. The links in the *Copilot experience* column take you to the documentation describing how to set up and use these features.
 
-Here is the converted table in markdown format:
+Here's the converted table in markdown format:
 
 :::row:::
    :::column span="1":::
