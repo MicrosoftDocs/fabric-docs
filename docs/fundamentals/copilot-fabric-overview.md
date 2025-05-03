@@ -10,6 +10,7 @@ ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
 ms.custom:
+  - references_regions
   - copilot-learning-hub
   - fabric-cat
 no-loc: [Copilot]
