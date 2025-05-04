@@ -26,20 +26,20 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
 
 For continuous ingestion you also require:
 
-    * A [workspace identity](../security/workspace-identity.md). *My Workspace* isn't supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
-    * [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account#enable-the-hierarchical-namespace) must be enabled.
+* A [workspace identity](../security/workspace-identity.md). *My Workspace* isn't supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
+* [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account#enable-the-hierarchical-namespace) must be enabled.
 
-        :::image type="content" source="media/get-data-azure-storage/storage-heirarchical-namespace-enabled.png" alt-text="Screenshot of Azure portal open to the Overview window.":::
+    :::image type="content" source="media/get-data-azure-storage/storage-heirarchical-namespace-enabled.png" alt-text="Screenshot of Azure portal open to the Overview window.":::
 
-    * *Storage Blob Data Reader* role permissions assigned to the workspace identity.
-    * A [container](/azure/storage/blobs/blob-containers-portal) to hold the data files.
-    * A data file uploaded to the container. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
+* *Storage Blob Data Reader* role permissions assigned to the workspace identity.
+* A [container](/azure/storage/blobs/blob-containers-portal) to hold the data files.
+* A data file uploaded to the container. The data file structure is used to define the table schema. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
 
-        > [!NOTE]
-        > You must upload a data file:
-        >
-        > * Before the [configuration](#configure) to define the table schema during set-up.
-        > * After the configuration to trigger the continuous ingestion, to preview data, and to verify the connection.
+    > [!NOTE]
+    > You must upload a data file:
+    >
+    > * Before the [configuration](#configure) to define the table schema during set-up.
+    > * After the configuration to trigger the continuous ingestion, to preview data, and to verify the connection.
 
 ### Add the workspace identity role assignment to the storage account
 
