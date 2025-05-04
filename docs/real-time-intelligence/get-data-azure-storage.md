@@ -14,9 +14,7 @@ ms.search.form: Get data in a KQL Database
 
 In this article, you learn how to get data from Azure Storage (ADLS Gen2 container, blob container, or individual blobs). You can ingest data into your table continuously or as a one-time ingestion. Once ingested, the data becomes available for query.
 
-* **Continuous ingestion**: Continuous ingestion involves setting up an ingestion pipeline that allows the Fabric Eventhouse to listen to Azure Storage events. The pipeline notifies the Eventhouse to pull information when subscribed events occur. The events  are blob created and blob renamed.
-
-    Continuous ingestion involves setting up an ingestion pipeline that allows an eventhouse to listen to Azure Storage events. The pipeline notifies the eventhouse to pull information when subscribed events occur. The events are blob created and blob renamed.
+* **Continuous ingestion**: Continuous ingestion involves setting up an ingestion pipeline that allows an eventhouse to listen to Azure Storage events. The pipeline notifies the eventhouse to pull information when subscribed events occur. The events are **BlobCreated** and **BlobRenamed**.
 
 * **One-time ingestion**: Use this method to retrieve data from Azure Storage as a one-time operation.
 
