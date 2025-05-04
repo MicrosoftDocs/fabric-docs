@@ -168,7 +168,7 @@ Set the source to get data.
 
     1. Select **Connect to a storage account**.  
 
-    :::image type="content" source="media/get-data-azure-storage/configure-one-time-select-account.png" alt-text="Screenshot of configure tab with continuous ingestion turned off, and connect to an account selected.":::
+        :::image type="content" source="media/get-data-azure-storage/configure-one-time-select-account.png" alt-text="Screenshot of configure tab with continuous ingestion turned off, and connect to an account selected.":::
 
     1. Use the following descriptions to help fill in the fields.
 
