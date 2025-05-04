@@ -135,7 +135,7 @@ Set the source to get data.
     > [!NOTE]
     >
     > Creating a new connection results in a new Eventstream. The name is defined as *<storate_account_name>_eventstream*.
-    > Ensure not to remove the continuous ingestion Eventstream from the workspace.
+    > Make sure you don't remove the continuous ingestion eventstream from the workspace.
 
 1. You can add the following optional filters:
 
