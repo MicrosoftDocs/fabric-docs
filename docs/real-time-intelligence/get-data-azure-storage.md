@@ -53,11 +53,7 @@ For continuous ingestion you also require:
 
 1. In the *Add role assignment* dialog, select **+ Select members**.
 
-1. Paste in the workspace identity ID, select the application, and then **Select**.
-
-1. In the *Add role assignment* dialogue, select **+ Select members**.
-
-1. Select **Review + assign**.
+1. Paste in the workspace identity ID, select the application, and then **Select** > **Review + assign**.
 
 ### Create a container with data file
 
@@ -112,11 +108,14 @@ Set the source to get data.
         | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
         | Container | The storage container containing the file you want to ingest. |
 
-    1. In the **Connection** field, open the drop-down and select **+ New connection**, then **Save** > **Close**.
+    1. In the **Connection** field, open the dropdown and select **+ New connection**, then **Save** > **Close**. The connection settings are prepopulated.
 
-       The connection settings are prepopulated.
+    > [!NOTE]
+    >
+    > Creating a new connection results in a new Eventstream. The name is defined as *<storate_account_name>_eventstream*.
+    > Make sure you don't remove the continuous ingestion eventstream from the workspace.
 
-    To use an existinging connection:
+    To use an existing connection:
 
     1. Select **Select an existing storage account**.
 
@@ -130,24 +129,18 @@ Set the source to get data.
         | Container | The storage container containing the file you want to ingest. |
         | Connection | This is prepopulated with the connection string |
 
-    1. In the **Connection** field, open the drop-down and select the existing connection string from the list. Then select **Save** > **Close**.
+    1. In the **Connection** field, open the dropdown and select the existing connection string from the list. Then select **Save** > **Close**.
 
-    > [!NOTE]
-    >
-    > Creating a new connection results in a new Eventstream. The name is defined as *<storate_account_name>_eventstream*.
-    > Make sure you don't remove the continuous ingestion eventstream from the workspace.
-
-1. You can add the following optional filters:
+1. Optionally, expand **File filters** and specify the following filters:
 
     | **Setting** | **Field description** |
     |--|--|
-    | File filters (optional) |  |
     | Folder path | Filters data to ingest files with a specific folder path. |
     | File extension | Filters data to ingest files with a specific file extension only. |
 
 1. In the **Eventstearm settings** section, you can select the events to monitor in **Advanced settings** > **Event type(s)**. By default, **Blob created** is selected. You can also select **Blob renamed**.
 
-    :::image type="content" source="media/get-data-azure-storage/configure-tab-advanced-settings.png" alt-text="Screenshot of Advanced settings with the Event type(s) drop-down expanded.":::
+    :::image type="content" source="media/get-data-azure-storage/configure-tab-advanced-settings.png" alt-text="Screenshot of Advanced settings with the Event type(s) dropdown expanded.":::
 
 1. Select **Next** to preview the data.
 
@@ -196,11 +189,10 @@ Set the source to get data.
     > * You can either add up to 10 individual blobs, or ingest up to 5,000 blobs from a single container. You can't ingest both at the same time.
     > * Each blob can be a max of 1 GB uncompressed.
 
-1. You can  add the following optional filters:
+1. Optionally, expand **File filters** and specify the following filters:
 
     | **Setting**  | **Field description** |
     |-----|-----|
-    | **File filters (optional)**| |
     | Folder path| Filters data to ingest files with a specific folder path. |
     | File extension| Filters data to ingest files with a specific file extension only.|
 
@@ -222,11 +214,11 @@ To complete the ingestion process, select **Finish**.
 
 Optionally:
 
-* Use the schema definition file drop-down to change the file that the schema is inferred from.
+* Use the schema definition file dropdown to change the file that the schema is inferred from.
 
-* Use the file type drop-down to explore [Advanced options based on data type](#advanced-options-based-on-data-type).
+* Use the file type dropdown to explore [Advanced options based on data type](#advanced-options-based-on-data-type).
 
-* Use the **Table_mapping** drop-down to define a new mapping.
+* Use the **Table_mapping** dropdown to define a new mapping.
 
 * Select **</>** to open the command viewer to view and copy the automatic commands generated from your inputs. You can also open the commands in a Queryset
 
