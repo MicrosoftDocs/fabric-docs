@@ -1,7 +1,7 @@
 ---
 title: Get data from Azure Storage
 description: Learn how to get data from Azure Storage in a KQL database in Real-Time Intelligence.
-ms.reviewer: Akshay Dixit
+ms.reviewer: aksdi
 ms.author: shsagir
 author: shsagir
 ms.topic: how-to
