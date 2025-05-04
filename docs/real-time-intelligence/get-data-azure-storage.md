@@ -51,7 +51,7 @@ For continuous ingestion you also require:
 
 1. Select **Storage Blob Data Reader**.
 
-1. In the *Add role assignment* dialogue, select **+ Select members**.
+1. In the *Add role assignment* dialog, select **+ Select members**.
 
 1. Paste in the workspace identity ID, select the application, and then **Select**.
 
