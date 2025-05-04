@@ -199,6 +199,12 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Large semantic model storage format conversion stays in view mode
+      href: ../known-issues/known-issue-1119-large-semantic-model-conversion-view-mode.md
+    - name: SQL analytics endpoint queries return empty results
+      href: ../known-issues/known-issue-1121-sql-analytics-endpoint-queries-return-empty-results.md
+    - name: Execution details of semantic model refresh activity unavailable in Monitor hub
+      href: ../known-issues/known-issue-1118-execution-details-model-refresh-unavailable-monitor-hub.md
     - name: Gateway causes lakehouse tables with null values
       href: ../known-issues/known-issue-1117-gateway-causes-lakehouse-tables-null-values.md
     - name: API for GraphQL query fails when using variables with float value
