@@ -72,7 +72,7 @@ When you create an alternative value set, the new value set is created with poin
 
 The following items support the Variable library:
 
-* Data pipeline
+* [Data pipeline](../../data-factory/variable-library-integration-with-data-pipelines.md)
 <!--- * [Lakehouse](../../data-engineering/lakehouse-overview.md)
 * Notebook --->
 
