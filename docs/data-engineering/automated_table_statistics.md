@@ -59,19 +59,20 @@ You can enable or disable extended stats collection and optimizer injection at t
 
 Enable extended statistics collection:
 
-    spark.conf.set("spark.microsoft.delta.stats.collect.extended", "true")
+```spark.conf.set("spark.microsoft.delta.stats.collect.extended", "true")```
 
 Disable extended statistics collection:
 
-    spark.conf.set("spark.microsoft.delta.stats.collect.extended", "false")
+ ```spark.conf.set("spark.microsoft.delta.stats.collect.extended", "false")```
 
 Enable statistics injection into the query optimizer:
 
-    spark.conf.set("spark.microsoft.delta.stats.injection.enabled", "true")
+```spark.conf.set("spark.microsoft.delta.stats.injection.enabled", "true")```
 
 Disable statistics injection:
 
-    spark.conf.set("spark.microsoft.delta.stats.injection.enabled", "false")
+```spark.conf.set("spark.microsoft.delta.stats.injection.enabled", "false")```
+
 
 **Note:** Delta log statistics collection (`spark.databricks.delta.stats.collect`) must also be enabled (default: true).
 
@@ -81,15 +82,15 @@ Table properties let you control statistics collection on individual tables, ove
 
 Enable on a table:
 
-    ALTER TABLE tableName SET TBLPROPERTIES('delta.stats.extended.collect' = true, 'delta.stats.extended.inject' = true)
+```ALTER TABLE tableName SET TBLPROPERTIES('delta.stats.extended.collect' = true, 'delta.stats.extended.inject' = true)```
 
 Disable on a table:
 
-    ALTER TABLE tableName SET TBLPROPERTIES('delta.stats.extended.collect' = false, 'delta.stats.extended.inject' = false)
+```ALTER TABLE tableName SET TBLPROPERTIES('delta.stats.extended.collect' = false, 'delta.stats.extended.inject' = false)```
 
 Disable auto-setting of table properties at creation:
 
-    spark.conf.set("spark.microsoft.delta.stats.collect.extended.property.setAtTableCreation", "false")
+ ```spark.conf.set("spark.microsoft.delta.stats.collect.extended.property.setAtTableCreation", "false")```
 
 ## How to Check Statistics
 
@@ -97,13 +98,15 @@ You can inspect the collected table and column statistics using Spark’s APIs �
 
 Check row count and table size (Scala example):
 
-    println(spark.read.table("tableName").queryExecution.optimizedPlan.stats)
+```println(spark.read.table("tableName").queryExecution.optimizedPlan.stats)```
 
 Check detailed column statistics:
 
-    spark.read.table("tableName").queryExecution.optimizedPlan.stats.attributeStats.foreach { case (attrName, colStat) =>
-      println(s"colName: $attrName distinctCount: ${colStat.distinctCount} min: ${colStat.min} max: ${colStat.max} nullCount: ${colStat.nullCount} avgLen: ${colStat.avgLen} maxLen: ${colStat.maxLen}")
+```
+spark.read.table("tableName").queryExecution.optimizedPlan.stats.attributeStats.foreach { case (attrName, colStat) =>
+println(s"colName: $attrName distinctCount: ${colStat.distinctCount} min: ${colStat.min} max: ${colStat.max} nullCount: ${colStat.nullCount} avgLen: ${colStat.avgLen} maxLen: ${colStat.maxLen}")
     }
+```
 
 ## Recomputing Statistics
 
@@ -111,16 +114,19 @@ Sometimes statistics can become outdated or partial — for example, after schem
 
 Rewrite the table (note: this resets history):
 
-    spark.read.table("targetTable").write.partitionBy("partCol").mode("overwrite").saveAsTable("targetTable")
+ ``` spark.read.table("targetTable").write.partitionBy("partCol").mode("overwrite").saveAsTable("targetTable") ```
 
 Recommended approach (Fabric Spark >= 3.2.0.19):
 
-    StatisticsStore.recomputeStatisticsWithCompaction(spark, "testTable1")
+``` StatisticsStore.recomputeStatisticsWithCompaction(spark, "testTable1") ```
 
 If you’ve changed the columns or configuration:
 
-    StatisticsStore.removeStatisticsData(spark, "testTable1")
-    StatisticsStore.recomputeStatisticsWithCompaction(spark, "testTable1")
+```
+StatisticsStore.removeStatisticsData(spark, "testTable1")
+StatisticsStore.recomputeStatisticsWithCompaction(spark, "testTable1")
+
+```
 
 ## Using ANALYZE COMMAND
 
@@ -128,15 +134,22 @@ The `ANALYZE TABLE` command provides a manual way to collect statistics across a
 
 Run the command:
 
-    ANALYZE TABLE tableName COMPUTE STATISTICS FOR ALL COLUMNS
+```
+ANALYZE TABLE tableName COMPUTE STATISTICS FOR ALL COLUMNS
+
+```
 
 Enable catalog statistics injection:
 
-    spark.conf.set("spark.microsoft.delta.stats.injection.catalog.enabled", "true")
+```
+spark.conf.set("spark.microsoft.delta.stats.injection.catalog.enabled", "true")
+```
 
 Disable catalog statistics injection:
 
-    spark.conf.unset("spark.microsoft.delta.stats.injection.catalog.enabled")
+ ```
+spark.conf.unset("spark.microsoft.delta.stats.injection.catalog.enabled")
+```
 
 ## ⚠️ Limitations
 
