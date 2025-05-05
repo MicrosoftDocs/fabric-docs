@@ -6,19 +6,16 @@ ms.author: sngun
 author: SnehaGunda
 ms.topic: how-to
 ms.date: 05/02/2025
+ms.devlang: python, scala
 #customer intent: As a Microsoft Fabric user I want to learn about the Simba ODBC Data Connector for Microsoft Fabric Data Engineering, detailing its features, installation, and configuration processes.
 ---
 
 # Simba ODBC Data Connector for Microsoft Fabric Data Engineering (Public Preview)
 
-The Simba ODBC Data Connector for Microsoft Fabric Data Engineering (Spark) is used for direct SQL and SparkSQL access to Microsoft Fabric Spark or Azure Synapse Spark, enabling Business Intelligence (BI), analytics, and reporting on Spark-based data. The connector efficiently transforms an application’s SQL query into the equivalent form in SparkSQL, which is a subset of SQL-92.
-
-If an application is Spark-aware, then the connector is configurable to pass the query through to the database for processing. The connector interrogates Spark to obtain schema information to present to a SQL-based application. 
-The Simba ODBC Data Connector for Microsoft Fabric Data Engineering complies with the ODBC 3.80 data standard and adds important functionality such as Unicode and 32- and 64-bit support for high- performance computing environments. 
-ODBC is one of the most established and widely supported APIs for connecting to and working with databases. At the heart of the technology is the ODBC connector, which connects an application to the database. 
-
-For more information about ODBC, see: https://insightsoftware.com/blog/what-is-odbc/.
-For complete information about the ODBC specification, see the ODBC API Reference from the Microsoft documentation: https://docs.microsoft.com/en-us/sql/odbc/reference/syntax/odbc-api-reference.
+The Simba ODBC Data Connector for Microsoft Fabric Data Engineering (Spark) is used for direct SQL and SparkSQL access to Microsoft Fabric Spark or Azure Synapse Spark, enabling Business Intelligence (BI), analytics, and reporting on Spark-based data.
+The connector efficiently transforms an application’s SQL query into the equivalent form in SparkSQL, which is a subset of SQL-92. If an application is Spark-aware, then the connector is configurable to pass the query through to the database for processing. The connector interrogates Spark to obtain schema information to present to a SQL-based application. The Simba ODBC Data Connector for Microsoft Fabric Data Engineering complies with the ODBC 3.80 data standard and adds important functionality such as Unicode and 32- and 64-bit support for high- performance computing environments. ODBC is one of the most established and widely supported APIs for connecting to and working with databases. At the heart of the technology is the ODBC connector, which connects an application to the database.
+For more information about ODBC, see: [What is ODBC?](https://insightsoftware.com/blog/what-is-odbc/).
+For complete information about the ODBC specification, see the [ODBC API Reference from the Microsoft documentation](https://docs.microsoft.com/sql/odbc/reference/syntax/odbc-api-reference).
 
 > [!NOTE]
 > The Simba ODBC Data Connector for Microsoft Fabric Spark is available for Microsoft® Windows® platform.
@@ -105,26 +102,180 @@ To create a Data Source Name on Windows:
 1. To save your settings and close the Simba ODBC Data Connector for Microsoft Fabric Spark DSN Setup dialog box, click OK.
 1. To close the ODBC Data Source Administrator, click OK.
 
-### Configuring Authentication on Windows
+### Client credentials
 
-You can specify authentication settings in a DSN, in a connection string, or as connector-wide settings. Settings in the connection string take precedence over settings in the DSN, and settings in the DSN take precedence over connector-wide settings.
+This authentication mechanism requires SSL to be enabled.
+You can use client secret as the client credentials.
 
-When connecting to Azure Synapse, the Client Credentials authentication workflow is the supported flow.
-When connecting to Microsoft Fabric, the Browser Based Authorization Code authentication workflow is the supported flow.
+To configure OAuth 2.0 client credentials authentication using the client secret:
 
+1. To access authentication options for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, and then click Configure.
+1. From the Spark Server Type drop-down list\select SYNAPSE.
+1. Click OAuth Options, and then do the following:
+    1. From the Authentication Flow drop-down list, select Client Credentials.
+    1. In the Client ID field, type your client ID.
+    1. In the Client Secret field, type your client secret.
+    1. In the Tenant ID field, type your tenant ID.
+    1. In the OAuth Scope field, type <https://dev.azuresynapse.net/.default>
+    1. Optionally, select Encryption Options… and choose the encryption password for Current User Only or All Users of this Machine. Then click OK.
+    1. To save your settings and close the OAuth Options dialog box, click OK.
+1. To save your settings and close the DSN Setup dialog box, click OK.
 
+### Browser Based Authorization Code
 
+This authentication mechanism requires SSL to be enabled.
 
+To configure OAuth 2.0 browser-based authentication:
 
+1. To access authentication options for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, and then click Configure.
+1. From the Spark Server Type drop-down list, select FABRIC.
+1. Click OAuth Options, and then do the following:
+    1. From the Authentication Flow drop-down list, select Browser Based Authorization Code.
+    1. In the Tenant ID field, type your tenant ID.
+    1. In the Client ID field, type your client ID.
+    1. In the OAuth Scope field, type (spaces are required between scopes):
 
-
-
-### [Python](#tab/python)
-
-```python
-import geoanalytics fabric
-import geoanalytics_fabric.sql.functions as ST
+```html
+https://analysis.windows.net/powerbi/api/Code.AccessStorage.All
+https://analysis.windows.net/powerbi/api/Item.Execute.All
+https://analysis.windows.net/powerbi/api/Item.ReadWrite.All
 ```
+
+(or the scopes that are appropriate for your case).
+
+1. Optionally, select the Ignore SQL_DRIVER_NOPROMPT check box. When the application is making a SQLDriverConnect call with a SQL_DRIVER_NOPROMPT flag, this option displays the web browser used to complete the browser-based authentication flow.
+
+1. To save your settings and close the OAuth Options dialog box, click OK.
+
+1. To save your settings and close the DSN Setup dialog box, click OK.
+
+> [!NOTE]
+> When the browser-based authentication flow completes, the access token and refresh token are saved in the token cache, and the connector does not need to authenticate again.
+
+### Configuring Advanced Options on Windows
+
+You can configure advanced options to modify the behavior of the connector.
+
+The following instructions describe how to configure advanced options in a DSN and in the connector configuration tool. You can specify the connection settings described below in a DSN, in a connection string, or as connector-wide settings. Settings in the connection string take precedence over settings in the DSN, and settings in the DSN take precedence over connector-wide settings.
+To configure advanced options on Windows:
+
+1. To access advanced options for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then click Configure, and then click Advanced Options.
+2. To disable the SQL Connector feature, select the Use Native Query check box.
+
+>[!IMPORTANT]
+> When this option is enabled, the connector cannot execute parameterized queries.
+> By default, the connector applies transformations to the queries emitted by an application to convert the queries into an equivalent form in SparkSQL. If the application is Spark-aware and already emits SparkSQL, then turning off the translation avoids the additional overhead of query transformation.
+
+1. To enable the connector to return SQL_WVARCHAR instead of SQL_VARCHAR for STRING and VARCHAR columns, and SQL_WCHAR instead of SQL_CHAR for CHAR columns, select the Unicode SQL Character Types check box.
+1. In the Max Bytes Per Fetch Request field, type the maximum number of bytes to be fetched.
+
+>[!NOTE]
+> This option is applicable only when connecting to a server that supports result set data serialized in Arrow format.
+> The value must be specified in one of the following:
+
+- B (bytes)
+- KB (kilobytes)
+- MB (megabytes)
+- GB (gigabytes)
+- By default, the file size is in B (bytes).
+
+1. In the Default String Column Length field, type the maximum data length for STRING columns.
+1. In the Binary Column Length field, type the maximum data length for BINARY columns.
+1. In the Async Exec Poll Interval field, type the time in milliseconds between each poll for the query execution status.
+1. In the Query Timeout field, type the number of seconds that an operation can remain idle before it is closed.
+1. To save your settings and close the Advanced Options dialog box, click OK.
+
+### Configuring a Proxy Connection on Windows
+
+If you are connecting to the data source through a proxy server, you must provide connection information for the proxy server.
+
+To configure a proxy server connection on Windows:
+
+1. To access proxy server options, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then click Configure, and then click Proxy Options.
+1. Select the Use Proxy check box.
+1. In the Proxy Host field, type the host name or IP address of the proxy server.
+1. In the Proxy Port field, type the number of the TCP port that the proxy server uses to listen for client connections.
+1. In the Proxy Username field, type your username for accessing the proxy server.
+1. In the Proxy Password field, type the password corresponding to the username.
+1. To encrypt your credentials, click Password Options and then select one of the following:
+
+- If the credentials are used only by the current Windows user, select Current User Only.
+- Or, if the credentials are used by all users on the current Windows machine, select All Users Of This Machine.
+
+1. To confirm your choice and close the Password Options dialog box, click OK.
+1. In the Hosts Not Using Proxy field, type the list of hosts or domains that do not use a proxy.
+1. To save your settings and close the HTTP Proxy Options dialog box, click OK.
+
+### Configuring SSL Verification on Windows
+
+If you are connecting to a Spark server that has Secure Sockets Layer (SSL) enabled, you can configure the connector to connect to an SSL-enabled socket.
+
+When using SSL to connect to a server, the connector supports identity verification between the client (the connector itself) and the server.
+The following instructions describe how to configure SSL in a DSN. You can specify the connection settings described below in a DSN, or in a connection string. Settings in the connection string take precedence over settings in the DSN.
+To configure SSL verification on Windows:
+
+1. To access SSL options for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then click Configure, and then click SSL Options.
+1. Select the Enable SSL check box.
+1. To allow authentication using self-signed certificates that have not been added to the list of trusted certificates, select the Allow Self-signed Server Certificate check box.
+1. To allow the common name of a CA-issued SSL certificate to not match the host name of the Spark server, select the Allow Common Name Host Name Mismatch check box.
+1. To specify the CA certificates that you want to use to verify the server, do one of the following:
+
+- To verify the server using the trusted CA certificates from a specific .pem file, specify the full path to the file in the Trusted Certificates field and clear the Use System Trust Store check box.
+- Or, to use the trusted CA certificates .pem file that is installed with the connector, leave the Trusted Certificates field empty, and clear the Use System Trust Store check box.
+- Or, to use the Windows trust store, select the Use System Trust Store check box.
+
+> [!IMPORTANT]
+
+> - If you are using the Windows trust store, make sure to import the trusted CA certificates into the trust store.
+> - If the trusted CA supports certificate revocation, select the Check Certificate Revocation check box.
+
+1. From the Minimum TLS Version drop-down list, select the minimum version of TLS to use when connecting to your data store.
+1. To configure two-way SSL verification, select the Two-Way SSL check box and then do the following:
+
+    1. In the Client Certificate File field, specify the full path of the PEM file containing the client's certificate.
+    1. In the Client Private Key File field, specify the full path of the file containing the client's private key.
+    1. If the private key file is protected with a password, type the password in the Client Private Key Password field.
+
+> [!IMPORTANT]
+> The password is obscured, that is, not saved in plain text. However, it is still possible for the encrypted password to be copied and used.
+
+   1. To encrypt your credentials, click Password Options and then select one of the following:
+    1. If the credentials are used only by the current Windows user, select Current User Only.
+    1. Or, if the credentials are used by all users on the current Windows machine, select All Users Of This Machine. To confirm your choice and close the Password Options dialog box, click OK.
+    1. To save your settings and close the SSL Options dialog box, click OK.
+
+### Configuring Server-Side Properties on Windows
+
+You can use the connector to apply configuration properties to the Spark server.
+
+The following instructions describe how to configure server-side properties in a DSN. You can specify the connection settings described below in a DSN, or in a connection string. Settings in the connection string take precedence over settings in the DSN.
+
+To configure server-side properties on Windows:
+
+1. To configure server-side properties for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then click Configure, then click Advanced Options, and then click Server Side Properties.
+1. To create a server-side property, click Add, then type appropriate values in the Key and Value fields, and then click OK.
+
+> [!NOTE]
+> For a list of all Hadoop and Spark server-side properties that your implementation supports, type set -v at the Spark CLI command line. You can also execute the set -v query after connecting using the connector.
+
+1. To edit a server-side property, select the property from the list, then click Edit, then update the Key and Value fields as needed, and then click OK.
+1. To delete a server-side property, select the property from the list, and then click Remove. In the confirmation dialog box, click Yes.
+1. To configure the connector to convert server-side property key names to all lower- case characters, select the Convert Key Name To Lower Case check box.
+1. To change the method that the connector uses to apply server-side properties, do one of the following:
+
+- To configure the connector to apply each server-side property by executing a query when opening a session to the Spark server, select the Apply Server Side Properties With Queries check box.
+- Or, to configure the connector to use a more efficient method for applying server-side properties that does not involve additional network round-tripping, clear the Apply Server Side Properties With Queries check box.
+
+1. save your settings and close the Server Side Properties dialog box, click OK.
+
+
+
+
+
+
+
+
+
 
 # [Scala](#tab/scala)
 
