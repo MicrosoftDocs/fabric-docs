@@ -98,8 +98,6 @@ print(f"Unique ID for the current evaluation run: {evaluation_id}")
 
 ```
 
-:::image type="content" source="media/how-to-evaluate-data-agent/evaluation-summary.png" alt-text="Screenshot showing summary of the data agent evaluation results." lightbox="media/how-to-evaluate-data-agent/evaluation-summary.png":::
-
 ### Get evaluation summary
 
 After running the evaluation, you can retrieve a high-level summary of the results using the ```get_evaluation_summary``` function. This function provides insights into how well your Data Agent performed overall — including metrics like how many responses matched the expected answers.
@@ -112,7 +110,7 @@ df = get_evaluation_summary(table_name)
 
 ```
 
-:::image type="content" source="media/how-to-evaluate-data-agent/evaluation-detail.png" alt-text="Screenshot showing summary of the data agent evaluation results." lightbox="media/how-to-evaluate-data-agent/evaluation-detail.png":::
+:::image type="content" source="media/how-to-evaluate-data-agent/evaluation-summary.png" alt-text="Screenshot showing summary of the data agent evaluation results." lightbox="media/how-to-evaluate-data-agent/evaluation-summary.png":::
 
 By default, this function looks for a table named evaluation_output. If you specified a custom table name during evaluation (like "```demo_evaluation_output```"), pass that name as the ```table_name``` argument.
 
@@ -164,8 +162,12 @@ eval_details = get_evaluation_details(
 )
 
 ```
+:::image type="content" source="media/how-to-evaluate-data-agent/evaluation-detail.png" alt-text="Screenshot showing summary of the data agent evaluation results." lightbox="media/how-to-evaluate-data-agent/evaluation-detail.png":::
+
 
 #### get_evaluation_details
+
+Returns a DataFrame containing detailed results for a specific evaluation run, including questions, expected answers, agent responses, evaluation status, and diagnostic metadata.
 
 **Input parameters:**
 
