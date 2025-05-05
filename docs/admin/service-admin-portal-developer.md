@@ -31,11 +31,17 @@ Learn about the [Embed for your customers](/power-bi/developer/embedded/embedded
 
 ## Service principals can create workspaces, connections, and deployment pipelines
 
-Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Fabric *core APIs* that aren't protected by a Fabric permission model.
+Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access these Fabric APIs that aren't protected by a Fabric permission model.
+
+* [Create Workspace](/rest/api/fabric/core/workspaces/create-workspace)
+
+* [Create Connection](/rest/api/fabric/core/connections/create-connection)
+
+* [Create Deployment Pipeline](/rest/api/fabric/core/deployment-pipelines/create-deployment-pipeline)
 
 To allow an app to use service principal authentication, its service principal must be included in an allowed security group. You can control who can access service principals by creating dedicated security groups and using these groups in other tenant settings.
 
-This setting is disabled by default for new customers and for customers who didn't enable it. The setting is enabled for existing customers who previously enabled the redundant setting *Service principals can use Fabric APIs*
+This setting is disabled by default for new customers. If you're an existing customer who previously enabled the redundant setting *Service principals can use Fabric APIs*, this setting and its configuration is enabled. The setting's configuration includes whether it's enabled for all users or only for users in a specific security group.
 
 ## Service principals can call Fabric public APIs
 
@@ -43,7 +49,7 @@ Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-prin
 
 To allow an app to use service principal authentication, its service principal must be included in an allowed security group. You can control who can access service principals by creating dedicated security groups and using these groups in other tenant settings.
 
-This setting is enabled by default for new customers and for customers who previously enable the redundant setting *Service principals can use Fabric APIs*. The setting is disabled for existing customers who previously disabled the redundant setting *Service principals can use Fabric APIs*
+This setting is enabled by default for new customers. If you're an existing customer who previously enabled the redundant setting *Service principals can use Fabric APIs*, this setting and its configuration is enabled. The setting's configuration includes whether it's enabled for all users or only for users in a specific security group.
 
 ## Allow service principals to create and use profiles
 
