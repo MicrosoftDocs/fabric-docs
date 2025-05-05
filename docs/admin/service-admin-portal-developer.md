@@ -8,7 +8,7 @@ ms.reviewer: ''
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 05/05/2025
 LocalizationGroup: Administration
 ---
 
@@ -29,13 +29,21 @@ To learn more, see [What is Power BI embedded analytics?](/power-bi/developer/em
 
 Learn about the [Embed for your customers](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers) method to build an app that uses non-interactive authentication against Power BI.
 
-## Service principals can use Fabric APIs
+## Service principals can create workspaces, connections, and deployment pipelines
 
-Web apps registered in Microsoft Entra ID use an assigned [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Power BI APIs without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group.
+Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Fabric *core APIs* that aren't protected by a Fabric permission model.
 
-You can control who can access service principals by creating dedicated security groups and using these groups in any Power BI tenant level-settings.
+To allow an app to use service principal authentication, its service principal must be included in an allowed security group. You can control who can access service principals by creating dedicated security groups and using these groups in other tenant settings.
 
-To learn more, see [Embed Power BI content with service principal and an application secret](/power-bi/developer/embedded/embed-service-principal).
+This setting is disabled by default for new customers and for customers who didn't enable it. The setting is enabled for existing customers who previously enabled the redundant setting *Service principals can use Fabric APIs*
+
+## Service principals can call Fabric public APIs
+
+Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Fabric public APIs that include create, read, update, and delete (CRUD) operations, and are protected by a Fabric permission model.
+
+To allow an app to use service principal authentication, its service principal must be included in an allowed security group. You can control who can access service principals by creating dedicated security groups and using these groups in other tenant settings.
+
+This setting is enabled by default for new customers and for customers who previously enable the redundant setting *Service principals can use Fabric APIs*. The setting is disabled for existing customers who previously disabled the redundant setting *Service principals can use Fabric APIs*
 
 ## Allow service principals to create and use profiles
 
