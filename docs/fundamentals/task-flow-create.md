@@ -5,13 +5,13 @@ ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
 ms.topic: how-to
-ms.date: 05/01/2025
+ms.date: 05/05/2025
 #customer intent: As a data analytics solutions architect, I want to get started using a task flow to design my data analytics solution.
 ---
 
 # Set up a task flow
 
-This article describes how to start building a task flow, starting either from scratch or with one of Fabric's predefined task flows. It targets data analytics solution architects and others who want to create a visualization of a data project.
+This article describes how to start building a task flow. It targets data analytics solution architects and others who want to create a visualization of a data project.
 
 ## Prerequisites
 
@@ -29,23 +29,23 @@ Navigate to the workspace where you want to create your task flow. It should ope
 1. Show/hide task flow
 1. Items list
 
-When no task flow has been configured, the task flow area prompts you to choose between starting with a predesigned task flow or adding a task to start building your own custom task flow.
+When no task flow has been configured, the task flow area prompts you to choose between starting with a predesigned task flow, adding a task to start building your own custom task flow, or importing a saved task flow.
 
-To build your task flow, you need to:
+To build a task flow, you need to:
 
 * Add tasks to the task flow canvas.
 * Arrange the tasks on the task flow canvas in such a way that illustrates the logic of the project.
 * Connect the tasks to show the logical structure of the project.
 * Assign items to the tasks in the workflow.
 
-To get started, choose either **[Select a predesigned task flow](#start-with-a-predesigned-task-flow)** or **[Add a task](#start-with-a-custom-task-flow)** to start building one from scratch.
+To get started, choose either **[Select a predesigned task flow](#start-with-a-predesigned-task-flow)**, **[Add a task](#start-with-a-custom-task-flow)** (to start building one from scratch), or **Import a task flow** (to start with a saved task flow).
 
 <a name="pbi-task-flow"></a>
 If the workspace contains Power BI items only, the task flow canvas will display a basic task flow designed to meet the basic needs of a solution based on Power BI items only.
 
 :::image type="content" source="./media/task-flow-create/basic-power-bi-task-flow.png" alt-text="Screenshot showing the basic Power BI task flow.":::
 
-Select **Create** if you want to start with this task flow, or choose either of the previously mentioned options, **[Select a predesigned task flow](#start-with-a-predesigned-task-flow)** or **[Add a task](#start-with-a-custom-task-flow)**.
+Select **Create** if you want to start with this task flow, or choose either of the previously mentioned options, **[Select a predesigned task flow](#start-with-a-predesigned-task-flow)**, **[Add a task](#start-with-a-custom-task-flow)**, or **Import a task flow**.
 
 ## Start with a predesigned task flow
 
@@ -106,6 +106,37 @@ If you already have a clear idea of what the structure of your task flow needs t
    Select **Edit** and provide a meaningful name and description for your new task flow to help other members of the workspace understand your project and the task flow you're creating. For more information, see [Edit task flow details](./task-flow-work-with.md#edit-task-name-and-description).
 
 You can continue to [add more tasks to the canvas](./task-flow-work-with.md#add-a-task). You'll also have to perform other actions, such as [arranging the tasks on the canvas](./task-flow-work-with.md#arrange-tasks-on-the-canvas), [connecting the tasks](./task-flow-work-with.md#connect-tasks), [assigning items to the tasks](./task-flow-work-with.md#assign-items-to-a-task), etc. For more information, see [Working with task flows](./task-flow-work-with.md).
+
+
+
+
+
+
+
+## Start by importing an existing task flow that's been saved
+
+Task flows can be exported as json files from the workspace they were created in. These json files that can then be imported into other workspaces for reuse. If there is a json file of a task flow that would help you get started, you can import it into your project's workspace, and then modify it as necessary to suit your project's needs.
+
+1. In the empty task flow area, choose **Import a task flow**.
+
+1. In the **Open** window that appears, navigate to the desired json file, select it, and then select **Open**. The task flow will appear on the canvas, with the task flow details pane at the side.
+
+
+
+:::image type="content" source="./media/task-flow-create/task-flow-predefined-task-flow-applied.png" alt-text="Screenshot showing a predefined task flow selected and applied to canvas." lightbox="./media/task-flow-create/task-flow-predefined-task-flow-applied.png":::
+
+Make sure to change the task flow name and description to something that suits your task flow and enables others to better understand what your task flow is all about. To change the name and description, select **Edit** in the task flow side pane. For more information, see [Edit task flow details](./task-flow-work-with.md#edit-task-flow-details).
+
+The items list shows all the items and folders in the workspace, including those items that are assigned to tasks in the task flow. When you select a task in the task flow, the items list is filtered to show just the items that are assigned to the selected task.
+
+> [!NOTE]
+> Importing a task flow just places the tasks of the imported task flow, and the connectors between them, on the canvas. It's just a graphical representation of the flow - no actual items or data connections are created at this point, and no items that happen to already exist in the workspace are assigned to the tasks in the flow.
+
+After you've imported task flow into the canvas, you can start modifying it to suit your needs - [arranging the tasks on the canvas](./task-flow-work-with.md#arrange-tasks-on-the-canvas), [updating task names and descriptions](./task-flow-work-with.md#edit-task-name-and-description), [assigning items to tasks](./task-flow-work-with.md#assign-items-to-a-task), etc. For more information, see [Working with task flows](./task-flow-work-with.md).
+
+
+a task flow that this is suitable for your purposes suitable to as a starting  be Append: task with same name get number added. Name of original task flow stays.
+Replace: all new, including the metadata
 
 ## Related concepts
 
