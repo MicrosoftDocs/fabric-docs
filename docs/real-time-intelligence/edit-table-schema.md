@@ -15,7 +15,7 @@ In this article, you learn how to rename tables and edit the schema of a table b
 
 > [!CAUTION]
 >
-> * Existing ingestions, ingestion mappings, update polices, functions, exports, materialized views, and other related operations maight fail after editing the table schema. See [Dependencies](#dependencies) and make sure you edit the implementation of the ingestion mappings, update polices, functions, export, and materialized views accordingly.
+> * Existing ingestions, ingestion mappings, update polices, functions, exports, materialized views, and other related operations might fail after editing the table schema. See [Dependencies](#dependencies) and make sure you edit the implementation of the ingestion mappings, update polices, functions, export, and materialized views accordingly.
 
 ## Dependencies
 
@@ -47,7 +47,7 @@ Renaming a table automatically updates all references to it in your ingestion ma
 
 1. In the **Edit table schema** window, edit the table name. Optionally, edit the table description.
 
-    :::image type="content" source="media/empty-table/table-edit-schema-2.png" alt-text="Screenshot of the esit table schema with the table name field highlighted.":::
+    :::image type="content" source="media/empty-table/table-edit-schema-2.png" alt-text="Screenshot of the edit table schema with the table name field highlighted.":::
 
 1. In the **Dependencies** section, review the referenced objects.
 

@@ -13,7 +13,7 @@ ms.search.form: Create a table
 
 Tables are named entities that hold data. A table has an ordered set of columns, and zero or more rows of data. Each row holds one data value for each column of the table.
 
-In this article, you learn how to create an empty table within the context of a KQL databasee.
+In this article, you learn how to create an empty table within the context of a KQL database.
 
 ## Prerequisites
 
@@ -62,7 +62,7 @@ If you have a data source or a sample file prepared, you can use **Get data** to
    * Select **Close** to return to the Eventhouse and [Edit a table schema](edit-table-schema.md) later.
    * Select **Get Data** to start the ingestion process. For more information, see [Get data overview](get-data-overview.md).
 
-    :::image type="content" source="media/empty-table/table-success.png" alt-text="Screenshot of the success meassage.":::
+    :::image type="content" source="media/empty-table/table-success.png" alt-text="Screenshot of the success message.":::
 
 ## Command viewer
 
