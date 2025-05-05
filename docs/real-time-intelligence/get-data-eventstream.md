@@ -53,7 +53,7 @@ When configuring get data from an existing or default eventstream, you need to s
     |----|----|
     | Workspace| Your eventstream workspace location. Select a workspace from the dropdown.|
     | Eventstream Name| The name of your eventstream. Select an eventstream from the dropdown.|
-    | Stream | The name of the stream or derived stream. Select a stream from the dropdown. When there are no options to select, by default the name of the stream is defined as *<Eventstream name>-stream*.|
+    | Stream | The name of the stream or derived stream. Select a stream from the dropdown.|
     | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
     | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
 
@@ -79,9 +79,9 @@ When configuring get data from an existing or default eventstream, you need to s
 
 1. Select **Next**
 
-[!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
-
 ---
+
+[!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
 
 ## Inspect
 
@@ -113,10 +113,7 @@ Optionally:
 
 **Tabular (CSV, TSV, PSV)**:
 
-* If you're ingesting tabular formats in an *existing table*, you can select **Table_mapping** > **Use existing schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
-* To use the first row as column names, select  **First row header**.
-
-  :::image type="content" source="media/get-data-azure-storage/advanced-csv.png" alt-text="Screenshot of advanced CSV options":::
+* If you're ingesting tabular formats in an *existing table*, you can select **Table_mapping** > **Use existing mappping**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
 
 **JSON**:
 
