@@ -16,7 +16,7 @@ ms.collection:
 
 There are two AI-powered quick actions that are currently supported in Copilot in Fabric in the SQL database workload: **Explain** and **Fix**.
 
-:::image type="content" source="media/copilot-quick-actions/explain-fix.png" alt-text="Screenshot from the Fabric portal showing the Explain and Fix buttons above a new empty SQL query tab." lightbox="media/copilot-quick-actions/explain-fix.png":::
+![Screenshot from the Fabric portal showing the Explain and Fix buttons above a new empty SQL query tab.](media/copilot-quick-actions/copilot-qa-toolbar.png)
 
 Quick actions can accelerate productivity by helping you write and understand queries faster. These buttons are located at the top of the SQL query editor, near the **Run** button.
 
@@ -58,12 +58,12 @@ To get Copilot's help with fixing an error in your query, follow these steps:
 
 1. Select the **Fix** button in the toolbar. This button will only be enabled after you run your T-SQL query and it has returned an error.
 
-    :::image type="content" source="media/copilot-quick-actions/fix.png" alt-text="Screenshot from the Fabric portal showing the Fix quick action and a T-SQL query with an error." lightbox="media/copilot-quick-actions/fix.png":::
-
+   ![Screenshot from the Fabric portal showing the Fix quick action and a T-SQL query with an error.](media/copilot-quick-actions/copilot-qa-fix.png)
+   
 1. Copilot analyzes your query and tries to find the best way to fix it. It will also add comments to explain what it fixed and why.
 
-    :::image type="content" source="media/copilot-quick-actions/fix-t-sql.png" alt-text="Screenshot from the Fabric portal showing comments added by Copilot to the T-SQL query." lightbox="media/copilot-quick-actions/fix-t-sql.png":::
-
+   ![Screenshot from the Fabric portal showing comments added by Copilot to the T-SQL query.](media/copilot-quick-actions/copilot-qa-fix2.png)
+   
 1. Review the changes that Copilot made and select **Run** to execute the fixed query. You can also undo the changes if you don't like them, or make further edits.
 
 ## Related content
