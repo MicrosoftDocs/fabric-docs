@@ -14,7 +14,9 @@ ms.search.form: Get data in a KQL Database
 
 In this article, you learn how to get data from an existing eventstream into either a new or existing table.
 
-You can ingest data from default or derived streams. A derived stream is created following the addition of a series of stream operations, such as **Filter** or **Manage Fields**. For more information, see [Eventstream concepts](event-streams/create-default-derived-streams.md#concepts).
+You can ingest data from default or derived streams. A derived stream is created following the addition of a series of stream operations to the eventstream, such as **Filter** or **Manage Fields**. For more information, see [Eventstream concepts](event-streams/create-default-derived-streams.md#concepts).
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 To get data from a new eventstream, see [Get data from a new eventstream](event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-a-new-eventstream).
 
@@ -28,7 +30,7 @@ To get data from a new eventstream, see [Get data from a new eventstream](event-
 
 To get data from an eventstream, you need to select the eventstream as your data source. You can select an existing eventstream in the following ways:
 
-On the lower ribbon of your KQL database, either:
+On the ribbon of your KQL database, either:
 
 * From the **Get Data** dropdown menu, select **Eventstream** > **Existing Eventstream**.
 
@@ -36,7 +38,7 @@ On the lower ribbon of your KQL database, either:
 
 ## Configure
 
-When configuring get data from an existing or default eventstream, you need to specify which eventstream and stream to use. When configuring get data from the Real-Time Hub's list of derived streams, the settings are automatically populated.
+When configuring get data from a default eventstream, you need to specify the eventstream and stream to use. When configuring get data from the Real-Time Hub's list of derived streams, the settings are automatically populated.
 
 ### [Existing Eventstream](#tab/eventstream)
 
