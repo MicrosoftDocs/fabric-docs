@@ -96,7 +96,7 @@ He adjusts the values in the **Data information** section of the Fabric SKU Esti
 - **Number of daily batch cycles**: 2
 - **Number of tables across all data sources**: 1,650
 
-Next, he selects all workloads that need to be included in the estimate: *Data Warehouse* and *Data Science*.
+Next, he selects the workloads he needs to add to the previous estimate: *Data Warehouse* and *Data Science*.
 
 :::image type="content" source="media/fabric-sku-estimator/fabric-workload-selections-part-2.png" alt-text="Workload selections in the Fabric SKU Estimator for part 2 of the scenario." lightbox="media/fabric-sku-estimator/fabric-workload-selections-part-2.png":::
 
@@ -123,7 +123,7 @@ Contoso asks Henri to include capacity for customer and partner data APIs, along
 - **Ad-hoc SQL Analytics users**: 200 daily
 - **Embedded Power BI sessions**: 800 daily
 
-Without changing the values in the **Data information** section of the Fabric SKU Estimator, Henri selects the extra workloads that need to be included in the estimate: *Ad-hoc SQL Analytics* and *Power BI Embedded*.
+Without changing the values in the **Data information** section of the Fabric SKU Estimator, Henri selects the extra workloads that need to be included in his estimate: *Ad-hoc SQL Analytics* and *Power BI Embedded*.
 
 :::image type="content" source="media/fabric-sku-estimator/fabric-workload-selections-part-3.png" alt-text="Workload selections in the Fabric SKU Estimator for part 3 of the scenario." lightbox="media/fabric-sku-estimator/fabric-workload-selections-part-3.png":::
 
