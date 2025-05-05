@@ -61,8 +61,6 @@ When configuring get data from a default eventstream, you need to specify the ev
 
 1. Select **Next**
 
-[!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
-
 ### [Derived Eventstream](#tab/realtimehub)
 
 1. Select a target table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
