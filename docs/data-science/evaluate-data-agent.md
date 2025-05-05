@@ -162,8 +162,8 @@ eval_details = get_evaluation_details(
 )
 
 ```
-:::image type="content" source="media/how-to-evaluate-data-agent/evaluation-detail.png" alt-text="Screenshot showing summary of the data agent evaluation results." lightbox="media/how-to-evaluate-data-agent/evaluation-detail.png":::
 
+:::image type="content" source="media/how-to-evaluate-data-agent/evaluation-detail.png" alt-text="Screenshot showing details of a specific data agent evaluation results." lightbox="media/how-to-evaluate-data-agent/evaluation-detail.png":::
 
 #### get_evaluation_details
 
