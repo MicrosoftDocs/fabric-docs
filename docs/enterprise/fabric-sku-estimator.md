@@ -11,15 +11,11 @@ ms.date: 05/05/2025
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-The Microsoft Fabric SKU Estimator is a tool that helps you figure out the right resources for your workloads. It analyzes your data size, processing needs, and other factors to recommend the best SKU for your business. Whether you're working with data engineering, analytics, or Power BI, this tool helps you plan efficiently to optimize performance and save costs.
-
-## What is the Fabric SKU Estimator?
-
-The Fabric SKU Estimator is a web-based calculator that recommends the appropriate capacity for your workloads based on your inputs. It simplifies planning by analyzing your data size, processing needs, and workload demands to protect you from overcommitting and underprovisioning.
+The Microsoft Fabric SKU Estimator helps you figure out the right resources for your workloads. It analyzes your data size, processing needs, and other factors to recommend the best SKU for your business. The Fabric SKU Estimator is a web-based calculator that recommends the appropriate capacity for your workloads based on your inputs. It simplifies planning by analyzing your data size, processing needs, and workload demands to protect you from overcommitting and underprovisioning.
 
 ## Use the Fabric SKU Estimator
 
-Follow these steps to get started:
+To get started using the Fabric SKU Estimator, follow these steps:
 
 1. Go to the [Microsoft Fabric SKU Estimator](https://aka.ms/fabric-sku-estimator).
 1. Enter details about your workloads, such as:
