@@ -98,7 +98,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
             if "access_token" in result:
                 return result["access_token"]
             else:
-                raise Exception(f"Failed to retrieve tokexzn: {result.get('error_description', 'Unknown error')}")
+                raise Exception("Failed to retrieve token: {result.get('error_description', 'Unknown error')}")
         except Exception as e:
             print(f"Error retrieving token: {e}", file=sys.stderr)
             sys.exit(1)
