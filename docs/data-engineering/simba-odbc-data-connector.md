@@ -98,12 +98,11 @@ To create a Data Source Name on Windows:
 1. To configure server-side properties, select Advanced Options and then select Server Side Properties. For more information, see Configuring Server-Side Properties on Windows.
 1. To configure logging behavior for the connector, select Logging Options. For more information, see Configuring Logging Options on Windows.
 1. To test the connection, select Test. Review the results as needed, and then select OK.
+1. To save your settings and close the Simba ODBC Data Connector for Microsoft Fabric Spark DSN Setup dialog box, select OK.
+1. To close the ODBC Data Source Administrator, select OK.
 
 > [!NOTE]
 > If the connection fails, then confirm that the settings in the Simba Spark ODBC Driver DSN Setup dialog box are correct. Contact your Spark server administrator as needed.
-
-1. To save your settings and close the Simba ODBC Data Connector for Microsoft Fabric Spark DSN Setup dialog box, select OK.
-1. To close the ODBC Data Source Administrator, select OK.
 
 ## Client credentials
 
@@ -167,15 +166,19 @@ You can configure advanced options to modify the behavior of the connector.
 The following instructions describe how to configure advanced options in a DSN and in the connector configuration tool. You can specify the connection settings described below in a DSN, in a connection string, or as connector-wide settings. Settings in the connection string take precedence over settings in the DSN, and settings in the DSN take precedence over connector-wide settings.
 To configure advanced options on Windows:
 
-1. To access advanced options for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then select Configure, and then select Advanced Options.
-2. To disable the SQL Connector feature, select the Use Native Query check box.
-
 > [!IMPORTANT]
 > When this option is enabled, the connector can't execute parameterized queries.
 > By default, the connector applies transformations to the queries emitted by an application to convert the queries into an equivalent form in SparkSQL. If the application is Spark-aware and already emits SparkSQL, then turning off the translation avoids the additional overhead of query transformation.
 
+1. To access advanced options for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then select Configure, and then select Advanced Options.
+1. To disable the SQL Connector feature, select the Use Native Query check box.
 1. To enable the connector to return SQL_WVARCHAR instead of SQL_VARCHAR for STRING and VARCHAR columns, and SQL_WCHAR instead of SQL_CHAR for CHAR columns, select the Unicode SQL Character Types check box.
 1. In the Max Bytes Per Fetch Request field, type the maximum number of bytes to be fetched.
+1. In the Default String Column Length field, type the maximum data length for STRING columns.
+1. In the Binary Column Length field, type the maximum data length for BINARY columns.
+1. In the Async Exec Poll Interval field, type the time in milliseconds between each poll for the query execution status.
+1. In the Query Timeout field, type the number of seconds that an operation can remain idle before it's closed.
+1. To save your settings and close the Advanced Options dialog box, select OK.
 
 >[!NOTE]
 > This option is applicable only when connecting to a server that supports result set data serialized in Arrow format.
@@ -186,12 +189,6 @@ To configure advanced options on Windows:
 - MB (megabytes)
 - GB (gigabytes)
 - By default, the file size is in B (bytes).
-
-1. In the Default String Column Length field, type the maximum data length for STRING columns.
-1. In the Binary Column Length field, type the maximum data length for BINARY columns.
-1. In the Async Exec Poll Interval field, type the time in milliseconds between each poll for the query execution status.
-1. In the Query Timeout field, type the number of seconds that an operation can remain idle before it's closed.
-1. To save your settings and close the Advanced Options dialog box, select OK.
 
 ## Configuring a Proxy Connection on Windows
 
@@ -220,6 +217,12 @@ If you're connecting to a Spark server that has Secure Sockets Layer (SSL) enabl
 
 When using SSL to connect to a server, the connector supports identity verification between the client (the connector itself) and the server.
 The following instructions describe how to configure SSL in a DSN. You can specify the connection settings described below in a DSN, or in a connection string. Settings in the connection string take precedence over settings in the DSN.
+
+> [!IMPORTANT]
+
+> - If you are using the Windows trust store, make sure to import the trusted CA certificates into the trust store.
+> - If the trusted CA supports certificate revocation, select the Check Certificate Revocation check box.
+
 To configure SSL verification on Windows:
 
 1. To access SSL options for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then select Configure, and then select SSL Options.
@@ -232,25 +235,18 @@ To configure SSL verification on Windows:
 - Or, to use the trusted CA certificates .pem file that is installed with the connector, leave the Trusted Certificates field empty, and clear the Use System Trust Store check box.
 - Or, to use the Windows trust store, select the Use System Trust Store check box.
 
-> [!IMPORTANT]
-
-> - If you are using the Windows trust store, make sure to import the trusted CA certificates into the trust store.
-> - If the trusted CA supports certificate revocation, select the Check Certificate Revocation check box.
-
 1. From the Minimum TLS Version drop-down list, select the minimum version of TLS to use when connecting to your data store.
 1. To configure two-way SSL verification, select the Two-Way SSL check box and then do the following:
-
     1. In the Client Certificate File field, specify the full path of the PEM file containing the client's certificate.
     1. In the Client Private Key File field, specify the full path of the file containing the client's private key.
     1. If the private key file is protected with a password, type the password in the Client Private Key Password field.
-
-> [!IMPORTANT]
-> The password is obscured, that is, not saved in plain text. However, it's still possible for the encrypted password to be copied and used.
-
-   1. To encrypt your credentials, select Password Options and then select one of the following:
+    1. To encrypt your credentials, select Password Options and then select one of the following:
     1. If the credentials are used only by the current Windows user, select Current User Only.
     1. Or, if the credentials are used by all users on the current Windows machine, select All Users Of This Machine. To confirm your choice and close the Password Options dialog box, select OK.
     1. To save your settings and close the SSL Options dialog box, select OK.
+
+> [!IMPORTANT]
+> The password is obscured, that is, not saved in plain text. However, it's still possible for the encrypted password to be copied and used.
 
 ## Configuring Server-Side Properties on Windows
 
@@ -258,14 +254,13 @@ You can use the connector to apply configuration properties to the Spark server.
 
 The following instructions describe how to configure server-side properties in a DSN. You can specify the connection settings described below in a DSN, or in a connection string. Settings in the connection string take precedence over settings in the DSN.
 
+> [!NOTE]
+> For a list of all Hadoop and Spark server-side properties that your implementation supports, type set -v at the Spark CLI command line. You can also execute the set -v query after connecting using the connector.
+
 To configure server-side properties on Windows:
 
 1. To configure server-side properties for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then select Configure, then select Advanced Options, and then select Server Side Properties.
 1. To create a server-side property, select Add, then type appropriate values in the Key and Value fields, and then select OK.
-
-> [!NOTE]
-> For a list of all Hadoop and Spark server-side properties that your implementation supports, type set -v at the Spark CLI command line. You can also execute the set -v query after connecting using the connector.
-
 1. To edit a server-side property, select the property from the list, then select Edit, then update the Key and Value fields as needed, and then select OK.
 1. To delete a server-side property, select the property from the list, and then select Remove. In the confirmation dialog box, select Yes.
 1. To configure the connector to convert server-side property key names to all lower- case characters, select the Convert Key Name To Lower Case check box.
@@ -287,6 +282,9 @@ To help troubleshoot issues, you can enable logging. In addition to the function
 
 The settings for logging apply to every connection that uses the Simba ODBC Data Connector for Microsoft Fabric Spark, so make sure to disable the feature after you're done using it.
 
+> [!NOTE]
+> After the maximum number of log files is reached, each time an additional file is created, the connector deletes the oldest log file.
+
 To enable connector-wide logging on Windows:
 
 1. To access logging options, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then select Configure, and then select Logging Options.
@@ -304,17 +302,12 @@ To enable connector-wide logging on Windows:
 
 1. In the Log Path field, specify the full path to the folder where you want to save log files.
 1. In the Max Number Files field, type the maximum number of log files to keep.
-
-> [!NOTE]
-> After the maximum number of log files is reached, each time an additional file is created, the connector deletes the oldest log file.
-
 1. In the Max File Size field, type the maximum size of each log file in megabytes (MB).
+1. Select OK.
+1. Restart your ODBC application to make sure that the new settings take effect.
 
 > [!NOTE]
 > After the maximum file size is reached, the connector creates a new file and continues logging.
-
-1. Select OK.
-1. Restart your ODBC application to make sure that the new settings take effect.
 
 The Simba ODBC Data Connector for Microsoft Fabric Spark produces the following log files at the location you specify in the Log Path field:
 
