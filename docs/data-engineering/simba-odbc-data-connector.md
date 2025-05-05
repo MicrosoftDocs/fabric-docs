@@ -266,141 +266,161 @@ To configure server-side properties on Windows:
 - To configure the connector to apply each server-side property by executing a query when opening a session to the Spark server, select the Apply Server Side Properties With Queries check box.
 - Or, to configure the connector to use a more efficient method for applying server-side properties that does not involve additional network round-tripping, clear the Apply Server Side Properties With Queries check box.
 
-1. save your settings and close the Server Side Properties dialog box, click OK.
+1. To save your settings and close the Server Side Properties dialog box, click OK.
 
+### Configuring Logging Options on Windows
 
+To help troubleshoot issues, you can enable logging. In addition to the functionality provided in the Simba ODBC Data Connector for Microsoft Fabric Spark, the ODBC Data Source Administrator provides tracing functionality.
 
+> [!IMPORTANT]
+> Only enable logging or tracing long enough to capture an issue. Logging or tracing decreases performance and can consume a large quantity of disk space.
 
+### Configuring Connector-wide Logging Options
 
+The settings for logging apply to every connection that uses the Simba ODBC Data Connector for Microsoft Fabric Spark, so make sure to disable the feature after you are done using it.
 
+To enable connector-wide logging on Windows:
 
+1. To access logging options, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then click Configure, and then click Logging Options.
+1. From the Log Level drop-down list, select the logging level corresponding to the amount of information that you want to include in log files:
 
-
-
-# [Scala](#tab/scala)
-
-```scala
-import com.esri.geoanalytics._
-import com.esri.geoanalytics.sql.{functions => ST}
-```
----
-
-## ArcGIS capabilities
-
-ArcGIS provides extensive geospatial capabilities for various applications. Esri is integrating the ArcGIS spatial analytics capabilities into Microsoft Fabric, offering ArcGIS GeoAnalytics functions and tools in the Fabric Spark environment. This integration to help you analyze events, visualize spatial relationships, and gain insights from your data. These capabilities enable the following tasks:
-
-| Task type | Description |
+| Logging Level | Description |
 |---------|---------|
-| Access or create spatial data | Access spatial data files saved in OneLake or as feature services in your Esri environment. Convert x and y coordinates into point geometries, or translate between well-defined text and binary representations (For example, well-known text, well-known binary, [GeoJSON](https://developers.arcgis.com/geoanalytics-fabric/sql-functions/st_geom_from_geojson/) etc.) into a geometry. See the [ArcGIS GeoAnalytics developer documentation](https://developers.arcgis.com/geoanalytics-fabric/data/data-sources/) for more information on supported data sources. |
-| Prepare data                  | Clean, transform, enrich, extract, and load your data for analysis and modeling tasks. ArcGIS GeoAnalytics provides more than [160 functions](https://developers.arcgis.com/geoanalytics-fabric/sql-functions/) for manipulating your spatial data.                                                      |
-| Enrich data based on location      | Add key attributes to your datasets based on shared location or proximity. For instance, add national census-collected sociodemographic data using spatial relationship predicates. This includes identifying if the customer location is inside an area of interest (containment) or within a specified [distance](https://developers.arcgis.com/geoanalytics-fabric/sql-functions/st_dwithin/). |
-| Proximity analysis            | Generate insights based on the distance between features, such as the [nearest neighbors](https://developers.arcgis.com/geoanalytics-fabric/tools/nearest-neighbors/), all locations within a [distance of interest](https://developers.arcgis.com/geoanalytics-fabric/sql-functions/st_dwithin/), or create [groups of features based on proximity](https://developers.arcgis.com/geoanalytics-fabric/tools/group-by-proximity/).                                               |
-| Analyze movement              | Understand patterns across space and time for tracks of moving entities (for example, GPS data tracking vehicle movement), such as [calculating motion statistics](https://developers.arcgis.com/geoanalytics-fabric/tools/calculate-motion-statistics/) or [finding dwell locations](https://developers.arcgis.com/geoanalytics-fabric/tools/find-dwell-locations/).                                                |
-| Identify clusters and hotspots| Find [statistically significant groupings](https://developers.arcgis.com/geoanalytics-fabric/tools/find-hot-spots/) within your data according to their attributes and location in space and time.                                                                                                             |
-| Find similar locations        | Identify locations that are [similar](https://developers.arcgis.com/geoanalytics-fabric/tools/find-similar-locations/) to one another based on location and attributes, or calculate similarity between line features.                                                                                     |
-| Aggregation for business intelligence | [Aggregate data](https://developers.arcgis.com/geoanalytics-fabric/tools/aggregate-points/) and write results back into OneLake for use in Power BI, or schedule your workflows to drive automated updates.                                                                                                 |
+| OFF | Disables all logging.                  |
+| FATAL | Logs severe error events that lead the connector to abort.                  |
+| ERROR | Logs error events that might allow the connector to continue running.                  |
+| WARNING | Logs events that might result in an error if action is not taken.                  |
+| INFO | Logs general information that describes the progress of the connector.                  |
+| DEBUG | Logs detailed information that is useful for debugging the connector.                  |
+| TRACE | Logs all connector activity.     |
 
-### Usage examples
+1. In the Log Path field, specify the full path to the folder where you want to save log files.
+1. In the Max Number Files field, type the maximum number of log files to keep.
 
-* **Data engineering and transformations** – Automate data cleaning, transformation, and loading using notebooks in Data Science and Data Engineering or pipelines in Data Factory:
+> [!NOTE]
+> After the maximum number of log files is reached, each time an additional file is created, the connector deletes the oldest log file.
 
-  :::image type="content" source="media\spark-arcgis-geoanalytics\spatial-analytics-pipelines.png" alt-text="Screenshot showing spatial analytics in pipelines.":::
+1. In the Max File Size field, type the maximum size of each log file in megabytes (MB).
 
-* **Hotspot and clustering analysis** – Identify significant spatial clusters of [high (hot spots) and low values (cold spots)](https://developers.arcgis.com/geoanalytics-fabric/tools/find-hot-spots/), [spatial outliers](https://developers.arcgis.com/geoanalytics-fabric/tools/find-point-clusters/), or similar feature groupings:
-  
-  :::image type="content" source="media\spark-arcgis-geoanalytics\cluster-analysis.jpg" alt-text="Screenshot showing hotspot and clustering analysis.":::
+> [!NOTE]
+> After the maximum file size is reached, the connector creates a new file and continues logging.
 
-* **Spatial pattern identification and analysis** – Gain insights into the distribution and [patterns](https://developers.arcgis.com/geoanalytics-fabric/tools/aggregate-points/) of features and data trends across areas or time periods:
+1. Click OK.
+1. Restart your ODBC application to make sure that the new settings take effect.
 
-  :::image type="content" source="media\spark-arcgis-geoanalytics\pattern-identification.png" alt-text="Screenshot showing spatial pattern identification and analysis.":::
+The Simba ODBC Data Connector for Microsoft Fabric Spark produces the following log files at the location you specify in the Log Path field:
 
-* **[Spatial joins](https://developers.arcgis.com/geoanalytics-fabric/core-concepts/spatial-joins/) for data enrichment and location analytics** – Add location-based context based on spatial proximity or proximity across both space and time.
+- A simbaodbcdataconnectorformicrosoftfabricspark.log file that logs connector activity that is not specific to a connection.
+- A simbaodbcdataconnectorformicrosoftfabricspark_connection_[Number].log file for each connection made to the database, where [Number] is a number that identifies each log file. This file logs connector activity that is specific to the connection.
 
-* **[Track and movement analysis](https://developers.arcgis.com/geoanalytics-fabric/trk-functions/)** – Analyze patterns in GPS or other types of tracking data to [detect incidents](https://developers.arcgis.com/geoanalytics-fabric/tools/detect-incidents/), [calculate motion statistics](https://developers.arcgis.com/geoanalytics-fabric/tools/calculate-motion-statistics/), and understand change in location over time:
+To disable connector logging on Windows:
 
-  :::image type="content" source="media\spark-arcgis-geoanalytics\movement-analysis.png" alt-text="Screenshot showing track and movement analysis.":::
+1. Open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then click Configure, and then click Logging Options.
+1. From the Log Level drop-down list, select LOG_OFF.
+1. Click OK.
+1. Restart your ODBC application to make sure that the new settings take effect.
 
-* **[Aggregation](https://developers.arcgis.com/geoanalytics-fabric/tools/aggregate-points/) and enrichment for use in Power BI dashboards** – Write results back into OneLake for use in Power BI.  Schedule your workflows to drive automated updates:
+### Using a Connection String
 
-  :::image type="content" source="media\spark-arcgis-geoanalytics\aggregation-power-bi.png" alt-text="Screenshot showing spatial data aggregation in Power BI.":::
+For some applications, you might need to use a connection string to connect to your data source.
+For detailed information about how to use a connection string in an ODBC application, refer to the documentation for the application that you are using.
 
-For more information on all functions and tools, see [ArcGIS GeoAnalytics Developer Documentation](https://developers.arcgis.com/geoanalytics-fabric).
+The connection strings in the following sections are examples showing the minimum set of connection attributes that you must specify to successfully connect to the data source.
 
-Beyond ArcGIS GeoAnalytics, you can enhance your spatial data in Fabric using [ArcGIS for Power BI](https://doc.arcgis.com/en/microsoft-365/latest/power-bi/get-started-with-arcgis-for-power-bi.htm). It enables custom data visualization and spatial insights in reports and dashboards.
+### DSN Connection String Example
 
-These capabilities help organizations use geographic context for better decision-making and efficiency. Learn more about Esri’s ArcGIS product suite at the [ArcGIS Architecture Center](https://architecture.arcgis.com/en/overview/introduction-to-arcgis/arcgis-capabilities.html) and [ArcGIS and Fabric integrations](https://www.esri.com/en-us/c/product/spatial-analytics-in-microsoft-fabric) site.
+The following is an example of a connection string for a connection that uses a DSN:
 
-## Code templates and examples
+DSN=[DataSourceName]
 
-You can find code templates and examples in the [ArcGIS GeoAnalytics Developer Documentation](https://developers.arcgis.com/geoanalytics-fabric/), the [Esri Community for GeoAnalytics for Fabric](https://community.esri.com/t5/arcgis-geoanalytics-for-microsoft-fabric/ct-p/arcgis-geoanalytics-for-microsoft-fabric), and Fabric Data Engineering samples.
+[DataSourceName] is the DSN that you are using for the connection.
 
-Here's an example showing how to do hot spot analysis by importing the *FinfHotSopts* library and setting the parameters:
+You can set additional configuration options by appending key-value pairs to the connection string.
 
+> [!NOTE]
+> Configuration options that are passed in using a connection string take precedence over configuration options that are set in the DSN.
+
+### DSN-less Connection String Examples
+
+Some applications provide support for connecting to a data source using a connector without a DSN. To connect to a data source without using a DSN, use a connection string instead.
+
+The placeholders in the examples are defined as follows, in alphabetical order:
+
+- [Auth_Client_ID] is your Authentication Client ID.
+- [Auth_Client_Secret] is your Authentication Client Secret (Synapse only).
+- [Auth_Flow] is the authentication workflow: 1 for Client Credentials, 2 for Browser Based.
+- [Auth_Tenant_ID] is your Authentication Tenant ID.
+- [Auth_Scope] is your Authentication Scopes.
+- [Host] is the IP address or host name of the Synapse or Fabric service to which you are connecting.
+- [HTTP_Path] is the partial URL corresponding to the server to which you are connecting.
+- [Lakehouse_ID] is the ID of the Lakehouse being accessed (Fabric only).
+- [Spark_Pool] is the name of the Spark Pool being accessed (Synapse only).
+- [SparkServerType] is the server type to which you are connecting: 5 for Synapse, 6 for Fabric.
+- [Workspace_ID] is the ID of the Workspace being accessed (Fabric only)
+
+The following is the format of a DSN-less connection string that connects to Microsoft Fabric:
+
+Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Host]; Auth_Flow=2; Auth_Scope=[Auth_Scope]; SparkServerType=6; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=[HTTP_Path]
+
+For example:
+
+Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=api.fabric.microsoft.com; Auth_Flow=2; Auth_Scope={https://analysis.windows.net/powerbi/api/Code.AccessStorage.All https://analysis.windows.net/powerbi/api/Item.Execute.All https://analysis.windows.net/powerbi/api/Item.ReadWrite.All}; SparkServerType=6; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=v1/Workspaces/[Workspace_ID]/lakehouses/[Lakehouse_ID]/livyapi/versions/2024-07-30
+
+The following is the format of a DSN-less connection string that connects to Azure Synapse:
+
+Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Host]; Auth_Flow=1; Auth_Scope=[Auth_Scope]; SparkServerType=5; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=[HTTP_Path]; Auth_Client_Secret=[Auth_Client_Secret]
+
+For example:
+
+Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Synapse workspace name].dev.azuresynapse.net; Auth_Flow=1; Auth_Scope=https://dev.azuresynapse.net/.default; SparkServerType=5; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=livyApi/versions/2024-09-20/sparkPools/[Spark_Pool]; Auth_Client_Secret=[Auth_Client_Secret]
+
+### Connecting to Fabric Spark with Python
+
+The following is an example of connecting to Microsoft Fabric Spark using Python/pyodbc. Replace all bold/italic placeholders (e.g. {your-client-id}) with your specific details.
+
+import pyodbc
 ```python
-# import the Find Hot Spots tool
-from geoanalytics_fabric.tools import FindHotSpots
+# Define your connection string
+connection_string = (
+"Driver={ Simba ODBC Data Connector for Microsoft Fabric Spark};"
+"Host=api.fabric.microsoft.com;"
+"Auth_Flow=2;"
+"Auth_Scope={https://analysis.windows.net/powerbi/api/Code.AccessStorage.All https://analysis.windows.net/powerbi/api/Item.Execute.All https://analysis.windows.net/powerbi/api/Item.ReadWrite.All};"
+"SparkServerType=6;"
+"Auth_Client_ID={your-client-id};"
+"Auth_Tenant_ID={your-tenant-id};"
+"HTTPPath=v1/Workspaces/{your-workspace-id}/lakehouses/{your-lakehouse-id}/livyapi/versions/2024-07-30;"
+)
 
-# Use Find Hot Spots to evaluate the data using bins of 0.1 mile size, and compare to a neighborhood of 0.5 mile around each bin
-result_service_calls = FindHotSpots() \
-            .setBins(bin_size=0.1, bin_size_unit="Miles") \
-            .setNeighborhood(distance=0.5, distance_unit="Miles") \
-            .run(dataframe=df)
+# Define the query to be executed
+query = "SELECT * FROM {your-table-name}"
+
+try:
+    # Establish connection to the database
+    with pyodbc.connect(connection_string, autocommit=True) as conn:
+        print("Connection established successfully.")
+        # Create a cursor object
+        cursor = conn.cursor()
+        
+        # Execute the query
+        cursor.execute(query)
+        
+        # Get column names and retrieve the results
+        columns = [column[0] for column in cursor.description]  
+        rows = cursor.fetchall()
+        
+        # Display results
+        print("Query Results:")
+        print(columns)
+        for row in rows:
+            print(row)
+            
+except pyodbc.Error as e:
+    print("Error:", e)
+
+finally:
+    # Ensure the connection is properly closed
+    if 'conn' in locals() and conn is not None:
+        conn.close()
+        print("Connection closed.")     
 ```
-
-The results can be further analyzed and visualized as shown below:
-
-:::image type="content" source="media\spark-arcgis-geoanalytics\hot-spot-analysis.png" alt-text="Screenshot showing hot spot analysis to evaluate the data.":::
-
-### Get started with spatial data from ArcGIS
-
-The [ArcGIS Living Atlas of the World](https://livingatlas.arcgis.com/en/home/) offers various spatial datasets to start working with the ArcGIS GeoAnalytics library. The Living Atlas is the foremost collection of geographic information from around the globe, including data layers that can be used to support your work with ArcGIS GeoAnalytics. Feature services from the Living Atlas can be read into a dataframe using the ArcGIS GeoAnalytics library to enrich your spatial data. For example, you can read data containing [geometry and attributes for US States](https://www.arcgis.com/home/item.html?id=8c2d6d7df8fa4142b0a1211c8dd66903):
-
-```python
-
-# read a feature service hosted in the Living Atlas of the World 
-
-myFS="https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_States_Generalized_Boundaries/FeatureServer/0" 
-
-df = spark.read.format('feature-service').load(myFS) 
-
-```
-
-This data is now in a dataframe for use with the ArcGIS GeoAnalytics functions, tools, or with other libraries in your Fabric notebooks. For instance, you could enrich a point dataset with state details using a spatial join relationship (for example, using [ST_Contains](https://developers.arcgis.com/geoanalytics-fabric/sql-functions/st_contains/) to identify which state polygon contains each point).
-
-The dataframe can be visualized as a table or used to generate a map with ArcGIS GeoAnalytics.
-
-```python
-
-# plot a dataframe with geometry from a feature service 
-
-df.st.plot(basemap="light", geometry="shape", facecolor="yellow", edgecolor="black", alpha=0.5) 
-
-```
-
-:::image type="content" source="media\spark-arcgis-geoanalytics\dataframe-analysis.png" alt-text="Screenshot showing how to plot a dataframe with geometry.":::
-
-### Supportability
-
-Support for ArcGIS GeoAnalytics can be found through the [Esri Community](https://community.esri.com/t5/arcgis-geoanalytics-for-microsoft-fabric/ct-p/arcgis-geoanalytics-for-microsoft-fabric), and the [Developer Documentation](https://developers.arcgis.com/geoanalytics-fabric/).
-
-### Current limitations
-
-Currently, this integrated library has the following known limitations:
-
-* ArcGIS GeoAnalytics doesn't currently work with [Native Execution Engine (NEE)](native-execution-engine-overview.md)
-
-* During the public preview, Scala support is available for ArcGIS GeoAnalytics functions but not tools.
-
-* There's read/write support for spatial data as geometries, however, not all output formats support geometry type.
-
-  * For formats without native geometry support, convert geometries to string or binary types (for example, well-known binary, well-known text, GeoJSON) using functions like [ST_AsText](https://developers.arcgis.com/geoanalytics-fabric/sql-functions/st_as_text/) and [ST_AsBinary](https://developers.arcgis.com/geoanalytics-fabric/sql-functions/st_as_binary/).
-
-  * When writing to Delta, ArcGIS GeoAnalytics converts geometry to a well-known binary format. When reading these Delta tables, check the column type and use functions like [ST_GeomFromBinary](https://developers.arcgis.com/geoanalytics-fabric/sql-functions/st_geom_from_binary/) to convert back to geometry.
-
-### Related content
-
-* [Apache Spark runtime in Fabric](runtime.md)
-* [How to use notebooks](how-to-use-notebook.md)
-* [ArcGIS for Microsoft Fabric](https://go.esri.com/geoanalytics-in-ms-fabric-overview)
-* [Developer documentation for ArcGIS GeoAnalytics for Microsoft Fabric](https://developers.arcgis.com/geoanalytics-fabric)
-* [ArcGIS GeoAnalytics for Microsoft Fabric Community](https://community.esri.com/t5/arcgis-geoanalytics-for-microsoft-fabric/ct-p/arcgis-geoanalytics-for-microsoft-fabric)
