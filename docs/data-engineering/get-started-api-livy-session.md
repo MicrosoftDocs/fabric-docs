@@ -6,7 +6,7 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: how-to
 ms.search.form: Get started with Session jobs with the Livy API for Data Engineering
-ms.date: 04/30/2025
+ms.date: 05/05/2025
 ---
 
 # Use the Livy API to submit and execute session jobs
@@ -105,8 +105,8 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     token = get_app_only_token(tenant_id, client_id, client_secret, audience)
 
-    api_base_url_mist='https://msitapi.fabric.microsoft.com/v1/'
-    livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"    
+    api_base_url='https://api.fabric.microsoft.com/v1/'
+    livy_base_url = api_base_url + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"    
     headers = {"Authorization": "Bearer " + token}
 
     print(token)
