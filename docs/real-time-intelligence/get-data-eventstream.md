@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 05/05/2025
 ms.search.form: Get data in a KQL Database
 ---
 
