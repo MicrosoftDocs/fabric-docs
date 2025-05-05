@@ -6,7 +6,7 @@ ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 03/31/2025
+ms.date: 05/05/2025
 
 #customer intent: As a Fabric admin, I want to create and manage a set of tags so that data creators and data consumers can use them to better manage and find data.
 
@@ -72,7 +72,12 @@ This section shows how to create a set of one or more tags.
 
     The tag is deleted from the set of defined tags, and is removed from all items it's applied to.
 
+## Create and manage tags programmatically using APIs
+
+All of the actions described in this article for creating and managing tags in the UI can be performed programmatically via APIs. For more information, see [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags).
+
 ## Related content
 
 * [Tags overview](tags-overview.md)
 * [Apply tags to items](tags-apply.md)
+* [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags)

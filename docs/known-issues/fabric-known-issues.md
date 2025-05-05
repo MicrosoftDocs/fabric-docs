@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/01/2025
+ms.date: 05/02/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1119  | Power BI | [Large semantic model storage format conversion stays in view mode](./known-issue-1119-large-semantic-model-conversion-view-mode.md) | May 2, 2025 |
 |  1121  | Data Warehouse | [SQL analytics endpoint queries return empty results](./known-issue-1121-sql-analytics-endpoint-queries-return-empty-results.md) | May 1, 2025 |
 |  1118  | Power BI | [Execution details of semantic model refresh activity unavailable in Monitor hub](./known-issue-1118-execution-details-model-refresh-unavailable-monitor-hub.md) | May 1, 2025 |
 |  1117  | Power BI | [Gateway causes lakehouse tables with null values](./known-issue-1117-gateway-causes-lakehouse-tables-null-values.md) | April 25, 2025 |
@@ -81,7 +82,6 @@ Select the **Title** to view more information about that specific known issue.
 |  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](./known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
 |  894  | Data Engineering | [Pipeline fails when getting a token to connect to Kusto](./known-issue-894-pipeline-fails-getting-token-connect-kusto.md) | October 25, 2024 |
 |  893  | Power BI | [Can't connect to semantic model from Excel or use Analyze in Excel](./known-issue-893-not-connect-semantic-model-analyze-excel.md) | October 23, 2024 |
-|  878  | Power BI | [Premium capacity doesn't add excess usage into carry forward](./known-issue-878-premium-capacity-not-add-usage-carry-forward.md) | October 10, 2024 |
 |  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](./known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 |
 |  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](./known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
 |  835  | Data Engineering | [Managed private endpoint connection could fail](./known-issue-835-managed-private-endpoint-connection-fail.md) | September 13, 2024 |
@@ -104,6 +104,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  878  | Power BI | [Premium capacity doesn't add excess usage into carry forward](./known-issue-878-premium-capacity-not-add-usage-carry-forward.md) | October 10, 2024 | Fixed: May 2, 2025 |
 |  508  | Data Warehouse | [User column incorrectly shows as System in Fabric capacity metrics app](./known-issue-508-user-column-incorrectly-shows-system-metrics-app.md)  | October 5, 2023 | Fixed: May 1, 2025 |
 |  974  | Real-Time Intelligence | [Show table command in KQL Queryset editor fails](./known-issue-974-show-table-kql-queryset-editor-fails.md) | January 6, 2025 | Fixed: April 18, 2025 |
 |  718  | OneLake | [OneLake under-reports transactions in the Other category](./known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 | Fixed: April 18, 2025 |
