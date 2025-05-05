@@ -22,11 +22,14 @@ Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platf
 
 :::image type="content" source="media/spark-compute/starter-pool-configuration.png" alt-text="Image of a table showing starter pool configuration.":::
 
-Starter pools have Apache Spark clusters that are always on and ready for your requests. They use medium nodes that dynamically scale up based on your Spark job needs.
+Starter pools have Apache Spark clusters with sessions that are always on and ready for your requests. They use medium nodes that dynamically scale up based on your Spark job needs.
 
 :::image type="content" source="media/spark-compute/starter-pool.png" alt-text="Diagram showing the high-level design of starter pools.":::
 
 When you use a Starter Pool **without any extra library dependencies or custom Spark properties**, your session typically starts in **5 to 10 seconds**. This fast startup is possible because the cluster is already running and doesn't require  provisioning time.
+
+> [!NOTE]
+> Starter pools are only supported for Medium Node sizes, and selecting any other node sizes, or customizing compute configurations will result in on-demand session start experience which could take from 2 - 5 minutes 
 
 However, there are several scenarios where your session might take longer to start:
 
@@ -49,7 +52,6 @@ Here are a few example scenarios to illustrate potential start times:
 | **High traffic + library dependencies**            | 2 – 5 minutes + 30 seconds – 5 min (for libraries)                |
 | **Network security (Private Links/VNet), no libraries**  | 2 – 5 minutes                                            |
 | **Network security + library dependencies**        | 2 – 5 minutes + 30 seconds – 5 min (for libraries)                |
-
 
 
 When it comes to billing and capacity consumption, you're charged for the capacity consumption when you start executing your notebook or Apache Spark job definition. You aren't charged for the time the clusters are idle in the pool.
