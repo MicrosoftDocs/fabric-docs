@@ -21,7 +21,7 @@ This article describes how to set up a data agent in Microsoft Fabric, using a l
 
 ## Prerequisites
 
-- [A paid F64 or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
+- [A paid F2 or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
 - [Fabric data agent tenant settings](./data-agent-tenant-settings.md) is enabled.
 - [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.

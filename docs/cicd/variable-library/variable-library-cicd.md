@@ -72,7 +72,7 @@ For more information about the variables file, including an example, see [variab
 
 ## Considerations and limitations
 
- [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
+ [!INCLUDE [limitations](../includes/variable-library-limitations.md)]
 
 ## Related content
 

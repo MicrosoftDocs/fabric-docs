@@ -73,6 +73,9 @@ At this point, the API is ready but it's not exposing any data. APIs for GraphQL
 
 Your API for GraphQL is now ready to accept connections and requests. You can use the API editor to test and prototype GraphQL queries and the Schema explorer to verify the data types and fields exposed in the API.
 
+> [!NOTE]
+> Currently there is a limitation attaching API for GraphQL to existing Azure SQL Database connections available in the OneLake catalog. This limitation will be lifted in an upcoming release. To work around this limitation, create a new connection to Azure SQL Database instead of choosing an existing one from the catalog.
+
 ## Permissions summary
 
 The table below summarizes the different supported permutations and minimum required permissions for clients accessing the GraphQL API:

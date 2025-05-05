@@ -26,7 +26,7 @@ The following table summarizes the available data connectors, tools, and integra
 | [Azure Functions](#azure-functions) | **Export**<br />**Ingestion** | | First party   | Workflow integrations   |
 | [Azure Stream Analytics](#azure-stream-analytics) | **Ingestion**  | :heavy_check_mark:  | First party   | Event processing   |
 | [Cribl Stream](#cribl-stream) | **Ingestion** | :heavy_check_mark: | First party | Telemetry, Logs, Metrics, Machine data |
-| [Fluent Bit](#fluent-bit)  | **Ingestion** | :heavy_check_mark:  | [Open source](https://github.com/fluent/fluent-bit_) | Logs, Metrics, Traces  |
+| [Fluent Bit](#fluent-bit)  | **Ingestion** | :heavy_check_mark:  | [Open source](https://github.com/fluent/fluent-bit) | Logs, Metrics, Traces  |
 | [Logstash](#logstash)   | **Ingestion** |  | [Open source](https://github.com/Azure/logstash-output-kusto/)  | Logs |
 | [NLog](#nlog) | **Ingestion** | :heavy_check_mark:  | [Open source](https://github.com/Azure/azure-kusto-nlog-sink)   | Telemetry, Logs, Metrics|
 | [Open Telemetry](#opentelemetry)| **Ingestion**  | :heavy_check_mark:  | [Open source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter) | Traces, Metrics, Logs   |

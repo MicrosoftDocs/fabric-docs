@@ -4,7 +4,7 @@ description: "Learn about how to develop Direct Lake semantic models."
 author: peter-myers
 ms.author: phseamar
 ms.reviewer: davidi
-ms.date: 12/16/2024
+ms.date: 04/23/2025
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -76,7 +76,7 @@ The following steps approximate how queries are evaluated (and whether they fail
 1. If the query contains any table in the SQL analytics endpoint that enforces RLS or a view is used, the query falls back to DirectQuery mode.
     1. If the cloud connection uses SSO (default), RLS is determined by the access level of the report consumer.
     1. If the cloud connection uses a fixed identity, RLS is determined by the access level of the fixed identity.
-1. If the query [exceeds the guardrails of the capacity](../fundamentals/direct-lake-overview.md#fabric-capacity-guardrails-and-limitations), it falls back to DirectQuery mode.
+1. If the query [exceeds the guardrails of the capacity](../fundamentals/direct-lake-overview.md#fabric-capacity-requirements), it falls back to DirectQuery mode.
 1. Otherwise, the query is satisfied from the in-memory cache. Column data is [loaded into memory](../fundamentals/direct-lake-overview.md#column-loading-transcoding) as and when it's required.
 
 ### Source item permissions

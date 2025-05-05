@@ -27,9 +27,8 @@ Git integration in Microsoft Fabric enables developers to integrate their develo
 * Collaborate with others or work alone using Git branches
 * Apply the capabilities of familiar source control tools to manage Fabric items
 
-<!---
 The integration with source control is on a workspace level. Developers can version items they develop within a workspace in a single process, with full visibility to all their items. The workspace structure, including [subfolders](./git-integration-process.md#folders), is preserved in the Git repository.
---->
+
 See the list of [supported items](#supported-items).
 
 * Read up on basic [Git](/devops/develop/git/what-is-git) and [version control](/devops/develop/git/what-is-version-control) concepts.  
@@ -60,7 +59,7 @@ The following items currently support Git integration:
 
 * Data Engineering items:
 
-  * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#git-integration-for-microsoft-fabric-environment)
+  * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#integrate-git-for-fabric-environments)
   * [GraphQL](../../data-engineering/graphql-source-control-and-deployment.md#api-for-graphql-git-integration) *(preview)*
   * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#lakehouse-git-integration) *(preview)*
   * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
@@ -110,7 +109,7 @@ If the workspace or Git directory has unsupported items, it can still be connect
 
 ## Considerations and limitations
 
-[!INCLUDE [limitations](../../includes/git-limitations.md)]
+[!INCLUDE [limitations](../includes/git-limitations.md)]
 
 ## Related content
 

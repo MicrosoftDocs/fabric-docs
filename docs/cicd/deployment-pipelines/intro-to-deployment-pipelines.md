@@ -38,7 +38,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 
 * Data Engineering items:
 
-  * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#deployment-pipeline-for-environment)
+  * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#set-up-a-deployment-pipeline-for-an-environment)
   * [GraphQL](../../data-engineering/graphql-source-control-and-deployment.md#api-for-graphql-in-deployment-pipeline) *(preview)*
   * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#lakehouse-in-deployment-pipelines) *(preview)*
   * [Notebook](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
