@@ -55,7 +55,7 @@ Here are some of the benefits of the Fabric SKU Estimator:
 - **Power BI insights**: Compare licensing options.
 - **Detailed workload breakdown**: Understand resource needs for each workload.
 
-The Fabric SKU Estimator helps you plan effectively, save costs, and ensure your workloads run smoothly. For detailed examples of how to use the estimator, see [Scenarios for the Fabric SKU Estimator](fabric-sku-estimator-scenarios.md).
+The Fabric SKU Estimator helps you plan effectively, save costs, and ensure your workloads run smoothly. For detailed examples of how to use the estimator, see [Scenario for the Fabric SKU Estimator](fabric-sku-estimator-scenario.md).
 
 ## Related content
 
