@@ -252,6 +252,8 @@ items:
       href: lakehouse-table-maintenance.md
     - name: Delta optimization and V-Order
       href: delta-optimization-and-v-order.md
+    - name: Automated Statistics for Delta Tables
+      href: automated_table_statistics.md	
 - name: Notebooks
   items:
   - name: Create and use notebooks
