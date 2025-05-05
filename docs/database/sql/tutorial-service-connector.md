@@ -35,7 +35,11 @@ Create a new service connection from App Service to a SQL database in Fabric, us
     az extension add --name serviceconnector-passwordless --upgrade
     ```
 
-1. Add a service connector for SQL database in Fabric with the `az webapp connection create fabric-sql` command. A connection string is used to authenticate the web app to the database resource.
+1. Add a service connector for SQL database in Fabric with the `az webapp connection create fabric-sql` command. A connection string is used to authenticate the web app to the database resource. When running the code below:
+    
+   1. Replace `<subscription>` with the subscription ID associated with your App Service and `<source-resource-group>` with the name of the resource group containing your App Service. You can find this information in the **Overview** tab of your App Service resource in the Azure portal.
+   1. Replace <fabric_workspace_uuid> with the Universally Unique Identifier (UUID) of your Microsoft Fabric workspace, found in the Azure portal by navigating to your Fabric workspace resource and checking the **Overview** tab.
+   1. Replace `<fabric_sql_db_uuid>` with the UUID of your SQL database, found in the **Properties** section of the database resource within the Fabric workspace.
 
     ```azurecli
     az webapp connection create fabric-sql \
@@ -46,7 +50,10 @@ Create a new service connection from App Service to a SQL database in Fabric, us
 
     In the background, Service Connector enables a system-assigned managed identity for the app hosted by Azure App Service and adds a connection string to App Settings named `FABRIC_SQL_CONNECTIONSTRING`.
 
-    For more information about this command and more options, see [az webapp connection create](/cli/azure/webapp/connection/create#az-webapp-connection-create-postgres-flexible).
+    For more information about this command and more options, see [az webapp connection create](/cli/azure/webapp/connection/create#az-webapp-connection-create-fabric-sql).
+
+> [!TIP]
+> Optionally use a user-assigned managed identity instead of a system-assigned managed identity by replacing `--system-identity` with `--user-identity "client-id=<your-identity-client-id>" "subs-id=<your-subscription-id>"` when running the command above. Replace `<your-identity-client-id>` with the client ID you want to use, and `<your-subscription-id>` with your subscription ID.
 
 #### [Azure portal](#tab/az-portal)
 
@@ -68,7 +75,7 @@ Create a new service connection from App Service to a SQL database in Fabric, us
 1. Select **Next: Networking** > **Review + Create** to review your connection configuration.
 1. Check the box stating that you understand that additional manual steps are required to configure this service connection, and select **Create On Cloud Shell**. Alternatively, if you have the [Azure CLI installed](/cli/azure/install-azure-cli-windows), copy and run the provided CLI commands on your local machine.
 
-    :::image type="content" source="./media/tutorial-service-connector/copy-CLI-command.png" alt-text="Screenshot of the Azure portal, showing CLI commands.":::
+    :::image type="content" source="./media/tutorial-service-connector/copy-command.png" alt-text="Screenshot of the Azure portal, showing CLI commands.":::
 
 1. Once the command finishes running, close the **Create connection** pane.
 ---
