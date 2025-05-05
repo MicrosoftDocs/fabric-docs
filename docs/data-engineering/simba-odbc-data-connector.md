@@ -27,7 +27,7 @@ For complete information about the ODBC specification, see the [ODBC API Referen
 
 Review this example of how this process works.
 
-:::image type="content" source="media\simba-odbc-data-connector\example.gif" alt-text="Animated example showing the Simba ODBC connector.":::
+:::image type="content" source="media/simba-odbc-data-connector/example.gif" alt-text="Animated example showing the Simba ODBC connector." lightbox="media/simba-odbc-data-connector/example.gif":::
 
 ## System Requirements
 
