@@ -31,7 +31,7 @@ Review this example of how this process works.
 
 ## System Requirements
 
-Install the connector on client machines where the client application is installed. Before installing the connector, make sure that you have the th:
+Install the connector on client machines where the client application is installed. Before installing the connector, make sure that you have:
 
 - Administrator rights on your machine.
 - A machine that meets these system requirements:
@@ -69,15 +69,15 @@ To create a Data Source Name on Windows:
 > [!NOTE]
 > Make sure to select the ODBC Data Source Administrator that has the same bitness as the client application that you're using to connect to Spark.
 
+> [!NOTE]
+> It's recommended that you create a System DSN instead of a User DSN. Some applications load the data using a different user account and might not be able to detect User DSNs that are created under another user account.
+
 1. From the Start menu, go to ODBC Data Sources.
 1. In the ODBC Data Source Administrator, select the Drivers tab, and then scroll down as needed to confirm that the Simba ODBC Data Connector for Microsoft Fabric Spark appears in the alphabetical list of ODBC drivers that are installed on your system.
 1. Choose one:
 
-- To create a DSN that only the user currently logged into Windows can use, select the User DSN tab.
-- Or, to create a DSN that all users who log into Windows can use, select the System DSN tab.
-
-> [!NOTE]
-> It's recommended that you create a System DSN instead of a User DSN. Some applications load the data using a different user account and might not be able to detect User DSNs that are created under another user account.
+    - To create a DSN that only the user currently logged into Windows can use, select the User DSN tab.
+    - Or, to create a DSN that all users who log into Windows can use, select the System DSN tab.
 
 1. Select Add.
 1. In the Create New Data Source dialog box, select Simba ODBC Data Connector for Microsoft Fabric Spark and then select Finish. The Simba ODBC Data Connector for Microsoft Fabric Spark DSN Setup dialog box opens.
@@ -85,8 +85,8 @@ To create a Data Source Name on Windows:
 1. Optionally, in the Description field, type relevant details about the DSN.
 1. From the Spark Server Type drop-down list, select the appropriate server type for the version of Spark that you're running:
 
-- If you're connecting to Microsoft Fabric, then select FABRIC.
-- If you're connecting to Azure Synapse, then select SYNAPSE.
+    - If you're connecting to Microsoft Fabric, then select FABRIC.
+    - If you're connecting to Azure Synapse, then select SYNAPSE.
 
 1. In the Host(s), type in the hostname corresponding to the server.
 1. In the HTTP Path, type in the partial URL corresponding to the server.
