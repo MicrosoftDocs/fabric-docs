@@ -120,7 +120,7 @@ Recommended approach (Fabric Spark >= 3.2.0.19):
 
 ``` StatisticsStore.recomputeStatisticsWithCompaction(spark, "testTable1") ```
 
-If you’ve changed the columns or configuration:
+If the schema changes (e.g., you add/drop columns), you need to remove old statistics before recomputing:
 
 ```
 StatisticsStore.removeStatisticsData(spark, "testTable1")
