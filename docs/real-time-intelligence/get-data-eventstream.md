@@ -10,7 +10,7 @@ ms.date: 05/05/2025
 ms.search.form: Get data in a KQL Database
 ---
 
-# Get data from Eventstream
+# Get data from Eventstream (Preview)
 
 In this article, you learn how to get data from an existing eventstream into either a new or existing table.
 
