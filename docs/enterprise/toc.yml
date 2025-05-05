@@ -61,3 +61,9 @@ items:
       href: monitor-paused-capacity.md
     - name: Understand the metrics app calculations
       href: metrics-app-calculations.md
+  - name: Fabric SKU Estimator (preview)
+    items:
+    - name: What is the Microsoft Fabric SKU Estimator (preview)?
+      href: fabric-sku-estimator.md
+    - name: Scenario for the Fabric SKU Estimator (preview)
+      href: fabric-sku-estimator-scenario.md
