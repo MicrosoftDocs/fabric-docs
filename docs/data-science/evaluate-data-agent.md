@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 05/04/2025
 ---
 
-# Evaluate your data agent
+# Evaluate your data agent (preview)
 
 ## Prerequisites
 
