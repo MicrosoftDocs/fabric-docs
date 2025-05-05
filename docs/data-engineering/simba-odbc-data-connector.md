@@ -6,7 +6,7 @@ ms.author: sngun
 author: SnehaGunda
 ms.topic: how-to
 ms.date: 05/04/2025
-ms.devlang: python
+ms.devlang: python, html
 #customer intent: As a Microsoft Fabric user I want to learn about the Simba ODBC Data Connector for Microsoft Fabric Data Engineering, detailing its features, installation, and configuration processes.
 ---
 
@@ -18,7 +18,7 @@ The connector efficiently transforms an application’s SQL query into the equiv
 If an application is Spark-aware, then the connector is configurable to pass the query through to the database for processing. The connector interrogates Spark to obtain schema information to present to a SQL-based application. The Simba ODBC Data Connector for Microsoft Fabric Data Engineering complies with the ODBC 3.80 data standard and adds important functionality such as Unicode and 32- and 64-bit support for high- performance computing environments. ODBC is one of the most established and widely supported APIs for connecting to and working with databases. At the heart of the technology is the ODBC connector, which connects an application to the database.
 
 For more information about ODBC, see: [What is ODBC?](https://insightsoftware.com/blog/what-is-odbc/).
-For complete information about the ODBC specification, see the [ODBC API Reference from the Microsoft documentation](https://docs.microsoft.com/sql/odbc/reference/syntax/odbc-api-reference).
+For complete information about the ODBC specification, see the [ODBC API Reference from the Microsoft documentation](/sql/odbc/reference/syntax/odbc-api-reference).
 
 > [!NOTE]
 > The Simba ODBC Data Connector for Microsoft Fabric Spark is available for Microsoft® Windows® platform.
@@ -119,9 +119,14 @@ To configure OAuth 2.0 client credentials authentication using the client secret
     1. In the Client ID field, type your client ID.
     1. In the Client Secret field, type your client secret.
     1. In the Tenant ID field, type your tenant ID.
-    1. In the OAuth Scope field, type <https://dev.azuresynapse.net/.default>
-    1. Optionally, select Encryption Options… and choose the encryption password for Current User Only or All Users of this Machine. Then select OK.
-    1. To save your settings and close the OAuth Options dialog box, select OK.
+    1. In the OAuth Scope field, type:
+
+```html
+https://dev.azuresynapse.net/.default
+```
+
+1. Optionally, select Encryption Options… and choose the encryption password for Current User Only or All Users of this Machine. Then select OK.
+1. To save your settings and close the OAuth Options dialog box, select OK.
 1. To save your settings and close the DSN Setup dialog box, select OK.
 
 ### Browser Based Authorization Code
