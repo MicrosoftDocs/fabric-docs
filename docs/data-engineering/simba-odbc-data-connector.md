@@ -12,10 +12,10 @@ ms.devlang: python
 
 # Simba ODBC Data Connector for Microsoft Fabric Data Engineering (Public Preview)
 
-The Simba ODBC Data Connector for Microsoft Fabric Data Engineering (Spark) is used for direct SQL and SparkSQL access to Microsoft Fabric Spark or Azure Synapse Spark, enabling Business Intelligence (BI), analytics, and reporting on Spark-based data.
+The Simba Open Database Connector (ODBC) Data Connector for Microsoft Fabric Data Engineering (Spark) is used for direct SQL and SparkSQL access to Microsoft Fabric Spark or Azure Synapse Spark, enabling Business Intelligence (BI), analytics, and reporting on Spark-based data.
 The connector efficiently transforms an application’s SQL query into the equivalent form in SparkSQL, which is a subset of SQL-92. 
 
-If an application is Spark-aware, then the connector is configurable to pass the query through to the database for processing. The connector interrogates Spark to obtain schema information to present to a SQL-based application. The Simba ODBC Data Connector for Microsoft Fabric Data Engineering complies with the ODBC 3.80 data standard and adds important functionality such as Unicode and 32- and 64-bit support for high- performance computing environments. ODBC is one of the most established and widely supported APIs for connecting to and working with databases. At the heart of the technology is the ODBC connector, which connects an application to the database.
+If an application is Spark-aware, then the connector is configurable to pass the query through to the database for processing. The connector interrogates Spark to obtain schema information to present to a SQL-based application. The Simba ODBC Data Connector for Microsoft Fabric Data Engineering complies with the ODBC 3.80 data standard and adds important functionality such as Unicode and 32-bit and 64-bit support for high- performance computing environments. ODBC is one of the most established and widely supported APIs for connecting to and working with databases. At the heart of the technology, is the ODBC connector, which connects an application to the database.
 
 For more information about ODBC, see: [What is ODBC?](https://insightsoftware.com/blog/what-is-odbc/).
 For complete information about the ODBC specification, see the [ODBC API Reference from the Microsoft documentation](/sql/odbc/reference/syntax/odbc-api-reference).
@@ -70,7 +70,7 @@ To create a Data Source Name on Windows:
 > Make sure to select the ODBC Data Source Administrator that has the same bitness as the client application that you're using to connect to Spark.
 
 > [!NOTE]
-> It's recommended that you create a System DSN instead of a User DSN. Some applications load the data using a different user account and might not be able to detect User DSNs that are created under another user account.
+> We recommended you create a System DSN instead of a User DSN. Some applications load the data using a different user account and might not be able to detect User DSNs that are created under another user account.
 
 1. From the Start menu, go to ODBC Data Sources.
 1. In the ODBC Data Source Administrator, select the Drivers tab, and then scroll down as needed to confirm that the Simba ODBC Data Connector for Microsoft Fabric Spark appears in the alphabetical list of ODBC drivers that are installed on your system.
