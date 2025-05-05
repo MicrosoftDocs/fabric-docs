@@ -17,22 +17,21 @@ ms.date: 05/04/2025
 - [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- At least one of the following: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
-- [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
+- At least one of the following data sources: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
 
 ## Install the data agent SDK
 
-To get started with evaluating your Fabric Data Agent programmatically, you’ll first need to install [the Fabric Data Agent Python SDK[(./fabric-data-agent-sdk.md)]. This SDK provides the tools and methods required to interact with your data agent, run evaluations, and log results. Install the latest version by running the following command in your notebook:
+To get started with evaluating your Fabric Data Agent programmatically, you need to install [the Fabric Data Agent Python SDK](./fabric-data-agent-sdk.md). This SDK provides the tools and methods required to interact with your data agent, run evaluations, and log results. Install the latest version by running the following command in your notebook:
 
 ```python
 %pip install -U fabric-data-agent-sdk
 ```
 
-This ensures you have the most up-to-date features and fixes available in the SDK.
+This step ensures you have the most up-to-date features and fixes available in the SDK.
 
 ## Load your ground truth dataset
 
-To evaluate your Fabric Data Agent, you’ll need a set of sample questions along with the expected answers. These are used to verify how accurately the agent responds to real-world queries.
+To evaluate your Fabric Data Agent, you need a set of sample questions along with the expected answers. These questions are used to verify how accurately the agent responds to real-world queries.
 
 You can define these questions directly in your code using a pandas DataFrame:
 
@@ -62,11 +61,11 @@ df = pd.read_csv(input_file_path)
 
 ```
 
-This dataset will serve as the input for running automated evaluations against your data agent to assess accuracy and coverage.
+This dataset serves as the input for running automated evaluations against your data agent to assess accuracy and coverage.
 
 ## Evaluate and assess your data agent
 
-Once you’ve prepared your set of evaluation questions and expected answers, the next step is to run the evaluation using the ```evaluate_data_agent``` function. This function compares the agent’s responses against your expected results and stores the evaluation metrics.
+The next step is to run the evaluation using the ```evaluate_data_agent``` function. This function compares the agent’s responses against your expected results and stores the evaluation metrics.
 
 ```python
 from fabric.dataagent.evaluation import evaluate_data_agent
@@ -103,7 +102,7 @@ print(f"Unique ID for the current evaluation run: {evaluation_id}")
 
 ### Get evaluation summary
 
-After running the evaluation, you can retrieve a high-level summary of the results using the ```get_evaluation_summary``` function. This provides insights into how well your Data Agent performed overall — including metrics like how many responses matched the expected answers.
+After running the evaluation, you can retrieve a high-level summary of the results using the ```get_evaluation_summary``` function. This function provides insights into how well your Data Agent performed overall — including metrics like how many responses matched the expected answers.
 
 ```python
 from fabric.dataagent.evaluation import get_evaluation_summary
@@ -117,7 +116,7 @@ df = get_evaluation_summary(table_name)
 
 By default, this function looks for a table named evaluation_output. If you specified a custom table name during evaluation (like "```demo_evaluation_output```"), pass that name as the ```table_name``` argument.
 
-The returned DataFrame includes aggregated metrics such as the number of correct, incorrect, or unclear responses. This helps you quickly assess the agent’s accuracy and identify areas for improvement.
+The returned DataFrame includes aggregated metrics such as the number of correct, incorrect, or unclear responses. This result helps you quickly assess the agent’s accuracy and identify areas for improvement.
 
 #### get_evaluation_summary
 
@@ -142,7 +141,7 @@ get_evaluation_summary(table_name='evaluation_output', verbose=False)
 
 ### Inspect detailed evaluation results
 
-To dive deeper into how your Data Agent responded to each individual question, use the ``get_evaluation_details`` function. This returns a detailed breakdown of the evaluation run, including the actual agent responses, whether they matched the expected answer, and a link to the evaluation thread (visible only to the user who ran the evaluation).
+To dive deeper into how your Data Agent responded to each individual question, use the ``get_evaluation_details`` function. This function returns a detailed breakdown of the evaluation run, including the actual agent responses, whether they matched the expected answer, and a link to the evaluation thread (visible only to the user who ran the evaluation).
 
 ```python
 from fabric.dataagent.evaluation import get_evaluation_details
@@ -189,7 +188,7 @@ eval_details = get_evaluation_details(
 
 By default, the Fabric SDK uses a built-in prompt to evaluate whether the Data Agent’s actual answer matches the expected answer. However, you can supply your own prompt for more nuanced or domain-specific evaluations using the ```critic_prompt``` parameter.
 
-Your custom prompt should include the placeholders ```{query}```, ```{expected_answer}```, and ```{actual_answer}```. These will be dynamically substituted for each question during evaluation.
+Your custom prompt should include the placeholders ```{query}```, ```{expected_answer}```, and ```{actual_answer}```. These placeholders are dynamically substituted for each question during evaluation.
 
 ```python
 from fabric.dataagent.evaluation import evaluate_data_agent
@@ -219,7 +218,7 @@ evaluation_id = evaluate_data_agent(df, data_agent_name, critic_prompt=critic_pr
 
 This feature is especially useful when:
   
-- You want to apply more lenient or stricter criteria for what counts as a match.
+- You want to apply for more lenient or stricter criteria what counts as a match.
 - Your expected and actual answers may vary in format but still be semantically equivalent.
 - You need to capture domain-specific nuances in how answers should be judged.
 
