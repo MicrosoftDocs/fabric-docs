@@ -29,7 +29,7 @@ Review this example of how this process works.
 
 :::image type="content" source="media\simba-odbc-data-connector\example.gif" alt-text="Animated example showing the Simba ODBC connector.":::
 
-### System Requirements
+## System Requirements
 
 Install the connector on client machines where the client application is installed. Before installing the connector, make sure that you have the th:
 
@@ -41,7 +41,7 @@ Install the connector on client machines where the client application is install
 
 The Simba ODBC Data Connector for Microsoft Fabric Spark supports Spark versions 3.5 and later for Microsoft Fabric Spark and version 3.4 and later for Azure Synapse.
 
-### Authentication
+## Authentication
 
 You can download the Simba ODBC Data Connector for Microsoft Fabric Spark from Simba landing page: [Custom ODBC Driver SDK](https://insightsoftware.com/drivers/simba-sdk)
 
@@ -59,7 +59,7 @@ To install the Simba ODBC Data Connector for Microsoft Fabric Spark on Windows:
 1. Select Install.
 1. When the installation completes, select Finish.
 
-### Creating a Data Source Name on Windows
+## Creating a Data Source Name on Windows
 
 Typically, after installing the Simba ODBC Data Connector for Microsoft Fabric Spark, you need to create a Data Source Name (DSN). A DSN is a data structure that stores connection information used by the connector to connect to Spark.
 Alternatively, you can specify connection settings in a connection string. Settings in the connection string take precedence over settings in the DSN.
@@ -105,7 +105,7 @@ To create a Data Source Name on Windows:
 1. To save your settings and close the Simba ODBC Data Connector for Microsoft Fabric Spark DSN Setup dialog box, select OK.
 1. To close the ODBC Data Source Administrator, select OK.
 
-### Client credentials
+## Client credentials
 
 This authentication mechanism requires SSL to be enabled.
 You can use client secret as the client credentials.
@@ -155,7 +155,7 @@ https://analysis.windows.net/powerbi/api/Item.ReadWrite.All
 > [!NOTE]
 > When the browser-based authentication flow completes, the access token and refresh token are saved in the token cache, and the connector doesn't need to authenticate again.
 
-### Configuring Advanced Options on Windows
+## Configuring Advanced Options on Windows
 
 You can configure advanced options to modify the behavior of the connector.
 
@@ -188,7 +188,7 @@ To configure advanced options on Windows:
 1. In the Query Timeout field, type the number of seconds that an operation can remain idle before it's closed.
 1. To save your settings and close the Advanced Options dialog box, select OK.
 
-### Configuring a Proxy Connection on Windows
+## Configuring a Proxy Connection on Windows
 
 If you're connecting to the data source through a proxy server, you must provide connection information for the proxy server.
 
@@ -209,7 +209,7 @@ To configure a proxy server connection on Windows:
 1. In the Hosts Not Using Proxy field, type the list of hosts or domains that don't use a proxy.
 1. To save your settings and close the HTTP Proxy Options dialog box, select OK.
 
-### Configuring SSL Verification on Windows
+## Configuring SSL Verification on Windows
 
 If you're connecting to a Spark server that has Secure Sockets Layer (SSL) enabled, you can configure the connector to connect to an SSL-enabled socket.
 
@@ -247,7 +247,7 @@ To configure SSL verification on Windows:
     1. Or, if the credentials are used by all users on the current Windows machine, select All Users Of This Machine. To confirm your choice and close the Password Options dialog box, select OK.
     1. To save your settings and close the SSL Options dialog box, select OK.
 
-### Configuring Server-Side Properties on Windows
+## Configuring Server-Side Properties on Windows
 
 You can use the connector to apply configuration properties to the Spark server.
 
@@ -271,14 +271,14 @@ To configure server-side properties on Windows:
 
 1. To save your settings and close the Server Side Properties dialog box, select OK.
 
-### Configuring Logging Options on Windows
+## Configuring Logging Options on Windows
 
 To help troubleshoot issues, you can enable logging. In addition to the functionality provided in the Simba ODBC Data Connector for Microsoft Fabric Spark, the ODBC Data Source Administrator provides tracing functionality.
 
 > [!IMPORTANT]
 > Only enable logging or tracing long enough to capture an issue. Logging or tracing decreases performance and can consume a large quantity of disk space.
 
-### Configuring Connector-wide Logging Options
+## Configuring Connector-wide Logging Options
 
 The settings for logging apply to every connection that uses the Simba ODBC Data Connector for Microsoft Fabric Spark, so make sure to disable the feature after you're done using it.
 
@@ -343,7 +343,7 @@ You can set additional configuration options by appending key-value pairs to the
 > [!NOTE]
 > Configuration options that are passed in using a connection string take precedence over configuration options that are set in the DSN.
 
-### DSN-less Connection String Examples
+## DSN-less Connection String Examples
 
 Some applications provide support for connecting to a data source using a connector without a DSN. To connect to a data source without using a DSN, use a connection string instead.
 
@@ -377,7 +377,7 @@ For example:
 
 Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Synapse workspace name].dev.azuresynapse.net; Auth_Flow=1; Auth_Scope=https://dev.azuresynapse.net/.default; SparkServerType=5; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=livyApi/versions/2024-09-20/sparkPools/[Spark_Pool]; Auth_Client_Secret=[Auth_Client_Secret]
 
-### Connecting to Fabric Spark with Python
+## Connecting to Fabric Spark with Python
 
 The following is an example of connecting to Microsoft Fabric Spark using Python/pyodbc. Replace all bold/italic placeholders (e.g. {your-client-id}) with your specific details.
 
