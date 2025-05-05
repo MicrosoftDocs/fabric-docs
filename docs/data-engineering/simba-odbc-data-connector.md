@@ -120,11 +120,11 @@ To configure OAuth 2.0 client credentials authentication using the client secret
     1. In the Tenant ID field, type your tenant ID.
     1. In the OAuth Scope field, type:
 
-```html
-https://dev.azuresynapse.net/.default
-```
+    ```html
+    https://dev.azuresynapse.net/.default
+    ```
 
-1. Optionally, select Encryption Options… and choose the encryption password for Current User Only or All Users of this Machine. Then select OK.
+1. Optionally, select Encryption Options and choose the encryption password for Current User Only or All Users of this Machine. Then select OK.
 1. To save your settings and close the OAuth Options dialog box, select OK.
 1. To save your settings and close the DSN Setup dialog box, select OK.
 
@@ -140,15 +140,13 @@ To configure OAuth 2.0 browser-based authentication:
     1. From the Authentication Flow drop-down list, select Browser Based Authorization Code.
     1. In the Tenant ID field, type your tenant ID.
     1. In the Client ID field, type your client ID.
-    1. In the OAuth Scope field, type (spaces are required between scopes):
+    1. In the OAuth Scope field, type (spaces are required between scopes, or the scopes that are appropriate for your case):
 
-```html
-https://analysis.windows.net/powerbi/api/Code.AccessStorage.All
-https://analysis.windows.net/powerbi/api/Item.Execute.All
-https://analysis.windows.net/powerbi/api/Item.ReadWrite.All
-```
-
-(or the scopes that are appropriate for your case).
+    ```html
+    https://analysis.windows.net/powerbi/api/Code.AccessStorage.All
+    https://analysis.windows.net/powerbi/api/Item.Execute.All
+    https://analysis.windows.net/powerbi/api/Item.ReadWrite.All
+    ```
 
 1. Optionally, select the Ignore SQL_DRIVER_NOPROMPT check box. When the application is making a SQLDriverConnect call with a SQL_DRIVER_NOPROMPT flag, this option displays the web browser used to complete the browser-based authentication flow.
 
@@ -181,7 +179,7 @@ To configure advanced options on Windows:
 1. To save your settings and close the Advanced Options dialog box, select OK.
 
 >[!NOTE]
-> This option is applicable only when connecting to a server that supports result set data serialized in Arrow format.
+> In the  Max Bytes Per Fetch Request field this option is applicable only when connecting to a server that supports result set data serialized in Arrow format.
 > The value must be specified in one of the following:
 
 - B (bytes)
@@ -204,8 +202,8 @@ To configure a proxy server connection on Windows:
 1. In the Proxy Password field, type the password corresponding to the username.
 1. To encrypt your credentials, select Password Options and then select one of the following:
 
-- If the credentials are used only by the current Windows user, select Current User Only.
-- Or, if the credentials are used by all users on the current Windows machine, select All Users Of This Machine.
+    - If the credentials are used only by the current Windows user, select Current User Only.
+    - Or, if the credentials are used by all users on the current Windows machine, select All Users Of This Machine.
 
 1. To confirm your choice and close the Password Options dialog box, select OK.
 1. In the Hosts Not Using Proxy field, type the list of hosts or domains that don't use a proxy.
@@ -219,9 +217,8 @@ When using SSL to connect to a server, the connector supports identity verificat
 The following instructions describe how to configure SSL in a DSN. You can specify the connection settings described below in a DSN, or in a connection string. Settings in the connection string take precedence over settings in the DSN.
 
 > [!IMPORTANT]
-
-> - If you are using the Windows trust store, make sure to import the trusted CA certificates into the trust store.
-> - If the trusted CA supports certificate revocation, select the Check Certificate Revocation check box.
+> If you are using the Windows trust store, make sure to import the trusted CA certificates into the trust store.
+> If the trusted CA supports certificate revocation, select the Check Certificate Revocation check box.
 
 To configure SSL verification on Windows:
 
@@ -231,9 +228,9 @@ To configure SSL verification on Windows:
 1. To allow the common name of a CA-issued SSL certificate to not match the host name of the Spark server, select the Allow Common Name Host Name Mismatch check box.
 1. To specify the CA certificates that you want to use to verify the server, do one of the following:
 
-- To verify the server using the trusted CA certificates from a specific .pem file, specify the full path to the file in the Trusted Certificates field and clear the Use System Trust Store check box.
-- Or, to use the trusted CA certificates .pem file that is installed with the connector, leave the Trusted Certificates field empty, and clear the Use System Trust Store check box.
-- Or, to use the Windows trust store, select the Use System Trust Store check box.
+    - To verify the server using the trusted CA certificates from a specific .pem file, specify the full path to the file in the Trusted Certificates field and clear the Use System Trust Store check box.
+    - Or, to use the trusted CA certificates .pem file that is installed with the connector, leave the Trusted Certificates field empty, and clear the Use System Trust Store check box.
+    - Or, to use the Windows trust store, select the Use System Trust Store check box.
 
 1. From the Minimum TLS Version drop-down list, select the minimum version of TLS to use when connecting to your data store.
 1. To configure two-way SSL verification, select the Two-Way SSL check box and then do the following:
@@ -266,8 +263,8 @@ To configure server-side properties on Windows:
 1. To configure the connector to convert server-side property key names to all lower- case characters, select the Convert Key Name To Lower Case check box.
 1. To change the method that the connector uses to apply server-side properties, do one of the following:
 
-- To configure the connector to apply each server-side property by executing a query when opening a session to the Spark server, select the Apply Server Side Properties With Queries check box.
-- Or, to configure the connector to use a more efficient method for applying server-side properties that doesn't involve additional network round-tripping, clear the Apply Server Side Properties With Queries check box.
+    - To configure the connector to apply each server-side property by executing a query when opening a session to the Spark server, select the Apply Server Side Properties With Queries check box.
+    - Or, to configure the connector to use a more efficient method for applying server-side properties that doesn't involve additional network round-tripping, clear the Apply Server Side Properties With Queries check box.
 
 1. To save your settings and close the Server Side Properties dialog box, select OK.
 
