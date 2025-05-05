@@ -54,6 +54,32 @@ If you're experiencing mirroring problems in SQL Server 2025, perform the follow
 1. Review [Troubleshoot Fabric mirrored databases](troubleshooting.md).
 1. [Contact support](/power-bi/support/service-support-options) if troubleshooting is required.
 
+
+### Extended events session
+
+The following extended events session can be used to troubleshoot Fabric Mirroring on your SQL Server 2025 instance. It is recommended only to create this session for troubleshooting or support purposes.
+
+```sql
+CREATE EVENT SESSION [sqlmirroringxesession] ON SERVER  
+ADD EVENT sqlserver.synapse_link_addfilesnapshotendentry,  
+ADD EVENT sqlserver.synapse_link_db_enable,  
+ADD EVENT sqlserver.synapse_link_end_data_snapshot,  
+ADD EVENT sqlserver.synapse_link_error,  
+ADD EVENT sqlserver.synapse_link_info,  
+ADD EVENT sqlserver.synapse_link_library,  
+ADD EVENT sqlserver.synapse_link_perf,  
+ADD EVENT sqlserver.synapse_link_scheduler,  
+ADD EVENT sqlserver.synapse_link_start_data_snapshot,  
+ADD EVENT sqlserver.synapse_link_totalsnapshotcount,  
+ADD EVENT sqlserver.synapse_link_trace  
+WITH (MAX_MEMORY=4096 KB,EVENT_RETENTION_MODE=ALLOW_SINGLE_EVENT_LOSS,MAX_DISPATCH_LATENCY=30 SECONDS,MAX_EVENT_SIZE=0 KB,MEMORY_PARTITION_MODE=NONE,TRACK_CAUSALITY=OFF,STARTUP_STATE=ON)  
+GO  
+ 
+ALTER EVENT SESSION [sqlmirroringxesession] ON SERVER
+STATE = start;
+GO
+```
+
 ## Queries for troubleshooting in SQL Server 2016-2022
 
 Change Data Capture (CDC) is used for Fabric Mirroring in versions SQL Server 2025.
