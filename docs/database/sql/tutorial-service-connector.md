@@ -52,7 +52,7 @@ Create a new service connection from App Service to a SQL database in Fabric, us
 
 1. Open your App Service resource in the Azure portal.
 1. Select **Settings** > **Service Connector** from the left menu.
-2. Select **Create**, and select or enter the following settings in the **Create connection** panel that opens.
+1. Select **Create**, and select or enter the following settings in the **Create connection** panel that opens.
 
     | Setting             | Example           | Description                                                                                                                                               |
     |---------------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -62,11 +62,11 @@ Create a new service connection from App Service to a SQL database in Fabric, us
     | **SQL database**    | *my_sql_database* | The target SQL database you want to connect to.                                                                                                           |
     | **Client type**     | *.NET*            | The application's tech stack or library.                                                                                                                  |
         
-    :::image type="content" source="./media/tutorial-service-connector/basics-tab.png" alt-text="Screenshot of the Azure portal, showing the Basics tab in the Create connection pane.":::
+    :::image type="content" source="./media/tutorial-service-connector/basics-tab.png" alt-text="Screenshot of the Azure portal, showing the Basics tab in the Create connection pane."  lightbox="media/tutorial-service-connector/basics-tab.png":::
 
 1. Select **Next: Authentication** and select the system-assigned managed identity authentication option, available through the Azure CLI. User-assigned managed identities are also supported.
 1. Select **Next: Networking** > **Review + Create** to review your connection configuration.
-1. Check the box stating that you understand that additional manual steps are required to configure this service connection, and select **Create On Cloud Shell**. Alternatively, if you have the [Azure CLI installed](/cli/azure/install-azure-cli-windows), copy and run on your local machine the CLI commands that are now displayed right above the checkbox.
+1. Check the box stating that you understand that additional manual steps are required to configure this service connection, and select **Create On Cloud Shell**. Alternatively, if you have the [Azure CLI installed](/cli/azure/install-azure-cli-windows), copy and run the provided CLI commands on your local machine.
 
     :::image type="content" source="./media/tutorial-service-connector/copy-CLI-command.png" alt-text="Screenshot of the Azure portal, showing CLI commands.":::
 
@@ -81,7 +81,7 @@ In this step, you grant your managed identity access to the database.
 
     :::image type="content" source="./media/tutorial-service-connector/access-security-settings.png" alt-text="Screenshot of the Azure portal, showing the SQL database link.":::
 
-1. Under Resource name, select your connection's **SQL database** hyperlink. This opens your SQL database in the Microsoft Fabric portal.
+1. Under **Resource name**, select your connection's **SQL database** hyperlink. This opens your SQL database in the Microsoft Fabric portal.
 
 1. Navigate to the **Security** tab and select **Manage SQL security**.
 
