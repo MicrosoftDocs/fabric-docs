@@ -170,7 +170,7 @@ To configure advanced options on Windows:
 1. To access advanced options for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then select Configure, and then select Advanced Options.
 2. To disable the SQL Connector feature, select the Use Native Query check box.
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > When this option is enabled, the connector can't execute parameterized queries.
 > By default, the connector applies transformations to the queries emitted by an application to convert the queries into an equivalent form in SparkSQL. If the application is Spark-aware and already emits SparkSQL, then turning off the translation avoids the additional overhead of query transformation.
 
@@ -386,8 +386,8 @@ Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Synapse wor
 
 The following is an example of connecting to Microsoft Fabric Spark using Python/pyodbc. Replace all bold/italic placeholders (e.g. {your-client-id}) with your specific details.
 
-import pyodbc
 ```python
+import pyodbc
 # Define your connection string
 connection_string = (
 "Driver={ Simba ODBC Data Connector for Microsoft Fabric Spark};"
