@@ -1,18 +1,19 @@
 ---
-title: Create alerts in Power BI and use them in Fabric Activator
-description: Learn how to get data from Power BI for use in Activator, integrate it into your workflows, and take advantage of powerful data analysis capabilities.
+title: Create Power BI alerts and refine them in Fabric Activator  
+description: Discover how to create Power BI alerts, refine them in Fabric Activator, and enhance your workflows with advanced data analysis capabilities.
 author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
-ms.date: 11/10/2024
+ms.date: 05/06/2025
 ms.search.form: Data Activator PBI Onramp
+ai-usage: ai-assisted
 #customer intent: As a Power BI user I want to learn how to get data from Power BI alerts into Activator where I can continue refining the alert.
 ---
 
 # Create an alert in Power BI and fine tune in Fabric Activator
 
-You can [create an alert](/power-bi/) in Power BI, on dashboards and reports. When your alert is ready, you have the option to open it in Fabric Activator. Power BI alerts monitor a change to a value and either send a notification in email or Teams. After you create a Power BI alert, you can save it in an existing or new Activator. When you open that alert in Activator, you have almost endless possibilities for fine tuning and expanding the capabilities of that alert. 
+You can [create an alert](/power-bi/) in Power BI on dashboards and reports to monitor changes in data values and receive notifications via email or Teams. Once your alert is ready, you can open it in Fabric Activator to refine it further. Activator allows you to set more granular conditions, integrate with workflows like Power Automate, and expand the alert's capabilities to meet your specific needs.
 
 > [!NOTE]
 > In Activator, an "alert" is referred to as a "rule."
@@ -25,8 +26,8 @@ Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to fine tune 
 
 ## Prerequisites
 
-* A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
-* You need edit permissions to a Power BI report that is published online to a workspace.
+* Access to a [workspace](../../get-started/create-workspaces.md) with Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).  
+* Edit permissions for a Power BI report published online to a workspace.
 
 ## Create an alert for a Power BI report visual
 
