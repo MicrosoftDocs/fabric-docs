@@ -99,8 +99,8 @@ To create a Data Source Name:
 1. To configure server-side properties, select **Advanced Options** and then select **Server Side Properties**.
 1. To configure logging behavior for the connector, select **Logging Options**.
 1. To test the connection, select **Test**. Review the results as needed, and then select **OK**.
-1. To save your settings and close the Simba ODBC Data Connector for Microsoft Fabric Spark DSN Setup dialog box, select OK.
-1. To close the ODBC Data Source Administrator, select OK.
+1. To save your settings and close the Simba ODBC Data Connector for **Microsoft Fabric Spark DSN Setup** dialog box, select **OK**.
+1. To close the ODBC Data Source Administrator, select **OK**.
 
 > [!NOTE]
 > If the connection fails, then confirm that the settings in the Simba Spark ODBC Driver DSN Setup dialog box are correct. Contact your Spark server administrator as needed.
