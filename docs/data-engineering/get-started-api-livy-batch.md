@@ -158,7 +158,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     # call get batch API
 
     get_livy_get_batch = livy_base_url
-    get_batch_response = requests.get(get_livy_get_batch, headers=headers)
+    get_batch_response = requests.get(get_livy_get_batch, headers = headers)
     if get_batch_response.status_code == 200:
         print("API call successful")
         print(get_batch_response.json())
@@ -187,7 +187,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         "type": 'Lakehouse'
         }
 
-    create_lakehouse_response = requests.post(create_lakehouse, headers=headers, json=create_lakehouse_payload)
+    create_lakehouse_response = requests.post(create_lakehouse, headers = headers, json = create_lakehouse_payload)
     print(create_lakehouse_response.json())
 
     payload_data = {
@@ -198,7 +198,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
             }
         }
 
-    get_batch_response = requests.post(get_livy_get_batch, headers=headers, json=payload_data)
+    get_batch_response = requests.post(get_livy_get_batch, headers = headers, json = payload_data)
 
     print("The Livy batch job submitted successful")
     print(get_batch_response.json())
