@@ -10,7 +10,7 @@ ms.date: 05/05/2025
 ms.search.form: Get data in a KQL Database
 ---
 
-# Get data from Eventstream (Preview)
+# Get data from Eventstream (preview)
 
 In this article, you learn how to get data from an existing eventstream into either a new or existing table.
 
@@ -54,7 +54,7 @@ When configuring get data from a default eventstream, you need to specify the ev
     |**Setting** | **Description**|
     |----|----|
     | Workspace| Your eventstream workspace location. Select a workspace from the dropdown.|
-    | Eventstream Name| The name of your eventstream. Select an eventstream from the dropdown.|
+    | Eventstream | The name of your eventstream. Select an eventstream from the dropdown.|
     | Stream | The name of the stream or derived stream. Select a stream from the dropdown.|
     | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
     | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
