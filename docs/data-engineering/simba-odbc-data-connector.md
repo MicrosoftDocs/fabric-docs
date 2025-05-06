@@ -128,7 +128,7 @@ To configure OAuth 2.0 client credentials authentication using the client secret
 1. To save your settings and close the **OAuth Options** dialog box, select **OK**.
 1. To save your settings and close the **DSN Setup** dialog box, select **OK**.
 
-### Browser based authorization Code
+### Browser based authorization code
 
 This authentication mechanism requires SSL to be enabled.
 
