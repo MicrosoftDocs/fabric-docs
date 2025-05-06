@@ -14,7 +14,7 @@ ms.search.form: SQL database Overview
 
 Azure SQL Database and SQL database in Microsoft Fabric share a common code base with the latest stable version of the Microsoft SQL Database Engine. Most of the standard SQL language, query processing, and database management features are identical.
 
-- For a decision guide comparing Azure SQL Database to SQL database in Fabric, see [Microsoft Fabric decision guide: choose a SQL database](decision-guide.md).
+- For a decision guide comparing [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresql-db&preserve-view=true) to [SQL database in Fabric](overview.md), see [Microsoft Fabric decision guide: choose a SQL database](decision-guide.md).
 - For a decision guide comparing SQL database to other data stores in Microsoft Fabric, see [Microsoft Fabric decision guide: choose a data store](../../fundamentals/decision-guide-data-store.md).
 
 Many features are common between SQL Server and Azure SQL Database and SQL database in Fabric, for example:
@@ -178,5 +178,6 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 
 ## Related content
 
-- [What is Azure SQL Database?](/azure/azure-sql/database/sql-database-paas-overview?view=azuresql-db&preserve-view=true)
-- [What is SQL database in Fabric?](overview.md)
+- [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+- [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)

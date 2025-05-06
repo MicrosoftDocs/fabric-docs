@@ -4,7 +4,7 @@ description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory 
 author: luitwieler
 ms.topic: overview
 ms.custom:
-ms.date: 12/24/2024
+ms.date: 4/21/2025
 ms.author: jeluitwi
 ms.search.form: DataflowGen2 Overview
 ---
@@ -37,7 +37,7 @@ Working with Dataflow Gen2 feels like coming home. We kept the full Power Query 
 
 ### New dataflow save experience
 
-With Dataflow Gen2, we changed how saving a dataflow works. Any changes made to a dataflow are autosaved to the cloud. So you can exit the authoring experience at any point and continue from where you left off at a later time. Once you're done authoring your dataflow, you publish your changes and those changes are used when the dataflow refreshes. In addition, publishing the dataflow saves your changes and runs validations that must be performed in the background.  This feature lets you save your dataflow without having to wait for validation to finish.
+With Dataflow Gen2, we changed how saving a dataflow works. Any changes made to a dataflow are autosaved to the cloud. So you can exit the authoring experience at any point and continue from where you left off at a later time. Once you're done authoring your dataflow, you publish your changes and those changes are used when the dataflow refreshes. In addition, publishing the dataflow saves your changes and runs validations that must be performed in the background. This feature lets you save your dataflow without having to wait for validation to finish.
 
 To learn more about the new save experience, go to [Save a draft of your dataflow](dataflows-gen2-save-draft.md).
 
@@ -52,7 +52,7 @@ In Dataflow Gen2, we added support for the following destinations and many more 
 - Azure Synapse Analytics (SQL DW)
 - Azure SQL Database
 
->[!NOTE]
+> [!NOTE]
 >To load your data to the Fabric Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by retrieving the SQL connection string. More information: [Connectivity to data warehousing in Microsoft Fabric](../data-warehouse/connectivity.md)
 
 :::image type="content" source="./media/dataflows-gen2-overview/output-destinations-overview.png" alt-text="Screenshot with the supported data destinations displayed.":::
@@ -73,7 +73,7 @@ A pipeline can contain one or more activities that are connected by dependencies
 
 ### Save as draft
 
-With Dataflow Gen2, we introduce a worry free experience by removing the need for publishing to save your changes. With save as draft functionality, we store a draft version of your dataflow every time you make a change. Did you lose internet connectivity? Did you accidentally close your browser? No worries; we got your back. Once you return to your dataflow, your recent changes are still there and you can continue where you left off. This is a seamless experience and doesn't require any input from you. This allows you to work on your dataflow without having to worry about losing your changes or having to fix all the query errors before you can save your changes. To learn more about this feature, go to [Save a draft of your dataflow](./dataflows-gen2-save-draft.md).
+With Dataflow Gen2, we introduce a worry free experience by removing the need for publishing to save your changes. With save as draft functionality, we store a draft version of your dataflow every time you make a change. Did you lose internet connectivity? Did you accidentally close your browser? No worries; we got your back. Once you return to your dataflow, your recent changes are still there and you can continue where you left off. This process is a seamless experience and doesn't require any input from you. This feature allows you to work on your dataflow without having to worry about losing your changes or having to fix all the query errors before you can save your changes. To learn more about this feature, go to [Save a draft of your dataflow](./dataflows-gen2-save-draft.md).
 
 ### High scale compute
 
@@ -94,6 +94,10 @@ You probably have many Dataflow Gen1 queries and you're wondering how you can tr
 - Copy and paste in Power Query
 
   If you have a dataflow in Power BI or Power Apps, you can copy your queries and paste them in the editor of your Dataflow Gen2. This functionality allows you to migrate your dataflow to Gen2 without having to rewrite your queries. For more information, go to [Copy and paste existing Dataflow Gen1 queries](move-dataflow-gen1-to-dataflow-gen2.md#copy-and-paste-existing-dataflow-gen1-queries).
+
+- Migrate to Dataflow Gen2 (CI/CD) using Save As
+
+  If you already have a Dataflow Gen1, Dataflow Gen2, or Dataflow Gen2 (CI/CD), Data Factory in Microsoft Fabric now includes a new Save As feature. This feature lets you perform a single gesture to save any of these existing types of dataflows as a new Dataflow Gen2 (CI/CD) item. For more information, go to [Migrate to Dataflow Gen2 (CI/CD) using Save As](migrate-to-dataflow-gen2-using-save-as.md).
 
 ## Related content
 

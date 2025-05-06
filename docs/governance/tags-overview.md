@@ -6,8 +6,8 @@ ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
 ms.custom:
-ms.topic: conceptual #Don't change
-ms.date: 03/31/2025
+ms.topic: overview #Don't change
+ms.date: 05/05/2025
 #customer intent: As a Fabric admin, domain admin, data creator, or data consumer, I want to learn about tags in Microsoft Fabric.
 ---
 
@@ -53,6 +53,10 @@ You can also use the global search to search by tags and see all the relevant re
 
 :::image type="content" source="./media/tags-overview/tags-global-search.png" alt-text="Screenshot showing tags used as a search term in the global search.":::
 
+## Microsoft Fabric REST Admin APIs for tags
+
+All of the actions related to creating and managing tags in the UI can be performed programmatically via APIs. For more information, see [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags).
+
 ## Considerations and limitations
 
 * A maximum of 10,000 tags can be created in a tenant.
@@ -65,3 +69,4 @@ You can also use the global search to search by tags and see all the relevant re
 
 - [Create and manage a set of tags](tags-define.md)
 - [Apply tags](tags-apply.md)
+- [Microsoft Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags)

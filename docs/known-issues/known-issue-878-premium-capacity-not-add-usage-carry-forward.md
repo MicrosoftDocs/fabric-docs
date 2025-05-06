@@ -4,7 +4,7 @@ description: A known issue is posted where premium capacity doesn't add excess u
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 10/10/2024
+ms.date: 05/02/2024
 ms.custom: known-issue-878
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-878
 
 In most scenarios, carry forward logic avoids the need to trigger Autoscale for small bursts of usage. Autoscale is only triggered for longer overages as a way to avoid throttling. If you have Power BI Premium, you can set the maximum number of v-cores to use for Autoscale. You don't get any throttling behavior even if your usage is above 100% for a long time.
 
-**Status:** Open
+**Status:** Fixed: May 2, 2025
 
 **Product Experience:** Power BI
 

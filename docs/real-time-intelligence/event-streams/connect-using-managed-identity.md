@@ -22,7 +22,7 @@ In this article, you learn how to enable identity in Azure Logic Apps, assign wo
 
 Before you begin, make sure the following prerequisites are met:
 
-- Your **Tenant Admin** enabled the following two settings in the Admin portal. [Learn more](https://learn.microsoft.com/power-bi/developer/embedded/embed-service-principal)
+- Your **Tenant Admin** enabled the following two settings in the Admin portal. [Learn more](/power-bi/developer/embedded/embed-service-principal)
   - Service principals can create workspaces, connections, and deployment pipelines
   - Service principals can call Fabric public APIs
 - You have **Member** or higher permissions in the workspace. It's required to manage workspace access and assign the necessary permissions to your Azure resource identity.

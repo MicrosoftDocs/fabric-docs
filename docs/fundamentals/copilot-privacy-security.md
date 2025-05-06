@@ -115,6 +115,7 @@ To allow data to be processed elsewhere, your admin can turn on the setting **Da
 
 Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE5cmFl). These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to proactively address emerging issues.
 ## Link https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE5cmFl is broken
+
 Copilot features in Fabric are built to meet the Responsible AI Standard, which means that they're reviewed by multidisciplinary teams for potential harms, and then refined to include mitigations for those harms.
 
 Before you use Copilot, keep in mind the limitations of Copilot:

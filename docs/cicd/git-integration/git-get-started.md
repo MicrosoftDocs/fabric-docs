@@ -26,7 +26,7 @@ We recommend reading the [overview of Git integration](./intro-to-git-integratio
 
 ## Prerequisites
 
-[!INCLUDE [github-prereqs](../../includes/github-prereqs.md)]
+[!INCLUDE [github-prereqs](../includes/github-prereqs.md)]
 
 ## Connect a workspace to a Git repo
 
@@ -191,7 +191,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
- [!INCLUDE [limitations](../../includes/git-limitations.md)]
+ [!INCLUDE [limitations](../includes/git-limitations.md)]
 
 ## Related content
 

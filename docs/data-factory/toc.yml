@@ -53,6 +53,8 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
+    - name: Create a Copy job
+      href: quickstart-copy-job.md
     - name: Create an Apache Airflow Job
       href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
@@ -797,6 +799,8 @@
         href: dataflows-gen2-monitor.md
       - name: Dataflow Gen2 refresh
         href: dataflow-gen2-refresh.md
+      - name: Public parameters in Dataflow Gen2 (Preview)
+        href: dataflow-parameters.md
       - name: Data in Dataflow Gen2 staging
         href: data-in-staging-artifacts.md
       - name: Dataflow Gen2 incremental refresh
@@ -977,6 +981,14 @@
             href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
           - name: Transform data using dbt
             href: apache-airflow-jobs-dbt-fabric.md
+  - name: Azure Key Vault Reference (Preview)
+    items:
+      - name: Overview
+        href: azure-key-vault-reference-overview.md
+      - name: How to
+        items:
+          - name: Configure AKV references
+            href: azure-key-vault-reference-configure.md
   - name: Best practices
     items:
     - name: Copy performance for SQL databases
