@@ -32,7 +32,7 @@ To get the user delegation key, first request an OAuth 2.0 token from Microsoft 
 Calling the **Get User Delegation Key** operation returns the key as a set of values that are used as parameters on the user delegation SAS token. These parameters are described in the [Get User Delegation Key](/rest/api/storageservices/get-user-delegation-key) reference and in the next section. 
 
 > [!NOTE]
-> Calling the **Get User Delegation Key** operation using a Fabric workload, such as a python notebook, requires the [regional endpoint](https://learn.microsoft.com/fabric/onelake/onelake-access-api#data-residency) for OneLake which is determined by the capacity region, otherwise the response received is 200 Healthy instead of the delegation key.
+> Calling the **Get User Delegation Key** operation using a Fabric workload, such as a python notebook, requires the [regional endpoint](onelake-access-api.md#data-residency) for OneLake which is determined by the capacity region, otherwise the response received is 200 Healthy instead of the delegation key.
 
 When a client requests a user delegation key using an OAuth 2.0 token, OneLake returns a user delegation key on behalf of the client. A SAS created with this user delegation key is granted at most the permissions granted to the client, scoped down to the permissions explicitly granted in the SAS.
 
