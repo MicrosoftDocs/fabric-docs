@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.custom:
 ---
 
-# How to: Secure data Microsoft Fabric mirrored databases From SQL Server
+# How to: Secure data Microsoft Fabric mirrored databases from SQL Server
 
 This guide helps you establish data security in your mirrored SQL Server in Microsoft Fabric.
 

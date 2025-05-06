@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.custom:
   - references_regions
 ---
-# Limitations in Microsoft Fabric mirrored databases From SQL Server
+# Limitations in Microsoft Fabric mirrored databases from SQL Server
 
 Current limitations in the [Microsoft Fabric mirrored databases](overview.md) From SQL Server are listed in this page. This page is subject to change.
 
