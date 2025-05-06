@@ -148,9 +148,9 @@ To configure OAuth 2.0 browser-based authentication:
 
 1. Optionally, select the **Ignore SQL_DRIVER_NOPROMPT** check box. When the application is making a SQLDriverConnect call with a SQL_DRIVER_NOPROMPT flag, this option displays the web browser used to complete the browser-based authentication flow.
 
-1. To save your settings and close the OAuth Options dialog box, select **OK**.
+1. To save your settings and close the **OAuth Options** dialog box, select **OK**.
 
-1. To save your settings and close the DSN Setup dialog box, select **OK**.
+1. To save your settings and close the **DSN Setup** dialog box, select **OK**.
 
 > [!NOTE]
 > When the browser-based authentication flow completes, the access token and refresh token are saved in the token cache, and the connector doesn't need to authenticate again.
@@ -203,9 +203,9 @@ To configure a proxy server connection:
     - If the credentials are used only by the current Windows user, select **Current User Only**.
     - Or, if the credentials are used by all users on the current Windows machine, select **All Users Of This Machine**.
 
-1. To confirm your choice and close the Password Options dialog box, select **OK**.
+1. To confirm your choice and close the **Password Options** dialog box, select **OK**.
 1. In the **Hosts Not Using Proxy field**, type the list of hosts or domains that don't use a proxy.
-1. To save your settings and close the HTTP Proxy Options dialog box, select **OK**.
+1. To save your settings and close the **HTTP Proxy Options** dialog box, select **OK**.
 
 ## Configuring SSL verification
 
