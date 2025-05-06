@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/02/2025
+ms.date: 05/06/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,14 +20,14 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1122  | Power BI | [Power BI report selection doesn't work in Viva Goals](./known-issue-1122-report-selection-not-work-viva-goals.md) | May 6, 2025 |
+|  1120  | Power BI | [Recommended tiles on the home page appear stretched for customer images](./known-issue-1120-recommended-tiles-home-page-stretched-customer-images.md) | May 6, 2025 |
 |  1119  | Power BI | [Large semantic model storage format conversion stays in view mode](./known-issue-1119-large-semantic-model-conversion-view-mode.md) | May 2, 2025 |
 |  1121  | Data Warehouse | [SQL analytics endpoint queries return empty results](./known-issue-1121-sql-analytics-endpoint-queries-return-empty-results.md) | May 1, 2025 |
 |  1118  | Power BI | [Execution details of semantic model refresh activity unavailable in Monitor hub](./known-issue-1118-execution-details-model-refresh-unavailable-monitor-hub.md) | May 1, 2025 |
 |  1117  | Power BI | [Gateway causes lakehouse tables with null values](./known-issue-1117-gateway-causes-lakehouse-tables-null-values.md) | April 25, 2025 |
 |  1113  | Data Engineering | [API for GraphQL query fails when using variables with float value](./known-issue-1113-api-graphql-query-fails-variables-float-value.md) | April 25, 2025 |
-|  1114  | Data Warehouse | [Insert statements across tables in different data warehouses fail](./known-issue-1114-insert-statements-tables-different-data-warehouses-fail.md) | April 22, 2025 |
 |  1112  | Data Engineering | [User data functions option not visible in data pipelines functions activity](./known-issue-1112-functions-option-not-visible-pipelines-functions-activity.md) | April 22, 2025 |
-|  1108  | Data Warehouse | [Can't read data warehouse tables from a notebook](./known-issue-1108-not-read-data-warehouse-tables-notebook.md) | April 22, 2025 |
 |  1107  | Real-Time Intelligence | [Cross-region capacity migration might fail if items weren't deleted successfully](./known-issue-1107-cross-region-capacity-migration-fail-items-not-deleted-successfully.md) | April 22, 2025 |
 |  1106  | Real-Time Intelligence | [Eventstream real-time weather connector fails to load map in edit mode](./known-issue-1106-eventstream-weather-connector-fails-load-map-edit-mode.md) | April 18, 2025 |
 |  1104  | Power BI | [Power BI visual warning about style preset not found](./known-issue-1104-visual-warning-style-preset-not-found.md) | April 18, 2025 |
@@ -58,7 +58,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1058  | OneLake | [Workspaces created during Fabric preview only support limited OneLake features](./known-issue-1058-workspaces-created-during-preview-limited-onelake-features.md) | March 12, 2025 |
 |  1055  | Data Factory | [Spark Job Definition activity incorrectly shows failure status](./known-issue-1055-spark-job-definition-activity-incorrectly-shows-failure-status.md) | March 12, 2025 |
 |  1043  | Real-Time Intelligence | [Pub/Sub subscriptions disappear from API response after creation](./known-issue-1043-pub-sub-subscriptions-disappear-api-response-creation.md) | March 5, 2025 |
-|  1039  | Data Warehouse | [Sync for data warehouse and SQL analytics endpoint fail in West Europe](./known-issue-1039-sync-warehouse-sql-endpoint-fail-west-europe.md) | March 3, 2025 |
 |  1033  | Administration & Management | [FeatureNotAvailableError error in Network Security tab of Workspace Settings](./known-issue-1033-error-network-security-tab-workspace-settings.md) | February 28, 2025 |
 |  1032  | Real-Time Intelligence | [Eventstream updates with Eventhouse destination causes error](./known-issue-1032-eventstream-updates-eventhouse-destination-error.md) | February 21, 2025 |
 |  1031  | Administration & Management | [Git integration undo action appears after initial sync fails](./known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md) | February 20, 2025 |
@@ -82,7 +81,6 @@ Select the **Title** to view more information about that specific known issue.
 |  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](./known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
 |  894  | Data Engineering | [Pipeline fails when getting a token to connect to Kusto](./known-issue-894-pipeline-fails-getting-token-connect-kusto.md) | October 25, 2024 |
 |  893  | Power BI | [Can't connect to semantic model from Excel or use Analyze in Excel](./known-issue-893-not-connect-semantic-model-analyze-excel.md) | October 23, 2024 |
-|  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](./known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 |
 |  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](./known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
 |  835  | Data Engineering | [Managed private endpoint connection could fail](./known-issue-835-managed-private-endpoint-connection-fail.md) | September 13, 2024 |
 |  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](./known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 |
@@ -104,6 +102,10 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1114  | Data Warehouse | [Insert statements across tables in different data warehouses fail](./known-issue-1114-insert-statements-tables-different-data-warehouses-fail.md) | April 22, 2025 | Fixed: May 6, 2025 |
+|  1108  | Data Warehouse | [Can't read data warehouse tables from a notebook](./known-issue-1108-not-read-data-warehouse-tables-notebook.md) | April 22, 2025 | Fixed: May 6, 2025 |
+|  1039  | Data Warehouse | [Sync for data warehouse and SQL analytics endpoint fail in West Europe](./known-issue-1039-sync-warehouse-sql-endpoint-fail-west-europe.md) | March 3, 2025 | Fixed: May 6, 2025 |
+|  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](./known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 | Fixed: May 6, 2025 |
 |  878  | Power BI | [Premium capacity doesn't add excess usage into carry forward](./known-issue-878-premium-capacity-not-add-usage-carry-forward.md) | October 10, 2024 | Fixed: May 2, 2025 |
 |  508  | Data Warehouse | [User column incorrectly shows as System in Fabric capacity metrics app](./known-issue-508-user-column-incorrectly-shows-system-metrics-app.md)  | October 5, 2023 | Fixed: May 1, 2025 |
 |  974  | Real-Time Intelligence | [Show table command in KQL Queryset editor fails](./known-issue-974-show-table-kql-queryset-editor-fails.md) | January 6, 2025 | Fixed: April 18, 2025 |
