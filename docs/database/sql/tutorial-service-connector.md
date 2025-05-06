@@ -38,8 +38,7 @@ Create a new service connection from App Service to a SQL database in Fabric, us
 1. Add a service connector for SQL database in Fabric with the `az webapp connection create fabric-sql` command. A connection string is used to authenticate the web app to the database resource. When running the code below:
     
    1. Replace `<subscription>` with the subscription ID associated with your App Service and `<source-resource-group>` with the name of the resource group containing your App Service. You can find this information in the **Overview** tab of your App Service resource in the Azure portal.
-   1. Replace <fabric_workspace_uuid> with the Universally Unique Identifier (UUID) of your Microsoft Fabric workspace, found in the Azure portal by navigating to your Fabric workspace resource and checking the **Overview** tab.
-   1. Replace `<fabric_sql_db_uuid>` with the UUID of your SQL database, found in the **Properties** section of the database resource within the Fabric workspace.
+   1. Replace `<fabric_workspace_uuid>` and `<fabric_sql_db_uuid>` with the universally unique identifier (UUID) of your Microsoft Fabric workspace and the UUID of your SQL database. To find these values, navigate to your SQL database in the Fabric portal. The browser URL should look like this: `https://msit.powerbi.com/groups/<fabric_workspace_uuid>/sqldatabases/<fabric_sql_db_uuid>`. The first UUID in the URL is the Fabric workspace UUID, and the second UUID is the SQL database UUID.
 
     ```azurecli
     az webapp connection create fabric-sql \
@@ -73,7 +72,7 @@ Create a new service connection from App Service to a SQL database in Fabric, us
 
 1. Select **Next: Authentication** and select the system-assigned managed identity authentication option, available through the Azure CLI. User-assigned managed identities are also supported.
 1. Select **Next: Networking** > **Review + Create** to review your connection configuration.
-1. Check the box stating that you understand that additional manual steps are required to configure this service connection, and select **Create On Cloud Shell**. Alternatively, if you have the [Azure CLI installed](/cli/azure/install-azure-cli-windows), copy and run the provided CLI commands on your local machine.
+1. Check the box stating that you understand that additional manual steps are required to configure this service connection, and select **Create On Cloud Shell**. The command is automatically executed in the Azure Cloud Shell. Alternatively, if you have the [Azure CLI installed](/cli/azure/install-azure-cli-windows), copy and run the provided CLI commands on your local machine.
 
     :::image type="content" source="./media/tutorial-service-connector/copy-command.png" alt-text="Screenshot of the Azure portal, showing CLI commands.":::
 
