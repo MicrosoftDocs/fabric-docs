@@ -208,6 +208,9 @@ If the global endpoint was used in the connection for the shortcut, the account 
 
 Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. This integration is accomplished through shortcuts, which can be created in two ways: through the PowerApps maker portal or through Fabric directly.
 
+> [!NOTE]
+> Dataverse shortcuts are read-only. They don't support write operations regardless of the user's permissions.
+
 #### Creating shortcuts through PowerApps maker portal
 
 Authorized PowerApps users can access the PowerApps maker portal and use the **Link to Microsoft Fabric** feature. From this single action, a lakehouse is created in Fabric and shortcuts are automatically generated for each table in the Dataverse environment. 

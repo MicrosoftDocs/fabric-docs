@@ -164,7 +164,7 @@ This section lists the report's considerations and limitations.
 
 * Items with the same name, or items deleted and recreated with the same name, might reflect as one item in certain visuals. To count the total number of unique items, use item IDs or the *Total items* measure.
 
-* *NA* represents data that isn't available, which can happen when an audit event doesn't have complete information, or when that information isn't applicable for the event.
+* *Info Not Available* represents data that isn't available, which can happen when an audit event doesn't have complete information, or when that information isn't applicable for the event.
 
 * The report retains information for 30 days, including the activities and metadata of deleted capacities, workspaces, and other items.
 

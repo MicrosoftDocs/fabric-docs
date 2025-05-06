@@ -28,7 +28,7 @@ The following matrix shows key Delta Lake features and its availability on each 
 
 |Fabric capability|Column mappings|Deletion vectors|V-order writing|Table optimization and maintenance|Partitions|Liquid Clustering|TIMESTAMP_NTZ|Delta reader/writer version and default table features|
 |---------|---------|---------|---------|---------|---------|---------|---------|---------|
-|Data warehouse Delta Lake export|Name: No<br/>ID: No|Yes|Yes|Yes|Read: N/A (not applicable)<br/>Write: No|No|No|Reader: 3<br/>Writer: 7<br/>Deletion Vectors|
+|Data warehouse Delta Lake export|Name: Yes<br/>ID: No|Yes|Yes|Yes|Read: N/A (not applicable)<br/>Write: No|No|No|Reader: 3<br/>Writer: 7<br/>Deletion Vectors,<br/>Column Mappings (name)|
 |SQL analytics endpoint|Name: Yes<br/>ID: No|Yes|N/A (not applicable)|N/A (not applicable)|Read: Yes<br/>Write: N/A (not applicable)|Yes|No|N/A (not applicable)|
 |Lakehouse explorer and preview|Name: Yes<br/>ID: No|Yes|N/A (not applicable)|Yes|Read: Yes<br/>Write: N/A (not applicable)|Yes|Yes|N/A (not applicable)|
 |Fabric Spark Runtime 1.3|Name: Yes<br/>ID: Yes|Yes|Yes|Yes|Read: Yes<br/>Write: Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
@@ -37,7 +37,7 @@ The following matrix shows key Delta Lake features and its availability on each 
 |Dataflows Gen2|Name: Yes<br/>ID: No|Yes|Yes|No|Read: Yes<br/>Write: Yes|Yes, read only|No|Reader: 1<br/>Writer: 2<br/>|
 Data pipelines|Name: No<br/>ID: No|No|Yes|No|Read: Yes<br/>Write: Yes, overwrite only|Yes, read only|No|Reader: 1<br/>Writer: 2|
 Power BI direct lake semantic models|Name: Yes<br/>ID: No|Yes|N/A (not applicable)|N/A (not applicable)|Read: Yes<br/>Write: N/A (not applicable)|Yes|No|N/A (not applicable)|
-Export Power BI semantic models into OneLake|Name: Yes<br/>ID: No|N/A (not applicable)|Yes|No|Read: N/A (not applicable)<br/>Write: Yes|No|No|Reader: 2<br/>Writer: 5<br/>Column Mappings (name)|
+Export Power BI semantic models into OneLake|Name: Yes<br/>ID: No|N/A (not applicable)|Yes|No|Read: N/A (not applicable)<br/>Write: No|No|No|Reader: 2<br/>Writer: 5<br/>Column Mappings (name)|
 KQL databases|Name: Yes<br/>ID: No|Yes|No|No<sup>*</sup>|Read: Yes<br/>Write: Yes|No|No|Reader: 1<br/>Writer: 1|
 Eventstreams|Name: No<br/>ID: No|No|No|No|Read: N/A (not applicable)<br/>Write: Yes|No|No|Reader: 1<br/>Writer: 2|
 
