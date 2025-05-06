@@ -40,7 +40,7 @@ On the ribbon of your KQL database, either:
 
 When configuring get data from a default eventstream, you need to specify the eventstream and stream to use. When configuring get data from the Real-Time Hub's list of derived streams, the settings are automatically populated.
 
-### [Existing Eventstream](#tab/eventstream)
+### [Existing eventstream](#tab/eventstream)
 
 1. Select a target table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
