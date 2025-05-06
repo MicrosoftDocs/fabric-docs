@@ -59,7 +59,7 @@ You can use the Copy Job to move your data across cloud data stores or from on-p
 | Salesforce service cloud | <!--Copy Job (source)-->:::image type="icon" source="media/data-pipeline-support/yes.png":::  | <!--Copy Job (destination)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |  <!--Copy Job (Batch)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Incremental)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Append)-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: | <!--Copy Job (Override)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="media/data-pipeline-support/no.png"::: | <!--Copy Job (On-premises )-->:::image type="icon" source="media/data-pipeline-support/yes.png"::: |
 
 > [!NOTE]
-> The product team is quickly adding more connectors and copy behaviors, so submit your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
+> Staging copy is not yet supported by Copy Job, which means copying data from sources like Snowflake, Fabric Warehouse, and Synapse SQL Pool using OPDG may fail in some cases due to this limitation. The product team is actively addressing such issues and adding more connectors. Please also share your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas).
 
 
 ## Copy behavior
