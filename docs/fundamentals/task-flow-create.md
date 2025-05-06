@@ -45,7 +45,7 @@ If the workspace contains Power BI items only, the task flow canvas will display
 
 :::image type="content" source="./media/task-flow-create/basic-power-bi-task-flow.png" alt-text="Screenshot showing the basic Power BI task flow.":::
 
-Select **Create** if you want to start with this task flow, or choose either of the previously mentioned options, **[Select a predesigned task flow](#start-with-a-predesigned-task-flow)**, **[Add a task](#start-with-a-custom-task-flow)**, or **Import a task flow**.
+Select **Create** if you want to start with this task flow, or choose either of the previously mentioned options, **[Select a predesigned task flow](#start-with-a-predesigned-task-flow)**, **[Add a task](#start-with-a-custom-task-flow)**, or **[Import a task flow](#start-by-importing-an-existing-task-flow)**.
 
 ## Start with a predesigned task flow
 
