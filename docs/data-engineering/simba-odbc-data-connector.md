@@ -296,7 +296,7 @@ To enable connector-wide logging:
 | DEBUG | Logs detailed information that is useful for debugging the connector. |
 | TRACE | Logs all connector activity. |
 
-1. In the ***Log Path** field, specify the full path to the folder where you want to save log files.
+1. In the **Log Path** field, specify the full path to the folder where you want to save log files.
 1. In the **Max Number Files** field, type the maximum number of log files to keep.
 1. In the **Max File Size** field, type the maximum size of each log file in megabytes (MB).
 1. Select **OK**.
