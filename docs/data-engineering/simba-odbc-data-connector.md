@@ -212,10 +212,10 @@ To configure a proxy server connection:
 If you're connecting to a Spark server that has Secure Sockets Layer (SSL) enabled, you can configure the connector to connect to an SSL-enabled socket.
 
 When using SSL to connect to a server, the connector supports identity verification between the client (the connector itself) and the server.
-The following instructions describe how to configure SSL in a DSN. You can specify the connection settings described below in a DSN, or in a connection string. Settings in the connection string take precedence over settings in the DSN.
+The following instructions describe how to configure SSL in a DSN. You can specify the connection settings in a DSN, or in a connection string. Settings in the connection string take precedence over settings in the DSN.
 
 > [!IMPORTANT]
-> If you are using the Windows trust store, make sure to import the trusted CA certificates into the trust store.
+> If you're using the Windows trust store, make sure to import the trusted CA certificates into the trust store.
 > If the trusted CA supports certificate revocation, select the Check Certificate Revocation check box.
 
 To configure SSL verification:
@@ -263,7 +263,7 @@ To configure server-side properties:
 1. To change the method that the connector uses to apply server-side properties, do one of the following:
 
     - To configure the connector to apply each server-side property by executing a query when opening a session to the Spark server, select the **Apply Server Side Properties With Queries** check box.
-    - Or, to configure the connector to use a more efficient method for applying server-side properties that doesn't involve additional network round-tripping, clear the **Apply Server Side Properties With Queries** check box.
+    - Or, to configure the connector to use a more efficient method for applying server-side properties that doesn't involve more network round-tripping, clear the **Apply Server Side Properties With Queries** check box.
 
 1. To save your settings and close the Server Side Properties dialog box, select **OK**.
 
@@ -276,10 +276,10 @@ To help troubleshoot issues, you can enable logging. In addition to the function
 
 ## Configuring connector-wide logging options
 
-The settings for logging apply to every connection that uses the Simba ODBC Data Connector for Microsoft Fabric Spark, so make sure to disable the feature after you're done using it.
+The settings for logging apply to every connection that uses the Simba ODBC Data Connector for Microsoft Fabric Spark, so make sure to disable the feature after configuration is complete.
 
 > [!NOTE]
-> After the maximum number of log files is reached, each time an additional file is created, the connector deletes the oldest log file.
+> After the maximum number of log files is reached, each time another file is created, the connector deletes the oldest log file.
 
 To enable connector-wide logging:
 
@@ -305,7 +305,7 @@ To enable connector-wide logging:
 > [!NOTE]
 > After the maximum file size is reached, the connector creates a new file and continues logging.
 
-The Simba ODBC Data Connector for Microsoft Fabric Spark produces the following log files at the location you specify in the Log Path field:
+The Simba ODBC Data Connector for Microsoft Fabric Spark produces log files at the location you specify in the Log Path field:
 
 - A `simbaodbcdataconnectorformicrosoftfabricspark.log` file that logs connector activity that isn't specific to a connection.
 - A `simbaodbcdataconnectorformicrosoftfabricspark_connection_[Number].log` file for each connection made to the database, where [Number] is a number that identifies each log file. This file logs connector activity that is specific to the connection.
@@ -326,13 +326,13 @@ The connection strings in the following sections are examples showing the minimu
 
 ### DSN connection string example
 
-The following is an example of a connection string for a connection that uses a DSN:
+This is an example of a connection string for a connection that uses a DSN:
 
 DSN=`[DataSourceName]`
 
 `[DataSourceName]` is the DSN that you're using for the connection.
 
-You can set additional configuration options by appending key-value pairs to the connection string.
+You can set more configuration options by appending key-value pairs to the connection string.
 
 > [!NOTE]
 > Configuration options that are passed in using a connection string take precedence over configuration options that are set in the DSN.
@@ -355,7 +355,7 @@ The placeholders in the examples are defined as follows, in alphabetical order:
 - `[SparkServerType]` is the server type to which you're connecting: 5 for Synapse, 6 for Fabric.
 - `[Workspace_ID]` is the ID of the Workspace being accessed (Fabric only)
 
-The following is the format of a DSN-less connection string that connects to Microsoft Fabric:
+This is the format of a DSN-less connection string that connects to Microsoft Fabric:
 
 `Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Host]; Auth_Flow=2; Auth_Scope=[Auth_Scope]; SparkServerType=6; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=[HTTP_Path]`
 
@@ -363,7 +363,7 @@ For example:
 
 `Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=api.fabric.microsoft.com; Auth_Flow=2; Auth_Scope={https://analysis.windows.net/powerbi/api/Code.AccessStorage.All https://analysis.windows.net/powerbi/api/Item.Execute.All https://analysis.windows.net/powerbi/api/Item.ReadWrite.All}; SparkServerType=6; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=v1/Workspaces/[Workspace_ID]/lakehouses/[Lakehouse_ID]/livyapi/versions/2024-07-30`
 
-The following is the format of a DSN-less connection string that connects to Azure Synapse:
+This is the format of a DSN-less connection string that connects to Azure Synapse:
 
 `Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Host]; Auth_Flow=1; Auth_Scope=[Auth_Scope]; SparkServerType=5; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=[HTTP_Path]; Auth_Client_Secret=[Auth_Client_Secret]`
 
@@ -373,7 +373,7 @@ For example:
 
 ## Connecting to Fabric Spark with Python
 
-The following is an example of connecting to Microsoft Fabric Spark using Python/pyodbc. Replace all bold/italic placeholders (e.g. {your-client-id}) with your specific details.
+This is an example of connecting to Microsoft Fabric Spark using Python/pyodbc. Replace all bold/italic placeholders (for example `{your-client-id}`) with your specific details.
 
 ```python
 import pyodbc
