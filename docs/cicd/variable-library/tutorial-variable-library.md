@@ -202,7 +202,7 @@ Now that the data pipeline is set up, create a deployment pipeline to deploy the
 
 ## Considerations and limitations
 
- [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
+ [!INCLUDE [limitations](../includes/variable-library-limitations.md)]
 
 ## Related content
 

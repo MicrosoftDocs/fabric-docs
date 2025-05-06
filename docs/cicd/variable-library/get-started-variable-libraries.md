@@ -121,4 +121,4 @@ To reset a variable value of each variable to the default value, select the rese
 
 ## Considerations and limitations
 
- [!INCLUDE [limitations](./includes/variable-library-limitations.md)]
+ [!INCLUDE [limitations](../includes/variable-library-limitations.md)]

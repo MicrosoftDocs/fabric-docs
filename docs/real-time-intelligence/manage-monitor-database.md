@@ -114,7 +114,7 @@ The database activity tracker displays the number of rows loaded into the databa
 | Item| Description|
 |---|---|
 | **Ingestion** | The number of rows loaded into the database in the selected time range. Select **Ingestion** to view only ingestion data. Select again to view both query and ingestion data. |
-| **Queries** | The number of queries that ran in the database in the selected time range. Select **Queries**  to view only query data. Select again to view both query and ingestion data. <br></br> If there are failed, throttled, or canceled queries, you can open the drop-down menu to view them as a percentage compared to the total queries. <br></br> :::image type="content" source="media/create-database/queries-cancelled-menu.png" alt-text="Screenshot of percentage of queries completed.":::|
+| **Queries** | The number of queries that ran in the database in the selected time range. Select **Queries**  to view only query data. Select again to view both query and ingestion data . <br></br> If there are failed, throttled, or canceled queries, you can open the dropdown menu to view them as a percentage compared to the total queries. <br></br> :::image type="content" source="media/create-database/queries-cancelled-menu.png" alt-text="Screenshot of percentage of querires completed.":::|
 | **Last run** | The time when the histogram was last generated.|
 | Time range | The time range of the histogram display. Set ranges for one hour, six hours, 3 days, 7 days, or 30 days. |
 | Interval | Set the data aggregation interval for the histogram display. Set intervals by one minute, five minutes, 1 hour, 12 hours, one day, 3 days, and 30 days. |
