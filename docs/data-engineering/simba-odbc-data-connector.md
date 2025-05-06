@@ -357,19 +357,27 @@ The placeholders in the examples are defined as follows, in alphabetical order:
 
 This is the format of a DSN-less connection string that connects to Microsoft Fabric:
 
-`Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Host]; Auth_Flow=2; Auth_Scope=[Auth_Scope]; SparkServerType=6; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=[HTTP_Path]`
+```http
+Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Host]; Auth_Flow=2; Auth_Scope=[Auth_Scope]; SparkServerType=6; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=[HTTP_Path]
+```
 
 For example:
 
-`Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=api.fabric.microsoft.com; Auth_Flow=2; Auth_Scope={https://analysis.windows.net/powerbi/api/Code.AccessStorage.All https://analysis.windows.net/powerbi/api/Item.Execute.All https://analysis.windows.net/powerbi/api/Item.ReadWrite.All}; SparkServerType=6; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=v1/Workspaces/[Workspace_ID]/lakehouses/[Lakehouse_ID]/livyapi/versions/2024-07-30`
+```http
+Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=api.fabric.microsoft.com; Auth_Flow=2; Auth_Scope={https://analysis.windows.net/powerbi/api/Code.AccessStorage.All https://analysis.windows.net/powerbi/api/Item.Execute.All https://analysis.windows.net/powerbi/api/Item.ReadWrite.All}; SparkServerType=6; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=v1/Workspaces/[Workspace_ID]/lakehouses/[Lakehouse_ID]/livyapi/versions/2024-07-30
+```
 
 This is the format of a DSN-less connection string that connects to Azure Synapse:
 
-`Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Host]; Auth_Flow=1; Auth_Scope=[Auth_Scope]; SparkServerType=5; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=[HTTP_Path]; Auth_Client_Secret=[Auth_Client_Secret]`
+```http
+Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Host]; Auth_Flow=1; Auth_Scope=[Auth_Scope]; SparkServerType=5; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=[HTTP_Path]; Auth_Client_Secret=[Auth_Client_Secret]
+```
 
 For example:
 
-`Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Synapse workspace name].dev.azuresynapse.net; Auth_Flow=1; Auth_Scope=https://dev.azuresynapse.net/.default; SparkServerType=5; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=livyApi/versions/2024-09-20/sparkPools/[Spark_Pool]; Auth_Client_Secret=[Auth_Client_Secret]`
+```http
+Driver={Simba ODBC Data Connector for Microsoft Fabric Spark}; Host=[Synapse workspace name].dev.azuresynapse.net; Auth_Flow=1; Auth_Scope=https://dev.azuresynapse.net/.default; SparkServerType=5; Auth_Client_ID=[Auth_Client_ID]; Auth_Tenant_ID=[Auth_Tenant_ID]; HTTPPath=livyApi/versions/2024-09-20/sparkPools/[Spark_Pool]; Auth_Client_Secret=[Auth_Client_Secret]
+```
 
 ## Connecting to Fabric Spark with Python
 
