@@ -68,7 +68,8 @@ Currently, the following external databases are available:
 | [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | Database mirroring | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Managed Instance (preview)](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](snowflake-tutorial.md) |
-| [Open mirrored databases](open-mirroring.md) (preview) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
+| [Microsoft Fabric mirrored databases from SQL Server](sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](sql-server-tutorial.md) |
+| [Open mirrored databases](open-mirroring.md) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
 | [Microsoft Fabric mirrored databases from Fabric SQL database](../sql/overview.md) (preview) | Yes | Database mirroring | [Automatically configured](../sql/mirroring-overview.md) |
 
 ## How does the near real time replication of database mirroring work?

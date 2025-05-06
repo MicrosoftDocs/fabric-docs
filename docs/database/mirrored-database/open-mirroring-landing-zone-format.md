@@ -1,10 +1,10 @@
 ---
-title: "Open Mirroring (Preview) Landing Zone Requirements and Formats"
+title: "Open Mirroring Landing Zone Requirements and Formats"
 description: Review the requirements for files in the landing for open mirroring in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur, maraki-ketema
-ms.date: 03/22/2025
+ms.date: 05/02/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -12,8 +12,6 @@ no-loc: [Copilot]
 # Open mirroring landing zone requirements and format
 
 This article details the landing zone and table/column operation requirements for open mirroring in Microsoft Fabric.
-
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 Once you have created your open mirrored database via the Fabric portal or public API in your Fabric workspace, you get a landing zone URL in OneLake in the **Home** page of your mirrored database item. This landing zone is where your application to create a metadata file and land data in Parquet format or CSV format (uncompressed, Snappy, GZIP, ZSTD). If the data is in a CSV format, the file must have header row in the first row.
 
@@ -28,7 +26,6 @@ For example, if you have tables (`Table A`, `Table B`, `Table C`) to be created 
 - `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/Files/LandingZone/TableA`
 - `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/Files/LandingZone/TableB`
 - `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/Files/LandingZone/TableC`
-
 
 ### Metadata file in the landing zone
 
