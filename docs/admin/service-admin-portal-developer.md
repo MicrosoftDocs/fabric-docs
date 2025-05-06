@@ -8,7 +8,7 @@ ms.reviewer: ''
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 05/05/2025
+ms.date: 05/06/2025
 LocalizationGroup: Administration
 ---
 
@@ -41,7 +41,7 @@ Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-prin
 
 To allow an app to use service principal authentication, its service principal must be included in an allowed security group. You can control who can access service principals by creating dedicated security groups and using these groups in other tenant settings.
 
-This setting is disabled by default for new customers. If you're an existing customer who previously enabled the redundant setting *Service principals can use Fabric APIs*, this setting and its configuration is enabled. The setting's configuration includes whether it's enabled for all users or only for users in a specific security group.
+This setting is disabled by default for new customers.
 
 ## Service principals can call Fabric public APIs
 
@@ -49,7 +49,7 @@ Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-prin
 
 To allow an app to use service principal authentication, its service principal must be included in an allowed security group. You can control who can access service principals by creating dedicated security groups and using these groups in other tenant settings.
 
-This setting is enabled by default for new customers. If you're an existing customer who previously enabled the redundant setting *Service principals can use Fabric APIs*, this setting and its configuration is enabled. The setting's configuration includes whether it's enabled for all users or only for users in a specific security group.
+This setting is enabled by default for new customers.
 
 ## Allow service principals to create and use profiles
 
