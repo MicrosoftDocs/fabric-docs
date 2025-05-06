@@ -149,8 +149,8 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     if "access_token" in result:
         access_token = result['access_token']
-        api_base_url_mist='https://api.fabric.microsoft.com/v1'
-        livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/sessions"
+        api_base_url ='https://api.fabric.microsoft.com/v1'
+        livy_base_url = api_base_url + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/sessions"
         headers = {"Authorization": "Bearer " + access_token}
     ```
 
@@ -215,7 +215,7 @@ create_livy_session = requests.post(livy_base_url, headers=headers, json={
     print('the statement code is submitted as: ' + str(execute_statement_response.json()))
 
     statement_id = str(execute_statement_response.json()['id'])
-    get_statement = livy_session_url+ "/statements/" + statement_id
+    get_statement = livy_session_url + "/statements/" + statement_id
     get_statement_response = requests.get(get_statement, headers=headers)
 
     while get_statement_response.json()["state"] != "available":
@@ -260,7 +260,7 @@ create_livy_session = requests.post(livy_base_url, headers=headers, json={
     print('the statement code is submitted as: ' + str(execute_statement_response.json()))
 
     statement_id = str(execute_statement_response.json()['id'])
-    get_statement = livy_session_url+ "/statements/" + statement_id
+    get_statement = livy_session_url + "/statements/" + statement_id
     get_statement_response = requests.get(get_statement, headers=headers)
 
     while get_statement_response.json()["state"] != "available":

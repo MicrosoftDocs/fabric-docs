@@ -131,8 +131,8 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     if "access_token" in result:
         access_token = result['access_token']
-        api_base_url_mist='https://api.fabric.microsoft.com/v1'
-        livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"
+        api_base_url ='https://api.fabric.microsoft.com/v1'
+        livy_base_url = api_base_url + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"
             headers = {"Authorization": "Bearer " + access_token}
     ```
 
@@ -181,7 +181,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     print('Submit a spark job via the livy batch API to ') 
 
     newlakehouseName = "YourNewLakehouseName"
-    create_lakehouse = api_base_url_mist + "/workspaces/" + workspace_id + "/items"
+    create_lakehouse = api_base_url + "/workspaces/" + workspace_id + "/items"
     create_lakehouse_payload = {
         "displayName": newlakehouseName,
         "type": 'Lakehouse'
