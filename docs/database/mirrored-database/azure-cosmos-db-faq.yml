@@ -109,7 +109,7 @@ sections:
       - question: |
           Can I use managed identities as authentication for mirroring Azure Cosmos DB?
         answer: |
-          No, only read-write account keys and Microsofy Entra ID are supported at this time.
+          No, only read-write account keys and Microsoft Entra ID are supported at this time.
       - question: |
           What happens if I rotate my Azure Cosmos DB account keys?
         answer: |
