@@ -38,7 +38,7 @@ On the ribbon of your KQL database, either:
 
 ## Configure
 
-When configuring get data from a default eventstream, you need to specify the eventstream and stream to use. When configuring get data from the Real-Time Hub's list of derived streams, the settings are automatically populated.
+When configuring get data from a default eventstream, you need to specify the eventstream and stream to use. When configuring get data from the Real-Time hub's list of derived streams, the settings are automatically populated.
 
 ### [Existing eventstream](#tab/eventstream)
 
