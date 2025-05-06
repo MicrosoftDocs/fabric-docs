@@ -125,7 +125,7 @@ The database activity tracker displays the number of rows loaded into the databa
 
 This section of the database page main area displays a list of tables in the database, a preview of the data, and query insights.
 
-:::image type="content" source="media/create-database/query-insights.png" alt-text="Screenshot of the database overview page highlighting the query insights area." lightbox="media/create-database/query-insights.png.png:::
+:::image type="content" source="media/create-database/query-insights.png" alt-text="Screenshot of the database overview page highlighting the query insights area." lightbox="media/create-database/query-insights.png":::
 
 The tabs and graphs show the following information:
 
