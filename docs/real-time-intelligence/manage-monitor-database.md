@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 04/29/2025
+ms.date: 05/06/2025
 ms.search.form: Database
 #customer intent: As a user, I want to learn how to manage and monitor a KQL  database so that I can effectively utilize Real-Time Intelligence.
 ---
