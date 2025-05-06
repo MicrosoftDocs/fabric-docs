@@ -5,10 +5,12 @@ ms.author: midesa
 author: midesa
 ms.topic: how-to
 ms.custom: 
-ms.date: 05/04/2025
+ms.date: 05/06/2025
 ---
 
 # Evaluate your data agent (preview)
+
+Evaluation with the Fabric SDK allows you to programmatically test how well your Data Agent responds to natural language questions. Using a simple Python interface, you can define ground truth examples, run evaluations, and analyze results—all within your notebook environment. This helps you validate accuracy, debug errors, and confidently improve your agent before deploying it to production.
 
 ## Prerequisites
 
