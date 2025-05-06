@@ -138,9 +138,10 @@ In addition to account keys, single-sign on (SSO) with Microsoft Entra IDs and r
 
 > [!NOTE]
 > For Microsoft Entra ID authentication, the following RBAC permissions are required:
-    - `Microsoft.DocumentDB/databaseAccounts/readMetadata`
-    -  `Microsoft.DocumentDB/databaseAccounts/readAnalytics`
-    To learn more, please visit our [data plane role-based access control documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/how-to-grant-data-plane-access?tabs=custom-definition%2Ccsharp&pivots=azure-interface-cli).
+> `Microsoft.DocumentDB/databaseAccounts/readMetadata`
+> `Microsoft.DocumentDB/databaseAccounts/readAnalytics`
+> 
+> To learn more, please visit our [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
 
 Mirroring doesn't currently support authentication using read-only account keys or managed identities.
 

@@ -53,9 +53,10 @@ Mirroring is only available for the Azure Cosmos DB account types listed here.
 
 - Azure Cosmos DB read-write account keys and Microsoft Entra ID authentication with role-based access control are the only supported mechanisms to connect to the source account. Read-only account keys and managed identities aren't supported.
   - For Microsoft Entra ID authentication, the following RBAC permissions are required:
-`Microsoft.DocumentDB/databaseAccounts/readMetadata`
-`Microsoft.DocumentDB/databaseAccounts/readAnalytics`
-To learn more, please visit our [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
+  `Microsoft.DocumentDB/databaseAccounts/readMetadata`
+  `Microsoft.DocumentDB/databaseAccounts/readAnalytics`
+  
+  To learn more, please visit our [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
 - You must update the connection credentials for Fabric mirroring if the account keys are rotated. If you don't update the keys, mirroring fails. To resolve this failure, stop replication, update the credentials with the newly rotated keys, and then restart replication.
 - Fabric users with access to the workspace automatically inherit access to the mirror database. However, you can granularly control workspace and tenant level access to manage access for users in your organization.
 - You can directly share the mirrored database in Fabric.
