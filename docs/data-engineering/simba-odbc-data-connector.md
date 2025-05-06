@@ -123,10 +123,10 @@ To configure OAuth 2.0 client credentials authentication using the client secret
 
        `https://dev.azuresynapse.net/.default`
 
-1. Optionally, select **Encryption Options** and choose the encryption password for Current User Only or All Users of this Machine.
+1. Optionally, select **Encryption Options** and choose the encryption password for **Current User Only** or **All Users** of this Machine.
 1. Select **OK**.
-1. To save your settings and close the OAuth Options dialog box, select OK.
-1. To save your settings and close the DSN Setup dialog box, select OK.
+1. To save your settings and close the **OAuth Options** dialog box, select **OK**.
+1. To save your settings and close the **DSN Setup** dialog box, select **OK**.
 
 ### Browser based authorization Code
 
