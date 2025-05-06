@@ -27,7 +27,7 @@ By default, these **extended statistics** are collected for the first 32 columns
 
 As a result, workloads can see greater performance improvements and reduced compute resource usage — all without requiring manual `ANALYZE TABLE` runs or complex configuration.
 
-## 🚀 Key Benefits
+## Key Benefits
 
 This section summarizes why automated table statistics matter for your workloads.
 
@@ -37,7 +37,7 @@ This section summarizes why automated table statistics matter for your workloads
 - Supports distinct value counts, min/max, null counts, and column length metrics
 - Stored in Parquet format to avoid bloating data files
 
-## 📈 How It Works
+## How It Works
 
 Here’s what happens behind the scenes when Fabric Spark collects statistics:
 
@@ -49,7 +49,7 @@ Here’s what happens behind the scenes when Fabric Spark collects statistics:
 
 These metrics help Spark make smarter decisions about how to execute queries — improving join strategies, partition pruning, and aggregation performance.
 
-## 🔧 How to Enable or Disable
+## How to Enable or Disable
 
 Learn how to control automated statistics collection using Spark session configurations or table properties.
 
@@ -151,7 +151,7 @@ Disable catalog statistics injection:
 spark.conf.unset("spark.microsoft.delta.stats.injection.catalog.enabled")
 ```
 
-## ⚠️ Limitations
+## Limitations
 
 It’s important to understand the current limitations of Fabric’s automated statistics so you can plan accordingly. 
 
@@ -167,7 +167,7 @@ It’s important to understand the current limitations of Fabric’s automated s
 
 ## Related content
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
-- [Learn about Delta Optimizized Write and VOrder](delta-optimization-and-v-order.md)
+- [Learn about Delta OptimizedWrite and VOrder](delta-optimization-and-v-order.md)
 - [Learn how to configure Resource Profiles based on your workload requirements](configure-resource-profile-configurations.md)
 
 
