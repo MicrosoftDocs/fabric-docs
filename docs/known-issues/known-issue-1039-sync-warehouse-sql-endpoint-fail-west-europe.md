@@ -4,7 +4,7 @@ description: A known issue is posted where syncs for data warehouse and SQL anal
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/10/2025
+ms.date: 05/06/2025
 ms.custom: known-issue-1039
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1039
 
 You have a data warehouse or a SQL analytics endpoint in the West Europe region. You see table latency issues or failures when trying to sync the tables, schema, or semantic models.
 
-**Status:** Open
+**Status:** Fixed: May 6, 2025
 
 **Product Experience:** Data Warehouse
 
