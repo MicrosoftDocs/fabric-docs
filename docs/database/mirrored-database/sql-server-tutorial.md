@@ -9,7 +9,7 @@ ms.topic: tutorial
 ms.custom:
 ---
 
-# Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server
+# Tutorial: Configure Microsoft Fabric mirrored databases from SQL Server
 
 [Mirroring in Fabric](overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored SQL Server database, which creates a read-only, continuously replicated copy of your SQL Server data in OneLake.
 
@@ -83,7 +83,7 @@ To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Serv
 
    For SQL Server instances running in an Always On availability group or failover cluster instance configuration, all nodes must be connected to Azure Arc. 
 
-1. Three registry keys are needed on the Windows Server hosting the source SQL Server instance for Fabric Mirroring. The registry keys include information about the system-assigned managed identity (SAMI) for the Windows Server. The following Powershell script will add three registry keys for you, as well as necessary file system permissions, and managed identities.
+1. Three registry keys are needed on the Windows Server hosting the source SQL Server instance for Fabric Mirroring. The registry keys include information about the system-assigned managed identity (SAMI) for the Windows Server. The following PowerShell script will add three registry keys for you, as well as necessary file system permissions, and managed identities.
     
     > [!NOTE]
     > This section contains a script to modify the Windows registry. Make sure that you follow these steps carefully. For added protection, back up the registry before you modify it. Then, you can restore the registry if a problem occurs. For more information about how to back up and restore the registry, see [How to back up and restore the registry in Windows](/troubleshoot/windows-server/performance/windows-registry-advanced-users#back-up-the-registry).

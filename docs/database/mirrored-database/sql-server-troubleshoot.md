@@ -9,7 +9,7 @@ ms.topic: troubleshooting
 ms.custom:
   - references_regions
 ---
-# Troubleshoot Fabric mirrored databases From SQL Server
+# Troubleshoot Fabric mirrored databases from SQL Server
 
 This article covers troubleshooting steps troubleshooting for mirroring a database in SQL server.
 
