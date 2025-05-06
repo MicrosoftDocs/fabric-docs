@@ -77,7 +77,7 @@ Finally, Henri selects the **Calculate** button and gets the following result:
 
 :::image type="content" source="media/fabric-sku-estimator/scenario-1-estimation.png" alt-text="Detailed estimation results for Scenario 1 using the Fabric SKU Estimator." lightbox="media/fabric-sku-estimator/scenario-1-estimation.png":::
 
-The estimator provides a viable SKU, workload breakdown, storage consumption, and Power BI Pro license requirements. Henri inputs the results into the Azure Price Calculator to generate an estimate for his proposal.
+The estimator provides a viable SKU, workload breakdown, storage consumption, and Power BI Pro license requirements. Henri inputs the results into the [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/) to generate an estimate for his proposal.
 
 ## Scenario part 2: Migrate more workloads to Microsoft Fabric
 

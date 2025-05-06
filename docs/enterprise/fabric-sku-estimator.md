@@ -23,6 +23,7 @@ To get started using the Fabric SKU Estimator, follow these steps:
     - Number of daily batch cycles
     - Number of tables in your data sources
 1. Select the workloads and features you plan to use.
+1. Input any other information related to your workload selections, if prompted.
 1. Select **Calculate**.
 
 The tool provides an **estimated viable SKU** and a breakdown of resources.
