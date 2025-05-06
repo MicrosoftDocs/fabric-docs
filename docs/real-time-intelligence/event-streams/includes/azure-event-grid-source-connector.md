@@ -11,7 +11,7 @@ ms.date: 03/19/2025
 On the **Configure connection settings** page, follow these steps:
 
 1. For **Subscription**, select the Azure subscription that has the Event Grid namespace. 
-1. For **Namespace name**, select your Event Grid namespace from the drop-down list. 
+1. For **Namespace name**, select your Event Grid namespace from the dropdown list. 
 1. The **Namespace topic** section you see varies depending on whether Message Queuing Telemetry Transport (MQTT) is enabled or not. 
     - If MQTT isn't enabled for the namespace topic, create a new topic or select an existing topic. 
 
