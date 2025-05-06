@@ -34,7 +34,7 @@ On the ribbon of your KQL database, either:
 
 * From the **Get Data** dropdown menu, select **Eventstream** > **Existing Eventstream**.
 
-* From the **Get Data** drop down menu, select **Real-Time data hub**, and then select a derived eventstream from the list.
+* From the **Get Data** dropdown menu, select **Real-Time data hub**, and then select a derived eventstream from the list.
 
 ## Configure
 
