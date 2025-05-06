@@ -107,8 +107,6 @@ Optionally:
 
 [!INCLUDE [mapping-transformations](includes/mapping-transformations.md)]
 
-[!INCLUDE [get-data-process-event-advanced-options-data-type](includes/get-data-process-event-advanced-options-data-type.md)]
-
 ### Advanced options based on data type
 
 **Tabular (CSV, TSV, PSV)**:
