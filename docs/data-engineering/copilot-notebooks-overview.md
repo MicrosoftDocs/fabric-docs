@@ -11,7 +11,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
   - copilot-learning-hub
-ms.date: 2025-03-25
+ms.date: 05/06/2025
 ms.search.form: Data Science Overview
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
