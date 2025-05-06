@@ -10,10 +10,10 @@ ms.devlang: python
 #customer intent: As a Microsoft Fabric user I want to learn about the Simba ODBC Data Connector for Microsoft Fabric Data Engineering, detailing its features, installation, and configuration processes.
 ---
 
-# Simba ODBC Data Connector for Microsoft Fabric Data Engineering (Public Preview)
+# Simba ODBC Data Connector for Microsoft Fabric data engineering (Public preview)
 
 The Simba Open Database Connector (ODBC) Data Connector for Microsoft Fabric Data Engineering (Spark) is used for direct SQL and SparkSQL access to Microsoft Fabric Spark or Azure Synapse Spark, enabling Business Intelligence (BI), analytics, and reporting on Spark-based data.
-The connector efficiently transforms an application’s SQL query into the equivalent form in SparkSQL, which is a subset of SQL-92. 
+The connector efficiently transforms an application’s SQL query into the equivalent form in SparkSQL, which is a subset of SQL-92.
 
 If an application is Spark-aware, then the connector is configurable to pass the query through to the database for processing. The connector interrogates Spark to obtain schema information to present to a SQL-based application. The Simba ODBC Data Connector for Microsoft Fabric Data Engineering complies with the ODBC 3.80 data standard and adds important functionality such as Unicode and 32-bit and 64-bit support for high- performance computing environments. ODBC is one of the most established and widely supported APIs for connecting to and working with databases. At the heart of the technology, is the ODBC connector, which connects an application to the database.
 
@@ -29,7 +29,7 @@ Review this example of how this process works.
 
 :::image type="content" source="media/simba-odbc-data-connector/animated.gif" alt-text="Animated example showing the Simba ODBC connector." lightbox="media/simba-odbc-data-connector/animated.gif":::
 
-## System Requirements
+## System requirements
 
 Install the connector on client machines where the client application is installed. Before installing the connector, make sure that you have:
 
@@ -59,7 +59,7 @@ To install the Simba ODBC Data Connector for Microsoft Fabric Spark on Windows:
 1. Select Install.
 1. When the installation completes, select Finish.
 
-## Creating a Data Source Name on Windows
+## Creating a data source name
 
 Typically, after installing the Simba ODBC Data Connector for Microsoft Fabric Spark, you need to create a Data Source Name (DSN). A DSN is a data structure that stores connection information used by the connector to connect to Spark.
 Alternatively, you can specify connection settings in a connection string. Settings in the connection string take precedence over settings in the DSN.
@@ -128,7 +128,7 @@ To configure OAuth 2.0 client credentials authentication using the client secret
 1. To save your settings and close the OAuth Options dialog box, select OK.
 1. To save your settings and close the DSN Setup dialog box, select OK.
 
-### Browser Based Authorization Code
+### Browser based authorization Code
 
 This authentication mechanism requires SSL to be enabled.
 
@@ -157,7 +157,7 @@ To configure OAuth 2.0 browser-based authentication:
 > [!NOTE]
 > When the browser-based authentication flow completes, the access token and refresh token are saved in the token cache, and the connector doesn't need to authenticate again.
 
-## Configuring Advanced Options on Windows
+## Configuring advanced options
 
 You can configure advanced options to modify the behavior of the connector.
 
@@ -188,7 +188,7 @@ To configure advanced options on Windows:
 - GB (gigabytes)
 - By default, the file size is in B (bytes).
 
-## Configuring a Proxy Connection on Windows
+## Configuring a proxy connection
 
 If you're connecting to the data source through a proxy server, you must provide connection information for the proxy server.
 
@@ -209,7 +209,7 @@ To configure a proxy server connection on Windows:
 1. In the Hosts Not Using Proxy field, type the list of hosts or domains that don't use a proxy.
 1. To save your settings and close the HTTP Proxy Options dialog box, select OK.
 
-## Configuring SSL Verification on Windows
+## Configuring SSL verification
 
 If you're connecting to a Spark server that has Secure Sockets Layer (SSL) enabled, you can configure the connector to connect to an SSL-enabled socket.
 
@@ -245,7 +245,7 @@ To configure SSL verification on Windows:
 > [!IMPORTANT]
 > The password is obscured, that is, not saved in plain text. However, it's still possible for the encrypted password to be copied and used.
 
-## Configuring Server-Side Properties on Windows
+## Configuring server-side properties
 
 You can use the connector to apply configuration properties to the Spark server.
 
@@ -268,14 +268,14 @@ To configure server-side properties on Windows:
 
 1. To save your settings and close the Server Side Properties dialog box, select OK.
 
-## Configuring Logging Options on Windows
+## Configuring logging options
 
 To help troubleshoot issues, you can enable logging. In addition to the functionality provided in the Simba ODBC Data Connector for Microsoft Fabric Spark, the ODBC Data Source Administrator provides tracing functionality.
 
 > [!IMPORTANT]
 > Only enable logging or tracing long enough to capture an issue. Logging or tracing decreases performance and can consume a large quantity of disk space.
 
-## Configuring Connector-wide Logging Options
+## Configuring connector-wide logging options
 
 The settings for logging apply to every connection that uses the Simba ODBC Data Connector for Microsoft Fabric Spark, so make sure to disable the feature after you're done using it.
 
@@ -318,14 +318,14 @@ To disable connector logging on Windows:
 1. Select OK.
 1. Restart your ODBC application to make sure that the new settings take effect.
 
-### Using a Connection String
+### Using a connection string
 
 For some applications, you might need to use a connection string to connect to your data source.
 For detailed information about how to use a connection string in an ODBC application, refer to the documentation for the application that you're using.
 
 The connection strings in the following sections are examples showing the minimum set of connection attributes that you must specify to successfully connect to the data source.
 
-### DSN Connection String Example
+### DSN connection string example
 
 The following is an example of a connection string for a connection that uses a DSN:
 
@@ -338,7 +338,7 @@ You can set additional configuration options by appending key-value pairs to the
 > [!NOTE]
 > Configuration options that are passed in using a connection string take precedence over configuration options that are set in the DSN.
 
-## DSN-less Connection String Examples
+## DSN-less connection string examples
 
 Some applications provide support for connecting to a data source using a connector without a DSN. To connect to a data source without using a DSN, use a connection string instead.
 
