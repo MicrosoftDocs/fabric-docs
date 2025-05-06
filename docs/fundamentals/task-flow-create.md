@@ -117,9 +117,11 @@ Task flows can be exported as *.json* files from the workspace they were created
 
 1. In the **Open** window that appears, navigate to the desired *.json* file and open it. The task flow will appear on the canvas, with the task flow details pane at the side.
 
+    :::image type="content" source="./media/task-flow-create/imported-task-flow.png" alt-text="Screenshot showing the side pane of the imported task flow.":::
+
     If necessary, change the task flow name and description to something that suits your task flow and enables others to better understand what your task flow is all about. To change the name and description, select **Edit** in the task flow side pane. For more information, see [Edit task flow details](./task-flow-work-with.md#edit-task-flow-details).
 
-After you've imported task flow into the canvas, you can start modifying it to suit your needs - [arranging the tasks on the canvas](./task-flow-work-with.md#arrange-tasks-on-the-canvas), [updating task names and descriptions](./task-flow-work-with.md#edit-task-name-and-description), [assigning items to tasks](./task-flow-work-with.md#assign-items-to-a-task), etc. For more information, see [Working with task flows](./task-flow-work-with.md).
+After you've imported the task flow into the canvas, you can start modifying it to suit your needs - [arranging the tasks on the canvas](./task-flow-work-with.md#arrange-tasks-on-the-canvas), [updating task names and descriptions](./task-flow-work-with.md#edit-task-name-and-description), [assigning items to tasks](./task-flow-work-with.md#assign-items-to-a-task), etc. For more information, see [Working with task flows](./task-flow-work-with.md).
 
 For more detail about importing and exporting task flows, see [Import or export a task flow](./task-flow-work-with.md#import-or-export-a-task-flow).
 
