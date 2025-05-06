@@ -11,7 +11,7 @@ ms.search.form: Eventhouse, KQL database, Overview
 # customer intent: I want to understand the integration of Eventhouse and KQL database with Microsoft Fabric's deployment pipelines and git, and how to configure and manage them in the ALM system.
 ---
 
-# Git integration and deployment pipelines (Preview)
+# Git integration and deployment pipelines
 
 Real-Time Intelligence integrates with the [lifecycle management capabilities](../cicd/cicd-overview.md) in Microsoft Fabric, providing standardized collaboration between all development team members throughout the product's life. This functionality is delivered via [git integration](../cicd/git-integration/intro-to-git-integration.md) and [deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md).
 
