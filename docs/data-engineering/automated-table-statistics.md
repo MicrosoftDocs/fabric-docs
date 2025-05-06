@@ -74,7 +74,7 @@ Disable statistics injection:
 ```spark.conf.set("spark.microsoft.delta.stats.injection.enabled", "false")```
 
 
-**Note:** Delta log statistics collection (`spark.databricks.delta.stats.collect`) must also be enabled (default: true).
+> [!Note]:** Delta log statistics collection (`spark.databricks.delta.stats.collect`) must also be enabled (default: true).
 
 ### Table Properties (Overrides Session Configs)
 
