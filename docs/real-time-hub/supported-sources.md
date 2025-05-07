@@ -6,6 +6,7 @@ ms.author: anboisve
 ms.topic: how-to
 ms.custom:
 ms.date: 11/18/2024
+ai-usage: ai-assisted
 ---
 
 # Supported sources for Fabric Real-Time hub
