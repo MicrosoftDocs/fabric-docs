@@ -4,7 +4,7 @@ description: A known issue is posted where insert statements across tables in di
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/22/2025
+ms.date: 05/06/2025
 ms.custom: known-issue-1114
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1114
 
 You can run an INSERT statement across tables in different items. In rare circumstances, the tables have the same object_id, which causes the insert to fail.
 
-**Status:** Open
+**Status:** Fixed: May 6, 2025
 
 **Product Experience:** Data Warehouse
 
