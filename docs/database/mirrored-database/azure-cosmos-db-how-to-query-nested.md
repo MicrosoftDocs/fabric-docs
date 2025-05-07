@@ -4,7 +4,7 @@ description: Query nested Azure Cosmos DB JSON data in a mirrored database withi
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 05/06/2025
+ms.date: 05/07/2025
 ms.topic: how-to
 ---
 
@@ -206,7 +206,8 @@ Follow steps 1-3 in the previous example. With the same data set, we can create 
     CROSS APPLY OPENJSON(t.items) p
     ```
 
-2.  Run this query to further expand on the `items` array with `OPENJSON` without defining the schema. This flattens the item array two levels by seperating each property within each nested object into a new row.
+1. Run this query to further expand on the `items` array with `OPENJSON` without defining the schema. This flattens the item array two levels by seperating each property within each nested object into a new row.
+
     ```sql
     SELECT
         t.name,

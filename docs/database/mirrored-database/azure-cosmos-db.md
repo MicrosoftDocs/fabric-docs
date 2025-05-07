@@ -4,7 +4,7 @@ description: Learn about the mirrored databases from Azure Cosmos DB in Microsof
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 05/06/2025
+ms.date: 05/07/2025
 ms.topic: overview
 ms.custom:
 ms.search.form: Fabric Mirroring
