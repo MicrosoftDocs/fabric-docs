@@ -126,7 +126,7 @@ By default, this Livy API session runs against the default starter pool for the 
 To use a Fabric Environment in a Livy Spark session, simply update the json to include this payload.
 
 ```python
-create_livy_session = requests.post(livy_base_url, headers=headers, json={
+create_livy_session = requests.post(livy_base_url, headers = headers, json={
     "conf" : {
         "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID""}"}
     }
