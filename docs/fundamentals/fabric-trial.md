@@ -22,7 +22,6 @@ With Fabric, you can:
 
 > [!NOTE]
 > * If you're ready to purchase Fabric, visit the [Purchase Fabric page](../enterprise/buy-subscription.md).
-
 > * The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is a free, hands-on training designed for analysts working with Power BI and Microsoft Fabric. You can get hands-on experience on how to analyze data, build reports, using Fabric. It covers key concepts like working with lakehouses, creating reports, and analyzing data in the Fabric environment.
 
 ## Overview of the trial capacity
