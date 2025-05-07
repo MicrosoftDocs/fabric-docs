@@ -4,8 +4,8 @@ description: This article explains the meanings of the workspace license modes, 
 ms.reviewer: liud
 ms.author: painbar
 author: paulinbar
-ms.topic: concept
-ms.date: 04/29/2025
+ms.topic: overview
+ms.date: 05/07/2025
 #customer intent: As workspace admin, I want to understand what the workspace license mode options are and when impact they have on data residency, the items that can be in the workspace, etc.
 ---
 # Workspace license modes
@@ -16,22 +16,22 @@ Workspaces are created in, and can be assigned to Microsoft Fabric capacities. W
 
 There are two types of licenses: [per user licenses and capacity licenses](/power-bi/enterprise/service-admin-licensing-organization#fabric-licenses).
 
-* Per user license: Per user licenses allow users to work in Fabric. The options are Fabric (Free), Pro, and Premium Per User (PPU). Per user licenses allow users to work in the Power BI service with a system reserved capacity.
+* **Per user license**: Per user licenses allow users to work in Fabric. The options are Fabric (Free), Pro, and Premium Per User (PPU). Per user licenses allow users to work in the Power BI service with a system reserved capacity.
 
-* Capacity license: An organizational license that provides a pool of resources for Fabric operations. Capacity licenses are divided into stock keeping units (SKUs). Each SKU provides a different number of capacity units (CUs), which are used to calculate the capacity's compute power. Fabric capacities are available for purchase and for trial.
+* **Capacity license**: An organizational license that provides a pool of resources for Fabric operations. Capacity licenses are divided into stock keeping units (SKUs). Each SKU provides a different number of capacity units (CUs), which are used to calculate the capacity's compute power. Fabric capacities are available for purchase and for trial.
 
 There are several different [capacity](../admin/capacity-settings.md?tabs=power-bi-premium#view-your-capacity) types in Fabric:
 
-* Power BI Premium: A capacity that was bought as part of a Power BI Premium subscription. These capacities use P SKUs.
+* **Power BI Premium**: A capacity that was bought as part of a Power BI Premium subscription. These capacities use P SKUs.
 
     > [!NOTE]
     > Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
 
-* Power BI Embedded: A capacity that was bought as part of a Power BI Embedded subscription. These capacities use A or EM SKUs.
+* **Power BI Embedded**: A capacity that was bought as part of a Power BI Embedded subscription. These capacities use A or EM SKUs.
 
-* Trial: A Microsoft Fabric trial capacity. These capacities use Trial SKUs.
+* **Trial**: A Microsoft Fabric trial capacity. These capacities use Trial SKUs.
 
-* Fabric capacity: A Microsoft Fabric capacity. These capacities use F SKUs
+* **Fabric capacity**: A Microsoft Fabric capacity. These capacities use F SKUs
 
 ## Configure license mode and assign capacity in workspace settings
 
@@ -44,20 +44,20 @@ To configure a license mode and assign a new capacity to the workspace, open the
     > [!NOTE]
     > you can assign capacity only for capacity license types. The system automatically reserves shared capacity for per-user licenses.
 
-Move a workspace from one capacity to another 
+## Moving a workspace from one capacity to another
 
-When transferring a workspace between capacities with different license types, the required actions and any potential capability downgrades are detailed below: 
+When transferring a workspace between capacities with different license types, required actions you must take and potential capability downgrades are detailed in the following table.
 
+| License type \ Move to | Pro | Premium per-user | Embedded | Fabric capacity type | Trial |
+|--|--|--|--|--|--|
+| **Pro** | N/A | Move to a system reserved capacity | You need to specify the capacity | You need to specify the capacity | You need to specify the capacity |
+| **Premium per-user** | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | N/A | You need to specify the capacity | You need to specify the capacity | You need to specify the capacity |
+| **Embedded** | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | No downgrade | You need to specify the capacity | You need to specify the capacity | You need to specify the capacity |
+| **Fabric capacity type** | You need to remove the Fabric items first and can only move the workspace within the same region | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | You need to remove the Fabric items first and can only move the workspace within the same region | You can only move the workspace to a capacity within the same region | You can only move the workspace to a capacity within the same region |
+| **Trial** | You need to remove the Fabric items first and can only move the workspace within the same region | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | You need to remove the Fabric items first and can only move the workspace within the same region | You can only move the workspace to a capacity within the same region | You can only move the workspace to a capacity within the same region |
 
-
-| License types\Move to      | Pro                                                                                                     | Premium per-user                                                                                                     | Embedded                                                                                                     | Fabric capacity type                                                                                                     | Trial                                                                                                     |
-|----------------------------|---------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| **Pro**                   | N/A                                                                                                     | Move to a system reserved capacity                                                                                  | You need to specify the capacity                                                                            | You need to specify the capacity                                                                                       | You need to specify the capacity                                                                        |
-| **Premium per-user**      | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | N/A                                                                                                                 | You need to specify the capacity                                                                            | You need to specify the capacity                                                                                       | You need to specify the capacity                                                                        |
-| **Embedded**              | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | No downgrade                                                                                                        | You need to specify the capacity                                                                            | You need to specify the capacity                                                                                       | You need to specify the capacity                                                                        |
-| **Fabric capacity type**  | You need to remove the Fabric items first and can only move the workspace within the same region                                              | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | You need to remove the Fabric items first and can only move the workspace within the same region            | You can only move the workspace to a capacity within the same region                                                      | You can only move the workspace to a capacity within the same region                                     |
-| **Trial**                 | You need to remove the Fabric items first and can only move the workspace within the same region                                              | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | You need to remove the Fabric items first and can only move the workspace within the same region            | You can only move the workspace to a capacity within the same region                                                      | You can only move the workspace to a capacity within the same region                                     |
-Note: Move workspace capacity cross regions is not supported currently.  You can only move workspace to a capacity in the same region. And the Power BI premium transition to Fabric  Power BI Premium FAQ - Power BI | Microsoft Learn 
+> [!NOTE]
+> Move workspace capacity cross regions is not supported currently.  You can only move workspace to a capacity in the same region. And the Power BI premium transition to Fabric  Power BI Premium FAQ - Power BI | Microsoft Learn 
 
 ## Related content
 
