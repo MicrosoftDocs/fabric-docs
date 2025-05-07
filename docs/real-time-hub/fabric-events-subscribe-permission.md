@@ -10,18 +10,18 @@ ms.date: 03/03/2025
 
 # Subscribe permissions for Azure and Fabric events
 
-The subscribe permission for Azure and Fabric evnets allows you to manage access to the event listeners, ensuring that only authorized users can subscribe to the events. The subscribe permissions are assessed during creation and for the lifetime of the event listener. This ensures that only authorized users can access and consume events. 
+The subscribe permission for Azure and Fabric events allows you to manage access to the event listeners, ensuring that only authorized users can subscribe to the events. The subscribe permissions are assessed during creation and for the lifetime of the event listener. This ensures that only authorized users can access and consume events. 
 
 ## Behavior
-If the user doesn't have the subscribe permission, the user will not be able to set up a consumer for the events. If the owner of the event listener loses the subscribe permission, the event listener will get in paused state, pausing the delivery of events to the consumer. The status of the subscription can be tracked in the Real-Time Hub. To discover the status of the subscription, follow these steps:
+If the user doesn't have the subscribe permission, the user isn't able to set up a consumer for the events. If the owner of the event listener loses the subscribe permission, the event listener gets in paused state, pausing the delivery of events to the consumer. The status of the subscription can be tracked in the Real-Time Hub. To discover the status of the subscription, follow these steps:
 1.	In Microsoft Fabric, select **Real-Time** on the left navigation bar.
 2.	Select the **Fabric events** page or the **Azure events** page.
 3.	Select the event group that you're interested in to see all the consumers for this event group.
-4.	The **Status** column will show Active/Paused status for each of the consumers for the events.
+4.	The **Status** column shows Active/Paused status for each of the consumers for the events.
 5.	Select **View details** from the actions to see the detailed error message that explains the exact reason for the Paused state.
 
 ### Handle paused subscriptions
-To address paused subscriptions, you need to delete and recreate the subscription with a new user that has sufficient subscribe permission. This will ensure that the subscription will have a new owner with sufficient permissions.
+To address paused subscriptions, you need to delete and recreate the subscription with a new user that has sufficient subscribe permission. This ensures that the subscription has a new owner with sufficient permissions.
 
 ## Subscribe permissions
 The following list explores the needed permissions to subscribe to every event group.
