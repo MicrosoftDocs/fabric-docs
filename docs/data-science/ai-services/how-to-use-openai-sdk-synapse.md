@@ -1,13 +1,13 @@
 ---
 title: Use Azure OpenAI with Python SDK
 description: How to use prebuilt Azure openai in Fabric with Python library
-ms.author: larryfr
-author: Blackmist
+ms.author: franksolomon
+author: fbsolo-ms1
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
-ms.date: 11/15/2023
+ms.date: 05/07/2025
 ms.search.form:
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -15,11 +15,14 @@ ms.collection: ce-skilling-ai-copilot
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-This article shows examples of how to use Azure OpenAI in Fabric using [OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) and using SynapseML.
+This article shows how to use Azure OpenAI in Fabric, with [OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) and with SynapseML.
+
+> [!NOTE]
+> You may need to use **fabric.refresh_dataset()** to get the updated model data. This will refresh the semantic model.
 
 ## Prerequisites
 
-# [Python SDK <1.0.0](#tab/python0)
+# [OpenAI Python SDK](#tab/python0)
 
 [OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) isn't installed in default runtime, you need to first install it.
 
@@ -49,7 +52,7 @@ from synapse.ml.services.openai import *
 
 ## Chat
 
-# [Python SDK <1.0.0](#tab/python0)
+# [OpenAI Python SDK](#tab/python0)
 
 ChatGPT and GPT-4 are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
 
@@ -192,7 +195,7 @@ display(
 
 ## Embeddings
 
-# [Python SDK <1.0.0](#tab/python0)
+# [OpenAI Python SDK](#tab/python0)
 
 An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs. For example, if two texts are similar, their vector representations should also be similar.
 
