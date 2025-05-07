@@ -26,6 +26,7 @@ ms.custom:
     - [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../../admin/tenant-settings-index.md#onelake-settings)
 - Review the [Platform limitations in Microsoft Fabric mirrored databases From SQL Server](sql-server-limitations.md#platform-limitations).
+- An [on-premises data gateway](/data-integration/gateway/service-gateway-install) in your SQL Server instance's network. The gateway machine's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
 
 ### Database principal for Fabric
 
@@ -257,7 +258,7 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
 
 ### Configure the on-premises data gateway
 
-Check your networking requirements for Fabric to access your SQL Server. You need to [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the Azure Virtual Network or the on-premises gateway machine's network can [connect to the SQL Server instance](/troubleshoot/sql/database-engine/connect/resolve-connectivity-errors-overview). For more information, see [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](sql-server-security.md).
+Check your networking requirements for Fabric to access your SQL Server. You need to [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the the on-premises gateway machine's network can [connect to the SQL Server instance](/troubleshoot/sql/database-engine/connect/resolve-connectivity-errors-overview). For more information, see [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](sql-server-security.md).
 
 1. Download the on-premises data gateway, see [Download On-premises data gateway from the Official Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=53127&msockid=0448b52333796d6425f3a0b332c36cba).
 1. Start installation. Follow instructions in [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install).
@@ -284,7 +285,7 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
    - **Database**: Enter the name of your SQL Server.
    - **Connection**: Create new connection.
    - **Connection name**: An automatic name is provided. You can change it.
-   - **Data gateway:** Select the name of virtual network data gateway / on-premises data gateway you set up according to your scenario.
+   - **Data gateway:** Select the name of the on-premises data gateway you set up according to your scenario.
    - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
 1. Select **Connect**.
 

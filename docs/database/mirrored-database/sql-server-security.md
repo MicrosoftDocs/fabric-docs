@@ -17,7 +17,7 @@ This guide helps you establish data security in your mirrored SQL Server in Micr
 
 ## Security requirements
 
-1. Check the networking requirements to access your SQL Server instance data source. [Create a virtual network data gateway](/data-integration/gateway/service-gateway-install) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install). The Azure Virtual Network or the gateway machine's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
+1. Check the networking requirements to access your SQL Server instance data source. [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install). The gateway machine's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
     - Resources for data gateways:
         - [Plan, scale, and maintain a business-critical gateway solution](/data-integration/gateway/plan-scale-maintain)
         - [Monitor and optimize on-premises data gateway performance](/data-integration/gateway/service-gateway-performance)
