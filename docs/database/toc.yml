@@ -17,15 +17,15 @@ items:
   - name: Copilot
     items:
     - name: What is Copilot in Fabric SQL database? 
-      href: copilot/copilot.md
+      href: sql/copilot-sql-database.md
     - name: Chat pane
-      href: copilot/copilot-chat-pane.md
+      href: sql/copilot-chat-pane.md
     - name: Code completion
-      href: copilot/copilot-code-completion.md
+      href: sql/copilot-code-completion.md
     - name: Quick actions
-      href: copilot/copilot-quick-actions.md
+      href: sql/copilot-quick-actions.md
     - name: FAQ
-      href: copilot/copilot-faq.yml
+      href: sql/copilot-faq.yml
   - name: Get started
     items: 
     - name: Connect to your SQL database
