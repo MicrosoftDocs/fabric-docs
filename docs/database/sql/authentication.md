@@ -99,7 +99,7 @@ DECLARE @objectId UNIQUEIDENTIFIER = '<unique identifier sid>'; -- principal's o
 DECLARE @castObjectId NVARCHAR(MAX) = CONVERT(VARCHAR(MAX), CONVERT (VARBINARY(16), @objectId), 1);
 
 -- Construct command: CREATE USER [@groupName] WITH SID = @castObjectId, TYPE = X;
-DECLARE @cmd NVARCHAR(MAX) = N'CREATE USER [' + @principal_name + '] WITH SID = ' + @castObjectId + ', TYPE = X;'
+DECLARE @cmd NVARCHAR(MAX) = N'CREATE USER [' + @group_name + '] WITH SID = ' + @castObjectId + ', TYPE = X;'
 EXEC (@cmd);
 ```
 
