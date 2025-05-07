@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/06/2025
+ms.date: 05/07/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1123  | Data Warehouse | [Reenabling Azure SQL database mirroring fails](./known-issue-1123-reenabling-azure-sql-database-mirroring-fails.md) | May 7, 2025 |
 |  1122  | Power BI | [Power BI report selection doesn't work in Viva Goals](./known-issue-1122-report-selection-not-work-viva-goals.md) | May 6, 2025 |
 |  1120  | Power BI | [Recommended tiles on the home page appear stretched for customer images](./known-issue-1120-recommended-tiles-home-page-stretched-customer-images.md) | May 6, 2025 |
 |  1119  | Power BI | [Large semantic model storage format conversion stays in view mode](./known-issue-1119-large-semantic-model-conversion-view-mode.md) | May 2, 2025 |
@@ -86,13 +87,11 @@ Select the **Title** to view more information about that specific known issue.
 |  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](./known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 |
 |  816  | Data Factory | [Pipeline deployment fails when parent contains deactivated activity](./known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md) | August 23, 2024 |
 |  795  | Data Factory | [Multiple installations of on-premises data gateway causes pipelines to fail](./known-issue-795-multiple-installations-data-gateway-pipelines-fail.md) | July 31, 2024 |
-|  789  | Data Engineering | [SQL analytics endpoint table queries fail due to RLE](./known-issue-789-sql-endpoint-table-queries-fail-rle.md) | July 24, 2024 |
 |  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](./known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 |
 |  767  | Data Warehouse | [SQL analytics endpoint table sync fails when table contains linked functions](./known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md) | July 2, 2024 |
 |  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](./known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
 |  726  | Data Factory | [Pipeline using XML format copy gets stuck](./known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 |
 |  717  | Data Factory | [West India region doesn't support on-premises data gateway for data pipelines](./known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
-|  643  | Data Engineering | [Tables not available to add in Power BI semantic model](./known-issue-643-tables-not-available-semantic-model.md) | February 27, 2024 |
 |  506  | Data Warehouse | [InProgress status shows in Fabric capacity metrics app for completed queries](./known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md)  | October 5, 2023 |
 |  454  | Data Warehouse              | [Warehouse's object explorer doesn't support case-sensitive object names](./known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md)    |  July 10, 2023  |
 
@@ -102,6 +101,8 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  789  | Data Engineering | [SQL analytics endpoint table queries fail due to RLE](./known-issue-789-sql-endpoint-table-queries-fail-rle.md) | July 24, 2024 | Fixed: May 7, 2025 |
+|  643  | Data Engineering | [Tables not available to add in Power BI semantic model](./known-issue-643-tables-not-available-semantic-model.md) | February 27, 2024 | Fixed: May 7, 2025 |
 |  1114  | Data Warehouse | [Insert statements across tables in different data warehouses fail](./known-issue-1114-insert-statements-tables-different-data-warehouses-fail.md) | April 22, 2025 | Fixed: May 6, 2025 |
 |  1108  | Data Warehouse | [Can't read data warehouse tables from a notebook](./known-issue-1108-not-read-data-warehouse-tables-notebook.md) | April 22, 2025 | Fixed: May 6, 2025 |
 |  1039  | Data Warehouse | [Sync for data warehouse and SQL analytics endpoint fail in West Europe](./known-issue-1039-sync-warehouse-sql-endpoint-fail-west-europe.md) | March 3, 2025 | Fixed: May 6, 2025 |
@@ -127,16 +128,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](./known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 | Fixed: April 7, 2025 |
 |  945  | Industry Solutions | [Intermittent failures on deployment of Sustainability solution](./known-issue-945-intermittent-failures-deployment-sustainability-solution.md) | November 22, 2024 | Fixed: March 31, 2025 |
 |  897  | OneLake | [OneLake Shared Access Signature (SAS) can't read cross-region shortcuts](./known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md) | October 25, 2024 | Fixed: March 24, 2025 |
-|  1070  | Power BI  | [Virtual network data gateway doesn't start certain regions](./known-issue-1070-virtual-network-data-gateway-not-start-certain-regions.md) | March 21, 2025 | Fixed: March 21, 2025 |
-|  968  | Power BI  | [Export data option is disabled for Q&A visual in the service](./known-issue-968-export-data-option-disabled-qa-visual.md) | December 10, 2024 | Fixed: March 21, 2025 |
-|  938  | Power BI | [Line chart value-axis zoom sliders don't work with markers enabled](./known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md) | November 20, 2024 | Fixed: March 21, 2025 |
-|  903  | Data Warehouse | [Data warehouse data preview might fail if multiple data warehouse items](./known-issue-903-warehouse-preview-fail-multiple-warehouse.md) | October 28, 2024 | Fixed: March 21, 2025 |
-|  895  | OneLake | [Dataverse shortcut creation and read fails when organization is moved](./known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md) | October 23, 2024 | Fixed: March 21, 2025 |
-|  891  | Data Warehouse | [Data warehouse tables aren't accessible or updatable](./known-issue-891-warehouse-tables-not-accessible-updatable.md) | October 17, 2024 | Fixed: March 21, 2025 |
-|  872  | Data Warehouse | [Data warehouses don't show button friendly names](./known-issue-872-data-warehouses-not-show-button-friendly-names.md) | October 3, 2024 | Fixed: March 21, 2025 |
-|  844  | Power BI | [Intermittent refresh failure through on-premises data gateway](./known-issue-844-intermittent-refresh-failure-gateway.md) | September 25, 2024 | Removed: March 21, 2025 |
-|  842  | Data Warehouse | [Data warehouse exports using deployment pipelines or git fail](./known-issue-842-warehouse-exports-pipelines-fail.md) | September 23, 2024 | Fixed: March 21, 2025 |
-|  810  | Data Warehouse | [Inserting nulls into Data Warehouse tables fail with incorrect error message](./known-issue-810-inserting-nulls-tables-fail-incorrect-error.md) | August 16, 2024 | Fixed: March 21, 2025 |
 
 ## Related content
 
