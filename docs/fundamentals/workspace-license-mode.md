@@ -10,26 +10,40 @@ ms.date: 04/29/2025
 ---
 # Workspace license modes
 
-Upon creation, workspaces are assigned to a capacity. Later, they can be reassigned to a different capacity. The workspace license type dictates what kind of capacity the workspace can be hosted on. User capabilities in the workspace are determined by the workspace license mode.
-
-This article describes workspace license modes, how they are related to capacity assignment, and how the license mode and capacity assignment impact workspace migration to other regions and what items the workspace can include.
+Workspaces are created in, and can be assigned to Microsoft Fabric capacities. Workspace license modes dictate what kinds of capacity the workspace can be hosted in. User capabilities in the workspace are determined by the workspace license mode.
 
 ## Overview of licenses and capacities
 
-Broadly, there are two types of licenses: per user licenses and capacity licenses.
+There are two types of licenses: [per user licenses and capacity licenses](/power-bi/enterprise/service-admin-licensing-organization#fabric-licenses).
 
-* Per user licenses allow users to work in Fabric. The options are *Fabric* (Free), *Pro*, and *Premium Per User* (PPU). Per user licenses, allow users to work in the Power BI service with a system reserved capacity.
-•	Capacity license - An organizational license that provides a pool of resources for Fabric operations. Capacity licenses are divided into stock keeping units (SKUs). Each SKU provides a different number of capacity units (CUs) which are used to calculate the capacity's compute power. Fabric capacities are available for purchase and for trial.
+* Per user license: Per user licenses allow users to work in Fabric. The options are Fabric (Free), Pro, and Premium Per User (PPU). Per user licenses allow users to work in the Power BI service with a system reserved capacity.
 
-There are different capacity types in Fabric
-•	Power BI Premium - A capacity that was bought as part of a Power BI Premium subscription. These capacities use P SKUs.
-Note: Power BI capacities are transitioning to Fabric. For more information, see Power BI Premium transition to Microsoft Fabric.
-•	Power BI Embedded - A capacity that was bought as part of a Power BI Embedded subscription. These capacities use A or EM SKUs.
-•	Trial - A Microsoft Fabric trial capacity. These capacities use Trial SKUs.
-•	Fabric capacity - A Microsoft Fabric capacity. These capacities use F SKUs
-Configure license type and assign capacity in workspace settings
+* Capacity license: An organizational license that provides a pool of resources for Fabric operations. Capacity licenses are divided into stock keeping units (SKUs). Each SKU provides a different number of capacity units (CUs), which are used to calculate the capacity's compute power. Fabric capacities are available for purchase and for trial.
 
-To Configure a license type and assign a new capacity to the workspace, you can go to Workspace settings -> License info. Clicking on Edit , you can see a list of available licenses types 
+There are several different [capacity](../admin/capacity-settings.md?tabs=power-bi-premium#view-your-capacity) types in Fabric:
 
+* Power BI Premium: A capacity that was bought as part of a Power BI Premium subscription. These capacities use P SKUs.
+
+    > [!NOTE]
+    > Power BI capacities are transitioning to Fabric. For more information, see [Power BI Premium transition to Microsoft Fabric](/power-bi/enterprise/service-premium-faq#power-bi-premium-transition-to-microsoft-fabric).
+
+* Power BI Embedded: A capacity that was bought as part of a Power BI Embedded subscription. These capacities use A or EM SKUs.
+
+* Trial: A Microsoft Fabric trial capacity. These capacities use Trial SKUs.
+
+* Fabric capacity: A Microsoft Fabric capacity. These capacities use F SKUs
+
+## Configure license mode and assign capacity in workspace settings
+
+To configure a license mode and assign a new capacity to the workspace, open the workspace settings and choose **License info**. You'll see information about the current license.
+
+1. Select **Edit**. The list of available licenses modes displays.
+
+1. Select the desired license mode and specify the capacity the the workspace.
+
+    > [!NOTE]
+    > you can assign capacity only for capacity license types. The system automatically reserves shared capacity for per-user licenses.
 
 ## Related content
+
+* [Fabric licenses](/power-bi/enterprise/service-admin-licensing-organization#fabric-licenses)
