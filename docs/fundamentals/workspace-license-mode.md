@@ -42,11 +42,11 @@ To configure a license mode and assign a new capacity to the workspace, open the
 1. Select the desired license mode and specify the capacity the the workspace.
 
     > [!NOTE]
-    > you can assign capacity only for capacity license types. The system automatically reserves shared capacity for per-user licenses.
+    > You can assign capacity only for capacity license types. The system automatically reserves shared capacity for per-user licenses.
 
 ## Moving a workspace from one capacity to another
 
-When transferring a workspace between capacities with different license types, required actions you must take and potential capability downgrades are detailed in the following table.
+The following table details the actions you must take before transferring a workspace between capacities with different license types, as well as the potential capability downgrades that can result from the transfer.
 
 | License type \ Move to | Pro | Premium per-user | Embedded | Fabric capacity type | Trial |
 |--|--|--|--|--|--|
