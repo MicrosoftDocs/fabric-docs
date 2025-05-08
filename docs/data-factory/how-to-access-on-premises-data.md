@@ -121,4 +121,4 @@ Now you've created and ran a pipeline to load data from an on-premises data sour
 
 - [Connector overview](connector-overview.md)
 - [On-premises data gateway considerations for output destinations](gateway-considerations-output-destinations.md)
-- [Known issues in Fabric - including the on-premises data gateway](fabric-known-issues.md)
+- [Known issues in Fabric - including the on-premises data gateway](../known-issues/fabric-known-issues.md)
