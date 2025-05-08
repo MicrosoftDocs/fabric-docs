@@ -17,7 +17,7 @@ ms.date: 05/06/2025
 1. In the **Connection settings** section, enter **Bootstrap Server**. Navigate to your Confluent Cloud for Apache Kafka home page, select **Cluster Settings**, and copy the address to your Bootstrap Server.      
 1. In the **Connection credentials** section, If you have an existing connection to the Confluent Cloud for Apache Kafka cluster, select it from the drop-down list for **Connection**. Otherwise, follow these steps: 
     1. For **Connection name**, enter a name for the connection. 
-    1. For **Authentication kind**, confirm that **Confluent Cloud Key** is selected. 
+    1. For **Authentication kind**, confirm that **API Key** is selected. 
     1. For **API Key** and **API Key Secret**: 
         1. Navigate to your Confluent Cloud.
         1. Select **API Keys** on the side menu. 
