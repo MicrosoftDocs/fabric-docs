@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 05/05/2025
+ms.date: 05/08/2025
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -26,7 +26,7 @@ To get data from a new eventstream, see [Get data from a new eventstream](event-
 * A [KQL database](create-database.md) with editing permissions
 * An [eventstream](event-streams/create-manage-an-eventstream.md) with a data source
 
-## Source
+## Step 1: Source
 
 To get data from an eventstream, you need to select the eventstream as your data source. You can select an existing eventstream in the following ways:
 
@@ -36,7 +36,7 @@ On the ribbon of your KQL database, either:
 
 * From the **Get Data** dropdown menu, select **Real-Time data hub**, and then select a derived eventstream from the list.
 
-## Configure
+## Step 2: Configure
 
 When configuring get data from a default eventstream, you need to specify the eventstream and stream to use. When configuring get data from the Real-Time hub's list of derived streams, the settings are automatically populated.
 
@@ -81,9 +81,7 @@ When configuring get data from a default eventstream, you need to specify the ev
 
 ---
 
-[!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
-
-## Inspect
+## Step 3: Inspect
 
 The **Inspect** tab opens with a preview of the data.
 
@@ -122,6 +120,8 @@ Optionally:
 In the **Summary** window, all the steps are marked with green check marks when data ingestion finishes successfully. You can select a card to explore the data, delete the ingested data, or create a dashboard with key metrics. Select **Close** to close the window.
 
 :::image type="content" source="media/get-data-eventstream/summary.png" alt-text="Screenshot of summary page with successful ingestion completed." lightbox="media/get-data-eventstream/summary.png":::
+
+[!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
 
 ## Related content
 
