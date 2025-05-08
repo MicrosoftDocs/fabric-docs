@@ -176,27 +176,27 @@ Workspaces and the data they contain reside on capacities, and can be moved arou
 
 Moving workspaces from one capacity to another has the following restrictions:
 
-* Only [migratable items](#list-of-migratable-item-types) can move between regions. If you're reassigning a workspace to a capacity located in a different region, remove all non-migratable items first, otherwise reassignment will fail. The migratable items are:
+* Only [migratable items](#list-of-migratable-item-types) can move between regions. If you're reassigning a workspace to a capacity located in a different region, remove all non-migratable items first, otherwise reassignment will fail.
 
-* Workspaces that contain any items other than [Power BI items](#list-of-power-bi-item-types) can't move from Premium or Fabric license mode to Pro or Premium Per User license mode. If you're changing a workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, remove all non-Power BI items first, otherwise the change will fail. The Power items are:
+* Workspaces that contain any items other than [Power BI items](#list-of-power-bi-item-types) can't move from Premium or Fabric license mode to Pro or Premium Per User license mode. If you're changing a workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, remove all non-Power BI items first, otherwise the change will fail.
 
 * When you move a workspace, all jobs related to items in the workspace get cancelled.
 
 This means the following:
 
+* **Moving a workspace from one capacity to a capacity in a different region**
+
+    If the workspace contains only [migratable items](#list-of-migratable-item-types), moving the workspace to another capacity in a different region is supported.
+
+    If you want to move a workspace that contains non-migratable items, you must remove the non-migratable items first.  After the workspace is migrated to a different region, you can create new items of the non-migratable type. It can take up to an hour before you can do so.
+
 * **Moving a workspace from one capacity to another within the same region**
 
     If the workspace cotains any non Power BI items (such as lakehouses or notebooks), you can only move it from one Premium or Fabric capacity to another Premium or Fabric capacity. If you want to move the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, you must remove all the non Power BI items first.
 
-    If the workspace contains only Power BI items, moving the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode is supported.  
+    If the workspace contains only [Power BI items](#list-of-power-bi-item-types), moving the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode is supported.  
 
-* **Moving a workspace from one capacity to a capacity in a different region**
-
-    If the workspace contains only migratable items, then moving the workspace to another capacity in a different region is supported.
-
-    If you want to move a workspace that contains non-migratable items, you must remove the non-migratable items first.  After the workspace is migrated to a different region, you can create new items of the non-migratable type. It can take up to an hour before you can do so.
-
-### List of migratable item types
+## List of migratable item types
 
 The following items types can move between regions.
 
@@ -211,7 +211,7 @@ The following items types can move between regions.
 
 All other item types are non-migratable, and can't move between regions.
 
-### List of Power BI item types
+## List of Power BI item types
 
 The following item types are considered as Power BI items.
 
