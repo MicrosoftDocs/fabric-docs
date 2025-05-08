@@ -4,7 +4,7 @@ description: A known issue is posted where a pipeline using XML format copy gets
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/24/2024
+ms.date: 05/08/2025
 ms.custom: known-issue-726
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-726
 
 When using a pipeline to copy XML formatted data to a tabular data source, the pipeline gets stuck. The issue most often appears when XML single records contain many different array type properties.
 
-**Status:** Open
+**Status:** Fixed: May 8, 2025
 
 **Product Experience:** Data Factory
 
