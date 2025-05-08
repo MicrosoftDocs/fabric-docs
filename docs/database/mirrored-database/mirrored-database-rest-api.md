@@ -3,7 +3,8 @@ title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
-ms.date: 04/29/2025
+ms.reviewer: wiassaf
+ms.date: 05/08/2025
 ms.topic: conceptual
 ---
 
@@ -161,6 +162,56 @@ If you want to replicate selective tables instead of all the tables in the speci
     "properties": {
         "source": {
             "type": "CosmosDb",
+            "typeProperties": {
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "database": "xxxx"
+            }
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta"
+            }
+        }
+    }
+}
+```
+
+### JSON definition example of SQL Server 2025 mirrored database
+
+This sample applies only to Fabric Mirroring for SQL Server 2025.
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "SqlServer2025",
+            "typeProperties": {
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "database": "xxxx"
+            }
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta"
+            }
+        }
+    }
+}
+```
+
+### JSON definition example of SQL Server 2016-2022 mirrored database
+
+This sample applies to Fabric Mirroring for SQL Server 2016-2022.
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "MSSQL",
             "typeProperties": {
                 "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
                 "database": "xxxx"

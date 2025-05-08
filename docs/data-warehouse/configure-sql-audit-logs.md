@@ -30,7 +30,7 @@ In the preview of Microsoft Fabric, enabling SQL Audit Logs requires using the A
 1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge or Google Chrome).
 1. Press **F12** to open Developer Tools. 
 1. Select the **Console** tab. If necessary, select **Expand Quick View** to reveal the console prompt `>`.
-1. Type the command `powerBIAccessToken` and press **Enter**. Copy the resulting large block of string contents. In Windows, right-click on the text and select **Copy String contents**.
+1. Type the command `powerBIAccessToken` and press **Enter**. Right-click on the large unique string returned in the console and select **Copy string contents**.
 1. Paste it in place of `<bearer token>` in the following scripts.
 
 ### [PowerShell](#tab/powershell)
@@ -70,7 +70,7 @@ Once you have obtained the Power BI bearer token, you can send a PATCH request u
 
     - Replace `<workspaceId>` and `<warehouseId>` with the corresponding Fabric workspace and warehouse IDs. To find these values, visit your warehouse in the Fabric portal.
         - `<workspaceID>`: Find the workspace GUID in the URL after the `/groups/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse. For example, `11aaa111-a11a-1111-1aaa-aa111111aaa`. Don't include the `/` characters. 
-        - `<warehouseID>`: Find the warehouse GUID in the URL after the `/warehouses/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse. For example, `11aaa111-a11a-1111-1aaa-aa111111aaa`. Don't include the `/` characters. If your `/groups/` URL is followed by `/me/`, you're using the default workspace, and currently SQL Audit for Fabric Data Warehouse isn't supported in the default workspace. 
+        - `<warehouseID>`: Find the warehouse GUID in the URL after the `/warehouses/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse. For example, `11aaa111-a11a-1111-1aaa-aa111111aaa`. Don't include the `/` characters.
     - Replace `<BEARER_TOKEN>` with your [bearer token](#obtain-your-power-bi-bearer-token).
     - Setting `state` to "Enabled" activates auditing (use "Disabled" to turn it off).
     - The `retentionDays` parameter is set to `0` by default for unlimited retention.
