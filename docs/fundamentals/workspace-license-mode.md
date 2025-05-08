@@ -12,6 +12,12 @@ ms.date: 05/07/2025
 
 Workspaces are created in, and can be assigned to Microsoft Fabric capacities. Workspace license modes dictate what kinds of capacity the workspace can be hosted in. User capabilities in the workspace are determined by the workspace license mode.
 
+target audience 
+people who want to change workspace license type
+people who want to move a workspace to a capacity in another region
+people who are concerned about the process of migrating from P SKUs to F SKUs. 
+people who are concerned about the deprecation of Power BI Premium capacity and the move to Fabric capacity. 
+
 ## Overview of licenses and capacities
 
 There are two types of licenses: [per user licenses and capacity licenses](/power-bi/enterprise/service-admin-licensing-organization#fabric-licenses).
@@ -50,7 +56,7 @@ The following table details the actions you must take before transferring a work
 
 | License type \ Move to | Pro | Premium per-user | Embedded | Fabric capacity | Trial |
 |--|--|--|--|--|--|
-| **Pro** | N/A | Move to a system reserved capacity | You need to specify the capacity | You need to specify the capacity | You need to specify the capacity |
+| **Pro** | N/A | Move to a system reserved capacity [QUESTION: Can moving to a system reserved capacity entail a region change?] | You need to specify the capacity [Question: I assume there is no issue with moving to a capacity in a different region here, because only Power BI items are functional in Pro? But could there be non functional, left over Fabric items? What would happen to them? Also, what about MetricSets, Exploration, and Semantic Models (Large). Would they block migration to another region?] | You need to specify the capacity [Question: I assume there is no issue with moving to a capacity in a different region here, because only Power BI items are functional in Pro? But could there be non functional, left over Fabric items? What would happen to them? Also, what about MetricSets, Exploration, and Semantic Models (Large). Would they block migration to another region?]| You need to specify the capacity [Question: I assume there is no issue with moving to a capacity in a different region here, because only Power BI items are functional in Pro? But could there be non functional, left over Fabric items? What would happen to them? Also, what about MetricSets, Exploration, and Semantic Models (Large). Would they block migration to another region?]|
 | **Premium per-user** | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | N/A | You need to specify the capacity | You need to specify the capacity | You need to specify the capacity |
 | **Embedded** | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | No downgrade | You need to specify the capacity | You need to specify the capacity | You need to specify the capacity |
 | **Fabric capacity** | You need to remove the Fabric items first and can only move the workspace within the same region | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | You need to remove the Fabric items first and can only move the workspace within the same region | You can only move the workspace to a capacity within the same region | You can only move the workspace to a capacity within the same region |

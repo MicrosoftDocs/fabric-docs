@@ -10,9 +10,21 @@ ms.date: 05/08/2025
 ---
 # Moving workspaces to other capacities
 
-Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities via the workspace license mode. Such movement might be between capacities in different regions.
+Workspace migration refers to reassigning a workspace to a different capacity. When you reassign a workspace, you first select a license mode for the workspace, and then you choose between the capacities where that license mode is available. Some of those capacities might be in the same region as the currently assigned capacity, while others might reside in other regions.
 
-Reassigning a workspace to a different capactity can impact what items you can have in the workspace, due to the license mode of the capacity.
+When you move a workspace, all jobs related to items in the workspace get cancelled.
+
+The ability to change the license mode of a workspace depends on the types of items in the workspace.
+Workspaces with Fabric items (such as lakehouses and notebooks) can't move from Premium or Fabric license mode to Pro or Premium Per User license mode.
+
+
+The ability to reassign the workspace to a capacity in another region also depends on the types of items in the workspace - only migratable items can be in the workspace. See the table in XXX to see which types of items can be migrated. If the workspace contains non-migratable items, they must be removed before you can reassign the workspace to the capacity in the other region.
+
+
+
+When you reassignReassigning a workspace to a different capacity can have implications for the items in the workspaceWorkspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities via the workspace license mode. Such movement might be between capacities in different regions.
+
+When you reassign a workspace, you first select a license mode, and then choose between the capacities where that license mode is avaiable. a capacity where that license mode is availReassigning a workspace to a different capactity can impact what items you can have in the workspace, due to the license mode of the capacity.
 Detail:
 
 Reassigning a workspace to a capacity that resides in a different region.

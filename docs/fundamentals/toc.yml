@@ -55,8 +55,8 @@ items:
     href: roles-workspaces.md
   - name: Workspace license mode
     href: workspace-license-mode.md
-  - name: Moving a workspace to a different capacity
-    href: workspace-migration-capacity.md   
+  - name: Workspace migration
+    href: workspace-migration.md   
   - name: Create items in workspaces
     href: create-items-in-workspaces.md
   - name: Create folders in workspaces
