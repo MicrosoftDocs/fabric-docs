@@ -111,7 +111,7 @@ Optionally:
 
 **Tabular (CSV, TSV, PSV)**:
 
-* If you're ingesting tabular formats in an *existing table*, you can select **Table_mapping** > **Use existing mappping**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
+* If you're ingesting tabular formats in an *existing table*, you can select **Table_mapping** > **Use existing mapping**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
 
 **JSON**:
 
