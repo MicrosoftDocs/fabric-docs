@@ -196,7 +196,7 @@ This means the following:
 
     If the workspace contains only [Power BI items](#list-of-power-bi-item-types), moving the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode is supported.  
 
-## List of migratable item types
+### List of migratable item types
 
 The following items types can move between regions.
 
@@ -211,7 +211,7 @@ The following items types can move between regions.
 
 All other item types are non-migratable, and can't move between regions.
 
-## List of Power BI item types
+### List of Power BI item types
 
 The following item types are considered as Power BI items.
 
