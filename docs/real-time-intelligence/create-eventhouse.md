@@ -32,7 +32,7 @@ In this article, you learn how to create an eventhouse, add new databases to an 
     > [!NOTE]
     > The eventhouse name can contain alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
-1. The [system overview](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse) opens in the main view area of the newly created eventhouse.
+1. The [system overview](manage-monitor-eventhouse.md#view-system-overview) opens in the main view area of the newly created eventhouse.
 
     :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of system overview in the main view area." lightbox="media/eventhouse/choose-eventhouse.png":::
 
