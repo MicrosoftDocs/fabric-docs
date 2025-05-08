@@ -32,7 +32,7 @@ To work with Fabric Git APIs, you need:
 
 * A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
 
-* If you're using a GitHub service principal, it needs the same permissions as a user principal.
+* If you're using a service principal, it needs the same permissions as a user principal.
 
 You can use the REST APIs without [PowerShell](/powershell/scripting/overview), but the scripts in this article use PowerShell. To run the scripts, take the following steps:
 
@@ -71,7 +71,7 @@ This section describes the steps involved in connecting and updating a workspace
 
 For the complete script, see [Connect and update from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1).
 
-1. **Connect to Azure account and get access token** - Sign in to Fabric as a user (or, if using GitHub, a user or a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to connect.
+1. **Connect to Azure account and get access token** - Sign in to Fabric as a user or a service principal. Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to connect.
 To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command, and [convert the secure string token to plain text](/powershell/azure/faq#how-can-i-convert-a-securestring-to-plain-text-in-powershell-)
 
    Your code should look something like this:
@@ -106,7 +106,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
      }
      ```
 
-   #### [Service principal (GitHub only)](#tab/service-principal)
+   #### [Service principal](#tab/service-principal)
 
      ```powershell
      $global:resourceUrl = "https://api.fabric.microsoft.com"
@@ -146,7 +146,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
 1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
 
-   ### [Azure DevOps (User principal)](#tab/ADO)
+   ### [Azure DevOps](#tab/ADO)
 
     ```powershell
     $global:baseUrl = "https://api.fabric.microsoft.com/v1"
@@ -179,7 +179,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
 
-   ### [GitHub (User or service principal)](#tab/github)
+   ### [GitHub](#tab/github)
 
     ```powershell
     $global:baseUrl = "https://api.fabric.microsoft.com/v1"
@@ -442,7 +442,6 @@ Copy the ID of the connection you want and use it in the [Git - Connect](/rest/a
 ## Considerations and limitations
 
 * Git integration using APIs is subject to the same [limitations](./git-integration-process.md#considerations-and-limitations) as the Git integration user interface.
-* Service principal is only supported for GitHub.
 * Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git *diff* after each refresh.
 
 ## Related content
