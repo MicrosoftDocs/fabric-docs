@@ -8,7 +8,7 @@ ms.reviewer: ''
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 05/06/2025
+ms.date: 05/08/2025
 LocalizationGroup: Administration
 ---
 
@@ -28,6 +28,15 @@ Users in the organization can embed Power BI dashboards and reports in software 
 To learn more, see [What is Power BI embedded analytics?](/power-bi/developer/embedded/embedded-analytics-power-bi).
 
 Learn about the [Embed for your customers](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers) method to build an app that uses non-interactive authentication against Power BI.
+
+## Service principals can use Fabric APIs
+
+>[!NOTE]
+>This setting is being rolled out and might not be available in your tenant. Once removed, these settings will replace it:
+>* [Service principals can create workspaces, connections, and deployment pipelines](#service-principals-can-create-workspaces-connections-and-deployment-pipelines)
+>* [Service principals can call Fabric public APIs](#service-principals-can-call-fabric-public-apis)
+
+Web apps registered in Microsoft Entra ID use an assigned [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Power BI APIs without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group.
 
 ## Service principals can create workspaces, connections, and deployment pipelines
 
