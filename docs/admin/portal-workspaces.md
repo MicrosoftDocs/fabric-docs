@@ -222,6 +222,35 @@ This means the following:
 
     If you want to move a workspace that contains Fabric items, you must delete all the Fabric items first.  After the workspace is migrated to a different region, it can take up to an hour before you can create new Fabric items.
 
+### List of migratable item types
+
+The following items types can move between regions.
+
+* Report
+* Semantic Model (Small)
+* Dashboard
+* Dataflow Gen 1
+* Paginated Report
+* Metric
+* Datamart
+* Scorecard
+
+### List of Power BI item types
+
+The following item types are considered as Power BI items.
+
+* Report
+* Semantic Model (Small)
+* Semantic Model (Large)
+* Dashboard
+* Organization App
+* Dataflow Gen 1
+* Paginated Report
+* Metric
+* Exploration
+* Datamart
+* Scorecard
+
 ## Related content
 
 * [About the admin portal](admin-center.md)
