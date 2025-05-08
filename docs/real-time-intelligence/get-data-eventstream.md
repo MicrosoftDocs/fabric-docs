@@ -81,6 +81,8 @@ When configuring get data from a default eventstream, you need to specify the ev
 
 ---
 
+[!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
+
 ## Step 3: Inspect
 
 The **Inspect** tab opens with a preview of the data.
@@ -120,8 +122,6 @@ Optionally:
 In the **Summary** window, all the steps are marked as completed when data ingestion finishes successfully. You can select a card to explore the data, delete the ingested data, or create a dashboard with key metrics. Select **Close** to close the window.
 
 :::image type="content" source="media/get-data-eventstream/summary.png" alt-text="Screenshot of summary page with successful ingestion completed." lightbox="media/get-data-eventstream/summary.png":::
-
-[!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
 
 ## Related content
 
