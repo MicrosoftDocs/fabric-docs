@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 01/27/2025
+ms.date: 05/08/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -46,7 +46,7 @@ The feature availability also depends on Fabric regions. For a complete list of 
 
 ## Network and connectivity security
 
-- The source SQL managed instance needs to enable [public endpoint](/azure/azure-sql/managed-instance/public-endpoint-configure?view=azuresql&tabs=azure-portal&preserve-view=true) and allow Azure services to connect to it.
+- If your Azure SQL Managed Instance is not publicly accessible, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
 - The System Assigned Managed Identity (SAMI) of the Azure SQL Managed Instance needs to be enabled and must be the primary identity.
 - The Azure SQL Managed Instance service principal name (SPN) contributor permissions shouldn't be removed from the Fabric mirrored database item.
 - User Assigned Managed Identity (UAMI) isn't supported.
@@ -73,11 +73,26 @@ The feature availability also depends on Fabric regions. For a complete list of 
 - The following table-level data definition language (DDL) operations aren't allowed on source tables when enabled for SQL Managed Instance mirroring to Microsoft Fabric.
   - Switch/Split/Merge partition
   - Alter primary key  
-  - Truncate table
 - When there's DDL change, a complete data snapshot is restarted for the changed table, and entire table data is reseeded into Fabric OneLake.
 - Currently, a table cannot be mirrored if it has the **json** <!-- or **vector** --> data type.
   - Currently, you cannot ALTER a column to the <!--**vector** or--> **json** data type when a table is mirrored.
 - Views and Materialized views aren't supported for mirroring.
+- Starting in May 2025, a table can be mirrored even if it doesn't have a primary key. 
+    - Tables without primary keys prior to May 2025 weren't eligible to be mirrored. After May 2025, existing tables without primary keys won't automatically be added to mirroring, even if you had selected **Automatically mirror future tables**. 
+        - To start mirroring tables without primary keys when you have selected **Automatically mirror future tables**: 
+            1. Stop replication and start replication, which will reseed all tables, and detect the new tables eligible for mirroring. This is the recommended step.
+            1. As a workaround, create a new table in the source database. This triggers an inventory of tables for the source database and detects the tables that weren't mirrored previously, including those without primary keys. For example, the following script creates a table named `test_20250401`, then drops it after the `test_20250401` table is mirrored. This script assumes that a table named `dbo.test_20250401` does not already exist.
+               ```sql
+               --This script assumes that a table named dbo.test_20250401 does not already exist.
+               CREATE TABLE dbo.test (ID int not null);
+               ```
+
+               After it shows up in the mirrored tables list, you should see tables without primary keys as well. Then, you can drop the `test` table:
+
+               ```sql
+               DROP TABLE dbo.test_20250401;
+               ```
+        - To start mirroring tables without primary keys when you have not selected **Automatically mirror future tables**, add the tables to the list of selected tables in mirroring settings.
 
 ## Column level
 

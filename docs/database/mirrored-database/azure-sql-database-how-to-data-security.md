@@ -4,7 +4,7 @@ description: Learn about how to secure data in mirrored databases from Azure SQL
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala
-ms.date: 11/19/2024
+ms.date: 05/08/2025
 ms.topic: how-to
 ms.custom:
 ---
@@ -15,6 +15,7 @@ This guide helps you establish data security in your mirrored Azure SQL Database
 
 ## Security requirements
 
+1. If your Azure SQL Database is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure SQL server via [a private endpoint](/azure/azure-sql/database/private-endpoint-overview?view=azuresql-db&preserve-view=true) or is allowed by the firewall rule.
 1. The System Assigned Managed Identity (SAMI) of your Azure SQL logical server needs to be enabled, and must be the primary identity. To configure, go to your logical SQL Server in the Azure portal. Under **Security** the resource menu, select **Identity**. Under **System assigned managed identity**, select **Status** to **On**.
    - After enabling the SAMI, if the SAMI is disabled or removed, the mirroring of Azure SQL Database to Fabric OneLake will fail.
    - After enabling the SAMI, if you add a user assigned managed identity (UAMI), it will become the primary identity, replacing the SAMI as primary. This will cause replication to fail. To resolve, remove the UAMI.
