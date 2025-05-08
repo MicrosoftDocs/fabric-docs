@@ -18,7 +18,7 @@ When using a pipeline to copy XML formatted data to a tabular data source, the p
 
 ## Symptoms
 
-The copy activity doesn't fail; it runs endlessly until it hits a timeout or is canceled. Some XML files copy without any issue while some files are causing the issue.
+The copy activity doesn't fail; it runs endlessly until it hits a time-out or is canceled. Some XML files copy without any issue while some files are causing the issue.
 
 ## Solutions and workarounds
 
