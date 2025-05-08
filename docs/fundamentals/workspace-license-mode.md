@@ -62,8 +62,26 @@ The following table details the actions you must take before transferring a work
 | **Fabric capacity** | You need to remove the Fabric items first and can only move the workspace within the same region | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | You need to remove the Fabric items first and can only move the workspace within the same region | You can only move the workspace to a capacity within the same region | You can only move the workspace to a capacity within the same region |
 | **Trial** | You need to remove the Fabric items first and can only move the workspace within the same region | All content in this workspace will only be available to users who have a Power BI Pro license and will be migrated back to your home region. Any content using Enterprise Gateways may need to be updated to enable data refresh after migration. Usage and performance logs will no longer flow to Azure Log Analytics and no history will be saved while not on Premium. | You need to remove the Fabric items first and can only move the workspace within the same region | You can only move the workspace to a capacity within the same region | You can only move the workspace to a capacity within the same region |
 
-> [!NOTE]
-> Moving workspace capacities across regions isn't currently supported. You can only move a workspace to a capacity in the same region as the one it currently resides in. And the Power BI premium transition to Fabric  Power BI Premium FAQ - Power BI | Microsoft Learn???
+## Migratable items
+
+The migratable items are most Power BI items. Non-migratable Power BI items, and all other item types, are not migratable, and must be removed before a workspace can be reassiged to a capacity in a different region.
+
+The following table lists all the Power BI items and indicates which can be migrated and which cannot.
+
+| Artifact               | Migratable |
+|------------------------|------------|
+| Report                | Yes        |
+| Semantic Model (Small)| Yes        |
+| Dashboard             | Yes        |
+| Dataflow Gen 1        | Yes        |
+| Paginated Report      | Yes        |
+| Metric                | Yes        |
+| Datamart              | Yes        |
+| Scorecard             | Yes        |
+| Semantic Model (Large)| No         |
+| Organization App      | No         |
+| Exploration           | No         |
+
 
 ## Related content
 

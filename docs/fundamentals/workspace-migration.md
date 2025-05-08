@@ -40,15 +40,15 @@ The following table lists all the Power BI items and indicates which can be migr
 |------------------------|------------|
 | Report                | Yes        |
 | Semantic Model (Small)| Yes        |
-| Semantic Model (Large)| No         |
 | Dashboard             | Yes        |
-| Organization App      | No         |
 | Dataflow Gen 1        | Yes        |
 | Paginated Report      | Yes        |
 | Metric                | Yes        |
-| Exploration           | No         |
 | Datamart              | Yes        |
 | Scorecard             | Yes        |
+| Semantic Model (Large)| No         |
+| Organization App      | No         |
+| Exploration           | No         |
 
 
 
