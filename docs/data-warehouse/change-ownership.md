@@ -84,6 +84,20 @@ Connect-PowerBIServiceAccount
 $url = 'groups/' + $workspaceID + '/datawarehouses/' + $warehouseid + '/takeover'
 Invoke-PowerBIRestMethod -Url $url -Method Post -Body ""
 ```
+### Changing Ownership via UI
+
+In addition to using the Powershell Commands for ownership changes, Microsoft Fabric also provides a **UI-based alternative** through the settings menu of the artifact. You can change the ownership to yourself (the user currently in context) by selecting the **Take Over** option directly in the user interface.
+
+> [!IMPORTANT]
+ > The **Take Over** option currently **only supports assigning ownership to the user in context** (i.e., the currently signed-in user). It is **not possible to set a Service Principal Name (SPN) as the owner** via the UI. If you require an SPN to take ownership, use the Powershell method outlined earlier.
+
+#### How to Take Over Ownership via UI
+
+To take ownership via the UI:
+1. Navigate to the artifact (e.g., the warehouse or lakehouse).
+2. Open the **Settings** menu.
+3. Click on the **Take Over** button.
+
 
 ## Related content
 
