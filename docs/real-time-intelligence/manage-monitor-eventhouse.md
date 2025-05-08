@@ -37,7 +37,7 @@ A. **Eventhouse ribbon**: The [ribbon](#eventhouse-ribbon) provides quick access
 
 B. **Explorer pane**: The [explorer pane](#explorer-pane) provides an intuitive interface for navigating between Eventhouse views and working with databases.
 
-C. **Main view area**: The main view area displays the [system overview details](#view-system-overview-details-for-an-eventhouse) for the eventhouse.
+C. **Main view area**: The main view area displays the [system overview details](#view-system-overview) for the eventhouse.
 
 D. **Details area**: The [details area](#view-eventhouse-details) provides additional information about the eventhouse.
 
@@ -74,7 +74,7 @@ In the details area, you can copy the following eventhouse URI values:
 | Ingestion URI | URI that is for use by connectors and APIs to ingest data. |
 | [Minimum consumption](#enable-minimum-consumption) | Minimum available capacity unit (CU) size for your eventhouse.|
 
-## View System overview
+## View system overview
 
 The system overview page provides a snapshot of the current state of the eventhouse.
 
@@ -128,9 +128,9 @@ The system overview page provides a snapshot of the current state of the eventho
 
 1. Optionally, select one of the tabs at the top of a card to filter its date by time range. These tabs allow you to filter by one hour (1H), one day (1D), one week (7D), one month (30D).
 
-## View all databases in an eventhouse
+## View databases overview
 
-The databases page provides a summary of all the databases in the eventhouse.
+The databases overview page provides a summary of all the databases in the eventhouse.
 
 1. From the **Eventhouse** explorer, select **Databases**.
 
@@ -146,9 +146,9 @@ The databases page provides a summary of all the databases in the eventhouse.
 
 1. To explore a specific database, select the name of this database from the list. For more information, see (manage-monitor-database.md).
 
-## View the eventhouse monitoring database
+## View monitoring database
 
-You can access the monitoring KQL database from the explorer pane. Eventhouse monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
+You can access the KQL database that monitors the Eventhouse explorer pane. Eventhouse monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
 
 > [!NOTE]
 >
