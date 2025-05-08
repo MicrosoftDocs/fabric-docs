@@ -4,7 +4,7 @@ description: A known issue is posted where tables aren't available to add into t
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 02/27/2024
+ms.date: 05/07/2025
 ms.custom: known-issue-643
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-643
 
 When you're working in a lakehouse, you can create and add tables to a new Power BI semantic model. You also can adjust the tables shown in the default semantic model associated with a lakehouse. In either case, you might run into a scenario where you don't see all available tables and can't add them to your semantic model.
 
-**Status:** Open
+**Status:** Fixed: May 7, 2025
 
 **Product Experience:** Data Engineering
 
