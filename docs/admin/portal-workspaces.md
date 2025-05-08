@@ -176,7 +176,7 @@ Workspaces and the data they contain reside on capacities, and can be moved arou
 
 Moving workspaces from one capacity to another has the following restrictions:
 
-* Only [migratable items](#migratable-items) can move between regions. If you're reassigning a workspace to a capacity located in a different region, remove all non-migratable items first, otherwise reassignment will fail. The migratable items are:
+* Only [migratable items](#list-of-migratable-item-types) can move between regions. If you're reassigning a workspace to a capacity located in a different region, remove all non-migratable items first, otherwise reassignment will fail. The migratable items are:
 
     * Report
     * Semantic Model (Small)
@@ -189,7 +189,7 @@ Moving workspaces from one capacity to another has the following restrictions:
 
     All other item types are non-migratable.
 
-* Workspaces that contain any items other than [Power BI items]() can't move from Premium or Fabric license mode to Pro or Premium Per User license mode. If you're changing a workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, remove all non-Power BI items first, otherwise the change will fail. The Power items are:
+* Workspaces that contain any items other than [Power BI items](#list-of-power-bi-item-types) can't move from Premium or Fabric license mode to Pro or Premium Per User license mode. If you're changing a workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, remove all non-Power BI items first, otherwise the change will fail. The Power items are:
 
     * Report
     * Semantic Model (Small)
