@@ -172,15 +172,41 @@ After the deleted workspace has been restored as an app workspace, it's just lik
 
 ## Moving data around
 
-Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities by choosing the workspace license mode. Such movement might be between capacities in different regions.
+Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities. Such movement might be to a capacity in the same region, or it might be to a capacity in a different region.
 
-Moving workspaces from one capacity to another, has the following restrictions:
+Moving workspaces from one capacity to another has the following restrictions:
+
+* Only [migratable items](#migratable-items) can move between regions. If you're reassigning a workspace to a capacity located in a different region, remove all non-migratable items first, otherwise reassignment will fail. The migratable items are:
+
+    * Report
+    * Semantic Model (Small)
+    * Dashboard
+    * Dataflow Gen 1
+    * Paginated Report
+    * Metric
+    * Datamart
+    * Scorecard
+
+    All other item types are non-migratable.
+
+* Workspaces that contain any items other than [Power BI items]() can't move from Premium or Fabric license mode to Pro or Premium Per User license mode. If you're changing a workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, remove all non-Power BI items first, otherwise the change will fail. The Power items are:
+
+    * Report
+    * Semantic Model (Small)
+    * Semantic Model (Large)
+    * Dashboard
+    * Organization App
+    * Dataflow Gen 1
+    * Paginated Report
+    * Metric
+    * Exploration
+    * Datamart
+    * Scorecard
+
+    Only workspaces that contain only these item types can move from Premium or Fabric license mode to Pro or Premium Per User license mode.
 
 * When you move a workspace, all jobs related to items in the workspace get cancelled.
 
-* Workspaces with Fabric items (such as lakehouses and notebooks) can't move from Premium or Fabric license mode to Pro or Premium Per User license mode.
-
-* Fabric items can't move between regions.
 
 This means the following:
 
