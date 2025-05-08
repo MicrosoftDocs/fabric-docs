@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 03/19/2025
 ---
 
-# Add Azure Event Grid Namespace source to an eventstream (Preview)
+# Add Azure Event Grid Namespace source to an eventstream (preview)
 This article shows you how to add an Azure Event Grid Namespace source to an eventstream. 
 
 ## Prerequisites
