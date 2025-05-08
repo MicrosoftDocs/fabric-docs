@@ -32,7 +32,7 @@ On the lower ribbon of your KQL database, either:
 
 * Select **Get Data** and then in the **Get data** window, select **Eventstream**.
 
-* From the **Get Data** drop down menu, under **Continuous**, select **Real-Time data hub** > **Existing Eventstream**.
+* From the **Get Data** dropdown menu, under **Continuous**, select **Real-Time data hub** > **Existing Eventstream**.
 
     [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
 

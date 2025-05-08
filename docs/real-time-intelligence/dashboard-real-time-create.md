@@ -61,7 +61,7 @@ Data sources are reusable references to a specific database in the same workspac
 
 1. In the **Create new data source** pane:
     1. Enter a **Data source name**.
-    1. Select a **Database** from the drop-down list.
+    1. Select a **Database** from the dropdown list.
 1. Select **Create**.
   
 ## Add tile
@@ -71,7 +71,7 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
 1. Select **Add tile** from the dashboard canvas or the top menu bar.
 
 1. In the **Query** pane,
-    1. Select the data source from the drop-down menu.
+    1. Select the data source from the dropdown menu.
     1. Type the query, and the select **Run**. For more information about generating queries that use parameters, see [Use parameters in your query](dashboard-parameters.md#use-parameters-in-your-query).
 
     1. Select **+ Add visual**.

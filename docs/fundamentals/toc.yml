@@ -203,6 +203,8 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Reenabling Azure SQL database mirroring fails
+      href: ../known-issues/known-issue-1123-reenabling-azure-sql-database-mirroring-fails.md
     - name: Power BI report selection doesn't work in Viva Goals
       href: ../known-issues/known-issue-1122-report-selection-not-work-viva-goals.md
     - name: Recommended tiles on the home page appear stretched for customer images
