@@ -115,7 +115,7 @@ Optionally:
 
 * To determine column division of JSON data, select **Nested levels**, from 1 to 100.
 
-## Summary
+## Step 4: Summary
 
 In the **Summary** window, all the steps are marked with green check marks when data ingestion finishes successfully. You can select a card to explore the data, delete the ingested data, or create a dashboard with key metrics. Select **Close** to close the window.
 
