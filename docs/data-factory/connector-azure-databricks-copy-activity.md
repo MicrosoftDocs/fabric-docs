@@ -111,7 +111,7 @@ If your destination data store and format meet the criteria described in this se
 
 #### Staged copy from Azure Databricks
 
-When your sink data store or format does not match the direct copy criteria, as mentioned in the last section, enable the built-in staged copy using an interim Azure storage instance. The staged copy feature also provides you better throughput. The service exports data from Azure Databricks into staging storage, then copies the data to sink, and finally cleans up your temporary data from the staging storage.
+When your sink data store or format does not match the direct copy criteria, as mentioned in the last section, enable the built-in staged copy using an interim Azure storage instance. The staged copy feature also provides you with better throughput. The service exports data from Azure Databricks into staging storage, then copies the data to sink, and finally cleans up your temporary data from the staging storage.
 
 To use this feature, create an [Azure Blob storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md) that refers to the storage account as the interim staging. Then specify the `enableStaging` and `stagingSettings` properties in the Copy activity.
 
@@ -162,7 +162,7 @@ If your source data store and format meet the criteria described in this section
 
 #### Staged copy to Azure Databricks
 
-When your source data store or format does not match the direct copy criteria, as mentioned in the last section, enable the built-in staged copy using an interim Azure storage instance. The staged copy feature also provides you better throughput. The service automatically converts the data to meet the data format requirements into staging storage, then load data into Azure Databricks from there. Finally, it cleans up your temporary data from the storage.
+When your source data store or format does not match the direct copy criteria, as mentioned in the last section, enable the built-in staged copy using an interim Azure storage instance. The staged copy feature also provides you with better throughput. The service automatically converts the data to meet the data format requirements into staging storage, then load data into Azure Databricks from there. Finally, it cleans up your temporary data from the storage.
 
 To use this feature, create an [Azure Blob storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md) that refers to the storage account as the interim staging. Then specify the `enableStaging` and `stagingSettings` properties in the Copy activity.
 
