@@ -88,6 +88,11 @@ We support connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or 
 
 [!INCLUDE [product-name](../includes/product-name.md)] also supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using a Java database connectivity (JDBC) driver.
 
+**Note:**
+The use of the Microsoft SQL Driver is deprecated due to compatibility issues.
+
+To ensure a seamless connection experience with Microsoft Fabric, please use the Microsoft SQL Azure Driver in DBeaver.
+
 When establishing connectivity via JDBC, check for the following dependencies:
 
 1. Add artifacts. Choose **Add Artifact** and add the following four dependencies, then select **Download/Update** to load all dependencies. For example:
@@ -103,7 +108,6 @@ When establishing connectivity via JDBC, check for the following dependencies:
        <groupId>com.microsoft.azure</groupId>
        <artifactId>msal4j</artifactId>
        <version>1.13.3</version>
-    
     </dependency>
     
     <dependency>
@@ -112,13 +116,13 @@ When establishing connectivity via JDBC, check for the following dependencies:
        <version>11.2.1.x86</version>
     </dependency>
     
-     <dependency>
+    <dependency>
        <groupId>com.microsoft.sqlserver</groupId>
        <artifactId>mssql-jdbc</artifactId>
        <version>12.1.0.jre11-preview</version>
     </dependency>
     
-     <dependency>
+    <dependency>
        <groupId>com.microsoft.aad</groupId>
        <artifactId>adal</artifactId>
        <version>4.2.2</version>
