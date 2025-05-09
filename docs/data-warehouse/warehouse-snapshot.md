@@ -15,7 +15,7 @@ ms.topic: conceptual
 A warehouse snapshot is a read-only representation of a warehouse item at a specific point in time, retained to up to 30 days. To get started, [create a warehouse snapshot](create-manage-warehouse-snapshot.md).
 
 > [!NOTE]
-> Warehouse snapshots are currently a [preview feature](../../fundamentals/preview.md).
+> Warehouse snapshots are currently a [preview feature](../fundamentals/preview.md).
 
 Warehouse snapshots can be seamlessly "rolled forward" on demand, allowing consumers to connect to the same snapshot or use a consistent warehouse connection string to access a past version of the data. When the snapshot timestamp is rolled forward, updates are applied immediately, as if in a single, atomic transaction. Warehouse snapshot ensures that data engineers can provide analytical users with a consistent dataset, even as real-time updates occur. Analysts can run `SELECT` queries based on the snapshot without any ETL interference.
 
