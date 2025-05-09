@@ -199,6 +199,16 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Failure to Save and Run Dataflow Gen2 dataflows deployed with Git integration
+      href: ../known-issues/known-issue-1128-failure-save-run-dataflow-gen2-deployed-git-integration.md
+    - name: Function queries cause failures in Dataflow Gen2 refresh
+      href: ../known-issues/known-issue-1126-function-queries-failures-dataflow-gen2-refresh.md
+    - name: Reenabling Azure SQL database mirroring fails
+      href: ../known-issues/known-issue-1123-reenabling-azure-sql-database-mirroring-fails.md
+    - name: Power BI report selection doesn't work in Viva Goals
+      href: ../known-issues/known-issue-1122-report-selection-not-work-viva-goals.md
+    - name: Recommended tiles on the home page appear stretched for customer images
+      href: ../known-issues/known-issue-1120-recommended-tiles-home-page-stretched-customer-images.md
     - name: Large semantic model storage format conversion stays in view mode
       href: ../known-issues/known-issue-1119-large-semantic-model-conversion-view-mode.md
     - name: SQL analytics endpoint queries return empty results

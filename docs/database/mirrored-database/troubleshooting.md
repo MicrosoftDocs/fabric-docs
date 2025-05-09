@@ -25,6 +25,7 @@ Review the troubleshooting section of frequently asked questions for each data s
 - [Troubleshoot Mirroring Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
 - [FAQ about Mirroring Azure Databricks](azure-databricks-faq.yml)
 - [Troubleshoot mirroring from Fabric SQL database (preview)](../sql/mirroring-troubleshooting.md) and [FAQ for Mirroring Fabric SQL database (preview)](../sql/mirroring-faq.yml)
+- [Troubleshoot Fabric mirrored databases From SQL Server](sql-server-troubleshoot.md) and [FAQ for Mirroring SQL Server in Microsoft Fabric](sql-server-faq.yml)
 
 Review limitations documentation for each data source:
 
@@ -34,6 +35,7 @@ Review limitations documentation for each data source:
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Snowflake](snowflake-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases From SQL Server](sql-server-limitations.md)
 - [Limitations in mirroring from Fabric SQL database](../sql/mirroring-limitations.md)
 
 ## Changes to Fabric capacity
