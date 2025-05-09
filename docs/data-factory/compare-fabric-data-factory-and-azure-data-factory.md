@@ -11,15 +11,17 @@ ms.custom:
 ms.search.form: Pipeline Activity Overview
 ---
 
-# Getting from Azure Data Factory to Data Factory in Microsoft Fabric
+# Differences between Azure Data Factory to Data Factory in Microsoft Fabric
 
-Data Factory in Microsoft Fabric is the next generation of Azure Data Factory which provides cloud-scale data movement and data transformation services that allow you to solve the most complex ETL scenarios. It's intended to make your experience easy to use, powerful, and truly enterprise-grade. This article compares the differences between Azure Data Factory and Data Factory in Microsoft Fabric.
+[Data Factory in Microsoft Fabric](data-factory-overview.md) is the next generation of [Azure Data Factory](/azure/data-factory/introduction) which provides cloud-scale data movement and data transformation services that allow you to solve the most complex ETL scenarios. It's intended to make your experience easy to use, powerful, and truly enterprise-grade. This article compares the differences between Azure Data Factory and Data Factory in Microsoft Fabric.
+
+If you want to migrate to Data Factory in Microsoft fabric from Azure Data Factory, [you can follow the guide linked here.](migrate-from-azure-data-factory.md)
 
 ## Feature mapping
 
 In the modern experience of Data Factory in Fabric, there are some different features concepts compared to Azure Data Factory. Detail features mapping is presented as the table below.
 
-|Azure Data Factory |Data Factory in Fabric |Description |
+|[Azure Data Factory](/azure/data-factory/introduction) |[Data Factory in Fabric](data-factory-overview.md) |Description |
 |:---|:---|:---|
 |Pipeline |Data pipeline | Data pipeline in Fabric is better integrated with the unified data platform including Lakehouse, Data warehouse, and more. |
 |Mapping dataflow  |Dataflow Gen2 | Dataflow Gen2 provides easier experience to build transformation. We are in progress of letting more functions of mapping dataflow supported in Dataflow Gen2 |
@@ -86,3 +88,4 @@ Save as in Fabric pipeline provides a convenient way for you to duplicate an exi
 
 - [Differences between Dataflow Gen1 Gen2](dataflows-gen2-overview.md)
 - [Build your first data integration](transform-data.md)
+- [Overview of Data Factory in Microsoft Fabric](data-factory-overview.md)
