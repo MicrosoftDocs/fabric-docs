@@ -197,7 +197,7 @@ Moving workspaces from one capacity to another has the following restrictions:
 
 * Only Power BI items can move from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode. If you're changing a workspace from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode, you must remove all non-Power BI items first, otherwise the license mode change will fail.
 
-    The following items types are considered Power BI items from the perspective of the workspace license mode.
+    The following item types are considered Power BI items from the perspective of the workspace license mode.
 
     * Report
     * Semantic model (small storage format and large storage format)
@@ -205,6 +205,7 @@ Moving workspaces from one capacity to another has the following restrictions:
     * Org app
     * Dataflow Gen1
     * Paginated Report
+    * Metric set
     * Exploration
     * Datamart
     * Scorecard
@@ -218,7 +219,6 @@ Moving workspaces from one capacity to another has the following restrictions:
     * Dashboard
     * Dataflow Gen1
     * Paginated Report
-    * Metric set
     * Datamart
     * Scorecard 
 
