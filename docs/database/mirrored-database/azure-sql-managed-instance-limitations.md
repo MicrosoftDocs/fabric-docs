@@ -56,7 +56,6 @@ The feature availability also depends on Fabric regions. For a complete list of 
 ## Table level
 
 - A table that doesn't have a defined primary key can't be mirrored.
-  - A table using a primary key defined as nonclustered primary key can't be mirrored.  
   - A table can't be mirrored if the primary key is one of the data types: **sql_variant**, **timestamp**/**rowversion**
   - A table cannot be mirrored if the primary key is one of these data types: **datetime2(7)**, **datetimeoffset(7)**, **time(7)**, where `7` is seven digits of precision.
   - Delta lake supports only six digits of precision.

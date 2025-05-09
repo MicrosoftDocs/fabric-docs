@@ -44,7 +44,7 @@ In addition to the [SQL query editor](../../data-warehouse/sql-query-editor.md),
 
 <a id="network-requirements"></a>
 
-## Mirroring Azure SQL Managed Instance behind firewall (Preview)
+## Mirroring Azure SQL Managed Instance behind firewall
 
 If your Azure SQL Managed Instance is not publicly accessible, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
 

@@ -95,6 +95,7 @@ To enable Mirroring, you need to connect to the Azure SQL Managed Instance from 
    - **Database**: Enter the name of database you wish to mirror.
    - **Connection**: Create new connection.
    - **Connection name**: An automatic name is provided. You can change it to facilitate finding this SQL managed instance database connection at a future time, if needed.
+   - **Data gateway**: Select the default (**None**) or the name of virtual network data gateway / on-prem data gateway you set up according to your scenario.
    - **Authentication kind**:
        - Basic (SQL Authentication)
        - Organization account (Microsoft Entra ID)  
