@@ -22,7 +22,7 @@ The SQL Server database connector supports the following authentication types fo
 |:---|:---|:---|
 |Basic (Username/Password)| √ | √ |
 |Organizational account| n/a | √ |
-|Service principal | √ (only for [SQL Server on Azure VMs](/azure/azure-sql/virtual-machines))| √ |
+|Service principal | √ (Only for [SQL Server on Azure VMs](/azure/azure-sql/virtual-machines))| √ |
 |Windows| √ (When use on-premises data gateway) | √ |
 
 ## Set up your connection in Dataflow Gen2
