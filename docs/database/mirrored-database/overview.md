@@ -142,7 +142,7 @@ Microsoft Fabric users can access [Data Science workloads](../../data-science/da
 
 ## Retention for mirrored data
 
-Mirroring in Fabric continuously replicates your existing data estate into OneLake in Delta Lake table format. To keep the mirrored data efficiently stored and always ready for analytics, mirroring automatically runs vacuum to remove old files no longer referenced by a Delta log with a default 7-day retention period.
+Mirroring in Fabric continuously replicates your existing data estate into OneLake in Delta Lake table format. To keep the mirrored data efficiently stored and always ready for analytics, mirroring automatically runs vacuum to remove old files no longer referenced by a Delta log.
 
 You can customize the retention setting according to your requirements. For instance, you may choose a shorter retention period to reduce mirroring storage consumption or extend the retention period to utilize Delta’s time travel capabilities for analytics. Currently, this setting can be configured in the `retentionInDays` property [using the API](mirrored-database-rest-api.md#configure-data-retention).
 
