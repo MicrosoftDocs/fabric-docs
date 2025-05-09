@@ -172,60 +172,43 @@ After the deleted workspace has been restored as an app workspace, it's just lik
 
 ## Moving data around
 
-Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities. Such movement might be to a capacity in the same region, or it might be to a capacity in a different region.
+Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities by choosing the workspace license mode. Such movement might be to a capacity in the same region, or it might be to a capacity in a different region.
 
 Moving workspaces from one capacity to another has the following restrictions:
 
-* Only [migratable items](#list-of-migratable-item-types) can move between regions. If you're reassigning a workspace to a capacity located in a different region, remove all non-migratable items first, otherwise reassignment will fail.
-
-* Workspaces that contain any items other than [Power BI items](#list-of-power-bi-item-types) can't move from Premium or Fabric license mode to Pro or Premium Per User license mode. If you're changing a workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, remove all non-Power BI items first, otherwise the change will fail.
-
 * When you move a workspace, all jobs related to items in the workspace get cancelled.
 
-This means the following:
+* Only Power BI items can move from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode. If you're changing a workspace from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode, you must remove all non-Power BI items first, otherwise the license mode change will fail.
 
-* **Moving a workspace from one capacity to a capacity in a different region**
+    The following items types are considered Power BI items from the perspective of the workspace license mode.
 
-    If the workspace contains only [migratable items](#list-of-migratable-item-types), moving the workspace to another capacity in a different region is supported.
+    * Report
+    * Semantic model (small storage format and large storage format)
+    * Dashboard
+    * Org app
+    * Dataflow Gen1
+    * Paginated Report
+    * Metric set ?
+    * Exploration
+    * Datamart ?
+    * Scorecard
 
-    If you want to move a workspace that contains non-migratable items, you must remove the non-migratable items first.  After the workspace is migrated to a different region, you can create new items of the non-migratable type. It can take up to an hour before you can do so.
+    All other item types must be removed from the workspace before you can change its license mode from Premium capacity or Fabric capacity to Pro or Premium Per User.
 
-* **Moving a workspace from one capacity to another within the same region**
+* Only moveable item types can move between regions. If you're reassigning a workspace to a capacity located in a different region, you must remove all non-movable items first, otherwise reassignment will fail. The following items types are moveable:
 
-    If the workspace cotains any non Power BI items (such as lakehouses or notebooks), you can only move it from one Premium or Fabric capacity to another Premium or Fabric capacity. If you want to move the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, you must remove all the non Power BI items first.
+    * Report
+    * Semantic model (small storage format)
+    * Dashboard
+    * Dataflow Gen1
+    * Paginated Report
+    * Metric set
+    * Datamart
+    * Scorecard 
 
-    If the workspace contains only [Power BI items](#list-of-power-bi-item-types), moving the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode is supported.  
+    All other item types cannot be moved between regions and must be removed from the workspace before you can migrate the workspace to a capacity in another region.
 
-### List of migratable item types
-
-The following items types can move between regions.
-
-* Report
-* Semantic Model (Small)
-* Dashboard
-* Dataflow Gen 1
-* Paginated Report
-* Metric
-* Datamart
-* Scorecard
-
-All other item types are non-migratable, and can't move between regions.
-
-### List of Power BI item types
-
-The following item types are considered as Power BI items.
-
-* Report
-* Semantic Model (Small)
-* Semantic Model (Large)
-* Dashboard
-* Organization App
-* Dataflow Gen 1
-* Paginated Report
-* Metric
-* Exploration
-* Datamart
-* Scorecard
+    After you've removed the non-movable items and the workspace is migrated to a different region, you can create new items of the non-movable type. It can take up to an hour after the migration before you will be able to do so.
 
 ## Related content
 
