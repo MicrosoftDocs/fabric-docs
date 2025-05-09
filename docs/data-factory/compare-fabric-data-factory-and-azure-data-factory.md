@@ -11,9 +11,11 @@ ms.custom:
 ms.search.form: Pipeline Activity Overview
 ---
 
-# Getting from Azure Data Factory to Data Factory in Microsoft Fabric
+# Differences between Azure Data Factory to Data Factory in Microsoft Fabric
 
 [Data Factory in Microsoft Fabric](data-factory-overview.md) is the next generation of [Azure Data Factory](/azure/data-factory/introduction) which provides cloud-scale data movement and data transformation services that allow you to solve the most complex ETL scenarios. It's intended to make your experience easy to use, powerful, and truly enterprise-grade. This article compares the differences between Azure Data Factory and Data Factory in Microsoft Fabric.
+
+If you want to migrate to Data Factory in Microsoft fabric from Azure Data Factory, [you can follow the guide linked here.](migrate-from-azure-data-factory.md)
 
 ## Feature mapping
 
