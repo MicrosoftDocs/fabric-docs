@@ -57,8 +57,8 @@ To get an item size, use the [Get-AzDataLakeGen2ChildItem](/powershell/module/az
 | Parameter | Value |
 | --------- | ----- |
 | `-Context` | An Azure Storage context object. For more information, see [Create a context object for OneLake](#create-a-context-object-for-onelake). |
-| `-FileSystem` | Fabric workspace name or GUID. Azure Storage [naming critera for containers](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) only supports lowercase letters, numbers, and hyphens. If you have any other characters in your workspace name, use its GUID instead. |
-| `-Path` | Local path to the item or folder inside the workspace. Azure Storage [naming critera for containers](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) only supports lowercase letters, numbers, and hyphens. If you have any other characters in any resources in your item path, use the equivalent GUID instead. |
+| `-FileSystem` | Fabric workspace name or GUID. Azure Storage [naming criteria for containers](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) only supports lowercase letters, numbers, and hyphens. If you have any other characters in your workspace name, use its GUID instead. |
+| `-Path` | Local path to the item or folder inside the workspace. Azure Storage [naming criteria for containers](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) only supports lowercase letters, numbers, and hyphens. If you have any other characters in any resources in your item path, use the equivalent GUID instead. |
 | `-Recurse` | None; instructs the cmdlet to recursively get the child item. |
 | `-FetchProperty` | None; instructs the cmdlet to fetch the item properties. |
 
