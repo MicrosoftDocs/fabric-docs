@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/07/2025
+ms.date: 05/08/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,13 +20,14 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1128  | Data Factory | [Failure to Save and Run Dataflow Gen2 dataflows deployed with Git integration](./known-issue-1128-failure-save-run-dataflow-gen2-deployed-git-integration.md) | May 8, 2025 |
+|  1126  | Data Factory | [Function queries cause failures in Dataflow Gen2 refresh](./known-issue-1126-function-queries-failures-dataflow-gen2-refresh.md) | May 8, 2025 |
 |  1123  | Data Warehouse | [Reenabling Azure SQL database mirroring fails](./known-issue-1123-reenabling-azure-sql-database-mirroring-fails.md) | May 7, 2025 |
 |  1122  | Power BI | [Power BI report selection doesn't work in Viva Goals](./known-issue-1122-report-selection-not-work-viva-goals.md) | May 6, 2025 |
 |  1120  | Power BI | [Recommended tiles on the home page appear stretched for customer images](./known-issue-1120-recommended-tiles-home-page-stretched-customer-images.md) | May 6, 2025 |
 |  1119  | Power BI | [Large semantic model storage format conversion stays in view mode](./known-issue-1119-large-semantic-model-conversion-view-mode.md) | May 2, 2025 |
 |  1121  | Data Warehouse | [SQL analytics endpoint queries return empty results](./known-issue-1121-sql-analytics-endpoint-queries-return-empty-results.md) | May 1, 2025 |
 |  1118  | Power BI | [Execution details of semantic model refresh activity unavailable in Monitor hub](./known-issue-1118-execution-details-model-refresh-unavailable-monitor-hub.md) | May 1, 2025 |
-|  1117  | Power BI | [Gateway causes lakehouse tables with null values](./known-issue-1117-gateway-causes-lakehouse-tables-null-values.md) | April 25, 2025 |
 |  1113  | Data Engineering | [API for GraphQL query fails when using variables with float value](./known-issue-1113-api-graphql-query-fails-variables-float-value.md) | April 25, 2025 |
 |  1112  | Data Engineering | [User data functions option not visible in data pipelines functions activity](./known-issue-1112-functions-option-not-visible-pipelines-functions-activity.md) | April 22, 2025 |
 |  1107  | Real-Time Intelligence | [Cross-region capacity migration might fail if items weren't deleted successfully](./known-issue-1107-cross-region-capacity-migration-fail-items-not-deleted-successfully.md) | April 22, 2025 |
@@ -35,14 +36,12 @@ Select the **Title** to view more information about that specific known issue.
 |  1103  | Data Warehouse | [Data warehouse in second workspace out of sync from Git](./known-issue-1103-data-warehouse-second-workspace-sync-git.md) | April 18, 2025 |
 |  1102  | Data Engineering | [Deletion of managed private endpoint connected to Key Vault doesn't work](./known-issue-1102-deletion-private-endpoint-connected-key-vault-not-work.md) | April 15, 2025 |
 |  1101  | Power BI | [Vertica connector throws invalid conversion error](./known-issue-1101-vertica-connector-throws-invalid-conversion-error.md) | April 15, 2025 |
-|  1100  | Power BI | [Snowflake Implementation="2.0" connector doesn't display views](./known-issue-1100-snowflake-implementation-connector-not-display-views.md) | April 15, 2025 |
 |  1097  | Power BI | [Azure map zooms out automatically even with auto zoom turned off](./known-issue-1097-azure-map-zooms-out-auto-zoom-turned-off.md) | April 15, 2025 |
 |  1092  | Data Factory | [Delayed data availability in SQL analytics endpoint when using a pipeline](./known-issue-1092-delayed-data-availability-analytics-endpoint-pipeline.md) | April 11, 2025 |
 |  1091  | Power BI | [New card visual conditional formatting rules don't work](./known-issue-1091-new-card-visual-conditional-formatting-rules-not-work.md) | April 10, 2025 |
 |  1090  | Data Engineering | [PyPI packages in User data functions don't show in Library Management](./known-issue-1090-pypi-packages-functions-not-show-library-management.md) | April 9, 2025 |
 |  1087  | Data Factory | [Pipeline can't copy an empty table to lakehouse](./known-issue-1087-pipeline-not-copy-empty-table-lakehouse.md) | April 9, 2025 |
 |  1085  | Data Engineering | [Spark job submission failure with Library Management error](./known-issue-1085-spark-job-submission-failure-library-management-error.md) | April 9, 2025 |
-|  1089  | Power BI | [Dataflow Gen2 refresh fails with PowerBIEntityNotFound error](./known-issue-1089-dataflow-gen2-refresh-fails-error.md) | April 8, 2025 |
 |  1083  | Power BI | [Dataflow Gen2 refresh fails with type mismatch error](./known-issue-1083-dataflow-gen2-refresh-fails-type-mismatch-error.md) | April 8, 2025 |
 |  1080  | Data Factory | [Data pipeline run fails due to user auth token errors](./known-issue-1080-data-pipeline-run-fails-user-auth-token-errors.md) | April 8, 2025 |
 |  1079  | Data Factory | [Pipelines fail with missing capacity error](./known-issue-1079-pipelines-fail-missing-capacity-error.md) | April 7, 2025 |
@@ -84,13 +83,10 @@ Select the **Title** to view more information about that specific known issue.
 |  893  | Power BI | [Can't connect to semantic model from Excel or use Analyze in Excel](./known-issue-893-not-connect-semantic-model-analyze-excel.md) | October 23, 2024 |
 |  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](./known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
 |  835  | Data Engineering | [Managed private endpoint connection could fail](./known-issue-835-managed-private-endpoint-connection-fail.md) | September 13, 2024 |
-|  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](./known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 |
 |  816  | Data Factory | [Pipeline deployment fails when parent contains deactivated activity](./known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md) | August 23, 2024 |
 |  795  | Data Factory | [Multiple installations of on-premises data gateway causes pipelines to fail](./known-issue-795-multiple-installations-data-gateway-pipelines-fail.md) | July 31, 2024 |
-|  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](./known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 |
 |  767  | Data Warehouse | [SQL analytics endpoint table sync fails when table contains linked functions](./known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md) | July 2, 2024 |
 |  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](./known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
-|  726  | Data Factory | [Pipeline using XML format copy gets stuck](./known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 |
 |  717  | Data Factory | [West India region doesn't support on-premises data gateway for data pipelines](./known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
 |  506  | Data Warehouse | [InProgress status shows in Fabric capacity metrics app for completed queries](./known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md)  | October 5, 2023 |
 |  454  | Data Warehouse              | [Warehouse's object explorer doesn't support case-sensitive object names](./known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md)    |  July 10, 2023  |
@@ -101,6 +97,12 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1117  | Power BI | [Gateway causes lakehouse tables with null values](./known-issue-1117-gateway-causes-lakehouse-tables-null-values.md) | April 25, 2025 | Fixed: May 8, 2025 |
+|  1100  | Power BI | [Snowflake Implementation="2.0" connector doesn't display views](./known-issue-1100-snowflake-implementation-connector-not-display-views.md) | April 15, 2025 | Fixed: May 8, 2025 |
+|  1089  | Power BI | [Dataflow Gen2 refresh fails with PowerBIEntityNotFound error](./known-issue-1089-dataflow-gen2-refresh-fails-error.md) | April 8, 2025 | Fixed: May 8, 2025 |
+|  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](./known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 | Fixed: May 8, 2025 |
+|  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](./known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 | Fixed: May 8, 2025 |
+|  726  | Data Factory | [Pipeline using XML format copy gets stuck](./known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 | Fixed: May 8, 2025 |
 |  789  | Data Engineering | [SQL analytics endpoint table queries fail due to RLE](./known-issue-789-sql-endpoint-table-queries-fail-rle.md) | July 24, 2024 | Fixed: May 7, 2025 |
 |  643  | Data Engineering | [Tables not available to add in Power BI semantic model](./known-issue-643-tables-not-available-semantic-model.md) | February 27, 2024 | Fixed: May 7, 2025 |
 |  1114  | Data Warehouse | [Insert statements across tables in different data warehouses fail](./known-issue-1114-insert-statements-tables-different-data-warehouses-fail.md) | April 22, 2025 | Fixed: May 6, 2025 |
