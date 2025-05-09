@@ -120,6 +120,23 @@ While a deleted collaborative workspace is in a retention period, Fabric adminis
 
 You're asked to confirm the permanent deletion. After you confirm, the workspace and its contents are no longer recoverable.
 
+## Reassign a workspace to a different capacity
+
+Workspaces and the data they contain reside on capacities. You can move the workspace to a different capacity via the workspace license mode.
+
+1. Go to **Admin portal** > **Workspaces**
+
+1. Find the workspace you want to move, open the options menu, and choose **Reassign workspace**.
+
+    :::image type="content" source="./media/portal-workspaces/reassign-workspace-option.png" alt-text="Screenshot showing the Reassign workspace option.":::
+
+1. On the Reassign workspace side pane that appears, select the desired license mode, and choose a capacity, if asked.
+
+    :::image type="content" source="./media/portal-workspaces/license-modes.png" alt-text="Screenshot showing the Reassign workspace license modes pane.":::
+
+    > [!NOTE]
+    > The types of items contained in the workspace can affect the ablity to change license modes and/or move the workspace to a capacity in a different region. See [Moving data around](#moving-data-around) for detail.
+
 ## Govern My workspaces
 
 Every Fabric user has a personal workspace called My workspace where they can work with their own content. While generally only My workspace owners have access to their My workspaces, Fabric admins can use a set of features to help them govern these workspaces. With these features, Fabric admins can:
@@ -172,7 +189,7 @@ After the deleted workspace has been restored as an app workspace, it's just lik
 
 ## Moving data around
 
-Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities by choosing the workspace license mode. Such movement might be to a capacity in the same region, or it might be to a capacity in a different region.
+Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities via the workspace license mode. Such movement might be to a capacity in the same region, or it might be to a capacity in a different region.
 
 Moving workspaces from one capacity to another has the following restrictions:
 
@@ -188,9 +205,8 @@ Moving workspaces from one capacity to another has the following restrictions:
     * Org app
     * Dataflow Gen1
     * Paginated Report
-    * Metric set ?
     * Exploration
-    * Datamart ?
+    * Datamart
     * Scorecard
 
     All other item types must be removed from the workspace before you can change its license mode from Premium capacity or Fabric capacity to Pro or Premium Per User.
