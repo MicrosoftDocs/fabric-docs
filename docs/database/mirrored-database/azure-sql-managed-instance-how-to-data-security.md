@@ -22,7 +22,7 @@ This guide helps you establish data security in your mirrored Azure SQL Managed 
 1. Fabric needs to connect to the Azure SQL Managed Instance. For this purpose, create a dedicated database user with limited permissions, to follow the principle of least privilege. For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](azure-sql-managed-instance-tutorial.md).
 
 > [!IMPORTANT]
-> Any granular security established in the source database must be re-configured in the mirrored database in Microsoft Fabric.
+> Any granular security established in the source database must be reconfigured in the mirrored database in Microsoft Fabric.
 > For more information, see [SQL granular permissions in Microsoft Fabric](../../data-warehouse/sql-granular-permissions.md).
 
 ## Data protection features in Microsoft Fabric
