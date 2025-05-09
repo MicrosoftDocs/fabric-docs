@@ -4,7 +4,7 @@ description: Learn about giving feedback about Microsoft Fabric to Microsoft.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 04/29/2025
+ms.date: 05/08/2025
 ---
 
 # Learn about Microsoft Fabric feedback
