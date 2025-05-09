@@ -4,7 +4,7 @@ description: Learn about warehouse snapshots in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: twcyril
-ms.date: 05/07/2025
+ms.date: 05/09/2025
 ms.service: fabric
 ms.topic: conceptual
 ---
@@ -42,9 +42,9 @@ Security permissions must be set in the source database.
 
 ## Update snapshot timestamp
 
-Users can update the timestamp of an existing warehouse snapshot at any time. This operation completes instantly.
-
 Updating the snapshot timestamp can provide analytical consumers a stable data version. In progress queries will always complete against the version of data that they were started against. When the snapshot timestamp is rolled forward, data updates are available immediately, with no latency or inconsistency in the data.
+
+Users can update the timestamp of an existing warehouse snapshot at any time. This operation completes instantly.
 
 To update the timestamp of a warehouse snapshot, see [update snapshot timestamp](create-manage-warehouse-snapshot.md#update-snapshot-timestamp).
 
@@ -62,13 +62,16 @@ When a T-SQL query is run, information about the current version of the data bei
 > [!NOTE]
 > The stable reporting promise in Fabric Data Warehouse applies to the data, not the schema. For example, if a report references a table, view, or column from a snapshot, and that object is later dropped, renamed or altered from the parent warehouse, the snapshot reflects that change. As a result, the report could break. This behavior is expected, as the snapshot mechanism is designed to preserve data consistency, not schema stability.
 
+## Manage snapshots
+
+- Warehouse snapshots require unique names, unique from the warehouse and SQL analytics endpoint.
+- Warehouse snapshots don't exist without the source warehouse. When the warehouse is deleted, all snapshots are deleted. Warehouse snapshots must be recreated if the warehouse is restored.
+- Warehouse snapshots are valid for up to 30 days in the past. Snapshot datetime can be set to any date in the past up to 30 days or database creation time (whichever is later).
+
 ## Limitations
 
 - Warehouse snapshots can only be created against new warehouse items created after March 2025.
-- Warehouse snapshots require unique names, unique from the warehouse and SQL analytics endpoint.
-- Warehouse snapshots don't exist without the source warehouse. When the warehouse is deleted, all snapshots are deleted. Warehouse snapshots must be recreated if the warehouse is restored.
 - Warehouse snapshots don't appear in SSMS Object Explorer but do show up in the database selection dropdown list.
-- Warehouse snapshots are valid for up to 30 days in the past. Snapshot datetime can be set to any date in the past up to 30 days or database creation time (whichever is later).
 - Modified tables, views, and stored procedures after the snapshot timestamp become invalid in the snapshot.
 - Warehouse snapshots require Direct Query or Import mode in Power BI, and don't support [Direct Lake](../fundamentals/direct-lake-overview.md) mode.
 - Warehouse snapshots aren't supported on the SQL analytics endpoint of the Lakehouse.
