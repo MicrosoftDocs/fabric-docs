@@ -199,6 +199,16 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Throttling issues with the Mirrored Azure Databricks catalog shortcuts
+      href: ../known-issues/known-issue-1135-throttling-issues-mirrored-azure-databricks-catalog-shortcuts.md
+    - name: Multiple dataflow staging items created in workspace
+      href: ../known-issues/known-issue-1134-multiple-dataflow-staging-items-created-workspace.md
+    - name: Deleted OneLake Shortcuts still visible as empty file
+      href: ../known-issues/known-issue-1133-deleted-oneLake-shortcuts-visible-empty-file.md
+    - name: Spark job fails with out of memory error when using timestamp type
+      href: ../known-issues/known-issue-1132-spark-job-fails-memory-error-timestamp-type.md
+    - name: SQL database creation fails due to tenant setting
+      href: ../known-issues/known-issue-1131-sql-database-creation-fails-tenant-setting.md
     - name: Failure to Save and Run Dataflow Gen2 dataflows deployed with Git integration
       href: ../known-issues/known-issue-1128-failure-save-run-dataflow-gen2-deployed-git-integration.md
     - name: Function queries cause failures in Dataflow Gen2 refresh
