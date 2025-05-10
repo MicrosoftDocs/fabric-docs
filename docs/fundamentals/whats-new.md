@@ -32,7 +32,7 @@ This page is continuously updated with a recent review of what's new in [Microso
 The following table lists the features of Microsoft Fabric that are currently in preview. Preview features are sorted alphabetically.
 
 > [!NOTE]
-> Features currently in preview are available under [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Review for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability. Microsoft Fabric provides previews to give you a chance to evaluate and [share feedback with the product group](https://feedback.azure.com/d365community/forum/9b9ba8e4-0825-ec11-b6e6-000d3a4f07b8) on preview features before they become [generally available (GA)](#generally-available-features).
+> Features currently in preview are available under [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Review for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability. Microsoft Fabric provides previews to give you a chance to evaluate and [share feedback with the product group](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas) on preview features before they become [generally available (GA)](#generally-available-features).
 
 | **Feature** | **Learn more** |
 |:-- |:-- |
@@ -152,6 +152,7 @@ This section summarizes new Microsoft Fabric community opportunities for prospec
 - Visit the [Microsoft Fabric Career Hub](https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabric_careerhubblog_clp) for everything you need on your certification journey, including a 50% discount on exams.
 - Watch and subscribe to [Microsoft Fabric videos on YouTube](https://www.youtube.com/@MicrosoftFabric/featured).
 - Ask and answer questions in the [Microsoft Fabric community](https://community.fabric.microsoft.com/).
+- Join the [Microsoft Fabric user panel](feedback.md#fabric-user-panel) to share real-world experiences and feedback with the Fabric and Power BI product teams through surveys and 1:1 meetings.
 - Spread your Fabric knowledge, insights, and best practices with others. To learn more, see the [Super User Program](https://aka.ms/SuperUsers).
 
 |**Month** | **Feature** | **Learn more** |

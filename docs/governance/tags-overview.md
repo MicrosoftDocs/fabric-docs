@@ -6,8 +6,8 @@ ms.author: painbar
 ms.service: fabric
 ms.subservice: governance
 ms.custom:
-ms.topic: conceptual #Don't change
-ms.date: 04/24/2025
+ms.topic: overview #Don't change
+ms.date: 05/05/2025
 #customer intent: As a Fabric admin, domain admin, data creator, or data consumer, I want to learn about tags in Microsoft Fabric.
 ---
 
@@ -55,7 +55,7 @@ You can also use the global search to search by tags and see all the relevant re
 
 ## Microsoft Fabric REST Admin APIs for tags
 
-Some of the actions related to creating and managing tags in the UI are available through the Fabric REST Admin APIs for tags. For more information, see [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags).
+All of the actions related to creating and managing tags in the UI can be performed programmatically via APIs. For more information, see [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags).
 
 ## Considerations and limitations
 
