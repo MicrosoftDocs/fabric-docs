@@ -21,7 +21,7 @@ The following screenshot shows the tenant setting where Copilot can be enabled o
 
 :::image type="content" source="media/copilot-enable-fabric/enable-copilot.png" alt-text="Screenshot showing the tenant setting where copilot can be enabled and disabled.":::
 
-Copilot in Microsoft Fabric is rolling out gradually, ensuring all customers with paid Fabric capacities gain access. It automatically appears as a new setting in the Fabric admin portal when available for your tenant. Once billing starts for the Copilot in Fabric experiences, Copilot usage will count against your existing Fabric capacity.
+Copilot in Microsoft Fabric is rolling out gradually, ensuring all customers with paid Fabric capacities (F2 or higher) gain access. It automatically appears as a new setting in the Fabric admin portal when available for your tenant. Once billing starts for the Copilot in Fabric experiences, Copilot usage will count against your existing Fabric capacity.
 
 > [!WARNING]
 > Enabling Copilot in Fabric for your entire tenant without adequate planning and preparation can lead to higher Fabric capacity utilization and other potential risks. Consider enabling Copilot in Fabric for specific security groups and workspaces only after you take the appropriate steps to prepare.

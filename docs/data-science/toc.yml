@@ -69,6 +69,8 @@ items:
       href: data-agent-sharing.md
     - name: Fabric data agent SDK
       href: fabric-data-agent-sdk.md
+    - name: Evaluate a Fabric data agent
+      href: evaluate-data-agent.md
 - name: Notebooks
   items:
   - name: Create and use notebooks

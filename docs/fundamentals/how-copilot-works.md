@@ -260,7 +260,7 @@ It's important to keep the following considerations in mind when you use Copilot
 > [!WARNING]
 > To mitigate the risks of these limitations and considerations, and the fact that Copilot, LLMs, and generative AI are nascent technology, you *should not* use Copilot in Fabric for autonomous, high-risk, or business-critical processes and decision-making.
 
-For more information, see [Security guidance for LLMs](/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/security/security-recommend).
+For more information, see [Security guidance for LLMs](/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/security/security-plan-llm-application).
 
 Once the Azure OpenAI Service processes the input and produces a response, it returns this response as an output to Copilot.
 
@@ -331,14 +331,14 @@ To mitigate risks or challenges from LLM hallucinations in Copilot, consider the
 
 - Test items with Copilot before you allow these items to be used with it. Certain items require certain preparatory tasks to ensure that they work well with Copilot.
 
-- Avoid using Copilot in [autonomous, high-risk, or business-critical decision-making processes](/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/security/security-recommend).
+- Avoid using Copilot in [autonomous, high-risk, or business-critical decision-making processes](/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/security/security-plan-llm-application).
 
 > [!IMPORTANT]
 > Additionally, review the [supplemental preview terms for Fabric](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), which include terms of use for Microsoft Generative AI Service Previews. While you can try and experiment with these preview features, we recommend that you don't use Copilot features in preview in production solutions.
 
 ## Privacy, security, and responsible AI
 
-Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE5cmFl). See [Privacy, security, and responsible use of Copilot in Fabric](copilot-privacy-security.md) for a detailed overview. See also [Data, privacy, and security for Azure OpenAI Service](/legal/cognitive-services/openai/data-privacy?context=%2Fazure%2Fai-services%2Fopenai%2Fcontext%2Fcontext&tabs=azure-portal) for detailed information specific for Azure OpenAI.
+Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://msblogs.thesourcemediaassets.com/sites/5/2022/06/Microsoft-Responsible-AI-Standard-v2-General-Requirements-3.pdf). See [Privacy, security, and responsible use of Copilot in Fabric](copilot-privacy-security.md) for a detailed overview. See also [Data, privacy, and security for Azure OpenAI Service](/legal/cognitive-services/openai/data-privacy?context=%2Fazure%2Fai-services%2Fopenai%2Fcontext%2Fcontext&tabs=azure-portal) for detailed information specific for Azure OpenAI.
 
 For an overview specifically for each Fabric workload, see the following articles:
 

@@ -29,7 +29,7 @@ To add an activator destination to a default stream or derived stream, follow th
 
    :::image type="content" border="true" source="./media/add-destination-activator-enhanced/add-destination.png" alt-text="A screenshot of the Add destination dropdown list with Activator highlighted.":::
 
-    You can also select **Transform events or add destination** tile on the canvas, and select **Activator** from the drop-down list. 
+    You can also select **Transform events or add destination** tile on the canvas, and select **Activator** from the dropdown list. 
 
    :::image type="content" source="media/add-destination-activator-enhanced/add-destination-canvas.png" alt-text="Screenshot that shows the canvas for an eventstream with New destination, Activator menu selected.":::
 
