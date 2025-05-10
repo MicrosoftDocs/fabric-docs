@@ -22,7 +22,7 @@ This article explains how to use the query acceleration policy to accelerate que
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * Role of **Admin**, **Contributor**, or **Member** [in the workspace](../fundamentals/roles-workspaces.md)
-* The relevant [OneLake security permissions](../security/data-access-control-model.md)
+* The relevant shortcut [OneLake security permissions](..onelake/security/data-access-control-model.md)
 
 ## Enable query acceleration on a new shortcut
 
