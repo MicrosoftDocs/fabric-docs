@@ -4,7 +4,7 @@ description: Learn how to integrate Git with a service principal in Microsoft Fa
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
-ms.topic: how-to-article
+ms.topic: how-to
 ms.date: 05/11/2025
 #customer intent: As a developer, I want to learn how to integrate Git with a service principal in Microsoft Fabric, so that I can automate CI/CD workflows.
 ---
