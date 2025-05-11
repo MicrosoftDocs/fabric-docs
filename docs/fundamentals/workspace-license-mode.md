@@ -50,7 +50,7 @@ To choose a license mode and assign a new capacity to a workspace, open the work
     > [!NOTE]
     > You can assign capacity only for capacity license types. The system automatically reserves shared capacity for per-user licenses.
     >
-    > The types of items contained in the workspace can affect the ablity to change license modes and/or move the workspace to a capacity in a different region. See [Moving data around](#moving-data-around) for detail.
+    > The types of items contained in the workspace can affect the ablity to change license modes and/or move the workspace to a capacity in a different region. See [Moving data around](../admin/portal-workspaces.md#moving-data-around) for detail.
 
 ## Related content
 
