@@ -44,7 +44,7 @@ Activator background capacity consumption is calculated based on the following o
 | ----------------------------------------------- | --------------------- | --------------- | ------------------------------ |
 | Real-Time Intelligence event listener and alert | rule uptime per hour  | per hour        | 0.02222                        |
 | Real-Time Intelligence event operationS         | event ingestion       | per event       | 0.000011111                    |
-| Data Activator event analytics                  | event computations    | per computation | 0.00000278                     |
+| Activator event analytics                  | event computations    | per computation | 0.00000278                     |
 | n/a                                             | storage               | per GB per hour | 0.00177                        |
 
 ### Interactive consumption

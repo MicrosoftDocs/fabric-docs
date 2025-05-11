@@ -4,7 +4,7 @@ description: Learn about mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, tinglee, sbahadur
-ms.date: 02/26/2025
+ms.date: 04/27/2025
 ms.topic: overview
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -68,7 +68,8 @@ Currently, the following external databases are available:
 | [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | Database mirroring | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Managed Instance (preview)](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](snowflake-tutorial.md) |
-| [Open mirrored databases](open-mirroring.md) (preview) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
+| [Microsoft Fabric mirrored databases from SQL Server (preview)](sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](sql-server-tutorial.md) |
+| [Open mirrored databases](open-mirroring.md) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
 | [Microsoft Fabric mirrored databases from Fabric SQL database](../sql/overview.md) (preview) | Yes | Database mirroring | [Automatically configured](../sql/mirroring-overview.md) |
 
 ## How does the near real time replication of database mirroring work?
@@ -135,6 +136,16 @@ Microsoft Fabric provides various data engineering capabilities to ensure that y
 Microsoft Fabric offers Fabric Data Science to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports.
 
 Microsoft Fabric users can access [Data Science workloads](../../data-science/data-science-overview.md). From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
+
+## Direct Lake with your mirrored database data
+
+[Direct Lake](../../fundamentals/direct-lake-overview.md) mode can be used with mirrored databases in Microsoft Fabric to enable high-performance querying over mirrored data without the need for data movement or duplication. When a mirrored database is created, its data is stored in Delta Lake format within OneLake. This native format allows Power BI and other analytics tools to connect via Direct Lake mode, offering near real-time insights by directly accessing the underlying files. This integration combines the simplicity of mirroring with the speed and scalability of Direct Lake, enabling fast, up-to-date reporting on operational data.
+
+## Retention for mirrored data
+
+Mirroring in Fabric continuously replicates your existing data estate into OneLake in Delta Lake table format. To keep the mirrored data efficiently stored and always ready for analytics, mirroring automatically runs vacuum to remove old files no longer referenced by a Delta log.
+
+You can customize the retention setting according to your requirements. For instance, you may choose a shorter retention period to reduce mirroring storage consumption or extend the retention period to utilize Delta’s time travel capabilities for analytics. Currently, this setting can be configured in the `retentionInDays` property [using the API](mirrored-database-rest-api.md#configure-data-retention).
 
 ## SQL database in Fabric
 

@@ -4,7 +4,7 @@ description: Understand what customers can expect from the metrics app experienc
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: amapatil # Microsoft alias
-ms.date: 03/28/2025
+ms.date: 05/05/2025
 ms.topic: conceptual
 ms.search.form: SQL database Billing and Utilization
 ---
@@ -24,27 +24,77 @@ Capacity is a dedicated set of resources that is available at a given time to be
 
 ### Capacity for SQL database in Microsoft Fabric
 
-In the capacity-based SaaS model, SQL database aims to make the most of the purchased capacity and provide visibility into usage.
+In the capacity-based SaaS model, SQL database aims to make the most of the purchased capacity and provide visibility into usage. 
 
-In simple terms, 1 Fabric capacity unit = 0.383 SQL database vCores. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 24.512 SQL database vCores.
+In simple terms, 1 Fabric capacity unit corresponds to 0.383 Database vCores, or, 1 Database vCore corresponds to 2.611 Fabric capacity unit.
 
-### Cost
+For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 24.512 SQL database vCores. 
 
-The cost for SQL database in Fabric is the summation of compute cost and storage cost. The compute cost is based on vCore and memory used.
- 
-A SQL database in Fabric autoscales compute and provisions a minimum of around 2 GB memory which helps performance and is billed as part of compute while the database is online. After a minimum of 15 minutes of minimum compute provisioned while the database is online, the compute bill is zero until activity later returns. 
+### Compute and storage costs
 
-Consider a database with workload activity for two minutes and is otherwise inactive for a one-hour period. The database is billed for compute for two minutes, and kept online for another 15 minutes, for a total of 17 minutes. Only storage is billed throughout the hour.
- 
-For example, the following sample bill in this example is calculated as follows:
- 
-| Time Interval | vCores used each second | Memory GB used each second | Compute dimension billed   | vCore seconds billed over time interval |
+The cost for SQL database in Fabric is the summation of compute cost and storage cost. Compute cost is based on vCore and memory used.
+
+For example, a database with workload activity for two minutes and otherwise inactive for the remainder of the hour. The capacity is billed for compute for two minutes and kept online for another 15 minutes, totaling 17 minutes of compute billing. The database is kept online to preserve application response times and prevent performance delays when accessing an idle database.
+
+Only storage is billed throughout the hour.
+
+## Autoscaling and minimum memory allocation
+
+SQL database in Fabric autoscales compute and provisions a minimum of 2 GB memory, billed as compute while the database is online.
+
+After 15 minutes of inactivity, all compute resources including CPU and memory are released, and the compute bill is zero.
+
+### Cache reclamation
+
+SQL Server performs cache reclamation during low or idle periods to reduce memory usage and costs. However, 2 GB minimum memory is still required to keep SQL Server operational responsive while online.
+
+### Compute billing example
+
+To compare CPU with memory for billing purposes, memory is normalized into units of vCores by rescaling the number of GB by 3 GB per vCore.
+
+For example, the following sample bill in this example is calculated as follows: 
+
+
+| **Time Interval (min)** | **vCores used each second** | **Memory GB used each second** | **Compute dimension billed** | **CU Seconds Billed (Simple Explanation)** |
 |:--|:--|:--|:--|:--|
-| 0:00-0:01     | 2                  | 3                          | vCores used                     | 2 vCores * 60 seconds * 2.611 CUs per vCore seconds = 313.3 CUs  |
-| 0:01-0:02     | 1                  | 6                          | Memory used                     | 6 GB * 1 vCore / 3GB * 60 seconds * 2.611 CUs per vCore seconds = 313.3 CUs |
-| 0:02-0:17     | 0                  | 0                          | Minimum memory provisioned      | 2 GB * 1/3 * 900 seconds * 2.611 CUs per vCore seconds = 1566.6 CUs |
-| 0:17-0:60     | 0                  | 0                          | No compute billed while paused  | 0 CUs    |
-| **Total CUs** |                    |                            |                                 | **2193 CUs*                 |
+| 00:00–0:05 | 2 | 3 | vCores used | Used 2 vCores for 300 seconds. CPU was higher than memory, so billing is based on vCore usage. Calculation: 2 × 300 × 2.611 = 783 CU seconds. |
+| 0:05–0:15  | 1 | 6 | Memory used | Used 6 GB memory for 600 seconds. Memory exceeded CPU, so billing is based on memory usage. Memory-to-vCore ratio: 6 GB = 2 vCores. Calculation: 2 × 600 × 2.611 = 3,133 CU seconds. |
+| 0:15–0:30  | 0 | 2 | Minimum memory allocated | Minimum 2 GB memory is allocated to keep the database ready, even when idle. Memory-to-vCore ratio: 2 GB = 0.57 vCore. Calculation: 0.57 × 900 × 2.611 = 1,574 CU seconds. |
+| 0:30–0:60  | 0 | 0 | No compute billed after 15 minutes of inactivity | No activity for 15 minutes, so all compute, including CPU and memory, is released. Compute billing stops. Calculation: 0 CU seconds. |
+
+
+Total Estimated CU seconds: 5490 CU seconds 
+
+### Storage billing example
+
+Storage is billed continuously, even when compute is paused.
+
+| **Storage Type**| **Current Storage (GB)**  | **Billable Storage (GB)**  | **Billing Type**  | **Example** |
+|:--|:--|:--|:--|:--|
+| Allocated SQL Storage        | 80.53 GB     | 2.84 GB       | Billable          | Storage used to persist SQL database data pages    |
+| SQL Database Backup Storage  | 14.59 GB     | 0.51 GB       | Billable          | Storage used for full recovery backup chain to ensure point-in-time recovery for the database  |
+
+Total billable storage in this example: 2.84 + 0.51 = 3.35 GB 
+
+Storage billing applies for the full hour, regardless of compute state.
+
+### Fabric Capacity SKU selection based on SQL database vCores
+
+Reference this for Fabric SKU sizing estimations for SQL database in Fabric. For more information, see the [Microsoft Fabric Capacity Estimator](https://www.microsoft.com/microsoft-fabric/capacity-estimator) tool.
+
+| SKU    | Capacity Units (CU)  | SQL database vCores per second  |
+|:--|:--|:--|
+| F2     | 2       | 0.766  |
+| F4     | 4       | 1.532  |
+| F8     | 8       | 3.064  |
+| F16    | 16      | 6.128  |
+| F32    | 32      | 12.256   |
+| F64    | 64      | 24.512   |
+| F128   | 128     | 49.024   |
+| F256   | 256     | 98.048   |
+| F512   | 512     | 196.096  |
+| F1024  | 1024    | 392.192  |
+| F2048  | 2048    | 784.384  |
 
 ### Compute usage reporting
 
@@ -86,10 +136,10 @@ This table in the Microsoft Fabric Capacity Metrics app provides a detailed view
 
 Top use cases for this view include:
 
-- Identification of SQL queries(statements) status: values can be "Success","Rejected".
+- Identification of SQL queries(statements) status: values can be **Success** or **Rejected**.
 
-  - The "Success" status is standard SQL database behavior when the capacity is not throttled.
-  - The "Rejected" status can occur because of resource limitations due to capacity throttling.
+  - The **Success** status is standard SQL database behavior when the capacity is not throttled.
+  - The **Rejected** status can occur because of resource limitations due to capacity throttling.
 
 - Identification of SQL queries(statements) that consumed many resources: sort the table by **Total CU(s)** descending by timestamp and artifact. 
 

@@ -15,7 +15,7 @@ items:
     href: architecture-medallion.md
   - name: End to end sample
     href: sample-end-to-end.md
-  - name: End to end tutorial
+  - name: End to end tutorial - Real-Time-Intelligence
     items:
     - name: End to end tutorial - Introduction
       href: tutorial-introduction.md
@@ -288,7 +288,9 @@ items:
       href: database-shortcut.md
     - name: Create an empty table
       href: create-empty-table.md
-    - name: Manage and monitor database tables    
+    - name: Edit table schema
+      href: edit-table-schema.md
+    - name: Manage and monitor tables    
       href: manage-monitor-table.md  
     - name: Data management
       items:

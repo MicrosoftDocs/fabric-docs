@@ -19,7 +19,7 @@ Users assigned to a Fabric Copilot capacity can use it in these scenarios:
 
 * Copilot on Power BI Desktop
 
-* Copilot in Power BI on a Pro or Premium per-user workspace, or a Fabric capacity workspace where the capacity SKU is smaller than F64.
+* Copilot in Power BI on a Pro or Premium per-user workspace, or a Fabric capacity workspace.
 
 * Fabric Copilot on these supported workloads, on a Fabric capacity workspace where the capacity SKU is smaller than F64.
   * Data Factory
@@ -27,7 +27,7 @@ Users assigned to a Fabric Copilot capacity can use it in these scenarios:
   * Data Warehouse
   * Data Science
   * Real-Time Analytics
-  * Data Activator
+  * Activator
 
 * AI Skills on a Fabric capacity workspace where the capacity SKU is smaller than F64.
 
@@ -53,7 +53,7 @@ Once a user is assigned to a Fabric Copilot capacity, no additional steps are re
 
 * Fabric Copilot capacity is only supported in the Fabric tenant's home region.
 
-* The Fabric Copilot capacity has to reside on at least an F64 or P1 [SKU](licenses.md#capacity).
+* The Fabric Copilot capacity has to reside on at least an F2 or P1 [SKU](licenses.md#capacity).
 
 * Users assigned to a Fabric Copilot capacity can use Copilot with Power BI on workspaces with the following license modes: _Pro_, _Trial_, _Premium per-user_, _Premium capacity_ and _Fabric capacity_. Capacities with the _Embedded_ license mode aren't supported.
 

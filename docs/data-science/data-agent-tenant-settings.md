@@ -30,6 +30,9 @@ To configure the required settings, you need administrative privileges to access
 
 Once you are in **Tenant Settings**, you can proceed with enabling the necessary configurations.
 
+> [!NOTE]
+> The tenant settings might need up to one hour to take effect after you enable them.
+
 ## Enable Copilot and Azure OpenAI tenant switch
 
 For a Fabric data agent to function properly, the [**Copilot and Azure OpenAI Service**](../admin/service-admin-portal-copilot.md#users-can-use-copilot-and-other-features-powered-by-azure-openai) tenant settings must be enabled. These settings control user access and data processing policies.

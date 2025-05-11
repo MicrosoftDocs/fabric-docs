@@ -26,7 +26,7 @@ In this article, you learn how to get events from Real-Time hub into either a ne
 * A [KQL database](create-database.md) with editing permissions
 * An [eventstream](event-streams/create-manage-an-eventstream.md) with a data source
 
-## Source
+## Step 1: Source
 
 To get data from Real-Time hub, you need to select a Real-time stream from Real-time data hub as your data source. You can select Real-Time hub in the following ways:
 
@@ -40,7 +40,7 @@ On the lower ribbon of your KQL database, either:
 
 * Select a data stream from the Real-Time hub stream list.
 
-## Configure
+## Step 2: Configure
 
 1. Select a target table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
@@ -65,7 +65,7 @@ On the lower ribbon of your KQL database, either:
 
 [!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
 
-## Inspect
+## Step 3: Inspect
 
 The **Inspect** tab opens with a preview of the data.
 
@@ -88,7 +88,7 @@ Optionally:
 
 [!INCLUDE [get-data-process-event-advanced-options-data-type](includes/get-data-process-event-advanced-options-data-type.md)]
 
-## Summary
+## Step 4: Summary
 
 In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to query, drop the ingested data, or see a dashboard of your ingestion summary. Select **Close** to close the window.
 

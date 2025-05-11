@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept-article
 ms.custom:
-ms.date: 04/06/2025
+ms.date: 05/06/2025
 
 # Customer intent: As an administrator or an executive, I want to learn how to but a Microsoft Fabric subscription so that I can start working in the Microsoft Fabric platform.
 ---
@@ -17,6 +17,17 @@ This article describes the differences between the [Microsoft Fabric](../fundame
 With [capacity quotas](fabric-quotas.md) you can set limits to the maximum number of Fabric Capacity Units (CUs) for each of the capacities on your subscription.
 
 After you buy a capacity, you can learn how to [manage your capacity](/power-bi/enterprise/service-admin-premium-manage#manage-capacity) and [assign workspaces](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity) to it.
+
+> [!NOTE]
+> The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is a free, hands-on training designed for analysts working with Power BI and Microsoft Fabric. You can get hands-on experience on how to analyze data, build reports, using Fabric. It covers key concepts like working with lakehouses, creating reports, and analyzing data in the Fabric environment.
+
+## Prerequisites
+
+To buy a Microsoft Fabric subscription, you need one of the following licenses:
+
+* Microsoft Fabric free
+
+* Power BI
 
 ## SKU types
 

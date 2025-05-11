@@ -1,5 +1,5 @@
 ---
-title: Query acceleration over OneLake shortcuts (preview)
+title: Query acceleration over OneLake shortcuts
 description: Learn how to use the query acceleration policy over OneLake shortcuts to improve query performance and reduce latency for external delta tables.
 ms.reviewer: sharmaanshul
 ms.author: shsagir
@@ -9,9 +9,9 @@ ms.custom:
 ms.date: 11/19/2024
 # Customer intent: Learn how to use the query acceleration policy to accelerate queries over shortcuts and external delta tables.
 ---
-# Query acceleration over OneLake shortcuts (preview)
+# Query acceleration over OneLake shortcuts
 
-This article explains how to use the query acceleration policy to accelerate queries over OneLake shortcuts in the Microsoft Fabric UI. To set this policy using commands, see [query acceleration policy](https://aka.ms/query-acceleration). For general information on the query acceleration over OneLake shortcuts, see [Query acceleration over OneLake shortcuts - overview (preview)](query-acceleration-overview.md).
+This article explains how to use the query acceleration policy to accelerate queries over OneLake shortcuts in the Microsoft Fabric UI. To set this policy using commands, see [query acceleration policy](https://aka.ms/query-acceleration). For general information on the query acceleration over OneLake shortcuts, see [Query acceleration over OneLake shortcuts - overview](query-acceleration-overview.md).
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -54,6 +54,6 @@ The default caching period is that of the database in which the OneLake shortcut
 
 ## Related content
 
-* [Query acceleration over OneLake shortcuts - overview (preview)](query-acceleration-overview.md)
+* [Query acceleration over OneLake shortcuts - overview](query-acceleration-overview.md)
 * [OneLake shortcuts](onelake-shortcuts.md)
 * [Query acceleration policy](https://aka.ms/query-acceleration)
