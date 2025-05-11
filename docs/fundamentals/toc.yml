@@ -53,6 +53,8 @@ items:
     href: create-workspaces.md
   - name: Roles in workspaces
     href: roles-workspaces.md
+  - name: Workspace license mode
+    href: workspace-license-mode.md
   - name: Create items in workspaces
     href: create-items-in-workspaces.md
   - name: Create folders in workspaces
