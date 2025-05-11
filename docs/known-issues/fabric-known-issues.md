@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/08/2025
+ms.date: 05/09/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,11 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1135  | OneLake | [Throttling issues with the Mirrored Azure Databricks catalog shortcuts](./known-issue-1135-throttling-issues-mirrored-azure-databricks-catalog-shortcuts.md) | May 9, 2025 |
+|  1134  | Power BI | [Multiple dataflow staging items created in workspace](./known-issue-1134-multiple-dataflow-staging-items-created-workspace.md) | May 9, 2025 |
+|  1133  | OneLake | [Deleted OneLake Shortcuts still visible as empty file](./known-issue-1133-deleted-oneLake-shortcuts-visible-empty-file.md) | May 9, 2025 |
+|  1132  | Data Engineering | [Spark job fails with out of memory error when using timestamp type](./known-issue-1132-spark-job-fails-memory-error-timestamp-type.md) | May 9, 2025 |
+|  1131  | Databases | [SQL database creation fails due to tenant setting](./known-issue-1131-sql-database-creation-fails-tenant-setting.md) | May 9, 2025 |
 |  1128  | Data Factory | [Failure to Save and Run Dataflow Gen2 dataflows deployed with Git integration](./known-issue-1128-failure-save-run-dataflow-gen2-deployed-git-integration.md) | May 8, 2025 |
 |  1126  | Data Factory | [Function queries cause failures in Dataflow Gen2 refresh](./known-issue-1126-function-queries-failures-dataflow-gen2-refresh.md) | May 8, 2025 |
 |  1123  | Data Warehouse | [Reenabling Azure SQL database mirroring fails](./known-issue-1123-reenabling-azure-sql-database-mirroring-fails.md) | May 7, 2025 |
@@ -45,7 +50,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1083  | Power BI | [Dataflow Gen2 refresh fails with type mismatch error](./known-issue-1083-dataflow-gen2-refresh-fails-type-mismatch-error.md) | April 8, 2025 |
 |  1080  | Data Factory | [Data pipeline run fails due to user auth token errors](./known-issue-1080-data-pipeline-run-fails-user-auth-token-errors.md) | April 8, 2025 |
 |  1079  | Data Factory | [Pipelines fail with missing capacity error](./known-issue-1079-pipelines-fail-missing-capacity-error.md) | April 7, 2025 |
-|  1078  | Data Factory | [Can't install or open on-premises data gateway after Windows update](./known-issue-1078-not-install-open-on-premises-data-gateway-windows-update.md) | March 31, 2025 |
 |  1077  | Power BI | [Failure to scale AAS server or add admins through Azure portal](./known-issue-1077-failure-scale-azure-analysis-services-add-admins.md) | March 31, 2025 |
 |  1076  | Real-Time Intelligence | [Eventstream sample data sources created from Real-Time hub are inactive](./known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md) | March 31, 2025 |
 |  1075  | Data Factory | [Multitasking for Dataflow Gen2 with CI/CD was inadvertently enabled](./known-issue-1075-multitasking-dataflow-gen2-ci-cd-enabled.md) | March 31, 2025 |
@@ -65,9 +69,7 @@ Select the **Title** to view more information about that specific known issue.
 |  1027  | Data Factory | [Mirroring fails for tables with unique index on unsupported data type](./known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md) | February 19, 2025 |
 |  1017  | Data Engineering | [Unsupported error for legacy timestamp in Fabric Runtime 1.3](./known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md) | February 5, 2025 |
 |  1004  | Data Engineering | [Notebook and SJD job statuses are in progress in monitor hub](./known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md) | January 29, 2025 |
-|  1003  | Databases | [Copilot sidecar chat fails with certain private link settings](./known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md) | January 28, 2025 |
 |  1002  | Power BI | [Reports that use functions with RLS don't work](./known-issue-1002-reports-functions-rls-not-work.md) | January 28, 2025 |
-|  996  | Databases | [Some SQL query syntax fails in a graph database query](./known-issue-996-sql-query-syntax-fails-graph-database-query.md) | January 28, 2025 |
 |  990  | Real-Time Intelligence | [KQL database loads continuously without an error](./known-issue-990-kql-database-loads-continuously-without-error.md) | January 28, 2025 |
 |  991  | Data Factory | [Apache Airflow job creation shows Fabric upgrade message](./known-issue-991-apache-airflow-job-creation-upgrade-message.md) | January 13, 2025 |
 |  989  | Data Factory | [Local data access isn't allowed for pipeline using on-premises data gateway](./known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md) | January 13, 2025 |
@@ -84,7 +86,6 @@ Select the **Title** to view more information about that specific known issue.
 |  856  | Data Factory | [Pipeline fails when copying data to data warehouse with staging](./known-issue-856-pipeline-fails-when-copy-data-warehouse.md) | September 25, 2024 |
 |  835  | Data Engineering | [Managed private endpoint connection could fail](./known-issue-835-managed-private-endpoint-connection-fail.md) | September 13, 2024 |
 |  816  | Data Factory | [Pipeline deployment fails when parent contains deactivated activity](./known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md) | August 23, 2024 |
-|  795  | Data Factory | [Multiple installations of on-premises data gateway causes pipelines to fail](./known-issue-795-multiple-installations-data-gateway-pipelines-fail.md) | July 31, 2024 |
 |  767  | Data Warehouse | [SQL analytics endpoint table sync fails when table contains linked functions](./known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md) | July 2, 2024 |
 |  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](./known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
 |  717  | Data Factory | [West India region doesn't support on-premises data gateway for data pipelines](./known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
@@ -97,6 +98,10 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1078  | Data Factory | [Can't install or open on-premises data gateway after Windows update](./known-issue-1078-not-install-open-on-premises-data-gateway-windows-update.md) | March 31, 2025 | Fixed: May 9, 2025 |
+|  1003  | Databases | [Copilot sidecar chat fails with certain private link settings](./known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md) | January 28, 2025 | Fixed: May 9, 2025 |
+|  996  | Databases | [Some SQL query syntax fails in a graph database query](./known-issue-996-sql-query-syntax-fails-graph-database-query.md) | January 28, 2025 | Fixed: May 9, 2025 |
+|  795  | Data Factory | [Multiple installations of on-premises data gateway causes pipelines to fail](./known-issue-795-multiple-installations-data-gateway-pipelines-fail.md) | July 31, 2024 | Fixed: May 9, 2025 |
 |  1117  | Power BI | [Gateway causes lakehouse tables with null values](./known-issue-1117-gateway-causes-lakehouse-tables-null-values.md) | April 25, 2025 | Fixed: May 8, 2025 |
 |  1100  | Power BI | [Snowflake Implementation="2.0" connector doesn't display views](./known-issue-1100-snowflake-implementation-connector-not-display-views.md) | April 15, 2025 | Fixed: May 8, 2025 |
 |  1089  | Power BI | [Dataflow Gen2 refresh fails with PowerBIEntityNotFound error](./known-issue-1089-dataflow-gen2-refresh-fails-error.md) | April 8, 2025 | Fixed: May 8, 2025 |
