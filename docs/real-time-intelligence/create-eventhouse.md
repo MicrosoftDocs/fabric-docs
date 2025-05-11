@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 03/17/2025
+ms.date: 05/11/2025
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to create an eventhouse for data storage in Real-Time Intelligence so that I can effectively manage my data.
 ---

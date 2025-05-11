@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 05/08/2025
+ms.date: 05/11/2025
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -16,7 +16,7 @@ The Eventhouse page serves as the central hub for all your interactions within t
 
 In this article, you learn about how to manage and gain insights about an eventhouse in Real-Time Intelligence.
 
-For advanced analytic insights, see [Eventhouse monitoring overview](monitor-eventhouse.md).
+For advanced analytic insights, see [View monitoring database](#view-monitoring-database) and [Eventhouse monitoring overview](monitor-eventhouse.md).
 
 ## Prerequisites
 
@@ -146,13 +146,16 @@ The databases overview page provides a summary of all the databases in the event
 
 1. To explore a specific database, select the name of this database from the list. For more information, see (manage-monitor-database.md).
 
-## View monitoring database
+## View Worspace monitoring
 
-You can access the KQL database that monitors the Eventhouse explorer pane. Eventhouse monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
+You can access the read-only Workspace monitoring database from the Evenhouse explorer pane. Workspace monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
 
 > [!NOTE]
 >
-> If Workspace monitoring is disabled, your admin can enable it. See [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md).
+> If the monitoring option is enabled, workspace logging is turned on.
+> If the monitoring option is disabled, workspace logging is turned off. > See [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md).
+
+  :::image type="content" source="media/eventhouse/monitor-eventhouse-disabled.png" alt-text="Screenshot of an eventhouse explorer pane with disabled Monitoring highlighted in a red box.":::
 
 1. From the **Eventhouse** explorer, select **Monitoring** to open the **Monitoring Eventhouse** in a new window.
 
@@ -162,7 +165,7 @@ You can access the KQL database that monitors the Eventhouse explorer pane. Even
 
     :::image type="content" source="media/eventhouse/monitor-eventhouse-details.png" alt-text="Screenshot of a monitoring eventhouse showing the monitoring KQL database overview page.":::
 
-    For more advanced eventhouse monitoring and information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
+    For information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
 
 ## Related content
 
