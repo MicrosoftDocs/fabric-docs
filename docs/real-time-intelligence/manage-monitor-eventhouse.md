@@ -152,10 +152,10 @@ You can access the read-only Workspace monitoring database from the Evenhouse ex
 
 > [!NOTE]
 >
-> If the monitoring option is enabled, workspace logging is turned on.
-> If the monitoring option is disabled, workspace logging is turned off. See [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md).
-
-  :::image type="content" source="media/eventhouse/monitor-eventhouse-disabled.png" alt-text="Screenshot of an eventhouse explorer pane with disabled Monitoring highlighted in a red box.":::
+> * If the monitoring option is enabled, workspace logging is turned on.
+> * If the monitoring option is disabled, workspace logging is turned off. See [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md).
+>
+> :::image type="content" source="media/eventhouse/monitor-eventhouse-disabled.png" alt-text="Screenshot of an eventhouse explorer pane with disabled Monitoring highlighted in a red box.":::
 
 1. From the **Eventhouse** explorer, select **Monitoring** to open the **Monitoring Eventhouse** in a new window.
 
