@@ -11,9 +11,16 @@ ms.date: 05/11/2025
 
 # Git Integration with Service Principal (preview)
 
-This article provides a step-by-step guide on how to use a service principal with Git integration in Microsoft Fabric. This integration allows you to automate CI/CD workflows, enabling you to manage your code and deployments more efficiently.
+This article provides a step-by-step guide on how to set up a service principal for integrating Microsoft Fabric with Azure DevOps. This integration allows you to automate CI/CD workflows, enabling you to manage your code and deployments more efficiently.
 
 ## Prerequisites
 
-- A Microsoft Fabric workspace.
-- A service principal with the necessary permissions to access your Git repository.
+To register an application with your Microsoft Entra tenant, you need to have at least [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) permissions.
+
+## Register an Application with Microsoft Entra ID
+
+Follow the 
+
+## Assign service principal to a DevOps organization
+
+## Set up Git integration
