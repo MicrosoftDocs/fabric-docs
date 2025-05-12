@@ -9,7 +9,7 @@ ms.date: 05/11/2025
 #customer intent: As a developer, I want to learn how to integrate Git with a service principal in Microsoft Fabric, so that I can automate CI/CD workflows.
 ---
 
-# Git Integration with Service Principal (preview)
+# Git Integration with Service Principal
 
 This article provides a step-by-step guide on how to set up a service principal for integrating Microsoft Fabric with Azure DevOps. This integration allows you to automate CI/CD workflows, enabling you to manage your code and deployments more efficiently.
 
@@ -35,7 +35,7 @@ Register your application with Microsoft Entra ID,and create a secret by followi
 ## Step 3: Create Azure DevOps Source Control Connection
 
 1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Select **+New** in the top right corner to add a new cloud connection.
-1. Give it a name and set the **Type** to *Azure DevOps source control (preview)* using a *Service Principal* as the authentication method. Complete the other details (Tenant Id, Client Id and Client secret) using the information you saved in [step 1](#step-1-register-an-application-with-microsoft-entra-id).
+1. Give it a name and set the **Type** to *Azure DevOps source control* using a *Service Principal* as the authentication method. Complete the other details (Tenant Id, Client Id and Client secret) using the information you saved in [step 1](#step-1-register-an-application-with-microsoft-entra-id).
 
  :::image type="content" source="./media/git-integration-with-service-principal/new-connection.png" alt-text="Screenshot of new connection interface.":::
 
