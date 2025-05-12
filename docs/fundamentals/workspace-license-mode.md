@@ -44,7 +44,7 @@ You can reassign a workspace to a different capacity via workspace license modes
 1. Select the desired license mode and specify the capacity the workspace will be hosted on.
 
     > [!NOTE]
-    > You can specify the specific capacity only when you select one of the capacity license modes. types. Fabric automatically reserves shared capacity for per-user licenses.
+    > You can choose specific capacities only when you select one of the capacity license modes. Fabric automatically reserves shared capacity for per-user licenses.
 
     > [!IMPORTANT]
     > The types of items contained in the workspace can affect the ability to change license modes and/or move the workspace to a capacity in a different region. See [Moving data around](../admin/portal-workspaces.md#moving-data-around) for detail.
@@ -52,4 +52,4 @@ You can reassign a workspace to a different capacity via workspace license modes
 ## Related content
 
 * [Fabric licenses](/power-bi/enterprise/service-admin-licensing-organization#fabric-licenses)
-* [Moving data around](../admin/portal-workspaces.md#moving-data-around))
+* [Moving data around](../admin/portal-workspaces.md#moving-data-around)
