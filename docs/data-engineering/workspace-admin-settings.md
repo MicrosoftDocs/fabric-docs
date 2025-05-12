@@ -86,7 +86,7 @@ Jobs settings allow admins to control the job admission logic for all the Spark 
 
 By default all workspaces are enabled with Optimistic Job Admission. Learn more about [Job admission for Spark in Microsoft Fabric](job-admission-management.md).
 
-You can enable the **Reserve maximum cores for active Spark jobs** to turn of Optimistic job admission based approach and reserve max cores for their Spark jobs. 
+You can enable the **Reserve maximum cores for active Spark jobs** to turn off Optimistic job admission based approach and reserve max cores for their Spark jobs. 
 
 You can also set the **Spark session timeout** to customize the session expiry for all the notebook interactive sessions. 
 > [!NOTE]
