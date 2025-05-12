@@ -4,7 +4,7 @@ description: Learn about mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, tinglee, sbahadur
-ms.date: 04/27/2025
+ms.date: 05/12/2025
 ms.topic: overview
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -120,7 +120,7 @@ For database mirroring and open mirroring, the Fabric compute and OneLake storag
 
 - Storage for replicas is free up to a limit based on the capacity size. Mirroring offers a free terabyte of mirroring storage for every capacity unit (CU) you have purchased. For example, if you purchase an F64 capacity, you get 64 free terabytes worth of storage, exclusively used for mirroring. OneLake storage is billed if free Mirroring storage limit is exceeded, or when the capacity is paused. For more information, see [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
 - Fabric compute used to replicate your data into Fabric OneLake is free and does not consume capacity. Requests to OneLake as part of the mirroring process consume capacity as normal OneLake compute consumption. The compute for querying data using SQL, Power BI, or Spark is charged at regular rates.
-- A running capacity is required only for the inital setup of Mirroring.  
+- A running Fabric capacity is required only for the initial setup of Mirroring.  
 
 ## Data Engineering with your mirrored database data
 
