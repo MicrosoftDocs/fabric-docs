@@ -52,7 +52,7 @@ On the ribbon of your KQL database, either:
 
     :::image type="content" source="media/get-data-eventstream/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one eventstream selected." lightbox="media/get-data-eventstream/configure-tab.png":::
 
-    * When you selected **Real-Time hub** as your source, you select a default or derived stream from the list, and the **Workspace**, **Eventstream**, and **Stream** are automatically populated and do not require configuration.
+    * When you select **Real-Time hub** as your source, you choose a default or derived stream from the list, and the **Workspace**, **Eventstream**, and **Stream** are automatically populated and don't require configuration.
 
     :::image type="content" source="media/get-data-eventstream/configure-tab-derived-eventstream.png" alt-text="Screenshot of configure tab with new table entered and read-only configure data source settings." lightbox="media/get-data-eventstream/configure-tab-derived-eventstream.png":::
 
