@@ -50,7 +50,7 @@ On the ribbon of your KQL database, either:
     > [!IMPORTANT]
     > The getting data from dervied streams feature is in [preview](../fundamentals/preview.md).
 
-        :::image type="content" source="media/get-data-eventstream/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one eventstream selected." lightbox="media/get-data-eventstream/configure-tab.png":::
+    :::image type="content" source="media/get-data-eventstream/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one eventstream selected." lightbox="media/get-data-eventstream/configure-tab.png":::
 
     * When you selected Real-Time hub as your source, you select a default or derived stream from the list, and the Worspace, Eventstream, and Stream are automatically populated and do not require configuration.
 
