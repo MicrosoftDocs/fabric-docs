@@ -13,7 +13,7 @@ ms.search.form: ML model endpoints
 
 # Serve real-time predictions with ML model endpoints in Fabric
 
-[!INCLUDE [feature-preview](includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 Microsoft Fabric lets you serve real-time predictions from ML models with secure, scalable, and easy-to-use online endpoints. These endpoints are available as built-in properties of most Fabric models—and they require little to no configuration to kick off fully managed real-time deployments.
 
@@ -38,7 +38,7 @@ You can view the details of a specific model version's endpoint from the Fabric 
 
 > [!NOTE]
 >
-> - TBD
+> - Note here.
 
 ## Activating endpoints to serve real-time predictions
 
@@ -61,7 +61,7 @@ Every endpoint has a status value showing whether it’s ready to serve real-tim
 
 > [!TIP]
 >
-> - TBD
+> - Tip here.
 
 ## Managing active model endpoints
 
@@ -71,21 +71,21 @@ For an overview of your active endpoints, select “Manage endpoints” from the
 
 All active version endpoints are listed under the model’s endpoint settings. You can modify whether each endpoint is set to reduce resource usage in the absence of traffic by toggling the auto-sleep switcher to be “On” or “Off.”
 
-:::image type="content" source="model-endpoints/auto-sleep.jpg" alt-text="Screenshot showing how to change the auto-sleep property on ML model endpoints." lightbox="model-endpoints/auto-sleep.jpg":::
+:::image type="content" source="media/model-endpoints/auto-sleep.jpg" alt-text="Screenshot showing how to change the auto-sleep property on ML model endpoints." lightbox="media/model-endpoints/auto-sleep.jpg":::
 
 ## Querying endpoints for real-time predictions
 
 Model endpoints are available for instant testing with a low-code experience in Fabric. Navigate to a version with an active endpoint and select “Preview predictions” from the ribbon in the interface. You can send sample requests to the endpoint—and get sample predictions in real-time—using form fields that match the model’s input signature.
 
-:::image type="content" source="media/model-endpoints/preview" alt-text="Screenshot showing the built-in preview experience for getting sample predictions from an active ML model endpoint." lightbox="media/model-endpoints/preview":::
+:::image type="content" source="media/model-endpoints/preview.jpg" alt-text="Screenshot showing the built-in preview experience for getting sample predictions from an active ML model endpoint." lightbox="media/model-endpoints/preview.jpg":::
 
 To populate the form fields with random sample values, select “Autofill.” You can add additional sets of form values to test the endpoint with larger requests. Select “Get predictions” to query the endpoint.
 
-:::image type="content" source="media/model-endpoints/form-preview" alt-text="Screenshot showing the form-based view for sending sample requests to an active ML model endpoint." lightbox="media/model-endpoints/form-preview":::
+:::image type="content" source="media/model-endpoints/form-preview.jpg" alt-text="Screenshot showing the form-based view for sending sample requests to an active ML model endpoint." lightbox="media/model-endpoints/form-preview.jpg":::
 
 If you prefer to format sample requests using JSON, use the dropdown selector to change the view.
 
-:::image type="content" source="media/model-endpoints/json-preview" alt-text="Screenshot showing the JSON-based view for sending sample requests to an active ML model endpoint" lightbox="media/model-endpoints/json-preview":::
+:::image type="content" source="media/model-endpoints/json-preview.jpg" alt-text="Screenshot showing the JSON-based view for sending sample requests to an active ML model endpoint" lightbox="media/model-endpoints/json-preview.jpg":::
 
 ## Deactivating model endpoints
 
@@ -103,7 +103,7 @@ You can also deactivate multiple version endpoints at once from the model’s se
 
 > [!IMPORTANT]
 >
-> TBD
+> Important here.
 
 ## Related content
 
