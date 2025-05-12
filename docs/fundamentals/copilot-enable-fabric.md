@@ -45,9 +45,6 @@ Enabling Copilot in Fabric involves several prerequisites and steps, as describe
 > [!NOTE]
 > You don't need to enable Fabric to use Copilot in Power BI. You can enable Copilot for the Power BI workload without enabling the other Fabric workloads; for instance, if you have a P SKU.
 
-> [!IMPORTANT]
-> When scaling from a smaller capacity to F64 or above, allow up to 24 hours for Copilot for Power BI to activate.
-
 See the article [Overview of Copilot in Fabric](copilot-fabric-overview.md) for details on its functionality across workloads, data security, privacy compliance, and responsible AI use.
 
 ## Related content
