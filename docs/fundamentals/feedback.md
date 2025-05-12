@@ -45,13 +45,13 @@ To sign up for the user panel, use the following steps:
 
 * You need a personal or corporate Microsoft account (MSA/Live ID). If you don't have one, [sign up for a new account](https://signup.live.com/?lic=1). To learn more, see how to [create a new Microsoft account](https://support.microsoft.com/en-us/account-billing/how-to-create-a-new-microsoft-account-a84675c3-3e9e-17cf-2911-3d56b15c0aaf).
 
-* Fill out the form with your details. The demographic questions such as contact number, job role, etc. are optional and can be skipped.
+* Fill out the form with your details. The demographic questions are optional and can be skipped.
 
 * You are asked to review and accept a general **Participant Waiver** covering confidentiality, feedback use, and privacy. Review the waiver in detail before submitting.
 
 * After signing up, visit the [user panel](https://aka.ms/FabricUserPanel) site to manage your membership and answer a few optional Fabric-related questions. These questions help us customize communications and feedback invites based on your interests and usage.
 
-* For each Fabric study or campaign that you'd be a good fit for, you wll receive a formal email invite with details on the study and how to participate.
+* For each Fabric study or campaign that you'd be a good fit for, you will receive a formal email invite with details on the study and how to participate.
 
 We value your input and look forward to having you in the Fabric User Panel!
 
