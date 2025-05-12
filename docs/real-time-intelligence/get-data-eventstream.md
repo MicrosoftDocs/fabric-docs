@@ -6,17 +6,15 @@ ms.author: shsagir
 author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 05/08/2025
+ms.date: 05/12/2025
 ms.search.form: Get data in a KQL Database
 ---
 
-# Get data from Eventstream (preview)
+# Get data from Eventstream
 
 In this article, you learn how to get data from an existing eventstream into either a new or existing table.
 
 You can ingest data from default or derived streams. A derived stream is created following the addition of a series of stream operations to the eventstream, such as **Filter** or **Manage Fields**. For more information, see [Eventstream concepts](event-streams/create-default-derived-streams.md#concepts).
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 To get data from a new eventstream, see [Get data from a new eventstream](event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-a-new-eventstream).
 
@@ -28,19 +26,17 @@ To get data from a new eventstream, see [Get data from a new eventstream](event-
 
 ## Step 1: Source
 
-To get data from an eventstream, you need to select the eventstream as your data source. You can select an existing eventstream in the following ways:
+To get data from an eventstream, you need to select the eventstream as your data source. You can select an eventstream in the following ways:
 
 On the ribbon of your KQL database, either:
 
+* From the **Get Data** option in the ribbon, select the **Eventstream** tile.
+
 * From the **Get Data** dropdown menu, select **Eventstream** > **Existing Eventstream**.
 
-* From the **Get Data** dropdown menu, select **Real-Time data hub**, and then select a derived eventstream from the list.
+* From the **Get Data** dropdown menu, select **Real-Time data hub**, and then select an eventstream from the list.
 
 ## Step 2: Configure
-
-When configuring get data from a default eventstream, you need to specify the eventstream and stream to use. When configuring get data from the Real-Time hub's list of derived streams, the settings are automatically populated.
-
-### [Existing eventstream](#tab/eventstream)
 
 1. Select a target table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
@@ -49,33 +45,21 @@ When configuring get data from a default eventstream, you need to specify the ev
 
 1. Under **Configure the data source**, fill out the settings using the information in the following table:
 
+    * When you selected Eventstream as your source, you need to define the Worspace, Eventstream, and Stream.
+
     :::image type="content" source="media/get-data-eventstream/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one eventstream selected." lightbox="media/get-data-eventstream/configure-tab.png":::
 
-    |**Setting** | **Description**|
-    |----|----|
-    | Workspace| Your eventstream workspace location. Select a workspace from the dropdown.|
-    | Eventstream | The name of your eventstream. Select an eventstream from the dropdown.|
-    | Stream | The name of the stream or derived stream. Select a stream from the dropdown.|
-    | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
-    | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
-
-1. Select **Next**
-
-### [Derived eventstream](#tab/realtimehub)
-
-1. Select a target table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
-
-    > [!NOTE]
-    > Table names can be up to 1,024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
-
-1. Under **Configure the data source**, the settings for the **Workspace**, **Eventstream**, and **Stream** are read-only.
+    * When you selected Real-Time hub as your source, you select an eventstream from the list, and the Worspace, Eventstream, and Stream are automatically populated and do not require configuration.
 
     :::image type="content" source="media/get-data-eventstream/configure-tab-derived-eventstream.png" alt-text="Screenshot of configure tab with new table entered and read-only configure data source settings." lightbox="media/get-data-eventstream/configure-tab-derived-eventstream.png":::
 
     |**Setting** | **Description**|
     |----|----|
+    | Workspace| Your eventstream workspace location. Select a workspace from the dropdown.|
+    | Eventstream | The name of your eventstream. Select an eventstream from the dropdown.|
+    | Stream | The name of the default or derived stream. Select a stream from the dropdown.</br>* For default streams, the stream name format is *Eventstream-stream*<br/>* For derived streams, the name was defined when the stream was created.<br/> [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]|
     | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
-    | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
+    | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically populated, and you can edit the name to simplify managing the data connection in the workspace. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
 
 1. Select **Next**
 
