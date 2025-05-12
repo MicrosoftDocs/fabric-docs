@@ -18,7 +18,8 @@ Microsoft Fabric is an enterprise-ready, end-to-end analytics platform. It unifi
 Fabric provides a seamless, user-friendly SaaS experience. It integrates separate components into a cohesive stack. It centralizes data storage with OneLake and embeds AI capabilities, eliminating the need for manual integration. With Fabric, you can efficiently transform raw data into actionable insights.
 
 > [!NOTE]
-> The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is a free, hands-on training designed for analysts working with Power BI and Microsoft Fabric. You can get hands-on experience on how to analyze data, build reports, using Fabric. It covers key concepts like working with lakehouses, creating reports, and analyzing data in the Fabric environment.
+> * The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is a free, hands-on training designed for analysts working with Power BI and Microsoft Fabric. You can get hands-on experience on how to analyze data, build reports, using Fabric. It covers key concepts like working with lakehouses, creating reports, and analyzing data in the Fabric environment.
+> * Join our new Microsoft Fabric user panel to share your feedback and help shape Fabric and Power BI. Participate in surveys and 1:1 sessions with the product team. Learn more and sign up [Fabric user panel](feedback.md#fabric-user-panel).
 
 ## Capabilities of Fabric
 
