@@ -45,14 +45,14 @@ On the ribbon of your KQL database, either:
 
 1. Under **Configure the data source**, fill out the settings using the information in the following table:
 
-    * When you selected Eventstream as your source, you need to define the Worspace, Eventstream, and default or derived Stream.
+    * When you selected Eventstream as your source, you need to define the **Workspace**, **Eventstream**, and default or derived **Stream**.
 
     > [!IMPORTANT]
     > The getting data from dervied streams feature is in [preview](../fundamentals/preview.md).
 
     :::image type="content" source="media/get-data-eventstream/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one eventstream selected." lightbox="media/get-data-eventstream/configure-tab.png":::
 
-    * When you selected Real-Time hub as your source, you select a default or derived stream from the list, and the Worspace, Eventstream, and Stream are automatically populated and do not require configuration.
+    * When you selected Real-Time hub as your source, you select a default or derived stream from the list, and the **Workspace**, **Eventstream**, and **Stream** are automatically populated and do not require configuration.
 
     :::image type="content" source="media/get-data-eventstream/configure-tab-derived-eventstream.png" alt-text="Screenshot of configure tab with new table entered and read-only configure data source settings." lightbox="media/get-data-eventstream/configure-tab-derived-eventstream.png":::
 
