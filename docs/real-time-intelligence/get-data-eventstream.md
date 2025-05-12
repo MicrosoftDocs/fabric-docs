@@ -45,7 +45,7 @@ On the ribbon of your KQL database, either:
 
 1. Under **Configure the data source**, fill out the settings using the information in the following table:
 
-    * When you selected **Eventstream** as your source, you need to specify the **Workspace**, **Eventstream**, and default or derived **Stream**.
+    * When you select **Eventstream** as your source, you need to specify the **Workspace**, **Eventstream**, and default or derived **Stream**.
 
     > [!IMPORTANT]
     > The getting data from dervied streams feature is in [preview](../fundamentals/preview.md).
