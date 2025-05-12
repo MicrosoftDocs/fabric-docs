@@ -13,7 +13,7 @@ Mirrored database operation logs are part of the [workspace monitoring](../../fu
 
 ## Mirrored database table execution logs
 
-Mirrored database table-level logs provide detailed information about the mirroring execution, complementing the glance view of monitoring from the UI. You can use those logs to:
+Mirrored database table-level logs provide detailed information about the mirroring execution, complementing the glance view of monitoring from the Fabric portal. You can use those logs to:
 
 - Understand the amount of data replicated over time for the mirrored databases/tables.
 - Track additions and removals of tables for mirroring.

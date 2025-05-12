@@ -50,7 +50,7 @@ Review limitations documentation for each data source:
 
 If you observe a delay in the appearance of mirrored data, check the following:
 
-- **Mirroring status:** In the [monitoring UI](monitor.md#monitor-from-the-ui) of the mirrored database, check the status of mirrored database and specific tables, and the "**Last completed**" column which indicates the last time that Fabric refreshes the mirrored table from source. Empty means the table is not yet mirrored. 
+- **Mirroring status:** In the [Fabric portal monitoring page](monitor.md#monitor-from-the-fabric-portal) of the mirrored database, check the status of mirrored database and specific tables, and the "**Last completed**" column which indicates the last time that Fabric refreshes the mirrored table from source. Empty means the table is not yet mirrored. 
 
   If you enable the workspace monitoring, you can check the mirroring execution latency in addition, by querying the `ReplicatorBatchLatency` value from the [mirrored database operation logs](monitor-logs.md).
 

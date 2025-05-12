@@ -9,9 +9,9 @@ ms.topic: conceptual
 ---
 # Monitor Fabric mirrored database replication
 
-This article outlines various methods for monitoring your mirrored database after it's set up, including using the UI, programmatic monitoring, and leveraging workspace monitoring.
+This article outlines various methods for monitoring your mirrored database after it's set up, including using the Fabric portal, programmatic monitoring, and leveraging workspace monitoring.
 
-## Monitor from the UI
+## Monitor from the Fabric portal
 
 Once the mirrored database is configured, you can monitor the current state of replication. The **Monitor replication** section shows you the database level status, and a list of tables under replication along with the corresponding status, total rows replicated, and the last completed time to refresh mirrored table from source.
 
