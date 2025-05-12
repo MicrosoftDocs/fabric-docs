@@ -44,7 +44,7 @@ To edit a semantic model with Direct Lake tables later, take the following steps
 
 Now you are live editing the semantic model in the web. The model opens by default in **viewing mode** to avoid accidental edits. Change to **editing mode** in the top right-hand corner of the window. **Edit in Desktop** is also available to change to [live edit in Power BI Desktop](direct-lake-power-bi-desktop.md).
 
-:::image type="content" source="media/direct-lake-web-modeling/web-modeling-mode.png" alt-text="Screen shot of edit in desktop from web modeling option." lightbox="media/direct-lake-web-modeling/web-modeling-mode.png":::
+:::image type="content" source="media/direct-lake-web-modeling/web-modeling-mode.png" alt-text="Screenshot of edit in desktop from web modeling option." lightbox="media/direct-lake-web-modeling/web-modeling-mode.png":::
 
 
 ## Related content

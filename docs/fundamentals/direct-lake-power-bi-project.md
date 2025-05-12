@@ -22,15 +22,15 @@ To support professional enterprise development workflows of semantic models in D
 
 Navigate to **File > Export > Power BI Project** and export it as a [Power BI Project file (PBIP)](/power-bi/developer/projects/projects-overview).
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-10.png" alt-text="Screen shot of opening a Power BI Project in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-10.png":::
+:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-10.png" alt-text="Screenshot of opening a Power BI Project in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-10.png":::
 
 By default, the PBIP file is exported to the `%USERPROFILE%\Microsoft Fabric\repos\[Workspace Name]` folder. However, you can choose a different location during the export process.
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-11.png" alt-text="Screen shot choosing a different path location for a Power BI Project file." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-11.png":::
+:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-11.png" alt-text="Screenshot choosing a different path location for a Power BI Project file." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-11.png":::
 
 Selecting **Export** opens the folder containing the PBIP files of the exported semantic model along with an empty report.
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-12.png" alt-text="Screen shot of exported folder containing the files of an exported semantic model in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-12.png":::
+:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-12.png" alt-text="Screenshot of exported folder containing the files of an exported semantic model in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-12.png":::
 
 After exporting, you should open a new instance of Power BI Desktop and open the exported PBIP file to continue editing with a Power BI Project. When you open the PBIP file, Power BI Desktop prompts you to either create a new semantic model in a Fabric workspace, or select an existing semantic model for **remote modeling**.
 
@@ -48,11 +48,11 @@ When working on a Power BI Project (PBIP) with a semantic model that can't run o
 
 When opening a Power BI Project (PBIP) that require a remote semantic model, Power BI Desktop prompts you to either create a new semantic model or select an existing semantic model in a Fabric workspace.
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-14.png" alt-text="Screen shot of setting up the remote model for the Power BI Project." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-14.png":::
+:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-14.png" alt-text="Screenshot of setting up the remote model for the Power BI Project." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-14.png":::
 
 If you select an existent semantic model and the definition differs, Power BI Desktop warns you before overwriting, as shown in the following image.
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-15.png" alt-text="Screen shot of semantic model issues in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-15.png":::
+:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-15.png" alt-text="Screenshot of semantic model issues in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-15.png":::
 
 > [!NOTE]
 > You can select the same semantic model you exported the PBIP from. However, the best practice when working with a PBIP that requires a remote semantic model is for each developer to work on their own private remote semantic model to avoid conflicts with changes from other developers.
@@ -60,7 +60,7 @@ If you select an existent semantic model and the definition differs, Power BI De
 
 Selecting the title bar displays both the PBIP file location and the remote semantic model living in a Fabric workspace, shown in the following image.
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-16.png" alt-text="Screen shot of semantic model file location." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-16.png":::
+:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-16.png" alt-text="Screenshot of semantic model file location." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-16.png":::
 
 A local setting will be saved in the Power BI Project files with the configured semantic model, next time you open the PBIP, you won't see the prompt, and Fabric semantic model will be overwritten with the metadata from the semantic model in the Power BI Project files.
 
@@ -68,7 +68,7 @@ A local setting will be saved in the Power BI Project files with the configured 
 
 During the **preview**, if you wish to switch the remote semantic model in the PBIP you must navigate to the `\*.SemanticModel\.pbi\localSettings.json` file. There, you can either modify the *remoteModelingObjectId* property to the ID of the semantic model you want to connect to, or remove the property altogether. Upon reopening the PBIP, Power BI Desktop connects to the new semantic model or prompts you to create or select an existing semantic model.
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-17.png" alt-text="Screen shot of semantic model ID." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-17.png":::
+:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-17.png" alt-text="Screenshot of semantic model ID." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-17.png":::
 
 > [!NOTE]
 > The configuration described in this section is intended solely for local development and should not be used for deployment across different environments.

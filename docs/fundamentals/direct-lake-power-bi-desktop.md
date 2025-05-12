@@ -126,7 +126,7 @@ Selecting the name of the semantic model in the top left corner of Power BI Desk
 
 ### TMDL view
 
-TMDL (Tabular Model Defintion Language) view can be used with Direct Lake semantic models. The TMDL scripts are not saved unless you are live editing with a [Power BI Project (PBIP)](direct-lake-power-bi-project.md). Learn more about [TMDL view](/power-bi/transform-model/desktop-tmdl-view). 
+TMDL (Tabular Model Definition Language) view can be used with Direct Lake semantic models. The TMDL scripts are not saved unless you are live editing with a [Power BI Project (PBIP)](direct-lake-power-bi-project.md). Learn more about [TMDL view](/power-bi/transform-model/desktop-tmdl-view). 
 
 ### DAX query view
 
@@ -135,7 +135,7 @@ DAX (Data Analysis Expressions) query view can be used with Direct Lake semantic
 
 ## Migrating Direct Lake on SQL semantic models to Direct Lake on OneLake
 
-If you already have an existing **Direct Lake on SQL** semantic model and want to migrate to **Direct Lake on OneLake**, you can using **TMDL view**. Direct Lake on OneLake offers the advantage of having tables from multiple sources and no fallback to DirectQuery. 
+If you already have an existing **Direct Lake on SQL** semantic model and want to migrate to **Direct Lake on OneLake**, you can by using **TMDL view**. Direct Lake on OneLake offers the advantage of having tables from multiple sources and no fallback to DirectQuery. 
 
 This is not recommended if you are using views or shortcut tables in the Direct Lake on SQL semantic model.
 
@@ -177,7 +177,7 @@ Live edit of semantic models in Direct Lake mode in Power BI Desktop is currentl
 * Externally shared semantic models aren't eligible for live edit.
 * Adding shortcut tables may cause an error. To use a shortcut table with Direct Lake on OneLake, onboarding to the early access or limited preview version of [OneLake security](/fabric/onelake/security/get-started-security#onelake-security-preview) is required. Using any table in a Lakehouse with only the public preview of OneLake security is not supported and will result in an error.
 
-In additon to the current known issues and limitations of Direct Lake.
+In addition to the current known issues and limitations of Direct Lake.
 
 
 
