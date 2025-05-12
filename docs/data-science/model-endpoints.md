@@ -1,6 +1,7 @@
 ---
 title: Get real-time predictions with ML model endpoints in Fabric
 description: Learn how to serve real-time predictions seamlessly from ML models with secure, scalable, and fully managed online endpoints.
+ms.author: franksolomon
 author: fbsolo-ms1
 ms.reviewer: erenorbey
 reviewer: orbey
@@ -12,29 +13,13 @@ ms.search.form: ML model endpoints
 
 # Serve real-time predictions with ML model endpoints in Fabric
 
-[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview](includes/feature-preview-note.md)]
 
-Microsoft Fabric lets yuo serve real-time predictions from ML models with secure, scalable, and easy-to-use online endpoints. These endpoints are available as built-in properties of most Fabric models—and they require little to no configuration to kick off fully managed real-time deployments.
+Microsoft Fabric lets you serve real-time predictions from ML models with secure, scalable, and easy-to-use online endpoints. These endpoints are available as built-in properties of most Fabric models—and they require little to no configuration to kick off fully managed real-time deployments.
 
 You can manage and query model endpoints with a public-facing REST API (LINK). You can also get started directly from the Fabric interface, using a low-code experience to activate model endpoints and preview predictions instantly.
 
-:::image type="content" source="TBD" alt-text="TBD" lightbox="TBD":::
-
-> [!NOTE]
->
-> - TBD
-
-> [!TIP]
->
-> - TBD
-
-> [!WARNING]
->
-> TBD
-
-> [!IMPORTANT]
->
-> TBD
+:::image type="content" source="media/model-endpoints/overview.jpg" alt-text="Screenshot showing an ML model in Fabric with a built-in endpoint property for serving real-time predictions." lightbox="media/model-endpoints/overview.jpg":::
 
 ## Getting started with ML model endpoints
 
