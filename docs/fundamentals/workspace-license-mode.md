@@ -14,7 +14,7 @@ When you create a workspace, it's assigned to a [capacity](../enterprise/license
 
 ## License modes and capacity types
 
-There are two types of license modes: [per user license modes and capacity license modes](/power-bi/enterprise/service-admin-licensing-organization#fabric-licenses).
+The workspace license modes refer to different capacity types. There are two types of license modes: per user license modes and capacity license modes.
 
 **Per user license mode**: With a per user license mode, a workspace is hosted on system reserved capacity. The options are *Pro* and *Premium Per User (PPU)*.
 
