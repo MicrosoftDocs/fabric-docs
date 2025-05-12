@@ -191,7 +191,7 @@ After the deleted workspace has been restored as an app workspace, it's just lik
 
 Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities. Such movement might be to a capacity in the same region, or it might be to a capacity in a different region.
 
-Workspaces are moved to other capacities via their license mode. The license mode determines what kind of capacity the workspace is hosted in. For information about the license modes, see [License modes and capacity types](../fundamentals/workspace-license-mode#license-modes-and-capacity-types). In the Fabric UI, workspaces can be moved to other capacities in the following ways:
+In the Fabric UI, workspaces can be moved to other capacities in the following ways:
 
 * Fabric admins can reassign workspaces to a different capacity individually via the [Workspaces page](#reassign-a-workspace-to-a-different-capacity) in the Fabric Admin portal.
 * Fabric admins and capacity admins can reassign workspaces to a capacity in bulk via the **Workspaces assigned to this capacity** option in the [capacity's settings](./capacity-settings.md#capacity-settings).
