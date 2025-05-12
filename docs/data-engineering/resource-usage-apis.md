@@ -124,7 +124,7 @@ Status code: 200
 
 ### Definitions
 
-*ResourceUsageInfo*
+#### *ResourceUsageInfo*
 
 object
 
