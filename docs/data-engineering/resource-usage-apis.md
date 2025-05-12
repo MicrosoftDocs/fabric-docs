@@ -84,7 +84,7 @@ None
 
 | Name | Type | Description |
 | --- | --- | --- |
-| 200 OK | [ResourceUsageInfo](#definitions) | Request completed successfully |
+| 200 OK | [ResourceUsageInfo](#resourceusageinfo) | Request completed successfully |
 | 400 Bad Request |   | Invalid parameter. start is greater than end |
 | 403 Forbidden |  | User does not have the correct permission |
 | 404 Not Found |   |  - Mismatch between item id, application id and Livy id <br> - Too early to retrieve any resource usage data |
@@ -124,7 +124,7 @@ Status code: 200
 
 ### Definitions
 
-##### *ResourceUsageInfo*
+#### *ResourceUsageInfo*
 
 object
 
@@ -135,9 +135,9 @@ object
 | capacityExceeded | bool | True if the limitation of 10k tasks exceeds. When true, all properties in data are empty. |
 | idleTime | long | The duration when the given Spark application is in idle, in milli-second. |
 | coreEfficiency | double | The overview usage rate of executor cores. |
-| data | [ResourceUsageData](#definitions) |   |
+| data | [ResourceUsageData](#resourceusagedata) |   |
 
-*ResourceUsageData*
+#### *ResourceUsageData*
 
 object
 
@@ -146,11 +146,11 @@ object
 | timestamps | An array of long |   |
 | isPartials | an array of bool | Any filter applied due to limit at the corresponding timestamp. |
 | allocated/idle/runningCores | an array of double | Count of cores with different status at the corresponding timestamp. |
-| executors | a two-dimensional array of [ResourceUsageExecutor]()  | Per-executor core and task information at the corresponding timestamp. |
-| jobs | a two-dimensional array of [ResourceUsageJob]()  | Per-job task information at the corresponding timestamp. |
-| executorJobs | a two-dimensional array of [ResourceUsageExecutorJob]() | Per-executor job information at the corresponding timestamp. |
+| executors | a two-dimensional array of [ResourceUsageExecutor](#resourceusageexecutor)  | Per-executor core and task information at the corresponding timestamp. |
+| jobs | a two-dimensional array of [ResourceUsageJob](#resourceusagejob)  | Per-job task information at the corresponding timestamp. |
+| executorJobs | a two-dimensional array of [ResourceUsageExecutorJob](#resourceusageexecutorjob) | Per-executor job information at the corresponding timestamp. |
 
-*ResourceUsageExecutor*
+#### *ResourceUsageExecutor*
 
 Object
 
@@ -158,11 +158,22 @@ Per-executor core and task information
 
 | Name | Type | Description |
 | --- | --- | --- |
-| timeexecutorId | string | Executor ID |
+| executorId | string | Executor ID |
 | coreCount | int | Count of running cores on the executor |
 | taskCount | int | Count of running tasks on the executor |
 
-*ResourceUsageJob*
+#### *ResourceUsageJob*
+
+Object
+
+Per-job task information 
+
+| Name | Type | Description |
+| --- | --- | --- |
+| jobId | int | Job ID |
+| taskCount | int | Count of running tasks of the job. |
+
+#### *ResourceUsageExecutorJob*
 
 Object 
 
@@ -171,7 +182,7 @@ Per-executor job information
 | Name | Type | Description |
 | --- | --- | --- |
 | executorId | string | Executor ID |
-| resourceUsageJob | An array of [ResourceUsageJob]() | Running jobs which have tasks running on the executor. |
+| resourceUsageJob | An array of [ResourceUsageJob](#resourceusagejob) | Running jobs which have tasks running on the executor. |
 
 ## Get resource usage snapshot
 
@@ -243,7 +254,7 @@ None
 
 | Name | Type | Description|
 | ---- | ---- | ---- |
-| 200 OK | [ResourceUsageSnapshot]() | Request completed successfully |
+| 200 OK | [ResourceUsageSnapshot](#resourceusagesnapshot) | Request completed successfully |
 | 403 Forbidden |   | User does not have the correct permission |
 | 404 Not Found |   | - Mismatch between item id, application id and Livy id <br> - Too early to retrieve any resource usage data |
 
@@ -275,16 +286,16 @@ Status code: 200
 
 ### Definitions
 
-*ResourceUsageSnapshot* 
+#### *ResourceUsageSnapshot* 
 
 Object
 
 | Name | Type | Description |
 | --- | --- | --- |
 | queryTime | long | The timestamp specified in the request  |
-| data | [ResourceUsageSnapshotData]()  |   |
+| data | [ResourceUsageSnapshotData](#resourceusagesnapshotdata)  |   |
 
-*ResourceUsageSnapshotData*
+#### *ResourceUsageSnapshotData*
 
 object
 
@@ -293,6 +304,6 @@ object
 | timestamps |long | Timestamp of the time point which is closest to the given timestamp. |
 | isPartials | bool | Any filter applied due to limit at the timestamp. |
 | allocated/idle/runningCores | double | Count of cores with different status at the timestamp. |
-| executors | An array of [ResourceUsageExecutor]()  | Per-executor core and task information at the timestamp. |
-| jobs | an array of [ResourceUsageJob]()  | Per-job task information at the timestamp. |
-| executorJobs | an array of [ResourceUsageExecutorJob]() | Per-executor job information at the timestamp. |
+| executors | An array of [ResourceUsageExecutor](#resourceusageexecutor)  | Per-executor core and task information at the timestamp. |
+| jobs | an array of [ResourceUsageJob](#resourceusagejob)  | Per-job task information at the timestamp. |
+| executorJobs | an array of [ResourceUsageExecutorJob](#resourceusageexecutorjob) | Per-executor job information at the timestamp. |
