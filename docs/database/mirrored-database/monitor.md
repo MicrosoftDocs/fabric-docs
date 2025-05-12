@@ -9,13 +9,16 @@ ms.topic: conceptual
 ---
 # Monitor Fabric mirrored database replication
 
-This article outlines various methods for monitoring your mirrored database after it has been set up, including using the UI, programmatic monitoring, and leveraging workspace monitoring.
+This article outlines various methods for monitoring your mirrored database after it's set up, including using the UI, programmatic monitoring, and leveraging workspace monitoring.
 
 ## Monitor from the UI
 
 Once the mirrored database is configured, you can monitor the current state of replication. The **Monitor replication** section shows you the database level status, and a list of tables under replication along with the corresponding status, total rows replicated, and the last completed time to refresh mirrored table from source.
 
 :::image type="content" source="media/monitor/monitor-mirrored-database.png" alt-text="Screenshot from the Fabric portal of the Monitor mirror database pane. The status of the source replication and all tables show Running." lightbox="media/monitor/monitor-mirrored-database.png":::
+
+> [!TIP]
+> If you observe a delay in the appearance of mirrored data, follow the [troubleshooting guide](troubleshooting.md#data-doesnt-appear-to-be-replicating) to debug the potential issue.
 
 The following are the possible statuses for the replication:
 
@@ -24,21 +27,17 @@ The following are the possible statuses for the replication:
 | Database level | **Running**: Replication is currently running bringing snapshot and change data into OneLake.<br/>**Running with warning**: Replication is running, with transient errors.<br/>**Stopping/Stopped**: Replication has stopped.<br/>**Error**: Fatal error in replication that can't be recovered.|
 | Table level | **Running**: Data is replicating.<br/>**Running with warning**: Warning of nonfatal error with replication of the data from the table.<br/>**Stopping/Stopped**: Replication has stopped.<br/>**Error**: Fatal error in replication for that table.|
 
->  [!TIP]
->
-> If you observe a delay in the appearance of mirrored data, follow the [troubleshooting guide](troubleshooting.md#data-doesnt-appear-to-be-replicating) to debug the potential issue.
-
 ## Monitor programmatically
 
-You can monitor the mirrored databases programmatically by using the REST APIs or SDK. Learn more from [Microsoft Fabric mirroring public REST API](mirrored-database-rest-api.md) on how to get mirroring status for the mirorred database or specific tables.
+You can monitor the mirrored databases programmatically by using the REST APIs or SDK. Learn more from [Microsoft Fabric mirroring public REST API](mirrored-database-rest-api.md) on how to get mirroring status for the mirrored database or specific tables.
 
 ## Use workspace monitoring
 
 [Workspace monitoring](../../fundamentals/workspace-monitoring-overview.md) is an observability feature in Microsoft Fabric that enables developers and admins to access detailed logs and performance metrics of their workspaces.
 
-Mirroring in Fabric supports operation logs in workspace monitoring to provide a more comprehensive monitoring experience for your mirrored databases. You can leverage these logs to monitor execution and performance of your mirrored database, including data replication, table changes, mirroring status, failures, and replication latency.
+Mirroring in Fabric supports operation logs in workspace monitoring to provide a more comprehensive monitoring experience for your mirrored databases. You can use these logs to monitor execution and performance of your mirrored database, including data replication, table changes, mirroring status, failures, and replication latency.
 
-To get started, [enable monitoring in your workspace](../../fundamentals/enable-workspace-monitoring.md). Once the monitoring of your workspace is enabled, the mirrored database execution logs will automatically be ingested into the the `MirroredDatabaseTableExecution` table in the monitoring KQL database. Learn more about the available logs and the structure from [Mirrored database operation logs](monitor-logs.md).
+To get started, [enable monitoring in your workspace](../../fundamentals/enable-workspace-monitoring.md). Once the monitoring of your workspace is enabled, the mirrored database execution logs are automatically ingested into the `MirroredDatabaseTableExecution` table in the monitoring KQL database. Learn more about the available logs and the structure from [Mirrored database operation logs](monitor-logs.md).
 
 :::image type="content" source="media/monitor/enable-workspace-monitoring.png" alt-text="Screenshot from the Fabric portal of monitoring enablement in workspace settings." lightbox="media/monitor/enable-workspace-monitoring.png":::
 

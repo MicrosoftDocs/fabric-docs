@@ -50,7 +50,7 @@ Review limitations documentation for each data source:
 
 If you observe a delay in the appearance of mirrored data, check the following:
 
-- **Mirroring status:** In the [monitoring UI](monitor.md#monitor-from-the-ui) of the mirrored database, check the status of mirrored database and specific tables, and the "**Last completed**" column which indicates the last time that Fabric refreshes the mirrored table from source. Empty means the table has not been mirrored. 
+- **Mirroring status:** In the [monitoring UI](monitor.md#monitor-from-the-ui) of the mirrored database, check the status of mirrored database and specific tables, and the "**Last completed**" column which indicates the last time that Fabric refreshes the mirrored table from source. Empty means the table is not yet mirrored. 
 
   If you enable the workspace monitoring, you can check the mirroring execution latency in addition, by querying the `ReplicatorBatchLatency` value from the [mirrored database operation logs](monitor-logs.md).
 
@@ -58,7 +58,7 @@ If you observe a delay in the appearance of mirrored data, check the following:
 
 - **Data in OneLake:** Mirroring continuously replicates your data into OneLake in Delta Lake table format. To validate if the data lands in OneLake properly, you can create a shortcut from the mirrored tables into a Lakehouse, then build notebooks with Spark queries to query the data. Learn more about [Explore with notebooks](explore-onelake-shortcut.md).
 
-- **Data in SQL analytics endpoint:** You can explore the mirrored data from SQL analytics endpoint, for example, by querying data from the SQL analtyics endpoint of the mirrored database or a Lakehouse with shortcut to the mirrored data. If you see a delay, validate the mirroring status and data in OneLake as mentioned above first. If the data shows up in OneLake but not in SQL analtycis endpoint, it may be cuased by a delay in [metadata sync](../../data-warehouse/sql-analytics-endpoint-performance.md) in SQL analytics endpoint. 
+- **Data in SQL analytics endpoint:** You can query mirrored data through the SQL analytics endpoint of the mirrored database or a Lakehouse with a shortcut to the mirrored data. When you see a delay, validate the mirroring status and data in OneLake as mentioned above first. If the data shows up in OneLake but not in SQL analytics endpoint, it may be caused by a delay in [metadata sync](../../data-warehouse/sql-analytics-endpoint-performance.md) in SQL analytics endpoint. 
 
   You can manually force a refresh of the automatic metadata scanning. On the page for the SQL analytics endpoint, select the **Refresh** button as shown in the following image. Wait for some time then query the data again to check.
   
