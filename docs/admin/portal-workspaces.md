@@ -98,7 +98,7 @@ By default, deleted collaborative workspaces are retained for seven days. Fabric
 1. When done, select **Apply**.
 
 > [!NOTE]
-> When the **Define workspace rentention period** setting is off, deleted collaborative workspaces automatically have a retention period of 7 days.
+> When the **Define workspace retention period** setting is off, deleted collaborative workspaces automatically have a retention period of 7 days.
 >
 > This setting does not affect the retention period of *My workspaces*. *My workspaces* always have a 30-day retention period.
 
@@ -124,7 +124,7 @@ You're asked to confirm the permanent deletion. After you confirm, the workspace
 
 Workspaces and the data they contain reside on capacities. You can move the workspace to a different capacity via the workspace license mode.
 
-1. Go to **Admin portal** > **Workspaces**
+1. Go to **Admin portal** > **Workspaces**.
 
 1. Find the workspace you want to move, open the options menu, and choose **Reassign workspace**.
 
@@ -135,7 +135,7 @@ Workspaces and the data they contain reside on capacities. You can move the work
     :::image type="content" source="./media/portal-workspaces/license-modes.png" alt-text="Screenshot showing the Reassign workspace license modes pane.":::
 
     > [!NOTE]
-    > The types of items contained in the workspace can affect the ablity to change license modes and/or move the workspace to a capacity in a different region. See [Moving data around](#moving-data-around) for detail.
+    > The types of items contained in the workspace can affect the ability to change license modes and/or move the workspace to a capacity in a different region. See [Moving data around](#moving-data-around) for detail.
 
 ## Govern My workspaces
 
