@@ -394,8 +394,32 @@ Body:
 
 Response 200: (No body)
 
+The payload property in previous JSON body is Base64 encoded. You can use [Base64 Encode and Decode](https://www.base64encode.org/) to encode.
+
 > [!NOTE]
 > This API supports adding/removing tables by refreshing the `mountedTables` property. It also supports updating the source connection ID, database name, and default schema (these three properties can only be updated when **Get mirroring status** API returns `Initialized`/`Stopped`).
+
+### Configure data retention 
+
+You can set the [retention period for mirrored data](overview.md#retention-for-mirrored-data) using the `retentionInDays` property. The default value is seven days. The allowed values are integer between 1 and 30.
+
+*JSON definition example before Base64 encoding:*
+
+```json
+{
+    "properties": {
+        "source": {...},
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta",
+                "retentionInDays": 1
+            }
+        }
+    }
+}
+```
 
 ## Get mirroring status
 

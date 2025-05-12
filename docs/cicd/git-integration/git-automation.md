@@ -32,7 +32,7 @@ To work with Fabric Git APIs, you need:
 
 * A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
 
-* If you're using a service principal, it needs the same permissions as a user principal.
+* If you're using a service principal, it needs the same permissions as a user principal. To set up a service principal for Azure DevOps, see [Git integration with service principal](git-integration-with-service-principal.md).
 
 You can use the REST APIs without [PowerShell](/powershell/scripting/overview), but the scripts in this article use PowerShell. To run the scripts, take the following steps:
 
