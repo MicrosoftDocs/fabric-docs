@@ -10,17 +10,17 @@ ms.date: 05/12/2025
 ---
 # Workspace license modes
 
-When you create a workspace, it is assigned to a [capacity](../enterprise/licenses.md#capacity). The capacity that new workspaces are assigned to by default is determined by the capacity type and/or by the configuration of Fabric or capacity administrators. After you've created a workspace, you can reassign it to a different capacity, if any are available, and if you have sufficient permissions to do so. You reassign workpaces to different capacities using workspace license modes.
+When you create a workspace, it's assigned to a [capacity](../enterprise/licenses.md#capacity). The capacity that new workspaces are assigned to by default is determined by the capacity type and/or by the configuration of Fabric or capacity administrators. After you create a workspace, you can reassign it to a different capacity, if any are available, and if you have sufficient permissions to do so. You [reassign workspaces](#reassign-a-workspace-to-a-different-capacity) to different capacities using workspace license modes.
 
 ## License modes and capacity types
 
 There are two types of license modes: [per user license modes and capacity license modes](/power-bi/enterprise/service-admin-licensing-organization#fabric-licenses).
 
-**Per user license mode**: Per user license modes mean the workspace is hosted on system reserved capacity. The options are *Pro* and *Premium Per User (PPU)*.
+**Per user license mode**: With a per user license mode, a workspace is hosted on system reserved capacity. The options are *Pro* and *Premium Per User (PPU)*.
 
-**Capacity license mode**: Capacity license modes mean that the workspace is hosted on a capacity which either has been purchased or is a trial. Capacities are divided into stock keeping units (SKUs). Each SKU provides a different number of capacity units (CUs), which are used to calculate the capacity's compute power. Capacity licenses are organizational licenses that provide a pool of resources for Fabric or Power BI operations.
+**Capacity license mode**: With a capacity license mode, a workspace is hosted on a capacity which either has been purchased or is a trial, and is reserved for the organization. These capacities are divided into stock keeping units (SKUs). Each SKU provides a different number of capacity units (CUs), which are used to calculate the capacity's compute power.
 
-The capacity license modes are related to several [capacity types](../admin/capacity-settings.md?tabs=power-bi-premium#view-your-capacity):
+The capacity license mode options are related to several [capacity types](../admin/capacity-settings.md?tabs=power-bi-premium#view-your-capacity):
 
 * **Premium capacity**: Premium capacity refers to a capacity that was bought as part of a Power BI Premium subscription. These capacities use P SKUs.
 
@@ -44,7 +44,7 @@ You can reassign a workspace to a different capacity via workspace license modes
 1. Select the desired license mode and specify the capacity the workspace will be hosted on.
 
     > [!NOTE]
-    > You can specify specify the specific capacity only when you select one of the capacity license modes. types. Fabric automatically reserves shared capacity for per-user licenses.
+    > You can specify the specific capacity only when you select one of the capacity license modes. types. Fabric automatically reserves shared capacity for per-user licenses.
 
     > [!IMPORTANT]
     > The types of items contained in the workspace can affect the ability to change license modes and/or move the workspace to a capacity in a different region. See [Moving data around](../admin/portal-workspaces.md#moving-data-around) for detail.
