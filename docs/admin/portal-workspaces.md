@@ -191,28 +191,21 @@ After the deleted workspace has been restored as an app workspace, it's just lik
 
 Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities via the workspace license mode. Such movement might be to a capacity in the same region, or it might be to a capacity in a different region.
 
+In the Fabric UI, workspaces can be moved to other capacities as follows:
+
+* Fabric admins can reassign workspaces to a different capacity individually via the [Workspaces page](#reassign-a-workspace-to-a-different-capacity) in the Fabric Admin portal
+* Fabric admins and capacity admins can reassign workspaces to a capacity in bulk via the **Workspaces assigned to this capacity** option in the [capacity's settings](./capacity-settings.md#capacity-settings).
+* Workspace admins can reassign their workspace to a different capacity via the **[License info option of the workspace settings](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity)**.
+
+### Restrictions on moving workspaces around
+
 Moving workspaces from one capacity to another has the following restrictions:
 
 * When you move a workspace, all jobs related to items in the workspace get cancelled.
 
-* Only Power BI items can move from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode. If you're changing a workspace from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode, you must remove all non-Power BI items first, otherwise the license mode change will fail.
+* Only moveable item types can move between regions. **If you're reassigning a workspace to a capacity located in a different region, you must remove all non-movable items first, otherwise reassignment will fail**.
 
-    The following item types are considered Power BI items from the perspective of the workspace license mode.
-
-    * Report
-    * Semantic model (small storage format and large storage format)
-    * Dashboard
-    * Org app
-    * Dataflow Gen1
-    * Paginated Report
-    * Metric set
-    * Exploration
-    * Datamart
-    * Scorecard
-
-    All other item types must be removed from the workspace before you can change its license mode from Premium capacity or Fabric capacity to Pro or Premium Per User.
-
-* Only moveable item types can move between regions. If you're reassigning a workspace to a capacity located in a different region, you must remove all non-movable items first, otherwise reassignment will fail. The following items types are moveable:
+    The following items types are moveable:
 
     * Report
     * Semantic model (small storage format)
@@ -222,9 +215,28 @@ Moving workspaces from one capacity to another has the following restrictions:
     * Datamart
     * Scorecard 
 
-    All other item types cannot be moved between regions and must be removed from the workspace before you can migrate the workspace to a capacity in another region.
+    All other item types can't be moved between regions and must be removed from the workspace before you can migrate the workspace to a capacity in another region.
 
     After you've removed the non-movable items and the workspace is migrated to a different region, you can create new items of the non-movable type. It can take up to an hour after the migration before you will be able to do so.
+
+* Only Power BI items can move from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode (with exceptions as noted). If you're changing a workspace from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode, you must remove all non-Power BI items first, otherwise the license mode change will fail.
+
+    The following item types are considered Power BI items from the perspective of the workspace license mode.
+
+    * Report
+    * Semantic model (small storage format and large storage format)
+    * Dashboard
+    * Org app**
+    * Dataflow Gen1
+    * Paginated Report
+    * Metric set*
+    * Exploration**
+    * Datamart*
+    * Scorecard
+
+    *Can't move to Pro<br>**Can't move to Pro or Premium per user
+
+    All other item types must be removed from the workspace before you can change its license mode from Premium capacity or Fabric capacity to Pro or Premium Per User.
 
 ## Related content
 
