@@ -48,7 +48,7 @@ On the ribbon of your KQL database, either:
     * When you select **Eventstream** as your source, you must specify the **Workspace**, **Eventstream**, and default or derived **Stream**.
 
     > [!IMPORTANT]
-    > The getting data from dervied streams feature is in [preview](../fundamentals/preview.md).
+    > The getting data from derived streams feature is in [preview](../fundamentals/preview.md).
 
     :::image type="content" source="media/get-data-eventstream/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one eventstream selected." lightbox="media/get-data-eventstream/configure-tab.png":::
 
@@ -64,7 +64,7 @@ On the ribbon of your KQL database, either:
     | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
     | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically populated, and you can edit the name to simplify managing the data connection in the workspace. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
 
-1. Select **Next**
+1. Select **Next**.
 
 ---
 
