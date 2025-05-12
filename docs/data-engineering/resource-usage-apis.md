@@ -1,24 +1,26 @@
 ---
 title: Resource usage APIs
-description: Learn more on how to retrieve Spark Livy Logs.
+description: Learn more on how to get resource usage APIs.
 author: jejiang
 ms.author: jejiang
 ms.reviewer: whhender
 ms.topic: tutorial
-ms.date: 03/31/2025
+ms.date: 05/12/2025
 ---
 
 # Resource usage APIs
+
+Retrieve resource usage APIs.
 
 ## Get resource usage timeline
 
 Get all resource usage information as a timeline. 
 
-## Permissions
+### Permissions
 
 The caller must have "read" permission on the item.
 
-## Required Delegated Scopes
+### Required Delegated Scopes
 
 Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according to the item which triggered the Spark application)
 
@@ -26,7 +28,7 @@ Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according 
 - SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All
 - Lakehouse.Read.All or Lakehouse.ReadWrite.All
 
-## Microsoft Entra supported identifies
+### Microsoft Entra supported identifies
 
 This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-support) listed in this section.
 
@@ -87,15 +89,15 @@ None
 | 403 Forbidden |  | User does not have the correct permission |
 | 404 Not Found |   |  - Mismatch between item id, application id and Livy id <br> - Too early to retrieve any resource usage data |
 
-## Examples
+### Examples
 
-### Sample request
+#### Sample request
 
 ```HTTP
 GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/applications/application_1731308630223_0001/1/resourceUsage?start=1745906291774&end=1745906293676
 ```
 
-### Sampe response
+#### Sampe response
 Status code: 200
 
 ```JSON
@@ -120,11 +122,12 @@ Status code: 200
 }  
 ```
 
-## Definitions
+### Definitions
 
 *ResourceUsageInfo*
 
 object
+
 | Name | Type | Description |
 | --- | --- | --- |
 | resourceUsageApiVersion | int | The version of resource usage API. |
@@ -137,6 +140,7 @@ object
 *ResourceUsageData*
 
 object
+
 | Name | Type | Description |
 | --- | --- | --- |
 | timestamps | An array of long |   |
@@ -151,6 +155,7 @@ object
 Object
 
 Per-executor core and task information
+
 | Name | Type | Description |
 | --- | --- | --- |
 | timeexecutorId | string | Executor ID |
@@ -162,6 +167,7 @@ Per-executor core and task information
 Object 
 
 Per-executor job information
+
 | Name | Type | Description |
 | --- | --- | --- |
 | executorId | string | Executor ID |
@@ -243,12 +249,12 @@ None
 
 ### Examples
 
-### Sample request
+#### Sample request
 
 ``` HTTP
 GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/applications/application_1731308630223_0001/1/resourceUsage/1745906291774
 ```
-### Sampe response 
+#### Sampe response 
 Status code: 200 
 
 ```JSON
@@ -267,10 +273,12 @@ Status code: 200
 }  
 ```
 
-## Definitions
+### Definitions
+
 *ResourceUsageSnapshot* 
 
 Object
+
 | Name | Type | Description |
 | --- | --- | --- |
 | queryTime | long | The timestamp specified in the request  |
@@ -279,6 +287,7 @@ Object
 *ResourceUsageSnapshotData*
 
 object
+
 | Name | Type | Description |
 | --- | --- | --- |
 | timestamps |long | Timestamp of the time point which is closest to the given timestamp. |
