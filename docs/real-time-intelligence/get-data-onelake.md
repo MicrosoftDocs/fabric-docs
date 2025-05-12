@@ -33,7 +33,6 @@ Select OneLake as your data source, as follows:
     >[!NOTE]
     >
     > When you select a source from the list in the embedded OneLake catalog, you can use the category buttons or filter by keyword to search for a specific source.
-    > Currently, you can select OneLake data sources of type Lakehouse only.
 
 ## Step 2: Configure
 
