@@ -45,11 +45,14 @@ On the ribbon of your KQL database, either:
 
 1. Under **Configure the data source**, fill out the settings using the information in the following table:
 
-    * When you selected Eventstream as your source, you need to define the Worspace, Eventstream, and Stream.
+    * When you selected Eventstream as your source, you need to define the Worspace, Eventstream, and default or derived Stream.
 
-    :::image type="content" source="media/get-data-eventstream/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one eventstream selected." lightbox="media/get-data-eventstream/configure-tab.png":::
+    > [!IMPORTANT]
+    > The getting data from dervied streams feature is in [preview](../fundamentals/preview.md).
 
-    * When you selected Real-Time hub as your source, you select an eventstream from the list, and the Worspace, Eventstream, and Stream are automatically populated and do not require configuration.
+        :::image type="content" source="media/get-data-eventstream/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one eventstream selected." lightbox="media/get-data-eventstream/configure-tab.png":::
+
+    * When you selected Real-Time hub as your source, you select a default or derived stream from the list, and the Worspace, Eventstream, and Stream are automatically populated and do not require configuration.
 
     :::image type="content" source="media/get-data-eventstream/configure-tab-derived-eventstream.png" alt-text="Screenshot of configure tab with new table entered and read-only configure data source settings." lightbox="media/get-data-eventstream/configure-tab-derived-eventstream.png":::
 
@@ -57,7 +60,7 @@ On the ribbon of your KQL database, either:
     |----|----|
     | Workspace| Your eventstream workspace location. Select a workspace from the dropdown.|
     | Eventstream | The name of your eventstream. Select an eventstream from the dropdown.|
-    | Stream | The name of the default or derived stream. Select a stream from the dropdown.</br>* For default streams, the stream name format is *Eventstream-stream*<br/>* For derived streams, the name was defined when the stream was created.<br/> [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]|
+    | Stream | The name of the default or derived stream. Select a stream from the dropdown.</br>* For default streams, the stream name format is *Eventstream-stream*<br/>* For derived streams, the name was defined when the stream was created.|
     | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
     | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically populated, and you can edit the name to simplify managing the data connection in the workspace. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
 
