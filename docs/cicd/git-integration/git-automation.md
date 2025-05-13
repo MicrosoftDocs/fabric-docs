@@ -321,10 +321,45 @@ For the complete script, see [Poll a long running operation](https://github.com/
 
 In order to [connect](/rest/api/fabric/core/git/connect) to a Git repository or [update your Git credentials](/rest/api/fabric/core/git/update-my-git-credentials) you need to provide a *connectionId*. The *connectionId* can come from either a new connection that you create, or an existing connection.
 
-* [Create a new connection](#create-a-new-connection-that-stores-your-github-credentials) with your Git provider credentials
+* [Create a new connection](#create-a-new-connection-that-stores-your-git-credentials) with your Git provider credentials
 * [Use an existing connection](#get-a-list-of-existing-connections) that you have permissions for.
 
-### Create a new connection that stores your GitHub credentials
+### Create a new connection that stores your Git credentials
+
+#### [Azure DevOps](#tab/ADO)
+
+The following code snippet shows a sample request body to create a connection that stores your Azure DevOps credentials. The full example can be found in the [Fabric samples repo](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-StoreGitProviderCredentials.ps1).
+
+```powershell
+# Connection with ServicePrincipal details for AzureDevOpsSourceControl
+$adoSPConnection = @{
+    connectivityType = "ShareableCloud"
+    displayName = "<CONNECTION NAME>"
+    connectionDetails = @{
+        type = "AzureDevOpsSourceControl"
+        creationMethod = "AzureDevOpsSourceControl.Contents"
+        parameters = @(
+            @{
+                dataType = "Text"
+                name = "url"
+                value = "<Repo url in Azure DevOps>"
+            }
+        )
+    }
+    credentialDetails = @{
+        credentials = @{
+            credentialType = "ServicePrincipal"
+            tenantId = "<SP tenant (directory) id (Guid)>"
+            servicePrincipalClientId = "<SP APP (clint) id (Guid)>"
+            servicePrincipalSecret = "<SP Secret>"
+        }
+    }
+}
+
+#Note: AzureDevOps for UserPrincipal is not supported (since it requires interactive OAuth2)
+```
+
+#### [GitHub](#tab/github)
 
 Use your [Personal Access Token (PAT)](./git-get-started.md?tabs=github%2CAzure%2Ccommit-to-git#git-prerequisites) to create a GitHub connection.
 
@@ -383,6 +418,8 @@ POST https://api.fabric.microsoft.com/v1/connections
 ```
 
 Copy the ID and use it in the [Git - Connect](/rest/api/fabric/core/git/connect) or [Git - Update My Git Credentials](/rest/api/fabric/core/git/update-my-git-credentials) API.
+
+---
 
 ### Get a list of existing connections
 
