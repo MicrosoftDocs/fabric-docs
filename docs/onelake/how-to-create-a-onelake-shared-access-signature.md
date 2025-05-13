@@ -73,7 +73,7 @@ The following table summarizes the fields that are supported for a OneLake SAS t
 
 The permissions specified in the `signedPermissions` (`sp`) field on the SAS token indicate which operations a client that possesses the SAS can perform on the resource.
 
-Permissions can be combined to permit a client to perform multiple operations with the same SAS. When you construct the SAS, you must include permissions in the following order: `racwdxltmeop`.
+Permissions can be combined to permit a client to perform multiple operations with the same SAS. When you construct the SAS, you must include permissions in the following order: `racwdxyltmeopi`.
 
 Examples of valid permission settings include `rw`, `rd`, `rl`, `wd`, `wl`, and `rl`. You can't specify a permission more than once.
 
