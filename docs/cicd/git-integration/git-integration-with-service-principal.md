@@ -37,7 +37,7 @@ Register your application with Microsoft Entra ID,and create a secret by followi
 1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Select **+New** in the top right corner to add a new cloud connection.
 1. Give it a name and set the **Type** to *Azure DevOps source control* using a *Service Principal* as the authentication method. Complete the other details (Tenant Id, Client Id and Client secret) using the information you saved in [step 1](#step-1-register-an-application-with-microsoft-entra-id).
 
- :::image type="content" source="./media/git-integration-with-service-principal/new-connection.png" alt-text="Screenshot of new connection interface.":::
+     :::image type="content" source="./media/git-integration-with-service-principal/new-connection.png" alt-text="Screenshot of new connection interface.":::
 
 1. From your workspace settings, go to the *Git integration* tab, and select your newly created account. Complete the remaining information.
 
