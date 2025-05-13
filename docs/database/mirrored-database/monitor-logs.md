@@ -56,7 +56,7 @@ The following table describes the columns stored in the **MirroredDatabaseTableE
 
 ## Sample queries
 
-You can find sample queries in the [fabric-samples](https://github.com/microsoft/fabric-samples/tree/main/workspace-monitoring/Mirrored database operations) GitHub repository.
+You can find sample queries in the [fabric-samples](https://github.com/microsoft/fabric-samples/tree/main/workspace-monitoring/Mirrored%20database%20operations) GitHub repository.
 
 ## Related content
 
