@@ -101,7 +101,10 @@ The following three properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Write method**: Select the method used to write data into Azure Database for PostgreSQL. Select from **Copy command** (default, which is more performant) and **Bulk insert**.
+- **Write method**: Select the method used to write data into Azure Database for PostgreSQL. Select from **Copy command** (default, which is more performant), **Bulk insert** and **Upsert** (for version 2.0).
+    -  **Upsert**: Choose this option if your source data has both inserts and updates.
+        - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination.
+        :::image type="content" source="./media/connector-azure-database-for-postgresql/upsert.png" alt-text="Screenshot showing key columns." :::
 
 - **Pre-copy script**: Specify a SQL query for the copy activity to execute before you write data into Azure Database for PostgreSQL in each run. You can use this property to clean up the preloaded data.
 
@@ -163,7 +166,8 @@ The following table contains more information about the copy activity in Azure D
 |**Connection**|Your connection to the destination data store.|< your Azure Database for PostgreSQL connection >|Yes|connection|
 |**Table**|Your destination data table to write data.| < name of your destination table > |Yes |typeProperties (under *`typeProperties`* -> *`sink`*):<br>&nbsp; - schema<br>&nbsp; - table<br>|
 |**Version** |The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. |• 2.0 <br> • 1.0 |Yes|version: <br>• 2.0 <br> • 1.0 |
-|**Write method**|The method used to write data into Azure Database for PostgreSQL.|• **Copy command** (default)<br>• **Bulk insert**<br>|No|writeMethod:<br>• CopyCommand<br>• BulkInsert|
+|**Write method**|The method used to write data into Azure Database for PostgreSQL.|• **Copy command** (default)<br>• **Bulk insert**<br>• **Upsert** (for version 2.0)|No|writeMethod:<br>• CopyCommand<br>• BulkInsert <br>• Upsert|
+|**Key columns**|Choose which column is used to determine if a row from the source matches a row from the destination.|< your key column> |No|keys|
 |**Pre-copy script**|A SQL query for the copy activity to execute before you write data into Azure Database for PostgreSQL in each run. You can use this property to clean up the preloaded data.|< your pre-copy script >|No|preCopyScript|
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out.|timespan<br>(the default is **00:30:00** - 30 minutes)|No|writeBatchTimeout|
 |**Write batch size**| The number of rows loaded into Azure Database for PostgreSQL per batch.|integer<br>(the default is 1,000,000)|No|writeBatchSize|
