@@ -34,7 +34,7 @@ Calling the `Get User Delegation Key` operation returns the key as a set of valu
 > [!NOTE]
 > Calling the `Get User Delegation Key` operation by using a Fabric workload, such as a Python notebook, requires the [regional endpoint](onelake-access-api.md#data-residency) for OneLake. The capacity region determines this endpoint. Otherwise, the received response is `200 Healthy` instead of the delegation key.
 
-When a client requests a user delegation key by using an OAuth 2.0 token, OneLake returns a user delegation key on behalf of the client. A SAS created with this user delegation key is granted, at most, the permissions granted to the client. But they're scoped down to the permissions explicitly granted in the SAS.
+When a client requests a user delegation key by using an OAuth 2.0 token, OneLake returns the key on behalf of the client. A SAS created with this user delegation key is granted, at most, the permissions granted to the client. But they're scoped down to the permissions explicitly granted in the SAS.
 
 You can create any number of OneLake SAS tokens for the lifetime of the user delegation key. However, a OneLake SAS and user delegation keys can be valid for no more than one hour. They can't exceed the lifetime of the token that requested them. These lifetime restrictions are shorter than the maximum lifetime of an Azure Storage user delegation SAS.  
 
@@ -44,18 +44,18 @@ The following table summarizes the fields that are supported for a OneLake SAS t
 
 | SAS field name  | SAS token parameter  | Status  | Description  |
 |---------|---------|---------|---------|
-|`signedVersion`|`sv`| Required | This field indicates the version of the storage service that's used to construct the signature field. OneLake supports version `2020-02-10` and older, or version `2020-12-06` and newer. |
+|`signedVersion`|`sv`| Required | This field indicates the version of the storage service that's used to construct the signature field. OneLake supports version `2020-02-10` and earlier, or version `2020-12-06` and later. |
 |`signedResource`|`sr`|Required|This field specifies which resources are accessible via the shared access signature. Only blob (`b`) and directory (`d`) are applicable to OneLake.|
 |`signedStart`|`st`|Optional|This field specifies the time when the shared access signature becomes valid. It's in ISO 8601 UTC format.|
-|`signedExpiry`|`se`|Required|This field specifies time when the shared access signature expires.|
+|`signedExpiry`|`se`|Required|This field specifies the time when the shared access signature expires.|
 |`signedPermissions`|`sp`|Required|This field indicates which operations the SAS can perform on the resource. For more information, see the [Specify permissions](#specify-permissions) section.|
 |`signedObjectId`|`skoid`|Required|This field identifies a Microsoft Entra security principal.|
 |`signedtenantId`|`sktid`|Required|This field specifies the Microsoft Entra tenant in which a security principal is defined.|
 |`signedKeyStartTime`|`skt`|Optional|This field specifies the time in UTC when the signing key starts. The `Get User Delegation Key` operation returns it.|
 |`signedKeyExpiryTime`|`ske`|Required|This field specifies the time in UTC when the signing key ends. The `Get User Delegation Key` operation returns it.|
-|`signedKeyVersion`|`skv`|Required|This field specifies the storage service version that's used to get the user delegation key. The `Get User Delegation Key` operation returns it. OneLake supports version `2020-02-10` and older, or version `2020-12-06` and newer. |
+|`signedKeyVersion`|`skv`|Required|This field specifies the storage service version that's used to get the user delegation key. The `Get User Delegation Key` operation returns it. OneLake supports version `2020-02-10` and earlier, or version `2020-12-06` and later. |
 |`signedKeyService`|`sks`|Required|This field indicates the valid service for the user delegation key. OneLake supports only Azure Blob Storage (`sks=b`).|
-|`signature`|`sig`|Required|The signature is a hash-based message authentication code (HMAC) computed over the string-to-sign and key by using the SHA256 algorithm, and then encoded with Base64 encoding.|
+|`signature`|`sig`|Required|The signature is a hash-based message authentication code (HMAC) computed over the string-to-sign and key by using the SHA256 algorithm, and then encoded by using Base64 encoding.|
 |`signedDirectoryDepth`|`sdd`|Optional|This field indicates the number of directories within the root folder of the directory specified in the `canonicalizedResource` field of the string-to-sign. It's supported only when `sr=d`.|
 |`signedProtocol`|`spr`|Optional|OneLake supports only HTTPS requests.|
 |`signedAuthorizedObjectId`|`saoid`|Unsupported|A OneLake SAS doesn't support this feature.|
@@ -100,7 +100,7 @@ Remember that some operations, such as setting permissions or deleting workspace
 
 ## Specify the signature
 
-The `signature` (`sig`) field is used to authorize a request that a client made with the shared access signature. The string-to-sign is a unique string that's constructed from the fields that must be verified to authorize the request. The signature is an HMAC that's computed over the string-to-sign and key by using the SHA256 algorithm, and then encoded by using Base65 encoding.
+The `signature` (`sig`) field is used to authorize a request that a client made with the shared access signature. The string-to-sign is a unique string that's constructed from the fields that must be verified to authorize the request. The signature is an HMAC that's computed over the string-to-sign and key by using the SHA256 algorithm, and then encoded by using Base64 encoding.
 
 To construct the signature string of a user delegation SAS:
 
@@ -141,7 +141,7 @@ StringToSign =  signedPermissions + "\n" +
 
 ### Version 2020-02-10 and earlier
 
-This configuration applies to version 2020-02-10 and earlier. The exception is version 2020-01-10, which the following section describes.
+This configuration applies to version 2020-02-10 and earlier, except for version 2020-01-10 (which the next section describes).
 
 ```http
 StringToSign =  signedPermissions + "\n" +  

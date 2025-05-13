@@ -33,11 +33,11 @@ For a comprehensive understanding of the end-to-end experience, see [Reliability
 
 In OneLake, soft deletion prevents accidental file loss by retaining deleted files for seven days before permanent removal. Soft-deleted data is billed at the same rate as active data.
 
-You can restore files and folders by using Azure Blob Storage REST APIs, Azure Storage SDKs, and the Azure PowerShell Az.Storage module. Learn how to list and undelete files by using [these PowerShell instructions](/azure/storage/blobs/soft-delete-blob-manage#restore-soft-deleted-blobs-and-directories-by-using-powershell) and how to connect to [OneLake with PowerShell](../onelake/onelake-powershell.md#connect-to-onelake-with-azure-powershell).
+You can restore files and folders by using Azure Blob Storage REST APIs, Azure Storage SDKs, and the Azure PowerShell Az.Storage module. Learn how to list and restore files by using [these PowerShell instructions](/azure/storage/blobs/soft-delete-blob-manage#restore-soft-deleted-blobs-and-directories-by-using-powershell) and how to connect to [OneLake with PowerShell](../onelake/onelake-powershell.md#connect-to-onelake-with-azure-powershell).
 
 ### Restore soft-deleted files via Azure Storage Explorer
 
-You can restore deleted Lakehouse files by using Azure Storage Explorer. First, [connect to your workspace from Storage Explorer](onelake-azure-storage-explorer.md) by using the workspace ID in the URL. For example, use `https://onelake.dfs.fabric.microsoft.com/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`.  You can find the workspace ID from the Microsoft Fabric portal's browser URL (`/groups/{workspaceID}`). Ensure that you use the GUID-based OneLake path to restore data.
+You can restore deleted Lakehouse files by using Azure Storage Explorer. First, [connect to your workspace from Storage Explorer](onelake-azure-storage-explorer.md) by using the workspace ID in the URL. For example, use `https://onelake.dfs.fabric.microsoft.com/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. You can find the workspace ID from the Microsoft Fabric portal's browser URL (`/groups/{workspaceID}`). Ensure that you use the GUID-based OneLake path to restore data.
 
 After you connect to your workspace, follow these steps to restore soft-deleted data:
 
