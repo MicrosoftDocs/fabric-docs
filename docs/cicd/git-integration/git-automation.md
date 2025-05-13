@@ -326,7 +326,7 @@ In order to [connect](/rest/api/fabric/core/git/connect) to a Git repository or 
 
 ### Create a new connection that stores your Git credentials
 
-#### [Azure DevOps](#tab/ADO)
+#### [Azure DevOps (preview)](#tab/ADO)
 
 The following code snippet shows a sample request body to create a connection that stores your Azure DevOps credentials. The full example can be found in the [Fabric samples repo](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-StoreGitProviderCredentials.ps1).
 
