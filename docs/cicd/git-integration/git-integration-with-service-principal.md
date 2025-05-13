@@ -39,6 +39,12 @@ Register your application with Microsoft Entra ID,and create a secret by followi
 
      :::image type="content" source="./media/git-integration-with-service-principal/new-connection.png" alt-text="Screenshot of new connection interface.":::
 
+  You can also find the *Tenant Id* and *Client secret* in the Azure portal by navigating to the app in the Azure portal and selecting the **Overview** tab and **Manage -> Certificates and secrets** tabs respectively.
+
+     :::image type="content" source="./media/git-integration-with-service-principal/tenant-id.png" alt-text="Screenshot showing where to find the tenant ID in the Azure portal.":::
+
+     :::image type="content" source="./media/git-integration-with-service-principal/secret-id.png" alt-text="Screenshot showing where to find the secret ID in the Azure portal.":::
+
 1. From your workspace settings, go to the *Git integration* tab, and select your newly created account. Complete the remaining information.
 
 ## Step 4: Allow calling Git REST APIs with Service Principal (optional)
