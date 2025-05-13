@@ -17,7 +17,7 @@ The Microsoft Fabric SKU Estimator helps you figure out the right resources for 
 
 To get started using the Fabric SKU Estimator, follow these steps:
 
-1. Go to the [Microsoft Fabric SKU Estimator](https://aka.ms/fabric-sku-estimator).
+1. Go to the [Microsoft Fabric SKU Estimator](https://aka.ms/fabricskuestimator).
 1. Enter details about your workloads, such as:
     - Compressed data size (in GiB)
     - Number of daily batch cycles
