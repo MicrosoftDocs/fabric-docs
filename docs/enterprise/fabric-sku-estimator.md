@@ -28,7 +28,7 @@ To get started using the Fabric SKU Estimator, follow these steps:
 
 The tool provides an **estimated viable SKU** and a breakdown of resources.
 
-:::image type="content" source="media/fabric-sku-estimator/fabric-sku-estimator.jpeg" alt-text="Fabric SKU Estimator" lightbox="media/fabric-sku-estimator/fabric-sku-estimator.jpeg":::
+:::image type="content" source="media/fabric-sku-estimator/fabric-sku-estimator.jpeg" alt-text="Screenshot showing the Fabric SKU Estimator." lightbox="media/fabric-sku-estimator/fabric-sku-estimator.jpeg":::
 
 ## Supported workloads and benefits of the Fabric SKU Estimator
 
