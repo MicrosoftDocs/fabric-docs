@@ -57,8 +57,8 @@ If it's your first time signing in from Fabric, or you want to add a new account
 If it's the first time connecting, you need to Authorize your user. Provide the following information:
 
 - *Display name* - must be unique for each user
-- *Azure DevOps URL* - URL of the Azure DevOps repository.
-- *Authentication* - You can authenticate either with *Azure DevOps* or a *Service Principal*. 
+- *Azure DevOps URL* - URL of the Azure DevOps repository. URL must be in the format `https://dev.azure.com/{organization}/{project}/_git/{repository}` or `https://{organization}.visualstudio.com/{project}/_git/{repo}`.
+- *Authentication* - You can authenticate either with *OAuth2* or a *Service Principal*.
 
 :::image type="content" source="./media/git-get-started/devops-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
 
