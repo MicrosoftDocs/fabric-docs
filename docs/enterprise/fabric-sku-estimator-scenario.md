@@ -39,7 +39,7 @@ After a few discoveries and design workshop, Henri has come up with the followin
 
 :::image type="content" source="media/fabric-sku-estimator/high-level-architecture.png" alt-text="High-level architecture diagram for the Fabric SKU Estimator scenario." lightbox="media/fabric-sku-estimator/high-level-architecture.png":::
 
-To begin his budget estimation proposal, Henri decides to use the Fabric SKU Estimator. To get started, he first need to extract the required high-level inputs and work load specific inputs based on these high-level metrics. He calculates that the total of the data in the architecture will be approximately 8,533 GB, based on an estimated 6:1 compression ratio. Henri deduces that the platform will have two batch cycles processing 1,500 tables and data sets across all 50 source systems.
+To begin his budget estimation proposal, Henri decides to use the Fabric SKU Estimator. To get started, he first needs to extract the required high-level inputs and work load specific inputs based on these high-level metrics. He calculates that the total of the data in the architecture will be approximately 8,533 GB, based on an estimated 6:1 compression ratio. Henri deduces that the platform will have two batch cycles processing 1,500 tables and data sets across all 50 source systems.
 
 He enters these values in the **Data information** section of the Fabric SKU Estimator:
 
@@ -49,7 +49,7 @@ He enters these values in the **Data information** section of the Fabric SKU Est
 
 Next, Henri selects all workloads that need to be included in the estimate: *Data Factory*, *Spark Jobs*, *Power BI*, *Eventstream*, *Eventhouse*, and *Data Activator*.
 
-:::image type="content" source="media/fabric-sku-estimator/fabric-workload-selections-part-1.png" alt-text="Workload selections in the Fabric SKU Estimator." lightbox="media/fabric-sku-estimator/fabric-workload-selections-part-1.png":::
+:::image type="content" source="media/fabric-sku-estimator/fabric-workload-selections-part-1.png" alt-text="Screenshot showing workload selections in the Fabric SKU Estimator." lightbox="media/fabric-sku-estimator/fabric-workload-selections-part-1.png":::
 
 He then specifies the workload-specific inputs:
 
@@ -75,7 +75,7 @@ He then specifies the workload-specific inputs:
 
 Finally, Henri selects the **Calculate** button and gets the following result:
 
-:::image type="content" source="media/fabric-sku-estimator/scenario-1-estimation.png" alt-text="Detailed estimation results for Scenario 1 using the Fabric SKU Estimator." lightbox="media/fabric-sku-estimator/scenario-1-estimation.png":::
+:::image type="content" source="media/fabric-sku-estimator/scenario-1-estimation.png" alt-text="Screenshot showing detailed estimation results for Scenario 1 using the Fabric SKU Estimator." lightbox="media/fabric-sku-estimator/scenario-1-estimation.png":::
 
 The estimator provides a viable SKU, workload breakdown, storage consumption, and Power BI Pro license requirements. Henri inputs the results into the [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/) to generate an estimate for his proposal.
 
@@ -98,7 +98,7 @@ He adjusts the values in the **Data information** section of the Fabric SKU Esti
 
 Next, he selects the workloads he needs to add to the previous estimate: *Data Warehouse* and *Data Science*.
 
-:::image type="content" source="media/fabric-sku-estimator/fabric-workload-selections-part-2.png" alt-text="Workload selections in the Fabric SKU Estimator for part 2 of the scenario." lightbox="media/fabric-sku-estimator/fabric-workload-selections-part-2.png":::
+:::image type="content" source="media/fabric-sku-estimator/fabric-workload-selections-part-2.png" alt-text="Screenshot showing workload selections in the Fabric SKU Estimator for part 2 of the scenario." lightbox="media/fabric-sku-estimator/fabric-workload-selections-part-2.png":::
 
 He then specifies the workload-specific inputs:
 
@@ -111,7 +111,7 @@ He then specifies the workload-specific inputs:
 
 Finally, he selects the **Calculate** button and gets the following result:
 
-:::image type="content" source="media/fabric-sku-estimator/scenario-2-estimation.png" alt-text="Detailed estimation results for Scenario 2 using the Fabric SKU Estimator." lightbox="media/fabric-sku-estimator/scenario-2-estimation.png":::
+:::image type="content" source="media/fabric-sku-estimator/scenario-2-estimation.png" alt-text="Screenshot showing detailed estimation results for Scenario 2 using the Fabric SKU Estimator." lightbox="media/fabric-sku-estimator/scenario-2-estimation.png":::
 
 The estimator provides a viable SKU, workload breakdown, storage consumption, and Power BI Pro license requirements. Henri now has enough information to amend his previous estimate.
 
@@ -125,7 +125,7 @@ Contoso asks Henri to include capacity for customer and partner data APIs, along
 
 Without changing the values in the **Data information** section of the Fabric SKU Estimator, Henri selects the extra workloads that need to be included in his estimate: *Ad-hoc SQL Analytics* and *Power BI Embedded*.
 
-:::image type="content" source="media/fabric-sku-estimator/fabric-workload-selections-part-3.png" alt-text="Workload selections in the Fabric SKU Estimator for part 3 of the scenario." lightbox="media/fabric-sku-estimator/fabric-workload-selections-part-3.png":::
+:::image type="content" source="media/fabric-sku-estimator/fabric-workload-selections-part-3.png" alt-text="Screenshot showing workload selections in the Fabric SKU Estimator for part 3 of the scenario." lightbox="media/fabric-sku-estimator/fabric-workload-selections-part-3.png":::
 
 He then specifies the workload-specific inputs:
 
@@ -136,7 +136,7 @@ He then specifies the workload-specific inputs:
 
 Finally, he selects the **Calculate** button and gets the following result:
 
-:::image type="content" source="media/fabric-sku-estimator/scenario-3-estimation.png" alt-text="Detailed estimation results for Scenario 3 using the Fabric SKU Estimator." lightbox="media/fabric-sku-estimator/scenario-3-estimation.png":::
+:::image type="content" source="media/fabric-sku-estimator/scenario-3-estimation.png" alt-text="Screenshot showing detailed estimation results for Scenario 3 using the Fabric SKU Estimator." lightbox="media/fabric-sku-estimator/scenario-3-estimation.png":::
 
 Henri reviews the results to be sure his final estimate includes all workloads and is ready for submission.
 
