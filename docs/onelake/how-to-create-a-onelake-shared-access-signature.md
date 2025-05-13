@@ -89,13 +89,13 @@ Remember that some operations, such as setting permissions or deleting workspace
 |Write|`w`|Directory, blob|Create or write content, properties, metadata, or a blocklist. Snapshot or lease the blob. Use the blob as the destination of a copy operation.|
 |Delete|`d`|Directory, blob|Delete a blob.|
 |Delete version|`x`|Blob|Delete a blob version.|
-|Permanently delete|`y`|Blob|Permanently delete a blob snapshot or version.|
+|Permanent delete|`y`|Blob|Permanently delete a blob snapshot or version.|
 |List|`l`|Directory|List blobs nonrecursively.|
-|Set tags|`t`|Blob|Read or write the tags on a blob.|
+|Tags|`t`|Blob|Read or write the tags on a blob.|
 |Move|`m`|Directory, blob|Move a blob or a directory and its contents to a new location. |
 |Execute|`e`|Directory, blob|Get the system properties. If the hierarchical namespace is enabled for the storage account, get the POSIX access control list of a blob.|
-|Set ownership|`o`|Directory, blob|Set the owner or owning group. This operation is unsupported in OneLake.|
-|Set permissions|`p`|Directory, blob|Set the permissions. This operation is unsupported in OneLake.|
+|Ownership|`o`|Directory, blob|Set the owner or owning group. This operation is unsupported in OneLake.|
+|Permissions|`p`|Directory, blob|Set the permissions. This operation is unsupported in OneLake.|
 |Set immutability policy|`i`|Blob|Set or delete the immutability policy or legal hold on a blob.|
 
 ## Specify the signature
