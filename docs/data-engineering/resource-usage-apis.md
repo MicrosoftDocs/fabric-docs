@@ -73,7 +73,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | jobGroup | query | False | string | Only list the timeline of jobs within the given jobGroups. Multiple jobGroups could be specified as: ?jobGroup=1&jobGroup=2 |
 | jobLimit | query | False | int | The max number of jobs to list per time point. |
 | executorLimit | query | False | int | The max number of executors to list per time point.|
-| executorJobLimit | query | False | int | The max number of executor-job info to list per time point.|
+| executorJobLimit | query | False | int | The max number of executor-job infos to list per time point.|
 | start / end | query | False | long | The lower and upper bound of time points to list.|
 
 ### Request Body
@@ -86,8 +86,8 @@ None
 | --- | --- | --- |
 | 200 OK | [ResourceUsageInfo](#resourceusageinfo) | Request completed successfully |
 | 400 Bad Request |   | Invalid parameter. start is greater than end |
-| 403 Forbidden |  | User does not have the correct permission |
-| 404 Not Found |   |  - Mismatch between item id, application id and Livy id <br> - Too early to retrieve any resource usage data |
+| 403 Forbidden |  | User doesn't have the correct permission |
+| 404 Not Found |   |  - Mismatch between item ID, application ID and Livy ID <br> - Too early to retrieve any resource usage data |
 
 ### Examples
 
@@ -97,7 +97,7 @@ None
 GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/applications/application_1731308630223_0001/1/resourceUsage?start=1745906291774&end=1745906293676
 ```
 
-#### Sampe response
+#### Sample response
 Status code: 200
 
 ```JSON
@@ -126,20 +126,20 @@ Status code: 200
 
 #### *ResourceUsageInfo*
 
-object
+Object
 
 | Name | Type | Description |
 | --- | --- | --- |
 | resourceUsageApiVersion | int | The version of resource usage API. |
-| duration | long | The duration of the given Spark application, in milli-second. |
+| duration | long | The duration of the given Spark application, in milliseconds. |
 | capacityExceeded | bool | True if the limitation of 10k tasks exceeds. When true, all properties in data are empty. |
-| idleTime | long | The duration when the given Spark application is in idle, in milli-second. |
+| idleTime | long | The duration when the given Spark application is in idle, in milliseconds. |
 | coreEfficiency | double | The overview usage rate of executor cores. |
 | data | [ResourceUsageData](#resourceusagedata) |   |
 
 #### *ResourceUsageData*
 
-object
+Object
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -234,8 +234,8 @@ None
 | Name | Type | Description|
 | ---- | ---- | ---- |
 | 200 OK | [ResourceUsageSnapshot](#resourceusagesnapshot) | Request completed successfully |
-| 403 Forbidden |   | User does not have the correct permission |
-| 404 Not Found |   | - Mismatch between item id, application id and Livy id <br> - Too early to retrieve any resource usage data |
+| 403 Forbidden |   | User doesn't have the correct permission |
+| 404 Not Found |   | - Mismatch between item ID, application ID and Livy ID <br> - Too early to retrieve any resource usage data |
 
 ### Examples
 
@@ -244,7 +244,7 @@ None
 ``` HTTP
 GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/applications/application_1731308630223_0001/1/resourceUsage/1745906291774
 ```
-#### Sampe response 
+#### Sample response 
 Status code: 200 
 
 ```JSON
@@ -276,7 +276,7 @@ Object
 
 #### *ResourceUsageSnapshotData*
 
-object
+Object
 
 | Name | Type | Description |
 | --- | --- | --- |
