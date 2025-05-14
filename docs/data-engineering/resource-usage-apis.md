@@ -10,17 +10,13 @@ ms.date: 05/12/2025
 
 # Resource usage APIs
 
-Retrieve resource usage APIs.
+This article explains how to get Spark resource usage information.
 
-## Get resource usage timeline
-
-Get all resource usage information as a timeline. 
-
-### Permissions
+## Permissions
 
 The caller must have "read" permission on the item.
 
-### Required Delegated Scopes
+## Required Delegated Scopes
 
 Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according to the item which triggered the Spark application)
 
@@ -28,7 +24,7 @@ Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according 
 - SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All
 - Lakehouse.Read.All or Lakehouse.ReadWrite.All
 
-### Microsoft Entra supported identifies
+## Microsoft Entra supported identifies
 
 This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-support) listed in this section.
 
@@ -36,6 +32,10 @@ This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-
 | --- | --- |
 | User | Yes |
 | [Service principal](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) and [Managed identities](/entra/identity/managed-identities-azure-resources/overview) | Yes |
+
+## Get resource usage timeline
+
+Get all resource usage information as a timeline. 
 
 ### Interface
 
@@ -49,7 +49,7 @@ Without attemptId
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/resourceUsage
 ```
 
-With optional parameters
+With optional parameters:
 
 With attemptId
 ```HTTP
@@ -188,27 +188,6 @@ Per-executor job information
 
 Get resource usage information at the time point which is closest to the given timestamp. 
 
-### Permissions
-
-The caller must have "read" permission on the item 
-
-### Required Delegated Scopes
-
-Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according to the item which triggered the Spark application) 
-
-- Notebook.Read.All or Notebook.ReadWrite.All 
-- SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All 
-- Lakehouse.Read.All or Lakehouse.ReadWrite.All 
-
-### Microsoft Entra supported identifies
-
-This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-support) listed in this section. 
-
-| Identity | Support |
-| --- | --- |
-| User | Yes |
-| [Service principal](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) and [Managed identities](/entra/identity/managed-identities-azure-resources/overview) | Yes |
-
 ### Interface
 
 With attemptId
@@ -230,7 +209,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 
 Without attemptId
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/resourceUsage{timestamp}?jobGroup={jobGroup}&jobLimit={jobLimit}&executorLimit={executorLimit}
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/resourceUsage/{timestamp}?jobGroup={jobGroup}&jobLimit={jobLimit}&executorLimit={executorLimit}
 ```
 
 ### URI parameters
@@ -301,8 +280,8 @@ object
 
 | Name | Type | Description |
 | --- | --- | --- |
-| timestamps |long | Timestamp of the time point which is closest to the given timestamp. |
-| isPartials | bool | Any filter applied due to limit at the timestamp. |
+| timestamp |long | Timestamp of the time point which is closest to the given timestamp. |
+| isPartial | bool | Any filter applied due to limit at the timestamp. |
 | allocated/idle/runningCores | double | Count of cores with different status at the timestamp. |
 | executors | An array of [ResourceUsageExecutor](#resourceusageexecutor)  | Per-executor core and task information at the timestamp. |
 | jobs | an array of [ResourceUsageJob](#resourceusagejob)  | Per-job task information at the timestamp. |
