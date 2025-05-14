@@ -14,11 +14,10 @@ ms.date: 05/06/2025
 1. To create a connection to the Confluent Cloud for Apache Kafka source, select **New connection**.
 
     :::image type="content" source="./media/confluent-kafka-source-connector/new-connection-link.png" alt-text="Screenshot that shows the selection of the New connection link on the Connect page of the Get events wizard.":::    
-1. In the **Connection settings** section, enter **Bootstrap Server**. Navigate to your Confluent Cloud for Apache Kafka home page, select **Cluster Settings**, and copy the address to your Bootstrap Server.      
-1. In the **Connection credentials** section, If you have an existing connection to the Confluent Cloud for Apache Kafka cluster, select it from the drop-down list for **Connection**. Otherwise, follow these steps: 
-    1. For **Connection name**, enter a name for the connection. 
+1. In the **Connection settings** section, enter **Bootstrap Server**. Navigate to your Confluent Cloud home page, select **Cluster Settings**, and copy the address to your Bootstrap Server.      
+1. In the **Connection credentials** section, If you have an existing connection to the Confluent cluster, select it from the dropdown list for **Connection**. Otherwise, follow these steps:
     1. For **Authentication kind**, confirm that **API Key** is selected. 
-    1. For **API Key** and **API Key Secret**: 
+    1. For **Key** and **Secret**: 
         1. Navigate to your Confluent Cloud.
         1. Select **API Keys** on the side menu. 
         1. Select the **Add key** button to create a new API key. 
