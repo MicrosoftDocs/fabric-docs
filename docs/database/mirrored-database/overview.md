@@ -140,6 +140,12 @@ Microsoft Fabric users can access [Data Science workloads](../../data-science/da
 
 [Direct Lake](../../fundamentals/direct-lake-overview.md) mode can be used with mirrored databases in Microsoft Fabric to enable high-performance querying over mirrored data without the need for data movement or duplication. When a mirrored database is created, its data is stored in Delta Lake format within OneLake. This native format allows Power BI and other analytics tools to connect via Direct Lake mode, offering near real-time insights by directly accessing the underlying files. This integration combines the simplicity of mirroring with the speed and scalability of Direct Lake, enabling fast, up-to-date reporting on operational data.
 
+## Retention for mirrored data
+
+Mirroring in Fabric continuously replicates your existing data estate into OneLake in Delta Lake table format. To keep the mirrored data efficiently stored and always ready for analytics, mirroring automatically runs vacuum to remove old files no longer referenced by a Delta log.
+
+You can customize the retention setting according to your requirements. For instance, you may choose a shorter retention period to reduce mirroring storage consumption or extend the retention period to utilize Delta’s time travel capabilities for analytics. Currently, this setting can be configured in the `retentionInDays` property [using the API](mirrored-database-rest-api.md#configure-data-retention).
+
 ## SQL database in Fabric
 
 You can also directly create and manage a [SQL database in Microsoft Fabric (Preview)](../sql/overview.md) inside the Fabric portal. Based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), SQL database in Fabric is automatically mirrored for analytics purposes and allows you to easily create your operational database in Fabric. SQL database is the home in Fabric for OLTP workloads, and can integrate with Fabric's [source control integration](../sql/source-control.md).

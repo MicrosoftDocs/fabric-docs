@@ -21,7 +21,7 @@ ms.date: 11/18/2024
     To get the public endpoint:
 
     :::image type="content" source="./media/amazon-msk-kafka-source-connector/public-endpoint.png" alt-text="Screenshot that shows the public endpoint of Amazon MSK cluster.":::   
-1. In the **Connection credentials** section, If you have an existing connection to the Amazon MSK Kafka cluster, select it from the drop-down list for **Connection**. Otherwise, follow these steps: 
+1. In the **Connection credentials** section, If you have an existing connection to the Amazon MSK Kafka cluster, select it from the dropdown list for **Connection**. Otherwise, follow these steps: 
     1. For **Connection name**, enter a name for the connection. 
     1. For **Authentication kind**, confirm that **API Key** is selected. 
     1. For **Key** and **Secret**, enter API key and key Secret for Amazon MSK Kafka cluster.     
