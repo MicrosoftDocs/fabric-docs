@@ -59,7 +59,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 ### Using On-premises or VNET data gateway
 1. When creating your connection, you can now choose to use either an on-premises data gateway (OPDG) or a VNET data gateway. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md)
 
-1. If you would like to use a VNET gateway, refer to [how to create a VNET data gateway](https://learn.microsoft.com/en-us/data-integration/vnet/create-data-gateways).
+1. If you would like to use a VNET gateway, refer to [how to create a VNET data gateway](/data-integration/vnet/create-data-gateways).
 
 1. Once you have successfully created and configured your gateway, it should appear under the Data Gateway dropdown in the connection dialog
 
