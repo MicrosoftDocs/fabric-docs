@@ -29,7 +29,7 @@ Git integration is currently supported for Azure DevOps and GitHub. To use Git i
 
 ### [Azure DevOps](#tab/azure-devops)
 
-- An active Azure account registered to the same user that is using the Fabric workspace. <a href="https://azure.microsoft.com/products/devops/" target="_blank">Create a free account</a>. Using a different tenant (cross tenant) is in Preview.
+- An active Azure account registered to the same user that is using the Fabric workspace. <a href="https://azure.microsoft.com/products/devops/" target="_blank">Create a free account</a>. Using a different tenant (cross tenant) is in *preview*.
 - Access to an existing repository.
 
 ### [GitHub](#tab/github)
