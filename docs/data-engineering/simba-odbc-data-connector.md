@@ -155,16 +155,16 @@ To configure OAuth 2.0 browser-based authentication:
 > [!NOTE]
 > When the browser-based authentication flow completes, the access token and refresh token are saved in the token cache, and the connector doesn't need to authenticate again.
 
-## Configuring advanced options
+## Configure advanced options
 
 You can configure advanced options to modify the behavior of the connector.
 
-The following instructions describe how to configure advanced options in a DSN and in the connector configuration tool. You can specify the connection settings described below in a DSN, in a connection string, or as connector-wide settings. Settings in the connection string take precedence over settings in the DSN, and settings in the DSN take precedence over connector-wide settings.
+The following instructions describe how to configure advanced options in a DSN and in the connector configuration tool. You can specify the connection settings in a DSN, in a connection string, or as connector-wide settings. Settings in the connection string take precedence over settings in the DSN, and settings in the DSN take precedence over connector-wide settings.
 To configure advanced options:
 
 > [!IMPORTANT]
 > When this option is enabled, the connector can't execute parameterized queries.
-> By default, the connector applies transformations to the queries emitted by an application to convert the queries into an equivalent form in SparkSQL. If the application is Spark-aware and already emits SparkSQL, then turning off the translation avoids the additional overhead of query transformation.
+> By default, the connector applies transformations to the queries emitted by an application to convert the queries into an equivalent form in SparkSQL. If the application is Spark-aware and already emits SparkSQL, then turning off the translation avoids the overhead of query transformation.
 
 1. To access advanced options for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then select **Configure**, and then select **Advanced Options**.
 1. To disable the SQL Connector feature, select the **Use Native Query** check box.
@@ -177,7 +177,7 @@ To configure advanced options:
 1. To save your settings and close the Advanced Options dialog box, select **OK**.
 
 >[!NOTE]
-> In the  Max Bytes Per Fetch Request field this option is applicable only when connecting to a server that supports result set data serialized in Arrow format.
+> In the  Max Bytes Per Fetch Request field, this option is applicable only when connecting to a server that supports result set data serialized in Arrow format.
 > The value must be specified in one of the following:
 
 - B (bytes)
@@ -186,7 +186,7 @@ To configure advanced options:
 - GB (gigabytes)
 - By default, the file size is in B (bytes).
 
-## Configuring a proxy connection
+## Configure a proxy connection
 
 If you're connecting to the data source through a proxy server, you must provide connection information for the proxy server.
 
@@ -207,7 +207,7 @@ To configure a proxy server connection:
 1. In the **Hosts Not Using Proxy field**, type the list of hosts or domains that don't use a proxy.
 1. To save your settings and close the **HTTP Proxy Options** dialog box, select **OK**.
 
-## Configuring SSL verification
+## Configure SSL verification
 
 If you're connecting to a Spark server that has Secure Sockets Layer (SSL) enabled, you can configure the connector to connect to an SSL-enabled socket.
 
@@ -244,7 +244,7 @@ To configure SSL verification:
 > [!IMPORTANT]
 > The password is obscured, that is, not saved in plain text. However, it's still possible for the encrypted password to be copied and used.
 
-## Configuring server-side properties
+## Configure server-side properties
 
 You can use the connector to apply configuration properties to the Spark server.
 
@@ -267,14 +267,14 @@ To configure server-side properties:
 
 1. To save your settings and close the Server Side Properties dialog box, select **OK**.
 
-## Configuring logging options
+## Configure logging options
 
 To help troubleshoot issues, you can enable logging. In addition to the functionality provided in the Simba ODBC Data Connector for Microsoft Fabric Spark, the ODBC Data Source Administrator provides tracing functionality.
 
 > [!IMPORTANT]
 > Only enable logging or tracing long enough to capture an issue. Logging or tracing decreases performance and can consume a large quantity of disk space.
 
-## Configuring connector-wide logging options
+## Configure connector-wide logging options
 
 The settings for logging apply to every connection that uses the Simba ODBC Data Connector for Microsoft Fabric Spark, so make sure to disable the feature after configuration is complete.
 
