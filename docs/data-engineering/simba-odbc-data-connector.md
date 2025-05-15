@@ -286,15 +286,15 @@ To enable connector-wide logging:
 1. To access logging options, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then select **Configure**, and then select **Logging Options**.
 1. From the **Log Level** drop-down list, select the logging level corresponding to the amount of information that you want to include in log files:
 
-| Logging Level | Description |
-|---------|---------|
-| OFF | Disables all logging.                  |
-| FATAL | Logs severe error events that lead the connector to abort. |
-| ERROR | Logs error events that might allow the connector to continue running. |
-| WARNING | Logs events that might result in an error if action isn't taken. |
-| INFO | Logs general information that describes the progress of the connector. |
-| DEBUG | Logs detailed information that is useful for debugging the connector. |
-| TRACE | Logs all connector activity. |
+    | Logging Level | Description |
+    |---------|---------|
+    | OFF | Disables all logging.                  |
+    | FATAL | Logs severe error events that lead the connector to abort. |
+    | ERROR | Logs error events that might allow the connector to continue running. |
+    | WARNING | Logs events that might result in an error if action isn't taken. |
+    | INFO | Logs general information that describes the progress of the connector. |
+    | DEBUG | Logs detailed information that is useful for debugging the connector. |
+    | TRACE | Logs all connector activity. |
 
 1. In the **Log Path** field, specify the full path to the folder where you want to save log files.
 1. In the **Max Number Files** field, type the maximum number of log files to keep.
