@@ -17,7 +17,7 @@ ms.date: 05/21/2024
    - **Database**: The database name, for example *my_database*.
 
         :::image type="content" source="media/postgresql-database-cdc-source-connector/connection-settings.png" alt-text="Screenshot that shows the Connection settings section for the Azure PostgreSQL database connector.":::
-1. and in the **Connection credentials** section, follow these steps.
+1. Scroll down, and in the **Connection credentials** section, follow these steps.
     1. For **Connection name**, enter a name for the connection. 
     1. For **Authentication kind**, select **Basic**. 
     
@@ -45,7 +45,7 @@ ms.date: 05/21/2024
     1. **Publication name**: Specifies the name of the PostgreSQL logical replication publication to use. This must match an existing publication in the database, or it will be created automatically depending on the auto-create mode. Default value: `dbz_publication`.
         > **Note**: The connector user must have superuser permissions to create the publication. It is recommended to create the publication manually before starting the connector for the first time to avoid permission-related issues.
     1. **Publication auto-create mode**：Controls whether and how the publication is automatically created. Options include:
-        - `Filtered`(default): If the specified publication does not exist, the connector creates one that includes only the selected tables.
+        - `Filtered`(default): If the specified publication does not exist, the connector creates one that includes only the selected tables (as specified in the table include list).
         - `AllTables`: If the specified publication exists, the connector uses it. If it does not exist, the connector creates one that includes all tables in the database.
         - `Disabled`:The connector does not create a publication. If the specified publication is missing, the connector throws an exception and stops. In this case, the publication must be manually created in the database.
 
