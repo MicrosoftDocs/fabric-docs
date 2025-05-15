@@ -58,7 +58,7 @@ The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU)
 | F1024 | 1024 | P5/A8 | 128 |
 | F2048 | 2048 | - | 256 |
 
-<sup>*</sup>In the Power BI [Embed for your organization](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers) scenario, SKUs that are smaller than F64 require a Pro or Premium Per User (PPU) license, or a Power BI individual trial to consume Power BI content.
+<sup>*</sup>In the Power BI [Embed for your organization](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers) scenario, SKUs smaller than F64 require a Pro or Premium Per User (PPU) license, or a Power BI individual trial to consume Power BI content.
 
 ### Workspace
 
