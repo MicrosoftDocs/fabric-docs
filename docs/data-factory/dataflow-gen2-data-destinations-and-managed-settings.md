@@ -5,7 +5,7 @@ ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 11/20/2024
+ms.date: 05/09/2025
 ---
 
 # Dataflow Gen2 data destinations and managed settings
@@ -20,6 +20,7 @@ The following list contains the supported data destinations.
 * Fabric Warehouse
 * Fabric KQL database
 * Fabric SQL database
+* SharePoint Files (preview)
 
 ## Entry points
 
@@ -44,6 +45,17 @@ There are three main entry-points to specify the data destination:
 Connecting to the data destination is similar to connecting to a data source. Connections can be used for both reading and writing your data, given that you have the right permissions on the data source. You need to create a new connection or pick an existing connection, and then select **Next**.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/connect-to-data-destination.png" alt-text="Screenshot of the Connect to data destination window for a Lakehouse destination.":::
+
+## Setup file based destinations
+
+When you choose a file-based destination like SharePoint, you need to specify a few more settings. The following settings are required:
+
+* File name: The name of the file that will be created in the destination. By default, the file name is the same as your query name.
+* File format: The format of the file that will be created in the destination.
+* File origin: The encoding that will be used to create the file in the destination. By default, the file origin is set to **UTF-8**.
+* File delimiter: The delimiter that will be used to create the file in the destination. By default, the file delimiter is set to **Comma**.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/file-destinations-settings.png" alt-text="Screenshot of the File destination settings window with the file name, file format, file origin, and file delimiter settings displayed.":::
 
 ## Create a new table or pick an existing table
 
@@ -78,7 +90,7 @@ When you're loading into a new table, the automatic settings are on by default. 
 * **Drop and recreate table**: To allow for these schema changes, on every dataflow refresh the table is dropped and recreated. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 
 > [!NOTE]
-> Currently, automatic setting are only supported for Lakehouse and Azure SQL database as data destination.  
+> Currently, automatic settings are only supported for Lakehouse and Azure SQL database as data destination.  
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/use-automatic-settings.png" alt-text="Screenshot of the Choose destination settings window with the Use automatic settings option selected.":::
 
@@ -175,8 +187,8 @@ To vacuum your Delta tables in Lakehouse, follow these steps:
 
 #### Best practices
 
-- **Retention period**: Set a retention interval of at least seven days to ensure that old snapshots and uncommitted files aren't prematurely removed, which could disrupt concurrent table readers and writers.
-- **Regular maintenance**: Schedule regular vacuuming as part of your data maintenance routine to keep your Delta tables optimized and ready for analytics.
+* **Retention period**: Set a retention interval of at least seven days to ensure that old snapshots and uncommitted files aren't prematurely removed, which could disrupt concurrent table readers and writers.
+* **Regular maintenance**: Schedule regular vacuuming as part of your data maintenance routine to keep your Delta tables optimized and ready for analytics.
 
 By incorporating vacuuming into your data maintenance strategy, you can ensure that your Lakehouse destination remains efficient, cost-effective, and reliable for your dataflow operations.
 
