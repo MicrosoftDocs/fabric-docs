@@ -13,8 +13,6 @@ ms.search.form: product-kusto, Real-Time Dashboard
 
 A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
 In this article, you learn how to create a new Real-Time Dashboard, add data sources, and add tiles to the dashboard. You also learn how to enable auto refresh, use parameters, and export dashboards.
 
 > [!IMPORTANT]
