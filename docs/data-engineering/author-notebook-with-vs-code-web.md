@@ -17,7 +17,7 @@ Visual Studio Code for the web offers a free, browser-based experience with no i
 The Fabric Data Engineering VS Code extension can also be used in the VS Code for the Web experience. The extension supports the CRUD (create, read, update, and delete) notebook experience in Fabric. The changes from the VS Code for the Web experience are applied to the workspace immediately. The extension also supports running notebooks in the VS Code for the web experience.
 
 > [!IMPORTANT]
-> The Synapse VS Code Remote extension is currently in preview.
+> The Fabric Data Engineering VS Code extension is currently in preview.
 
 ## Install the Fabric Data Engineering VS Code extension for the Web
 
