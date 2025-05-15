@@ -100,7 +100,7 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 1. In your workspace, hover over the notebook you want to delete, select the **More menu** [...] > **Delete**.
 
-    :::image type="content" source="media/spark-connector/clean-resources.png" alt-text="Screenshot of workspace showing the drop-down menu of the NYC GreenTaxi notebook. The option titled Delete is highlighted."  lightbox="media/spark-connector/clean-resources-expanded.png":::
+    :::image type="content" source="media/spark-connector/clean-resources.png" alt-text="Screenshot of workspace showing the dropdown menu of the NYC GreenTaxi notebook. The option titled Delete is highlighted."  lightbox="media/spark-connector/clean-resources-expanded.png":::
 
 1. Select **Delete**. You can't recover your notebook once you delete it.
 
