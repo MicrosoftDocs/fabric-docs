@@ -22,7 +22,7 @@ ms.date: 05/21/2024
     1. For **Authentication kind**, select **Basic**. 
     
         > [!NOTE]
-        > Currently, Fabric event streams supports only **Basic** authentication.
+        > Currently, Fabric event streams support only **Basic** authentication.
     1. Enter **Username** and **Password** for the database.   
     1. Select **Connect**.
    
@@ -36,28 +36,29 @@ ms.date: 05/21/2024
 
         You can mix both formats using commas. Up to 100 tables can be entered, with each table name (including the schema name) limited to 128 characters if using full table identifiers directly.
 
-    1. **Slot name（optional)**: Enter the name of the PostgreSQL logical decoding slot that was created for streaming changes from a particular plug-in for a particular database/schema. The server uses this slot to stream events to Eventstream streaming connector. It must contain only lowercase letters, numbers, and underscores.
+    1. **Slot name (optional)**: Enter the name of the PostgreSQL logical decoding slot that was created for streaming changes from a particular plug-in for a particular database/schema. The server uses this slot to stream events to Eventstream streaming connector. It must contain only lowercase letters, numbers, and underscores.
         
-        - If not specified, a GUID will be used to create the slot, requiring the appropriate database permissions.
-        - If a specified slot name exists, the connector will use it directly.
+        - If not specified, a GUID is used to create the slot, requiring the appropriate database permissions.
+        - If a specified slot name exists, the connector uses it directly.
 
-1. Scroll down and expand **Advanced settings** to configure additional options for the PostgreSQL Database CDC source:
-    1. **Publication name**: Specifies the name of the PostgreSQL logical replication publication to use. This must match an existing publication in the database, or it will be created automatically depending on the auto-create mode. Default value: `dbz_publication`.
-        > **Note**: The connector user must have superuser permissions to create the publication. It is recommended to create the publication manually before starting the connector for the first time to avoid permission-related issues.
-    1. **Publication auto-create mode**：Controls whether and how the publication is automatically created. Options include:
-        - `Filtered`(default): If the specified publication does not exist, the connector creates one that includes only the selected tables (as specified in the table include list).
-        - `AllTables`: If the specified publication exists, the connector uses it. If it does not exist, the connector creates one that includes all tables in the database.
-        - `Disabled`:The connector does not create a publication. If the specified publication is missing, the connector throws an exception and stops. In this case, the publication must be manually created in the database.
+1. Scroll down and expand **Advanced settings** to configure more options for the PostgreSQL Database CDC source:
+    1. **Publication name**: Specifies the name of the PostgreSQL logical replication publication to use. This must match an existing publication in the database, or it will be created automatically depending on the autocreate mode. Default value: `dbz_publication`.
+        > [!NOTE]
+        > The connector user must have superuser permissions to create the publication. It's recommended to create the publication manually before starting the connector for the first time to avoid permission-related issues.
+    1. **Publication auto-create mode**： Controls whether and how the publication is automatically created. Options include:
+        - `Filtered`(default): If the specified publication doesn't exist, the connector creates one that includes only the selected tables (as specified in the table include list).
+        - `AllTables`: If the specified publication exists, the connector uses it. If it doesn't exist, the connector creates one that includes all tables in the database.
+        - `Disabled`: The connector doesn't create a publication. If the specified publication is missing, the connector throws an exception and stops. In this case, the publication must be manually created in the database.
 
-        For more details, see the [Debezium documentation on publication auto-create mode](https://debezium.io/documentation/reference/3.1/connectors/postgresql.html#postgresql-publication-autocreate-mode)
+        For more information, see the [Debezium documentation on publication autocreate mode](https://debezium.io/documentation/reference/3.1/connectors/postgresql.html#postgresql-publication-autocreate-mode)
     1. **Decimal handling mode**: Specifies how the connector handles PostgreSQL `DECIMAL` and `NUMERIC` column values:
-        - `Precise`: Represents values using exact decimal types (e.g., Java `BigDecimal`) to ensure full precision and accuracy in data representation.
+        - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.
         - `Double`: Converts values to double-precision floating-point numbers. This improves usability and performance but may result in a loss of precision.
         - `String`: Encodes values as formatted strings. This makes them easy to consume in downstream systems but loses semantic information about the original numeric type.
 
 1. Select **Next** at the bottom of the page.
 
-        :::image type="content" source="media/postgresql-database-cdc-source-connector/connect-page-filled.png" alt-text="Screenshot that shows the Connect page filled for the Azure PostgreSQL database connector." lightbox="media/postgresql-database-cdc-source-connector/connect-page-filled.png":::
+    :::image type="content" source="media/postgresql-database-cdc-source-connector/connect-page-filled.png" alt-text="Screenshot that shows the Connect page filled for the Azure PostgreSQL database connector." lightbox="media/postgresql-database-cdc-source-connector/connect-page-filled.png":::
 1. On the **Review + connect** page, review the summary, and then select **Add**.
 
     :::image type="content" source="media/postgresql-database-cdc-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page filled for the Azure PostgreSQL database connector." lightbox="media/postgresql-database-cdc-source-connector/review-create-page.png":::
