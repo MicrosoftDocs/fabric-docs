@@ -31,7 +31,11 @@ In the rule definition pane on the right side of the screen, find **Action** sec
 
 Once you enter all of the required information, select **Save** to save the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. To test the rule, select **Test action**. To start the rule, select **Start** from the top menu bar and to stop the rule, select **Stop.** **Stop** only appears while a rule is active.
 
-## Limitations on passing parameters to Fabric items
+## Pass values to parameters defined in Fabric items (Preview)
+
+You can now pass values from the data source to the activated Fabric item. To pass parameter values, select **Edit action**, enter the parameter name and type exactly as how they are defined in the Fabric item. The parameter values can be entered manually or by selecting dynamic properties from the data source.
+
+### Limitations on passing parameter values
 
 Activator doesn't support passing parameters to all Fabric items. However, you can pass parameters from Azure events to the data pipeline in the following ways:
 
