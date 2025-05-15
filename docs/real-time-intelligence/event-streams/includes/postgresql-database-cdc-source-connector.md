@@ -17,7 +17,7 @@ ms.date: 05/21/2024
    - **Database**: The database name, for example *my_database*.
 
         :::image type="content" source="media/postgresql-database-cdc-source-connector/connection-settings.png" alt-text="Screenshot that shows the Connection settings section for the Azure PostgreSQL database connector.":::
-1. Scroll down, and in the **Connection credentials** section, follow these steps.
+1. and in the **Connection credentials** section, follow these steps.
     1. For **Connection name**, enter a name for the connection. 
     1. For **Authentication kind**, select **Basic**. 
     
@@ -40,7 +40,22 @@ ms.date: 05/21/2024
         
         - If not specified, a GUID will be used to create the slot, requiring the appropriate database permissions.
         - If a specified slot name exists, the connector will use it directly.
-    1. Select **Next** at the bottom of the page.
+
+1. Scroll down and expand **Advanced settings** to configure additional options for the PostgreSQL Database CDC source:
+    1. **Publication name**: Specifies the name of the PostgreSQL logical replication publication to use. This must match an existing publication in the database, or it will be created automatically depending on the auto-create mode. Default value: `dbz_publication`.
+        > **Note**: The connector user must have superuser permissions to create the publication. It is recommended to create the publication manually before starting the connector for the first time to avoid permission-related issues.
+    1. **Publication auto-create mode**：Controls whether and how the publication is automatically created. Options include:
+        - `Filtered`(default): If the specified publication does not exist, the connector creates one that includes only the selected tables.
+        - `AllTables`: If the specified publication exists, the connector uses it. If it does not exist, the connector creates one that includes all tables in the database.
+        - `Disabled`:The connector does not create a publication. If the specified publication is missing, the connector throws an exception and stops. In this case, the publication must be manually created in the database.
+
+        For more details, see the [Debezium documentation on publication auto-create mode](https://debezium.io/documentation/reference/3.1/connectors/postgresql.html#postgresql-publication-autocreate-mode)
+    1. **Decimal handling mode**: Specifies how the connector handles PostgreSQL `DECIMAL` and `NUMERIC` column values:
+        - `Precise`: Represents values using exact decimal types (e.g., Java `BigDecimal`) to ensure full precision and accuracy in data representation.
+        - `Double`: Converts values to double-precision floating-point numbers. This improves usability and performance but may result in a loss of precision.
+        - `String`: Encodes values as formatted strings. This makes them easy to consume in downstream systems but loses semantic information about the original numeric type.
+
+1. Select **Next** at the bottom of the page.
 
         :::image type="content" source="media/postgresql-database-cdc-source-connector/connect-page-filled.png" alt-text="Screenshot that shows the Connect page filled for the Azure PostgreSQL database connector." lightbox="media/postgresql-database-cdc-source-connector/connect-page-filled.png":::
 1. On the **Review + connect** page, review the summary, and then select **Add**.
