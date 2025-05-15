@@ -52,7 +52,7 @@ The following three properties are **required**:
           
           :::image type="content" source="./media/connector-azure-database-for-postgresql/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::    
 
-- **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements.
+- **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. When you select version 2.0, the connector uses SSL require mode if you encrypt the connection. For more details about SSL mode, go to this [article](https://www.npgsql.org/doc/security.html?tabs=tabid-1#encryption-ssltls).
 
 Under **Advanced**, you can specify the following fields:
 
@@ -97,7 +97,7 @@ The following three properties are **required**:
 
 - **Table**: Select the table from the drop-down list or select **Enter manually** to enter it to write data. 
 
-- **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements.
+- **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. When you select version 2.0, the connector uses SSL require mode if you encrypt the connection. For more details about SSL mode, go to this [article](https://www.npgsql.org/doc/security.html?tabs=tabid-1#encryption-ssltls).
 
 Under **Advanced**, you can specify the following fields:
 
@@ -151,7 +151,7 @@ The following table contains more information about the copy activity in Azure D
 |:---|:---|:---|:---|:---|
 |**Connection**|Your connection to the source data store.|< your Azure Database for PostgreSQL connection >|Yes|connection|
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.|• **Table** <br>• **Query** |Yes |• typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - schema<br>&nbsp; - table<br>• query|
-|**Version** |The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. |• 2.0 <br> • 1.0 |Yes|version: <br>• 2.0 <br> • 1.0 |
+|**Version** |The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. When you select version 2.0, the connector uses SSL require mode if you encrypt the connection. For more details about SSL mode, go to this [article](https://www.npgsql.org/doc/security.html?tabs=tabid-1#encryption-ssltls). |• 2.0 <br> • 1.0 |Yes|version: <br>• 2.0 <br> • 1.0 |
 |**Query timeout (minutes)** | The wait time before terminating the attempt to execute a command and generating an error, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes). For more information, see [CommandTimeout](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_CommandTimeout). |timespan |No |queryTimeout|
 | **Partition names** | The list of physical partitions that needs to be copied. If you use a query to retrieve the source data, hook `?AdfTabularPartitionName` in the WHERE clause.  | < your partition names > | No | partitionNames | 
 | **Partition column name** | The name of the source column **in integer or date/datetime type** (`int`, `smallint`, `bigint`, `date`, `timestamp without time zone`, `timestamp with time zone` or `time without time zone`) that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column. | < your partition column names > | No | partitionColumnName | 
@@ -165,7 +165,7 @@ The following table contains more information about the copy activity in Azure D
 |:---|:---|:---|:---|:---|
 |**Connection**|Your connection to the destination data store.|< your Azure Database for PostgreSQL connection >|Yes|connection|
 |**Table**|Your destination data table to write data.| < name of your destination table > |Yes |typeProperties (under *`typeProperties`* -> *`sink`*):<br>&nbsp; - schema<br>&nbsp; - table<br>|
-|**Version** |The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. |• 2.0 <br> • 1.0 |Yes|version: <br>• 2.0 <br> • 1.0 |
+|**Version** |The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. When you select version 2.0, the connector uses SSL require mode if you encrypt the connection. For more details about SSL mode, go to this [article](https://www.npgsql.org/doc/security.html?tabs=tabid-1#encryption-ssltls). |• 2.0 <br> • 1.0 |Yes|version: <br>• 2.0 <br> • 1.0 |
 |**Write method**|The method used to write data into Azure Database for PostgreSQL.|• **Copy command** (default)<br>• **Bulk insert**<br>• **Upsert** (for version 2.0)|No|writeMethod:<br>• CopyCommand<br>• BulkInsert <br>• Upsert|
 |**Key columns**|Choose which column is used to determine if a row from the source matches a row from the destination.|< your key column> |No|keys|
 |**Pre-copy script**|A SQL query for the copy activity to execute before you write data into Azure Database for PostgreSQL in each run. You can use this property to clean up the preloaded data.|< your pre-copy script >|No|preCopyScript|
