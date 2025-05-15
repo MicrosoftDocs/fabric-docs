@@ -16,7 +16,7 @@ This article explains how to get Spark resource usage information.
 
 The caller must have "read" permission on the item.
 
-## Required Delegated Scopes
+## Required delegated scopes
 
 Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according to the item which triggered the Spark application)
 
@@ -24,7 +24,7 @@ Item.Read.All or Item.ReadWrite.All or one of the following 3 groups (according 
 - SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All
 - Lakehouse.Read.All or Lakehouse.ReadWrite.All
 
-## Microsoft Entra supported identifies
+## Microsoft Entra supported identites
 
 This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-support) listed in this section.
 
@@ -68,7 +68,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | workspaceId | path | True | string uuid | The workspace ID. | 
 | itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. | 
 | livyId | path | True | string uuid | The Livy session ID. | 
-| appId | path | True | string | The Spark application ID, like application_1704417105000_0001. |
+| appId | path | True | string | The Spark application ID, like application_1731308630223_0001. |
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
 | jobGroup | query | False | string | Only list the timeline of jobs within the given jobGroups. Multiple jobGroups could be specified as: ?jobGroup=1&jobGroup=2 |
 | jobLimit | query | False | int | The max number of jobs to list per time point. |
@@ -76,7 +76,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | executorJobLimit | query | False | int | The max number of executor-job infos to list per time point.|
 | start / end | query | False | long | The lower and upper bound of time points to list.|
 
-### Request Body
+### Request body
 
 None 
 
@@ -94,7 +94,7 @@ None
 #### Sample request
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/applications/application_1731308630223_0001/1/resourceUsage?start=1745906291774&end=1745906293676
+GET https://api.fabric.microsoft.com/v1/workspaces/3d288857-1e44-41aa-b82f-b6e5ff55cc11/notebooks/83a4c604-3fcb-459d-8ba8-561b77680b70/livySessions/9b0deb81-31f8-4246-a7ed-6f9e214e6e1f/applications/application_1731308630223_0001/1/resourceUsage?start=1745906291774&end=1745906293676
 ```
 
 #### Sample response
@@ -219,14 +219,14 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 | workspaceId | path | True | string uuid | The workspace ID. | 
 | itemId | path | True | string uuid | The item ID of the notebook or Spark job definition or Lakehouse. | 
 | livyId | path | True | string uuid | The Livy session ID. | 
-| appId | path | True | string | The Spark application ID, like application_1704417105000_0001. | 
+| appId | path | True | string | The Spark application ID, like application_1731308630223_0001. | 
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
 | timestamp | path | True | long | The specific timestamp to query |
 | jobGroup | query | False | string | Only list the timeline of jobs within the given jobGroups. Multiple jobGroups could be specified as: ?jobGroup=1&jobGroup=2 |
 | jobLimit | query | False | int | The max number of jobs to list |
 | executorLimit | query | False | int | The max number of executors to list |
 
-### Request Body 
+### Request body 
 None
 
 ### Responses
@@ -242,8 +242,10 @@ None
 #### Sample request
 
 ``` HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/applications/application_1731308630223_0001/1/resourceUsage/1745906291774
+GET https://api.fabric.microsoft.com/v1/workspaces/5db77d1f-17ef-4a19-a983-c2e087a2914f/notebooks/95ddd78b-755f-4528-aa1b-a6a4e3291047/livySessions/290f1ae9-75a7-4da6-9683-a9a2cdc5eb07/applications/application_1731308630223_0001/1/resourceUsage/1745906291774
+
 ```
+
 #### Sample response 
 Status code: 200 
 
