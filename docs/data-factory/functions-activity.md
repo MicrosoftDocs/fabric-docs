@@ -5,7 +5,7 @@ ms.reviewer: shaween18
 ms.author: abnarain
 author: nabhishek
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines
   - Fabcon-2024
 ms.date: 09/30/2024
 ---

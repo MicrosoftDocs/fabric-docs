@@ -4,7 +4,7 @@ description: This article describes the available REST APIs for pipelines in Mic
 author: conxu-ms
 ms.author: conxu
 ms.topic: conceptual
-ms.custom:
+ms.custom: pipelines
 ms.date: 10/24/2024
 ---
 

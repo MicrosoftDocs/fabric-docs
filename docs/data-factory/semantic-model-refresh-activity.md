@@ -4,7 +4,7 @@ description: This article describes how to use the Semantic model refresh activi
 author: n0elleli
 ms.author: noelleli
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines
 ms.date: 10/16/2024
 ---
 

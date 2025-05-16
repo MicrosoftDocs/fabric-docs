@@ -5,7 +5,7 @@ ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
 ms.topic: tutorial
-ms.custom:
+ms.custom: pipelines
 ms.date: 12/18/2024
 ---
 

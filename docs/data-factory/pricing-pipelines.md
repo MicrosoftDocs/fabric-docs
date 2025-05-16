@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
-ms.custom:
+ms.custom: pipelines
 ms.date: 11/29/2024
 ---
 

@@ -5,6 +5,7 @@ ms.author: jianleishen
 ms.topic: how-to
 ms.date: 03/20/2024
 ms.custom:
+  - pipelines
   - template-how-to
   - connectors
 ---
