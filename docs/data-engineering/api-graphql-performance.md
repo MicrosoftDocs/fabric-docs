@@ -2,7 +2,7 @@
 
 Microsoft Fabric’s API for GraphQL offers a powerful way to query data efficiently, but performance optimization is key to ensuring smooth and scalable performance. Whether you’re handling complex queries or optimizing response times, the following best practices will help you get the best performance out of your GraphQL implementation and maximize your API efficiency in Fabric. 
 
-### Region
+## Regions
 Cross-region calls can generally be the cause higher latency. In order to achieve the best performance, it is recommended to have clients connecting to APIs in the same tenant and capacity region.
 
 ### Tenant region
@@ -27,11 +27,11 @@ In this example the capacity region is also West Central US.
 1.  If your data source is hosted in the Fabric platform, the workspace’s capacity region would be the data source region.
 2.  If your data source is outside the Fabric platform, for example an Azure SQL database, you should be able to find the regional information in the Azure Portal.
 
-### Performance testing
+## Performance testing
 
 For customers evaluating their API performance, we recommend adhering to the following guidelines to ensure consistent and reliable results.
 
-### Client-side tools
+## Client-side tools
 
 To emulate the closet behavior to your application, it is recommended to use scripts or a demo web applications to perform the testing to measure the performance. In addition to that, using HTTP connection pooling can greatly reduce the latencies especially for cross-region scenarios.
 
@@ -42,7 +42,7 @@ Related topics:
 *   [Advanced Usage — Requests 2.32.3 documentation](https://docs.python-requests.org/en/latest/user/advanced/#session-objects)
 *   [HttpClient guidelines for .NET](https://learn.microsoft.com/dotnet/fundamentals/networking/http/httpclient-guidelines#recommended-use)
 
-### Data Collection & Evaluation
+## Data Collection & Evaluation
 
 It is advisable to automate the request execution over a well defined time period leveraging scripts or performance testing tools. Analyzing the average or percentile-based results will help ensure more accurate and unbiased performance measurements.
 
@@ -64,8 +64,6 @@ Here is list of common issues that can impact API latency and performance.
         *   Refer to this general guidance about Fabric capacity SKU and its compute power: [Microsoft Fabric concepts](fabric/enterprise/licenses#capacity)
 
 * * *
-
-## Conclusion
 
 Several factors can impact API performance. Understanding your data source setup, selecting the right regions, and effectively measuring performance are crucial for optimization. 
 
