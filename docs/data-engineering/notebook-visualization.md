@@ -92,7 +92,7 @@ The improved chart view is available on _display()_ command. It provides a more 
    |Other |Series group | Use this configuration to determine the groups for the aggregation. |
    |Other |Aggregation | Use this method to aggregate data in your visualization. |
    |Other |Stacked | Configure the display style of result. |
-   |Other |Missing and NULL values | Configure how missing or NULL chart values are displayed. You can choose to hide them or display them as zero. |
+   |Other |Missing and NULL values | Configure how missing or NULL chart values are displayed. |
 
    > [!NOTE]
    > By default the _display(df)_ function only takes the first 1,000 rows of the data to render the charts. Select **Aggregation over all results** and then select **Apply** to apply the chart generation from the whole dataframe. A Spark job is triggered when the chart setting changes. It might take several minutes to complete the calculation and render the chart.
