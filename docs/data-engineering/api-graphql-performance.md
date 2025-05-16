@@ -1,3 +1,15 @@
+---
+title: Fabric API for GraphQL Performance Best Practices
+description: This article contains a list of performance best practices
+author: KoldBrewEd 
+ms.author: edlima
+ms.reviewer: snehagunda
+ms.date: 05/16/2025
+ms.topic: conceptual
+ms.custom:
+ms.search.form: Fabric API for GraphQL Performance Best Practices  # This article's title shouldn't change. If so, contact engineering.
+---
+
 # Fabric API for GraphQL Performance Best Practices 
 
 Microsoft Fabric’s API for GraphQL offers a powerful way to query data efficiently, but performance optimization is key to ensuring smooth and scalable performance. Whether you’re handling complex queries or optimizing response times, the following best practices will help you get the best performance out of your GraphQL implementation and maximize your API efficiency in Fabric. 

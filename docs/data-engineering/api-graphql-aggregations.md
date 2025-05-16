@@ -1,3 +1,15 @@
+---
+title: Aggregations in API for GraphQL
+description: This article contains information about aggregations in API for GraphQL
+author: KoldBrewEd 
+ms.author: edlima
+ms.reviewer: snehagunda
+ms.date: 05/16/2025
+ms.topic: conceptual
+ms.custom:
+ms.search.form: Aggregations in API for GraphQL # This article's title shouldn't change. If so, contact engineering.
+---
+
 # Aggregations in API for GraphQL
 
 ## Overview

@@ -1,3 +1,15 @@
+---
+title: Fabric API for GraphQL pricing
+description: This article contains information about billing
+author: KoldBrewEd 
+ms.author: edlima
+ms.reviewer: snehagunda
+ms.date: 05/16/2025
+ms.topic: conceptual
+ms.custom:
+ms.search.form: Fabric API for GraphQL pricing  # This article's title shouldn't change. If so, contact engineering.
+---
+
 ## Fabric API for GraphQL pricing
 
 The usage for each API operation consisting of the time executing a GraphQL request/response is reported in Capacity Units (CUs) in seconds at the rate of 10 CUs per hour. You can find more information in the following sections.
