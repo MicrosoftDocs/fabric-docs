@@ -256,5 +256,5 @@ With a clear understanding of your schema and the guidelines above, you can conf
 **Related content**
 
 - [Fabric API for GraphQL editor](api-graphql-editor.md)
-- [More query and mutation examples](azure/data-api-builder/graphql.md#supported-root-types)
+- [More query and mutation examples](/azure/data-api-builder/graphql.md#supported-root-types)
 - [Fabric API for GraphQL schema view and Schema explorer](graphql-schema-view.md)
