@@ -63,7 +63,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 1. Once you have successfully created and configured your gateway, it should appear under the Data Gateway dropdown in the connection dialog
 
-  :::image type="content" source="media/web-activity/create-new-data-gateway.png" alt-text="Screenshot showing the data gateway connection dialog for the Web activity.":::
+	:::image type="content" source="media/web-activity/create-new-data-gateway.png" alt-text="Screenshot showing the data gateway connection dialog for the Web activity.":::
 
 1. After choosing or creating your connection and data gateway, complete the remaining required fields, add any required headers, or set any advanced settings. The Web activity supports GET, POST, PUT, DELETE, and PATCH methods.
 
