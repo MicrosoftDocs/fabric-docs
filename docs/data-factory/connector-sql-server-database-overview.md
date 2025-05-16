@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 04/18/2025
 ms.custom:
   - template-how-to
 ---
@@ -24,10 +24,13 @@ The SQL Server database connector supports the following capabilities in Data pi
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | --- |
-| **Copy activity (source/destination)** | None <br> On-premises | Basic |
-| **Lookup activity** | None <br> On-premises | Basic |
-| **GetMetadata activity** | None <br> On-premises | Basic |
-| **Script activity** | None <br> On-premises | Basic |
-| **Stored procedure activity** | None <br> On-premises | Basic |
+| **Copy activity (source/destination)** | None <br> On-premises | Basic <br> Service principal |
+| **Lookup activity** | None <br> On-premises | Basic <br> Service principal  |
+| **GetMetadata activity** | None <br> On-premises | Basic <br> Service principal |
+| **Script activity** | None <br> On-premises | Basic <br> Service principal |
+| **Stored procedure activity** | None <br> On-premises | Basic <br> Service principal |
+
+> [!NOTE]
+> The Service principal authentication only applies to [SQL Server on Azure VMs](/azure/azure-sql/virtual-machines).
 
 To learn more about the copy activity configuration for SQL Server database in Data pipeline, go to [Configure in a data pipeline copy activity](connector-sql-server-copy-activity.md).
