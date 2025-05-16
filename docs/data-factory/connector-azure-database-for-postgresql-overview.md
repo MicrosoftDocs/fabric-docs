@@ -26,6 +26,6 @@ The Azure Database for PostgreSQL connector supports the following capabilities 
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None <br> On-premises | Basic |
 | **Lookup activity** | None <br> On-premises | Basic |
-| **Script activity** (For version 2.0) | None <br> On-premises | Basic |
+| **Script activity** (only supported in version 2.0) | None <br> On-premises | Basic |
 
 To learn more about the copy activity configuration for Azure Database for PostgreSQL in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-database-for-postgresql-copy-activity.md).
