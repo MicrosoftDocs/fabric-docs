@@ -6,8 +6,7 @@ ms.author: alpowers
 ms.reviewer: dougklopfenstein, mllopis
 ms.topic: conceptual
 ms.date: 12/08/2024
-ms.custom: fabric-cat, intro-migration
-ms.custom: dataflows
+ms.custom: fabric-cat, intro-migration, dataflows
 ---
 
 # Migrate from Dataflow Gen1 to Dataflow Gen2: Migration scenarios

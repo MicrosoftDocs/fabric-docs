@@ -1,16 +1,13 @@
 ### YamlMime:Landing
-
----
 title: Data Factory documentation in Microsoft Fabric
 summary: Data factory in Microsoft Fabric provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade. # < 160 chars
 
 metadata:
-  ---
-title: Data Factory  in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  title: Data Factory  in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Summary of the Data Factory in Microsoft Fabric documentation # Required; article description that is displayed in search results. < 160 chars.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-factory
-  ms.custom:
+  ms.custom: configuration
   ms.topic: landing-page # Required
   author: whhender #Required; your GitHub user alias, with correct capitalization.
   ms.author: whhender #Required; microsoft alias of author; optional team alias.
@@ -21,8 +18,7 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - ---
-title: About Data Factory
+  - title: About Data Factory
     linkLists:
       - linkListType: overview
         links:
@@ -34,8 +30,7 @@ title: About Data Factory
             url: whats-new.md
 
   # Card 
-  - ---
-title: Using Data Factory
+  - title: Using Data Factory
     linkLists:
       - linkListType: get-started
         links:
@@ -59,8 +54,7 @@ title: Using Data Factory
             url: /training/browse/?terms=data%20factory%20fabric
   
   # Card 
-  - ---
-title: Working with data pipelines
+  - title: Working with data pipelines
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -78,8 +72,7 @@ title: Working with data pipelines
             url: dataflow-gen2-migrate-from-dataflow-gen1.md
 
   # Card
-  - ---
-title: Data gateway
+  - title: Data gateway
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -93,8 +86,7 @@ title: Data gateway
           url: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json 
           
   # Card 
-  - ---
-title: Working with dataflows
+  - title: Working with dataflows
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -106,8 +98,7 @@ title: Working with dataflows
             url: dataflows-gen2-save-draft.md
 
   # Card
-  - ---
-title: FAQs
+  - title: FAQs
     linkLists:
       - linkListType: get-started
         links:
@@ -115,8 +106,7 @@ title: FAQs
           url: frequently-asked-questions.yml
 
   # Card
-  - ---
-title: Connectors
+  - title: Connectors
     linkLists:
       - linkListType: get-started
         links:

@@ -7,7 +7,6 @@ author: pennyzhou-msft
 ms.topic: troubleshooting
 ms.custom: connectors
 ms.date: 10/23/2024
-ms.custom: connectors
 ---
 
 # Troubleshoot the Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server connectors in Data Factory in Microsoft Fabric
