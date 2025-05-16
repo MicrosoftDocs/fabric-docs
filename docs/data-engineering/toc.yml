@@ -375,6 +375,8 @@ items:
      href: graphql-operations.md
    - name: Performance best practices
      href: api-graphql-performance.md
+   - name: Pricing
+     href: api-graphql-pricing.md     
    - name: Limitations
      href: api-graphql-limits.md
    - name: Frequently asked questions
