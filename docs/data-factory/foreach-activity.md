@@ -1,5 +1,4 @@
 ---
----
 title: ForEach activity
 description: Learn how to add a ForEach activity to a pipeline and use it to iterate through a list of items.
 ms.reviewer: xupxhou

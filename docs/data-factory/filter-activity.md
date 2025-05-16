@@ -1,5 +1,4 @@
 ---
----
 title: Filter activity
 description: Learn how to add a Filter activity to a pipeline and use it to filter data.
 author: kromerm
