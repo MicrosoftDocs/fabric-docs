@@ -52,7 +52,7 @@ You can use this [sample performance test script](https://github.com/microsoft/f
 Related topics:
 
 *   [Advanced Usage — Requests 2.32.3 documentation](https://docs.python-requests.org/en/latest/user/advanced/#session-objects)
-*   [HttpClient guidelines for .NET](https://learn.microsoft.com/dotnet/fundamentals/networking/http/httpclient-guidelines#recommended-use)
+*   [HttpClient guidelines for .NET](dotnet/fundamentals/networking/http/httpclient-guidelines#recommended-use)
 
 ## Data Collection & Evaluation
 
