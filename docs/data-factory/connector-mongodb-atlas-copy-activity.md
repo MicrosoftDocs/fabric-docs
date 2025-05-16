@@ -1,3 +1,4 @@
+---
 title: Configure MongoDB Atlas in a copy activity
 description: This article explains how to copy data using MongoDB Atlas.
 author: jianleishen

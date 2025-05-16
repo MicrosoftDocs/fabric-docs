@@ -1,3 +1,4 @@
+---
 title: Set up your Snowflake database connection
 description: This article provides information about how to create a Snowflake database connection in Microsoft Fabric.
 author: DougKlopfenstein

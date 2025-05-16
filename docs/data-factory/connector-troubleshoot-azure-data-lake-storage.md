@@ -1,3 +1,4 @@
+---
 title: Troubleshoot the Azure Data Lake Storage connector
 description: Learn how to troubleshoot issues with the Azure Data Lake Storage connector in Data Factory in Microsoft Fabric.
 ms.reviewer: whhender

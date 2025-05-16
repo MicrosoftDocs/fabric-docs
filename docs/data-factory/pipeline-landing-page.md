@@ -1,4 +1,5 @@
 ---
+---
 title: The data pipeline landing page
 description: Learn how to explore data solutions efficiently using the data pipeline landing page in Data Factory for Microsoft Fabric.
 ms.reviewer: whhender

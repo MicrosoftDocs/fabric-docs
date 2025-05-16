@@ -1,3 +1,4 @@
+---
 title: Set up your Salesforce reports connection
 description: This article provides information about how to create a Salesforce reports connection in Microsoft Fabric.
 author: DougKlopfenstein

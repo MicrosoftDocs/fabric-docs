@@ -1,3 +1,4 @@
+---
 title: Connect to an Excel workbook in dataflows
 description: This article details how to use the Data Factory Excel workbook connector in Microsoft Fabric to create an Excel workbook connection in dataflows.
 author: DougKlopfenstein

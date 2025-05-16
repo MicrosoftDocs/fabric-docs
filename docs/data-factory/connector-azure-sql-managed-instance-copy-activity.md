@@ -1,3 +1,4 @@
+---
 title: How to configure Azure SQL Managed Instance in copy activity
 description: This article explains how to copy data using Azure SQL Managed Instance.
 author: jianleishen

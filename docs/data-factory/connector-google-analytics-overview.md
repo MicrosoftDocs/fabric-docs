@@ -1,3 +1,4 @@
+---
 title: Google Analytics connector overview
 description: This article provides an overview of the supported capabilities of the Google Analytics connector.
 author: DougKlopfenstein

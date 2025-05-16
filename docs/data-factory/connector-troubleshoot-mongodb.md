@@ -1,3 +1,4 @@
+---
 title: Troubleshoot the MongoDB connector
 titleSuffix: Fabric Data Factory & Azure Synapse
 description: Learn how to troubleshoot issues with the MongoDB connector in Fabric Data Factory and Azure Synapse Analytics.

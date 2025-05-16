@@ -1,3 +1,4 @@
+---
 title: Set up your Azure HDInsight on AKS Trino connection
 description: This article provides information about how to create an Azure HDInsight on AKS Trino connection in Microsoft Fabric.
 author: DougKlopfenstein

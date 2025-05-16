@@ -1,3 +1,4 @@
+---
 title: Configure Teradata in a copy activity (Preview)
 description: This article explains how to copy data using Teradata.
 author: jianleishen

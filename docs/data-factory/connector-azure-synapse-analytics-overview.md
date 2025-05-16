@@ -1,3 +1,4 @@
+---
 title: Azure Synapse Analytics connector overview
 description: This article explains the overview of using Azure Synapse Analytics.
 author: jianleishen

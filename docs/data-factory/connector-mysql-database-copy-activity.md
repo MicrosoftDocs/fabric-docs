@@ -1,3 +1,4 @@
+---
 title: Configure MySQL in a copy activity
 description: This article explains how to copy data using MySQL.
 author: jianleishen

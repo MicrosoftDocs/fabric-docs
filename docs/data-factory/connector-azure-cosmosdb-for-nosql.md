@@ -1,3 +1,4 @@
+---
 title: Set up your Azure Cosmos DB for NoSQL connection
 description: This article provides information about how to create an Azure Cosmos DB for NoSQL connection in Microsoft Fabric.
 author: pennyzhou-msft

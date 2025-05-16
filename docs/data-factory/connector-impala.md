@@ -1,3 +1,4 @@
+---
 title: Set up your Impala database connection
 description: This article provides information about how to create an Impala database connection in Microsoft Fabric.
 author: DougKlopfenstein

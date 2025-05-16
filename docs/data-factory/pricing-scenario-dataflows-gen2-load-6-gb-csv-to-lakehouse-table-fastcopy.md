@@ -1,3 +1,4 @@
+---
 title: Pricing scenario - Dataflow Gen2 loads 6 GB CSV file to a Lakehouse table with Fast Copy
 description: This article provides an example pricing scenario for loading 6 GB of CSV data to a Lakehouse table using Dataflow Gen2 with Fast Copy enabled for Data Factory in Microsoft Fabric.
 ms.reviewer: 

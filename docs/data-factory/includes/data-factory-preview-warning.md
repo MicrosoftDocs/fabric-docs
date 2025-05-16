@@ -1,4 +1,5 @@
 ---
+---
 title: Include file for the Data Factory in Microsoft Fabric preview warning
 description: Include file for the Data Factory in Microsoft Fabric preview warning
 author: whhender

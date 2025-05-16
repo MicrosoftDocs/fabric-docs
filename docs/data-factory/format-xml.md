@@ -1,4 +1,5 @@
 ---
+---
 title: How to configure XML format in the data pipeline of Data Factory in Microsoft Fabric
 description: This article explains how to configure XML format in the data pipeline of Data Factory in Microsoft Fabric.
 author: jianleishen

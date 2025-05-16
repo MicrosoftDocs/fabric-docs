@@ -1,3 +1,4 @@
+---
 title: Set up your Dataflows (Power Platform) connection
 description: This article provides information about how to create a Dataflows connection in Microsoft Fabric.
 author: DougKlopfenstein

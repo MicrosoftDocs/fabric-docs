@@ -1,3 +1,4 @@
+---
 title: Configure Snowflake in a copy activity
 description: This article explains how to copy data using Snowflake.
 author: jianleishen

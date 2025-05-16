@@ -1,3 +1,4 @@
+---
 title: Set up your IBM Db2 database connection
 description: This article provides information about how to create an IBM Db2 database connection in Microsoft Fabric.
 author: DougKlopfenstein

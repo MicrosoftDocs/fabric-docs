@@ -1,3 +1,4 @@
+---
 title: Oracle Cloud Storage connector overview
 description: This article provides an overview of the supported capabilities of the Oracle Cloud Storage connector.
 author: jianleishen

@@ -1,3 +1,4 @@
+---
 title: Configure KQL Database in a copy activity
 description: This article explains how to copy data using KQL Database.
 author: jianleishen

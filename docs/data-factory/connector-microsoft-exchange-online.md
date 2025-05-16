@@ -1,3 +1,4 @@
+---
 title: Set up your Microsoft Exchange Online connection
 description: This article provides information about how to create a Microsoft Exchange Online connection in Microsoft Fabric.
 author: DougKlopfenstein

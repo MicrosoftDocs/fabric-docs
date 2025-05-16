@@ -1,3 +1,4 @@
+---
 title: Module 2 - Transform data with a dataflow in Data Factory
 description: This module covers creating a dataflow, as part of an end-to-end data integration tutorial to complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
 ms.author: whhender

@@ -1,3 +1,4 @@
+---
 title: Set up your SAP HANA database connection
 description: This article provides information about how to create an SAP HANA database connection in Microsoft Fabric.
 author: DougKlopfenstein

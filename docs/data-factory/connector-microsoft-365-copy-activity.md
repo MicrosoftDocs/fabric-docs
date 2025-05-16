@@ -1,3 +1,4 @@
+---
 title: Configure Microsoft 365 in a copy activity
 description: This article explains how to copy data using Microsoft 365.
 author: jianleishen

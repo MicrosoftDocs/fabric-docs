@@ -1,3 +1,4 @@
+---
 title: Troubleshoot connectors
 description: Learn how to troubleshoot connector issues with Data Factory in Fabric.
 author: jianleishen

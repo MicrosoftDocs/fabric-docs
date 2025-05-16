@@ -1,4 +1,5 @@
 ---
+---
 title: Incrementally load data from Data Warehouse to Lakehouse
 description: Learn steps to incrementally load data from Data Warehouse to Lakehouse
 ms.reviewer: whhender

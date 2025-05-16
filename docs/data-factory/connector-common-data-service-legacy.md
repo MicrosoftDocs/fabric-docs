@@ -1,3 +1,4 @@
+---
 title: Set up your Common Data Service (Legacy) connection
 description: This article provides information about how to create a Common Data Service (Legacy) connection in Microsoft Fabric.
 author: pennyzhou-msft

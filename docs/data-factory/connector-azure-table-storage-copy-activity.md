@@ -1,3 +1,4 @@
+---
 title: Configure Azure Table Storage in a copy activity
 description: This article explains how to copy data using Azure Table Storage.
 author: jianleishen

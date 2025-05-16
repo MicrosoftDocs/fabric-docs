@@ -1,3 +1,4 @@
+---
 title: Set up your CloudBluePSA (Beta) connection
 description: This article provides information about how to create a CloudBluePSA connection in Microsoft Fabric.
 author: pennyzhou-msft

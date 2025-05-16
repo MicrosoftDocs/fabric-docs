@@ -1,3 +1,4 @@
+---
 title: Set up your PostgreSQL database connection
 description: This article provides information about how to create a PostgreSQL database connection in Microsoft Fabric.
 author: DougKlopfenstein

@@ -1,3 +1,4 @@
+---
 title: Set up your SharePoint folder connection
 description: This article provides information about how to create a SharePoint folder connection in Microsoft Fabric.
 author: DougKlopfenstein

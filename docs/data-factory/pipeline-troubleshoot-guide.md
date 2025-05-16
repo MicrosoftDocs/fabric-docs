@@ -1,4 +1,5 @@
 ---
+---
 title: General troubleshooting
 description: Learn how to troubleshoot external control activities for Data Factory in Microsoft Fabric.
 author: nabhishek

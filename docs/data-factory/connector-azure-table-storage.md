@@ -1,3 +1,4 @@
+---
 title: Set up your Azure Table Storage connection
 description: This article provides information about how to create an Azure Table Storage connection in Microsoft Fabric.
 author: DougKlopfenstein

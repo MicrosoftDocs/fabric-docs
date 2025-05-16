@@ -1,3 +1,4 @@
+---
 title: Configure SharePoint Online List in a copy activity
 description: This article explains how to copy data using SharePoint Online List.
 author: jianleishen

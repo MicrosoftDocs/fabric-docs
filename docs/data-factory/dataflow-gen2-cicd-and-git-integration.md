@@ -1,3 +1,4 @@
+---
 title: Dataflow Gen2 with CI/CD and Git integration
 description: Describes how to use Dataflow Gen2 with CI/CD and Git integration in Fabric Data Factory.
 ms.reviewer: DougKlopfenstein

@@ -1,3 +1,4 @@
+---
 title: Set up your SharePoint list connection
 description: This article provides information about how to create a SharePoint list connection in Microsoft Fabric.
 author: DougKlopfenstein

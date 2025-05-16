@@ -1,3 +1,4 @@
+---
 title: Set up your Hive LLAP connection
 description: This article provides information about how to create a Hive LLAP connection in Microsoft Fabric.
 author: DougKlopfenstein

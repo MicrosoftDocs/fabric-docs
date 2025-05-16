@@ -1,3 +1,4 @@
+---
 title: Configure Azure Database for MySQL in a copy activity
 description: This article explains how to copy data using Azure Database for MySQL.
 author: jianleishen

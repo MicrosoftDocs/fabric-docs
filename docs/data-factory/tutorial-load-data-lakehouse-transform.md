@@ -1,4 +1,5 @@
 ---
+---
 title: Copy sample data into Lakehouse and transform with dataflow
 description: This tutorial shows you how to first load data into a Lakehouse with a pipeline and then transform it using a dataflow with Data Factory in Microsoft Fabric.
 ms.reviewer: whhender

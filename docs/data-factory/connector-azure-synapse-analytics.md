@@ -1,3 +1,4 @@
+---
 title: Set up your Azure Synapse Analytics connection
 description: This article provides information about how to create an Azure Synapse Analytics connection in Microsoft Fabric.
 author: DougKlopfenstein

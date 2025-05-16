@@ -1,3 +1,4 @@
+---
 title: Set up your Azure Data Explorer connection
 description: This article provides information about how to create an Azure Data Explorer connection in Microsoft Fabric.
 author: DougKlopfenstein

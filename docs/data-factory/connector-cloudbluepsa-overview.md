@@ -1,3 +1,4 @@
+---
 title: CloudBluePSA (Beta) connector overview
 description: This article provides an overview of the supported capabilities of the CloudBluePSA connector.
 author: jianleishen

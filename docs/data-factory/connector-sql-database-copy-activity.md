@@ -1,3 +1,4 @@
+---
 title: Configure SQL database in a copy activity (Preview)
 description: This article explains how to copy data using SQL database.
 author: jianleishen

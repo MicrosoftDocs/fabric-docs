@@ -1,4 +1,5 @@
 ---
+---
 title: Slowly changing dimension type 1
 description: A tutorial and pattern on how to accomplish a slowly changing dimension type 1 solution using Data Factory and Dataflow Gen2 inside of Microsoft Fabric.
 author: DougKlopfenstein

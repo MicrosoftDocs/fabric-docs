@@ -1,4 +1,5 @@
 ---
+---
 title: Slowly changing dimension type 2
 description: A tutorial and pattern on how to accomplish a Slowly Changing Dimension Type 2 solution using Data Factory and Dataflow Gen2 inside of Microsoft Fabric.
 author: ptyx507x

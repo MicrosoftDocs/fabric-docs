@@ -1,3 +1,4 @@
+---
 title: Configure Data Warehouse in copy activity in Data Factory in Microsoft Fabric
 description: This article explains how to copy data using Data Warehouse.
 author: jianleishen

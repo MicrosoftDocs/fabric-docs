@@ -1,3 +1,4 @@
+---
 title: Configure SQL server in a copy activity
 description: This article explains how to copy data using SQL server.
 author: jianleishen

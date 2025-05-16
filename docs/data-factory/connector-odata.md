@@ -1,3 +1,4 @@
+---
 title: Set up your OData connection
 description: This article provides information about how to create an OData connection from a data pipeline in Microsoft Fabric.
 author: pennyzhou-msft

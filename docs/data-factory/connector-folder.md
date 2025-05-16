@@ -1,3 +1,4 @@
+---
 title: Set up your Folder connection
 description: This article provides information about how to create a Folder connection in Microsoft Fabric.
 author: DougKlopfenstein

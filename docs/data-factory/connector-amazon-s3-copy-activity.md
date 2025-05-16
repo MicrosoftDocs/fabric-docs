@@ -1,3 +1,4 @@
+---
 title: Configure Amazon S3 in a copy activity
 description: This article explains how to copy data using Amazon S3.
 author: jianleishen

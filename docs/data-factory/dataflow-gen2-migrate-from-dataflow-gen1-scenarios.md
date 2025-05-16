@@ -1,3 +1,4 @@
+---
 title: "Migrate from Dataflow Gen1 to Dataflow Gen2: Migration scenarios"
 description: "Scenario-based guidance to help you determine the right architecture to choose when migrating to Dataflow Gen2 in Microsoft Fabric."
 author: itsnotaboutthecell

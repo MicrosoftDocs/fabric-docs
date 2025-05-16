@@ -1,3 +1,4 @@
+---
 title: Configure SFTP in a copy activity
 description: This article explains how to copy data using SFTP.
 author: jianleishen

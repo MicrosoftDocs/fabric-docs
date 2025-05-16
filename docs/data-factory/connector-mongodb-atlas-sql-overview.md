@@ -1,3 +1,4 @@
+---
 title: MongoDB Atlas SQL (Beta) connector overview
 description: This article provides an overview of the supported capabilities of the MongoDB Atlas SQL connector.
 author: DougKlopfenstein

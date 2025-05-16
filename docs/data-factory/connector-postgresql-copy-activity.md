@@ -1,3 +1,4 @@
+---
 title: Configure PostgreSQL in a copy activity
 description: This article explains how to copy data using PostgreSQL.
 author: jianleishen

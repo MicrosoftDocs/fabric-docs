@@ -1,3 +1,4 @@
+---
 title: Configure Azure Data Explorer in a copy activity
 description: This article explains how to copy data using Azure Data Explorer.
 author: jianleishen

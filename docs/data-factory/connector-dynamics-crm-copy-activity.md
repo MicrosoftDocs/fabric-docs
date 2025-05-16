@@ -1,3 +1,4 @@
+---
 title: How to configure Dynamics CRM in a copy activity
 description: This article explains how to copy data using Dynamics CRM.
 author: jianleishen

@@ -1,4 +1,5 @@
 ---
+---
 title: Use AI to turn whiteboard sketches into data pipelines
 description: This article shows how AI can easily transform images directly to pipelines for Data Factory for Microsoft Fabric.
 author: dcstwh

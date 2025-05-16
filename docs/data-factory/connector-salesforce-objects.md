@@ -1,3 +1,4 @@
+---
 title: Set up your Salesforce objects connection
 description: This article provides information about how to create a Salesforce objects connection in Microsoft Fabric.
 author: DougKlopfenstein

@@ -1,3 +1,4 @@
+---
 title: Troubleshoot the Azure Database for PostgreSQL connector
 description: Learn how to troubleshoot issues with the Azure Database for PostgreSQL connector in Data Factory in Microsoft Fabric.
 ms.reviewer: whhender

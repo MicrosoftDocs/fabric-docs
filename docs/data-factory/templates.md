@@ -1,4 +1,5 @@
 ---
+---
 title: Templates
 description: Learn about templates for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou

@@ -1,4 +1,5 @@
 ---
+---
 title: How to ingest data into Fabric using the Azure Data Factory Copy activity
 description: Learn how to easily ingest data into Fabric using the Azure Data Factory Copy activity.
 author: mirabile-s

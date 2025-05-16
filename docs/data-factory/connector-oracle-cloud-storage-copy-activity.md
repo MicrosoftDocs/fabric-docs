@@ -1,3 +1,4 @@
+---
 title: Configure Oracle Cloud Storage in a copy activity
 description: This article explains how to copy data by using Oracle Cloud Storage in Data Factory in Microsoft Fabric.
 author: jianleishen

@@ -1,3 +1,4 @@
+---
 title: KQL Database connector overview
 description: This article explains the overview of using KQL Database.
 author: jianleishen

@@ -1,3 +1,4 @@
+---
 title: Troubleshoot the SharePoint Online list connector
 description: Learn how to troubleshoot issues with the SharePoint Online list connector in Data Factory in Microsoft Fabric.
 ms.reviewer: whhender

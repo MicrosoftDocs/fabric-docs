@@ -1,3 +1,4 @@
+---
 title: Google Cloud Storage connector overview
 description: This article explains the overview of using Google Cloud Storage.
 author: jianleishen

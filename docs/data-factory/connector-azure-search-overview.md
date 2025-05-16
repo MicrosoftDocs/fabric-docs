@@ -1,3 +1,4 @@
+---
 title: Azure AI Search connector overview
 description: This article provides an overview of the supported capabilities of the Azure AI Search connector.
 author: DougKlopfenstein

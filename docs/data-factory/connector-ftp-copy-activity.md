@@ -1,3 +1,4 @@
+---
 title: Configure FTP in a copy activity
 description: This article explains how to copy data using FTP.
 author: jianleishen

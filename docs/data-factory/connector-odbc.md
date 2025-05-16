@@ -1,3 +1,4 @@
+---
 title: Set up your Odbc connection
 description: This article provides information about how to create an Odbc data source connection in Microsoft Fabric.
 author: DougKlopfenstein

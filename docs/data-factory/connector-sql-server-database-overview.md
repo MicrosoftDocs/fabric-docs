@@ -1,3 +1,4 @@
+---
 title: SQL Server database connector overview
 description: This article provides an overview of the supported capabilities of the SQL Server database connector.
 author: DougKlopfenstein

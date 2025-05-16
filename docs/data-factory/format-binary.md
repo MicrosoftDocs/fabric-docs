@@ -1,4 +1,5 @@
 ---
+---
 title: How to configure Binary format in the data pipeline of Data Factory in Microsoft Fabric
 description: This article explains how to configure Binary format in the data pipeline of Data Factory in Microsoft Fabric.
 author: jianleishen

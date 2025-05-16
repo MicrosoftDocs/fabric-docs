@@ -1,3 +1,4 @@
+---
 title: Troubleshoot the Snowflake connector
 titleSuffix: Fabric Data Factory & Azure Synapse
 description: Learn how to troubleshoot issues with the Snowflake connector in Fabric Data Factory and Azure Synapse Analytics.

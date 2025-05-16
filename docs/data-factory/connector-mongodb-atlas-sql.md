@@ -1,3 +1,4 @@
+---
 title: Set up your MongoDB Atlas SQL (Beta) connection
 description: This article provides information about how to create a MongoDB Atlas SQL connection in Microsoft Fabric.
 author: DougKlopfenstein

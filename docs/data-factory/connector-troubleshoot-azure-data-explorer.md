@@ -1,3 +1,4 @@
+---
 title: Troubleshoot the Azure Data Explorer connector
 description: Learn how to troubleshoot issues with the Azure Data Explorer connector in Data Factory in Microsoft Fabric.
 ms.reviewer: whhender

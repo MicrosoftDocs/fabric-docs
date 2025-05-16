@@ -1,4 +1,5 @@
 ---
+---
 title: Office 365 Outlook activity (Preview)
 description: Learn how to add an Office 365 Outlook activity to a pipeline and use it to send a Teams message.
 ms.reviewer: xupxhou

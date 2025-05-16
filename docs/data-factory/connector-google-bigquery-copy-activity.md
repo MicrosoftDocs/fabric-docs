@@ -1,3 +1,4 @@
+---
 title: Configure Google BigQuery in a copy activity
 description: This article explains how to copy data using Google BigQuery.
 author: jianleishen

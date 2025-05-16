@@ -1,3 +1,4 @@
+---
 title: Configure Azure Blob Storage in a copy activity
 description: This article explains how to copy data using Azure Blob Storage.
 author: jianleishen

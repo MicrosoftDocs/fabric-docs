@@ -1,3 +1,4 @@
+---
 title: Configure Amazon Redshift in a copy activity
 description: This article explains how to copy data using Amazon Redshift.
 author: jianleishen

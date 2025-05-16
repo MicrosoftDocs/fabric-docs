@@ -1,3 +1,4 @@
+---
 title: Amazon S3 Compatible connector overview
 description: This article provides an overview of the supported capabilities of the Amazon S3 Compatible connector.
 author: jianleishen

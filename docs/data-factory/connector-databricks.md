@@ -1,3 +1,4 @@
+---
 title: Set up your Databricks connection
 description: This article provides information about how to create a Databricks connection in Microsoft Fabric.
 author: pennyzhou-msft

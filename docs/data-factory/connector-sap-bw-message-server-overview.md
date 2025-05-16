@@ -1,3 +1,4 @@
+---
 title: SAP BW Message Server connector overview
 description: This article provides an overview of the supported capabilities of the SAP BW Message Server connector.
 author: DougKlopfenstein
