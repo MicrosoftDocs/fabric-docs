@@ -40,7 +40,7 @@ highlightedContent:
       itemType: concept
       url: fundamentals/copilot-fabric-overview.md 
     # Card
-    - title: Fabric roadmap- What's upcoming
+    - title: Fabric roadmap - What's upcoming
       itemType: whats-new
       url: https://aka.ms/fabricrm   
     # Card
