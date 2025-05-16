@@ -1,11 +1,11 @@
 ---
----
 title: Fabric data pipeline public REST API
 description: This article describes the available REST APIs for pipelines in Data Factory for Microsoft Fabric.
 author: kromerm
 ms.author: makromer
 ms.topic: conceptual
 ms.date: 09/16/2024
+ms.custom: pipelines
 ---
 
 # Microsoft Fabric data pipeline public REST API

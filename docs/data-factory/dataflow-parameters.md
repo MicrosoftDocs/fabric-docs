@@ -6,7 +6,7 @@ ms.author: miescobar
 ms.reviewer: whhender
 ms.topic: conceptual
 ms.date: 05/12/2025
-ms.custom: 'dataflows'
+ms.custom: dataflows
 ---
 
 # Use public parameters in Dataflow Gen2 (Preview)

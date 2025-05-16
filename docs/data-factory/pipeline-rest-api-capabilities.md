@@ -1,5 +1,4 @@
 ---
----
 title: REST API capabilities for Fabric Data Factory
 description: This article describes the available REST APIs for pipelines in Microsoft Fabric Data Factory.
 author: conxu-ms

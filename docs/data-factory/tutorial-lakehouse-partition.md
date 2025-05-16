@@ -1,12 +1,11 @@
 ---
----
 title: Load data to Lakehouse using partition
 description: Learn steps to load data to Lakehouse using partition.
 ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
-ms.custom: 
+ms.custom: pipelines
 ms.date: 12/18/2024
 ms.search.form: Pipeline Tutorials
 ---

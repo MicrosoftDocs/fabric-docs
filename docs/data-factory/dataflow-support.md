@@ -5,9 +5,8 @@ author: DougKlopfenstein
 ms.date: 12/18/2024
 ms.author: dougklo
 ms.topic: overview
-ms.custom:
 ms.search.form: product-data-factory
-ms.custom: 'dataflows'
+ms.custom: dataflows
 ---
 
 # Dataflow Gen2 connectors in Microsoft Fabric

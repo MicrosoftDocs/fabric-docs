@@ -1,5 +1,4 @@
 ---
----
 title: Keyboard shortcuts for pipelines in Data Factory for Fabric
 description: Learn about keyboard shortcuts provided for pipelines in Data Factory for Microsoft Fabric.
 ms.reviewer: whhender
@@ -7,6 +6,7 @@ ms.author: lle
 author: lrtoyou1223
 ms.topic: overview
 ms.date: 01/04/2024
+ms.custom: pipelines
 ---
 
 # Keyboard shortcuts for pipelines in Data Factory for Microsoft Fabric

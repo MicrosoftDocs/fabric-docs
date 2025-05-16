@@ -5,9 +5,8 @@ ms.reviewer: DougKlopfenstein
 ms.author: mideboer
 author: miquelladeboer
 ms.topic: how-to
-ms.custom:
 ms.date: 12/18/2024
-ms.custom: 'connectors'
+ms.custom: connectors
 ---
 
 # Data source management

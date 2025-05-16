@@ -1,12 +1,11 @@
 ---
----
 title: Preprocess data with a stored procedure before loading into Lakehouse
 description: This tutorial shows you how to preprocess data with a stored procedure and then load the data into a Lakehouse with a pipeline with Data Factory in Microsoft Fabric.
 ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
-ms.custom:
+ms.custom: pipelines
 ms.date: 12/18/2024
 ms.search.form: Pipeline Tutorials
 ---

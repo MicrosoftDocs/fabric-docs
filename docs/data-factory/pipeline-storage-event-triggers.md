@@ -1,5 +1,4 @@
 ---
----
 title: Data pipelines storage event triggers in Data Factory
 description: This article describes how data pipelines storage event triggers work in Data Factory for Microsoft Fabric.
 author: kromerm

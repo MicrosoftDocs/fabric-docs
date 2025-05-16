@@ -5,9 +5,9 @@ ms.reviewer: whhender
 ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
-ms.custom:
 ms.date: 12/18/2024
-ms.custom: 'dataflows'
+ms.custom: 
+    - dataflows
 ---
 
 # Dataflow Gen2 pricing for Data Factory in Microsoft Fabric

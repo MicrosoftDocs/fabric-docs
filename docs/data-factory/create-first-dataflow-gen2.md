@@ -5,10 +5,9 @@ ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: quickstart
-ms.custom:
 ms.date: 12/18/2024
 ms.search.form: DataflowGen2 Tutorials
-ms.custom: 'dataflows'
+ms.custom: dataflows
 ---
 
 # Quickstart: Create your first dataflow to get and transform data

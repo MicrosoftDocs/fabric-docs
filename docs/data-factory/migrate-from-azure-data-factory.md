@@ -1,5 +1,4 @@
 ---
----
 title: Migrate from Azure Data Factory to Fabric Data Factory
 description: This article provides details on how customers of Azure Data Factory (ADF) can migrate their existing solutions to Data Factory in Microsoft Fabric.
 author: itsnotaboutthecell

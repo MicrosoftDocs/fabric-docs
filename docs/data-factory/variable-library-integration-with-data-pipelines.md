@@ -1,5 +1,4 @@
 ---
----
 title: Variable library integration with Data pipelines (Preview)
 description: Learn about how to use Variable library with data pipelines. 
 ms.reviewer: whhender

@@ -6,7 +6,7 @@ ms.reviewer: xupzhou
 author: whhender
 ms.topic: tutorial
 ms.date: 1/13/2024
-ms.custom: 'dataflows'
+ms.custom: dataflows
 ---
 
 # Module 2: Transform data with a dataflow in Data Factory

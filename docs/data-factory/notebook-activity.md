@@ -1,5 +1,4 @@
 ---
----
 title: Notebook activity
 description: Learn how to add a notebook activity to a pipeline and use it to invoke a notebook.
 ms.reviewer: xupxhou

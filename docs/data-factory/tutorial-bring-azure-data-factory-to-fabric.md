@@ -1,5 +1,4 @@
 ---
----
 title: Bring Azure Data Factory to Fabric
 description: Learn steps to bring Azure Data Factory to Fabric
 ms.author: whhender
@@ -8,6 +7,7 @@ author: whhender
 ms.topic: tutorial
 ms.date: 08/25/2024
 ms.search.form: Pipeline tutorials
+ms.custom: configuration
 ---
 
 # Quickstart: Bring your Azure Data Factory to Fabric

@@ -1,11 +1,11 @@
 ---
----
 title: Providing user documentation for your certified connector
 description: Describes the format and layout of the user documentation that needs to be submitted for your Power Query custom connector.
 author: ptyx507x
 ms.topic: conceptual
 ms.date: 9/16/2024
 ms.author: miescobar
+ms.custom: connectors
 ---
 
 # Providing user documentation for your custom connector

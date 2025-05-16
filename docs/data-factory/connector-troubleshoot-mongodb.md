@@ -8,7 +8,7 @@ ms.topic: troubleshooting
 ms.date: 11/06/2024
 ms.author: jianleishen
 ms.custom: has-adal-ref, synapse
-ms.custom: 'connectors'
+ms.custom: connectors
 ---
 
 # Troubleshoot the MongoDB connector in Azure Data Factory and Azure Synapse

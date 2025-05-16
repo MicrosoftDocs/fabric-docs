@@ -5,7 +5,7 @@ author: dearandyxu
 ms.topic: article
 ms.date: 4/21/2025
 ms.author: yexu
-ms.custom: 'dataflows'
+ms.custom: dataflows
 ---
 
 # Fast copy in Dataflow Gen2

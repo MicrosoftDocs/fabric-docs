@@ -1,5 +1,4 @@
 ---
----
 title: Module 1 - Create a pipeline with Data Factory
 description: This module covers creating a data pipeline, as part of an end-to-end data integration tutorial to complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
 ms.author: whhender
@@ -7,6 +6,7 @@ ms.reviewer: xupzhou
 author: whhender
 ms.topic: tutorial
 ms.date: 02/25/2025
+ms.custom: pipelines
 ---
 
 # Module 1: Create a pipeline with Data Factory

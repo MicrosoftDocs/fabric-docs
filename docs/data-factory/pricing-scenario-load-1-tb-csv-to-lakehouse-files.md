@@ -1,12 +1,11 @@
 ---
----
 title: Pricing scenario - Data pipelines load 1 TB of CSV data to Lakehouse files
 description: This article provides an example pricing scenario for loading 1 TB of CSV data to Lakehouse files with binary copy using Data Factory in Microsoft Fabric.
 ms.reviewer: whhender
 ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
-ms.custom:
+ms.custom: configuration
 ms.date: 11/15/2023
 ---
 

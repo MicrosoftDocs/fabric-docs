@@ -7,7 +7,7 @@ ms.custom: fabric-cat, intro-migration
 ms.date: 12/18/2024
 ms.author: alpowers
 ms.search.form: DataflowGen2
-ms.custom: 'dataflows'
+ms.custom: dataflows
 ---
 
 # A guide to Fabric Dataflows for Azure Data Factory Mapping Data Flow users

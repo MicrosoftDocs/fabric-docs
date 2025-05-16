@@ -5,10 +5,9 @@ ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview
-ms.custom:
 ms.date: 12/18/2024
 ms.search.form: product-data-factory
-ms.custom: 'connectors'
+ms.custom: connectors
 ---
 
 # Connector overview

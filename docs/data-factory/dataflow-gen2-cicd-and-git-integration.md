@@ -5,9 +5,8 @@ ms.reviewer: DougKlopfenstein
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.custom:
 ms.date: 03/31/2025
-ms.custom: 'dataflows'
+ms.custom: dataflows
 ---
 
 # Dataflow Gen2 with CI/CD and Git integration support (Preview)
