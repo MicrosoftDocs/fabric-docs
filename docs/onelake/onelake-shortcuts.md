@@ -129,9 +129,10 @@ When you create shortcuts to Azure Data Lake Storage (ADLS) Gen2 storage account
 #### Access
 
 ADLS shortcuts must point to the DFS endpoint for the storage account.
+
 Example: `https://accountname.dfs.core.windows.net/`
 
-If your storage account is protected by a storage firewall, you can configure trusted service access. For more information, see [Trusted Workspace Access](..\security\security-trusted-workspace-access.md)
+If your storage account is protected by a storage firewall, you can configure trusted service access. For more information, see [Trusted workspace access](..\security\security-trusted-workspace-access.md)
 
 #### Authorization
 
@@ -140,12 +141,29 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 - **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
 - **Service principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
 - **Workspace identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
-- **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute
+- **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute.
 
 Entra ID delegated authorization types (organizational account, service principal, or workspace identity) require the **Generate a user delegation key** action at the storage account level. This action is included as part of the Storage Blob Data Reader, Storage Blob Data Contributor, Storage Blob Data Owner, and Delegator roles. If you don't want to give a user reader, contributor, or owner permissions for the whole storage account, assign them the Delegator role instead. Then, define detailed data access rights using [Access control lists (ACLs) in Azure Data Lake Storage](/azure/storage/blobs/data-lake-storage-access-control).
 
 >[!IMPORTANT]
 >Currently, when workspace identity is used as the delegated authorization type for an ADLS shortcut, users can authenticate directly to the storage account without needing to create a delegation key. However, this behavior will be restricted in the future. We recommend making sure that all users have the **Generate a user delegation key** action to ensure that your users' access isn't affected when this behavior changes.
+
+### Azure Blob Storage shortcuts
+
+#### Access
+
+Azure Blob Storage shortcut can point to the account name or URL for the Storage account.
+
+Example: `accountname` or `https://accountname.blob.core.windows.net/`
+
+#### Authorization
+
+Blob storage shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the shortcut and all access to that shortcut is authorized using that credential. Blob shortcuts support the following delegated authorization types:
+
+- **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Service principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Workspace identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute.
 
 ### S3 shortcuts
 

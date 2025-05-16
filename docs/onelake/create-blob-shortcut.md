@@ -53,27 +53,28 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
      |-----|-----|
      | **Account name or URL**| The name of your blob storage account. |
      |**Connection** | The default value, **Create new connection**. |
-     |**Connection name** | A name for your Azure Blob Storage connection.|
-     |**Authentication kind**| Select an authorization model from the drop-down menu to use to connect to the Storage account. The supported models are: account key, organizational account, Shared Access Signature (SAS), service principal, and workspace identity. Once you select a model, fill in the required credentials.|
+     |**Connection name** | A name for your Azure Blob Storage connection. The service generates a suggested connection name based on the storage account name, but you can overwrite with a preferred name. |
+     |**Authentication kind**| Select an authorization model from the drop-down menu to use to connect to the Storage account. The supported models are: account key, organizational account, Shared Access Signature (SAS), service principal, and workspace identity. Once you select a model, fill in the required credentials. For more information, see [Azure Blob Storage shortcuts authorization](/onelake-shortcuts.md#azure-blob-storage-shortcuts). |
 
 1. Select **Next**.
+
 1. Browse to the target location for the shortcut.
 
-   If you just used the storage account in the connection URL, all of your available containers appear in the left navigation view. If you specified a container in connection URL, only the specified container and its contents appear in the navigation view.
+   If you provided the storage account name in the connection details, all of your available containers appear in the navigation view. If you specified a container in connection URL, only the specified container and its contents appear in the navigation view.
 
-   Navigate the storage account by selecting a folder or clicking on the expansion arrow next to a folder.
+   Navigate the storage account by selecting a folder or expanding a folder to view its child items.
 
-   In this view, you can select one or more shortcut target locations. Choose target locations by clicking the checkbox next a folder in the left navigation view.
+   Choose one or more target locations by selecting the checkbox next a folder in the navigation view. Then, select **Next**.
 
-1. Select **Next**
+   :::image type="content" source="./media/create-blob-shortcut/select-target.png" alt-text="Screenshot that shows selecting the target locations for a new shortcut.":::
 
-   The review page allows you to verify all of your selections. Here you can see each shortcut that will be created. In the action column, you can click the pencil icon to edit the shortcut name. You can click the trash can icon to delete shortcut.
+1. On the review page, verify your selections. Here you can see each shortcut to be created. In the **Actions** column, you can select the pencil icon to edit the shortcut name. You can select the trash can icon to delete the shortcut.
 
 1. Select **Create**.
 
-1. The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane.
+1. The lakehouse automatically refreshes. The shortcut or shotcuts appear in the **Explorer** pane.
 
-   :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
+   :::image type="content" source="./media/create-blob-shortcut/view-shortcuts.png" alt-text="Screenshot showing the lakehouse explorer view with a list of folders that display the shortcut symbol.":::
 
 ## Related content
 
