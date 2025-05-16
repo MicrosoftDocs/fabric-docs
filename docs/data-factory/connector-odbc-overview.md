@@ -1,4 +1,3 @@
----
 title: Odbc connector overview
 description: This article provides an overview of the supported capabilities of the Odbc connector.
 author: DougKlopfenstein
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 10/28/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Odbc connector overview

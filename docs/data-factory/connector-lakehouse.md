@@ -1,4 +1,3 @@
----
 title: Set up your Lakehouse connection
 description: This article details how to use the Data Factory Lakehouse connector in Microsoft Fabric to create a data lake connection.
 author: DougKlopfenstein
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 12/18/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your Lakehouse connection

@@ -1,4 +1,3 @@
----
 title: Configure Dynamics AX in a copy activity
 description: This article explains how to copy data using Dynamics AX.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 04/24/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Configure Dynamics AX in a copy activity

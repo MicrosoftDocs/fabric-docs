@@ -1,4 +1,3 @@
----
 title: Configure MariaDB in copy activity
 description: This article explains how to copy data using MariaDB.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 09/29/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Configure MariaDB in copy activity

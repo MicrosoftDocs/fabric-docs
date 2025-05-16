@@ -1,4 +1,3 @@
----
 title: Data Warehouse connector overview
 description: This article explains the overview of using Data Warehouse.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Data Warehouse connector overview

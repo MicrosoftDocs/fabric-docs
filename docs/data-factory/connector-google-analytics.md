@@ -1,4 +1,3 @@
----
 title: Set up your Google Analytics connection
 description: This article provides information about how to create a Google Analytics connection in Microsoft Fabric.
 author: DougKlopfenstein
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 12/18/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your Google Analytics connection

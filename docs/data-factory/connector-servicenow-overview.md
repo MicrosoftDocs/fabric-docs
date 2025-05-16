@@ -1,4 +1,3 @@
----
 title: ServiceNow connector overview
 description: This article explains the overview of using ServiceNow.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/19/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # ServiceNow connector overview

@@ -1,4 +1,3 @@
----
 title: Azure Analysis Services connector overview
 description: This article provides an overview of the supported capabilities of the Azure Analysis Services connector.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Azure Analysis Services connector overview

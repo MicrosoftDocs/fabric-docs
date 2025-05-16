@@ -1,10 +1,10 @@
----
 title: Incremental refresh in Dataflow Gen2
 description: Learn about the incremental refresh feature in Dataflow Gen2 in Data Factory for Microsoft Fabric.
 author: luitwieler
 ms.topic: concept-article
 ms.date: 04/18/2025
 ms.author: jeluitwi
+ms.custom: 'dataflows'
 ---
 
 # Incremental refresh in Dataflow Gen2

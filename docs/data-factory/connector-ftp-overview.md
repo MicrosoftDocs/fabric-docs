@@ -1,4 +1,3 @@
----
 title: FTP connector overview
 description: This article provides the overview of connecting to and using FTP data in Data Factory.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # FTP connector overview

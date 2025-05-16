@@ -1,4 +1,3 @@
----
 title: Salesforce reports connector overview
 description: This article provides an overview of the supported capabilities of the Salesforce reports connector.
 author: DougKlopfenstein
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Salesforce reports connector overview

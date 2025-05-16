@@ -1,10 +1,10 @@
----
 title: Troubleshoot connectors
 description: Learn how to troubleshoot connector issues with Data Factory in Fabric.
 author: jianleishen
 ms.topic: troubleshooting
 ms.date: 11/26/2024
 ms.author: jianleishen
+ms.custom: 'connectors'
 ---
 
 # Troubleshoot connector issues with Data Factory in Fabric

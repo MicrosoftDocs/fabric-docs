@@ -1,4 +1,3 @@
----
 title: Configure Lakehouse in a copy activity
 description: This article explains how to copy data using Lakehouse.
 author: jianleishen
@@ -9,6 +8,7 @@ ms.custom:
   - template-how-to
   - build-2023
   - ignite-2023
+ms.custom: 'connectors'
 ---
 
 # Configure Lakehouse in a copy activity

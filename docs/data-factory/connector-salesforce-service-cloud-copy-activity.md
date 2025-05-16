@@ -1,4 +1,3 @@
----
 title: Configure Salesforce Service Cloud in a copy activity
 description: This article explains how to copy data using Salesforce Service Cloud.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 02/11/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Configure Salesforce Service Cloud in a copy activity

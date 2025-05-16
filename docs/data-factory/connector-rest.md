@@ -1,4 +1,3 @@
----
 title: How to create a REST connection
 description: This article provides information about how to do create a REST connection in Microsoft Fabric.
 author: pennyzhou-msft
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 12/18/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # How to create REST connection

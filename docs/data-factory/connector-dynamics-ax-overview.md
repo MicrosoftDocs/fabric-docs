@@ -1,4 +1,3 @@
----
 title: Dynamics AX connector overview
 description: This article provides an overview of the supported capabilities of the Dynamics AX connector.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 04/24/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Dynamics AX connector overview

@@ -1,4 +1,3 @@
----
 title: An overview of refresh history and monitoring for dataflows.
 description: An overview of refresh history and monitoring for dataflows features.
 author: luitwieler
@@ -6,6 +5,7 @@ ms.topic: conceptual
 ms.custom:
 ms.date: 12/18/2024
 ms.author: jeluitwi
+ms.custom: 'dataflows'
 ---
 
 # View refresh history and monitor your dataflows

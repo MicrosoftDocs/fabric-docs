@@ -1,4 +1,3 @@
----
 title: REST connector overview
 description: This article explains the overview of using REST.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 12/18/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # REST connector overview

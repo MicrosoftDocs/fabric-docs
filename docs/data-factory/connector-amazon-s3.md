@@ -1,4 +1,3 @@
----
 title: Set up your Amazon S3 connection
 description: This article provides information about how to create an Amazon S3 connection in Microsoft Fabric.
 author: pennyzhou-msft
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 06/13/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your Amazon S3 connection

@@ -1,4 +1,3 @@
----
 title: Set up your HTTP connection
 description: This article provides information about how to create an HTTP connection in Microsoft Fabric.
 author: pennyzhou-msft
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your HTTP connection

@@ -1,4 +1,3 @@
----
 title: Configure Teradata in a copy activity (Preview)
 description: This article explains how to copy data using Teradata.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 04/10/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Configure Teradata in a copy activity (Preview)

@@ -1,4 +1,3 @@
----
 title: Common Data Service (Legacy) connector overview
 description: This article provides an overview of the supported capabilities of the Common Data Service (Legacy) connector.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Common Data Service (Legacy) connector overview

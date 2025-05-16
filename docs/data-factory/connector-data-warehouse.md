@@ -1,4 +1,3 @@
----
 title: Set up your Data Warehouse connection
 description: This article provides information about how to create a Data Warehouse connection in Microsoft Fabric.
 author: DougKlopfenstein
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your Data Warehouse connection

@@ -1,4 +1,3 @@
----
 title: Troubleshoot the delimited text format connector
 description: Learn how to troubleshoot issues with the delimited text format connector in Data Factory in Microsoft Fabric.
 ms.reviewer: whhender
@@ -7,6 +6,7 @@ author: pennyzhou-msft
 ms.topic: troubleshooting
 ms.custom:
 ms.date: 12/19/2023
+ms.custom: 'connectors'
 ---
 
 # Troubleshoot the delimited text format connector in Data Factory in Microsoft Fabric

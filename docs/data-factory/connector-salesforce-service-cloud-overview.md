@@ -1,4 +1,3 @@
----
 title: Salesforce Service Cloud connector overview
 description: This article provides an overview of the supported capabilities of the Salesforce Service Cloud connector.
 author: whhender
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 02/11/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Salesforce Service Cloud connector overview

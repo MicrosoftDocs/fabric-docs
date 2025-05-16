@@ -1,4 +1,3 @@
----
 title: SFTP connector overview
 description: This article provides the overview of connecting to and using SFTP data in Data Factory.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 12/18/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # SFTP connector overview

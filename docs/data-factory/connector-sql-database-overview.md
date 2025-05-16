@@ -1,4 +1,3 @@
----
 title: SQL database connector overview (Preview)
 description: This article explains the overview of using SQL database.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 03/25/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # SQL database connector overview (Preview)

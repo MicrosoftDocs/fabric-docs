@@ -1,11 +1,12 @@
----
 title: Dynamics CRM connector overview
 description: This article provides an overview of the supported capabilities of the Dynamics CRM connector.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 11/17/2023
-ms.custom: template-how-to
+ms.custom:
+  - template-how-to
+  - connectors
 ---
 
 # Dynamics CRM connector overview

@@ -1,4 +1,3 @@
----
 title: Pricing scenario - Dataflow Gen2 Loads 2 GB of Parquet Data to a Lakehouse Table Through Virtual Network Data Gateway
 description: This article provides an example pricing scenario for loading 2 GB of Parquet data to a Lakehouse Table using Dataflow Gen2 for Data Factory in Microsoft Fabric and Virtual Network Data Gateway.
 ms.reviewer: whhender
@@ -7,6 +6,7 @@ author: lrtoyou1223
 ms.topic: conceptual
 ms.custom:
 ms.date: 10/25/2024
+ms.custom: 'dataflows'
 ---
 
 # Pricing scenario using Dataflow Gen2 and Virtual Network Data Gateway to load 2 GB of Parquet data to a Lakehouse table

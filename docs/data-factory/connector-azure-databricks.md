@@ -1,4 +1,3 @@
----
 title: Set up your Azure Databricks connection
 description: This article provides information about how to create an Azure Databricks connection in Microsoft Fabric.
 author: DougKlopfenstein
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 04/07/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your Azure Databricks connection

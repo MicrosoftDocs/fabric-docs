@@ -1,4 +1,3 @@
----
 title: Microsoft Exchange Online connector overview
 description: This article provides an overview of the supported capabilities of the Microsoft Exchange Online connector.
 author: DougKlopfenstein
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Microsoft Exchange Online connector overview

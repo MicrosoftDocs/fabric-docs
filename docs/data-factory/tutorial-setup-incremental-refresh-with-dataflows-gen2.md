@@ -1,4 +1,3 @@
----
 title: Pattern to incrementally amass data with Dataflow Gen2
 description: This tutorial takes 15 minutes, and describes how to incrementally amass data into a lakehouse using Dataflow Gen2.
 ms.reviewer: whhender
@@ -7,6 +6,7 @@ author: luitwieler
 ms.topic: tutorial
 ms.custom:
 ms.date: 1/13/2025
+ms.custom: 'dataflows'
 ---
 
 # Pattern to incrementally amass data with Dataflow Gen2

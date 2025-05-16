@@ -1,4 +1,3 @@
----
 title: Azure Cosmos DB for MongoDB connector overview
 description: This article provides the overview of connecting to and using Azure Cosmos DB for MongoDB data in Data Factory.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 05/07/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Azure Cosmos DB for MongoDB connector overview

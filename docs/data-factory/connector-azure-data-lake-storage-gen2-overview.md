@@ -1,4 +1,3 @@
----
 title: Azure Data Lake Storage Gen2 connector overview
 description: This article provides an overview of the Azure Data Lake Storage Gen2 connector in Data Factory in Microsoft Fabric.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 09/16/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Azure Data Lake Storage Gen2 connector overview

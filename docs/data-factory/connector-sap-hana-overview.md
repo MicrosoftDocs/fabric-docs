@@ -1,4 +1,3 @@
----
 title: SAP HANA database connector overview
 description: This article provides an overview of the supported capabilities of the SAP HANA database connector.
 author: DougKlopfenstein
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 02/06/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # SAP HANA connector overview

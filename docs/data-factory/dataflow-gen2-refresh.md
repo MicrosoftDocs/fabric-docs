@@ -1,4 +1,3 @@
----
 title: Dataflow Gen2 refresh
 description: Explanation of what a dataflow refresh is, including on-demand and scheduled refresh.
 author: Luitwieler
@@ -6,6 +5,7 @@ ms.author: jeluitwi
 ms.service: fabric
 ms.topic: concept-article #Required; leave this attribute/value as-is.
 ms.date: 12/18/2024
+ms.custom: 'dataflows'
 ---
 
 # Dataflow refresh

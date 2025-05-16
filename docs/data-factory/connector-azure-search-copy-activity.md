@@ -1,4 +1,3 @@
----
 title: Configure Azure AI Search in copy activity
 description: This article explains how to copy data using Azure AI Search.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 07/24/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Configure Azure AI Search in copy activity

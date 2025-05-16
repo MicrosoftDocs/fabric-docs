@@ -1,4 +1,3 @@
----
 title: Configure Microsoft 365 in a copy activity
 description: This article explains how to copy data using Microsoft 365.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 12/18/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Configure Microsoft 365 in a copy activity

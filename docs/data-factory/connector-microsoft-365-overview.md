@@ -1,4 +1,3 @@
----
 title: Microsoft 365 connector overview
 description: This article explains the overview of using Microsoft 365.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Microsoft 365 connector overview

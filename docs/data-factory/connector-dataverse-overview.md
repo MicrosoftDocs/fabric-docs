@@ -1,4 +1,3 @@
----
 title: Dataverse connector overview
 description: This article provides an overview of the supported capabilities of the Dataverse connector.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 09/25/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Dataverse connector overview

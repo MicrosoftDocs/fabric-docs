@@ -1,4 +1,3 @@
----
 title: Configure PostgreSQL in a copy activity
 description: This article explains how to copy data using PostgreSQL.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/19/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Configure PostgreSQL in a copy activity

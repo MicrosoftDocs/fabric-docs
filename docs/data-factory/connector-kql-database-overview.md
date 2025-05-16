@@ -1,4 +1,3 @@
----
 title: KQL Database connector overview
 description: This article explains the overview of using KQL Database.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # KQL Database connector overview

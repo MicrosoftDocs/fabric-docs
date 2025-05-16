@@ -1,4 +1,3 @@
----
 title: Salesforce objects connector overview
 description: This article provides an overview of the supported capabilities of the Salesforce objects connector.
 author: DougKlopfenstein
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 07/01/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Salesforce objects connector overview

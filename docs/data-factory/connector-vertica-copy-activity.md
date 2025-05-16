@@ -1,4 +1,3 @@
----
 title: Configure Vertica in a copy activity
 description: This article explains how to copy data using Vertica.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 09/06/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Configure Vertica in a copy activity

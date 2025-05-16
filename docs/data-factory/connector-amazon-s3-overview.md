@@ -1,4 +1,3 @@
----
 title: Amazon S3 connector overview
 description: This article provides an overview of the supported capabilities of the Amazon S3 connector.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 06/13/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Amazon S3 connector overview

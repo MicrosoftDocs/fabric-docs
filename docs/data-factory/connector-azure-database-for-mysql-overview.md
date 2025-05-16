@@ -1,4 +1,3 @@
----
 title: Azure Database for MySQL connector overview
 description: This article provides an overview of the supported capabilities of the Azure Database for MySQL connector.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 06/11/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Azure Database for MySQL connector overview

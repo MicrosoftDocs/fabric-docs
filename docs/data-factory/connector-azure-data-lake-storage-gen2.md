@@ -1,4 +1,3 @@
----
 title: Set up your Azure Data Lake Storage Gen2 connection
 description: This article provides information about how to set up an Azure Data Lake Storage Gen2 connection
 author: pennyzhou-msft
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 09/16/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your Azure Data Lake Storage Gen2 connection

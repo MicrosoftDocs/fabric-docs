@@ -1,4 +1,3 @@
----
 title: Lakehouse connector overview
 description: This article explains the overview of using Lakehouse.
 author: jianleishen
@@ -7,6 +6,7 @@ ms.topic: how-to
 ms.date: 06/07/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Lakehouse connector overview
