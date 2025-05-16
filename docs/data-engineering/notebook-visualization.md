@@ -120,6 +120,10 @@ The improved chart view is available on _display()_ command. It provides a more 
 
     :::image type="content" source="media\notebook-visualization\chart-toolbar.png" alt-text="Screenshot of an example of chart toolbar." lightbox="media\notebook-visualization\chart-toolbar.png":::
 
+    Here is an example of chart annotation.
+
+    :::image type="content" source="media\notebook-visualization\chart-annotation.png" alt-text="Screenshot of an example of chart annotation." lightbox="media\notebook-visualization\chart-annotation.png":::
+
 ## display() summary view
 
 Use _display(df, summary = true)_ to check the statistics summary of a given Apache Spark DataFrame. The summary includes the column name, column type, unique values, and missing values for each column. You can also select a specific column to see its minimum value, maximum value, mean value, and standard deviation.
