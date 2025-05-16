@@ -52,7 +52,7 @@ You can use this [sample performance test script](https://github.com/microsoft/f
 Related topics:
 
 *   [Advanced Usage — Requests 2.32.3 documentation](https://docs.python-requests.org/en/latest/user/advanced/#session-objects)
-*   [HttpClient guidelines for .NET](/dotnet/fundamentals/networking/http/httpclient-guidelines#recommended-use)
+*   [HttpClient guidelines for .NET](../../dotnet/fundamentals/networking/http/httpclient-guidelines#recommended-use)
 
 ## Data Collection & Evaluation
 
@@ -71,9 +71,9 @@ Here is list of common issues that can impact API latency and performance.
 
 3.  Data source and Fabric capacity related setup.
     *   You can think of API for GraphQL as a wrapper on top of your data sources. If your data source itself has performance issues due to the nature of its complexity, it is expected that API latencies can be high. When such cases happen, it is recommended to test querying your data sources directly for a more effective performance comparison with that of API for GraphQL.
-        *   Follow this guide regarding how to choose a suitable data store for your business needs: [Fabric decision guide – choose a data store](/fundamentals/decision-guide-data-store#data-store-properties)
+        *   Follow this guide regarding how to choose a suitable data store for your business needs: [Fabric decision guide – choose a data store](../fundamentals/decision-guide-data-store#data-store-properties)
     *   When accessing API for GraphQL, performance is going to be bound by the Fabric capacity SKU you have selected.
-        *   Refer to this general guidance about Fabric capacity SKU and its compute power: [Microsoft Fabric concepts](/enterprise/licenses#capacity)
+        *   Refer to this general guidance about Fabric capacity SKU and its compute power: [Microsoft Fabric concepts](../enterprise/licenses#capacity)
 
 * * *
 
