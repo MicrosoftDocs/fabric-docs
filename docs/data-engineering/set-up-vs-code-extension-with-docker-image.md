@@ -16,7 +16,7 @@ To use the Fabric Data Engineering VS Code extension, certain prerequisites, suc
 
 The Data Engineering VS Code extension seamlessly integrates with Docker containers, providing a consistent development environment across different platforms. This feature allows you to work with supported Fabric items, such as notebooks, within a containerized environment that is isolated from your local machine. The containerized environment ensures that all necessary dependencies are installed and configured correctly. It allows you to focus on developing your notebooks without concerns about the environment setup.
 
-A docker image is provided by Synapse to support the VS Code extension. The docker image contains all the required dependencies to run the Data Engineering VS Code extension, including the Java Development Kit (JDK), Conda, and the Jupyter extension for VS Code. This image is hosed on the [Microsoft Artifact Registry](https://mcr.microsoft.com/en-us/product/msfabric/synapsevscode/fabric-synapse-vscode/about) and can be pulled from the following location: . To make it easier for users to get started, we have created a sample with devcontainer.json file that you can use to open the Data Engineering VS Code extension in a container. Follow the steps below to get started.
+A docker image is provided by Synapse to support the VS Code extension. The docker image contains all the required dependencies to run the Data Engineering VS Code extension, including the Java Development Kit (JDK), Conda, and the Jupyter extension for VS Code. This image is hosted on and can be pulled from the [Microsoft Artifact Registry](https://mcr.microsoft.com/en-us/product/msfabric/synapsevscode/fabric-synapse-vscode/about). To make it easier for users to get started, we have created a sample with the *devcontainer.json* file that you can use to open the Data Engineering VS Code extension in a container. Follow the steps below to get started.
 
 Synapse provides a Docker image to support the VS Code extension. The Docker image includes all the necessary dependencies like the Java Development Kit (JDK), Conda, and the Jupyter extension for VS Code. This image is hosted on the [Microsoft Artifact Registry](https://mcr.microsoft.com/product/msfabric/synapsevscode/fabric-synapse-vscode/about). To help you get started quickly, a sample with *devcontainer.json* file can be used to open the Data Engineering VS Code extension in a container as described in the next sections.
 
@@ -42,7 +42,7 @@ The following prerequisites should be met to use the Docker containers with the 
 
 1. To stop the container, select the green icon in the bottom left corner of the VS Code window and select **Remote-Containers: Reopen Locally**. This stops the container and return you to your local machine.
 
-1. You can also customize the *devcontainer.json* file to add other dependencies or configurations to the container. For more information on customizing the devcontainer.json file, see [VS Code Dev Container documentation](https://code.visualstudio.com/docs/remote/containers).
+1. You can also customize the *devcontainer.json* file to add other dependencies or configurations to the container. For more information on customizing the *devcontainer.json* file, see the [VS Code Dev Container documentation](https://code.visualstudio.com/docs/remote/containers).
 
 ## Related content
 
