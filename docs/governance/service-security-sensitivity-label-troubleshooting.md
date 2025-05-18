@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/16/2025
+ms.date: 05/18/2025
 LocalizationGroup: Data from files
 ---
 
@@ -223,25 +223,9 @@ Using Defender for Cloud Apps with Power BI is designed to help secure your orga
 > [!CAUTION]
 > In the session policy, in the "Action" part, the "protect" capability works only if no label exists on the item. If a label already exists, the "protect" action won't apply; you can't override an existing label that has already been applied to an item in Power BI.
 
-## Data protection metrics report
-
-### I open the data protection metrics page but no report is generated
-
-In order for the data protection metrics report to be successfully generated[, information protection](/power-bi/enterprise/service-security-enable-data-sensitivity-labels) must be enabled on your tenant and [sensitivity labels should have been applied](/power-bi/enterprise/service-security-apply-data-sensitivity-labels).
-
-The data protection metrics report isn't available to [external users such as Microsoft Entra B2B (Microsoft Entra B2B) guest users](/power-bi/enterprise/service-admin-azure-ad-b2b).
-
 ### I can't access the Defender for Cloud Apps information.
 
 In order to access Defender for Cloud Apps information, your organization must have the appropriate [Defender for Cloud Apps license](./service-security-using-defender-for-cloud-apps-controls.md).
-
-### I don't see the data protection metrics report in Shared with me, Recents, or Favorites
-
-The data protection metrics report is a special report and doesn't show up in the **Shared with me**, **Recent**, and **Favorites** lists.
-
-### I can't share the data protection metrics report with external users
-
-The data protection metrics report isn't available to [external users (Microsoft Entra B2B guest users)](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
 ## Paginated reports
 
