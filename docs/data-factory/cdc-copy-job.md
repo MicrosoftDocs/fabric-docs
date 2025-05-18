@@ -54,12 +54,10 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
    > [!NOTE]
    > - We suggest you enable CDC for all the tables mentioned above.
-   > 
-   > Be sure supports_net_changes is enabled.
-   >
-   > All of the columns in the source table must be identified as captured columns as default.
+   > - Be sure supports_net_changes is enabled.
+   > - All of the columns in the source table must be identified as captured columns as default.
    
-   Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](../../sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server)
+   Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](../../sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
  
 1. Select **+ New Item**, choose the **Copy job** icon,  name your Copy job, and click **Create**.
 
@@ -75,10 +73,10 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
 1. You should have clear visibility of which source tables have CDC enabled. Select the **tables with CDC enabled** to copy.
 
-    Tables icon with CDC enabled:
+    Tables with CDC enabled:
    :::image type="content" source="media/copy-job/cdc-table-icon.png" alt-text="Screenshot showing cdc table icon.":::
 
-    Tables icon without CDC enabled:
+    Tables without CDC enabled:
    :::image type="content" source="media/copy-job/none-cdc-table-icon.png" alt-text="Screenshot showing none cdc table icon.":::
 
    :::image type="content" source="media/copy-job/select-cdc-tables.png" alt-text="Screenshot showing where to select cdc tables for the Copy job.":::
