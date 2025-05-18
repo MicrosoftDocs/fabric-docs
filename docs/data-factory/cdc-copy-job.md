@@ -59,7 +59,7 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
    >
    > All of the columns in the source table must be identified as captured columns as default.
    
-   Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](../../sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server.md)
+   Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](../../sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server)
  
 1. Select **+ New Item**, choose the **Copy job** icon,  name your Copy job, and click **Create**.
 
