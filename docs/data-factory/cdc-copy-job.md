@@ -26,7 +26,7 @@ Change data capture (CDC) in Copy job is a powerful capability in Fabric Data Fa
 ## How it works: CDC-based vs. Watermark-based Incremental Copy
 
 1. CDC-enabled tables: If your source database has CDC enabled, Copy job automatically captures and replicates inserts, updates, and deletes to the destination, applying the exact changes.
-1. Non-CDC-enabled tables: If CDC is not enabled on your source database, Copy Job detects changes by comparing an incremental column (e.g., timestamp or ID) against the last run, then merges or appends the changed data to the destination based on your configuration.
+1. Non-CDC-enabled tables: If CDC isn't enabled on your source database, Copy Job detects changes by comparing an incremental column (e.g., timestamp or ID) against the last run, then merges or appends the changed data to the destination based on your configuration.
 
 ## Supported connectors
 
@@ -57,7 +57,7 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
    > supports_net_changes must be enabled.
    > All of the columns in the source table must be identified as captured columns as default.
    
-   Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](https://learn.microsoft.com/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server)
+   Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](sql-docs/docs/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server.md)
  
 1. Select **+ New Item**, choose the **Copy job** icon,  name your Copy job, and click **Create**.
 
@@ -71,7 +71,8 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
    :::image type="content" source="media/copy-job/enter-credentials-data-source.png" lightbox="media/copy-job/enter-credentials-data-source.png" alt-text="Screenshot showing where to enter credentials.":::
 
-1. You should have clear visibility of which source tables have CDC enabled. Select the **tables with CDC enabled** to copy. 
+1. You should have clear visibility of which source tables have CDC enabled. Select the **tables with CDC enabled** to copy.
+
     Tables icon with CDC enabled:
    :::image type="content" source="media/copy-job/cdc-table-icon.png" lightbox="media/copy-job/cdc-table-icon.png" alt-text="Screenshot showing cdc table icon.":::
 
@@ -117,10 +118,10 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
 ## Known limitations
 - When both CDC-enabled and non-CDC-enabled source tables are selected in a Copy Job, it treats all tables as Watermark-based Incremental Copy.
-- When CDC is enabled, column mapping and temp DB cannot be configured.
+- When CDC is enabled, column mapping and temp DB can't be configured.
 - Custom capture instances aren't supported; only the default capture instance is supported.
 - SCD2 isn't supported for CDC-enabled source tables yet.
-- DDL isn't not supported yet.
+- DDL isn't supported yet.
 
 ## Related content
 
