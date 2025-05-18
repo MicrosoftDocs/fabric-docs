@@ -34,7 +34,6 @@ The many controls in the admin portal are listed in the table below with links t
 | [Azure connections](service-admin-portal-azure-connections.md) | Configure and manage connections to Azure resources. |
 | [Workspaces](portal-workspaces.md) | View and manage the workspaces that exist in your organization. |
 | [Custom branding](service-admin-custom-branding.md) |  Change the look and feel of the Microsoft Fabric to match your organization's own branding. |
-| [Protection metrics](service-admin-portal-protection-metrics.md) | Monitor and track sensitivity label usage and adoption in your organization. |
 | [Featured content](service-admin-portal-featured-content.md) |  Manage the reports, dashboards, and apps that were promoted to the Featured section on your Home page. |
 
 ## How to get to the admin portal
