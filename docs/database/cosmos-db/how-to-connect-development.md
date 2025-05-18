@@ -14,7 +14,7 @@ zone_pivot_groups: dev-lang-core
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
-TODO
+In this guide, you connect to an existing Cosmos DB database in Microsoft Fabric using the Azure SDK.
 
 ## Prerequisites
 
@@ -42,9 +42,9 @@ TODO
 
 :::zone-end
 
-## Retrieve Cosmos DB credentials
+## Retrieve Cosmos DB endpoint
 
-TODO
+First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is required to connect using the Azure SDK.
 
 1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
 
