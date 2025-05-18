@@ -62,7 +62,7 @@ To understand the considerations and limitations of various lifecycle management
 
 :::image type="content" source="./media/troubleshoot-cicd/git-rate-limit.png" alt-text="Screenshot of error message saying Git rate limit exceeded.":::
 
-**Cause**: Your git provider limits the number of Git actions you can perform in a given amount of time. This includes commits and updates for each item. For information about GitHub rate limits, see [About primary rate limits](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#about-primary-rate-limits). For Azure DevOps limits, see [Rate and usage limits](/azure/devops/repos/git/rate-limits?view=azure-devops).
+**Cause**: Your git provider limits the number of Git actions you can perform in a given amount of time. This includes commits and updates for each item. For information about GitHub rate limits, see [About primary rate limits](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-primary-rate-limits). For Azure DevOps limits, see [Rate and usage limits](/azure/devops/integrate/concepts/rate-limits?view=azure-devops).
 
 **Solution**: Wait the amount of time specified in the error message, and then try again. If you continue to see this error, contact your Git provider for more information.
 
