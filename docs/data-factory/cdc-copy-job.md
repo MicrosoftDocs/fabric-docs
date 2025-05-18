@@ -12,7 +12,7 @@ ms.search.form: copy-job-tutorials
 
 This article describes the change data capture (CDC) capability in Copy job and how to use it. 
 
-## What is Change data capture (CDC) in Copy job
+## What is change data capture (CDC) in Copy job
 
 Change data capture (CDC) in Copy job is a powerful capability in Fabric Data Factory that enables efficient and automated replication of changed data including inserted, updated, and deleted records from a source to a destination. This ensures your destination data stays up to date without manual effort, improving efficiency in data integration while reducing the load on your source system. 
 
@@ -23,14 +23,14 @@ Change data capture (CDC) in Copy job is a powerful capability in Fabric Data Fa
 1. Optimized performance: Processes only changed data, reducing processing time and minimizing load on the source. 
 1. Smarter incremental copy: Automatically detects CDC-enabled source tables and allows you to select either CDC-based or watermark-based incremental copy for each table.
 
-## How it works: CDC-based vs. Watermark-based Incremental Copy
+## How it works: CDC-based vs. Watermark-based incremental copy
 
-1. CDC-enabled tables: If your source database has CDC enabled, Copy job automatically captures and replicates inserts, updates, and deletes to the destination, applying the exact changes.
-1. Non-CDC-enabled tables: If CDC isn't enabled on your source database, Copy Job detects changes by comparing an incremental column (e.g., timestamp or ID) against the last run, then merges or appends the changed data to the destination based on your configuration.
+1. CDC-based incremental copy: If your source database has CDC enabled, Copy job automatically captures and replicates inserts, updates, and deletes to the destination, applying the exact changes.
+1. Watermark-based incremental copy: If CDC isn't enabled on your source database, Copy Job detects changes by comparing an incremental column (e.g., timestamp or ID) against the last run, then merges or appends the changed data to the destination based on your configuration.
 
 ## Supported connectors
 
-Currently, CDC in Copy job supports the following data stores for both source and destination. Please stay tuned and we're adding more.
+Currently, CDC in Copy job supports the following source data stores and destination data stores. We're adding more and stay tuned.
 
 Supported source store:
 1. Azure SQL DB
@@ -53,11 +53,13 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
    :::image type="content" source="media/copy-job/enable-cdc-tables.png" alt-text="Screenshot showing how to enable cdc tables.":::
 
    > [!NOTE]
-   > We suggest you enable CDC for all the tables mentioned above.
-   > supports_net_changes must be enabled.
+   > - We suggest you enable CDC for all the tables mentioned above.
+   > 
+   > Be sure supports_net_changes is enabled.
+   >
    > All of the columns in the source table must be identified as captured columns as default.
    
-   Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](../../sql-docs/docs/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server.md)
+   Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](../../sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server.md)
  
 1. Select **+ New Item**, choose the **Copy job** icon,  name your Copy job, and click **Create**.
 
