@@ -57,7 +57,7 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
    > supports_net_changes must be enabled.
    > All of the columns in the source table must be identified as captured columns as default.
    
-   Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server)
+   Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](https://learn.microsoft.com/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server)
  
 1. Select **+ New Item**, choose the **Copy job** icon,  name your Copy job, and click **Create**.
 
@@ -104,7 +104,7 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
 1. Your copy job will start immediately. The first run will copy an initial full snapshot.
   
-   :::image type="content" source="media/copy-job/monitor-cdc-initial-run.png" lightbox="media/copy-job/monitor-cdc-initial-run.png" alt-text="Screenshot showing the Copy job panel where you can monitor run history.":::
+   :::image type="content" source="media/copy-job/monitor-cdc-initial-run.png" lightbox="media/copy-job/monitor-cdc-initial-run.png" alt-text="Screenshot showing the Copy job panel where you can monitor initial full snapshot.":::
 
 1. Update your source tables by inserting, updating, or deleting rows.
 
@@ -112,7 +112,7 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
 1. Run the Copy job again to capture and replicate all changes, including inserted, updated, and deleted rows, to the destination.
 
-   :::image type="content" source="media/copy-job/monitor-cdc-second-run.png" lightbox="media/copy-job/monitor-cdc-second-run.png" alt-text="Screenshot showing the Copy job panel where you can monitor run history.":::
+   :::image type="content" source="media/copy-job/monitor-cdc-second-run.png" lightbox="media/copy-job/monitor-cdc-second-run.png" alt-text="Screenshot showing the Copy job panel where you can monitor capturing and replicating all changes.":::
 
 
 ## Known limitations
