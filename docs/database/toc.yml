@@ -146,6 +146,9 @@ items:
     items: 
     - name: T-SQL Reference for Fabric
       href: /sql/t-sql/language-reference?view=fabric&preserve-view=true
+- name: Cosmos DB in fabric'
+  expanded: true
+  href: cosmos-db/toc.yml
 - name: Resources
   items: 
   - name: SQL database in Fabric Community

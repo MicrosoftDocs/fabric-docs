@@ -1,0 +1,30 @@
+### YamlMime:Landing
+title: Cosmos DB in Microsoft Fabric documentation
+summary: Learn how to use the Cosmos DB database workload in Microsoft Fabric for your NoSQL and AI applications.
+metadata:
+  title: Cosmos DB Database Documentation
+  titleSuffix: Microsoft Fabric
+  description: Learn how to use the Cosmos DB database workload in Microsoft Fabric for your NoSQL and AI applications.
+  author: seesharprun
+  ms.author: sidandrews
+  ms.topic: landing-page
+  ms.date: 05/19/2025
+landingContent:
+  - title: Overview
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Overview
+            url: overview.md
+  - title: Overview
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Create a database
+            url: quickstart-portal.md
+      - linkListType: how-to-guide
+        links:
+          - text: Connect from Azure Functions
+            url: how-to-connect-azure-functions.md
+          - text: Connect from Azure Container Apps
+            url: how-to-connect-azure-container-apps.md
