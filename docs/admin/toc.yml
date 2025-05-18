@@ -153,6 +153,8 @@ items:
       href: service-admin-portal-dataset-security.md
     - name: Advanced networking 
       href: service-admin-portal-advanced-networking.md
+    - name: Encryption 
+      href: service-admin-portal-encryption.md
     - name: Metrics settings
       href: service-admin-portal-goals-settings.md
     - name: User experience experiments
