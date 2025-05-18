@@ -50,17 +50,13 @@ First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is r
 
 1. Navigate to your existing Cosmos DB database.
 
-1. TODO
+1. Select the **Settings** option in the menu bar for the database.
 
-    :::image source="media/how-to-connect-development/TODO.png" lightbox="" alt-text="":::
+    :::image source="media/how-to-connect-development/settings-option.png" lightbox="media/how-to-connect-development/settings-option-full.png" alt-text="Screenshot of the 'Settings' menu bar option for a database in the Fabric portal.":::
 
-1. TODO
+1. In the settings dialog, navigate to the **Connection** section. Then, copy the value of the **Endpoint for Cosmos DB NoSQL database** field. You use this value in later step\[s\].
 
-    :::image source="media/how-to-connect-development/TODO.png" lightbox="" alt-text="":::
-
-1. TODO
-
-    :::image source="media/how-to-connect-development/TODO.png" lightbox="" alt-text="":::
+    :::image source="media/how-to-connect-development/settings-connection-endpoint.png" lightbox="media/how-to-connect-development/settings-connection-endpoint-full.png" alt-text="Screenshot of the 'Connection' section of the 'Settings' dialog for a database in the Fabric portal.":::
 
 ## Authenticate to Azure CLI
 
