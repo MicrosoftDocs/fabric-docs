@@ -42,8 +42,7 @@ Data in Cosmos DB is automatically made available in Fabric OneLake in the Delta
 
 Cosmos DB in Fabric is available to participants in a limited preview. To participate, [submit an application](https://aka.ms/FabricCosmosDBPreview).
 
-## Related content
+## Next step
 
-- [Quickstart: Create a Cosmos DB database workload in Microsoft Fabric](quickstart-portal.md)
-- [Connect Azure Functions to Cosmos DB in Microsoft Fabric](how-to-connect-azure-functions.md)
-- [Connect Azure Container Apps to Cosmos DB in Microsoft Fabric](how-to-connect-azure-container-apps.md)
+> [!div class="nextstepaction"]
+> [Quickstart: Create a Cosmos DB database workload in Microsoft Fabric](quickstart-portal.md)

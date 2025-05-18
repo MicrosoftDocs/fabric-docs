@@ -16,7 +16,7 @@ landingContent:
         links:
           - text: Overview
             url: overview.md
-  - title: Overview
+  - title: Get started
     linkLists:
       - linkListType: quickstart
         links:
@@ -24,7 +24,5 @@ landingContent:
             url: quickstart-portal.md
       - linkListType: how-to-guide
         links:
-          - text: Connect from Azure Functions
-            url: how-to-connect-azure-functions.md
-          - text: Connect from Azure Container Apps
-            url: how-to-connect-azure-container-apps.md
+          - text: Connect from local environment
+            url: how-to-connect-development.md

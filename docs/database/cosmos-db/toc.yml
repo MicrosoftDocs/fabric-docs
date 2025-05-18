@@ -2,13 +2,9 @@
 items:
   - name: Overview
     href: overview.md
-  - name: Quickstart
+  - name: Get started
     items:
       - name: Create a database
         href: quickstart-portal.md
-  - name: How to
-    items:
-      - name: Connect from Azure Functions
-        href: how-to-connect-azure-functions.md
-      - name: Connect from Azure Container Apps
-        href: how-to-connect-azure-container-apps.md
+      - name: Connect from your environment
+        href: how-to-connect-development.md

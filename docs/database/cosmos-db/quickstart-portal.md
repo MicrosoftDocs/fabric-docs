@@ -14,8 +14,35 @@ ms.date: 05/19/2025
 
 TODO
 
+## Prerequisites
+
+[!INCLUDE[Prerequisites - Fabric capacity](includes/prereq-fabric-capacity.md)]
+
+## Create the database
+
+TODO
+
+1. TODO
+
+1. TODO
+
+## Load sample data
+
+TODO
+
+1. TODO
+
+1. TODO
+
+## Perform a query
+
+TODO
+
+1. TODO
+
+1. TODO
+
 ## Related content
 
 - [Overview of Cosmos DB in Microsoft Fabric](overview.md)
-- [Connect Azure Functions to Cosmos DB in Microsoft Fabric](how-to-connect-azure-functions.md)
-- [Connect Azure Container Apps to Cosmos DB in Microsoft Fabric](how-to-connect-azure-container-apps.md)
+- [Connect from your local development environment to Cosmos DB in Microsoft Fabric](how-to-connect-development.md)
