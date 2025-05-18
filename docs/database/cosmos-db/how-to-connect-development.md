@@ -10,7 +10,7 @@ zone_pivot_group_filename: database/cosmos-db/zone-pivot-groups.json
 zone_pivot_groups: dev-lang-core
 ---
 
-# How to connect to Cosmos DB in Microsoft Fabric from your local development enviornment (preview)
+# How to connect to Cosmos DB in Microsoft Fabric from your local development environment (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
@@ -60,7 +60,7 @@ First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is r
 
 ## Authenticate to Azure CLI
 
-Now, authenticate to the Azure CLI. The Azure SDK can use a variety of different authentication mechanisms to verify your identity, but the Azure CLI is the most universal and frictionless option across a variety of developer languages.
+Now, authenticate to the Azure CLI. The Azure SDK can use various different authentication mechanisms to verify your identity, but the Azure CLI is the most universal and frictionless option across various developer languages.
 
 1. In your local development environment, open a terminal.
 
@@ -70,15 +70,15 @@ Now, authenticate to the Azure CLI. The Azure SDK can use a variety of different
     az login
     ```
 
-1. Follow the interactive steps to perform multi-factor authentication (MFA) and select your subscription.
+1. Follow the interactive steps to perform multifactor authentication (MFA) and select your subscription.
 
-1. Verify that you have logged in successfully by querying your identity.
+1. Verify that your account is logged in successfully by querying your identity.
 
     ```azurecli
     az ad signed-in-user show
     ```
 
-1. Observe the output of the previous command. The `id` field contains the principal (object) ID of your currently signed-in identity.
+1. Observe the output of the previous command. The `id` field contains the principal (object) ID of the currently signed-in identity.
 
     ```json
     {
@@ -98,14 +98,14 @@ Now, authenticate to the Azure CLI. The Azure SDK can use a variety of different
     ```
 
     > [!NOTE]
-    > In Microsoft Entra ID terms, this is referred to as your **human identity**. It's a type of identity that can connect to databases among many different types including, but not limited to:
+    > In Microsoft Entra ID terms, this identity is referred to as your **human identity**. It's a type of identity that can connect to databases among many different types including, but not limited to:
     >
     > - Managed identities (system or user-assigned)
     > - Workload identities
     > - Application identities
     > - Device identities
     >
-    > While these steps focus on using your human identity to connect to Comsos DB in Fabric, the steps are similar if you are connecting using a different identity type. For more information about identities, see [identity fundamentals](/entra/fundamentals/identity-fundamental-concepts#identity).
+    > While these steps focus on using your human identity to connect to the database in Fabric, the steps are similar if you're connecting using a different identity type. For more information about identities, see [identity fundamentals](/entra/fundamentals/identity-fundamental-concepts#identity).
     >
 
 ## Connect using Azure SDK
@@ -113,7 +113,7 @@ Now, authenticate to the Azure CLI. The Azure SDK can use a variety of different
 Finally, use the Azure SDK to connect to the Cosmos DB database in Fabric using the endpoint and your identity. The Azure SDK ships with a unified **identity** library that automatically handles authentication on your behalf. This step uses the `AzureCliCredential` type which automatically finds the right identity type based on your environment.
 
 > [!TIP]
-> Alternatively, you can use the `DefaultAzureCredential` type. This type can automatically find the right system-assigned or user-assigned managed identity if you deploy your applicaton code to Azure and the right human identity locally in development.
+> Alternatively, you can use the `DefaultAzureCredential` type. This type can automatically find the right system-assigned or user-assigned managed identity if you deploy your application code to Azure and the right human identity locally in development.
 
 :::zone pivot="dev-lang-python"
 

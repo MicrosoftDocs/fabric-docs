@@ -30,7 +30,7 @@ First, go to the Fabric portal and create a new Cosmos DB database within your w
 
     :::image source="media/quickstart-portal/create-option.png" lightbox="media/quickstart-portal/create-option.png" alt-text="Screenshot of the option to 'Create' a new resource in the Fabric portal.":::
 
-1. If the option to create an **Cosmos DB** account is not initially available, select **See all**.
+1. If the option to create an **Cosmos DB** account isn't initially available, select **See all**.
 
 1. Within the **Databases** category, select **Cosmos DB (preview)**.
 
@@ -52,21 +52,21 @@ Next, load a sample data set into the database using the tools in the Fabric por
 
     :::image source="media/quickstart-portal/load-sample-data-option.png" lightbox="media/quickstart-portal/load-sample-data-option-full.png" alt-text="Screenshot of the option":::
 
-1. A dialog appears informing you that the import operation may take a few minutes. Select **Start** to begin importing the sample data set.
+1. A dialog appears informing you that the import operation could take a few minutes. Select **Start** to begin importing the sample data set.
 
-    :::image source="media/quickstart-portal/sample-data-confirmation-dialog.png" lightbox="media/quickstart-portal/sample-data-confirmation-dialog-full.png" alt-text="Screenshot of the dialog to confirm that the sample data loading operation may take a few minutes in the Fabric portal.":::
+    :::image source="media/quickstart-portal/sample-data-confirmation-dialog.png" lightbox="media/quickstart-portal/sample-data-confirmation-dialog-full.png" alt-text="Screenshot of the dialog to confirm that the sample data loading operation could take a few minutes in the Fabric portal.":::
 
 1. Wait for the loading operation to finish.
 
     :::image source="media/quickstart-portal/sample-data-loading-dialog.png" lightbox="media/quickstart-portal/sample-data-loading-dialog-full.png" alt-text="Screenshot of the dialog to indicate that sample data is loading to the database in the Fabric portal.":::
 
-1. Once the import operation has concluded, select **Close**.
+1. Once the import operation concludes, select **Close**.
 
-    :::image source="media/quickstart-portal/sample-data-success-dialog.png" lightbox="media/quickstart-portal/sample-data-success-dialog-full.png" alt-text="Screenshot of the dialog to indicate that the sample data loading operation has succeeded in the Fabric portal.":::
+    :::image source="media/quickstart-portal/sample-data-success-dialog.png" lightbox="media/quickstart-portal/sample-data-success-dialog-full.png" alt-text="Screenshot of the dialog to indicate that the sample data loading operation succeeded in the Fabric portal.":::
 
 ## Perform a query
 
-Finally, perform a simple NoSQL query to test the sample data in the **SampleData** container that was just created.
+Finally, perform a NoSQL query to test the sample data in the **SampleData** container that was created.
 
 1. Stay within the Cosmos DB database within the Fabric portal.
 
