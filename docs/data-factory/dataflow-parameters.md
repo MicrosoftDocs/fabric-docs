@@ -5,7 +5,7 @@ author: ptyx507x
 ms.author: miescobar
 ms.reviewer: whhender
 ms.topic: conceptual
-ms.date: 04/23/2025
+ms.date: 05/12/2025
 ---
 
 # Use public parameters in Dataflow Gen2 (Preview)
@@ -30,9 +30,8 @@ Parameters in Dataflow Gen2 allow you to dynamically control and customize dataf
 * **Dataflows with incremental refresh can't leverage this new mode.**
 * **Only parameters of the type *decimal number*, *whole number*, *text* and *true/false* can be passed for override.**  Any other data types don't produce a refresh request in the refresh history but show in the monitoring hub. 
 * **The public parameters mode allows users to modify the logic defined within the Dataflow by overriding the parameter values.** It  would allow others who have permissions to the dataflow to refresh the data with other values, resulting in different outputs from the data sources used in the dataflow.
-* **Refresh history does not display information about the parameters passed during the invocation of the dataflow.**
 * **Monitoring hub does not display information about the parameters passed during the invocation of the dataflow.**
-* **Staged queries will only keep the last data refresh of a Dataflow stored in the Staging Lakehouse.** Users are able to look at the data from the Staging Lakehouse using the Dataflows connector to determine what was data is stored. Defining explicit data destinations when using the public parameters mode is highly encouraged.
+* **Staged queries will only keep the last data refresh of a Dataflow stored in the Staging Lakehouse.** Users are able to look at the data from the Staging Lakehouse using the Dataflows connector to determine what was data is stored. Defining data destinations when using the public parameters mode is highly encouraged.
 * **When submitting a duplicated request for the same parameter values, only the first request will be accepted and subsequent will be rejected until the first request finishes its evaluation.**
 
 ## Enable the public parameter mode

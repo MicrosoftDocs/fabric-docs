@@ -42,7 +42,7 @@ Follow these steps to create an eventhouse, which automatically creaets a KQL da
 
 ## Add an IoT source to the eventstream
 
-1. In the Eventstream editor, expand the **New source** drop-down menu within the node and choose **Azure IoT Hub**.
+1. In the Eventstream editor, expand the **New source** dropdown menu within the node and choose **Azure IoT Hub**.
 
    :::image type="content" source="./media/add-iot-hub-source/add-iot-hub-source.png" alt-text="Screenshot that shows where to add an Azure IoT Hub source in the eventstream." lightbox="./media/add-iot-hub-source/add-iot-hub-source.png":::
 
@@ -63,7 +63,7 @@ Follow these steps to create an eventhouse, which automatically creaets a KQL da
 
    :::image type="content" source="./media/add-iot-hub-source/create-new-cloud-connection.png" alt-text="Screenshot that shows where to create a new cloud connection.":::
 
-    1. Select **Create new connection** from the drop-down menu, fill in the **Connection settings** and **Connection credentials** of your Azure IoT Hub, and then select **Create**.
+    1. Select **Create new connection** from the dropdown menu, fill in the **Connection settings** and **Connection credentials** of your Azure IoT Hub, and then select **Create**.
 
         :::image type="content" source="./media/add-iot-hub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows where to configure a new cloud connection." lightbox="./media/add-iot-hub-source/add-new-cloud-connection.png":::
 
@@ -83,7 +83,7 @@ Follow these steps to create an eventhouse, which automatically creaets a KQL da
 
 ## Add a Kusto destination to the eventstream
 
-1. In the Eventstream editor, expand the **New destination** drop-down menu within the destination node and choose **KQL Database**.
+1. In the Eventstream editor, expand the **New destination** dropdown menu within the destination node and choose **KQL Database**.
 
    :::image type="content" source="./media/add-iot-hub-source/add-kusto-destination.png" alt-text="Screenshot that shows where to add a kusto destination." lightbox="./media/add-iot-hub-source/add-kusto-destination.png":::
 
@@ -93,7 +93,7 @@ Follow these steps to create an eventhouse, which automatically creaets a KQL da
 
       - **Destination name**: Enter a name for this new destination, such as **kusto-dest**.
       - **Workspace**: Select the workspace associated with your Kusto database.
-      - **KQL Database**: Select your Kusto database from the drop-down menu, and then **Create and configure**.
+      - **KQL Database**: Select your Kusto database from the dropdown menu, and then **Create and configure**.
 
 3. You see a popup window helping you to complete the Kusto configuration. Select an existing table or create a new one for your IoTHub data stream. Enter the table name and select **Next**.
 
