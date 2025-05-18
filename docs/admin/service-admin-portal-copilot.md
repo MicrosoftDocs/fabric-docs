@@ -14,6 +14,7 @@ ms.collection: ce-skilling-ai-copilot
 ---
 
 # Copilot tenant settings
+
 Fabric Copilot settings are controlled by the **Copilot and Azure OpenAI Service** tenant settings group.​ There are multiple settings governing user access and data processing policies, and some of them are enabled by default whereas others require the Fabric administrator to enable them.
 
 For information about how to get to the Fabric tenant settings, see [About tenant settings - How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
@@ -27,6 +28,7 @@ For information about how to get to the Fabric tenant settings, see [About tenan
 * [Capacities can be designated as Fabric Copilot capacities](#fabric-copilot-capacities)
 * [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
 * [Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
+* [Users can access a standalone, cross-item Power BI Copilot experience (preview)](#stand-alone-experience)
 
 <a id="copilot-with-openai"></a> 
 ## Users can use Copilot and other features powered by Azure OpenAI
@@ -65,6 +67,15 @@ For more information, visit the [Available regions](../fundamentals/copilot-fabr
 Copilot capacities enable users' usage and billing to be consolidated under a single capacity. Fabric administrators can assign specific groups or the entire organization to manage capacities as Fabric Copilot capacities. Capacity administrators must designate user access to each Copilot capacity and can view item names linked to users' Copilot activity in the Fabric capacity metrics app.
 
 :::image type="content" source="./media/service-admin-portal-copilot/fabric-copilot-capacity-tenant-setting.png" alt-text="Screenshot showing the tenant setting for data storage outside the capacity's region." lightbox="./media/service-admin-portal-copilot/fabric-copilot-capacity-tenant-setting.png":::
+
+**Default:** Disabled
+
+<a id="stand-alone-experience"></a>
+## Users can access a standalone, cross-item Power BI Copilot experience (preview)
+
+You can enable copilot as a standalone experience for Fabric. Enabling this setting allows users to access the standalone Copilot experience from the left navigation. The [Azure OpenAI setting](#copilot-with-openai) must be enabled at the tenant levelto use the standalone experience. To learn more, see [standalone Copilot experience](/power-bi/create-reports/copilot-enable-power-bi).
+
+:::image type="content" source="./media/service-admin-portal-copilot/copilot-standalone.png" alt-text="Screenshot showing the tenant setting for standalone Copilot." lightbox="./media/service-admin-portal-copilot/copilot-standalone.png":::
 
 **Default:** Disabled
 
