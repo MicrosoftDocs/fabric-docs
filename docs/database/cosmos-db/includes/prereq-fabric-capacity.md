@@ -7,4 +7,4 @@ ms.date: 05/19/2025
 
 - An existing Fabric capacity
 
-  - If you don't have Fabric capacity, [start a Fabric trial](../../fundamentals/fabric-trial.md).
+  - If you don't have Fabric capacity, [start a Fabric trial](../../../fundamentals/fabric-trial.md).

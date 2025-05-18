@@ -9,4 +9,4 @@ ms.date: 05/19/2025
 
 - An existing Cosmos DB database in Fabric
 
-  - If you don't have one already, [create a new Cosmos DB database in Fabric](quickstart-portal.md).
+  - If you don't have one already, [create a new Cosmos DB database in Fabric](../quickstart-portal.md).
