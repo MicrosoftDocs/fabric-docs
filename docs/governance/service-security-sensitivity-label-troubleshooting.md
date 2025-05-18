@@ -82,7 +82,7 @@ When you export a report with a protected sensitivity label from the Power BI se
 
 ### I can see a report and semantic model in the Power BI service, but when I download them to pbix, I get a message that says I don't have sufficient permissions to open the file
 
-In the Power BI service, sensitivity labeling doesn't affect access to content. Access to content in the service is determined solely by the permissions a user has on the content. While the labels are visible in the service, any associated encryption settings (configured in the Microsoft Purview compliance portal) aren't applied. They're applied only to data that leaves the service via [supported export paths](/power-bi/enterprise/service-security-sensitivity-label-overview#supported-export-paths).
+In the Power BI service, sensitivity labeling doesn't affect access to content. Access to content in the service is determined solely by the permissions a user has on the content. While the labels are visible in the service, any associated encryption settings (configured in the Microsoft Purview portal) aren't applied. They're applied only to data that leaves the service via [supported export paths](/power-bi/enterprise/service-security-sensitivity-label-overview#supported-export-paths).
 
 In Power BI Desktop, sensitivity labels with encryption settings affect access to content. If a user doesn't have sufficient permissions according to the encryption settings of the sensitivity label on the *.pbix* file, they won't be able to open the file. In addition, in Desktop, when you save your work, any sensitivity label you've added and its associated encryption settings will be applied to the saved *.pbix* file.
 
