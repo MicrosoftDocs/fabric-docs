@@ -122,16 +122,73 @@ Finally, use the Azure SDK to connect to the Cosmos DB database in Fabric using 
 :::zone pivot="dev-lang-python"
 
 ```python
+from azure.cosmos import CosmosClient
+from azure.identity import DefaultAzureCredential
 
+endpoint = "<cosmos-db-fabric-endpoint>"
+
+credential = DefaultAzureCredential()
+
+client = CosmosClient(endpoint, credential=credential)
+
+container = client.get_database_client("<database-name>").get_container_client("<container-name>")
+
+nosql = "SELECT TOP 10 VALUE item.id FROM items AS item"
+
+results = container.query_items(
+    query=nosql,
+    enable_cross_partition_query=True,
+)
+
+items = [item for item in results]
+
+for item in items:
+    print(item)
 ```
+
+> [!NOTE]
+> This sample uses the [`azure-identity`](https://pypi.org/project/azure-identity/) and [`azure-cosmos`](https://pypi.org/project/azure-cosmos/) packages from PyPI.
+
 
 :::zone-end
 
 :::zone pivot="dev-lang-typescript"
 
 ```typescript
+import { Container, CosmosClient, CosmosClientOptions } from '@azure/cosmos'
+import { TokenCredential, AzureCliCredential } from '@azure/identity'
 
+run();
+
+async function run() {
+    let endpoint: string = '<cosmos-db-fabric-endpoint>';
+
+    let credential: TokenCredential = new AzureCliCredential();
+
+    let options: CosmosClientOptions = {
+        endpoint: endpoint,
+        aadCredentials: credential
+    };
+
+    const client: CosmosClient = new CosmosClient(options);
+
+    const container: Container = client.database('<database-name>').container('<container-name>');
+
+    const nosql = 'SELECT TOP 10 VALUE item.id FROM items AS item';
+
+    const querySpec = {
+        query: nosql
+    }
+
+    let response = await container.items.query(querySpec).fetchAll();
+    for (let item of response.resources) {
+        console.log(item);
+    }
+}
 ```
+
+> [!NOTE]
+> This sample uses the [`@azure/identity`](https://www.npmjs.com/package/@azure/identity) and [`@azure/cosmos`](https://www.npmjs.com/package/@azure/cosmos) packages from npm.
 
 :::zone-end
 
@@ -166,7 +223,7 @@ while (iterator.HasMoreResults)
 ```
 
 > [!NOTE]
-> This sample uses the [`Azure.Identity`]() and [`Microsoft.Azure.Cosmos`]() packages from NuGet.
+> This sample uses the [`Azure.Identity`](https://www.nuget.org/packages/Azure.Identity) and [`Microsoft.Azure.Cosmos`](https://www.nuget.org/packages/Microsoft.Azure.Cosmos) packages from NuGet.
 
 :::zone-end
 
