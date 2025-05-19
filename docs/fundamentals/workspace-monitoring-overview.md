@@ -69,7 +69,7 @@ You can explore workspace monitoring using Power BI reports and Real-time dashbo
 
 * [Throttling](../enterprise/throttling.md)
     * Monitoring Eventstream and Eventhouse operations arn't impacted by the state of the capacity. When the capacity is throttled, the queries on the monitoring Eventhouse and the Eventstream ingestion operations continue to function normally. There's also no impact to real-time dashboards built on top of the monitoring database.
-    * Power BI reports or data activator alerts, built on top of the monitoring database respect the capacity state and get throttled.
+    * Power BI reports or Activator alerts, built on top of the monitoring database respect the capacity state and get throttled.
 
 ## Related content
 
