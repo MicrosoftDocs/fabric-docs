@@ -205,6 +205,16 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Credential update in Google Analytics connections fails with JSON error
+      href: ../known-issues/known-issue-1138-credential-update-google-analytics-connections-fails.md
+    - name: Transient failure for deploying User data functions welcome templates
+      href: ../known-issues/known-issue-1137-failure-deploying-user-data-functions-welcome-templates.md
+    - name: Scrolling through workspaces in OneLake Catalog doesn't work
+      href: ../known-issues/known-issue-1136-scrolling-workspaces-onelake-catalog-not-work.md
+    - name: Explore mode within digital twin builder unexpectedly empty
+      href: ../known-issues/known-issue-1125-explore-mode-digital-twin-builder-unexpectedly-empty.md
+    - name: Digital twin builder mapping fails with concurrent update error
+      href: ../known-issues/known-issue-1124-digital-twin-builder-mapping-fails-concurrent-update-error.md
     - name: Throttling issues with the Mirrored Azure Databricks catalog shortcuts
       href: ../known-issues/known-issue-1135-throttling-issues-mirrored-azure-databricks-catalog-shortcuts.md
     - name: Multiple dataflow staging items created in workspace
