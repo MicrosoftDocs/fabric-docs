@@ -1,5 +1,5 @@
 ---
-title: Query acceleration for OneLake shortcuts - overview (preview)
+title: Query acceleration for OneLake shortcuts - overview
 description: Overview on learning how to use the query acceleration policy over OneLake shortcuts to improve query performance and reduce latency for external delta tables.
 ms.reviewer: sharmaanshul
 ms.author: shsagir
@@ -9,7 +9,7 @@ ms.custom:
 ms.date: 11/19/2024
 # Customer intent: Learn how to use the query acceleration policy to accelerate queries over shortcuts and external delta tables.
 ---
-# Query acceleration for OneLake shortcuts - overview (preview)
+# Query acceleration for OneLake shortcuts - overview
 
 OneLake shortcuts are references from an Eventhouse that point to internal Fabric or external sources. This kind of shortcut is later accessed for query in [KQL querysets](create-query-set.md) by using the [`external_table()` function](/kusto/query/external-table-function). Queries run over OneLake shortcuts can be less performant than on data that is ingested directly to Eventhouses due to various factors such as network calls to fetch data from storage, the absence of indexes, and more. 
 
@@ -60,6 +60,6 @@ Charges related to query acceleration will appear in the Fabric [metrics app](..
 
 ## Related content
 
-* [Query acceleration over OneLake shortcuts (preview)](query-acceleration.md)
+* [Query acceleration over OneLake shortcuts](query-acceleration.md)
 * [OneLake shortcuts](onelake-shortcuts.md)
 * [Query acceleration policy](https://go.microsoft.com/fwlink/?linkid=2296196)

@@ -4,7 +4,7 @@ description: Step-by-step instructions to enable and configure SQL Audit Logs on
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: fresantos
-ms.date: 03/31/2025
+ms.date: 05/09/2025
 ms.topic: how-to
 ms.search.form: Warehouse SQL Audit Logs # This article's title should not change. If so, contact engineering.
 ---
@@ -27,7 +27,7 @@ In the preview of Microsoft Fabric, enabling SQL Audit Logs requires using the A
 
 ### [Browser developer tools](#tab/browser)
 
-1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge or Google Chrome).
+1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge).
 1. Press **F12** to open Developer Tools. 
 1. Select the **Console** tab. If necessary, select **Expand Quick View** to reveal the console prompt `>`.
 1. Type the command `powerBIAccessToken` and press **Enter**. Right-click on the large unique string returned in the console and select **Copy string contents**.

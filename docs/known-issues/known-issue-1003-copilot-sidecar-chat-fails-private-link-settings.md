@@ -4,7 +4,7 @@ description: A known issue is posted where Copilot sidecar chat fails with certa
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 01/28/2025
+ms.date: 05/09/2025
 ms.custom: known-issue-1003
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1003
 
 Copilot sidecar chat when you enable private link on your Fabric tenant and disabled public network access.
 
-**Status:** Open
+**Status:** Fixed: May 9, 2025
 
 **Product Experience:** Databases
 

@@ -4,7 +4,7 @@ description: A known issue is posted where PubSub Subscriptions disappear from A
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/05/2025
+ms.date: 05/19/2025
 ms.custom: known-issue-1043
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1043
 
 You can create an alert and eventstream subscription from the Real-Time hub. Minutes after creation, you don't see the subscription from the level 2 view of the Real-Time hub.
 
-**Status:** Open
+**Status:** Fixed: May 19, 2025
 
 **Product Experience:** Real-Time Intelligence
 

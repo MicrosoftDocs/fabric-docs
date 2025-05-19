@@ -30,7 +30,9 @@ Specifically, in this tutorial, you learn how to:
 > * Get data in the Real-Time hub
 > * Transform events
 > * Publish an eventstream
+> * Subscribe to Fabric Events
 > * Use update policies to transform data in Eventhouse
+> * Use Copilot to create a KQL query
 > * Create a KQL query
 > * Create an alert based on a KQL query
 > * Create a Real-Time dashboard
