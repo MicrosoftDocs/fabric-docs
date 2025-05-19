@@ -31,6 +31,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/admin/service-admin-portal-protection-metrics.md",
+            "redirect_url": "/fabric/governance/use-microsoft-purview-hub",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/admin/service-admin-portal-content-pack-app.md",
             "redirect_url": "/fabric/admin/service-admin-portal-app",
             "redirect_document_id": false
