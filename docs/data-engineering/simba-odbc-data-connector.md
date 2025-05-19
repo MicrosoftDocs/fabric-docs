@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: sngun
 author: SnehaGunda
 ms.topic: how-to
-ms.date: 05/04/2025
+ms.date: 05/19/2025
 ms.devlang: python
 #customer intent: As a Microsoft Fabric user I want to learn about the Simba ODBC Data Connector for Microsoft Fabric Data Engineering, detailing its features, installation, and configuration processes.
 ---
