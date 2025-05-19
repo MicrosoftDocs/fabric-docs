@@ -83,7 +83,6 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | Cognite Data Fusion (Rest API) | ✓/− |  |  | 
 | Common Data Service (legacy) | ✓/− |  |  | 
 | Data Virtuality LDW | ✓/− |  |  | 
-| Fabric Data Warehouse | ✓/✓ | ✓/✓ | ✓/✓ | 
 | Databricks | ✓/− |  |  | 
 | Dataflows | ✓/− |  |  | 
 | Datamarts (Beta) | ✓/− |  |  | 
@@ -106,7 +105,11 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | eWay-CRM | ✓/− |  |  | 
 | Exact Online Premium (Beta) | ✓/− |  |  | 
 | Exasol | ✓/− |  |  | 
-| Excel workbook | ✓/− |  |  | 
+| Excel workbook | ✓/− |  |  |
+| Fabric Data Warehouse | ✓/✓ | ✓/✓ | ✓/✓ |  
+| Fabric KQL Database | ✓/− | ✓/✓ |  | 
+| Fabric Lakehouse | ✓/✓ | ✓/✓ | ✓/✓ | 
+| Fabric SQL database  | ✓/✓ | ✓/✓ | ✓/✓ | 
 | FactSet Analytics | ✓/− |  |  | 
 | FactSet RMS (Beta) | ✓/− |  |  | 
 | FHIR | ✓/− |  |  | 
@@ -135,11 +138,9 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | Jethro (Beta) | ✓/− |  |  | 
 | JSON | ✓/− |  |  | 
 | Kognitwin | ✓/− |  |  | 
-| Fabric KQL Database | ✓/− | ✓/✓ |  | 
 | KX kdb Insights Enterprise (Beta) | ✓/− |  |  | 
 | Kyligence | ✓/− |  |  | 
 | Kyvos ODBC (Beta) | ✓/− |  |  | 
-| Fabric Lakehouse | ✓/✓ | ✓/✓ | ✓/✓ | 
 | LEAP (Beta) | ✓/− |  |  | 
 | Linkar PICK Style / MultiValue Databases (Beta) | ✓/− |  |  | 
 | LinkedIn Learning | ✓/− |  |  | 
@@ -199,7 +200,6 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | SolarWinds Service Desk | ✓/− |  |  | 
 | Solver | ✓/− |  |  | 
 | Spark | ✓/− |  |  | 
-| Fabric SQL database  | ✓/✓ | ✓/✓ | ✓/✓ | 
 | SQL Server database | ✓/− | ✓/✓ | ✓/✓ | 
 | Starburst | ✓/− |  |  | 
 | Starburst secured by Entra ID | ✓/− |  |  | 
