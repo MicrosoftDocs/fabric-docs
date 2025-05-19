@@ -6,7 +6,7 @@ author: shsagir
 ms.author: shsagir
 ms.topic: how-to
 ms.custom:
-ms.date: 04/14/2025
+ms.date: 05/19/2025
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
