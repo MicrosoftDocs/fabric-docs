@@ -186,6 +186,12 @@ items:
     displayName: Query using time travel
   - name: Query data with a T-SQL notebook
     href: ../data-engineering/author-tsql-notebook.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+  - name: Warehouse snapshots
+    href: warehouse-snapshot.md
+    displayName: Snapshot
+  - name: Create and manage a warehouse snapshot
+    href: create-manage-warehouse-snapshot.md
+    displayName: Create a warehouse snapshot
 - name: Data recovery
   items:
   - name: Restore in-place
