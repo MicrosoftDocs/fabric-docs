@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Managed I
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 05/08/2025
+ms.date: 05/19/2025
 ms.topic: tutorial
 ---
 
@@ -24,6 +24,7 @@ ms.topic: tutorial
 - Enable the Fabric tenant setting [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis). To learn how to enable tenant settings, see [About tenant settings](../../admin/about-tenant-settings.md).
 - Networking requirements for Fabric to access your Azure SQL Managed Instance:
   - If your Azure SQL Managed Instance is not publicly accessible, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
+  - If you want to connect to Azure SQL Managed Instance's public endpoint without data gateway, you need to allow inbound traffic from Power BI and Data Factory service tags or from Azure Cloud service tag in the network security group. Learn more from [Configure public endpoints in Azure SQL Managed Instance](/azure/azure-sql/managed-instance/public-endpoint-configure).
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL Managed Instance
 
