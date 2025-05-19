@@ -6,7 +6,7 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 05/05/2025
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -33,10 +33,7 @@ To add an Eventhouse as a destination, you can choose between two ingestion mode
 
 ### Direct ingestion mode
 
-Direct ingestion mode ingests your event data directly into the Eventhouse without any processing. You can use direct ingestion mode to add an Eventhouse destination to your default stream.
-
-> [!IMPORTANT]
-> You can use **Direct ingestion** only for your default stream. Direct ingestion can't follow processing operators or derived streams. If you want to add an Eventhouse destination after processing operators or derived streams, use **Event processing before ingestion** instead.
+Direct ingestion mode ingests your event data directly into the Eventhouse without any processing. You can use direct ingestion mode to add an Eventhouse destination to your default stream or a dervived stream. 
 
 1. In **Edit mode** for your eventstream, select **Add destination** on the ribbon or select the **Transform events or add destination** card on the canvas, and then select **Eventhouse**. 
 

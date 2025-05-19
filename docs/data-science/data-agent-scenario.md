@@ -170,15 +170,7 @@ FROM (
 
 Now that you configured the Fabric data agent, added Fabric data agent instructions, and provided example queries for the lakehouse, you can interact with it by asking questions and receiving answers. As you continue testing, you can add more examples, and refine the instructions, to further improve the performance of the Fabric data agent. Collaborate with your colleagues to gather feedback, and based on their input, ensure the provided example queries and instructions align with the types of questions they want to ask.
 
-## Use the Fabric data agent programmatically
-
-You can use the Fabric data agent programmatically within a Fabric notebook. To determine whether or not the Fabric data agent has a published URL value, select **Settings**, as shown in this screenshot:
-
-:::image type="content" source="./media/data-agent-scenario/initial-data-agent-settings.png" alt-text="Screenshot showing selection of Fabric data agent settings." lightbox="./media/data-agent-scenario/initial-data-agent-settings.png":::
-
-Before you publish the Fabric data agent, it doesn't have a published URL value, as shown in this screenshot:
-
-:::image type="content" source="./media/data-agent-scenario/fabric-notebook-data-agent-no-published-url-value.png" alt-text="Screenshot showing that a Fabric data agent doesn't have a published URL value before publication." lightbox="./media/data-agent-scenario/fabric-notebook-data-agent-no-published-url-value.png":::
+## Publish the Fabric data agent
 
 After you validate the performance of the Fabric data agent, you might decide to publish it so you can then share it with your colleagues who want to do Q&A over data. In this case, select **Publish**, as shown in this screenshot:
 
@@ -192,7 +184,29 @@ In this box, select **Publish** to publish the Fabric data agent. The published 
 
 :::image type="content" source="./media/data-agent-scenario/fabric-notebook-data-agent-published-url-value.png" alt-text="Screenshot showing the published URL." lightbox="./media/data-agent-scenario/fabric-notebook-data-agent-published-url-value.png":::
 
-You can then copy the published URL and use it in the Fabric notebook. This way, you can query the Fabric data agent by making calls to the Fabric data agent API in a Fabric notebook. Paste the copied URL in this code snippet. Then, replace the question with any query relevant to your Fabric data agent. This example uses `\<generic published URL value\>` as the URL.
+## Use the Fabric data agent in Copilot in Power BI
+
+You can use the Copilot in Power BI to interact with the Fabric data agent after you publish it. With Copilot in Power BI, you can directly consume the data agent and other items (for example, reports, or semantic models) without needing to switch between them.
+
+Select the **Copilot** button on the left navigation pane, to open the Copilot in Power BI. Next, select **Add items for better results** in the text box at the bottom, to add the data agent. Select **Data agents** in the window that opens. You can only see the data agents that you have permission to access. Choose the data agent you want and select **Confirm**. This example shows how to work with a single data agent, but you can add more items - for example, other data agents, reports, or semantic models. The following screenshot illustrates the steps with a single data agent:
+
+:::image type="content" source="./media/data-agent-scenario/copilot-in-powerbi-add-agent.png" alt-text="Screenshot showing the Copilot button and button to add items such as Data Agents." lightbox="./media/data-agent-scenario/copilot-in-powerbi-add-agent.png":::
+
+Now that you added the data agent to the Copilot in Power BI, you can ask any questions related to your Fabric data agent, as shown in the following screenshot:
+
+:::image type="content" source="./media/data-agent-scenario/copilot-in-powerbi-chat.png" alt-text="Screenshot showing the Copilot answering a question." lightbox="./media/data-agent-scenario/copilot-in-powerbi-chat.png":::
+
+## Use the Fabric data agent programmatically
+
+You can use the Fabric data agent programmatically within a Fabric notebook. To determine whether or not the Fabric data agent has a published URL value, select **Settings**, as shown in the following screenshot:
+
+:::image type="content" source="./media/data-agent-scenario/initial-data-agent-settings.png" alt-text="Screenshot showing selection of Fabric data agent settings." lightbox="./media/data-agent-scenario/initial-data-agent-settings.png":::
+
+Before you publish the Fabric data agent, it doesn't have a published URL value, as shown in the following screenshot:
+
+:::image type="content" source="./media/data-agent-scenario/fabric-notebook-data-agent-no-published-url-value.png" alt-text="Screenshot showing that a Fabric data agent doesn't have a published URL value before publication." lightbox="./media/data-agent-scenario/fabric-notebook-data-agent-no-published-url-value.png":::
+
+If you haven't published the Fabric data agent before, you can publish it following the instructions in the previous steps. You can then copy the published URL and use it in the Fabric notebook. This way, you can query the Fabric data agent by making calls to the Fabric data agent API in a Fabric notebook. Paste the copied URL in this code snippet. Then, replace the question with any query relevant to your Fabric data agent. This example uses `\<generic published URL value\>` as the URL.
 
 ```python
 %pip install "openai==1.70.0"

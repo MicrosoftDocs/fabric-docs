@@ -96,6 +96,10 @@ For more information, see [Limitations on charts with a time axis](activator-get
 
 Each recipient of an email notification must have an internal email address. The recipient must belong to the organization that owns the Fabric tenant. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] doesn't allow email notifications to be sent to either external email addresses or guest email addresses.
 
+## Allowed chats and channel for Teams notifications
+
+For Teams group chats, only recently active chats are enabled for selection. If the chat you are looking for isn't displayed in Activator, send a message to the chat to ensure it's recently active. Additionally, for Teams channels, only shared channels are displayed and available. Sending messages to [private channels](https://aka.ms/TeamsPrivateChannel) isn't enabled.
+
 ## Maximum data for rule processing limits
 
 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] has a limit on the number of events that are processed in a rule based on the type of data being used in the rule. If your rule exceeds the maximum, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] stops your rule. For eventstreams, the maximum is 1,000 events per second.

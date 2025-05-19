@@ -32,7 +32,7 @@ Real-Time Intelligence revolutionizes this landscape by harnessing the full pote
 - **Rapid solution development**: Empower team members of varying expertise to extract more value from data and quickly build solutions on top it for further business growth.
 - **Insights powered by real-time AI**: Scale manual monitoring and effortlessly initiate actions with ready-to-use, automated features that uncover hidden patterns, and fully use the Microsoft ecosystem to drive your business forward.
 
-:::image type="content" source="media/real-time-intelligence-compare/real-time-intelligence-architecture.png" alt-text="Diagram showing the solution architecture using Real-Time Intelligence." lightbox="media/real-time-intelligence-compare/real-time-intelligence-architecture.png":::
+:::image type="content" source="media/overview/overview-schematic.png" alt-text="Diagram showing the solution architecture using Real-Time Intelligence." lightbox="media/overview/overview-schematic.png":::
 
 This article outlines key considerations for determining the most suitable implementation architecture tailored to your streaming use cases:
 
@@ -58,6 +58,7 @@ This article outlines key considerations for determining the most suitable imple
 | Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
 | **Data profiling** | Not available | Data profiling view of your real-time tables provides out-of-the-box histograms and min-max ranges for each column. |
+| **Digital twin modeling** | Azure Digital Twins | Digital twin builder (preview) |
 | **Visual data exploration** | Not available | Drag-and-drop features to visually analyze your real-time data. |
 | **Copilot experience** | Azure Data Explorer cluster can be added as a source in Fabric KQL Queryset to use Copilot capabilities. | Natively available |
 | **Built-in ML models** | Anomaly detection and forecasting models available. Pro development required to deploy anomaly detection and forecasting models. | Anomaly detection and forecasting models available. Business users can also apply anomaly detection models on incoming streaming data. |
