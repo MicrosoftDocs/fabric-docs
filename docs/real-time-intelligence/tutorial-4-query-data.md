@@ -17,16 +17,14 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 3: Transform data in a KQL database](tutorial-3-transform-kql-database.md).
 
-In this part of the tutorial, you learn how to query your streaming data using KQL. You write a KQL query and visualize the data in a time chart.
+In this part of the tutorial, you learn how to query your streaming data. You use a few different methods to query- using T-SQL, by using `explain` to convert SQL to KQL. You use the Copilot to generate a KQL query, and also write KQL queries. You also use KQL queries to visualize the data in a time chart.
+    
 
 ## Write a KQL query
 
 The name of the table you created from the update policy in a previous step is *TransformedData*. Use this table name (case-sensitive) as the data source for your query.
 
-> [!TIP]
-> If you have a sufficient subscription, you can use the Copilot feature to help you write queries. Copilot provides queries based on data in your table and natural language prompts. For more information, see [Copilot for Real-Time Intelligence (preview)](../fundamentals/copilot-real-time-intelligence.md)
-
-1. Enter the following query. Then press **Shift + Enter** to run the query.
+- Enter the following query. Then press **Shift + Enter** to run the query.
 
     ```kusto
     TransformedData
@@ -61,10 +59,56 @@ In this step, you create a materialized view, which returns an up-to-date result
     | render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)
     ```
 
-You will use this query in the next step to create a Real-Time dashboard.
+You'll use this query in a later step to create a Real-Time dashboard.
 
 > [!IMPORTANT]
 > If you missed any of the steps used to create the tables, update policy, function, or materialized views, use this script to create all required resources: [Tutorial commands script](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/tutorial-commands-script.kql).
+
+
+## Query using T-SQL
+
+The query editor supports the use of T-SQL. 
+
+- Enter the following query. Then press **Shift + Enter** to run the query.
+    
+    ```kusto
+    SELECT top(10) *
+    FROM AggregatedData
+    ORDER BY No_Bikes DESC
+    ```
+
+This query returns the top 10 bike stations with the most bikes, sorted in descending order.
+
+## Convert a SQL query to KQL
+
+To get the equivalent KQL for a T-SQL SELECT statement, add the keyword `explain` before the query. The output will be the KQL version of the query, which can then be copied and run in the KQL query editor.
+
+- Enter the following query. Then press **Shift + Enter** to run the query.
+
+    ```kusto
+    explain
+    SELECT top(10) *
+    FROM AggregatedData
+    ORDER BY No_Bikes DESC
+    ```
+
+This query returns a KQL equivalent of the T-SQL query you entered. The KQL query is displayed in the output pane. Try copy/pasting the output and running the query. Note that this query may not be written in optimized KQL.
+    
+## Use Copilot to generate a KQL query
+
+If you're new to writing KQL, you can ask a question in natural language and Copilot will generate the KQL query for you.
+
+1. In the KQL queryset, select the **Copilot** icon from the menu bar.
+1. Enter a question in natural language. For example, "Which station has the most bikes right now. Use the materialized view for the most updated data." It can help to include the name of the materialized view in your question.
+
+    The copilot will suggest a query based on your question.
+1. Select the **Insert** button to insert the query into the KQL editor.
+
+    :::image type="content" source="media/tutorial/copilot.png" alt-text="Screenshot of copilot dialog.":::
+
+1. Select **Run** to run the query.
+
+You can ask follow-up questions or change the scope of your query. Use this feature to help you learn KQL and to generate queries quickly.
 
 ## Related content
 
@@ -74,6 +118,8 @@ For more information about tasks performed in this tutorial, see:
 * [render operator](/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer?context=/fabric/context/context&pivots=fabric)
 * [Materialized views overview](/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric&preserve-view=true)
 * [Create materialized views](materialized-view.md)
+* [Query data using T-SQL](/kusto/query/t-sql?view=microsoft-fabric&preserve-view=true)
+* [Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence.md)
 
 ## Next step
 
