@@ -34,17 +34,17 @@ It's seamless to incorporate these functions as part of data-science and data-en
 
 - To use AI functions with Fabric's built-in AI endpoint, your administrator needs to enable [the tenant switch for Copilot and other features powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
 - Depending on your location, you may need to enable a tenant setting for cross-geo processing. Learn more [here](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
-- You also need an F2 or higher SKU or a P SKU. If you use a trial SKU, you can also bring your own Azure Open AI resource.
+- You also need an F2 or higher SKU or a P SKU. If you use a trial SKU, you can bring your own Azure Open AI resource.
 
 > [!NOTE]
 >
 > - AI functions are supported in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
-> - AI functions use the **gpt-4o mini** model by default. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
+> - AI functions use the **gpt-4o-mini (2024-07-18)** model by default. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
 > - Most of the AI functions are optimized for use on English-language texts.
 
 ## Getting started with AI functions
 
-Use of the AI functions library in a Fabric notebook currently requires certain custom packages. The following code installs and imports those packages. Afterward, you can use AI functions with pandas or PySpark, depending on your preference.
+Using AI functions in Fabric notebooks requires certain custom packages, which are preinstalled on the Fabric runtime. For the latest features and bugfixes, you can run the following code to install and import the most up-to-date packages. Afterward, you can use AI functions with pandas or PySpark, depending on your preference.
 
 This code cell installs the AI functions library and its dependencies.
 
