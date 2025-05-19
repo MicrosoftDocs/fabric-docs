@@ -12,7 +12,7 @@ ms.search.form: VSCodeExtension
 
 # Create and manage Microsoft Fabric notebooks inside Visual Studio Code for the web
 
-Visual Studio Code for the web offers a free, browser-based experience with no installation required. It enables quick and secure browsing of code repositories and lightweight edits. To get started, visit the [VS Code Dev site](https://vscode.dev).
+Visual Studio (VS) Code for the web offers a free, browser-based experience with no installation required. It enables quick and secure browsing of code repositories and lightweight edits. To get started, visit the [VS Code Dev site](https://vscode.dev).
 
 The Fabric Data Engineering VS Code extension can also be used in the VS Code for the Web experience. The extension supports the create, read, update, and delete (CRUD) notebook experience in Fabric. The changes from the VS Code for the Web experience are applied to the workspace immediately. The extension also supports running notebooks in the VS Code for the web experience.
 
