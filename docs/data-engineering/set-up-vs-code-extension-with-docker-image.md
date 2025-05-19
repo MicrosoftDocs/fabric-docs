@@ -10,9 +10,9 @@ ms.date: 03/11/2025
 ms.search.form: VSCodeExtension
 ---
 
-# Use Docker containers with Fabric Data Engineering VS Code extension
+# Use Docker containers with Fabric Data Engineering Visual Studio Code extension
 
-To use the Fabric Data Engineering VS Code extension, certain prerequisites, such as a ready JDK environment, must be met. To simplify the setup process, we developed a new feature that integrates with the [VS Code Dev Container](https://code.visualstudio.com/docs/devcontainers/containers). This feature enables you to open the Data Engineering VS Code extension in a container with all necessary prerequisites already installed, making it easier for users to get started.
+To use the Fabric Data Engineering Visual Studio (VS) Code extension, certain prerequisites, such as a ready JDK environment, must be met. To simplify the setup process, we developed a new feature that integrates with the [VS Code Dev Container](https://code.visualstudio.com/docs/devcontainers/containers). This feature enables you to open the Data Engineering VS Code extension in a container with all necessary prerequisites already installed, making it easier for users to get started.
 
 The Data Engineering VS Code extension seamlessly integrates with Docker containers, providing a consistent development environment across different platforms. This feature allows you to work with supported Fabric items, such as notebooks, within a containerized environment that is isolated from your local machine. The containerized environment ensures that all necessary dependencies are installed and configured correctly. It allows you to focus on developing your notebooks without concerns about the environment setup.
 
