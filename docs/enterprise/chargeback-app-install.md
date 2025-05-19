@@ -14,15 +14,15 @@ The *Microsoft Fabric Chargeback* app, also known as the *chargeback app*, is de
 
 ## Prerequisites
 
-- You must be an admin of at least one capacity in your organization. Please visit the [Capacity settings](docs/admin/capacity-settings.md) documentation to learn how to check your admin status.
+- You must be an admin of at least one capacity in your organization. Please visit the [Capacity settings](/docs/admin/capacity-settings.md) documentation to learn how to check your admin status.
 
-- Installation of preview applications may be restricted by your organization's tenant policy. If you're unable to install the app, contact your tenant admin and request that they enable the [Install template apps not listed in AppSource](docs/admin/tenant-settings-index.md) setting in the Power BI Admin portal.
+- Installation of preview applications may be restricted by your organization's tenant policy. If you're unable to install the app, contact your tenant admin and request that they enable the [Install template apps not listed in AppSource](/docs/admin/tenant-settings-index.md) setting in the Power BI Admin portal.
 
 ## Install the app
 
 Follow these steps to install the app from Microsoft AppSource.
 
-To avoid throttling due to capacity overutilization, install the app in a workspace with a [Pro license](/power-bi/fundamentals/service-features-license-type#pro-license).
+To avoid throttling due to capacity overutilization, install the app in a workspace with a [Pro license](../power-bi/fundamentals/service-features-license-type#pro-license).
 
 
 # [First time installation](#tab/1st)
@@ -124,7 +124,9 @@ To complete the installation, configure the Microsoft Fabric Chargeback app by r
 
 ### Considerations and limitations
 
-The Chargeback app is not supported in [government clouds](#government-clouds).
+* The Chargeback app is not supported in government clouds.
+
+* The Microsoft Fabric Chargeback app doesn't support environments that use [private links](../security/security-private-links-overview.md).
 
 ### Troubleshooting
 
@@ -138,8 +140,8 @@ After installing the app, if it's not showing data or can't refresh, follow thes
 
 ## Related content
 
-* [What is Fabric Chargeback app (preview)?](chageback-app.md)
+* [What is Fabric Chargeback app (preview)?](/docs/enterprise/chargeback-app.md)
   
-* [Chargeback Azure Reservation costs](azure-docs/articles/cost-management-billing/reservations/charge-back-usage.md)
+* [Chargeback Azure Reservation costs](../azure-docs/articles/cost-management-billing/reservations/charge-back-usage.md)
   
-* [View amortized benefit costs](azure-docs/articles/cost-management-billing/reservations/view-amortized-costs.md)
+* [View amortized benefit costs](../azure-docs/articles/cost-management-billing/reservations/view-amortized-costs.md)
