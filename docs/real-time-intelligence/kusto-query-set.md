@@ -90,9 +90,9 @@ Select the tab that corresponds with your desired data source type.
 
     | Replace \<SubscriptionID\>, \<WorkspaceName\> and \<ResourceGroupName\> with your own values.
 
-    For Log Analytics: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>'
+    For Log Analytics: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`
 
-    For Application Insights: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>'
+    For Application Insights: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`
 
 1. Select a **Database**. Expand the list and select a database.
 
@@ -109,6 +109,7 @@ Now that you're connected to your data source, you can run queries on this data.
 The following examples use data that is publicly available at [https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv](https://kustosamples.blob.core.windows.net/samplefiles/StormEvents.csv).
 
 1. Write or copy a query in the top pane of the KQL queryset.
+
 1. Select the **Run** button, or press **Shift**+**Enter** to run the query.
 
     The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query completed successfully, and the time used to compute the query results.
