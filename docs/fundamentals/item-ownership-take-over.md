@@ -104,7 +104,7 @@ This is a separate item from Dataflows Gen1 and Gen2. Refer to the creation expe
 
    If a mirrored database stops working because the item owner has left the organization or their credentials are disabled, create a new mirrored database.
 
-* The option to take over an item isn't available if the item is a system-generated item not visible or accessible to users in a workspace. For instance, a parent item might have system-generated child items - this can happen when items such as Eventstream items and Data Activator items are created through the Real-Time hub. In such cases, the take over option is not available for the parent item.
+* The option to take over an item isn't available if the item is a system-generated item not visible or accessible to users in a workspace. For instance, a parent item might have system-generated child items - this can happen when items such as Eventstream items and Activator items are created through the Real-Time hub. In such cases, the take over option is not available for the parent item.
 
 * Currently, there's no API support for changing ownership of Fabric items. This doesn't impact existing functionality for changing ownership of items such as semantic models, reports, dataflows gen1 and gen2, and datamarts, which continues to be available. For information about taking ownership of warehouses, see [Change ownership of Fabric Warehouse](/fabric/data-warehouse/change-ownership).
 
