@@ -61,6 +61,8 @@ Your application can now write initial load and incremental change data into the
 - Follow [Connecting to Microsoft OneLake](../../onelake/onelake-access-api.md) to authorize and write to the mirrored database landing zone in OneLake, using the [ADLS Gen2 API](/rest/api/storageservices/data-lake-storage-gen2).
 - Review the [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md) specifications.
 
+- Use the [Open Mirroring Python SDK](https://github.com/microsoft/fabric-toolbox/tree/main/tools/OpenMirroringPythonSDK) to get started! 
+
 ## Start mirroring process
 
 1. The **Configure mirroring** screen allows you to mirror all data in the database, by default.
