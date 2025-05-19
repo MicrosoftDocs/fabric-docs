@@ -4,21 +4,18 @@ description: Learn how to configure an open mirrored database in Microsoft Fabri
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur, maraki-ketema, maprycem
-ms.date: 04/04/2025
+ms.date: 05/02/2025
 ms.topic: tutorial
 ---
 
 # Tutorial: Configure Microsoft Fabric open mirrored databases
 
-In this tutorial, you configure an Open mirrored database in Fabric. This example guides you to create a new open mirrored database and learn how to land data into the landing zone. You'll get proficient with the concepts of open mirroring in Microsoft Fabric.
-
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
+In this tutorial, you configure an open mirrored database in Fabric. This example guides you to create a new open mirrored database and learn how to land data into the landing zone. You'll get proficient with the concepts of open mirroring in Microsoft Fabric.
 
 ## Prerequisites
 
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
     - The Fabric capacity needs to be active and running. A paused or deleted capacity will affect Mirroring and no data will be replicated.
-- During the current preview, the ability to create an open mirrored database via the Fabric portal is not available in all Fabric capacity regions.
 
 ## Create a mirrored database
 

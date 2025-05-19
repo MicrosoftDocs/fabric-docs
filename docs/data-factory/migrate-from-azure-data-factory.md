@@ -63,8 +63,8 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 | Support for all [Data Factory data sources](/power-query/connectors) | Yes | In progress<sup>3</sup> |
 | **Scalability** |||
 | Ensure seamless execution of activities in a pipeline with [scheduled runs](pipeline-runs.md) | Yes | Yes |
-| Schedule multiple runs for a single pipeline for flexible and efficient pipeline management | Yes | [Planned](/fabric/release-plan/shared-experiences#allow-multiple-schedulers-single-item) |
-| Utilize tumbling window triggers to schedule pipeline runs within distinct, nonoverlapping time windows | Yes | [Planned](/fabric/release-plan/data-factory#data-pipeline-support-tumbling-window-triggers) |
+| Schedule multiple runs for a single pipeline for flexible and efficient pipeline management | Yes | [Planned](https://aka.ms/fabricrm) |
+| Utilize tumbling window triggers to schedule pipeline runs within distinct, nonoverlapping time windows | Yes | [Planned](https://aka.ms/fabricrm) |
 | Event triggers to automate the execution of pipeline runs in response to specific or relevant event occurrences | Yes | Yes<sup>4</sup> |
 | **Artificial intelligence** |||
 | [Copilot for Data Factory](../get-started/copilot-fabric-data-factory.md), which provides intelligent pipeline generation to ingest data with ease and explanations to help better understand complex pipelines or to provide suggestions for error messages | No | Yes |
