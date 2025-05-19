@@ -1,17 +1,17 @@
 ---
-title: Confluent Kafka connector for Fabric event streams
-description: This include files has the common content for configuring Confluent Kafka connector for Fabric event streams and Real-Time hub. 
+title: Confluent Cloud for Apache Kafka connector for Fabric event streams
+description: This include files has the common content for configuring Confluent Cloud for Apache Kafka connector for Fabric event streams and Real-Time hub. 
 ms.author: xujiang1
 author: xujxu 
 ms.topic: include
 ms.custom:
-ms.date: 05/21/2024
+ms.date: 05/06/2025
 ---
 
-1. On the **Select a data source** page, select **Confluent**. 
+1. On the **Select a data source** page, select **Confluent Cloud for Apache Kafka**. 
 
     :::image type="content" source="./media/confluent-kafka-source-connector/select-confluent.png" alt-text="Screenshot that shows the selection of Confluent as the source type in the Get events wizard.":::
-1. To create a connection to the Confluent Cloud Kafka source, select **New connection**.
+1. To create a connection to the Confluent Cloud for Apache Kafka source, select **New connection**.
 
     :::image type="content" source="./media/confluent-kafka-source-connector/new-connection-link.png" alt-text="Screenshot that shows the selection of the New connection link on the Connect page of the Get events wizard.":::    
 1. In the **Connection settings** section, enter **Confluent Bootstrap Server**. Navigate to your Confluent Cloud home page, select **Cluster Settings**, and copy the address to your Bootstrap Server.      
@@ -27,8 +27,8 @@ ms.date: 05/21/2024
         1. Select **Connect**
 
             :::image type="content" source="./media/confluent-kafka-source-connector/confluent-connection-settings-page-1.png" alt-text="Screenshot that shows the first page of the Confluent connection settings.":::        
-1. Scroll to see the **Configure Confluent data source** section on the page. Enter the information to complete the configuration of the Confluent data source. 
-    1. For **Topic**, enter a topic name from your Confluent Cloud. You can create or manage your topic in the Confluent Cloud Console. 
+1. Scroll to see the **Configure Confluent Cloud for Apache Kafka data source** section on the page. Enter the information to complete the configuration of the Confluent data source. 
+    1. For **Topic name**, enter a topic name from your Confluent Cloud. You can create or manage your topic in the Confluent Cloud Console. 
     1. For **Consumer group**, Enter a consumer group of your Confluent Cloud. It provides you with the dedicated consumer group for getting the events from Confluent Cloud cluster. 
     1. For **Reset auto offset** setting, select one of the following values: 
         - **Earliest** – the earliest data available from your Confluent cluster

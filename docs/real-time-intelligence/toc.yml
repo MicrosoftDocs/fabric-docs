@@ -15,7 +15,7 @@ items:
     href: architecture-medallion.md
   - name: End to end sample
     href: sample-end-to-end.md
-  - name: End to end tutorial
+  - name: End to end tutorial - Real-Time-Intelligence
     items:
     - name: End to end tutorial - Introduction
       href: tutorial-introduction.md
@@ -35,6 +35,22 @@ items:
       href: tutorial-7-set-alert.md
     - name: 8- Clean up resources
       href: tutorial-8-clean-up-resources.md
+  - name: Digital twin builder in Real-Time Intelligence tutorial
+    items: 
+      - name: Digital twin builder in Real-Time Intelligence tutorial - Introduction
+        href: digital-twin-builder/tutorial-rti-0-introduction.md
+      - name: 1- Upload contextual data
+        href: digital-twin-builder/tutorial-rti-1-upload-contextual-data.md
+      - name: 2- Get and process streaming data
+        href: digital-twin-builder/tutorial-rti-2-get-streaming-data.md
+      - name: 3- Build the ontology
+        href: digital-twin-builder/tutorial-rti-3-build-ontology.md
+      - name: 4- Project to Eventhouse
+        href: digital-twin-builder/tutorial-rti-4-project-eventhouse.md
+      - name: 5- Query and visualize data
+        href: digital-twin-builder/tutorial-rti-5-query-and-visualize.md
+      - name: 6- Clean up resources
+        href: digital-twin-builder/tutorial-rti-6-clean-up-resources.md
 - name: User flows
   items:
   - name: "Discover and respond to events"
@@ -288,7 +304,9 @@ items:
       href: database-shortcut.md
     - name: Create an empty table
       href: create-empty-table.md
-    - name: Manage and monitor database tables    
+    - name: Edit table schema
+      href: edit-table-schema.md
+    - name: Manage and monitor tables    
       href: manage-monitor-table.md  
     - name: Data management
       items:
@@ -326,6 +344,62 @@ items:
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: real-time-intelligence-consumption.md
+- name: Model data
+  items:
+  - name: Get started with digital twin builder
+    items:
+    - name: What is digital twin builder?
+      href: digital-twin-builder/overview.md
+    - name: Digital twin builder tutorial
+      items:
+      - name: Tutorial introduction
+        href: digital-twin-builder/tutorial-0-introduction.md
+      - name: 1- Set up resources
+        href: digital-twin-builder/tutorial-1-set-up-resources.md
+      - name: 2- Add entities and map data
+        href: digital-twin-builder/tutorial-2-add-entities-map-data.md
+      - name: 3- Define relationships
+        href: digital-twin-builder/tutorial-3-define-relationships.md
+      - name: 4- Explore your ontology
+        href: digital-twin-builder/tutorial-4-explore-ontology.md
+      - name: 5- Create a Power BI report
+        href: digital-twin-builder/tutorial-5-power-bi-report.md
+      - name: 6- Clean up resources
+        href: digital-twin-builder/tutorial-6-clean-up-resources.md
+    - name: Role-based access control
+      href: digital-twin-builder/overview-rbac.md
+  - name: Concepts
+    items:
+    - name: Using the semantic canvas
+      href: digital-twin-builder/concept-semantic-canvas.md
+    - name: Modeling
+      href: digital-twin-builder/concept-modeling.md
+    - name: Mapping data to entities
+      href: digital-twin-builder/concept-mapping.md
+    - name: Flows
+      href: digital-twin-builder/concept-flows.md
+    - name: Integrating with Fabric tools
+      href: digital-twin-builder/concept-integrating-fabric.md
+    - name: Integrating with machine learning
+      href: digital-twin-builder/concept-integrating-machine-learning.md
+  - name: Build and explore models
+    items:
+    - name: Manage entities and mappings
+      href: digital-twin-builder/model-manage-mappings.md
+    - name: Perform contextualization
+      href: digital-twin-builder/model-perform-contextualization.md
+    - name: Search and visualize
+      href: digital-twin-builder/explore-search-visualize.md
+    - name: Connect to a Real-Time Dashboard
+      href: digital-twin-builder/explore-connect-dashboard.md
+  - name: Digital twin builder resources
+    items:
+    - name: Glossary
+      href: digital-twin-builder/resources-glossary.md
+    - name: Troubleshooting
+      href: digital-twin-builder/resources-troubleshooting.md
+    - name: FAQ
+      href: digital-twin-builder/resources-faq.md
 - name: Analyze and train data
   items:
   - name: Copilot for Real-Time Intelligence

@@ -1,34 +1,30 @@
 ---
-title: "Open Mirroring (Preview) Partner Ecosystem"
+title: "Open Mirroring Partner Ecosystem"
 description: Learn about the open mirrored databases partner ecosystem in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur, ulrichchrist, maraki-ketema
-ms.date: 04/24/2025
+ms.date: 05/03/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
 
-# Open mirroring (preview) partner ecosystem
+# Open mirroring partner ecosystem
 
-[Open mirroring in Microsoft Fabric (Preview)](open-mirroring.md) is designed to be extensible, customizable, and open. It's a powerful feature that extends Mirroring in Fabric based on open Delta Lake table format. This capability enables any data providers to write change data directly into a mirrored database item in Microsoft Fabric.
+[Open mirroring in Microsoft Fabric](open-mirroring.md) is designed to be extensible, customizable, and open. It's a powerful feature that extends Mirroring in Fabric based on open Delta Lake table format. This capability enables any data providers to write change data directly into a mirrored database item in Microsoft Fabric.
 
 The following are the open mirroring partners who have already built solutions to integrate with Microsoft Fabric.
 
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
-
-This page is updated during the current preview.
-
 ## Oracle GoldenGate 23ai
 
-Oracle GoldenGate 23ai integration into Microsoft Fabric via open mirroring. Any supported Oracle GoldenGate source including Oracle Database@Azure can replicate data into Mirrored Database in Microsoft Fabric. This powerful combination unlocks real-time data integration, continuously synchronizing data across your hybrid and multicloud environments. Mirrored Database in Microsoft Fabric as a destination is available through the GoldenGate for Distributed Applications and Analytics 23ai product.
+Oracle GoldenGate 23ai integration into Microsoft Fabric via open mirroring. Any supported Oracle GoldenGate source including Oracle Database@Azure can replicate data into a Mirrored Database in Microsoft Fabric. This powerful combination unlocks real-time data integration, continuously synchronizing data across your hybrid and multicloud environments. Mirrored Database in Microsoft Fabric as a destination is available through the GoldenGate for Distributed Applications and Analytics 23ai product.
 
 For more information, see [Oracle GoldenGate 23ai integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/oracle-goldengate-23ai-docs).
 
 ## Striim
 
-SQL2Fabric-Mirroring is a Striim solution that reads data from SQL Server and writes it to Microsoft Fabric's mirroring landing zone in Delta-Parquet format. Microsoft's Fabric replication service frequently picks up these files and replicates the file contents into Fabric data warehouse tables.
+All supported Striim sources including Oracle, SQL Server, and many others can be replicated in real-time into a Mirrored Database in Microsoft Fabric via open mirroring. Striim's streaming platform enables customers to unify data across databases, applications, and clouds in real time. Mirrored Database in Microsoft Fabric is supported as a destination through the Striim Cloud Enterprise and Striim SQL2Fabric-X products.
 
 For more information, see [Striim integration into open mirroring in Microsoft Fabric](https://aka.ms/mirroring/striim-docs).
 
@@ -42,6 +38,7 @@ For more information, see [MongoDB integration into open mirroring in Microsoft 
 
 dab Nexus is an SAP-certified solution for data extraction from SAP ECC and SAP S/4HANA (on-premises and Private Cloud Edition). It integrates with open mirroring to support near real-time analytics on SAP data in Microsoft Fabric.
 For an overview of dab Nexus, see [Effortless SAP Data Integration in Microsoft Fabric](https://aka.ms/mirroring/dab-mirroring-overview).
+
 For the technical documentation of dab Nexus, see [Quickstart Guide Managed App - dab:Help](https://aka.ms/mirroring/dab-mirroring-doc).
 
 ## Simplement

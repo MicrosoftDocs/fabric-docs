@@ -186,6 +186,12 @@ items:
     displayName: Query using time travel
   - name: Query data with a T-SQL notebook
     href: ../data-engineering/author-tsql-notebook.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+  - name: Warehouse snapshots
+    href: warehouse-snapshot.md
+    displayName: Snapshot
+  - name: Create and manage a warehouse snapshot
+    href: create-manage-warehouse-snapshot.md
+    displayName: Create a warehouse snapshot
 - name: Data recovery
   items:
   - name: Restore in-place
@@ -328,6 +334,24 @@ items:
       - name: Limitations 
         displayName: Limitations in mirrored Snowflake
         href: ../database/mirrored-database/snowflake-limitations.md
+  - name: Mirroring SQL Server
+    items: 
+      - name: Mirrored databases from SQL Server
+        href: ../database/mirrored-database/sql-server.md
+      - name: SQL Server tutorial
+        href: ../database/mirrored-database/sql-server-tutorial.md
+      - name: FAQ about mirrored SQL Server
+        displayName: Frequently asked questions about mirrored SQL Server
+        href: ../database/mirrored-database/sql-server-faq.yml
+      - name: Secure data 
+        displayName: Securing data in mirrored SQL Server
+        href: ../database/mirrored-database/sql-server-security.md
+      - name: Limitations 
+        displayName: Limitations in mirrored SQL Server
+        href: ../database/mirrored-database/sql-server-limitations.md
+      - name: Troubleshoot 
+        displayName: Troubleshoot mirrored SQL Server
+        href: ../database/mirrored-database/sql-server-troubleshoot.md
   - name: Open mirroring 
     items:
       - name: Open mirroring overview
