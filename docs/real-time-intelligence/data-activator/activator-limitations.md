@@ -98,7 +98,7 @@ Each recipient of an email notification must have an internal email address. The
 
 ## Allowed chats and channel for Teams notifications
 
-For Teams group chats, only recently active chats are enabled for selection. If the chat you are looking for is not shown in Activator, send a message to the chat to ensure it is recently active. Additionally, for Teams channels, only shared channels are listed as sending messages to [private channels](https://aka.ms/TeamsPrivateChannel) is not enabled.
+For Teams group chats, only recently active chats are enabled for selection. If the chat you are looking for is not displayed in Activator, send a message to the chat to ensure it is recently active. Additionally, for Teams channels, only shared channels are displayed and available. Sending messages to [private channels](https://aka.ms/TeamsPrivateChannel) is not enabled.
 
 ## Maximum data for rule processing limits
 
