@@ -80,7 +80,7 @@ Select the tab that corresponds with your desired data source type.
 
     1. Select the **Resource Group** from the drop-down list. Select the resource group that contains your Application Insights or Log Analytics resource.
     
-    1. Enter the **Workspace Name** for Log Analytics or the **Application Insights app name** for Application Insights. You can find the name in the Azure portal by selecting the Application Insights or Log Analytics resource > copy the Workspace name from the resource Overview tab.
+    1. Enter the **Workspace Name** for Log Analytics or the **Application Insights app name** for Application Insights. You can find the name in the Azure portal by selecting the Application Insights or Log Analytics resource.
     
     1. Select the **Application Insights** or **Log Analytics** resource from the drop-down list. This list is populated with the resources in your selected resource group.
 
@@ -88,7 +88,7 @@ Select the tab that corresponds with your desired data source type.
 
     1. Select **Connection URI** and enter your Connection URI in this format:
 
-    > | Replace \<subscription-id\>, \<resource-group-name\> and \<ai-app-name\> with your own values.
+    > Replace \<subscription-id\>, \<resource-group-name\> and \<ai-app-name\> with your own values.
 
     For Log Analytics: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`
 
