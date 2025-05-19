@@ -4,7 +4,7 @@ description: A known issue is posted where pipeline fails when getting a token t
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 10/25/2024
+ms.date: 05/19/2025
 ms.custom: known-issue-894
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-894
 
 You might experience issues while trying to get a token using `mssparkutils.credentials.getToken()` with your cluster URL as the audience when connecting to Kusto using a pipeline.
 
-**Status:** Open
+**Status:** Fixed: May 19, 2025
 
 **Product Experience:** Data Engineering
 

@@ -53,6 +53,8 @@ items:
     href: create-workspaces.md
   - name: Roles in workspaces
     href: roles-workspaces.md
+  - name: Reassign a workspace to a different capacity
+    href: workspace-license-mode.md
   - name: Create items in workspaces
     href: create-items-in-workspaces.md
   - name: Create folders in workspaces
@@ -131,18 +133,22 @@ items:
   items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
-  - name: Develop Direct Lake models
-    href: direct-lake-develop.md
-  - name: Manage Direct Lake models
-    href: direct-lake-manage.md
   - name: Understand storage for Direct Lake
     href: direct-lake-understand-storage.md
   - name: Direct Lake in Power BI Desktop (preview)
-    href: direct-lake-power-bi-desktop.md        
+    href: direct-lake-power-bi-desktop.md 
+  - name: Direct Lake in Power BI Project (PBIP) (preview)
+    href: direct-lake-power-bi-project.md     
+  - name: Direct Lake in Power BI web modeling (preview)
+    href: direct-lake-web-modeling.md     
   - name: Edit tables for Direct Lake semantic models
     href: direct-lake-edit-tables.md
   - name: Create a Lakehouse for Direct Lake
     href: direct-lake-create-lakehouse.md
+  - name: Develop Direct Lake models
+    href: direct-lake-develop.md
+  - name: Manage Direct Lake models
+    href: direct-lake-manage.md
   - name: Specify a fixed identity
     href: direct-lake-fixed-identity.md
   - name: Analyze query processing
@@ -199,6 +205,32 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Credential update in Google Analytics connections fails with JSON error
+      href: ../known-issues/known-issue-1138-credential-update-google-analytics-connections-fails.md
+    - name: Transient failure for deploying User data functions welcome templates
+      href: ../known-issues/known-issue-1137-failure-deploying-user-data-functions-welcome-templates.md
+    - name: Scrolling through workspaces in OneLake Catalog doesn't work
+      href: ../known-issues/known-issue-1136-scrolling-workspaces-onelake-catalog-not-work.md
+    - name: Explore mode within digital twin builder unexpectedly empty
+      href: ../known-issues/known-issue-1125-explore-mode-digital-twin-builder-unexpectedly-empty.md
+    - name: Digital twin builder mapping fails with concurrent update error
+      href: ../known-issues/known-issue-1124-digital-twin-builder-mapping-fails-concurrent-update-error.md
+    - name: Throttling issues with the Mirrored Azure Databricks catalog shortcuts
+      href: ../known-issues/known-issue-1135-throttling-issues-mirrored-azure-databricks-catalog-shortcuts.md
+    - name: Multiple dataflow staging items created in workspace
+      href: ../known-issues/known-issue-1134-multiple-dataflow-staging-items-created-workspace.md
+    - name: Deleted OneLake Shortcuts still visible as empty file
+      href: ../known-issues/known-issue-1133-deleted-oneLake-shortcuts-visible-empty-file.md
+    - name: Spark job fails with out of memory error when using timestamp type
+      href: ../known-issues/known-issue-1132-spark-job-fails-memory-error-timestamp-type.md
+    - name: SQL database creation fails due to tenant setting
+      href: ../known-issues/known-issue-1131-sql-database-creation-fails-tenant-setting.md
+    - name: Failure to Save and Run Dataflow Gen2 dataflows deployed with Git integration
+      href: ../known-issues/known-issue-1128-failure-save-run-dataflow-gen2-deployed-git-integration.md
+    - name: Function queries cause failures in Dataflow Gen2 refresh
+      href: ../known-issues/known-issue-1126-function-queries-failures-dataflow-gen2-refresh.md
+    - name: Reenabling Azure SQL database mirroring fails
+      href: ../known-issues/known-issue-1123-reenabling-azure-sql-database-mirroring-fails.md
     - name: Power BI report selection doesn't work in Viva Goals
       href: ../known-issues/known-issue-1122-report-selection-not-work-viva-goals.md
     - name: Recommended tiles on the home page appear stretched for customer images

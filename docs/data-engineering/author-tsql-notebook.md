@@ -127,13 +127,37 @@ This dialog appears when you run all the code cells by clicking the **Run all** 
 
 :::image type="content" source="media\tsql-notebook\skip-non-tsql-code.png" alt-text="Screenshot showing how to skip non-TSQL code.":::
 
+### Monitoring T-SQL notebook execution
+
+You can monitor the execution of T-SQL notebooks in the **T-SQL** tab of the Recent Run view. You can find the Recent Run view by selecting the **Run** menu inside the notebook.
+
+:::image type="content" source="media\tsql-notebook\recent-run-view.png" alt-text="Screenshot showing the recent run view.":::
+
+In the T-SQL history run view, you can see a list of running, succeeded, canceled, and failed queries up to the past 30 days.
+
+- Use the dropdown list to filter for status or submit time.
+- Use the search bar to filter for specific keywords in the query text or other columns.
+
+For each query, the following details are provided:
+
+| Column name   |  Description |
+|---|---|
+|**Distributed statement Id**|Unique ID for each query|
+|**Query text**|Text of the executed query (up to 8,000 characters)|
+|**Submit time (UTC)**|Timestamp when the request arrived|
+|**Duration**|Time it took for the query to execute|
+|**Status**|Query status (Running, Succeeded, Failed, or Canceled)|
+|**Submitter**|Name of the user or system that sent the query|
+|**Session Id**|ID linking the query to a specific user session|
+|**Default warehouse**|Name of the warehouse which accept the submitted query|
+
+Historical queries can take up to 15 minutes to appear in list depending on the concurrent workload being executed.
+
 ## Public preview limitations
 
 - Parameter cell isn't yet supported in T-SQL notebook. The parameter passed from pipeline or scheduler won't be able to be used in T-SQL notebook.
-- The **Recent Run** feature isn't yet supported in T-SQL notebook. You need to use the current data warehouse monitoring feature to check the execution history of the T-SQL notebook. See [Monitor Data Warehouse](../data-warehouse/monitoring-overview.md) article for more details.
 - The monitor URL inside the pipeline execution isn't yet supported in the T-SQL notebook.
 - The snapshot feature isn't yet supported in the T-SQL notebook.
-- Git and Deployment pipeline support isn't yet supported in the T-SQL notebook.
 
 
 ## Related content

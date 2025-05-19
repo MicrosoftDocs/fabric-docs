@@ -102,7 +102,7 @@ Whether you have created a new cloud connection, or you're using an existing one
 
     |**Setting** | **Description** | **Example value**|
     |---|---|---|
-    | Consumer group | The relevant consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups?context=/fabric/context/context). After adding a new consumer group, you'll then need to select this group from the drop-down.|  *NewConsumer*
+    | Consumer group | The relevant consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups?context=/fabric/context/context). After adding a new consumer group, you'll then need to select this group from the dropdown.|  *NewConsumer*
     | **More parameters** |
     | Compression | Data compression of the events, as coming from the event hub. Options are None (default), or Gzip compression. | *None*
     | Event system properties |  For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations?context=/fabric/context/context). If there are multiple records per event message, the system properties are added to the first one. See [event system properties](#event-system-properties).|

@@ -49,3 +49,4 @@ There are two monitoring templates available:
 ## Related content
 
 * [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md)
+* [Manage and monitor an eventhouse](manage-monitor-eventhouse.md)

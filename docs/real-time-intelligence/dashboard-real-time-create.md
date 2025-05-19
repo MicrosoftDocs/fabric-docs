@@ -40,15 +40,7 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 
 ## Create a new dashboard
 
-The Real-Time Dashboard exists within the context of a workspace. A new Real-Time dashboard is always associated with the workspace you're using when you create it.
-
-1. Browse to the desired workspace.
-1. Select **+New** > **Real-Time Dashboard**
-1. Enter a dashboard name and select **Create**.
-
-:::image type="content" source="media/real-time-dashboard/dashboard-new.png" alt-text="Screenshot of newly created Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric.":::
-
-A new dashboard is created in your workspace.
+[!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
 
 ## Add data source
 
@@ -61,7 +53,7 @@ Data sources are reusable references to a specific database in the same workspac
 
 1. In the **Create new data source** pane:
     1. Enter a **Data source name**.
-    1. Select a **Database** from the drop-down list.
+    1. Select a **Database** from the dropdown list.
 1. Select **Create**.
   
 ## Add tile
@@ -71,7 +63,7 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
 1. Select **Add tile** from the dashboard canvas or the top menu bar.
 
 1. In the **Query** pane,
-    1. Select the data source from the drop-down menu.
+    1. Select the data source from the dropdown menu.
     1. Type the query, and the select **Run**. For more information about generating queries that use parameters, see [Use parameters in your query](dashboard-parameters.md#use-parameters-in-your-query).
 
     1. Select **+ Add visual**.
