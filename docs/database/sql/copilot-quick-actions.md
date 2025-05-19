@@ -16,7 +16,7 @@ ms.collection:
 
 There are two AI-powered quick actions that are currently supported in Copilot in Fabric in the SQL database workload: **Explain** and **Fix**.
 
-:::image type="content" source="media/copilot-quick-actions/copilot-explain-fix.png" alt-text="Screenshot from the Fabric portal showing the Explain and Fix buttons above a new empty SQL query tab." lightbox="media/copilot-quick-actions/copilot-explain-fix.png":::
+:::image type="content" source="media/copilot-quick-actions/copilot-toolbar.png" alt-text="Screenshot from the Fabric portal showing the Explain and Fix toolbar above a new empty SQL query tab." lightbox="media/copilot-quick-actions/copilot-toolbar.png":::
 
 Quick actions can accelerate productivity by helping you write and understand queries faster. These buttons are located at the top of the SQL query editor, near the **Run** button.
 
