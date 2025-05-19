@@ -88,7 +88,7 @@ Select the tab that corresponds with your desired data source type.
 
     1. Select **Connection URI** and enter your Connection URI in this format:
 
-    | Replace \<SubscriptionID\>, \<WorkspaceName\> and \<ResourceGroupName\> with your own values.
+    > | Replace \<SubscriptionID\>, \<WorkspaceName\> and \<ResourceGroupName\> with your own values.
 
     For Log Analytics: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`
 
