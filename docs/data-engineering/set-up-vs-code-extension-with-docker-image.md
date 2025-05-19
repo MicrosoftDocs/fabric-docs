@@ -24,8 +24,8 @@ Synapse provides a Docker image to support the VS Code extension. The Docker ima
 
 The following prerequisites should be met to use the Docker containers with the Data Engineering VS Code extension:
 
-- Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
-- Install [VS Code Remote Development pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
+- Install [Docker Desktop](https://www.docker.com/products/docker-desktop).
+- Install the [VS Code Remote Development pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
 
 ## Getting started
 

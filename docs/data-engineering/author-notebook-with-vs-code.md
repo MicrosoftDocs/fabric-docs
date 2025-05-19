@@ -12,7 +12,7 @@ ms.search.form: VSCodeExtension
 
 # Create and manage Microsoft Fabric notebooks in Visual Studio Code
 
-The Fabric Data Engineering Visual Studio (VS) Code extension fully supports the CRUD (create, read, update, and delete) notebook operations in Fabric. The extension also supports synchronization between local and remote workspaces; when you synchronize changes, you can address any conflicts or differences between your local and remote workspace.
+The Fabric Data Engineering Visual Studio (VS) Code extension fully supports the create, read, update, and delete (CRUD) notebook operations in Fabric. The extension also supports synchronization between local and remote workspaces; when you synchronize changes, you can address any conflicts or differences between your local and remote workspace.
 
 With this extension, you can also run notebooks onto the remote Apache Spark compute for Fabric.
 

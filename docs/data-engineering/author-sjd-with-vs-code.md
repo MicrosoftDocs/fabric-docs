@@ -12,7 +12,7 @@ ms.search.form: VSCodeExtension
 
 # Create and manage Apache Spark job definitions in Visual Studio Code
 
-The Fabric Data Engineering Visual Studio (VS) Code extension fully supports the CURD (create, update, read, and delete) Spark job definition operations in Fabric. After you create a Spark job definition, you can upload more referenced libraries, submit a request to run the Spark job definition, and check the run history.
+The Fabric Data Engineering Visual Studio (VS) Code extension fully supports the create, read, update, and delete (CRUD) Spark job definition operations in Fabric. After you create a Spark job definition, you can upload more referenced libraries, submit a request to run the Spark job definition, and check the run history.
 
 ## Create a Spark job definition
 
