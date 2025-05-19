@@ -26,11 +26,11 @@ Change data capture (CDC) in Copy job is a powerful capability in Fabric Data Fa
 ## How it works: CDC-based vs. Watermark-based incremental copy
 
 1. CDC-based incremental copy: If your source database has CDC enabled, Copy job automatically captures and replicates inserts, updates, and deletes to the destination, applying the exact changes.
-1. Watermark-based incremental copy: If CDC isn't enabled on your source database, Copy Job detects changes by comparing an incremental column (e.g., timestamp or ID) against the last run, then merges or appends the changed data to the destination based on your configuration.
+1. Watermark-based incremental copy: If CDC isn't enabled on your source database, Copy job detects changes by comparing an incremental column (e.g., timestamp or ID) against the last run, then appends or merges the changed data to the destination based on your configuration.
 
 ## Supported connectors
 
-Currently, CDC in Copy job supports the following source data stores and destination data stores. We're adding more and stay tuned.
+Currently, CDC in Copy job supports the following source and destination data stores. We're adding more and please stay tuned.
 
 Supported source store:
 1. Azure SQL DB
@@ -101,7 +101,7 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
    :::image type="content" source="media/copy-job/cdc-review-save.png" alt-text="Screenshot showing where to review and save the newly created Copy job.":::
 
    > [!NOTE]
-   > Please ensure that your CDC log retention period is longer than the interval between scheduled runs; otherwise, data loss may occur. 
+   > Please ensure that your CDC log retention period is longer than the interval between scheduled runs; otherwise, the changed data captured by CDC might be lost if not processed within the retention period. 
 
 1. Your copy job will start immediately. The first run will copy an initial full snapshot.
   
