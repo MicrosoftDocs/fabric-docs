@@ -50,9 +50,13 @@ Select the tab that corresponds with your desired data source type.
 
 1. Under **Connection URI**, enter the cluster URI.
 
-    To find the connection URI, go to your cluster resource in the [Azure portal](https://portal.azure.com/#home). The connection URI is the URI found in the Overview. To add a free sample cluster, specify "help" as the **Connection URI**.
+    To find the connection URI, go to your cluster resource in the [Azure portal](https://portal.azure.com/#home). The connection URI is the URI found in the Overview. 
 
-    :::image type="content" source="media/kusto-query-set/connect-to-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect cluster button is highlighted.":::
+    :::image type="content" source="media/kusto-query-set/connect-to-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect button is highlighted.":::
+
+    To add a free sample cluster, specify "help" as the **Connection URI**.
+
+    :::image type="content" source="media/kusto-query-set/connect-to-help.png" alt-text="Screenshot of the connection window showing help as the connection URI. The Connect button is highlighted.":::
 
 1. Under **Database**, expand the list and select a data source.
 
@@ -66,16 +70,31 @@ Select the tab that corresponds with your desired data source type.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-azure-monitor.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
-1. Enter your connection details.
+1. Enter your connection details or a full URI:
 
     :::image type="content" source="media/kusto-query-set/connect-to-monitor.png" alt-text="Screenshot of the connection window showing an Azure Monitor URI. The Connect cluster button is highlighted.":::
 
-    | In the following descriptions, replace \<SubscriptionID\>, \<WorkspaceName\> and \<ResourceGroupName\> with your own values.
+    To enter your connection detials: 
 
-    | **Setting** | **Field description** |
-    |--|--|
-    | Connection URI | the URL of the Log Analytics (LA) workspace or Application Insights (AI) resource:</br> - For Log Analytics workspace: `https://ade.loganalytics.io/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.operationalinsights/workspaces/<WorkspaceName>`</br> - for Application Insights resource: `https://ade.applicationinsights.io/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/microsoft.insights/components/<AIAppName>`</br> - to see all data sources in the LA or AI subscription: `<https://ade.applicationinsights.io/subscriptions/<SubscriptionID>` |
-    | Database | expand the list and select a data source|
+    1. Enter your **Subscription ID**. You can find this in the Azure portal by selecting **Subscriptions** > your subscription name > copy the Subsciption ID from the resource Overview tab.
+
+    1. Select the **Resource Group** from the drop-down list. Select the resource group that contains your Application Insights or Log Analytics resource.
+    
+    1. Enter the **Workspace Name**. You can find this in the Azure portal by selecting the Application Insights or Log Analytics resource > copy the Workspace name from the resource Overview tab.
+    
+1. Select the **Application Insights** or **Log Analytics** resource from the drop-down list. This list is populated with the resources in your selected resource group.
+
+    To enter a full connection URI:
+
+    1. Select **Connection URI** and enter your Connection URI in this format: 
+
+    | Replace \<SubscriptionID\>, \<WorkspaceName\> and \<ResourceGroupName\> with your own values.
+
+    For Log Analytics: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>'
+
+    For Application Insights: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>'
+
+1. Select a **Database**. Expand the list and select a database.|
 
 1. Select **Connect**.
 
