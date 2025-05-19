@@ -32,7 +32,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 
-1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::, and select **Add data source** > **Eventhouse / KQL Database**.
+1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false"::: and select **Add data source** > **Eventhouse / KQL Database**.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-kql.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
@@ -44,7 +44,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 
-1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::, and select **Add data source** > **Azure Data Explorer**.
+1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false"::: and select **Add data source** > **Azure Data Explorer**.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-adx.png" alt-text="Screenshot of the data source menu showing a list of connected databases.":::
 
@@ -66,27 +66,27 @@ Select the tab that corresponds with your desired data source type.
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 
-1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false":::, and select **Add data source** > **Azure Monitor** > **Application Insights** or **Log Analytics**.
+1. In the **Explorer** pane, under the search bar, open the database switcher :::image type="icon" source="media/kusto-query-set/database-switcher.png" border="false"::: and select **Add data source** > **Azure Monitor** > **Application Insights** or **Log Analytics**.
 
     :::image type="content" source="media/kusto-query-set/expand-database-menu-azure-monitor.png" alt-text="Screenshot of the data source menu showing a list of connected data sources.":::
 
-1. Enter your connection details or a full URI:
+1. Enter your connection parameters or a full connection URI:
 
     :::image type="content" source="media/kusto-query-set/connect-to-monitor.png" alt-text="Screenshot of the connection window showing an Azure Monitor URI. The Connect cluster button is highlighted.":::
 
-    To enter your connection detials: 
+    **To enter your connection parameters**:
 
-    1. Enter your **Subscription ID**. You can find this in the Azure portal by selecting **Subscriptions** > your subscription name > copy the Subsciption ID from the resource Overview tab.
+    1. Enter your **Subscription ID**. You can find the ID in the Azure portal by selecting **Subscriptions** > your subscription name > copy the Subscription ID from the resource Overview tab.
 
     1. Select the **Resource Group** from the drop-down list. Select the resource group that contains your Application Insights or Log Analytics resource.
     
-    1. Enter the **Workspace Name**. You can find this in the Azure portal by selecting the Application Insights or Log Analytics resource > copy the Workspace name from the resource Overview tab.
+    1. Enter the **Workspace Name**. You can find the name in the Azure portal by selecting the Application Insights or Log Analytics resource > copy the Workspace name from the resource Overview tab.
     
-1. Select the **Application Insights** or **Log Analytics** resource from the drop-down list. This list is populated with the resources in your selected resource group.
+    1. Select the **Application Insights** or **Log Analytics** resource from the drop-down list. This list is populated with the resources in your selected resource group.
 
-    To enter a full connection URI:
+    **To enter a full connection URI**:
 
-    1. Select **Connection URI** and enter your Connection URI in this format: 
+    1. Select **Connection URI** and enter your Connection URI in this format:
 
     | Replace \<SubscriptionID\>, \<WorkspaceName\> and \<ResourceGroupName\> with your own values.
 
@@ -94,7 +94,7 @@ Select the tab that corresponds with your desired data source type.
 
     For Application Insights: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>'
 
-1. Select a **Database**. Expand the list and select a database.|
+1. Select a **Database**. Expand the list and select a database.
 
 1. Select **Connect**.
 
@@ -130,7 +130,7 @@ The data source explorer pane has two sections. The upper section lists all the 
 The upper section of the data source explorer shows all the items that are included in the data source you're using.
 
 * Tables
-* Materialized View
+* Materialized Views
 * Shortcuts
 * Functions
 
