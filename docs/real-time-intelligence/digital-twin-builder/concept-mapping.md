@@ -4,7 +4,7 @@ description: Understand the mapping feature in digital twin builder (preview).
 author: baanders
 ms.author: baanders
 ms.date: 04/25/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Mapping data to entities in digital twin builder (preview)

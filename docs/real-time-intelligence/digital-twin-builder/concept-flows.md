@@ -4,7 +4,7 @@ description: Understand how digital twin builder (preview) flow items work.
 author: baanders
 ms.author: baanders
 ms.date: 04/16/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Digital twin builder (preview) flow
