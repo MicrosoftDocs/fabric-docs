@@ -26,3 +26,9 @@ landingContent:
         links:
           - text: Connect from local environment
             url: how-to-connect-development.md
+  - title: Build secure solutions
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Security baseline
+            url: security.md
