@@ -33,7 +33,7 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
 For continuous ingestion you also require:
 
 * A [workspace identity](../security/workspace-identity.md). *My Workspace* isn't supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
-* [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account#enable-the-hierarchical-namespace) must be enabled.
+* Enable [Hierarchical namespace](/azure/storage/blobs/create-data-lake-storage-account#enable-the-hierarchical-namespace) on the storage account.
 
     :::image type="content" source="media/get-data-azure-storage/storage-heirarchical-namespace-enabled.png" alt-text="Screenshot of Azure portal open to the Overview window.":::
 
@@ -110,8 +110,8 @@ Set the source to get data.
 
         | **Setting** | **Field description** |
         |--|--|
-        | Subscription | The subscription name where the storage account is located. |
-        | Blob storage account | The name that identifies your storage account. </br>If the account is renamed in Azure, you need to update the connection by selecting the new name. |
+        | Subscription | The storage account subscription. |
+        | Blob storage account | Storage account name. |
         | Container | The storage container containing the file you want to ingest. |
 
     1. In the **Connection** field, open the dropdown and select **+ New connection**, then **Save** > **Close**. The connection settings are prepopulated.
@@ -131,7 +131,7 @@ Set the source to get data.
 
         | **Setting** | **Field description** |
         |--|--|
-        | RTAStorageAccount | A real-time hub account that already exists in Fabric. |
+        | RTAStorageAccount | An event stream connected to your storage account from Fabric. |
         | Container | The storage container containing the file you want to ingest. |
         | Connection | This is prepopulated with the connection string |
 
