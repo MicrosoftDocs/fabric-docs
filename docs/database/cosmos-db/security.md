@@ -12,15 +12,17 @@ ai-usage: ai-generated
 
 # Secure your Cosmos DB database in Microsoft Fabric (preview)
 
-Azure Cosmos DB for NoSQL is a globally distributed, multi-model database service designed for mission-critical applications. While Azure Cosmos DB provides built-in security features to protect your data, it's essential to follow best practices to further enhance the security of your account, data, and networking configurations.
+[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
-This article provides guidance on how to best secure your Azure Cosmos DB for NoSQL deployment.
+Cosmos DB in Microsoft Fabric is an AI-optimized NoSQL database automatically configured for typical development needs with a simplified management experience. While Cosmos DB provides built-in security features to protect your data, it's essential to follow best practices to further enhance the security of your account, data, and networking configurations.
+
+This article provides guidance on how to best secure your Cosmos DB in Fabric deployment.
 
 ## Identity management
 
-- **Use managed identities to access your account from other Azure services**: Managed identities eliminate the need to manage credentials by providing an automatically managed identity in Microsoft Entra ID. Use managed identities to securely access Azure Cosmos DB from other Azure services without embedding credentials in your code.
+- **Use managed identities to access your account from other Azure services**: Managed identities eliminate the need to manage credentials by providing an automatically managed identity in Microsoft Entra ID. Use managed identities to securely access Cosmos DB from other Azure services without embedding credentials in your code.
 
-- **Use Entra authentication to query, create, and access items within a container**: Access items within Azure Cosmos DB containers using your human identity and Microsoft Entra authentication. Enforce least privilege access for querying, creating, and other operations. This control helps secure your data operations.
+- **Use Entra authentication to query, create, and access items within a container**: Access items within Cosmos DB containers using your human identity and Microsoft Entra authentication. Enforce least privilege access for querying, creating, and other operations. This control helps secure your data operations.
 
 - **Separate the Azure identities used for data and control plane access**: Use distinct Azure identities for control plane and data plane operations to reduce the risk of privilege escalation and ensure better access control. This separation enhances security by limiting the scope of each identity.
 
