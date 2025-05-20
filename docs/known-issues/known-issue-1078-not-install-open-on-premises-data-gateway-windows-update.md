@@ -4,7 +4,7 @@ description: A known issue is posted where you can't install or open on-premises
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/31/2025
+ms.date: 05/09/2025
 ms.custom: known-issue-1078
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1078
 
 Following the installation of Windows 10 security update KB5052000, you might receive a failure when attempting to install or launch the on-premises data gateway (Microsoft.PowerBI.EnterpriseGateway.exe). There's a compatibility problem between the gateway’s use of the .NET Framework and changes introduced in the Windows patch.
 
-**Status:** Open
+**Status:** Fixed: May 9, 2025
 
 **Product Experience:** Power BI
 

@@ -63,8 +63,8 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 | Support for all [Data Factory data sources](/power-query/connectors) | Yes | In progress<sup>3</sup> |
 | **Scalability** |||
 | Ensure seamless execution of activities in a pipeline with [scheduled runs](pipeline-runs.md) | Yes | Yes |
-| Schedule multiple runs for a single pipeline for flexible and efficient pipeline management | Yes | [Planned](/fabric/release-plan/shared-experiences#allow-multiple-schedulers-single-item) |
-| Utilize tumbling window triggers to schedule pipeline runs within distinct, nonoverlapping time windows | Yes | [Planned](/fabric/release-plan/data-factory#data-pipeline-support-tumbling-window-triggers) |
+| Schedule multiple runs for a single pipeline for flexible and efficient pipeline management | Yes | [Planned](https://aka.ms/fabricrm) |
+| Utilize tumbling window triggers to schedule pipeline runs within distinct, nonoverlapping time windows | Yes | [Planned](https://aka.ms/fabricrm) |
 | Event triggers to automate the execution of pipeline runs in response to specific or relevant event occurrences | Yes | Yes<sup>4</sup> |
 | **Artificial intelligence** |||
 | [Copilot for Data Factory](../get-started/copilot-fabric-data-factory.md), which provides intelligent pipeline generation to ingest data with ease and explanations to help better understand complex pipelines or to provide suggestions for error messages | No | Yes |
@@ -75,7 +75,7 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 | [Premium capacity](../enterprise/licenses.md) architecture, which supports increased scale and performance | No | Yes |
 | [Multi-Geo](../admin/service-admin-premium-multi-geo.md) support, which helps multinational customers address regional, industry-specific, or organizational data residency requirements | Yes | Yes |
 | **Security** |||
-| [Virtual network (virtual network) data gateway](/data-integration/vnet/overview) connectivity, which allows Fabric to work seamlessly in an organization's virtual network | No | [Planned](/fabric/release-plan/data-factory#data-pipeline-support-vnet-gateways) |
+| [Virtual network (virtual network) data gateway](/data-integration/vnet/overview) connectivity, which allows Fabric to work seamlessly in an organization's virtual network | No | Yes |
 | [On-premises data gateway](/data-integration/gateway/service-gateway-onprem) connectivity, which allows for secure access of data between an organization's on-premises data sources and Fabric items | No | Yes |
 | Azure [service tags](../security/security-service-tags.md) support, which is a defined group of IP addresses that is automatically managed to minimize the complexity of updates or changes to network security rules | Yes | Yes |
 | **Governance** |||

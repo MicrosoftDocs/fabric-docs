@@ -5,8 +5,8 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.custom: admin-portal
-ms.topic: concept-article
-ms.date: 03/24/2025
+ms.topic: overview
+ms.date: 05/12/2025
 ---
 
 # Manage workspaces
@@ -98,7 +98,7 @@ By default, deleted collaborative workspaces are retained for seven days. Fabric
 1. When done, select **Apply**.
 
 > [!NOTE]
-> When the **Define workspace rentention period** setting is off, deleted collaborative workspaces automatically have a retention period of 7 days.
+> When the **Define workspace retention period** setting is off, deleted collaborative workspaces automatically have a retention period of 7 days.
 >
 > This setting does not affect the retention period of *My workspaces*. *My workspaces* always have a 30-day retention period.
 
@@ -119,6 +119,23 @@ While a deleted collaborative workspace is in a retention period, Fabric adminis
 1. Select the workspace and then choose **Permanently delete** from the ribbon, or select **More options (...)** and choose **Permanently delete**.
 
 You're asked to confirm the permanent deletion. After you confirm, the workspace and its contents are no longer recoverable.
+
+## Reassign a workspace to a different capacity
+
+Workspaces and the data they contain reside on capacities. You can move the workspace to a different capacity via the workspace license mode.
+
+1. Go to **Admin portal** > **Workspaces**.
+
+1. Find the workspace you want to move, open the options menu, and choose **Reassign workspace**.
+
+    :::image type="content" source="./media/portal-workspaces/reassign-workspace-option.png" alt-text="Screenshot showing the Reassign workspace option.":::
+
+1. On the Reassign workspace side pane that appears, select the desired license mode, and choose a capacity, if asked.
+
+    :::image type="content" source="./media/portal-workspaces/license-modes.png" alt-text="Screenshot showing the Reassign workspace license modes pane.":::
+
+    > [!NOTE]
+    > The types of items contained in the workspace can affect the ability to change license modes and/or move the workspace to a capacity in a different region. See [Moving data around](#moving-data-around) for detail.
 
 ## Govern My workspaces
 
@@ -172,29 +189,54 @@ After the deleted workspace has been restored as an app workspace, it's just lik
 
 ## Moving data around
 
-Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities by choosing the workspace license mode. Such movement might be between capacities in different regions.
+Workspaces and the data they contain reside on capacities, and can be moved around by assigning them to different capacities. Such movement might be to a capacity in the same region, or it might be to a capacity in a different region.
 
-Moving workspaces from one capacity to another, has the following restrictions:
+In the Fabric UI, workspaces can be moved to other capacities in the following ways:
+
+* Fabric admins can reassign workspaces to a different capacity individually via the [Workspaces page](#reassign-a-workspace-to-a-different-capacity) in the Fabric Admin portal.
+* Fabric admins and capacity admins can reassign workspaces to a capacity in bulk via the **Workspaces assigned to this capacity** option in the [capacity's settings](./capacity-settings.md#capacity-settings).
+* Workspace admins can reassign their workspace to a different capacity via the **[License info option of the workspace settings](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity)**.
+
+### Restrictions on moving workspaces around
+
+Moving workspaces from one capacity to another has the following restrictions:
 
 * When you move a workspace, all jobs related to items in the workspace get cancelled.
 
-* Workspaces with Fabric items (such as lakehouses and notebooks) can't move from Premium or Fabric license mode to Pro or Premium Per User license mode.
+* Only movable item types can move between regions. **If you're reassigning a workspace to a capacity located in a different region, you must remove all non-movable items first, otherwise reassignment will fail**.
 
-* Fabric items can't move between regions.
+    The following items types are movable:
 
-This means the following:
+    * Report
+    * Semantic model (small storage format)
+    * Dashboard
+    * Dataflow Gen1
+    * Paginated Report
+    * Datamart
+    * Scorecard 
 
-* **Moving a workspace from one capacity to another within the same region**
+    All other item types can't be moved between regions and must be removed from the workspace before you can migrate the workspace to a capacity in another region.
 
-    If the workspace has Fabric items (such as lakehouses or notebooks), you can only move it from one Premium or Fabric capacity to another Premium or Fabric capacity. If you want to move the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode, you won't be able to do so unless you delete all Fabric items first.
+    After you've removed the non-movable items and the workspace is migrated to a different region, you can create new items of the non-movable type. It can take up to an hour after the migration before you will be able to do so.
 
-    If the workspace has no Fabric items (that is, it has only Power BI items) moving the workspace from Premium or Fabric license mode to Pro or Premium Per User license mode is supported.  
+* Only Power BI items can move from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode (with exceptions as noted below). If you're changing a workspace from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode, you must remove all non-Power BI items and any Power BI items that can't be moved first, otherwise the license mode change will fail.
 
-* **Moving a workspace from one capacity to a capacity in a different region**
+    The following item types are considered Power BI items from the perspective of the workspace license mode.
 
-    If the workspace has no Fabric items (that is, it has only Power BI items) then moving the workspace to another capacity in a different region is supported.
+    * Report
+    * Semantic model (small storage format and large storage format)
+    * Dashboard
+    * Org app**
+    * Dataflow Gen1
+    * Paginated Report
+    * Metric set*
+    * Exploration**
+    * Datamart*
+    * Scorecard
 
-    If you want to move a workspace that contains Fabric items, you must delete all the Fabric items first.  After the workspace is migrated to a different region, it can take up to an hour before you can create new Fabric items.
+    *Can't move to Pro<br>**Can't move to Pro or Premium per user
+
+    All other item types must be removed from the workspace before you can change its license mode from Premium capacity or Fabric capacity to Pro or Premium Per User.
 
 ## Related content
 
