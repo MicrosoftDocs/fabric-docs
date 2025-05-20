@@ -56,6 +56,16 @@ To understand the considerations and limitations of various lifecycle management
 **Cause**: If the authentication method in Power BI is weaker than the authentication method in Azure DevOps, the functionalities between them doesn't work.  
 **Workaround**: The admin needs to align the authentication method in Power BI and Azure DevOps. The authentication policies for Microsoft Entra ID (formerly known as Azure Active Directory) are defined in [Manage authentication methods](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy).
 
+#### I exceeded the Git rate limit
+
+**Description of problem**: When I try to update or commit to Git, I get an error message that says that I exceeded the Git rate limit.
+
+:::image type="content" source="./media/troubleshoot-cicd/git-rate-limit.png" alt-text="Screenshot of error message saying Git rate limit exceeded.":::
+
+**Cause**: Your git provider limits the number of Git actions you can perform in a given amount of time. The rate limit can be reached either by performing a large number of Git operations, or by executing operations that involve a large number of items. For information about GitHub rate limits, see [About primary rate limits](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-primary-rate-limits). For Azure DevOps limits, see [Rate and usage limits](/azure/devops/integrate/concepts/rate-limits).
+
+**Solution**: Wait the amount of time specified in the error message, and then try again. If you continue to see this error, contact your Git provider for more information.
+
 ### Connect issues
 
 #### Connect failure: Unable to connect to repository
@@ -258,7 +268,8 @@ Deployment pipelines display a pipeline stage tag in workspaces that are assigne
 
 ### Lost connections after deployment
 
-**Description of problem**: In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item.  
+**Description of problem**: In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item.
+
 **Solution**: To reestablish these connections, unassign and reassign the same workspace in the target stage.
 
 ### I can't assign a workspace to a stage
