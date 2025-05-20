@@ -49,8 +49,8 @@ ms.date: 05/21/2024
         - `Filtered`(default): If the specified publication doesn't exist, the connector creates one that includes only the selected tables (as specified in the table include list).
         - `AllTables`: If the specified publication exists, the connector uses it. If it doesn't exist, the connector creates one that includes all tables in the database.
         - `Disabled`: The connector doesn't create a publication. If the specified publication is missing, the connector throws an exception and stops. In this case, the publication must be manually created in the database.
+    For more information, see the [Debezium documentation on publication autocreate mode](https://debezium.io/documentation/reference/3.1/connectors/postgresql.html#postgresql-publication-autocreate-mode)
 
-        For more information, see the [Debezium documentation on publication autocreate mode](https://debezium.io/documentation/reference/3.1/connectors/postgresql.html#postgresql-publication-autocreate-mode)
     1. **Decimal handling mode**: Specifies how the connector handles PostgreSQL `DECIMAL` and `NUMERIC` column values:
         - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.
         - `Double`: Converts values to double-precision floating-point numbers. This improves usability and performance but may result in a loss of precision.
