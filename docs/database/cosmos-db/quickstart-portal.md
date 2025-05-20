@@ -50,7 +50,7 @@ Next, load a sample data set into the database using the tools in the Fabric por
 
 1. Select **Sample data** on the **Build your database** page.
 
-    :::image source="media/quickstart-portal/load-sample-data-option.png" lightbox="media/quickstart-portal/load-sample-data-option-full.png" alt-text="Screenshot of the option":::
+    :::image source="media/quickstart-portal/load-sample-data-option.png" lightbox="media/quickstart-portal/load-sample-data-option-full.png" alt-text="Screenshot of the option to load sample data into the database using the Fabric portal.":::
 
 1. A dialog appears informing you that the import operation could take a few minutes. Select **Start** to begin importing the sample data set.
 

@@ -227,4 +227,3 @@ while (iterator.HasMoreResults)
 
 - [Overview of Cosmos DB in Microsoft Fabric](overview.md)
 - [Quickstart: Create a Cosmos DB database workload in Microsoft Fabric](quickstart-portal.md)
-- [Sample data set]
