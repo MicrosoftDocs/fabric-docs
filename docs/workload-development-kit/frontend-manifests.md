@@ -174,7 +174,7 @@ If no category is specified, `"others"` is used as the default.
 
 Defines categories in which your item is shown in OneLake catalog.
 
-- **oneLakeCatalogCategory** (array): Specifies the categories in which your item is shown in OneLake catalog. Each item can have up to two categories. Supported categories are:
+- **oneLakeCatalogCategory** (array): Specifies the categories in which the item is shown in OneLake catalog. Each item can have up to two categories. Supported categories are:
   - `"Data"`
   - `"Insight"`
   - `"Process"`
