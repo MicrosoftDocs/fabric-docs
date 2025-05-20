@@ -93,9 +93,10 @@ A request for prebuilt AI services consumes Fabric Capacity Units. This table de
 
 ### Consumption rate for OpenAI language models
 
-| **Models** | **Context** | **Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
+| **Models** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
 |---|---|---|---|
-|GPT-4o-2024-08-06 Global Deployment |128 K|84.03 CU seconds |336.13 CU seconds|
+|GPT-4o-2024-08-06 Global |128 K|84.03 CU seconds |336.13 CU seconds|
+|GPT-4o-mini-0718 Global |128 K|5.04 CU seconds |20.17 CU seconds|
 |GPT-4| 32 K |2,016.81 CU seconds |4,033.61 CU seconds|
 |GPT-3.5-Turbo-0125 |16K|16.81 CU seconds |50.42 CU seconds|
 
