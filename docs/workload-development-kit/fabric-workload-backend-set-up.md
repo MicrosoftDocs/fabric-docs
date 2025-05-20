@@ -1,5 +1,5 @@
 ---
-title: Set Up a Microsoft Fabric Workload Backend with FastAPI (Pyhton)
+title: Set Up a Microsoft Fabric Workload Backend with FastAPI (Python)
 description: Learn how to quickly configure and run a Python backend for your Fabric Workload using FastAPI.
 author: Natali Or
 ms.author: natalior
@@ -122,7 +122,7 @@ Follow these steps to select the correct Python interpreter:
     ```
 
     #### One line cmd:
-    
+
     ```bash
     openapi-generator-cli generate -i ../Backend/src/Contracts/FabricAPI/Workload/swagger.json -g python-fastapi -o . --additional-properties=packageName=fabric_api
     ```
@@ -135,7 +135,7 @@ Follow these steps to select the correct Python interpreter:
     ```
 
 > [!IMPORTANT]
-    > On Windows, you may encounter an error with the `uvloop` package. If that happens:
+    > On Windows, you might encounter an error with the `uvloop` package. If that happens:
     > 1. Edit your `requirements.txt` file
     > 2. Find the `uvloop` entry (which might look like `uvloop==0.17.0` or similar) and add the platform conditional to the end:
     > ```
