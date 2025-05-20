@@ -33,7 +33,7 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | Actian (Beta) | ✓/− |  |  | 
 | Active Directory | ✓/− |  |  | 
 | Adobe Analytics | ✓/− |  |  | 
-| ADPAnalytics (Beta) | ✓/− |  |  | 
+| ADPAnalytics | ✓/− |  |  | 
 | Amazon Athena | ✓/− |  |  | 
 | Amazon OpenSearch Service(Beta)  | ✓/− |  |  | 
 | Amazon RDS for SQL Server |  | ✓/− | ✓/− | 
@@ -65,6 +65,7 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | Azure Resource Graph | ✓/− |  |  | 
 | Azure SQL database | ✓/✓ | ✓/✓ | ✓/✓ | 
 | Azure SQL Managed Instance |  | ✓/✓ | ✓/✓ | 
+| Azure Synapse Analytics (SQL DW)| ✓/-|✓/✓  | ✓/✓ | 
 | Azure Synapse Analytics workspace (Beta) | ✓/− |  |  | 
 | Azure Tables | ✓/− | ✓/✓ |  | 
 | BI Connector | ✓/− |  |  | 
@@ -89,16 +90,14 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | Dataverse | ✓/− | ✓/✓ |  | 
 | Delta Sharing | ✓/− |  |  | 
 | Denodo | ✓/− |  |  | 
-| Digital Construction Works Insights | ✓/− |  |  | 
 | Dremio Cloud | ✓/− |  |  | 
 | Dremio Software | ✓/− |  |  | 
 | Dynamics 365 Business Central | ✓/− |  |  | 
 | Dynamics 365 Customer Insights (Beta) | ✓/− |  |  | 
-| Dynamics AX | ✓/− | ✓/✓ |  | 
-| Dynamics CRM | ✓/− | ✓/✓ |  | 
+| Dynamics AX | | ✓/✓ |  | 
+| Dynamics CRM |  | ✓/✓ |  | 
 | Dynatrace Grail DQL (Beta) | ✓/− |  |  | 
 | Eduframe (Beta) | ✓/− |  |  | 
-| Eduframe Reporting (Beta) | ✓/− |  |  | 
 | Emigo Data Source | ✓/− |  |  | 
 | Entersoft Business Suite | ✓/− |  |  | 
 | EQuIS | ✓/− |  |  | 
@@ -144,7 +143,7 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | LEAP (Beta) | ✓/− |  |  | 
 | Linkar PICK Style / MultiValue Databases (Beta) | ✓/− |  |  | 
 | LinkedIn Learning | ✓/− |  |  | 
-| MariaDB for pipeline| ✓/− | ✓/− |  | 
+| MariaDB| ✓/− | ✓/− |  | 
 | MarkLogic | ✓/− |  |  | 
 | Microsoft 365 |  | ✓/− |  | 
 | Microsoft Azure Data Manager for Energy | ✓/− |  |  | 
@@ -160,7 +159,6 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | OpenSearch Project (Beta) | ✓/− |  |  | 
 | Oracle Cloud Storage |  | ✓/− |  | 
 | Oracle database | ✓/− | ✓/✓ | ✓/✓ | 
-| Palantir Foundry | ✓/− |  |  | 
 | Palantir Foundry Datasets | ✓/− |  |  | 
 | Parquet | ✓/− |  |  | 
 | Paxata | ✓/− |  |  | 
@@ -179,7 +177,7 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | REST |  | ✓/✓ |  | 
 | Roamler (Beta) | ✓/− |  |  | 
 | Salesforce objects | ✓/− | ✓/✓ | ✓/✓ | 
-| Salesforce Reports | ✓/− |  |  | 
+| Salesforce reports | ✓/− |  |  | 
 | Salesforce Service Cloud |  | ✓/✓ | ✓/✓ | 
 | Samsara (Beta) | ✓/− |  |  | 
 | SAP BW Application Server | ✓/− |  |  | 
