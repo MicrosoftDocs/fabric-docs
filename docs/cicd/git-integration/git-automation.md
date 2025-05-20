@@ -224,7 +224,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
 
-    For information on how to obtain the Connection Id, refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
+    For information on how to obtain the Connection ID, refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
 
     ---
 
