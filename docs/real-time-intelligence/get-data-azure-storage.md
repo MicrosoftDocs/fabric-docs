@@ -20,7 +20,7 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
 
     > [!NOTE]
     >
-    > A continuous ingestion stream can affect your billing. For more information see [Eventhouse and KQL Database consumption](real-time-intelligence-consumption.md).
+    > A continuous ingestion stream can affect your billing. For more information, see [Eventhouse and KQL Database consumption](real-time-intelligence-consumption.md).
 
 * **One-time ingestion**: Use this method to retrieve data from Azure Storage as a one-time operation.
 
