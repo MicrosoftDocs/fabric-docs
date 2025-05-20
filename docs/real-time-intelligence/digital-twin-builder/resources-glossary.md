@@ -4,7 +4,7 @@ description: This article defines important digital twin builder (preview) termi
 author: baanders
 ms.author: baanders
 ms.date: 03/10/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Digital twin builder (preview) glossary
