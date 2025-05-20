@@ -18,29 +18,29 @@ Change data capture (CDC) in Copy job is a powerful capability in Fabric Data Fa
 
 ## Key benefits of CDC in Copy job 
 
-1. Zero manual intervention: Automatically captures incremental changes (inserts, updates, deletes) directly from the source.   
-1. Automatic replication: Keeps destination data continuously synchronized with source changes.  
-1. Optimized performance: Processes only changed data, reducing processing time and minimizing load on the source. 
-1. Smarter incremental copy: Automatically detects CDC-enabled source tables and allows you to select either CDC-based or watermark-based incremental copy for each table.
+- Zero manual intervention: Automatically captures incremental changes (inserts, updates, deletes) directly from the source.   
+- Automatic replication: Keeps destination data continuously synchronized with source changes.  
+- Optimized performance: Processes only changed data, reducing processing time and minimizing load on the source. 
+- Smarter incremental copy: Automatically detects CDC-enabled source tables and allows you to select either CDC-based or watermark-based incremental copy for each table.
 
 ## How it works: CDC-based vs. Watermark-based incremental copy
 
-1. CDC-based incremental copy: If your source database has CDC enabled, Copy job automatically captures and replicates inserts, updates, and deletes to the destination, applying the exact changes.
-1. Watermark-based incremental copy: If CDC isn't enabled on your source database, Copy job detects changes by comparing an incremental column (e.g., timestamp or ID) against the last run, then appends or merges the changed data to the destination based on your configuration.
+- CDC-based incremental copy: If your source database has CDC enabled, Copy job automatically captures and replicates inserts, updates, and deletes to the destination, applying the exact changes.
+- Watermark-based incremental copy: If CDC isn't enabled on your source database, Copy job detects changes by comparing an incremental column (e.g., timestamp or ID) against the last run, then appends or merges the changed data to the destination based on your configuration.
 
 ## Supported connectors
 
 Currently, CDC in Copy job supports the following source and destination data stores. We're adding more and please stay tuned.
 
 Supported source store:
-1. Azure SQL DB
-1. On-premises SQL Server
-1. Azure SQL Managed Instance
+   - Azure SQL DB
+   - On-premises SQL Server
+   - Azure SQL Managed Instance
 
 Supported destination store:
-1. Azure SQL DB
-1. On-premises SQL Server
-1. Azure SQL Managed Instance
+   - Azure SQL DB
+   - On-premises SQL Server
+   - Azure SQL Managed Instance
 
 ## How to get started:
 
