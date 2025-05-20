@@ -1,31 +1,36 @@
 ---
 title: Module 2 - Transform data with a dataflow in Data Factory
-description: This tutorial module covers creating a dataflow as part of an end-to-end data integration tutorial to complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
+description: This module guides you through creating a dataflow as part of an end-to-end data integration tutorial. You complete a full data integration scenario within an hour using Data Factory in Microsoft Fabric.
 ms.author: whhender
 ms.reviewer: xupzhou
 author: whhender
 ms.topic: tutorial
-ms.date: 1/13/2024
+ms.date: 05/20/2025
 ---
 
 # Module 2: Transform data with a dataflow in Data Factory
 
-This module takes about 25 minutes to create a dataflow, apply transformations, and move the raw data from the Bronze table into a Gold Lakehouse table. 
+This module takes about 25 minutes to complete. You create a dataflow, apply transformations, and move the raw data from the [bronze](/azure/databricks/lakehouse/medallion#bronze) data layer table into a [Gold](/azure/databricks/lakehouse/medallion#gold) data layer table. 
 
-With the raw data loaded into your Bronze Lakehouse table from the last module, you can now prepare that data and enrich it by combining it with another table that contains discounts for each vendor and their trips during a particular day. This final Gold Lakehouse table is loaded and ready for consumption.
+With the raw data loaded into your Bronze Lakehouse table from the last module, you can now enrich it. You will combine it with another table that contains discounts for each vendor and their trips during a particular day. Then, this final Gold Lakehouse table is then loaded and ready for consumption.
 
-The high-level steps in the dataflow are as follows:
+The high-level steps in the dataflow are:
 
-- Get raw data from the Lakehouse table created by the Copy activity in [Module 1: Create a pipeline with Data Factory](tutorial-end-to-end-pipeline.md).
-- Transform the data imported from the Lakehouse table.
-- Connect to a CSV file containing discounts data.
-- Transform the discounts data.
-- Combine trips and discounts data.
-- Load the output query into the Gold Lakehouse table.
+- [Get raw data from the Lakehouse table](#get-data-from-a-lakehouse-table) created by the Copy activity in [Module 1: Create a pipeline with Data Factory](tutorial-end-to-end-pipeline.md).
+- [Transform the data imported from the Lakehouse table.](#transform-the-data-imported-from-the-lakehouse)
+- [Connect to a CSV file containing discounts data.](#connect-to-a-csv-file-containing-discount-data)
+- [Transform the discounts data.](#transform-the-discount-data)
+- [Combine trips and discounts data.](#combine-trips-and-discounts-data)
+- [Load the output query into the Gold Lakehouse table.](#load-the-output-query-to-a-table-in-the-lakehouse)
+
+## Prerequisites
+
+[Module 1 of this tutorial series: Create a pipeline with Data Factory](tutorial-end-to-end-pipeline.md)
 
 ## Get data from a Lakehouse table
 
 1. From the sidebar, select your workspace, select **New item**, and then **Dataflow Gen2** to create a new Dataflow Gen2.
+
    :::image type="content" source="media/tutorial-end-to-end-dataflow/create-new-dataflow-inline.png" alt-text="Screenshot showing the Fabric Create page with the Dataflow Gen2 button highlighted." lightbox="media/tutorial-end-to-end-dataflow/create-new-dataflow-inline.png":::
 
 1. From the new dataflow menu, select **Get data**, and then **More...**.
@@ -53,6 +58,7 @@ The high-level steps in the dataflow are as follows:
 ## Transform the data imported from the Lakehouse
 
 1. Select the data type icon in the column header of the second column, **IpepPickupDatetime**, to display a dropdown menu and select the data type from the menu to convert the column from the **Date/Time** to **Date** type.
+
    :::image type="content" source="media/tutorial-end-to-end-dataflow/select-date-type.png" alt-text="Screenshot showing the selection of the Date data type for the IpepPickupDatetime column.":::
 
 1. _(Optional)_ On the **Home** tab of the ribbon, select the **Choose columns** option from the **Manage columns** group.
@@ -88,7 +94,7 @@ The high-level steps in the dataflow are as follows:
 
 ## Connect to a CSV file containing discount data
 
-Now, with the data from the trips in place, we want to load the data that contains the respective discounts for each day and VendorID, and prepare the data before combining it with the trips data.
+With the data from the trips in place, we want to load the data that contains the respective discounts for each day and VendorID, and prepare the data before combining it with the trips data.
 
 1. From the **Home** tab in the dataflow editor menu, select the **Get data** option, and then choose **Text/CSV**.
 
@@ -98,7 +104,7 @@ Now, with the data from the trips in place, we want to load the data that contai
 
    - **File path or URL** - `https://raw.githubusercontent.com/ekote/azure-architect/master/Generated-NYC-Taxi-Green-Discounts.csv`
    - **Authentication kind** - Anonymous
-   
+
    Then select **Next**.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/text-csv-settings-inline.png" alt-text="Screenshot showing the Text/CSV settings for the connection." lightbox="media/tutorial-end-to-end-dataflow/text-csv-settings.png":::
@@ -182,14 +188,14 @@ The next step is to combine both tables into a single table that has the discoun
 
    Then select **OK**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/custom-column-configuration.png" alt-text="Screenshot showing the Custom column configuration screen with the New column name, Data type and Custom column formula highlighted.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/custom-column-configuration.png" alt-text="Screenshot showing the Custom column configuration screen with the New column name, Data type, and Custom column formula highlighted.":::
 
 1. Select the newly create **TotalAfterDiscount** column and then select the **Transform** tab at the top of the editor window. On the **Number column** group, select the **Rounding** drop down and then choose **Round...**.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/round-column-inline.png" alt-text="Screenshot showing the Round... option on the Transform tab of the editor window." lightbox="media/tutorial-end-to-end-dataflow/round-column.png":::
 
 1. On the **Round dialog**, enter 2 for the number of decimal places and then select **OK**.
-   
+
    :::image type="content" source="media/tutorial-end-to-end-dataflow/round-dialog.png" alt-text="Screenshot showing the Round dialog with 2 for the number of decimal places and the OK button highlighted.":::
 
 1. Change the data type of the IpepPickupDatetime from Date to Date/Time.
@@ -218,7 +224,7 @@ With the output query now fully prepared and with data ready to output, we can d
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-destination-settings-dialog.png" alt-text="Screenshot showing the Choose destination settings dialog with the Save settings button highlighted.":::
 
-1. Back in the main editor window, confirm that you see your output destination on the **Query settings** pane for the **Output** table under **Data destination**, and then select **Save***.
+1. In the main editor window, confirm that you see your output destination on the **Query settings** pane for the **Output** table under **Data destination**, and then select **Save***.
 
     > [!IMPORTANT]
     > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items are provisioned along with their related SQL analytics endpoint and semantic models. These items are shared by all dataflows in the workspace and are required for Dataflow Gen2 to operate, shouldn't be deleted, and aren't intended to be used directly by users. The items are an implementation detail of Dataflow Gen2. The items aren't visible in the workspace, but might be accessible in other experiences such as the Notebook, SQL-endpoint, Lakehouse, and Warehouse experiences. You can recognize the items by their prefix in the name. The prefix of the items is `DataflowsStaging'.
