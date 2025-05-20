@@ -1,6 +1,6 @@
 ---
-title: Build a Microsoft Fabric Workload Backend with Python and FastAPI
-description: Learn how to implement Microsoft Fabric Workload APIs using Python FastAPI framework.
+title: Set Up a Microsoft Fabric Workload Backend with FastAPI (Pyhton)
+description: Learn how to quickly configure and run a Python backend for your Fabric Workload using FastAPI.
 author: Natali Or
 ms.author: natalior
 ms.date: 2025
@@ -8,10 +8,16 @@ ms.topic: tutorial
 ms.service: fabric
 ---
 
-## Quick Start: Build a Microsoft Fabric Workload Backend in Python with FastAPI
+## Quick Start: Set Up a Microsoft Fabric Workload Backend with FastAPI using Python
 
-In this tutorial, you'll learn how to set up a backend service for Microsoft Fabric workloads using Python and the FastAPI framework as example.
-You'll learn how to create a Python backend for Microsoft Fabric workloads using FastAPI. You'll generate a FastAPI application from the Fabric API OpenAPI specification, implement the required endpoints, and get your service up and running quickly. This guide focuses on practical implementation steps to help you build a working Fabric-compatible backend service with minimal setup time.
+In this tutorial, you’ll learn how to set up a Python backend for a Microsoft Fabric Workload using FastAPI.
+This tutorial provides instructions for generating a FastAPI server from an existing OpenAPI (Swagger) definition and running it locally.
+This quick setup is ideal for developers who want to prototype and test their backend logic before integrating it into the full Fabric development environment.
+
+## By the end of this tutorial you will be able to:
+- Generate a FastAPI project from a Swagger file
+- Understand the basic structure of a Python backend for a Fabric Workload
+- Run and test the server locally
 
 ## Prerequisites
 
@@ -72,7 +78,7 @@ First, set up your development environment with the required tools and packages.
 
 ## Step 2: Ensure Visual Studio Code uses your Python virtual environment
 
-It's important to verify that Visual Studio Code is configured to use the Python interpreter from your virtual environment. This ensures all dependencies and packages are correctly isolated and available for your project.
+It's important to verify that Visual Studio Code is configured to use the Python interpreter from your virtual environment. That ensures all dependencies and packages are correctly isolated and available for your project.
 
 Follow these steps to select the correct Python interpreter:
 
@@ -115,6 +121,13 @@ Follow these steps to select the correct Python interpreter:
       --additional-properties=packageName=fabric_api
     ```
 
+    #### One line cmd:
+    
+    ```bash
+    openapi-generator-cli generate -i ../Backend/src/Contracts/FabricAPI/Workload/swagger.json -g python-fastapi -o . --additional-properties=packageName=fabric_api
+    ```
+
+
 2. **Install the required dependencies**:
 
     ```bash
@@ -122,7 +135,7 @@ Follow these steps to select the correct Python interpreter:
     ```
 
 > [!IMPORTANT]
-    > On Windows, you may encounter an error with the `uvloop` package. If this happens:
+    > On Windows, you may encounter an error with the `uvloop` package. If that happens:
     > 1. Edit your `requirements.txt` file
     > 2. Find the `uvloop` entry (which might look like `uvloop==0.17.0` or similar) and add the platform conditional to the end:
     > ```
@@ -323,7 +336,7 @@ curl -X POST "http://localhost:8080/workspaces/test-workspace/items/TestItemType
   }'
 ```
 
-### Option 2: Using Swagger UI (Interactive Documentation)
+### Option 2: Using Swagger UI
 
 FastAPI automatically generates interactive API documentation, allowing you to test your endpoints directly from your browser:
 
@@ -363,7 +376,7 @@ FastAPI automatically generates interactive API documentation, allowing you to t
 
 5. Click the **Execute** button to send the request.
 
-You should see output in your server console similar to this:
+You should see output in your server console similar to the printed messages below:
 
 ```bash
 === CREATE ITEM CALLED ===
@@ -376,7 +389,7 @@ Creation Payload: {'key1': 'value1', 'key2': 'value2', 'nested': {'data': 'examp
 ===========================
 ```
 
-You will also see the response details directly in the Swagger UI interface.
+You'll also see the response details directly in the Swagger UI interface.
 
 > [!TIP]
 > Using Swagger UI is often easier and faster during development, as it provides a user-friendly interface for testing API endpoints without manually crafting curl commands.
