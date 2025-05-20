@@ -46,7 +46,7 @@ The Delta table data is stored in a single Parquet file that contains all data, 
 
 #### Insert operations
 
-Consider what happens when an insert operation occurs: A new row for product `C` with a stock on hand value of `4` is inserted. This operations results in the creation of a new Parquet file and link file, so there's now two Parquet files and two link files.
+Consider what happens when an insert operation occurs: A new row for product `D` with a stock on hand value of `4` is inserted. This operations results in the creation of a new Parquet file and link file, so there's now two Parquet files and two link files.
 
 - Parquet file 1:
   - **ProductID**: A, B, C
