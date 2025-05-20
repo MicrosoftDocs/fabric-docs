@@ -163,20 +163,20 @@ You can configure advanced options to modify the behavior of the connector.
 The following instructions describe how to configure advanced options in a DSN and in the connector configuration tool. You can specify the connection settings in a DSN, in a connection string, or as connector-wide settings. Settings in the connection string take precedence over settings in the DSN, and settings in the DSN take precedence over connector-wide settings.
 To configure advanced options:
 
-    > [!IMPORTANT]
-    > When this option is enabled, the connector can't execute parameterized queries.
-    > By default, the connector applies transformations to the queries emitted by an application to convert the queries into an equivalent form in SparkSQL. If the application is Spark-aware and already emits SparkSQL, then turning off the translation avoids the overhead of query transformation.
+> [!IMPORTANT]
+> When this option is enabled, the connector can't execute parameterized queries.
+> By default, the connector applies transformations to the queries emitted by an application to convert the queries into an equivalent form in SparkSQL. If the application is Spark-aware and already emits SparkSQL, then turning off the translation avoids the overhead of query transformation.
 
 1. To access advanced options for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then select **Configure**, and then select **Advanced Options**.
 1. To disable the SQL Connector feature, select the **Use Native Query** check box.
 1. To enable the connector to return SQL_WVARCHAR instead of SQL_VARCHAR for STRING and VARCHAR columns, and SQL_WCHAR instead of SQL_CHAR for CHAR columns, select the **Unicode SQL Character Types** check box.
 1. In the **Max Bytes Per Fetch Request** field, type the maximum number of bytes to be fetched. This option is applicable only when connecting to a server that supports result set data serialized in Arrow format. The value must be specified in one of the following:
 
-- B (bytes)
-- KB (kilobytes)
-- MB (megabytes)
-- GB (gigabytes)
-- By default, the file size is in B (bytes).
+    - B (bytes)
+    - KB (kilobytes)
+    - MB (megabytes)
+    - GB (gigabytes)
+    - By default, the file size is in B (bytes).
 
 1. In the **Default String Column Length** field, type the maximum data length for STRING columns.
 1. In the **Binary Column Length** field, type the maximum data length for BINARY columns.
@@ -184,12 +184,9 @@ To configure advanced options:
 1. In the **Query Timeout** field, type the number of seconds that an operation can remain idle before it's closed.
 1. To save your settings and close the Advanced Options dialog box, select **OK**.
 
-
-
-
 ## Configure a proxy connection
 
-If you're connecting to the data source through a proxy server, you must provide connection information for the proxy server.
+When connecting to the data source through a proxy server, you must provide connection information for the proxy server.
 
 To configure a proxy server connection:
 
@@ -215,9 +212,9 @@ If you're connecting to a Spark server that has Secure Sockets Layer (SSL) enabl
 When using SSL to connect to a server, the connector supports identity verification between the client (the connector itself) and the server.
 The following instructions describe how to configure SSL in a DSN. You can specify the connection settings in a DSN, or in a connection string. Settings in the connection string take precedence over settings in the DSN.
 
-> [!IMPORTANT]
-> If you're using the Windows trust store, make sure to import the trusted CA certificates into the trust store.
-> If the trusted CA supports certificate revocation, select the Check Certificate Revocation check box.
+    > [!IMPORTANT]
+    > If you're using the Windows trust store, make sure to import the trusted CA certificates into the trust store.
+    > If the trusted CA supports certificate revocation, select the Check Certificate Revocation check box.
 
 To configure SSL verification:
 
@@ -251,8 +248,8 @@ You can use the connector to apply configuration properties to the Spark server.
 
 The following instructions describe how to configure server-side properties in a DSN. You can specify the connection settings described below in a DSN, or in a connection string. Settings in the connection string take precedence over settings in the DSN.
 
-> [!NOTE]
-> For a list of all Hadoop and Spark server-side properties that your implementation supports, type set -v at the Spark CLI command line. You can also execute the set -v query after connecting using the connector.
+    > [!NOTE]
+    > For a list of all Hadoop and Spark server-side properties that your implementation supports, type set -v at the Spark CLI command line. You can also execute the set -v query after connecting using the connector.
 
 To configure server-side properties:
 
