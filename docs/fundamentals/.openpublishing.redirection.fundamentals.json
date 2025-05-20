@@ -1096,7 +1096,7 @@
             "redirect_document_id": false
         },
         {
-            "source_path_from_root": "/docs/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md",
+            "source_path_from_root": "/docs/known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md",
             "redirect_url": "/fabric/get-started/fabric-known-issues",
             "redirect_document_id": false
         },
