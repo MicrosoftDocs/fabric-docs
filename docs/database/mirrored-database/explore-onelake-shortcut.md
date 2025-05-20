@@ -21,7 +21,8 @@ Notebooks are a powerful code item for you to develop Apache Spark jobs and mach
     - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-tutorial.md)
     - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](azure-sql-managed-instance-tutorial.md)
     - [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](snowflake-tutorial.md)
-
+    - [Tutorial: Configure Microsoft Fabric mirrored databases from SQL Server](sql-server-tutorial.md)
+    - [Tutorial: Create an open mirrored database](open-mirroring-tutorial.md)
 
 ## Create a shortcut
 
