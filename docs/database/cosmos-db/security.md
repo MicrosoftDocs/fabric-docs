@@ -20,7 +20,7 @@ This article provides guidance on how to best secure your Azure Cosmos DB for No
 
 - **Use managed identities to access your account from other Azure services**: Managed identities eliminate the need to manage credentials by providing an automatically managed identity in Microsoft Entra ID. Use managed identities to securely access Azure Cosmos DB from other Azure services without embedding credentials in your code.
 
-- **Use Entra authentication to query, create, and access items within a container**: Use your human identity with Microsoft Entra authentication to access items within Azure Cosmos DB containers. Enforce least privilege access for querying, creating, and other operations. This control helps secure your data operations.
+- **Use Entra authentication to query, create, and access items within a container**: Access items within Azure Cosmos DB containers using your human identity and Microsoft Entra authentication. Enforce least privilege access for querying, creating, and other operations. This control helps secure your data operations.
 
 - **Separate the Azure identities used for data and control plane access**: Use distinct Azure identities for control plane and data plane operations to reduce the risk of privilege escalation and ensure better access control. This separation enhances security by limiting the scope of each identity.
 
