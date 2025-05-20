@@ -123,7 +123,7 @@ items:
         href: event-streams/add-source-google-cloud-pub-sub.md
       - name: Amazon Kinesis Data Streams
         href: event-streams/add-source-amazon-kinesis-data-streams.md
-      - name: Confluent Cloud Kafka
+      - name: Confluent Cloud for Apache Kafka
         href: event-streams/add-source-confluent-kafka.md
       - name: Apache Kafka
         href: event-streams/add-source-apache-kafka.md
