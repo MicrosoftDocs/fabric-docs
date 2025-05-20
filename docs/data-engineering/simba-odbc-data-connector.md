@@ -70,15 +70,15 @@ To create a Data Source Name:
 > [!NOTE]
 > Make sure to select the ODBC Data Source Administrator that has the same bitness as the client application that you're using to connect to Spark.
 
-> [!NOTE]
-> We recommended you create a System DSN instead of a User DSN. Some applications load the data using a different user account and might not be able to detect User DSNs that are created under another user account.
-
 1. From the Start menu, go to **ODBC Data Sources**.
 1. In the ODBC Data Source Administrator, select the **Drivers** tab, and then scroll down as needed to confirm that the Simba ODBC Data Connector for Microsoft Fabric Spark appears in the alphabetical list of ODBC drivers that are installed on your system.
 1. Choose one:
 
     - To create a DSN that only the user currently logged into Windows can use, select the **User DSN** tab.
     - Or, to create a DSN that all users who log into Windows can use, select the **System DSN** tab.
+
+    > [!NOTE]
+    > We recommended you create a System DSN instead of a User DSN. Some applications load the data using a different user account and might not be able to detect User DSNs that are created under another user account.
 
 1. Select **Add**.
 1. In the Create New Data Source dialog box, select **Simba ODBC Data Connector for Microsoft Fabric Spark** and then select **Finish**. The Simba ODBC Data Connector for Microsoft Fabric Spark DSN Setup dialog box opens.
@@ -99,13 +99,14 @@ To create a Data Source Name:
 1. To configure server-side properties, select **Advanced Options** and then select **Server Side Properties**.
 1. To configure logging behavior for the connector, select **Logging Options**.
 1. To test the connection, select **Test**. Review the results as needed, and then select **OK**.
+
+    > [!NOTE]
+    > If the connection fails, then confirm that the settings in the Simba Spark ODBC Driver DSN Setup dialog box are correct. Contact your Spark server administrator as needed.
+
 1. To save your settings and close the Simba ODBC Data Connector for **Microsoft Fabric Spark DSN Setup** dialog box, select **OK**.
 1. To close the ODBC Data Source Administrator, select **OK**.
 
-> [!NOTE]
-> If the connection fails, then confirm that the settings in the Simba Spark ODBC Driver DSN Setup dialog box are correct. Contact your Spark server administrator as needed.
-
-## Client credentials
+## Configure client credentials
 
 This authentication mechanism requires SSL to be enabled.
 You can use client secret as the client credentials.
@@ -128,7 +129,7 @@ To configure OAuth 2.0 client credentials authentication using the client secret
 1. To save your settings and close the **OAuth Options** dialog box, select **OK**.
 1. To save your settings and close the **DSN Setup** dialog box, select **OK**.
 
-### Browser based authorization code
+### Configure Browser based authorization code
 
 This authentication mechanism requires SSL to be enabled.
 
@@ -152,8 +153,8 @@ To configure OAuth 2.0 browser-based authentication:
 
 1. To save your settings and close the **DSN Setup** dialog box, select **OK**.
 
-> [!NOTE]
-> When the browser-based authentication flow completes, the access token and refresh token are saved in the token cache, and the connector doesn't need to authenticate again.
+    > [!NOTE]
+    > When the browser-based authentication flow completes, the access token and refresh token are saved in the token cache, and the connector doesn't need to authenticate again.
 
 ## Configure advanced options
 
@@ -162,29 +163,29 @@ You can configure advanced options to modify the behavior of the connector.
 The following instructions describe how to configure advanced options in a DSN and in the connector configuration tool. You can specify the connection settings in a DSN, in a connection string, or as connector-wide settings. Settings in the connection string take precedence over settings in the DSN, and settings in the DSN take precedence over connector-wide settings.
 To configure advanced options:
 
-> [!IMPORTANT]
-> When this option is enabled, the connector can't execute parameterized queries.
-> By default, the connector applies transformations to the queries emitted by an application to convert the queries into an equivalent form in SparkSQL. If the application is Spark-aware and already emits SparkSQL, then turning off the translation avoids the overhead of query transformation.
+    > [!IMPORTANT]
+    > When this option is enabled, the connector can't execute parameterized queries.
+    > By default, the connector applies transformations to the queries emitted by an application to convert the queries into an equivalent form in SparkSQL. If the application is Spark-aware and already emits SparkSQL, then turning off the translation avoids the overhead of query transformation.
 
 1. To access advanced options for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then select **Configure**, and then select **Advanced Options**.
 1. To disable the SQL Connector feature, select the **Use Native Query** check box.
 1. To enable the connector to return SQL_WVARCHAR instead of SQL_VARCHAR for STRING and VARCHAR columns, and SQL_WCHAR instead of SQL_CHAR for CHAR columns, select the **Unicode SQL Character Types** check box.
-1. In the **Max Bytes Per Fetch Request** field, type the maximum number of bytes to be fetched.
-1. In the **Default String Column Length** field, type the maximum data length for STRING columns.
-1. In the **Binary Column Length** field, type the maximum data length for BINARY columns.
-1. In the **Async Exec Poll Interval** field, type the time in milliseconds between each poll for the query execution status.
-1. In the **Query Timeout** field, type the number of seconds that an operation can remain idle before it's closed.
-1. To save your settings and close the Advanced Options dialog box, select **OK**.
-
->[!NOTE]
-> In the  Max Bytes Per Fetch Request field, this option is applicable only when connecting to a server that supports result set data serialized in Arrow format.
-> The value must be specified in one of the following:
+1. In the **Max Bytes Per Fetch Request** field, type the maximum number of bytes to be fetched. This option is applicable only when connecting to a server that supports result set data serialized in Arrow format. The value must be specified in one of the following:
 
 - B (bytes)
 - KB (kilobytes)
 - MB (megabytes)
 - GB (gigabytes)
 - By default, the file size is in B (bytes).
+
+1. In the **Default String Column Length** field, type the maximum data length for STRING columns.
+1. In the **Binary Column Length** field, type the maximum data length for BINARY columns.
+1. In the **Async Exec Poll Interval** field, type the time in milliseconds between each poll for the query execution status.
+1. In the **Query Timeout** field, type the number of seconds that an operation can remain idle before it's closed.
+1. To save your settings and close the Advanced Options dialog box, select **OK**.
+
+
+
 
 ## Configure a proxy connection
 
