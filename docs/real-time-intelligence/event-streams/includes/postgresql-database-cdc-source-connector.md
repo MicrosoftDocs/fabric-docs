@@ -41,11 +41,11 @@ ms.date: 05/21/2024
         - If not specified, a GUID is used to create the slot, requiring the appropriate database permissions.
         - If a specified slot name exists, the connector uses it directly.
 
-1. Scroll down and expand **Advanced settings** to configure more options for the PostgreSQL Database CDC source:
+1.You can optionally expand **Advanced settings** to configure more options for the PostgreSQL Database CDC source:
     1. **Publication name**: Specifies the name of the PostgreSQL logical replication publication to use. This must match an existing publication in the database, or it will be created automatically depending on the autocreate mode. Default value: `dbz_publication`.
         > [!NOTE]
         > The connector user must have superuser permissions to create the publication. It's recommended to create the publication manually before starting the connector for the first time to avoid permission-related issues.
-    1. **Publication auto-create mode**： Controls whether and how the publication is automatically created. Options include:
+    1. **Publication auto-create mode**：Controls whether and how the publication is automatically created. Options include:
         - `Filtered`(default): If the specified publication doesn't exist, the connector creates one that includes only the selected tables (as specified in the table include list).
         - `AllTables`: If the specified publication exists, the connector uses it. If it doesn't exist, the connector creates one that includes all tables in the database.
         - `Disabled`: The connector doesn't create a publication. If the specified publication is missing, the connector throws an exception and stops. In this case, the publication must be manually created in the database.
