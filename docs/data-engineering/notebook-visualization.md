@@ -20,15 +20,15 @@ When using a Fabric notebook, you can turn your tabular results view into a cust
 
 ## Built-in visualization command -  display() function
 
-The Fabric built-in visualization function allows you to turn Apache Spark DataFrames, Pandas DataFrames, and SQL query results into rich format data visualizations.
+The Fabric built-in visualization function enables you to transform Apache Spark DataFrames, Pandas DataFrames, and SQL query results into rich, interactive data visualizations.
 
-You can use the _display_ function on dataframes that created in PySpark and Scala on Spark DataFrames or Resilient Distributed Datasets (RDD) functions to produce the rich dataframe table view and chart view.
+Using the _display_ function, you can render PySpark and Scala Spark DataFrames or Resilient Distributed Datasets (RDDs) as dynamic tables or charts.
 
 You can specify the row count of the dataframe being rendered. The default value is **1000**. Notebook _display_ output widget supports to view and profile **10000** rows of a dataframe at most.
 
   :::image type="content" source="media\notebook-visualization\specify-range.png" alt-text="Screenshot of an example of specifying range." lightbox="media\notebook-visualization\specify-range.png":::
 
-You can use the filter function on the global toolbar to filter the data that mapping with your customized rule efficiently, the condition is applied to the specified column, and the filter result reflects on both table view and chart view.
+You can use the filter function on the global toolbar to apply customized rules to your data. The filter condition is applied to a specified column, and the results are reflected in both the table and chart views.
 
   :::image type="content" source="media\notebook-visualization\customize-columns.png" alt-text="Screenshot of an example of customizing columns." lightbox="media\notebook-visualization\customize-columns.png":::
 
@@ -95,7 +95,7 @@ The improved chart view is available on _display()_ command. It provides a more 
    |Other |Missing and NULL values | Configure how missing or NULL chart values are displayed. |
 
    > [!NOTE]
-   > By default the _display(df)_ function only takes the first 1,000 rows of the data to render the charts. Select **Aggregation over all results** and then select **Apply** to apply the chart generation from the whole dataframe. A Spark job is triggered when the chart setting changes. It might take several minutes to complete the calculation and render the chart.
+   > Additionally, you can specify the number of rows displayed, with a default setting of 1,000. The notebook _display_ output widget supports viewing and profiling up to 10,000 rows of a DataFrame. Select **Aggregation over all results** and then select **Apply** to apply the chart generation from the whole dataframe. A Spark job is triggered when the chart setting changes. It might take several minutes to complete the calculation and render the chart.
 
    |Category |**Advanced settings** | **Description** |
    |---|---|---|
