@@ -1,0 +1,14 @@
+### YamlMime:TOC
+items:
+  - name: Overview
+    href: overview.md
+  - name: Get started
+    items:
+      - name: Create a database
+        href: quickstart-portal.md
+      - name: Connect from your environment
+        href: how-to-connect-development.md
+  - name: Build secure solutions
+    items:
+      - name: Security best practices
+        href: security.md
