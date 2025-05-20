@@ -182,6 +182,8 @@ Defines categories in which your item is shown in OneLake catalog.
   - `"Configuration"`
   - `"Other"`
 
+If no category is specified, the item won't be shown in OneLake catalog.
+
 > [!NOTE]
 > When developing and testing new attributes added to the manifest, ensure you have synced the latest [validation scripts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/validation) and [tools](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/tools) from our sample repository.
 >
