@@ -51,7 +51,7 @@ For continuous ingestion you also require:
 
 1. From the Workspace settings in Fabric, copy your workspace identity ID.
 
-    :::image type="content" source="media/get-data-azure-storage/workspace-id.png" alt-text="Image of the workspace setting, with the workspace ID highlighted.":::
+    :::image type="content" source="media/get-data-azure-storage/workspace-id.png" alt-text="Screenshot of the workspace setting, with the workspace ID highlighted.":::
 
 1. In the Azure portal, browse to your Azure Storage account, and select **Access Control (IAM)** > **Add** > **Add role assignment**.
 
@@ -73,7 +73,7 @@ For continuous ingestion you also require:
 
 1. From the context menu, **[...]**, select **Container properties**, and copy the URL to input during the configuration.
 
-    :::image type="content" source="media/get-data-azure-storage/container-properties.png" alt-text="The list of containers with the context menu open with container properties highlighted.":::
+    :::image type="content" source="media/get-data-azure-storage/container-properties.png" alt-text="Screenshot showing the list of containers with the context menu open with container properties highlighted.":::
 
 ## Source
 
@@ -243,13 +243,13 @@ Optionally:
 * If you're ingesting tabular formats in an *existing table*, you can select **Table_mapping** > **Use existing schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
 * To use the first row as column names, select  **First row header**.
 
-  :::image type="content" source="media/get-data-azure-storage/advanced-csv.png" alt-text="Screenshot of advanced CSV options":::
+  :::image type="content" source="media/get-data-azure-storage/advanced-csv.png" alt-text="Screenshot of advanced CSV options.":::
 
 **JSON**:
 
 * To determine column division of JSON data, select **Nested levels**, from 1 to 100.
 
-  :::image type="content" source="media/get-data-azure-storage/advanced-json.png" alt-text="Screenshot of advanced JSON options":::
+  :::image type="content" source="media/get-data-azure-storage/advanced-json.png" alt-text="Screenshot of advanced JSON options.":::
 
 ## Summary
 
