@@ -4,7 +4,7 @@ description: Learn how Fabric roles control data access in digital twin builder 
 author: baanders
 ms.author: baanders
 ms.date: 05/01/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Role-based access control in digital twin builder (preview)
