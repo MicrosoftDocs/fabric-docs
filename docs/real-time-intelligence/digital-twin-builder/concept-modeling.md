@@ -4,7 +4,7 @@ description: Understand how data modeling works in digital twin builder (preview
 author: baanders
 ms.author: baanders
 ms.date: 05/01/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.service: fabric
 ms.subservice: rti-core
 ---

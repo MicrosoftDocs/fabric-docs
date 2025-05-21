@@ -4,7 +4,7 @@ description: Learn about integrating ontology data from digital twin builder (pr
 author: baanders
 ms.author: baanders
 ms.date: 04/17/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Integrating machine learning (ML) with digital twin builder (preview)

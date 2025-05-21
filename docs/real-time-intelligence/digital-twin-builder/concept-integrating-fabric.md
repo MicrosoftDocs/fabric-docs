@@ -4,7 +4,7 @@ description: Learn about integrating digital twin builder (preview) with other F
 author: baanders
 ms.author: baanders
 ms.date: 04/28/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Integrating Fabric tools with digital twin builder (preview)
