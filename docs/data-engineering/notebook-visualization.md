@@ -38,7 +38,7 @@ The output of SQL statement adopts the same output widget with _display()_ by de
 
 #### Free selection support on table view
 
-By default, the **Table View** is rendered when using the display() command in a Fabric notebook. The rich dataframe preview offers an intuitive free selection function, designed to enhance the data analysis experience by enabling flexible, interactive selection options. This feature allows users to efficiently navigate and explore dataframes with ease.
+By default, the **Table View** is rendered when using the _display()_ command in a Fabric notebook. The rich dataframe preview offers an intuitive free selection function, designed to enhance the data analysis experience by enabling flexible, interactive selection options. This feature allows users to efficiently navigate and explore dataframes with ease.
 
 - **Column selection**
   - **Single column**: Click the column header to select the entire column.
@@ -74,7 +74,7 @@ The improved chart view in the _display()_ command offers a more intuitive and d
 
 Key Enhancements:
 
-1. **Multi-Chart Support**: Add up to **five** charts within a single display() output widget by selecting New Chart, enabling easy comparisons across different columns.
+1. **Multi-Chart Support**: Add up to **five** charts within a single _display()_ output widget by selecting **New Chart**, enabling easy comparisons across different columns.
 
 1. **Smart Chart Recommendations**: Get a list of suggested charts based on your DataFrame. Choose to edit a recommended visualization or create a custom chart from scratch.
 
