@@ -35,7 +35,7 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | Adobe Analytics | ✓/− |  |  | 
 | ADPAnalytics | ✓/− |  |  | 
 | Amazon Athena | ✓/− |  |  | 
-| Amazon OpenSearch Service(Beta)  | ✓/− |  |  | 
+| Amazon OpenSearch Service (Beta)  | ✓/− |  |  | 
 | Amazon RDS for SQL Server |  | ✓/− | ✓/− | 
 | Amazon Redshift | ✓/− | ✓/− |  | 
 | Amazon S3 |  | ✓/✓ | ✓/✓ | 
