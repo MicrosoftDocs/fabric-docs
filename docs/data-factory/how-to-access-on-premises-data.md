@@ -13,30 +13,10 @@ ms.search.form: On-premises data sources gateway
 
 Data Factory for Microsoft Fabric is a cloud-based, data integration service that allows you to create, schedule, and manage workflows for various data sources. When your data sources are located on-premises, Microsoft provides the On-Premises Data Gateway to securely bridge the gap between your on-premises environment and the cloud. This document guides you through the process of creating and connecting to this gateway to access your on-premises data sources.
 
-## Create an on-premises data gateway
+## Available connection types
 
-1. An on-premises data gateway is a software application designed to be installed within a local network environment. It provides a means to directly install the gateway onto your local machine. For detailed instructions on how to download and install the on-premises data gateway, refer to [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install).
-
-   :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup.png" alt-text="Screenshot showing the on-premises data gateway setup.":::
-
-1. Sign-in using your user account to access the on-premises data gateway, after which it's prepared for utilization.
-
-   :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup-after-sign-in.png" alt-text="Screenshot showing the on-premises data gateway setup after the user signed in.":::
-
-> [!NOTE]
-> An on-premises data gateway of version higher than or equal to 3000.214.2 is required to support Fabric pipelines.
-
-## Create a connection for your on-premises data source
-
-1. Navigate to the [admin portal](https://app.powerbi.com) and select the settings button (an icon that looks like a gear) at the top right of the page. Then choose **Manage connections and gateways** from the dropdown menu that appears.
-
-   :::image type="content" source="media/how-to-access-on-premises-data/manage-connections-gateways.png" alt-text="Screenshot showing the Settings menu with Manage connections and gateways highlighted.":::
-
-1. On the **New connection** dialog that appears, select **On-premises** and then provide your gateway cluster, along with the associated resource type and relevant information.
-
-   :::image type="content" source="media/how-to-access-on-premises-data/new-connection-details.png" alt-text="Screenshot showing the New connection dialog with On-premises selected.":::
-
-   Available connection types supported for on-premises connections include:
+For a comprehensive list of the connectors supported for on-premises data types and details for how to connect to each type, refer to [Data pipeline connectors in Microsoft Fabric](pipeline-support.md) and your source's specific connector page.
+Available connection types supported for on-premises connections include:
 
    - Entra ID
    - Adobe Analytics
@@ -65,7 +45,28 @@ Data Factory for Microsoft Fabric is a cloud-based, data integration service tha
    - Teradata
    - Web
 
-   For a comprehensive list of the connectors supported for on-premises data types, refer to [Data pipeline connectors in Microsoft Fabric](pipeline-support.md).
+## Create an on-premises data gateway
+
+1. An on-premises data gateway is a software application designed to be installed within a local network environment. It provides a means to directly install the gateway onto your local machine. For detailed instructions on how to download and install the on-premises data gateway, refer to [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install).
+
+   :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup.png" alt-text="Screenshot showing the on-premises data gateway setup.":::
+
+1. Sign-in using your user account to access the on-premises data gateway, after which it's prepared for utilization.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup-after-sign-in.png" alt-text="Screenshot showing the on-premises data gateway setup after the user signed in.":::
+
+> [!NOTE]
+> An on-premises data gateway of version higher than or equal to 3000.214.2 is required to support Fabric pipelines.
+
+## Create a connection for your on-premises data source
+
+1. Navigate to the [admin portal](https://app.powerbi.com) and select the settings button (an icon that looks like a gear) at the top right of the page. Then choose **Manage connections and gateways** from the dropdown menu that appears.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/manage-connections-gateways.png" alt-text="Screenshot showing the Settings menu with Manage connections and gateways highlighted.":::
+
+1. On the **New connection** dialog that appears, select **On-premises** and then provide your gateway cluster, along with the associated resource type and relevant information.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/new-connection-details.png" alt-text="Screenshot showing the New connection dialog with On-premises selected.":::
 
    >[!TIP]
    >Refer to the [data pipeline connectors in Microsoft Fabric article](pipeline-support.md) and specific connector articles for details like supported authentication types for your source or troubleshooting information.
