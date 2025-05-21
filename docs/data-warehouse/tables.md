@@ -1,6 +1,6 @@
 ---
 title: Tables
-description: Learn about tables in Microsoft Fabric.
+description: Learn how to design and use tables in Microsoft Fabric Data Warehouse, including temporary tables.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: xiaoyul, randolphwest
@@ -30,8 +30,7 @@ A [star schema](dimensional-modeling-overview.md#star-schema-design) organizes d
 
 A table stores data in [OneLake](../onelake/onelake-overview.md) as part of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The table and the data persist whether or not a session is open.
 
-
-## Tables in the Warehouse
+## Tables in the warehouse
 
 To show the organization of the tables, you could use `fact`, `dim`, or `int` as prefixes to the table names. The following table shows some of the schema and table names for [WideWorldImportersDW](/sql/samples/wide-world-importers-dw-database-catalog?view=fabric&preserve-view=true) sample data warehouse. 
 
@@ -104,9 +103,13 @@ FOREIGN KEY is only supported when NOT ENFORCED is used.
 - For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true). 
 - For more information, see [Primary keys, foreign keys, and unique keys](table-constraints.md).
 
-## #temp tables in Fabric Data Warehouse
+<a id="temp-tables-in-fabric-data-warehouse"></a>
 
-Session-scoped temporary (#temp) tables can be created in Fabric Data Warehouse. These tables exist only within the session in which they are created and last for the duration of that session. They are not visible to other users or sessions and are automatically dropped from the system once the session ends or the #temp table is dropped. These tables are accessible to all users without requiring specific item-level permission.
+## #temp tables
+
+Session-scoped temporary (#temp) tables can be created in Fabric Data Warehouse. 
+
+These tables exist only within the session in which they are created and last for the duration of that session. They are not visible to other users or sessions and are automatically dropped from the system once the session ends or the #temp table is dropped. These tables are accessible to all users without requiring specific item-level permission.
 
 Two types of #temp tables can be created based on specific use cases, non-distributed and distributed.
 
