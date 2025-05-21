@@ -212,9 +212,9 @@ If you're connecting to a Spark server that has Secure Sockets Layer (SSL) enabl
 When using SSL to connect to a server, the connector supports identity verification between the client (the connector itself) and the server.
 The following instructions describe how to configure SSL in a DSN. You can specify the connection settings in a DSN, or in a connection string. Settings in the connection string take precedence over settings in the DSN.
 
-    > [!IMPORTANT]
-    > If you're using the Windows trust store, make sure to import the trusted CA certificates into the trust store.
-    > If the trusted CA supports certificate revocation, select the Check Certificate Revocation check box.
+> [!IMPORTANT]
+> If you're using the Windows trust store, make sure to import the trusted CA certificates into the trust store.
+> If the trusted CA supports certificate revocation, select the Check Certificate Revocation check box.
 
 To configure SSL verification:
 
@@ -248,8 +248,8 @@ You can use the connector to apply configuration properties to the Spark server.
 
 The following instructions describe how to configure server-side properties in a DSN. You can specify the connection settings described below in a DSN, or in a connection string. Settings in the connection string take precedence over settings in the DSN.
 
-    > [!NOTE]
-    > For a list of all Hadoop and Spark server-side properties that your implementation supports, type set -v at the Spark CLI command line. You can also execute the set -v query after connecting using the connector.
+> [!NOTE]
+> For a list of all Hadoop and Spark server-side properties that your implementation supports, type set -v at the Spark CLI command line. You can also execute the set -v query after connecting using the connector.
 
 To configure server-side properties:
 
