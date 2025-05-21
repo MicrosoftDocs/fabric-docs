@@ -3,7 +3,8 @@ title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
-ms.date: 04/29/2025
+ms.reviewer: wiassaf
+ms.date: 05/08/2025
 ms.topic: conceptual
 ---
 
@@ -161,6 +162,56 @@ If you want to replicate selective tables instead of all the tables in the speci
     "properties": {
         "source": {
             "type": "CosmosDb",
+            "typeProperties": {
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "database": "xxxx"
+            }
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta"
+            }
+        }
+    }
+}
+```
+
+### JSON definition example of SQL Server 2025 mirrored database
+
+This sample applies only to Fabric Mirroring for SQL Server 2025.
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "SqlServer2025",
+            "typeProperties": {
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "database": "xxxx"
+            }
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta"
+            }
+        }
+    }
+}
+```
+
+### JSON definition example of SQL Server 2016-2022 mirrored database
+
+This sample applies to Fabric Mirroring for SQL Server 2016-2022.
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "MSSQL",
             "typeProperties": {
                 "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
                 "database": "xxxx"
@@ -394,8 +445,32 @@ Body:
 
 Response 200: (No body)
 
+The payload property in previous JSON body is Base64 encoded. You can use [Base64 Encode and Decode](https://www.base64encode.org/) to encode.
+
 > [!NOTE]
 > This API supports adding/removing tables by refreshing the `mountedTables` property. It also supports updating the source connection ID, database name, and default schema (these three properties can only be updated when **Get mirroring status** API returns `Initialized`/`Stopped`).
+
+### Configure data retention 
+
+You can set the [retention period for mirrored data](overview.md#retention-for-mirrored-data) using the `retentionInDays` property. The default value is seven days. The allowed values are integer between 1 and 30.
+
+*JSON definition example before Base64 encoding:*
+
+```json
+{
+    "properties": {
+        "source": {...},
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta",
+                "retentionInDays": 1
+            }
+        }
+    }
+}
+```
 
 ## Get mirroring status
 

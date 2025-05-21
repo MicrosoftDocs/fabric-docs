@@ -51,6 +51,7 @@ You can perform the following actions:
 * Write and run queries on the selected table. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 * [Create a Power BI report](create-powerbi-report.md), [Dashboard](dashboard-real-time-create.md#create-a-new-dashboard), or [Notebook](notebooks.md#create-a-notebook-from-a-kql-database).
 * Rename a table, delete a table, and hide or view the table details.
+* [Edit a table schema](edit-table-schema.md).
 
 ## Table details
 
@@ -115,5 +116,6 @@ The center table information pane depicts a histogram of the ingestion data, tab
 
 * [Create a KQL database](create-database.md)
 * [Create an empty table](create-empty-table.md)
+* [Edit a table schema](edit-table-schema.md)
 * [Data management](data-management.md)
 * [Manage and monitor a database](manage-monitor-database.md)

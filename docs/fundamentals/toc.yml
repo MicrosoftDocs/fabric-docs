@@ -53,6 +53,8 @@ items:
     href: create-workspaces.md
   - name: Roles in workspaces
     href: roles-workspaces.md
+  - name: Reassign a workspace to a different capacity
+    href: workspace-license-mode.md
   - name: Create items in workspaces
     href: create-items-in-workspaces.md
   - name: Create folders in workspaces
@@ -131,18 +133,22 @@ items:
   items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
-  - name: Develop Direct Lake models
-    href: direct-lake-develop.md
-  - name: Manage Direct Lake models
-    href: direct-lake-manage.md
   - name: Understand storage for Direct Lake
     href: direct-lake-understand-storage.md
   - name: Direct Lake in Power BI Desktop (preview)
-    href: direct-lake-power-bi-desktop.md        
+    href: direct-lake-power-bi-desktop.md 
+  - name: Direct Lake in Power BI Project (PBIP) (preview)
+    href: direct-lake-power-bi-project.md     
+  - name: Direct Lake in Power BI web modeling (preview)
+    href: direct-lake-web-modeling.md     
   - name: Edit tables for Direct Lake semantic models
     href: direct-lake-edit-tables.md
   - name: Create a Lakehouse for Direct Lake
     href: direct-lake-create-lakehouse.md
+  - name: Develop Direct Lake models
+    href: direct-lake-develop.md
+  - name: Manage Direct Lake models
+    href: direct-lake-manage.md
   - name: Specify a fixed identity
     href: direct-lake-fixed-identity.md
   - name: Analyze query processing
@@ -199,6 +205,38 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: SQL editor Copilot code completion feature might cause high usage
+      href: ../known-issues/known-issue-1142-sql-editor-copilot-code-completion-feature-high-usage.md
+    - name: Credential update in Google Analytics connections fails with JSON error
+      href: ../known-issues/known-issue-1138-credential-update-google-analytics-connections-fails.md
+    - name: Transient failure for deploying User data functions welcome templates
+      href: ../known-issues/known-issue-1137-failure-deploying-user-data-functions-welcome-templates.md
+    - name: Scrolling through workspaces in OneLake Catalog doesn't work
+      href: ../known-issues/known-issue-1136-scrolling-workspaces-onelake-catalog-not-work.md
+    - name: Explore mode within digital twin builder unexpectedly empty
+      href: ../known-issues/known-issue-1125-explore-mode-digital-twin-builder-unexpectedly-empty.md
+    - name: Digital twin builder mapping fails with concurrent update error
+      href: ../known-issues/known-issue-1124-digital-twin-builder-mapping-fails-concurrent-update-error.md
+    - name: Throttling issues with the Mirrored Azure Databricks catalog shortcuts
+      href: ../known-issues/known-issue-1135-throttling-issues-mirrored-azure-databricks-catalog-shortcuts.md
+    - name: Multiple dataflow staging items created in workspace
+      href: ../known-issues/known-issue-1134-multiple-dataflow-staging-items-created-workspace.md
+    - name: Deleted OneLake Shortcuts still visible as empty file
+      href: ../known-issues/known-issue-1133-deleted-oneLake-shortcuts-visible-empty-file.md
+    - name: Spark job fails with out of memory error when using timestamp type
+      href: ../known-issues/known-issue-1132-spark-job-fails-memory-error-timestamp-type.md
+    - name: SQL database creation fails due to tenant setting
+      href: ../known-issues/known-issue-1131-sql-database-creation-fails-tenant-setting.md
+    - name: Failure to Save and Run Dataflow Gen2 dataflows deployed with Git integration
+      href: ../known-issues/known-issue-1128-failure-save-run-dataflow-gen2-deployed-git-integration.md
+    - name: Function queries cause failures in Dataflow Gen2 refresh
+      href: ../known-issues/known-issue-1126-function-queries-failures-dataflow-gen2-refresh.md
+    - name: Reenabling Azure SQL database mirroring fails
+      href: ../known-issues/known-issue-1123-reenabling-azure-sql-database-mirroring-fails.md
+    - name: Power BI report selection doesn't work in Viva Goals
+      href: ../known-issues/known-issue-1122-report-selection-not-work-viva-goals.md
+    - name: Recommended tiles on the home page appear stretched for customer images
+      href: ../known-issues/known-issue-1120-recommended-tiles-home-page-stretched-customer-images.md
     - name: Large semantic model storage format conversion stays in view mode
       href: ../known-issues/known-issue-1119-large-semantic-model-conversion-view-mode.md
     - name: SQL analytics endpoint queries return empty results
@@ -351,8 +389,6 @@ items:
       href: ../known-issues/known-issue-954-create-configure-delete-mirror-fails.md
     - name: Intermittent failures on deployment of Sustainability solution
       href: ../known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md
-    - name: Pipeline copy data to Kusto using an on-premises data gateway doesn't work
-      href: ../known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md
     - name: Line chart value-axis zoom sliders don't work with markers enabled
       href: ../known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md
     - name: The default environment's resources folder doesn't work in notebooks
@@ -369,26 +405,16 @@ items:
       href: ../known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md
     - name: Pipeline fails when getting a token to connect to Kusto
       href: ../known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto.md
-    - name: Dataverse shortcut creation and read fails when organization is moved
-      href: ../known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md
     - name: Can't connect to semantic model from Excel or use Analyze in Excel
       href: ../known-issues/known-issue-893-not-connect-semantic-model-analyze-excel.md
-    - name: Data warehouse tables aren't accessible or updatable
-      href: ../known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md
     - name: Spark jobs might fail due to Runtime 1.3 updates for GA
       href: ../known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md
     - name: Premium capacity doesn't add excess usage into carry forward
       href: ../known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md
     - name: Data pipeline connection fails after connection creator role is removed
       href: ../known-issues/known-issue-877-pipeline-connection-fails-role-removed.md
-    - name: Data warehouses don't show button friendly names
-      href: ../known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md
     - name: Pipeline fails when copying data to data warehouse with staging
       href: ../known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md
-    - name: Intermittent refresh failure through on-premises data gateway
-      href: ../known-issues/known-issue-844-intermittent-refresh-failure-gateway.md
-    - name: Data warehouse exports using deployment pipelines or git fail
-      href: ../known-issues/known-issue-842-warehouse-exports-pipelines-fail.md
     - name: Monitoring hub displays incorrect queued duration
       href: ../known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md
     - name: Managed private endpoint connection could fail
@@ -399,8 +425,6 @@ items:
       href: ../known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md
     - name: Pipeline deployment fails when parent contains deactivated activity
       href: ../known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md
-    - name: Inserting nulls into Data Warehouse tables fail with incorrect error message
-      href: ../known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md
     - name: Multiple installations of on-premises data gateway causes pipelines to fail
       href: ../known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md
     - name: SQL analytics endpoint table queries fail due to RLE

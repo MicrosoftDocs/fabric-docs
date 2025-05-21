@@ -4,7 +4,7 @@ description: A known issue is posted where environment Git integration imports f
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/26/2025
+ms.date: 05/19/2025
 ms.custom: known-issue-1025
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1025
 
 The Git import and sync functionality for libraries in environments don't work as expected. You can't import public or custom libraries into an environment from a Git branch.
 
-**Status:** Open
+**Status:** Fixed: May 19, 2025
 
 **Product Experience:** Data Engineering
 
