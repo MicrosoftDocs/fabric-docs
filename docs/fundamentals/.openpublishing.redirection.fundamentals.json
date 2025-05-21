@@ -1066,6 +1066,41 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-842-warehouse-exports-pipelines-fail.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-844-intermittent-refresh-failure-gateway.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/copilot-faq-fabric.yml",
             "redirect_url": "/fabric/fundamentals/copilot-faq-fabric",
             "redirect_document_id": false
