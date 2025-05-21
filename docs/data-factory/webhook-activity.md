@@ -57,7 +57,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 1. Once you have successfully created and configured your gateway, it should appear under the Data Gateway dropdown in the connection dialog.
 
-  :::image type="content" source="media/webhook-activity/create-new-data-gateway.png" alt-text="Screenshot showing the data gateway connection dialog for the WebHook activity.":::   
+	:::image type="content" source="media/webhook-activity/create-new-data-gateway.png" alt-text="Screenshot showing the data gateway connection dialog for the WebHook activity.":::   
 
 1. After choosing or creating your connection, complete the remaining required fields, add any required headers, or set any advanced settings. The WebHook activity only supports the POST method.
 
