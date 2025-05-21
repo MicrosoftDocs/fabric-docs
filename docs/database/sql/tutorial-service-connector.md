@@ -35,24 +35,36 @@ Create a new service connection from App Service to a SQL database in Fabric, us
     az extension add --name serviceconnector-passwordless --upgrade
     ```
 
-1. Add a service connector for SQL database in Fabric with the `az webapp connection create fabric-sql` command. A connection string is used to authenticate the web app to the database resource. When running the code below:
+1. Add a service connector for SQL database in Fabric with the `az webapp connection create fabric-sql` command, using a system-assigned managed identity or a user-assigned managed identity. A connection string is used to authenticate the web app to the database resource.
+   
+    To use a system-assigned managed identity, when running the code below:
     
-   1. Replace `<subscription>` with the subscription ID associated with your App Service and `<source-resource-group>` with the name of the resource group containing your App Service. You can find this information in the **Overview** tab of your App Service resource in the Azure portal.
+   1. Replace `<subscription-ID>` with the subscription ID associated with your App Service and `<source-resource-group>` with the name of the resource group containing your App Service. You can find this information in the **Overview** tab of your App Service resource in the Azure portal.
    1. Replace `<fabric_workspace_uuid>` and `<fabric_sql_db_uuid>` with the universally unique identifier (UUID) of your Microsoft Fabric workspace and the UUID of your SQL database. To find these values, navigate to your SQL database in the Fabric portal. The browser URL should look like this: `https://msit.powerbi.com/groups/<fabric_workspace_uuid>/sqldatabases/<fabric_sql_db_uuid>`. The first UUID in the URL is the Fabric workspace UUID, and the second UUID is the SQL database UUID.
 
     ```azurecli
     az webapp connection create fabric-sql \
-        --source-id /subscriptions/<subscription>/resourceGroups/<source-resource-group>/providers/Microsoft.Web/sites/<site> \
+        --source-id /subscriptions/<subscription-ID>/resourceGroups/<source-resource-group>/providers/Microsoft.Web/sites/<site> \
         --target-id https://api.fabric.microsoft.com/v1/workspaces/<fabric_workspace_uuid>/SqlDatabases/<fabric_sql_db_uuid> \
         --system-identity
     ```
 
     In the background, Service Connector enables a system-assigned managed identity for the app hosted by Azure App Service and adds a connection string to App Settings named `FABRIC_SQL_CONNECTIONSTRING`.
 
-    For more information about this command and more options, see [az webapp connection create](/cli/azure/webapp/connection/create#az-webapp-connection-create-fabric-sql).
+    To use a user-assigned managed identity, when running the code below:
+    
+   1. Replace `<subscription-ID>` with the subscription ID associated with your App Service and `<source-resource-group>` with the name of the resource group containing your App Service. You can find this information in the **Overview** tab of your App Service resource in the Azure portal.
+   1. Replace `<fabric_workspace_uuid>` and `<fabric_sql_db_uuid>` with the universally unique identifier (UUID) of your Microsoft Fabric workspace and the UUID of your SQL database. To find these values, navigate to your SQL database in the Fabric portal. The browser URL should look like this: `https://msit.powerbi.com/groups/<fabric_workspace_uuid>/sqldatabases/<fabric_sql_db_uuid>`. The first UUID in the URL is the Fabric workspace UUID, and the second UUID is the SQL database UUID.
+   1. Replace `<app-ID>` with the application ID you want to use, and `<your-subscription-id>` with your subscription ID. To find the application ID, sign in to the Microsoft Entra admin center, browse to **Entra ID > Enterprise apps**, search for your application and locate **Application ID**.
 
-    > [!TIP]
-    > Optionally use a user-assigned managed identity instead of a system-assigned managed identity by replacing `--system-identity` with `--user-identity "client-id=<your-identity-client-id>" "subs-id=<your-subscription-id>"` when running the command above. Replace `<your-identity-client-id>` with the client ID you want to use, and `<your-subscription-id>` with your subscription ID.
+    ```azurecli
+    az webapp connection create fabric-sql \
+        --source-id /subscriptions/<subscription-ID>/resourceGroups/<source-resource-group>/providers/Microsoft.Web/sites/<site> \
+        --target-id https://api.fabric.microsoft.com/v1/workspaces/<fabric_workspace_uuid>/SqlDatabases/<fabric_sql_db_uuid> \
+        --user-identity client-id=<app-ID> "subs-id=<subscription-ID>"
+    ```
+
+    For more information about this command and more options, see [az webapp connection create](/cli/azure/webapp/connection/create#az-webapp-connection-create-fabric-sql).
 
 #### [Azure portal](#tab/az-portal)
 
