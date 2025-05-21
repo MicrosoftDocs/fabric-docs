@@ -10,7 +10,7 @@ ms.date: 05/19/2025
 
 # Module 1: Create a pipeline with Data Factory
 
-This module takes 10 minutes, ingesting raw data from the source store into a table in the [bronze](/azure/databricks/lakehouse/medallion#bronze) data layer of a data Lakehouse using the Copy activity in a pipeline.
+This module takes about 10 minutes to complete. You will ingest raw data from the source store into a table in the [bronze](/azure/databricks/lakehouse/medallion#bronze) data layer of a data Lakehouse using the Copy activity in a pipeline.
 
 The high-level steps in module 1 are:
 

@@ -11,42 +11,36 @@ ms.search.form: product-data-factory
 
 # Data Factory end-to-end scenario: introduction and architecture
 
-This tutorial helps you accelerate the evaluation process for Data Factory in Microsoft Fabric by providing a step-by-step guidance for a full data integration scenario within one hour. By the end of this tutorial, you understand the value and key capabilities of Data Factory and know how to complete a common end-to-end data integration scenario.
+This tutorial helps you accelerate the evaluation process for Data Factory in Microsoft Fabric by providing a the steps for a full data integration scenario within one hour. By the end of this tutorial, you understand the value and key capabilities of Data Factory and know how to complete a common end-to-end data integration scenario.
 
 The scenario is divided into an introduction and three modules:
 
 - [Introduction](#why-data-factory-in-microsoft-fabric) to the tutorial and why you should use Data Factory in Microsoft Fabric.
 - [Module 1: Create a pipeline with Data Factory](tutorial-end-to-end-pipeline.md) to ingest raw data from a Blob storage to a [bronze](/azure/databricks/lakehouse/medallion#bronze) data layer table in a data Lakehouse.
-- [Module 2: Transform data with a dataflow in Data Factory](tutorial-end-to-end-dataflow.md) to process the raw data from your [bronze](/azure/databricks/lakehouse/medallion#bronze) table and move it to a Gold table in the data Lakehouse.
-- [Module 3: Complete your first data integration journey](tutorial-end-to-end-integration.md) to send an email to notify you once all the jobs are complete, and finally, setup the entire flow to run on a schedule.
+- [Module 2: Transform data with a dataflow in Data Factory](tutorial-end-to-end-dataflow.md) to process the raw data from your [bronze](/azure/databricks/lakehouse/medallion#bronze) table and move it to a [gold](/azure/databricks/lakehouse/medallion#gold) data layer table in the data Lakehouse.
+- [Module 3: Complete your first data integration journey](tutorial-end-to-end-integration.md) and send an email to notify you once all the jobs are complete, and finally, setup the entire flow to run on a schedule.
 
 ## Why Data Factory in Microsoft Fabric?
 
-**Microsoft Fabric** provides a single platform for all the analytical needs of an enterprise. It covers the spectrum of analytics including data movement, data lakes, data engineerings, data integration, data science, real time analytics, and business intelligence. With Fabric, there's no need to stitch together different services from multiple vendors. Instead, your users enjoy a comprehensive product that is easy to understand, onboard, create, and operate.
+**Microsoft Fabric** provides a single platform for all the analytical needs of an enterprise. It covers the spectrum of analytics including data movement, data lakes, data engineering, data integration, data science, real time analytics, and business intelligence. With Fabric, there's no need to stitch together different services from multiple vendors. Instead, your users enjoy a comprehensive product that is easy to understand, create, onboard, and operate.
 
-**Data Factory in Fabric** combines the ease-of-use of [Power Query](/power-query) with the scale and power of [Azure Data Factory](/azure/data-factory/introduction). It brings the best of both products together into a single experience. The goal is for both citizen and professional data developers to have the right data integration tools. Data Factory provides low-code, AI-enabled data preparation and transformation experiences, petabyte-scale transformation, hundreds of connectors with hybrid, and multicloud connectivity.
+**Data Factory in Fabric** combines the ease-of-use of [Power Query](/power-query) with the scale and power of [Azure Data Factory](/azure/data-factory/introduction). It brings the best of both products together into a single experience. The goal is for both citizen and professional data developers to have the right data integration tools. Data Factory provides low-code, AI-enabled data preparation and transformation experiences, petabyte-scale transformation, and hundreds of connectors with hybrid and multicloud connectivity.
 
-## Introduction - Understand three key features of Data Factory
+## Three key features of Data Factory
 
 - **Data ingestion:** The Copy activity in pipelines (or the standalone [Copy job](what-is-copy-job.md)) lets you move petabyte-scale data from hundreds of data sources into your data Lakehouse for further processing.
 - **Data transformation and preparation:** Dataflow Gen2 provides a low-code interface for transforming your data using 300+ data transformations, with the ability to load the transformed results into multiple destinations like Azure SQL databases, Lakehouse, and more.
 - **End-to-end automation:** Pipelines provide orchestration of activities that include [Copy, Dataflow, and Notebook activities, and more](activity-overview.md). Activities in a pipeline can be chained together to operate sequentially, or they can operate independently in parallel. Your entire data integration flow runs automatically, and can be monitored in one place.
 
-In this data integration tutorial, we take you through all three key features. Through the next three modules, you learn:
-
-- How to ingest data using the copy assistant in a pipeline.
-- How to transform the data using a dataflow either with a no-code experience, or by writing your own code to process the data with a Script or Notebook activity.
-- How to automate the entire end-to-end data integration flow using a pipeline with triggers and flexible control flow activities.
-
 ## Tutorial architecture
 
-In the next 50 minutes, you're tasked with completing an end-to-end data integration scenario. This includes ingesting raw data from a source store into the [bronze](/azure/databricks/lakehouse/medallion#bronze) table of a Lakehouse, processing all the data, moving it to the [gold](/azure/databricks/lakehouse/medallion#gold) table of the data Lakehouse, sending an email to notify you once all the jobs are complete, and finally, setting the entire flow to run on a schedule.
+In the next 50 minutes, you'll learn through all three key features of Data Factory as you complete an end-to-end data integration scenario.
 
 The scenario is divided into three modules:
 
 - [Module 1: Create a pipeline with Data Factory](tutorial-end-to-end-pipeline.md) to ingest raw data from a Blob storage to a [bronze](/azure/databricks/lakehouse/medallion#bronze) data layer table in a data Lakehouse.
-- [Module 2: Transform data with a dataflow in Data Factory](tutorial-end-to-end-dataflow.md) to process the raw data from your [bronze](/azure/databricks/lakehouse/medallion#bronze) table and move it to a Gold table in the data Lakehouse.
-- [Module 3: Complete your first data integration journey](tutorial-end-to-end-integration.md) to send an email to notify you once all the jobs are complete, and finally, setup the entire flow to run on a schedule.
+- [Module 2: Transform data with a dataflow in Data Factory](tutorial-end-to-end-dataflow.md) to process the raw data from your [bronze](/azure/databricks/lakehouse/medallion#bronze) table and move it to a [gold](/azure/databricks/lakehouse/medallion#gold) data layer table in the data Lakehouse.
+- [Module 3: Complete your first data integration journey](tutorial-end-to-end-integration.md) and send an email to notify you once all the jobs are complete, and finally, setup the entire flow to run on a schedule.
 
 :::image type="content" source="media/tutorial-end-to-end-introduction/tutorial-explanation-diagram.png" alt-text="A diagram of the data flow and modules of the tutorial.":::
 

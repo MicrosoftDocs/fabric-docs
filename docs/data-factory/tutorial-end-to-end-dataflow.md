@@ -10,9 +10,9 @@ ms.date: 05/20/2025
 
 # Module 2: Transform data with a dataflow in Data Factory
 
-This module takes about 25 minutes to complete. You create a dataflow, apply transformations, and move the raw data from the [bronze](/azure/databricks/lakehouse/medallion#bronze) data layer table into a [Gold](/azure/databricks/lakehouse/medallion#gold) data layer table. 
+This module takes about 25 minutes to complete. You create a dataflow, apply transformations, and move the raw data from the [bronze](/azure/databricks/lakehouse/medallion#bronze) data layer table into a [gold](/azure/databricks/lakehouse/medallion#gold) data layer table. 
 
-With the raw data loaded into your Bronze Lakehouse table from the last module, you can now enrich it. You will combine it with another table that contains discounts for each vendor and their trips during a particular day. Then, this final Gold Lakehouse table is then loaded and ready for consumption.
+With the raw data loaded into your bronze Lakehouse table from the last module, you can now enrich it. You will combine it with another table that contains discounts for each vendor and their trips during a particular day. Then, this final gold Lakehouse table is then loaded and ready for consumption.
 
 The high-level steps in the dataflow are:
 

@@ -11,12 +11,7 @@ ms.date: 05/20/2025
 
 # Module 3: Automate and send notifications with Data Factory
 
-You can complete this module in about 10 minutes. In this final part of our tutorial, you learn to send an email notifying you when all the jobs in a pipeline are complete, and configure it to run on a scheduled basis.
-
-In this module you learn how to:
-- Add an Office 365 Outlook activity to send the output of a Copy activity by email.
-- Add schedule to run the pipeline.
-- _(Optional)_ Add a dataflow activity into the same pipeline.
+You can complete this module in about 10 minutes. In this final part of our tutorial, you learn to send an email notifying you when all the jobs in a pipeline are complete, and configure the pipeline to run on a schedule.
 
 ## Prerequisites
 
