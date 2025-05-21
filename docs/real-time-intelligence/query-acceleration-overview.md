@@ -17,8 +17,6 @@ Query acceleration allows specifying a policy on top of external delta tables th
 
 Query acceleration is supported in Eventhouse over delta tables from [OneLake shortcuts](onelake-shortcuts.md), Azure Data Lake Store Gen1, Amazon S3, Google Cloud Services, Azure blob storage external tables, and all destinations supported by OneLake shortcuts.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
 > [!NOTE]
 > * If you have compliance considerations that require you to store data in a specific region, make sure your Eventhouse capacity is in the same region as your external table or shortcut data.
 >
