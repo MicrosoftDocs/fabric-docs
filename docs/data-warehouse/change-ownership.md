@@ -1,6 +1,6 @@
 ---
-title: Change Ownership of Fabric Warehouse
-description: Learn how to change the owner of a Fabric Warehouse via API call.
+title: Change Ownership of a Warehouse
+description: Learn how to change the owner of a Fabric warehouse item.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: dhsundar, fresantos
@@ -8,13 +8,15 @@ ms.date: 05/21/2025
 ms.topic: how-to
 ---
 
-# Change ownership of Fabric Warehouse
+# Change ownership of a warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-This guide walks you through the steps to change your warehouse owner to your Organizational account. 
+This guide walks you through the steps to change the owner of a warehouse item in Microsoft Fabric.
 
-The Warehouse item uses the owner's identity when accessing data on OneLake. The change ownership feature allows you to change the warehouse owner's identity to an SPN or other organization account (Microsoft Entra ID). For more information, see [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md).
+The warehouse item uses the owner's identity when accessing data on OneLake. You can change the warehouse owner's identity to an SPN or other organization account (Microsoft Entra ID). For more information, see [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md).
+
+You can view the current owner of a warehouse item in the Fabric portal. The owner is listed in the workspace listing of items or in the **Settings** menu of the warehouse item.
 
 The takeover API only works for warehouse items, not the SQL analytics endpoint.
 
@@ -31,7 +33,7 @@ Before you begin, you need:
 You can change the ownership to yourself (the user currently in context) by selecting the **Take Over** option directly in the user interface.
 
 > [!IMPORTANT]
- > The **Take Over** option currently **only supports assigning ownership to the user in context** (the currently signed-in user). It is **not possible to set a Service Principal Name (SPN) as the owner** via the Fabric portal. If you require an SPN to take ownership, use [the Powershell method to change ownership of a warehouse](change-ownership.md&tabs=powershelll#connect).
+ > The **Take Over** option currently **only supports assigning ownership to the user in context** (the currently signed-in user). It is **not possible to set a Service Principal Name (SPN) as the owner** via the Fabric portal. If you require an SPN to take ownership, use [the Powershell method to change ownership of a warehouse](change-ownership.md?tabs=powershell#connect).
 
 1. Navigate to your warehouse in the Fabric portal.
 1. Open the **Settings** menu.
