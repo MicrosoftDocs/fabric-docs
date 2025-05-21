@@ -4,7 +4,7 @@ description: A known issue is posted where New Card visual conditional formattin
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/10/2025
+ms.date: 05/20/2025
 ms.custom: known-issue-1091
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1091
 
 You can use the new card visual without small multiples or categories. If you add or change the conditionally formatted rules, the rules aren't applied. Existing rules remain unaffected as long as they aren't modified and saved. Additionally, conditional formatting and the new card visual with small multiples/categories continue to function correctly.
 
-**Status:** Open
+**Status:** Fixed: May 20, 2025
 
 **Product Experience:** Power BI
 
