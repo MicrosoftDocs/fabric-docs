@@ -11,7 +11,7 @@ ms.search.form: product-data-factory
 
 # Data Factory end-to-end scenario: introduction and architecture
 
-This tutorial helps you accelerate the evaluation process for Data Factory in Microsoft Fabric by providing a the steps for a full data integration scenario within one hour. By the end of this tutorial, you understand the value and key capabilities of Data Factory and know how to complete a common end-to-end data integration scenario.
+This tutorial helps you accelerate the evaluation process for Data Factory in Microsoft Fabric by providing the steps for a full data integration scenario within one hour. By the end of this tutorial, you understand the value and key capabilities of Data Factory and know how to complete a common end-to-end data integration scenario.
 
 The scenario is divided into an introduction and three modules:
 
