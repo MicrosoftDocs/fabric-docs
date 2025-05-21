@@ -10,7 +10,7 @@ ms.date: 05/15/2025
 
 # Install the Microsoft Fabric Chargeback app
 
-The *Microsoft Fabric Chargeback* app, also known as the *chargeback app*, is designed to monitor capacity utilization across your Fabric environment. Use this guide to install the app.
+The Microsoft Fabric Chargeback app, also known as the chargeback app. It provides turnkey insights that help organizations implement effective chargeback policies - enabling a fair distribution of costs based on actual usage patterns across your Fabric environment. Use this guide to install the app.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ To install the *Microsoft Fabric Chargeback* app for the first time, follow thes
 
 1. Select one of these options to get the app from AppSource:
 
-    * Go to [AppSource > Microsoft Fabric Chargeback](-) and select **Get it now**.
+    * Go to [AppSource > Microsoft Fabric Chargeback](https://go.microsoft.com/fwlink/?linkid=2320990) and select **Get it now**.
 
     * In Power BI service:
 
@@ -57,7 +57,7 @@ To upgrade a previous installation of the *Microsoft Fabric Chargeback* app, fol
 
 1. Select one of these options to get the app from AppSource:
 
-    * Go to [AppSource > Microsoft Fabric Chargeback](-) and select **Get it now**.
+    * Go to [AppSource > Microsoft Fabric Chargeback](https://go.microsoft.com/fwlink/?linkid=2320990) and select **Get it now**.
 
     * In Power BI service:
 
@@ -103,7 +103,7 @@ To complete the installation, configure the Microsoft Fabric Chargeback app by r
 
 | Field                 | Required | Value                                                                    | Notes                                            |
 | --------------------- | -------- | ------------------------------------------------------------------------ | ------------------------------------------------ |
-| **UTC Offset**        | Yes      |Numerical values ranging from `14` to `-12`.</br> To signify a Half hour timezone, use `.5`. For example, for Iran's standard time enter `3.5`.   |Enter your organization's standard time in Coordinated Universal Time (UTC). |
+| **UTC Offset**        | Yes      |Numerical values ranging from `14` to `-12`.</br> To signify a Half hour timezone, use `.5`. For example, for Australian Eastern standard time enter `10`.   |Enter your organization's standard time in Coordinated Universal Time (UTC). |
 | **Days Ago to Start** | Yes      | Choose between `14` or `30` days | Number of days’ worth of historical data to load |
 |**Advanced**   |Optional |**On** or **Off** |The app automatically refreshed your data at midnight. This option can be disabled by expanding the *advanced* option and selecting **Off**. |
 

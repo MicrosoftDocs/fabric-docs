@@ -9,7 +9,7 @@ ms.date: 05/15/2025
 
 # Microsoft Fabric chargeback app (preview)
 
-The Microsoft Fabric Chargeback app lets you see how your capacities are used. The app gives you insights into how your capacity cost is spread. You can view parameters such as metric types, dates, and operation names. As a capacity admin, you can share this report with others in your organization. You can also share the app's semantic model, and use it to customize the report, or build a new report that relies on the same data.
+The Microsoft Fabric Chargeback app helps you understand which teams, users, and workloads are driving capacity usage, enabling you to build chargeback processes that fairly allocate costs based on actual consumption. As a capacity admin, you can view key parameters such as metric types, dates, and operation names, and share the report with others in your organization to support transparent and informed cost management.
 
 Utilization is the time it takes an activity or action to complete. Utilization is measured as Capacity Units (CU) processing time in seconds.
 
@@ -47,7 +47,7 @@ User can export the report's data by selecting Export Data. Selecting Export Dat
 
 When using the Microsoft Fabric Chargeback app, consider the following considerations and limitations:
 
-*  The Fabric Chargeback Report data is not real time; the data is refreshed daily.
+* The Fabric Chargeback Report data is not real-time; it is refreshed daily. Users can manually trigger a refresh by navigating to the workspace where the app is installed.
   
 *  If an operation is not associated with a user, or if the operation is initiated by a service principal, the report will display the username as "Power BI Service".
   
