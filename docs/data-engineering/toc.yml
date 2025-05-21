@@ -311,7 +311,7 @@ items:
       href: set-up-fabric-vs-code-extension.md
     - name: Develop user data functions in VS Code
       href: ./user-data-functions/create-user-data-functions-vs-code.md
-  - name: Synapse VS Code extension
+  - name: Fabric Data Engineering VS Code extension
     items:
     - name: Overview
       href: setup-vs-code-extension.md
