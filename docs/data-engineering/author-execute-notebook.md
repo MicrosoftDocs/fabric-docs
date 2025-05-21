@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom:
 ms.search.form: Develop and run notebooks
-ms.date: 03/31/2025
+ms.date: 05/21/2025
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -323,6 +323,14 @@ You can also set timeout as following:
 
 - [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
 - [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md#spark-session-configuration-magic-command)
+
+**How do ABT and Idle Session Timeout impact long-running Fabric Notebook executions?**
+
+If your tenant huses Activity-Based Timeout (ABT) enabled, long-running interactive jobs in Fabric notebooks may be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, non-managed devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
+
+**Why are users signed out even when a notebook job is still running?**
+
+Idle session timeout prioritizes security by ending sessions on inactive devices to prevent unauthorized access. Even when a notebook execution is in progress, the session ends if the device shows no activity. Keeping sessions open on idle devices would compromise security, which is why the current behavior is enforced.
 
 ### Inline Apache Spark job indicator
 

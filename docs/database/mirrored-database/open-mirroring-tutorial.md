@@ -3,8 +3,8 @@ title: "Tutorial: Configure Open Mirroring"
 description: Learn how to configure an open mirrored database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: tinglee, sbahadur, maraki-ketema, maprycem
-ms.date: 05/02/2025
+ms.reviewer: tinglee, sbahadur, marakiketema, maprycem
+ms.date: 05/19/2025
 ms.topic: tutorial
 ---
 
@@ -60,6 +60,7 @@ Your application can now write initial load and incremental change data into the
 
 - Follow [Connecting to Microsoft OneLake](../../onelake/onelake-access-api.md) to authorize and write to the mirrored database landing zone in OneLake, using the [ADLS Gen2 API](/rest/api/storageservices/data-lake-storage-gen2).
 - Review the [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md) specifications.
+- Use the [Open Mirroring Python SDK](https://github.com/microsoft/fabric-toolbox/tree/main/tools/OpenMirroringPythonSDK) to get started! 
 
 ## Start mirroring process
 
@@ -79,6 +80,11 @@ Your application can now write initial load and incremental change data into the
 Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication.
 
 For more information and details on the replication states, see [Monitor Fabric mirrored database replication](monitor.md).
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Open Mirroring Python SDK](https://github.com/microsoft/fabric-toolbox/tree/main/tools/OpenMirroringPythonSDK) 
 
 ## Related content
 

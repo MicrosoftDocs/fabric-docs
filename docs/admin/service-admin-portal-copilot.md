@@ -14,6 +14,7 @@ ms.collection: ce-skilling-ai-copilot
 ---
 
 # Copilot tenant settings
+
 Fabric Copilot settings are controlled by the **Copilot and Azure OpenAI Service** tenant settings group.​ There are multiple settings governing user access and data processing policies, and some of them are enabled by default whereas others require the Fabric administrator to enable them.
 
 For information about how to get to the Fabric tenant settings, see [About tenant settings - How to get to the tenant settings](./about-tenant-settings.md#how-to-get-to-the-tenant-settings).
@@ -27,7 +28,6 @@ For information about how to get to the Fabric tenant settings, see [About tenan
 * [Capacities can be designated as Fabric Copilot capacities](#fabric-copilot-capacities)
 * [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
 * [Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
-
 * [Users can access a standalone, cross-item Power BI Copilot experience (preview)](#stand-alone-experience)
 
 <a id="copilot-with-openai"></a> 
