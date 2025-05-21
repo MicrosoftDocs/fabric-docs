@@ -67,4 +67,9 @@ items:
       href: chargeback-app.md
     - name: Install the Microsoft Fabric Chargeback app
       href: chargeback-app-install.md
-
+  - name: Fabric SKU Estimator (preview)
+    items:
+    - name: What is the Microsoft Fabric SKU Estimator (preview)?
+      href: fabric-sku-estimator.md
+    - name: Scenario for the Fabric SKU Estimator (preview)
+      href: fabric-sku-estimator-scenario.md

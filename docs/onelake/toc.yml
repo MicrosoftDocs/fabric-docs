@@ -25,6 +25,8 @@ items:
     href: create-onelake-shortcut.md
   - name: Create an ADLS Gen2 shortcut
     href: create-adls-shortcut.md
+  - name: Create a Blob Storage shortcut
+    href: create-blob-shortcut.md
   - name: Create an Amazon S3 shortcut
     href: create-s3-shortcut.md
   - name: Create an Amazon S3 compatible shortcut

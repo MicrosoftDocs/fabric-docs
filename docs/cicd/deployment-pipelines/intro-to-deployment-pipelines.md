@@ -57,6 +57,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Real-time Intelligence items:
 
   * [Activator](../../real-time-intelligence/git-deployment-pipelines.md) *(preview)*
+  * [Digital twin builder](../../real-time-intelligence/digital-twin-builder/overview.md) *(preview)*
   * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md)
   * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
   * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)

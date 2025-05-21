@@ -4,7 +4,7 @@ description: A known issue is posted where SQL database creation fails due to te
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/09/2025
+ms.date: 05/19/2025
 ms.custom: known-issue-1131
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1131
 
 If you don't have the **Users can create fabric items** tenant setting enabled, you can't create an SQL database. It doesn't matter if you enable the **Users can create fabric items** setting under the **Delegate tenant settings** tab in **Capacity Settings** or not.
 
-**Status:** Open
+**Status:** Fixed: May 19, 2025
 
 **Product Experience:** Databases
 
