@@ -58,7 +58,7 @@ Under the **Settings** tab, you can choose the **Azure function** option to run 
 
 :::image type="content" source="media/functions-activity/azure-function-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Function activity.":::
 
-### Using On-premises or VNET data gateway
+## Using On-premises or VNET data gateway
 When creating a new Fabric user data function connection or Azure function connection, you can now choose to use either an on-premises data gateway (OPDG) or a VNET data gateway. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md)
 
 If you would like to use a VNET gateway, refer to [how to create a VNET data gateway](/data-integration/vnet/create-data-gateways).
