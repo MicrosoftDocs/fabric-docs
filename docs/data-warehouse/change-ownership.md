@@ -33,7 +33,7 @@ Before you begin, you need:
 You can change the ownership to yourself (the user currently in context) by selecting the **Take Over** option directly in the user interface.
 
 > [!IMPORTANT]
- > The **Take Over** option currently **only supports assigning ownership to the user in context** (the currently signed-in user). It is **not possible to set a Service Principal Name (SPN) as the owner** via the Fabric portal. If you require an SPN to take ownership, use [the Powershell method to change ownership of a warehouse](change-ownership.md?tabs=powershell#connect).
+ > The **Take Over** option currently **only supports assigning ownership to the user in context** (the currently signed-in user). It is **not possible to set a Service Principal Name (SPN) as the owner** via the Fabric portal. If you require an SPN to take ownership, use [the PowerShell method to change ownership of a warehouse](change-ownership.md?tabs=powershell#connect).
 
 1. Navigate to your warehouse in the Fabric portal.
 1. Open the **Settings** menu.
