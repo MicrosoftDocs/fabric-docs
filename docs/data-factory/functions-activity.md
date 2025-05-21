@@ -65,9 +65,9 @@ If you would like to use a VNET gateway, refer to [how to create a VNET data gat
 
 Once you have successfully created and configured your gateway, it should appear under the Data Gateway dropdown in the connection dialog.
 
-:::image type="content" source="media/functions-activity/create-new--connection-with-data-gateway-user-data-function.png" alt-text="Screenshot showing the data gateway connection dialog for the User Data Function activity.":::
+:::image type="content" source="media/functions-activity/create-new-connection-with-data-gateway-user-data-function.png" alt-text="Screenshot showing the data gateway connection dialog for the User Data Function activity.":::
 
-:::image type="content" source="media/functions-activity/create-new-connection-with-data-gateway-azure function.png" alt-text="Screenshot showing the data gateway connection dialog for the Azure Function activity.":::
+:::image type="content" source="media/functions-activity/create-new-connection-with-data-gateway-azure-function.png" alt-text="Screenshot showing the data gateway connection dialog for the Azure Function activity.":::
 
 
 ## Save and run or schedule the pipeline
