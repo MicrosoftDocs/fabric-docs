@@ -12,11 +12,11 @@ ms.date: 11/20/2024
 
 # Notebook visualization in Microsoft Fabric
 
-Microsoft Fabric is an integrated analytics service that accelerates time to insight across data warehouses and big data analytics systems. Data visualization in notebooks is a key component that allows you to gain insight into your data. It helps make large and small data easier for humans to understand. It also makes it easier to detect patterns, trends, and outliers in groups of data.
+Microsoft Fabric is an integrated analytics service that accelerates time to insights across data warehouses and big data systems. Data visualization in notebooks is a key feature that allows you to gain insight into your data, helping users identify patterns, trends, and outliers with ease.
 
-When you use Apache Spark in Fabric, there are various built-in options to help you visualize your data, including Fabric notebook chart options, and access to popular open-source libraries.
+When working with Apache Spark in Fabric, you have built-in options for visualizing data, including Fabric notebook chart features and access to popular open-source libraries.
 
-When using a Fabric notebook, you can turn your tabular results view into a customized chart using chart options. Here, you can visualize your data without having to write any code.
+Fabric notebooks also allow you to convert tabular results into customized charts without writing any code, enabling a more intuitive and seamless data exploration experience.
 
 ## Built-in visualization command -  display() function
 
@@ -38,8 +38,8 @@ The output of SQL statement adopts the same output widget with _display()_ by de
 
 #### Free selection support on table view
 
-**Table** view is rendered by default when using _display()_ command. The rich dataframe preview in the notebook offers a free selection function designed to enhance the data analysis experience through flexible and intuitive selection capabilities. This feature allows users to interact with dataframes more efficiently and gain deeper insights with ease.
- 
+By default, the **Table View** is rendered when using the display() command in a Fabric notebook. The rich dataframe preview offers an intuitive free selection function, designed to enhance the data analysis experience by enabling flexible, interactive selection options. This feature allows users to efficiently navigate and explore dataframes with ease.
+
 - **Column selection**
   - **Single column**: Click the column header to select the entire column.
   - **Multiple columns**: After selecting a single column, press and hold the 'Shift' key, then click another column header to select multiple columns.
@@ -68,17 +68,19 @@ The output of SQL statement adopts the same output widget with _display()_ by de
 
 1. You can view the cell details by clicking on the cell of the table. This feature is useful when the dataframe contains long string type of contents.
 
-### New rich dataframe chart view
+### Enhanced Rich DataFrame Chart View
 
-The improved chart view is available on _display()_ command. It provides a more intuitive and powerful experience for visualizing your data by using the _display()_ command.
+The improved chart view in the _display()_ command offers a more intuitive and dynamic way to visualize your data.
 
-1. Now you can add up to **5** charts in one display() output widget by clicking **New chart**, allowing you to create multiple charts based on different columns, and compare charts easily.
+Key Enhancements:
 
-1. You can get a list of chart recommendations based on the target dataframe when creating new charts. You can choose to edit a recommended chart or build your own chart from scratch.
+1. **Multi-Chart Support**: Add up to **five** charts within a single display() output widget by selecting New Chart, enabling easy comparisons across different columns.
+
+1. **Smart Chart Recommendations**: Get a list of suggested charts based on your DataFrame. Choose to edit a recommended visualization or create a custom chart from scratch.
 
     ![Animated GIF of suggested charts.](media\notebook-visualization\suggested-charts.gif)
 
-1. You can now customize your visualization by specifying the following settings. The setting options might change according to the selected chart type:
+1. **Flexible Customization**: Personalize your visualizations with adjustable settings that adapt based on the selected chart type. 
 
    |Category |**Basic settings** | **Description** |
    |---|---|---|
