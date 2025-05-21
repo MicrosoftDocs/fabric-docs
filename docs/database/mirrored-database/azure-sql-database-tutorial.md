@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala
-ms.date: 04/28/2025
+ms.date: 05/08/2025
 ms.topic: tutorial
 ms.custom:
 ---
@@ -27,7 +27,7 @@ ms.custom:
 - Ensure the following Fabric tenant settings are enabled. To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
     - [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../../admin/tenant-settings-index.md#onelake-settings)
-- Check your networking requirements for Fabric to access your Azure SQL Database: If your Azure SQL Database is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure SQL server via a private endpoint or is allowed by the firewall rule.
+- Check your networking requirements for Fabric to access your Azure SQL Database: If your Azure SQL Database is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure SQL server via [a private endpoint](/azure/azure-sql/database/private-endpoint-overview?view=azuresql-db&preserve-view=true) or is allowed by the firewall rule.
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL logical server
 
@@ -63,7 +63,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 1. Connect to the user database that will be mirrored. Create a database user connected to the login and grant the minimum privileges necessary:
 
-    For a SQL Authentiated login:
+    For a SQL Authenticated login:
 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];

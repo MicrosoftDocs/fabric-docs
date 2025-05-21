@@ -3,22 +3,19 @@ title: "Tutorial: Configure Open Mirroring"
 description: Learn how to configure an open mirrored database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: tinglee, sbahadur, maraki-ketema, maprycem
-ms.date: 04/04/2025
+ms.reviewer: tinglee, sbahadur, marakiketema, maprycem
+ms.date: 05/19/2025
 ms.topic: tutorial
 ---
 
 # Tutorial: Configure Microsoft Fabric open mirrored databases
 
-In this tutorial, you configure an Open mirrored database in Fabric. This example guides you to create a new open mirrored database and learn how to land data into the landing zone. You'll get proficient with the concepts of open mirroring in Microsoft Fabric.
-
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
+In this tutorial, you configure an open mirrored database in Fabric. This example guides you to create a new open mirrored database and learn how to land data into the landing zone. You'll get proficient with the concepts of open mirroring in Microsoft Fabric.
 
 ## Prerequisites
 
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
     - The Fabric capacity needs to be active and running. A paused or deleted capacity will affect Mirroring and no data will be replicated.
-- During the current preview, the ability to create an open mirrored database via the Fabric portal is not available in all Fabric capacity regions.
 
 ## Create a mirrored database
 
@@ -63,6 +60,7 @@ Your application can now write initial load and incremental change data into the
 
 - Follow [Connecting to Microsoft OneLake](../../onelake/onelake-access-api.md) to authorize and write to the mirrored database landing zone in OneLake, using the [ADLS Gen2 API](/rest/api/storageservices/data-lake-storage-gen2).
 - Review the [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md) specifications.
+- Use the [Open Mirroring Python SDK](https://github.com/microsoft/fabric-toolbox/tree/main/tools/OpenMirroringPythonSDK) to get started! 
 
 ## Start mirroring process
 
@@ -82,6 +80,11 @@ Your application can now write initial load and incremental change data into the
 Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication.
 
 For more information and details on the replication states, see [Monitor Fabric mirrored database replication](monitor.md).
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Open Mirroring Python SDK](https://github.com/microsoft/fabric-toolbox/tree/main/tools/OpenMirroringPythonSDK) 
 
 ## Related content
 

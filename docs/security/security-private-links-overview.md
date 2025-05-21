@@ -147,7 +147,7 @@ There are several considerations to keep in mind while working with private endp
 
 * Tenant migration is blocked when Private Link is turned on in the Fabric admin portal.
 
-* Customers can't connect to Fabric resources in multiple tenants from a single virtual network, but rather only the last tenant to set up Private Link.
+* Customers can't connect to Fabric resources in multiple tenants from the same network location (depends on where you configure DNS records), but rather only the last tenant to set up Private Link.
 
 * Private link doesn't support in Trial capacity. When accessing Fabric via Private Link traffic, trial capacity doesn't work.
   

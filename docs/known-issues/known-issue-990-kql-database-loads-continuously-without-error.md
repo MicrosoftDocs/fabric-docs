@@ -4,7 +4,7 @@ description: A known issue is posted where a KQL database loads continuously wit
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 01/28/2025
+ms.date: 05/19/2025
 ms.custom: known-issue-990
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-990
 
 You can open an Eventhouse and select a database with tables. The main tile opens on the **Tables** tab by default. All charts in the tiles are stuck in an infinite loading loop.
 
-**Status:** Open
+**Status:** Fixed: May 19, 2025
 
 **Product Experience:** Real-Time Intelligence
 

@@ -53,6 +53,8 @@
       href: create-first-dataflow-gen2.md
     - name: Create a data pipeline
       href: create-first-pipeline-with-sample-data.md
+    - name: Create a Copy job
+      href: quickstart-copy-job.md
     - name: Create an Apache Airflow Job
       href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
@@ -221,6 +223,8 @@
         href: connector-azure-databricks-overview.md
       - name: Set up your connection
         href: connector-azure-databricks.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-azure-databricks-copy-activity.md
     - name: Azure Files 
       items: 
       - name: Azure Files - Overview 
@@ -805,6 +809,8 @@
         href: dataflow-gen2-incremental-refresh.md
       - name: Dataflow Gen2 with CICD and Git integration
         href: dataflow-gen2-cicd-and-git-integration.md
+      - name: Dataflow Gen2 public APIs
+        href: dataflow-gen2-public-apis.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow
@@ -831,6 +837,8 @@
       href: create-copy-job.md
     - name: How to monitor a Copy job
       href: monitor-copy-job.md
+    - name: Change data capture (CDC) in Copy job
+      href: cdc-copy-job.md
     - name: CI/CD for Copy job
       href: cicd-copy-job.md
   - name: Data gateway
