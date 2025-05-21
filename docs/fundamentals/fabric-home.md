@@ -22,9 +22,6 @@ When you create a new item, it saves in your **My workspace** unless you selecte
 > [!NOTE]
 > Power BI **Home** is different from the other product workloads. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home).
 
-> [!IMPORTANT]
-> **Power BI Home** is different from the other product workloads. To learn more, visit [Power BI Home](/power-bi/consumer/end-user-home).
-
 ## Overview of Home 
 
 On Home, you see items that you create and that you have permission to use. These items are from all the workspaces that you access. That means that the items available on everyone's Home are different. At first, you might not have much content, but that changes as you start to create and share [!INCLUDE [product-name](../includes/product-name.md)] items.
