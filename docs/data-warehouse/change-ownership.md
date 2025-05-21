@@ -12,9 +12,9 @@ ms.topic: how-to
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-The Warehouse item uses the owner's identity when accessing data on OneLake. 
+This guide walks you through the steps to change your warehouse owner to your Organizational account. 
 
-This guide walks you through the steps to change your warehouse owner to your Organizational account. The change ownership feature allows you to change the warehouse owner's identity to an SPN or other organization account (Microsoft Entra ID). For more information, see [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md).
+The Warehouse item uses the owner's identity when accessing data on OneLake. The change ownership feature allows you to change the warehouse owner's identity to an SPN or other organization account (Microsoft Entra ID). For more information, see [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md).
 
 The takeover API only works for warehouse items, not the SQL analytics endpoint.
 
@@ -31,7 +31,7 @@ Before you begin, you need:
 You can change the ownership to yourself (the user currently in context) by selecting the **Take Over** option directly in the user interface.
 
 > [!IMPORTANT]
- > The **Take Over** option currently **only supports assigning ownership to the user in context** (the currently signed-in user). It is **not possible to set a Service Principal Name (SPN) as the owner** via the Fabric portal. If you require an SPN to take ownership, use [the Powershell method to change ownership of a warehouse](#change-ownership-of-a-warehouse-with-powershell).
+ > The **Take Over** option currently **only supports assigning ownership to the user in context** (the currently signed-in user). It is **not possible to set a Service Principal Name (SPN) as the owner** via the Fabric portal. If you require an SPN to take ownership, use [the Powershell method to change ownership of a warehouse](change-ownership.md&tabs=powershelll#connect).
 
 1. Navigate to your warehouse in the Fabric portal.
 1. Open the **Settings** menu.
@@ -98,7 +98,7 @@ $url = 'groups/' + $workspaceID + '/datawarehouses/' + $warehouseid + '/takeover
 Invoke-PowerBIRestMethod -Url $url -Method Post -Body ""
 ```
 
---
+---
 
 ## Related content
 
