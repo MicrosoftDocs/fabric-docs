@@ -69,7 +69,7 @@ You can use multiple languages in a notebook by specifying the language magic co
 | %%pyspark | Python | Execute a **Python** query against Apache Spark Context. |
 | %%spark | Scala | Execute a **Scala** query against Apache Spark Context. |
 | %%sql | SparkSQL | Execute a **SparkSQL** query against Apache Spark Context. |
-| %%html | Html | Execute a **HTML** query against Apache Spark Context. |
+| %%html | Html | Execute n **HTML** query against Apache Spark Context. |
 | %%sparkr | R | Execute a **R** query against Apache Spark Context. |
 
 ### IDE-style IntelliSense
@@ -95,7 +95,7 @@ The IntelliSense features are at different levels of maturity for different lang
 > [!NOTE]
 > Currently, the feature is in preview.
  
-Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter auto-completion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
+Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter autocompletion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
 
 ### Code snippets
 
@@ -173,7 +173,7 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide outpu
 Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
 
 > [!IMPORTANT]
-> Security only applies during query execution and any notebook cells containing query results can be viewed by users that are not authorized to run queries against the data directly.
+> Security only applies during query execution and any notebook cells containing query results can be viewed by users that aren't authorized to run queries against the data directly.
 
 ### Lock or freeze a cell
 
@@ -254,7 +254,7 @@ Notebook reference works in both interactive mode and pipeline.
 > [!NOTE]
 >
 > - The ```%run``` command currently only supports reference notebooks in the same workspace with the current notebook.
-> - The ```%run``` command currently only supports up to four parameter value types: `int`, `float`, `bool`, and `string`. Variable replacement operation is not supported.
+> - The ```%run``` command currently only supports up to four parameter value types: `int`, `float`, `bool`, and `string`. Variable replacement operation isn't supported.
 > - The ```%run``` command doesn't support nested reference with a depth larger than **five**.
 
 #### Reference run a script
@@ -276,7 +276,7 @@ Examples:
 - To run *script_file.py* from the built-in resources with specific variables: ``` %run -b script_file.py { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true, "parameterString": "abc" } ```
 
 > [!NOTE] 
-> If the command does not contain **-b/--builtin**, it will attempt to find and execute notebook item inside the same workspace rather than the built-in resources.
+> If the command doesn't contain **-b/--builtin**, it attempts to find and execute notebook item inside the same workspace rather than the built-in resources.
 
 Usage example for nested run case:
 
@@ -309,15 +309,15 @@ A step-by-step cell execution status is displayed beneath the cell to help you s
 
 #### Session timeout config
 
-In the bottom left corner, you can click on the session status to get more information about the current session:
+In the bottom left corner, you can select on the session status to get more information about the current session:
 
 ![Screenshot that shows Session Information.](./media/author-execute-notebook/session-info.png)
 
-In the pop-up, there's an option to reset the timeout to x amount of minutes or hours.
+In the pop-up, there's an option to reset the timeout to x minutes or hours.
 
 ![Screenshot that shows Session timeout.](./media/author-execute-notebook/session-timeout.png)
 
-Take your pick in how long you want an uninterrupted session, and hit apply. The session timeout will reset itself with the new value and you're good to go!
+Take your pick in how long you want an uninterrupted session, and hit apply. The session timeout resets itself with the new value and you're good to go!
 
 You can also set timeout as following:
 
@@ -326,7 +326,7 @@ You can also set timeout as following:
 
 **How do ABT and Idle Session Timeout impact long-running Fabric Notebook executions?**
 
-If your tenant huses Activity-Based Timeout (ABT) enabled, long-running interactive jobs in Fabric notebooks may be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, non-managed devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
+If your tenant uses Activity-Based Timeout (ABT) enabled, long-running interactive jobs in Fabric notebooks may be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, nonmanaged devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
 
 **Why are users signed out even when a notebook job is still running?**
 
@@ -521,9 +521,9 @@ You can personalize your Spark session with the magic command **%%configure**. F
 >
 > - We recommend that you set the same value for "DriverMemory" and "ExecutorMemory" in %%configure. The "driverCores" and "executorCores" values should also be the same.
 > - The "defaultLakehouse" will overwrite your pinned lakehouse in Lakehouse explorer, but that only works in your current notebook session.
-> - You can use %%configure in Fabric pipelines, but if it's not set in the first code cell, the pipeline run will fail due to cannot restart session.
+> - You can use %%configure in Fabric pipelines, but if it's not set in the first code cell, the pipeline run fails due to can't restart session.
 > - The %%configure used in notebookutils.notebook.run will be ignored but used in %run notebook will continue executing.
-> - The standard Spark configuration properties must be used in the "conf" body. Fabric does not support first level reference for the Spark configuration properties.
+> - The standard Spark configuration properties must be used in the "conf" body. Fabric doesn't support first level reference for the Spark configuration properties.
 > - Some special Spark properties, including "spark.driver.cores", "spark.executor.cores", "spark.driver.memory", "spark.executor.memory", and "spark.executor.instances" don't take effect in "conf" body.
 
 ## Parameterized session configuration from a pipeline
