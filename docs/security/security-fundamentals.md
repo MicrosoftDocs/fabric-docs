@@ -77,6 +77,8 @@ All Fabric data stores are encrypted at rest by using Microsoft-managed keys. Fa
 
 While data can be processed in memory in an unencrypted state, it's never persisted to permanent storage while in an unencrypted state.
 
+You can also use [Workspace customer managed keys](workspace-customer-managed-keys.md) to encrypt the Microsoft encryption key in specific workspaces with your own [Azure Key Vault](/azure/key-vault/general/overview) keys.
+
 ### Data in transit
 
 Data in transit between Microsoft services is always encrypted with at least TLS 1.2. Fabric negotiates to TLS 1.3 whenever possible. Traffic between Microsoft services always routes over the [Microsoft global network](/azure/networking/microsoft-global-network).

@@ -57,7 +57,7 @@ You can change the ownership to yourself (the user currently in context) by sele
 
 1. Navigate to the Warehouse item you want to change the owner in the workspace. Open the SQL Editor.
 1. Copy the URL from your browser and place a text editor for use later on.
-1. Copy the first GUID from the URL, for example, `11aaa111-a11a-1111-1aaa-aa111111aaa`. Don't include the `/` characters. Store this in a text editor for use soon. This is the workspace ID. If your `/groups/` URL is followed by `/me/`, you're using the default workspace, and currently this feature is not supported in the default workspace. 
+1. Copy the first GUID from the URL, for example, `11aaa111-a11a-1111-1aaa-aa111111aaa`. Don't include the `/` characters. Store this in a text editor for use soon. This is the workspace ID.
 1. Copy the second GUID from the URL, for example, `11aaa111-a11a-1111-1aaa-aa111111aaa`. Don't include the `/` characters. Store this in a text editor for use soon. This is the warehouse ID.
 1. In the following script, replace `workspaceID` with the first GUID you copied. Run the following command.
     ```powershell

@@ -25,6 +25,8 @@ items:
     href: create-onelake-shortcut.md
   - name: Create an ADLS Gen2 shortcut
     href: create-adls-shortcut.md
+  - name: Create a Blob Storage shortcut
+    href: create-blob-shortcut.md
   - name: Create an Amazon S3 shortcut
     href: create-s3-shortcut.md
   - name: Create an Amazon S3 compatible shortcut
@@ -65,7 +67,7 @@ items:
     href: onelake-azure-hdinsight.md
   - name: PowerShell
     href: onelake-powershell.md
-- name: Secure and manage data
+- name: Secure and manage data access
   items:
   - name: OneLake security overview
     href: ./security/get-started-security.md
@@ -107,6 +109,8 @@ items:
     href: onelake-file-explorer.md
   - name: Release notes
     href: onelake-file-explorer-release-notes.md
+- name: Get the size of OneLake items
+  href: how-to-get-item-size.md
 - name: Discover data in the OneLake catalog
   href: ../governance/onelake-catalog-overview.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
 - name: Billing and consumption
