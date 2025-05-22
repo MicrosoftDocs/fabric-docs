@@ -3,8 +3,8 @@ title: Fabric data pipeline public REST API
 description: This article describes the available REST APIs for pipelines in Data Factory for Microsoft Fabric.
 author: kromerm
 ms.author: makromer
-ms.topic: concept-article
-ms.date: 09/16/2024
+ms.topic: conceptual
+ms.date: 05/22/2025
 ---
 
 # Microsoft Fabric data pipeline public REST API
@@ -390,6 +390,15 @@ Response 200:
 ]
 
 ```
+
+Possible status values:
+
+- Cancelled
+- Succeeded
+- Failed
+- In progress
+- Not started
+- Unknown
 
 ## Service Principal Name (SPN) Support 
 
