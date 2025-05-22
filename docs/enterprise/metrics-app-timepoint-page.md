@@ -1,8 +1,8 @@
 ---
 title: Understand the metrics app timepoint page
 description: Learn how to read the Microsoft Fabric Capacity Metrics app's explore page.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: how-to
 ms.custom:
 ms.date: 02/27/2025
