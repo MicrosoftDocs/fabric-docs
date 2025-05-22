@@ -352,7 +352,7 @@ Body:
 ```
 
 > [!NOTE]
-> "job id" is the same id created and used in the Job Scheduler Public APIs
+> "job id" is the same id created and used in the [Job Scheduler Public APIs](/rest/api/fabric/core/job-scheduler).
 
 Response 200:
 ```json
