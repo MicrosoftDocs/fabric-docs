@@ -50,7 +50,7 @@ Some GitHub Enterprise settings aren't supported. For example:
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
 - Folder structure is maintained up to 10 levels deep.
-- You can’t download a report/dataset as *.pbix* from the service after deploying them with Git integration.
+- Downloading a report/dataset as *.pbix* is unreliable unless it's done from Power BI Desktop. This includes deployed reports/datasets and ones imported from Git.
 - If the item’s display name has any of these characteristics, The Git folder is renamed to the logical ID (Guid) and type:
   - Has more than 256 characters
   - Ends with a <kbd>.</kbd> or a space
