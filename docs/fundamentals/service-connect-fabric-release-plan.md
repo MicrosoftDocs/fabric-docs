@@ -23,8 +23,6 @@ To get the Microsoft Fabric Release Plan app, you need to install it from AppSou
 
 1. Visit [Microsoft Fabric Release Plan](https://appsource.microsoft.com/product/power-bi/pbicat.microsoft-fabric-release-plan) in AppSource.
 
-   :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-appsource-page.png" alt-text="Microsoft Fabric Release Plan Report in AppSource.":::
-
 1. Select [**Get it now**](https://appsource.microsoft.com/product/microsoft-fabric/pbicat.microsoft-fabric-release-plan).
 
     :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-appsource-icon.png" alt-text="Microsoft Fabric Release Plan Report in AppSource.":::
