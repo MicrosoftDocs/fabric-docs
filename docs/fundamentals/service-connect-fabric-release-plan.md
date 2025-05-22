@@ -13,7 +13,7 @@ ms.custom: fabric-cat
 
 This article tells you how to install the template app for the Microsoft Fabric Release Plan report, and how to connect to the data source.
 
-   :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-title-screen.png" alt-text="Microsoft Fabric Release Plan Report report.":::
+   :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-title-screen.png" alt-text="Screenshot that shows Microsoft Fabric Release Plan Report report.":::
 
 After you install the template app and connected to the data sources, you can customize the report as per your needs. You can then distribute it as an app to colleagues in your organization.
 
@@ -25,18 +25,18 @@ To get the Microsoft Fabric Release Plan app, you need to install it from AppSou
 
 1. Select [**Get it now**](https://appsource.microsoft.com/product/microsoft-fabric/pbicat.microsoft-fabric-release-plan).
 
-    :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-appsource-icon.png" alt-text="Microsoft Fabric Release Plan Report in AppSource.":::
+    :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-appsource-icon.png" alt-text="Screenshot that shows Microsoft Fabric Release Plan Report in AppSource.":::
 
 1. When prompted, select **Install**. Once the app is installed, it shows on your **Apps** page.
 
-   :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-apps-page-icon.png" alt-text="Microsoft Fabric Release Plan Report on App page.":::
+   :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-apps-page-icon.png" alt-text="Screenshot that shows Microsoft Fabric Release Plan Report on App page.":::
 
 ## Connect to data sources
 
 1. Select the icon on your Apps page to open the app. The app opens, showing sample data.
 1. Select the **Connect your data** link on the banner at the top of the page.
 
-   :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-connect-data.png" alt-text="Microsoft Fabric Release Plan connect your data link.":::
+   :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-connect-data.png" alt-text="Screenshot that shows Microsoft Fabric Release Plan connect your data link.":::
 
 1. The parameters dialog appears. There are no required parameters, so you can select **Next**.
 
@@ -48,7 +48,7 @@ To get the Microsoft Fabric Release Plan app, you need to install it from AppSou
 
 1. The report connects to the data sources and is populated with up-to-date data. You see sample data while the refresh is in progress.
 
-      :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-refresh-monitor.png" alt-text="Microsoft Fabric Release Plan report refresh in progress.":::
+      :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-refresh-monitor.png" alt-text="Screenshot that shows Microsoft Fabric Release Plan report refresh in progress.":::
 
 When the data refresh is complete, you're in the workspace associated with the app.
 
