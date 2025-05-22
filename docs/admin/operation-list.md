@@ -4,7 +4,7 @@ description: This article provides a list of all the operations available in Fab
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.date: 05/18/2025
+ms.date: 05/22/2025
 ---
 
 # Operation list
