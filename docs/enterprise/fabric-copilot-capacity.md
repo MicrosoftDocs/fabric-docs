@@ -1,8 +1,8 @@
 ---
 title: Fabric Copilot capacity
 description: Learn how to set up a Fabric Copilot capacity to enable billing to a designated Microsoft Fabric capacity.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: concept-article
 ms.date: 03/20/2025
 
