@@ -11,7 +11,7 @@ ms.custom: fabric-cat
 
 # Connect to the Microsoft Fabric Release Plan report
 
-This article tells  you how to install the template app for the Microsoft Fabric Release Plan report, and how to connect to the data source.
+This article tells you how to install the template app for the Microsoft Fabric Release Plan report, and how to connect to the data source.
 
    :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-title-screen.png" alt-text="Microsoft Fabric Release Plan Report report.":::
 
@@ -38,7 +38,7 @@ To get the Microsoft Fabric Release Plan app, you need to install it from AppSou
 
    :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-connect-data.png" alt-text="Microsoft Fabric Release Plan connect your data link.":::
 
-1. The parameters dialog appears. There are no required parameters. select **Next**.
+1. The parameters dialog appears. There are no required parameters, so you can select **Next**.
 
    :::image type="content" source="media/service-connect-to-microsoft-fabric-release-plan/microsoft-fabric-release-plan-parameters-dialog.png" alt-text="Screenshot of the Microsoft Fabric Release Plan report parameters dialog.":::
 
