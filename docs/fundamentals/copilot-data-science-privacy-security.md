@@ -61,7 +61,7 @@ For considerations and limitations, see [Limitations](../data-engineering/copilo
 
 - Copilot is best equipped to handle data science topics, so limit your questions to this area.
 - Explicitly describe the data you want Copilot to examine. If you describe the data asset - for example, by naming files, tables, or columns - Copilot can more likely retrieve relevant data and generate useful outputs.
-- For more granular responses, load the data into the notebook as DataFrames, or pin the data in your lakehouse. This gives Copilot more context with which to perform analysis. If an asset is too large to load, pinning it's a helpful alternative.
+- For more granular responses, load the data into the notebook as DataFrames, or pin the data in your lakehouse. This gives Copilot more context with which to perform analysis. If an asset is too large to load, pinning it is a helpful alternative.
 
 ## Fabric data agent: Responsible AI FAQ
 
@@ -75,33 +75,33 @@ Fabric data agent enables natural language interactions with structured data, al
 
 ### What are the intended uses for data agent?
 
-- Data agent is intended to simplify the data querying process. It allows users to interact with structured data through natural language. It supports user insights, decision-making, and generation of answers to complex questions without the need for specialized query language knowledge. Data agent is especially useful for business analysts, decision-makers, and other nontechnical users who need quick, actionable insights from data stored in sources like KQL database, Lakehouse, Power BI dataset, and Warehouse resources.
+- The Fabric data agent is intended to simplify the data querying process. It allows users to interact with structured data through natural language. It supports user insights, decision-making, and generation of answers to complex questions without the need for specialized query language knowledge. Data agent is especially useful for business analysts, decision-makers, and other nontechnical users who need quick, actionable insights from data stored in sources like KQL database, Lakehouse, Power BI dataset, and Warehouse resources.
 
-- Data agent is not intended for use cases where deterministic and 100% accurate results are required, because of current LLM limitations.
+- The Fabric data agent is not intended for use cases where deterministic and 100% accurate results are required, because of current LLM limitations.
 
-- Data agent isn't intended for uses cases that require deep analytics or causal analytics. For example, "why did the sales numbers drop last month?" is out of current scope.
+- The Fabric data agent isn't intended for uses cases that require deep analytics or causal analytics. For example, "why did the sales numbers drop last month?" is out of current scope.
 
-### How was data agent evaluated? What metrics are used to measure performance?
+### How was The Fabric data agent evaluated? What metrics are used to measure performance?
 
 The product team tested the data agent on various public and private benchmarks, to determine the query quality against different data sources. The team also invested in other harm mitigations, including technological approaches to ensure that the data agent's output is constrained to the context of the selected data sources.
 
-### What are the limitations of data agent? How can users minimize the impact of data agent limitations when using the system?
+### What are the limitations of The Fabric data agent? How can users minimize the impact of The Fabric data agent limitations when using the system?
 
 - Ensure that you use descriptive column names. Instead of "C1" or "ActCu" column names (as examples), use "ActiveCustomer" or "IsCustomerActive." This is the most effective way to get more reliable queries out of the AI.
 
-- To improve the accuracy of the Fabric Data Agent, you can provide more context with data agent instructions and example queries. These inputs help the Azure OpenAI Assistant API - which powers the Fabric Data Agent - make better decisions about how to interpret user questions and which data source is most appropriate to use.
+- To improve the accuracy of the Fabric data agent, you can provide more context with data agent instructions and example queries. These inputs help the Azure OpenAI Assistant API - which powers the Fabric data agent - make better decisions about how to interpret user questions and which data source is most appropriate to use.
 
 - You can use Data agent instructions to guide the underlying agent's behavior, helping it identify the best data source to answer specific types of questions.
 
-- You can also provide sample question-query pairs to demonstrate how the Fabric Data Agent should respond to common queries. These examples serve as patterns for interpreting similar user inputs and generating accurate results. Sample question-query pairs aren't currently supported for Power BI semantic model data sources.
+- You can also provide sample question-query pairs to demonstrate how the Fabric data agent should respond to common queries. These examples serve as patterns for interpreting similar user inputs and generating accurate results. Sample question-query pairs aren't currently supported for Power BI semantic model data sources.
 
 - Refer to [this resource](../data-science/concept-data-agent.md#limitations) for a full list of current limitations of the data agent.
 
-### What operational factors and settings allow for effective and responsible use of Fabric data agent?
+### What operational factors and settings allow for effective and responsible use of the Fabric data agent?
 
-- The data agent can only access the data that you provide. It uses the schema (table name and column name), as well as the Data agent instructions and Example queries that you provide, in the User Interface (UI) or through the SDK.
+- The Fabric data agent can only access the data that you provide. It uses the schema (table name and column name), as well as the The Fabric data agent instructions and example queries that you provide, in the User Interface (UI) or through the SDK.
 
-- The data agent can only access the data that the user can access. If you use the data agent, your credentials are used to access the underlying database. If you don't have access to the underlying data, the data agent can't access that underlying data. This is true when you consume the data agent across different channels - for example, Azure AI Foundry or Microsoft Copilot Studio - where other users can use the data agent.
+- The  Fabric data agent can only access the data that the user can access. If you use the data agent, your credentials are used to access the underlying database. If you don't have access to the underlying data, the data agent can't access that underlying data. This is true when you consume the data agent across different channels - for example, Azure AI Foundry or Microsoft Copilot Studio - where other users can use the data agent.
 
 ## Related content
 
