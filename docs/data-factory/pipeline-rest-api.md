@@ -3,7 +3,7 @@ title: Fabric data pipeline public REST API
 description: This article describes the available REST APIs for pipelines in Data Factory for Microsoft Fabric.
 author: kromerm
 ms.author: makromer
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 09/16/2024
 ---
 
@@ -352,7 +352,7 @@ Body:
 ```
 
 > [!NOTE]
-> "job id" is the same id created and used in the Job Scheduler Public APIs
+> "job id" is the same id created and used in the [Job Scheduler Public APIs](/rest/api/fabric/core/job-scheduler).
 
 Response 200:
 ```json
