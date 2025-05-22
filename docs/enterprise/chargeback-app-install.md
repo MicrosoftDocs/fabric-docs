@@ -1,28 +1,30 @@
 ---
 title: Install the Microsoft Fabric Chargeback app
 description: Learn how to install the Microsoft Fabric Chargeback app.
-author: BalajiShewale
-ms.author: BalajiShewale
+author: kishanpujara
+ms.author: kishanpujara
 ms.topic: how-to
 ms.custom:
-ms.date: 05/15/2025
+ms.date: 05/22/2025
 ---
 
 # Install the Microsoft Fabric Chargeback app
+
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 The Microsoft Fabric Chargeback app, also known as the chargeback app. It provides turnkey insights that help organizations implement effective chargeback policies - enabling a fair distribution of costs based on actual usage patterns across your Fabric environment. Use this guide to install the app.
 
 ## Prerequisites
 
-- You must be an admin of at least one capacity in your organization. Please visit the [Capacity settings](/docs/admin/capacity-settings.md) documentation to learn how to check your admin status.
+- You must be an admin of at least one capacity in your organization. Please visit the [Capacity settings](../admin/capacity-settings.md) documentation to learn how to check your admin status.
 
-- Installation of preview applications may be restricted by your organization's tenant policy. If you're unable to install the app, contact your tenant admin and request that they enable the [Install template apps not listed in AppSource](/docs/admin/tenant-settings-index.md) setting in the Power BI Admin portal.
+- Installation of preview applications may be restricted by your organization's tenant policy. If you're unable to install the app, contact your tenant admin and request that they enable the [Install template apps not listed in AppSource](../admin/tenant-settings-index.md) setting in the Power BI Admin portal.
 
 ## Install the app
 
 Follow these steps to install the app from Microsoft AppSource.
 
-To avoid throttling due to capacity overutilization, install the app in a workspace with a [Pro license](../power-bi/fundamentals/service-features-license-type#pro-license).
+To avoid throttling due to capacity overutilization, install the app in a workspace with a [Pro license](/power-bi/fundamentals/service-features-license-type).
 
 
 # [First time installation](#tab/1st)
@@ -124,7 +126,7 @@ To complete the installation, configure the Microsoft Fabric Chargeback app by r
 
 ### Considerations and limitations
 
-* The Chargeback app is not supported in government clouds.
+* The Microsoft Fabric Chargeback app is not currently supported in government clouds. Support for government clouds will be added by September 2025. 
 
 * The Microsoft Fabric Chargeback app doesn't support environments that use [private links](../security/security-private-links-overview.md).
 
@@ -140,8 +142,8 @@ After installing the app, if it's not showing data or can't refresh, follow thes
 
 ## Related content
 
-* [What is Fabric Chargeback app (preview)?](/docs/enterprise/chargeback-app.md)
+* [What is Fabric Chargeback app (preview)?](chargeback-app.md)
   
-* [Chargeback Azure Reservation costs](../azure-docs/articles/cost-management-billing/reservations/charge-back-usage.md)
+* [Chargeback Azure Reservation costs](/azure/cost-management-billing/reservations/charge-back-usage)
   
-* [View amortized benefit costs](../azure-docs/articles/cost-management-billing/reservations/view-amortized-costs.md)
+* [View amortized benefit costs](/azure/cost-management-billing/reservations/view-amortized-costs)

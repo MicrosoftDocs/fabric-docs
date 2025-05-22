@@ -1,13 +1,15 @@
 ---
 title: What is Microsoft Fabric Chargeback app (preview)?
 description: Learn how to use the Microsoft fabric Fabric Chargeback app .
-author: BalajiShewale
-ms.author: BalajiShewale
-ms.topic: concept
-ms.date: 05/15/2025
+author: kishanpujara
+ms.author: kishanpujara
+ms.topic: conceptual
+ms.date: 05/22/2025
 ---
 
 # Microsoft Fabric chargeback app (preview)
+
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 The Microsoft Fabric Chargeback app helps you understand which teams, users, and workloads are driving capacity usage, enabling you to build chargeback processes that fairly allocate costs based on actual consumption. As a capacity admin, you can view key parameters such as metric types, dates, and operation names, and share the report with others in your organization to support transparent and informed cost management.
 
@@ -15,7 +17,7 @@ Utilization is the time it takes an activity or action to complete. Utilization 
 
 ## Install the chargeback app
 
-To install the app, follow the instructions in [Install the Microsoft Fabric Chargeback app](/docs/enterprise/chargeback-app-install.md).
+To install the app, follow the instructions in [Install the Microsoft Fabric Chargeback app](chargeback-app-install.md).
 
 ### Visuals
 
@@ -51,7 +53,7 @@ When using the Microsoft Fabric Chargeback app, consider the following considera
   
 *  If an operation is not associated with a user, or if the operation is initiated by a service principal, the report will display the username as "Power BI Service".
   
-*  When the [Show user data in the Fabric Capacity Metrics app and reports](/docs/admin/service-admin-portal-audit-usage.md#show-user-data-in-the-fabric-capacity-metrics-app-and-reports) setting is disabled, the username will be shown as 'Masked user' for non-service operations, and the user count will consider all masked users as a single user.
+*  When the [Show user data in the Fabric Capacity Metrics app and reports](../admin/service-admin-portal-audit-usage.md#show-user-data-in-the-fabric-capacity-metrics-app-and-reports) setting is disabled, the username will be shown as 'Masked user' for non-service operations, and the user count will consider all masked users as a single user.
   
 * Visuals on the Export page may fail to render properly when too many drill-downs are applied due to memory limitations in Power BI. To avoid this, either apply filters to reduce the data volume or avoid expanding multiple capacities to the lower granularity level (such as Item name) during export.
 
@@ -59,8 +61,8 @@ When using the Microsoft Fabric Chargeback app, consider the following considera
 
 ## Related content
 
-* [Install the Microsoft Fabric Chargeback app](/docs/enterprise/chargeback-app-install.md)
+* [Install the Microsoft Fabric Chargeback app](chargeback-app-install.md)
   
-* [Chargeback Azure Reservation costs](../azure-docs/articles/cost-management-billing/reservations/charge-back-usage.md)
+* [Chargeback Azure Reservation costs](/azure/cost-management-billing/reservations/charge-back-usage)
   
-* [View amortized benefit costs](../azure-docs/articles/cost-management-billing/reservations/view-amortized-costs.md)
+* [View amortized benefit costs](/azure/cost-management-billing/reservations/view-amortized-costs)
