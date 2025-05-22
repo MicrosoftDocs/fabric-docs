@@ -1,8 +1,8 @@
 ---
 title: "Evaluate and optimize your Microsoft Fabric capacity"
 description: "This article explains how to evaluate and optimize the load on your Microsoft Fabric capacities."
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.reviewer: pmahoney, pvenkat, alpowers, seanmirabile, scbradl, gilherau
 ms.topic: how-to
 ms.custom: fabric-cat
