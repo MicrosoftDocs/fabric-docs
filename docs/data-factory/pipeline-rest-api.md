@@ -4,7 +4,7 @@ description: This article describes the available REST APIs for pipelines in Dat
 author: kromerm
 ms.author: makromer
 ms.topic: conceptual
-ms.date: 09/16/2024
+ms.date: 05/22/2025
 ---
 
 # Microsoft Fabric data pipeline public REST API
@@ -390,6 +390,15 @@ Response 200:
 ]
 
 ```
+
+Possible status values:
+
+- Cancelled
+- Succeeded
+- Failed
+- In progress
+- Not started
+- Unknown
 
 ## Service Principal Name (SPN) Support 
 
