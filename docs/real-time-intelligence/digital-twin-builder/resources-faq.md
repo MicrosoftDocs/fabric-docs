@@ -4,7 +4,7 @@ description: This article contains answers to commonly asked questions about dig
 author: baanders
 ms.author: baanders
 ms.date: 04/24/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Digital twin builder (preview) frequently asked questions

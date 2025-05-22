@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/19/2025
+ms.date: 05/20/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1142  | Data Warehouse | [SQL editor Copilot code completion feature might cause high usage](./known-issue-1142-sql-editor-copilot-code-completion-feature-high-usage.md) | May 20, 2025 |
 |  1138  | Power BI | [Credential update in Google Analytics connections fails with JSON error](./known-issue-1138-credential-update-google-analytics-connections-fails.md) | May 19, 2025 |
 |  1137  | Data Engineering | [Transient failure for deploying User data functions welcome templates](./known-issue-1137-failure-deploying-user-data-functions-welcome-templates.md) | May 19, 2025 |
 |  1136  | OneLake | [Scrolling through workspaces in OneLake Catalog doesn't work](./known-issue-1136-scrolling-workspaces-onelake-catalog-not-work.md) | May 19, 2025 |
@@ -41,13 +42,10 @@ Select the **Title** to view more information about that specific known issue.
 |  1112  | Data Engineering | [User data functions option not visible in data pipelines functions activity](./known-issue-1112-functions-option-not-visible-pipelines-functions-activity.md) | April 22, 2025 |
 |  1107  | Real-Time Intelligence | [Cross-region capacity migration might fail if items weren't deleted successfully](./known-issue-1107-cross-region-capacity-migration-fail-items-not-deleted-successfully.md) | April 22, 2025 |
 |  1106  | Real-Time Intelligence | [Eventstream real-time weather connector fails to load map in edit mode](./known-issue-1106-eventstream-weather-connector-fails-load-map-edit-mode.md) | April 18, 2025 |
-|  1104  | Power BI | [Power BI visual warning about style preset not found](./known-issue-1104-visual-warning-style-preset-not-found.md) | April 18, 2025 |
 |  1103  | Data Warehouse | [Data warehouse in second workspace out of sync from Git](./known-issue-1103-data-warehouse-second-workspace-sync-git.md) | April 18, 2025 |
 |  1102  | Data Engineering | [Deletion of managed private endpoint connected to Key Vault doesn't work](./known-issue-1102-deletion-private-endpoint-connected-key-vault-not-work.md) | April 15, 2025 |
 |  1101  | Power BI | [Vertica connector throws invalid conversion error](./known-issue-1101-vertica-connector-throws-invalid-conversion-error.md) | April 15, 2025 |
-|  1097  | Power BI | [Azure map zooms out automatically even with auto zoom turned off](./known-issue-1097-azure-map-zooms-out-auto-zoom-turned-off.md) | April 15, 2025 |
 |  1092  | Data Factory | [Delayed data availability in SQL analytics endpoint when using a pipeline](./known-issue-1092-delayed-data-availability-analytics-endpoint-pipeline.md) | April 11, 2025 |
-|  1091  | Power BI | [New card visual conditional formatting rules don't work](./known-issue-1091-new-card-visual-conditional-formatting-rules-not-work.md) | April 10, 2025 |
 |  1090  | Data Engineering | [PyPI packages in User data functions don't show in Library Management](./known-issue-1090-pypi-packages-functions-not-show-library-management.md) | April 9, 2025 |
 |  1087  | Data Factory | [Pipeline can't copy an empty table to lakehouse](./known-issue-1087-pipeline-not-copy-empty-table-lakehouse.md) | April 9, 2025 |
 |  1085  | Data Engineering | [Spark job submission failure with Library Management error](./known-issue-1085-spark-job-submission-failure-library-management-error.md) | April 9, 2025 |
@@ -95,6 +93,9 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1104  | Power BI | [Power BI visual warning about style preset not found](./known-issue-1104-visual-warning-style-preset-not-found.md) | April 18, 2025 | Fixed: May 20, 2025 |
+|  1097  | Power BI | [Azure map zooms out automatically even with auto zoom turned off](./known-issue-1097-azure-map-zooms-out-auto-zoom-turned-off.md) | April 15, 2025 | Fixed: May 20, 2025 |
+|  1091  | Power BI | [New card visual conditional formatting rules don't work](./known-issue-1091-new-card-visual-conditional-formatting-rules-not-work.md) | April 10, 2025 | Fixed: May 20, 2025 |
 |  1131  | Databases | [SQL database creation fails due to tenant setting](./known-issue-1131-sql-database-creation-fails-tenant-setting.md) | May 9, 2025 | Fixed: May 16, 2025 |
 |  1076  | Real-Time Intelligence | [Eventstream sample data sources created from Real-Time hub are inactive](./known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md) | March 31, 2025 | Fixed: May 16, 2025 |
 |  1025  | Data Engineering | [Environment Git integration imports for libraries don't work](./known-issue-1025-environment-git-integration-imports-libraries-not-work.md) | March 26, 2025 | Fixed: May 16, 2025 |

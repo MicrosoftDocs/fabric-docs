@@ -4,7 +4,7 @@ description: This article provides troubleshooting suggestions for digital twin 
 author: baanders
 ms.author: baanders
 ms.date: 04/29/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Troubleshooting digital twin builder (preview)

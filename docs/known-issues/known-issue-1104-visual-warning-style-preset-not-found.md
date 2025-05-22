@@ -4,7 +4,7 @@ description: A known issue is posted where there's a Power BI visual warning abo
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/18/2025
+ms.date: 05/20/2025
 ms.custom: known-issue-1104
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1104
 
 You can have a Power BI visual that has a style present set. If the definition can't be found from the built-in presets or the theme, you receive a style preset not found warning.
 
-**Status:** Open
+**Status:** Fixed: May 20, 2025
 
 **Product Experience:** Power BI
 
