@@ -30,7 +30,7 @@ With Dataflow Gen2, you can:
 
 With Data pipelines, you can:
 
-- **Pipeline Generation**: Using natural language, you can describe your desired pipeline, and Copilot will understand the intent and generate the necessary Data pipeline activities.
+- **Pipeline Generation**: Using natural language, you can describe your desired pipeline, or uploading an image with a data pipeline and Copilot will understand the intent and generate the necessary Data pipeline activities.
 - **Error message assistant**: troubleshoot Data pipeline issues with clear error explanation capability and actionable troubleshooting guidance.
 - **Summarize Pipeline**: Explain your complex pipeline with the summary of content and relations of activities within the Pipeline.
 
