@@ -1,8 +1,8 @@
 ---
 title: Fabric operations
 description: Understand the Microsoft Fabric operations.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
 ms.date: 03/20/2025
