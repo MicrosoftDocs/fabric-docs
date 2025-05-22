@@ -670,6 +670,7 @@ The following operations are available in the audit logs.
 | Update Notebook Resource | UpdateNotebookResource | Update resources in notebook. |
 | Update Notebook Spark Property | UpdateNotebookSparkProperty |  |
 | Update Notification Settings | UpdateNotificationSettings | Update user notification settings for Notification Service Platform. |
+| Update Publish to Web Embed Code Owner | UpdateEmbedCodeOwner |  |
 | Update Report Content | UpdateReportContent |  |
 | Update Scorecard Dataset | UpdateScorecardDataset |  |
 | Update Scorecard Hierarchy | UpdateScorecardHierarchy |  |
