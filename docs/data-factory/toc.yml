@@ -403,6 +403,12 @@
         href: connector-google-cloud-storage.md
       - name: Configure in a data pipeline Copy activity
         href: connector-google-cloud-storage-copy-activity.md
+    - name: Greenplum for Pipeline
+      items:
+      - name: Greenplum for Pipeline - Overview
+        href: connector-greenplum-for-pipeline-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-greenplum-for-pipeline-copy-activity.md
     - name: Hive LLAP
       items:
       - name: Hive LLAP - Overview
