@@ -1,8 +1,8 @@
 ---
 title: Fabric Application lifecycle management (ALM) deployment pipelines deploy content
 description: Learn how to deploy content to an empty or to nonempty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article

@@ -1,8 +1,8 @@
 ---
 title: Troubleshoot Variable libraries
 description: Troubleshoot common errors and issues when working with Variable libraries in Microsoft Fabric.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.service: fabric
 ms.topic: troubleshooting-problem-resolution #Don't change.
 ms.date: 02/16/2025
