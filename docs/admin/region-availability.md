@@ -6,7 +6,7 @@ ms.author: painbar
 ms.custom:
   - references_regions
 ms.topic: overview
-ms.date: 05/7/2025
+ms.date: 05/23/2025
 ---
 
 # Fabric region availability
@@ -29,20 +29,20 @@ The tables below list the availability of Fabric workloads according to the regi
 
 This table lists regions where all Fabric workloads are available.
 
-| Americas | Europe  | Middle East | Africa  | Asia Pacific  |
-|:--------------|:-------------|:---------|:---------|:----|
-| Brazil South  | North Europe<sup>4</sup>  | UAE North  | South Africa North | Australia East   |
-| Canada Central  | West Europe     |      |     | Australia Southeast |
-| Canada East<sup>3</sup>   | France Central    |      |    | Central India   |
-| Central US | Germany West Central   |        |           | East Asia            |
-| East US    | Italy North <sup>3</sup>    |             |             | Japan East<sup>3</sup>       |
-| East US 2    | Norway East         |      |         | Korea Central         |
-| North Central US    | Poland Central <sup>3</sup> |             |        | Southeast Asia      |
-| South Central US<sup>2,4</sup>| Sweden Central |     |         | South India     |
-| West US  | Switzerland North     |             |     |              |
-| West US 2    | Switzerland West<sup>3</sup>           |             |                    |           |
-| West US 3<sup>3</sup>     | UK South           |             |             |        |
-|       | UK West<sup>1</sup>        |             |            |         |
+| Americas                       | Europe                       | Middle East | Africa             | Asia Pacific           |
+|:-------------------------------|:-----------------------------|:------------|:-------------------|:-----------------------|
+| Brazil South                   | North Europe<sup>4</sup>     | UAE North   | South Africa North | Australia East         |
+| Canada Central                 | West Europe                  |             |                    | Australia Southeast    |
+| Canada East<sup>3</sup>        | France Central               |             |                    | Central India          |
+| Central US                     | Germany West Central         |             |                    | East Asia              |
+| East US                        | Italy North <sup>3</sup>     |             |                    | Japan East<sup>3</sup> |
+| East US 2                      | Norway East                  |             |                    | Japan West             |
+| North Central US               | Poland Central <sup>3</sup>  |             |                    | Southeast Asia         |
+| South Central US<sup>2,4</sup> | Sweden Central               |             |                    | South India            |
+| West US                        | Switzerland North            |             |                    | Korea Central          |
+| West US 2                      | Switzerland West<sup>3</sup> |             |                    |                        |
+| West US 3<sup>3</sup>          | UK South                     |             |                    |                        |
+|                                | UK West<sup>1</sup>          |             |                    |                        |
 
 
   <sup>1</sup> [Fabric SQL database](../database/sql/overview.md) isn't  available in this region.
