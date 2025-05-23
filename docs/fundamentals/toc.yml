@@ -91,8 +91,8 @@ items:
     href: /power-bi/create-reports/copilot-reports-overview?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
   - name: Copilot in Fabric FAQ
     href: copilot-faq-fabric.yml
-  - name: Copilot features in Fabric
-    href: ../data-science/copilot-ai-feature-state.md
+  - name: Status of Copilot features
+    href: copilot-ai-feature-state.md
   - name: Privacy, security, and responsible use for Copilot in Fabric
     items:
     - name: Privacy, security, and responsible use
