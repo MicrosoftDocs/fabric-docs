@@ -78,7 +78,7 @@ To create a Data Source Name:
     - Or, to create a DSN that all users who log into Windows can use, select the **System DSN** tab.
 
     > [!NOTE]
-    > We recommended you create a System DSN instead of a User DSN. Some applications load the data using a different user account and might not be able to detect User DSNs that are created under another user account.
+    > We recommend you create a System DSN instead of a User DSN. Some applications load the data using a different user account and might not be able to detect User DSNs that are created under another user account.
 
 1. Select **Add**.
 1. In the Create New Data Source dialog box, select **Simba ODBC Data Connector for Microsoft Fabric Spark** and then select **Finish**. The Simba ODBC Data Connector for Microsoft Fabric Spark DSN Setup dialog box opens.
@@ -220,8 +220,8 @@ To configure SSL verification:
 
 1. To access SSL options for a DSN, open the ODBC Data Source Administrator where you created the DSN, then select the DSN, then select **Configure**, and then select **SSL Options**.
 1. Select the **Enable SSL** check box.
-1. To allow authentication using self-signed certificates that haven't been added to the list of trusted certificates, select the **Allow Self-signed Server Certificate check box.
-1. To allow the common name of a CA-issued SSL certificate to not match the host name of the Spark server, select the Allow Common Name Host Name Mismatch** check box.
+1. To allow authentication using self-signed certificates that haven't been added to the list of trusted certificates, select the **Allow Self-signed Server Certificate** check box.
+1. To allow the common name of a CA-issued SSL certificate to not match the host name of the Spark server, select the **Allow Common Name Host Name Mismatch** check box.
 1. To specify the CA certificates that you want to use to verify the server, do one of the following:
 
     - To verify the server using the trusted CA certificates from a specific `.pem` file, specify the full path to the file in the **Trusted Certificates** field and clear the **Use System Trust Store** check box.
