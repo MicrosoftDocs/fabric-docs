@@ -396,10 +396,6 @@ When using aggregations in GraphQL, there are some important rules and limitatio
 
 By keeping these restrictions and guidelines in mind, you can build effective GraphQL aggregation queries that yield powerful insights. The aggregation feature is extremely useful for reporting and analytics use cases, but it does require careful structuring of queries. Always double-check that your `groupBy` fields align with your selected output fields, add sorting for predictable order (especially when paginating), and use distinct and aggregate functions appropriately for the data types.
 
-## Conclusion
-
-GraphQL aggregations enable you to get summarized, analytical data directly from your API using a convenient query format. In our e-commerce examples, we demonstrated grouping products by category to get counts and sums, averaging ratings, and using distinct counts. These queries return structured results that can power dashboards or reports without additional processing.
-
 **Related content**
 
 - [Fabric API for GraphQL editor](api-graphql-editor.md)
