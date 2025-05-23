@@ -1,8 +1,8 @@
 ---
 title: Git integration license change
 description: Understand what happens to your got connection when your license permissions change and you can't access the repo anymore.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
