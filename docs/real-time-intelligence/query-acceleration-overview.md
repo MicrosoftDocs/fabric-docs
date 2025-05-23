@@ -46,7 +46,7 @@ The initial process of query acceleration is dependent on the size of the extern
 ## Limitations
 
 * The number of columns in the external table can't exceed 900.
-* Query performance over accelerated external delta tables which have more than 2.5 million data files may not be optimal.
+* Query performance over accelerated external delta tables with more than 2.5 million data files may not be optimal
 * The feature assumes delta tables with static advanced features, for example column mapping doesn't change, partitions don't change, and so on. To change advanced features, first disable the policy, and once the change is made, re-enable the policy.
 * Schema changes on the delta table must also be followed with the respective `.alter` external delta table schema, which might result in acceleration starting from scratch if there was breaking schema change.
 * Index-based pruning isn't supported for partitions.
