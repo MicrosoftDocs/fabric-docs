@@ -1,8 +1,8 @@
 ---
 title: Get started using deployment pipelines, the Fabric Application lifecycle management (ALM) tool
 description: Learn how to use deployment pipelines, the Fabric Application lifecycle management (ALM) tool.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
