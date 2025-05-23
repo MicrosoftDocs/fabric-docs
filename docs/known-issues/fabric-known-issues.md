@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/20/2025
+ms.date: 05/22/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1144  | Data Engineering | [Py4JJavaError when saving delta table on Fabric 1.3](./known-issue-1144-java-error-saving-delta-table-fabric-1-3.md) | May 22, 2025 |
+|  1143  | Power BI | [Error with Dremio Connector using Dremio.DatabasesV370 function](./known-issue-1143-error-dremio-connector-dremio-function.md) | May 22, 2025 |
 |  1142  | Data Warehouse | [SQL editor Copilot code completion feature might cause high usage](./known-issue-1142-sql-editor-copilot-code-completion-feature-high-usage.md) | May 20, 2025 |
 |  1138  | Power BI | [Credential update in Google Analytics connections fails with JSON error](./known-issue-1138-credential-update-google-analytics-connections-fails.md) | May 19, 2025 |
 |  1137  | Data Engineering | [Transient failure for deploying User data functions welcome templates](./known-issue-1137-failure-deploying-user-data-functions-welcome-templates.md) | May 19, 2025 |

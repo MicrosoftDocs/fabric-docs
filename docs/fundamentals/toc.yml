@@ -199,12 +199,18 @@ items:
     href: /power-bi/guidance/fabric-adoption-roadmap-conclusion?context=/fabric/context/context
   - name: IDEAS journey with Fabric
     href: ideas-data-platform-integration.md
+- name: Connect to the Fabric Release Plan
+  href: service-connect-fabric-release-plan.md
 - name: Known issues
   items:
     - name: Active known issues for Fabric + Power BI - chart
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Py4JJavaError when saving delta table on Fabric 1.3
+      href: ../known-issues/known-issue-1144-java-error-saving-delta-table-fabric-1-3.md
+    - name: Error with Dremio Connector using Dremio.DatabasesV370 function
+      href: ../known-issues/known-issue-1143-error-dremio-connector-dremio-function.md
     - name: SQL editor Copilot code completion feature might cause high usage
       href: ../known-issues/known-issue-1142-sql-editor-copilot-code-completion-feature-high-usage.md
     - name: Credential update in Google Analytics connections fails with JSON error
