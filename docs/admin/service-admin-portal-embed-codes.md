@@ -3,10 +3,8 @@ title: Manage embed codes
 description: Learn how to manage Power BI embed codes.
 author: paulinbar
 ms.author: painbar
-ms.reviewer: ''
-
-ms.custom:
-  - admin-portal
+ms.reviewer: Ben.Zulauf
+ms.custom: admin-portal
 ms.topic: how-to
 ms.date: 05/22/2025
 LocalizationGroup: Administration
@@ -42,7 +40,7 @@ To change ownership from the Admin portal, follow these steps:
 
 1. Choose the new embed code owner from the dropdown menu, then select **OK**.
 
-   :::image type="content" source="media/service-admin-portal-embed-codes/admin-portal-embed-2.png" alt-text="Screenshot of the Change Ownership dialog.":::
+   :::image type="content" source="media/service-admin-portal-embed-codes/admin-portal-embed.png" alt-text="Screenshot of the Change Ownership dialog.":::
 
 ## Related content
 
