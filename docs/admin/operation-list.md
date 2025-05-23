@@ -4,7 +4,7 @@ description: This article provides a list of all the operations available in Fab
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.date: 05/18/2025
+ms.date: 05/22/2025
 ---
 
 # Operation list
@@ -670,6 +670,7 @@ The following operations are available in the audit logs.
 | Update Notebook Resource | UpdateNotebookResource | Update resources in notebook. |
 | Update Notebook Spark Property | UpdateNotebookSparkProperty |  |
 | Update Notification Settings | UpdateNotificationSettings | Update user notification settings for Notification Service Platform. |
+| Update Publish to Web Embed Code Owner | UpdateEmbedCodeOwner |  |
 | Update Report Content | UpdateReportContent |  |
 | Update Scorecard Dataset | UpdateScorecardDataset |  |
 | Update Scorecard Hierarchy | UpdateScorecardHierarchy |  |

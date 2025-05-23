@@ -185,6 +185,8 @@ items:
   items: 
    - name: AutoML overview
      href: automated-ml-fabric.md
+   - name: AutoML concepts
+     href: automated-machine-learning-fabric.md
    - name: How-to guides
      items:
      - name: Use AutoML (interface)
