@@ -1,8 +1,8 @@
 ---
 title: Object-level security (OLS) with Power BI
 description: How to configure object-level security for imported semantic models, within the Power BI service.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer:
 ms.topic: how-to
 ms.date: 04/24/2024

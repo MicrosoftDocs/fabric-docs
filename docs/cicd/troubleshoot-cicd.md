@@ -1,8 +1,8 @@
 ---
 title: Troubleshoot the Fabric lifecycle management tools.
 description: Troubleshoot problems with deployment pipelines, the Fabric Application lifecycle management (ALM) tools.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.service: fabric

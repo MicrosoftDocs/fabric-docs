@@ -1,8 +1,8 @@
 ---
 title: The Microsoft Fabric deployment pipelines process
 description: Understand how deployment pipelines, the Fabric Application lifecycle management (ALM) tool, works.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: Lee
 ms.service: fabric
 ms.subservice: cicd

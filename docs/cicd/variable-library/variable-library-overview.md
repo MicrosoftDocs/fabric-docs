@@ -1,8 +1,8 @@
 ---
 title: Fabric Application lifecycle management Variable library
 description: Learn how to use the Fabric Application lifecycle management (ALM) Variable library tool to customize your stages.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview
