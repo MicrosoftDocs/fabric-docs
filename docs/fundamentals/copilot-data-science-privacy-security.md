@@ -44,7 +44,7 @@ In order to use fully conversational agentic AI experiences, the agent needs to 
 
 **This history is stored inside the Azure security boundary, in the same region and in the same Azure Open AI resources that process all your Fabric AI requests.** The difference in this case is that the conversation history is stored for as long as the user allows. For experiences that do not store conversation history across sessions, no data is stored. Prompts are only processed by Azure Open AI resources that Fabric uses.
 
-**Your users can delete their conversation history at any time, simply by choosing to clear the chat. This option exists both for Copilot in Notebooks and data agents.**
+**Your users can delete their conversation history at any time, simply by clearing the chat. This option exists both for Copilot in Notebooks and data agents.** If the conversation history is not manually removed, it will be stored for 28 days.
 
 ## Copilot in Notebooks: Responsible AI FAQ
 
