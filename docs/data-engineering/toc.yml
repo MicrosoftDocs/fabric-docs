@@ -381,6 +381,8 @@ items:
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
      href: spark-arcgis-geoanalytics.md
+   - name: Simba - ODBC Data Connector (Preview)
+     href: simba-odbc-data-connector.md
 - name: User data functions (preview)
   items:
    - name: Overview
