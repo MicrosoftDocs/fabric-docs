@@ -31,8 +31,6 @@ items:
     href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Use the Copilot chat panel
     href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
-  - name: Copilot features in Fabric
-    href: copilot-ai-feature-state.md
 - name: AI functions
   items: 
     - name: Transform and enrich data with AI functions
