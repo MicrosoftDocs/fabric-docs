@@ -1,8 +1,8 @@
 ---
 title: Lifecycle management tutorial
 description: Understand the workflow of using Git integration with deployment pipelines to manage the lifecycle of your apps.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.search.form: Variable library tutorial
 ms.topic: tutorial
