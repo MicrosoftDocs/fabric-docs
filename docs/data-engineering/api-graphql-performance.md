@@ -16,7 +16,7 @@ Microsoft Fabric’s API for GraphQL offers a powerful way to query data efficie
 
 ## Regions
 
-Cross-region calls can generally be the cause higher latency. In order to achieve the best performance, it's recommended to have clients connecting to APIs in the same tenant and capacity region.
+Cross-region calls can generally be the cause of high latency. In order to achieve the best performance, it's recommended to have clients connecting to APIs in the same tenant and capacity region.
 
 ### Tenant region
 
@@ -30,7 +30,7 @@ In this example the tenant region is West Central US.
 
 1. Go to Microsoft Fabric portal, open the workspace which hosts your Fabric’s API for GraphQL.
 
-1. Go to license information.
+1. From **Workspace Settings**, go to license information.
 
 ![Capacity region information in Fabric Portal](media/api-graphql-performance/api-graphql-license.png)
 
