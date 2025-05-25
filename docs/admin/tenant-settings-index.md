@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: reference
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 05/24/2025
+ms.date: 05/25/2025
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -26,7 +26,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Users can create Healthcare Cohort items (preview)](/industry/healthcare/healthcare-data-solutions/discover-and-build-cohorts-overview)|Users can explore and create healthcare cohorts using natural language from the multi-modal healthcare data estate provided by the Healthcare solutions item. The data may contain Protected Health Information (PHI). Collaborators with workspace access can view, build on, and modify the healthcare cohort items within that workspace.<br><br>By turning this setting on, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2257737).|
 |[User data functions (preview)](/fabric/data-engineering/user-data-functions/user-data-functions-overview)|Developers can use Fabric user data functions to author, host, and manage serverless data functions that have been optimized for Fabric.     Data functions are authored using custom code that can seamlessly access Microsoft Fabric items such as Data Warehouses and Lakehouses. When this setting is turned on, data functions can be called from client applications, data pipelines, etc. for code agility and productivity.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2265753)|
 |[SQL database (preview)​](../database/sql/overview.md)|Users can create SQL databases​.  [Learn More](https://aka.ms/fabricsqldb)|
-|[Digital Twin Builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md)​|Users can create digital twin builder items to build comprehensive digital twins of real world environments and processes, to enable big-picture data analysis and drive operational efficiency. [Learn More](https://aka.ms/digital-twin-builder-overview)|
+|[Digital Twin Builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md)​|Users can create digital twin builder items to build comprehensive digital twins of real world environments and processes, to enable big-picture data analysis and drive operational efficiency.|
 |[Users can discover and create org apps (preview)​](/power-bi/consumer/org-app-items/org-app-items)|Turn on this setting to let users create org apps as items. Users with access will be able to view them. By turning on this setting, you agree to the  [Preview Terms](https://aka.ms/orgapps_previewterms).<br><br>If turned off, any org app items created will be hidden until this setting is turned on again. The prior version of workspace apps will still be available.  [Learn More](https://aka.ms/orgapps_learnmore)|
 |[Product Feedback](../fundamentals/feedback.md)|This setting allows Microsoft to prompt users for feedback through in-product surveys within Microsoft Fabric and Power BI. Microsoft will use this feedback to help improve product features and services. User participation is voluntary.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272840)|
 |[Users can create and share Data agent item types (preview)](/fabric/data-science/concept-data-agent)|Users can create natural language data question and answer (Q&amp;A) experiences using generative AI and then save them as Data agent items. Data agent items can be shared with others in the organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2276218)|
@@ -230,7 +230,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 
 | Setting name | Description |
 |------|-------|
-|Block republish and disable package refresh|Disable package refresh, and only allow the semantic model owner to publish updates. When using the [XMLA Endpoint](/power-bi/enterprise/service-premium-connect-tools), a user can discover only those semantic models for which they are the owner.|
+|[Block republish and disable package refresh](./service-admin-portal-dataset-security.md#block-republish-and-disable-package-refresh)|Disable package refresh, and only allow the semantic model owner to publish updates.|
 
 ## [Advanced networking](service-admin-portal-advanced-networking.md)
 
