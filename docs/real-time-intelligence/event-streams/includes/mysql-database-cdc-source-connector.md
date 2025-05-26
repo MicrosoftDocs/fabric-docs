@@ -30,6 +30,9 @@ ms.date: 10/28/2024
 
       You can mix both formats using commas. Up to 100 tables can be entered, with each table name (including the schema name) limited to 128 characters if using full table identifiers directly.
    - **Server ID**: Enter a unique value for each server and replication client in the MySQL cluster. The default value is 1000.
+   
+   > [!NOTE]
+   > **Set a different Server ID for each reader**. Every MySQL database client for reading binlog should have a unique ID, called Server ID. MySQL Server uses this ID to maintain the network connection and the binlog position. Different jobs sharing the same Server ID can result in reading from the wrong binlog position. Therefore, it's recommended to set a different Server ID for each reader.
 1. You may expand **Advanced settings** to access additional configuration options for the MySQL Database CDC source:
    - **Snapshot locking mode**: Options are: 
      - **Minimal (default)**: Holds a global read lock only during the initial phase to capture schema and metadata. The rest of the snapshot uses a REPEATABLE READ transaction, allowing updates while data is being read.
@@ -40,12 +43,10 @@ ms.date: 10/28/2024
       - `Double`: Converts values to double-precision floating-point numbers. This improves usability and performance but may result in a loss of precision.
       - `String`: Encodes values as formatted strings. This makes them easy to consume in downstream systems but loses semantic information about the original numeric type.
 
-   :::image type="content" source="media/mysql-database-cdc-source-connector/table.png" alt-text="A screenshot of selecting Tables, Server ID, and Port for the Azure MySQL DB (CDC) connection." lightbox="media/mysql-database-cdc-source-connector/table.png":::
-    
    You can also edit source name by selecting the **Pencil button** for **Source name** in the **Stream details** section to the right.
 
-   > [!NOTE]
-   > **Set a different Server ID for each reader**. Every MySQL database client for reading binlog should have a unique ID, called Server ID. MySQL Server uses this ID to maintain the network connection and the binlog position. Different jobs sharing the same Server ID can result in reading from the wrong binlog position. Therefore, it's recommended to set a different Server ID for each reader.
+   :::image type="content" source="media/mysql-database-cdc-source-connector/table.png" alt-text="A screenshot of selecting Tables, Server ID, and Port for the Azure MySQL DB (CDC) connection." lightbox="media/mysql-database-cdc-source-connector/table.png":::
+    
 1. On the **Review + connect** page, after reviewing the summary for MySQL DB CDC source, select **Add** to complete the configuration.
 
       :::image type="content" source="media/mysql-database-cdc-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page with the Add button selected." lightbox="media/mysql-database-cdc-source-connector/review-connect.png":::
