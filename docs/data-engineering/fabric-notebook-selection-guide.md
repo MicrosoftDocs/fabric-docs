@@ -148,7 +148,7 @@ Refer to the Glossary on the final page for explanations of terms such as NEE, V
 
 ## Related content
 
-- [How to use Microsoft Fabric notebooks](/how-to-use-notebook.md)
-- [Use Python experience on Notebook](/using-python-experience-on-notebook.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](/author-execute-notebook.md)
-- [Introduction of Fabric NotebookUtils](/notebook-utilities.md)
+- [How to use Microsoft Fabric notebooks](fabric/data-engineering/how-to-use-notebook)
+- [Use Python experience on Notebook](fabric/data-engineering/using-python-experience-on-notebook)
+- [Develop, execute, and manage Microsoft Fabric notebooks](fabric/data-engineering/author-execute-notebook)
+- [Introduction of Fabric NotebookUtils](fabric/data-engineering/notebook-utilities)
