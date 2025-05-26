@@ -14,7 +14,7 @@ With the introduction of lightweight Python Notebooks in Microsoft Fabric, custo
  
 Fabric simplifies the process of selecting or transitioning between notebook types, enabling data professionals to optimize for agility, performance, and budget. This guide is designed to help you evaluate which Notebook is best suited for your current needs—and how to evolve your approach as your workloads grow in complexity and scale. The 'starter pool' provides a pre-warmed compute container that enables near-instant startup for Python or PySpark notebooks. 
 
-## Quick Decision Matrix – Choose Fast
+## Quick Decision Matrix - Choose Fast
 
 Best for quick selection based on workload type. 
 
@@ -31,7 +31,7 @@ Use this high-level reference to quickly determine the most suitable notebook ty
 | High-concurrency or parallel execution | PySpark Notebooks |
 | Needs Spark-native APIs (MLlib, SQL, Streaming) | PySpark Notebooks |
 
-## Quick Summary of Key Scenarios – Compare Deeply
+## Quick Summary of Key Scenarios - Compare Deeply
 
 Use this structured comparison table to understand the architectural and operational trade-offs between notebook types. Best suited for engineering evaluations or implementation planning. 
 
@@ -83,7 +83,7 @@ Use **PySpark Notebooks** for distributed computing, production-grade ETL workfl
 **Choose Python Notebooks When:**
 
 - You need fast start-up (typically within seconds) on a lightweight 2-core container. 
-- If minimizing compute cost is a priority—for interactive analysis or scheduled micro-jobs. 
+- If minimizing compute cost is a priority - for interactive analysis or scheduled micro-jobs. 
 - You want immediate access to pip-installable libraries and pre-installed DuckDB and Polars. 
 - You need to test across different Python runtime versions. 
 - Your data comfortably fits in the memory of a single node. 
@@ -94,9 +94,9 @@ Use **PySpark Notebooks** for distributed computing, production-grade ETL workfl
 - You require high-concurrency pools to run parallel jobs across Notebooks. 
 - You're orchestrating complex ETL pipelines with FAIR or FIFO scheduling. 
 - You rely on Spark-native APIs such as MLlib, Spark SQL, or Spark Streaming. 
-- You need production-grade features like environment variables and item-based¹ library management. 
+- You need production-grade features like environment variables and item-based library management. 
 
-## Key Differences at a Glance – Reference Concisely
+## Key Differences at a Glance - Reference Concisely
 
 See Glossary at the end of this guide for definitions of terms like VORDER, NEE, and Items-Based Library Management. 
 
@@ -140,11 +140,11 @@ Refer to the Glossary on the final page for explanations of terms such as NEE, V
 - Delta Lake Compatibility: Cross-environment support for Delta tables; fully supported in PySpark. 
 - FAIR Scheduling: A scheduling policy that allocates resources fairly across concurrent Spark jobs. 
 - FIFO Scheduling: First-In-First-Out execution order for job scheduling. 
-- NEE (Native Execution Engine)¹: An optimized query engine unique to Fabric Spark. 
+- NEE (Native Execution Engine): An optimized query engine unique to Fabric Spark. 
 - Spark Pool: A shared compute resource for running distributed Spark workloads. 
-- VORDER¹: Fabric optimization for vectorized query execution paths. 
+- VORDER: Fabric optimization for vectorized query execution paths. 
 - Vectorized Acceleration: Processes data in batches using vector operations for faster performance. 
-- Vegas Cache¹: An in-memory cache that speeds up repeated Spark data access. 
+- Vegas Cache: An in-memory cache that speeds up repeated Spark data access. 
 
 ## Related content
 
