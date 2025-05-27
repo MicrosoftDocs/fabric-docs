@@ -369,6 +369,8 @@ items:
      href: multiple-data-sources-graphql.md
    - name: Connect applications
      href: connect-apps-api-graphql.md
+   - name: Introspection and Schema Export
+     href: api-graphql-introspection-schema-export.md     
    - name: GraphQL source control and deployment pipelines (preview)
      href: graphql-source-control-and-deployment.md
    - name: Monitoring dashboard and logging (preview)
