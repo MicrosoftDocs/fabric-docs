@@ -68,10 +68,10 @@ You can use the Copy Job to move your data across cloud data stores or from on-p
 You can choose from the following data delivery styles.
 
 - **Full copy mode**: Each copy job run copies all data from the source to the destination at once.  
-- **Incremental copy mode**: The initial job run copies all data, and subsequent job runs only copy changes since the last run. When copying from a database, new or updated rows will be captured and moved to your destination. When copying from a storage store, new or updated files identified by their LastModifiedTime will be captured and moved to your destination.
+- **Incremental copy mode**: The initial job run copies all data, and subsequent job runs only copy changes since the last run. When copying from a database, new or updated rows will be captured and moved to your destination. If your source database has CDC enabled, inserted, updated, and deleted rows can be captured and replicated to the destination. See more details in [CDC in Copy job](cdc-copy-job.md). When copying from a storage store, new or updated files identified by their LastModifiedTime will be captured and moved to your destination.
 
    > [!NOTE]
-   > Incremental copy mode is still in Preview. Want early access to native change data capture? Sign up [here](https://forms.office.com/r/dBKdFcPyhj).
+   > Incremental copy mode is still in Preview.
 
 You can also choose how data is written to your destination store.
 
@@ -82,7 +82,7 @@ By default, Copy Job **appends** data to your destination, so that you won't mis
 
 ## Incremental column
 
-In incremental copy mode, you need to select an incremental column for each table to identify changes. Copy Job uses this column as a watermark, comparing its value with the same from last run in order to copy the new or updated data only. The incremental column can be a timestamp or an increasing INT.
+In incremental copy mode, you need to select an incremental column for each table to identify changes. Copy Job uses this column as a watermark, comparing its value with the same from last run in order to copy the new or updated data only. The incremental column can be a timestamp or an increasing INT. If your source database has CDC enabled, you don't need to select any incremental column to identify changes.
 
 ## Region availability
 

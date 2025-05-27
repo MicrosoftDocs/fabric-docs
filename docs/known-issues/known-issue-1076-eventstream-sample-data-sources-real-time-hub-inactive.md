@@ -4,7 +4,7 @@ description: A known issue is posted where Eventstream sample data sources creat
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/31/2025
+ms.date: 05/19/2025
 ms.custom: known-issue-1076
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1076
 
 You can create an eventstream item using a sample data source. If you create it from the Real-Time hub instead of the menu bar, the data source shows as **Inactive**.
 
-**Status:** Open
+**Status:** Fixed: May 19, 2025
 
 **Product Experience:** Real-Time Intelligence
 

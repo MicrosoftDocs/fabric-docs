@@ -4,16 +4,14 @@ metadata:
   description: This article answers frequently asked questions about open mirrored databases in Microsoft Fabric.
   author: WilliamDAssafMSFT
   ms.author: wiassaf
-  ms.reviewer: tinglee, sbahadur
-  ms.date: 11/18/2024
+  ms.reviewer: tinglee, sbahadur, maraki-ketema
+  ms.date: 05/02/2025
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.topic: faq
 title: "Frequently asked questions for open mirroring in Microsoft Fabric"
 summary: |
   This article answers frequently asked questions about open mirroring in Microsoft Fabric.
-
-  [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 sections:
   - name: Features and capabilities

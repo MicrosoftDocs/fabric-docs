@@ -25,8 +25,6 @@ The following prerequisites are required before you start:
 
 In this section, you're creating your first dataflow.
 
-1. Switch to the **Data factory** experience.
-
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
    :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace." lightbox="media/create-first-dataflow-gen2/navigate-to-workspace.png":::

@@ -1,8 +1,8 @@
 ---
 title: Overview of Fabric Git integration
 description: An introduction to integrating Git version control with the Fabric Application lifecycle management (ALM) tool
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
@@ -49,7 +49,7 @@ Before you enable Git integration, make sure you review the following privacy st
 
 The following Git providers are supported:
 
-* [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant
+* [Azure DevOps](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant
 * [GitHub](https://github.com/) (cloud versions only)
 * [GitHub Enterprise](https://github.com/enterprise) (cloud versions only)
 

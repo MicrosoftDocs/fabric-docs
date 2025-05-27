@@ -716,6 +716,23 @@ items:
   - name: .ingest inline command
     displayName: .ingest inline
     href: /kusto/management/data-ingestion/ingest-inline?view=microsoft-fabric&preserve-view=true
+  - name: Queued ingestion commands
+    items:
+    - name: Queued ingestion commands overview
+      displayName: Queued ingestion commands, ingest from folders, ingest from files, ingest from storage
+      href: /kusto/management/data-ingestion/queued-ingestion-overview?view=microsoft-fabric&preserve-view=true
+    - name: Queued ingestion commands use case
+      displayName: Queued ingestion historical data ingestion
+      href: /kusto/management/data-ingestion/queued-ingestion-use-case?view=microsoft-fabric&preserve-view=true
+    - name: .ingest-from-storage-queued command
+      displayName: .ingest-from-storage-queued, ingest from storage command
+      href: /kusto/management/data-ingestion/ingest-from-storage-queued?view=microsoft-fabric&preserve-view=true
+    - name: .list blobs command
+      href: /kusto/management/data-ingestion/list-blobs?view=microsoft-fabric&preserve-view=true
+    - name: .cancel queued ingestion operation command
+      href: /kusto/management/data-ingestion/cancel-queued-ingestion-operation-command?view=microsoft-fabric&preserve-view=true
+    - name: .show queued ingestion operation command
+      href: /kusto/management/data-ingestion/show-queued-ingestion-operations?view=microsoft-fabric&preserve-view=true
   - name: Streaming ingestion
     items:
     - name: Streaming ingestion and schema changes

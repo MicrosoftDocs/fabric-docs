@@ -1,8 +1,8 @@
 ---
 title: Fabric Copilot capacity
 description: Learn how to set up a Fabric Copilot capacity to enable billing to a designated Microsoft Fabric capacity.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: concept-article
 ms.date: 03/20/2025
 
@@ -27,7 +27,7 @@ Users assigned to a Fabric Copilot capacity can use it in these scenarios:
   * Data Warehouse
   * Data Science
   * Real-Time Analytics
-  * Data Activator
+  * Activator
 
 * AI Skills on a Fabric capacity workspace where the capacity SKU is smaller than F64.
 
