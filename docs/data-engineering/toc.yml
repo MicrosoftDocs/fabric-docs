@@ -359,24 +359,30 @@ items:
      href: get-started-api-graphql.md
    - name: API for GraphQL editor
      href: api-graphql-editor.md
+   - name: Data aggregation
+     href: api-graphql-aggregations.md
    - name: Schema view and explorer
      href: graphql-schema-view.md
    - name: Manage relationships
      href: manage-relationships-graphql.md
-   - name: Connect applications
-     href: connect-apps-api-graphql.md
    - name: Query multiple data sources
      href: multiple-data-sources-graphql.md
-   - name: Monitoring GraphQL operations
-     href: graphql-operations.md
+   - name: Connect applications
+     href: connect-apps-api-graphql.md
    - name: GraphQL source control and deployment pipelines (preview)
      href: graphql-source-control-and-deployment.md
    - name: Monitoring dashboard and logging (preview)
      href: graphql-monitor-log.md
-   - name: Frequently asked questions
-     href: graphql-faq.yml  
+   - name: Monitoring GraphQL operations
+     href: graphql-operations.md
+   - name: Performance best practices
+     href: api-graphql-performance.md
+   - name: Pricing
+     href: api-graphql-pricing.md     
    - name: Limitations
      href: api-graphql-limits.md
+   - name: Frequently asked questions
+     href: graphql-faq.yml  
 - name: Partner integration
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
