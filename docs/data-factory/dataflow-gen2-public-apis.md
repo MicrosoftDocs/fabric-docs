@@ -6,6 +6,7 @@ ms.author: conxu
 ms.reviewer: dougklopfenstein
 ms.topic: concept-article
 ms.date: 05/01/2025
+ms.custom: dataflows
 ---
 
 # Public APIs capabilities for Dataflows Gen2 in Fabric Data Factory (Preview)
