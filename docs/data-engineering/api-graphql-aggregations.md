@@ -12,13 +12,11 @@ ms.search.form: Aggregations in API for GraphQL # This value shouldn't change. I
 
 # Aggregations in API for GraphQL
 
-## Overview
-
 GraphQL aggregation allows you to retrieve summarized data such as counts, totals, averages, etc. directly through the API, similar to SQL GROUP BY and aggregate functions. Instead of fetching all records and calculating summaries on the client, you can ask the server to group data by certain fields and compute aggregate values. This is useful for building reports or analytics – for example, getting the number of products per category or the average rating of posts per author – in a single query.
 
 Aggregation queries return **grouped results**: each result represents a group of records sharing specific field values, along with computed aggregate metrics for that group. This documentation explains how to use a GraphQL aggregation feature with a fictional e-commerce schema, the types of data you can extract, example queries, and important restrictions and behaviors to be aware of.
 
-## Example schema: e-commerce store
+## Example schema: E-commerce store
 
 In this schema, a product belongs to a category. Each `Product` has fields like price and rating (the numeric values you might aggregate), and a relation to `Category` (by the category field). The `Category` has a name. We'll use this schema to demonstrate aggregation queries.
 
@@ -73,7 +71,8 @@ Instead of retrieving all records and computing these insights in your applicati
 
 To perform an aggregation, you specify a `groupBy` argument in your GraphQL query to define how to group the data, and request aggregation fields (like counts or sums) in the result. The response contains a list of grouped records, each with the group’s key values and the aggregated metrics.
 
-### Example 1: count products per category 
+### Example 1: Count products per category 
+
 Let’s group products by their category and count how many products are in each group. The query might look like:
 
 ```graph
@@ -129,7 +128,8 @@ In this query:
 
 This output tells us category 1 has three products, category 2 has 2, and so on.
 
-### Example 2: sum and average 
+### Example 2: Sum and average 
+
 We can request multiple aggregation metrics in one query. Suppose we want, for each category, the total price of all products and the average rating:
 
 ```graph
@@ -223,7 +223,7 @@ This would group products by the unique combination of category _and_ rating as 
 
 And so on for each category-rating pair in the data.
 
-### Example 4: Using Distinct
+### Example 4: Using distinct
 
 The aggregation feature supports a **distinct** modifier to count or consider unique values. For instance, to find out how many distinct categories exist in the products collection, you can use a distinct count:
 
@@ -323,7 +323,7 @@ The result is similar but more meaningful with the custom alias:
 }
 ```
 
-### Example 5: Using the `having` clause
+### Example 6: Using the `having` clause
 
 It's possible to filter the aggregated results with the `having` clause. For example, you can modify the previous example to only return results greater than two:
 

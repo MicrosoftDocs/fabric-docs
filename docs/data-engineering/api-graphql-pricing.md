@@ -28,7 +28,7 @@ Resolver executions triggered by requests to API for GraphQL consume Fabric Capa
 
 The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for API for GraphQL operations under the name "Query". Additionally, API users are able to view a summary of their billing charges for API for GraphQL usage under the invoicing item "GraphQL".
 
-![Screenshot of GraphQL in Capacity app](media/api-graphql-pricing/api-graphql-capacity-app.png)
+![Screenshot of GraphQL in Capacity app.](media/api-graphql-pricing/api-graphql-capacity-app.png)
 
 ## Capacity utilization type
 
@@ -38,7 +38,7 @@ Fabric is designed to provide lightning-fast performance by allowing operations 
 
 A complex GraphQL query returning nested data from multiple data sources might take longer to execute thus consuming more CU seconds. Alternatively, a simpler query processed in less time consumes fewer CU seconds.
 
-**Related content**
+## Related content
 
 - [Fabric Operations](../enterprise/fabric-operations.md)
 - [Fabric Throttling Policy](../enterprise/throttling.md)
