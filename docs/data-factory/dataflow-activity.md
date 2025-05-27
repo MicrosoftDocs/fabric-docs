@@ -6,6 +6,9 @@ ms.author: miescobar
 author: ptyx507x
 ms.topic: how-to
 ms.date: 5/13/2025
+ms.custom:
+   - pipelines
+   - dataflows
 ---
 
 # Use the Dataflow activity to run a Dataflow Gen2

@@ -6,6 +6,7 @@ ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
 ms.date: 05/09/2025
+ms.custom: dataflows
 ---
 
 # Dataflow Gen2 data destinations and managed settings

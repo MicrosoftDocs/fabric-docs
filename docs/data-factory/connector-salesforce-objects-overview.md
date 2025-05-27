@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 07/01/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Salesforce objects connector overview

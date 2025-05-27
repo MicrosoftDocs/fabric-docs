@@ -5,7 +5,9 @@ author: ptyx507x
 ms.topic: conceptual
 ms.date: 5/13/2025
 ms.author: miescobar
-ms.custom: intro-internal
+ms.custom:
+  - intro-internal
+  - connectors
 ---
 
 # Data Factory Connector Certification

@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 4/21/2025
 ms.custom:
   - template-how-to
+  - dataflows
 ---
 
 # Migrate to Dataflow Gen2 (CI/CD) using Save As (Preview)
