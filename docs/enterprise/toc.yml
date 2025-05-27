@@ -68,4 +68,4 @@ items:
     - name: Scenario for the Fabric SKU Estimator (preview)
       href: fabric-sku-estimator-scenario.md
     - name: Fabric SKU Estimator (preview) Release Notes
-      href: fabric-sku-release-notes.md
+      href: fabric-sku-estimator-release-notes.md
