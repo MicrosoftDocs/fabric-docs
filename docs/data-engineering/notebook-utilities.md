@@ -854,9 +854,9 @@ The table below outlines the properties.
 | `currentRunId` | In a reference run, the current run ID |
 | `parentRunId` | In a reference run with nested runs, this is the parent run ID |
 | `rootRunId` | In a reference run with nested runs, this is the root run ID |
-| `isForPipeline` | Indicates whether the run is for a pipeline |
-| `isReferenceRun` | Indicates whether the current run is a reference run |
-| `referenceTreePath` | The tree structure of nested reference runs, used only for the snapshot hierarchy in the L2 page |
+| `isForPipeline` | Whether the run is for a pipeline |
+| `isReferenceRun` | Whether the current run is a reference run |
+| `referenceTreePath` | The tree structure of nested reference runs, used only for the snapshot hierarchy in the monitoring L2 page |
 | `rootNotebookId` | (Only in reference run) The ID of the root notebook in a reference run. |
 | `rootNotebookName` | (Only in reference run) The name of the root notebook in a reference run. |
 | `rootWorkspaceId` | (Only in reference run) The workspace ID of the root notebook in a reference run. |
