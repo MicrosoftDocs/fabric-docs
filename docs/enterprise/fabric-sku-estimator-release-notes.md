@@ -15,10 +15,10 @@ ms.date: 05/27/2025
 
 - Real-time - Updated the consumption model to more accurately represent the diversity of scenarios. You now need to input the number of jobs.
 - Real-time - You can now estimate up to 10M messages per day.
-- Event house - Onelake storage calculation is now displayed in the results.
+- Event house - OneLake storage calculation is now displayed in the results.
 - User interface - Recommendation Display - Added a "recalculate" button to update the displayed recommendations without needing to scroll.
 - User interface - Revamped tooltips and added a help pane
-- User interface - Large estimations - When your estimate exceeds F2048 SKU, the tool will now display how much consumption is above the F2048 SKU limit.
+- User interface - Large estimations - When your estimate exceeds the F2048 SKU, the tool displays how much consumption is above the F2048 SKU limit.
 - User interface - Accessibility improvements
 - Power BI - Fixed an issue where the results weren't displayed correctly if you removed the Power BI model size.
 - Power BI - Fixed a bug where the Power BI sizing wasn't being calculated correctly.
