@@ -400,6 +400,10 @@ items:
       href: digital-twin-builder/resources-troubleshooting.md
     - name: FAQ
       href: digital-twin-builder/resources-faq.md
+    - name: Digital twin builder REST API
+      href: /rest/api/fabric/digitaltwinbuilder/items
+    - name: Digital twin builder flow REST API
+      href: /rest/api/fabric/digitaltwinbuilderflow/items
 - name: Analyze and train data
   items:
   - name: Copilot for Real-Time Intelligence
