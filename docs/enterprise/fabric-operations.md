@@ -190,7 +190,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder-preview](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder (preview)](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
 #### Azure and Fabric events
 
