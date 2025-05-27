@@ -20,7 +20,7 @@ Cross-region calls can generally be the cause of high latency. In order to achie
 
 ### Tenant region
 
-1.  Go to the Microsoft Fabric portal with an admin account and click on the highlighted icons to retrieve the tenant region information.
+Go to the Microsoft Fabric portal with an admin account and click on the highlighted icons to retrieve the tenant region information.
 
 [ ![Screenshot of Tenant region information in Fabric Portal](media/api-graphql-performance/api-graphql-region.png) ](media/api-graphql-performance/api-graphql-region.png#lightbox)
 
@@ -32,7 +32,7 @@ In this example the tenant region is West Central US.
 
 1. From **Workspace Settings**, go to license information.
 
-[ ![Screenshot of Capacity region information in Fabric Portal](media/api-graphql-performance/api-graphql-license.png) ](media/api-graphql-performance/api-graphql-license.png#lightbox)
+   [ ![Screenshot of Capacity region information in Fabric Portal](media/api-graphql-performance/api-graphql-license.png) ](media/api-graphql-performance/api-graphql-license.png#lightbox)
 
 In this example the capacity region is also West Central US.
 
