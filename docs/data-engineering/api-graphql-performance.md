@@ -24,7 +24,7 @@ You can find your tenant region with the following steps:
 
 1. Go to the Microsoft Fabric portal with an admin account and click on the Help `?` icon in the top right corner.
 1. At the bottom of the **Help** section, click on the **About Fabric** link.
-1. The details about your tenant, including the region are displayed. 
+1. The details about your tenant, including the region are displayed.
 
 ### Capacity region
 
@@ -32,7 +32,7 @@ You can find your tenant region with the following steps:
 1. From **Workspace settings**, go to **License info**.
 1. You can find your capacity region information under **License capacity**.
 
-  :::image type="content" source="./media/api-graphql-performance/capacity-region.png" alt-text="Screenshot showing how to get the capacity region for your workspace":::
+   :::image type="content" source="./media/api-graphql-performance/capacity-region.png" alt-text="Screenshot showing how to get the capacity region for your workspace.":::
 
 ### Data source region
 
