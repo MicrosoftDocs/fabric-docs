@@ -22,15 +22,17 @@ Cross-region calls can generally be the cause of high latency. In order to achie
 
 You can find your tenant region with the following steps:
 
-1.  Go to the Microsoft Fabric portal with an admin account and click on the Help `?` icon in the top right corner.
-2.  At the bottom of the **Help** section, click on the **About Fabric** link.
-3.  The details about your tenant, including the region are displayed. 
+1. Go to the Microsoft Fabric portal with an admin account and click on the Help `?` icon in the top right corner.
+1. At the bottom of the **Help** section, click on the **About Fabric** link.
+1. The details about your tenant, including the region are displayed.
 
 ### Capacity region
 
 1. Go to Microsoft Fabric portal, open the workspace which hosts your Fabric’s API for GraphQL.
-2. From **Workspace settings**, go to **License info**.
-3. You can find your capacity region information under **License capacity**.
+1. From **Workspace settings**, go to **License info**.
+1. You can find your capacity region information under **License capacity**.
+
+   :::image type="content" source="./media/api-graphql-performance/capacity-region.png" alt-text="Screenshot showing how to get the capacity region for your workspace.":::
 
 ### Data source region
 
@@ -63,21 +65,22 @@ It's advisable to automate the request execution over a well defined time period
 Here's list of common issues that can impact API latency and performance.
 
 * Your client geo-location is different from your tenant and capacity region:
-   * If you intend to achieve the best performance for your application, having clients and API resources in the same region help achieve the goal.
+  * If you intend to achieve the best performance for your application, having clients and API resources in the same region help achieve the goal.
 
 * Query the API for GraphQL a couple of times before testing:
 
-   * API for GraphQL doesn't use or consume capacity (CUs) when it's idle. Which means the API environment needs be initialized internally during the first call which takes a couple of extra seconds. API for GraphQL has internal caching mechanisms to help reduce latencies for continuous calls, however you might face latency spikes for the initial calls.
-   * Other than the API itself, certain data sources are known to undergo a warm-up phase, which will result in higher latencies for initial requests.  If the API is accessing a data source that is also idle and happens to need to be initialized during the first execution as well, the latency is higher because it needs to wait the initialization of both the data source and the API.
-   * Subsequent calls are faster because the environment initialization only happens once.
+  * API for GraphQL doesn't use or consume capacity (CUs) when it's idle. Which means the API environment needs be initialized internally during the first call which takes a couple of extra seconds. API for GraphQL has internal caching mechanisms to help reduce latencies for continuous calls, however you might face latency spikes for the initial calls.
+  * Other than the API itself, certain data sources are known to undergo a warm-up phase, which will result in higher latencies for initial requests.  If the API is accessing a data source that is also idle and happens to need to be initialized during the first execution as well, the latency is higher because it needs to wait the initialization of both the data source and the API.
+  * Subsequent calls are faster because the environment initialization only happens once.
 
 * Data source and Fabric capacity related setup.
-   * You can think of API for GraphQL as a wrapper on top of your data sources. If your data source itself has performance issues due to the nature of its complexity, it's expected that API latencies can be high. When such cases happen, it's recommended to test querying your data sources directly for a more effective performance comparison with that of API for GraphQL.
-     * Follow this guide regarding how to choose a suitable data store for your business needs: [Fabric decision guide – choose a data store](../fundamentals/decision-guide-data-store.md#data-store-properties)
-   * When accessing API for GraphQL, performance is going to be bound by the Fabric capacity SKU you have selected.
-     * Refer to this general guidance about Fabric capacity SKU and its compute power: [Microsoft Fabric concepts](../enterprise/licenses.md#capacity)
+  * You can think of API for GraphQL as a wrapper on top of your data sources. If your data source itself has performance issues due to the nature of its complexity, it's expected that API latencies can be high. When such cases happen, it's recommended to test querying your data sources directly for a more effective performance comparison with that of API for GraphQL.
+    * Follow this guide regarding how to choose a suitable data store for your business needs: [Fabric decision guide – choose a data store](../fundamentals/decision-guide-data-store.md#data-store-properties)
 
-Several factors can impact API performance. Understanding your data source setup, selecting the right regions, and effectively measuring performance are crucial for optimization. 
+  * When accessing API for GraphQL, performance is going to be bound by the Fabric capacity SKU you have selected.
+    * Refer to this general guidance about Fabric capacity SKU and its compute power: [Microsoft Fabric concepts](../enterprise/licenses.md#capacity)
+
+Several factors can impact API performance. Understanding your data source setup, selecting the right regions, and effectively measuring performance are crucial for optimization.
 
 ## Related content
 
