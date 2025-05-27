@@ -36,7 +36,7 @@ SqlPackage can also enable easy database deployments of incremental changes to d
 
 SqlPackage is available for Windows, macOS, and Linux as a dotnet tool. You can install it using the following command:
 
-```cmd
+```bash
 dotnet tool install --global Microsoft.SqlPackage
 ```
 
@@ -57,7 +57,7 @@ A `.bacpac` is a portable copy of a database, useful for some migration and test
 
 1. Use the import command from terminal in the sqlpackage folder. Provide your owner `<servername>` and `<database_name>`.
 
-    ```cmd
+    ```bash
     sqlpackage /action:import /sourcefile:"C:\DatabaseName.bacpac" /targetconnectionstring:"Data Source=tcp:<server_name>.database.fabric.microsoft.com,1433;Initial Catalog=<database_name>;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ConnectRetryCount=6;ConnectRetryInterval=10;Authentication=Active Directory Interactive"
     ```
 
@@ -70,7 +70,7 @@ For more information on import, see [SqlPackage import](/sql/tools/sqlpackage/sq
 
 Exporting a `.bacpac` is the reverse operation, where your `targetfile` is a `.bacpac` and your `sourceconnectionstring` can be found in the SQL database settings dialog, as in the previous example. Provide your owner `<servername>` and `<database_name>`. For example:
 
-```cmd
+```bash
 sqlpackage /action:export /targetfile:"C:\DatabaseName.bacpac" /sourceconnectionstring:"Data Source=tcp:<server_name>.database.fabric.microsoft.com,1433;Initial Catalog=<database_name>;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ConnectRetryCount=6;ConnectRetryInterval=10;Authentication=Active Directory Interactive"
 ```
 
@@ -100,7 +100,7 @@ While the SqlPackage import/export commands are focused on data portability with
 
 To **extract** a `.dacpac` and include the data, use the `/p:ExtractAllTableData=true` property. The extract operation creates a `.dacpac` that contains both the schema and the data from the source database. The property `/p:ExtractReferencedServerScopedElements=false` excludes server-scoped elements, which aren't supported in SQL database in Fabric. The following command extracts a `.dacpac` with data from an existing SQL database in Fabric:
 
-```cmd
+```bash
 sqlpackage /action:extract /sourceconnectionstring:"Data Source=tcp:<server_name>.database.fabric.microsoft.com,1433;Initial Catalog=<database_name>;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ConnectRetryCount=6;ConnectRetryInterval=10;Authentication=Active Directory Interactive" /targetfile:"C:\extracted.dacpac" /p:ExtractAllTableData=true  /p:ExtractReferencedServerScopedElements=false
 ```
 
@@ -111,7 +111,7 @@ To **publish** a `.dacpac` that was extracted with the data, no extra properties
 
 Similarly to the SqlPackage import command, before publishing a `.dacpac` to SQL database in Fabric, you need to create the database in Fabric. You can create the database through the Fabric portal or other Fabric interface. The following command publishes the extracted `.dacpac` to an empty SQL database in Fabric:
 
-```cmd
+```bash
 sqlpackage /action:publish /sourcefile:"C:\extracted.dacpac" /targetconnectionstring:"Data Source=tcp:<server_name>.database.fabric.microsoft.com,1433;Initial Catalog=<database_name>;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ConnectRetryCount=6;ConnectRetryInterval=10;Authentication=Active Directory Interactive" /p:AllowIncompatiblePlatform=true /p:ExcludeObjectTypes=Logins;Users
 ```
 
