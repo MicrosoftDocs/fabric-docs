@@ -66,10 +66,10 @@ It's advisable to automate the request execution over a well defined time period
 
 Here's list of common issues that can impact API latency and performance.
 
-1. Your client geo-location is different from your tenant and capacity region:
+* Your client geo-location is different from your tenant and capacity region:
    * If you intend to achieve the best performance for your application, having clients and API resources in the same region help achieve the goal.
 
-1. Query the API for GraphQL a couple of times before testing:
+* Query the API for GraphQL a couple of times before testing:
 
    * API for GraphQL doesn't use or consume capacity (CUs) when it's idle. Which means the API environment needs be initialized internally during the first call which takes a couple of extra seconds. API for GraphQL has internal caching mechanisms to help reduce latencies for continuous calls, however you might face latency spikes for the initial calls.
 
@@ -77,7 +77,7 @@ Here's list of common issues that can impact API latency and performance.
 
    * Subsequent calls are faster because the environment initialization only happens once.
 
-1. Data source and Fabric capacity related setup.
+* Data source and Fabric capacity related setup.
 
    * You can think of API for GraphQL as a wrapper on top of your data sources. If your data source itself has performance issues due to the nature of its complexity, it's expected that API latencies can be high. When such cases happen, it's recommended to test querying your data sources directly for a more effective performance comparison with that of API for GraphQL.
 
