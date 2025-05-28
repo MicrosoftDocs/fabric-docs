@@ -5,44 +5,56 @@ author: anuj1905
 ms.author: anujsharda
 ms.reviewer: nijelsf
 ms.topic: conceptual
-ms.date: 04/28/2025
+ms.date: 05/28/2025
 ---
 
  
 # Power BI reports for data quality
 
-Materialized lake views (MLV)  provides the option to view your data quality metrics at a snapshot through embedded data quality Power BI reports. The data quality report seamlessly integrates with the existing data model in MLV and presents a visual representation of your data quality metrics to help you uncover data trends and identify outliers in your data.  
+Materialized lake views (MLV) provides the option to view your data quality metrics at a snapshot through embedded data quality Power BI reports. The data quality report seamlessly integrates with the existing data model in MLV and presents a visual representation of your data quality metrics to help you uncover data trends and identify outliers in your data.
 
 
 ## Create and access the report 
 
-To create/access the report, navigate to the Managed materialized lake views page and click on the "Data quality report" button. 
+To create/access the report, navigate to the Managed materialized lake views page and click on the "Data quality report" button.
 
-This opens the embedded report page. If a report is already created, the user is able to see it here. If no report is  created yet, the user can click on "Generate report" and wait for the report to be created. 
+This opens the embedded report page. If a report is already created, the user is able to see it here. If no report is created yet, the user can click on "Generate report" and wait for the report to be created.
 
-
-A semantic model and a Power BI report are created for the user in the background and stored in their workspace. 
-Once ready, the report Power BI report is also simultaneously displayed on the same page as an embedded report and will present the synopsis of the data quality through two sections (pages on the Power BI report) – Overview and MLV Drilldown. 
+A semantic model and a Power BI report are created for the user in the background and stored in their workspace.
+Once ready, the Power BI report is also simultaneously displayed on the same page as an embedded report and will present the summary of the data quality through two sections (pages on the Power BI report) – Overview and MLV Detail. 
 
  
 ## Interpret the data in the report
 
 The overview page shows the data trends from the last one week, displaying visuals for the MLVs and constraints that cause the most violations and drops.
 
-A violation indicates a row being unable to meet the condition specified in a constraint for one or more of its columns. 
-Regardless of the number of columns in a row that violate different constraints, the row would be dropped only once. 
-Hence the number of drops is always <= the number of violations for an MLV. 
+A violation indicates a row being unable to meet the condition specified in a constraint for one or more of its columns.
+Regardless of the number of columns in a row that violate different constraints, the row would be dropped only once.
+Hence the number of drops is always <= the number of violations for an MLV.
 
 
+The MLV Detail page allows the user to look at the data quality metrics at a deeper granularity instead of looking at only aggregates.
+The user can filter for a particular MLV and also look at data from beyond the last one week by adjusting the SchemaName, MLVName, and RelativeDate in the Power BI filters. 
 
-The MLV Drilldown page allows the user to look at the data quality metrics at a deeper granularity instead of looking at only aggregates.
-The user can filter for a particular MLV and also look at data from beyond the last one week by adjusting the SchemaName, MLVName, and RefreshDate in the Power BI filters. 
+On the Overview page, the visual titled “Data Quality Violations - Top MLVs by Day for the Last Week” displays the state of data quality on each specific day over the past week.
+This allows users to track trends, analyze past performance, and understand how the data has evolved in terms of violations. All other visuals on this page present aggregated live data, reflecting the current status of data quality.
+This combination of views provides users with a well-rounded understanding of both the present data quality and how it has evolved over time.
+On the MLV Detail page, all charts display historical data, enabling users to drill down into daily metrics across several weeks for deeper trend analysis and insights.
 
- 
  
 ## Navigate to the original report in the workspace 
 
-To use all the other default features offered in a standard Power BI report, the user can navigate to the original report in the workspace by clicking the "PowerBI report" button on the right-hand corner of the top navigation bar. 
+To use all the other default features offered in a standard Power BI report, the user can navigate to the original report in the workspace by clicking the "Customize report" button on the right-hand corner of the top navigation bar. 
+
+
+## Sharing the report
+
+You can share the report using the default share option available in Power BI. Along with sharing the report, you also need to provide access to the corresponding Lakehouse (minimum: Read/ReadData permission on SQL analytics endpoint) so that the receiver can access the data on the visuals within the report.
+
+
+## Known Limitation
+
+The report is created using the Direct Query model and hence there is a fixed limit of 1 million rows that can be returned in any single query to the underlying source. Premium capacities let you exceed the one million-row limit. To overcome this limitation, please purchase a premium capacity or delete and recreate the report and semantic model.
 
 
 ## Set up alerts in data quality report 
