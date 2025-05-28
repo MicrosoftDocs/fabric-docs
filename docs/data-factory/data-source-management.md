@@ -1,7 +1,7 @@
 ---
 title: Data source management
 description: Learn how to add and remove data sources, and how to manage users.
-ms.reviewer: DougKlopfenstein
+ms.reviewer: whhender
 ms.author: mideboer
 author: miquelladeboer
 ms.topic: how-to

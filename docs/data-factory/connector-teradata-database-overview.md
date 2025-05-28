@@ -1,8 +1,8 @@
 ---
 title: Teradata database connector overview
 description: This article provides an overview of the supported capabilities of the Teradata database connector.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
 ms.date: 04/10/2025
 ms.custom:
