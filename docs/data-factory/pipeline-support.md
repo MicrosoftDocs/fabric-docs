@@ -1,9 +1,9 @@
 ---
 title: Data pipeline connectors in Microsoft Fabric
 description: Provides a list of supported data pipeline connectors used by Data Factory in Microsoft Fabric.
-author: DougKlopfenstein
+author: whhender
 ms.date: 04/10/2025
-ms.author: dougklo
+ms.author: whhender
 ms.topic: overview
 ms.search.form: product-data-factory
 ms.custom: connectors
