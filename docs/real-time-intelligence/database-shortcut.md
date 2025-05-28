@@ -40,9 +40,9 @@ A data consumer can create a database shortcut in Real-Time Intelligence from an
 * **Performance**: Data in hot cache is queried faster, particularly for range queries that scan large amounts of data.
 
 > [!IMPORTANT]
-> The database shortcut setup requires a profound level of trust between the involved parties i.e. leader database and the database shortcut (follower) .
+> The database shortcut setup requires a profound level of trust between the involved parties i.e. leader database and the database shortcut (follower).
 The database shortcut can be established even if the leader cluster is behind a virtual network (VNet) or has public access disabled.
-Please ensure that the security posture of this setup is thoroughly reviewed and deemed acceptable before proceeding.
+Ensure that the security posture of this setup is thoroughly reviewed and deemed acceptable before proceeding.
 
 
 Select the desired tab that corresponds with the way you'd like to create a shortcut. 
