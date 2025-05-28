@@ -45,7 +45,7 @@ When you hover over a Materialized lake view run row, you can see various row-le
 
 #### View detail
 
-:::image type="content" source="./media/monitor-materialized-views/view-detail-mlv-option.png" alt-text="Screenshot showing job type for materialized lake view." border="true" lightbox="./media/monitor-materialized-views/view-detail-mlv-option.png":::
+:::image type="content" source="./media/monitor-materialized-views/view-detail-mlv-option.png" alt-text="Screenshot showing view detail for materialized lake view." border="true" lightbox="./media/monitor-materialized-views/view-detail-mlv-option.png":::
 
 You can hover over a MLV run row and click the **View details** icon to open the **Detail** pane and view more details.
 
@@ -55,7 +55,7 @@ When you click an activity name, you can navigate to the ongoing run or complete
 
 If you need to cancel an in-progress MLV run, hover over its row and click the `Cancel` icon.
 
-:::image type="content" source="./media/monitor-materialized-views/cancel-mlv-option.png" alt-text="Screenshot showing job type for materialized lake view." border="true" lightbox="./media/monitor-materialized-views/cancel-mlv-option.png":::
+:::image type="content" source="./media/monitor-materialized-views/cancel-mlv-option.png" alt-text="Screenshot showing cancel option for materialized lake view." border="true" lightbox="./media/monitor-materialized-views/cancel-mlv-option.png":::
  
 ## Navigate to Materialized lake view run
 
