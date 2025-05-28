@@ -5,12 +5,12 @@ author: yeturis
 ms.author: sairamyeturi
 ms.reviewer: nijelsf
 ms.topic: tutorial
-ms.date: 04/14/2025
+ms.date: 05/26/2025
 ---
 
-# Monitoring Materialized lake views
+# Monitoring Materialized Lake Views
 
-The Monitor pane serves as a centralized portal for browsing Materialized lake view runs in your Lakehouse. You can view status of the Materialized lake view runs. You can also search, and filter the runs based on different criteria. Additionally, you can cancel your in-progress run and drill down to view more execution details of any Materialized view run.
+The Monitor pane serves as a centralized portal for browsing Materialized lake view (MLV) runs in your Lakehouse. You can view status of the Materialized lake view runs. You can also search, and filter the runs based on different criteria. Additionally, you can cancel your in-progress run and drill down to view more execution details of any Materialized lake view run.
 
 ## Access the Monitor pane
 
@@ -19,6 +19,8 @@ You can access the Monitor pane to view various Materialized lake view runs in y
 ## Sort, search, filter and column options
 
 For better usability and discoverability, you can sort the Materialized lake view runs by selecting different columns in the UI. You can also filter the using the Job Type, Item Type, Job Instance ID and search for specific runs. You can also adjust the display and sort order of the columns independently through the column options.
+
+The Job Type for MLV runs is MaterializedLakeViews
 
 ### Sort options
 
@@ -33,7 +35,7 @@ In case of the Materialized lake view runs, your Item Type will be a Lakehouse, 
 
 To search for Materialized lake view runs, you can enter certain keywords in the search box located in the upper-right corner.
 
-Materialized lake view runs on the Monitoring page appear with the syntax of MLV_JobInstanceID
+Materialized lake view runs on the Monitoring page appear with the syntax of MLV_LakehouseName_JobInstanceID
  
 ## Manage a Materialized lake view run
 
@@ -41,11 +43,13 @@ When you hover over a Materialized lake view run row, you can see various row-le
 
 View the detail pane
 
-You can hover over a DAG run row and click the **View details** icon to open the **Detail** pane and view more details.
+You can hover over a MLV run row and click the **View details** icon to open the **Detail** pane and view more details.
+
+When you click an activity name, you can navigate to the ongoing run or completed run lineage view.
  
 ## Cancel a Materialized lake view run
 
-If you need to cancel an in-progress DAG run, hover over its row and click the `Cancel` icon.
+If you need to cancel an in-progress MLV run, hover over its row and click the `Cancel` icon.
  
 ## Navigate to Materialized lake view run
 
