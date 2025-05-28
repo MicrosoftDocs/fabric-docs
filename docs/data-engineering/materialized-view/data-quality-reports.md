@@ -47,7 +47,7 @@ On the MLV Detail page, all charts display historical data, enabling users to dr
 To use all the other default features offered in a standard Power BI report, the user can navigate to the original report in the workspace by clicking the "Customize report" button on the right-hand corner of the top navigation bar. 
 
 
-## Sharing the report
+## Share the report
 
 You can share the report using the default share option available in Power BI. Along with sharing the report, you also need to provide access to the corresponding Lakehouse (minimum: Read/ReadData permission on SQL analytics endpoint) so that the receiver can access the data on the visuals within the report.
 
