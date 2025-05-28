@@ -107,7 +107,7 @@ sqlpackage /action:extract /sourceconnectionstring:"Data Source=tcp:<server_name
 To **publish** a `.dacpac` that was extracted with the data, no extra properties are required. However, several properties can be used to control the behavior of the publish operation:
 
 - `/p:AllowIncompatiblePlatform=true` allows the deployment of a `.dacpac` that was extracted from a different platform (for example, Azure SQL Database, SQL Server).
-- `/p:ExcludeObjectTypes=Logins;Users` excludes specific object types that may experience compatibility problems when publishing to SQL database in Fabric.
+- `/p:ExcludeObjectTypes=Logins;Users` excludes object types that may experience compatibility problems when publishing to SQL database in Fabric. For a complete list of object types that can be excluded, see [SqlPackage publish](/sql/tools/sqlpackage/sqlpackage-publish#properties-specific-to-the-publish-action).
 
 Similarly to the SqlPackage import command, before publishing a `.dacpac` to SQL database in Fabric, you need to create the database in Fabric. You can create the database through the Fabric portal or other Fabric interface. The following command publishes the extracted `.dacpac` to an empty SQL database in Fabric:
 
