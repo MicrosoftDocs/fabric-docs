@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 05/08/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Azure Database for PostgreSQL connector overview

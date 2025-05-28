@@ -5,7 +5,7 @@ author: kromerm
 ms.author: makromer
 ms.reviewer: whhender
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines
 ms.date: 11/15/2023
 ---
 

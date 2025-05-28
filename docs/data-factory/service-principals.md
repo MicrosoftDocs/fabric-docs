@@ -6,6 +6,7 @@ ms.author: nikkiwaghani
 ms.reviewer: dougklo
 ms.topic: conceptual
 ms.date: 09/16/2024
+ms.custom: configuration
 ---
 
 # Service principal support in Data Factory

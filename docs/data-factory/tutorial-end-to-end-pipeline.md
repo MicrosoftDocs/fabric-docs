@@ -6,6 +6,7 @@ ms.reviewer: xupzhou
 author: whhender
 ms.topic: tutorial
 ms.date: 05/19/2025
+ms.custom: pipelines
 ---
 
 # Module 1: Create a pipeline with Data Factory

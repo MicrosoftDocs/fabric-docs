@@ -287,6 +287,8 @@ items:
     href: author-notebook-format-code.md
   - name: Author and run T-SQL in notebook
     href: author-tsql-notebook.md
+  - name: Python vs. PySpark Notebooks
+    href: fabric-notebook-selection-guide.md
 - name: Environments
   items:
   - name: Create, configure and use an environment

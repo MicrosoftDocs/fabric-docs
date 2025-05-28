@@ -6,6 +6,7 @@ ms.date: 04/10/2025
 ms.author: dougklo
 ms.topic: overview
 ms.search.form: product-data-factory
+ms.custom: connectors
 ---
 
 # Data pipeline connectors in Microsoft Fabric

@@ -8,6 +8,7 @@ ms.date: 12/18/2024
 ms.custom:
   - template-how-to
   - buyild-2023
+  - pipelines
 ms.search.form: Pipeline Activity Overview
 ---
 
