@@ -66,6 +66,9 @@ All the Parquet and CSV files written to the landing zone have the following for
 
 - File name: File name is 20 digits, like `00000000000000000001.parquet` for the first file, and `00000000000000000002.parquet` for the second. File names should be in continuous numbers. Files will be deleted by the mirroring service automatically, but the last file will be left so that the publisher system can reference it to add the next file in sequence.
 
+ > [!IMPORTANT]
+ > The __rowMarker__ column needs to be the final column in the list
+> 
 ### Initial load
 
 For the initial load of data into an open mirrored database, `rowMarker` in the initial data file is optional and not recommended. Mirroring treats the entire file as an INSERT when `rowMarker` doesn't exist.
@@ -83,20 +86,20 @@ Updated rows must contain the full row data, with all columns.
 Here is some sample parquet data of the row history to change the `EmployeeLocation` for `EmployeeID` E0001 from Redmond to Bellevue. In this scenario, the `EmployeeID` column has been marked as a key column in the [metadata file in the landing zone](#metadata-file-in-the-landing-zone).
 
 ```parquet
-__rowMarker__,EmployeeID,EmployeeLocation
-0,E0001,Redmond
-0,E0002,Redmond
-0,E0003,Redmond
-1,E0001,Bellevue
+EmployeeID,EmployeeLocation,__rowMarker__
+E0001,Redmond,0
+E0002,Redmond,0
+E0003,Redmond,0
+E0001,Bellevue,1
 ```
 
 If key columns are updated, then it should be presented by a DELETE on previous key columns and an INSERT rows with new key and data. For example, the row history to change the `rowMarker` unique identifier for `EmployeeID` E0001 to E0002. You don't need to provide all column data for a DELETE row, only the key columns. 
 
 ```parquet
-__rowMarker__,EmployeeID,EmployeeLocation
-0,E0001,Bellevue
-2,E0001,NULL
-0,E0002,Bellevue
+EmployeeID,EmployeeLocation,__rowMarker__
+E0001,Bellevue,0
+E0001,NULL,w
+E0002,Bellevue,0
 ```
 
 ## Table operations
