@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 05/26/2025
 ---
 
-# What is Fabric data warehouse cross-tenant access for guests?
+# What is cross-tenant access for guests?
 
 >[!IMPORTANT]
 ><li>Cross-tenant access for Fabric data-warehouses is a generally available feature for guest tenants, however it is currently only available to a limited set of providers.</li>
 ><li>To use cross-tenant access as a guest, you must work with a trusted provider that has already onboarded to this feature, and follow the steps listed in this document to start using cross-tenant access with that provider. Contact your trusted provider to find out if they support this feature.</li>
-><li>To participate as a provider of cross tenant data, refer to [Fabric data warehouse cross-tenant access for providers]()</li>
+><li>To participate as a provider of cross tenant data, refer to [Cross-tenant access for providers](cross-tenant-access-for-providers.md)</li>
 
 
 The cross tenant access feature allows guest tenants to access data stored in a provider tenant’s Fabric data warehouses. This feature is useful for organizations that need to access data stored on a service provider's tenant. For example, when company A stores Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant.
