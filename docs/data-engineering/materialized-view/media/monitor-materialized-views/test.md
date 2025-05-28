@@ -1,5 +1,5 @@
 ---
-title: "Monitoring Fabric materialized lake views"
+title: "Media-Monitoring Fabric materialized lake views"
 description: Learn how to monitor Fabric materialized lake views.
 author: yeturis
 ms.author: sairamyeturi
@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 05/26/2025
 ---
 
-# Monitoring Materialized Lake Views
+# Test-Monitoring Materialized Lake Views
 
 The Monitor pane serves as a centralized portal for browsing Materialized lake view (MLV) runs in your Lakehouse. You can view status of the Materialized lake view runs. You can also search, and filter the runs based on different criteria. Additionally, you can cancel your in-progress run and drill down to view more execution details of any Materialized lake view run.
 
