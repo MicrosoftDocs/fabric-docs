@@ -124,7 +124,8 @@ Fabric Notebooks are designed to grow with your workload complexity. This sectio
 | **Scale Up** | Python Notebooks _(Manual switch to larger VM)_ | Approaching memory or CPU limits  |
 | **Scale Out** | PySpark Notebooks _(Manual switch to Spark pool)_ | Need for distributed compute or parallel execution |
 
-[!TIP] As you transition to PySpark, ensure your code uses Spark-compatible syntax. Validate your workloads in the Spark environment before deploying to production.
+[!TIP] 
+As you transition to PySpark, ensure your code uses Spark-compatible syntax. Validate your workloads in the Spark environment before deploying to production.
 
 ## Summary
 
