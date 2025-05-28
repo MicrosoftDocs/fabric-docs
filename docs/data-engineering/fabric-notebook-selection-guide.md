@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 05/26/2025
 ---
 
-# Choosing Between Python and PySpark Notebooks in Microsoft Fabric
+# Choosing between Python and PySpark Notebooks in Microsoft Fabric
 
 With the introduction of lightweight Python Notebooks in Microsoft Fabric, customers now have two robust options for building and scaling analytics workflows: Python Notebooks and PySpark Notebooks. While both provide a familiar Notebook interface, they differ significantly in how they manage compute resources, scalability, and cost-efficiency. 
  
@@ -58,7 +58,7 @@ Use this structured comparison table to understand the architectural and operati
 | Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
 | --- | --- | --- |
 |  Library Access | Strong Python library support across multiple runtimes; however, limited access to Spark-native libraries may require manual integration. | Fully supports MLlib, Spark SQL, PySpark, and Spark Streaming. |
-| Delta Lake Handling | The Python Notebook runtime comes with pre-installed [deltars](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries, enabling both reading and writing of Delta Lake data. However, some Delta Lake features may still be unsupported. | Fully supported with native compatibility. |
+| Delta Lake Handling | The Python Notebook runtime comes with pre-installed [deltas](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries, enabling both reading and writing of Delta Lake data. However, some Delta Lake features may still be unsupported. | Fully supported with native compatibility. |
 
 **Production & Enterprise Readiness**
 
@@ -96,7 +96,7 @@ Use **PySpark Notebooks** for distributed computing, production-grade ETL workfl
 - You rely on Spark-native APIs such as MLlib, Spark SQL, or Spark Streaming. 
 - You need production-grade features like environment variables and item-based library management. 
 
-## Key Differences at a Glance - Reference Concisely
+## Key Differences at a glance - reference concisely
 
 See Glossary at the end of this guide for definitions of terms like VORDER, NEE, and Items-Based Library Management. 
 
@@ -114,7 +114,7 @@ This section provides a quick reference for the fundamental technical and archit
 | Fabric Spark Capabilities | Limited access to Spark engine features | Full access: NEE, Autotune, VORDER, Vegas Cache |
 | Delta Lake Compatibility | Partially compatible; potential performance issues | Fully supported and optimized |
 
-## Evolving Your Workload: From Python to PySpark
+## Evolving your workload: from Python to PySpark
 
 Fabric Notebooks are designed to grow with your workload complexity. This section outlines how you can scale your Notebook strategy from simple exploration to distributed data processing. 
 
@@ -124,7 +124,7 @@ Fabric Notebooks are designed to grow with your workload complexity. This sectio
 | **Scale Up** | Python Notebooks _(Manual switch to larger VM)_ | Approaching memory or CPU limits  |
 | **Scale Out** | PySpark Notebooks _(Manual switch to Spark pool)_ | Need for distributed compute or parallel execution |
 
-Tip: As you transition to PySpark, ensure your code uses Spark-compatible syntax. Validate your workloads in the Spark environment before deploying to production.
+[!TIP] As you transition to PySpark, ensure your code uses Spark-compatible syntax. Validate your workloads in the Spark environment before deploying to production.
 
 ## Summary
 
@@ -134,7 +134,7 @@ As data volume and complexity increase, PySpark Notebooks offer the distributed 
 
 Refer to the Glossary on the final page for explanations of terms such as NEE, VORDER, and Vegas Cache. 
 
-## Glossary of Terms
+## Glossary of terms
 
 - Item-Based Library Management: Manages versioned packages and production libraries within the Environment item. 
 - Delta Lake Compatibility: Cross-environment support for Delta tables; fully supported in PySpark. 
