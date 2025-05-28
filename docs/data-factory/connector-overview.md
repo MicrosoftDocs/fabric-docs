@@ -1,7 +1,7 @@
 ---
 title: Connector overview
 description: Learn about data connectors.
-ms.reviewer: DougKlopfenstein
+ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview

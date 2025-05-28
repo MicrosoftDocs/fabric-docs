@@ -3,7 +3,7 @@ title: "Migrate from Dataflow Gen1 to Dataflow Gen2"
 description: "Guidance to help you migrate your Dataflow Gen1 to Dataflow Gen2 in Data Factory for Microsoft Fabric."
 author: itsnotaboutthecell
 ms.author: alpowers
-ms.reviewer: dougklopfenstein, mllopis
+ms.reviewer: whhender, mllopis
 ms.topic: conceptual
 ms.date: 12/08/2024
 ms.custom: fabric-cat, intro-migration, dataflows
