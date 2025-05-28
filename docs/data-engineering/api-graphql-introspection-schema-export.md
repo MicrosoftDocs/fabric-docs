@@ -36,6 +36,16 @@ Select **confirm** to enable introspection or **cancel** to leave it disabled.
 
 Here's a quick example of an introspection query to retrieve available types from the schema:
 
+```GraphQL
+query {
+    __schema {
+        types{
+            name
+        }
+    }
+}
+```
+
 ![Introspection query example](media/api-graphql-introspection-schema-export/introspection-query-example.png)
 
 The information retrieved by introspection queries is be verbose. You can use query filters to narrow the scope of the query.
