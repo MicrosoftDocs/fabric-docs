@@ -38,6 +38,9 @@ Initially, you must be a capacity admin to install the Microsoft Fabric Capacity
 
 In the Fabric Capacity Metric app, you see operations for digital twin builder (preview) and digital twin builder flow. To see the operation details, select digital twin builder under the item type. All the data stored within Fabric storage incurs Fabric storage costs.
 
+>[!NOTE]
+> Digital twin builder also shows a second, non-billable meter, **Digital Twin Builder Capacity Usage CU**. This meter tracks the usage based on the sum of all the customer-defined entity types, entity type relationships, entity instances, and entity instance relationships. It is currently not billable.
+
 ## Limits and considerations 
 
 ### Autoscale billing for Spark is not supported

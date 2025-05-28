@@ -209,6 +209,9 @@ You can find the consumption rates for digital twin builder (preview) in [Digita
 | ---------------- | --------------------------- | -------- | -------------------------------- | ---------- |
 | Digital Twin Builder Operations | Usage for on-demand and scheduled digital twin builder flow operations.  | Digital twin builder flow | Digital Twin Builder Operation Capacity Usage CU | Background |
 
+>[!NOTE]
+> Digital twin builder also shows a second, non-billable meter, **Digital Twin Builder Capacity Usage CU**. This meter tracks the usage based on the sum of all the customer-defined entity types, entity type relationships, entity instances, and entity instance relationships. It is currently not billable.
+
 #### Eventstream
 
 You can find the consumption rates for Eventstream in [Monitor capacity consumption for Microsoft Fabric Eventstream](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).

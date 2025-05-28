@@ -29,6 +29,7 @@ In Microsoft Cost Management, your cost analysis and invoice show multiple meter
 | Data Warehouse Capacity Usage CU               | Represents the Fabric Data Warehouse usage on your capacity                         | GA |
 | Dataflows High Scale Compute Capacity Usage CU | Represents the Dataflows High Scale Compute used for staging items on your capacity | GA |
 | Dataflows Standard Compute Capacity Usage CU   | Represents the Dataflows Standard Compute usage on your capacity                    | GA |
+| Digital Twin Builder Capacity Usage CU  | Represents the digital twin builder entity-related usage on your capacity. Currently not billable.  | Preview |
 | Digital Twin Builder Operation Capacity Usage CU  | Represents the on-demand and scheduled digital twin builder flow operations usage on your capacity | Preview |
 | Eventhouse                                     | Represents Row Level Eventhouse on your capacity                                    | GA |
 | Eventstream Capacity Usage CU                  | Represents the ingestion or processing usage for eventstreams on your capacity      | GA |
