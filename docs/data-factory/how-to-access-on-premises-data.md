@@ -4,8 +4,8 @@ description: This article describes how to configure a gateway to access on-prem
 author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
-ms.custom:
-ms.date: 05/23/2025
+ms.custom: configuration
+ms.date: 01/24/2025
 ms.search.form: On-premises data sources gateway
 ---
 

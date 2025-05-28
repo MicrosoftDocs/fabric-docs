@@ -4,7 +4,7 @@ description: This article describes how data pipelines storage event triggers wo
 author: kromerm
 ms.author: makromer
 ms.topic: concept-article
-ms.custom:
+ms.custom: pipelines
 ms.date: 02/13/2025
 ---
 
