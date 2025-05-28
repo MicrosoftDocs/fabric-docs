@@ -5,7 +5,7 @@ author: yeturis
 ms.author: sairamyeturi
 ms.reviewer: nijelsf
 ms.topic: tutorial
-ms.date: 05/26/2025
+ms.date: 05/28/2025
 ---
 
 # Monitoring Materialized Lake Views
