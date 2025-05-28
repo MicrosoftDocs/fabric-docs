@@ -5,7 +5,7 @@ author: yeturis
 ms.author: sairamyeturi
 ms.reviewer: nijelsf
 ms.topic: tutorial
-ms.date: 05/26/2025
+ms.date: 05/28/2025
 ---
 
 # Monitoring Materialized Lake Views
@@ -21,6 +21,8 @@ You can access the Monitor pane to view various Materialized lake view runs in y
 For better usability and discoverability, you can sort the Materialized lake view runs by selecting different columns in the UI. You can also filter the using the Job Type, Item Type, Job Instance ID and search for specific runs. You can also adjust the display and sort order of the columns independently through the column options.
 
 The Job Type for MLV runs is MaterializedLakeViews
+
+:::image type="content" source="./media/monitor-materialized-views/sort-filter-column-options.png" alt-text="Screenshot showing job type for materialized lake view." border="true" lightbox="./media/monitor-materialized-views/sort-filter-column-options.png":::
 
 ### Sort options
 
@@ -41,7 +43,9 @@ Materialized lake view runs on the Monitoring page appear with the syntax of MLV
 
 When you hover over a Materialized lake view run row, you can see various row-level actions that enable you to manage a particular run.
 
-View the detail pane
+#### View detail
+
+:::image type="content" source="./media/monitor-materialized-views/view-detail-mlv-option.png" alt-text="Screenshot showing view detail for materialized lake view." border="true" lightbox="./media/monitor-materialized-views/view-detail-mlv-option.png":::
 
 You can hover over a MLV run row and click the **View details** icon to open the **Detail** pane and view more details.
 
@@ -50,6 +54,8 @@ When you click an activity name, you can navigate to the ongoing run or complete
 ## Cancel a Materialized lake view run
 
 If you need to cancel an in-progress MLV run, hover over its row and click the `Cancel` icon.
+
+:::image type="content" source="./media/monitor-materialized-views/cancel-mlv-option.png" alt-text="Screenshot showing cancel option for materialized lake view." border="true" lightbox="./media/monitor-materialized-views/cancel-mlv-option.png":::
  
 ## Navigate to Materialized lake view run
 
