@@ -207,7 +207,6 @@ You can find the consumption rates for digital twin builder (preview) in [Digita
 
 | Operation        | Description                 | Item     | Azure billing meter              | Type       |
 | ---------------- | --------------------------- | -------- | -------------------------------- | ---------- |
-| Digital Twin Builder per hour | Usage based on the sum of all the customer-defined entity types, entity type relationships, entity instances, and entity instance relationships.  | Digital twin builder | Digital Twin Builder Capacity Usage CU  | Background |
 | Digital Twin Builder Operations | Usage for on-demand and scheduled digital twin builder flow operations.  | Digital twin builder flow | Digital Twin Builder Operation Capacity Usage CU | Background |
 
 #### Eventstream

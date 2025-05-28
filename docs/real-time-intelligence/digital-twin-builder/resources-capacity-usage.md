@@ -23,11 +23,9 @@ The following table defines how many capacity units (CU) are consumed when digit
 
 | Meter name | Operation name | Fabric consumption rate (CU hours) |
 |---|---|---|
-| Digital Twin Builder Capacity Usage CU | Digital Twin Builder per hour | 0.00035 |
 | Digital Twin Builder Operation Capacity Usage CU | Digital Twin Builder Operations | 4 |
 
 The operations are defined as follows:
-* Digital Twin Builder per hour: Usage based on the sum of all the customer-defined entity types, entity type relationships, entity instances, and entity instance relationships.
 * Digital Twin Builder Operations: Usage for on-demand and scheduled digital twin builder flow operations.
 
 The SQL endpoint query operation of [Fabric Data Warehouse](../../data-warehouse/usage-reporting.md) is used for reporting usage of user-generated and system-generated queries for listing, exploring, and refreshing data in digital twin builder. The same SQL endpoint query operation is used to report capacity units (CU) consumed for counting activities, like counting customer-defined entity types, entity type relationships, entity instances, and entity instance relationships. For more information about using the SQL endpoint query for counting, see [Counts require querying SQL endpoint](#counts-require-querying-sql-endpoint).
