@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 01/24/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # PostgreSQL database connector overview

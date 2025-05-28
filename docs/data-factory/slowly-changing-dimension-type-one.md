@@ -5,6 +5,7 @@ author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: tutorial
 ms.date: 9/18/2024
+ms.custom: dataflows
 ---
 
 # How to implement slowly changing dimension type 1 using Power Query

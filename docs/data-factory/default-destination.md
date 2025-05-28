@@ -6,6 +6,7 @@ ms.author: jeluitwi
 ms.reviewer: dougklo
 ms.topic: conceptual
 ms.date: 02/26/2025
+ms.custom: dataflows
 ---
 
 # Dataflow Gen2 default destination

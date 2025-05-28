@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 04/10/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Teradata database connector overview

@@ -5,6 +5,7 @@ author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: concept-article
 ms.date: 9/19/2024
+ms.custom: dataflows
 ---
 
 # How to handle schema drift in Dataflow Gen2

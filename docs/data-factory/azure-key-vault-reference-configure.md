@@ -6,6 +6,7 @@ author: adityajain2408
 ms.topic: how-to
 ms.date: 04/28/2025
 ms.search.form: Configure Azure Key Vault references
+ms.custom: configuration
 ---
 # Configure Azure Key Vault references
 >[!NOTE]

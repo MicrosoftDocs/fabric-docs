@@ -5,7 +5,7 @@ ms.reviewer: jianleishen
 ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines
 ms.date: 12/18/2024
 ---
 
