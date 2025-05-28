@@ -4,7 +4,7 @@ description: "Learn about Microsoft Fabric security fundamentals and how the mai
 author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: sergeig, vparasuraman
-ms.date: 01/14/2024
+ms.date: 05/28/2025
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
