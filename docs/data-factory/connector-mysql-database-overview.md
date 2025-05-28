@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 03/27/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # MySQL database connector overview

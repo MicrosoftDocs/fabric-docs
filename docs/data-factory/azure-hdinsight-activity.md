@@ -5,7 +5,7 @@ ms.reviewer: xupxhou
 ms.author: whhender
 author: whhender
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines
 ms.date: 05/08/2024
 ---
 

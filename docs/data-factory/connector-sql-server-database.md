@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 04/18/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your SQL Server database connection

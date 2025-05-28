@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 04/07/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Azure Databricks connector overview

@@ -6,6 +6,7 @@ ms.author: xupzhou
 author: PennyZhou-MSFT
 ms.topic: how-to
 ms.date: 05/21/2024
+ms.custom: pipelines
 ---
 
 # Easily connect to your data with the new modern get data experience for data pipelines

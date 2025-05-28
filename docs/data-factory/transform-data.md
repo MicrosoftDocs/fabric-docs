@@ -6,6 +6,8 @@ ms.author: noelleli
 author: n0elleli
 ms.topic: quickstart
 ms.custom:
+   - dataflows
+   - pipelines
 ms.date: 12/18/2024
 ---
 
