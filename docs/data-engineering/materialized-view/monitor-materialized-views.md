@@ -22,6 +22,8 @@ For better usability and discoverability, you can sort the Materialized lake vie
 
 The Job Type for MLV runs is MaterializedLakeViews
 
+:::image type="content" source="./media/monitor-materialized-views/sort-filter-column-options.png" alt-text="Screenshot showing job type for materialized lake view." border="true" lightbox="./media/monitor-materialized-views/sort-filter-column-options.png":::
+
 ### Sort options
 
 To sort Materialized lake view runs, you can select on each column header, such as **Name, Status, Job Instance ID,  Job Type, Start Time, Location**, and so on.
@@ -41,7 +43,9 @@ Materialized lake view runs on the Monitoring page appear with the syntax of MLV
 
 When you hover over a Materialized lake view run row, you can see various row-level actions that enable you to manage a particular run.
 
-View the detail pane
+#### View detail
+
+:::image type="content" source="./media/monitor-materialized-views/view-detail-mlv-option.png" alt-text="Screenshot showing job type for materialized lake view." border="true" lightbox="./media/monitor-materialized-views/view-detail-mlv-option.png":::
 
 You can hover over a MLV run row and click the **View details** icon to open the **Detail** pane and view more details.
 
@@ -50,6 +54,8 @@ When you click an activity name, you can navigate to the ongoing run or complete
 ## Cancel a Materialized lake view run
 
 If you need to cancel an in-progress MLV run, hover over its row and click the `Cancel` icon.
+
+:::image type="content" source="./media/monitor-materialized-views/cancel-mlv-option.png" alt-text="Screenshot showing job type for materialized lake view." border="true" lightbox="./media/monitor-materialized-views/cancel-mlv-option.png":::
  
 ## Navigate to Materialized lake view run
 
