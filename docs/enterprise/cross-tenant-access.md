@@ -35,11 +35,11 @@ When consent is revoked, guests lose access to warehouses in the provider tenant
 
 ## Responsibilities of the guest
 
-1.	Ensure that you trust the provider before consenting to use the cross-tenant access feature of Fabric data warehouses. Guest tenants must follow the steps listed in this document to consent.
+* Ensure that you trust the provider before consenting to use the cross-tenant access feature of Fabric data warehouses. Guest tenants must follow the steps listed in this document to consent.
 
-1. The guest tenant is responsible for creating and managing Microsoft Entra groups and principals that are configured for cross-tenant access.
+* The guest tenant is responsible for creating and managing Microsoft Entra groups and principals that are configured for cross-tenant access.
 
-1. The guest tenant is responsible for managing conditional access or Multi Factor Authentication (MFA) policies for their users. These policies are applied when then guest users attempt to access cross-tenant data warehouses.
+* The guest tenant is responsible for managing conditional access or Multi Factor Authentication (MFA) policies for their users. These policies are applied when then guest users attempt to access cross-tenant data warehouses.
 
 ## Prerequisites for the guest
 
@@ -133,4 +133,4 @@ Guest users can use SQL Server Management Studio or other clients to connect to 
 
 ## Known issues
 
-In certain circumstances, guest principals may not be able to access cross-tenant data warehouses upon their first sign in attempt, and may need to retry after several minutes to successfully access the cross-tenant warehouse. This will be fixed in upcoming releases.
+In certain circumstances, guest principals may not be able to access cross-tenant data warehouses upon their first sign in attempt, and may need to retry after several minutes to successfully access the cross-tenant warehouse. 
