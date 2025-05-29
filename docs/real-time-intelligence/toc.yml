@@ -10,6 +10,17 @@ items:
     href: real-time-intelligence-compare.md
   - name: Git integration and deployment pipelines
     href: git-deployment-pipelines.md
+    items:
+    - name: Eventstream
+      href: git-eventstream.md
+    - name: Eventhouse and KQL database
+      href: git-eventhouse-kql-database.md
+    - name: KQL querysets
+      href: git-kql-queryset.md
+    - name: Real-Time dashboards
+      href: git-real-time-dashboard.md
+    - name: Activator
+      href: git-activator.md
     displayName: alm, application lifecycle management, cicd, devops
   - name: Implement medallion architecture
     href: architecture-medallion.md
