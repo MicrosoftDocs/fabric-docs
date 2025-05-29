@@ -236,4 +236,4 @@ The caller must have Viewer or higher workspace role. It supports User, Service 
 
 1. When a guest tenant revokes consent, guests lose access to warehouses in the provider tenant within a day. However, existing sessions are unaffected.
 
-1. In certain circumstances, guest principals may not be able to access cross-tenant data warehouses for several hours after the guest principal is configured for cross-tenant access. This will be fixed in upcoming releases.
+1. In certain circumstances, guest principals may not be able to access cross-tenant data warehouses for several hours after the guest principal is configured for cross-tenant access.
