@@ -45,7 +45,7 @@ Service principals must be enabled to call Fabric public APIs, Fabric read APIs,
 
 #### Request body
 
-| Name | In | Required | Type | Description |  |
+| Name | In | Required | Type | Description |
 |--|--|--|--|--|
 | ID | Body | Yes | String | Object ID of guest application or group |
 | tenantId | Body | Yes | String | Guest tenant ID |
@@ -142,7 +142,7 @@ When this API is called, the groups and service principals created for guest pri
 
 #### Request body
 
-| Name | In | Required | Type | Description |  |
+| Name | In | Required | Type | Description |
 |--|--|--|--|--|
 | mappingId | Path | Yes | String | Mapping ID |
 
@@ -168,7 +168,7 @@ The caller must have Viewer or higher workspace role. It supports User, Service 
 
 #### Request body
 
-| Name | In | Required | Type | Description |  |
+| Name | In | Required | Type | Description |
 |--|--|--|--|--|
 | warehouseId | Path | True | String | The warehouse ID |
 | workspaceId | Path | True | String | The workspace ID |
