@@ -4,7 +4,7 @@ description: Learn about Copilot in Fabric and Power BI, which brings a new way 
 author: denglishbi
 ms.author: daengli
 ms.reviewer: guptamaya, maghan
-ms.date: 05/19/2025
+ms.date: 05/27/2025
 ms.service: fabric
 ms.topic: overview
 ms.collection:
@@ -37,7 +37,7 @@ This article helps you to understand how Copilot in Fabric works, including its 
 > [!IMPORTANT]  
 > Copilot in Fabric aims to *augment* the abilities and intelligence of human users. Copilot can't and doesn't aim to *replace* the people who today create and manage reports or other Fabric items. To get the most out of Copilot in Fabric, you should consider how you'll enable these individuals and teams to make their work more efficient or improve their outcomes.
 
-There are different Copilots in each of the Fabric workloads, like Data Factory, Data Science, and Power BI. Furthermore, Copilot experiences are also available from Power BI Desktop if users have access to a workspace that uses a Fabric capacity with an F2 or higher SKU.
+There are different Copilots in each of the Fabric workloads, like Data Factory, Data Science, and Power BI. In Power BI Desktop, Copilot experiences are available to users with access to a workspace that uses Fabric capacity or those assigned to a Fabric Copilot capacity.
 
 :::image type="content" source="media/copilot-fabric-overview/copilot-fabric-power-bi-diagram.svg" alt-text="Diagram showing how users can use Copilot experiences in Fabric and Power BI Desktop, which both consume Fabric capacity.":::
 
