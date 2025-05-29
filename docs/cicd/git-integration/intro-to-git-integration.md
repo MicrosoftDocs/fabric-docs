@@ -78,11 +78,11 @@ The following items currently support Git integration:
 * Real-time Intelligence items:
 
   * [Activator](../../real-time-intelligence/git-deployment-pipelines.md) *(preview)*
-  * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md#eventhouse-files)
-  * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md)
-  * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md#kql-database-files)
-  * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md#kql-queryset-files)
-  * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md#real-time-dashboard-files)
+  * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [EventStream](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
 
 * Data Warehouse items:
 

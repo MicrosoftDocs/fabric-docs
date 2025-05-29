@@ -1,6 +1,6 @@
 ---
-title: Eventhouse and KQL database - Git
-description: Learn about the Git integration for Eventhouse and KQL Database. 
+title: Real-Time Dashboard - Git
+description: Learn about the Git integration for Real-Time Dashboard. 
 ms.reviewer: bwatts
 ms.author: spelluru
 author: spelluru
