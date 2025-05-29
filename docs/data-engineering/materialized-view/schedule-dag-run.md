@@ -1,29 +1,29 @@
 ---
-title: Schedule a DAG run
+title: Schedule a lineage run
 description: Learn how to schedule a DAG run
 ms.topic: how-to
 author: apurbasroy
 ms.author: apsinhar
 ms.reviewer: nijelsf
-ms.date: 04/15/2025
+ms.date: 05/29/2025
 ---
 
-# Schedule a DAG run
+# Schedule a lineage
 
-Scheduling the DAG runs is an option provided to the users to decide how frequently the MV’s need to be refreshed as per business requirements when and how the DAG should be executed to refresh the materialized view.
+Scheduling the lineage is an option provided to the users to decide how frequently the materialized lake views' need to be refreshed as per business requirements when and how the lineage should be executed to refresh the materialized lake view.
 
 ## Determining the Schedule
 
-The schedule for running the DAG depends on various factors, such as:
+The schedule for running the lienage depends on various factors, such as:
 * Data update frequency: The frequency of the data is updated.
 * Query performance requirements: Business requirement to refresh the data in set frequent intervals.
-*	System load: Optimizing the time to run the DAG without overloading the system
+*	System load: Optimizing the time to run the lineage without overloading the system
 
 ## Implementing the Schedule
 
-Click on the Schedule button on the Lakehouse in the DAG view
+Click on the Schedule button on the Lakehouse in the lineage.
 
-:::image type="content" source="./media/schedule-dag-run/schedule-run.png" alt-text="Screenshot showing the schedule button in DAG UI." border="true" lightbox="./media/schedule-dag-run/schedule-run.png":::
+:::image type="content" source="./media/schedule-dag-run/schedule-run.png" alt-text="Screenshot showing the schedule button in lineage view." border="true" lightbox="./media/schedule-dag-run/schedule-run.png":::
 
 
 The schedule UI opens and is visible to the user.
@@ -41,12 +41,12 @@ Select the following from the schedule UI:
 *	Time Zone
 
 **Click on Apply**
-The schedule is set for the particular DAG.
+The schedule is set for the particular lineage.
 
 > [!Note]
 > The scheduler will reflect the users local time.
 
 ## Next step
  
-* [Microsoft Fabric materialized views tutorial](./tutorial.md)
+* [Microsoft Fabric materialized lake view tutorial](./tutorial.md)
  
