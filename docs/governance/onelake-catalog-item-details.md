@@ -32,17 +32,17 @@ The **Overview** tab shows the following information about the selected item:
 
   * **Last Update**: The last refresh or run time of the item. If the last update was unsuccessful, a red warning triangle will appear, selecting in will show the error details. 
   * **Description**: Any description associated with the item. Providing a useful and meaningful description helps users discover the right item for them.
-  * **Endorsement**: [Endorsement](https://learn.microsoft.com/en-us/fabric/governance/endorsement-overview) status and the details of the endorsing user. Endorsing your item (promoting or certifying it) makes it easier for users to find and signifies it's a trustworthy data source.
+  * **Endorsement**: [Endorsement](endorsement-overview.md) status and the details of the endorsing user. Endorsing your item (promoting or certifying it) makes it easier for users to find and signifies it's a trustworthy data source.
   * **Location**: The workspace where the item is located. Selecting the workspace navigates to it.
-  * **Contact / Owner**: Displays the item owner and/or [contacts](https://learn.microsoft.com/en-us/power-bi/create-reports/service-item-contact), as applicable. Selecting the names opens an email to them.
-  * **Sensitivity label**: The name of the [sensitivity label](https://learn.microsoft.com/en-us/fabric/governance/protected-sensitivity-labels) applied to the item, if any.
-  * **Tags**: The list of [tags](https://learn.microsoft.com/en-us/fabric/governance/tags-overview) applied on the item.
+  * **Contact / Owner**: Displays the item owner and/or [contacts](/power-bi/create-reports/service-item-contact), as applicable. Selecting the names opens an email to them.
+  * **Sensitivity label**: The name of the [sensitivity label](protected-sensitivity-labels.md) applied to the item, if any.
+  * **Tags**: The list of [tags](tags-overview.md) applied on the item.
 
 ### Data Schema
 Data items such as semantic models and lakehouses show the underlying table and column schema for exploration purposes. The tables and columns within the item are displayed directly on this tab.
 
   * To help locate the table or column you're looking for, use the **Filter by keyword** box.
-  * To explore the data in a particular table or column, hover over it and select the binoculars icon. This action opens the "[Explore this data](https://learn.microsoft.com/en-us/power-bi/consumer/explore-data-service)" modal, pre-populated with the data in the selected table or column for ad-hoc analysis.
+  * To explore the data in a particular table or column, hover over it and select the binoculars icon. This action opens the "[Explore this data](/power-bi/consumer/explore-data-service)" modal, pre-populated with the data in the selected table or column for ad-hoc analysis.
 
 :::image type="content" source="./media/onelake-catalog-item-details//onelake-catalog-explore-overview-tab.png" alt-text="Screenshot of the explore tab item view overview tab." lightbox="/media/onelake-catalog-item-details//onelake-catalog-explore-overview-tab.png":::
 
@@ -50,8 +50,8 @@ Data items such as semantic models and lakehouses show the underlying table and 
 
 The information about Semantic Models available in OneLake Catalog Explorer depend on your permissions:
 
-  * **Discoverable**: Semantic models that have been made [discoverable](https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-discovery) by their owner. Discoverable semantic models make it easier for users across the organization to find relevant data assets. While you could see the semantic model and its metadata, you cannot see the owner details, view  the underlying data or build content on top of that semantic model. You will have to **request access** (Build permission) to access the semantic model's full information and capabilities.
-  * **Read-only Permission**: You may have read-only [permission on a semantic model](https://learn.microsoft.com/en-us/power-bi/connect-data/service-datasets-permissions) if someone shared a report or semantic model with you but didn't grant you Build permission. With read-only access, you have limited access to semantic model information and capabilities. To be able to create content based on the semantic model or perform other actions, you must have at least Build permissions.
+  * **Discoverable**: Semantic models that have been made [discoverable](/power-bi/collaborate-share/service-discovery) by their owner. Discoverable semantic models make it easier for users across the organization to find relevant data assets. While you could see the semantic model and its metadata, you cannot see the owner details, view  the underlying data or build content on top of that semantic model. You will have to **request access** (Build permission) to access the semantic model's full information and capabilities.
+  * **Read-only Permission**: You may have read-only [permission on a semantic model](/power-bi/connect-data/service-datasets-permissions) if someone shared a report or semantic model with you but didn't grant you Build permission. With read-only access, you have limited access to semantic model information and capabilities. To be able to create content based on the semantic model or perform other actions, you must have at least Build permissions.
   * **Build Permission**: Semantic models for which you have [Build permission](/service-datasets-build-permissions.md) allows you to create new reports based on the semantic model, connect to it in Excel, and export data.
 
 ## Lineage tab
@@ -96,7 +96,7 @@ These actions are universally available across all item types in OneLake Catalog
 | Action | Description | Where to find it |
 |---|---|---|
 | **Settings** | Opens the settings page for the item. | **Settings** cog icon |
-| **Manage permissions** | Opens the [manage permissions](https://learn.microsoft.com/en-us/fabric/data-warehouse/share-warehouse-manage-permissions#manage-permissions) page for the item. | **File** \> **Manage permissions** |
+| **Manage permissions** | Opens the [manage permissions](/fabric/data-warehouse/share-warehouse-manage-permissions#manage-permissions) page for the item. | **File** \> **Manage permissions** |
 | **Share** | Allows you to grant other users or group direct access to an item, without giving access to the workspace and the rest of its items. Depending on the item type, additional options are available to control user permissions. | **Share** |
 | **Open workspace lineage** | Shows the [lineage](/collaborate-share/service-data-lineage.md) relationships between all the items in the current workspace, as well as data sources external to the workspace one-step upstream.| **Lineage** \> **Open workspace lineage** |
 | **Impact analysis** | [Impact analysis](/collaborate-share/service-dataset-impact-analysis.md) allows you to assess the potential impact of changes to this item on downstream workspaces and items that depend on it. | **Lineage** \> **Impact analysis** |
@@ -115,28 +115,28 @@ This section covers actions unique to Semantic Models, SQL Analytics Endpoints, 
 | Item Type | Action | Description | Where to find it |
 |---|---|---|---|
 | **Common Data Item Actions** | **Refresh now** | Launches an immediate refresh of the item. | **Refresh** \> **Refresh now** |
-| | **Schedule refresh** | Opens the settings page where you can configure [scheduled refresh](https://learn.microsoft.com/en-us/power-bi/connect-data/refresh-scheduled-refresh). | **Refresh** \> **Schedule refresh** |
+| | **Schedule refresh** | Opens the settings page where you can configure [scheduled refresh](/power-bi/connect-data/refresh-scheduled-refresh). | **Refresh** \> **Schedule refresh** |
 | **Semantic Model** | **Download this file** | Downloads the .pbix file for this semantic model. | **File** \> **Download this file** |
-| | **Version History** | With [version history](https://learn.microsoft.com/en-us/power-bi/transform-model/service-semantic-model-version-history), self-service users can recover from the most critical mistakes when editing their semantic models on the web. | **File** \> **Version history** |
-| | **Explore this data** | A lightweight tool for quick, ad-hoc data analysis. [Explore the data](https://learn.microsoft.com/en-us/power-bi/consumer/explore-data-service) allows to rapidly create matrix/visual pairs without building a full report. To Explore a specific table or column of a semantic model, hover over it in the **Overview** tab and select the binoculars icon. | **Explore this data** \> **Explore this data** (or binoculars icon on Overview tab) |
-| | **Auto-create a report** | [Automatically generates](https://learn.microsoft.com/en-us/power-bi/create-reports/service-interact-quick-report) a summary report with key insights and visuals from the selected semantic model with a single click, useful for quick data checks. | **Explore this data** \> **Auto-create a report** |
+| | **Version History** | With [version history](/power-bi/transform-model/service-semantic-model-version-history), self-service users can recover from the most critical mistakes when editing their semantic models on the web. | **File** \> **Version history** |
+| | **Explore this data** | A lightweight tool for quick, ad-hoc data analysis. [Explore the data](/power-bi/consumer/explore-data-service) allows to rapidly create matrix/visual pairs without building a full report. To Explore a specific table or column of a semantic model, hover over it in the **Overview** tab and select the binoculars icon. | **Explore this data** \> **Explore this data** (or binoculars icon on Overview tab) |
+| | **Auto-create a report** | [Automatically generates](/power-bi/create-reports/service-interact-quick-report) a summary report with key insights and visuals from the selected semantic model with a single click, useful for quick data checks. | **Explore this data** \> **Auto-create a report** |
 | | **Create a blank report** | Opens the report editing canvas to a new report built on the semantic model. When you save your new report, it will be saved in the workspace that contains the semantic model if you have write permissions on that workspace. If you don't have write permissions on the workspace, the new report will be saved in *My workspace*. | **Explore this data** \> **Create a blank report** |
 | | **Create from template** | You can create a report template that users can use to get started building their own reports based on your semantic model. This template is a regular report designed to be used as a starting point. When you save it, you should add the suffix "(template)" to the report name, for example, *Monthly Sales (template)*. When a user selects **Create from template** in the details page, a copy of the template will be created in the user's *My workspace* and then opened in the report editing canvas. Report templates are also easily identifiable in the list of related reports in the semantic model details view. | **Explore this data** \> **From a template**. |
-| | **Create a paginated report** | Opens the [paginated report](https://learn.microsoft.com/en-us/power-bi/paginated-reports/web-authoring/paginated-formatted-table) editing canvas. You can then export it using the rich export functionality which retains the applied formatting & styling, or you can save it to a workspace of your choice.| **Explore this data** \> **Create a paginated report**. |
+| | **Create a paginated report** | Opens the [paginated report](/power-bi/paginated-reports/web-authoring/paginated-formatted-table) editing canvas. You can then export it using the rich export functionality which retains the applied formatting & styling, or you can save it to a workspace of your choice.| **Explore this data** \> **Create a paginated report**. |
 | | **Analyze in Excel** | Creates an [Excel workbook](/collaborate-share/service-analyze-in-excel.md) containing the entire semantic model, allowing you to analyze it using PivotTables, Pivot Charts, and other Excel features. | Specific menu option |
 | | **Prep data for AI** | Prepares the semantic model's data for use with AI capabilities. | Specific menu option |
-| | **Best practice analyzer** | Runs a pre-configured notebook that analyzes the semantic model against a set of [best practices](https://learn.microsoft.com/en-us/power-bi/transform-model/service-notebooks#best-practice-analyzer) to identify potential issues and provide recommendations for optimization. | **Model Health** \> **Best practice analyzer** |
-| | **Memory analyzer** | Runs a pre-configured notebook that provides insights into the semantic model's [memory/storage consumption](https://learn.microsoft.com/en-us/power-bi/transform-model/service-notebooks#model-memory-analyzer), helping to identify and resolve performance bottlenecks. | **Model Health** \> **Memory analyzer** |
+| | **Best practice analyzer** | Runs a pre-configured notebook that analyzes the semantic model against a set of [best practices](/power-bi/transform-model/service-notebooks#best-practice-analyzer) to identify potential issues and provide recommendations for optimization. | **Model Health** \> **Best practice analyzer** |
+| | **Memory analyzer** | Runs a pre-configured notebook that provides insights into the semantic model's [memory/storage consumption](/power-bi/transform-model/service-notebooks#model-memory-analyzer), helping to identify and resolve performance bottlenecks. | **Model Health** \> **Memory analyzer** |
 | | **Community Notebooks** | Opens a gallery of community notebooks that can be used to further analyze and extend the semantic model. | **Model Health** \> **Community notebooks** |
-| **SQL Analytics Endpoint, Warehouse, Warehouse Snapshot** | **Open in Visual Studio Code** | Shows the server connection information to [connect the SQL database](https://learn.microsoft.com/en-us/fabric/database/sql/connect) server externally and offers to directly open VS Code. | Specific menu option |
-| | **Open in SSMS** | Shows the server connection information to [connect the SQL database](https://learn.microsoft.com/en-us/fabric/database/sql/connect) server externally in SQL Server Management Studio. | Specific menu option |
-| | **Explore this data** |  A lightweight tool for quick, ad-hoc data analysis. [Explore the data](https://learn.microsoft.com/en-us/power-bi/consumer/explore-data-service) allows to rapidly create matrix/visual pairs without building a full report. | Specific menu option |
+| **SQL Analytics Endpoint, Warehouse, Warehouse Snapshot** | **Open in Visual Studio Code** | Shows the server connection information to [connect the SQL database](/fabric/database/sql/connect) server externally and offers to directly open VS Code. | Specific menu option |
+| | **Open in SSMS** | Shows the server connection information to [connect the SQL database](/fabric/database/sql/connect) server externally in SQL Server Management Studio. | Specific menu option |
+| | **Explore this data** |  A lightweight tool for quick, ad-hoc data analysis. [Explore the data](/power-bi/consumer/explore-data-service) allows to rapidly create matrix/visual pairs without building a full report. | Specific menu option |
 | | **Copy SQL connection string** | Copies the connection string needed to connect to the SQL endpoint from external tools. | Specific menu option |
 | | **Analyze in Excel** | Creates an [Excel workbook](/collaborate-share/service-analyze-in-excel.md) containing the item, allowing you to analyze it using PivotTables, Pivot Charts, and other Excel features. | **Analyze in Excel** |
 | **SQL DB** | **Refresh Git sync status** | Refreshes the synchronization status with the connected Git repository. | Specific menu option |
-| | **Open Performance summary** | Opens the [Performance Dashboard](https://learn.microsoft.com/en-us/fabric/database/sql/performance-dashboard) to view database performance metrics, identify performance bottlenecks and find solutions to performance issues.| Specific menu option |
-| | **Restore database** | [Recover your database](https://learn.microsoft.com/en-us/fabric/database/sql/restore) into a specific point in time within the retention period | Specific menu option |
-| **Warehouse Snapshot** | **Capture new state** | [Capture](https://learn.microsoft.com/en-us/fabric/data-warehouse/warehouse-snapshot) a read-only representation of a warehouse item at a specific point in time, retained to up to 30 days. | Specific menu option |
+| | **Open Performance summary** | Opens the [Performance Dashboard](h/fabric/database/sql/performance-dashboard) to view database performance metrics, identify performance bottlenecks and find solutions to performance issues.| Specific menu option |
+| | **Restore database** | [Recover your database](/fabric/database/sql/restore) into a specific point in time within the retention period | Specific menu option |
+| **Warehouse Snapshot** | **Capture new state** | [Capture](/fabric/data-warehouse/warehouse-snapshot) a read-only representation of a warehouse item at a specific point in time, retained to up to 30 days. | Specific menu option |
 
 #### Process Items
 
@@ -152,11 +152,6 @@ This section covers actions unique to Data Pipelines, Dataflow Gen2 CI/CD, and N
 | **Dataflow Gen2 CI/CD** | **Check Validation** | Determine the validity of the dataflow by running a "zero row" evaluation for all the queries in the dataflow. | Specific menu option |
 | **Notebook** | **Download** | Downloads the notebook file. | Specific menu option |
 
------
-
 ## Considerations and limitations
 
-  * Real-time semantic models do not have a details page, as they are being [retired](https://powerbi.microsoft.com/en-us/blog/announcing-the-retirement-of-real-time-streaming-in-power-bi/).
------
-
-#
+  * Real-time semantic models do not have a details page, as they are being [retired](https://powerbi.microsoft.com/blog/announcing-the-retirement-of-real-time-streaming-in-power-bi/).
