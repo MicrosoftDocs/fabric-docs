@@ -1,11 +1,12 @@
 ---
 title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
-ms.reviewer: DougKlopfenstein
+ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
 ms.date: 05/09/2025
+ms.custom: dataflows
 ---
 
 # Dataflow Gen2 data destinations and managed settings

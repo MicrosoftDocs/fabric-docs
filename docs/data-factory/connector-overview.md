@@ -1,13 +1,13 @@
 ---
 title: Connector overview
 description: Learn about data connectors.
-ms.reviewer: DougKlopfenstein
+ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview
-ms.custom:
 ms.date: 04/25/2025
 ms.search.form: product-data-factory
+ms.custom: connectors
 ---
 
 # Connector overview

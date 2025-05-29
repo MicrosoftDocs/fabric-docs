@@ -6,6 +6,7 @@ ms.author: yexu
 ms.topic: how-to
 ms.date: 08/30/2024
 ms.search.form: copy-job-tutorials 
+ms.custom: copy-job
 ---
 
 # Learn how to create a Copy job in Data Factory for Microsoft Fabric

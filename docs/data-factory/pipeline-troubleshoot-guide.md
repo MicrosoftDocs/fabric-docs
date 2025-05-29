@@ -5,6 +5,7 @@ author: nabhishek
 ms.topic: troubleshooting
 ms.date: 12/18/2024
 ms.author: abnarain
+ms.custom: pipelines
 ---
 
 # Troubleshoot pipelines for Data Factory in Microsoft Fabric

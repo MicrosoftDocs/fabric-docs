@@ -5,8 +5,10 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 03/27/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure MySQL in a copy activity
