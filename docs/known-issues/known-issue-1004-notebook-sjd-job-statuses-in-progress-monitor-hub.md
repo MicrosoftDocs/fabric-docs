@@ -4,7 +4,7 @@ description: A known issue is posted where notebook and SJD job statuses are in 
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 01/29/2025
+ms.date: 05/27/2025
 ms.custom: known-issue-1004
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1004
 
 You can trigger a notebook or Spark job definition (SJD) job's execution using the Fabric public API with a service principal token. You can use the monitor hub to track the status of the job. In this known issue, the job status is **In-progress** even after the execution of the job completes.
 
-**Status:** Open
+**Status:** Fixed: May 27, 2025
 
 **Product Experience:** Data Engineering
 

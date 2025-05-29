@@ -5,8 +5,10 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 05/08/2025
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Azure Database for PostgreSQL in a copy activity

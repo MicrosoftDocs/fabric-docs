@@ -5,7 +5,10 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom: template-how-to
+ms.custom: 
+  - pipelines
+  - template-how-to
+  - connectors
 ---
 
 # How to configure Amazon RDS for SQL Server in copy activity

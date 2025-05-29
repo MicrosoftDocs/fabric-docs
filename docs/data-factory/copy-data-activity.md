@@ -1,11 +1,11 @@
 ---
 title: How to copy data using copy activity
 description: Learn how to add a copy activity directly or through the copy assistant.
-ms.reviewer: DougKlopfenstein
+ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines
 ms.date: 08/05/2024
 ---
 
