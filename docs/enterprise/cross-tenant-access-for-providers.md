@@ -39,8 +39,8 @@ Unlike the external data sharing feature in Fabric, which allows providers to sh
 
 `POST https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings`
 
-Supported identities: User and service principal
-Permissions required: Users calling this API must be in the Fabric administrator role.
+**Supported identities:** User and service principal
+**Permissions required:** Users calling this API must be in the Fabric administrator role.
 Service principals must be enabled to call Fabric public APIs, Fabric read APIs, and update APIs.
 
 #### Request body
@@ -118,8 +118,8 @@ Request body for group mapping, when the group doesn't have email
 
 `GET https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings`
 
-Supported identities: User and service principal
-Permissions required: Users calling this API must be in the Fabric administrator role. 
+**Supported identities:** User and service principal
+**Permissions required:** Users calling this API must be in the Fabric administrator role. 
 Service principals must be enabled to call Fabric public APIs, Fabric read APIs, and update APIs.
 
 #### Response codes
