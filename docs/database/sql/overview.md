@@ -4,7 +4,7 @@ description: Learn about SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur
-ms.date: 03/18/2025
+ms.date: 05/29/2025
 ms.topic: overview
 ms.search.form: product-databases, SQL database Overview
 ---
@@ -123,6 +123,8 @@ You can use the Fabric portal to easily [create a GraphQL API](graphql-api.md) f
 ## Capacity management
 
 You can use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) to monitor the SQL database usage and consumption in non-trial Fabric capacities.
+
+For more information, see [Billing and utilization reporting for SQL database in Microsoft Fabric](usage-reporting.md).
 
 ## Mirroring for Azure SQL Database
 
