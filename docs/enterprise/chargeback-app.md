@@ -14,8 +14,6 @@ ms.date: 05/22/2025
 
 The Microsoft Fabric Chargeback app helps you understand which teams, users, and workloads are driving capacity usage, enabling you to build chargeback processes that fairly allocate costs based on actual consumption. As a capacity admin, you can view key parameters such as metric types, dates, and operation names, and share the report with others in your organization to support transparent and informed cost management.
 
-Utilization is the time it takes an activity or action to complete. Utilization is measured as capacity unit (CU) processing time in seconds.
-
 ## Install the Fabric Chargeback app
 
 To install the app, follow the instructions in [Install the Microsoft Fabric Chargeback app](chargeback-app-install.md).

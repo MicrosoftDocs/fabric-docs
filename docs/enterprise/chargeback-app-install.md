@@ -18,7 +18,6 @@ The Microsoft Fabric Chargeback app, also known as the chargeback app. It provid
 ## Prerequisites
 
 - You must be an admin of at least one capacity in your organization. Please visit the [Capacity settings](../admin/capacity-settings.md) documentation to learn how to check your admin status.
-- Installation of preview applications may be restricted by your organization's tenant policy. If you're unable to install the app, contact your tenant admin and request that they enable the [Install template apps not listed in AppSource](../admin/tenant-settings-index.md) setting in the Power BI Admin portal.
 
 ## Install the app
 
