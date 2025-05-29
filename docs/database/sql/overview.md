@@ -124,9 +124,6 @@ You can use the Fabric portal to easily [create a GraphQL API](graphql-api.md) f
 
 You can use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) to monitor the SQL database usage and consumption in non-trial Fabric capacities.
 
-> [!NOTE]
-> During the current preview, no billing will occur for SQL database in Fabric, but billing metrics will still flow for tracking purposes.
-
 ## Mirroring for Azure SQL Database
 
 Do you already have an external database and want to leverage Fabric's integration? You can use Mirroring in Fabric as a low-cost and low-latency solution to bring data from various systems together. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from an existing [Azure SQL Database](../mirrored-database/azure-sql-database.md).
