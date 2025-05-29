@@ -47,7 +47,7 @@ When you hover over a Materialized lake view run row, you can see various row-le
 
 :::image type="content" source="./media/monitor-materialized-lake-views/view-detail-mlv-option.png" alt-text="Screenshot showing view detail for materialized lake view." border="true" lightbox="./media/monitor-materialized-lake-views/view-detail-mlv-option.png":::
 
-You can hover over a MLV run row and click the **View details** icon to open the **Detail** pane and view more details.
+You can hover over an MLV run row and click the **View details** icon to open the **Detail** pane and view more details.
 
 When you click an activity name, you can navigate to the ongoing run or completed run lineage view.
  
