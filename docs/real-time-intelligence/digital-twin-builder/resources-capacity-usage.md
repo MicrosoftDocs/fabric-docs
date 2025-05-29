@@ -19,7 +19,10 @@ This article contains information about how digital twin builder (preview) capac
 
 ## Consumption rates
 
-The following table defines how many capacity units (CU) are consumed when digital twin builder (preview) is used.  
+The following table defines how many capacity units (CU) are consumed when digital twin builder (preview) is used.
+
+[!NOTE]
+> The meters for digital twin builder are currently in preview and may be subject to change.
 
 | Meter name | Operation name | Fabric consumption rate (CU hours) |
 |---|---|---|
@@ -39,7 +42,7 @@ Initially, you must be a capacity admin to install the Microsoft Fabric Capacity
 In the Fabric Capacity Metric app, you see operations for digital twin builder (preview) and digital twin builder flow. To see the operation details, select digital twin builder under the item type. All the data stored within Fabric storage incurs Fabric storage costs.
 
 >[!NOTE]
-> Digital twin builder also shows a second, non-billable meter, **Digital Twin Builder Capacity Usage CU**. This meter tracks the usage based on the sum of all the customer-defined entity types, entity type relationships, entity instances, and entity instance relationships. It is currently not billable.
+> Digital twin builder also shows a second, non-billable meter, **Digital Twin Builder Capacity Usage CU**. It is currently not billable.
 
 ## Limits and considerations 
 
