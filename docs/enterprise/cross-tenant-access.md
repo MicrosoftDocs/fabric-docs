@@ -39,7 +39,7 @@ When consent is revoked, guests lose access to warehouses in the provider tenant
 
 * The guest tenant is responsible for creating and managing Microsoft Entra groups and principals that are configured for cross-tenant access.
 
-* The guest tenant is responsible for managing conditional access or Multi Factor Authentication (MFA) policies for their users. These policies are applied when then guest users attempt to access cross-tenant data warehouses.
+* The guest tenant is responsible for managing conditional access or multifactor authentication (MFA) policies for their users. These policies are applied when then guest users attempt to access cross-tenant data warehouses.
 
 ## Prerequisites for the guest
 
@@ -103,7 +103,7 @@ Connect-PowerBIServiceAccount
 
 ### Provide consent
 
-Providers must participate in the private preview before a guest tenant can provide consent.
+Providers must participate in the preview before a guest tenant can provide consent.
 
 Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the consent API to provide consent for cross tenant access for Fabric data warehouses with a specific provider. Provide the tenant ID of the provider in the request body.
 
