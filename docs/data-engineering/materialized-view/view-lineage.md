@@ -15,7 +15,7 @@ In a fabric environment, managing these views effectively can significantly enha
 This document delves into the various aspects of managing a Fabric materialized lake views, including understanding the lineage, scheduling the MLV runs, exploring the history of materialized lake views, and detailing operational run specifics.
 
 ## View lineage
-A lineage is a fundamental structure for managing dependencies and scheduling tasks. In the context of Materialized Lake Views (MLV), the lineage represents the sequence of MLV that need to be executed to refresh the MLV once new data is available.
+A lineage is a fundamental structure for managing dependencies and scheduling tasks. In the context of Materialized Lake Views (MLV), the lineage represents the sequence of MLV that needs to be executed to refresh the MLV once new data is available.
 After the creation of materialized lake views by the user, click on Manage materialized lake views and it navigates to the MLV lineage.
 
 
@@ -37,14 +37,14 @@ The lineage UI also has the following functionalities:
 
 > [!NOTE]
 > This is a lineage UI refresh only and not for data refresh.
-> Auto refresh for the lineage UI is done every 2 minutes if there is an ongoing run, provided that user is present in the browser tab.
+> Auto refresh for the lineage UI is done every 2 minutes if there's an ongoing run, if user is present in the browser tab.
 
 :::image type="content" source="./media/view-lineage/view-refresh.png" alt-text="Screenshot showing how to refresh a lineage UI." border="true" lightbox="./media/view-lineage/view-refresh.png":::
 
 *	New materialized lake view: User can open a notebook to make changes to the materialized lake views as per their requirements.
 
 > [!NOTE]
-> These notebooks aren't directly linked to a lineage UI and are just used to create a materialized lake view.
+> These notebooks aren't directly linked to a lineage UI and are used to create a materialized lake view.
 
 :::image type="content" source="./media/view-lineage/new-materialized-view.png" alt-text="Screenshot showing a new materialized lake views." border="true" lightbox="./media/view-lineage/new-materialized-view.png":::
 
