@@ -224,15 +224,17 @@ Enable inline code suggestions using the toggle at the bottom of your notebook. 
 
 :::image type="content" source="media\author-execute-notebook\copilot-inline-code.png" alt-text="Screenshot showing how to enable Copilot code completions.":::
 
+:::image type="content" source="media\author-execute-notebook\copilot-code-suggestion.png" alt-text="Screenshot showing automatic code suggestion with Copilot code completion.":::
+
 > [!NOTE]
-> Enabling Copilot inline code completion consumes [capacity units](../enterprise/fabric-copilot-capacity.md).
+> Enabling Copilot inline code completion will consume additional [capacity units](../enterprise/fabric-copilot-capacity.md).
 
 ### Current limitations
 
 * Copilot Inline Code Completion currently supports Python language and uses context from previous cells and Lakehouse schemas.
 * Suggestions consider data from Lakehouse schemas.
 * Only a subset of schema elements is used when there are many tables or columns.
-* Dynamically created tables (via Spark) are not recognized in real time.
+* Dynamically created tables (via Spark) aren't recognized in real time.
 
 ## Run notebooks
 
