@@ -1,43 +1,43 @@
 ---
-title: "Data quality in materialized views in lakehouse in Microsoft Fabric"
-description: Learn about data quality in materialized view in lakehouse in Microsoft Fabric
+title: "Data quality in materialized lake views in lakehouse in Microsoft Fabric"
+description: Learn about data quality in materialized lake view in lakehouse in Microsoft Fabric
 author: abhishjain002 
 ms.author: abhishjain
-ms.reviwer: nijelsf
+ms.reviewer: nijelsf
 ms.topic: conceptual
-ms.date: 04/16/2025
+ms.date: 05/29/2025
 ---
 
-# Data quality in materialized view in Microsoft Fabric
+# Data quality in materialized lake view
 
-In the era of big data, the medallion architecture has gained prominence as a robust framework for managing and processing data across different stages of refinement, from raw data to highly curated datasets. This structured approach not only enhances data manageability but also ensures that data quality is maintained throughout the data lifecycle.
+In the era of big data, the medallion architecture gained prominence as a robust framework for managing and processing data across different stages of refinement, from raw data to highly curated datasets. This structured approach not only enhances data manageability but also ensures that data quality is maintained throughout the data lifecycle.
 
 Ensuring data quality is essential at every stage of the medallion architecture, which is critical for making informed business decisions. Poor data quality can lead to incorrect insights and operational inefficiencies.
  
-This article explains how to implement data quality in materialized views in Microsoft Fabric.
+This article explains how to implement data quality in materialized lake views in Microsoft Fabric.
 
 ## Implement data quality
 
 When you transform data, it becomes important to compose precise queries to exclude poor quality data from the source tables, which increases processing time and occasionally causes the whole pipeline to fail because of minor data issues.
  
-Data quality is achieved by defining the constraints while defining the materialized views. MV within Fabric aims to offer a swift and action-oriented approach to implement checks that ensure data quality management.
+Data quality is maintained by setting constraints when defining the materialized lake views. The materialized views within Fabric provide an approach to implement checks for data quality management efficiently.
  
-The following actions can be taken when constraints are defined.
+The following actions can be implemented when constraints are specified.
 
-**FAIL** – This action stops refreshing a materialized view if any constraint is violated, halting at the first instance. It is the default behavior, even without specifying the FAIL keyword.
+**FAIL** – This action stops refreshing a materialized lake view if any constraint is violated, halting at the first instance. It's the default behavior, even without specifying the FAIL keyword.
  
-**DROP** – This action processes the materialized view and removes records that do not meet the specified constraint. It also provides the count of removed records in the Directed Acyclic Graph (DAG).
+**DROP** – This action processes the materialized lake view and removes records that don't meet the specified constraint. It also provides the count of removed records in the lineage view.
 
 > [!NOTE]
-> If both DROP and FAIL actions are defined in a materialized view, the FAIL action takes precedence.
+> If both DROP and FAIL actions are defined in a materialized lake view, the FAIL action takes precedence.
 
 
-### Defining the data quality checks in materialized view
+### Defining the data quality checks in materialized lake view
 
 The following example defines the constraint `cust_blank`, which checks if the `customerName` field isn't null. Rows with a null `customerName` are excluded from processing.
 
 ```SQL
-     CREATE MATERIALIZED VIEW IF NOT EXISTS silver.customers_enriched  
+     CREATE MATERIALIZED LAKE VIEW IF NOT EXISTS silver.customers_enriched  
      (CONSTRAINT cust_blank CHECK (customerName is not null) on MISMATCH DROP)
      AS
      SELECT
@@ -52,10 +52,11 @@ The following example defines the constraint `cust_blank`, which checks if the `
      ON c.customerID = o.customerID; 
 ```
 
-## What’s not supported
+## Limitation
 
-* Updating data quality constraints after creating a materialized view is not supported. To update the data quality constraints, you must recreate the materialized view.
+* Updating data quality constraints after creating a materialized lake view isn't supported. To update the data quality constraints, you must recreate the materialized lake view.
+* Use of functions and pattern search with operators such as LIKE or regex in constraint condition is restricted.
  
 ## Next step
 
-* [Refresh a materialized view](./refresh-materialized-view.md)
+* [Refresh a materialized lake view](./refresh-materialized-lake-view.md)
