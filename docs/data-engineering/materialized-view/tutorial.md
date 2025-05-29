@@ -53,8 +53,6 @@ The high-level steps are as follows:
 1.	Create a bronze schema. For more information, see [Lakehouse schemas](/fabric/data-engineering/lakehouse-schemas#create-a-lakehouse-schema).
 1.	Convert the raw CSV files into delta tables using Load to Table. For more information, see [Lakehouse Load to Delta Lake tables](/fabric/data-engineering/load-to-tables).
 
-    :::image type="content" source="./media/tutorial/notebook-table.png" alt-text="Screenshot showing notebook." border="true" lightbox="./media/tutorial/notebook-table.png":::
-
 ### Create silver and gold layers of medallion architecture
 
 1.	Download the Notebook file and upload it to your workspace.
