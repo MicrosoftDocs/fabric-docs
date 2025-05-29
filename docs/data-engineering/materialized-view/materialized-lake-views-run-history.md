@@ -3,7 +3,7 @@ title: Run history of Microsoft Fabric materialized lake views
 description: Learn how to check run history of Fabric materialized lake views
 ms.topic: how-to
 author: apurbasroy
-ms.author: apurbasroy
+ms.author: apsinhar
 ms.reviewer: nijelsf
 ms.date: 05/29/2025
 ---
