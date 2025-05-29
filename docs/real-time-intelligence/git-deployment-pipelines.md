@@ -38,7 +38,7 @@ For details on setting up Git integration, see [Get started with Git integration
 
 Real-Time Intelligence supports deployment pipelines for Eventstreams, Eventhouses, KQL databases, KQL querysets, Real-Time dashboards, and Activator. Microsoft Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate with others to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users.
 
-For details on setting up deployment pipelines, see[Get started with deployment pipelines]](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
+For details on setting up deployment pipelines, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
 
 ### Supported Items Details
 
