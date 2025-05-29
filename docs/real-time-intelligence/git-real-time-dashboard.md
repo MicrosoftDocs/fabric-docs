@@ -12,17 +12,17 @@ ms.date: 05/29/2025
 
 # Real-time Dashboard - Git integration
 
-The following article detials the file structure for Real-Time dashboard once they are synced to a Github or Azure Devops Repository.
+The following article details the file structure for Real-Time dashboard once they're synced to a GitHub or Azure Devops repository.
 
 
 ## Folder Structure
-Once a workspace is synced to a repo you will have a top level folder for the workspace and a sub-folder for each item that was synced. Each sub-folder will be formated with **Item Name**.**Item Type**
+Once a workspace is synced to a repo, you see a top level folder for the workspace and a subfolder for each item that was synced. Each subfolder is formatted with **Item Name**.**Item Type**
 
-Within the folder for KQL Queryset you will have the following files
-- Platform: This defines fabric platform values such as Display Name and Description.
-- Properties: This defines item specific values.
+Within the folder for KQL queryset, you see the following files:
+- Platform: Defines fabric platform values such as Display Name and Description.
+- Properties: Defines item specific values.
 
-Here is an example of what the folder structure will look like
+Here's an example of what the folder structure looks like:
 
 **Repo**
 * Workspace A

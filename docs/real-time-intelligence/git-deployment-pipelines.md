@@ -51,7 +51,7 @@ For details on setting up deployment pipelines, see [Get started with deployment
 
 ## Limitation
 
-* **Git Integration** and **Deployment Pipeline** have limited support for cross-workspace scenarios. To avoid issues, make sure all Eventstream destinations within the same workspace. Cross-workspace deployment may not work as expected.
+* **Git Integration** and **Deployment Pipeline** have limited support for cross-workspace scenarios. To avoid issues, make sure all Eventstream destinations within the same workspace. Cross-workspace deployment might not work as expected.
 * If an Eventstream includes an Eventhouse destination using **Direct Ingestion** mode, you’ll need to manually reconfigure the connection after importing or deploying it to a new workspace.
 
 
