@@ -9,17 +9,16 @@ ms.date: 05/26/2025
 
 # What is cross-tenant access for guests?
 
->[!IMPORTANT]
-><li>Cross-tenant access for Fabric data-warehouses is a generally available feature for guest tenants, however it is currently only available to a limited set of providers.</li>
-><li>To use cross-tenant access as a guest, you must work with a trusted provider that has already onboarded to this feature, and follow the steps listed in this document to start using cross-tenant access with that provider. Contact your trusted provider to find out if they support this feature.</li>
-><li>To participate as a provider of cross tenant data, refer to [Cross-tenant access for providers](cross-tenant-access-for-providers.md)</li>
+> [!IMPORTANT]
+> * Cross-tenant access for Fabric data-warehouses is a generally available feature for guest tenants, however it's currently only available to a limited set of providers.
+> * To use cross-tenant access as a guest, work with a trusted provider that has already onboarded to this feature, and follow the steps in this document. Check with your provider to confirm support.
+> * To participate as a provider of cross tenant data, see [Cross-tenant access for providers](cross-tenant-access-for-providers.md).
 
-
-The cross tenant access feature allows guest tenants to access data stored in a provider tenant’s Fabric data warehouses. This feature is useful for organizations that need to access data stored on a service provider's tenant. For example, when company A stores Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant.
+The cross tenant access feature allows guest tenants to access data stored in a provider tenant’s Fabric data warehouses. This feature is useful for organizations that need to access data stored on a service provider's tenant. For example, when company A stores data in Fabric for company B, company B can use cross tenant access to access their data in company A's Fabric tenant.
 
 This article is aimed at guests who want to set up cross tenant access.
 
-## How it works
+## How does it work?
 
 Cross tenant access allows guest tenants to access data stored in a provider's data warehouse. When the provider enables principals from the guest tenant to use this feature, Fabric creates corresponding [service principals](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) for each guest in the provider's tenant. The provider then grants permission’s on the warehouse to these service principals. Guests with permissions can access data warehouse endpoints using their own Entra ID identity credentials with tools such as SQL Server Management Studio (SSMS). To do that, guests authenticate with their home organization and are authorized to access data warehouse endpoints.
 
@@ -27,18 +26,20 @@ Cross tenant access allows guest tenants to access data stored in a provider's d
 
 To use cross-tenant access for Fabric data warehouses with a specific provider tenant, the guest tenant must consent by following the steps listed in this document. Once a guest tenant consents to use cross tenant access with a specific provider, the provider can start granting guest principals with access to warehouses. Providers can choose to grant or remove access at any point of time.
 
->[!WARNING]
+> [!WARNING]
 > Before providing consent, review your agreement terms with the provider and make sure you trust the provider. Programmatically granted permissions aren't subject to review or confirmation and take effect immediately.
 
-By providing consent, you acknowledge that certain elements of guest accounts are shared. These include email addresses, user principal names, group memberships, and directory identifiers. Provider tenant's terms and conditions  govern the use of this data.
+By providing consent, you acknowledge that certain elements of guest accounts are shared. These include email addresses, user principal names, group memberships, and directory identifiers. Provider tenant's terms and conditions govern the use of this data.
 
 When consent is revoked, guests lose access to warehouses in the provider tenant within a day. However, existing sessions are unaffected.
 
 ## Responsibilities of the guest
-1.	Ensure you trust the provider before consenting to use the cross-tenant access feature of Fabric data warehouses with the provider. Guest tenants must follow the steps listed in this document to consent.
-2.	The guest tenant is responsible for creating and managing Entra groups and principals that are configured for cross-tenant access. 
-3.	The guest tenant is responsible for managing conditional access or MFA policies for their users. These policies are applied when then guest users attempt to access cross-tenant data warehouses.
 
+1.	Ensure that you trust the provider before consenting to use the cross-tenant access feature of Fabric data warehouses. Guest tenants must follow the steps listed in this document to consent.
+
+1. The guest tenant is responsible for creating and managing Microsoft Entra groups and principals that are configured for cross-tenant access.
+
+1. The guest tenant is responsible for managing conditional access or Multi Factor Authentication (MFA) policies for their users. These policies are applied when then guest users attempt to access cross-tenant data warehouses.
 
 ## Prerequisites for the guest
 
@@ -50,10 +51,10 @@ When consent is revoked, guests lose access to warehouses in the provider tenant
 
 * The *consent* and *revokeConsent* APIs require the *Tenant.ReadWrite.All* [scope](/entra/identity-platform/scopes-oidc).
 
-* [PowerShell](/powershell/azure/install-azure-powershell).
+* [Azure PowerShell](/powershell/azure/install-azure-powershell).
 
 * Windows PowerShell v3.0 with [Microsoft Power BI Cmdlets for Windows PowerShell and PowerShell Core](/powershell/power-bi/overview).
-    * [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount)
+  * [Connect-PowerBIServiceAccount](/powershell/module/microsoftpowerbimgmt.profile/connect-powerbiserviceaccount)
 
 ## Install applications
 
@@ -74,17 +75,17 @@ To install the apps, follow these steps:
 
 4. In the request field, select **POST** and enter the following URL:
 
-    ```http
-    POST https://graph.microsoft.com/v1.0/servicePrincipals
-    ```
+   ```http
+   POST https://graph.microsoft.com/v1.0/servicePrincipals
+   ```
 
 5. In the request body, enter the following JSON:
 
-    ```json
-    { 
-        "appId" : "<Application ID>"
-    }
-    ```
+   ```json
+   { 
+       "appId" : "<Application ID>"
+   }
+   ```
 
 6. Select **Run query**.
 
@@ -104,7 +105,7 @@ Connect-PowerBIServiceAccount
 
 Providers must participate in the private preview before a guest tenant can provide consent.
 
-Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the consent API to provide consent for cross tenant access for Fabric data warehouses with a specific provider. Provide the tenant ID of the provider in the request body. 
+Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/invoke-powerbirestmethod) to call the consent API to provide consent for cross tenant access for Fabric data warehouses with a specific provider. Provide the tenant ID of the provider in the request body.
 
 ```powershell
 $body ='{ "resourceTenantObjectId": "GUID_VAL" }'
@@ -127,9 +128,9 @@ Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “a
 ```
 
 ## Access the cross-tenant data warehouse
-Guest users can use SQL Server Management Studio or other clients to connect to the cross-tenant data warehouse by using the connection string provided by the provider. If the guest tenant has conditional access or MFA policies, these will be applied on the guest principals. Guests should choose Microsoft Entra MFA or Azure Active Directory MFA option for authentication in such cases.
+
+Guest users can use SQL Server Management Studio or other clients to connect to the cross-tenant data warehouse by using the connection string provided by the provider. If the guest tenant has conditional access or MFA policies, these are applied on the guest principals. Guests should choose Microsoft Entra MFA or Azure Active Directory MFA option for authentication in such cases.
 
 ## Known issues
-In certain circumstances, guest principals may not be able to access cross-tenant data warehouses for upon their first login attempt, and may need to retry after several minutes to successfully access the cross-tenant warehouse. This will be fixed in upcoming releases.
 
-
+In certain circumstances, guest principals may not be able to access cross-tenant data warehouses upon their first sign in attempt, and may need to retry after several minutes to successfully access the cross-tenant warehouse. This will be fixed in upcoming releases.
