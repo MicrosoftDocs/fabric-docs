@@ -16,11 +16,11 @@ A history of the past 25 runs of Materialized lake views along with lineage and 
 
 You can click on **View more past runs** to see the last 25 runs for Materialized lake views or the runs in the last seven days whichever comes first.
 
-:::image type="content" source="./media/materialized-lake-view-run-history/view-all-past-runs.png" alt-text="Screenshot showing a view of the past twenty five runs." border="true" lightbox="./media/materialized-lake-view-run-history/view-all-past-runs.png":::
+:::image type="content" source="./media/materialized-lake-view-run-history/view-all-past-runs.png" alt-text="Screenshot showing a view of the past 25 runs." border="true" lightbox="./media/materialized-lake-view-run-history/view-all-past-runs.png":::
 
 ## Following are the possible states for a run in lineage view:
 
-* **Completed**- When all the nodes have been executed successfully, the run status is shown as **Completed** state.
+* **Completed**- When all the nodes have executed successfully, the run status is shown as **Completed** state.
 
   :::image type="content" source="./media/materialized-lake-view-run-history/completed-runs.png" alt-text="Screenshot showing a view of a completed run." border="true" lightbox="./media/materialized-lake-view-run-history/completed-runs.png":::
 
@@ -35,7 +35,7 @@ You can click on **View more past runs** to see the last 25 runs for Materialize
 
 * **In Progress**- When the run has started and hasn't reached a terminal state, the run state is shown as **In Progress**.
 
-* **Canceled**- When the run has been manually canceled by the user from monitoring hub, the run state is shown as **Canceled**.
+* **Canceled**- When the run is manually canceled by the user from monitoring hub, the run state is shown as **Canceled**.
 
 ## Next step
 
