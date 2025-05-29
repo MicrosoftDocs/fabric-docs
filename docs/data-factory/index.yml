@@ -60,6 +60,18 @@ landingContent:
           url: /data-integration/gateway/service-gateway-onprem?toc=/fabric/data-factory/toc.json
         - text: What is a virtual network data gateway?
           url: /data-integration/vnet/overview?toc=/fabric/data-factory/toc.json 
+          
+  # Card 
+  - title: Transform data
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Create your first dataflow
+            url: create-first-dataflow-gen2.md
+          - text: Connect your source to your dataflow
+            url: data-source-management.md
+          - text: Save a draft of your dataflow
+            url: dataflows-gen2-save-draft.md
 
   # Card 
   - title: Move data
@@ -84,18 +96,6 @@ landingContent:
             url: tutorial-end-to-end-introduction.md
           - text: Move data with copy assistant
             url: tutorial-move-data-lakehouse-copy-assistant.md
-          
-  # Card 
-  - title: Transform data
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Create your first dataflow
-            url: create-first-dataflow-gen2.md
-          - text: Connect your source to your dataflow
-            url: data-source-management.md
-          - text: Save a draft of your dataflow
-            url: dataflows-gen2-save-draft.md
 
   # Card 
   - title: Copy data
