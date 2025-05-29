@@ -16,9 +16,15 @@ Materialized lake views (MLV) provides the option to view your data quality metr
 
 ## Create and access the report 
 
-To create/access the report, navigate to the Managed materialized lake views page and click on the "Data quality report" button.
+To create or access the report, navigate to the Managed materialized lake views page and click on the "Data quality report" button.
+
+:::image type="content" source="./media/data-quality-reports/dqr-button.png" alt-text="Data quality report button placement" border="true" lightbox="./media/data-quality-reports/dqr-button.png":::
 
 This opens the embedded report page. If a report is already created, the user is able to see it here. If no report is created yet, the user can click on "Generate report" and wait for the report to be created.
+
+:::image type="content" source="./media/data-quality-reports/generate-report.png" alt-text="Generate report button" border="true" lightbox="./media/data-quality-reports/generate-report.png":::
+
+:::image type="content" source="./media/data-quality-reports/report-loading.png" alt-text="Loading of report" border="true" lightbox="./media/data-quality-reports/report-loading.png":::
 
 A semantic model and a Power BI report are created for the user in the background and stored in their workspace.
 Once ready, the Power BI report is also simultaneously displayed on the same page as an embedded report and will present the summary of the data quality through two sections (pages on the Power BI report) – Overview and MLV Detail. 
@@ -32,9 +38,12 @@ A violation indicates a row being unable to meet the condition specified in a co
 Regardless of the number of columns in a row that violate different constraints, the row would be dropped only once.
 Hence the number of drops is always <= the number of violations for an MLV.
 
+:::image type="content" source="./media/data-quality-reports/overview_page.png" alt-text="Overview page" border="true" lightbox="./media/data-quality-reports/overview_page.png":::
 
 The MLV Detail page allows the user to look at the data quality metrics at a deeper granularity instead of looking at only aggregates.
-The user can filter for a particular MLV and also look at data from beyond the last one week by adjusting the SchemaName, MLVName, and RelativeDate in the Power BI filters. 
+The user can filter for a particular MLV and also look at data from beyond the last one week by adjusting the SchemaName, MLVName, and RelativeDate in the Power BI filters.
+
+:::image type="content" source="./media/data-quality-reports/mlv-detail-page.png" alt-text="MLV detail page" border="true" lightbox="./media/data-quality-reports/mlv-detail-page.png":::
 
 On the Overview page, the visual titled “Data Quality Violations - Top MLVs by Day for the Last Week” displays the state of data quality on each specific day over the past week.
 This allows users to track trends, analyze past performance, and understand how the data has evolved in terms of violations. All other visuals on this page present aggregated live data, reflecting the current status of data quality.
@@ -44,7 +53,9 @@ On the MLV Detail page, all charts display historical data, enabling users to dr
  
 ## Navigate to the original report in the workspace 
 
-To use all the other default features offered in a standard Power BI report, the user can navigate to the original report in the workspace by clicking the "Customize report" button on the right-hand corner of the top navigation bar. 
+To use all the other default features offered in a standard Power BI report, the user can navigate to the original report in the workspace by clicking the "Customize report" button on the right-hand corner of the top navigation bar.
+
+:::image type="content" source="./media/data-quality-reports/customize-report.png" alt-text="Redirection to workspace report" border="true" lightbox="./media/data-quality-reports/customize-report.png":::
 
 
 ## Share the report
