@@ -67,6 +67,8 @@ items:
     href: onelake-azure-hdinsight.md
   - name: PowerShell
     href: onelake-powershell.md
+  - name: AzCopy
+    href: onelake-azcopy.md
 - name: Secure and manage data access
   items:
   - name: OneLake security overview
