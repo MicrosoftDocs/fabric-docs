@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom:
 ms.search.form: Develop and run notebooks
-ms.date: 05/21/2025
+ms.date: 05/29/2025
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -206,6 +206,33 @@ The markdown folding option allows you to hide cells under a markdown cell that 
 The find and replace option can help you match and locate the keywords or expression within your notebook content. You can also easily replace the target string with a new string.
 
 :::image type="content" source="media\author-execute-notebook\find-replace.png" alt-text="Screenshot showing find and replace pane." lightbox="media\author-execute-notebook\find-replace.png":::
+
+## Copilot inline code completion (Preview)
+
+Copilot inline code completion is an AI-powered feature that helps you to write Python code faster and more efficiently in Fabric Notebooks. This feature provides intelligent, context-aware code suggestions as you type code. It reduces repetitive tasks, minimizes syntax errors, and accelerates development by integrating seamlessly into your notebook workflow.
+
+### Key benefits
+
+* **AI-driven completions:** Generates suggestions based on your notebook's context using a model trained on millions of lines of code.
+* **Boosts productivity:** Helps write complex functions, reduces repetitive coding, and speeds up exploration of unfamiliar libraries.
+* **Reduces errors:** Minimizes typos and syntax mistakes with intelligent, context-aware completions.
+* **Minimal setup:** Built into Fabric notebooks, doesn't require any installation. You can just enable it and start coding.
+
+### How it works
+
+Enable inline code suggestions using the toggle at the bottom of your notebook. As you type, suggestions appear in light gray text, press tab to accept or modify. Suggestions are based on previous notebook cells.
+
+:::image type="content" source="media\author-execute-notebook\copilot-inline-code.png" alt-text="Screenshot showing how to enable Copilot code completions.":::
+
+> [!NOTE]
+> Enabling Copilot inline code completion consumes [capacity units](../enterprise/fabric-copilot-capacity.md).
+
+### Current limitations
+
+* Copilot Inline Code Completion currently supports Python language and uses context from previous cells and Lakehouse schemas.
+* Suggestions consider data from Lakehouse schemas.
+* Only a subset of schema elements is used when there are many tables or columns.
+* Dynamically created tables (via Spark) are not recognized in real time.
 
 ## Run notebooks
 
