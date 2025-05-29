@@ -25,7 +25,7 @@ Unlike the external data sharing feature in Fabric, which allows providers to sh
 
 ## Responsibilities of the provider
 
-1. Ensure the guest tenant consents to use cross-tenant access feature with your (provider) tenant. Guest tenants must follow the steps listed in <guest doc>.
+1. Ensure the guest tenant consents to use cross-tenant access feature with your (provider) tenant. Guest tenants must follow the steps listed in [Cross-tenant access for guests](cross-tenant-access.md).
 
 1. Configure the guest principals for cross-tenant access.
 
@@ -53,7 +53,7 @@ Service principals must be enabled to call Fabric public APIs, Fabric read APIs,
 | userDetails | Body | Yes | JSON or Complex | Details of the guest tenant user |
 | userPrincipalName | Body | Yes | String | Guest users’ principal name |
 | groupDetails | Body | Yes | JSON or Complex | Details of the guest tenant group |
-| groupType | Body | Yes | String | Type of guest tenant group, send “Unknown” if not available |
+| groupType | Body | Yes | String | Type of guest tenant group, send "Unknown" if not available |
 | email | Body | Yes | String | Guest tenant group’s email |
 
 #### Sample request body
@@ -89,7 +89,7 @@ Request body for group mapping
         "tenantId": "{guest tenant id}",  
         "type": "Group",  
         "groupDetails": {  
-               “groupType”: “Unknown”, 
+               "groupType": "Unknown", 
                "email": "groupemail@contoso.com"  
          }  
 }
@@ -186,11 +186,11 @@ The caller must have Viewer or higher workspace role. It supports User, Service 
 
 ```json
 { 
-  "connectionString": “DW connection string” 
+  "connectionString": "DW connection string" 
 }
 ```
 
-## Governance of cross-tenant access in Fabric data warehouses
+## Governance of cross-tenant access
 
 1. **Use the Get cross tenant auth mapping API** - You can use the GET cross tenant auth mappings API to review the guest tenant users and groups that can potentially access warehouses and SQL endpoints in your tenant. These users also need to be granted permissions on the items.
 
@@ -237,5 +237,3 @@ The caller must have Viewer or higher workspace role. It supports User, Service 
 1. When a guest tenant revokes consent, guests lose access to warehouses in the provider tenant within a day. However, existing sessions are unaffected.
 
 1. In certain circumstances, guest principals may not be able to access cross-tenant data warehouses for several hours after the guest principal is configured for cross-tenant access. This will be fixed in upcoming releases.
-
-## Related content
