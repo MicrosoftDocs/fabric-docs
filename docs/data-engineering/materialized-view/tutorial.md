@@ -5,12 +5,12 @@ ms.author: rkottackal
 author: rkottackal 
 ms.reviewer: nijelsf
 ms.topic: tutorial
-ms.date: 04/16/2025
+ms.date: 05/29/2025
 ---
 
 # Implement medallion architecture with materialized lake views
 
-This tutorial outlines the steps and considerations for implementing a medallion architecture using materialized lake views. By the end of this tutorial, you learn the key features and capabilities of Materialized lake view and be able to create an automated data transformation workflow. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
+This tutorial outlines the steps and considerations for implementing a medallion architecture using materialized lake views. By the end of this tutorial, you will learn the key features and capabilities of Materialized lake view and be able to create an automated data transformation workflow. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ As prerequisites to this tutorial, complete the following steps:
 
 In this tutorial, you'are going to take an example of a fictional retail organization, Contoso, which leverages a medallion architecture for data analytics to gain actionable insights into its retail sales operations. It aims to streamline the analysis process and generate deeper insights into business performance by organizing their data into three layers—bronze (raw data), silver (cleaned and enriched data), and gold (aggregated and analyzed data).
 
-The following diagram represents different entities in each layer of medallion architecture in sales lakehouse:
+The following diagram represents different entities in each layer of medallion architecture in SalesLakehouse:
 
 :::image type="content" source="./media/tutorial/sales-lakehouse.png" alt-text="Screenshot showing medallion architecture." border="true" lightbox="./media/tutorial/sales-lakehouse.png":::
 
@@ -38,14 +38,14 @@ The following diagram represents different entities in each layer of medallion a
 
 **Sample dataset**
 
-Contoso maintains its retail operations raw data in CSV format within ADLS Gen2. Utilize this data to establish the bronze layer, followed by creating materialized lake views to form the silver and gold layers of the medallion architecture.
+Contoso maintains its retail operations raw data in CSV format within ADLS Gen2. We will utilize this data to create the bronze layer, and then use the bronze layer to create the materialized lake views which form the silver and gold layers of the medallion architecture.
 
 ## Create the pipeline
 
 The high-level steps are as follows:
 1. **Bronze Layer**: Ingest raw data in the form of CSV files using Load to Table.
 1. **Silver Layer**: Cleanse data using materialized lake views.
-1. **Gold Layer**: Curate data for analytics and reporting using Materialized lake views.
+1. **Gold Layer**: Curate data for analytics and reporting using materialized lake views.
 
 ### Create bronze layer of sales analytics medallion architecture
 
@@ -53,7 +53,7 @@ The high-level steps are as follows:
 1.	Create a bronze schema. For more information, see [Lakehouse schemas](/fabric/data-engineering/lakehouse-schemas#create-a-lakehouse-schema).
 1.	Convert the raw CSV files into delta tables using Load to Table. For more information, see [Lakehouse Load to Delta Lake tables](/fabric/data-engineering/load-to-tables).
 
-    :::image type="content" source="./media/tutorial/notebook-table.png" alt-text="Screenshot showing notebook." border="true" lightbox="./media/tutorial/notebook-table.png":::
+  	:::image type="content" source="./media/tutorial/create-bronze-layer.png" alt-text="Screenshot showing creating bronze layer." border="true" lightbox="./media/tutorial/create-bronze-layer.png":::
 
 ### Create silver and gold layers of medallion architecture
 
@@ -62,24 +62,21 @@ The high-level steps are as follows:
     :::image type="content" source="./media/tutorial/create-silver-layer.png" alt-text="Screenshot showing silver materialized lake view creation." border="true" lightbox="./media/tutorial/create-silver-layer.png":::
 
 1.	Open the Notebook from the Lakehouse. For more information, see [Explore the lakehouse data with a notebook](/fabric/data-engineering/lakehouse-notebook-explore). 
-
-  	:::image type="content" source="./media/tutorial/create-bronze-layer.png" alt-text="Screenshot showing creating bronze layer." border="true" lightbox="./media/tutorial/create-bronze-layer.png":::
-
-1.	Run all cells of the notebook using Spark SQL to create materialized lake views with data quality constraints. Once all cells are successfully executed, you can refresh the Saleslakehouse source to view the newly created Materialized lake views for silver and gold schema.
+1.	Run all cells of the notebook using Spark SQL to create materialized lake views with data quality constraints. Once all cells are successfully executed, you can refresh the SalesLakehouse source to view the newly created materialized lake views for silver and gold schema.
 
   	:::image type="content" source="./media/tutorial/run-notebook.png" alt-text="Screenshot showing run notebook." border="true" lightbox="./media/tutorial/run-notebook.png":::
 
 ## Schedule the pipeline
 
-1.	Once the materialized lake views for silver and gold layers are created, click on the ‘Managed materialized lake view’ button in the Lakehouse to see the lineage view autogenerated based on dependencies. You can find that each dependent materialized lake views form the nodes of the lineage.
+1.	Once the materialized lake views for silver and gold layers are created, click on the ‘Managed materialized lake view’ button in the Lakehouse to see the lineage view get autogenerated based on dependencies. You can find that each dependent materialized lake view forms the nodes of the lineage.
 
-  	:::image type="content" source="./media/tutorial/managed-materialized-view-1.png" alt-text="Screenshot showing materialized lake view." border="true" lightbox="./media/tutorial/managed-materialized-view-1.png":::
+  	:::image type="content" source="./media/tutorial/manage-materialized-lake-view-1.png" alt-text="Screenshot showing materialized lake view." border="true" lightbox="./media/tutorial/manage-materialized-lake-view-1.png":::
 
-  	:::image type="content" source="./media/tutorial/managed-materialized-view-2.png" alt-text="Screenshot showing creation of lineage." border="true" lightbox="./media/tutorial/managed-materialized-view-2.png":::
+  	:::image type="content" source="./media/tutorial/manage-materialized-lake-view-2.png" alt-text="Screenshot showing creation of lineage." border="true" lightbox="./media/tutorial/manage-materialized-lake-view-2.png":::
 
 1.	Turn on and configure schedule.
 
-  	:::image type="content" source="./media/tutorial/run-dag.png" alt-text="Screenshot showing scheduling run the materialized lake views." border="true" lightbox="./media/tutorial/run-dag.png":::
+  	:::image type="content" source="./media/tutorial/run-lineage.png" alt-text="Screenshot showing scheduling run the materialized lake views." border="true" lightbox="./media/tutorial/run-lineage.png":::
 
 ## Monitoring and Troubleshooting
 
@@ -87,18 +84,20 @@ The high-level steps are as follows:
 
   	:::image type="content" source="./media/tutorial/dropdown-menu.png" alt-text="Screenshot showing scheduling execution." border="true" lightbox="./media/tutorial/dropdown-menu.png":::
 
-1.	By clicking on the latest run, you can find the materialized lake view metrics on right side panel. The bottom activity panel will provide a high-level overview of node execution status.
+1.	By clicking on any of the runs, you can find the materialized lake view details on right side panel. The bottom activity panel will provide a high-level overview of node execution status.
 
-  	:::image type="content" source="./media/tutorial/latest-run.png" alt-text="Screenshot showing latest run." border="true" lightbox="./media/tutorial/latest-run.png":::
+  	:::image type="content" source="./media/tutorial/latest-run.jpeg" alt-text="Screenshot showing latest run." border="true" lightbox="./media/tutorial/latest-run.jpeg":::
 
 1.	Clicking on any node in the lineage will provide the node execution details and link to detailed logs.
 
   	:::image type="content" source="./media/tutorial/execution details.png" alt-text="Screenshot showing execution details." border="true" lightbox="./media/tutorial/execution details.png":::
 
-1.	If the node status is “Failed”, then the error message will also be displayed.
+1.	If the node status is “Failed”, then an error message will also be displayed.
 
   	:::image type="content" source="./media/tutorial/execution-detail-logs.png" alt-text="Screenshot showing execution detail logs." border="true" lightbox="./media/tutorial/execution-detail-logs.png":::
 
-1.	Clicking on the Detailed logs link will redirect you to the Monitoring Hub from where you can access Spark error logs for further troubleshooting.
+1.	Clicking on the detailed logs link will redirect you to the Monitor Hub from where you can access Spark error logs for further troubleshooting.
 
   	:::image type="content" source="./media/tutorial/spark-logs.png" alt-text="Screenshot showing spark logs." border="true" lightbox="./media/tutorial/spark-logs.png":::
+
+1. Click on the "Data quality report" button on the ribbon to create/view an autogenerated data quality report.
