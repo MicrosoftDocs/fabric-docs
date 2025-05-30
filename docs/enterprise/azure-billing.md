@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/29/2025
+ms.date: 05/30/2025
 ---
 
 # Understand your Azure bill on a Fabric capacity
@@ -30,7 +30,7 @@ In Microsoft Cost Management, your cost analysis and invoice show multiple meter
 | Dataflows High Scale Compute Capacity Usage CU | Represents the Dataflows High Scale Compute used for staging items on your capacity | GA |
 | Dataflows Standard Compute Capacity Usage CU   | Represents the Dataflows Standard Compute usage on your capacity                    | GA |
 | Digital Twin Builder Capacity Usage CU  | Represents the digital twin builder entity-related usage on your capacity. Currently not billable.  | Preview |
-| Digital Twin Builder Operation Capacity Usage CU  | Represents the on-demand and scheduled digital twin builder flow operations usage on your capacity | Preview |
+| Digital Twin Builder Operation Capacity Usage CU | Represents the on-demand and scheduled digital twin builder flow operations usage on your capacity | Preview |
 | Eventhouse                                     | Represents Row Level Eventhouse on your capacity                                    | GA |
 | Eventstream Capacity Usage CU                  | Represents the ingestion or processing usage for eventstreams on your capacity      | GA |
 | Eventstream Connector                          | Represents Eventstream Row Level Connector EV your capacity                         | GA |

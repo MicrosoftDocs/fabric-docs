@@ -3,33 +3,30 @@ title: Capacity consumption for digital twin builder (preview)
 description: This article contains information about how digital twin builder (preview) measures resource consumption that affects your billing.
 author: baanders
 ms.author: baanders
-ms.date: 04/28/2025
+ms.date: 05/30/2025
 ms.topic: conceptual
 ---
 
 # Capacity consumption for digital twin builder (preview)
 
-This article contains information about how digital twin builder (preview) capacity usage is billed and reported. Digital twin builder measures usage according to three metrics:
-* The sum of the following counts per hour: the number of customer-defined entity types, the number of entity type relationships, the number of entity instances, and the number of entity instance relationships. 
-    * Instances that are deleted or inactive aren't counted.
-* The compute resources used to process mapping and contextualization operations in digital twin builder flows (on-demand or scheduled).
-* The user-generated and system-generated queries for exploring, listing, and refreshing data. 
+This article contains information about how digital twin builder (preview) capacity usage is billed and reported.
+
+Digital twin builder currently measures usage according to one active metric: The compute resources used to process mapping and contextualization operations in digital twin builder flows (on-demand or scheduled).
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
+>[!NOTE]
+> The meters for digital twin builder are currently in preview and may be subject to change.
 
 ## Consumption rates
 
 The following table defines how many capacity units (CU) are consumed when digital twin builder (preview) is used.
 
-[!NOTE]
-> The meters for digital twin builder are currently in preview and may be subject to change.
-
-| Meter name | Operation name | Fabric consumption rate (CU hours) |
+| Meter name | Operation name | Fabric consumption rate (CU hours) | Description |
 |---|---|---|
-| Digital Twin Builder Operation Capacity Usage CU | Digital Twin Builder Operations | 4 |
+| Digital Twin Builder Operation Capacity Usage CU | Digital Twin Builder Operation | 4 | Usage for on-demand and scheduled digital twin builder flow operations |
 
-The operations are defined as follows:
-* Digital Twin Builder Operations: Usage for on-demand and scheduled digital twin builder flow operations.
+Digital twin builder also shows another meter, **Digital Twin Builder Per Hour**, but it's currently not billable.
 
 The SQL endpoint query operation of [Fabric Data Warehouse](../../data-warehouse/usage-reporting.md) is used for reporting usage of user-generated and system-generated queries for listing, exploring, and refreshing data in digital twin builder. The same SQL endpoint query operation is used to report capacity units (CU) consumed for counting activities, like counting customer-defined entity types, entity type relationships, entity instances, and entity instance relationships. For more information about using the SQL endpoint query for counting, see [Counts require querying SQL endpoint](#counts-require-querying-sql-endpoint).
 
@@ -40,9 +37,6 @@ The [Microsoft Fabric Capacity Metrics](../../enterprise/metrics-app.md) app pro
 Initially, you must be a capacity admin to install the Microsoft Fabric Capacity Metrics app. Once the app is installed, anyone in the organization can be granted permissions to view the app. For more information about the app, see [Install the Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md#install-the-app). 
 
 In the Fabric Capacity Metric app, you see operations for digital twin builder (preview) and digital twin builder flow. To see the operation details, select digital twin builder under the item type. All the data stored within Fabric storage incurs Fabric storage costs.
-
->[!NOTE]
-> Digital twin builder also shows a second, non-billable meter, **Digital Twin Builder Capacity Usage CU**. It is currently not billable.
 
 ## Limits and considerations 
 

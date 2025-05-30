@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/20/2025
+ms.date: 05/30/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -205,15 +205,14 @@ You can find the consumption rates for Azure and Fabric events in [Azure and Fab
 
 You can find the consumption rates for digital twin builder (preview) in [Digital twin builder (preview) capacity consumption, usage reporting, and billing](../real-time-intelligence/digital-twin-builder/resources-capacity-usage.md).
 
-[!NOTE]
+>[!NOTE]
 > The meters for digital twin builder are currently in preview and may be subject to change.
 
 | Operation        | Description                 | Item     | Azure billing meter              | Type       |
 | ---------------- | --------------------------- | -------- | -------------------------------- | ---------- |
-| Digital Twin Builder Operations | Usage for on-demand and scheduled digital twin builder flow operations.  | Digital twin builder flow | Digital Twin Builder Operation Capacity Usage CU | Background |
+| Digital Twin Builder Operation | Usage for on-demand and scheduled digital twin builder flow operations.  | Digital twin builder flow | Digital Twin Builder Operation Capacity Usage CU | Background |
 
->[!NOTE]
-> Digital twin builder also shows a second, non-billable meter, **Digital Twin Builder Capacity Usage CU**. It is currently not billable.
+Digital twin builder also shows another meter, **Digital Twin Builder Per Hour**, but it's currently not billable.
 
 #### Eventstream
 
