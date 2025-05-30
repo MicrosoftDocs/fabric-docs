@@ -15,14 +15,14 @@ Welcome to the Data Factory Lab! This article guides you through the process of 
 
 By following this guide, you'll be able to get started with Data Factory and apply its powerful capabilities to orchestrate data movement, transform data, and copy data efficiently.
 
-:::image type="content" source="media/guided-lab-experience/link-to-lab.png" alt-text="Image link to the Data Factory lab." link="aka.ms/DataFactoryLab":::
+:::image type="content" source="media/guided-lab-experience/link-to-lab.png" alt-text="Image link to the Data Factory lab." link="https://aka.ms/DataFactoryLab":::
 
 This lab is a click-by-click environment that simulates the Fabric interface. Because the lab is a simulation, meaning it doesn't use an actual Fabric environment, you'll be able to access the lab with no sign-ups necessary.
 
 To begin, you'll need to access the Data Factory lab environment. You can do this by visiting the following link: 
 
 > [!div class="nextstepaction"]
-> [Data Factory Lab](aka.ms/DataFactoryLab)[Data Factory Lab]
+> [Data Factory Lab](https://aka.ms/DataFactoryLab)[Data Factory Lab]
 
 
 ## Medallion task flow
