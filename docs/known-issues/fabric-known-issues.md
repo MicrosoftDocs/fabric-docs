@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/27/2025
+ms.date: 05/30/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1149  | Power BI | [Next button in connection authoring is greyed out](./known-issue-1149-next-button-connection-authoring-greyed-out.md) | May 30, 2025 |
 |  1151  | Administration & Management | [Disabling the Workspace encryption setting doesn't work](./known-issue-1151-disabling-workspace-encryption-setting-not-work.md) | May 27, 2025 |
 |  1148  | Power BI | [Dynamics 365 and KQL query doesn't save reports](./known-issue-1148-dynamics-365-kql-query-not-save-reports.md) | May 27, 2025 |
 |  1147  | Power BI | [Button slicer formatting broken in service or May Desktop](./known-issue-1147-button-slicer-formatting-broken-service-may-desktop.md) | May 27, 2025 |
@@ -135,7 +136,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](./known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 | Fixed: April 15, 2025 |
 |  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](./known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 | Fixed: April 15, 2025 |
 |  837  | Data Engineering | [Monitoring hub displays incorrect queued duration](./known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md) | September 17, 2024 | Fixed: April 15, 2025 |
-|  979  | Databases | [SQL databases not available with private link through January 2025](./known-issue-979-sql-databases-not-available-private-link.md) | January 6, 2025 | Fixed: April 11, 2025 |
 
 ## Related content
 
