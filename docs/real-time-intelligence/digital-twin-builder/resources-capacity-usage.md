@@ -28,8 +28,6 @@ The following table defines how many capacity units (CU) are consumed when digit
 
 Digital twin builder also shows another meter, **Digital Twin Builder Per Hour**, but it's currently not billable.
 
-The SQL endpoint query operation of [Fabric Data Warehouse](../../data-warehouse/usage-reporting.md) is used for reporting usage of user-generated and system-generated queries for listing, exploring, and refreshing data in digital twin builder. The same SQL endpoint query operation is used to report capacity units (CU) consumed for counting activities, like counting customer-defined entity types, entity type relationships, entity instances, and entity instance relationships. For more information about using the SQL endpoint query for counting, see [Counts require querying SQL endpoint](#counts-require-querying-sql-endpoint).
-
 ## Monitoring usage 
 
 The [Microsoft Fabric Capacity Metrics](../../enterprise/metrics-app.md) app provides visibility into capacity usage for all Fabric workloads in one place. Administrators can use the app to monitor capacity, the performance of workloads, and their usage compared to purchased capacity. 
@@ -46,13 +44,6 @@ Digital twin builder is currently not supported when [Autoscale Billing for Spar
 
 If autoscale is enabled for your Fabric capacity, attempts to create new digital twin builder items will fail. Any existing digital twin builder items might not function as expected while autoscaling is active. For example, digital twin builder flow doesn't execute (in either on-demand or scheduled mode) to map or contextualize data.
 
-### Counts require querying SQL endpoint
-
-Currently, digital twin builder (preview) queries the SQL endpoint of your lakehouse to determine the object count used for billing in the [Digital Twin Builder Capacity Usage CU](#consumption-rates) meter. This query incurs a small charge. 
-
-For more information on Fabric query charges, see [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
-
 ## Subject to changes in Microsoft Fabric workload consumption rate 
 
 Consumption rates are subject to change at any time. Microsoft provides notice of changes through email and in-product notifications. Changes are effective on the date stated in the release notes and the Microsoft Fabric blog. If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.
-
