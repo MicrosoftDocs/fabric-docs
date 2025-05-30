@@ -11,7 +11,7 @@ ms.search.form: On-premises data sources gateway
 
 # How to access on-premises data sources in Data Factory for Microsoft Fabric
 
-Data Factory for Microsoft Fabric is a cloud-based, data integration service that allows you to create, schedule, and manage workflows for various data sources. When your data sources are located on-premises, Microsoft provides the On-Premises Data Gateway to securely bridge the gap between your on-premises environment and the cloud. This document guides you through the process of creating and connecting to this gateway to access your on-premises data sources.
+Data Factory for Microsoft Fabric is a cloud-based, data integration service that allows you to create, schedule, and manage workflows for various data sources. When your data sources are located on-premises, Microsoft provides the on-premises Data Gateway to securely bridge the gap between your on-premises environment and the cloud. This document guides you through the process of creating and connecting to this gateway to access your on-premises data sources.
 
 ## Available connection types
 
@@ -73,6 +73,12 @@ Available connection types supported for on-premises connections include:
 
 ## Connect your on-premises data source to a Dataflow Gen2 in Data Factory for Microsoft Fabric
 
+In this example, you'll create a Dataflow Gen2 to load data from an on-premises data source to a cloud destination.
+
+1. [Create an on-premises data gateway to connect to your source.](#create-an-on-premises-data-gateway)
+
+1. [Create a connection to your on-premises data source.](#create-a-connection-for-your-on-premises-data-source)
+
 1. Go to your workspace and create a Dataflow Gen2.
 
    :::image type="content" source="media/how-to-access-on-premises-data/create-new-dataflow.png" alt-text="Screenshot showing a demo workspace with the new Dataflow Gen2 option highlighted.":::
@@ -93,9 +99,13 @@ Available connection types supported for on-premises connections include:
 
    :::image type="content" source="media/how-to-access-on-premises-data/publish-dataflow-inline.png" lightbox="media/how-to-access-on-premises-data/publish-dataflow.png" alt-text="Screenshot showing the Power Query editor with the Publish button highlighted.":::
 
-Now you've created a Dataflow Gen2 to load data from an on-premises data source into a cloud destination.
+## Use on-premises data in a pipeline
 
-## Using on-premises data in a pipeline
+In this example, you'll create and run a [pipeline](pipeline-runs.md) to load data from an on-premises data source into a cloud destination.
+
+1. [Create an on-premises data gateway to connect to your source.](#create-an-on-premises-data-gateway)
+
+1. [Create a connection to your on-premises data source.](#create-a-connection-for-your-on-premises-data-source)
 
 1. Go to your workspace and create a data pipeline.
 
@@ -116,10 +126,35 @@ Now you've created a Dataflow Gen2 to load data from an on-premises data source 
 
    :::image type="content" source="media/how-to-access-on-premises-data/run-pipeline.png" lightbox="media/how-to-access-on-premises-data/run-pipeline.png" alt-text="Screenshot showing where to run the pipeline in the pipeline editor window.":::
 
-Now you've created and ran a pipeline to load data from an on-premises data source into a cloud destination. 
-
 > [!NOTE]
-> Local access to the machine with the on-premises data gateway installed is not allowed in data pipelines.
+> Local access to the machine with the on-premises data gateway installed isn't allowed in data pipelines.
+
+## Use on-premises data in a Copy job
+
+In this example, we'll show you how to connect a [Copy job](what-is-copy-job.md#supported-connectors) on an on-premises data source.
+
+1. [Create an on-premises data gateway to connect to your source.](#create-an-on-premises-data-gateway)
+
+1. Navigate to your workspace and create a new **Copy job.**
+
+   :::image type="content" source="media/how-to-access-on-premises-data/create-copy-job.png" lightbox="media/how-to-access-on-premises-data/create-copy-job.png" alt-text="Screenshot showing the new item menu in the Microsoft Fabric workspace with Copy job highlighted.":::
+
+1. In the Copy job wizard, on the Choose data source page, go to **New sources**, and select your source. In this example, we're using SQL Server database.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/copy-job-choose-data-source.png" lightbox="media/how-to-access-on-premises-data/copy-job-choose-data-source.png" alt-text="Screenshot of the Copy job wizard with a new source selected.":::
+
+1. In the **Connect to data source** section, enter your connection details. Once provided, the on-premises data gateway connection created in earlier is automatically populated based on your configuration.  
+
+   :::image type="content" source="media/how-to-access-on-premises-data/copy-job-connection-details.png" lightbox="media/how-to-access-on-premises-data/copy-job-connection-details.png" alt-text="Screenshot of the connect to data source page with the connection details highlighted for the on-premises source.":::
+
+1. Choose the target destination where you want to load the data from your source.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/copy-job-destination.png" lightbox="media/how-to-access-on-premises-data/copy-job-destination.png" alt-text="Screenshot showing where to choose the data destination in the Copy job wizard.":::
+
+1. On the **Map to destination** and **Settings** pages, review and configure the data mapping and Copy job mode settings.
+1. Then, on the **Review + Save** page, select **Save + Run** to execute the Copy job.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/copy-job-save-run.png" lightbox="media/how-to-access-on-premises-data/copy-job-save-run.png" alt-text="Screenshot of the Review and save menu of the Copy job wizard, with the Save + Run button highlighted.":::
 
 ## Related content
 

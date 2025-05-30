@@ -1,8 +1,8 @@
 ---
 title: Transform and enrich data seamlessly with AI functions
 description: Learn how to use AI functions in Fabric to transform and enrich data with lightweight LLM-powered code.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
