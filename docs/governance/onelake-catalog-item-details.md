@@ -10,25 +10,23 @@ ms.custom:
 #customer intent: As data engineer, data scientist, analyst, or business user, I want to understand the information I see on a item's item details view, and use the functionality that is provided there.
 ---
 
-# Item details page
+# View item details in the OneLake catalog
 
-The item details page enables you to drill down and explore items within the **OneLake Catalog Explorer**. It makes it easy to find, explore, and use items across your organization by providing detailed information and entry points for various actions.
+The item details page allows you to drill down and examine items in the **OneLake Catalog Explorer**. It provides detailed information and various action entry points, so you can find, explore, and use items across your organization.
 
-The item details view features several tabs that help you explore your selected item. These tabs are described in the following sections.
+The item details view includes several tabs that help you explore your selected item. These tabs are described in the following sections.
 
 This page is useful for:
 
-  * **Item owners**: Manage permissions, See refresh history and lineage to help monitor and manage their items.
-  * **Developers and Analysts**: Easily see trust signals of an item, find high-quality data to use as starting points, and helps prevent the creation of redundant items.
-  * **Consumers**: Find trustworthy apps, reports, and dashboards to use in their day to day work.
+  * **Item owners**: Manage permissions, view refresh history, and track lineage to monitor and manage items.
+  * **Developers and Analysts**: Access trust signals of an item, find high-quality data to use as starting points, and avoid creating redundant items.
+  * **Consumers**: Find trustworthy apps, reports, and dashboards for day to day work.
 
-To open the item for editing or viewing (depending on the item type), select **Open**.
-
-:::image type="content" source="./media/onelake-catalog-item-details/onelake-catalog-explore-item-details-view.png" alt-text="Screenshot of the explore tab item details view.":::
+To open the item details page from the **Explore** tab in the OneLake Catalog Explorer, you can either hover over an item in the list and click the **Open** icon that appears, or select the item to open its details view and then click the **Open** button within the view. The item details page will open in a new tab.
 
 ## Overview tab
 
-The **Overview** tab shows the following information about the selected item:
+The **Overview** tab in the item details page shows the following information about the selected item:
 
   * **Last Update**: The last refresh or run time of the item. If the last update was unsuccessful, a red warning triangle will appear, selecting in will show the error details. 
   * **Description**: Any description associated with the item. Providing a useful and meaningful description helps users discover the right item for them.
@@ -39,6 +37,7 @@ The **Overview** tab shows the following information about the selected item:
   * **Tags**: The list of [tags](tags-overview.md) applied on the item.
 
 ### Data Schema
+
 Data items such as semantic models and lakehouses show the underlying table and column schema for exploration purposes. The tables and columns within the item are displayed directly on this tab.
 
   * To help locate the table or column you're looking for, use the **Filter by keyword** box.
