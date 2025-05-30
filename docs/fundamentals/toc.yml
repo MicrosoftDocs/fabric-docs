@@ -209,6 +209,8 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Next button in connection authoring is greyed out
+      href: ../known-issues/known-issue-1149-next-button-connection-authoring-greyed-out.md
     - name: Disabling the Workspace encryption setting doesn't work
       href: ../known-issues/known-issue-1151-disabling-workspace-encryption-setting-not-work.md
     - name: Dynamics 365 and KQL query doesn't save reports
