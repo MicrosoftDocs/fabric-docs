@@ -1,8 +1,8 @@
 ---
 title: Automate Git integration by using APIs
 description: Learn how to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs and Azure DevOps or GitHub.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: Pierre, NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
@@ -144,7 +144,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
     ---
 
-1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch. (you might need to create a connection before for GitHub - follow below instruction)
+1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch. (you might need to [create a connection(](#get-or-create-git-provider-credentials-connection) first)
 
    ### [Azure DevOps (User principal)](#tab/ADO)
 

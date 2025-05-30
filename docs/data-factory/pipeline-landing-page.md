@@ -6,6 +6,7 @@ ms.author: xupzhou
 author: PennyZhou-MSFT
 ms.topic: conceptual
 ms.date: 05/21/2024
+ms.custom: pipelines
 ---
 
 # Explore data solutions efficiently using the Data Factory pipeline landing page

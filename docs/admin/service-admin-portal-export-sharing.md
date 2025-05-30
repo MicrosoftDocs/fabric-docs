@@ -4,7 +4,7 @@ description: Learn how to configure export and sharing settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.date: 02/16/2025
+ms.date: 05/26/2025
 LocalizationGroup: Administration
 ---
 
@@ -14,7 +14,7 @@ The export and sharing settings allow the Fabric administrator the flexibility t
 
 Sharing settings are also managed through these settings. You can determine how and who can share Power BI content in your organization, as well as determine settings for sharing content with users outside your organization. These settings are configured in the tenant settings section of the [Admin portal](./admin-center.md#how-to-get-to-the-admin-portal). For information about how to get to and use tenant settings, see [About tenant settings](about-tenant-settings.md).
 
-## External data sharing (preview)
+## External data sharing
 
 When you turn on this setting, the users you specify will be able to share read-only links to data stored in your organization's OneLake storage with collaborators both outside and inside your organization. Collaborators who receive the link will be able to view, build on, and share the data both within and beyond their own Fabric tenants, using their organization's licenses and capacities.
 
@@ -30,7 +30,7 @@ To turn on external data sharing:
 
 1. Specify which users you want to be able to create external data shares.
 
-## Users can accept external data shares (preview)
+## Users can accept external data shares
 
 When you turn on this setting, the users you specify will be able to accept read-only links to data from another organization’s Fabric tenant. Users who accept an external share link can view, build on, and share this data, both inside and outside of your organization. For more information about external data sharing and its security considerations, see [External data sharing](../governance/external-data-sharing-overview.md).
 

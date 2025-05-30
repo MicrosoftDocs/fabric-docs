@@ -4,9 +4,11 @@ description: This article explains how to copy data using Azure Databricks.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/07/2025
-ms.custom:
+ms.date: 05/21/2025
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Azure Databricks in a copy activity
@@ -73,6 +75,8 @@ The following properties are **required**:
 
   - If you select **Table**:
 
+    - **Catalog**: A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables.
+
     - **Database**: Select your database from the drop-down list or type the database.
 
     - **Table**: Specify the name of the table to read data. Select the table from the drop-down list or type the table name.
@@ -118,7 +122,7 @@ To use this feature, create an [Azure Blob storage](connector-azure-blob-storage
 >[!NOTE]
 >The staging storage account credential should be pre-configured in Azure Databricks cluster configuration, learn more from [Prerequisites](#prerequisites).
 
-## Destination
+### Destination
 
 The following properties are supported for Azure Databricks under the **Destination** tab of a copy activity.
 
@@ -127,6 +131,8 @@ The following properties are supported for Azure Databricks under the **Destinat
 The following properties are **required**:
 
 - **Connection**: Select an Azure Databricks connection from the connection list. If no connection exists, then create a new Azure Databricks connection.
+
+- **Catalog**: A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables.
 
 - **Database**: Select your database from the drop-down list or type the database.
 
@@ -188,6 +194,7 @@ The following tables contain more information about a copy activity in an Azure 
 |**Connection** |Your connection to the source data store.|< your Azure Databricks connection >|Yes|connection|
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.| • **Table**<br>  • **Query** |No| / |
 | For **Table** | | | | |
+| **Catalog** | A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables. | < your catalog > | No (choose default catalog if it’s null) | catalog |
 |**Database** | Your database that you use as source.|< your database >| No |database|
 |**Table** |Your source data table to read data.|< your table name >| No |table|
 | For **Query** | | | | |
@@ -201,6 +208,7 @@ The following tables contain more information about a copy activity in an Azure 
 |Name |Description |Value |Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the destination data store.|< your Azure Databricks connection >|Yes|connection|
+| **Catalog** | A catalog serves as the highest-level container within the Unity Catalog framework, it allows you to organize your data into databases and tables. | < your catalog > | No (choose default catalog if it’s null) | catalog |
 |**Database** | Your database that you use as destination.|< your database >|Yes |database|
 |**Table** |Your destination data table to write data.|< your table name >|Yes|table|
 |**Pre-copy script** |  Specify a script for Copy Activity to execute before writing data into destination table in each run. You can use this property to clean up the pre-loaded data. | < your pre-copy script> |No| preCopyScript |

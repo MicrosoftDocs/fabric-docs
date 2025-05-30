@@ -2,8 +2,8 @@
 title: Microsoft Fabric ISV Partner integration with Fabric
 description:  Fabric ISV Partner Ecosystem enables ISVs to use a streamlined solution that's easy to connect, onboard, and operate.
 ms.reviewer: richin
-ms.author: monaberdugo
-author: mberdugo
+ms.author: billmath
+author: billmath
 ms.topic: overview
 ms.custom:
 ms.search.form:

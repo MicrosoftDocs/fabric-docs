@@ -6,6 +6,7 @@ ms.date: 04/10/2025
 ms.author: yexu
 ms.topic: overview
 ms.search.form: product-data-factory
+ms.custom: copy-job
 ---
 
 # Copy job connectors in Microsoft Fabric

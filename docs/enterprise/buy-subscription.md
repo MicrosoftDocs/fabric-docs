@@ -1,8 +1,8 @@
 ---
 title: Buy a Microsoft Fabric subscription
 description: Learn how to buy a Microsoft Fabric subscription so that you can start working in the Microsoft Fabric platform.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom:
 ms.date: 05/06/2025

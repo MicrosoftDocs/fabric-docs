@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: whhender
 author: whhender
 ms.topic: tutorial
-ms.custom:
+ms.custom: pipelines
 ms.date: 12/18/2024
 ---
 

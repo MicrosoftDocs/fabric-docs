@@ -83,6 +83,9 @@ Here's a list of regions that support mirroring for Azure Databricks Catalog:
     - East US2
     - North Central US
     - West US
+    - West US 2
+    - West US 3
+ 
    :::column-end:::
    :::column span="":::
     **Middle East and Africa**:
@@ -90,6 +93,7 @@ Here's a list of regions that support mirroring for Azure Databricks Catalog:
     - South Africa North
     - South Africa West
     - UAE North
+    - Israel Central
    :::column-end:::
 :::row-end:::
 

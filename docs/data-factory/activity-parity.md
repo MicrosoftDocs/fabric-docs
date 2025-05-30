@@ -5,7 +5,7 @@ author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to 
 ms.date: 12/18/2024
-ms.custom: template-how-to
+ms.custom: pipelines
 ---
 
 # Activity continuity between Azure Data Factory (ADF) and Data Factory in Fabric

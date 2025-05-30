@@ -1,8 +1,8 @@
 ---
 title: Understand Autoscale compute for Spark detail page
 description: Learn how to read the Microsoft Fabric Capacity Metrics app's Autoscale compute for Spark detail page.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: how-to
 ms.custom:
 ms.date: 03/24/2025

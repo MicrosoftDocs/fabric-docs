@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/20/2025
+ms.date: 05/27/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,12 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1151  | Administration & Management | [Disabling the Workspace encryption setting doesn't work](./known-issue-1151-disabling-workspace-encryption-setting-not-work.md) | May 27, 2025 |
+|  1148  | Power BI | [Dynamics 365 and KQL query doesn't save reports](./known-issue-1148-dynamics-365-kql-query-not-save-reports.md) | May 27, 2025 |
+|  1147  | Power BI | [Button slicer formatting broken in service or May Desktop](./known-issue-1147-button-slicer-formatting-broken-service-may-desktop.md) | May 27, 2025 |
+|  1146  | Power BI | [Service error on privacy level challenge for power query](./known-issue-1146-service-error-privacy-level-challenge-power-query.md) | May 27, 2025 |
+|  1144  | Data Engineering | [Py4JJavaError when saving delta table on Fabric 1.3](./known-issue-1144-java-error-saving-delta-table-fabric-1-3.md) | May 22, 2025 |
+|  1143  | Power BI | [Error with Dremio Connector using Dremio.DatabasesV370 function](./known-issue-1143-error-dremio-connector-dremio-function.md) | May 22, 2025 |
 |  1142  | Data Warehouse | [SQL editor Copilot code completion feature might cause high usage](./known-issue-1142-sql-editor-copilot-code-completion-feature-high-usage.md) | May 20, 2025 |
 |  1138  | Power BI | [Credential update in Google Analytics connections fails with JSON error](./known-issue-1138-credential-update-google-analytics-connections-fails.md) | May 19, 2025 |
 |  1137  | Data Engineering | [Transient failure for deploying User data functions welcome templates](./known-issue-1137-failure-deploying-user-data-functions-welcome-templates.md) | May 19, 2025 |
@@ -65,7 +71,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1028  | Data Engineering | [Slow Spark session startup caused by Native Execution Engine](./known-issue-1028-slow-spark-session-startup-native-execution-engine.md) | February 19, 2025 |
 |  1027  | Data Factory | [Mirroring fails for tables with unique index on unsupported data type](./known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md) | February 19, 2025 |
 |  1017  | Data Engineering | [Unsupported error for legacy timestamp in Fabric Runtime 1.3](./known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md) | February 5, 2025 |
-|  1004  | Data Engineering | [Notebook and SJD job statuses are in progress in monitor hub](./known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md) | January 29, 2025 |
 |  1002  | Power BI | [Reports that use functions with RLS don't work](./known-issue-1002-reports-functions-rls-not-work.md) | January 28, 2025 |
 |  991  | Data Factory | [Apache Airflow job creation shows Fabric upgrade message](./known-issue-991-apache-airflow-job-creation-upgrade-message.md) | January 13, 2025 |
 |  989  | Data Factory | [Local data access isn't allowed for pipeline using on-premises data gateway](./known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md) | January 13, 2025 |
@@ -93,6 +98,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1004  | Data Engineering | [Notebook and SJD job statuses are in progress in monitor hub](./known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md) | January 29, 2025 | Fixed: May 27, 2025 |
 |  1104  | Power BI | [Power BI visual warning about style preset not found](./known-issue-1104-visual-warning-style-preset-not-found.md) | April 18, 2025 | Fixed: May 20, 2025 |
 |  1097  | Power BI | [Azure map zooms out automatically even with auto zoom turned off](./known-issue-1097-azure-map-zooms-out-auto-zoom-turned-off.md) | April 15, 2025 | Fixed: May 20, 2025 |
 |  1091  | Power BI | [New card visual conditional formatting rules don't work](./known-issue-1091-new-card-visual-conditional-formatting-rules-not-work.md) | April 10, 2025 | Fixed: May 20, 2025 |
@@ -130,15 +136,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](./known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 | Fixed: April 15, 2025 |
 |  837  | Data Engineering | [Monitoring hub displays incorrect queued duration](./known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md) | September 17, 2024 | Fixed: April 15, 2025 |
 |  979  | Databases | [SQL databases not available with private link through January 2025](./known-issue-979-sql-databases-not-available-private-link.md) | January 6, 2025 | Fixed: April 11, 2025 |
-|  1047  | Data Science | [Data Agent creation fails when tenant settings restricted to security groups](./known-issue-1047-ai-skill-creation-fails-tenant-settings-restricted-security-groups.md) | March 5, 2025 | Fixed: April 10, 2025 |
-|  1062  | Administration & Management | [Workspace identity tagged as preview for ADLS Gen2 connections](./known-issue-1062-workspace-identity-tagged-preview-adls-gen2-connections.md) | March 21, 2025 | Fixed: April 9, 2025 |
-|  1045  | Power BI | [Live connection to local model conversion resets report content in February Desktop](./known-issue-1045-live-connection-local-model-resets-report-content-desktop.md) | March 5, 2025 | Fixed: April 9, 2025 |
-|  1035  | Data Engineering | [Lakehouse ALM operations fail for Git using public APIs in UK South](./known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md) | February 25, 2025 | Fixed: April 9, 2025 |
-|  1063  | Data Factory | [Pipeline activities fail with Dynamics or Dataverse connections through OPDG](./known-issue-1063-pipeline-activities-fail-dynamics-dataverse-connections-opdg.md) | March 24, 2025 | Fixed: April 8, 2025 |
-|  1029  | Administration & Management | [Existing preview surge protection rules aren't visible in Capacity settings](./known-issue-1029-surge-protection-rules-not-visible-capacity-settings.md) | February 25, 2025 | Fixed: April 8, 2025 |
-|  957  | Data Factory | [Creation failure for Copy job item in empty workspace](./known-issue-957-creation-failure-copy-job-item-empty-workspace.md) | December 5, 2024 | Fixed: April 8, 2025 |
-|  1024  | Data Factory | [CopyJob item deletion fails with error](./known-issue-1024-copy-job-item-deletion-fails-error.md) | February 14, 2025 | Fixed: April 7, 2025 |
-|  877  | Data Factory | [Data pipeline connection fails after connection creator role is removed](./known-issue-877-pipeline-connection-fails-role-removed.md) | October 9, 2024 | Fixed: April 7, 2025 |
 
 ## Related content
 
