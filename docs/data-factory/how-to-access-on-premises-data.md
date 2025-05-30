@@ -11,7 +11,7 @@ ms.search.form: On-premises data sources gateway
 
 # How to access on-premises data sources in Data Factory for Microsoft Fabric
 
-Data Factory for Microsoft Fabric is a cloud-based, data integration service that allows you to create, schedule, and manage workflows for various data sources. When your data sources are located on-premises, Microsoft provides the On-Premises Data Gateway to securely bridge the gap between your on-premises environment and the cloud. This document guides you through the process of creating and connecting to this gateway to access your on-premises data sources.
+Data Factory for Microsoft Fabric is a cloud-based, data integration service that allows you to create, schedule, and manage workflows for various data sources. When your data sources are located on-premises, Microsoft provides the on-premises Data Gateway to securely bridge the gap between your on-premises environment and the cloud. This document guides you through the process of creating and connecting to this gateway to access your on-premises data sources.
 
 ## Available connection types
 
