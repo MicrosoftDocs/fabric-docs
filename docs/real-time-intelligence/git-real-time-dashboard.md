@@ -1,6 +1,6 @@
 ---
 title: Real-Time Dashboard - Git
-description: Learn about the Git integration for Real-Time Dashboard. 
+description: Learn about the Git integration for Fabric real-time dashboards. 
 ms.reviewer: bwatts
 ms.author: spelluru
 author: spelluru
@@ -11,38 +11,37 @@ ms.date: 05/29/2025
 ---
 
 # Real-time Dashboard - Git integration
+This article details the folder and file structure for Real-Time dashboard items once they're synced to a GitHub or Azure Devops repository.
 
-The following article details the file structure for Real-Time dashboard once they're synced to a GitHub or Azure Devops repository.
-
-
-## Folder Structure
+## Folder structure
 Once a workspace is synced to a repo, you see a top level folder for the workspace and a subfolder for each item that was synced. Each subfolder is formatted with **Item Name**.**Item Type**
 
-Within the folder for KQL queryset, you see the following files:
-- Platform: Defines fabric platform values such as Display Name and Description.
-- Properties: Defines item specific values.
+Within the folder for the dashboard, you see the following files:
 
-Here's an example of what the folder structure looks like:
+- **Platform**: Defines fabric platform values such as display name and description.
+- **Properties**: Defines item specific values.
+
+Here's an example of the folder structure:
 
 **Repo**
+
 * Workspace A
   * Item_A.KQLDashboard
     * .platform
-    * RealTimeDashboard.json
+    * RealTimeDashboard-1.json
 * Workspace B
   * Item_B.KQLDashboard
     * .platform
-    * RealTimeDashboard.json
+    * RealTimeDashboard-2.json
 
 
+### Real-Time Dashboard files
 
-### KQL Queryset files
-
-The following files are contained in an eventhouse folder:
+The following files are contained in a dashboard folder:
 
 - **.platform**
 
-    The file uses the following schema to define an eventhouse:
+    The file uses the following schema to define a real-time dashboard:
 
     ```json
     {
@@ -61,136 +60,136 @@ The following files are contained in an eventhouse folder:
 
 - ### Real-Time Dashboard files
 
-The file uses the following schema to define a Real-Time Dashboard:
-
-```json
-{
-  "$schema": "",
-  "id": "",
-  "eTag": "\"\"",
-  "schema_version": "",
-  "title": "",
-  "tiles": [
+    The file uses the following schema to define a real-time dashboard:
+    
+    ```json
     {
+      "$schema": "",
       "id": "",
+      "eTag": "\"\"",
+      "schema_version": "",
       "title": "",
-      "visualType": "",
-      "pageId": "",
-      "layout": {
-        "x": ,
-        "y": ,
-        "width": ,
-        "height":
-      },
-      "queryRef": {
-        "kind": "",
-        "queryId": ""
-      },
-      "visualOptions": {
-        "multipleYAxes": {
-          "base": {
-            "id": "",
-            "label": "",
-            "columns": [],
-            "yAxisMaximumValue": ,
-            "yAxisMinimumValue": ,
-            "yAxisScale": "",
-            "horizontalLines": []
+      "tiles": [
+        {
+          "id": "",
+          "title": "",
+          "visualType": "",
+          "pageId": "",
+          "layout": {
+            "x": ,
+            "y": ,
+            "width": ,
+            "height":
           },
-          "additional": [],
-          "showMultiplePanels":
-        },
-        "hideLegend": ,
-        "legendLocation": "",
-        "xColumnTitle": "",
-        "xColumn": ,
-        "yColumns": ,
-        "seriesColumns": ,
-        "xAxisScale": "",
-        "verticalLine": "",
-        "crossFilterDisabled": ,
-        "drillthroughDisabled": ,
-        "crossFilter": [
-          {
-            "interaction": "",
-            "property": "",
-            "parameterId": "",
-            "disabled":
+          "queryRef": {
+            "kind": "",
+            "queryId": ""
+          },
+          "visualOptions": {
+            "multipleYAxes": {
+              "base": {
+                "id": "",
+                "label": "",
+                "columns": [],
+                "yAxisMaximumValue": ,
+                "yAxisMinimumValue": ,
+                "yAxisScale": "",
+                "horizontalLines": []
+              },
+              "additional": [],
+              "showMultiplePanels":
+            },
+            "hideLegend": ,
+            "legendLocation": "",
+            "xColumnTitle": "",
+            "xColumn": ,
+            "yColumns": ,
+            "seriesColumns": ,
+            "xAxisScale": "",
+            "verticalLine": "",
+            "crossFilterDisabled": ,
+            "drillthroughDisabled": ,
+            "crossFilter": [
+              {
+                "interaction": "",
+                "property": "",
+                "parameterId": "",
+                "disabled":
+              }
+            ],
+            "drillthrough": [],
+            "selectedDataOnLoad": {
+              "all": ,
+              "limit":
+            },
+            "dataPointsTooltip": {
+              "all": ,
+              "limit":
+            }
           }
-        ],
-        "drillthrough": [],
-        "selectedDataOnLoad": {
-          "all": ,
-          "limit":
-        },
-        "dataPointsTooltip": {
-          "all": ,
-          "limit":
         }
-      }
-    }
-  ],
-  "baseQueries": [],
-  "parameters": [
-    {
-      "kind": "",
-      "id": "",
-      "displayName": "",
-      "description": "",
-      "variableName": "",
-      "selectionType": "",
-      "includeAllOption": ,
-      "defaultValue": {
-        "kind": ""
-      },
-      "dataSource": {
-        "kind": "",
-        "columns": {
-          "value": ""
-        },
-        "queryRef": {
+      ],
+      "baseQueries": [],
+      "parameters": [
+        {
           "kind": "",
-          "queryId": ""
+          "id": "",
+          "displayName": "",
+          "description": "",
+          "variableName": "",
+          "selectionType": "",
+          "includeAllOption": ,
+          "defaultValue": {
+            "kind": ""
+          },
+          "dataSource": {
+            "kind": "",
+            "columns": {
+              "value": ""
+            },
+            "queryRef": {
+              "kind": "",
+              "queryId": ""
+            }
+          },
+          "showOnPages": {
+            "kind": ""
+          },
+          "allIsNull":
+        },
+      ],
+      "dataSources": [
+        {
+          "id": "",
+          "name": "",
+          "clusterUri": "",
+          "database": "",
+          "kind": "",
+          "scopeId": ""
         }
-      },
-      "showOnPages": {
-        "kind": ""
-      },
-      "allIsNull":
-    },
-  ],
-  "dataSources": [
-    {
-      "id": "",
-      "name": "",
-      "clusterUri": "",
-      "database": "",
-      "kind": "",
-      "scopeId": ""
-    }
-  ],
-  "pages": [
-    {
-      "name": "",
-      "id": ""
-    }
-  ],
-  "queries": [
-    {
-      "dataSource": {
-        "kind": "",
-        "dataSourceId": ""
-      },
-      "text": "",
-      "id": "",
-      "usedVariables": [
-        "",
-        ""
+      ],
+      "pages": [
+        {
+          "name": "",
+          "id": ""
+        }
+      ],
+      "queries": [
+        {
+          "dataSource": {
+            "kind": "",
+            "dataSourceId": ""
+          },
+          "text": "",
+          "id": "",
+          "usedVariables": [
+            "",
+            ""
+          ]
+        }
       ]
     }
-  ]
-}
-```
+    ```
 
 ## Related content
 

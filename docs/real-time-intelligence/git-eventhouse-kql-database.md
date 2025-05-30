@@ -1,5 +1,5 @@
 ---
-title: Eventhouse and KQL database - Git
+title: Eventhouse and KQL database - Git integration
 description: Learn about the Git integration for Eventhouse and KQL Database. 
 ms.reviewer: bwatts
 ms.author: spelluru
@@ -11,8 +11,7 @@ ms.search.form: Eventhouse, KQL database, Overview
 # customer intent: I want to understand the integration of Eventhouse and KQL database with Microsoft Fabric's deployment pipelines and git, and how to configure and manage them in the ALM system.
 ---
 
-# Eventhouse and KQL database - GitHub Integration
-
+# Eventhouse and KQL database - Git integration
 The following article details the file structure for Eventhouse and KQL Database once they're synced to a GitHub or Azure Devops Repository.
 
 ## Folder Structure
