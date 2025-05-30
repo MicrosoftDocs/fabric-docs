@@ -1,6 +1,6 @@
 ---
 title: What is Microsoft Fabric Chargeback app (preview)?
-description: Learn how to use the Microsoft fabric Fabric Chargeback app.
+description: Learn how to use the Microsoft Fabric Chargeback app.
 author: kishanpujara
 ms.author: kishanpujara
 ms.reviewer: juliacawthra
