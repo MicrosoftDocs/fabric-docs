@@ -119,7 +119,7 @@ The table below shows the feature differences between various versions.
 
 | Version 1.1 | Version 1.0|
 |--------------|-------------|
-| The following mappings are used from MongoDB data types to interim data types used by the service internally.<br><br>Date -> DateTime<br>TimeStamp -> The most significant 32 bits -> DateTime; The least significant 32 bits -> Int32<br>Double -> Double<br>Int32 -> Int32<br>Int64 -> Int64<br>minKey -> String<br>maxKey -> String<br>Binary -> GUID (when SubType is "04") / String | The following mappings are used from MongoDB data types to interim data types used by the service internally.<br><br>Date -> String<br>TimeStamp -> Int32<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>minKey -> Int32<br>maxKey -> Int32<br>Binary -> String |
+| The following mappings are used from MongoDB data types to interim service data types.<br><br>Date -> DateTime<br>TimeStamp -> The most significant 32 bits -> DateTime; The least significant 32 bits -> Int32<br>Double -> Double<br>Int32 -> Int32<br>Int64 -> Int64<br>minKey -> String<br>maxKey -> String<br>Binary -> GUID (when SubType is "04") / String | The following mappings are used from MongoDB data types to interim service data types.<br><br>Date -> String<br>TimeStamp -> Int32<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>minKey -> Int32<br>maxKey -> Int32<br>Binary -> String |
 
 ## Table summary
 
