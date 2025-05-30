@@ -57,28 +57,20 @@ Adam decides the best option is to use **Spark** to build the extract and transf
 
 ## Scenario 5
 
-Rajesh, a data engineer, is tasked with ingesting incremental data from an on-premises SQL Server into a Microsoft Fabric Lakehouse. The ingested data will be used downstream for Power BI reporting. Rajesh's SQL Server instance already has Change Data Capture (CDC) enabled on key tables.
+Rajesh, a data engineer, is tasked with ingesting incremental data from an on-premises SQL Server into an Azure SQL Database. Rajesh's On-premises SQL Server instance already has Change Data Capture (CDC) enabled on key tables.
 
 Rajesh is looking for a simple, low-code, wizard-driven solution that enables him to:
 
-- Select multiple source tables
+- Select multiple native CDC enabled source tables
 - Perform an initial full load
 - Automatically switch to incremental data loads based on CDC
 - Schedule data refreshes for recurring updates
 
 He wants to avoid writing custom code or managing complex orchestrations. Ideally, he wants a "5x5 wizard" where he can accomplish the setup in just a few clicks.
 
-Rajesh chooses the **Copy job** feature in Microsoft Fabric. With on-premises gateway support, he securely connects to his SQL Server, selects the desired tables, and configures the data flow to land into the Lakehouse's bronze layer.
+Rajesh chooses the Copy job feature in Microsoft Fabric. With on-premises gateway support, he securely connects to his SQL Server, selects the desired tables, and configures the flow to land into the target Azure SQL Database.
 
-The Copy job meets Rajesh's needs with:
-
-- CDC-based replication that picks up data changes efficiently
-- Support for all major data sources and formats, including SQL Server
-- Table and column management, including column renaming, column mapping etc.
-- Configurable copy behaviors, such as choosing between append or overwrite for destination data
-- Can be scheduled for recurring execution
-
-This solution provides Rajesh with a low-friction and scalable data movement experience, allowing him to focus on delivering insights instead of maintaining data pipelines.
+The Copy job provides a low-friction and scalable data movement experience, meeting Rajesh’s requirements without the need to maintain complex pipelines.
 
 ## Related content
 
