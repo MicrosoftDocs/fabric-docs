@@ -94,7 +94,7 @@ Once the lakehouse is added as a data source, the **Explorer** pane on the left 
 - `dimreseller`
 - `dimsalesterritory`
 - `factinternetsales`
-- `cactresellersales`
+- `factresellersales`
 
 :::image type="content" source="./media/data-agent-scenario/get-started.png" alt-text="Screenshot showing where you can select tables for AI." lightbox="./media/data-agent-scenario/get-started.png":::
 
