@@ -42,13 +42,13 @@ For [Copilot in Notebooks](../data-engineering/copilot-notebooks-overview.md) an
 
 In order to use fully conversational agentic AI experiences, the agent needs to store conversation history across user sessions to maintain context. This ensures that the AI agent keeps context about what a user asked in previous sessions and is typically a desired behavior in many agentic AI experiences. Experiences such as Copilot in Notebooks and Fabric data agents are AI experiences that store conversation history across  user's sessions.
 
-**This history is stored inside the Azure security boundary, in the same region and in the same Azure Open AI resources that process all your Fabric AI requests.** The difference in this case is that the conversation history is stored for as long as the user allows. For experiences that do not store conversation history across sessions, no data is stored. Prompts are only processed by Azure Open AI resources that Fabric uses.
+**This history is stored inside the Azure security boundary, in the same region and in the same Azure OpenAI resources that process all your Fabric AI requests.** The difference in this case is that the conversation history is stored for as long as the user allows. For experiences that don't store conversation history across sessions, no data is stored. Prompts are only processed by Azure OpenAI resources that Fabric uses.
 
-**Your users can delete their conversation history at any time, simply by clearing the chat. This option exists both for Copilot in Notebooks and data agents.** If the conversation history is not manually removed, it will be stored for 28 days.
+**Your users can delete their conversation history at any time, simply by clearing the chat. This option exists both for Copilot in Notebooks and data agents.** If the conversation history isn't manually removed, it is stored for 28 days.
 
 ## Copilot in Notebooks: Responsible AI FAQ
 
-With Copilot in notebooks for Data Science and Data engineering in Microsoft Fabric, we offer an AI assistant to help transform, explore and build solutions in the context of the notebook.
+With Copilot in notebooks for Data Science and Data engineering in Microsoft Fabric, we offer an AI assistant to help transform, explore, and build solutions in the context of the notebook.
 
 For considerations and limitations, see [Limitations](../data-engineering/copilot-notebooks-overview.md#limitations).
 
@@ -61,7 +61,7 @@ For considerations and limitations, see [Limitations](../data-engineering/copilo
 
 - Copilot is best equipped to handle data science topics, so limit your questions to this area.
 - Explicitly describe the data you want Copilot to examine. If you describe the data asset - for example, by naming files, tables, or columns - Copilot can more likely retrieve relevant data and generate useful outputs.
-- For more granular responses, load the data into the notebook as DataFrames, or pin the data in your lakehouse. This gives Copilot more context with which to perform analysis. If an asset is too large to load, pinning it is a helpful alternative.
+- For more granular responses, load the data into the notebook as DataFrames, or pin the data in your lakehouse. This gives Copilot more context with which to perform analysis. If an asset is too large to load, pinning it's a helpful alternative.
 
 ## Fabric data agent: Responsible AI FAQ
 
@@ -77,7 +77,7 @@ Fabric data agent enables natural language interactions with structured data, al
 
 - The Fabric data agent is intended to simplify the data querying process. It allows users to interact with structured data through natural language. It supports user insights, decision-making, and generation of answers to complex questions without the need for specialized query language knowledge. Data agent is especially useful for business analysts, decision-makers, and other nontechnical users who need quick, actionable insights from data stored in sources like KQL database, Lakehouse, Power BI dataset, and Warehouse resources.
 
-- The Fabric data agent is not intended for use cases where deterministic and 100% accurate results are required, because of current LLM limitations.
+- The Fabric data agent isn't intended for use cases where deterministic and 100% accurate results are required, because of current LLM limitations.
 
 - The Fabric data agent isn't intended for uses cases that require deep analytics or causal analytics. For example, "why did the sales numbers drop last month?" is out of current scope.
 
@@ -99,7 +99,7 @@ The product team tested the data agent on various public and private benchmarks,
 
 ### What operational factors and settings allow for effective and responsible use of the Fabric data agent?
 
-- The Fabric data agent can only access the data that you provide. It uses the schema (table name and column name), as well as the The Fabric data agent instructions and example queries that you provide, in the User Interface (UI) or through the SDK.
+- The Fabric data agent can only access the data that you provide. It uses the schema (table name and column name), as well as the Fabric data agent instructions and example queries that you provide, in the User Interface (UI) or through the SDK.
 
 - The  Fabric data agent can only access the data that the user can access. If you use the data agent, your credentials are used to access the underlying database. If you don't have access to the underlying data, the data agent can't access that underlying data. This is true when you consume the data agent across different channels - for example, Azure AI Foundry or Microsoft Copilot Studio - where other users can use the data agent.
 
