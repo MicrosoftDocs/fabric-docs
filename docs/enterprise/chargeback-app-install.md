@@ -55,7 +55,7 @@ To upgrade a previous installation of the *Microsoft Fabric Chargeback* app, fol
         1. Select the **Microsoft Fabric Chargeback** app.
         . Select **Get it now**.
 1. In the **Update app** window, select one of the following:
-    - **Update the workspace and the app**: This option updates your current app and the workspace it resides in. This is the default option for upgrading the app. It removes the current version and its workspace and replace them with the new version of the app and a corresponding workspace.
+    - **Update the workspace and the app**: This option updates your current app and the workspace it resides in. This is the default option for upgrading the app. It removes the current version and its workspace and replaces them with the new version of the app and a corresponding workspace.
     - **Update only workspace content without updating the app**: This option updates the workspace but doesn't update the app. Select this option to update the app's workspace without upgrading the app.
     - **Install another copy of the app into a new workspace**: This option creates a new workspace and installs the new version of the app in this workspace. Select this option if you want to keep the old version of the app with the new one. This option creates another workspace for the new app version and installs the app in the newly created workspace. If you select this option, you need to provide a name for the new workspace.
 1. Select **Install**.
