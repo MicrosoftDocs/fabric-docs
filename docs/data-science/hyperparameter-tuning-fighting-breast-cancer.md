@@ -3,8 +3,8 @@ title: Hyperparameter tuning - Fighting Breast Cancer
 description: Identify the best combination of hyperparameters for your chosen classifiers with SynapseML.
 ms.topic: overview
 ms.custom:
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: fsolomon
 reviewer: JessicaXYWang
 
