@@ -5,7 +5,7 @@ ms.topic: how-to
 author: apurbasroy
 ms.author: apsinhar
 ms.reviewer: nijelsf
-ms.date: 04/28/2025
+ms.date: 05/29/2025
 ---
 
 # Understand materialized lake views operational run details
@@ -22,12 +22,12 @@ The activity panel is a section below the lineage view, where user can get the i
 *	Duration of the materialized lake views' execution
 *	Search bar for the materialized lake views
 
-:::image type="content" source="./media/operational-run-details/activity-panel.png" alt-text="Screenshot showing activity panel in a DAG UI." border="true" lightbox="./media/operational-run-details/activity-panel.png":::
+:::image type="content" source="./media/operational-run-details/activity-panel.png" alt-text="Screenshot showing activity panel in a lineage view." border="true" lightbox="./media/operational-run-details/activity-panel.png":::
 
 
 To view the lineage of materialized lake views within the lakehouse, you can click on a particular materialized lake view on the activity panel or in the lineage.
 
-:::image type="content" source="./media/operational-run-details/activity-panel-node.png" alt-text="Screenshot showing end to end flow of a node, on clicking a node name in activity panel in a DAG UI." border="true" lightbox="./media/operational-run-details/activity-panel-node.png":::
+:::image type="content" source="./media/operational-run-details/activity-panel-node.png" alt-text="Screenshot showing end to end flow of a node, on clicking a node name in activity panel in a lineage view." border="true" lightbox="./media/operational-run-details/activity-panel-node.png":::
 
 ## Details panel
 
@@ -41,7 +41,7 @@ The materialized lake view details panel on the right side of the lineage view d
 *	Status
 *	Detailed logs with link to monitor hub for debugging
 
-:::image type="content" source="./media/operational-run-details/end-to-end.png" alt-text="Screenshot showing details panel in a DAG UI." border="true" lightbox="./media/operational-run-details/end-to-end.png":::
+:::image type="content" source="./media/operational-run-details/end-to-end.png" alt-text="Screenshot showing details panel in a lineage view." border="true" lightbox="./media/operational-run-details/end-to-end.png":::
 
 On clicking the **More Details** link, the user is navigated to the monitor hub page for job level monitoring.
 
