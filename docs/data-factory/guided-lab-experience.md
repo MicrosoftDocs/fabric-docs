@@ -22,8 +22,7 @@ This lab is a click-by-click environment that simulates the Fabric interface. Be
 To begin, you'll need to access the Data Factory lab environment. You can do this by visiting the following link: 
 
 > [!div class="nextstepaction"]
-> [Data Factory Lab](https://aka.ms/DataFactoryLab)[Data Factory Lab]
-
+> [Data Factory Lab](https://aka.ms/DataFactoryLab)
 
 ## Medallion task flow
 
@@ -35,4 +34,9 @@ Orchestrating data movement in Data Factory involves coordinating various activi
 
 ## Transforming and copying data
 
-Transforming and copying data involves using various tools and activities within Data Factory to prepare and move data. Dataflows Gen 2, for example, allows you to ingest and prepare data at higher scales and land it into the OneLake through different storage solutions. You can also use a Copy job item to move data seamlessly from any source to any destination, with multiple delivery styles such as batch, incremental (CDC), and real-time data copying. 
+Transforming and copying data involves using various tools and activities within Data Factory to prepare and move data. Dataflows Gen 2, for example, allows you to ingest and prepare data at higher scales and land it into the OneLake through different storage solutions. You can also use a Copy job item to move data seamlessly from any source to any destination, with multiple delivery styles such as batch, incremental (CDC), and real-time data copying.
+
+## Related content
+
+> [!div class="nextstepaction"]
+> [Data Factory Training](/training/paths/get-started-fabric)
