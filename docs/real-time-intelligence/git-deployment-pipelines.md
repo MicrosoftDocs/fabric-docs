@@ -40,15 +40,6 @@ Real-Time Intelligence supports deployment pipelines for Eventstreams, Eventhous
 
 For details on setting up deployment pipelines, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
 
-### Supported Items Details
-
-- [Eventstream]()
-- [Eventhouse and KQL database]()
-- [KQL querysets]()
-- [Real-Time dashboards]()
-- [Activator]()
-
-
 ## Limitation
 
 * **Git Integration** and **Deployment Pipeline** have limited support for cross-workspace scenarios. To avoid issues, make sure all Eventstream destinations within the same workspace. Cross-workspace deployment might not work as expected.
