@@ -111,12 +111,12 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
+          - text: Schedule pipelines
+            url: pipeline-runs.md#scheduled-data-pipeline-runs
           - text: Orchestrate with Apache Airflow
             url: apache-airflow-jobs-concepts.md
       - linkListType: how-to-guide
         links:
-          - text: Schedule pipelines
-            url: pipeline-runs.md#scheduled-data-pipeline-runs
           - text: Start a pipeline from a storage event
             url: pipeline-storage-event-triggers.md
           - text: Monitor your pipelines
