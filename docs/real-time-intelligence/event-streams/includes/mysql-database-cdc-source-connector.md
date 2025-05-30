@@ -23,12 +23,9 @@ ms.date: 10/28/2024
 1. Enter the following information to configure the MySQL DB CDC data source, and then select **Next**.
 
    - **Port**: The default value is 3306. If your selected cloud connection is configured in **Manage connections and gateways**, ensure that the port number matches the one set there. If they don't match, the port number in the cloud connection in **Manage connections and gateways** take precedence. 
-   - **table**: Select **All tables** or **Enter table name(s)**. If you select the latter, specify tables using a comma-separated list of full table identifiers (`schemaName.tableName`) or valid regular expressions. For example:  
+   - **table**: Select **All tables** or **Enter table name(s)**. If you select the latter, specify tables using a comma-separated list of full table identifiers (`databaseName.tableName`). 
 
-      - Use `dbo.test.*` to select all tables whose names start with `dbo.test`.  
-      - Use `dbo\.(test1|test2)` to select `dbo.test1` and `dbo.test2`.  
-
-      You can mix both formats using commas. Up to 100 tables can be entered, with each table name (including the schema name) limited to 128 characters if using full table identifiers directly.
+      Up to 100 tables can be entered, with each table name (including the schema name) limited to 128 characters if using full table identifiers directly.
    - **Server ID**: Enter a unique value for each server and replication client in the MySQL cluster. The default value is 1000.
    
    > [!NOTE]
