@@ -332,10 +332,6 @@ While the steps in the previous section are required to provide access to user p
 
     :::image type="content" source="media/connect-apps-api-graphql/add-spn-permissions.png" alt-text="Screenshot of GraphQL API permissions.":::
 
-
-> [!IMPORTANT]
-> When defining the connectivity option for your API, make sure the API is configured to use single sign-on (SSO). Currently Service Principals do not support saved credentials. For more information, see [Create an API for GraphQL in Fabric and add data](get-started-api-graphql.md)
-
 Since a Service Principal requires either a certificate or a client secret, it is not supported by the Microsoft Authentication Library (MSAL) in single page applications (SPAs) like the React app we built in the last step. You can leverage a backend service properly secured with well defined authorization logic depending on your requirements and use cases.
 
 Once your API is configured to be accessed by a Service Principal, you can test it locally using a simple Node.JS application in your local machine:
