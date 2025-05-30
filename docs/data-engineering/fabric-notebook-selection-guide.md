@@ -109,8 +109,6 @@ This section provides a quick reference for the fundamental technical and archit
 | Cost Profile | Lower cost; ideal for short tasks and prototyping | Higher cost; suited for scalable, long-running workloads |
 | Python/Spark Versioning | Multiple Python versions available | Tied to specific Spark runtime version |
 | Custom Libraries | pip install + resource folders | pip install + resource folders + environments item |
-| ~~Environment Variables~~ | ~~Not supported~~ | ~~Supported~~ |
-| ~~Lakehouse Integration~~ | ~~Requires Lakehouse to be explicitly attached~~ | ~~Can read/write without attachment~~ |
 | Fabric Spark Capabilities | Limited access to Spark engine features | Full access: NEE, Autotune, VORDER, Vegas Cache |
 | Delta Lake Compatibility | Partially compatible; potential performance issues | Fully supported and optimized |
 
