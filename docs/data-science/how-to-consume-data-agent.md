@@ -113,7 +113,7 @@ To make the Fabric data agent tool available to your Azure AI agent, use a conne
 
 ```python
 # The Fabric connection ID can be found in the Azure AI Foundry project as a property of the Fabric tool
-# Your connection ID is in the format /subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group>/providers/Microsoft.MachineLearningServices/workspaces/<your-project-name>/connections/<your-fabric-connection-name>
+# Your connection ID is in the format /subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group>/providers/Microsoft.CognitiveServices/accounts/<ai-foundry-resource-name>/projects/<your-project-name>/connections/<your-fabric-connection-name>
 conn_id = "your-connection-id"
 
 # Initialize agent Fabric tool and add the connection ID
