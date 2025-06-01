@@ -201,7 +201,7 @@ In the Fabric UI, workspaces can be moved to other capacities in the following w
 
 Moving workspaces from one capacity to another has the following restrictions:
 
-* When you move a workspace, all jobs related to items in the workspace get cancelled.
+* When you move a workspace, all jobs related to items in the workspace get canceled.
 
 * Only movable item types can move between regions. **If you're reassigning a workspace to a capacity located in a different region, you must remove all non-movable items first, otherwise reassignment will fail**.
 
