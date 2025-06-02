@@ -1,14 +1,14 @@
 ---
-title: "Refresh a materialized lake view in lakehouse"
+title: "Refresh materialized lake views in lakehouse"
 description: Learn how to refresh a materialized lake view in lakehouse in Microsoft Fabric.
 author: abhishjain002 
 ms.author: abhishjain 
 ms.reviewer: nijelsf
 ms.topic: how-to
-ms.date: 05/29/2025
+ms.date: 06/02/2025
 ---
 
-# Refresh a materialized lake view in lakehouse
+# Refresh materialized lake views in lakehouse
 
 Once a materialized lake view is created, the service can handle its future refreshes based on the schedule provided in the generated lineage.  
 
@@ -23,7 +23,7 @@ The following refresh operations can occur depending on the updates to the data 
 If it's necessary to quickly reflect changes in a materialized lake view, you can utilize the following command to refresh the materialized lake view.
 
 ```sql
-    REFRESH MATERIALIZED LAKE VIEW MLV_Identifier [FULL]
+    REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier [FULL]
 ```
 Argument:
 
@@ -36,4 +36,4 @@ If the FULL keyword isn't included, the internal service determines, based on th
 
 ## Next steps
 
-* [Data quality in materialized lake view](./data-quality.md)
+* [Data quality in materialized lake views](./data-quality.md)
