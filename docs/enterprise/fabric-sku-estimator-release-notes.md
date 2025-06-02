@@ -7,7 +7,7 @@ ms.topic: release-notes
 ms.date: 05/27/2025
 ---
 
-# Fabric SKU Estimator (preview) Release notes
+# Fabric SKU Estimator (preview) release notes
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
