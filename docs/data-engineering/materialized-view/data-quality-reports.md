@@ -2,7 +2,7 @@
 title: "Power BI reports for data quality"
 description: Learn about data quality reports and alerts in materialized lake views within lakehouse in Microsoft Fabric
 author: anuj1905 
-ms.author: anujsharda, rkottackal
+ms.author: anujsharda
 ms.reviewer: nijelsf
 ms.topic: conceptual
 ms.date: 06/02/2025
