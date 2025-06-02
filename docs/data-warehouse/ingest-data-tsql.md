@@ -19,9 +19,11 @@ The Transact-SQL language offers options you can use to load data at scale from 
 
 ## Create a new table with the result of a query
 
-In [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)] you can easily create a new table based on a result of T-SQL query.
+Warehouse in Microsoft Fabric enables you to easily create a new table based on a result of T-SQL query, using the following T-SQL statements:
+- `CREATE TABLE AS SELECT` (CTAS) statement that allows you to create a new table in your warehouse from the output of a `SELECT` statement.
+- `SELECT INTO` query clause that enables you to select results from any table source, and redirect the results into a new table. This is a standard feature in T-SQL language.
 
-The `CREATE TABLE AS SELECT` (CTAS) statement allows you to create a new table in your warehouse from the output of a `SELECT` statement. It runs the ingestion operation into the new table in parallel, making it highly efficient for data transformation and creation of new tables in your workspace.
+These two statements are very similar, so the following examples will be focused only on one - CTAS statement. The CTAS statement runs the ingestion operation into the new table in parallel, making it highly efficient for data transformation and creation of new tables in your workspace.
 
 You can use the following options for the `SELECT` part of CTAS statement:
 - Reading a warehouse table, such as a staging table.
@@ -52,26 +54,26 @@ SELECT DATEPART(YEAR,[updated]) [year],
        DATEPART(MONTH,[updated]) [month],
        DATEPART(DAY,[updated]) [dayofmonth],
        * 
-FROM [dbo].[bing_covid-19_data];
+FROM dbo.bing_covid19_data;
 ```
 
 As another example, you can create a new table that summarizes the number of cases observed in each month, regardless of the year, to evaluate how seasonality affects spread in a given country/region. It uses the table created in the previous example with the new `month` column as a source: 
 
 ```sql
-CREATE TABLE [dbo].[infections_by_month]
+CREATE TABLE dbo.infections_by_month
 AS
-SELECT [country_region], [month],
-       SUM(CAST(confirmed as bigint)) [confirmed_sum]
-FROM [dbo].[bing_covid-19_data_with_year_month_day]
-GROUP BY [country_region],[month];
+SELECT country_region, [month],
+       SUM(CAST(confirmed as bigint)) confirmed_sum
+FROM dbo.bing_covid19_data_with_year_month_day
+GROUP BY country_region, [month];
 ```
 
 Based on this new table, we can see that the United States observed more confirmed cases across all years in the month of `January`, followed by `December` and `October`. `April` is the month with the lowest number of cases overall:
 
 ```sql
-SELECT * FROM [dbo].[infections_by_month]
-WHERE [country_region] = 'United States'
-ORDER BY [confirmed_sum] DESC;
+SELECT * FROM dbo.infections_by_month
+WHERE country_region = 'United States'
+ORDER BY confirmed_sum DESC;
 ```
 
 ### Creating table from Delta Lake folder
@@ -79,10 +81,10 @@ ORDER BY [confirmed_sum] DESC;
 The Delta Lake folders that are persisted in One Lake are automatically represented as tables if they're stored in /Tables folder in One Lake.
 
 ```sql
-CREATE TABLE [dbo].[bing_covid-19_data_2023]
+CREATE TABLE dbo.bing_covid19_data_2023
 AS
 SELECT * 
-FROM MyLakehouse.dbo.[bing_covid-19_data] 
+FROM MyLakehouse.dbo.bing_covid19_delta_lake 
 WHERE DATEPART(YEAR,[updated]) = '2023';
 ```
 
@@ -93,9 +95,9 @@ You can reference Delta Lake folder using the three-part-name notation that refe
 Instead of reading data from the Warehouse `[bing_covid-19_data]` table, you can also create a new table directly from an external file using the `OPENROWSET` function:
 
 ```sql
-CREATE TABLE [dbo].[bing_covid-19_data_2022]
+CREATE TABLE dbo.bing_covid19_data_2022
 AS
-SELECT id, updated, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
+SELECT *
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
 WHERE DATEPART(YEAR,[updated]) = '2022'
 ```
@@ -103,21 +105,21 @@ WHERE DATEPART(YEAR,[updated]) = '2022'
 You can also create a new table by transforming data from an external CSV file:
 
 ```sql
-CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
+CREATE TABLE dbo.bing_covid19_data_with_year_month_day
 AS
 SELECT DATEPART(YEAR,[updated]) [year], 
        DATEPART(MONTH,[updated]) [month],
        DATEPART(DAY,[updated]) [dayofmonth],
-       id, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
+       *
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.csv') AS data
 ```
 
 As another example, you can create a new table that summarizes the number of cases observed in each month, regardless of the year, to evaluate how seasonality affects spread in a given country/region. It uses the table created in the previous example with the new `month` column as a source: 
 
 ```sql
-CREATE TABLE [dbo].[infections_by_month_2022]
+CREATE TABLE dbo.infections_by_month_2022
 AS
-SELECT [country_region],
+SELECT country_region,
        DATEPART(MONTH,[updated]) AS [month],
        SUM(CAST(confirmed as bigint)) [confirmed_sum]
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
@@ -128,9 +130,9 @@ GROUP BY [country_region],DATEPART(MONTH,[updated]);
 Based on this new table, we can see that the United States observed more confirmed cases across all years in the month of `January`, followed by `December` and `October`. `April` is the month with the lowest number of cases overall:
 
 ```sql
-SELECT * FROM [dbo].[infections_by_month_2022]
-WHERE [country_region] = 'United States'
-ORDER BY [confirmed_sum] DESC;
+SELECT * FROM dbo.infections_by_month_2022
+WHERE country_region = 'United States'
+ORDER BY confirmed_sum DESC;
 ```
 
 :::image type="content" source="media/ingest-data-tsql/infections-by-month.png" alt-text="Screenshot of the query results showing the number of infections by month in the United States, ordered by month, in descending order. The month number 1 is shown on top." lightbox="media/ingest-data-tsql/infections-by-month.png":::
@@ -148,8 +150,8 @@ The previous examples create new tables based on the result of a query. To repli
 The following code ingests new data from a warehouse table into an existing table:
 
 ```sql
-INSERT INTO [dbo].[bing_covid-19_data_2023]
-SELECT * FROM [dbo].[bing_covid-19_data] 
+INSERT INTO dbo.bing_covid19_data_2023
+SELECT * FROM dbo.bing_covid19_data
 WHERE [updated] > '2023-02-28';
 ```
 
@@ -160,8 +162,8 @@ The query criteria for the `SELECT` statement can be any valid query, as long as
 The following code ingests new data from Delta Lake folder place in /Tables section in a lakehouse:
 
 ```sql
-INSERT INTO dbo.[bing_covid-19_data_2023]
-SELECT * FROM MyLakehouse.dbo.[bing_covid-19_data] 
+INSERT INTO dbo.bing_covid19_data_2023
+SELECT * FROM MyLakehouse.dbo.bing_covid19_delta_lake 
 WHERE updated > '2023-02-28';
 ```
 
@@ -170,8 +172,8 @@ WHERE updated > '2023-02-28';
 You can use the `OPENROWSET` function as a  source in order to ingest data from Azure Data Lake or Azure Blob storage:
 
 ```sql
-INSERT INTO [dbo].[bing_covid-19_data_2023]
-SELECT id, updated, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
+INSERT INTO dbo.bing_covid19_data_2023
+SELECT *
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
 WHERE DATEPART(YEAR,[updated]) = '2023'
 ```
@@ -191,12 +193,12 @@ For both **CREATE TABLE AS SELECT** and **INSERT...SELECT**, the `SELECT` statem
 A new table can be created that uses three-part naming to combine data from tables on these workspace assets:
 
 ```sql
-CREATE TABLE [research_warehouse].[dbo].[cases_by_continent]
+CREATE TABLE research_warehouse.dbo.cases_by_continent
 AS
 SELECT 
-FROM [cases_lakehouse].[dbo].[bing_covid-19_data] cases
-INNER JOIN [reference_warehouse].[dbo].[bing_covid-19_data] reference
-ON cases.[iso3] = reference.[countrycode];
+FROM cases_lakehouse.dbo.bing_covid19_data cases
+INNER JOIN reference_warehouse.dbo.bing_covid-19_data reference
+ON cases.iso3 = reference.countrycode;
 ```
 
 To learn more about cross-warehouse queries, see [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-query).
