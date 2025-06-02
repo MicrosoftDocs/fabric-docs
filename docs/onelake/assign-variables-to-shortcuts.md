@@ -25,11 +25,16 @@ Once a variable is defined within a variable library, it can be assigned to shor
 
 1.	Open a lakehouse and select an existing shortcut
 1.	Right click on the shortcut and choose **Manage Shortcut**
-  :::image type="content" source="media\assign-variables-to-shortcuts\manage-shortcut.png" alt-text="Screenshot showing context menu where manage shortcuts option is selected.":::
+
+    :::image type="content" source="media\assign-variables-to-shortcuts\manage-shortcut.png" alt-text="Screenshot showing context menu where manage shortcuts option is selected.":::
+
 1.	Select **Edit Variables** and choose the desired property to assign the variable to.
-   :::image type="content" source="media\assign-variables-to-shortcuts\edit-variables.png" alt-text="Screenshot showing manage shortcuts panel with edit variable dropdown menu selected.":::
+
+    :::image type="content" source="media\assign-variables-to-shortcuts\edit-variables.png" alt-text="Screenshot showing manage shortcuts panel with edit variable dropdown menu selected.":::
+
 1.	Assign a variable from the Variable Library
 1.	Once the variable is assigned, the variable name and variable value appear below the shortcut property
+
     :::image type="content" source="media\assign-variables-to-shortcuts\variable-properties.png" alt-text="Screenshot showing managed shortcuts panel with variable assigned to shortcut connection including both variable name and value.":::
 
   > [!NOTE]
