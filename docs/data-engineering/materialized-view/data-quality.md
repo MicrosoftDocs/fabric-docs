@@ -5,10 +5,10 @@ author: abhishjain002
 ms.author: abhishjain
 ms.reviewer: nijelsf
 ms.topic: conceptual
-ms.date: 05/29/2025
+ms.date: 06/02/2025
 ---
 
-# Data quality in materialized lake view
+# Data quality in materialized lake views
 
 In the era of big data, the medallion architecture gained prominence as a robust framework for managing and processing data across different stages of refinement, from raw data to highly curated datasets. This structured approach not only enhances data manageability but also ensures that data quality is maintained throughout the data lifecycle.
 
@@ -59,4 +59,4 @@ The following example defines the constraint `cust_blank`, which checks if the `
  
 ## Next step
 
-* [Refresh a materialized lake view](./refresh-materialized-lake-view.md)
+* [Refresh materialized lake views](./refresh-materialized-lake-view.md)
