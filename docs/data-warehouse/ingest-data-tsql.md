@@ -78,7 +78,7 @@ ORDER BY confirmed_sum DESC;
 
 ### Creating table from Delta Lake folder
 
-The Delta Lake folders that are persisted in One Lake are automatically represented as tables if they're stored in /Tables folder in One Lake.
+The Delta Lake folders that are persisted in One Lake are automatically represented as tables if they're stored in **/Tables** folder in a lakehouse. The following code creates a new table `bing_covid19_data_2023` from Delta Lake folder **/Tables/bing_covid19_delta_lake** in the **MyLakehouse** lakehouse:
 
 ```sql
 CREATE TABLE dbo.bing_covid19_data_2023
@@ -151,20 +151,23 @@ The following code ingests new data from a warehouse table into an existing tabl
 
 ```sql
 INSERT INTO dbo.bing_covid19_data_2023
-SELECT * FROM dbo.bing_covid19_data
-WHERE updated > '2023-02-28';
+SELECT *
+FROM dbo.bing_covid19_data
+WHERE DATEPART(YEAR, updated) = '2023';
 ```
 
 The query criteria for the `SELECT` statement can be any valid query, as long as the resulting query column types align with the columns on the destination table. If column names are specified and include only a subset of the columns from the destination table, all other columns are loaded as `NULL`. For more information, see [Using INSERT INTO...SELECT to Bulk Import data with minimal logging and parallelism](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true#using-insert-intoselect-to-bulk-import-data-with-minimal-logging-and-parallelism).
 
 ### Ingest data from Delta Lake folder
 
-The following code ingests new data from Delta Lake folder place in **/Tables** section in a lakehouse:
+The Delta Lake folders that are persisted in One Lake are automatically represented as tables if they're stored in **/Tables** folder in a lakehouse.
+The following code ingests new data from Delta Lake folder **/Tables/bing_covid19_delta_lake** section in the **MyLakehouse** lakehouse
 
 ```sql
 INSERT INTO dbo.bing_covid19_data_2023
-SELECT * FROM MyLakehouse.dbo.bing_covid19_delta_lake 
-WHERE updated > '2023-02-28';
+SELECT *
+FROM MyLakehouse.dbo.bing_covid19_delta_lake 
+WHERE DATEPART(YEAR, updated) = '2023';
 ```
 
 ### Ingest data from CSV/Parquet file
