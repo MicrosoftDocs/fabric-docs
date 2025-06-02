@@ -45,6 +45,9 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 #### Use a login and mapped database user
 
+> [!NOTE]
+> Microsoft Entra server principals (logins) are currently in public preview for Azure SQL Database. Before using Microsoft Entra ID authentication, review the limitations in  [Microsoft Entra server principals](/azure/azure-sql/database/authentication-azure-ad-logins?view=azuresql#limitations-and-remarks).
+
 1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
     - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
