@@ -6,6 +6,7 @@ author: dearandyxu
 ms.author: yexu
 ms.topic: how-to
 ms.date: 11/05/2024
+ms.custom: copy-job
 ---
 
 # CI/CD for Copy job in Data Factory in Microsoft Fabric

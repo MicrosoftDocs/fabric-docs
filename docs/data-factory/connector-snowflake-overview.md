@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 03/11/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Snowflake connector overview

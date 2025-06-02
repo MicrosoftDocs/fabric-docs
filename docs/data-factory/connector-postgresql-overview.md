@@ -1,12 +1,13 @@
 ---
 title: PostgreSQL database connector overview
 description: This article provides an overview of the supported capabilities of the PostgreSQL database connector.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
 ms.date: 01/24/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # PostgreSQL database connector overview

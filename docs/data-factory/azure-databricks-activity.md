@@ -6,6 +6,7 @@ ms.author: noelleli
 author: n0elleli
 ms.topic: how-to
 ms.date: 03/20/2025
+ms.custom: pipelines
 ---
 
 # Transform data by running an Azure Databricks activity

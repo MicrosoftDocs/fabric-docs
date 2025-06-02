@@ -5,6 +5,7 @@ author: kromerm
 ms.author: makromer
 ms.topic: conceptual
 ms.date: 05/22/2025
+ms.custom: pipelines
 ---
 
 # Microsoft Fabric data pipeline public REST API

@@ -1,8 +1,8 @@
 ---
 title: Detect sentiment with the `ai.analyze_sentiment` function
 description: Learn how to use the `ai.analyze_sentiment` function to detect the emotional state of input text.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to

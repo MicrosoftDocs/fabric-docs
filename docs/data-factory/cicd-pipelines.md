@@ -6,6 +6,7 @@ author: conxu-ms
 ms.author: conxu
 ms.topic: how-to
 ms.date: 10/01/2024
+ms.custom: pipelines
 ---
 
 # CI/CD for pipelines in Data Factory in Microsoft Fabric

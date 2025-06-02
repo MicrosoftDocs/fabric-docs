@@ -6,9 +6,11 @@ ms.author: jianleishen
 ms.topic: how-to
 ms.date: 04/21/2025
 ms.custom:
+  - pipelines
   - template-how-to
   - build-2023
   - ignite-2023
+  - connectors
 ---
 
 # Configure Lakehouse in a copy activity

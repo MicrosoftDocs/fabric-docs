@@ -496,6 +496,8 @@ items:
   - name: external_table()
     href: /kusto/query/external-table-function?view=microsoft-fabric&preserve-view=true
     displayName: external table external-table
+  - name: graph()
+    href: /kusto/query/graph-function?view=microsoft-fabric&preserve-view=true
   - name: materialize()
     href: /kusto/query/materialize-function?view=microsoft-fabric&preserve-view=true
   - name: materialized_view()
@@ -1386,8 +1388,12 @@ items:
     href: /kusto/query/countif-aggregation-function?view=microsoft-fabric&preserve-view=true
   - name: covariance()
     href: /kusto/query/covariance-aggregation-function?view=microsoft-fabric&preserve-view=true
+  - name: covarianceif()
+    href: /kusto/query/covarianceif-aggregation-function?view=microsoft-fabric&preserve-view=true
   - name: covariancep()
     href: /kusto/query/covariancep-aggregation-function?view=microsoft-fabric&preserve-view=true
+  - name: covariancepif()
+    href: /kusto/query/covariancepif-aggregation-function?view=microsoft-fabric&preserve-view=true
   - name: dcount()
     href: /kusto/query/dcount-aggregation-function?view=microsoft-fabric&preserve-view=true
   - name: dcountif()
@@ -1454,10 +1460,12 @@ items:
     href: /kusto/query/varianceif-aggregation-function?view=microsoft-fabric&preserve-view=true
   - name: variancep()
     href: /kusto/query/variancep-aggregation-function?view=microsoft-fabric&preserve-view=true
+  - name: variancepif()
+    href: /kusto/query/variancepif-aggregation-function?view=microsoft-fabric&preserve-view=true
 - name: Graph
   items:
   - name: Graph overview
-    href: /kusto/query/graph-overview?view=microsoft-fabric&preserve-view=true
+    href: /kusto/query/graph-semantics-overview?view=microsoft-fabric&preserve-view=true
   - name: Graph best practices
     href: /kusto/query/graph-best-practices?view=microsoft-fabric&preserve-view=true
   - name: Graph scenarios
@@ -1490,6 +1498,9 @@ items:
     - name: inner_nodes()
       displayName: inner nodes() graph function, inner nodes
       href: /kusto/query/inner-nodes-graph-function?view=microsoft-fabric&preserve-view=true
+    - name: labels()
+      displayName: labels() graph function, labels
+      href: /kusto/query/labels-graph-function?view=microsoft-fabric&preserve-view=true
     - name: node_degree_in()
       displayName: graph, node, Node degree in node_degree_in, indegree node_degree_in
       href: /kusto/query/node-degree-in?view=microsoft-fabric&preserve-view=true
@@ -1746,6 +1757,9 @@ items:
   - name: series_pow()
     displayName: element-wise, elementwise
     href: /kusto/query/series-pow-function?view=microsoft-fabric&preserve-view=true
+  - name: series_product()
+    displayName: element-wise, elementwise
+    href: /kusto/query/series-product-function?view=microsoft-fabric&preserve-view=true
   - name: series_seasonal()
     displayName: periods
     href: /kusto/query/series-seasonal-function?view=microsoft-fabric&preserve-view=true
@@ -1898,6 +1912,8 @@ items:
     href: /kusto/concepts/query-consistency?view=microsoft-fabric&preserve-view=true
   - name: Query limits
     href: /kusto/concepts/query-limits?view=microsoft-fabric&preserve-view=true
+  - name: Query resource consumption
+    href: /kusto/concepts/query-resource-consumption?view=microsoft-fabric&preserve-view=true
   - name: Partial query failures
     href: /kusto/concepts/partial-query-failures?view=microsoft-fabric&preserve-view=true
     items:
