@@ -1,14 +1,14 @@
 ---
-title: "Create a materialized lake view in lakehouse"
+title: "Create materialized lake views in lakehouse"
 description: Learn how to create a materialized lake view in lakehouse in Microsoft Fabric.
 ms.topic: how-to
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviewer: nijelsf
-ms.date: 05/29/2025
+ms.date: 06/02/2025
 ---
 
-# Create a materialized lake view in lakehouse 
+# Create materialized lake views in lakehouse 
 
 In this article, you learn how to create materialized lake views in lakehouse in Microsoft Fabric. For more information about materialized lake views, see [overview of materialized lake views](./overview-materialized-lake-view.md).
 
@@ -18,9 +18,9 @@ In this article, you learn how to create materialized lake views in lakehouse in
 * A lakehouse with [Lakehouse Schemas](../lakehouse-schemas.md) enabled.
 * Materialized lake views are compatible with Fabric [Runtime 1.3](../runtime-1-3.md).
 
-## Get started with materialized lake view
+## Get started with materialized lake views
 
-There are two ways to get started with materialized lake view creation in lakehouse.
+There are two ways to get started with materialized lake views creation in lakehouse.
 
 **Option 1**: Create materialized lake view from **Manage materialized lake views** option in the lakehouse explorer.
 
@@ -28,7 +28,7 @@ There are two ways to get started with materialized lake view creation in lakeho
 
    :::image type="content" source="./media/create-materialized-lake-view/manage-materialized-lake-views.png" alt-text="Screenshot showing materialized lake view." border="true" lightbox="./media/create-materialized-lake-view/manage-materialized-lake-views.png":::
 
-1. Select **New materialized lake view**, which allows you to use an existing or create a new notebook.
+1. Select **New materialized lake view**, which allows you to use an existing notebook or create a new notebook.
 
    :::image type="content" source="./media/create-materialized-lake-view/new-materialized-lake-view.png" alt-text="Screenshot showing how to create new materialized lake view." border="true" lightbox="./media/create-materialized-lake-view/new-materialized-lake-view.png":::
 
@@ -60,9 +60,9 @@ A materialized lake view can be defined from any table or another materialized l
    |Parameter|Description|	
    |-|-|
    | MLV_Identifier | Name of the materialized lake view.|
-   | CONSTRAINT | Keyword to define the constraint for data quality. Follows with a user defined constraint name. Constraint is at materialized lake view level.|
-   | CHECK | Use to enforce the condition defined based on the certain column values. Mandatory to use when defining constraint.|
-   | ON MISMATCH | Keyword to define the action to be taken if the given constraint is violated. Default behavior without this clause is FAIL action.|
+   | CONSTRAINT | Keyword to define a data quality constraint, followed by a user-defined name. The constraint applies at the materialized lake view level.|
+   | CHECK | Use to enforce the condition defined based on certain column values. Mandatory to use when defining constraint.|
+   | ON MISMATCH | Specify the action to be taken if the given constraint is violated. Possible actions are DROP and FAIL. By default, without this clause, the action is FAIL.|
    | PARTITIONED BY | To create partitions based on the column specified.|
    | TBLPROPERTIES | A list of key-value pairs that is used to tag the materialized lake view definition.|	
    | COMMENT | A statement to describe the materialized lake view.|
@@ -165,5 +165,5 @@ Example:
 
 ## Next steps
 
-* [Data quality in materialized lake view](./data-quality.md)
-* [Refresh a materialized lake view](./refresh-materialized-lake-view.md)
+* [Data quality in materialized lake views](./data-quality.md)
+* [Refresh materialized lake views](./refresh-materialized-lake-view.md)

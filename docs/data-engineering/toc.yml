@@ -405,3 +405,37 @@ items:
      href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: View logs
      href: ./user-data-functions/view-function-logs.md
+- name: Materialized lake views
+  items:
+  - name: Overview
+    href: ./materialized-view/overview-materialized-lake-view.md
+  - name: Create materialized lake views
+    items:  
+    - name: Create materialized lake views
+      href: ./materialized-view/create-materialized-lake-view.md
+    - name: Refresh materialized lake views
+      href: ./materialized-view/refresh-materialized-lake-view.md
+  - name: Data quality
+    items:  
+    - name: Data quality in materialized lake views
+      href: ./materialized-view/data-quality.md
+    - name: Data quality report
+      href: ./materialized-view/data-quality-reports.md
+  - name: Manage
+    items:  
+    - name: View lineage
+      href: ./materialized-view/view-lineage.md
+    - name: Schedule materialized lake views
+      href: ./materialized-view/schedule-lineage-run.md
+    - name: Run history of materialized lake views
+      href: ./materialized-view/materialized-lake-views-run-history.md
+    - name: Operational run details
+      href: ./materialized-view/operational-run-details.md
+  - name: Monitor
+    items:  
+    - name: Monitor materialized lake views
+      href: ./materialized-view/monitor-materialized-lake-views.md
+  - name: Tutorial
+    items:  
+    - name: Implement medallion architecture with materialized lake views
+      href: ./materialized-view/tutorial.md
