@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 05/30/2025
+ms.date: 06/02/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1156  | Data Warehouse | [Data warehouse doesn't load with version mismatch error](./known-issue-1156-data-warehouse-not-load-version-mismatch-error.md) | June 2, 2025 |
+|  1155  | Real-Time Intelligence | [Publish of eventstream with streaming connector source fails](./known-issue-1155-publish-eventstream-streaming-connector-source-fails.md) | June 2, 2025 |
 |  1149  | Power BI | [Next button in connection authoring is greyed out](./known-issue-1149-next-button-connection-authoring-greyed-out.md) | May 30, 2025 |
 |  1151  | Administration & Management | [Disabling the Workspace encryption setting doesn't work](./known-issue-1151-disabling-workspace-encryption-setting-not-work.md) | May 27, 2025 |
 |  1148  | Power BI | [Dynamics 365 and KQL query doesn't save reports](./known-issue-1148-dynamics-365-kql-query-not-save-reports.md) | May 27, 2025 |
@@ -132,10 +134,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  974  | Real-Time Intelligence | [Show table command in KQL Queryset editor fails](./known-issue-974-show-table-kql-queryset-editor-fails.md) | January 6, 2025 | Fixed: April 18, 2025 |
 |  718  | OneLake | [OneLake under-reports transactions in the Other category](./known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 | Fixed: April 18, 2025 |
 |  1067  | Data Engineering | [Environment REST API update no longer happening](./known-issue-1067-environment-rest-api-updates-workflow-break.md) | March 26, 2025 | Removed: April 17, 2025 |
-|  923  | Power BI | [Tenant migration requests stopped](./known-issue-923-tenant-migrations-paused-january-2025.md) | November 8, 2024 | Closed: April 15, 2025 |
-|  922  | Data Engineering | [The default environment's resources folder doesn't work in notebooks](./known-issue-922-default-environment-resources-folder-not-work-notebooks.md) | November 12, 2024 | Fixed: April 15, 2025 |
-|  883  | Data Engineering | [Spark jobs might fail due to Runtime 1.3 updates for GA](./known-issue-883-spark-jobs-fail-runtime-updates.md) | October 17, 2024 | Fixed: April 15, 2025 |
-|  837  | Data Engineering | [Monitoring hub displays incorrect queued duration](./known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md) | September 17, 2024 | Fixed: April 15, 2025 |
 
 ## Related content
 
