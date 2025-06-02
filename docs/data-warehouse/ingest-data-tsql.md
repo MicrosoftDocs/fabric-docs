@@ -23,11 +23,13 @@ The `CREATE TABLE AS SELECT` (CTAS) statement allows you to create a new table i
 
 You can use the following options for the `SELECT` part of CTAS statement:
 - Reading a warehouse table, such as a staging table.
-- Reading a Lakehouse table auto-generated via SQL analytics endpoint for Lakehouse.
-- Reading data directly from external file using the `OPENROWSET` function.
+- Reading a Lakehouse Delta Lake folder using an auto-generated table in SQL analytics endpoint for Lakehouse.
+- Reading CSV or Parquet directly from Azure Data Lake or Azure Blob storage using the `OPENROWSET` function.
 
 > [!NOTE]
 > The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
+
+### Creating table from Warehouse table
 
 The first example illustrates how to create a new table that is a copy of the existing `dbo.[bing_covid-19_data_2023]` table, but filtered to data from the year 2023 only:
 
@@ -39,16 +41,6 @@ FROM [dbo].[bing_covid-19_data]
 WHERE DATEPART(YEAR,[updated]) = '2023';
 ```
 
-Instead of reading data from the staging `[bing_covid-19_data]` table, you can also create a new table directly from an external file using the `OPENROWSET` function:
-
-```sql
-CREATE TABLE [dbo].[bing_covid-19_data_2022]
-AS
-SELECT id, updated, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
-FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
-WHERE DATEPART(YEAR,[updated]) = '2022'
-```
-
 You can also create a new table with new `year`, `month`, `dayofmonth` columns, with values obtained from `updated` column in the source table. This can be useful if you're trying to visualize infection data by year, or to see months when the most COVID-19 cases are observed:
 
 ```sql
@@ -56,16 +48,6 @@ CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
 AS
 SELECT DATEPART(YEAR,[updated]) [year], DATEPART(MONTH,[updated]) [month], DATEPART(DAY,[updated]) [dayofmonth], * 
 FROM [dbo].[bing_covid-19_data];
-```
-
-Instead of reading data from the staging `[bing_covid-19_data]` table, you can also create a new table directly from an external file and transform results:
-
-```sql
-CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
-AS
-SELECT DATEPART(YEAR,[updated]) [year], DATEPART(MONTH,[updated]) [month], DATEPART(DAY,[updated]) [dayofmonth],
-        id, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
-FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
 ```
 
 As another example, you can create a new table that summarizes the number of cases observed in each month, regardless of the year, to evaluate how seasonality affects spread in a given country/region. It uses the table created in the previous example with the new `month` column as a source: 
@@ -76,7 +58,55 @@ AS
 SELECT [country_region],[month], SUM(CAST(confirmed as bigint)) [confirmed_sum]
 FROM [dbo].[bing_covid-19_data_with_year_month_day]
 GROUP BY [country_region],[month];
+```
 
+Based on this new table, we can see that the United States observed more confirmed cases across all years in the month of `January`, followed by `December` and `October`. `April` is the month with the lowest number of cases overall:
+
+```sql
+SELECT * FROM [dbo].[infections_by_month]
+WHERE [country_region] = 'United States'
+ORDER BY [confirmed_sum] DESC;
+```
+
+### Creating table from Delta Lake folder
+
+The Delta Lake folders that are persisted in One Lake are automatically represented as tables if they are stored in /Tables folder in One Lake.
+
+```sql
+CREATE TABLE [dbo].[bing_covid-19_data_2023]
+AS
+SELECT * 
+FROM MyLakehouse.dbo.[bing_covid-19_data] 
+WHERE DATEPART(YEAR,[updated]) = '2023';
+```
+
+You can reference Delta Lake folder using the three-part-name notation that references the lakehouse where the files are stored. All examples shown in the previous section are applicable to Delta Lake folders. 
+
+### Creating table from CSV/Parquet file
+
+Instead of reading data from the Warehouse `[bing_covid-19_data]` table, you can also create a new table directly from an external file using the `OPENROWSET` function:
+
+```sql
+CREATE TABLE [dbo].[bing_covid-19_data_2022]
+AS
+SELECT id, updated, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
+FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
+WHERE DATEPART(YEAR,[updated]) = '2022'
+```
+
+You can also create a new table by transforming data from an external CSV file:
+
+```sql
+CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
+AS
+SELECT DATEPART(YEAR,[updated]) [year], DATEPART(MONTH,[updated]) [month], DATEPART(DAY,[updated]) [dayofmonth],
+        id, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
+FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.csv') AS data
+```
+
+As another example, you can create a new table that summarizes the number of cases observed in each month, regardless of the year, to evaluate how seasonality affects spread in a given country/region. It uses the table created in the previous example with the new `month` column as a source: 
+
+```sql
 CREATE TABLE [dbo].[infections_by_month_2022]
 AS
 SELECT [country_region], DATEPART(MONTH,[updated]) AS [month], SUM(CAST(confirmed as bigint)) [confirmed_sum]
@@ -88,7 +118,7 @@ GROUP BY [country_region],DATEPART(MONTH,[updated]);
 Based on this new table, we can see that the United States observed more confirmed cases across all years in the month of `January`, followed by `December` and `October`. `April` is the month with the lowest number of cases overall:
 
 ```sql
-SELECT * FROM [dbo].[infections_by_month]
+SELECT * FROM [dbo].[infections_by_month_2022]
 WHERE [country_region] = 'United States'
 ORDER BY [confirmed_sum] DESC;
 ```
@@ -101,7 +131,11 @@ For more examples and syntax reference, see [CREATE TABLE AS SELECT (Transact-SQ
 
 ## Ingest data into existing tables with T-SQL queries
 
-The previous examples create new tables based on the result of a query. To replicate the examples but on existing tables, the **INSERT...SELECT** pattern can be used. For example, the following code ingests new data into an existing table:
+The previous examples create new tables based on the result of a query. To replicate the examples but on existing tables, the **INSERT...SELECT** pattern can be used. 
+
+### Ingest data from Warehouse table
+
+The following code ingests new data from a warehouse table into an existing table:
 
 ```sql
 INSERT INTO [dbo].[bing_covid-19_data_2023]
@@ -111,7 +145,19 @@ WHERE [updated] > '2023-02-28';
 
 The query criteria for the `SELECT` statement can be any valid query, as long as the resulting query column types align with the columns on the destination table. If column names are specified and include only a subset of the columns from the destination table, all other columns are loaded as `NULL`. For more information, see [Using INSERT INTO...SELECT to Bulk Import data with minimal logging and parallelism](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true#using-insert-intoselect-to-bulk-import-data-with-minimal-logging-and-parallelism).
 
-You can also use the `OPENROWSET` function as a  source in order to ingest data from Azure Data Lake or Azure Blob storage:
+### Ingest data from Delta Lake folder
+
+The following code ingests new data from Delta Lake folder place in /Tables section in a lakehouse:
+
+```sql
+INSERT INTO dbo.[bing_covid-19_data_2023]
+SELECT * FROM MyLakehouse.dbo.[bing_covid-19_data] 
+WHERE updated > '2023-02-28';
+```
+
+### Ingest data from CSV/Parquet file
+
+You can use the `OPENROWSET` function as a  source in order to ingest data from Azure Data Lake or Azure Blob storage:
 
 ```sql
 INSERT INTO [dbo].[bing_covid-19_data_2023]
@@ -120,7 +166,7 @@ FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/cura
 WHERE DATEPART(YEAR,[updated]) = '2023'
 ```
 
-These examples are similar to those used in [ingestion with COPY INTO](ingest-data-copy.md). The COPY INTO command is generally easier to use, especially for straightforward source-to-destination data loads. However, if you need to transform source data (such as converting values or joining with other tables), using INSERT ... SELECT gives you the flexibility to perform those transformations during ingestion.
+These example is similar to those used in [ingestion with COPY INTO](ingest-data-copy.md). The COPY INTO command is generally easier to use, especially for straightforward source-to-destination data loads. However, if you need to transform source data (such as converting values or joining with other tables), using INSERT ... SELECT gives you the flexibility to perform transformations during ingestion.
 
 <a id="ingesting-data-from-tables-on-different-warehouses-and-lakehouses"></a>
 
