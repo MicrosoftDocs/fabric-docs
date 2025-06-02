@@ -5,7 +5,7 @@ ms.author: rkottackal
 author: rkottackal 
 ms.reviewer: nijelsf
 ms.topic: tutorial
-ms.date: 05/29/2025
+ms.date: 06/02/2025
 ---
 
 # Implement medallion architecture with materialized lake views
@@ -86,13 +86,9 @@ The high-level steps are as follows:
 
 1.	By clicking on any of the runs, you can find the materialized lake view details on right side panel. The bottom activity panel will provide a high-level overview of node execution status.
 
-  	:::image type="content" source="./media/tutorial/latest-run.jpeg" alt-text="Screenshot showing latest run." border="true" lightbox="./media/tutorial/latest-run.jpeg":::
-
-1.	Clicking on any node in the lineage will provide the node execution details and link to detailed logs.
-
   	:::image type="content" source="./media/tutorial/execution details.png" alt-text="Screenshot showing execution details." border="true" lightbox="./media/tutorial/execution details.png":::
 
-1.	If the node status is “Failed”, then an error message will also be displayed.
+1.	Clicking on any node in the lineage will provide the node execution details and link to detailed logs. If the node status is “Failed”, then an error message will also be displayed.
 
   	:::image type="content" source="./media/tutorial/execution-detail-logs.png" alt-text="Screenshot showing execution detail logs." border="true" lightbox="./media/tutorial/execution-detail-logs.png":::
 
