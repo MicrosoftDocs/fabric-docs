@@ -35,24 +35,24 @@ You can use the following options for the `SELECT` part of CTAS statement:
 
 ### Creating table from Warehouse table
 
-The first example illustrates how to create a new table that is a copy of the existing `dbo.[bing_covid-19_data_2023]` table, but filtered to data from the year 2023 only:
+The first example illustrates how to create a new table that is a copy of the existing `dbo.bing_covid19_data_2023` table, but filtered to data from the year 2023 only:
 
 ```sql
-CREATE TABLE [dbo].[bing_covid-19_data_2023]
+CREATE TABLE dbo.bing_covid19_data_2023
 AS
 SELECT * 
-FROM [dbo].[bing_covid-19_data] 
-WHERE DATEPART(YEAR,[updated]) = '2023';
+FROM dbo.bing_covid19_data 
+WHERE DATEPART(YEAR, updated) = '2023';
 ```
 
 You can also create a new table with new `year`, `month`, `dayofmonth` columns, with values obtained from `updated` column in the source table. This can be useful if you're trying to visualize infection data by year, or to see months when the most COVID-19 cases are observed:
 
 ```sql
-CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
+CREATE TABLE dbo.bing_covid19_data_with_year_month_day
 AS
-SELECT DATEPART(YEAR,[updated]) [year],
-       DATEPART(MONTH,[updated]) [month],
-       DATEPART(DAY,[updated]) [dayofmonth],
+SELECT DATEPART(YEAR, updated) [year],
+       DATEPART(MONTH, updated) [month],
+       DATEPART(DAY, updated) [dayofmonth],
        * 
 FROM dbo.bing_covid19_data;
 ```
@@ -85,21 +85,21 @@ CREATE TABLE dbo.bing_covid19_data_2023
 AS
 SELECT * 
 FROM MyLakehouse.dbo.bing_covid19_delta_lake 
-WHERE DATEPART(YEAR,[updated]) = '2023';
+WHERE DATEPART(YEAR, updated) = '2023';
 ```
 
 You can reference Delta Lake folder using the three-part-name notation that references the lakehouse where the files are stored. All examples shown in the previous section are applicable to Delta Lake folders. 
 
 ### Creating table from CSV/Parquet file
 
-Instead of reading data from the Warehouse `[bing_covid-19_data]` table, you can also create a new table directly from an external file using the `OPENROWSET` function:
+Instead of reading data from the Warehouse `bing_covid19_data` table, you can also create a new table directly from an external file using the `OPENROWSET` function:
 
 ```sql
 CREATE TABLE dbo.bing_covid19_data_2022
 AS
 SELECT *
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
-WHERE DATEPART(YEAR,[updated]) = '2022'
+WHERE DATEPART(YEAR, updated) = '2022'
 ```
 
 You can also create a new table by transforming data from an external CSV file:
@@ -107,9 +107,9 @@ You can also create a new table by transforming data from an external CSV file:
 ```sql
 CREATE TABLE dbo.bing_covid19_data_with_year_month_day
 AS
-SELECT DATEPART(YEAR,[updated]) [year], 
-       DATEPART(MONTH,[updated]) [month],
-       DATEPART(DAY,[updated]) [dayofmonth],
+SELECT DATEPART(YEAR, updated) [year], 
+       DATEPART(MONTH, updated) [month],
+       DATEPART(DAY, updated) [dayofmonth],
        *
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.csv') AS data
 ```
@@ -120,11 +120,11 @@ As another example, you can create a new table that summarizes the number of cas
 CREATE TABLE dbo.infections_by_month_2022
 AS
 SELECT country_region,
-       DATEPART(MONTH,[updated]) AS [month],
+       DATEPART(MONTH, updated) AS [month],
        SUM(CAST(confirmed as bigint)) [confirmed_sum]
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
-WHERE DATEPART(YEAR,[updated]) = '2022'
-GROUP BY [country_region],DATEPART(MONTH,[updated]);
+WHERE DATEPART(YEAR, updated) = '2022'
+GROUP BY country_region, DATEPART(MONTH, updated);
 ```
 
 Based on this new table, we can see that the United States observed more confirmed cases across all years in the month of `January`, followed by `December` and `October`. `April` is the month with the lowest number of cases overall:
@@ -152,14 +152,14 @@ The following code ingests new data from a warehouse table into an existing tabl
 ```sql
 INSERT INTO dbo.bing_covid19_data_2023
 SELECT * FROM dbo.bing_covid19_data
-WHERE [updated] > '2023-02-28';
+WHERE updated > '2023-02-28';
 ```
 
 The query criteria for the `SELECT` statement can be any valid query, as long as the resulting query column types align with the columns on the destination table. If column names are specified and include only a subset of the columns from the destination table, all other columns are loaded as `NULL`. For more information, see [Using INSERT INTO...SELECT to Bulk Import data with minimal logging and parallelism](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true#using-insert-intoselect-to-bulk-import-data-with-minimal-logging-and-parallelism).
 
 ### Ingest data from Delta Lake folder
 
-The following code ingests new data from Delta Lake folder place in /Tables section in a lakehouse:
+The following code ingests new data from Delta Lake folder place in **/Tables** section in a lakehouse:
 
 ```sql
 INSERT INTO dbo.bing_covid19_data_2023
@@ -175,7 +175,7 @@ You can use the `OPENROWSET` function as a  source in order to ingest data from 
 INSERT INTO dbo.bing_covid19_data_2023
 SELECT *
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
-WHERE DATEPART(YEAR,[updated]) = '2023'
+WHERE DATEPART(YEAR, updated) = '2023'
 ```
 
 These example is similar to those used in [ingestion with COPY INTO](ingest-data-copy.md). The COPY INTO command is easier to use, especially for straightforward source-to-destination data loads. However, if you need to transform source data (such as converting values or joining with other tables), using INSERT ... SELECT gives you the flexibility to perform transformations during ingestion.
@@ -197,7 +197,7 @@ CREATE TABLE research_warehouse.dbo.cases_by_continent
 AS
 SELECT 
 FROM cases_lakehouse.dbo.bing_covid19_data cases
-INNER JOIN reference_warehouse.dbo.bing_covid-19_data reference
+INNER JOIN reference_warehouse.dbo.bing_covid19_data reference
 ON cases.iso3 = reference.countrycode;
 ```
 
