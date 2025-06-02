@@ -61,7 +61,7 @@ This table lists regions where the only available Fabric workload is Power BI.
 |                | Norway West   | UAE Central    |                   | Korea South  |
 |                | Spain Central |                |                   |              |
 
-<sup>1</sup> Copilot is not supported for regions listed in this section. 
+** Copilot is not supported for regions listed in this section. 
 
 ### Public preview
 
