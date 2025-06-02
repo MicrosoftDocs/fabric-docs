@@ -48,7 +48,10 @@ You can also create a new table with new `year`, `month`, `dayofmonth` columns, 
 ```sql
 CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
 AS
-SELECT DATEPART(YEAR,[updated]) [year], DATEPART(MONTH,[updated]) [month], DATEPART(DAY,[updated]) [dayofmonth], * 
+SELECT DATEPART(YEAR,[updated]) [year],
+       DATEPART(MONTH,[updated]) [month],
+       DATEPART(DAY,[updated]) [dayofmonth],
+       * 
 FROM [dbo].[bing_covid-19_data];
 ```
 
@@ -57,7 +60,8 @@ As another example, you can create a new table that summarizes the number of cas
 ```sql
 CREATE TABLE [dbo].[infections_by_month]
 AS
-SELECT [country_region],[month], SUM(CAST(confirmed as bigint)) [confirmed_sum]
+SELECT [country_region], [month],
+       SUM(CAST(confirmed as bigint)) [confirmed_sum]
 FROM [dbo].[bing_covid-19_data_with_year_month_day]
 GROUP BY [country_region],[month];
 ```
@@ -101,8 +105,10 @@ You can also create a new table by transforming data from an external CSV file:
 ```sql
 CREATE TABLE [dbo].[bing_covid-19_data_with_year_month_day]
 AS
-SELECT DATEPART(YEAR,[updated]) [year], DATEPART(MONTH,[updated]) [month], DATEPART(DAY,[updated]) [dayofmonth],
-        id, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
+SELECT DATEPART(YEAR,[updated]) [year], 
+       DATEPART(MONTH,[updated]) [month],
+       DATEPART(DAY,[updated]) [dayofmonth],
+       id, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.csv') AS data
 ```
 
@@ -111,7 +117,9 @@ As another example, you can create a new table that summarizes the number of cas
 ```sql
 CREATE TABLE [dbo].[infections_by_month_2022]
 AS
-SELECT [country_region], DATEPART(MONTH,[updated]) AS [month], SUM(CAST(confirmed as bigint)) [confirmed_sum]
+SELECT [country_region],
+       DATEPART(MONTH,[updated]) AS [month],
+       SUM(CAST(confirmed as bigint)) [confirmed_sum]
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
 WHERE DATEPART(YEAR,[updated]) = '2022'
 GROUP BY [country_region],DATEPART(MONTH,[updated]);
