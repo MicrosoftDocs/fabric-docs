@@ -97,17 +97,7 @@ landingContent:
             url: tutorial-move-data-lakehouse-copy-assistant.md
 
   # Card 
-  - title: Copy data
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: What is Copy job?
-            url: what-is-copy-job.md
-          - text: Create a copy job
-            url: create-copy-job.md
-
-  # Card 
-  - title: Schedule, manage, and monitor
+  - title: Manage your pipelines
     linkLists:
       - linkListType: concept
         links:
