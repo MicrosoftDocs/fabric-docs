@@ -111,6 +111,17 @@ WHERE [updated] > '2023-02-28';
 
 The query criteria for the `SELECT` statement can be any valid query, as long as the resulting query column types align with the columns on the destination table. If column names are specified and include only a subset of the columns from the destination table, all other columns are loaded as `NULL`. For more information, see [Using INSERT INTO...SELECT to Bulk Import data with minimal logging and parallelism](/sql/t-sql/statements/insert-transact-sql?view=fabric&preserve-view=true#using-insert-intoselect-to-bulk-import-data-with-minimal-logging-and-parallelism).
 
+You can also use the `OPENROWSET` function as a  source in order to ingest data from Azure Data Lake or Azure Blob storage:
+
+```sql
+INSERT INTO [dbo].[bing_covid-19_data_2023]
+SELECT id, updated, confirmed, deaths, recovered, latitude, longitude, iso2, iso3, country_region
+FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
+WHERE DATEPART(YEAR,[updated]) = '2023'
+```
+
+These examples are similar to those used in [ingestion with COPY INTO](ingest-data-copy.md). The COPY INTO command is generally easier to use, especially for straightforward source-to-destination data loads. However, if you need to transform source data (such as converting values or joining with other tables), using INSERT ... SELECT gives you the flexibility to perform those transformations during ingestion.
+
 <a id="ingesting-data-from-tables-on-different-warehouses-and-lakehouses"></a>
 
 ## Ingest data from tables on different warehouses and lakehouses
