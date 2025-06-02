@@ -20,10 +20,13 @@ The Transact-SQL language offers options you can use to load data at scale from 
 ## Create a new table with the result of a query
 
 Warehouse in Microsoft Fabric enables you to easily create a new table based on a result of T-SQL query, using the following T-SQL statements:
+
 - `CREATE TABLE AS SELECT` (CTAS) statement that allows you to create a new table in your warehouse from the output of a `SELECT` statement.
 - `SELECT INTO` query clause that enables you to select results from any table source, and redirect the results into a new table. This is a standard feature in T-SQL language.
 
-These two statements are very similar, so the following examples will be focused only on one - CTAS statement. The CTAS statement runs the ingestion operation into the new table in parallel, making it highly efficient for data transformation and creation of new tables in your workspace.
+These two statements are similar, so the following examples are focused on the CTAS statement.
+
+The CTAS statement runs the ingestion operation into the new table in parallel, making it highly efficient for data transformation and creation of new tables in your workspace.
 
 You can use the following options for the `SELECT` part of CTAS statement:
 - Reading a warehouse table, such as a staging table.
@@ -33,7 +36,9 @@ You can use the following options for the `SELECT` part of CTAS statement:
 > [!NOTE]
 > The examples in this article use the Bing COVID-19 sample dataset. To load the sample dataset, follow the steps in [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md) to create the sample data into your warehouse.
 
-### Creating table from Warehouse table
+<a id="creating-table-from-warehouse-table"></a>
+
+### Create table from Warehouse table
 
 The first example illustrates how to create a new table that is a copy of the existing `dbo.bing_covid19_data_2023` table, but filtered to data from the year 2023 only:
 
@@ -50,9 +55,9 @@ You can also create a new table with new `year`, `month`, `dayofmonth` columns, 
 ```sql
 CREATE TABLE dbo.bing_covid19_data_with_year_month_day
 AS
-SELECT DATEPART(YEAR, updated) [year],
-       DATEPART(MONTH, updated) [month],
-       DATEPART(DAY, updated) [dayofmonth],
+SELECT DATEPART(YEAR, updated) AS [year],
+       DATEPART(MONTH, updated) AS [month],
+       DATEPART(DAY, updated) AS [dayofmonth],
        * 
 FROM dbo.bing_covid19_data;
 ```
@@ -63,7 +68,7 @@ As another example, you can create a new table that summarizes the number of cas
 CREATE TABLE dbo.infections_by_month
 AS
 SELECT country_region, [month],
-       SUM(CAST(confirmed as bigint)) confirmed_sum
+       SUM(CAST(confirmed as bigint)) AS confirmed_sum
 FROM dbo.bing_covid19_data_with_year_month_day
 GROUP BY country_region, [month];
 ```
@@ -76,9 +81,11 @@ WHERE country_region = 'United States'
 ORDER BY confirmed_sum DESC;
 ```
 
-### Creating table from Delta Lake folder
+<a id="creating-table-from-delta-lake-folder"></a>
 
-The Delta Lake folders that are persisted in One Lake are automatically represented as tables if they're stored in **/Tables** folder in a lakehouse. The following code creates a new table `bing_covid19_data_2023` from Delta Lake folder **/Tables/bing_covid19_delta_lake** in the **MyLakehouse** lakehouse:
+### Create table from Delta Lake folder
+
+The Delta Lake folders that are persisted in OneLake are automatically represented as tables if they're stored in **/Tables** folder in a lakehouse. The following code creates a new table `bing_covid19_data_2023` from Delta Lake folder **/Tables/bing_covid19_delta_lake** in the **MyLakehouse** lakehouse:
 
 ```sql
 CREATE TABLE dbo.bing_covid19_data_2023
@@ -90,7 +97,9 @@ WHERE DATEPART(YEAR, updated) = '2023';
 
 You can reference Delta Lake folder using the three-part-name notation that references the lakehouse where the files are stored. All examples shown in the previous section are applicable to Delta Lake folders. 
 
-### Creating table from CSV/Parquet file
+<a id="creating-table-from-csvparquet-file"></a>
+
+### Create table from CSV/Parquet file
 
 Instead of reading data from the Warehouse `bing_covid19_data` table, you can also create a new table directly from an external file using the `OPENROWSET` function:
 
@@ -98,7 +107,7 @@ Instead of reading data from the Warehouse `bing_covid19_data` table, you can al
 CREATE TABLE dbo.bing_covid19_data_2022
 AS
 SELECT *
-FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
+FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data;
 WHERE DATEPART(YEAR, updated) = '2022'
 ```
 
@@ -107,11 +116,11 @@ You can also create a new table by transforming data from an external CSV file:
 ```sql
 CREATE TABLE dbo.bing_covid19_data_with_year_month_day
 AS
-SELECT DATEPART(YEAR, updated) [year], 
-       DATEPART(MONTH, updated) [month],
-       DATEPART(DAY, updated) [dayofmonth],
+SELECT DATEPART(YEAR, updated) AS [year], 
+       DATEPART(MONTH, updated) AS [month],
+       DATEPART(DAY, updated) AS [dayofmonth],
        *
-FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.csv') AS data
+FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.csv') AS data;
 ```
 
 As another example, you can create a new table that summarizes the number of cases observed in each month, regardless of the year, to evaluate how seasonality affects spread in a given country/region. It uses the table created in the previous example with the new `month` column as a source: 
@@ -121,7 +130,7 @@ CREATE TABLE dbo.infections_by_month_2022
 AS
 SELECT country_region,
        DATEPART(MONTH, updated) AS [month],
-       SUM(CAST(confirmed as bigint)) [confirmed_sum]
+       SUM(CAST(confirmed as bigint)) AS [confirmed_sum]
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
 WHERE DATEPART(YEAR, updated) = '2022'
 GROUP BY country_region, DATEPART(MONTH, updated);
@@ -143,7 +152,7 @@ For more examples and syntax reference, see [CREATE TABLE AS SELECT (Transact-SQ
 
 ## Ingest data into existing tables with T-SQL queries
 
-The previous examples create new tables based on the result of a query. To replicate the examples but on existing tables, the **INSERT...SELECT** pattern can be used. 
+The previous examples create new tables based on the result of a query. To replicate the examples but on existing tables, the `INSERT ... SELECT` pattern can be used. 
 
 ### Ingest data from Warehouse table
 
@@ -160,7 +169,7 @@ The query criteria for the `SELECT` statement can be any valid query, as long as
 
 ### Ingest data from Delta Lake folder
 
-The Delta Lake folders that are persisted in One Lake are automatically represented as tables if they're stored in **/Tables** folder in a lakehouse.
+The Delta Lake folders that are persisted in OneLake are automatically represented as tables if they're stored in **/Tables** folder in a lakehouse.
 The following code ingests new data from Delta Lake folder **/Tables/bing_covid19_delta_lake** section in the **MyLakehouse** lakehouse
 
 ```sql
@@ -172,13 +181,13 @@ WHERE DATEPART(YEAR, updated) = '2023';
 
 ### Ingest data from CSV/Parquet file
 
-You can use the `OPENROWSET` function as a  source in order to ingest data from Azure Data Lake or Azure Blob storage:
+You can use the `OPENROWSET` function as a source in order to ingest data from Azure Data Lake or Azure Blob storage:
 
 ```sql
 INSERT INTO dbo.bing_covid19_data_2023
 SELECT *
 FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
-WHERE DATEPART(YEAR, updated) = '2023'
+WHERE DATEPART(YEAR, updated) = '2023';
 ```
 
 These example is similar to those used in [ingestion with COPY INTO](ingest-data-copy.md). The COPY INTO command is easier to use, especially for straightforward source-to-destination data loads. However, if you need to transform source data (such as converting values or joining with other tables), using INSERT ... SELECT gives you the flexibility to perform transformations during ingestion.
@@ -187,7 +196,7 @@ These example is similar to those used in [ingestion with COPY INTO](ingest-data
 
 ## Ingest data from tables on different warehouses and lakehouses
 
-For both **CREATE TABLE AS SELECT** and **INSERT...SELECT**, the `SELECT` statement can also reference tables on warehouses that are different from the warehouse where your destination table is stored, by using **cross-warehouse queries**. This can be achieved by using the three-part naming convention `[warehouse_or_lakehouse_name.][schema_name.]table_name`. For example, suppose you have the following workspace assets:
+For both `CREATE TABLE AS SELECT` and `INSERT ... SELECT`, the `SELECT` statement can also reference tables on warehouses that are different from the warehouse where your destination table is stored, by using cross-warehouse queries. This can be achieved by using the three-part naming convention `[warehouse_or_lakehouse_name.][schema_name.]table_name`. For example, suppose you have the following workspace assets:
 
 - A lakehouse named `cases_lakehouse` with the latest case data. 
 - A warehouse named `reference_warehouse` with tables used for reference data.
@@ -198,9 +207,9 @@ A new table can be created that uses three-part naming to combine data from tabl
 ```sql
 CREATE TABLE research_warehouse.dbo.cases_by_continent
 AS
-SELECT 
-FROM cases_lakehouse.dbo.bing_covid19_data cases
-INNER JOIN reference_warehouse.dbo.bing_covid19_data reference
+SELECT *
+FROM cases_lakehouse.dbo.bing_covid19_data AS cases
+INNER JOIN reference_warehouse.dbo.bing_covid19_data AS reference
 ON cases.iso3 = reference.countrycode;
 ```
 
@@ -208,7 +217,7 @@ To learn more about cross-warehouse queries, see [Write a cross-database SQL Que
 
 ## Related content
 
-- [Ingesting data into the Warehouse](ingest-data.md)
-- [Ingest data using the COPY statement](ingest-data-copy.md)
-- [Ingest data using Data pipelines](ingest-data-pipelines.md)
+- [Ingest data into the Warehouse](ingest-data.md)
+- [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
+- [Ingest data into your Warehouse using data pipelines](ingest-data-pipelines.md)
 - [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-query)
