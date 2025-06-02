@@ -38,7 +38,7 @@ The following diagram represents different entities in each layer of medallion a
 
 **Sample dataset**
 
-Contoso maintains its retail operations raw data in CSV format within ADLS Gen2. We will utilize this data to create the bronze layer, and then use the bronze layer to create the materialized lake views which form the silver and gold layers of the medallion architecture.
+Contoso maintains its retail operations raw data in CSV format within ADLS Gen2. We will utilize this data to create the bronze layer, and then use the bronze layer to create the materialized lake views which form the silver and gold layers of the medallion architecture. Download files from [Fabric samples repo](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/MaterializedLakeViews/tutorial).
 
 ## Create the pipeline
 
@@ -49,7 +49,7 @@ The high-level steps are as follows:
 
 ### Create bronze layer of sales analytics medallion architecture
 
-1.	Load the CSV files into the Lakehouse. For more information, see [Options to get data into the Lakehouse](/fabric/data-engineering/load-data-lakehouse).
+1.	Load the CSV files corresponding to different entities from the downloaded data into the Lakehouse. For more information, see [Options to get data into the Lakehouse](/fabric/data-engineering/load-data-lakehouse).
 1.	Create a bronze schema. For more information, see [Lakehouse schemas](/fabric/data-engineering/lakehouse-schemas#create-a-lakehouse-schema).
 1.	Convert the raw CSV files into delta tables using Load to Table. For more information, see [Lakehouse Load to Delta Lake tables](/fabric/data-engineering/load-to-tables).
 
@@ -57,7 +57,7 @@ The high-level steps are as follows:
 
 ### Create silver and gold layers of medallion architecture
 
-1.	Download the Notebook file and upload it to your workspace.
+1.	Upload the downloaded the Notebook file to your workspace.
 
     :::image type="content" source="./media/tutorial/create-silver-layer.png" alt-text="Screenshot showing silver materialized lake view creation." border="true" lightbox="./media/tutorial/create-silver-layer.png":::
 
