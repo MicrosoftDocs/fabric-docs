@@ -44,7 +44,7 @@ Once a variable is defined within a variable library, it can be assigned to shor
 ## Assign a variable through the shortcut rest API
 
 Variable paths can also be referenced within the payload of a create or update shortcut API request. These variables can only be used on the target properties of the shortcut payload. The variable must also be of string type only. 
-The variable path uses the following format: "$(/**/{VaribleLibary}/{VaribleName})" where {VarbileLibrary} is the name of the variable library within the workspace and {VaribleName} is the name of the variable within the library. The following sample request payload shows how to assign a variable to the Target Connection property.
+The variable path uses the following format: "$(/**/{VariableLibary}/{VariableName})" where {VariableLibrary} is the name of the variable library within the workspace and {VariableName} is the name of the variable within the library. The following sample request payload shows how to assign a variable to the Target Connection property.
 
 ```json
 {
