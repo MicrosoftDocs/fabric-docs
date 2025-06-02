@@ -11,14 +11,14 @@ metadata:
   ms.topic: landing-page # Required
   author: whhender #Required; your GitHub user alias, with correct capitalization.
   ms.author: whhender #Required; microsoft alias of author; optional team alias.
-  ms.date: 5/27/2025 #Required; mm/dd/yyyy format.
+  ms.date: 6/02/2025 #Required; mm/dd/yyyy format.
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: Start here!
+  - title: What is Data Factory?
     linkLists:
       - linkListType: overview
         links:
