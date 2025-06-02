@@ -61,4 +61,4 @@ The variable path uses the following format: "$(/**/{VaribleLibary}/{VaribleName
 }
 ```
 
-See: [OneLake Shortcuts - Create Shortcut - REST API (Core)](https://learn.microsoft.com/en-us/rest/api/fabric/core/onelake-shortcuts/create-shortcut?tabs=HTTP) for more information
+See: [OneLake Shortcuts - Create Shortcut - REST API (Core)](https://learn.microsoft.com/rest/api/fabric/core/onelake-shortcuts/create-shortcut?tabs=HTTP) for more information
