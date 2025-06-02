@@ -45,15 +45,16 @@ Hence the number of drops is always <= the number of violations for an MLV.
 
 :::image type="content" source="./media/data-quality-reports/overview_page.png" alt-text="Screenshot showing the overview page." border="true" lightbox="./media/data-quality-reports/overview_page.png":::
 
+On the Overview page, the visual titled “Data Quality Violations - Top MLVs by Day for the Last Week” displays the state of data quality on each specific day over the past week.
+This allows users to track trends, analyze past performance, and understand how the data has evolved in terms of violations. All other visuals on this page present aggregated live data, reflecting the current status of data quality.
+This combination of views provides users with a well-rounded understanding of both the present data quality and how it has evolved over time.
+
 ### MLV Detail page
 The MLV Detail page allows the user to look at the data quality metrics at a deeper granularity instead of looking at only aggregates.
 The user can filter for a particular MLV and also look at data from beyond the last one week by adjusting the SchemaName, MLVName, and RelativeDate in the Power BI filters.
 
 :::image type="content" source="./media/data-quality-reports/mlv-detail-page.png" alt-text="Screenshot showing the MLV detail page." border="true" lightbox="./media/data-quality-reports/mlv-detail-page.png":::
 
-On the Overview page, the visual titled “Data Quality Violations - Top MLVs by Day for the Last Week” displays the state of data quality on each specific day over the past week.
-This allows users to track trends, analyze past performance, and understand how the data has evolved in terms of violations. All other visuals on this page present aggregated live data, reflecting the current status of data quality.
-This combination of views provides users with a well-rounded understanding of both the present data quality and how it has evolved over time.
 On the MLV Detail page, all charts display historical data, enabling users to drill down into daily metrics across several weeks for deeper trend analysis and insights.
 
  
