@@ -413,7 +413,7 @@ items:
     items:  
     - name: Create materialized lake views
       href: ./materialized-view/create-materialized-lake-view.md
-    - name: Refresh materialized lake view
+    - name: Refresh materialized lake views
       href: ./materialized-view/refresh-materialized-lake-view.md
   - name: Data quality
     items:  
