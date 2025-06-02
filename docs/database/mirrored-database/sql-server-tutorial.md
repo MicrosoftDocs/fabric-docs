@@ -227,8 +227,7 @@ Check your networking requirements for Fabric to access your SQL Server. You nee
 
 ### Create a mirrored SQL Server
 
-<!-- 1. Open the [Fabric portal](https://fabric.microsoft.com).-->
-1. During the current preview, open the Fabric portal using this link: `https://<your_org_name>.powerbi.com/home?experience=power-bi&feature.dpe_madrid.mirrorSql2025=1`.
+1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
 1. Navigate to the **Create** pane. Select the **Create** icon.  
 1. Scroll to select **Mirrored SQL Server database**. 
@@ -268,8 +267,7 @@ Check your networking requirements for Fabric to access your SQL Server. You nee
 
 ### Create a mirrored SQL Server
 
-<!-- 1. Open the [Fabric portal](https://fabric.microsoft.com).-->
-1. During the current preview, open the Fabric portal using this link: `https://<your_org_name>.powerbi.com/home?experience=power-bi&feature.dpe_madrid.mirrorSql2025=1`.
+1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
 1. Navigate to the **Create** pane. Select the **Create** icon.  
 1. Scroll to select **Mirrored SQL Server database**. 
