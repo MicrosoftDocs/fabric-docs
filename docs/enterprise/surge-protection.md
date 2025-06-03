@@ -58,14 +58,14 @@ To enable surge protection, follow these steps:
 1. The _system events_ table shows when surge protection became active and when the capacity returned to a not overloaded state.
 
 
-## How to set the background operation rejection and recover thresholds
+## How to set the background operation rejection and recovery thresholds
 
 Capacity admins need to evaluate the capacity's usage patterns when setting the rejection and recovery thresholds. Use the Capacity metrics app to evaluate the usage. On the compute page review the data in the Background rejection, Interactive rejection, and Utilization charts.
 
 Example scenarios:
 1.	The Background rejection chart shows an average background percentage of 50%. The chart has several peaks at 60% and 75%. The lowest point on the chart is 40%. The Interactive rejection chart shows it exceeded 100% at the same time as the Background rejection chart peaked at 75%. Then to protect interactive users, setting a rejection threshold above 60% and below 75% would be an initial starting point. A recovery threshold above 40% and below 60% would be an initial starting point.
 2.	The Background Throttling chart shows an average background percentage of 35% and it usually varies by no more than 5%. The Interactive rejection chart shows a peak value of 80% which means that interactive rejections aren't occurring. Then setting a rejection threshold slightly above 40% and below 60% would be an initial starting point. Using a more conservative value would reduce the risk of impact to interactive users due to a surge in background operations. Setting the recovery threshold to 35% or even 40% is acceptable since this reflects the typical background utilization and the capacity operates well with this level of usage.
-3.	If the Utilization chart shows most 80 or 90% of usage is from background operations, then enabling surge protection background operation limits may not be helpful.
+3.	The Utilization chart shows 80% or 90% of usage is from background operations, then enabling surge protection background operation limits may not be helpful.
 
 ## System events for Surge Protection
 
