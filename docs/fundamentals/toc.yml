@@ -209,6 +209,10 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Pipeline notebook activity monitoring page is empty for T-SQL notebook
+      href: ../known-issues/known-issue-1160-pipeline-monitoring-page-empty-t-sql-notebook.md
+    - name: New query replicas in Azure Analysis Services fail to start
+      href: ../known-issues/known-issue-1158-new-query-replicas-azure-analysis-services-fail-start.md
     - name: Data warehouse doesn't load with version mismatch error
       href: ../known-issues/known-issue-1156-data-warehouse-not-load-version-mismatch-error.md
     - name: Publish of eventstream with streaming connector source fails
