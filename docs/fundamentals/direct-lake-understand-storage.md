@@ -183,17 +183,17 @@ display(HTML(html_table))
 
 **Output**:
 
-| **Parameter** | **Value** |
+| Parameter | Value |
 |---|---|
-| **Table Name** | sales_1 |
-| **Row Count** | 1000000000 |
-| **Row Groups** | 24 |
-| **Parquet Files** | 8 |
-| **Max Rows Per Row Group** | 51210000 |
-| **Min Rows Per Row Group** | 22580000 |
-| **Avg Rows Per Row Group** | 41666666.666666664 |
-| **VOrder Enabled** | True |
-| **Total Size** | 7700808430 |
+| **Table name** | sales_1 |
+| **Row count** | 1000000000 |
+| **Row groups** | 24 |
+| **Parquet files** | 8 |
+| **Max rows per row group** | 51210000 |
+| **Min rows per row group** | 22580000 |
+| **Avg rows per row group** | 41666666.666666664 |
+| **VOrder enabled** | True |
+| **Total size** | 7700808430 |
 | **Timestamp** | 2025-03-24 03:01:02.794979 |
 
 The Delta Analyzer summary shows an average row group size of approximately 40 million rows. This is larger than the recommended maximum row group size of 16 million rows. Fortunately, the larger row group size doesn't cause significant issues for Direct Lake. Larger row groups facilitate continuous segment jobs with minimal overhead in the Storage Engine. Conversely, small row groups, those significantly under 1 million rows, can cause performance issues.
@@ -250,19 +250,17 @@ display(HTML(html_table))
 
 **Output**:
 
-| **Version** | **2** |
-|---|---|
-| **Operation** | WRITE |
-| **Operation Parameters** | {'mode': 'Append', 'partitionBy': '[]'} |
-| **Operation Metrics** | {'numFiles': '1', 'numOutputRows': '548665', 'numOutputBytes': '4103076'} |
-| **Version** | **1** |
-| **Operation** | DELETE |
-| **Operation Parameters** | {'predicate': '["(DateID#3910 = 20200101)"]'} |
-| **Operation Metrics** | {'numRemovedFiles': '8', 'numRemovedBytes': '7700855198', 'numCopiedRows': '999451335', 'numDeletionVectorsAdded': '0', 'numDeletionVectorsRemoved': '0', 'numAddedChangeFiles': '0', 'executionTimeMs': '123446', 'numDeletionVectorsUpdated': '0', 'numDeletedRows': '548665', 'scanTimeMs': '4820', 'numAddedFiles': '18', 'numAddedBytes': '7696900084', 'rewriteTimeMs': '198625'} |
-| **Version** | **0** |
-| **Operation** | WRITE |
-| **Operation Parameters** | {'mode': 'Overwrite', 'partitionBy': '[]'} |
-| **Operation Metrics** | {'numFiles': '8', 'numOutputRows': '1000000000', 'numOutputBytes': '7700892169'} |
+| Version | Description | Value |
+|---|---|---|
+| **2** | **Operation** | WRITE |
+| |**Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} |
+| |**Operation metrics** | {'numFiles': '1', 'numOutputRows': '548665', 'numOutputBytes': '4103076'} |
+| **1** | **Operation** | DELETE |
+|| **Operation parameters** | {'predicate': '["(DateID#3910 = 20200101)"]'} |
+|| **Operation metrics** | {'numRemovedFiles': '8', 'numRemovedBytes': '7700855198', 'numCopiedRows': '999451335', 'numDeletionVectorsAdded': '0', 'numDeletionVectorsRemoved': '0', 'numAddedChangeFiles': '0', 'executionTimeMs': '123446', 'numDeletionVectorsUpdated': '0', 'numDeletedRows': '548665', 'scanTimeMs': '4820', 'numAddedFiles': '18', 'numAddedBytes': '7696900084', 'rewriteTimeMs': '198625'} |
+| **0** | **Operation** | WRITE |
+||**Operation parameters** | {'mode': 'Overwrite', 'partitionBy': '[]'} |
+|| **Operation metrics** | {'numFiles': '8', 'numOutputRows': '1000000000', 'numOutputBytes': '7700892169'} |
 
 The Delta Analyzer history above shows that this Delta table now has the following three versions:
 
@@ -357,34 +355,32 @@ Table 'sales_1_by_month' partitioned and saved successfully.
 
 The Delta Analyzer summary now shows that the Delta table layout is well aligned with Direct Lake. The average row group size is about 16 million rows, and the mean absolute deviation of the row group sizes and therefore segment sizes is fewer than 1 million rows.
 
-| **Parameter** | **Value** |
+| Parameter | Value |
 |---|---|
-| **Table Name** | sales_1_by_month |
-| **Row Count** | 1000000000 |
-| **Row Groups** | 60 |
-| **Parquet Files** | 60 |
-| **Max Rows Per Row Group** | 16997436 |
-| **Min Rows Per Row Group** | 15339311 |
-| **Avg Rows Per Row Group** | 16666666.666666666 |
-| **VOrder Enabled** | True |
-| **Total Size** | 7447946016 |
+| **Table name** | sales_1_by_month |
+| **Row count** | 1000000000 |
+| **Row groups** | 60 |
+| **Parquet files** | 60 |
+| **Max rows per row group** | 16997436 |
+| **Min rows per row group** | 15339311 |
+| **Avg rows per row group** | 16666666.666666666 |
+| **VOrder enabled** | True |
+| **Total size** | 7447946016 |
 | **Timestamp** | 2025-03-24 03:01:02.794979 |
 
 After a rolling window update against a partitioned sample table, the Delta Analyzer history shows that only one parquet file was affected. See the following output table. Version 2 has exactly 16,445,655 rows copied over from the old parquet file into a replacement parquet file, and Version 3 adds a new parquet file with 548,665 rows. In total, Direct Lake only needs to reload about 17 million rows, a sizeable improvement over a 1-billion-rows reload without partitioning.
 
-| **Version** | **2** |
-|---|---|
-| **Operation** | WRITE |
-| **Operation Parameters** | {'mode': 'Append', 'partitionBy': '["Month"]'} |
-| **Operation Metrics** | {'numFiles': '1', 'numOutputRows': '548665', 'numOutputBytes': '4103076'} |
-| **Version** | **1** |
-| **Operation** | DELETE |
-| **Operation Parameters** | {'predicate': '["(DateID#3910 = 20200101)"]'} |
-| **Operation Metrics** | {'numRemovedFiles': '1', 'numRemovedBytes': '126464179', 'numCopiedRows': '16445655', 'numDeletionVectorsAdded': '0', 'numDeletionVectorsRemoved': '0', 'numAddedChangeFiles': '0', 'executionTimeMs': '19065', 'numDeletionVectorsUpdated': '0', 'numDeletedRows': '548665', 'scanTimeMs': '1926', 'numAddedFiles': '1', 'numAddedBytes': '121275513', 'rewriteTimeMs': '17138'} |
-| **Version** | **0** |
-| **Operation** | WRITE |
-| **Operation Parameters** | {'mode': 'Overwrite', 'partitionBy': '["Month"]'} |
-| **Operation Metrics** | {'numFiles': '60', 'numOutputRows': '1000000000', 'numOutputBytes': '7447681467'} |
+| Version | Description | Value|
+|---|---|---|
+|**2** | **Operation** | WRITE |
+| |**Operation parameters** | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+| |**Operation metrics** | {'numFiles': '1', 'numOutputRows': '548665', 'numOutputBytes': '4103076'} |
+|**1** | **Operation** | DELETE |
+|| **Operation parameters** | {'predicate': '["(DateID#3910 = 20200101)"]'} |
+|| **Operation metrics** | {'numRemovedFiles': '1', 'numRemovedBytes': '126464179', 'numCopiedRows': '16445655', 'numDeletionVectorsAdded': '0', 'numDeletionVectorsRemoved': '0', 'numAddedChangeFiles': '0', 'executionTimeMs': '19065', 'numDeletionVectorsUpdated': '0', 'numDeletedRows': '548665', 'scanTimeMs': '1926', 'numAddedFiles': '1', 'numAddedBytes': '121275513', 'rewriteTimeMs': '17138'} |
+| **0** | **Operation** | WRITE |
+|| **Operation parameters** | {'mode': 'Overwrite', 'partitionBy': '["Month"]'} |
+|| **Operation metrics** | {'numFiles': '60', 'numOutputRows': '1000000000', 'numOutputBytes': '7447681467'} |
 
 ### Appends without deletes followed by Spark Optimize
 
@@ -392,43 +388,35 @@ Appends without deletes don't affect existing parquet files. They work well with
 
 The following output shows the Delta Analyzer history for a nonpartitioned table compared to a partitioned table. The history includes seven appends and one subsequent **optimize** operation.
 
-| **Version 8** | **Default Layout** | **Partitioned Layout** |
-|---|---|---|
-| **Operation** | OPTIMIZE | OPTIMIZE |
-| **Operation Parameters** | {'predicate': '[]', 'auto': 'false', 'clusterBy': '[]', 'vorder': 'true', 'zOrderBy': '[]'} | {'predicate': '["(\'Month >= 202501)"]', 'auto': 'false', 'clusterBy': '[]', 'vorder': 'true', 'zOrderBy': '[]'} |
-| **Operation Metrics** | {'numRemovedFiles': '8', 'numRemovedBytes': '991234561', 'p25FileSize': '990694179', 'numDeletionVectorsRemoved': '0', 'minFileSize': '990694179', 'numAddedFiles': '1', 'maxFileSize': '990694179', 'p75FileSize': '990694179', 'p50FileSize': '990694179', 'numAddedBytes': '990694179'} | {'numRemovedFiles': '7', 'numRemovedBytes': '28658548', 'p25FileSize': '28308495', 'numDeletionVectorsRemoved': '0', 'minFileSize': '28308495', 'numAddedFiles': '1', 'maxFileSize': '28308495', 'p75FileSize': '28308495', 'p50FileSize': '28308495', 'numAddedBytes': '28308495'} |
-| **Version 7** | | |
-| **Operation** | WRITE | WRITE |
-| **Operation Parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
-| **Operation Metrics** | {'numFiles': '1', 'numOutputRows': '547453', 'numOutputBytes': '4091802'} | {'numFiles': '1', 'numOutputRows': '547453', 'numOutputBytes': '4091802'} |
-| **Version 6** | | |
-| **Operation** | WRITE | WRITE |
-| **Operation Parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
-| **Operation Metrics** | {'numFiles': '1', 'numOutputRows': '548176', 'numOutputBytes': '4095497'} | {'numFiles': '1', 'numOutputRows': '548176', 'numOutputBytes': '4095497'} |
-| **Version 5** | | |
-| **Operation** | WRITE | WRITE |
-| **Operation Parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
-| **Operation Metrics** | {'numFiles': '1', 'numOutputRows': '547952', 'numOutputBytes': '4090107'} | {'numFiles': '1', 'numOutputRows': '547952', 'numOutputBytes': '4093015'} |
-| **Version 4** | | |
-| **Operation** | WRITE | WRITE |
-| **Operation Parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
-| **Operation Metrics** | {'numFiles': '1', 'numOutputRows': '548631', 'numOutputBytes': '4093134'} | {'numFiles': '1', 'numOutputRows': '548631', 'numOutputBytes': '4094376'} |
-| **Version 3** | | |
-| **Operation** | WRITE | WRITE |
-| **Operation Parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
-| **Operation Metrics** | {'numFiles': '1', 'numOutputRows': '548671', 'numOutputBytes': '4101221'} | {'numFiles': '1', 'numOutputRows': '548671', 'numOutputBytes': '4101221'} |
-| **Version 2** | | |
-| **Operation** | WRITE | WRITE |
-| **Operation Parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
-| **Operation Metrics** | {'numFiles': '1', 'numOutputRows': '546530', 'numOutputBytes': '4081589'} | {'numFiles': '1', 'numOutputRows': '546530', 'numOutputBytes': '4081589'} |
-| **Version 1** | | |
-| **Operation** | WRITE | WRITE |
-| **Operation Parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
-| **Operation Metrics** | {'numFiles': '1', 'numOutputRows': '548665', 'numOutputBytes': '4101048'} | {'numFiles': '1', 'numOutputRows': '548665', 'numOutputBytes': '4101048'} |
-| **Version 0** | | |
-| **Operation** | WRITE | WRITE |
-| **Operation Parameters** | {'mode': 'Overwrite', 'partitionBy': '[]'} | {'mode': 'Overwrite', 'partitionBy': '["Month"]'} |
-| **Operation Metrics** | {'numFiles': '8', 'numOutputRows': '1000000000', 'numOutputBytes': '7700855198'} | {'numFiles': '60', 'numOutputRows': '1000000000', 'numOutputBytes': '7447681467'} |
+| Version | Description | Default layout | Partitioned layout |
+|---|---|---|---|
+|**8** | **Operation** | OPTIMIZE | OPTIMIZE |
+|| **Operation parameters** | {'predicate': '[]', 'auto': 'false', 'clusterBy': '[]', 'vorder': 'true', 'zOrderBy': '[]'} | {'predicate': '["(\'Month >= 202501)"]', 'auto': 'false', 'clusterBy': '[]', 'vorder': 'true', 'zOrderBy': '[]'} |
+|| **Operation metrics** | {'numRemovedFiles': '8', 'numRemovedBytes': '991234561', 'p25FileSize': '990694179', 'numDeletionVectorsRemoved': '0', 'minFileSize': '990694179', 'numAddedFiles': '1', 'maxFileSize': '990694179', 'p75FileSize': '990694179', 'p50FileSize': '990694179', 'numAddedBytes': '990694179'} | {'numRemovedFiles': '7', 'numRemovedBytes': '28658548', 'p25FileSize': '28308495', 'numDeletionVectorsRemoved': '0', 'minFileSize': '28308495', 'numAddedFiles': '1', 'maxFileSize': '28308495', 'p75FileSize': '28308495', 'p50FileSize': '28308495', 'numAddedBytes': '28308495'} |
+| **7** | **Operation** | WRITE | WRITE |
+||**Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+||**Operation metrics** | {'numFiles': '1', 'numOutputRows': '547453', 'numOutputBytes': '4091802'} | {'numFiles': '1', 'numOutputRows': '547453', 'numOutputBytes': '4091802'} |
+| **6** | **Operation** | WRITE | WRITE |
+||**Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+||**Operation metrics** | {'numFiles': '1', 'numOutputRows': '548176', 'numOutputBytes': '4095497'} | {'numFiles': '1', 'numOutputRows': '548176', 'numOutputBytes': '4095497'} |
+| **5** | **Operation** | WRITE | WRITE |
+|| **Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+|| **Operation metrics** | {'numFiles': '1', 'numOutputRows': '547952', 'numOutputBytes': '4090107'} | {'numFiles': '1', 'numOutputRows': '547952', 'numOutputBytes': '4093015'} |
+| **4** | **Operation** | WRITE | WRITE |
+|| **Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+|| **Operation metrics** | {'numFiles': '1', 'numOutputRows': '548631', 'numOutputBytes': '4093134'} | {'numFiles': '1', 'numOutputRows': '548631', 'numOutputBytes': '4094376'} |
+| **3**|**Operation** | WRITE | WRITE |
+||**Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+||**Operation metrics** | {'numFiles': '1', 'numOutputRows': '548671', 'numOutputBytes': '4101221'} | {'numFiles': '1', 'numOutputRows': '548671', 'numOutputBytes': '4101221'} |
+| **2** |**Operation** | WRITE | WRITE |
+||**Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+||**Operation metrics** | {'numFiles': '1', 'numOutputRows': '546530', 'numOutputBytes': '4081589'} | {'numFiles': '1', 'numOutputRows': '546530', 'numOutputBytes': '4081589'} |
+| **1** | **Operation** | WRITE | WRITE |
+||**Operation parameters** | {'mode': 'Append', 'partitionBy': '[]'} | {'mode': 'Append', 'partitionBy': '["Month"]'} |
+||**Operation metrics** | {'numFiles': '1', 'numOutputRows': '548665', 'numOutputBytes': '4101048'} | {'numFiles': '1', 'numOutputRows': '548665', 'numOutputBytes': '4101048'} |
+| **0** | **Operation** | WRITE | WRITE |
+||**Operation parameters** | {'mode': 'Overwrite', 'partitionBy': '[]'} | {'mode': 'Overwrite', 'partitionBy': '["Month"]'} |
+||**Operation metrics** | {'numFiles': '8', 'numOutputRows': '1000000000', 'numOutputBytes': '7700855198'} | {'numFiles': '60', 'numOutputRows': '1000000000', 'numOutputBytes': '7447681467'} |
 
 Looking at the Operation Metrics of Version 8, it's worth pointing out that the **optimize** operation for the nonpartitioned tabled merged eight parquet files affecting roughly 1 GB of data while the **optimize** operation of the partitioned table merged seven parquet files affecting only about 25 MB of data. It follows that Direct Lake would perform better with the partitioned table.
 
