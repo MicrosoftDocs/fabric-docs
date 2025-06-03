@@ -209,6 +209,10 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Data warehouse doesn't load with version mismatch error
+      href: ../known-issues/known-issue-1156-data-warehouse-not-load-version-mismatch-error.md
+    - name: Publish of eventstream with streaming connector source fails
+      href: ../known-issues/known-issue-1155-publish-eventstream-streaming-connector-source-fails.md
     - name: Next button in connection authoring is greyed out
       href: ../known-issues/known-issue-1149-next-button-connection-authoring-greyed-out.md
     - name: Disabling the Workspace encryption setting doesn't work
