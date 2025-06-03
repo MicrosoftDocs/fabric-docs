@@ -58,7 +58,7 @@ First, set up your development environment with the required tools and packages.
 
     # macOS/Linux
     source .venv/bin/activate
-    ```bash
+    ```
 
 4. **Install the OpenAPI Generator CLI**:
 
@@ -96,7 +96,7 @@ Follow these steps to select the correct Python interpreter:
 4. **Verify your selection**:
    - After selecting, the active interpreter will appear in the status bar at the bottom of Visual Studio Code, showing something like:
      ```
-     Python 3.10.x 64-bit ('.venv': venv)
+     Python 3.12.x ('.venv': venv)
      ```
 
 5. **Open a new integrated terminal**:
