@@ -157,7 +157,7 @@ Example:
 
 ## Limitation
 
-* Spark properties set at the session level aren't applied during scheduled lineage scheduled refresh.
+* Spark properties set at the session level aren't applied during scheduled lineage refresh.
 * The creation of materialized lake view with delta time-travel isn't supported.
 * DML statements aren't supported with materialized lake views.
 * User-defined functions in CTAS aren't supported.
