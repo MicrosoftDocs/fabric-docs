@@ -1,6 +1,6 @@
 ---
-title: "Understand Direct Lake Query Performance"
-description: "Learn about storage concepts for Direct Lake semantic models and how to optimize for reliable, fast query performance."
+title: "Understand Direct Lake query performance"
+description: "Learn how Direct Lake query performance depends on Delta table health and efficient data updates. Understand the importance of V-Order optimization, row groups, and Delta log management for optimal query execution."
 author: JulCsc
 ms.author: juliacawthra
 ms.reviewer: phseamar, Kay.Unkroth
