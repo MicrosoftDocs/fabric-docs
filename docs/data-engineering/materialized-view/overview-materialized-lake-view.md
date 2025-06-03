@@ -1,26 +1,26 @@
 ---
-title: "Overview of materialized lake view"
-description: Materialized views in Microsoft Fabric facilitate the implementation of the Medallion architecture by enabling automated creation, scheduling, and execution of materialized views.
-ms.author: abhishjain 
-author: abhishjain002
-ms.reviewer: nijelsf
+title: "Overview of materialized lake views"
+description: Materialized lake views in Microsoft Fabric facilitate the implementation of the medallion architecture by enabling automated creation, scheduling, and execution of materialized lake views.
+ms.author: nijelsf 
+author: reachnijel
+ms.reviewer: balaji.sankaran
 ms.topic: tutorial
-ms.date: 04/15/2025
+ms.date: 06/03/2025
 ---
 
-# What is materialized view in lakehouse in Microsoft Fabric?
+# What is materialized lake views in Microsoft Fabric? 
 
-Materialized views in Microsoft Fabric are designed to simplify the implementation of the Medallion architecture. These views allow for creation, scheduling, and scheduled execution of materialized views, optimizing data transformations through a declarative approach. 
+Materialized lake views in Microsoft Fabric facilitate the implementation of a Medallion architecture, thereby enhancing data management. This functionality aids in the creation, management, and monitoring of views, and improves transformations through a declarative approach. Developers are enabled to focus on delivering insights based on data rather than concerning themselves with infrastructure maintenance. 
 
 ## Key features and benefits
-*	**Declarative pipelines**: They help manage data transformations through a declarative approach, optimizing execution as opposed to manually setting up and managing pipelines individually.
-*	**Visualization and monitoring**: Developers can create and monitor data pipelines using SQL syntax extensions, visualize the directed acyclic graph (DAG) of the pipeline, and track its performance and status. The processing pipeline can optimize for performance by identifying the right sequence to update the data, only refreshing segments of the DAG that have changes.    
-*	**Data quality Management**: Users can define and implement data quality checks and actions to be taken on errors, ensuring high data quality.
+
+*	**Declarative pipelines**: Materialized lake views facilitate the management of data transformations through a declarative methodology, thereby optimizing execution without necessitating manual configuration and administration of individual pipelines. This syntax provides the capability to establish data quality regulations and address any infractions that may occur through defined actions.
+  
+*	**Visualization and monitoring**: Visualization and monitoring: Developers can visualize lineage across all entities in lakehouse, view the dependencies and track its execution progress. The processing pipeline shall be optimized for performance by updating the data in the appropriate sequence, managing optimal parallel paths, and exclusively refreshing segments of the lineage that have changes. This feature offers an integrated data quality report that highlights data quality trends. Additionally, alerts can be configured based on any condition related to data quality rule violations. 
 
 ## Future enhancements
 
-*	PySpark support for materialized views.
-*	Built-in data quality dashboard.
-*	Data quality alerts in Data Activator
-*	Incremental refresh of materialized views.
-*	Support for Cross lakehouse DAG and Execution.
+*	PySpark support for materialized lake views.
+*	Incremental refresh of materialized lake views.
+*	API support for Materialized lake view management.
+*	Support for Cross lakehouse DAG and Execution. 
