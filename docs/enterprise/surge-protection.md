@@ -9,10 +9,10 @@ author:      LukaszPawlowski-MS # GitHub alias
 ms.author:   lukaszp # Microsoft alias
 ms.service: fabric
 ms.topic: conceptual
-ms.date:     11/18/2024
+ms.date:     06/03/2025
 ---
 
-# Surge protection (preview)
+# Surge protection
 
 Surge protection helps limit overuse of your capacity by limiting the amount of compute consumed by background jobs. You configure surge protection for each capacity. Surge protection helps prevent throttling and rejections but isn't a substitute for capacity optimization, scaling up, and scaling out. When the capacity reaches its compute limit, it experiences interactive delays, interactive rejections, or all rejections even when surge protection is enabled.
 
@@ -22,13 +22,13 @@ You need to be an admin on the capacity.
 
 ## Surge protection thresholds
 
-Capacity admins set a _background rejection threshold_ and a _background recovery threshold_ when they enable surge protection. 
+Capacity admins set a _background operations rejection threshold_ and a _background operations recovery threshold_ when they enable surge protection. 
 
-- The **Background Rejection threshold** determines when surge protection becomes active. The threshold applies to the _24-hour background percentage_ for the capacity. When the threshold is reached or exceeded, surge protection becomes active. When surge protection is active, the capacity rejects new background operations. When surge protection isn't enabled, the _24-hour background percentage_ is allowed to reach 100% before the capacity rejects new background operations.
-- The **Background Recovery threshold** determines when surge protection stops being active. Surge protection stops being active when the _24-hour background percentage_ drops below the _background recovery threshold_. The capacity starts to accept new background operations. 
+- The **Background Operations Rejection threshold** determines when surge protection becomes active. The threshold applies to the _24-hour background percentage_ for the capacity. When the threshold is reached or exceeded, surge protection becomes active. When surge protection is active, the capacity rejects new background operations. When surge protection isn't enabled, the _24-hour background percentage_ is allowed to reach 100% before the capacity rejects new background operations.
+- The **Background Operatoins Recovery threshold** determines when surge protection stops being active. Surge protection stops being active when the _24-hour background percentage_ drops below the _background recovery threshold_. The capacity starts to accept new background operations. 
 
 > [!NOTE]
-> Capacity admins can see the 24-hour background percent in the _Capacity metrics app_ compute page under _Throttling_ on the _Background Throttling_ chart.  
+> Capacity admins can see the 24-hour background percent in the _Capacity metrics app_ compute page under _Throttling_ on the _Background rejection_ chart.  
 
 ## Enabling surge protection
 To enable surge protection, follow these steps:
@@ -41,11 +41,11 @@ To enable surge protection, follow these steps:
 
 1. Expand **Surge Protection**.
 
-1. Select **Enable Surge Protection**.
+1. Set **Background Operations** to **On**.
 
-1. Set a **Background Rejection threshold**.
+1. Set a **Rejection threshold**.
 
-1. Set a **Background Recovery threshold**.
+1. Set a **Recovery threshold**.
 
 1. Select **Apply**.
 
@@ -56,6 +56,16 @@ To enable surge protection, follow these steps:
 1. On the **Compute** page, select **System events**.
 
 1. The _system events_ table shows when surge protection became active and when the capacity returned to a not overloaded state.
+
+
+## How to set the background operation rejection and recover thresholds
+
+Capacity admins need to evaluate the capacity's usage patterns when setting the rejection and recovery thresholds. Use the Capacity metrics app to evaluate the usage. On the compute page review the data in the Background rejection, Interactive rejection, and Utilization charts.
+
+Example scenarios:
+1.	The Background rejection chart shows an average background percentage of 50%. The chart has several peaks at 60% and 75%. The lowest point on the chart is 40%. The Interactive rejection chart shows it exceeded 100% at the same time as the Background rejection chart peaked at 75%. Then to protect interactive users, setting a rejection threshold above 60% and below 75% would be an initial starting point. A recovery threshold above 40% and below 60% would be an initial starting point.
+2.	The Background Throttling chart shows an average background percentage of 35% and it usually varies by no more than 5%. The Interactive rejection chart shows a peak value of 80% which means that interactive rejections aren't occurring. Then setting a rejection threshold slightly above 40% and below 60% would be an initial starting point. Using a more conservative value would reduce the risk of impact to interactive users due to a surge in background operations. Setting the recovery threshold to 35% or even 40% is acceptable since this reflects the typical background utilization and the capacity operates well with this level of usage.
+3.	If the Utilization chart shows most 80 or 90% of usage is from background operations, then enabling surge protection background operation limits may not be helpful.
 
 ## System events for Surge Protection
 
