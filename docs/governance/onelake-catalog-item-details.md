@@ -20,10 +20,12 @@ The item details view includes several tabs that help you explore and manage the
   * **Developers and Analysts**: Access trust signals for an item, identify high-quality data to use as starting points, and avoid creating redundant items.
   * **Consumers**: Discover reliable apps, reports, and dashboards to support everyday work.
 
-To display the details page for an item in the OneLake catalog explorer, select the **Explore** tab, and then select an item in the list. The item details page opens to the side of the list.
+The item details page adapts to how you access it, offering two convenient ways to explore items:
+
+* **In-context view**: When you click on an item's name in OneLake catalog explorer, its details appear as a pane next to your current filtered list of items. This allows you to seamlessly explore and compare items, helping you find the most suitable one. You can expand this pane for a full-page view, then retract or close it to return to your full list.
+* **Full-page view**: If you open an item's details from outside the Catalog, for example by selecting "View Details" from an item's context menu in Workspaces, or by using a direct URL, the page opens in full-screen. This gives you a dedicated, comprehensive view of that single item. Since you're not coming from a filtered list in the Catalog, you won't see other items alongside it. To browse for other items, just select the OneLake Catalog entry point in the left navigation.
 
 :::image type="content" source="./media/onelake-catalog-item-details/onelake-catalog-explore-item-details-view.png" alt-text="Screenshot of the item details page." lightbox="./media/onelake-catalog-item-details/onelake-catalog-explore-item-details-view.png":::
-
 
 ## About the item details view
 
@@ -60,7 +62,7 @@ In the OneLake catalog explorer, you can view and interact with semantic models 
 
 ### Lineage tab
 
-The **Lineage** tab shows the item's upstream and downstream relationships. It also shows metadata associated with the item, including location, endorsement, and sensitivity information. You can view this lineage in either a list graph format.
+The **Lineage** tab shows the item's upstream and downstream relationships. It also shows metadata associated with the item, including location, endorsement, and sensitivity information. You can view this lineage in either a list or a graph format.
 
 :::image type="content" source="./media/onelake-catalog-item-details/onelake-catalog-explore-lineage-tab.png" alt-text="Screenshot of the explore tab item view lineage tab." lightbox="./media/onelake-catalog-item-details/onelake-catalog-explore-lineage-tab.png":::
 

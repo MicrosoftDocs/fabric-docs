@@ -133,6 +133,9 @@ You can open the item for editing or viewing (depending on the item type) from b
 
 * To open the item for editing or viewing from the [item details view](./onelake-catalog-item-details.md), select the **Open** button in the view.
 
+## View item details
+When you select an item from the items list, its detailed information appears in a dedicated pane alongside your current view. This in-context view allows you to quickly browse through item metadata, lineage, and permissions without losing your place in the item list, making it easy to compare and find the most suitable items. For a comprehensive understanding of how item details are presented and the various ways you can access them, refer to [View item details](./onelake-catalog-item-details.md).
+
 ## Considerations and limitations
 
 * Streaming semantic models are being retired and thus aren't shown. For more information, see [Announcing the retirement of real-time streaming in Power BI](https://powerbi.microsoft.com/blog/announcing-the-retirement-of-real-time-streaming-in-power-bi/).
