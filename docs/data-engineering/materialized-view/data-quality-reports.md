@@ -33,8 +33,8 @@ Once ready, the Power BI report will be displayed on the same page as an embedde
 ## Interpret the data in the report
 
 The report has two pages:
-1. Overview
-1. MLV Detail
+- Overview
+- MLV Detail
 
 ### Overview page
 The overview page shows the data trends from the last one week, displaying visuals for the MLVs and constraints that cause the most violations and drops.
