@@ -59,7 +59,138 @@ The following files are contained in an eventstream folder:
 
 - **EventstreamProperties.json**
 
-    The file allows you to configure platform-level settings for the eventstream item.
+    The file allows you to configure platform-level settings for the eventstream item. Here's a sample file: 
+
+    ```json
+    {
+        "sources": [
+            {
+                "name": "AzureEventHubSource",
+                "type": "AzureEventHub",
+                "properties": {
+                    "dataConnectionId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+                    "consumerGroupName": "$Default",
+                    "inputSerialization": {
+                        "type": "Json",
+                        "properties": {
+                            "encoding": "UTF8"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "AzureIoTHubSource",
+                "type": "AzureIoTHub",
+                "properties": {
+                    "dataConnectionId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+                    "consumerGroupName": "$Default",
+                    "inputSerialization": {
+                        "type": "Json",
+                        "properties": {
+                            "encoding": "UTF8"
+                        }
+                    }
+                }
+            }
+        ],
+        "destinations": [
+            {
+                "name": "CustomEndpointDestination",
+                "type": "CustomEndpoint",
+                "properties": {},
+                "inputNodes": [
+                    {
+                        "name": "myEventstream-stream"
+                    }
+                ]
+            },
+            {
+                "name": "LakehouseDestination",
+                "type": "Lakehouse",
+                "properties": {
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "itemId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+                    "schema": "dbo",
+                    "deltaTable": "deltaTable",
+                    "minimumRows": 100000,
+                    "maximumDurationInSeconds": 120,
+                    "inputSerialization": {
+                        "type": "Json",
+                        "properties": {
+                            "encoding": "UTF8"
+                        }
+                    }
+                },
+                "inputNodes": [
+                    {
+                        "name": "myEventstream-stream"
+                    }
+                ]
+            }
+        ],
+        "streams": [
+            {
+                "name": "myEventstream-stream",
+                "type": "DefaultStream",
+                "properties": {},
+                "inputNodes": [
+                    {
+                        "name": "sourceName"
+                    }
+                ]
+            },
+            {
+                "name": "DerivedStreamName",
+                "type": "DerivedStream",
+                "properties": {
+                    "inputSerialization": {
+                        "type": "Json",
+                        "properties": {
+                            "encoding": "UTF8"
+                        }
+                    }
+                },
+                "inputNodes": [
+                    {
+                        "name": "FilterName"
+                    }
+                ]
+            }
+        ],
+        "operators": [
+            {
+                "name": "FilterName",
+                "type": "Filter",
+                "inputNodes": [
+                    {
+                        "name": "myEventstream-stream"
+                    }
+                ],
+                "properties": {
+                    "conditions": [
+                        {
+                            "column": {
+                                "node": null,
+                                "columnName": "BikepointID",
+                                "columnPath": null,
+                                "expressionType": "ColumnReference"
+                            },
+                            "operatorType": "NotEquals",
+                            "value": {
+                                "dataType": "Nvarchar(max)",
+                                "value": "0",
+                                "expressionType": "Literal"
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "compatibilityLevel": "1.0"
+    }    
+    ```
+
+For a complete sample with all types of sources, destinations, and operators, see [eventstream-definition.json](https://github.com/microsoft/fabric-event-streams/blob/main/API%20Templates/eventstream-definition.json).    
 
 ## Related content
 
