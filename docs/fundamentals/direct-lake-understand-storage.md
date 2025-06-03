@@ -388,7 +388,7 @@ Appends without deletes don't affect existing parquet files. They work well with
 
 The following output shows the Delta Analyzer history for a nonpartitioned table compared to a partitioned table. The history includes seven appends and one subsequent **optimize** operation.
 
-| Version | Description | Default layout | Partitioned layout |
+| Version | Description | Value in *default* layout | Value in *partitioned* layout |
 |---|---|---|---|
 |**8** | **Operation** | OPTIMIZE | OPTIMIZE |
 || **Operation parameters** | {'predicate': '[]', 'auto': 'false', 'clusterBy': '[]', 'vorder': 'true', 'zOrderBy': '[]'} | {'predicate': '["(\'Month >= 202501)"]', 'auto': 'false', 'clusterBy': '[]', 'vorder': 'true', 'zOrderBy': '[]'} |
