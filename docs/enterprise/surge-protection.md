@@ -25,7 +25,7 @@ You need to be an admin on the capacity.
 Capacity admins set a _background operations rejection threshold_ and a _background operations recovery threshold_ when they enable surge protection. 
 
 - The **Background Operations Rejection threshold** determines when surge protection becomes active. The threshold applies to the _24-hour background percentage_ for the capacity. When the threshold is reached or exceeded, surge protection becomes active. When surge protection is active, the capacity rejects new background operations. When surge protection isn't enabled, the _24-hour background percentage_ is allowed to reach 100% before the capacity rejects new background operations.
-- The **Background Operatoins Recovery threshold** determines when surge protection stops being active. Surge protection stops being active when the _24-hour background percentage_ drops below the _background recovery threshold_. The capacity starts to accept new background operations. 
+- The **Background Operations Recovery threshold** determines when surge protection stops being active. Surge protection stops being active when the _24-hour background percentage_ drops below the _background recovery threshold_. The capacity starts to accept new background operations. 
 
 > [!NOTE]
 > Capacity admins can see the 24-hour background percent in the _Capacity metrics app_ compute page under _Throttling_ on the _Background rejection_ chart.  
@@ -64,7 +64,7 @@ Capacity admins need to evaluate the capacity's usage patterns when setting the 
 
 Example scenarios:
 1.	The Background rejection chart shows an average background percentage of 50%. The chart has several peaks at 60% and 75%. The lowest point on the chart is 40%. The Interactive rejection chart shows it exceeded 100% at the same time as the Background rejection chart peaked at 75%. Then to protect interactive users, setting a rejection threshold above 60% and below 75% would be an initial starting point. A recovery threshold above 40% and below 60% would be an initial starting point.
-2.	The Background Throttling chart shows an average background percentage of 35% and it usually varies by no more than 5%. The Interactive rejection chart shows a peak value of 80% which means that interactive rejections aren't occurring. Then setting a rejection threshold slightly above 40% and below 60% would be an initial starting point. Using a more conservative value would reduce the risk of impact to interactive users due to a surge in background operations. Setting the recovery threshold to 35% or even 40% is acceptable since this reflects the typical background utilization and the capacity operates well with this level of usage.
+2.	The Background Throttling chart shows an average background percentage of 35% and it usually varies by no more than 5%. The Interactive rejection chart shows a peak value of 80% which means that interactive rejections aren't occurring. Then setting a rejection threshold slightly above 40% and below 60% would be an initial starting point. Using a lower value would reduce the risk of impact to interactive users due to a surge in background operations. Setting the recovery threshold to 35% or even 40% is acceptable since this value reflects the typical background utilization and the capacity operates well with this level of usage.
 3.	The Utilization chart shows 80% or 90% of usage is from background operations, then enabling surge protection background operation limits may not be helpful.
 
 ## System events for Surge Protection
