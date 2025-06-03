@@ -37,7 +37,7 @@ First, set up your development environment with the required tools and packages.
     ```bash
     git clone https://github.com/microsoft/Microsoft-Fabric-workload-development-sample
     cd Microsoft-Fabric-workload-development-sample
-    ```bash
+    ```
 
 2. **Create a PythonBackend directory**:
 
