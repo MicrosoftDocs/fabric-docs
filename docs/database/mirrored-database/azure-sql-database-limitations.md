@@ -27,6 +27,8 @@ For troubleshooting, see:
   - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
 - `.dacpac` deployments to Azure SQL Database require the publish property `/p:DoNotAlterReplicatedObjects=False` to enable modifications to any mirrored tables. For more about publish settings available for `.dacpac` deployments, see the [SqlPackage publish documentation](/sql/tools/sqlpackage/sqlpackage-publish).
 
+- Azure SQL Database cannot be mirrored if [delayed transaction durability](sql/relational-databases/logs/control-transaction-durability?view=azuresqldb-current&preserve-view=true) is enabled for the database.
+
 ## Permissions in the source database
 
 - [Row-level security](/sql/relational-databases/security/row-level-security?view=fabric&preserve-view=true) is supported, but permissions are currently not propagated to the replicated data in Fabric OneLake.
