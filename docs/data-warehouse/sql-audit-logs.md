@@ -85,7 +85,7 @@ In addition to action groups, individual audit actions can be configured to log 
 
 - If audit logs are disabled, all action groups must be reconfigured upon re-enabling.
 - Currently SQL Audit for Fabric Data Warehouse is not supported in the default workspace.
-- SQL Audit Logs is not supported for Datawarehouse Snapshots. 
+- SQL Audit Logs is not supported for [Warehouse Snapshots](warehouse-snapshot.md). 
 
 ## Next step
 
