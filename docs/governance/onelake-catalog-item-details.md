@@ -22,7 +22,7 @@ The item details view includes several tabs that help you explore and manage the
 
 To display the details page for an item in the OneLake catalog explorer, select the **Explore** tab, and then select an item in the list. The item details page opens to the side of the list.
 
-:::image type="content" source="./media/onelake-catalog-item-details/onelake-catalog-explore-item-details-view.png" alt-text="Screenshot of the explore tab item view overview tab." lightbox="./media/onelake-catalog-item-details/onelake-catalog-explore-item-details-view.png":::
+:::image type="content" source="./media/onelake-catalog-item-details/onelake-catalog-explore-item-details-view.png" alt-text="Screenshot of the item details page." lightbox="./media/onelake-catalog-item-details/onelake-catalog-explore-item-details-view.png":::
 
 
 ## About the item details view
