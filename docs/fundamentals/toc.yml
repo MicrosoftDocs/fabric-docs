@@ -27,7 +27,7 @@ items:
     href: task-flow-work-with.md
 - name: Decision guides
   items:
-  - name: Decision guide - copy activity, dataflow, or Spark
+  - name: Decision guide - copy activity, copy job, dataflow, or Spark
     href: decision-guide-pipeline-dataflow-spark.md
   - name: Decision guide - choose a data store
     href: decision-guide-data-store.md
