@@ -43,6 +43,8 @@ items:
     href: manage-shortcut-connections.md
   - name: Access OneLake shortcuts in an Apache Spark notebook
     href: access-onelake-shortcuts.md
+  - name: Assign variables to shortcuts
+    href: assign-variables-to-shortcuts.md
   - name: Use shortcuts REST API
     href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
 - name: Open access
