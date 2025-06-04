@@ -101,7 +101,7 @@ One of the ways to consume a Fabric data agent is by adding it to a custom AI ag
 
 15. To publish to Teams and Microsoft 365 Copilot, select Teams and Microsoft 365 Copilot from the list of channels. This opens the window on left, Click on **Add channel** to enable this channel. Once done, the **See agent in Teams** will be active. You can click on it which will prompt you top Microsoft Teams.
 
-:::image type="content" source="./media/data-agent-mcs/mcs-teams-channels.png" alt-text="Screenshot showing the publish process to Teams." lightbox="./media/data-agent-mcs/mcs-teams-channel.png":::
+:::image type="content" source="./media/data-agent-mcs/mcs-teams-channels.png" alt-text="Screenshot showing the publish process to Teams." lightbox="./media/data-agent-mcs/mcs-teams-channels.png":::
 
 
 
