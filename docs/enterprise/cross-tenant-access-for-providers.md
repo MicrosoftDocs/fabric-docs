@@ -9,7 +9,7 @@ ms.date: 05/26/2025
 
 # What is cross-tenant access for providers?
 
-The cross-tenant access feature allows provider tenants to share data stored in their Fabric data warehouses with guest tenants. This feature is useful for organizations that need to share data with guest tenants. For example, when company A stores Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant. This article is aimed at providers who want to set up cross-tenant access.
+The cross-tenant access feature allows provider tenants to share data stored in their Fabric data warehouses and SQL analytics endpoints with guest tenants. This feature is useful for organizations that need to share data with guest tenants. For example, when company A stores Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant. This article is aimed at providers who want to set up cross-tenant access.
 
 > [!IMPORTANT]
 > * Cross-tenant access for Fabric data-warehouses is in a limited preview for providers. To register as a provider of cross tenant data, submit this [form](https://forms.office.com/r/ipHQwXudXk).
@@ -17,7 +17,7 @@ The cross-tenant access feature allows provider tenants to share data stored in 
 
 ## How it works
 
-Cross tenant access allows guest tenants to access data stored in a provider's data warehouse. When the provider enables principals from the guest tenant to use this feature, Fabric creates corresponding service principals for each guest in the provider's tenant. The provider then grants permission’s on the warehouse to these service principals. Guests with permissions can access data warehouse endpoints using their own Entra ID identity credentials with tools such as SQL Server Management Studio (SSMS). To do that, guests authenticate with their home organization and are authorized to access data warehouse endpoints.
+Cross tenant access allows guest tenants to access data stored in a provider's data warehouse and SQL Analytics endpoint. When the provider enables principals from the guest tenant to use this feature, Fabric creates corresponding service principals for each guest in the provider's tenant. The provider then grants permission’s on the warehouse to these service principals. Guests with permissions can access data warehouse endpoints using their own Entra ID identity credentials with tools such as SQL Server Management Studio (SSMS). To do that, guests authenticate with their home organization and are authorized to access data warehouse endpoints.
 
 Unlike B2B, use of cross-tenant access in Fabric data warehouses doesn't grant guests access to the providers directory. Providers don't need to manage individual guest users, when providers configure a group for cross-tenant access, the group membership is managed by the guest tenant.  
 
@@ -35,13 +35,13 @@ Unlike the external data sharing feature in Fabric, which allows providers to sh
 
 ## Configure the guest principals for cross-tenant access
 
-### POST cross-tenant auth mapping API to configure groups or guest users to access warehouses in your tenant
+### Configure guest principals for cross-tenant access
 
 `POST https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings`
 
-**Supported identities:** User and service principal
-**Permissions required:** Users calling this API must be in the Fabric administrator role.
-Service principals must be enabled to call Fabric public APIs, Fabric read APIs, and update APIs.
+* Supported identities: User and service principal
+* Permissions required: Users calling this API must be in the Fabric administrator role.
+* Service principals must be enabled to call Fabric public APIs, Fabric read APIs, and update APIs.
 
 #### Request body
 
@@ -114,13 +114,13 @@ Request body for group mapping, when the group doesn't have email
 | 401 Unauthorized | Guest tenant hasn't consented |
 | 429 Too many requests | Too many requests, expected 50/minute |
 
-### GET cross-tenant auth mapping API to get the list of guest principals that have been configured for cross-tenant access
+### Get the list of guest principals that are enabled for cross-tenant access
 
 `GET https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings`
 
-**Supported identities:** User and service principal
-**Permissions required:** Users calling this API must be in the Fabric administrator role. 
-Service principals must be enabled to call Fabric public APIs, Fabric read APIs, and update APIs.
+* Supported identities: User and service principal
+* Permissions required: Users calling this API must be in the Fabric administrator role. 
+* Service principals must be enabled to call Fabric public APIs, Fabric read APIs, and update APIs.
 
 #### Response codes
 
@@ -131,13 +131,14 @@ Service principals must be enabled to call Fabric public APIs, Fabric read APIs,
 |401 Unauthorized	      |                                                                 |
 |429 Too many requests	|Too many requests, expected 50/minute                            |
 
-### POST cross-tenant auth mapping API to delete groups or guest users that were configured to access warehouses in your tenant
+### Remove guest principals that are enabled for cross-tenant access
 
 `DELETE https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings/{mappingId}`
 
-Supported identities: User and service principal
-Permissions required: Users calling this API must be in the Fabric administrator role. 
-Service principals must be enabled to call Fabric public APIs, Fabric read APIs, and update APIs.
+* Supported identities: User and service principal
+* Permissions required: Users calling this API must be in the Fabric administrator role. 
+* Service principals must be enabled to call Fabric public APIs, Fabric read APIs, and update APIs.
+  
 When this API is called, the groups and service principals created for guest principals stop working immediately, however the mapping remains in the database for more than a day and will be seen in the GET mapping API response.  
 
 #### Request body
@@ -162,7 +163,8 @@ Permitted users from the provider tenant can grant a workspace role to the group
 ## Get SQL connection string that can be used by guest principals
 
 Permitted users from the provider tenant can call this API to get the SQL connection string of the specified workspace for a specific guest tenant.
-The caller must have Viewer or higher workspace role. It supports User, Service Principal, and Managed Identities.
+* Supported identities: User, Service Principal, and Managed Identities
+* Permissions required: the caller must have Viewer or higher workspace role
 
 `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/warehouses/{warehouseId}/connectionString?guestTenantId={guestTenantId}&privateLinkType={privateLinkType}` 
 
@@ -201,6 +203,7 @@ The caller must have Viewer or higher workspace role. It supports User, Service 
    * Deleted cross tenant auth mapping
    * Created cross tenant auth token  
    * Clear Guest Tenant Data Cross Tenant Auth (generated when mappings are deleted after the revocation of consent by guest tenant)
+   
    Guest tenants can see the following event-types:
    * Consent Cross Tenant Auth
    * Revoke Consent Cross Tenant Auth
