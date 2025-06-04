@@ -6,7 +6,7 @@ ms.author: chschmidt
 author: christophermschmidt
 ms.topic: quickstart
 ms.custom:
-ms.date: 05/23/2025
+ms.date: 06/04/2025
 ---
 
 # Microsoft Fabric decision guide: copy activity, Copy job, dataflow, Eventstream, or Spark
@@ -17,15 +17,15 @@ Use this reference guide and the example scenarios to help you in deciding wheth
 
 | | **Pipeline copy activity** | **Copy job** | **Dataflow Gen 2** | **Eventstream** | **Spark** |
 |---|:---:|:---:|:---:|:---:|:---:|
-| **Use case** | Data lake and data warehouse migration,<br>data ingestion,<br>lightweight transformation | Data Ingestion,<br>Incremental copy,<br>Replication  | Data ingestion,<br>data transformation,<br>data wrangling,<br>data profiling | event data ingestion,<br>event data transformation | Data ingestion,<br>data transformation,<br>data processing,<br>data profiling |
+| **Use case** | Data lake and data warehouse migration,<br>data ingestion,<br>lightweight transformation | Data Ingestion,<br>Incremental copy,<br>Replication,<br>Data Lake and Data Warehouse migration,<br>lightweight transformation  | Data ingestion,<br>data transformation,<br>data wrangling,<br>data profiling | event data ingestion,<br>event data transformation | Data ingestion,<br>data transformation,<br>data processing,<br>data profiling |
 | **Primary developer persona** | Data engineer,<br>data integrator |Business Analyst,<br>Data Integrator,<br>Data Engineer| Data engineer,<br>data integrator,<br>business analyst | Data engineer,<br>data scientist,<br>data developer | Data integrator,<br>data engineer |
-| **Primary developer skill set** | ETL,<br>SQL,<br>JSON |  ETL,<br>SQL| ETL,<br>M,<br>SQL | SQL, JSON, messaging | Spark (Scala, Python, Spark SQL, R) |
+| **Primary developer skill set** | ETL,<br>SQL,<br>JSON |  ETL,<br>SQL,<br>JSON | ETL,<br>M,<br>SQL | SQL, JSON, messaging | Spark (Scala, Python, Spark SQL, R) |
 | **Code written** | No code,<br>low code | No code,<br>low code | No code,<br>low code | No Code, <br>low code | Code |
 | **Data volume** | Low to high | Low to high | Low to high | Medium to High | Low to high |
-| **Development interface** | Wizard,<br>canvas | Wizard,<br>canvas for advanced configuration | Power query | Canvas | Notebook,<br>Spark job definition |
-| **Sources** | 30+ connectors | 30+ connectors | 150+ connectors | Database supporting CDC (Change Data Capture), Kafka, Messaging Systems that support publish and subscribe pattern, Event streams | Hundreds of Spark libraries |
-| **Destinations** | 18+ connectors | 20+ connectors | Lakehouse,<br>Azure SQL database,<br>Azure Data explorer,<br>Azure Synapse analytics | Eventhouse, Lakehouse, Activator Alert, Derived Stream, Custom Endpoint | Hundreds of Spark libraries |
-| **Transformation complexity** | Low:<br>lightweight - type conversion, column mapping, merge/split files, flatten hierarchy | Low | Low to high:<br>300+ transformation functions | Low: <br>lightweight | Low to high:<br>support for native Spark and open-source libraries |
+| **Development interface** | Wizard,<br>canvas | Wizard,<br>canvas | Power query | Canvas | Notebook,<br>Spark job definition |
+| **Sources** | 50+ connectors | 50+ connectors | 150+ connectors | Database supporting CDC (Change Data Capture), Kafka, Messaging Systems that support publish and subscribe pattern, Event streams | Hundreds of Spark libraries |
+| **Destinations** | 40+ connectors | 40+ connectors | Lakehouse,<br>Azure SQL database,<br>Azure Data explorer,<br>Azure Synapse analytics | Eventhouse, Lakehouse, Activator Alert, Derived Stream, Custom Endpoint | Hundreds of Spark libraries |
+| **Transformation complexity** | Low:<br>lightweight - type conversion, column mapping, merge/split files, flatten hierarchy | Low:<br>lightweight - type conversion, column mapping, merge/split files, flatten hierarchy | Low to high:<br>300+ transformation functions | Low: <br>lightweight | Low to high:<br>support for native Spark and open-source libraries |
 
 ## Scenarios
 

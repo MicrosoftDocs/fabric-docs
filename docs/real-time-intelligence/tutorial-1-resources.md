@@ -2,8 +2,8 @@
 title: Real-Time Intelligence tutorial part 1- Set up Eventhouse
 description: Learn how to create a KQL database and enable data availability in Microsoft Fabric.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: tutorial
 ms.custom:
 ms.date: 12/02/2024

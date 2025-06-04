@@ -1,8 +1,8 @@
 ---
 title: Real-Time Dashboard specific visuals
 description: Learn about Real-Time Dashboard-specific visuals.
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.reviewer: gabil
 ms.topic: how-to
 ms.custom:

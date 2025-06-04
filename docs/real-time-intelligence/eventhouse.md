@@ -2,8 +2,8 @@
 title: Eventhouse overview
 description: Learn about eventhouse data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: concept-article
 ms.custom:
 ms.date: 02/12/2025
