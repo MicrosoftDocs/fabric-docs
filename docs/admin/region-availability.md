@@ -6,7 +6,7 @@ ms.author: painbar
 ms.custom:
   - references_regions
 ms.topic: overview
-ms.date: 05/23/2025
+ms.date: 06/04/2025
 ---
 
 # Fabric region availability
@@ -57,8 +57,8 @@ This table lists regions where the only available Fabric workload is Power BI.
 | Americas       | Europe        | Middle East    | Africa            | Asia Pacific |
 |:---------------|:--------------|:---------------|:------------------|:-------------|
 | Mexico Central | France South  | Israel Central | South Africa West | India West   |
-|                | Germany North | Qatar Central  |                   | Japan West   |
-|                | Norway West   | UAE Central    |                   | Korea South  |
+|                | Germany North | Qatar Central  |                   | Korea South  |
+|                | Norway West   | UAE Central    |                   |              |
 |                | Spain Central |                |                   |              |
 
 ** Copilot is not supported for regions listed in this section. 
