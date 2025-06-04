@@ -2,8 +2,8 @@
 title: Real-Time Intelligence tutorial - Introduction
 description: Get started with Real-Time Intelligence in Microsoft Fabric.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: tutorial
 ms.custom:
 ms.date: 12/02/2024

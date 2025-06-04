@@ -2,8 +2,8 @@
 title: Explore data in Real-Time Dashboard tiles
 description: Learn how to explore data in Real-Time Intelligence tiles for more insights about the information rendered in the visual.
 ms.reviewer: mibar
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 11/19/2024

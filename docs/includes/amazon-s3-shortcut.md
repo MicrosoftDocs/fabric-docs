@@ -1,8 +1,8 @@
 ---
 title: Include file for Amazon S3 shortcut in Microsoft Fabric
 description: Include file for Amazon S3 shortcut in Microsoft Fabric.
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: include
 ms.custom:
 ms.date: 07/16/2023
