@@ -2,8 +2,8 @@
 title: Differences between Real-Time Intelligence and comparable Azure solutions
 description: Learn about the differences between Real-Time Intelligence and comparable Azure Solutions.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: overview
 ms.custom:
 ms.date: 03/23/2025

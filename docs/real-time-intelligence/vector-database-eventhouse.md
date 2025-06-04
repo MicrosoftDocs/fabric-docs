@@ -2,8 +2,8 @@
 title: "Tutorial: Use an Eventhouse as a vector database"
 description: Learn about how you can use an Eventhouse to store and query vector data in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: tutorial
 ms.custom:
 ms.date: 11/19/2024

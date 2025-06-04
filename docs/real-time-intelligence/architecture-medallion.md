@@ -1,8 +1,8 @@
 ---
 title: Implement medallion architecture in Real-Time Intelligence
 description: Understand the medallion architecture and learn how to implement it in Real-Time Intelligence for optimal data structuring and storage.
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.reviewer: bwatts
 ms.topic: concept-article
 ms.date: 12/12/2024

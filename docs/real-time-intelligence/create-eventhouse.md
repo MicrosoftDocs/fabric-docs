@@ -2,8 +2,8 @@
 title: Create an eventhouse
 description: Learn about how to create an eventhouse for data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 05/11/2025
