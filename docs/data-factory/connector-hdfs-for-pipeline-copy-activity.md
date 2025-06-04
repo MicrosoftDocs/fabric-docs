@@ -91,6 +91,7 @@ Under **Advanced**, you can specify the following fields:
   - **Temp script path**: A folder path that's used to store the temp DistCp command script. The script file is generated and will be removed after the Copy job is finished.
 
   - **DistCp options**: Additional options provided to DistCp command.
+
   :::image type="content" source="./media/connector-hdfs-for-pipeline/use-hdfs-distcp.png" alt-text="Screenshot showing hdfs distcp settings.":::
 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
@@ -112,15 +113,15 @@ The following tables contain more information about the copy activity in Hdfs fo
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the source data store.|\<your Hdfs for Pipeline connection> |Yes|connection|
-|**File path type** |The type of the file path that you use. |• **File path**<br>• **Wildcard file path**<br> • **List of files** |Yes when you select **Files** in **Root folder**|/ |
-|**File path** |Copy from the path to a folder/file under source data store.| \<file path>|Yes when choosing **File path**|• folderPath<br>• fileName |
-|**Wildcard paths** |The folder path with wildcard characters under the source data store configured to filter source folders.| \<wildcard paths> |Yes when choosing **Wildcard file path**|• wildcardFolderPath<br>• wildcardFileName |
+|**File path type** |The type of the file path that you use. |• **File path**<br>• **Wildcard file path**<br> • **List of files** |Yes|/ |
+|**File path** |Copy from the path to a folder/file under source data store.| \<file path>|Yes|• folderPath<br>• fileName |
+|**Wildcard paths** |The folder path with wildcard characters under the source data store configured to filter source folders.| \<wildcard paths> |Yes|• wildcardFolderPath<br>• wildcardFileName |
 |**Folder path** |Points to a folder that includes files you want to copy. |\<folder path> |No|folderPath |
 |**Path to file list** |Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured.|\<path to file list> |No| fileListPath|
 |**Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure **Path to file list**.|selected (default) or unselect|No |recursive|
-| **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes when you select **Files** in **Root folder** | / |
+| **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes | / |
 |**Filter by last modified**|The files with last modified time in the range [Start time, End time) will be filtered for further processing.<br><br> The time is applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`.<br><br>This property can be skipped which means no file attribute filter is applied. This property doesn't apply when you configure your file path type as **List of files**.|• **Start time**<br>• **End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
-|**Enable partition discovery**|Whether to parse the partitions from the file path and add them as extra source columns.| Selected or unselected |No| enablePartitionDiscovery: <br> true or false (default)|
+|**Enable partition discovery**|Whether to parse the partitions from the file path and add them as extra source columns.| Selected or unselected (default) |No| enablePartitionDiscovery: <br> true or false (default)|
 |**Partition root path**|The absolute partition root path to read partitioned folders as data columns.| \<your partition root path\> |No| partitionRootPath|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| \<max concurrent connections\>|No |maxConcurrentConnections|
 | **Use HDFS DistCp** | Specify whether to enable use HDFS DistCp property group. | selected or unselect (default) | No | / |
