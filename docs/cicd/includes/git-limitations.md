@@ -37,6 +37,8 @@ ms.date: 02/26/2025
 Some GitHub Enterprise settings aren't supported. For example:
 
 - IP allowlist
+- GitHub Enterprise Cloud with data residency
+- Github Enterprise Server with custom domain
 
 ### Workspace limitations
 
