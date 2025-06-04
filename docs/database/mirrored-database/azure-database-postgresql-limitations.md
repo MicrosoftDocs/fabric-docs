@@ -20,6 +20,7 @@ For troubleshooting, see:
 
 ## Server level limitations
 
+- Fabric Mirroring is supported for PostgreSQL version 14, 15, 16 and 17.
 - Servers in the Burstable Compute Tier are currently not supported. 
 - Servers with High Availability enabled or with established Read Replicas are currently not supported.
 
