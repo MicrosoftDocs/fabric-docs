@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases From SQL Serv
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajayj, rajpo
-ms.date: 05/21/2025
+ms.date: 06/03/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -29,15 +29,17 @@ For troubleshooting, see:
 
 - Fabric Mirroring for SQL Server is only supported on a primary database of an availability group.
 - The SQL Server database cannot be mirrored if the database already has been configured for Azure Synapse Link for SQL or the database is already mirrored in another Fabric workspace.
-    - SQL Server 2025 cannot be mirrored if Change Data Capture (CDC) is enabled on the source database.
+  - A database in a SQL Server 2025 instance cannot be mirrored if Change Data Capture (CDC) is enabled on the source database.
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently cannot be replicated.
   - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
 - `.dacpac` deployments to SQL Server require the publish property `/p:DoNotAlterReplicatedObjects=False` to enable modifications to any mirrored tables. For more about publish settings available for `.dacpac` deployments, see the [SqlPackage publish documentation](/sql/tools/sqlpackage/sqlpackage-publish).
 - Fabric Mirroring from SQL Server 2025 isn't supported when the following features are enabled:
-   - CDC
-      - Fabric Mirroring from SQL Server 2016-2022 requires CDC.
-   - Replication
+  - Replication
+  - CDC
+    - Fabric Mirroring from SQL Server 2016-2022 requires CDC.
+    
+- A SQL Server database cannot be mirrored if [delayed transaction durability](/sql/relational-databases/logs/control-transaction-durability?view=sql-server-ver17&preserve-view=true) is enabled for the database.
 
 ## Permissions in the source database
 
