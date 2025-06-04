@@ -26,13 +26,11 @@ To ensure that conditional access for Fabric works as intended and expected, it'
 
   The products to include in the policy are the following:
 
-  **Product**
   * Power BI Service
   * Azure Data Explorer
   * Azure SQL Database
   * Azure Storage
   * Azure Synapse Analytics
-
 
 * If you create a restrictive policy (such as one that blocks access for all apps except Power BI), certain features, such as dataflows, won't work.
 
