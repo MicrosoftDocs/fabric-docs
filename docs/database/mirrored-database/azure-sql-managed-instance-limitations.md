@@ -3,8 +3,8 @@ title: "Limitations in Mirrored Databases From Azure SQL Managed Instance (Previ
 description: A detailed list of limitations for mirrored databases from Azure SQL Managed Instance in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 05/08/2025
+ms.reviewer: lazartimotic, jingwang, nzagorac, ajayj
+ms.date: 06/03/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -37,7 +37,7 @@ The feature availability also depends on Fabric regions. For a complete list of 
 - If your SQL managed instance database is set up to use [Azure SQL Managed Instance Link feature](/azure/azure-sql/managed-instance/managed-instance-link-feature-overview?view=azuresql-mi&preserve-view=true), the readable replica isn't supported to be a source for Fabric mirroring.
 - If your database is configured for mirroring and then renamed, the **Monitor Mirroring** functionality will stop working. Renaming the database to the name it had when mirroring was set up will resolve the issue.
 
-- An Azure SQL Managed Instance database cannot be mirrored if [delayed transaction durability](sql/relational-databases/logs/control-transaction-durability?view=azuresqldb-mi-current&preserve-view=true) is enabled for the database.
+- An Azure SQL Managed Instance database cannot be mirrored if [delayed transaction durability](/sql/relational-databases/logs/control-transaction-durability?view=azuresqldb-mi-current&preserve-view=true) is enabled for the database.
 
 ## Permissions in the source database
 
