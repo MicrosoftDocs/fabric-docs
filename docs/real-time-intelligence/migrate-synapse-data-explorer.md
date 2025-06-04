@@ -9,9 +9,10 @@ ms.date: 03/26/2025
 #customer intent: As a data engineer, I want to understand the migration process from Azure Synapse Data Explorer to Fabric Eventhouse so that I can effectively transition my workloads.
 ---
 
-[!INCLUDE data-explorer-deprecation-notice]
 
 # Migrate from Azure Synapse Data Explorer to Fabric Eventhouse (preview)
+
+[!INCLUDE data-explorer-deprecation-notice]
 
 While Azure Synapse provides [Data Explorer](/azure/synapse-analytics/data-explorer/data-explorer-overview), Fabric offers [Eventhouses](eventhouse.md), [KQL databases](create-database.md), and [KQL querysets](create-query-set.md). Eventhouses in Fabric are designed to ingest, store, and analyze real-time data streams. They provide a scalable, high-performance, and cost-effective solution for processing and analyzing real-time data.
 
