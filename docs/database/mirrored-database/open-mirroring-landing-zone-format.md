@@ -43,6 +43,33 @@ For example, to declare columns `C1` and `C2` as a compound unique key for the t
 
 If `keyColumns` or `_metadata.json` is not specified, then update/deletes are not possible. This file can be added anytime, but once added `keyColumns` can't be changed.
 
+### Events file in the landing zone
+
+If you are a partner implementing an open mirroring solution or a customer who'd like to provide additional details to us about the type of source you're mirroring into OneLake, we've added a new _partnerEvents.json file. Please note that this is not required but strongly recommended. 
+
+
+```
+{
+  "partnerName": "testPartner",
+  "sourceInfo": {
+    "sourceType": "SQL",
+    "sourceVersion": "2019",
+    "additionalInformation": {
+      "testKey": "testValue"
+    }
+  }
+}
+
+```
+
+This _partnerEvents.Json file should: 
+
+- Be placed at the Mirror DB level in the landing zone and not per table 
+
+- The source type can be any descriptive string representing the source and there are no constraints on this value (ex "SQL", "Oracle", "Salesforce", etc) 
+
+- The partnerName can be set to any name of your choosing and can be representative of your organizations name (please keep the name consistent across all mirror databases)
+
 ## Data file and format in the landing zone
 
 Open mirroring supports Parquet and CSV as the landing zone file format with or without compression. Supported compression formats include Snappy, GZIP, and ZSTD.
