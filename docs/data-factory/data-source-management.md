@@ -2,10 +2,10 @@
 title: Data source management
 description: Learn how to add and remove data sources, and how to manage users.
 ms.reviewer: whhender
-ms.author: mideboer
-author: miquelladeboer
+ms.author: abnarain
+author: abnarain
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 6/4/2025
 ms.custom: connectors
 ---
 
@@ -48,6 +48,23 @@ ms.custom: connectors
    :::image type="content" source="media/data-source-management/settings.png" alt-text="Screenshot of new connection success message.":::
 
 You can now use this data source to include data from Azure SQL in the supported [!INCLUDE [product-name](../includes/product-name.md)] items.
+
+### Allow cloud connection usage on gateway
+
+Creating a shareable cloud connection in Microsoft Fabric can occur in many different experiences such as:
+* [Manage connections and gateways](data-source-management.md)
+* Microsoft Fabric Dataflow Gen2 with CI/CD support
+* Microsoft Fabric Data pipelines
+* Microsoft Fabric Copy activity
+
+At the bottom of the connection creation dialog a new setting with the label **This connection can be used with on-premise data gateways and VNet data gateways** is present. Checking the box for this setting will enable you 
+
+When a gateway is present for the evaluation of the Fabric item, **when the setting is left unchecked** the evaluation will fail as the shareable cloud connection doesn't have the permissions to be used in the context of a gateway evaluation.
+In contrast, **when the setting is checked** the shareable cloud connection can be leveraged by gateway based evaluations.
+
+>[!CAUTION]
+>The *allow connection usage on gateway* setting is present when creating cloud connections through Dataflow Gen2, but not currently enforced. This means that all shareable cloud connections will be used through a gateway if a gateway is present.
+>We are aware of this behavior and are working on a fix to only allow the usage of this connection on a gateway when this setting is checked. 
 
 ## Remove a data source
 
@@ -184,6 +201,7 @@ How to enable the setting
 5.	If you want, you can allowlist individual users by searching for them a selecting Add. All the users in the list below can share connections.
 
 :::image type="content" source="media/data-source-management/manage-cloud-connection-sharing-on.png" alt-text="Screenshot showing the manage cloud connection sharing feature toggled on.":::
+
 
 ## Related content
 
