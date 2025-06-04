@@ -1,6 +1,6 @@
 ---
-title: Set Up a Microsoft Fabric Workload Backend with FastAPI (Python)
-description: Learn how to quickly configure and run a Python backend for your Fabric Workload using FastAPI.
+title: Set Up a Microsoft Fabric Workload Backend Using Swagger
+description: Learn how to generate and run a Fabric Workload Backend based on the swagger file included in our sample.
 author: Natali Or
 ms.author: natalior
 ms.date: 2025
@@ -8,25 +8,88 @@ ms.topic: tutorial
 ms.service: fabric
 ---
 
-## Quick Start: Set Up a Microsoft Fabric Workload Backend with FastAPI using Python
-
-In this tutorial, you’ll learn how to set up a Python backend for a Microsoft Fabric Workload using FastAPI.
-This tutorial provides instructions for generating a FastAPI server from an existing OpenAPI (Swagger) definition and running it locally.
-This quick setup is ideal for developers who want to prototype and test their backend logic before integrating it into the full Fabric development environment.
+## Quick Start: Set Up a Microsoft Fabric Workload Backend using Swagger
+In this tutorial, you'll learn how to quickly generate a Fabric Workload Backend directly from an OpenAPI (Swagger) definition. While you can use any programming language supported by OpenAPI generators, this tutorial specifically demonstrates the process using Python and FastAPI.
+This approach enables developers to rapidly prototype and validate backend logic independently, before integrating it into the complete Microsoft Fabric development environment. Although this tutorial uses Python and FastAPI as an example, the same principles and steps can be applied to generate your backend in any programming language supported by OpenAPI.
 
 ## By the end of this tutorial you will be able to:
-- Generate a FastAPI project from a Swagger file
-- Understand the basic structure of a Python backend for a Fabric Workload
-- Run and test the server locally
+- Generate a Fabric Workload Backend based on the Swagger file included in our sample.
+- Understand the basic structure and components of a Fabric Workload backend.
+- Run and test your generated backend locally using Python and FastAPI.
+- Apply the demonstrated generation process to other programming languages of your choice.
+
+> [!NOTE]
+> In this tutorial, you'll implement the four core Item Lifecycle operations:
+> - **Create Item** - Initialize new workload items
+> - **Get Item Payload** - Retrieve item configuration
+> - **Update Item** - Modify existing items
+> - **Delete Item** - Remove items from the workspace
+> 
+> These operations correspond to the endpoints defined in the Fabric API swagger file.
 
 ## Prerequisites
 
-- Python 3.8+ installed
-- Java 8 or newer installed (required for OpenAPI Generator)
-- Basic knowledge of Python
-- Basic understanding of RESTful APIs
-- Git (to clone the sample repository)
-- Visual Studio Code or another code editor
+Before starting this tutorial, ensure you have:
+
+### Required Knowledge
+- **Understanding of Microsoft Fabric Item Lifecycle** - Read and understand [Item Lifecycle Management](https://learn.microsoft.com/en-us/fabric/workload-development-kit/item-lifecycle)
+- Basic knowledge of Python and RESTful APIs
+- Familiarity with Microsoft Fabric workload concepts
+
+### Required Software
+- **Python 3.8+** - [python.org](https://www.python.org/downloads/)
+- **Java** - Required for OpenAPI Generator (see installation guide below)
+- **Node.js** - Required to install OpenAPI Generator CLI via npm (optional)
+- **Git** - To clone the sample repository
+- **Code editor** - Visual Studio Code, PyCharm, or your preferred IDE
+
+> [!IMPORTANT]
+> Understanding the Microsoft Fabric Item Lifecycle is crucial for this tutorial. The generated backend will implement the lifecycle operations (Create, Read, Update, Delete) for Fabric items as defined in the [Item Lifecycle documentation](https://learn.microsoft.com/en-us/fabric/workload-development-kit/item-lifecycle).
+
+### Install Java for OpenAPI Generator
+
+OpenAPI Generator CLI requires Java as a runtime environment. You don't need to write Java code—it's only required to run the generator tool.
+
+✅ **Minimum Java version required:** Java 8  
+✅ **Recommended:** Use a supported Long-Term Support (LTS) version, such as Java 17 or Java 21.
+
+Several OpenJDK distributions are available:
+#### Eclipse Temurin: Open-source, community-supported distribution 
+1. Visit [adoptium.net](https://adoptium.net/)
+2. The website should auto-detect your operating system. If not, select:
+   - **Operating System**: Windows, macOS, or Linux
+   - **Architecture**: x64 (most common) or ARM64 (for newer Macs)
+   - **Package Type**: JDK (includes everything you need)
+   - **Version**: It's recommended to choose an LTS (Long Term Support) version for better stability and longer support
+
+3. Click the large download button for the installer (.msi for Windows, .pkg for macOS, .tar.gz for Linux)
+
+4. Run the installer:
+   - **Windows**: Double-click the .msi file and follow the wizard. Keep default settings.
+   - **macOS**: Double-click the .pkg file and follow the installer.
+   - **Linux**: Extract the tar.gz file and follow the included instructions.
+
+#### Oracle JDK: Requires a license for commercial use  
+1. Visit [oracle.com/java/technologies/downloads](https://www.oracle.com/java/technologies/downloads/)
+2. Choose Java version (recommended LTS version)
+3. Select your operating system section (Linux, macOS, or Windows)
+4. Download the appropriate installer:
+   - **Windows**: Download "x64 Installer" (.exe file)
+   - **macOS**: Download "ARM64 DMG Installer" (for Apple Silicon M1/M2/M3) or "x64 DMG Installer" (for Intel Macs)
+   - **Linux**: Download "x64 Debian Package" (.deb) for Ubuntu/Debian or "x64 RPM Package" (.rpm) for Red Hat/Fedora
+5. Run the downloaded installer with default settings
+
+After installation, verify your Java installation by running:
+
+```bash
+java -version
+```
+
+You should see output like:
+```bash
+openjdk version "21.0.6" 2025-01-21 LTS
+OpenJDK Runtime Environment Temurin-21.0.6+7 (build 21.0.6+7-LTS)
+```
 
 ## Step 1: Set up your development environment
 
@@ -68,50 +131,89 @@ First, set up your development environment with the required tools and packages.
 
     [Visit openapi documentation website for other install install options](https://openapi-generator.tech/docs/installation)
 
-5. **Verify Java installation** (required for OpenAPI Generator):
+## Step 2: Verify your Python virtual environment is active
 
-    ```bash
-    java -version
-    ```
+After creating your virtual environment, it's crucial to ensure you're using the correct Python interpreter. This keeps your project dependencies isolated and properly managed.
 
-    Make sure you have Java 8 or newer installed. If not, download and install it from [Oracle's website](https://www.oracle.com/java/technologies/javase-downloads.html) or use OpenJDK.
+### Command-line verification
 
-## Step 2: Ensure Visual Studio Code uses your Python virtual environment
+First, confirm your virtual environment is activated. You should see `(.venv)` at the beginning of your terminal prompt.
 
-It's important to verify that Visual Studio Code is configured to use the Python interpreter from your virtual environment. That ensures all dependencies and packages are correctly isolated and available for your project.
+If not activated, run:
 
-Follow these steps to select the correct Python interpreter:
+```bash
+# Windows
+.venv\Scripts\activate
 
-1. **Open your project in Visual Studio Code**.
+# macOS/Linux
+source .venv/bin/activate
+```
+### Verify your virtual environment's Python interpreter is active
+Before proceeding, confirm that your terminal is using the Python interpreter from your virtual environment, not your system's global Python installation.
 
-2. **Open the Command Palette**:
-   - Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS).
+Run the following command:
 
-3. **Select the Python interpreter**:
-   - Type `Python: Select Interpreter` and select it from the list.
-   - Choose the interpreter located in your virtual environment:
-     - On Windows, select `.venv\Scripts\python.exe`.
-     - On macOS/Linux, select `.venv/bin/python`.
+```bash
+# Display the path to the active Python interpreter
+python -c "import sys; print(sys.executable)"
+```
 
-4. **Verify your selection**:
-   - After selecting, the active interpreter will appear in the status bar at the bottom of Visual Studio Code, showing something like:
-     ```
-     Python 3.12.x ('.venv': venv)
-     ```
+Expected output should point to your virtual environment:
+```bash
+- Windows: C:\path\to\project\PythonBackend\.venv\Scripts\python.exe
+- macOS/Linux: /path/to/project/PythonBackend/.venv/bin/python
+```
 
-5. **Open a new integrated terminal**:
-   - Select `Terminal > New Terminal` from the menu.
-   - The terminal should automatically activate your virtual environment, indicated by the environment name in parentheses:
-     ```
-     (.venv) C:\path\to\your\project>
-     ```
+[!IMPORTANT] If the output points to a different location (such as your system-wide Python installation), your virtual environment isn't activated correctly. Revisit the activation step above and ensure you see (.venv) in your terminal prompt.
+
+### IDE configuration (optional)
+
+Most modern Integrated Development Environments (IDEs) automatically detect Python virtual environments. However, you may need to manually select the interpreter within your IDE settings.
+
+<details>
+<summary><b>Example: Visual Studio Code configuration</b></summary>
+
+1. Open your project folder in Visual Studio Code.
+2. Open the Command Palette:
+   - Windows/Linux: `Ctrl+Shift+P`
+   - macOS: `Cmd+Shift+P`
+3. Type and select `Python: Select Interpreter`.
+4. Choose the interpreter located in your virtual environment:
+   - **Windows**: `.venv\Scripts\python.exe`
+   - **macOS/Linux**: `.venv/bin/python`
+5. Verify your selection in the status bar at the bottom of Visual Studio Code. It should display something like:
+ ```
+ Python 3.x.x ('.venv': venv)
+ ```
+6. Open a new integrated terminal (`Terminal > New Terminal`). Your virtual environment should activate automatically, indicated by `(.venv)` in the prompt.
+
+</details>
+
+### Troubleshooting your virtual environment
 
 > [!TIP]
-> If your virtual environment doesn't appear in the interpreter list, restart Visual Studio Code and try again. Ensure you've opened Visual Studio Code from the correct project directory.
+> If your virtual environment isn't detected automatically by your IDE or the interpreter path doesn't match your virtual environment:
+> - Ensure you've opened your IDE from the correct project directory.
+> - Restart your IDE and try selecting the interpreter again.
+> - Confirm your virtual environment is activated in your terminal.
+
+> [!IMPORTANT]
+>Always ensure your virtual environment is activated before installing dependencies or running your application. The (.venv) prefix in your terminal confirms the activation status. If you encounter import errors or missing packages, verify that you're using the correct Python interpreter by running the verification commands above.
 
 ## Step 3: Generate the FastAPI project from OpenAPI specification
 
-1. **Generate the FastAPI project**:
+Use the OpenAPI Generator CLI to create a Python FastAPI project from the Fabric API Swagger specification.
+
+1. **Run the generation command**:
+
+    Execute the following command from your `PythonBackend` directory:
+    ```bash
+        openapi-generator-cli generate -i ../Backend/src/Contracts/FabricAPI/Workload/swagger.json -g python-fastapi -o . --additional-properties=packageName=fabric_api
+    ```
+
+    #### Understanding the command parameters
+
+    This command instructs the OpenAPI Generator CLI to perform the following actions:
 
     ```bash
     openapi-generator-cli generate \
@@ -121,12 +223,12 @@ Follow these steps to select the correct Python interpreter:
       --additional-properties=packageName=fabric_api
     ```
 
-    #### One line cmd:
-
-    ```bash
-    openapi-generator-cli generate -i ../Backend/src/Contracts/FabricAPI/Workload/swagger.json -g python-fastapi -o . --additional-properties=packageName=fabric_api
-    ```
-
+    | Parameter | Value | Description | Required | Purpose | Reference |
+    |---|---|---|---|---|---|
+    | `-i` | `../Backend/src/Contracts/FabricAPI/Workload/swagger.json` | **Input Specification**: Specifies the path to the source OpenAPI (Swagger) definition file | Required | Points to the Fabric API contract that defines all endpoints, models, and operations | [OpenAPI Specification](https://swagger.io/specification/) |
+    | `-g` | `python-fastapi` | **Generator Name**: Tells the tool to use the `python-fastapi` generator to create server-side Python code | Required | Determines the output framework and language for the generated backend code | [Python FastAPI Generator](https://openapi-generator.tech/docs/generators/python-fastapi) |
+    | `-o` | `.` | **Output Directory**: Instructs the generator to place the output files in the current directory | Required | Specifies where the generated project structure will be created | |
+    | `--additional-properties` | `packageName=fabric_api` | **Generator-specific Options**: Sets the Python package name for the generated code to `fabric_api` | Optional | Customizes the generated code structure and naming conventions | [Generator Options](https://openapi-generator.tech/docs/generators/python-fastapi#config-options) |
 
 2. **Install the required dependencies**:
 
@@ -134,17 +236,17 @@ Follow these steps to select the correct Python interpreter:
     pip install -r requirements.txt
     ```
 
-> [!IMPORTANT]
-    > On Windows, you might encounter an error with the `uvloop` package. If that happens:
-    > 1. Edit your `requirements.txt` file
-    > 2. Find the `uvloop` entry (which might look like `uvloop==0.17.0` or similar) and add the platform conditional to the end:
-    > ```
-    >uvloop==<existing version>; sys_platform != 'win32'
-    > ```
-    >    For example, if your file has `uvloop==0.17.0`, change it to `uvloop==0.17.0; sys_platform != 'win32'`
-    > 3. Run `pip install -r requirements.txt` again
-    >
-    > This change ensures uvloop is only installed on non-Windows platforms.
+    > [!IMPORTANT]
+        > On Windows, you might encounter an error with the `uvloop` package. If that happens:
+        > 1. Edit your `requirements.txt` file
+        > 2. Find the `uvloop` entry (which might look like `uvloop==0.17.0` or similar) and add the platform conditional to the end:
+        > ```
+        >uvloop==<existing version>; sys_platform != 'win32'
+        > ```
+        >    For example, if your file has `uvloop==0.17.0`, change it to `uvloop==0.17.0; sys_platform != 'win32'`
+        > 3. Run `pip install -r requirements.txt` again
+        >
+        > This change ensures uvloop is only installed on non-Windows platforms.
 
 ## Step 4: Understand the generated code structure
 
