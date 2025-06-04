@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: ''
 ms.custom: admin-portal
 ms.topic: overview
-ms.date: 05/12/2025
+ms.date: 05/31/2025
 ---
 
 # Manage workspaces
@@ -170,7 +170,7 @@ For details, see [Designate a default capacity for My workspaces](/power-bi/ente
 
 ### Prevent My workspace owners from reassigning their My workspaces to a different capacity
 
-Fabric admins can designate a default capacity for My workspaces. However, even if a My workspace has been assigned to Premium capacity, the owner of the workspace can still move it back to Pro license mode. Moving a workspace from Premium license mode to Pro license mode might cause the content contained in the workspace to be become noncompliant with respect to data-residency requirements, since it might move to a different region. To prevent this situation, the Fabric admin can block My workspace owners from moving their My workspace to a different license mode by turning off the **Users can reassign personal workspaces** tenant admin setting. See [Workspace settings](./portal-workspace.md) for detail.
+Fabric admins can designate a default capacity for My workspaces. However, even if a My workspace has been assigned to Premium capacity, the owner of the workspace can still move it back to Pro license mode. Moving a workspace from Premium license mode to Pro license mode might cause the content contained in the workspace to be become noncompliant with respect to data-residency requirements, since it might move to a different region. To prevent this situation, the Fabric admin can block My workspace owners from moving their My workspace to a different license mode by turning on the **Block users from reassigning personal workspaces (My Workspace)** tenant setting. See [Workspace settings](./portal-workspace.md) for detail.
 
 ### Restore a deleted My workspace as an app workspace
 
@@ -201,7 +201,7 @@ In the Fabric UI, workspaces can be moved to other capacities in the following w
 
 Moving workspaces from one capacity to another has the following restrictions:
 
-* When you move a workspace, all jobs related to items in the workspace get cancelled.
+* When you move a workspace, all jobs related to items in the workspace get canceled.
 
 * Only movable item types can move between regions. **If you're reassigning a workspace to a capacity located in a different region, you must remove all non-movable items first, otherwise reassignment will fail**.
 

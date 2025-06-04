@@ -145,6 +145,10 @@ Copilot for Data Science and Data Engineering also has schema and metadata aware
 
 Copilot responds with the relevant information if you added the lakehouse to the notebook. Copilot also has awareness of the names of files added to any lakehouse attached to the notebook. You can refer to those files by name in your chat. For example, if you have a file named **sales.csv** in your lakehouse, you can ask Copilot to "Create a dataframe from sales.csv". Copilot generates the code and displays it in the chat panel. With Copilot for notebooks, you can easily access and query your data from different sources. You don't need the exact command syntax to do it.
 
+## Copilot inline code completion (Preview)
+
+Copilot inline code completion is an AI-powered feature that helps you to write code faster and more efficiently in Fabric Notebooks. This feature provides intelligent, context-aware code suggestions as you type code. To learn more see, [Copilot inline code completion](author-execute-notebook.md#copilot-inline-code-completion-preview)
+
 ## Tips
 
 - "Clear" your conversation in the Copilot chat panel with the broom located at the top of the chat panel. Copilot retains knowledge of any inputs or outputs during the session, but this helps if you find the current content distracting.
