@@ -2,8 +2,8 @@
 title: Create a Real-Time Dashboard
 description: Learn how to visualize data with Real-Time Dashboards.
 ms.reviewer: tzgitlin
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 11/19/2024

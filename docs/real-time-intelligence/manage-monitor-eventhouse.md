@@ -2,8 +2,8 @@
 title: Manage and monitor an Eventhouse
 description: Learn how to manage and monitor an eventhouse and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 05/11/2025

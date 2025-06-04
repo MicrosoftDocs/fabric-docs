@@ -1,8 +1,8 @@
 ---
 title: Migrate from Azure Synapse Data Explorer to Fabric (preview)
 description: Learn about migrating from Azure Synapse Data Explorer to Microsoft Fabric, including key considerations and different migration scenarios.
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.reviewer: sharmaanshul
 ms.topic: how-to
 ms.date: 03/26/2025
