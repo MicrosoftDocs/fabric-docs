@@ -124,5 +124,5 @@ The Fabric data agent is currently in public preview and it has limitations. Upd
 
 ## Related content
 
-- [Fabric data agent scenario](data-agent-scenario.md)
+- [Fabric data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
 - [Create a Fabric data agent](how-to-create-data-agent.md)

@@ -47,5 +47,5 @@ For more information about the sample notebooks that show how to use the Fabric 
 ## Related content
 
 - [Fabric data agent creation](concept-data-agent.md)
-- [Fabric data agent scenario](data-agent-scenario.md)
+- [Fabric data agent end-to-end tutorial](data-agent-end-to-end-tutoeial.md)
 - [Fabric data agent sharing](data-agent-sharing.md)

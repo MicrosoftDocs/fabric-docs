@@ -77,5 +77,5 @@ When you select a Fabric Data Agent, Copilot in Power BI proceeds with these ste
 ## Related content
 
 - [Data agent concept](concept-data-agent.md)
-- [Data agent scenario](data-agent-scenario.md)
+- [Data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
 - [Fabric data agent sharing](data-agent-sharing.md)

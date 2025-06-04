@@ -222,4 +222,4 @@ After you publish the Fabric data agent, you'll have two versions of it. One ver
 ## Related content
 
 - [Data agent concept](concept-data-agent.md)
-- [Data agent scenario](data-agent-scenario.md)
+- [Data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
