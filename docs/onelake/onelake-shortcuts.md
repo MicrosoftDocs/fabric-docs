@@ -146,7 +146,7 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 Microsoft Entra ID delegated authorization types (organizational account, service principal, or workspace identity) require the **Generate a user delegation key** action at the storage account level. This action is included as part of the Storage Blob Data Reader, Storage Blob Data Contributor, Storage Blob Data Owner, and Delegator roles. If you don't want to give a user reader, contributor, or owner permissions for the whole storage account, assign them the Delegator role instead. Then, define detailed data access rights using [Access control lists (ACLs) in Azure Data Lake Storage](/azure/storage/blobs/data-lake-storage-access-control).
 
 >[!IMPORTANT]
->Currently, when workspace identity is used as the delegated authorization type for an ADLS shortcut, users can authenticate directly to the storage account without needing to create a delegation key. However, this behavior will be restricted in the future. We recommend making sure that all users have the **Generate a user delegation key** action to ensure that your users' access isn't affected when this behavior changes.
+>The **Generate a user delegation key** requirement is not currently enforced when a workspace identity is configured for the workspace and the ADLS shortcut auth type is Organizational Account, Service Principal or Workspace Identity. However, this behavior will be restricted in the future. We recommend making sure that all delegated identities have the **Generate a user delegation key** action to ensure that your users' access isn't affected when this behavior changes.
 
 ### Azure Blob Storage shortcuts
 

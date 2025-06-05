@@ -1,8 +1,8 @@
 ---
 title: Tags in Microsoft Fabric
 description: "Learn about tags in Microsoft Fabric."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.subservice: governance
 ms.custom:
