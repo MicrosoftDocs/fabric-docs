@@ -40,12 +40,14 @@ To enable surge protection, follow these steps:
 1. Set a **Recovery threshold**.
 1. Select **Apply**.
 
-## Mnitor surge protection
+## Monitor surge protection
+
+To monitor surge protection, follow these steps:
 
 1. Open the **Microsoft Fabric Capacity Metrics** app.
 1. On the **Compute** page, select **System events**.
-1. The **System events** table shows when surge protection became active and when the capacity returned to a not overloaded state.
 
+The **System events** table shows when surge protection became active and when the capacity returned to a *not overloaded* state.
 
 ## Set the background operation rejection and recovery thresholds
 
