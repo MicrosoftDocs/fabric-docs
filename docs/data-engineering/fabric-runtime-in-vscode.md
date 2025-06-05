@@ -18,9 +18,6 @@ For Fabric runtime 1.3 and higher, the local conda environment is not created. Y
 
  :::image type="content" source="media\vscode\fabric-runtime-kernel.png" alt-text="Screenshot showing fabric runtime kernel.":::
 
-> [!NOTE]  
-> Currently the 1.3 kernel is not available in Visual Studio Code. To use 1.3 version, use the web experience instead.
-
 ### Considerations for choosing local conda environment or remote Spark compute
 
 When you run the notebook or Spark Job Definition, you can choose the local conda environment or remote Spark Runtime. Here are some considerations to help you choose:
