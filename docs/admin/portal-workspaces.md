@@ -1,8 +1,8 @@
 ---
 title: Manage workspaces
 description: Learn how to view and understand info about workspaces and manage workspaces as an administrator.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 ms.custom: admin-portal
 ms.topic: overview

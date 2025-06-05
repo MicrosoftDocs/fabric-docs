@@ -1,8 +1,8 @@
 ---
 title: Fabric region availability
 description: Learn which regions Fabric is available in.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.custom:
   - references_regions
 ms.topic: overview
