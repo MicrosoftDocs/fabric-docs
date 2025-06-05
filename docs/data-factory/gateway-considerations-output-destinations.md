@@ -5,7 +5,7 @@ author: luitwieler
 ms.author: jeluitwi
 ms.topic: conceptual
 ms.custom: dataflows
-ms.date: 04/30/2025
+ms.date: 06/05/2025
 ---
 
 # On-premise and VNET data gateway considerations for data destinations in Dataflow Gen2
