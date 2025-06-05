@@ -1,8 +1,8 @@
 ---
 title: "Respond to a Microsoft Purview Data Loss Prevention (DLP) policy violation in Fabric and Power BI"
 description: "Learn how to respond to a DLP policy violation in Fabric and Power BI."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.subservice: governance
 ms.custom:
