@@ -1,8 +1,8 @@
 ---
 title: "Metadata passed from Microsoft Fabric to Microsoft Graph"
 description: Learn about sharing Fabric metadata with Microsoft 365 services.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: 'jadelynray'
 
 ms.custom:

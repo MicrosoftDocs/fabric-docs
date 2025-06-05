@@ -1,8 +1,8 @@
 ---
 title: Enable Microsoft Fabric for your organization
 description: Learn how to enable Microsoft Fabric for your organization.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
 ms.date: 02/05/2025
 ---
