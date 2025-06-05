@@ -17,7 +17,7 @@ The cross-tenant access feature allows provider tenants to share data stored in 
 
 ## How it works
 
-Cross tenant access allows guest tenants to access data stored in a provider's data warehouse and SQL Analytics endpoint. When the provider enables principals from the guest tenant to use this feature, Fabric creates corresponding service principals for each guest in the provider's tenant. The provider then grants permission’s on the warehouse to these service principals. Guests with permissions can access data warehouse endpoints using their own Entra ID identity credentials with tools such as SQL Server Management Studio (SSMS). To do that, guests authenticate with their home organization and are authorized to access data warehouse endpoints.
+Cross tenant access allows guest tenants to access data stored in a provider's data warehouse and SQL analytics endpoint. When the provider enables principals from the guest tenant to use this feature, Fabric creates corresponding service principals for each guest in the provider's tenant. The provider then grants permission’s on the warehouse to these service principals. Guests with permissions can access data warehouse endpoints using their own Entra ID identity credentials with tools such as SQL Server Management Studio (SSMS). To do that, guests authenticate with their home organization and are authorized to access data warehouse endpoints.
 
 Unlike B2B, use of cross-tenant access in Fabric data warehouses doesn't grant guests access to the providers directory. Providers don't need to manage individual guest users, when providers configure a group for cross-tenant access, the group membership is managed by the guest tenant.  
 
