@@ -7,7 +7,7 @@ author: santhoshravindran7
 ms.topic: how-to
 ms.custom:
   - fabcon-2025
-ms.date: 03/26/2025
+ms.date: 06/05/2025
 ---
 
 # Configure Autoscale Billing for Spark in Microsoft Fabric (Preview)
@@ -47,7 +47,8 @@ Use the following steps to enable and manage Autoscale Billing settings for a Fa
    d. Click **Save** to apply your settings.
 
 > [!NOTE]
-> Once saved, your Spark Pools can now utilize the new CU quota set by Autoscale Billing. Note: Optionally, you can choose to resize your capacity now that you have moved the Spark workloads to a new billing model to optimize your costs.  This would be done in the Azure portal, and you must be an Azure administrator to change the SKU size. To ensure any unsmoothed usage from Spark is no longer counting against your capacity limits, we strongly recommend pausing the capacity to clear that usage and restarting it.  Instructions for how to do that are included below.
+> * Once saved, your Spark Pools can now utilize the new CU quota set by Autoscale Billing. 
+> * Optionally, you can choose to resize your capacity now that you have moved the Spark workloads to a new billing model to optimize your costs.  This would be done in the Azure portal, and you must be an Azure administrator to change the SKU size. To ensure any unsmoothed usage from Spark is no longer counting against your capacity limits, we strongly recommend pausing the capacity to clear that usage and restarting it.  Instructions for how to do that are included below.
 
 ## (Optional) Resize and reset capacity for cost optimization
 

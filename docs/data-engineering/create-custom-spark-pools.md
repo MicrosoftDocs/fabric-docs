@@ -6,7 +6,7 @@ ms.author: saravi
 author: santhoshravindran7
 ms.topic: how-to
 ms.custom:
-ms.date: 10/20/2023
+ms.date: 06/05/2025
 ---
 # How to create custom Spark pools in Microsoft Fabric
 
