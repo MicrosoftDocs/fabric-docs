@@ -212,16 +212,7 @@ Use the OpenAPI Generator CLI to create a Python FastAPI project from the Fabric
     ```
 
     #### Understanding the command parameters
-
-    This command instructs the OpenAPI Generator CLI to perform the following actions:
-
-    ```bash
-    openapi-generator-cli generate \
-      -i ../Backend/src/Contracts/FabricAPI/Workload/swagger.json \
-      -g python-fastapi \
-      -o . \
-      --additional-properties=packageName=fabric_api
-    ```
+    This command instructs the OpenAPI Generator CLI to perform the following actions: 
 
     | Parameter | Value | Description | Required | Purpose | Reference |
     |---|---|---|---|---|---|
