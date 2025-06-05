@@ -164,7 +164,8 @@ Expected output should point to your virtual environment:
 - macOS/Linux: /path/to/project/PythonBackend/.venv/bin/python
 ```
 
-[!IMPORTANT] If the output points to a different location (such as your system-wide Python installation), your virtual environment isn't activated correctly. Revisit the activation step above and ensure you see (.venv) in your terminal prompt.
+> [!IMPORTANT]
+>If the output points to a different location (such as your system-wide Python installation), your virtual environment isn't activated correctly. Revisit the activation step above and ensure you see (.venv) in your terminal prompt.
 
 ### IDE configuration (optional)
 
@@ -365,28 +366,61 @@ Create a controller implementation that handles Fabric API requests. The control
             return
     ```
 
-## Step 6: Run the FastAPI application
+## Step 6: Configure and run the FastAPI application
 
-Now you can run your FastAPI application. The recommended way to run it is:
+Before running your FastAPI application, you need to ensure the port configuration aligns with the Microsoft Fabric development environment. This step is crucial for proper integration with the Fabric dev gateway.
 
-### Windows PowerShell
+### Understanding the port configuration
+
+When developing a Microsoft Fabric workload, the dev gateway acts as a proxy that routes all Fabric API requests to your backend service. This routing requires careful port configuration:
+
+- **Your backend must run on a specific port** (default: 5000)
+- **This port must match the `WorkloadEndpointURL` in your workload configuration**
+- **All Fabric API calls will be routed through the dev gateway to this endpoint**
+
+### Configure the workload endpoint (if integrating with Fabric)
+
+If you're planning to integrate with the full Microsoft Fabric development environment, you'll need to configure the workload endpoint URL. This configuration tells the dev gateway where to forward API requests.
+
+1. **Locate or create your workload configuration file** (`workload-dev-mode.json`):
+   - Default location: `C:\workload-dev-mode.json`
+   - This file may be created later when setting up the full Fabric development environment
+
+2. **Ensure the `WorkloadEndpointURL` matches your backend port**:
+   ```json
+   {
+       "WorkloadEndpointURL": "http://localhost:5000",
+       // ... other configuration settings
+   }
+
+> [!NOTE] 
+> For detailed instructions on setting up the complete workload configuration including workload-dev-mode.json, see [Get started with the extensibility backend.](https://learn.microsoft.com/en-us/fabric/workload-development-kit/extensibility-back-end#get-started)
+
+> [!IMPORTANT]
+> The port number in `WorkloadEndpointURL` **must exactly match** the port your FastAPI application is running on. The dev gateway uses this URL to route all Fabric workload API requests to your backend.
+
+### Run the FastAPI application
+
+Start your FastAPI application on port 5000 (or your chosen port that matches the configuration):
+
+#### Windows PowerShell
 
 ```powershell
 $env:PYTHONPATH="src"
-uvicorn fabric_api.main:app --host 0.0.0.0 --port 8080
+uvicorn fabric_api.main:app --host 0.0.0.0 --port 5000
 ```
 
-### Windows Command Prompt
+#### Windows Command Prompt
 
 ```cmd
 set PYTHONPATH=src
-uvicorn fabric_api.main:app --host 0.0.0.0 --port 8080
+uvicorn fabric_api.main:app --host 0.0.0.0 --port 5000
 ```
 
-### macOS/Linux
+#### macOS/Linux
 
 ```bash
-PYTHONPATH=src uvicorn fabric_api.main:app --host 0.0.0.0 --port 8080
+PYTHONPATH=src uvicorn fabric_api.main:app --host 0.0.0.0 --port 5000
 ```
 
 ---
@@ -395,11 +429,38 @@ Alternatively, you can run from the `src` directory:
 
 ```bash
 cd src
-python -m uvicorn fabric_api.main:app --host 0.0.0.0 --port 8000
+python -m uvicorn fabric_api.main:app --host 0.0.0.0 --port 5000
 ```
 
 > [!IMPORTANT]
 > Setting `PYTHONPATH` is crucial for Python to find the modules correctly. This environment variable only affects the current terminal session.
+
+> [!NOTE]
+> **Why port `5000`?**
+> This port is often used as a default in Microsoft Fabric workload development samples. If you need to use a different port:
+> 1.  Change the `--port` value in your `uvicorn` command (e.g., `--port 5001`).
+> 2.  Update the `WorkloadEndpointURL` in your `workload-dev-mode.json` file to match this new port (e.g., `"http://localhost:5001"`).
+> 3.  Ensure your chosen port is not already in use by another application on your system.
+
+
+### Verify your backend is accessible
+
+After starting the application, verify it's running correctly:
+
+1. **Check the console output**
+You should see output similar to:
+
+```bash
+INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+INFO:     Started reloader process [xxxx]
+INFO:     Started server process [xxxx]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+```
+2. **Test the API documentation**  
+- Open your browser and navigate to [`http://localhost:5000/docs`](http://localhost:5000/docs).
+- You should see the Swagger UI displaying all available endpoints.
+
 
 ## Step 7: Test the API
 
