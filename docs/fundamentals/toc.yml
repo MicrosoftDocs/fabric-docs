@@ -209,6 +209,10 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Power BI reports don't show in Viva Goals
+      href: ../known-issues/known-issue-1166-power-bi-reports-not-show-viva-goals.md
+    - name: Digital twin builder item creation fails on duplicate names
+      href: ../known-issues/known-issue-1165-digital-twin-builder-item-creation-fails-duplicate-names.md
     - name: Refreshes have slow performance and timeouts for Dataflows Gen2 with CI/CD
       href: ../known-issues/known-issue-1167-refreshes-slow-performance-timeouts-dataflows-gen-2.md
     - name: Inaccurate usage data displayed for digital twin builder usage in Capacity Metrics App
