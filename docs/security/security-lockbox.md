@@ -1,8 +1,8 @@
 ---
 title: Lockbox for Microsoft Fabric
 description: Customer Lockbox for Microsoft Fabric is a service that allows customers to control how Microsoft engineers access their data.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 01/07/2024
