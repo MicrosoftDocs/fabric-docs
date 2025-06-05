@@ -18,7 +18,7 @@ Integrating Azure API Management (APIM) with Microsoft Fabric’s API for GraphQ
 
 ## Add a Fabric GraphQL API to Azure API Management
 
-For this section, we assume that you have a GraphQL API in Fabric and APIM instance already up and running. If not, you can follow the instructions on [how to create a GraphQL API in Fabric](get-started-api-graphql.md) or you can click on **Start with sample SQL database** in the API for GraphQL portal to get started quickly from a new API.
+For this section, we assume that you have a GraphQL API in Fabric and APIM instance already up and running. If not, you can follow the instructions on [how to create a GraphQL API in Fabric](get-started-api-graphql.md) or you can click on **Start with sample SQL database** in the API for GraphQL portal start from a new API.
 
 To get started retrieve your API endpoint from the Fabric portal by going in your GraphQL item and clicking on the **Copy endpoint** button in the ribbon. You will also need to save your GraphQL schema to a file, which you can accomplish by clicking on the **Export schema** button and saving it to a file in your local device:
 
@@ -30,11 +30,11 @@ Choose the GraphQL icon and, in the APIM **Create from GraphQL schema** screen, 
 
 ![Screenshot from APIM create from GraphQL schema screen](media/api-graphql-apim/api-graphql-apim-create.png)
 
-Next, we need to configure a policy for authentication. In this case, we walk you through how to allow a managed identity to handle authentication for this API. You can [create a managed identity in the Azure portal](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp) or by using any of the tools available to do so.
-
 ## Using Managed Identities with APIM and API for GraphQL in Fabric
 
-Now that we have a credential we can use for authentication, we need grant that managed identity permissions to the GraphQL item in Fabric. For the sake of simplicity, we add the managed identity (in this example, **apim-id**) as a member of the workspace where both the GraphQL API and the API data source are located:
+Next, we need to configure a policy for authentication using a managed identity to handle authentication for this API. You can [create a managed identity in the Azure portal](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp) or by using any of the tools available to do so.
+
+Now we have a managed identity credential we can use for authentication, we need grant it permissions to the GraphQL item in Fabric. For the sake of simplicity, we add the managed identity (in this example, **apim-id**) as a member of the workspace where both the GraphQL API and its data source are located:
 
 ![Screenshot of workspace permissions](media/api-graphql-apim/api-graphql-apim-permissions.png)
 
