@@ -390,7 +390,7 @@ If you're planning to integrate with the full Microsoft Fabric development envir
    ```json
    {
        "WorkloadEndpointURL": "http://localhost:5000",
-       // ... other configuration settings
+       //  other configuration settings
    }
 
 > [!NOTE] 
@@ -471,7 +471,7 @@ You can test your API using either curl commands or the built-in Swagger UI prov
 Run the following command in your terminal:
 
 ```bash
-curl -X POST "http://localhost:8080/workspaces/test-workspace/items/TestItemType/test-item-123" \
+curl -X POST "http://localhost:5000/workspaces/test-workspace/items/TestItemType/test-item-123" \
   -H "Content-Type: application/json" \
   -H "activity-id: test-activity-id" \
   -H "request-id: test-request-123" \
@@ -494,7 +494,7 @@ curl -X POST "http://localhost:8080/workspaces/test-workspace/items/TestItemType
 
 FastAPI automatically generates interactive API documentation, allowing you to test your endpoints directly from your browser:
 
-1. Open your browser and navigate to [`http://127.0.0.1:8080/docs`](http://127.0.0.1:8080/docs).
+1. Open your browser and navigate to [`http://127.0.0.1:5000/docs`](http://127.0.0.1:5000/docs).
 2. Locate the **POST** endpoint under the **ItemLifecycle** section:
 
    ```http
