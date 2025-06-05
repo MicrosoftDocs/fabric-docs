@@ -14,9 +14,9 @@ This article lists the limitations and considerations when using the Data Gatewa
 
 ## Network issues with port 1433 when referencing queries
 
-When using Microsoft Fabric Dataflow Gen2 with an on-premises data gateway, you might encounter issues with the dataflow refresh process. The underlying problem occurs when the gateway is unable to connect to the dataflow staging Lakehouse in order to read the data before using it in the query that referenced the staged data.
+When using Microsoft Fabric Dataflow Gen2 with an on-premises data gateway, you might encounter issues with the dataflow refresh process. The underlying problem occurs when the gateway is unable to connect to the dataflow staging Lakehouse in order to read the data before using it in the query that referenced the staged data. Typically, this issue arises when the firewall rules on the gateway server or the customer's proxy servers are not configured to allow outbound traffic to the required endpoints over port 1433.
 
-In the following scenarios we expect the dataflow refresh onn the gateway to succeed without access to port 1433:
+In the following scenarios we expect the dataflow refresh on the gateway to succeed without access to port 1433:
 
 - When the dataflow contains a single query that writes to a Lakehouse, and no other queries reference that query.
 - When FastCopy is disabled
