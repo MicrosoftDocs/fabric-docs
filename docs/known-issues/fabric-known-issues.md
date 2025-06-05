@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 06/03/2025
+ms.date: 06/04/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,10 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1167  | Power BI | [Refreshes have slow performance and timeouts for Dataflows Gen2 with CI/CD](./known-issue-1167-refreshes-slow-performance-timeouts-dataflows-gen-2.md) | June 4, 2025 |
+|  1164  | Real-Time Intelligence | [Inaccurate usage data displayed for digital twin builder usage in Capacity Metrics App](./known-issue-1164-inaccurate-data-digital-twin-builder-usage-capacity-metrics-app.md) | June 4, 2025 |
+|  1163  | Power BI | [Service report is missing table tooltips in the field list in edit mode](./known-issue-1163-service-report-missing-table-tooltips-field-list-edit-mode.md) | June 4, 2025 |
+|  1162  | Data Warehouse | [Deleting a classic item or creating a classic item when you use a deleted item's name fails](./known-issue-1162-deleting-creating-classic-item-use-deleted-items-name-fails.md) | June 4, 2025 |
 |  1160  | Data Engineering | [Pipeline notebook activity monitoring page is empty for T-SQL notebook](./known-issue-1160-pipeline-monitoring-page-empty-t-sql-notebook.md) | June 3, 2025 |
 |  1158  | Power BI | [New query replicas in Azure Analysis Services fail to start](./known-issue-1158-new-query-replicas-azure-analysis-services-fail-start.md) | June 3, 2025 |
 |  1156  | Data Warehouse | [Data warehouse doesn't load with version mismatch error](./known-issue-1156-data-warehouse-not-load-version-mismatch-error.md) | June 2, 2025 |
@@ -34,7 +38,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1142  | Data Warehouse | [SQL editor Copilot code completion feature might cause high usage](./known-issue-1142-sql-editor-copilot-code-completion-feature-high-usage.md) | May 20, 2025 |
 |  1138  | Power BI | [Credential update in Google Analytics connections fails with JSON error](./known-issue-1138-credential-update-google-analytics-connections-fails.md) | May 19, 2025 |
 |  1137  | Data Engineering | [Transient failure for deploying User data functions welcome templates](./known-issue-1137-failure-deploying-user-data-functions-welcome-templates.md) | May 19, 2025 |
-|  1136  | OneLake | [Scrolling through workspaces in OneLake Catalog doesn't work](./known-issue-1136-scrolling-workspaces-onelake-catalog-not-work.md) | May 19, 2025 |
 |  1125  | Real-Time Intelligence | [Explore mode within digital twin builder unexpectedly empty](./known-issue-1125-explore-mode-digital-twin-builder-unexpectedly-empty.md) | May 19, 2025 |
 |  1124  | Real-Time Intelligence | [Digital twin builder mapping fails with concurrent update error](./known-issue-1124-digital-twin-builder-mapping-fails-concurrent-update-error.md) | May 19, 2025 |
 |  1135  | OneLake | [Throttling issues with the Mirrored Azure Databricks catalog shortcuts](./known-issue-1135-throttling-issues-mirrored-azure-databricks-catalog-shortcuts.md) | May 9, 2025 |
@@ -103,6 +106,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1136  | OneLake | [Scrolling through workspaces in OneLake Catalog doesn't work](./known-issue-1136-scrolling-workspaces-onelake-catalog-not-work.md) | May 19, 2025 | Fixed: June 4, 2025 |
 |  1004  | Data Engineering | [Notebook and SJD job statuses are in progress in monitor hub](./known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md) | January 29, 2025 | Fixed: May 27, 2025 |
 |  1104  | Power BI | [Power BI visual warning about style preset not found](./known-issue-1104-visual-warning-style-preset-not-found.md) | April 18, 2025 | Fixed: May 20, 2025 |
 |  1097  | Power BI | [Azure map zooms out automatically even with auto zoom turned off](./known-issue-1097-azure-map-zooms-out-auto-zoom-turned-off.md) | April 15, 2025 | Fixed: May 20, 2025 |
@@ -133,8 +137,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](./known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 | Fixed: May 6, 2025 |
 |  878  | Power BI | [Premium capacity doesn't add excess usage into carry forward](./known-issue-878-premium-capacity-not-add-usage-carry-forward.md) | October 10, 2024 | Fixed: May 2, 2025 |
 |  508  | Data Warehouse | [User column incorrectly shows as System in Fabric capacity metrics app](./known-issue-508-user-column-incorrectly-shows-system-metrics-app.md)  | October 5, 2023 | Fixed: May 1, 2025 |
-|  974  | Real-Time Intelligence | [Show table command in KQL Queryset editor fails](./known-issue-974-show-table-kql-queryset-editor-fails.md) | January 6, 2025 | Fixed: April 18, 2025 |
-|  718  | OneLake | [OneLake under-reports transactions in the Other category](./known-issue-718-onelake-under-reports-transactions-other-category.md) | May 13, 2024 | Fixed: April 18, 2025 |
 
 ## Related content
 
