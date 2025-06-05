@@ -565,10 +565,8 @@ Retry-After: 60
 
 ## Current limitations
 
-- **Service Principal authentication** is not currently supported.
-- **"Get Item"** and **"List Item Access Details"** does not return the correct information if you filter on dataflow item type. 
-- When you do not specify the type it will return the **Dataflow Gen2 (CI/CD, preview)** - the new Dataflow Gen2 with CI/CD and GIT support.
-- **Run APIs** are invokable, but the actual run never succeeds.
+- When you do not specify the type it will return the **Dataflow Gen2 (CI/CD)** - the new Dataflow Gen2 with CI/CD and GIT support.
+- **Job run in SPN** is not supported yet
 
 ## Related content
 
