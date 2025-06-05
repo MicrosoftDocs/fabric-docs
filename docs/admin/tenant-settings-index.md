@@ -1,8 +1,8 @@
 ---
 title: Tenant settings index
 description: Index to Fabric tenant settings.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: reference
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
