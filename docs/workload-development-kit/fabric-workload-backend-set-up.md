@@ -372,13 +372,13 @@ Before running your FastAPI application, you need to ensure the port configurati
 
 ### Understanding the port configuration
 
-When developing a Microsoft Fabric workload, the dev gateway acts as a proxy that routes all Fabric API requests to your backend service. This routing requires careful port configuration:
+When developing a Microsoft Fabric workload, the dev gateway routes API requests to your backend. This requires:
 
 - **Your backend must run on a specific port** (default: 5000)
 - **This port must match the `WorkloadEndpointURL` in your workload configuration**
 - **All Fabric API calls will be routed through the dev gateway to this endpoint**
 
-### Configure the workload endpoint (if integrating with Fabric)
+### Configure the workload endpoint (for Fabric integration)
 
 If you're planning to integrate with the full Microsoft Fabric development environment, you'll need to configure the workload endpoint URL. This configuration tells the dev gateway where to forward API requests.
 
@@ -390,14 +390,12 @@ If you're planning to integrate with the full Microsoft Fabric development envir
    ```json
    {
        "WorkloadEndpointURL": "http://localhost:5000",
-       //  other configuration settings
+       // ... other configuration settings
    }
+   ```
 
 > [!NOTE] 
-> For detailed instructions on setting up the complete workload configuration including workload-dev-mode.json, see [Get started with the extensibility backend.](https://learn.microsoft.com/en-us/fabric/workload-development-kit/extensibility-back-end#get-started)
-
-> [!IMPORTANT]
-> The port number in `WorkloadEndpointURL` **must exactly match** the port your FastAPI application is running on. The dev gateway uses this URL to route all Fabric workload API requests to your backend.
+> For complete workload configuration details, see [Get started with the extensibility backend.](https://learn.microsoft.com/en-us/fabric/workload-development-kit/extensibility-back-end#get-started)
 
 ### Run the FastAPI application
 
@@ -552,13 +550,13 @@ You'll also see the response details directly in the Swagger UI interface.
 
 FastAPI automatically generates interactive API documentation:
 
-1. Open your browser and navigate to `http://localhost:8080/docs`
+1. Open your browser and navigate to `http://localhost:5000/docs`
 2. You'll see a Swagger UI interface where you can explore and test all endpoints
 3. Click on the "ItemLifecycle" section to see the create, get, update, and delete endpoints
 
 ![Swagger UI interface showing the Fabric API endpoints](media/fabric-api-swagger-ui.png)
 
-## Step 8: Implement more advanced functionality
+## Step 9: Implement more advanced functionality
 
 For a complete implementation, you would typically:
 
@@ -612,18 +610,7 @@ For a complete implementation, you would typically:
             # Server error
             raise HTTPException(status_code=500, detail="Internal server error")
     ```
-
-## Step 10: Run with Docker (optional)
-
-For production deployments, you can use Docker:
-
-```bash
-# Build and run with docker-compose
-docker-compose up --build
-```
-
-> [!TIP]
-> Using Docker ensures consistent environment configuration across development and production.
+    
 
 ## Conclusion
 
