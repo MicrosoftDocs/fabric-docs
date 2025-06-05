@@ -228,16 +228,16 @@ Use the OpenAPI Generator CLI to create a Python FastAPI project from the Fabric
     ```
 
     > [!IMPORTANT]
-        > On Windows, you might encounter an error with the `uvloop` package. If that happens:
-        > 1. Edit your `requirements.txt` file
-        > 2. Find the `uvloop` entry (which might look like `uvloop==0.17.0` or similar) and add the platform conditional to the end:
-        > ```
-        >uvloop==<existing version>; sys_platform != 'win32'
-        > ```
-        >    For example, if your file has `uvloop==0.17.0`, change it to `uvloop==0.17.0; sys_platform != 'win32'`
-        > 3. Run `pip install -r requirements.txt` again
-        >
-        > This change ensures uvloop is only installed on non-Windows platforms.
+    > On Windows, you might encounter an error with the `uvloop` package. If that happens:
+    > 1. Edit your `requirements.txt` file
+    > 2. Find the `uvloop` entry (which might look like `uvloop==0.17.0` or similar) and add the platform conditional to the end:
+    > ```
+    >uvloop==<existing version>; sys_platform != 'win32'
+    > ```
+    >    For example, if your file has `uvloop==0.17.0`, change it to `uvloop==0.17.0; sys_platform != 'win32'`
+    > 3. Run `pip install -r requirements.txt` again
+    >
+    > This change ensures uvloop is only installed on non-Windows platforms.
 
 ## Step 4: Understand the generated code structure
 
