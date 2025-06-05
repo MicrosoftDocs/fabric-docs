@@ -13,17 +13,21 @@ ms.date: 05/05/2025
 
 # Tags in Microsoft Fabric
 
-Tags is a Microsoft Fabric feature that gives organizations the ability to apply additional metadata to items in Fabric to facilitate and enhance data categorization, organization, and discoverability. Tags are configurable text labels, such as *Sales – FR 2023*, *HR – Summer Event*, or *FY 2024*, that Fabric administrators can define according to their organization's needs. Data and content owners can then apply these tags to their Fabric items, and users in the organization can use the tags to help them find the data and content they need.
+Tags is a Microsoft Fabric feature that gives organizations the ability to apply additional metadata to items in Fabric to facilitate and enhance data categorization, organization, and discoverability. Tags are configurable text labels, such as *Sales – FR 2025*, *HR – Summer Event*, or *FY 2025*, supported at two organizational levels: tenant and [domain](./domains.md) level, providing flexibility in how assets are governed across your organization. Data and content owners can then apply these tags to their Fabric items, and users in the organization can use the tags to help them find the data and content they need.
 
-Like [Domains](./domains.md), tags are an important component of Fabric's data mesh architecture. They provide increased flexibility and granularity in data categorization by allowing additional details to be added at the item level, across workspaces and domains.
+Tags are an important component of Fabric's data mesh architecture. They provide increased flexibility and granularity in data categorization by allowing additional details to be added at the item level, across workspaces and domains.
 
 ## How tags work
 
-1. Fabric admins [create an open set of tags](./tags-define.md) for use across the organization. For example *Financial*, *North America*, or *Q1 2025*. Up to 10,000 tags can be created in a tenant.
+1. **Tenant and domain admins [create tags](./tags-define.md).**
 
-1. Data owners, who best know how to categorize their own data, [apply tags to items](./tags-apply.md). An item can have up to 10 tags applied to it.
+   * **Tenant-level tags** are defined by Fabric administrators and are available for use across all items and workspaces throughout the entire tenant. These tags are suitable for broad classifications, compliance, or security labels that apply universally across your organization.
 
-1. Once tags are applied to items, users in the organization can use them to [filter or search for the most relevant content](#how-tags-enhance-data-discoverability).
+   * **Domain-level tags** are defined by domain administrators and are specific to particular organizational domains within your Fabric environment. These tags are exclusively available for items residing within workspaces that are assigned to that specific domain. Domain-level tags enable domain owners to implement more granular and localized governance policies, reflecting the unique needs and structures of their respective areas. A tag created at the domain level cannot be duplicated at the tenant level, however it can be duplicated on other domains.
+
+1.  **Data owners apply tags to items.** Data owners, who best know how to categorize their own data, [apply tags to items](./tags-apply.md). An item can have up to 10 tags applied to it. When applying tags, users can choose from the list of available tenant-level tags and, if the item resides in a workspace assigned to a domain, the domain-level tags associated with that domain.
+
+1.  **Users utilize tags for discoverability.** Once tags are applied to items, users in the organization can use them to [filter or search for the most relevant content](#how-tags-enhance-data-discoverability).
 
 ## How tags enhance data discoverability
 
