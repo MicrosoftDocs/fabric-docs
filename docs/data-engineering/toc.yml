@@ -369,6 +369,8 @@ items:
      href: manage-relationships-graphql.md
    - name: Query multiple data sources
      href: multiple-data-sources-graphql.md
+   - name: Using stored procedures
+     href: api-graphql-stored-procedures.md
    - name: Connect applications
      href: connect-apps-api-graphql.md
    - name: Introspection and schema export
