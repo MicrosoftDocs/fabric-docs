@@ -1,8 +1,8 @@
 ---
 title: Create and manage a set of tags
 description: "Learn how to create and manage a set of tags in Microsoft Fabric."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: msmimart
 ms.reviewer: nschachter
 ms.service: fabric
 ms.subservice: governance
@@ -14,7 +14,7 @@ ms.date: 05/06/2025
 
 # Create and manage a set of tags
 
-This article describes how to create and manage a set of tags in Microsoft Fabric. The target audience is Fabric and domain administrators who want to define and manage tags within their organization or specific domains.
+This article describes how to create and manage a set of tags in Microsoft Fabric. The target audience is Fabric and domain administrators who want to define and manage tags within their organization or specific domains. Note that up to 10,000 tags of all types can be created in a tenant.
 
 For more information about tags, see [Tags in Microsoft Fabric](./tags-overview.md).
 
@@ -28,11 +28,11 @@ As a Fabric or domain administrator, you can:
 
 You must have a **Fabric administrator** role to create and manage tenant-level tags.
 
-You must have a **Domain administrator** role to create and manage domain-level tags within your assigned domains.
+You must have a **Fabric administrator** or **Domain administrator** role to create and manage domain-level tags within your assigned domains.
 
 ## Create tenant-level tags
 
-This section shows how Fabric administrators create a set of tenant-level tags. These tags are available across the entire Fabric tenant. Up to 10,000 tags can be created in a tenant.
+This section shows how Fabric administrators create a set of tenant-level tags. These tags are available across the entire Fabric tenant. 
 
 1.  Open the [admin portal](../admin/admin-center.md%23how-to-get-to-the-admin-portal) and select **Tags**.
     The **Tags** tab opens. All currently defined tenant-level tags are listed on the tab.
