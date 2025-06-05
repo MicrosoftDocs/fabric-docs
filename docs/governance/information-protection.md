@@ -1,8 +1,8 @@
 ---
 title: Information protection in Fabric
 description: Learn about information protection in Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 01/23/2025
