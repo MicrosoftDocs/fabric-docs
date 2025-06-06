@@ -140,10 +140,6 @@ async function fetchGraphQLData() {
 fetchGraphQLData();
 ```
 
-## Other languages
-
-Find C#, Python, and other language samples for connecting to your GraphQL API in the [Microsoft Fabric Samples GitHub repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/GraphQL).
-
 ## Related content
 
 - [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app)
