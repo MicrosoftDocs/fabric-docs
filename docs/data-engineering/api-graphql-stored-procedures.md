@@ -12,13 +12,13 @@ ms.search.form:
 
 # Using Stored Procedures with Fabric API for GraphQL
 
-Microsoft Fabric API for GraphQL makes it easy to query and mutate data from a Fabric SQL database and other Fabric data sources such as Data Warehouse and Lakehouse, with strongly typed schemas and a rich query language allowing developers to create an intuitive API without writing custom server code. You can use stored procedures to encapsulate and reuse complex business logic — including input validation and data transformation.
+Microsoft Fabric API for GraphQL makes it easy to query and mutate data from a Fabric SQL database and other Fabric data sources such as Data Warehouse and Lakehouse, with strongly typed schemas and a rich query language allowing developers to create an intuitive API without writing custom server code. You can use stored procedures to encapsulate and reuse complex business logic, including input validation and data transformation.
 
-In this example we learn how to use a stored procedure to register new products, with server-side logic for validation, formatting, and ID generation — all exposed through a GraphQL mutation in Fabric.
+In this example we learn how to use a stored procedure to register new products, with server-side logic for validation, formatting, and ID generation, all exposed through a GraphQL mutation in Fabric.
 
 ## Getting started
 
-We get started by creating a SQL database in Fabric:
+We get started by creating an SQL database in Fabric:
 
 1.  In your Fabric workspace, select **New Item** then **SQL database (preview).**
 2.  Give your database a name, then select **Sample data** to quickly create all the required tables and data in your database.
@@ -27,8 +27,8 @@ We get started by creating a SQL database in Fabric:
 
 Suppose you want to create a new product with:
 
-*   Validation of pricing logic (e.g. ListPrice > StandardCost)
-*   Transformation (e.g. capitalize the first letter of product name, trim and uppercase product number)
+*   Validation of pricing logic (for example,. ListPrice > StandardCost)
+*   Transformation (for example,. capitalize the first letter of product name, trim  then uppercase product number)
 *   ProductID generation (by incrementing the latest ProductID)
 
 ### Step 1: Create the Stored Procedure
@@ -89,7 +89,7 @@ BEGIN
 END;
 ```
 
-Click **Run** to test the execution. You’ll notice a new stored procedure **RegisterProduct** under the **Stored Procedures** folder in the **SalesLT** database. Use the following query to test the procedure logic:
+Click **Run** to test the execution. You notice a new stored procedure **RegisterProduct** under the **Stored Procedures** folder in the **SalesLT** database. Use the following query to test the procedure logic:
 
 ```sql
 DECLARE @RC int
@@ -123,7 +123,7 @@ Next select the **SalesLT** tables in your database and the stored procedure we 
 
 ![Get data screen to select tables and procedures in API for GraphQL](media/api-graphql-stored-procedures/api-graphql-stored-procedures.png)
 
-The GraphQL API, schema and all resolvers are automatically generated in seconds based on the SQL tables and stored procedure.
+The GraphQL API, schema, and all resolvers are automatically generated in seconds based on the SQL tables and stored procedure.
 
 ### Step 3: Call the Procedure from GraphQL
 
@@ -152,11 +152,11 @@ ProductID
 
 **Tips**
 
-*   Fabric GraphQL auto-generates mutation fields for stored procedures that return a result set defined in the output of the procedure.
+*   Fabric GraphQL automatically generates mutation fields for stored procedures that return a result set defined in the output of the procedure.
 *   Business logic lives inside the procedure, not the client.
 *   Use deterministic ID generation only if you don’t rely on identity columns.
 
-Exposing stored procedures via Fabric APIs gives you the power to define robust, consistent rules in SQL for your data — and access it cleanly via GraphQL.
+Exposing stored procedures via Fabric APIs gives you the power to define robust, consistent rules in SQL for your data, and access it cleanly via GraphQL.
 
 ## Related content
 
