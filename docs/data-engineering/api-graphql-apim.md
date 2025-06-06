@@ -28,7 +28,7 @@ Now navigate to your API Management instance in the Azure portal and select **A
 
 Choose the GraphQL icon and, in the APIM **Create from GraphQL schema** screen, fill in the required fields such as Display name, Name, and GraphQL API endpoint. Select **Upload schema** and use the schema file you downloaded previously:
 
-![Screenshot from APIM create from GraphQL schema screen](media/api-graphql-apim/api-graphql-apim-create.png)
+[![Screenshot from APIM create from GraphQL schema screen](media/api-graphql-apim/api-graphql-apim-create.png)](media/api-graphql-apim/api-graphql-apim-create.png)
 
 ## Using Managed Identities with APIM and API for GraphQL in Fabric
 
@@ -58,7 +58,7 @@ Make sure to replace the client ID in the snippet above with your managed identi
 
 Now, back to the API, head to the **Test** tab and confirm you can issue queries and/or mutations to your Fabric data via GraphQL:
 
-![Screenshot of successful test in the APIM portal](media/api-graphql-apim/api-graphql-apim-test.png)
+[![Screenshot of successful test in the APIM portal](media/api-graphql-apim/api-graphql-apim-test.png)](media/api-graphql-apim/api-graphql-apim-test.png)
 
 Testing the successful connection between APIM and Fabric GraphQL
 
