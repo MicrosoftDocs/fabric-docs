@@ -46,11 +46,33 @@ In this tutorial, you:
 1. Navigate to [Power BI](https://app.powerbi.com/home)
 2. On the left, select **Workspace**.
 3. [Create a workspace](../../fundamentals/create-workspaces.md). Call it *Sources LHs*. 
+ 
+ :::image type="content" source="media/tutorial-variable-library/new-workspace-1.png" alt-text="Screenshot of new workspace." lightbox="media/tutorial-variable-library/new-workspace-1.png":::
+
 4. At the top of the workspace, select **New item**
 5. On the right, under **Store data**, select **Lakehouse**.
+
+ :::image type="content" source="media/tutorial-variable-library/create-lakehouse-1.png" alt-text="Screenshot of new lakehouse creation." lightbox="media/tutorial-variable-library/create-lakehouse-1.png":::
+
 6. Enter a name for the Lakehouse - *SourceLH_Dev* and click **Create**.
-7. You should now be in the Lakehouse, select **New data pipeline**.
-8. Enter a name for the pipeline and click **Create**.
+7. You should now be in the Lakehouse, select **New data pipeline**. 
+
+ :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-1.png" alt-text="Screenshot of new pipeline creation." lightbox="media/tutorial-variable-library/create-new-pipeline-1.png":::
+
+8. Enter the name *Pipeline_Dev* and click **Create**.
 9. You should now see **Copy data into Lakehouse**, at the top select **Sample data**.
+
+ :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-2.png" alt-text="Screenshot of Copy data into lakehouse." lightbox="media/tutorial-variable-library/create-new-pipeline-2.png":::
+
 10. Select **Public Holidays*.
+
+ :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-3.png" alt-text="Screenshot of using Public Holidays sample data." lightbox="media/tutorial-variable-library/create-new-pipeline-3.png":::
+
 11. Once it has finished loading, click **Next**.
+12. On the **Connect to data destinantion** screen, click **Next**.
+
+ :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-4.png" alt-text="Screenshot of pipeline destination." lightbox="media/tutorial-variable-library/create-new-pipeline-4.png":::
+
+ 13. On the **Review + Save** screen, click **Save + Run**.
+  
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-5.png" alt-text="Screenshot of pipeline save and run." lightbox="media/tutorial-variable-library/create-new-pipeline-5.png":::

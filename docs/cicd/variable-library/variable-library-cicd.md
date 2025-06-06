@@ -21,7 +21,7 @@ Variable libraries make it easy to manage configurations across different stages
 
 Variable libraries and their values can be deployed in deployment pipelines to manage variable values across different stages. All value sets in the Variable library are available to all stages of the deployment pipeline. The active value set for each stage is selected independently and can be changed anytime. While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the deployment pipeline. The consumer item (for example, a pipeline) automatically receives the correct value from the active value set.
 
-When you create a deployment pipeline, you can select a Variable library item to use. The selected Variable library item is stored in the deployment pipeline and is used to populate the variable values in that stage. You can also change the active value set for each stage of the deployment pipeline.
+
 
 When you change the variables or value set in one stage of a deployment pipeline, the Variable library looks *different* [compared](../deployment-pipelines/compare-pipeline-content.md) to the same item in a different stage.
 For example, the following changes in the Variable library are reflected as *different* in the deployment pipeline:
