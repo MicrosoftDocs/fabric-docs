@@ -839,6 +839,37 @@ With ``` notebookutils.runtime.context ``` you can get the context information o
 notebookutils.runtime.context
 ```
 
+The table below outlines the properties.
+
+| **Parameter** | **Explanation** | 
+|---|---|
+| `currentNotebookName` | The name of the current notebook |
+| `currentNotebookId` | The unique ID of the current notebook |
+| `currentWorkspaceName` | The name of the current workspace |
+| `currentWorkspaceId` | The ID of the current workspace |
+| `defaultLakehouseName` | The display name of the default lakehouse, if defined |
+| `defaultLakehouseId` | The ID of the default lakehouse, if defined |
+| `defaultLakehouseWorkspaceName` | The workspace name of the default lakehouse, if defined |
+| `defaultLakehouseWorkspaceId` | The workspace ID of the default lakehouse, if defined |
+| `currentRunId` | In a reference run, the current run ID |
+| `parentRunId` | In a reference run with nested runs, this is the parent run ID |
+| `rootRunId` | In a reference run with nested runs, this is the root run ID |
+| `isForPipeline` | Whether the run is for a pipeline |
+| `isReferenceRun` | Whether the current run is a reference run |
+| `referenceTreePath` | The tree structure of nested reference runs, used only for the snapshot hierarchy in the monitoring L2 page |
+| `rootNotebookId` | (Only in reference run) The ID of the root notebook in a reference run. |
+| `rootNotebookName` | (Only in reference run) The name of the root notebook in a reference run. |
+| `rootWorkspaceId` | (Only in reference run) The workspace ID of the root notebook in a reference run. |
+| `rootWorkspaceName` | (Only in reference run) The workspace name of the root notebook in a reference run. |
+| `activityId` | The Livy job ID for the current activity |
+| `hcRepId` | The REPL ID in High Concurrency Mode |
+| `clusterId` | The identity of the Synapse Spark cluster |
+| `poolName` | The name of the Spark pool being used |
+| `environmentId` | The environment ID where the job is running |
+| `environmentWorkspaceId` | The workspace ID of the environment |
+| `userId` | The user ID of the current user |
+| `userName` | The user name of the current user |
+
 ## Session management
 
 ### Stop an interactive session

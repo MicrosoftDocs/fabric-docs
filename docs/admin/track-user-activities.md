@@ -1,8 +1,8 @@
 ---
 title: Track user activities in Microsoft Fabric
 description: Learn how to track user activities in Microsoft Fabric using the audit log.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
 ms.date: 02/04/2025
 ---

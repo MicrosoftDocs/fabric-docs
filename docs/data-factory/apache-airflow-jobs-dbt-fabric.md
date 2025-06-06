@@ -5,8 +5,7 @@ ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
 ms.topic: how-to
-ms.custom:
-# ms.custom:
+ms.custom: airflows
 ms.date: 05/24/2024
 ---
 
@@ -155,6 +154,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
    from pathlib import Path
    from datetime import datetime
    from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
+   from airflow import DAG
 
    DEFAULT_DBT_ROOT_PATH = Path(__file__).parent.parent / "dags" / "nyc_taxi_green"
    DBT_ROOT_PATH = Path(os.getenv("DBT_ROOT_PATH", DEFAULT_DBT_ROOT_PATH))

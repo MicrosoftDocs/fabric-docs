@@ -145,7 +145,7 @@ Next, add a schedule for the timeseries mapping so that it refreshes the data au
     1. **Repeat**: *By the minute*
     1. **Every**: *5* minute(s)
     1. **Start date and time**: Pick today's date and time.
-    1. **End date and time**: Pick the date a month from now.
+    1. **End date and time**: Pick the time 10 minutes from now.
     1. **Time zone**: Pick your time zone.
     
     :::image type="content" source="media/tutorial/configure-schedule.png" alt-text="Screenshot of the schedule options.":::

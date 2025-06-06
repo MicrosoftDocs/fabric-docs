@@ -5,7 +5,7 @@ author: nabhishek
 ms.author: abnarain
 ms.reviewer: whhender
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines
 ms.date: 04/30/2025
 ---
 

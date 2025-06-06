@@ -2,8 +2,8 @@
 title: Get data from OneLake
 description: Learn how to get data from OneLake into a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 05/12/2025

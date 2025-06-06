@@ -1,8 +1,8 @@
 ---
 title: Get started with Git integration
 description: Learn how to connect a workspace to a Git repository and branch, commit changes to the repo or workspace and sync.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
@@ -44,32 +44,16 @@ Only a workspace admin can connect a workspace to a repository, but once connect
 
 1. Select your Git provider. Currently, Azure DevOps and GitHub are supported.
 
-#### [Azure DevOps Connect](#tab/Azure)
+### [Azure DevOps Connect](#tab/Azure)
 
 If you select Azure DevOps, select **Connect** to automatically sign into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
 
-If you have already signed in to Azure from Fabric using a different account, select your account from the list and select **Connect**.
-
 :::image type="content" source="./media/git-get-started/devops-connect.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
 
-If it's your first time signing in from Fabric, or you want to add a new account, select **Add account**.
+### [GitHub Connect](#tab/GitHub)
 
-If it's the first time connecting, you need to Authorize your user. Provide the following information:
-
-- *Display name* - must be unique for each user
-- *Azure DevOps URL* - URL of the Azure DevOps repository. URL must be in the format `https://dev.azure.com/{organization}/{project}/_git/{repository}` or `https://{organization}.visualstudio.com/{project}/_git/{repo}`.
-- *Authentication* - You can authenticate either with *OAuth2* or a *Service Principal*.
-
-:::image type="content" source="./media/git-get-started/devops-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
-
-After you sign in, select **Connect** to allow Fabric to access your account
-
-#### [GitHub Connect](#tab/GitHub)
-
-If you select GitHub, you need to sign in to your GitHub account.
-If you have already signed in to GitHub, select your account from the list and select **Connect**.
-
-If it's your first time signing in from Fabric, or you want to add a new account, select **Add account**.
+If you select GitHub, you need to sign in to your GitHub account.  
+Select **Add account** if it's your first time signing in from Fabric, or select one of the accounts listed. After you sign in, select **Connect** to allow Fabric to access your GitHub account.
 
 :::image type="content" source="./media/git-get-started/github-first-connect.png" alt-text="Screenshot of GitHub integration window without any existing accounts to select.":::
 
@@ -80,8 +64,6 @@ If it's the first time connecting, you need to <a href="https://docs.github.com/
 - *Repository URL* (optional) - If you don't enter a URL, you can connect to any repo you have access to. If you enter a URL, you can only connect to this repository.
 
 :::image type="content" source="./media/git-get-started/github-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
-
-After you sign in, select **Connect** to allow Fabric to access your GitHub account.
 
 ---
 

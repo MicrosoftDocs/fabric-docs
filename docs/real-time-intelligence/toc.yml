@@ -107,17 +107,17 @@ items:
         href: event-streams/add-source-sample-data.md
       - name: Real-time weather
         href: event-streams/add-source-real-time-weather.md       
-      - name: Azure SQL Database Change Data Capture
+      - name: Azure SQL Database CDC
         href: event-streams/add-source-azure-sql-database-change-data-capture.md
-      - name: PostgreSQL Database Change Data Capture
+      - name: PostgreSQL Database CDC
         href: event-streams/add-source-postgresql-database-change-data-capture.md
-      - name: MySQL Database Change Data Capture
+      - name: MySQL Database CDC
         href: event-streams/add-source-mysql-database-change-data-capture.md
-      - name: Azure Cosmos DB Change Data Capture
+      - name: Azure Cosmos DB CDC
         href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-      - name: SQL Server on VM DB Change Data Capture
+      - name: SQL Server on VM DB CDC
         href: event-streams/add-source-sql-server-change-data-capture.md
-      - name: Azure SQL Managed Instance Change Data Capture
+      - name: Azure SQL Managed Instance CDC
         href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
       - name: Google Cloud Pub/Sub
         href: event-streams/add-source-google-cloud-pub-sub.md
@@ -398,8 +398,14 @@ items:
       href: digital-twin-builder/resources-glossary.md
     - name: Troubleshooting
       href: digital-twin-builder/resources-troubleshooting.md
+    - name: Capacity usage
+      href: digital-twin-builder/resources-capacity-usage.md
     - name: FAQ
       href: digital-twin-builder/resources-faq.md
+    - name: Digital twin builder REST API
+      href: /rest/api/fabric/digitaltwinbuilder/items
+    - name: Digital twin builder flow REST API
+      href: /rest/api/fabric/digitaltwinbuilderflow/items
 - name: Analyze and train data
   items:
   - name: Copilot for Real-Time Intelligence

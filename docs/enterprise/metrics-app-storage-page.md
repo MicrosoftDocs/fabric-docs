@@ -1,8 +1,8 @@
 ---
 title: Understand the metrics app storage page
 description: Learn how to read the Microsoft Fabric Capacity metrics app's storage page.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: how-to
 ms.custom:
 ms.date: 03/23/2025
@@ -32,7 +32,7 @@ In this page, there are three cards present to provide specific information on s
 
 * **Current storage (GB)** - Displays the latest storage in GB.
 
-* **Billable storage (GB)** - Displays the billable storage in GB. [Soft-deleted data](../onelake/onelake-disaster-recovery.md#soft-delete-for-onelake-files) is billed at the same rate as active data.
+* **Billable storage (GB)** - Displays the billable storage in GB. [Soft-deleted data](../onelake/onelake-disaster-recovery.md#soft-deletion-for-onelake-files) is billed at the same rate as active data.
 
 >[!NOTE]
 >* Billable storage volume can be lower than current storage volume. If the capacity has less storage usage at the start of the reporting period, the billable storage volume is lower than the current storage.
@@ -78,7 +78,7 @@ User can export the report's data by selecting Export Data. Selecting Export Dat
 
 ## Considerations and limitations
 
-[OneLake soft delete](../onelake/onelake-disaster-recovery.md#soft-delete-for-onelake-files) storage is charged at the same rate as regular storage. For more information about OneLake soft delete, see [OneLake Storage](../onelake/onelake-capacity-consumption.md#onelake-storage).
+[OneLake soft delete](../onelake/onelake-disaster-recovery.md#soft-deletion-for-onelake-files) storage is charged at the same rate as regular storage. For more information about OneLake soft delete, see [OneLake Storage](../onelake/onelake-capacity-consumption.md#onelake-storage).
 
 ## Related content
 

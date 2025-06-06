@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database From SQL Server in Micro
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajayj, rajpo
-ms.date: 05/19/2025
+ms.date: 05/21/2025
 ms.topic: tutorial
 ms.custom:
 ---
@@ -58,7 +58,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION, 
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, 
        VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE TO [fabric_user];
     ```
     
@@ -66,7 +66,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION, 
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, 
        VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE TO [bob@contoso.com];
     ```
 
@@ -227,8 +227,7 @@ Check your networking requirements for Fabric to access your SQL Server. You nee
 
 ### Create a mirrored SQL Server
 
-<!-- 1. Open the [Fabric portal](https://fabric.microsoft.com).-->
-1. During the current preview, open the Fabric portal using this link: `https://<your_org_name>.powerbi.com/home?experience=power-bi&feature.dpe_madrid.mirrorSql2025=1`.
+1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
 1. Navigate to the **Create** pane. Select the **Create** icon.  
 1. Scroll to select **Mirrored SQL Server database**. 
@@ -268,8 +267,7 @@ Check your networking requirements for Fabric to access your SQL Server. You nee
 
 ### Create a mirrored SQL Server
 
-<!-- 1. Open the [Fabric portal](https://fabric.microsoft.com).-->
-1. During the current preview, open the Fabric portal using this link: `https://<your_org_name>.powerbi.com/home?experience=power-bi&feature.dpe_madrid.mirrorSql2025=1`.
+1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
 1. Navigate to the **Create** pane. Select the **Create** icon.  
 1. Scroll to select **Mirrored SQL Server database**. 

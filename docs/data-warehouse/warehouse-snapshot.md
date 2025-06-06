@@ -7,6 +7,7 @@ ms.reviewer: twcyril
 ms.date: 05/09/2025
 ms.service: fabric
 ms.topic: conceptual
+ms.search.form: Warehouse snapshot overview
 ---
 # Warehouse snapshots (preview)
 

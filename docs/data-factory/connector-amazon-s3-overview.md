@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 06/13/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Amazon S3 connector overview

@@ -1,8 +1,8 @@
 ---
 title: Microsoft Fabric quotas
 description: Learn how to view and manage your Microsoft Fabric quota which sets the number of Capacity Units (CUs) your subscribed capacity has.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: how-to
 ms.date: 04/06/2025
 

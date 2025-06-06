@@ -1,13 +1,13 @@
 ---
 title: Workspace admin settings
 description: Learn how to configure workspace tenant settings as a Fabric admin.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 05/31/2025
 LocalizationGroup: Administration
 ---
 
@@ -15,16 +15,9 @@ LocalizationGroup: Administration
 
 These settings are configured in the tenant settings section of the [Admin portal](./about-tenant-settings.md#how-to-get-to-the-tenant-settings). For information about how to get to and use tenant settings, see [About tenant settings](./about-tenant-settings.md).
 
-## Create workspaces (new workspace experience)
+## Create workspaces
 
-Workspaces are places where users collaborate on dashboards, reports, and other content. [!INCLUDE [product-name](../includes/product-name.md)] admins can use the **Create workspaces (new workspace experience)** setting to designate which users in the organization can create workspaces. Admins can let everybody or nobody in an organization create workspaces. Workspace creation can also be limited to members of specific security groups. Learn more about [workspaces](../fundamentals/workspaces.md).
-
-:::image type="content" source="media/portal-workspace/power-bi-admin-workspace-settings.png" alt-text="Screenshot showing Create a workspace.":::
-
-For classic workspaces based on Microsoft 365 Groups, administration continues to occur in admin portal and Microsoft Entra ID.
-
-> [!NOTE]
-> The **Create workspaces (new workspace experience)** setting defaults to allowing only users who can create Microsoft 365 Groups to create the new [!INCLUDE [product-name](../includes/product-name.md)] workspaces. Be sure to set a value in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal to ensure appropriate users can create them.
+Workspaces are places where users collaborate on dashboards, reports, and other content. [!INCLUDE [product-name](../includes/product-name.md)] admins can use the **Create workspaces** setting to designate which users in the organization can create workspaces. Admins can let everybody or nobody in an organization create workspaces. Workspace creation can also be limited to members of specific security groups. Learn more about [workspaces](../fundamentals/workspaces.md).
 
 **List of workspaces**
 

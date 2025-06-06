@@ -6,6 +6,7 @@ ms.author: yexu
 ms.topic: how-to
 ms.date: 05/19/2025
 ms.search.form: copy-job-tutorials 
+ms.custom: copy-job
 ---
 
 # Monitor a Copy job in Data Factory for Microsoft Fabric
