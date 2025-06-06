@@ -8,7 +8,7 @@ metadata:
   author: seesharprun
   ms.author: sidandrews
   ms.topic: landing-page
-  ms.date: 05/20/2025
+  ms.date: 06/06/2025
 landingContent:
   - title: Overview
     linkLists:
@@ -16,6 +16,10 @@ landingContent:
         links:
           - text: Overview
             url: overview.md
+          - text: FAQ
+            url: faq.yml
+          - text: Limitations
+            url: limitations.md
   - title: Get started
     linkLists:
       - linkListType: quickstart
@@ -26,9 +30,37 @@ landingContent:
         links:
           - text: Connect from local environment
             url: how-to-connect-development.md
-  - title: Build secure solutions
+  - title: Query
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Cross-database queries
+            url: how-to-query-cross-database.md
+  - title: Integrate
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Mirror to OneLake
+            url: how-to-mirror-onelake.md
+          - text: Index vector data
+            url: how-to-index-vector-data.md
+  - title: Deploy and monitor
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Implement continuous integration and deployment
+            url: how-to-continuous-integration-deployment.md
+          - text: Monitor activity and performance
+            url: how-to-monitor.md
+  - title: Security
     linkLists:
       - linkListType: concept
         links:
           - text: Security baseline
             url: security.md
+          - text: Authenticate from Azure services
+            url: how-to-authenticate-azure.md
+          - text: Authorization
+            url: how-to-configure-authorization.md
+          - text: Sharing items
+            url: how-to-share-items.md

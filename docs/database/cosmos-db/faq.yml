@@ -1,0 +1,26 @@
+### YamlMime:FAQ
+metadata:
+  title: Frequently Asked Questions for Cosmos DB database (Preview)
+  titleSuffix: Microsoft Fabric
+  description: Use Microsoft Entra authentication and the Azure SDK to connect to Cosmos DB in Microsoft Fabric from an Azure Functions host.
+  author: seesharprun
+  ms.author: sidandrews
+  ms.topic: faq
+  ms.date: 06/06/2025
+title: Frequently asked questions for Cosmos DB database in Microsoft Fabric (preview)
+summary: |
+  [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+  This article answers frequently asked questions about Cosmos DB database in Microsoft Fabric.
+sections:
+  - name: TODO
+    questions:
+      - question: |
+          TODO
+        answer: |
+          TODO
+  - name: TODO
+    questions:
+      - question: |
+          TODO
+        answer: |
+          TODO
