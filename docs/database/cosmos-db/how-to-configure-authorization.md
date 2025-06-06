@@ -1,7 +1,7 @@
 ---
 title: Configure Authentication to Cosmos DB Database (Preview)
 titleSuffix: Microsoft Fabric
-description: TODO
+description: Learn how to configure authentication for Cosmos DB databases in Microsoft Fabric during the preview, including supported methods and setup steps.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to

@@ -1,7 +1,7 @@
 ---
 title: Monitor Cosmos DB Database (Preview)
 titleSuffix: Microsoft Fabric
-description: TODO
+description: Find out how to monitor your Cosmos DB database in Microsoft Fabric during the preview, including available metrics and monitoring tools.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to

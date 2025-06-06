@@ -1,7 +1,7 @@
 ---
 title: Configure Continuous Integration and Continuous Deployment (Preview)
 titleSuffix: Microsoft Fabric
-description: TODO
+description: Understand how to set up continuous integration and deployment for Cosmos DB databases in Microsoft Fabric during the preview phase.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
