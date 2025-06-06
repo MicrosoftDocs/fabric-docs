@@ -1,5 +1,5 @@
 ---
-title: Using Stored Procedures with Fabric API for GraphQL
+title: Use Stored Procedures with Fabric API for GraphQL
 description: Learn how to expose stored procedures data via GraphQL in Fabric
 author: KoldBrewEd 
 ms.author: edlima
