@@ -369,6 +369,8 @@ items:
      href: multiple-data-sources-graphql.md
    - name: Introspection and schema export
      href: api-graphql-introspection-schema-export.md 
+   - name: GraphQL source control and deployment pipelines (preview)
+     href: graphql-source-control-and-deployment.md     
    - name: How tos
      items:
       - name: Create an API for GraphQL
@@ -381,8 +383,6 @@ items:
         href: api-graphql-stored-procedures.md
       - name: Integrate with Azure API Management (APIM)
         href: api-graphql-apim.md         
-   - name: GraphQL source control and deployment pipelines (preview)
-     href: graphql-source-control-and-deployment.md
    - name: Monitoring  
      items:
       - name: Monitoring dashboard and logging (preview)
