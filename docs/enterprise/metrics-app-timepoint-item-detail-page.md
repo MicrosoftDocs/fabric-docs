@@ -13,9 +13,9 @@ no-loc: [Copilot]
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-This page provides a detailed analysis of the operation used to drill through to this view. If the selected workspace, item and operation in that timepoint window contains more than 100,000 records for Interactive/Background operations, sampling may occur. To improve data accuracy, filter records with the Bucket Start and End time in filter pane.
+This page provides a detailed analysis of the operation in a specific item. used to drill through to this view. If the selected workspace, item and operation in that timepoint window contains more than 100,000 records for Interactive/Background operations, sampling may occur. To improve data accuracy, use the filter pane to filter records by Bucket Start and End time, or exclude low-usage records using the CU threshold.
 
-Scheduled and manual refresh workflows can trigger multiple internal operations in the backend service. For example, refreshes sometimes perform automatic retries if a temporary error occurs. These operations might be recorded in the app using different activity IDs. Each activity ID is represented as a row in the table. When reviewing the table, take into consideration that several rows may indicate a single action that triggers multiple operations, each with its own activity ID. By default Background operations with fewer than 50 CUs (CUs can be adjusted by user using CU (s) Threshold from filter pane) are aggregated into a single row. Some operations may be grouped together, which should be reflected in the Operations Count column.
+Scheduled and manual refresh workflows can trigger multiple internal operations in the backend service. For example, refreshes sometimes perform automatic retries if a temporary error occurs. These operations might be recorded in the app using different activity IDs. Each activity ID is represented as a row in the table. When reviewing the table, take into consideration that several rows may indicate a single action that triggers multiple operations, each with its own activity ID. Some operations may be grouped together, which should be reflected in the Operations Count column.
 
 Drill-through to the Timepoint Item Detail page opens the Background operations view by default. Use the bookmark in the top right corner to switch to the Interactive view.
 
@@ -25,11 +25,11 @@ This section describes the operations of the visuals in the top row of the timep
 
 * **Start/end card** - Displays the start and end date and time (timepoint) used to get to this page.
   
-* **Item name** - Displays the name of the item to which the selected operation belongs.
+* **Item name** - Displays the item to which the operation belongs that is used for drill-through.
   
-* **Item kind** - Displays the item kind of selected operation.
+* **Item kind** - Displays the item kind to which the operation belongs that is used for drill-through.
   
-* **Workspace name** - Displays the name of the workspace to which the selected operation belongs.
+* **Workspace name** - Displays the workspace to which the operation belongs that is used for drill-through.
   
 * **Operation** - Displays the name of operation used to drill thought to this page.
 
@@ -47,20 +47,14 @@ Use these below filters available in the filter pane to further narrow down the 
 
 * **Billing type** - Select a Billing type. The app displays information related to selected type.
   
-* **Date** - Select the date. The app displays information related to selected date.
-  
-* **Item** - Select the Item. The app displays information related to selected Item.
-  
-* **Item kind** - Select the Item kind. The app displays information related to selected Item kind.
-  
 * **CU(s) threshold** - Select a CU(s) value in the filter pane. The app will aggregate CU usage records lower than the selected value. This is only applicable for background detail visual.
   
-* **Bucket Start Time** - Select the bucket start time in the filter pane. The app displays information related to selected bucket start time.
+* **Bucket Start Time** - Select the bucket start time in the filter pane. The app displays information related to selected bucket start time which is based on smoothing start time.
   
-* **Bucket End Time** - Select the bucket end time in the filter pane. The app displays information related to selected bucket end time
+* **Bucket End Time** - Select the bucket end time in the filter pane. The app displays information related to selected bucket end time which is based on smoothing start time.
 
     >[!IMPORTANT]
-    >Users can filter data or aggregate low usage records by using the options below:
+    >Users can filter data or aggregate low usage records to address sampling by using the options below:
     >* Use the **Bucket Start** and **End Time** filters to limit the time range.
     >* Apply the **OperationId** and **User** slicers to focus on specific subsets.
     >* Adjust the **CU (s) threshold** filter in the filter pane to group records with lower CU usage.
@@ -71,13 +65,13 @@ Use these below filters available in the filter pane to further narrow down the 
 
 ### KPIs
 
-* **Interactive utilization %** - Displays the total percentage of Interactive utilization of selected operation that contributed to the Capacity's activity during selected timepoint.
+* **Interactive utilization %** - Displays the total percentage of Interactive utilization of selected operation within a specific item that contributed to the Capacity's activity during selected timepoint.
 
-* **Background utilization %** - Displays the total percentage of Background utilization of selected operation that contributed to the Capacity's activity during selected timepoint.
+* **Background utilization %** - Displays the total percentage of Background utilization of selected operation within a specific item that contributed to the Capacity's activity during selected timepoint.
 
-* **Interactive operations** - Displays the total number of Interactive operations that contributed to the Capacity's activity during this timepoint. The background color of the card changes if data is sampled in Top 100,000 Interactive records for time range table.
+* **Interactive operations** - Displays the total number of Interactive operations that contributed to the Capacity's activity by selected operation within a specific item during this timepoint. The background color of the card changes if data is sampled in Top 100,000 Interactive records for time range table.
 
-* **Background operations** - Displays the total number of Background operations that contributed to the Capacity's activity during this timepoint. The background color of the card changes if data is sampled in Top 100,000 Background records for time range table.
+* **Background operations** - Displays the total number of Background operations that contributed to the Capacity's activity by selected operation within a specific item during this timepoint.   The background color of the card changes if data is sampled in Top 100,000 Background records for time range table.
 
 ## Top 100,000 Interactive and Background records for time range
 
@@ -88,23 +82,23 @@ A table visual will display the data based on selection of utilization type: Int
 In this section lists the default fields that are displayed in the table visual. You can't remove default fields from
 the table.
 
-* **Start** - The time the interactive operation began.
+* **Start** - The time the interactive or background operation began.
   
-* **End** - The time the interactive operation finished.
+* **End** - The time the interactive or background operation finished.
   
 * **Status** - An indication showing if the operation succeeded or failed.
   
-* **User** - The name of the user that triggered the interactive operation.
+* **User** - The name of the user that triggered the interactive or background operation.
   
-* **Duration (s)** - The number of seconds the interactive operation took to complete.
+* **Duration (s)** - The number of seconds the interactive or background operation took to complete.
   
-* **Throttling (s)** - The number of seconds of throttling applied to this interactive operation because of the capacity being overloaded in the previous timepoint.
+* **Throttling (s)** - The number of seconds of throttling applied to this interactive or background operation because of the capacity being overloaded in the previous timepoint.
   
-* **Total CU(s)** - The number of CU(s) used by interactive operation. The metric can be used to determine if the capacity exceeds the total number of CU(s) allowed for the capacity.
+* **Total CU(s)** - The number of CU(s) used by interactive or background operation.
   
-* **Timepoint CU(s)** - The number of CU(s) assigned to the interactive operation in the current timepoint.
+* **Timepoint CU(s)** - The number of CU(s) assigned to the interactive or background operation in the current timepoint. The metric can be used to determine if the capacity exceeds the total number of CU(s) allowed for the capacity.
   
-* **% Of Base capacity** - Interactive CU operations as a proportion of the base capacity allowance.
+* **% Of Base capacity** - Interactive or background CU operations as a proportion of the base capacity allowance.
   
 * **Operations** - Count of operations.
 
