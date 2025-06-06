@@ -4,8 +4,9 @@ description: Learn how to Manage Fabric materialized lake views lineage.
 ms.author: apsinhar
 author: apurbasroy
 ms.reviewer: nijelsf
-ms.topic: tutorial
-ms.date: 04/17/2025
+ms.topic: how-to
+ms.date: 06/06/2025
+# customer intent: As a data engineer, I want to manage Fabric materialized lake views lineage in Microsoft Fabric so that I can efficiently handle large datasets and optimize query performance.
 ---
 
 # Manage Fabric materialized lake views lineage
@@ -17,7 +18,6 @@ This document delves into the various aspects of managing a Fabric materialized 
 ## View lineage
 A lineage is a fundamental structure for managing dependencies and scheduling tasks. In the context of Materialized Lake Views (MLV), the lineage represents the sequence of MLV that needs to be executed to refresh the MLV once new data is available.
 After the creation of materialized lake views by the user, click on Manage materialized lake views and it navigates to the MLV lineage.
-
 
 ## Materialized lake views Lineage
 
@@ -32,7 +32,9 @@ once the Job Graph is scheduled, navigate to the current run and check the linea
 ## Understand the lineage view
 
 The lineage for a materialized view ensures that data is processed in the correct order, respecting all dependencies. Each node in the lineage represents a specific operation, such as reading from a source table or performing a transformation. Arrows between nodes signify the dependencies, dictating the execution order. User can click on a particular node to understand the flow right from the source tables and parent nodes to the dependent nodes as well.
+
 The lineage UI also has the following functionalities:
+
 *	Refresh: This button is for a lineage UI refresh just to update the current status of the lineage if there are any changes which have occurred
 
 > [!NOTE]
@@ -57,7 +59,7 @@ The lineage UI also has the following functionalities:
 
 :::image type="content" source="./media/view-lineage/switch-layout.png" alt-text="Screenshot showing how to switch lineage view layout." border="true" lightbox="./media/view-lineage/switch-layout.png":::
 
+## Related articles
 
-  ## Next steps
-  
-  * [Microsoft Fabric materialized lake view tutorial](./tutorial.md)
+* [Microsoft Fabric materialized lake views overview](./overview.md)
+* [Microsoft Fabric materialized lake view tutorial](./tutorial.md)

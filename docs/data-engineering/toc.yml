@@ -408,13 +408,13 @@ items:
 - name: Materialized lake views
   items:
   - name: Overview
-    href: ./materialized-view/overview-materialized-lake-view.md
+    href: ./materialized-view/overview-materialized-lake-view.md 
+  - name: Implement medallion architecture with materialized lake views
+    href: ./materialized-view/tutorial.md
   - name: Create materialized lake views
-    items:  
-    - name: Create materialized lake views
-      href: ./materialized-view/create-materialized-lake-view.md
-    - name: Refresh materialized lake views
-      href: ./materialized-view/refresh-materialized-lake-view.md
+    href: ./materialized-view/create-materialized-lake-view.md
+  - name: Refresh materialized lake views
+    href: ./materialized-view/refresh-materialized-lake-view.md
   - name: Data quality
     items:  
     - name: Data quality in materialized lake views
@@ -435,7 +435,4 @@ items:
     items:  
     - name: Monitor materialized lake views
       href: ./materialized-view/monitor-materialized-lake-views.md
-  - name: Tutorial
-    items:  
-    - name: Implement medallion architecture with materialized lake views
-      href: ./materialized-view/tutorial.md
+

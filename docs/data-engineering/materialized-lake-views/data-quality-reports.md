@@ -5,9 +5,9 @@ author: anuj1905
 ms.author: anujsharda
 ms.reviewer: nijelsf
 ms.topic: conceptual
-ms.date: 06/02/2025
+ms.date: 06/06/2025
+# customer-intent: As a data engineer, I want to view data quality metrics in Power BI reports and set up alerts on them so that I can monitor data quality trends and receive notifications for significant changes.
 ---
-
  
 # Power BI reports for data quality
 

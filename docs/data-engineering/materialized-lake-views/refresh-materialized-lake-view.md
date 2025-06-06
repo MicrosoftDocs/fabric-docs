@@ -5,7 +5,8 @@ author: abhishjain002
 ms.author: abhishjain 
 ms.reviewer: nijelsf
 ms.topic: how-to
-ms.date: 06/02/2025
+ms.date: 06/06/2025
+# customer intent: As a data engineer, I want to refresh materialized lake views in lakehouse so that I can ensure the data is up-to-date and optimize query performance.
 ---
 
 # Refresh materialized lake views in lakehouse
@@ -14,7 +15,7 @@ Once a materialized lake view is created, the service can handle its future refr
 
 The following refresh operations can occur depending on the updates to the data in the source tables.
 
-* **Full Refresh:** A full refresh entails evaluating the complete dataset of the source tables whenever any modifications are detected in the source tables. 
+* **Full Refresh:** A full refresh entails evaluating the complete dataset of the source tables whenever any modifications are detected in the source tables.
 
 * **No Refresh:** If the source tables remain unchanged, the materialized lake view refresh is skipped, which saves unnecessary processing and reduces costs.
 
@@ -23,8 +24,9 @@ The following refresh operations can occur depending on the updates to the data 
 If it's necessary to quickly reflect changes in a materialized lake view, you can utilize the following command to refresh the materialized lake view.
 
 ```sql
-    REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier [FULL]
+REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier [FULL]
 ```
+
 Argument:
 
 FULL: Optional. If the FULL keyword is included in the command, a full refresh is performed for the materialized lake view.
@@ -34,6 +36,7 @@ If the FULL keyword isn't included, the internal service determines, based on th
 > [!NOTE]
 > Refreshing a materialized lake view that uses non-delta tables as its source initiate a full refresh of the materialized lake view.
 
-## Next steps
+## Related articles
 
+* [Microsoft Fabric materialized lake views tutorial](./tutorial.md)
 * [Data quality in materialized lake views](./data-quality.md)
