@@ -23,7 +23,7 @@ Apply filters as early as possible in your dataflow to reduce the amount of data
 
 ### Take advantage of pushdown and folding capabilities
 
-When working with data sources that support query folding, such as SQL databases, leverage the pushdown capabilities to filter and transform data at the source. This reduces the amount of data transferred over the network and minimizes processing time in Dataflows Gen2. For instance, if you're using a SQL database, keep an eye on the query folding indicators in the dataflow designer to ensure that your transformations are being pushed down to the source. If you see that a transformation is not folding, consider splitting the query into two and
+When working with data sources that support query folding, such as SQL databases, leverage the pushdown capabilities to filter and transform data at the source. This reduces the amount of data transferred over the network and minimizes processing time in Dataflows Gen2. For instance, if you're using a SQL database, keep an eye on the query folding indicators in the dataflow designer to ensure that your transformations are being pushed down to the source. If you see that a transformation is not folding, consider splitting the query into two and using a staging Lakehouse or Warehouse to perform the transformation before the final output.
 
 ### Use parameterization to optimize design-time experience
 
