@@ -45,10 +45,11 @@ If `keyColumns` or `_metadata.json` is not specified, then update/deletes are no
 
 ### Events file in the landing zone
 
-If you are a partner implementing an open mirroring solution or a customer who'd like to provide additional details to us about the type of source you're mirroring into OneLake, we've added a new _partnerEvents.json file. Please note that this is not required but strongly recommended. 
+If you are a partner implementing an open mirroring solution or a customer who'd like to provide additional details to us about the type of source you're mirroring into OneLake, we've added a new `_partnerEvents.json` file. This is not required but strongly recommended. 
 
+Example: 
 
-```
+```json
 {
   "partnerName": "testPartner",
   "sourceInfo": {
@@ -62,13 +63,11 @@ If you are a partner implementing an open mirroring solution or a customer who'd
 
 ```
 
-This _partnerEvents.Json file should: 
+Requirements of the `_partnerEvents.json` file:
 
-- Be placed at the Mirror DB level in the landing zone and not per table 
-
-- The source type can be any descriptive string representing the source and there are no constraints on this value (ex "SQL", "Oracle", "Salesforce", etc) 
-
-- The partnerName can be set to any name of your choosing and can be representative of your organizations name (please keep the name consistent across all mirror databases)
+- The `_partnerEvents.json` file should be placed at the mirrored database level in the landing zone, not per table.
+- The `sourceType` can be any descriptive string representing the source. There are no constraints on this value, for example: "SQL", "Oracle", "Salesforce", etc.
+- The `partnerName` can be set to any name of your choosing and can be representative of your organization's name. Keep the name consistent across all mirror databases.
 
 ## Data file and format in the landing zone
 
