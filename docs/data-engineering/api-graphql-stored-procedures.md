@@ -10,20 +10,20 @@ ms.custom:
 ms.search.form: 
 ---
 
-# Using Stored Procedures with Fabric API for GraphQL
+# Use stored procedures with Fabric API for GraphQL
 
 Microsoft Fabric API for GraphQL makes it easy to query and mutate data from a Fabric SQL database and other Fabric data sources such as Data Warehouse and Lakehouse, with strongly typed schemas and a rich query language allowing developers to create an intuitive API without writing custom server code. You can use stored procedures to encapsulate and reuse complex business logic, including input validation and data transformation.
 
 In this example we learn how to use a stored procedure to register new products, with server-side logic for validation, formatting, and ID generation, all exposed through a GraphQL mutation in Fabric.
 
-## Getting started
+## Get started
 
 We get started by creating an SQL database in Fabric:
 
 1.  In your Fabric workspace, select **New Item** then **SQL database (preview).**
 2.  Give your database a name, then select **Sample data** to quickly create all the required tables and data in your database.
 
-## Scenario: registering a new product
+## Scenario: register a new product
 
 Suppose you want to create a new product with:
 
@@ -125,7 +125,7 @@ Next select the **SalesLT** tables in your database and the stored procedure we 
 
 The GraphQL API, schema, and all resolvers are automatically generated in seconds based on the SQL tables and stored procedure.
 
-### Step 3: Call the Procedure from GraphQL
+### Step 3: Call the procedure from GraphQL
 
 Once the API is ready, the stored procedure becomes available as a mutation in the Fabric GraphQL schema. Go to the query editor and execute the following mutation:
 
