@@ -4,7 +4,7 @@ description: Review the requirements for files in the landing for open mirroring
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur, maraki-ketema
-ms.date: 05/29/2025
+ms.date: 06/06/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -13,7 +13,7 @@ no-loc: [Copilot]
 
 This article details the landing zone and table/column operation requirements for open mirroring in Microsoft Fabric.
 
-Once you have created your open mirrored database via the Fabric portal or public API in your Fabric workspace, you get a landing zone URL in OneLake in the **Home** page of your mirrored database item. This landing zone is where your application to create a metadata file and land data in Parquet format or CSV format (uncompressed, Snappy, GZIP, ZSTD). If the data is in a CSV format, the file must have header row in the first row.
+Once you have created your open mirrored database via the Fabric portal or public API in your Fabric workspace, you get a landing zone URL in OneLake in the **Home** page of your mirrored database item. This landing zone is where your application to create a metadata file and land data in Parquet or delimited text format, including CSV. Files can be uncompressed or compressed with Snappy, GZIP, or ZSTD. For more information, see [supported data files and format](#data-file-and-format-in-the-landing-zone). 
 
 :::image type="content" source="media/open-mirroring-landing-zone-format/landing-zone-url.png" alt-text="Screenshot from the Fabric portal showing the Landing zone URL location in the Home page of the mirrored database item." lightbox="media/open-mirroring-landing-zone-format/landing-zone-url.png":::
 
@@ -45,9 +45,75 @@ If `keyColumns` or `_metadata.json` is not specified, then update/deletes are no
 
 ## Data file and format in the landing zone
 
-Open mirroring supports Parquet and CSV as the landing zone file format with or without compression. Supported compression formats include Snappy, GZIP, and ZSTD.
+Open mirroring supports data intake in Parquet or delimited text formats. Files can be uncompressed or compressed with Snappy, GZIP, or ZSTD.
 
-All the Parquet and CSV files written to the landing zone have the following format:
+### Parquet requirements
+
+### Delimited text requirements
+
+1. If the data is in a delimited text format, the file must have header row in the first row.
+1. For delimited text, provide additional information in your `_metadata.json` file. The `FileExtension` property is required. Delimited text files have the following properties and defaults:
+    
+   | Property           | Description                                   | Notes                                                                 |
+   |:-------------------|:----------------------------------------------|:----------------------------------------------------------------------|
+   | `FirstRowAsHeader`   | True/false for first row header.              | Required to be `true` for delimited text files.                       |
+   | `RowSeparator`       | Character used to separate rows.              | Default is `\r\n`. Also supports `\n` and `\r`.                       |
+   | `ColumnSeparator`    | Character used to separate columns.           | Default is `,`. Also supports `;`, `|`, and `\t`.                     |
+   | `QuoteCharacter`     | Character used to quote values containing delimiters. | Default is `"`. Can also be `'` or empty string.              |
+   | `EscapeCharacter`    | Used to escape quotes inside quoted values.   | Default is `\`. Can also be `/`, `"`, or empty.                       |
+   | `NullValue`          | String representation of null values.         | Can be `""`, `"N/A"`, `"null"`, etc.                                  |
+   | `Encoding`           | Character encoding of the file.               | Default is `UTF-8`. Supports a wide range of encodings including `ascii`, `utf-16`, `windows-1252`, etc. |
+   | `SchemaDefinition`   | Defines column names, types, and nullability. | Schema evolution is not supported.                                    |
+   | `FileFormat`         | Format of the data file.                      | Defaults to `CSV` if not specified. Must be `"DelimitedText"` for formats other than CSV. |
+   | `FileExtension`      | Specifies file extension like `.tsv`, `.psv`. | Required when using `DelimitedText`.                                  |
+
+   For example, the `_metadata.json` file for a `.tsv` data file with four columns:
+
+   ```json
+   {
+   "KeyColumns": [ "id" ],
+   "ConditionalUpdateColumn": "seqNum",
+   "SchemaDefinition": {
+                "Columns": [
+                            {
+                            "Name": "id",
+                            "DataType": "Int32"
+                            },
+                            {
+                            "Name": "name",
+                            "DataType": "String",
+                            "IsNullable": true
+                            },
+                            {
+                            "Name": "age",
+                            "DataType": "Int32",
+                            "IsNullable": true
+                            },
+                            {
+                            "Name": "seqNum",
+                            "DataType": "Int64",
+                            "IsNullable": false
+                            }
+                           ]
+                },
+   "FileFormat": "DelimitedText",
+   "FileExtension": "tsv",
+   "FileFormatTypeProperties": {
+                              "FirstRowAsHeader": true,
+                              "RowSeparator": "\r\n",
+                              "ColumnSeparator": ",",
+                              "QuoteCharacter": "'",
+                              "EscapeCharacter": "\",
+                              "NullValue": "N/A",
+                              "Encoding": "UTF-8"
+                           }
+   }
+   ```
+   
+
+## Format requirements
+
+All files written to the landing zone have the following format:
 
 `<rowMarker><DataColumns>`
 
@@ -55,10 +121,10 @@ All the Parquet and CSV files written to the landing zone have the following for
   
    | `__rowMarker__` (Scenario) | If row doesn't exist with same key column(s) in the destination | If row exists with same key column(s) in the destination |
    |:--|:--|:--|
-   | 0 (Insert) | Insert the row to destination | Insert the row to destination, no validation for dup key column check. |
-   | 1 (Update) | Insert the row to destination, no validation/exception to check existence of row with same key column. | Update the row with same key column. |
-   | 2 (Delete) | No data change, no validation/exception to check existence of row with same key column. | Delete the row with same key column. |
-   | 4 (Upsert) | Insert the row to destination, no validation/exception to check existence of row with same key column. | Update the row with same key column. |
+   | `0` (Insert) | Insert the row to destination | Insert the row to destination, no validation for dup key column check. |
+   | `1` (Update) | Insert the row to destination, no validation/exception to check existence of row with same key column. | Update the row with same key column. |
+   | `2` (Delete) | No data change, no validation/exception to check existence of row with same key column. | Delete the row with same key column. |
+   | `4` (Upsert) | Insert the row to destination, no validation/exception to check existence of row with same key column. | Update the row with same key column. |
 
 - Row order: All the logs in the file should be in natural order as applied in transaction. This is important for the same row being updated multiple times. Open mirroring applies the changes using the order in the files.
 
