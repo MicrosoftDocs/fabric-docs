@@ -26,19 +26,19 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 
 - **Separate the Azure identities used for data and control plane access**: Use distinct Azure identities for control plane and data plane operations to reduce the risk of privilege escalation and ensure better access control. This separation enhances security by limiting the scope of each identity. For more information, see [How to configure authorization to items](how-to-configure-authorization.md).
 
-## SECTION
+## SECTION 2
 
 - **RECOMMENDATION** EXPLANATION. For more information, see TODO.
 
 - **RECOMMENDATION** EXPLANATION. For more information, see TODO.
 
-## SECTION
+## SECTION 3
 
 - **RECOMMENDATION** EXPLANATION. For more information, see TODO.
 
 - **RECOMMENDATION** EXPLANATION. For more information, see TODO.
 
-## SECTION
+## SECTION 4
 
 - **RECOMMENDATION** EXPLANATION. For more information, see TODO.
 
