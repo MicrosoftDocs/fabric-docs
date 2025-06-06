@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.topic: how-to
 ms.custom:
-ms.date: 05/06/2025
+ms.date: 06/06/2025
 no-loc: [Copilot]
 ---
 
@@ -13,45 +13,45 @@ no-loc: [Copilot]
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-This page provides a detailed analysis of the operation in a specific item. used to drill through to this view. If the selected workspace, item and operation in that timepoint window contains more than 100,000 records for Interactive/Background operations, sampling may occur. To improve data accuracy, use the filter pane to filter records by Bucket Start and End time, or exclude low-usage records using the CU threshold.
+This page provides a detailed analysis of the operation type within a specific item used to drill through to this view. If the selected workspace, item, and operation type contain more than 100,000 records for **Interactive** or **Background** operations within the timepoint window, sampling will occur. To improve data accuracy, use the **Bucket Start** and **End Time** filters to narrow the smoothing time range, or aggregate low-usage records by selecting a **CU threshold** in the filter pane.
 
-Scheduled and manual refresh workflows can trigger multiple internal operations in the backend service. For example, refreshes sometimes perform automatic retries if a temporary error occurs. These operations might be recorded in the app using different activity IDs. Each activity ID is represented as a row in the table. When reviewing the table, take into consideration that several rows may indicate a single action that triggers multiple operations, each with its own activity ID. Some operations may be grouped together, which should be reflected in the Operations Count column.
+Scheduled and manual refresh workflows can trigger multiple internal operations within the backend service. For example, a refresh may perform automatic retries in response to temporary errors. These operations are often logged with different activity IDs, with each activity ID appearing as a separate row in the table. When reviewing the table, keep in mind that multiple rows may represent a single action that initiated several operations, each tracked under a unique activity ID. In some cases, related operations are grouped together, and this grouping is reflected in the **Operations Count** column.
 
 Drill-through to the Timepoint Item Detail page opens the Background operations view by default. Use the bookmark in the top right corner to switch to the Interactive view.
 
 ## Top row visuals
 
-This section describes the operations of the visuals in the top row of the timepoint item detail page.
+This section describes the visuals displayed in the top row of the Timepoint Item Detail page:
 
-* **Start/end card** - Displays the start and end date and time (timepoint) used to get to this page.
+* **Start/end card** - Displays the start and end date and time (timepoint) used to drill-through to this page.
   
-* **Item name** - Displays the item to which the operation belongs that is used for drill-through.
+* **Item name** - Displays the item to which the operation type belongs that is used for drill-through.
   
-* **Item kind** - Displays the item kind to which the operation belongs that is used for drill-through.
+* **Item kind** - Displays the type of the item referenced above.
   
-* **Workspace name** - Displays the workspace to which the operation belongs that is used for drill-through.
+* **Workspace name** - Displays the workspace name to which the item referenced above belongs.
   
-* **Operation** - Displays the name of operation used to drill thought to this page.
+* **Operation** - Displays the name of the operation used to drill through to this page.
 
 ## Filters
 
 Use these slicers to enhance data accuracy when sampling occurs.
 
-* **Operation Id** - Select a Operation Id. The app displays information related to the selected Operation Id.
+* **Operation Id** - Select a Operation Id to filter the visuals on this page.
   
-* **User** - Select a User. The app displays information related to the selected User.
+* **User** - Select a User to filter the visuals on this page.
   
-* **Status** - Select a Status. The app displays information related to the selected Status.
+* **Status** - Select a Status to filter the visuals on this page.
 
 Use these below filters available in the filter pane to further narrow down the visuals
 
-* **Billing type** - Select a Billing type. The app displays information related to selected type.
+* **Billing type** - Select a Billing type to filter the visuals on this page.
   
-* **CU(s) threshold** - Select a CU(s) value in the filter pane. The app will aggregate CU usage records lower than the selected value. This is only applicable for background detail visual.
+* **CU(s) threshold** - Select a CU(s) value in the filter pane. This page will aggregate CU usage records lower than the selected value. This is only applicable for background detail visual.
   
-* **Bucket Start Time** - Select the bucket start time in the filter pane. The app displays information related to selected bucket start time which is based on smoothing start time.
+* **Bucket Start Time** - Select the bucket start time in the filter pane. This page displays information related to selected bucket start time which is based on smoothing start time.
   
-* **Bucket End Time** - Select the bucket end time in the filter pane. The app displays information related to selected bucket end time which is based on smoothing start time.
+* **Bucket End Time** - Select the bucket end time in the filter pane. This page displays information related to selected bucket end time which is based on smoothing start time.
 
     >[!IMPORTANT]
     >Users can filter data or aggregate low usage records to address sampling by using the options below:
@@ -65,17 +65,17 @@ Use these below filters available in the filter pane to further narrow down the 
 
 ### KPIs
 
-* **Interactive utilization %** - Displays the total percentage of Interactive utilization of selected operation within a specific item that contributed to the Capacity's activity during selected timepoint.
+* **Interactive utilization %** - Displays the total interactive utilization percentage of the selected operation type in a specific item, contributing to the capacity’s activity during the selected timepoint.
 
-* **Background utilization %** - Displays the total percentage of Background utilization of selected operation within a specific item that contributed to the Capacity's activity during selected timepoint.
+* **Background utilization %** - Displays the total background utilization percentage of the selected operation type in a specific item, contributing to the capacity’s activity during the selected timepoint.
 
-* **Interactive operations** - Displays the total number of Interactive operations that contributed to the Capacity's activity by selected operation within a specific item during this timepoint. The background color of the card changes if data is sampled in Top 100,000 Interactive records for time range table.
+* **Interactive operations** - Displays the total number of interactive operations for the selected operation type in a specific item that contributed to the capacity’s activity during this timepoint. The card’s background color changes if the data is sampled in the _Top 100,000 interactive records in the time range_ table visual.
 
-* **Background operations** - Displays the total number of Background operations that contributed to the Capacity's activity by selected operation within a specific item during this timepoint.   The background color of the card changes if data is sampled in Top 100,000 Background records for time range table.
+* **Background operations** - Displays the total number of background operations for the selected operation type in a specific item that contributed to the capacity’s activity during this timepoint. The card’s background color changes if the data is sampled in the _Top 100,000 background records in the time range_ table visual.
 
 ## Top 100,000 Interactive and Background records for time range
 
-A table visual will display the data based on selection of utilization type: Interactive and Background. A table showing every operations that contributed capacity units (CUs) usage in the viewed timepoint. It fetches the top 100,000 records based on capacity units. If the selected item and operation is not undergoing any Interactive or Background operations at selected time range, then banner will be displayed over table visual saying there are no interactive/background operations.
+A table visual will display the data based on selection of utilization type: Interactive and Background. A table showing every operations that contributed to capacity units (CUs) usage in the viewed timepoint. It fetches the top 100,000 records based on capacity units. If the selected item and operation is not undergoing any Interactive or Background operations at selected time range, then banner will be displayed over table visual saying there are no interactive/background operations.
 
 ### Default fields:
 
@@ -106,11 +106,11 @@ the table.
 
 In this section lists the optional fields that you can add to the table visual. You can add or remove optional fields from the table using the Select optional column(s) dropdown menu.
 
-* **Billing type** - Displays information if the item is billable or not.
+* **Billing type** - Displays information if the operation is billable or not.
   
-    * **Billable** - Indicates that operations for this item are billable.
+    * **Billable** - Indicates that operation is billable.
   
-    * **Non-Billable** - Indicates that operations for this item are non-billable.
+    * **Non-Billable** - Indicates that operation is non-billable.
   
 * **Operation Id** - Displays information regarding Operation Id.
   
@@ -121,3 +121,4 @@ In this section lists the optional fields that you can add to the table visual. 
 ## Related content
 
 * [Understand the metrics app compute page?](metrics-app-compute-page.md)
+* [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
