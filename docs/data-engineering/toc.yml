@@ -359,14 +359,10 @@ items:
      href: api-graphql-overview.md
    - name: API for GraphQL editor
      href: api-graphql-editor.md
-   - name: Data aggregation
-     href: api-graphql-aggregations.md
    - name: Schema view and explorer
      href: graphql-schema-view.md
-   - name: Manage relationships
-     href: manage-relationships-graphql.md
-   - name: Query multiple data sources
-     href: multiple-data-sources-graphql.md
+   - name: Data aggregation
+     href: api-graphql-aggregations.md
    - name: Introspection and schema export
      href: api-graphql-introspection-schema-export.md 
    - name: GraphQL source control and deployment pipelines (preview)
@@ -375,6 +371,10 @@ items:
      items:
       - name: Create an API for GraphQL
         href: get-started-api-graphql.md  
+      - name: Manage relationships
+        href: manage-relationships-graphql.md
+      - name: Query multiple data sources
+        href: multiple-data-sources-graphql.md
       - name: Connect applications
         href: connect-apps-api-graphql.md
       - name: Use Service Principals
