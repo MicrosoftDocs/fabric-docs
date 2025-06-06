@@ -287,6 +287,8 @@ items:
     href: author-notebook-format-code.md
   - name: Author and run T-SQL in notebook
     href: author-tsql-notebook.md
+  - name: Python vs. PySpark Notebooks
+    href: fabric-notebook-selection-guide.md
 - name: Environments
   items:
   - name: Create, configure and use an environment
@@ -369,6 +371,8 @@ items:
      href: multiple-data-sources-graphql.md
    - name: Connect applications
      href: connect-apps-api-graphql.md
+   - name: Introspection and schema export
+     href: api-graphql-introspection-schema-export.md     
    - name: GraphQL source control and deployment pipelines (preview)
      href: graphql-source-control-and-deployment.md
    - name: Monitoring dashboard and logging (preview)

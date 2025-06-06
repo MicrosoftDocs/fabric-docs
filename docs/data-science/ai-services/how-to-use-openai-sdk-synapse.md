@@ -1,8 +1,8 @@
 ---
 title: Use Azure OpenAI with Python SDK
-description: How to use prebuilt Azure openai in Fabric with Python library
-ms.author: franksolomon
-author: fbsolo-ms1
+description: How to use prebuilt Azure OpenAI in Fabric with Python library
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
@@ -17,12 +17,10 @@ ms.collection: ce-skilling-ai-copilot
 
 This article shows how to use Azure OpenAI in Fabric, with [OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) and with SynapseML.
 
-> [!NOTE]
-> You may need to use **fabric.refresh_dataset()** to get the updated model data. This will refresh the semantic model.
 
 ## Prerequisites
 
-# [OpenAI Python SDK](#tab/python0)
+# [OpenAI Python SDK < 1.0.0](#tab/python0)
 
 [OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) isn't installed in default runtime, you need to first install it.
 
@@ -31,7 +29,7 @@ This article shows how to use Azure OpenAI in Fabric, with [OpenAI Python SDK](h
 %pip install openai==0.28.1
 ```
 
-# [Python SDK >=1.0.0](#tab/python1)
+# [OpenAI Python SDK >=1.0.0](#tab/python1)
 
 [OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) isn't installed in default runtime, you need to first install it. 
 Change the environment to Runtime version 1.3 or higher.
@@ -52,15 +50,15 @@ from synapse.ml.services.openai import *
 
 ## Chat
 
-# [OpenAI Python SDK](#tab/python0)
+# [OpenAI Python SDK < 1.0.0](#tab/python0)
 
-ChatGPT and GPT-4 are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
+GPT-4o and GPT-4o-mini are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
 
 ``` Python
 import openai
 
 response = openai.ChatCompletion.create(
-    deployment_id='gpt-35-turbo-0125', # deployment_id could be one of {gpt-35-turbo-0125 or gpt-4-32k}
+    deployment_id='gpt-4o', # deployment_id could be one of {gpt-4o or gpt-4o-mini}
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Knock knock."},
@@ -82,7 +80,7 @@ We can also stream the response
 
 ``` Python
 response = openai.ChatCompletion.create(
-    deployment_id='gpt-35-turbo-0125', # deployment_id could be one of {gpt-35-turbo-0125 or gpt-4-32k}
+    deployment_id='gpt-4o', # deployment_id could be one of {gpt-4o or gpt-4o-mini}
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Knock knock."},
@@ -108,16 +106,16 @@ for chunk in response:
     assistant: Orange who?
 ```
 
-# [Python SDK >=1.0.0](#tab/python1)
+# [OpenAI Python SDK >=1.0.0](#tab/python1)
 
-ChatGPT and GPT-4 are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
+GPT-4o and GPT-4o-mini are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
 
 
 ```Python
 import openai
 
 response = openai.chat.completions.create(
-    model='gpt-4-32k', # model could be one of {gpt-35-turbo-16k, gpt-4 or gpt-4-32k}
+    model='gpt-4o', # model could be one of {gpt-4o or gpt-4o-mini}
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Knock knock."},
@@ -139,12 +137,12 @@ print(f"{response.choices[0].message.role}: {response.choices[0].message.content
 
 # [SynapseML](#tab/synapseml)
 
-ChatGPT and GPT-4 models are language models that are optimized for conversational interfaces.
+GPT-4o and GPT-4o-mini models are language models that are optimized for conversational interfaces.
 
 `deployment_name` could be one of:
 
--   `gpt-35-turbo-0125`
--   `gpt-4-32k`
+-   `gpt-4o`
+-   `gpt-4o-mini`
 
 ``` python
 from synapse.ml.services.openai import OpenAIChatCompletion
@@ -178,7 +176,7 @@ chat_df = spark.createDataFrame(
 
 chat_completion = (
     OpenAIChatCompletion()
-    .setDeploymentName("gpt-35-turbo-0125") # deploymentName could be one of {gpt-35-turbo-0125 or gpt-4-32k}
+    .setDeploymentName("gpt-4o") # deploymentName could be one of {gpt-4o or gpt-4o-mini}
     .setMessagesCol("messages")
     .setErrorCol("error")
     .setOutputCol("chat_completions")
@@ -195,7 +193,7 @@ display(
 
 ## Embeddings
 
-# [OpenAI Python SDK](#tab/python0)
+# [OpenAI Python SDK < 1.0.0](#tab/python0)
 
 An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs. For example, if two texts are similar, their vector representations should also be similar.
 
@@ -238,7 +236,7 @@ print(embeddings)
       }
     }
 ```
-# [Python SDK >=1.0.0](#tab/python1)
+# [OpenAI Python SDK >=1.0.0](#tab/python1)
 
 openai.Embedding is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
 

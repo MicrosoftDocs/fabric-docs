@@ -1,8 +1,8 @@
 ---
 title: Answer custom user prompts with the `ai.generate_response` function
 description: Learn how to use the `ai.generate_response` function to generate custom text responses based on your own instructions.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to

@@ -2,8 +2,8 @@
 title: Git integration and deployment pipelines
 description: Learn about the Microsoft Fabric Real-Time Intelligence git integration and deployment pipelines, including what is tracked in a git-connected workspace.
 ms.reviewer: bwatts
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: concept-article
 ms.custom:
 ms.date: 02/23/2025

@@ -2,8 +2,8 @@
 title: Create an empty table
 description: Learn how to create an empty table in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 04/29/2025

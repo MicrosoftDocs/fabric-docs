@@ -2,8 +2,8 @@
 title: Set alert on Real Time Dashboard or KQL Queryset
 description: Describes how to set alerts on a Real-Time Dashboard or KQL Queryset, providing scenario-based examples and step-by-step instructions.
 ms.reviewer: guregini
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: concept-article
 ms.date: 11/19/2024
 ms.subservice: rti-core

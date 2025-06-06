@@ -5,8 +5,10 @@ ms.reviewer:
 ms.author: yexu
 author: dearandyxu
 ms.topic: conceptual
-ms.custom:
 ms.date: 07/05/2024
+ms.custom: 
+    - dataflows
+    - configuration
 ---
 
 # Pricing scenario using Dataflow Gen2 to load 6 GB of CSV data to a Lakehouse table with Fast Copy enabled

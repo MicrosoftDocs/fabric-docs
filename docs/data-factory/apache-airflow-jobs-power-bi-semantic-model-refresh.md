@@ -5,7 +5,7 @@ ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
 ms.topic: tutorial
-ms.custom:
+ms.custom: airflows
 ms.date: 12/18/2024
 ---
 
@@ -22,14 +22,12 @@ This article talks about the integration of Apache Airflow with Power BI to auto
 
 To get started, you must complete the following prerequisites:
 
-- Your tenant-level admin must enable "Service principals can use Fabric APIs":
+- Your tenant-level admin must enable ["Service principals can call Fabric public APIs"](../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis):
 
   1. Go to the Admin Portal of Microsoft Fabric and navigate to Tenant Settings.
-  2. Under Developer Settings, expand the "Service principals can use Fabric APIs" section.
+  2. Under Developer Settings, expand the "Service principals can call Fabric public APIs" section.
   3. Toggle the "Enabled" button and choose either "The entire organization" or "Specific security groups."
   4. Select Apply.
-
-  :::image type="content" source="media/apache-airflow-jobs/service-principal-use-fabric-api.png" lightbox="media/apache-airflow-jobs/service-principal-use-fabric-api.png" alt-text="Screenshot to enable Service principal usage in Fabric APIs tenant.":::
 
 - Create the [Service Principal](/entra/identity-platform/howto-create-service-principal-portal). You need to add your service principal as the Contributor in your Power BI workspace.
 

@@ -5,6 +5,7 @@ author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
 ms.date: 03/07/2025
+ms.custom: configuration
 ---
 
 # Data Factory limitations overview

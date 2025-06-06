@@ -4,7 +4,7 @@ description: Review the requirements for files in the landing for open mirroring
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur, maraki-ketema
-ms.date: 05/02/2025
+ms.date: 05/29/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -51,9 +51,9 @@ All the Parquet and CSV files written to the landing zone have the following for
 
 `<rowMarker><DataColumns>`
 
-- `rowMarker`: column name is `__rowMarker__` (including two underscores before and after `rowMarker`). `RowMaker` values and behaviors:
+- `rowMarker`: column name is `__rowMarker__` (including two underscores before and after `rowMarker`). `__rowMarker__` values and behaviors:
   
-   | RowMarker\Scenario | If row doesn't exist with same key column(s) in the destination | If row exists with same key column(s) in the destination |
+   | `__rowMarker__` (Scenario) | If row doesn't exist with same key column(s) in the destination | If row exists with same key column(s) in the destination |
    |:--|:--|:--|
    | 0 (Insert) | Insert the row to destination | Insert the row to destination, no validation for dup key column check. |
    | 1 (Update) | Insert the row to destination, no validation/exception to check existence of row with same key column. | Update the row with same key column. |
@@ -66,37 +66,40 @@ All the Parquet and CSV files written to the landing zone have the following for
 
 - File name: File name is 20 digits, like `00000000000000000001.parquet` for the first file, and `00000000000000000002.parquet` for the second. File names should be in continuous numbers. Files will be deleted by the mirroring service automatically, but the last file will be left so that the publisher system can reference it to add the next file in sequence.
 
+ > [!IMPORTANT]
+ > The `__rowMarker__` column needs to be the final column in the list
+
 ### Initial load
 
-For the initial load of data into an open mirrored database, `rowMarker` in the initial data file is optional and not recommended. Mirroring treats the entire file as an INSERT when `rowMarker` doesn't exist.
+For the initial load of data into an open mirrored database, `__rowMarker__` in the initial data file is optional and not recommended. Mirroring treats the entire file as an INSERT when `__rowMarker__` doesn't exist.
 
-For better performance and accurate metrics, `rowMarker` is a mandatory field only for incremental changes to apply update/delete/upsert operation. 
+For better performance and accurate metrics, `__rowMarker__` is a mandatory field only for incremental changes to apply update/delete/upsert operation. 
 
 ### Incremental changes
 
 Open mirroring reads incremental changes in order and applies them to the target Delta table. Order is implicit in the change log and in the order of the files.
 
-Data changes are considered as incremental changes once the `rowMarker` column is found from any row/file.
+Data changes are considered as incremental changes once the `__rowMarker__` column is found from any row/file.
 
 Updated rows must contain the full row data, with all columns. 
 
 Here is some sample parquet data of the row history to change the `EmployeeLocation` for `EmployeeID` E0001 from Redmond to Bellevue. In this scenario, the `EmployeeID` column has been marked as a key column in the [metadata file in the landing zone](#metadata-file-in-the-landing-zone).
 
 ```parquet
-__rowMarker__,EmployeeID,EmployeeLocation
-0,E0001,Redmond
-0,E0002,Redmond
-0,E0003,Redmond
-1,E0001,Bellevue
+EmployeeID,EmployeeLocation,__rowMarker__
+E0001,Redmond,0
+E0002,Redmond,0
+E0003,Redmond,0
+E0001,Bellevue,1
 ```
 
-If key columns are updated, then it should be presented by a DELETE on previous key columns and an INSERT rows with new key and data. For example, the row history to change the `rowMarker` unique identifier for `EmployeeID` E0001 to E0002. You don't need to provide all column data for a DELETE row, only the key columns. 
+If key columns are updated, then it should be presented by a DELETE on previous key columns and an INSERT rows with new key and data. For example, the row history to change the `__rowMarker__` unique identifier for `EmployeeID` E0001 to E0002. You don't need to provide all column data for a DELETE row, only the key columns. 
 
 ```parquet
-__rowMarker__,EmployeeID,EmployeeLocation
-0,E0001,Bellevue
-2,E0001,NULL
-0,E0002,Bellevue
+EmployeeID,EmployeeLocation,__rowMarker__
+E0001,Bellevue,0
+E0001,NULL,2
+E0002,Bellevue,0
 ```
 
 ## Table operations

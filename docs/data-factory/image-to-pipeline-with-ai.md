@@ -5,6 +5,7 @@ author: dcstwh
 ms.author: weetok
 ms.topic: how-to
 ms.date: 08/29/2024
+ms.custom: pipelines
 ---
 
 # Use Azure OpenAI to turn whiteboard sketches into data pipelines
