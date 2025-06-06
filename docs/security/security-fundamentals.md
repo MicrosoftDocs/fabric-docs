@@ -1,8 +1,8 @@
 ---
 title: "Microsoft Fabric security fundamentals"
 description: "Learn about Microsoft Fabric security fundamentals and how the main flows in the system work."
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.reviewer: sergeig, vparasuraman
 ms.date: 01/14/2024
 ms.topic: conceptual

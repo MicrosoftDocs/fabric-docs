@@ -1,8 +1,8 @@
 ---
 title: Developer admin settings
 description: Learn how to configure developer admin settings in Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 
 ms.custom:

@@ -1,8 +1,8 @@
 ---
 title: Customer-managed keys for Fabric workspaces
 description: Learn how to use workspace customer managed keys to encrypt data-at-rest in your Microsoft Fabric workspace.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
 ms.custom:
 ms.date: 05/19/2025

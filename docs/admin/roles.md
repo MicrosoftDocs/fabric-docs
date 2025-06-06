@@ -1,8 +1,8 @@
 ---
 title: Understand Microsoft Fabric admin roles
 description: This article explains the Microsoft Fabric admin roles.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
   - has-azure-ad-ps-ref

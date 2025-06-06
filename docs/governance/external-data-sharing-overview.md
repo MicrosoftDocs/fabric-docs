@@ -1,8 +1,8 @@
 ---
 title: "External data sharing in Microsoft Fabric"
 description: "This article describes the external data sharing feature in Microsoft Fabric."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 01/06/2024

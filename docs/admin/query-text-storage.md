@@ -1,8 +1,8 @@
 ---
 title: "Diagnostic query text storage in Microsoft Fabric"
 description: "This article describes diagnostic query text storage in Fabric and its implications for data security and privacy."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.topic: concept-article #Don't change
 ms.date: 05/29/2024

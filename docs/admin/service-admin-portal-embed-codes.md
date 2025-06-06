@@ -1,8 +1,8 @@
 ---
 title: Manage embed codes
 description: Learn how to manage Power BI embed codes.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: Ben.Zulauf
 ms.custom: admin-portal
 ms.topic: how-to
