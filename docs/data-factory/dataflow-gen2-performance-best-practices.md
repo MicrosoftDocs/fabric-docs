@@ -49,3 +49,6 @@ When moving data without non folding transformations, use Fast Copy to optimize 
 
 Dataflow Gen2 emits data in Delta Parquet format, which is different from Gen1's CSV output. While Delta Parquet may result in longer ETL runtimes compared to CSV, it enables powerful downstream capabilities such as Direct Lake, Lakehouses, and Warehouses, allowing these services to consume data efficiently without additional processing or cost.
 
+### Incremental refresh
+
+When working with large datasets, consider using incremental refresh to process only the new or changed data since the last refresh. This approach reduces the amount of data processed and speeds up the overall execution time. Incremental refresh is particularly useful for scenarios where data is updated frequently, such as in transactional systems.
