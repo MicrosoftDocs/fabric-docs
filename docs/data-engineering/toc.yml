@@ -382,7 +382,7 @@ items:
       - name: Use Stored procedures
         href: api-graphql-stored-procedures.md
       - name: Integrate with Azure API Management (APIM)
-        href: api-graphql-apim.md         
+        href: api-graphql-azure-api-management.md         
    - name: Monitoring  
      items:
       - name: Monitoring dashboard and logging (preview)
