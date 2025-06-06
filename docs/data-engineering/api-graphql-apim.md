@@ -18,7 +18,7 @@ Integrating Azure API Management (APIM) with Microsoft Fabric’s API for GraphQ
 
 ## Add a Fabric GraphQL API to Azure API Management
 
-For this section, we assume that you have a GraphQL API in Fabric and APIM instance already up and running. If not, you can follow the instructions on [how to create a GraphQL API in Fabric](get-started-api-graphql.md) or you can click on **Start with sample SQL database** in the API for GraphQL portal start from a new API.
+For this section, we assume that you have a GraphQL API in Fabric and APIM instance already up and running. If not, you can follow the [instructions](/azure/api-management/get-started-create-service-instance) on [how to create a GraphQL API in Fabric](get-started-api-graphql.md) or you can click on **Start with sample SQL database** in the API for GraphQL portal start from a new API.
 
 To get started retrieve your API endpoint from the Fabric portal by going in your GraphQL item and clicking on the **Copy endpoint** button in the ribbon. You will also need to save your GraphQL schema to a file, which you can accomplish by clicking on the **Export schema** button and saving it to a file in your local device:
 
