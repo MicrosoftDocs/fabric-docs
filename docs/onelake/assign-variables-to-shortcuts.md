@@ -64,3 +64,6 @@ The variable path uses the following format: "$(/**/{VariableLibary}/{VariableNa
 ```
 
 See: [OneLake Shortcuts - Create Shortcut - REST API (Core)](https://learn.microsoft.com/rest/api/fabric/core/onelake-shortcuts/create-shortcut?tabs=HTTP) for more information
+
+  > [!NOTE]
+> Only **User** identities are supported on the OneLake shortcuts APIs when using workspace variables.  **Service Principals** and **Managed Identities** are not currently supported.
