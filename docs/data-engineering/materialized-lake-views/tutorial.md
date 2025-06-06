@@ -111,6 +111,6 @@ The high-level steps are as follows:
 
 ## Related articles
 
-* [Microsoft Fabric materialized lake views overview](./overview.md)
-* [Microsoft Fabric materialized lake views tutorial](./tutorial.md)
+* [Microsoft Fabric materialized lake views overview](materialized-lake-views-overview.md)
+* [Microsoft Fabric materialized lake views tutorial](materialized-lake-view-tutorial.md)
 * [Create Materialized lake views](./create-materialized-lake-view.md)

@@ -61,5 +61,5 @@ The lineage UI also has the following functionalities:
 
 ## Related articles
 
-* [Microsoft Fabric materialized lake views overview](./overview.md)
-* [Microsoft Fabric materialized lake view tutorial](./tutorial.md)
+* [Microsoft Fabric materialized lake views overview](materialized-lake-views-overview.md)
+* [Microsoft Fabric materialized lake view tutorial](tutorial.md)
