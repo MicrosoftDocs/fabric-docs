@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.topic: how-to
 ms.custom:
-ms.date: 03/23/2025
+ms.date: 06/06/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -123,7 +123,7 @@ The overages chart displays the following elements:
   
   * **Cumulative %** - Red line represent the cumulative carryforward percent for the current 30-second period. Cumulative percent is displayed on the secondary axis located on the right side of the visual.
   
-Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint](metrics-app-timepoint-page.md) page.
+Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint detail](metrics-app-timepoint-page.md) page. Alternatively, you can right-click on any column to access drill-through options, which include [timepoint summary preview](metrics-app-timepoint-summary-page) and [timepoint detail](metrics-app-timepoint-page.md).
 
 Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
 
