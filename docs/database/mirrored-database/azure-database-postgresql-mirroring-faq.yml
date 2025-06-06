@@ -154,7 +154,7 @@ sections:
       - question: | 
           What if I stop or pause my Fabric capacity?
         answer: |
-          The Fabric capacity needs to be active and running. A paused or deleted capacity will impact Mirroring and no data will be replicated.
+          The Fabric capacity needs to be active and running. A paused or deleted capacity will impact Mirroring and no data will be replicated. A paused capacity will also incurr storage costs for the Mirroring storage.
 
 additionalContent: |
 
