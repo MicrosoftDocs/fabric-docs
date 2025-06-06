@@ -408,33 +408,33 @@ items:
 - name: Materialized lake views
   items:
   - name: Overview
-    href: materialized-view/overview-materialized-lake-view.md 
+    href: ./materialized-view/overview-materialized-lake-view.md 
   - name: Create materialized lake views
-    href: materialized-view/create-materialized-lake-view.md
+    href: ./materialized-view/create-materialized-lake-view.md
   - name: Refresh materialized lake views
-    href: materialized-view/refresh-materialized-lake-view.md
+    href: ./materialized-view/refresh-materialized-lake-view.md
   - name: Tutorial
     items: 
     - name: Turorial - medallion architecture with materialized lake views
-      href: materialized-view/tutorial.md
+      href: ./materialized-view/tutorial.md
   - name: Data quality
     items:  
     - name: Data quality in materialized lake views
-      href: materialized-view/data-quality.md
+      href: ./materialized-view/data-quality.md
     - name: Data quality report
-      href: materialized-view/data-quality-reports.md
+      href: ./materialized-view/data-quality-reports.md
   - name: Manage
     items:  
     - name: View lineage
-      href: materialized-view/view-lineage.md
+      href: ./materialized-view/view-lineage.md
     - name: Schedule materialized lake views
-      href: materialized-view/schedule-lineage-run.md
+      href: ./materialized-view/schedule-lineage-run.md
     - name: Run history of materialized lake views
-      href: materialized-view/materialized-lake-views-run-history.md
+      href: ./materialized-view/materialized-lake-views-run-history.md
     - name: Operational run details
-      href: materialized-view/operational-run-details.md
+      href: ./materialized-view/operational-run-details.md
   - name: Monitor
     items:  
     - name: Monitor materialized lake views
-      href: materialized-view/monitor-materialized-lake-views.md
+      href: ./materialized-view/monitor-materialized-lake-views.md
 

@@ -47,5 +47,5 @@ On clicking the **More Details** link, the user is navigated to the monitor hub 
 
 ## Related articles
 
-* [Microsoft Fabric materialized lake views overview](./overview.md)
+* [Microsoft Fabric materialized lake views overview](overview-materialized-lake-view.md)
 * [Microsoft Fabric materialized views tutorial](./tutorial.md)
