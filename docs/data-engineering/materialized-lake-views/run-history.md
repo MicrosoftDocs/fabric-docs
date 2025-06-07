@@ -5,7 +5,8 @@ ms.topic: how-to
 author: apurbasroy
 ms.author: apsinhar
 ms.reviewer: nijelsf
-ms.date: 05/29/2025
+ms.date: 06/06/2025
+# customer intent: As a data engineer, I want to check the run history of materialized lake views in Microsoft Fabric so that I can monitor and troubleshoot the runs.
 ---
 
 # Run history of materialized lake views
@@ -18,7 +19,7 @@ You can click on **View more past runs** to see the last 25 runs for Materialize
 
 :::image type="content" source="./media/materialized-lake-view-run-history/view-all-past-runs.png" alt-text="Screenshot showing a view of the past 25 runs." border="true" lightbox="./media/materialized-lake-view-run-history/view-all-past-runs.png":::
 
-## Following are the possible states for a run in lineage view:
+## Following are the possible states for a run in lineage view
 
 * **Completed**- When all the nodes have executed successfully, the run status is shown as **Completed** state.
 
@@ -37,7 +38,7 @@ You can click on **View more past runs** to see the last 25 runs for Materialize
 
 * **Canceled**- When the run is manually canceled by the user from monitoring hub, the run state is shown as **Canceled**.
 
-## Next step
+## Related articles
 
 * [Microsoft Fabric materialized lake views tutorial](./tutorial.md)
-
+* [Manage Fabric materialized lake views lineage](./view-lineage.md)
