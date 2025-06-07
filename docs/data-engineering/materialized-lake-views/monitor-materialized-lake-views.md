@@ -67,4 +67,3 @@ If you need more information about Materialized lake view runs and the Materiali
 
 * [Create Materialized lake views](./create-materialized-lake-view.md)
 * [Manage Materialized lake views lineage](./view-lineage.md)
-

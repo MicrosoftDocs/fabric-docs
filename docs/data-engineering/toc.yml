@@ -430,7 +430,7 @@ items:
     - name: Schedule materialized lake views
       href: ./materialized-lake-views/schedule-lineage-run.md
     - name: Run history of materialized lake views
-      href: ./materialized-lake-views/materialized-lake-views-run-history.md
+      href: ./materialized-lake-views/run-history.md
     - name: Operational run details
       href: ./materialized-lake-views/operational-run-details.md
   - name: Monitor

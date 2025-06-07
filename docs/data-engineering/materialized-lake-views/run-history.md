@@ -25,6 +25,7 @@ You can click on **View more past runs** to see the last 25 runs for Materialize
 
   :::image type="content" source="./media/materialized-lake-view-run-history/completed-runs.png" alt-text="Screenshot showing a view of a completed run." border="true" lightbox="./media/materialized-lake-view-run-history/completed-runs.png":::
 
+
 * **Failed**- When any one of the nodes fails, the run status is shown as **Failed** state. When the node is in Failed state, the child node is shown in a Skipped state.
 
   :::image type="content" source="./media/materialized-lake-view-run-history/failed-runs.png" alt-text="Screenshot showing a view of a failed run." border="true" lightbox="./media/materialized-lake-view-run-history/failed-runs.png":::

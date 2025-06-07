@@ -21,15 +21,15 @@ Materialized lake views in Microsoft Fabric support building a Medallion archite
 
 ## Current limitations
 
-The following featues are not yet available for materialized lake views in Microsoft Fabric:
+The following features aren't yet available for materialized lake views in Microsoft Fabric:
 
-* PySpark is not yet supported for materialized lake views.
+* PySpark isn't yet supported for materialized lake views.
 
 * Incremental refresh capabilities are currently unavailable.
 
-* There is no API support for managing materialized lake views.
+* There's no API support for managing materialized lake views.
 
-* Cross-lakehouse DAG and execution are not supported at this time.
+* Cross-lakehouse DAG and execution aren't supported at this time.
 
 ## Related content
 

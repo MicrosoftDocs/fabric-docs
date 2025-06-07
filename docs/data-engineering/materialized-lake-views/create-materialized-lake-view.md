@@ -168,7 +168,7 @@ DROP MATERIALIZED LAKE VIEW customers_enriched;
 > [!NOTE]
 > Dropping or renaming a materialized lake view affects the lineage view and scheduled refresh. Ensure you update the reference in all dependent materialized lake views.
 
-## Limitation
+## Current limitations
 
 * Spark properties set at the session level aren't applied during scheduled lineage refresh.
 * The creation of materialized lake view with delta time-travel isn't supported.
