@@ -34,4 +34,4 @@ The following featues are not yet available for materialized lake views in Micro
 ## Related content
 
 * [Create a materialized lake view](create-materialized-lake-view.md)
-* [Monitor a materialized lake view](monitor-materialized-lake-view.md)
+* [Monitor a materialized lake view](monitor-materialized-lake-views.md)
