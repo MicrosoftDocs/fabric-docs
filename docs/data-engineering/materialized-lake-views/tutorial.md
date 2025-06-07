@@ -21,7 +21,7 @@ As prerequisites to this tutorial, complete the following steps:
 1. [Enable Microsoft Fabric](../../admin/fabric-switch.md) in your tenant. Select the default Power BI icon at the bottom left of the screen and select Fabric.
 1. [Create a Microsoft Fabric enabled Workspace](../../fundamentals/create-workspaces.md).
 1. Select a workspace from the Workspaces tab, then select **+ New** item, and choose **Data pipeline**. Provide a name for your pipeline and select **Create**.
-1. [Create a Lakehouse with schemas](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-schemas#create-a-lakehouse-schema) enabled. Name itv *SalesLakehouse* and load sample data files into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
+1. [Create a Lakehouse with schemas](../lakehouse-schemas.md#create-a-lakehouse-schema) enabled. Name itv *SalesLakehouse* and load sample data files into the Lakehouse. For more information, see [Lakehouse tutorial](/fabric/data-engineering/tutorial-build-lakehouse).
 
 ## Scenario overview
 

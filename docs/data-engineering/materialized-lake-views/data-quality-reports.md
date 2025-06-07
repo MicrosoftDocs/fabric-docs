@@ -15,18 +15,18 @@ Materialized lake views (MLV) provides the option to view your data quality metr
 
 ## Create and access the report
 
-To create or access the report, navigate to the Managed materialized lake views page and click on the "Data quality report" button.
+To create or access the report, navigate to the Managed materialized lake views page and click on the **Data quality report**.
 
 :::image type="content" source="./media/data-quality-reports/dqr-button.png" alt-text="Screenshot showing data quality report button placement." border="true" lightbox="./media/data-quality-reports/dqr-button.png":::
 
-This opens the embedded report page. If a report is already created, the user is able to see it here. If this is the first time data quality report is being accessed in this lakehouse, click on "Generate report" and wait for the report to be created.
+It opens the embedded report page. If a report is already created, the user is able to see it here. If this is the first time data quality report is being accessed in this lakehouse, select **Generate report** and wait for the report to be created.
 
 :::image type="content" source="./media/data-quality-reports/generate-report.png" alt-text="Screenshot showing the generate report button." border="true" lightbox="./media/data-quality-reports/generate-report.png":::
 
 :::image type="content" source="./media/data-quality-reports/report-loading.png" alt-text="Screenshot showing loading of report." border="true" lightbox="./media/data-quality-reports/report-loading.png":::
 
 A semantic model and a Power BI report are created for the user in the background and stored in their workspace.
-Once ready, the Power BI report will be displayed on the same page as an embedded report and will present the summary of the data quality trends in two sections (pages on the Power BI report) – Overview and MLV Detail. 
+Once ready, the Power BI report will be displayed on the same page as an embedded report and will present the summary of the data quality trends in two sections (pages on the Power BI report) – Overview and MLV Detail.
 
 ## Interpret the data in the report
 
