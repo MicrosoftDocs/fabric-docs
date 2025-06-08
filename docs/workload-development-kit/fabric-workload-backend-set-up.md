@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.service: fabric
 ---
 
-## Quick Start: Set Up a Microsoft Fabric Workload Backend using Swagger
+## Quick Start: Set Up a Microsoft Fabric Workload Backend using OpenAPI Specification (Swagger)
 A Microsoft Fabric Workload Backend is a service that implements the Fabric API contract, enabling custom workloads to integrate seamlessly with the Microsoft Fabric platform. This backend handles the lifecycle operations for your workload items, including creation, retrieval, updates, and deletion.
 
 In this tutorial, you'll learn how to quickly generate a Fabric Workload Backend directly from an OpenAPI (Swagger) definition. While you can use any programming language supported by OpenAPI generators, this tutorial specifically demonstrates the process using Python and FastAPI.
