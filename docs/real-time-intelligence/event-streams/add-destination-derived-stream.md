@@ -52,10 +52,6 @@ You can also access this stream in Real-Time hub.
 
 :::image type="content" border="true" source="media/add-destination-derived-stream/real-time-hub.png" alt-text="Screenshot of the derived eventstream listed in Real-Time hub.":::
 
-
-## Add a Eventhouse destination to a derived stream 
-[!INCLUDE [Add Eventhouse destination to a derived stream](includes/add-eventhouse-destination-to-derived-stream.md)]
-
 ## Related content 
 
 To learn how to add other destinations to an eventstream, see the following articles: 
