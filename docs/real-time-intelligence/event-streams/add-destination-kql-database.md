@@ -8,15 +8,12 @@ ms.topic: how-to
 ms.custom:
 ms.date: 05/05/2025
 ms.search.form: Source and Destination
-zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
-zone_pivot_groups: event-streams-standard-enhanced
 ---
 
 # Add an Eventhouse destination to an eventstream
 
 This article shows you how to add an Eventhouse as a destination to an eventstream in Microsoft Fabric event streams.
 
-[!INCLUDE [select-view](./includes/select-view.md)]
 
 ## Prerequisites
 
