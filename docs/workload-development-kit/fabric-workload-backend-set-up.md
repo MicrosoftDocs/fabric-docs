@@ -1,5 +1,5 @@
 ---
-title: Set Up a Microsoft Fabric Workload Backend Using Swagger
+title: Set Up a Microsoft Fabric Workload Backend Using OpenAPI Specification
 description: Learn how to generate and run a Fabric Workload Backend based on the swagger file included in our sample.
 author: Natali Or
 ms.author: natalior
@@ -9,6 +9,8 @@ ms.service: fabric
 ---
 
 ## Quick Start: Set Up a Microsoft Fabric Workload Backend using Swagger
+A Microsoft Fabric Workload Backend is a service that implements the Fabric API contract, enabling custom workloads to integrate seamlessly with the Microsoft Fabric platform. This backend handles the lifecycle operations for your workload items, including creation, retrieval, updates, and deletion.
+
 In this tutorial, you'll learn how to quickly generate a Fabric Workload Backend directly from an OpenAPI (Swagger) definition. While you can use any programming language supported by OpenAPI generators, this tutorial specifically demonstrates the process using Python and FastAPI.
 This approach enables developers to rapidly prototype and validate backend logic independently, before integrating it into the complete Microsoft Fabric development environment. Although this tutorial uses Python and FastAPI as an example, the same principles and steps can be applied to generate your backend in any programming language supported by OpenAPI.
 
@@ -37,10 +39,10 @@ Before starting this tutorial, ensure you have:
 - Familiarity with Microsoft Fabric workload concepts
 
 ### Required Software
-- **Python 3.8+** - [python.org](https://www.python.org/downloads/)
-- **Java** - Required for OpenAPI Generator (see installation guide below)
-- **Node.js** - Required to install OpenAPI Generator CLI via npm (optional)
-- **Git** - To clone the sample repository
+- **Python 3.8+** - [Download Python](https://www.python.org/downloads/)
+- **Java** - Required for OpenAPI Generator - [Install the Microsoft Build of OpenJDK](https://learn.microsoft.com/en-us/java/openjdk/install)
+- **Node.js** - Required to install OpenAPI Generator CLI via npm - [Download Node.js](https://nodejs.org/) (Optional)
+- **Git** - To clone the sample repository - [Download Git](https://git-scm.com/downloads)
 - **Code editor** - Visual Studio Code, PyCharm, or your preferred IDE
 
 > [!IMPORTANT]
@@ -48,48 +50,34 @@ Before starting this tutorial, ensure you have:
 
 ### Install Java for OpenAPI Generator
 
-OpenAPI Generator CLI requires Java as a runtime environment. You don't need to write Java code—it's only required to run the generator tool.
+OpenAPI Generator CLI requires Java as a runtime environment. You don't need to write Java code — it's only required to run the generator tool.
 
 ✅ **Minimum Java version required:** Java 8  
 ✅ **Recommended:** Use a supported Long-Term Support (LTS) version, such as Java 17 or Java 21.
 
-Several OpenJDK distributions are available:
-#### Eclipse Temurin: Open-source, community-supported distribution 
-1. Visit [adoptium.net](https://adoptium.net/)
-2. The website should auto-detect your operating system. If not, select:
-   - **Operating System**: Windows, macOS, or Linux
-   - **Architecture**: x64 (most common) or ARM64 (for newer Macs)
-   - **Package Type**: JDK (includes everything you need)
-   - **Version**: It's recommended to choose an LTS (Long Term Support) version for better stability and longer support
+#### Installation Steps
 
-3. Click the large download button for the installer (.msi for Windows, .pkg for macOS, .tar.gz for Linux)
+1. **Install the Microsoft Build of OpenJDK** (recommended)
+   
+   Follow the installation instructions for your operating system in the [Microsoft Build of OpenJDK documentation](https://learn.microsoft.com/en-us/java/openjdk/install).
 
-4. Run the installer:
-   - **Windows**: Double-click the .msi file and follow the wizard. Keep default settings.
-   - **macOS**: Double-click the .pkg file and follow the installer.
-   - **Linux**: Extract the tar.gz file and follow the included instructions.
+2. **Verify your installation**
+   
+   After installation, open a terminal or command prompt and run:
+   
+   ```bash
+   java -version
+   ```
+   
+   You should see output similar to:
+   ```
+   openjdk version "17.0.12" 2024-07-16 LTS
+   OpenJDK Runtime Environment Microsoft-10377968 (build 17.0.12+7-LTS)
+   OpenJDK 64-Bit Server VM Microsoft-10377968 (build 17.0.12+7-LTS, mixed mode, sharing)
+   ```
 
-#### Oracle JDK: Requires a license for commercial use  
-1. Visit [oracle.com/java/technologies/downloads](https://www.oracle.com/java/technologies/downloads/)
-2. Choose Java version (recommended LTS version)
-3. Select your operating system section (Linux, macOS, or Windows)
-4. Download the appropriate installer:
-   - **Windows**: Download "x64 Installer" (.exe file)
-   - **macOS**: Download "ARM64 DMG Installer" (for Apple Silicon M1/M2/M3) or "x64 DMG Installer" (for Intel Macs)
-   - **Linux**: Download "x64 Debian Package" (.deb) for Ubuntu/Debian or "x64 RPM Package" (.rpm) for Red Hat/Fedora
-5. Run the downloaded installer with default settings
-
-After installation, verify your Java installation by running:
-
-```bash
-java -version
-```
-
-You should see output like:
-```bash
-openjdk version "21.0.6" 2025-01-21 LTS
-OpenJDK Runtime Environment Temurin-21.0.6+7 (build 21.0.6+7-LTS)
-```
+> [!NOTE]
+> If you already have Java installed from another vendor (Oracle, Eclipse Temurin, Amazon Corretto, etc.) with version 8 or later, you can use your existing installation.
 
 ## Step 1: Set up your development environment
 
@@ -129,7 +117,7 @@ First, set up your development environment with the required tools and packages.
     npm install @openapitools/openapi-generator-cli -g
     ```
 
-    [Visit openapi documentation website for other install install options](https://openapi-generator.tech/docs/installation)
+    For alternative installation methods, see the [OpenAPI Generator installation documentation](https://openapi-generator.tech/docs/installation).
 
 ## Step 2: Verify your Python virtual environment is active
 
@@ -208,8 +196,9 @@ Use the OpenAPI Generator CLI to create a Python FastAPI project from the Fabric
 1. **Run the generation command**:
 
     Execute the following command from your `PythonBackend` directory:
+
     ```bash
-        openapi-generator-cli generate -i ../Backend/src/Contracts/FabricAPI/Workload/swagger.json -g python-fastapi -o . --additional-properties=packageName=fabric_api
+    openapi-generator-cli generate -i ../Backend/src/Contracts/FabricAPI/Workload/swagger.json -g python-fastapi -o . --additional-properties=packageName=fabric_api
     ```
 
     #### Understanding the command parameters
@@ -492,7 +481,7 @@ curl -X POST "http://localhost:5000/workspaces/test-workspace/items/TestItemType
 
 FastAPI automatically generates interactive API documentation, allowing you to test your endpoints directly from your browser:
 
-1. Open your browser and navigate to [`http://127.0.0.1:5000/docs`](http://127.0.0.1:5000/docs).
+1. Open your browser and navigate to [`http://localhost:5000/docs`](http://localhost:5000/docs).
 2. Locate the **POST** endpoint under the **ItemLifecycle** section:
 
    ```http
@@ -553,6 +542,8 @@ FastAPI automatically generates interactive API documentation:
 1. Open your browser and navigate to `http://localhost:5000/docs`
 2. You'll see a Swagger UI interface where you can explore and test all endpoints
 3. Click on the "ItemLifecycle" section to see the create, get, update, and delete endpoints
+
+The following image shows an example of the Swagger UI interface with the Fabric API endpoints:
 
 ![Swagger UI interface showing the Fabric API endpoints](media/fabric-api-swagger-ui.png)
 
@@ -624,7 +615,7 @@ For a complete integration with Microsoft Fabric, you'll need to implement prope
 ## Next steps
 
 - Implement the remaining controllers (Jobs API, Endpoint Resolution API)
-- Add proper authentication and authorization
+- Add proper authentication and authorization - [Backend authentication and authorization overview](https://learn.microsoft.com/en-us/fabric/workload-development-kit/back-end-authentication)
 - Connect to a database for persistent storage
 - Set up logging and monitoring
 - Implement unit and integration tests
