@@ -47,10 +47,6 @@ The following operations to variables or value sets in one stage of a deployment
 A simple change to the **active value set** doesn't register as *different* when you compare, since the active value set is part of the item configuration, but it is not included in its definition. This is why it is not shown on the Deployment pipeline 'Compare' and not overwritten on each deployment. 
 
 
-
-
-
-
 ## Variable libraries and Git integration
 
 Like other Fabric items, Variable libraries can be integrated with Git for source control. Variable library items are stored as folders that can be maintained and synced between Fabric and your Git provider.
