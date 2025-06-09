@@ -48,8 +48,8 @@ Restrictions:
 - They can't change the label on the PBIX file.
 - They can only republish the PBIX file to the original workspace the file came from.
 
-   > [!NOTE]
-   > The file must have been published at least once for other users to be able to publish it back to that specific workspace. If the file hasn't yet been published, then the latest label issuer (the one who most recently set the protected label) or a user with sufficient usage rights must publish it and then share the file with the other editors.)
+> [!NOTE]
+> The file must have been published at least once for other users to be able to publish it back to that specific workspace. If the file hasn't yet been published, then the latest label issuer (the one who most recently set the protected label) or a user with sufficient usage rights must publish it and then share the file with the other editors.
 
 These restrictions ensure that the security of the content remains under the control of those who have high enough permissions to set the label.
 
@@ -67,7 +67,7 @@ In such cases, the usage rights requirements for changing or removing the label 
 - EXPORT
 - EDIT 
 
-If no user has even these usage rights, nobody will be able to change or remove the label from the item, and access to the item is potentially endangered.
+If no user has even these usage rights, nobody can change or remove the label from the item, and access to the item is potentially endangered.
 
 To avoid this situation, the Fabric admin can enable the **Allow workspace admins to override automatically applied sensitivity labels** tenant setting. This makes it possible for workspace admins to override automatically applied sensitivity labels without regard to label change enforcement rules.
 
