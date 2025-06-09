@@ -3,12 +3,12 @@ title: Set Up a Microsoft Fabric Workload Backend Using OpenAPI Specification
 description: Learn how to generate and run a Fabric Workload Backend based on the swagger file included in our sample.
 author: Natali Or
 ms.author: natalior
-ms.date: 2025
+ms.date: 06/09/2025
 ms.topic: tutorial
 ms.service: fabric
 ---
+# Quickstart - Set Up a Microsoft Fabric Workload Backend using OpenAPI Specification (Swagger)
 
-## Quick Start: Set Up a Microsoft Fabric Workload Backend using OpenAPI Specification (Swagger)
 A Microsoft Fabric Workload Backend is a service that implements the Fabric API contract, enabling custom workloads to integrate seamlessly with the Microsoft Fabric platform. This backend handles the lifecycle operations for your workload items, including creation, retrieval, updates, and deletion.
 
 In this tutorial, you'll learn how to quickly generate a Fabric Workload Backend directly from an OpenAPI (Swagger) definition. While you can use any programming language supported by OpenAPI generators, this tutorial specifically demonstrates the process using Python and FastAPI.
@@ -34,19 +34,19 @@ This approach enables developers to rapidly prototype and validate backend logic
 Before starting this tutorial, ensure you have:
 
 ### Required Knowledge
-- **Understanding of Microsoft Fabric Item Lifecycle** - Read and understand [Item Lifecycle Management](https://learn.microsoft.com/en-us/fabric/workload-development-kit/item-lifecycle)
+- **Understanding of Microsoft Fabric Item Lifecycle** - Read and understand [Item Lifecycle Management](item-lifecycle.md)
 - Basic knowledge of Python and RESTful APIs
 - Familiarity with Microsoft Fabric workload concepts
 
 ### Required Software
 - **Python 3.8+** - [Download Python](https://www.python.org/downloads/)
-- **Java** - Required for OpenAPI Generator - [Install the Microsoft Build of OpenJDK](https://learn.microsoft.com/en-us/java/openjdk/install)
+- **Java** - Required for OpenAPI Generator - [Install the Microsoft Build of OpenJDK](https://learn.microsoft.com/java/openjdk/install)
 - **Node.js** - Required to install OpenAPI Generator CLI via npm - [Download Node.js](https://nodejs.org/) (Optional)
 - **Git** - To clone the sample repository - [Download Git](https://git-scm.com/downloads)
 - **Code editor** - Visual Studio Code, PyCharm, or your preferred IDE
 
 > [!IMPORTANT]
-> Understanding the Microsoft Fabric Item Lifecycle is crucial for this tutorial. The generated backend will implement the lifecycle operations (Create, Read, Update, Delete) for Fabric items as defined in the [Item Lifecycle documentation](https://learn.microsoft.com/en-us/fabric/workload-development-kit/item-lifecycle).
+> Understanding the Microsoft Fabric Item Lifecycle is crucial for this tutorial. The generated backend will implement the lifecycle operations (Create, Read, Update, Delete) for Fabric items as defined in the [Item Lifecycle documentation](item-lifecycle.md).
 
 ### Install Java for OpenAPI Generator
 
@@ -59,7 +59,7 @@ OpenAPI Generator CLI requires Java as a runtime environment. You don't need to 
 
 1. **Install the Microsoft Build of OpenJDK** (recommended)
    
-   Follow the installation instructions for your operating system in the [Microsoft Build of OpenJDK documentation](https://learn.microsoft.com/en-us/java/openjdk/install).
+   Follow the installation instructions for your operating system in the [Microsoft Build of OpenJDK documentation](https://learn.microsoft.com/java/openjdk/install).
 
 2. **Verify your installation**
    
@@ -384,7 +384,7 @@ If you're planning to integrate with the full Microsoft Fabric development envir
    ```
 
 > [!NOTE] 
-> For complete workload configuration details, see [Get started with the extensibility backend.](https://learn.microsoft.com/en-us/fabric/workload-development-kit/extensibility-back-end#get-started)
+> For complete workload configuration details, see [Get started with the extensibility backend.](extensibility-back-end.md#get-started)
 
 ### Run the FastAPI application
 
@@ -545,7 +545,7 @@ FastAPI automatically generates interactive API documentation:
 
 The following image shows an example of the Swagger UI interface with the Fabric API endpoints:
 
-![Swagger UI interface showing the Fabric API endpoints](media/fabric-api-swagger-ui.png)
+:::image type="content" source="./media/manage-workload/fabric-api-swagger-ui.png" alt-text="Screenshot showing Swagger UI interface of the Fabric API endpoints.":::
 
 ## Step 9: Implement more advanced functionality
 
@@ -615,7 +615,7 @@ For a complete integration with Microsoft Fabric, you'll need to implement prope
 ## Next steps
 
 - Implement the remaining controllers (Jobs API, Endpoint Resolution API)
-- Add proper authentication and authorization - [Backend authentication and authorization overview](https://learn.microsoft.com/en-us/fabric/workload-development-kit/back-end-authentication)
+- Add proper authentication and authorization - [Backend authentication and authorization overview](back-end-authentication.md)
 - Connect to a database for persistent storage
 - Set up logging and monitoring
 - Implement unit and integration tests
@@ -624,5 +624,5 @@ For a complete integration with Microsoft Fabric, you'll need to implement prope
 
 - [FastAPI documentation](https://fastapi.tiangolo.com/)
 - [OpenAPI Generator documentation](https://openapi-generator.tech/)
-- [Microsoft Fabric documentation](https://docs.microsoft.com/en-us/fabric/)
+- [Microsoft Fabric documentation](https://docs.microsoft.com/fabric/)
 - [Python asyncio documentation](https://docs.python.org/3/library/asyncio.html)
