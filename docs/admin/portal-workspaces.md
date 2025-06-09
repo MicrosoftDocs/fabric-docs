@@ -238,6 +238,9 @@ Moving workspaces from one capacity to another has the following restrictions:
 
     All other item types must be removed from the workspace before you can change its license mode from Premium capacity or Fabric capacity to Pro or Premium Per User.
 
+> [!NOTE]
+> If you have Dataflow Gen2 items in your workspace, note that their underlying staging lakehouse and staging warehouse items only become visible in the workspace UI after **all** Dataflow Gen2 items in the workspace have been deleted. These staging items are Fabric items as well, and as such their existance can prevent the workspace from being successfully migrated from one region to another. To ensure that your workspace can be successfully migrated across regions, first delete all Dataflow Gen2 items in the workspace, and then delete all the staging lakehouses and warehouses in the workspace that become visible.
+
 ## Related content
 
 * [About the admin portal](admin-center.md)
