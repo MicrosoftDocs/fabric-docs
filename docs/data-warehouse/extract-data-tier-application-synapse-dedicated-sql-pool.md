@@ -50,8 +50,8 @@ This guide applies to:
 
 Other scenarios to generate a DAC:
 
-- For standalone dedicated SQL pools not in a Synapse workspace, [use the SQLPackage.exe extract action to create the DAC](sql/tools/sqlpackage/sqlpackage-extract?view=azure-sqldw-latest&preserve-view=true).
-- For serverless SQL pools in Azure Synapse Analytics, [use the SQLPackage.exe extract action to create the DAC](sql/tools/sqlpackage/sqlpackage-extract?view=azure-sqldw-latest&preserve-view=true).
+- For standalone dedicated SQL pools not in a Synapse workspace, [use the SQLPackage.exe extract action to create the DAC](/sql/tools/sqlpackage/sqlpackage-extract?view=azure-sqldw-latest&preserve-view=true).
+- For serverless SQL pools in Azure Synapse Analytics, [use the SQLPackage.exe extract action to create the DAC](/sql/tools/sqlpackage/sqlpackage-extract?view=azure-sqldw-latest&preserve-view=true).
 
 ## Extract DAC from dedicated SQL pool
 
