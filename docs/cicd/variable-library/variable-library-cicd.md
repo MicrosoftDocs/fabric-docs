@@ -19,9 +19,21 @@ Variable libraries make it easy to manage configurations across different stages
 
 ## Variable libraries and deployment pipelines
 
-Variable libraries and their values can be deployed in deployment pipelines to manage variable values across different stages. All value sets in the Variable library are available to all stages of the deployment pipeline. The active value set for each stage is selected independently and can be changed anytime. While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the deployment pipeline. The consumer item (for example, a pipeline) automatically receives the correct value from the active value set.
+Variable libraries and their values can be deployed in deployment pipelines to manage variable values across different stages. 
 
-When you create a deployment pipeline, you can select a Variable library item to use. The selected Variable library item is stored in the deployment pipeline and is used to populate the variable values in that stage. You can also change the active value set for each stage of the deployment pipeline.
+:::image type="content" source="./media/variable-library-cicd/set-variable-library-1.png" alt-text="Screenshot of compare in deployment pipelines with the variable library showing as different in the two stages." lightbox="media/variable-library-cicd/set-variable-library-1.png":::
+:::
+
+The following is important information to remember
+
+- All value sets in the variable library are available to all stages of the deployment pipeline.
+- The active value set for each stage is selected independently and can be changed anytime.
+- By default, the variable libraries active set is, set to the default value for each stage.  You can change this by accessing the variable library in each step of the deployment pipline and setting the active set.
+
+:::image type="content" source="./media/variable-library-cicd/set-variable-library-2.png" alt-text="Screenshot of compare in deployment pipelines with the variable library showing as different in the two stages." lightbox="media/variable-library-cicd/set-variable-library-2.png":::
+:::
+
+- While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the deployment pipeline. The consumer item (for example, a pipeline) automatically receives the correct value from the active value set.
 
 When you change the variables or value set in one stage of a deployment pipeline, the Variable library looks *different* [compared](../deployment-pipelines/compare-pipeline-content.md) to the same item in a different stage.
 For example, the following changes in the Variable library are reflected as *different* in the deployment pipeline:
@@ -33,7 +45,11 @@ For example, the following changes in the Variable library are reflected as *dif
 
 :::image type="content" source="./media/variable-library-cicd/variable-library-compare.png" alt-text="Screenshot of compare in deployment pipelines with the variable library showing as different in the two stages.":::
 
-Changes to the **active value set** don't register as in a *different* when you compare since the active value set is stored in the deployment pipeline, and not in the Variable library itself.
+Changes to the **active value set** don't register as *different* when you compare since the active value set is part of the item configuration, but it is not included in its definition. This is why it is not shown on the Deployment pipeline 'Compare' and not overwritten on each deployment. 
+
+
+
+
 
 ## Variable libraries and Git integration
 
