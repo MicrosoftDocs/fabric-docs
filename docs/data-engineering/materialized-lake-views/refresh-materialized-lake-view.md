@@ -27,11 +27,9 @@ If it's necessary to quickly reflect changes in a materialized lake view, you ca
 REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier [FULL]
 ```
 
-Argument:
+**Argument:**
 
-FULL: Optional. If the FULL keyword is included in the command, a full refresh is performed for the materialized lake view.
-
-If the FULL keyword isn't included, the internal service determines, based on the data, whether a full refresh or no refresh should be executed.
+FULL: It's an optional argument. If the FULL keyword is used, a full refresh of the materialized lake view is performed. If omitted, the system decides whether to run a full refresh or skip it based on the source data.
 
 > [!NOTE]
 > Refreshing a materialized lake view that uses non-delta tables as its source initiate a full refresh of the materialized lake view.

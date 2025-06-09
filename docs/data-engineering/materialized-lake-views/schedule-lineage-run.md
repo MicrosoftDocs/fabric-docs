@@ -1,17 +1,17 @@
 ---
-title: Schedule a Materialized Lake Views run
-description: Learn how to schedule a Materialized Lake Views run
+title: Schedule a materialized Lake Views run
+description: Learn how to schedule a materialized Lake Views run
 ms.topic: how-to
 author: apurbasroy
 ms.author: apsinhar
 ms.reviewer: nijelsf
 ms.date: 06/06/2025
-# customer intent: As a data engineer, I want to schedule a Materialized Lake Views run in Microsoft Fabric so that I can refresh the materialized lake views based on business requirements.
+# customer intent: As a data engineer, I want to schedule a materialized Lake Views run in Microsoft Fabric so that I can refresh the materialized lake views based on business requirements.
 ---
 
-# Schedule a Materialized Lake Views run
+# Schedule a materialized Lake Views run
 
-Scheduling the Materialized Lake Views (MLV) run is an option provided to the users to decide how frequently the materialized lake views' need to be refreshed as per business requirements when and how the lineage should be executed to refresh the materialized lake views.
+Scheduling the materialized Lake Views (MLV) run is an option provided to the users to decide how frequently the materialized lake views' need to be refreshed as per business requirements when and how the lineage should be executed to refresh the materialized lake views.
 
 ## Determining the Schedule
 
@@ -23,7 +23,7 @@ The schedule for running the MLV depends on various factors, such as:
 
 ## Implementing the Schedule
 
-Click on the Schedule button on the Manage Materialized lake views page.
+Click on the Schedule button on the Manage materialized lake views page.
 
 :::image type="content" source="./media/schedule-lineage-run/schedule-run.png" alt-text="Screenshot showing the schedule button in lineage view." border="true" lightbox="./media/schedule-lineage-run/schedule-run.png":::
 

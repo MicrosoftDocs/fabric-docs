@@ -11,7 +11,7 @@ ms.date: 06/06/2025
 
 # Manage Fabric materialized lake views lineage
 
-Fabric Materialized lake views (MLV) are an efficient way to manage and query large datasets by pre computing and storing the results of a query. 
+Fabric materialized lake views (MLV) are an efficient way to manage and query large datasets by pre computing and storing the results of a query. 
 In a fabric environment, managing these views effectively can significantly enhance performance and reduce query times. 
 This document delves into the various aspects of managing a Fabric materialized lake views, including understanding the lineage, scheduling the MLV runs, exploring the history of materialized lake views, and detailing operational run specifics.
 

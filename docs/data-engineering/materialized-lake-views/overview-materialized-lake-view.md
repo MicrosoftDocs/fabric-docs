@@ -29,6 +29,8 @@ The following features aren't yet available for materialized lake views in Micro
 
 * There's no API support for managing materialized lake views.
 
+* Cross-lakehouse DAG and execution aren't supported at this time.
+
 * Cross-lakehouse lineage and execution aren't supported at this time.
 
 ## Related content

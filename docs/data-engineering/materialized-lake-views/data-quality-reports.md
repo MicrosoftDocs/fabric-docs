@@ -74,7 +74,7 @@ The report is created using the Direct Query model and hence there is a fixed li
 
 ## Set up alerts in data quality report
 
-You can set up alerts on the data quality report in Fabric Materialized lake views using Data Activator service. Follow the steps below to set up alerts on your data quality report.  
+You can set up alerts on the data quality report in Fabric materialized lake views using Data Activator service. Follow the steps below to set up alerts on your data quality report.  
 
 1. Click on "Set Alert" button on the top ribbon of the data quality report. 
 

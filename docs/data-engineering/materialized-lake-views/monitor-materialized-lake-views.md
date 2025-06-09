@@ -1,15 +1,15 @@
 ---
-title: "Monitoring Fabric Materialized lake views"
-description: Learn how to monitor Fabric Materialized lake views.
+title: "Monitoring Fabric materialized lake views"
+description: Learn how to monitor Fabric materialized lake views.
 author: yeturis
 ms.author: sairamyeturi
 ms.reviewer: nijelsf
 ms.topic: how-to
 ms.date: 06/06/2025
-# customer intent: As a data engineer, I want to monitor Materialized lake views in Microsoft Fabric so that I can track their status and manage their runs.
+# customer intent: As a data engineer, I want to monitor materialized lake views in Microsoft Fabric so that I can track their status and manage their runs.
 ---
 
-# Monitor Materialized lake views
+# Monitor materialized lake views
 
 The Monitor hub serves as a centralized portal to browse Materialized lake view (MLV) runs in your Lakehouse. You can view status of the Materialized lake view runs. You can also search, and filter the runs based on different criteria. Additionally, you can cancel your in-progress run and drill down to view more run execution details of any Materialized lake view run.
 
@@ -61,9 +61,9 @@ If you need to cancel an in-progress MLV run, hover over its row and click the `
 
 ## Navigate to Materialized lake view run
 
-If you need more information about Materialized lake view runs and the Materialized view statistics, access Apache Spark logs for individual Materialized lake views, or check input and output data, you can click on the name of any Materialized lake view run  to navigate to its corresponding scheduled run, and individual Materialized lake views in the lineage will direct you to the detailed log view.
+If you need more information about Materialized lake view runs and the Materialized view statistics, access Apache Spark logs for individual materialized lake views, or check input and output data, you can click on the name of any Materialized lake view run  to navigate to its corresponding scheduled run, and individual materialized lake views in the lineage will direct you to the detailed log view.
 
 ## Related articles
 
-* [Create Materialized lake views](./create-materialized-lake-view.md)
-* [Manage Materialized lake views lineage](./view-lineage.md)
+* [Create materialized lake views](./create-materialized-lake-view.md)
+* [Manage materialized lake views lineage](./view-lineage.md)
