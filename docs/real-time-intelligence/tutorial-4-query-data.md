@@ -6,7 +6,7 @@ ms.author: shsagir
 author: shsagir
 ms.topic: tutorial
 ms.custom:
-ms.date: 03/23/2025
+ms.date: 06/08/2025
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Get started
@@ -17,7 +17,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 3: Transform data in a KQL database](tutorial-3-transform-kql-database.md).
 
-In this part of the tutorial, you learn how to query your streaming data. You use a few different methods to query- using T-SQL, by using `explain` to convert SQL to KQL. You use the Copilot to generate a KQL query, and also write KQL queries. You also use KQL queries to visualize the data in a time chart.
+In this part of the tutorial, you query your streaming data. You use a few different methods to query- using T-SQL, by using `explain` to convert SQL to KQL. You use the Copilot to generate a KQL query, and also write KQL queries. You also use KQL queries to visualize the data in a time chart.
     
 
 ## Write a KQL query
