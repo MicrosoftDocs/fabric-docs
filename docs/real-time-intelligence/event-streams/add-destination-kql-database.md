@@ -130,6 +130,7 @@ Previously, only default streams supported direct ingestion into an eventhouse. 
 - Configure Eventhouse destination with direct ingestion mode directly from a derived stream. 
 - Use the "Get Data" wizard to set up the Eventhouse destination table.
 
+### Steps
 1. From Eventstream, [create a derived stream destination](add-destination-derived-stream.md). 
 1. For the derived stream, select **Eventhouse** destination.  
 
