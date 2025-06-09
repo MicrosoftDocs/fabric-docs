@@ -5,11 +5,11 @@ ms.author: nijelsf
 author: reachnijel
 ms.reviewer: balaji.sankaran
 ms.topic: overview
-ms.date: 06/06/2025
+ms.date: 06/09/2025
 # customer intent: As a data engineer, I want to understand what materialized lake views are in Microsoft Fabric so that I can leverage them for building a Medallion architecture.
 ---
 
-# What is materialized lake views in Microsoft Fabric? 
+# What are materialized lake views in Microsoft Fabric? 
 
 Materialized lake views in Microsoft Fabric support building a Medallion architecture by simplifying data transformations and management. They enable users to create, manage, and monitor views using a declarative approach, allowing developers to focus on working with data instead of handling infrastructure.
 
@@ -30,6 +30,8 @@ The following features aren't yet available for materialized lake views in Micro
 * There's no API support for managing materialized lake views.
 
 * Cross-lakehouse DAG and execution aren't supported at this time.
+
+* Cross-lakehouse lineage and execution aren't supported at this time.
 
 ## Related content
 
