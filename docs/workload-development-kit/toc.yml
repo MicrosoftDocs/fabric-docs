@@ -11,6 +11,8 @@ items:
     href: environment-setup.md
   - name: Quickstart - Run a workload sample
     href: quickstart-sample.md
+  - name: Set Up a Microsoft Fabric Workload Backend using OpenAPI Specification
+    href: fabric-workload-backend-set-up.md
   - name: Understand the development sample
     href: sample-features.md    
 - name: Development cycle
