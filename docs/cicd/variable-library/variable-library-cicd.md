@@ -24,11 +24,11 @@ Variable libraries and their values can be deployed in deployment pipelines to m
 :::image type="content" source="./media/variable-library-cicd/set-variable-library-1.png" alt-text="Screenshot of deployment pipeline." lightbox="media/variable-library-cicd/set-variable-library-1.png":::
 :::
 
-The following is important information to remember
+The following is important information to remember:
 
-- All value sets in the variable library are available to all stages of the deployment pipeline.
-- The active value set for each stage is selected independently and can be changed anytime.
-- By default, the variable libraries active set is, set to the default value for each stage.  You can change this by accessing the variable library in each step of the deployment pipline and setting the active set.
+- All **value sets** in the variable library are available to all stages of the deployment pipeline.
+- The **active value set** for each stage is selected independently and can be changed anytime.
+- By default, the variable libraries active set is, set to the default value, for each stage of a deployment pipelline.  You can change this by accessing the variable library in each step of the deployment pipline and setting the active set.
 
 :::image type="content" source="./media/variable-library-cicd/set-variable-library-2.png" alt-text="Screenshot of compare in deployment pipelines showing active set." lightbox="media/variable-library-cicd/set-variable-library-2.png":::
 :::
