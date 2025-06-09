@@ -160,7 +160,7 @@ See the following table if you have trouble signing in.
 | Message | Meaning | How to fix |
 |---|---|---|
 |`browser_storage_unsupported`| Your browser is blocking access to storage, which is required for signing in.| - Check your browser’s privacy settings.<br>- Make sure cookies and local storage (like `sessionStorage` or `localStorage`) are allowed.<br>- Try disabling any extensions that might block storage access. |
-|`cluster_resolution_failure_401`|Your network or proxy is blocking authentication headers needed to connect to the service.|- Ask your IT admin to add `api.powerbi.com` to the allowlist of your proxy or firewall. This helps your network keep the necessary login information in place when trying to connect to the service. |
+|`cluster_resolution_failure_401`|Your network or proxy is blocking authentication headers needed to connect to the service.|- Ask your IT admin to add **app.powerbi.com** to the allowlist of your proxy or firewall. This helps your network keep the necessary login information in place when trying to connect to the service. |
 
 ## Considerations and limitations
 
