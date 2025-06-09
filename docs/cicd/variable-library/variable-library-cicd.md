@@ -21,7 +21,7 @@ Variable libraries make it easy to manage configurations across different stages
 
 Variable libraries and their values can be deployed in deployment pipelines to manage variable values across different stages. 
 
-:::image type="content" source="./media/variable-library-cicd/set-variable-library-1.png" alt-text="Screenshot of compare in deployment pipelines with the variable library showing as different in the two stages." lightbox="media/variable-library-cicd/set-variable-library-1.png":::
+:::image type="content" source="./media/variable-library-cicd/set-variable-library-1.png" alt-text="Screenshot of deployment pipeline." lightbox="media/variable-library-cicd/set-variable-library-1.png":::
 :::
 
 The following is important information to remember
@@ -30,7 +30,7 @@ The following is important information to remember
 - The active value set for each stage is selected independently and can be changed anytime.
 - By default, the variable libraries active set is, set to the default value for each stage.  You can change this by accessing the variable library in each step of the deployment pipline and setting the active set.
 
-:::image type="content" source="./media/variable-library-cicd/set-variable-library-2.png" alt-text="Screenshot of compare in deployment pipelines with the variable library showing as different in the two stages." lightbox="media/variable-library-cicd/set-variable-library-2.png":::
+:::image type="content" source="./media/variable-library-cicd/set-variable-library-2.png" alt-text="Screenshot of compare in deployment pipelines showing active set." lightbox="media/variable-library-cicd/set-variable-library-2.png":::
 :::
 
 - While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the deployment pipeline. The consumer item (for example, a pipeline) automatically receives the correct value from the active value set.
