@@ -411,6 +411,12 @@
         href: connector-greenplum-for-pipeline-overview.md
       - name: Configure in a data pipeline Copy activity
         href: connector-greenplum-for-pipeline-copy-activity.md
+    - name: Hdfs for Pipeline
+      items:
+      - name: Hdfs for Pipeline - Overview
+        href: connector-hdfs-for-pipeline-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-hdfs-for-pipeline-copy-activity.md        
     - name: Hive LLAP
       items:
       - name: Hive LLAP - Overview
