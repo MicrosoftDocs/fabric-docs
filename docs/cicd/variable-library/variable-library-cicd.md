@@ -35,8 +35,7 @@ The following is important information to remember:
 
 - While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the deployment pipeline. The consumer item (for example, a pipeline) automatically receives the correct value from the active value set.
 
-When you change the variables or value set in one stage of a deployment pipeline, the Variable library looks *different* [compared](../deployment-pipelines/compare-pipeline-content.md) to the same item in a different stage.
-For example, the following changes in the Variable library are reflected as *different* in the deployment pipeline:
+The following operations to variables or value sets in one stage of a deployment pipeline, cause the variable library to be reflected as *different* [compared](../deployment-pipelines/compare-pipeline-content.md) to the same item in a different stage.
 
 * added, deleted, or edited variables
 * added or deleted value sets
@@ -45,7 +44,8 @@ For example, the following changes in the Variable library are reflected as *dif
 
 :::image type="content" source="./media/variable-library-cicd/variable-library-compare.png" alt-text="Screenshot of compare in deployment pipelines with the variable library showing as different in the two stages.":::
 
-Changes to the **active value set** don't register as *different* when you compare since the active value set is part of the item configuration, but it is not included in its definition. This is why it is not shown on the Deployment pipeline 'Compare' and not overwritten on each deployment. 
+A simple change to the **active value set** doesn't register as *different* when you compare, since the active value set is part of the item configuration, but it is not included in its definition. This is why it is not shown on the Deployment pipeline 'Compare' and not overwritten on each deployment. 
+
 
 
 
