@@ -12,7 +12,7 @@ ms.search.form: Eventhouse
 ---
 # Manage and monitor an eventhouse
 
-The Eventhouse page serves as the central hub for all your interactions within the Eventhouse environment. It's your gateway to seamlessly manage and monitor an eventhouse, navigate through databases, and perform various Eventhouse-related actions.
+An Eventhouse is a scalable environment for processing and analyzing large volumes of real-time data. It supports structured streaming for continuous data ingestion and analysis, and uses Kusto Query Language (KQL) to easily gain insights from your data. The Eventhouse page serves as the central hub for all your interactions within the Eventhouse environment. It's your gateway to seamlessly manage and monitor an eventhouse, navigate through databases, and perform various Eventhouse-related actions.
 
 In this article, you learn about how to manage and gain insights about an eventhouse in Real-Time Intelligence.
 
