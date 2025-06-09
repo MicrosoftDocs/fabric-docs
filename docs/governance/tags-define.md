@@ -54,13 +54,13 @@ This section shows how [domain](./domains.md) administrators create and manage t
 
 When creating domain-level tags, consider the following uniqueness rules:
 
-  1. A tag created at the tenant level cannot be duplicated at the domain level and vice-versa. If you attempt to create a tag that duplicates an existing one at a different scope (tenant or domain), an error message indicates the existing tag and its scope.
-  1. The same tag name can be created in different domains. For example, a tag named "FY2025" can exist independently within "Sales" and "Marketing" domains.
-  1. If a workspace is reassigned from one domain to another, any domain-specific tags previously applied to items within that workspace persist on the items. This ensures continuity and avoids confusion regarding past tagging classifications. However, tags from a previous domain cannot be reapplied to items if the workspace is no longer associated with that domain.
+  * A tag created at the tenant level cannot be duplicated at the domain level and vice-versa. If you attempt to create a tag that duplicates an existing one at a different scope (tenant or domain), an error message indicates the existing tag and its scope.
+
+    :::image type="content" source="./media/tags-define/duplicate-tags.png" alt-text="Screenshot showing the error that appears when a tag already exists.":::
+
+  * The same tag name can be created in different domains. For example, a tag named "FY2025" can exist independently within "Sales" and "Marketing" domains.
+  * If a workspace is reassigned from one domain to another, any domain-specific tags previously applied to items within that workspace persist on the items. This ensures continuity and avoids confusion regarding past tagging classifications. However, tags from a previous domain cannot be reapplied to items if the workspace is no longer associated with that domain.
     
-    ![image](https://github.com/user-attachments/assets/15dda2b3-8980-4651-ad2c-cafbd7704e23)
-
-
 ### Steps to Create Domain-Level Tags
 
 1.  Open the [admin portal](../admin/admin-center.md%23how-to-get-to-the-admin-portal).
