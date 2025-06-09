@@ -13,6 +13,10 @@ ms.custom:
 
 The Hdfs for Pipeline connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Support in Dataflow Gen2
+
+Data Factory in Microsoft Fabric doesn't currently support Hdfs for Pipeline in Dataflow Gen2.
+
 ## Support in Data pipeline
 
 The Hdfs for Pipeline connector supports the following capabilities in Data pipeline:
