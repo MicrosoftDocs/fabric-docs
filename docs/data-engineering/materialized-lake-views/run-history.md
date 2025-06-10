@@ -11,7 +11,7 @@ ms.date: 06/06/2025
 
 # Run history of materialized lake views
 
-A history of the past 25 runs of materialized lake views along with lineage and run metadata is made available from the dropdown to the user to enable monitoring and troubleshooting.
+You can access the last 25 runs of a materialized lake view, including lineage and run metadata. It's available from the dropdown for monitoring and troubleshooting.
 
 :::image type="content" source="./media/materialized-lake-view-run-history/view-past-runs.png" alt-text="Screenshot showing a view of the past runs." border="true" lightbox="./media/materialized-lake-view-run-history/view-past-runs.png":::
 
@@ -24,7 +24,6 @@ You can click on **View more past runs** to see the last 25 runs for materialize
 * **Completed**- When all the nodes have executed successfully, the run status is shown as **Completed** state.
 
   :::image type="content" source="./media/materialized-lake-view-run-history/completed-runs.png" alt-text="Screenshot showing a view of a completed run." border="true" lightbox="./media/materialized-lake-view-run-history/completed-runs.png":::
-
 
 * **Failed**- When any one of the nodes fails, the run status is shown as **Failed** state. When the node is in Failed state, the child node is shown in a Skipped state.
 
