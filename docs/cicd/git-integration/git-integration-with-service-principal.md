@@ -22,7 +22,7 @@ To register an application with your Microsoft Entra tenant and use it to integr
 
 ## Step 1: Register an application with Microsoft Entra ID
 
-Register your application with Microsoft Entra ID, and create a secret by following the directions in [Register your app](/power-bi/developer/embedded/register-app#register-your-app).
+Register your application with Microsoft Entra ID, and create a secret by following the directions in [Register your app](/power-bi/developer/embedded/register-app#register-your-app). Keep this secret as it will be used in later step.
 
 ## Step 2: Assign service principal to a DevOps organization
 
@@ -35,15 +35,14 @@ Register your application with Microsoft Entra ID, and create a secret by follow
 ## Step 3: Create Azure DevOps source control connection
 
 1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Select **+New** in the top right corner to add a new cloud connection.
-1. Give it a name and set the **Type** to *Azure DevOps source control* using a *Service Principal* as the authentication method. Complete the other details (Tenant ID, Client ID, and Client secret) using the information you saved in [step 1](#step-1-register-an-application-with-microsoft-entra-id).
+1. Give it a name and set the **Type** to *Azure DevOps source control* using a *Service Principal* as the authentication method. Complete the other details (Tenant ID, Service principal ID, Service principal key) using the information you saved in [step 1](#step-1-register-an-application-with-microsoft-entra-id).
 
      :::image type="content" source="./media/git-integration-with-service-principal/new-connection.png" alt-text="Screenshot of new connection interface.":::
 
-     You can also find the *Tenant Id* and *Client secret* in the Azure portal by navigating to the app in the Azure portal and selecting the **Overview** tab and **Manage -> Certificates and secrets** tabs respectively.
+     You can also find the *Tenant Id* and *Client Id*  in the Azure portal by navigating to the app in the Azure portal and selecting the Overview tab, use *Application (client) Id* for *Service Principal ID*, use *Directory (tenant) ID* for *Tenant ID* and the secret you kept from step 1 as Service principal key.
 
      :::image type="content" source="./media/git-integration-with-service-principal/tenant-id.png" alt-text="Screenshot showing where to find the tenant ID in the Azure portal.":::
 
-     :::image type="content" source="./media/git-integration-with-service-principal/secret-id.png" alt-text="Screenshot showing where to find the secret ID in the Azure portal.":::
 
 1. From your workspace settings, go to the *Git integration* tab, and select your newly created account. Complete the remaining information.
 
