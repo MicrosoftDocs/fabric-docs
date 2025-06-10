@@ -42,7 +42,7 @@ Turn **On** the **Schedule Refresh** option and select the following from the sc
 Select **Apply** to set the schedule for the particular MLV run.
 
 > [!NOTE]
-> The scheduler will reflect the users local time.
+> The scheduler reflects the users local time.
 
 ## Related articles
 
