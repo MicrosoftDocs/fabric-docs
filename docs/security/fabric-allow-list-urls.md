@@ -6,12 +6,16 @@ ms.author: mimart
 ms.reviewer: ''
 ms.service: fabric
 ms.topic: conceptual
-ms.date: 01/27/2025
+ms.date: 06/10/2025
 ---
 
 # Add Fabric URLs to your allowlist
 
+An allowlist (sometimes referred to as a whitelist) is a security mechanism used to permit access only to specific, trusted resources. In the context of Microsoft Fabric, an allowlist ensures that your network can connect to the required and optional Fabric services by explicitly allowing traffic to and from specific URLs. This approach helps secure your environment by blocking unauthorized or unknown connections while enabling essential communication with Fabric services.
+
 This article contains the allowlist of the Microsoft Fabric URLs required for interfacing with Fabric workloads. For the Power BI allowlist, see [Add Power BI URLs to your allowlist](./power-bi-allow-list-urls.md).
+
+The URLs in the allowlist play a critical role in enabling connectivity to Fabric services. These URLs represent endpoints that your network must access for Fabric workloads to function properly. For example, they may correspond to APIs, authentication services, or other backend systems that Fabric relies on. The URLs are used in various scenarios, such as accessing the Fabric portal, running workloads, or enabling specific features.
 
 The URLs are divided into two categories: required and optional. The required URLs are necessary for the service to work correctly. The optional URLs are used for specific features that you might not use. To use Fabric, you must be able to connect to the endpoints marked required in the tables in this article, and to any endpoints marked required on the linked sites. If the link to an external site refers to a specific section, you only need to review the endpoints in that section. You can also add endpoints that are marked optional to allowlists for specific functionality to work.
 
