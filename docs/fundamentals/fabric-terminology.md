@@ -8,6 +8,7 @@ ms.topic: conceptual
 ms.custom:
 ms.search.form: product-trident
 ms.date: 06/10/2025
+# customer intent: As a Microsoft Fabric user I want to learn about Fabric terms, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
 ---
 
 # Microsoft Fabric terminology
