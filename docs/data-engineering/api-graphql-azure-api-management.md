@@ -32,7 +32,7 @@ Choose the GraphQL icon and, in the APIM **Create from GraphQL schema** screen, 
 
 ## Using managed identities with APIM and API for GraphQL in Fabric
 
-Next, we need to configure a policy for authentication using a managed identity to handle authentication for this API. You can [create a managed identity in the Azure portal](/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md) or by using any of the tools available to do so.
+Next, we need to configure a policy for authentication using a managed identity to handle authentication for this API. You can [create a managed identity in the Azure portal](/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities) or by using any of the tools available to do so.
 
 Now we have a managed identity credential we can use for authentication, we need grant it permissions to the GraphQL item in Fabric. For the sake of simplicity, we add the managed identity (in this example, **apim-id**) as a member of the workspace where both the GraphQL API and its data source are located:
 
@@ -112,7 +112,7 @@ APIs and operations in API Management can be configured with response caching. R
 
 You can confirm the requests are getting cached by [tracing a GraphQL API query or mutation](/azure/api-management/api-management-howto-api-inspector#trace-a-call-in-the-portal) in the APIM portal: 
 
-[[![Screenshot of cache hit in the APIM portal.](media/api-graphql-apim/api-graphql-apim-cache.png)](media/api-graphql-apim/api-graphql-apim-cache.png)](media/api-graphql-apim/api-graphql-apim-cache.png)
+[![Screenshot of cache hit in the APIM portal.](media/api-graphql-apim/api-graphql-apim-cache.png)](media/api-graphql-apim/api-graphql-apim-cache.png)
 
 For advanced caching scenarios, please refer to the [APIM documentation](/azure/api-management/api-management-howto-cache) on caching.
 
