@@ -19,7 +19,7 @@ This document delves into the various aspects of managing a Fabric materialized 
 
 A lineage is a fundamental structure for managing dependencies and scheduling tasks. In the context of materialized lake views (MLV), the lineage represents the sequence of MLV that needs to be executed to refresh the MLV once new data is available.
 
-After a user creates materialized lake views, select **Manage materialized lake views** to navigate to the MLV lineage.
+After you creates materialized lake view, select **Manage materialized lake views** to navigate to the MLV lineage.
 
 ## Materialized lake views Lineage
 
@@ -33,7 +33,7 @@ To run the lineage, schedule the lineage as per your requirement. Once the job G
 
 ## Understand the lineage view
 
-The lineage for a materialized view ensures that data is processed in the correct order, respecting all the dependencies. Each node in the lineage represents a specific operation, such as reading from a source table or performing a transformation. Arrows between nodes signify the dependencies, dictating the execution order. User can click on a particular node to understand the flow right from the source tables and parent nodes to the dependent nodes as well.
+The lineage for a materialized view ensures that data is processed in the correct order, respecting all the dependencies. Each node in the lineage represents a specific operation, such as reading from a source table or performing a transformation. Arrows between nodes signify the dependencies, dictating the execution order. You can select a particular node to understand the flow right from the source tables and parent nodes to the dependent nodes as well.
 
 The lineage UI also has the following functionalities:
 
