@@ -5,7 +5,7 @@ ms.topic: how-to
 author: apurbasroy
 ms.author: apsinhar
 ms.reviewer: nijelsf
-ms.date: 06/06/2025
+ms.date: 06/10/2025
 # customer intent: As a data engineer, I want to check the run history of materialized lake views in Microsoft Fabric so that I can monitor and troubleshoot the runs.
 ---
 
@@ -23,15 +23,11 @@ You can click on **View more past runs** to see the last 25 runs for materialize
 
 * **Completed**- When all the nodes have executed successfully, the run status is shown as **Completed** state.
 
-  :::image type="content" source="./media/materialized-lake-view-run-history/completed-runs.png" alt-text="Screenshot showing a view of a completed run." border="true" lightbox="./media/materialized-lake-view-run-history/completed-runs.png":::
-
 * **Failed**- When any one of the nodes fails, the run status is shown as **Failed** state. When the node is in Failed state, the child node is shown in a Skipped state.
 
-  :::image type="content" source="./media/materialized-lake-view-run-history/failed-runs.png" alt-text="Screenshot showing a view of a failed run." border="true" lightbox="./media/materialized-lake-view-run-history/failed-runs.png":::
 
 * **Skipped**- When the previous run is still ongoing, the current schedule is skipped that run state is shown as **Skipped**.
 
-  :::image type="content" source="./media/materialized-lake-view-run-history/skipped-runs.png" alt-text="Screenshot showing a view of a skipped run." border="true" lightbox="./media/materialized-lake-view-run-history/skipped-runs.png":::
 
 * **In Progress**- When the run has started and hasn't reached a terminal state, the run state is shown as **In Progress**.
 
