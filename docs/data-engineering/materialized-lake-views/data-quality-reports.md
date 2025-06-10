@@ -19,7 +19,7 @@ To create or access the report, navigate to your Managed materialized lake views
 
 :::image type="content" source="./media/data-quality-reports/dqr-button.png" alt-text="Screenshot showing data quality report button placement." border="true" lightbox="./media/data-quality-reports/dqr-button.png":::
 
-It opens the *embedded report page*. If a report is already created, you can see it here. If you are accessing the data quality report for the first time in your lakehouse, select **Generate report** and wait for the report to be created.
+It opens the *embedded report page*. If a report is already created, you can see it here. If you're accessing the data quality report for the first time in your lakehouse, select **Generate report** and wait for the report to be created.
 
 :::image type="content" source="./media/data-quality-reports/generate-report.png" alt-text="Screenshot showing the generate report button." border="true" lightbox="./media/data-quality-reports/generate-report.png":::
 
@@ -63,11 +63,11 @@ To use all the other default features offered in a standard Power BI report, you
 
 ## Share the report
 
-You can share the report using the default share option available in Power BI. Along with sharing the report, you also need to provide access to the corresponding Lakehouse so that the receiver can access the data on the visuals within the report. Atlease Read or ReadData permission on the SQL analytics endpoint are needed to perform this operation.
+You can share the report using the default share option available in Power BI. Along with sharing the report, you also need to provide access to the corresponding Lakehouse so that the receiver can access the data on the visuals within the report. Atleast Read or ReadData permission on the SQL analytics endpoint is needed to perform this operation.
 
 ## Current limitations
 
-The report is created using the Direct Query model so there is a fixed limit of 1 million rows that can be returned in any single query to the underlying source. Premium capacities let you exceed the one million-row limit. To overcome this limitation, purchase a premium capacity or delete and recreate the report and semantic model.
+The report is created using the Direct Query model so there's a fixed limit of 1 million rows that can be returned in any single query to the underlying source. Premium capacities let you exceed the one million-row limit. To overcome this limitation, purchase a premium capacity or delete and recreate the report and semantic model.
 
 ## Set up alerts in data quality report
 
@@ -80,10 +80,10 @@ You can set up alerts on the data quality report in the Fabric materialized lake
    * Total violations (last one week)
    * Total rows dropped across all MLVs in the Lakehouse (last one week)
    * Total rows written across all MLVs in the Lakehouse (last one week)
-   * Total rows dropped from top 5 constraints contributing to the most number of violations (last one week)
+   * Total rows dropped from top five constraints contributing to the most number of violations (last one week)
    * Total violations from top 5 MLVs contributing to the most number of violations (last one week)
 
-1. Select a trigger for the alert, such as value or percent change, or a specific condition (e.g., >, <, =). It could also be when the measure becomes a value (such as greater than, greater than or equal to, less than, less than or equal to, equal to, not equal to, within range, outside of range). Choose the preferred alert communication method, such as Teams or Outlook email.
+1. Select a trigger for the alert, such as value or percent change, or a specific condition (for example, >, <, =). It could also be when the measure becomes a value (such as greater than, greater than or equal to, less than, less than or equal to, equal to, not equal to, within range, outside of range). Choose the preferred alert communication method, such as Teams or Outlook email.
 
 1. Select the **Apply** to apply the rule for the alerts.
 
