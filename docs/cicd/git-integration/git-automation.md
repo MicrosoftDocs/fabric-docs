@@ -32,7 +32,7 @@ To work with Fabric Git APIs, you need:
 
 * A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
 
-* If you're using a GitHub service principal, it needs the same permissions as a user principal.
+* If you're using a service principal, it needs the same permissions as a user principal. To set up a service principal for Azure DevOps, see [Git integration with service principal](git-integration-with-service-principal.md).
 
 You can use the REST APIs without [PowerShell](/powershell/scripting/overview), but the scripts in this article use PowerShell. To run the scripts, take the following steps:
 
@@ -71,7 +71,7 @@ This section describes the steps involved in connecting and updating a workspace
 
 For the complete script, see [Connect and update from Git](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-ConnectAndUpdateFromGit.ps1).
 
-1. **Connect to Azure account and get access token** - Sign in to Fabric as a user (or, if using GitHub, a user or a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to connect.
+1. **Connect to Azure account and get access token** - Sign in to Fabric as a user or a service principal. Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to connect.
 To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command, and [convert the secure string token to plain text](/powershell/azure/faq#how-can-i-convert-a-securestring-to-plain-text-in-powershell-)
 
    Your code should look something like this:
@@ -106,7 +106,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
      }
      ```
 
-   #### [Service principal (GitHub only)](#tab/service-principal)
+   #### [Service principal](#tab/service-principal)
 
      ```powershell
      $global:resourceUrl = "https://api.fabric.microsoft.com"
@@ -146,7 +146,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
 1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
 
-   ### [Azure DevOps (User principal)](#tab/ADO)
+   ### [Azure DevOps](#tab/ADO)
 
     ```powershell
     $global:baseUrl = "https://api.fabric.microsoft.com/v1"
@@ -179,7 +179,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
 
-   ### [GitHub (User or service principal)](#tab/github)
+   ### [GitHub](#tab/github)
 
     ```powershell
     $global:baseUrl = "https://api.fabric.microsoft.com/v1"
@@ -224,7 +224,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
 
-    For information on how to obtain the Connection Id, refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
+    For information on how to obtain the Connection ID, refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
 
     ---
 
@@ -321,10 +321,45 @@ For the complete script, see [Poll a long running operation](https://github.com/
 
 In order to [connect](/rest/api/fabric/core/git/connect) to a Git repository or [update your Git credentials](/rest/api/fabric/core/git/update-my-git-credentials) you need to provide a *connectionId*. The *connectionId* can come from either a new connection that you create, or an existing connection.
 
-* [Create a new connection](#create-a-new-connection-that-stores-your-github-credentials) with your Git provider credentials
+* [Create a new connection](#create-a-new-connection-that-stores-your-git-credentials) with your Git provider credentials
 * [Use an existing connection](#get-a-list-of-existing-connections) that you have permissions for.
 
-### Create a new connection that stores your GitHub credentials
+### Create a new connection that stores your Git credentials
+
+#### [Azure DevOps (preview)](#tab/ADO)
+
+The following code snippet shows a sample request body to create a connection that stores your Azure DevOps credentials. The full example can be found in the [Fabric samples repo](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-StoreGitProviderCredentials.ps1).
+
+```powershell
+# Connection with ServicePrincipal details for AzureDevOpsSourceControl
+$adoSPConnection = @{
+    connectivityType = "ShareableCloud"
+    displayName = "<CONNECTION NAME>"
+    connectionDetails = @{
+        type = "AzureDevOpsSourceControl"
+        creationMethod = "AzureDevOpsSourceControl.Contents"
+        parameters = @(
+            @{
+                dataType = "Text"
+                name = "url"
+                value = "<Repo url in Azure DevOps>"
+            }
+        )
+    }
+    credentialDetails = @{
+        credentials = @{
+            credentialType = "ServicePrincipal"
+            tenantId = "<SP tenant (directory) id (Guid)>"
+            servicePrincipalClientId = "<SP APP (clint) id (Guid)>"
+            servicePrincipalSecret = "<SP Secret>"
+        }
+    }
+}
+
+#Note: AzureDevOps for UserPrincipal is not supported (since it requires interactive OAuth2)
+```
+
+#### [GitHub](#tab/github)
 
 Use your [Personal Access Token (PAT)](./git-get-started.md?tabs=github%2CAzure%2Ccommit-to-git#git-prerequisites) to create a GitHub connection.
 
@@ -384,6 +419,8 @@ POST https://api.fabric.microsoft.com/v1/connections
 
 Copy the ID and use it in the [Git - Connect](/rest/api/fabric/core/git/connect) or [Git - Update My Git Credentials](/rest/api/fabric/core/git/update-my-git-credentials) API.
 
+---
+
 ### Get a list of existing connections
 
 Use the [List connections API](/rest/api/fabric/core/connections/list-connections) to get a list of existing connections that you have permissions for, and their properties.
@@ -442,7 +479,6 @@ Copy the ID of the connection you want and use it in the [Git - Connect](/rest/a
 ## Considerations and limitations
 
 * Git integration using APIs is subject to the same [limitations](./git-integration-process.md#considerations-and-limitations) as the Git integration user interface.
-* Service principal is only supported for GitHub.
 * Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git *diff* after each refresh.
 
 ## Related content
