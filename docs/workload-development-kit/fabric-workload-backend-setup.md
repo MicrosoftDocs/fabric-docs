@@ -11,8 +11,10 @@ ms.service: fabric
 
 A Microsoft Fabric Workload Backend is a service that implements the Fabric API contract, enabling custom workloads to integrate seamlessly with the Microsoft Fabric platform. This backend handles the lifecycle operations for your workload items, including creation, retrieval, updates, and deletion.
 
-In this tutorial, you'll learn how to quickly generate a Fabric Workload Backend directly from an OpenAPI (Swagger) definition. While you can use any programming language supported by OpenAPI generators, this tutorial specifically demonstrates the process using Python and FastAPI.
-This approach enables developers to rapidly prototype and validate backend logic independently, before integrating it into the complete Microsoft Fabric development environment. Although this tutorial uses Python and FastAPI as an example, the same principles and steps can be applied to generate your backend in any programming language supported by OpenAPI.
+This tutorial guides you through rapidly generating a Fabric Workload Backend directly from an OpenAPI (Swagger) definition.<br>**While this tutorial specifically demonstrates the process using Python and FastAPI with the OpenAPI Generator tool, you can generate your backend skeleton code using any OpenAPI-compatible code generation tool or method you prefer.
+OpenAPI Generator itself supports numerous programming languages and frameworks [(see the available server generators)](https://openapi-generator.tech/docs/generators#server-generators), but you are free to choose any OpenAPI-compatible code generation tool or method that suits your team's expertise and project needs to create your backend skeleton.** 
+
+This API-first approach enables you to quickly prototype and validate backend logic independently, even before integrating it into the complete Microsoft Fabric development environment. The principles demonstrated here are broadly applicable, regardless of the specific tools or languages you choose.
 
 ## By the end of this tutorial you'll be able to:
 - Generate a Fabric Workload Backend based on the Swagger file included in our sample.
@@ -201,17 +203,22 @@ openapi-generator-cli generate -i ../Backend/src/Contracts/FabricAPI/Workload/sw
 ```
 
 #### Understanding the command parameters
-This command instructs the OpenAPI Generator CLI to perform the following actions: 
+This command instructs the OpenAPI Generator CLI to perform the following actions. The table below details each parameter:
 
 | Parameter | Value | Description | Required | Purpose | Reference |
 |---|---|---|---|---|---|
-| `-i` | `[InputSpecPath]` | **Input Specification**: Specifies the path to the source OpenAPI (Swagger) definition file | Required | Points to the Fabric API contract that defines all endpoints, models, and operations | [OpenAPI Specification](https://swagger.io/specification/) |
-| `-g` | `python-fastapi` | **Generator Name**: Tells the tool to use the `python-fastapi` generator to create server-side Python code | Required | Determines the output framework and language for the generated backend code | [Python FastAPI Generator](https://openapi-generator.tech/docs/generators/python-fastapi) |
-| `-o` | `.` | **Output Directory**: Instructs the generator to place the output files in the current directory | Required | Specifies where the generated project structure will be created | |
-| `--additional-properties` | `packageName=fabric_api` | **Generator-specific Options**: Sets the Python package name for the generated code to `fabric_api` | Optional | Customizes the generated code structure and naming conventions | [Generator Options](https://openapi-generator.tech/docs/generators/python-fastapi#config-options) |
+| `-i` | `[InputSpecPath]` | **Input Specification**<br>Specifies the path to the source OpenAPI (Swagger) definition file | Required | Points to the Fabric API contract that defines all endpoints, models, and operations | [OpenAPI Specification](https://swagger.io/specification/) |
+| `-g` | `python-fastapi` | **Generator Name**<br>Tells the tool to use the `python-fastapi` generator to create server-side Python code | Required | Determines the output framework and language for the generated backend code | [Python FastAPI Generator](https://openapi-generator.tech/docs/generators/python-fastapi)<br>[Explore all available server generators](https://openapi-generator.tech/docs/generators#server-generators) |
+| `-o` | `.` | **Output Directory**<br>Instructs the generator to place the output files in the current directory | Required | Specifies where the generated project structure will be created | |
+| `--additional-properties` | `packageName=fabric_api` | **Generator-specific Options**<br>Sets the Python package name for the generated code to `fabric_api` | Optional | Customizes the generated code structure and naming conventions | [Generator Options](https://openapi-generator.tech/docs/generators/python-fastapi#config-options) |
 
-**Note:**
-*   `[InputSpecPath]`: `../Backend/src/Contracts/FabricAPI/Workload/swagger.json`
+
+> [!NOTE]
+>`[InputSpecPath]`: `../Backend/src/Contracts/FabricAPI/Workload/swagger.json`
+
+> [!NOTE]
+> **Choosing a Generator (`-g` parameter):** The value `python-fastapi` is used in this tutorial as an example. OpenAPI Generator supports numerous server-side code generators for various languages and frameworks. You can replace `python-fastapi` with your desired generator. For a comprehensive list, please refer to the [OpenAPI Server Generators documentation](https://openapi-generator.tech/docs/generators#server-generators).
+
 
 ### 2. Install the required dependencies:
 
