@@ -357,28 +357,38 @@ items:
   items:
    - name: What is API for GraphQL?
      href: api-graphql-overview.md
-   - name: Create an API for GraphQL
-     href: get-started-api-graphql.md
    - name: API for GraphQL editor
      href: api-graphql-editor.md
-   - name: Data aggregation
-     href: api-graphql-aggregations.md
    - name: Schema view and explorer
      href: graphql-schema-view.md
-   - name: Manage relationships
-     href: manage-relationships-graphql.md
-   - name: Query multiple data sources
-     href: multiple-data-sources-graphql.md
-   - name: Connect applications
-     href: connect-apps-api-graphql.md
+   - name: Data aggregation
+     href: api-graphql-aggregations.md
    - name: Introspection and schema export
-     href: api-graphql-introspection-schema-export.md     
+     href: api-graphql-introspection-schema-export.md 
    - name: GraphQL source control and deployment pipelines (preview)
-     href: graphql-source-control-and-deployment.md
-   - name: Monitoring dashboard and logging (preview)
-     href: graphql-monitor-log.md
-   - name: Monitoring GraphQL operations
-     href: graphql-operations.md
+     href: graphql-source-control-and-deployment.md     
+   - name: How tos
+     items:
+      - name: Create an API for GraphQL
+        href: get-started-api-graphql.md  
+      - name: Manage relationships
+        href: manage-relationships-graphql.md
+      - name: Query multiple data sources
+        href: multiple-data-sources-graphql.md
+      - name: Connect applications
+        href: connect-apps-api-graphql.md
+      - name: Use Service Principals
+        href: api-graphql-service-principal.md
+      - name: Use Stored procedures
+        href: api-graphql-stored-procedures.md
+      - name: Integrate with Azure API Management (APIM)
+        href: api-graphql-azure-api-management.md         
+   - name: Monitoring  
+     items:
+      - name: Monitoring dashboard and logging (preview)
+        href: graphql-monitor-log.md
+      - name: Monitoring GraphQL operations
+        href: graphql-operations.md
    - name: Performance best practices
      href: api-graphql-performance.md
    - name: Pricing

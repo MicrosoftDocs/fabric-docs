@@ -44,7 +44,7 @@ If you already have an instance of AdventureWorksLH in a lakehouse (or a warehou
     ```python
     import pandas as pd
     from tqdm.auto import tqdm
-    base = "https://synapseaisolutionsa.blob.core.windows.net/public/AdventureWorks"
+    base = "https://synapseaisolutionsa.z13.web.core.windows.net/data/AdventureWorks"
     
     # load list of tables
     df_tables = pd.read_csv(f"{base}/adventureworks.csv", names=["table"])
