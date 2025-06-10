@@ -1,8 +1,8 @@
 ---
 title: Protected sensitivity labels in Fabric and Power BI
 description: Learn about protected sensitivity labels in Fabric and Power BI and how they control what you can do with files.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 02/18/2024

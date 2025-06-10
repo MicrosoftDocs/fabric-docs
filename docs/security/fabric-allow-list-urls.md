@@ -1,8 +1,8 @@
 ---
 title: Add Fabric URLs to your allowlist
 description: Learn about URL endpoints and ports with their associated linked sites to add to your allowlist for connectivity to Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 ms.service: fabric
 ms.topic: conceptual

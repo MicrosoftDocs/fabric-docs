@@ -1,8 +1,8 @@
 ---
 title: "Manage Fabric identities"
 description: "Learn how to view, understand info, and manage Fabric identities as a Fabric administrator."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
 ms.date: 06/21/2024

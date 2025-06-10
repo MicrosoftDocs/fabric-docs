@@ -4,7 +4,7 @@ description: A known issue is posted where performing a Git integration undo act
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 02/26/2025
+ms.date: 06/06/2025
 ms.custom: known-issue-1031
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1031
 
 For this known issue, you shouldn't use the **Undo** button after an initial sync with Git fails. When you initially connect your workspace to a Git repository, the initial sync fails. You wrongly see the option to undo the changes. As warned, workspace items might be deleted if you continue with the **Undo** action. The deleted items might not have a corresponding instance in the Git repository.
 
-**Status:** Open
+**Status:** Fixed: June 6, 2025
 
 **Product Experience:** Administration & Management
 

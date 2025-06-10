@@ -1,8 +1,8 @@
 ---
 title: Protect inbound traffic
 description: Understand the difference between private links and Microsoft Entra Conditional and decide which is best for your organization.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 07/17/2024

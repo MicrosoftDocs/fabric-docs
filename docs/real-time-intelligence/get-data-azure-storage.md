@@ -2,8 +2,8 @@
 title: Get data from Azure Storage
 description: Learn how to get data from Azure Storage in a KQL database in Real-Time Intelligence.
 ms.reviewer: aksdi
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 05/05/2025
@@ -236,7 +236,7 @@ Optionally:
 
 [!INCLUDE [mapping-transformations](includes/mapping-transformations.md)]
 
-### Advanced options based on data type
+[!INCLUDE [get-data-process-event-advanced-options-data-type](includes/get-data-process-event-advanced-options-data-type.md)]
 
 **Tabular (CSV, TSV, PSV)**:
 
