@@ -113,8 +113,8 @@ The Fabric data agent is currently in public preview and it has limitations. Upd
     |----| ------------- | ------------ |
     | Data Warehouse | N/A | N/A |
     | Lakehouse | N/A | N/A |
-    | Semantic Models | 100 (this includes Measure) | 1000 |
-    | Eventhouse KQL | 100 | 1000 |
+    | Semantic Models | 500 (this includes Measure) | 1000 |
+    | Eventhouse KQL | 500 | 1000 |
 
 ## Related content
 
