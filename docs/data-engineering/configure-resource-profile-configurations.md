@@ -80,14 +80,19 @@ This approach provides runtime flexibility to change behavior based on job logic
 
 ## What happens by default?
 
-All newly created workspaces in Microsoft Fabric default to the writeHeavy profile. This ensures:
+All newly created workspaces in Microsoft Fabric default to the `writeHeavy` profile. This ensures:
 
 - Efficient handling of data ingestion pipelines  
 - Optimized throughput for batch and streaming jobs  
 - Better out-of-the-box performance for common ETL workloads
-  
+
 If your workload differs (e.g., interactive queries, dashboard serving), you can update the default settings at the environment level or override them dynamically during execution.
 
+> ⚠️ **Important:**  
+> On all new Fabric workspaces, **`VOrder` is disabled by default** (`spark.sql.parquet.vorder.default=false`).  
+> This default configuration is optimized for **write-heavy data engineering workloads**, enabling greater performance during ingestion and transformation at scale.  
+>  
+> For read-optimized scenarios (e.g., Power BI dashboards or interactive Spark queries), consider switching to the **`readHeavyforSpark`** or **`readHeavyForPBI`** resource profiles or modify the properties by enabling  `VOrder` and improve query performance from PowerBI and Datawarehouse workloads
 
 ## Related content
 
