@@ -112,7 +112,7 @@ APIs and operations in API Management can be configured with response caching. R
 
 You can confirm the requests are getting cached by [tracing a GraphQL API query or mutation](/azure/api-management/api-management-howto-api-inspector#trace-a-call-in-the-portal) in the APIM portal: 
 
-[[![Screenshot of cache hit in the APIM portal.](media/api-graphql-apim/api-graphql-apim-cache.png)](media/api-graphql-apim/api-graphql-apim-cache.png)](media/api-graphql-apim/api-graphql-apim-cache.png)
+[![Screenshot of cache hit in the APIM portal.](media/api-graphql-apim/api-graphql-apim-cache.png)](media/api-graphql-apim/api-graphql-apim-cache.png)
 
 For advanced caching scenarios, please refer to the [APIM documentation](/azure/api-management/api-management-howto-cache) on caching.
 
