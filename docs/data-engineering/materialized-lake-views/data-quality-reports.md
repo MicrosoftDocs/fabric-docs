@@ -5,7 +5,7 @@ author: anuj1905
 ms.author: anujsharda
 ms.reviewer: nijelsf
 ms.topic: conceptual
-ms.date: 06/06/2025
+ms.date: 06/10/2025
 # customer-intent: As a data engineer, I want to view data quality metrics in Power BI reports and set up alerts on them so that I can monitor data quality trends and receive notifications for significant changes.
 ---
  
@@ -22,8 +22,6 @@ To create or access the report, navigate to the Managed materialized lake views 
 It opens the embedded report page. If a report is already created, the user is able to see it here. If this is the first time data quality report is being accessed in this lakehouse, select **Generate report** and wait for the report to be created.
 
 :::image type="content" source="./media/data-quality-reports/generate-report.png" alt-text="Screenshot showing the generate report button." border="true" lightbox="./media/data-quality-reports/generate-report.png":::
-
-:::image type="content" source="./media/data-quality-reports/report-loading.png" alt-text="Screenshot showing loading of report." border="true" lightbox="./media/data-quality-reports/report-loading.png":::
 
 A semantic model and a Power BI report are created for the user in the background and stored in their workspace.
 Once ready, the Power BI report will be displayed on the same page as an embedded report and will present the summary of the data quality trends in two sections (pages on the Power BI report) – Overview and MLV Detail.
