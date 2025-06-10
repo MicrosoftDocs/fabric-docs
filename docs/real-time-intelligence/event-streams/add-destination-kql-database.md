@@ -120,31 +120,6 @@ Once you complete these steps, the eventstream with Eventhouse destination is av
 >    :::image type="content" source="media/add-destination-kql-database/resume-kusto.png" alt-text="A screenshot of resuming the KQL Database." lightbox="media/add-destination-kql-database/resume-kusto.png":::
 > For more information, see [Pause, and resume data streams](pause-resume-data-streams.md)
 
-## Add an Eventhouse destination to a derived stream
-In Fabric Eventstream, a derived stream refers to a logical stream of data. This stream is created by applying transformations or filters to the default stream. To learn more about derived streams, see [this article](add-destination-derived-stream.md).
-
-Derived streams now support both ingestion modes with Eventhouse destination. 
-
-- Direct ingestion
-- Event processing before ingestion
-
-This section shows you how to set up direct data ingestion into an Eventhouse from a derived stream. Previously, only default streams supported direct ingestion into an eventhouse. With this update, the following capabilities are now available:
-
-- Configure Eventhouse destination with direct ingestion mode directly from a derived stream. 
-- Use the "Get Data" wizard to set up the Eventhouse destination table.
-
-### Steps
-1. In Edit mode for your Eventstream, [create a derived stream destination](add-destination-derived-stream.md). 
-1. From the derived stream, add **Eventhouse** as the destination. You can select **Add destination** on the ribbon or use the **Add destination** card on the canvas, and then choose **Eventhouse**.
-
-    :::image type="content" source="./media/add-destination-kql-database/select-eventhouse-destination.png" alt-text="Screenshot showing the Eventhouse destination." lightbox="./media/add-destination-kql-database/select-eventhouse-destination.png":::
-1. Set up Eventhouse by selecting **Direct Ingestion** under **Data Ingestion** mode, and entering destination details. Follow the previously described steps for configuring direct data ingestion with the default stream.   
-1. Once all configurations are complete, the Eventhouse destination appears on the canvas in Live view. Data might take a few minutes before you can query it in Eventhouse. 
-
-     :::image type="content" source="./media/add-destination-kql-database/finish-configuration.png" alt-text="Screenshot showing the finished configuration of the Get data wizard." lightbox="./media/add-destination-kql-database/finish-configuration.png":::
-
-
-
 ## Related content
 
 To learn how to add other destinations to an eventstream, see the following article: [Route events to destinations](add-manage-eventstream-destinations.md)
