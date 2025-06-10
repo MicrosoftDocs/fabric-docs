@@ -47,6 +47,7 @@ Use the following commands to enable or override V-Order writes as needed for yo
 > - Setting the Spark property `spark.sql.parquet.vorder.default=true`  
 > - Switching to the **`readHeavyforSpark`** or **`ReadHeavy`** resource profiles, which automatically enable V-Order for better read performance.
 
+- [Learn more about resource profiles](configure-resource-profile-configurations.md)
 
 ### Check V-Order configuration in Apache Spark session
 
