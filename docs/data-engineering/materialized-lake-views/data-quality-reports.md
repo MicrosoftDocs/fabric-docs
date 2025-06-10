@@ -5,7 +5,7 @@ author: anuj1905
 ms.author: anujsharda
 ms.reviewer: nijelsf
 ms.topic: conceptual
-ms.date: 06/06/2025
+ms.date: 06/10/2025
 # customer-intent: As a data engineer, I want to view data quality metrics in Power BI reports and set up alerts on them so that I can monitor data quality trends and receive notifications for significant changes.
 ---
  
@@ -25,8 +25,7 @@ It opens the *embedded report page*. If a report is already created, you can see
 
 :::image type="content" source="./media/data-quality-reports/report-loading.png" alt-text="Screenshot showing loading of report." border="true" lightbox="./media/data-quality-reports/report-loading.png":::
 
-A semantic model and a Power BI report are created in the background and stored in your workspace.
-Once ready, the Power BI report is displayed on the same page as an embedded report and will present the summary of the data quality trends in two sections the *Overview* and *MLV Detail* pages in the Power BI report.
+A semantic model and a Power BI report are created in the background and stored in your workspace. Once ready, the Power BI report is displayed on the same page as an embedded report and will present the summary of the data quality trends in two sections the *Overview* and *MLV Detail* pages.
 
 ## Interpret the data in the report
 
