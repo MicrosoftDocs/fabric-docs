@@ -415,7 +415,7 @@ items:
     href: ./materialized-lake-views/refresh-materialized-lake-view.md
   - name: Tutorial
     items: 
-    - name: Turorial - medallion architecture with materialized lake views
+    - name: Tutorial - medallion architecture with materialized lake views
       href: ./materialized-lake-views/tutorial.md
   - name: Data quality
     items:  
