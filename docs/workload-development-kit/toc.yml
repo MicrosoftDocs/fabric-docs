@@ -69,7 +69,7 @@ items:
     href: add-item-custom-settings.md
   - name: Deploy to Azure
     href: deploy-to-azure.md
-  - name: Set Up a Microsoft Fabric Workload Backend using OpenAPI Specification
+  - name: Setup Workload Backend using Swagger
     href: fabric-workload-backend-setup.md
 - name: Publish
   items:

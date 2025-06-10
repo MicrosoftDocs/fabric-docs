@@ -2,19 +2,19 @@
 title: Set Up a Microsoft Fabric Workload Backend Using OpenAPI Specification
 description: Learn how to generate and run a Fabric Workload Backend based on the swagger file included in our sample.
 author: Natali Or
-ms.author: natalior
-ms.date: 06/09/2025
+ms.author: natali0r
+ms.date: 06/10/2025
 ms.topic: tutorial
 ms.service: fabric
 ---
-# Quickstart - Set Up a Microsoft Fabric Workload Backend using OpenAPI Specification (Swagger)
+# Set Up a Microsoft Fabric Workload Backend using OpenAPI Specification (Swagger)
 
 A Microsoft Fabric Workload Backend is a service that implements the Fabric API contract, enabling custom workloads to integrate seamlessly with the Microsoft Fabric platform. This backend handles the lifecycle operations for your workload items, including creation, retrieval, updates, and deletion.
 
 In this tutorial, you'll learn how to quickly generate a Fabric Workload Backend directly from an OpenAPI (Swagger) definition. While you can use any programming language supported by OpenAPI generators, this tutorial specifically demonstrates the process using Python and FastAPI.
 This approach enables developers to rapidly prototype and validate backend logic independently, before integrating it into the complete Microsoft Fabric development environment. Although this tutorial uses Python and FastAPI as an example, the same principles and steps can be applied to generate your backend in any programming language supported by OpenAPI.
 
-## By the end of this tutorial you will be able to:
+## By the end of this tutorial you'll be able to:
 - Generate a Fabric Workload Backend based on the Swagger file included in our sample.
 - Understand the basic structure and components of a Fabric Workload backend.
 - Run and test your generated backend locally using Python and FastAPI.
@@ -83,41 +83,40 @@ OpenAPI Generator CLI requires Java as a runtime environment. You don't need to 
 
 First, set up your development environment with the required tools and packages.
 
-1. **Clone the Microsoft Fabric developer sample repository**:
+### 1. Clone the Microsoft Fabric developer sample repository:
 
-    ```bash
-    git clone https://github.com/microsoft/Microsoft-Fabric-workload-development-sample
-    cd Microsoft-Fabric-workload-development-sample
-    ```
+```bash
+git clone https://github.com/microsoft/Microsoft-Fabric-workload-development-sample
+cd Microsoft-Fabric-workload-development-sample
+```
 
-2. **Create a PythonBackend directory**:
+### 2. Create a PythonBackend directory:
 
-    ```bash
-    mkdir PythonBackend
-    cd PythonBackend
-    ```
+```bash
+mkdir PythonBackend
+cd PythonBackend
+```    
 
-3. **Create a Python virtual environment**:
+### 3. Create a Python virtual environment:
 
-    ```bash
-    # Create a Python virtual environment for the project
-    python -m venv .venv
+```bash
+# Create a Python virtual environment for the project
+python -m venv .venv
 
-    # Activate the virtual environment
-    # Windows
-    .venv\Scripts\activate
+# Activate the virtual environment
+# Windows
+.venv\Scripts\activate
 
-    # macOS/Linux
-    source .venv/bin/activate
-    ```
+# macOS/Linux
+source .venv/bin/activate
+```
 
-4. **Install the OpenAPI Generator CLI**:
+### 4. Install the OpenAPI Generator CLI:
 
-    ```bash
-    npm install @openapitools/openapi-generator-cli -g
-    ```
-
-    For alternative installation methods, see the [OpenAPI Generator installation documentation](https://openapi-generator.tech/docs/installation).
+```bash
+npm install @openapitools/openapi-generator-cli -g
+```
+For alternative installation methods, see the [OpenAPI Generator installation documentation](https://openapi-generator.tech/docs/installation).
 
 ## Step 2: Verify your Python virtual environment is active
 
@@ -193,29 +192,32 @@ Most modern Integrated Development Environments (IDEs) automatically detect Pyth
 
 Use the OpenAPI Generator CLI to create a Python FastAPI project from the Fabric API Swagger specification.
 
-1. **Run the generation command**:
+### 1. Run the generation command:
 
-    Execute the following command from your `PythonBackend` directory:
+Execute the following command from your `PythonBackend` directory:
 
-    ```bash
-    openapi-generator-cli generate -i ../Backend/src/Contracts/FabricAPI/Workload/swagger.json -g python-fastapi -o . --additional-properties=packageName=fabric_api
-    ```
+```bash
+openapi-generator-cli generate -i ../Backend/src/Contracts/FabricAPI/Workload/swagger.json -g python-fastapi -o . --additional-properties=packageName=fabric_api
+```
 
-    #### Understanding the command parameters
-    This command instructs the OpenAPI Generator CLI to perform the following actions: 
+#### Understanding the command parameters
+This command instructs the OpenAPI Generator CLI to perform the following actions: 
 
-    | Parameter | Value | Description | Required | Purpose | Reference |
-    |---|---|---|---|---|---|
-    | `-i` | `../Backend/src/Contracts/FabricAPI/Workload/swagger.json` | **Input Specification**: Specifies the path to the source OpenAPI (Swagger) definition file | Required | Points to the Fabric API contract that defines all endpoints, models, and operations | [OpenAPI Specification](https://swagger.io/specification/) |
-    | `-g` | `python-fastapi` | **Generator Name**: Tells the tool to use the `python-fastapi` generator to create server-side Python code | Required | Determines the output framework and language for the generated backend code | [Python FastAPI Generator](https://openapi-generator.tech/docs/generators/python-fastapi) |
-    | `-o` | `.` | **Output Directory**: Instructs the generator to place the output files in the current directory | Required | Specifies where the generated project structure will be created | |
-    | `--additional-properties` | `packageName=fabric_api` | **Generator-specific Options**: Sets the Python package name for the generated code to `fabric_api` | Optional | Customizes the generated code structure and naming conventions | [Generator Options](https://openapi-generator.tech/docs/generators/python-fastapi#config-options) |
+| Parameter | Value | Description | Required | Purpose | Reference |
+|---|---|---|---|---|---|
+| `-i` | `[InputSpecPath]` | **Input Specification**: Specifies the path to the source OpenAPI (Swagger) definition file | Required | Points to the Fabric API contract that defines all endpoints, models, and operations | [OpenAPI Specification](https://swagger.io/specification/) |
+| `-g` | `python-fastapi` | **Generator Name**: Tells the tool to use the `python-fastapi` generator to create server-side Python code | Required | Determines the output framework and language for the generated backend code | [Python FastAPI Generator](https://openapi-generator.tech/docs/generators/python-fastapi) |
+| `-o` | `.` | **Output Directory**: Instructs the generator to place the output files in the current directory | Required | Specifies where the generated project structure will be created | |
+| `--additional-properties` | `packageName=fabric_api` | **Generator-specific Options**: Sets the Python package name for the generated code to `fabric_api` | Optional | Customizes the generated code structure and naming conventions | [Generator Options](https://openapi-generator.tech/docs/generators/python-fastapi#config-options) |
 
-2. **Install the required dependencies**:
+**Note:**
+*   `[InputSpecPath]`: `../Backend/src/Contracts/FabricAPI/Workload/swagger.json`
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+### 2. Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+ ```
 
 > [!IMPORTANT]
 > On Windows, you might encounter an error with the `uvloop` package. If that happens:
@@ -263,97 +265,97 @@ PythonBackend/
 
 Create a controller implementation that handles Fabric API requests. The controller inherits from the generated base class:
 
-1. **Create `item_lifecycle_controller.py` in the `impl` directory**:
+**Create `item_lifecycle_controller.py` in the `impl` directory**:
 
-    ```python
-    # filepath: src/fabric_api/impl/item_lifecycle_controller.py
+```python
+# filepath: src/fabric_api/impl/item_lifecycle_controller.py
 
-    from fabric_api.apis.item_lifecycle_api_base import BaseItemLifecycleApi
-    from fabric_api.models.get_item_payload_response import GetItemPayloadResponse
-    from pydantic import Field, StrictStr
-    from typing_extensions import Annotated
-    from fastapi import HTTPException
+from fabric_api.apis.item_lifecycle_api_base import BaseItemLifecycleApi
+from fabric_api.models.get_item_payload_response import GetItemPayloadResponse
+from pydantic import Field, StrictStr
+from typing_extensions import Annotated
+from fastapi import HTTPException
 
-    class ItemLifecycleController(BaseItemLifecycleApi):
+class ItemLifecycleController(BaseItemLifecycleApi):
+    """
+    Implementation of Item Lifecycle API methods.
+    """
+    
+    async def item_lifecycle_create_item(
+        self,
+        workspaceId,
+        itemType,
+        itemId,
+        activity_id,
+        request_id,
+        authorization,
+        x_ms_client_tenant_id,
+        create_item_request,
+    ) -> None:
         """
-        Implementation of Item Lifecycle API methods.
+        Implementation for creating a new item.
         """
-        
-        async def item_lifecycle_create_item(
-            self,
-            workspaceId,
-            itemType,
-            itemId,
-            activity_id,
-            request_id,
-            authorization,
-            x_ms_client_tenant_id,
-            create_item_request,
-        ) -> None:
-            """
-            Implementation for creating a new item.
-            """
-            print(f"\n=== CREATE ITEM CALLED ===")
-            print(f"Workspace ID: {workspaceId}")
-            print(f"Item Type: {itemType}")
-            print(f"Item ID: {itemId}")
-            print(f"Display Name: {create_item_request.display_name}")
-            print(f"Description: {create_item_request.description}")
-            if create_item_request.creation_payload:
-                print(f"Creation Payload: {create_item_request.creation_payload}")
-            print("===========================\n")
-            return
-        
-        async def item_lifecycle_delete_item(
-            self,
-            workspaceId,
-            itemType,
-            itemId,
-            activity_id,
-            request_id,
-            authorization,
-            x_ms_client_tenant_id,
-        ) -> None:
-            """
-            Implementation for deleting an existing item.
-            """
-            print(f"Delete item called for itemId: {itemId}")
-            return
-        
-        async def item_lifecycle_get_item_payload(
-            self,
-            workspaceId,
-            itemType,
-            itemId,
-            activity_id,
-            request_id,
-            authorization,
-            x_ms_client_tenant_id,
-        ) -> GetItemPayloadResponse:
-            """
-            Implementation for retrieving the payload for an item.
-            """
-            print(f"Get item payload called for itemId: {itemId}")
-            # Return a simple payload
-            return GetItemPayloadResponse(item_payload={"sample": "data"})
-        
-        async def item_lifecycle_update_item(
-            self,
-            workspaceId,
-            itemType,
-            itemId,
-            activity_id,
-            request_id,
-            authorization,
-            x_ms_client_tenant_id,
-            update_item_request,
-        ) -> None:
-            """
-            Implementation for updating an existing item.
-            """
-            print(f"Update item called for itemId: {itemId}")
-            return
-    ```
+        print(f"\n=== CREATE ITEM CALLED ===")
+        print(f"Workspace ID: {workspaceId}")
+        print(f"Item Type: {itemType}")
+        print(f"Item ID: {itemId}")
+        print(f"Display Name: {create_item_request.display_name}")
+        print(f"Description: {create_item_request.description}")
+        if create_item_request.creation_payload:
+            print(f"Creation Payload: {create_item_request.creation_payload}")
+        print("===========================\n")
+        return
+    
+    async def item_lifecycle_delete_item(
+        self,
+        workspaceId,
+        itemType,
+        itemId,
+        activity_id,
+        request_id,
+        authorization,
+        x_ms_client_tenant_id,
+    ) -> None:
+        """
+        Implementation for deleting an existing item.
+        """
+        print(f"Delete item called for itemId: {itemId}")
+        return
+    
+    async def item_lifecycle_get_item_payload(
+        self,
+        workspaceId,
+        itemType,
+        itemId,
+        activity_id,
+        request_id,
+        authorization,
+        x_ms_client_tenant_id,
+    ) -> GetItemPayloadResponse:
+        """
+        Implementation for retrieving the payload for an item.
+        """
+        print(f"Get item payload called for itemId: {itemId}")
+        # Return a simple payload
+        return GetItemPayloadResponse(item_payload={"sample": "data"})
+    
+    async def item_lifecycle_update_item(
+        self,
+        workspaceId,
+        itemType,
+        itemId,
+        activity_id,
+        request_id,
+        authorization,
+        x_ms_client_tenant_id,
+        update_item_request,
+    ) -> None:
+        """
+        Implementation for updating an existing item.
+        """
+        print(f"Update item called for itemId: {itemId}")
+        return
+```
 
 ## Step 6: Configure and run the FastAPI application
 
@@ -371,17 +373,19 @@ When developing a Microsoft Fabric workload, the dev gateway routes API requests
 
 If you're planning to integrate with the full Microsoft Fabric development environment, you'll need to configure the workload endpoint URL. This configuration tells the dev gateway where to forward API requests.
 
-1. **Locate or create your workload configuration file** (`workload-dev-mode.json`):
-   - Default location: `C:\workload-dev-mode.json`
-   - This file may be created later when setting up the full Fabric development environment
+#### 1. Locate or create your workload configuration file (`workload-dev-mode.json`):
 
-2. **Ensure the `WorkloadEndpointURL` matches your backend port**:
-   ```json
-   {
-       "WorkloadEndpointURL": "http://localhost:5000",
-       // ... other configuration settings
-   }
-   ```
+- Default location: `C:\workload-dev-mode.json`
+- This file may be created later when setting up the full Fabric development environment
+
+#### 2. Ensure the `WorkloadEndpointURL` matches your backend port:
+
+```json
+{
+    "WorkloadEndpointURL": "http://localhost:5000",
+    // ... other configuration settings
+}
+```
 
 > [!NOTE] 
 > For complete workload configuration details, see [Get started with the extensibility backend.](extensibility-back-end.md#get-started)
@@ -434,7 +438,7 @@ python -m uvicorn fabric_api.main:app --host 0.0.0.0 --port 5000
 
 After starting the application, verify it's running correctly:
 
-1. **Check the console output**
+#### 1. Check the console output
 You should see output similar to:
 
 ```bash
@@ -444,7 +448,7 @@ INFO:     Started server process [xxxx]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
-2. **Test the API documentation**  
+#### 2. Test the API documentation 
 - Open your browser and navigate to [`http://localhost:5000/docs`](http://localhost:5000/docs).
 - You should see the Swagger UI displaying all available endpoints.
 
@@ -481,41 +485,41 @@ curl -X POST "http://localhost:5000/workspaces/test-workspace/items/TestItemType
 
 FastAPI automatically generates interactive API documentation, allowing you to test your endpoints directly from your browser:
 
-1. Open your browser and navigate to [`http://localhost:5000/docs`](http://localhost:5000/docs).
-2. Locate the **POST** endpoint under the **ItemLifecycle** section:
+#### 1. Open your browser and navigate to [`http://localhost:5000/docs`](http://localhost:5000/docs).
+#### 2. Locate the **POST** endpoint under the **ItemLifecycle** section:
 
-   ```http
-   POST /workspaces/{workspaceId}/items/{itemType}/{itemId}
-   ```
+```http
+POST /workspaces/{workspaceId}/items/{itemType}/{itemId}
+```
 
-3. Select the **Try it out** button.
-4. Fill in the required parameters:
-   - **workspaceId**: `test-workspace`
-   - **itemType**: `TestItemType`
-   - **itemId**: `test-item-123`
-   - **activity-id**: `test-activity-id`
-   - **request-id**: `test-request-123`
-   - **authorization**: `SubjectAndAppToken1.0 subjectToken="dummy-token", appToken="dummy-app-token"`
-   - **x-ms-client-tenant-id**: `test-tenant-456`
-   - **Request body**:
+#### 3. Select the **Try it out** button.
+#### 4. Fill in the required parameters:
+- **workspaceId**: `test-workspace`
+- **itemType**: `TestItemType`
+- **itemId**: `test-item-123`
+- **activity-id**: `test-activity-id`
+- **request-id**: `test-request-123`
+- **authorization**: `SubjectAndAppToken1.0 subjectToken="dummy-token", appToken="dummy-app-token"`
+- **x-ms-client-tenant-id**: `test-tenant-456`
+- **Request body**:
 
-     ```json
+```json
 
-     {
-       "display_name": "Test Item",
-       "description": "This is a test item created via Swagger UI",
-       "creation_payload": {
-         "key1": "value1",
-         "key2": "value2",
-         "nested": {
-           "data": "example"
-         }
-       }
-     }
+{
+    "display_name": "Test Item",
+    "description": "This is a test item created via Swagger UI",
+    "creation_payload": {
+        "key1": "value1",
+        "key2": "value2",
+        "nested": {
+        "data": "example"
+        }
+    }
+}
 
-     ```
+```
 
-5. Click the **Execute** button to send the request.
+#### 5. Click the **Execute** button to send the request.
 
 You should see output in your server console similar to the printed messages below:
 
@@ -551,56 +555,56 @@ The following image shows an example of the Swagger UI interface with the Fabric
 
 For a complete implementation, you would typically:
 
-1. **Add service layer**: Create service classes to handle business logic, database operations, etc.
+### 1. **Add service layer**: Create service classes to handle business logic, database operations, etc.
 
-    ```python
-    # src/fabric_api/services/storage_service.py
-    class StorageService:
-        async def create_item(self, workspace_id, item_type, item_id, item_data):
-            """
-            Store the item in a database or other persistent storage
-            """
-            # Implementation here
-            pass
+```python
+# src/fabric_api/services/storage_service.py
+class StorageService:
+    async def create_item(self, workspace_id, item_type, item_id, item_data):
+        """
+        Store the item in a database or other persistent storage
+        """
+        # Implementation here
+        pass
 
-        async def get_item(self, workspace_id, item_type, item_id):
-            """
-            Retrieve an item from storage
-            """
-            # Implementation here
-            pass
-    ```
+    async def get_item(self, workspace_id, item_type, item_id):
+        """
+        Retrieve an item from storage
+        """
+        # Implementation here
+        pass
+```
 
-2. **Use dependency injection** in your controller:
+### 2. **Use dependency injection** in your controller:
 
-    ```python
-    # src/fabric_api/impl/item_lifecycle_controller.py
-    from fabric_api.services.storage_service import StorageService
+```python
+# src/fabric_api/impl/item_lifecycle_controller.py
+from fabric_api.services.storage_service import StorageService
 
-    class ItemLifecycleController(BaseItemLifecycleApi):
-        def __init__(self):
-            self.storage_service = StorageService()
-        
-        async def item_lifecycle_create_item(self, workspaceId, ...):
-            # Use the service
-            await self.storage_service.create_item(workspaceId, itemType, itemId, create_item_request)
-    ```
+class ItemLifecycleController(BaseItemLifecycleApi):
+    def __init__(self):
+        self.storage_service = StorageService()
+    
+    async def item_lifecycle_create_item(self, workspaceId, ...):
+        # Use the service
+        await self.storage_service.create_item(workspaceId, itemType, itemId, create_item_request)
+```
 
-3. **Add error handling**:
+### 3. **Add error handling**:
 
-    ```python
-    async def item_lifecycle_create_item(self, ...):
-        try:
-            # Your implementation
-            await self.storage_service.create_item(...)
-            return None
-        except ValueError as e:
-            # Client error
-            raise HTTPException(status_code=400, detail=str(e))
-        except Exception as e:
-            # Server error
-            raise HTTPException(status_code=500, detail="Internal server error")
-    ```
+```python
+async def item_lifecycle_create_item(self, ...):
+    try:
+        # Your implementation
+        await self.storage_service.create_item(...)
+        return None
+    except ValueError as e:
+        # Client error
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        # Server error
+        raise HTTPException(status_code=500, detail="Internal server error")
+```
     
 
 ## Conclusion
