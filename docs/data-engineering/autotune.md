@@ -37,28 +37,28 @@ Autotune configures three Apache Spark settings for each of your queries separat
 
 :::image type="content" source="media\autotune\execution-over-time.png" alt-text="Screenshot of execution time with autotune Enabled.":::
 
-### AI-based intuition behind the Autotune
+### AI-based intuition behind the autotune
 
 The autotune feature utilizes an iterative process to optimize query performance. It begins with a default configuration and employs a machine learning model to evaluate effectiveness. When a user submits a query, the system retrieves the stored models based on the previous interactions. It generates potential configurations around a default setting named *centroid*. The best candidate predicted by the model, is applied. After query execution, the performance data is sent back to the system to refine the model.
 
 The feedback loop gradually shifts the centroid towards optimal settings. It refines performance over time while minimizing the risk of regression. Continuous updates based on user queries enable refinement of performance benchmarks. Moreover, the process updates the *centroid* configurations to ensure the model moves towards more efficient settings incrementally. This is achieved by evaluating past performances and using them to guide future adjustments. It uses all the data points to mitigate the impact of anomalies.
 
-From a responsible AI perspective, the Autotune feature includes transparency mechanisms designed to keep you informed about your data usage and benefits. The security and privacy align with Microsoft's standards. Ongoing monitoring maintains performance and system integrity post-launch.
+From a responsible AI perspective, the autotune feature includes transparency mechanisms designed to keep you informed about your data usage and benefits. The security and privacy align with Microsoft's standards. Ongoing monitoring maintains performance and system integrity post-launch.
 
 ### Enable autotune
 
-Autotune is available across all production regions but **is disabled by default. You can activate it through the Spark configuration setting within the environment. To enable Autotune, either create a new environment or, for the existing environment, set the Spark property 'spark.ms.autotune.enabled = true' as shown in the screenshot below.** This setting is then inherited by all notebooks and jobs running in that environment, automatically tuning them.
+Autotune is available across all production regions but **is disabled by default. You can activate it through the Spark configuration setting within the environment. To enable autotune, either create a new environment or, for the existing environment, set the Spark property 'spark.ms.autotune.enabled = true' as shown in the screenshot below.** This setting is then inherited by all notebooks and jobs running in that environment, automatically tuning them.
 
-:::image type="content" source="media\autotune\enable-autotune.png" alt-text="Screenshot of enabling autotune." lightbox="media\autotune\enable-autotune.png"::: 
+:::image type="content" source="media\autotune\enable-autotune.png" alt-text="Screenshot of enabling autotune." lightbox="media\autotune\enable-autotune.png":::
 
-Autotune includes a built-in mechanism for monitoring performance and detecting performance regressions. For instance, if a query processes an unusually large amount of data, Autotune automatically deactivates. It typically requires 20 to 25 iterations to learn and identify the optimal configuration.
+Autotune includes a built-in mechanism for monitoring performance and detecting performance regressions. For instance, if a query processes an unusually large amount of data, autotune automatically deactivates. It typically requires 20 to 25 iterations to learn and identify the optimal configuration.
 
 > [!NOTE]
-> The Autotune is compatible with [Fabric Runtime 1.1](./runtime-1-1.md) and [Runtime 1.2](./runtime-1-2.md). Autotune doesn't function when [the high concurrency mode](./high-concurrency-overview.md) or when the [private endpoint](./../security/security-managed-private-endpoints-overview.md) is enabled. However, autotune seamlessly integrates with autoscaling, regardless of its configuration.
+> The autotune is compatible with [Fabric Runtime 1.1](./runtime-1-1.md) and [Runtime 1.2](./runtime-1-2.md). Autotune doesn't function when [the high concurrency mode](./high-concurrency-overview.md) or when the [private endpoint](./../security/security-managed-private-endpoints-overview.md) is enabled. However, autotune seamlessly integrates with autoscaling, regardless of its configuration.
 
 You can enable autotune within a single session by including the respective Spark setting in your Spark notebook or Spark Job Definition code.
 
-### [Spark SQL](#tab/sparksql)
+# [Spark SQL](#tab/sparksql)
 
 ```sql
 %%sql
@@ -66,7 +66,7 @@ SET spark.ms.autotune.enabled=TRUE
 
 ```
 
-### [PySpark](#tab/pyspark)
+# [PySpark](#tab/pyspark)
 
 ```python
 %%pyspark
@@ -74,7 +74,7 @@ spark.conf.set('spark.ms.autotune.enabled', 'true')
 
 ```
 
-### [Scala Spark](#tab/scalaspark)
+# [Scala Spark](#tab/scalaspark)
 
 ```scala
 %%spark
@@ -82,7 +82,7 @@ spark.conf.set("spark.ms.autotune.enabled", "true")
 
 ```
 
-### [SparkR](#tab/sparkr)
+# [SparkR](#tab/sparkr)
 
 ```r
 %%sparkr
@@ -93,30 +93,30 @@ sparkR.conf("spark.ms.autotune.enabled", "true")
 
 ---
 
-You can control Autotune through Spark settings for your respective Spark notebook or Spark job definition code. To disable Autotune, execute the following commands as the first cell (notebook) or line of the code (SJD).
+You can control autotune through Spark settings for your respective Spark notebook or Spark job definition code. To disable autotune, execute the following commands as the first cell (notebook) or line of the code (SJD).
 
-### [Spark SQL](#tab/sparksql)
+# [Spark SQL](#tab/sparksql)
 
 ```sql
 %%sql 
 SET spark.ms.autotune.enabled=FALSE 
 ```
 
-### [PySpark](#tab/pyspark)
+# [PySpark](#tab/pyspark)
 
 ```python
 %%pyspark
 spark.conf.set('spark.ms.autotune.enabled', 'false')   
 ```
 
-### [Scala Spark](#tab/scalaspark)
+# [Scala Spark](#tab/scalaspark)
 
 ```scala
 %%spark  
 spark.conf.set('spark.ms.autotune.enabled', 'false')   
 ```
 
-### [SparkR](#tab/sparkr)
+# [SparkR](#tab/sparkr)
 
 ```r
 %%sparkr
@@ -164,7 +164,7 @@ You can find various types of entries in your logs. The following include the ke
 
 In adherence to the Responsible AI Standard, this section aims to clarify the uses and validation of the Autotune feature, promoting transparency and enabling informed decision-making.
 
-### Purpose of Autotune
+### Purpose of autotune
 
 Autotune is developed to enhance Apache Spark workload efficiency, primarily for data professionals. Its key functions include:
 
@@ -172,13 +172,13 @@ Autotune is developed to enhance Apache Spark workload efficiency, primarily for
 - Minimizing manual tuning efforts.
 - Utilizing historical workload data to refine configurations iteratively.
 
-### Validation of Autotune
+### Validation of autotune
 
 Autotune undergoes extensive testing to ensure its effectiveness and safety:
 
 - Rigorous tests with diverse Spark workloads to verify tuning algorithm efficacy.
 - Benchmarking against standard Spark optimization methods to demonstrate performance benefits.
-- Real-world case studies highlighting Autotune's practical value.
+- Real-world case studies highlighting autotune's practical value.
 - Adherence to strict security and privacy standards to safeguard user data.
 
 User data is exclusively used to enhance your workload's performance, with robust protections to prevent misuse or exposure of sensitive information.
