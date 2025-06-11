@@ -95,6 +95,16 @@ You can enable copilot as a standalone experience for Fabric. Enabling this sett
 
 **Default:** Disabled
 
+<a id="stand-alone-prepped"></a>
+## Only show AI-prepped items in the standalone Copilot in Power BI experience (preview) 
+
+Tenant admins can default Copilot search to be limited to items that have prepped for AI. This setting is delegated to workspace admins by default, allowing workspace admins to make broader content findable by Copilot search when appropriate. 
+
+Note that this setting is only applicable in the standalone Power BI Copilot. To learn more, see [standalone Copilot experience](/power-bi/create-reports/copilot-enable-power-bi).
+
+![hide](media/service-admin-portal-copilot/hide.png)
+**Default:** Disabled
+
 ## Related content
 
 - [Copilot in Fabric and Power BI overview](../fundamentals/copilot-fabric-overview.md)
