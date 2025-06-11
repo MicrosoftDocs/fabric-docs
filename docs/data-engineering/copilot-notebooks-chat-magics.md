@@ -5,7 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.custom:
-ms.date: 01/16/2024
+ms.date: 06/10/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 #CustomerIntent: As a data scientist, data engineer, or business analyst using notebooks in Microsoft Fabric, I want to understand the capabilities of the Chat-magics library to enhance my notebook interactions.
@@ -26,7 +26,7 @@ The `%%chat` command allows you to ask questions about the state of your noteboo
 
 ### Dataframe descriptions
 
-The `%describe` command provides summaries and descriptions of loaded dataframes. This simplifies the data exploration phase.
+The `%describe` command provides summaries and descriptions of loaded dataframes. This command simplifies the data exploration phase.
 
 ### Commenting and debugging
 
@@ -44,7 +44,7 @@ Chat-magics enhances your productivity and workflow in Microsoft Fabric notebook
 
 1. Open a new or existing Microsoft Fabric notebook.
 1. Select the **Copilot** button on the notebook ribbon to output the Chat-magics initialization code into a new notebook cell.
-1. Run the cell when it is added at the top of your notebook.
+1. Run the cell when it's added at the top of your notebook.
 
 ## Verify the Chat-magics installation
 
@@ -63,7 +63,7 @@ Chat-magics enhances your productivity and workflow in Microsoft Fabric notebook
 
 1. Create a new cell in your notebook.
 1. Type `%%code` at the top of the cell.
-1. Below this, specify the code action you'd like - for example, **Load my_data.csv into a pandas dataframe.**
+1. Below  `%%code`, specify the code action you'd like - for example, **Load my_data.csv into a pandas dataframe.**
 1. Execute the cell, and review the generated code snippet.
 
 ## Customizing output and language settings
@@ -93,7 +93,7 @@ Chat-magics enhances your productivity and workflow in Microsoft Fabric notebook
 ### Using %pin, %new_task, and other context commands
 
 1. Use `%pin DataFrameName` to help the AI focus on specific dataframes.
-2. To clear the AI to focus on a new task in your notebook, type %new_task followed by a task that you are about to undertake. This clears the execution history that copilot knows about to this point and can make future responses more relevant.
+2. To clear the AI to focus on a new task in your notebook, type %new_task followed by a task that you're about to undertake. This clears the execution history that copilot knows about to this point and can make future responses more relevant.
 
 ## Related content
 
