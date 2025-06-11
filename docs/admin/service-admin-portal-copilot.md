@@ -29,6 +29,7 @@ For information about how to get to the Fabric tenant settings, see [About tenan
 * [Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
 * [Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance](#data-sent-to-azure-openai-can-be-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance)
 * [Users can access a standalone, cross-item Power BI Copilot experience (preview)](#stand-alone-experience)
+* [Only show AI-prepped items in the standalone Copilot in Power BI experience (preview)](#limit-to-prepped)
 
 <a id="copilot-with-openai"></a> 
 ## Users can use Copilot and other features powered by Azure OpenAI
