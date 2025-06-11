@@ -1,8 +1,8 @@
 ---
 title: Encryption admin setting
 description: Learn how to configure the encryption admin settings in Fabric, to enable the workspace customer-managed keys feature.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.custom:
   - tenant-setting
 ms.topic: how-to

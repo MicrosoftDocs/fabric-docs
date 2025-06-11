@@ -12,7 +12,7 @@ ms.date: 05/26/2025
 
 With the introduction of lightweight Python Notebooks in Microsoft Fabric, customers now have two robust options for building and scaling analytics workflows: Python Notebooks and PySpark Notebooks. While both provide a familiar Notebook interface, they differ significantly in how they manage compute resources, scalability, and cost-efficiency. 
  
-Fabric simplifies the process of selecting or transitioning between notebook types, enabling data professionals to optimize for agility, performance, and budget. This guide is designed to help you evaluate which Notebook is best suited for your current needs—and how to evolve your approach as your workloads grow in complexity and scale. The 'starter pool' provides a pre-warmed compute container that enables near-instant startup for Python or PySpark notebooks. 
+Fabric simplifies the process of selecting or transitioning between notebook types, enabling data professionals to optimize for agility, performance, and budget. This guide is designed to help you evaluate which Notebook is best suited for your current needs-and how to evolve your approach as your workloads grow in complexity and scale. The 'starter pool' provides a pre-warmed compute container that enables near-instant startup for Python or PySpark notebooks. 
 
 ## Quick Decision Matrix - Choose Fast
 
@@ -35,7 +35,7 @@ Use this high-level reference to quickly determine the most suitable notebook ty
 
 Use this structured comparison table to understand the architectural and operational trade-offs between notebook types. Best suited for engineering evaluations or implementation planning. 
 
-**Execution & Performance**
+### **Execution & Performance**
 
 | Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
 | --- | --- | --- |
@@ -46,27 +46,27 @@ Use this structured comparison table to understand the architectural and operati
 | High-Concurrency Execution | Manual FIFO-style parallelism per notebook | System-managed concurrency with support for parallel execution. |
 | Resource Customization & Scaling | Fixed compute (2-core VM); does not auto scale. Users can manually scale out using %%config within the notebook. | Flexible resource allocation; supports autoscaling and custom Spark configurations. |
 
-**Workflow & Orchestration**
+### **Workflow & Orchestration**
 
 | Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
 | --- | --- | --- |
 | API Orchestration | Effective for lightweight orchestration and control flows, especially REST/gRPC-based integrations | Less optimal for basic orchestration tasks due to longer start-up and distributed overhead. |
-| Complex ETL DAGs | Supports FIFO scheduling only | Supports both FAIR and FIFO scheduling with DAG customization. |
+| Complex ETL DAGs | Limited to sequential (FlFO) task execution on a single node, lacking support for parallel processing. | Supports concurrent task execution within DAGs using FlFO or FAlR scheduling, enabling efficient parallel processing for complex ETL workflows. |
 
-**Platform & Library Support**
+### **Platform & Library Support**
 
 | Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
 | --- | --- | --- |
 |  Library Access | Strong Python library support across multiple runtimes; however, limited access to Spark-native libraries may require manual integration. | Fully supports MLlib, Spark SQL, PySpark, and Spark Streaming. |
 | Delta Lake Handling | The Python Notebook runtime comes with pre-installed [deltas](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries, enabling both reading and writing of Delta Lake data. However, some Delta Lake features may still be unsupported. | Fully supported with native compatibility. |
 
-**Production & Enterprise Readiness**
+### **Production & Enterprise Readiness**
 
 | Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
 | --- | --- | --- |
 | Production Management | Limited production features; Does not support environment vars. | Support for production workflows with environment variables, library management through environment items, and item-based deployment. |
 
-**Cost Considerations**
+### **Cost Considerations**
 
 | Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
 | --- | --- | --- |
@@ -80,7 +80,7 @@ Use **Python Notebooks** for fast iteration, cost-effective analysis, and intera
 
 Use **PySpark Notebooks** for distributed computing, production-grade ETL workflows, or scenarios where high concurrency and Spark-native APIs are essential. 
 
-**Choose Python Notebooks When:**
+### **Choose Python Notebooks When:**
 
 - You need fast start-up (typically within seconds) on a lightweight 2-core container. 
 - If minimizing compute cost is a priority - for interactive analysis or scheduled micro-jobs. 
@@ -88,7 +88,7 @@ Use **PySpark Notebooks** for distributed computing, production-grade ETL workfl
 - You need to test across different Python runtime versions. 
 - Your data comfortably fits in the memory of a single node. 
 
-**Choose PySpark Notebooks When:**
+### **Choose PySpark Notebooks When:**
 
 - Your workloads exceed the memory or compute limits of a single node. 
 - You require high-concurrency pools to run parallel jobs across Notebooks. 
@@ -109,8 +109,6 @@ This section provides a quick reference for the fundamental technical and archit
 | Cost Profile | Lower cost; ideal for short tasks and prototyping | Higher cost; suited for scalable, long-running workloads |
 | Python/Spark Versioning | Multiple Python versions available | Tied to specific Spark runtime version |
 | Custom Libraries | pip install + resource folders | pip install + resource folders + environments item |
-| ~~Environment Variables~~ | ~~Not supported~~ | ~~Supported~~ |
-| ~~Lakehouse Integration~~ | ~~Requires Lakehouse to be explicitly attached~~ | ~~Can read/write without attachment~~ |
 | Fabric Spark Capabilities | Limited access to Spark engine features | Full access: NEE, Autotune, VORDER, Vegas Cache |
 | Delta Lake Compatibility | Partially compatible; potential performance issues | Fully supported and optimized |
 

@@ -1,8 +1,8 @@
 ---
 title: Enable external data sharing in a Fabric tenant
 description: Learn how to enable external data sharing in a Fabric tenant.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.custom:
 ms.topic: how-to

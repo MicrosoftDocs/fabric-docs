@@ -6,7 +6,7 @@ ms.author: avinandac
 author: avinandaMS
 ms.topic: overview
 ms.custom:
-ms.date: 05/13/2024
+ms.date: 06/04/2025
 ---
 
 # What is Data engineering in Microsoft Fabric?
@@ -31,7 +31,7 @@ Lakehouses are data architectures that allow organizations to store and manage s
 
 ## Apache Spark job definition
 
-Spark job definitions are set of instructions that define how to execute a job on a Spark cluster. It includes information such as the input and output data sources, the transformations, and the configuration settings for the Spark application. Spark job definition allows you to submit batch/streaming job to Spark cluster, apply different transformation logic to the data hosted on your lakehouse along with many other things.
+Spark job definitions are a set of instructions that define how to execute a job on a Spark cluster. It includes information such as the input and output data sources, the transformations, and the configuration settings for the Spark application. Spark job definition allows you to submit batch/streaming job to Spark cluster, apply different transformation logic to the data hosted on your lakehouse along with many other things.
 
 ## Notebook
 

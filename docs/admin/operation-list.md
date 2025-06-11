@@ -1,8 +1,8 @@
 ---
 title: Operation list
 description: This article provides a list of all the operations available in Fabric.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.date: 05/22/2025
 ---
@@ -82,6 +82,7 @@ The following operations are available in the audit logs.
 | Convert Personal Workspace To Workspace | ConvertPersonalWorkspaceToWorkspace |   |
 | Copied Power BI dashboard | CopyDashboard |   |
 | Copied Power BI report | CopyReport |   |
+| Copilot Interaction (Request Copilot features in Fabric) | CopilotInteraction | Request Copilot features in Fabric |
 | Copy Scorecard | CopyScorecard |   |
 | Copy blob | CopyBlob | OneLake operation. Copies a source blob to a destination blob in this storage account or in another storage account. |
 | Create an SQL query from a Warehouse | CreateSqlQueryFromWarehouse |   |

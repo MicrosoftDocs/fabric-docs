@@ -5,10 +5,12 @@
     items:
     - name: What is Data Factory?
       href: data-factory-overview.md
-    - name: Data Factory training
-      href: /training/paths/get-started-fabric
     - name: What's new in Data Factory
       href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric
+    - name: Guided Data Factory lab
+      href: guided-lab-experience.md
+    - name: Data Factory training
+      href: /training/paths/get-started-fabric
     - name: Pricing in Data Factory
       items:
       - name: Pricing overview
@@ -409,6 +411,12 @@
         href: connector-greenplum-for-pipeline-overview.md
       - name: Configure in a data pipeline Copy activity
         href: connector-greenplum-for-pipeline-copy-activity.md
+    - name: Hdfs for Pipeline
+      items:
+      - name: Hdfs for Pipeline - Overview
+        href: connector-hdfs-for-pipeline-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-hdfs-for-pipeline-copy-activity.md        
     - name: Hive LLAP
       items:
       - name: Hive LLAP - Overview
