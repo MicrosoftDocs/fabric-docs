@@ -6,7 +6,7 @@ ms.author: sngun
 author: SnehaGunda
 ms.topic: overview
 ms.custom:
-ms.date: 3/13/2024
+ms.date: 06/10/2025
 no-loc: [Copilot]
 # customer intent: As a Microsoft Fabric user I want to learn about Apache Spark-based runtime 1.3 in Fabric.
 ---

@@ -6,7 +6,7 @@ ms.author: sngun
 author: SnehaGunda
 ms.topic: overview
 ms.custom:
-ms.date: 10/20/2023
+ms.date: 06/10/2025
 ---
 
 # What is autotune for Apache Spark configurations in Fabric?
