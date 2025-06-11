@@ -130,10 +130,10 @@ In this tutorial, you:
 
 |Name|Type|Default value set|
 |-----|-----|-----|
-|SourceLH|string|&lt;guid of SourceLH_Stage lakeshoue&gt;|
-|SourceWSID|string|&lt;guid of SourceLH_Stage workspace&gt;|
-|DestinationLH|string|&lt;guid of SourceLH_Dev lakeshoue&gt;|
-|DestinationWSID|string|&lt;guid of SourceLH_Dev workspace&gt;|
+|Source_LH|string|&lt;guid of SourceLH_Stage lakeshoue&gt;|
+|Source_WSID|string|&lt;guid of SourceLH_Stage workspace&gt;|
+|Destination_LH|string|&lt;guid of SourceLH_Dev lakeshoue&gt;|
+|Destination_WSID|string|&lt;guid of SourceLH_Dev workspace&gt;|
 |SourceTableName|String|Processed|
 |DestinationTableName|String|DevCopiedData|
 
@@ -146,19 +146,16 @@ In this tutorial, you:
 
 
 1. In the **WS Variables* variable libary, on the right, click **Add value set**.
-
- :::image type="content" source="media/tutorial-variable-library/create-variable-library-4.png" alt-text="Screenshot showing how to add a value set." lightbox="media/tutorial-variable-library/create-variable-library-4.png":::
-
 2. Enter *Test VS* for the name and click **Create**.
 3. Create variables for each item in the table.
 4. Once you are done, click **Save** and **Agree**.
 
 |Name|Type|Default value set|
 |-----|-----|-----|
-|SourceLH|string|&lt;guid of SourceLH_Dev lakeshoue&gt;|
-|SourceWSID|string|&lt;guid of SourceLH_Dev workspace&gt;|
-|DestinationLH|string|&lt;guid of SourceLH_Test lakeshoue&gt;|
-|DestinationWSID|string|&lt;guid of SourceLH_Test workspace&gt;|
+|Source_LH|string|&lt;guid of SourceLH_Dev lakeshoue&gt;|
+|Source_WSID|string|&lt;guid of SourceLH_Dev workspace&gt;|
+|Destination_LH|string|&lt;guid of SourceLH_Test lakeshoue&gt;|
+|Destination_WSID|string|&lt;guid of SourceLH_Test workspace&gt;|
 |SourceTableName|String|DevCopiedData|
 |DestinationTableName|String|TestCopiedData|
 
@@ -170,10 +167,10 @@ In this tutorial, you:
 
 |Name|Type|Default value set|
 |-----|-----|-----|
-|SourceLH|string|&lt;guid of SourceLH_Test lakeshoue&gt;|
-|SourceWSID|string|&lt;guid of SourceLH_Test workspace&gt;|
-|DestinationLH|string|&lt;guid of SourceLH_Prod lakeshoue&gt;|
-|DestinationWSID|string|&lt;guid of SourceLH_Prod workspace&gt;|
+|Source_LH|string|&lt;guid of SourceLH_Test lakeshoue&gt;|
+|Source_WSID|string|&lt;guid of SourceLH_Test workspace&gt;|
+|Destination_LH|string|&lt;guid of SourceLH_Prod lakeshoue&gt;|
+|Destination_WSID|string|&lt;guid of SourceLH_Prod workspace&gt;|
 |SourceTableName|String|TestCopiedData|
 |DestinationTableName|String|ProdCopiedData|
 
@@ -181,14 +178,14 @@ In this tutorial, you:
  :::image type="content" source="media/tutorial-variable-library/create-variable-library-5.png" alt-text="Screenshot the finished alternate values in variable library." lightbox="media/tutorial-variable-library/create-variable-library-5.png":::
 
 
-### Create the *Pipeline_Var* pipeline and declare variables
+### Create the *Pipeline_Deploy* pipeline and declare variables
 
-1. In the *Copy with Variables WS* workspace, at the top of the workspace, select **New item**
+1. In the *Source LHs with Variables* workspace, add **New item**
 2. On the right, under **Get data**, select **Data pipeline**.
 
   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-6.png" alt-text="Screenshot of creating a new data pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-6.png":::
 
-3. Enter the name *Pipeline_Var* and click **Create**.
+3. Enter the name *Pipeline_Deploy* and click **Create**.
 4. At the top, select **Copy data** and select **Add to Canvas**.
 
   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-7.png" alt-text="Screenshot of adding copy data to canvas." lightbox="media/tutorial-variable-library/create-new-pipeline-7.png":::
