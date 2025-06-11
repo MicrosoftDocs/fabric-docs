@@ -207,13 +207,17 @@ If you don't see a conversion log file, then the conversion wasn't attempted. He
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\shortcut-target.png" alt-text="Screenshot showing the contents of a shortcut target path during shortcut creation.":::
 
-### `Fabric capacity region cannot be validated` error message in Snowflake 
+### "Fabric capacity region cannot be validated" error message in Snowflake 
 
 If you are using Snowflake to write a new Iceberg table to OneLake, you might see the following error message:
 
 > Fabric capacity region cannot be validated. Reason: 'Invalid access token. This may be due to authentication and scoping. Please verify delegated scopes.'
 
-If you see this error, double-check that you've enabled both tenant settings mentioned in the [Write an Iceberg table to OneLake using Snowflake](#write-an-iceberg-table-to-onelake-using-snowflake) section. You may need to involve your Fabric tenant admin to confirm these settings are enabled.
+If you see this error, have your Fabric tenant admin double-check that you've enabled both tenant settings mentioned in the [Write an Iceberg table to OneLake using Snowflake](#write-an-iceberg-table-to-onelake-using-snowflake) section:
+
+    1.  In the upper-right corner of the Fabric UI, open **Settings**, and select **Admin portal**.
+    1.  Under **Tenant settings**, in the **Developer settings** section, enable the setting labeled [**Service principals can use Fabric APIs**](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis).
+    1.  In the same area, in the **OneLake settings** section, enable the setting labeled [**Users can access data stored in OneLake with apps external to Fabric**](../admin/service-admin-portal-onelake.md#users-can-access-data-stored-in-onelake-with-apps-external-to-fabric).
 
 ## Limitations and considerations
 
