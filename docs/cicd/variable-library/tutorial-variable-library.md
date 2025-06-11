@@ -41,7 +41,7 @@ In this tutorial, you:
 
  :::image type="content" source="media/tutorial-variable-library/conceptual-variable-library-1.png" alt-text="Diagram of tutorial workspace layout." lightbox="media/tutorial-variable-library/conceptual-variable-library-1.png":::
 
-### Create the *Stage LHs* workspace and *SourceLH_Stage* lakehouse with sample data
+### Create the *Stage LHs* workspace, *SourceLH_Stage* lakehouse with sample data, and *Pipeline_Stage* pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/home)
 2. On the left, select **Workspace**.
@@ -86,7 +86,7 @@ In this tutorial, you:
 
 ### Create the *SourceLH_Dev*, *SourceLH_Test* and *SourceLH_Prod* lakehouses.
 
-1. In the *Source LHs with variables* workspace, at the top of the workspace, select **New item**
+1. In the *Source LHs with Variables* workspace, at the top of the workspace, select **New item**
 2. On the right, under **Store data**, select **Lakehouse**.
 3. Enter a name for the Lakehouse - *SourceLH_Dev*  and click **Create**.
 4. Once it is created, on the left, click on the *Source LHs with variables* workspace.
@@ -116,7 +116,7 @@ In this tutorial, you:
 
 ### Create a variable library with variables
 
-1. In the **Copy with Variables WS** workspace, add **New item**
+1. In the *Source LHs with Variables* workspace, add **New item**
 2. On the right, under **Develop data**, select **Variable Library (preview)**.
 
  :::image type="content" source="media/tutorial-variable-library/create-variable-library-1.png" alt-text="Screenshot showing how to create a variable library." lightbox="media/tutorial-variable-library/create-variable-library-1.png":::
@@ -126,15 +126,21 @@ In this tutorial, you:
 
  :::image type="content" source="media/tutorial-variable-library/create-variable-library-2.png" alt-text="Screenshot showing how to click new variable." lightbox="media/tutorial-variable-library/create-variable-library-2.png":::
 
-5.  Create the following variables.  Use the GUID of the SourceLH_Dev Lakehouse as the default value for the SourceLH string.  Create variables for each item in the table.
+5.  Create the following variables. Create variables for each item in the table.
 
 |Name|Type|Default value set|
 |-----|-----|-----|
-|Source_LH|string|&lt;guid of SourceLH_Dev lakeshoue&gt;|
+|SourceLH|string|&lt;guid of SourceLH_Stage lakeshoue&gt;|
+|SourceWSID|string|&lt;guid of SourceLH_Stage workspace&gt;|
+|DestinationLH|string|&lt;guid of SourceLH_Dev lakeshoue&gt;|
+|DestinationWSID|string|&lt;guid of SourceLH_Dev workspace&gt;|
+|SourceTableName|String|Processed|
 |DestinationTableName|String|DevCopiedData|
+
 
  :::image type="content" source="media/tutorial-variable-library/create-variable-library-3.png" alt-text="Screenshot the finished default set for the variable library." lightbox="media/tutorial-variable-library/create-variable-library-3.png":::
 
+6. Once you are done, click **Save**
 
 ### Create Alternate value sets
 
@@ -144,28 +150,36 @@ In this tutorial, you:
  :::image type="content" source="media/tutorial-variable-library/create-variable-library-4.png" alt-text="Screenshot showing how to add a value set." lightbox="media/tutorial-variable-library/create-variable-library-4.png":::
 
 2. Enter *Test VS* for the name and click **Create**.
-3. On the right, for the value of *Source_LH* change the GUID to the GUID for the *SourceLH_Test* Lakehouse.
-4. On the right, for the value *DestinationTable* change the value to *TestCopiedData
+3. Create variables for each item in the table.
+4. Once you are done, click **Save** and **Agree**.
 
- |Name|Type|Test VS|
- |-----|-----|-----|
- |Source_LH|string|&lt;guid of SourceLH_Test lakeshoue&gt;|
- |DestinationTableName|String|TestCopiedData|
+|Name|Type|Default value set|
+|-----|-----|-----|
+|SourceLH|string|&lt;guid of SourceLH_Dev lakeshoue&gt;|
+|SourceWSID|string|&lt;guid of SourceLH_Dev workspace&gt;|
+|DestinationLH|string|&lt;guid of SourceLH_Test lakeshoue&gt;|
+|DestinationWSID|string|&lt;guid of SourceLH_Test workspace&gt;|
+|SourceTableName|String|DevCopiedData|
+|DestinationTableName|String|TestCopiedData|
 
 
 5. At the top, click **Add Value set**
 6. Enter *Prod VS* for the name and click **Create**.
-7. On the right, for the value of *SourceLH* change the GUID to the GUID for the *SourceLH_Prod* Lakehouse.
-8. On the right, for the value *DestinationTable* change the value to *ProdCopiedData
+7. Create variables for each item in the table.
+8. Once you are done, click **Save** and **Agree**.
 
- |Name|Type|TestProd VS|
- |-----|-----|-----|
- |Source_LH|string|&lt;guid of SourceLH_Prod lakeshoue&gt;|
- |DestinationTableName|String|ProdCopiedData|
+|Name|Type|Default value set|
+|-----|-----|-----|
+|SourceLH|string|&lt;guid of SourceLH_Test lakeshoue&gt;|
+|SourceWSID|string|&lt;guid of SourceLH_Test workspace&gt;|
+|DestinationLH|string|&lt;guid of SourceLH_Prod lakeshoue&gt;|
+|DestinationWSID|string|&lt;guid of SourceLH_Prod workspace&gt;|
+|SourceTableName|String|TestCopiedData|
+|DestinationTableName|String|ProdCopiedData|
+
  
  :::image type="content" source="media/tutorial-variable-library/create-variable-library-5.png" alt-text="Screenshot the finished alternate values in variable library." lightbox="media/tutorial-variable-library/create-variable-library-5.png":::
 
-9. Click **Save** and **Agree**.
 
 ### Create the *Pipeline_Var* pipeline and declare variables
 
