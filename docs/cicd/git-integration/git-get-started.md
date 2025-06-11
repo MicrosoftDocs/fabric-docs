@@ -58,7 +58,7 @@ If it's the first time connecting, you need to Authorize your user. Provide the 
 
 - *Display name* - must be unique for each user
 - *Azure DevOps URL* - URL of the Azure DevOps repository. URL must be in the format `https://dev.azure.com/{organization}/{project}/_git/{repository}` or `https://{organization}.visualstudio.com/{project}/_git/{repo}`.
-- *Authentication* - You can authenticate either with *OAuth2* or a *Service Principal*.
+- *Authentication* - You can authenticate either with *OAuth2* or a *Service Principal*.  For more information see [Azure DevOps - Git Integration with service principal (preview)](git-integration-with-service-principal.md)
 
 :::image type="content" source="./media/git-get-started/devops-add-account.png" alt-text="Screenshot of GitHub integration UI to add an account.":::
 
