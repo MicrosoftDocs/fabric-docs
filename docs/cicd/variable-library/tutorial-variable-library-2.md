@@ -41,7 +41,7 @@ In this tutorial, you:
 
  :::image type="content" source="media/tutorial-variable-library/conceptual-variable-library-1.png" alt-text="Diagram of tutorial workspace layout." lightbox="media/tutorial-variable-library/conceptual-variable-library-1.png":::
 
-### Create the *Stage LHS* workspace and *SourceLH_Stage* lakehouse with sample data
+### Create the *Stage LHs* workspace and *SourceLH_Stage* lakehouse with sample data
 
 1. Navigate to [Power BI](https://app.powerbi.com/home)
 2. On the left, select **Workspace**.
@@ -54,12 +54,12 @@ In this tutorial, you:
 
  :::image type="content" source="media/tutorial-variable-library/create-lakehouse-1.png" alt-text="Screenshot of new lakehouse creation." lightbox="media/tutorial-variable-library/create-lakehouse-1.png":::
 
-6. Enter a name for the Lakehouse - *SourceLH_Dev* and click **Create**.
+6. Enter a name for the Lakehouse - *SourceLH_Stage* and click **Create**.
 7. You should now be in the Lakehouse, select **New data pipeline**. 
 
  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-1.png" alt-text="Screenshot of new pipeline creation." lightbox="media/tutorial-variable-library/create-new-pipeline-1.png":::
 
-8. Enter the name *Pipeline_Dev* and click **Create**.
+8. Enter the name *Pipeline_Stage* and click **Create**.
 9. You should now see **Copy data into Lakehouse**, at the top select **Sample data**.
 
  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-2.png" alt-text="Screenshot of Copy data into lakehouse." lightbox="media/tutorial-variable-library/create-new-pipeline-2.png":::
@@ -78,43 +78,40 @@ In this tutorial, you:
   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-5.png" alt-text="Screenshot of pipeline save and run." lightbox="media/tutorial-variable-library/create-new-pipeline-5.png":::
 
 
-### Create the *Copy with Variables WS* workspace and *This_WH_LH* lakehouse with sample data
+### Create the *Source LHs with Variables* workspace
 
 1. Navigate to [Power BI](https://app.powerbi.com/home)
 2. On the left, select **Workspace**.
-3. [Create a workspace](../../fundamentals/create-workspaces.md). Call it *Copy with Variables WS*. 
-4. At the top of the workspace, select **New item**
-5. On the right, under **Store data**, select **Lakehouse**.
-6. Enter a name for the Lakehouse - *This_WH_LH* and click **Create**.
-7. Leave this Lakehouse empty. On the right click the **Copy with Variables WS*. 
+3. [Create a workspace](../../fundamentals/create-workspaces.md). Call it *Source LHs with Variables*. 
 
- :::image type="content" source="media/tutorial-variable-library/create-lakehouse-2.png" alt-text="Screenshot showing the workspace." lightbox="media/tutorial-variable-library/create-lakehouse-2.png":::
+### Create the *SourceLH_Dev*, *SourceLH_Test* and *SourceLH_Prod* lakehouses.
 
-### Create the *SourceLH_Test* and *SourceLH_Prod* lakehouse with sample data
-
-1. In the *Copy with Variables WS* workspace, at the top of the workspace, select **New item**
+1. In the *Source LHs with variables* workspace, at the top of the workspace, select **New item**
 2. On the right, under **Store data**, select **Lakehouse**.
-3. Enter a name for the Lakehouse - *SourceLH_Test*  and click **Create**.
-4. Once it is created, select **Start with sample data**.
+3. Enter a name for the Lakehouse - *SourceLH_Dev*  and click **Create**.
+4. Once it is created, on the left, click on the *Source LHs with variables* workspace.
+5. At the top of the workspace, select **New item**
+6. On the right, under **Store data**, select **Lakehouse**.
+7. Enter a name for the Lakehouse - *SourceLH_Test*  and click **Create**.
+8. Once it is created, on the left, click on the *Source LHs with variables* workspace.
+9. At the top of the workspace, select **New item**
+10. On the right, under **Store data**, select **Lakehouse**.
+11. Enter a name for the Lakehouse - *SourceLH_Prod*  and click **Create**.
+12. Once it is created, on the left, click on the *Source LHs with Variables* workspace.
+13. The *Source LHs with variables* should look like the screenshot below.
 
- :::image type="content" source="media/tutorial-variable-library/create-lakehouse-3.png" alt-text="Screenshot showing start with sample data." lightbox="media/tutorial-variable-library/create-lakehouse-3.png":::
+  :::image type="content" source="media/tutorial-variable-library/create-workspace-1.png" alt-text="Screenshot of how the workspace should look." lightbox="media/tutorial-variable-library/create-workspace-1.png":::
 
-5. Select **Public holidays**.
+### Get the Workspace IDs and Object IDs for Lakehouses
 
- :::image type="content" source="media/tutorial-variable-library/create-lakehouse-3.png" alt-text="Screenshot showing start with public holidays." lightbox="media/tutorial-variable-library/create-lakehouse-4.png":::
-
-6. Repeat these steps and create a Lakehouse in the same workspace named *SourceLH_Prod*.
-
-### Get the GUIDs of the Lakehouses
-
-1. In P[Power BI](https://app.powerbi.com/home), on the left select the Sources LHs workspace.
-2. In the workspace, at the bottom, click on the SourceLH_Dev Lakehouse.
-3. Copy the guid in the URL that comes after /lakeshoues/ and before the ?.
+1. In [Power BI](https://app.powerbi.com/home), on the left select the *Stage LHs* workspace.
+2. In the workspace, click on the *SourceLH_Stage* Lakehouse.
+3. Copy the workspace ID and the Lakehouse object ID in the URL.
 
  :::image type="content" source="media/tutorial-variable-library/get-guid-1.png" alt-text="Screenshot showing how to get the Lakehouse guid." lightbox="media/tutorial-variable-library/get-guid-1.png":::
 
-4. Repeat this for the *SourceLH_Test* and *SourceLH_Prod* Lakehouses in the *Copy with Variables WS* workspace.
-5. These will be used in the upcoming steps.
+4. Repeat this for the *SourceLH_Dev* and *SourceLH_Test* Lakehouses in the *Source LHs with variables* workspace.
+5. These values will be used in our variable library.
 
 
 ### Create a variable library with variables
