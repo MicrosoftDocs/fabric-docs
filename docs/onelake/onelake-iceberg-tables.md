@@ -23,7 +23,7 @@ While this article includes guidance for writing Iceberg tables from Snowflake t
 
 If you already have an Iceberg table in a storage location supported by [OneLake shortcuts](./onelake-shortcuts.md#types-of-shortcuts), follow these steps to create a shortcut and have your Iceberg table appear with the Delta Lake format.
 
-1.	**Locate your Iceberg table.** Find where your Iceberg table is stored, which could be in Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service.
+1.	**Locate your Iceberg table.** Find where your Iceberg table is stored. This could be in Azure Data Lake Storage, OneLake, Amazon S3, Google Cloud Storage, or an S3 compatible storage service.
 
     > [!NOTE]
     > If you're using Snowflake and aren't sure where your Iceberg table is stored, you can run the following statement to see the storage location of your Iceberg table.
@@ -105,7 +105,7 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
 
 1.	Open the consent URL from the previous step in a new browser tab. If you would like to proceed, consent to the required application permissions, if prompted.
 
-1.  Make sure your Fabric tenant settings support Snowflake communicating with Fabric and OneLake. If you're not sure if a setting change is needed, you may proceed, but check the **Troubleshooting** section below if you encounter an error.
+1.  Make sure your Fabric tenant settings support Snowflake communicating with Fabric and OneLake. If you're not sure if a setting change is needed, you may proceed; however, we recommend you check the [Troubleshooting](#troubleshooting) section if you encounter an error.
 
     To check the settings, have your Fabric tenant administrator perform the following steps.
     
@@ -209,11 +209,11 @@ If you don't see a conversion log file, then the conversion wasn't attempted. He
 
 ### `Fabric capacity region cannot be validated` error message in Snowflake 
 
-If you are using Snowflake to write a new Iceberg table to OneLake, you might encounter the following error message:
+If you are using Snowflake to write a new Iceberg table to OneLake, you might see the following error message:
 
 > Fabric capacity region cannot be validated. Reason: 'Invalid access token. This may be due to authentication and scoping. Please verify delegated scopes.'
 
-If you see this error, double-check that both tenant settings mentioned in the steps above are enabled for your Fabric tenant. This may require you to involve your Fabric tenant admin to confirm these settings are enabled.
+If you see this error, double-check that you've enabled both tenant settings mentioned in the [Write an Iceberg table to OneLake using Snowflake](#write-an-iceberg-table-to-onelake-using-snowflake) section. You may need to involve your Fabric tenant admin to confirm these settings are enabled.
 
 ## Limitations and considerations
 
