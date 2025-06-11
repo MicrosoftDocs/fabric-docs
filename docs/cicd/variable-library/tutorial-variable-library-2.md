@@ -41,7 +41,7 @@ In this tutorial, you:
 
  :::image type="content" source="media/tutorial-variable-library/conceptual-variable-library-1.png" alt-text="Diagram of tutorial workspace layout." lightbox="media/tutorial-variable-library/conceptual-variable-library-1.png":::
 
-### Create the *Sources LHS* workspace and *SourceLH_Dev* lakehouse with sample data
+### Create the *Stage LHS* workspace and *SourceLH_Stage* lakehouse with sample data
 
 1. Navigate to [Power BI](https://app.powerbi.com/home)
 2. On the left, select **Workspace**.
@@ -73,7 +73,7 @@ In this tutorial, you:
 
  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-4.png" alt-text="Screenshot of pipeline destination." lightbox="media/tutorial-variable-library/create-new-pipeline-4.png":::
 
- 13. On the **Review + Save** screen, click **Save + Run**.
+13. On the **Review + Save** screen, click **Save + Run**.
   
   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-5.png" alt-text="Screenshot of pipeline save and run." lightbox="media/tutorial-variable-library/create-new-pipeline-5.png":::
 
