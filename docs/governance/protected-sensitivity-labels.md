@@ -23,7 +23,7 @@ In Fabric and the Power BI service, protected labels only control the ability to
 
 If the label on the item was set via an automated process, such as inheritance from data sources or downstream inheritance, then the third option, EDIT and EDITRIGHTSDATA, is reduced to just EDIT. See [Relaxations to accommodate automatic labeling scenarios](#relaxations-to-accommodate-automatic-labeling-scenarios) for details.
 
-In Power BI Desktop, protected labels control not only the ability to change or remove the protected label, but also encrypt the file's content (viewing, editing, exporting, etc.). Having the previously described usage rights, are sufficient to decrypt the file and have full control over it.
+In Power BI Desktop, protected labels control not only the ability to change or remove the protected label, but also encrypt the file's content (viewing, editing, exporting, etc.). Having the previously described usage rights is sufficient to decrypt the file and have full control over it.
 
 Users with the following permissions can open, edit, and republish protected PBIX files with restrictions.
 
@@ -47,7 +47,7 @@ Restrictions:
 
 These restrictions ensure that the security of the content remains under the control of those who have high enough permissions to set the label.
 
-These usage rights are a subset of the **editor** (formerly knowns as co-author) permissions preset in the Microsoft Purview compliance portal.
+These usage rights are a subset of the **editor** (formerly known as co-author) permissions preset in the Microsoft Purview compliance portal.
 
 ## Relaxations to accommodate automatic labeling scenarios
 
