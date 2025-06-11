@@ -105,6 +105,14 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
 
 1.	Open the consent URL from the previous step in a new browser tab. If you would like to proceed, consent to the required application permissions, if prompted.
 
+1.  Make sure your Fabric tenant settings support Snowflake communicating with Fabric and OneLake. If you're not sure if a setting change is needed, you may proceed, but check the **Troubleshooting** section below if you encounter an error.
+
+    To check the settings, have your Fabric tenant administrator perform the following steps.
+    
+    1.  In the upper-right corner of the Fabric UI, open **Settings**, and select **Admin portal**.
+    1.  Under **Tenant settings**, in the **Developer settings** section, enable the setting labeled [**Service principals can use Fabric APIs**](../admin/service-admin-portal-developer#service-principals-can-use-fabric-apis.md).
+    1.  In the same area, in the **OneLake settings** section, enable the setting labeled [**Users can access data stored in OneLake with apps external to Fabric**](../admin/service-admin-portal-onelake#users-can-access-data-stored-in-onelake-with-apps-external-to-fabric.md).
+
 1.	Back in Fabric, open your workspace and select **Manage access**, then **Add people or groups**. Grant the application used by your Snowflake external volume the permissions needed to write data to lakehouses in your workspace. We recommend granting the **Contributor** role.
 
 1.	Back in Snowflake, use your new external volume to create an Iceberg table.
@@ -199,6 +207,14 @@ If you don't see a conversion log file, then the conversion wasn't attempted. He
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\shortcut-target.png" alt-text="Screenshot showing the contents of a shortcut target path during shortcut creation.":::
 
+### `Fabric capacity region cannot be validated` error message in Snowflake 
+
+If you are using Snowflake to write a new Iceberg table to OneLake, you might encounter the following error message:
+
+> Fabric capacity region cannot be validated. Reason: 'Invalid access token. This may be due to authentication and scoping. Please verify delegated scopes.'
+
+If you see this error, double-check that both tenant settings mentioned in the steps above are enabled for your Fabric tenant. This may require you to involve your Fabric tenant admin to confirm these settings are enabled.
+
 ## Limitations and considerations
 
 Keep in mind the following temporary limitations when you use this feature: 
@@ -220,7 +236,7 @@ Keep in mind the following temporary limitations when you use this feature:
   | `timestamptz` | `timestamp` | In Snowflake, to use this type, specify `timestamp_ltz` as the column type during Iceberg table creation. [More info on Iceberg data types supported in Snowflake can be found here.](https://docs.snowflake.com/en/user-guide/tables-iceberg-data-types) |
   | `string` | `string` | |
   | `binary` | `binary` | |
-
+  | `time` | N/A | Not supported |
     
 * **Type width issue**
     
