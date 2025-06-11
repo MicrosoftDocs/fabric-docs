@@ -80,7 +80,7 @@ The tables below lists examples of the data that is shared with Microsoft 365 se
 |Property|What is Shared|Example|
 |---------|---------|---------|---------|
 |LastRefreshDate|Last refresh date for the content|2011-06-30T23:32:46Z|
-|UserID|Microsoft Entra user principal name for the user who acted on the item|user1@griffin1.org|
+|UserID|Microsoft Entra user principal name for the user who acted on the item|user1@fourthcoffee.com|
 |SignalType|The type of action the user took on the content|Viewed|
 |ActorID|Microsoft Entra ID for the user who acted on the item|aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee|
 |StartTime/EndTime|Date/Time the user performed the action on the content|2011-06-30T23:32:46Z|
