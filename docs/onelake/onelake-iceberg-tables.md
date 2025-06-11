@@ -105,7 +105,7 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
 
 1.	Open the consent URL from the previous step in a new browser tab. If you would like to proceed, consent to the required application permissions, if prompted.
 
-1.  Make sure your Fabric tenant settings support Snowflake communicating with Fabric and OneLake. If you're not sure if a setting change is needed, you may proceed; however, we recommend you check the [Troubleshooting](#troubleshooting) section if you encounter an error.
+1.  Make sure your Fabric tenant settings support Snowflake's communication with Fabric and OneLake. If you're not sure if a setting change is needed, you may proceed; however, we recommend you check the [Troubleshooting](#troubleshooting) section if you encounter an error.
 
     To check the settings, have your Fabric tenant administrator perform the following steps.
     
