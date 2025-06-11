@@ -15,31 +15,25 @@ Having a set of sensitivity labels and policies in place is a prerequisite for u
 
 ## How protected labels work in Fabric and Power BI
 
-In Fabric and the Power BI service, protected labels only control the ability to change or remove labels on items. They don't control access to content. 
-
-### Usage rights requirements
-
-In order for a user to be able to change or remove a protected label from an item, the user must either be the user who applied the sensitivity label (the RMS owner), or have at least one of the following usage rights requirements for the label:
+In Fabric and the Power BI service, protected labels only control the ability to change or remove labels on items. They don't control access to content; for access control via sensitivity label, see [Protection policies](protection-policies-overview.md). In order for a user to be able to change or remove a protected label from an item, the user must either be the user who applied the sensitivity label (the RMS owner), or have at least one of the following usage rights requirements for the label:
 
 - OWNER
 - EXPORT
 - EDIT and EDITRIGHTSDATA
 
-These usage rights requirements grant the user full control over the file, as if no encryption is enforced, they can edit, export and even remove or change the label.
-
 If the label on the item was set via an automated process, such as inheritance from data sources or downstream inheritance, then the third option, EDIT and EDITRIGHTSDATA, is reduced to just EDIT. See [Relaxations to accommodate automatic labeling scenarios](#relaxations-to-accommodate-automatic-labeling-scenarios) for details.
 
-### Permissions and restrictions
+In Power BI Desktop, protected labels control not only the ability to change or remove the protected label, but also encrypt the file's content (viewing, editing, exporting, etc.). Having the previously described usage rights, are sufficient to decrypt the file and have full control over it.
 
-In Power BI Desktop, protected labels control not only the ability to change or remove the protected label, but also access to content (viewing, editing, exporting, etc.). Users with the following permissions can open, edit, and republish protected PBIX files with restrictions.
+Users with the following permissions can open, edit, and republish protected PBIX files with restrictions.
 
 Permissions: 
 
-- View Content (VIEW)
-- Edit Content (DOCEDIT)
+- View content (VIEW)
+- Edit content (DOCEDIT)
 - Save (EDIT)
 - Copy and extract content (EXTRACT)
-- Allow Macros (OBJMODEL)
+- Allow macros (OBJMODEL)
 
 Restrictions: 
 
@@ -53,9 +47,7 @@ Restrictions:
 
 These restrictions ensure that the security of the content remains under the control of those who have high enough permissions to set the label.
 
-These usage rights are a subset of the **Editor** (formerly knowns as Co-Author) permissions preset in the Microsoft Purview compliance portal.
-
-In addition, the **Less elevated user support** preview feature switch in Power BI Desktop must be selected. See [Desktop preview feature switch for editing by users with restrictive sensitivity permissions](../admin/service-admin-portal-information-protection.md#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions) for detail.
+These usage rights are a subset of the **editor** (formerly knowns as co-author) permissions preset in the Microsoft Purview compliance portal.
 
 ## Relaxations to accommodate automatic labeling scenarios
 
