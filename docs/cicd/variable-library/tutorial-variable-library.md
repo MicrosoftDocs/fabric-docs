@@ -134,8 +134,8 @@ In this tutorial, you:
 |Source_WSID|string|&lt;guid of SourceLH_Stage workspace&gt;|
 |Destination_LH|string|&lt;guid of SourceLH_Dev lakeshoue&gt;|
 |Destination_WSID|string|&lt;guid of SourceLH_Dev workspace&gt;|
-|SourceTableName|String|Processed|
-|DestinationTableName|String|DevCopiedData|
+|SourceTable_Name|String|Processed|
+|DestinationTable_Name|String|DevCopiedData|
 
 
  :::image type="content" source="media/tutorial-variable-library/create-variable-library-3.png" alt-text="Screenshot the finished default set for the variable library." lightbox="media/tutorial-variable-library/create-variable-library-3.png":::
@@ -156,8 +156,8 @@ In this tutorial, you:
 |Source_WSID|string|&lt;guid of SourceLH_Dev workspace&gt;|
 |Destination_LH|string|&lt;guid of SourceLH_Test lakeshoue&gt;|
 |Destination_WSID|string|&lt;guid of SourceLH_Test workspace&gt;|
-|SourceTableName|String|DevCopiedData|
-|DestinationTableName|String|TestCopiedData|
+|SourceTable_Name|String|DevCopiedData|
+|DestinationTable_Name|String|TestCopiedData|
 
 
 5. At the top, click **Add Value set**
@@ -171,8 +171,8 @@ In this tutorial, you:
 |Source_WSID|string|&lt;guid of SourceLH_Test workspace&gt;|
 |Destination_LH|string|&lt;guid of SourceLH_Prod lakeshoue&gt;|
 |Destination_WSID|string|&lt;guid of SourceLH_Prod workspace&gt;|
-|SourceTableName|String|TestCopiedData|
-|DestinationTableName|String|ProdCopiedData|
+|SourceTable_Name|String|TestCopiedData|
+|DestinationTable_Name|String|ProdCopiedData|
 
  
  :::image type="content" source="media/tutorial-variable-library/create-variable-library-5.png" alt-text="Screenshot the finished alternate values in variable library." lightbox="media/tutorial-variable-library/create-variable-library-5.png":::
@@ -200,22 +200,66 @@ In this tutorial, you:
  |Name|Library|Variable Name|Type|
  |-----|-----|-----|-----|
  |SourceLH|WS Variables|Source_LH|string|
- |DestTableName|WS Variables|DestinationTableName|
+ |SourceWSID|WS Variables|Source_WSID|string|
+ |DestinationLH|WS Variables|Destination_LH|string|
+ |DestinationWSID|WS Variables|Destination_WSID|string|
+ |SourceTableName|WS Variables|SourceTable_Name|string|
+ |DestinationTableName|WS Variables|DestinationTable_Name|string|
 
  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-11.png" alt-text="Screenshot of adding variables to pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-11.png":::
 
 8. Click **Save**
-9. Back on the canvas, select **Copy Data** so the focus is on **Copy Data**.
-10. At the bottom click on **Source**.
-11. Under **Source > Connection**, select **Use dynamic content**.
-12. On the right, click **...** and select **Library variables preview**
-13. Select **SourcLH**. It will populate the box with `@pipeline().libraryVariables.SourceLH`. Click **Ok**
+
+### Configure the source connection for the *Pipeline_Deploy* pipeline
+
+1. In the *Source LHs with Variables* workspace, on the *Pipeline_Depoy*.
+1. On the canvas, select **Copy Data** so the focus is on **Copy Data**.
+2. At the bottom click on **Source**.
+3. Under **Source > Connection**, select **Use dynamic content**.
+4. On the right, click **...** and select **Library variables preview**
+5. Select **SourceLH**. It will populate the box with `@pipeline().libraryVariables.SourceLH`. Click **Ok**
 
   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-12.png" alt-text="Screenshot of dynamic content for connection source." lightbox="media/tutorial-variable-library/create-new-pipeline-12.png":::
 
-14. Under **Source**, make sure that the **Root folders** is set to **Tables**.
-15. Under **Tables**, select **Enter manually** and enter **publicholidays** for the table name.
+6. Under **Source > Workspace**, select **Use dynamic content**.
+7. On the right, click **...** and select **Library variables preview**
+8. Select **SourceWSID**. It will populate the box with `@pipeline().libraryVariables.SourceWSID`. Click **Ok**
 
-7. Under **Destination > Connection**, select *This_WH_LH**
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-14.png" alt-text="Screenshot of dynamic content for workspace source." lightbox="media/tutorial-variable-library/create-new-pipeline-14.png":::
 
-  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-9.png" alt-text="Screenshot of adding This_WH_LH as connection destination." lightbox="media/tutorial-variable-library/create-new-pipeline-9.png":::
+9. Under **Source > Tables**, place a check in **Enter manually**, click on the **table name** box and select **Use dynamic content**.
+10. On the right, click **...** and select **Library variables preview**
+11. Select **SourceTableName**. It will populate the box with `@pipeline().libraryVariables.SourceTableName`. Click **Ok**
+
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-15.png" alt-text="Screenshot of dynamic content for table name." lightbox="media/tutorial-variable-library/create-new-pipeline-15.png":::
+
+12. Now that the source connection is setup we can test it.  Click **Preview data** and on the right, click **Okay** on the fly-out.  Once it populates, you can close the data preview.
+
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-16.png" alt-text="Screenshot of preview data for the source connection." lightbox="media/tutorial-variable-library/create-new-pipeline-16.png":::
+
+  ### Configure the destination connection for the *Pipeline_Deploy* pipeline
+
+1. In the *Source LHs with Variables* workspace, on the *Pipeline_Depoy*.
+1. On the canvas, select **Copy Data** so the focus is on **Copy Data**.
+2. At the bottom click on **Destination**.
+3. Under **Destination > Connection**, select **Use dynamic content**.
+4. On the right, click **...** and select **Library variables preview**
+5. Select **SourceLH**. It will populate the box with `@pipeline().libraryVariables.DestinationLH`. Click **Ok**
+
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-17.png" alt-text="Screenshot of dynamic content for connection destination." lightbox="media/tutorial-variable-library/create-new-pipeline-17.png":::
+
+6. Under **Destination > Workspace**, select **Use dynamic content**.
+7. On the right, click **...** and select **Library variables preview**
+8. Select **DestinationWSID**. It will populate the box with `@pipeline().libraryVariables.DestinationWSID`. Click **Ok**
+
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-18.png" alt-text="Screenshot of dynamic content for workspace destination." lightbox="media/tutorial-variable-library/create-new-pipeline-18.png":::
+
+9. Under **Destination > Tables**, place a check in **Enter manually**, click on the **table name** box and select **Use dynamic content**.
+10. On the right, click **...** and select **Library variables preview**
+11. Select **DestinationTableName**. It will populate the box with `@pipeline().libraryVariables.DestinationTableName`. Click **Ok**
+
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-19.png" alt-text="Screenshot of dynamic content for destination table name." lightbox="media/tutorial-variable-library/create-new-pipeline-19.png":::
+
+12. Now that the destination connection is setup, save the pipeline and click **Run** at the top.  You should see it successfully run.
+
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-20.png" alt-text="Screenshot of pipeline run." lightbox="media/tutorial-variable-library/create-new-pipeline-20.png":::
