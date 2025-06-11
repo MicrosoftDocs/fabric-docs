@@ -31,7 +31,7 @@ After you [create a workspace](create-workspaces.md) in [!INCLUDE [product-name]
    
    :::image type="content" source="media/workspace-access/workspace-manage-access-add-button.png" alt-text="Screenshot of add button in manage access panel.":::
 
-1. Enter name or email, select a [role](roles-workspaces.md), and select **Add**. You can add security groups, distribution lists, Microsoft 365 groups, or individuals to these workspaces as admins, members, contributors, or viewers. If you have the member role, you can only add others to the member, contributor, or viewer roles.
+1. Enter name or email, select a [role](roles-workspaces.md), and select **Add**. You can add security groups, mail-enabled security groups, distribution lists, Microsoft 365 groups, or individuals to these workspaces as admins, members, contributors, or viewers. If you have the member role, you can only add others to the member, contributor, or viewer roles.
    
    :::image type="content" source="media/workspace-access/workspace-manage-access-add-people-panel.png" alt-text="Screenshot of add people panel.":::
 
