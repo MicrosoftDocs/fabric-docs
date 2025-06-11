@@ -1,8 +1,8 @@
 ---
 title: View audit logs
 description: Learn how to view Power BI audit logs in the Microsoft Purview compliance portal.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 
 ms.custom:
