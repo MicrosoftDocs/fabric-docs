@@ -49,7 +49,7 @@ By default, Fabric data is available only in the region where the Fabric tenant 
 > [!NOTE]
 > The second toggle is visible only when the main sharing toggle is enabled.
 
-![Screenshot of Users can see Microsoft Fabric metadata in Microsoft 365 tenant setting.](media/admin-share-power-bi-metadata-microsoft-365-services/m365share.png)
+![Screenshot of Users can see Microsoft Fabric metadata in Microsoft 365 tenant setting.](media/admin-share-power-bi-metadata-microsoft-365-services/m365-share.png)
 
 ## Data that is shared with Microsoft 365
 
@@ -67,9 +67,9 @@ The tables below lists examples of the data that is shared with Microsoft 365 se
 |ACL|Access Control List with permissions and Microsoft Entra user, Security Group and Distribution List Identifiers|{"accessType": "grant", "id" : "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "type" : "read" }|
 |WorkspaceName|Workspace name as per [Create a workspace](/power-bi/collaborate-share/service-create-the-new-workspaces) |Retail workspace|
 |WorkspaceURL|Link to navigate to the Workspace in the service |https://powerbi-df.analysis-df.windows.net/groups/8b5ac04e-89c1-4fc6-a364-e8411dfd8d17|
-|Creator|[Microsoft Entra user principal name](/entra/identity/hybrid/connect/plan-connect-userprincipalname) of the person that created the content|user1@griffin1.org|
+|Creator|[Microsoft Entra user principal name](/entra/identity/hybrid/connect/plan-connect-userprincipalname) of the person that created the content|user1@fourthcoffee.com|
 |CreatedDate|Date the content was created|2011-06-30T23:32:46Z|
-|LastModifiedUser|Microsoft Entra user principal name for the last person who modified the content|user1@griffin1.org|
+|LastModifiedUser|Microsoft Entra user principal name for the last person who modified the content|user1@fourthcoffee.com|
 |LastModifiedDate|Last modified date for the content|2011-06-30T23:32:46Z|
 |PageNames|Display names for pages within the report |Sales Summary, Regional details, Returns|
 |ChartTitles|Display names for visualizations in the report layout |Regional sales over time|  
