@@ -26,14 +26,14 @@ Variable libraries and their values can be deployed in deployment pipelines to m
 
 The following is important information to remember:
 
-- All **value sets** in the variable library are available to all stages of the deployment pipeline.
+- All **value sets** in the variable library are available to all stages of the deployment pipeline, but only one is active in a stage.
 - The **active value set** for each stage is selected independently and can be changed anytime.
-- By default, the variable libraries active set is, set to the default value, for each stage of a deployment pipelline.  You can change this by accessing the variable library in each step of the deployment pipline and setting the active set.
+- By default, when first deployed/commited, the variable librarie's active set is, set to be the default value. You can change this by accessing the newly created variable library in the target stage/repo and changing the active set.
 
 :::image type="content" source="./media/variable-library-cicd/set-variable-library-2.png" alt-text="Screenshot of compare in deployment pipelines showing active set." lightbox="media/variable-library-cicd/set-variable-library-2.png":::
 :::
 
-- While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the deployment pipeline. The consumer item (for example, a pipeline) automatically receives the correct value from the active value set.
+- While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the deployment pipeline. The consumer item in its workspace (for example, a pipeline) automatically receives the correct value from the active value set.
 
 The following operations to variables or value sets in one stage of a deployment pipeline, cause the variable library to be reflected as *different* [compared](../deployment-pipelines/compare-pipeline-content.md) to the same item in a different stage.
 
