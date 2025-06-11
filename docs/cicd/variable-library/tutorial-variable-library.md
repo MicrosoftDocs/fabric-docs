@@ -39,172 +39,172 @@ In this tutorial, you:
 
   These switches can be enabled by the tenant admin, capacity admin, or workspace admin, depending on your [organization's settings](../../admin/delegate-settings.md).
 
-## Before you begin: Prepare data sources (optional)
+ :::image type="content" source="media/tutorial-variable-library/conceptual-variable-library-1.png" alt-text="Diagram of tutorial workspace layout." lightbox="media/tutorial-variable-library/conceptual-variable-library-1.png":::
 
-For the purposes of this tutorial, we need to create some sample data to use in the Variable library. If you already have a workspace with lakehouse items you want to use, you can skip this step.
+### Create the *Stage LHs* workspace and *SourceLH_Stage* lakehouse with sample data
 
-Create a workspace called *Sources LHs* with some lakehouses to use as source data in the Variable library
+1. Navigate to [Power BI](https://app.powerbi.com/home)
+2. On the left, select **Workspace**.
+3. [Create a workspace](../../fundamentals/create-workspaces.md). Call it *Sources LHs*. 
+ 
+ :::image type="content" source="media/tutorial-variable-library/new-workspace-1.png" alt-text="Screenshot of new workspace." lightbox="media/tutorial-variable-library/new-workspace-1.png":::
 
-1. [Create a workspace](../../fundamentals/create-workspaces.md) called *Sources LHs*.
-1. [Create a lakehouse](../../onelake/create-lakehouse-onelake.md) item in the workspace, called *SourceLH_Dev*.
-1. [Create a data pipeline with sample data from public holidays](../../data-factory/create-first-pipeline-with-sample-data.md) (steps 1-3). {10 minutes}
-1. Create another workspace called *Copy with Variables WS* [Dev]
-1. Create an empty lakehouse called This_WH_LH
-1. Create two more lakehouses (*SourceLH_Test* and *SourceLH_Prod*) with sample data.
+4. At the top of the workspace, select **New item**
+5. On the right, under **Store data**, select **Lakehouse**.
 
-## Step 1: Create a workspace
+ :::image type="content" source="media/tutorial-variable-library/create-lakehouse-1.png" alt-text="Screenshot of new lakehouse creation." lightbox="media/tutorial-variable-library/create-lakehouse-1.png":::
 
-Now that we have our sample data, create a new workspace that contains the Variable library item. To create the workspace:
+6. Enter a name for the Lakehouse - *SourceLH_Stage* and click **Create**.
+7. You should now be in the Lakehouse, select **New data pipeline**. 
 
-1. [Create a workspace](../../fundamentals/create-workspaces.md). Call it *Copy with Variables WS*. Make it a type string and set the value to the object ID of Lakehouse.
-1. Create an empty lakehouse in the workspace called *This_WH_LH*.
+ :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-1.png" alt-text="Screenshot of new pipeline creation." lightbox="media/tutorial-variable-library/create-new-pipeline-1.png":::
 
-## Step 2: Create a data pipeline
+8. Enter the name *Pipeline_Stage* and click **Create**.
+9. You should now see **Copy data into Lakehouse**, at the top select **Sample data**.
 
-1. In the workspace, [create a new data pipeline](../../data-factory/create-first-pipeline-with-sample-data.md) (Steps 1-3){12 minutes}.
-1. In the data pipeline, go to **Source > Connection** and select *SourceLH_Dev* as the source lakehouse. Wait for the lakehouse to load.
-1. Go to **Destination > Connection** and select *This_WH_LH* as the destination lakehouse.
+ :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-2.png" alt-text="Screenshot of Copy data into lakehouse." lightbox="media/tutorial-variable-library/create-new-pipeline-2.png":::
 
-  > [!TIP]
-  > The lakehouse object ID is the unique identifier of your lakehouse. You can find it in the URL of the lakehouse item in the workspace.
-  > :::image type="content" source="./media/tutorial-variable-library/lakehouse-id.png" alt-text="Screenshot of URL of a lakehouse item. The lakehouse ID is after the word lakehouses.":::
+10. Select **Public Holidays*.
 
-## Step 3: Create a variable library with variables
+ :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-3.png" alt-text="Screenshot of using Public Holidays sample data." lightbox="media/tutorial-variable-library/create-new-pipeline-3.png":::
 
-1. Create an empty Variable library item. Call it *WS variables*.
-1. Open the Variable library and add a variable called *SourceLH*. Give it the type *string*, and the value of the object ID of the source lakehouse.
-1. Create a variable called DestinationTableName with type *string*. Give it the value *DevCopiedData*. This is the name of the table where the data will be copied in the destination lakehouse (This_WS_LH).
+11. Once it has finished loading, click **Next**.
+12. On the **Connect to data destinantion** screen, click **Next**.
 
-:::image type="content" source="./media/tutorial-variable-library/default-value-set.png" alt-text="Screenshot of the Variable library item with a variables and the default value set.":::
+ :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-4.png" alt-text="Screenshot of pipeline destination." lightbox="media/tutorial-variable-library/create-new-pipeline-4.png":::
 
-### Add value-sets to the variables
+13. On the **Review + Save** screen, click **Save + Run**.
+  
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-5.png" alt-text="Screenshot of pipeline save and run." lightbox="media/tutorial-variable-library/create-new-pipeline-5.png":::
 
-1. Create a value-set called *Test VS* and one called *Prod VS*.
-1. Set the values of *SourceLH* to the object IDs of *SourceLH_Test* and *SourceLH_Prod* respectively.
-1. Set the value of *DestinationTableName* to *TestCopiedData* and *ProdCopiedData* respectively.
 
-:::image type="content" source="./media/tutorial-variable-library/variable-library-values.png" alt-text="Screenshot of the variable library with the default value set and two alternative value sets.":::
+### Create the *Source LHs with Variables* workspace
 
-### Declare the variables
+1. Navigate to [Power BI](https://app.powerbi.com/home)
+2. On the left, select **Workspace**.
+3. [Create a workspace](../../fundamentals/create-workspaces.md). Call it *Source LHs with Variables*. 
 
-Now that the value-sets are defined, we [declare the variables](../../data-factory/activity-overview.md#adding-activities-to-a-pipeline-with-the--ui) in the pipeline so that we can use them in the pipeline stages.
+### Create the *SourceLH_Dev*, *SourceLH_Test* and *SourceLH_Prod* lakehouses.
 
-1. In the data pipeline, select the canvass to open the pipeline settings.
-1. Select the **Library variables** tab.
-1. Enter a name for each variable, and enter its library, variable name, and type.
+1. In the *Source LHs with variables* workspace, at the top of the workspace, select **New item**
+2. On the right, under **Store data**, select **Lakehouse**.
+3. Enter a name for the Lakehouse - *SourceLH_Dev*  and click **Create**.
+4. Once it is created, on the left, click on the *Source LHs with variables* workspace.
+5. At the top of the workspace, select **New item**
+6. On the right, under **Store data**, select **Lakehouse**.
+7. Enter a name for the Lakehouse - *SourceLH_Test*  and click **Create**.
+8. Once it is created, on the left, click on the *Source LHs with variables* workspace.
+9. At the top of the workspace, select **New item**
+10. On the right, under **Store data**, select **Lakehouse**.
+11. Enter a name for the Lakehouse - *SourceLH_Prod*  and click **Create**.
+12. Once it is created, on the left, click on the *Source LHs with Variables* workspace.
+13. The *Source LHs with variables* should look like the screenshot below.
 
-:::image type="content" source="./media/tutorial-variable-library/declare-variable-library.png" alt-text="Screenshot of the data pipeline settings.":::
+  :::image type="content" source="media/tutorial-variable-library/create-workspace-1.png" alt-text="Screenshot of how the workspace should look." lightbox="media/tutorial-variable-library/create-workspace-1.png":::
 
-## Step 4: Set the source and destination in the lakehouse
+### Get the Workspace IDs and Object IDs for Lakehouses
 
-Now that the value-sets are defined, set the rules for the active value-set. For each stage, we want to use the relevant lakehouse.
+1. In [Power BI](https://app.powerbi.com/home), on the left select the *Stage LHs* workspace.
+2. In the workspace, click on the *SourceLH_Stage* Lakehouse.
+3. Copy the workspace ID and the Lakehouse object ID in the URL.
 
-1. In the data pipeline, go to **Source > Connection** and delete the current connection (*SourceLH_Dev*).
-1. From the dropdown menu, select *Use dynamic content*.
+ :::image type="content" source="media/tutorial-variable-library/get-guid-1.png" alt-text="Screenshot showing how to get the Lakehouse guid." lightbox="media/tutorial-variable-library/get-guid-1.png":::
 
-   :::image type="content" source="./media/tutorial-variable-library/dynamic-content.png" alt-text="Screenshot of Destination tab with the table unselected.":::
+4. Repeat this for the *SourceLH_Dev* and *SourceLH_Test* Lakehouses in the *Source LHs with variables* workspace.
+5. These values will be used in our variable library.
 
-1. From the Add dynamic content pane, select *Library variables* and then *SourceLH*. This sets the value of the source lakehouse to the value of SourceLH in the active value set.
 
-   :::image type="content" source="./media/tutorial-variable-library/dynamic-source.png" alt-text="Screenshot of the pipeline expression builder with showing the dynamic source of the variable.":::
+### Create a variable library with variables
 
-1. Select **OK** to save the dynamic value as the source connection. The connection type is automatically set to *Lakehouse* and the Workspace ID is set.
-1. Set the Root folder to *Tables*.
-1. To set the table name, check the box that says Enter manually, and type *PublicHolidays*.
+1. In the **Copy with Variables WS** workspace, add **New item**
+2. On the right, under **Develop data**, select **Variable Library (preview)**.
 
-   :::image type="content" source="./media/tutorial-variable-library/source-table-name.png" alt-text="Screenshot of the data pipeline source connection.":::
+ :::image type="content" source="media/tutorial-variable-library/create-variable-library-1.png" alt-text="Screenshot showing how to create a variable library." lightbox="media/tutorial-variable-library/create-variable-library-1.png":::
 
-1. Select **Save** to save the source connection.
+3. Name the library *WS variables* and click **Create**.
+4. At the top, click **New Variable**.
 
-### Set the destination table
+ :::image type="content" source="media/tutorial-variable-library/create-variable-library-2.png" alt-text="Screenshot showing how to click new variable." lightbox="media/tutorial-variable-library/create-variable-library-2.png":::
 
-Now that the value-sets are defined, set the rules for the active value-set. For each stage, we want to use the relevant lakehouse, and we want the relevant name of the destination table.
+5.  Create the following variables.  Use the GUID of the SourceLH_Dev Lakehouse as the default value for the SourceLH string.  Create variables for each item in the table.
 
-1. In the data pipeline, go to **Destination** and set the root folder to *Tables*.
-1. To set the value of the table name to the relevant table, select *Add dynamic content*.
+|Name|Type|Default value set|
+|-----|-----|-----|
+|Source_LH|string|&lt;guid of SourceLH_Dev lakeshoue&gt;|
+|DestinationTableName|String|DevCopiedData|
 
-   :::image type="content" source="./media/tutorial-variable-library/dynamic-content.png" alt-text="Screenshot of data pipeline source connection.":::
+ :::image type="content" source="media/tutorial-variable-library/create-variable-library-3.png" alt-text="Screenshot the finished default set for the variable library." lightbox="media/tutorial-variable-library/create-variable-library-3.png":::
 
-1. From the pipeline expression builder, Go to Library variables and select DestTableName. This sets the value of the destination table to the value of DestinationTableName in the active value set.
 
-   :::image type="content" source="./media/tutorial-variable-library/table-name.png" alt-text="Screenshot of the pipeline expression builder with the variable library variable selected.":::
+### Create Alternate value sets
 
-1. Select **OK** to save the dynamic value as the Table name.
-1. Save.
 
-Notice, also, that the *artifactId* of the lakehouse is set to the value of the *SourceLH* variable in the *pipeline-content.json* file.
+1. In the **WS Variables* variable libary, on the right, click **Add value set**.
 
-:::image type="content" source="./media/tutorial-variable-library/item-id-git.png" alt-text="Screenshot of file containing a line showing that the artifact ID is set to  a dynamic variable source lakehouse.":::
+ :::image type="content" source="media/tutorial-variable-library/create-variable-library-4.png" alt-text="Screenshot showing how to add a value set." lightbox="media/tutorial-variable-library/create-variable-library-4.png":::
 
-## Step 5: Customize the variable values in Git (optional)
+2. Enter *Test VS* for the name and click **Create**.
+3. On the right, for the value of *Source_LH* change the GUID to the GUID for the *SourceLH_Test* Lakehouse.
+4. On the right, for the value *DestinationTable* change the value to *TestCopiedData
 
-To see how the variable library is [represented in Git](./variable-library-cicd.md), or to edit the variables from a Git repository, connect the workspace to a Git repository.
+ |Name|Type|Test VS|
+ |-----|-----|-----|
+ |Source_LH|string|&lt;guid of SourceLH_Test lakeshoue&gt;|
+ |DestinationTableName|String|TestCopiedData|
 
-1. [Connect the workspace to a Git repository](../git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo).
-1. From the workspace, select **Source control** and [connect](../git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo) the workspace to a Git repository.
-1. From the [Source control](../git-integration/git-get-started.md#commit-changes-to-git) pane, select **Commit** to push the workspace content to the Git repository.
 
-The git repo has a folder for each item in the workspace. The Variable library item is represented by a folder called *WS variables.VariableLibrary*. For more information about the contents of this folder, see [Variable libraries in Git](./variable-library-cicd.md).
+5. At the top, click **Add Value set**
+6. Enter *Prod VS* for the name and click **Create**.
+7. On the right, for the value of *SourceLH* change the GUID to the GUID for the *SourceLH_Prod* Lakehouse.
+8. On the right, for the value *DestinationTable* change the value to *ProdCopiedData
 
-:::image type="content" source="./media/tutorial-variable-library/git-contents.png" alt-text="Screenshot of Git folder containing the content of the workspace.":::
+ |Name|Type|TestProd VS|
+ |-----|-----|-----|
+ |Source_LH|string|&lt;guid of SourceLH_Prod lakeshoue&gt;|
+ |DestinationTableName|String|ProdCopiedData|
+ 
+ :::image type="content" source="media/tutorial-variable-library/create-variable-library-5.png" alt-text="Screenshot the finished alternate values in variable library." lightbox="media/tutorial-variable-library/create-variable-library-5.png":::
 
-Compare the ProdVS.jason and the TestVS.json files in the valueSets folder and confirm that the variableOverrides are set to the different values. You can edit these values directly in the UI or by editing this file in Git and updating it to the workspace.
+9. Click **Save** and **Agree**.
 
-```json
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/VariablesLibrary/definition/valueSets/1.0.0/schema.json",
-  "valueSetName": "Test VS",
-  "overrides": [
-    {
-      "name": "Source_LH",
-      "value": "e4b2b710-a3fd-4845a262-df815dbec6d0"
-    },
-    {
-      "name": "DestinationTableName",
-      "value": "TestCopiedData"
-    }
-  ]
-}
-```
+### Create the *Pipeline_Var* pipeline and declare variables
 
-```json
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/VariablesLibrary/definition/valueSets/1.0.0/schema.json",
-  "valueSetName": "Prod VS",
-  "overrides": [
-    {
-      "name": "Source_LH",
-      "value": "e4b2b710-a3fd-4845a262-df815dbec6d0"
-    },
-    {
-      "name": "DestinationTableName",
-      "value": "ProdCopiedData"
-    }
-  ]
-}
-```
+1. In the *Copy with Variables WS* workspace, at the top of the workspace, select **New item**
+2. On the right, under **Get data**, select **Data pipeline**.
 
-You can edit these values in the Git repository and update them to the workspace.
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-6.png" alt-text="Screenshot of creating a new data pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-6.png":::
 
-## Step 6: Create deployment pipeline
+3. Enter the name *Pipeline_Var* and click **Create**.
+4. At the top, select **Copy data** and select **Add to Canvas**.
 
-Now that the data pipeline is set up, create a deployment pipeline to deploy the data pipeline to different environments.
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-7.png" alt-text="Screenshot of adding copy data to canvas." lightbox="media/tutorial-variable-library/create-new-pipeline-7.png":::
 
-1. From the *Copy with Variables WS* workspace, [create a new deployment pipeline](../deployment-pipelines/get-started-with-deployment-pipelines.md#step-1---create-a-deployment-pipeline). The workspace is automatically assigned to the deployment pipeline. (If you create the deployment pipeline from outside workspace, you need to assign the workspace to the deployment pipeline manually).
-1. [Deploy](../deployment-pipelines/get-started-with-deployment-pipelines.md#step-5---deploy-to-an-empty-stage) the content of the workspace to the *Test* and *Production* stages of the deployment pipeline.
-1. From the Test stage, [set the active value-set](./get-started-variable-libraries.md#edit-a-value-set) in the *WS Variables* library to *Test VS*. From the *Production* stage, set the active value-set in the *WS Variables* library to *Prod VS*.
+5. Click on the canvas so that the focus is off of **Copy data**.
+6. At the bottom, select **Library variables (preview)**.
 
-   :::image type="content" source="./media/tutorial-variable-library/test-active.png" alt-text="Screenshot of the variable library with the test value set as active.":::
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-10.png" alt-text="Screenshot of adding copy data to canvas." lightbox="media/tutorial-variable-library/create-new-pipeline-10.png":::
 
-   :::image type="content" source="./media/tutorial-variable-library/prod-active.png" alt-text="Screenshot of the variable library with the prod value set as active.":::
+7. Click **New** and add the variables that are in the table below.
 
-1. Run the pipeline from different stages to see the values it has in each stage. (Close the pipeline and open it again from each stage to see the values reload). Check the input value to see the value of each variable in that stage.
+ |Name|Library|Variable Name|Type|
+ |-----|-----|-----|-----|
+ |SourceLH|WS Variables|Source_LH|string|
+ |DestTableName|WS Variables|DestinationTableName|
 
-## Considerations and limitations
+ :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-11.png" alt-text="Screenshot of adding variables to pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-11.png":::
 
- [!INCLUDE [limitations](../includes/variable-library-limitations.md)]
+8. Click **Save**
+9. Back on the canvas, select **Copy Data** so the focus is on **Copy Data**.
+10. At the bottom click on **Source**.
+11. Under **Source > Connection**, select **Use dynamic content**.
+12. On the right, click **...** and select **Library variables preview**
+13. Select **SourcLH**. It will populate the box with `@pipeline().libraryVariables.SourceLH`. Click **Ok**
 
-## Related content
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-12.png" alt-text="Screenshot of dynamic content for connection source." lightbox="media/tutorial-variable-library/create-new-pipeline-12.png":::
 
-* [CI/CD tutorial](../cicd-tutorial.md)
-* [Get started with Variable libraries](./get-started-variable-libraries.md)
+14. Under **Source**, make sure that the **Root folders** is set to **Tables**.
+15. Under **Tables**, select **Enter manually** and enter **publicholidays** for the table name.
+
+7. Under **Destination > Connection**, select *This_WH_LH**
+
+  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-9.png" alt-text="Screenshot of adding This_WH_LH as connection destination." lightbox="media/tutorial-variable-library/create-new-pipeline-9.png":::
