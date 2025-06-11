@@ -110,8 +110,8 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
     To check the settings, have your Fabric tenant administrator perform the following steps.
     
     1.  In the upper-right corner of the Fabric UI, open **Settings**, and select **Admin portal**.
-    1.  Under **Tenant settings**, in the **Developer settings** section, enable the setting labeled [**Service principals can use Fabric APIs**](../admin/service-admin-portal-developer#service-principals-can-use-fabric-apis.md).
-    1.  In the same area, in the **OneLake settings** section, enable the setting labeled [**Users can access data stored in OneLake with apps external to Fabric**](../admin/service-admin-portal-onelake#users-can-access-data-stored-in-onelake-with-apps-external-to-fabric.md).
+    1.  Under **Tenant settings**, in the **Developer settings** section, enable the setting labeled [**Service principals can use Fabric APIs**](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis).
+    1.  In the same area, in the **OneLake settings** section, enable the setting labeled [**Users can access data stored in OneLake with apps external to Fabric**](../admin/service-admin-portal-onelake.md#users-can-access-data-stored-in-onelake-with-apps-external-to-fabric).
 
 1.	Back in Fabric, open your workspace and select **Manage access**, then **Add people or groups**. Grant the application used by your Snowflake external volume the permissions needed to write data to lakehouses in your workspace. We recommend granting the **Contributor** role.
 
