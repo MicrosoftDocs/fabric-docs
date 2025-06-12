@@ -52,7 +52,7 @@ Before starting this tutorial, ensure you have:
 
 ### Install Java for OpenAPI Generator
 
-OpenAPI Generator CLI requires Java as a runtime environment. You don't need to write Java code — it's only required to run the generator tool.
+OpenAPI Generator CLI requires Java as a runtime environment. You don't need to write Java code — you only need it to run the generator tool.
 
 ✅ **Minimum Java version required:** Java 8  
 ✅ **Recommended:** Use a supported Long-Term Support (LTS) version, such as Java 17 or Java 21.
@@ -122,7 +122,7 @@ For alternative installation methods, see the [OpenAPI Generator installation do
 
 ## Step 2: Verify your Python virtual environment is active
 
-After creating your virtual environment, it's crucial to ensure you're using the correct Python interpreter. This keeps your project dependencies isolated and properly managed.
+After creating your virtual environment, it's crucial to ensure you're using the correct Python interpreter. This approach keeps your project dependencies isolated and properly managed.
 
 ### Command-line verification
 
@@ -154,7 +154,7 @@ Expected output should point to your virtual environment:
 ```
 
 > [!IMPORTANT]
->If the output points to a different location (such as your system-wide Python installation), your virtual environment isn't activated correctly. Revisit the activation step above and ensure you see (.venv) in your terminal prompt.
+>If the output points to a different location (such as your system-wide Python installation), your virtual environment isn't activated correctly. Revisit [the activation step](#step-2-verify-your-python-virtual-environment-is-active) and ensure your terminal prompt displays (.venv).
 
 ### IDE configuration (optional)
 
@@ -182,13 +182,13 @@ Most modern Integrated Development Environments (IDEs) automatically detect Pyth
 ### Troubleshooting your virtual environment
 
 > [!TIP]
-> If your virtual environment isn't detected automatically by your IDE or the interpreter path doesn't match your virtual environment:
-> - Ensure you've opened your IDE from the correct project directory.
+> If your IDE doesn't automatically detect your virtual environment, or if the interpreter path doesn't match your virtual environment:
+> - Ensure you open your IDE from the correct project directory.
 > - Restart your IDE and try selecting the interpreter again.
 > - Confirm your virtual environment is activated in your terminal.
 
 > [!IMPORTANT]
->Always ensure your virtual environment is activated before installing dependencies or running your application. The (.venv) prefix in your terminal confirms the activation status. If you encounter import errors or missing packages, verify that you're using the correct Python interpreter by running the verification commands above.
+>Always ensure your virtual environment is activated before installing dependencies or running your application. The (.venv) prefix in your terminal confirms the activation status. If you encounter import errors or missing packages, verify that you're using the correct Python interpreter by running the previously mentioned verification commands.
 
 ## Step 3: Generate the FastAPI project from OpenAPI specification
 
@@ -217,7 +217,7 @@ This command instructs the OpenAPI Generator CLI to perform the following action
 >`[InputSpecPath]`: `../Backend/src/Contracts/FabricAPI/Workload/swagger.json`
 
 > [!NOTE]
-> **Choosing a Generator (`-g` parameter):** The value `python-fastapi` is used in this tutorial as an example. OpenAPI Generator supports numerous server-side code generators for various languages and frameworks. You can replace `python-fastapi` with your desired generator. For a comprehensive list refer to the [OpenAPI Server Generators documentation](https://openapi-generator.tech/docs/generators#server-generators).
+> **Choosing a Generator (`-g` parameter):** The value `python-fastapi` is used in this tutorial as an example. OpenAPI Generator supports numerous server-side code generators for various languages and frameworks. You can replace `python-fastapi` with your desired generator. For a comprehensive list, refer to the [OpenAPI Server Generators documentation](https://openapi-generator.tech/docs/generators#server-generators).
 
 
 ### 2. Install the required dependencies:
@@ -367,7 +367,7 @@ Before running your FastAPI application, you need to ensure the port configurati
 
 ### Understanding the port configuration
 
-When developing a Microsoft Fabric workload, the dev gateway routes API requests to your backend. This requires:
+When developing a Microsoft Fabric workload, the dev gateway routes API requests to your backend. This configuration requires:
 
 - **Your backend must run on a specific port** (default: 5000)
 - **This port must match the `WorkloadEndpointURL` in your workload configuration**
@@ -434,7 +434,7 @@ python -m uvicorn fabric_api.main:app --host 0.0.0.0 --port 5000
 > **Why port `5000`?**
 > This port is often used as a default in Microsoft Fabric workload development samples. If you need to use a different port:
 > 1.  Change the `--port` value in your `uvicorn` command (for example, `--port 5001`).
-> 2.  Update the `WorkloadEndpointURL` in your `workload-dev-mode.json` file to match this new port (for example, `"http://localhost:5001"`).
+> 2.  To match this new port, update the `WorkloadEndpointURL` in your `workload-dev-mode.json` file (for example, `"http://localhost:5001"`).
 > 3.  Ensure your chosen port is not already in use by another application on your system.
 
 
@@ -525,7 +525,7 @@ POST /workspaces/{workspaceId}/items/{itemType}/{itemId}
 
 #### 5. Click the **Execute** button to send the request.
 
-You should see output in your server console similar to the printed messages below:
+Your server console displays output similar to the following messages:
 
 ```bash
 === CREATE ITEM CALLED ===
@@ -538,7 +538,7 @@ Creation Payload: {'key1': 'value1', 'key2': 'value2', 'nested': {'data': 'examp
 ===========================
 ```
 
-You'll also see the response details directly in the Swagger UI interface.
+You also see the response details directly in the Swagger UI interface.
 
 > [!TIP]
 > Using Swagger UI is often easier and faster during development, as it provides a user-friendly interface for testing API endpoints without manually crafting curl commands.
@@ -549,7 +549,7 @@ FastAPI automatically generates interactive API documentation:
 
 1. Open your browser and navigate to `http://localhost:5000/docs`
 2. You now see a Swagger UI interface where you can explore and test all endpoints
-3. Click on the "ItemLifecycle" section to see the create, get, update, and delete endpoints
+3. To see the create, get, update, and delete endpoints, click the "ItemLifecycle" section
 
 The following image shows an example of the Swagger UI interface with the Fabric API endpoints:
 
@@ -557,7 +557,7 @@ The following image shows an example of the Swagger UI interface with the Fabric
 
 ## Step 9: Implement more advanced functionality
 
-The previous steps provided a basic example of how to implement the ItemLifecycle API using Python with FastAPI. Remember, this was a foundational example intended to demonstrate the core concepts. For a robust, production-quality backend, you typically implement more functionality, such as:
+The previous steps provided a basic example of how to implement the ItemLifecycle API using Python with FastAPI. Remember, this tutorial was a foundational example intended to demonstrate the core concepts. For a robust, production-quality backend, you typically implement more functionality, such as:
 
 ### 1. **Add service layer**: Create service classes to handle business logic, database operations, etc.
 
@@ -626,8 +626,8 @@ You now successfully set up a Microsoft Fabric Workload API backend using Python
 - Uses the OpenAPI Generator to create a FastAPI project
 - Implements the necessary controllers for handling Fabric API requests
 
-This was a basic example demonstrating how to implement an API for ItemLifecycle using Python.
-Remember, additional enhancements and considerations, such as those outlined in [Step 9: Implement more advanced functionality](#step-9-implement-more-advanced-functionality), are necessary to build a quality, robust, and secure backend suitable for a production environment.
+This tutorial was a basic example demonstrating how to implement an API for ItemLifecycle using Python.
+Remember, more enhancements and considerations, such as those outlined in [Step 9: Implement more advanced functionality](#step-9-implement-more-advanced-functionality), are necessary to build a quality, robust, and secure backend suitable for a production environment.
 
 A complete integration with Microsoft Fabric requires implementing proper authentication handling, persistent storage, comprehensive error handling, and custom business logic specific to your workload.
 
