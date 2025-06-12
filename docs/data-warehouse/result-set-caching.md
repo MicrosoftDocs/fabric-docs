@@ -99,7 +99,7 @@ ORDER BY submit_time DESC;
 There are various reasons the system can determine that a query isn't eligible for result set cache. Some of the reasons could include:
  
  - The cache no longer exists or was invalidated by a data change, disqualifying it for reuse.
- - Query isn't deterministic, and isn't eligble for cache creation.
+ - Query isn't deterministic, and isn't eligible for cache creation.
  - Query isn't a `SELECT` statement.
 
 ## Related content
