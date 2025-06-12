@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure Da
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scoriani
-ms.date: 03/31/2025
+ms.date: 06/11/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -20,6 +20,7 @@ For troubleshooting, see:
 
 ## Server level limitations
 
+- Fabric Mirroring is supported for PostgreSQL versions 14, 15, 16, and 17.
 - Servers in the Burstable Compute Tier are currently not supported. 
 - Servers with High Availability enabled or with established Read Replicas are currently not supported.
 

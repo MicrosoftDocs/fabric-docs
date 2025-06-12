@@ -1,12 +1,12 @@
 ---
 title: Tenant settings index
 description: Index to Fabric tenant settings.
-author: msmimart
-ms.author: mimart
+author: paulinbar
+ms.author: painbar
 ms.topic: reference
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 06/04/2025
+ms.date: 06/12/2025
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -187,7 +187,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |------|-------|
 |[Embed content in apps](/power-bi/developer/embedded/embedded-analytics-power-bi)|Users in the organization can embed Power BI dashboards and reports in Web applications using "Embed for your customers" method.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2141877)|
 |[Service principals can create workspaces, connections, and deployment pipelines](./service-admin-portal-developer.md#service-principals-can-create-workspaces-connections-and-deployment-pipelines)|This setting allows service principals to create workspaces, connections, and deployment pipelines. To allow service principals to call the rest of Fabric public APIs, turn on the setting titled "Service principals can call Fabric public APIs".  [Learn More](https://go.microsoft.com/fwlink/?linkid=2301112)|
-|[Service principals can call Fabric public APIs](./service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis)|This setting allows service principals with the appropriate  [roles and item permissions](https://go.microsoft.com/fwlink/?linkid=2301209) to call Fabric public APIs. To allow service principals to create workspaces, connections, and deployment pipelines turn on the setting titled "Service principals can create workspaces, connections, and deployment pipelines".  [Learn More](https://go.microsoft.com/fwlink/?linkid=2301309)|
+|[Service principals can call Fabric public APIs](./service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis)|This setting allows service principals with the appropriate  [roles and item permissions](https://go.microsoft.com/fwlink/?linkid=2301209) to call Fabric public APIs. To allow service principals to create workspaces, connections, and deployment pipelines turn on the setting titled  "Service principals can create workspaces, connections, and deployment pipelines".  [Learn More](https://go.microsoft.com/fwlink/?linkid=2301309)|
 |[Allow service principals to create and use profiles](/power-bi/developer/embedded/embed-multi-tenancy)|Allow service principals in your organization to create and use profiles.|
 |[Block ResourceKey Authentication](service-admin-portal-developer.md#block-resourcekey-authentication)|For extra security, block using resource key based authentication. This means users not allowed to use streaming semantic models API using resource key.|
 
@@ -256,7 +256,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 
 | Setting name | Description |
 |------|-------|
-|[Users can see Microsoft Fabric metadata in Microsoft 365](admin-share-power-bi-metadata-microsoft-365-services.md#how-to-turn-sharing-with-microsoft-365-services-on-and-off)|Turn on this setting to store and display certain Microsoft Fabric metadata in Microsoft 365 services. Users might see Microsoft Fabric metadata (including content titles and types or open and sharing history) in Microsoft 365 services like search results and recommended content lists. Metadata from Microsoft Fabric semantic models will not be displayed.<br><br>Users can browse or get recommendations only for content they have access to.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2202379)<br><br>This setting is automatically enabled only if your Microsoft Fabric and Microsoft 365 tenants are in the same geographical region. You may disable this setting. [Where is my Microsoft Fabric tenant located?](https://go.microsoft.com/fwlink/?linkid=2237979)|
+|[Users can see Microsoft Fabric metadata in Microsoft 365](./admin-share-power-bi-metadata-microsoft-365-services.md#how-to-turn-sharing-with-microsoft-365-services-on-and-off)|Turn on this setting to store and display certain Microsoft Fabric metadata in Microsoft 365 services. Users might see Microsoft Fabric metadata (including content titles and types or open and sharing history) in Microsoft 365 services like search results and recommended content lists. Metadata from Microsoft Fabric semantic models will not be displayed.<br><br>Users can browse or get recommendations only for content they have access to.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2202379)<br><br>This setting is automatically enabled only if your Microsoft Fabric and Microsoft 365 tenants are in the same geographical region. You may disable this setting. [Where is my Microsoft Fabric tenant located?](https://go.microsoft.com/fwlink/?linkid=2237979)|
 
 ## [Insights settings](service-admin-portal-insights.md)
 
