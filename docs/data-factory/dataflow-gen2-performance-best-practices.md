@@ -1,21 +1,33 @@
 ---
-title: "Best practices for getting the best performance with Dataflows Gen2 in Fabric Data Factory"
-description: "This article provides best practices for optimizing the performance of Dataflows Gen2 in Fabric Data Factory. By following these guidelines, you can enhance the efficiency and speed of your data integration processes."
+title: "Best practices for getting the best performance with Dataflow Gen2 in Fabric Data Factory"
+description: "This article provides best practices for optimizing the performance of Dataflow Gen2 in Fabric Data Factory. By following these guidelines, you can enhance the efficiency and speed of your data integration processes."
 author: luitwieler
 ms.author: jeluitwi
 ms.reviewer: dougklo
 ms.topic: concept-article
 ms.date: 06/06/2025
-ms.custom: dataflows
+ms.custom: dataflow
 ---
 
-# Best practices for getting the best performance with Dataflows Gen2
+# Best practices for getting the best performance with Dataflow Gen2
 
-This article provides best practices for optimizing the performance of Dataflows Gen2 in Fabric Data Factory. By following these guidelines, you can enhance the efficiency and speed of your data integration processes.
+This article provides best practices for optimizing the performance of Dataflow Gen2 in Fabric Data Factory. By following these guidelines, you can enhance the efficiency and speed of your data integration processes.
+
+## What are the key areas to focus on for performance optimization? 
+
+Within the dataflow end to end experience, there are several key areas to focus on for performance optimization. These include the datasource, the dataflow 
+
+
+The dataflow Gen2 performance optimization can be broadly categorized into a couple of key areas:
+
+- Query optimization: This involves designing your queries to minimize processing time and resource usage.
+- Leveraging Dataflow Gen2 features: This includes using features like staging, Fast Copy, and incremental refresh to improve performance.
+
+
 
 ## Query optimization
 
-To achieve optimal performance in Dataflows Gen2, it's essential to design your queries with efficiency in mind. Here are some key practices
+To achieve optimal performance in Dataflow Gen2, it's essential to design your queries with efficiency in mind. In this 
 
 ### Filter early and often
 
@@ -23,7 +35,7 @@ Apply filters as early as possible in your dataflow to reduce the amount of data
 
 ### Take advantage of pushdown and folding capabilities
 
-When working with data sources that support query folding, such as SQL databases, leverage the pushdown capabilities to filter and transform data at the source. This reduces the amount of data transferred over the network and minimizes processing time in Dataflows Gen2. For instance, if you're using a SQL database, keep an eye on the query folding indicators in the dataflow designer to ensure that your transformations are being pushed down to the source. If you see that a transformation is not folding, consider splitting the query into two and using a staging Lakehouse or Warehouse to perform the transformation before the final output.
+When working with data sources that support query folding, such as SQL databases, leverage the pushdown capabilities to filter and transform data at the source. This reduces the amount of data transferred over the network and minimizes processing time in Dataflow Gen2. For instance, if you're using a SQL database, keep an eye on the query folding indicators in the dataflow designer to ensure that your transformations are being pushed down to the source. If you see that a transformation is not folding, consider splitting the query into two and using a staging Lakehouse or Warehouse to perform the transformation before the final output.
 
 ### Use parameterization to optimize design-time experience
 
@@ -35,11 +47,11 @@ Minimize the number of transformations in your dataflow. Each transformation add
 
 ## Dataflow optimization
 
-To optimize the performance of your dataflows, consider the following best practices.
+To optimize the performance of your dataflow, consider the following best practices.
 
 ### Staging data
 
-Staging is a powerful technique that can significantly improve performance, especially for large datasets or complex transformations. By staging data you can leverage compute resources of the staging Lakehouse and staging warehouse to perform transformations more efficiently. This approach allows you to break down complex dataflows into manageable steps, reducing the overall processing time. However, be mindful that staging introduces additional steps and storage operations, which can increase overall refresh time and costs. Use staging judiciously.
+Staging is a powerful technique that can significantly improve performance, especially for large datasets or complex transformations. By staging data you can leverage compute resources of the staging Lakehouse and staging warehouse to perform transformations more efficiently. This approach allows you to break down complex dataflow into manageable steps, reducing the overall processing time. However, be mindful that staging introduces additional steps and storage operations, which can increase overall refresh time and costs. Use staging judiciously.
 
 ### Fast Copy
 
