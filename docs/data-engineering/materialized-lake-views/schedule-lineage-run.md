@@ -13,6 +13,9 @@ ms.date: 06/06/2025
 
 Scheduling the materialized lake views (MLV) run lets users set how often the materialized lake views should be refreshed based on business needs and lineage execution timing.
 
+> [!NOTE]
+> This feature is currently available in the UK South region and will be rolled out to other regions in the coming weeks.
+
 ## Determining the schedule
 
 The schedule to run the MLV depends on various factors, such as:

@@ -15,6 +15,9 @@ Fabric materialized lake views (MLV) are an efficient way to manage and query la
 
 This document delves into the various aspects of managing a Fabric materialized lake views, including understanding the lineage, scheduling the MLV runs, exploring the history of materialized lake views, and detailing operational run specifics.
 
+> [!NOTE]
+> This feature is currently available in the UK South region and will be rolled out to other regions in the coming weeks.
+
 ## View lineage
 
 A lineage is a fundamental structure for managing dependencies and scheduling tasks. In the context of materialized lake views (MLV), the lineage represents the sequence of MLV that needs to be executed to refresh the MLV once new data is available.

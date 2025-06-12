@@ -13,6 +13,9 @@ ms.date: 06/06/2025
 
 Operational run details encompass the various parameters and metrics tracked during the execution of a materialized lake view run in a lakehouse.
 
+> [!NOTE]
+> This feature is currently available in the UK South region and will be rolled out to other regions in the coming weeks.
+
 ## Activity panel
 
 The activity panel is a section below the lineage view, where user can get the information of the following:

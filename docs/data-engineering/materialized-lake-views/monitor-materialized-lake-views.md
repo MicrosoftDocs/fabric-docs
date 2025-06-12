@@ -13,6 +13,9 @@ ms.date: 06/06/2025
 
 The Monitor hub serves as a centralized portal to browse Materialized lake view (MLV) runs in your Lakehouse. You can view status of the Materialized lake view runs. You can also search, and filter the runs based on different criteria. Additionally, you can cancel your in-progress run and drill down to view more run execution details of any Materialized lake view run.
 
+> [!NOTE]
+> This feature is currently available in the UK South region and will be rolled out to other regions in the coming weeks.
+
 ## Access the Monitor pane
 
 You can access the Monitor hub to view various Materialized lake view runs in your workspace by selecting Monitor from the navigation bar.

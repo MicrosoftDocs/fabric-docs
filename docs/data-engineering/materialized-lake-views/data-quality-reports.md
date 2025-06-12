@@ -13,6 +13,9 @@ ms.date: 06/10/2025
 
 Materialized lake views (MLV) provides the option to view your data quality metrics at a snapshot through embedded data quality Power BI reports. The data quality report seamlessly integrates with the existing data model in MLV and presents a visual representation of your data quality metrics to help you uncover data trends and identify outliers in your data.
 
+> [!NOTE]
+> This feature is currently available in the UK South region and will be rolled out to other regions in the coming weeks.
+
 ## Create and access the report
 
 To create or access the report, navigate to your Managed materialized lake views page and select the **Data quality report**.

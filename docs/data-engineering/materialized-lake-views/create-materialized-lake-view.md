@@ -13,6 +13,9 @@ ms.date: 06/06/2025
 
 In this article, you learn how to create materialized lake views in lakehouse in Microsoft Fabric. For more information about materialized lake views, see [overview of materialized lake views](./overview-materialized-lake-view.md).
 
+> [!NOTE]
+> This feature is currently available in the UK South region and will be rolled out to other regions in the coming weeks.
+
 ## Prerequisites
 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
