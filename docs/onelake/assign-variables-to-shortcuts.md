@@ -19,7 +19,7 @@ When deploying solutions across environments, you may want to configure properti
 
 You can use workspace variables within individual shortcut properties. This allows you to have unique values for properties like connection ID or target location for each environment. Workspace variables and variable values sets can be defined within a variable library. See: [Learn how to use Variable libraries ](../cicd/variable-library/variable-library-overview.md). 
 
-Once a variable is defined within a variable library, it can be assigned to shortcut properties. Variable assignments can be done through the shortcuts management UX or through the shortcuts Rest API.
+Once a variable is defined within a variable library, it can be assigned to a shortcut property using the manage shortcuts UX.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
@@ -39,31 +39,9 @@ Once a variable is defined within a variable library, it can be assigned to shor
 
     :::image type="content" source="media\assign-variables-to-shortcuts\variable-properties.png" alt-text="Screenshot showing managed shortcuts panel with variable assigned to shortcut connection including both variable name and value.":::
 
-  > [!NOTE]
+> [!NOTE]
 > Only variables of type string are supported. Selecting a variable of any other type  results in an error.
+
+> [!NOTE]
+> Assignment of variable through the shortcuts rest API is not currently supported.
  
-
-## Assign a variable through the shortcut rest API
-
-Variable paths can also be referenced within the payload of a create or update shortcut API request. These variables can only be used on the target properties of the shortcut payload. The variable must also be of string type only. 
-The variable path uses the following format: "$(/**/{VariableLibary}/{VariableName})" where {VariableLibrary} is the name of the variable library within the workspace and {VariableName} is the name of the variable within the library. The following sample request payload shows how to assign a variable to the Target Connection property.
-
-```json
-{
-  "path": "Tables/dbo ",
-  "name": "DIM_Customer",
-  "target": {
-    "type": "AmazonS3",
-    "amazonS3": {
-      "location": "https://s3.amazonaws.com",
-      "subpath": "/testnm1/Northwind/DIM_Customer",
-      "connectionId": "$(/**/Variable_2/MyConnectionID)"
-    }
-  }
-}
-```
-
-See: [OneLake Shortcuts - Create Shortcut - REST API (Core)](/rest/api/fabric/core/onelake-shortcuts/create-shortcut?tabs=HTTP) for more information
-
-  > [!NOTE]
-> Only **User** identities are supported on the OneLake shortcuts APIs when using workspace variables.  **Service Principals** and **Managed Identities** are not currently supported.
