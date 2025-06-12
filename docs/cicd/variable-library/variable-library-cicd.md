@@ -33,7 +33,7 @@ The following is important information to remember:
 :::image type="content" source="./media/variable-library-cicd/set-variable-library-2.png" alt-text="Screenshot of compare in deployment pipelines showing active set." lightbox="media/variable-library-cicd/set-variable-library-2.png":::
 :::
 
-- While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the deployment pipeline. The consumer item in its workspace (for example, a pipeline) automatically receives the correct value from the active value set.
+- While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the variable library. The consumer item in its workspace (for example, a pipeline) automatically receives the correct value from the active value set.
 
 The following operations to variables or value sets in one stage of a deployment pipeline, cause the variable library to be reflected as *different* [compared](../deployment-pipelines/compare-pipeline-content.md) to the same item in a different stage.
 
