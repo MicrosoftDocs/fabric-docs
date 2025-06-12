@@ -42,7 +42,7 @@ Before starting this tutorial, ensure you have:
 
 ### Required Software
 - **Python 3.8+** - [Download Python](https://www.python.org/downloads/)
-- **Java** - Required for OpenAPI Generator - [Install the Microsoft Build of OpenJDK](https://learn.microsoft.com/java/openjdk/install)
+- **Java** - Required for OpenAPI Generator - [Install the Microsoft Build of OpenJDK](/java/openjdk/install.md)
 - **Node.js** - Required to install OpenAPI Generator CLI via npm - [Download Node.js](https://nodejs.org/) (Optional)
 - **Git** - To clone the sample repository - [Download Git](https://git-scm.com/downloads)
 - **Code editor** - Visual Studio Code, PyCharm, or your preferred IDE
@@ -61,7 +61,7 @@ OpenAPI Generator CLI requires Java as a runtime environment. You don't need to 
 
 1. **Install the Microsoft Build of OpenJDK** (recommended)
    
-   Follow the installation instructions for your operating system in the [Microsoft Build of OpenJDK documentation](https://learn.microsoft.com/java/openjdk/install).
+   Follow the installation instructions for your operating system in the [Microsoft Build of OpenJDK documentation](/java/openjdk/install.md).
 
 2. **Verify your installation**
    
