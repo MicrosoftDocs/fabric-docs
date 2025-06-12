@@ -265,9 +265,6 @@ PythonBackend/
 - The `impl` directory is where you'll implement your controller logic
 - The `main.py` file sets up the FastAPI application
 
-> [!NOTE]
-> The generator creates stub files that need to be implemented with your business logic.
-
 ## Step 5: Implement the ItemLifecycle controller
 
 Create a controller implementation that handles Fabric API requests. The controller inherits from the generated base class:
@@ -378,7 +375,7 @@ When developing a Microsoft Fabric workload, the dev gateway routes API requests
 
 ### Configure the workload endpoint (for Fabric integration)
 
-If you're planning to integrate with the full Microsoft Fabric development environment, you'll need to configure the workload endpoint URL. This configuration tells the dev gateway where to forward API requests.
+When you integrate with the full Microsoft Fabric development environment, you'll need to configure the workload endpoint URL. This configuration tells the dev gateway where to forward API requests.
 
 #### 1. Locate or create your workload configuration file (`workload-dev-mode.json`):
 
@@ -560,7 +557,7 @@ The following image shows an example of the Swagger UI interface with the Fabric
 
 ## Step 9: Implement more advanced functionality
 
-For a complete implementation, you would typically:
+The previous steps provided a basic example of how to implement the ItemLifecycle API using Python with FastAPI. Remember, this was a foundational example intended to demonstrate the core concepts. For a robust, production-quality backend, you'll typically need to implement additional functionality, such as:
 
 ### 1. **Add service layer**: Create service classes to handle business logic, database operations, etc.
 
@@ -612,7 +609,15 @@ async def item_lifecycle_create_item(self, ...):
         # Server error
         raise HTTPException(status_code=500, detail="Internal server error")
 ```
-    
+
+### 4. **Additional considerations for a robust backend:**:
+
+- **Implement the remaining controllers** (Jobs API, Endpoint Resolution API)
+- **Authentication and authorization**: Secure your endpoints by validating tokens and permissions - [Backend authentication and authorization overview](back-end-authentication.md)
+- **Persistent storage**: Integrate with databases or other storage solutions for data persistence.
+- **Logging and monitoring**: Implement comprehensive logging and monitoring to track application health and performance.
+- **Testing**: Write unit and integration tests to ensure reliability and correctness.
+
 
 ## Conclusion
 
@@ -621,15 +626,10 @@ You've successfully created a Microsoft Fabric Workload API backend using Python
 - Uses the OpenAPI Generator to create a FastAPI project
 - Implements the necessary controllers for handling Fabric API requests
 
-For a complete integration with Microsoft Fabric, you'll need to implement proper authentication handling, storage service, and additional business logic specific to your workload.
+This was a basic example demonstrating how to implement an API for ItemLifecycle using Python.
+Remember, additional enhancements and considerations, such as those outlined in [Step 9: Implement more advanced functionality](#step-9-implement-more-advanced-functionality), are necessary to build a quality, robust, and secure backend suitable for a production environment.
 
-## Next steps
-
-- Implement the remaining controllers (Jobs API, Endpoint Resolution API)
-- Add proper authentication and authorization - [Backend authentication and authorization overview](back-end-authentication.md)
-- Connect to a database for persistent storage
-- Set up logging and monitoring
-- Implement unit and integration tests
+For complete integration with Microsoft Fabric, you'll need to implement proper authentication handling, persistent storage, comprehensive error handling, and additional business logic specific to your workload.
 
 ## Related content
 
