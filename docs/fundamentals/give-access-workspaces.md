@@ -1,8 +1,8 @@
 ---
 title: Give Users Access to Workspaces
 description: "Learn how to give others access to workspaces, and how to modify their access."
-author: paulinbar
-ms.author: painbar
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: 
 ms.topic: how-to
 ms.custom: 
