@@ -1,8 +1,8 @@
 ---
 title: Fabric settings
 description: Learn about Fabric settings.
-author: paulinbar
-ms.author: painbar
+author: SnehaGunda
+ms.author: sngun
 ms.topic: how-to
 ms.custom:
 ms.date: 05/11/2025
