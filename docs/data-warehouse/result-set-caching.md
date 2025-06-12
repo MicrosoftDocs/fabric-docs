@@ -1,0 +1,98 @@
+---
+title: Result set caching
+description: Learn more about result set caching, a performance optimization for the Fabric Data Warehouse and Lakehouse SQL analytics endpoint.
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: emtehran, fipopovi
+ms.topic: conceptual
+ms.date: 06/11/2025
+ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
+---
+# Result set caching (preview)
+
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
+Result set caching (preview) is a built-in performance optimization for Fabric Data Warehouse and Lakehouse SQL analytics endpoints that improves read latency. 
+
+Result set caching works by persisting the final result sets for applicable `SELECT` T-SQL queries, so that subsequent runs that "hit" cache will process just the final result set. This can bypass complex compilation and data processing of the original query and return subsequetn queries faster.
+
+Data warehousing scenarios typically involve analytical queries that process large amounts of data to produce a relatively small result. For example, a `SELECT` query that contains multiple joins and performs reads and shuffles on millions of rows of data might result in an aggregation that is only a few rows long. For workloads like reports or dashboards that tend to trigger the same analytical queries repeatedly, the same heavy computation can be triggered multiple times, even though the final result remains the same.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
+## Automatic management of cache
+
+Result set cache works transparently. Once it's enabled, the cache creation and reuse is applied opportunistically for queries. 
+
+Result set caching applies to `SELECT` (T-SQL) queries on warehouse tables, shortcuts to OneLake sources, and shortcuts to non-Azure sources. The management of cache is handled automatically, regularly evicting cache as needed. 
+
+In addition, as your data changes, result consistency is ensured by invalidating cache created earlier.
+
+## Configure result set caching
+
+Result set caching is configurable at the item level. 
+
+Once enabled, it can then be disabled at the item level or for individual queries, if needed. 
+
+During the preview, result set caching is off by default for all items.
+
+### Item-level configuration
+
+Use the [ALTER DATABASE SET](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric&preserve-view=true) T-SQL command to enable result set caching for a lakehouse or warehouse:
+
+```sql
+ALTER DATABASE <Fabric_item_name>
+SET RESULT_SET_CACHING ON;
+```
+
+The setting value can be checked in [sys.databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?view=fabric&preserve-view=true) with:
+
+
+```sql
+SELECT name, is_result_set_caching_on 
+FROM sys.databases;
+```
+
+To disable result set caching:
+
+```sql
+ALTER DATABASE <Fabric_item_name>
+SET RESULT_SET_CACHING OFF;
+```
+
+### Query-level configuration
+
+Once result set caching is enabled on an item, it can be disabled for an individual query. 
+
+This can be useful for debugging or A/B testing a query. Disable result set caching for a query by attaching this hint at the end of the `SELECT`:
+
+```sql
+OPTION ( USE HINT ('DISABLE_RESULT_SET_CACHE') );
+```
+
+## Checking result set cache usage
+
+Result set cache usage can be checked in two locations: Message Output and the [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true) system view.
+
+In the message output of a query (visible in the Fabric Query editor or [SQL Server Management Studio](https://aka.ms/ssms)), the statement "Result set cache was used" will be displayed after query execution if the query was able to leverage an existing result set cache.
+
+![User's image](media/result-set-caching/result-set-cache-was-used.png)
+
+In [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true), the column `result_cache_hit` displays a value indicating the status of usage for each query ran:
+
+- `2`: the query used result set cache (_cache hit_)
+- `1`: the query created result set cache
+- `0`: the query wasn't applicable for result set cache creation or usage
+
+### Cache invalidation
+
+There are various reasons the system can determine that a query isn't eligible for result set cache: 
+
+- The cache no longer exists or was invalidated by a data change (disqualifying it for reuse) 
+- Query isn't a SELECT statement 
+- Query isn't deterministic
+
+## Related content
+
+- [In-memory and disk caching](caching.md)
+- [Performance guidelines in Fabric Data Warehouse](guidelines-warehouse-performance.md)
