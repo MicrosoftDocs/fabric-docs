@@ -553,7 +553,7 @@ FastAPI automatically generates interactive API documentation:
 
 The following image shows an example of the Swagger UI interface with the Fabric API endpoints:
 
-:::image type="content" source="./media/fabric-workload-backend-set-up/fabric-api-swagger-ui.png" alt-text="Screenshot of Azure Deployment." lightbox="./media/extensibility-back-end/fabric-api-swagger-ui.png":::
+:::image type="content" source="./media/fabric-workload-backend-set-up/fabric-api-swagger-ui.png" alt-text="Screenshot of Azure Deployment." lightbox="./media/fabric-workload-backend-set-up/fabric-api-swagger-ui.png":::
 
 ## Step 9: Implement more advanced functionality
 
