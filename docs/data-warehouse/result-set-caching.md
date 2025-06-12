@@ -86,7 +86,7 @@ In [queryinsights.exec_requests_history](/sql/relational-databases/system-views/
 
 ### Cache invalidation
 
-There are various reasons the system can determine that a query isn't eligible for result set cache: 
+There are various reasons the system can determine that a query isn't eligible for result set cache, a few being: 
 
 - The cache no longer exists or was invalidated by a data change (disqualifying it for reuse) 
 - Query isn't a SELECT statement 
