@@ -1,12 +1,12 @@
 ---
 title: Using Microsoft Defender for Cloud Apps controls in Power BI
 description: Learn about how you can use Microsoft Defender for Cloud Apps with Power BI to protect your reports, data, and services from unintended leaks or breaches.
-author: paulinbar
+author: msmimart
 ms.reviewer: ''
 
 ms.topic: how-to
 ms.date: 04/01/2024
-ms.author: painbar
+ms.author: mimart
 LocalizationGroup: Data from files
 ---
 # Using Microsoft Defender for Cloud Apps controls in Power BI

@@ -2,8 +2,8 @@
 title: Get data overview
 description: Learn about available options to get data in an Eventhouse in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: concept-article
 ms.date: 03/31/2025
 # customer intent: As a customer, I want to learn about the different sources I can use to get data into an Eventhouse in Real-Time Intelligence.

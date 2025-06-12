@@ -1,12 +1,12 @@
 ---
 title: Fabric region availability
 description: Learn which regions Fabric is available in.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.custom:
   - references_regions
 ms.topic: overview
-ms.date: 05/23/2025
+ms.date: 06/04/2025
 ---
 
 # Fabric region availability
@@ -36,7 +36,7 @@ This table lists regions where all Fabric workloads are available.
 | Canada East<sup>3</sup>        | France Central               |             |                    | Central India          |
 | Central US                     | Germany West Central         |             |                    | East Asia              |
 | East US                        | Italy North <sup>3</sup>     |             |                    | Japan East<sup>3</sup> |
-| East US 2                      | Norway East                  |             |                    | Japan West             |
+| East US 2                      | Norway East                  |             |                    | Japan West<sup>3</sup> |
 | North Central US               | Poland Central <sup>3</sup>  |             |                    | Southeast Asia         |
 | South Central US<sup>2,4</sup> | Sweden Central               |             |                    | South India            |
 | West US                        | Switzerland North            |             |                    | Korea Central          |
@@ -57,9 +57,11 @@ This table lists regions where the only available Fabric workload is Power BI.
 | Americas       | Europe        | Middle East    | Africa            | Asia Pacific |
 |:---------------|:--------------|:---------------|:------------------|:-------------|
 | Mexico Central | France South  | Israel Central | South Africa West | India West   |
-|                | Germany North | Qatar Central  |                   | Japan West   |
-|                | Norway West   | UAE Central    |                   | Korea South  |
+|                | Germany North | Qatar Central  |                   | Korea South  |
+|                | Norway West   | UAE Central    |                   |              |
 |                | Spain Central |                |                   |              |
+
+** Copilot is not supported for regions listed in this section. 
 
 ### Public preview
 

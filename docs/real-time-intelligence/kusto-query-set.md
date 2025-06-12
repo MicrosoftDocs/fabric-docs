@@ -2,8 +2,8 @@
 title: Query data in a KQL queryset
 description: Learn how to use the KQL queryset to query the data in your KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 05/19/2025

@@ -5,7 +5,7 @@ author: qixwang
 ms.author: qixwang
 ms.reviewer: sngun
 ms.topic: how-to
-ms.date: 09/09/2024
+ms.date: 06/03/2025
 ms.custom: FY25Q1-Linter
 # Customer Intent: As a data engineer, I want to run T-SQL code Fabric notebooks, manage queries, and perform cross datawarehouse queries.
 ---
@@ -15,8 +15,6 @@ ms.custom: FY25Q1-Linter
 The T-SQL notebook feature in Microsoft Fabric lets you write and run T-SQL code within a notebook. You can use T-SQL notebooks to manage complex queries and write better markdown documentation. It also allows direct execution of T-SQL on connected warehouse or SQL analytics endpoint. By adding a Data Warehouse or SQL analytics endpoint to a notebook, T-SQL developers can run queries directly on the connected endpoint. BI analysts can also perform cross-database queries to gather insights from multiple warehouses and SQL analytics endpoints.
 
 Most of the existing notebook functionalities are available for T-SQL notebooks. These include charting query results, coauthoring notebooks, scheduling regular executions, and triggering execution within Data Integration pipelines.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this article, you learn how to:
 
@@ -153,7 +151,7 @@ For each query, the following details are provided:
 
 Historical queries can take up to 15 minutes to appear in list depending on the concurrent workload being executed.
 
-## Public preview limitations
+## Current limitations
 
 - Parameter cell isn't yet supported in T-SQL notebook. The parameter passed from pipeline or scheduler won't be able to be used in T-SQL notebook.
 - The monitor URL inside the pipeline execution isn't yet supported in the T-SQL notebook.

@@ -27,7 +27,7 @@ items:
     href: task-flow-work-with.md
 - name: Decision guides
   items:
-  - name: Decision guide - copy activity, dataflow, or Spark
+  - name: Decision guide - copy activity, copy job, dataflow, or Spark
     href: decision-guide-pipeline-dataflow-spark.md
   - name: Decision guide - choose a data store
     href: decision-guide-data-store.md
@@ -209,6 +209,30 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Service principal based public API calls fail with variables in shortcut payloads
+      href: ../known-issues/known-issue-1169-service-principal-public-api-calls-fail-variables-shortcut.md
+    - name: Text Analytics AI Functions fail
+      href: ../known-issues/known-issue-1168-text-analytics-ai-functions-fail.md
+    - name: Power BI reports don't show in Viva Goals
+      href: ../known-issues/known-issue-1166-power-bi-reports-not-show-viva-goals.md
+    - name: Digital twin builder item creation fails on duplicate names
+      href: ../known-issues/known-issue-1165-digital-twin-builder-item-creation-fails-duplicate-names.md
+    - name: Refreshes have slow performance and timeouts for Dataflows Gen2 with CI/CD
+      href: ../known-issues/known-issue-1167-refreshes-slow-performance-timeouts-dataflows-gen-2.md
+    - name: Inaccurate usage data displayed for digital twin builder usage in Capacity Metrics App
+      href: ../known-issues/known-issue-1164-inaccurate-data-digital-twin-builder-usage-capacity-metrics-app.md
+    - name: Service report is missing table tooltips in the field list in edit mode
+      href: ../known-issues/known-issue-1163-service-report-missing-table-tooltips-field-list-edit-mode.md
+    - name: Deleting a classic item or creating a classic item when you use a deleted item's name fails
+      href: ../known-issues/known-issue-1162-deleting-creating-classic-item-use-deleted-items-name-fails.md
+    - name: Pipeline notebook activity monitoring page is empty for T-SQL notebook
+      href: ../known-issues/known-issue-1160-pipeline-monitoring-page-empty-t-sql-notebook.md
+    - name: New query replicas in Azure Analysis Services fail to start
+      href: ../known-issues/known-issue-1158-new-query-replicas-azure-analysis-services-fail-start.md
+    - name: Data warehouse doesn't load with version mismatch error
+      href: ../known-issues/known-issue-1156-data-warehouse-not-load-version-mismatch-error.md
+    - name: Publish of eventstream with streaming connector source fails
+      href: ../known-issues/known-issue-1155-publish-eventstream-streaming-connector-source-fails.md
     - name: Next button in connection authoring is greyed out
       href: ../known-issues/known-issue-1149-next-button-connection-authoring-greyed-out.md
     - name: Disabling the Workspace encryption setting doesn't work
