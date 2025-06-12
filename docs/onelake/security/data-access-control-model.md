@@ -329,6 +329,10 @@ RLS combines with an OR between SQL statements. Like CLS, any RLS rules unioned 
 
 * Semantic models don't support shortcuts pointing to other lakehouses that don't have OneLake security enabled.
 
+* To query data from a Spark notebook using Spark SQL, the user must have at least Viewer access in the workspace they are querying.
+
+* Spark notebooks require that the environment be 3.5 or higher and using Fabric runtim 1.3.
+
 * The following table provides the limitations of OneLake data access roles.
 
   | Scenario | Limit |

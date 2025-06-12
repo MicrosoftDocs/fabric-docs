@@ -19,6 +19,11 @@ Table-level and folder-level security, or object level security (OLS), is a feat
 ## Prerequisites
 
 * A Lakehouse in OneLake with OneLake data access roles turned on. For more information, see [Get started with OneLake data access roles](get-started-data-access-roles.md).
+* A Lakehouse with [schemas enabled](../../data-engineering/lakehouse-schemas.md).
+* Switch the SQL Analytics Endpoint on the lakehouse to "User's identity" mode through the **Security** tab.
+* For creating semantic models, use the steps to create a [DirectLake model](../../fundamentals/direct-lake-power-bi-desktop.md).
+* For a full list of limitations, see the [known limitations section.](./data-access-control-model.md#onelake-security-limitations)
+
 
 ## Define security rules
 
