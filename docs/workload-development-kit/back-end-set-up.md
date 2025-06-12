@@ -610,7 +610,7 @@ async def item_lifecycle_create_item(self, ...):
         raise HTTPException(status_code=500, detail="Internal server error")
 ```
 
-### 4. **Additional considerations for a robust backend:**:
+### 4. **Additional considerations for a robust backend**:
 
 - **Implement the remaining controllers** (Jobs API, Endpoint Resolution API)
 - **Authentication and authorization**: Secure your endpoints by validating tokens and permissions - [Backend authentication and authorization overview](back-end-authentication.md)
