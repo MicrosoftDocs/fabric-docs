@@ -1,19 +1,19 @@
 ---
-title: Differences between Real-Time Intelligence and comparable Azure solutions
-description: Learn about the differences between Real-Time Intelligence and comparable Azure Solutions.
+title: Differences Between Real-Time Intelligence and Comparable Azure Solutions
+description: Discover the differences between Real-Time Intelligence and Azure solutions. Learn which streaming analytics platform best fits your needs.
 ms.reviewer: tzgitlin
 ms.author: shsagir
 author: shsagir
 ms.topic: overview
 ms.custom:
-ms.date: 06/05/2025
+ms.date: 06/12/2025
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Overview
 ---
 # What is the difference between Real-Time Intelligence and comparable Azure solutions?
 
-As organizations progress in their digital transformation journey, they encounter more data sources. These sources generate time-sensitive, complex data points, events, and signals. Data can come from sources like sensor data from physical assets such as plants, vehicles, towers, and IoT Edge devices; change data capture (CDC) streams from databases that power customer-facing web and mobile applications; and logs from on-premises and cloud infrastructure and applications. These data streams help organizations close the digital feedback loop, learn more about how customers use their physical and digital assets, and keep improving the value they provide to stay competitive.
+Real-Time Intelligence and comparable Azure solutions help organizations process time-sensitive data These sources generate time-sensitive, complex data points, events, and signals. Data can come from sources like sensor data from physical assets such as plants, vehicles, towers, and IoT Edge devices; change data capture (CDC) streams from databases that power customer-facing web and mobile applications; and logs from on-premises and cloud infrastructure and applications. These data streams help organizations close the digital feedback loop, learn more about how customers use their physical and digital assets, and keep improving the value they provide to stay competitive.
 
 To get this value, organizations build real-time data streaming architectures that use both cloud and on-premises data services for data capture, transport, and transformation. These architectures often use products like Azure Event Hubs, Azure Event Grid, Apache Kafka, Amazon Kinesis, IBM Message Queues, and Google Pub/Sub. As data arrives in the cloud, it goes through stages of processing and transformation—hot, warm, and cold paths—before landing in data stores like Azure Data Explorer, Azure Synapse Analytics, and Azure Data Lake Store Gen 2. After processing, this data is ready for analytics and AI apps and can be shown in tools like Power BI, Grafana, web or mobile apps, and API endpoints.
 
