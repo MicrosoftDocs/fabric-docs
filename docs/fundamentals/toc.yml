@@ -209,6 +209,10 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Service principal based public API calls fail with variables in shortcut payloads
+      href: ../known-issues/known-issue-1169-service-principal-public-api-calls-fail-variables-shortcut.md
+    - name: Text Analytics AI Functions fail
+      href: ../known-issues/known-issue-1168-text-analytics-ai-functions-fail.md
     - name: Power BI reports don't show in Viva Goals
       href: ../known-issues/known-issue-1166-power-bi-reports-not-show-viva-goals.md
     - name: Digital twin builder item creation fails on duplicate names
