@@ -38,19 +38,19 @@ During the preview, result set caching is off by default for all items.
 
 ### Item-level configuration
 
-Use the [ALTER DATABASE SET](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric&preserve-view=true) T-SQL command to enable result set caching for a lakehouse or warehouse:
+Use the [ALTER DATABASE SET](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric&preserve-view=true) T-SQL command to enable result set caching for a lakehouse or warehouse. Use the SQL analytics endpoint of a Lakehouse to connect and run T-SQL queries.
 
 ```sql
 ALTER DATABASE <Fabric_item_name>
 SET RESULT_SET_CACHING ON;
 ```
 
-The setting value can be checked in [sys.databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?view=fabric&preserve-view=true) with:
-
+The setting value can be checked in [sys.databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?view=fabric&preserve-view=true), for example to see the value for the current context in Fabric Warehouse or Lakehouse SQL analytics endpoint:
 
 ```sql
 SELECT name, is_result_set_caching_on 
-FROM sys.databases;
+FROM sys.databases
+WHERE database_id = db_id();
 ```
 
 To disable result set caching:
