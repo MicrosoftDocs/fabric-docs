@@ -43,5 +43,5 @@ Once a variable is defined within a variable library, it can be assigned to a sh
 > Only variables of type string are supported. Selecting a variable of any other type  results in an error.
 
 > [!NOTE]
-> Assignment of variables through the shortcuts rest API is not currently supported.
+> Assignment of workspace variables through the shortcuts REST API is not currently supported.
  
