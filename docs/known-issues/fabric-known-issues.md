@@ -20,7 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
-|  1169  | Data Engineering | [Service principal based public API calls fail with variables in shortcut payloads](./known-issue-1169-service-principal-based-public-api-calls-fail-variables-shortcut.md) | June 12, 2025 |
+|  1169  | Data Engineering | [Service principal based public API calls fail with variables in shortcut payloads](./known-issue-1169-service-principal-public-api-calls-fail-variables-shortcut.md) | June 12, 2025 |
 |  1168  | Power BI | [Text Analytics AI Functions fail](./known-issue-1168-text-analytics-ai-functions-fail.md) | June 12, 2025 |
 |  1166  | Power BI | [Power BI reports don't show in Viva Goals](./known-issue-1166-power-bi-reports-not-show-viva-goals.md) | June 6, 2025 |
 |  1165  | Real-Time Intelligence | [Digital twin builder item creation fails on duplicate names](./known-issue-1165-digital-twin-builder-item-creation-fails-duplicate-names.md) | June 6, 2025 |
