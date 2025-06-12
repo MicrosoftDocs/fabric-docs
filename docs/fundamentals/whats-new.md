@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 06/03/2025
+ms.date: 06/11/2025
 ms.topic: whats-new
 ms.collection:
   - ce-skilling-ai-copilot
@@ -96,6 +96,7 @@ The following table lists the features of Microsoft Fabric that are currently in
 |**Python Notebook (preview)**|[Python Notebooks](https://blog.fabric.microsoft.com/blog/python-notebook-public-preview?ft=All) are for BI Developers and Data Scientists working with smaller datasets using Python as their primary language. To get started, see [Use Python experience on Notebook](../data-engineering/using-python-experience-on-notebook.md).|
 |**Regular expression functions (preview)** | In SQL database in Fabric, regular expression (REGEX) functions return text based on values in a search pattern. For more information, see [Regular expressions](/sql/relational-databases/regular-expressions/overview?view=fabric&preserve-view=true). |
 |**REST APIs for connections and gateways (preview)**|[REST APIs for connections and gateways are now in preview](https://blog.fabric.microsoft.com/blog/announcing-the-availability-of-rest-apis-for-connections-and-gateways-in-microsoft-fabric?ft=All). These new APIs allow developers to programmatically manage and interact with connections and gateways within Fabric.|
+|**Result set caching (preview)**|[Result set caching](../data-warehouse/result-set-caching.md) works by persisting the final result sets for applicable `SELECT` T-SQL queries, bypassing complex compilation and data processing of the original query to return queries faster.|
 |**Secure Data Streaming with Managed Private Endpoints in Eventstream (Preview)**|By creating a Fabric Managed Private Endpoint, you can now securely connect Eventstream to your Azure services, such as Azure Event Hubs or IoT Hub, within a private network or behind a firewall. For more information, see [Secure Data Streaming with Managed Private Endpoints in Eventstream (Preview)](https://blog.fabric.microsoft.com/blog/introducing-eventstream-private-network-secure-data-streaming-with-managed-private-endpoints-private-preview?ft=All).|
 |**Secure mirrored Azure Databricks data with OneLake security (preview)**|You can [secure mirrored Azure Databricks data in Fabric using OneLake security](https://blog.fabric.microsoft.com/blog/secure-mirrored-azure-databricks-data-in-fabric-with-onelake-security?ft=All), now a feature in preview. You can now map Unity Catalog (UC) policies to Microsoft OneLake security. For more information, see [Automatic identity managed in Azure Databricks](/azure/databricks/admin/users-groups/automatic-identity-management).|
 |**SET SHOWPLAN_XML support**|The [SET SHOWPLAN_XML T-SQL syntax](/sql/t-sql/statements/set-showplan-xml-transact-sql?view=fabric&preserve-view=true) is now supported as a preview feature in Fabric Data Warehouse and SQL analytics endpoint. For more information, see [SHOWPLAN_XML in Fabric Data Warehouse (preview)](https://blog.fabric.microsoft.com/blog/query-plans-in-fabric-data-warehouse?ft=All).|
@@ -368,6 +369,7 @@ This section summarizes recent improvements and features for [Fabric Data Wareho
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|June 2025|**Result set caching (preview)**|[Result set caching](../data-warehouse/result-set-caching.md) works by persisting the final result sets for applicable `SELECT` T-SQL queries, bypassing complex compilation and data processing of the original query to return queries faster.|
 |May 2025|**ALTER TABLE DROP COLUMN and sp_rename COLUMN support**|Fabric Data Warehouse now supports [sp_rename](/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?view=fabric&preserve-view=true) `COLUMN` and [ALTER TABLE DROP COLUMN](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true#drop).|
 |May 2025|**JSON Aggregate support**|Fabric warehouses now support JSON aggregate functions as generally available features. For more information, see [JSON_ARRAYAGG](/sql/t-sql/functions/json-arrayagg-transact-sql?view=fabric&preserve-view=true) and [JSON_OBJECTAGG](/sql/t-sql/functions/json-objectagg-transact-sql?view=fabric&preserve-view=true).|
 |May 2025|**Copilot for SQL analytics endpoint (preview)**|The [Copilot for SQL analytics endpoint](https://blog.fabric.microsoft.com/blog/announcing-copilot-for-sql-analytics-endpoint-in-microsoft-fabric?ft=All) introduces Copilot capabilities for the SQL analytics endpoint, enabling users to generate and optimize SQL queries using natural language. For more information, see [Copilot for SQL analytics endpoint](../data-warehouse/copilot.md).|
