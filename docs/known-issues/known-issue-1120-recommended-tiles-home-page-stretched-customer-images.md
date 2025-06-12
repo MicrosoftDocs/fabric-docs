@@ -4,7 +4,7 @@ description: A known issue is posted where recommended tiles on the home page ap
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/06/2025
+ms.date: 06/12/2025
 ms.custom: known-issue-1120
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1120
 
 When you open the Power BI service home page, there's a section for **Recommended** items. If you used a customer-imported image, you might see a stretched aspect ratio for the tiles.
 
-**Status:** Open
+**Status:** Fixed: June 12, 2025
 
 **Product Experience:** Power BI
 
