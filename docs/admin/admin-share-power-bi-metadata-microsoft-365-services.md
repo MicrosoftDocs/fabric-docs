@@ -7,7 +7,7 @@ ms.reviewer: 'jadelynray'
 
 ms.custom:
 ms.topic: conceptual
-ms.date: 11/02/2023
+ms.date: 06/12/2025
 LocalizationGroup: Admin
 Customer intent: As a Fabric admin, I need to know what information is passed from Fabric and Microsoft Graph to Microsoft 365.
 ---
@@ -30,7 +30,7 @@ See [more about the Fabric data that is shared with Microsoft 365 services](#dat
 
 Fabric and Microsoft 365 are distinct and separately operated Microsoft cloud services, each deployed according to its own service-specific data center alignment rules, even when purchased together. As a result, it's possible that your Microsoft 365 Services and your Fabric service are not deployed in the same geographic region.
 
-By default, Fabric metadata is available only in the region where the Fabric tenant is located. However, you can allow Fabric to share metadata across regions by turning on a toggle switch in the **Share Microsoft Fabric data with your Microsoft 365 services** tenant setting. For more information, see [How to turn sharing with Microsoft 365 services on and off](#how-to-turn-sharing-with-microsoft-365-services-on-and-off).
+By default, Fabric metadata is available only in the region where the Fabric tenant is located. However, you can allow Fabric to share metadata across regions by turning on a toggle switch in the **Users can see Microsoft Fabric metadata in Microsoft 365** tenant setting. For more information, see [How to turn sharing with Microsoft 365 services on and off](#how-to-turn-sharing-with-microsoft-365-services-on-and-off).
 
 ### Where is Fabric data stored?
 
@@ -42,7 +42,7 @@ For more information about data storage for Microsoft 365, see [Where your Micro
 
 ## How to turn sharing with Microsoft 365 services on and off
 
-Sharing metadata with Microsoft 365 services is controlled by the **Share Microsoft Fabric data with your Microsoft 365 services** tenant setting. The setting is **Enabled** by default. To turn off the feature, or to turn it on again after it's been turned off, go to **Admin portal** > **Tenant settings** > **Share Microsoft Fabric data with your Microsoft 365 services** and set the toggle as appropriate. Once the setting is enabled or disabled, it may take up to 24 hours for you to see changes.
+Sharing metadata with Microsoft 365 services is controlled by the **Users can see Microsoft Fabric metadata in Microsoft 365** tenant setting. The setting is **Enabled** by default. To turn off the feature, or to turn it on again after it's been turned off, go to **Admin portal** > **Tenant settings** > **Users can see Microsoft Fabric metadata in Microsoft 365** and set the toggle as appropriate. Once the setting is enabled or disabled, it may take up to 24 hours for you to see changes.
 
 By default, Fabric data is available only in the region where the Fabric tenant is located. To allow Fabric to share metadata across regions, set the second toggle switch to **Enabled**. When you enable the second toggle, you acknowledge that Fabric data may flow outside the geographic region it's stored in.
 
