@@ -61,7 +61,7 @@
       href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
       href: transform-data.md
-    - name: Decide - Copy activity, dataflow, or Spark?
+    - name: Decide - Copy activity, Copy job, dataflow, or Spark?
       href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md
     - name: How to access on-premises Data
       href: how-to-access-on-premises-data.md
