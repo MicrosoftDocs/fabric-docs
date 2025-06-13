@@ -48,13 +48,14 @@ The copy operation is synchronous so when the command returns, all files are cop
 
 ## Sample: Copying data from ADLS to OneLake with a shared access signatures (SAS)
 
-A shared access signature (SAS) provides short-term, delegated access to Azure Storage and OneLake, and are great options to provide tools or users temporary access to storage for one-time upload or downloads. A SAS is also a great option if the Azure Storage account is in a different tenant than your OneLake, as Entra authorization will not work if the tenants are different.  
+A shared access signature (SAS) provides short-term, delegated access to Azure Storage and OneLake, and is a great option to provide tools or users temporary access to storage for one-time upload or downloads. A SAS is also a great option if the Azure Storage account is in a different tenant than your OneLake, as Entra authorization will not work if the tenants are different.  
 
 This sample uses a unique SAS token to authenticate to both Azure Storage and OneLake. To learn more about generating and using SAS tokens with Azure Storage and OneLake, check out the following pages:
 * [How to create a OneLake shared access signature (SAS)](how-to-create-a-onelake-shared-access-signature.md)
 * [Grant limited access to Azure storage resources using shared access signatures (SAS)](/azure/storage/common/storage-sas-overview)
 
-[!Note] When using a SAS token to authenticate to OneLake in AzCopy, you must set the '``-s2s-preserve-access-tier' parameter to false.
+> [!Note]
+> When using a SAS token to authenticate to OneLake in AzCopy, you must set the '``-s2s-preserve-access-tier' parameter to false.
   
 ```azcopy copy
 
