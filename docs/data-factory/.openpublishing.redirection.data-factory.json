@@ -289,6 +289,21 @@
         "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-managed-instance-overview.md",
         "redirect_url": "/fabric/data-factory/connector-azure-sql-managed-instance-overview",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/dataflow-support.md",
+        "redirect_url": "/fabric/data-factory/connector-overview",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/pipeline-support.md",
+        "redirect_url": "/fabric/data-factory/connector-overview",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/copy-job-support.md",
+        "redirect_url": "/fabric/data-factory/connector-overview",
+        "redirect_document_id": false
       }
     ]
 }
