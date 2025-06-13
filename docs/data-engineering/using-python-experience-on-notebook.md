@@ -112,7 +112,7 @@ For customized libraries, you can upload the lib files to the [**Built-in resour
 
 You may need to restart the kernel to use the updated packages.
 
-To better understand and use these commands clearly, please refer to the table below.
+To better understand and use similar commands clearly, please refer to the table below.
 
 | **Command/Syntax** | **Main purpose** | **How it works in Jupyter Notebook** | **Typical use case** | **Notes**|
 |---|---|---|---|---|
@@ -125,7 +125,7 @@ To better understand and use these commands clearly, please refer to the table b
 > [!NOTE]
 > - In Python Notebook, ```%pip``` and ```!pip``` have the **same behavior**: both install packages into the current kernel’s environment, and neither will automatically restart the kernel after installation.
 > - If you need to restart the kernel (eg., after installing certain packages), it is **recommended** to use ```notebookutils.session.restartPython()``` instead of ```import sys; sys.exit(0)```.
->   - ```notebookutils.session.restartPython()``` is an official API that wraps ```sys.exit(0)``` ,and it is safer and more compatible in notebook environments.
+>   - ```notebookutils.session.restartPython()``` is an official API that wraps ```sys.exit(0)``` , and it is safer and more compatible in notebook environments.
 > - It is **not recommended** to use ```sys.exit(0)``` directly unless necessary.
 
 ## Session configuration magic command
