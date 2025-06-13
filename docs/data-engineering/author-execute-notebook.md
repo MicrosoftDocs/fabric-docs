@@ -348,10 +348,20 @@ In the pop-up, there's an option to reset the timeout to x minutes or hours.
 
 Take your pick in how long you want an uninterrupted session, and hit apply. The session timeout resets itself with the new value and you're good to go!
 
-You can also set timeout as following:
+You can also set timeout as described in:
 
 - [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md#spark-session-configuration-magic-command)
+- [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command)
+
+**Stay signed in:** During login, if you see the **Stay signed in** dialog, select **Yes** to deactivate the Idle Session Timeout for your current session.
+
+> [!IMPORTANT]
+> Do not select the **Don’t show this again** checkbox, as this will lock in your sign-in settings permanently. Note that this option might not appear if your tenant admin has disabled the Keep Me Signed In (KMSI) setting.
+
+**Request a policy change:** If you need a longer session duration, ask your tenant admin to extend the Idle Session Timeout duration policy. They can do this by navigating to Org Settings > Security & Privacy > Idle Session Timeout within the M365 Admin Center.
+
+> [!NOTE]
+> Selecting KMSI and/or extending the Idle Session Timeout duration time will extend the risk of an unlocked machine being accessed.
 
 **How do ABT and Idle Session Timeout impact long-running Fabric Notebook executions?**
 
