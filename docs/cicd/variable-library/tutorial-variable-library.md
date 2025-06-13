@@ -277,36 +277,36 @@ In this step, we configure our destination connection for our pipeline.
 
   1. In the *Source LHs with Variables* workspace, at the top, click **create deployment pipeline**
 
-    :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-1.png" alt-text="Screenshot of creating a new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-1.png":::
+  :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-1.png" alt-text="Screenshot of creating a new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-1.png":::
 
   2. Name the pipeline, *Deployment_Pipeline_Var* and click **Next**.
 
-      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-2.png" alt-text="Screenshot of creating a naming the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-2.png":::
+    :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-2.png" alt-text="Screenshot of creating a naming the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-2.png":::
 
   3. On the deployment pipeline, click **Create and Continue**
 
-      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-3.png" alt-text="Screenshot of the deployment pipeline - create and continue." lightbox="media/tutorial-variable-library/create-deployment-pipeline-3.png":::
+    :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-3.png" alt-text="Screenshot of the deployment pipeline - create and continue." lightbox="media/tutorial-variable-library/create-deployment-pipeline-3.png":::
 
   4. On the development stage, from the drop-down, select *Source LHs with Variables* for the workspace.  Click the **Assign** check mark.
 
-      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-4.png" alt-text="Screenshot of selecting the workspace for the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-4.png":::
+    :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-4.png" alt-text="Screenshot of selecting the workspace for the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-4.png":::
 
   5. Click **Continue**.  The stage should now be populated with the items from the workspace.
 
-      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-5.png" alt-text="Screenshot of deveolpment part of the deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-5.png":::
+    :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-5.png" alt-text="Screenshot of deveolpment part of the deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-5.png":::
 
   6. Click on the **Test** stage, at the bottom, place a check at the top to select all items.  Now *un-select* the *SourceLH_Dev* Lakehouse.  Click the **Deploy** button.  Click **Deploy** again.  The **Test** stage should now be populated.
 
-      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-6.png" alt-text="Screenshot of test part of the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-6.png":::
+    :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-6.png" alt-text="Screenshot of test part of the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-6.png":::
 
   7.  Click on the **Production** stage, at the bottom, place a check at the top to select all items.  Now *un-select* the *SourceLH_Test* Lakehouse.  Click the **Deploy** button.  Click **Deploy** again.  The **Production** stage should now be populated.
 
-      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-7.png" alt-text="Screenshot of production part of the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-7.png":::
+    :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-7.png" alt-text="Screenshot of production part of the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-7.png":::
 
 
   ### Set the Variable Library active set for each stage
   In this step, we configure the active set for each stage in our deployment pipeline.
-  
+
     1. In the *Deployment_Pipeline_Var* select the **Test** stage.
 
       :::image type="content" source="media/tutorial-variable-library/set-active-set-1.png" alt-text="Screenshot of setting active set in deployment pipeline." lightbox="media/tutorial-variable-library/set-active-set-1.png":::
