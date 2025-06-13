@@ -361,7 +361,7 @@ Now that we have setup the variable library and set all of the active sets for e
 21. On the left, expand **Schemas** > **dbo** > **Tables**.
 22. You should see **ProdCopiedData** Table.
 
-## Step 5: Customize the variable values in Git (optional)
+## Customize the variable values in Git (optional)
 
 To see how the variable library is [represented in Git](./variable-library-cicd.md), or to edit the variables from a Git repository, connect the workspace to a Git repository.
 
