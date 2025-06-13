@@ -1,9 +1,11 @@
 ---
 title: Adopting an iterative process for improving your data agent
 description: Learn how to adopt an iterative process for improving your data agent.
+ms.author: midesa
+author: midesa
 ms.reviewer: midesa
 reviewer: midesa
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 06/12/2025
 ---
 
