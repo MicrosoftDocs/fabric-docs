@@ -82,7 +82,7 @@ When you use incremental copy mode, you pick an incremental column for each tabl
 
 ## Region availability
 
-Copy job has the same [regional availability as Fabric](../admin/region-availability).
+Copy job has the same [regional availability as Fabric](../admin/region-availability.md).
 
 ## Pricing
 
