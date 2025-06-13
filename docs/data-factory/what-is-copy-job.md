@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # What is Copy job in Data Factory for Microsoft Fabric?
 
-The Copy job in Data Factory makes it easy to move data from any source to any destination--no pipelines required. With a simple, guided experience, you can set up data transfers using built-in patterns for both batch and incremental copy. Whether you’re new to data integration or just want a faster way to get your data where it needs to go, Copy job offers a flexible and user-friendly solution.
+The Copy job in Data Factory makes it easy to move data from your source to your destination--no pipelines required. With a simple, guided experience, you can set up data transfers using built-in patterns for both batch and incremental copy. Whether you’re new to data integration or just want a faster way to get your data where it needs to go, Copy job offers a flexible and user-friendly solution.
 
 Some advantages of the Copy job over other data movement methods include:
 
@@ -25,7 +25,7 @@ Some advantages of the Copy job over other data movement methods include:
 
 ## Supported connectors
 
-With Copy job, you can move your data between cloud data stores or from on-premises sources that are behind a firewall or inside a virtual network using a gateway. Copy job supports the following data stores as both source and destination:
+With Copy job, you can move your data between cloud data stores or from on-premises sources that are behind a firewall or inside a virtual network using a gateway. Copy job supports the following data stores as sources or destinations:
 
 | Connector | Source | Destination | Full load | Incremental load (Preview) | Append |  Override |  Merge | On-premises data gateway |
 | --- | --- | --- | --- | --- | --- |  --- |  --- |  --- |
