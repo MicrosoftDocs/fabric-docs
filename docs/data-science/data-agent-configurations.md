@@ -47,7 +47,7 @@ Here is a recommended starting format for writing effective agent-level instruct
 
 ```
 
-:::image type="content" source="media/how-to-create-data-agent/configuration-agent-instructions.png" alt-text="Screenshot of adding data source level instructions to the data agent" lightbox="media/how-to-create-data-agent/configuration-agent-instructions.png":::
+:::image type="content" source="media/how-to-create-data-agent/configuration-agent-instructions.png" alt-text="Screenshot of adding data agent level instructions to the data agent" lightbox="media/how-to-create-data-agent/configuration-agent-instructions.png":::
 
 ## Data source instructions
 
