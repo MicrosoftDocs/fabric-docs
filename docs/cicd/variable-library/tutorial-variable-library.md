@@ -307,24 +307,24 @@ In this step, we configure our destination connection for our pipeline.
   ### Set the Variable Library active set for each stage
   In this step, we configure the active set for each stage in our deployment pipeline.
 
-    1. In the *Deployment_Pipeline_Var* select the **Test** stage.
+  1. In the *Deployment_Pipeline_Var* select the **Test** stage.
 
-      :::image type="content" source="media/tutorial-variable-library/set-active-set-1.png" alt-text="Screenshot of setting active set in deployment pipeline." lightbox="media/tutorial-variable-library/set-active-set-1.png":::
+  :::image type="content" source="media/tutorial-variable-library/set-active-set-1.png" alt-text="Screenshot of setting active set in deployment pipeline." lightbox="media/tutorial-variable-library/set-active-set-1.png":::
 
-    2. On the bottom, click on **WS Variables**.
+  2. On the bottom, click on **WS Variables**.
 
-      :::image type="content" source="media/tutorial-variable-library/set-active-set-2.png" alt-text="Screenshot of setting active set in deployment pipeline." lightbox="media/tutorial-variable-library/set-active-set-2.png":::
+  :::image type="content" source="media/tutorial-variable-library/set-active-set-2.png" alt-text="Screenshot of setting active set in deployment pipeline." lightbox="media/tutorial-variable-library/set-active-set-2.png":::
 
-    3. On the test stage, click the **...** and select **Set as active**.  Click the **Set as Active** button.
+  3. On the test stage, click the **...** and select **Set as active**.  Click the **Set as Active** button.
 
-      :::image type="content" source="media/tutorial-variable-library/set-active-set-3.png" alt-text="Screenshot of setting active set in deployment pipeline." lightbox="media/tutorial-variable-library/set-active-set-3.png":::
+  :::image type="content" source="media/tutorial-variable-library/set-active-set-3.png" alt-text="Screenshot of setting active set in deployment pipeline." lightbox="media/tutorial-variable-library/set-active-set-3.png":::
 
-    4. At the top, click **Save**.  Click **Agree**.
-    5. On the left, click the *Deployment_Pipeline_Var*.
-    6. Select the **Prod** stage.
-    7. On the bottom, click on **WS Variables**.
-    8. On the test stage, click the **...** and select **Set as active**.  Click the **Set as Active** button.
-    9. At the top, click **Save**.  Click **Agree**.
+  4. At the top, click **Save**.  Click **Agree**.
+  5. On the left, click the *Deployment_Pipeline_Var*.
+  6. Select the **Prod** stage.
+  7. On the bottom, click on **WS Variables**.
+  8. On the test stage, click the **...** and select **Set as active**.  Click the **Set as Active** button.
+  9. At the top, click **Save**.  Click **Agree**.
 
 
 
