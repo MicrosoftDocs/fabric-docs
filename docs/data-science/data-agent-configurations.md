@@ -3,6 +3,7 @@ title: Data agent configurations
 description: Overview of the various configurations for the data agent.
 ms.reviewer: midesa
 reviewer: midesa
+ms.author: midesa
 ms.topic: conceptual
 ms.custom:
 ms.date: 06/12/2025
