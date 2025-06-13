@@ -380,7 +380,7 @@ Compare the ProdVS.jason and the TestVS.json files in the valueSets folder and c
   "overrides": [
     {
       "name": "Source_LH",
-      "value": "e4b2b710-a3fd-4845a262-df815dbec6d0"
+      "value": "4fe228d3-a363-4b7f-a5d4-fae9d2abca43"
     },
     {
       "name": "DestinationTableName",
@@ -397,7 +397,7 @@ Compare the ProdVS.jason and the TestVS.json files in the valueSets folder and c
   "overrides": [
     {
       "name": "Source_LH",
-      "value": "e4b2b710-a3fd-4845a262-df815dbec6d0"
+      "value": "c0f13027-9bf4-4e8c-8f57-ec5c18c8656b"
     },
     {
       "name": "DestinationTableName",
