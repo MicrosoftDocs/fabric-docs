@@ -91,10 +91,10 @@ The IntelliSense features are at different levels of maturity for different lang
 > You must have an active Apache Spark session to use IntelliSense code completion.
 
 #### Enhance Python Development with Pylance
- 
+
 > [!NOTE]
 > Currently, the feature is in preview.
- 
+
 Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter autocompletion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
 
 ### Code snippets
@@ -268,7 +268,6 @@ Select **Cancel all** to cancel the running cells or cells waiting in the queue.
 
 :::image type="content" source="media\author-execute-notebook\cancel-all-stop-session.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\cancel-all-stop-session.png":::
 
-
 ### Reference run
 
 #### Reference run a Notebook
@@ -304,7 +303,7 @@ Examples:
 
 - To run *script_file.py* from the built-in resources with specific variables: ``` %run -b script_file.py { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true, "parameterString": "abc" } ```
 
-> [!NOTE] 
+> [!NOTE]
 > If the command doesn't contain **-b/--builtin**, it attempts to find and execute notebook item inside the same workspace rather than the built-in resources.
 
 Usage example for nested run case:
@@ -353,19 +352,19 @@ You can also set timeout as described in:
 - [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
 - [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command)
 
-**Stay signed in:** During login, if you see the **Stay signed in** dialog, select **Yes** to deactivate the Idle Session Timeout for your current session.
+**Stay signed in:** During login, if you see the **Stay signed in** dialog, select **Yes** to deactivate the idle session timeout for your current session.
 
 > [!IMPORTANT]
 > Do not select the **Don’t show this again** checkbox, as this will lock in your sign-in settings permanently. Note that this option might not appear if your tenant admin has disabled the Keep Me Signed In (KMSI) setting.
 
-**Request a policy change:** If you need a longer session duration, ask your tenant admin to extend the Idle Session Timeout duration policy. They can do this by navigating to Org Settings > Security & Privacy > Idle Session Timeout within the M365 Admin Center.
+**Request a policy change:** If you need a longer session duration, ask your tenant admin to extend the idle session timeout duration policy. They can do this by navigating to Org Settings > Security & Privacy > Idle Session Timeout within the M365 Admin Center.
 
 > [!NOTE]
-> Selecting KMSI and/or extending the Idle Session Timeout duration time will extend the risk of an unlocked machine being accessed.
+> Selecting KMSI and/or extending the idle session timeout duration time will extend the risk of an unlocked machine being accessed.
 
-**How do ABT and Idle Session Timeout impact long-running Fabric Notebook executions?**
+**How do ABT and idle session timeout impact long-running Fabric Notebook executions?**
 
-If your tenant uses Activity-Based Timeout (ABT) enabled, long-running interactive jobs in Fabric notebooks may be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, nonmanaged devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
+If your tenant uses activity-based timeout (ABT), long-running interactive jobs in Fabric notebooks may be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, nonmanaged devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
 
 **Why are users signed out even when a notebook job is still running?**
 
@@ -647,7 +646,7 @@ customizedLogger.critical("customized critical message")
 
 ## View the history of input commands
 
-Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook. 
+Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook.
 
 ``` %history [-n] [range [range ...]] ```
 
@@ -717,4 +716,3 @@ To find all shortcut keys, select **View** on the notebook ribbon, and then sele
 
 - [Notebook visualization](notebook-visualization.md)
 - [Introduction of Fabric NotebookUtils](notebook-utilities.md)
-
