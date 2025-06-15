@@ -1,8 +1,8 @@
 ---
 title: Include file for Git integration limitations
 description: Include file for the Git integration limitations. This file is referenced in this repo and also in an article in the Power BI repo.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.topic: include
 ms.custom: 
 ms.date: 02/26/2025
@@ -12,6 +12,7 @@ ms.date: 02/26/2025
 
 - The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Fabric must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Fabric needs to require multifactor authentication as well.
 - Power BI Datasets connected to Analysis Services aren't supported at this time.
+- If you use a workspace identity in one artifact and commit it to Git, it can be updated (back to a fabric workspace) only in a workspace connected to the same identity. Be careful, as this also affects features like branch out.
 - Submodules aren't supported.
 - Sovereign clouds aren't supported.
 
@@ -33,8 +34,11 @@ ms.date: 02/26/2025
 
 ### GitHub Enterprise limitations
 
-Some GitHub Enterprise settings aren't supported. For example:
+Some GitHub Enterprise versions and settings aren't supported. For example:
 
+- GitHub Enterprise Cloud with data residency (ghe.com)
+- GitHub Enterprise Server with a custom domain is not supported, even if the instance is publicly accessible
+- Github Enterprise Server hosted on a private network
 - IP allowlist
 
 ### Workspace limitations
@@ -50,7 +54,7 @@ Some GitHub Enterprise settings aren't supported. For example:
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
 - Folder structure is maintained up to 10 levels deep.
-- You can’t download a report/dataset as *.pbix* from the service after deploying them with Git integration.
+- Downloading a report/dataset as *.pbix* from the service after deploying them with Git integration is not recommended, as the results are unreliable. We recommend using PowerBI Desktop to download reports/datasets as *.pbix*.
 - If the item’s display name has any of these characteristics, The Git folder is renamed to the logical ID (Guid) and type:
   - Has more than 256 characters
   - Ends with a <kbd>.</kbd> or a space

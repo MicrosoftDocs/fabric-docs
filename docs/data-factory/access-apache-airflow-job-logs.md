@@ -6,6 +6,7 @@ ms.author: abnarain
 author: abnarain
 ms.topic: how-to
 ms.date: 10/10/2024
+ms.custom: airflows
 ---
 
 # Access Apache Airflow Job Logs

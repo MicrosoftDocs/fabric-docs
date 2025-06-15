@@ -1,13 +1,13 @@
 ---
 title: Create your first Microsoft Fabric dataflow
 description: Steps for creating dataflows and transforming data.
-ms.reviewer: DougKlopfenstein
+ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: quickstart
-ms.custom:
 ms.date: 12/18/2024
 ms.search.form: DataflowGen2 Tutorials
+ms.custom: dataflows
 ---
 
 # Quickstart: Create your first dataflow to get and transform data
@@ -24,8 +24,6 @@ The following prerequisites are required before you start:
 ## Create a dataflow
 
 In this section, you're creating your first dataflow.
-
-1. Switch to the **Data factory** experience.
 
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 

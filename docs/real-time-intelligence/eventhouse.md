@@ -2,8 +2,8 @@
 title: Eventhouse overview
 description: Learn about eventhouse data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: concept-article
 ms.custom:
 ms.date: 02/12/2025
@@ -35,7 +35,7 @@ The system overview page of an eventhouse shows you the following information:
 * Top ingested databases
 * What's new
 
-For more information, see [View system overview details for an eventhouse](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse).
+For more information, see [View system overview details for an eventhouse](manage-monitor-eventhouse.md#view-system-overview).
 
 The databases page of an eventhouse shows you database information either in list or tile view. The following information about each database is displayed in tile view:
 

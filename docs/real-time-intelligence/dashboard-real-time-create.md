@@ -2,8 +2,8 @@
 title: Create a Real-Time Dashboard
 description: Learn how to visualize data with Real-Time Dashboards.
 ms.reviewer: tzgitlin
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 11/19/2024
@@ -12,8 +12,6 @@ ms.search.form: product-kusto, Real-Time Dashboard
 # Create a Real-Time Dashboard
 
 A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance.
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 In this article, you learn how to create a new Real-Time Dashboard, add data sources, and add tiles to the dashboard. You also learn how to enable auto refresh, use parameters, and export dashboards.
 
@@ -40,15 +38,7 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 
 ## Create a new dashboard
 
-The Real-Time Dashboard exists within the context of a workspace. A new Real-Time dashboard is always associated with the workspace you're using when you create it.
-
-1. Browse to the desired workspace.
-1. Select **+New** > **Real-Time Dashboard**
-1. Enter a dashboard name and select **Create**.
-
-:::image type="content" source="media/real-time-dashboard/dashboard-new.png" alt-text="Screenshot of newly created Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric.":::
-
-A new dashboard is created in your workspace.
+[!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
 
 ## Add data source
 
@@ -61,7 +51,7 @@ Data sources are reusable references to a specific database in the same workspac
 
 1. In the **Create new data source** pane:
     1. Enter a **Data source name**.
-    1. Select a **Database** from the drop-down list.
+    1. Select a **Database** from the dropdown list.
 1. Select **Create**.
   
 ## Add tile
@@ -71,7 +61,7 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
 1. Select **Add tile** from the dashboard canvas or the top menu bar.
 
 1. In the **Query** pane,
-    1. Select the data source from the drop-down menu.
+    1. Select the data source from the dropdown menu.
     1. Type the query, and the select **Run**. For more information about generating queries that use parameters, see [Use parameters in your query](dashboard-parameters.md#use-parameters-in-your-query).
 
     1. Select **+ Add visual**.
@@ -166,9 +156,11 @@ You can view the query in either editing or viewing mode. Editing the underlying
 
 Auto refresh is a feature that allows you to automatically update the data on a dashboard without manually reloading the page or clicking a refresh button.
 
-The default auto refresh rate can be set by a database editor. Both editors and viewers can change the actual rate of auto refresh while viewing a dashboard.
+Dashboard authors can configure auto-refresh settings for other viewers. By default, the refresh rate is set using the **Default refresh rate**, but viewers can adjust this rate for their own sessions.
 
-However, database editors can limit the minimum refresh rate that any viewer can set so as to reduce the cluster load. When the minimum refresh rate is set, database users can't set a refresh rate lower than the minimum.
+The **Minimum time interval** defines the fastest refresh rate allowed and acts as a lower limit. For example, if the author sets the default refresh rate to 1 hour and the minimum time interval to 30 minutes, viewers can choose a refresh rate between 30 minutes and 1 hour, but not lower than 30 minutes.
+
+This setting gives authors control over how frequently dashboards can refresh, helping to manage system load and performance.
 
 1. Select the **Manage** tab > **Auto refresh**.
 1. Toggle the option so auto refresh is **Enabled**.

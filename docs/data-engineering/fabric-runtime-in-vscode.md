@@ -6,15 +6,15 @@ ms.author: qixwang
 author: qixwang
 ms.topic: how-to
 ms.custom:
-ms.date: 11/25/2024
+ms.date: 06/04/2025
 ms.search.form: VSCodeExtension
 ---
 
-# Fabric runtime support in VS Code extension
+# Fabric runtime support in Visual Studio Code extension
 
-For Fabric runtime 1.1 and 1.2, two local conda environments are created by default. Activate the conda environment before running the notebook on the target runtime. To learn more, see [Choose Fabric Runtime 1.1 or 1.2](author-notebook-with-vs-code.md#run-or-debug-a-notebook-on-remote-spark-compute)
+For Fabric runtime 1.1 and 1.2, two local conda environments are created by default. Activate the conda environment before running the notebook on the target runtime. To learn more, see [Choose Fabric Runtime 1.1 or 1.2](author-notebook-with-vs-code.md#run-or-debug-a-notebook-on-remote-spark-compute).
 
-For Fabric runtime 1.3 and higher, the local conda environment is not created. You can run the notebook directly on the remote Spark compute by selecting the new entry in the Jupyter kernel list. You can select this kernel to run the notebook or Spark Job Definition on the remote Spark compute..
+For Fabric runtime 1.3 and higher, the local conda environment is not created. You can run the notebook directly on the remote Spark compute by selecting the new entry in the Jupyter kernel list. You can select this kernel to run the notebook or Spark Job Definition on the remote Spark compute.
 
  :::image type="content" source="media\vscode\fabric-runtime-kernel.png" alt-text="Screenshot showing fabric runtime kernel.":::
 

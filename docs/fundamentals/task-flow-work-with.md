@@ -1,16 +1,16 @@
 ---
-title: Work with task flows (preview)
+title: Work with task flows
 description: This show how to work with the task flow - add tasks, assign items to tasks, connect tasks, etc.
 ms.reviewer: liud
-ms.author: painbar
-author: paulinbar
+author: SnehaGunda
+ms.author: sngun
 ms.topic: how-to
-ms.date: 01/10/2025
+ms.date: 05/06/2025
 
 #customer intent: As a data analytics solution architect, I need to know to create tasks so that I can build a task flow that illustrates my project and that engineers can use to guide and facilitate their work on the project. As an engineer, I want to understand how to use task to organize and facilitate my work.
 ---
 
-# Work with task flows (preview)
+# Work with task flows
 
 This article describes how to work with tasks. The target audience is data analytics solution architects who are designing a data analytics solution, engineers who need to know how to use task flows to facilitate their work, and others who want to use the task flow to filter the item list to help navigate and understand the workspace.
 
@@ -248,6 +248,24 @@ Deleting a task flow removes all tasks, the task list, and any item assignments,
 
 > [!NOTE]
 > Items that were assigned to tasks in the deleted task flow remain in the workspace. When you create a new task flow, you need to assign them to the tasks in the new flow.
+
+## Import or export a task flow
+
+If you have a task flow that you'd like to reuse, you can export it from the workspace it's in and import it into other workspaces where you'd like to use it.
+
+The task flow is exported as a *.json* file that you save to a location of your choice. The *.json* file preserves the structure and flow of the task flow, and includes:
+
+* The task flow name and description.
+* The tasks, along with their names and descriptions.
+* The connectors between the tasks.
+
+The *.json* file doesn't include item associations. When you import a task flow into a workspace, you have to create the item associations there.
+
+After you've imported the task flow into a new workspace, modify it to suit your needs as described in this article. Make sure the task flow name and description suit the task flow in its new context, and adjust if necessary.
+
+To import or export a task flow select the **Import and export task flow** icon in the task flow details pane and choose the relevant option.
+
+:::image type="content" source="./media/task-flow-work-with/import-export-task-flow.png" alt-text="Screenshot showing how to access the import task flow and export taskflow options.":::
 
 ## Related concepts
 

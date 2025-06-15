@@ -1,10 +1,10 @@
 ---
 title: Operation list
 description: This article provides a list of all the operations available in Fabric.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
-ms.date: 03/02/2025
+ms.date: 05/22/2025
 ---
 
 # Operation list
@@ -27,8 +27,8 @@ The following operations are available in the audit logs.
 | Added Power BI folder access  |  AddFolderAccess  |  Not currently used  |
 | Added Power BI group members  |  AddGroupMembers  |    |
 | Added data source to Power BI gateway  |  AddDatasourceToGateway  |    |
-| Added external resource  |  AddExternalResource  |    |
-| Added link to external resource  |  AddLinkToExternalResource  |    |
+| Added external resource  |  AddExternalResource  | Registers or connects an external resource in the Fabric workspace.   |
+| Added link to external resource  |  AddLinkToExternalResource  | Links a Fabric item to an external resource for reference or integration.    |
 | Added user to Power BI gateway cluster  |  AddUsersToGatewayCluster  |  Not currently used  |
 | Added user to Power BI gateway cluster datasource  |  AddUsersToGatewayClusterDatasource  |    |
 | Admin Get Artifacts Byuser Id | AdminGetArtifactsByuserId |   |
@@ -82,13 +82,14 @@ The following operations are available in the audit logs.
 | Convert Personal Workspace To Workspace | ConvertPersonalWorkspaceToWorkspace |   |
 | Copied Power BI dashboard | CopyDashboard |   |
 | Copied Power BI report | CopyReport |   |
+| Copilot Interaction (Request Copilot features in Fabric) | CopilotInteraction | Request Copilot features in Fabric |
 | Copy Scorecard | CopyScorecard |   |
 | Copy blob | CopyBlob | OneLake operation. Copies a source blob to a destination blob in this storage account or in another storage account. |
 | Create an SQL query from a Warehouse | CreateSqlQueryFromWarehouse |   |
 | Create Artifact | CreateArtifact |   |
 | Create Branch In Git | CreateBranchInGit | Create Branch In Git is a git provider activity, which is generated when users create branch in Git.  |
-| Create Cloud Datasource From Kind Path | CreateCloudDatasourceFromKindPath |   |
-| Create Cloud Datasource | CreateCloudDatasource |   |
+| Create Cloud Datasource From Kind Path | CreateCloudDatasourceFromKindPath | Creates a cloud-based data source using a specific resource and path.  |
+| Create Cloud Datasource | CreateCloudDatasource | Establishes a new cloud data connection to external storage or services.  |
 | Create Data Sharing | CreateDataSharing | Create a new external data share  |
 | Create Datamart | CreateDatamart | Triggered when a new Datamart is created in a Workspace   |
 | Create Dataset By Quick Share | CreateDatasetByQuickShare |   |
@@ -670,6 +671,7 @@ The following operations are available in the audit logs.
 | Update Notebook Resource | UpdateNotebookResource | Update resources in notebook. |
 | Update Notebook Spark Property | UpdateNotebookSparkProperty |  |
 | Update Notification Settings | UpdateNotificationSettings | Update user notification settings for Notification Service Platform. |
+| Update Publish to Web Embed Code Owner | UpdateEmbedCodeOwner |  |
 | Update Report Content | UpdateReportContent |  |
 | Update Scorecard Dataset | UpdateScorecardDataset |  |
 | Update Scorecard Hierarchy | UpdateScorecardHierarchy |  |

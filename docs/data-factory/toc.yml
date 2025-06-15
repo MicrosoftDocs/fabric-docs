@@ -5,10 +5,12 @@
     items:
     - name: What is Data Factory?
       href: data-factory-overview.md
-    - name: Data Factory training
-      href: /training/paths/get-started-fabric
     - name: What's new in Data Factory
       href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric
+    - name: Guided Data Factory lab
+      href: guided-lab-experience.md
+    - name: Data Factory training
+      href: /training/paths/get-started-fabric
     - name: Pricing in Data Factory
       items:
       - name: Pricing overview
@@ -59,7 +61,7 @@
       href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
       href: transform-data.md
-    - name: Decide - Copy activity, dataflow, or Spark?
+    - name: Decide - Copy activity, Copy job, dataflow, or Spark?
       href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md
     - name: How to access on-premises Data
       href: how-to-access-on-premises-data.md
@@ -113,12 +115,6 @@
     items:
     - name: Connector overview
       href: connector-overview.md
-    - name: Dataflow Gen2 connectors
-      href: dataflow-support.md
-    - name: Data pipeline connectors
-      href: pipeline-support.md
-    - name: Copy job connectors
-      href: copy-job-support.md
     - name: Service principal support
       href: service-principals.md
     - name: Access database
@@ -223,6 +219,8 @@
         href: connector-azure-databricks-overview.md
       - name: Set up your connection
         href: connector-azure-databricks.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-azure-databricks-copy-activity.md
     - name: Azure Files 
       items: 
       - name: Azure Files - Overview 
@@ -401,6 +399,18 @@
         href: connector-google-cloud-storage.md
       - name: Configure in a data pipeline Copy activity
         href: connector-google-cloud-storage-copy-activity.md
+    - name: Greenplum for Pipeline
+      items:
+      - name: Greenplum for Pipeline - Overview
+        href: connector-greenplum-for-pipeline-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-greenplum-for-pipeline-copy-activity.md
+    - name: Hdfs for Pipeline
+      items:
+      - name: Hdfs for Pipeline - Overview
+        href: connector-hdfs-for-pipeline-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-hdfs-for-pipeline-copy-activity.md        
     - name: Hive LLAP
       items:
       - name: Hive LLAP - Overview
@@ -807,6 +817,8 @@
         href: dataflow-gen2-incremental-refresh.md
       - name: Dataflow Gen2 with CICD and Git integration
         href: dataflow-gen2-cicd-and-git-integration.md
+      - name: Dataflow Gen2 public APIs
+        href: dataflow-gen2-public-apis.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow
@@ -833,6 +845,8 @@
       href: create-copy-job.md
     - name: How to monitor a Copy job
       href: monitor-copy-job.md
+    - name: Change data capture (CDC) in Copy job
+      href: cdc-copy-job.md
     - name: CI/CD for Copy job
       href: cicd-copy-job.md
   - name: Data gateway

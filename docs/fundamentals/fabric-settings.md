@@ -1,11 +1,11 @@
 ---
 title: Fabric settings
 description: Learn about Fabric settings.
-author: paulinbar
-ms.author: painbar
+author: SnehaGunda
+ms.author: sngun
 ms.topic: how-to
 ms.custom:
-ms.date: 06/15/2023
+ms.date: 05/11/2025
 ---
 
 # Fabric settings
@@ -16,9 +16,11 @@ The Fabric settings pane provides links to various kinds of settings you can con
 
 ## Open the Fabric settings pane
 
-To open the Fabric settings pane, select the gear icon in the Fabric portal header.
+1. Sign in to Microsoft Fabric: [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com).
 
-:::image type="content" source="./media/fabric-settings/open-fabric-settings-pane.png" alt-text="Screenshot showing how to get the Fabric settings pane.":::
+1. Select the gear icon in the Fabric portal header.
+
+    :::image type="content" source="./media/fabric-settings/open-fabric-settings-pane.png" alt-text="Screenshot showing how to get the Fabric settings pane.":::
 
 ## Preferences
 

@@ -1,48 +1,231 @@
 ---
 title: Connector overview
 description: Learn about data connectors.
-ms.reviewer: DougKlopfenstein
+ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview
-ms.custom:
-ms.date: 12/18/2024
+ms.date: 04/25/2025
 ms.search.form: product-data-factory
+ms.custom: connectors
 ---
 
 # Connector overview
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] offers a rich set of connectors that allow you to connect to different types of data stores. You can take advantage of those connectors to transform data in dataflows or move a PB-level of dataset with high-scale in a data pipeline.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] offers a rich set of connectors that allow you to connect to different types of data stores. You can take advantage of those connectors to ingest or transform data in Dataflow Gen2, data pipelines or Copy job.
 
 ## Prerequisites
 
-Before you can set up a connection in Dataflow Gen2 or a data pipeline, the following prerequisites are required:
+Before you can set up a connection, the following prerequisites are required:
 
 - A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 
 - A Microsoft Fabric enabled Workspace. [Create a workspace](../fundamentals/create-workspaces.md).
 
-## Supported data connectors in dataflows
+## Supported connectors in Fabric
 
-Dataflow Gen2 provide data ingestion and transformation capabilities over a wide range of data sources. These data sources include various types of files, databases, online, cloud, and on-premises data sources. There are greater than 145 different data connectors, which are accessible from the dataflows authoring experience within the get data experience.
+Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy job. Click each data store to learn the supported capabilities and the corresponding configurations in details.
 
-:::image type="content" source="media/connector-overview/choose-data-source.png" alt-text="Screenshot of the Choose data source screen." lightbox="media/connector-overview/choose-data-source.png":::
-
-For a comprehensive list of all currently supported data connectors, go to [Dataflow Gen2 connectors in Microsoft Fabric](dataflow-support.md).
-
-The following connectors are currently available for output destinations in Dataflow Gen2:
-
-- Azure Data Explorer
-- Azure SQL
-- Data Warehouse
-- Lakehouse
-
-## Supported data stores in data pipeline
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] supports data stores in a data pipeline through the Copy, Lookup, Get Metadata, Delete, Script, and Stored Procedure activities. For a list of all currently supported data connectors, go to [Data pipeline connectors in Microsoft Fabric](pipeline-support.md).
-
-> [!NOTE]
-> Currently, a pipeline on managed VNet gateway isn't supported in Data Factory for Microsoft Fabric.
+| Connector | Dataflow gen2 (source/destination) | Data pipeline (copy activity source/destination) | Copy job (source/destination) | 
+|:-- | :--| :-- |:-- | 
+| Access | ✓/− |  |  | 
+| Acterys: Model Automation & Planning (Beta) | ✓/− |  |  | 
+| Actian (Beta) | ✓/− |  |  | 
+| Active Directory | ✓/− |  |  | 
+| Adobe Analytics | ✓/− |  |  | 
+| ADPAnalytics | ✓/− |  |  | 
+| Amazon Athena | ✓/− |  |  | 
+| Amazon OpenSearch Service (Beta)  | ✓/− |  |  | 
+| Amazon RDS for SQL Server |  | ✓/− | ✓/− | 
+| Amazon Redshift | ✓/− | ✓/− |  | 
+| Amazon S3 |  | ✓/✓ | ✓/✓ | 
+| Amazon S3 Compatible |  | ✓/✓ | ✓/✓ | 
+| Anaplan | ✓/− |  |  | 
+| Asana | ✓/− |  |  | 
+| Assemble Views | ✓/− |  |  | 
+| AtScale cubes | ✓/− |  |  | 
+| Autodesk Construction Cloud | ✓/− |  |  | 
+| Automation Anywhere | ✓/− |  |  | 
+| Automy Analytics | ✓/− |  |  | 
+| Azure AI Search |  | −/✓ |  | 
+| Azure Analysis Services | ✓/− |  |  | 
+| [Azure Blobs](connector-azure-blob-storage-overview.md) | ✓/− | ✓/✓ | ✓/✓ | 
+| Azure Cosmos DB for MongoDB |  | ✓/✓ |  | 
+| Azure Cosmos DB for MongoDB vCore (Beta) | ✓/− |  |  | 
+| Azure Cosmos DB v2 | ✓/− | ✓/✓ |  | 
+| Azure Cost Management | ✓/− |  |  | 
+| Azure Data Explorer (Kusto) | ✓/✓ | ✓/✓ | ✓/✓ | 
+| Azure Data Lake Storage Gen2 | ✓/− | ✓/✓ | ✓/✓ | 
+| Azure Database for MySQL |  | ✓/✓ | ✓/✓ | 
+| Azure Database for PostgreSQL |  | ✓/✓ | ✓/✓ | 
+| Azure Databricks | ✓/− |  |  | 
+| Azure Files |  | ✓/✓ |  | 
+| Azure HDInsight (HDFS) | ✓/− |  |  | 
+| Azure HDInsight Spark | ✓/− |  |  | 
+| Azure Resource Graph | ✓/− |  |  | 
+| Azure SQL database | ✓/✓ | ✓/✓ | ✓/✓ | 
+| Azure SQL Managed Instance |  | ✓/✓ | ✓/✓ | 
+| Azure Synapse Analytics (SQL DW)| ✓/-|✓/✓  | ✓/✓ | 
+| Azure Synapse Analytics workspace (Beta) | ✓/− |  |  | 
+| Azure Tables | ✓/− | ✓/✓ |  | 
+| BI Connector | ✓/− |  |  | 
+| BitSight Security Ratings | ✓/− |  |  | 
+| Bloomberg Data and Analytics | ✓/− |  |  | 
+| BQE CORE | ✓/− |  |  | 
+| BuildingConnected & Trade Tapp | ✓/− |  |  | 
+| CData Connect Cloud | ✓/− |  |  | 
+| Celonis EMS  | ✓/− |  |  | 
+| Cherwell (Beta) | ✓/− |  |  | 
+| ClickHouse | ✓/− |  |  | 
+| CloudBluePSA (Beta) | ✓/− |  |  | 
+| Cognite Data Fusion (OData) | ✓/− |  |  | 
+| Cognite Data Fusion (Rest API) (Beta)| ✓/− |  |  | 
+| Common Data Service (legacy) | ✓/− |  |  | 
+| Data Virtuality LDW | ✓/− |  |  | 
+| Databricks | ✓/− |  |  | 
+| Dataflows | ✓/− |  |  | 
+| Datamarts (Beta) | ✓/− |  |  | 
+| Dataverse | ✓/− | ✓/✓ |  | 
+| Delta Sharing | ✓/− |  |  | 
+| Denodo | ✓/− |  |  | 
+| Dremio Cloud | ✓/− |  |  | 
+| Dremio Software | ✓/− |  |  | 
+| Dynamics 365 Business Central | ✓/− |  |  | 
+| Dynamics 365 Customer Insights (Beta) | ✓/− |  |  | 
+| Dynamics AX | | ✓/✓ |  | 
+| Dynamics CRM |  | ✓/✓ |  | 
+| Dynatrace Grail DQL (Beta) | ✓/− |  |  | 
+| Eduframe (Beta) | ✓/− |  |  | 
+| Emigo Data Source | ✓/− |  |  | 
+| Entersoft Business Suite | ✓/− |  |  | 
+| EQuIS | ✓/− |  |  | 
+| eWay-CRM | ✓/− |  |  | 
+| Exact Online Premium (Beta) | ✓/− |  |  | 
+| Exasol | ✓/− |  |  | 
+| Excel workbook | ✓/− |  |  |
+| Fabric Data Warehouse | ✓/✓ | ✓/✓ | ✓/✓ |  
+| Fabric KQL Database | ✓/✓ | ✓/✓ |  | 
+| Fabric Lakehouse | ✓/✓ | ✓/✓ | ✓/✓ | 
+| Fabric SQL database (Beta) | ✓/✓ | ✓/✓ | ✓/✓ | 
+| FactSet Analytics | ✓/− |  |  | 
+| FactSet RMS (Beta) | ✓/− |  |  | 
+| FHIR | ✓/− |  |  | 
+| Folder | ✓/− | ✓/✓ |  | 
+| FTP |  | ✓/✓ |  | 
+| Funnel | ✓/− |  |  | 
+| Google Analytics | ✓/− |  |  | 
+| Google BigQuery | ✓/− | ✓/✓ | ✓/− | 
+| Google BigQuery(Microsoft Entra ID)  | ✓/− |  |  | 
+| Google Cloud Storage |  | ✓/✓ | ✓/✓ | 
+| Google Sheets | ✓/− |  |  | 
+| HDInsight Interactive Query | ✓/− |  |  | 
+| Hexagon PPM Smart API | ✓/− |  |  | 
+| Hive LLAP | ✓/− |  |  | 
+| HTTP |  | ✓/✓ |  | 
+| IBM Db2 database | ✓/− | ✓/✓ |  | 
+| IBM Netezza | ✓/− |  |  | 
+| Impala | ✓/− |  |  | 
+| Indexima | ✓/− |  |  | 
+| Industrial App Store | ✓/− |  |  | 
+| InformationGrid | ✓/− |  |  | 
+| InterSystems Health Insight | ✓/− |  |  | 
+| Intune Data Warehouse (Beta) | ✓/− |  |  | 
+| inwink (Beta) | ✓/− |  |  | 
+| Jamf Pro | ✓/− |  |  | 
+| Jethro (Beta) | ✓/− |  |  | 
+| JSON | ✓/− |  |  | 
+| Kognitwin | ✓/− |  |  | 
+| KX kdb Insights Enterprise (Beta) | ✓/− |  |  | 
+| Kyligence | ✓/− |  |  | 
+| Kyvos ODBC (Beta) | ✓/− |  |  | 
+| LEAP (Beta) | ✓/− |  |  | 
+| Linkar PICK Style / MultiValue Databases (Beta) | ✓/− |  |  | 
+| LinkedIn Learning | ✓/− |  |  | 
+| MariaDB| ✓/− | ✓/− |  | 
+| MarkLogic | ✓/− |  |  | 
+| Microsoft 365 |  | ✓/− |  | 
+| Microsoft Azure Data Manager for Energy | ✓/− |  |  | 
+| Microsoft Exchange Online | ✓/− |  |  | 
+| Strategy for Power BI | ✓/− |  |  | 
+| MongoDB Atlas for Pipelines |  | ✓/✓ |  | 
+| MongoDB Atlas SQL | ✓/− |  |  | 
+| MongoDB for Pipeline |  | ✓/✓ |  | 
+| MySQL database | ✓/− | ✓/− | ✓/− | 
+| OData | ✓/− | ✓/− |  | 
+| Odbc | ✓/− | ✓/✓ | ✓/✓ | 
+| OneStream | ✓/− |  |  | 
+| OpenSearch Project (Beta) | ✓/− |  |  | 
+| Oracle Cloud Storage |  | ✓/− |  | 
+| Oracle database | ✓/− | ✓/✓ | ✓/✓ | 
+| Palantir Foundry Datasets | ✓/− |  |  | 
+| Parquet | ✓/− |  |  | 
+| Paxata | ✓/− |  |  | 
+| PDF | ✓/− |  |  | 
+| Planview Enterprise Architecture | ✓/− |  |  | 
+| Planview IdeaPlace | ✓/− |  |  | 
+| Planview OKR (Beta) | ✓/− |  |  | 
+| Planview Portfolios | ✓/− |  |  | 
+| Planview ProjectPlace | ✓/− |  |  | 
+| PostgreSQL database | ✓/− | ✓/✓ | ✓/− | 
+| Power BI dataflows (Legacy) | ✓/− |  |  | 
+| Product Insights (Beta)| ✓/− |  |  | 
+| Profisee | ✓/− |  |  | 
+| QubolePresto (Beta) | ✓/− |  |  | 
+| Quickbase | ✓/− |  |  | 
+| REST |  | ✓/✓ |  | 
+| Roamler (Beta) | ✓/− |  |  | 
+| Salesforce objects | ✓/− | ✓/✓ | ✓/✓ | 
+| Salesforce reports | ✓/− |  |  | 
+| Salesforce Service Cloud |  | ✓/✓ | ✓/✓ | 
+| Samsara | ✓/− |  |  | 
+| SAP BW Application Server | ✓/− |  |  | 
+| SAP BW Message Server | ✓/− |  |  | 
+| SAP HANA database | ✓/− | ✓/✓ | ✓/− | 
+| ServiceNow |  | ✓/− |  | 
+| SFTP |  | ✓/✓ |  | 
+| SharePoint folder | ✓/✓ |  |  | 
+| SharePoint list | ✓/− |  |  | 
+| SharePoint Online list | ✓/− | ✓/− |  | 
+| Shortcuts Business Insights (Beta) | ✓/− |  |  | 
+| SingleStore Direct Query Connector | ✓/− |  |  | 
+| SIS-CC SDMX (Beta) | ✓/− |  |  | 
+| Siteimprove | ✓/− |  |  | 
+| Smartsheet | ✓/− |  |  | 
+| Snowflake | ✓/− | ✓/✓ | ✓/✓ | 
+| SoftOne BI (Beta) | ✓/− |  |  | 
+| SolarWinds Service Desk | ✓/− |  |  | 
+| Solver | ✓/− |  |  | 
+| Spark | ✓/− |  |  | 
+| SQL Server database | ✓/− | ✓/✓ | ✓/✓ | 
+| Starburst | ✓/− |  |  | 
+| Starburst secured by Entra ID | ✓/− |  |  | 
+| SumTotal | ✓/− |  |  | 
+| Supermetrics | ✓/− |  |  | 
+| SurveryMonkey | ✓/− |  |  | 
+| Sybase database | ✓/− |  |  | 
+| TeamDesk (Beta) | ✓/− |  |  | 
+| Tenforce (Smart)List | ✓/− |  |  | 
+| Teradata database | ✓/− | ✓/✓ |  | 
+| Text/CSV | ✓/− |  |  | 
+| TIBCO(R) Data Virtualization | ✓/− |  |  | 
+| Topcon Aptix Insights | ✓/− |  |  | 
+| Usercube (Beta) | ✓/− |  |  | 
+| Vena | ✓/− |  |  | 
+| Vertica | ✓/− | ✓/✓ |  | 
+| Vessel Insight | ✓/− |  |  | 
+| Viva Insights | ✓/− |  |  | 
+| Warehouse | ✓/− |  |  | 
+| Web API | ✓/− |  |  | 
+| Web page | ✓/− |  |  | 
+| Webtrends Analytics (Beta) | ✓/− |  |  | 
+| Windsor | ✓/− |  |  | 
+| Witivio (Beta) | ✓/− |  |  | 
+| Wolters Kluwer CCH Tagetik | ✓/− |  |  | 
+| Wrike (Beta) | ✓/− |  |  | 
+| XML | ✓/− |  |  | 
+| Zendesk | ✓/− |  |  | 
+| Zoho Creator | ✓/− |  |  | 
+| Zucchetti HR Infinity (Beta) | ✓/− |  |  | 
 
 ## Related content
 

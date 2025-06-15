@@ -2,11 +2,11 @@
 title: Manage and monitor an Eventhouse
 description: Learn how to manage and monitor an eventhouse and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 03/19/2025
+ms.date: 05/11/2025
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -16,7 +16,7 @@ An Eventhouse is a scalable environment for processing and analyzing large volum
 
 In this article, you learn about how to manage and gain insights about an eventhouse in Real-Time Intelligence.
 
-For advanced analytic insights, see [Eventhouse monitoring overview](monitor-eventhouse.md).
+For advanced analytic insights, see [View Worspace monitoring](#view-worspace-monitoring) and [Eventhouse monitoring overview](monitor-eventhouse.md).
 
 ## Prerequisites
 
@@ -33,13 +33,13 @@ For advanced analytic insights, see [Eventhouse monitoring overview](monitor-eve
 
 This page is divided into the following sections:
 
-A. **Eventhouse ribbon**: The ribbon provides quick access to essential actions within the Eventhouse.
+A. **Eventhouse ribbon**: The [ribbon](#eventhouse-ribbon) provides quick access to essential actions within the Eventhouse.
 
-B. **Explorer pane**: The explorer pane provides an intuitive interface for navigating between Eventhouse views and working with databases.
+B. **Explorer pane**: The [explorer pane](#explorer-pane) provides an intuitive interface for navigating between Eventhouse views and working with databases.
 
-C. **Main view area**: The main view area displays the system overview details for the eventhouse.
+C. **Main view area**: The main view area displays the [system overview details](#view-system-overview) for the eventhouse.
 
-D. **Details area**: The details area provides additional information about the eventhouse.
+D. **Details area**: The [details area](#view-eventhouse-details) provides additional information about the eventhouse.
 
 ## Eventhouse ribbon
 
@@ -62,7 +62,7 @@ Minimum consumption sets a minimum available capacity unit (CU) size for an even
 
 The Eventhouse explorer provides an intuitive interface for navigating between Eventhouse views and for working with databases.
 
-### View eventhouse details
+## View eventhouse details
 
 The eventhouse details area displays the region, last ingestion date, minimum consumption setting, and plugins. You can expand or collapse the details area using the button, or from the ribbon.
 
@@ -71,9 +71,10 @@ In the details area, you can copy the following eventhouse URI values:
 | URI type | Usage |
 |--|--|
 | Query URI | URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](data-connectors/data-connectors.md) and APIs to run queries or management commands. |
-| Ingestion URI | URI that for use by connectors and APIs to ingest data. |
+| Ingestion URI | URI that is for use by connectors and APIs to ingest data. |
+| [Minimum consumption](#enable-minimum-consumption) | Minimum available capacity unit (CU) size for your eventhouse.|
 
-### View system overview details for an eventhouse
+## View system overview
 
 The system overview page provides a snapshot of the current state of the eventhouse.
 
@@ -83,7 +84,7 @@ The system overview page provides a snapshot of the current state of the eventho
 
     The system overview page displays the following information:
 
-    * **Running state of the eventhouse**: Shows the operational status of the eventhouse. 
+    * **Running state of the eventhouse**: Shows the operational status of the eventhouse.
 
         :::image type="content" source="media/eventhouse/system-state.png" alt-text="Screenshot showing the system state icon next to the database name.":::
 
@@ -98,7 +99,7 @@ The system overview page provides a snapshot of the current state of the eventho
     * **Eventhouse storage**: Shows the storage capacity of the eventhouse. The storage capacity is divided into categories:
         * **Original size**: The uncompressed original data size of the eventhouse.
         * **Compressed size**: The compressed data size of the eventhouse.
-        * **Premium**: The amount of Premium storage utilized. This is the high-performance storage tier for your most active data, ensuring the fastest possible access for real-time processing and analysis. If all data is not stored in the Premium cache, query latency may be negatively impacted.. For more information, review your [caching policy](data-policies.md#caching-policy).
+        * **Premium**: The amount of Premium storage utilized. This is the high-performance storage tier for your most active data, ensuring the fastest possible access for real-time processing and analysis. If all data isn't stored in the Premium cache, query latency may be negatively impacted. For more information, review your [caching policy](data-policies.md#caching-policy).
 
     * **Storage resources**: Shows a snapshot of the storage breakdown by database. You can drilldown into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
 
@@ -108,13 +109,13 @@ The system overview page provides a snapshot of the current state of the eventho
 
         In the case where 78 queries and 173 ingest operations run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units used is still only 5 minutes.
 
-    * **Ingested Rows**: Shows the number of ingested rows and the number of databases that the data was ingested to. The information can help you understand the amount of data that is ingested into the eventhouse over time. 
+    * **Ingestion**: Shows the number of ingested rows and the number of databases that the data was ingested to. The information can help you understand the amount of data that is ingested into the eventhouse over time.
 
-    * **Activity in minutes - top 5 users**: Shows the total compute minutes of the most active users. The information can help you understand the efficiency with which users are utilizing compute units.
-
-    * **Top 10 queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, and the duration per database. The information can assist you in obtaining a comprehensive overview of which databases are utilizing compute units.
+    * **Top 10 queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, duration per database, and cache misses. The information can assist you in obtaining a comprehensive overview of which databases are utilizing compute units.
 
     * **Top 10 ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows. Currently only partial ingestion errors are reported.
+
+    * **Activity in minutes - top 5 users**: Shows the total compute minutes of the most active users. The information can help you understand the efficiency with which users are utilizing compute units.
 
     * **What's new - Last 7 days**: Highlights database owners and recent eventhouse events, such as the following operations:
 
@@ -127,9 +128,9 @@ The system overview page provides a snapshot of the current state of the eventho
 
 1. Optionally, select one of the tabs at the top of a card to filter its date by time range. These tabs allow you to filter by one hour (1H), one day (1D), one week (7D), one month (30D).
 
-### View all databases in an eventhouse
+## View databases overview
 
-The databases page provides a summary of all the databases in the eventhouse.
+The databases overview page provides a summary of all the databases in the eventhouse.
 
 1. From the **Eventhouse** explorer, select **Databases**.
 
@@ -143,7 +144,28 @@ The databases page provides a summary of all the databases in the eventhouse.
 
     :::image type="content" source="media/eventhouse/list-tile-view.png" alt-text="Screenshot showing the eventhouse details page with the tile and list view buttons surrounded by a red box." lightbox="media/eventhouse/list-tile-view.png":::
 
-1. To explore a specific database, select the name of this database from the list. For more information, see [Manage and monitor a database](manage-monitor-database.md).
+1. To explore a specific database, select the name of this database from the list. For more information, see (manage-monitor-database.md).
+
+## View Worspace monitoring
+
+You can access the read-only Workspace monitoring database from the Evenhouse explorer pane. Workspace monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
+
+> [!NOTE]
+>
+> * If the monitoring option is enabled, workspace logging is turned on.
+> * If the monitoring option is disabled, workspace logging is turned off. See [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md).
+>
+> :::image type="content" source="media/eventhouse/monitor-eventhouse-disabled.png" alt-text="Screenshot of an eventhouse explorer pane with disabled Monitoring highlighted in a red box.":::
+
+1. From the **Eventhouse** explorer, select **Monitoring** to open the **Monitoring Eventhouse** in a new window.
+
+    :::image type="content" source="media/eventhouse/monitor-eventhouse.png" alt-text="Screenshot of an eventhouse pane with Monitoring highlighted in a red box.":::
+
+1. In the **Monitoring KQL database** overview page, view the query insights and query the data. 
+
+    :::image type="content" source="media/eventhouse/monitor-eventhouse-details.png" alt-text="Screenshot of a monitoring eventhouse showing the monitoring KQL database overview page.":::
+
+    For information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
 
 ## Related content
 

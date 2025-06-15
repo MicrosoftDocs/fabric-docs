@@ -2,11 +2,11 @@
 title: Sample Gallery
 description: Learn how to load sample data into Real-Time Intelligence and explore it using sample queries in a KQL queryset.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 12/23/2024
+ms.date: 04/29/2025
 ms.search.form: KQL Queryset
 ---
 
@@ -15,6 +15,9 @@ ms.search.form: KQL Queryset
 Real-Time Intelligence in Microsoft Fabric offers a sample data gallery containing data in various formats and sizes for you to practice loading data and writing queries. Each dataset in the **Real-Time Intelligence Sample Gallery** is loaded into your workspace as a table in a new KQL database. Along with the database, an attached KQL queryset is created, containing sample queries unique to the dataset you selected.
 
 In this article, you learn how to query data from the sample gallery in Real-Time Intelligence to get started with analyzing your data.
+
+> [!TIP]
+> To use the sample gallery to create an end-to-end real-time solution that shows how to stream, analyze, and visualize real-time data in a real-world context, see [End-to-end sample](sample-end-to-end.md).
 
 ## Prerequisites
 
@@ -62,3 +65,4 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 * [Data management](data-management.md)
 * [Customize results in the KQL Queryset results grid](customize-results.md)
+* [End-to-end sample](sample-end-to-end.md)

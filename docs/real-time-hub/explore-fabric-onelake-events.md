@@ -11,7 +11,7 @@ ms.date: 11/17/2024
 
 OneLake events inform you about changes in your data lake, such as the creation, modification, or deletion of files and folders.
 
-Real-Time Hub enables you to discover and subscribe to these changes within OneLake, allowing you to react instantly. For instance, you can monitor changes in Lakehouse files and folders and utilize Data Activator's alerting capabilities to set up alerts based on specific conditions and define actions to take when those conditions are met. This article guides you on how to explore OneLake events using the Real-Time Hub
+Real-Time Hub enables you to discover and subscribe to these changes within OneLake, allowing you to react instantly. For instance, you can monitor changes in Lakehouse files and folders and utilize Activator's alerting capabilities to set up alerts based on specific conditions and define actions to take when those conditions are met. This article guides you on how to explore OneLake events using the Real-Time Hub
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
@@ -43,7 +43,7 @@ This section shows the artifacts using OneLake events. Here are the columns and 
 | Column | Description |
 | ------ | ------------ |
 | Name | Name of the artifact that's using OneLake events. |
-| Type | Artifact type – Data Activator or Eventstream |
+| Type | Artifact type – Activator or Eventstream |
 | Workspace | Workspace where the artifact lives. |
 | Source | Name of the workspace that is source of the events. |
 

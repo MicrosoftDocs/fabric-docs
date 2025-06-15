@@ -1,8 +1,8 @@
 ---
 title: Create and manage a set of tags
 description: "Learn how to create and manage a set of tags in Microsoft Fabric."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change

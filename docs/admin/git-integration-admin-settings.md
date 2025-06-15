@@ -1,8 +1,8 @@
 ---
 title: Git integration admin settings
 description: Learn about what the feature switches affecting Git integration do and how to use them.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.topic: how-to
 ms.custom:
 ms.date: 07/02/2024

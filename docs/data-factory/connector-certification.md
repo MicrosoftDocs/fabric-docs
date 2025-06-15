@@ -3,16 +3,17 @@ title: Data Factory Connector Certification
 description: Guidelines on connector certification and implementation requirements for the Data Factory Connector Certification Program
 author: ptyx507x
 ms.topic: conceptual
-ms.date: 12/13/2024
+ms.date: 5/13/2025
 ms.author: miescobar
-ms.custom: intro-internal
+ms.custom:
+  - intro-internal
+  - connectors
 ---
 
 # Data Factory Connector Certification
 
 > [!IMPORTANT]
-> The connector certification program is currently undergoing changes and the registration for new connector certifications is currently on hold. This article will be updated once the connector certification program opens up again for new partners.
-> If you have a certified connector that you wish to update, reach out to our team at dataconnectors@microsoft.com for instructions on how to submit a new version. Submission are processed each month and the cut-off date for submissions is the first Tuesday of every month.
+> The connector certification program is currently undergoing changes and the registration for new connector certifications is currently on hold. This article will be updated once the connector certification program opens up again for new partners. 
 
 Data source owners who develop a custom connector for their data source might want to distribute their custom connector more broadly to Data Factory users. Once a custom connector is created, used, and validated by end users, the data source owner can submit it for Microsoft certification.
 

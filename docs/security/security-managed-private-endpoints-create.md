@@ -1,8 +1,8 @@
 ---
 title: Create and use managed private endpoints in Microsoft Fabric
 description: Learn how to create and use managed private endpoints in Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
 ms.custom:
 ms.date: 09/05/2024
@@ -160,6 +160,8 @@ Ensure resource ID format is followed as shown in the following table.
 | Azure Functions | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{function-app-name}|
 | Azure Event Hubs | /subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/Microsoft.EventHub/namespaces/{namespace-name}
 | Azure IoT Hub | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Devices/IotHubs/{iothub-name}
+
+Please note creating managed private endpoint to a private link service for your Fabric tenant is not supported. 
 
 ## Related content
 

@@ -2,8 +2,8 @@
 title: Real-Time Intelligence tutorial - Introduction
 description: Get started with Real-Time Intelligence in Microsoft Fabric.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: tutorial
 ms.custom:
 ms.date: 12/02/2024
@@ -30,7 +30,9 @@ Specifically, in this tutorial, you learn how to:
 > * Get data in the Real-Time hub
 > * Transform events
 > * Publish an eventstream
+> * Subscribe to Fabric Events
 > * Use update policies to transform data in Eventhouse
+> * Use Copilot to create a KQL query
 > * Create a KQL query
 > * Create an alert based on a KQL query
 > * Create a Real-Time dashboard
