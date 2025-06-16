@@ -11,7 +11,7 @@ ms.date: 06/06/2025
 
 # Schedule a materialized lake view run
 
-Scheduling the materialized lake view (MLVs) run lets users set how often the MLVs should be refreshed based on business needs and lineage execution timing.
+Scheduling the materialized lake view (MLV) run lets users set how often the MLV should be refreshed based on business needs and lineage execution timing.
 
 ## Determining the schedule
 

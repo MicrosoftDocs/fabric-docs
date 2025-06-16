@@ -11,7 +11,7 @@ ms.date: 06/09/2025
 
 # What are materialized lake views in Microsoft Fabric? 
 
-[!INCLUDE [preview-note](../includes/materialized-lake-views-preview-note.md)]
+[!INCLUDE [preview-note](./includes/materialized-lake-views-preview-note.md)]
 
 Fabric materialized lake views (MLVs) are an efficient way to manage and query large datasets by precomputing and storing the results of a query. MaLVs in Microsoft Fabric support building a Medallion architecture by simplifying data transformations and management. They enable users to create, manage, and monitor views using a declarative approach, allowing developers to focus on working with data instead of handling infrastructure.
 

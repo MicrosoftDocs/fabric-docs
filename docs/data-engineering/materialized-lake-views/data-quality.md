@@ -1,5 +1,5 @@
 ---
-title: "Data Quality in Materialized Lake Vews in a Lakehouse in Microsoft Fabric"
+title: "Data Quality in Materialized Lake Views in a Lakehouse in Microsoft Fabric"
 description: Learn about data quality in materialized lake view in a lakehouse in Microsoft Fabric
 author: abhishjain002 
 ms.author: abhishjain
@@ -15,7 +15,7 @@ In the era of big data, the medallion architecture gained prominence as a robust
 
 Ensuring data quality is essential at every stage of the medallion architecture, which is critical for making informed business decisions. Poor data quality can lead to incorrect insights and operational inefficiencies.
 
-This article explains how to implement data quality in materialized lake views (MLVs)in Microsoft Fabric.
+This article explains how to implement data quality in materialized lake views (MLVs) in Microsoft Fabric.
 
 ## Implement data quality
 
