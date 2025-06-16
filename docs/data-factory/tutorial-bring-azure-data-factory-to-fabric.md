@@ -31,20 +31,20 @@ To get started, you must complete the following prerequisites:
 1. Create a new workspace or select an existing workspace where you want to bring your Azure Data Factory.
 1. In your workspace, select **New item**, then select **Azure Data Factory** from the menu.
 
-  :::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/azure-data-factory-in-fabric.png" alt-text="Screenshot with the Azure data factory in fabric entrance.":::
+    ::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/azure-data-factory-in-fabric.png" alt-text="Screenshot with the Azure data factory in fabric entrance.":::
 
 1. In the popup window, select all data factories that you want to mount to current workspace.
 
-  :::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/choose-azure-data-factory-in-fabric.png" alt-text="Screenshot with the Azure data factory in fabric list.":::
+    :::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/choose-azure-data-factory-in-fabric.png" alt-text="Screenshot with the Azure data factory in fabric list.":::
 
 1. In the workspace artifact list page, you can see a new artifact is created.
 
-  :::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/mounted-data-factory-artifact.png" alt-text="Screenshot with the Azure data factory in fabric workspace.":::
+    :::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/mounted-data-factory-artifact.png" alt-text="Screenshot with the Azure data factory in fabric workspace.":::
 
 1. You can select it and go into the Azure data factory UI.
 1. You can edit or run any pipelines here.
 
-  :::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/mounted-data-factory-ui.png" alt-text="Screenshot with the Azure data factory in fabric.":::
+    :::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/mounted-data-factory-ui.png" alt-text="Screenshot with the Azure data factory in fabric.":::
 
 ## Related content
 
