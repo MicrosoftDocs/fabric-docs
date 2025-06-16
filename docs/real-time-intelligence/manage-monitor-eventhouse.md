@@ -146,7 +146,7 @@ The databases overview page provides a summary of all the databases in the event
 
 1. To explore a specific database, select the name of this database from the list. For more information, see (manage-monitor-database.md).
 
-## View Worspace monitoring
+## View Workspace monitoring
 
 You can access the read-only Workspace monitoring database from the Evenhouse explorer pane. Workspace monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
 
