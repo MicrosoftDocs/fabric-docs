@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 06/12/2025
+ms.date: 06/16/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1170  | Databases | [Disabled SQL database error](./known-issue-1170-disabled-sql-database-error.md) | June 16, 2025 |
 |  1169  | Data Engineering | [Service principal based public API calls fail with variables in shortcut payloads](./known-issue-1169-service-principal-public-api-calls-fail-variables-shortcut.md) | June 12, 2025 |
 |  1168  | Power BI | [Text Analytics AI Functions fail](./known-issue-1168-text-analytics-ai-functions-fail.md) | June 12, 2025 |
 |  1166  | Power BI | [Power BI reports don't show in Viva Goals](./known-issue-1166-power-bi-reports-not-show-viva-goals.md) | June 6, 2025 |
@@ -34,7 +35,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1155  | Real-Time Intelligence | [Publish of eventstream with streaming connector source fails](./known-issue-1155-publish-eventstream-streaming-connector-source-fails.md) | June 2, 2025 |
 |  1151  | Administration & Management | [Disabling the Workspace encryption setting doesn't work](./known-issue-1151-disabling-workspace-encryption-setting-not-work.md) | May 27, 2025 |
 |  1147  | Power BI | [Button slicer formatting broken in service or May Desktop](./known-issue-1147-button-slicer-formatting-broken-service-may-desktop.md) | May 27, 2025 |
-|  1146  | Power BI | [Service error on privacy level challenge for power query](./known-issue-1146-service-error-privacy-level-challenge-power-query.md) | May 27, 2025 |
 |  1144  | Data Engineering | [Py4JJavaError when saving delta table on Fabric 1.3](./known-issue-1144-java-error-saving-delta-table-fabric-1-3.md) | May 22, 2025 |
 |  1143  | Power BI | [Error with Dremio Connector using Dremio.DatabasesV370 function](./known-issue-1143-error-dremio-connector-dremio-function.md) | May 22, 2025 |
 |  1142  | Data Warehouse | [SQL editor Copilot code completion feature might cause high usage](./known-issue-1142-sql-editor-copilot-code-completion-feature-high-usage.md) | May 20, 2025 |
@@ -102,6 +102,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1146  | Power BI | [Service error on privacy level challenge for power query](./known-issue-1146-service-error-privacy-level-challenge-power-query.md) | May 27, 2025 | Fixed: June 16, 2025 |
 |  1149  | Power BI | [Next button in connection authoring is greyed out](./known-issue-1149-next-button-connection-authoring-greyed-out.md) | May 30, 2025 | Fixed: June 12, 2025 |
 |  1148  | Power BI | [Dynamics 365 and KQL query doesn't save reports](./known-issue-1148-dynamics-365-kql-query-not-save-reports.md) | May 27, 2025 | Fixed: June 12, 2025 |
 |  1120  | Power BI | [Recommended tiles on the home page appear stretched for customer images](./known-issue-1120-recommended-tiles-home-page-stretched-customer-images.md) | May 6, 2025 | Fixed: June 12, 2025 |
