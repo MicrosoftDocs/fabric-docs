@@ -23,7 +23,7 @@ With a data agent in Microsoft Fabric, you can create conversational AI experien
 
 ## Prerequisites
 
-- [A paid F2 or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
+- [A paid P SKU or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
 - [Fabric data agent tenant settings](./data-agent-tenant-settings.md) is enabled.
 - [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
 - [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.

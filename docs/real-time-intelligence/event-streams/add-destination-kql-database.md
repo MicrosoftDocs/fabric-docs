@@ -105,6 +105,25 @@ Once you complete these steps, the eventstream with Eventhouse destination is av
 
 :::image type="content" source="media/add-destination-kql-database/live-view-processed-eventhouse.png" alt-text="A screenshot of the configured KQL Database event processing flow in Live view." lightbox="media/add-destination-kql-database/live-view-processed-eventhouse.png":::
 
+## Add an Eventhouse destination to a derived stream
+You can now seamlessly add an Eventhouse as a destination to a derived stream.This enhancement gives you more flexibility in routing the data as is or transformed into Eventhouse for real-time analytics and storage.
+
+A derived stream refers to a logical stream of data. This stream is created by applying transformations or filters to the default stream. Derived streams enhance data management and analytics by providing a curated subset of data tailored to specific needs.
+With this update, you can now:
+- Route the derived stream data into Eventhouse for advanced querying and visualization.
+- Choose your preferred ingestion mode—either **Direct Ingestion** or **Event processing before ingestion**.
+- Maintain a consistent setup experience: The configuration process mirrors what you’re already familiar with for default streams, so there’s no learning curve.
+
+1.  In Edit mode for your eventstream, follow these steps to add Eventhouse destination to the derived stream: 
+* From the derived stream select Eventhouse destination.
+   
+![Fig1](https://github.com/user-attachments/assets/5ef43a37-a0c9-48fa-b01c-5ad25cb403fe)
+* Complete the configuration for the preferred ingestion modes. Setup process remains the same as explained above for the default stream.
+   
+![Fig2](https://github.com/user-attachments/assets/3758a11d-19d9-4b87-bf35-37137301b682)
+
+
+
 > [!NOTE]  
 > When configuring an Eventstream, the source, transformation logic, and destination are typically added together. By default, when publishing the Eventstream, the backend services for both data ingestion and data routing start with **Now** respectively. However, data ingestion might begin faster than data routing, causing some data to be ingested into Eventstream before routing is fully initialized. As a result, this data might not be routed to the destination.  
 >  
