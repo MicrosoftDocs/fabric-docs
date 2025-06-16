@@ -16,7 +16,7 @@ An Eventhouse is a scalable environment for processing and analyzing large volum
 
 In this article, you learn about how to manage and gain insights about an eventhouse in Real-Time Intelligence.
 
-For advanced analytic insights, see [View Worspace monitoring](#view-worspace-monitoring) and [Eventhouse monitoring overview](monitor-eventhouse.md).
+For advanced analytic insights, see [View Workspace monitoring](#view-workspace-monitoring) and [Eventhouse monitoring overview](monitor-eventhouse.md).
 
 ## Prerequisites
 
@@ -146,7 +146,7 @@ The databases overview page provides a summary of all the databases in the event
 
 1. To explore a specific database, select the name of this database from the list. For more information, see (manage-monitor-database.md).
 
-## View Worspace monitoring
+## View Workspace monitoring
 
 You can access the read-only Workspace monitoring database from the Evenhouse explorer pane. Workspace monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
 
