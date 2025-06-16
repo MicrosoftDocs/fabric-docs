@@ -31,7 +31,7 @@ To get started, you must complete the following prerequisites:
 1. Create a new workspace or select an existing workspace where you want to bring your Azure Data Factory.
 1. In your workspace, select **New item**, then select **Azure Data Factory** from the menu.
 
-    ::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/azure-data-factory-in-fabric.png" alt-text="Screenshot with the Azure data factory in fabric entrance.":::
+    :::image type="content" source="media/tutorial-bring-azure-data-factory-to-fabric/azure-data-factory-in-fabric.png" alt-text="Screenshot with the Azure data factory in fabric entrance.":::
 
 1. In the popup window, select all data factories that you want to mount to current workspace.
 
