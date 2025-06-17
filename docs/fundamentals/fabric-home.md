@@ -123,7 +123,7 @@ For more information about workloads, see [Workloads in Fabric](../workload-deve
 
 The Help pane is also a search engine. Enter a keyword to find relevant information and resources from Microsoft documentation and community forum articles. Use the dropdown to filter the results.
 
-:::image type="content" source="media/fabric-home/helpstart.png" alt-text="Screenshot of the help pane open for search." lightbox="media/fabric-home/fabric-home-workload-landing.png":::
+:::image type="content" source="media/fabric-home/help-start.png" alt-text="Screenshot of the help pane open for search." lightbox="media/fabric-home/fabric-home-workload-landing.png":::
 
 ## Find your content using search, sort, and filter
 
