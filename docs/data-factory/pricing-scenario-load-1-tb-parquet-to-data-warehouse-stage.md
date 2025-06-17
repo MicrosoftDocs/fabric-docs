@@ -25,7 +25,7 @@ To accomplish this scenario, you need to create a pipeline with the following co
 
 :::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-1-tb-parquet-to-data-warehouse-stage.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
 
-The data movement operation utilized 267,480 CU seconds with a 1504.42 second (25.07 minute) duration while activity run operation was null since there weren’t any non-copy activities in the pipeline run. The duration of the data movement operation includes the staged copy duration.
+The data movement operation utilized 267,480 CU seconds with a 1504.42 second (25.07 minute) duration while activity run operation was null since there weren’t any non-copy activities in the pipeline run. The duration of the data movement operation is the sum of copy durations from the source to staging and from staging to the destination.
 
 > [!NOTE]
 > Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
