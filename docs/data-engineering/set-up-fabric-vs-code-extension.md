@@ -77,8 +77,11 @@ You can enable Microsoft Fabric for your tenant  such that everyone in the tenan
 
 - In VS Code, sign in Microsoft Fabric.
 - Select workspace actions.
+
   :::image type="content" source="media\vscode\view-workspace-actions.png" alt-text="Screenshot of the viewing workspace actions.":::
+  
 - Select switch tenant and  then choose the tenant you want to navigate to.
+
   :::image type="content" source="media\vscode\switch-tenants.png" alt-text="Screenshot of the selecting switch tenant to change the default tenant.":::
 
 
