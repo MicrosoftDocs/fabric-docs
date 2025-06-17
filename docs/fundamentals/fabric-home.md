@@ -109,7 +109,7 @@ The Workload hub is a central location where you can view all the workloads avai
 
 :::image type="content" source="media/fabric-home/fabric-workload-hub.png" alt-text="Screenshot of Workloads selected from the nav pane.":::
 
-If your organization gives you access to additional workloads, your Workload hub displays additional tabs.
+If your organization gives you access to more workloads, your Workload hub displays more tabs.
 
 :::image type="content" source="./media/fabric-home/fabric-my-workloads-organization.png" alt-text="Screenshot of the My workloads interface." lightbox="./media/fabric-home/fabric-my-workloads-organization.png":::
 
@@ -121,7 +121,7 @@ For more information about workloads, see [Workloads in Fabric](../workload-deve
 
 ## The Help pane is a search engine
 
-The Help pane is also a search engine. Enter a keyword to find relevant information and resources from Microsoft documentation and community forum topics. Use the dropdown to filter the results.
+The Help pane is also a search engine. Enter a keyword to find relevant information and resources from Microsoft documentation and community forum articles. Use the dropdown to filter the results.
 
 :::image type="content" source="media/fabric-home/helpstart.png" alt-text="Screenshot of the help pane open for search." lightbox="media/fabric-home/fabric-home-workload-landing.png":::
 
@@ -135,7 +135,7 @@ Select the Help icon (**?**) to open and use the contextual Help pane and to sea
 
 [!INCLUDE [product-name](../includes/product-name.md)] provides context sensitive help in the right rail of your browser. In this example, we selected **Browse** from the nav pane and the Help pane automatically updates to show us articles about the features of the **Browse** screen. For example, the Help pane displays articles on *View your favorites* and *See content that others shared with you*. If there are community posts related to the current view, they display under **Forum topics**.
 
-Leave the Help pane open as you work, and use the suggested topics to learn how to use [!INCLUDE [product-name](../includes/product-name.md)] features and terminology. Or, select the **X** to close the Help pane and save screen space.
+Leave the Help pane open as you work, and use the suggested articles to learn how to use [!INCLUDE [product-name](../includes/product-name.md)] features and terminology. Or, select the **X** to close the Help pane and save screen space.
 
 :::image type="content" source="media/fabric-home/fabric-home-help-context.png" alt-text="Screenshot of the Help pane with Recent selected in Data factory." lightbox="media/fabric-home/fabric-home-help-context.png":::
 
