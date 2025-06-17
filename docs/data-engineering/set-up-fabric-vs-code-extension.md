@@ -59,7 +59,7 @@ In order to use all the features of this extension, you need to have the followi
 
 The supported features are:
 
-- Create new user data functions in your Fabric workspace.
+- Create any fabric item. 
 - Manage your user data functions in Fabric from within VS Code.
     - View libraries.
     - View connections.
@@ -68,6 +68,18 @@ The supported features are:
 - Add new functions, run, and debug data functions locally with breakpoints.
 - Refresh connections, and libraries for your user data functions item.
 - Publish local changes to Fabric.
+- Work with workspaces in different tenant
+
+
+## Switch tenants
+
+You can enable Microsoft Fabric for your tenant  such that everyone in the tenant has access to Microsoft Fabric. You may have access to more than one tenant; you can switch between tenants using the tenant switcher.
+
+- In VS Code, sign in Microsoft Fabric.
+- Select workspace actions.
+- Select switch tenant and  then choose the tenant you want to navigate to.
+
+
 
 ## Next steps
 
