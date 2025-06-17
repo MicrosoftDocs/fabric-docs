@@ -102,7 +102,6 @@ The quality and safety of Fabric data agent responses went through rigorous eval
 
 The Fabric data agent is currently in public preview and it has limitations. Updates will improve the Fabric data agent over time.
 
-- The Fabric data agent can retrieve data by generating structured queries (SQL, DAX, or KQL) for questions that involve facts, totals, rankings, or filters. However, it can't interpret trends, provide explanations, or analyze underlying causes.
 - The Fabric data agent only generates SQL/DAX/KQL "read" queries. It doesn't generate SQL/DAX/KQL queries that create, update, or delete data.
 - Fabric Data Agent does not support unstructured Data (.pdf, .docx, or .txt). You can't use the Fabric data agent to access unstructured data resources. These resources include .pdf, .docx, or .txt files, for example.
 - The Fabric data agent does not support non-English languages. This means that questions, instructions, and example queries are required to be in English. 
