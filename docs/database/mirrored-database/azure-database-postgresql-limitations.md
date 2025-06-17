@@ -22,7 +22,7 @@ For troubleshooting, see:
 
 - Fabric Mirroring is supported for PostgreSQL versions 14, 15, 16, and 17.
 - Servers in the Burstable Compute Tier are currently not supported. 
-- Servers with High Availability enabled or with established Read Replicas are currently not supported.
+- Servers with High Availability enabled are currently not supported.
 
 ## Database level limitations
 
@@ -41,6 +41,8 @@ For troubleshooting, see:
     CREATE ROLE fabric_user  CREATEDB CREATEROLE LOGIN REPLICATION PASSWORD '<strong password>';
     GRANT azure_pg_admin TO fabric_user;
     ```
+
+- Database role also needs to be `owner` of the tables in the source database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE xxx OWNER TO fabric_user;`. Notice that, for switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html).
 
 ## Network and connectivity security
 
