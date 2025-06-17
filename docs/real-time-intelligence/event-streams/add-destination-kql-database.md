@@ -121,7 +121,7 @@ With this update, you can now:
 
 * Complete the configuration for the preferred ingestion modes. Setup process remains the same as explained above for the default stream.
    
-![Fig2](https://github.com/user-attachments/assets/3758a11d-19d9-4b87-bf35-37137301b682)
+   ::: image type="content" source="media/add-destination-kql-database/add-eventhouse-destionation-configuration.png" alt-text="Screenshot showing configurations for Eventhouse destination." lightbox="./media/add-destination-kql-database/add-eventhouse-destionation-configuration.png":::
 
 
 
