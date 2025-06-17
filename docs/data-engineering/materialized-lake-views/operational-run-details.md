@@ -1,5 +1,5 @@
 ---
-title: Materialized lake views operational run details
+title: Materialized Lake Views Operational Run Details
 description: Learn how to understand materialized lake views operational run details
 ms.topic: how-to
 author: apurbasroy
@@ -11,27 +11,27 @@ ms.date: 06/06/2025
 
 # Understand materialized lake views operational run details
 
-Operational run details encompass the various parameters and metrics tracked during the execution of a materialized lake view run in a lakehouse.
+Operational run details encompass the various parameters and metrics tracked during the execution of a materialized lake view (MLV) run in a lakehouse.
 
 ## Activity panel
 
 The activity panel is a section below the lineage view, where user can get the information of the following:
 
-* Materialized lake views which are a part of the ongoing run
-* Status of the materialized lake views
-* Start time of the materialized lake views' execution
-* Duration of the materialized lake views' execution
-* Search bar for the materialized lake views
+* MLVs which are a part of the ongoing run
+* Status of the MLVs
+* Start time of the MLVs' execution
+* Duration of the MLVs' execution
+* Search bar for the MLVs
 
 :::image type="content" source="./media/operational-run-details/activity-panel.png" alt-text="Screenshot showing activity panel in a lineage view." border="true" lightbox="./media/operational-run-details/activity-panel.png":::
 
-To view the lineage of materialized lake views within the lakehouse, you can click on a particular materialized lake view on the activity panel or in the lineage.
+To view the lineage of MLVs within the lakehouse, you can click on a particular MLV on the activity panel or in the lineage.
 
 :::image type="content" source="./media/operational-run-details/activity-panel-node.png" alt-text="Screenshot showing end to end flow of a node, on clicking a node name in activity panel in a lineage view." border="true" lightbox="./media/operational-run-details/activity-panel-node.png":::
 
 ## Details panel
 
-The materialized lake view details panel on the right side of the lineage view displays the individual materialized lake view information of the ongoing run. It contains the following:
+The materialized lake view details panel on the right side of the lineage view displays the individual MLV information of the ongoing run. It contains the following:
 
 * Name
 * Type

@@ -1,5 +1,5 @@
 ---
-title: "Power BI reports for data quality"
+title: "Power BI Reports for Data Quality"
 description: Learn about data quality reports and alerts in materialized lake views within lakehouse in Microsoft Fabric
 author: anuj1905 
 ms.author: anujsharda
@@ -11,7 +11,7 @@ ms.date: 06/10/2025
  
 # Power BI reports for data quality
 
-Materialized lake views (MLV) provides the option to view your data quality metrics at a snapshot through embedded data quality Power BI reports. The data quality report seamlessly integrates with the existing data model in MLV and presents a visual representation of your data quality metrics to help you uncover data trends and identify outliers in your data.
+Materialized lake views (MLVs) provide the option to view your data quality metrics at a snapshot through embedded data quality Power BI reports. The data quality report seamlessly integrates with the existing data model in MLV and presents a visual representation of your data quality metrics to help you uncover data trends and identify outliers in your data.
 
 ## Create and access the report
 
@@ -70,7 +70,7 @@ The report is created using the Direct Query model so there's a fixed limit of 1
 
 ## Set up alerts in data quality report
 
-You can set up alerts on the data quality report in the Fabric materialized lake views using the **Data Activator** item. Use the following steps to set up alerts on your data quality report: 
+You can set up alerts on the data quality report in the Fabric MLV using the **Data Activator** item. Use the following steps to set up alerts on your data quality report:
 
 1. From the data quality report, select **Set Alert** on the top ribbon.
 

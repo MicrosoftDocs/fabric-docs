@@ -1,5 +1,5 @@
 ---
-title: Run history of Microsoft Fabric materialized lake views
+title: Run History of Microsoft Fabric Materialized Lake Views
 description: Learn how to check run history of Fabric materialized lake views
 ms.topic: how-to
 author: apurbasroy
@@ -11,11 +11,11 @@ ms.date: 06/10/2025
 
 # Run history of materialized lake views
 
-You can access the last 25 runs of a materialized lake view, including lineage and run metadata. It's available from the dropdown for monitoring and troubleshooting.
+You can access the last 25 runs of a materialized lake view (MLV), including lineage and run metadata. It's available from the dropdown for monitoring and troubleshooting.
 
 :::image type="content" source="./media/materialized-lake-view-run-history/view-past-runs.png" alt-text="Screenshot showing a view of the past runs." border="true" lightbox="./media/materialized-lake-view-run-history/view-past-runs.png":::
 
-You can click on **View more past runs** to see the last 25 runs for materialized lake views or the runs in the last seven days whichever comes first.
+You can click on **View more past runs** to see the last 25 runs for MLVs or the runs in the last seven days, whichever comes first.
 
 :::image type="content" source="./media/materialized-lake-view-run-history/view-all-past-runs.png" alt-text="Screenshot showing a view of the past 25 runs." border="true" lightbox="./media/materialized-lake-view-run-history/view-all-past-runs.png":::
 

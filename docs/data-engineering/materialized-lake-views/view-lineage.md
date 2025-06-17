@@ -1,5 +1,5 @@
 ---
-title: "Manage Fabric materialized lake views lineage"
+title: "Manage Fabric Materialized Lake Views Lineage"
 description: Learn how to Manage Fabric materialized lake views lineage.
 ms.author: apsinhar
 author: apurbasroy
@@ -11,19 +11,19 @@ ms.date: 06/06/2025
 
 # Manage Fabric materialized lake views lineage
 
-Fabric materialized lake views (MLV) are an efficient way to manage and query large datasets by pre computing and storing the results of a query. In a fabric environment, managing these views effectively can significantly enhance performance and reduce query times.
+Fabric materialized lake views (MLVs) are an efficient way to manage and query large datasets by pre computing and storing the results of a query. In a fabric environment, managing these views effectively can significantly enhance performance and reduce query times.
 
-This document delves into the various aspects of managing a Fabric materialized lake views, including understanding the lineage, scheduling the MLV runs, exploring the history of materialized lake views, and detailing operational run specifics.
+This document delves into the various aspects of managing Fabric MLVs, including understanding the lineage, scheduling the MLV runs, exploring the history of MLVs, and detailing operational run specifics.
 
 ## View lineage
 
-A lineage is a fundamental structure for managing dependencies and scheduling tasks. In the context of materialized lake views (MLV), the lineage represents the sequence of MLV that needs to be executed to refresh the MLV once new data is available.
+A lineage is a fundamental structure for managing dependencies and scheduling tasks. In the context of MLVs, the lineage represents the sequence of MLV that needs to be executed to refresh the MLV once new data is available.
 
-After you creates materialized lake view, select **Manage materialized lake views** to navigate to the MLV lineage.
+After you create the MLV, select **Manage materialized lake views** to navigate to the MLV lineage.
 
 ## Materialized lake views Lineage
 
-The lineage or the materialized lake view flow is defined per the code written by the user in the notebook. It's created after the MLV end to end flow is created.
+The lineage or MLV flow is defined per the code written by the user in the notebook. It's created after the MLV end-to-end flow is created.
 
 :::image type="content" source="./media/view-lineage/job-graph.png" alt-text="Screenshot showing a job graph in lineage." border="true" lightbox="./media/view-lineage/job-graph.png":::
 
@@ -33,7 +33,7 @@ To run the lineage, schedule the lineage as per your requirement. Once the job G
 
 ## Understand the lineage view
 
-The lineage for a materialized view ensures that data is processed in the correct order, respecting all the dependencies. Each node in the lineage represents a specific operation, such as reading from a source table or performing a transformation. Arrows between nodes signify the dependencies, dictating the execution order. You can select a particular node to understand the flow right from the source tables and parent nodes to the dependent nodes as well.
+The lineage for an MLV ensures that data is processed in the correct order, respecting all the dependencies. Each node in the lineage represents a specific operation, such as reading from a source table or performing a transformation. Arrows between nodes signify the dependencies, dictating the execution order. You can select a particular node to understand the flow right from the source tables and parent nodes to the dependent nodes as well.
 
 The lineage UI also has the following functionalities:
 
@@ -45,14 +45,14 @@ The lineage UI also has the following functionalities:
 
   :::image type="content" source="./media/view-lineage/view-refresh.png" alt-text="Screenshot showing how to refresh a lineage UI." border="true" lightbox="./media/view-lineage/view-refresh.png":::
 
-* **New materialized lake view:** You can open a notebook to make changes to the materialized lake views as per their requirements.
+* **New materialized lake view:** You can open a notebook to make changes to the MLVs per your requirements.
 
   > [!NOTE]
-  > These notebooks aren't directly linked to a lineage UI and are used to create a materialized lake view.
+  > These notebooks aren't directly linked to a lineage UI and are used to create an MLV.
 
-  :::image type="content" source="./media/view-lineage/new-materialized-view.png" alt-text="Screenshot showing a new materialized lake views." border="true" lightbox="./media/view-lineage/new-materialized-view.png":::
+  :::image type="content" source="./media/view-lineage/new-materialized-view.png" alt-text="Screenshot showing a new materialized lake view." border="true" lightbox="./media/view-lineage/new-materialized-view.png":::
 
-* **Schedule:** You can schedule a run as per your business requirements and refresh the materialized lake views when new data is present.
+* **Schedule:** You can schedule a run as per your business requirements and refresh the MLVs when new data is present.
 
 :::image type="content" source="./media/view-lineage/schedule-button.png" alt-text="Screenshot showing the schedule button." border="true" lightbox="./media/view-lineage/schedule-button.png":::
 
