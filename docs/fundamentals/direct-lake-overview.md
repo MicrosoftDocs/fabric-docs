@@ -256,7 +256,7 @@ Direct Lake semantic models present some considerations and limitations.
 |Direct Lake storage mode tables don't support complex Delta table column types. Binary and GUID semantic types are also unsupported. You must convert these data types into strings or other supported data types.     |Not supported         |Not supported         |
 |Table relationships require the data types of related columns to match.     |Yes |Yes|
 |One-side columns of relationships must contain unique values. Queries fail if duplicate values are detected in a one-side column.     |Yes |Yes|
-|[Auto data/time intelligence in Power BI Desktop](/power-bi/transform-model/desktop-auto-date-time) isn't supported. [Marking your own date table as a date table](/power-bi/transform-model/desktop-date-tables) is supported.     |Yes |Yes|
+|[Auto date/time intelligence in Power BI Desktop](/power-bi/transform-model/desktop-auto-date-time) to create relationships using only the date part of a datetime column. Note: [Marking your own date table as a date table](/power-bi/transform-model/desktop-date-tables) and creating relationships using date columns is supported.      |Supported |Not supported|
 |The length of string column values is limited to 32,764 Unicode characters.     |Yes |Yes|
 |Non-numeric floating point values, such as *NaN* (not a number), aren't supported.     |Yes |Yes|
 |[Publish to web from Power BI](/power-bi/collaborate-share/service-publish-to-web) using a service principal is only supported when using a [fixed identity for the Direct Lake semantic model](/fabric/fundamentals/direct-lake-manage).     |Yes |Yes|
