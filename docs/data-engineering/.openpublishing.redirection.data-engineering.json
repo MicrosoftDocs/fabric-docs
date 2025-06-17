@@ -12,7 +12,7 @@
        },
        {
         "source_path_from_root": "/docs/data-engineering/simba-odbc-data-connector.md",
-        "redirect_url": "/fabric/data-engineering/index.yml",
+        "redirect_url": "/fabric/data-engineering/index",
         "redirect_document_id": false
        }
     ]
