@@ -166,6 +166,6 @@ This `UserThrownError` method takes two parameters:
 - A dictionary of properties that will be returned to the application that is invoking this function.
 
 ## Next steps
-- [Reference API documentation](/python/api/fabric-user-data-functions/fabric.functions?view=fabric-user-data-functions-python-latest)
+- [Reference API documentation](/python/api/fabric-user-data-functions/fabric.functions)
 - [Create a Fabric User data functions item](./create-user-data-functions-portal.md)
 - [User data functions samples](https://github.com/microsoft/fabric-user-data-functions-samples)
