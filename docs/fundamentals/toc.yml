@@ -214,7 +214,7 @@ items:
     - name: Data Agent consumption incorrectly reported against default workspace capacity
       href: ../known-issues/known-issue-1173-data-agent-consumption-incorrectly-reported.md
     - name: Dataflow Gen2 with a default destination to Azure SQL fails to publish
-      href: ../known-issues/known-issue-1172-dataflow-gen2-default-destination-azure-sql-fails-publish.md
+      href: ../known-issues/known-issue-1172-dataflow-default-destination-azure-fails-publish.md
     - name: OneLake shortcut creation and read fail with bad request error
       href: ../known-issues/known-issue-1171-onelake-shortcut-creation-read-fail-bad-request-error.md
     - name: Disabled SQL database error

@@ -21,7 +21,7 @@ Select the **Title** to view more information about that specific known issue.
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
 |  1173  | Data Science | [Data Agent consumption incorrectly reported against default workspace capacity](./known-issue-1173-data-agent-consumption-incorrectly-reported.md) | June 17, 2025 |
-|  1172  | Power BI | [Dataflow Gen2 with a default destination to Azure SQL fails to publish](./known-issue-1172-dataflow-gen2-default-destination-azure-sql-fails-publish.md) | June 17, 2025 |
+|  1172  | Power BI | [Dataflow Gen2 with a default destination to Azure SQL fails to publish](./known-issue-1172-dataflow-default-destination-azure-fails-publish.md) | June 17, 2025 |
 |  1171  | OneLake | [OneLake shortcut creation and read fail with bad request error](./known-issue-1171-onelake-shortcut-creation-read-fail-bad-request-error.md) | June 17, 2025 |
 |  1170  | Databases | [Disabled SQL database error](./known-issue-1170-disabled-sql-database-error.md) | June 16, 2025 |
 |  1169  | Data Engineering | [Service principal based public API calls fail with variables in shortcut payloads](./known-issue-1169-service-principal-public-api-calls-fail-variables-shortcut.md) | June 12, 2025 |
