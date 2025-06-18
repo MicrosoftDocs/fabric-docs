@@ -21,13 +21,13 @@ To accomplish this scenario, you need to create a pipeline with the following co
 
 :::image type="content" source="media/pricing-scenarios/load-1-tb-parquet-to-data-warehouse.png" alt-text="Screenshot showing the configuration of a pipeline copying Parquet data from ADLS Gen2 to a data warehouse.":::
 
-The intelligent throughput optimization value is 4.
-
 ## Cost estimation using the Fabric Metrics App
 
 :::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-1-tb-parquet-to-data-warehouse.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
 
-The data movement operation utilized 3,960 CU seconds with a 662.64 second duration while activity run operation was null since there weren’t any non-copy activities in the pipeline run.
+The data movement operation utilized 3,960 CU seconds with a 662.64 second duration while activity run operation was null since there weren’t any non-copy activities in the pipeline run. 
+
+The pricing is based on the actual intelligent throughput optimization used, which depends on its maximum configuration in the copy activity and can be obtained from the activity output. For more information, see this [article](copy-activity-performance-and-scalability-guide.md#intelligent-throughput-optimization). In this example, the actual intelligent throughput optimization used is 4.
 
 The utilized CU seconds can be derived using the following calculation:
 
