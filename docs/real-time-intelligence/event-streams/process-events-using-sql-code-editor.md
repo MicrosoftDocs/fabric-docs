@@ -48,7 +48,7 @@ To perform stream processing operations on your data streams using SQL operator,
 1. When you're done, select **Save** on the ribbon at the top to get back to the eventstream canvas.  
 1. Configure the destination.
 
-    :::image type="content" source="./media/process-events-using-sql-code-editor/complete-eventstream.png" alt-text="Screenshot that shows the completed eventstream." lightbox="./media/process-events-using-sql-code-editor/complete-eventstream.png":::        
+    :::image type="content" source="./media/process-events-using-sql-code-editor/complete.png" alt-text="Screenshot that shows the completed eventstream." lightbox="./media/process-events-using-sql-code-editor/complete.png":::        
 
 ## SQL queries
 Once the basic setup is complete, you can add your SQL query for the required data transformation. Eventstream is built on top of Azure Stream Analytics and it supports the same query semantics of Stream Analytics query language. To learn more about the syntax and usage, see [Stream Analytics Query Language Reference - Stream Analytics Query | Microsoft Learn](/stream-analytics-query/stream-analytics-query-language-reference).
