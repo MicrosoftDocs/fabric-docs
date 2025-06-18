@@ -31,7 +31,7 @@ The pricing is based on the actual intelligent throughput optimization used, whi
 
 The utilized CU seconds can be derived using the following calculation:
 
-According to [data pipeline pricing model](pricing-pipelines.md#pricing-model), each unit of intelligent optimization throughput consumes 1.5 CU hours. Given the intelligent throughput optimization value is 4, and the data movement operation duration is 662.64 seconds (approximately 11 minutes), the total CU hours utilized will be:
+According to [data pipeline pricing model](pricing-pipelines.md#pricing-model), each unit of intelligent optimization throughput consumes 1.5 CU hours. Given the intelligent throughput optimization used is 4, and the data movement operation duration is 662.64 seconds (approximately 11 minutes), the total CU hours utilized will be:
 
 Utilized CU hours = 4 * 1.5 * (11/60) = 1.1
 
