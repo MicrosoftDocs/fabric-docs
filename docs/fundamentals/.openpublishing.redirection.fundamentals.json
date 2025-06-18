@@ -34,7 +34,7 @@
             "source_path_from_root": "/docs/fundamentals/fabric-help-pane.md",
             "redirect_url": "/fabric/fundamentals/fabric-home",
             "redirect_document_id": false
-        }
+        },
         {
             "source_path_from_root": "/docs/get-started/known-issues/known-issue-549-making-model-changes-semantic-model-might-not-work.md",
             "redirect_url": "/fabric/get-started/fabric-known-issues",
