@@ -6,7 +6,7 @@ ms.author: sumuth
 author: mksuni
 ms.topic: overview
 ms.custom:
-ms.date: 03/27/2025
+ms.date: 06/17/2025
 ms.search.form: VS Code extension
 ---
 
@@ -70,20 +70,28 @@ The supported features are:
 - Publish local changes to Fabric.
 - Work with workspaces in different tenant
 
-
 ## Switch tenants
 
 You can enable Microsoft Fabric for your tenant  such that everyone in the tenant has access to Microsoft Fabric. You may have access to more than one tenant; you can switch between tenants using the tenant switcher.
 
-- In VS Code, sign in Microsoft Fabric.
-- Select workspace actions.
+1. In VS Code, sign in Microsoft Fabric.
+2. Select workspace actions.
 
   :::image type="content" source="media\vscode\view-workspace-actions.png" alt-text="Screenshot of the viewing workspace actions.":::
   
-- Select switch tenant and  then choose the tenant you want to navigate to.
+3. Select switch tenant and  then choose the tenant you want to navigate to.
 
   :::image type="content" source="media\vscode\switch-tenants.png" alt-text="Screenshot of the selecting switch tenant to change the default tenant.":::
 
+## Create any Fabric item in VS Code
+
+With the Microsoft Fabric Extension, you can now create, delete, and rename any Fabric item directly within VS Code, streamlining your workflow without ever leaving VS Code. Once created, you can also the same items in [Fabric portal](https://app.fabric.microsoft.com).
+
+1. Select Create item.
+     :::image type="content" source="media\vscode\create-item.png" alt-text="Screenshot of the selecting switch tenant to change the default tenant.":::
+3. Select the item type nd provide a name to create the item in Fabric. 
+   :::image type="content" source="media\vscode\select-item-type.png" alt-text="Screenshot of the selecting switch tenant to change the default tenant.":::
+  
 
 
 ## Next steps
