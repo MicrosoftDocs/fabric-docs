@@ -2,9 +2,9 @@
 title: Fabric data agent creation (preview)
 titleSuffix: Learn how to create a Fabric data agent
 description: Learn how to create a Fabric data agent that can answer questions about data.
-author: fbsolo-ms1
-ms.author: amjafari
-ms.reviewer: franksolomon
+author: s-polly
+ms.author: scottpolly
+ms.reviewer: amjafari
 reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
@@ -39,7 +39,7 @@ You can also add organization-specific instructions, examples, and guidance to f
 
 Fabric data agent uses large language models (LLMs) to help users interact with their data naturally. Fabric data agent applies Azure OpenAI Assistant APIs, and it behaves like an agent. It processes user questions, determines the most relevant data source (Lakehouse, Warehouse, Power BI dataset, KQL databases), and it invokes the appropriate tool to generate, validate, and execute queries. Users can then ask questions in plain language and receive structured, human-readable answers—eliminating the need to write complex queries and ensuring accurate and secure data access.
 
-Here’s how it works in detail:
+Here's how it works in detail:
 
 **Question Parsing & Validation**: The Fabric data agent applies Azure OpenAI Assistant APIs as the underlying agent to process user questions. This approach ensures that the question complies with security protocols, responsible AI (RAI) policies, and user permissions. The Fabric data agent strictly enforces read-only access, maintaining read-only data connections to all data sources.
 
@@ -80,7 +80,7 @@ Configuring a Fabric data agent is similar to building a Power BI report—you s
 > [!NOTE]
 > Adding sample query/question pairs isn't currently supported for Power BI semantic model data sources.
 
-By combining clear AI instructions and relevant example queries, you can better align the Fabric data agent with your organization’s data needs, ensuring more accurate and context-aware responses.
+By combining clear AI instructions and relevant example queries, you can better align the Fabric data agent with your organization's data needs, ensuring more accurate and context-aware responses.
 
 ## Difference between a Fabric data agent and a copilot
 

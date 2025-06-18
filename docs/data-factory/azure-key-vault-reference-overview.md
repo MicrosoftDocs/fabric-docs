@@ -6,6 +6,7 @@ author: adityajain2408
 ms.topic: overview
 ms.date: 04/28/2025
 ms.search.form: Azure Key Vault Reference overview
+ms.custom: configuration
 ---
 
 # Azure Key Vault references overview (Preview)

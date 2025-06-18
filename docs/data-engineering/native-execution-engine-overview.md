@@ -195,8 +195,6 @@ While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts
 
 ### Existing limitations
 
-- **Unsupported Delta features: Deletion vectors**: Deletion vectors in Delta Lake are not currently supported. Queries relying on this feature will automatically fall back to the standard Spark engine.  
-
 - **Incompatible Spark features**: Native execution engine does not currently support user-defined functions (UDFs), the `array_contains` function, or structured streaming. If these functions or unsupported features are used either directly or through imported libraries, Spark will revert to its default engine.
 
 - **Unsupported file formats**: Queries against `JSON`, `XML`, and `CSV` formats are not accelerated by native execution engine. These will default back to the regular Spark JVM engine for execution.

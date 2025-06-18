@@ -1,8 +1,8 @@
 ---
 title: Monitor a paused capacity
 description: Learn how to monitor a Microsoft Fabric paused capacity using the Microsoft Fabric Capacity Metrics app.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: how-to
 ms.custom:
 ms.date: 02/11/2025

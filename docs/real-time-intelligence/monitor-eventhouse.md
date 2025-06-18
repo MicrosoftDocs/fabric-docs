@@ -1,8 +1,8 @@
 ---
 title: Eventhouse monitoring overview
 description: Understand Eventhouse monitoring in Fabric and how it can help you to gain insights into the usage and performance.
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: concept-article
 ms.custom:
 ms.date: 02/13/2025

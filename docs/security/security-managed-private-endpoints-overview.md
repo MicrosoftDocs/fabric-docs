@@ -1,7 +1,7 @@
 ---
 title: Overview of managed private endpoints for Microsoft Fabric
 description: Learn about managed private endpoints for Microsoft Fabric.
-author: paulinbar
+author: msmimart
 ms.author: danzhang
 ms.topic: conceptual
 ms.custom: references_regions

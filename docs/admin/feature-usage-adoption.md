@@ -1,8 +1,8 @@
 ---
 title: Feature usage and adoption report
 description: Learn how to use the Microsoft feature usage and adoption report.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 03/06/2025

@@ -4,7 +4,7 @@ description: Learn how to configure advanced mapping settings.
 ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines
 ms.date: 07/18/2024
 ---
 

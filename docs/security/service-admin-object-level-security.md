@@ -1,17 +1,17 @@
 ---
-title: Object-level security (OLS) with Power BI
+title: Object-Level Security (OLS) with Power BI
 description: How to configure object-level security for imported semantic models, within the Power BI service.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer:
 ms.topic: how-to
-ms.date: 04/24/2024
+ms.date: 06/10/2025
 #customer intent: As a developer, I want to learn how to configure object-level security for imported semantic models, within the Power BI service, so that I can manage my content lifecycle.
 ---
 
 # Object-level security (OLS)
 
-Object-level security (OLS) enables model authors to secure specific tables or columns from report viewers. For example, a column that includes personal data can be restricted so that only certain viewers can see and interact with it. In addition, you can also restrict object names and metadata. This added layer of security prevents users without the appropriate access levels from discovering business critical or sensitive personal information like employee or financial records. For viewers that don’t have the required permission, it's as if the secured tables or columns don't exist.  
+Object-level security (OLS) enables model authors to secure specific tables or columns from report viewers. For example, a column that includes personal data can be restricted so that only certain viewers can see and interact with it. In addition, you can also restrict object names and metadata. This added layer of security prevents users without the appropriate access levels from discovering business-critical or sensitive personal information like employee or financial records. For viewers that don’t have the required permission, it's as if the secured tables or columns don't exist.  
 
 ## Create a report that uses OLS
 
@@ -22,11 +22,11 @@ To create roles on **Power BI Desktop** semantic models, use [external tools](/p
 
 1. In Power BI Desktop, [create the model](service-admin-row-level-security.md#define-roles-and-rules-in-power-bi-desktop) and roles that define your OLS rules.
 
-1. On the **External Tools** ribbon, select **Tabular Editor**. If you don’t see the Tabular Editor button, install the [program](https://tabulareditor.com). When open, Tabular Editor automatically connects to your model.
+1. On the **External tools** ribbon, select **Tabular Editor**. If you don’t see the Tabular Editor button, install the [program](https://tabulareditor.com). When open, Tabular Editor automatically connects to your model.
 
    :::image type="content" source="./media/service-admin-object-level-security/external-tools.png" alt-text="Screenshot of External tools Menu.":::
 
-1. In the **Model** view, select the drop-down menu under **Roles**. The roles you created in step 1 appear.
+1. In the **Model** view, select the dropdown menu under **Roles**. The roles you created in step 1 appear.
 
    :::image type="content" source="./media/service-admin-object-level-security/display-roles.png" alt-text="Screenshot of roles names being displayed under roles folder in model view.":::
 
@@ -36,12 +36,12 @@ To create roles on **Power BI Desktop** semantic models, use [external tools](/p
 
 1. Set the permissions for the table or column to *None* or *Read*.
 
-   **None**: OLS is enforced and the table or column is hidden from that role  
-   **Read**: The table or column is visible to that role
+   **None**: OLS is enforced and the table or column is hidden from that role.
+   **Read**: The table or column is visible to that role.
 
    ### [To secure the **whole table**](#tab/table)
 
-   Set categories under *Table permissions* to *None*.
+   Set categories under *Table Permissions* to *None*.
 
      :::image type="content" source="./media/service-admin-object-level-security/define-rule-table.png" alt-text="Screenshot of setting OLS rule to none for the entire table.":::
 
@@ -53,13 +53,13 @@ To create roles on **Power BI Desktop** semantic models, use [external tools](/p
   
     ---
 
-1. After you define object-level security for the roles, save your changes.
+1. After you define OLS for the roles, save your changes.
 
    :::image type="content" source="./media/service-admin-object-level-security/save-roles.png" alt-text="Screenshot of saving role definitions.":::
 
-1. In Power BI Desktop, publish your semantic model to the Power BI Service.
+1. In Power BI Desktop, publish your semantic model to the Power BI service.
 
-1. In the Power BI Service, navigate to the **Security** page by selecting the **more options** menu on the semantic model, and assign members or groups to their appropriate roles.
+1. In the Power BI service, navigate to the **Security** page by selecting the **More options (...)** menu for the semantic model and assign members or groups to their appropriate roles.
 
 The OLS rules are now defined. Users without the required permission receive a message that the field can't be found for all report visuals using that field.
 
@@ -67,7 +67,7 @@ The OLS rules are now defined. Users without the required permission receive a m
 
 ## Considerations and limitations
 
-* OLS only applies to *Viewers* in a workspace. Workspace members assigned *Admin*, *Member*, or *Contributor* have edit permission for the semantic model and, therefore, OLS doesn’t apply to them. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
+* OLS only applies to *Viewers* in a workspace. Workspace members assigned *Admin*, *Member*, or *Contributor* roles have Edit permission for the semantic model and, therefore, OLS doesn’t apply to them. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
 
 * Semantic models with OLS configured for one or more table or column objects aren't supported with these Power BI features:
 

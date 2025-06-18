@@ -117,7 +117,7 @@ Currently, views are not supported. Only replicating regular tables are supporte
 
 #### Some of the data in my column appears to be truncated
 
-The Fabric warehouse does not support **VARCHAR(max)** it only currently supports **VARCHAR(8000)**.
+The SQL analytics endpoint does not support **VARCHAR(max)** it only currently supports **VARCHAR(8000)**.
 
 #### I can't change the source database
 

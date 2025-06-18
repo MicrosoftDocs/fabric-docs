@@ -1,12 +1,13 @@
 ---
 title: Connect to Parquet files in dataflows
 description: This article details how to use the Data Factory Parquet connector in Microsoft Fabric to create a Parquet file connection in dataflows.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Connect to Parquet files in dataflows

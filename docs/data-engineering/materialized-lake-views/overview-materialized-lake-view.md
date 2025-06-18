@@ -1,5 +1,5 @@
 ---
-title: Overview of materialized lake views
+title: Overview of Materialized Lake Views
 description: Materialized lake views in Microsoft Fabric facilitate the implementation of the medallion architecture by enabling automated creation, scheduling, and execution of materialized lake views.
 ms.author: nijelsf 
 author: reachnijel
@@ -11,32 +11,32 @@ ms.date: 06/09/2025
 
 # What are materialized lake views in Microsoft Fabric? 
 
-Fabric materialized lake views (MLV) are an efficient way to manage and query large datasets by pre computing and storing the results of a query. Materialized lake views in Microsoft Fabric support building a Medallion architecture by simplifying data transformations and management. They enable users to create, manage, and monitor views using a declarative approach, allowing developers to focus on working with data instead of handling infrastructure.
+[!INCLUDE [preview-note](./includes/materialized-lake-views-preview-note.md)]
+
+Materialized lake views in Microsoft Fabric facilitate the implementation of a Medallion architecture, significantly enhancing data management. This functionality aids in the creation, management, and monitoring of views, and improves transformations through a declarative approach. Developers are empowered to concentrate on generating insights derived from data rather than dealing with infrastructure maintenance. 
 
 > [!NOTE]
 > This feature is currently available in the UK South region and will be rolled out to other regions in the coming weeks.
 
 ## Key features and benefits
 
-* **Declarative pipelines**: Materialized lake views allow users to manage data transformations using a declarative approach, streamlining execution without the need to manually configure or maintain individual pipelines. This approach also supports defining data quality rules and specifying how to handle any violations that arise.
+* **Declarative pipelines**: MLVs allow users to manage data transformations using a declarative approach, streamlining execution without the need to manually configure or maintain individual pipelines. This approach also supports defining data quality rules and specifying how to handle any violations that arise.
 
 * **Visualization and monitoring**: Developers can visualize lineage across all entities in lakehouse, view the dependencies, and track its execution progress. The processing pipeline is optimized for performance by updating the data in the appropriate sequence, managing optimal parallel paths, and refreshing only the parts of the lineage that have changed. This feature offers an integrated data quality report that highlights data quality trends. Additionally, alerts can be configured based on any condition related to data quality rule violations.
 
 ## Current limitations
 
-The following features aren't yet available for materialized lake views in Microsoft Fabric:
+The following features aren't yet available for MLVs in Microsoft Fabric:
 
-* PySpark isn't yet supported for materialized lake views.
+* PySpark isn't yet supported for MLVs.
 
 * Incremental refresh capabilities are currently unavailable.
 
-* There's no API support for managing materialized lake views.
-
-* Cross-lakehouse DAG and execution aren't supported at this time.
+* There's no API support for managing MLVs.
 
 * Cross-lakehouse lineage and execution aren't supported at this time.
 
 ## Related content
 
-* [Create a materialized lake view](create-materialized-lake-view.md)
-* [Monitor a materialized lake view](monitor-materialized-lake-views.md)
+* [Create materialized lake views in a lakehouse](create-materialized-lake-view.md)
+* [Monitor materialized lake views](monitor-materialized-lake-views.md)

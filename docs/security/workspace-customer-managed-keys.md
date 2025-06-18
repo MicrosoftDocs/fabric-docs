@@ -1,8 +1,8 @@
 ---
 title: Customer-managed keys for Fabric workspaces
 description: Learn how to use workspace customer managed keys to encrypt data-at-rest in your Microsoft Fabric workspace.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
 ms.custom:
 ms.date: 05/19/2025
@@ -11,6 +11,8 @@ ms.date: 05/19/2025
 ---
 
 # Customer-managed keys for Fabric workspaces
+
+*We identified an issue with the tenant level setting for the customer-managed keys feature.  We are actively working on resolving it. In the meantime, the customer-managed keys feature will be unavailable for use.*
 
 Microsoft Fabric encrypts all data-at-rest using Microsoft managed keys. With customer-managed keys for Fabric workspaces, you can use your [Azure Key Vault](/azure/key-vault/general/overview) keys to add another layer of protection to the data in your Microsoft Fabric workspaces. A customer-managed key provides greater flexibility, allowing you to manage its rotation, control access, and usage auditing. It also helps organizations meet data governance needs and comply with data protection and encryption standards.
 
@@ -88,7 +90,7 @@ Follow the steps in this section to use customer-managed keys in your Fabric wor
 
 1. Select **Apply**.
 
-Once you complete these steps, your workspace is encrypted with a customer-managed key. This means existing and future items in the workspace will be encrypted by the customer-managed key you used for the setup. You can review the encryption status *Active, In progress or Failed* in the **Encryption** tab in workspace settings. Items for which encryption is in progress or failed are listed categorically too.
+Once you complete these steps, your workspace is encrypted with a customer-managed key. This means existing and future items in the workspace will be encrypted by the customer-managed key you used for the setup. You can review the encryption status *Active, In progress or Failed* in the **Encryption** tab in workspace settings. Items for which encryption is in progress or failed are listed categorically too. The key needs to remain active in the Key Vault while encryption is in progress *(Status: In progress)*.
 
 ## Revoke access
 
@@ -136,6 +138,8 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 * CMK is only supported in the following regions: East US, Germany West Central, North Central US, North Europe, South Central US, Southeast Asia, UAE North, UK South, West Europe, and West US. To use CMK, your home region and capacity must be in a supported region.
 
 * CMK is supported on all [F SKUs](../enterprise/licenses.md).
+
+* CMK is not supported when Azure Key Vault firewall setting is enabled.
 
 ## Related content
 
