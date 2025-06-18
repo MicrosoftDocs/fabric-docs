@@ -5,7 +5,7 @@ author: julcsc
 ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom:
-ms.date: 06/17/2025
+ms.date: 06/18/2025
 #customer intent: As a Fabric user, I know how to find my content from Home.
 ---
 
