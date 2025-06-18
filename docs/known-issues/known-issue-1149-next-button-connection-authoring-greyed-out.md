@@ -4,7 +4,7 @@ description: A known issue is posted where the Next button in connection authori
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/30/2025
+ms.date: 06/12/2025
 ms.custom: known-issue-1149
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1149
 
 In any Power Query experience, you can make a connection. In the connection authoring screen, the **Next** button might be greyed out with an existing connection selected. There's no visible warning about the greyed out button. This issue happens because the connection is bound to an invalid or nonexistent gateway.
 
-**Status:** Open
+**Status:** Fixed: June 12, 2025
 
 **Product Experience:** Power BI
 

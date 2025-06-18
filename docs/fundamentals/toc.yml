@@ -209,6 +209,20 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Inability to create new VNet Data Gateway due to unavailable Save button
+      href: ../known-issues/known-issue-1180-inability-create-new-vnet-data-gateway-save-button.md
+    - name: Data Agent consumption incorrectly reported against default workspace capacity
+      href: ../known-issues/known-issue-1173-data-agent-consumption-incorrectly-reported.md
+    - name: Dataflow Gen2 with a default destination to Azure SQL fails to publish
+      href: ../known-issues/known-issue-1172-dataflow-default-destination-azure-fails-publish.md
+    - name: OneLake shortcut creation and read fail with bad request error
+      href: ../known-issues/known-issue-1171-onelake-shortcut-creation-read-fail-bad-request-error.md
+    - name: Disabled SQL database error
+      href: ../known-issues/known-issue-1170-disabled-sql-database-error.md
+    - name: Service principal based public API calls fail with variables in shortcut payloads
+      href: ../known-issues/known-issue-1169-service-principal-public-api-calls-fail-variables-shortcut.md
+    - name: Text Analytics AI Functions fail
+      href: ../known-issues/known-issue-1168-text-analytics-ai-functions-fail.md
     - name: Power BI reports don't show in Viva Goals
       href: ../known-issues/known-issue-1166-power-bi-reports-not-show-viva-goals.md
     - name: Digital twin builder item creation fails on duplicate names
