@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure Da
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scoriani
-ms.date: 06/11/2025
+ms.date: 06/17/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -42,7 +42,7 @@ For troubleshooting, see:
     GRANT azure_pg_admin TO fabric_user;
     ```
 
-- Database role also needs to be `owner` of the tables in the source database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE xxx OWNER TO fabric_user;`. Notice that, for switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html).
+- The `fabric_user` database role also needs to be `owner` of the tables in the source database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE xxx OWNER TO fabric_user;`. Notice that, for switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html).
 
 ## Network and connectivity security
 
