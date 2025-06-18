@@ -157,6 +157,8 @@ items:
         href: event-streams/add-destination-custom-app.md
     - name: Process events using event processor
       href: event-streams/process-events-using-event-processor-editor.md
+    - name: Process events using SQL code editor
+      href: event-streams/process-events-using-sql-code-editor.md
     - name: Preview data
       href: event-streams/preview-data.md
     - name: Manage eventstreams
