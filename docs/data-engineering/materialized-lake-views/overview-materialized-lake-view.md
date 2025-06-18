@@ -31,8 +31,6 @@ The following features aren't yet available for MLVs in Microsoft Fabric:
 
 * There's no API support for managing MLVs.
 
-* Cross-lakehouse DAG and execution aren't supported at this time.
-
 * Cross-lakehouse lineage and execution aren't supported at this time.
 
 ## Related content
