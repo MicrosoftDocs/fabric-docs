@@ -11,7 +11,7 @@ ms.date: 07/31/2024
 
 # OneLake compute and storage consumption
 
-OneLake usage is defined by data stored and the number of transactions. For OneLake security, capacity usage is based on the rows of the table being secured. This page contains information on how all of OneLake usage is billed and reported.
+OneLake usage is defined by data stored and the number of transactions. For OneLake security, capacity usage is based on the number of rows in the table being secured. This page contains information on how all of OneLake usage is billed and reported.
 
 ## Storage
 
@@ -96,11 +96,11 @@ This table defines CU consumption when disaster recovery is enabled and OneLake 
 
 ## OneLake security
 
-OneLake security charges for row level security (RLS) transactions based on the size of the table secured by RLS. When you access a table secured with RLS, the capacity used to execute the query is billed according to the table below. 
+OneLake security consumes capacity for row level security (RLS) transactions based on the number of rows in the table secured by RLS. When you access a table secured with RLS, the capacity consumption applies to the Fabric item used to execute the query according to the table below. 
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 |---|---|---|---|
-| **OneLake security RLS** | OneLake security RLS | Million rows in the table | 0.000005 CU seconds |
+| **OneLake security RLS** | OneLake security RLS | Million rows in the table | 0.1 CU seconds |
 
 ## Changes to Microsoft Fabric workload consumption rate
 
