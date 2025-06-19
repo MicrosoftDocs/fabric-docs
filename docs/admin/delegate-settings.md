@@ -1,8 +1,8 @@
 ---
 title: Delegate tenant settings
 description: Learn how you can delegate settings in the Microsoft Fabric admin portal, from the tenant to the capacity, and from the capacity to workspaces.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
 ms.date: 11/16/2023
 # customer intent: Learn how to delegate settings in the Microsoft Fabric admin portal.

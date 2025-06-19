@@ -1,8 +1,8 @@
 ---
 title: Protected sensitivity labels in Fabric and Power BI
 description: Learn about protected sensitivity labels in Fabric and Power BI and how they control what you can do with files.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 02/18/2024
@@ -15,40 +15,39 @@ Having a set of sensitivity labels and policies in place is a prerequisite for u
 
 ## How protected labels work in Fabric and Power BI
 
-In Fabric and the Power BI service, protected labels only control the ability to change or remove labels on items. They don't control access to content. In order for a user to be able to change or remove a protected label from an item, the user must either be the user who applied the sensitivity label (the RMS owner), or have at least one of the following usage rights requirements for the label.
+In Fabric and the Power BI service, protected labels only control the ability to change or remove labels on items. They don't control access to content; for access control via sensitivity label, see [Protection policies](protection-policies-overview.md). In order for a user to be able to change or remove a protected label from an item, the user must either be the user who applied the sensitivity label (the RMS owner), or have at least one of the following usage rights requirements for the label:
 
-* OWNER
-* EXPORT
-* EDIT and EDITRIGHTSDATA
+- OWNER
+- EXPORT
+- EDIT and EDITRIGHTSDATA
 
 If the label on the item was set via an automated process, such as inheritance from data sources or downstream inheritance, then the third option, EDIT and EDITRIGHTSDATA, is reduced to just EDIT. See [Relaxations to accommodate automatic labeling scenarios](#relaxations-to-accommodate-automatic-labeling-scenarios) for details.
 
-In Power BI Desktop, protected labels control not only the ability to change or remove the protected label, but also access to content (viewing, editing, exporting, etc.). As a result, collaboration scenarios with protected PBIX files might be blocked, since it's unlikely that most users will have sufficient usage rights under the label to open and edit the file. 
+In Power BI Desktop, protected labels control not only the ability to change or remove the protected label, but also encrypt the file's content (viewing, editing, exporting, etc.). Having the previously described usage rights is sufficient to decrypt the file and have full control over it.
 
-For example, imagine that you create a report in Power BI Desktop, apply a protected label to it, and then share the PBIX file with another user. It's quite likely that the user won't have sufficient permissions to open the file.
+Users with the following permissions can open, edit, and republish protected PBIX files with restrictions.
 
-To prevent this situation and enable more users to work with protected PBIX files, the Fabric administrator should enable the **Increase the number of users who can edit and republish encrypted PBIX files (preview)** tenant setting. When this setting is enabled, more users (see note) will able to open, edit, and publish/republish protected PBIX files, with the following restrictions:
+Permissions: 
 
-* They can't export to formats that don't support sensitivity labels, such as CSV files.
-* They can't change the label on the PBIX file.
-* They can only republish the PBIX file to the original workspace the file came from. 
-   >[!NOTE]
-   >The file must have been published at least once for other users to be able to publish it back to that specific workspace. If the file hasn't yet been published, then the latest label issuer (the one who most recently set the protected label) or a user with sufficient usage rights must publish it and then share the file with the other editors.)
+- View content (VIEW)
+- Edit content (DOCEDIT)
+- Save (EDIT)
+- Copy and extract content (EXTRACT)
+- Allow macros (OBJMODEL)
+
+Restrictions: 
+
+- They can't export to formats that don't support sensitivity labels, such as CSV files.
+- They can't save as PBIP or PBIT.
+- They can't change the label on the PBIX file.
+- They can only republish the PBIX file to the original workspace the file came from.
+
+> [!NOTE]
+> The file must have been published at least once for other users to be able to publish it back to that specific workspace. If the file hasn't yet been published, then the latest label issuer (the one who most recently set the protected label) or a user with sufficient usage rights must publish it and then share the file with the other editors.
 
 These restrictions ensure that the security of the content remains under the control of those who have high enough permissions to set the label.
 
-> [!NOTE]
-> Users must have all of the following usage rights under the label policy:
->
-> * View Content (VIEW)
-> * Edit Content (DOCEDIT)
-> * Save (EDIT)
-> * Copy and extract content (EXTRACT)
-> * Allow Macros (OBJMODEL)
-
-These usage rights are a subset of the Co-Author permissions preset in the Microsoft Purview compliance portal.
-
-In addition, the **Less elevated user support** preview feature switch in Power BI Desktop must be selected. See [Desktop preview feature switch for editing by users with restrictive sensitivity permissions](../admin/service-admin-portal-information-protection.md#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions) for detail.
+These usage rights are a subset of the **editor** (formerly known as co-author) permissions preset in the Microsoft Purview compliance portal.
 
 ## Relaxations to accommodate automatic labeling scenarios
 
@@ -56,11 +55,11 @@ Fabric and Power BI support several capabilities, such as [label inheritance fro
 
 In such cases, the usage rights requirements for changing or removing the label are relaxed - a user needs just one of the following usage rights to be able to change or remove the label:
 
-* OWNER
-* EXPORT
-* EDIT 
+- OWNER
+- EXPORT
+- EDIT 
 
-If no user has even these usage rights, nobody will be able to change or remove the label from the item, and access to the item is potentially endangered.
+If no user has even these usage rights, nobody can change or remove the label from the item, and access to the item is potentially endangered.
 
 To avoid this situation, the Fabric admin can enable the **Allow workspace admins to override automatically applied sensitivity labels** tenant setting. This makes it possible for workspace admins to override automatically applied sensitivity labels without regard to label change enforcement rules.
 
@@ -68,4 +67,4 @@ To enable this setting, go to: **Admin portal > Tenant settings > Information pr
 
 ## Related content
 
-* [Information protection](information-protection.md)
+- [Information protection](information-protection.md)

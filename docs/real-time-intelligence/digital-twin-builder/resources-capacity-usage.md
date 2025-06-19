@@ -3,7 +3,7 @@ title: Capacity consumption for digital twin builder (preview)
 description: This article contains information about how digital twin builder (preview) measures resource consumption that affects your billing.
 author: baanders
 ms.author: baanders
-ms.date: 05/30/2025
+ms.date: 06/06/2025
 ms.topic: conceptual
 ---
 
@@ -25,8 +25,6 @@ The following table defines how many capacity units (CU) are consumed when digit
 | Meter name | Operation name | Fabric consumption rate (CU hours) | Description |
 |---|---|---|
 | Digital Twin Builder Operation Capacity Usage CU | Digital Twin Builder Operation | 4 | Usage for on-demand and scheduled digital twin builder flow operations |
-
-Digital twin builder also shows another meter, **Digital Twin Builder Per Hour**, but it's currently not billable.
 
 ## Monitoring usage 
 

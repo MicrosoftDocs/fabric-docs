@@ -1,8 +1,8 @@
 ---
 title: Fabric region availability
 description: Learn which regions Fabric is available in.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.custom:
   - references_regions
 ms.topic: overview
@@ -36,7 +36,7 @@ This table lists regions where all Fabric workloads are available.
 | Canada East<sup>3</sup>        | France Central               |             |                    | Central India          |
 | Central US                     | Germany West Central         |             |                    | East Asia              |
 | East US                        | Italy North <sup>3</sup>     |             |                    | Japan East<sup>3</sup> |
-| East US 2                      | Norway East                  |             |                    | Japan West             |
+| East US 2                      | Norway East                  |             |                    | Japan West<sup>3</sup> |
 | North Central US               | Poland Central <sup>3</sup>  |             |                    | Southeast Asia         |
 | South Central US<sup>2,4</sup> | Sweden Central               |             |                    | South India            |
 | West US                        | Switzerland North            |             |                    | Korea Central          |

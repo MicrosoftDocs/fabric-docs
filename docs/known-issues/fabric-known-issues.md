@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 06/04/2025
+ms.date: 06/17/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,14 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1173  | Data Science | [Data Agent consumption incorrectly reported against default workspace capacity](./known-issue-1173-data-agent-consumption-incorrectly-reported.md) | June 17, 2025 |
+|  1172  | Power BI | [Dataflow Gen2 with a default destination to Azure SQL fails to publish](./known-issue-1172-dataflow-default-destination-azure-fails-publish.md) | June 17, 2025 |
+|  1171  | OneLake | [OneLake shortcut creation and read fail with bad request error](./known-issue-1171-onelake-shortcut-creation-read-fail-bad-request-error.md) | June 17, 2025 |
+|  1170  | Databases | [Disabled SQL database error](./known-issue-1170-disabled-sql-database-error.md) | June 16, 2025 |
+|  1169  | Data Engineering | [Service principal based public API calls fail with variables in shortcut payloads](./known-issue-1169-service-principal-public-api-calls-fail-variables-shortcut.md) | June 12, 2025 |
+|  1168  | Power BI | [Text Analytics AI Functions fail](./known-issue-1168-text-analytics-ai-functions-fail.md) | June 12, 2025 |
+|  1166  | Power BI | [Power BI reports don't show in Viva Goals](./known-issue-1166-power-bi-reports-not-show-viva-goals.md) | June 6, 2025 |
+|  1165  | Real-Time Intelligence | [Digital twin builder item creation fails on duplicate names](./known-issue-1165-digital-twin-builder-item-creation-fails-duplicate-names.md) | June 6, 2025 |
 |  1167  | Power BI | [Refreshes have slow performance and timeouts for Dataflows Gen2 with CI/CD](./known-issue-1167-refreshes-slow-performance-timeouts-dataflows-gen-2.md) | June 4, 2025 |
 |  1164  | Real-Time Intelligence | [Inaccurate usage data displayed for digital twin builder usage in Capacity Metrics App](./known-issue-1164-inaccurate-data-digital-twin-builder-usage-capacity-metrics-app.md) | June 4, 2025 |
 |  1163  | Power BI | [Service report is missing table tooltips in the field list in edit mode](./known-issue-1163-service-report-missing-table-tooltips-field-list-edit-mode.md) | June 4, 2025 |
@@ -28,11 +36,8 @@ Select the **Title** to view more information about that specific known issue.
 |  1158  | Power BI | [New query replicas in Azure Analysis Services fail to start](./known-issue-1158-new-query-replicas-azure-analysis-services-fail-start.md) | June 3, 2025 |
 |  1156  | Data Warehouse | [Data warehouse doesn't load with version mismatch error](./known-issue-1156-data-warehouse-not-load-version-mismatch-error.md) | June 2, 2025 |
 |  1155  | Real-Time Intelligence | [Publish of eventstream with streaming connector source fails](./known-issue-1155-publish-eventstream-streaming-connector-source-fails.md) | June 2, 2025 |
-|  1149  | Power BI | [Next button in connection authoring is greyed out](./known-issue-1149-next-button-connection-authoring-greyed-out.md) | May 30, 2025 |
 |  1151  | Administration & Management | [Disabling the Workspace encryption setting doesn't work](./known-issue-1151-disabling-workspace-encryption-setting-not-work.md) | May 27, 2025 |
-|  1148  | Power BI | [Dynamics 365 and KQL query doesn't save reports](./known-issue-1148-dynamics-365-kql-query-not-save-reports.md) | May 27, 2025 |
 |  1147  | Power BI | [Button slicer formatting broken in service or May Desktop](./known-issue-1147-button-slicer-formatting-broken-service-may-desktop.md) | May 27, 2025 |
-|  1146  | Power BI | [Service error on privacy level challenge for power query](./known-issue-1146-service-error-privacy-level-challenge-power-query.md) | May 27, 2025 |
 |  1144  | Data Engineering | [Py4JJavaError when saving delta table on Fabric 1.3](./known-issue-1144-java-error-saving-delta-table-fabric-1-3.md) | May 22, 2025 |
 |  1143  | Power BI | [Error with Dremio Connector using Dremio.DatabasesV370 function](./known-issue-1143-error-dremio-connector-dremio-function.md) | May 22, 2025 |
 |  1142  | Data Warehouse | [SQL editor Copilot code completion feature might cause high usage](./known-issue-1142-sql-editor-copilot-code-completion-feature-high-usage.md) | May 20, 2025 |
@@ -48,7 +53,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1126  | Data Factory | [Function queries cause failures in Dataflow Gen2 refresh](./known-issue-1126-function-queries-failures-dataflow-gen2-refresh.md) | May 8, 2025 |
 |  1123  | Data Warehouse | [Reenabling Azure SQL database mirroring fails](./known-issue-1123-reenabling-azure-sql-database-mirroring-fails.md) | May 7, 2025 |
 |  1122  | Power BI | [Power BI report selection doesn't work in Viva Goals](./known-issue-1122-report-selection-not-work-viva-goals.md) | May 6, 2025 |
-|  1120  | Power BI | [Recommended tiles on the home page appear stretched for customer images](./known-issue-1120-recommended-tiles-home-page-stretched-customer-images.md) | May 6, 2025 |
 |  1119  | Power BI | [Large semantic model storage format conversion stays in view mode](./known-issue-1119-large-semantic-model-conversion-view-mode.md) | May 2, 2025 |
 |  1121  | Data Warehouse | [SQL analytics endpoint queries return empty results](./known-issue-1121-sql-analytics-endpoint-queries-return-empty-results.md) | May 1, 2025 |
 |  1118  | Power BI | [Execution details of semantic model refresh activity unavailable in Monitor hub](./known-issue-1118-execution-details-model-refresh-unavailable-monitor-hub.md) | May 1, 2025 |
@@ -56,7 +60,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1112  | Data Engineering | [User data functions option not visible in data pipelines functions activity](./known-issue-1112-functions-option-not-visible-pipelines-functions-activity.md) | April 22, 2025 |
 |  1107  | Real-Time Intelligence | [Cross-region capacity migration might fail if items weren't deleted successfully](./known-issue-1107-cross-region-capacity-migration-fail-items-not-deleted-successfully.md) | April 22, 2025 |
 |  1106  | Real-Time Intelligence | [Eventstream real-time weather connector fails to load map in edit mode](./known-issue-1106-eventstream-weather-connector-fails-load-map-edit-mode.md) | April 18, 2025 |
-|  1103  | Data Warehouse | [Data warehouse in second workspace out of sync from Git](./known-issue-1103-data-warehouse-second-workspace-sync-git.md) | April 18, 2025 |
 |  1102  | Data Engineering | [Deletion of managed private endpoint connected to Key Vault doesn't work](./known-issue-1102-deletion-private-endpoint-connected-key-vault-not-work.md) | April 15, 2025 |
 |  1101  | Power BI | [Vertica connector throws invalid conversion error](./known-issue-1101-vertica-connector-throws-invalid-conversion-error.md) | April 15, 2025 |
 |  1092  | Data Factory | [Delayed data availability in SQL analytics endpoint when using a pipeline](./known-issue-1092-delayed-data-availability-analytics-endpoint-pipeline.md) | April 11, 2025 |
@@ -74,8 +77,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1056  | Data Factory | [Database mirroring error that source table doesn't exist](./known-issue-1056-database-mirroring-error-source-table-not-exist.md) | March 18, 2025 |
 |  1058  | OneLake | [Workspaces created during Fabric preview only support limited OneLake features](./known-issue-1058-workspaces-created-during-preview-limited-onelake-features.md) | March 12, 2025 |
 |  1055  | Data Factory | [Spark Job Definition activity incorrectly shows failure status](./known-issue-1055-spark-job-definition-activity-incorrectly-shows-failure-status.md) | March 12, 2025 |
-|  1033  | Administration & Management | [FeatureNotAvailableError error in Network Security tab of Workspace Settings](./known-issue-1033-error-network-security-tab-workspace-settings.md) | February 28, 2025 |
-|  1031  | Administration & Management | [Git integration undo action appears after initial sync fails](./known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md) | February 20, 2025 |
 |  1028  | Data Engineering | [Slow Spark session startup caused by Native Execution Engine](./known-issue-1028-slow-spark-session-startup-native-execution-engine.md) | February 19, 2025 |
 |  1027  | Data Factory | [Mirroring fails for tables with unique index on unsupported data type](./known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md) | February 19, 2025 |
 |  1017  | Data Engineering | [Unsupported error for legacy timestamp in Fabric Runtime 1.3](./known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md) | February 5, 2025 |
@@ -84,7 +85,6 @@ Select the **Title** to view more information about that specific known issue.
 |  989  | Data Factory | [Local data access isn't allowed for pipeline using on-premises data gateway](./known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md) | January 13, 2025 |
 |  988  | Real-Time Intelligence | [Data activator events aren't ingested for Reflex events](./known-issue-988-data-activator-events-not-ingested-reflex-events.md) | January 13, 2025 |
 |  986  | Power BI | [Direct Lake query cancellation might cancel other queries](./known-issue-986-direct-lake-query-cancellation-cancel-queries.md) | January 7, 2025 |
-|  985  | Power BI | [Direct Lake query cancellation causes model to fall back to DirectQuery](./known-issue-985-direct-lake-query-cancellation-fall-back-directquery.md) | January 7, 2025 |
 |  975  | Power BI | [Create report doesn't work on Eventhouse monitoring KQL database](./known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database.md) | January 6, 2025 |
 |  965  | Databases | [SQL database creation fails to create child items when item with same name exists](./known-issue-965-sql-database-creation-fails-create-child-items-same-name.md) | December 10, 2024 |
 |  954  | Data Factory | [Create, configure, or delete a mirror fails](./known-issue-954-create-configure-delete-mirror-fails.md) | December 2, 2024 |
@@ -98,7 +98,6 @@ Select the **Title** to view more information about that specific known issue.
 |  757  | Data Factory | [Copy activity from Oracle to lakehouse fails for Number data type](./known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md) | June 20, 2024 |
 |  717  | Data Factory | [West India region doesn't support on-premises data gateway for data pipelines](./known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md) | May 16, 2024 |
 |  506  | Data Warehouse | [InProgress status shows in Fabric capacity metrics app for completed queries](./known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md)  | October 5, 2023 |
-|  454  | Data Warehouse              | [Warehouse's object explorer doesn't support case-sensitive object names](./known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md)    |  July 10, 2023  |
 
 ## Recently closed known issues
 
@@ -106,6 +105,16 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1180  | Power BI | [Inability to create new VNet Data Gateway due to unavailable Save button](./known-issue-1180-inability-create-new-vnet-data-gateway-save-button.md) | June 17, 2025 | Fixed: June 17, 2025 |
+|  1146  | Power BI | [Service error on privacy level challenge for power query](./known-issue-1146-service-error-privacy-level-challenge-power-query.md) | May 27, 2025 | Fixed: June 16, 2025 |
+|  1149  | Power BI | [Next button in connection authoring is greyed out](./known-issue-1149-next-button-connection-authoring-greyed-out.md) | May 30, 2025 | Fixed: June 12, 2025 |
+|  1148  | Power BI | [Dynamics 365 and KQL query doesn't save reports](./known-issue-1148-dynamics-365-kql-query-not-save-reports.md) | May 27, 2025 | Fixed: June 12, 2025 |
+|  1120  | Power BI | [Recommended tiles on the home page appear stretched for customer images](./known-issue-1120-recommended-tiles-home-page-stretched-customer-images.md) | May 6, 2025 | Fixed: June 12, 2025 |
+|  1103  | Data Warehouse | [Data warehouse in second workspace out of sync from Git](./known-issue-1103-data-warehouse-second-workspace-sync-git.md) | April 18, 2025 | Fixed: June 12, 2025 |
+|  1033  | Administration & Management | [FeatureNotAvailableError error in Network Security tab of Workspace Settings](./known-issue-1033-error-network-security-tab-workspace-settings.md) | February 28, 2025 | Fixed: June 12, 2025 |
+|  985  | Power BI | [Direct Lake query cancellation causes model to fall back to DirectQuery](./known-issue-985-direct-lake-query-cancellation-fall-back-directquery.md) | January 7, 2025 | Fixed: June 12, 2025 |
+|  454  | Data Warehouse | [Warehouse's object explorer doesn't support case-sensitive object names](./known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md)  |  July 10, 2023  | Fixed: June 12, 2025 |
+|  1031  | Administration & Management | [Git integration undo action appears after initial sync fails](./known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md) | February 20, 2025 | Fixed: June 6, 2025 |
 |  1136  | OneLake | [Scrolling through workspaces in OneLake Catalog doesn't work](./known-issue-1136-scrolling-workspaces-onelake-catalog-not-work.md) | May 19, 2025 | Fixed: June 4, 2025 |
 |  1004  | Data Engineering | [Notebook and SJD job statuses are in progress in monitor hub](./known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md) | January 29, 2025 | Fixed: May 27, 2025 |
 |  1104  | Power BI | [Power BI visual warning about style preset not found](./known-issue-1104-visual-warning-style-preset-not-found.md) | April 18, 2025 | Fixed: May 20, 2025 |
@@ -136,7 +145,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  1039  | Data Warehouse | [Sync for data warehouse and SQL analytics endpoint fail in West Europe](./known-issue-1039-sync-warehouse-sql-endpoint-fail-west-europe.md) | March 3, 2025 | Fixed: May 6, 2025 |
 |  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](./known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 | Fixed: May 6, 2025 |
 |  878  | Power BI | [Premium capacity doesn't add excess usage into carry forward](./known-issue-878-premium-capacity-not-add-usage-carry-forward.md) | October 10, 2024 | Fixed: May 2, 2025 |
-|  508  | Data Warehouse | [User column incorrectly shows as System in Fabric capacity metrics app](./known-issue-508-user-column-incorrectly-shows-system-metrics-app.md)  | October 5, 2023 | Fixed: May 1, 2025 |
 
 ## Related content
 

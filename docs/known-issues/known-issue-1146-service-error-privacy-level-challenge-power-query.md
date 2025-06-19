@@ -4,7 +4,7 @@ description: A known issue is posted where you receive a service error on privac
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/27/2025
+ms.date: 06/16/2025
 ms.custom: known-issue-1146
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1146
 
 You can attempt to save the populated privacy level configuration on a firewall challenge. When you select the **Save** button, you receive an error. This issue primarily impacts dataflows and all other hosts that evaluate power query and render the query editor.
 
-**Status:** Open
+**Status:** Fixed: June 16, 2025
 
 **Product Experience:** Power BI
 

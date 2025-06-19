@@ -4,7 +4,7 @@ description: Learn how to configure an open mirrored database in Microsoft Fabri
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur, marakiketema, maprycem
-ms.date: 05/19/2025
+ms.date: 06/04/2025
 ms.topic: tutorial
 ---
 
@@ -31,7 +31,7 @@ In this section, we provide a brief overview of how to create a new open mirrore
 
 ## Start replicating data
 
-Once you've created a mirrored database, start uploading your CSV or parquet files. You can upload your initial data and future changed data sets using the Fabric portal or programmatically via the OneLake.
+Once you've created a mirrored database, start uploading your files. You can upload your initial data and future changed data sets using the Fabric portal or programmatically via the OneLake.
 
 ### Upload via the Fabric portal
 
@@ -41,10 +41,10 @@ To upload initial data and/or incremental changed data for open mirroring:
 
    :::image type="content" source="media/open-mirroring-tutorial/upload-files.png" alt-text="Screenshot from the Fabric portal of the Upload Files options on the home screen of an open mirrored database." lightbox="media/open-mirroring-tutorial/upload-files.png":::
 
-1. On the **Upload files** page, upload a Parquet or CSV file using the upload dialog in the Fabric portal.
+1. On the **Upload files** page, upload a file using the upload dialog in the Fabric portal.
    
    > [!IMPORTANT]
-   > The file name of the Parquet or CSV file needs to match the format and filename documented. For more information, see [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md).
+   > The file name of the Parquet or delimited text file needs to match the format and filename documented. For more information, see [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md).
 
 1. On the **Preview data** page, you can see a preview of the data you are about to upload. Provide the **Table name** a name and specify **Primary key column(s)**. Select **Create table**.
 
@@ -52,7 +52,7 @@ To upload initial data and/or incremental changed data for open mirroring:
 
 1. From the **Replication status** in the **Explorer**, you can see how many rows have been replicated and any errors associated with the data you are mirroring into OneLake.
 
-1. If you have changed data in a Parquet or CSV format for existing tables in your mirrored database, you can upload or drag and drop these change files. The changes are automatically reflected in OneLake. 
+1. If you have changed data in a format for existing tables in your mirrored database, you can upload or drag and drop these change files. The changes are automatically reflected in OneLake. 
 
 ### Write change data into the landing zone using other mechanisms
 
