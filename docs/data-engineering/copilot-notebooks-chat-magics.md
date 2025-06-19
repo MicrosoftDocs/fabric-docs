@@ -5,7 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.custom:
-ms.date: 06/10/2025
+ms.date: 06/19/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 #CustomerIntent: As a data scientist, data engineer, or business analyst using notebooks in Microsoft Fabric, I want to understand the capabilities of the Chat-magics library to enhance my notebook interactions.
