@@ -75,6 +75,7 @@ The following items support the Variable library:
 * [Data pipeline](../../data-factory/variable-library-integration-with-data-pipelines.md)
 <!--- * [Lakehouse](../../data-engineering/lakehouse-overview.md)
 * Notebook --->
+* [Assign variables to shortcuts (preview)](../../onelake/assign-variables-to-shortcuts.md)
 
 ## Considerations and limitations
 
