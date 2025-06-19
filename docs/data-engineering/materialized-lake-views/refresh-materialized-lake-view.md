@@ -34,7 +34,7 @@ FULL: It's an optional argument. If the FULL keyword is used, a full refresh of 
 > [!NOTE]
 > Refreshing an MLV that uses non-delta tables as its source initiate a full refresh of the MLV.
 
-## Known issue
+## Known issues
 
 * At present, all refresh operations default to a full refresh.
 
