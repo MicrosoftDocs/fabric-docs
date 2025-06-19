@@ -20,11 +20,11 @@ At the top of each page, the **Capacity Name** field allows you to select the ca
 
 In this page, there are three cards present to provide specific information of SKU, Average utilization % and Peak utilization %. The information on the cards is filtered according to your capacity and date range selection.
 
-* **SKU** - Latest SKU of the capacity.
+* **SKU** - Latest SKU of the capacity. Shows most recent SKU for active state if capacity is paused, and shows blank if capacity is active but not reporting usage.
    
-* **Average utilization %** - Average utilization percentage of the capacity. This excludes timepoint when the capacity was not active (eg, paused) and the timepoints where capacity was active but not reporting usage.
+* **Average utilization %** - Average utilization percentage of the capacity. Utilization is calculated with respect to base capacity units of the capacity and does not consider autoscale capacity units. This excludes timepoint when the capacity was not active (e.g., paused) and the timepoints where capacity was active but not reporting usage.
 
-* **Peak utilization %** - Peak utilization percentage of the capacity. User can filter out peak utilization reported for pause events using “Filter paused events” in the visual-level filter pane. Paused events are included by default.
+* **Peak utilization %** - Peak utilization percentage of the capacity. Utilization is calculated with respect to base capacity units of the capacity and does not consider autoscale capacity units. User can filter out peak utilization reported for pause events using "_Filter paused events_" in the visual-level filter pane. Paused events are included by default.
 
 ## Multi metric ribbon chart
 
