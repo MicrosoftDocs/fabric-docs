@@ -59,7 +59,7 @@ In this case the data movement from the staging Warehouse to the Lakehouse desti
 
 In this scenario, you have a dataflow that includes transformations that do not fold to the source system, such as certain date or string manipulations. These transformations can lead to longer execution times and increased resource usage. 
 
-In this case, consider separating the query into two steps: one for the Fast Copy operation with query folding and another for the transformations using the staging Lakehouse or Warehouse compute. This approach allows you to take advantage of Fast Copy for high-throughput data movement while performing the necessary transformations in a separate step. By doing so, you can optimize the performance of your dataflow and reduce the overall execution time.
+In this case, consider separating the query into two steps: one for the Fast Copy operation with query folding and another for the transformations using the staging Lakehouse or Warehouse compute. This approach allows you to take advantage of Fast Copy for high-throughput data movement while performing the necessary transformations in a separate step. By doing so, you can optimize the performance of your dataflow and reduce the overall execution time. 
 
 ### Scenario 5: Large data previews during design-time
 
