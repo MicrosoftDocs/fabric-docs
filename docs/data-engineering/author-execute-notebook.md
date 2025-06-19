@@ -564,6 +564,30 @@ You can personalize your Spark session with the magic command **%%configure**. F
 > - The standard Spark configuration properties must be used in the "conf" body. Fabric doesn't support first level reference for the Spark configuration properties.
 > - Some special Spark properties, including "spark.driver.cores", "spark.executor.cores", "spark.driver.memory", "spark.executor.memory", and "spark.executor.instances" don't take effect in "conf" body.
 
+You can also use `%%configure` magic command to dynamically inject configuration values from the [Variable Library](../cicd/variable-library/variable-library-overview.md) into your notebook.
+
+```json
+%%configure
+{
+  "defaultLakehouse": {
+    "name": {
+      "variableName": "$(/**/myVL/LHname)" 
+    },
+    "id": {
+      "variableName": "$(/**/myVL/LHid)"
+    },
+    "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>"
+  }
+}
+```
+
+In this example:
+- `myVL` is the name of your Variable Library.
+- `LHname` and `LHid` are variable keys defined in the library.
+- These values are resolved at runtime depending on the active environment (e.g. Dev, Test, Prod).
+
+This allows you to switch configurations like default lakehouse without modifying your notebook code.
+
 ## Parameterized session configuration from a pipeline
 
 Parameterized session configuration allows you to replace the value in %%configure magic with the pipeline run notebook activity parameters. When preparing %%configure code cell, you can override default values (also configurable, 4 and "2000" in the below example) with an object like this:
