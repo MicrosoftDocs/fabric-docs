@@ -24,7 +24,7 @@ Whether you're ingesting terabytes of streaming data or running high-performance
 
 > [!NOTE]
 > * All **new Fabric workspaces** are now defaulted to the `writeHeavy` profile for optimal ingestion performance. This includes default configurations tailored for large-scale ETL and streaming data workflows.
-> * If the writeHeavy profile is used, VORDER is disabled by default and must be manually enabled. 
+> * If the writeHeavy profile is used, VOrder is disabled by default and must be manually enabled. 
 
 ## Available resource profiles
 
