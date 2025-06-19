@@ -94,7 +94,7 @@ The following code snippet downloads a publicly available version of the dataset
 import os, requests
 if not IS_CUSTOM_DATA:
 # Download demo data files into lakehouse if not exist
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/bankcustomerchurn"
     file_list = [DATA_FILE]
     download_path = f"{DATA_ROOT}/{DATA_FOLDER}/raw"
 

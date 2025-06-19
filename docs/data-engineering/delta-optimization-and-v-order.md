@@ -28,15 +28,26 @@ V-Order is applied at the parquet file level. Delta tables and its features, suc
 
 ## Controlling V-Order writes
 
-V-Order is __enabled by default__ in [!INCLUDE [product-name](../includes/product-name.md)] and in Apache Spark it's controlled by the following configurations.
+V-Order is used to optimize parquet file layout for faster query performance, especially in read-heavy scenarios. In [!INCLUDE [product-name](../includes/product-name.md)], **V-Order is _disabled by default_ for all newly created workspaces** to optimize performance for write-heavy data engineering workloads.
 
-|Configuration|Default value  |Description  |
-|---------|---------|---------|
-|spark.sql.parquet.vorder.default|true|Controls session level V-Order writing.|
-|TBLPROPERTIES(“delta.parquet.vorder.default”)|false|Default V-Order mode on tables|
-|Dataframe writer option: parquet.vorder.default|unset|Control V-Order writes using Dataframe writer|
+V-Order behavior in Apache Spark is controlled through the following configurations:
 
-Use the following commands to control usage of V-Order writes.
+| Configuration | Default Value | Description |
+|---------------|----------------|-------------|
+| `spark.sql.parquet.vorder.default` | `false` | Controls session-level V-Order writing. Set to `false` by default in new Fabric workspaces. |
+| `TBLPROPERTIES("delta.parquet.vorder.default")` | `false` | Controls default V-Order behavior at the table level. |
+| DataFrame writer option: `parquet.vorder.default` | Unset | Used to control V-Order at the write operation level. |
+
+Use the following commands to enable or override V-Order writes as needed for your scenario.
+
+> ⚠️ **Important:**  
+> V-Order is **disabled by default** in new Fabric workspaces (`spark.sql.parquet.vorder.default=false`) to improve performance for data ingestion and transformation pipelines.  
+>  
+> If your workload is read-heavy—such as interactive queries or dashboarding—you can enable V-Order by:  
+> - Setting the Spark property `spark.sql.parquet.vorder.default=true`  
+> - Switching to the **`readHeavyforSpark`** or **`ReadHeavy`** resource profiles, which automatically enable V-Order for better read performance.
+
+- [Learn more about resource profiles](configure-resource-profile-configurations.md)
 
 ### Check V-Order configuration in Apache Spark session
 

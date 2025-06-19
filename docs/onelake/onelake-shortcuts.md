@@ -109,7 +109,6 @@ Internal OneLake shortcuts allow you to reference data within existing Fabric it
 * Semantic models
 * SQL databases
 * Warehouses
-* Warehouse snapshots
 
 The shortcut can point to a folder location within the same item, across items within the same workspace, or even across items in different workspaces. When you create a shortcut across items, the item types don't need to match. For instance, you can create a shortcut in a lakehouse that points to data in a data warehouse.
 
@@ -146,7 +145,7 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 Microsoft Entra ID delegated authorization types (organizational account, service principal, or workspace identity) require the **Generate a user delegation key** action at the storage account level. This action is included as part of the Storage Blob Data Reader, Storage Blob Data Contributor, Storage Blob Data Owner, and Delegator roles. If you don't want to give a user reader, contributor, or owner permissions for the whole storage account, assign them the Delegator role instead. Then, define detailed data access rights using [Access control lists (ACLs) in Azure Data Lake Storage](/azure/storage/blobs/data-lake-storage-access-control).
 
 >[!IMPORTANT]
->Currently, when workspace identity is used as the delegated authorization type for an ADLS shortcut, users can authenticate directly to the storage account without needing to create a delegation key. However, this behavior will be restricted in the future. We recommend making sure that all users have the **Generate a user delegation key** action to ensure that your users' access isn't affected when this behavior changes.
+>The **Generate a user delegation key** requirement is not currently enforced when a workspace identity is configured for the workspace and the ADLS shortcut auth type is Organizational Account, Service Principal or Workspace Identity. However, this behavior will be restricted in the future. We recommend making sure that all delegated identities have the **Generate a user delegation key** action to ensure that your users' access isn't affected when this behavior changes.
 
 ### Azure Blob Storage shortcuts
 
@@ -247,7 +246,7 @@ Fabric users can also create shortcuts to Dataverse. When users create shortcuts
 Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut, and all access to that shortcut is authorized using that credential. The supported delegated credential type is organizational account (OAuth2). The organizational account must have the system administrator permission to access data in Dataverse Managed Lake.
 
 > [!NOTE]
-> Service principals added to the fabric workspace must have the admin role to authorize the Dataverse shortcut.
+> Dataverse shortcuts don't currently support Service Principals as an authenticaion type.
 
 ## Caching
 
