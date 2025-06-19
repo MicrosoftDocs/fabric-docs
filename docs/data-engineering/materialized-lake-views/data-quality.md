@@ -59,7 +59,7 @@ ON c.customerID = o.customerID;
 
 ## Known issues
 
-* Creation and Refresh of an MLV with FAIL action in constraint may result into delta table not found issue. In such case, recreate MLV and avoid using FAIL action
+* The creation and refresh of an MLV with a FAIL action in constraint may result in a "delta table not found" issue. In such cases, it is recommended to recreate the MLV and avoid using the FAIL action.
 
 ## Related content
 
