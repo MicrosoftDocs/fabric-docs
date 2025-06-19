@@ -13,9 +13,6 @@ ms.date: 06/06/2025
 
 Once a materialized lake view (MLV) is created, the service can handle its future refreshes based on the schedule provided in the generated lineage.  
 
-> [!NOTE]
-> This feature is currently available in the UK South region and will be rolled out to other regions in the coming weeks.
-
 The following refresh operations can occur depending on the updates to the data in the source tables.
 
 * **Full Refresh:** A full refresh entails evaluating the complete dataset of the source tables whenever any modifications are detected in the source tables.

@@ -19,9 +19,6 @@ You can click on **View more past runs** to see the last 25 runs for MLVs or the
 
 :::image type="content" source="./media/materialized-lake-view-run-history/view-all-past-runs.png" alt-text="Screenshot showing a view of the past 25 runs." border="true" lightbox="./media/materialized-lake-view-run-history/view-all-past-runs.png":::
 
-> [!NOTE]
-> This feature is currently available in the UK South region and will be rolled out to other regions in the coming weeks.
-
 ## Following are the possible states for a run in lineage view
 
 * **Completed**- When all the nodes have executed successfully, the run status is shown as **Completed** state.

@@ -13,9 +13,6 @@ ms.date: 06/06/2025
 
 This tutorial outlines the steps and considerations for implementing a medallion architecture using materialized lake views. By the end of this tutorial, you learn the key features and capabilities of materialized lake views and be able to create an automated data transformation workflow. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
-> [!NOTE]
-> This feature is currently available in the UK South region and will be rolled out to other regions in the coming weeks.
-
 ## Prerequisites
 
 As prerequisites to this tutorial, complete the following steps:

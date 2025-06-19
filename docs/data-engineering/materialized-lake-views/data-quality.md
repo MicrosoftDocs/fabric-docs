@@ -17,9 +17,6 @@ Ensuring data quality is essential at every stage of the medallion architecture,
 
 This article explains how to implement data quality in materialized lake views (MLVs) in Microsoft Fabric.
 
-> [!NOTE]
-> This feature is currently available in the UK South region and will be rolled out to other regions in the coming weeks.
-
 ## Implement data quality
 
 When you transform data, it becomes important to compose precise queries to exclude poor quality data from the source tables, which increases processing time and occasionally causes the whole pipeline to fail because of minor data issues.
