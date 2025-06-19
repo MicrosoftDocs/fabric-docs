@@ -4,7 +4,7 @@ description: A known issue is posted where Dynamics 365 and KQL query doesn't sa
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/27/2025
+ms.date: 06/12/2025
 ms.custom: known-issue-1148
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1148
 
 For Dynamics 365 and Kusto Query Language (KQL) query, you can use the **Visualize this view** option to visualize the data in Power BI. When you save the view, you receive an error, and the visualized data doesn't save. You can only visualize the data but can't save the report.
 
-**Status:** Open
+**Status:** Fixed: June 12, 2025
 
 **Product Experience:** Power BI
 
