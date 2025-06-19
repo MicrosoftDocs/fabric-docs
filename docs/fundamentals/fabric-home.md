@@ -119,17 +119,15 @@ When you select a workload, the landing page for that workload displays. Each wo
 
 For more information about workloads, see [Workloads in Fabric](../workload-development-kit/more-workloads-add.md)
 
-## The Help pane is feature-aware
+## Get help from the Help pane
 
-The feature-aware state is the default view of the Help pane when you open it without entering any search terms. The Help pane shows a list of recommended topics, resources that are relevant to your current context and location in Fabric, and a list of links for other resources. It has three sections:
+The Help pane is feature-aware and displays articles about the actions and features available on the current Fabric screen. The feature-aware state is the default view of the Help pane when you open it without entering any search terms. The Help pane shows a list of recommended topics, resources that are relevant to your current context and location in Fabric, and a list of links for other resources. It has three sections:
 
 - Feature-aware documents: This section groups the documents by the features that are available on the current screen. Select a feature in the Fabric screen and the Help pane updates with documents related to that feature. Select a document to open it in a separate browser tab.
 
 - Forum topics: This section shows topics from the community forums that are related to the features on the current screen. Select a topic to open it in a separate browser tab.
 
 - Other resources: This section has links for feedback and Support.
-
-## The Help pane is a search engine
 
 The Help pane is also a search engine. Enter a keyword to find relevant information and resources from Microsoft documentation and community forum articles. Use the dropdown to filter the results.
 
