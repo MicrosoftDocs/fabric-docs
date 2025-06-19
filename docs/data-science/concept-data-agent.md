@@ -108,7 +108,7 @@ The Fabric data agent is currently in public preview and it has limitations. Upd
 - You can't change the LLM that the Fabric data agent uses.
 - Data Source Size Limitations: 
 
-    |    | Column Limits | Table Limits |
+    |  Data source  | Column limits | Table limits |
     |----| ------------- | ------------ |
     | Data Warehouse | N/A | N/A |
     | Lakehouse | N/A | N/A |
