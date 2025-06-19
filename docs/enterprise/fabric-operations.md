@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
-ms.date: 06/06/2025
+ms.date: 06/17/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -243,6 +243,8 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
 | Spark job scheduled run | Batch job runs triggered by notebook scheduled events   | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job pipeline run  | Batch job runs triggered by pipeline                    | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job VS Code run   | Spark job definition submitted from VS Code             | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
+| Materialized lake view run |  Users schedule Materialized lake view runs        | Lakehouse | Spark Memory Optimized Capacity Usage CU          | Background |
+| Shortcut Transformations   | Shortcut Transformations created in the Lakehouse             | Lakehouse | Spark Memory Optimized Capacity Usage CU          | Background |
 
 ## Related content
 
