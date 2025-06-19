@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.topic: how-to
 ms.custom:
-ms.date: 03/23/2025
+ms.date: 06/19/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -15,6 +15,16 @@ ms.collection: ce-skilling-ai-copilot
 The Microsoft Fabric Capacity Metrics app's compute page provides an overview of your capacity's performance, showing data for the last 14 days. It's divided into the three visuals listed in the following sections. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
 
 At the top of each page, the **Capacity Name** field allows you to select the capacity the app shows results for.
+
+## Cards
+
+In this page, there are three cards present to provide specific information of SKU, Average utilization % and Peak utilization %. The information on the cards is filtered according to your capacity and date range selection.
+
+* **SKU** - Latest SKU of the capacity. Shows most recent SKU for active state if capacity is paused, and shows blank if capacity is active but not reporting usage.
+   
+* **Average utilization %** - Average utilization percentage of the capacity. Utilization is calculated with respect to base capacity units of the capacity and does not consider autoscale capacity units. This excludes timepoint when the capacity was not active (e.g., paused) and the timepoints where capacity was active but not reporting usage.
+
+* **Peak utilization %** - Peak utilization percentage of the capacity. Utilization is calculated with respect to base capacity units of the capacity and does not consider autoscale capacity units. User can filter out peak utilization reported for pause events using "_Filter paused events_" in the visual-level filter pane. Paused events are included by default.
 
 ## Multi metric ribbon chart
 
