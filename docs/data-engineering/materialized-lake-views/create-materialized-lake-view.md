@@ -176,7 +176,7 @@ DROP MATERIALIZED LAKE VIEW customers_enriched;
 * User-defined functions in CTAS aren't supported.
 * Temporary views can't be used to define materialized lake views.
 
-## Known Issues
+## Known issues
 
 * Creating a materialized lake view with a CTE works, but subsequent refreshes might fail. In such cases, recreate the view without using a CTE.
 
