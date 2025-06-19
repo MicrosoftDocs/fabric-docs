@@ -27,7 +27,7 @@ To accomplish this scenario, you need to create a pipeline with the following co
 
 The data movement operation utilized 3,960 CU seconds with a 662.64 second duration while activity run operation was null since there weren’t any non-copy activities in the pipeline run. 
 
-The pricing is based on the actual intelligent throughput optimization used, which depends on its configured maximum in the copy activity and can be obtained from the activity output. For more information, see this [article](copy-activity-performance-and-scalability-guide.md#intelligent-throughput-optimization). In this example, the actual intelligent throughput optimization used is 4.
+The pricing is based on the used intelligent throughput optimization, which depends on its configured maximum in the copy activity. It can be obtained from the activity output under `usedDataIntegrationUnits`. For more information, see this [article](copy-activity-performance-and-scalability-guide.md#intelligent-throughput-optimization). In this example, the used intelligent throughput optimization is 4.
 
 The utilized CU seconds can be derived using the following calculation:
 
