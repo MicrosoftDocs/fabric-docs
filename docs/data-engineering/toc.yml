@@ -401,8 +401,6 @@ items:
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
      href: spark-arcgis-geoanalytics.md
-   - name: Simba - ODBC Data Connector (Preview)
-     href: simba-odbc-data-connector.md
 - name: User data functions (preview)
   items:
    - name: Overview
@@ -427,3 +425,36 @@ items:
      href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: View logs
      href: ./user-data-functions/view-function-logs.md
+- name: Materialized lake views (preview)
+  items:
+  - name: Overview
+    href: ./materialized-lake-views/overview-materialized-lake-view.md 
+  - name: Create materialized lake views
+    href: ./materialized-lake-views/create-materialized-lake-view.md
+  - name: Refresh materialized lake views
+    href: ./materialized-lake-views/refresh-materialized-lake-view.md
+  - name: Manage
+    items:  
+    - name: View lineage
+      href: ./materialized-lake-views/view-lineage.md
+    - name: Schedule materialized lake views
+      href: ./materialized-lake-views/schedule-lineage-run.md
+    - name: Run history of materialized lake views
+      href: ./materialized-lake-views/run-history.md
+    - name: Operational run details
+      href: ./materialized-lake-views/operational-run-details.md
+  - name: Data quality
+    items:  
+    - name: Data quality in materialized lake views
+      href: ./materialized-lake-views/data-quality.md
+    - name: Data quality report
+      href: ./materialized-lake-views/data-quality-reports.md
+  - name: Monitor
+    items:  
+    - name: Monitor materialized lake views
+      href: ./materialized-lake-views/monitor-materialized-lake-views.md
+  - name: Tutorial
+    items: 
+    - name: Tutorial - medallion architecture with materialized lake views
+      href: ./materialized-lake-views/tutorial.md
+
