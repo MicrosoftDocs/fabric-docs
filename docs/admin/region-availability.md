@@ -99,8 +99,8 @@ This table lists regions where public preview features are available, according 
 | UAE North            | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> |                  | &#x2705;                 |
 | West Europe          | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
 | West US              | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
-| West US2             | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x274C;                 |
-| West US3             | <li>Dataflows</li><li>Synapse Notebook</li>                     | &#x2705;         | &#x274C;                 |
+| West US2             | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
+| West US3             | <li>Dataflows</li><li>Synapse Notebook</li>                     | &#x2705;         | &#x2705;                 |
 
 
 ** Only the workloads listed in the table are available in each region. If no workloads are listed, Copilot isn't available in that region.
