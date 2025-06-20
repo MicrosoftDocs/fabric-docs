@@ -12,8 +12,6 @@ ms.date: 05/19/2025
 
 # Customer-managed keys for Fabric workspaces
 
-*We identified an issue with the tenant level setting for the customer-managed keys feature.  We are actively working on resolving it. In the meantime, the customer-managed keys feature will be unavailable for use.*
-
 Microsoft Fabric encrypts all data-at-rest using Microsoft managed keys. With customer-managed keys for Fabric workspaces, you can use your [Azure Key Vault](/azure/key-vault/general/overview) keys to add another layer of protection to the data in your Microsoft Fabric workspaces. A customer-managed key provides greater flexibility, allowing you to manage its rotation, control access, and usage auditing. It also helps organizations meet data governance needs and comply with data protection and encryption standards.
 
 All Fabric data stores are encrypted at rest with Microsoft-managed keys. Customer-managed keys use envelope encryption, where a Key Encryption Key (KEK) encrypts a Data Encryption Key (DEK). When using customer-managed keys, the Microsoft managed DEK encrypts your data, and then the DEK is encrypted using your customer-managed KEK. Use of a KEK that never leaves Key Vault allows the data encryption keys themselves to be encrypted and controlled.
@@ -120,7 +118,6 @@ Before you configure your Fabric workspace with a customer-managed key, consider
   * ML model
   * Experiment
   * Data Pipeline
-  * Copy job
   * Dataflow
   * Industry solutions
 
