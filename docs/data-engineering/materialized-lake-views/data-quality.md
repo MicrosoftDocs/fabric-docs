@@ -5,7 +5,7 @@ author: abhishjain002
 ms.author: abhishjain
 ms.reviewer: nijelsf
 ms.topic: conceptual
-ms.date: 06/06/2025
+ms.date: 06/19/2025
 #customer intent: As a data engineer, I want to implement data quality in materialized lake views in a lakehouse so that I can ensure the integrity and reliability of my data.
 ---
 
@@ -52,10 +52,14 @@ FROM bronze.customers c LEFT JOIN bronze.orders o
 ON c.customerID = o.customerID; 
 ```
 
-## Limitation
+## Current limitations
 
 * Updating data quality constraints after creating an MLV isn't supported. To update the data quality constraints, you must recreate the MLV.
 * Use of functions and pattern search with operators such as LIKE or regex in constraint condition is restricted.
+
+## Known issues
+
+* The creation and refresh of an MLV with a FAIL action in constraint may result in a "delta table not found" issue. In such cases, it is recommended to recreate the MLV and avoid using the FAIL action.
 
 ## Related content
 
