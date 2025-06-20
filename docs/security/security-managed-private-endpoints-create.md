@@ -30,7 +30,7 @@ A Microsoft.Network resource provider needs to be registered in the Azure subscr
 
     :::image type="content" source="./media/security-managed-private-endpoints-create/create-managed-private-endpoint-dialog.png" alt-text="Screenshot of the Network security tab in the workspace settings.":::
 
-1. Specify a name for the private endpoint and copy in the resource identifier for the Azure resource. The resource identifier can be found in the properties tab on the Azure portal page. For more information, see: [How to get your Azure Resource ID](/azure-docs-pr/articles/communication-services/quickstarts/voice-video-calling/get-resource-id.md)
+1. Specify a name for the private endpoint and copy in the resource identifier for the Azure resource. The resource identifier can be found in the properties tab on the Azure portal page. For more information, see: [How to get your Azure Resource ID](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/voice-video-calling/get-resource-id)
 
     > [!NOTE]
     > Creating a managed private endpoint with a fully qualified domain name (FQDN) isn't supported.
