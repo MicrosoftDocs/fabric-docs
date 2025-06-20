@@ -4,7 +4,7 @@ description: Learn from samples and examples of querying a warehouse using time 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish # Microsoft alias
-ms.date: 10/23/2024
+ms.date: 06/20/2025
 ms.topic: how-to
 ---
 # How to: Query using time travel at the statement level
