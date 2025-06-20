@@ -22,7 +22,7 @@ Select the **Title** to view more information about that specific known issue.
 |-----------|-------------------------|----------------------------------|----------------------|
 |  1179  | Power BI | [Copilot button unavailable in Power BI Desktop](./known-issue-1179-copilot-button-unavailable-power-bi-desktop.md) | June 20, 2025 |
 |  1178  | Power BI | [Google BigQuery (Microsoft Entra ID) (Beta) connection issues with optional parameters](./known-issue-1178-google-big-query-connection-issues-optional-parameters.md) | June 20, 2025 |
-|  1177  | Power BI | [Verified answers in Home Copilot not found when searching or in data answers](./known-issue-1177-verified-answers-home-copilot-not-found-searching.md) | June 20, 2025 |
+|  1177  | Power BI | [Verified answers in Home Copilot not found when searching or in data answers](./known-issue-1177-verified-answers-home-copilot-not-found-search.md) | June 20, 2025 |
 |  1173  | Data Science | [Data Agent consumption incorrectly reported against default workspace capacity](./known-issue-1173-data-agent-consumption-incorrectly-reported.md) | June 17, 2025 |
 |  1172  | Power BI | [Dataflow Gen2 with a default destination to Azure SQL fails to publish](./known-issue-1172-dataflow-default-destination-azure-fails-publish.md) | June 17, 2025 |
 |  1171  | OneLake | [OneLake shortcut creation and read fail with bad request error](./known-issue-1171-onelake-shortcut-creation-read-fail-bad-request-error.md) | June 17, 2025 |

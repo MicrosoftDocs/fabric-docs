@@ -214,7 +214,7 @@ items:
     - name: Google BigQuery (Microsoft Entra ID) (Beta) connection issues with optional parameters
       href: ../known-issues/known-issue-1178-google-big-query-connection-issues-optional-parameters.md
     - name: Verified answers in Home Copilot not found when searching or in data answers
-      href: ../known-issues/known-issue-1177-verified-answers-home-copilot-not-found-searching.md
+      href: ../known-issues/known-issue-1177-verified-answers-home-copilot-not-found-search.md
     - name: Inability to create new VNet Data Gateway due to unavailable Save button
       href: ../known-issues/known-issue-1180-inability-create-new-vnet-data-gateway-save-button.md
     - name: Data Agent consumption incorrectly reported against default workspace capacity
