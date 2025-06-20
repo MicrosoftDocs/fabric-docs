@@ -102,8 +102,8 @@ Follow these steps to use Git deployment pipelines with your Fabric workspace:
 1. [Prerequisites](#prerequisites-for-deployment-pipelines)
 1. [Create a deployment pipeline](#step-1-create-a-deployment-pipeline)
 1. [Assign a workspace to the deployment pipeline](#step-3-assign-a-workspace-to-the-deployment-pipeline)
-1. [Deploy to an empty stage](#step-4-deploy-to-an-empty-stage)
-1. [Deploy content from one stage to another](#step-5-deploy-content-from-one-stage-to-another)
+1. [Deploy to an empty stage](#deploy-to-an-empty-stage)
+1. [Deploy content from one stage to another](#deploy-content-from-one-stage-to-another)
 
 ### Prerequisites for deployment pipelines
 
@@ -140,7 +140,7 @@ When you're ready to move your content from one pipeline stage to the next, you 
 - **Selective deployment**: Pick only the items you want to deploy.
 - **Backward deployment**: Move content from a later stage back to an earlier stage. You can only do this if the target stage is empty (no workspace assigned).
 
-After you choose your deployment option, you can [review the details and leave a note about the deployment if you'd like](../cicd/deployment-pipelines/deploy-content?tabs=new-ui#review-your-deployment-and-leave-a-note).
+After you choose your deployment option, you can [review the details and leave a note about the deployment if you'd like](../cicd/deployment-pipelines/deploy-content.md#review-your-deployment-and-leave-a-note).
 
 ### Deploy content from one stage to another
 
