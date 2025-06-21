@@ -247,7 +247,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 
 | Setting name | Description |
 |------|-------|
-|[Apply customer-managed keys (preview)](../security/workspace-customer-managed-keys)|With this setting turned on, users can configure workspace level encryption using customer-managed keys to protect their data. When turned off, the default is to use Microsoft managed keys.   [Learn More](https://go.microsoft.com/fwlink/?linkid=2308801)|
+|[Apply customer-managed keys (preview)](../security/workspace-customer-managed-keys.md)|With this setting turned on, users can configure workspace level encryption using customer-managed keys to protect their data. When turned off, the default is to use Microsoft managed keys.   [Learn More](https://go.microsoft.com/fwlink/?linkid=2308801)|
 
 ## [Metrics settings](service-admin-portal-goals-settings.md)
 
