@@ -6,7 +6,7 @@ ms.author: painbar
 ms.topic: reference
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 06/12/2025
+ms.date: 06/21/2025
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -34,6 +34,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Mirrored Azure Databricks Catalog (preview)](../database/mirrored-database/azure-databricks.md)|Turn on this setting to allow users to add Azure Databricks catalogs, schemas, and tables to Fabric workspaces and explore data from Fabric without needing to move data.  [Learn More](https://aka.ms/adbfabricdoc)|
 |[Users can create variable libraries (preview)](/fabric/cicd/variable-library/variable-library-overview)|Turn on this setting to allow users to create variable libraries and their related value sets.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2301210)|
 |[Users can be informed of upcoming conferences featuring Microsoft Fabric when they are logged in to Fabric](./service-admin-portal-microsoft-fabric-tenant-settings.md#users-can-be-informed-of-upcoming-conferences-featuring-microsoft-fabric-when-they-are-logged-in-to-fabric)|Attending conferences can help your data teams learn in-depth about how to best use the Fabric platform for your business needs and build professional relationships with community members, Microsoft engineering and product teams, and the Fabric Customer Advisory Team (CAT). These conferences may be organized and hosted by third parties.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2306100)|
+|[ML models can serve real-time predictions from API endpoints (preview)](../data-science/model-scoring-predict.md)|With this setting on, users can get real-time predictions from model and version endpoints. Even with real-time endpoints turned off, batch predictions can still be generated.  [Learn More](https://aka.ms/MLModelEndpointsLearnMore)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 
@@ -131,8 +132,10 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Allow XMLA endpoints and Analyze in Excel with on-premises semantic models](/power-bi/collaborate-share/service-analyze-in-excel)|Users in the organization can use Excel to view and interact with on-premises Power BI semantic models. This also allows connections to XMLA endpoints.|
 |[Semantic Model Execute Queries REST API](/rest/api/power-bi/datasets/execute-queries)|Users in the organization can query semantic models by using Data Analysis Expressions (DAX) through Power BI REST APIs.|
 |[Use ArcGIS Maps for Power BI](/power-bi/visuals/power-bi-visualizations-arcgis)|Users in the organization can use the ArcGIS Maps for Power BI visualization provided by Esri.|
-|[Use global search for Power BI](/power-bi/consumer/end-user-search-sort)|NO DESCRIPTION IN UI|
-|[Use Azure Maps visual](/azure/azure-maps/power-bi-visual-get-started)|Users in the organization can use the Azure Maps visualization.|
+|[Use global search for Power BI](/power-bi/consumer/end-user-search-sort)|Turn on this setting to let users use the global search bar at the top of the page.|
+|[Users can use the Azure Maps visual](/azure/azure-maps/power-bi-visual-get-started)|With this setting on, users can create and view the Azure Maps visual. Your data may be temporarily stored and processed by Microsoft for essential services, including translating location names into latitudes and longitudes. Use of Azure Maps is subject to the following  [Terms of use](https://go.microsoft.com/fwlink/?linkid=2271924).|
+|[Data sent to Azure Maps can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](/azure/azure-maps/geographic-scope)|Azure Maps services are currently not available in all regions and geographies. With this setting on, data sent to Azure Maps can be processed in a region where the service is available, which might be outside your tenant's geographic region, compliance boundary, or national cloud instance.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2289253)|
+|[Data sent to Azure Maps can be processed by Microsoft Online Services Subprocessors](https://go.microsoft.com/fwlink/?linkid=2289928)|Some Azure Maps visual services, including the selection tool and the processing of location names within some regions, may require mapping capabilities provided in part by Microsoft Online Services subprocessors. Microsoft shares only necessary data with these Microsoft Online Services subprocessors, who may access data only to deliver the functions in support of online services that Microsoft has engaged them to provide and are prohibited from using data for any other purpose. Microsoft does not share the name of the customer or end user who submits the query. This feature is non-regional and the queries you provide may be stored and processed in the United States or any other country in which Microsoft or its subprocessors operate.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2289928)|
 |[Map and filled map visuals](/power-bi/visuals/power-bi-visualization-filled-maps-choropleths)|Allow people in your org to use the map and filled map visualizations in their reports.|
 |[Integration with SharePoint and Microsoft Lists](service-admin-portal-integration.md#integration-with-sharepoint-and-microsoft-lists)|Users in the organization can launch Power BI from SharePoint lists and Microsoft Lists. Then they can build Power BI reports on the data in those lists and publish them back to the lists.|
 |[Dremio SSO](https://powerquery.microsoft.com/blog/azure-ad-based-single-sign-on-for-dremio-cloud-and-power-bi)|Enable SSO capability for Dremio. By enabling, user access token information, including name and email, will be sent to Dremio for authentication.|
@@ -239,6 +242,12 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |------|-------|
 |[Tenant-level Private Link](../security/security-private-links-overview.md)|Increase security by allowing people to use a Private Link to access your Fabric tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email.  [Learn More](https://aka.ms/PrivateLinksLearnMore)  [Set-up instructions](https://aka.ms/PrivateLinksSetupInstructions)<br><br>Review the  [considerations and limitations](https://aka.ms/PrivateLinksConsiderationsAndLimitations) section before enabling private endpoints.|
 |[Block Public Internet Access](/power-bi/enterprise/service-security-private-links)|For extra security, block access to your Fabric tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. Keep in mind, turning this on could take 10 to 20 minutes to take effect. [Learn More](https://aka.ms/PrivateLinksLearnMore) [Set-up instructions](https://aka.ms/PrivateLinksSetupInstructions)|
+
+## Encryption
+
+| Setting name | Description |
+|------|-------|
+|[Apply customer-managed keys (preview)](../security/workspace-customer-managed-keys)|With this setting turned on, users can configure workspace level encryption using customer-managed keys to protect their data. When turned off, the default is to use Microsoft managed keys.   [Learn More](https://go.microsoft.com/fwlink/?linkid=2308801)|
 
 ## [Metrics settings](service-admin-portal-goals-settings.md)
 
