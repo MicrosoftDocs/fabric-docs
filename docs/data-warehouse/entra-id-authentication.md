@@ -7,7 +7,8 @@ ms.reviewer: frnuson, kadejo, jaszymas
 ms.date: 04/06/2025
 ms.topic: conceptual
 ms.custom:
-  - fabric-cat
+- fabric-cat
+- sfi-image-nochange
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Microsoft Entra authentication as an alternative to SQL authentication

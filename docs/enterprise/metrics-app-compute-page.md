@@ -4,7 +4,7 @@ description: Learn how to read the Microsoft Fabric Capacity metrics app's compu
 author: JulCsc
 ms.author: juliacawthra
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 06/19/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot

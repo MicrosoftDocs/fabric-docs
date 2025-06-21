@@ -5,7 +5,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: None
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 04/16/2025
 #customer intent: As a data scientist, I want to build a text classification model so I can predict a category based on a single attribute.
 ---

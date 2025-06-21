@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: drskwier, antho, sukkaur
 ms.date: 05/28/2025
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.search.form:
 ---
 # SqlPackage for SQL database in Microsoft Fabric

@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 05/11/2025
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.

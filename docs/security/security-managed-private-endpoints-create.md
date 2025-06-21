@@ -4,7 +4,7 @@ description: Learn how to create and use managed private endpoints in Microsoft 
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 06/20/2025
 ---
 

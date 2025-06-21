@@ -4,7 +4,7 @@ description: Learn how to use JavaScript APIs to authenticate a customized Fabri
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 05/21/2024
 ---
 
