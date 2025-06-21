@@ -117,4 +117,4 @@ As a capacity admin, you can now control this behavior by using the **"Disable j
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](workspace-admin-settings.md)
 * [Learn about the Spark Compute for Fabric Data Engineering/Science experiences](spark-compute.md)
-* [Understand job concurrency and queueing in Fabric Spark](job-concurrency-queueing.md)
+* [Understand job concurrency and queueing in Fabric Spark](job-queueing-for-fabric-spark.md)
