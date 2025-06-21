@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.custom:
 - fabric-cat
 - sfi-image-nochange
+- sfi-ropc-nochange
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Microsoft Entra authentication as an alternative to SQL authentication
