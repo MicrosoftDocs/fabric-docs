@@ -1,8 +1,8 @@
 ---
 title: Copilot for Real-Time Intelligence
 description: "Learn how Copilot in Real-Time Intelligence can help you explore your data and extract valuable insights."
-author: hzargari
-ms.author: hzargari
+author: v-hzargari
+ms.author: v-hzargari
 ms.reviewer: mibar
 ms.topic: conceptual
 ms.custom:
@@ -29,7 +29,7 @@ Copilot for Real-Time Intelligence currently offers two main capabilities:
 
 - **Copilot for KQL Queryset**  
     Explore and analyze your data using natural language in a [KQL queryset](/real-time-intelligence/kusto-query-set.md).  
-    [Learn more &rarr;](copilot-kql-queryset.md)
+    [Learn more &rarr;](copilot-kusto-queryset.md)
 
 - **Copilot for Real-Time Dashboard**  
     Interact with your data and generate insights directly within a [Real-Time Dashboard](/real-time-intelligence/dashboard-real-time-create.md).  

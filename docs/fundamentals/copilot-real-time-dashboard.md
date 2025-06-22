@@ -1,8 +1,8 @@
 ---
 title: Copilot for Real-Time Intelligence (nl2kql)
 description: Learn how to use Copilot in Real-Time Dashboard transform your data into a Real-Time Dashboard and extract valuable insights.
-author: hzargari
-ms.author: hzargari
+author: v-hzargari
+ms.author: v-hzargari
 ms.reviewer: mibar
 ms.topic: how-to
 ms.custom:
@@ -28,11 +28,11 @@ For billing information about Copilot, see [Announcing Copilot in Fabric pricing
 1. Choose a table from your KQL database that you want to visualize.
 1. Click the three dots next to the table name and select **Create Real-Time Dashboard**.
 
-:::image type="content" source="media/copilot-real-time-dashboard/thrre_dots.png" alt-text="Screenshot of copilot use in KQL queryset in Real-Time Intelligence." lightbox="media/copilot-real-time-dashboard/three_dots.png":::
+:::image type="content" source="media/copilot-real-time-dashboard/three_dots.png" alt-text="Screenshot of selecting the data source." lightbox="media/copilot-real-time-dashboard/three_dots.png":::
 
 1. In the dialog box, click **Get started** to proceed. You can stop the process at any time while the dashboard is being created.
 
-:::image type="content" source="media/copilot-real-time-dashboard/dialog.png" alt-text="Screenshot of copilot use in KQL queryset in Real-Time Intelligence." lightbox="media/copilot-real-time-dashboard/dialog.png":::
+:::image type="content" source="media/copilot-real-time-dashboard/dialog.png" alt-text="Screenshot of copilot dialog." lightbox="media/copilot-real-time-dashboard/dialog.png":::
 
 ## Dashboard Overview
 
@@ -45,9 +45,9 @@ Split into 5 tiles, this page provides quick insights based on the selected tabl
 ### Data Profile Page
 This page features six tiles, four base tables, and three parameters. You can choose any DateTime column or the Cross-filter function to filter the displayed data.  
 
-:::image type="content" source="media/copilot-real-time-dashboard/profile.png" alt-text="Screenshot of the Insights page in Real-Time Dashboard." lightbox="media/copilot-real-time-dashboard/profile.png":::
+:::image type="content" source="media/copilot-real-time-dashboard/profile.png" alt-text="Screenshot of the data profile page." lightbox="media/copilot-real-time-dashboard/profile.png":::
 
-:::image type="content" source="media/copilot-real-time-dashboard/select-column.png" alt-text="Screenshot of the Insights page in Real-Time Dashboard." lightbox="media/copilot-real-time-dashboard/select-column.png":::
+:::image type="content" source="media/copilot-real-time-dashboard/select-column.png" alt-text="Screenshot of the cross-filter function." lightbox="media/copilot-real-time-dashboard/select-column.png":::
 
 ## Related content
 
