@@ -28,7 +28,7 @@ For billing information about Copilot, see [Announcing Copilot in Fabric pricing
 1. Choose a table from your KQL database that you want to visualize.
 1. Click the three dots next to the table name and select **Create Real-Time Dashboard**.
 
-:::image type="content" source="media/copilot-real-time-dashboard/three_dots.png" alt-text="Screenshot of selecting the data source." lightbox="media/copilot-real-time-dashboard/three_dots.png":::
+:::image type="content" source="media/copilot-real-time-dashboard/three-dots.png" alt-text="Screenshot of selecting the data source." lightbox="media/copilot-real-time-dashboard/three-dots.png":::
 
 1. In the dialog box, click **Get started** to proceed. You can stop the process at any time while the dashboard is being created.
 
