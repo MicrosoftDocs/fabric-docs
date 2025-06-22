@@ -40,6 +40,9 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 
 [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
 
+> [!NOTE]
+> You can also use Copilot to help you write queries. For more information, see [Use Copilot in KQL Queryset](/fundamentals/copilot-real-time-intelligence.md).
+
 ## Add data source
 
 Data sources are reusable references to a specific database in the same workspace as the Real-Time Dashboard. Different tiles can be based on different data sources.

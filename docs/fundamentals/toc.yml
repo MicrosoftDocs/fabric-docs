@@ -116,7 +116,13 @@ items:
     - name: Copilot for Data Warehouse
       href: ../data-warehouse/copilot.md
     - name: Copilot for Real-Time Intelligence
-      href: copilot-real-time-intelligence.md
+      items:
+        - name: Copilot for Real-Time Intelligence
+          href: copilot-real-time-intelligence.md
+        - name: Copilot for KQL Queryset
+          href: copilot-kql-queryset.md
+        - name: Copilot for Real-Time Dashboards
+          href: copilot-real-time-dashboard.md
     - name: Copilot for Data Science and Data Engineering
       items:
       - name: Copilot for Data Science and Data Engineering
