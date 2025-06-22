@@ -120,7 +120,7 @@ items:
         - name: Copilot for Real-Time Intelligence
           href: copilot-real-time-intelligence.md
         - name: Copilot for KQL Queryset
-          href: copilot-kql-queryset.md
+          href: copilot-kusto-query-set.md
         - name: Copilot for Real-Time Dashboards
           href: copilot-real-time-dashboard.md
     - name: Copilot for Data Science and Data Engineering
