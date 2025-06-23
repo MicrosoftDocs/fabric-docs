@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.topic: how-to
 ms.custom:
-ms.date: 02/11/2025
+ms.date: 06/19/2025
 ---
 
 # Monitor a paused capacity
@@ -18,7 +18,7 @@ The [system events](metrics-app-compute-page.md#system-events) table lists all t
 
 ## Why is there a spike in the utilization chart when I pause my capacity?
 
-To provide optimal performance, your capacity [smooths](throttling.md) usage over future timepoints. When you pause your capacity, the accumulated smoothed usage and any overages are converted to utilization and billed to you. As a result, a spike appears in the [Utilization](metrics-app-compute-page.md#utilization) visual.
+To provide optimal performance, your capacity [smooths](throttling.md) usage over future timepoints. When you pause your capacity, the accumulated smoothed usage and any overages are converted to utilization and billed to you. As a result, a spike appears in the [Utilization](metrics-app-compute-page.md#utilization) visual. If you have paused the capacity and are not able to view non-pause usage due to the scale of the pause, switch to the logarithmic view for better visibility.
 
 When you hover over the spike, a tooltip shows the state of the capacity.
 
