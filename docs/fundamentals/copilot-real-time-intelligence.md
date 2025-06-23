@@ -2,7 +2,7 @@
 title: Copilot for Real-Time Intelligence
 description: "Learn how Copilot in Real-Time Intelligence can help you explore your data and extract valuable insights."
 author: hzargari-ms
-ms.author: hzargari-ms
+ms.author: v-hzargari
 ms.reviewer: mibar
 ms.topic: conceptual
 ms.custom:

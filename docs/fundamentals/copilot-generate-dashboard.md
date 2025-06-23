@@ -1,8 +1,8 @@
 ---
-title: Copilot for Real-Time Dashboard
-description: Learn how to use Copilot in Real-Time Dashboard transform your data into a Real-Time Dashboard and extract valuable insights.
+title: Generate Real-Time Dashboard Using Copilot
+description: Learn how to create insightful Real-Time Dashboard from your data using Copilot
 author: hzargari-ms
-ms.author: hzargari-ms
+ms.author: v-hzargari
 ms.reviewer: mibar
 ms.topic: how-to
 ms.custom:
@@ -11,9 +11,9 @@ no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Copilot for Real-Time Dashboard
+# Generate Real-Time Dashboard Using Copilot
 
-Copilot for Real-Time Dashboard makes it easy to create dashboards by automating the inital setup, eliminating the need for technical expertise. The process includes selecting a data table in Real-Time Hub or KQL Queryset and using AI to generate a Real-Time Dashboard, that includes an insights page for a quick overview, and a data profile page.
+Copilot makes it easy to create dashboards by automating the inital setup, eliminating the need for technical expertise. The process includes selecting a data table in Real-Time Hub or KQL Queryset and using AI to generate a Real-Time Dashboard, that includes an insights page for a quick overview, and a data profile page.
 
 For billing information about Copilot, see [Announcing Copilot in Fabric pricing](https://blog.fabric.microsoft.com/en-us/blog/announcing-fabric-copilot-pricing-2/).
 
@@ -24,8 +24,9 @@ For billing information about Copilot, see [Announcing Copilot in Fabric pricing
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
 ## Creating a Real-Time Dashboard with Copilot
-1. Navigate to the Real-Time Hub in your workspace.
-1. Choose a table from your KQL database that you want to visualize.
+
+1. Navigate to the Real-Time Hub.
+1. Choose a table from the list of data streams that you want to explore.
 1. Click the three dots next to the table name and select **Create Real-Time Dashboard**.
 
     :::image type="content" source="media/copilot-real-time-dashboard/three-dots.png" alt-text="Screenshot of selecting the data source." lightbox="media/copilot-real-time-dashboard/three-dots.png":::
@@ -40,14 +41,14 @@ For billing information about Copilot, see [Announcing Copilot in Fabric pricing
 
 Split into 5 tiles, this page provides quick insights based on the selected table's metadata and general instructions for creating KQL queries.
 
-    :::image type="content" source="media/copilot-real-time-dashboard/insights.png" alt-text="Screenshot of the Insights page in Real-Time Dashboard." lightbox="media/copilot-real-time-dashboard/insights.png":::
+:::image type="content" source="media/copilot-real-time-dashboard/insights.png" alt-text="Screenshot of the Insights page in Real-Time Dashboard." lightbox="media/copilot-real-time-dashboard/insights.png":::
 
 ### Data Profile Page
 This page features six tiles, four base tables, and three parameters. You can choose any DateTime column or the Cross-filter function to filter the displayed data.  
 
-    :::image type="content" source="media/copilot-real-time-dashboard/profile.png" alt-text="Screenshot of the data profile page." lightbox="media/copilot-real-time-dashboard/profile.png":::
+:::image type="content" source="media/copilot-real-time-dashboard/profile.png" alt-text="Screenshot of the data profile page." lightbox="media/copilot-real-time-dashboard/profile.png":::
 
-    :::image type="content" source="media/copilot-real-time-dashboard/select-column.png" alt-text="Screenshot of the cross-filter function." lightbox="media/copilot-real-time-dashboard/select-column.png":::
+:::image type="content" source="media/copilot-real-time-dashboard/select-column.png" alt-text="Screenshot of the cross-filter function." lightbox="media/copilot-real-time-dashboard/select-column.png":::
 
 ## Related content
 

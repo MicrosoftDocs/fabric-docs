@@ -1,6 +1,6 @@
 ---
-title: Copilot for KQL Queryset
-description: "Learn how Copilot in KQL Queryset can help you explore your data and extract valuable insights."
+title: Copilot for Writing KQL Queries
+description: "Learn how to use Copilot to write queries in KQL Queryset."
 author: spelluru
 ms.author: spelluru
 ms.reviewer: mibar
@@ -10,9 +10,9 @@ ms.date: 11/19/2024
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
-# Copilot for KQL Queryset
+# Copilot for Writing KQL Queries
 
-Copilot for KQL Queryset is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists.
+You can use Copilot to translate your natural language questions into Kusto Query Language (KQL) queries. Simply describe what you want to analyze or find in plain language, and Copilot will generate the corresponding KQL query for you. This makes it easier for anyone—regardless of their familiarity with KQL—to explore and analyze data efficiently.
 
 For billing information about Copilot, see [Announcing Copilot in Fabric pricing](https://blog.fabric.microsoft.com/en-us/blog/announcing-fabric-copilot-pricing-2/).
 
@@ -23,9 +23,9 @@ For billing information about Copilot, see [Announcing Copilot in Fabric pricing
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
-## Capabilities of Copilot for KQL Queryset
+## Capabilities of Copilot for Writing Queries in KQL
 
-Copilot for KQL Queryset lets you effortlessly translate natural language queries into Kusto Query Language (KQL). The copilot acts as a bridge between everyday language and KQL's technical intricacies, and in doing so removes adoption barriers for data analysts and citizen data scientists. By harnessing OpenAI's advanced language understanding, this feature allows you to submit business questions in a familiar, natural language format, which are then converted into KQL queries. Copilot accelerates productivity by simplifying the query creation process with a user-friendly and efficient approach to data analysis.
+Copilot lets you effortlessly translate natural language queries into Kusto Query Language (KQL). The copilot acts as a bridge between everyday language and KQL's technical intricacies, and in doing so removes adoption barriers for data analysts and citizen data scientists. By harnessing OpenAI's advanced language understanding, this feature allows you to submit business questions in a familiar, natural language format, which are then converted into KQL queries. Copilot accelerates productivity by simplifying the query creation process with a user-friendly and efficient approach to data analysis.
 
 Copilot supports **conversational interactions** which allows you to clarify, adapt, and extend your queries dynamically, all while maintaining the context of your previous inputs.  You can refine queries and ask follow-up questions without starting over:
 
@@ -35,7 +35,15 @@ Copilot supports **conversational interactions** which allows you to clarify, ad
 
 ## Querying with the KQL Queryset Copilot
 
-1. Navigate to a new or existing [KQL queryset](../real-time-intelligence/kusto-query-set.md)
+You can access Copilot in two ways:
+
+- **Through a KQL queryset:**  
+    Navigate to a new or existing [KQL queryset](../real-time-intelligence/kusto-query-set.md) and use the Copilot feature to generate queries from natural language prompts.
+
+- **Through the Edit tile in Real-Time Dashboards:**  
+    When editing a tile in a [Real-Time dashboard] (../real-time-intelligence/dashboard-real-time-create.md), you can use Copilot to help create or refine KQL queries directly within the dashboard editing experience.
+
+Follow the steps below to use Copilot in either context:
 1. Connect to a database. For more information, see [Select a database](../real-time-analytics/kusto-query-set.md#select-a-database)
 1. Select the **Copilot** button.
 1. In the Copilot pane, enter your business question in natural language.
@@ -45,9 +53,9 @@ Copilot supports **conversational interactions** which allows you to clarify, ad
 
     :::image type="content" source="media/copilot-real-time-intelligence/copilot-conversation.png" alt-text="Screenshot of copilot use in KQL queryset in Real-Time Intelligence." lightbox="media/copilot-real-time-intelligence/copilot-conversation.png":::
 
-> [!NOTE]
->* Copilot doesn't generate control commands.
->* Copilot doesn't automatically run the generated KQL query. Users are advised to run the queries at their own discretion.
+    > [!NOTE]
+    >* Copilot doesn't generate control commands.
+    >* Copilot doesn't automatically run the generated KQL query. Users are advised to run the queries at their own discretion.
 
 You can continue to ask follow-up questions or further refine your query. To start a new chat, select the speech bubble on the top right of the Copilot pane (1).
 
