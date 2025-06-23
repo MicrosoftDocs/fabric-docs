@@ -37,15 +37,40 @@ You can now pass values from the data source to the activated Fabric item. To pa
 
 ### Limitations on passing parameter values
 
-Activator doesn't support passing parameters to all Fabric items. However, you can pass parameters from Azure events to the data pipeline in the following ways:
+Activator enables passing parameters in string, boolean, and number (float). To pass number and boolean, please follow the guidelines below:
 
-* **[Set up the rule from data pipeline](/fabric/data-factory/pipeline-storage-event-triggers)**
-* **Set up the rule from Real-Time hub**: To set a rule from an Azure event in Real-Time hub, select **Azure events** on the left navigation menu, and then select **Set alert**.
+* Number
 
-:::image type="content" source="media/activator-trigger-fabric-items/pass-parameters-from-real-time-hub.png" alt-text="Screenshot showing creating storage event trigger from Real Time hub." lightbox="media/activator-trigger-fabric-items/pass-parameters-from-real-time-hub.png":::
+| Input Value | Result | Valid value? | Notes |
+| --- | --- | --- | --- |
+| `123.45` | 123.45 | Yes | Dot as decimal separator |	
+| `1,234.56` | 1234.56 | Yes | Comma as thousands separator |	
+| `0.99` | 0.99 | Yes |  |	
+| `1e3` | 1000 | Yes | Scientific notation |	
+| `123,45` | 0 | No | Invalid in en-US (comma not decimal) |	
+| null or whitespace | 0 | No |  |	
+| any other string | 0 | No |  |	
+			
+* Boolean
+
+| Input Value | Result | Valid value? | Notes |
+| --- | --- | --- | --- |
+| `true` | true | Yes | Case-insensitive |	
+| `1` | true | Yes |  |	
+| `yes` | true | Yes |  |	
+| `y` | true | Yes |  |	
+| `false` | false | Yes | Case-insensitive |	
+| `0` | false | Yes |  |	
+| `no` | false | Yes |  |	
+| `n` | false | Yes |  |	
+| null or whitespace | false | No |  |	
+| any other string | false | No |  |	
+
+
 
 > [!NOTE]
-> Parameters might not be passed if you create the rule from the Activator portal or make changes to the action type after the rule is created.
+> Please make sure the parameter name and type are defined exactly the same as defined the activated Fabric item.
+
 
 ## Related content
 
