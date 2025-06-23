@@ -22,7 +22,7 @@ To register an application with your Microsoft Entra tenant and use it to integr
 
 ## Step 1: Register an application with Microsoft Entra ID
 
-Register your application with Microsoft Entra ID, and create a secret by following the directions in [Register your app](/power-bi/developer/embedded/register-app#register-your-app). Ensure the application is registered in the same tenant as your Azure DevOps organization that you intend to connect from Microsoft Fabric. Also, confirm that your organization's policies allow the creation of client secrets and their use for token acquisition. Be sure to save the secret, as it will be required in a later step. For more information, see [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals)
+Register your application with Microsoft Entra ID, and create a secret by following the directions in [Register your app](/power-bi/developer/embedded/register-app#register-your-app). Ensure the application is registered in the same tenant as your Azure DevOps organization that you intend to connect from Microsoft Fabric. Also, confirm that your organization's policies allow the creation of client secrets and their use for token acquisition. Be sure to save the secret, as it will be required in a later step. For more information, see [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals).
 
 ## Step 2: Assign service principal to a DevOps organization
 
