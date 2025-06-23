@@ -117,11 +117,11 @@ With this update, you can now:
 1.  In Edit mode for your eventstream, follow these steps to add Eventhouse destination to the derived stream: 
 * From the derived stream select Eventhouse destination.
    
-   :::image type="content" source="media/add-destination-kql-database/select-eventhouse-destination.png" alt-text="Screenshot showing the how to add Eventhouse destination from derived stream." lightbox="./media/add-destination-kql-database/select-eventhouse-destination.png":::
+   :::image type="content" source="media/add-destination-kql-database/select-eventhouse-destination.png" alt-text="Screenshot showing how to add Eventhouse destination from derived stream." lightbox="./media/add-destination-kql-database/select-eventhouse-destination.png":::
 
 * Complete the configuration for the preferred ingestion modes. Setup process remains the same as explained above for the default stream.
    
-   :::image type="content" source="media/add-destination-kql-database/add-eventhouse-destionation-configuration.png" alt-text="Screenshot showing configurations for Eventhouse destination." lightbox="./media/add-destination-kql-database/add-eventhouse-destionation-configuration.png":::
+   :::image type="content" source="media/add-destination-kql-database/add-eventhouse-destination-configuration.png" alt-text="Screenshot showing configurations for Eventhouse destination." lightbox="./media/add-destination-kql-database/add-eventhouse-destination-configuration.png":::
 
 
 
