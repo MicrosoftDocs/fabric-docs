@@ -5,7 +5,7 @@ ms.topic: conceptual
 ms.custom: airflows
 author: nabhishek
 ms.author: abnarain
-ms.date: 04/16/2024
+ms.date: 06/23/2025
 ---
 
 # What is Apache Airflow Job?
@@ -52,14 +52,15 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 - East US 2
 - France Central
 - Germany West Central
-- Israel Central (coming soon)
-- Italy North (coming soon)
+- Israel Central
+- Italy North
 - Japan East
-- Japan West (coming soon)
-- Mexico Central (coming soon)
+- Japan West
+- Korea Central
+- Mexico Central
 - North Europe
-- Norway East (coming soon)
-- Poland Central (coming soon)
+- Norway East
+- Poland Central
 - South Africa North
 - South Central US
 - South India
