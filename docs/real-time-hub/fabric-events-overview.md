@@ -22,7 +22,7 @@ Fabric events allow users to subscribe to events produced by Fabric and Azure re
 
 ### Use Workspace item events
 
-Workspace item events are generated when changes occur to items within a Fabric workspace. These events can be triggered by actions such as creating, updating, or deleting workspace items such as lakehouses, notebooks, warehouses, KQL databases, and more. At this time this does not support events triggered by actions for Power BI items. 
+Workspace item events are generated when changes occur to items within a Fabric workspace. These events can be triggered by actions such as creating, updating, or deleting workspace items such as lakehouses, notebooks, warehouses, KQL databases, and more. At this time, this does not support events triggered by actions for Power BI items. 
 
 As a data engineer, my daily work involves managing and updating various workspace items. I frequently make changes to notebooks, and I need to ensure these changes are reflected accurately.
 
