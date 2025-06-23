@@ -2,7 +2,8 @@
 title: Troubleshooting guide - Diagnose and resolve "Capacity limit exceeded" errors
 description: Learn how to troubleshoot and resolve "Capacity limit exceeded" errors in Microsoft Fabric by confirming capacity overload, checking throttling, and identifying the specific workspace and item causing the issue.  
 author: JulCsc  
-ms.author: juliacawthra  
+ms.author: juliacawthra
+ms.reviewer: cnovak  
 ms.topic: troubleshooting  
 ms.custom:  
 ms.date: 06/23/2025  
