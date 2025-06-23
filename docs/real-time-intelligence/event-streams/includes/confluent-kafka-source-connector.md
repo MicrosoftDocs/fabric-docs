@@ -29,7 +29,7 @@ ms.date: 06/23/2025
             :::image type="content" source="./media/confluent-kafka-source-connector/confluent-connection-settings-page-1.png" alt-text="Screenshot that shows the first page of the Confluent connection settings.":::        
 1. Scroll to see the **Configure Confluent Cloud for Apache Kafka data source** section on the page. Enter the information to complete the configuration of the Confluent data source. 
     1. For **Topic name**, enter a topic name from your Confluent Cloud. You can create or manage your topic in the Confluent Cloud Console. 
-    1. For **Consumer group**, Enter a consumer group of your Confluent Cloud. It provides you with the dedicated consumer group for getting the events from Confluent Cloud cluster. 
+    1. For **Consumer group**, enter a consumer group of your Confluent Cloud. It provides you with the dedicated consumer group for getting the events from Confluent Cloud cluster. 
     1. For **Reset auto offset** setting, select one of the following values: 
         - **Earliest** – the earliest data available from your Confluent cluster
         - **Latest** – the latest available data
@@ -44,7 +44,7 @@ ms.date: 06/23/2025
         - **Privacy Level**: Choose from **None**, **Private**, **Organizational**, or **Public**.
     1. **JSON output decimal format**: Specifies the JSON serialization format for Decimal logical type values from the source.
         - **NUMERIC**: Serialize as numbers.
-        - **BASE64**: serialize as base64 encoded data.
+        - **BASE64**: Serialize as base64 encoded data.
 
          :::image type="content" source="./media/confluent-kafka-source-connector/confluent-schema-registry.png" alt-text="Screenshot that shows advanced settings of the Confluent schema registry settings.":::  
     
