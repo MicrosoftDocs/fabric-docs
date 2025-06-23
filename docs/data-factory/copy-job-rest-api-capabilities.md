@@ -460,7 +460,7 @@ For more detailed information on how to set up and use SPNs in Fabric Data Facto
 
 ## Current limitations
 
-- To perform CRUD operations on a CopyJob the workspace must be on a supported Fabric capacity. For more information, see: [Microsoft Fabric license types](/enterprise/licenses#microsoft-fabric-license-types.md).
+- To perform CRUD operations on a CopyJob the workspace must be on a supported Fabric capacity. For more information, see: [Microsoft Fabric license types](/enterprise/licenses#microsoft-fabric-license-types).
 
 - Non-Power BI Fabric Items: The workspace must be on a support Fabric capacity.
 
