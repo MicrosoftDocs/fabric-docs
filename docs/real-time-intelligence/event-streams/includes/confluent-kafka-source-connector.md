@@ -5,7 +5,7 @@ ms.author: xujiang1
 author: xujxu 
 ms.topic: include
 ms.custom:
-ms.date: 05/06/2025
+ms.date: 06/23/2025
 ---
 
 1. On the **Select a data source** page, select **Confluent Cloud for Apache Kafka**. 
@@ -37,14 +37,14 @@ ms.date: 05/06/2025
 
             :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings."::: 
 1. You may expand **Advanced settings** to configure how the source data is handled before streaming to Fabric.
-    1. **Define and serialize data**：Select **Yes** allows you to serialize the data into a standardized format. Select **No** keeps the data in its original format and passes it through without modification.
+    1. **Define and serialize data**： Select **Yes** allows you to serialize the data into a standardized format. Select **No** keeps the data in its original format and passes it through without modification.
     1. If your data is encoded using a schema registry, select **Yes** when choosing whether the data is encoded with a schema registry. Then, select **New connection** to configure access to your Confluent Schema Registry:
         - **Schema Registry URL**: The public endpoint of your schema registry.
         - **API Key** and **API Key Secret**: Navigate to Confluent Cloud Environment's Schema Registry to copy the **API Key** and **Secret**. Ensure the account used to create this API key has **DeveloperRead** or higher permission on the schema. 
         - **Privacy Level**: Choose from **None**, **Private**, **Organizational**, or **Public**.
     1. **JSON output decimal format**: Specifies the JSON serialization format for Decimal logical type values from the source.
-        - **NUMERIC**：Serialize as numbers.
-        - **BASE64**：serialize as base64 encoded data.
+        - **NUMERIC**: Serialize as numbers.
+        - **BASE64**: serialize as base64 encoded data.
 
          :::image type="content" source="./media/confluent-kafka-source-connector/confluent-schema-registry.png" alt-text="Screenshot that shows advanced settings of the Confluent schema registry settings.":::  
     
