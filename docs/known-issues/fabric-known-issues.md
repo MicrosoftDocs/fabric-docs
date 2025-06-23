@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 06/20/2025
+ms.date: 06/23/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1181  | OneLake | [OneLake catalog item details lineage tab button disappears](./known-issue-1181-onelake-catalog-item-details-lineage-tab-button-disappears.md) | June 23, 2025 |
 |  1179  | Power BI | [Copilot button unavailable in Power BI Desktop](./known-issue-1179-copilot-button-unavailable-power-bi-desktop.md) | June 20, 2025 |
 |  1178  | Power BI | [Google BigQuery (Microsoft Entra ID) (Beta) connection issues with optional parameters](./known-issue-1178-google-big-query-connection-issues-optional-parameters.md) | June 20, 2025 |
 |  1177  | Power BI | [Verified answers in Home Copilot not found when searching or in data answers](./known-issue-1177-verified-answers-home-copilot-not-found-search.md) | June 20, 2025 |
@@ -40,7 +41,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1156  | Data Warehouse | [Data warehouse doesn't load with version mismatch error](./known-issue-1156-data-warehouse-not-load-version-mismatch-error.md) | June 2, 2025 |
 |  1155  | Real-Time Intelligence | [Publish of eventstream with streaming connector source fails](./known-issue-1155-publish-eventstream-streaming-connector-source-fails.md) | June 2, 2025 |
 |  1151  | Administration & Management | [Disabling the Workspace encryption setting doesn't work](./known-issue-1151-disabling-workspace-encryption-setting-not-work.md) | May 27, 2025 |
-|  1147  | Power BI | [Button slicer formatting broken in service or May Desktop](./known-issue-1147-button-slicer-formatting-broken-service-may-desktop.md) | May 27, 2025 |
 |  1144  | Data Engineering | [Py4JJavaError when saving delta table on Fabric 1.3](./known-issue-1144-java-error-saving-delta-table-fabric-1-3.md) | May 22, 2025 |
 |  1143  | Power BI | [Error with Dremio Connector using Dremio.DatabasesV370 function](./known-issue-1143-error-dremio-connector-dremio-function.md) | May 22, 2025 |
 |  1142  | Data Warehouse | [SQL editor Copilot code completion feature might cause high usage](./known-issue-1142-sql-editor-copilot-code-completion-feature-high-usage.md) | May 20, 2025 |
@@ -108,6 +108,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1147  | Power BI | [Button slicer formatting broken in service or May Desktop](./known-issue-1147-button-slicer-formatting-broken-service-may-desktop.md) | May 27, 2025 | Fixed: June 23, 2025 |
 |  1180  | Power BI | [Inability to create new VNet Data Gateway due to unavailable Save button](./known-issue-1180-inability-create-new-vnet-data-gateway-save-button.md) | June 17, 2025 | Fixed: June 17, 2025 |
 |  1146  | Power BI | [Service error on privacy level challenge for power query](./known-issue-1146-service-error-privacy-level-challenge-power-query.md) | May 27, 2025 | Fixed: June 16, 2025 |
 |  1149  | Power BI | [Next button in connection authoring is greyed out](./known-issue-1149-next-button-connection-authoring-greyed-out.md) | May 30, 2025 | Fixed: June 12, 2025 |
@@ -141,12 +142,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  817  | Data Factory | [Pipelines don't support Role property for Snowflake connector](./known-issue-817-pipelines-not-support-role-property-snowflake-connector.md) | August 23, 2024 | Fixed: May 8, 2025 |
 |  774  | Data Factory | [Data warehouse deployment using deployment pipelines fails](./known-issue-774-data-warehouse-deployment-using-pipelines-fails.md) | July 5, 2024 | Fixed: May 8, 2025 |
 |  726  | Data Factory | [Pipeline using XML format copy gets stuck](./known-issue-726-pipeline-xml-format-copy-stuck.md) | May 24, 2024 | Fixed: May 8, 2025 |
-|  789  | Data Engineering | [SQL analytics endpoint table queries fail due to RLE](./known-issue-789-sql-endpoint-table-queries-fail-rle.md) | July 24, 2024 | Fixed: May 7, 2025 |
-|  643  | Data Engineering | [Tables not available to add in Power BI semantic model](./known-issue-643-tables-not-available-semantic-model.md) | February 27, 2024 | Fixed: May 7, 2025 |
-|  1114  | Data Warehouse | [Insert statements across tables in different data warehouses fail](./known-issue-1114-insert-statements-tables-different-data-warehouses-fail.md) | April 22, 2025 | Fixed: May 6, 2025 |
-|  1108  | Data Warehouse | [Can't read data warehouse tables from a notebook](./known-issue-1108-not-read-data-warehouse-tables-notebook.md) | April 22, 2025 | Fixed: May 6, 2025 |
-|  1039  | Data Warehouse | [Sync for data warehouse and SQL analytics endpoint fail in West Europe](./known-issue-1039-sync-warehouse-sql-endpoint-fail-west-europe.md) | March 3, 2025 | Fixed: May 6, 2025 |
-|  819  | Power BI | [Subscriptions and exports with maps might produce wrong results](./known-issue-819-subscriptions-exports-maps-wrong-results.md) | October 10, 2024 | Fixed: May 6, 2025 |
 
 ## Related content
 
