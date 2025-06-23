@@ -39,7 +39,7 @@ CRUD stands for Create, Read, Update, and Delete, which are the four basic opera
 - **Update**: Update existing Copy jobs. This might involve modifying the Copy job structure, changing data sources and destinations.
 - **Delete**: Delete Copy jobs that are no longer needed. This helps in managing and cleaning up resources.
 
-The primary online reference documentation for Microsoft Fabric REST APIs can be found in the [Microsoft Fabric REST API documentation](rest/api/fabric/articles/).
+The primary online reference documentation for Microsoft Fabric REST APIs can be found in the [Microsoft Fabric REST API documentation](/rest/api/fabric/articles/).
 
 ## Get started with REST APIs for Copy Job
 
@@ -245,6 +245,7 @@ List all Copy job from the specified workspace.
 
 **Sample response**:
 
+```
 {
   "value": [
     {
@@ -263,6 +264,7 @@ List all Copy job from the specified workspace.
     }
   ]
 }
+```
 
 ## Update Copy job
 
@@ -458,7 +460,7 @@ For more detailed information on how to set up and use SPNs in Fabric Data Facto
 
 ## Current limitations
 
-- To perform CRUD operations on a CopyJob the workspace must be on a supported Fabric capacity. For more information, see: [Microsoft Fabric license types](/enterprise/licenses).
+- To perform CRUD operations on a CopyJob the workspace must be on a supported Fabric capacity. For more information, see: [Microsoft Fabric license types](/enterprise/licenses#microsoft-fabric-license-types.md).
 
 - Non-Power BI Fabric Items: The workspace must be on a support Fabric capacity.
 
@@ -468,6 +470,6 @@ Refer to the following content for more information on REST APIs for Copy jobs i
 
 ### Documentation
 
-- [Fabric Copy job public REST API](https://learn.microsoft.com/en-us/rest/api/fabric/copyjob/items)
+- [Fabric Copy job public REST API](/rest/api/fabric/copyjob/items)
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
