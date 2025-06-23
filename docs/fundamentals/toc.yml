@@ -116,7 +116,13 @@ items:
     - name: Copilot for Data Warehouse
       href: ../data-warehouse/copilot.md
     - name: Copilot for Real-Time Intelligence
-      href: copilot-real-time-intelligence.md
+      items:
+        - name: Copilot for Real-Time Intelligence
+          href: copilot-real-time-intelligence.md
+        - name: Copilot for KQL Queryset
+          href: copilot-kusto-query-set.md
+        - name: Copilot for Real-Time Dashboards
+          href: copilot-real-time-dashboard.md
     - name: Copilot for Data Science and Data Engineering
       items:
       - name: Copilot for Data Science and Data Engineering
@@ -209,6 +215,12 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Copilot button unavailable in Power BI Desktop
+      href: ../known-issues/known-issue-1179-copilot-button-unavailable-power-bi-desktop.md
+    - name: Google BigQuery (Microsoft Entra ID) (Beta) connection issues with optional parameters
+      href: ../known-issues/known-issue-1178-google-big-query-connection-issues-optional-parameters.md
+    - name: Verified answers in Home Copilot not found when searching or in data answers
+      href: ../known-issues/known-issue-1177-verified-answers-home-copilot-not-found-search.md
     - name: Inability to create new VNet Data Gateway due to unavailable Save button
       href: ../known-issues/known-issue-1180-inability-create-new-vnet-data-gateway-save-button.md
     - name: Data Agent consumption incorrectly reported against default workspace capacity

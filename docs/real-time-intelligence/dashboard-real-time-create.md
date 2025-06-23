@@ -40,11 +40,16 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 
 [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
 
+<<<<<<< HEAD
 ## Edit mode
 If you aren't able to edit a dashboard, ensure that you are in the Editing mode. 
 
 :::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view." lightbox="media/real-time-dashboard/edit-mode.png":::
 
+=======
+> [!NOTE]
+> You can also use Copilot to help you write queries. For more information, see [Use Copilot in KQL Queryset](../fundamentals/copilot-kusto-query-set.md).
+>>>>>>> 96ed94ef82963c4f7d2a8cf453fc1891ccb7a042
 
 ## Add data source
 
