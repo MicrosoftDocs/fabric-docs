@@ -28,7 +28,7 @@ To enable the T-SQL magic command in your Fabric notebook, you need to set the `
 
 In this example, we're using the T-SQL magic command to query a Fabric Data Warehouse, the `-artifact` parameter specifies the name of the Data Warehouse to use. The T-SQL code in the cell is executed against that Data Warehouse, the `-type` parameter specifies the type of the artifact, which in this case is a Data Warehouse, the '-bind' parameter specifies the name of the variable to bind the results of the T-SQL query to. The results of the query are stored in a Python variable called `df1`. If you need to apply any transformation to the df1 variable, you can do so using Python code in the next cell. To specify the warehouse from a different workspace, you can use the `-workspace` parameter. Without this parameter, the notebook uses the current workspace.
 
-   :::image type="content" source="media\use-python-experience-on-notebook\tsql-magic-command-dw.png" alt-text="Screenshot showing tsql magic command with data warehouse." lightbox="media\use-python-experience-on-notebook\tsql-magic-command-dw.png":::
+   :::image type="content" source="media\use-python-experience-on-notebook\tsql-magic-command-data-warehouse.png" alt-text="Screenshot showing tsql magic command with data warehouse." lightbox="media\use-python-experience-on-notebook\tsql-magic-command-data-warehouse.png":::
 
 If both the `-artifact` and `-type` parameters are skipped, the notebook use the default Data warehouse in the current Notebook. The `-bind` parameter is optional, but it's recommended to use it to bind the results of the T-SQL query to a Python variable. This parameter allows you to easily manipulate and analyze the results using Python code.
 
