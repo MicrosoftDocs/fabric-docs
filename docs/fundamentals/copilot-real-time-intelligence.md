@@ -1,8 +1,8 @@
 ---
 title: Copilot for Real-Time Intelligence
 description: "Learn how Copilot in Real-Time Intelligence can help you explore your data and extract valuable insights."
-author: v-hzargari
-ms.author: v-hzargari
+author: hzargari-ms
+ms.author: hzargari-ms
 ms.reviewer: mibar
 ms.topic: conceptual
 ms.custom:
@@ -28,12 +28,10 @@ For billing information about Copilot, see [Announcing Copilot in Fabric pricing
 Copilot for Real-Time Intelligence currently offers two main capabilities:
 
 - **Copilot for KQL Queryset**  
-    Explore and analyze your data using natural language in a [KQL queryset](/real-time-intelligence/kusto-query-set.md).  
-    [Learn more &rarr;](copilot-kusto-query-set.md)
+    Explore and analyze your data using natural language in a [Copilot for KQL Queryset](copilot-kusto-query-set.md)
 
 - **Copilot for Real-Time Dashboard**  
-    Interact with your data and generate insights directly within a [Real-Time Dashboard](/real-time-intelligence/dashboard-real-time-create.md).  
-    [Learn more &rarr;](copilot-real-time-dashboard.md)
+    Interact with your data and generate insights directly within a [Real-Time Dashboard](copilot-real-time-dashboard.md)
 
 > [!NOTE]
 >* Copilot doesn't generate control commands.
@@ -51,4 +49,4 @@ Copilot for Real-Time Intelligence currently offers two main capabilities:
 * [Privacy, security, and responsible use of Copilot for Real-Time Intelligence (preview)](copilot-real-time-intelligence-privacy-security.md)
 * [Copilot for Microsoft Fabric: FAQ](copilot-faq-fabric.yml)
 * [Overview of Copilot in Fabric (preview)](copilot-fabric-overview.md)
-* [Query data in a KQL queryset](/real-time-intelligence/kusto-query-set.md)
+* [Query data in a KQL queryset](../real-time-intelligence/kusto-query-set.md)

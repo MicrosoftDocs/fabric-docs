@@ -41,7 +41,7 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
 
 > [!NOTE]
-> You can also use Copilot to help you write queries. For more information, see [Use Copilot in KQL Queryset](/fundamentals/copilot-kusto-query-set.md).
+> You can also use Copilot to help you write queries. For more information, see [Use Copilot in KQL Queryset](../fundamentals/copilot-kusto-query-set.md).
 
 ## Add data source
 

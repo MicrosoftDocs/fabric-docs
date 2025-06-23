@@ -1,6 +1,6 @@
 ---
-title: Copilot for KQL Queryset (nl2kql)
-description: "Learn how Copilot in KQL Queryset (nl2kql) can help you explore your data and extract valuable insights."
+title: Copilot for KQL Queryset
+description: "Learn how Copilot in KQL Queryset can help you explore your data and extract valuable insights."
 author: spelluru
 ms.author: spelluru
 ms.reviewer: mibar
@@ -43,7 +43,7 @@ Copilot supports **conversational interactions** which allows you to clarify, ad
     After a few seconds, Copilot will generate a KQL query based on your input. You can copy the query to the clipboard, or **Insert** it directly in the KQL query editor. To run the query in the query editor, you must have write access to the KQL queryset.
 1. Select the **Run** button to execute the query.
 
-:::image type="content" source="media/copilot-real-time-intelligence/copilot-conversation.png" alt-text="Screenshot of copilot use in KQL queryset in Real-Time Intelligence." lightbox="media/copilot-real-time-intelligence/copilot-conversation.png":::
+    :::image type="content" source="media/copilot-real-time-intelligence/copilot-conversation.png" alt-text="Screenshot of copilot use in KQL queryset in Real-Time Intelligence." lightbox="media/copilot-real-time-intelligence/copilot-conversation.png":::
 
 > [!NOTE]
 >* Copilot doesn't generate control commands.
@@ -53,7 +53,7 @@ You can continue to ask follow-up questions or further refine your query. To sta
 
 Hover over a previous question (2) and select the **pencil** icon to copy it to the question box to edit it, or copy it to your clipboard.
 
-:::image type="content" source="media/copilot-real-time-intelligence/edit-question.png" alt-text="Screenshot showing how to copy or edit a previous question." lightbox="media/copilot-real-time-intelligence/edit-question.png":::
+    :::image type="content" source="media/copilot-real-time-intelligence/edit-question.png" alt-text="Screenshot showing how to copy or edit a previous question." lightbox="media/copilot-real-time-intelligence/edit-question.png":::
 
 ## Improve the accuracy of Copilot for KQL Queryset
 
