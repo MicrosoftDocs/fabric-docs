@@ -28,10 +28,10 @@ For billing information about Copilot, see [Announcing Copilot in Fabric pricing
 Copilot for Real-Time Intelligence currently offers two main capabilities:
 
 - **Copilot for KQL Queryset**  
-    Explore and analyze your data using natural language in a [Copilot for KQL Queryset](copilot-kusto-query-set.md)
+    Explore and analyze your data using natural language in a [Copilot for KQL Queryset](copilot-for-writing-queries.md)
 
 - **Copilot for Real-Time Dashboard**  
-    Interact with your data and generate insights directly within a [Real-Time Dashboard](copilot-real-time-dashboard.md)
+    Interact with your data and generate insights directly within a [Real-Time Dashboard](copilot-create-dashboard.md)
 
 > [!NOTE]
 >* Copilot doesn't generate control commands.
