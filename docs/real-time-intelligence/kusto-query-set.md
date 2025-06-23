@@ -117,7 +117,7 @@ The following examples use data that is publicly available at [https://kustosamp
     :::image type="content" source="media/kusto-query-set/query-window.png" alt-text="Screenshot of the KQL Queryset showing the results of a query. Both the query and the results pane are highlighted."  lightbox="media/kusto-query-set/query-window.png":::
 
 > [!NOTE]
-> You can also use Copilot to help you write queries. For more information, see [Use Copilot in KQL Queryset](/..fundamentals/copilot-real-time-intelligence.md).
+> You can also use Copilot to help you write queries. For more information, see [Use Copilot in KQL Queryset](../fundamentals/copilot-real-time-intelligence.md).
 
 ## Interact with data sources
 

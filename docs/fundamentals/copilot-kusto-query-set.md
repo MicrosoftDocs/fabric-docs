@@ -35,7 +35,7 @@ Copilot supports **conversational interactions** which allows you to clarify, ad
 
 ## Querying with the KQL Queryset Copilot
 
-1. Navigate to a new or existing [KQL queryset](/real-time-intelligence/kusto-query-set.md)
+1. Navigate to a new or existing [KQL queryset](../real-time-intelligence/kusto-query-set.md)
 1. Connect to a database. For more information, see [Select a database](../real-time-analytics/kusto-query-set.md#select-a-database)
 1. Select the **Copilot** button.
 1. In the Copilot pane, enter your business question in natural language.
@@ -81,4 +81,4 @@ Here are some tips that can help improve the accuracy of the KQL queries generat
 * [Privacy, security, and responsible use of Copilot for Real-Time Intelligence (preview)](copilot-real-time-intelligence-privacy-security.md)
 * [Copilot for Microsoft Fabric: FAQ](copilot-faq-fabric.yml)
 * [Overview of Copilot in Fabric (preview)](copilot-fabric-overview.md)
-* [Query data in a KQL queryset](/real-time-intelligence/kusto-query-set.md)
+* [Query data in a KQL queryset](../real-time-intelligence/kusto-query-set.md)

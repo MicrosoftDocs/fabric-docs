@@ -1,8 +1,8 @@
 ---
 title: Copilot for Real-Time Dashboard
 description: Learn how to use Copilot in Real-Time Dashboard transform your data into a Real-Time Dashboard and extract valuable insights.
-author: v-hzargari
-ms.author: v-hzargari
+author: hzargari-ms
+ms.author: hzargari-ms
 ms.reviewer: mibar
 ms.topic: how-to
 ms.custom:
