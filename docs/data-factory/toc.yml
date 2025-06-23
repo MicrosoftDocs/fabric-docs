@@ -849,7 +849,7 @@
       href: cdc-copy-job.md
     - name: CI/CD for Copy job
       href: cicd-copy-job.md
-    - name: REST API capabilities
+    - name: REST API Capabilities
       href: copy-job-rest-api-capabilities.md    
   - name: Data gateway
     items:

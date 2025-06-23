@@ -1,6 +1,6 @@
 ---
-title: REST API capabilities for Copy job in Fabric Data Factory
-description: This article describes the REST API capabilities for Copy job in Fabric Data Factory.
+title: REST API Capabilities for Copy job in Fabric Data Factory
+description: This article describes the REST API Capabilities for Copy job in Fabric Data Factory.
 author: KrishnakumarRukmangathan
 ms.author: krirukm
 ms.topic: how-to
@@ -9,7 +9,7 @@ ms.search.form: copy-job
 ms.custom: copy-job
 ---
 
-# REST API capabilities for Copy job in Fabric Data Factory
+# REST API Capabilities for Copy job in Fabric Data Factory
 
 Fabric Data Factory provides a robust set of APIs that enable users to automate and manage their Copy job efficiently. These APIs allow for seamless integration with various data sources and services, enabling users to create, get, list and update their Copy job programmatically. The APIs support a wide range of operations including Copy job CRUD (Create, Read, Update, and Delete) making it easier for users to manage their data integration processes.
 
