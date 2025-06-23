@@ -6,7 +6,7 @@ ms.reviewer: xupzhou
 author: whhender
 ms.topic: quickstart
 ms.custom: pipelines
-ms.date: 02/25/2025
+ms.date: 06/23/2025
 ms.search.form: Pipeline Tutorials
 ---
 
