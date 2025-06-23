@@ -122,7 +122,7 @@ items:
         - name: Copilot for KQL Queryset
           href: copilot-for-writing-queries.md
         - name: Copilot for Real-Time Dashboards
-          href: copilot-create-dashboard.md
+          href: copilot-generate-dashboard.md
     - name: Copilot for Data Science and Data Engineering
       items:
       - name: Copilot for Data Science and Data Engineering

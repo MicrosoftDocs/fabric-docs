@@ -61,7 +61,7 @@ You can continue to ask follow-up questions or further refine your query. To sta
 
 Hover over a previous question (2) and select the **pencil** icon to copy it to the question box to edit it, or copy it to your clipboard.
 
-    :::image type="content" source="media/copilot-real-time-intelligence/edit-question.png" alt-text="Screenshot showing how to copy or edit a previous question." lightbox="media/copilot-real-time-intelligence/edit-question.png":::
+:::image type="content" source="media/copilot-real-time-intelligence/edit-question.png" alt-text="Screenshot showing how to copy or edit a previous question." lightbox="media/copilot-real-time-intelligence/edit-question.png":::
 
 ## Improve the accuracy of Copilot for KQL Queryset
 
