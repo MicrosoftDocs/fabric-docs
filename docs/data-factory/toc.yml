@@ -849,6 +849,8 @@
       href: cdc-copy-job.md
     - name: CI/CD for Copy job
       href: cicd-copy-job.md
+    - name: REST API capabilities
+      href: copy-job-rest-api-capabilities.md    
   - name: Data gateway
     items:
     - name: On-premises data gateways docs
