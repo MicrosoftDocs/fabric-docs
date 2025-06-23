@@ -12,8 +12,6 @@ ms.date: 05/19/2025
 
 # Customer-managed keys for Fabric workspaces
 
-*We identified an issue with the tenant level setting for the customer-managed keys feature.  We are actively working on resolving it. In the meantime, the customer-managed keys feature will be unavailable for use.*
-
 Microsoft Fabric encrypts all data-at-rest using Microsoft managed keys. With customer-managed keys for Fabric workspaces, you can use your [Azure Key Vault](/azure/key-vault/general/overview) keys to add another layer of protection to the data in your Microsoft Fabric workspaces. A customer-managed key provides greater flexibility, allowing you to manage its rotation, control access, and usage auditing. It also helps organizations meet data governance needs and comply with data protection and encryption standards.
 
 All Fabric data stores are encrypted at rest with Microsoft-managed keys. Customer-managed keys use envelope encryption, where a Key Encryption Key (KEK) encrypts a Data Encryption Key (DEK). When using customer-managed keys, the Microsoft managed DEK encrypts your data, and then the DEK is encrypted using your customer-managed KEK. Use of a KEK that never leaves Key Vault allows the data encryption keys themselves to be encrypted and controlled.
@@ -30,7 +28,7 @@ A [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-f
 
 ### Step 2: Create a Service Principal for the Fabric Platform CMK app
 
-Fabric uses the *Fabric Platform CMK* app to access your Azure Key Vault. For the app to work, a [service principal](/entra/identity-platform/app-objects-and-service-principals?tabs=browser#service-principal-object) needs to be created. This process is performed by a user that has Microsoft Entra ID privileges, such as a [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+Fabric uses the *Fabric Platform CMK* app to access your Azure Key Vault. For the app to work, a [service principal](/entra/identity-platform/app-objects-and-service-principals?tabs=browser#service-principal-object) must be created for the tenant. This process is performed by a user that has Microsoft Entra ID privileges, such as a [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
 
 Follow the instructions in [Create an enterprise application from a multitenant application in Microsoft Entra ID](/entra/identity/enterprise-apps/create-service-principal-cross-tenant) to create a service principal for an application called *Fabric Platform CMK* in your Microsoft Entra ID tenant.
 
@@ -48,7 +46,7 @@ You need to configure your Key Vault so that Fabric can access it. This step is 
 
 4. From the *Add* dropdown, select **Add Role assignment**.
 
-5. Select the **Members** tab and then select **Select members**.
+5. Select the **Members** tab and then click on **Select members**.
 
 6. In the *Select members pane*, search for **Fabric Platform CMK**
 
@@ -68,7 +66,7 @@ To create an Azure Key Vault key, follow the instructions in [Create a key vault
 
 Fabric only supports [versionless customer-managed keys](/azure/key-vault/keys/how-to-configure-key-rotation#key-rotation-policy), which are keys in the `https://{vault-name}.vault.azure.net/{key-type}/{key-name}` format. Fabric checks the key vault daily for a new version, and uses the latest version available. To avoid having a period where you can't access data in the workspace after a new key is created, wait 24 hours before disabling the older version.
 
-Your key must be *RSA* key. The supported sizes are:
+Your key must be an *RSA* key. The supported sizes are:
 
 * 2,048 bit
 * 3,072 bit
@@ -90,7 +88,7 @@ Follow the steps in this section to use customer-managed keys in your Fabric wor
 
 1. Select **Apply**.
 
-Once you complete these steps, your workspace is encrypted with a customer-managed key. This means existing and future items in the workspace will be encrypted by the customer-managed key you used for the setup. You can review the encryption status *Active, In progress or Failed* in the **Encryption** tab in workspace settings. Items for which encryption is in progress or failed are listed categorically too. The key needs to remain active in the Key Vault while encryption is in progress *(Status: In progress)*.
+Once you complete these steps, your workspace is encrypted with a customer-managed key. This means existing and future items in the workspace will be encrypted by the customer-managed key you used for the setup. You can review the encryption status *Active, In progress or Failed* in the **Encryption** tab in workspace settings. Items for which encryption is in progress or failed are listed categorically too. The key needs to remain active in the Key Vault while encryption is in progress *(Status: In progress)*. Refresh the page to view the latest encryption status. If encryption has failed for some items in the workspace, you can retry using a different key.
 
 ## Revoke access
 
@@ -122,17 +120,18 @@ Before you configure your Fabric workspace with a customer-managed key, consider
   * Data Pipeline
   * Dataflow
   * Industry solutions
-  * Mirrored items
 
-* This feature can't be enabled for a workspace that contains unsupported items.
+* This feature can't be enabled for a workspace that contains unsupported items. 
 
-* When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace.
+* When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace. To use unsupported items, create them in a different workspace that does not have this feature enabled. 
 
 * The data listed below isn't protected with customer-managed keys:
 
+  * All data stored in the Spark Clusters (data stored in temp discs as part of  shuffle or data spills or RDD caches in a spark application) are not protected. This includes all the Spark Jobs from Notebooks, Lakehouses, Spark Job Definitions, Lakehouse Table Load and Maintenance jobs, Shortcut Transforms, Fabric Materialized View Refresh.
+  * The job logs stored in the history server
+  * Libraries attached as part of environments or added as part of the Spark session customization using magic commands are not protected 
   * Lakehouse column names, table format, table compression, SQL endpoint
-  * Spark shuffle data and Spark event logs
-  * Metadata generated when creating a Data pipeline, such as DB name, table, schema
+  * Metadata generated when creating a Data pipeline and Copy job, such as DB name, table, schema
   * Metadata of ML model and experiment, like the model name, version, metrics
 
 * CMK is only supported in the following regions: East US, Germany West Central, North Central US, North Europe, South Central US, Southeast Asia, UAE North, UK South, West Europe, and West US. To use CMK, your home region and capacity must be in a supported region.
@@ -140,6 +139,8 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 * CMK is supported on all [F SKUs](../enterprise/licenses.md).
 
 * CMK is not supported when Azure Key Vault firewall setting is enabled.
+
+* CMK can be enabled and disabled for the workspace while the tenant level encryption setting is on. Once the tenant setting is turned off, you can no longer enable CMK for workspaces in that tenant or disable CMK for workspaces that already have CMK turned on in that tenant. Data in workspaces that enabled CMK before the tenant setting was turned off will remain encrypted with the customer managed key. Keep the associated key active to be able to unwrap data in that workspace. 
 
 ## Related content
 
