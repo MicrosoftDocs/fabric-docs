@@ -5,7 +5,7 @@ author: abhishjain002
 ms.author: abhishjain 
 ms.reviewer: nijelsf
 ms.topic: how-to
-ms.date: 06/06/2025
+ms.date: 06/19/2025
 # customer intent: As a data engineer, I want to refresh materialized lake views in lakehouse so that I can ensure the data is up-to-date and optimize query performance.
 ---
 
@@ -33,6 +33,10 @@ FULL: It's an optional argument. If the FULL keyword is used, a full refresh of 
 
 > [!NOTE]
 > Refreshing an MLV that uses non-delta tables as its source initiate a full refresh of the MLV.
+
+## Known issues
+
+* At present, all refresh operations default to a full refresh.
 
 ## Related articles
 
