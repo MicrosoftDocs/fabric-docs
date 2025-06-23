@@ -5,6 +5,7 @@ author: luitwieler
 ms.topic: concept-article
 ms.date: 05/09/2025
 ms.author: jeluitwi
+ms.custom: dataflows
 ---
 
 # Incremental refresh in Dataflow Gen2

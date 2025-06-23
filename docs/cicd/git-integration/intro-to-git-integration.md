@@ -1,8 +1,8 @@
 ---
 title: Overview of Fabric Git integration
 description: An introduction to integrating Git version control with the Fabric Application lifecycle management (ALM) tool
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
@@ -68,7 +68,7 @@ The following items currently support Git integration:
 
 * Data Factory items:
 
-  * [Copy Job](../../data-factory/cicd-copy-job.md#get-started-with-git-integration-for-copy-job) *(preview)*
+  * [Copy Job](../../data-factory/cicd-copy-job.md#git-integration-for-copy-job) *(preview)*
   * [Dataflow gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
   * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
   * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-git-integration)

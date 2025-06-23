@@ -7,6 +7,7 @@ ms.reviewer: twcyril
 ms.date: 05/08/2025
 ms.service: fabric
 ms.topic: how-to
+ms.search.form: Manage warehouse snapshots
 ---
 # Create and manage a warehouse snapshot (preview)
 

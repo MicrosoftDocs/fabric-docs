@@ -2,8 +2,8 @@
 title: Create materialized views
 description: Learn how to run an aggregation query over a source table using materialized views in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 11/19/2024

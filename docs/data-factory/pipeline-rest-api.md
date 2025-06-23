@@ -4,7 +4,8 @@ description: This article describes the available REST APIs for pipelines in Dat
 author: kromerm
 ms.author: makromer
 ms.topic: conceptual
-ms.date: 09/16/2024
+ms.date: 05/22/2025
+ms.custom: pipelines
 ---
 
 # Microsoft Fabric data pipeline public REST API
@@ -352,7 +353,7 @@ Body:
 ```
 
 > [!NOTE]
-> "job id" is the same id created and used in the Job Scheduler Public APIs
+> "job id" is the same id created and used in the [Job Scheduler Public APIs](/rest/api/fabric/core/job-scheduler).
 
 Response 200:
 ```json
@@ -390,6 +391,15 @@ Response 200:
 ]
 
 ```
+
+Possible status values:
+
+- Cancelled
+- Succeeded
+- Failed
+- In progress
+- Not started
+- Unknown
 
 ## Service Principal Name (SPN) Support 
 

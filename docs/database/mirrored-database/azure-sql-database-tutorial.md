@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Database 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala
-ms.date: 05/08/2025
+ms.date: 06/19/2025
 ms.topic: tutorial
 ms.custom:
 ---
@@ -44,6 +44,9 @@ Next, you need to create a way for the Fabric service to connect to your Azure S
 You can accomplish this with a [login and mapped database user](#use-a-login-and-mapped-database-user).
 
 #### Use a login and mapped database user
+
+> [!NOTE]
+> Microsoft Entra server principals (logins) are currently in preview for Azure SQL Database. Before using Microsoft Entra ID authentication, review the limitations in [Microsoft Entra server principals](/azure/azure-sql/database/authentication-azure-ad-logins?view=azuresql-db&preserve-view=true#limitations-and-remarks). Database users created using Microsoft Entra logins may experience delays when being granted roles and permissions. If you encounter issue, refer to the document to mitigate.
 
 1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.

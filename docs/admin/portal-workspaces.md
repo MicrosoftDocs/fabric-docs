@@ -1,12 +1,12 @@
 ---
 title: Manage workspaces
 description: Learn how to view and understand info about workspaces and manage workspaces as an administrator.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 ms.custom: admin-portal
 ms.topic: overview
-ms.date: 05/12/2025
+ms.date: 05/31/2025
 ---
 
 # Manage workspaces
@@ -170,7 +170,7 @@ For details, see [Designate a default capacity for My workspaces](/power-bi/ente
 
 ### Prevent My workspace owners from reassigning their My workspaces to a different capacity
 
-Fabric admins can designate a default capacity for My workspaces. However, even if a My workspace has been assigned to Premium capacity, the owner of the workspace can still move it back to Pro license mode. Moving a workspace from Premium license mode to Pro license mode might cause the content contained in the workspace to be become noncompliant with respect to data-residency requirements, since it might move to a different region. To prevent this situation, the Fabric admin can block My workspace owners from moving their My workspace to a different license mode by turning off the **Users can reassign personal workspaces** tenant admin setting. See [Workspace settings](./portal-workspace.md) for detail.
+Fabric admins can designate a default capacity for My workspaces. However, even if a My workspace has been assigned to Premium capacity, the owner of the workspace can still move it back to Pro license mode. Moving a workspace from Premium license mode to Pro license mode might cause the content contained in the workspace to be become noncompliant with respect to data-residency requirements, since it might move to a different region. To prevent this situation, the Fabric admin can block My workspace owners from moving their My workspace to a different license mode by turning on the **Block users from reassigning personal workspaces (My Workspace)** tenant setting. See [Workspace settings](./portal-workspace.md) for detail.
 
 ### Restore a deleted My workspace as an app workspace
 
@@ -201,7 +201,7 @@ In the Fabric UI, workspaces can be moved to other capacities in the following w
 
 Moving workspaces from one capacity to another has the following restrictions:
 
-* When you move a workspace, all jobs related to items in the workspace get cancelled.
+* When you move a workspace, all jobs related to items in the workspace get canceled.
 
 * Only movable item types can move between regions. **If you're reassigning a workspace to a capacity located in a different region, you must remove all non-movable items first, otherwise reassignment will fail**.
 
@@ -237,6 +237,9 @@ Moving workspaces from one capacity to another has the following restrictions:
     *Can't move to Pro<br>**Can't move to Pro or Premium per user
 
     All other item types must be removed from the workspace before you can change its license mode from Premium capacity or Fabric capacity to Pro or Premium Per User.
+
+> [!NOTE]
+> If you have Dataflow Gen2 items in your workspace, note that their underlying staging lakehouse and staging warehouse items only become visible in the workspace UI after **all** Dataflow Gen2 items in the workspace have been deleted. These staging items are Fabric items as well, and as such their existance can prevent the workspace from being successfully migrated from one region to another. To ensure that your workspace can be successfully migrated across regions, first delete all Dataflow Gen2 items in the workspace, and then delete all the staging lakehouses and warehouses in the workspace that become visible.
 
 ## Related content
 

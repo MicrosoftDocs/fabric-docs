@@ -4,9 +4,11 @@ description: This article explains how to copy data using MongoDB.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
-ms.custom:
+ms.date: 05/29/2025
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure MongoDB in a copy activity
@@ -36,10 +38,10 @@ Go to **Source** tab to configure your copy activity source. See the following c
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select a MongoDB connection from the connection list. If no connection exists, then create a new MongoDB connection by selecting **New**.
 - **Database**: Select your database from the drop-down list.
 - **Collection name**: Specify the name of the collection in MongoDB database. You can select the collection from the drop-down list or select **Edit** to enter it manually. 
+- **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. To learn the difference between various versions, go to this [section](#differences-between-mongodb-versions).
 
 Under **Advanced**, you can specify the following fields:
 
@@ -82,9 +84,41 @@ Under **Advanced**, you can specify the following fields:
 
 For **Mapping** tab configuration, see [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). Mapping is not supported when both source and destination are hierarchical data.
 
+#### Data type mapping for MongoDB
+
+When copying data from MongoDB, the following mappings are used from MongoDB data types to interim data types used by the service internally. 
+
+| MongoDB data type | Interim service data type (for version 1.1) | Interim service data type (for version 1.0) |
+|-------------------|---------------------------------------------|---------------------------------------------|
+| Date              | DateTime                                    | String                                      |
+| ObjectId          | String                                      | String                                      |
+| Decimal128        | String                                      | String                                      |
+| TimeStamp         | The most significant 32 bits -> DateTime<br>The least significant 32 bits -> Int32  | Int32           |
+| String            | String                                      | String                                      |
+| Array             | Array                                       | Array                                       |
+| Double            | Double                                      | String                                      |
+| Int32             | Int32                                       | String                                      |
+| Int64             | Int64                                       | String                                      |
+| Boolean           | Boolean                                     | Boolean                                     |
+| NullData          | Null                                        | Null                                        |
+| Document          | Dictionary                                  | Dictionary                                  |
+| javaScript        | String                                      | String                                      |
+| Regex             | String                                      | String                                      |
+| minKey            | String                                      | Int32                                       |
+| maxKey            | String                                      | Int32                                       |
+| Binary            | GUID (when SubType is "04" )<br>String      | String                        |
+
 ### Settings
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+### Differences between MongoDB versions
+
+The table below shows the feature differences between various versions.
+
+| Version 1.1 | Version 1.0|
+|--------------|-------------|
+| The following mappings are used from MongoDB data types to interim service data types.<br><br>Date -> DateTime<br>TimeStamp -> The most significant 32 bits -> DateTime; The least significant 32 bits -> Int32<br>Double -> Double<br>Int32 -> Int32<br>Int64 -> Int64<br>minKey -> String<br>maxKey -> String<br>Binary -> GUID (when SubType is "04") / String | The following mappings are used from MongoDB data types to interim service data types.<br><br>Date -> String<br>TimeStamp -> Int32<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>minKey -> Int32<br>maxKey -> Int32<br>Binary -> String |
 
 ## Table summary
 
@@ -98,6 +132,7 @@ The following table contains more information about the copy activity in MongoDB
 |**Connection**|Your connection to the source data store.|< your MongoDB connection >|Yes|connection|
 |**Database**|Your database that you use as source.|< your database >|Yes|database|
 |**Collection name**|Name of the collection in MongoDB database.|< your collection >|Yes|collection|
+|**Version**|The version that you specify.|• 1.1<br>• 1.0|Yes|version:<br>• 1.1<br>• 1.0|
 |**Filter**|The selection filter using query operators. To return all documents in a collection, omit this parameter or pass an empty document ({}).|< your selection filter >|No|filter|
 |**Cursor methods**|The way that the underlying query is executed.|• **project**<br>• **sort**<br>• **limit**<br>• **skip**|No|cursorMethods:<br>• project<br>• sort<br>• limit<br>• skip|
 |**Batch size**|The number of documents to return in each batch of the response from MongoDB instance.|< your write batch size ><br>(the default is 100)|No|batchSize|

@@ -1,8 +1,8 @@
 ---
 title: Overview of Fabric deployment pipelines
 description: An introduction to deployment pipelines in the Fabric Application lifecycle management (ALM) tool. Learn which items can be deployed, the structure of a pipeline, and how to pair items.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview
@@ -47,7 +47,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 
 * Data Factory items:
 
-  * [Copy Job](../../data-factory/cicd-copy-job.md#get-started-with-deployment-pipelines-for-git) *(preview)*
+  * [Copy Job](../../data-factory/cicd-copy-job.md#deployment-pipelines-for-git) *(preview)*
   * [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
   * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
   * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-in-deployment-pipelines)

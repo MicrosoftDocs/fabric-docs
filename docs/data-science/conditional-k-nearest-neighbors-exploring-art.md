@@ -3,9 +3,9 @@ title: Conditional k-NN (K-Nearest-Neighbors) Art Exploration Across Cultures
 description: A guideline for match-finding via k-nearest-neighbors.
 ms.topic: how-to
 ms.custom: 
-ms.author: franksolomon
-author: fbsolo-ms1
-ms.reviewer: fsolomon
+ms.author: scottpolly
+author: s-polly
+ms.reviewer: scottpolly
 reviewer: JessicaXYWang
 ms.date: 04/04/2025
 ---

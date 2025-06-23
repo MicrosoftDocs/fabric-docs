@@ -1,6 +1,6 @@
 ---
 title: Work with notebook resources in Visual Studio Code
-description: Learn about the VS Code extension for Synapse, which enables a pro-developer authoring experience, including editing file in the notebook resource folder.
+description: Learn about the VS Code extension for Fabric Data Engineering, which enables a pro-developer authoring experience, including editing file in the notebook resource folder.
 ms.reviewer: sngun
 ms.author: qixwang
 author: qixwang
@@ -12,9 +12,9 @@ ms.search.form: VSCodeExtension
 
 # Access and manage Microsoft Fabric notebook resources in Visual Studio Code
 
-Microsoft Fabric notebooks now support a feature called *notebook resources*. With this feature, you can store code modules in .py format and other data files, such as .csv or image files, in a resource folder. You can access all these resource files from the notebook as a local file system. This article shows you how to use this feature in Visual Studio (VS) Code, with the VS Code extension for Synapse.
+Microsoft Fabric notebooks now support a feature called *notebook resources*. With this feature, you can store code modules in .py format and other data files, such as .csv or image files, in a resource folder. You can access all these resource files from the notebook as a local file system. This article shows you how to use this feature in Visual Studio (VS) Code, with the VS Code extension for Fabric Data Engineering.
 
-For information about the extension, including how to install it, see [What is the Synapse Visual Studio Code extension?](setup-vs-code-extension.md)
+For information about the extension, including how to install it, see [What is the Fabric Data Engineering VS Code extension?](setup-vs-code-extension.md)
 
 ## Open the notebook resource folder
 

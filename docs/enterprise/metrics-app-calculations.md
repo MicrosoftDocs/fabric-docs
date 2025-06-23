@@ -1,8 +1,8 @@
 ---
 title: Metrics app calculations
 description: Understand some of the calculations that the Microsoft Fabric Capacity Metrics app uses to calculate consumption.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: conceptual
 show_latex: true
 ms.custom:

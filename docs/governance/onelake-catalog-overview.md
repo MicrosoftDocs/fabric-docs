@@ -1,11 +1,11 @@
 ---
 title: OneLake catalog overview
 description: Learn about the Microsoft Fabric's OneLake catalog and the capabilities it offers.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 01/20/2025
+ms.date: 05/29/2025
 ms.custom: 
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to learn about the OneLake catelog and the capabilities it offers.
 ---
@@ -18,7 +18,7 @@ OneLake catalog is a centralized place that helps you find, explore, and use the
 
 * **[Govern tab](./onelake-catalog-govern.md)**: The govern tab provides insights that help you understand the governance posture of all the data you own in Fabric, and presents recommended actions you can take to improve the governance status of your data.
 
-## Open the the OneLake catalog
+## Open the OneLake catalog
 
 To open the OneLake catalog, select the OneLake icon in the Fabric navigation pane. Select the tab you're interested if it's not displayed by default.
 
@@ -27,6 +27,7 @@ To open the OneLake catalog, select the OneLake icon in the Fabric navigation pa
 ## Related content
 
 * [Discover and explore Fabric items in the OneLake catalog](./onelake-catalog-explore.md)
+* [View item details](./onelake-catalog-item-details.md)
 * [Govern your data in Fabric](./onelake-catalog-govern.md)
 * [Endorsement](./endorsement-overview.md)
 * [Fabric domains](./domains.md)

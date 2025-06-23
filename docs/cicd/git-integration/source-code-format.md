@@ -1,8 +1,8 @@
 ---
 title: Git source code format
 description: This article describes the format of items in Microsoft Fabric's Git integration tool and how they're structured in the folder.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd

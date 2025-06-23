@@ -1,10 +1,10 @@
 ---
 title: 'Tutorial: Discover relationships in the _Synthea_ dataset using semantic link'
 description: This article shows how to detect relationships in the public _Synthea_ dataset, using semantic link.
-ms.author: franksolomon
+ms.author: scottpolly
+author: s-polly
 reviewer: alsavelv
 ms.reviewer: alsavelv
-author: fbsolo-ms1
 ms.topic: tutorial
 ms.custom:
 ms.date: 09/27/2023

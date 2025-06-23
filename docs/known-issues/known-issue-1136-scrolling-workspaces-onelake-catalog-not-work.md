@@ -4,7 +4,7 @@ description: A known issue is posted where scrolling through workspaces in OneLa
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/19/2025
+ms.date: 06/04/2025
 ms.custom: known-issue-1136
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1136
 
 In the OneLake Catalog, you can't scroll through the list of workspaces in the left navigation pane.
 
-**Status:** Open
+**Status:** Fixed: June 4, 2025
 
 **Product Experience:** OneLake
 

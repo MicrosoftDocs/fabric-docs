@@ -121,7 +121,7 @@ For Teams group chats, only recently active chats are enabled for selection. If 
 
 ## Maximum number of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items
 
-Your organization might have up to 250 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items per region. If you try to create more than this number of items, you receive an error message. To resolve the error, either:
+Your organization might have up to 500 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items per region. If you try to create more than this number of items, you receive an error message. To resolve the error, either:
 
 * Use an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item instead of creating a new item, or
 * Delete some of your existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items.
