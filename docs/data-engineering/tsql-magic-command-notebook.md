@@ -37,31 +37,32 @@ In this example, we're using the T-SQL magic command to query a Fabric Data Ware
 
 If both the `-artifact` and `-type` parameters are skipped, the notebook uses the default data warehouse in the current notebook. 
 
-## Using T-SQL magic command to query Fabric SQL Database
+## Using T-SQL magic command to query SQL Database
 
-You can also use the T-SQL magic command to query a Fabric SQL Database. The syntax is similar to querying a Data Warehouse, but you need to specify the type of the artifact as `SQLDatabase`. The `-bind` parameter specifies the name of the variable to bind the results of the T-SQL query to. The results of the query is stored in a Python variable called `df2`.
+You can also use the T-SQL magic command to query a Fabric SQL Database. The syntax is similar to querying a data warehouse, but the artifact parameter must be set to `SQLDatabase`. The `-bind` parameter specifies the name of the variable to bind the results of the T-SQL query to. In the following example, the result of the query is stored in a Python variable called `df2`.
 
-   :::image type="content" source="media\use-python-experience-on-notebook\tsql-magic-command-sql-database.png" alt-text="Screenshot showing tsql magic command with sql database." lightbox="media\use-python-experience-on-notebook\tsql-magic-command-sql-database.png":::
+:::image type="content" source="media\use-python-experience-on-notebook\tsql-magic-command-sql-database.png" alt-text="Screenshot showing tsql magic command with sql database." lightbox="media\use-python-experience-on-notebook\tsql-magic-command-sql-database.png":::
 
-## Using T-SQL magic command to query Fabric Lakehouse SQL Endpoint
+## Using T-SQL magic command to query lakehouse SQL endpoint
 
-You can also use the T-SQL magic command to query a Fabric SQL Endpoint. The syntax is similar to querying a Data Warehouse, but you need to specify the type of the artifact as `Lakehouse`.
+You can also use the T-SQL magic command to query a Fabric SQL endpoint. The syntax is similar to querying a data warehouse, but the artifact parameter must be set to `Lakehouse`.
 
-## Using T-SQL magic command as line magic 
-Beside running T-SQL in a full code cell with `%%tsql`, you can also run T-SQL in a single line with `%tsql` as line magic. This line magic allows running quick queries without needing to create a full code cell.
+## Using T-SQL magic command as line magic
+
+Beside running T-SQL in a full code cell with `%%tsql`, you can also run T-SQL in a single line with `%tsql` as line magic. The following line command allows running quick queries without needing to create a full code cell.
 
 :::image type="content" source="media\use-python-experience-on-notebook\tsql-magic-command-line.png" alt-text="Screenshot showing tsql magic command with line magic." lightbox="media\use-python-experience-on-notebook\tsql-magic-command-line.png":::
 
 ## Reference Python variables in T-SQL
 
-You can also reference Python variables in T-SQL code. You need to use the `{}` symbol followed by the name of the Python variable. For example, if you have a Python variable called `count`, you can reference it in your T-SQL code.
+You can also reference Python variables in T-SQL code. To do so, use the `{}` symbol followed by the name of the Python variable. For example, if you have a Python variable called `count`, you can reference it as follows in your T-SQL code:
 
 :::image type="content" source="media\use-python-experience-on-notebook\tsql-magic-command-reference-python-variable.png" alt-text="Screenshot showing tsql magic command with reference python variable." lightbox="media\use-python-experience-on-notebook\tsql-magic-command-reference-python-variable.png":::
 
-To see the full syntax, you can use the `%tsql?` command. This display the help information for the T-SQL magic command, including the available parameters and their descriptions.
+To see the full syntax, use the `%tsql?` command. This command displays the help information for the T-SQL magic command, including the available parameters and their descriptions.
 
 > [!NOTE]
-> You can run the full DML/DDL against the Fabric Data warehouse or Fabric SQL Database, but only read-only query against the Lakehouse sql-endpoint.
+> You can run the full DML and DDL commands against the data warehouse or SQL database, but only read-only query against the lakehouse sql endpoint.
 
 ## Related content
 
