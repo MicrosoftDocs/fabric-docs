@@ -43,6 +43,22 @@ For example, to declare columns `C1` and `C2` as a compound unique key for the t
 
 If `keyColumns` or `_metadata.json` is not specified, then update/deletes are not possible. This file can be added anytime, but once added `keyColumns` can't be changed.
 
+All columns are expected to have a data type in _metadata.json. The data types supported today can be found in the table below.  
+
+| Supported DataType | Description                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
+| Double              | A number with decimals, used when high precision is needed (e.g., 3.14159). |
+| Single              | A number with decimals, but less precise than Double (e.g., 3.14).          |
+| Int16               | A small whole number, typically between -32,768 and 32,767.                 |
+| Int64               | A very large whole number, used for big counts or IDs.                      |
+| Int32               | A standard whole number, commonly used for counting or indexing.            |
+| DateTime            | A full date and time value (e.g., 2025-06-17 14:30:00).                     |
+| IDate               | A calendar date without time (e.g., 2025-06-17).                            |
+| ITime               | A time of day without a date (e.g., 14:30:00).                              |
+| String              | Text data like names, labels, or descriptions.                              |
+| Boolean             | A true or false value, often used for toggles or yes/no choices.            |
+| ByteArray           | Raw binary data, such as files, images, or encoded content.                 |
+
 ### Events file in the landing zone
 
 If you are a partner implementing an open mirroring solution or a customer who'd like to provide additional details to us about the type of source you're mirroring into OneLake, we've added a new `_partnerEvents.json` file. This is not required but strongly recommended. 
