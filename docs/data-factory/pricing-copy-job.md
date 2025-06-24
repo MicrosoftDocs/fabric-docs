@@ -11,12 +11,12 @@ ms.date: 06/24/2025
 
 # Copy job pricing for Data Factory in Microsoft Fabric
 
-The Copy Job in Data Factory makes it easy to move data from your source to your destination. With a simple, guided experience, you can set up data transfers using built-in patterns for both full and incremental copy.
+The Copy Job in Data Factory makes it easy to move your data from any source to any destination. With a simple, guided experience, you can set up data transfers using built-in patterns for both full and incremental copy.
 
 When you run a Copy Job with Data Factory in Microsoft Fabric, Fabric Capacity Units (CUs) are consumed based on the following copy patterns:
 
 - Full copy: CUs are charged when you perform a full data load from source to destination using Copy Job. This can be a one-time full copy, a recurring full snapshot reload, or the initial full load before starting incremental sync.
-- Incremental copy: CUs are charged when only new or changed data is moved. o	When copying from databases, only new or updated rows are transferred. If Change Data Capture (CDC) is enabled, inserts, updates, and deletes are also captured. o	When copying from storage sources, only files with a newer LastModifiedTime are copied.
+- Incremental copy: CUs are charged when only new or changed data is moved using Copy Job. For databases, this means only new or updated rows are transferred, and if Change Data Capture (CDC) is enabled, inserts, updates, and deletes are also captured. For storage sources, only files with a newer LastModifiedTime are copied.
 
 ## Pricing model
 
@@ -29,7 +29,7 @@ The following table shows a breakdown of the pricing model for Copy job within D
 
 Both full copy and incremental copy patterns in Copy Job are billed based on the job’s run duration in hours and the used intelligent optimization throughput resources.
 
-It indicates that for each intelligent optimization throughput resource usage in a Copy job execution, 1.5 CU hours are consumed for full copy, which is same as data movement Copy activities in pipeline. 3 CU hours are consumed for incremental copy.
+It indicates that for each intelligent optimization throughput resource usage in a Copy job execution, 1.5 CU hours are consumed for full copy, which is same as data movement Copy activities in pipeline. 3 CU hours are consumed for incremental copy, during which only delta data is moved using a more efficient approach that reduces the processing time. 
 
 At the end of each Copy job run, the CU consumption for each consumption meters is summed and is billed as per the translated price of the Fabric Capacity in the region where the capacity is deployed.
 
