@@ -105,8 +105,8 @@ Navigate to Admin Portal → Capacity Settings → Data Engineering/Science tab
 
 Use the new "Disable Job-Level Bursting" switch to prevent a single Spark job from consuming all available burst capacity
 
-[!NOTE]
-When job-level bursting is disabled, the Spark engine enforces that no single job can utilize all available capacity (including burst cores). This ensures that capacity remains available for concurrent jobs, improving throughput and multi-user concurrency.
+> [!NOTE]
+> When job-level bursting is disabled, the Spark engine enforces that no single job can utilize all available capacity (including burst cores). This ensures that capacity remains available for concurrent jobs, improving throughput and multi-user concurrency.
 
 This feature is particularly useful in multi-tenant or high-concurrency environments, where workloads need to be balanced across multiple teams and pipelines. Admins can tune this setting based on whether the capacity is optimized for maximum job throughput (bursting enabled) or higher concurrency and fairness (bursting disabled).
 
@@ -117,8 +117,8 @@ A large batch notebook job can consume all 384 Spark VCores in an F64 capacity, 
 Bursting disabled:
 A job may be capped at the base core limit (e.g., 128 Spark VCores for F64), allowing headroom for other jobs to start concurrently.
 
-[!TIP]
-For teams with diverse job types (ETL, ML, Adhoc), disabling job-level bursting can help prevent capacity monopolization and reduce job queueing delays.
+> [!TIP]
+> For teams with diverse job types (ETL, ML, Adhoc), disabling job-level bursting can help prevent capacity monopolization and reduce job queueing delays.
 
 
 
