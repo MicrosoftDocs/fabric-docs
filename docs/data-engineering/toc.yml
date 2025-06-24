@@ -289,6 +289,8 @@ items:
     href: author-tsql-notebook.md
   - name: Python vs. PySpark Notebooks
     href: fabric-notebook-selection-guide.md
+  - name: T-SQL magic command in Python Notebook
+    href: tsql-magic-command-notebook.md
 - name: Environments
   items:
   - name: Create, configure and use an environment
