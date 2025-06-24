@@ -52,7 +52,7 @@ You can also reference Python variables in T-SQL code. You need to use the `{}` 
 
    :::image type="content" source="media\use-python-experience-on-notebook\tsql-magic-command-reference-python-variable.png" alt-text="Screenshot showing tsql magic command with reference python variable." lightbox="media\use-python-experience-on-notebook\tsql-magic-command-reference-python-variable.png":::
 
-To see the full syntax, you can use the `%%tsql -?` command. This display the help information for the T-SQL magic command, including the available parameters and their descriptions.
+To see the full syntax, you can use the `%tsql?` command. This display the help information for the T-SQL magic command, including the available parameters and their descriptions.
 
 
 > [!NOTE]
