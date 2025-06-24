@@ -128,7 +128,7 @@ The following screenshot shows an example of custom settings for an **About** pa
 
 :::image type="content" source="./media/custom-item-settings/example-about.png" alt-text="Screenshot of custom settings for an About page." lightbox="./media/custom-item-settings/example-about.png":::
 
-The **About** page item supports adding workload-specific content by using a hybrid view (default `About` settings and the workload's custom iframe). To achieve that, you should add another custom item setting.
+The **About** page item supports adding workload-specific content by using a hybrid view (default `About` settings and the workload's custom iframe). To achieve that, you should add another custom item setting:
 
 ```typescript
 workloadClient.action.onAction(async function ({ action, data }) {
@@ -157,5 +157,5 @@ The preceding code includes:
 
 - `name` : Must be defined as `about`.
 - `displayName` : Must be defined as `About`.
-- `route` : Needed to add for the custom **About** component that's loaded into the iframe, as shown in the image.
+- `route` : Needed for the custom **About** component that's loaded into the iframe, as shown in the image.
 - `workloadIframeHeight`: Provided as a string, in pixels. If you don't set the iframe height, it's set to a default value of `102vh`.

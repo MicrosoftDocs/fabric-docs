@@ -18,7 +18,7 @@ The following image shows an example of a localized workload in the workload hub
 
 For a Fabric workload, localization involves two aspects:
 
-* Translating text within the iframe, independently of the Fabric shell, by using [the Fabric portal language](#access-the-language-of-the-fabric-portal).
+* Translating text within the iframe, independently of the Fabric shell, by using [the Fabric portal language](#language-of-the-fabric-portal).
 * Enabling the translation of keywords that are used in the Fabric shell, such as the workload name, item names, and workload descriptions. These strings are currently found directly in the manifest files (`product.json` and `item.json`).
 
   For a description of all the strings that are localized, see [Localization targets](#localization-targets) later in this article.
@@ -141,7 +141,7 @@ Each locale has its own folder under `assets/locales`. Each locale contains a si
 }
 ```
 
-Whereas the translation.json file for Spanish would contain:
+Whereas the translation.json file for Spanish could contain:
 
 ```json
 {
@@ -167,24 +167,24 @@ In the product and item manifest files, those properties correspond to the follo
 
 Name                                            | Schema in manifest                           | Description
 ----------------------------------------------------|--------------------------------------------------|----------------
-Item display name                                   | `item.displayName`                                 | The display name of the item that's displayed in most contexts.
-Plural item display name                            | `item.displayNamePlural`                           | The pluralized name of the item.
-Context menu item display name                      | `item.contextMenuItems.displayName`                | If the item has a context menu entry, such as a shortcut for running a job, the display name of the entry.
-Context menu item tooltip                           | `item.contextMenuItems.tooltip`                    | If the item has a context menu entry, the tooltip that appears when it's hovered over.
-Quick action item display name                      | `item.quickActionItems.displayName`                | If the item has a quick action, such as a shortcut for running a job, the display name of the action.
-Quick action item tooltip                           | `item.quickActionItems.tooltip`                    | If the item has a quick action, the tooltip that appears when it's hovered over.
-Product display name                                | `product.displayName`                              | The workload display name that appears in most contexts.
-Full product display name                           | `product.fullDisplayName`                          | The full workload display name.
-Product description                                 | `product.description`                              | The description that appears on the home page of the workload.
-Learning material card title                        | `product.homePage.learningMaterials[].title`       | The title of a learning materials card on the workload home page.
-Learning material card description                  | `product.homePage.learningMaterials[].description` | The description on a learning materials card on the workload home page.
-Learning material card introduction                 | `product.homePage.learningMaterials[].introduction`| The introduction of a learning materials card on the workload home page (appears under the title).
-Custom action title                                 | `product.homePage.newSection.customActions[].title`| The title of a custom action card on the home page.
-Create experience description                       | `product.createExperience.description`             | The description that appears in the create hub.
-Create card title                                   | `product.createExperience.cards[].title`           | The title of a create card.
-Create card description                             | `product.createExperience.cards[].description`     | The description of a create card.
-Workload hub slogan                                 | `product.productDetail.slogan`                     | The slogan that appears on the workload page in the workload hub.
-Workload hub description                            | `product.productDetail.description`                | The product description that appears on the workload page in the workload hub.
+Item display name                                   | `item.displayName`                                 | The display name of the item that's displayed in most contexts
+Plural item display name                            | `item.displayNamePlural`                           | The pluralized name of the item
+Context menu item display name                      | `item.contextMenuItems.displayName`                | If the item has a context menu entry, such as a shortcut for running a job, the display name of the entry
+Context menu item tooltip                           | `item.contextMenuItems.tooltip`                    | If the item has a context menu entry, the tooltip that appears when it's hovered over
+Quick action item display name                      | `item.quickActionItems.displayName`                | If the item has a quick action, such as a shortcut for running a job, the display name of the action
+Quick action item tooltip                           | `item.quickActionItems.tooltip`                    | If the item has a quick action, the tooltip that appears when it's hovered over
+Product display name                                | `product.displayName`                              | The workload display name that appears in most contexts
+Full product display name                           | `product.fullDisplayName`                          | The full workload display name
+Product description                                 | `product.description`                              | The description that appears on the home page of the workload
+Learning material card title                        | `product.homePage.learningMaterials[].title`       | The title of a learning materials card on the workload home page
+Learning material card description                  | `product.homePage.learningMaterials[].description` | The description on a learning materials card on the workload home page
+Learning material card introduction                 | `product.homePage.learningMaterials[].introduction`| The introduction of a learning materials card on the workload home page (appears under the title)
+Custom action title                                 | `product.homePage.newSection.customActions[].title`| The title of a custom action card on the home page
+Create experience description                       | `product.createExperience.description`             | The description that appears in the create hub
+Create card title                                   | `product.createExperience.cards[].title`           | The title of a create card
+Create card description                             | `product.createExperience.cards[].description`     | The description of a create card
+Workload hub slogan                                 | `product.productDetail.slogan`                     | The slogan that appears on the workload page in the workload hub
+Workload hub description                            | `product.productDetail.description`                | The product description that appears on the workload page in the workload hub
 
 ## Language of the Fabric portal
 

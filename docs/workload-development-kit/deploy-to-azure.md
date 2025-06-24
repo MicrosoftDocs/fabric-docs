@@ -18,7 +18,7 @@ This article describes a proposal for a workload deployment architecture that us
 
 The preceding diagram illustrates how the components in the architecture interact to deliver a seamless and integrated experience.
 
-Azure Front Door acts as the global entry point. It routs user traffic to the stateless Microsoft Fabric workload frontend. The frontend is served via an Azure Blob Storage static website, which helps ensure high availability and low latency for users.
+Azure Front Door acts as the global entry point. It routes user traffic to the stateless Microsoft Fabric workload frontend. The frontend is served via an Azure Blob Storage static website, which helps ensure high availability and low latency for users.
 
 The Fabric workload backend uses create, read, update, and delete (CRUD) operations to create workload items and metadata. It's containerized and stored in Azure Container Registry for efficient version control and deployment. The container is deployed as an Azure web app, which provides automatic scaling and load balancing.
 
@@ -44,7 +44,7 @@ This pattern allows static content to come directly from the storage account, fo
 
 You can deploy the Fabric workload backend as a web app on Azure App Service. You can store and manage the backend image by using [Azure Container Registry](/azure/container-registry/container-registry-intro), so that containerized applications can be easily pulled and deployed on Azure App Service.
 
-Azure Container Registry serves as a private registry for storing Docker container images, which simplifies automation of the process to build, test, and deploy the backend application. This containerized approach allows for consistent and scalable deployments, with the added benefit of version control for the backend images.
+Azure Container Registry serves as a private registry for storing Docker container images, to simplify automation of the process for building, testing, and deploying the backend application. This containerized approach allows for consistent and scalable deployments, with the added benefit of version control for the backend images.
 
 ### Azure App Service and Web App for Containers
 
@@ -56,5 +56,5 @@ This pattern helps ensure a consistent and reliable deployment process, because 
 
 ### Additional services and features
 
-- [Azure Key Vault](/azure/key-vault/general/basic-concepts) for managing secrets and sensitive information.
-- [Managed identities](/azure/app-service/overview-managed-identity) for secure access to Azure resources without the need for credentials in code.
+- [Azure Key Vault](/azure/key-vault/general/basic-concepts) for managing secrets and sensitive information
+- [Managed identities](/azure/app-service/overview-managed-identity) for secure access to Azure resources without the need for credentials in code

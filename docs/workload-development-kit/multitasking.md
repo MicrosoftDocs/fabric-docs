@@ -9,7 +9,7 @@ ms.date: 11/06/2024
 
 # Format multitasking tabs
 
-In Microsoft Fabric, you can use multitasking to open multiple items at the same time. When you open an item, a tab is pinned to the left pane. By  default, Fabric supports opening one item at the same time. A set of lifecycle events is triggered when the artifact tab is initialized, deactivated, and destroyed with no work required by any workload.
+In Microsoft Fabric, you can use multitasking to open multiple items at the same time. When you open an item, a tab is pinned to the left pane. By  default, Fabric supports opening one item at a time. A set of lifecycle events is triggered when the artifact tab is initialized, deactivated, and destroyed with no work required by any workload.
 
 ## Change default properties for multitasking
 
@@ -51,28 +51,34 @@ Define properties for tab actions in the `editorTab` section:
 When you register the workload action, Fabric expects the action to return the data in a certain format so that Fabric can read or display that information:
 
 ```typescript
-  /* An OnInit event is triggered when the artifact is opened for the first time.
-   This event contains the ID of the tab being initialized. Based on this tab ID, the handler needs to be able to return the display name or metadata.*/
+   /*An OnInit event is triggered when the artifact is opened for the first time.
+   This event contains the ID of the tab being initialized. Based on this tab ID,
+   the handler needs to be able to return the display name or metadata.*/
 
    onInit: Action<never>;
 
    /*A CanDeactivate event is triggered when the user moves away from the tab.
    This event contains the ID of the tab being deactivated. The
-   CanDeactivate handler should return a Boolean value that indicates whether the artifact tab can be deactivated. For an ideal multitasking
-   experience, the handler should always return True.*/
+   CanDeactivate handler should return a Boolean value that indicates whether the
+   artifact tab can be deactivated. For an ideal multitasking experience, the 
+   handler should always return True.*/
 
    canDeactivate: Action<never>;
 
-   /*An OnDeactivate event is triggered immediately after CanDeactivate returns True. This event contains the ID of the tab being deactivated. The OnDeactivate handler should cache unsaved artifact changes and the UI state.
+   /*An OnDeactivate event is triggered immediately after CanDeactivate returns True.
+   This event contains the ID of the tab being deactivated. The OnDeactivate handler
+   should cache unsaved artifact changes and the UI state.
    The next time the user goes back to the artifact, the artifact needs
-   to be able to recover its data and UI state. The actual deactivation begins only when this handler returns.*/
+   to be able to recover its data and UI state. The actual deactivation begins only
+   when this handler returns.*/
 
    onDeactivate: Action<never>;
 
    /*A CanDestroy event is triggered after the close button is selected,
     before the artifact tab is closed. The event contains the ID of the tab
     being destroyed and also an allowInteraction parameter.
-    The CanDeactivate handler should return a Boolean value that indicates whether the given artifact tab can be destroyed.
+    The CanDeactivate handler should return a Boolean value that indicates whether
+    the given artifact tab can be destroyed.
     If allowInteraction equals False, the implementation returns True
     if there are no dirty changes, and False otherwise.
     If allowInteraction equals True, a pop-up window can be used to ask
@@ -82,7 +88,9 @@ When you register the workload action, Fabric expects the action to return the d
 
    canDestroy: Action<never>;
 
-   /*An OnDestroy event is triggered when the tab is closed. The event contains the ID of the tab being destroyed. The OnDestroy handler gives the artifact the opportunity to do some cleanup work.*/
+   /*An OnDestroy event is triggered when the tab is closed. The event contains the
+   ID of the tab being destroyed. The OnDestroy handler gives the artifact the
+   opportunity to do some cleanup work.*/
 
    onDestroy: Action<never>;
 
