@@ -40,7 +40,7 @@ You can now pass values from the data source to the activated Fabric item. To pa
 If you are setting up an Activator rule from one of the embedded experiences such as Power BI, Real-Time Hub, or Data Pipeline, you can create the rule first. After the rule is created, you can click **Open** Activator to edit the parameter values:
 
 * **[Set up the rule from data pipeline](/fabric/data-factory/pipeline-storage-event-triggers)**
-* **Set up the rule from Real-Time hub**: To set a rule from an Azure event in Real-Time hub, select **Azure events** on the left navigation menu, and then select **Set alert**.
+* **Set up the rule from Real-Time hub**: To set a rule from an Azure event (as an example) in Real-Time hub, select **Azure events** on the left navigation menu, and then select **Set alert**.
 
 :::image type="content" source="media/activator-trigger-fabric-items/pass-parameters-from-real-time-hub.png" alt-text="Screenshot showing creating storage event trigger from Real Time hub." lightbox="media/activator-trigger-fabric-items/pass-parameters-from-real-time-hub.png":::
 
@@ -77,7 +77,7 @@ Activator enables passing parameters in string, boolean, and number (float). To 
 
 
 > [!NOTE]
-> Please make sure the parameter name and type are defined exactly the same as defined the activated Fabric item.
+> Please make sure the parameter name and type are defined exactly the same as defined the activated Fabric item. If you have any feedback or ideas regarding this feature, please share it on [Activator community](aka.ma/ActivatorCommunity)
 
 
 ## Related content
