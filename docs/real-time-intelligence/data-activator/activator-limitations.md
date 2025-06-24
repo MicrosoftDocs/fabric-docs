@@ -96,7 +96,7 @@ For more information, see [Limitations on charts with a time axis](activator-get
 
 Each recipient of an email notification must have an internal email address. The recipient must belong to the same domain as the creator or other verified domains on creator's Microsoft Entra tenant. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] doesn't allow email notifications to be sent to either external email addresses or guest email addresses.
 
-To check if the recipient's domain is one of the verified domains, visit [Azure postal](https://portal.azure.com) and search for **Microsoft Entra ID**. Once landed in Microsoft Entra ID, select **Custom domain names** in the left panel and check if recipient's domain is listed there.
+To check if the recipient's domain is one of the verified domains, visit [Azure portal](https://portal.azure.com) and search for **Microsoft Entra ID**. Once landed in Microsoft Entra ID, select **Custom domain names** in the left panel and check if recipient's domain is listed there.
 
 ## Allowed chats and channel for Teams notifications
 
