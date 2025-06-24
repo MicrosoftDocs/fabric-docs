@@ -440,9 +440,9 @@ items:
             - name: Data Types Overview
               href: /stream-analytics-query/data-types-azure-stream-analytics
             - name: Parsing JSON and AVRO data
-              href: stream-analytics-parsing-json.md
+              href: /azure/stream-analytics/stream-analytics-parsing-json
             - name: Parsing Protobuf
-              href: stream-analytics-parsing-protobuf.md
+              href: /azure/stream-analytics/stream-analytics-parsing-protobuf
         - name: Query Language Elements
           items:
             - name: Query Language Elements Overview
