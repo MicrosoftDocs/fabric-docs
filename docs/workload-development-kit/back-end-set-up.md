@@ -15,7 +15,7 @@ This article guides you through rapidly generating a Fabric workload backend dir
 
 By the end of this article, you'll be able to:
 
-- Generate a Fabric workload backend based on the Swagger file included in our sample.
+- Generate a Fabric workload backend based on the Swagger file included in a sample.
 - Understand the basic structure and components of a Fabric workload backend.
 - Run and test your generated backend locally by using Python and FastAPI.
 
@@ -34,7 +34,7 @@ Before you start the procedures in this article, ensure that you have the follow
 
 ### Required knowledge
 
-- Understanding of Microsoft Fabric item lifecycle. Read and understand [Item lifecycle management](item-lifecycle.md).
+- Understanding of the Microsoft Fabric item lifecycle. Read [Item lifecycle management](item-lifecycle.md).
 
   This understanding is crucial for this article. The generated backend implements the lifecycle operations (create, read, update, delete) for Fabric items, as defined in the [item lifecycle documentation](item-lifecycle.md).
 - Basic knowledge of Python and RESTful APIs.
@@ -115,13 +115,13 @@ First, set up your development environment with the required tools and packages:
 
 ## Step 2: Verify that your Python virtual environment is active
 
-After you create your virtual environment, it's crucial to ensure you're using the correct Python interpreter. This approach keeps your project dependencies isolated and properly managed.
+After you create your virtual environment, it's crucial to ensure that you're using the correct Python interpreter. This approach keeps your project dependencies isolated and properly managed.
 
 ### Verify activation of the virtual environment
 
 Confirm that your virtual environment is activated. You should see `(.venv)` at the beginning of your terminal prompt.
 
-If virtual environment isn't activated, run:
+If the virtual environment isn't activated, run:
 
 ```bash
 # Windows
@@ -150,7 +150,7 @@ Expected output should point to your virtual environment:
 ```
 
 > [!IMPORTANT]
-> If the output points to a different location (such as your system-wide Python installation), your virtual environment isn't activated correctly. Revisit [the activation task](#verify-activation-of-the-virtual-environment) and ensure that your terminal prompt appears (`.venv`).
+> If the output points to a different location (such as your system-wide Python installation), your virtual environment isn't activated correctly. Revisit [the activation task](#verify-activation-of-the-virtual-environment) and ensure that your terminal prompt appears with `(.venv)`.
 
 ### Configure your IDE (optional)
 
@@ -204,7 +204,7 @@ Run the following command from your `PythonBackend` directory:
 openapi-generator-cli generate -i ../Backend/src/Contracts/FabricAPI/Workload/swagger.json -g python-fastapi -o . --additional-properties=packageName=fabric_api
 ```
 
-This command instructs the OpenAPI Generator CLI to perform the following actions.
+This command instructs the OpenAPI Generator CLI to perform the following actions:
 
 | Parameter | Value | Description | Required | Purpose | Reference |
 |---|---|---|---|---|---|
@@ -454,7 +454,7 @@ After you start the application, verify that it's running correctly:
 
 2. Test the API documentation:
 
-   1. Open your browser and go to [`http://localhost:5000/docs`](http://localhost:5000/docs).
+   1. Open your browser and go to `http://localhost:5000/docs`.
    1. Confirm that the Swagger UI displays all available endpoints.
 
 ## Step 7: Test the API
@@ -489,7 +489,7 @@ curl -X POST "http://localhost:5000/workspaces/test-workspace/items/TestItemType
 
 FastAPI automatically generates interactive API documentation, so you can test your endpoints directly from your browser:
 
-1. Open your browser and go to [`http://localhost:5000/docs`](http://localhost:5000/docs).
+1. Open your browser and go to `http://localhost:5000/docs`.
 
 2. In the `ItemLifecycle` section, locate the `POST` endpoint:
 
@@ -616,7 +616,7 @@ The previous steps provided a basic example of how to implement the `ItemLifecyc
           raise HTTPException(status_code=500, detail="Internal server error")
   ```
 
-Here are additional considerations for a robust backend:
+Here are more considerations for a robust backend:
 
 - **Implementation of the remaining controllers**: For example, implement the Jobs API and the Endpoint Resolution API.
 - **Authentication and authorization**: Help secure your endpoints by validating tokens and permissions. For more information, see [Backend authentication and authorization overview](back-end-authentication.md).
@@ -626,14 +626,14 @@ Here are additional considerations for a robust backend:
 
 ## Conclusion
 
-You now successfully set up a Microsoft Fabric Workload API backend by using Python with FastAPI. This implementation:
+You now successfully set up a Microsoft Fabric workload API backend by using Python with FastAPI. This implementation:
 
 - Uses the OpenAPI Generator tool to create a FastAPI project.
 - Implements the necessary controllers for handling Fabric API requests.
 
 This article is a basic example that demonstrates how to implement an API for `ItemLifecycle` by using Python. More enhancements and considerations, such as those outlined in [Step 9: Implement more advanced functionality](#step-9-implement-more-advanced-functionality), are necessary to build a high-quality, robust, and secure backend that's suitable for a production environment.
 
-A complete integration with Microsoft Fabric requires implementing proper authentication handling, persistent storage, comprehensive error handling, and custom business logic that are specific to your workload.
+A complete integration with Microsoft Fabric requires implementing proper authentication handling, persistent storage, comprehensive error handling, and custom business logic that's specific to your workload.
 
 ## Related content
 
