@@ -107,7 +107,7 @@ After creating the service connection, you need to grant your managed identity t
 
     :::image type="content" source="./media/tutorial-service-connector/fabric-portal-manage-security.png" alt-text="Screenshot of the Fabric portal, showing the security tab.":::
 
-1. Select the **db_ddladmin** role, then select **Manage access**.
+1. Navigate to the permission management interface by selecting the **db_datareader** role, then select **Manage access**. You're not granting this role to your managed identity; this is just how you access the Fabrics permission settings.
 1. Look for your managed identity name under **People, groups or apps in this role**. If you see a **Share database** option, continue to the next step. Otherwise, the permissions are already configured.
 1. Enter and select the name of your managed identity as it appears on the **Manage access** pane, check **Read all data using SQL database**, and select **Grant**.
 
