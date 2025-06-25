@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: overview
 ms.custom:
-ms.date: 06/12/2025
+ms.date: 06/25/2025
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Overview
@@ -69,7 +69,7 @@ This article outlines key considerations to help you choose the best implementat
 
 | Capability | Azure PaaS-based solution | Real-time Intelligence solution |
 |--|--|--|
-| **Driving business actions from insights** | Needs Azure Logic Apps, Power Automate, Azure Functions, or Azure Monitor alerts. | Available in Fabric using Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)] items with built-in integration with Power BI semantic models, Eventstream, and KQL queries. |
+| **Driving business actions from insights** | Needs Azure Logic Apps, Power Automate, Azure Functions, or Azure Monitor alerts. | Available in Fabric using Fabric [!INCLUDE [fabric-activator](includes/fabric-activator.md)] items with built-in integration with Power BI semantic models, Eventstream, and KQL queries using KQL Querysets or Real-Time Dashboards. |
 | **Reactive system events** | Not available | Built-in events published through Real-Time hub. Use [!INCLUDE [fabric-activator](includes/fabric-activator.md)] items to automate data processes, like pipelines and notebooks. |
 | **Real-time Semantic Models** | Not available or code-first solution using Logic Apps or Azure Functions | Not available |
 | **Built-in AI** | Not available | Not available |
