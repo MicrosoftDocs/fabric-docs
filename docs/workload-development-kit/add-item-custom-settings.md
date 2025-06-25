@@ -37,7 +37,7 @@ The following screenshot shows an example of adding a custom item tab. The custo
 
 :::image type="content" source="./media/custom-item-settings/example-custom-item-tabs.png" alt-text="Screenshot that shows the iframe for a custom item tab." lightbox="./media/custom-item-settings/example-custom-item-tabs.png":::
 
-The preceding example lists two custom tabs in the `index.worker.ts` file:
+The preceding image displays two custom tabs, which you can create by using the following code in the `index.worker.ts` file:
 
 ```typescript
 workloadClient.action.onAction(async function ({ action, data }) {

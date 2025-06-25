@@ -51,7 +51,7 @@ Define properties for tab actions in the `editorTab` section:
 When you register the workload action, Fabric expects the action to return the data in a certain format so that Fabric can read or display that information:
 
 ```typescript
-   /*An OnInit event is triggered when the artifact is opened for the first
+   /*An OnInit event is triggered when the item is opened for the first
    time. This event contains the ID of the tab being initialized. Based on
    this tab ID, the handler needs to be able to return the display name
    or metadata.*/
@@ -61,7 +61,7 @@ When you register the workload action, Fabric expects the action to return the d
    /*A CanDeactivate event is triggered when the user moves away from the tab.
    This event contains the ID of the tab being deactivated. The
    CanDeactivate handler should return a Boolean value that indicates whether
-   the artifact tab can be deactivated. For an ideal multitasking experience,
+   the item tab can be deactivated. For an ideal multitasking experience,
    the handler should always return True.*/
 
    canDeactivate: Action<never>;
