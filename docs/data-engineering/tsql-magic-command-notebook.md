@@ -91,7 +91,6 @@ You can also reference Python variables in T-SQL code. To do so, use the `{}` sy
 count = 10
 
 df = %tsql select top({count}) * from [dw1].[dbo].[Geography]
-
 ```
 
 :::image type="content" source="media\use-python-experience-on-notebook\tsql-magic-command-reference-python-variable.png" alt-text="Screenshot showing tsql magic command with reference python variable." lightbox="media\use-python-experience-on-notebook\tsql-magic-command-reference-python-variable.png":::
@@ -105,5 +104,5 @@ To see the full syntax, use the `%tsql?` command. This command displays the help
 
 For more information about Fabric notebooks, see the following articles.
 
-- Questions? Try asking the [Fabric Community](https://community.fabric.microsoft.com/).
-- Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).
+* Questions? Try asking the [Fabric Community](https://community.fabric.microsoft.com/).
+* Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).
