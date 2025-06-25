@@ -116,6 +116,32 @@ FROM [Timetravel].[dbo].[Top10CustomersView]
 OPTION (FOR TIMESTAMP AS OF '2024-05-01T21:55:27.513'); 
 ```
 
+### Time travel for DML operations
+
+Data Manipulation Language (DML) is used to insert, create and populate the tables by manipulating and transforming the existing data. The [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) can be used along with DML operations such as INSERT INTO.. SELECT, CREATE TABLE AS SELECT (CTAS), and SELECT INTO so that the results of the data are captured in the table of choice. This helps unlock various analytical capabilities that time travel offers.
+
+
+```sql
+/*Time travel for INSERT INTO...SELECT*/
+INSERT INTO dbo.Fact_Sale_History (SalesKey, StockItemKey, Quantity, Description, UnitPrice, InvoiceDateKey)
+SELECT 
+    SaleKey AS SalesKey,
+    StockItemKey,
+    Quantity,
+    Description,
+    UnitPrice,
+    InvoiceDateKey
+FROM dbo.[Fact_Sale]
+OPTION (FOR TIMESTAMP AS OF '2025-06-18T19:55:13.853');
+
+/*Time travel for CREATE TABLE AS SELECT*/
+CREATE TABLE dbo.SalesHistory AS SELECT * FROM dbo.fact_sale OPTION (FOR TIMESTAMP AS OF '2025-06-18T19:55:13.853');
+
+/*Time travel for SELECT INTO*/
+SELECT * INTO dbo.SalesHistory1 FROM dbo.fact_sale OPTION (FOR TIMESTAMP AS OF '2025-06-18T19:55:13.853');
+
+```
+
 - The historical data from tables in a view can only be queried for time travel beginning from the time the view was created.
 - After a view is altered, time travel queries are only valid after it was altered.
 - If an underlying table of a view is altered without changing the view, time travel queries on the view can return the data from before the table change, as expected.
@@ -128,3 +154,4 @@ For more information on time travel at the statement level limitations with `FOR
 ## Related content
 
 - [Query data as it existed in the past](time-travel.md)
+
