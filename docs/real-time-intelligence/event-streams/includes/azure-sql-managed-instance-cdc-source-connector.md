@@ -33,6 +33,11 @@ ms.date: 11/18/2024
     - Use `dbo\.(test1|test2)` to select `dbo.test1` and `dbo.test2`.  
 
     You can mix both formats using commas. Up to 100 tables can be entered, with each table name (including the schema name) limited to 128 characters if using full table identifiers directly.
+1. You may expand **Advanced settings** to configure the **Decimal handling mode**, which specifies how the connector handles `DECIMAL` and `NUMERIC` column values:
+
+      - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.
+      - `Double`: Converts values to double-precision floating-point numbers. This improves usability and performance but may result in a loss of precision.
+      - `String`: Encodes values as formatted strings. This makes them easy to consume in downstream systems but loses semantic information about the original numeric type.
 1. Select **Next**.
 
     :::image type="content" source="media/azure-sql-managed-instance-cdc-source-connector/select-tables.png" alt-text="Screenshot that shows selection of All tables option." lightbox="media/azure-sql-managed-instance-cdc-source-connector/select-tables.png"::: 

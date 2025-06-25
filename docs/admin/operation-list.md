@@ -1,8 +1,8 @@
 ---
 title: Operation list
 description: This article provides a list of all the operations available in Fabric.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.date: 05/22/2025
 ---

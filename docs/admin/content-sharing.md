@@ -1,8 +1,8 @@
 ---
 title: Content sharing report
 description: Learn how to use the Microsoft content sharing report.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
   - build-2023

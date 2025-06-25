@@ -1,18 +1,16 @@
 ---
 title: Collect your Apache Spark applications logs and metrics using Azure Event Hubs 
-description: In this tutorial, you learn how to use the Fabric Apache Spark diagnostic emitter extension to emit Apache Spark applications logs, event logs and metrics to your Azure Event Hubs.
+description: In this tutorial, you learn how to use the Fabric Apache Spark diagnostic emitter extension to emit Apache Spark applications logs, event logs, and metrics to your Azure Event Hubs.
 author: hrasheed-msft
 ms.author: jejiang
 ms.reviewer: whhender
 ms.topic: tutorial
-ms.date: 08/22/2024
+ms.date: 06/05/2025
 ---
 
-# Collect your Apache Spark applications logs and metrics using Azure Event Hubs (preview)
+# Collect Apache Spark applications logs and metrics using Azure Event Hubs (preview)
 
-The Fabric Apache Spark diagnostic emitter extension is a library that enables Apache Spark applications to emit logs, event logs, and metrics to various destinations, including Azure Log Analytics, Azure Storage, and Azure Event Hubs.
-
-In this tutorial, you learn how to use the Fabric Apache Spark diagnostic emitter extension to send Apache Spark application logs, event logs, and metrics to your Azure Event Hubs.
+The Fabric Apache Spark diagnostic emitter extension is a library that enables Apache Spark applications to emit logs, event logs, and metrics to various destinations, including Azure Log Analytics, Azure Storage, and Azure Event Hubs. In this tutorial, you learn how to use the Fabric Apache Spark diagnostic emitter extension to send Apache Spark application logs, event logs, and metrics to your Azure Event Hubs.
 
 ## Collect logs and metrics to Azure Event Hubs
 
@@ -40,7 +38,6 @@ To collect diagnostic logs and metrics, you can use an existing Azure Event Hubs
 #### Option 2: Configure with Azure Key Vault
 
 > [!NOTE]
->
 > Ensure that users who submit Apache Spark applications are granted read secret permissions. For more information, see [Provide access to Key Vault keys, certificates, and secrets with an Azure role-based access control](/azure/key-vault/general/rbac-guide).
 
 To configure Azure Key Vault for storing the workspace key:
@@ -62,20 +59,19 @@ To configure Azure Key Vault for storing the workspace key:
    spark.synapse.diagnostic.emitter.MyEventHub.secret.keyVault.secretName: <AZURE_KEY_VAULT_SECRET_KEY_NAME>
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
-   
+
    Fill in the following parameters in the configuration file: `<AZURE_KEY_VAULT_URI>`, `<AZURE_KEY_VAULT_SECRET_KEY_NAME>`. For more details on these parameters, refer to [Azure Event Hubs configurations](#available-configurations).
-   
+
 6. Save and publish changes.
 
 ### Step 3: Attach the Environment Artifact to Notebooks or Spark Job Definitions, or Set It as the Workspace Default
 
    > [!NOTE]
-   >
-   > Only workspace admins can designate an environment as the default for a workspace.
-   >
-   > Once set, it becomes the default environment for all notebooks and Spark job definitions within the workspace. For more details, see [Fabric Workspace Settings](../fundamentals/workspaces.md).
+   > * Only workspace admins can designate an environment as the default for a workspace.
+   > * Once set, it becomes the default environment for all notebooks and Spark job definitions within the workspace. For more information, see [Fabric Workspace Settings](../fundamentals/workspaces.md).
 
 **To attach the environment to Notebooks or Spark job definitions**:
+
 1. Navigate to the specific notebook or Spark job definition in Fabric.
 2. Select the **Environment** menu on the Home tab and select the environment with the configured diagnostics Spark properties.
 3. The configuration is applied when you start a **Spark session**.
@@ -84,25 +80,24 @@ To configure Azure Key Vault for storing the workspace key:
 
 1. Navigate to Workspace Settings in Fabric.
 2. Find the **Spark settings** in your Workspace settings **(Workspace setting -> Data Engineering/Science -> Spark settings)**.
-3. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and click **Save**.
+3. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and select **Save**.
 
 ## Available configurations
 
-| Configuration                                                               | Description                                                                                                                                                                                          |
-| --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `spark.synapse.diagnostic.emitters`                                         | Required. The comma-separated destination names of diagnostic emitters.                                                                                                                              |
-| `spark.synapse.diagnostic.emitter.<destination>.type`                       | Required. Built-in destination type. To enable Azure Event Hubs destination, the value should be `AzureEventHub`.                                                                                    |
-| `spark.synapse.diagnostic.emitter.<destination>.categories`                 | Optional. The comma-separated selected log categories. Available values include `DriverLog`, `ExecutorLog`, `EventLog`, `Metrics`. If not set, the default value is **all** categories.              |
-| `spark.synapse.diagnostic.emitter.<destination>.secret`                     | Optional. The Azure Event Hubs instance connection string. This field should match this pattern `Endpoint=sb://<FQDN>/;SharedAccessKeyName=<KeyName>;SharedAccessKey=<KeyValue>;EntityPath=<PathName>` |
-| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault`            | Required if `.secret` isn't specified. The [Azure Key vault](/azure/key-vault/general/overview) uri where the secret (connection string) is stored.                                                  |
-| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault.secretName` | Required if `.secret.keyVault` is specified. The Azure Key vault secret name where the secret (connection string) is stored.                                                                         |
-| `spark.synapse.diagnostic.emitter.<destination>.filter.eventName.match`     | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerApplicationStart,SparkListenerApplicationEnd` |
-| `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match`    | Optional. The comma-separated Log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger` |
-| `spark.synapse.diagnostic.emitter.<destination>.filter.metricName.match`    | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used` |
-|  `spark.fabric.pools.skipStarterPools`  | Required. This Spark property is used to force an on-demand Spark session. You should set the value to true when using the default pool in order to trigger the libraries to emit logs and metrics. |
+| Configuration | Description |
+|--|--|
+| `spark.synapse.diagnostic.emitters` | Required. The comma-separated destination names of diagnostic emitters. |
+| `spark.synapse.diagnostic.emitter.<destination>.type` | Required. Built-in destination type. To enable Azure Event Hubs destination, the value should be `AzureEventHub`. |
+| `spark.synapse.diagnostic.emitter.<destination>.categories` | Optional. The comma-separated selected log categories. Available values include `DriverLog`, `ExecutorLog`, `EventLog`, `Metrics`. If not set, the default value is **all** categories. |
+| `spark.synapse.diagnostic.emitter.<destination>.secret` | Optional. The Azure Event Hubs instance connection string. This field should match this pattern `Endpoint=sb://<FQDN>/;SharedAccessKeyName=<KeyName>;SharedAccessKey=<KeyValue>;EntityPath=<PathName>` |
+| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault` | Required if `.secret` isn't specified. The [Azure Key vault](/azure/key-vault/general/overview) uri where the secret (connection string) is stored. |
+| `spark.synapse.diagnostic.emitter.<destination>.secret.keyVault.secretName` | Required if `.secret.keyVault` is specified. The Azure Key vault secret name where the secret (connection string) is stored. |
+| `spark.synapse.diagnostic.emitter.<destination>.filter.eventName.match` | Optional. The comma-separated spark event names, you can specify which events to collect. For example: `SparkListenerApplicationStart,SparkListenerApplicationEnd` |
+| `spark.synapse.diagnostic.emitter.<destination>.filter.loggerName.match` | Optional. The comma-separated Log4j logger names, you can specify which logs to collect. For example: `org.apache.spark.SparkContext,org.example.Logger` |
+| `spark.synapse.diagnostic.emitter.<destination>.filter.metricName.match` | Optional. The comma-separated spark metric name suffixes, you can specify which metrics to collect. For example: `jvm.heap.used` |
+| `spark.fabric.pools.skipStarterPools` | Required. This Spark property is used to force an on-demand Spark session. You should set the value to true when using the default pool in order to trigger the libraries to emit logs and metrics. |
 
 > [!NOTE]
->
 > The Azure EventHub instance connection string should always contain the `EntityPath`, which is the name of the Azure Event Hubs instance.
 
 ## Log data sample
@@ -139,7 +134,10 @@ Here's a sample log record in JSON format:
 }
 ```
 
- ## Fabric workspaces with Managed virtual network
+Once diagnostics are emitted to Azure Event Hub, you can use that [Event Hub as a source in a Fabric Event Stream](../real-time-intelligence/event-streams/add-source-azure-event-hubs.md?pivots=enhanced-capabilities) to process or route the data.
+
+## Fabric workspaces with Managed virtual network
+
 Create a managed private endpoint for the target Azure Event Hubs. For detailed instructions, refer to [Create and use managed private endpoints in Microsoft Fabric - Microsoft Fabric](../security/security-managed-private-endpoints-create.md).
 
 Once the managed private endpoint is approved, users can begin emitting logs and metrics to the target Azure Event Hubs.

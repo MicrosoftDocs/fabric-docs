@@ -1,8 +1,8 @@
 ---
 title: App admin settings
 description: Learn how to configure app admin settings in Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 
 ms.custom:

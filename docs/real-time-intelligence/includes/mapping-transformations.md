@@ -1,8 +1,8 @@
 ---
 title: Include file for the Mapping transformations heading in Real-Time Intelligence
 description: Include file for the Mapping transformations heading in the Get data hub in Real-Time Intelligence
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: include
 ms.custom: 
 ms.date: 09/18/2023

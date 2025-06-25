@@ -2,8 +2,8 @@
 title: Real-Time Intelligence tutorial part 4 - Query streaming data using KQL
 description: Learn how to query your streaming data in a KQL queryset Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: tutorial
 ms.custom:
 ms.date: 06/08/2025
