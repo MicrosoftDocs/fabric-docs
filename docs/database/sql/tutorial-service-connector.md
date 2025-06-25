@@ -71,7 +71,7 @@ For more information about these commands and more options, see [az webapp conne
 #### [Azure portal](#tab/az-portal)
 
 1. In the Azure portal, open your App Service resource.
-1. In the left menu, select **Settings** > **Service Connector**.
+1. In the service menu, select **Settings** > **Service Connector**.
 1. Select **Create**, and configure the following settings in the **Create connection** panel that opens.
 
     | Setting             | Example           | Description                                                                                                                                               |
