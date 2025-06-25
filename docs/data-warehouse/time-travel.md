@@ -4,7 +4,7 @@ description: Learn how to Query data as it existed in the past with time travel 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.date: 04/06/2025
+ms.date: 06/20/2025
 ms.topic: conceptual
 ---
 # Query data as it existed in the past
