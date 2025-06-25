@@ -111,6 +111,10 @@ Copilot uses Azure OpenAI—not OpenAI's publicly available services—to proces
 
 To allow data to be processed elsewhere, your admin can turn on the setting **Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance**. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
 
+### Abuse monitoring of prompts
+
+Copilot and AI experiences in Fabric are currently **not** onboarded to any automated abuse monitoring of your prompts. This means that we currently do not process any customer prompts for monitoring of abusive content. This also means that no retention of prompts is in place for this purpose.
+
 ## What should I know to use Copilot responsibly?
 
 Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://msblogs.thesourcemediaassets.com/sites/5/2022/06/Microsoft-Responsible-AI-Standard-v2-General-Requirements-3.pdf). These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to proactively address emerging issues.
