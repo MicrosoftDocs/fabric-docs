@@ -5,7 +5,7 @@ author: kishanpujara
 ms.author: kishanpujara
 ms.reviewer: juliacawthra
 ms.topic: conceptual
-ms.date: 05/22/2025
+ms.date: 06/25/2025
 ---
 
 # Microsoft Fabric Chargeback app (preview)
@@ -22,20 +22,23 @@ To install the app, follow the instructions in [Install the Microsoft Fabric Cha
 
 Understand what the visuals in the report show.
 
-- **Workspace and item** - Shows what percent of your capacity was utilized by either workspaces or items. Select the **Workspace** or **Item** tab to view your capacity's utilization percent by workspace or item.
+- **Workspace, item, and domain/subdomain** - Shows what percent of your capacity was utilized by workspaces, items, or domains/subdomain. Select the **Workspace**, **Item**, or **Domain** tab to view your capacity's utilization percent by workspace, item, or domain/subdomain respectively.
 - **Utilization (CU) by date** - Shows your daily utilization.
-- **Utilization (CU) details** - A matrix table that shows utilization and utilization percent.
+- **Utilization (CU) details** - A matrix table that shows utilization and user details. 
 
 ## Drill through
 
-By right-clicking on a workspace or an item in the *Workspace and item* visual, you can drill through to see more details. For example, you can drill through to see the utilization of a specific workspace. There are two pages you can drill through to:
+By right-clicking on a workspace or an item in the *Workspace and item* visual, you can drill through to see more details. For example, you can drill through to see the utilization of a specific workspace. There are three pages you can drill through to:
 
 - **Workspace details** - Shows the utilization of a specific workspace.
 - **Item details** - Shows the utilization of a specific item.
+- **Domain details** - Shows the utilization of a specific domain or subdomain.
 
 ## Data export
 
 Export the report's data by selecting **Export data**, which takes you to a page with a matrix visual that displays utilization and user details for all the available capacities. Use slicers to filter out the data. Hover over the matrix and select **More options** to export the data.
+
+Select different columns from the slicer named _Select columns to add in hierarchy_ to export data for those columns.
 
 > [!NOTE]
 > You might encounter this error during export: "This visual has exceeded the available resources. Try filtering to decrease the amount of data displayed."
