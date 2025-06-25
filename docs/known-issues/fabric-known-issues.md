@@ -20,7 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
-|  1184  | Data Engineering | [Lakehouse table maintenance fails for schema enabled lakehouses](./known-issue-1184-lakehouse-table-maintenance-fails-schema-enabled-lakehouses.md) | June 25, 2025 |
+|  1184  | Data Engineering | [Lakehouse table maintenance fails for schema enabled lakehouses](./known-issue-1184-lakehouse-table-maintenance-fail-schema-lakehouses.md) | June 25, 2025 |
 |  1181  | OneLake | [OneLake catalog item details lineage tab button disappears](./known-issue-1181-onelake-catalog-item-details-lineage-tab-button-disappears.md) | June 23, 2025 |
 |  1179  | Power BI | [Copilot button unavailable in Power BI Desktop](./known-issue-1179-copilot-button-unavailable-power-bi-desktop.md) | June 20, 2025 |
 |  1178  | Power BI | [Google BigQuery (Microsoft Entra ID) (Beta) connection issues with optional parameters](./known-issue-1178-google-big-query-connection-issues-optional-parameters.md) | June 20, 2025 |
