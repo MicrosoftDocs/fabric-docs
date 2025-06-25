@@ -38,7 +38,9 @@ To modify data in lakehouse Delta tables, you have to switch to lakehouse mode a
 
 ## Access control using SQL security
 
-You can set object-level security for accessing data using SQL analytics endpoint. These security rules will only apply for accessing data via SQL analytics endpoint. To ensure data is not accessible in other ways, you must set workspace roles and permissions, see [Workspace roles and permissions](workspace-roles-lakehouse.md).
+You can set object-level security for accessing data using SQL analytics endpoint. These security rules will only apply for accessing data via SQL analytics endpoint. see [SQL granular permissions](../data-warehouse/sql-granular-permissions.md)
+
+To ensure data is not accessible in other ways, you must set workspace roles and permissions, see [Workspace roles and permissions](workspace-roles-lakehouse.md).
 
 ## Related content
 
