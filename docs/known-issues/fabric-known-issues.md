@@ -25,14 +25,14 @@ Select the **Title** to view more information about that specific known issue.
 |  1178  | Power BI | [Google BigQuery (Microsoft Entra ID) (Beta) connection issues with optional parameters](./known-issue-1178-google-big-query-connection-issues-optional-parameters.md) | June 20, 2025 |
 |  1177  | Power BI | [Verified answers in Home Copilot not found when searching or in data answers](./known-issue-1177-verified-answers-home-copilot-not-found-search.md) | June 20, 2025 |
 |  1173  | Data Science | [Data Agent consumption incorrectly reported against default workspace capacity](./known-issue-1173-data-agent-consumption-incorrectly-reported.md) | June 17, 2025 |
-|  1172  | Power BI | [Dataflow Gen2 with a default destination to Azure SQL fails to publish](./known-issue-1172-dataflow-default-destination-azure-fails-publish.md) | June 17, 2025 |
+|  1172  | Data Factory | [Dataflow Gen2 with a default destination to Azure SQL fails to publish](./known-issue-1172-dataflow-default-destination-azure-fails-publish.md) | June 17, 2025 |
 |  1171  | OneLake | [OneLake shortcut creation and read fail with bad request error](./known-issue-1171-onelake-shortcut-creation-read-fail-bad-request-error.md) | June 17, 2025 |
 |  1170  | Databases | [Disabled SQL database error](./known-issue-1170-disabled-sql-database-error.md) | June 16, 2025 |
 |  1169  | Data Engineering | [Service principal based public API calls fail with variables in shortcut payloads](./known-issue-1169-service-principal-public-api-calls-fail-variables-shortcut.md) | June 12, 2025 |
 |  1168  | Power BI | [Text Analytics AI Functions fail](./known-issue-1168-text-analytics-ai-functions-fail.md) | June 12, 2025 |
 |  1166  | Power BI | [Power BI reports don't show in Viva Goals](./known-issue-1166-power-bi-reports-not-show-viva-goals.md) | June 6, 2025 |
 |  1165  | Real-Time Intelligence | [Digital twin builder item creation fails on duplicate names](./known-issue-1165-digital-twin-builder-item-creation-fails-duplicate-names.md) | June 6, 2025 |
-|  1167  | Power BI | [Refreshes have slow performance and timeouts for Dataflows Gen2 with CI/CD](./known-issue-1167-refreshes-slow-performance-timeouts-dataflows-gen-2.md) | June 4, 2025 |
+|  1167  | Data Factory | [Refreshes have slow performance and timeouts for Dataflows Gen2 with CI/CD](./known-issue-1167-refreshes-slow-performance-timeouts-dataflows-gen-2.md) | June 4, 2025 |
 |  1164  | Real-Time Intelligence | [Inaccurate usage data displayed for digital twin builder usage in Capacity Metrics App](./known-issue-1164-inaccurate-data-digital-twin-builder-usage-capacity-metrics-app.md) | June 4, 2025 |
 |  1163  | Power BI | [Service report is missing table tooltips in the field list in edit mode](./known-issue-1163-service-report-missing-table-tooltips-field-list-edit-mode.md) | June 4, 2025 |
 |  1162  | Data Warehouse | [Deleting a classic item or creating a classic item when you use a deleted item's name fails](./known-issue-1162-deleting-creating-classic-item-use-deleted-items-name-fails.md) | June 4, 2025 |
