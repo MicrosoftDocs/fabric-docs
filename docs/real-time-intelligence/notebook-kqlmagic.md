@@ -7,21 +7,25 @@ author: spelluru
 ms.topic: tutorial
 ms.custom:
 ms.date: 06/26/2025
-ms.search.form: Notebooks
+ms.search.form: Notebooks Kqlmagic Multivariant
 ---
-# Tutorial: Use a notebook with Kqlmagic to query a KQL database
+# Tutorial: Use a Jupyter notebook with Kqlmagic to query a KQL database
 
-Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a KQL database. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
+Jupyter Notebook is an open-source web application that allows you to create and share documents containing live code, equations, visualizations, and narrative text. It's useful for a wide range of tasks, such as data cleaning and transformation, numerical simulation, statistical modeling, data visualization, and machine learning.
 
 [Kqlmagic](https://github.com/microsoft/jupyter-Kqlmagic) extends the capabilities of the Python kernel in Jupyter Notebook so you can run [Kusto Query Language (KQL)](/azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric) queries natively. You can combine Python and KQL to query and visualize data using the rich Plot.ly library integrated with the [render](/azure/data-explorer/kusto/query/renderoperator?context=/fabric/context/context&pivots=fabric) operator.
 
-Specifically, you learn how to:
+For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
+
+In this article, you learn how to use Kqlmagic to run advanced queries and visualizations from data in a KQL database. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. 
+
+In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
 > * Create a KQL database
 > * Get data
-> * Import a Jupyter notebook
+> * Import a Jupyter notebook with Kqlmagic
 > * Authenticate access to your notebook
 > * Run the notebook
 
@@ -71,22 +75,20 @@ In this step, you use a script to first create a table with specified mapping, a
 
 Use a sample Jupyter notebook to query and visualize the sample data you have just loaded in your KQL database.
 
-1. Open the Fabric samples repository on GitHub to download the [NYC Taxi KQL Notebook.](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/NYC_Taxi_KQL_Notebook.ipynb).
+1. Open the Fabric samples repository on GitHub to download the [NYC Taxi KQL Notebook.](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/NYC_Taxi_KQL_Notebook.ipynb).
 
     :::image type="content" source="media/jupyter-notebook/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC Taxi demo notebook. The option titled Raw is highlighted."  lightbox="media/jupyter-notebook/raw-notebook.png":::
 
-1. Save the notebook locally to your device.
+1. Download the notebook locally to your device.
 
     > [!NOTE]
     > The notebook must be saved in the `.ipynb` file format.
 
 ## 4- Import the Jupyter notebook
 
-The rest of this workflow occurs in the **Data Engineering** section of the product[!INCLUDE [product-name](../includes/product-name.md)], and uses a Jupyter notebook to query and visualize the data in your KQL database.
+The rest of this workflow uses Kqlmagic to query and visualize the data in your KQL database.
 
-1. Open the app switcher on the bottom of the navigation pane and select **Data Engineering**.
-
-1. In the Data Engineering homepage, select **Import notebook**.
+1. In your Workspace, select **Import** > **Notebook** < **From this computer**.
 
     :::image type="content" source="media/jupyter-notebook/import-notebook.png" alt-text="Screenshot of item options in Data Engineering. The item titled Import notebook is highlighted.":::
 
@@ -110,29 +112,9 @@ Select the **play** button to run each cell sequentially, or select the cell and
 
 ## 6- Device Code authentication
 
-1. Paste the **Query URI** that you [copied earlier](#1--create-a-kql-database) instead of the placeholder cluster text.
-1. Change the placeholder database name to *NYCTaxidb*.
+In this step, you authenticate your notebook to access the KQL database.
 
-    :::image type="content" source="media/jupyter-notebook/paste-uri.png" alt-text="Screenshot of code cell showing the database name and query URI. The query URI and database name are highlighted." lightbox="media/jupyter-notebook/paste-uri.png":::
-
-1. Run the cell.
-1. An authentication code appears below the cell. Copy this authentication code.
-
-    :::image type="content" source="media/jupyter-notebook/copy-authentication-code.png" alt-text="Screenshot of code cell showing authentication code. The Copy to clipboard button is highlighted."  lightbox="media/jupyter-notebook/copy-authentication-code.png":::
-
-1. Paste the code in the popup window, then select **Next**
-
-    :::image type="content" source="media/jupyter-notebook/paste-code.jpg" alt-text="Screenshot of the paste code window. The Next button is highlighted.":::
-
-1. Enter your details in the sign-in window, then select **Next** to sign into KustoClient.
-
-    :::image type="content" source="media/jupyter-notebook/sign-in.png" alt-text="Screenshot of sign-in window. The Next button is highlighted.":::
-
-1. Close the sign-in confirmation window.
-
-    :::image type="content" source="media/jupyter-notebook/kustoclient-confirmation.jpg" alt-text="Screenshot of KustoClient sign-in confirmation page.":::
-
-1. Run the next cell to check if your sign-in was successful. If successful, the query returns a row count.
+XXXXX
 
 ## 7- Run the notebook
 
