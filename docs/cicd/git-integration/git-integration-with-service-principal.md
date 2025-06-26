@@ -71,15 +71,14 @@ If you use the wrong tenant ID with the preferred setup flow, you will see the f
 
 If you are unable to obtain the tenant ID from the AzureDev Ops URL, you can use MS Graph or PowerShell to retrieve it.
    
-   #### [MS GRAPH](#tab/graph)
+#### [MS GRAPH](#tab/graph)
+```
+GET:https://graph.microsoft.com/v1.0/organization 
+```
 
-     ```
-          GET:https://graph.microsoft.com/v1.0/organization 
-     ```
+#### [PowerShell](#tab/powershell)
 
-   #### [PowerShell](#tab/powershell)
-
-     ```powershell
+```powershell
 
           # Install the Azure PowerShell module     
           Install-Module Az -Scope CurrentUser
@@ -91,9 +90,9 @@ If you are unable to obtain the tenant ID from the AzureDev Ops URL, you can use
           $tenantId =(Get-AzContext).Tenant.Id
           Write-Output "Tenant ID: $tenantId"
 
-     ```
+```
 
-    ---
+---
 
 For additional ways to obtain the tenant ID, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
 
