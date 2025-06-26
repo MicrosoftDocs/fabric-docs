@@ -39,9 +39,8 @@ For more information, see [Application and service principal objects in Microsof
 
 
 
-## Step: Get source control connection information
+## Step 3: Get source control connection information
 In the next step, we will be creating a source control connection to Azure DevOps.  Before doing this, we need to gather the information that will be used for our connection.  The following items are required to create a successful connection:
-
 
 |Name|Description|
 |-----|-----|
@@ -49,7 +48,7 @@ In the next step, we will be creating a source control connection to Azure DevOp
 |Azure DevOps URL|The url for your instance of Azure DevOps|
 |Authentication method|The authentication method for the connection. Service Principal should be selected|
 |Tenant ID|The ID of the tenant where Azure DevOps is located.  See the [Obtain the tenant ID](#obtain-the-tenant-id) section.|
-|Service principal ID||
+|Service principal ID|The Application (client) Id from the app overview in the Azure portal.  See the [Obtain Service Principal ID](#obtain-the-service-principal-id) section.|
 |Service principal key|Obtained in step 1.|
 
  :::image type="content" source="media/git-integration-with-service-principal/new-connection-2.png" alt-text="Screenshot of a new connection." lightbox="media/git-integration-with-service-principal/new-connection-2.png":::
@@ -102,20 +101,30 @@ You can find the *Service Principal ID* by navigating to the app in the Azure po
 
 :::image type="content" source="./media/git-integration-with-service-principal/tenant-id.png" alt-text="Screenshot showing where to find the tenant ID in the Azure portal.":::
 
+## Step 4: Create Azure DevOps source control connection
+Next, we will create the Azure DevOps source control connection.  There are two ways of doing this, the preferred method and the alternate method. Select one of the methods to proceed. Microsoft recommends using the preferred method.
 
-## Step 3: Create Azure DevOps source control connection
+### Prefered method of source control connection creation
+1. From a workspace, select **workspace settings**
+2. Select **Git Integration**
+3. Select **Azure DevOps**
+4. Click on **Add Account**
+5. Under **Display name**, enter a name.
+6. Enter the Azure DevOps URL.
+7. Under **Authentication method**, select **Service Principal**. 
+8. Complete the other details (Tenant ID, Service principal ID, Service principal key) using the information from above.
 
+ :::image type="content" source="media/git-integration-with-service-principal/new-connection-2.png" alt-text="Screenshot of a new connection." lightbox="media/git-integration-with-service-principal/new-connection-2.png":::
+
+### Alternate method of source control connection creation
 1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Select **+New** in the top right corner to add a new cloud connection.
-1. Give it a name and set the **Type** to *Azure DevOps source control* using a *Service Principal* as the authentication method. Complete the other details (Tenant ID, Service principal ID, Service principal key) using the information you saved in [step 1](#step-1-register-an-application-with-microsoft-entra-id).
+2. Give it a name and set the **Type** to *Azure DevOps source control* using a *Service Principal* as the authentication method. Complete the other details (Tenant ID, Service principal ID, Service principal key) using the information you saved in [step 1](#step-1-register-an-application-with-microsoft-entra-id).
 
      :::image type="content" source="./media/git-integration-with-service-principal/new-connection.png" alt-text="Screenshot of new connection interface.":::
 
+3. From your workspace settings, go to the *Git integration* tab, and select your newly created account. Complete the remaining information.
 
-
-
-1. From your workspace settings, go to the *Git integration* tab, and select your newly created account. Complete the remaining information.
-
-## Step 4: Allow calling Git REST APIs with service principal (optional)
+## Step 5: Allow calling Git REST APIs with service principal (optional)
 
 ### Share the Azure DevOps connection with service principal user
 
