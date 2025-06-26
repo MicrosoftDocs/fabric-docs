@@ -2,13 +2,11 @@
 title: Tutorial-  Use a notebook with Kqlmagic to query a KQL database
 description: Learn how to import the NYCtaxicab notebook into your Microsoft Fabric environment.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: spelluru
+author: spelluru
 ms.topic: Tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 05/15/2025
+ms.date: 06/26/2025
 ---
 # Tutorial: Use a notebook with Kqlmagic to query a KQL database
 
