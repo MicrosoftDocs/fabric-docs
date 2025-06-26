@@ -4,4 +4,4 @@
 > - Sources: Azure Event Hubs, IoT Hub, and custom endpoints.
 > - Destinations: Custom endpoints and Eventhouse with Direct ingestion.
 > 
-> Any sources or destinations **not included in the list above**, as well as **destinations not appended to the default stream**, do not count toward this limit..
+> Any sources or destinations **not included in the list above**, and **destinations not appended to the default stream**, don't count toward this limit.
