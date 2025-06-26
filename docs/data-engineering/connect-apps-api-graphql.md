@@ -74,9 +74,12 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
 ## Configure a React app to access the public holidays API
 
+> [!NOTE]
+>If you prefer to skip the next manual steps, you can clone the [GitHub repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/GraphQL/React) with the complete application, after following step 3 to add specific details about your GraphQL endpoint and Microsoft Entra IDs.
+
 1. We use an existing React app as a starting point. Follow all the steps on the tutorial [Create a React single-page application and prepare it for authentication](/entra/identity-platform/tutorial-single-page-app-react-prepare-spa?tabs=visual-studio-code) to create a React project with Microsoft Entra authentication already configured, including additional files and folders required to be added to the project structure. We only need to change three files to adapt the app for our GraphQL use case.
   
-1. In the *src* folder, open the *authConfig.js* file and replace the contents of the file with the following code snippet:
+2. In the *src* folder, open the *authConfig.js* file and replace the contents of the file with the following code snippet:
 
    ```javascript
     /*
@@ -154,14 +157,14 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
 
    As you can see in the code above, it's important to use the correct scope to access the application. In our case `https://analysis.windows.net/powerbi/api/GraphQLApi.Execute.All`.
 
-1. Replace the following values with the values from the Microsoft Entra admin center.
+3. Replace the following values with the values from the Microsoft Entra admin center.
     - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered Microsoft Entra application.
     - `authority` - This is composed of two parts:
         - The *Instance* is endpoint of the cloud provider. Check with the different available endpoints in [National clouds](/entra/identity-platform/authentication-national-cloud#azure-ad-authentication-endpoints).
         - The *Tenant ID* is the identifier of the tenant where the application is registered. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
     - `graphQLEndpoint` - The Fabric API for GraphQL endpoint. Replace `Enter_the_GraphQL_Endpoint_Here` with the GraphQL API endpoint recorded earlier.
-1. Save the file.
-1. In the same *src* folder, open the *App.js* file and replace the contents of the file with the following code snippet:
+4. Save the file.
+5. In the same *src* folder, open the *App.js* file and replace the contents of the file with the following code snippet:
 
    ```javascript
     import React, { useState } from 'react';
@@ -274,7 +277,7 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     }
    ```
 
-1. Save the file.
+6. Save the file.
 
 1. Finally, under the *src/components* folder, open the *ProfileData.jsx* file and replace the contents of the file with the following code snippet:
 
@@ -310,10 +313,10 @@ In this example, we create a GraphQL API to expose sample Lakehouse data to clie
     )};
    ```
 
-1. Save all the file changes.
-1. In your terminal application of choice, go the root folder of the React project and execute the command `npm start` to test the application locally.
-1. Once the application loads in your browser from `http://localhost:3000`, follow the steps on the last part of the tutorial [Call the API from the application](/entra/identity-platform/tutorial-single-page-app-react-call-api#call-the-microsoft-graph-api-from-the-application) to authenticate.
-1. After signing in, click on the button **Query Fabric API for GraphQL Data**.
+2. Save all the file changes.
+3. In your terminal application of choice, go the root folder of the React project and execute the command `npm start` to test the application locally.
+4. Once the application loads in your browser from `http://localhost:3000`, follow the steps on the last part of the tutorial [Call the API from the application](/entra/identity-platform/tutorial-single-page-app-react-call-api#call-the-microsoft-graph-api-from-the-application) to authenticate.
+5. After signing in, click on the button **Query Fabric API for GraphQL Data**.
 
    :::image type="content" source="media/connect-apps-api-graphql/test-react-app.png" alt-text="Screenshot of the React sample app after sign in.":::
 
