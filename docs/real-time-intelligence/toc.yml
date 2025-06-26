@@ -408,9 +408,9 @@ items:
       href: /rest/api/fabric/digitaltwinbuilderflow/items
 - name: Analyze and train data
   items:
-  - name: Copilot for Real-Time Intelligence
+  - name: Copilot for Writing KQL Queries
     displayName: KQL queryset, kusto query language, natural language
-    href: ../fundamentals/copilot-real-time-intelligence.md
+    href: ../fundamentals/ccopilot-for-writing-queries.md
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
