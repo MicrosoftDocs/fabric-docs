@@ -4,7 +4,7 @@ description: A known issue is posted where OneLake shortcut creation and read fa
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/17/2025
+ms.date: 06/25/2025
 ms.custom: known-issue-1171
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1171
 
 You might experience intermittent failures reading or creating OneLake shortcut.
 
-**Status:** Open
+**Status:** Fixed: June 25, 2025
 
 **Product Experience:** OneLake
 

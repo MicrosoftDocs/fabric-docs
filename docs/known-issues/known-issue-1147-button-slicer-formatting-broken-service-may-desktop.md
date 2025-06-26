@@ -4,7 +4,7 @@ description: A known issue is posted where the button slicer formatting broken i
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/27/2025
+ms.date: 06/23/2025
 ms.custom: known-issue-1147
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1147
 
 You can use a button slicer in a report that has a custom theme file. If you publish the button slicer to the service or use the May Power BI Desktop release, the button slicer formatting might show the wrong formatting.
 
-**Status:** Open
+**Status:** Fixed: June 23, 2025
 
 **Product Experience:** Power BI
 

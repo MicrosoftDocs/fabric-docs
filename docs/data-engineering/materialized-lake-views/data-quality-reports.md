@@ -17,7 +17,7 @@ Materialized lake views (MLVs) provide the option to view your data quality metr
 
 To create or access the report, navigate to your Managed materialized lake views page and select the **Data quality report**.
 
-:::image type="content" source="./media/data-quality-reports/dqr-button.png" alt-text="Screenshot showing data quality report button placement." border="true" lightbox="./media/data-quality-reports/dqr-button.png":::
+:::image type="content" source="./media/data-quality-reports/data-quality-report-button.png" alt-text="Screenshot showing data quality report button placement." border="true" lightbox="./media/data-quality-reports/data-quality-report-button.png":::
 
 It opens the *embedded report page*. If a report is already created, you can see it here. If you're accessing the data quality report for the first time in your lakehouse, select **Generate report** and wait for the report to be created.
 
@@ -50,7 +50,7 @@ It allows you to track trends, analyze past performance, and understand how the 
 
 The MLV Detail page allows you to look at the data quality metrics at a deeper granularity instead of looking at only aggregates. You can filter for a particular MLV and also look at data from beyond the last one week by adjusting the SchemaName, MLVName, and RelativeDate in the Power BI filters.
 
-:::image type="content" source="./media/data-quality-reports/mlv-detail-page.png" alt-text="Screenshot showing the MLV detail page." border="true" lightbox="./media/data-quality-reports/mlv-detail-page.png":::
+:::image type="content" source="./media/data-quality-reports/materialized-lake-views-detail-page.png" alt-text="Screenshot showing the MLV detail page." border="true" lightbox="./media/data-quality-reports/materialized-lake-views-detail-page.png":::
 
 On the MLV Detail page, all charts display historical data, enabling you to drill down into daily metrics across several weeks for deeper trend analysis and insights.
 
