@@ -1,11 +1,11 @@
 ---
 title: What is Microsoft Fabric Chargeback app (preview)?
 description: Learn how to use the Microsoft Fabric Chargeback app.
-author: kishanpujara
-ms.author: kishanpujara
+author: kishanpujara1
+ms.author: kishanpujara1
 ms.reviewer: juliacawthra
 ms.topic: conceptual
-ms.date: 06/25/2025
+ms.date: 06/26/2025
 ---
 
 # Microsoft Fabric Chargeback app (preview)
@@ -20,11 +20,14 @@ To install the app, follow the instructions in [Install the Microsoft Fabric Cha
 
 ## Visuals
 
+> [!NOTE]
+> If a workspace or item is not associated with any domain or subdomain, its usage will be categorized under the "No domain" or "No subdomain".
+
 Understand what the visuals in the report show.
 
 - **Workspace, item, and domain/subdomain** - Shows what percent of your capacity was utilized by workspaces, items, or domains/subdomain. Select the **Workspace**, **Item**, or **Domain** tab to view your capacity's utilization percent by workspace, item, or domain/subdomain respectively.
 - **Utilization (CU) by date** - Shows your daily utilization.
-- **Utilization (CU) details** - A matrix table that shows utilization and user details. 
+- **Utilization (CU) details** - A matrix table that shows utilization and user details. Hover over users column to see breakdown of Utilization (CU) by user.
 
 ## Drill through
 
@@ -53,7 +56,7 @@ When using the Microsoft Fabric Chargeback app, be aware of the following consid
 - If an operation isn't associated with a user, or if the operation is initiated by a service principal, the report displays the username as "Power BI Service".
 - When the [Show user data in the Fabric Capacity Metrics app and reports](../admin/service-admin-portal-audit-usage.md#show-user-data-in-the-fabric-capacity-metrics-app-and-reports) setting is disabled, the username is shown as "Masked user" for nonservice operations, and the user count considers all masked users as a single user.
 - Visuals on the **Export** page may fail to render properly when too many drill-downs are applied due to memory limitations in Power BI. To avoid this, either apply filters to reduce the data volume or avoid expanding multiple capacities to the lower granularity level (such as item name) during export.
-- Editing the semantic model of the Fabric Chargeback app using external model authoring tools isn't supported.
+- The semantic model used by the Microsoft Fabric Chargeback application is only supported for use by the reports provided in the application. Any consumption from, usage of, or modification of the semantic model is not supported.
 
 ## Related content
 
