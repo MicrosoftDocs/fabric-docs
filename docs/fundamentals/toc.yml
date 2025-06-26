@@ -117,8 +117,6 @@ items:
       href: ../data-warehouse/copilot.md
     - name: Copilot for Real-Time Intelligence
       items:
-        - name: Copilot for Real-Time Intelligence
-          href: copilot-real-time-intelligence.md
         - name: Copilot for KQL Queryset
           href: copilot-for-writing-queries.md
         - name: Copilot for Real-Time Dashboards
