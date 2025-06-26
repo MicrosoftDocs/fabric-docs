@@ -4,7 +4,7 @@ description: This article explains how to copy data using Data Warehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 06/26/2025
 ms.custom: 
   - pipelines
   - template-how-to
