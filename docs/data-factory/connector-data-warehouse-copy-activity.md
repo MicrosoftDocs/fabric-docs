@@ -141,6 +141,8 @@ For example, the type for *ID* column in source is int, and you can change it to
 
 :::image type="content" source="media/connector-data-warehouse/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
+If you choose varchar or varbinary type for the destination column, you can specify the length for the type. The length should be larger than 0 and smaller than 8000 or be MAX (indicates a maximum storage size of 2³¹-1 bytes). The default value is 8000.
+
 ### Settings
 
 For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
