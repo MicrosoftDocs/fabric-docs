@@ -51,7 +51,7 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | [Azure Analysis Services](connector-azure-analysis-services-overview.md) | ✓/− |  |  |
 | [Azure Blobs](connector-azure-blob-storage-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-overview.md) |  | ✓/✓ |  |
-| [Azure Cosmos DB for MongoDB vCore (Beta)](/power-query/connectors/azure-cosmos-db-for-mongodb-vcoreS) | ✓/− |  |  |
+| [Azure Cosmos DB for MongoDB vCore (Beta)](/power-query/connectors/azure-cosmos-db-for-mongodb-vcore) | ✓/− |  |  |
 | [Azure Cosmos DB v2](connector-azure-cosmosdb-for-nosql-overview.md) | ✓/− | ✓/✓ |  |
 | [Azure Cost Management](/power-query/connectors/azure-cost-management) | ✓/− |  |  |
 | [Azure Data Explorer (Kusto)](connector-azure-data-explorer-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
@@ -78,7 +78,7 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | Cherwell (Beta) | ✓/− |  |  |
 | [ClickHouse](/power-query/connectors/clickhouse) | ✓/− |  |  |
 | [CloudBluePSA (Beta)](connector-cloudbluepsa-overview.md) | ✓/− |  |  |
-| [Cognite Data Fusion (OData)](/power-query/connectors/cognite-data-fusion-(odata)S) | ✓/− |  |  |
+| [Cognite Data Fusion (OData)](/power-query/connectors/cognite-data-fusion-(odata)) | ✓/− |  |  |
 | Cognite Data Fusion (Rest API) (Beta)| ✓/− |  |  |
 | [Common Data Service (legacy)](connector-common-data-service-legacy-overview.md) | ✓/− |  |  |
 | Data Virtuality LDW | ✓/− |  |  |
