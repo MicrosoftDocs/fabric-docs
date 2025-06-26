@@ -56,6 +56,7 @@ In order to setup a source control connection with Azure DevOps, some informatio
           $tenantID = (Get-AzContext).Tenant.Id
           Write-Output "Tenant ID: $tenantID"
      ```
+     ---
 
 ## Step 3: Create Azure DevOps source control connection
 
