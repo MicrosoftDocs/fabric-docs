@@ -22,7 +22,12 @@ To register an application with your Microsoft Entra tenant and use it to integr
 
 ## Step 1: Register an application with Microsoft Entra ID
 
-Register your application with Microsoft Entra ID, and create a secret by following the directions in [Register your app](/power-bi/developer/embedded/register-app#register-your-app). Confirm that your organization's policies allow the creation of client secrets and their use for token acquisition. Be sure to save the secret, as it will be required in a later step. For more information, see [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals) and [Security best practices for application properties in Microsoft Entra ID](/entra/identity-platform/security-best-practices-for-app-registration).
+Register your application with Microsoft Entra ID, and create a secret by following the directions in [Register your app](/power-bi/developer/embedded/register-app#register-your-app). Confirm that your organization's policies allow the creation of client secrets and their use for token acquisition. Be sure to save the secret, as it will be required in a later step. 
+
+ >[!NOTE]
+>Be sure to save the secret. It will be used in the later steps.
+
+For more information, see [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals) and [Security best practices for application properties in Microsoft Entra ID](/entra/identity-platform/security-best-practices-for-app-registration).
 
 ## Step 2: Assign service principal to a DevOps organization
 
@@ -34,19 +39,23 @@ Register your application with Microsoft Entra ID, and create a secret by follow
 
 
 
-## Step: Get connection information
+## Step: Get source control connection information
 In the next step, we will be creating a source control connection to Azure DevOps.  Before doing this, we need to gather the information that will be used for our connection.  The following items are required to create a successful connection:
 
-- Name
-- Azure DevOps URL
-- Tenant ID
-- Service principal ID
-- Service principal key
+
+|Name|Description|
+|-----|-----|
+|Name|The name of the source control connection|
+|Azure DevOps URL|The url for your instance of Azure DevOps|
+|Authentication method|The authentication method for the connection. Service Principal should be selected|
+|Tenant ID|The ID of the tenant where Azure DevOps is located.  See the [Obtain the tenant ID](#obtain-the-tenant-id) section.|
+|Service principal ID||
+|Service principal key|Obtained in step 1.|
 
  :::image type="content" source="media/git-integration-with-service-principal/new-connection-2.png" alt-text="Screenshot of a new connection." lightbox="media/git-integration-with-service-principal/new-connection-2.png":::
 
 
-### Obtain the Tenant ID
+### Obtain the tenant ID
 There are several ways to get this information.  The quickest and easiest is to pull it from the Azure DevOps URL. The `{organization}` portion of the URL contains the Tenant ID.
 
  :::image type="content" source="media/git-integration-with-service-principal/tenant-id-2.png" alt-text="Screenshot of a new connection." lightbox="media/git-integration-with-service-principal/tenant-id-2.png":::
@@ -55,7 +64,38 @@ If you use the wrong tenant ID with the preferred setup flow, you will see the f
 
  :::image type="content" source="media/git-integration-with-service-principal/tenant-error.png" alt-text="Screenshot of tenant connection error." lightbox="media/git-integration-with-service-principal/tenant-error.png":::
 
-For additional ways, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
+ >[!NOTE]
+>The target tenant ID for the source control connection, is the tenant ID where Azure DevOps is located.  This may or may not be the same as the Directory (tenant) ID information that is available from viewing an overview of the app.
+>
+>Be sure to use the tenant ID of the tenant where Azure DevOps is located. 
+
+If you are unable to obtain the tenant ID from the AzureDev Ops URL, you can use MS Graph or PowerShell to retrieve it.
+   
+   #### [MS GRAPH](#tab/graph)
+
+     ```
+          GET:https://graph.microsoft.com/v1.0/organization 
+     ```
+
+   #### [PowerShell](#tab/powershell)
+
+     ```powershell
+
+          # Install the Azure PowerShell module     
+          Install-Module Az -Scope CurrentUser
+
+          # Connect to your tenant
+          Connect-AzAccount
+
+          #Get the Tenant Id
+          $tenantId =(Get-AzContext).Tenant.Id
+          Write-Output "Tenant ID: $tenantId"
+
+     ```
+
+    ---
+
+For additional ways to obtain the tenant ID, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
 
 ### Obtain the Service Principal ID
 
