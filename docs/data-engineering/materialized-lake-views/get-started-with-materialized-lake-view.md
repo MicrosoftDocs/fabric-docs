@@ -5,7 +5,7 @@ ms.topic: quickstart
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviewer: nijelsf
-ms.date: 06/27/2025
+ms.date: 06/26/2025
 #customer intent: As a data engineer, I want to create materialized lake views in lakehouse so that I can optimize query performance and manage data quality.
 ---
 
