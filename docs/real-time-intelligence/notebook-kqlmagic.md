@@ -4,9 +4,10 @@ description: Learn how to import the NYCtaxicab notebook into your Microsoft Fab
 ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
-ms.topic: Tutorial
+ms.topic: tutorial
 ms.custom:
 ms.date: 06/26/2025
+ms.search.form: Notebooks
 ---
 # Tutorial: Use a notebook with Kqlmagic to query a KQL database
 
@@ -31,35 +32,40 @@ Specifically, you learn how to:
 
 ## 1- Create a KQL database
 
-1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
-1. Select **KQL Database**.
-1. Under **Database name**, enter *NYCTaxidb*, then select **Create**.
-1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
+In this step, you create an empty KQL database named NYCTaxiDB in your workspace or in an existing eventhouse.
 
-    :::image type="content" source="media/jupyter-notebook/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
+1. Select your workspace from the left navigation bar.
 
-The KQL database has now been created within the context of the selected workspace.
+1. Follow one of these steps to start creating a KQL database:
+    * Select **New item** and then **Eventhouse**. In the **Eventhouse name** field, enter *NYCTaxiDB*, then select **Create**. A KQL database is generated with the same name.
+    * In an existing eventhouse, select **Databases**. Under **KQL databases** select **+**, in the **KQL Database name** field, enter *NYCTaxiDB*, then select **Create**.
+
+1. Select the **NYCTaxiDB** database, expand **Database details**, copy the **Query URI** and paste it somewhere, like a notepad, to use in a later step.
+
+    :::image type="content" source="media/spark-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
 
 ## 2- Get data
 
 In this step, you use a script to first create a table with specified mapping, and then get data from a public blob into this table.
 
-1. Copy the KQL script from the [Fabric samples repository on GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/IngestNYCTaxi2014.kql)
+1. Copy the KQL script from the [Fabric samples repository on GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/IngestNYCTaxi2014.kql)
 
     :::image type="content" source="media/jupyter-notebook/copy-kql-script.png" alt-text="Screenshot of GitHub repository showing the KQL script for the NYC Taxi demo notebook. The copy icon is highlighted."  lightbox="media/jupyter-notebook/copy-kql-script.png":::
 
 1. Browse to your KQL database.
-1. Select **Explore your data** on the top right corner of the database summary page.
-1. Paste the KQL script from step 1.
 
-1. Place your cursor somewhere within the query, and select the **Run** button.
+1. Select **Query with code** to open an empty tab in the **NYCTaxiDB_queryset**.
 
-    The first query will run and create the table and schema mapping. The output of this query shows the table and mapping creation information, including the type of command and the result of *Completed* when finished.
+1. Paste the KQL script from step 1. and select the **Run** button.
+
+    The first query creates the table and schema mapping. The output of this query shows the table and mapping creation information, including the type of command and the result of *Completed* when finished.
     The second query loads your data. It might take a few minutes for the data loading to complete.
 
-    :::image type="content" source="media/jupyter-notebook/data-map-ingest.png" alt-text="Screenshot of the Explore your data window showing the completed state of the table mapping and data ingestion."  lightbox="media/jupyter-notebook/data-map-ingest.png":::
+    :::image type="content" source="media/jupyter-notebook/data-map-ingest.png" alt-text="Screenshot of the queryset window showing the completed state of the table mapping and data ingestion."  lightbox="media/jupyter-notebook/data-map-ingest.png":::
 
-1. Refresh your database. The table appears in the **Data tree**.
+1. Refresh the queryset and select **Tables** to see an overview of the newly created table named *trips2*. From here you can expand the table schema, preview the data, and view query insights.
+
+    :::image type="content" source="media/jupyter-notebook/nyctaxi-table.png" alt-text="Screenshot of the Tables tab showing the trips2 table."  lightbox="media/jupyter-notebook/nyctaxi-table.png":::
 
 ## 3- Download the NYC Taxi demo notebook
 
