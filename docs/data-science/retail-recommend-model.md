@@ -119,7 +119,7 @@ if not IS_CUSTOM_DATA:
     # Download data files into a lakehouse if they don't exist
     import os, requests
 
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Book-Recommendation-Dataset"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/Book-Recommendation-Dataset"
     file_list = ["Books.csv", "Ratings.csv", "Users.csv"]
     download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
 
