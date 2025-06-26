@@ -5,7 +5,7 @@ ms.topic: how-to
 author: apurbasroy
 ms.author: apsinhar
 ms.reviewer: nijelsf
-ms.date: 06/06/2025
+ms.date: 06/27/2025
 # customer intent: As a data engineer, I want to schedule a materialized lake views run in Microsoft Fabric so that I can refresh the materialized lake views based on business requirements.
 ---
 
@@ -42,7 +42,8 @@ Turn **On** the **Schedule Refresh** option and select the following from the sc
 Select **Apply** to set the schedule for the particular MLV run.
 
 > [!NOTE]
-> The scheduler reflects the users local time.
+> * The scheduler reflects the users local time.
+> * A materialized lake view will fail, if it runs beyond 24 hours.
 
 ## Related articles
 
