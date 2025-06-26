@@ -53,7 +53,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 ## Configure and connect to Fabric Workspace Item events
 [!INCLUDE [fabric-workspace-source-connector](includes/fabric-workspace-source-connector.md)]
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## View updated eventstream
 

@@ -19,8 +19,6 @@ This article shows you how to add an activator destination to an eventstream.
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - If you already have an activator you want to use, access to the workspace where your activator is located with Contributor or higher permissions.
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ## Add activator as a destination
 
 To add an activator destination to a default stream or derived stream, follow these steps.
