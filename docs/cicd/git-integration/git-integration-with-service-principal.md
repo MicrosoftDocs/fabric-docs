@@ -36,11 +36,12 @@ Register your application with Microsoft Entra ID, and create a secret by follow
 
 ## Step: Get connection information
 In the next step, we will be creating a source control connection to Azure DevOps.  Before doing this, we need to gather the information that will be used for our connection.  The following items are required to create a successful connection:
-     - Name
-     - Azure DevOps URL
-     - Tenant ID
-     - Service principal ID
-     - Service principal key
+
+- Name
+- Azure DevOps URL
+- Tenant ID
+- Service principal ID
+- Service principal key
 
  :::image type="content" source="media/git-integration-with-service-principal/new-connection-2.png" alt-text="Screenshot of a new connection." lightbox="media/git-integration-with-service-principal/new-connection-2.png":::
 
@@ -50,14 +51,13 @@ There are several ways to get this information.  The quickest and easiest is to 
 
  :::image type="content" source="media/git-integration-with-service-principal/tenant-id-2.png" alt-text="Screenshot of a new connection." lightbox="media/git-integration-with-service-principal/tenant-id-2.png":::
 
-For additional ways, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
-
 If you use the wrong tenant ID with the preferred setup flow, you will see the following error:
 
  :::image type="content" source="media/git-integration-with-service-principal/tenant-error.png" alt-text="Screenshot of tenant connection error." lightbox="media/git-integration-with-service-principal/tenant-error.png":::
 
+For additional ways, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
 
-### Obtain the Servie Principal ID
+### Obtain the Service Principal ID
 
 You can find the *Service Principal ID* by navigating to the app in the Azure portal and selecting the Overview tab, use *Application (client) Id* for *Service Principal ID*.
 
