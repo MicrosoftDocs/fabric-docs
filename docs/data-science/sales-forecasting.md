@@ -89,7 +89,7 @@ The following code snippet downloads a publicly-available version of the dataset
 import os, requests
 if not IS_CUSTOM_DATA:
     # Download data files into the lakehouse if they're not already there
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Forecast_Superstore_Sales"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/Forecast_Superstore_Sales"
     file_list = ["Superstore.xlsx"]
     download_path = "/lakehouse/default/Files/salesforecast/raw"
 
