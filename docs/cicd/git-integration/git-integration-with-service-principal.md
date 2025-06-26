@@ -22,15 +22,40 @@ To register an application with your Microsoft Entra tenant and use it to integr
 
 ## Step 1: Register an application with Microsoft Entra ID
 
-Register your application with Microsoft Entra ID, and create a secret by following the directions in [Register your app](/power-bi/developer/embedded/register-app#register-your-app). Ensure the application is registered in the same tenant as your Azure DevOps organization that you intend to connect from Microsoft Fabric. Also, confirm that your organization's policies allow the creation of client secrets and their use for token acquisition. Be sure to save the secret, as it will be required in a later step. For more information, see [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals).
+Register your application with Microsoft Entra ID, and create a secret by following the directions in [Register your app](/power-bi/developer/embedded/register-app#register-your-app). Confirm that your organization's policies allow the creation of client secrets and their use for token acquisition. Be sure to save the secret, as it will be required in a later step. For more information, see [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals) and [Security best practices for application properties in Microsoft Entra ID](/entra/identity-platform/security-best-practices-for-app-registration).
 
 ## Step 2: Assign service principal to a DevOps organization
 
-1. Log in to your Azure DevOps organization
-1. Browse to **Organization settings -> User -> Add users**
-1. Select to add the service principal  
-1. Navigate to relevant Azure DevOps project settings -> Teams  
-1. Add the service principal to relevant team
+ 1. Log in to your Azure DevOps organization
+ 2. Browse to **Organization settings -> User -> Add users**
+ 3. Select to add the service principal  
+ 4. Navigate to relevant Azure DevOps project settings -> Teams  
+ 5. Add the service principal to relevant team
+
+
+
+## Step: Get connection information
+In order to setup a source control connection with Azure DevOps, some information is required.  
+
+   #### [Microsoft GRAPH](#tab/graph)
+
+     ```
+      GET https://graph.microsoft.com/v1.0/organization
+     ```
+
+   #### [PowerShell](#tab/powershell)
+
+     ```powershell
+        #Install the Azure Powershell module
+        Install Module Az -Scope CurrentUser
+ 
+        # Connect to Azure with an authenticated account
+        Connect-AzAccount
+   
+        # Convert secure string to plain text
+          $tenantID = (Get-AzContext).Tenant.Id
+          Write-Output "Tenant ID: $tenantID"
+     ```
 
 ## Step 3: Create Azure DevOps source control connection
 
@@ -38,6 +63,11 @@ Register your application with Microsoft Entra ID, and create a secret by follow
 1. Give it a name and set the **Type** to *Azure DevOps source control* using a *Service Principal* as the authentication method. Complete the other details (Tenant ID, Service principal ID, Service principal key) using the information you saved in [step 1](#step-1-register-an-application-with-microsoft-entra-id).
 
      :::image type="content" source="./media/git-integration-with-service-principal/new-connection.png" alt-text="Screenshot of new connection interface.":::
+
+
+     |Name|Value|Description|
+     |-----|-----|-----|
+     |Tenant Id
 
      You can also find the *Tenant Id* and *Client Id*  in the Azure portal by navigating to the app in the Azure portal and selecting the Overview tab, use *Application (client) Id* for *Service Principal ID*, use *Directory (tenant) ID* for *Tenant ID* and the secret you kept from step 1 as Service principal key.
 
