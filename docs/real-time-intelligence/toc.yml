@@ -410,7 +410,7 @@ items:
   items:
   - name: Copilot for Writing KQL Queries
     displayName: KQL queryset, kusto query language, natural language
-    href: ../fundamentals/ccopilot-for-writing-queries.md
+    href: ../fundamentals/copilot-for-writing-queries.md
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
