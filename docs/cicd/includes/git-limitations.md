@@ -12,6 +12,7 @@ ms.date: 02/26/2025
 
 - The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Fabric must be at least as strong as the authentication method for Git. For example, if Git requires multifactor authentication, Fabric needs to require multifactor authentication as well.
 - Power BI Datasets connected to Analysis Services aren't supported at this time.
+- If you use a workspace identity in one artifact and commit it to Git, it can be updated (back to a fabric workspace) only in a workspace connected to the same identity. Be careful, as this also affects features like branch out.
 - Submodules aren't supported.
 - Sovereign clouds aren't supported.
 
@@ -33,8 +34,11 @@ ms.date: 02/26/2025
 
 ### GitHub Enterprise limitations
 
-Some GitHub Enterprise settings aren't supported. For example:
+Some GitHub Enterprise versions and settings aren't supported. For example:
 
+- GitHub Enterprise Cloud with data residency (ghe.com)
+- GitHub Enterprise Server with a custom domain is not supported, even if the instance is publicly accessible
+- Github Enterprise Server hosted on a private network
 - IP allowlist
 
 ### Workspace limitations

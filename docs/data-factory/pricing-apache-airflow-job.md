@@ -6,6 +6,7 @@ ms.author: abnarain
 author: nabhishek
 ms.topic: conceptual
 ms.date: 11/15/2023
+ms.custom: airflows
 ---
 
 # Apache Airflow job pricing for Data Factory in Microsoft Fabric

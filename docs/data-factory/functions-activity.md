@@ -5,7 +5,8 @@ ms.reviewer: shaween18
 ms.author: abnarain
 author: ssindhub
 ms.topic: how-to
-ms.custom:
+ms.custom: 
+  - pipelines
   - Build-2025
 ms.date: 05/21/2024
 ---

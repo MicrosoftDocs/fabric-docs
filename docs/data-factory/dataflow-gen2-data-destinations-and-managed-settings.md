@@ -1,11 +1,12 @@
 ---
 title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
-ms.reviewer: DougKlopfenstein
+ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
 ms.date: 05/09/2025
+ms.custom: dataflows
 ---
 
 # Dataflow Gen2 data destinations and managed settings
@@ -112,7 +113,7 @@ Most destinations support both append and replace as update methods. However, Fa
 
 Schema options on publish only apply when the update method is replace. When you append data, changes to the schema aren't possible.
 
-* **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination flow when you make any changes to your query. When the dataflow is refreshed, your table is dropped and recreated. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
+* **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination wizard when you make any changes to your query. When a refresh detects a discrepancy between the destination schema and the expected schema, the table is dropped and then recreated to align with the expected schema. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 
 * **Fixed schema**: When you choose fixed schema, schema changes aren't possible. When the dataflow gets refreshed, only the rows in the table are dropped and replaced with the output data from the dataflow. Any relationships or measures on the table stay intact. If you make any changes to your query in the dataflow, the dataflow publish fails if it detects that the query schema doesn't match the data destination schema. Use this setting when you don't plan to change the schema and have relationships or measure added to your destination table.
 
@@ -137,6 +138,8 @@ Schema options on publish only apply when the update method is replace. When you
 | Time                             | Yes | Yes | No  | No | No   | Yes |
 | Type                             | No  | No  | No  | No  | No  | No  |
 | Structured (List, Record, Table) | No  | No  | No  | No  | No  | No  |
+
+When working with data types such as currency or percentage, we typically convert them to their decimal equivalents for most destinations. However, when reconnecting to these destinations and following the existing table path, you might encounter difficulties mapping, for example, currency to a decimal column. In such cases, try changing the data type in the editor to decimal, as this will facilitate easier mapping to the existing table and column.
 
 ## Advanced topics
 

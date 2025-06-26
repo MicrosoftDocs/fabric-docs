@@ -1,13 +1,13 @@
 ---
 title: Connector overview
 description: Learn about data connectors.
-ms.reviewer: DougKlopfenstein
+ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview
-ms.custom:
 ms.date: 04/25/2025
 ms.search.form: product-data-factory
+ms.custom: connectors
 ---
 
 # Connector overview
@@ -70,8 +70,6 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | Azure Tables | ✓/− | ✓/✓ |  | 
 | BI Connector | ✓/− |  |  | 
 | BitSight Security Ratings | ✓/− |  |  | 
-| Blank query | ✓/− |  |  | 
-| Blank table | ✓/− |  |  | 
 | Bloomberg Data and Analytics | ✓/− |  |  | 
 | BQE CORE | ✓/− |  |  | 
 | BuildingConnected & Trade Tapp | ✓/− |  |  | 
@@ -81,7 +79,7 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | ClickHouse | ✓/− |  |  | 
 | CloudBluePSA (Beta) | ✓/− |  |  | 
 | Cognite Data Fusion (OData) | ✓/− |  |  | 
-| Cognite Data Fusion (Rest API) | ✓/− |  |  | 
+| Cognite Data Fusion (Rest API) (Beta)| ✓/− |  |  | 
 | Common Data Service (legacy) | ✓/− |  |  | 
 | Data Virtuality LDW | ✓/− |  |  | 
 | Databricks | ✓/− |  |  | 
@@ -106,9 +104,9 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | Exasol | ✓/− |  |  | 
 | Excel workbook | ✓/− |  |  |
 | Fabric Data Warehouse | ✓/✓ | ✓/✓ | ✓/✓ |  
-| Fabric KQL Database | ✓/− | ✓/✓ |  | 
+| Fabric KQL Database | ✓/✓ | ✓/✓ |  | 
 | Fabric Lakehouse | ✓/✓ | ✓/✓ | ✓/✓ | 
-| Fabric SQL database  | ✓/✓ | ✓/✓ | ✓/✓ | 
+| Fabric SQL database (Beta) | ✓/✓ | ✓/✓ | ✓/✓ | 
 | FactSet Analytics | ✓/− |  |  | 
 | FactSet RMS (Beta) | ✓/− |  |  | 
 | FHIR | ✓/− |  |  | 
@@ -148,7 +146,7 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | Microsoft 365 |  | ✓/− |  | 
 | Microsoft Azure Data Manager for Energy | ✓/− |  |  | 
 | Microsoft Exchange Online | ✓/− |  |  | 
-| MicroStrategy for Power BI | ✓/− |  |  | 
+| Strategy for Power BI | ✓/− |  |  | 
 | MongoDB Atlas for Pipelines |  | ✓/✓ |  | 
 | MongoDB Atlas SQL | ✓/− |  |  | 
 | MongoDB for Pipeline |  | ✓/✓ |  | 
@@ -170,7 +168,7 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | Planview ProjectPlace | ✓/− |  |  | 
 | PostgreSQL database | ✓/− | ✓/✓ | ✓/− | 
 | Power BI dataflows (Legacy) | ✓/− |  |  | 
-| Product Insights | ✓/− |  |  | 
+| Product Insights (Beta)| ✓/− |  |  | 
 | Profisee | ✓/− |  |  | 
 | QubolePresto (Beta) | ✓/− |  |  | 
 | Quickbase | ✓/− |  |  | 
@@ -179,19 +177,19 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | Salesforce objects | ✓/− | ✓/✓ | ✓/✓ | 
 | Salesforce reports | ✓/− |  |  | 
 | Salesforce Service Cloud |  | ✓/✓ | ✓/✓ | 
-| Samsara (Beta) | ✓/− |  |  | 
+| Samsara | ✓/− |  |  | 
 | SAP BW Application Server | ✓/− |  |  | 
 | SAP BW Message Server | ✓/− |  |  | 
 | SAP HANA database | ✓/− | ✓/✓ | ✓/− | 
 | ServiceNow |  | ✓/− |  | 
 | SFTP |  | ✓/✓ |  | 
-| SharePoint folder | ✓/− |  |  | 
+| SharePoint folder | ✓/✓ |  |  | 
 | SharePoint list | ✓/− |  |  | 
 | SharePoint Online list | ✓/− | ✓/− |  | 
 | Shortcuts Business Insights (Beta) | ✓/− |  |  | 
 | SingleStore Direct Query Connector | ✓/− |  |  | 
 | SIS-CC SDMX (Beta) | ✓/− |  |  | 
-| Sitemiprove | ✓/− |  |  | 
+| Siteimprove | ✓/− |  |  | 
 | Smartsheet | ✓/− |  |  | 
 | Snowflake | ✓/− | ✓/✓ | ✓/✓ | 
 | SoftOne BI (Beta) | ✓/− |  |  | 
@@ -227,7 +225,7 @@ Fabric support the following connectors in Dataflow Gen2, data pipelines or Copy
 | XML | ✓/− |  |  | 
 | Zendesk | ✓/− |  |  | 
 | Zoho Creator | ✓/− |  |  | 
-| Zucchetti Infinity (Beta) | ✓/− |  |  | 
+| Zucchetti HR Infinity (Beta) | ✓/− |  |  | 
 
 ## Related content
 

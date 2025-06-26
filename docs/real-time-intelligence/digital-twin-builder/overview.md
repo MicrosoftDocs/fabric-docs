@@ -43,7 +43,7 @@ Once your ontology is built, explore the digital twin builder (preview) data and
 
 * **Explorer:** Access different views within digital twin builder to examine and analyze your modeled data. Views include a card view of all assets with associated details, and time series charts for analysis. Keyword search and advanced query allow you to locate specific assets within your operation.
 * **Ontology extensions**: Extend your ontology by connecting it to analytics, AI, and visualization experiences that enable deeper insights. Here are some ways you can extend your ontology:
-    * Leverage the programmatic creation of digital twins with public digital twin builder APIs, unlocking the scalability of digital twin creation
+    * Leverage the programmatic creation of digital twins with public [digital twin builder APIs](/rest/api/fabric/digitaltwinbuilder/items), unlocking the scalability of digital twin creation
     * Manage digital twin builder with CI/CD, by using [Fabric deployment pipelines](../../cicd/deployment-pipelines/intro-to-deployment-pipelines.md), templates, or GitOps
     * Build Q&A systems with generative AI over contextualized digital twin data, by using [Fabric data agent](../../data-science/concept-data-agent.md)
     * Build and train [machine learning models in Fabric](../../data-science/machine-learning-model.md) based on digital twin data in OneLake

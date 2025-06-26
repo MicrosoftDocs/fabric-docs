@@ -258,7 +258,7 @@ For any folder in a lakehouse, permissions always inherit to all [internal short
 When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut. As a result, this user must have OneLake security permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When accessing shortcuts through **Power BI semantic models** or **T-SQL**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user.
+> When accessing shortcuts through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines in Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user. To resolve this, use **Power BI semantic models in DirectLake over OneLake mode** or **T-SQL in User's identity mode**.
 
 Defining OneLake security permissions for the internal shortcut isn't allowed and must be defined on the target folder located in the target item. The target item must be an item type that supports OneLake security roles. Currently, only Lakehouse supports OneLake security roles.
 
@@ -328,6 +328,10 @@ RLS combines with an OR between SQL statements. Like CLS, any RLS rules unioned 
 * If you add a distribution list to a role in OneLake security, the SQL endpoint can't resolve the members of the list to enforce access. The result is that users appear not to be members of the role when they access the SQL endpoint.
 
 * Semantic models don't support shortcuts pointing to other lakehouses that don't have OneLake security enabled.
+
+* To query data from a Spark notebook using Spark SQL, the user must have at least Viewer access in the workspace they are querying.
+
+* Spark notebooks require that the environment be 3.5 or higher and using Fabric runtim 1.3.
 
 * The following table provides the limitations of OneLake data access roles.
 

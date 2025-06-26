@@ -1,8 +1,8 @@
 ---
 title: What is the Microsoft Fabric admin portal?
 description: This article provides an overview of the admin Microsoft Fabric admin portal.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 09/22/2024

@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/20/2025
+ms.date: 06/17/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -190,7 +190,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Eventstream](#eventstream), [Azure and Fabric events](#azure-and-fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder (preview)](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
 #### Azure and Fabric events
 
@@ -200,6 +200,17 @@ You can find the consumption rates for Azure and Fabric events in [Azure and Fab
 | ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
 | Event Operations | Publish, delivery, and filtering operations          | Multiple | Real-Time Intelligence - Event Operations         | Background |
 | Event Listener   | Uptime of the event listener                         | Multiple | Real-Time Intelligence – Event Listener and Alert | Background |
+
+#### Digital twin builder (preview)
+
+You can find the consumption rates for digital twin builder (preview) in [Digital twin builder (preview) capacity consumption, usage reporting, and billing](../real-time-intelligence/digital-twin-builder/resources-capacity-usage.md).
+
+>[!NOTE]
+> The meters for digital twin builder are currently in preview and may be subject to change.
+
+| Operation        | Description                 | Item     | Azure billing meter              | Type       |
+| ---------------- | --------------------------- | -------- | -------------------------------- | ---------- |
+| Digital Twin Builder Operation | Usage for on-demand and scheduled digital twin builder flow operations.  | Digital twin builder flow | Digital Twin Builder Operation Capacity Usage CU | Background |
 
 #### Eventstream
 
@@ -232,6 +243,8 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
 | Spark job scheduled run | Batch job runs triggered by notebook scheduled events   | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job pipeline run  | Batch job runs triggered by pipeline                    | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job VS Code run   | Spark job definition submitted from VS Code             | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
+| Materialized lake view run |  Users schedule Materialized lake view runs        | Lakehouse | Spark Memory Optimized Capacity Usage CU          | Background |
+| Shortcut Transformations   | Shortcut Transformations created in the Lakehouse             | Lakehouse | Spark Memory Optimized Capacity Usage CU          | Background |
 
 ## Related content
 

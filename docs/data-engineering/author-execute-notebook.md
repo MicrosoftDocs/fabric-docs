@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom:
 ms.search.form: Develop and run notebooks
-ms.date: 05/21/2025
+ms.date: 05/29/2025
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -91,10 +91,10 @@ The IntelliSense features are at different levels of maturity for different lang
 > You must have an active Apache Spark session to use IntelliSense code completion.
 
 #### Enhance Python Development with Pylance
- 
+
 > [!NOTE]
 > Currently, the feature is in preview.
- 
+
 Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter autocompletion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
 
 ### Code snippets
@@ -207,6 +207,35 @@ The find and replace option can help you match and locate the keywords or expres
 
 :::image type="content" source="media\author-execute-notebook\find-replace.png" alt-text="Screenshot showing find and replace pane." lightbox="media\author-execute-notebook\find-replace.png":::
 
+## Copilot inline code completion (Preview)
+
+Copilot inline code completion is an AI-powered feature that helps you to write Python code faster and more efficiently in Fabric Notebooks. This feature provides intelligent, context-aware code suggestions as you type code. It reduces repetitive tasks, minimizes syntax errors, and accelerates development by integrating seamlessly into your notebook workflow.
+
+### Key benefits
+
+* **AI-driven completions:** Generates suggestions based on your notebook's context using a model trained on millions of lines of code.
+* **Boosts productivity:** Helps write complex functions, reduces repetitive coding, and speeds up exploration of unfamiliar libraries.
+* **Reduces errors:** Minimizes typos and syntax mistakes with intelligent, context-aware completions.
+* **Minimal setup:** Built into Fabric notebooks, doesn't require any installation. You can just enable it and start coding.
+
+### How it works
+
+Enable inline code suggestions using the toggle at the bottom of your notebook. As you type, suggestions appear in light gray text, press tab to accept or modify. Suggestions are based on previous notebook cells.
+
+:::image type="content" source="media\author-execute-notebook\copilot-inline-code.png" alt-text="Screenshot showing how to enable Copilot code completions.":::
+
+:::image type="content" source="media\author-execute-notebook\copilot-code-suggestion.png" alt-text="Screenshot showing automatic code suggestion with Copilot code completion.":::
+
+> [!NOTE]
+> Enabling Copilot inline code completion will consume additional [capacity units](../enterprise/fabric-copilot-capacity.md).
+
+### Current limitations
+
+* Copilot Inline Code Completion currently supports Python language and uses context from previous cells and Lakehouse schemas.
+* Suggestions consider data from Lakehouse schemas.
+* Only a subset of schema elements is used when there are many tables or columns.
+* Dynamically created tables (via Spark) aren't recognized in real time.
+
 ## Run notebooks
 
 You can run the code cells in your notebook individually or all at once. The status and progress of each cell is displayed in the notebook.
@@ -238,7 +267,6 @@ Select **Cancel all** to cancel the running cells or cells waiting in the queue.
 **Stop session** cancels the running and waiting cells and stops the current session. You can restart a brand new session by selecting the run option again.
 
 :::image type="content" source="media\author-execute-notebook\cancel-all-stop-session.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\cancel-all-stop-session.png":::
-
 
 ### Reference run
 
@@ -275,7 +303,7 @@ Examples:
 
 - To run *script_file.py* from the built-in resources with specific variables: ``` %run -b script_file.py { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true, "parameterString": "abc" } ```
 
-> [!NOTE] 
+> [!NOTE]
 > If the command doesn't contain **-b/--builtin**, it attempts to find and execute notebook item inside the same workspace rather than the built-in resources.
 
 Usage example for nested run case:
@@ -319,14 +347,24 @@ In the pop-up, there's an option to reset the timeout to x minutes or hours.
 
 Take your pick in how long you want an uninterrupted session, and hit apply. The session timeout resets itself with the new value and you're good to go!
 
-You can also set timeout as following:
+You can also set timeout as described in:
 
 - [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md#spark-session-configuration-magic-command)
+- [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command)
 
-**How do ABT and Idle Session Timeout impact long-running Fabric Notebook executions?**
+**Stay signed in:** During login, if you see the **Stay signed in** dialog, select **Yes** to deactivate the idle session timeout for your current session.
 
-If your tenant uses Activity-Based Timeout (ABT) enabled, long-running interactive jobs in Fabric notebooks may be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, nonmanaged devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
+> [!IMPORTANT]
+> Do not select the **Don’t show this again** checkbox, as this will lock in your sign-in settings permanently. Note that this option might not appear if your tenant admin has disabled the Keep Me Signed In (KMSI) setting.
+
+**Request a policy change:** If you need a longer session duration, ask your tenant admin to extend the idle session timeout duration policy. They can do this by navigating to Org Settings > Security & Privacy > Idle Session Timeout within the M365 Admin Center.
+
+> [!NOTE]
+> Selecting KMSI and/or extending the idle session timeout duration time will extend the risk of an unlocked machine being accessed.
+
+**How do ABT and idle session timeout impact long-running Fabric Notebook executions?**
+
+If your tenant uses activity-based timeout (ABT), long-running interactive jobs in Fabric notebooks may be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, nonmanaged devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
 
 **Why are users signed out even when a notebook job is still running?**
 
@@ -608,7 +646,7 @@ customizedLogger.critical("customized critical message")
 
 ## View the history of input commands
 
-Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook. 
+Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook.
 
 ``` %history [-n] [range [range ...]] ```
 
@@ -678,4 +716,3 @@ To find all shortcut keys, select **View** on the notebook ribbon, and then sele
 
 - [Notebook visualization](notebook-visualization.md)
 - [Introduction of Fabric NotebookUtils](notebook-utilities.md)
-

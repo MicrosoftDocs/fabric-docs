@@ -7,6 +7,7 @@ author: whhender
 ms.topic: overview
 ms.date: 05/05/2025
 ms.search.form: product-data-factory
+ms.custom: pipelines
 ---
 
 # Data Factory end-to-end scenario: introduction and architecture

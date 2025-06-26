@@ -5,10 +5,12 @@
     items:
     - name: What is Data Factory?
       href: data-factory-overview.md
-    - name: Data Factory training
-      href: /training/paths/get-started-fabric
     - name: What's new in Data Factory
       href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric
+    - name: Guided Data Factory lab
+      href: guided-lab-experience.md
+    - name: Data Factory training
+      href: /training/paths/get-started-fabric
     - name: Pricing in Data Factory
       items:
       - name: Pricing overview
@@ -17,6 +19,8 @@
         href: pricing-pipelines.md
       - name: Pricing Dataflow Gen2
         href: pricing-dataflows-gen2.md
+      - name: Pricing Copy job
+        href: pricing-copy-job.md
       - name: Pricing Apache Airflow job
         href: pricing-apache-airflow-job.md
       - name: Cost estimation from Azure Data Factory to Fabric
@@ -59,7 +63,7 @@
       href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
       href: transform-data.md
-    - name: Decide - Copy activity, dataflow, or Spark?
+    - name: Decide - Copy activity, Copy job, dataflow, or Spark?
       href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md
     - name: How to access on-premises Data
       href: how-to-access-on-premises-data.md
@@ -113,12 +117,6 @@
     items:
     - name: Connector overview
       href: connector-overview.md
-    - name: Dataflow Gen2 connectors
-      href: dataflow-support.md
-    - name: Data pipeline connectors
-      href: pipeline-support.md
-    - name: Copy job connectors
-      href: copy-job-support.md
     - name: Service principal support
       href: service-principals.md
     - name: Access database
@@ -409,6 +407,12 @@
         href: connector-greenplum-for-pipeline-overview.md
       - name: Configure in a data pipeline Copy activity
         href: connector-greenplum-for-pipeline-copy-activity.md
+    - name: Hdfs for Pipeline
+      items:
+      - name: Hdfs for Pipeline - Overview
+        href: connector-hdfs-for-pipeline-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-hdfs-for-pipeline-copy-activity.md        
     - name: Hive LLAP
       items:
       - name: Hive LLAP - Overview
@@ -847,6 +851,8 @@
       href: cdc-copy-job.md
     - name: CI/CD for Copy job
       href: cicd-copy-job.md
+    - name: REST API Capabilities
+      href: copy-job-rest-api-capabilities.md    
   - name: Data gateway
     items:
     - name: On-premises data gateways docs

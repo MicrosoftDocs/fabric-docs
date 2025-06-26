@@ -1,8 +1,8 @@
 ---
 title: "Enable item certification"
 description: "This article shows Microsoft Fabric administrators how to enable item certification in their tenant."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change

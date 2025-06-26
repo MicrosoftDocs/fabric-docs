@@ -6,6 +6,7 @@ ms.author: makromer
 author: kromerm
 ms.topic: conceptual
 ms.date: 01/30/2025
+ms.custom: configuration
 ---
 
 # Planning your migration from Azure Data Factory

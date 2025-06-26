@@ -25,8 +25,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 ## Configure MQTT connector
 [!INCLUDE [mqtt-source-connector](./includes/mqtt-source-connector.md)]
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ## View updated eventstream
 
 1. You see that the MQTT source is added to your eventstream on the canvas in the **Edit** mode. To publish it to live, select **Publish** on the ribbon.
