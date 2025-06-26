@@ -38,8 +38,6 @@ This article shows you how to add a lakehouse as a destination to an eventstream
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Access to the workspace where your lakehouse is located with Contributor or higher permissions.
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ## Add a lakehouse as a destination
 
 To add a lakehouse destination to a default or derived eventstream, follow these steps.
@@ -116,8 +114,6 @@ Before you start, you must complete the following prerequisites:
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Get access to a workspace with Contributor or above permissions where your lakehouse is located.
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add a lakehouse as a destination
 
