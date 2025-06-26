@@ -57,7 +57,7 @@ In the next step, we will be creating a source control connection to Azure DevOp
 ### Obtain the tenant ID
 There are several ways to get this information.  The quickest and easiest is to pull it from the Azure DevOps URL. The `{organization}` portion of the URL contains the Tenant ID.
 
- :::image type="content" source="media/git-integration-with-service-principal/tenant-id-2.png" alt-text="Screenshot of a new connection." lightbox="media/git-integration-with-service-principal/tenant-id-2.png":::
+ :::image type="content" source="media/git-integration-with-service-principal/tenant-id-2.png" alt-text="Screenshot of a connection." lightbox="media/git-integration-with-service-principal/tenant-id-2.png":::
 
 If you use the wrong tenant ID with the preferred setup flow, you will see the following error:
 
@@ -114,7 +114,7 @@ Next, we will create the Azure DevOps source control connection.  There are two 
 7. Under **Authentication method**, select **Service Principal**. 
 8. Complete the other details (Tenant ID, Service principal ID, Service principal key) using the information from above.
 
- :::image type="content" source="media/git-integration-with-service-principal/new-connection-2.png" alt-text="Screenshot of a new connection." lightbox="media/git-integration-with-service-principal/new-connection-2.png":::
+ :::image type="content" source="media/git-integration-with-service-principal/new-connection-2.png" alt-text="Screenshot of a new connection using the preferred method." lightbox="media/git-integration-with-service-principal/new-connection-2.png":::
 
 ### Alternate method of source control connection creation
 1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Select **+New** in the top right corner to add a new cloud connection.
@@ -129,7 +129,7 @@ Next, we will create the Azure DevOps source control connection.  There are two 
 ### Share the Azure DevOps connection with service principal user
 
 1. From Fabric settings, navigate to **Manage Connections and Gateways**
-1. Select the connection you created in [Step 3](#step-3-create-azure-devops-source-control-connection), choose Manage Users 
+1. Select the connection you created in [Step 4](#step-4-create-azure-devops-source-control-connection), choose Manage Users 
 1. Search for the service principal you create and select **Share**.
 
 ### Assign permissions to the service principal
