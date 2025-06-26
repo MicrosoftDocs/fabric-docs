@@ -35,28 +35,34 @@ Register your application with Microsoft Entra ID, and create a secret by follow
 
 
 ## Step: Get connection information
-In order to setup a source control connection with Azure DevOps, some information is required.  
+In the next step, we will be creating a source control connection to Azure DevOps.  Before doing this, we need to gather the information that will be used for our connection.  The following items are required to create a successful connection:
+     - Name
+     - Azure DevOps URL
+     - Tenant ID
+     - Service principal ID
+     - Service principal key
 
-   #### [Microsoft GRAPH](#tab/graph)
+ :::image type="content" source="media/git-integration-with-service-principal/new-connection-2.png" alt-text="Screenshot of a new connection." lightbox="media/git-integration-with-service-principal/new-connection-2.png":::
 
-     ```
-      GET https://graph.microsoft.com/v1.0/organization
-     ```
 
-   #### [PowerShell](#tab/powershell)
+### Obtain the Tenant ID
+There are several ways to get this information.  The quickest and easiest is to pull it from the Azure DevOps URL. The `{organization}` portion of the URL contains the Tenant ID.
 
-     ```powershell
-        #Install the Azure Powershell module
-        Install Module Az -Scope CurrentUser
- 
-        # Connect to Azure with an authenticated account
-        Connect-AzAccount
-   
-        # Convert secure string to plain text
-          $tenantID = (Get-AzContext).Tenant.Id
-          Write-Output "Tenant ID: $tenantID"
-     ```
-     ---
+ :::image type="content" source="media/git-integration-with-service-principal/tenant-id-2.png" alt-text="Screenshot of a new connection." lightbox="media/git-integration-with-service-principal/tenant-id-2.png":::
+
+For additional ways, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
+
+If you use the wrong tenant ID with the preferred setup flow, you will see the following error:
+
+ :::image type="content" source="media/git-integration-with-service-principal/tenant-error.png" alt-text="Screenshot of tenant connection error." lightbox="media/git-integration-with-service-principal/tenant-error.png":::
+
+
+### Obtain the Servie Principal ID
+
+You can find the *Service Principal ID* by navigating to the app in the Azure portal and selecting the Overview tab, use *Application (client) Id* for *Service Principal ID*.
+
+:::image type="content" source="./media/git-integration-with-service-principal/tenant-id.png" alt-text="Screenshot showing where to find the tenant ID in the Azure portal.":::
+
 
 ## Step 3: Create Azure DevOps source control connection
 
@@ -66,13 +72,6 @@ In order to setup a source control connection with Azure DevOps, some informatio
      :::image type="content" source="./media/git-integration-with-service-principal/new-connection.png" alt-text="Screenshot of new connection interface.":::
 
 
-     |Name|Value|Description|
-     |-----|-----|-----|
-     |Tenant Id
-
-     You can also find the *Tenant Id* and *Client Id*  in the Azure portal by navigating to the app in the Azure portal and selecting the Overview tab, use *Application (client) Id* for *Service Principal ID*, use *Directory (tenant) ID* for *Tenant ID* and the secret you kept from step 1 as Service principal key.
-
-     :::image type="content" source="./media/git-integration-with-service-principal/tenant-id.png" alt-text="Screenshot showing where to find the tenant ID in the Azure portal.":::
 
 
 1. From your workspace settings, go to the *Git integration* tab, and select your newly created account. Complete the remaining information.
