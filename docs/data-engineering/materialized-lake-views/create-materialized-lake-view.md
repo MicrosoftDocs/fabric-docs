@@ -1,6 +1,6 @@
 ---
-title: "Create Materialized Lake Views in a Lakehouse"
-description: Learn about materialized lake views sql reference in lakehouse in Microsoft Fabric.
+title: "Materialized lake views Spark SQL reference"
+description: Learn about materialized lake views spark sql reference in Microsoft Fabric.
 ms.topic: quickstart
 author: abhishjain002 
 ms.author: abhishjain
