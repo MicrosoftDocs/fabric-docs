@@ -103,7 +103,7 @@ Alternatively, you can use these steps to create the connection.
 ### Share the Azure DevOps connection with service principal user
 
 1. From Fabric settings, navigate to **Manage Connections and Gateways**
-1. Select the connection you created in [Step 4](#step-4-create-azure-devops-source-control-connection), choose Manage Users 
+1. Select the connection you created in [Step 3](#step-3-create-azure-devops-source-control-connection), choose Manage Users 
 1. Search for the service principal you create and select **Share**.
 
 ### Assign permissions to the service principal
