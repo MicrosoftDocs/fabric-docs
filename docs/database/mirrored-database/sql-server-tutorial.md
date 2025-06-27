@@ -63,7 +63,7 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
     GRANT SELECT, ALTER ANY EXTERNAL MIRROR, 
-       VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE TO [fabric_user];
+       VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE, VIEW PERFORMANCE DEFINITION TO [fabric_user];
     ```
     
     Or, for a Microsoft Entra authenticated login (recommended):
@@ -71,7 +71,7 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
     GRANT SELECT, ALTER ANY EXTERNAL MIRROR, 
-       VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE TO [bob@contoso.com];
+       VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE, VIEW PERFORMANCE DEFINITION TO [bob@contoso.com];
     ```
 
 ## [SQL Server 2016-2022](#tab/sql201622)
