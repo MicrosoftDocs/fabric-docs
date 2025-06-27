@@ -1,5 +1,5 @@
 ---
-title: Process Events with Multiple Schemas
+title: Process events with multiple schemas
 description: Provides information on using multiple schema feature to process and preview events in Microsoft Fabric Eventstream.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -7,10 +7,10 @@ author: wenyang
 ms.topic: how-to
 ms.custom:
 ms.date: 06/25/2025
-ms.search.form: Process Events with Multiple Schemas
+ms.search.form: Process events with multiple schemas
 ---
 
-# Process Events with Multiple Schemas
+# Process events with multiple schemas
 
 ## Overview
 
@@ -117,6 +117,7 @@ You can also map the schema during its first use in the processing path. When yo
 ## FAQ
 
 **Q: Why is no schema inferred after I add a source and refresh the test results?**  
+
 A: When creating a new eventstream and adding a source that doesn't support data preview, no schema will be inferred immediately, even after refreshing the test results. For example, the custom endpoint source, Azure Service Bus, etc. To generate inferred schemas in this case, you need to publish Eventstream first and wait for data to arrive in your eventstream. Once data starts flowing into your eventstream, switch back to Edit mode to view the inferred schemas. This is because the schemas are inferred based on the data previewed from both sources and eventstream.
 
 If you use the inferred schema in a transformation path, make sure to manually map the schema to the correct source under the Inferred schema tab.
@@ -124,23 +125,29 @@ If you use the inferred schema in a transformation path, make sure to manually m
 :::image type="content" source="./media/process-events-with-multiple-schemas/re-enter-edit-mode.png" alt-text="Screenshot showing reentering edit mode to map data source that dose not supports data preview." lightbox="./media/process-events-with-multiple-schemas/re-enter-edit-mode.png":::
 
 **Q: I edited the inferred schema, but the data didn’t change. Why?**  
+
 A: Editing an inferred schema modifies Eventstream's interpretation of your incoming data structure but doesn't alter the actual data values and types. Use this function when you determine that the inferred schema isn't consistent with your real data format and structure. To apply changes to the data itself (for example, renaming fields, converting types), use the **Managed Field** operator in the transformation path.
 
 **Q: What if the schema of my data in the existing source changes after schema inference?**  
+
 A: If the data structure changes (for example, new fields added, data type changes, etc.) in a source, a new schema is inferred when this new data is previewed in this eventstream as schema is inferred from the previewed data. You can review and use the new schema in Edit mode. Or the new schema can be used to organize the previewed data in Live view. If your previous schema is used in an operator or destination, and the eventstream is published, your previous schema is retained and can still be viewed in edit mode. 
 
-**Q: What are the consequences of publishing an eventstream if a schema is not mapped to any source?**  
+**Q: What are the consequences of publishing an eventstream if a schema is not mapped to any source?** 
+
 A: This schema won't be retained in this eventstream because it's a temporary schema and isn't used by any operator or destination configurations.
 
 **Q: Can I still use CI/CD or REST API after enabling multiple schema support?**  
+
 A: Yes. Enabling multiple schema support doesn't affect the ability to use CI/CD or REST API with Eventstream.  
 
 **Q: What happens if I delete an existing source that has a mapped schema?**  
+
 A: If the schema inferred from the source isn't used in any operator or destination, deleting the source doesn't result in an error. However, if the schema inferred from the source is used in any operator or destination, an authoring error occurs. To proceed, you need to remap the schema inferred from the deleted source to a valid source before publishing, or you select another schema as the input schema for the operator.
 
 :::image type="content" source="./media/process-events-with-multiple-schemas/re-map-schema.png" alt-text="Screenshot showing how to remap schema." lightbox="./media/process-events-with-multiple-schemas/re-map-schema.png":::
 
 **Q: Why do I see an extra schema after enabling this feature on an existing eventstream?**  
+
 A: When this feature is enabled in an existing eventstream and you switch to Edit mode, an extra schema containing mixed fields appear in certain cases. This schema originates from the existing eventstream, which used for operator configurations in existing eventstream. By default, it's mapped to all sources because Eventstream can't determine its origin. This safeguards the continuity of your current setup without errors.
 
 :::image type="content" source="./media/process-events-with-multiple-schemas/extra-schema.png" alt-text="Screenshot explaining why there's an extra schema in migration scenario." lightbox="./media/process-events-with-multiple-schemas/extra-schema.png":::
