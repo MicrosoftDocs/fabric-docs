@@ -146,8 +146,6 @@ A: If the schema inferred from the source isn't used in any operator or destinat
 
 A: When this feature is enabled in an existing eventstream and you switch to Edit mode, an extra schema containing mixed fields appear in certain cases. This schema originates from the existing eventstream, which used for operator configurations in existing eventstream. By default, it's mapped to all sources because Eventstream can't determine its origin. This safeguards the continuity of your current setup without errors.
 
-:::image type="content" source="./media/process-events-with-multiple-schemas/extra-schema.png" alt-text="Screenshot explaining why there's an extra schema in migration scenario." lightbox="./media/process-events-with-multiple-schemas/extra-schema.png"::
-
 ## Limitations
 
 - Currently, if an eventstream is enabled **multiple schemas support**, **CI/CD** and **REST APIs** are not supported.
