@@ -38,7 +38,7 @@ ms.date: 06/23/2025
             :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings."::: 
 1. Depending on whether your data is encoded using Confluent Schema Registry:
    - If not encoded, select **Next**. On the **Review and create** screen, review the summary, and then select **Add** to complete the setup.
-   - If encoded, proceed to the next step: [Connect Eventstream to Confluent schema registry](#connect-eventstream-to-confluent-schema-registry)
+   - If encoded, proceed to the next step: [Connect to Confluent schema registry to decode data](#connect-to-confluent-schema-registry-to-decode-data)
 
 ### Connect to Confluent schema registry to decode data
 Eventstream's Confluent Cloud for Apache Kafka streaming connector is capable of decoding data produced with Confluent serializer and its Schema Registry from Confluent Cloud. Data encoded with this serializer of Confluent schema registry require schema retrieval from the Confluent Schema Registry for decoding. Without access to the schema, Eventstream can't preview, process, or route the incoming data. 
