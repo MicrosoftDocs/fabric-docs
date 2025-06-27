@@ -150,7 +150,7 @@ A: When this feature is enabled in an existing eventstream and you switch to Edi
 
 ## Limitations
 
-- Currently, if **multiple schemas support** is enabled for an eventstream, **CI/CD** and **REST APIs** are not supported.
+- Currently, if an eventstream is enabled **multiple schemas support**, **CI/CD** and **REST APIs** are not supported.
 
 ## Related content
 
