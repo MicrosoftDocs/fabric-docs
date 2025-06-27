@@ -36,16 +36,23 @@ ms.date: 06/23/2025
         - **None** – don't automatically set the offset. 
 
             :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings."::: 
-1. You may expand **Advanced settings** to configure how the source data is handled before streaming to Fabric.
-    1. **Define and serialize data**: Select **Yes** allows you to serialize the data into a standardized format. Select **No** keeps the data in its original format and passes it through without modification.
-    1. If your data is encoded using a schema registry, select **Yes** when choosing whether the data is encoded with a schema registry. Then, select **New connection** to configure access to your Confluent Schema Registry:
-        - **Schema Registry URL**: The public endpoint of your schema registry.
-        - **API Key** and **API Key Secret**: Navigate to Confluent Cloud Environment's Schema Registry to copy the **API Key** and **API Secret**. Ensure the account used to create this API key has **DeveloperRead** or higher permission on the schema. 
-        - **Privacy Level**: Choose from **None**, **Private**, **Organizational**, or **Public**.
-    1. **JSON output decimal format**: Specifies the JSON serialization format for Decimal logical type values from the source.
-        - **NUMERIC**: Serialize as numbers.
-        - **BASE64**: Serialize as base64 encoded data.
+1. Depending on whether your data is encoded using Confluent Schema Registry:
+   - If not encoded, select **Next**. On the **Review and create** screen, review the summary, and then select **Add** to complete the setup.
+   - If encoded, proceed to the next step: [Connect Eventstream to Confluent schema registry](#configure-confluent-schema-registry-to-decode-data)
 
-         :::image type="content" source="./media/confluent-kafka-source-connector/confluent-schema-registry.png" alt-text="Screenshot that shows advanced settings of the Confluent schema registry settings.":::  
+## Connect Eventstream to Confluent schema registry
+Eventstream's Confluent Cloud for Apache Kafka streaming connector is capable of decoding data produced with Confluent serializer and its Schema Registry from Confluent Cloud. The Schema Registry serves as a centralized service that manages and validates schemas for Kafka topics, ensuring consistent data structures between producers and consumers. Messages encoded with this serializer require schema retrieval from the registry for decoding. Without access to the schema, Eventstream can't preview, process, or route the incoming Kafka data. 
+
+You may expand **Advanced settings** to configure Confluent Schema Registry connection:
+
+1. **Define and serialize data**: Select **Yes** allows you to serialize the data into a standardized format. Select **No** keeps the data in its original format and passes it through without modification.
+1. If your data is encoded using a schema registry, select **Yes** when choosing whether the data is encoded with a schema registry. Then, select **New connection** to configure access to your Confluent Schema Registry:
+    - **Schema Registry URL**: The public endpoint of your schema registry.
+    - **API Key** and **API Key Secret**: Navigate to Confluent Cloud Environment's Schema Registry to copy the **API Key** and **API Secret**. Ensure the account used to create this API key has **DeveloperRead** or higher permission on the schema. 
+    - **Privacy Level**: Choose from **None**, **Private**, **Organizational**, or **Public**.
+1. **JSON output decimal format**: Specifies the JSON serialization format for Decimal logical type values from the source.
+    - **NUMERIC**: Serialize as numbers.
+    - **BASE64**: Serialize as base64 encoded data.
+
+    :::image type="content" source="./media/confluent-kafka-source-connector/confluent-schema-registry.png" alt-text="Screenshot that shows advanced settings of the Confluent schema registry settings.":::  
     
-1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.
