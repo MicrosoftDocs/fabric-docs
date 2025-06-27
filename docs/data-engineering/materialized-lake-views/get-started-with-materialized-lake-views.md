@@ -1,5 +1,5 @@
 ---
-title: "Get strated with materialized lake views in a Lakehouse"
+title: "Get started with materialized lake views in a Lakehouse"
 description: Learn how to get started with materialized lake view and create your first MLV.
 ms.topic: quickstart
 author: abhishjain002 
@@ -9,9 +9,9 @@ ms.date: 06/26/2025
 #customer intent: As a data engineer, I want to create materialized lake views in lakehouse so that I can optimize query performance and manage data quality.
 ---
 
-# Get started with materialized lake view
+# Get started with materialized lake views
 
-In this article, you learn how to get started and create materialized lake view (mlv) in a lakehouse in Microsoft Fabric. 
+In this article, you learn how to get started and create materialized lake views(mlv) in a lakehouse in Microsoft Fabric. 
 
 ## Prerequisites
 
@@ -31,40 +31,41 @@ In this article, you learn how to get started and create materialized lake view 
 
    :::image type="content" source="./media/create-materialized-lake-view/materialized-lake-view-notebook.png" alt-text="Screenshot showing how to new materialized lake view." border="true" lightbox="./media/create-materialized-lake-view/materialized-lake-view-notebook.png":::
 
-1. Run the following command in the notebook to create a sample source tables `products` and `orders`.
+1. Run the following command in the notebook to create sample source tables `products` and `orders`.
 
    ```sql
-         CREATE SCHEMA IF NOT EXISTS bronze;
-   
-         CREATE TABLE IF NOT EXISTS bronze.products (
-          product_id INT,
-          product_name STRING,
-          price DOUBLE
-         );
-   
-         INSERT INTO bronze.products VALUES
-         (101, 'Laptop', 1200.50),
-         (102, 'Smartphone', 699.99),
-         (103, 'Tablet', 450.00);
+      CREATE SCHEMA IF NOT EXISTS bronze;
+
+      CREATE TABLE IF NOT EXISTS bronze.products (
+       product_id INT,
+       product_name STRING,
+       price DOUBLE
+      );
+
+      INSERT INTO bronze.products VALUES
+      (101, 'Laptop', 1200.50),
+      (102, 'Smartphone', 699.99),
+      (103, 'Tablet', 450.00);
    ```
    ```sql
 
-         CREATE TABLE bronze.orders (
-           order_id INT,
-           product_id INT,
-           quantity INT,
-           order_date DATE
-          );
-         INSERT INTO bronze.orders VALUES
-          (1001, 101, 2, '2025-06-01'),
-          (1002, 103, 1, '2025-06-02'),
-          (1003, 102, 3, '2025-06-03');
+      CREATE TABLE bronze.orders (
+        order_id INT,
+        product_id INT,
+        quantity INT,
+        order_date DATE
+       );
+      INSERT INTO bronze.orders VALUES
+       (1001, 101, 2, '2025-06-01'),
+       (1002, 103, 1, '2025-06-02'),
+       (1003, 102, 3, '2025-06-03');
    ```
 
-1. Create materialized lake view using the source table. Run the following command
+1. Create materialized lake views using the source tables. Run the following command.
 
    ```sql
       CREATE SCHEMA IF NOT EXISTS SILVER;
+   
       CREATE MATERIALIZED LAKE VIEW IF NOT EXISTS silver.cleaned_order_data AS
       SELECT 
           o.order_id,
@@ -81,6 +82,7 @@ In this article, you learn how to get started and create materialized lake view 
 
    ```sql
       CREATE SCHEMA IF NOT EXISTS GOLD;
+   
       CREATE MATERIALIZED LAKE VIEW IF NOT EXISTS gold.product_sales_summary AS
       SELECT
           product_id,
@@ -94,20 +96,28 @@ In this article, you learn how to get started and create materialized lake view 
           product_id,
           product_name;
    ```
-1. Open Lakehouse Explorer to see all created tables and MLVs.
+1. Open Lakehouse explorer to view all created tables and MLVs.
+
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/mlv-created-snapshot.png" alt-text="Screenshot showing materialized lake views created in lakehouse." border="true" lightbox="./media/get-started-with-materialized-lake-views/mlv-created-snapshot.png":::
    
-1. Navigate to the "Manage materialized lake views" option in your Lakehouse to view the auto-generated lineage.
+1. Navigate to the **Manage materialized lake views** option in your Lakehouse to view the auto-generated lineage.
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/manage-materialized-lake-views.png" alt-text="Screenshot showing materialized lake view." border="true" lightbox="./media/create-materialized-lake-view/manage-materialized-lake-views.png":::
-   ![image](https://github.com/user-attachments/assets/eeabdbf3-cca1-4069-9370-387cd4e60c6f)
-
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/sample-lineage.png" alt-text="Screenshot showing lineage." border="true" lightbox="./media/get-started-with-materialized-lake-views/sample-lineage.png":::
+  
 1. Schedule the lineage execution.
 
-   ![image](https://github.com/user-attachments/assets/01dc7aaa-0d5f-42f5-ad8d-d8e488072e7b)
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/schedule_lineage-run.png" alt-text="Screenshot showing how to schedule the lineage." border="true" lightbox="./media/get-started-with-materialized-lake-views/schedule_lineage-run.png":::
 
 1. Click on the ongoing run to monitor progress once the schedule starts.
+
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/on-going-run-progress.png" alt-text="Screenshot showing progress of on-ongoing run." border="true" lightbox="./media/get-started-with-materialized-lake-views/on-going-run-progress.png":::
+
+1. Once the run succeeds, the lineage will display as completed.
+
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/completed-lineage-run.png" alt-text="Screenshot showing completed lineage run." border="true" lightbox="./media/get-started-with-materialized-lake-views/completed-lineage-run.png":::
+    
 ## Next steps
 
-* [Create materialized lake view - Spark SQL reference](./create-materialized-lake-view.md)
+* [Spark SQL reference - materialized lake views](./create-materialized-lake-view.md)
 * [Refresh materialized lake views](./refresh-materialized-lake-view.md)
    
