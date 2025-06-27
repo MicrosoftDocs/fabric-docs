@@ -40,7 +40,7 @@ ms.date: 06/23/2025
    - If not encoded, select **Next**. On the **Review and create** screen, review the summary, and then select **Add** to complete the setup.
    - If encoded, proceed to the next step: [Connect Eventstream to Confluent schema registry](#connect-eventstream-to-confluent-schema-registry)
 
-## Connect Eventstream to Confluent schema registry
+### Connect to Confluent schema registry to decode data
 Eventstream's Confluent Cloud for Apache Kafka streaming connector is capable of decoding data produced with Confluent serializer and its Schema Registry from Confluent Cloud. Data encoded with this serializer of Confluent schema registry require schema retrieval from the Confluent Schema Registry for decoding. Without access to the schema, Eventstream can't preview, process, or route the incoming data. 
 
 You may expand **Advanced settings** to configure Confluent Schema Registry connection:
