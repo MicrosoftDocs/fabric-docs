@@ -35,7 +35,7 @@ Tables should include columns for filtering, grouping, sorting, and summarizing,
 
 To learn how to select which tables to include in your Direct Lake semantic model, see [Edit tables for Direct Lake semantic models](direct-lake-edit-tables.md).
 
-For more information about columns to include in your semantic model tables, see [Understand storage for Direct Lake semantic models](../fundamentals/direct-lake-understand-storage.md#unnecessary-columns).
+For more information about columns to include in your semantic model tables, see [Understand Direct Lake query performance](../fundamentals/direct-lake-understand-storage.md).
 
 ## Enforce data-access rules
 
@@ -191,7 +191,7 @@ The following model features aren't supported by Direct Lake semantic models:
 
 - [Direct Lake overview](../fundamentals/direct-lake-overview.md)
 - [Manage Direct Lake semantic models](../fundamentals/direct-lake-manage.md)
-- [Understand storage for Direct Lake semantic models](../fundamentals/direct-lake-understand-storage.md)
+- [Understand Direct Lake query performance](../fundamentals/direct-lake-understand-storage.md)
 - [Create a lakehouse for Direct Lake](direct-lake-create-lakehouse.md)
 - [Edit tables for Direct Lake semantic models](direct-lake-edit-tables.md)
 - [OneLake integration for semantic models](/power-bi/enterprise/onelake-integration-overview)

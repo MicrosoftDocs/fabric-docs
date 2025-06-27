@@ -135,7 +135,7 @@ items:
   items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
-  - name: Understand storage for Direct Lake
+  - name: Understand Direct Lake query performance
     href: direct-lake-understand-storage.md
   - name: Direct Lake in Power BI Desktop (preview)
     href: direct-lake-power-bi-desktop.md 
