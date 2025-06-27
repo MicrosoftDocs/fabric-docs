@@ -50,7 +50,7 @@ You may expand **Advanced settings** to configure Confluent Schema Registry conn
     - **Schema Registry URL**: The public endpoint of your schema registry.
     - **API Key** and **API Key Secret**: Navigate to Confluent Cloud Environment's Schema Registry to copy the **API Key** and **API Secret**. Ensure the account used to create this API key has **DeveloperRead** or higher permission on the schema. 
     - **Privacy Level**: Choose from **None**, **Private**, **Organizational**, or **Public**.
-1. **JSON output decimal format**: Specifies the JSON serialization format for Decimal logical type values from the source.
+1. **JSON output decimal format**: Specifies the JSON serialization format for Decimal logical type values in the data from the source.
     - **NUMERIC**: Serialize as numbers.
     - **BASE64**: Serialize as base64 encoded data.
 1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add** to complete the setup.
