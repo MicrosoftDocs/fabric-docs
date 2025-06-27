@@ -13,7 +13,7 @@ In this section of the tutorial, you project your digital twin builder (preview)
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-During this tutorial section, you create shortcuts to bring your digital twin builder data from the lakehouse where it's stored into your *Tutorial* KQL database in Eventhouse. Then, you run a notebook code sample that generates a script to project organized views of your digital twin builder data in Eventhouse. The script creates user-defined functions in Eventhouse, one for each entity and property type in your digital twin builder ontology. Later, you can use these functions in KQL queries to access your organized digital twin builder ontology data from Eventhouse.
+During this tutorial section, you create shortcuts to bring your digital twin builder data from the lakehouse where it's stored into your *Tutorial* KQL database in Eventhouse. Then, you run a notebook code sample that generates a script to project organized views of your digital twin builder data in Eventhouse. The script creates user-defined functions in Eventhouse, one for each combination of entity type and property type in your digital twin builder ontology. Later, you can use these functions in KQL queries to access your organized digital twin builder ontology data from Eventhouse.
 
 ## Prepare eventhouse KQL database
 
@@ -87,7 +87,7 @@ Next, install the Python package that the notebook needs to work with digital tw
 
 ## Run Eventhouse projection code
 
-Next, run the rest of the notebook code to generate the Eventhouse projection script. This script creates user-defined functions in Eventhouse that correspond to your digital twin builder entities and their properties.
+Next, run the rest of the notebook code to generate the Eventhouse projection script. This script creates user-defined functions in Eventhouse that correspond to your digital twin builder entity types and their properties.
 
 1. In the second code block, there are variables for `dtb_item_name` and `kql_db_name`. Fill their values with *BusModel* and *Tutorial* (case-sensitive). Run the code block. The notebook confirms the successful run status with a checkmark underneath the code.
 
@@ -98,7 +98,7 @@ Next, run the rest of the notebook code to generate the Eventhouse projection sc
     1. Sets up a **Spark reader** to pull data from the digital twin builder database
     1. **Generates a script** that pushes your digital twin builder data into Eventhouse
     1. Automatically creates several **functions** based on your digital twin builder's configuration, to make this data readily accessible in Eventhouse for use in KQL queries
-1. The notebook confirms the successful run status with a checkmark underneath the code, and a list of functions that were added (one for each entity and property type).
+1. The notebook confirms the successful run status with a checkmark underneath the code, and a list of functions that were added (one for each combination of entity type and property type).
 
     :::image type="content" source="media/tutorial-rti/notebook-run-3.png" alt-text="Screenshot of running the third code block.":::
 
@@ -109,7 +109,7 @@ Next, run the rest of the notebook code to generate the Eventhouse projection sc
 
     :::image type="content" source="media/tutorial-rti/notebook-run-4.png" alt-text="Screenshot of running the fourth code block.":::
 
-Now the projection functions are created in Eventhouse, one for each digital twin builder entity and its property types. 
+Now the projection functions are created in Eventhouse, one for each property type on each digital twin builder entity type. 
 
 ## Verify projection functions
 

@@ -56,7 +56,7 @@ This tutorial deals with a subset of the distillation process outlined in the pr
 
 ## Data sources
 
-Contoso Energy wants to model and standardize distillation processes across their sites. To model their process on digital twin builder, they start by representing 10 sites, where each site is a *Process* entity. 
+Contoso Energy wants to model and standardize distillation processes across their sites. To model their process on digital twin builder, they start by representing 10 sites, where each site is an instance of a *Process* entity. 
 
 ### Raw data for tutorial
 
@@ -88,8 +88,8 @@ Specifically, you learn how to:
 > [!div class="checklist"]
 >
 > * Set up your environment and deploy a digital twin builder item
-> * Create entities, and map property and time series data to them
-> * Define semantic relationships between entities
+> * Create entity types, and map property and time series data to them
+> * Define semantic relationships between entity types
 > * Search and explore your ontology
 > * Create a Power BI report with digital twin builder data
 
