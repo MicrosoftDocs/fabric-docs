@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 09/18/2024
 ---
 
-# Configure high concurrency mode for Fabric notebooks in pipelines (Preview)
+# Configure high concurrency mode for Fabric notebooks in pipelines
 
 When you execute a notebook step within a pipeline, an Apache Spark session is started and is used to run the queries submitted from the notebook. When you enable high concurrency mode for pipelines, your notebooks will be automatically packed into the existing spark sessions.
 

@@ -11,9 +11,6 @@ ms.date: 03/20/2025
 
 This article explains how Git integration and deployment pipelines work for mirrored databases in Microsoft Fabric. Learn how to set up a connection to your repository, manage your mirrored databases through Git, and deploy them across different environments.
 
-> [!NOTE]
-> This CI/CD instruction doesn't apply to mirrored database from Azure Databricks.
-
 ## Mirrored database Git integration
 
 From your workspace settings, you can easily set up a connection to your repo to commit and sync changes. To set up the connection, see [Get started with Git integration](../../cicd/git-integration/git-get-started.md) article. 
@@ -50,7 +47,7 @@ Take the following steps to deploy your mirrored database using deployment pipel
 
 3. Select, view, and compare items including mirrored database between different stages.
 
-4. Select **Deploy** to deploy your mirrored database across the stages. You may see warning saying the item (SQL analytics endpoint) is not supported, ignore and continue.
+4. Select **Deploy** to deploy your mirrored database across the stages. You may see warning saying the item (SQL analytics endpoint) is not supported, ignore and continue
 
    :::image type="content" source="media/mirrored-database-cicd/deployment-pipeline.png" alt-text="Screenshot of deployment pipeline for mirrored database.":::
 
