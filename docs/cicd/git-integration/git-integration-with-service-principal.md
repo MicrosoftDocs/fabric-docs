@@ -74,7 +74,7 @@ To obtain the Service principal ID, use the following steps.
 
 :::image type="content" source="./media/git-integration-with-service-principal/tenant-id.png" alt-text="Screenshot showing where to find the tenant ID in the Azure portal.":::
 
-### Prefered method of source control connection creation
+### Create the source control connection
 To create the source control connection, use the following steps.
 
 1. From a workspace, select **workspace settings**
