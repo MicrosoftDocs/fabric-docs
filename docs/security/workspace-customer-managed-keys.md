@@ -92,7 +92,7 @@ Once you complete these steps, your workspace is encrypted with a customer-manag
 
 ## Revoke access
 
-To revoke access to data in a workspace that's encrypted using a customer-managed key, revoke the key in the Azure Key Vault. After 30 minutes from the time the key is revoked, read and write calls to the workspace fail.
+To revoke access to data in a workspace that's encrypted using a customer-managed key, revoke the key in the Azure Key Vault. Within 60 minutes from the time the key is revoked, read and write calls to the workspace fail.
 
 You can revoke a customer-managed encryption key by changing the access policy, by changing the permissions on the key vault, or by deleting the key.
 
@@ -137,6 +137,8 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 * CMK is only supported in the following regions: East US, Germany West Central, North Central US, North Europe, South Central US, Southeast Asia, UAE North, UK South, West Europe, and West US. To use CMK, your home region and capacity must be in a supported region.
 
 * CMK is supported on all [F SKUs](../enterprise/licenses.md).
+
+* CMK can be enabled using the Fabric portal and does not have API support.
 
 * CMK is not supported when Azure Key Vault firewall setting is enabled.
 
