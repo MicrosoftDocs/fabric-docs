@@ -178,8 +178,6 @@ for column in da_results['Summary'].columns:
     html_table += f"<tr><td>{column}</td><td>{df1[column]}</td></tr>"
 html_table += "</table>"
 
-Delta tables created and loaded by Fabric items such as [data pipelines](../data-factory/data-factory-overview.md#data-pipelines), and [dataflows](../data-factory/data-factory-overview.md#dataflows) automatically apply V-Order. However, Parquet files uploaded to a Fabric lakehouse, or that are referenced by a [shortcut](../onelake/onelake-shortcuts.md), might not have this optimization applied. While non-optimized Parquet files can still be read, the read performance likely won't be as fast as an equivalent Parquet file that's had V-Order applied.
-
 display(HTML(html_table))
 ```
 
