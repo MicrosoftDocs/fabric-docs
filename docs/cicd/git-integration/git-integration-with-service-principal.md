@@ -98,7 +98,7 @@ Alternatively, you can use these steps to create the connection.
 
 3. From your workspace settings, go to the *Git integration* tab, and select your newly created account. Complete the remaining information.
 
-## Step 5: Allow calling Git REST APIs with service principal (optional)
+## Step 4: Allow calling Git REST APIs with service principal (optional)
 
 ### Share the Azure DevOps connection with service principal user
 
