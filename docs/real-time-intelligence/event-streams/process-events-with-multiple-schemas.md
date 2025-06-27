@@ -141,7 +141,7 @@ A: This schema won't be retained in this eventstream because it's a temporary sc
 A: Yes. Enabling multiple schema support doesn't affect the ability to use CI/CD or REST API with Eventstream. 
 
 > [!NOTE]
-> currently, when using CI/CD to import or using REST API to create Eventstreams, **the multiple schemas support feature is not enabled by default**.  
+> Currently, when using CI/CD to import or using REST API to create Eventstreams, **the multiple schemas support feature is not enabled by default**.  
 > To ensure your eventstream works as expected and to avoid failures when updating your eventstream via CI/CD or REST API, manually enable the multiple schemas support feature after the Eventstream is imported or created.
 
 **Q: What happens if I delete an existing source that has a mapped schema?**  
