@@ -5,38 +5,38 @@ description: Learn about Cosmos DB in Microsoft Fabric, an integrated NoSQL deve
 author: seesharprun
 ms.author: sidandrews
 ms.topic: overview
-ms.date: 06/06/2025
+ms.date: 06/27/2025
 ---
 
 # What is Cosmos DB in Microsoft Fabric (preview)?
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
-Cosmos DB in Microsoft Fabric is an AI-optimized NoSQL database automatically configured for typical development needs with a simplified management experience. As a developer, you can use Cosmos DB in Fabric to build AI applications with less friction and without having to take on typical database management tasks. Cosmos DB in Microsoft Fabric is build on the same engine as [Azure Cosmos DB for NoSQL](/azure/cosmos-db/nosql). This shared engine provides dynamic scaling, high availability, and built-in reliability for your database.
+Cosmos DB in Microsoft Fabric is an AI-optimized NoSQL database with a simplified management experience. As a developer, you can use Cosmos DB in Fabric to build AI applications with less friction and without having to take on typical database management tasks. Cosmos DB in Microsoft Fabric uses the same engine, same infrastructure as [Azure Cosmos DB for NoSQL](/azure/cosmos-db/nosql), but is tightly integrated into Fabric. Cosmos DB provides a schemaless data model ideal for semi-structured data, limitless and automatic scaling, and low latency and performance guarantees; with built-in high availability. 
 
-## Use as a NoSQL database
+## Why Cosmos DB in Fabric? 
 
-Cosmos DB in Fabric is a **database** workload. You can use a combination of database workloads to store both semi-structured and relational databases in Fabric. With various databases available, you can unify your data platform and analytics experience across your entire application solution. Cosmos DB is also already configured with AI capabilities like full-text search, hybrid search, and vector indexing.
+- **Optimized for semi-structured data**: Cosmos DB in Fabric is a database workload optimized for semi-structured data. You can use Cosmos DB and SQL DB in Fabric together to store both semi-structured and relational data. With various databases available, you can unify your data platform and analytics experience across your entire application solution. Cosmos DB comes with built-in AI capabilities like full-text search, hybrid search, and vector indexing. 
 
-Cosmos DB in Fabric is preconfigured with defaults that are appropriate for most application workloads. Existing applications can connect to Cosmos DB in a manner similar to Azure Cosmos DB for NoSQL. Existing applications can use Cosmos DB by specifying the Fabric-supplied database endpoint and using Microsoft Entra authentication. Your host applications can use various identity types, like human identities, application identities, or workload identities, to connect to the database in a secure manner. Other Azure services, like Azure Functions, can use managed identities to connect in the same way.
+- **Autonomous**: Cosmos DB in Fabric comes with autonomous defaults optimized for most application workloads. Existing applications can connect to Cosmos DB by specifying the Fabric-supplied connection string and using Microsoft Entra authentication. Your host applications can use various identity types, like human identities, application identities, or workload identities, to connect to the database in a secure manner.  
 
-## Integrate with Fabric
+- **Integrated**: Data in Cosmos DB is automatically made available in Fabric OneLake in the Delta Parquet format. Since the data is surfaced in OneLake, the platform allows you to use Cosmos DB in various integrated scenarios including, but not limited to: 
 
-Data in Cosmos DB is automatically made available in Fabric OneLake in the Delta Parquet format. Since the data is surfaced in OneLake, the platform allows you to use Cosmos DB in various integrated scenarios including, but not limited to:
+  - Obtaining near-realtime insights into Cosmos DB data using data science tools like notebooks and Lakehouse, visualizing in Power BI
+  
+  - Querying data across Cosmos DB and other Fabric-native databases in a single unified query 
 
-- Migrating data between databases using jobs, flows, and pipelines
-
-- Searching Cosmos DB together with other Fabric-native databases in a single unified query
-
-- Integrating with data science tools like notebooks and Lakehouse
-
-- Performing operations like reverse Extract, Transform, and Load (ETL)
-
-- Generating vector embeddings from chunked data in Fabric note
-
-- Providing context to NoSQL data using functions or Apache Spark
-
-- Creating a common query layer using GraphQL
+  - Serving high value One Lake data back to the app with low latency and high concurrency/reliability, without the need to do reverse ETL 
+  
+  - Generating vector embeddings from chunked data in Fabric One Lake 
+  
+  - Migrating data between databases using jobs, flows, and pipelines 
+  
+  - Performing operations like reverse Extract, Transform, and Load (ETL) 
+  
+  - Building an API over nonrelational data using functions  
+   
+  - Creating a common query layer using GraphQL 
 
 ## Start with Cosmos DB
 
