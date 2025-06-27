@@ -50,7 +50,7 @@ Next, we will create the Azure DevOps source control connection.  The following 
 |Authentication method|The authentication method for the connection. Service Principal should be selected|
 |Tenant ID|The ID of the tenant where Azure DevOps is located.  See the [Obtain the tenant ID](#obtain-the-tenant-id) section.|
 |Service principal ID|The Application (client) Id from the app overview in the Azure portal.  See the [Obtain Service Principal ID](#obtain-the-service-principal-id) section.|
-|Service principal key|Obtained in step 1.|
+|Service principal key|That's the secret obtained in step 1.|
 
 ### Obtain the tenant ID 
 To obtain the tenant ID, use the following steps.
