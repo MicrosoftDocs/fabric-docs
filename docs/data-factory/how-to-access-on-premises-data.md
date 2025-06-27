@@ -128,6 +128,8 @@ In this example, you'll create and run a [pipeline](pipeline-runs.md) to load da
 
 > [!NOTE]
 > Local access to the machine with the on-premises data gateway installed isn't allowed in data pipelines.
+> 
+> In the West India region, the option to select the on-premises data gateway is currently unavailable when creating a Data Factory pipeline connection. Use a tenant located in a region other than West India.
 
 ## Use on-premises data in a Copy job
 
