@@ -21,7 +21,7 @@ Before you start, you must complete the following prerequisites:
 ## Add SQL code editor to an eventstream
 To perform stream processing operations on your data streams using SQL operator, add a SQL operator to your eventstream using the following instructions. 
 
-1. Add SQL operator to your event stream by using one of the following options:
+1. Create a new eventstream and add SQL operator to your event stream by using one of the following options: 
     - Add SQL operator using the **Transform Events** button at the top ribbon. 
 
         :::image type="content" source="./media/process-events-using-sql-code-editor/transform-sql-menu.png" alt-text="Screenshot that shows the selection SQL operator in the Transfor events menu." lightbox="./media/process-events-using-sql-code-editor/transform-sql-menu.png":::
@@ -38,74 +38,72 @@ To perform stream processing operations on your data streams using SQL operator,
 1. The full-screen code editor mode features an input/output explorer panel on the left side. The code editor section is adjustable, allowing you to resize it according to your preferences. The preview section at the bottom enables you to view both your input data and query test results. 
 
       :::image type="content" source="./media/process-events-using-sql-code-editor/sql-full-editor.png" alt-text="Screenshot that shows the SQL full editor." lightbox="./media/process-events-using-sql-code-editor/sql-full-editor.png":::    
-1. To add an output destination, navigate to the output section in the left panel, select the green **+** button, and select your desired destination from the available options. 
+1. Add an alias to the output destination where the data processed through SQL operator will be written. SQL operator supports all Real-Time Intelligence destinations: Eventhouse, Lakehouse, Activator, Derivedstream, etc.
 
       :::image type="content" source="./media/process-events-using-sql-code-editor/select-destination.png" alt-text="Screenshot that shows the Outputs window with the + button selected." lightbox="./media/process-events-using-sql-code-editor/select-destination.png":::    
-1. In this window, you can perform operations such as the following ones:
-    1. Select the text in the **Outputs** section, and enter a name for the destination node. 
-    1. Test the SQL query. 
-    1. Copy the SQL query to the clipboard.
+1. Select the text in the **Outputs** section, and enter a name for the destination node. 1. 
+1. Next, add SQL query for the required data transformation. Your Test query button from the top ribbon to validate the transformation logic.
+
+    Eventstream is built on top of Azure Stream Analytics and it supports the same query semantics of Stream Analytics query language. To learn more about the syntax and usage, see [Stream Analytics Query Language Reference - Stream Analytics Query | Microsoft Learn](/stream-analytics-query/stream-analytics-query-language-reference).
+
+    **Basic query structure:**
+
+    ```sql
+    SELECT 
+    
+        column1, column2, ... 
+    
+    INTO 
+    
+        [output alias] 
+    
+    FROM 
+    
+        [input alias] 
+    ```
+    **Query examples:**
+
+    Detecting high temperatures in a room every minute:
+    
+    ```sql
+    
+        SELECT 
+        System.Timestamp AS WindowEnd, 
+        roomId, 
+        AVG(temperature) AS AvgTemp 
+    INTO 
+        output 
+    FROM 
+        input 
+    GROUP BY 
+        roomId, 
+        TumblingWindow(minute, 1) 
+    HAVING 
+        AVG(temperature) > 75 
+    ```
+        
+    Use CASE Statement to categorize temperature:
+    
+    ```sql
+    SELECT
+        deviceId, 
+        temperature, 
+        CASE  
+            WHEN temperature > 85 THEN 'High' 
+            WHEN temperature BETWEEN 60 AND 85 THEN 'Normal' 
+            ELSE 'Low' 
+        END AS TempCategory 
+    INTO 
+        CategorizedTempOutput 
+    FROM 
+        SensorInput 
+    ````
+1. Test the SQL query. Test query result will appear under the test-result section at the bottom.    
+1. Copy the SQL query to the clipboard.    
 1. When you're done, select **Save** on the ribbon at the top to get back to the eventstream canvas.  
 1. Configure the destination.
 
     :::image type="content" source="./media/process-events-using-sql-code-editor/complete.png" alt-text="Screenshot that shows the completed eventstream." lightbox="./media/process-events-using-sql-code-editor/complete.png":::        
-
-## SQL queries
-Once the basic setup is complete, you can add your SQL query for the required data transformation. Eventstream is built on top of Azure Stream Analytics and it supports the same query semantics of Stream Analytics query language. To learn more about the syntax and usage, see [Stream Analytics Query Language Reference - Stream Analytics Query | Microsoft Learn](/stream-analytics-query/stream-analytics-query-language-reference).
-
-### Basic query structure
-
-```sql
-SELECT 
-
-    column1, column2, ... 
-
-INTO 
-
-    [output alias] 
-
-FROM 
-
-    [input alias] 
-```
-
-### Query examples
-
-Detecting high temperatures in a room every minute:
-
-```sql
-
- SELECT 
-    System.Timestamp AS WindowEnd, 
-    roomId, 
-    AVG(temperature) AS AvgTemp 
-INTO 
-    output 
-FROM 
-    input 
-GROUP BY 
-    roomId, 
-    TumblingWindow(minute, 1) 
-HAVING 
-    AVG(temperature) > 75 
-```
- 
-Use CASE Statement to categorize temperature:
-
-```sql
-SELECT
-   deviceId, 
-    temperature, 
-    CASE  
-        WHEN temperature > 85 THEN 'High' 
-        WHEN temperature BETWEEN 60 AND 85 THEN 'Normal' 
-        ELSE 'Low' 
-    END AS TempCategory 
-INTO 
-    CategorizedTempOutput 
-FROM 
-    SensorInput 
-```
 
 ## Related content
 
