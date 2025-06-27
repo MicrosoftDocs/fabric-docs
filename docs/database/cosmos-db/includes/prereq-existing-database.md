@@ -2,10 +2,10 @@
 author: seesharprun
 ms.author: sidandrews
 ms.topic: include
-ms.date: 05/20/2025
+ms.date: 06/27/2025
 ---
 
-[!INCLUDE[Prerequisites - Fabric capacity](prereq-fabric-capacity.md)]
+[!INCLUDE[Prerequisites - Fabric capacity](prerequisite-fabric-capacity.md)]
 
 - An existing Cosmos DB database in Fabric
 

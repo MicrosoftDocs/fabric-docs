@@ -16,7 +16,7 @@ In this quickstart, you create a Cosmos DB database using the Microsoft Fabric p
 
 ## Prerequisites
 
-[!INCLUDE[Prerequisites - Fabric capacity](includes/prereq-fabric-capacity.md)]
+[!INCLUDE[Prerequisites - Fabric capacity](includes/prerequisite-fabric-capacity.md)]
 
 ## Create the database
 
