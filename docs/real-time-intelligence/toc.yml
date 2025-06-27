@@ -155,10 +155,12 @@ items:
         href: event-streams/add-destination-activator.md
       - name: Custom endpoint
         href: event-streams/add-destination-custom-app.md
-    - name: Process events using event processor
-      href: event-streams/process-events-using-event-processor-editor.md
-    - name: Process events with multiple schemas
-      href: event-streams/process-events-with-multiple-schemas.md
+    - name: Process events
+      items:
+      - name: Process events using event processor
+        href: event-streams/process-events-using-event-processor-editor.md
+      - name: Multiple schemas support
+        href: event-streams/process-events-with-multiple-schemas.md
     - name: Preview data
       href: event-streams/preview-data.md
     - name: Manage eventstreams

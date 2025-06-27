@@ -1,5 +1,5 @@
 ---
-title: Process events with multiple schemas
+title: Enhancing events processing with multiple schemas support
 description: Provides information on using multiple schema feature to process and preview events in Microsoft Fabric Eventstream.
 ms.reviewer: spelluru
 ms.author: xujiang1
@@ -7,10 +7,10 @@ author: wenyang
 ms.topic: how-to
 ms.custom:
 ms.date: 06/25/2025
-ms.search.form: Process events with multiple schemas
+ms.search.form: Enhancing events processing with multiple schemas support
 ---
 
-# Process events with multiple schemas
+# Enhancing events processing with multiple schemas support
 
 ## Overview
 
@@ -136,14 +136,6 @@ A: If the data structure changes (for example, new fields added, data type chang
 
 A: This schema won't be retained in this eventstream because it's a temporary schema and isn't used by any operator or destination configurations.
 
-**Q: Can I still use CI/CD or REST API after enabling multiple schema support?**  
-
-A: Yes. Enabling multiple schema support doesn't affect the ability to use CI/CD or REST API with Eventstream. 
-
-> [!NOTE]
-> Currently, when using CI/CD to import or using REST API to create Eventstreams, **the multiple schemas support feature is not enabled by default**.  
-> To ensure your eventstream works as expected and to avoid failures when updating your eventstream via CI/CD or REST API, manually enable the multiple schemas support feature after the Eventstream is imported or created.
-
 **Q: What happens if I delete an existing source that has a mapped schema?**  
 
 A: If the schema inferred from the source isn't used in any operator or destination, deleting the source doesn't result in an error. However, if the schema inferred from the source is used in any operator or destination, an authoring error occurs. To proceed, you need to remap the schema inferred from the deleted source to a valid source before publishing, or you select another schema as the input schema for the operator.
@@ -154,7 +146,11 @@ A: If the schema inferred from the source isn't used in any operator or destinat
 
 A: When this feature is enabled in an existing eventstream and you switch to Edit mode, an extra schema containing mixed fields appear in certain cases. This schema originates from the existing eventstream, which used for operator configurations in existing eventstream. By default, it's mapped to all sources because Eventstream can't determine its origin. This safeguards the continuity of your current setup without errors.
 
-:::image type="content" source="./media/process-events-with-multiple-schemas/extra-schema.png" alt-text="Screenshot explaining why there's an extra schema in migration scenario." lightbox="./media/process-events-with-multiple-schemas/extra-schema.png":::
+:::image type="content" source="./media/process-events-with-multiple-schemas/extra-schema.png" alt-text="Screenshot explaining why there's an extra schema in migration scenario." lightbox="./media/process-events-with-multiple-schemas/extra-schema.png"::
+
+## Limitations
+
+- Currently, if **multiple schemas support** is enabled for an eventstream, **CI/CD** and **REST APIs** are not supported.
 
 ## Related content
 
