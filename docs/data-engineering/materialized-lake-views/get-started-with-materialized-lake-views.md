@@ -11,7 +11,7 @@ ms.date: 06/26/2025
 
 # Get started with materialized lake view
 
-In this article, you learn how to get started and create your first materialized lake view (mlv) in a lakehouse in Microsoft Fabric. 
+In this article, you learn how to get started and create materialized lake view (mlv) in a lakehouse in Microsoft Fabric. 
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ In this article, you learn how to get started and create your first materialized
 
    :::image type="content" source="./media/create-materialized-lake-view/materialized-lake-view-notebook.png" alt-text="Screenshot showing how to new materialized lake view." border="true" lightbox="./media/create-materialized-lake-view/materialized-lake-view-notebook.png":::
 
-1. Run the following command in the notebook to create a sample source table for MLV
+1. Run the following command in the notebook to create a sample source tables `products` and `orders`.
 
    ```sql
          CREATE SCHEMA IF NOT EXISTS bronze;
@@ -45,30 +45,67 @@ In this article, you learn how to get started and create your first materialized
          INSERT INTO bronze.products VALUES
          (101, 'Laptop', 1200.50),
          (102, 'Smartphone', 699.99),
-         (103, 'Tablet', 450.00),
-         (104, 'Monitor', 300.00),
-         (105, 'Keyboard', 49.99)
-         (106, 'Mouse', 0);
+         (103, 'Tablet', 450.00);
    ```
-
-1. Create your first MLV
-
    ```sql
 
-         CREATE SCHEMA IF NOT EXISTS SILVER;
-   
-         CREATE MATERIALIZED LAKE VIEW IF NOT EXISTS silver.products_enriched AS
-         SELECT
-             product_id,
-             product_name,
-             price,
-             CASE 
-                 WHEN price > 0 THEN TRUE 
-                 ELSE FALSE 
-             END AS is_in_stock
-         FROM bronze.products;
+         CREATE TABLE bronze.orders (
+           order_id INT,
+           product_id INT,
+           quantity INT,
+           order_date DATE
+          );
+         INSERT INTO bronze.orders VALUES
+          (1001, 101, 2, '2025-06-01'),
+          (1002, 103, 1, '2025-06-02'),
+          (1003, 102, 3, '2025-06-03');
    ```
 
+1. Create materialized lake view using the source table. Run the following command
+
+   ```sql
+      CREATE SCHEMA IF NOT EXISTS SILVER;
+      CREATE MATERIALIZED LAKE VIEW IF NOT EXISTS silver.cleaned_order_data AS
+      SELECT 
+          o.order_id,
+          o.order_date,
+          o.product_id,
+          p.product_name,
+          o.quantity,
+          p.price,
+          o.quantity * p.price AS revenue
+      FROM bronze.orders o
+      JOIN bronze.products p
+      ON o.product_id = p.product_id;
+   ```
+
+   ```sql
+      CREATE SCHEMA IF NOT EXISTS GOLD;
+      CREATE MATERIALIZED LAKE VIEW IF NOT EXISTS gold.product_sales_summary AS
+      SELECT
+          product_id,
+          product_name,
+          SUM(quantity) AS total_quantity_sold,
+          SUM(revenue) AS total_revenue,
+          ROUND(AVG(revenue), 2) AS average_order_value
+      FROM
+          silver.cleaned_order_data
+      GROUP BY
+          product_id,
+          product_name;
+   ```
+1. Open Lakehouse Explorer to see all created tables and MLVs.
+   
+1. Navigate to the "Manage materialized lake views" option in your Lakehouse to view the auto-generated lineage.
+
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/manage-materialized-lake-views.png" alt-text="Screenshot showing materialized lake view." border="true" lightbox="./media/create-materialized-lake-view/manage-materialized-lake-views.png":::
+   ![image](https://github.com/user-attachments/assets/eeabdbf3-cca1-4069-9370-387cd4e60c6f)
+
+1. Schedule the lineage execution.
+
+   ![image](https://github.com/user-attachments/assets/01dc7aaa-0d5f-42f5-ad8d-d8e488072e7b)
+
+1. Click on the ongoing run to monitor progress once the schedule starts.
 ## Next steps
 
 * [Create materialized lake view - Spark SQL reference](./create-materialized-lake-view.md)
