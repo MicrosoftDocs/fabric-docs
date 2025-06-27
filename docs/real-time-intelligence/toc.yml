@@ -88,6 +88,7 @@ items:
       - name: Route events based on content
         href: event-streams/route-events-based-on-content.md
     - name: Eventstream connectors
+      items:
       - name: Source connectors
         items:
         - name: Add and manage an event source
