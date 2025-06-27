@@ -1,8 +1,8 @@
 ---
 title: Workspace identity
 description: Learn about workspace identity in Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 08/28/2024

@@ -47,6 +47,8 @@ Select the **Source** tab, and select an existing connection from the **Connecti
 
 The example in the previous image shows a blob storage connection, but each connection type has its own configuration details specific to the data source selected.
 
+If you are using wildcard characters, allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder or file name has wildcard or this escape character inside.
+
 ## Supported data stores
 
 Fabric supports the data stores listed in the [Connector overview](connector-overview.md) article. Any source that supports the Delete data activity can be used.

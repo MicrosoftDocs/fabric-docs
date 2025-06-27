@@ -12,7 +12,7 @@ ms.date: 05/26/2025
 
 With the introduction of lightweight Python Notebooks in Microsoft Fabric, customers now have two robust options for building and scaling analytics workflows: Python Notebooks and PySpark Notebooks. While both provide a familiar Notebook interface, they differ significantly in how they manage compute resources, scalability, and cost-efficiency. 
  
-Fabric simplifies the process of selecting or transitioning between notebook types, enabling data professionals to optimize for agility, performance, and budget. This guide is designed to help you evaluate which Notebook is best suited for your current needs—and how to evolve your approach as your workloads grow in complexity and scale. The 'starter pool' provides a pre-warmed compute container that enables near-instant startup for Python or PySpark notebooks. 
+Fabric simplifies the process of selecting or transitioning between notebook types, enabling data professionals to optimize for agility, performance, and budget. This guide is designed to help you evaluate which Notebook is best suited for your current needs-and how to evolve your approach as your workloads grow in complexity and scale. The 'starter pool' provides a pre-warmed compute container that enables near-instant startup for Python or PySpark notebooks. 
 
 ## Quick Decision Matrix - Choose Fast
 
@@ -22,7 +22,6 @@ Use this high-level reference to quickly determine the most suitable notebook ty
 
 | Scenario | Recommended Notebook |
 |--- |---|
-| Cost-sensitive, bursty jobs | Python Notebooks |
 | Includes pre-installed DuckDB and Polars libraries | Python Notebooks |
 | Small to medium data (fits in memory)  | Python Notebooks (or PySpark on single-node Spark cluster) |
 | Rapid exploration & prototyping | Python Notebooks (or PySpark on single-node Spark cluster) |
@@ -51,7 +50,7 @@ Use this structured comparison table to understand the architectural and operati
 | Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
 | --- | --- | --- |
 | API Orchestration | Effective for lightweight orchestration and control flows, especially REST/gRPC-based integrations | Less optimal for basic orchestration tasks due to longer start-up and distributed overhead. |
-| Complex ETL DAGs | Supports FIFO scheduling only | Supports both FAIR and FIFO scheduling with DAG customization. |
+| Complex ETL DAGs | Limited to sequential (FlFO) task execution on a single node, lacking support for parallel processing. | Supports concurrent task execution within DAGs using FlFO or FAlR scheduling, enabling efficient parallel processing for complex ETL workflows. |
 
 ### **Platform & Library Support**
 
@@ -70,7 +69,7 @@ Use this structured comparison table to understand the architectural and operati
 
 | Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
 | --- | --- | --- |
-| Cost Profile | Low-cost; ideal for lightweight, ad hoc workloads | Higher cost; designed for scalable, enterprise-grade execution. Costs can be reduced through autoscaling. |
+| Cost Profile | Lower initial cost (minimum 2 vCores); best suited for lightweight, ad hoc workloads. | Higher initial cost (minimum 4 vCores); designed for scalable, enterprise-grade workloads. Autoscaling can reduce costs, potentially resulting in a lower total cost of ownership (TCO). |
 
 ## When to Use Python vs. PySpark Notebooks
 

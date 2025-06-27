@@ -256,7 +256,7 @@ Direct Lake semantic models present some considerations and limitations.
 |Direct Lake storage mode tables don't support complex Delta table column types. Binary and GUID semantic types are also unsupported. You must convert these data types into strings or other supported data types.     |Not supported         |Not supported         |
 |Table relationships require the data types of related columns to match.     |Yes |Yes|
 |One-side columns of relationships must contain unique values. Queries fail if duplicate values are detected in a one-side column.     |Yes |Yes|
-|[Auto data/time intelligence in Power BI Desktop](/power-bi/transform-model/desktop-auto-date-time) isn't supported. [Marking your own date table as a date table](/power-bi/transform-model/desktop-date-tables) is supported.     |Yes |Yes|
+|[Auto date/time intelligence in Power BI Desktop](/power-bi/transform-model/desktop-auto-date-time) to create relationships using only the date part of a datetime column. Note: [Marking your own date table as a date table](/power-bi/transform-model/desktop-date-tables) and creating relationships using date columns is supported.      |Supported |Not supported|
 |The length of string column values is limited to 32,764 Unicode characters.     |Yes |Yes|
 |Non-numeric floating point values, such as *NaN* (not a number), aren't supported.     |Yes |Yes|
 |[Publish to web from Power BI](/power-bi/collaborate-share/service-publish-to-web) using a service principal is only supported when using a [fixed identity for the Direct Lake semantic model](/fabric/fundamentals/direct-lake-manage).     |Yes |Yes|
@@ -266,8 +266,9 @@ Direct Lake semantic models present some considerations and limitations.
 |Creating a Direct Lake semantic model in a workspace that is in a different region of the data source workspace isn't supported. For example, if the Lakehouse is in West Central US, then you can only create semantic models from this Lakehouse in the same region. A workaround is to create a Lakehouse in the other region's workspace and shortcut to the tables before creating the semantic model. To find what region you are in, see [find your Fabric home region](/fabric/admin/find-fabric-home-region).     |Yes |Yes|
 |Embedding reports requires a [V2 embed token](/power-bi/developer/embedded/generate-embed-token).     |Yes |Not supported|
 |Direct Lake doesn't support service principal profiles for authentication.     |Not supported |Yes|
-|Power BI Direct Lake semantic models can be created and queried by Service Principals and Viewer role membership with Service Principals is supported, but the default Direct Lake semantic models on lakehouse/warehouse don't support this scenario.     |Yes         |         |
+|Power BI Direct Lake semantic models can be created and queried by Service Principals and Viewer role membership with Service Principals is supported, but the default Direct Lake semantic models on lakehouse/warehouse don't support this scenario.     |Yes         |Yes         |
 |Shortcuts in a lakehouse can be used as data sources for semantic model tables.     |Not supported during public preview         |Yes         |
+|Direct Lake models are not supported in personal workspaces (My Workspace).     |Not supported         |Not supported         |
 
 
 ## Related content
