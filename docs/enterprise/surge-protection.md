@@ -86,6 +86,7 @@ When surge protection is active, background requests are rejected. In the Fabric
 - Surge protection doesn't stop in progress jobs. 
 - _Background rejection threshold_ isn't an upper limit on _24-hours background percentage_. This is because in progress jobs continue to run and report additional usage. 
 - If you pause a capacity when it is in an overloaded state, the **System events** table in the Microsoft Fabric Capacity Metrics app may show an **Active NotOverloaded** event after the **Suspended** event. The capacity is still paused. The NotOverloaded event is generated due to a timing issue during the pause action.
+- Surge protection doesn't block operations that are billed with Autoscale billing for Spark. 
 
 ## Related content
 

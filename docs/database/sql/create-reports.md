@@ -48,7 +48,7 @@ There are 2 ways to connect to your SQL database from Power BI Desktop. 
 
 - Connect from the **OneLake Catalog**:
 
-    1. In the **Home** tab, select the **OneLake catalog** drop down. Select **SQL database**.
+    1. In the **Home** tab, select the **OneLake catalog** drop-down. Select **SQL database**.
     1. Select your SQL database. Select **Connect**. You'll authenticate to your Fabric workspace.
     1. In **Navigator** page, select the desired tables in your SQL database. Select **Load**. 
     1. Choose **Import** or **DirectQuery**. For more information on this option, see [Use DirectQuery](/power-bi/connect-data/desktop-use-directquery).

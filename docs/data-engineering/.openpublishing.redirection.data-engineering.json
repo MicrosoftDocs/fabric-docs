@@ -9,6 +9,11 @@
         "source_path_from_root": "/docs/data-engineering/lakehouse-pbi-reporting.md",
         "redirect_url": "/fabric/get-started/lakehouse-pbi-reporting",
         "redirect_document_id": true
+       },
+       {
+        "source_path_from_root": "/docs/data-engineering/simba-odbc-data-connector.md",
+        "redirect_url": "/fabric/data-engineering/index",
+        "redirect_document_id": false
        }
     ]
 }

@@ -18,7 +18,7 @@ The following Blob Storage event types are supported:
 
 |Event name|Description|
 |-------|------------|
-|Microsoft.Storage.BlobCreated|Triggered when a blob is created or replaced.|
+|Microsoft.Storage.BlobCreated|Triggered when a blob is created or updated.|
 |Microsoft.Storage.BlobDeleted                    |Triggered when a blob is deleted.|
 |Microsoft.Storage.BlobRenamed                    |Triggered when a blob is renamed.|
 |Microsoft.Storage.BlobTierChanged                |Triggered when the blob access tier is changed.|
