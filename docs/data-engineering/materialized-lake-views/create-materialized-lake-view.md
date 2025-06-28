@@ -1,12 +1,12 @@
 ---
 title: "Materialized lake views Spark SQL reference"
-description: Learn about materialized lake views spark sql reference in Microsoft Fabric.
+description: Learn about materialized lake views Spark SQL reference in Microsoft Fabric.
 ms.topic: quickstart
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviewer: nijelsf
 ms.date: 06/27/2025
-#customer intent: As a data engineer, I want to create materialized lake views(mlv) in lakehouse so that I can optimize query performance and manage data quality.
+#customer intent: As a data engineer, I want to create materialized lake views (mlv) in lakehouse so that I can optimize query performance and manage data quality.
 ---
 
 # Materialized lake views Spark SQL reference
