@@ -38,7 +38,6 @@ Go to **Source** tab to configure your copy activity source. See the following c
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select a MongoDB connection from the connection list. If no connection exists, then create a new MongoDB connection by selecting **New**.
 - **Database**: Select your database from the drop-down list.
 - **Collection name**: Specify the name of the collection in MongoDB database. You can select the collection from the drop-down list or select **Edit** to enter it manually. 

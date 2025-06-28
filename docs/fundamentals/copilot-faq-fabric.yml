@@ -85,6 +85,10 @@ sections:
         answer: |
           Contact your help desk to get support from your IT admin.
       - question: |
+          Why did Copilot respond with general knowledge data? 
+        answer: |
+           When a question is related to data in the semantic model, Copilot will use the semantic model to answer the question, otherwise it may answer from the [LLM's general knowledge](https://go.microsoft.com/fwlink/?linkid=2325401).
+      - question: |
           I want to suggest new features. How can I do that?  
         answer: |
           You can submit and vote on ideas for Microsoft Fabric on the [Ideas page of the Fabric Community](https://community.fabric.microsoft.com/t5/Ideas/ct-p/PBI_Comm_Ideas). Read more about giving feedback in the [Learn about Microsoft Fabric feedback](../fundamentals/feedback.md) article.

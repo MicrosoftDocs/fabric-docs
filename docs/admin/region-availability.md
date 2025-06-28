@@ -6,7 +6,7 @@ ms.author: mimart
 ms.custom:
   - references_regions
 ms.topic: overview
-ms.date: 06/04/2025
+ms.date: 06/27/2025
 ---
 
 # Fabric region availability
@@ -35,13 +35,13 @@ This table lists regions where all Fabric workloads are available.
 | Canada Central                 | West Europe                  |             |                    | Australia Southeast    |
 | Canada East<sup>3</sup>        | France Central               |             |                    | Central India          |
 | Central US                     | Germany West Central         |             |                    | East Asia              |
-| East US                        | Italy North <sup>3</sup>     |             |                    | Japan East<sup>3</sup> |
-| East US 2                      | Norway East                  |             |                    | Japan West             |
+| East US                        | Italy North                  |             |                    | Japan East             |
+| East US 2                      | Norway East                  |             |                    | Japan West <sup>4</sup>            |
 | North Central US               | Poland Central <sup>3</sup>  |             |                    | Southeast Asia         |
 | South Central US<sup>2,4</sup> | Sweden Central               |             |                    | South India            |
 | West US                        | Switzerland North            |             |                    | Korea Central          |
 | West US 2                      | Switzerland West<sup>3</sup> |             |                    |                        |
-| West US 3<sup>3</sup>          | UK South                     |             |                    |                        |
+| West US 3                      | UK South                     |             |                    |                        |
 |                                | UK West<sup>1</sup>          |             |                    |                        |
 
 
@@ -99,8 +99,8 @@ This table lists regions where public preview features are available, according 
 | UAE North            | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> |                  | &#x2705;                 |
 | West Europe          | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
 | West US              | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
-| West US2             | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x274C;                 |
-| West US3             | <li>Dataflows</li><li>Synapse Notebook</li>                     | &#x2705;         | &#x274C;                 |
+| West US2             | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
+| West US3             | <li>Dataflows</li><li>Synapse Notebook</li>                     | &#x2705;         | &#x2705;                 |
 
 
 ** Only the workloads listed in the table are available in each region. If no workloads are listed, Copilot isn't available in that region.
