@@ -11,7 +11,7 @@ ms.date: 06/27/2025
 
 # Get started with materialized lake views
 
-In this article, you learn how to get started and create materialized lake views(mlv) in a lakehouse in Microsoft Fabric. 
+In this article, you learn how to get started and create materialized lake views (MLV) in a lakehouse in Microsoft Fabric. 
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ In this article, you learn how to get started and create materialized lake views
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/new-materialized-lake-view.png" alt-text="Screenshot showing how to create new materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/new-materialized-lake-view.png":::
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png" alt-text="Screenshot showing how to new materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png":::
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png" alt-text="Screenshot showing how to create new materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png":::
 
 1. Create sample source tables `products` and `orders`. Run the following commands in the notebook.
 
@@ -110,7 +110,7 @@ In this article, you learn how to get started and create materialized lake views
 
 1. Click on the ongoing run to monitor progress once the schedule starts.
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/on-going-run-progress.png" alt-text="Screenshot showing progress of on-ongoing run." border="true" lightbox="./media/get-started-with-materialized-lake-views/on-going-run-progress.png":::
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/ongoing-run-progress.png" alt-text="Screenshot showing progress of ongoing run." border="true" lightbox="./media/get-started-with-materialized-lake-views/ongoing-run-progress.png":::
 
 1. Once the run succeeds, the lineage will display as completed.
 
