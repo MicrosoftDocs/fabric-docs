@@ -42,8 +42,8 @@ Turn **On** the **Schedule Refresh** option and select the following from the sc
 Select **Apply** to set the schedule for the particular MLV run.
 
 > [!NOTE]
-> * The scheduler reflects the users local time.
-> * A materialized lake view will fail, if it runs beyond 24 hours.
+> * The scheduler reflects the user's local time.
+> * A materialized lake view fails if it runs beyond 24 hours.
 
 ## Related articles
 
