@@ -22,7 +22,6 @@ Use this high-level reference to quickly determine the most suitable notebook ty
 
 | Scenario | Recommended Notebook |
 |--- |---|
-| Cost-sensitive, bursty jobs | Python Notebooks |
 | Includes pre-installed DuckDB and Polars libraries | Python Notebooks |
 | Small to medium data (fits in memory)  | Python Notebooks (or PySpark on single-node Spark cluster) |
 | Rapid exploration & prototyping | Python Notebooks (or PySpark on single-node Spark cluster) |
@@ -70,7 +69,7 @@ Use this structured comparison table to understand the architectural and operati
 
 | Scenario | Python Notebooks (2-core VM) | PySpark Notebooks (Spark Compute) |
 | --- | --- | --- |
-| Cost Profile | Low-cost; ideal for lightweight, ad hoc workloads | Higher cost; designed for scalable, enterprise-grade execution. Costs can be reduced through autoscaling. |
+| Cost Profile | Lower initial cost (minimum 2 vCores); best suited for lightweight, ad hoc workloads. | Higher initial cost (minimum 4 vCores); designed for scalable, enterprise-grade workloads. Autoscaling can reduce costs, potentially resulting in a lower total cost of ownership (TCO). |
 
 ## When to Use Python vs. PySpark Notebooks
 

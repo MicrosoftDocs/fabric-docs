@@ -44,9 +44,9 @@ The sample end-to-end solution includes these components:
 
 These steps show how to create an end-to-end sample using the bike rental sample data.
 
-1. Select **Workloads** from the left navigation bar, and then **Real-Time Intelligence**.
+1. Select **Real-Time** from the left navigation bar. The **Real-Time hub** opens.
 
-1. On the **Real-Time Intelligence samples** tile, select **Get started**.
+1. On the **Jumpstart your experience using sample scenarios** section, click the **Bicycle rentals** tile.
 
 1. In the **Create samples** window, select **Get started** with bike rental data.
 

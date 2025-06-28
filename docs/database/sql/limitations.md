@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur
 ms.date: 04/24/2025
 ms.topic: conceptual
-ms.search.form: SQL database Overview
+ms.search.form: Databases Limitations for SQL, Database Limitations
 ---
 # Limitations in SQL database in Microsoft Fabric (preview)
 
