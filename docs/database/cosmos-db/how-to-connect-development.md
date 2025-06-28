@@ -18,7 +18,7 @@ In this guide, you connect to an existing Cosmos DB database in Microsoft Fabric
 
 ## Prerequisites
 
-[!INCLUDE[Prerequisites - Existing database](includes/prereq-existing-database.md)]
+[!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
 
 - Azure CLI
 
