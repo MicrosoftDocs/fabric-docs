@@ -13,7 +13,6 @@ This article shows you how to add an Azure Data Explorer DB source to an eventst
 
 [!INCLUDE [azure-data-explorer-description-prerequisites](./includes/azure-data-explorer-description-prerequisites.md)]
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add Azure Data Explorer DB as a source   
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
