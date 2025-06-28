@@ -5,7 +5,8 @@ description: Learn about Cosmos DB in Microsoft Fabric, an integrated NoSQL deve
 author: seesharprun
 ms.author: sidandrews
 ms.topic: overview
-ms.date: 06/06/2025
+ms.date: 06/27/2025
+ms.search.form: Databases Overview
 ---
 
 # What is Cosmos DB in Microsoft Fabric (preview)?
