@@ -6,6 +6,7 @@ author: seesharprun
 ms.author: sidandrews
 ms.topic: overview
 ms.date: 06/27/2025
+ms.search.form: Databases Overview
 ---
 
 # What is Cosmos DB in Microsoft Fabric (preview)?
