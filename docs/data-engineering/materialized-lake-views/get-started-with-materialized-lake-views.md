@@ -27,9 +27,9 @@ In this article, you learn how to get started and create materialized lake views
 
 1. Select **New materialized lake view** and click on **New notebook** to open a new notebook.
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/new-materialized-lake-view.png" alt-text="Screenshot showing how to create new materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/new-materialized-lake-view.png":::
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/new-materialized-lake-view.png" alt-text="Screenshot showing how to open notebook to create new materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/new-materialized-lake-view.png":::
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png" alt-text="Screenshot showing how to create new materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png":::
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png" alt-text="Screenshot showing notebook template to create new materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png":::
 
 1. Create sample source tables `products` and `orders`. Run the following commands in the notebook.
 
