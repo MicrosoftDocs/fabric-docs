@@ -7,17 +7,17 @@ author: spelluru
 ms.topic: tutorial
 ms.custom:
 ms.date: 06/26/2025
-ms.search.form: Notebooks kqlmagic multivariate Jupyter
+ms.search.form: Notebooks kqlmagic Jupyter
 ---
-# Tutorial: Use a Jupyter notebook with kqlmagic to query a KQL database
+# Tutorial: Use a Fabric notebook with Kqlmagic to query a KQL database
 
-Jupyter Notebook is an open-source web application that allows you to create and share documents containing live code, equations, visualizations, and narrative text. It's useful for a wide range of tasks, such as data cleaning and transformation, numerical simulation, statistical modeling, data visualization, and machine learning.
+Fabric notebooks allow you to create and share documents containing live code, equations, visualizations, and narrative text. It's useful for a wide range of tasks, such as data cleaning and transformation, numerical simulation, statistical modeling, data visualization, and machine learning.
 
-[Kqlmagic](https://github.com/microsoft/jupyter-Kqlmagic) extends the capabilities of the Python kernel in Jupyter Notebook so you can run [Kusto Query Language (KQL)](/azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric) queries natively. You can combine Python and KQL to query and visualize data using the rich Plot.ly library integrated with the [render](/azure/data-explorer/kusto/query/renderoperator?context=/fabric/context/context&pivots=fabric) operator.
+[Kqlmagic](https://github.com/microsoft/jupyter-Kqlmagic) extends the capabilities of the Python kernel in Fabric notebooks so you can run [Kusto Query Language (KQL)](/azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric) queries natively from notebook cells. You can combine Python and KQL to query and visualize data using the rich Plotly library integrated with the [render](/azure/data-explorer/kusto/query/renderoperator?context=/fabric/context/context&pivots=fabric) operator.
 
 For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
-In this article, you learn how to use Kqlmagic to run advanced queries and visualizations from data in a KQL database. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. 
+In this tutorial, you learn how to use Kqlmagic to run advanced queries and visualizations from data in a KQL database. It uses pre-created datasets and notebooks in both the Real Time Intelligence and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. 
 
 In this tutorial, you learn how to:
 
@@ -25,7 +25,7 @@ In this tutorial, you learn how to:
 >
 > * Create a KQL database
 > * Get data
-> * Import a Jupyter notebook with Kqlmagic
+> * Import a notebook with Kqlmagic
 > * Run the notebook
 
 ## Prerequisites
@@ -35,7 +35,7 @@ In this tutorial, you learn how to:
 
 ## 1- Create a KQL database
 
-In this step, you create an empty KQL database named NYCTaxiDB in your workspace or in an existing eventhouse.
+In this step, you create an empty KQL database named NYCTaxiDB in your workspace or in an existing Eventhouse.
 
 1. Select your workspace from the left navigation bar.
 
@@ -51,7 +51,7 @@ In this step, you create an empty KQL database named NYCTaxiDB in your workspace
 
 In this step, you use a script to first create a table with specified mapping, and then get data from a public blob into this table.
 
-1. Copy the KQL script from the [Fabric samples repository on GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/IngestNYCTaxi2014.kql)
+1. Copy the KQL script from the [Fabric samples repository on GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/IngestNYCTaxi2014.kql)
 
     :::image type="content" source="media/jupyter-notebook/copy-kql-script.png" alt-text="Screenshot of GitHub repository showing the KQL script for the NYC Taxi demo notebook. The copy icon is highlighted."  lightbox="media/jupyter-notebook/copy-kql-script.png":::
 
@@ -72,7 +72,7 @@ In this step, you use a script to first create a table with specified mapping, a
 
 ## 3- Download the NYC Taxi demo notebook
 
-Use a sample Jupyter notebook to query and visualize the sample data you have just loaded in your KQL database.
+Use a sample notebook to query and visualize the sample data you have just loaded in your KQL database.
 
 1. Open the Fabric samples repository on GitHub to download the [NYC Taxi KQL Notebook.](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/NYC_Taxi_KQL_Notebook.ipynb).
 
@@ -83,7 +83,7 @@ Use a sample Jupyter notebook to query and visualize the sample data you have ju
     > [!NOTE]
     > The notebook must be saved in the `.ipynb` file format.
 
-## 4- Import the Jupyter notebook
+## 4- Import the notebook
 
 The rest of this workflow uses Kqlmagic to query and visualize the data in your KQL database.
 
@@ -100,7 +100,7 @@ The rest of this workflow uses Kqlmagic to query and visualize the data in your 
 
     :::image type="content" source="media/jupyter-notebook/go-to-workspace.png" alt-text="Screenshot of upload completed successfully and go to workspace.":::
 
-## 5- Load packages
+## 5- Run the notebook
 
 Select the **play** button to run each cell sequentially, or select the cell and press **Shift+ Enter**. Repeat this step for each package.
 
@@ -109,7 +109,6 @@ Select the **play** button to run each cell sequentially, or select the cell and
 
 :::image type="content" source="media/jupyter-notebook/run-cell.png" alt-text="Screenshot of cell block showing import command. The Play button is highlighted.":::
 
-## 6- Run the notebook
 
 Run the remaining cells sequentially to see how render commands work through Kqlmagic and begin creating a heatmap of taxi pickups in NYC.
 For more information on Kqlmagic, see [Use a Jupyter Notebook and Kqlmagic extension to analyze data](/azure/data-explorer/kqlmagic?context=/fabric/context/context.)
@@ -126,15 +125,7 @@ For more information on Kqlmagic, see [Use a Jupyter Notebook and Kqlmagic exten
 
     :::image type="content" source="media/jupyter-notebook/heat-map.jpg" alt-text="Screenshot of notebook showing a heatmap of NYC taxi pickups.":::
 
-1. You can also mark the map to show the results of a clustering function using the following query.
-
-    :::image type="content" source="media/jupyter-notebook/starred-query.png" alt-text="Screenshot of code cell showing query for starring data."  lightbox="media/jupyter-notebook/starred-query.png":::
-
-    The heatmap looks like the following image:
-
-    :::image type="content" source="media/jupyter-notebook/starred-map.jpg" alt-text="Screenshot of map showing different sized stars that signify the results of a clustering function.":::
-
-## 7- Clean up resources
+## 6- Clean up resources
 
 Clean up the items created by navigating to the workspace in which they were created.
 
