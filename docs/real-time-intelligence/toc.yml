@@ -456,6 +456,8 @@ items:
       href: notebooks.md
     - name: Use a notebook with Apache Spark to query a KQL database
       href: spark-connector.md
+    - name: Use a notebook with Kqlmagic to query a KQL database
+      href: notebook-kql-magic.md
 - name: Visualize data
   items:
   - name: Real-Time Dashboards
