@@ -33,7 +33,7 @@ Copilot supports **conversational interactions** which allows you to clarify, ad
 
 * Seamless follow-up questions: If the generated KQL is correct but you want to explore the data more deeply, you can ask follow-up questions related to the same task. You can expand the scope of your query, add filters, or explore related data points by building on previous dialogue.
 
-## Querying with the KQL Queryset Copilot
+## Using Copilot for Writing Queries in KQL
 
 You can access Copilot in two ways:
 
