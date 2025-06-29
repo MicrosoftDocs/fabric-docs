@@ -1,15 +1,15 @@
 ---
-title: Tutorial-  Use a notebook with Kqlmagic to query a KQL database
-description: Learn how to import the NYCtaxicab notebook into your Microsoft Fabric environment.
+title: Use a Jupyter Notebook with Kqlmagic to Query a KQL database
+description: Kqlmagic tutorial. Learn how to import the NYCtaxicab Jupyter notebook to query the KQL database.
 ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
 ms.custom:
 ms.date: 06/26/2025
-ms.search.form: Notebooks Kqlmagic Multivariant
+ms.search.form: Notebooks kqlmagic multivariate Jupyter
 ---
-# Tutorial: Use a Jupyter notebook with Kqlmagic to query a KQL database
+# Tutorial: Use a Jupyter notebook with kqlmagic to query a KQL database
 
 Jupyter Notebook is an open-source web application that allows you to create and share documents containing live code, equations, visualizations, and narrative text. It's useful for a wide range of tasks, such as data cleaning and transformation, numerical simulation, statistical modeling, data visualization, and machine learning.
 
@@ -26,7 +26,6 @@ In this tutorial, you learn how to:
 > * Create a KQL database
 > * Get data
 > * Import a Jupyter notebook with Kqlmagic
-> * Authenticate access to your notebook
 > * Run the notebook
 
 ## Prerequisites
@@ -110,13 +109,7 @@ Select the **play** button to run each cell sequentially, or select the cell and
 
 :::image type="content" source="media/jupyter-notebook/run-cell.png" alt-text="Screenshot of cell block showing import command. The Play button is highlighted.":::
 
-## 6- Device Code authentication
-
-In this step, you authenticate your notebook to access the KQL database.
-
-XXXXX
-
-## 7- Run the notebook
+## 6- Run the notebook
 
 Run the remaining cells sequentially to see how render commands work through Kqlmagic and begin creating a heatmap of taxi pickups in NYC.
 For more information on Kqlmagic, see [Use a Jupyter Notebook and Kqlmagic extension to analyze data](/azure/data-explorer/kqlmagic?context=/fabric/context/context.)
@@ -141,7 +134,7 @@ For more information on Kqlmagic, see [Use a Jupyter Notebook and Kqlmagic exten
 
     :::image type="content" source="media/jupyter-notebook/starred-map.jpg" alt-text="Screenshot of map showing different sized stars that signify the results of a clustering function.":::
 
-## 8- Clean up resources
+## 7- Clean up resources
 
 Clean up the items created by navigating to the workspace in which they were created.
 
