@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
 ms.custom:
-ms.date: 06/26/2025
+ms.date: 06/29/2025
 ms.search.form: Notebooks kqlmagic Jupyter
 ---
 # Tutorial: Use a Fabric notebook with Kqlmagic to query a KQL database
@@ -68,7 +68,7 @@ In this step, you use a script to first create a table with specified mapping, a
 
 1. Refresh the queryset and select **Tables** to see an overview of the newly created table named *trips2*. From here you can expand the table schema, preview the data, and view query insights.
 
-    :::image type="content" source="media/jupyter-notebook/nyctaxi-table.png" alt-text="Screenshot of the Tables tab showing the trips2 table."  lightbox="media/jupyter-notebook/nyctaxi-table.png":::
+    :::image type="content" source="media/jupyter-notebook/nyc-taxi-table.png" alt-text="Screenshot of the Tables tab showing the trips2 table."  lightbox="media/jupyter-notebook/nyctaxi-table.png":::
 
 ## 3- Download the NYC Taxi demo notebook
 
