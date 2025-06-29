@@ -17,7 +17,7 @@ Fabric notebooks allow you to create and share documents containing live code, e
 
 For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
-In this tutorial, you learn how to use Kqlmagic to run advanced queries and visualizations from data in a KQL database. It uses pre-created datasets and notebooks in both the Real Time Intelligence and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. 
+In this tutorial, you learn how to use Kqlmagic to run advanced queries and visualizations from data in a KQL database. It uses pre-created datasets and notebooks in both the Real-Time Intelligence and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. 
 
 In this tutorial, you learn how to:
 
