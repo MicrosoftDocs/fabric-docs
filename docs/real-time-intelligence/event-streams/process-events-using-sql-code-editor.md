@@ -38,11 +38,13 @@ To perform stream processing operations on your data streams using SQL operator,
 1. The full-screen code editor mode features an input/output explorer panel on the left side. The code editor section is adjustable, allowing you to resize it according to your preferences. The preview section at the bottom enables you to view both your input data and query test results. 
 
       :::image type="content" source="./media/process-events-using-sql-code-editor/sql-full-editor.png" alt-text="Screenshot that shows the SQL full editor." lightbox="./media/process-events-using-sql-code-editor/sql-full-editor.png":::    
-1. Add an alias to the output destination where the data processed through SQL operator will be written. SQL operator supports all Real-Time Intelligence destinations: Eventhouse, Lakehouse, Activator, Derivedstream, etc.
+1. Select the text in the **Outputs** section, and enter a name for the destination node. SQL operator supports all Real-Time Intelligence destinations: Eventhouse, Lakehouse, Activator, Stream, etc.
 
-      :::image type="content" source="./media/process-events-using-sql-code-editor/select-destination.png" alt-text="Screenshot that shows the Outputs window with the + button selected." lightbox="./media/process-events-using-sql-code-editor/select-destination.png":::    
-1. Select the text in the **Outputs** section, and enter a name for the destination node. 1. 
-1. Next, add SQL query for the required data transformation. Your Test query button from the top ribbon to validate the transformation logic.
+    :::image type="content" source="./media/process-events-using-sql-code-editor/select-destination.png" alt-text="Screenshot that shows the Outputs window with the + button selected." lightbox="./media/process-events-using-sql-code-editor/select-destination.png":::     
+1. Specify an alias or **name** for the output destination where the data processed through SQL operator is written. 
+
+    :::image type="content" source="./media/process-events-using-sql-code-editor/output-alias.png" alt-text="Screenshot that shows the name for the output." :::         
+1. Next, add **SQL query** for the required data transformation. 
 
     Eventstream is built on top of Azure Stream Analytics and it supports the same query semantics of Stream Analytics query language. To learn more about the syntax and usage, see [Stream Analytics Query Language Reference - Stream Analytics Query | Microsoft Learn](/stream-analytics-query/stream-analytics-query-language-reference).
 
@@ -98,9 +100,15 @@ To perform stream processing operations on your data streams using SQL operator,
     FROM 
         SensorInput 
     ````
-1. Test the SQL query. Test query result will appear under the test-result section at the bottom.    
-1. Copy the SQL query to the clipboard.    
+1. Use the **Test query** button from the top ribbon to validate the transformation logic. Test query result appears under the test-result section at the bottom.    
+
+    :::image type="content" source="./media/process-events-using-sql-code-editor/test-results.png" alt-text="Screenshot that shows the test results." lightbox="./media/process-events-using-sql-code-editor/test-results.png":::         
 1. When you're done, select **Save** on the ribbon at the top to get back to the eventstream canvas.  
+
+    :::image type="content" source="./media/process-events-using-sql-code-editor/ribbon.png" alt-text="Screenshot that shows the ribbon for the query with save and test query buttons." lightbox="./media/process-events-using-sql-code-editor/ribbon.png":::  
+1. In the **SQL Code** window, if the **Save** button is enabled, select it to save the settings. 
+
+    :::image type="content" source="./media/process-events-using-sql-code-editor/save-query.png" alt-text="Screenshot that shows SQL Code window." lightbox="./media/process-events-using-sql-code-editor/save-query.png":::  
 1. Configure the destination.
 
     :::image type="content" source="./media/process-events-using-sql-code-editor/complete.png" alt-text="Screenshot that shows the completed eventstream." lightbox="./media/process-events-using-sql-code-editor/complete.png":::        
