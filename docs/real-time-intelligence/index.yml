@@ -192,7 +192,7 @@ landingContent:
           - text: Use a notebook with Apache Spark to query a KQL database
             url: spark-connector.md
           - text: Use a notebook with Kqlmagic to query a KQL database
-            url: notebook-kqlmagic.md
+            url: notebook-kql-magic.md
 
   # Card
   - title: Monitor Eventhouse metrics and logs

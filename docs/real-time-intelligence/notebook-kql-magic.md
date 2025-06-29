@@ -68,7 +68,7 @@ In this step, you use a script to first create a table with specified mapping, a
 
 1. Refresh the queryset and select **Tables** to see an overview of the newly created table named *trips2*. From here you can expand the table schema, preview the data, and view query insights.
 
-    :::image type="content" source="media/jupyter-notebook/nyc-taxi-table.png" alt-text="Screenshot of the Tables tab showing the trips2 table."  lightbox="media/jupyter-notebook/nyctaxi-table.png":::
+    :::image type="content" source="media/jupyter-notebook/nyc-taxi-table.png" alt-text="Screenshot of the Tables tab showing the trips2 table."  lightbox="media/jupyter-notebook/nyc-taxi-table.png":::
 
 ## 3- Download the NYC Taxi demo notebook
 
