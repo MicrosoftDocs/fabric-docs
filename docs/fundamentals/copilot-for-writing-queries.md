@@ -47,7 +47,7 @@ Follow the steps below to use Copilot in either context:
 
 1. In the Copilot pane, enter your business question in natural language.
 1. Press **Enter**.
-    After a few seconds, Copilot will generate a KQL query based on your input. You can copy the query to the clipboard, or **Replace** it directly in the KQL query editor. To run the query in the query editor, you must have write access to the KQL queryset.
+    After a few seconds, Copilot will generate a KQL query based on your input. You can copy the query to the clipboard, **Insert** it to the query editor or **Replace** the query in context with it. To run the query in the query editor, you must have write access to the KQL queryset.
 1. Select the **Run** button to execute the query.
 
     :::image type="content" source="media/copilot-real-time-intelligence/copilot-conversation.png" alt-text="Screenshot of copilot use in KQL queryset in Real-Time Intelligence." lightbox="media/copilot-real-time-intelligence/copilot-conversation.png":::
