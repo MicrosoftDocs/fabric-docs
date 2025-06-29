@@ -72,9 +72,9 @@ In this step, you use a script to first create a table with specified mapping, a
 
 ## 3- Download the NYC Taxi demo notebook
 
-Use a sample notebook to query and visualize the sample data you have just loaded in your KQL database.
+Use a sample notebook to query and visualize the sample data you loaded in your KQL database.
 
-1. Open the Fabric samples repository on GitHub to download the [NYC Taxi KQL Notebook.](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/NYC_Taxi_KQL_Notebook.ipynb).
+1. Open the Fabric samples repository on GitHub and download the [NYC Taxi KQL Notebook.](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/NYC_Taxi_KQL_Notebook.ipynb).
 
     :::image type="content" source="media/jupyter-notebook/raw-notebook.png" alt-text="Screenshot of GitHub repository showing the NYC Taxi demo notebook. The option titled Raw is highlighted."  lightbox="media/jupyter-notebook/raw-notebook.png":::
 
@@ -96,6 +96,7 @@ The rest of this workflow uses Kqlmagic to query and visualize the data in your 
     :::image type="content" source="media/jupyter-notebook/upload-notebook.png" alt-text="Screenshot of Import status window. The button titled Upload is highlighted.":::
 
 1. Select the NYC Taxi KQL Notebook that you downloaded in [step 3](#3--download-the-nyc-taxi-demo-notebook).
+
 1. Once the import is complete, select **Go to workspace** and open this notebook.
 
     :::image type="content" source="media/jupyter-notebook/go-to-workspace.png" alt-text="Screenshot of upload completed successfully and go to workspace.":::
@@ -108,7 +109,6 @@ Select the **play** button to run each cell sequentially, or select the cell and
 > Wait for the completion check mark to appear before running the next cell.
 
 :::image type="content" source="media/jupyter-notebook/run-cell.png" alt-text="Screenshot of cell block showing import command. The Play button is highlighted.":::
-
 
 Run the remaining cells sequentially to see how render commands work through Kqlmagic and begin creating a heatmap of taxi pickups in NYC.
 For more information on Kqlmagic, see [Use a Jupyter Notebook and Kqlmagic extension to analyze data](/azure/data-explorer/kqlmagic?context=/fabric/context/context.)
