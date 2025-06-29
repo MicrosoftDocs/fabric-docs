@@ -33,7 +33,7 @@ In this tutorial, you learn how to:
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
 
-## 1- Create a KQL database
+## 1. Create a KQL database
 
 In this step, you create an empty KQL database named NYCTaxiDB in your workspace or in an existing Eventhouse.
 
