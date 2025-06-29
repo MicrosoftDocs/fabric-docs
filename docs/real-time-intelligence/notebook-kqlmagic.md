@@ -110,18 +110,18 @@ Select the **play** button to run each cell sequentially, or select the cell and
 
 :::image type="content" source="media/jupyter-notebook/run-cell.png" alt-text="Screenshot of cell block showing import command. The Play button is highlighted.":::
 
-Run the remaining cells sequentially to see how render commands work through Kqlmagic and begin creating a heatmap of taxi pickups in NYC.
+Run the remaining cells sequentially to create a heatmap of NYC taxi pickups.
 For more information on Kqlmagic, see [Use a Jupyter Notebook and Kqlmagic extension to analyze data](/azure/data-explorer/kqlmagic?context=/fabric/context/context.)
 
 1. The following cell aggregates all pickups within the specified geographic boundary.
 
     :::image type="content" source="media/jupyter-notebook/aggregate-pickups.png" alt-text="Screenshot of code cell showing aggregation query." lightbox="media/jupyter-notebook/aggregate-pickups.png":::
 
-1. Run the following cell to draw a map by plotting a heatmap over a scatter plot.
+1. Run the following cell to draw a heatmap of NYC taxi pickups.
 
     :::image type="content" source="media/jupyter-notebook/draw-heatmap.png" alt-text="Screenshot of code cell showing query to create heatmap."  lightbox="media/jupyter-notebook/draw-heatmap.png":::
 
-    The heatmap should look like the following image:
+    In the resulting heatmap, you can see that most of the taxi pickups are in the lower Manhattan area. In addition, there are also many taxi pickups at JFK and La Guardia airport.
 
     :::image type="content" source="media/jupyter-notebook/heat-map.jpg" alt-text="Screenshot of notebook showing a heatmap of NYC taxi pickups.":::
 
