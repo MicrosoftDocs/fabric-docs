@@ -47,7 +47,7 @@ In this step, you create an empty KQL database named NYCTaxiDB in your workspace
 
     :::image type="content" source="media/spark-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
 
-## 2- Get data
+## 2. Get data
 
 In this step, you use a script to first create a table with specified mapping, and then get data from a public blob into this table.
 
@@ -70,7 +70,7 @@ In this step, you use a script to first create a table with specified mapping, a
 
     :::image type="content" source="media/jupyter-notebook/nyc-taxi-table.png" alt-text="Screenshot of the Tables tab showing the trips2 table."  lightbox="media/jupyter-notebook/nyc-taxi-table.png":::
 
-## 3- Download the NYC Taxi demo notebook
+## 3. Download the NYC Taxi demo notebook
 
 Use a sample notebook to query and visualize the sample data you loaded in your KQL database.
 
@@ -83,7 +83,7 @@ Use a sample notebook to query and visualize the sample data you loaded in your 
     > [!NOTE]
     > The notebook must be saved in the `.ipynb` file format.
 
-## 4- Import the notebook
+## 4. Import the notebook
 
 The rest of this workflow uses Kqlmagic to query and visualize the data in your KQL database.
 
@@ -101,7 +101,7 @@ The rest of this workflow uses Kqlmagic to query and visualize the data in your 
 
     :::image type="content" source="media/jupyter-notebook/go-to-workspace.png" alt-text="Screenshot of upload completed successfully and go to workspace.":::
 
-## 5- Run the notebook
+## 5. Run the notebook
 
 Select the **play** button to run each cell sequentially, or select the cell and press **Shift+ Enter**. Repeat this step for each package.
 
@@ -125,7 +125,7 @@ For more information on Kqlmagic, see [Use a Jupyter Notebook and Kqlmagic exten
 
     :::image type="content" source="media/jupyter-notebook/heat-map.jpg" alt-text="Screenshot of notebook showing a heatmap of NYC taxi pickups.":::
 
-## 6- Clean up resources
+## 6. Clean up resources
 
 Clean up the items created by navigating to the workspace in which they were created.
 
