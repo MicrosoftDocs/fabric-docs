@@ -21,13 +21,13 @@ To understand your current hot cache usage, you can run the following command:
 | project HotDataDiskSpaceUsage
 ```
 
-![A screenshot of the .show diagnostics command](real-time-intelligence/media/eventhouse-capacity-observability/show_diagnostics.png)
+![A screenshot of the .show diagnostics command](media/eventhouse-capacity-observability/show_diagnostics.png)
 
 This command displays the percentage of hot cache space currently used.
 
 ·       If hot cache usage reaches ~95% then your compute will scale up to the next level irrelevant of other usage (CPU, Ingestion, etc..).
 
-·       If hot cache is below 80% and all other scale-in factors are met (CPU, Ingestion, etc..) then your compute will scale-in to the next smaller sku.
+·       If hot cache usage goes below ~35% and all other scale-in factors are met (CPU, Ingestion, etc..) then your compute will scale-in to the next smaller size. 
 
 To understand where the hot cache is being consumed you need to drill down to specific tables. Start by running the below command.
 
@@ -36,7 +36,7 @@ To understand where the hot cache is being consumed you need to drill down to sp
 | summarize HotExtentSize=format\_bytes(sum(HotOriginalSize),2)
 ```
 
-![A screenshot of the .show table details command](real-time-intelligence/media/eventhouse-capacity-observability/show_table_details.png)
+![A screenshot of the .show table details command](media/eventhouse-capacity-observability/show_table_details.png)
 
 To adjust the caching policy at the table level modify the [Table Level Caching Policy](https://learn.microsoft.com/en-us/kusto/management/cache-policy?view=microsoft-fabric&preserve-view=true).
 
@@ -59,17 +59,17 @@ EventhouseMetrics
 | render timechart
 ```
   
-![A graph showing ingestion load factor over tiem](real-time-intelligence/media/eventhouse-capacity-observability/Ingestion_Load_Graph.png)
+![A graph showing ingestion load factor over tiem](media/eventhouse-capacity-observability/Ingestion_Load_Graph.png)
 
 This will show the percentage of the ingestion capacity being used by the current Eventhouse compute size. A few takeaways from this number:
 
-- If you are taking up 70% or more of the ingestion capacity at the current size the compute is sized based on ingestion. This means that unless the ingestion pattern changed you will continue to run at this compute size or larger, irrelavent of other activity.
+- If you are taking up consistently 70% or more of the ingestion capacity at the current size the compute is sized based on ingestion. This means that unless the ingestion pattern changed you will continue to run at this compute size or larger, irrelavent of other activity.
 
-- If this percentage is very low that means the compute is sized based on other factors. This could be the minimum capacity settings, cache utilization, or query load on the Eventhouse. 
+- If this percentage consistently drops below 70% that means the compute is sized based on other factors. This could be the minimum capacity settings, cache utilization, or query load on the Eventhouse. 
 
 This is also available in the [Workspace Monitoring Dashboard](https://blog.fabric.microsoft.com/en-us/blog/introducing-template-dashboards-for-workspace-monitoring?ft=All) in the “EH | Table Ingestions” tab.
 
-![Workspace Monitoring Dashboard showing ingestion statistics](real-time-intelligence/media/eventhouse-capacity-observability/Table_Ingestion_Tab.png)
+![Workspace Monitoring Dashboard showing ingestion statistics](media/eventhouse-capacity-observability/Table_Ingestion_Tab.png)
 
 ## Query Load
 
@@ -87,7 +87,7 @@ You can start with the Eventhouses tab in the dashboard. The Eventhouse Queries 
 
 - Users running the most queries
 
-![Workspace Monitoring Dashboard showing Query Load information](real-time-intelligence/media/eventhouse-capacity-observability/Eventhouse_Overview_Tab.png)
+![Workspace Monitoring Dashboard showing Query Load information](media/eventhouse-capacity-observability/Eventhouse_Overview_Tab.png)
 
 To see more detailed information you can utilize the "EH | Queries" tab. This gives you the details down to specific queries and provides the following parameters to help you quickly drill down to specific issues
 
@@ -103,7 +103,7 @@ To see more detailed information you can utilize the "EH | Queries" tab. This gi
 
 - Application: Allows you to filter to the application that is running the query
 
-![Workspace Monitoring Dashboard showing charts and graphs of KQL queries over time](real-time-intelligence/media/eventhouse-capacity-observability/Query_Tab.png)
+![Workspace Monitoring Dashboard showing charts and graphs of KQL queries over time](media/eventhouse-capacity-observability/Query_Tab.png)
 
 A couple of common issues that would be easy to spot using this dashboard
 
@@ -123,11 +123,11 @@ Using this report, you can get down to the specific Applications, Users, and Que
 
 In this article we have walked through observing usage of your Eventhouse using control commands, queries against the Workspace Monitoring Eventhouse, and utilizing the Workspace Monitoring Dashboard.
 
-To setup notifications from any of these scenarios you can utilize [Activator](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-introduction). Activator allows you to respond to your data from multiple locations in Fabric including creating actions from:
+To setup notifications from any of these scenarios you can utilize [Activator](https://learn.microsoft.com/en-us/fabric/data-activator/activator-introduction). Activator allows you to respond to your data from multiple locations in Fabric including creating actions from:
 
-- [Real-Time Dashboards](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-get-data-real-time-dashboard)
+- [Real-Time Dashboards](https://learn.microsoft.com/en-us/fabric/data-activator/activator-get-data-real-time-dashboard)
 
-- [KQL Queryset](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/data-activator/activator-alert-queryset?tabs=visualization)
+- [KQL Queryset](https://learn.microsoft.com/en-us/fabric/data-activator/activator-alert-queryset?tabs=visualization)
 
 This gives you the ability to setup actions from KQL Querysets for the control commands and from Real-Time Dashboards for the tiles in the Monitoring Dashboard. You can send out emails, messages in Teams, or initialize [Microsoft Power Automate](https://www.microsoft.com/en-us/power-platform/products/power-automate) according to your requirements.
 
