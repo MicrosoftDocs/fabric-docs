@@ -55,9 +55,6 @@ Follow these steps to add a sample data source:
     :::image type="content" source="media\add-source-sample-data-enhanced\live-view.png" alt-text="A screenshot showing the eventstream in Live view." lightbox="media\add-source-sample-data-enhanced\live-view.png":::
 
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
-
 ## Related content 
 For a list of supported sources, see [Add an event source in an eventstream](add-manage-eventstream-sources.md)
 
@@ -72,8 +69,6 @@ For a list of supported sources, see [Add an event source in an eventstream](add
 Before you start, you must complete the following prerequisites:
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add sample data as a source
 
