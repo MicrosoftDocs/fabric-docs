@@ -1,6 +1,6 @@
 ---
 title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Build the ontology'
-description: Build an ontology in digital twin builder (preview) by creating entity types, mapping data, and creating relationships.
+description: Build an ontology in digital twin builder (preview) by creating entity types, mapping data, and creating relationship types.
 author: baanders
 ms.author: baanders
 ms.date: 04/28/2025
@@ -9,7 +9,7 @@ ms.topic: tutorial
 
 # Digital twin builder (preview) in Real-Time Intelligence tutorial part 3: Build the ontology
 
-In this part of the tutorial, you build a digital twin ontology that models the bus and bus stop data. You create a digital twin builder (preview) item, and define entity types for the buses and stops. Then, you map the data from the *Tutorial* lakehouse to the entity instances, and define relationships between the entity types to further contextualize the data.
+In this part of the tutorial, you build a digital twin ontology that models the bus and bus stop data. You create a digital twin builder (preview) item, and define entity types for the buses and stops. Then, you map the data from the *Tutorial* lakehouse to the entity instances, and define relationship types between the entity types to further contextualize the data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -24,15 +24,15 @@ In this part of the tutorial, you build a digital twin ontology that models the 
 1. Enter *BusModel* as the name for your item and select **Create**. 
 1. Wait for your digital twin builder item to be created. Once your digital twin builder item is ready, it opens to the semantic canvas.
 
-In the semantic canvas, you can add entity types and relationships to define an ontology.
+In the semantic canvas, you can add entity types and relationship types to define an ontology.
 
-## About entity types and relationships
+## About entity types and relationship types
 
 In digital twin builder (preview), an *entity type* is a category that defines a concept within a domain-specific ontology. The entity type definition serves as a blueprint for individual entity instances of that entity type, and specifies common characteristics shared across all instances within that category. Here you define two entity types for the sample scenario: Bus and Stop.
 
 After you create an entity type, you can map data to it to hydrate the entity instances with data from various source systems. You can add both time series and non-time series properties to an entity type. When mapping both types of property to an entity type, you must map at least one non-time series property before you can map time series properties. Then, link the non-time series and time series data together by matching a non-time series property from the entity type with a column from the time series data. The values in the time series column must **exactly** match data that's mapped to the property on the entity type.
 
-After your entity types are defined and mapped, you can create *relationships* between them to define how they're related to each other. In this tutorial, a Bus *goesTo* a Stop.
+After your entity types are defined and mapped, you can create *relationship types* between them to define how they're related to each other. In this tutorial, a Bus *goesTo* a Stop.
 
 ## Add Bus entity type
 
@@ -176,13 +176,13 @@ Next, map some non-timeseries data to the Stop entity type. The stop data doesn'
 
 1. Switch to the **Scheduling** tab and select **Run now** to apply the mapping.
 
-## Define relationship
+## Define relationship type
 
-Next, create a relationship to represent that a Bus *goesTo* a Stop.
+Next, create a relationship type to represent that a Bus *goesTo* a Stop.
 
 1. In the semantic canvas, highlight the **Bus** entity type and select **Add relationship**.
 
-    :::image type="content" source="media/tutorial-rti/add-relationship.png" alt-text="Screenshot of adding a relationship.":::
+    :::image type="content" source="media/tutorial-rti/add-relationship.png" alt-text="Screenshot of adding a relationship type.":::
 
 1. In the **Relationship configuration** pane, enter the following information:
     - **First entity**: Bus
@@ -194,11 +194,11 @@ Next, create a relationship to represent that a Bus *goesTo* a Stop.
     
     Select **Create**.
 
-    :::image type="content" source="media/tutorial-rti/relationship-create.png" alt-text="Screenshot of the relationship configuration." lightbox="media/tutorial-rti/relationship-create.png":::
+    :::image type="content" source="media/tutorial-rti/relationship-create.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-rti/relationship-create.png":::
 
-1. In the **Scheduling** section that appears, select **Run now** to apply the relationship.
+1. In the **Scheduling** section that appears, select **Run now** to apply the relationship type.
 
-Now your Bus and Stop entity types are visible in the canvas with a relationship between them. Together, these elements form the ontology for the tutorial scenario.
+Now your Bus and Stop entity types are visible in the canvas with a relationship type between them. Together, these elements form the ontology for the tutorial scenario.
 
 :::image type="content" source="media/tutorial-rti/ontology.png" alt-text="Screenshot of the ontology." lightbox="media/tutorial-rti/ontology-crop.png":::
 

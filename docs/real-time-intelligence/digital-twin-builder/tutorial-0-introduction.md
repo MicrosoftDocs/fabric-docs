@@ -97,7 +97,7 @@ Here's the Power BI report you build in this tutorial.
 
 :::image type="content" source="media/tutorial/dashboard-1.png" alt-text="Power BI dashboard page 1, showing condenser asset details over time.":::
 
-:::image type="content" source="media/tutorial/dashboard-2.png" alt-text="Screenshot of Power BI dashboard page 2, showing relationship data for maintenance orders.":::
+:::image type="content" source="media/tutorial/dashboard-2.png" alt-text="Screenshot of Power BI dashboard page 2, showing relationship instance data for maintenance orders.":::
 
 ## Next step
 

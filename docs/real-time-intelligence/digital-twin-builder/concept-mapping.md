@@ -119,13 +119,13 @@ After an entity type is created using a system type, it's accessible from the se
 
 ## Example ontology 
 
-By building out entity types with mapping and relationships, you can create a series of ontological links like the ones in the following example. 
+By building out entity types with mapping and relationship types, you can create a series of ontological links like the ones in the following example. 
 
 :::image type="content" source="media/concept-mapping/example.png" alt-text="Screenshot of an example ontology." lightbox="media/concept-mapping/example-zoom.png":::
 
 The semantic canvas contains three system types: Process, Equipment, and Sensor. They're related as follows:
-* The Equipment entity type has a relationship of *hasProcess* that points to the relevant Process. 
-* The Equipment entity type shares a *hasSensor* relationship with the Sensor. 
+* The Equipment entity type has a relationship type of *hasProcess* that points to the relevant Process. 
+* The Equipment entity type shares a *hasSensor* relationship type with the Sensor. 
 
 This scenario represents a basic ontological map of a process, involving a single piece of equipment and a sensor attached to this equipment. 
 

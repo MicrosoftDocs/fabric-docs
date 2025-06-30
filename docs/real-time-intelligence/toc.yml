@@ -358,7 +358,7 @@ items:
         href: digital-twin-builder/tutorial-1-set-up-resources.md
       - name: 2- Add entity types and map data
         href: digital-twin-builder/tutorial-2-add-entities-map-data.md
-      - name: 3- Define relationships
+      - name: 3- Define relationship types
         href: digital-twin-builder/tutorial-3-define-relationships.md
       - name: 4- Explore your ontology
         href: digital-twin-builder/tutorial-4-explore-ontology.md

@@ -35,7 +35,7 @@ Get started with digital twin builder (preview) by standardizing your IT and OT 
 Here are the main stages of building an ontology in digital twin builder:
 * **Ontology modeling:** Design a shared vocabulary and structure to create comprehensive digital replicas of assets, processes, or environments that represent the physical world.
 * **Ontology mapping:** Harmonize disparate data into an ontology layer by defining entity types within your ontology that represent concepts in your physical operations, and mapping data from your different source systems to instances of these entity types.
-* **Contextualization:** Further augment the context of your data by creating semantic relationships between entity types in your ontology. Reflecting real-world relationships and dependencies helps you accurately represent the physical world within digital twin builder.
+* **Contextualization:** Further augment the context of your data by creating semantic relationship types between entity types in your ontology. Reflecting real-world relationships and dependencies helps you accurately represent the physical world within digital twin builder.
 
 ## Explore your data 
 

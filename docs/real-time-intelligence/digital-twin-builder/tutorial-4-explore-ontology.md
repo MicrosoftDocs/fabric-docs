@@ -9,7 +9,7 @@ ms.topic: tutorial
 
 # Digital twin builder (preview) tutorial part 4: Explore your ontology
 
-Now that you have an ontology with entity types and relationships, you explore it in this tutorial section.
+Now that you have an ontology with entity types and relationship types, you explore it in this tutorial section.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -75,10 +75,10 @@ Enact that scenario now by removing the *Reboiler* entity type from your ontolog
 1. Use the view selector in the top right corner to return to the **Configure** experience and the semantic canvas. Select the **Reboiler** entity type to view it in the canvas.
 
     :::image type="content" source="media/tutorial/configure-reboiler.png" alt-text="Screenshot showing the Reboiler entity type in the Configure experience.":::
-1. Before you can deactivate an entity type, you must delete its relationships. Select the *isPartOf* relationship in the semantic canvas to bring up the **Relationship configuration** pane, and select **Delete relationship**.
+1. Before you can deactivate an entity type, you must delete its relationship types. Select the *isPartOf* relationship type in the semantic canvas to bring up the **Relationship configuration** pane, and select **Delete relationship**.
 
-    :::image type="content" source="media/tutorial/delete-relationship.png" alt-text="Screenshot showing how to delete a relationship.":::
-1. After deleting the relationship, you can deactivate the entity type. Hover over the **Reboiler** entity type and select the ellipses next to it. Select **Deactivate entity** from the menu, and confirm when prompted.
+    :::image type="content" source="media/tutorial/delete-relationship.png" alt-text="Screenshot showing how to delete a relationship type.":::
+1. After deleting the relationship type, you can deactivate the entity type. Hover over the **Reboiler** entity type and select the ellipses next to it. Select **Deactivate entity** from the menu, and confirm when prompted.
 
     :::image type="content" source="media/tutorial/deactivate-entity.png" alt-text="Screenshot showing how to deactivate an entity type.":::
 1. The entity type disappears from the **Entities** list and is no longer visible in the semantic canvas.
@@ -89,7 +89,7 @@ Enact that scenario now by removing the *Reboiler* entity type from your ontolog
 
 ## View underlying data
 
-The ontology data for a digital twin builder (preview) item is stored in a Fabric lakehouse associated with the digital twin builder item. In that lakehouse, you can view your ontology data through the *domain layer*, which is a set of views that directly reflect the logical structure and relationships defined in the domain ontology. For more information about digital twin builder data storage, see [Modeling data in digital twin builder (preview) - Storage and access](concept-modeling.md#storage-and-access).
+The ontology data for a digital twin builder (preview) item is stored in a Fabric lakehouse associated with the digital twin builder item. In that lakehouse, you can view your ontology data through the *domain layer*, which is a set of views that directly reflect the logical structure and relationship types defined in the domain ontology. For more information about digital twin builder data storage, see [Modeling data in digital twin builder (preview) - Storage and access](concept-modeling.md#storage-and-access).
 
 Follow these steps to view your domain data.
 
@@ -101,7 +101,7 @@ Follow these steps to view your domain data.
 
     In the navigation pane under **Schemas**, the **dbo** entry represents the base layer and the **dom** entry represents the domain layer. You need to use the *dom* layer to simplify creating Power BI reports, so expand **dom**.
     
-    Underneath **dom**, open the **Views** section. Observe that each entity type in your digital twin builder is reflected as two views: *entityname_property* and *entityname_timeseries*. The **relationships** view captures all relationships.
+    Underneath **dom**, open the **Views** section. Observe that each entity type in your digital twin builder is reflected as two views: *entityname_property* and *entityname_timeseries*. The **relationships** view captures all relationship instances.
     
     Within the rows of each entity type view, there are values for `EntityInstanceId1` and `EntityInstanceId2`. Together, these values form the unique ID of each entity instance.
 
@@ -110,7 +110,7 @@ Follow these steps to view your domain data.
 1. Explore the views using the UI (or SQL queries) to check that the sample data is mapped correctly. Verify the following items: 
     1. Your mapped properties exist inside the views for their associated entity types, and have data mapped to them (except for fields that were left unmapped).
     1. Entity instances have no null values for the `EntityInstanceId1` and `EntityInstanceId2` columns.
-    1. The *relationship* view contains relationship data, and there are no null values. Notice that each row references a relationship between a source entity instance (identified by the combination of `FirstEntityInstanceId1` and `FirstEntityInstanceId2`) and a target entity instance (identified by the combination of `SecondEntityInstanceId1` and `SecondEntityInstanceId2`).
+    1. The *relationship* view contains relationship instance data, and there are no null values. Notice that each row references a relationship instance between a source entity instance (identified by the combination of `FirstEntityInstanceId1` and `FirstEntityInstanceId2`) and a target entity instance (identified by the combination of `SecondEntityInstanceId1` and `SecondEntityInstanceId2`).
     1. There's no view for *Reboiler_property* or *Reboiler_timeseries*, since you deactivated the *Reboiler* entity type.
 
 Now that you've explored the structure of the digital twin builder data, you're ready to use that data in a Power BI report. 

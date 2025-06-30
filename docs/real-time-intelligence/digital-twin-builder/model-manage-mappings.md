@@ -156,7 +156,7 @@ You can deactivate an entity type if it was misconfigured or is no longer needed
 
 When deactivating entity types, keep the following notes in mind:
 
-* Before you deactivate an entity type, first delete all relationships associated with it.
+* Before you deactivate an entity type, first delete all relationship types associated with it.
 * When instances and time series are removed from the digital twin builder, they're only soft-deleted within the [base layer](concept-modeling.md#storage-and-access). 
 * To permanently delete the instances and time series associated with an entity type, use Fabric tools to query all records that are soft-deleted from the base layer, and delete them.
 

@@ -275,4 +275,4 @@ Wait for all mappings to complete before you move on to the next part of the tut
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 3: Define relationships](tutorial-3-define-relationships.md)
+> [Tutorial part 3: Define relationship types](tutorial-3-define-relationships.md)
