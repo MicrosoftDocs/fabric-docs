@@ -119,7 +119,7 @@ For more information about tasks in this tutorial, see:
 * [Materialized views overview](/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric&preserve-view=true)
 * [Create materialized views](materialized-view.md)
 * [Query data using T-SQL](/kusto/query/t-sql?view=microsoft-fabric&preserve-view=true)
-* [Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence.md)
+* [Copilot for Writing KQL Queries](../fundamentals/copilot-for-writing-queries.md)
 
 ## Next step
 
