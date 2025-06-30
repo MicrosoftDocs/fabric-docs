@@ -1,12 +1,3 @@
----
-title: Include file for the faq
-description: Include file for the faq.
-author: billmath
-ms.service: powerbi
-ms.topic: include
-ms.date: 11/10/2023
-ms.author: billmath
----
 
 ## FAQ
 
