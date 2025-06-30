@@ -4,7 +4,7 @@ description: A known issue is posted where SQL database creation fails to create
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 12/10/2024
+ms.date: 06/27/2025
 ms.custom: known-issue-965
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-965
 
 When you create a Fabric SQL Database, it automatically creates a child SQL analytics endpoint and a child semantic model with the same name as the SQL database. If the workspace already contains a SQL analytics endpoint or a semantic model with the same name, the creation of the child items fails.
 
-**Status:** Open
+**Status:** Fixed: June 27, 2025
 
 **Product Experience:** Databases
 
