@@ -1,11 +1,13 @@
 ---
-author: davidiseminger
-ms.service: powerbi
-ms.topic: include
-ms.date: 11/10/2023
-ms.author: davidi
+title: Include file
+description: Include file
+author: billmath
+ms.service: fabric
+ms.topic: Include
+ms.date: 09/20/2024
+ms.author: billmath
+ms.custom: Include file
 ---
-
 ## Considerations and limitations
 
 You can see the current limitations for row-level security on cloud models here:

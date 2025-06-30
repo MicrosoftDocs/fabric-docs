@@ -1,3 +1,14 @@
+---
+title: Include file
+description: Include file
+author: billmath
+ms.service: fabric
+ms.topic: Include
+ms.date: 09/20/2024
+ms.author: billmath
+ms.custom: Include file
+---
+
 ## FAQ
 
 **Question:** What if I have previously created roles and rules for a dataset in the Power BI service? Do they still work if I do nothing?  
