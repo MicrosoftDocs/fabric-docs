@@ -28,7 +28,7 @@ To accomplish this scenario, you need to create a pipeline with the following co
 The data movement operation utilized 267,480 CU seconds with a 1504.42 second (25.07 minute) duration while activity run operation was null since there weren’t any non-copy activities in the pipeline run. The duration of the data movement operation is the sum of copy durations from the source to staging and from staging to the destination.
 
 > [!NOTE]
-> Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
+> Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Capacity Metrics App since the CU seconds metric it also reports already accounts for its duration.
 
 |Metric  |Data Movement Operation  |
 |---------|---------|

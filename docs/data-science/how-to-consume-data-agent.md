@@ -104,7 +104,7 @@ Create a client object that contains the connection string that connects to your
 import os
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
-from azure.ai.projects.models import FabricTool
+from azure.ai.agents.models import FabricTool, ListSortOrder
 ```
 
 #### Step 2: Create an Agent with the Microsoft Fabric tool enabled

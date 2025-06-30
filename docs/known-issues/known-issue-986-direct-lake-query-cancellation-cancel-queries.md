@@ -4,7 +4,7 @@ description: A known issue is posted where Direct Lake query cancellation might 
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 01/07/2025
+ms.date: 06/25/2025
 ms.custom: known-issue-986
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-986
 
 You can use Direct Lake as a storage mode for your semantic model. If you cancel a query on a Direct Lake semantic model table, the model might occasionally also cause the cancellation of other queries which read the same table.
 
-**Status:** Open
+**Status:** Fixed: June 25, 2025
 
 **Product Experience:** Power BI
 
