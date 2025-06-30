@@ -102,7 +102,7 @@ If you publish your Power BI Desktop report to a [workspace](/power-bi/collabora
 
 [!INCLUDE [include-short-name](../includes/rls-limitations.md)]
 
-[!INCLUDE [include-short-name](../includes/rls-faq.md)]
+[!INCLUDE [include-short-name](../includes/rls-faq-fixed.md)]
 
 ## Related content
 
