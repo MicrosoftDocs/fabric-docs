@@ -1,4 +1,3 @@
-
 ## FAQ
 
 **Question:** What if I have previously created roles and rules for a dataset in the Power BI service? Do they still work if I do nothing?  
