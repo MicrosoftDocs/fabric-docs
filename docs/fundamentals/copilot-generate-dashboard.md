@@ -13,7 +13,7 @@ ms.collection: ce-skilling-ai-copilot
 
 # Generate Real-Time Dashboard Using Copilot
 
-Copilot makes it easy to create dashboards by automating the inital setup, eliminating the need for technical expertise. The process includes selecting a data table in Real-Time Hub or KQL Queryset and using AI to generate a Real-Time Dashboard, that includes an insights page for a quick overview, and a data profile page.
+Copilot makes it easy to create dashboards by automating the initial setup, eliminating the need for technical expertise. The process includes selecting a data table in Real-Time Hub or KQL Queryset and using AI to generate a Real-Time Dashboard, that includes an insights page for a quick overview, and a data profile page.
 
 For billing information about Copilot, see [Announcing Copilot in Fabric pricing](https://blog.fabric.microsoft.com/en-us/blog/announcing-fabric-copilot-pricing-2/).
 
