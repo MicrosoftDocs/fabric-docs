@@ -94,7 +94,7 @@ To return to normal viewing, select **Back to Row-Level Security**.
 > [!NOTE]
 > The Test as role feature doesn't work for DirectQuery models with Single Sign-On (SSO) enabled. Additionally, not all aspects of a report can be validated in the Test as role feature including Q&A visualizations, Quick insights visualizations, and Copilot.
 
-[!INCLUDE [include-short-name](../includes/row-level-security-usernames.md)]
+[!INCLUDE [include-short-name](../includes/row-level-security-username.md)]
 
 ## Using RLS with workspaces in Power BI
 
