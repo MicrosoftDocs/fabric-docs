@@ -48,9 +48,11 @@ The databases page of an eventhouse shows you database information either in lis
 
 For more information, see [Database details](manage-monitor-database.md#database-details).
 
-## Minimum consumption
+## Always-On
+Your eventhouse is designed to optimize cost by suspending the service when not in use. When reactivating the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, use **Always-On**. This setting enables the service to be always available, scaling according to our auto-scale mechanism. With Always-On enabled you will see 100% EventHouse UpTime and you will not pay for cache storage as it's included in the capacity charges.
 
-Your eventhouse is designed to optimize cost by suspending the service when not in use. When reactivating the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, use **Minimum consumption**. This setting enables the service to be always available, but at a selected minimum level. You pay for the minimum compute level you select, or your actual consumption when your compute level is above the minimum set. The specified compute is available to all the databases within the eventhouse. A limited premium storage is included in the service, and corresponds to the minimum consumption levels shown in the following table:
+### Minimum consumption
+As part of the Always-On feature, you can additionally configure your minimum consumption. This is particularly useful in scenarios where you have unpredictable query or ingestion loads and need to ensure adequate performance during sudden high loads. This setting allows you to prevent our auto-scale mechanism from scaling below a certain size, while still allowing it to scale to a larger size if the workload requires it. A limited amount of premium storage is included in the service, and if your cache utilization approaches this limit, auto-scale will adjust to the next larger size.
 
 [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
 
