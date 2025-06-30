@@ -6,7 +6,7 @@ ms.author: abnarain
 author: abnarain
 ms.topic: how-to
 ms.custom: airflows
-ms.date: 03/25/2024
+ms.date: 06/30/2025
 ---
 
 # Install a Private Package as a requirement in Apache Airflow job
@@ -59,13 +59,13 @@ In this tutorial, you will create a simple custom operator as a Python package, 
        task
    ```
 
-3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Apache Airflow Job or you can use preconfigured repository[Install-Private-Package](https://github.com/ambika-garg/Install-Private-Package-Fabric)
+3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Apache Airflow Job or you can use preconfigured repository at [Install-Private-Package](https://github.com/ambika-garg/Install-Private-Package-Fabric).
 
 ## Add your package as a requirement
 
-Add the package as a requirement under `Airflow requirements`. Use the format `/opt/airflow/git/<repoName>.git/<pathToPrivatePackage>`
+Add the package as a requirement under `Airflow requirements`. Use the format `/opt/airflow/git/<repoName>/<pathToPrivatePackage>`
 
-For example, if your private package is located at `/dags/test/private.whl` in a GitHub repo, add the requirement `/opt/airflow/git/<repoName>.git/dags/test/private.whl` to the Airflow environment.
+For example, if your private package is located at `/dags/test/private.whl` in a GitHub repo, add the requirement `/opt/airflow/git/<repoName>/dags/test/private.whl` to the Airflow environment.
 
 :::image type="content" source="media/apache-airflow-jobs/private-package.png" lightbox="media/apache-airflow-jobs/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
 
