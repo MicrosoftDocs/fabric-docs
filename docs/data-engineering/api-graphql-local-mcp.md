@@ -43,7 +43,7 @@ Before you begin this tutorial, make sure you have:
 
 ## Step 1: Configure service principal access
 
-To authenticate your local MCP server with Microsoft Fabric, you'll need to set up service principal access. Follow the complete guide at [Use Service Principals with Fabric API for GraphQL](api-graphql-service-principals.md) to:
+To authenticate your local MCP server with Microsoft Fabric, you'll need to set up service principal access. Follow the complete guide at [Use Service Principals with Fabric API for GraphQL](api-graphql-service-principal.md) to:
 
 - Create an Azure App Registration
 - Configure client credentials
@@ -54,7 +54,7 @@ Make sure to note down your **Tenant ID**, **Client ID**, and **Client Secret** 
 
 ## Step 2: Enable GraphQL introspection
 
-The MCP server requires schema introspection to automatically discover your GraphQL schema. Follow the instructions at [Microsoft Fabric API for GraphQL Introspection and Schema Export](https://learn.microsoft.com/en-us/fabric/data-engineering/api-graphql-introspection-schema-export) to enable introspection on your GraphQL API.
+The MCP server requires schema introspection to automatically discover your GraphQL schema. Follow the instructions at [Microsoft Fabric API for GraphQL Introspection and Schema Export](api-graphql-introspection-schema-export.md) to enable introspection on your GraphQL API.
 
 > [!IMPORTANT]
 > Introspection must be enabled for the MCP server to discover your GraphQL schema automatically.
@@ -316,8 +316,8 @@ While the local MCP server should be implemented for development purposes only a
 
 - [Model Context Protocol documentation](https://modelcontextprotocol.io/introduction)
 - [GitHub repository with complete code samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/GraphQL/MCP)
-- [Microsoft Fabric API for GraphQL overview](https://learn.microsoft.com/en-us/fabric/data-engineering/api-graphql-overview)
-- [Connect applications to Fabric API for GraphQL](https://learn.microsoft.com/en-us/fabric/data-engineering/connect-apps-api-graphql)
-- [Create and add data to an API for GraphQL](https://learn.microsoft.com/en-us/fabric/data-engineering/get-started-api-graphql)
-- [Microsoft Fabric API for GraphQL FAQ](https://learn.microsoft.com/en-us/fabric/data-engineering/graphql-faq)
-- [Integrate Azure API Management with Fabric API for GraphQL](https://learn.microsoft.com/en-us/fabric/data-engineering/api-graphql-azure-api-management)
+- [Microsoft Fabric API for GraphQL overview](api-graphql-overview.md)
+- [Connect applications to Fabric API for GraphQL](connect-apps-api-graphql.md)
+- [Create and add data to an API for GraphQL](get-started-api-graphql.md)
+- [Microsoft Fabric API for GraphQL FAQ](graphql-faq.yml)
+- [Integrate Azure API Management with Fabric API for GraphQL](api-graphql-azure-api-management.md)
