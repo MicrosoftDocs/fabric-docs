@@ -1,4 +1,6 @@
 ---
+title: Include file for the username() or userprincipalname() DAX function
+description: Include file for the username() or userprincipalname() DAX function.
 author: billmath
 ms.service: powerbi
 ms.topic: include

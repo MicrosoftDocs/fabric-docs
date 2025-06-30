@@ -1,4 +1,6 @@
 ---
+title: Include file for the faq
+description: Include file for the faq.
 author: billmath
 ms.service: powerbi
 ms.topic: include

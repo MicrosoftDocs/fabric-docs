@@ -1,9 +1,11 @@
 ---
-author: JulCsc
+title: Include file for current limitations for row-level security on cloud models
+description: Include file for current limitations for row-level security on cloud models.
+author: billmath
 ms.service: powerbi
 ms.topic: include
 ms.date: 11/10/2023
-ms.author: juliacawthra
+ms.author: billmath
 ---
 
 ## Considerations and limitations
