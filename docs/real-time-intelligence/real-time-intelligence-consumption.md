@@ -81,4 +81,4 @@ The following image shows a sample storage page from monitoring a KQL database i
 
 * [Microsoft Fabric concepts and licenses](../enterprise/licenses.md)
 * [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
-* [Create a KQL database](create-database.md)
+* [Understand Eventhouse compute usage](eventhouse-compute-observability.md)
