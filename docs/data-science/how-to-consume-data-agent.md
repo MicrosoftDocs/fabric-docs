@@ -117,6 +117,12 @@ To make the Fabric data agent tool available to your Azure AI agent, use a conne
 # Your connection ID is in the format /subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group>/providers/Microsoft.CognitiveServices/accounts/<ai-foundry-resource-name>/projects/<your-project-name>/connections/<your-fabric-connection-name>
 conn_id = "your-connection-id"
 
+# Initialize the AI project client
+project_client = AIProjectClient(
+    endpoint=os.environ["PROJECT_ENDPOINT"],
+    credential=DefaultAzureCredential(),
+)
+
 # Initialize agent Fabric tool and add the connection ID
 fabric = FabricTool(connection_id=conn_id)
 
