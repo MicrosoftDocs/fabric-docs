@@ -1,8 +1,0 @@
-https://msit.powerbi.com/groups/c7772b91-32a5-4217-9cfe-5eec633bf458/lakehouses/eddce388-45f5-4edb-a1ad-a533e1ecf21c?experience=power-bi - stage
-https://msit.powerbi.com/groups/9a14b2d3-5d61-427c-9ef4-9961d93121cc/lakehouses/3685c9c6-d9c3-49a4-a2cd-f3e3ee15f6ea?experience=power-bi - dev
-https://msit.powerbi.com/groups/9a14b2d3-5d61-427c-9ef4-9961d93121cc/lakehouses/92219aad-1cd7-4b06-adc1-752513e7e423?experience=power-bi - test
-https://msit.powerbi.com/groups/9a14b2d3-5d61-427c-9ef4-9961d93121cc/lakehouses/315ba069-0431-4180-bf7a-84563c0ad46c?experience=power-bi - prod
-
-
-
-By default, when first deployed/commited, the variable librarie's active set is, set to be the default value. You can change this by accessing the newly created variable library in the target stage/repo and changing the active set.

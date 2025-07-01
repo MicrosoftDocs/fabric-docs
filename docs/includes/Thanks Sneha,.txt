@@ -1,3 +1,0 @@
-Thanks Sneha,
-
-This should work. I was trying to setup Git Integration and 

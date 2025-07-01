@@ -1,8 +1,0 @@
-ErrorCode=LakehouseOperationFailed,'Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=Lakehouse operation failed for: Operation returned an invalid status code 'NotFound'. Workspace: 'b5fe98a9-eb47-460e-b4cd-fa7471c25046'. Path: '8c96376d-ac5c-4fd0-b51a-728a0c737d09/Tables/dbo'. ErrorCode: 'TargetItemNotInWorkspace'. Message: 'Not Found'. TimeStamp: 'Sun, 08 Jun 2025 13:13:04 GMT'..,Source=Microsoft.DataTransfer.ClientLibrary,''Type=Microsoft.Azure.Storage.Data.Models.ErrorSchemaException,Message=Operation returned an invalid status code 'NotFound',Source=Microsoft.DataTransfer.ClientLibrary,'
-
-
-ErrorCode=DeltaSnapshotError,'Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=table doesn't exist,Source=Microsoft.DataTransfer.ClientLibrary,'
-
-
-
-ErrorCode=LakehouseOperationFailed,'Type=Microsoft.DataTransfer.Common.Shared.HybridDeliveryException,Message=Lakehouse operation failed for: Operation returned an invalid status code 'NotFound'. Workspace: '7e8069cf-bcdc-41c4-ac35-e2206ffbe4df'. Path: '8c96376d-ac5c-4fd0-b51a-728a0c737d09/Tables/dbo'. ErrorCode: 'TargetItemNotInWorkspace'. Message: 'Not Found'. TimeStamp: 'Mon, 09 Jun 2025 14:38:51 GMT'..,Source=Microsoft.DataTransfer.ClientLibrary,''Type=Microsoft.Azure.Storage.Data.Models.ErrorSchemaException,Message=Operation returned an invalid status code 'NotFound',Source=Microsoft.DataTransfer.ClientLibrary,'

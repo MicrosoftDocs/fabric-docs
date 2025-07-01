@@ -1,3 +1,0 @@
-Also, forgot one of the planned stages for the process.
-
-1.  The items that come in via the form, after being triaged and stack-ranked, will then be used in a monthly meeting (end of month - current sprint) with the PMs to plan the next sprint.  So basically once I have my list, I will meet with my PMs and say this is what I have for the month. I will convey that my bandwidth is limited so if you want something other that what is on this list for you, know that something will fall off the list, if you have a more priority item.  This way, all of the PMs are on-board with what we are doing for the month also. 

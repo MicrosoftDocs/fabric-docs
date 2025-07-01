@@ -1,3 +1,0 @@
-How is this.  I broke the sentence up for readability but I don't think changed the context.
-
-Keep in mind that the application must be created within the same tenant as your Azure DevOps organization which you would like to connect from Microsoft Fabric. Also that your organization policy allows for the creation and use of a client secret for applications.

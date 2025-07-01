@@ -1,5 +1,0 @@
-I added the Step 3 section, thinking it would be easier for customers to have a separate section on how to get the tenant ID, etc., but based on feedback and re-looking at it, it does feel out of scope and we can go down the rabbit hole on the number of different ways to get the tenant ID, so I wanted to reign it back in. So I collapsed 3 or 4 back into one step. Like Yaron mentions, we can always update later based on feedback.
-
-So, I have updated step 3 with the table, some brief info on getting the tenant ID and SP ID, removed the use of "preferred" and left that as the default way to set up the connection.
-
-Also added a link to https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal which provides an example of app registration and service principal creation, to Step 1.
