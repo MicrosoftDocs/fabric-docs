@@ -60,136 +60,136 @@ The following files are contained in a dashboard folder:
 
 ### Real-Time dashboard files
 
-    The file uses the following schema to define a real-time dashboard:
+The file uses the following schema to define a real-time dashboard:
     
-    ```json
+```json
+{
+  "$schema": "",
+  "id": "",
+  "eTag": "\"\"",
+  "schema_version": "",
+  "title": "",
+  "tiles": [
     {
-      "$schema": "",
       "id": "",
-      "eTag": "\"\"",
-      "schema_version": "",
       "title": "",
-      "tiles": [
-        {
-          "id": "",
-          "title": "",
-          "visualType": "",
-          "pageId": "",
-          "layout": {
-            "x": ,
-            "y": ,
-            "width": ,
-            "height":
+      "visualType": "",
+      "pageId": "",
+      "layout": {
+        "x": ,
+        "y": ,
+        "width": ,
+        "height":
+      },
+      "queryRef": {
+        "kind": "",
+        "queryId": ""
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": ,
+            "yAxisMinimumValue": ,
+            "yAxisScale": "",
+            "horizontalLines": []
           },
-          "queryRef": {
-            "kind": "",
-            "queryId": ""
-          },
-          "visualOptions": {
-            "multipleYAxes": {
-              "base": {
-                "id": "",
-                "label": "",
-                "columns": [],
-                "yAxisMaximumValue": ,
-                "yAxisMinimumValue": ,
-                "yAxisScale": "",
-                "horizontalLines": []
-              },
-              "additional": [],
-              "showMultiplePanels":
-            },
-            "hideLegend": ,
-            "legendLocation": "",
-            "xColumnTitle": "",
-            "xColumn": ,
-            "yColumns": ,
-            "seriesColumns": ,
-            "xAxisScale": "",
-            "verticalLine": "",
-            "crossFilterDisabled": ,
-            "drillthroughDisabled": ,
-            "crossFilter": [
-              {
-                "interaction": "",
-                "property": "",
-                "parameterId": "",
-                "disabled":
-              }
-            ],
-            "drillthrough": [],
-            "selectedDataOnLoad": {
-              "all": ,
-              "limit":
-            },
-            "dataPointsTooltip": {
-              "all": ,
-              "limit":
-            }
-          }
-        }
-      ],
-      "baseQueries": [],
-      "parameters": [
-        {
-          "kind": "",
-          "id": "",
-          "displayName": "",
-          "description": "",
-          "variableName": "",
-          "selectionType": "",
-          "includeAllOption": ,
-          "defaultValue": {
-            "kind": ""
-          },
-          "dataSource": {
-            "kind": "",
-            "columns": {
-              "value": ""
-            },
-            "queryRef": {
-              "kind": "",
-              "queryId": ""
-            }
-          },
-          "showOnPages": {
-            "kind": ""
-          },
-          "allIsNull":
+          "additional": [],
+          "showMultiplePanels":
         },
-      ],
-      "dataSources": [
-        {
-          "id": "",
-          "name": "",
-          "clusterUri": "",
-          "database": "",
+        "hideLegend": ,
+        "legendLocation": "",
+        "xColumnTitle": "",
+        "xColumn": ,
+        "yColumns": ,
+        "seriesColumns": ,
+        "xAxisScale": "",
+        "verticalLine": "",
+        "crossFilterDisabled": ,
+        "drillthroughDisabled": ,
+        "crossFilter": [
+          {
+            "interaction": "",
+            "property": "",
+            "parameterId": "",
+            "disabled":
+          }
+        ],
+        "drillthrough": [],
+        "selectedDataOnLoad": {
+          "all": ,
+          "limit":
+        },
+        "dataPointsTooltip": {
+          "all": ,
+          "limit":
+        }
+      }
+    }
+  ],
+  "baseQueries": [],
+  "parameters": [
+    {
+      "kind": "",
+      "id": "",
+      "displayName": "",
+      "description": "",
+      "variableName": "",
+      "selectionType": "",
+      "includeAllOption": ,
+      "defaultValue": {
+        "kind": ""
+      },
+      "dataSource": {
+        "kind": "",
+        "columns": {
+          "value": ""
+        },
+        "queryRef": {
           "kind": "",
-          "scopeId": ""
+          "queryId": ""
         }
-      ],
-      "pages": [
-        {
-          "name": "",
-          "id": ""
-        }
-      ],
-      "queries": [
-        {
-          "dataSource": {
-            "kind": "",
-            "dataSourceId": ""
-          },
-          "text": "",
-          "id": "",
-          "usedVariables": [
-            "",
-            ""
-          ]
-        }
+      },
+      "showOnPages": {
+        "kind": ""
+      },
+      "allIsNull":
+    },
+  ],
+  "dataSources": [
+    {
+      "id": "",
+      "name": "",
+      "clusterUri": "",
+      "database": "",
+      "kind": "",
+      "scopeId": ""
+    }
+  ],
+  "pages": [
+    {
+      "name": "",
+      "id": ""
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "",
+        "dataSourceId": ""
+      },
+      "text": "",
+      "id": "",
+      "usedVariables": [
+        "",
+        ""
       ]
     }
-    ```
+  ]
+}
+```
 
 ## Related content
 
