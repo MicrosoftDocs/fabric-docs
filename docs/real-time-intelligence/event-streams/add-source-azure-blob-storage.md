@@ -70,8 +70,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 [!INCLUDE [azure-blob-storage-connector](includes/azure-blob-storage-source-connector.md)]
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ## View updated eventstream
 
 1. Once the connection is created, you can see the Azure Blob Storage event source added to your eventstream in **Edit mode**. Select **Publish** to publish the eventstream and start capturing your Azure Blob Storage events.
