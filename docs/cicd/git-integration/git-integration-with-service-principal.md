@@ -88,15 +88,7 @@ To create the source control connection, use the following steps.
 
  :::image type="content" source="media/git-integration-with-service-principal/new-connection-2.png" alt-text="Screenshot of a new connection using the preferred method." lightbox="media/git-integration-with-service-principal/new-connection-2.png":::
 
-### Alternate method of source control connection creation
-Alternatively, you can use these steps to create the connection.
 
-1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Select **+New** in the top left corner to add a new cloud connection.
-2. Give it a name and set the **Type** to *Azure DevOps source control* using a *Service Principal* as the authentication method. Complete the other details (Tenant ID, Service principal ID, Service principal key) using the information you saved in [step 1](#step-1-register-an-application-with-microsoft-entra-id).
-
-     :::image type="content" source="./media/git-integration-with-service-principal/new-connection.png" alt-text="Screenshot of new connection interface.":::
-
-3. From your workspace settings, go to the *Git integration* tab, and select your newly created account. Complete the remaining information.
 
 ## Step 4: Allow calling Git REST APIs with service principal (optional)
 
@@ -113,3 +105,21 @@ Alternatively, you can use these steps to create the connection.
 1. Search for the service principal and assign it a *contributor* role or higher. For more information on permissions, see the [Git integration permission table](./git-integration-process.md#required-fabric-permissions-for-popular-actions).
 
 Now, you can [call Git REST APIs](./git-automation.md) with Service principal authentication.
+
+### Edit service principal connection details
+When you need to update your service principal details, for example, update service principal key, use the following instructions:
+
+1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Select **+New** in the top left corner to add a new cloud connection.
+2. Give it a name and set the **Type** to *Azure DevOps source control* using a *Service Principal* as the authentication method. Complete the other details (Tenant ID, Service principal ID, Service principal key) using the information you saved in [step 1](#step-1-register-an-application-with-microsoft-entra-id).
+
+ :::image type="content" source="media/git-integration-with-service-principal/edit-connection-1.png" alt-text="Screenshot of editing the connection details." lightbox="media/git-integration-with-service-principal/edit-connection-1.png":::
+
+     :::image type="content" source="./media/git-integration-with-service-principal/new-connection.png" alt-text="Screenshot of new connection interface.":::
+
+3. From your workspace settings, go to the *Git integration* tab, and select your newly created account. Complete the remaining information.
+
+## Related content
+
+- [Understand the Git integration process](./git-integration-process.md)
+- [Manage Git branches](./manage-branches.md)
+- [Git integration best practices](../best-practices-cicd.md)
