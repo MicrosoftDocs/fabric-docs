@@ -167,7 +167,7 @@ If you are using Snowflake to write a new Iceberg table to OneLake, you might se
 
 > Fabric capacity region cannot be validated. Reason: 'Invalid access token. This may be due to authentication and scoping. Please verify delegated scopes.'
 
-If you see this error, have your Fabric tenant admin double-check that you've enabled both tenant settings mentioned in the [Write an Iceberg table to OneLake using Snowflake](#write-an-iceberg-table-to-onelake-using-snowflake) section:
+If you see this error, have your Fabric tenant admin double-check that you've enabled both tenant settings mentioned in the [Write an Iceberg table to OneLake using Snowflake](./onelake-iceberg-snowflake.md#write-an-iceberg-table-to-onelake-using-snowflake-on-azure) section:
 
 1.  In the upper-right corner of the Fabric UI, open **Settings**, and select **Admin portal**.
 1.  Under **Tenant settings**, in the **Developer settings** section, enable the setting labeled [**Service principals can use Fabric APIs**](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis).
