@@ -21,7 +21,7 @@ The Folder connector supports the following authentication types for copy and Da
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Windows| n/a | √ |
+|Windows| √| √ |
 
 ## Set up your connection in Dataflow Gen2
 
@@ -32,6 +32,3 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Set up your connection in a data pipeline
-
-Data Factory in Microsoft Fabric doesn't currently support folders in data pipelines.
