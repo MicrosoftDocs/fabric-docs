@@ -19,7 +19,8 @@ ms.collection: ce-skilling-ai-copilot
 
 Data agent in Microsoft Fabric transforms enterprise data into conversational Q&A systems. It enables users to interact with their data through chat, to uncover actionable insights. One way to consume Fabric data agent is through Azure AI Agent Service, a core component of Azure AI Foundry. Through integration of Fabric data agents with Azure AI Foundry, your Azure AI agents can directly tap into the rich, structured, and semantic data available in Microsoft Fabric OneLake. This integration provides immediate access to high-quality enterprise data, and it empowers your Azure AI agents to generate actionable insights and streamline analytical workflows. Organizations can then enhance data-driven decision-making with Fabric data agent as a powerful knowledge source within their Azure AI environments.
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+> [!IMPORTANT]  
+> This feature is in [preview](../fundamentals/preview.md). You should use the latest beta/preview version of the [Azure AI Agents Python SDK](https://pypi.org/project/azure-ai-agents/1.1.0b3/).
 
 ## Prerequisites
 
