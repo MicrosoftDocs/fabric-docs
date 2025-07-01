@@ -34,8 +34,11 @@ ms.date: 02/26/2025
 
 ### GitHub Enterprise limitations
 
-Some GitHub Enterprise settings aren't supported. For example:
+Some GitHub Enterprise versions and settings aren't supported. For example:
 
+- GitHub Enterprise Cloud with data residency (ghe.com)
+- GitHub Enterprise Server with a custom domain is not supported, even if the instance is publicly accessible
+- Github Enterprise Server hosted on a private network
 - IP allowlist
 
 ### Workspace limitations

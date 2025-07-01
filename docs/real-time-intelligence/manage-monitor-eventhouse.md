@@ -2,8 +2,8 @@
 title: Manage and monitor an Eventhouse
 description: Learn how to manage and monitor an eventhouse and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 05/11/2025
@@ -12,11 +12,11 @@ ms.search.form: Eventhouse
 ---
 # Manage and monitor an eventhouse
 
-The Eventhouse page serves as the central hub for all your interactions within the Eventhouse environment. It's your gateway to seamlessly manage and monitor an eventhouse, navigate through databases, and perform various Eventhouse-related actions.
+An Eventhouse is a scalable environment for processing and analyzing large volumes of real-time data. It supports structured streaming for continuous data ingestion and analysis, and uses Kusto Query Language (KQL) to easily gain insights from your data. The Eventhouse page serves as the central hub for all your interactions within the Eventhouse environment. It's your gateway to seamlessly manage and monitor an eventhouse, navigate through databases, and perform various Eventhouse-related actions.
 
 In this article, you learn about how to manage and gain insights about an eventhouse in Real-Time Intelligence.
 
-For advanced analytic insights, see [View Worspace monitoring](#view-worspace-monitoring) and [Eventhouse monitoring overview](monitor-eventhouse.md).
+For advanced analytic insights, see [View Workspace monitoring](#view-workspace-monitoring) and [Eventhouse monitoring overview](monitor-eventhouse.md).
 
 ## Prerequisites
 
@@ -146,7 +146,7 @@ The databases overview page provides a summary of all the databases in the event
 
 1. To explore a specific database, select the name of this database from the list. For more information, see (manage-monitor-database.md).
 
-## View Worspace monitoring
+## View Workspace monitoring
 
 You can access the read-only Workspace monitoring database from the Evenhouse explorer pane. Workspace monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
 

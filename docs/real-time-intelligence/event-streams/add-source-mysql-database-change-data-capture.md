@@ -97,8 +97,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 [!INCLUDE [mysql-database-cdc-connector](./includes/mysql-database-cdc-source-connector.md)]
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ## View updated eventstream
 1. You see the MySQL DB (CDC) source added to your eventstream in **Edit mode**.
 

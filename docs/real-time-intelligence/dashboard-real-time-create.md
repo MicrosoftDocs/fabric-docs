@@ -2,8 +2,8 @@
 title: Create a Real-Time Dashboard
 description: Learn how to visualize data with Real-Time Dashboards.
 ms.reviewer: tzgitlin
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 11/19/2024
@@ -40,6 +40,9 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 
 [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
 
+> [!NOTE]
+> You can also use Copilot to help you automatically create a Real-Time Dashboard. For more information, see [Generate a Real-Time Dashboard](../fundamentals/copilot-generate-dashboard.md).
+
 ## Add data source
 
 Data sources are reusable references to a specific database in the same workspace as the Real-Time Dashboard. Different tiles can be based on different data sources.
@@ -74,6 +77,9 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
     :::image type="content" source="media/real-time-dashboard/visual-formatting.png" alt-text="Screenshot of visual formatting pane in Real-Time Dashboards.":::
 
 1. Select the **Save** icon.
+
+> [!NOTE]
+> You can also use Copilot to help you write queries. For more information, see [Copilot for Writing KQL Queries](../fundamentals/copilot-for-writing-queries.md).
 
 ## Add tile from a queryset
 
@@ -156,9 +162,11 @@ You can view the query in either editing or viewing mode. Editing the underlying
 
 Auto refresh is a feature that allows you to automatically update the data on a dashboard without manually reloading the page or clicking a refresh button.
 
-The default auto refresh rate can be set by a database editor. Both editors and viewers can change the actual rate of auto refresh while viewing a dashboard.
+Dashboard authors can configure auto-refresh settings for other viewers. By default, the refresh rate is set using the **Default refresh rate**, but viewers can adjust this rate for their own sessions.
 
-However, database editors can limit the minimum refresh rate that any viewer can set so as to reduce the cluster load. When the minimum refresh rate is set, database users can't set a refresh rate lower than the minimum.
+The **Minimum time interval** defines the fastest refresh rate allowed and acts as a lower limit. For example, if the author sets the default refresh rate to 1 hour and the minimum time interval to 30 minutes, viewers can choose a refresh rate between 30 minutes and 1 hour, but not lower than 30 minutes.
+
+This setting gives authors control over how frequently dashboards can refresh, helping to manage system load and performance.
 
 1. Select the **Manage** tab > **Auto refresh**.
 1. Toggle the option so auto refresh is **Enabled**.

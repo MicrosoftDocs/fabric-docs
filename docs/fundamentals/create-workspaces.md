@@ -1,8 +1,8 @@
 ---
 title: Create a workspace
 description: "Learn how you can create a workspace: a collection of items such as lakehouses, warehouses, and reports, with task flows built to deliver key metrics for your organization."
-author: paulinbar
-ms.author: painbar
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: yicw
 ms.topic: how-to
 ms.date: 02/26/2025

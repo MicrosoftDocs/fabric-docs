@@ -1,8 +1,8 @@
 ---
 title: Export and sharing tenant settings
 description: Learn how to configure export and sharing settings in Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
 ms.date: 05/26/2025
 LocalizationGroup: Administration
