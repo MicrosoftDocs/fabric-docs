@@ -114,8 +114,6 @@ When you need to update your service principal details, for example, update serv
 
  :::image type="content" source="media/git-integration-with-service-principal/edit-connection-1.png" alt-text="Screenshot of editing the connection details." lightbox="media/git-integration-with-service-principal/edit-connection-1.png":::
 
-:::image type="content" source="./media/git-integration-with-service-principal/new-connection.png" alt-text="Screenshot of new connection interface.":::
-
 3. From your workspace settings, go to the *Git integration* tab, and select your newly created account. Complete the remaining information.
 
 ## Related content
