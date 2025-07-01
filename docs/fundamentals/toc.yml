@@ -116,7 +116,11 @@ items:
     - name: Copilot for Data Warehouse
       href: ../data-warehouse/copilot.md
     - name: Copilot for Real-Time Intelligence
-      href: copilot-real-time-intelligence.md
+      items:
+        - name: Copilot for Writing KQL Queries
+          href: copilot-for-writing-queries.md
+        - name: Generate Real-Time Dashboard Using Copilot
+          href: copilot-generate-dashboard.md
     - name: Copilot for Data Science and Data Engineering
       items:
       - name: Copilot for Data Science and Data Engineering
@@ -135,7 +139,7 @@ items:
   items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
-  - name: Understand storage for Direct Lake
+  - name: Understand Direct Lake query performance
     href: direct-lake-understand-storage.md
   - name: Direct Lake in Power BI Desktop (preview)
     href: direct-lake-power-bi-desktop.md 
@@ -209,6 +213,8 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Snowflake connector index outside the bounds error 
+      href: ../known-issues/known-issue-1183-snowflake-connector-index-outside-bounds-error.md
     - name: Lakehouse table maintenance fails for schema enabled lakehouses
       href: ../known-issues/known-issue-1184-lakehouse-table-maintenance-fail.md
     - name: OneLake catalog item details lineage tab button disappears
