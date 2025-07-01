@@ -1,5 +1,5 @@
 ---
-title: Connecting AI Agents to Fabric API for GraphQL with a local Model Context Protocol (MCP) server
+title: Connect AI Agents to Fabric API for GraphQL with a local Model Context Protocol (MCP) server
 description: Learn how to use a local MCP server to connect AI Agents with Fabric API for GraphQL
 ms.reviewer: sngun
 ms.author: sngun
