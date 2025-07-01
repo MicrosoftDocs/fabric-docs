@@ -123,7 +123,7 @@ if not IS_CUSTOM_DATA:
 # With an Azure Synapse Analytics blob, this can be done in one line
 
 # Download demo data files into the lakehouse if they don't exist
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/bankcustomerchurn"
     file_list = ["churn.csv"]
     download_path = "/lakehouse/default/Files/churn/raw"
 

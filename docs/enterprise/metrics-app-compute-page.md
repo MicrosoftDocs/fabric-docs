@@ -231,6 +231,10 @@ The table in this section lists the optional fields that you can add to the matr
 |Overloaded minutes |Displays a sum of 30 seconds increments where overloading occurred at least once. Sort to view the items that were affected the most due to overload penalty |
 |Performance delta |Displays the performance effect on the items. The number represents the percent of change from seven days ago. For example, 20 suggests that there's a 20% improvement today, compared with the same metric taken a week ago |
 
+## Considerations and Limitations
+The following considerations apply to the compute page:
+- Throttling charts aren't populated in sovereign clouds. In these clouds, throttling occurs when utilization exceeds 100%. Use the utilization chart on the compute page to observe when throttling occurs. 
+
 ## Related content
 
 * [Understand the metrics app storage page](metrics-app-storage-page.md)

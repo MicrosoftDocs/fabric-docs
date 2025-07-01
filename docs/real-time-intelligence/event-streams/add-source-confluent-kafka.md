@@ -48,9 +48,6 @@ After you complete these steps, the Confluent Cloud for Apache Kafka source is a
 * Confluent Cloud for Apache Kafka with JSON and Avro formats, using schema registry, is currently not supported.
 * Decoding data from Confluent Cloud for Apache Kafka using the Confluent Schema Registry is currently not supported. 
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
-
 ## Related content
 
 Other connectors:

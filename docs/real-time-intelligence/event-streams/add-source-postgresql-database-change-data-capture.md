@@ -72,8 +72,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 [!INCLUDE [postgresql-database-cdc-connector](./includes/postgresql-database-cdc-source-connector.md)]
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ## View updated eventstream
 
 1. You can see the PostgreSQL Database CDC source added to your eventstream in **Edit mode**.

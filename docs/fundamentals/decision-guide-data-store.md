@@ -7,9 +7,8 @@ ms.reviewer: sngun, scbradl
 ms.topic: concept-article
 ms.date: 06/04/2025
 ms.custom:
-  - FY25Q1-Linter
-ms.search.form: Choose a Data Store, SQL database Overview
-#customer intent: As a data engineer, I want to understand the different data store options and their use cases in Fabric so that I can make an informed decision for my data storage needs.
+- FY25Q1-Linter
+ms.search.form: Choose a Data Store, Databases datastore decision guide
 ---
 
 # Microsoft Fabric decision guide: choose a data store

@@ -101,7 +101,7 @@ Next, map some non-timeseries data to the Bus entity. These fields are static pr
 
 Next, map some time series data to the Bus entity. These properties are streamed into the data source from the Eventstream sample data, and they contain information about the bus's location and movements.
 
-1. Go back to the **Configure** view and reselect the **Bus** entity. In the **Entity configuration** pane, reopen the **Mappings** tab. Select **Add data** to add a new mapping.
+1. Select **Home** to return to the semantic canvas, and reselect the **Bus** entity. In the **Entity configuration** pane, reopen the **Mappings** tab. Select **Add data** to add a new mapping.
 
     :::image type="content" source="media/tutorial-rti/bus-add-data-time.png" alt-text="Screenshot of adding a new bus mapping.":::
 

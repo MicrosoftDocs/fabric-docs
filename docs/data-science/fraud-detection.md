@@ -116,7 +116,7 @@ if not IS_CUSTOM_DATA:
     # Download data files into the lakehouse if they're not already there
     import os, requests
 
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/Credit_Card_Fraud_Detection"
     fname = "creditcard.csv"
     download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
 

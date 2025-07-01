@@ -19,6 +19,8 @@
         href: pricing-pipelines.md
       - name: Pricing Dataflow Gen2
         href: pricing-dataflows-gen2.md
+      - name: Pricing Copy job
+        href: pricing-copy-job.md
       - name: Pricing Apache Airflow job
         href: pricing-apache-airflow-job.md
       - name: Cost estimation from Azure Data Factory to Fabric
@@ -849,6 +851,8 @@
       href: cdc-copy-job.md
     - name: CI/CD for Copy job
       href: cicd-copy-job.md
+    - name: REST API Capabilities
+      href: copy-job-rest-api-capabilities.md    
   - name: Data gateway
     items:
     - name: On-premises data gateways docs
