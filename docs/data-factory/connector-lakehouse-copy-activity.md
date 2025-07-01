@@ -4,11 +4,13 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 06/06/2024
+ms.date: 04/21/2025
 ms.custom:
+  - pipelines
   - template-how-to
   - build-2023
   - ignite-2023
+  - connectors
 ---
 
 # Configure Lakehouse in a copy activity
@@ -72,8 +74,6 @@ The following properties are **required**:
       - **Timestamp**: Specify to query an older snapshot by timestamp.
       - **Version**: Specify to query an older snapshot by version.
       - **Additional columns**: Add additional data columns to the store source files' relative path or static value. Expression is supported for the latter.
-      
-    Reader version 1 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
 
   - If you select **Files**:
     - **File path type**: You can choose **File path**, **Wildcard file path**, or **List of files** as your file path type. The following list describes the configuration of each setting：
@@ -103,7 +103,7 @@ The following properties are **required**:
         - **Partition root path**: When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns.
       - **Max concurrent connections**: Indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
-## Destination
+### Destination
 
 The following properties are supported for Lakehouse under the **Destination** tab of a copy activity.
 
@@ -126,7 +126,9 @@ The following properties are **required**:
     - **Table**: When you apply Lakehouse with schemas in the connection, choose an existing table with a schema from the table list or specify a table with a schema as the destination. Or you can select **New** to create a new table with a schema. If you don't specify a schema name, the service will use *dbo* as the default schema.
 
       :::image type="content" source="./media/connector-lakehouse/table-name-with-schema.png" alt-text="Screenshot showing table name with schema.":::  
-
+    
+    > [!NOTE]
+    > The table name must be at least one character long, without '/' or '\\', no trailing dot, and no leading or trailing spaces.
 
     - Under **Advanced**, you can specify the following fields:
       - **Table actions**: Specify the operation against the selected table.
@@ -138,10 +140,10 @@ The following properties are **required**:
             - **Partition column name**: Select from the destination columns in schemas mapping. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab.
         
           It supports [Delta Lake time travel](https://docs.delta.io/latest/delta-batch.html#-deltatimetravel). The overwritten table has delta logs for the previous versions, which you can access in your Lakehouse. You can also copy the previous version table from Lakehouse, by specifying **Version** in the copy activity source.
+        - **Upsert (Preview)**: Insert new values to existing table and update existing values. Upsert is not supported when using partitioned Lakehouse tables.
+            - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Lakehouse Table.
 
       - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
-
-    Writer version 2 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
 
   - If you select **Files**:
     - **File path**: Select **Browse** to choose the file that you want to copy, or fill in the path manually.
@@ -187,6 +189,31 @@ If you choose Binary as your file format, mapping isn't supported.
 
 For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
+## Delta Lake table support
+
+In the sections below, you will find detailed information on Delta Lake table support for both the source and destination.
+
+### Source
+
+Reader version 1 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
+
+[Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) is supported when you apply reader version 2 or reader version 3 with `columnMapping` in `readerFeatures` in your Lakehouse table. 
+
+Delta table's column mapping capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can read data from an existing delta Lake table with `delta.columnMapping.mode` set to `name` or `id`.
+
+[Deletion vectors](https://docs.delta.io/latest/delta-deletion-vectors.html) is supported 
+when you apply reader version 3 with `deletionVectors` in `readerFeatures` in your Lakehouse table. Rows that are soft deleted are marked in deletion vector files and skipped when reading the delta lake table. 
+
+### Destination
+
+Writer version 2 is supported. You can find the corresponding supported Delta Lake features in this [article](https://docs.delta.io/latest/versioning.html#features-by-protocol-version).
+
+[Delta column mapping](https://docs.delta.io/latest/delta-column-mapping.html) is supported. This capability allows for more flexible schema evolution, ensuring that changes in table structure do not disrupt data workflows. With column mapping, you can:
+
+- Write data to an existing delta lake table with `delta.columnMapping.mode` set to `name` or `id`.
+- Auto-create a table with `delta.columnMapping.mode` set to `name` when the destination table does not exist and the source columns include special characters and whitespaces.
+- Auto-create a table with `delta.columnMapping.mode` set to `name` when the table action is overwrite and the source dataset columns include special characters and whitespaces.
+
 ## Table summary
 
 The following tables contain more information about a copy activity in Lakehouse.
@@ -230,9 +257,10 @@ The following tables contain more information about a copy activity in Lakehouse
 |**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | *(under `sink` -> `datasetSettings` -> `typeProperties`)*<br>schema |
 |**table name** |The name of the table. |\<your table name> |Yes | table |
 |  |  |  |  |  |
-|**Table action**| Append new values to an existing table or overwrite the existing data and schema in the table using the new values.|• **Append**<br>• **Overwrite**|No|tableActionOption:<br>Append or OverwriteSchema|
+|**Table action**| Append new values to an existing table, overwrite the existing data and schema in the table using the new values or insert new values to existing table and update existing values.|• **Append**<br>• **Overwrite**<br>• **Upsert**|No|tableActionOption:<br>• Append<br> • OverwriteSchema <br>• Upsert|
 |**Enable partitions**|This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".| Selected or unselected |No| partitionOption: <br> PartitionByKey or None|
 |**Partition columns**|The destination columns in schemas mapping.| \<your partition columns\> |No| partitionNameList|
+|**Key columns**|Choose which column is used to determine if a row from the source matches a row from the destination.|\<your key columns\>|Yes| keyColumns|
 |**File path**|Write data to the path to a folder/file under destination data store.|\<file path>|No|• folderPath<br>• fileName|
 | **File format** | The file format for your destination data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes when you select **Files** in **Root folder** | / |
 |**Copy behavior** | The copy behavior defined when the source is files from a file-based data store.|• **Flatten hierarchy**<br>• **Merge files**<br>• **Preserve hierarchy**<br>• **Add dynamic content** |No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|

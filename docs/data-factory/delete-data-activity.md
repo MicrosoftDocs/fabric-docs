@@ -1,17 +1,15 @@
 ---
 title: Delete data activity
 description: Learn how to add a Delete data activity to a pipeline and use it to delete data from a data source.
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: yexu
 author: dearandyxu
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.custom: pipelines
+ms.date: 12/18/2024
 ---
 
-# Use the Delete data activity to look up data from a data source
+# Use the Delete data activity to delete data from a data source
 
 The Fabric Delete data activity can delete data from any of the data sources supported by [!INCLUDE [product-name](../includes/product-name.md)]. 
 
@@ -21,7 +19,7 @@ You can use the Delete Activity in Data Factory to delete files or folders from 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a lookup activity to a pipeline with UI
@@ -48,6 +46,8 @@ Select the **Source** tab, and select an existing connection from the **Connecti
 :::image type="content" source="media/delete-data-activity/choose-delete-data-source-and-configure.png" alt-text="Screenshot showing the Delete data activity Source tab highlighted, and highlighting where to create a new connection.":::
 
 The example in the previous image shows a blob storage connection, but each connection type has its own configuration details specific to the data source selected.
+
+If you are using wildcard characters, allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder or file name has wildcard or this escape character inside.
 
 ## Supported data stores
 

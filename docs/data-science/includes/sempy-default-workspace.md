@@ -1,11 +1,10 @@
 ---
 title: Default workspace for SemPy functions
 description: Explanation of the default workspace from which SemPy functions read semantic models (Power BI datasets)
-author: msakande
-ms.author: mopeakande
+author: s-polly
+ms.author: scottpolly
 ms.topic: include
 ms.custom:
-  - ignite-2023
 ms.date: 06/03/2024
 ---
 

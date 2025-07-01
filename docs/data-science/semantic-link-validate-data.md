@@ -1,13 +1,12 @@
 ---
 title: Validate functional dependencies in data with semantic link
 description: Explore and validate functional dependencies in data with semantic link and Microsoft Fabric.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: romanbat
 reviewer: RomanBat
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 11/19/2024
 ms.search.form: semantic link
 ---
@@ -170,7 +169,7 @@ The `plot_dependency_violations` function generates a visualization that can hel
 
 Data quality is crucial for ensuring the reliability and validity of any analysis or model built on a dataset. Enforcement of functional constraints between columns in a dataset can help improve data quality. Functional constraints can help ensure that the relationships between columns have accuracy and consistency, which can lead to more accurate analysis or model results.
 
-The `drop_dependency_violations` function can help enforce functional constraints between columns in a dataset. It rows that violate a given constraint. Given a determinant column and a dependent column, this function removes rows with values that don't conform to the functional constraint between the two columns.
+The `drop_dependency_violations` function can help enforce functional constraints between columns in a dataset. It drops rows that violate a given constraint. Given a determinant column and a dependent column, this function removes rows with values that don't conform to the functional constraint between the two columns.
 
 This code snippet shows how to use the `drop_dependency_violations` function:
 

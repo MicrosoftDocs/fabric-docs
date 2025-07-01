@@ -6,19 +6,14 @@ ms.author: avinandac
 author: avinandaMS
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 05/13/2024
+ms.date: 06/04/2025
 ---
 
 # What is Data engineering in Microsoft Fabric?
 
 Data engineering in Microsoft Fabric enables users to design, build, and maintain infrastructures and systems that enable their organizations to collect, store, process, and analyze large volumes of data.
 
-Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and of high-quality. From the data engineering homepage, you can:
+Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and of high-quality. To access the data engineering homepage, select **Workloads** from the navigation pane, then select the **Data Engineering** tile. From the data engineering homepage, you can:
 
 - Create and manage your data using a lakehouse
 
@@ -36,7 +31,7 @@ Lakehouses are data architectures that allow organizations to store and manage s
 
 ## Apache Spark job definition
 
-Spark job definitions are set of instructions that define how to execute a job on a Spark cluster. It includes information such as the input and output data sources, the transformations, and the configuration settings for the Spark application. Spark job definition allows you to submit batch/streaming job to Spark cluster, apply different transformation logic to the data hosted on your lakehouse along with many other things.
+Spark job definitions are a set of instructions that define how to execute a job on a Spark cluster. It includes information such as the input and output data sources, the transformations, and the configuration settings for the Spark application. Spark job definition allows you to submit batch/streaming job to Spark cluster, apply different transformation logic to the data hosted on your lakehouse along with many other things.
 
 ## Notebook
 
@@ -46,7 +41,7 @@ Notebooks are an interactive computing environment that allows users to create a
 
 Data pipelines are a series of steps that can collect, process, and transform data from its raw form to a format that you can use for analysis and decision-making. They're a critical component of data engineering, as they provide a way to move data from its source to its destination in a reliable, scalable, and efficient way.
 
-You can use Data Engineering in Microsoft Fabric free of charge when you sign up for the [Fabric trial](../get-started/fabric-trial.md). You can also buy a [Microsoft Fabric capacity](../enterprise/buy-subscription.md) or a [Fabric reserved capacity](/azure/cost-management-billing/reservations/fabric-capacity)
+You can use Data Engineering in Microsoft Fabric free of charge when you sign up for the [Fabric trial](../fundamentals/fabric-trial.md). You can also buy a [Microsoft Fabric capacity](../enterprise/buy-subscription.md) or a [Fabric reserved capacity](/azure/cost-management-billing/reservations/fabric-capacity)
 
 ## Related content
 

@@ -2,10 +2,10 @@
 title: How to train models with Apache Spark MLlib
 description: A tutorial on how to use Apache Spark MLlib to create a machine learning model that analyzes a dataset by using classification through logistic regression.
 ms.reviewer: midesa
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom: 
 ms.date: 06/19/2024
 ---
 

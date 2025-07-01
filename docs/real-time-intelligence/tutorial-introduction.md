@@ -2,19 +2,17 @@
 title: Real-Time Intelligence tutorial - Introduction
 description: Get started with Real-Time Intelligence in Microsoft Fabric.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: spelluru
+author: spelluru
 ms.topic: tutorial
 ms.custom:
-  - build-2024
-  - ignite-2024
-ms.date: 11/19/2024
+ms.date: 12/02/2024
 ms.subservice: rti-core
 ms.search.form: Get started//
 ---
 # Real-Time Intelligence tutorial: Introduction
 
-Real-Time Intelligence in Microsoft Fabric is a powerful tool to extract insights and visualize your data in motion. Real-Time Intelligence provides an end-to-end solution for event-driven scenarios, streaming data, and data logs.
+Real-Time Intelligence in Microsoft Fabric is a powerful tool to extract insights and visualize your data in motion. Real-Time Intelligence provides an end-to-end solution for event-driven scenarios, streaming data, and different types of logs.
 
 In this tutorial, you'll learn how to set up and use the main features of Real-Time Intelligence with a sample set of data.
 
@@ -32,7 +30,11 @@ Specifically, in this tutorial, you learn how to:
 > * Get data in the Real-Time hub
 > * Transform events
 > * Publish an eventstream
+> * Subscribe to Fabric Events
+> * Use update policies to transform data in Eventhouse
+> * Use Copilot to create a KQL query
 > * Create a KQL query
+> * Create an alert based on a KQL query
 > * Create a Real-Time dashboard
 > * Explore data visually in the Real-Time dashboard
 > * Create a Power BI report from a KQL query
@@ -40,7 +42,7 @@ Specifically, in this tutorial, you learn how to:
 
 ## Prerequisites
 
-To successfully complete this tutorial, you need a [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+To successfully complete this tutorial, you need a [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
 
 ## Related content
 

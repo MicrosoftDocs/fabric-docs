@@ -72,4 +72,4 @@ For more information, see [Create reports in the Power BI service in Microsoft F
 - [What is Mirroring in Fabric?](overview.md)
 - [Model data in the default Power BI semantic model in Microsoft Fabric](../../data-warehouse/model-default-power-bi-dataset.md)
 - [What is the SQL analytics endpoint for a lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
-- [Direct Lake overview](../../get-started/direct-lake-overview.md)
+- [Direct Lake overview](../../fundamentals/direct-lake-overview.md)

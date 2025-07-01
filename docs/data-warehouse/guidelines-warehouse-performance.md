@@ -1,28 +1,26 @@
 ---
-title: Warehouse performance guidelines
-description: This article contains a list of performance guidelines for warehouse.
+title: Performance Guidelines
+description: This article contains a list of performance guidelines for the warehouse item in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: xiaoyul
-ms.date: 08/01/2024
+ms.date: 04/09/2025
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
-  - ignite-2024
 ---
-# Fabric Data Warehouse performance guidelines
+# Performance guidelines in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-These are guidelines to help you understand performance of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. In this article, you'll find guidance and important articles to focus on. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is a SaaS platform where activities like workload management, concurrency, and storage management are managed internally by the platform. In addition to this internal performance management, you can still improve your performance by developing performant queries against well-designed warehouses.
+These are guidelines to help you understand performance of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is a SaaS platform where activities like workload management, concurrency, and storage management are managed internally by the platform. In addition to this internal performance management, you can still improve your performance by developing performant queries against well-designed warehouses.
 
 ## Cold run (cold cache) performance
 
 [Caching with local SSD and memory](caching.md) is automatic. The first 1-3 executions of a query perform noticeably slower than subsequent executions. If you are experiencing cold run performance issues, here are a couple of things you can do that can improve your cold run performance:
 
-- If the first run's performance is crucial, try manually creating statistics. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance. However, if the first run's performance is not critical, you can rely on automatic statistics that will be generated in the first query and will continue to be leveraged in subsequent runs (so long as underlying data does not change significantly).
+- If the first run's performance is crucial, try manually creating statistics. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance. However, if the first run's performance is not critical, you can rely on automatic statistics that will be generated in the first query and will continue to be used in subsequent runs (so long as underlying data does not change significantly).
 
-- If using Power BI, use [Direct Lake](../get-started/lakehouse-power-bi-reporting.md) mode where possible.
+- If using Power BI, use [Direct Lake](../fundamentals/lakehouse-power-bi-reporting.md) mode where possible.
  
 ## Metrics for monitoring performance
 
@@ -55,7 +53,7 @@ To help determine which option is best for you and to review some data ingestion
 
 ## Group INSERT statements into batches (avoid trickle inserts)
 
-A one-time load to a small table with an INSERT statement, such as shown in the following example, might be the best approach depending on your needs. However, if you need to load thousands or millions of rows throughout the day, singleton INSERTS aren't optimal.
+A one-time load to a small table with an `INSERT` statement, such as shown in the following example, might be the best approach depending on your needs. However, if you need to load thousands or millions of rows throughout the day, singleton inserts aren't optimal.
 
 ```sql
 INSERT INTO MyLookup VALUES (1, 'Type 1') 
@@ -65,13 +63,13 @@ For guidance on how to handle these trickle-load scenarios, see [Best practices 
 
 ## Minimize transaction sizes
 
-INSERT, UPDATE, and DELETE statements run in a transaction. When they fail, they must be rolled back. To reduce the potential for a long rollback, minimize transaction sizes whenever possible. Minimizing transaction sizes can be done by dividing INSERT, UPDATE, and DELETE statements into parts. For example, if you have an INSERT that you expect to take 1 hour, you can break up the INSERT into four parts. Each run will then be shortened to 15 minutes.
+`INSERT`, `UPDATE`, and `DELETE` statements run in a transaction. When they fail, they must be rolled back. To reduce the potential for a long rollback, minimize transaction sizes whenever possible. Minimizing transaction sizes can be done by dividing `INSERT`, `UPDATE`, and `DELETE` statements into parts. For example, if you have an insert that you expect to take 1 hour, you can break up the insert into four parts. Each run will then be shortened to 15 minutes.
 
-Consider using [CTAS (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) to write the data you want to keep in a table rather than using DELETE. If a CTAS takes the same amount of time, it's safer to run since it has minimal transaction logging and can be canceled quickly if needed.
+Consider using [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) to write the data you want to keep in a table rather than using DELETE. If a CTAS takes the same amount of time, it's safer to run since it has minimal transaction logging and can be canceled quickly if needed.
 
 ## Collocate client applications and Microsoft Fabric
 
-If you're using client applications, make sure you're using [!INCLUDE [product-name](../includes/product-name.md)] in a region that's close to your client computer. Client application examples include Power BI Desktop, SQL Server Management Studio, and Azure Data Studio.
+If you're using client applications, make sure you're using [!INCLUDE [product-name](../includes/product-name.md)] in a region that's close to your client computer. Client application examples include Power BI Desktop, [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 
 ## Utilize star schema data design
 
@@ -81,13 +79,13 @@ For more [!INCLUDE [fabric-dw](includes/fabric-dw.md)] design guidance, see [Tab
 
 ## Reduce query result set sizes
 
-Reducing query result set sizes helps you avoid client-side issues caused by large query results. The [SQL Query editor](sql-query-editor.md) results sets are limited to the first 10,000 rows to avoid these issues in this browser-based UI. If you need to return more than 10,000 rows, use SQL Server Management Studio (SSMS) or Azure Data Studio.
+Reducing query result set sizes helps you avoid client-side issues caused by large query results. The [SQL Query editor](sql-query-editor.md) results sets are limited to the first 10,000 rows to avoid these issues in this browser-based user interface. If you need to return more than 10,000 rows, use [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 
 ## Choose the best data type for performance
 
-When defining your tables, use the smallest data type that supports your data as doing so will improve query performance. This recommendation is important for CHAR and VARCHAR columns. If the longest value in a column is 25 characters, then define your column as VARCHAR(25). Avoid defining all character columns with a large default length.
+When defining your tables, use the smallest data type that supports your data as doing so will improve query performance. This recommendation is important for **char** and **varchar** columns. If the longest value in a column is 25 characters, then define your column as **varchar(25)**. Avoid defining all character columns with a large default length.
 
-Use integer-based data types if possible. SORT, JOIN, and GROUP BY operations complete faster on integers than on character data.
+Use integer-based data types if possible. Sort, join, and group by operations complete faster on integers than on character data.
 
 For supported data types and more information, see [data types](data-types.md#autogenerated-data-types-in-the-sql-analytics-endpoint).
 
@@ -95,9 +93,9 @@ For supported data types and more information, see [data types](data-types.md#au
 
 For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
 
-## Data Compaction
+## Data compaction
 
-Data compaction consolidates smaller Parquet files into fewer, larger files, which optimizes read operations. This process also helps in efficiently managing deleted rows by eliminating them from immutable Parquet files. The data compaction process involves re-writing tables or segments of tables into new Parquet files that are optimized for performance. For more information, see [Blog: Automatic Data Compaction for Fabric Warehouse](https://blog.fabric.microsoft.com/blog/announcing-automatic-data-compaction-for-fabric-warehouse/).
+Data compaction optimizes read operations by consolidating smaller Parquet files into fewer, larger files. This process also helps in efficiently managing deleted rows by eliminating them from immutable Parquet files. The data compaction process involves rewriting tables or segments of tables into new Parquet files that are optimized for performance. For more information, see [Blog: Automatic Data Compaction for Fabric Warehouse](https://blog.fabric.microsoft.com/blog/announcing-automatic-data-compaction-for-fabric-warehouse/).
 
 The data compaction process is seamlessly integrated into the warehouse. As queries are executed, the system identifies tables that could benefit from compaction and performs necessary evaluations. There is no manual way to trigger data compaction.
 

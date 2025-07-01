@@ -1,12 +1,12 @@
 ---
 title: Activator tutorial using sample data
 description: Learn how Activator works using sample data. Activator is a powerful tool for working with data and creating rules based on specific conditions.
-author: mihart
-ms.author: mihart
+author: spelluru
+ms.author: spelluru
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter
 ms.date: 11/19/2024
-ms.search.form: Activator Sample Tutorial
+ms.search.form: Data Activator Sample Tutorial
 #customer intent: As a Fabric user I want to learn more about Activator using a tutorial and sample data.
 ---
 
@@ -24,7 +24,7 @@ In this tutorial, you use sample data included with Fabric [!INCLUDE [fabric-act
 
 ## Prerequisites
 
-Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../../get-started/workspaces.md) article. If you don't have Fabric, you're prompted to start a trial.
+Before you begin, you need a workspace with a Fabric capacity. You can learn about Fabric workspaces in the [Workspaces](../../fundamentals/workspaces.md) article. If you don't have Fabric, you're prompted to start a trial.
 
 ## Create a sample activator
 
@@ -142,4 +142,4 @@ Once you finish with the rules you created as part of the tutorial, be sure to s
 
 You can also learn more about Microsoft Fabric:
 
-* [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+* [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

@@ -3,7 +3,8 @@ title: Fabric Mirroring Public REST API
 description: This article describes the available REST APIs for Fabric mirroring.
 author: xuyangit1
 ms.author: xuyan
-ms.date: 11/21/2024
+ms.reviewer: wiassaf
+ms.date: 05/08/2025
 ms.topic: conceptual
 ---
 
@@ -47,6 +48,7 @@ The payload property in previous JSON body is Base64 encoded. You can use [Base6
 - [JSON definition example of Snowflake](#json-definition-example-of-snowflake)
 - [JSON definition example of Azure SQL Database](#json-definition-example-of-azure-sql-database)
 - [JSON definition example of Azure SQL Managed Instance](#json-definition-example-of-azure-sql-managed-instance)
+- [JSON definition example of Azure Database for PostgreSQL flexible server](#json-definition-example-of-azure-database-postgresql)
 - [JSON definition example of Azure Cosmos DB](#json-definition-example-of-azure-cosmos-db)
 - [JSON definition example of open mirroring](#json-definition-example-of-open-mirroring)
 
@@ -56,7 +58,10 @@ If you want to replicate selective tables instead of all the tables in the speci
 > To mirror data from Azure SQL Database or Azure SQL Managed Instance, you need to also do the following before start mirroring:
 >
 > 1. Enable System Assigned Managed Identity (SAMI) of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server) or [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance).
-> 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternativley, you can grant SAMI workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
+> 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternatively, you can grant SAMI workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
+
+> [!NOTE]
+> `defaultSchema` property indicates whether to replicate the schema hierarchy from the source database.
 
 ### JSON definition example of Snowflake
 
@@ -125,6 +130,31 @@ If you want to replicate selective tables instead of all the tables in the speci
 }
 ```
 
+<a id="json-definition-example-of-azure-database-postgresql"></a>
+
+### JSON definition example of Azure Database for PostgreSQL flexible server
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "AzurePostgreSql",
+            "typeProperties": {
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
+            }
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta"
+            }
+        }
+    }
+}
+```
+
+
 ### JSON definition example of Azure Cosmos DB
 
 ```json
@@ -132,6 +162,56 @@ If you want to replicate selective tables instead of all the tables in the speci
     "properties": {
         "source": {
             "type": "CosmosDb",
+            "typeProperties": {
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "database": "xxxx"
+            }
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta"
+            }
+        }
+    }
+}
+```
+
+### JSON definition example of SQL Server 2025 mirrored database
+
+This sample applies only to Fabric Mirroring for SQL Server 2025.
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "SqlServer2025",
+            "typeProperties": {
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "database": "xxxx"
+            }
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta"
+            }
+        }
+    }
+}
+```
+
+### JSON definition example of SQL Server 2016-2022 mirrored database
+
+This sample applies to Fabric Mirroring for SQL Server 2016-2022.
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "MSSQL",
             "typeProperties": {
                 "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
                 "database": "xxxx"
@@ -160,6 +240,7 @@ If you want to replicate selective tables instead of all the tables in the speci
         "target": {
             "type": "MountedRelationalDatabase",
             "typeProperties": {
+                "defaultSchema": "xxxx",
                 "format": "Delta"
             }
         }
@@ -175,7 +256,7 @@ The previous examples apply to the scenario that automatically replicates all th
 {
     "properties": {
         "source": {
-            "type": "Snowflake",
+            "type": "<your source type>",
             "typeProperties": {
                 "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
                 "database": "xxxx"
@@ -364,8 +445,32 @@ Body:
 
 Response 200: (No body)
 
+The payload property in previous JSON body is Base64 encoded. You can use [Base64 Encode and Decode](https://www.base64encode.org/) to encode.
+
 > [!NOTE]
-> This API supports adding/removing tables by refreshing the `mountedTables` property. It also supports updating the source connection ID, database name and default schema (these three properties can only be updated when **Get mirroring status** api returns `Initialized`/`Stopped`).
+> This API supports adding/removing tables by refreshing the `mountedTables` property. It also supports updating the source connection ID, database name, and default schema (these three properties can only be updated when **Get mirroring status** API returns `Initialized`/`Stopped`).
+
+### Configure data retention 
+
+You can set the [retention period for mirrored data](overview.md#retention-for-mirrored-data) using the `retentionInDays` property. The default value is seven days. The allowed values are integer between 1 and 30.
+
+*JSON definition example before Base64 encoding:*
+
+```json
+{
+    "properties": {
+        "source": {...},
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "format": "Delta",
+                "retentionInDays": 1
+            }
+        }
+    }
+}
+```
 
 ## Get mirroring status
 
@@ -396,7 +501,7 @@ Example:
 Response 200: (No body)
 
 > [!NOTE]
-> Mirroring can not be started when above **Get mirroring status** api returns `Initializing` status.
+> Mirroring can't be started when above **Get mirroring status** API returns `Initializing` status.
 
 ## Get tables mirroring status
 
@@ -440,15 +545,11 @@ Example:
 Response 200: (No body)
 
 > [!NOTE]
-> After stopping mirroring, you can call **Get mirroring status** api to query the mirroring status.
+> After stopping mirroring, you can call **Get mirroring status** API to query the mirroring status.
 
 ## Microsoft Fabric .NET SDK
 
 The .NET SDK that supports Fabric mirroring is available at [Microsoft Fabric .NET SDK](https://www.nuget.org/packages/Microsoft.Fabric.Api/1.0.0-beta.11). The version needs to be >= 1.0.0-beta.11.
-
-## Known limitations
-
-Currently Service Principal/Managed Identity authentication is not supported if your [tenant home region](../../admin/find-fabric-home-region.md) is in North Central US or East US. You can use it in other regions.
 
 ## Related content
 

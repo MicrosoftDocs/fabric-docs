@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure SQL Managed I
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 11/19/2024
+ms.date: 05/19/2025
 ms.topic: tutorial
 ---
 
@@ -19,11 +19,12 @@ ms.topic: tutorial
   - The source Azure SQL Managed Instance can be either a single SQL managed instance or a SQL managed instance belonging to an instance pool.
   - If you don't have an Azure SQL Managed Instance, [you can create a new SQL managed instance](/azure/azure-sql/managed-instance/instance-create-quickstart?view=azuresql&tabs=azure-portal&preserve-view=true). You can use the [Azure SQL Managed Instance free offer](/azure/azure-sql/managed-instance/free-offer?view=azuresql&preserve-view=true) if you like.
   - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Managed Instance](/azure/azure-sql/managed-instance/restore-sample-database-quickstart?view=azuresql&preserve-view=true).
-- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
   - The Fabric capacity needs to be active and running. A paused or deleted capacity impacts Mirroring and no data are replicated.
 - Enable the Fabric tenant setting [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis). To learn how to enable tenant settings, see [About tenant settings](../../admin/about-tenant-settings.md).
 - Networking requirements for Fabric to access your Azure SQL Managed Instance:
-  - In the current preview, Mirroring requires that your Azure SQL Managed Instance has a [public endpoint](/azure/azure-sql/managed-instance/public-endpoint-configure?view=azuresql-mi&preserve-view=true) which needs to be accessible from Azure Cloud or Power BI service tags. For more information, see [Use Azure SQL Managed Instance securely with public endpoints](/azure/azure-sql/managed-instance/public-endpoint-overview?view=azuresql-mi&preserve-view=true) how to securely run a public endpoint for Azure SQL Managed Instance.
+  - If your Azure SQL Managed Instance is not publicly accessible, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
+  - If you want to connect to Azure SQL Managed Instance's public endpoint without data gateway, you need to allow inbound traffic from Power BI and Data Factory service tags or from Azure Cloud service tag in the network security group. Learn more from [Configure public endpoints in Azure SQL Managed Instance](/azure/azure-sql/managed-instance/public-endpoint-configure).
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL Managed Instance
 
@@ -67,14 +68,14 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
     ```sql
     CREATE USER <fabric_user> FOR LOGIN <fabric_login>;
-    GRANT CONTROL TO <fabric_user>;
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO <fabric_user>;
     ```
 
     Or, for Microsoft Entra logins,
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT CONTROL TO [bob@contoso.com];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO [bob@contoso.com];
     ```
 
 ## Create a mirrored Azure SQL Managed Instance database
@@ -95,6 +96,7 @@ To enable Mirroring, you need to connect to the Azure SQL Managed Instance from 
    - **Database**: Enter the name of database you wish to mirror.
    - **Connection**: Create new connection.
    - **Connection name**: An automatic name is provided. You can change it to facilitate finding this SQL managed instance database connection at a future time, if needed.
+   - **Data gateway**: Select the default (**None**) or the name of virtual network data gateway / on-prem data gateway you set up according to your scenario.
    - **Authentication kind**:
        - Basic (SQL Authentication)
        - Organization account (Microsoft Entra ID)  
@@ -146,9 +148,6 @@ If the initial sync is completed, a **Last completed** timestamp is shown next t
 Also, note the **Rows replicated** column. It counts all the rows that have been replicated for the table. Each time a row is replicated, it is counted again. This means that, for example, inserting a row with primary key =1 on the source increases the "Rows replicated" count by one. If you update the row with the same primary key, replicates to Fabric again, and the row count increases by one, even though it's the same row which replicated again. Fabric counts all replications that happened on the row, including inserts, deletes, updates.
 
 The **Monitor replication** screen also reflects any errors and warnings with tables being mirrored. If the table has unsupported column types or if the entire table is unsupported (for example, in memory or columnstore indexes), a notification about the limitation is shown on this screen. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](monitor.md).
-
-> [!IMPORTANT]
-> If there are no updates in the source tables, the replicator engine will start to back off with an exponentially increasing duration, up to an hour. The replicator engine will automatically resume regular polling after updated data is detected.
 
 ## Related content
 

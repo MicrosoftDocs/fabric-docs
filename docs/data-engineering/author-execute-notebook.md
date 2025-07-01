@@ -6,10 +6,8 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.search.form: Develop and run notebooks
-ms.date: 11/15/2023
+ms.date: 05/29/2025
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -71,7 +69,7 @@ You can use multiple languages in a notebook by specifying the language magic co
 | %%pyspark | Python | Execute a **Python** query against Apache Spark Context. |
 | %%spark | Scala | Execute a **Scala** query against Apache Spark Context. |
 | %%sql | SparkSQL | Execute a **SparkSQL** query against Apache Spark Context. |
-| %%html | Html | Execute a **HTML** query against Apache Spark Context. |
+| %%html | Html | Execute n **HTML** query against Apache Spark Context. |
 | %%sparkr | R | Execute a **R** query against Apache Spark Context. |
 
 ### IDE-style IntelliSense
@@ -83,12 +81,21 @@ The IntelliSense features are at different levels of maturity for different lang
 | **Languages** | **Syntax highlight** | **Syntax error marker** | **Syntax code completion** | **Variable code completion** | **System function code completion** | **User function code completion** | **Smart indent** | **Code folding** |
 |---|---|---|---|---|---|---|---|---|
 | PySpark (Python) | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | Spark (Scala) | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | SparkSQL | Yes | Yes | Yes | Yes | Yes | No | Yes | Yes |
 | SparkR | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| T-SQL | Yes | Yes | Yes | No | Yes | Yes | Yes | Yes |
 
 > [!NOTE]
 > You must have an active Apache Spark session to use IntelliSense code completion.
+
+#### Enhance Python Development with Pylance
+
+> [!NOTE]
+> Currently, the feature is in preview.
+
+Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter autocompletion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
 
 ### Code snippets
 
@@ -127,7 +134,7 @@ Select **Undo** or **Redo**, or press **Z** or **Shift+Z** to revoke the most re
 
 Supported undo cell operations:
 
-- Insert or delete cell. You can revoke the delete operations by selecting **Undo** (the text content is kept along with the cell).
+- Insert or delete cell. You can revoke the deleted operations by selecting **Undo** (the text content is kept along with the cell).
 - Reorder cell.
 - Toggle parameter.
 - Convert between code cell and Markdown cell.
@@ -163,10 +170,10 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide outpu
 
 ### Cell output security
 
-Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table will see an unauthorized error during query execution.
+Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table see an unauthorized error during query execution.
 
 > [!IMPORTANT]
-> Security only applies during query execution and any notebook cells containing query results can be viewed by users that are not authorized to run queries against the data directly.
+> Security only applies during query execution and any notebook cells containing query results can be viewed by users that aren't authorized to run queries against the data directly.
 
 ### Lock or freeze a cell
 
@@ -200,6 +207,35 @@ The find and replace option can help you match and locate the keywords or expres
 
 :::image type="content" source="media\author-execute-notebook\find-replace.png" alt-text="Screenshot showing find and replace pane." lightbox="media\author-execute-notebook\find-replace.png":::
 
+## Copilot inline code completion (Preview)
+
+Copilot inline code completion is an AI-powered feature that helps you to write Python code faster and more efficiently in Fabric Notebooks. This feature provides intelligent, context-aware code suggestions as you type code. It reduces repetitive tasks, minimizes syntax errors, and accelerates development by integrating seamlessly into your notebook workflow.
+
+### Key benefits
+
+* **AI-driven completions:** Generates suggestions based on your notebook's context using a model trained on millions of lines of code.
+* **Boosts productivity:** Helps write complex functions, reduces repetitive coding, and speeds up exploration of unfamiliar libraries.
+* **Reduces errors:** Minimizes typos and syntax mistakes with intelligent, context-aware completions.
+* **Minimal setup:** Built into Fabric notebooks, doesn't require any installation. You can just enable it and start coding.
+
+### How it works
+
+Enable inline code suggestions using the toggle at the bottom of your notebook. As you type, suggestions appear in light gray text, press tab to accept or modify. Suggestions are based on previous notebook cells.
+
+:::image type="content" source="media\author-execute-notebook\copilot-inline-code.png" alt-text="Screenshot showing how to enable Copilot code completions.":::
+
+:::image type="content" source="media\author-execute-notebook\copilot-code-suggestion.png" alt-text="Screenshot showing automatic code suggestion with Copilot code completion.":::
+
+> [!NOTE]
+> Enabling Copilot inline code completion will consume additional [capacity units](../enterprise/fabric-copilot-capacity.md).
+
+### Current limitations
+
+* Copilot Inline Code Completion currently supports Python language and uses context from previous cells and Lakehouse schemas.
+* Suggestions consider data from Lakehouse schemas.
+* Only a subset of schema elements is used when there are many tables or columns.
+* Dynamically created tables (via Spark) aren't recognized in real time.
+
 ## Run notebooks
 
 You can run the code cells in your notebook individually or all at once. The status and progress of each cell is displayed in the notebook.
@@ -232,7 +268,6 @@ Select **Cancel all** to cancel the running cells or cells waiting in the queue.
 
 :::image type="content" source="media\author-execute-notebook\cancel-all-stop-session.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\cancel-all-stop-session.png":::
 
-
 ### Reference run
 
 #### Reference run a Notebook
@@ -247,7 +282,7 @@ Notebook reference works in both interactive mode and pipeline.
 > [!NOTE]
 >
 > - The ```%run``` command currently only supports reference notebooks in the same workspace with the current notebook.
-> - The ```%run``` command currently only supports up to four parameter value types: `int`, `float`, `bool`, and `string`. Variable replacement operation is not supported.
+> - The ```%run``` command currently only supports up to four parameter value types: `int`, `float`, `bool`, and `string`. Variable replacement operation isn't supported.
 > - The ```%run``` command doesn't support nested reference with a depth larger than **five**.
 
 #### Reference run a script
@@ -257,7 +292,7 @@ The ```%run``` command also allows you to run Python or SQL files that are store
 ``` %run [-b/--builtin -c/--current] [script_file.py/.sql] [variables ...] ```
 
 For options:
-- **-b/--builtin**: This option indicates that the command will find and run the specified script file from the notebook’s built-in resources.
+- **-b/--builtin**: This option indicates that the command finds and runs the specified script file from the notebook’s built-in resources.
 - **-c/--current**: This option ensures that the command always uses the current notebook’s built-in resources, even if the current notebook is referenced by other notebooks.
 
 Examples:
@@ -268,8 +303,8 @@ Examples:
 
 - To run *script_file.py* from the built-in resources with specific variables: ``` %run -b script_file.py { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true, "parameterString": "abc" } ```
 
-> [!NOTE] 
-> If the command does not contain **-b/--builtin**, it will attempt to find and execute notebook item inside the same workspace rather than the built-in resources.
+> [!NOTE]
+> If the command doesn't contain **-b/--builtin**, it attempts to find and execute notebook item inside the same workspace rather than the built-in resources.
 
 Usage example for nested run case:
 
@@ -278,8 +313,8 @@ Usage example for nested run case:
     - **Notebook2**: Contains *script_file2.py* in its built-in resources
 - Let's use **Notebook1** work as a root notebook with the content: ``` %run Notebook2 ```.
 - Then in the **Notebook2** the usage instruction is:
-    - To run *script_file1.py* in **Notebook1**(the root Notebook) the code would be: ``` %run -b script_file1.py ```
-    - To run *script_file2.py* in **Notebook2**(the current Notebook) the code would be: ``` %run -b -c script_file2.py ```
+    - To run *script_file1.py* in **Notebook1**(the root Notebook), the code would be: ``` %run -b script_file1.py ```
+    - To run *script_file2.py* in **Notebook2**(the current Notebook), the code would be: ``` %run -b -c script_file2.py ```
 
 ### Variable explorer
 
@@ -297,6 +332,43 @@ To open or hide the variable explorer, select **Variables** on the notebook ribb
 A step-by-step cell execution status is displayed beneath the cell to help you see its current progress. Once the cell run is complete, an execution summary with the total duration and end time appears and is stored there for future reference.
 
 :::image type="content" source="media\author-execute-notebook\cell-run-status.png" alt-text="Screenshot showing an example of cell run status details." lightbox="media\author-execute-notebook\cell-run-status.png":::
+
+### Session status indicator
+
+#### Session timeout config
+
+In the bottom left corner, you can select on the session status to get more information about the current session:
+
+![Screenshot that shows Session Information.](./media/author-execute-notebook/session-info.png)
+
+In the pop-up, there's an option to reset the timeout to x minutes or hours.
+
+![Screenshot that shows Session timeout.](./media/author-execute-notebook/session-timeout.png)
+
+Take your pick in how long you want an uninterrupted session, and hit apply. The session timeout resets itself with the new value and you're good to go!
+
+You can also set timeout as described in:
+
+- [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+- [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command)
+
+**Stay signed in:** During login, if you see the **Stay signed in** dialog, select **Yes** to deactivate the idle session timeout for your current session.
+
+> [!IMPORTANT]
+> Do not select the **Don’t show this again** checkbox, as this will lock in your sign-in settings permanently. Note that this option might not appear if your tenant admin has disabled the Keep Me Signed In (KMSI) setting.
+
+**Request a policy change:** If you need a longer session duration, ask your tenant admin to extend the idle session timeout duration policy. They can do this by navigating to Org Settings > Security & Privacy > Idle Session Timeout within the M365 Admin Center.
+
+> [!NOTE]
+> Selecting KMSI and/or extending the idle session timeout duration time will extend the risk of an unlocked machine being accessed.
+
+**How do ABT and idle session timeout impact long-running Fabric Notebook executions?**
+
+If your tenant uses activity-based timeout (ABT), long-running interactive jobs in Fabric notebooks may be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, nonmanaged devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
+
+**Why are users signed out even when a notebook job is still running?**
+
+Idle session timeout prioritizes security by ending sessions on inactive devices to prevent unauthorized access. Even when a notebook execution is in progress, the session ends if the device shows no activity. Keeping sessions open on idle devices would compromise security, which is why the current behavior is enforced.
 
 ### Inline Apache Spark job indicator
 
@@ -447,8 +519,8 @@ You can personalize your Spark session with the magic command **%%configure**. F
 %%configure
 {
     // You can get a list of valid parameters to config the session from https://github.com/cloudera/livy#request-body.
-    "driverMemory": "28g", // Recommended values: ["28g", "56g", "112g", "224g", "400g", "472g"]
-    "driverCores": 4, // Recommended values: [4, 8, 16, 32, 64, 80]
+    "driverMemory": "28g", // Recommended values: ["28g", "56g", "112g", "224g", "400g"]
+    "driverCores": 4, // Recommended values: [4, 8, 16, 32, 64]
     "executorMemory": "28g",
     "executorCores": 4,
     "jars": ["abfs[s]: //<file_system>@<account_name>.dfs.core.windows.net/<path>/myjar.jar", "wasb[s]: //<containername>@<accountname>.blob.core.windows.net/<path>/myjar1.jar"],
@@ -487,9 +559,9 @@ You can personalize your Spark session with the magic command **%%configure**. F
 >
 > - We recommend that you set the same value for "DriverMemory" and "ExecutorMemory" in %%configure. The "driverCores" and "executorCores" values should also be the same.
 > - The "defaultLakehouse" will overwrite your pinned lakehouse in Lakehouse explorer, but that only works in your current notebook session.
-> - You can use %%configure in Fabric pipelines, but if it's not set in the first code cell, the pipeline run will fail due to cannot restart session.
+> - You can use %%configure in Fabric pipelines, but if it's not set in the first code cell, the pipeline run fails due to can't restart session.
 > - The %%configure used in notebookutils.notebook.run will be ignored but used in %run notebook will continue executing.
-> - The standard Spark configuration properties must be used in the "conf" body. Fabric does not support first level reference for the Spark configuration properties.
+> - The standard Spark configuration properties must be used in the "conf" body. Fabric doesn't support first level reference for the Spark configuration properties.
 > - Some special Spark properties, including "spark.driver.cores", "spark.executor.cores", "spark.driver.memory", "spark.executor.memory", and "spark.executor.instances" don't take effect in "conf" body.
 
 ## Parameterized session configuration from a pipeline
@@ -574,7 +646,7 @@ customizedLogger.critical("customized critical message")
 
 ## View the history of input commands
 
-Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook. 
+Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook.
 
 ``` %history [-n] [range [range ...]] ```
 
@@ -622,8 +694,8 @@ Using the following keystroke shortcuts, you can easily navigate and run code in
 
 | **Action** | **Notebook shortcuts** |
 |---|---|
-| Move cursor up | Up |
-| Move cursor down | Down |
+| Move up cursor | Up |
+| Move down cursor | Down |
 | Undo | Ctrl + Z |
 | Redo | Ctrl + Y |
 | Comment or Uncomment | Ctrl + / <br/> Comment: Ctrl + K + C <br/> Uncomment: Ctrl + K + U |

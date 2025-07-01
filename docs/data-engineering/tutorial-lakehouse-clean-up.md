@@ -6,8 +6,6 @@ ms.author: arali
 author: ms-arali
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 07/19/2024
 ---
 
@@ -23,7 +21,7 @@ As a final step in the tutorial, clean up your resources. This article shows how
 
 You can delete individual reports, pipelines, warehouses, and other items or remove the entire workspace. Use the following steps to delete the workspace you created for this tutorial:
 
-1. Select your workspace, the **Fabric Lakehouse Tutorial** from the left-hand navigation menu. It opens the workspace item view.  
+1. Select your workspace, the **Fabric Lakehouse Tutorial**, from the navigation menu to open the workspace item view.  
 
    :::image type="content" source="media\tutorial-lakehouse-clean-up\select-workspace-item.png" alt-text="Screenshot of the left navigation menu, showing where to select your workspace.":::
 

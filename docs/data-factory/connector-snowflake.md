@@ -1,15 +1,13 @@
 ---
 title: Set up your Snowflake database connection
 description: This article provides information about how to create a Snowflake database connection in Microsoft Fabric.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 03/11/2025
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
-  - ignite-2023-fabric
+  - connectors
 ---
 
 # Set up your Snowflake database connection
@@ -23,7 +21,7 @@ The Snowflake database connector supports the following authentication types for
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Snowflake| √ | √ |
-|Microsoft account| √ | √ |
+|Microsoft Account| √ | √ |
 
 ## Set up your connection in Dataflow Gen2
 

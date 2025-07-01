@@ -2,14 +2,11 @@
 title: Get data from OneLake
 description: Learn how to get data from OneLake into a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
-ms.date: 11/19/2024
+ms.date: 05/12/2025
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -19,57 +16,44 @@ In this article, you learn how to get data from OneLake into either a new or exi
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [Lakehouse](../data-engineering/create-lakehouse.md)
 * A [KQL database](create-database.md) with editing permissions
 
-## Copy file path from Lakehouse
+## Step 1: Source
 
-1. In the experience switcher, choose **Data Engineering**.
-1. Select the Lakehouse environment containing the data source you want to use.
+Select OneLake as your data source, as follows:
 
-1. Place your cursor over the desired file and select the **More** menu, then select **Properties**.
+1. On the lower ribbon of your KQL database, select **Get Data** to open the **Source** tab of the *Get data* window.
 
-    > [!IMPORTANT]
+1. Select the data source. In this example, you're ingesting data from **OneLake** or from the list in the embedded **OneLake catalog**.
+
+    :::image type="content" source="media/get-data-onelake/get-data-onelake-catalog.png" alt-text="Screenshot of the Select a data source window with both the Onelake tile and the embedded Onelake catalog options highlighted." lightbox="media/get-data-onelake/get-data-onelake-catalog.png":::
+
+    >[!NOTE]
     >
-    > * Folder paths aren't supported.
-    > * Wildcards (*) aren't supported.
+    > When you select a source from the list in the embedded OneLake catalog, you can use the category buttons or filter by keyword to search for a specific source.
 
-    :::image type="content" source="media/get-data-onelake/lakehouse-file-menu.png" alt-text="Screenshot of a Lakehouse file's dropdown menu. The option titled Properties is highlighted."  lightbox="media/get-data-onelake/lakehouse-file-menu.png":::
+## Step 2: Configure
 
-1. Under **URL**, select the **Copy to clipboard** icon and save it somewhere to retrieve in a later step.
-
-    :::image type="content" source="media/get-data-onelake/lakehouse-file-properties.png" alt-text="Screenshot of a Lakehouse file's Properties pane. The copy icon to the right of the file's URL is highlighted." lightbox="media/get-data-onelake/lakehouse-file-properties.png":::
-
-1. Return to your workspace and select a KQL database.
-
-## Source
-
-1. On the lower ribbon of your KQL database, select **Get Data**.
-
-    In the **Get data** window, the **Source** tab is selected.
-
-1. Select the data source from the available list. In this example, you're ingesting data from **OneLake**.
-
-    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
-
-## Configure
+Pick a destination table and configure the source, as follows:
 
 1. Select a target table. If you want to ingest data into a new table, select **+New table** and enter a table name.
 
     > [!NOTE]
-    > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
+    > Table names can be up to 1,024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
-1. In **OneLake file**, paste the file path of the Lakehouse you copied in [Copy file path from Lakehouse](#copy-file-path-from-lakehouse).
+1. Select a OneLake file to ingest:
 
-    > [!NOTE]
-    > You can add up to 10 items of up to 1-GB uncompressed size each.
+    * When you select **OneLake** as your source, you must specify the **Workspace**, **Lakehouse**, and **File** from the dropdowns.
 
-    :::image type="content" source="media/get-data-onelake/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and a OneLake file path added." lightbox="media/get-data-onelake/configure-tab.png":::
+    * When you select the embedded **OneLake catalog** as your source, the **Workspace** and **Lakehouse** are automatically populated. You must specify the **File** to ingest.
+
+    :::image type="content" source="media/get-data-onelake/configure-tab.png" alt-text="Screenshot of configure tab with Workspace, Lakehouse, and File dropdowns." lightbox="media/get-data-onelake/configure-tab.png":::
 
 1. Select **Next**.
 
-## Inspect
+## Step 3: Inspect
 
 The **Inspect** tab opens with a preview of the data.
 
@@ -77,13 +61,7 @@ To complete the ingestion process, select **Finish**.
 
 :::image type="content" source="media/get-data-onelake/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-onelake/inspect-data.png":::
 
-Optionally:
-
-* Select **Command viewer** to view and copy the automatic commands generated from your inputs.
-* Use the **Schema definition file** dropdown to change the file that the schema is inferred from.
-* Change the automatically inferred data format by selecting the desired format from the dropdown. For more information, see [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md).
-* [Edit columns](#edit-columns).
-* Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
+[!INCLUDE [get-data-inspect](includes/get-data-inspect.md)]
 
 [!INCLUDE [get-data-edit-columns](includes/get-data-edit-columns.md)]
 
@@ -91,23 +69,9 @@ Optionally:
 
 [!INCLUDE [mapping-transformations](includes/mapping-transformations.md)]
 
-### Advanced options based on data type
+[!INCLUDE [get-data-process-event-advanced-options-data-type](includes/get-data-process-event-advanced-options-data-type.md)]
 
-**Tabular (CSV, TSV, PSV)**:
-
-* If you're ingesting tabular formats in an *existing table*, you can select **Advanced** > **Keep table schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
-* To use the first row as column names, select  **Advanced** > **First row is column header**.
-
-    :::image type="content" source="media/get-data-onelake/advanced-csv.png" alt-text="Screenshot of advanced CSV options.":::
-
-**JSON**:
-
-* To determine column division of JSON data, select **Advanced** > **Nested levels**, from 1 to 100.
-* If you select **Advanced** > **Skip JSON lines with errors**, the data is ingested in JSON format. If you leave this check box unselected, the data is ingested in multijson format.
-
-    :::image type="content" source="media/get-data-onelake/advanced-json.png" alt-text="Screenshot of advanced JSON options.":::
-
-## Summary
+## Step 4: Summary
 
 In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to query, drop the ingested data, or see a dashboard of your ingestion summary.
 

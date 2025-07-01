@@ -9,9 +9,9 @@ metadata:
   ms.subservice: data-warehouse
   ms.topic: faq
   ms.date: 09/21/2024
-title: "Frequently asked questions for mirrored databases from Azure Databricks (preview) in Microsoft Fabric (Preview)"
+title: "Frequently asked questions for mirrored databases from Azure Databricks (Preview) in Microsoft Fabric"
 summary: |
-  This article answers frequently asked questions about mirrored databases from Azure Databricks (preview) in Microsoft Fabric.
+  This article answers frequently asked questions about mirrored databases from Azure Databricks (Preview) in Microsoft Fabric.
 
 sections:
   - name: Troubleshooting

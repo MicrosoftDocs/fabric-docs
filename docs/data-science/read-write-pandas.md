@@ -1,14 +1,12 @@
 ---
 title: Read and write data with Pandas
 description: Learn how to read and write lakehouse data in a notebook using Pandas, a popular Python library for data exploration and processing.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 04/19/2024
 ms.search.form: Read and Write Pandas
 ---
@@ -80,7 +78,7 @@ import pandas as pd
  
 # Read a Parquet file from your Lakehouse into a Pandas DataFrame
 # Replace LAKEHOUSE_PATH and FILENAME with your own values
-df = pandas.read_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet") 
+df = pd.read_parquet("/LAKEHOUSE_PATH/Files/FILENAME.parquet") 
 display(df)
 ```
 

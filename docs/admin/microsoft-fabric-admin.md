@@ -1,12 +1,10 @@
 ---
 title: What is Microsoft Fabric administration?
 description: This article provides an overview of the admin role in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 07/01/2024
 ---
 

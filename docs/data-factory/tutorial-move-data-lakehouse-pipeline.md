@@ -1,12 +1,12 @@
 ---
 title: Move data from Azure SQL DB to Lakehouse via data pipeline
 description: Learn steps to move data as files or tables into Lakehouse via data pipeline.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 10/10/2023
+ms.custom: pipelines
+ms.date: 12/18/2024
 ms.search.form: Pipeline Copy Assistant
 ---
 
@@ -19,7 +19,7 @@ In this tutorial, you build a data pipeline to move data in Azure SQL Database t
 To get started, you must complete the following prerequisites:
 
 - A Microsoft Fabric tenant account with an active subscription. Create an account for free.
-- Make sure you have a Microsoft Fabric enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
+- Make sure you have a Microsoft Fabric enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Create a data pipeline
 
@@ -56,7 +56,7 @@ In this session, you start to build your data pipeline by following below steps 
    
       :::image type="content" source="media/copy-data-activity/choose-azure-sql-database-connection-in-pipeline.png" alt-text="Screenshot showing how to select the data source." lightbox="media/copy-data-activity/choose-azure-sql-database-connection-in-pipeline.png":::
 
-   1. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-data-stores-in-data-pipeline).
+   1. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-connectors-in-fabric).
    
       :::image type="content" source="media/copy-data-activity/configure-connection-details.png" alt-text="Screenshot showing New connection page." lightbox="media/copy-data-activity/configure-connection-details.png":::
 

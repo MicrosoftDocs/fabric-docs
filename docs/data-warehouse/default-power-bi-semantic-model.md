@@ -1,28 +1,25 @@
 ---
-title: Data modeling in the default Power BI semantic model
+title: Data Modeling in the Default Power BI Semantic Model
 description: Learn how to model your data in the default Power BI semantic model in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, sosivara
-ms.date: 04/24/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2024
 ms.search.form: Model view # This article's title should not change. If so, contact engineering.
 ---
 # Model data in the default Power BI semantic model in Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-se-dw-mirroreddb](includes/applies-to-version/fabric-se-dw-mirroreddb.md)]
 
-The default Power BI semantic model inherits all relationships between entities defined in the model view and infers them as Power BI semantic model relationships, when objects are enabled for BI (Power BI Reports). Inheriting the warehouse's business logic allows a warehouse developer or BI analyst to decrease the time to value towards building a useful semantic model and metrics layer for analytical business intelligence (BI) reports in Power BI, Excel, or external tools like Tableau that read the XMLA format.
+The default Power BI semantic model inherits all relationships between entities defined in the model view and infers them as Power BI semantic model relationships, when objects are enabled for BI (Power BI Reports). Inheriting the warehouse's business logic allows a warehouse developer or BI analyst to decrease the time to value toward building a useful semantic model and metrics layer for analytical business intelligence (BI) reports in Power BI, Excel, or external tools like Tableau that read the XMLA format.
 
 While all constraints are translated to relationships, currently in Power BI, only one relationship can be active at a time, whereas multiple primary and foreign key constraints can be defined for warehouse entities and are shown visually in the diagram lines. The active Power BI relationship is represented with a solid line and the rest is represented with a dotted line. We recommend choosing the primary relationship as active for BI reporting purposes.
 
 Automatic translation of constraints to relationships in the default Power BI semantic model is only applicable for tables in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], not currently supported in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
 > [!NOTE]
-> Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see New name for Power BI datasets.
+> Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well.
 
 ## Data modeling properties
 
@@ -52,7 +49,7 @@ To add objects such as tables or views to the default Power BI semantic model, y
 
 The auto detect experience determines any tables or views and opportunistically adds them.
 
-The manually detect option in the ribbon allows fine grained control of which object(s), such as tables and/or views, should be added to the default Power BI semantic model:
+The manually detect option in the ribbon allows fine-grained control of which object(s), such as tables and/or views, should be added to the default Power BI semantic model:
 
 - Select all
 - Filter for tables or views

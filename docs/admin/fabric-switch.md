@@ -1,22 +1,19 @@
 ---
 title: Enable Microsoft Fabric for your organization
 description: Learn how to enable Microsoft Fabric for your organization.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
-ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
-ms.date: 09/22/2024
+ms.date: 02/05/2025
 ---
 
 # Enable Microsoft Fabric for your organization
 
-The [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) admin switch lets organizations that use Power BI enable Microsoft Fabric.
+The [Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) admin switch lets organizations that use Power BI enable Microsoft Fabric.
 
 >[!NOTE]
->Microsoft Fabric availability is restricted in some regions. For more information, see [Fabric region availability](./region-availability.md).
+>* Power BI is part of Microsoft Fabric. The Power BI portal mentioned in this article is now the Microsoft Fabric portal. 
+>* Microsoft Fabric availability is restricted in some regions. For more information, see [Fabric region availability](./region-availability.md).
 
 You can enable Microsoft Fabric for:
 
@@ -45,7 +42,7 @@ In your tenant, you can enable Microsoft Fabric for:
 
 Follow these steps to enable Microsoft Fabric for your tenant.
 
-1. Navigate to the [tenant settings](tenant-settings-index.md) in the admin portal and in *Microsoft Fabric*, expand **Users can create Fabric items**.
+1. In the Power BI portal, navigate to the [tenant settings](tenant-settings-index.md) in the admin portal and in *Microsoft Fabric*, expand **Users can create Fabric items**.
 
 2. Enable the **Users can create Fabric items** switch.
 

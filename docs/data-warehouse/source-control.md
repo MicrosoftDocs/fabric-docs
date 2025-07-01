@@ -1,10 +1,10 @@
 ---
-title: "Source control with Warehouse (preview)"
+title: "Source Control with Warehouse (Preview)"
 description: "Learn how to use source control with Microsoft Fabric Warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade
-ms.date: 07/17/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
 ---
 
@@ -28,9 +28,9 @@ Git integration in Microsoft Fabric enables developers to integrate their develo
 
 For more information on the Git integration process, see:
 
-- [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md)
+- [What is Microsoft Fabric Git integration?](../cicd/git-integration/intro-to-git-integration.md)
 - [Basic concepts in Git integration](../cicd/git-integration/git-integration-process.md)
-- [Get started with Git integration (preview)](../cicd/git-integration/git-get-started.md)
+- [Get started with Git integration](../cicd/git-integration/git-get-started.md)
 
 ### Set up a connection to source control
 
@@ -62,7 +62,7 @@ To download a local copy of your warehouse's schema, select **Download SQL datab
 The local copy of a database project that contains the definition of the warehouse schema. The database project can be used to:
 
 - Recreate the warehouse schema in another warehouse.
-- Further develop the warehouse schema in client tools, like Azure Data Studio or Visual Studio Code.
+- Further develop the warehouse schema in client tools, like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 
 ### Publish SQL database project to a new warehouse
 
@@ -86,11 +86,11 @@ Use the following steps to complete your warehouse deployment using the deployme
     :::image type="content" source="media/source-control/pipeline-stages.png" alt-text="Screenshot from the Fabric portal of the Development, Test, and Production stages." lightbox="media/source-control/pipeline-stages.png":::
 1. Select **Deploy** to deploy your warehouses across the **Development**, **Test**, and **Production** stages.
 
-For more information about the Fabric deployment pipelines process, see [Overview of Fabric deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md).
+For more information about the Fabric deployment pipelines process, see [Introduction to deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md).
 
 ## Limitations in source control
 
-- [SQL security](security.md) features must be exported/migrated using a script-based approach. Consider using a post-deployment script in a SQL database project, which you can configure by opening the project with the [SQL Database Projects extension](/sql/azure-data-studio/extensions/sql-database-project-extension) available inside of [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio).
+- [SQL security](security.md) features must be exported/migrated using a script-based approach. Consider using a post-deployment script in a SQL database project, which you can configure by opening the project with the [SQL Database Projects extension](/azure-data-studio/extensions/sql-database-project-extension-getting-started) available in [Visual Studio Code](https://code.visualstudio.com/).
 
 #### Limitations in Git integration
 
@@ -111,7 +111,7 @@ For more information about the Fabric deployment pipelines process, see [Overvie
 
 ## Related content
 
-- [Get started with Git integration (preview)](../cicd/git-integration/git-get-started.md)
+- [Get started with Git integration](../cicd/git-integration/git-get-started.md)
 - [Basic concepts in Git integration](../cicd/git-integration/git-integration-process.md)
 - [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
 - [Tutorial: Set up dbt for Fabric Data Warehouse](tutorial-setup-dbt.md)

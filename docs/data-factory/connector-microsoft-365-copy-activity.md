@@ -4,11 +4,11 @@ description: This article explains how to copy data using Microsoft 365.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
-ms.custom:
+ms.date: 12/18/2024
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Microsoft 365 in a copy activity
@@ -21,7 +21,7 @@ This article outlines how to use the copy activity in a data pipeline to copy da
 
 To copy data from Microsoft 365, you need to complete the following prerequisite steps:
 
-- Your Microsoft 365 tenant admin must complete on-boarding actions as described [here](/events/build-may-2021/microsoft-365-teams/breakouts/od483/).
+- Your Microsoft 365 tenant admin must complete on-boarding actions as described [here](/graph/data-connect-quickstart).
 - Create and configure a Microsoft Entra web application in Microsoft Entra ID. For instructions, go to [Create a Microsoft Entra application](/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-microsoft-entra-id-and-create-a-service-principal).
 - Make note of the following values, which you use to define the connection for Microsoft 365:
 Tenant ID. For instructions, go to [Get tenant ID](/entra/identity-platform/howto-create-service-principal-portal#sign-in-to-the-application).

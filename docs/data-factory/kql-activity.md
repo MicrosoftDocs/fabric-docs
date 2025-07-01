@@ -1,12 +1,11 @@
 ---
 title: KQL activity
 description: Learn how to add a KQL activity to a pipeline and use it to connect to an Azure Data Explorer instance and run a query in Kusto Query Language (KQL).
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: abnarain
 author: nabhishek
 ms.topic: how-to
-ms.custom:
-  - ignite-2023
+ms.custom: pipelines
 ms.date: 11/15/2023
 ---
 
@@ -18,7 +17,7 @@ The KQL activity in Data Factory for Microsoft Fabric allows you to run a query 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a KQL activity to a pipeline with UI

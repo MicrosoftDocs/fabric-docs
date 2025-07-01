@@ -1,15 +1,11 @@
 ---
-title: Query using the visual query editor
+title: Query Using the Visual Query Editor
 description: Learn how to use the visual query editor for a no-code experience to create your queries.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad, jacindaeng
 ms.date: 09/20/2024
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
 # Query using the visual query editor

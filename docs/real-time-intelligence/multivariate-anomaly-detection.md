@@ -2,22 +2,22 @@
 title: Multivariate anomaly detection
 description: Learn how to perform multivariate anomaly detection in Real-Time Intelligence.
 ms.reviewer: adieldar
-author: YaelSchuster
-ms.author: yaschust
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/19/2024
+ms.date: 03/26/2025
 ms.search.form: KQL Queryset
+#customer intent: As a data scientist, I want to detect anomalies across multiple metrics so that I can proactively identify complex issues.
 ---
-# Multivariate Anomaly Detection
+# Multivariate anomaly detection
 
-For general information about multivariate anomaly detection in Real-Time Intelligence, see [Multivariate anomaly detection in Microsoft Fabric - overview](multivariate-anomaly-overview.md). In this tutorial, you'll use sample data to train a multivariate anomaly detection model using the Spark engine in a Python notebook. You'll then predict anomalies by applying the trained model to new data using the Eventhouse engine. The first few steps set up your environments, and the following steps train the model and predict anomalies.
+For general information about multivariate anomaly detection in Real-Time Intelligence, see [Multivariate anomaly detection in Microsoft Fabric - overview](multivariate-anomaly-overview.md). In this tutorial, you use sample data to train a multivariate anomaly detection model using the Spark engine in a Python notebook. You then predict anomalies by applying the trained model to new data using the Eventhouse engine. The first few steps set up your environments, and the following steps train the model and predict anomalies.
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* Role of **Admin**, **Contributor**, or **Member** [in the workspace](../get-started/roles-workspaces.md). This permission level is needed to create items such as an Environment.
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* Role of **Admin**, **Contributor**, or **Member** [in the workspace](../fundamentals/roles-workspaces.md). This permission level is needed to create items such as an Environment.
 * An [eventhouse](create-eventhouse.md) in your workspace with a database.
 * Download the [sample data](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/demo_stocks_change.csv) from the GitHub repo
 * Download the [notebook](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/multivariate-anomaly-detection-tutorial.ipynb) from the GitHub repo
@@ -26,40 +26,37 @@ For general information about multivariate anomaly detection in Real-Time Intell
 
 OneLake availability must be [enabled](event-house-onelake-availability.md) before you get data in the Eventhouse. This step is important, because it enables the data you ingest to become available in the OneLake. In a later step, you access this same data from your Spark Notebook to train the model.
 
-1. Browse to your workspace homepage in Real-Time Intelligence.
-1. Select the Eventhouse you created in the prerequisites. Choose the database where you want to store your data.
-1. In the **Database details** tile, select the pencil icon next to **OneLake availability**
-1. In the right pane, toggle the button to **Active**.
-1. Select **Done**.
+1. From your workspace select the Eventhouse you created in the prerequisites. Choose the database where you want to store your data.
+1. In the **Database details** pane, toggle the OneLake availability button to **On**.
 
     :::image type="content" source="media/multivariate-anomaly-detection/one-lake-availability.png" alt-text="Screenshot of enabling OneLake availability in your Eventhouse.":::
 
 ## Part 2- Enable KQL Python plugin
 
-In this step, you enable the python plugin in your Eventhouse. This step is required to [run the predict anomalies](#part-9--predict-anomalies-in-the-kql-queryset) Python code in the KQL queryset. It's important to choose the correct package that contains the [time-series-anomaly-detector](https://pypi.org/project/time-series-anomaly-detector/) package.
+In this step, you enable the python plugin in your Eventhouse. This step is required to [run the predict anomalies](#part-9--predict-anomalies-in-the-kql-queryset) Python code in the KQL queryset. It's important to choose the correct image that contains the [time-series-anomaly-detector](https://pypi.org/project/time-series-anomaly-detector/) package.
 
-1. In the Eventhouse screen, select your database, then select **Manage** > **Plugins** from the ribbon..
+1. In the Eventhouse screen, select **Eventhouse** > **Plugins** from the ribbon.
 1. In the Plugins pane, toggle the **Python language extension to** to **On**.
 1. Select **Python 3.11.7 DL (preview)**.
 1. Select **Done**.
 
-    :::image type="content" source="media/multivariate-anomaly-detection/python-package.png" alt-text="Screenshot for how to enable python package 3.11.7 DL in the Eventhouse.":::
+    :::image type="content" source="media/multivariate-anomaly-detection/python-package.png" alt-text="Screenshot for how to enable python package 3.11.7 DL in the Eventhouse." lightbox="media/multivariate-anomaly-detection/python-package.png":::
 
 ## Part 3- Create a Spark environment
 
 In this step, you create a Spark environment to run the Python notebook that trains the multivariate anomaly detection model using the Spark engine. For more information on creating environments, see [Create and manage environments](../data-engineering/create-and-use-environment.md).
 
-1. In the experience switcher, choose **Data Engineering**. If you're already in the Data Engineering experience, browse to **Home**.
-1. From **Recommended items to create**, Select **Environments**, and enter the name *MVAD_ENV* for the environment.
+1. From your workspace, select **+ New item** then **Environment**.
 
-    :::image type="content" source="media/multivariate-anomaly-detection/create-environment.png" alt-text="Screenshot of creating an environment in Data Engineering.":::
+    :::image type="content" source="media/multivariate-anomaly-detection/create-environment.png" alt-text="Screenshot of the Environment tile in New item window." lightbox="media/multivariate-anomaly-detection/create-environment.png":::
 
+1. Enter the name *MVAD_ENV* for the environment and then select **Create**.
 1. Under **Libraries**, select **Public libraries**.
 1. Select **Add from PyPI**.
-1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version. This tutorial was created using version 0.2.7, which is the version included in the Kusto Python 3.11.7 DL.
+1. In the search box, enter *time-series-anomaly-detector*. The version automatically populates with the most recent version. This tutorial was created using version 0.3.5.
 1. Select **Save**.
 
-    :::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment.":::
+    :::image type="content" source="media/multivariate-anomaly-detection/add-package.png" alt-text="Screenshot of adding the PyPI package to the Spark environment." lightbox="media/multivariate-anomaly-detection/add-package.png":::
 
 1. Select the **Home** tab in the environment.
 1. Select the **Publish** icon from the ribbon. :::image type="icon" source="media/multivariate-anomaly-detection/publish-icon.png" border="false":::
@@ -76,19 +73,19 @@ In this step, you create a Spark environment to run the Python notebook that tra
 1. Select **+ New table** and enter *demo_stocks_change* as the table name.
 1. In the upload data dialog, select **Browse for files** and upload the sample data file that was downloaded in the [Prerequisites](#prerequisites)
 1. Select **Next**.
-1. In the **Inspect the data** section, toggle **First row is column header** to **On**.
+1. In the **Inspect the data** section, verify that **First row is column header** is set to **On**.
 1. Select **Finish**.
 1. When the data is uploaded, select **Close**.
 
 ## Part 5- Copy OneLake path to the table
 
-Make sure you select the *demo_stocks_change* table. In the **Table details** tile, select **Copy path** to copy the OneLake path to your clipboard. Save this copied text in a text editor somewhere to be used in a later step.
+Make sure you select the *demo_stocks_change* table. In the **Table details** pane, select **OneLake folder** to copy the OneLake path to your clipboard. Save this copied text in a text editor somewhere to be used in a later step.
 
 :::image type="content" source="media/multivariate-anomaly-detection/copy-path.png" alt-text="Screenshot of copying the OneLake path.":::
 
 ## Part 6- Prepare the notebook
 
-1. In the experience switcher, choose **Develop** and select your workspace.
+1. Select your workspace.
 1. Select **Import**, **Notebook**, then **From this computer**.
 1. Select **Upload**, and choose the notebook you downloaded in the [prerequisites](#prerequisites).
 1. After the notebook is uploaded, you can find and open your notebook from your workspace.
@@ -109,23 +106,23 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
 
     ```python
     def convert_onelake_to_abfss(onelake_uri):
-    if not onelake_uri.startswith('https://'):
-        raise ValueError("Invalid OneLake URI. It should start with 'https://'.")
-    uri_without_scheme = onelake_uri[8:]
-    parts = uri_without_scheme.split('/')
-    if len(parts) < 3:
-        raise ValueError("Invalid OneLake URI format.")
-    account_name = parts[0].split('.')[0]
-    container_name = parts[1]
-    path = '/'.join(parts[2:])
-    abfss_uri = f"abfss://{container_name}@{parts[0]}/{path}"
-    return abfss_uri
+        if not onelake_uri.startswith('https://'):
+            raise ValueError("Invalid OneLake URI. It should start with 'https://'.")
+        uri_without_scheme = onelake_uri[8:]
+        parts = uri_without_scheme.split('/')
+        if len(parts) < 3:
+            raise ValueError("Invalid OneLake URI format.")
+        account_name = parts[0].split('.')[0]
+        container_name = parts[1]
+        path = '/'.join(parts[2:])
+        abfss_uri = f"abfss://{container_name}@{parts[0]}/{path}"
+        return abfss_uri
     ```
 
-1. Input your OneLake URI copied from [Part 5- Copy OneLake path to the table](#part-5--copy-onelake-path-to-the-table) to load *demo_stocks_change* table into a pandas dataframe.
+1. Replace the *OneLakeTableURI* placeholder with your OneLake URI copied from [Part 5- Copy OneLake path to the table](#part-5--copy-onelake-path-to-the-table) to load *demo_stocks_change* table into a pandas dataframe.
 
     ```python
-    onelake_uri = "OneLakeTableURI" # Replace with your OneLake table URI 
+    onelake_uri = "OneLakeTableURI" # Replace with your OneLake table URI
     abfss_uri = convert_onelake_to_abfss(onelake_uri)
     print(abfss_uri)
     ```
@@ -180,7 +177,7 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
     with mlflow.start_run():
         mlflow.log_params(params)
         mlflow.set_tag("Training Info", "MVAD on 5 Stocks Dataset")
-    
+
         model_info = mlflow.pyfunc.log_model(
             python_model=model,
             artifact_path="mvad_artifacts",
@@ -188,30 +185,28 @@ Make sure you select the *demo_stocks_change* table. In the **Table details** ti
         )
     ```
 
+1. Run the following cell to extract the registered model path to be used for prediction using Kusto Python sandbox.
+
     ```python
-    # Extract the registered model path to be used for prediction using Kusto Python sandbox
-    
     mi = mlflow.search_registered_models(filter_string="name='mvad_5_stocks_model'")[0]
     model_abfss = mi.latest_versions[0].source
     print(model_abfss)
     ```
 
-1. Copy the model URI from the last cell output. You'll use this in a later next step.
+1. Copy the model URI from the last cell output for use in a later step.
 
 ## Part 8- Set up your KQL queryset
 
 For general information, see [Create a KQL queryset](create-query-set.md).
 
-1. In the experience switcher, choose **Real-Time Intelligence**.
-1. Select your workspace.
-1. Select **+New item** > **KQL Queryset**. Enter the name *MultivariateAnomalyDetectionTutorial*.
-1. Select **Create**.
+1. From your workspace, select **+New item** > **KQL Queryset**.
+1. Enter the name *MultivariateAnomalyDetectionTutorial*, and then select **Create**.
 1. In the **OneLake data hub** window, select the KQL database where you stored the data.
 1. Select **Connect**.
 
 ## Part 9- Predict anomalies in the KQL queryset
 
-1. Copy/paste and run the following '.create-or-alter function' query to define the  `predict_fabric_mvad_fl()` stored function:
+1. Run the following '.create-or-alter function' query to define the  `predict_fabric_mvad_fl()` stored function:
 
     ```kusto
     .create-or-alter function with (folder = "Packages\\ML", docstring = "Predict MVAD model in Microsoft Fabric")
@@ -253,9 +248,9 @@ For general information, see [Create a KQL queryset](create-query-set.md).
     }
     ```
 
-1. Copy/paste the following prediction query.
-    1. Replace the output model URI copied in the end of [step 7](#part-7--run-the-notebook).
-    1. Run the query. It detects multivariate anomalies on the five stocks, based on the trained model, and renders the results as `anomalychart`. The anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies (in other words, anomalies of the joint changes of the five stocks in the specific date).
+1. Run the following prediction query, replacing the output model URI with the URI copied in the end of [step 7](#part-7--run-the-notebook).
+
+    The query detects multivariate anomalies on the five stocks, based on the trained model, and renders the results as `anomalychart`. The anomalous points are rendered on the first stock (AAPL), though they represent multivariate anomalies (in other words, anomalies of the joint changes of the five stocks in the specific date).
 
     ```kusto
     let cutoff_date=datetime(2023-01-01);
@@ -264,7 +259,7 @@ For general information, see [Create a KQL queryset](create-query-set.md).
     let prefix_score_len = sliding_window/2+min_of(sliding_window/2, 200)-1;
     let num_samples = prefix_score_len + num_predictions;
     demo_stocks_change
-    | top num_samples by Date desc 
+    | top num_samples by Date desc
     | order by Date asc
     | extend is_anomaly=bool(false), score=real(null), severity=real(null), interpretation=dynamic(null)
     | invoke predict_fabric_mvad_fl(pack_array('AAPL', 'AMZN', 'GOOG', 'MSFT', 'SPY'),
@@ -277,7 +272,7 @@ For general information, see [Create a KQL queryset](create-query-set.md).
 
 The resulting anomaly chart should look like the following image:
 
-:::image type="content" source="media/multivariate-anomaly-detection/kql-query-output.png" alt-text="Screenshot of multivariate anomaly output.":::
+:::image type="content" source="media/multivariate-anomaly-detection/kql-query-output.png" alt-text="Screenshot of multivariate anomaly output." lightbox="media/multivariate-anomaly-detection/kql-query-output.png":::
 
 ## Clean up resources
 
@@ -286,5 +281,5 @@ When you finish the tutorial, you can delete the resources, you created to avoid
 1. Browse to your workspace homepage.
 1. Delete the environment created in this tutorial.
 1. Delete the notebook created in this tutorial.
-1. Delete the Eventhouse or [database](manage-monitor-eventhouse.md#manage-kql-databases) used in this tutorial.
+1. Delete the Eventhouse or [database](manage-monitor-database.md#manage-kql-databases) used in this tutorial.
 1. Delete the KQL queryset created in this tutorial.

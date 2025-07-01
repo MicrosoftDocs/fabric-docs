@@ -4,21 +4,23 @@ description: Learn about SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur
-ms.date: 11/07/2024
+ms.date: 05/29/2025
 ms.topic: overview
-ms.custom:
-  - ignite-2024
-ms.search.form: product-databases
+ms.search.form: product-databases, SQL database Overview, Databases Overview
 ---
 # SQL database in Microsoft Fabric (Preview)
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-SQL database in Microsoft Fabric is a developer-friendly transactional database, based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), that allow you to easily create your operational database in Fabric. A SQL database in Fabric uses the same SQL Database Engine as Azure SQL Database.
+SQL database in Microsoft Fabric is a developer-friendly transactional database, based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), that allows you to easily create your operational database in Fabric. A SQL database in Fabric uses the same SQL Database Engine as Azure SQL Database.
+
+To learn more about SQL database in Fabric, watch a Data Exposed episode introducing on the [SQL database in Microsoft Fabric public preview](/shows/data-exposed/announcing-sql-database-in-microsoft-fabric-public-preview-data-exposed).
+
+> [!VIDEO https://learn-video.azurefd.net/vod/player?show=data-exposed&ep=announcing-sql-database-in-microsoft-fabric-public-preview-data-exposed]
 
 [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
-To get started, see the tutorial to [Create a SQL database in the Fabric portal](create.md).
+To get started with a full walkthrough, see the tutorial to [Create a SQL database in the Fabric portal](create.md). If you want help with a particular task, visit the [Get started](connect.md) section.
 
 SQL database in Fabric is:
 
@@ -43,14 +45,14 @@ SQL database in Fabric is part of the **Database** workload, and the data is acc
 
 With your SQL database in Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs, and built for openness and collaboration between technology solutions that can read the open-source Delta Lake table format. The Delta tables can then be used everywhere in Fabric, allowing users to accelerate their journey into Fabric.
 
-The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS). To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS). To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 
 SQL database in Fabric creates three items in your Fabric workspace:
 
 - Data in your SQL database is automatically replicated of into the [OneLake](../../onelake/onelake-overview.md) and converted to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
 
-- A SQL analytics endpoint
-- A default semantic model
+- A [SQL analytics endpoint](sql-analytics-endpoint.md)
+- A [default semantic model](../../data-warehouse/default-power-bi-semantic-model.md)
 
 In addition to the [Fabric SQL database Query Editor](query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
 
@@ -68,10 +70,11 @@ For more information, see [Share data and manage access to your SQL database in 
 
 Like other Microsoft Fabric item types, SQL databases rely on [Microsoft Entra authentication](/entra/identity/authentication/overview-authentication). For options to connect, review [Connect to your SQL database in Microsoft Fabric](connect.md).
 
-To successfully authenticate to a SQL database, a Microsoft Entra user, a [service principal](/entra/identity-platform/app-objects-and-service-principals), or their [group](/entra/fundamentals/concept-learn-about-groups), must have the Read item permission for the database in Fabric.
-For more information, see [Authentication in SQL database in Microsoft Fabric](authentication.md).
+To successfully authenticate to a SQL database, a Microsoft Entra user, a [service principal](/entra/identity-platform/app-objects-and-service-principals), or their [group](/entra/fundamentals/concept-learn-about-groups), must have the Read item permission for the database in Fabric. For more information, see [Authentication in SQL database in Microsoft Fabric](authentication.md).
 
-- For information on how to grant a Microsoft Entra identity access to a Fabric workspace or a specific database, see [Fabric access controls](authorization.md#fabric-access-controls).
+Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Redirect**. For more information, see [Connection policy](limitations.md#connection-policy) and [Connectivity architecture](/azure/azure-sql/database/connectivity-architecture#connection-policy). Refer to the [Azure IP Ranges and Service Tags - Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) for a list of your region's IP addresses to allow.
+
+For information on how to grant a Microsoft Entra identity access to a Fabric workspace or a specific database, see [Fabric access controls](authorization.md#fabric-access-controls).
 
 ## Cross-database queries
 
@@ -121,12 +124,15 @@ You can use the Fabric portal to easily [create a GraphQL API](graphql-api.md) f
 
 You can use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) to monitor the SQL database usage and consumption in non-trial Fabric capacities.
 
-> [!NOTE]
-> During the current preview, no billing will occur for SQL database in Fabric, but billing metrics will still flow for tracking purposes.
+For more information, see [Billing and utilization reporting for SQL database in Microsoft Fabric](usage-reporting.md).
 
 ## Mirroring for Azure SQL Database
 
 Do you already have an external database and want to leverage Fabric's integration? You can use Mirroring in Fabric as a low-cost and low-latency solution to bring data from various systems together. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from an existing [Azure SQL Database](../mirrored-database/azure-sql-database.md).
+
+## Elastic pools
+
+Fabric SQL database doesn't support the Azure SQL Database elastic pools concept by name, but similar concepts are available with Fabric capacities and Fabric workspaces. A single Fabric capacity can provide resources for Fabric SQL databases in different workspaces. This provides both a simplification of billing in a single capacity similar to elastic pools, as well as security isolation for different workspaces.
 
 ## Next step
 
@@ -135,7 +141,7 @@ Do you already have an external database and want to leverage Fabric's integrati
 
 ## Related content
 
-- [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
 - [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)
-- [What is the SQL analytics endpoint for a Lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
-- [Direct Lake](/power-bi/enterprise/directlake-overview)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+- [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)  
+- [What is the SQL analytics endpoint for a SQL database in Fabric?](sql-analytics-endpoint.md)

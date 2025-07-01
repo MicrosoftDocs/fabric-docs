@@ -1,15 +1,11 @@
 ---
-title: Ingesting data into the warehouse
-description: Learn about the features that allow you to ingest data into your warehouse.
+title: Ingest Data into the Warehouse
+description: Learn about the features and methods to ingest data into your warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
-ms.date: 07/29/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
 # Ingest data into the Warehouse
@@ -32,9 +28,9 @@ You can ingest data into a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using o
 To decide which data ingestion option to use, you can use the following criteria: 
 
 - Use the **COPY (Transact-SQL)** statement for code-rich data ingestion operations, for the highest data ingestion throughput possible, or when you need to add data ingestion as part of a Transact-SQL logic. For syntax, see [COPY INTO (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
-- Use **data pipelines** for code-free or low-code, robust data ingestion workflows that run repeatedly, at a schedule, or that involves large volumes of data. For more information, see [Ingest data using Data pipelines](ingest-data-pipelines.md).
-- Use **dataflows** for a code-free experience that allow custom transformations to source data before it's ingested. These transformations include (but aren't limited to) changing data types, adding or removing columns, or using functions to produce calculated columns. For more information, see [Dataflows](../data-factory/dataflows-gen2-overview.md).
-- Use **cross-warehouse ingestion** for code-rich experiences to create new tables with source data within the same workspace. For more information, see [Ingest data using Transact-SQL](ingest-data-tsql.md) and [Write a cross-database query](query-warehouse.md#write-a-cross-database-query).
+- Use **data pipelines** for code-free or low-code, robust data ingestion workflows that run repeatedly, at a schedule, or that involves large volumes of data. For more information, see [Ingest data into your Warehouse using data pipelines](ingest-data-pipelines.md).
+- Use **dataflows** for a code-free experience that allow custom transformations to source data before it's ingested. These transformations include (but aren't limited to) changing data types, adding or removing columns, or using functions to produce calculated columns. For more information, see [Dataflows Gen2](../data-factory/dataflows-gen2-overview.md).
+- Use **cross-warehouse ingestion** for code-rich experiences to create new tables with source data within the same workspace. For more information, see [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md) and [Write a cross-database query](query-warehouse.md#write-a-cross-database-query).
 
 > [!NOTE]
 > The COPY statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports only data sources on Azure storage accounts, OneLake sources are currently not supported.
@@ -80,7 +76,7 @@ SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 - If a SELECT is within a transaction, and was preceded by data insertions, the [automatically generated statistics](statistics.md) can be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
 
 > [!NOTE]
-> Regardless of how you ingest data into warehouses, the parquet files produced by the data ingestion task will be optimized using V-Order write optimization. V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark and others. Warehouse queries in general benefit from faster read times for queries with this optimization, still ensuring the parquet files are 100% compliant to its open-source specification. [Unlike in Fabric Data Engineering](../data-engineering/delta-optimization-and-v-order.md), V-Order is a global setting in Fabric Data Warehouse that cannot be disabled. For more information on V-Order, see [Understand and manage V-Order for Warehouse](v-order.md).
+> Regardless of how you ingest data into warehouses, the parquet files produced by the data ingestion task will be optimized using V-Order write optimization. V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark, and others. Warehouse queries in general benefit from faster read times for queries with this optimization, still ensuring the parquet files are 100% compliant to its open-source specification. It isn't recommended to disable V-Order as it may affect read performance. For more information on V-Order, see [Understand and manage V-Order for Warehouse](v-order.md).
 
 ## Related content
 

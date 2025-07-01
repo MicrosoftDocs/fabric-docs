@@ -6,8 +6,6 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: concept-article
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.date: 06/06/2024
 ms.search.form: Source and Destination
 ---

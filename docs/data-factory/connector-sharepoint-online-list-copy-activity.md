@@ -4,12 +4,11 @@ description: This article explains how to copy data using SharePoint Online List
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
-ms.custom:
+ms.date: 12/18/2024
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
-  - build-2024
+  - connectors
 ---
 
 # Configure SharePoint Online List in a Copy activity

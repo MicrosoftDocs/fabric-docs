@@ -5,10 +5,10 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 07/24/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Azure AI Search in copy activity

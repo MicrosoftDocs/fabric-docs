@@ -1,6 +1,6 @@
 ---
-author: YaelSchuster
-ms.author: yaschust
+author: spelluru
+ms.author: spelluru
 ms.topic: include
 ms.date: 05/30/2024
 ---

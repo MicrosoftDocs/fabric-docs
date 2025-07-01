@@ -7,9 +7,7 @@ ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 02/28/2024
+ms.date: 01/14/2025
 ---
 
 # Train and evaluate a time series forecasting model
@@ -27,8 +25,8 @@ In this notebook, we build a program to forecast time series data that has seaso
 
 You can follow along in a notebook one of two ways:
 
-- Open and run the built-in notebook in the Synapse Data Science experience.
-- Upload your notebook from GitHub to the Synapse Data Science experience.
+- Open and run the built-in notebook.
+- Upload your notebook from GitHub.
 
 ### Open the built-in notebook
 
@@ -104,7 +102,7 @@ The data source consists of 15 `.csv` files. These files contain property sales 
 
 
 ```python
-URL = "https://synapseaisolutionsa.blob.core.windows.net/public/NYC_Property_Sales_Dataset/"
+URL = "https://synapseaisolutionsa.z13.web.core.windows.net/data/NYC_Property_Sales_Dataset/"
 TAR_FILE_NAME = "nyc_property_sales.tar"
 DATA_FOLDER = "Files/NYC_Property_Sales_Dataset"
 TAR_FILE_PATH = f"/lakehouse/default/{DATA_FOLDER}/tar/"
@@ -443,7 +441,7 @@ for chpt_prior in changepoint_priors:
         mlflow.log_metrics(metrics)
 ```
 
-:::image type="content" source="media/time-series-forecasting/properties-panel.png" alt-text="Screenshot of the properties panel.":::
+:::image type="content" source="media/time-series-forecasting/properties-panel.png" alt-text="Screenshot of the properties panel." lightbox ="media/time-series-forecasting/properties-panel.png":::
 
 ### Visualize a model with Prophet
 
@@ -471,7 +469,7 @@ BEST_MODEL_INDEX = 1  # Set the best model index according to the previous resul
 fig2 = models[BEST_MODEL_INDEX].plot_components(forecast)
 ```
 
-:::image type="content" source="media/time-series-forecasting/trends.png" alt-text="Screenshot of a graph of yearly trends in the pricing data.":::
+:::image type="content" source="media/time-series-forecasting/trends.png" alt-text="Screenshot of a graph of yearly trends in the pricing data." lightbox= "media/time-series-forecasting/trends.png":::
 
 In these graphs, the light blue shading reflects the uncertainty. The top graph shows a strong, long-period oscillating trend. Over a few years, the sales volumes rise and fall. The lower graph shows that sales tend to peak in February and September, reaching their maximum values for the year in those months. Shortly after those months, in March and October, they fall to the year's minimum values.
 

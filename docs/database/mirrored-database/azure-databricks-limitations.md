@@ -4,7 +4,7 @@ description: Learn about limitations for Azure Databricks mirroring in Microsoft
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sheppardshep, whhender, preshah
-ms.date: 11/19/2024
+ms.date: 02/26/2025
 ms.topic: overview
 ms.custom: references_regions
 ---
@@ -16,7 +16,6 @@ This article lists current limitations with mirrored Azure Databricks in Microso
 ## Network
 
 - Azure Databricks workspaces shouldn't be behind a private endpoint.
-- Storage accounts containing unity catalog data can't be behind a firewall.
 - Azure Databricks IP Access lists aren't supported.
 
 ## Supported Spark Versions
@@ -84,6 +83,9 @@ Here's a list of regions that support mirroring for Azure Databricks Catalog:
     - East US2
     - North Central US
     - West US
+    - West US 2
+    - West US 3
+ 
    :::column-end:::
    :::column span="":::
     **Middle East and Africa**:
@@ -91,6 +93,7 @@ Here's a list of regions that support mirroring for Azure Databricks Catalog:
     - South Africa North
     - South Africa West
     - UAE North
+    - Israel Central
    :::column-end:::
 :::row-end:::
 

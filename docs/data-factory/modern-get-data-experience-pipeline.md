@@ -1,11 +1,12 @@
 ---
 title: The modern get data experience in data pipelines
 description: Learn how to easily connect to your data with the new modern get data experience for data pipelines.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: xupzhou
 author: PennyZhou-MSFT
 ms.topic: how-to
 ms.date: 05/21/2024
+ms.custom: pipelines
 ---
 
 # Easily connect to your data with the new modern get data experience for data pipelines
@@ -16,7 +17,7 @@ The new modern get data experience for data pipelines simplifies connecting to d
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Try the modern get data experience in a pipeline

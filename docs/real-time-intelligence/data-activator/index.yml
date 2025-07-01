@@ -6,13 +6,9 @@ summary: Learn about Activator, and how to create events and triggers for your d
 metadata:
   title: Activator documentation
   description: Browse the Activator documentation.
-  ms.service: fabric  #Required; use either service or product per approved list.
-  ms.subservice: enterprise
-  ms.custom:
-    - build-2024
   ms.topic: landing-page
-  author: mihart
-  ms.author: mihart
+  author: spelluru
+  ms.author: spelluru
   ms.date: 09/24/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 

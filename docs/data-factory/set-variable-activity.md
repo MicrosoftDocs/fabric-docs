@@ -1,13 +1,12 @@
 ---
 title: Set Variable activity
 description: Learn how to use the Set Variable activity to add a value to an existing array variable defined in Fabric pipeline.
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: makromer
 author: kromerm
 ms.topic: how-to
-ms.custom:
-  - ignite-2023
-ms.date: 11/15/2023
+ms.custom: pipelines
+ms.date: 12/18/2024
 ---
 
 # Use the Set Variable activity in Fabric
@@ -20,7 +19,7 @@ The usage scenarios for the Set Variable activity can vary widely depending on y
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a Set Variable activity to a pipeline with UI

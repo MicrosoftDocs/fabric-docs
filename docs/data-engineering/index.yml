@@ -9,8 +9,6 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-engineering
   ms.custom:
-    - ignite-2023
-    - build-2024
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
   author: SnehaGunda
@@ -62,6 +60,8 @@ landingContent:
             url: lakehouse-notebook-explore.md
           - text: Visualize notebooks
             url: notebook-visualization.md
+          - text: Use Python experience on Notebook
+            url: using-python-experience-on-notebook.md
           - text: Notebooks source control and deployment
             url: notebook-source-control-deployment.md
           - text: Use NotebookUtils in notebook
@@ -86,7 +86,12 @@ landingContent:
           - text: Connect applications
             url: connect-apps-api-graphql.md
           - text: Query multiple data sources
-            url: multiple-data-sources-graphql.md      
+            url: multiple-data-sources-graphql.md
+          - text: GraphQL source control and deployment pipelines
+            url: graphql-source-control-and-deployment.md
+          - text: Monitoring dashboard and logging (preview) 
+            url: graphql-monitor-log.md
+   
   # Card 
   - title: Delta Lake
     linkLists:
@@ -140,6 +145,8 @@ landingContent:
             url: explore-lakehouse-with-vs-code.md
           - text: Develop notebook from VS Code web experience
             url: author-notebook-with-vs-code-web.md
+          - text: Develop notebook with Fabric runtime
+            url: fabric-runtime-in-vscode.md
 
   # Card 
   - title: Apache Spark

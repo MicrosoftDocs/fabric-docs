@@ -7,8 +7,7 @@ ms.topic: how-to
 ms.date: 06/13/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Set up your Amazon S3 connection

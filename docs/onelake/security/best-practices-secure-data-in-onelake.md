@@ -6,7 +6,6 @@ ms.author: aamerril
 author: aamerril
 ms.topic: concept-article
 ms.custom:
-  - ignite-2023
 ms.date: 05/09/2024
 #customer intent: As a security engineer, I want to learn best practices for securing my data in OneLake, including least privilege access, workload permissions, and user permissions, so that I can effectively protect my data and reduce security risks.
 ---
@@ -51,6 +50,9 @@ Either Admin, Member, or Contributor roles can write data to OneLake through Spa
 
 **Read data from OneLake**
 A user needs to be a workspace Viewer, or have the Read permission and the ReadAll permission to read data from OneLake. For lakehouses with the OneLake data access roles (preview) feature enabled, access through a data access role is required instead of ReadAll.
+
+**Subscribe to OneLake events**
+A user needs SubscribeOneLakeEvents to be able to subscribe to events from a Fabric item. Admin, Member, and Contributor roles have this permission by default. You can add this permission for a user with Viewer role.
 
 ## Related content
 

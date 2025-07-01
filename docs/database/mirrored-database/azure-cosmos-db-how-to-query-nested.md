@@ -4,7 +4,7 @@ description: Query nested Azure Cosmos DB JSON data in a mirrored database withi
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 11/19/2024
+ms.date: 05/07/2025
 ms.topic: how-to
 ---
 
@@ -13,14 +13,14 @@ ms.topic: how-to
 Use the mirrored database in Microsoft Fabric to query nested JSON data sourced from Azure Cosmos DB for NoSQL.
 
 > [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../../get-started/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+> Mirroring for Azure Cosmos DB is currently in [preview](../../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
 ## Prerequisites
 
 - An existing Azure Cosmos DB for NoSQL account.
   - If you don't have an Azure subscription, [Try Azure Cosmos DB for NoSQL free](https://cosmos.azure.com/try/).
   - If you have an existing Azure subscription, [create a new Azure Cosmos DB for NoSQL account](/azure/cosmos-db/nosql/quickstart-portal).
-- An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../../get-started/fabric-trial.md).
+- An existing Fabric capacity. If you don't have an existing capacity, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - The Azure Cosmos DB for NoSQL account must be configured for Fabric mirroring. For more information, see [account requirements](azure-cosmos-db-limitations.md#account-and-database-limitations).
 
 > [!TIP]
@@ -189,6 +189,34 @@ Now, use the SQL analytics endpoint to create a query that can handle simple nes
             order_id varchar(100) '$.order_id',
             item_description varchar(200) '$.item_description' 
         ) as P 
+    ```
+
+## Query basic nested data with auto schema inference
+Follow steps 1-3 in the previous example. With the same data set, we can create a query to flatten the data without having to explicitly define the schema.
+
+1. Run this query to expand on the `items` array with `OPENJSON` without defining the schema. This flattens the item array one level by seperating each nested object into a new row.
+
+    ```sql
+    SELECT
+        t.name,
+        t.id,
+        t.country,
+        p.*
+    FROM OrdersDB_TestC as t 
+    CROSS APPLY OPENJSON(t.items) p
+    ```
+
+1. Run this query to further expand on the `items` array with `OPENJSON` without defining the schema. This flattens the item array two levels by seperating each property within each nested object into a new row.
+
+    ```sql
+    SELECT
+        t.name,
+        t.id,
+        t.country,
+        q.*
+    FROM OrdersDB_TestC as t 
+    CROSS APPLY OPENJSON(t.items) q
+    OUTER APPLY OPENJSON(t.items) p
     ```
 
 ## Create deeply nested data

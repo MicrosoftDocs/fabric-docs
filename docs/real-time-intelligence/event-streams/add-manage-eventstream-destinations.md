@@ -6,8 +6,7 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 11/27/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -34,6 +33,15 @@ Fabric event streams support the following destinations. Use links in the table 
 
 [!INCLUDE [supported-destinations](./includes/supported-destinations-enhanced.md)]
 
+[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+
+
+## Manage a destination
+
+To edit or remove an Eventstream destination, switch to **Edit mode** first. Then you can make changes to the destination on the canvas. After completing the required changes, **publish** the Eventstream to apply them.
+
+:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-v2-destination-edit-deletion.png" alt-text="Screenshot showing enter to edit mode to modify and delete options for destinations on the canvas in eventstream v2." lightbox="./media/add-manage-eventstream-destinations/eventstream-v2-destination-edit-deletion.png" :::
+
 
 ::: zone-end
 
@@ -42,8 +50,6 @@ Fabric event streams support the following destinations. Use links in the table 
 
 [!INCLUDE [supported-destinations](./includes/supported-destinations-standard.md)]
 
-
-::: zone-end
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
@@ -55,6 +61,9 @@ You can edit or remove an eventstream destination through either the navigation 
 When you select **Edit**, the edit pane opens in the right side of the main editor. You can modify the configuration as you wish, including the event transformation logic, through the event processor editor.
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing where to select the modify and delete options for destinations on the canvas." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
+
+
+::: zone-end
 
 ## Related content
 

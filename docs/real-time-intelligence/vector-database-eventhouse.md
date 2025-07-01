@@ -2,11 +2,10 @@
 title: "Tutorial: Use an Eventhouse as a vector database"
 description: Learn about how you can use an Eventhouse to store and query vector data in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: yaschust
-author: YaelSchuster
+ms.author: spelluru
+author: spelluru
 ms.topic: tutorial
 ms.custom:
-  - ignite-2024
 ms.date: 11/19/2024
 ms.search.form: Eventhouse
 ---
@@ -32,7 +31,7 @@ This flow can be visualized as follows:
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
 * An Azure OpenAI resource with the text-embedding-ada-002 (Version 2) model deployed. This model is currently only available in certain regions. For more information, see [Create a resource](/azure/ai-services/openai/how-to/create-resource).
     * Make sure that local authentication is [enabled](/azure/ai-services/disable-local-auth#re-enable-local-authentication) on your Azure OpenAI resource.
@@ -69,7 +68,7 @@ The following steps are used to import the embedded Wikipedia data and write it 
 ### Import notebook
 
 1. Download the sample notebook from the [GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/vector-database-eventhouse-notebook.ipynb).
-1. Browse to your Fabric environment. In the experience switcher, choose **Develop** and then your workspace.
+1. Browse to your Fabric environment. In the experience switcher, choose **Fabric** and then your workspace.
 1. Select **Import** > **Notebook** >  **From this computer** > **Upload** then choose the notebook you downloaded in a previous step.
 1. Once the import is complete, open the imported notebook from your workspace.
 
@@ -124,7 +123,7 @@ The following steps are used to import the embedded Wikipedia data and write it 
     article_df.head()
     ```
 
-1. To write to the eventhouse, enter your Cluster URI, which can be found on the [system overview page](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse), and the name of the database. The table is created in the notebook and later referenced in the query.
+1. To write to the eventhouse, enter your Cluster URI, which can be found on the [system overview page](manage-monitor-eventhouse.md#view-system-overview), and the name of the database. The table is created in the notebook and later referenced in the query.
 
     ```python
     # replace with your Eventhouse Cluster URI, Database name, and Table name
@@ -236,4 +235,4 @@ When you finish the tutorial, you can delete the resources, you created to avoid
 
 1. Browse to your workspace homepage.
 1. Delete the notebook created in this tutorial.
-1. Delete the Eventhouse or [database](manage-monitor-eventhouse.md#manage-kql-databases) used in this tutorial.
+1. Delete the Eventhouse or [database](manage-monitor-database.md#manage-kql-databases) used in this tutorial.

@@ -9,7 +9,7 @@ ms.date: 11/13/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Fabric OneLake events to an eventstream (preview)
+# Add Fabric OneLake events to an eventstream 
 
 This article shows you how to add Fabric OneLake event source to an eventstream.
 
@@ -47,8 +47,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 [!INCLUDE [fabric-onelake-source-connector](includes/fabric-onelake-source-connector.md)]
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ## View updated eventstream
 
 1. Once the connection is created, you can see the Fabric OneLake events source added to your eventstream in **Edit mode**. Select **Publish** to publish the eventstream and capture the OneLake events.
@@ -59,6 +57,8 @@ On the **Select a data source** page, search for and select **Connect** on the *
     > Before proceeding with event transformation or routing, ensure that OneLake events have been triggered and successfully sent to the eventstream.
 
 1. If you want to transform the Fabric OneLake events, open your eventstream and select **Edit** on the toolbar to enter **Edit mode**. Then you can add operations to transform the Fabric OneLake events or route them to a destination such as Lakehouse.
+
+:::image type="content" source="./media/add-source-fabric-onelake/live-view.png" alt-text="Screenshot that shows the newly added Fabric OneLake events source in live view.":::
 
 [!INCLUDE [known-issues-discrete-events](./includes/known-issues-discrete-events.md)]
 

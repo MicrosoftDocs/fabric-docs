@@ -1,12 +1,11 @@
 ---
 title: Permission model
 description: Learn how permissions work in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
 ms.custom:
-  - build-2024
-ms.date: 06/27/2024
+ms.date: 05/22/2025
 ---
 
 # Permission model
@@ -29,7 +28,7 @@ There are four Workspace roles and they apply to all items within the workspace.
 
 * **Admin** - Can view, modify, share, and manage all content in the workspace, including managing permissions.
 
-This table shows a small set of the capabilities each role has. For a full and more detailed list, see [Microsoft Fabric workspace roles](../get-started/roles-workspaces.md#roles-in-workspaces-in-microsoft-fabric).
+This table shows a small set of the capabilities each role has. For a full and more detailed list, see [Microsoft Fabric workspace roles](../fundamentals/roles-workspaces.md#roles-in-workspaces-in-microsoft-fabric).
 
 | Capability           | Admin   | Member   | Contributor | Viewer   |
 |----------------------|---------|----------|-------------|----------|
@@ -50,7 +49,9 @@ Different Fabric items have different permissions. To learn more about the permi
 
 * [Semantic model](/power-bi/connect-data/service-datasets-permissions)
 
-* [warehouse](../data-warehouse/share-warehouse-manage-permissions.md)
+* [Warehouse](../data-warehouse/share-warehouse-manage-permissions.md)
+
+* [SQL database](../database/sql/security-overview.md)
 
 * [Data Factory](../data-factory/data-factory-overview.md)
 
@@ -90,7 +91,7 @@ Learn more about [OneLake Data Access Control Model](../onelake/security/data-ac
 
 ## Order of operation
 
-Fabric has three different security levels. A user must have access at each level in order to access the data. Each level evaluates sequentially to determine if a user has access. Security rules such as [Microsoft Information Protection policies](../get-started/apply-sensitivity-labels.md) evaluate at a given level to allow or disallow access. The order of operation when evaluating Fabric security is:
+Fabric has three different security levels. A user must have access at each level in order to access the data. Each level evaluates sequentially to determine if a user has access. Security rules such as [Microsoft Information Protection policies](../fundamentals/apply-sensitivity-labels.md) evaluate at a given level to allow or disallow access. The order of operation when evaluating Fabric security is:
 
 1. Entra authentication: Checks if the user is able to authenticate to the Microsoft Entra tenant.
 2. Fabric access: Checks if the user can access Microsoft Fabric.

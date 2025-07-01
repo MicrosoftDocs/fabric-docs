@@ -3,11 +3,10 @@ title: "Performance Dashboard for SQL database"
 description: Learn about the Performance Dashboard for SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: sukkaur
-ms.date: 11/05/2024
+ms.reviewer: amapatil, subasak
+ms.date: 04/07/2025
 ms.topic: conceptual
-ms.custom:
-  - ignite-2024
+ms.search.form: Performance monitoring in SQL database
 ---
 # Performance Dashboard for SQL database in Microsoft Fabric
 
@@ -22,7 +21,6 @@ To open the Performance Dashboard for your SQL database in Fabric:
 - On the **Home** toolbar in the [Query Editor](query-editor.md) window, select **Performance summary**.
    :::image type="content" source="media/performance-dashboard/performance-summary.png" alt-text="Screenshot from the Fabric SQL Editor highlighting the Performance summary button in the Home toolbar." lightbox="media/performance-dashboard/performance-summary.png":::
 - Right-click on the context button (the three dots) in the item view, then select **Open performance summary**.
-   :::image type="content" source="media/performance-dashboard/open-performance-summary.png" alt-text="Screenshot from the Fabric portal of the Fabric items list. Right-click the SQL database item's three dots to open the pop-up menu." lightbox="media/performance-dashboard/open-performance-summary.png":::
 
 ## Alerts
 
@@ -62,7 +60,9 @@ The following are built-in reporting areas of the Performance Dashboard.
 
 #### CPU consumption
 
-The **CPU consumption** graph is plotted by vCore seconds. The **Top Consuming CPU queries** identifies the queries in the desired time interval that have been most responsible for vCore consumption.
+The **CPU consumption** graph displays CPU usage (in vCores) along the X-axis and time along the Y-axis. When you hover over the graph, you'll see details such as the event duration, status, and CPU usage within that specific time frame. Time ranges on the graph can be expanded to reveal more detail.
+ 
+The CPU trends shown in this dashboard represent usage by user queries only. They do not include CPU used for provisioning, system maintenance, or other background operations. The Performance Dashboard does not directly correlate to Fabric consumption. To track consumption, use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
 
 #### User connections
 
@@ -126,3 +126,4 @@ Along with the Query ID and the Query text, metric, and execution count, tabs in
 
 - [Query with the SQL query editor](query-editor.md)
 - [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)
+- [Billing and utilization reporting for SQL database in Microsoft Fabric](usage-reporting.md)

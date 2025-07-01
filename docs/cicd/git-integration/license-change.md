@@ -1,14 +1,15 @@
 ---
 title: Git integration license change
 description: Understand what happens to your got connection when your license permissions change and you can't access the repo anymore.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: conceptual 
+ms.topic: concept-article
 ms.date: 06/06/2024
-ms.custom: build-2023
+ms.custom: 
+# customer intent: As a developer, I want to know what happens to my Git connection when my license expires or changes so that I can plan accordingly.
 ---
 
 # Git integration license change

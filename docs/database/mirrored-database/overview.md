@@ -4,10 +4,9 @@ description: Learn about mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, tinglee, sbahadur
-ms.date: 11/20/2024
+ms.date: 06/18/2025
 ms.topic: overview
 ms.custom:
-  - ignite-2024
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
@@ -39,7 +38,7 @@ Mirroring in Fabric provides an easy experience to speed the time-to-value for i
 
 - Near real time replication of data and metadata into a SaaS data-lake, with built-in analytics built-in for BI and AI
 
-The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level. To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level. To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 
 Mirroring creates three items in your Fabric workspace:
 
@@ -65,10 +64,12 @@ Currently, the following external databases are available:
 |:--|:--|:--|
 | [Microsoft Fabric mirrored databases from Azure Cosmos DB (preview)](azure-cosmos-db.md) | Yes | Database mirroring | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure Databricks (preview)](azure-databricks.md) | Yes | Metadata mirroring | [Tutorial: Azure Databricks](azure-databricks-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (preview)](azure-database-postgresql.md) | Yes | Database mirroring | [Tutorial: Azure Database for PostgreSQL flexible server](azure-database-postgresql-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | Database mirroring | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Managed Instance (preview)](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](snowflake-tutorial.md) |
-| [Open mirrored databases](open-mirroring.md) (preview) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
+| [Microsoft Fabric mirrored databases from SQL Server (preview)](sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](sql-server-tutorial.md) |
+| [Open mirrored databases](open-mirroring.md) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
 | [Microsoft Fabric mirrored databases from Fabric SQL database](../sql/overview.md) (preview) | Yes | Database mirroring | [Automatically configured](../sql/mirroring-overview.md) |
 
 ## How does the near real time replication of database mirroring work?
@@ -114,6 +115,14 @@ INNER JOIN Affiliation
 ON Affiliation.AffiliationId = Contoso.RecordTypeID;
 ```
 
+## Cost of mirroring
+
+For database mirroring and open mirroring, the Fabric compute and OneLake storage are free up to a capacity-based limit.
+
+- Storage for replicas is free up to a limit based on the capacity size. Mirroring offers a free terabyte of mirroring storage for every capacity unit (CU) you have purchased. For example, if you purchase an F64 capacity, you get 64 free terabytes worth of storage, exclusively used for mirroring. OneLake storage is billed if free Mirroring storage limit is exceeded, or when the capacity is paused. For more information, see [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+- Background Fabric compute used to replicate your data into Fabric OneLake is free and does not consume capacity. Requests directly to the OneLake for mirrored data consume capacity as normal OneLake compute consumption. The compute for querying data using SQL, Power BI, or Spark is charged at regular rates.
+- A running Fabric capacity is required only for the initial setup of Mirroring.  
+
 ## Data Engineering with your mirrored database data
 
 Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and high-quality. From [Fabric Data Engineering](../../data-engineering/data-engineering-overview.md), you can:
@@ -129,13 +138,25 @@ Microsoft Fabric offers Fabric Data Science to empower users to complete end-to-
 
 Microsoft Fabric users can access [Data Science workloads](../../data-science/data-science-overview.md). From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
 
+## Direct Lake with your mirrored database data
+
+[Direct Lake](../../fundamentals/direct-lake-overview.md) mode can be used with mirrored databases in Microsoft Fabric to enable high-performance querying over mirrored data without the need for data movement or duplication. When a mirrored database is created, its data is stored in Delta Lake format within OneLake. This native format allows Power BI and other analytics tools to connect via Direct Lake mode, offering near real-time insights by directly accessing the underlying files. This integration combines the simplicity of mirroring with the speed and scalability of Direct Lake, enabling fast, up-to-date reporting on operational data.
+
+## Retention for mirrored data
+
+Mirroring in Fabric continuously replicates your existing data estate into OneLake in Delta Lake table format. To keep the mirrored data efficiently stored and always ready for analytics, mirroring automatically runs vacuum to remove old files no longer referenced by a Delta log.
+
+You can customize the retention setting according to your requirements. For instance, you may choose a shorter retention period to reduce mirroring storage consumption or extend the retention period to utilize Delta’s time travel capabilities for analytics.
+
+For mirrored databases created from the Fabric portal after mid-June 2025, the default retention is one day. For old mirrored databases, the default is seven days. To check or update the retention setting, in the Fabric portal, navigate to your mirrored database -> **Settings** -> **Maintenance** tab, and specify the retention threshold. You can also configure it via [public API](mirrored-database-rest-api.md#configure-data-retention) by specifying the `retentionInDays` property.
+
 ## SQL database in Fabric
 
 You can also directly create and manage a [SQL database in Microsoft Fabric (Preview)](../sql/overview.md) inside the Fabric portal. Based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), SQL database in Fabric is automatically mirrored for analytics purposes and allows you to easily create your operational database in Fabric. SQL database is the home in Fabric for OLTP workloads, and can integrate with Fabric's [source control integration](../sql/source-control.md).
 
 ## Related content
 
-- [What is Microsoft Fabric?](../../get-started/microsoft-fabric-overview.md)
+- [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 - [Model data in the default Power BI semantic model in Microsoft Fabric](../../data-warehouse/model-default-power-bi-dataset.md)
 - [What is the SQL analytics endpoint for a lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
-- [Direct Lake overview](../../get-started/direct-lake-overview.md)
+- [Direct Lake overview](../../fundamentals/direct-lake-overview.md)

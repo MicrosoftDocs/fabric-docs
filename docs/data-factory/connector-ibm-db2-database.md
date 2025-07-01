@@ -1,14 +1,13 @@
 ---
 title: Set up your IBM Db2 database connection
 description: This article provides information about how to create an IBM Db2 database connection in Microsoft Fabric.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
-ms.date: 09/13/2024
+ms.date: 12/06/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Set up your IBM Db2 database connection
@@ -23,7 +22,7 @@ The IBM Db2 database connector supports the following authentication types for c
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Windows| n/a | √ |
-|Basic| n/a | √ |
+|Basic| √ | √ |
 
 ## Set up your connection in Dataflow Gen2
 

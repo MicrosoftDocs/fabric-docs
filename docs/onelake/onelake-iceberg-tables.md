@@ -82,7 +82,7 @@ If you already have an Iceberg table in a storage location supported by [OneLake
 
     > [!TIP]
     > If you see schemas such as dbo under the Tables folder of your lakehouse, then the lakehouse is schema-enabled. In this case, right-click on the schema and create a table shortcut under the schema.
-
+    
     :::image type="content" source="media\onelake-iceberg-table-shortcut\new-shortcut.png" alt-text="The image shows the shortcut creation menu in the Tables folder of a Fabric lakehouse. The Tables folder is highlighted in the navigation pane, and the context menu is open with the New shortcut option selected. The wider environment includes a lakehouse interface with folders such as Tables and Files visible in the navigation pane.":::
 
 1.	For the target path of your shortcut, select the Iceberg table folder. The Iceberg table folder contains the `metadata` and `data` folders.
@@ -161,6 +161,18 @@ If you don't see a conversion log file, then the conversion wasn't attempted. He
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\shortcut-target.png" alt-text="Screenshot showing the contents of a shortcut target path during shortcut creation.":::
 
+### "Fabric capacity region cannot be validated" error message in Snowflake 
+
+If you are using Snowflake to write a new Iceberg table to OneLake, you might see the following error message:
+
+> Fabric capacity region cannot be validated. Reason: 'Invalid access token. This may be due to authentication and scoping. Please verify delegated scopes.'
+
+If you see this error, have your Fabric tenant admin double-check that you've enabled both tenant settings mentioned in the [Write an Iceberg table to OneLake using Snowflake](#write-an-iceberg-table-to-onelake-using-snowflake) section:
+
+1.  In the upper-right corner of the Fabric UI, open **Settings**, and select **Admin portal**.
+1.  Under **Tenant settings**, in the **Developer settings** section, enable the setting labeled [**Service principals can use Fabric APIs**](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis).
+1.  In the same area, in the **OneLake settings** section, enable the setting labeled [**Users can access data stored in OneLake with apps external to Fabric**](../admin/service-admin-portal-onelake.md#users-can-access-data-stored-in-onelake-with-apps-external-to-fabric).
+
 ## Limitations and considerations
 
 Keep in mind the following temporary limitations when you use this feature: 
@@ -182,7 +194,7 @@ Keep in mind the following temporary limitations when you use this feature:
   | `timestamptz` | `timestamp` | In Snowflake, to use this type, specify `timestamp_ltz` as the column type during Iceberg table creation. [More info on Iceberg data types supported in Snowflake can be found here.](https://docs.snowflake.com/en/user-guide/tables-iceberg-data-types) |
   | `string` | `string` | |
   | `binary` | `binary` | |
-
+  | `time` | N/A | Not supported |
     
 * **Type width issue**
     
@@ -211,23 +223,11 @@ Keep in mind the following temporary limitations when you use this feature:
 
     If you need to move your Iceberg table to another location to use this feature, use the tool that originally wrote the Iceberg table to write a new Iceberg table in the desired location.
 
-* **Iceberg tables must be deeper than root level**
-    
-    The Iceberg table folder in storage must be located in a directory deeper than bucket or container level. Iceberg tables stored directly in the root directory of a bucket or container may not be virtualized to the Delta Lake format.
-
-    We're working on an improvement to remove this requirement.
-   
-    **Workaround:**
-    
-    Ensure that any Iceberg tables are stored in a directory deeper than the root directory of a bucket or container.
-
 * **Iceberg table folders must contain only one set of metadata files**
 
-    If you drop and recreate an Iceberg table in Snowflake, the metadata files aren't cleaned up. This behavior is in support of the `UNDROP` feature in Snowflake. However, because your shortcut points directly to a folder and that folder now has multiple sets of metadata files within it, we can't convert the table until you remove the old table’s metadata files.
+    If you drop and recreate an Iceberg table in Snowflake, the metadata files aren't cleaned up. This behavior is by design, in support of the `UNDROP` feature in Snowflake. However, because your shortcut points directly to a folder and that folder now has multiple sets of metadata files within it, we can't convert the table until you remove the old table’s metadata files.
 
-    Currently, conversion is attempted in this scenario, which can result in old table contents and schema information being shown in the virtualized Delta Lake table.
-
-    We're working on a fix in which conversion fails if more than one set of metadata files are found in the Iceberg table’s metadata folder.
+    Conversion will fail if more than one set of metadata files are found in the Iceberg table's metadata folder.
 
     **Workaround:**
 
@@ -244,16 +244,6 @@ Keep in mind the following temporary limitations when you use this feature:
     **Workaround:**
 
     After making the schema change to your Iceberg table, add a row of data or make any other change to the data. After that change, you should be able to refresh and see the latest view of your table in Fabric.
-
-* **Schema-enabled workspaces not yet supported**
-
-    If you create an Iceberg shortcut in a schema-enabled lakehouse, conversion doesn't occur for that shortcut.
-    
-    We're working on an improvement to remove this limitation.
-
-    **Workaround:**
-
-    Use a non-schema-enabled lakehouse with this feature. You can configure this setting during lakehouse creation.
 
 * **Region availability limitation**
 
@@ -272,12 +262,6 @@ Keep in mind the following temporary limitations when you use this feature:
 
     We're working on an improvement to remove this limitation.
 
-* **Table size limitation**
-
-    We have a temporary limitation on the size of the Iceberg table supported by this feature. The maximum supported number of Parquet data files is about 5,000 data files, or roughly 1 billion rows, whichever limit is encountered first.
-
-    We're working on an improvement to remove this limitation.
-
 * **OneLake shortcuts must be same-region**
 
     We have a temporary limitation on the use of this feature with shortcuts that point to OneLake locations:  the target location of the shortcut must be in the same region as the shortcut itself.
@@ -286,15 +270,15 @@ Keep in mind the following temporary limitations when you use this feature:
 
     **Workaround:**
 
-    If you have a OneLake shortcut to an Iceberg table in another lakehouse, be sure that the other lakehouse is associated with a capacity in the same region. 
+    If you have a OneLake shortcut to an Iceberg table in another lakehouse, be sure that the other lakehouse is associated with a capacity in the same region.
 
- * **Iceberg tables must be copy-on-write (not merge-on-read)**
-    
-    Currently, Iceberg tables must be *copy-on-write*. This means that they cannot contain delete files or be *merge-on-read*.
-    
-    Snowflake currently produces *copy-on-write* Iceberg tables, but other Iceberg writers may follow a different approach.
+ * **Certain Iceberg partition transform types are not supported**
 
-    We are working on support for *merge-on-read* Iceberg tables.
+    Currently, the [Iceberg partition types](https://iceberg.apache.org/spec/#partition-transforms) ``bucket[N]``, ``truncate[W]``, and ``void`` are not supported.
+
+    If the Iceberg table being converted contains these partition transform types, virtualization to the Delta Lake format will not succeed.
+
+    We're working on an improvement to remove this limitation.
 
 
 ## Related content

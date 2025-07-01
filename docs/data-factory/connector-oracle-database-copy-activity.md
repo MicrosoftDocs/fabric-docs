@@ -5,10 +5,10 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 06/21/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Oracle database in a copy activity

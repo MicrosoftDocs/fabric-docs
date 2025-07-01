@@ -2,10 +2,11 @@
 title: Azure Databricks activity
 description: Learn how to add an Azure Databricks activity to a pipeline and use it to connect to an Azure Databricks job and successfully run it.
 ms.reviewer: abnarain
-ms.author: sbahadur
-author: shaween18
+ms.author: noelleli
+author: n0elleli
 ms.topic: how-to
-ms.date: 11/16/2023
+ms.date: 03/20/2025
+ms.custom: pipelines
 ---
 
 # Transform data by running an Azure Databricks activity
@@ -15,14 +16,19 @@ The Azure Databricks activity in Data Factory for Microsoft Fabric allows you to
 - Notebook
 - Jar
 - Python
+- Job (Preview)
 
 This article provides a step-by-step walkthrough that describes how to create an Azure Databricks activity using the Data Factory interface.
+
+> [!IMPORTANT]
+> The Azure Databricks Jobs type is currently in preview. This information relates to a pre-release product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Configuring an Azure Databricks activity
@@ -51,7 +57,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 1. Select the **Cluster** tab. Then you can choose an existing or create a new **Azure Databricks connection**, and then pick a **new job cluster**, an **existing interactive cluster**, or an **existing instance pool**.
 1. Depending on what you pick for the cluster, fill out the corresponding fields as presented.
     - Under **new job cluster** and **existing instance pool**, you also have the ability to configure the number of **workers** and enable **spot instances**.
-1. You can also specify additional cluster settings, such as **Cluster policy**, **Spark configuration**, **Spark environment variables**, and **custom tags**, as required for the cluster you are connecting to. **Databricks init scripts** and **Cluster Log destination path** can also be added under the additional cluster settings.
+3. You can also specify additional cluster settings, such as **Cluster policy**, **Spark configuration**, **Spark environment variables**, and **custom tags**, as required for the cluster you are connecting to. **Databricks init scripts** and **Cluster Log destination path** can also be added under the additional cluster settings.
 
     > [!NOTE]
     > All advanced cluster properties and dynamic expressions supported in the Azure Data Factory Azure Databricks linked service are now also supported in the Azure Databricks activity in Microsoft Fabric under the ‘Additional cluster configuration’ section in the UI. As these properties are now included within the activity UI; they can be easily used with an expression (dynamic content) without the need for the Advanced JSON specification in the Azure Data Factory Azure Databricks linked service.
@@ -69,7 +75,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Configuring settings
 
-Selecting the **Settings** tab, you can choose between 3 options which **Azure Databricks type** you would like to orchestrate.
+Selecting the **Settings** tab, you can choose between 4 options which **Azure Databricks type** you would like to orchestrate.
 
 :::image type="content" source="media/azure-databricks-activity/databricks-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Databricks activity.":::
 
@@ -91,6 +97,12 @@ Selecting the **Settings** tab, you can choose between 3 options which **Azure D
 
     :::image type="content" source="media/azure-databricks-activity/databricks-activity-python.png" alt-text="Screenshot showing the Python type of the Azure Databricks activity.":::
 
+#### Orchestrating the Job type (Preview) in Azure Databricks activity:
+
+1. Under the **Settings** tab, you can choose the **Job** radio button to run a Databricks Job. You will need to specify Job using the drop-down to be executed on Azure Databricks and any optional Job parameters to be passed. You can run Serverless jobs with this option. 
+
+   :::image type="content" source="media/azure-databricks-activity/databricks-activity-job.png" alt-text="Screenshot showing the Job type of the Azure Databricks activity.":::
+
 ## Supported Libraries for the Azure Databricks activity
 
 In the above Databricks activity definition, you can specify these library types: *jar*, *egg*, *whl*, *maven*, *pypi*, *cran*.
@@ -99,7 +111,7 @@ For more information, see the [Databricks documentation](/azure/databricks/dev-t
 
 ## Passing parameters between Azure Databricks activity and pipelines
 
-You can pass parameters to notebooks using *baseParameters* property in databricks activity.
+You can pass parameters to notebooks using *baseParameters* property in Databricks activity.
 
 In certain cases, you might require to pass back certain values from notebook back to the service, which can be used for control flow (conditional checks) in the service or be consumed by downstream activities (size limit is 2 MB).
 

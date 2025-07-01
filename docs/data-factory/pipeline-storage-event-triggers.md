@@ -1,33 +1,32 @@
 ---
-title: Data pipelines storage event triggers in Data Factory (Preview)
+title: Data pipelines storage event triggers in Data Factory
 description: This article describes how data pipelines storage event triggers work in Data Factory for Microsoft Fabric.
 author: kromerm
 ms.author: makromer
 ms.topic: concept-article
-ms.custom:
-  - build-2024
-  - ignite-2024
-ms.date: 09/16/2024
+ms.custom: pipelines
+ms.date: 02/13/2025
 ---
 
-# Data pipelines storage event triggers in Data Factory (Preview)
+# Data pipelines storage event triggers in Data Factory
 
 ## Introduction
 
-A common use case for invoking Data Factory data pipelines is to trigger a pipeline upon file events like file arrival and file delete. For customers moving from Azure Data Factory (ADF) to Microsoft Fabric, using ADLS/Blog storage events is common. New Fabric users not previously familiar with ADF might generally use file events from OneLake. Triggers in Fabric Data Factory use Fabric platform capabilities including eventstreams and Reflex triggers. Inside of the Fabric Data Factory pipeline design canvas, there's a Trigger button to create a Reflex trigger for your pipeline, or you can create the trigger directly from the Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] experience.
-
-> [!NOTE]
-> Storage event triggers are currently in public preview.
+A common use case for invoking Data Factory data pipelines is to trigger a pipeline upon file events like file arrival and file delete. For customers moving from Azure Data Factory (ADF) to Microsoft Fabric, using ADLS/Blob storage events is common. New Fabric users not previously familiar with ADF might generally use file events from OneLake. Triggers in Fabric Data Factory use Fabric platform capabilities including eventstreams and Reflex triggers. Inside of the Fabric Data Factory pipeline design canvas, there's a Trigger button to create a Reflex trigger for your pipeline, or you can create the trigger directly from the Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] experience.
 
 ## How to set storage event triggers on a pipeline
 
-1. Select the **Trigger (preview)** button on the **Home** ribbon at the top of the pipeline canvas editor window
+1. Select the **Trigger** button on the **Home** ribbon at the top of the pipeline canvas editor window.
 
    :::image type="content" source="media/pipeline-storage-event-triggers/set-trigger-button.png" alt-text="Screenshot showing the Trigger button on the Home ribbon of the pipeline canvas editor window.":::
 
-1. The **Set alert** panel opens where you can select Azure Blob storage source events.
+1. The **Set alert** panel opens where you can define source events for your trigger using the Reflex alert service.
 
    :::image type="content" source="media/pipeline-storage-event-triggers/set-alert-panel.png" alt-text="Screenshot showing the Set Alert panel.":::
+
+1. Here you select the type of events you wish to listen for. Pick ```OneLake``` events for ```OneLake``` file events, Azure Blob, and so on.
+
+   :::image type="content" source="media/pipeline-storage-event-triggers/trigger-events-001.png" alt-text="Screenshot showing the Select a data source dialog.":::
 
 1. Select **Source** and then **Select events** to select the storage events you wish to listen to in the trigger.
 

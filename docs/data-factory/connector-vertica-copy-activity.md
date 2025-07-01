@@ -5,10 +5,10 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 09/06/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Vertica in a copy activity

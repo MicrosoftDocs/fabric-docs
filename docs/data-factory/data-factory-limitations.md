@@ -4,7 +4,8 @@ description: Identifies limitations that affect Data Factory in Microsoft Fabric
 author: ssabat
 ms.author: susabat
 ms.topic: troubleshooting
-ms.date: 10/08/2024
+ms.date: 03/07/2025
+ms.custom: configuration
 ---
 
 # Data Factory limitations overview
@@ -20,14 +21,11 @@ The following list describes the current limitations of pipelines in Data Factor
 - Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) isn't yet available.
 -	Connectors don't support OAuth and  Azure key vault (AKV).
 -	Managed System Identity (MSI) is only available for Azure Blob Storage. Support for other sources is coming soon. 
--	Connectors can't use parameters.
 -	GetMetaData activity can't have a source from Fabric KQL databases.
 -	Script activity can't have a source from Fabric KQL databases.
--	Copy activity uses a Web connector, whereas Web/Webhook activities use a Web v2 connector that supports richer functionality, like audience and resource URI.
--	Validation activity, Mapping Data Flow activity, and the SSIS integration runtime are not available. 
--	Pipelines can't use a managed virtual network.
--	Web activity does not support service principal based authentication.
--	Pipeline scheduling options currently include only by the minute, hourly, daily, and weekly.
+-	Validation activity, Mapping Data Flow activity, and the SSIS integration runtime aren't available. 
+-	Web activity doesn't support service principal based authentication.
+-	Background sync of authentication doesn't happen for pipelines. Recommendation is to do minor description like updates to pipelines and save them. That way, new token is obtained and cached so pipeline can run again with updated password of entra id. 
 
 ## Data pipeline resource limits
 
@@ -40,7 +38,7 @@ The following table describes the resource limitations for pipelines in Data Fac
 | External activities like stored procedure, Web, Web Hook, and others | 3,000 | 3,000 |
 | Pipeline activities execution for Lookup, GetMetadata, and Delete | 1,000 | 1,000 |
 | Concurrent authoring operations, including test connection, browse folder list and table list, preview data, and so on | 200 | 200 |
-| Maximum activities per pipeline, which includes inner activities for containers | 80 | 120 |
+| Maximum activities per pipeline, which includes inner activities for containers | 120 | 120 |
 | Maximum parameters per pipeline | 50 | 50 |
 | ForEach items | 100,000 | 100,000 |
 | ForEach parallelism | 20 | 50 |
@@ -61,13 +59,14 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 - Data destination to Lakehouse:
   - Spaces or special characters aren't supported in column or table names.
   - Duration and binary columns aren't supported while authoring Dataflow Gen2 dataflows.
-- You must have a [currently supported gateway installed](/data-integration/gateway/service-gateway-monthly-updates) to use with Dataflow Gen2. The minimum version that works with Dataflow Gen2 is **3000.210.14**.
-- When using OAuth2 credentials, the gateway currently doesn't support refreshes longer than an hour. These refreshes will fail because the gateway cannot support refreshing tokens automatically when access tokens expire, which happens one hour after the refresh started. If you get the errors "InvalidConnectionCredentials" or "AccessUnauthorized" when accessing cloud data sources using OAuth2 credentials even though the credentials have been updated recently, you may be hitting this error. This limitation for long running refreshes exists for both VNET gateways and on-premises data gateways.
-- The incremental refresh feature isn't available yet in Dataflow Gen2.
+- You must have a [currently supported gateway installed](/data-integration/gateway/service-gateway-monthly-updates) to use with Dataflow Gen2. At minimum, Dataflow Gen2 supports the last six released gateway versions.
+- When you use OAuth2 credentials, the gateway currently doesn't support refreshes longer than an hour. These refreshes fail because the gateway can't support refreshing tokens automatically when access tokens expire, which happens one hour after the refresh started. If you get the errors "InvalidConnectionCredentials" or "AccessUnauthorized" when accessing cloud data sources using OAuth2 credentials even though the credentials have been updated recently, you may be hitting this error. This limitation for long running refreshes exists for both VNET gateways and on-premises data gateways.
 - The Delta Lake specification doesn't support case sensitive column names, so `MyColumn` and `mycolumn`, while supported in Mashup, results in a "duplicate columns" error.
-- Dataflows that use a Gateway and the data destination feature are limited to an evaluation or refresh time of one hour. Read more about the [gateway considerations when using data destinations](gateway-considerations-output-destinations.md).
 - Currently, column nullability is defaulting to allow nulls in all columns in the destination.
-- You cannot connect to a public endpoint of an Azure Storage account using Power Query Online or Dataflows Gen2 (no gateway) if the Azure Storage account already has one or more Private Endpoints created. You will need to connect to such storage accounts using a VNet data gateway or an on-premises data gateway that can connect using private endpoints. 
+- After you save/publish your dataflow gen2 we require the validation/publish process to finish within 10 minutes per query. If you exceed this 10 minute limit try to simplify your queries or split your queries in dataflow gen2. 
+- You can't connect to a public endpoint of an Azure Storage account using Power Query Online or Dataflow Gen2 (no gateway) if the Azure Storage account already has one or more Private Endpoints created. You need to connect to such storage accounts using a VNet data gateway or an on-premises data gateway that can connect using private endpoints.
+- Dataflow Gen2 doesn't support for guest users in the tenant to connect to the data sources and destinations in the tenant the user is guest. Use a native user in the tenant to connect to the data sources and destinations.
+- Consuming data from a dataflow gen2 with the dataflow connector requires Admin, Member or Contributor permissions. Viewer permission isn't sufficient and isn't supported for consuming data from the dataflow.
 
 The following table indicates the supported data types in specific storage locations.
 

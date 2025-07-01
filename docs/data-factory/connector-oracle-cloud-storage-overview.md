@@ -7,8 +7,7 @@ ms.topic: how-to
 ms.date: 03/18/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Oracle Cloud Storage connector overview

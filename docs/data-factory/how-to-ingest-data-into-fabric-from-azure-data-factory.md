@@ -5,6 +5,7 @@ author: mirabile-s
 ms.author: seanmirabile
 ms.topic: conceptual
 ms.date: 09/16/2024
+ms.custom: pipelines
 ---
 
 # How to ingest data into Fabric using the Azure Data Factory Copy activity
@@ -43,7 +44,7 @@ For a complete guide, refer to [Embed Power BI content in an embedded analytics 
 
 ### Workspace access
 
-Once the Security Group is added, the Security Group or the service principal must also be added to each Workspace as [Member, Contributor, or Admin](../get-started/roles-workspaces.md#-workspace-roles). Refer to [Give users access to workspaces](../get-started/give-access-workspaces.md) for more details.
+Once the Security Group is added, the Security Group or the service principal must also be added to each Workspace as [Member, Contributor, or Admin](../fundamentals/roles-workspaces.md#-workspace-roles). Refer to [Give users access to workspaces](../fundamentals/give-access-workspaces.md) for more details.
 
 ## Demo: Set up authentication
 

@@ -4,11 +4,11 @@ description: This article explains how to copy data using REST.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
-ms.custom:
+ms.date: 12/18/2024
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure REST in a copy activity

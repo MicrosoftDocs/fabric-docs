@@ -6,7 +6,6 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
@@ -24,7 +23,7 @@ This article shows you how to add an Azure Event Hubs source to an eventstream.
 Before you start, you must complete the following prerequisites: 
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
-- You need to have appropriate permission to get event hub's access keys. The event hub must be publicly accessible and not behind a firewall or secured in a virtual network. 
+- You need to have appropriate permission to get event hub's access keys. If your event hub is within a protected network, [connect to it using a managed private endpoint](set-up-private-endpoint.md). Otherwise, ensure the event hub is publicly accessible and not behind a firewall.
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 
@@ -100,7 +99,7 @@ If you have an Azure event hub created with streaming data, follow these steps t
 
 1. Select a **Consumer group** that can read the event data from your Azure event hub and then select **Add**.
 
-After you have created the event hub source, you see it added to your eventstream on the canvas.
+After you create the event hub source, you see it added to your eventstream on the canvas.
 
 :::image type="content" source="./media/add-manage-eventstream-sources/event-hub-source-completed.png" alt-text="Screenshot showing the event hub source." lightbox="./media/add-manage-eventstream-sources/event-hub-source-completed.png":::
 

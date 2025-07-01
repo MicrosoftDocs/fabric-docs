@@ -6,8 +6,7 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 3/12/2025
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
@@ -44,6 +43,8 @@ Follow these steps to add a sample data source:
    - **Bicycles**: Sample bicycles data with a preset schema that includes fields such as BikepointID, Street, Neighborhood, and Latitude.
    - **Yellow Taxi**: Sample taxi data with a preset schema that includes fields such as pickup time, drop-off time, distance, and total fee.
    - **Stock Market**: Sample data of a stock exchange with preset schema columns such as time, symbol, price, and volume.
+   - **Buses**: Sample buses data with a preset schema that includes fields such as Timestamp, TripId, StationNumber, SchedulTime and Properties.
+   - **S&P 500 companies stocks**: Sample data of S&P 500 companies' historical stock prices with a preset schema that includes fields such as Date, Open, High, Low, Close, Adjusted Close, Volume and Ticker.
 
    :::image type="content" border="true" source="media\add-source-sample-data-enhanced\sample-sources.png" alt-text="A screenshot showing the choices on the Sample data screen.":::
 1. After you create the sample data source, you see it added to your eventstream on the canvas in **Edit mode**. To implement this newly added sample data, select **Publish**.
@@ -52,9 +53,6 @@ Follow these steps to add a sample data source:
 1. Once publishing succeeds, the sample data is available for visualization in **Live view**.
 
     :::image type="content" source="media\add-source-sample-data-enhanced\live-view.png" alt-text="A screenshot showing the eventstream in Live view." lightbox="media\add-source-sample-data-enhanced\live-view.png":::
-
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 
 ## Related content 
@@ -71,8 +69,6 @@ For a list of supported sources, see [Add an event source in an eventstream](add
 Before you start, you must complete the following prerequisites:
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add sample data as a source
 

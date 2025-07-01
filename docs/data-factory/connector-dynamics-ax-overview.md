@@ -7,8 +7,7 @@ ms.topic: how-to
 ms.date: 04/24/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Dynamics AX connector overview

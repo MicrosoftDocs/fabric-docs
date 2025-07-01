@@ -7,8 +7,7 @@ ms.topic: how-to
 ms.date: 01/26/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Google Cloud Storage connector Overview

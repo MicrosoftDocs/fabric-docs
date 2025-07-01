@@ -6,12 +6,11 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 2/05/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Azure Blob Storage event source to an eventstream (preview)
+# Add Azure Blob Storage event source to an eventstream
 
 This article shows you how to add an Azure Blob Storage event source to an eventstream. An event is the smallest amount of information that fully describes something that happened in a system. Azure Blob Storage events are triggered when a client creates, replaces, or deletes a blob. Microsoft Fabric event streams allow you to link Blob Storage events to Fabric events in Real-Time hub.
 
@@ -34,11 +33,8 @@ Fabric event streams support the following Blob Storage event types:
 
 For more information about available event types, see [Azure Blob Storage as Event Grid source](/azure/event-grid/event-schema-blob-storage).
 
-
-
 > [!NOTE]
-> This source is **not supported** in the following regions of your workspace capacity: Germany West Central, South-Central US, West US2, West US3, West India. 
-
+> Azure Blob Storage events connector is **not supported** in the following workspace capacity regions: Central US, Germany West Central, South-Central US, West US2, West US3, West India.
 
 ## Unstreamed vs. streamed events
 
@@ -74,8 +70,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 [!INCLUDE [azure-blob-storage-connector](includes/azure-blob-storage-source-connector.md)]
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ## View updated eventstream
 
 1. Once the connection is created, you can see the Azure Blob Storage event source added to your eventstream in **Edit mode**. Select **Publish** to publish the eventstream and start capturing your Azure Blob Storage events.
@@ -104,7 +98,7 @@ After you link Azure Blob Storage events to Fabric events in Real-Time hub, you 
 
    :::image type="content" border="true" source="media/add-source-azure-blob-storage/default-stream.png" alt-text="A screenshot of the eventstream in Edit Mode showing the default stream.":::
 
-1. Then you need to publish the eventstream and make sure there's at least one event being triggered from your Azure Blob Storage in order to proceed with transformation or routing.
+1. **Publish** the eventstream and make sure there's at least one event being triggered from your Azure Blob Storage in order to proceed with transformation or routing.
 
    :::image type="content" border="true" source="media/add-source-azure-blob-storage/published.png" alt-text="A screenshot of the published eventstream in Live View.":::
 

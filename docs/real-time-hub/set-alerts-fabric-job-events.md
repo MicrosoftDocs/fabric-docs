@@ -7,9 +7,7 @@ ms.topic: how-to
 ms.date: 11/13/2024
 ---
 
-# Set alerts on Job events in Real-Time hub (preview)
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+# Set alerts on Job events in Real-Time hub
 
 This article describes how to set alerts on Job events in Real-Time hub.
 
@@ -21,7 +19,7 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 - Events you want to monitor.
 - Conditions you want to look for in the events.
-- Action you want Data Activator to take.
+- Action you want Activator to take.
 
 ### Using the events list
 

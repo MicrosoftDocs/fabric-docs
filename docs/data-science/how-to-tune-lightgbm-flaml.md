@@ -2,18 +2,18 @@
 title: Perform hyperparameter tuning in Fabric
 description: Identify the best combination of hyperparameters for your chosen model with FLAML (preview).
 ms.topic: how-to
-ms.author: ssalgado
-author: ssalgadodev
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: midesa
 reviewer: midesa
-ms.date: 03/18/2024
+ms.date: 04/07/2025
 ---
 
 # Perform hyperparameter tuning in Fabric (preview)
 
-Hyperparameter tuning is the process of finding the optimal values for the parameters of a machine learning model that affect its performance. It can be challenging and time-consuming, especially when dealing with complex models and large datasets. In this article, we will show you how to perform hyperparameter tuning in Fabric.
+Hyperparameter tuning involves finding the optimal machine learning model parameter values that affect its performance. This can become challenging and time-consuming, especially for complex models and large datasets. This article shows how to perform Fabric hyperparameter tuning.
 
-In this tutorial, we will use the California housing dataset, which contains information about the median house value and other features for different census blocks in California. Once the data is prepped, we will train a SynapseML LightGBM model to predict the house value based on the features. Next, we will use FLAML, a fast and lightweight AutoML library, to find the best hyperparameters for the LightGBM model. Finally, we will compare the results of the tuned model with the baseline model that uses the default parameters.
+This tutorial uses the California housing dataset. That resource contains information about the median house value and other features for different census blocks in California. Once we prep the data, we train a SynapseML LightGBM model to predict the house value based on the features. Next, we use FLAML - a fast and lightweight AutoML library - to find the best hyperparameters for the LightGBM model. Finally, we compare the results of the tuned model with the baseline model that uses the default parameters.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -21,13 +21,13 @@ In this tutorial, we will use the California housing dataset, which contains inf
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-* Create a new [Fabric environment](../data-engineering/create-and-use-environment.md) or ensure you are running on the Fabric Runtime 1.2 (Spark 3.4 (or higher) and Delta 2.4)
+* Create a new [Fabric environment](../data-engineering/create-and-use-environment.md), or ensure that you run on the Fabric Runtime 1.2 (Spark 3.4 (or higher) and Delta 2.4)
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 * Attach your notebook to a [lakehouse](../data-engineering/lakehouse-overview.md). On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
-## Prepare training and test datasets
+## Prepare the training and test datasets
 
-In this section, we prepare the training and test datasets for the LightGBM model. We use the California housing dataset from Sklearn. We create a Spark dataframe from the data and use a VectorAssembler to combine the features into a single vector column.
+This section prepares the training and test datasets for the LightGBM model. We use the California housing dataset from Sklearn. We create a Spark dataframe from the data, and use a VectorAssembler to combine the features into a single vector column.
 
 ```python
 from sklearn.datasets import fetch_california_housing
@@ -49,7 +49,7 @@ display(spark_df)
 
 ```
 
-We then randomly split the data into three subsets: training, validation, and test, with 85%, 12.75%, and 2.25% of the data respectively. We use the training and validation sets for hyperparameter tuning and the test set for model evaluation.
+Next, randomly split the data into three subsets: training, validation, and test, with 85%, 12.75%, and 2.25% of the data respectively. Use the training and validation sets for hyperparameter tuning, and the test set for model evaluation.
 
 ```python
 from pyspark.ml.feature import VectorAssembler
@@ -68,9 +68,9 @@ train_data_sub, val_data_sub = train_data.randomSplit([0.85, 0.15], seed=41)
 
 ### Configure MLflow
 
-Before we perform hyperparameter tuning, we need to define a train function that can take different values of hyperparameters and train a LightGBM model on the training data. We also need to evaluate the model performance on the validation data using the R2 score, which measures how well the model fits the data.
+Before we perform hyperparameter tuning, we need to define a training function that can take different values of hyperparameters and train a LightGBM model on the training data. We also need to evaluate the model performance on the validation data using the R2 score, which measures how well the model fits the data.
 
-To do this, we first import the necessary modules and set up the MLflow experiment. MLflow is an open source platform for managing the end-to-end machine learning lifecycle. It helps us track and compare the results of different models and hyperparameters.
+To do this, first import the necessary modules and set up the MLflow experiment. The open source MLflow platform manages the end-to-end machine learning lifecycle. It helps track and compare the results of different models and hyperparameters.
 
 ```python
 # Import MLflow and set up the experiment name
@@ -83,9 +83,9 @@ mlflow.autolog(exclusive=False)
 
 ```
 
-### Set logging level
+### Set the logging level
 
-Here, we configure the logging level to suppress unnecessary output from the Synapse.ml library, keeping the logs cleaner.
+Configure the logging level to suppress unnecessary output from the Synapse.ml library. This step keeps the logs cleaner.
 
 ```python
 import logging
@@ -93,11 +93,18 @@ import logging
 logging.getLogger('synapse.ml').setLevel(logging.ERROR)
 ```
 
-## Train baseline model
+## Train the baseline model
 
-Next, we define the train function that takes four hyperparameters as inputs: alpha, learningRate, numLeaves, and numIterations. These are the hyperparameters that we want to tune later using FLAML.
+Define the training function. This function takes four hyperparameters
 
-The train function also takes two dataframes as inputs: train_data and val_data, which are the training and validation datasets respectively. The train function returns two outputs: the trained model and the R2 score on the validation data.
+- alpha
+- learningRate
+- numLeaves
+- numIterations
+
+as inputs. We want to tune these hyperparameters later on, using FLAML.
+
+The train function also takes two dataframes as inputs: train_data and val_data - the training and validation datasets respectively. The train function returns two outputs: the trained model and the R2 score on the validation data.
 
 ```python
 # Import LightGBM and RegressionEvaluator
@@ -145,7 +152,7 @@ def train(alpha, learningRate, numLeaves, numIterations, train_data=train_data_s
 
 ```
 
-Finally, we use the train function to train a baseline model with the default values of the hyperparameters. We also evaluate the baseline model on the test data and print the R2 score.
+Finally, use the train function to train a baseline model with the default hyperparameter values. Also, evaluate the baseline model on the test data and print the R2 score.
 
 ```python
 # Train the baseline model with the default hyperparameters
@@ -157,13 +164,13 @@ print("R2 of initial model on test dataset is: ", init_eval_metric)
 
 ## Perform hyperparameter tuning with FLAML
 
-FLAML is a fast and lightweight AutoML library that can automatically find the best hyperparameters for a given model and dataset. It uses a low-cost search strategy that adapts to the feedback from the evaluation metric. In this section, we will use FLAML to tune the hyperparameters of the LightGBM model that we defined in the previous section.
+The FLAML AutoML library is a fast and lightweight library resource that can automatically find the best hyperparameters for a given model and dataset. It uses a low-cost search strategy that adapts to the feedback from the evaluation metric. In this section, we use FLAML to tune the hyperparameters of the LightGBM model that we defined in the previous section.
 
-### Define tune function
+### Define the tune function
 
-To use FLAML, we need to define a tune function that takes a config dictionary as input and returns a dictionary with the evaluation metric as the key and the metric value as the value.
+To use FLAML, we must define a tune function that takes a config dictionary as input, and returns a dictionary. That dictionary has the evaluation metric as the key, and the metric value as the value.
 
-The config dictionary contains the hyperparameters that we want to tune and their values. The tune function will use the train function that we defined earlier to train and evaluate the model with the given config.
+The config dictionary contains the hyperparameters that we want to tune. It also contains their values. The tune function uses the train function that we defined earlier, to train and evaluate the model with the given config.
 
 ```python
 # Import FLAML
@@ -178,11 +185,11 @@ def flaml_tune(config):
 
 ```
 
-### Define search space
+### Define the search space
 
-Next, we need to define the search space for the hyperparameters that we want to tune. The search space is a dictionary that maps the hyperparameter names to the ranges of values that we want to explore. FLAML provides some convenient functions to define different types of ranges, such as uniform, loguniform, and randint. 
+We must define the search space for the hyperparameters that we want to tune. The search space is a dictionary that maps the hyperparameter names to the ranges of values that we want to explore. FLAML provides some convenient functions to define different types of ranges - for example, uniform, loguniform, and randint.
 
-In this case, we want to tune the following four hyperparameters: alpha, learningRate, numLeaves, and numIterations.
+Here, we want to tune the following four hyperparameters: alpha, learningRate, numLeaves, and numIterations.
 
 ```python
 # Define the search space
@@ -199,11 +206,11 @@ params = {
 
 ```
 
-### Define hyperparameter trial
+### Define the hyperparameter trial
 
-Finally, we need to define a hyperparameter trial that will use FLAML to optimize the hyperparameters. We need to pass the tune function, the search space, the time budget, the number of samples, the metric name, the mode, and the verbosity level to the flaml.tune.run function. We also need to start a nested MLflow run to track the results of the trial.
+Finally, we must define a hyperparameter trial that uses FLAML to optimize the hyperparameters. We must pass the tune function, the search space, the time budget, the number of samples, the metric name, the mode, and the verbosity level to the **flaml.tune.run** function. We must also start a nested MLflow run to track the results of the trial.
 
-The ```flaml.tune.run function``` will return an analysis object that contains the best config and the best metric value.
+The ```flaml.tune.run function``` returns an analysis object that contains the best config and the best metric value.
 
 ```python
 # Start a nested MLflow run
@@ -228,7 +235,7 @@ with mlflow.start_run(nested=True, run_name="Child Run: "):
 
 ```
 
- After the trial is finished, we can view the best configuration and the best metric value from the analysis object.
+After the trial finishes, view the best configuration and the best metric value from the analysis object.
 
 ```python
 # Get the best config from the analysis object
@@ -239,9 +246,9 @@ print("Best score on validation data: ", analysis.best_result["r2"])
 
 ```
 
-## Compare results
+## Compare the results
 
-After finding the best hyperparameters with FLAML, we need to evaluate how much they improve the model performance. To do this, we use the train function to create a new model with the best hyperparameters on the full training dataset. We then use the test dataset to calculate the R2 score for both the new model and the baseline model.
+After we find the best hyperparameters with FLAML, we must evaluate how much those hyperparameters improve the model performance. To do this, use the train function to create a new model with the best hyperparameters on the full training dataset. Then, use the test dataset to calculate the R2 score for both the new model and the baseline model.
 
 ```python
 # Train a new model with the best hyperparameters 
@@ -254,9 +261,9 @@ print("On the test dataset, the final flaml (tuned) model achieved R^2: ", flaml
 
 ```
 
-## Save final model
+## Save the final model
 
-Once we have completed our hyperparameter trial, we can now save the final, tuned model as an ML model in Fabric.
+After we complete our hyperparameter trial, we can save the final, tuned model as an ML model in Fabric.
 
 ```python
 # Specify the model name and the path where you want to save it in the registry
@@ -270,7 +277,6 @@ registered_model = mlflow.register_model(model_uri=model_path, name=model_name)
 print(f"Model '{registered_model.name}' version {registered_model.version} registered successfully.")
 
 ```
-
 
 ## Related content
 

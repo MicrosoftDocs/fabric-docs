@@ -7,8 +7,7 @@ ms.topic: how-to
 ms.date: 07/31/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Set up your Oracle database connection

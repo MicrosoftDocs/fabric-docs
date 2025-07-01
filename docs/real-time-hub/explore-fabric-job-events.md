@@ -7,13 +7,11 @@ ms.topic: how-to
 ms.date: 11/12/2024
 ---
 
-# Explore Job events in Fabric Real-Time hub (preview)
-
-[!INCLUDE [preview-note](./includes/preview-note.md)]
+# Explore Job events in Fabric Real-Time hub
 
 Real-Time hub allows you to discover and subscribe to changes produced when Fabric runs a job. For example, you can react to changes when refreshing a semantic model, running a scheduled pipeline, or running a notebook. Each of these activities can generate a corresponding job, which in turn generates a set of corresponding job events. 
 
-Job events allow you to monitor job results in time and set up alerts using Data Activator alerting capabilities. For example, when the scheduler triggers a new job, or a job fails, you can receive an email alert. This way, even if you aren't in front of the computer, you can still get the information you care about. 
+Job events allow you to monitor job results in time and set up alerts using Activator alerting capabilities. For example, when the scheduler triggers a new job, or a job fails, you can receive an email alert. This way, even if you aren't in front of the computer, you can still get the information you care about. 
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
@@ -44,7 +42,7 @@ This section shows the artifacts using Job events. Here are the columns and thei
 | Column | Description |
 | ------ | ------------ |
 | Name | Name of the artifact that's using Job events. |
-| Type | Artifact type – Data Activator or Eventstream |
+| Type | Artifact type – Activator or Eventstream |
 | Workspace | Workspace where the artifact lives. |
 | Source | Name of the workspace that is source of the events. |
 
@@ -98,6 +96,9 @@ The `data` object has the following properties:
 | `data.jobScheduleTime` | timestamp | The job's schedule time. | `2017-06-26T18:41:00.9584103Z` |
 | `data.jobStartTime` | timestamp | The job's start time. | `2017-06-26T18:41:00.9584103Z` |
 | `data.jobEndTime` | timestamp | The job's end time. | `2017-06-26T18:41:00.9584103Z` |
+
+## Subscribe permission
+For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
 
 ## Related content
 

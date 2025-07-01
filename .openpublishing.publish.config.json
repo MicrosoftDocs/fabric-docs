@@ -21,12 +21,14 @@
         "docs/data-factory/.openpublishing.redirection.data-factory.json",
         "docs/data-science/.openpublishing.redirection.data-science.json",        
         "docs/data-warehouse/.openpublishing.redirection.data-warehouse.json",
+        "docs/database/sql/.openpublishing.redirection.sql-database.json",
         "docs/enterprise/.openpublishing.redirection.enterprise.json",
-        "docs/get-started/.openpublishing.redirection.get-started.json",
+        "docs/fundamentals/.openpublishing.redirection.fundamentals.json",
         "docs/onelake/.openpublishing.redirection.onelake.json",
         "docs/real-time-intelligence/.openpublishing.redirection.real-time-intelligence.json",
         "docs/security/.openpublishing.redirection.security.json",
-        "docs/workload-development-kit/.openpublishing.redirection.workload-development-kit.json"
+        "docs/workload-development-kit/.openpublishing.redirection.workload-development-kit.json",
+        "docs/known-issues/.openpublishing.redirection.known-issues.json"
       ]
     }
   ],

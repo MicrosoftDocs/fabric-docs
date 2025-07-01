@@ -6,8 +6,6 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: concept-article
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 09/27/2023
 #customer intent: As a data engineer, I want to learn how to use Python and the Azure Storage Python SDK to access and manage files and directories in OneLake so that I can efficiently work with data stored there and perform necessary operations such as uploading files, creating directories, and listing directory contents.
 ---

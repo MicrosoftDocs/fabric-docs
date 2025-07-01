@@ -6,10 +6,6 @@ ms.author: jejiang
 author: jejiang
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: spark_job_definition
 ---
@@ -18,9 +14,9 @@ ms.search.form: spark_job_definition
 
 [!INCLUDE [product-name](../includes/product-name.md)] Spark monitoring is designed to offer a web-UI based experience with built-in rich capabilities for monitoring the progress and status of Spark applications in progress, browsing past Spark activities, analyzing and optimizing performance, and facilitating troubleshooting of failures. Multiple entry points are available for browsing, monitoring, and viewing Spark application details.
 
-## Monitoring hub
+## Monitor hub
 
-The Monitoring Hub serves as a centralized portal for browsing Spark activities across items. At a glance, you can view in-progress Spark applications triggered from Notebooks, Spark Job Definitions, and Pipelines. You can also search and filter Spark applications based on different criteria and drill down to view more Spark execution details of a Spark application.
+The Monitor hub serves as a centralized portal for browsing Spark activities across items. At a glance, you can view in-progress Spark applications triggered from Notebooks, Spark Job Definitions, and Pipelines. You can also search and filter Spark applications based on different criteria and drill down to view more Spark execution details of a Spark application. From the Fabric portal, select **Monitor** from the navigation pane to open the Monitor hub.
 
 ## Item recent runs
 

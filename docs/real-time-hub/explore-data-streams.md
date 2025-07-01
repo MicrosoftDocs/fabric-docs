@@ -5,7 +5,6 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/18/2024
 ---
 
@@ -24,8 +23,6 @@ When you navigate to Real-Time hub in Fabric, you can view all the data streams 
 | [Microsoft sources](explore-microsoft-sources.md) | All Microsoft sources that you have access to and connect to Fabric. The current supported Microsoft sources are: <ul><li>Azure Event Hubs</li><li>Azure Service Bus (preview)</li><li>Azure IoT Hub</li><li>Azure SQL DB Change Data Capture (CDC)</li><li>Azure Cosmos DB CDC</li><li>PostgreSQL DB CDC</li><li>MySQL Database CDC</li><li>Azure SQL Managed Instance DB CDC</li></ul> |
 | [Fabric events](explore-fabric-workspace-item-events.md) | You can monitor and react to the Fabric Workspace Item events.<p>These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. You can also send these events to other destinations via eventstreams.</p> |
 | [Azure events](explore-azure-blob-storage-events.md) | You can monitor and react to the Azure Blob Storage events.<p>These events can be used to trigger other actions or workflows, such as invoking a data pipeline or sending a notification via email. You can also send these events to other destinations via eventstreams.</p> |
-
-:::image type="content" source="./media/real-time-hub-overview/hub-all-data-streams.png" alt-text="Screenshot that shows the Real-Time hub page with All data streams selected." lightbox="./media/real-time-hub-overview/hub-all-data-streams.png" :::
 
 ## Related content
 

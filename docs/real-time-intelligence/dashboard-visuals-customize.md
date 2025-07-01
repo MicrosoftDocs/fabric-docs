@@ -1,13 +1,11 @@
 ---
 title: Customize Real-Time Dashboard visuals
 description: Learn how to customize your Real-Time Dashboard visuals.
-ms.author: yaschust
-author: YaelSchuster
+ms.author: spelluru
+author: spelluru
 ms.reviewer: gabil
 ms.topic: how-to
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.date: 11/19/2024
 ---
 
@@ -19,7 +17,7 @@ All visualizations that can be created in the context of the [render operator](/
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * Editor permissions on a [Real-Time Dashboard](dashboard-real-time-create.md)
 
 ## Customize a dashboard tile

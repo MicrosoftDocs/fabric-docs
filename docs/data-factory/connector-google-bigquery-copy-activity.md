@@ -6,9 +6,9 @@ ms.author: jianleishen
 ms.topic: how-to
 ms.date: 03/20/2024
 ms.custom:
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Google BigQuery in a copy activity

@@ -1,13 +1,11 @@
 ---
 title: Use parameters in Real-Time Dashboards
 description: Learn how to use parameters in Real-Time Dashboards.
-ms.author: yaschust
-author: YaelSchuster
+ms.author: spelluru
+author: spelluru
 ms.reviewer: gabil
 ms.topic: how-to
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.date: 11/19/2024
 ---
 
@@ -24,7 +22,7 @@ The query examples used in this article are based on the **StormEvents** table i
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * Editor permissions on a [Real-Time Dashboard](dashboard-real-time-create.md)
 * A dashboard with visuals
 
@@ -104,7 +102,7 @@ StormEvents
 | top 5 by TotalEvents
 ```
 
-Once saved, the time range filter shows up on the dashboard. Now it can be used to filter the data on the card. You can filter your dashboard by selecting from the drop-down: **Time range** (last x minutes/hours/days) or a **Custom time range**.
+Once saved, the time range filter shows up on the dashboard. Now it can be used to filter the data on the card. You can filter your dashboard by selecting from the dropdown: **Time range** (last x minutes/hours/days) or a **Custom time range**.
 
 :::image type="content" source="media/dashboard-parameters/time-range.png" alt-text="filter using custom time range.":::
 

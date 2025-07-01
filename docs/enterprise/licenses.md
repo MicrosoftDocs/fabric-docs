@@ -1,19 +1,16 @@
 ---
 title: Microsoft Fabric concepts
 description: Understand Microsoft Fabric concepts such as tenants, capacities, and SKUs.
-author: KesemSharabi
-ms.author: mihart
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/21/2024
+ms.date: 11/28/2024
 ---
 
 # Microsoft Fabric concepts and licenses
 
-[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is a platform that allows users to get, create, share, and visualize data using an array of tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [F or P capacity](#capacity), and at least one [per-user license](#per-user-licenses).
+[Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) is a platform that allows users to get, create, share, and visualize data using an array of tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [F or P capacity](#capacity), and at least one [per-user license](#per-user-licenses).
 
 A Microsoft Fabric deployment can be organized in various ways according to your organizational needs. This illustration shows two different ways of deploying Fabric in an organization. Retail company A has a single Microsoft Entra tenant for the entire company. Retail company B has two Microsoft Entra tenants, which have complete separation between them, one for military products and another for commercial products. Both companies deployed Fabric capacities according to their geographical location.
 
@@ -61,11 +58,11 @@ The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU)
 | F1024 | 1024 | P5/A8 | 128 |
 | F2048 | 2048 | - | 256 |
 
-<sup>*</sup>SKUs that are smaller than F64 require a Pro or Premium Per User (PPU) license, or a Power BI individual trial to consume Power BI content.
+<sup>*</sup>In the Power BI [Embed for your organization](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers) scenario, and Embedding in Microsoft 365 apps such as Sharepoint online and PowerPoint, SKUs smaller than F64 require a Pro or Premium Per User (PPU) license, or a Power BI individual trial to consume Power BI content.
 
 ### Workspace
 
-[Workspaces](../get-started/workspaces.md) reside within capacities and are used as containers for Microsoft Fabric items. Each Microsoft Fabric user has a personal workspace known as *My Workspace*. More workspaces can be created to enable collaboration.  
+[Workspaces](../fundamentals/workspaces.md) reside within capacities and are used as containers for Microsoft Fabric items. Each Microsoft Fabric user has a personal workspace known as *My Workspace*. More workspaces can be created to enable collaboration.  
 
 Each Microsoft Entra tenant that has Fabric deployed to it, has a shared capacity that hosts all the *My Workspaces* and the workspaces with Pro or Premium Per User license mode. By default, workspaces are created in your tenant's shared capacity. When your tenant has other capacities, workspaces - including *My Workspaces* - can be assigned to any capacity in your tenant.
 
@@ -98,7 +95,7 @@ Per-user licenses allow users to work in Microsoft Fabric. There are three types
 
 * **Premium per-user (PPU)** - PPU licenses allow organizations to access Power BI [Premium features](/power-bi/enterprise/service-premium-features) by licensing every user with a PPU license instead of purchasing a Power BI Premium capacity. PPU can be more cost effective when Power BI Premium features are needed for fewer than 250 users. PPU uses a shared capacity across the organization, which provides the computing power for the Power BI operations.
 
-This table lists the main differences between the capabilities of per-user licenses.  
+This table lists the main differences between the capabilities of per-user licenses. For embedded analytics license considerations, see [Capacity and SKUs in Power BI embedded analytics](/power-bi/developer/embedded/embedded-capacity).
 
 | Capabilities | Free | Pro | PPU |
 |--|--|--|--|
@@ -113,7 +110,6 @@ This table lists the main differences between the capabilities of per-user licen
 | Share non-Power BI Fabric items | &#x2705; | &#x2705; |&#x2705; |
 | View Power BI items in Pro workspaces or Fabric Capacity workspaces (where the Fabric Capacity SKU is less than a F64) | &#x274C; | &#x2705; |&#x2705; |
 | Users signing in with an Entra user account and a workspace viewer role on a Power BI Premium Per Capacity or a Fabric Capacity with an F64 or higher SKU, can view the content of that workspace | &#x2705; | &#x2705; |&#x2705; |
-| When using [embed for your customers](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers), where the host application is authenticating with the service and managing its own user authentication without using Entra accounts, content in workspaces on Power BI Premium Capacity or Fabric capacity can be displayed by the application | &#x2705; | &#x2705; |&#x2705; |
 
 ## Related content
 

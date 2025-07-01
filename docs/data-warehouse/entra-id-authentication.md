@@ -1,21 +1,20 @@
 ---
-title: Microsoft Entra authentication in Fabric Data Warehouse
+title: Microsoft Entra Authentication in Fabric Data Warehouse
 description: Learn more about Microsoft Entra authentication, an alternative to SQL authentication in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: frnuson, kadejo, jaszymas
-ms.date: 10/16/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
 ms.custom:
   - fabric-cat
-  - ignite-2024
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Microsoft Entra authentication as an alternative to SQL authentication
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-This article covers technical methods that users and customers can employ to transition from SQL authentication to [Microsoft Entra authentication](/entra/identity/authentication/overview-authentication) within Microsoft Fabric. Microsoft Entra authentication is an alternative to usernames and passwords via SQL authentication for signing in to the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the lakehouse or the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. Microsoft Entra authentication is advisable and vital for creating a secure data platform.
+This article covers technical methods that users and customers can employ to transition from SQL authentication to [Microsoft Entra authentication](/entra/identity/authentication/overview-authentication) within Microsoft Fabric. Microsoft Entra authentication is an alternative to usernames and passwords via SQL authentication to the [!INCLUDE [fabric-se](includes/fabric-se.md)] or the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. Microsoft Entra authentication is advisable and vital for creating a secure data platform.
 
 This article focuses on Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric items such as a Warehouse or Lakehouse SQL analytics endpoint.
 
@@ -27,7 +26,7 @@ Microsoft Entra plays a crucial role in Microsoft Fabric's security for several 
 
 - Authentication: Verify users and [service principals](/entra/identity-platform/app-objects-and-service-principals) using Microsoft Entra ID, which grants access tokens for operations within Fabric.
 - Secure access: Connect securely to cloud apps from any device or network, safeguarding requests made to Fabric.
-- Conditional access: Admins can set policies that assess user login context, control access, or enforce extra verification steps.
+- Conditional access: Admins can set policies that assess user context, control access, or enforce extra verification steps.
 - Integration: Microsoft Entra ID seamlessly works with all Microsoft SaaS offerings, including Fabric, allowing easy access across devices and networks.
 - Broad platform: Gain access to Microsoft Fabric with Microsoft Entra ID via any method, whether through the Fabric portal, SQL connection string, REST API, or XMLA endpoint.
 
@@ -53,16 +52,16 @@ This setting is located in the Developer settings section and is labeled **Servi
 
 A Fabric admin in your workspace must grant access for a user or SPN to access Fabric items.
 
-There are two means by which a User/SPN can be granted access:
+There are two means by which a User or SPN can be granted access:
 
-- **Grant a user/SPN membership to a role**: Any workspace role (Admin, Member, Contributor, or Viewer) is sufficient to connect to warehouse or lakehouse items with a SQL connection string.
+- **Grant a user or SPN membership to a role**: Any workspace role (Admin, Member, Contributor, or Viewer) is sufficient to connect to warehouse or lakehouse items with a SQL connection string.
     1. In the **Manage access** option in the Workspace, assign the **Contributor** role. For more information, see [Service roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles).
 
-- **Assign a user/SPN to a specific item**: Grant access to a specific Warehouse or SQL analytics endpoint of a Lakehouse. A Fabric admin can choose from different permission levels.
+- **Assign a user or SPN to a specific item**: Grant access to a specific Warehouse or SQL analytics endpoint of a Lakehouse. A Fabric admin can choose from different permission levels.
     1. Navigate to the relevant Warehouse or SQL analytics endpoint item.
     1. Select **More options**, then **Manage Permissions**. Select **Add user**.
-    1. Add the User/SPN on the **Grant people access** page.
-    1. Assign the necessary permissions to a User/SPN. Choose no **Additional permissions** to grant connect permissions only.
+    1. Add the User or SPN on the **Grant people access** page.
+    1. Assign the necessary permissions to a User or SPN. Choose no **Additional permissions** to grant connect permissions only.
 
     :::image type="content" source="media/entra-id-authentication/manage-permissions-grant-people-access.png" alt-text="Screenshot from the Fabric portal of the Grant people access page." lightbox="media/entra-id-authentication/manage-permissions-grant-people-access.png":::
 
@@ -93,7 +92,7 @@ Applications and client tools can set the `Authentication` connection property
 | Microsoft Entra Service Principal | Used by apps for secure authentication without human intervention, most suited for application integration. | Advisable to enable [Microsoft Entra Conditional Access policies](/entra/identity/conditional-access/workload-identity). |
 | Microsoft Entra Password | When applications can't use SPN-based authentication due to incompatibility, or require a generic username and password for many users, or if other methods are infeasible. | MFA must be off, and no conditional access policies can be set. We recommend validating with the customer's security team before opting for this solution. |
 
-:::image type="content" source="media/entra-id-authentication/mode-flow-chart.png" alt-text="Flowchart showing Microsoft Entra authentication modes and decision points.":::
+:::image type="content" source="media/entra-id-authentication/mode-flow-chart.png" alt-text="Flowchart showing Microsoft Entra authentication modes and decision points." lightbox="media/entra-id-authentication/mode-flow-chart.png":::
 
 ## Driver support for Microsoft Entra authentication
 
@@ -138,7 +137,7 @@ For a python code snippet using ODBC with SPN-based authentication, see [pyodbc-
 The [Microsoft JDBC Driver for SQL Server](/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server) is a Type 4 JDBC driver that provides database connectivity through the standard JDBC application program interfaces (APIs) available on the Java platform.
 
 Starting from version 9.2, `mssql-jdbc` introduces support for `ActiveDirectoryInteractive` and `ActiveDirectoryServicePrincipal`, with `ActiveDirectoryPassword` being supported in versions 12.2 and above. This driver requires additional jars as dependencies, which must be compatible with the version of the `mssql-driver` used in your
-application. For more information, see [Feature dependencies of JDBC driver](/sql/connect/jdbc/feature-dependencies-of-microsoft-jdbc-driver-for-sql-server) and [Client setup requirement](/sql/connect/jdbc/connecting-using-azure-active-directory-authentication#client-setup-requirements).
+application. For more information, see [Feature dependencies of the Microsoft JDBC Driver](/sql/connect/jdbc/feature-dependencies-of-microsoft-jdbc-driver-for-sql-server) and [Client setup requirement](/sql/connect/jdbc/connecting-using-azure-active-directory-authentication#client-setup-requirements).
 
 | Authentication Mode            | More information |
 |:-------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
@@ -148,9 +147,15 @@ application. For more information, see [Feature dependencies of JDBC driver](/sq
 
 For a java code snippet using JDBC with SPN-based authentication, see [fabrictoolbox/dw_connect.java](https://github.com/microsoft/fabric-toolbox/blob/d87627f96d7867d46e585f82fddb2f57c42d585d/data-warehousing/dw-connectivity/jdbc/src/main/java/com/fabrictoolbox/dw_connect.java) and [sample pom file pom.xml](https://github.com/microsoft/fabric-toolbox/blob/d87627f96d7867d46e585f82fddb2f57c42d585d/data-warehousing/dw-connectivity/jdbc/pom.xml).
 
-### Microsoft.Data.SqlClient in .NET Core (C#)
+### Microsoft.Data.SqlClient in .NET
 
-The [Microsoft.Data.SqlClient](/sql/connect/ado-net/introduction-microsoft-data-sqlclient-namespace) is a data provider for Microsoft SQL Server and Azure SQL Database. It is a union of the two `System.Data.SqlClient` components that live independently in .NET Framework and .NET Core, providing a set of classes for accessing Microsoft SQL Server databases. `Microsoft.Data.SqlClient` is recommended for all new and future development.
+This library [Microsoft.Data.SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient/6.0.1) is the newer, cross-platform data provider for SQL Server, intended to replace the older `System.Data.SqlClient` which was Windows-only. 
+
+Supported platforms:
+   - .NET 8.0 and later
+   - .NET Framework 4.6.2 and later
+
+The [Microsoft.Data.SqlClient namespace](/sql/connect/ado-net/introduction-microsoft-data-sqlclient-namespace) is a union of the two `System.Data.SqlClient` components, providing a set of classes for accessing SQL Database Engine databases. `Microsoft.Data.SqlClient` is recommended for all new development.
 
   | Authentication Mode   | More information                         |
   |:-------------------------------|:--------------------------------------------------|
@@ -164,5 +169,5 @@ Code snippets using SPNs:
 
 ## Related content
 
-- [Connectivity](connectivity.md)
+- [Connectivity to data warehousing in Microsoft Fabric](connectivity.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)

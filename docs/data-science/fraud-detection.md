@@ -7,8 +7,7 @@ ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
 ms.custom:
-  - ignite-2023
-ms.date: 01/22/2024
+ms.date: 01/14/2025
 #customer intent: As a data scientist, I want to build a machine learning model so I can detect future fraudulent transactions.
 ---
 
@@ -36,8 +35,8 @@ This tutorial covers these steps:
 
 You can choose one of these options to follow along in a notebook:
 
-- Open and run the built-in notebook in the Data Science experience
-- Upload your notebook from GitHub to the Data Science experience
+- Open and run the built-in notebook.
+- Upload your notebook from GitHub.
 
 ### Open the built-in notebook
 
@@ -117,7 +116,7 @@ if not IS_CUSTOM_DATA:
     # Download data files into the lakehouse if they're not already there
     import os, requests
 
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/Credit_Card_Fraud_Detection"
     fname = "creditcard.csv"
     download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
 

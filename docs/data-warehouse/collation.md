@@ -1,11 +1,11 @@
 ---
-title: "How to: Create warehouses with case-insensitive (CI) collation"
-description: Learn how to create a Fabric warehouse with case-insensitive collation through the RESTful API. The article also explains how to use Visual Studio Code with the REST Client extension to facilitate the process, making it easier for users to configure their warehouses to better meet their data management needs.
+title: "How To: Create Warehouses with Case-Insensitive (CI) Collation"
+description: Learn how to create a Fabric warehouse with case-insensitive collation through the RESTful API.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: twcyril
+ms.date: 05/09/2025
 ms.topic: how-to
-ms.date: 11/13/2024
 ---
 # How to: Create a warehouse with case-insensitive (CI) collation
 
@@ -46,7 +46,7 @@ Here's a sample JSON request body for creating a warehouse:
 You can easily create a new warehouse with case-insensitive collation using [Visual Studio Code (VS Code)](https://code.visualstudio.com/) and the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension. Follow these steps:
 
 1. Create a new text file in VS Code with the `.http` extension.
-1. Input the request details in the file body. Note that there should be a blank space between the header and the body, placed after the "Authorization" line.
+1. Input the request details in the file body. There should be a blank space between the header and the body, placed after the "Authorization" line.
    ```json
      POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceID>/items HTTP/1.1
      Content-Type: application/json
@@ -62,15 +62,15 @@ You can easily create a new warehouse with case-insensitive collation using [Vis
     }
    ```
 1. Replace the placeholder values:
-   - `<workspaceID>`: Find the workspace GUID in the URL after the `/groups/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse.
+   - `<workspaceID>`: Find the workspace GUID in the URL after the `/groups/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse. 
    - `<bearer token>`: Obtain this by following these steps:
-      1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge or Google Chrome).
+      1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge).
       1. Press **F12** to open Developer Tools. 
       1. Select the **Console** tab. If necessary, select **Expand Quick View** to reveal the console prompt `>`.
-      1. Type the command `copy(powerBIAccessToken)` and press **Enter**. While the console responds undefined, the bearer token will be copied to your clipboard.
+      1. Type the command `powerBIAccessToken` and press **Enter**. Right-click on the large unique string returned in the console and select **Copy string contents**.
       1. Paste it in place of `<bearer token>`.
-   - __`<Warehouse name here>`__: Enter the desired warehouse name.
-   - __`<Warehouse description here>`__: Enter the desired warehouse description.
+   - `<Warehouse name here>`: Enter the desired warehouse name.
+   - `<Warehouse description here>`: Enter the desired warehouse description.
 
 1. Select the **Send Request** link displayed over your POST command in the VS Code editor.
 1. You should receive a response with the status code **202 Accepted**, along with additional details about your POST request.

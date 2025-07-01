@@ -1,15 +1,11 @@
 ---
-title: Clone table
+title: Clone Table
 description: Learn about table clones in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.date: 07/12/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
-  - ignite-2023
-  - build-2024
-  - ignite-2024
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 # Clone table in Microsoft Fabric
@@ -24,7 +20,7 @@ ms.search.form: Warehouse Clone table # This article's title should not change. 
 - Table clones help to create historical reports that reflect the state of data as it existed as of a specific point-in-time in the past.
 - Table clones at a specific point in time can preserve the state of data at specific business points in time.
 
-You can use the [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true) T-SQL commands to create a table clone. For a tutorial, see [Tutorial: Clone table using T-SQL](tutorial-clone-table.md) or [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md).
+You can use the [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true) T-SQL commands to create a table clone. For a tutorial, see [Tutorial: Clone a table with T-SQL in a Warehouse](tutorial-clone-table.md) or [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md).
 
 You can also query data in a warehouse as it appeared in the past, using the T-SQL `OPTION` syntax. For more information, see [Query data as it existed in the past](time-travel.md).
 

@@ -6,26 +6,24 @@ ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
 ms.custom:
-  - build-2024
-  - ignite-2024
 ms.search.form: Create and use notebooks
-ms.date: 11/25/2024
+ms.date: 03/31/2025
 ---
 
 # Use Python experience on Notebook
 
- > [!NOTE]
- > Currently, the feature is in preview.
 
-The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
+The Python notebook is a new experience built on top of Fabric notebook. It is a versatile and interactive tool designed for data analysis, visualization, and machine learning. It provides a seamless developing experience for writing and executing Python code. This capability makes it an essential tool for data scientists, analysts, and BI developers, especially for exploration tasks that don't require big data and distributed computing.
+
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 With a Python notebook, you can get:
 
 - **Multiple built-in python kernels**: Python notebooks offer a pure Python coding environment without Spark, with two versions of Python kernel - Python 3.10 and 3.11 available by default, and the native ipython features supported such as iPyWidget, magic commands.
 
-- **Cost effective**: The new Python notebook offers cost-saving benefits by running on a single node cluster with 2vCores/16GB memory by default. This ensures efficient resource utilization for data exploration projects with smaller data size.
+- **Cost effective**: The new Python notebook offers cost-saving benefits by running on a single node cluster with 2vCores/16GB memory by default. This setup ensures efficient resource utilization for data exploration projects with smaller data size.
 
-- **Lakehouse & Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook. This enables users to easily bring the data to python notebook, just try drag & drop to get the code snippet.  
+- **Lakehouse & Resources are natively available**: The Fabric Lakehouse together with Notebook built-in Resources full functionality are available in Python notebook. This feature enables users to easily bring the data to python notebook, just try drag & drop to get the code snippet.  
 
 - **Mix programming with T-SQL**: Python notebook offers an easy way to interact with Data Warehouse and SQL endpoints in explorer, by using notebookutils data connector, you can easily execute the T-SQL scripts under the context of python.  
 
@@ -64,6 +62,9 @@ You can monitor the Python notebook job run details on the ribbon tab **Run** ->
 ## Data interaction
 
 You can interact with Lakehouse, Warehouses, SQL endpoints, and built-in resources folders on Python notebook.
+
+ > [!NOTE]
+ > The Python Notebook runtime comes pre-installed with [delta‑rs](https://delta-io.github.io/delta-rs/) and [duckdb](https://duckdb.org/) libraries to support both reading and writing Delta Lake data. However, please note that some Delta Lake features may not be fully supported at this time. For more details and the latest updates, kindly refer to the official [delta‑rs](https://github.com/delta-io/delta-rs) and [duckdb](https://duckdb.org/docs/stable/extensions/delta.html) websites.
 
 ### Lakehouse interaction
 
@@ -111,6 +112,22 @@ For customized libraries, you can upload the lib files to the [**Built-in resour
 
 You may need to restart the kernel to use the updated packages.
 
+To better understand and use similar commands clearly, please refer to the table below.
+
+| **Command/Syntax** | **Main purpose** | **How it works in Jupyter Notebook** | **Typical use case** | **Notes**|
+|---|---|---|---|---|
+| ```%pip install package``` | Install Python packages | Runs pip in the notebook’s Python kernel | Recommended way to install packages | In Python Notebook, same as ```!pip```; does **not** restart kernel automatically |
+| ```!pip install package``` | Install Python packages via shell | Runs pip as a shell command | Alternative way to install packages | In Python Notebook, same as ```%pip```; does **not** restart kernel automatically |
+| ```import sys; sys.exit(0)``` | Restart the notebook kernel | Immediately restarts the kernel | Programmatically restart the kernel | Clears all variables and states; **not recommended** to use directly |
+| ```notebookutils.session.restartPython()``` | Restart the notebook kernel | Calls ```sys.exit(0)``` internally | Recommended way to restart the kernel | Official API, safer and more compatible than using ```sys.exit(0)``` directly |
+
+
+> [!NOTE]
+> - In Python Notebook, ```%pip``` and ```!pip``` have the **same behavior**: both install packages into the current kernel’s environment, and neither will automatically restart the kernel after installation.
+> - If you need to restart the kernel (eg., after installing certain packages), it is **recommended** to use ```notebookutils.session.restartPython()``` instead of ```import sys; sys.exit(0)```.
+>   - ```notebookutils.session.restartPython()``` is an official API that wraps ```sys.exit(0)``` , and it is safer and more compatible in notebook environments.
+> - It is **not recommended** to use ```sys.exit(0)``` directly unless necessary.
+
 ## Session configuration magic command
 
 Similar with personalizing a [Spark session configuration](author-execute-notebook.md#spark-session-configuration-magic-command) in notebook, you can also use **%%configure** in Python notebook too. Python notebook supports customizing compute node size, mount points and default lakehouse of the notebook session. They can be used in both interactive notebook and pipeline notebook activities. We recommend using %%configure command at the beginning of your notebook, or you must restart the notebook session to make the settings take effect.
@@ -118,7 +135,7 @@ Similar with personalizing a [Spark session configuration](author-execute-notebo
 Here are the supported properties in Python notebook **%%configure**:
 
 ```JSON
-%%configure
+%%configure -f
 {
     "vCores": 4, // Recommended values: [4, 8, 16, 32, 64], Fabric will allocate matched memory according to the specified vCores.
     "defaultLakehouse": {  
@@ -153,8 +170,7 @@ You can use ```notebookutils.help()``` to list available APIs and also get help 
 ### Data utilities
 
 > [!NOTE]
-> - Currently, the feature is in preview.
-> - The API contract may change in the near future.
+> Currently, the feature is in preview.
 
 You can use `notebookutils.data` utilities to establish a connection with provided data source and then read and query data using T-SQL statement.
 
@@ -173,7 +189,7 @@ NAME
     notebookutils.data - Utility for read/query data from connected data sources in Fabric
 
 FUNCTIONS
-    connect_to_artifact(artifact: str, workspace: str = '', artifact_type: str = None) -> pyodbc.Connection
+    connect_to_artifact(artifact: str, workspace: str = '', artifact_type: str = '', **kwargs)
         Establishes and returns an ODBC connection to a specified artifact within a workspace 
         for subsequent data queries using T-SQL.
         
@@ -182,6 +198,8 @@ FUNCTIONS
                              use the workspace where the current notebook is located.
         :param artifactType: Optional; The type of the artifact, Currently supported type are Lakehouse, Warehouse and MirroredDatabase. 
                                 If not provided, the method will try to determine the type automatically.
+        :param **kwargs Optional: Additional optional configuration. Supported keys include:
+            - tds_endpoint : Allow user to specify a custom TDS endpoint to use for connection.
         :return: A connection object to the specified artifact.
         
         :raises UnsupportedArtifactException: If the specified artifact type is not supported to connect.
@@ -190,13 +208,10 @@ FUNCTIONS
         Examples:
             sql_query = "SELECT DB_NAME()"
             with notebookutils.data.connect_to_artifact("ARTIFACT_NAME_OR_ID", "WORKSPACE_ID", "ARTIFACT_TYPE") as conn:
-                cursor = conn.cursor()
-                cursor.execute(sql_query)
-                rows = cursor.fetchall()
-                for row in rows:
-                    print(row)
+                df = conn.query(sql_query)
+                display(df)
     
-    help(method_name=None)
+    help(method_name: str = '') -> None
         Provides help for the notebookutils.data module or the specified method.
         
         Examples:
@@ -208,37 +223,25 @@ DATA
     __all__ = ['help', 'connect_to_artifact']
 
 FILE
-    /home/trusted-service-user/jupyter-env/python3.11/lib/python3.11/site-packages/notebookutils/data.py
+    /home/trusted-service-user/jupyter-env/python3.10/lib/python3.10/site-packages/notebookutils/data.py
 ```
 
 #### Query data from Lakehouse
 
 ```python
 conn = notebookutils.data.connect_to_artifact("lakehouse_name_or_id", "optional_workspace_id", "optional_lakehouse_type")
-
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM sys.schemas;")
-rows = cursor.fetchall()
-for row in rows:
-    print(row)
+df = conn.query("SELECT * FROM sys.schemas;")
 ```
 
 #### Query data from Warehouse
 
 ```python
 conn = notebookutils.data.connect_to_artifact("warehouse_name_or_id", "optional_workspace_id", "optional_warehouse_type")
-
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM sys.schemas;")
-rows = cursor.fetchall()
-for row in rows:
-    print(row)
+df = conn.query("SELECT * FROM sys.schemas;")
 ```
 
 > [!NOTE]
->
-> - The Data utilities in NotebookUtils is only available on Python notebook for now.
-> - Known limitation: For `connect_to_artifact` API, the returned `conn` object internally initializes a PBI token to authenticate the user when connecting to the data source. However, it does not support token refresh. Currently the PBI token is valid for only one hour, any query exceeding one hour will fail due to token expiration issue.
+> The Data utilities in NotebookUtils are only available on Python notebook for now.
 
 ## Browse code snippets
 
@@ -257,11 +260,11 @@ In addition to drawing charts with libraries, the [built-in visualization](noteb
    :::image type="content" source="media\use-python-experience-on-notebook\display-in-python.png" alt-text="Screenshot showing visualization experience in Python notebook." lightbox="media\use-python-experience-on-notebook\display-in-python.png":::
 
 > [!NOTE]
-> The chart configurations will be persisted in Python notebook, which means after reruning the code cell, if the target dataframe schema hasn't change, the saved charts are still persisted.
+> The chart configurations will be persisted in Python notebook, which means after rerunning the code cell, if the target dataframe schema hasn't change, the saved charts are still persisted.
 
 ## Code intelliSense
 
-Python notebook integrated Pylance to enhance the Python coding experience, Pylance is the default language service support for Python in Visual Studio Code. It provides a lot of easy-to-use functions like keyword highlighting, quick info, code completion, parameter info, and syntax error detection. Furthermore, the Pylance has better performance when notebook is long.
+Python notebook also uses Pylance as the language server. For more information, see [enhance Python Development with Pylance](./author-execute-notebook.md#ide-style-intellisense).
 
 ## Data science capabilities
 
@@ -279,13 +282,15 @@ Visit [Data Science documentations in Microsoft Fabric](/fabric/data-science/) t
 
 ## Public preview known limitations
 
-- Live pool experience is not guaranteed for every python notebook run. The session start time may up to 3 mins if the notebook run does not hit live pool, while the python notebook usage is growing, out intelligent pooling methods will gradually increase the live pool allocation to meet the demand.
+- Live pool experience is not guaranteed for every python notebook run. The session start time may take up to 3 minutes if the notebook run does not hit the live pool. As Python notebook usage grows, our intelligent pooling methods gradually increase the live pool allocation to meet the demand.
 
 - Environment integration is not available on Python notebook by public preview.
 
 - Set session timeout is not available for now.
 
 - Copilot may generate Spark statement, which may not executable in Python notebook.
+
+- Currently, Copilot on Python notebook is not fully supported in several regions. The deployment process is still ongoing stay tuned as we continue to roll out support in more regions.
 
 ## Related content
 

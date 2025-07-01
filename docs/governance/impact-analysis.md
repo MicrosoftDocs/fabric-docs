@@ -1,10 +1,10 @@
 ---
 title: Impact analysis
 description: Learn how to visualize and analyze the downstream impact of making changes to Fabric items.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom: 
 ms.date: 05/23/2023
 ---
 
@@ -43,7 +43,7 @@ The pane may say that there are more items with limited access. This occurs when
 
 ## Notify contacts
 
-If you've made a change to an item or are thinking about making a change, you might want to contact the relevant users to tell them about it. When you notify contacts, an email is sent to the [contact lists](../get-started/workspaces.md#workspace-contact-list) of all the impacted workspaces. Your name appears on the email so the contacts can find you and reply back in a new email thread.
+If you've made a change to an item or are thinking about making a change, you might want to contact the relevant users to tell them about it. When you notify contacts, an email is sent to the [contact lists](../fundamentals/workspaces.md#workspace-contact-list) of all the impacted workspaces. Your name appears on the email so the contacts can find you and reply back in a new email thread.
 
 1. Select **Notify contacts** in the impact analysis side pane. The notify contacts dialog appears.
 

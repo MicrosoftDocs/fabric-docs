@@ -2,11 +2,10 @@
 title: Keyboard shortcuts
 description: Learn about keyboard shortcuts (hot keys) in Real-Time Intelligence.
 ms.reviewer: mibar
-author: YaelSchuster
-ms.author: yaschust
+author: spelluru
+ms.author: spelluru
 ms.topic: reference
 ms.custom:
-  - ignite-2024
 ms.date: 11/19/2024
 ms.search.form: KQL Queryset
 ---

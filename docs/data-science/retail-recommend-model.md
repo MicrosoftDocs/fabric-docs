@@ -7,9 +7,7 @@ ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 01/22/2024
+ms.date: 01/15/2025
 #customer intent: As a data scientist, I want to build a recommendation model so I can create personalized recommendations.
 ---
 
@@ -45,8 +43,8 @@ The ALS algorithm is iterative. Each iteration holds one of the factor matrices 
 
 You can choose one of these options to follow along in a notebook:
 
-- Open and run the built-in notebook in the Synapse Data Science experience
-- Upload your notebook from GitHub to the Synapse Data Science experience
+- Open and run the built-in notebook.
+- Upload your notebook from GitHub.
 
 ### Open the built-in notebook
 
@@ -121,7 +119,7 @@ if not IS_CUSTOM_DATA:
     # Download data files into a lakehouse if they don't exist
     import os, requests
 
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Book-Recommendation-Dataset"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/Book-Recommendation-Dataset"
     file_list = ["Books.csv", "Ratings.csv", "Users.csv"]
     download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
 

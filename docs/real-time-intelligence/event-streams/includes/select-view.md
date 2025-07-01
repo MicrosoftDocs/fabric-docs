@@ -5,7 +5,6 @@ ms.author: spelluru
 author: spelluru
 ms.topic: include
 ms.custom:
-  - ignite-2024
 ms.date: 05/21/2024
 ---
 

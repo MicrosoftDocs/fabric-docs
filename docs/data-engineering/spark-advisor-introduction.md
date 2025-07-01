@@ -7,8 +7,6 @@ ms.topic: overview
 ms.date: 02/25/2023
 ms.custom:
   - template-howto
-  - build-2023
-  - ignite-2023
 ms.search.form: View Spark advisor within a notebook
 ---
 

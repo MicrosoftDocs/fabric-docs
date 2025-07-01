@@ -1,13 +1,11 @@
 ---
 title: How to copy data using copy activity
 description: Learn how to add a copy activity directly or through the copy assistant.
-ms.reviewer: DougKlopfenstein
+ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
+ms.custom: pipelines
 ms.date: 08/05/2024
 ---
 
@@ -53,7 +51,7 @@ Follow these steps to set up your copy activity using copy assistant.
 
    :::image type="content" source="media/copy-data-activity/create-new-azure-blob-storage-connection.png" alt-text="Screenshot showing where to select New connection." lightbox="media/copy-data-activity/create-new-azure-blob-storage-connection.png":::
 
-    After you select **Create new connection**, fill in the required connection information and then select **Next**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-data-stores-in-data-pipeline).
+    After you select **Create new connection**, fill in the required connection information and then select **Next**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-connectors-in-fabric).
 
    If you have existing connections, you can select **Existing connection** and select your connection from the drop-down list.
 
@@ -115,7 +113,7 @@ To learn how to configure your general settings, see [General](activity-overview
    
       :::image type="content" source="media/copy-data-activity/choose-azure-sql-database-connection-in-pipeline.png" alt-text="Screenshot showing how to select the data source." lightbox="media/copy-data-activity/choose-azure-sql-database-connection-in-pipeline.png":::
 
-   1. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-data-stores-in-data-pipeline).
+   1. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-connectors-in-fabric).
    
       :::image type="content" source="media/copy-data-activity/configure-connection-details.png" alt-text="Screenshot showing New connection page." lightbox="media/copy-data-activity/configure-connection-details.png":::
 

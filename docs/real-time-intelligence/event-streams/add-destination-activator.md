@@ -6,7 +6,6 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
@@ -20,8 +19,6 @@ This article shows you how to add an activator destination to an eventstream.
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - If you already have an activator you want to use, access to the workspace where your activator is located with Contributor or higher permissions.
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ## Add activator as a destination
 
 To add an activator destination to a default stream or derived stream, follow these steps.
@@ -30,7 +27,7 @@ To add an activator destination to a default stream or derived stream, follow th
 
    :::image type="content" border="true" source="./media/add-destination-activator-enhanced/add-destination.png" alt-text="A screenshot of the Add destination dropdown list with Activator highlighted.":::
 
-    You can also select **Transform events or add destination** tile on the canvas, and select **Activator** from the drop-down list. 
+    You can also select **Transform events or add destination** tile on the canvas, and select **Activator** from the dropdown list. 
 
    :::image type="content" source="media/add-destination-activator-enhanced/add-destination-canvas.png" alt-text="Screenshot that shows the canvas for an eventstream with New destination, Activator menu selected.":::
 

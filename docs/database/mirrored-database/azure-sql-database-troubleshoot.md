@@ -1,14 +1,13 @@
 ---
 title: "Troubleshoot Fabric Mirrored Databases From Azure SQL Database"
-description: Troubleshooting topics for mirrored databases from Azure SQL Database in Microsoft Fabric.
+description: Troubleshooting mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, anagha-todalbagi
-ms.date: 11/19/2024
+ms.date: 03/14/2025
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
-  - ignite-2024
 ---
 # Troubleshoot Fabric mirrored databases from Azure SQL Database
 
@@ -18,13 +17,15 @@ For troubleshooting the automatically configured mirroring for Fabric SQL databa
 
 ## Changes to Fabric capacity or workspace
 
+Learn more from [Changes to Fabric capacity](troubleshooting.md#changes-to-fabric-capacity). 
+
+In addition, note the following for Azure SQL Database specifically:
+
 | Cause    | Result | Recommended resolution     |
 |:--|:--|:--|
-| Fabric capacity paused/deleted | Mirroring will stop | 1. Resume or assign capacity from the Azure portal <br> 2. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**.<br> 3. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
-| Fabric capacity resumed | Mirroring will not be resumed | 1. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**. <br> 2. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
-| Workspace deleted | Mirroring stops automatically | If mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
-| Fabric trial capacity expired |  Mirroring stops automatically | See [Fabric trial capacity expires](../../get-started/fabric-trial.md#the-trial-expires). |
-| Fabric capacity exceeded | Mirroring will pause | Wait until the overload state is over or update your capacity. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling.md#actions-you-can-take-to-recover-from-overload-situations). Mirroring will continue once the capacity is recovered. |
+| Workspace deleted | Mirroring stops automatically and disables the change feed in Azure SQL Database | In case mirroring is still active on the Azure SQL Database, execute the following stored procedure on your Azure SQL Database: `exec sp_change_feed_disable_db;`. |
+| Any other resource errors | Mirroring is disabled | To ensure your compute resources are not impacted and to minimize impact on the Azure SQL Database, mirroring will be disabled on any persistent resource errors. |
+| "Users can access data stored in OneLake with apps external to Fabric" setting disabled | "Replicator - Tables Cannot Reach Replicating Status" | Enable the Tenant setting [Users can access data stored in OneLake with apps external to Fabric](../../admin/tenant-settings-index.md#onelake-settings).|
 
 ## T-SQL queries for troubleshooting
 
@@ -60,7 +61,7 @@ If you're experiencing mirroring problems, perform the following database level 
 
 ## Managed identity
 
-The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled, and must be the primary identity. For more information, see [Create an Azure SQL Database server with a user-assigned managed identity](/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity-create-server?view=azuresql-db&preserve-view=true&tabs=azure-portal).
+The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to be enabled, and must be the primary identity. For more information, see [Create an Azure SQL Database server](/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity-create-server?view=azuresql-db&preserve-view=true&tabs=azure-portal). Enable the SAMI in the Azure portal, in the resource menu under **Security**, in the **Identity** page.
 
 After enablement, if SAMI setting status is either turned Off or initially enabled, then disabled, and then enabled again, the mirroring of Azure SQL Database to Fabric OneLake will fail.
 

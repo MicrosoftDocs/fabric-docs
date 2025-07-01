@@ -1,13 +1,12 @@
 ---
 title: Manage Azure connections
 description: Learn how to manage your organization's Fabric connections to Azure services.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 
 ms.custom:
   - admin-portal
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration

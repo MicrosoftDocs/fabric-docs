@@ -1,24 +1,22 @@
 ---
-title: "Open Mirroring (Preview)"
+title: "Open Mirroring"
 description: Learn about open mirrored databases in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: tinglee, sbahadur
-ms.date: 11/19/2024
+ms.reviewer: tinglee, sbahadur, maraki-ketema
+ms.date: 05/02/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
 
-# Open mirroring in Microsoft Fabric (Preview)
+# Open mirroring in Microsoft Fabric
 
 [Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing data into OneLake with the rest of your data in Microsoft Fabric. You can continuously replicate your existing data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
 **Open mirroring** enables any application to write change data directly into a mirrored database in Fabric. Open mirroring is designed to be extensible, customizable, and open. It's a powerful feature that extends mirroring in Fabric based on open Delta Lake table format.
 
 Once the data lands in OneLake in Fabric, open mirroring simplifies the handling of complex data changes, ensuring that all mirrored data is continuously up-to-date and ready for analysis.
-
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 For a tutorial on configuring your open mirrored database in Fabric, see [Tutorial: Configure Microsoft Fabric open mirrored databases](open-mirroring-tutorial.md).
 
@@ -30,7 +28,7 @@ Open mirroring extends the Mirroring in Fabric capability to your own applicatio
 
 Open mirroring meets your data replication needs if you:
 
- - Use your own application to write data into the open mirroring landing zone per the [open mirroring landing zone requirements and formats](open-mirroring-landing-zone-format.md).
+- Use your own application to write data into the open mirroring landing zone per the [open mirroring landing zone requirements and formats](open-mirroring-landing-zone-format.md).
  - Use one of our existing [open mirroring partners](open-mirroring-partners-ecosystem.md) to help you ingest data.
 
 ## What analytics experiences are built in?
@@ -55,9 +53,7 @@ In addition to the [SQL query editor](../../data-warehouse/sql-query-editor.md),
 
 ## Open mirroring cost considerations
 
-Same as for all types of mirroring in Fabric, open mirroring offers a free terabyte of mirroring storage for every capacity unit (CU) you have purchased and provisioned. For example, if you purchase F64, you get 64 free terabytes worth of storage for your mirrored replicas. OneLake storage is billed only when the free mirroring storage limit is exceeded, or the capacity is paused.
-
-In addition, the compute needed to manage the complexity of change data is free and it doesn't consume capacity. Requests to OneLake as part of the mirroring process consume capacity like normal with [OneLake compute consumption](../../onelake/onelake-consumption.md#transactions).
+Fabric compute used to replicate your data into Fabric OneLake is free. The Mirroring storage cost is free up to a limit based on capacity. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute for querying data using SQL, Power BI, or Spark is charged at regular rates. 
 
 ## Next step
 

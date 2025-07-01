@@ -1,11 +1,11 @@
 ---
 title: Overview of managed private endpoints for Microsoft Fabric
 description: Learn about managed private endpoints for Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: danzhang
 ms.topic: conceptual
 ms.custom: references_regions
-ms.date: 10/29/2024
+ms.date: 05/12/2025
 ---
 
 # Overview of managed private endpoints for Fabric
@@ -68,7 +68,6 @@ For more information about supported data sources for managed private endpoints 
     | UAE Central    |
     | Brazil South   |
     | Singapore |
-    | Central US  |
 
 * **Limitations for specific workloads**:
 
@@ -80,7 +79,8 @@ For more information about supported data sources for managed private endpoints 
 
 * **[OneLake shortcuts](../onelake/onelake-shortcuts.md)** do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints.
 
-* Creating a managed private endpoint with a fully qualified domain name (FQDN) is not supported.
+* Creating a managed private endpoint with a fully qualified domain name (FQDN) via Private Link Service is not supported.
+* After you request to delete a managed private endpoint, wait at least 15 minutes before trying to create a new private endpoint to the same resource again. 
 
 These limitations and considerations might affect your use cases and workflows. Take them into account before enabling the Azure Private Link tenant setting for your tenant.
 

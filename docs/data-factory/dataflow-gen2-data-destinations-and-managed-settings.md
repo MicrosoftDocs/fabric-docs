@@ -1,11 +1,12 @@
 ---
 title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
-ms.reviewer: DougKlopfenstein
+ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 11/20/2024
+ms.date: 05/09/2025
+ms.custom: dataflows
 ---
 
 # Dataflow Gen2 data destinations and managed settings
@@ -20,6 +21,7 @@ The following list contains the supported data destinations.
 * Fabric Warehouse
 * Fabric KQL database
 * Fabric SQL database
+* SharePoint Files (preview)
 
 ## Entry points
 
@@ -44,6 +46,17 @@ There are three main entry-points to specify the data destination:
 Connecting to the data destination is similar to connecting to a data source. Connections can be used for both reading and writing your data, given that you have the right permissions on the data source. You need to create a new connection or pick an existing connection, and then select **Next**.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/connect-to-data-destination.png" alt-text="Screenshot of the Connect to data destination window for a Lakehouse destination.":::
+
+## Setup file based destinations
+
+When you choose a file-based destination like SharePoint, you need to specify a few more settings. The following settings are required:
+
+* File name: The name of the file that will be created in the destination. By default, the file name is the same as your query name.
+* File format: The format of the file that will be created in the destination.
+* File origin: The encoding that will be used to create the file in the destination. By default, the file origin is set to **UTF-8**.
+* File delimiter: The delimiter that will be used to create the file in the destination. By default, the file delimiter is set to **Comma**.
+
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/file-destinations-settings.png" alt-text="Screenshot of the File destination settings window with the file name, file format, file origin, and file delimiter settings displayed.":::
 
 ## Create a new table or pick an existing table
 
@@ -78,7 +91,7 @@ When you're loading into a new table, the automatic settings are on by default. 
 * **Drop and recreate table**: To allow for these schema changes, on every dataflow refresh the table is dropped and recreated. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 
 > [!NOTE]
-> Currently, automatic setting are only supported for Lakehouse and Azure SQL database as data destination.  
+> Currently, automatic settings are only supported for Lakehouse and Azure SQL database as data destination.  
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/use-automatic-settings.png" alt-text="Screenshot of the Choose destination settings window with the Use automatic settings option selected.":::
 
@@ -100,7 +113,7 @@ Most destinations support both append and replace as update methods. However, Fa
 
 Schema options on publish only apply when the update method is replace. When you append data, changes to the schema aren't possible.
 
-* **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination flow when you make any changes to your query. When the dataflow is refreshed, your table is dropped and recreated. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
+* **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination wizard when you make any changes to your query. When a refresh detects a discrepancy between the destination schema and the expected schema, the table is dropped and then recreated to align with the expected schema. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 
 * **Fixed schema**: When you choose fixed schema, schema changes aren't possible. When the dataflow gets refreshed, only the rows in the table are dropped and replaced with the output data from the dataflow. Any relationships or measures on the table stay intact. If you make any changes to your query in the dataflow, the dataflow publish fails if it detects that the query schema doesn't match the data destination schema. Use this setting when you don't plan to change the schema and have relationships or measure added to your destination table.
 
@@ -125,6 +138,8 @@ Schema options on publish only apply when the update method is replace. When you
 | Time                             | Yes | Yes | No  | No | No   | Yes |
 | Type                             | No  | No  | No  | No  | No  | No  |
 | Structured (List, Record, Table) | No  | No  | No  | No  | No  | No  |
+
+When working with data types such as currency or percentage, we typically convert them to their decimal equivalents for most destinations. However, when reconnecting to these destinations and following the existing table path, you might encounter difficulties mapping, for example, currency to a decimal column. In such cases, try changing the data type in the editor to decimal, as this will facilitate easier mapping to the existing table and column.
 
 ## Advanced topics
 
@@ -175,8 +190,8 @@ To vacuum your Delta tables in Lakehouse, follow these steps:
 
 #### Best practices
 
-- **Retention period**: Set a retention interval of at least seven days to ensure that old snapshots and uncommitted files aren't prematurely removed, which could disrupt concurrent table readers and writers.
-- **Regular maintenance**: Schedule regular vacuuming as part of your data maintenance routine to keep your Delta tables optimized and ready for analytics.
+* **Retention period**: Set a retention interval of at least seven days to ensure that old snapshots and uncommitted files aren't prematurely removed, which could disrupt concurrent table readers and writers.
+* **Regular maintenance**: Schedule regular vacuuming as part of your data maintenance routine to keep your Delta tables optimized and ready for analytics.
 
 By incorporating vacuuming into your data maintenance strategy, you can ensure that your Lakehouse destination remains efficient, cost-effective, and reliable for your dataflow operations.
 

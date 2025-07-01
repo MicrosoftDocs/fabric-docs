@@ -1,14 +1,12 @@
 ---
 title: Move data from Azure SQL DB into Lakehouse via copy assistant
 description: Learn steps to move data as files or tables into Lakehouse.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.custom: pipelines
+ms.date: 12/18/2024
 ms.search.form: Pipeline Copy Assistant
 ---
 

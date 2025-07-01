@@ -1,10 +1,10 @@
 ---
 title: "Microsoft Fabric end-to-end security scenario"
 description: "Learn about Microsoft Fabric security concepts and features that can help you confidently build your own analytical solution with Fabric."
-author: KesemSharabi
-ms.author: kesharab
-ms.reviewer: v-myerspeter, vparasuraman
-ms.date: 08/27/2024
+author: msmimart
+ms.author: mimart
+ms.reviewer: vparasuraman, amasingh
+ms.date: 12/12/2024
 ms.topic: conceptual
 ms.custom: fabric-cat, security-guidance
 ---
@@ -122,19 +122,19 @@ In addition to encryption, network traffic between Microsoft services always rou
 
 :::image type="content" source="media/security-scenario/fabric-shortcuts-cmk-scenario.svg" alt-text="Diagram shows a high-level representation of using CMK by using Fabric OneLake shortcuts.":::
 
-If you have a requirement to use CMK to encrypt data-at-rest, we recommend you use cloud storage services (ADLS Gen2, AWS S3, GCS) with CMK encryption enabled and access data from Microsoft Fabric using [OneLake shortcuts](../onelake/onelake-shortcuts.md). In this pattern, your data continues to reside on a cloud storage service or an external storage solution where encryption at rest using CMK is enabled, and you can perform in-place read operations from Fabric whilst staying compliant. Once a shortcut has been created, within Fabric, the data can be accessed by other Fabric experiences.
+If you have a requirement to use CMK to encrypt data-at-rest, you have two options. You can use [Workspace customer managed keys](../security/workspace-customer-managed-keys.md) to configure a CMK stored in an Azure Key Vault to encrypt data at rest in your Fabric workspace. Or, you can use other cloud storage services (ADLS Gen2, AWS S3, GCS) with CMK encryption enabled and access data from Microsoft Fabric using [OneLake shortcuts](../onelake/onelake-shortcuts.md). In this pattern, your data continues to reside on a cloud storage service or an external storage solution where encryption at rest using CMK is enabled, and you can perform in-place read operations from Fabric whilst staying compliant. Once a shortcut has been created, within Fabric, the data can be accessed by other Fabric experiences.
 
 There are some considerations for using this pattern:
 
 - Use the pattern discussed here for data which has encryption at-rest requirement using CMK. Data which does not have this requirement can be encrypted at-rest using platform-managed keys, and that data can be stored natively on Microsoft Fabric OneLake.
 - [Fabric Lakehouse](../onelake/create-onelake-shortcut.md) and [KQL database](../real-time-intelligence/onelake-shortcuts.md) are the two workloads within Microsoft Fabric which support creation of shortcuts. In this pattern where data continues to reside on an external storage service where CMK is enabled, you can use shortcuts within Lakehouses and KQL databases to bring your data into Microsoft Fabric for analysis, but data is physically stored outside of OneLake where CMK encryption is enabled.
-- ADLS Gen2 shortcut supports write and using this shortcut type, you can also write data back out to storage service, and it’ll be encrypted at-rest using CMK. While using CMK with ADLS Gen2, following considerations for [Azure Key Vault (AKV)](/azure/key-vault/keys/byok-specification) and [Azure Storage](/azure/storage/common/customer-managed-keys-overview) apply.
+- ADLS Gen2 shortcut supports write and using this shortcut type, you can also write data back out to storage service, and it'll be encrypted at-rest using CMK. While using CMK with ADLS Gen2, the following considerations for [Azure Key Vault (AKV)](/azure/key-vault/keys/byok-specification) and [Azure Storage](/azure/storage/common/customer-managed-keys-overview) apply.
 - If you are using a third-party storage solution which is AWS S3 compatible (Cloudflare, Qumolo Core with public endpoint, Public MinIO and Dell ECS with public endpoint) and it has CMK enabled, the pattern discussed here in this document can be extended to these third-party storage solutions. Using [Amazon S3 compatible shortcut](../onelake/create-s3-compatible-shortcut.md), you can bring data into Fabric using a shortcut from these solutions. As with cloud-based storage services, you can store the data on external storage with CMK encryption, and perform in-place read operations.
 - AWS S3 supports encryption at-rest using [customer-managed keys](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html). Fabric can perform in-place reads on S3 buckets using [S3 shortcut](../onelake/create-s3-shortcut.md); however, write operations using a shortcut to AWS S3 are not supported.
 - Google cloud storage supports data encryption using [customer-managed keys](https://cloud.google.com/storage/docs/encryption). Fabric can perform in-place reads on GCS; however, write operations using a shortcut to GCS are not supported.
 - Enable [audit](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview) for Microsoft Fabric to keep track of activities.
-- In Microsoft Fabric, Power BI experience supports [customer-managed key](/power-bi/enterprise/service-encryption-customer-managed-keys).
-- Disable the [shortcut caching](../onelake/onelake-shortcuts.md#caching) feature for S3, GCS, and S3-compatible shortcuts. as the cached data is persisted on OneLake.
+- In Microsoft Fabric, Power BI supports customer-managed key with [Bring your own encryption keys for Power BI](/power-bi/enterprise/service-encryption-byok).
+- Disable the [shortcut caching](../onelake/onelake-shortcuts.md#caching) feature for S3, GCS, and S3-compatible shortcuts, as the cached data is persisted on OneLake.
 
 ## Data residency
 
@@ -157,13 +157,13 @@ In this scenario, you create three workspaces, one for each of the medallion lay
 
 You then add a security group to the _Contributor_ role of those three workspaces. Because the security group includes your fellow engineers as members, they're able to create and modify Fabric items in those workspaces—however they can't share any items with anyone else. Nor can they grant access to other users.
 
-In the bronze and silver workspaces, you and your fellow engineers create Fabric items to ingest data, store the data, and process the data. Fabric items comprise a lakehouse, pipelines, and notebooks. In the gold workspace, you create two lakehouses, multiple pipelines and notebooks, and a [Direct Lake semantic model](../get-started/direct-lake-overview.md), which delivers fast query performance of data stored in one of the lakehouses.
+In the bronze and silver workspaces, you and your fellow engineers create Fabric items to ingest data, store the data, and process the data. Fabric items comprise a lakehouse, pipelines, and notebooks. In the gold workspace, you create two lakehouses, multiple pipelines and notebooks, and a [Direct Lake semantic model](../fundamentals/direct-lake-overview.md), which delivers fast query performance of data stored in one of the lakehouses.
 
 You then give careful consideration to how the data analysts and business users can access the data they're allowed to access. Specifically, they can only access data that's relevant to their role and department.
 
 The first lakehouse contains the actual data and doesn't enforce any data permissions in its [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md). The second lakehouse contains shortcuts to the first lakehouse, and it enforces granular data permissions in its SQL analytics endpoint. The semantic model connects to the first lakehouse. To enforce appropriate data permissions for the users (so they can only access data that's relevant to their role and department), you don't share the first lakehouse with the users. Instead, you share only the Direct Lake semantic model and the second lakehouse that enforces data permissions in its SQL analytics endpoint.
 
-You set up the semantic model to use a [fixed identity](../get-started/direct-lake-fixed-identity.md), and then implement row-level security (RLS) in the semantic model to enforce model rules to govern what data the users can access. You then [share](../get-started/share-items.md) only the semantic model with the data analysts and business users because they shouldn't access the other items in the workspace, such as the pipelines and notebooks. Lastly, you grant [Build permission](/power-bi/connect-data/service-datasets-build-permissions) on the semantic model so that the users can create Power BI reports. That way, the semantic model becomes a _shared_ semantic model and a source for their Power BI reports.
+You set up the semantic model to use a [fixed identity](../fundamentals/direct-lake-fixed-identity.md), and then implement row-level security (RLS) in the semantic model to enforce model rules to govern what data the users can access. You then [share](../fundamentals/share-items.md) only the semantic model with the data analysts and business users because they shouldn't access the other items in the workspace, such as the pipelines and notebooks. Lastly, you grant [Build permission](/power-bi/connect-data/service-datasets-build-permissions) on the semantic model so that the users can create Power BI reports. That way, the semantic model becomes a _shared_ semantic model and a source for their Power BI reports.
 
 Your data analysts need access to the second lakehouse in the gold workspace. They'll connect to the SQL analytics endpoint of that lakehouse to write SQL queries and perform analysis. So, you share that lakehouse with them and provide access [only to objects they need](/entra/identity-platform/secure-least-privileged-access) (such as tables, rows, and columns with masking rules) in the lakehouse SQL analytics endpoint by using the [SQL security model](../data-warehouse/security.md). Data analysts can now only access data that's relevant to their role and department and they can't access the other items in the workspace, such as the pipelines and notebooks.
 

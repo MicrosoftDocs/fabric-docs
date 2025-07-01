@@ -1,12 +1,12 @@
 ---
 title: Row-level security (RLS) with Power BI
 description: How to configure row-level security for imported semantic models, and DirectQuery, within the Power BI service.
-author: emlisa
-ms.author: emlisa
+author: billmath
+ms.author: billmath
 ms.reviewer: ''
 
 ms.topic: how-to
-ms.date: 07/08/2024
+ms.date: 03/08/2025
 ms.custom: ''
 LocalizationGroup: Administration
 ms.collection: ce-skilling-ai-copilot
@@ -39,7 +39,10 @@ To manage security on your semantic model, open the workspace where you saved yo
 
     :::image type="content" source="media/service-admin-row-level-security/dataset-more-options-menu.png" alt-text="Screenshot showing the More options menu with Security selected.":::
 
-Security takes you to the Role-Level Security page where you add members to a role you created. Contributor (and higher workspace roles) will see **Security** and can assign users to a role.
+Security takes you to the Role-Level Security page where you add members to a role you created. Contributor (and higher workspace roles) will see **Security** and can assign users to a role. 
+
+> [!NOTE]
+> You can only manage security on models that have row-level security roles already defined in Power BI Desktop or when editing your data model in the Power BI service. If your model doesn't have roles already defined, you can't manage security in the Power BI service.
 
 ## Working with members
 

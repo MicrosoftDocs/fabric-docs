@@ -1,15 +1,18 @@
 ---
 title: Onboard to multitasking
-author: zainadr
-ms.author: zainadrawshy
+description: Learn how to format multitasking tabs in the left nav, one item opens by default with auto-handled lifecycle events.
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: how-to
 ms.date: 11/06/2024
 ---
-# **Onboard to multitasking**
+
+# Onboard to multitasking
+
 Multitasking allows a user to open multiple items at the same time, when opening an item, a tab will be pinned to the left navigation bar. By  default, we support opening one item at the same time and a set of lifecycle events which is triggered when the artifact tab is being initialized, deactivated, and destroyed with no work required by any workload.
 
-
 ## Frontend
+
 ### Change default properties for multitasking
 
 Define the editorTab section inside the item manifest for editing tabs properties:
@@ -18,6 +21,7 @@ Define the editorTab section inside the item manifest for editing tabs propertie
 
     }
 ```
+
 ### Enable opening more than one item at the same time
 
 Define the maxInstanceCount property and assign to number of items you want to be opened at the same time (up to 10 items):
@@ -26,6 +30,7 @@ Define the maxInstanceCount property and assign to number of items you want to b
       "maxInstanceCount": "10"
     }
 ```
+
 ### Customize actions and handlers
 
 The workload developer decides to implement the tab actions and handlers or part of it, they need to set property in the item Frontend manifest in editorTab section, to listen to these actions in its own code, handle them accordingly, and return the results. If not set any of the actions or part of it, the default actions will be handled automatically.
@@ -41,6 +46,7 @@ Define tab actions properties in the editorTab. You can choose to define a part 
       "onDelete": "item.tab.onDelete"
     }
 ```
+
 When the workload developer registers the action, Fabric expects the workload action to return the data in a certain format so that Fabric can read or display that information:
 
 ```typescript

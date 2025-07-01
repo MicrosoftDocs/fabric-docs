@@ -6,10 +6,9 @@ ms.author: saravi
 author: santhoshravindran7
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 10/20/2023
+ms.date: 06/05/2025
 ---
+
 # How to create custom Spark pools in Microsoft Fabric
 
 In this document, we explain how to create custom Apache Spark pools in Microsoft Fabric for your analytics workloads. Apache Spark pools enable users to create tailored compute environments based on their specific requirements, ensuring optimal performance and resource utilization.
@@ -25,9 +24,7 @@ To create or manage the Spark pool associated with your workspace:
 
 1. Go to your workspace and select **Workspace settings**.
 
-   :::image type="content" source="media\workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu.":::
-
-1. Select the **Data Engineering/Science** option to expand the menu and then select **Spark Compute**.
+1. Select the **Data Engineering/Science** option to expand the menu, then select **Spark settings**.
 
    :::image type="content" source="media/workspace-admin-settings/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view." lightbox="media/workspace-admin-settings/spark-compute-detail-view.png" :::
 
@@ -44,6 +41,17 @@ To create or manage the Spark pool associated with your workspace:
 1. You can also choose to enable dynamic executor allocation for your Spark pool, which automatically determines the optimal number of executors within the user-specified maximum bound. This feature adjusts the number of executors based on data volume, resulting in improved performance and resource utilization.
 
 These custom pools have a default autopause duration of 2 minutes. Once the autopause duration is reached, the session expires and the clusters are unallocated. You're charged based on the number of nodes and the duration for which the custom Spark pools are used.
+
+## Node size options
+
+When configuring a custom Spark pool, you can choose from the following different node sizes:
+
+| Node size | Compute Units (CU) | Memory (GB) | Description |
+|--|--|--|--|
+| Small | 4 | 32 | Lightweight development and testing jobs. |
+| Medium | 8 | 64 | Most general workloads and typical operations. |
+| Large | 16 | 128 | Memory-intensive tasks or larger data processing jobs. |
+| X-Large | 32 | 256 | The most demanding Spark workloads requiring significant resources. |
 
 ## Related content
 

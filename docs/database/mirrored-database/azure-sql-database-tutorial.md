@@ -3,11 +3,10 @@ title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL D
 description: Learn how to configure a mirrored database from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: roblescarlos, im-microsoft
-ms.date: 11/08/2024
+ms.reviewer: imotiwala
+ms.date: 06/19/2025
 ms.topic: tutorial
 ms.custom:
-  - ignite-2024
 ---
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database
@@ -20,15 +19,15 @@ ms.custom:
     - The source Azure SQL Database can be either a single database or a database in an elastic pool.
     - If you don't have an Azure SQL Database, [create a new single database](/azure/azure-sql/database/single-database-create-quickstart?view=azuresql-db&preserve-view=true&tabs=azure-portal). Use the [Azure SQL Database free offer](/azure/azure-sql/database/free-offer?view=azuresql-db&preserve-view=true) if you haven't already.
     - Review the [tier and purchasing model requirements for Azure SQL Database](azure-sql-database.md#tier-and-purchasing-model-support).
-    - During the current preview, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups).
-- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
+    - As a tutorial, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups).
+- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
     - If you want to mirror a database from an existing backup, see [Restore a database from a backup in Azure SQL Database](/azure/azure-sql/database/recovery-using-backups).
-<!-- - [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md). You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md). -->
+    <!-- - [Enable Mirroring in your Microsoft Fabric tenant](enable-mirroring.md). You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md). -->
 - The Fabric capacity needs to be active and running. A paused or deleted capacity will affect Mirroring and no data will be replicated.
-- Enable the Fabric tenant setting [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis). To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
-- Networking requirements for Fabric to access your Azure SQL Database:
-    - Currently, Mirroring doesn't support Azure SQL Database logical servers behind an Azure Virtual Network or private networking. If you have your Azure SQL logical server behind a private network, you can't enable Azure SQL Database mirroring.
-    - You need to update your Azure SQL logical server firewall rules to [Allow public network access](/azure/azure-sql/database/connectivity-settings#change-public-network-access), and enable the [Allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) option to connect to your Azure SQL Database logical server.
+- Ensure the following Fabric tenant settings are enabled. To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
+    - [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
+    - [Users can access data stored in OneLake with apps external to Fabric](../../admin/tenant-settings-index.md#onelake-settings)
+- Check your networking requirements for Fabric to access your Azure SQL Database: If your Azure SQL Database is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [install an on-premises data gateway](/data-integration/gateway/service-gateway-install) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure SQL server via [a private endpoint](/azure/azure-sql/database/private-endpoint-overview?view=azuresql-db&preserve-view=true) or is allowed by the firewall rule.
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL logical server
 
@@ -46,35 +45,39 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 #### Use a login and mapped database user
 
-1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true). Connect to the `master` database.
-1. Create a server login and assign the appropriate permissions.
+> [!NOTE]
+> Microsoft Entra server principals (logins) are currently in preview for Azure SQL Database. Before using Microsoft Entra ID authentication, review the limitations in [Microsoft Entra server principals](/azure/azure-sql/database/authentication-azure-ad-logins?view=azuresql-db&preserve-view=true#limitations-and-remarks). Database users created using Microsoft Entra logins may experience delays when being granted roles and permissions. If you encounter issue, refer to the document to mitigate.
+
+1. Connect to your Azure SQL logical server using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
     - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
 
     ```sql
-    CREATE LOGIN fabric_login WITH PASSWORD = '<strong password>';
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER fabric_login;
+    CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
+    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [fabric_login];
     ```
 
-    - Or, create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+    - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
 
     ```sql
     CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
     ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
     ```
 
-1. Connect to the Azure SQL Database your plan to mirror to Microsoft Fabric, using the [Azure portal query editor](/azure/azure-sql/database/query-editor), [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
-1. Create a database user connected to the login:
+1. Connect to the user database that will be mirrored. Create a database user connected to the login and grant the minimum privileges necessary:
+
+    For a SQL Authenticated login:
 
     ```sql
-    CREATE USER fabric_user FOR LOGIN fabric_login;
-    GRANT CONTROL TO fabric_user;
+    CREATE USER [fabric_user] FOR LOGIN [fabric_login];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO [fabric_user];
     ```
     
-    Or,
+    Or, for a Microsoft Entra authenticated login:
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT CONTROL TO [bob@contoso.com];
+    GRANT SELECT, ALTER ANY EXTERNAL MIRROR, VIEW PERFORMANCE DEFINITION TO [bob@contoso.com];
     ```
 
 ## Create a mirrored Azure SQL Database
@@ -94,10 +97,12 @@ To enable Mirroring, you will need to connect to the Azure SQL logical server fr
    - **Database**: Enter the name of your Azure SQL Database.
    - **Connection**: Create new connection.
    - **Connection name**: An automatic name is provided. You can change it.
+   - **Data gateway:** Select the default (None) or the name of virtual network data gateway / on-prem data gateway you set up according to your scenario.
    - **Authentication kind**:
        - Basic (SQL Authentication)
        - Organization account (Microsoft Entra ID)  
-       - Tenant ID (Azure Service Principal)  
+       - Tenant ID (Azure Service Principal)
+          - You need service principal credentials, but not the service principal key. 
 1. Select **Connect**.
 
 ## Start mirroring process
@@ -126,9 +131,6 @@ To enable Mirroring, you will need to connect to the Azure SQL logical server fr
 Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication.
 
 For more information and details on the replication states, see [Monitor Fabric mirrored database replication](monitor.md).
-
-> [!IMPORTANT]
-> If there are no updates in the source tables, the replicator engine will start to back off with an exponentially increasing duration, up to an hour. The replicator engine will automatically resume regular polling after updated data is detected.
 
 ## Related content
 

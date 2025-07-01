@@ -5,15 +5,12 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/18/2024
-ms.search.form: Fabric Activator Eventstreams Onramp
+ms.search.form: Data Activator Eventstream Onramp
 ---
 
 # Set alerts on streams in Real-Time hub
 This article describes how to set alerts on streams in Real-Time hub.
-
-
 
 ## Launch Set alert page
 

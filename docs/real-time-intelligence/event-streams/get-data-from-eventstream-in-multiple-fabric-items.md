@@ -6,9 +6,6 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-  - ignite-2024
 ms.date: 11/15/2023
 ms.search.form: Eventstreams with Other Fabric Items
 ---
@@ -36,7 +33,7 @@ There are two options available:
 
 ### Get data from an existing eventstream
 
-1. Select **Existing Eventstream** in the drop-down list, a wizard pops up:
+1. Select **Existing Eventstream** in the dropdown list, a wizard pops up:
 
    :::image type="content" source="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-wizard.png" alt-text="Screenshot showing the get data wizard first step." lightbox="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-wizard.png" :::
 
@@ -44,7 +41,7 @@ There are two options available:
 
 ### Get data from a new eventstream
 
-1. Select **New Eventstream** in the drop-down list, a dialog pops up asking for a new eventstream name:
+1. Select **New Eventstream** in the dropdown list, a dialog pops up asking for a new eventstream name:
 
    :::image type="content" source="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-options.png" alt-text="Screenshot showing the options for getting data from eventstream." lightbox="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-options.png" :::
 

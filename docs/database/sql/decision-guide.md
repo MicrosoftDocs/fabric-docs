@@ -6,8 +6,8 @@ ms.author: wiassaf
 ms.reviewer:
 ms.topic: product-comparison
 ms.custom:
-  - ignite-2024
-ms.date: 11/06/2024
+ms.search.form: SQL database Overview, Databases decision guide for SQL
+ms.date: 02/13/2025
 ---
 # Microsoft Fabric decision guide: choose a SQL database
 
@@ -21,7 +21,7 @@ For a detailed comparison of features and capabilities, see [Features comparison
 
 > [!IMPORTANT]
 > SQL databases in Fabric are currently in PREVIEW. Features and capabilities are likely to expand.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that can be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 |&nbsp;| **[Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview)** | **[SQL database in Fabric (preview)](overview.md)**|
 |:---|:---:|:---:|
@@ -30,14 +30,14 @@ For a detailed comparison of features and capabilities, see [Features comparison
 | Hardware configurations | Gen5, Fsv2, DC | Latest |
 | Copilot skills | [Yes](/azure/azure-sql/copilot/copilot-azure-sql-overview) | [Yes](copilot.md) |
 | Elastic pools | [Yes](/azure/azure-sql/database/elastic-pool-overview) | No |
-| Create options | Azure portal, PowerShell, Az CLI, Azure Resource Manager, Bicep, Terraform, T-SQL, REST API | Fabric portal, REST API, Terraform |
+| Create options | Azure portal, PowerShell, Az CLI, Azure Resource Manager, Bicep, Terraform, T-SQL, REST API | Fabric portal, REST API |
 | Secure | Azure RBAC, SQL permissions | [Fabric workspace roles and sharing permissions](share-sql-manage-permission.md), SQL permissions |
 | Authentication | Microsoft Entra ID authentication, SQL authentication | Microsoft Entra ID authentication |
 | Database mirroring to Fabric OneLake | [Yes, manually enabled](../mirrored-database/azure-sql-database.md) | [Yes, automatically enabled for all eligible tables](../mirrored-database/overview.md) |
 | Cross-platform queries in Fabric | Yes, via mirroring to Fabric | Yes, via Fabric OneLake automatically |
 | Source of Fabric shortcuts | Yes, via mirroring to Fabric | Yes, via Fabric OneLake automatically |
 | Source for Power BI DirectLake mode | Yes, via mirroring to Fabric | Yes, via Fabric OneLake automatically |
-| Free offer | [Yes, free 100,000 vCore s/month](/azure/azure-sql/database/free-offer) | [Yes, with Microsoft Fabric trial capacity](../../get-started/fabric-trial.md) |
+| Free offer | [Yes, free 100,000 vCore s/month](/azure/azure-sql/database/free-offer) | [Yes, with Microsoft Fabric trial capacity](../../fundamentals/fabric-trial.md) |
 | Monitoring | Azure Monitor, [database watcher](/azure/azure-sql/database-watcher-overview) | [Performance Dashboard](performance-dashboard.md), Capacity metrics app |
 
 ## Scenarios
@@ -56,10 +56,13 @@ SQL database in Fabric is simple to purchase as well - the features of SQL datab
 
 ### Scenario 2
 
-Arin is an Azure architect experienced working with .NET application developers at an independent software vendor (ISV). They're developing a multitenant architecture where each customer requires their own isolated database. Customers are worldwide and have peak usage hours at different times.
+Arin is an Azure architect experienced working with .NET application developers at an independent software vendor (ISV). They're developing a new transactional database with large scale in mind: 10+ TB of data is expected, and the workload requires high memory/vCore ratios.
 
-Arin chooses to deploy many databases at scale inside Azure SQL Database elastic pools. Elastic pools offer a consistent billing and resource pool perfect for housing databases of different sizes, different workload profiles. By controlling database pool membership and monitoring peak utilization patterns, Arin can save money with consistent resources and billing from elastic pools.
+Arin chooses [Azure SQL Database Hyperscale](/azure/azure-sql/database/service-tier-hyperscale?view=azuresql-db&preserve-view=true) with premium series memory-optimized provisioned hardware. Hyperscale provides the highest possible Azure SQL Database storage capacity, up to 128 TB of storage. [Hyperscale is built on a distinct cloud-native architecture](/azure/azure-sql/database/hyperscale-architecture?view=azuresql-db&preserve-view=true) that provides independently scalable compute and storage. The premium-series memory optimized hardware provides 10.2 GB of provisioned memory per vCore for up to 128 vCores, higher than other available Azure SQL Database hardware. 
 
 ## Related content
 
-- [Create a SQL database in the Fabric portal](create.md)
+- [Features comparison: Azure SQL Database and SQL database in Fabric (preview)](feature-comparison-sql-database-fabric.md)
+- [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+- [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)

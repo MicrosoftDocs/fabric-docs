@@ -1,19 +1,18 @@
 ---
 title: Pricing for Dataflow Gen2
 description: This article provides details of the pricing model of Dataflow Gen2 for Data Factory in Microsoft Fabric.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
-ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 12/18/2024
+ms.custom: 
+    - dataflows
 ---
 
 # Dataflow Gen2 pricing for Data Factory in Microsoft Fabric
 
-Dataflow Gen2 enables you to leverage a low-code interface with 300+ data and AI-based transformations, letting you transform data easier and with more flexibility than any other tool. Dataflow Gen2 is authored using the familiar Power Query experience that’s available today across several Microsoft products and services such as Excel, Power BI, Power Platform, Dynamics 365 Insights applications, and more. Once you publish a dataflow, the dataflow definition is generated - this is the program that runs once the dataflow is refreshed to produce tables in staging storage and/or output destination. During refresh, the definition of a dataflow is used by the dataflow engine to generate an orchestration plan, manage resources, and orchestrate execution of queries across data sources, gateways, and compute engines, and to create tables in either the staging storage or data destination.
+Dataflow Gen2 lets you use a low-code interface with 300+ data and AI-based transformations, letting you transform data easier and with more flexibility than any other tool. Dataflow Gen2 is authored using the familiar Power Query experience that’s available today across several Microsoft products and services such as Excel, Power BI, Power Platform, Dynamics 365 Insights applications, and more. Once you publish a dataflow, the dataflow definition is generated - this is the program that runs once the dataflow is refreshed to produce tables in staging storage and/or output destination. During refresh, the definition of a dataflow is used by the dataflow engine to generate an orchestration plan, manage resources, and orchestrate execution of queries across data sources, gateways, and compute engines, and to create tables in either the staging storage or data destination.
 
 
 :::image type="content" source="media/pricing-dataflows-gen2/dataflows-gen2-pricing-diagram.png" alt-text="Diagram of the Dataflow Gen2 architecture.":::
@@ -26,13 +25,13 @@ When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are cons
 
 ## Dataflow Gen2 pricing model
 
-The following table indicates that to determine Dataflow Gen2 execution costs, each query execution utilizes the mashup engine for standard computing, and that compute execution duration is translated to a consumption rate of 16 CUs per hour. Secondly, for high scale compute scenarios when staging is enabled, Lakehouse/Warehouse SQL engine execution duration should be accounted for as well. Compute execution duration is translated to a consumption rate of 6 CUs per hour. At the end of each Dataflow Gen2 run, the Capacity Unit (CU) consumption for each engine type is summed and is billed according to the translated price for Fabric capacity in the region where it's deployed.
+The following table indicates that to determine Dataflow Gen2 execution costs, each query execution utilizes the mashup engine for standard computing, and that compute execution duration is translated to a consumption rate of 16 CU (for every second, 16 CU seconds of capacity is consumed). Secondly, for high scale compute scenarios when staging is enabled, Lakehouse/Warehouse SQL engine execution duration should be accounted for as well. Compute execution duration is translated to a consumption rate of 6 CU. At the end of each Dataflow Gen2 run, the Capacity Unit (CU) consumption for each engine type is summed and is billed according to the translated price for Fabric capacity in the region where it's deployed.
 
 |Dataflow Gen2 Engine Type  |Consumption Meters  |Fabric CU consumption rate  |Consumption reporting granularity      |
 |---------|---------|---------|---------|
-|Standard Compute     | Based on each mashup engine query execution duration in seconds.         | 16 CUs per hour         | Per Dataflow Gen2 item        |
-|High Scale Dataflows Compute     | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds.         | 6 CUs per hour         | Per workspace        |
-|Data movement     | Based on Fast Copy run duration in hours and the used intelligent optimization throughput resources.         | 1.5 CUs per hour         | Per Dataflow Gen2 item        |
+|Standard Compute     | Based on each mashup engine query execution duration in seconds.         | 16 CU         | Per Dataflow Gen2 item        |
+|High Scale Dataflows Compute     | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds.         | 6 CU         | Per workspace        |
+|Data movement     | Based on Fast Copy run duration in hours and the used intelligent optimization throughput resources.         | 1.5 CU         | Per Dataflow Gen2 item        |
 
 ## Virtual Network Data Gateway Pricing with Dataflow Gen2 
 
@@ -48,7 +47,7 @@ Learn more at [Virtual Network Data Gateways Pricing and Billing](/data-integrat
 
 ## Changes to Microsoft Fabric workload consumption rate
 
-Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](/fabric/release-plan/data-factory) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.
+Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](https://aka.ms/fabricrm) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.
 
 ## Compute estimated costs using the Fabric Metrics App
 

@@ -3,13 +3,14 @@ title: Incremental refresh in Dataflow Gen2
 description: Learn about the incremental refresh feature in Dataflow Gen2 in Data Factory for Microsoft Fabric.
 author: luitwieler
 ms.topic: concept-article
-ms.date: 09/05/2024
+ms.date: 05/09/2025
 ms.author: jeluitwi
+ms.custom: dataflows
 ---
 
-# Incremental refresh in Dataflow Gen2 (Preview)
+# Incremental refresh in Dataflow Gen2
 
-In this article, we introduce incremental data refresh in Dataflow Gen2 for Microsoft Fabric’s Data Factory. When you use dataflows for data ingestion and transformation, there are scenarios where you specifically need to refresh only new or updated data—especially as your data continues to grow. The incremental refresh feature addresses this need by allowing you to reduce refresh times, enhance reliability by avoiding long-running operations, and minimize resource usage.
+In this article, we introduce incremental data refresh in Dataflow Gen2 for Microsoft Fabric’s Data Factory. When you use dataflows for data ingestion and transformation, there are scenarios where you specifically need to refresh only new or updated data&mdash;especially as your data continues to grow. The incremental refresh feature addresses this need by allowing you to reduce refresh times, enhance reliability by avoiding long-running operations, and minimize resource usage.
 
 ## Prerequisites
 
@@ -24,11 +25,12 @@ To use incremental refresh in Dataflow Gen2, you need to meet the following prer
 
 The following data destinations are supported for incremental refresh:
 
+- Fabric Lakehouse (preview)
 - Fabric Warehouse
 - Azure SQL Database
 - Azure Synapse Analytics
 
-Other destinations like Lakehouse can be used in combination with incremental refresh by using a second query that references the staged data to update the data destination. This way you can still use incremental refresh to reduce the amount of data that needs to be processed and retrieved from the source system. But you need to do a full refresh from the staged data to the data destination.
+Other destinations can be used in combination with incremental refresh by using a second query that references the staged data to update the data destination. This way you can still use incremental refresh to reduce the amount of data that needs to be processed and retrieved from the source system. But you need to do a full refresh from the staged data to the data destination.
 
 ## How to use incremental refresh
 
@@ -125,9 +127,13 @@ This setting is optional and specifies whether the query used for incremental re
 
 ## Limitations
 
-### Only SQL based data destinations are supported
+### Lakehouse is supported comes with additional caveats
 
-Currently, only SQL based data destinations are supported for incremental refresh. So, you can only use Fabric Warehouse, Azure SQL Database, or Azure Synapse Analytics as a data destination for incremental refresh. The reason for this limitation is that these data destinations support the SQL based operations that are required for incremental refresh. We use Delete and Insert operations to replace the data in the data destination, which can't be done in parallel on other data destinations.
+When working with lakehouse as a data destination, you need to be aware of the following limitations:
+
+- Maximum number of concurrent evaluations is 10. This means that the dataflow can only evaluate 10 buckets in parallel. If you have more than 10 buckets, you need to limit the number of buckets or limit the number of concurrent evaluations.
+:::image type="content" source="./media/dataflows-gen2-incremental-refresh/dataflow-concurrency-control.png" alt-text="Screenshot of the dataflow concurrency control settings.":::
+- When you write to a lakehouse, the dataflow maintains it owns bookkeeping of the files that are written to the lakehouse. This is in line with the standard lakehouse pattern. However, this means that if other writers like Spark or other processes write to the same table, it may cause issues with the incremental refresh. We recommend that you don't use other writers to write to the same table while using incremental refresh. If you do, you need to ensure that the other writers don't interfere with the incremental refresh process. Processes like table maintenance and vacuuming are not supported either while using incremental refresh.
 
 ### The data destination must be set to a fixed schema
 
@@ -157,7 +163,7 @@ If you get a warning that you used the same column for detecting changes and fil
 
 ### I want to use incremental refresh with a data destination that isn't supported. What can I do?
 
-If you would like to use incremental refresh with a data destination that isn't supported, you can enable incremental refresh on your query and use a second query that references the staged data to update the data destination. This way, you can still use incremental refresh to reduce the amount of data that needs to be processed and retrieved from the source system, but you need to do a full refresh from the staged data to the data destination. Ensure that you set up the window and bucket size correctly as we don't guarantee that the data in staging is retained outside the bucket range.
+If you would like to use incremental refresh with a data destination that isn't supported, you can enable incremental refresh on your query and use a second query that references the staged data to update the data destination. This way, you can still use incremental refresh to reduce the amount of data that needs to be processed and retrieved from the source system, but you need to do a full refresh from the staged data to the data destination. Ensure that you set up the window and bucket size correctly as we don't guarantee that the data in staging is retained outside the bucket range. Another option is to use the pattern to incrementally amass data. We have a guide on how to do this here: [Incremental amass data with Dataflow Gen2](./tutorial-setup-incremental-refresh-with-dataflows-gen2.md)
 
 ### How do I know if my query has incremental refresh enabled?
 
@@ -168,6 +174,10 @@ You can see if your query has incremental refresh enabled by checking the icon n
 We added a setting that allows you to set the maximum number of parallel query evaluations. This setting can be found in the global settings of the dataflow. By setting this value to a lower number, you can reduce the number of requests sent to the source system. This setting can help to reduce the number of concurrent requests and improve the performance of the source system. To set the maximum number of parallel query executions, go to the global settings of the dataflow, navigate to the **Scale** tab, and set the maximum number of parallel query evaluations. We recommend that you don't enable this limit unless you experience issues with the source system.
 
 :::image type="content" source="./media/dataflows-gen2-incremental-refresh/dataflow-concurrency-control.png" alt-text="Screenshot of the dataflow concurrency control settings.":::
+
+### I want to use incremental refresh but I see that after enablement, the dataflow takes longer to refresh. What can I do?
+
+Incremental refresh, as described in this article, is designed to reduce the amount of data that needs to be processed and retrieved from the source system. However, if the dataflow takes longer to refresh after you enable incremental refresh, it might be because the additional overhead of checking if data changed and processing the buckets is higher than the time saved by processing less data. In this case, we recommend that you review the settings for incremental refresh and adjust them to better fit your scenario. For example, you can increase the bucket size to reduce the number of buckets and the overhead of processing them. Or you can reduce the number of buckets by increasing the bucket size. If you still experience low performance after adjusting the settings, you can disable incremental refresh and use a full refresh instead as that might be more efficient in your scenario.
 
 ## Next steps
 

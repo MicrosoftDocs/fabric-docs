@@ -4,12 +4,9 @@ description: Learn about the mirrored databases from Azure Cosmos DB in Microsof
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 11/19/2024
+ms.date: 05/07/2025
 ms.topic: overview
 ms.custom:
-  - ignite-2024
-ms.collection:
-  - ce-skilling-ai-copilot
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
@@ -25,7 +22,7 @@ You can use built-in Power BI capabilities to access data in OneLake in DirectLa
 In addition to Power BI, you can use T-SQL to run complex aggregate queries or use Spark for data exploration. You can seamlessly access the data in notebooks and use data science to build machine learning models.
 
 > [!IMPORTANT]
-> Mirroring for Azure Cosmos DB is currently in [preview](../../get-started/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+> Mirroring for Azure Cosmos DB is currently in [preview](../../fundamentals/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
 
 ## Why use mirroring in Fabric?
 
@@ -97,14 +94,17 @@ To mirror a database, it should already be provisioned in Azure. You must enable
 - You can only mirror each database individually at a time. You can choose which database to mirror.
 - You can mirror the same database multiple times within the same workspace. As a best practice, a single copy of database can be reused across lakehouses, warehouses, or other mirrored databases. You shouldn't need to set up multiple mirrors to the same database.
 - You can also mirror the same database across different Fabric workspaces or tenants.
+- You can select which containers to mirror within your database.
 - Changes to Azure Cosmos DB containers, such as adding new containers and deleting existing ones, are replicated seamlessly to Fabric. You can start mirroring an empty database with no containers, for example, and mirroring seamlessly picks up the containers added at a later point in time.
 
 ### Support for nested data
 
 Nested data is shown as a JSON string in SQL analytics endpoint tables. You can use `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` in T-SQL queries or views to expand this data selectively. If you're using Power Query, you can also apply the `ToJson` function to expand this data.
 
+Through auto schema inference, nested data can be flattened through `OPENJSON` without having to explicitely define the nested schema. This is especially useful for workloads with dynamic or unpredictable nested schemas. For more information, see [how to query nested data](azure-cosmos-db-how-to-query-nested.md).
+
 > [!NOTE]
-> Fabric has a limitation for string columns of 8 KB in size. For more information, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
+> Fabric has a limitation for string columns of 8 KB in size. For more information and our current workaround, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
 
 ### Handle schema changes
 
@@ -122,13 +122,28 @@ Azure Cosmos DB supports case-insensitive column names, based on the JSON standa
 
 For example, if the Azure Cosmos DB item has `addressName` and `AddressName` as unique properties, Fabric tables have corresponding `addressName` and `AddressName_1` columns. For more information, see [replication limitations](azure-cosmos-db-limitations.md#replication-limitations).
 
+### Support for AI Workloads
+
+Azure Cosmos DB Mirroring supports accounts that use vector search and indexing, allowing AI and machine learning workloads to take full advantage of Microsoft Fabric’s powerful analytics—while continuing to leverage Azure Cosmos DB’s high-performance vector capabilities.
+
+For more details, explore the documentation on [Vector Search and Indexing for Cosmos DB](/azure/cosmos-db/nosql/vector-search) and [Fabric Data Science and AI Experiences](../../data-science/index.yml).
+
 ## Security
 
 Connections to your source database are based on account keys for your Azure Cosmos DB accounts. If you rotate or regenerate the keys, you need to update the connections to ensure replication works. For more information, see [connections](../../data-factory/connector-azure-cosmosdb-for-nosql.md).
 
 Account keys aren't directly visible to other Fabric users once the connection is set up. You can limit who has access to the connections created in Fabric. Writes aren't permitted to Azure Cosmos DB database either from the data explorer or analytics endpoint in your mirrored database.
 
-Mirroring doesn't currently support authentication using read-only account keys, single-sign on (SSO) with Microsoft Entra IDs and role-based access control, or managed identities.
+In addition to account keys, single-sign on (SSO) with Microsoft Entra IDs and role-based access control can also be used to connect to the source account.
+
+> [!NOTE]
+> For Microsoft Entra ID authentication, the following RBAC permissions are required:
+> `Microsoft.DocumentDB/databaseAccounts/readMetadata`
+> `Microsoft.DocumentDB/databaseAccounts/readAnalytics`
+> 
+> To learn more, please visit our [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
+
+Mirroring doesn't currently support authentication using read-only account keys or managed identities.
 
 Once the data is replicated into Fabric OneLake, you need to secure access to this data.
 
@@ -180,8 +195,7 @@ You can also build medallion architecture solutions, cleaning and transforming t
 
 ## Pricing
 
-Mirroring is free of cost for compute used to replicate your Cosmos DB data into Fabric OneLake. Storage in OneLake is free of cost based on certain conditions. For more information, see [OneLake pricing for mirroring.](https://azure.microsoft.com/pricing/details/microsoft-fabric/)
-The compute usage for querying data via SQL, Power BI or, Spark is still charged based on the Fabric Capacity. 
+Fabric compute used to replicate your Cosmos DB data into Fabric OneLake is free. Storage in OneLake is free of cost based the capacity size. For more information, see [OneLake pricing for mirroring](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute usage for querying data via SQL, Power BI, or Spark is still charged based on the Fabric Capacity. 
 
 If you're using the data explorer in Fabric mirroring, you accrue typical costs based on request unit (RU) usage to explore the containers and query the items in the source Azure Cosmos DB database. The Azure Cosmos DB continuous backup feature is a prerequisite to mirroring: Standard charges for continuous backup apply. There are no additional charges for mirroring on continuous backup billing. For more information, see [Azure Cosmos DB pricing](https://azure.microsoft.com/pricing/details/cosmos-db).
 

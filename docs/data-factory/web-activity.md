@@ -3,11 +3,10 @@ title: Web activity
 description: The Web activity for Data Factory pipelines in Microsoft Fabric allows you to make requests to REST APIs on the web and retrieve their results.
 author: nabhishek
 ms.author: abnarain
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.topic: how-to
-ms.custom:
-  - ignite-2023
-ms.date: 11/15/2023
+ms.custom: pipelines
+ms.date: 04/30/2025
 ---
 
 # Use the Web activity to call REST APIs in pipelines
@@ -21,7 +20,7 @@ Web Activity can be used to call a custom REST endpoint from an Azure Data Facto
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a Web activity to a pipeline with UI
@@ -56,6 +55,17 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
    > [!NOTE]
    > The Connection name can be max 80 characters long.
+   
+### Using On-premises or VNET data gateway
+1. When creating your connection, you can now choose to use either an on-premises data gateway (OPDG) or a VNET data gateway. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md)
+
+1. If you would like to use a VNET gateway, refer to [how to create a VNET data gateway](/data-integration/vnet/create-data-gateways).
+
+1. Once you have successfully created and configured your gateway, it should appear under the Data Gateway dropdown in the connection dialog
+
+	:::image type="content" source="media/web-activity/create-new-data-gateway.png" alt-text="Screenshot showing the data gateway connection dialog for the Web activity.":::
+
+1. After choosing or creating your connection and data gateway, complete the remaining required fields, add any required headers, or set any advanced settings. The Web activity supports GET, POST, PUT, DELETE, and PATCH methods.
 
 1. After choosing or creating your connection, complete the remaining required fields, add any required headers, or set any advanced settings. The Web activity supports GET, POST, PUT, DELETE, and PATCH methods.
 

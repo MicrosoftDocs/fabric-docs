@@ -5,16 +5,12 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/18/2024
 ---
 
-# Set alerts on Azure Blob Storage events in Real-Time hub 
+# Set alerts on Azure Blob Storage events in Real-Time hub
 
 This article describes how to set alerts on Azure Blob Storage events in Real-Time hub.
-
-> [!NOTE]
-> This feature is currently in preview.
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 

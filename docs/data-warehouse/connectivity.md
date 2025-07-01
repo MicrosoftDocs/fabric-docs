@@ -1,25 +1,21 @@
 ---
-title: Connectivity to data warehousing
-description: Follow steps to connect SSMS to data warehousing in your Microsoft Fabric workspace.
+title: Warehouse Connectivity
+description: Follow steps to connect SSMS to a warehouse item in your Microsoft Fabric workspace.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: salilkanade, stwynant, jacinda-eng
-ms.date: 10/10/2024
+ms.reviewer: salilkanade, dhsundar, jacinda-eng
+ms.date: 05/07/2025
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ---
 
-# Connectivity to data warehousing in Microsoft Fabric
+# Warehouse connectivity in Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In [!INCLUDE [product-name](../includes/product-name.md)], a Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is accessible through a Tabular Data Stream, or TDS endpoint, familiar to all modern web applications that interact with [a SQL Server TDS endpoint](/sql/relational-databases/security/networking/tds-8). This is referred to as the SQL Connection String within the [!INCLUDE [product-name](../includes/product-name.md)] user interface.
+In [!INCLUDE [product-name](../includes/product-name.md)], a Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is accessible through a Tabular Data Stream, or TDS endpoint, familiar to all modern web applications that interact with [a SQL Server TDS endpoint](/sql/relational-databases/security/networking/tds-8). This is referred to as the **SQL connection string** within [!INCLUDE [product-name](../includes/product-name.md)] settings.
 
-This article provides a how-to on connecting to your [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+This article provides a how-to on connecting to your [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)], or to the snapshot of a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 To get started, you must complete the following prerequisites:
 
@@ -60,7 +56,7 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
    :::image type="content" source="media/connectivity/object-explorer-connect-menu.png" alt-text="Screenshot showing where to select Database Engine on the Connect menu.":::
 
-1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication. Remember that only Microsoft Entra multifactor authentication (MFA) is supported, via the option **Microsoft Entra MFA**.
+1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication.
 
    :::image type="content" source="media/connectivity/connect-server-window.png" alt-text="Screenshot showing the Connect to server window.":::
 
@@ -78,7 +74,7 @@ A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-s
 1. Choose entities.
 1. Load Data - choose a data connectivity mode: [import or DirectQuery](/power-bi/connect-data/desktop-directquery-about).
 
-For more information, see [Create reports in [!INCLUDE [product-name](../includes/product-name.md)]](create-reports.md).
+For more information, see [Create reports on data warehousing in Microsoft Fabric](create-reports.md).
 
 ## Connect using OLE DB
 
@@ -137,9 +133,12 @@ The `dbt` data platform-specific adapter plugins allow users to connect to the d
 
 Both adapters support Microsoft Entra ID authentication and allow developers to use `az cli authentication`. However, SQL authentication is not supported for `dbt-fabric`
 
-The DBT Fabric DW Adapter uses the `pyodbc` library to establish connectivity with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The `pyodbc` library is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/). The `pyodbc` library directly passes connection string to the database driver through SQLDriverConnect in the `msodbc` connection structure to [!INCLUDE [product-name](../includes/product-name.md)] using a TDS (Tabular Data Streaming) proxy service.
+The `dbt` Fabric DW Adapter uses the `pyodbc` library to establish connectivity with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The `pyodbc` library is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/). The `pyodbc` library directly passes connection string to the database driver through SQLDriverConnect in the `msodbc` connection structure to [!INCLUDE [product-name](../includes/product-name.md)] using a TDS (Tabular Data Streaming) proxy service.
 
-For more information, see the [Microsoft Fabric Data Warehouse dbt adapter setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [Microsoft Fabric Data Warehouse dbt adapter configuration](https://docs.getdbt.com/reference/resource-configs/fabric-configs).
+For more information, see the following resources:
+- [Connect Microsoft Fabric](https://docs.getdbt.com/docs/cloud/connect-data-platform/connect-microsoft-fabric) to connect in dbt Cloud.
+- [Microsoft Fabric Data Warehouse dbt adapter setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) to connect with dbt Core.
+- [Microsoft Fabric Data Warehouse dbt adapter configuration](https://docs.getdbt.com/reference/resource-configs/fabric-configs) for additional configuration details.
 
 ## Connectivity by other means
 
@@ -164,7 +163,6 @@ We recommend adding retries in your applications/ETL jobs to build resiliency. F
 - Multiple Active Result Sets (MARS) is unsupported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
 - If you receive this error "Couldn't complete the operation because we reached a system limit", it's due to the system token size reaching its limit. This issue can be caused if the workspace has too many warehouses/SQL analytics endpoints, if the user is part of too many Microsoft Entra groups, or a combination of the two. We recommend having 40 or fewer warehouses and SQL analytics endpoint per workspace to prevent this error. If the issue persists, contact support.
 - If you receive error code 24804 with the message "Couldn't complete the operation due to a system update. Close out this connection, sign in again, and retry the operation" or error code 6005 with the message "SHUTDOWN is in progress. Execution fail against sql server. Please contact SQL Server team if you need further support.", it's due to temporary connection loss, likely because of a system deployment or reconfiguration. To resolve this issue, sign in again and retry. To learn how to build resiliency and retries in your application, see [Best Practices](#best-practices).
-- If you receive the error code 18456: "Execution failed against SQL server, please contact SQL server team if you need further support.", refer to [Known issue - Data warehouse connection or query execution fails](../get-started/known-issues/known-issue-770-data-warehouse-connection-query-execution-fails.md).
 - Linked server connections from SQL Server are not supported.
 
 ## Related content
@@ -172,4 +170,4 @@ We recommend adding retries in your applications/ETL jobs to build resiliency. F
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)
 - [Add Fabric URLs to your allowlist](../security/fabric-allow-list-urls.md)
-- [Azure IP ranges and service tags for public clouds](https://www.microsoft.com/en-us/download/details.aspx?id=56519)
+- [Azure IP ranges and service tags for public clouds](https://www.microsoft.com/download/details.aspx?id=56519)

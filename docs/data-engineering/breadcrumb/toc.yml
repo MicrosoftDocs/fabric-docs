@@ -7,5 +7,5 @@ items:
         tocHref: /fabric/data-engineering
         topicHref: /fabric/data-engineering/index
       - name: Data Engineering
-        tocHref: /fabric/get-started
+        tocHref: /fabric/fundamentals
         topicHref: /fabric/data-engineering/index

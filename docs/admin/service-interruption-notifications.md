@@ -1,12 +1,11 @@
 ---
 title: Service interruption notifications
 description: Learn about how to receive email notifications when there's a Power BI service disruption or outage.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 
 ms.custom:
-  - ignite-2023
 ms.topic: troubleshooting
 ms.date: 03/17/2024
 ---

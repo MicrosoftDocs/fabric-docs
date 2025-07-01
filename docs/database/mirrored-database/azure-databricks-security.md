@@ -29,7 +29,7 @@ Permissions set on catalogs, schemas, and tables in your Azure Databricks worksp
 
 When selecting objects to mirror, you can only see the catalogs/schemas/tables that you have access to as per the privileges that are granted to them as per the privilege model described at [Unity Catalog privileges and securable objects](/azure/databricks/data-governance/unity-catalog/manage-privileges/privileges).
 
-For more information on setting up Fabric Workspace security, see the [Permission model](../../security/permission-model.md) and [Roles in workspaces in Microsoft Fabric](../../get-started/roles-workspaces.md).
+For more information on setting up Fabric Workspace security, see the [Permission model](../../security/permission-model.md) and [Roles in workspaces in Microsoft Fabric](../../fundamentals/roles-workspaces.md).
 
 ## Related content
 

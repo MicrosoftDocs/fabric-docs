@@ -2,13 +2,12 @@
 title: Parameters
 description: Learn about parameters for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.custom: pipelines
+ms.date: 12/18/2024
+ai-usage: ai-assisted
 ---
 
 # Parameters for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
@@ -17,11 +16,11 @@ This document describes how to use parameters in your pipelines for Data Factory
 
 ## How to use parameters, expressions and functions in pipelines for Data Factory in Fabric
 
-In this document, we focus on learning fundamental concepts with various examples to explore the ability to create parameterized data pipelines within Data Factory in Fabric. Parameterization and dynamic expressions can save a tremendous amount of time and allow for a much more flexible Extract, Transform, Load (ETL) or Extract, Load, Transform (ELT) solution, which will dramatically reduce the cost of solution maintenance and speed up the implementation of new features into existing pipelines. These gains are because parameterization minimizes the amount of hard coding and increases the number of reusable objects and processes in a solution.
+In this document, we focus on learning fundamental concepts with various examples to explore the ability to create parameterized data pipelines within Data Factory in Fabric. Parameterization and dynamic expressions can save a tremendous amount of time and allow for a much more flexible Extract, Transform, Load (ETL) or Extract, Load, Transform (ELT) solution, which dramatically reduces the cost of solution maintenance and speed up the implementation of new features into existing pipelines. These gains are because parameterization minimizes the amount of hard coding and increases the number of reusable objects and processes in a solution.
 
 ## Parameter and expression concepts
 
-You can use parameters to pass external values into pipelines. Once the parameter has been passed into the resource, it cannot be changed. By parameterizing resources, you can reuse them with different values each time. Parameters can be used individually or as a part of expressions. Parameter values in the definition can be literal or expressions that are evaluated at runtime.
+You can use parameters to pass external values into pipelines. Once the parameter is passed into the resource, it can't be changed. By parameterizing resources, you can reuse them with different values each time. Parameters can be used individually or as a part of expressions. Parameter values in the definition can be literal or expressions that are evaluated at runtime.
 
 Expressions can appear anywhere in a string value and always generate another string value. Here, password is a pipeline parameter in the expression. If a parameter value is an expression, the body of the expression is extracted by removing the at-sign (@). If a literal string is needed that starts with @, it must be escaped by using @@. The following examples show how expressions are evaluated.
 
@@ -52,7 +51,7 @@ Expressions can also appear inside strings, using a feature called *string inter
 
 ### Creating and using parameters
 
-To create parameters, select the background of the pipeline editor canvas, and then the **Parameters** tab of the properties window at the bottom.  Select the **+ New** button to add a new parameter to the pipeline, give it a name, a data type, and a default value:
+To create parameters, select the background of the pipeline editor canvas, and then the **Parameters** tab of the properties window at the bottom. Select the **+ New** button to add a new parameter to the pipeline, give it a name, a data type, and a default value:
 
 :::image type="content" source="media/parameters/add-parameter.png" alt-text="Screenshot showing the Parameters editor on the properties pages for a pipeline.":::
 
@@ -66,7 +65,7 @@ The **Add dynamic content** window is displayed, allowing you to specify any kin
 
 ### Complex expression example
 
-The below example shows a complex example that references a deep sub-field of activity output. To reference a pipeline parameter that evaluates to a sub-field, use [] syntax instead of dot(.) operator (as in case of subfield1 and subfield2)
+The following example shows a complex example that references a deep subfield of activity output. To reference a pipeline parameter that evaluates to a subfield, use [] syntax instead of dot(.) operator (as with subfield1 and subfield2)
 
 `@activity('*activityName*').output.*subfield1*.*subfield2*[pipeline().parameters.*subfield3*].*subfield4*`
 
@@ -76,7 +75,7 @@ The dynamic content editor automatically escapes characters in your content when
 
 `@{toUpper('myData')}`
 
-The dynamic content editor converts the above content to the following expression:
+The dynamic content editor converts the previous content to the following expression:
 
 `MYDATA`
 
@@ -96,7 +95,7 @@ These system variables can be referenced anywhere in the pipeline JSON.
 | @pipeline().TriggerId|ID of the trigger that invoked the pipeline |
 | @pipeline().TriggerName|Name of the trigger that invoked the pipeline |
 | @pipeline().TriggerTime|Time of the trigger run that invoked the pipeline. This is the time at which the trigger **actually** fired to invoke the pipeline run, and it may differ slightly from the trigger's scheduled time.  |
-| @pipeline().GroupId | ID of the group to which pipeline run belongs. |
+| @pipeline().GroupId | ID of the group to which pipeline run belongs. In Microsoft Fabric, a 'group' refers to a collection of related resources that can be managed together. Groups are used to organize and control access to resources, making it easier to manage permissions and monitor activities across multiple pipelines. |
 | @pipeline()?.TriggeredByPipelineName | Name of the pipeline that triggers the pipeline run. Applicable when the pipeline run is triggered by an ExecutePipeline activity. Evaluate to _Null_ when used in other circumstances. Note the question mark after @pipeline() |
 | @pipeline()?.TriggeredByPipelineRunId | Run ID of the pipeline that triggers the pipeline run. Applicable when the pipeline run is triggered by an ExecutePipeline activity. Evaluate to _Null_ when used in other circumstances. Note the question mark after @pipeline() |
 

@@ -6,8 +6,6 @@ ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 05/23/2023
 ---
 

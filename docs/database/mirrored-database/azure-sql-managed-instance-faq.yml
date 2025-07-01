@@ -35,7 +35,7 @@ sections:
       - question: |
          Does mirroring work without exposing my Azure SQL Managed Instance to the internet?
         answer:
-          In the current preview, your SQL managed instance needs to have a public endpoint, be open for inbound access from Azure cloud, and it needs to be allowed to contact Azure storage to be able to export data. Private endpoints are currently not supported.
+          Yes. If your Azure SQL Managed Instance is not publicly accessible, you can use virtual network data gateway or on-premises data gateway to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via a private endpoint. Learn more from the [Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md).
       - question: |
           How do I manage connections? 
         answer: 
@@ -117,7 +117,7 @@ sections:
       - question: |
           What are the costs associated with Mirroring?
         answer: 
-          There's no compute cost for mirroring data from the source to Fabric OneLake. The Mirroring storage cost is free up to a certain limit based on the purchased compute capacity SKU you provision. Learn more from the Mirroring section in [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute on SQL, Power BI, or Spark to consume the mirrored data will be charged based on the Capacity.
+          Fabric compute used to replicate your data into Fabric OneLake is free. The Mirroring storage cost is free up to a limit based on capacity. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring) and [Microsoft Fabric Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/). The compute for querying data using SQL, Power BI, or Spark is charged at regular rates. 
       - question: |
           How are ingress fees handled? 
         answer: 

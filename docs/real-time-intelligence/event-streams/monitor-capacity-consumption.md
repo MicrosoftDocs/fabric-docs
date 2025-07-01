@@ -14,7 +14,6 @@ This article contains information on how Microsoft Fabric event streams usage is
 
 ## Operation types
 The eventstreams usage is defined by four operation types, which are described in the following table. The table provides information about eventstreams operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
- 
 
 | Operation in Capacity Metrics App | Description | Operation unit of measure | Fabric consumption rate |
 | --------------------------------- | ----------- | ------------------------- | ----------------------- |
@@ -44,8 +43,8 @@ The [Microsoft Fabric Capacity Metric app](../../enterprise/metrics-app.md) 
 ## Important considerations
 Here are a few important points to consider:
 
-- We recommend that you use the Microsoft Fabric event streams feature with at least four capacity units (SKU: F4).
-- You're charged only when your eventstream is ingesting or processing data. Any eventstream that doesn't have data for more than 2 hours isn't charged.  
+- Microsoft Fabric Event Streams can operate with the smallest F capacity. However, additional capacity units may be required if other Fabric items are used as destinations.
+- Eventstream Flat, Data Traffic, and Processor operations are billed only when data is being ingested or processed. If no data flows in or out for more than two hours, these operations will not incur charges.
 
 ## Changes to Microsoft Fabric workload consumption rate 
 Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s Release Notes or Microsoft Fabric Blog. If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, you can use the cancellation options available for the chosen payment method. 

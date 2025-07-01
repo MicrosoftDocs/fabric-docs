@@ -1,16 +1,14 @@
 ---
 title: CI/CD workflow options in Fabric
 description: Learn about different options for building and using deployment pipelines based on customer experiences. 
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.date: 09/25/2024
 ms.custom:
-  - build-2023
-  - ignite-2023
 #customer intent: As a developer, I want to learn how to use deployment pipelines in Fabric so that I can manage my development process efficiently.
 ---
 
@@ -26,7 +24,7 @@ To access the deployment pipelines feature, you must meet the following conditio
 
 * You have a [Microsoft Fabric subscription](../enterprise/licenses.md)
 
-* You're an admin of a Fabric [workspace](../get-started/create-workspaces.md)
+* You're an admin of a Fabric [workspace](../fundamentals/create-workspaces.md)
 
 ## Development process
 

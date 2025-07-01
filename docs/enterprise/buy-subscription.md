@@ -1,20 +1,33 @@
 ---
 title: Buy a Microsoft Fabric subscription
-description: Learn how to buy a Microsoft Fabric subscription.
-author: KesemSharabi
-ms.author: kesharab
-ms.topic: conceptual
+description: Learn how to buy a Microsoft Fabric subscription so that you can start working in the Microsoft Fabric platform.
+author: JulCsc
+ms.author: juliacawthra
+ms.topic: concept-article
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 10/27/2024
+ms.date: 05/06/2025
+
+# Customer intent: As an administrator or an executive, I want to learn how to but a Microsoft Fabric subscription so that I can start working in the Microsoft Fabric platform.
 ---
 
 # Buy a Microsoft Fabric subscription
 
-This article describes the differences between the [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) capacities, and shows you how to buy an Azure SKU for your organization. The article is aimed at admins who want to buy Microsoft Fabric for their organization.
+This article describes the differences between the [Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md) capacities, and shows you how to buy an Azure SKU for your organization. The article is aimed at admins who want to buy Microsoft Fabric for their organization.
+
+With [capacity quotas](fabric-quotas.md) you can set limits to the maximum number of Fabric Capacity Units (CUs) for each of the capacities on your subscription.
 
 After you buy a capacity, you can learn how to [manage your capacity](/power-bi/enterprise/service-admin-premium-manage#manage-capacity) and [assign workspaces](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity) to it.
+
+> [!NOTE]
+> The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is a free, hands-on training designed for analysts working with Power BI and Microsoft Fabric. You can get hands-on experience on how to analyze data, build reports, using Fabric. It covers key concepts like working with lakehouses, creating reports, and analyzing data in the Fabric environment.
+
+## Prerequisites
+
+To buy a Microsoft Fabric subscription, you need one of the following licenses:
+
+* Microsoft Fabric free
+
+* Power BI
 
 ## SKU types
 
@@ -22,9 +35,9 @@ Microsoft Fabric has an array of capacities that you can buy. The capacities are
 
 Microsoft Fabric operates on two types of SKUs:
 
-* **Azure** - Billed per second with no commitment.
+* **Azure** (F capacities, which can only be purchased through the Azure portal) - Billed per second with no commitment. To save costs, you can make a [yearly reservation](/azure/cost-management-billing/reservations/fabric-capacity).
 
-* **Microsoft 365** - Billed monthly or yearly, with a monthly commitment
+* **Microsoft 365** (Power BI Premium P capacities, which are [only available to customers who have them on an active Enterprise Agreement](https://powerbi.microsoft.com/blog/important-update-coming-to-power-bi-premium-licensing/)) - Billed monthly or yearly, with a monthly commitment.
 
 ## Azure SKUs
 
@@ -80,10 +93,12 @@ To buy an Azure SKU, follow these steps:
 
 6. Select **Review + create**.
 
-## Microsoft 365 SKUs
+### Microsoft 365 SKUs
 
 Microsoft 365 SKUs, also known as P SKUs, are Power BI SKUs that also support Fabric when it's [enabled](../admin/fabric-switch.md) on top of your Power BI subscription. Power BI EM SKUs don't support Microsoft Fabric.
 
 ## Related content
 
-[Microsoft Fabric licenses](licenses.md)
+* [Microsoft Fabric licenses](licenses.md)
+
+* [Microsoft Fabric capacity quotas](fabric-quotas.md)

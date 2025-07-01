@@ -1,11 +1,11 @@
 ---
 title: "Protection policies in Microsoft Fabric"
 description: "This article describes Microsoft Purview protection policies in Microsoft Fabric."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.topic: concept-article #Don't change
-ms.date: 11/03/2024
+ms.date: 11/21/2024
 
 #customer intent: As a security admin, Fabric admin, Fabric user, or business decision maker, I want to learn about how protection policies control access to items in Fabric. 
 
@@ -16,12 +16,6 @@ ms.date: 11/03/2024
 Microsoft Purview protection access control policies (protection policies) enable organizations to control access to items in Fabric using sensitivity labels.
 
 The target audience for this article is security and compliance admins, Fabric admins and users, and anyone else who wants to learn about how protection policies control access to items in Fabric. If you want to see how to create a protection policy for Fabric, see [Create and manage protection policies for Fabric (preview)](./protection-policies-create.md).
-
-<a name="service-principal-note"></a>
-> [!NOTE]
-> Adding service principals to protection policies is not currently supported via the Microsoft Purview Portal. To enable service principals to access items protected by a protection policy, you can add them to the policy via a PowerShell cmdlet. Open a support ticket to get access to the cmdlet.
->
-> Note that if you don't add service principals to the allowed list of users, service principals that currently have access to data will be denied access, potentially causing your application to break. For example, service principals might be used for application authentication to access semantic models.
 
 ## How do protection policies for Fabric work?
 
@@ -62,12 +56,6 @@ Protection policies for Fabric are generally configured by an organization's Pur
 Protection policies are supported for all native Fabric items types, and for Power BI semantic models. All other Power BI item types aren't currently supported.
 
 ## Considerations and limitations
-
-* Adding service principals to protection policies is not currently supported via the Microsoft Purview Portal. To enable service principals to access items protected by a protection policy, you can add them to the policy via a PowerShell cmdlet. Open a support ticket to get access to the cmdlet.
-
-   Note that if you don't add service principals to the allowed list of users, service principals that currently have access to data will be denied access, potentially causing your application to break. For example, service principals might be used for application authentication to access semantic models. 
-
-* With protection policies for Fabric, there can only be one label per protection policy, and only one protection policy per label. Labels used in protection policies can, however, also be associated with regular sensitivity label policies.
 
 * Up to 50 protection policies can be created.
 

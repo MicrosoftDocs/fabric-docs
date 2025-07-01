@@ -5,7 +5,7 @@ author: qixwang
 ms.author: qixwang
 ms.reviewer: sngun
 ms.topic: how-to
-ms.date: 09/09/2024
+ms.date: 06/03/2025
 ms.custom: FY25Q1-Linter
 # Customer Intent: As a data engineer, I want to run T-SQL code Fabric notebooks, manage queries, and perform cross datawarehouse queries.
 ---
@@ -15,8 +15,6 @@ ms.custom: FY25Q1-Linter
 The T-SQL notebook feature in Microsoft Fabric lets you write and run T-SQL code within a notebook. You can use T-SQL notebooks to manage complex queries and write better markdown documentation. It also allows direct execution of T-SQL on connected warehouse or SQL analytics endpoint. By adding a Data Warehouse or SQL analytics endpoint to a notebook, T-SQL developers can run queries directly on the connected endpoint. BI analysts can also perform cross-database queries to gather insights from multiple warehouses and SQL analytics endpoints.
 
 Most of the existing notebook functionalities are available for T-SQL notebooks. These include charting query results, coauthoring notebooks, scheduling regular executions, and triggering execution within Data Integration pipelines.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this article, you learn how to:
 
@@ -30,15 +28,15 @@ In this article, you learn how to:
 
 ## Create a T-SQL notebook
 
-To get started with this experience, you can create a T-SQL notebook in the following two ways:
+To get started with this experience, you can create a T-SQL notebook in the following ways:
 
-1. Create a T-SQL notebook from the Data Warehouse homepage: Navigate to the data warehouse experience, and choose **Notebook**.
+1. Create a T-SQL notebook from the Fabric workspace: select **New item**, then choose **Notebook** from the panel that opens.
 
-   :::image type="content" source="media\tsql-notebook\create-tsql-notebook-homepage.png" alt-text="Screenshot of creating t-sql notebook entry in DW homepage.":::
+   :::image type="content" source="media\tsql-notebook\create-tsql-notebook-homepage.png" alt-text="Screenshot of creating a new notebook from within a workspace.":::
 
-2. Create a T-SQL notebook from an existing warehouse editor:  Navigate to an existing warehouse, from the top navigation ribbon, select **New SQL query** and then **New T-SQL query notebook**
+2. Create a T-SQL notebook from an existing warehouse editor: navigate to an existing warehouse and, from the top navigation ribbon, select **New SQL query**, then **New T-SQL query notebook**.
 
-  :::image type="content" source="media\tsql-notebook\create-tsql-notebook-from-editor.png" alt-text="Screenshot of open notebook from DW SQL editor.":::
+   :::image type="content" source="media\tsql-notebook\create-tsql-notebook-from-editor.png" alt-text="Screenshot of open notebook from DW SQL editor.":::
 
 Once the notebook is created, T-SQL is set as the default language. You can add data warehouse or SQL analytics endpoints from the current workspace into your notebook.
 
@@ -46,7 +44,7 @@ Once the notebook is created, T-SQL is set as the default language. You can add 
 
 To add a Data Warehouse or SQL analytics endpoint into a notebook, from the notebook editor, select **+ Data sources** button and select **Warehouses**. From the **data-hub** panel, select the data warehouse or SQL analytics endpoint you want to connect to.
 
-:::image type="content" source="media\tsql-notebook\add-warehouse.png" alt-text="Screenshot of adding data warehouse or sql-endpoint into the notebook.":::
+:::image type="content" source="media\tsql-notebook\add-warehouse.png" alt-text="Screenshot of adding data warehouse or sql-endpoint into the notebook." lightbox="media\tsql-notebook\add-warehouse.png":::
 
 ### Set a primary warehouse
 
@@ -127,19 +125,43 @@ This dialog appears when you run all the code cells by clicking the **Run all** 
 
 :::image type="content" source="media\tsql-notebook\skip-non-tsql-code.png" alt-text="Screenshot showing how to skip non-TSQL code.":::
 
-## Public preview limitations
+### Monitoring T-SQL notebook execution
+
+You can monitor the execution of T-SQL notebooks in the **T-SQL** tab of the Recent Run view. You can find the Recent Run view by selecting the **Run** menu inside the notebook.
+
+:::image type="content" source="media\tsql-notebook\recent-run-view.png" alt-text="Screenshot showing the recent run view.":::
+
+In the T-SQL history run view, you can see a list of running, succeeded, canceled, and failed queries up to the past 30 days.
+
+- Use the dropdown list to filter for status or submit time.
+- Use the search bar to filter for specific keywords in the query text or other columns.
+
+For each query, the following details are provided:
+
+| Column name   |  Description |
+|---|---|
+|**Distributed statement Id**|Unique ID for each query|
+|**Query text**|Text of the executed query (up to 8,000 characters)|
+|**Submit time (UTC)**|Timestamp when the request arrived|
+|**Duration**|Time it took for the query to execute|
+|**Status**|Query status (Running, Succeeded, Failed, or Canceled)|
+|**Submitter**|Name of the user or system that sent the query|
+|**Session Id**|ID linking the query to a specific user session|
+|**Default warehouse**|Name of the warehouse which accept the submitted query|
+
+Historical queries can take up to 15 minutes to appear in list depending on the concurrent workload being executed.
+
+## Current limitations
 
 - Parameter cell isn't yet supported in T-SQL notebook. The parameter passed from pipeline or scheduler won't be able to be used in T-SQL notebook.
-- The **Recent Run** feature isn't yet supported in T-SQL notebook. You need to use the current data warehouse monitoring feature to check the execution history of the T-SQL notebook. See [Monitor Data Warehouse](../data-warehouse/monitoring-overview.md) article for more details.
 - The monitor URL inside the pipeline execution isn't yet supported in the T-SQL notebook.
 - The snapshot feature isn't yet supported in the T-SQL notebook.
-- Git and Deployment pipline support isn't yet supported in the T-SQL notebook.
 
 
 ## Related content
 
 For more information about Fabric notebooks, see the following articles.
 
-- [What is data warehousing in Microsoft Fabric](../data-warehouse/data-warehousing.md)
+- [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
 - Questions? Try asking the [Fabric Community](https://community.fabric.microsoft.com/).
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).
