@@ -11,7 +11,7 @@ ms.date: 05/11/2025
 
 # Azure DevOps - Git Integration with service principal (preview)
 
-This article provides a step-by-step guide on how to set up a service principal for integrating Microsoft Fabric with Azure DevOps. This integration allows you to automate CI/CD workflows, enabling you to manage your code and deployments more efficiently.
+This article provides a step-by-step guide on how to set up a service principal for integrating Microsoft Fabric with Azure DevOps. This will allow the Fabric user to perform git operation using a service principal. To automate Git Integration by using APIs with a service principal see [Automate Git integration by using APIs](git-automation.md)
 
 ## Prerequisites
 
@@ -88,25 +88,9 @@ To create the source control connection, use the following steps.
 
  :::image type="content" source="media/git-integration-with-service-principal/new-connection-2.png" alt-text="Screenshot of a new connection using the preferred method." lightbox="media/git-integration-with-service-principal/new-connection-2.png":::
 
+9. After adding the connection, you need to click on **connect** and complete the git connection details. For more information see [Connect to a workspace](git-get-started.md#connect-to-a-workspace)
 
-
-## Step 4: Allow calling Git REST APIs with service principal (optional)
-
-### Share the Azure DevOps connection with service principal user
-
-1. From Fabric settings, navigate to **Manage Connections and Gateways**
-1. Select the connection you created in [Step 3](#step-3-create-azure-devops-source-control-connection), choose Manage Users 
-1. Search for the service principal you create and select **Share**.
-
-### Assign permissions to the service principal
-
-1. Navigate to the relevant workspace.
-1. Select **Manage Access -> Add People or Groups**
-1. Search for the service principal and assign it a *contributor* role or higher. For more information on permissions, see the [Git integration permission table](./git-integration-process.md#required-fabric-permissions-for-popular-actions).
-
-Now, you can [call Git REST APIs](./git-automation.md) with Service principal authentication.
-
-### Edit service principal connection details
+## Edit service principal connection details
 When you need to update your service principal details, for example, update service principal key, use the following instructions:
 
 1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Select **+New** in the top left corner to add a new cloud connection.
