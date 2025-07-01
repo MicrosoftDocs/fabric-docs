@@ -10,7 +10,7 @@ ms.date: 05/29/2025
 # customer intent: I want to understand the integration of Eventhouse and KQL database with Microsoft Fabric's deployment pipelines and git, and how to configure and manage them in the ALM system.
 ---
 
-# Real-time Dashboard - Git integration
+# Real-time dashboard - Git integration
 This article details the folder and file structure for Real-Time dashboard items once they're synced to a GitHub or Azure Devops repository.
 
 ## Folder structure
@@ -35,7 +35,7 @@ Here's an example of the folder structure:
     * RealTimeDashboard-2.json
 
 
-### Real-Time Dashboard files
+### Real-Time dashboard files
 
 The following files are contained in a dashboard folder:
 
@@ -58,7 +58,7 @@ The following files are contained in a dashboard folder:
     }
     ```
 
-- ### Real-Time Dashboard files
+### Real-Time dashboard files
 
     The file uses the following schema to define a real-time dashboard:
     

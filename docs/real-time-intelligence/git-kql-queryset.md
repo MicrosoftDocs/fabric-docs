@@ -10,7 +10,7 @@ ms.date: 05/29/2025
 # customer intent: I want to understand the integration of Eventhouse and KQL database with Microsoft Fabric's deployment pipelines and git, and how to configure and manage them in the ALM system.
 ---
 
-# KQL Queryset integration
+# KQL queryset integration
 The following article details the folder and file structure for KQL queryset once they're synced to a GitHub or Azure Devops repository.
 
 ## Folder structure
@@ -33,7 +33,7 @@ Here's an example of the folder structure:
     * .platform
     * RealTimeQueryset.json
 
-### KQL Queryset files
+### KQL queryset files
 
 The following files are contained in a KQL queryset folder:
 

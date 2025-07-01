@@ -11,11 +11,11 @@ ms.search.form: Eventstream
 # customer intent: I want to understand the integration of Eventstream with Microsoft Fabric's deployment pipelines and git, and how to configure and manage them in the ALM system.
 ---
 
-# Eventstream - GitHub Integration
+# Eventstream - GitHub integration
 
 The following article details the file structure for Eventstream once they're synced to a GitHub or Azure Devops Repository.
 
-## Folder Structure
+## Folder structure
 Once a workspace is synced to a repo, you see a top level folder for the workspace and a subfolder for each item that was synced. Each subfolder is formatted with **Item Name**.**Item Type**
 
 Within the folder for the eventstream, you see have the following files:

@@ -14,7 +14,7 @@ ms.search.form: Eventhouse, KQL database, Overview
 # Eventhouse and KQL database - Git integration
 The following article details the file structure for Eventhouse and KQL Database once they're synced to a GitHub or Azure Devops Repository.
 
-## Folder Structure
+## Folder structure
 Once a workspace is synced to a repo, you see a top level folder for the workspace and a subfolder for each item that was synced. Each subfolder is formatted with **Item Name**.**Item Type**
 
 Within the folder for both Eventhouse and KQL Database, you see the following files:

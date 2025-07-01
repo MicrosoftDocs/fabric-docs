@@ -26,7 +26,7 @@ Real-Time Intelligence supports git integration for Eventstreams, Eventhouses, K
 
 For details on setting up Git integration, see [Get started with Git integration](../cicd/git-integration/git-get-started.md).
 
-### Supported Items Details
+### Supported items 
 
 - [Eventstream](git-eventstream.md)
 - [Eventhouse and KQL database](git-eventhouse-kql-database.md)
