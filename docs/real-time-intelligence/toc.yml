@@ -22,8 +22,6 @@ items:
         href: git-kql-queryset.md
       - name: Real-Time Dashboard 
         href: git-real-time-dashboard.md
-      - name: Activator
-        href: git-activator.md
     displayName: alm, application lifecycle management, cicd, devops
   - name: Implement medallion architecture
     href: architecture-medallion.md
