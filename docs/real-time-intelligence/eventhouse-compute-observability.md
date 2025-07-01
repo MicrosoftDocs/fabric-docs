@@ -19,7 +19,7 @@ Several factors determine the right size for your eventhouse compute. By unders
 
 ### Cache utilization
 
-The amount of data kept in the hot cache is a main factor affecting the size of your eventhouse compute. Each compute size provides a certain amount of hot cache capacity. As you approach this limit, both compute and cache space increase accordingly. Therefore, it's critical to manage your hot cache [utilization effectively](/kusto/management/cache-policy?view=microsoft-fabric).
+The amount of data kept in the hot cache is a main factor affecting the size of your eventhouse compute. Each compute size provides a certain amount of hot cache capacity. As you approach this limit, both compute and cache space increase accordingly. Therefore, it's critical to manage your hot cache [utilization effectively](/kusto/management/cache-policy).
 
 #### Understand capacity level of the current cache 
 
