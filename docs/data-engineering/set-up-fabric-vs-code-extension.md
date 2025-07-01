@@ -85,13 +85,12 @@ You can enable Microsoft Fabric for your tenant  such that everyone in the tenan
 
 ## Create any Fabric item in VS Code
 
-With the Microsoft Fabric Extension, you can now create, delete, and rename any Fabric item directly within VS Code, streamlining your workflow without ever leaving VS Code. Once created, you can also the same items in [Fabric portal](https://app.fabric.microsoft.com).
+With the Microsoft Fabric Extension, you can now create, delete, and rename any Fabric item directly within VS Code, streamlining your workflow without ever leaving VS Code. You can also the newly created items in [Fabric portal](https://app.fabric.microsoft.com).
 
 1. Select Create item.
-     :::image type="content" source="media\vscode\create-item.png" alt-text="Screenshot of the selecting switch tenant to change the default tenant.":::
-3. Select the item type nd provide a name to create the item in Fabric. 
+   :::image type="content" source="media\vscode\create-item.png" alt-text="Screenshot of the selecting switch tenant to change the default tenant.":::
+2. Select the item type and provide a name to create the item in Fabric. 
    :::image type="content" source="media\vscode\select-item-type.png" alt-text="Screenshot of the selecting switch tenant to change the default tenant.":::
-  
 
 
 ## Next steps
