@@ -10,10 +10,10 @@ ms.search.form: Local MCP server connecting with API for GraphQL
 ms.date: 06/30/2025
 ---
 
-# Connecting AI Agents to Fabric API for GraphQL with a local Model Context Protocol (MCP) server
+# Connect AI Agents to Fabric API for GraphQL with a local Model Context Protocol (MCP) server
 
 
-In this tutorial, you learn how to connect AI agents to Microsoft Fabric using GraphQL and the Model Context Protocol (MCP). By the end of this tutorial, you'll have a working local MCP server for development purposes that enables AI assistants like GitHub Copilot, Claude, and other AI agents to naturally query your Fabric data using conversational and natural language.
+In this tutorial, you learn how to connect AI agents to Microsoft Fabric using GraphQL and the Model Context Protocol (MCP). By the end of this tutorial, you'll have a working local MCP server for development purposes that enables AI assistants like GitHub Copilot, Claude, and other AI agents to naturally query your Fabric data using conversational language.
 
 ## What is the Model Context Protocol (MCP)?
 
@@ -25,7 +25,7 @@ Major AI platforms including OpenAI, Microsoft Copilot Studio, and Azure AI Foun
 
 GraphQL is particularly well-suited for MCP integrations because:
 
-- **Schema introspection**: AI agents can automatically discover available data structures and relationships
+- **Schema introspection**: AI agents can automatically discover available data structures and relationships directly from the GraphQL schema
 - **Flexible queries**: Agents can request exactly the data they need in a single request
 - **Type safety**: Strong typing helps AI agents understand data formats and constraints
 - **Efficient data fetching**: Reduces over-fetching and under-fetching of data
@@ -259,7 +259,7 @@ This will return a list of all types in your GraphQL schema.
    ```
 3. In Copilot chat, first ask to introspect the schema then try asking a pertinent question related to the introspected data in natural language, for example:
 
-[![Screenshot: Retrieving a list of customers using the introspected Microsoft Fabric GraphQL API schema in VSCode with GitHub Copilot and local MCP Server.](media/api-graphql-local-mcp/api-graphql-local-mcp.png)](media/api-graphql-local-mcp/api-graphql-local-mcp.png)
+[![Screenshot: Retrieving a list of customers using the introspected Microsoft Fabric GraphQL API schema in VSCode with GitHub Copilot and local MCP Server.](media/api-graphql-local-model-context-protocol/api-graphql-local-model-context-protocol.png )](media/api-graphql-local-model-context-protocol/api-graphql-local-model-context-protocol.png)
 
 ### Cursor IDE
 
@@ -278,7 +278,7 @@ This will return a list of all types in your GraphQL schema.
 
 ## Security considerations
 
-While the local MCP server should be implemented for development purposes only as described in this tutorial, it's implemented with HTTP transport, making it easier to use it as a starting point for more complex self-hosted client-server or web based integrations. If deploying MCP servers based in this local implementation in production:
+While the local MCP server should be implemented for development purposes only as described in this tutorial, it's implemented with HTTP transport, making it easier to use it as a starting point for more complex client-server or web based integrations. If you're deploying MCP servers in production:
 
 - Use Azure Key Vault for storing secrets instead of `.env` files
 - Implement proper authorization, network security and firewall rules
