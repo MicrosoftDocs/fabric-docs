@@ -1,0 +1,8 @@
+My new thing. Was inspired by this today.
+
+We have auto generated REST API content that comes from swagger files.
+We also have manual documentation in the dev repo for the API docs.  In those files, there are tables that summarize what is in the auto-generated content.  So developers can look at this and easily find what they are looking for instead of drilling into the auto-generated files.
+So my thing is, can I get Copilot to read through the swagger files and automatically create the tables for me.  I know we can do this, just not sure how easy it is to read from the source code> :-P
+And will it be correct.  
+
+The manual way seems like such a pain.  I want to automate it.  This is the way.

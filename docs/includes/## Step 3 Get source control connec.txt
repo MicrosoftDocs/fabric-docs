@@ -1,0 +1,55 @@
+## Step 3: Get source control connection information
+In the next step, we will be creating a source control connection to Azure DevOps.  Before doing this, we need to gather the information that will be used for our connection.  The following items are required to create a successful connection:
+
+|Name|Description|
+|-----|-----|
+|Display Name|The name of the source control connection|
+|Azure DevOps URL|The url for your instance of Azure DevOps|
+|Authentication method|The authentication method for the connection. Service Principal should be selected|
+|Tenant ID|The ID of the tenant where Azure DevOps is located.  See the [Obtain the tenant ID](#obtain-the-tenant-id) section.|
+|Service principal ID|The Application (client) Id from the app overview in the Azure portal.  See the [Obtain Service Principal ID](#obtain-the-service-principal-id) section.|
+|Service principal key|Obtained in step 1.|
+
+ :::image type="content" source="media/git-integration-with-service-principal/new-connection-2.png" alt-text="Screenshot of a new connection." lightbox="media/git-integration-with-service-principal/new-connection-2.png":::
+
+
+### Obtain the tenant ID
+There are several ways to get this information.  The quickest and easiest is to pull it from the Azure DevOps URL. The `{organization}` portion of the URL contains the Tenant ID.
+
+ :::image type="content" source="media/git-integration-with-service-principal/tenant-id-2.png" alt-text="Screenshot of a connection." lightbox="media/git-integration-with-service-principal/tenant-id-2.png":::
+
+If you use the wrong tenant ID with the preferred setup flow, you will see the following error:
+
+ :::image type="content" source="media/git-integration-with-service-principal/tenant-error.png" alt-text="Screenshot of tenant connection error." lightbox="media/git-integration-with-service-principal/tenant-error.png":::
+
+ >[!NOTE]
+>The target tenant ID for the source control connection, is the tenant ID where Azure DevOps is located.  This may or may not be the same as the Directory (tenant) ID information that is available from viewing an overview of the app.
+>
+>Be sure to use the tenant ID of the tenant where Azure DevOps is located. 
+
+If you are unable to obtain the tenant ID from the AzureDev Ops URL, you can use MS Graph or PowerShell to retrieve it.
+   
+#### [MS GRAPH](#tab/graph)
+```
+GET:https://graph.microsoft.com/v1.0/organization 
+```
+
+#### [PowerShell](#tab/powershell)
+
+```powershell
+
+          # Install the Azure PowerShell module     
+          Install-Module Az -Scope CurrentUser
+
+          # Connect to your tenant
+          Connect-AzAccount
+
+          #Get the Tenant Id
+          $tenantId =(Get-AzContext).Tenant.Id
+          Write-Output "Tenant ID: $tenantId"
+
+```
+
+---
+
+For additional ways to obtain the tenant ID, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).

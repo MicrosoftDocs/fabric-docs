@@ -1,0 +1,8 @@
+The API is experimental and may change without notice. It is provided for evaluation and development only; production use is not recommended.
+
+
+ git config --global user.name "Bill Mathers"
+ git config --global user.email "billmath@microsoft.com"
+
+
+https://review.learn.microsoft.com/en-us/rest/api/fabric?branch=drafts/apinoteupdate

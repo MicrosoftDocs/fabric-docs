@@ -1,0 +1,11 @@
+Just FYI, I have updated the doc and it is staged here:
+https://review.learn.microsoft.com/en-us/fabric/cicd/git-integration/git-integration-with-service-principal?branch=pr-en-us-8864&tabs=graph
+
+I added a section before step 3 on how to get the tenant id, service principal id, etc to make this clearer.
+I added the preferred and alternate method of creating the source control connection to step 4 (formerly step 3)
+
+Tomorrow I will work on step 5 (formerly step 4).
+
+Let me know feedback.  Thanks!
+
+Bill

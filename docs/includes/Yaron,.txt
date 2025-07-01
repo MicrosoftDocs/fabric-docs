@@ -1,0 +1,9 @@
+Yaron,
+
+Can you move the same-change-commit-icon.png out of media/git-get-started to media/git-integration-process?
+
+There is a warning in the PR.
+
+Thanks!
+Bill
+

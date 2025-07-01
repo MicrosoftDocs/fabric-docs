@@ -1,0 +1,1 @@
+In the fabric-docs-pr, for markdown files that have ms.author: billmath, how many files have an ms.date value that is older than 90 days?  

@@ -148,36 +148,56 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
    ### [Azure DevOps](#tab/ADO)
 
-    ```powershell
-    $global:baseUrl = "https://api.fabric.microsoft.com/v1"
-    $workspaceName = "<WORKSPACE NAME>"
-    $getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl 
-    $workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
+```powershell
+$global:baseUrl = "https://api.fabric.microsoft.com/v1"
+$workspaceName = "<WORKSPACE NAME>"
+$getWorkspacesUrl = "{0}/workspaces" -f $global:baseUrl
+$workspaces = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getWorkspacesUrl -Method GET).value
 
-    # Find the workspace by display name
-    $workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
+# Find the workspace by display name
+$workspace = $workspaces | Where-Object {$_.DisplayName -eq $workspaceName}
 
-    # Connect to Git
-    Write-Host "Connecting the workspace '$workspaceName' to Git."
+# Connect to Git
+Write-Host "Connecting the workspace '$workspaceName' to Git."
+$connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
 
-    $connectUrl = "{0}/workspaces/{1}/git/connect" -f $global:baseUrl, $workspace.Id
+# AzureDevOps details
+$azureDevOpsDetails = @{
+    gitProviderType = "AzureDevOps"
+    organizationName = "<ORGANIZATION NAME>"
+    projectName = "<PROJECT NAME>"
+    repositoryName = "<REPOSITORY NAME>"
+    branchName = "<BRANCH NAME>"
+    directoryName = "<DIRECTORY NAME>"
+}
 
-    # AzureDevOps details
-    $azureDevOpsDetails = @{
-        gitProviderType = "AzureDevOps"
-        organizationName = "<ORGANIZATION NAME>"
-        projectName = "<PROJECT NAME>"
-        repositoryName = "<REPOSITORY NAME>"
-        branchName = "<BRANCH NAME>"
-        directoryName = "<DIRECTORY NAME>"
-    }
+$connectToGitBody = @{}
+#Leave only one of the following two (delete the other one):
+#-----------------------------------------------------------------------------------------------
+# 1. Automatic (SSO)
+$connectToGitBody = @{
+    gitProviderDetails = $gitProviderDetails
+} | ConvertTo-Json
+#-----------------------------------------------------------------------------------------------
+# 2. ConfiguredConnection (User or service principal)
+# Get workspaces
+$connectionName = "<CONNECTION Name>"
+$getConnectionsUrl = "{0}/connections" -f $global:baseUrl
+$connections = (Invoke-RestMethod -Headers $global:fabricHeaders -Uri $getConnectionsUrl -Method GET).value
 
-    $connectToGitBody = @{
-        gitProviderDetails = $azureDevOpsDetails
+# Find the connection by display name
+$connection = $connections | Where-Object {$_.DisplayName -eq $connectionName}
+$connectToGitBody = @{
+    gitProviderDetails = $azureDevOpsDetails
+    myGitCredentials = @{
+        source = "ConfiguredConnection"
+        connectionId = $connection.id
+        }
     } | ConvertTo-Json
+#-----------------------------------------------------------------------------------------------
 
-    Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
-    ```
+Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
+```
 
    ### [GitHub](#tab/github)
 
@@ -224,9 +244,11 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     Invoke-RestMethod -Headers $global:fabricHeaders -Uri $connectUrl -Method POST -Body $connectToGitBody
     ```
 
-    For information on how to obtain the Connection ID, refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
-
+   
     ---
+
+     For information on how to obtain the Connection ID, refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
+
 
 1. Call the [Initialize Connection](/rest/api/fabric/core/git/initialize-connection) API to initialize the connection between the workspace and the Git repository/branch.
 

@@ -1,0 +1,20 @@
+Hi Bailey,
+
+So I spoke with my team on this last week.  Being a new team we are formalizing the process but it is shaping up to look like this: 
+
+
+		1. A request form for work items:  https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR_tf9XFUwiNJt7joQqBw-zFUQ1o3RFZHQzBDSDNGWVVQU0lWTEU1OEFNVC4u&route=shorturl
+
+		2. All items are tagged with intake-form.  This allow us to query new items and untriaged items.  Example widget dashboard:  https://dev.azure.com/msft-skilling/Content/_dashboards/dashboard/862b85ec-5ab5-4e50-981f-e7d9cad4edb8
+	`	3. Items will be triaged and then stack ranked per each individual writer. That way they can prioritize based on what is needed and build out their sprint accordingly.
+
+We are sill working on what the triage process will look like. Like when and how often, etc. I imagine this will become more streamlined as each writer settles into their new areas and becomes more comfortable with their space.
+
+For this month, the sprint planning was, kind of adhoc, but we wanted to make sure nothing falls through the cracks. For myself, I sent out emails to all of my new PMs and asked them for any specific asks that were needed for June.  Any new features, etc.  So that we could make sure these were addressed and on the radar.
+
+I did want to call out the work Julia has done on the form.  This is really nice as it takes in the info from the PMs and automatically creates an ADO work item for us to triage.  It also forces the PMs to provide details that are captured as opposed to a quick passing email or teams chat that could get overlooked. I would have loved something like this on the identity team.
+
+Let me know if you have any questions.
+
+Thanks!
+Bill

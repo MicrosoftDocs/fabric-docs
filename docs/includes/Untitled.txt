@@ -1,0 +1,50 @@
+
+
+
+
+For each URL listed below:
+
+https://learn.microsoft.com/en-us/rest/api/fabric/admin/items
+https://learn.microsoft.com/en-us/rest/api/fabric/apacheairflowjob/items
+https://learn.microsoft.com/en-us/rest/api/fabric/copyjob/items
+https://learn.microsoft.com/en-us/rest/api/fabric/core/items
+
+In a table, summarize whether the item supports the following:
+
+- Create without definition
+- Create with definition
+- Service principal support
+- Get	
+- Update	
+- Delete	
+- List
+
+The API is experimental and may change without notice\. It is provided for evaluation and development only. Production use is not recommended\.\n\n
+
+
+
+
+
+
+
+
+
+^(?:[A-Z].*\.$)|^(?:> \[!NOTE\]\n> This API is in preview\.\n\n[A-Z].*\.$)
+^(?:[A-Z].*\.$)|^(?:> \[!NOTE\]\n> The API is experimental and may change without notice\. It is provided for evaluation and development only. Production use is not recommended\.\n\n[A-Z].*\.$)
+
+The API is experimental and may change without notice. It is provided for evaluation and development only. Production use is not recommended.\n\n
+
+ A summary should   paths./workspaces
+                         -pattern           start with an      /{workspaceId}/sq
+                                            uppercase letter   lDatabases/{SQLDa
+                                            and end with a     tabaseId}.delete.
+                                            period.            summary
+                                            (https://dev.azur
+                                            e.com/powerbi/Tri
+                                            dent/_wiki/wikis/
+                                            Trident.wiki/3255
+                                            6/Specification-g
+                                            uidelines-(Swagge
+                                            r)?anchor=styling
+                                            -guidelines)
+
