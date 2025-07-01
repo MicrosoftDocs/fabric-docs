@@ -19,7 +19,7 @@ When you write or create a shortcut to an Iceberg table folder, OneLake automati
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
-:::image type="content" source="media\onelake-iceberg-table-shortcut\iceberg-shortcut-diagram.png" alt-text="Diagram comparing the original Iceberg table location with its shortcut in a Fabric lakehouse. On the left, the original Iceberg table location includes folders named metadata and data, with metadata containing files such as metadata.json, snap.avro, and avro files, and data containing parquet files. On the right, the shortcut in the Fabric lakehouse mirrors the original structure but adds a virtual _delta_log folder containing transaction log files in JSON format. The diagram includes labels such as shortcut target and virtualized within shortcut, and shows the hierarchical structure of folders and files. The wider environment is a technical illustration with a focus on metadata virtualization and table format compatibility.":::
+:::image type="content" source="media\onelake-iceberg-table-shortcut\iceberg-shortcut-diagram.png" alt-text="Diagram showing table virtualization from Iceberg to Delta Lake.":::
 
 While this article includes guidance for using Iceberg tables with Snowflake, this feature is intended to work with any Iceberg tables with Parquet-formatted data files in storage.
 
@@ -83,13 +83,13 @@ If you already have an Iceberg table in a storage location supported by [OneLake
     > [!TIP]
     > If you see schemas such as dbo under the Tables folder of your lakehouse, then the lakehouse is schema-enabled. In this case, right-click on the schema and create a table shortcut under the schema.
     
-    :::image type="content" source="media\onelake-iceberg-table-shortcut\new-shortcut.png" alt-text="The image shows the shortcut creation menu in the Tables folder of a Fabric lakehouse. The Tables folder is highlighted in the navigation pane, and the context menu is open with the New shortcut option selected. The wider environment includes a lakehouse interface with folders such as Tables and Files visible in the navigation pane.":::
+    :::image type="content" source="media\onelake-iceberg-table-shortcut\new-shortcut.png" alt-text="Screenshot showing new shortcut action.":::
 
 1.	For the target path of your shortcut, select the Iceberg table folder. The Iceberg table folder contains the `metadata` and `data` folders.
 
 1.	Once your shortcut is created, you should automatically see this table reflected as a Delta Lake table in your lakehouse, ready for you to use throughout Fabric.
 
-    :::image type="content" source="media\onelake-iceberg-table-shortcut\shortcut-placement.png" alt-text="Screenshot showing the correct placement of an Iceberg table shortcut in the Tables folder of a Fabric lakehouse. The Tables folder is highlighted, and the shortcut is shown directly under it. The wider environment includes a lakehouse interface with folders such as Files and Tables visible in the navigation pane.":::
+    :::image type="content" source="media\onelake-iceberg-table-shortcut\shortcut-placement.png" alt-text="Screenshot showing created shortcut.":::
 
     If your new Iceberg table shortcut doesn't appear as a usable table, check the [Troubleshooting](#troubleshooting) section.
 

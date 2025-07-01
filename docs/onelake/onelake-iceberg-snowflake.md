@@ -23,7 +23,7 @@ Before getting started, follow the pre-requisite steps shown below.
 
 ## Prerequisite
 
-To use Snowflake on Azure to write or read Iceberg tables with OneLake, your Snowflake account's identity in Entra ID needs to be able to communicate with Fabric. Enable the Fabric tenant-level settings that allow service principals to [call Fabric APIs](/rest/api/fabric/articles/identity-support#service-principal-tenant-setting) and to [call OneLake APIs](./security/get-started-security.md#allow-apps-running-outside-of-fabric-to-access-data-via-onelake).
+To use Snowflake on Azure to write or read Iceberg tables with OneLake, your Snowflake account's identity in Entra ID needs to be able to communicate with Fabric. Enable the Fabric tenant-level settings that allow service principals to [call Fabric APIs](/rest/api/fabric/articles/identity-support.md#service-principal-tenant-setting) and to [call OneLake APIs](./security/get-started-security.md#allow-apps-running-outside-of-fabric-to-access-data-via-onelake).
 
 ## Write an Iceberg table to OneLake using Snowflake on Azure
 
@@ -113,7 +113,7 @@ To use Snowflake on Azure to read a virtual Iceberg table based on a Delta Lake 
 
 1.  Identify your Fabric tenant ID. Select your user profile in the top-right corner of the Fabric UI, and hover over the info bubble next to your **Tenant Name**. Copy the **Tenant ID**.
 
-    :::image type="content" source="media\onelake-iceberg-table-shortcut\tenant-id.png" alt-text="User profile menu in the Fabric UI showing tenant information. The tenant ID is highlighted in red and displayed as a string of alphanumeric characters separated by dashes. The menu includes options such as View account, Learn about Fabric trial, and Sign out. The wider environment includes the top navigation bar with icons for notifications, help, and user profile.":::
+    :::image type="content" source="media\onelake-iceberg-table-shortcut\tenant-id.png" alt-text="Screenshot showing tenant ID.":::
 
 1.	In Snowflake, set up your `EXTERNAL VOLUME` using the path to the `Tables` folder of the data item that contains your table. [More info on setting up Snowflake external volumes can be found here.](https://docs.snowflake.com/en/user-guide/tables-iceberg-configure-external-volume)
 
@@ -160,7 +160,7 @@ To use Snowflake on Azure to read a virtual Iceberg table based on a Delta Lake 
     ENABLED = TRUE;
     ```
 
-1.	Back in Snowflake, create an Iceberg table referencing the latest metadata file for the virtualzied Iceberg table in OneLake.
+1.	Back in Snowflake, create an Iceberg table referencing the latest metadata file for the virtualized Iceberg table in OneLake.
 
     ```sql
     CREATE OR REPLACE ICEBERG TABLE MYDATABASE.PUBLIC.<TABLE_NAME>
