@@ -19,7 +19,8 @@ ms.collection: ce-skilling-ai-copilot
 
 Data agent in Microsoft Fabric transforms enterprise data into conversational Q&A systems. It enables users to interact with their data through chat, to uncover actionable insights. One way to consume Fabric data agent is through Azure AI Agent Service, a core component of Azure AI Foundry. Through integration of Fabric data agents with Azure AI Foundry, your Azure AI agents can directly tap into the rich, structured, and semantic data available in Microsoft Fabric OneLake. This integration provides immediate access to high-quality enterprise data, and it empowers your Azure AI agents to generate actionable insights and streamline analytical workflows. Organizations can then enhance data-driven decision-making with Fabric data agent as a powerful knowledge source within their Azure AI environments.
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+> [!IMPORTANT]  
+> This feature is in [preview](../fundamentals/preview.md). You should use the latest beta/preview version of the [Azure AI Agents Python SDK](https://pypi.org/project/azure-ai-agents/1.1.0b3/).
 
 ## Prerequisites
 
@@ -115,6 +116,12 @@ To make the Fabric data agent tool available to your Azure AI agent, use a conne
 # The Fabric connection ID can be found in the Azure AI Foundry project as a property of the Fabric tool
 # Your connection ID is in the format /subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group>/providers/Microsoft.CognitiveServices/accounts/<ai-foundry-resource-name>/projects/<your-project-name>/connections/<your-fabric-connection-name>
 conn_id = "your-connection-id"
+
+# Initialize the AI project client
+project_client = AIProjectClient(
+    endpoint=os.environ["PROJECT_ENDPOINT"],
+    credential=DefaultAzureCredential(),
+)
 
 # Initialize agent Fabric tool and add the connection ID
 fabric = FabricTool(connection_id=conn_id)
