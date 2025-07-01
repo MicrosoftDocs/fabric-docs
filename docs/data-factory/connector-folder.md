@@ -4,7 +4,7 @@ description: This article provides information about how to create a Folder conn
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 07/01/2025
 ms.custom:
   - template-how-to
   - connectors
