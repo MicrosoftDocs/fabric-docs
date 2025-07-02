@@ -4,7 +4,7 @@ description: Learn about domains and how to create and manage them.
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 05/01/2025
 ---
 
