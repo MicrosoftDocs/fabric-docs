@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 06/25/2025
+ms.date: 06/27/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1183  | Power BI | [Snowflake connector index outside the bounds error](./known-issue-1183-snowflake-connector-index-outside-bounds-error.md) | June 27, 2025 |
 |  1184  | Data Engineering | [Lakehouse table maintenance fails for schema enabled lakehouses](./known-issue-1184-lakehouse-table-maintenance-fail.md) | June 25, 2025 |
 |  1181  | OneLake | [OneLake catalog item details lineage tab button disappears](./known-issue-1181-onelake-catalog-item-details-lineage-tab-button-disappears.md) | June 23, 2025 |
 |  1179  | Power BI | [Copilot button unavailable in Power BI Desktop](./known-issue-1179-copilot-button-unavailable-power-bi-desktop.md) | June 20, 2025 |
@@ -59,7 +60,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1119  | Power BI | [Large semantic model storage format conversion stays in view mode](./known-issue-1119-large-semantic-model-conversion-view-mode.md) | May 2, 2025 |
 |  1121  | Data Warehouse | [SQL analytics endpoint queries return empty results](./known-issue-1121-sql-analytics-endpoint-queries-return-empty-results.md) | May 1, 2025 |
 |  1118  | Power BI | [Execution details of semantic model refresh activity unavailable in Monitor hub](./known-issue-1118-execution-details-model-refresh-unavailable-monitor-hub.md) | May 1, 2025 |
-|  1113  | Data Engineering | [API for GraphQL query fails when using variables with float value](./known-issue-1113-api-graphql-query-fails-variables-float-value.md) | April 25, 2025 |
 |  1112  | Data Engineering | [User data functions option not visible in data pipelines functions activity](./known-issue-1112-functions-option-not-visible-pipelines-functions-activity.md) | April 22, 2025 |
 |  1107  | Real-Time Intelligence | [Cross-region capacity migration might fail if items weren't deleted successfully](./known-issue-1107-cross-region-capacity-migration-fail-items-not-deleted-successfully.md) | April 22, 2025 |
 |  1106  | Real-Time Intelligence | [Eventstream real-time weather connector fails to load map in edit mode](./known-issue-1106-eventstream-weather-connector-fails-load-map-edit-mode.md) | April 18, 2025 |
@@ -86,9 +86,7 @@ Select the **Title** to view more information about that specific known issue.
 |  1002  | Power BI | [Reports that use functions with RLS don't work](./known-issue-1002-reports-functions-rls-not-work.md) | January 28, 2025 |
 |  991  | Data Factory | [Apache Airflow job creation shows Fabric upgrade message](./known-issue-991-apache-airflow-job-creation-upgrade-message.md) | January 13, 2025 |
 |  989  | Data Factory | [Local data access isn't allowed for pipeline using on-premises data gateway](./known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md) | January 13, 2025 |
-|  988  | Real-Time Intelligence | [Data activator events aren't ingested for Reflex events](./known-issue-988-data-activator-events-not-ingested-reflex-events.md) | January 13, 2025 |
 |  975  | Power BI | [Create report doesn't work on Eventhouse monitoring KQL database](./known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database.md) | January 6, 2025 |
-|  965  | Databases | [SQL database creation fails to create child items when item with same name exists](./known-issue-965-sql-database-creation-fails-create-child-items-same-name.md) | December 10, 2024 |
 |  954  | Data Factory | [Create, configure, or delete a mirror fails](./known-issue-954-create-configure-delete-mirror-fails.md) | December 2, 2024 |
 |  910  | Data Warehouse | [SQL analytics endpoint tables lose statistics](./known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md) | October 31, 2024 |
 |  909  | Data Warehouse | [SQL analytics endpoint tables lose permissions](./known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md) | October 31, 2024 |
@@ -106,6 +104,9 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1113  | Data Engineering | [API for GraphQL query fails when using variables with float value](./known-issue-1113-api-graphql-query-fails-variables-float-value.md) | April 25, 2025 | Fixed: June 27, 2025 |
+|  988  | Real-Time Intelligence | [Data activator events aren't ingested for Reflex events](./known-issue-988-data-activator-events-not-ingested-reflex-events.md) | January 13, 2025 | Fixed: June 27, 2025 |
+|  965  | Databases | [SQL database creation fails to create child items when item with same name exists](./known-issue-965-sql-database-creation-fails-create-child-items-same-name.md) | December 10, 2024 | Fixed: June 27, 2025 |
 |  1171  | OneLake | [OneLake shortcut creation and read fail with bad request error](./known-issue-1171-onelake-shortcut-creation-read-fail-bad-request-error.md) | June 17, 2025 | Fixed: June 25, 2025 |
 |  986  | Power BI | [Direct Lake query cancellation might cancel other queries](./known-issue-986-direct-lake-query-cancellation-cancel-queries.md) | January 7, 2025 | Fixed: June 25, 2025 |
 |  893  | Power BI | [Can't connect to semantic model from Excel or use Analyze in Excel](./known-issue-893-not-connect-semantic-model-analyze-excel.md) | October 23, 2024 | Fixed: June 25, 2025 |
