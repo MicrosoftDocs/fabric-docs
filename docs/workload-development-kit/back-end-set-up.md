@@ -529,23 +529,23 @@ FastAPI automatically generates interactive API documentation, so you can test y
 
 5. Select the **Execute** button to send the request.
 
-Your server console displays output similar to the following messages:
+   Your server console displays output similar to the following messages:
 
-```bash
-=== CREATE ITEM CALLED ===
-Workspace ID: test-workspace
-Item Type: TestItemType
-Item ID: test-item-123
-Display Name: Test Item
-Description: This is a test item created via Swagger UI
-Creation Payload: {'key1': 'value1', 'key2': 'value2', 'nested': {'data': 'example'}}
-===========================
-```
+   ```bash
+   === CREATE ITEM CALLED ===
+   Workspace ID: test-workspace
+   Item Type: TestItemType
+   Item ID: test-item-123
+   Display Name: Test Item
+   Description: This is a test item created via Swagger UI
+   Creation Payload: {'key1': 'value1', 'key2': 'value2', 'nested': {'data': 'example'}}
+   ===========================
+   ```
 
-The response details also appear directly in the Swagger UI.
+   The response details also appear directly in the Swagger UI.
 
-> [!TIP]
-> Using the Swagger UI is often easier and faster during development, because it provides a user-friendly interface for testing API endpoints without manually crafting Curl commands.
+   > [!TIP]
+   > Using the Swagger UI is often easier and faster during development, because it provides a user-friendly interface for testing API endpoints without manually crafting Curl commands.
 
 ## Step 8: Explore the API documentation
 
