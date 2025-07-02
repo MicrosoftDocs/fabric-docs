@@ -146,7 +146,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
 1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
 
-For information on how to obtain the Connection details (ID, Name), refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
+     For information on how to obtain the Connection details (ID, Name), refer to [Get or create Git provider credentials connection](#get-or-create-git-provider-credentials-connection).
 
    ### [Azure DevOps](#tab/ADO)
 
