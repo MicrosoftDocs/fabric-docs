@@ -26,7 +26,7 @@ To get started, you must complete the following prerequisites:
 You can now manage, view, and edit those pipelines directly from the Fabric portal. It’s the same ADF that is now accessible inside your Fabric workspace.
 
 ## What stays the same
-You can now manage, view, and edit those pipelines directly from the Fabric portal. It’s the same ADF that is now accessible inside your Fabric workspace.
+Your pipelines, dataflows, triggers, integration runtimes, and schedules all keep running in ADF. No long migration times and nothing gets altered.
 
 ## Authoring Pipelines
 You can edit pipelines in Fabric’s Data Factory UI—it looks and feels like the ADF portal.
@@ -57,12 +57,12 @@ There are two entry points, one from ADF and one within Fabric workspace.
 2.	Pick your ADF instance from the list.
 :::image type="content" source="media/migrate-planning-azure-data-factory/choose-factory-to-mount.png" alt-text="Screenshot showing the Azure Data Factory dropdown selection in Fabric.":::
 
-3.	Click OK.
+3.	Select OK.
 That’s it! Within no time, you’ll see your ADF pipelines inside Fabric. 
 :::image type="content" source="media/migrate-planning-azure-data-factory/view-mounted-azure-data-factory.png" alt-text="Screenshot showing the Azure Data Factory mounted successfully in Fabric.":::
 
-4.  Click on "View Azure Data Factory" to view, edit, validate and trigger your pipeline from Fabric. 
-Not sure yet? You can safely unmount your factory from Fabric at any time. Just click Unmount.
+4.  Select the "View Azure Data Factory" to view, edit, validate and trigger your pipeline from Fabric. 
+Not sure yet? You can safely unmount your factory from Fabric at any time. Just select Unmount.
 :::image type="content" source="media/migrate-planning-azure-data-factory/unmount-from-fabric.png" alt-text="Screenshot showing unmount Azure Data Factory Item in Fabric.":::
 
 ### 2. Mount from ADF UX
@@ -70,9 +70,9 @@ You can now mount your Azure Data Factory to Fabric from ADF UX
 
 1.	Go to your Data factory in Azure portal that you wish to mount
 2.	From Manage tab select ADF in Microsoft Fabric
-3.	Click Mount in Fabric
+3.	Select Mount in Fabric
 4.	Choose a Fabric workspace where you would like to mount the factory to
-5.	Click Mount
+5.	Select Mount
    
 :::image type="content" source="media/migrate-planning-azure-data-factory/azure-data-factory-to-fabric.png" alt-text="Screenshot showing mounting experience from ADF.":::
 
@@ -81,7 +81,7 @@ You can now mount your Azure Data Factory to Fabric from ADF UX
 And just like that you will start to see your ADF in the Fabric workspace you chose!
 
 ## Need to reverse it?
-No problem—just click Unmount to undo the change instantly.
+No problem—just select Unmount to undo the change instantly.
 :::image type="content" source="media/migrate-planning-azure-data-factory/unmount-from-azure-data-factory-user-interface.png" alt-text="Screenshot showing unmount Azure Data Factory Item in ADF.":::
 
 ## Related content
