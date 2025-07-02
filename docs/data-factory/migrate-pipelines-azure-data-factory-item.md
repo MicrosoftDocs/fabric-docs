@@ -7,6 +7,7 @@ ms.reviewer: whhender
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 07/01/2025
+ai-usage: ai-assisted
 ---
 
 # What’s Azure Data Factory Item?
