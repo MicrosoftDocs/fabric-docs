@@ -106,14 +106,6 @@ The Fabric data agent is currently in public preview and it has limitations. Upd
 - Fabric Data Agent does not support unstructured Data (.pdf, .docx, or .txt). You can't use the Fabric data agent to access unstructured data resources. These resources include .pdf, .docx, or .txt files, for example.
 - The Fabric data agent does not support non-English languages. This means that questions, instructions, and example queries are required to be in English. 
 - You can't change the LLM that the Fabric data agent uses.
-- Data Source Size Limitations: 
-
-    |  Data source  | Column limits | Table limits |
-    |----| ------------- | ------------ |
-    | Data Warehouse | N/A | N/A |
-    | Lakehouse | N/A | N/A |
-    | Semantic Models | 500 (this includes Measure) | 1000 |
-    | Eventhouse KQL | 500 | 1000 |
 
 ## Related content
 
