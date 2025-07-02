@@ -130,22 +130,14 @@ For more details, explore the documentation on [Vector Search and Indexing for C
 
 ## Security
 
-Connections to your source database are based on account keys for your Azure Cosmos DB accounts. If you rotate or regenerate the keys, you need to update the connections to ensure replication works. For more information, see [connections](../../data-factory/connector-azure-cosmosdb-for-nosql.md).
+You can connect to a source acocunt using Microsoft Entra ID and role-based access control or account-level keys.
 
-Account keys aren't directly visible to other Fabric users once the connection is set up. You can limit who has access to the connections created in Fabric. Writes aren't permitted to Azure Cosmos DB database either from the data explorer or analytics endpoint in your mirrored database.
+If you use keys and rotate or regenerate the keys, you need to update the connections to ensure replication works. For more information, see [connections](../../data-factory/connector-azure-cosmosdb-for-nosql.md). Account keys aren't directly visible to other Fabric users once the connection is set up. You can limit who has access to the connections created in Fabric. Writes aren't permitted to Azure Cosmos DB database either from the data explorer or analytics endpoint in your mirrored database. Mirroring doesn't currently support authentication using read-only account keys.
 
-In addition to account keys, single-sign on (SSO) with Microsoft Entra IDs and role-based access control can also be used to connect to the source account.
+For Microsoft Entra ID authentication, the following RBAC permissions are required: `Microsoft.DocumentDB/databaseAccounts/readMetadata` &amp; `Microsoft.DocumentDB/databaseAccounts/readAnalytics`. For more information, see [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
 
-> [!NOTE]
-> For Microsoft Entra ID authentication, the following RBAC permissions are required:
-> `Microsoft.DocumentDB/databaseAccounts/readMetadata`
-> `Microsoft.DocumentDB/databaseAccounts/readAnalytics`
-> 
-> To learn more, please visit our [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
-
-Mirroring doesn't currently support authentication using read-only account keys or managed identities.
-
-Once the data is replicated into Fabric OneLake, you need to secure access to this data.
+> [!TIP]
+> Once data is replicated into Fabric OneLake, you should also secure access to this data.
 
 ### Data protection features
 
