@@ -45,7 +45,7 @@ The explorer contains multiple view options.
 
 ### Card view
 
-The *card view* displays all assets in list format. You can see details such as name, entity, and properties associated with each asset. The card view is the explorer's default view.
+The *card view* displays all assets in list format. You can see details such as name, entity type, and properties associated with each asset. The card view is the explorer's default view.
 
 :::image type="content" source="media/explore-search-visualize/explorer.png" alt-text="Screenshot of the explorer." lightbox="media/explore-search-visualize/explorer.png":::
 
@@ -71,12 +71,12 @@ You can change the data in the chart by selecting different time series properti
 
 ## Use entity and keyword search
 
-In the Card view, the entity selector and keyword search box allow you to find matches in your assets across the *Entity*, *Name*, and *Unique ID* fields.
+In the Card view, the entity type selector and keyword search box allow you to find matches in your assets across the *Entity*, *Name*, and *Unique ID* fields.
 
 :::image type="content" source="media/explore-search-visualize/search.png" alt-text="Screenshot of the keyword search.":::
 
 ### Use advanced query
 
-The no-code advanced query builder allows you to filter the card view even further, by querying based entity properties and allowing you to add multiple filters.
+The no-code advanced query builder allows you to filter the card view even further, by querying based on entity type properties and allowing you to add multiple filters.
 
 :::image type="content" source="media/explore-search-visualize/advanced-query.png" alt-text="Screenshot of the advanced query experience.":::

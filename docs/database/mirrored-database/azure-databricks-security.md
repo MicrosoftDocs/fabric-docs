@@ -1,5 +1,5 @@
 ---
-title: "Microsoft Fabric Mirrored Databases From Azure Databricks (Preview) Security"
+title: "Microsoft Fabric Mirrored Databases From Azure Databricks Security"
 description: Learn about security for Azure Databricks mirroring in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -33,7 +33,7 @@ For more information on setting up Fabric Workspace security, see the [Permissio
 
 ## Related content
 
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-tutorial.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-tutorial.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-limitations.md)
 - [Review the FAQ](azure-databricks-faq.yml)
-- [Mirroring Azure Databricks Unity Catalog (Preview)](azure-databricks.md)
+- [Mirroring Azure Databricks Unity Catalog](azure-databricks.md)
