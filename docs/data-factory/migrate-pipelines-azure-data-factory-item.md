@@ -53,17 +53,21 @@ There are two entry points, one from ADF and one within Fabric workspace.
 ### 1. Mount from Fabric workspace
 1.  Go to your Fabric workspace.
 1.	Create New Item > Azure Data Factory.
+   
 :::image type="content" source="media/migrate-planning-azure-data-factory/azure-data-factory-item.png" alt-text="Screenshot showing the Azure Data Factory Item in Fabric.":::
 
 2.	Pick your ADF instance from the list.
+   
 :::image type="content" source="media/migrate-planning-azure-data-factory/choose-factory-to-mount.png" alt-text="Screenshot showing the Azure Data Factory dropdown selection in Fabric.":::
 
-3.	Select OK.
-That’s it! Within no time, you’ll see your ADF pipelines inside Fabric. 
+3.	Select OK.  
+That’s it! Within no time, you’ll see your ADF pipelines inside Fabric.
+
 :::image type="content" source="media/migrate-planning-azure-data-factory/view-mounted-azure-data-factory.png" alt-text="Screenshot showing the Azure Data Factory mounted successfully in Fabric.":::
 
-4.  Select the "View Azure Data Factory" to view, edit, validate and trigger your pipeline from Fabric. 
+5.  Select the "View Azure Data Factory" to view, edit, validate and trigger your pipeline from Fabric. 
 Not sure yet? You can safely unmount your factory from Fabric at any time. Just select Unmount.
+
 :::image type="content" source="media/migrate-planning-azure-data-factory/unmount-from-fabric.png" alt-text="Screenshot showing unmount Azure Data Factory Item in Fabric.":::
 
 ### 2. Mount from ADF UX
@@ -74,7 +78,6 @@ You can now mount your Azure Data Factory to Fabric from ADF UX.
 3.	Select Mount in Fabric.
 4.	Choose a Fabric workspace where you would like to mount the factory to.
 5.	Select Mount.
-   
 :::image type="content" source="media/migrate-planning-azure-data-factory/mount-from-azure-data-factory.png" alt-text="Screenshot showing mounting experience from ADF.":::
 
 :::image type="content" source="media/migrate-planning-azure-data-factory/view-azure-data-factory-artifacts.png" alt-text="Screenshot showing pipeline artifacts ADF.":::
