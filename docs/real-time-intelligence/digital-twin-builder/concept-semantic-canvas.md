@@ -3,7 +3,7 @@ title: Using the semantic canvas
 description: Understand the semantic canvas in the digital twin builder (preview).
 author: baanders
 ms.author: baanders
-ms.date: 04/25/2025
+ms.date: 07/01/2025
 ms.topic: concept-article
 ---
 
@@ -35,7 +35,7 @@ After you add entities and relationships to your ontology, the semantic canvas s
 
 ### Menu ribbon
 
-The *menu ribbon* contains actions that you can perform from the semantic canvas. Actions include adding a [new entity](model-manage-mappings.md#create-an-entity), adding a [new relationship](model-perform-contextualization.md#create-a-relationship), and managing [flow operations](concept-flows.md).
+The *menu ribbon* contains actions that you can perform from the semantic canvas. Actions include adding a [new entity](model-manage-mappings.md#create-an-entity), adding a [new relationship](model-perform-contextualization.md#create-a-relationship), managing [flow operations](concept-flows.md), and entering [Explore mode](explore-search-visualize.md) for viewing, querying, and visualizing your data.
 
 :::image type="content" source="media/concept-semantic-canvas/menu-ribbon.png" alt-text="Screenshot of the menu ribbon.":::
 
@@ -54,12 +54,6 @@ You can also expand the **...** next to an entity name to [add a relationship](m
 The *entity configuration pane* is displayed when you select an entity in the semantic canvas. In this pane, you can view properties modeled on the selected entity (**Properties** tab), view and configure mappings (**Mappings** tab), and schedule mappings (**Scheduling** tab).
 
 :::image type="content" source="media/concept-semantic-canvas/entity-configuration-pane.png" alt-text="Screenshot of the entity configuration pane.":::
-
-### View selector
-
-The *view selector* allows you to toggle between the **Configure** mode for editing and the **Explore** mode for [viewing, querying, and visualizing your data](explore-search-visualize.md).
-
-:::image type="content" source="media/concept-semantic-canvas/view-selector.png" alt-text="Screenshot of the view selector.":::
 
 ## Related content
 

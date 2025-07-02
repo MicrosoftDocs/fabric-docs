@@ -26,9 +26,6 @@ Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, sca
 - An Amazon MSK Kafka cluster in active status. 
 - Your Amazon MSK Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.  
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
-
 ## Add Amazon MSK Kafka as a source  
 
 1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream.
