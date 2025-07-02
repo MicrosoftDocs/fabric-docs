@@ -35,7 +35,7 @@ Staging data is a technique used to improve performance by temporarily storing i
 
 When working with Dataflow Gen2, it's essential to understand the various scenarios you might encounter and how to optimize performance in each case. The following considerations provide practical guidance on how to apply the best practices discussed earlier in this article to real-world situations. By tailoring your approach based on the specific characteristics of your data and transformations, you can achieve optimal performance in your data integration workflows. Here are some common scenarios you might encounter when working with Dataflow Gen2, along with recommended actions to optimize performance. These scenarios are examples of how to apply the best practices discussed earlier in this article to real-world situations. Be aware that performance optimization is an ongoing process and very specific to your scenario. You might need to adjust your approach based on the specific characteristics of your own data and transformations.
 
-### Consideration 1: Slow data movement
+### Consideration 1: Improve data movement with Fast Copy
 
 In this scenario, you notice that data movement between your data source and the staging area or to your final destination is taking longer than expected. Several factors could be involved, such as network latency, large dataset sizes, or inefficient data transfer methods.
 
@@ -45,7 +45,7 @@ In this case, consider evaluating the data movement path and optimizing it for b
 
 :::image type="content" source="media/dataflow-gen2-performance-best-practices/require-fastcopy.png" alt-text="Require Fast Copy in Dataflow Gen2":::
 
-### Consideration 2: Complex transformations and long execution times
+### Consideration 2: Improve execution time for complex transformations using staging
 
 In this scenario, you have a dataflow with multiple complex transformations, such as joins, aggregations, and filtering. The execution time is longer than desired, and you want to optimize the performance of these transformations.
 
@@ -53,49 +53,43 @@ In this case, consider breaking down the dataflow into smaller, more manageable 
 
 :::image type="content" source="media/dataflow-gen2-performance-best-practices/enable-staging.png" alt-text="Enable staging in Dataflow Gen2":::
 
-### Consideration 3: Lakehouse destination with staging enabled queries
+### Consideration 3: The impact on staging on datamovement when using Lakehouse as a destination
 
 In this scenario, you're using a Lakehouse destination for your dataflow, and you have enabled staging to perform transformations before writing the final output. However, you notice that the overall refresh time is longer than expected, and you want to optimize the performance of this process.
 
 In this case, the data movement from the staging Warehouse to the Lakehouse destination can be a bottleneck. To improve performance, consider changing the destination to a Warehouse instead of a Lakehouse. This allows you to use the compute resources of the staging Warehouse for transformations and write the final output directly to the Warehouse destination. The path of data movement becomes more efficient, as it avoids the additional overhead of writing to a Lakehouse. If a Lakehouse destination is necessary, consider using a shortcut to avoid re-egressing data from the staging Warehouse to the Lakehouse. This approach can significantly reduce the overall refresh time and improve performance.
 
-### Consideration 4: Dataflow with non-folding transformations
+### Consideration 4: Improve execution time for transformations that don't fold to the source system
 
-In this scenario, you have a dataflow that includes transformations that don't fold to the source system, such as certain date or string manipulations. These transformations can lead to longer execution times and increased resource usage. 
+In this scenario, you have a dataflow that includes transformations that don't fold to the source system, such as certain date or string manipulations. These transformations can lead to longer execution times and increased resource usage.
 
-In this case, consider separating the query into two steps: one for the Fast Copy operation with query folding and another for the transformations using the staging Lakehouse or Warehouse compute. This approach allows you to take advantage of Fast Copy for high-throughput data movement while performing the necessary transformations in a separate step. By doing so, you can optimize the performance of your dataflow and reduce the overall execution time. 
+In this case, consider separating the query into two steps: one for the Fast Copy operation with query folding and another for the transformations using the staging Lakehouse or Warehouse compute. This approach allows you to take advantage of Fast Copy for high-throughput data movement while performing the necessary transformations in a separate step. By doing so, you can optimize the performance of your dataflow and reduce the overall execution time.
 
 ### Consideration 5: Large data previews during design-time
 
-In this scenario, you're working on a dataflow with large datasets, and the design-time experience is slow due to the size of the data previews. This process can make it difficult to author and test your dataflow effectively. 
+In this scenario, you're working on a dataflow with large datasets, and the design-time experience is slow due to the size of the data previews. This process can make it difficult to author and test your dataflow effectively.
 
 In this case, consider using parameterization to limit the size of data previews. By applying filters based on parameters, such as a date range or specific IDs, you can reduce the amount of data displayed in the design-time environment. This approach helps keep the design environment responsive and efficient, allowing you to focus on authoring and testing your dataflow without being hindered by large data previews. Additionally, you can adjust the parameters during runtime to retrieve the full dataset when needed.
 
-### Consideration 6: Performance is slower of Dataflow Gen2 compared to Dataflow Gen1
+### Consideration 6: Dataflow gen2 runtime characteristics compared to Dataflow Gen1
 
 In this scenario, you notice that the performance of Dataflow Gen2 is slower than that of Dataflow Gen1, particularly in terms of execution time and resource usage. This preformance difference can be due to several factors, including the differences in optimization techniques and output formats used in Dataflow Gen2.
 
 Dataflow Gen2 emits data in Delta Parquet format when you use staging or lakehouse destinations, which is different from Dataflow Gen1's CSV output. While Delta Parquet might result in longer ETL runtimes compared to CSV, it enables powerful downstream capabilities such as Direct Lake, Lakehouses, and Warehouses, allowing these services to consume data efficiently without additional processing or cost. This means that while the initial execution time may be longer, the overall performance and efficiency of downstream processes can be significantly improved and can lead to better long-term performance of your data integration workflows.
 
-### Consideration 7: I'm working with a large transactional dataset that is updated frequently and I want to optimize the refresh time
+### Consideration 7: Optimizing refresh time for large transactional datasets using incremental refresh
 
 In this scenario, you're dealing with a large transactional dataset that is updated frequently, and you want to optimize the refresh time of your dataflow. This optimization can be challenging due to the volume of data and the need to process only the new or changed records.
 
 In this case, consider using incremental refresh or the pattern to incrementally amass data. Incremental refresh allows you to process only the new or changed data since the last refresh, reducing the amount of data processed and speeding up the overall execution time. This approach is particularly useful for scenarios where data is updated frequently, such as in transactional systems. By implementing incremental refresh, you can optimize the performance of your dataflow and ensure that your data integration processes remain efficient and responsive. Learn more about [Incremental refresh](./dataflow-gen2-incremental-refresh.md) or learn about the [Incremental amassing data pattern](./tutorial-setup-incremental-refresh-with-dataflows-gen2.md).
 
-### Consideration 8: I'm having a lot of dataflows in my workspace and I want to optimize the performance of my data integration processes
-
-In this scenario, you have a large number of dataflows in your workspace, and you want to optimize the performance of your data integration processes. This can lead to increased resource usage and longer execution times if not managed effectively. 
-
-In this case, consider consolidating your dataflows where possible or assigning them to different workspaces based on their resource requirements. This approach helps distribute the workload more evenly and reduces the overall resource consumption in a single workspace. The reason for this is that each dataflow relies on the same compute resources in the workspace, and having too many dataflows can lead to contention for those staging resources, resulting in slower execution times. By organizing your dataflows into multiple workspaces, you can improve the performance of your data integration processes and ensure that each dataflow has access to the necessary compute resources without being hindered by resource contention. As a general guideline, aim for a maximum of 50 dataflows per workspace to maintain optimal performance. This number can vary based on the complexity and resource requirements of your dataflows, so monitor performance and adjust as needed.
-
-### Consideration 9: I'm using a gateway to connect to my on-premises data source and I want to optimize the performance of my dataflow
+### Consideration 8: I'm using a gateway to connect to my on-premises data source and I want to optimize the performance of my dataflow
 
 In this scenario, you're using a gateway to connect to your on-premises data source, and you want to optimize the performance of your dataflow. Gateways can introduce additional latency and overhead, which can impact the overall performance of your dataflow. 
 
 In this case, consider splitting your dataflow into two separate dataflows: one for data movement from the on-premises data source to a data destination (such as a Lakehouse or Warehouse) and another for transformations and final output. This approach allows you to optimize the data movement step by leveraging Fast Copy for high-throughput data transfer, while keeping the transformation step focused on processing the data efficiently and reducing the overall execution time. By separating the data movement and transformation steps, you can reduce the impact of gateway latency and capacity limitations. The reason for this is that the gateway is running the entire dataflow, and if the dataflow is complex or has many transformations, it can lead to slower performance as the gateway processes all the transformations on the computer hosting the gateway. By splitting the dataflow, you can ensure that the gateway is only responsible for the data movement step, which can significantly improve performance and reduce execution time.
 
-### Consideration 10: I'm using the dataflow connectors to consume data from the dataflow and want to optimize my data integration processes
+### Consideration 9: I'm using the dataflow connectors to consume data from the dataflow and want to optimize my data integration processes
 
 In this scenario, you're using dataflow connectors to consume data from your dataflow, and you want to optimize your data integration processes. Dataflow connectors can provide a convenient way to access and consume data.
 
