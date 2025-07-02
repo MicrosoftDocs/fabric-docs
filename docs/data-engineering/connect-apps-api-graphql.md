@@ -5,7 +5,7 @@ ms.reviewer: sngun
 ms.author: sngun
 author: snehagunda
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.search.form: Connecting applications to GraphQL
 ms.date: 05/21/2024
 ---

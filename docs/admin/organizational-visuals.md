@@ -5,6 +5,7 @@ author: billmath
 ms.author: billmath
 ms.topic: conceptual
 ms.date: 12/09/2024
+ms.custom: sfi-image-nochange
 #customer intent: As a Fabric administrator for your organization, I want to control the type of Power BI visuals that users can access across the organization and limit the actions users can perform so that I can ensure compliance with company policies and security standards.
 ---
 

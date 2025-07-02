@@ -1,12 +1,12 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a recommendation system'
 description: This tutorial shows the data engineering and data science workflow for building a system that provides online book recommendations.
-ms.author: lagayhar 
+ms.author: lagayhar
 author: lgayhardt
 ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 01/15/2025
 #customer intent: As a data scientist, I want to build a recommendation model so I can create personalized recommendations.
 ---

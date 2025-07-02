@@ -4,7 +4,7 @@ description: Learn how to edit files in the developer sample repository to build
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 05/21/2024
 #customer intent: As a developer, I want to understand how to build the frontend of a customized Microsoft Fabric workload and how to use the Microsoft Fabric Workload Development Kit so that I can create customized user experiences.
 ---
