@@ -39,23 +39,23 @@ To sign in to your Fabric account, press F1 and type `Fabric: Sign in`. You're p
 
 You can enable Microsoft Fabric for your tenant  such that everyone in the tenant has access to Microsoft Fabric. You may have access to more than one tenant; you can switch between tenants using the tenant switcher.
 
-1. In VS Code, sign in Microsoft Fabric.
+1. In VS Code, sign in to Microsoft Fabric.
 2. Select workspace actions.
 
   :::image type="content" source="media\vscode\view-workspace-actions.png" alt-text="Screenshot of the viewing workspace actions.":::
   
 3. Select switch tenant and  then choose the tenant you want to navigate to.
 
-  :::image type="content" source="media\vscode\switch-tenants.png" alt-text="Screenshot of the selecting switch tenant to change the default tenant.":::
+  :::image type="content" source="media\vscode\switch-tenants.png" alt-text="Screenshot of selecting switch tenant to change the default tenant.":::
 
 ### Create any Fabric item in VS Code
 
-With the Microsoft Fabric Extension, you can now create, delete, and rename any Fabric item directly within VS Code, streamlining your workflow without ever leaving VS Code. You can also the newly created items in [Fabric portal](https://app.fabric.microsoft.com).
+With the Microsoft Fabric Extension, you can now create, delete, and rename any Fabric item directly within VS Code, streamlining your workflow without ever leaving VS Code. You can also view the newly created items in [Fabric portal](https://app.fabric.microsoft.com).
 
 1. Select Create item.
-   :::image type="content" source="media\vscode\create-item.png" alt-text="Screenshot of the creating an item in Fabric.":::
+   :::image type="content" source="media\vscode\create-item.png" alt-text="Screenshot of creating an item in Fabric.":::
 2. Select the item type and provide a name to create the item in Fabric. 
-   :::image type="content" source="media\vscode\select-item-type.png" alt-text="Screenshot of the selecting sthe item type to create in Fabric.":::
+   :::image type="content" source="media\vscode\select-item-type.png" alt-text="Screenshot of selecting the item type to create in Fabric.":::
 
 ### Command palette
 
