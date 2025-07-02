@@ -36,6 +36,16 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/pipeline-rest-api.md",
+        "redirect_url": "/fabric/data-factory/pipeline-rest-api-capabilities",
+        "redirect_document_id": false
+      },
+            {
+        "source_path_from_root": "/docs/data-factory/git-integration-deployment-pipelines.md",
+        "redirect_url": "/fabric/data-factory/cicd-pipelines",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/move-data-lakehouse-copy-assistant.md",
         "redirect_url": "/fabric/data-factory/tutorial-move-data-lakehouse-copy-assistant",
         "redirect_document_id": false
