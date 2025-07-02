@@ -76,7 +76,9 @@
     - name: Pipelines
       items:
       - name: Migrate from Azure Data Factory to Data Factory in Microsoft Fabric
-        href: migrate-from-azure-data-factory.md      
+        href: migrate-from-azure-data-factory.md  
+       - name: Bring your Azure Data Factory to Fabric
+        href: migrate-pipelines-azure-data-factory.md 
       - name: Planning your migration from Azure Data Factory to Fabric
         href: migrate-planning-azure-data-factory.md
       - name: Activity Continuity
