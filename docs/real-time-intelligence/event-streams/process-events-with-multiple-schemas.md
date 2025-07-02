@@ -10,7 +10,7 @@ ms.date: 06/25/2025
 ms.search.form: Enhancing events processing with multiple schemas support
 ---
 
-# Enhancing events processing with multiple schemas support
+# Enhancing events processing with multiple schemas support (preview)
 
 ## Overview
 
