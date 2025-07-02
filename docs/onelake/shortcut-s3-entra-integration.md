@@ -76,7 +76,7 @@ In the following sections you'll configure Microsoft Entra ID, AWS IAM, and Micr
 
 The following screenshot shows you how to get the Application/client ID and object ID.
 
-:::image type="content" source="media\s3-entra-integration\get-entra-app-object-id.png" alt-text="Screenshot showing how to get Microsoft Entra application and object ID.":::
+:::image type="content" source="media\shortcuts-s3-entra-integration\get-entra-app-object-id.png" alt-text="Screenshot showing how to get Microsoft Entra application and object ID." lightbox="media\shortcuts-s3-entra-integration\get-entra-app-object-id.png":::
 
 ## AWS IAM configuration
 
@@ -92,7 +92,7 @@ The following screenshot shows you how to get the Application/client ID and obje
 
 * Audience: `https://analysis.windows.net/powerbi/connector/AmazonS3`
 
-:::image type="content" source="media\s3-entra-integration\add-identity-provider.png" alt-text="Screenshot showing how to add an identity provider in AWS IAM.":::
+  :::image type="content" source="media\shortcuts-s3-entra-integration\add-identity-provider.png" alt-text="Screenshot showing how to add an identity provider in AWS IAM." lightbox="media\shortcuts-s3-entra-integration\add-identity-provider.png":::
 
 ### Step 2: Create IAM roles
 
@@ -139,7 +139,7 @@ The following screenshot shows you how to get the Application/client ID and obje
 
 4. **Condition > :aud** – Ensures the request is from Power BI's S3 connector.
 
-   :::image type="content" source="media\s3-entra-integration\create-role.png" alt-text="Screenshot showing how to create a role in AWS IAM.":::
+   :::image type="content" source="media\shortcuts-s3-entra-integration\create-role.png" alt-text="Screenshot showing how to create a role in AWS IAM." lightbox="media\shortcuts-s3-entra-integration\create-role.png" :::
 
 ## Create an S3 connection in Fabric
 

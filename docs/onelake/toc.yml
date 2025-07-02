@@ -32,7 +32,7 @@ items:
       - name: Create an Amazon S3 compatible shortcut
         href: create-s3-compatible-shortcut.md
       - name: S3 shortcut Entra integration
-        href: s3-shortcut-entra-integration.md
+        href: shortcut-s3-entra-integration.md
       - name: Create a Google Cloud Storage shortcut
         href: create-gcs-shortcut.md
       - name: Create shortcuts to on-premises data
