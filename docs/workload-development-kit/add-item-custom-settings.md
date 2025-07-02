@@ -12,7 +12,7 @@ In Microsoft Fabric, item settings are pieces of information associated with a s
 
 ## Change the item manifest
 
-To add custom item settings, you first need to include `getItemSettings` under `itemSettings` in the frontend item manifest:
+To add custom item settings, you first need to include `getItemSettings` under `itemSettings` in the front-end item manifest:
 
 ```json
     "itemSettings": {

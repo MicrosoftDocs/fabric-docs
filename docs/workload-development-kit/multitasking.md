@@ -33,7 +33,7 @@ Define the `maxInstanceCount` property and assign the number of items that you w
 
 ## Customize actions and handlers
 
-When you decide to implement tab actions and handlers (or part of them), you need to set a property in the item's frontend manifest in the `editorTab` section. That property listens to these actions in its own code, handles the actions accordingly, and returns the results. If you don't set any of the actions (or part of them), the default actions are handled automatically.
+When you decide to implement tab actions and handlers (or part of them), you need to set a property in the item's front-end manifest in the `editorTab` section. That property listens to these actions in its own code, handles the actions accordingly, and returns the results. If you don't set any of the actions (or part of them), the default actions are handled automatically.
 
 Define properties for tab actions in the `editorTab` section:
 

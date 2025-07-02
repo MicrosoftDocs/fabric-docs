@@ -1,23 +1,23 @@
 ---
-title: Set Up a Microsoft Fabric Workload Backend by Using the OpenAPI Specification
-description: Learn how to generate and run a Fabric workload backend based on the Swagger file included in our sample.
+title: Set Up a Microsoft Fabric Workload Back End by Using the OpenAPI Specification
+description: Learn how to generate and run a Fabric workload back end based on the Swagger file included in our sample.
 author: natali0r
 ms.author: natalior
 ms.date: 06/10/2025
 ms.topic: how-to
 ms.service: fabric
 ---
-# Set up a Microsoft Fabric workload backend by using the OpenAPI Specification (Swagger)
+# Set up a Microsoft Fabric workload back end by using the OpenAPI Specification (Swagger)
 
-A Microsoft Fabric workload backend is a service that implements the Fabric API contract, which enables custom workloads to integrate seamlessly with the Microsoft Fabric platform. This backend handles the lifecycle operations for your workload items, including creation, retrieval, updates, and deletion.
+A Microsoft Fabric workload back end is a service that implements the Fabric API contract, which enables custom workloads to integrate seamlessly with the Microsoft Fabric platform. This back end handles the lifecycle operations for your workload items, including creation, retrieval, updates, and deletion.
 
-This article guides you through rapidly generating a Fabric workload backend directly from an OpenAPI (Swagger) definition. This API-first approach enables you to quickly prototype and validate backend logic independently, even before integrating it into the complete Microsoft Fabric development environment. The principles demonstrated here are broadly applicable, regardless of which specific tools or languages you choose.
+This article guides you through rapidly generating a Fabric workload back end directly from an OpenAPI (Swagger) definition. This API-first approach enables you to quickly prototype and validate back-end logic independently, even before integrating it into the complete Microsoft Fabric development environment. The principles demonstrated here are broadly applicable, regardless of which specific tools or languages you choose.
 
 By the end of this article, you'll be able to:
 
-- Generate a Fabric workload backend based on the Swagger file included in a sample.
-- Understand the basic structure and components of a Fabric workload backend.
-- Run and test your generated backend locally by using Python and FastAPI.
+- Generate a Fabric workload back end based on the Swagger file included in a sample.
+- Understand the basic structure and components of a Fabric workload back end.
+- Run and test your generated back end locally by using Python and FastAPI.
 
 In this article, you implement the following core operations from the item lifecycle. These operations correspond to the endpoints defined in the Fabric API Swagger file.
 
@@ -26,7 +26,7 @@ In this article, you implement the following core operations from the item lifec
 - **Update item**: Modify existing items.
 - **Delete item**: Remove items from the workspace.
 
-This article specifically demonstrates the process by using Python and FastAPI with the OpenAPI Generator tool. However, OpenAPI Generator itself supports [numerous programming languages and frameworks](https://openapi-generator.tech/docs/generators#server-generators). You're free to choose any OpenAPI-compatible code generation tool or method that suits your team's expertise and project needs to create your backend skeleton.
+This article specifically demonstrates the process by using Python and FastAPI with the OpenAPI Generator tool. However, OpenAPI Generator itself supports [numerous programming languages and frameworks](https://openapi-generator.tech/docs/generators#server-generators). You're free to choose any OpenAPI-compatible code generation tool or method that suits your team's expertise and project needs to create your back-end skeleton.
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ Before you start the procedures in this article, ensure that you have the follow
 
 - Understanding of the Microsoft Fabric item lifecycle. Read [Item lifecycle management](item-lifecycle.md).
 
-  This understanding is crucial for this article. The generated backend implements the lifecycle operations (create, read, update, delete) for Fabric items, as defined in the [item lifecycle documentation](item-lifecycle.md).
+  This understanding is crucial for this article. The generated back end implements the lifecycle operations (create, read, update, delete) for Fabric items, as defined in the [item lifecycle documentation](item-lifecycle.md).
 - Basic knowledge of Python and RESTful APIs.
 - Familiarity with Microsoft Fabric workload concepts.
 
@@ -209,7 +209,7 @@ This command instructs the OpenAPI Generator CLI to perform the following action
 | Parameter | Value | Description | Required | Purpose | Reference |
 |---|---|---|---|---|---|
 | `-i` | `[InputSpecPath]`<sup>1</sup> | **Input specification**:<br>Specifies the path to the source OpenAPI (Swagger) definition file | Required | Points to the Fabric API contract that defines all endpoints, models, and operations | [OpenAPI Specification](https://swagger.io/specification/) |
-| `-g` | `python-fastapi`<sup>2</sup> | **Generator name**:<br>Tells the tool to use the `python-fastapi` generator to create server-side Python code | Required | Determines the output framework and language for the generated backend code | [Python FastAPI Generator](https://openapi-generator.tech/docs/generators/python-fastapi)<br>[Explore all available server generators](https://openapi-generator.tech/docs/generators#server-generators) |
+| `-g` | `python-fastapi`<sup>2</sup> | **Generator name**:<br>Tells the tool to use the `python-fastapi` generator to create server-side Python code | Required | Determines the output framework and language for the generated back-end code | [Python FastAPI Generator](https://openapi-generator.tech/docs/generators/python-fastapi)<br>[Explore all available server generators](https://openapi-generator.tech/docs/generators#server-generators) |
 | `-o` | `.` | **Output directory**:<br>Instructs the generator to place the output files in the current directory | Required | Specifies where the generated project structure is created | Not applicable |
 | `--additional-properties` | `packageName=fabric_api` | **Generator-specific options**:<br>Sets the Python package name for the generated code to `fabric_api` | Optional | Customizes the generated code structure and naming conventions | [Generator options](https://openapi-generator.tech/docs/generators/python-fastapi#config-options) |
 
@@ -370,9 +370,9 @@ Before you run your FastAPI application, ensure that the port configuration alig
 
 ### Understand the port configuration
 
-When you're developing a Microsoft Fabric workload, the development gateway routes API requests to your backend. This configuration requires:
+When you're developing a Microsoft Fabric workload, the development gateway routes API requests to your back end. This configuration requires:
 
-- Your backend to run on a specific port (default: 5000).
+- Your back end to run on a specific port (default: 5000).
 - The port to match the `WorkloadEndpointURL` value in your workload configuration.
 - All Fabric API calls to be routed through the development gateway to this endpoint.
 
@@ -385,7 +385,7 @@ When you integrate with the full Microsoft Fabric development environment, you n
    - The default location is `C:\workload-dev-mode.json`.
    - You can create this file later, when you're setting up the full Fabric development environment.
 
-2. Ensure that the `WorkloadEndpointURL` value matches your backend port:
+2. Ensure that the `WorkloadEndpointURL` value matches your back-end port:
 
    ```json
    {
@@ -394,7 +394,7 @@ When you integrate with the full Microsoft Fabric development environment, you n
    }
    ```
 
-For complete workload configuration details, see the [documentation for getting started with the extensibility backend](extensibility-back-end.md#get-started).
+For complete workload configuration details, see the [documentation for getting started with the extensibility back end](extensibility-back-end.md#get-started).
 
 ### Run the FastAPI application
 
@@ -438,7 +438,7 @@ python -m uvicorn fabric_api.main:app --host 0.0.0.0 --port 5000
 >
 > Ensure that another application in your system isn't already using your chosen port.
 
-### Verify that your backend is accessible
+### Verify that your back end is accessible
 
 After you start the application, verify that it's running correctly:
 
@@ -563,7 +563,7 @@ The following image shows an example of the Swagger UI with the Fabric API endpo
 
 ## Step 9: Implement more advanced functionality
 
-The previous steps provided a basic example of how to implement the `ItemLifecycle` API by using Python with FastAPI. Remember, this article is a foundational example that demonstrates only the core concepts. For a robust, production-quality backend, you typically implement more functionality, such as:
+The previous steps provided a basic example of how to implement the `ItemLifecycle` API by using Python with FastAPI. Remember, this article is a foundational example that demonstrates only the core concepts. For a robust, production-quality back end, you typically implement more functionality, such as:
 
 - Create service classes to handle business logic, database operations, and other elements of a service layer:
 
@@ -616,22 +616,22 @@ The previous steps provided a basic example of how to implement the `ItemLifecyc
           raise HTTPException(status_code=500, detail="Internal server error")
   ```
 
-Here are more considerations for a robust backend:
+Here are more considerations for a robust back end:
 
 - **Implementation of the remaining controllers**: For example, implement the Jobs API and the Endpoint Resolution API.
-- **Authentication and authorization**: Help secure your endpoints by validating tokens and permissions. For more information, see [Backend authentication and authorization overview](back-end-authentication.md).
+- **Authentication and authorization**: Help secure your endpoints by validating tokens and permissions. For more information, see [Back-end authentication and authorization overview](back-end-authentication.md).
 - **Persistent storage**: Integrate with databases or other storage solutions for data persistence.
 - **Logging and monitoring**: Implement comprehensive logging and monitoring to track application health and performance.
 - **Testing**: Write unit and integration tests to help ensure reliability and correctness.
 
 ## Conclusion
 
-You now successfully set up a Microsoft Fabric workload API backend by using Python with FastAPI. This implementation:
+You now successfully set up a Microsoft Fabric workload API back end by using Python with FastAPI. This implementation:
 
 - Uses the OpenAPI Generator tool to create a FastAPI project.
 - Implements the necessary controllers for handling Fabric API requests.
 
-This article is a basic example that demonstrates how to implement an API for `ItemLifecycle` by using Python. More enhancements and considerations, such as those outlined in [Step 9: Implement more advanced functionality](#step-9-implement-more-advanced-functionality), are necessary to build a high-quality, robust, and secure backend that's suitable for a production environment.
+This article is a basic example that demonstrates how to implement an API for `ItemLifecycle` by using Python. More enhancements and considerations, such as those outlined in [Step 9: Implement more advanced functionality](#step-9-implement-more-advanced-functionality), are necessary to build a high-quality, robust, and secure back end that's suitable for a production environment.
 
 A complete integration with Microsoft Fabric requires implementing proper authentication handling, persistent storage, comprehensive error handling, and custom business logic that's specific to your workload.
 
