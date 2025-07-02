@@ -23,7 +23,7 @@ management and enhancing security.
 
 * **Seamless integration**: Designed to integrate with existing AWS deployments with minimal configuration changes.
 
-## Architecture overview
+## Architecture
 
 The Entra-AWS integration is built on a federated identity model that uses OpenID Connect (OIDC) to enable secure, temporary access to AWS resources. The architecture consists of the following three main
 components that work together to establish trust, authenticate users, and authorize access to Amazon S3 from Microsoft Fabric:
