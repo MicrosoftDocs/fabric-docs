@@ -143,7 +143,7 @@ The following screenshot shows you how to get the Application/client ID and obje
 
 ## Create an S3 connection in Fabric
 
-Use Microsoft Fabric OneLake's shortcut creation interface to create the shortcut as described in the [create an S3 shortcut](https://learn.microsoft.com/en-us/fabric/onelake/create-s3-shortcut) article. Follow the same steps, but set **RoleARN** to the Amazon Resource Name (ARN) for the IAM role, and set the *Authentication Kind* to **Service Principal** and fill in the following details:
+Use Microsoft Fabric OneLake's shortcut creation interface to create the shortcut as described in the [create an S3 shortcut](create-s3-shortcut.md) article. Follow the same steps, but set **RoleARN** to the Amazon Resource Name (ARN) for the IAM role, and set the *Authentication Kind* to **Service Principal** and fill in the following details:
 
 * **Tenant ID:** Tenant ID of the Microsoft Entra application
 
