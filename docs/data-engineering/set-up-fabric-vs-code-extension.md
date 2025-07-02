@@ -39,12 +39,12 @@ To sign in to your Fabric account, press F1 and type `Fabric: Sign in`. You're p
 
 You can enable Microsoft Fabric for your tenant  such that everyone in the tenant has access to Microsoft Fabric. You may have access to more than one tenant; you can switch between tenants using the tenant switcher.
 
-1. In VS Code, sign in to Microsoft Fabric.
-2. Select workspace actions.
+1. Sign in to Microsoft Fabric.
+2. Select **Workspace actions**.
 
   :::image type="content" source="media\vscode\view-workspace-actions.png" alt-text="Screenshot of the viewing workspace actions.":::
   
-3. Select switch tenant and  then choose the tenant you want to navigate to.
+3. Select **Switch tenant** and  then choose the tenant you want to navigate to.
 
   :::image type="content" source="media\vscode\switch-tenants.png" alt-text="Screenshot of selecting switch tenant to change the default tenant.":::
 
