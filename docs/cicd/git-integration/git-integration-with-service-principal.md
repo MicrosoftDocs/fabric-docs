@@ -99,7 +99,7 @@ When you need to update your service principal details, for example, update serv
  :::image type="content" source="media/git-integration-with-service-principal/edit-connection-1.png" alt-text="Screenshot of editing the connection details." lightbox="media/git-integration-with-service-principal/edit-connection-1.png":::
 
  >[!NOTE]
- > If you want to create a new connection instead of edititng an existing one, you can do this by selecting **+New** in the top left corner to add a new cloud connection.
+ > If you want to create a new connection instead of editing an existing one, you can do this by selecting **+New** in the top left corner to add a new cloud connection.
 
 3. Once you have finished editing the connection, click **Save**.
 

@@ -99,7 +99,7 @@ If the workspace is already connected to GitHub, follow the instructions for [Co
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
     - Folder (Type in the name of an existing folder or enter a name to create a new folder. If you leave the folder name blank, content is created in the root folder. You can only connect to one folder at a time.)
 
-:::image type="content" source="./media/git-get-started/azure-connect-branch.png" alt-text="Screenshot to Azure connection.":::
+:::image type="content" source="./media/git-get-started/azure-connect-branch-2.png" alt-text="Screenshot to Azure connection.":::
 
 #### [GitHub branch connect](#tab/GitHub)
 
