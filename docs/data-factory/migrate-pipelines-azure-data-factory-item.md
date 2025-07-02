@@ -33,7 +33,7 @@ You can edit pipelines in Fabric’s Data Factory UI—it looks and feels like t
 Prefer your Git-based workflow? No problem. Fabric will show the published version of your pipelines, but your Git setup stays intact.
 
 ## Running Pipelines
-- Pipelines still run on ADF’s infrastructure. That means:
+Pipelines still run on ADF’s infrastructure. That means:
 - Same integration runtimes (including Self-Hosted IRs).
 - Same compute and billing (you’re charged by Azure for ADF, not Fabric capacities).
 - No need to set up a Fabric gateway for existing pipelines.
