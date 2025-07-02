@@ -109,7 +109,7 @@ First, map non-time series data. Non-time series mappings must be run before tim
 
     :::image type="content" source="media/model-manage-mappings/map-time-properties.png" alt-text="Screenshot of configuring the time series properties.":::
     
-1. Configure the **Link with entity property** by selecting a column from your time series data that **exactly matches** values from a property that's modeled on your entity type. This process allows digital twin builder (preview) to contextualize your time series data with the existing entity instances.
+1. Configure the **Link with entity property** by selecting a column from your time series data that **exactly matches** a property type that was defined in the entity type. This process allows digital twin builder (preview) to contextualize your time series data with the existing entity instances.
 
     >[!TIP]
     > If you don't see a non-time series property available to use, make sure to map a non-time series property first, and then return to this step.

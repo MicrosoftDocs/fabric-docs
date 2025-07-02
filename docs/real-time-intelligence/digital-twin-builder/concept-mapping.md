@@ -15,7 +15,7 @@ The *mapping* feature within digital twin builder (preview) allows users to begi
 
 With mapping, you can:
 * Build your ontology by creating semantically rich entity types
-* Map data from various systems through a Fabric lakehouse to entity instances in your ontology
+* Map data from various systems through a Fabric lakehouse to entity instances modeled by the entity types from your ontology
 * Link and contextualize time series data directly to your entity instances
 * Enable a unified semantic layer
 
@@ -38,7 +38,7 @@ Here are the key concepts for mapping in digital twin builder (preview).
 
 * *Time series properties*: Time series properties are specific measurements or observations recorded with a timestamp over an interval of time. These columns usually contain numerical values corresponding to the property being tracked over time.
 
-    * *Time series link property*: A time series link property is one column from your time series data whose values **exactly match** the values from a modeled entity instance property. It can be used to contextualize your time series data with your existing entity instance data.
+    * *Time series link property*: A time series link property is one column from your time series data whose values **exactly match** the property type as defined in the entity instance type. It can be used to contextualize your time series data with your existing entity instance data.
 
     * *Incremental processing*: Incremental processing maps data incrementally as it becomes available. This approach helps save processing time and improve overall workflow efficiency. This option is recommended for time series data.
 

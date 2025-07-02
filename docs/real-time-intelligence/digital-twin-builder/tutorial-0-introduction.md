@@ -56,7 +56,7 @@ This tutorial deals with a subset of the distillation process outlined in the pr
 
 ## Data sources
 
-Contoso Energy wants to model and standardize distillation processes across their sites. To model their process on digital twin builder, they start by representing 10 sites, where each site is an instance of a *Process* entity. 
+Contoso Energy wants to model and standardize distillation processes across their sites. To model their process on digital twin builder, they start by representing 10 sites, where each site is an instance of the *Process* entity type. 
 
 ### Raw data for tutorial
 
