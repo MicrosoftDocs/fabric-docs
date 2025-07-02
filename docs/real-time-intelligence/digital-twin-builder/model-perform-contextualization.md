@@ -64,7 +64,7 @@ The relationship type updates in the semantic canvas immediately. It might take 
 
 ## Limitations
 
-relationship types in digital twin builder (preview) have the following restrictions:
+Relationship types in digital twin builder (preview) have the following restrictions:
 
 * All relationship types must reference entity type properties. This information is used by digital twin builder to create connections in the data layer based on specific reference keys (like in a traditional relationship database scenario).
 * A single entity type property can't be both the source and target in the same relationship type. 
