@@ -4,7 +4,7 @@ description: "This article describes how to manage external data shares."
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/19/2024
 #customer intent: As a data owner, I want to manage the external data shares on an item.
 ---

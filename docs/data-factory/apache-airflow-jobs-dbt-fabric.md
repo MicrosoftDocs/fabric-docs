@@ -46,8 +46,8 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
 - [dbt-fabric](https://pypi.org/project/dbt-fabric/): This package is used to create dbt project, which can then be deployed to a [Fabric Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup)
 
   ```bash
-     astronomer-cosmos==1.0.3
-     dbt-fabric==1.5.0
+  astronomer-cosmos==1.10.1
+  dbt-fabric==1.9.5   
   ```
 
 ### [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job.](#create-a-dbt-project-in-the-fabric-managed-storage-provided-by-the-apache-airflow-job)

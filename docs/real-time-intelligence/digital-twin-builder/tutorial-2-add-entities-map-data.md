@@ -102,7 +102,7 @@ When the mapping is done running, entity instances are created and hydrated with
 
 Next, map some time series data. For the *Distiller* entity type, there are four time series properties coming from the time series data table that need to be added. After they are added, you link the time series data to the entity instances that you mapped in the previous step, by specifying a link property that exactly matches values across the time series and non-time series data.
 
-1. Go back to the **Configure** view and reselect the **Distiller** entity type. In the **Entity configuration** pane, reopen the **Mappings** tab.
+1. Select **Home** to return to the semantic canvas, and reselect the **Distiller** entity type. In the **Entity configuration** pane, reopen the **Mappings** tab.
 1. Select **Add data** to create a new mapping for the time series data.
 1. Open **Select lakehouse table** to select a data source for your mapping. From your tutorial workspace, select the *GettingStartedRawData* lakehouse and the *timeseries* table.
 

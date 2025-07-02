@@ -6,7 +6,7 @@ ms.author: abnarain
 author: abnarain
 ms.topic: how-to
 ms.custom: airflows
-ms.date: 03/25/2024
+ms.date: 06/30/2025
 ---
 
 # Install a Private Package as a requirement in Apache Airflow job
@@ -14,13 +14,13 @@ ms.date: 03/25/2024
 > [!NOTE]
 > Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
-A python package is a way to organize related Python modules into a single directory hierarchy. A package is typically represented as a directory that contains a special file called **init**.py. Inside a package directory, you can have multiple Python module files (.py files) that define functions, classes, and variables. In the context of Apache Airflow Job, you can develop you private packages to add custom Apache Airflow operators, hooks, sensors, plugins etc.
+A Python package lets you organize related Python modules into a single directory hierarchy. A package is typically represented as a directory that contains a special file called **init**.py. Inside a package directory, you can have multiple Python module files (.py files) that define functions, classes, and variables. With Apache Airflow Jobs, you can develop your own private packages to add custom Apache Airflow operators, hooks, sensors, plugins, and more.
 
-In this tutorial, you will create a simple custom operator as a Python package, add it as a requirement in the Apache Airflow job environment, and import the private package as a module within the DAG file.
+In this tutorial, you'll build a simple custom operator as a Python package, add it as a requirement in your Apache Airflow job, and import your private package as a module in your DAG file.
 
 ## Develop a custom operator and test with an Apache Airflow Dag
 
-1. Create a file `sample_operator.py` and convert it to Private Package. Refer to the guide: [Creating a package in python](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/modules_management.html#creating-a-package-in-python)
+1. Create a file called `sample_operator.py` and turn it into a private package. If you need help, check out this guide: [Creating a package in python](https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/modules_management.html#creating-a-package-in-python)
 
    ```python
    from airflow.models.baseoperator import BaseOperator
@@ -37,7 +37,7 @@ In this tutorial, you will create a simple custom operator as a Python package, 
 
    ```
 
-2. Create the Apache Airflow DAG file `sample_dag.py` to test the operator defined in Step 1.
+2. Next, create an Apache Airflow DAG file called `sample_dag.py` to test the operator you made in the first step.
 
    ```python
    from datetime import datetime
@@ -59,13 +59,13 @@ In this tutorial, you will create a simple custom operator as a Python package, 
        task
    ```
 
-3. Create a GitHub Repository containing the `sample_dag.py` in `Dags` folder and your private package file. Common file formats include `zip`, `.whl`, or `tar.gz`. Place the file either in the 'Dags' or 'Plugins' folder, as appropriate. Synchronize your Git Repository with Apache Airflow Job or you can use preconfigured repository[Install-Private-Package](https://github.com/ambika-garg/Install-Private-Package-Fabric)
+3. Set up a GitHub Repository with your `sample_dag.py` file in `Dags` folder, along with your private package file. You can use formats like `zip`, `.whl`, or `tar.gz`. Put the file in either the 'Dags' or 'Plugins' folder, whichever fits best. Connect your Git Repository to your Apache Airflow Job, or try the ready-made example at [Install-Private-Package](https://github.com/ambika-garg/Install-Private-Package-Fabric).
 
 ## Add your package as a requirement
 
-Add the package as a requirement under `Airflow requirements`. Use the format `/opt/airflow/git/<repoName>.git/<pathToPrivatePackage>`
+Add the package under `Airflow requirements` using the format `/opt/airflow/git/<repoName>/<pathToPrivatePackage>`
 
-For example, if your private package is located at `/dags/test/private.whl` in a GitHub repo, add the requirement `/opt/airflow/git/<repoName>.git/dags/test/private.whl` to the Airflow environment.
+For example, if your private package sits at `/dags/test/private.whl` in your GitHub repo, just add `/opt/airflow/git/<repoName>/dags/test/private.whl` to your Airflow environment.
 
 :::image type="content" source="media/apache-airflow-jobs/private-package.png" lightbox="media/apache-airflow-jobs/private-package.png" alt-text="Screenshot showing private package added as requirement.":::
 

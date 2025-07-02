@@ -3,7 +3,7 @@ title: 'Digital twin builder (preview) tutorial: Explore your ontology'
 description: Search and explore the ontology from digital twin builder (preview) tutorial.
 author: baanders
 ms.author: baanders
-ms.date: 05/01/2025
+ms.date: 07/01/2025
 ms.topic: tutorial
 ---
 
@@ -15,7 +15,7 @@ Now that you have an ontology with entity types and relationship types, you expl
 
 ## Use the Explore mode
 
-Use the view selector in the top right of the screen to switch to the **Explore** mode. The view for this mode contains a search bar in the top right corner for entity type and keyword searches, and an **Advanced query** experience.
+Select **Explore entity instances** from the menu ribbon to switch to the **Explore** mode. The view for this mode contains a search bar in the top right corner for entity type and keyword searches, and an **Advanced query** experience.
 
 :::image type="content" source="media/tutorial/explore-selector.png" alt-text="Screenshot showing the view selector.":::
 
@@ -72,10 +72,10 @@ Sometimes an entity type is misconfigured or no longer needed. In that case, ent
 
 Enact that scenario now by removing the *Reboiler* entity type from your ontology.
 
-1. Use the view selector in the top right corner to return to the **Configure** experience and the semantic canvas. Select the **Reboiler** entity type to view it in the canvas.
+1. Select **Home** in the top left corner to return to the semantic canvas. Select the **Reboiler** entity type to view it in the canvas.
 
-    :::image type="content" source="media/tutorial/configure-reboiler.png" alt-text="Screenshot showing the Reboiler entity type in the Configure experience.":::
-1. Before you can deactivate an entity type, you must delete its relationship types. Select the *isPartOf* relationship type in the semantic canvas to bring up the **Relationship configuration** pane, and select **Delete relationship**.
+    :::image type="content" source="media/tutorial/home-reboiler.png" alt-text="Screenshot showing the Reboiler entity type back in the Home tab.":::
+1. Before you can deactivate an entity, you must delete its relationship types. Select the *isPartOf* relationship type in the semantic canvas to bring up the **Relationship configuration** pane, and select **Delete relationship**.
 
     :::image type="content" source="media/tutorial/delete-relationship.png" alt-text="Screenshot showing how to delete a relationship type.":::
 1. After deleting the relationship type, you can deactivate the entity type. Hover over the **Reboiler** entity type and select the ellipses next to it. Select **Deactivate entity** from the menu, and confirm when prompted.

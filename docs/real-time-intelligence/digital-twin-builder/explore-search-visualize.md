@@ -3,7 +3,7 @@ title: Search and visualize your modeled data
 description: Learn about ways to explore your data in digital twin builder (preview).
 author: baanders
 ms.author: baanders
-ms.date: 05/02/2025
+ms.date: 07/01/2025
 ms.topic: how-to
 ---
 
@@ -13,7 +13,7 @@ In digital twin builder (preview), the *explorer* lets you identify assets from 
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-Access the explorer by switching into **Explore** mode with the view selector in the [semantic canvas](concept-semantic-canvas.md#view-selector).
+Access the explorer by selecting **Explore entity instances** from the menu ribbon in the [semantic canvas](concept-semantic-canvas.md#menu-ribbon).
 
 :::image type="content" source="media/explore-search-visualize/explorer.png" alt-text="Screenshot of the explorer.":::
 
@@ -31,9 +31,13 @@ Here are the top scenarios for using the explorer:
 
 ## Access the explorer
 
-You can access the explorer from the digital twin builder (preview) homepage, by using the view selector in the top right corner to select **Explore**.
+You can access the explorer from the digital twin builder (preview) semantic canvas, by selecting **Explore entity instances** from the menu ribbon.
 
 :::image type="content" source="media/explore-search-visualize/access.png" alt-text="Screenshot of selecting the explorer view.":::
+
+To leave the explorer and return to the semantic canvas, select **Home** in the top left corner of the explorer view.
+
+:::image type="content" source="media/explore-search-visualize/explorer-home.png" alt-text="Screenshot of selecting Home.":::
 
 ## Explore assets
 

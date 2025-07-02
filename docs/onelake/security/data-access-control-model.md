@@ -6,7 +6,8 @@ ms.author: yuturchi
 author: yuturchi
 ms.topic: concept-article
 ms.custom:
-  - onelake-data-access-public-preview-april-2024
+- onelake-data-access-public-preview-april-2024
+- sfi-image-nochange
 ms.date: 03/25/2025
 #customer intent: As a OneLake user, I want to understand how OneLake secures data with role-based access control and the impact on Fabric permissions so that I can protect data stored and accessed in OneLake.
 ---

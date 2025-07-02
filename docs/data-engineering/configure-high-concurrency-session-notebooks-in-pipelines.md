@@ -6,7 +6,8 @@ ms.author: saravi
 author: santhoshravindran7
 ms.topic: how-to
 ms.custom:
-  - fabcon-2024
+- fabcon-2024
+- sfi-image-nochange
 ms.date: 09/18/2024
 ---
 

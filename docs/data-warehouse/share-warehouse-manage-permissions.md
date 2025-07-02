@@ -7,6 +7,7 @@ ms.reviewer: mesrivas
 ms.date: 04/09/2025
 ms.topic: how-to
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
+ms.custom: sfi-image-nochange
 ---
 # Share your data and manage permissions
 
