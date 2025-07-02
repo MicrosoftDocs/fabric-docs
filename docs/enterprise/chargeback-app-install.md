@@ -1,12 +1,12 @@
 ---
 title: Install the Microsoft Fabric Chargeback app
 description: Learn how to install the Microsoft Fabric Chargeback app.
-author: kishanpujara1
-ms.author: kishanpujara1
+author: kishanpujara-ms
+ms.author: kishanpujara
 ms.reviewer: juliacawthra
 ms.topic: how-to
 ms.custom:
-ms.date: 06/26/2025
+ms.date: 07/02/2025
 ---
 
 # Install the Microsoft Fabric Chargeback app
