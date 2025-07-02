@@ -50,7 +50,8 @@ When you select a timestamp link in the Date (UTC) column, the **Invocation deta
 
 Use the following code to write a log into our logging system.
 
-> **Note:** Be sure to import the logging module
+> [!Note]
+> Be sure to import the logging module.
 ```python
 import logging
 ```
