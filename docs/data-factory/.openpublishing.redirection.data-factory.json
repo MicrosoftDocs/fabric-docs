@@ -36,7 +36,7 @@
         "redirect_document_id": false
       },
       {
-        "source_path_from_root": "/docs/data-factory/pipeline-rest-api.md.md",
+        "source_path_from_root": "/docs/data-factory/pipeline-rest-api.md",
         "redirect_url": "/fabric/data-factory/pipeline-rest-api-capabilities",
         "redirect_document_id": false
       },
