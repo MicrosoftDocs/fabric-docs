@@ -39,17 +39,17 @@ Prefer your Git-based workflow? No problem. Fabric will show the published versi
 - No need to set up a Fabric gateway for existing pipelines.
 
 ## Monitoring & Admin
-- You can trigger and debug pipelines in Fabric as well as basic monitoring. For full monitoring (like viewing past runs or setting alerts), head back to the ADF portal.
-- Some features like global parameters aren’t visible in Fabric
+- You can trigger and debug pipelines as well as perform basic monitoring in Fabric. For full monitoring (like viewing past runs or setting alerts), head back to the ADF portal.
+- Some features like global parameters aren’t visible in Fabric.
 
-## Why Use ADF Item Mounting?
+## Why use Azure Data Factory Item?
 - It’s a great way to explore Fabric without disrupting your current ADF setup.
 - You get a unified workspace—view dashboards, run pipelines, and manage data all in one place.
 - It supports gradual migration and modernization. You can keep your ADF pipelines running while starting to build new things in Fabric.
 
-### How to Mount: 
+## How to mount your Azure Data Factory: 
 There are two entry points, one from ADF and one within Fabric workspace.
-## Mount from Fabric workspace
+### 1. Mount from Fabric workspace
 1.  Go to your Fabric workspace.
 1.	Create New Item > Azure Data Factory.
 :::image type="content" source="media/migrate-planning-azure-data-factory/azure-data-factory-item.png" alt-text="Screenshot showing the Azure Data Factory Item in Fabric.":::
@@ -65,14 +65,15 @@ That’s it! Within no time, you’ll see your ADF pipelines inside Fabric.
 Not sure yet? You can safely unmount your factory from Fabric at any time. Just click Unmount.
 :::image type="content" source="media/migrate-planning-azure-data-factory/unmount-from-fabric.png" alt-text="Screenshot showing unmount Azure Data Factory Item in Fabric.":::
 
-## Mount from ADF UX
-You can now mount your azure data factory to Fabric from ADF UX
+### 2. Mount from ADF UX
+You can now mount your Azure Data Factory to Fabric from ADF UX
 
 1.	Go to your Data factory in Azure portal that you wish to mount
 2.	From Manage tab select ADF in Microsoft Fabric
 3.	Click Mount in Fabric
 4.	Choose a Fabric workspace where you would like to mount the factory to
 5.	Click Mount
+   
 :::image type="content" source="media/migrate-planning-azure-data-factory/azure-data-factory-to-fabric.png" alt-text="Screenshot showing mounting experience from ADF.":::
 
 :::image type="content" source="media/migrate-planning-azure-data-factory/view-azure-data-factory-artifacts.png" alt-text="Screenshot showing pipeline artifacts ADF.":::
