@@ -4,7 +4,7 @@ description: Learn how to configure and use trusted workspace access to securely
 author: msmimart
 ms.author: mimart
 ms.topic: conceptual
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 04/08/2025
 ---
 

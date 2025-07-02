@@ -7,6 +7,7 @@ ms.reviewer: dlevy
 ms.date: 11/01/2024
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor
+ms.custom: sfi-image-nochange
 ---
 # Query the SQL analytics endpoint of your SQL database in Fabric
 
