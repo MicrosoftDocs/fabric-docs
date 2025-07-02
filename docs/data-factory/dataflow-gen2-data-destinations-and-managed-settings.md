@@ -139,6 +139,8 @@ Schema options on publish only apply when the update method is replace. When you
 | Type                             | No  | No  | No  | No  | No  | No  |
 | Structured (List, Record, Table) | No  | No  | No  | No  | No  | No  |
 
+When working with data types such as currency or percentage, we typically convert them to their decimal equivalents for most destinations. However, when reconnecting to these destinations and following the existing table path, you might encounter difficulties mapping, for example, currency to a decimal column. In such cases, try changing the data type in the editor to decimal, as this will facilitate easier mapping to the existing table and column.
+
 ## Advanced topics
 
 ### Using staging before loading to a destination

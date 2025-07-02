@@ -4,7 +4,7 @@ description: This article describes how to add an Azure IoT hub as an event sour
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
 ---
 

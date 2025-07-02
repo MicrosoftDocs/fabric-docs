@@ -44,7 +44,7 @@ This section describes how to add a new relationship between two entities in the
 
 1. When you're finished adding the configuration details, select **Create**.
 
-    :::image type="content" source="media/model-perform-contextualization/create-3.png" alt-text="Screenshot of relationship configuration details.":::
+    :::image type="content" source="media/model-perform-contextualization/create-2.png" alt-text="Screenshot of relationship configuration details.":::
 
 The relationship appears in the semantic canvas immediately. It might take a few minutes for it to propagate across the [data layer](concept-modeling.md#storage-and-access) and be available in the [explorer](explore-search-visualize.md).
 

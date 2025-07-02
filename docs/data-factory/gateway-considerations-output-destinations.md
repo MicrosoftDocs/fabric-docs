@@ -4,7 +4,7 @@ description: Describes multiple considerations and limitations when using a data
 author: luitwieler
 ms.author: jeluitwi
 ms.topic: conceptual
-ms.custom: dataflows
+ms.custom: dataflows, sfi-image-nochange
 ms.date: 06/05/2025
 ---
 
