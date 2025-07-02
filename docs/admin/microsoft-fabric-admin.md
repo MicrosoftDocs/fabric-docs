@@ -4,7 +4,7 @@ description: This article provides an overview of the admin role in Microsoft Fa
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.custom:
+ms.custom: sfi-ga-nochange
 ms.date: 07/01/2024
 ---
 

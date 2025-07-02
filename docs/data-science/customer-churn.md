@@ -1,12 +1,12 @@
 ---
 title: 'Tutorial: create, evaluate, and score a churn prediction model'
 description: This tutorial describes a data science workflow with an end-to-end example of building a model to predict churn.
-ms.author: lagayhar 
+ms.author: lagayhar
 author: lgayhardt
 ms.reviewer: sgilley
 reviewer: sdgilley
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 01/14/2025
 #customer intent: As a data scientist, I want to build a machine learning model so I can predict customer churn.
 ---

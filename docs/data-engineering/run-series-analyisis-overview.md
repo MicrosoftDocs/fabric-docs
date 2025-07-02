@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
 ms.topic: overview
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 05/21/2024
 ms.search.form: run_series_analysis
 ---

@@ -5,7 +5,7 @@ ms.author: whhender
 author: whhender
 ms.reviewer: makromer
 ms.topic: overview
-ms.custom: configuration
+ms.custom: configuration, sfi-image-nochange
 ms.search.form: product-data-integration, Data_Factory_Overview, product-data-factory
 ms.date: 12/18/2024
 ---

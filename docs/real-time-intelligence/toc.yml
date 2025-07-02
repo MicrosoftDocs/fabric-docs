@@ -9,7 +9,19 @@ items:
   - name: Compare with Azure solutions
     href: real-time-intelligence-compare.md
   - name: Git integration and deployment pipelines
-    href: git-deployment-pipelines.md
+    items:
+    - name: Overview
+      href: git-deployment-pipelines.md
+    - name: Git integration of Real-Time intelligence items
+      items:
+      - name: Eventstream 
+        href: git-eventstream.md
+      - name: Eventhouse and KQL database
+        href: git-eventhouse-kql-database.md
+      - name: KQL querysets
+        href: git-kql-queryset.md
+      - name: Real-Time Dashboard 
+        href: git-real-time-dashboard.md
     displayName: alm, application lifecycle management, cicd, devops
   - name: Implement medallion architecture
     href: architecture-medallion.md
@@ -87,7 +99,7 @@ items:
         href: event-streams/edit-publish.md
       - name: Route events based on content
         href: event-streams/route-events-based-on-content.md
-    - name: Eventstream connectors
+    - name: Add sources to eventstreams
       items:
       - name: Source connectors
         items:
@@ -414,9 +426,9 @@ items:
       href: /rest/api/fabric/digitaltwinbuilderflow/items
 - name: Analyze and train data
   items:
-  - name: Copilot for Real-Time Intelligence
+  - name: Copilot for Writing KQL Queries
     displayName: KQL queryset, kusto query language, natural language
-    href: ../fundamentals/copilot-real-time-intelligence.md
+    href: ../fundamentals/copilot-for-writing-queries.md
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
