@@ -10,7 +10,7 @@ ms.reviewer: sngun
 
 # Integrate Microsoft Entra with AWS S3 shortcuts using Service Principal Authentication
 
-You can integrate Microsoft Entra with AWS S3 using the Service Principal Name (SPN) approach. This integration enables seamless, secure access to S3 buckets using Entra credentials, simplifying identity
+You can integrate Microsoft Entra with AWS S3 using the Service Principal Name (SPN) approach. This integration enables seamless, secure access to S3 buckets using Microsoft Entra credentials, simplifying identity
 management and enhancing security.
 
 ## Key benefits
@@ -29,14 +29,14 @@ The Entra-AWS integration is built on a federated identity model that uses OpenI
 components that work together to establish trust, authenticate users, and authorize access to Amazon S3 from Microsoft Fabric:
 
 1. A **Service Principal (SPN)** registered in Microsoft Entra.
-2. An **OIDC trust relationship** between AWS and Entra.
+2. An **OIDC trust relationship** between AWS and Microsoft Entra.
 3. A **Fabric connection** that uses temporary credentials from AWS Security Token Service (STS).
 
-In the following sections you will configure Microsoft Entra ID, AWS IAM, and Microsoft Fabric for secure access to Amazon S3 using the service principal-based integration. This setup establishes the necessary trust relationships and connection details required for the integration to work.
+In the following sections you'll configure Microsoft Entra ID, AWS IAM, and Microsoft Fabric for secure access to Amazon S3 using the service principal-based integration. This setup establishes the necessary trust relationships and connection details required for the integration to work.
 
 ## Configure Microsoft Entra ID
 
-### Step1: Register an Entra application
+### Step1: Register an Microsoft Entra application
 
 * Sign in to [Azure portal](https://portal.azure.com/) and navigate to **Microsoft Entra ID**.
 
@@ -44,7 +44,7 @@ In the following sections you will configure Microsoft Entra ID, AWS IAM, and Mi
 
   * **Name**: Enter a name for your application such as *S3AccessServicePrincipal.*
 
-  * **Redirect URL**: Leave it blank or set to <https://localhost> if required.
+  * **Redirect URL**: Leave it blank or set to <https://localhost> if necessary.
 
   * Select **Register** to register your application.
 
@@ -53,7 +53,7 @@ In the following sections you will configure Microsoft Entra ID, AWS IAM, and Mi
 
 ### Step2: Create a client secret
 
-* Open the Entra application you created above.
+* Open the Microsoft Entra application you created above.
 
 * From the left-hand menu, expand **Manage > Certificates and secrets > New client secret** to add a new secret
 
@@ -145,12 +145,12 @@ The following screenshot shows you how to get the Application/client ID and obje
 
 Use Microsoft Fabric OneLake's shortcut creation interface to create the shortcut as described in the [create an S3 shortcut](https://learn.microsoft.com/en-us/fabric/onelake/create-s3-shortcut) article. Follow the same steps, but set **RoleARN** to the Amazon Resource Name (ARN) for the IAM role, and set the *Authentication Kind* to **Service Principal** and fill in the following details:
 
-* **Tenant ID:** Tenant ID of the Entra application
+* **Tenant ID:** Tenant ID of the Microsoft Entra application
 
 * **Service principal client ID:** The Application ID you got in the
   previous step.
 
-* **Service principal key:** The client secret of the Entra application
+* **Service principal key:** The client secret of the Microsoft Entra application
 
 ## Security recommendations
 
@@ -162,9 +162,9 @@ Use Microsoft Fabric OneLake's shortcut creation interface to create the shortcu
 
 ## Current limitations
 
-* This feature currently supports only the service principal-based approach; OAuth and Workspace Identity are not yet supported.
+* This feature currently supports only the service principal-based approach; OAuth and Workspace Identity aren't yet supported.
 
-* Access to S3 buckets behind a firewall is not currently supported.
+* Access to S3 buckets behind a firewall isn't currently supported.
 
 ## Related content
 
