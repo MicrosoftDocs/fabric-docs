@@ -38,7 +38,7 @@ Here are the key concepts for mapping in digital twin builder (preview).
 
 * *Time series properties*: Time series properties are specific measurements or observations recorded with a timestamp over an interval of time. These columns usually contain numerical values corresponding to the property being tracked over time.
 
-    * *Time series link property*: A time series link property is one column from your time series data whose values **exactly match** the property type as defined in the entity instance type. It can be used to contextualize your time series data with your existing entity instance data.
+    * *Time series link property*: A time series link property is one column from your time series data whose values **exactly match** a property type that was defined in the entity type. It can be used to contextualize your time series data with your existing entity instance data.
 
     * *Incremental processing*: Incremental processing maps data incrementally as it becomes available. This approach helps save processing time and improve overall workflow efficiency. This option is recommended for time series data.
 
