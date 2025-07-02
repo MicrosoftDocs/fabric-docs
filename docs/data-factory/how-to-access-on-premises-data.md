@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.custom: configuration
 ms.date: 07/02/2025
 ms.search.form: On-premises data sources gateway
+ai-usage: ai-assisted
 ---
 
 # Access on-premises data sources in Data Factory for Microsoft Fabric
