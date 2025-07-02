@@ -4,7 +4,7 @@ description: Learn how to accept an external data share.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/19/2024
 ---
 

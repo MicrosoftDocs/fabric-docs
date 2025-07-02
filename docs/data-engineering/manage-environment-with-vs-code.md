@@ -7,6 +7,7 @@ author: qixwang
 ms.topic: overview
 ms.date: 07/29/2024
 ms.search.form: VSCodeExtension
+ms.custom: sfi-image-nochange
 ---
 
 # Explore and inspect Spark environments with Visual Studio Code
