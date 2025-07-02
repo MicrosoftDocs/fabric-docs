@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 06/08/2025
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot

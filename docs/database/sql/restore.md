@@ -7,6 +7,7 @@ ms.reviewer: strrodic
 ms.date: 11/07/2024
 ms.topic: how-to
 ms.search.form: Backup and Restore
+ms.custom: sfi-image-nochange
 ---
 # Restore from a backup in SQL database in Microsoft Fabric
 
