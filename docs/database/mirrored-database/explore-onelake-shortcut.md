@@ -6,6 +6,7 @@ ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, anithaa
 ms.date: 11/19/2024
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 ---
 # Explore data in your mirrored database with notebooks
 

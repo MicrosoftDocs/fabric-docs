@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
-ms.custom: pipelines
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 08/05/2024
 ---
 

@@ -6,6 +6,7 @@ ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
 ms.date: 05/12/2025
 ms.topic: conceptual
+ms.custom: sfi-image-nochange
 ---
 # Monitor Fabric mirrored database replication
 
