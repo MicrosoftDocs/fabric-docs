@@ -47,7 +47,7 @@ Data agent in Microsoft Fabric transforms enterprise data into conversational Q&
 - Combines the results from Fabric data agent with its own logic to generate comprehensive responses. Identity Passthrough (On-Behalf-Of) authorization secures this flow, to ensure robust security and proper access control across enterprise data.
 
 > [!NOTE]
-> The Fabric data agent and the Azure AI Foundry resources should be on the same tenant.
+> The Fabric data agent and the Azure AI Foundry resources should be on the same tenant, and both Microsoft Fabric and Azure AI Foundry should be signed in with the same account.
 
 ## Adding Fabric data agent to your Azure AI Agent
 

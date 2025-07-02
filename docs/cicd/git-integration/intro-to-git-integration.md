@@ -70,7 +70,7 @@ The following items currently support Git integration:
 
   * [Copy Job](../../data-factory/cicd-copy-job.md#git-integration-for-copy-job) *(preview)*
   * [Dataflow gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
-  * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
+  * [Data pipeline](../../data-factory/cicd-pipelines.md)
   * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-git-integration)
   * Mount ADF *(preview)*
   * [Variable library](../variable-library/variable-library-cicd.md#variable-libraries-and-git-integration) *(preview)*

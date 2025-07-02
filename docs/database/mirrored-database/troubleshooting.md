@@ -33,7 +33,7 @@ Review limitations documentation for each data source:
 - [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](azure-sql-managed-instance-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (Preview)](azure-database-postgresql-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Snowflake](snowflake-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases From SQL Server](sql-server-limitations.md)
 - [Limitations in mirroring from Fabric SQL database](../sql/mirroring-limitations.md)

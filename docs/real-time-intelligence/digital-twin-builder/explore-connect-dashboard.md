@@ -15,7 +15,7 @@ This article guides you through the steps to visualize your digital twin builder
 
 The process includes the following steps:
 1. Create an eventhouse and child **KQL database** to be the data source for your KQL queries and dashboard. Use **OneLake shortcuts** to make your digital twin builder data available in the KQL database.
-1. Create Eventhouse **functions** to project organized views of your digital twin builder entities and properties. These functions make it easier to write KQL queries using digital twin builder data.
+1. Create Eventhouse **functions** to project organized views of your digital twin builder entity types and properties. These functions make it easier to write KQL queries using digital twin builder data.
 1. **Query** your data to get the insights that you need.
 1. Pin queries to a **dashboard** and continue adding visuals as needed.
 
@@ -51,7 +51,7 @@ So, in this section, you create a new Eventhouse and child KQL database. Then, y
 
 Now that your digital twin builder (preview) data is available in your KQL database, you can create functions to make it easier to query the data. Digital twin builder stores its data across many tables, so these functions organize the data and make it easier to access it when you're writing KQL queries.
 
-We provide a [Fabric notebook](../../data-engineering/how-to-use-notebook.md) with a sample script that creates the functions for you. The script creates one function for each entity and property type in your digital twin builder ontology (like *Bus_property()* and *Bus_timeseries()*).
+We provide a [Fabric notebook](../../data-engineering/how-to-use-notebook.md) with a sample script that creates the functions for you. The script creates one function for each entity type and property type combination in your digital twin builder ontology (like *Bus_property()* and *Bus_timeseries()*).
 
 ### Set up sample notebook
 
@@ -101,7 +101,7 @@ When the notebook finishes, go to your KQL database and check the new functions.
 
 Now you can use the functions in KQL queries to access your digital twin builder (preview) data.
 
-When you call the functions by name in a KQL query, you can see the data projections they produce. The columns correspond to mapped properties in your entities.
+When you call the functions by name in a KQL query, you can see the data projections they produce. The columns correspond to mapped properties in your entity types.
 
 :::image type="content" source="media/explore-connect-dashboard/run-function.png" alt-text="Screenshot of running a function." lightbox="media/explore-connect-dashboard/run-function.png":::
 

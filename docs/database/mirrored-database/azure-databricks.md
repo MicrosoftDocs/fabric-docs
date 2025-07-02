@@ -1,5 +1,5 @@
 ---
-title: "Microsoft Fabric Mirrored Catalog From Azure Databricks (Preview)"
+title: "Microsoft Fabric Mirrored Catalog From Azure Databricks"
 description: Learn about the mirrored databases from Azure Databricks in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -9,11 +9,11 @@ ms.topic: overview
 ms.search.form: Databricks overview
 ---
 
-# Mirroring Azure Databricks Unity Catalog (Preview)
+# Mirroring Azure Databricks Unity Catalog
 
 Many organizations today register their data in Unity Catalog within Azure Databricks. A mirrored Unity Catalog in Fabric enables customer to read data managed by Unity Catalog from Fabric workloads. Azure Databricks and Fabric are better together.
 
-For a tutorial on configuring your Azure Databricks Workspace for mirroring the Unity Catalog into Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-tutorial.md).
+For a tutorial on configuring your Azure Databricks Workspace for mirroring the Unity Catalog into Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-tutorial.md).
 
 [Mirrored databases in Fabric](overview.md) allow users to enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs. You can enjoy an easy-to-use product designed to simplify your analytics needs and built for openness and collaboration between Microsoft Fabric and Azure Databricks.
 
@@ -58,7 +58,7 @@ There are other filtration conditions that are applied to catalogs/schemas/table
 
 ## Related content
 
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-tutorial.md)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-tutorial.md)
 - [Secure Fabric mirrored databases from Azure Databricks](azure-databricks-security.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-limitations.md)
 - [Review the FAQ](azure-databricks-faq.yml)
