@@ -43,10 +43,8 @@ items:
     items:
       - name: Configure container
         href: how-to-configure-container.md
-  - name: Reference
-    items:
-      - name: NoSQL query language
-        href: /azure/cosmos-db/nosql/query
+  - name: NoSQL query language reference
+    href: /nosql/query
   - name: Troubleshoot
     items:
       - name: Limitations

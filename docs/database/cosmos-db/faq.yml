@@ -40,7 +40,7 @@ sections:
 
           The built-in mirroring feature for Cosmos DB in Fabric also supports the use of T-SQL to query data. Mirroring and the SQL analytics endpoint allow you to use familiar T-SQL syntax to work with your Cosmos DB data, making it easier to integrate with existing SQL-based workflows and tools.
 
-          For more information, see [use the NoSQL query language](/azure/cosmos-db/nosql/query).
+          For more information, see [use the NoSQL query language](/nosql/query).
       - question: |
           How can I secure my data in Cosmos DB in Microsoft Fabric?
         answer: |
