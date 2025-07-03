@@ -1,13 +1,13 @@
 ---
-title: Use a Jupyter Notebook with Kqlmagic to Query a KQL database
-description: Kqlmagic tutorial. Learn how to import the NYCtaxicab Jupyter notebook to query the KQL database.
+title: Use a Notebook with Kqlmagic to Query a KQL database
+description: Kqlmagic tutorial. Learn how to import the NYCtaxicab notebook to query the KQL database.
 ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
 ms.custom:
 ms.date: 06/29/2025
-ms.search.form: Notebooks kqlmagic Jupyter
+ms.search.form: notebook kqlmagic Jupyter
 ---
 # Tutorial: Use a Fabric notebook with Kqlmagic to query a KQL database
 
@@ -95,7 +95,7 @@ The rest of this workflow uses Kqlmagic to query and visualize the data in your 
 
     :::image type="content" source="media/jupyter-notebook/upload-notebook.png" alt-text="Screenshot of Import status window. The button titled Upload is highlighted.":::
 
-1. Select the NYC Taxi KQL Notebook that you downloaded in [step 3](#3--download-the-nyc-taxi-demo-notebook).
+1. Select the NYC Taxi KQL Notebook that you downloaded in [step 3](#3-download-the-nyc-taxi-demo-notebook).
 
 1. Once the import is complete, select **Go to workspace** and open this notebook.
 
