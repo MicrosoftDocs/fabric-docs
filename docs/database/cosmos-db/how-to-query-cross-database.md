@@ -22,9 +22,9 @@ The mirrored SQL Analytics endpoint makes it possible to create queries across t
 
 - At least one other SQL Analytics endpoint for a second Cosmos DB in Fabric database artifact
 
-## Open the SQL Analytics endpoint for the first account
+## Open the SQL Analytics endpoint for the first database
 
-TODO
+Start by accessing the SQL analytics endpoint for the first Cosmos DB in Fabric database.
 
 1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
 
@@ -63,7 +63,7 @@ TODO
     > [!NOTE]
     > In this example, the query is assuming that we're using a sample data container named `SampleData`.
 
-## Connect to the second account endpoint
+## Connect to the second database endpoint
 
 Now, connect to the mirrored SQL analytics endpoint for a second Cosmos DB in Fabric database.
 
