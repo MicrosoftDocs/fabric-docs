@@ -1,0 +1,32 @@
+### YamlMime:Landing
+title: Cosmos database in Microsoft Fabric documentation (preview)
+summary: Learn how to use the SQL database workload in Microsoft Fabric for your developer-friendly transactional database workloads.
+metadata:
+  title: SQL Database Documentation Preview
+  titleSuffix: Microsoft Fabric
+  description: Learn how to use the SQL database workload in Microsoft Fabric for your developer-friendly transactional database workloads.
+  author: seesharprun
+  ms.author: sidandrews
+  ms.topic: landing-page
+  ms.date: 07/03/2025
+landingContent:
+  - title: Overview
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Overview
+            url: overview.md
+          - text: FAQ
+            url: faq.yml
+          - text: Limitations
+            url: limitations.md
+  - title: Overview
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Feature comparison
+            url: feature-comparison-sql-database-fabric.md
+          - text: "Decision guide: Which SQL database?"
+            url: decision-guide.md
+          - text: "Decision guide: Choose a data store"
+            url: decision-guide-data-store.md
