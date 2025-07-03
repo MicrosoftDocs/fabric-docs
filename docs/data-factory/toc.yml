@@ -76,7 +76,9 @@
     - name: Pipelines
       items:
       - name: Migrate from Azure Data Factory to Data Factory in Microsoft Fabric
-        href: migrate-from-azure-data-factory.md      
+        href: migrate-from-azure-data-factory.md  
+      - name: Bring your Azure Data Factory to Fabric
+        href: migrate-pipelines-azure-data-factory-item.md 
       - name: Planning your migration from Azure Data Factory to Fabric
         href: migrate-planning-azure-data-factory.md
       - name: Activity Continuity
@@ -1081,9 +1083,3 @@
       href: data-factory-limitations.md
     - name: Fabric known issues
       href: ../get-started/fabric-known-issues.md?toc=/fabric/data-factory/toc.json
-  - name: Reference
-    items:
-    - name: CI/CD for data pipelines
-      href: git-integration-deployment-pipelines.md
-    - name: Data pipelines REST API
-      href: pipeline-rest-api.md

@@ -5,7 +5,7 @@ ms.reviewer: aksdi
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 05/05/2025
 ms.search.form: Get data in a KQL Database
 ---

@@ -1,18 +1,19 @@
 ---
-title: Add customized item settings
-description: Learn about how you can add your own item settings tabs.
+title: Add Customized Item Settings
+description: Learn how you can add your own item settings tabs in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.date: 11/25/2024
 ---
 # Add custom item settings
-Item settings are pieces of information associated with a specific item, including properties that are frequently updated and the resources attached to the item. These settings are displayed to provide necessary item metadata information to users, allowing them to easily read the values of the item settings.
 
+In Microsoft Fabric, item settings are pieces of information associated with a specific item. They include properties that are frequently updated and the resources attached to the item. These settings are displayed to provide necessary item metadata information, so that users can easily read the values of the settings.
 
-## Item manifest
+## Change the item manifest
 
-In order to add custom item settings, you first need to include getItemSettings under itemSettings in the frontend item manifest:
+To add custom item settings, you first need to include `getItemSettings` under `itemSettings` in the front-end item manifest:
+
 ```json
     "itemSettings": {
       "getItemSettings": {
@@ -27,16 +28,17 @@ In order to add custom item settings, you first need to include getItemSettings 
       }
     },
 ```
-- *getItemSettings* must include an *action* string.
-- The action is the name of the corresponding action that returns the list of custom item settings.
 
-## Example of adding custom item tabs
+As the preceding code shows, `getItemSettings` must include an `action` string. This string is the name of the corresponding action that returns the list of custom item settings.
 
-:::image type="content" source="./media/custom-item-settings/example-custom-item-tabs.png" alt-text="Screenshot of an item's custom settings. The custom item tab is marked in red frame number 1. The loaded iframe that is loaded after selection of this tab is marked in red box number 2 and presented in the right side of the screen." lightbox="./media/custom-item-settings/example-custom-item-tabs.png":::
+## Add custom item tabs
 
-### Handling the action
+The following screenshot shows an example of adding a custom item tab. The custom item tab is marked as number 1. The iframe that's loaded after selection of this tab is marked as number 2.
 
-In this example, we list two custom tabs in *index.worker.ts* file:
+:::image type="content" source="./media/custom-item-settings/example-custom-item-tabs.png" alt-text="Screenshot that shows the iframe for a custom item tab." lightbox="./media/custom-item-settings/example-custom-item-tabs.png":::
+
+The preceding image displays two custom tabs, which you can create by using the following code in the `index.worker.ts` file:
+
 ```typescript
 workloadClient.action.onAction(async function ({ action, data }) {
     switch (action) {
@@ -71,19 +73,23 @@ workloadClient.action.onAction(async function ({ action, data }) {
     }
 });
 ```
-*We're returning an array of defined custom items. Each one includes:*
-- **name** (string): A unique identifier for the setting.
-- **displayName** (string): The displayed string, which should be [localized](localization.md) (we can see the displayed name of the first item - *1*).
-- **workloadSettingLocation** (object):
-    - **workloadName** (string): The workload name.
-    - **route** (object): When a specific setting tab is clicked from item settings, a panel iframe is loaded into the right-side content area to load the specific route owned by the workload (we can see it in - *2*).
-- **searchTokenMatchesBySection** (object): An optional object that receives a section name as a key and an array of keywords as the value. The key is triggered whenever any of the array words are searched.
-Example:
-:::image type="content" source="./media/custom-item-settings/example-search.png" alt-text="Screenshot of a search tokens example. Search box is marked in red frame number 1. Section of results options of the search is marked in red frame number 2. The corresponding tab of the result is marked in red frame number 3." lightbox="./media/custom-item-settings/example-search.png":::
-In this example, we started to type one of the keyword values (1), and it triggered the section name as a result option (2). Clicking on this option navigates us to the corresponding custom tab (3). This field is aligned with and can be used for localization.
-## Iframe route definition
 
-In order to load an iframe, a component should be defined and then added to the app route:
+The code returns an array of defined custom items. Each one includes:
+
+- `name` (string): A unique identifier for the setting.
+- `displayName` (string): The displayed string, which should be [localized](localization.md). (The displayed name of the first item is marked as number 1 in the preceding screenshot.)
+- `workloadSettingLocation` (object):
+  - `workloadName` (string): The workload name.
+  - `route` (object): The specific route that the workload owns. When a specific setting tab is selected from item settings, a panel iframe is loaded into the right-side content area to load the route. (The iframe is marked as number 2 in the preceding screenshot.)
+- `searchTokenMatchesBySection` (object): An optional object that receives a section name as a key and an array of keywords as the value. The key is triggered whenever any of the array words are searched.
+
+The following example shows that starting to type one of the keyword values (1) triggers the section name as a result option (2). Selecting this option opens the corresponding custom tab (3). This field is aligned with, and can be used for, localization.
+
+:::image type="content" source="./media/custom-item-settings/example-search.png" alt-text="Screenshot that shows an example of search tokens." lightbox="./media/custom-item-settings/example-search.png":::
+
+## Define the iframe route
+
+To load an iframe, define a component and then add it to the app route.
 
 ### Component definition
 
@@ -97,6 +103,7 @@ export function CustomItemSettings2() {
   }
 
 ```
+
 ### Router example
 
 ```typescript
@@ -114,11 +121,15 @@ export function App({ history, workloadClient }: AppProps) {
     </Router>;
 }
 ```
-## Customize "About" page
 
-:::image type="content" source="./media/custom-item-settings/example-about.png" alt-text="Screenshot of a about custom settings. We can see that the current chosen tab in the settings is the about tab, which marked in black frame. In the right side, we see the loaded tab. On the top, is the default about settings, which include name, description, location, and details. Below the default section, we're loading the custom about section iframe, which is marked in red frame." lightbox="./media/custom-item-settings/example-about.png":::
+## Customize the About page
 
-"Item "About" page supports adding workload specific content using hybrid view (default about settings and the workload custom iframe). To achieve that, you should add another item custom setting.
+The following screenshot shows an example of custom settings for an **About** page. The currently selected tab in the settings is the **About** tab, which is marked in a black frame. The loaded tab appears on the right side. The default settings (name, description, location, and details) appear at the top. Below the default section is the iframe for the custom **About** section, which is marked in a red frame.
+
+:::image type="content" source="./media/custom-item-settings/example-about.png" alt-text="Screenshot of custom settings for an About page." lightbox="./media/custom-item-settings/example-about.png":::
+
+The **About** page item supports adding workload-specific content by using a hybrid view (default `About` settings and the workload's custom iframe). To achieve that, you should add another custom item setting:
+
 ```typescript
 workloadClient.action.onAction(async function ({ action, data }) {
     switch (action) {
@@ -141,8 +152,10 @@ workloadClient.action.onAction(async function ({ action, data }) {
     }
 });
 ```
-- **name** : Must be defined as *about*.
-- **displayName** : Must be defined as *About*.
-- **route** : Needed to add for the custom About component that is loaded into the iframe, as seen in the image.
-- **workloadIframeHeight** (string): We can set the iframe height. The iframe height should be provided as a string (in pixels).
-  If the height isn't provided, the iframe height is set to a default value of 102vh.
+
+The preceding code includes:
+
+- `name` : Must be defined as `about`.
+- `displayName` : Must be defined as `About`.
+- `route` : Needed for the custom **About** component that's loaded into the iframe, as shown in the image.
+- `workloadIframeHeight`: Provided as a string, in pixels. If you don't set the iframe height, it's set to a default value of `102vh`.
