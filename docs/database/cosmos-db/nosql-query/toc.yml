@@ -1,6 +1,6 @@
 ### YamlMime:TOC
 items:
-  - name: NoSQL query language documentation
+  - name: NoSQL query language
     href: /nosql/query?context=/fabric/context/context
   - name: Overview
     displayName: introduction, welcome, start, getting started
