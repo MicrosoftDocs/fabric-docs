@@ -5,7 +5,7 @@ description: Review the fundamentals of securing Cosmos DB in Microsoft Fabric f
 author: seesharprun
 ms.author: sidandrews
 ms.topic: best-practice
-ms.date: 06/06/2025
+ms.date: 07/03/2025
 ms.custom: security-horizontal-2025
 ai-usage: ai-generated
 ---
@@ -14,39 +14,33 @@ ai-usage: ai-generated
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
-Cosmos DB in Microsoft Fabric is an AI-optimized NoSQL database automatically configured for typical development needs with a simplified management experience. While Cosmos DB provides built-in security features to protect your data, it's essential to follow best practices to further enhance the security of your account, data, and networking configurations.
+Cosmos DB in Microsoft Fabric is an AI-optimized NoSQL database automatically configured for typical development needs with a simplified management experience. Fabric provides built-in security, access control, and monitoring for Cosmos DB in Fabric. While Fabric provides built-in security features to protect your data, it's essential to follow best practices to further enhance the security of your account, data, and networking configurations.
 
 This article provides guidance on how to best secure your Cosmos DB in Fabric deployment.
 
 ## Identity management
 
-- **Use managed identities to access your account from other Azure services**: Managed identities eliminate the need to manage credentials by providing an automatically managed identity in Microsoft Entra ID. Use managed identities to securely access Cosmos DB from other Azure services without embedding credentials in your code. For more information, see [Authenticate from Azure host services](how-to-authenticate-azure.md).
+- **Use managed identities to access your account from other Azure services**: Managed identities eliminate the need to manage credentials by providing an automatically managed identity in Microsoft Entra ID. Use managed identities to securely access Cosmos DB from other Azure services without embedding credentials in your code. While Cosmos DB in Fabric supports multiple types of identity types (service principals), managed identities are the preferred choice as they don't require your solution to handle credentials directly. For more information, see [authenticate from Azure host services](how-to-authenticate-azure.md).
 
-- **Use Entra authentication to query, create, and access items within a container while developing solutions**: Access items within Cosmos DB containers using your human identity and Microsoft Entra authentication. Enforce least privilege access for querying, creating, and other operations. This control helps secure your data operations. For more information, see [Connect securely from your development environment](how-to-connect-development.md).
+- **Use Entra authentication to query, create, and access items within a container while developing solutions**: Access items within Cosmos DB containers using your human identity and Microsoft Entra authentication. Enforce least privilege access for querying, creating, and other operations. This control helps secure your data operations. For more information, see [connect securely from your development environment](how-to-connect-development.md).
 
-- **Separate the Azure identities used for data and control plane access**: Use distinct Azure identities for control plane and data plane operations to reduce the risk of privilege escalation and ensure better access control. This separation enhances security by limiting the scope of each identity. For more information, see [How to configure authorization to items](how-to-configure-authorization.md).
+- **Separate the Azure identities used for data and control plane access**: Use distinct Azure identities for control plane and data plane operations to reduce the risk of privilege escalation and ensure better access control. This separation enhances security by limiting the scope of each identity. For more information, see [configure item-level authorization](how-to-configure-authorization.md).
 
-## SECTION 2
+## User permissions
 
-- **RECOMMENDATION** EXPLANATION. For more information, see TODO.
+- **Configure least-permissive Fabric workspace access**: User permissions are enforced based on the current level of workspace access. If a user is removed from the Fabric workspace, they also automatically lose access to the associated Cosmos DB database and underlying data. For more information, see [Fabric permission model](../../security/permission-model.md).
 
-- **RECOMMENDATION** EXPLANATION. For more information, see TODO.
+- **Use private links to access your database**: Configure private access from a specific virtual network to the workspace that hosts your Cosmos DB database. This configuration ensures that data is only accessible to authorized applications and users within the defined network. For more information, see [use private links](../../security/protect-inbound-traffic.md#private-links).
 
-## SECTION 3
+## Data protection
 
-- **RECOMMENDATION** EXPLANATION. For more information, see TODO.
+- **Consider customer-managed keys for encryption at rest**: Cosmos DB database in Fabric automatically encrypts data at rest using service-managed keys. For an extra layer of security, use customer-managed keys to control encryption with your own keys. For more information, see [manage customer-managed keys](../../security/workspace-customer-managed-keys.md).
 
-- **RECOMMENDATION** EXPLANATION. For more information, see TODO.
-
-## SECTION 4
-
-- **RECOMMENDATION** EXPLANATION. For more information, see TODO.
-
-- **RECOMMENDATION** EXPLANATION. For more information, see [How to share items](how-to-share-items.md).
+- **Grant access to specific items using item-level sharing**: Use the item-sharing feature to provide access to individual items or subsets of data, rather than sharing an entire container. Item-level sharing uses the same artifact sharing experience as other Fabric resources, enabling precise access control for your data. For more information, see [how to share items](how-to-share-items.md).
 
 ## Related content
 
-- [Overview of Cosmos DB in Microsoft Fabric](overview.md)
+- [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Connect from your local development environment to Cosmos DB in Microsoft Fabric](how-to-connect-development.md)
-- [Authenticate from Azure host services](how-to-authenticate-azure.md)
-- [How to share items](how-to-share-items.md)
+- [Authenticate from Azure host services to Cosmos DB in Microsoft Fabric](how-to-authenticate-azure.md)
+- [How to share Cosmos DB in Microsoft Fabric items](how-to-share-items.md)
