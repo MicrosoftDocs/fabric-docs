@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 06/06/2025
 ---
 
-# Index vector data in Cosmos DB database in Microsoft Fabric (preview)
+# Index vector data in Cosmos DB in Microsoft Fabric (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
