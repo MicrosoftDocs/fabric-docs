@@ -12,14 +12,14 @@ items:
         href: quickstart-portal.md
       - name: Connect from your dev environment
         href: how-to-connect-development.md
-  - name: Get data insights
+  - name: Access data insights
     items:
       - name: Cross-database queries
         href: how-to-query-cross-database.md
   - name: Integrate with other services
     items:
       - name: Mirror to OneLake
-        href: how-to-mirror-onelake.md
+        href: mirror-onelake.md
       - name: Index vector data
         href: how-to-index-vector-data.md
   - name: Deploy and monitor
@@ -39,6 +39,14 @@ items:
         href: how-to-configure-authorization.md
       - name: Sharing items
         href: how-to-share-items.md
+  - name: Manage database
+    items:
+      - name: Configure container
+        href: how-to-configure-container.md
+  - name: Reference
+    items:
+      - name: NoSQL query language
+        href: /azure/cosmos-db/nosql/query
   - name: Troubleshoot
     items:
       - name: Limitations

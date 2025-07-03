@@ -38,10 +38,14 @@ landingContent:
             url: how-to-query-cross-database.md
   - title: Integrate
     linkLists:
-      - linkListType: how-to-guide
+      - linkListType: concept
         links:
           - text: Mirror to OneLake
-            url: how-to-mirror-onelake.md
+            url: mirror-onelake.md
+      - linkListType: how-to-guide
+        links:
+          - text: Configure container
+            url: how-to-configure-container.md
           - text: Index vector data
             url: how-to-index-vector-data.md
   - title: Deploy and monitor
