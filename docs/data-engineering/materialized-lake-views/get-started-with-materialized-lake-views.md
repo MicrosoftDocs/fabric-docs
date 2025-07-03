@@ -49,7 +49,7 @@ In this article, you learn how to get started and create materialized lake views
    ```
    ```sql
 
-      CREATE TABLE bronze.orders (
+      CREATE TABLE IF NOT EXISTS bronze.orders (
         order_id INT,
         product_id INT,
         quantity INT,

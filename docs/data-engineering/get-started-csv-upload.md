@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
 ms.topic: get-started
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/11/2024
 ms.search.form: csv load to delta to pbi report
 ---

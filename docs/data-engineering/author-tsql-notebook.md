@@ -6,7 +6,7 @@ ms.author: qixwang
 ms.reviewer: sngun
 ms.topic: how-to
 ms.date: 06/03/2025
-ms.custom: FY25Q1-Linter
+ms.custom: FY25Q1-Linter, sfi-image-nochange
 # Customer Intent: As a data engineer, I want to run T-SQL code Fabric notebooks, manage queries, and perform cross datawarehouse queries.
 ---
 

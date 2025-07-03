@@ -6,6 +6,7 @@ ms.author: xuyan
 ms.reviewer: wiassaf
 ms.date: 05/08/2025
 ms.topic: conceptual
+ms.custom: sfi-ropc-nochange
 ---
 
 # Microsoft Fabric mirroring public REST API

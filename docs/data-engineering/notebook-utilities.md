@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
 ms.date: 03/31/2025
 ---

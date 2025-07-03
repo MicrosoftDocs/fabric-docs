@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: sngun
 author: SnehaGunda
 ms.topic: overview
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 06/10/2025
 # customer intent: As a Microsoft Fabric user I want to learn how to use autotune to automatically ajust Apache Spark configurataions.
 ---

@@ -6,7 +6,7 @@ author: lgayhardt
 ms.reviewer: midesa
 ms.topic: how-to
 ms.custom:
-ms.date: 11/15/2023
+ms.date: 06/30/2025
 ---
 
 # Train explainable boosting machines - classification (preview)

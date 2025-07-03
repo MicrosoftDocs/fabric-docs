@@ -33,7 +33,7 @@ An *on-demand* digital twin builder flow is created by default when the digital 
 
 The on-demand digital twin builder flow is used to perform operations such as [mapping](concept-mapping.md) and [contextualization](model-perform-contextualization.md) execution on demand. The same on-demand digital twin builder flow can execute multiple on-demand operations in parallel.
 
-To run operations on demand, go to the **Scheduling** tab for an entity and select the **Run now** button.
+To run operations on demand, go to the **Scheduling** tab for an entity type and select the **Run now** button.
 
 :::image type="content" source="media/concept-flows/run-now.png" alt-text="Screenshot of the Run now button.":::
 
@@ -41,7 +41,7 @@ To run operations on demand, go to the **Scheduling** tab for an entity and sele
 
 A *scheduled* digital twin builder flow is created when a new schedule is set up for a mapping or contextualization operation. After the schedule is configured, the corresponding digital twin builder flow appears as a child item under the digital twin builder item in the workspace. A digital twin builder item relies on this scheduled digital twin builder flow to execute the specified mapping or contextualization operations according to the defined schedule.
 
-To create a schedule, go to the **Scheduling** tab for an entity and run on **Schedule flow**. Open the dropdown list of options under **Select digital twin builder flow** and select **Create flow**.
+To create a schedule, go to the **Scheduling** tab for an entity type and run on **Schedule flow**. Open the dropdown list of options under **Select digital twin builder flow** and select **Create flow**.
 
 :::image type="content" source="media/concept-flows/create-flow.png" alt-text="Screenshot of the Create flow option.":::
  

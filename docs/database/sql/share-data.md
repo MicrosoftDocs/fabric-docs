@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/06/2024
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ---
 # Share data and manage access to your SQL database in Microsoft Fabric
 
