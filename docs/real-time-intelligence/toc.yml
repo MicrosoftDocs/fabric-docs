@@ -423,7 +423,7 @@ items:
   - name: Event schema sets
     items:
     - name: What's a schema set? 
-      href: schema-sets/schema-set-overview.md
+      href: schema-sets/schema-sets-overview.md
     - name: Create event schema set
       href: schema-sets/create-event-schema-set.md
     - name: Add a schema to a schema set
