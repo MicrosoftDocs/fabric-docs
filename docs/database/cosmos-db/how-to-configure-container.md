@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 07/03/2025
 ---
 
-# Configure container in Cosmos DB database in Microsoft Fabric (preview)
+# Configure a container in Cosmos DB in Microsoft Fabric (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
