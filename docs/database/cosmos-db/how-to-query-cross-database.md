@@ -13,3 +13,9 @@ ms.date: 07/03/2025
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
 TODO
+
+## Related content
+
+- [Learn about Cosmos DB in Microsoft Fabric](overview.md)
+- [Connect from your local development environment to Cosmos DB in Microsoft Fabric](how-to-connect-development.md)
+- [Frequently asked questions about Cosmos DB in Microsoft Fabric](faq.yml)
