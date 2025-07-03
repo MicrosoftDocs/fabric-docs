@@ -14,7 +14,7 @@ items:
         href: how-to-connect-development.md
   - name: Access data insights
     items:
-      - name: Cross-database queries
+      - name: Query cross-database
         href: how-to-query-cross-database.md
   - name: Integrate with other services
     items:
