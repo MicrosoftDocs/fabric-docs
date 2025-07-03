@@ -151,6 +151,18 @@ items:
     items:
     - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md
+- name: Register and use schemas in event-driven applications
+  items:
+  - name: What is Schema Registry?
+    href: schema-registry-overview.md
+  - name: Register a schema
+    href: register-schema.md
+  - name: View schema details
+    href: view-schema-details.md
+  - name: Use schemas in eventstreams
+    href: ../real-time-intelligence/event-streams/use-schemas-in-eventstreams.md?context=/fabric/context/context-rti&pivots=fabric
+  - name: Create a new version of a schema
+    href: ../real-time-intelligence/event-streams/create-new-version-schema.md?context=/fabric/context/context-rti&pivots=fabric    
 - name: User flows
   items:
   - name: Discover and respond to events

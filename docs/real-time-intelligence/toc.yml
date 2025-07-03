@@ -171,6 +171,18 @@ items:
       href: event-streams/process-events-using-event-processor-editor.md
     - name: Preview data
       href: event-streams/preview-data.md
+    - name: Register and use schemas in eventstreams
+      items:
+      - name: Create event schema set
+        href: create-event-schema-set.md
+      - name: Add a schema to a schema set
+        href: add-schema-to-schema-set.md
+      - name: View schema set details
+        href: view-schema-set-details.md
+      - name: Use schemas in eventstreams
+        href: use-schemas-in-eventstreams.md
+      - name: Create a new version of a schema
+        href: create-new-version-schema.md
     - name: Manage eventstreams
       items:
       - name: Manage an eventstream
