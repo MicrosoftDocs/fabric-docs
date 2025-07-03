@@ -1,0 +1,27 @@
+### YamlMime:TOC
+items:
+  - name: NoSQL query language documentation
+    href: /nosql/query?context=/fabric/context/context
+  - name: Overview
+    displayName: introduction, welcome, start, getting started
+    href: /nosql/query/overview?context=/fabric/context/context
+  - name: Get started
+    items:
+      - name: Work with JSON
+        displayName: get started, quickstart, first query, JSON, JSON documents, JSON arrays, JSON objects
+        href: /nosql/query/get-started-json?context=/fabric/context/context
+      - name: Create subqueries
+        displayName: subqueries, subquery
+        href: /nosql/query/subquery?context=/fabric/context/context
+      - name: Perform self-joins
+        displayName: self-joins, join
+        href: /nosql/query/join?context=/fabric/context/context
+  - name: Constants
+    displayName: literals, values
+    href: /nosql/query/constants?context=/fabric/context/context
+  - name: Scalar expressions
+    displayName: scalar values
+    href: /nosql/query/scalar?context=/fabric/context/context
+  - name: Subqueries
+    displayName: clause, subquery
+    href: /nosql/query/subquery?context=/fabric/context/context
