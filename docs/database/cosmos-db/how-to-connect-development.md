@@ -5,7 +5,7 @@ description: Use Microsoft Entra authentication and the Azure SDK to connect to 
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 06/06/2025
+ms.date: 07/03/2025
 zone_pivot_group_filename: database/cosmos-db/zone-pivot-groups.json
 zone_pivot_groups: dev-lang-core
 ---
@@ -110,7 +110,7 @@ Now, authenticate to the Azure CLI. The Azure SDK can use various different auth
 
 ## Connect using Azure SDK
 
-Finally, use the Azure SDK to connect to the Cosmos DB database in Fabric using the endpoint and your identity. The Azure SDK ships with a unified **identity** library that automatically handles authentication on your behalf. This step uses the `AzureCliCredential` type which automatically finds the right identity type based on your environment.
+Finally, use the Azure SDK to connect to the Cosmos DB database in Fabric using the endpoint and your identity. The Azure SDK ships with a unified **identity** library that automatically handles authentication on your behalf. This step uses the `AzureCliCredential` type, which automatically finds the right identity type based on your environment.
 
 > [!TIP]
 > Alternatively, you can use the `DefaultAzureCredential` type. This type can automatically find the right system-assigned or user-assigned managed identity if you deploy your application code to Azure and the right human identity locally in development.
@@ -225,5 +225,5 @@ while (iterator.HasMoreResults)
 
 ## Related content
 
-- [Overview of Cosmos DB in Microsoft Fabric](overview.md)
+- [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Quickstart: Create a Cosmos DB database workload in Microsoft Fabric](quickstart-portal.md)
