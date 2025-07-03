@@ -174,15 +174,15 @@ items:
     - name: Register and use schemas in eventstreams
       items:
       - name: Create event schema set
-        href: create-event-schema-set.md
+        href: event-streams/create-event-schema-set.md
       - name: Add a schema to a schema set
-        href: add-schema-to-schema-set.md
+        href: event-streams/add-schema-to-schema-set.md
       - name: View schema set details
-        href: view-schema-set-details.md
+        href: event-streams/view-schema-set-details.md
       - name: Use schemas in eventstreams
-        href: use-schemas-in-eventstreams.md
+        href: event-streams/use-schemas-eventstreams.md
       - name: Create a new version of a schema
-        href: create-new-version-schema.md
+        href: event-streams/create-new-version-schema.md
     - name: Manage eventstreams
       items:
       - name: Manage an eventstream

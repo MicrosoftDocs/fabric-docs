@@ -9,6 +9,7 @@ ms.date: 07/02/2025
 ms.search.form: Schema set
 #customer intent: As a user, I want to learn how to use event schemas in eventstreams in Real-Time Intelligence.
 ---
+
 # Use schemas in eventstreams (Fabric Real-Time intelligence)
 
 ## Supported sources
