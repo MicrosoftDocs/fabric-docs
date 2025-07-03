@@ -12,8 +12,6 @@ items:
         href: quickstart-portal.md
       - name: Connect from your dev environment
         href: how-to-connect-development.md
-  - name: Access data insights
-    items:
       - name: Query cross-database
         href: how-to-query-cross-database.md
   - name: Integrate with other services
