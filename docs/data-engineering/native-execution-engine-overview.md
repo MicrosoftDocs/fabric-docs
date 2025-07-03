@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 01/06/2025
 ---
 

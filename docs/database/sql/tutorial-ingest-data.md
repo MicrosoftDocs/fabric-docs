@@ -7,7 +7,8 @@ ms.reviewer: bwoody
 ms.date: 02/20/2025
 ms.topic: tutorial
 ms.collection:
-  - ce-skilling-ai-copilot
+- ce-skilling-ai-copilot
+ms.custom: sfi-image-nochange
 ---
 
 # Ingest sample data and create objects and data

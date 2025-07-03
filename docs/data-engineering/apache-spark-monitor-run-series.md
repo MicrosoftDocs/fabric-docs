@@ -5,7 +5,7 @@ author: jejiang
 ms.author: jejiang
 ms.topic: overview
 ms.date: 05/21/2024
-ms.custom: template-howto
+ms.custom: template-howto, sfi-image-nochange
 ms.search.form: Monitor run series
 ---
 

@@ -7,7 +7,7 @@ ms.author: ssalgado
 author: ssalgadodev
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
-ms.date: 05/08/2023
+ms.date: 06/30/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 # Tutorial: Create a custom search engine and question-answering system

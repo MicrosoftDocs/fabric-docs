@@ -14,7 +14,7 @@ Once you finish the tutorial, you might want to delete all the resources you cre
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 To delete the data from this tutorial, follow these steps:
-1. Delete your Fabric workspace, which also removes everything inside it (including the sample data lakehouse, and the digital twin builder (preview) item with all of its mapping and relationship data).
+1. Delete your Fabric workspace, which also removes everything inside it (including the sample data lakehouse, and the digital twin builder (preview) item with all of its entity types and relationship types, mapping, and entity instance and relationship instance data).
 
     :::image type="content" source="media/tutorial/remove-workspace.png" alt-text="Screenshot of removing a Fabric workspace." lightbox="media/tutorial/remove-workspace.png":::
 1. Remove resources from your local machine, including:

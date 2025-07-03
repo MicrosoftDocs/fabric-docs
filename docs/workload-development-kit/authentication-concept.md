@@ -4,7 +4,7 @@ description: This article describes how to use tokens to authenticate and valida
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept-article
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 05/21/2024
 #customer intent: As a developer, I want to understand how to authenticate a customized Fabric workload so that I can create customized user experiences.
 ---
