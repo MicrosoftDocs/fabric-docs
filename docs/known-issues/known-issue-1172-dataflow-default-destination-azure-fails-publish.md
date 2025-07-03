@@ -4,7 +4,7 @@ description: A known issue is posted where a Dataflow Gen2 with a default destin
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/17/2025
+ms.date: 06/25/2025
 ms.custom: known-issue-1172
 ---
 
@@ -14,7 +14,7 @@ A Dataflow Gen2 dataflow set with a default destination to Azure SQL without a s
 
 **Status:** Open
 
-**Product Experience:** Power BI
+**Product Experience:** Data Factory
 
 ## Symptoms
 

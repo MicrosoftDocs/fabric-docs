@@ -430,7 +430,7 @@ Body:
 ```
 
 > [!NOTE]
-> "job id" is the same id created and used in the Job Scheduler Public APIs
+> "job id" is the same ID created and used in the Job Scheduler Public APIs
 
 Response 200:
 
@@ -492,7 +492,7 @@ Refer to the following content for more information on REST APIs for data pipeli
 
 ### Documentation
 
-- [Fabric data pipeline public REST API](pipeline-rest-api.md)
+- [Fabric data pipeline public REST API](pipeline-rest-api-capabilities.md)
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
 

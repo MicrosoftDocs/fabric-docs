@@ -1,47 +1,19 @@
 ---
-title: "Create Materialized Lake Views in a Lakehouse"
-description: Learn how to create a materialized lake view in lakehouse in Microsoft Fabric.
+title: "Materialized lake views Spark SQL reference"
+description: Learn about materialized lake views Spark SQL reference in Microsoft Fabric.
 ms.topic: quickstart
 author: abhishjain002 
 ms.author: abhishjain
 ms.reviewer: nijelsf
-ms.date: 06/19/2025
-#customer intent: As a data engineer, I want to create materialized lake views in lakehouse so that I can optimize query performance and manage data quality.
+ms.date: 06/27/2025
+#customer intent: As a data engineer, I want to create materialized lake views (mlv) in lakehouse so that I can optimize query performance and manage data quality.
 ---
 
-# Quickstart: Create materialized lake views in a lakehouse
+# Materialized lake views Spark SQL reference
 
-In this article, you learn how to create materialized lake views in a lakehouse in Microsoft Fabric. For more information about materialized lake views, see [overview of materialized lake views](./overview-materialized-lake-view.md).
+In this article, you learn about syntax of materialized lake views using Spark SQL. For more information about materialized lake views, see [overview of materialized lake views](./overview-materialized-lake-view.md).
 
-## Prerequisites
-
-* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* A lakehouse with [Lakehouse schemas](../lakehouse-schemas.md) enabled.
-* Materialized lake views are compatible with Fabric [Runtime 1.3](../runtime-1-3.md).
-
-## Get started with materialized lake views
-
-There are two ways to get started with materialized lake views creation in lakehouse.
-
-**Option 1**: Create materialized lake view from **Manage materialized lake views** option in the lakehouse explorer.
-
-1. Go to your lakehouse, select **Manage materialized lake views**.
-
-   :::image type="content" source="./media/create-materialized-lake-view/manage-materialized-lake-views.png" alt-text="Screenshot showing materialized lake view." border="true" lightbox="./media/create-materialized-lake-view/manage-materialized-lake-views.png":::
-
-1. Select **New materialized lake view**, which allows you to use an existing notebook or create a new notebook.
-
-   :::image type="content" source="./media/create-materialized-lake-view/new-materialized-lake-view.png" alt-text="Screenshot showing how to create new materialized lake view." border="true" lightbox="./media/create-materialized-lake-view/new-materialized-lake-view.png":::
-
-   :::image type="content" source="./media/create-materialized-lake-view/materialized-lake-view-notebook.png" alt-text="Screenshot showing how to new materialized lake view." border="true" lightbox="./media/create-materialized-lake-view/materialized-lake-view-notebook.png":::
-
-**Option 2**: Create a materialized lake view directly from the notebook attached to your lakehouse. 
-
-* Go to your lakehouse, select **Open notebook** to create a new notebook.
-
-  :::image type="content" source="./media/create-materialized-lake-view/open-notebook.png" alt-text="Screenshot showing how to open notebook." border="true" lightbox="./media/create-materialized-lake-view/open-notebook.png":::
-
-## Materialized lake view Spark SQL syntax
+## Create materialized lake view
 
 A materialized lake view can be defined from any table or another materialized lake view within the lakehouse. The following outlines the syntax for declaring a materialized lake view using Spark SQL. 
 

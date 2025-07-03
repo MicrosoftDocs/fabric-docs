@@ -1,5 +1,5 @@
 ---
-title: Create stored functions in Real-Time Intelligence
+title: Create and edit stored functions in Real-Time Intelligence
 description: "Learn how to use the `.create-or-alter function` command to create stored functions in Real-Time Intelligence."
 ms.reviewer: tzgitlin
 ms.author: spelluru
@@ -10,7 +10,7 @@ ms.date: 11/19/2024
 ms.search.form: product-kusto
 ---
 
-# Create stored functions
+# Create and edit stored functions
 
 Functions are reusable queries or query parts. Real-Time Intelligence supports two kinds of functions:
 
@@ -48,6 +48,20 @@ This feature allows you to create or alter an existing function using the `.crea
 1. In the **Explore your data** window, run a query to check that you have successfully created or altered your function.
 
     :::image type="content" source="media/create-functions/function-example.png" alt-text="Screenshot of the Explore your data window showing query results of a stored function in Real-Time Intelligence." lightbox="media/create-functions/function-example.png":::
+
+## View, edit, or delete a stored function
+
+To view, edit, or delete an existing stored function, follow these steps:
+
+1. In the **Explorer** pane, expand the **Functions** section, and click on the three dots next to the desired function.
+
+1. From the dropdown menu, choose either:
+    1. **Show function script** to view the function script.
+    1. **Edit with code** to edit the function script in the **Explore your data** window.
+    1. **Delete**
+      
+    :::image type="content" source="media/create-functions/drop-down-menu.png" alt-text="Screenshot of the dropdown menu." lightbox="media/create-functions/drop-down-menu.png":::
+1. If you modified the function script, select **Run** to save your changes.
 
 ## Related content
 
