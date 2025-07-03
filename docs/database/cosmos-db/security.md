@@ -42,5 +42,5 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Connect from your local development environment to Cosmos DB in Microsoft Fabric](how-to-connect-development.md)
-- [Authenticate from Azure host services](how-to-authenticate-azure.md)
-- [How to share items](how-to-share-items.md)
+- [Authenticate from Azure host services to Cosmos DB in Microsoft Fabric](how-to-authenticate-azure.md)
+- [How to share Cosmos DB in Microsoft Fabric items](how-to-share-items.md)

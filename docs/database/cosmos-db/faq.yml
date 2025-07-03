@@ -24,3 +24,9 @@ sections:
           TODO
         answer: |
           TODO
+
+additionalContent: |
+    ## Related content
+
+    - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
+    - [Review limitations of Cosmos DB in Microsoft Fabric](limitations.md)
