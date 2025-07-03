@@ -154,7 +154,6 @@ items:
   - name: What's new in SQL database in Fabric?
     href: ../fundamentals/whats-new.md#fabric-databases
 - name: Cosmos DB in Fabric
-  expanded: true
   href: cosmos-db/toc.yml
 - name: Resources
   items:
