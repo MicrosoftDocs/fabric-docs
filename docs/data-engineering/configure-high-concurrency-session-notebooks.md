@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/11/2024
 ---
 

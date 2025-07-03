@@ -54,9 +54,9 @@ For more information, see [Fabric data agent creation (preview)](../data-science
 
 For more information, see [Metric sets setting (preview)](./service-admin-portal-goals-settings.md#metric-sets-setting-preview).
 
-## Mirrored Azure Databricks Catalog (preview)
+## Mirrored Azure Databricks Catalog
 
-For more information, see [Mirroring Azure Databricks Unity Catalog (Preview)](../database/mirrored-database/azure-databricks.md).
+For more information, see [Mirroring Azure Databricks Unity Catalog](../database/mirrored-database/azure-databricks.md).
 
 ## Users can create variable libraries
 

@@ -6,7 +6,7 @@ ms.author: sgilley
 author: sdgilley
 ms.topic: tutorial
 ms.custom:
-ms.date: 10/16/2023
+ms.date: 06/30/2025
 #  CustomerIntent: As a data scientist, I want to explore and visualize my data in a notebook.
 ---
 

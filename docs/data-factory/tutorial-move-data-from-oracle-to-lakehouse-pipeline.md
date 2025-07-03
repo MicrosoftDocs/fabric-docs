@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: lle
 author: lrtoyou1223
 ms.topic: tutorial
-ms.custom: pipelines
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 05/17/2024
 ms.search.form: Pipeline Tutorials
 ---
