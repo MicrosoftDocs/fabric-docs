@@ -384,7 +384,9 @@ items:
       - name: Use Stored procedures
         href: api-graphql-stored-procedures.md
       - name: Integrate with Azure API Management (APIM)
-        href: api-graphql-azure-api-management.md         
+        href: api-graphql-azure-api-management.md     
+      - name: Connect AI Agents with a local Model Context Protocol (MCP) server
+        href: api-graphql-local-model-context-protocol.md     
    - name: Monitoring  
      items:
       - name: Monitoring dashboard and logging (preview)
@@ -430,11 +432,15 @@ items:
 - name: Materialized lake views (preview)
   items:
   - name: Overview
-    href: ./materialized-lake-views/overview-materialized-lake-view.md 
-  - name: Create materialized lake views
-    href: ./materialized-lake-views/create-materialized-lake-view.md
-  - name: Refresh materialized lake views
-    href: ./materialized-lake-views/refresh-materialized-lake-view.md
+    href: ./materialized-lake-views/overview-materialized-lake-view.md
+  - name: Get started
+    items:  
+    - name: Quick start guide
+      href: ./materialized-lake-views/get-started-with-materialized-lake-views.md
+    - name: Create materialized lake views
+      href: ./materialized-lake-views/create-materialized-lake-view.md
+    - name: Refresh materialized lake views
+      href: ./materialized-lake-views/refresh-materialized-lake-view.md
   - name: Manage
     items:  
     - name: View lineage

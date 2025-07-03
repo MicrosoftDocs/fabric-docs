@@ -5,7 +5,7 @@ ms.author: apsinhar
 author: apurbasroy
 ms.reviewer: nijelsf
 ms.topic: how-to
-ms.date: 06/06/2025
+ms.date: 06/26/2025
 # customer intent: As a data engineer, I want to manage Fabric materialized lake views lineage in Microsoft Fabric so that I can efficiently handle large datasets and optimize query performance.
 ---
 
@@ -24,6 +24,9 @@ After you create the MLV, select **Manage materialized lake views** to navigate 
 ## Materialized lake views Lineage
 
 The lineage or MLV flow is defined per the code written by the user in the notebook. It's created after the MLV end-to-end flow is created.
+
+> [!Important]
+> Table Shortcuts from MLV to a Lakehouse in Lineage are not supported.
 
 :::image type="content" source="./media/view-lineage/job-graph.png" alt-text="Screenshot showing a job graph in lineage." border="true" lightbox="./media/view-lineage/job-graph.png":::
 
