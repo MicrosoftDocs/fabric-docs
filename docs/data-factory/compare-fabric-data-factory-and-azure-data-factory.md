@@ -64,7 +64,7 @@ Need to keep your team in the loop? The Office 365 Outlook activity lets you sen
 
 ### Streamlined data connection experience
 
-Fabric's modern **Get dat** experience makes it quick to set up copy pipelines and create new connections. You'll spend less time configuring and more time getting your data where it needs to go.
+Fabric's modern **Get data** experience makes it quick to set up copy pipelines and create new connections. You'll spend less time configuring and more time getting your data where it needs to go.
 
 :::image type="content" source="media/connector-differences/copy-data-source.png" alt-text="Screenshot showing that A modern and easy Get Data experience.":::
 
@@ -92,7 +92,7 @@ Need to create a similar pipeline? The **Save as** feature lets you duplicate an
 
 Ready to make the switch? Here are some resources to help you get started:
 
-1. [Migrate from Azure Data Factory to Data Factory in Microsoft Fabric](migrate-from-azure-data-factory.md)
-1. [Get the full overview of Data Factory in Microsoft Fabric](data-factory-overview.md)
-1. [Learn about Dataflow Gen2 differences](dataflows-gen2-overview.md)
-1. [Build your first data integration in Fabric](transform-data.md)
+- [Migrate from Azure Data Factory to Data Factory in Microsoft Fabric](migrate-from-azure-data-factory.md)
+- [Get the full overview of Data Factory in Microsoft Fabric](data-factory-overview.md)
+- [Learn about Dataflow Gen2 differences](dataflows-gen2-overview.md)
+- [Build your first data integration in Fabric](transform-data.md)
