@@ -160,7 +160,7 @@ items:
   - name: View schema details
     href: view-schema-details.md
   - name: Use schemas in eventstreams
-    href: ../real-time-intelligence/schema-sets/use-schemas-in-eventstreams.md?context=/fabric/context/context-rti&pivots=fabric
+    href: ../real-time-intelligence/schema-sets/use-event-schemas.md?context=/fabric/context/context-rti&pivots=fabric
   - name: Create a new version of a schema
     href: ../real-time-intelligence/schema-sets/create-new-version-schema.md?context=/fabric/context/context-rti&pivots=fabric    
 - name: User flows

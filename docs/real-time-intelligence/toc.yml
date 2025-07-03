@@ -431,7 +431,7 @@ items:
     - name: View schema set details
       href: schema-sets/view-schema-set-details.md
     - name: Use schemas in eventstreams
-      href: schema-sets/use-schemas-eventstreams.md
+      href: schema-sets/use-event-schemas.md
     - name: Create a new version of a schema
       href: schema-sets/create-new-version-schema.md  
 - name: Analyze and train data
