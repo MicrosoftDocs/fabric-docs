@@ -42,7 +42,7 @@ items:
       - name: Configure container
         href: how-to-configure-container.md
   - name: NoSQL query language reference
-    href: /nosql/query
+    href: nosql-query/toc.yml
   - name: Troubleshoot
     items:
       - name: Limitations
