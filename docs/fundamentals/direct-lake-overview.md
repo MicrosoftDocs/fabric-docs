@@ -77,7 +77,7 @@ The following table compares Direct Lake storage mode to Import and DirectQuery 
 | Calculated tables |Yes – but calculations can't refer to columns of tables in Direct Lake mode. |No – except [calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters), which implicitly create calculated tables | Yes | No – calculated tables use Import storage mode even when they refer to other tables in DirectQuery mode |
 | Calculated columns |Yes – but calculations can't refer to columns of tables in Direct Lake mode.| No  | Yes | Yes |
 | Hybrid tables | No |No | Yes | Yes |
-| Model table partitions | No – however [partitioning](direct-lake-understand-storage.md#table-partitioning) can be done at the Delta table level | No – however [partitioning](direct-lake-understand-storage.md#table-partitioning) can be done at the Delta table level | Yes – either automatically created by incremental refresh, or [manually created](/power-bi/connect-data/incremental-refresh-xmla#partitions) by using the XMLA endpoint | No  |
+| Model table partitions | No – however partitioning can be done at the Delta table level | No – however partitioning can be done at the Delta table level | Yes – either automatically created by incremental refresh, or [manually created](/power-bi/connect-data/incremental-refresh-xmla#partitions) by using the XMLA endpoint | No  |
 | User-defined aggregations | No |No  | Yes – Import aggregation tables on DirectQuery tables are supported | Yes |
 | SQL analytics endpoint object-level security or column-level security | No |Yes – but might produce errors when permission is denied | Yes – but must duplicate permissions with semantic model object-level security | Yes – but queries might produce errors when permission is denied |
 | SQL analytics endpoint row-level security (RLS) |No | Yes – but queries will fall back to DirectQuery mode | Yes – but must duplicate permissions with semantic model RLS | Yes |
@@ -235,7 +235,7 @@ Direct Lake semantic models require a [Fabric capacity license](../enterprise/li
 
 <sup>1</sup> For Direct Lake semantic models, _Max Memory_ represents the upper memory resource limit for how much data can be paged in. For this reason, it's not a guardrail because exceeding it doesn't result in a fallback to DirectQuery mode; however, it can have a performance impact if the amount of data is large enough to cause excessive paging in and out of the model data from the OneLake data.
 
-If exceeded, the _Max model size on disk/OneLake_ causes all queries to the semantic model to fall back to DirectQuery mode. All other guardrails presented in the table are evaluated per query. It's therefore important that you [optimize your Delta tables](direct-lake-understand-storage.md#delta-table-optimization) and [Direct Lake semantic model](direct-lake-develop.md#develop-direct-lake-semantic-models) to avoid having to unnecessarily scale up to a higher Fabric SKU.
+If exceeded, the _Max model size on disk/OneLake_ causes all queries to the semantic model to fall back to DirectQuery mode. All other guardrails presented in the table are evaluated per query. It's therefore important that you [optimize your Delta tables](direct-lake-understand-storage.md) and [Direct Lake semantic model](direct-lake-develop.md#develop-direct-lake-semantic-models) to avoid having to unnecessarily scale up to a higher Fabric SKU.
 
 Additionally, _Capacity unit_ and _Max memory per query limits_ apply to Direct Lake semantic models. For more information, see [Capacities and SKUs](/power-bi/enterprise/service-premium-what-is#capacities-and-skus).
 
@@ -275,7 +275,7 @@ Direct Lake semantic models present some considerations and limitations.
 
 - [Develop Direct Lake semantic models](direct-lake-develop.md)
 - [Manage Direct Lake semantic models](direct-lake-manage.md)
-- [Understand storage for Direct Lake semantic models](direct-lake-understand-storage.md)
+- [Understand Direct Lake query performance](direct-lake-understand-storage.md)
 - [Create a lakehouse for Direct Lake](direct-lake-create-lakehouse.md)
 - [Analyze query processing for Direct Lake semantic models](direct-lake-analyze-query-processing.md)
 

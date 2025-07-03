@@ -9,7 +9,19 @@ items:
   - name: Compare with Azure solutions
     href: real-time-intelligence-compare.md
   - name: Git integration and deployment pipelines
-    href: git-deployment-pipelines.md
+    items:
+    - name: Overview
+      href: git-deployment-pipelines.md
+    - name: Git integration of Real-Time intelligence items
+      items:
+      - name: Eventstream 
+        href: git-eventstream.md
+      - name: Eventhouse and KQL database
+        href: git-eventhouse-kql-database.md
+      - name: KQL querysets
+        href: git-kql-queryset.md
+      - name: Real-Time Dashboard 
+        href: git-real-time-dashboard.md
     displayName: alm, application lifecycle management, cicd, devops
   - name: Implement medallion architecture
     href: architecture-medallion.md
@@ -356,9 +368,9 @@ items:
         href: digital-twin-builder/tutorial-0-introduction.md
       - name: 1- Set up resources
         href: digital-twin-builder/tutorial-1-set-up-resources.md
-      - name: 2- Add entities and map data
+      - name: 2- Add entity types and map data
         href: digital-twin-builder/tutorial-2-add-entities-map-data.md
-      - name: 3- Define relationships
+      - name: 3- Define relationship types
         href: digital-twin-builder/tutorial-3-define-relationships.md
       - name: 4- Explore your ontology
         href: digital-twin-builder/tutorial-4-explore-ontology.md
@@ -374,7 +386,7 @@ items:
       href: digital-twin-builder/concept-semantic-canvas.md
     - name: Modeling
       href: digital-twin-builder/concept-modeling.md
-    - name: Mapping data to entities
+    - name: Mapping data to entity types
       href: digital-twin-builder/concept-mapping.md
     - name: Flows
       href: digital-twin-builder/concept-flows.md
@@ -384,7 +396,7 @@ items:
       href: digital-twin-builder/concept-integrating-machine-learning.md
   - name: Build and explore models
     items:
-    - name: Manage entities and mappings
+    - name: Manage entity types and mappings
       href: digital-twin-builder/model-manage-mappings.md
     - name: Perform contextualization
       href: digital-twin-builder/model-perform-contextualization.md
@@ -408,9 +420,9 @@ items:
       href: /rest/api/fabric/digitaltwinbuilderflow/items
 - name: Analyze and train data
   items:
-  - name: Copilot for Real-Time Intelligence
+  - name: Copilot for Writing KQL Queries
     displayName: KQL queryset, kusto query language, natural language
-    href: ../fundamentals/copilot-real-time-intelligence.md
+    href: ../fundamentals/copilot-for-writing-queries.md
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
@@ -454,6 +466,8 @@ items:
       href: notebooks.md
     - name: Use a notebook with Apache Spark to query a KQL database
       href: spark-connector.md
+    - name: Use a notebook with Kqlmagic to query a KQL database
+      href: notebook-kql-magic.md
 - name: Visualize data
   items:
   - name: Real-Time Dashboards

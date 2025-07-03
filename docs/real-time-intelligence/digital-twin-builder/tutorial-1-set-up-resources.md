@@ -64,4 +64,4 @@ In the semantic canvas, you define a domain ontology in the next tutorial sectio
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 2: Add entities and map data](tutorial-2-add-entities-map-data.md)
+> [Tutorial part 2: Add entity types and map data](tutorial-2-add-entities-map-data.md)

@@ -116,6 +116,9 @@ The following examples use data that is publicly available at [https://kustosamp
 
     :::image type="content" source="media/kusto-query-set/query-window.png" alt-text="Screenshot of the KQL Queryset showing the results of a query. Both the query and the results pane are highlighted."  lightbox="media/kusto-query-set/query-window.png":::
 
+> [!NOTE]
+> You can also use Copilot to help you write queries. For more information, see [Copilot for Writing KQL Queries](../fundamentals/copilot-for-writing-queries.md).
+
 ## Interact with data sources
 
 The data source explorer allows you to switch between the data sources connected to the queryset tab that you are in.
