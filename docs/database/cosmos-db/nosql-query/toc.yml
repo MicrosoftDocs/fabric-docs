@@ -1,27 +1,27 @@
 ### YamlMime:TOC
 items:
   - name: NoSQL query language
-    href: /nosql/query?context=/fabric/context/context
+    href: /nosql/query?context=/fabric/context/context-database
   - name: Overview
     displayName: introduction, welcome, start, getting started
-    href: /nosql/query/overview?context=/fabric/context/context
+    href: /nosql/query/overview?context=/fabric/context/context-database
   - name: Get started
     items:
       - name: Work with JSON
         displayName: get started, quickstart, first query, JSON, JSON documents, JSON arrays, JSON objects
-        href: /nosql/query/get-started-json?context=/fabric/context/context
+        href: /nosql/query/get-started-json?context=/fabric/context/context-database
       - name: Create subqueries
         displayName: subqueries, subquery
-        href: /nosql/query/subquery?context=/fabric/context/context
+        href: /nosql/query/subquery?context=/fabric/context/context-database
       - name: Perform self-joins
         displayName: self-joins, join
-        href: /nosql/query/join?context=/fabric/context/context
+        href: /nosql/query/join?context=/fabric/context/context-database
   - name: Constants
     displayName: literals, values
-    href: /nosql/query/constants?context=/fabric/context/context
+    href: /nosql/query/constants?context=/fabric/context/context-database
   - name: Scalar expressions
     displayName: scalar values
-    href: /nosql/query/scalar?context=/fabric/context/context
+    href: /nosql/query/scalar?context=/fabric/context/context-database
   - name: Subqueries
     displayName: clause, subquery
-    href: /nosql/query/subquery?context=/fabric/context/context
+    href: /nosql/query/subquery?context=/fabric/context/context-database
