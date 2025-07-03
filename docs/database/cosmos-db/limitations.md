@@ -15,8 +15,7 @@ ms.search.form: Databases Limitations
 
 This article lists current limitations for Cosmos DB in Fabric.
 
-> [!IMPORTANT]
-> The content in this article changes regularly. For the latest limitations, revisit this article periodically.
+**The content in this article changes regularly. For the latest limitations, revisit this article periodically.**
 
 ## Quotas and limits
 
