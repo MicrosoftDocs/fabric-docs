@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 06/27/2025
+ms.date: 07/03/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -30,9 +30,7 @@ Select the **Title** to view more information about that specific known issue.
 |  1172  | Data Factory | [Dataflow Gen2 with a default destination to Azure SQL fails to publish](./known-issue-1172-dataflow-default-destination-azure-fails-publish.md) | June 17, 2025 |
 |  1170  | Databases | [Disabled SQL database error](./known-issue-1170-disabled-sql-database-error.md) | June 16, 2025 |
 |  1169  | Data Engineering | [Service principal based public API calls fail with variables in shortcut payloads](./known-issue-1169-service-principal-public-api-calls-fail-variables-shortcut.md) | June 12, 2025 |
-|  1168  | Power BI | [Text Analytics AI Functions fail](./known-issue-1168-text-analytics-ai-functions-fail.md) | June 12, 2025 |
 |  1166  | Power BI | [Power BI reports don't show in Viva Goals](./known-issue-1166-power-bi-reports-not-show-viva-goals.md) | June 6, 2025 |
-|  1165  | Real-Time Intelligence | [Digital twin builder item creation fails on duplicate names](./known-issue-1165-digital-twin-builder-item-creation-fails-duplicate-names.md) | June 6, 2025 |
 |  1167  | Data Factory | [Refreshes have slow performance and timeouts for Dataflows Gen2 with CI/CD](./known-issue-1167-refreshes-slow-performance-timeouts-dataflows-gen-2.md) | June 4, 2025 |
 |  1164  | Real-Time Intelligence | [Inaccurate usage data displayed for digital twin builder usage in Capacity Metrics App](./known-issue-1164-inaccurate-data-digital-twin-builder-usage-capacity-metrics-app.md) | June 4, 2025 |
 |  1163  | Power BI | [Service report is missing table tooltips in the field list in edit mode](./known-issue-1163-service-report-missing-table-tooltips-field-list-edit-mode.md) | June 4, 2025 |
@@ -49,7 +47,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1137  | Data Engineering | [Transient failure for deploying User data functions welcome templates](./known-issue-1137-failure-deploying-user-data-functions-welcome-templates.md) | May 19, 2025 |
 |  1125  | Real-Time Intelligence | [Explore mode within digital twin builder unexpectedly empty](./known-issue-1125-explore-mode-digital-twin-builder-unexpectedly-empty.md) | May 19, 2025 |
 |  1124  | Real-Time Intelligence | [Digital twin builder mapping fails with concurrent update error](./known-issue-1124-digital-twin-builder-mapping-fails-concurrent-update-error.md) | May 19, 2025 |
-|  1135  | OneLake | [Throttling issues with the Mirrored Azure Databricks catalog shortcuts](./known-issue-1135-throttling-issues-mirrored-azure-databricks-catalog-shortcuts.md) | May 9, 2025 |
 |  1134  | Power BI | [Multiple dataflow staging items created in workspace](./known-issue-1134-multiple-dataflow-staging-items-created-workspace.md) | May 9, 2025 |
 |  1133  | OneLake | [Deleted OneLake Shortcuts still visible as empty file](./known-issue-1133-deleted-oneLake-shortcuts-visible-empty-file.md) | May 9, 2025 |
 |  1132  | Data Engineering | [Spark job fails with out of memory error when using timestamp type](./known-issue-1132-spark-job-fails-memory-error-timestamp-type.md) | May 9, 2025 |
@@ -104,6 +101,9 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1168  | Power BI | [Text Analytics AI Functions fail](./known-issue-1168-text-analytics-ai-functions-fail.md) | June 12, 2025 | Fixed: July 3, 2025 |
+|  1165  | Real-Time Intelligence | [Digital twin builder item creation fails on duplicate names](./known-issue-1165-digital-twin-builder-item-creation-fails-duplicate-names.md) | June 6, 2025 | Fixed: July 3, 2025 |
+|  1135  | OneLake | [Throttling issues with the Mirrored Azure Databricks catalog shortcuts](./known-issue-1135-throttling-issues-mirrored-azure-databricks-catalog-shortcuts.md) | May 9, 2025 | Fixed: July 3, 2025 |
 |  1113  | Data Engineering | [API for GraphQL query fails when using variables with float value](./known-issue-1113-api-graphql-query-fails-variables-float-value.md) | April 25, 2025 | Fixed: June 27, 2025 |
 |  988  | Real-Time Intelligence | [Data activator events aren't ingested for Reflex events](./known-issue-988-data-activator-events-not-ingested-reflex-events.md) | January 13, 2025 | Fixed: June 27, 2025 |
 |  965  | Databases | [SQL database creation fails to create child items when item with same name exists](./known-issue-965-sql-database-creation-fails-create-child-items-same-name.md) | December 10, 2024 | Fixed: June 27, 2025 |
@@ -126,14 +126,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  1104  | Power BI | [Power BI visual warning about style preset not found](./known-issue-1104-visual-warning-style-preset-not-found.md) | April 18, 2025 | Fixed: May 20, 2025 |
 |  1097  | Power BI | [Azure map zooms out automatically even with auto zoom turned off](./known-issue-1097-azure-map-zooms-out-auto-zoom-turned-off.md) | April 15, 2025 | Fixed: May 20, 2025 |
 |  1091  | Power BI | [New card visual conditional formatting rules don't work](./known-issue-1091-new-card-visual-conditional-formatting-rules-not-work.md) | April 10, 2025 | Fixed: May 20, 2025 |
-|  1131  | Databases | [SQL database creation fails due to tenant setting](./known-issue-1131-sql-database-creation-fails-tenant-setting.md) | May 9, 2025 | Fixed: May 16, 2025 |
-|  1076  | Real-Time Intelligence | [Eventstream sample data sources created from Real-Time hub are inactive](./known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md) | March 31, 2025 | Fixed: May 16, 2025 |
-|  1025  | Data Engineering | [Environment Git integration imports for libraries don't work](./known-issue-1025-environment-git-integration-imports-libraries-not-work.md) | March 26, 2025 | Fixed: May 16, 2025 |
-|  1061  | Power BI | [Issues publishing or importing reports in Pro workspaces](./known-issue-1061-issues-publishing-importing-reports-pro-workspaces.md) | March 21, 2025 | Fixed: May 16, 2025 |
-|  1043  | Real-Time Intelligence | [Pub/Sub subscriptions disappear from API response after creation](./known-issue-1043-pub-sub-subscriptions-disappear-api-response-creation.md) | March 5, 2025 | Fixed: May 16, 2025 |
-|  1032  | Real-Time Intelligence | [Eventstream updates with Eventhouse destination causes error](./known-issue-1032-eventstream-updates-eventhouse-destination-error.md) | February 21, 2025 | Fixed: May 16, 2025 |
-|  990  | Real-Time Intelligence | [KQL database loads continuously without an error](./known-issue-990-kql-database-loads-continuously-without-error.md) | January 28, 2025 |  Fixed: May 16, 2025 |
-|  894  | Data Engineering | [Pipeline fails when getting a token to connect to Kusto](./known-issue-894-pipeline-fails-getting-token-connect-kusto.md) | October 25, 2024 | Fixed: May 16, 2025 |
 
 ## Related content
 
