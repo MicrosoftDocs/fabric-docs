@@ -30,7 +30,7 @@ Microsoft permits the use of these icons in architectural diagrams, training mat
 > [!div class="button"]
 > [Download icons from GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/Icons.zip)
 
-:::image type="content" source="media/icons/download-from-github.png" alt-text="Diagram showing how to download icons from GitHub.":::
+:::image type="content" source="media/icons/download-from-github.png" alt-text="Screenshot showing how to download icons from GitHub.":::
 
 ### Related content
 
