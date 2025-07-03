@@ -5,7 +5,7 @@ description: Get started quickly with Cosmos DB in Microsoft Fabric by creating 
 author: seesharprun
 ms.author: sidandrews
 ms.topic: quickstart
-ms.date: 06/27/2025
+ms.date: 07/03/2025
 ms.search.form: Databases Get Started
 ---
 
@@ -106,5 +106,5 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
 
 ## Related content
 
-- [Overview of Cosmos DB in Microsoft Fabric](overview.md)
+- [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Connect from your local development environment to Cosmos DB in Microsoft Fabric](how-to-connect-development.md)
