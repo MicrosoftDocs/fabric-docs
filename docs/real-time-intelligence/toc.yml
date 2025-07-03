@@ -171,18 +171,6 @@ items:
       href: event-streams/process-events-using-event-processor-editor.md
     - name: Preview data
       href: event-streams/preview-data.md
-    - name: Register and use schemas in eventstreams
-      items:
-      - name: Create event schema set
-        href: event-streams/create-event-schema-set.md
-      - name: Add a schema to a schema set
-        href: event-streams/add-schema-to-schema-set.md
-      - name: View schema set details
-        href: event-streams/view-schema-set-details.md
-      - name: Use schemas in eventstreams
-        href: event-streams/use-schemas-eventstreams.md
-      - name: Create a new version of a schema
-        href: event-streams/create-new-version-schema.md
     - name: Manage eventstreams
       items:
       - name: Manage an eventstream
@@ -370,66 +358,82 @@ items:
     href: real-time-intelligence-consumption.md
 - name: Model data
   items:
-  - name: Get started with digital twin builder
+  - name: Digital twin builder
     items:
-    - name: What is digital twin builder?
-      href: digital-twin-builder/overview.md
-    - name: Digital twin builder tutorial
+    - name: Get started with digital twin builder
       items:
-      - name: Tutorial introduction
-        href: digital-twin-builder/tutorial-0-introduction.md
-      - name: 1- Set up resources
-        href: digital-twin-builder/tutorial-1-set-up-resources.md
-      - name: 2- Add entity types and map data
-        href: digital-twin-builder/tutorial-2-add-entities-map-data.md
-      - name: 3- Define relationship types
-        href: digital-twin-builder/tutorial-3-define-relationships.md
-      - name: 4- Explore your ontology
-        href: digital-twin-builder/tutorial-4-explore-ontology.md
-      - name: 5- Create a Power BI report
-        href: digital-twin-builder/tutorial-5-power-bi-report.md
-      - name: 6- Clean up resources
-        href: digital-twin-builder/tutorial-6-clean-up-resources.md
-    - name: Role-based access control
-      href: digital-twin-builder/overview-rbac.md
-  - name: Concepts
+      - name: What is digital twin builder?
+        href: digital-twin-builder/overview.md
+      - name: Digital twin builder tutorial
+        items:
+        - name: Tutorial introduction
+          href: digital-twin-builder/tutorial-0-introduction.md
+        - name: 1- Set up resources
+          href: digital-twin-builder/tutorial-1-set-up-resources.md
+        - name: 2- Add entity types and map data
+          href: digital-twin-builder/tutorial-2-add-entities-map-data.md
+        - name: 3- Define relationship types
+          href: digital-twin-builder/tutorial-3-define-relationships.md
+        - name: 4- Explore your ontology
+          href: digital-twin-builder/tutorial-4-explore-ontology.md
+        - name: 5- Create a Power BI report
+          href: digital-twin-builder/tutorial-5-power-bi-report.md
+        - name: 6- Clean up resources
+          href: digital-twin-builder/tutorial-6-clean-up-resources.md
+      - name: Role-based access control
+        href: digital-twin-builder/overview-rbac.md
+    - name: Concepts
+      items:
+      - name: Using the semantic canvas
+        href: digital-twin-builder/concept-semantic-canvas.md
+      - name: Modeling
+        href: digital-twin-builder/concept-modeling.md
+      - name: Mapping data to entity types
+        href: digital-twin-builder/concept-mapping.md
+      - name: Flows
+        href: digital-twin-builder/concept-flows.md
+      - name: Integrating with Fabric tools
+        href: digital-twin-builder/concept-integrating-fabric.md
+      - name: Integrating with machine learning
+        href: digital-twin-builder/concept-integrating-machine-learning.md
+    - name: Build and explore models
+      items:
+      - name: Manage entity types and mappings
+        href: digital-twin-builder/model-manage-mappings.md
+      - name: Perform contextualization
+        href: digital-twin-builder/model-perform-contextualization.md
+      - name: Search and visualize
+        href: digital-twin-builder/explore-search-visualize.md
+      - name: Connect to a Real-Time Dashboard
+        href: digital-twin-builder/explore-connect-dashboard.md
+    - name: Digital twin builder resources
+      items:
+      - name: Glossary
+        href: digital-twin-builder/resources-glossary.md
+      - name: Troubleshooting
+        href: digital-twin-builder/resources-troubleshooting.md
+      - name: Capacity usage
+        href: digital-twin-builder/resources-capacity-usage.md
+      - name: FAQ
+        href: digital-twin-builder/resources-faq.md
+      - name: Digital twin builder REST API
+        href: /rest/api/fabric/digitaltwinbuilder/items
+      - name: Digital twin builder flow REST API
+        href: /rest/api/fabric/digitaltwinbuilderflow/items
+  - name: Event schema sets
     items:
-    - name: Using the semantic canvas
-      href: digital-twin-builder/concept-semantic-canvas.md
-    - name: Modeling
-      href: digital-twin-builder/concept-modeling.md
-    - name: Mapping data to entity types
-      href: digital-twin-builder/concept-mapping.md
-    - name: Flows
-      href: digital-twin-builder/concept-flows.md
-    - name: Integrating with Fabric tools
-      href: digital-twin-builder/concept-integrating-fabric.md
-    - name: Integrating with machine learning
-      href: digital-twin-builder/concept-integrating-machine-learning.md
-  - name: Build and explore models
-    items:
-    - name: Manage entity types and mappings
-      href: digital-twin-builder/model-manage-mappings.md
-    - name: Perform contextualization
-      href: digital-twin-builder/model-perform-contextualization.md
-    - name: Search and visualize
-      href: digital-twin-builder/explore-search-visualize.md
-    - name: Connect to a Real-Time Dashboard
-      href: digital-twin-builder/explore-connect-dashboard.md
-  - name: Digital twin builder resources
-    items:
-    - name: Glossary
-      href: digital-twin-builder/resources-glossary.md
-    - name: Troubleshooting
-      href: digital-twin-builder/resources-troubleshooting.md
-    - name: Capacity usage
-      href: digital-twin-builder/resources-capacity-usage.md
-    - name: FAQ
-      href: digital-twin-builder/resources-faq.md
-    - name: Digital twin builder REST API
-      href: /rest/api/fabric/digitaltwinbuilder/items
-    - name: Digital twin builder flow REST API
-      href: /rest/api/fabric/digitaltwinbuilderflow/items
+    - name: What's a schema set? 
+      href: schema-sets/schema-set-overview.md
+    - name: Create event schema set
+      href: schema-sets/create-event-schema-set.md
+    - name: Add a schema to a schema set
+      href: schema-sets/add-schema-to-schema-set.md
+    - name: View schema set details
+      href: schema-sets/view-schema-set-details.md
+    - name: Use schemas in eventstreams
+      href: schema-sets/use-schemas-eventstreams.md
+    - name: Create a new version of a schema
+      href: schema-sets/create-new-version-schema.md  
 - name: Analyze and train data
   items:
   - name: Copilot for Writing KQL Queries

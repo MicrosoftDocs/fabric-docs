@@ -14,4 +14,4 @@ ms.search.form: Schema set
 
 ## Related content
 
-* [Fabric Eventstream - overview](overview.md)
+
