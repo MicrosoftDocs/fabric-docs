@@ -9,7 +9,7 @@ ms.date: 06/27/2025
 ms.search.form: Databases replication to OneLake
 ---
 
-# Mirror OneLake in Cosmos DB database in Microsoft Fabric (preview)
+# Mirror OneLake in Cosmos DB in Microsoft Fabric (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
