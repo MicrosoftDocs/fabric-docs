@@ -49,7 +49,7 @@ To allow users to accept external data shares:
 
 ## Guest users can access Microsoft Fabric
 
-When you turn on this setting, Microsoft Entra Business-to-Business (Microsoft Entra B2B) guest users can access Fabric. If you turn off this setting, B2B guest users receive an error when trying to access Fabric and any Fabric items they have permissions to. Disabling this setting for the entire organization also prevents users from inviting guests to your organization. Use the specific security groups option to control which B2B guest users can access Fabric.
+When you turn on this setting, Microsoft Entra Business-to-Business (Microsoft Entra B2B) guest users can access Fabric. If you turn off this setting, B2B guest users receive an error when trying to access Fabric and any Fabric items they have permissions to. Disabling this setting for the entire organization also prevents users from inviting guests via item sharing and permissions. Use the specific security groups option to control which B2B guest users can access Fabric.
 
 To learn more, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
 

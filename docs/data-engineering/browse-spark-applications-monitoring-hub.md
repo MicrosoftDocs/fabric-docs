@@ -6,7 +6,8 @@ ms.author: jejiang
 ms.topic: overview
 ms.date: 05/13/2024
 ms.custom:
-  - template-howto
+- template-howto
+- sfi-image-nochange
 ms.search.form: Browse Spark applications in the Monitor pane
 ---
 
