@@ -72,9 +72,9 @@ In the following sections you'll configure Microsoft Entra ID, AWS IAM, and Micr
   * Object ID
 
 > [!NOTE]
-> These values are from **Microsoft Entra ID > Enterprise applications** and NOT from **Microsoft Entra ID > App registrations**
+> These values are from **Microsoft Entra ID > Enterprise applications** tab and NOT from **Microsoft Entra ID > App registrations** tab.
 
-The following screenshot shows you how to get the Application/client ID and object ID.
+The following screenshot shows you how to get the application/client ID and object ID.
 
 :::image type="content" source="media\amazon-storage-shortcut-entra-integration\get-entra-app-object-id.png" alt-text="Screenshot showing how to get Microsoft Entra application and object ID." lightbox="media\amazon-storage-shortcut-entra-integration\get-entra-app-object-id.png":::
 
