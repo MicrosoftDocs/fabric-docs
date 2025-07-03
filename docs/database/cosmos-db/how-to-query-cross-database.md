@@ -12,7 +12,27 @@ ms.date: 07/03/2025
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
+In this guide, you 
+
+## Prerequisites
+
+[!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
+
+## TODO
+
 TODO
+
+1. TODO
+
+1. TODO
+
+## TODO
+
+TODO
+
+1. TODO
+
+1. TODO
 
 ## Related content
 
