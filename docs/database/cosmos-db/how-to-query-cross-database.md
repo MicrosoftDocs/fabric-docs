@@ -75,20 +75,10 @@ Now, connect to the mirrored SQL analytics endpoint for a second Cosmos DB in Fa
 
     ```tsql
     SELECT 
-      name,
-      code
-    FROM [<second-database-endpoint>].[<second-database-name>].[<second-database-container-name>]
+      *
+    FROM
+      [<second-database-endpoint>].[<second-database-name>].[<second-database-container-name>]
     ```
-
-    This query results in:
-
-    | `name` | `code` |
-    | --- | --- |
-    | `Nigeria` | `en-ng` |
-    | `Egypt` | `ar-eg` |
-    | `France` | `fr-fr` |
-    | `Japan` | `ja-jp` |
-    | `Argentina` | `es-ar` |
 
     > [!NOTE]
     > This example uses an arbitrary data set stored in the Cosmos DB in Fabric container. This data set contains region locales that correspond with the regions specified in the first query. A subset of this data set is available here:
