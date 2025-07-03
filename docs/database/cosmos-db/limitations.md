@@ -9,7 +9,7 @@ ms.date: 06/27/2025
 ms.search.form: Databases Limitations
 ---
 
-# Limitations in Cosmos DB database in Microsoft Fabric (preview)
+# Limitations in Cosmos DB in Microsoft Fabric (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
