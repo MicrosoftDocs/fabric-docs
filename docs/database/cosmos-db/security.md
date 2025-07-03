@@ -5,7 +5,7 @@ description: Review the fundamentals of securing Cosmos DB in Microsoft Fabric f
 author: seesharprun
 ms.author: sidandrews
 ms.topic: best-practice
-ms.date: 06/06/2025
+ms.date: 07/03/2025
 ms.custom: security-horizontal-2025
 ai-usage: ai-generated
 ---

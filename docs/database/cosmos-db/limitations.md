@@ -5,7 +5,7 @@ description: Learn about the current limitations and restrictions when using Cos
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 06/27/2025
+ms.date: 07/03/2025
 ms.search.form: Databases Limitations
 ---
 
