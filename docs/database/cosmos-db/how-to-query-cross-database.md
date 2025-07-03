@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 07/03/2025
 ---
 
-# Query cross-database data in Cosmos DB database in Microsoft Fabric (preview)
+# Query cross-database data in Cosmos DB in Microsoft Fabric (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 

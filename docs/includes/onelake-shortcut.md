@@ -5,6 +5,7 @@ author: kgremban
 ms.author: kgremban
 ms.topic: include
 ms.date: 03/20/2025
+ms.custom: sfi-image-nochange
 ---
 ## Select a source
 

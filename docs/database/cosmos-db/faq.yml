@@ -8,10 +8,10 @@ metadata:
   ms.topic: faq
   ms.date: 07/03/2025
   ai-usage: ai-assisted
-title: Frequently asked questions for Cosmos DB database in Microsoft Fabric (preview)
+title: Frequently asked questions for Cosmos DB in Microsoft Fabric (preview)
 summary: |
   [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-  This article answers frequently asked questions about Cosmos DB database in Microsoft Fabric.
+  This article answers frequently asked questions about Cosmos DB in Microsoft Fabric.
 sections:
   - name: General
     questions:

@@ -10,7 +10,7 @@ ms.custom: security-horizontal-2025
 ai-usage: ai-generated
 ---
 
-# Secure your Cosmos DB database in Microsoft Fabric (preview)
+# Secure your Cosmos DB in Microsoft Fabric database (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 

@@ -6,7 +6,8 @@ ms.author: jejiang
 ms.topic: overview
 ms.date: 05/23/2023
 ms.custom:
-  - template-howto
+- template-howto
+- sfi-image-nochange
 ms.search.form: Monitor Spark job definitions
 ---
 

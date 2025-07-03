@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 06/06/2025
 ---
 
-# Share Cosmos DB database in Microsoft Fabric items (preview)
+# Share Cosmos DB in Microsoft Fabric items (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
