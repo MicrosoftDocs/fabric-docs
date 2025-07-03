@@ -18,7 +18,9 @@ In this guide, you
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
 
-## TODO
+[!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
+
+## Create a second database
 
 TODO
 
@@ -26,9 +28,13 @@ TODO
 
 1. TODO
 
-## TODO
+## Run a cross-database query
 
 TODO
+
+1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
+
+1. Navigate to your existing Cosmos DB database that was created before starting this guide.
 
 1. TODO
 

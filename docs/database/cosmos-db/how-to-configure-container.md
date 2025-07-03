@@ -18,7 +18,23 @@ In this guide, you
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
 
-## TODO
+[!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
+
+## Update settings
+
+TODO
+
+1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
+
+1. Navigate to your existing Cosmos DB database.
+
+1. TODO
+
+1. TODO
+
+    :::image source="media/how-to-configure-container/settings.png" lightbox="media/how-to-configure-container/settings-full.png" alt-text="Screenshot of the 'Settings' section for a container within a database in the Fabric portal.":::
+
+## Rework indexing policy
 
 TODO
 
@@ -26,11 +42,7 @@ TODO
 
 1. TODO
 
-## TODO
-
-TODO
-
-1. TODO
+    :::image source="media/how-to-configure-container/indexing-policy.png" lightbox="media/how-to-configure-container/indexing-policy-full.png" alt-text="Screenshot of the 'Indexing policy' section for a container within a database in the Fabric portal.":::
 
 ## Related content
 

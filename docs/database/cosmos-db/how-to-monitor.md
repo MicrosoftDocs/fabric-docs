@@ -18,21 +18,19 @@ In this guide, you
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
 
-## TODO
+## Review aggregate monitoring data
 
 TODO
 
-1. TODO
+1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
 
-1. TODO
-
-## TODO
-
-TODO
+1. Navigate to your existing Cosmos DB database.
 
 1. TODO
 
 1. TODO
+
+    :::image source="media/how-to-monitor/metrics-summary.png" lightbox="media/how-to-monitor/metrics-summary-full.png" alt-text="Screenshot of the 'Metrics summary' dialog for a database in the Fabric portal.":::
 
 ## Related content
 
