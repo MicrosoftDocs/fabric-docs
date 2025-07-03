@@ -95,7 +95,7 @@ The rest of this workflow uses Kqlmagic to query and visualize the data in your 
 
     :::image type="content" source="media/jupyter-notebook/upload-notebook.png" alt-text="Screenshot of Import status window. The button titled Upload is highlighted.":::
 
-1. Select the NYC Taxi KQL Notebook that you downloaded in [step 3](#3--download-the-nyc-taxi-demo-notebook).
+1. Select the NYC Taxi KQL Notebook that you downloaded in [step 3](#3-download-the-nyc-taxi-demo-notebook).
 
 1. Once the import is complete, select **Go to workspace** and open this notebook.
 
