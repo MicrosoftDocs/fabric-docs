@@ -6,13 +6,6 @@ items:
   - name: Database
     tocHref: /fabric/database/
     topicHref: /fabric/database/index
-    items:
-    - name: SQL
-      tocHref: /fabric/database/sql
-      topicHref: /fabric/database/sql/index
-    - name: Cosmos DB
-      tocHref: /fabric/database/cosmos-db
-      topicHref: /fabric/database/cosmos-db/index
   - name: Data Engineering
     tocHref: /fabric/data-engineering/
     topicHref: /fabric/data-engineering/index
