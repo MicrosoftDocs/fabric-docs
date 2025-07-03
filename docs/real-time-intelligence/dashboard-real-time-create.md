@@ -41,7 +41,7 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
 
 > [!NOTE]
-> You can also use Copilot to help you write queries. For more information, see [Use Copilot in KQL Queryset](../fundamentals/copilot-kusto-query-set.md).
+> You can also use Copilot to help you write queries. For more information, see [Use Copilot in KQL Queryset](../fundamentals/copilot-for-writing-queries.md).
 
 ## Edit mode
 If you aren't able to edit a dashboard, ensure that you are in the Editing mode. 
@@ -65,7 +65,7 @@ Data sources are reusable references to a specific database in the same workspac
 1. On the **Create new data source** page, enter a display name for the data source, and select **Add**. 
 
     :::image type="content" source="media/real-time-dashboard/create-new-data-source.png" alt-text="Screenshot of the Create new data source window.":::  
-    
+
 ## Add tile
 
 Dashboard tiles use Kusto Query Language snippets to retrieve data and render visuals. Each tile/query can support a single visual.
