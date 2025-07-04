@@ -19,7 +19,7 @@ In this article, you learn how to create an event schema set in Fabric and add a
 1. On the **My workspace** page, select **+ New item** on the command bar. 
 1. On the **New item** page, search for **Eventstream**, and then select **Eventstream**. 
 
-    :::image type="content" source="./media/create-manage-event-schema-sets/new-item-event-schema-set.png" alt-text="Screenshot that shows the New item page with Event schema set (preview) selected." lightbox="./media/create-manage-event-schema-sets/new-item-event-schema-set.png:::
+    :::image type="content" source="./media/create-manage-event-schema-sets/new-item-event-schema-set.png" alt-text="Screenshot that shows the New item page with Event schema set (preview) selected." lightbox="./media/create-manage-event-schema-sets/new-item-event-schema-set.png":::
 1. In the **New event schema set (preview)** window, enter a **name** for the schema set, and then select **Create**.
 
     :::image type="content" source="./media/create-manage-event-schema-sets/new-schema-set-window.png" alt-text="Screenshot that shows the New event schema set (preview) window." lightbox="./media/create-manage-event-schema-sets/new-schema-set-window.png":::
