@@ -36,6 +36,16 @@ landingContent:
         links:
           - text: Cross-database queries
             url: how-to-query-cross-database.md
+      - linkListType: reference
+        links:
+          - text: NoSQL query language
+            url: /nosql/query/overview?context=/fabric/context/context-database
+          - text: Work with JSON
+            url: /nosql/query/get-started-json?context=/fabric/context/context-database
+          - text: Create subqueries
+            url: /nosql/query/subquery?context=/fabric/context/context-database
+          - text: Perform self-joins
+            url: /nosql/query/join?context=/fabric/context/context-database
   - title: Integrate
     linkLists:
       - linkListType: concept
@@ -68,3 +78,7 @@ landingContent:
             url: how-to-configure-authorization.md
           - text: Sharing items
             url: how-to-share-items.md
+  - title: Manage
+    linkLists:
+      - linkListType: how-to-guide
+        links:
