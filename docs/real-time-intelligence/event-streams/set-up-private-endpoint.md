@@ -39,7 +39,7 @@ The General Availability (GA) release includes several improvements over the pub
     | West US 2                    |                            |             |                    |                                 |
 
 1. **Improved UI Indicators**: Once an Azure source is securely connected via a managed private endpoint, Eventstream now displays an icon confirming the secure connection.
-  :::image type="content" source="media/set-up-private-endpoint/mpe-ui.png" alt-text="A screenshot of showing MPE indicator on Eventstream UI." lightbox="media/set-up-private-endpoint/mpe-ui.png":::
+  :::image type="content" source="media/set-up-private-endpoint/private-endpoint-ui.png" alt-text="A screenshot of showing private endpoint indicator on Eventstream UI." lightbox="media/set-up-private-endpoint/private-endpoint-ui.png":::
 
 To learn more about the Managed Private Endpoints and supported data sources, visit [Managed Private Endpoints for Fabric](/fabric/security/security-managed-private-endpoints-overview).
 
@@ -94,7 +94,7 @@ By following these steps, you have a fully operational Eventstream running over 
 ## Limitations
 
 * The **Data Preview** feature may not be available for data sources that aren't publicly accessible when connected through a managed private endpoint. However, the data is securely transmitted and flows correctly to the Eventstream.
-  :::image type="content" source="media/set-up-private-endpoint/mpe-data-preview.png" alt-text="A screenshot of data preview not supported for managed private endpoint." lightbox="media/set-up-private-endpoint/mpe-data-preview.png":::
+  :::image type="content" source="media/set-up-private-endpoint/private-endpoint-data-preview.png" alt-text="A screenshot of data preview not supported for managed private endpoint." lightbox="media/set-up-private-endpoint/private-endpoint-data-preview.png":::
 
 ## Related content
 
