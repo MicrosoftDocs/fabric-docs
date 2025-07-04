@@ -44,8 +44,6 @@ landingContent:
             url: mirror-onelake.md
       - linkListType: how-to-guide
         links:
-          - text: Configure container
-            url: how-to-configure-container.md
           - text: Index vector data
             url: how-to-index-vector-data.md
   - title: Deploy and monitor
@@ -68,3 +66,15 @@ landingContent:
             url: how-to-configure-authorization.md
           - text: Sharing items
             url: how-to-share-items.md
+  - title: Manage Resources
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Indexing policies
+            url: indexing-policies.md
+      - linkListType: how-to-guide
+        links:
+          - text: Configure container
+            url: how-to-configure-container.md
+          - text: Customize indexing policy
+            url: how-to-customize-indexing-policy.md
