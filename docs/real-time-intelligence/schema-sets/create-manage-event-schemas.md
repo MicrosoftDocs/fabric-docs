@@ -13,20 +13,20 @@ ms.search.form: Schema set
 In this article, you lean how to add a schema to a schema set in Fabric. 
 
 ## Prerequisites
-If you haven't created an event schema set already, create one by following instructions from [Create an event schema set](create-manage-event-schema-sets.md).
+If you don't have an event schema set, create one by following instructions from [Create an event schema set](create-manage-event-schema-sets.md).
 
 ## Add a schema
 
-1. If you are on the schema set page already, navigate to the Fabric workspace, and select the event schema set. 
+1. If you aren't on the schema set page already, navigate to the Fabric workspace, and select the event schema set. 
 
     :::image type="content" source="./media/create-manage-event-schemas/select-schema-set.png" alt-text="Screenshot that shows My Workspace with an event schema set selected.":::    
 1. Select **+ New event schema**. 
 
-    If you are trying to add the first schema to the schema set, you see the following screen: 
+    If you're trying to add the first schema to the schema set, you see the following screen: 
 
     :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button.png" alt-text="Screenshot that shows the New event schema button." lightbox="./media/create-manage-event-schemas/new-event-schema-button.png":::    
 
-    If you are trying to add a schema to a schema set that has at least one schema in it, you see the following screen:
+    If you're trying to add a schema to a schema set that has at least one schema in it, you see the following screen:
     
     :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button-2.png" alt-text="Screenshot that shows the New event schema button for a schema set with at least one schema." lightbox="./media/create-manage-event-schemas/new-event-schema-button-2.png":::    
 1. On the **New event schema** page, follow these instructions:
@@ -36,9 +36,9 @@ If you haven't created an event schema set already, create one by following inst
     - If you have a schema JSON file, select **Upload** to upload the file. For a sample file, see the [Sample schema file](#download-an-event-schema) section. 
 
         :::image type="content" source="./media/create-manage-event-schemas/upload-button.png" alt-text="Screenshot that shows the upload option to create a schema." lightbox="./media/create-manage-event-schemas/upload-button.png" :::
-    - Start building a schema manually by selecting **Add row**. For each row, select the **field type**, **field name**, and optionally enter a **desciption**. 
+    - Start building a schema manually by selecting **Add row**. For each row, select the **field type**, **field name**, and optionally enter a **description**. 
     
-        :::image type="content" source="./media/create-manage-event-schemas/build-schema.png" alt-text="Screenshot that shows the schema that's built manually." lightbox="./media/create-manage-event-schemas/build-schema.png":::            
+        :::image type="content" source="./media/create-manage-event-schemas/build-schema.png" alt-text="Screenshot that shows the manual way of building a schema." lightbox="./media/create-manage-event-schemas/build-schema.png":::            
     
     - To build a schema by entering JSON code, select **Code editor** option as shown in the following image. If you see the message: **If you choose to use the code editor to create your schema, note that you won’t be able to switch back to the UI builder**, select **Edit**. 
 

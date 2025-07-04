@@ -19,7 +19,7 @@ In this article, you learn how to create an event schema set in Fabric and add a
 1. On the **My workspace** page, select **+ New item** on the command bar. 
 1. On the **New item** page, search for **Eventstream**, and then select **Eventstream**. 
 
-    :::image type="content" source="./media/create-manage-event-schema-sets/new-item-event-schema-set.png" alt-text="Screenshot that shows the New item page with Event schema set (prevew) selected." lightbox="./media/create-manage-event-schema-sets/new-item-event-schema-set.png:::
+    :::image type="content" source="./media/create-manage-event-schema-sets/new-item-event-schema-set.png" alt-text="Screenshot that shows the New item page with Event schema set (preview) selected." lightbox="./media/create-manage-event-schema-sets/new-item-event-schema-set.png:::
 1. In the **New event schema set (preview)** window, enter a **name** for the schema set, and then select **Create**.
 
     :::image type="content" source="./media/create-manage-event-schema-sets/new-schema-set-window.png" alt-text="Screenshot that shows the New event schema set (preview) window." lightbox="./media/create-manage-event-schema-sets/new-schema-set-window.png":::
@@ -28,7 +28,7 @@ In this article, you learn how to create an event schema set in Fabric and add a
     :::image type="content" source="./media/create-manage-event-schema-sets/editor.png" alt-text="Screenshot that shows the main editor for a schema set." lightbox="./media/create-manage-event-schema-sets/editor.png":::
 
 ## Configure settings for a schema set
-Once you have at least one schema in the schema set, you can configure settings such as schema set name, description, sensitivity lavel, and endorsement, select the **gear** button on the ribbon in the top-left corner. 
+Once you have at least one schema in the schema set, you can configure settings such as schema set name, description, sensitivity label, and endorsement, select the **gear** button on the ribbon in the top-left corner. 
 
 :::image type="content" source="./media/create-manage-event-schema-sets/schema-set-settings.png" alt-text="Screenshot that shows the settings for a schema set." lightbox="./media/create-manage-event-schema-sets/schema-set-settings.png":::
 

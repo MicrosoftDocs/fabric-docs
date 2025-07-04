@@ -428,8 +428,6 @@ items:
       href: schema-sets/create-manage-event-schema-sets.md
     - name: Create and manage schemas
       href: schema-sets/create-manage-event-schemas.md
-    - name: View schema set details
-      href: schema-sets/view-schema-set-details.md
     - name: Use schemas in eventstreams
       href: schema-sets/use-event-schemas.md
 - name: Analyze and train data
