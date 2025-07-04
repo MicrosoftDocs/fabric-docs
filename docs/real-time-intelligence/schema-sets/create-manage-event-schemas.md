@@ -13,13 +13,13 @@ ms.search.form: Schema set
 In this article, you lean how to add a schema to a schema set in Fabric. 
 
 ## Prerequisites
-If you haven't created an event schema set already, create one by following instructions from [Create an event schema set](create-event-schema-set.md).
+If you haven't created an event schema set already, create one by following instructions from [Create an event schema set](create-manage-event-schema-sets.md).
 
 ## Add a schema
 
 1. If you are on the schema set page already, navigate to the Fabric workspace, and select the event schema set. 
 
-    :::image type="content" source="./media/create-manage-event-schemas/select-schema-set.png" alt-text="Screenshot that shows My Workspace with an event schema set selected." lightbox="./media/create-manage-event-schemas/select-schema-set.png":::
+    :::image type="content" source="./media/create-manage-event-schemas/select-schema-set.png" alt-text="Screenshot that shows My Workspace with an event schema set selected." lightbox="./media/create-manage-event-schemas/select-schema-set.png":::    
 1. Select **+ New event schema**. 
 
     If you are trying to add the first schema to the schema set, you see the following screen: 
