@@ -1,21 +1,17 @@
 ### YamlMime:TOC
 items:
   - name: NoSQL query language
-    href: /nosql/query?context=/fabric/context/context-database
-  - name: Overview
     displayName: introduction, welcome, start, getting started
     href: /nosql/query/overview?context=/fabric/context/context-database
-  - name: Get started
-    items:
-      - name: Work with JSON
-        displayName: get started, quickstart, first query, JSON, JSON documents, JSON arrays, JSON objects
-        href: /nosql/query/get-started-json?context=/fabric/context/context-database
-      - name: Create subqueries
-        displayName: subqueries, subquery
-        href: /nosql/query/subquery?context=/fabric/context/context-database
-      - name: Perform self-joins
-        displayName: self-joins, join
-        href: /nosql/query/join?context=/fabric/context/context-database
+  - name: Work with JSON
+    displayName: get started, quickstart, first query, JSON, JSON documents, JSON arrays, JSON objects
+    href: /nosql/query/get-started-json?context=/fabric/context/context-database
+  - name: Create subqueries
+    displayName: subqueries, subquery
+    href: /nosql/query/subquery?context=/fabric/context/context-database
+  - name: Perform self-joins
+    displayName: self-joins, join
+    href: /nosql/query/join?context=/fabric/context/context-database
   - name: Constants
     displayName: literals, values
     href: /nosql/query/constants?context=/fabric/context/context-database
@@ -29,8 +25,6 @@ items:
     displayName: clauses, expressions
     expanded: true
     items:
-      - name: Clauses documentation
-        href: /nosql/query/clauses?context=/fabric/context/context-database
       - name: FROM
         displayName: clause, from
         href: /nosql/query/from?context=/fabric/context/context-database
@@ -56,8 +50,6 @@ items:
     displayName: keywords, reserved words
     expanded: true
     items:
-      - name: Keywords documentation
-        href: /nosql/query/keywords?context=/fabric/context/context-database
       - name: BETWEEN
         displayName: between, keyword
         href: /nosql/query/between?context=/fabric/context/context-database
@@ -65,8 +57,6 @@ items:
     displayName: commands, operators
     expanded: true
     items:
-      - name: Functions documentation
-        href: /nosql/query/functions?context=/fabric/context/context-database
       - name: Mathematical functions
         items:
           - name: ABS
