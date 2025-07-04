@@ -12,8 +12,6 @@ items:
         href: quickstart-portal.md
       - name: Connect from your dev environment
         href: how-to-connect-development.md
-  - name: Access data insights
-    items:
       - name: Query cross-database
         href: how-to-query-cross-database.md
   - name: Integrate with other services
@@ -47,8 +45,8 @@ items:
         href: time-to-live.md
       - name: Configure time to live (TTL)
         href: how-to-configure-time-to-live.md
-  - name: NoSQL query language reference
-    href: /nosql/query
+  - name: Write queries
+    href: nosql-query/toc.yml
   - name: Troubleshoot
     items:
       - name: Limitations
