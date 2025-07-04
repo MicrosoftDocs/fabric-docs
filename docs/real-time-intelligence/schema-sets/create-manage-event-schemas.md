@@ -19,7 +19,7 @@ If you haven't created an event schema set already, create one by following inst
 
 1. If you are on the schema set page already, navigate to the Fabric workspace, and select the event schema set. 
 
-    :::image type="content" source="./media/create-manage-event-schemas/select-schema-set.png" alt-text="Screenshot that shows My Workspace with an event schema set selected." lightbox="./media/create-manage-event-schemas/select-schema-set.png":::    
+    :::image type="content" source="./media/create-manage-event-schemas/select-schema-set.png" alt-text="Screenshot that shows My Workspace with an event schema set selected.":::    
 1. Select **+ New event schema**. 
 
     If you are trying to add the first schema to the schema set, you see the following screen: 
