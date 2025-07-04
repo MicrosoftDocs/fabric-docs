@@ -43,6 +43,10 @@ items:
     items:
       - name: Configure container
         href: how-to-configure-container.md
+      - name: Indexing policies
+        href: indexing-policies.md
+      - name: Customize indexing policy
+        href: how-to-customize-indexing-policy.md
   - name: NoSQL query language reference
     href: /nosql/query
   - name: Troubleshoot
