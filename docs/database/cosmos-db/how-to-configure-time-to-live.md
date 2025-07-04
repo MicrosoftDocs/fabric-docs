@@ -6,6 +6,7 @@ author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
 ms.date: 07/03/2025
+ai-usage: ai-generated
 ---
 
 # Configure time to live (TTL) in Cosmos DB in Microsoft Fabric
