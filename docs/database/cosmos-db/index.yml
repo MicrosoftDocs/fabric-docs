@@ -78,7 +78,3 @@ landingContent:
             url: how-to-configure-authorization.md
           - text: Sharing items
             url: how-to-share-items.md
-  - title: Manage
-    linkLists:
-      - linkListType: how-to-guide
-        links:
