@@ -6,6 +6,7 @@ author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
 ms.date: 07/03/2025
+ai-usage: ai-generated
 ---
 
 # Indexing policies in Cosmos DB in Microsoft Fabric
