@@ -50,6 +50,15 @@ You can also view the ingestion details of each table and materialized view. To 
 
 :::image type="content" source="media/database-entity-diagram/entity-diagram-ingestion-details.gif" alt-text="Screenshot of an entity diagram, showing the ingestion details view." lightbox="media/database-entity-diagram/entity-diagram-ingestion-details.gif":::
 
+**View ingestion from Eventstream details**
+
+You can also view ingestion details for each table and materialized view originating from [Eventstream](event-streams/overview.md). To do this, select the green icon to reveal the [derived stream](event-streams/add-destination-derived-stream.md) and the name of the [ingestion mapping](https://learn.microsoft.com/en-us/kusto/management/mappings?view=microsoft-fabric). If no mapping is displayed, the [default (identity) mapping](https://learn.microsoft.com/kusto/management/mappings?view=microsoft-fabric#identity-mapping) is being used. When you enable **Ingestion** details under **Show details**, you'll see the number of records ingested into each table from all sources, including Eventstreams.
+
+:::image type="content" source="media/database-entity-diagram/entity-diagram-event-stream.png" alt-text="Screenshot of an entity diagram, showing the ingestion from Eventstream details view." lightbox="media/database-entity-diagram/entity-diagram-ingestion-event-stream.png":::
+
+>[!NOTE]
+> Only eventstreams appear aqs external sources in the entity diagram view. Other external sources are not displayed in the entity diagram.
+
 ## What scenarios can you use an entity diagrams for?
 
 This section explores various scenarios where you can use the entity diagram view in KQL database:
