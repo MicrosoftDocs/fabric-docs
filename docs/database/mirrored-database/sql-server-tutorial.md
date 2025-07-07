@@ -83,37 +83,37 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
 
-> [!IMPORTANT] 
-> For SQL Server instances running in an Always On availability group or failover cluster instance configuration, the login needs to be created in all SQL Server instances.
+   > [!IMPORTANT] 
+   > For SQL Server instances in an Always On availability group, the login must be created in all SQL Server instances.
 
-```
-- You can choose any name for this login. Membership in the sysadmin server role of the SQL Server 2016-2022 instance is required to [enable or disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server?view=sql-server-ver16&preserve-view=true).
+   You can choose any name for this login. Membership in the sysadmin server role of the SQL Server 2016-2022 instance is required to [enable or disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server?view=sql-server-ver16&preserve-view=true).
 
-Run the following T-SQL script in the `master` database to create a SQL authenticated login named `fabric_login`. Provide your own strong password. 
+   - Run the following T-SQL script in the `master` database to create a SQL authenticated login named `fabric_login`. Provide your own strong password.
 
-```sql
-CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
-ALTER SERVER ROLE [sysadmin] ADD MEMBER [fabric_login];
-```
+   ```sql
+   CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
+   ALTER SERVER ROLE [sysadmin] ADD MEMBER [fabric_login];
+   ```
 
-- Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+   - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
 
-```sql
-CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-ALTER SERVER ROLE [sysadmin] ADD MEMBER  [bob@contoso.com];
-```
-```1. Membership in the db_owner database role of the source database for mirroring is required to manage CDC.
+   ```sql
+   CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
+   ALTER SERVER ROLE [sysadmin] ADD MEMBER  [bob@contoso.com];
+   ```
+   
+1. Membership in the db_owner database role of the source database for mirroring is required to manage CDC.
 
-    Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary:
+    Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary.
 
-    For a SQL Authenticated login:
+    - For a SQL Authenticated login:
 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
     ALTER ROLE [db_owner] ADD MEMBER [fabric_user];
     ```
     
-    Or, for a Microsoft Entra authenticated login (recommended):
+    - Or, for a Microsoft Entra authenticated login (recommended):
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
