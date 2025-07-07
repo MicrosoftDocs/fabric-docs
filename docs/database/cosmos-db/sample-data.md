@@ -31,10 +31,10 @@ Each item in the sample data set represents a product and includes the following
 | **`firstAvailable`** | `string` | The date and time the product was first available  in ISO 8601 format |
 | **`priceHistory`** | `array` | An array of previous prices for the product (array of numbers) |
 | **`customerRatings`** | `array` | An array of customer rating objects |
-| **`customerRatings[].username` | `string` | Username of the customer who gave the rating |
-| **`customerRatings[].stars` | `number` | Numeric rating value |
-| **`customerRatings[].date` | `string` | The date and time the rating was given in ISO 8601 format |
-| **`customerRatings[].verifiedUser` | `boolean` | Boolean indicating if the user is verified |
+| **`customerRatings[].username`** | `string` | Username of the customer who gave the rating |
+| **`customerRatings[].stars`** | `number` | Numeric rating value |
+| **`customerRatings[].date`** | `string` | The date and time the rating was given in ISO 8601 format |
+| **`customerRatings[].verifiedUser`** | `boolean` | Boolean indicating if the user is verified |
 | **`rareProperty`** | `boolean` | (*Optional*) Indicates if the product has a rare attribute |
 
 > [!NOTE]
