@@ -37,8 +37,6 @@ items:
         href: how-to-authenticate-azure.md
       - name: Authorization
         href: how-to-configure-authorization.md
-      - name: Share items
-        href: how-to-share-items.md
   - name: Manage resources
     items:
       - name: Configure container
