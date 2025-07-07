@@ -25,7 +25,7 @@ The time-to-live (TTL) feature in Cosmos DB helps you manage your data's lifecyc
 
 [!INCLUDE[Prerequisites - Development languages core](includes/prerequisite-dev-lang-core.md)]
 
-## Set at container-level using the Fabric portal
+## Set at container level using the Fabric portal
 
 First, use the Fabric portal to set the container-level TTL.
 
@@ -48,7 +48,7 @@ First, use the Fabric portal to set the container-level TTL.
     > [!TIP]
     > For more information on various time-to-live (TTL) configuration values, see [time-to-live](time-to-live.md#example-ttl-configurations). 
 
-## Set at item-level
+## Set at item level
 
 Next, update an item to set the TTL value at the item-level. Items within Cosmos DB are represented as JSON documents. The `ttl` property of each document is used to set the time-to-live of each specific item. The `ttl` property can either be set or not set and the corresponding value influences the behavior of TTL expiration.
 
@@ -71,7 +71,7 @@ Next, update an item to set the TTL value at the item-level. Items within Cosmos
 ]
 ```
 
-## Set at container-level using the Azure SDK
+## Set at container level using the Azure SDK
 
 Now, use the Azure SDK to set the TTL at the container level to apply to all items.
 
@@ -124,7 +124,7 @@ await container.ReplaceContainerAsync(properties);
 
 :::zone-end
 
-## Set at item-level using the Azure SDK
+## Set at item level using the Azure SDK
 
 Finally, use the Azure SDK again to set item-level TTL values to override the container-level value.
 
