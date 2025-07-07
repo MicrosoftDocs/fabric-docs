@@ -7,7 +7,7 @@ author: whhender
 ms.topic: tutorial
 ms.date: 06/16/2025
 ms.search.form: Pipeline tutorials
-ms.custom: configuration
+ms.custom: configuration, sfi-image-nochange
 ---
 
 # Quickstart: Bring your Azure Data Factory to Fabric

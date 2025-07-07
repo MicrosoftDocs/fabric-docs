@@ -6,7 +6,8 @@ ms.author: yuturchi
 author: yuturchi
 ms.topic: concept-article
 ms.custom:
-  - onelake-data-access-public-preview-april-2024
+- onelake-data-access-public-preview-april-2024
+- sfi-image-nochange
 ms.date: 03/25/2025
 #customer intent: As a OneLake user, I want to understand how OneLake secures data with role-based access control and the impact on Fabric permissions so that I can protect data stored and accessed in OneLake.
 ---
@@ -258,7 +259,7 @@ For any folder in a lakehouse, permissions always inherit to all [internal short
 When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut. As a result, this user must have OneLake security permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When accessing shortcuts through **Power BI semantic models** or **T-SQL**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user.
+> When accessing shortcuts through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines in Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user. To resolve this, use **Power BI semantic models in DirectLake over OneLake mode** or **T-SQL in User's identity mode**.
 
 Defining OneLake security permissions for the internal shortcut isn't allowed and must be defined on the target folder located in the target item. The target item must be an item type that supports OneLake security roles. Currently, only Lakehouse supports OneLake security roles.
 

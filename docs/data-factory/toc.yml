@@ -19,6 +19,8 @@
         href: pricing-pipelines.md
       - name: Pricing Dataflow Gen2
         href: pricing-dataflows-gen2.md
+      - name: Pricing Copy job
+        href: pricing-copy-job.md
       - name: Pricing Apache Airflow job
         href: pricing-apache-airflow-job.md
       - name: Cost estimation from Azure Data Factory to Fabric
@@ -74,7 +76,9 @@
     - name: Pipelines
       items:
       - name: Migrate from Azure Data Factory to Data Factory in Microsoft Fabric
-        href: migrate-from-azure-data-factory.md      
+        href: migrate-from-azure-data-factory.md  
+      - name: Bring your Azure Data Factory to Fabric
+        href: migrate-pipelines-azure-data-factory-item.md 
       - name: Planning your migration from Azure Data Factory to Fabric
         href: migrate-planning-azure-data-factory.md
       - name: Activity Continuity
@@ -849,6 +853,8 @@
       href: cdc-copy-job.md
     - name: CI/CD for Copy job
       href: cicd-copy-job.md
+    - name: REST API Capabilities
+      href: copy-job-rest-api-capabilities.md    
   - name: Data gateway
     items:
     - name: On-premises data gateways docs
@@ -1077,9 +1083,3 @@
       href: data-factory-limitations.md
     - name: Fabric known issues
       href: ../get-started/fabric-known-issues.md?toc=/fabric/data-factory/toc.json
-  - name: Reference
-    items:
-    - name: CI/CD for data pipelines
-      href: git-integration-deployment-pipelines.md
-    - name: Data pipelines REST API
-      href: pipeline-rest-api.md

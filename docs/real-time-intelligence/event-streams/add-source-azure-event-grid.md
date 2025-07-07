@@ -49,8 +49,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 ## Configure Azure Event Grid connector
 [!INCLUDE [azure-event-grid-source-connector](./includes/azure-event-grid-source-connector.md)]
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 
 ## View updated eventstream
 

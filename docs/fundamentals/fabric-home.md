@@ -5,13 +5,13 @@ author: julcsc
 ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom:
-ms.date: 06/17/2025
+ms.date: 06/18/2025
 #customer intent: As a Fabric user, I know how to find my content from Home.
 ---
 
-# Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
+# Self-help with the Fabric contextual Help pane
 
-This article gives a high level view of navigating to your items and actions from [!INCLUDE [product-name](../includes/product-name.md)] Home.
+This article explains how to use the Fabric Help pane and helps you navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home. The Help pane is feature-aware and displays articles about the actions and features available on the current Fabric screen. The Help pane is also a search engine that quickly finds answers to questions in the Fabric documentation and Fabric community forums.
 
 ## Find what you need on your Home canvas
 
@@ -119,7 +119,15 @@ When you select a workload, the landing page for that workload displays. Each wo
 
 For more information about workloads, see [Workloads in Fabric](../workload-development-kit/more-workloads-add.md)
 
-## The Help pane is a search engine
+## Get help from the Help pane
+
+The Help pane is feature-aware and displays articles about the actions and features available on the current Fabric screen. The feature-aware state is the default view of the Help pane when you open it without entering any search terms. The Help pane shows a list of recommended topics, resources that are relevant to your current context and location in Fabric, and a list of links for other resources. It has three sections:
+
+- Feature-aware documents: This section groups the documents by the features that are available on the current screen. Select a feature in the Fabric screen and the Help pane updates with documents related to that feature. Select a document to open it in a separate browser tab.
+
+- Forum topics: This section shows topics from the community forums that are related to the features on the current screen. Select a topic to open it in a separate browser tab.
+
+- Other resources: This section has links for feedback and Support.
 
 The Help pane is also a search engine. Enter a keyword to find relevant information and resources from Microsoft documentation and community forum articles. Use the dropdown to filter the results.
 

@@ -5,7 +5,7 @@ ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
 ms.topic: how-to
-ms.custom: airflows
+ms.custom: airflows, sfi-image-nochange
 ms.date: 03/25/2024
 ---
 
@@ -37,8 +37,8 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
 
 - **Configuration overrides**: Add the following settings for the **Airflow configuration overrides** in integration runtime properties:
 
-  - **AIRFLOW**SECRETS**BACKEND**: `airflow.providers.microsoft.azure.secrets.key_vault.AzureKeyVaultBackend`
-  - **AIRFLOW**SECRETS**BACKEND_KWARGS**: `{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "vault_url": **\<your keyvault uri\>**}`
+  - **AIRFLOW__SECRETS__BACKEND**: `airflow.providers.microsoft.azure.secrets.key_vault.AzureKeyVaultBackend`
+  - **AIRFLOW__SECRETS__BACKEND_KWARGS**: `{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "vault_url": **\<your keyvault uri\>**}`
 
   :::image type="content" source="media/apache-airflow-jobs/enable-azure-key-vault-configurations.png" alt-text="Screenshot that shows the configuration of the Airflow configuration overrides setting in the Airflow environment setup." lightbox="media/apache-airflow-jobs/enable-azure-key-vault-configurations.png":::
 

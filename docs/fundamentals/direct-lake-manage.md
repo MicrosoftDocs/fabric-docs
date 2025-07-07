@@ -183,7 +183,7 @@ For more information, see [Using Azure Log Analytics in Power BI](/power-bi/tran
 
 - [Direct Lake overview](direct-lake-overview.md)
 - [Develop Direct Lake semantic models](direct-lake-develop.md)
-- [Understand storage for Direct Lake semantic models](direct-lake-understand-storage.md)
+- [Understand Direct Lake query performance](direct-lake-understand-storage.md)
 - [Create a lakehouse for Direct Lake](direct-lake-create-lakehouse.md)
 - [Analyze query processing for Direct Lake semantic models](direct-lake-analyze-query-processing.md)
 - [Specify a fixed identity for a Direct Lake semantic model](direct-lake-fixed-identity.md)

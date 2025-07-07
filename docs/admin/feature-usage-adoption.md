@@ -4,7 +4,7 @@ description: Learn how to use the Microsoft feature usage and adoption report.
 author: msmimart
 ms.author: mimart
 ms.topic: conceptual
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 03/06/2025
 ---
 

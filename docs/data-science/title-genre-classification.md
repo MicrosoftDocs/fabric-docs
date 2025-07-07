@@ -5,7 +5,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: None
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 04/16/2025
 #customer intent: As a data scientist, I want to build a text classification model so I can predict a category based on a single attribute.
 ---
@@ -105,7 +105,7 @@ if not IS_CUSTOM_DATA:
     # Download demo data files into the lakehouse, if they don't exist
     import os, requests
 
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Title_Genre_Classification"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/Title_Genre_Classification"
     fname = "blbooksgenre.csv"
     download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
 
