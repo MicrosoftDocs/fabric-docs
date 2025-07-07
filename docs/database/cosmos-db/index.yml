@@ -92,3 +92,7 @@ landingContent:
             url: how-to-customize-indexing-policy.md
           - text: Configure time to live (TTL)
             url: how-to-configure-time-to-live.md
+      - linkListType: sample
+        links:
+          - text: Indexing policy samples
+            url: sample-indexing-policies.md

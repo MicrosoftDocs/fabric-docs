@@ -11,7 +11,7 @@ zone_pivot_group_filename: database/cosmos-db/zone-pivot-groups.json
 zone_pivot_groups: dev-lang-core
 ---
 
-# Customize indexing policies in Cosmos DB in Microsoft Fabric
+# Customize indexing policies in Cosmos DB in Microsoft Fabric (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
@@ -162,4 +162,5 @@ await container.ReplaceContainerAsync(properties);
 ## Related content
 
 - [Review indexing policies in Cosmos DB in Microsoft Fabric](indexing-policies.md)
+- [Explore sample indexing policies in Comsos DB in Microsoft Fabric](sample-indexing-policies.md)
 - [Configure a Cosmos DB database container in Microsoft Fabric](how-to-configure-container.md)
