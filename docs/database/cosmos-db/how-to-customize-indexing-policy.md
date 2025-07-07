@@ -5,21 +5,33 @@ description: Create a custom indexing policy for a container within a database i
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/03/2025
+ms.date: 07/07/2025
 ai-usage: ai-generated
 ---
 
 # Customize indexing policies in Cosmos DB in Microsoft Fabric
 
-TODO
+[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
+
+TODO. In this guide, 
 
 ## Prerequisites
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
 
+[!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
+
 ## TODO 1
 
-TODO
+First, TODO.
+
+1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
+
+1. Navigate to your existing Cosmos DB database.
+
+1. Select and expand your existing container. Then, select **Settings**.
+
+1. In the **Settings** section, select the **TODO** tab.
 
 1. TODO
 
