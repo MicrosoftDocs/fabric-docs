@@ -7,6 +7,7 @@ ms.reviewer: sosivara
 ms.date: 04/06/2025
 ms.topic: how-to
 ms.search.form: Warehouse billing and utilization
+ms.custom: sfi-image-nochange
 ---
 
 # How to: Observe Fabric Data Warehouse utilization trends

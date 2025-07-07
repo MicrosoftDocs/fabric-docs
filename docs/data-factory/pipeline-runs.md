@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: noelleli
 author: n0elleli
 ms.topic: conceptual
-ms.custom: pipelines
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 12/18/2024
 ---
 

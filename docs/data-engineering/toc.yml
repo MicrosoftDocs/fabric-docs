@@ -384,7 +384,9 @@ items:
       - name: Use Stored procedures
         href: api-graphql-stored-procedures.md
       - name: Integrate with Azure API Management (APIM)
-        href: api-graphql-azure-api-management.md         
+        href: api-graphql-azure-api-management.md     
+      - name: Connect AI Agents with a local Model Context Protocol (MCP) server
+        href: api-graphql-local-model-context-protocol.md     
    - name: Monitoring  
      items:
       - name: Monitoring dashboard and logging (preview)

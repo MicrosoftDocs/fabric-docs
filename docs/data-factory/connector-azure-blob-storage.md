@@ -6,8 +6,9 @@ ms.author: lle
 ms.topic: how-to
 ms.date: 12/18/2024
 ms.custom:
-  - template-how-to
-  - connectors
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # Set up your Azure Blob Storage connection
