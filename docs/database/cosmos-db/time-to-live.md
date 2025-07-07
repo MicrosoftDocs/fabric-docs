@@ -9,7 +9,7 @@ ms.date: 07/07/2025
 ai-usage: ai-generated
 ---
 
-# Time to live (TTL) in Cosmos DB in Microsoft Fabric
+# Time to live (TTL) in Cosmos DB in Microsoft Fabric (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
