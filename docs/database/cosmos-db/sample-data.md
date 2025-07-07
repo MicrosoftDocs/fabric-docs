@@ -19,7 +19,7 @@ Microsoft Fabric's Cosmos DB database workload comes with a built-in sample data
 
 Each item in the sample data set represents a product and includes the following properties:
 
-| Type | Description |
+| | Type | Description |
 | --- | --- | --- |
 | **`id`** | `string` | A unique identifier for the product in globally unique identifier (GUID) format |
 | **`name`** | `string` | The product's name |
