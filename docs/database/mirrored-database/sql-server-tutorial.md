@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database From SQL Server in Micro
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajayj, rajpo
-ms.date: 06/15/2025
+ms.date: 07/07/2025
 ms.topic: tutorial
 ms.custom:
 ---
@@ -43,24 +43,24 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
 
-> [!IMPORTANT] 
-> For SQL Server instances running in an Always On availability group or failover cluster instance configuration, the login needs to be created in all SQL Server instances.
+   > [!IMPORTANT] 
+   > For SQL Server instances in an Always On availability group, the login must be created in all SQL Server instances.
 
-```
-- Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
+   - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
 
-```sql
-CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
-ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [fabric_login];
-```
+   ```sql
+   CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
+   ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [fabric_login];
+   ```
 
-- Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+   - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account (recommended). Run the following T-SQL script in the `master` database:
 
-```sql
-CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
-```
-```1. Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary:
+   ```sql
+   CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
+   ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
+   ```
+
+1. Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary:
 
     For a SQL Authenticated login:
 
