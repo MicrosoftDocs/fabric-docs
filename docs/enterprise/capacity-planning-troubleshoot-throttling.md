@@ -32,7 +32,7 @@ For troubleshooting, use the **Compute** and **Timepoint** pages of the Metrics 
 
 To troubleshoot report slowness suspected to be caused by capacity throttling, follow a three-step process: check capacity utilization, identify if throttling occurred, and drill down to find the specific workspace and item that caused the overload. The following flowchart shows this process:
 
-:::image type="content" source="media/capacity-troubleshoot/flowchart-high-level-throttling.png" alt-text="High-level flowchart showing the three stages of throttling troubleshooting" lightbox="media/capacity-troubleshoot/flowchart-high-level-throttling.png":::
+:::image type="content" source="media/capacity-troubleshoot/flowchart-high-level-throttling.png" alt-text="Screenshot of the high-level flowchart showing the three stages of throttling troubleshooting." lightbox="media/capacity-troubleshoot/flowchart-high-level-throttling.png":::
 
 | Stage | Action | Description |
 |-------|--------|-------------|
@@ -53,7 +53,7 @@ This stage covers steps 1-10 of the process, where you check if the capacity is 
 
 The following flowchart shows Stage 1 (steps 1-10). It helps you check capacity utilization on the **Compute** page of the Metrics app and decide if it exceeds 100%:
 
-:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-1-throttling.png" alt-text="Flowchart showing steps 1-10 for checking capacity utilization" lightbox="media/capacity-troubleshoot/flowchart-stage-1-throttling.png":::
+:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-1-throttling.png" alt-text="Screenshot of the flowchart showing steps 1-10 for checking capacity utilization." lightbox="media/capacity-troubleshoot/flowchart-stage-1-throttling.png":::
 
 > [!NOTE]
 > In this diagram, the "Yes" branch leads to the next stage of analysis. The **END** at step 10 means capacity throttling isn't the cause.
@@ -79,7 +79,7 @@ If the capacity utilization exceeded 100%, this stage (steps 11-17) checks wheth
 
 The following flowchart illustrates Stage 2 (steps 11-17), checking throttling indicators on the **Throttling** tab and drilling to detail if needed:
 
-:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-2-throttling.png" alt-text="Flowchart showing steps 11-17 for checking throttling metrics" lightbox="media/capacity-troubleshoot/flowchart-stage-2-throttling.png":::
+:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-2-throttling.png" alt-text="Screenshot of the flowchart showing steps 11-17 for checking throttling metrics." lightbox="media/capacity-troubleshoot/flowchart-stage-2-throttling.png":::
 
 > [!NOTE]
 > In this diagram, two possible END points indicate cases where throttling isn't causing the issue: step 13 = no throttling observed, step 16 = throttling happened but at a different time. If throttling **did** occur at the time of slowness (yes at step 15), we drill into the **Timepoint detail** report in step 17 to continue the investigation in Stage 3.
@@ -105,7 +105,7 @@ In the previous stage, you use the [matrix by item](metrics-app-compute-page.md#
 
 The following flowchart illustrates Stage 3 (steps 18-22), analyzing the **Timepoint detail** report to find the top-consuming operations and items:
 
-:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-3-throttling.png" alt-text="Flowchart showing steps 18-22 for analyzing timepoint details" lightbox="media/capacity-troubleshoot/flowchart-stage-3-throttling.png":::
+:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-3-throttling.png" alt-text="Screenshot of the flowchart showing steps 18-22 for analyzing timepoint details." lightbox="media/capacity-troubleshoot/flowchart-stage-3-throttling.png":::
 
 > [!NOTE]
 > This flow is linear - no decision diamonds - because you're just gathering information. Step 22 ends the troubleshooting process and identifies the culprit items.
