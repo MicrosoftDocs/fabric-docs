@@ -82,8 +82,6 @@ landingContent:
         links:
           - text: Indexing policies
             url: indexing-policies.md
-      - linkListType: concept
-        links:
           - text: Time to live (TTL)
             url: time-to-live.md
       - linkListType: how-to-guide
