@@ -13,7 +13,7 @@ ai-usage: ai-generated
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
-Indexing in Cosmos DB is designed to deliver fast and flexible query performance, no matter how your data evolves. By default, Cosmos DB automatically indexes all data, so you can query it without worrying about index management. However, every workload is unique, and sometimes you need more control to optimize for performance, cost, or specific query patterns. That’s where indexing policies come in.
+Indexing in Cosmos DB is designed to deliver fast and flexible query performance, no matter how your data evolves. By default, Cosmos DB automatically indexes all data, so you can query it without worrying about index management. However, every workload is unique, and sometimes you need more control to optimize for performance, cost, or specific query patterns. Customizing an indexing policy is where you can fine tune Cosmos DB's performance to your specific workload's characteristics.
 
 ## What is indexed by default?
 
@@ -25,7 +25,7 @@ An indexing policy defines how Cosmos DB indexes your data. It determines which 
 
 ### Indexing policy structure
 
-An indexing policy is defined in JSON and includes included paths, excluded paths, index types, and indexing mode. Here’s a simple example:
+An indexing policy is defined in JSON and includes "included paths," "excluded paths," "index types," and "indexing mode." Here’s a simple example:
 
 ```json
 {
@@ -49,7 +49,7 @@ An indexing policy is defined in JSON and includes included paths, excluded path
 
   - **Consistent:** Indexes are updated synchronously with your data, ensuring queries always reflect the latest changes.
 
-  - **None:** Disables indexing for the container. This is useful for write-heavy workloads where you don’t need to query the data.
+  - **None:** Disables indexing for the container. Disabling indexing is useful for write-heavy workloads where you don’t need to query the data.
 
 - **Included and excluded paths:**
 
@@ -112,14 +112,14 @@ To efficiently query geospatial data, you can add a spatial index:
 
 ## How indexing policies affect performance and cost
 
-A well-designed indexing policy can significantly improve query performance and reduce costs. Indexing only the properties you need for queries can lower storage and speed up writes. On the other hand, indexing more properties increases query flexibility but may increase storage and write latency.
+A well-designed indexing policy can significantly improve query performance and reduce costs. Indexing only the properties you need for queries can lower storage and speed up writes. On the other hand, indexing more properties increases query flexibility but might increase storage and write latency.
 
 > [!NOTE]
-> Changes to indexing policies only affect new data and queries after the policy is updated. Existing data is re-indexed in the background.
+> Changes to indexing policies only affect new data and queries after the policy is updated. Existing data is reindexed in the background.
 
 ## How indexing policy changes are applied
 
-When you update an indexing policy, Cosmos DB automatically re-indexes your existing data in the background. This process is online and does not block reads or writes, but the time to complete depends on the size of your data.
+When you update an indexing policy, Cosmos DB automatically reindexes your existing data in the background. This process is online and doesn't block reads or writes, but the time to complete depends on the size of your data.
 
 ## When to customize your indexing policy
 
