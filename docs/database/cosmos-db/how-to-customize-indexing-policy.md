@@ -162,5 +162,5 @@ await container.ReplaceContainerAsync(properties);
 ## Related content
 
 - [Review indexing policies in Cosmos DB in Microsoft Fabric](indexing-policies.md)
-- [Explore sample indexing policies in Comsos DB in Microsoft Fabric](sample-indexing-policies.md)
+- [Explore sample indexing policies in Cosmos DB in Microsoft Fabric](sample-indexing-policies.md)
 - [Configure a Cosmos DB database container in Microsoft Fabric](how-to-configure-container.md)
