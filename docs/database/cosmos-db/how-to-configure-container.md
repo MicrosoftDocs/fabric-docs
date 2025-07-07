@@ -41,7 +41,7 @@ First, use the **Settings** section for a container to customize and observe the
 1. Select **Save** to persist your changes.
 
     > [!TIP]
-    > For more information on time-to-live (TTL) configuration, see [time-to-live](/azure/cosmos-db/nosql/time-to-live). For more information on geospatial configuration, see [geospatial data](/azure/cosmos-db/nosql/query/geospatial).
+    > For more information on time-to-live (TTL) configuration, see [time-to-live](time-to-live.md). For more information on geospatial configuration, see [geospatial data](/azure/cosmos-db/nosql/query/geospatial).
 
 ## Rework indexing policy
 

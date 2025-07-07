@@ -5,7 +5,7 @@ description: Use Microsoft Entra authentication and the Azure SDK to connect to 
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/03/2025
+ms.date: 07/07/2025
 zone_pivot_group_filename: database/cosmos-db/zone-pivot-groups.json
 zone_pivot_groups: dev-lang-core
 ---
@@ -24,23 +24,7 @@ In this guide, you connect to an existing Cosmos DB database in Microsoft Fabric
 
   - If you don't already have it, [install Azure CLI](/cli/azure/install-azure-cli).
 
-:::zone pivot="dev-lang-python"
-
-- Python 3.12 or later
-
-:::zone-end
-
-:::zone pivot="dev-lang-typescript"
-
-- Node.js 22 or later
-
-:::zone-end
-
-:::zone pivot="dev-lang-csharp"
-
-- .NET SDK 9.0 or later
-
-:::zone-end
+[!INCLUDE[Prerequisites - Development languages core](includes/prerequisite-dev-lang-core.md)]
 
 ## Retrieve Cosmos DB endpoint
 
@@ -144,7 +128,6 @@ for item in items:
 
 > [!NOTE]
 > This sample uses the [`azure-identity`](https://pypi.org/project/azure-identity/) and [`azure-cosmos`](https://pypi.org/project/azure-cosmos/) packages from PyPI.
-
 
 :::zone-end
 

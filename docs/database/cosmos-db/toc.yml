@@ -45,6 +45,10 @@ items:
         href: indexing-policies.md
       - name: Customize indexing policy
         href: how-to-customize-indexing-policy.md
+      - name: Time to live (TTL)
+        href: time-to-live.md
+      - name: Configure time to live (TTL)
+        href: how-to-configure-time-to-live.md
   - name: Write queries
     href: nosql-query/toc.yml
   - name: Troubleshoot
