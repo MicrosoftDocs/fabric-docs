@@ -11,7 +11,7 @@ zone_pivot_group_filename: database/cosmos-db/zone-pivot-groups.json
 zone_pivot_groups: dev-lang-core
 ---
 
-# Configure time to live (TTL) in Cosmos DB in Microsoft Fabric
+# Configure time to live (TTL) in Cosmos DB in Microsoft Fabric (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
