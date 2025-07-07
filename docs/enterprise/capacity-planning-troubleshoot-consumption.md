@@ -31,7 +31,7 @@ For this troubleshooting, the **Compute** page of the Metrics app is used. For b
 
 To troubleshoot capacity usage, we follow a three-stage process that helps us identify the top CU-consuming items, drill down by date/time if needed, and analyze trends to plan optimizations. The process is visualized in the following flowchart:
 
-:::image type="content" source="media/capacity-troubleshoot/flowchart-high-level.png" alt-text="High-level flowchart showing the three stages of proactive capacity troubleshooting: Stage 1 - Identify top CU-consuming items, Stage 2 - Drill down by date/time (optional), and Stage 3 - Analyze trends and plan optimization" lightbox="media/capacity-troubleshoot/flowchart-high-level.png":::
+:::image type="content" source="media/capacity-troubleshoot/flowchart-high-level.png" alt-text="High-level flowchart showing the three stages of proactive capacity troubleshooting: Stage 1 - Identify top CU-consuming items, Stage 2 - Drill down by date/time (optional), and Stage 3 - Analyze trends and plan optimization." lightbox="media/capacity-troubleshoot/flowchart-high-level.png":::
 
 | Stage | Action | Description |
 |-------|-------------|----------------|
@@ -52,7 +52,7 @@ In this stage, we use the **Compute page** of the Metrics app to get a 14-day ov
 
 The following flowchart illustrates Stage 1 (steps 1-8), accessing the Metrics app and finding the top resource-consuming items:
 
-:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-1.png" alt-text="Flowchart showing Stage 1 steps 1-8: Starting from identifying capacity name, opening Metrics app, navigating to the **Compute** page, selecting capacity, viewing CU metric, sorting items by CU usage, hovering for operation breakdown, and optionally adding columns" lightbox="media/capacity-troubleshoot/flowchart-stage-1.png":::
+:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-1.png" alt-text="Flowchart showing Stage 1 steps 1-8: Starting from identifying capacity name, opening Metrics app, navigating to the **Compute** page, selecting capacity, viewing CU metric, sorting items by CU usage, hovering for operation breakdown, and optionally adding columns." lightbox="media/capacity-troubleshoot/flowchart-stage-1.png":::
 
 > [!NOTE]
 > In this diagram, steps 1-8 are sequential. After identifying the top items, you can proceed to Stage 2 (step 9 onward) to optionally drill deeper by time.
@@ -78,7 +78,7 @@ This stage is **optional** but useful if you want to pinpoint capacity usage dur
 
 The following flowchart illustrates Stage 2 (steps 9-11), focusing on a specific day and hour to identify top consumers in that window:
 
-:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-2.png" alt-text="Flowchart showing Stage 2 steps 9-11: Decision point to focus on specific date/time, clicking on date in ribbon chart to filter and drill down to hourly data, and selecting specific hours to identify top CU consumers during that timeframe" lightbox="media/capacity-troubleshoot/flowchart-stage-2.png":::
+:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-2.png" alt-text="Flowchart showing Stage 2 steps 9-11: Decision point to focus on specific date/time, clicking on date in ribbon chart to filter and drill down to hourly data, and selecting specific hours to identify top CU consumers during that timeframe." lightbox="media/capacity-troubleshoot/flowchart-stage-2.png":::
 
 > [!NOTE]
 > In this diagram, step 9 is a decision whether to narrow the timeframe. If "yes," you perform steps 10-11; if "no," you would skip to Stage 3. In practice, you can always examine the data by time - here we illustrate it as optional for the troubleshooting flow.
@@ -103,7 +103,7 @@ After analyzing these trends, the capacity admin should use the information, spe
 
 The following flowchart illustrates Stage 3 (steps 12-13), where we analyze the operations and users metrics to understand usage patterns, and then interpret the results to plan optimizations for the top CU-consuming items:
 
-:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-3.png" alt-text="Flowchart showing Stage 3 steps 12-13: Analyzing operations and users metrics to understand usage patterns, then interpreting results and planning optimizations for top CU-consuming items" lightbox="media/capacity-troubleshoot/flowchart-stage-3.png":::
+:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-3.png" alt-text="Flowchart showing Stage 3 steps 12-13: Analyzing operations and users metrics to understand usage patterns, then interpreting results and planning optimizations for top CU-consuming items." lightbox="media/capacity-troubleshoot/flowchart-stage-3.png":::
 
 > [!NOTE]
 > Stage 3 is a continuous process of analysis and action - no decision branches here. Step 13 concludes the troubleshooting process.
