@@ -68,7 +68,7 @@ In this stage, verify whether the capacity was in an overloaded state when the u
 
 The following flowchart shows stage 1 (steps 1-10) and confirms the capacity overload:
 
-:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-1-errors.png" alt-text="Stage 1 troubleshooting flowchart to confirm capacity overload." lightbox="media/capacity-troubleshoot/flowchart-stage-1-errors.png":::
+:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-1-errors.png" alt-text="Screenshot showing the Stage 1 troubleshooting flowchart to confirm capacity overload." lightbox="media/capacity-troubleshoot/flowchart-stage-1-errors.png":::
 
 The following table outlines the steps for stage 1:
 
@@ -93,7 +93,7 @@ If we find no throttling (no delays or rejections), then the user’s error migh
 
 The following flowchart illustrates stage 2 (steps 11-17), checking for throttling:
 
-:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-2-errors.png" alt-text="Stage 2 troubleshooting flowchart to check for throttling." lightbox="media/capacity-troubleshoot/flowchart-stage-2-errors.png":::
+:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-2-errors.png" alt-text="Screenshot showing the Stage 2 troubleshooting flowchart to check for throttling." lightbox="media/capacity-troubleshoot/flowchart-stage-2-errors.png":::
 
 The following table outlines the steps for stage 2:
 
@@ -116,7 +116,7 @@ In the previous stage, the [**Matrix by item**](metrics-app-compute-page.md#matr
 
 The following flowchart shows stage 3 (steps 18-22) and helps you identify the specific workspace and item responsible for the overload:
 
-:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-3-errors.png" alt-text="Stage 3 troubleshooting flowchart to identify workspace and item causing overload." lightbox="media/capacity-troubleshoot/flowchart-stage-3-errors.png":::
+:::image type="content" source="media/capacity-troubleshoot/flowchart-stage-3-errors.png" alt-text="Screenshot showing the Stage 3 troubleshooting flowchart to identify workspace and item causing overload." lightbox="media/capacity-troubleshoot/flowchart-stage-3-errors.png":::
 
 The following table outlines the steps for stage 3:
 
