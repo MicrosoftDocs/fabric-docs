@@ -7,6 +7,7 @@ ms.reviewer: amapatil, subasak
 ms.date: 04/07/2025
 ms.topic: conceptual
 ms.search.form: Performance monitoring in SQL database
+ms.custom: sfi-image-nochange
 ---
 # Performance Dashboard for SQL database in Microsoft Fabric
 

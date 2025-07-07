@@ -7,7 +7,7 @@ author: luitwieler
 ms.topic: quickstart
 ms.date: 06/26/2025
 ms.search.form: DataflowGen2 Tutorials
-ms.custom: dataflows
+ms.custom: dataflows, sfi-image-nochange
 ai-usage: ai-assisted
 ---
 

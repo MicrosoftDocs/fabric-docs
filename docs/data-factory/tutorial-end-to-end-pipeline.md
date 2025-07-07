@@ -6,7 +6,7 @@ ms.reviewer: xupzhou
 author: whhender
 ms.topic: tutorial
 ms.date: 05/19/2025
-ms.custom: pipelines
+ms.custom: pipelines, sfi-image-nochange
 ---
 
 # Module 1: Create a pipeline with Data Factory

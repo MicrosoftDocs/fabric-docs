@@ -4,7 +4,7 @@ description: Learn about managed virtual networks in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: conceptual
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 05/30/2024
 ---
 
