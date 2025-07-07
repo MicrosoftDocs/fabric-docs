@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 07/03/2025
+ms.date: 07/04/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1191  | Power BI | [Unable to access SQL analytics endpoint views with access denied error](./known-issue-1191-sql-analytics-endpoint-views-access-denied-error.md) | July 4, 2025 |
 |  1183  | Power BI | [Snowflake connector index outside the bounds error](./known-issue-1183-snowflake-connector-index-outside-bounds-error.md) | June 27, 2025 |
 |  1184  | Data Engineering | [Lakehouse table maintenance fails for schema enabled lakehouses](./known-issue-1184-lakehouse-table-maintenance-fail.md) | June 25, 2025 |
 |  1181  | OneLake | [OneLake catalog item details lineage tab button disappears](./known-issue-1181-onelake-catalog-item-details-lineage-tab-button-disappears.md) | June 23, 2025 |
