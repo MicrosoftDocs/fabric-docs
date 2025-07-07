@@ -13,7 +13,51 @@ ai-usage: ai-generated
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
-TODO
+The time-to-live (TTL) feature in Cosmos DB helps you manage your data's lifecycle by automatically deleting items after a specified period. TTL is especially useful for scenarios where data is only relevant for a limited time, such as session data, telemetry, or logs. By enabling TTL, you can keep your database lean, reduce storage costs, and ensure that only current, relevant data is retained.
+
+## How TTL works
+
+When TTL is enabled on a container or an individual item, Cosmos DB tracks the age of each item. Once an item's age exceeds its TTL value, it is automatically marked for deletion and purged by the system. TTL can be set at the container level (applies to all items) and/or overridden at the item level for more granular control.
+
+- **Container-level TTL**: All items in the container inherit the default TTL unless an item-level TTL is specified.
+
+- **Item-level TTL**: You can set a specific TTL for individual items, overriding the container's default.
+
+- **Disabling TTL**: Setting TTL to -1 disables automatic deletion for the container or item.
+
+TTL values are specified in seconds. The countdown starts from the item's last modified time (or creation time if not updated). When the TTL expires, the item is eligible for automatic deletion during the next background purge cycle.
+
+## Benefits of using TTL
+
+- **Automated data cleanup**: No need for manual deletion scripts or scheduled jobs.
+
+- **Cost savings**: Reduce storage costs by removing stale or irrelevant data.
+
+- **Improved performance**: Keep your database efficient by retaining only active data.
+
+## Configuring TTL
+
+The TTL value is interpreted as a delta, in seconds, from the time that an item was last modified. The following rules apply when setting a TTL value.
+
+## Example TTL configurations
+
+This table illustrates example scenarios with different TTL values assigned at the container or item level.
+
+| Scenario | Container TTL | Item TTL | Comments |
+| --- | --- | --- |
+| TTL is disabled | `<null>` | | This is the **default** behavior where items never expire |
+| TTL is disabled | `<null>` | `-1` | Items never expire |
+| TTL is disabled | `<null>` | `3600` | Items never expire |
+| TTL is enabled | `-1` | | TTL is enabled but items never expire |
+| TTL is enabled | `-1` | `-1` | TTL is enabled but items never expire |
+| TTL is enabled | `-1` | `3600` | TTL is enabled and specific items expire after 1 hour |
+| All items expire after 7 days | `604800` | | Every item is deleted 7 days after creation or last update |
+| Some items never expire while others expire after 7 days | `604800` | `-1` | Items with TTL -1 are never deleted, others expire after 7 days |
+| Items expire after 1 hour | `3600` | | All items are deleted 1 hour after creation or last update |
+| Specific item expires after 30 minutes while others expire after 1 hour | `3600` | `1800` | Most items expire after 1 hour, but specific items expire after 30 minutes |
+
+> [!NOTE]
+> Setting TTL to null on an item isn't supported. The item TTL value must be a nonzero positive integer less than or equal to `2147483647`. Alternatively, you can set the TTL to `-1` which means the item will never expire. To use the default TTL on an item, ensure the `ttl` property isn't present.
 
 ## Next step
 
