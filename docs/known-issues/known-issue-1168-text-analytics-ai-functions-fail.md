@@ -4,7 +4,7 @@ description: A known issue is posted where Text Analytics AI Functions fail.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/12/2025
+ms.date: 07/03/2025
 ms.custom: known-issue-1168
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1168
 
 You have access to a workspace associated with a premium capacity. When you try to invoke AIFunctions, you receive an error.
 
-**Status:** Open
+**Status:** Fixed: July 3, 2025
 
 **Product Experience:** Power BI
 
