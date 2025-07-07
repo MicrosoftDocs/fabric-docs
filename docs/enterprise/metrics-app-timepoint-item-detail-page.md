@@ -61,7 +61,7 @@ Use the following filters available in the filter pane to further narrow down th
 * **Interactive operations** - Displays the total number of interactive operations for the selected operation type in a specific item that contributed to the capacity’s activity during this timepoint. The card’s background color changes if the data is sampled in the _Top 100,000 interactive records in the time range_ table visual.
 * **Background operations** - Displays the total number of background operations for the selected operation type in a specific item that contributed to the capacity’s activity during this timepoint. The card’s background color changes if the data is sampled in the _Top 100,000 background records in the time range_ table visual.
 
-## Top 100,000 interactive and background records for time range
+## Interactive and background records for time range
 
 A table visual displays the data based on selection of utilization type: interactive and background. The table shows every operation that contributed to capacity units (CUs) usage in the viewed timepoint. It fetches the top 100,000 records based on CUs. If the selected item and operation is not undergoing any interactive or background operations at selected time range, then a banner is displayed over table visual saying there are no interactive/background operations.
 
