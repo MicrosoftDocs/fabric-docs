@@ -41,6 +41,10 @@ items:
     items:
       - name: Configure container
         href: how-to-configure-container.md
+      - name: Time to live (TTL)
+        href: time-to-live.md
+      - name: Configure time to live (TTL)
+        href: how-to-configure-time-to-live.md
   - name: Write queries
     href: nosql-query/toc.yml
   - name: Troubleshoot

@@ -78,7 +78,13 @@ landingContent:
             url: how-to-share-items.md
   - title: Manage resources
     linkLists:
+      - linkListType: concept
+        links:
+          - text: Time to live (TTL)
+            url: time-to-live.md
       - linkListType: how-to-guide
         links:
           - text: Configure container
             url: how-to-configure-container.md
+          - text: Configure time to live (TTL)
+            url: how-to-configure-time-to-live.md
