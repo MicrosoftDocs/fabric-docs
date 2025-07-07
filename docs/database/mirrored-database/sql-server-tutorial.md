@@ -62,7 +62,7 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
 
 1. Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary:
 
-    For a SQL Authenticated login:
+    - For a SQL Authenticated login:
 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
@@ -70,7 +70,7 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
        VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE, VIEW PERFORMANCE DEFINITION TO [fabric_user];
     ```
     
-    Or, for a Microsoft Entra authenticated login (recommended):
+    - Or, for a Microsoft Entra authenticated login (recommended):
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
@@ -294,14 +294,14 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
    - **Server**: The fully qualified server name path that Fabric will use to reach your SQL Server instance, the same that you would use for SSMS. 
 
    > [!TIP] 
-   > For SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true). If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/database-engine/availability-groups/windows/listeners-client-connectivity-application-failover?view=sql-server-ver17&preserve-view=true).
+   > SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/database-engine/availability-groups/windows/listeners-client-connectivity-application-failover?view=sql-server-ver17&preserve-view=true) for **Server**.
 
-- **Database**: Enter the name of your SQL Server.
-   - **Connection**: Create new connection.
-   - **Connection name**: An automatic name is provided. You can change it.
-   - **Data gateway:** Select the on-premises data gateway you set up according to your scenario.
-   - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
-   - Select the **Use encrypted connection** checkbox.
+   - **Database**: Enter the name of your SQL Server.
+      - **Connection**: Create new connection.
+      - **Connection name**: An automatic name is provided. You can change it.
+      - **Data gateway:** Select the on-premises data gateway you set up according to your scenario.
+      - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
+      - Select the **Use encrypted connection** checkbox.
 1. Select **Connect**.
 
 ## [SQL Server 2016-2022](#tab/sql201622)
@@ -338,13 +338,13 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
    - **Server**: The fully qualified server name path that Fabric will use to reach your SQL Server instance, the same that you would use for SSMS.
 
    > [!TIP] 
-   > For SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true). If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/database-engine/availability-groups/windows/listeners-client-connectivity-application-failover?view=sql-server-ver17&preserve-view=true).
+   > For SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/database-engine/availability-groups/windows/listeners-client-connectivity-application-failover?view=sql-server-ver17&preserve-view=true) for **Server**.
 
-- **Database**: Enter the name of your SQL Server.
-   - **Connection**: Create new connection.
-   - **Connection name**: An automatic name is provided. You can change it.
-   - **Data gateway:** Select the name of the on-premises data gateway you set up according to your scenario.
-   - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
+   - **Database**: Enter the name of your SQL Server.
+      - **Connection**: Create new connection.
+      - **Connection name**: An automatic name is provided. You can change it.
+      - **Data gateway:** Select the name of the on-premises data gateway you set up according to your scenario.
+      - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
 1. Select **Connect**.
 
 --- 
