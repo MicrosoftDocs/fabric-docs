@@ -109,7 +109,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Connect from local environment
-            url: how-to-connect-development.md
+            url: cosmos-db/how-to-connect-development.md
           - text: Run cross-database queries
             url: cosmos-db/how-to-query-cross-database.md
           - text: Review sample data set
@@ -117,7 +117,7 @@ landingContent:
       - linkListType: reference
         links:
           - text: FAQ
-            url: cosmos-db/faq.md
+            url: cosmos-db/faq.yml
 
   # Card 
   - title: Secure Cosmos DB database
@@ -161,6 +161,6 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Implement continuous integration and deployment
-            url: how-to-continuous-integration-deployment.md
+            url: cosmos-db/how-to-continuous-integration-deployment.md
           - text: Monitor activity and performance
-            url: how-to-monitor.md
+            url: cosmos-db/how-to-monitor.md
