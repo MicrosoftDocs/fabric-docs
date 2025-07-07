@@ -130,8 +130,6 @@ landingContent:
             url: cosmos-db/how-to-authenticate-azure.md
           - text: Authorization
             url: cosmos-db/how-to-configure-authorization.md
-          - text: Sharing items
-            url: cosmos-db/how-to-share-items.md
 
   # Card 
   - title: Query and tune Cosmos DB database
