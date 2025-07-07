@@ -294,7 +294,7 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
    - **Server**: The fully qualified server name path that Fabric will use to reach your SQL Server instance, the same that you would use for SSMS. 
 
    > [!TIP] 
-   > SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/database-engine/availability-groups/windows/listeners-client-connectivity-application-failover?view=sql-server-ver17&preserve-view=true) for **Server**.
+   > SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-ver17&preserve-view=true#network-name) for **Server**.
 
    - **Database**: Enter the name of your SQL Server.
       - **Connection**: Create new connection.
@@ -338,7 +338,7 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
    - **Server**: The fully qualified server name path that Fabric will use to reach your SQL Server instance, the same that you would use for SSMS.
 
    > [!TIP] 
-   > For SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/database-engine/availability-groups/windows/listeners-client-connectivity-application-failover?view=sql-server-ver17&preserve-view=true) for **Server**.
+   > For SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-ver17&preserve-view=true#network-name) for **Server**.
 
    - **Database**: Enter the name of your SQL Server.
       - **Connection**: Create new connection.
