@@ -25,6 +25,8 @@ landingContent:
         links:
           - text: SQL database in Fabric
             url: sql/overview.md
+          - text: Cosmos DB database in fabric
+            url: cosmos-db/overview.md
   # Card 
   - title: Decision guides and feature comparisons
     linkLists:
@@ -96,3 +98,67 @@ landingContent:
         links:
           - text: What is a Lakehouse?
             url: ../data-engineering/lakehouse-overview.md
+
+  # Card 
+  - title: Get started with Cosmos DB database
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Create a database
+            url: cosmos-db/quickstart-portal.md
+      - linkListType: how-to-guide
+        links:
+          - text: Connect from local environment
+            url: cosmos-db/how-to-connect-development.md
+          - text: Run cross-database queries
+            url: cosmos-db/how-to-query-cross-database.md
+          - text: Review sample data set
+            url: cosmos-db/sample-data.md
+      - linkListType: reference
+        links:
+          - text: FAQ
+            url: cosmos-db/faq.yml
+
+  # Card 
+  - title: Secure Cosmos DB database
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Security baseline
+            url: cosmos-db/security.md
+          - text: cosmos-db/Authenticate from Azure services
+            url: cosmos-db/how-to-authenticate-azure.md
+          - text: Authorization
+            url: cosmos-db/how-to-configure-authorization.md
+
+  # Card 
+  - title: Query and tune Cosmos DB database
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Mirror to OneLake
+            url: cosmos-db/mirror-onelake.md
+      - linkListType: how-to-guide
+        links:
+          - text: Index vector data
+            url: cosmos-db/how-to-index-vector-data.md
+      - linkListType: concept
+        links:
+          - text: Modify indexing policies
+            url: cosmos-db/indexing-policies.md
+          - text: Configure time to live (TTL)
+            url: cosmos-db/time-to-live.md
+      - linkListType: reference
+        links:
+          - text: NoSQL query language
+            url: /nosql/query/overview?context=/fabric/context/context-database
+
+  # Card 
+  - title: Deploy and monitor Cosmos DB database
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Implement continuous integration and deployment
+            url: cosmos-db/how-to-continuous-integration-deployment.md
+          - text: Monitor activity and performance
+            url: cosmos-db/how-to-monitor.md
