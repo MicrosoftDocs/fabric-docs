@@ -6,7 +6,7 @@ author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
 ms.date: 07/07/2025
-ai-usage: ai-generated
+ai-usage: ai-assisted
 ---
 
 # Customize indexing policies in Cosmos DB in Microsoft Fabric
