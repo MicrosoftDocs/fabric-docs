@@ -59,14 +59,23 @@ To obtain the Service principal ID, use the following steps.
 
 1. Go to the [Azure portal](https://portal.azure.com) and sign in with your credentials. 
 2. Navigate to Microsoft Entra Id (Azure Active Directory)
-3. On the left, select **Enterprise applications**
-4. Navigating to the app and selecting the Overview tab
+3. On the left, select **App registrations**
+4. Navigating to the app and select the Overview tab
 5. Use the **Application (client) Id** for the **Service Principal ID**
 
 :::image type="content" source="./media/git-integration-with-service-principal/tenant-id.png" alt-text="Screenshot showing where to find the tenant ID in the Azure portal.":::
 
 ### Create the source control connection
-To create the source control connection, use the following steps.
+To create the source control connection, use the following details and steps.
+
+|Name|Description|
+|-----|-----|
+|Display Name|The name of the source control connection. It should be unique.|
+|Azure DevOps URL|The url to your repository in Azure DevOps.|
+|Authentication method|The authentication method for the connection. Service Principal should be selected|
+|Tenant ID|The ID of the tenant where Azure DevOps is located.  See the [Obtain the tenant ID](#obtain-the-tenant-id) section.|
+|Service principal ID|The Application (client) Id from the app overview in the Azure portal.  See the [Obtain Service Principal ID](#obtain-the-service-principal-id) section.|
+|Service principal key|That's the secret obtained in step 1.|
 
 1. From a workspace, select **workspace settings**
 2. Select **Git Integration**
@@ -82,16 +91,7 @@ To create the source control connection, use the following steps.
 9. After adding the connection, you need to click on **connect** and complete the git connection details. For more information see [Connect to a workspace](git-get-started.md#connect-to-a-workspace)
 
 ### Summary of information required for source control connection
-The following table provides a a summary of the information required to complete the steps above.
 
-|Name|Description|
-|-----|-----|
-|Display Name|The name of the source control connection. It should be unique.|
-|Azure DevOps URL|The url to your repository in Azure DevOps.|
-|Authentication method|The authentication method for the connection. Service Principal should be selected|
-|Tenant ID|The ID of the tenant where Azure DevOps is located.  See the [Obtain the tenant ID](#obtain-the-tenant-id) section.|
-|Service principal ID|The Application (client) Id from the app overview in the Azure portal.  See the [Obtain Service Principal ID](#obtain-the-service-principal-id) section.|
-|Service principal key|That's the secret obtained in step 1.|
 
 ## Appendix: Edit service principal connection details
 When you need to update your service principal details, for example, update service principal key, use the following instructions:
