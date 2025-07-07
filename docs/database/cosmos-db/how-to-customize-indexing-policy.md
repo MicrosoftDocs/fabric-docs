@@ -15,7 +15,7 @@ zone_pivot_groups: dev-lang-core
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
-TODO. In this guide, 
+Indexing in Cosmos DB is designed to deliver fast and flexible query performance, no matter how your data evolves. In this guide, you modify the indexing policy for a container using the Fabric portal or an Azure SDK.
 
 ## Prerequisites
 
@@ -42,7 +42,23 @@ First, use the Fabric portal to set the indexing policy for a container
 1. In the editor, update the setting to a new value. For example, you can set the indexing policy to only index the `name` and `category` properties for items in the container using this policy.
 
     ```json
-    
+    {
+      "indexingMode": "consistent",
+      "automatic": true,
+      "includedPaths": [
+        {
+          "path": "/name/?"
+        },
+        {
+          "path": "/category/?"
+        }
+      ],
+      "excludedPaths": [
+        {
+          "path": "/*"
+        }
+      ]
+    }
     ```
 
 ## Set using the Azure SDK
@@ -56,7 +72,27 @@ database = client.get_database_client("<database-name>")
 
 container = database.get_container_client("<container-name>")
 
-#
+# Create policy that only indexes specific paths
+indexing_policy = {
+  "indexingMode": "consistent",
+  "automatic": True,
+  "includedPaths": [
+    {
+      "path": "/name/?"
+    },
+    {
+      "path": "/category/?"
+    }
+  ],
+  "excludedPaths": [
+    {
+      "path": "/*"
+    }
+  ]
+}
+
+# Create policy that only indexes specific paths
+database.replace_container(container, partition_key=PartitionKey(path='/<partition-key-path>'), indexing_policy=indexing_policy)
 ```
 
 :::zone-end
@@ -66,7 +102,28 @@ container = database.get_container_client("<container-name>")
 ```typescript
 const container: Container = client.database('<database-name>').container('<container-name>');
 
-//
+const { resource: containerProperties } = await container.read();
+
+// Create policy that only indexes specific paths
+containerProperties['indexingPolicy'] = {
+  indexingMode: 'consistent',
+  automatic: true,
+  includedPaths: [
+    {
+      path: '/name/?'
+    },
+    {
+      path: '/category/?'
+    }
+  ],
+  excludedPaths: [
+    {
+      path: '/*'
+    }
+  ]
+}
+
+await container.replace(containerProperties);
 ```
 
 :::zone-end
@@ -78,7 +135,26 @@ Container container = client
     .GetDatabase("<database-name>")
     .GetContainer("<container-name>");
 
-//
+ContainerProperties properties = await container.ReadContainerAsync();
+
+// Create policy that only indexes specific paths
+IndexingPolicy indexingPolicy = new()
+{
+    IndexingMode = IndexingMode.Consistent,
+    Automatic = true
+};
+indexingPolicy.ExcludedPaths.Add(
+    new ExcludedPath{ Path = "/*" }
+);
+indexingPolicy.IncludedPaths.Add(
+    new IncludedPath { Path = "/name/?"  }
+);
+indexingPolicy.IncludedPaths.Add(
+    new IncludedPath { Path = "/category/?" }
+);
+properties.IndexingPolicy = indexingPolicy;
+
+await container.ReplaceContainerAsync(properties);
 ```
 
 :::zone-end
