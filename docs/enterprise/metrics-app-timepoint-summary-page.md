@@ -70,7 +70,7 @@ The top row contains three horizontal bar charts. Users can choose which metric 
 * **Item** – Displays items ordered by percentage of base capacity utilization, operation count, or duration, according to the selected toggle value.
 * **Operation** – Displays operations ordered by percentage of base capacity utilization, operation count, or duration, according to the selected toggle value.
 
-### Top 200,000 interactive and background records for time range
+### Interactive and background records for time range
 
 This visual displays the top 200,000 records (operation types in items) contributing to CU usage during the timepoint used for drill-through to this page. Once an operation begins smoothing within the timepoint window, its CUs are attributed to that same window. Users can select a row in this visual to drill through to the **Timepoint Item Detail** page for detailed data on a specific operation within an item.
 
