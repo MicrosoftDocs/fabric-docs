@@ -43,6 +43,12 @@ items:
     items:
       - name: Configure container
         href: how-to-configure-container.md
+      - name: Indexing policies
+        href: indexing-policies.md
+      - name: Customize indexing policy
+        href: how-to-customize-indexing-policy.md
+      - name: Indexing policy samples
+        href: sample-indexing-policies.md
       - name: Time to live (TTL)
         href: time-to-live.md
       - name: Configure time to live (TTL)

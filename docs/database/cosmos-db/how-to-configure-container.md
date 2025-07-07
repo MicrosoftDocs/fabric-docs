@@ -77,7 +77,7 @@ Now, use the **Indexing Policy** section to customize how indexing works for you
 1. Select **Save** to persist your changes.
 
     > [!TIP]
-    > For more information on indexing, see [indexing policies](/azure/cosmos-db/index-policy).
+    > For more information on indexing, see [indexing policies](indexing-policies.md).
 
 ## Related content
 

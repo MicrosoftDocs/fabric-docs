@@ -80,11 +80,19 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
+          - text: Indexing policies
+            url: indexing-policies.md
           - text: Time to live (TTL)
             url: time-to-live.md
       - linkListType: how-to-guide
         links:
           - text: Configure container
             url: how-to-configure-container.md
+          - text: Customize indexing policy
+            url: how-to-customize-indexing-policy.md
           - text: Configure time to live (TTL)
             url: how-to-configure-time-to-live.md
+      - linkListType: sample
+        links:
+          - text: Indexing policy samples
+            url: sample-indexing-policies.md
