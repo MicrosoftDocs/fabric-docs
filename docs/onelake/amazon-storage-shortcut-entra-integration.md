@@ -3,7 +3,7 @@ title: Integrate Microsoft Entra with AWS S3 using Service Principal Authenticat
 description: Learn how to integrate Microsoft Entra with AWS S3 using Service Principal authentication for secure access to S3 buckets with unified identity management and OIDC-based authentication.
 author: SnehaGunda
 ms.topic: how-to
-ms.date: 07/01/2025
+ms.date: 07/07/2025
 ms.author: sngun
 ms.reviewer: sngun
 ---
@@ -33,6 +33,9 @@ components that work together to establish trust, authenticate users, and author
 3. A **Fabric connection** that uses temporary credentials from AWS Security Token Service (STS).
 
 In the following sections you'll configure Microsoft Entra ID, AWS IAM, and Microsoft Fabric for secure access to Amazon S3 using the service principal-based integration. This setup establishes the necessary trust relationships and connection details required for the integration to work.
+
+> [!NOTE]
+> Only key or secret authentication is supported for S3-compatible sources; Entra-based OAuth, Service Principal, and RoleArn are not supported.
 
 ## Configure Microsoft Entra ID
 
@@ -164,7 +167,7 @@ Use Microsoft Fabric OneLake's shortcut creation interface to create the shortcu
 
 * This feature currently supports only the service principal-based approach; OAuth and Workspace Identity aren't yet supported.
 
-* Access to S3 buckets behind a firewall isn't currently supported.
+* Access to S3 buckets behind a firewall via on-premises data gateway isn't currently supported with service principal or OAuth.
 
 ## Related content
 
