@@ -73,6 +73,8 @@
       href: tutorial-bring-azure-data-factory-to-fabric.md      
   - name: Migrate to Fabric
     items:
+    - name: Compare Azure Data Factory to Data Factory in Fabric
+      href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Pipelines
       items:
       - name: Migrate from Azure Data Factory to Data Factory in Microsoft Fabric
@@ -1027,8 +1029,6 @@
       href: frequently-asked-questions.yml
     - name: Gateway considerations for data destinations in Dataflow Gen2
       href: gateway-considerations-output-destinations.md
-    - name: Getting from Azure Data Factory to Data Factory in Fabric
-      href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Getting from Dataflow Gen1 to Gen2
       href: dataflows-gen2-overview.md
     - name: Pipeline activities troubleshooting guide
