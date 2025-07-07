@@ -36,11 +36,8 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 
 - **Consider customer-managed keys for encryption at rest**: Cosmos DB database in Fabric automatically encrypts data at rest using service-managed keys. For an extra layer of security, use customer-managed keys to control encryption with your own keys. For more information, see [manage customer-managed keys](../../security/workspace-customer-managed-keys.md).
 
-- **Grant access to specific items using item-level sharing**: Use the item-sharing feature to provide access to individual items or subsets of data, rather than sharing an entire container. Item-level sharing uses the same artifact sharing experience as other Fabric resources, enabling precise access control for your data. For more information, see [how to share items](how-to-share-items.md).
-
 ## Related content
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Connect from your local development environment to Cosmos DB in Microsoft Fabric](how-to-connect-development.md)
 - [Authenticate from Azure host services to Cosmos DB in Microsoft Fabric](how-to-authenticate-azure.md)
-- [How to share Cosmos DB in Microsoft Fabric items](how-to-share-items.md)
