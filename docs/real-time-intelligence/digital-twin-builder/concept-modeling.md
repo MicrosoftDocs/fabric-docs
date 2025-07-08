@@ -5,8 +5,6 @@ author: baanders
 ms.author: baanders
 ms.date: 06/27/2025
 ms.topic: concept-article
-ms.service: fabric
-ms.subservice: rti-core
 ---
 
 # Modeling data in digital twin builder (preview)
