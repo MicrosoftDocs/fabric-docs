@@ -56,9 +56,9 @@ The payload property in previous JSON body is Base64 encoded. You can use [Base6
 If you want to replicate selective tables instead of all the tables in the specified database, refer to [JSON definition example of replicating specified tables](#json-definition-example-of-replicating-specified-tables).
 
 > [!IMPORTANT]
-> To mirror data from Azure SQL Database or Azure SQL Managed Instance, you need to also do the following before start mirroring:
+> To mirror data from Azure SQL Database, Azure SQL Managed Instance, Azure Database for PostgreSQL or SQL Server 2025, you need to also do the following before start mirroring:
 >
-> 1. Enable System Assigned Managed Identity (SAMI) of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server) or [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance).
+> 1. Enable System Assigned Managed Identity (SAMI) of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-logical-server), [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance), [Azure Database for PostgreSQL](azure-database-postgresql-tutorial.md#prepare-your-azure-database-for-postgresql) or [SQL Server](sql-server-tutorial.md?tabs=sql2025#connect-to-your-sql-server).
 > 2. [Grant the SAMI **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternatively, you can grant SAMI workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
 
 > [!NOTE]
