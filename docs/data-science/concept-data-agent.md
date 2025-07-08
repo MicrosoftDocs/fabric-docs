@@ -104,7 +104,7 @@ The Fabric data agent is currently in public preview and it has limitations. Upd
 
 - The Fabric data agent only generates SQL/DAX/KQL "read" queries. It doesn't generate SQL/DAX/KQL queries that create, update, or delete data.
 - Fabric Data Agent does not support unstructured Data (.pdf, .docx, or .txt). You can't use the Fabric data agent to access unstructured data resources. These resources include .pdf, .docx, or .txt files, for example.
-- The Fabric data agent does not support non-English languages. This means that questions, instructions, and example queries are required to be in English. 
+- The Fabric data agent does not currently support non-English languages. For optimal performance please provide questions, instructions, and example queries in English. 
 - You can't change the LLM that the Fabric data agent uses.
 
 ## Related content
