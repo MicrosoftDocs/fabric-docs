@@ -25,6 +25,7 @@ ms.custom:
 - Ensure the following Fabric tenant settings are enabled. To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
     - [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../../admin/tenant-settings-index.md#onelake-settings)
+- To mirror data from SQL Server 2025, you need to have a member or admin role in your workspace when create a mirrored database from the Fabric portal. During creation, the managed identity of SQL Server is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
 - Review the [Platform limitations in Microsoft Fabric mirrored databases From SQL Server](sql-server-limitations.md#platform-limitations).
 - An [on-premises data gateway](/data-integration/gateway/service-gateway-install) in your SQL Server instance's network. The gateway machine's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
 
@@ -137,7 +138,7 @@ To configure Fabric Mirroring, you need to configure Azure Arc for your SQL Serv
    For SQL Server instances running in an Always On availability group or failover cluster instance configuration, all nodes must be connected to Azure Arc. 
 
 1. Three registry keys are needed on the Windows Server hosting the source SQL Server instance for Fabric Mirroring. The registry keys include information about the system-assigned managed identity (SAMI) for the Windows Server. The following PowerShell script adds three registry keys, the necessary file system permissions, and managed identities.
-    
+   
     > [!NOTE]
     > This section contains a script to modify the Windows registry. Make sure that you follow these steps carefully. For added protection, back up the registry before you modify it. Then, you can restore the registry if a problem occurs. For more information about how to back up and restore the registry, see [How to back up and restore the registry in Windows](/troubleshoot/windows-server/performance/windows-registry-advanced-users#back-up-the-registry).
     
@@ -294,7 +295,7 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
    - **Server**: The fully qualified server name path that Fabric will use to reach your SQL Server instance, the same that you would use for SSMS. 
 
    > [!TIP] 
-   > SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/database-engine/availability-groups/windows/listeners-client-connectivity-application-failover?view=sql-server-ver17&preserve-view=true) for **Server**.
+   > SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-ver17&preserve-view=true#network-name) for **Server**.
 
    - **Database**: Enter the name of your SQL Server.
       - **Connection**: Create new connection.
@@ -338,7 +339,7 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
    - **Server**: The fully qualified server name path that Fabric will use to reach your SQL Server instance, the same that you would use for SSMS.
 
    > [!TIP] 
-   > For SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/database-engine/availability-groups/windows/listeners-client-connectivity-application-failover?view=sql-server-ver17&preserve-view=true) for **Server**.
+   > For SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-ver17&preserve-view=true#network-name) for **Server**.
 
    - **Database**: Enter the name of your SQL Server.
       - **Connection**: Create new connection.
@@ -347,7 +348,7 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
       - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
 1. Select **Connect**.
 
---- 
+---
 
 > [!IMPORTANT]
 > Any granular security established in the source database must be reconfigured in the mirrored database in Microsoft Fabric. For more information, see [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](sql-server-security.md).
