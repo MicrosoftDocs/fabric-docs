@@ -581,8 +581,19 @@ Run the following command to get the token:
 notebookutils.credentials.getToken('audience Key')
 ```
 
-### Get secret using user credentials
+> [!IMPORTANT]
+> Token scopes with 'pbi' as audience are subject to change in the future. The current scopes are listed below, but they may not be exhaustive or final.
+> If you call getToken with the audience key "pbi" and the notebook is running under the service principal identity, the token will be returned with limited scope. The token will not have the full Fabric service scope. If the notebook is running under the user identity, the token still have the full Fabric service scope, but this could change in the future with security improvements. To ensure that the token has the full Fabric service scope, we recommend using MSAL authentication instead of the *notebookutils.credentials.getToken* API. For more information, see [Authenticate with Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/msal/python/).
+> Following are the list of scopes that the token will have when calling *notebookutils.credentials.getToken* with the audience key "pbi" under the service principal identity:
+> - Lakehouse.ReadWrite.All
+> - MLExperiment.ReadWrite.All
+> - MLModel.ReadWrite.All
+> - Notebook.ReadWrite.All
+> - SparkJobDefinition.ReadWrite.All
+> - Workspace.ReadWrite.All
+> - Dataset.ReadWrite.All
 
+### Get secret
 getSecret returns an Azure Key Vault secret for a given Azure Key Vault endpoint and secret name using user credentials.
 
 ```python
