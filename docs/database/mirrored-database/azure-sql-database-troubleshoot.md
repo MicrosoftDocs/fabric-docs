@@ -71,15 +71,15 @@ User Assigned Managed Identity (UAMI) is not supported. If you add a UAMI, it be
 - Remove all UAMIs. Verify that the SAMI is enabled.
 <!-- - Use the [REST API to change the SAMI to be the primary identity](/azure/azure-sql/database/authentication-azure-ad-user-assigned-managed-identity-create-server?view=azuresql-db&preserve-view=true&tabs=rest-api). -->
 
-## SPN permissions
+## SAMI permissions
 
-Do not remove Azure SQL Database service principal name (SPN) contributor permissions on Fabric mirrored database item.
+The System Assigned Managed Identity (SAMI) of the Azure SQL logical server needs to have **Read** and **Write** permissions on the mirrored database item in Microsoft Fabric. When you create the mirrored database from the Fabric portal, the permission is granted automatically. If you encounter error `Unable to grant required permission to the source server. User does not have permission to reshare` during the setup, ensure you have a member or admin role in the workspace with sufficient privilege. When you [use API](mirrored-database-rest-api.md) to create the mirrored database, make sure you grant the permission explicitly.
 
-If you accidentally remove the SPN permission, Mirroring Azure SQL Database will not function as expected. No new data can be mirrored from the source database.
+Do not remove SAMI **Read** and **Write** permissions on Fabric mirrored database item. If you accidentally remove the permissions, mirroring Azure SQL Database will not function as expected. No new data can be mirrored from the source database.
 
-If you remove Azure SQL Database SPN permissions or permissions are not set up correctly, use the following steps.
+If you remove Azure SQL Database SAMI permissions or permissions are not set up correctly, use the following steps.
 
-1. Add the SPN as a user by selecting the `...` ellipses option on the mirrored database item.
+1. Add the SAMI as a user by selecting the `...` ellipses option on the mirrored database item.
 1. Select the **Manage Permissions** option.
 1. Enter the name of the Azure SQL Database logical server name. Provide **Read** and **Write** permissions.
 
