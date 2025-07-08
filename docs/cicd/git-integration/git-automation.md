@@ -374,7 +374,7 @@ $adoSPConnection = @{
         credentials = @{
             credentialType = "ServicePrincipal"
             tenantId = "<SP tenant (directory) id (Guid)>"
-            servicePrincipalClientId = "<SP APP (clint) id (Guid)>"
+            servicePrincipalClientId = "<SP APP (client) id (Guid)>"
             servicePrincipalSecret = "<SP Secret>"
         }
     }
