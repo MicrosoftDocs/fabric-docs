@@ -77,7 +77,7 @@ Activator enables passing parameters in string, boolean, and number (float). To 
 
 
 > [!NOTE]
-> Please make sure the parameter name and type are defined exactly the same as defined the activated Fabric item. If you have any feedback or ideas regarding this feature, please share it on [Activator community](aka.ma/ActivatorCommunity)
+> Please make sure the parameter name and type are defined exactly the same as defined the activated Fabric item. If you have any feedback or ideas regarding this feature, please share it on [Activator community](aka.ms/ActivatorCommunity)
 
 
 ## Related content
