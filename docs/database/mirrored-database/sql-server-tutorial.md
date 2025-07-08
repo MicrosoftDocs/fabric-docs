@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database From SQL Server in Micro
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajayj, rajpo
-ms.date: 06/15/2025
+ms.date: 07/07/2025
 ms.topic: tutorial
 ms.custom:
 ---
@@ -42,23 +42,27 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
 
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
-    - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
 
-    ```sql
-    CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [fabric_login];
-    ```
+   > [!IMPORTANT] 
+   > For SQL Server instances in an Always On availability group, the login must be created in all SQL Server instances.
 
-    - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+   - Create a SQL Authenticated login named `fabric_login`. You can choose any name for this login. Provide your own strong password. Run the following T-SQL script in the `master` database:
 
-    ```sql
-    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-    ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
-    ```
+   ```sql
+   CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
+   ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [fabric_login];
+   ```
+
+   - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account (recommended). Run the following T-SQL script in the `master` database:
+
+   ```sql
+   CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
+   ALTER SERVER ROLE [##MS_ServerStateReader##] ADD MEMBER [bob@contoso.com];
+   ```
 
 1. Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary:
 
-    For a SQL Authenticated login:
+    - For a SQL Authenticated login:
 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
@@ -66,7 +70,7 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
        VIEW SERVER SECURITY STATE, VIEW DATABASE SECURITY STATE, VIEW PERFORMANCE DEFINITION TO [fabric_user];
     ```
     
-    Or, for a Microsoft Entra authenticated login (recommended):
+    - Or, for a Microsoft Entra authenticated login (recommended):
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
@@ -78,34 +82,38 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
 
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
-    - You can choose any name for this login. Membership in the sysadmin server role of the SQL Server 2016-2022 instance is required to [enable or disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server?view=sql-server-ver16&preserve-view=true).
-    
-    Run the following T-SQL script in the `master` database to create a SQL authenticated login named `fabric_login`. Provide your own strong password. 
 
-    ```sql
-    CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
-    ALTER SERVER ROLE [sysadmin] ADD MEMBER [fabric_login];
-    ```
+   > [!IMPORTANT] 
+   > For SQL Server instances in an Always On availability group, the login must be created in all SQL Server instances.
 
-    - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+   You can choose any name for this login. Membership in the sysadmin server role of the SQL Server 2016-2022 instance is required to [enable or disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server?view=sql-server-ver16&preserve-view=true).
 
-    ```sql
-    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-    ALTER SERVER ROLE [sysadmin] ADD MEMBER  [bob@contoso.com];
-    ```
+   - Run the following T-SQL script in the `master` database to create a SQL authenticated login named `fabric_login`. Provide your own strong password.
 
+   ```sql
+   CREATE LOGIN [fabric_login] WITH PASSWORD = '<strong password>';
+   ALTER SERVER ROLE [sysadmin] ADD MEMBER [fabric_login];
+   ```
+
+   - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+
+   ```sql
+   CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
+   ALTER SERVER ROLE [sysadmin] ADD MEMBER  [bob@contoso.com];
+   ```
+   
 1. Membership in the db_owner database role of the source database for mirroring is required to manage CDC.
 
-    Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary:
+    Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary.
 
-    For a SQL Authenticated login:
+    - For a SQL Authenticated login:
 
     ```sql
     CREATE USER [fabric_user] FOR LOGIN [fabric_login];
     ALTER ROLE [db_owner] ADD MEMBER [fabric_user];
     ```
     
-    Or, for a Microsoft Entra authenticated login (recommended):
+    - Or, for a Microsoft Entra authenticated login (recommended):
 
     ```sql
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
@@ -283,13 +291,17 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
 
 1. Under **New sources**, select **SQL Server database**. Or, select an existing SQL Server connection from the OneLake hub.
 1. If you selected **New connection**, enter the connection details to the SQL Server instance.
-   - **Server**: The fully qualified server name path that Fabric will use to reach your SQL Server instance, the same that you would use for SSMS.
+   - **Server**: The fully qualified server name path that Fabric will use to reach your SQL Server instance, the same that you would use for SSMS. 
+
+   > [!TIP] 
+   > SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-ver17&preserve-view=true#network-name) for **Server**.
+
    - **Database**: Enter the name of your SQL Server.
-   - **Connection**: Create new connection.
-   - **Connection name**: An automatic name is provided. You can change it.
-   - **Data gateway:** Select the on-premises data gateway you set up according to your scenario.
-   - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
-   - Select the **Use encrypted connection** checkbox.
+      - **Connection**: Create new connection.
+      - **Connection name**: An automatic name is provided. You can change it.
+      - **Data gateway:** Select the on-premises data gateway you set up according to your scenario.
+      - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
+      - Select the **Use encrypted connection** checkbox.
 1. Select **Connect**.
 
 ## [SQL Server 2016-2022](#tab/sql201622)
@@ -324,11 +336,15 @@ To enable Mirroring, you will need to connect to the SQL Server instance from Fa
 1. Under **New sources**, select **SQL Server database**. Or, select an existing SQL Server connection from the OneLake hub.
 1. If you selected **New connection**, enter the connection details to the SQL Server instance.
    - **Server**: The fully qualified server name path that Fabric will use to reach your SQL Server instance, the same that you would use for SSMS.
+
+   > [!TIP] 
+   > For SQL Server instances in an Always On availability group, use the [Always On listener](/sql/database-engine/availability-groups/windows/availability-group-listener-overview?view=sql-server-ver17&preserve-view=true) for **Server**. If SQL Server is running in a failover cluster instance configuration, use the [Virtual Network Name](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-ver17&preserve-view=true#network-name) for **Server**.
+
    - **Database**: Enter the name of your SQL Server.
-   - **Connection**: Create new connection.
-   - **Connection name**: An automatic name is provided. You can change it.
-   - **Data gateway:** Select the name of the on-premises data gateway you set up according to your scenario.
-   - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
+      - **Connection**: Create new connection.
+      - **Connection name**: An automatic name is provided. You can change it.
+      - **Data gateway:** Select the name of the on-premises data gateway you set up according to your scenario.
+      - **Authentication kind**: Choose the authentication method and provide the principal you set up in [Use a login and mapped database user](#use-a-login-and-mapped-database-user).
 1. Select **Connect**.
 
 --- 

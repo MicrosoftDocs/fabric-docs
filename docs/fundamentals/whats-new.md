@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun
-ms.date: 07/01/2025
+ms.date: 07/02/2025
 ms.topic: whats-new
 ms.collection:
   - ce-skilling-ai-copilot
@@ -341,6 +341,7 @@ This section summarizes recent improvements and features for Microsoft Fabric Da
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|July 2025|**Deploy SQL database with Fabric CLI**|You can now [create a SQL database with the Fabric CLI](../database/sql/deploy-cli.md).|
 |June 2025|**Updates to Database Development Tools for SQL database in Fabric**|Updates to Database Development Tools for SQL database in Fabric introduce [new capabilities for developing, deploying, and managing SQL databases in Fabric](https://blog.fabric.microsoft.com/blog/updates-to-database-development-tools-for-sql-database-in-fabric?ft=All).|
 |April 2025|**Power BI Desktop connection to SQL database in Fabric**|You can now use the OneLake catalog or Get Data experiences in Power BI Desktop to create reports on data from your SQL database in Microsoft Fabric. This Power BI Desktop feature is currently in preview. To get started, see [Create simple reports on your SQL database in Power BI](../database/sql/create-reports.md).|
 |April 2025|**OneLake shortcuts Fabric SQL databases**|[OneLake shortcuts now support connections to Fabric SQL databases](https://blog.fabric.microsoft.com/blog/whats-new-with-onelake-shortcuts?ft=All), allowing users to seamlessly integrate SQL data into their unified data lake environment using the OneLake catalog explorer.|

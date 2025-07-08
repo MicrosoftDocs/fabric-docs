@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure Database for 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scoriani, maghan
-ms.date: 04/23/2025
+ms.date: 07/07/2025
 ms.topic: tutorial
 ---
 
@@ -49,16 +49,24 @@ You can accomplish this by specifying a [database role](#use-a-database-role) fo
 
 #### Use a database role
 
-1. Connect to your Azure Database for PostgreSQL flexible server using [pgAdmin](https://www.pgadmin.org/) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio).
-1. Create a database user and assign the appropriate permissions.
-    - Create a PostgreSQL role named `fabric_user`. You can choose any name for this role. Provide your own strong password. Run the following SQL script to grant the `CREATEDB`, `CREATEROLE`, `LOGIN`, `REPLICATION`, and `azure_cdc_admin` permissions to a new role named `fabric_user`.
+1. Connect to your Azure Database for PostgreSQL flexible server using [pgAdmin](https://www.pgadmin.org/) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio). You should connect with a principal that is a member of the role `azure_pg_admin`.
+1. Create a PostgreSQL role named `fabric_user`. You can choose any name for this role. Provide your own strong password. Grant the permissions needed for Fabric mirroring in the database. Run the following SQL script to grant the `CREATEDB`, `CREATEROLE`, `LOGIN`, `REPLICATION`, and `azure_cdc_admin` permissions to the new role named `fabric_user`.
 
     ```sql
+    -- create a new user to connect from Fabric
     CREATE ROLE fabric_user  CREATEDB CREATEROLE LOGIN REPLICATION PASSWORD '<strong password>';
+
+    -- grant role for replication management to the new user
     GRANT azure_cdc_admin TO fabric_user;
+    -- grant create permission on the database to mirror to the new user
+    GRANT CREATE ON DATABASE <database_to_mirror> TO fabric_user;
     ```
 
-1. Database user created needs to be `owner` of the tables to replicate in the mirrored database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE xxx OWNER TO fabric_user;`. Notice that, for switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html).
+1. The database user created also needs to be `owner` of the tables to replicate in the mirrored database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE <table name here> OWNER TO fabric_user;`.
+   - When switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html).
+
+> [!IMPORTANT]  
+> Missing one of the previous security configuration steps will cause subsequent mirrored operations in Fabric portal to fail with an `Internal error` message.
 
 ## Create a mirrored Azure Database for PostgreSQL flexible server
 
