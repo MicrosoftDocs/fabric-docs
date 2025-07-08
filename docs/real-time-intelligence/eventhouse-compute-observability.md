@@ -30,7 +30,7 @@ To understand your current hot cache usage, run the following command:
 | project HotDataDiskSpaceUsage
 ```
 
-![Screenshot of the show diagnostics command.](media/eventhouse-capacity-observability/show-diagnostics.png)
+:::image type="content" source="media/eventhouse-capacity-observability/show-diagnostics.png" alt-text="Screenshot of the show diagnostics command." lightbox="media/eventhouse-capacity-observability/show-diagnostics.png":::
 
 This command displays the percentage of hot cache space currently used.
 
@@ -44,7 +44,7 @@ To understand where the hot cache is being consumed, drill down to specific tabl
 | summarize HotExtentSize=format\_bytes(sum(HotOriginalSize),2)
 ```
 
-![Screenshot of the show table details command.](media/eventhouse-capacity-observability/show-table-details.png)
+:::image type="content" source="media/eventhouse-capacity-observability/show-table-details.png" alt-text="Screenshot of the show table details command." lightbox="media/eventhouse-capacity-observability/show-table-details.png":::
 
 To adjust the caching policy at the table level, modify the [table-level caching policy](/kusto/management/cache-policy?view=microsoft-fabric&preserve-view=true).
 
@@ -67,14 +67,14 @@ EventhouseMetrics
 | render timechart
 ```
 
-![Screenshot of a graph showing ingestion load factor over time.](media/eventhouse-capacity-observability/ingestion-load-graph.png)  
+:::image type="content" source="media/eventhouse-capacity-observability/ingestion-load-graph.png" alt-text="Screenshot of a graph showing ingestion load factor over time." lightbox="media/eventhouse-capacity-observability/ingestion-load-graph.png":::
 
 This command shows the percentage of the ingestion capacity being used by the current eventhouse compute size. A few takeaways from this number:
 
 - If you're taking up consistently 70% or more of the ingestion capacity at the current size, the compute is sized based on ingestion. It means that unless the ingestion pattern changed, you continue to run at this compute size or larger, irrelevant of other activity.
 - If this percentage consistently drops below 70%, it means that the compute is sized based on other factors. They could be the minimum capacity settings, cache utilization, or query load on the eventhouse. This setting is also available in the [Workspace Monitoring Dashboard](https://blog.fabric.microsoft.com/blog/introducing-template-dashboards-for-workspace-monitoring?ft=All) in the **EH | Table Ingestions** tab.
 
-![Screenshot of the Workspace Monitoring Dashboard showing ingestion statistics.](media/eventhouse-capacity-observability/table-ingestion-tab.png)
+:::image type="content" source="media/eventhouse-capacity-observability/table-ingestion-tab.png" alt-text="Screenshot of the Workspace Monitoring Dashboard showing ingestion statistics." lightbox="media/eventhouse-capacity-observability/table-ingestion-tab.png":::
 
 ## Query load
 
@@ -88,7 +88,9 @@ You can start with the **Eventhouses** tab in the dashboard. The **Eventhouse Qu
 - Most queried databases
 - Users running the most queries
 
-![Workspace Monitoring Dashboard showing Query Load information](media/eventhouse-capacity-observability/eventhouse-overview-tab.png)
+![]()
+
+:::image type="content" source="media/eventhouse-capacity-observability/eventhouse-overview-tab.png" alt-text="Screenshot of Workspace Monitoring Dashboard showing Query Load information." lightbox="media/eventhouse-capacity-observability/eventhouse-overview-tab.png":::
 
 To see more detailed information, use the **EH | Queries** tab. This tab gives you the details down to specific queries and provides the following parameters to help you quickly drill down to specific issues.
 
@@ -101,15 +103,15 @@ To see more detailed information, use the **EH | Queries** tab. This tab gives y
 | Query Status | Filter based on query state. |
 | Application | Allows you to filter to the application that is running the query. |
 
-![Workspace Monitoring Dashboard showing charts and graphs of Kusto Query Language (KQL) queries over time](media/eventhouse-capacity-observability/query-tab.png)
+:::image type="content" source="media/eventhouse-capacity-observability/query-tab.png" alt-text="Screenshot of Workspace Monitoring Dashboard showing charts and graphs of Kusto Query Language (KQL) queries over time." lightbox="media/eventhouse-capacity-observability/query-tab.png":::
 
-A couple of common issues that would be easy to spot using this dashboard
+A couple of common issues that would be easy to spot using this dashboard:
 
-- Filter by Top CPU Time to see what queries might be causing high CPU Utilization
-- Filter by Top Duration to see what queries are taking the longest to execute
-- Filter by Memory Peak to see what queries might be causing memory issues
-- Using **Queries by status over Time** to see if you had a spike in queries
-- Using the Throttled tile to see if the Fabric Capacity throttled any queries
+- Filter by Top CPU Time to see what queries might be causing high CPU Utilization.
+- Filter by Top Duration to see what queries are taking the longest to execute.
+- Filter by Memory Peak to see what queries might be causing memory issues.
+- Using **Queries by status over Time** to see if you had a spike in queries.
+- Using the Throttled tile to see if the Fabric Capacity throttled any queries.
   
 Using this report, you can get down to the specific applications, users, and queries that might need your attention. This article doesn't cover query optimization but finding the actual query text that needs optimization lets you start that process.
 
