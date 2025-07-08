@@ -71,7 +71,7 @@ Create a JSON payload that will be converted to base64 in the API request. The E
 
 Use the [API templates in GitHub](https://github.com/microsoft/fabric-event-streams/blob/main/API%20Templates/eventstream-definition.json) to help define your Eventstream body.
 
-For detailed definitions (e.g., AzureEventHubSourceProperties), refer to [this reference](/rest/api/fabric/eventstream/topology/get-eventstream-topology?tabs=HTTP#definitions), it provides a full list of property structures you may need. 
+For detailed definitions (e.g., AzureEventHubSourceProperties), see [this reference](/rest/api/fabric/eventstream/topology/get-eventstream-topology?tabs=HTTP#definitions), it provides a full list of property structures you may need. 
 
 If you're using **Eventhouse direct ingestion mode** destination, ensure that the `mappingRuleName` property is correctly specified. For detailed instructions on creating ingestion mappings, see [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
 
