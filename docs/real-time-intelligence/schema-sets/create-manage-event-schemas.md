@@ -15,7 +15,7 @@ In this article, you lean how to add a schema to a schema set in Fabric.
 ## Prerequisites
 If you don't have an event schema set, create one by following instructions from [Create an event schema set](create-manage-event-schema-sets.md).
 
-## Add a schema
+## Add an event schema
 
 1. If you aren't on the schema set page already, navigate to the Fabric workspace, and select the event schema set. 
 
@@ -56,7 +56,7 @@ If you don't have an event schema set, create one by following instructions from
     
     :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button.png" alt-text="Screenshot that shows the New event schema button." lightbox="./media/create-manage-event-schemas/new-event-schema-button.png":::      
 
-### Download an event schema
+## Download an event schema
 
 You can download a schema file of an existing schema in the schema set to your computer by using the **Download** button on the ribbon. 
 
@@ -106,7 +106,7 @@ To delete an event schema, select the **Trash** icon next to the event schema in
 ## Find an event schema
 To find an event schema, you can enter text in the **Search** box in the **Event schemas** pane.
 
-## Update event schema
+## Update an event schema
 
 1. To update an event schema and create a new version of the schema, select **Update**. 
 
@@ -119,12 +119,12 @@ To find an event schema, you can enter text in the **Search** box in the **Event
 
     :::image type="content" source="./media/create-manage-event-schemas/version-2.png" alt-text="Screenshot that shows v2 of the schema." lightbox="./media/create-manage-event-schemas/version-2.png"::: 
 
-## View schema versions
+## View versions of an event schema
 Use the **version** drop-down list to select the version of the schema you want to view.
 
 :::image type="content" source="./media/create-manage-event-schemas/version-drop-down-list.png" alt-text="Screenshot that shows versions of the schema." lightbox="./media/create-manage-event-schemas/version-drop-down-list.png"::: 
 
-## View history
+## View history of an event schema
 You can see the history of creation and update of the schema in the **History** section of **Details** pane to the right. 
 
 :::image type="content" source="./media/create-manage-event-schemas/history-pane.png" alt-text="Screenshot that shows History section of the Details pane to the right." lightbox="./media/create-manage-event-schemas/history-pane.png"::: 

@@ -155,10 +155,8 @@ items:
   items:
   - name: What is Schema Registry?
     href: schema-registry-overview.md
-  - name: Register a schema
-    href: register-schema.md
-  - name: View schema details
-    href: view-schema-details.md
+  - name: Add an event schema
+    href: add-event-schema.md
   - name: Use schemas in eventstreams
     href: ../real-time-intelligence/schema-sets/use-event-schemas.md?context=/fabric/context/context-rti&pivots=fabric
 - name: User flows
