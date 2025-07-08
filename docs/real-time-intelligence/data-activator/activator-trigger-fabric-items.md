@@ -9,17 +9,17 @@ ms.date: 11/08/2024
 ms.search.form: Data Activator Fabric Item
 ---
 
-# Activate Fabric items
+# Trigger Fabric items
 
-Fabric data pipelines and notebooks can be used to load or transform data in Microsoft Fabric. Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules can take an action that starts jobs on other Fabric items, which can be used in the following scenarios:
+Fabric Data Pipelines and Notebooks can be used to load or transform data in Microsoft Fabric. Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules can take an action that starts jobs on Fabric items, which can be used in the following scenarios:
 
-* Start data pipelines when new files are loaded to Azure storage accounts, to load files into OneLake. You can learn more about [Azure Storage events](/azure/storage/blobs/storage-blob-event-overview).
+* Run Data Pipelines when new files are loaded to Azure storage accounts, to load files into OneLake. You can learn more about [Azure Storage events](/azure/storage/blobs/storage-blob-event-overview).
 
-* Start Fabric notebooks when issues with data quality are found using Power BI reports. You can learn more about [getting data from Power BI](activator-get-data-power-bi.md).
+* Run Fabric Notebooks when issues with data quality are found using Power BI reports. You can learn more about [getting data from Power BI](activator-get-data-power-bi.md).
 
-## Activate a Fabric item
+## How to trigger a job on Fabric items
 
-Start by selecting an existing rule or [creating a rule](activator-create-activators.md).
+Start by selecting an existing Activator rule or [creating a rule](activator-create-activators.md).
 
 In the rule definition pane on the right side of the screen, find **Action** section to define the action when chosen condition is met. Select **Fabric item** as the action type and select a specific item from the [OneLake Data Hub](../../governance/onelake-catalog-overview.md) pop-up window.
 
