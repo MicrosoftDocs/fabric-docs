@@ -58,14 +58,46 @@ A user data functions item contains one or many functions you can invoke from th
 
 You can define input parameters for the function such as primitive data types like str, int, float, etc. The supported input data types are:
 
-| **JSON Type** | **Python Data type** |
-| ------------------- | ------------------------ |
-| **String**| str|
+| **JSON Type** | **Python Data type** | 
+| ------------------- | ------------------------ | 
+| **String**| str |
 | **Datetime string** | datetime |
 | **Boolean** | bool |
 | **Numbers**| int, float |
 | **Array** | list[], example list[int]|
-| **Object**	| dict |
+| **Object**	| dict|
+| **Object**	| pandas DataFrame|
+| **Object** or **Array of Objects** | pandas Series|
+
+>![NOTE]
+> To use pandas DataFrame and Series types, select **Library management** in fabric portal for your user data function and update `fabric-user-data-function` version to 1.0.0. 
+
+Example of request body for input types supported:
+```json
+{
+  "name": "Alice",                          // String (str)
+  "signup_date": "2025-07-08T13:44:40Z",    // Datetime string (datetime)
+  "is_active": true,                        // Boolean (bool)
+  "age": 30,                                // Number (int)
+  "height": 5.6,                            // Number (float)
+  "favorite_numbers": [3, 7, 42],           // Array (list[int])
+  "profile": {                              // Object (dict)
+    "email": "alice@example.com",
+    "location": "Sammamish"
+  },
+  "sales_data": {                           // Object (pandas DataFrame)
+    "2025-07-01": {"product": "A", "units": 10},
+    "2025-07-02": {"product": "B", "units": 15}
+  },
+  "weekly_scores": [                        // Object or Array of Objects (pandas Series)
+    {"week": 1, "score": 88},
+    {"week": 2, "score": 92},
+    {"week": 3, "score": 85}
+  ]
+}
+
+```
+
 
 ## Supported output types
 
@@ -80,6 +112,9 @@ The supported output data types are:
 | list[data-type], for example list[int]|
 | dict |
 | None|
+|pandas Series|
+|pandas DataFrame|
+
 
 ## Data connections to Fabric data sources
 
