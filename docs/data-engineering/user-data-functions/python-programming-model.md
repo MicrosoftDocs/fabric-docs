@@ -4,7 +4,7 @@ description: Overview of the Fabric User data functions programming model for Py
 ms.author: sumuth
 author: mksuni
 ms.topic: overview
-ms.date: 03/31/2025
+ms.date: 07/7/2025
 ms.search.form: Write new user data functions items
 ---
 
@@ -115,6 +115,42 @@ The supported output data types are:
 |pandas Series|
 |pandas DataFrame|
 
+## How to write an async function
+
+Add async decorator with your function definition in your code. With an `async` function you can improve responsiveness and efficiency of your application by handling multiple tasks at once. They are ideal for managing high volumes of I/O-bound operations.  This example function reads a CSV file from a lakehouse using pandas. Function takes file name as an input parameter. 
+
+```python
+import pandas as pd 
+
+# Replace the alias "<My Lakehouse alias>" with your connection alias.
+@udf.connection(argName="myLakehouse", alias="<My Lakehouse alias>")
+@udf.function()
+async def read_csv_from_lakehouse(myLakehouse: fn.FabricLakehouseClient, csvFileName: str) -> str:
+
+    # Connect to the Lakehouse
+    connection = myLakehouse.connectToFilesAsync()   
+
+    # Download the CSV file from the Lakehouse
+    csvFile = connection.get_file_client(csvFileName)
+
+    downloadFile = await csvFile.download_file()
+    csvData = await downloadFile.readall()
+    
+    # Read the CSV data into a pandas DataFrame
+    from io import StringIO
+    df = pd.read_csv(StringIO(csvData.decode('utf-8')))
+
+    # Display the DataFrame    
+    result="" 
+    for index, row in df.iterrows():
+        result=result + "["+ (",".join([str(item) for item in row]))+"]"
+    
+    # Close the connection
+    csvFile.close()
+    connection.close()
+
+    return f"CSV file read successfully.{result}"
+```
 
 ## Data connections to Fabric data sources
 
