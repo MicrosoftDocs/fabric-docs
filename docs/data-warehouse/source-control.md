@@ -102,6 +102,7 @@ For more information about the Fabric deployment pipelines process, see [Introdu
     - Modify the definition of the old table in the SQL database project in the *exact* same way. The SQL database project of the warehouse in source control and the live warehouse should now match.
 - Currently, do not create a Dataflow Gen2 with an output destination to the warehouse. Committing and updating from Git would be blocked by a new item named `DataflowsStagingWarehouse` that appears in the repository.
 - SQL analytics endpoint is not supported with Git integration.
+- Dependency and sequencing gaps between Lakehouse, SQL Endpoint, and Warehouse artifacts may lead to CI/CD deployment failures due to unresolved object readiness during deployment.
 
 #### Limitations for deployment pipelines
 
