@@ -90,7 +90,7 @@ To create the source control connection, use the following details and steps.
 
 9. After adding the connection, you need to click on **connect** and complete the git connection details. For more information see [Connect to a workspace](git-get-started.md#connect-to-a-workspace)
 
-### Summary of information required for source control connection
+
 
 
 ## Appendix: Edit service principal connection details
@@ -108,6 +108,7 @@ When you need to update your service principal details, for example, update serv
 
 ## Related content
 
+- [Automate Git integration by using APIs](git-automation.md)
 - [Understand the Git integration process](./git-integration-process.md)
 - [Manage Git branches](./manage-branches.md)
 - [Git integration best practices](../best-practices-cicd.md)
