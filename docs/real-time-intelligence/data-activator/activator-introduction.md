@@ -12,37 +12,28 @@ ms.date: 07/08/2025
 
 # Introduction to Fabric Activator
 
-Fabric Activator is a no-code automation tool that automatically triggers actions when specific patterns or conditions are detected in data streams or Power BI reports. It continuously monitors these data sources, and initiates actions when thresholds are met or specific patterns are detected. These actions can include sending emails or Teams notifications, launching Power Automate flows, or integrating with third-party systems. 
-
-It empowers business users to self-serve their automation needs, reducing dependency on IT or development resources. There's no need to build or maintain custom monitoring or alerting solutions.
+Fabric Activator is a no-code experience that automatically triggers actions when specific patterns or conditions are detected in data streams or Power BI reports. It continuously monitors these data sources, and initiates actions when thresholds are met or specific patterns are detected. These actions can include sending emails or Teams notifications, launching Power Automate flows, or integrating with third-party systems. 
 
 :::image type="content" source="./media/activator-introduction/activator.png" alt-text="Diagram that shows the architecture of Fabric Activator.":::
 
 ## Common use cases
 Here are a few real-world scenarios where you can use Fabric Activator:
 
-- **Marketing optimization:** Automatically launch ad campaigns when same-store sales decline, helping to boost performance in underperforming locations.
-- **Operational alerts:** Notify store managers to relocate food from malfunctioning grocery store freezers before spoilage occurs.
-- **Customer retention**: Trigger personalized outreach workflows when a customer’s journey across apps, websites, or other touchpoints indicates a negative experience.
-- **Logistics monitoring**: Proactively initiate investigation workflows when a shipment’s status wasn't updated within a defined timeframe, helping to locate lost packages faster.
-- **Financial risk management**: Alert account teams when customers fall into arrears, using customized thresholds for time or outstanding balances per customer.
-- **Data pipeline reliability**: Monitor data pipeline health and automatically rerun failed jobs or alert teams when anomalies or failures are detected.
+- Automatically launch ad campaigns when same-store sales decline, helping to boost performance in underperforming locations.
+- Notify store managers to relocate food from malfunctioning grocery store freezers before spoilage occurs.
+- Trigger personalized outreach workflows when a customer’s journey across apps, websites, or other touchpoints indicates a negative experience.
+- Proactively initiate investigation workflows when a shipment’s status wasn't updated within a defined timeframe, helping to locate lost packages faster.
+- Alert account teams when customers fall into arrears, using customized thresholds for time or outstanding balances per customer.
+- Monitor data pipeline health and automatically rerun failed jobs or alert teams when anomalies or failures are detected.
 
 ## Core concepts
 
 The following concepts are used to build and trigger automated actions and responses in Fabric Activator. 
 
 ## Events and eventstreams
-Fabric Activator treats all data sources as streams of events. An event represents an observation about the state of an object and typically includes:
+Fabric Activator treats all data sources as streams of events. An event represents an observation about the state of an object and typically includes an identifier for the object, a timestamp, and values of the fields being monitored.
 
-- An identifier for the object,
-- A timestamp, and
-- The values of the fields being monitored.
-
-Eventstreams vary in frequency. For example:
-
-- **IoT sensors** emit events multiple times per second.
-- **Logistics systems** generate events sporadically, such as when packages are scanned at shipping locations.
+Eventstreams vary in frequency. For example, IoT sensors emit events multiple times per second, and logistics systems generate events sporadically, such as when packages are scanned at shipping locations.
 
 An eventstream is a specific item type in Microsoft Fabric. The Eventstreams feature within the Real-Time Intelligence workload allows you to ingest, transform, and route real-time events—without writing any code. Fabric Activator monitors the eventstream and automatically takes action when defined patterns or thresholds are detected.
 
@@ -50,16 +41,9 @@ Even data from Power BI is treated as an eventstream. In this case, events are p
 
 ## Objects
 
-In Fabric Activator, the entities you monitor are called business objects, which can be either physical or conceptual. Examples include:
+In Fabric Activator, the entities you monitor are called business objects, which can be either physical or conceptual. Examples include physical objects such as freezers, vehicles, packages, and users, and conceptual objects such as advertising campaigns, customer accounts, user sessions.
 
-**Physical objects**: freezers, vehicles, packages, users
-**Conceptual objects**: advertising campaigns, customer accounts, user sessions
-
-To model a business object in Activator, you:
-
-1. Connect one or more eventstreams.
-1. Select a column to serve as the object ID.
-1. Specify the fields you want to treat as properties of the object.
+To model a business object in Activator, you connect one or more eventstream, slect a column to serve as the object ID, and specify the fields you want to treat as properties of the object.
 
 The term **object instance** refers to a specific example of a business object such as a particular freezer, vehicle, or user session. In contrast, object typically refers to the general definition or class (for example, “freezer” as a type). The term population is used to the full set of object instances being monitored.
 
@@ -110,27 +94,6 @@ To evaluate these rules effectively, Fabric Activator tracks active object IDs, 
 For instance, a toll station might track vehicles (object IDs) as they pass through. Each vehicle generates events (for example, entry and exit scans), and only those objects with recent activity are considered active and evaluated by the system.
 
 There are also limits based on the number of distinct object IDs (number of packages) being tracked within the lookback window. 
-
-
-## Fabric Activator creation workflow
-There are two common ways to get started:
-
-- Start from the Activator
-    1. Create a new Activator in your Fabric workspace.
-    1. Use Get events to connect the Activator to an existing eventstream.
-    1. From the eventstream, define your objects (for example, packages, vehicles) by selecting an object ID column and relevant fields.
-    1. Create properties on those objects, such as smoothed temperature averages or status flags.
-    1. Build a rule using those objects and properties. Example: **Email me if the temperature of a package exceeds 60°C**.
-    1. In the rule designer, configure:
-        - Conditions (for example, temperature > 60°C)
-        - Parameters (for example, lookback period, thresholds)
-        - Aggregations (for example, average over time)
-        - Actions (for example, send an email, create a Fabric item, trigger a Power Automate flow)
-- Start from the Eventstream
-    1. Open an existing eventstream in Microsoft Fabric.
-    1. Add a Fabric Activator destination to the eventstream.
-    1. Confirm that a new Activator linked to the stream.
-    1. Open the Activator and proceed to define objects, properties, and rules.
 
 ## Related content
 
