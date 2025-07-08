@@ -45,7 +45,7 @@ If you are setting up an Activator rule from one of the embedded experiences suc
 :::image type="content" source="media/activator-trigger-fabric-items/pass-parameters-from-real-time-hub.png" alt-text="Screenshot showing creating storage event trigger from Real Time hub." lightbox="media/activator-trigger-fabric-items/pass-parameters-from-real-time-hub.png":::
 
 
-Activator enables passing parameters in string, boolean, and number (float). To pass number and boolean, please follow the guidelines below:
+Activator enables passing parameters in string, boolean, and number (float). Follow the guidelines to pass number and boolean,:
 
 * Number
 
@@ -77,7 +77,7 @@ Activator enables passing parameters in string, boolean, and number (float). To 
 
 
 > [!NOTE]
-> Please make sure the parameter name and type are defined exactly the same as defined the activated Fabric item. If you have any feedback or ideas regarding this feature, please share it on [Activator community](aka.ms/ActivatorCommunity)
+> Make sure the parameter name and type are defined exactly the same as defined the activated Fabric item. If you have any feedback or ideas regarding this feature, share it on [Activator community](aka.ms/ActivatorCommunity)
 
 
 ## Related content
