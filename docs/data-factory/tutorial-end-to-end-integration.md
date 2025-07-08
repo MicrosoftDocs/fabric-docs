@@ -5,7 +5,7 @@ ms.author: whhender
 ms.reviewer: xupzhou
 author: whhender
 ms.topic: tutorial
-ms.custom: pipelines
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 05/20/2025
 ---
 

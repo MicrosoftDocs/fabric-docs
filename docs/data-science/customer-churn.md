@@ -1,12 +1,12 @@
 ---
 title: 'Tutorial: create, evaluate, and score a churn prediction model'
 description: This tutorial describes a data science workflow with an end-to-end example of building a model to predict churn.
-ms.author: lagayhar 
+ms.author: lagayhar
 author: lgayhardt
 ms.reviewer: sgilley
 reviewer: sdgilley
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 01/14/2025
 #customer intent: As a data scientist, I want to build a machine learning model so I can predict customer churn.
 ---
@@ -123,7 +123,7 @@ if not IS_CUSTOM_DATA:
 # With an Azure Synapse Analytics blob, this can be done in one line
 
 # Download demo data files into the lakehouse if they don't exist
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/bankcustomerchurn"
     file_list = ["churn.csv"]
     download_path = "/lakehouse/default/Files/churn/raw"
 

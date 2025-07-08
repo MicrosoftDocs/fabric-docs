@@ -7,6 +7,7 @@ ms.reviewer: salilkanade, dhsundar, jacinda-eng
 ms.date: 05/07/2025
 ms.topic: how-to
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
+ms.custom: sfi-image-nochange
 ---
 
 # Warehouse connectivity in Microsoft Fabric

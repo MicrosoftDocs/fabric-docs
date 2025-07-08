@@ -231,7 +231,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | containerId | query | False | string | The specific driver container ID. Leave it not specified if you aren't sure what the driver container ID is. |
 | isDownload | query | False | bool | True to download the log file as a stream. Default as false. |
 | isPartial | query | False | bool | Only take effect when isDownload is true. True to download a part of file content according to the given offset and size. Default as false to download the whole file. |
-| offset, size   | query | False  | long | The starting offset (in byte) and the size (in byte) to read the file content. Only take effect when isDownload = true and isPartial = true <br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br>- For size, the default value is 1M (1024*1024) bytes. |
+| offset, size   | query | False  | long | The starting offset (in byte) and the size (in byte) to read the file content. Only take effect when isDownload = true and isPartial = true <br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br>- For size, the default value is 1M (1024*1024) bytes. <br> *Note that the parameter "offset" is only valid while the Spark application is still running. Once the application stops running, the parameter will have no effect. Consider using rolling driver logs instead.* |
 
 ### Request body
 

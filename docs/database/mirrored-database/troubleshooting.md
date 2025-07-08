@@ -4,7 +4,7 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 03/14/2025
+ms.date: 07/03/2025
 ms.topic: troubleshooting
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -33,7 +33,7 @@ Review limitations documentation for each data source:
 - [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](azure-sql-managed-instance-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (Preview)](azure-database-postgresql-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Snowflake](snowflake-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases From SQL Server](sql-server-limitations.md)
 - [Limitations in mirroring from Fabric SQL database](../sql/mirroring-limitations.md)
@@ -100,6 +100,7 @@ This section contains general Mirroring troubleshooting steps.
 
 1. Check your connection details are correct, server name, database name, username, and password.
 1. Check the server is not behind a firewall or private virtual network. Open the appropriate firewall ports.
+    - Some mirrored sources support virtual network data gateway or on-premises data gateways, consult the source's documentation for support of this feature.
 
 #### No views are replicated
 

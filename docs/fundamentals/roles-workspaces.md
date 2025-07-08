@@ -1,8 +1,8 @@
 ---
 title: Roles in workspaces in Microsoft Fabric
 description: Learn about the different roles you can assign to workspace users to grant access to read, write, edit, and more.
-author: paulinbar
-ms.author: painbar
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: yicw, mesrivas
 ms.topic: conceptual
 ms.date: 05/01/2025

@@ -19,6 +19,8 @@
         href: pricing-pipelines.md
       - name: Pricing Dataflow Gen2
         href: pricing-dataflows-gen2.md
+      - name: Pricing Copy job
+        href: pricing-copy-job.md
       - name: Pricing Apache Airflow job
         href: pricing-apache-airflow-job.md
       - name: Cost estimation from Azure Data Factory to Fabric
@@ -61,7 +63,7 @@
       href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
       href: transform-data.md
-    - name: Decide - Copy activity, dataflow, or Spark?
+    - name: Decide - Copy activity, Copy job, dataflow, or Spark?
       href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md
     - name: How to access on-premises Data
       href: how-to-access-on-premises-data.md
@@ -71,10 +73,14 @@
       href: tutorial-bring-azure-data-factory-to-fabric.md      
   - name: Migrate to Fabric
     items:
+    - name: Compare Azure Data Factory to Data Factory in Fabric
+      href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Pipelines
       items:
       - name: Migrate from Azure Data Factory to Data Factory in Microsoft Fabric
-        href: migrate-from-azure-data-factory.md      
+        href: migrate-from-azure-data-factory.md  
+      - name: Bring your Azure Data Factory to Fabric
+        href: migrate-pipelines-azure-data-factory-item.md 
       - name: Planning your migration from Azure Data Factory to Fabric
         href: migrate-planning-azure-data-factory.md
       - name: Activity Continuity
@@ -115,12 +121,6 @@
     items:
     - name: Connector overview
       href: connector-overview.md
-    - name: Dataflow Gen2 connectors
-      href: dataflow-support.md
-    - name: Data pipeline connectors
-      href: pipeline-support.md
-    - name: Copy job connectors
-      href: copy-job-support.md
     - name: Service principal support
       href: service-principals.md
     - name: Access database
@@ -855,6 +855,8 @@
       href: cdc-copy-job.md
     - name: CI/CD for Copy job
       href: cicd-copy-job.md
+    - name: REST API Capabilities
+      href: copy-job-rest-api-capabilities.md    
   - name: Data gateway
     items:
     - name: On-premises data gateways docs
@@ -1027,8 +1029,6 @@
       href: frequently-asked-questions.yml
     - name: Gateway considerations for data destinations in Dataflow Gen2
       href: gateway-considerations-output-destinations.md
-    - name: Getting from Azure Data Factory to Data Factory in Fabric
-      href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Getting from Dataflow Gen1 to Gen2
       href: dataflows-gen2-overview.md
     - name: Pipeline activities troubleshooting guide
@@ -1083,9 +1083,3 @@
       href: data-factory-limitations.md
     - name: Fabric known issues
       href: ../get-started/fabric-known-issues.md?toc=/fabric/data-factory/toc.json
-  - name: Reference
-    items:
-    - name: CI/CD for data pipelines
-      href: git-integration-deployment-pipelines.md
-    - name: Data pipelines REST API
-      href: pipeline-rest-api.md

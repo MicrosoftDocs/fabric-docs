@@ -6,7 +6,7 @@ author: lgayhardt
 ms.reviewer: midesa
 ms.topic: how-to
 ms.custom:
-ms.date: 11/15/2023
+ms.date: 06/30/2025
 ---
 
 # Train explainable boosting machines - classification (preview)
@@ -53,7 +53,7 @@ mlflow.set_experiment("ebm_classification_nyc_taxi")
 
 ## Import libraries
 
-Next, import the essential packages used for analysis:
+Next, add the following code to import the essential packages used for analysis:
 
 ```python
 # Import necessary packages
@@ -72,7 +72,7 @@ These imported packages provide the fundamental tools and functionalities needed
 
 ## Load data
 
-Next, retrieve the NYC Yellow Taxi data from Azure Machine Learning Open Datasets and optionally down-sample the dataset to expedite development:
+Next, add the following code to retrieve the NYC Yellow Taxi data from Azure Machine Learning Open Datasets and optionally down-sample the dataset to expedite development:
 
 ```python
 # Import NYC Yellow Taxi data from Azure Open Datasets
@@ -108,7 +108,7 @@ In this section, you prepare the dataset by filtering out rows with outliers and
 
 ### Generate features
 
-Create new derived features that are expected to enhance model performance:
+Create add code for new derived features that are expected to enhance model performance:
 
 ```python
 taxi_df = sampled_taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paymentType', 'rateCodeId', 'passengerCount',
@@ -129,7 +129,7 @@ taxi_df = sampled_taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paym
 
 ```
 
-Now that you've created new variables, drop the columns from which they were derived. The dataframe is now more streamlined for model input. Additionally, you can generate further features based on the newly created columns:
+Now that you've created new variables, add code to drop the columns from which they were derived. The dataframe is now more streamlined for model input. Additionally, you can generate further features based on the newly created columns:
 
 ```python
 taxi_featurised_df = taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paymentType', 'passengerCount',
@@ -151,7 +151,7 @@ In the context of SynapseML EBMs, the ```Estimator``` expects input data to be i
 
 Presently, SynapseML EBMs employ the ```StringIndexer``` approach to manage categorical variables. Currently, SynapseML EBMs don't offer specialized handling for categorical features.
 
-Here's a series of steps to prepare the data for use with SynapseML EBMs:
+Here's a series of steps to add to the code in order to prepare the data for use with SynapseML EBMs:
 
 ```python
 # Convert categorical features into numerical representations using StringIndexer
@@ -182,7 +182,7 @@ These data preparation steps are crucial for aligning the data format with the r
 
 ## Generate test and training datasets
 
-Now divide the dataset into training and testing sets using a straightforward split. 70% of the data is allocated for training and 30% for testing the model:
+Now add code to divide the dataset into training and testing sets using a straightforward split. 70% of the data is allocated for training and 30% for testing the model:
 
 ```python
 # Decide on the split between training and test data from the dataframe 
@@ -198,7 +198,7 @@ This division of data allows us to train the model on a substantial portion whil
 
 ## Train the model
 
-Now, train the EBM model and then evaluate its performance using the Area under the Receiver Operating Characteristic (ROC) curve (AUROC) as the metric:
+Now, add code to train the EBM model and then evaluate its performance using the Area under the Receiver Operating Characteristic (ROC) curve (AUROC) as the metric:
 
 ```python
 # Create an instance of the EBMClassifier
@@ -223,14 +223,14 @@ This process entails training the EBM model on the training dataset and then uti
 
 ## View global explanations
 
-To visualize the model's overall explanation, you can obtain the visualization wrapper and utilize the ```interpret``` library's ```show``` method. The visualization wrapper acts as a bridge to facilitate the visualization experience of the model. Here's how you can do it:
+To visualize the model's overall explanation, you can add code to obtain the visualization wrapper and utilize the ```interpret``` library's ```show``` method. The visualization wrapper acts as a bridge to facilitate the visualization experience of the model. Here's how you can do it:
 
 ```python
 wrapper = model.getVizWrapper()
 explanation = wrapper.explain_global()
 ```
 
-Next, import the ```interpret``` library and use the ```show``` method to display the explanation:
+Next, add code to import the ```interpret``` library and use the ```show``` method to display the explanation:
 
 ```python
 import interpret
@@ -247,13 +247,13 @@ The provided explanations are at a global level, but there are scenarios where p
 
 Unlike global explanations, there's currently no direct integration with the ```interpret``` visualization for per-feature outputs. This is because global visualizations scale primarily with the number of features (which is typically small), while local explanations scale with the number of rows (which, if a Spark dataframe, can be substantial).
 
-Here's how to set up and use the ```featurescores```:
+Here's the code to add to set up and use the ```featurescores```:
 
 ```python
 prediction2 = model.setFeatureScoresCol("featurescores").transform(train_data_df)
 ```
 
-For illustration purposes, let's print the details of the first example:
+For illustration purposes, let's add code to print the details of the first example:
 
 ```python
 # Convert to Pandas for easier inspection

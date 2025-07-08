@@ -4,7 +4,7 @@ description: A known issue is posted where dataflow refreshes have slow performa
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/04/2025
+ms.date: 06/25/2025
 ms.custom: known-issue-1167
 ---
 
@@ -14,7 +14,7 @@ When you refresh a Dataflow Gen2 with CI/CD capability in Fabric, you might noti
 
 **Status:** Open
 
-**Product Experience:** Power BI
+**Product Experience:** Data Factory
 
 ## Symptoms
 

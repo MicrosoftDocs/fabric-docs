@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 07/01/2024
+ms.date: 06/16/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -13,7 +13,6 @@ ms.custom:
 # Salesforce objects connector overview
 
 The Salesforce objects connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
-
 
 ## Support in Dataflow Gen2
 
