@@ -140,6 +140,8 @@ landingContent:
             url: cosmos-db/mirror-onelake.md
       - linkListType: how-to-guide
         links:
+          - text: Access data from a lakehouse
+            url: cosmos-db/how-to-access-data-lakehouse.md
           - text: Index vector data
             url: cosmos-db/how-to-index-vector-data.md
       - linkListType: concept

@@ -20,6 +20,8 @@ items:
     items:
       - name: Mirror to OneLake
         href: mirror-onelake.md
+      - name: Access data from a lakehouse
+        href: how-to-access-data-lakehouse.md
       - name: Index vector data
         href: how-to-index-vector-data.md
   - name: Deploy and monitor
