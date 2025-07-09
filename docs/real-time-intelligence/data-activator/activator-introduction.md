@@ -43,7 +43,7 @@ Even data from Power BI is treated as an eventstream. In this case, events are p
 
 In Fabric Activator, the entities you monitor are called business objects, which can be either physical or conceptual. Examples include physical objects such as freezers, vehicles, packages, and users, and conceptual objects such as advertising campaigns, customer accounts, user sessions.
 
-To model a business object in Activator, you connect one or more eventstream, slect a column to serve as the object ID, and specify the fields you want to treat as properties of the object.
+To model a business object in Activator, you connect one or more eventstream, select a column to serve as the object ID, and specify the fields you want to treat as properties of the object.
 
 The term **object instance** refers to a specific example of a business object such as a particular freezer, vehicle, or user session. In contrast, object typically refers to the general definition or class (for example, “freezer” as a type). The term population is used to the full set of object instances being monitored.
 
@@ -96,4 +96,4 @@ For instance, a toll station might track vehicles (object IDs) as they pass thro
 There are also limits based on the number of distinct object IDs (number of packages) being tracked within the lookback window. 
 
 ## Next step
-See * [Tutorial: Create and activate a Fabric Activator rule](activator-tutorial.md).
+See [Tutorial: Create and activate a Fabric Activator rule](activator-tutorial.md).

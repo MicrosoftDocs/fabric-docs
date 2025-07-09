@@ -141,7 +141,7 @@ Create a rule that alerts you if the transit time in delivery exceeds a threshol
     :::image type="content" source="media/activator-tutorial/window-step-size.png" alt-text="Screenshot showing the Definition pane with the window and step size." lightbox="media/activator-tutorial/window-step-size.png"::: 
 1. The Monitor chart updates to reflect the summarization, and your rule Monitor chart looks like this.
 
-    :::image type="content" source="media/activator-tutorial/activator-window.png" alt-text="Average transit time chart for activator tutorial." lightbox="media/activator-tutorial/activator-window.png":::
+    :::image type="content" source="media/activator-tutorial/activator-window.png" alt-text="Screenshot of the Average transit time chart for activator tutorial." lightbox="media/activator-tutorial/activator-window.png":::
 6. Test your rule by selecting the **Send me a test action** button. Make sure you get an alert. If using email, it might take a minute or two to arrive.
 
     :::image type="content" source="media/activator-tutorial/send-test-action-2.png" alt-text="Screenshot that shows the Test button selected on the ribbon." lightbox="media/activator-tutorial/send-test-action-2.png":::
