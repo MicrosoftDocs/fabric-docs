@@ -236,6 +236,7 @@ The following operations are available in the audit logs.
 | Deleted Power BI semantic model rows | DeleteDatasetRows | Indicates that the Push Datasets - Datasets DeleteRows API was called  |
 | Deleted Power BI semantic model | DeleteDataset |   |
 | Deleted Power BI template app or a workspace for a template app | DeleteTemplateApp |   |
+| Deleted Publish to Web Embed Code | DeleteEmbedCode |   |
 | Deleted a SQL query from a SQL analytics endpoint | DeleteSqlQueryFromSqlAnalyticsEndpointLakehouse | This audit event covers both deleting SQL and visual queries from the SQL analytics endpoint of the Lakehouse  |
 | Deleted SQL query from a Warehouse | DeleteSqlQueryFromWarehouse | Covers both deleting SQL and visual queries from the Warehouse  |
 | Deleted an organizational custom visual | DeleteOrganizationalGalleryItem |   |
