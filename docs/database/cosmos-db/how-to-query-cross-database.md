@@ -43,12 +43,12 @@ Start by accessing the SQL analytics endpoint for the first Cosmos DB in Fabric 
 
     ```tsql
     SELECT TOP 5
-      regionOfOrigin AS geography,
+      countryOfOrigin AS geography,
       COUNT(*) AS itemCount
     FROM
       [<first-database-name>].[SampleData]
     GROUP BY
-      regionOfOrigin
+      countryOfOrigin
     ORDER BY
       COUNT(*) DESC
     ```
@@ -112,9 +112,9 @@ Finally, run a query that combines data from both databases.
     INNER JOIN
       [<second-database-endpoint>].[<second-database-name>].[<second-database-container-name>] regionCodes
     ON
-      sampleData.regionOfOrigin = regionCodes.name
+      sampleData.countryOfOrigin = regionCodes.name
     GROUP BY
-      sampleData.regionOfOrigin, regionCodes.code
+      sampleData.countryOfOrigin, regionCodes.code
     ORDER BY
       itemCount DESC
     ```
