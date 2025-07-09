@@ -15,7 +15,12 @@ ms.date: 03/25/2025
 
 OneLake security uses role assignments to apply permissions to its members. You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. Every member in the user group gets the assigned role. If someone is in two or more security groups or Microsoft 365 groups, they get the highest level of permission that is provided by the roles. If you nest user groups and assign a role to a group, all of the contained users have permissions.
 
-OneLake security enables users to define data access roles for **Lakehouse Items** only.
+OneLake security enables users to define data access roles for the following Fabric items only.
+
+| Fabric item | Supported |
+| ---- | --- |
+| Lakehouse | Yes |
+| Azure Databricks Mirrored Catalog | Yes |
 
 OneLake security restricts data access for users with workspace **Viewer** or read access to a lakehouse. It doesn't apply to workspace Admins, Members, or Contributors. As a result, OneLake security supports only Read level of permissions.
 
