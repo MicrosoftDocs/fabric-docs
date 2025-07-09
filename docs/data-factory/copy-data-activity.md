@@ -1,29 +1,31 @@
 ---
 title: How to copy data using copy activity
-description: Learn how to add a copy activity directly or through the copy assistant.
+description: Learn how to use copy activities in Data Pipeline to move data between cloud data stores. Includes steps for using the copy assistant and adding activities directly.
 ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
-ms.date: 08/05/2024
+ms.date: 07/09/2025
 ---
 
 # How to copy data using copy activity
 
-In Data Pipeline, you can use the Copy activity to copy data among data stores located in the cloud. 
+In a Data Pipeline, you can use the Copy activity to copy data between data stores in the cloud. After you copy the data, you can use other activities in your pipeline to transform and analyze it.
 
-After you copy the data, you can use other activities to further transform and analyze it. You can also use the Copy activity to publish transformation and analysis results for business intelligence (BI) and application consumption.
+The Copy activity works by connecting to your data sources and destinations, then moving data efficiently between them. Here's how the service handles the copy process:
 
-To copy data from a source to a destination, the service that runs the Copy activity performs these steps:
+1. **Connects to your source**: Establishes a secure connection to read data from your source data store.
+1. **Processes the data**: Handles serialization/deserialization, compression/decompression, column mapping, and data type conversions based on your configuration.
+1. **Writes to destination**: Transfers the processed data to your destination data store.
+1. **Provides monitoring**: Tracks the copy operation and provides detailed logs and metrics for troubleshooting and optimization.
 
-1. Reads data from a source data store.
-1. Performs serialization/deserialization, compression/decompression, column mapping, and so on. It performs these operations based on the configuration.
-1. Writes data to the destination data store.
+> [!TIP]
+> If you only need to copy your data, and don't need transformations, a **Copy job** might be a better option for you. Copy jobs provide a simplified experience for data movement scenarios that don't require creating a full data pipeline. See: [the Copy jobs overview](what-is-copy-job.md) or [use our decision table to compare Copy activity and Copy job](../fundamentals/decision-guide-pipeline-dataflow-spark#copy-activity-copy-job-dataflow-eventstream-and-spark-properties.md).
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+To get started, you need to complete these prerequisites:
 
 - A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 
@@ -47,23 +49,23 @@ Follow these steps to set up your copy activity using copy assistant.
    :::image type="content" source="media/copy-data-activity/choose-data-source.png" alt-text="Screenshot of Choose data source screen." lightbox="media/copy-data-activity/choose-data-source.png":::
 
 
-2. Create a connection to your data source by selecting **Create new connection**.
+1. Create a connection to your data source by selecting **Create new connection**.
 
    :::image type="content" source="media/copy-data-activity/create-new-azure-blob-storage-connection.png" alt-text="Screenshot showing where to select New connection." lightbox="media/copy-data-activity/create-new-azure-blob-storage-connection.png":::
 
     After you select **Create new connection**, fill in the required connection information and then select **Next**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-connectors-in-fabric).
 
-   If you have existing connections, you can select **Existing connection** and select your connection from the drop-down list.
+   If you already have connections, you can select **Existing connection** and select your connection from the drop-down list.
 
    :::image type="content" source="media/copy-data-activity/existing-connection.png" alt-text="Screenshot showing the existing connection." lightbox="media/copy-data-activity/existing-connection.png":::
 
-3. Choose the file or folder to be copied in this source configuration step, and then select **Next**.
+1. Choose the file or folder to be copied in this source configuration step, and then select **Next**.
 
    :::image type="content" source="media/copy-data-activity/choose-copy-file-or-folder.png" alt-text="Screenshot showing where to select the data to be copied." lightbox="media/copy-data-activity/choose-copy-file-or-folder.png":::
 
 ### Configure your destination
 
-1. Select a data source type from the category. You'll use Azure Blob Storage as an example. You can either create a new connection that links to a new Azure Blob Storage account by following the steps in the previous section or use an existing connection from the connection drop-down list. The capabilities of **Test connection** and **Edit** are available to each selected connection.
+1. Select a data source type from the category. You'll use Azure Blob Storage as an example. You can either create a new connection that links to a new Azure Blob Storage account by following the steps in the previous section or use an existing connection from the connection drop-down list. The **Test connection** and **Edit** capabilities are available for each selected connection.
 
    :::image type="content" source="media/copy-data-activity/choose-destination.png" alt-text="Screenshot showing how to select Azure Blob Storage." lightbox="media/copy-data-activity/choose-destination.png":::
 
@@ -74,7 +76,7 @@ Follow these steps to set up your copy activity using copy assistant.
    :::image type="content" source="media/copy-data-activity/connect-to-data-destination.png" alt-text="Screenshot of Connect to data destination." lightbox="media/copy-data-activity/connect-to-data-destination.png":::
 
    > [!NOTE]
-   > You can only use a single on-premises data gateway within the same Copy activity. If both source and sink are on-premises data sources, they must use the same gateway. To move data between on-premises data sources with different gateways, you must copy using the first gateway to an intermediate cloud source in one Copy activity. Then you can use another Copy activity to copy it from the intermediate cloud source using the second gateway.
+   > You can only use a single on-premises data gateway within the same Copy activity. If both source and sink are on-premises data sources, they need to use the same gateway. To move data between on-premises data sources with different gateways, you need to copy using the first gateway to an intermediate cloud source in one Copy activity. Then you can use another Copy activity to copy it from the intermediate cloud source using the second gateway.
 
 ### Review and create your copy activity
 
@@ -117,7 +119,7 @@ To learn how to configure your general settings, see [General](activity-overview
    
       :::image type="content" source="media/copy-data-activity/configure-connection-details.png" alt-text="Screenshot showing New connection page." lightbox="media/copy-data-activity/configure-connection-details.png":::
 
-   1. Once your connection is created successfully, it takes you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Azure SQL Database connection from the drop-down directly if you already created it before. The capabilities of **Test connection** and **Edit** are available to each selected connection. Then select **Azure SQL Database** in **Connection** type.
+   1. Once your connection is created, it takes you back to the data pipeline page. Then select **Refresh** to get the connection that you created from the drop-down list. You could also choose an existing Azure SQL Database connection from the drop-down directly if you already created it before. The **Test connection** and **Edit** capabilities are available for each selected connection. Then select **Azure SQL Database** in **Connection** type.
    
       :::image type="content" source="media/copy-data-activity/refresh-source-connection-in-pipeline.png" alt-text="Screenshot showing where to refresh your connection." lightbox="media/copy-data-activity/refresh-source-connection-in-pipeline.png":::
 
@@ -135,12 +137,12 @@ To learn how to configure your general settings, see [General](activity-overview
 
    :::image type="content" source="media/copy-data-activity/configure-destination-connection-in-pipeline.png" alt-text="Screenshot showing where to select destination type." lightbox="media/copy-data-activity/configure-destination-connection-in-pipeline.png":::
 
-2. Choose to use **Lakehouse** in **Workspace data store type**. Select **+ New**, and it navigates you to the Lakehouse creation page. Specify your Lakehouse name and then select **Create**.
+1. Choose to use **Lakehouse** in **Workspace data store type**. Select **+ New**, and it takes you to the Lakehouse creation page. Specify your Lakehouse name and then select **Create**.
 
    :::image type="content" source="media/copy-data-activity/create-lakehouse.png" alt-text="Screenshot showing Lakehouse creation." lightbox="media/copy-data-activity/create-lakehouse.png":::
 
 
-3. Once your connection is created successfully, it takes you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Lakehouse connection from the drop-down directly if you already created it before.
+1. Once your connection is created, it takes you back to the data pipeline page. Then select **Refresh** to get the connection that you created from the drop-down list. You could also choose an existing Lakehouse connection from the drop-down directly if you already created it before.
 
    :::image type="content" source="media/copy-data-activity/destination-connection-in-pipeline.png" alt-text="Screenshot showing selecting connection." lightbox="media/copy-data-activity/destination-connection-in-pipeline.png":::
 
@@ -152,17 +154,17 @@ To learn how to configure your general settings, see [General](activity-overview
 
    :::image type="content" source="media/copy-data-activity/configure-destination-file-details-in-pipeline.png" alt-text="Screenshot of Advanced options." lightbox="media/copy-data-activity/configure-destination-file-details-in-pipeline.png":::
 
-Now you can either save your data pipeline with this single copy activity or continue to design your data pipeline.
+Now you can either save your data pipeline with this copy activity or continue to design your data pipeline.
 
 ### Configure your mappings under mapping tab
 
-If the connector that you apply supports mapping, you can go to **Mapping** tab to configure your mapping. 
+If the connector that you use supports mapping, you can go to **Mapping** tab to configure your mapping.
 
-1. Select **Import schemas** to import your data schema. 
+1. Select **Import schemas** to import your data schema.
 
    :::image type="content" source="media/copy-data-activity/configure-mapping-in-pipeline.png" alt-text="Screenshot of mapping settings 1." lightbox="media/copy-data-activity/configure-mapping-in-pipeline.png":::
 
-2. You can see the auto mapping is shown up. Specify your **Source** column and **Destination** column. If you create a new table in the destination, you can customize your **Destination** column name here. If you want to write data into the existing destination table, you can't modify the existing **Destination** column name. You can also view the **Type** of source and destination columns. 
+1. You can see the auto mapping shows up. Specify your **Source** column and **Destination** column. If you create a new table in the destination, you can customize your **Destination** column name here. If you want to write data into the existing destination table, you can't modify the existing **Destination** column name. You can also view the **Type** of source and destination columns.
 
    :::image type="content" source="media/copy-data-activity/configure-mapping-in-pipeline-2.png" alt-text="Screenshot of mapping settings 2." lightbox="media/copy-data-activity/configure-mapping-in-pipeline-2.png":::
 
@@ -180,15 +182,15 @@ See the following table for the description of each setting.
 |---------|---------|---------|
 |**Intelligent throughput optimization** |Specify to optimize the throughput. You can choose from: <br>• **Auto**<br>• **Standard**<br>• **Balanced**<br>• **Maximum**<br><br> When you choose **Auto**, the optimal setting is dynamically applied based on your source-destination pair and data pattern. You can also customize your throughput, and custom value can be 2-256 while higher value implies more gains.  | dataIntegrationUnits |
 |**Degree of copy parallelism** | Specify the degree of parallelism that data loading would use. | parallelCopies |
-|**Fault tolerance** |When selecting this option, you can ignore some errors occurred in the middle of copy process. For example, incompatible rows between source and destination store, file being deleted during data movement, etc.  |• enableSkipIncompatibleRow <br> • skipErrorFile: <br>  &nbsp;&nbsp; fileMissing <br>&nbsp;&nbsp; fileForbidden <br> &nbsp;&nbsp; invalidFileName |
-|**Enable logging** |When selecting this option, you can log copied files, skipped files and rows.| / |
-|**Enable staging** | Specify whether to copy data via an interim staging store. Enable staging only for the beneficial scenarios.| enableStaging |
+|**Fault tolerance** |When you select this option, you can ignore some errors that happen in the middle of copy process. For example, incompatible rows between source and destination store, file being deleted during data movement, etc.  |• enableSkipIncompatibleRow <br> • skipErrorFile: <br>  &nbsp;&nbsp; fileMissing <br>&nbsp;&nbsp; fileForbidden <br> &nbsp;&nbsp; invalidFileName |
+|**Enable logging** |When you select this option, you can log copied files, skipped files and rows.| / |
+|**Enable staging** | Specify whether to copy data via an interim staging store. Enable staging only for helpful scenarios.| enableStaging |
 | **Data store type** | When enable staging, you can choose **Workspace** and **External** as your data store type.| / |
 | *For **Workspace*** |  |  |
 |**Workspace**| Specify to use built-in staging storage. | / |
 | *For **External*** |  |  |
 | **Staging account connection** |Specify the connection of an [Azure Blob Storage](connector-azure-blob-storage.md) or [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md), which refers to the instance of Storage that you use as an interim staging store. Create a staging connection if you don't have it. | connection (under *`externalReferences`*) |
-| **Storage path** | Specify the path that you want to contain the staged data. If you do not provide a path, the service creates a container to store temporary data. Specify a path only if you use Storage with a shared access signature, or you require temporary data to be in a specific location. | path |
+| **Storage path** | Specify the path that you want to contain the staged data. If you don't provide a path, the service creates a container to store temporary data. Specify a path only if you use Storage with a shared access signature, or you require temporary data to be in a specific location. | path |
 | **Enable compression** | Specifies whether data should be compressed before it's copied to the destination. This setting reduces the volume of data being transferred. | enableCompression |
 |  |  |  |
 | **Preserve** | Specify whether to preserve metadata/ACLs during data copy. | preserve |
@@ -205,7 +207,7 @@ Parameters can be used to control the behavior of a pipeline and its activities.
 
     :::image type="content" source="./media/copy-data-activity/add-dynamic-content-page.png" alt-text="Screenshot showing the Add dynamic content page.":::
 
-1. Specify the name for your parameter and give it a default value if you want, or you can specify the value for the parameter after selecting **Run** in the pipeline. 
+1. Specify the name for your parameter and give it a default value if you want, or you can specify the value for the parameter after selecting **Run** in the pipeline.
 
     :::image type="content" source="./media/copy-data-activity/new-parameter.png" alt-text="Screenshot shows creating a new parameter.":::
 
@@ -226,7 +228,6 @@ Parameters can be used to control the behavior of a pipeline and its activities.
 1. Select **Save** to go back to the **Add dynamic content** pane. Then select your parameter so it appears in the expression box. Then select **OK**. You'll go back to the pipeline page and can see the parameter expression is specified after **Lakehouse object ID**/**Data Warehouse object ID**/**KQL Database object ID**.
 
     :::image type="content" source="./media/copy-data-activity/select-parameter.png" alt-text="Screenshot showing selecting parameter.":::
-
 
 ## Related content
 
