@@ -13,15 +13,12 @@ ms.custom: dataflows
 
 After you've cleaned and prepared your data with Dataflow Gen2, you want to land your data in a destination. You can do this using the data destination capabilities in Dataflow Gen2. With this capability, you can pick from different destinations, like Azure SQL, Fabric Lakehouse, and many more. Dataflow Gen2 then writes your data to the destination, and from there you can use your data for further analysis and reporting.
 
-The following list contains the supported data destinations.
+The following list contains the supported data destinations:
 
-* Azure SQL databases
-* Azure Data Explorer (Kusto)
-* Fabric Lakehouse
-* Fabric Warehouse
-* Fabric KQL database
-* Fabric SQL database
-* SharePoint Files (preview)
+[!INCLUDE [dataflow-gen2-data-destinations](../includes/dataflow-gen2-data-destinations.md)]
+
+> [!NOTE]
+>To load your data to the Fabric Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. More information: [Connectivity to data warehousing in Microsoft Fabric](../data-warehouse/connectivity.md)
 
 ## Entry points
 
