@@ -5,7 +5,7 @@ description: Learn how to query data across multiple Cosmos DB databases in Micr
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/03/2025
+ms.date: 07/09/2025
 ---
 
 # Query cross-database data in Cosmos DB in Microsoft Fabric (preview)
@@ -22,13 +22,16 @@ The mirrored SQL Analytics endpoint makes it possible to create queries across t
 
 - At least one other SQL Analytics endpoint for a second Cosmos DB in Fabric database artifact
 
-## Open the SQL Analytics endpoint for the first database
+## Open the SQL analytics endpoint for the first database
 
 Start by accessing the SQL analytics endpoint for the first Cosmos DB in Fabric database.
 
 1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
 
 1. Navigate to your first Cosmos DB database.
+
+    > [!IMPORTANT]
+    > For this guide, the first Cosmos DB database has the [sample data set](sample-data.md) already loaded. The remaining query examples in this guide assume that you're using the same data set for this database.
 
 1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint**.
 
@@ -40,12 +43,12 @@ Start by accessing the SQL analytics endpoint for the first Cosmos DB in Fabric 
 
     ```tsql
     SELECT TOP 5
-      regionOfOrigin AS geography,
+      countryOfOrigin AS geography,
       COUNT(*) AS itemCount
     FROM
       [<first-database-name>].[SampleData]
     GROUP BY
-      regionOfOrigin
+      countryOfOrigin
     ORDER BY
       COUNT(*) DESC
     ```
@@ -61,7 +64,7 @@ Start by accessing the SQL analytics endpoint for the first Cosmos DB in Fabric 
     | `Argentina` | `17` |
 
     > [!NOTE]
-    > In this example, the query is assuming that we're using a sample data container named `SampleData`.
+    > This query also uses data found in the sample data set in a container named `SampleData`. For more information, see [sample data set](sample-data.md).
 
 ## Connect to the second database endpoint
 
@@ -109,9 +112,9 @@ Finally, run a query that combines data from both databases.
     INNER JOIN
       [<second-database-endpoint>].[<second-database-name>].[<second-database-container-name>] regionCodes
     ON
-      sampleData.regionOfOrigin = regionCodes.name
+      sampleData.countryOfOrigin = regionCodes.name
     GROUP BY
-      sampleData.regionOfOrigin, regionCodes.code
+      sampleData.countryOfOrigin, regionCodes.code
     ORDER BY
       itemCount DESC
     ```
