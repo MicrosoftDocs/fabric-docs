@@ -3,13 +3,13 @@
 # For more information, see https://learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata
 # For valid values of ms.service, ms.prod, and ms.topic, see https://learn.microsoft.com/en-us/help/platform/metadata-taxonomies
 
-title:       # Add a title for the browser tab
-description: # Add a meaningful description for search results
+title:       Shortcuts file transformations
+description: Shortcut transformations convert raw files into Delta tables that stay always in sync with the source data.  
 author:      miquelladeboer # GitHub alias
 ms.author:   mideboer # Microsoft alias
-ms.service:  # Add the ms.service or ms.prod value
+ms.service:  Shortcuts
 # ms.prod:   # To use ms.prod, uncomment it and delete ms.service
-ms.topic:    # Add the ms.topic value
+ms.topic:    how-to
 ms.date:     07/09/2025
 ---
 
