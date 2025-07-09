@@ -59,6 +59,7 @@ To view, edit, or delete an existing stored function, follow these steps:
     1. **Show function script** to view the function script.
     1. **Edit with code** to edit the function script in the **Explore your data** window.
     1. **Delete**
+      
     :::image type="content" source="media/create-functions/drop-down-menu.png" alt-text="Screenshot of the dropdown menu." lightbox="media/create-functions/drop-down-menu.png":::
 1. If you modified the function script, select **Run** to save your changes.
 

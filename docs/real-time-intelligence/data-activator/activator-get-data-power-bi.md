@@ -13,21 +13,31 @@ ai-usage: ai-assisted
 
 # Create an alert in Power BI and fine tune in Fabric Activator
 
-You can [create an alert](/power-bi/) in Power BI on dashboards and reports to monitor changes in data values and receive notifications via email or Teams. Once your alert is ready, you can open it in Fabric Activator to refine it further. Activator allows you to set more granular conditions, integrate with workflows like Power Automate, and expand the alert's capabilities to meet your specific needs.
+You can create alerts in Power BI on dashboards and reports to monitor changes in data values and receive notifications via email or Teams. Once your alert is ready, you can open it in Fabric Activator to refine it further with advanced capabilities like:
+
+- Setting more granular conditions
+- Integrating with Power Automate workflows  
+- Expanding alert capabilities to meet specific business needs
 
 > [!NOTE]
-> In Activator, an "alert" is referred to as a "rule."
+> In Activator, an **alert** is referred to as a **rule**.
 
- ## Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from Power BI
+ ## Get data for Activator from Power BI
 
-You can get data for use in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from many sources. This article describes how to access Power BI report and dashboard alerts and refine those alerts in Activator.
+You can get data for use in Activator from many sources. This article describes how to access Power BI report and dashboard alerts and refine those alerts in Activator:
 
-Use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] to fine tune your rule and set complex conditions that are more granular than is possible in Power BI. Another reason to use [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] is if you want to trigger a Power Automate flow when your rule is activated. Refer to [Create rules](activator-create-activators.md) for information on how to create and edit rules in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)].
+- Fine tune your rule
+- Set complex conditions that are more granular than Power BI allows
+- Trigger Power Automate flows when your rule is activated
+
+For detailed steps on creating and editing rules, see [Create rules](activator-create-activators.md).
 
 ## Prerequisites
 
-* Access to a [workspace](../../get-started/create-workspaces.md) with Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).  
-* Edit permissions for a Power BI report published online to a workspace.
+Before you begin, ensure you have the following prerequisites: 
+
+* **Workspace access:** A [Microsoft Fabric workspace](../../get-started/create-workspaces.md) with [enabled capacity](../../enterprise/licenses.md#capacity)
+* **Report permissions:** Edit access to a Power BI report published to your workspace
 
 ## Create an alert for a Power BI report visual
 
@@ -43,11 +53,12 @@ You can also select the bell icon in the visual.
 
 3. Enter the condition to monitor. For example, select **Sales** as the measure and set a rule to notify you via email when the value drops less than $1,000. 
 
-    Power BI uses the filters in place at the time that you create your alert. Changing the filters on your visual after creating your alert has no effect on the alert logic. Select **Show applied filters** or the filter icon ![Small screenshot of the filter icon which has three horizontal lines.](media/activator-get-data-power-bi/activator.png) to see the filters on your visual.
+    > [!NOTE]
+    > Power BI uses the filters in place at the time that you create your alert. Changing the filters on your visual after creating your alert has no effect on the alert logic. Select **Show applied filters** or the filter icon ![Small screenshot of the filter icon which has three horizontal lines.](media/activator-get-data-power-bi/activator.png) to see the filters on your visual.
 
-4. When you're ready to save your alert, select **Apply.** Selecting **Apply** saves the alert condition in the active report and in an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item. 
+4. When you're ready to save your alert, select **Apply.** Selecting **Apply** saves the alert condition in the active report and in an Activator item. 
 
-    After you create your alert, [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] monitors the data in the visual once per hour. You receive an alert within one hour of your alert condition becoming true. 
+    After you create your alert, Activator monitors the data in the visual once per hour. You receive an alert within one hour of your alert condition becoming true. 
 
     :::image type="content" source="media/activator-get-data/data-activator-get-data-02.png" alt-text="Screenshot of the Set alert window showing the alert conditions.":::
 
@@ -55,17 +66,18 @@ You can also select the bell icon in the visual.
 
     :::image type="content" source="media/activator-get-data-power-bi/activator-change-location.png" alt-text="Screenshot of create an alert window showing daily sales rule.":::
 
-1. To open the alert in Activator, select the ellipses (...) to the right of your new alert name and choose **Open in Activator**. You may have to close and reopen the **Alerts** pane for the link to work properly. Activator opens with your alert highlighted and the **Definition** pane open on the right side.
+1. To open the alert in Activator, select the ellipses (...) to the right of your new alert name and choose **Open in Activator**. You might need to close and reopen the **Alerts** pane for the link to work properly. Activator opens with your alert highlighted and the **Definition** pane open on the right side.
 
 ## Limitations and considerations
 
-* If your visual has multiple series, then [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] applies the alert rule to each series. In the example shown here, the visual shows sales per store, so the alert rule applies per store.
-* If your visual has a time axis, then [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] uses the time axis in the alert logic. In the example shown here, the visual has a daily time axis, so [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] monitors sales per day. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] checks each point on the time axis once. If the visual updates the value for a particular point in time after [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] checks it, then [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] ignores the updated value.
-* You can create alerts on tables and matrix visuals. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] applies the alert condition to each row in the table, or to each cell in the matrix. If your table or matrix has a column containing timestamps, then [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] interprets that column as a time axis.
-* [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] uses the filters in place at the time that you create your alert. Changing the filters on your visual after creating your alert has no effect on the alert logic. Select **Show applied filters** to see the filters on your visual.
+* If your visual has multiple series, then Activator applies the alert rule to each series. In the example shown here, the visual shows sales per store, so the alert rule applies per store.
+* If your visual has a time axis, then Activator uses the time axis in the alert logic. In the example shown here, the visual has a daily time axis, so Activator monitors sales per day. Activator checks each point on the time axis once. If the visual updates the value for a particular point in time after Activator checks it, then Activator ignores the updated value.
+* You can create alerts on tables and matrix visuals. Activator applies the alert condition to each row in the table, or to each cell in the matrix. If your table or matrix has a column containing timestamps, then Activator interprets that column as a time axis.
+* Activator uses the filters in place at the time that you create your alert. Changing the filters on your visual after creating your alert has no effect on the alert logic. Select **Show applied filters** to see the filters on your visual.
 
 ## Related content
 
-* [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](activator-introduction.md)
+* [What is Activator?](activator-introduction.md)
+* [Activator tutorial using sample data](activator-tutorial.md)
 * [Use Custom Actions to trigger Power Automate Flows](activator-trigger-power-automate-flows.md)
-* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
+
