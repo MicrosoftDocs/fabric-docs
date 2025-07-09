@@ -11,7 +11,7 @@ ms.search.form: Data Activator Sample Tutorial
 ---
 
 # Tutorial: Create and activate a Fabric Activator rule
-Fabric Activator in Microsoft Fabric allows you to take actions when patterns or conditions are detected in data streams. If you're new to Fabric Activator, see [What is Fabric Activator](activation-introduction.md). In this tutorial, you use the sample data included with Fabric Activator to complete the following tasks: 
+Fabric Activator in Microsoft Fabric allows you to take actions when patterns or conditions are detected in data streams. If you're new to Fabric Activator, see [What is Fabric Activator](activator-introduction.md). In this tutorial, you use the sample data included with Fabric Activator to complete the following tasks: 
 
 > [!div class="checklist"]
 > * Review a sample activator
