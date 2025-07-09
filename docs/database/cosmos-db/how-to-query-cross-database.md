@@ -64,7 +64,7 @@ Start by accessing the SQL analytics endpoint for the first Cosmos DB in Fabric 
     | `Argentina` | `17` |
 
     > [!NOTE]
-    > In this example, the query is assuming that we're using a sample data container named `SampleData`.
+    > This query also uses data found in the sample data set in a container named `SampleData`. For more information, see [sample data set](sample-data.md).
 
 ## Connect to the second database endpoint
 
