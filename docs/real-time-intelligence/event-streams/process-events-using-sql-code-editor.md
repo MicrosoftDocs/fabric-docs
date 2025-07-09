@@ -11,7 +11,7 @@ ms.search.form: Event Processor
 ---
 
 # Process events using SQL code editor (preview) 
-SQL operator (preview) is a new data transformation capability within Fabric Eventstream. SQL operators provide code editing experience where you can easily define your own custom data transformation logic using simple SQL expressions. This article describes how to use SQL code editor for data transformations in Eventstream.  
+SQL code editor aka SQL operator (preview) is a new data transformation capability within Fabric Eventstream. SQL operators provide code editing experience where you can easily define your own custom data transformation logic using simple SQL expressions. This article describes how to use SQL code editor for data transformations in Eventstream.  
 
 ## Prerequisites 
 Before you start, you must complete the following prerequisites: 
@@ -112,7 +112,9 @@ To perform stream processing operations on your data streams using SQL operator,
 1. Configure the destination.
 
     :::image type="content" source="./media/process-events-using-sql-code-editor/complete.png" alt-text="Screenshot that shows the completed eventstream." lightbox="./media/process-events-using-sql-code-editor/complete.png":::        
-
+## Limitations
+The SQL operator is designed to centralize all your transformation logic in one place.
+As a result, it cannot be used alongside other built-in operators within the same processing path. Chaining multiple SQL operators in a single path is also not supported. Additionally, the SQL operator can only output data to the destination node in the topology.
 ## Related content
 
 - [Add and manage destinations in an eventstream](./add-manage-eventstream-destinations.md).
