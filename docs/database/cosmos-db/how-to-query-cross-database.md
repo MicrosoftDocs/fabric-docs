@@ -5,7 +5,7 @@ description: Learn how to query data across multiple Cosmos DB databases in Micr
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/03/2025
+ms.date: 07/09/2025
 ---
 
 # Query cross-database data in Cosmos DB in Microsoft Fabric (preview)
@@ -22,13 +22,16 @@ The mirrored SQL Analytics endpoint makes it possible to create queries across t
 
 - At least one other SQL Analytics endpoint for a second Cosmos DB in Fabric database artifact
 
-## Open the SQL Analytics endpoint for the first database
+## Open the SQL analytics endpoint for the first database
 
 Start by accessing the SQL analytics endpoint for the first Cosmos DB in Fabric database.
 
 1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
 
 1. Navigate to your first Cosmos DB database.
+
+    > [!IMPORTANT]
+    > For this guide, the first Cosmos DB database has the [sample data set](sample-data.md) already loaded. The remaining query examples in this guide assume that you are using the same data set for this database.
 
 1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint**.
 
