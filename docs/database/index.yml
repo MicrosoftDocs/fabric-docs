@@ -141,7 +141,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Access data from a lakehouse
-            url: how-to-access-data-lakehouse.md
+            url: cosmos-db/how-to-access-data-lakehouse.md
           - text: Index vector data
             url: cosmos-db/how-to-index-vector-data.md
       - linkListType: concept
