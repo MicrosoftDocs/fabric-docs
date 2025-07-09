@@ -76,6 +76,8 @@ The following items support the Variable library:
 <!--- * [Lakehouse](../../data-engineering/lakehouse-overview.md)
 * Notebook --->
 * [Assign variables to shortcuts (preview)](../../onelake/assign-variables-to-shortcuts.md)
+* [Fabric Notebook - %%configure](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
+* [Fabric Notebook - NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
 
 ## Considerations and limitations
 
