@@ -81,7 +81,7 @@ Finally, use Spark within a notebook to write Python queries for your mirrored d
     LIMIT 5
     """))
     ```
-  
+
     > [!IMPORTANT]
     > This query uses data found in the sample data set. For more information, see [sample data set](sample-data.md).
 
