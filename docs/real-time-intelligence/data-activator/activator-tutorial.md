@@ -5,7 +5,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: tutorial
 ms.custom: FY25Q1-Linter, sfi-image-nochange
-ms.date: 11/19/2024
+ms.date: 07/08/2025
 ms.search.form: Data Activator Sample Tutorial
 #customer intent: As a Fabric user I want to learn more about Activator using a tutorial and sample data.
 ---
@@ -121,20 +121,33 @@ Create a rule that alerts you if the transit time in delivery exceeds a threshol
 
 1. Select your new **HoursInTransit** property. From the ribbon, select **New rule**. 
 
-    :::image type="content" source="media/activator-tutorial/new-rule-button.png" alt-text="Screenshot showing the New rule button on the ribbon." lightbox="media/activator-tutorial/new-rule-button.png":::          
-1. From the header, select the pencil icon to edit the name of the rule. Name it *Average transit time above target*. Your **Package2** object looks like this.
+    :::image type="content" source="media/activator-tutorial/new-rule-button.png" alt-text="Screenshot showing the New rule button on the ribbon." lightbox="media/activator-tutorial/new-rule-button.png":::
+1. In the **Create rule** pane, follow these steps:
+    1. For **Condition**, select **Increases above**. 
+    1. For **Value**, select **25**. 
+    1. For **Occurrence**, select **Every time the condition is met**. 
+    1. For **Action**, select one of the options to send an email to message in Teams. 
+    1. Select **Create**. 
+    
+        :::image type="content" source="media/activator-tutorial/create-rule-pane.png" alt-text="Screenshot showing the Create rule pane." lightbox="media/activator-tutorial/create-rule-pane.png":::      
+1. You should see the rule under **HoursInTransit** in the Explorer pane. Select the rule. In the middle pane, select the pencil icon at the top, and update the name to **Average transit time above target**. 
 
-    :::image type="content" source="media/activator-tutorial/data-activator-new-rule.png" alt-text="Average transit time explorer view for activator tutorial.":::
-2. Select **Edit details** to open the **Definition** pane. 
-3. In the **Definition** pane, select **HoursInTransit**. Then select **Add summarization** > **Average**. Set an aggregation **Window size** of five minutes and a **Step size** of five minutes. The Monitor chart updates to reflect the summarization, and your rule Monitor chart looks like this.
+    :::image type="content" source="media/activator-tutorial/edit-rule-name.png" alt-text="Screenshot showing the pencil icon to change the rule name." lightbox="media/activator-tutorial/edit-rule-name.png":::          
+3. In the **Definition** pane to the right, select **HoursInTransit**. Then select **Add summarization** > **Average**. 
 
-    :::image type="content" source="media/activator-tutorial/activator-window.png" alt-text="Average transit time chart for activator tutorial.":::
-4. In the **Condition** step, detect when the average transit time becomes greater than 25. Set the rule to alert you every time the condition is met. After you complete this step, the Condition chart updates, and the rule looks like this.
+    :::image type="content" source="media/activator-tutorial/select-average.png" alt-text="Screenshot showing the Definition pane with Average aggregation selected." lightbox="media/activator-tutorial/select-average.png":::
+1. Set an aggregation **Window size** of five minutes and a **Step size** of five minutes, and then select **Save**.
 
-    :::image type="content" source="media/activator-tutorial/activator-conditions.png" alt-text="Screenshot showing average transit time rule detection chart for activator tutorial.":::
-5. Specify an action for your rule. You can choose to send a Teams message or Email. Customize your action according to how you would like it to appear.
+    :::image type="content" source="media/activator-tutorial/window-step-size.png" alt-text="Screenshot showing the Definition pane with the window and step size." lightbox="media/activator-tutorial/window-step-size.png"::: 
+1. The Monitor chart updates to reflect the summarization, and your rule Monitor chart looks like this.
+
+    :::image type="content" source="media/activator-tutorial/activator-window.png" alt-text="Average transit time chart for activator tutorial." lightbox="media/activator-tutorial/activator-window.png":::
 6. Test your rule by selecting the **Send me a test action** button. Make sure you get an alert. If using email, it might take a minute or two to arrive.
-7. Start your rule by selecting **Save and start**.
+
+    :::image type="content" source="media/activator-tutorial/send-test-action-2.png" alt-text="Screenshot that shows the Test button selected on the ribbon." lightbox="media/activator-tutorial/send-test-action-2.png":::
+1. Start your rule by selecting **Save and start** in the **Definition** pane or by selecting **Start** on the ribbon.
+
+    :::image type="content" source="media/activator-tutorial/start-rule.png" alt-text="Screenshot that shows the Start button on the ribbon selected." lightbox="media/activator-tutorial/start-rule.png":::
 
     You created your first object and rule. As next steps, you might try setting up some other rules on the *Package2* object. When you're ready to try using Fabric Activator on your own data, follow the steps in the [Get data for Fabric Activator](activator-get-data-eventstreams.md) article.
 
