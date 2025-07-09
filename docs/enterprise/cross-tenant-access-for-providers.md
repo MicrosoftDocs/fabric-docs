@@ -41,8 +41,12 @@ Unlike the external data sharing feature in Fabric, which allows providers to sh
 
 * Supported identities: User and service principal
 * Permissions required: Users calling this API must be in the Fabric administrator role.
-* Service principals must be enabled to call Fabric public APIs, Fabric read APIs, and update APIs.
+* To ensure that a service principal can create, list, and delete any cross-tenant mappings that are created in a provider tenant, the Fabric application must have the Group.Create Microsoft Graph permission. Refer to the following articles to grant the Group.Create permission to the Fabric application.
 
+   * [Grant or revoke API permissions programmatically](/graph/permissions-grant-via-msgraph?tabs=http)
+   * [Microsoft Graph permissions reference](/graph/permissions-reference)
+* Service principals must be enabled to call Fabric public APIs, Fabric read APIs, and update APIs.
+  
 #### Request body
 
 | Name | In | Required | Type | Description |
@@ -119,7 +123,11 @@ Request body for group mapping, when the group doesn't have email
 `GET https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings`
 
 * Supported identities: User and service principal
-* Permissions required: Users calling this API must be in the Fabric administrator role. 
+* Permissions required: Users calling this API must be in the Fabric administrator role.
+* To ensure that a service principal can create, list, and delete any cross-tenant mappings that are created in a provider tenant, the Fabric application must have the Group.Create Microsoft Graph permission. Refer to the following articles to grant the Group.Create permission to the Fabric application.
+
+   * [Grant or revoke API permissions programmatically](/graph/permissions-grant-via-msgraph?tabs=http)
+   * [Microsoft Graph permissions reference](/graph/permissions-reference)
 * Service principals must be enabled to call Fabric public APIs, Fabric read APIs, and update APIs.
 
 #### Response codes
@@ -136,7 +144,11 @@ Request body for group mapping, when the group doesn't have email
 `DELETE https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings/{mappingId}`
 
 * Supported identities: User and service principal
-* Permissions required: Users calling this API must be in the Fabric administrator role. 
+* Permissions required: Users calling this API must be in the Fabric administrator role.
+* To ensure that a service principal can create, list, and delete any cross-tenant mappings that are created in a provider tenant, the Fabric application must have the Group.Create Graph permission. Refer to the following articles to grant the Group.Create permission to the Fabric application.
+
+   * [Grant or revoke API permissions programmatically](/graph/permissions-grant-via-msgraph?tabs=http)
+   * [Microsoft Graph permissions reference](/graph/permissions-reference)
 * Service principals must be enabled to call Fabric public APIs, Fabric read APIs, and update APIs.
   
 When this API is called, the groups and service principals created for guest principals stop working immediately, however the mapping remains in the database for more than a day and will be seen in the GET mapping API response.  

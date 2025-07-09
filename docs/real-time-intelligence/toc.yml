@@ -636,6 +636,8 @@ items:
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: real-time-intelligence-consumption.md
+  - name: Understand Eventhouse compute usage
+    href: eventhouse-compute-observability.md
 - name: Model data
   items:
   - name: Get started with digital twin builder
@@ -779,10 +781,8 @@ items:
   items:
   - name: What is Activator?
     href: data-activator/activator-introduction.md
-  - name: Activator basic concepts
-    href: data-activator/activator-basic-concepts.md
-  - name: Get started with Activator
-    href: data-activator/activator-get-started.md
+  - name: Create and activate an Activator rule
+    href: data-activator/activator-tutorial.md
   - name: Get data for Activator
     items:
     - name: Get data from Power BI
@@ -821,10 +821,6 @@ items:
     - name: Activator throttling
       href: data-activator/activator-throttling-effects.md
       displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
-  - name: Tutorial
-    items:
-    - name: Activator tutorial using sample data
-      href: data-activator/activator-tutorial.md
 - name: Monitor
   items:
     - name: Eventhouse monitoring
