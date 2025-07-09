@@ -99,7 +99,7 @@ If the workspace is already connected to Azure DevOps/GitHub, follow the instruc
     - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
     - Folder (Type in the name of an existing folder or enter a name to create a new folder. If you leave the folder name blank, content is created in the root folder. You can only connect to one folder at a time.)
 
- :::image type="content" source="media/git-get-started/devops-connect-3.png" alt-text="Screenshot to Azure connection." lightbox="media/git-get-started/devops-connect-3.png":::
+ :::image type="content" source="media/git-get-started/devops-connect-4.png" alt-text="Screenshot to Azure connection." lightbox="media/git-get-started/devops-connect-4.png":::
 
 
 #### [GitHub branch connect](#tab/GitHub)
