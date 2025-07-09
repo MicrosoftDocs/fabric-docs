@@ -41,7 +41,7 @@ Unlike the external data sharing feature in Fabric, which allows providers to sh
 
 * Supported identities: User and service principal
 * Permissions required: Users calling this API must be in the Fabric administrator role.
-* To ensure that a service principal can create, list, and delete any cross-tenant mappings that are created in a provider tenant, the Fabric application must have the Group. Create Graph permission. See the following documents to grant the Group. Create permission to Fabric application.
+* To ensure that a service principal can create, list, and delete any cross-tenant mappings that are created in a provider tenant, the Fabric application must have the Group.Create Microsoft Graph permission. Refer to the following articles to grant the Group.Create permission to the Fabric application.
 
    * [Grant or revoke API permissions programmatically](/graph/permissions-grant-via-msgraph?tabs=http)
    * [Microsoft Graph permissions reference](/graph/permissions-reference)
