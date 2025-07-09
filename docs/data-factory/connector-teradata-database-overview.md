@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 04/10/2025
+ms.date: 07/09/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -12,22 +12,17 @@ ms.custom:
 
 # Teradata database connector overview
 
-The Teradata database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Teradata database connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities                                                                 | Gateway                        | Authentication   |
+|----------------------------------------------------------------------------------------|--------------------------------|------------------|
+| **Data pipeline** <br>- [Copy activity](connector-teradata-copy-activity.md) (source/destination)<br>- Lookup activity        | On-premises<br> Virtual network | Basic<br> Windows |
+| **Dataflow Gen2** (source/destination)                                                 | On-premises<br> Virtual network | Basic<br> Windows |
 
-For information on how to connect to a Teradata database in Dataflow Gen2, go to [Set up your Teradata database connection](connector-teradata-database.md).
+## Related content
 
-## Support in data pipelines (Preview)
-
-The Teradata database connector supports the following capabilities in data pipelines:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | On-premises | Basic <br> Windows |
-| **Lookup activity** | On-premises | Basic <br> Windows |
-
-To learn about how to connect to Teradata database in data pipelines, go to [Set up your Teradata database connection](connector-teradata-database.md).
+To learn about how to connect to Teradata, go to [Set up your Teradata database connection](connector-teradata-database.md).
 
 To learn more about the copy activity configuration for Teradata database in data pipelines, go to [Configure in a data pipeline copy activity](connector-teradata-copy-activity.md).

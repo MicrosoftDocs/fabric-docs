@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 04/09/2024
+ms.date: 07/09/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -12,21 +12,15 @@ ms.custom:
 
 # Azure Files connector overview
 
-The Azure Files connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Azure Files connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-Data Factory in Microsoft Fabric doesn't currently support the Azure Files connector in Dataflow Gen2.
+| Supported capabilities                                                                 | Gateway                        | Authentication   |
+|----------------------------------------------------------------------------------------|--------------------------------|------------------|
+| **Data pipeline** <br>- [Copy activity](connector-azure-files-copy-activity.md) (source/destination)<br>- Lookup activity<br>- GetMetadata activity<br>- Delete | None<br> On-premises<br> Virtual network | Account key     |
+| **Copy job** (source/destination)                                                     | None<br> On-premises<br> Virtual network | Account key     |
 
-## Support in Data pipeline
-
-The Azure Files connector supports the following capabilities in Data pipeline:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | None <br>On-premises | Account key |
-| **Lookup activity** | None <br>On-premises | Account key |
-| **GetMetadata activity** | None <br>On-premises | Account key |
-| **Delete data activity** | None <br>On-premises | Account key |
+## Related content
 
 To learn more about the copy activity configuration for Azure Files in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-azure-files-copy-activity.md).

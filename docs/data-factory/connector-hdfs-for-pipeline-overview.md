@@ -4,27 +4,22 @@ description: This article provides an overview of the supported capabilities of 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 06/04/2025
+ms.date: 07/09/2025
 ms.custom:
   - template-how-to
 ---
 
 # Hdfs for Pipeline connector overview
 
-The Hdfs for Pipeline connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Hdfs for Pipeline connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-Data Factory in Microsoft Fabric doesn't currently support Hdfs for Pipeline in Dataflow Gen2.
+| Supported capabilities                                                                 | Gateway                        | Authentication   |
+|----------------------------------------------------------------------------------------|--------------------------------|------------------|
+| **Data pipeline** <br>- [Copy activity](connector-hdfs-for-pipeline-copy-activity.md) (source/destination)<br>- GetMetadata activity<br>- Delete | None<br> On-premises<br> Virtual network | Anonymous        |
+| **Copy job** (source/destination)                                                     | None<br> On-premises<br> Virtual network | Anonymous        |
 
-## Support in Data pipeline
-
-The Hdfs for Pipeline connector supports the following capabilities in Data pipeline:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/-)** | None <br>On-premises| Anonymous |
-| **Lookup activity** | None <br>On-premises | Anonymous |
-| **Delete activity** | None <br>On-premises | Anonymous |
+## Related content
 
 To learn more about the copy activity configuration for Hdfs for Pipeline in Data pipeline, go to [Configure in a Data pipeline copy activity](connector-hdfs-for-pipeline-copy-activity.md).
