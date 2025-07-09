@@ -72,18 +72,18 @@ Finally, use Spark within a notebook to write Python queries for your mirrored d
 
 1. Test a SQL query using a combination of the `display` and `spark.sql` functions in **PySpark**. Enter this code into the cell.
 
-  ```python
-  display(spark.sql("""
-  SELECT countryOfOrigin AS geography, COUNT(*) AS itemCount
-  FROM SampleData
-  GROUP BY countryOfOrigin
-  ORDER BY itemCount DESC
-  LIMIT 5
-  """))
-  ```
-
-  > [!IMPORTANT]
-  > This query uses data found in the sample data set. For more information, see [sample data set](sample-data.md).
+    ```python
+    display(spark.sql("""
+    SELECT countryOfOrigin AS geography, COUNT(*) AS itemCount
+    FROM SampleData
+    GROUP BY countryOfOrigin
+    ORDER BY itemCount DESC
+    LIMIT 5
+    """))
+    ```
+  
+    > [!IMPORTANT]
+    > This query uses data found in the sample data set. For more information, see [sample data set](sample-data.md).
 
 1. **Run** the notebook cell.
 
