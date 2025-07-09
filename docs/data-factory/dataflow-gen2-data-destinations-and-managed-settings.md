@@ -15,7 +15,7 @@ After you've cleaned and prepared your data with Dataflow Gen2, you want to land
 
 The following list contains the supported data destinations:
 
-[!INCLUDE [dataflow-gen2-data-destinations](/includes/dataflow-gen2-data-destinations.md)]
+[!INCLUDE [dataflow-gen2-data-destinations](includes/dataflow-gen2-data-destinations.md)]
 
 > [!NOTE]
 >To load your data to the Fabric Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by getting the SQL connection string. More information: [Connectivity to data warehousing in Microsoft Fabric](../data-warehouse/connectivity.md)

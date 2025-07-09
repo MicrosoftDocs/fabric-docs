@@ -71,7 +71,7 @@ This flexibility opens up new possibilities. For example, you can:
 
 Dataflow Gen2 currently supports these destinations:
 
-[!INCLUDE [dataflow-gen2-data-destinations](/includes/dataflow-gen2-data-destinations.md)]
+[!INCLUDE [dataflow-gen2-data-destinations](includes/dataflow-gen2-data-destinations.md)]
 
 :::image type="content" source="./media/dataflows-gen2-overview/output-destinations-overview.png" alt-text="Screenshot with the supported data destinations displayed.":::
 
