@@ -31,7 +31,7 @@ Start by accessing the SQL analytics endpoint for the first Cosmos DB in Fabric 
 1. Navigate to your first Cosmos DB database.
 
     > [!IMPORTANT]
-    > For this guide, the first Cosmos DB database has the [sample data set](sample-data.md) already loaded. The remaining query examples in this guide assume that you are using the same data set for this database.
+    > For this guide, the first Cosmos DB database has the [sample data set](sample-data.md) already loaded. The remaining query examples in this guide assume that you're using the same data set for this database.
 
 1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint**.
 
