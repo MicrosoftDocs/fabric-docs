@@ -7,7 +7,7 @@ title:       Shortcuts file transformations
 description: Shortcut transformations convert raw files into Delta tables that stay always in sync with the source data.  
 author:      miquelladeboer # GitHub alias
 ms.author:   mideboer # Microsoft alias
-ms.service:  Shortcuts
+# ms.service:  Shortcuts
 # ms.prod:   # To use ms.prod, uncomment it and delete ms.service
 ms.topic:    how-to
 ms.date:     07/09/2025
