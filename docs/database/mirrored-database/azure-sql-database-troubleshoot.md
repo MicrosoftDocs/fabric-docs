@@ -4,7 +4,7 @@ description: Troubleshooting mirrored databases from Azure SQL Database in Micro
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, anagha-todalbagi
-ms.date: 03/14/2025
+ms.date: 07/08/2025
 ms.topic: troubleshooting
 ms.custom:
   - references_regions
@@ -85,15 +85,14 @@ If you remove Azure SQL Database SAMI permissions or permissions are not set up 
 
 ## Errors from stale permissions with Microsoft Entra logins
 
-Before using Microsoft Entra ID authentication, review the limitations in [Microsoft Entra server principals](/azure-sql/database/authentication-azure-ad-logins?view=azuresql-db&preserve-view=true#limitations-and-remarks). 
+Before using Microsoft Entra ID authentication, review the limitations in [Microsoft Entra server principals](/azure//azure-sql/database/authentication-azure-ad-logins?view=azuresql-db&preserve-view=true#limitations-and-remarks). 
 
 Database users created using Microsoft Entra logins can experience delays when being granted roles and permissions. As this feature is still in public preview, the following commands should be used to address these issues.
-- [Drop the user](/sql/t-sql/statements/drop-user-transact-sql?view=sql-server-ver17&preserve-view=true) from the user database.
-- Execute DBCC FREESYSTEMCACHE('TokenAndPermUserStore') to clear security caches on the database.
-- Execute DBCC FLUSHAUTHCACHE to clear the federated authentication context cache.
-- [Create the user](/azure-sql/database/authentication-azure-ad-logins?view=azuresql-db#create-user-from-login&preserve-view=true) based on the login.
 
-
+- [Drop the user](/sql/t-sql/statements/drop-user-transact-sql?view=azuresqldb-current&preserve-view=true) from the user database.
+- Execute `DBCC FREESYSTEMCACHE('TokenAndPermUserStore')` to clear security caches on the database.
+- Execute `DBCC FLUSHAUTHCACHE` to clear the federated authentication context cache.
+- In the user database, [re-create the user](/azure/azure-sql/database/authentication-azure-ad-logins?view=azuresql-db&preserve-view=true#create-user-from-login) based on the login.
 
 ## Related content
 
