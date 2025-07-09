@@ -88,8 +88,6 @@ You can start with the **Eventhouses** tab in the dashboard. The **Eventhouse Qu
 - Most queried databases
 - Users running the most queries
 
-![]()
-
 :::image type="content" source="media/eventhouse-capacity-observability/eventhouse-overview-tab.png" alt-text="Screenshot of Workspace Monitoring Dashboard showing Query Load information." lightbox="media/eventhouse-capacity-observability/eventhouse-overview-tab.png":::
 
 To see more detailed information, use the **EH | Queries** tab. This tab gives you the details down to specific queries and provides the following parameters to help you quickly drill down to specific issues.
