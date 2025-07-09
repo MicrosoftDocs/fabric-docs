@@ -20,10 +20,6 @@ landingContent:
         links:
           - text: What is Activator?
             url: activator-introduction.md
-      - linkListType: get-started
-        links:
-          - text: Get started with Activator
-            url: activator-get-started.md
 
   - title: Get Data
     linkLists:

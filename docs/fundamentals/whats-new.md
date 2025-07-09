@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun
-ms.date: 07/02/2025
+ms.date: 07/09/2025
 ms.topic: whats-new
 ms.collection:
   - ce-skilling-ai-copilot
@@ -124,6 +124,7 @@ The following table lists the features of Microsoft Fabric that have recently tr
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|July 2025|**DOP Feedback generally available**|[Degrees of Parallellism (DOP) feedback](/sql/relational-databases/performance/intelligent-query-processing-degree-parallelism-feedback?view=fabric&preserve-view=true) is now generally available in SQL database in Fabric. For more information, see [Smarter Parallelism: Degree of parallelism feedback in SQL Server 2025](https://techcommunity.microsoft.com/blog/sqlserver/smarter-parallelism-degree-of-parallelism-feedback-in-sql-server-2025/4431318). |
 |July 2025|**Mirrored Azure Databricks**|[Mirrored Azure Databricks catalogs to Fabric](../database/mirrored-database/azure-databricks.md) are now generally available. A mirrored Unity Catalog in Fabric enables customer to read data managed by Unity Catalog from Fabric workloads. Storage accounts behind a firewall are also generally available.|
 |June 2025|**Secure Data Streaming with Managed Private Endpoints in Fabric Eventstream GA**|By creating a Fabric Managed Private Endpoint in Fabric Eventstream (now generally available), you can now securely connect Eventstream to your Azure services, such as Azure Event Hubs or IoT Hub, within a private network or behind a firewall. For more information, see [Secure Data Streaming with Managed Private Endpoints in Fabric Eventstream (preview)](https://blog.fabric.microsoft.com/blog/fabric-june-2025-feature-summary?ft=All#post-24333-_Toc1144030199).|
 |June 2025|**Notebook version history GA**|[Fabric notebook version history](https://blog.fabric.microsoft.com/blog/notebook-live-versioning?ft=All) provides robust built-in version control capabilities, including automatic and manual checkpoints, tracked changes, version comparisons, and previous version restore. For more information, see [Notebook version history](../data-engineering/how-to-use-notebook.md#version-history).|
@@ -341,6 +342,7 @@ This section summarizes recent improvements and features for Microsoft Fabric Da
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|July 2025|**DOP Feedback generally available**|[Degrees of Parallellism (DOP) feedback](/sql/relational-databases/performance/intelligent-query-processing-degree-parallelism-feedback?view=fabric&preserve-view=true) is now generally available in SQL database in Fabric. For more information, see [Smarter Parallelism: Degree of parallelism feedback in SQL Server 2025](https://techcommunity.microsoft.com/blog/sqlserver/smarter-parallelism-degree-of-parallelism-feedback-in-sql-server-2025/4431318). |
 |July 2025|**Deploy SQL database with Fabric CLI**|You can now [create a SQL database with the Fabric CLI](../database/sql/deploy-cli.md).|
 |June 2025|**Updates to Database Development Tools for SQL database in Fabric**|Updates to Database Development Tools for SQL database in Fabric introduce [new capabilities for developing, deploying, and managing SQL databases in Fabric](https://blog.fabric.microsoft.com/blog/updates-to-database-development-tools-for-sql-database-in-fabric?ft=All).|
 |April 2025|**Power BI Desktop connection to SQL database in Fabric**|You can now use the OneLake catalog or Get Data experiences in Power BI Desktop to create reports on data from your SQL database in Microsoft Fabric. This Power BI Desktop feature is currently in preview. To get started, see [Create simple reports on your SQL database in Power BI](../database/sql/create-reports.md).|
