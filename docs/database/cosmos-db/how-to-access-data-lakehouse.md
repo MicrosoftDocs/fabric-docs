@@ -31,7 +31,7 @@ Start by accessing the SQL analytics endpoint for the Cosmos DB in Fabric databa
 
 1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint**.
 
-    :::image source="media/how-to-access-data-lakehouse/endpoint-selection.png" lightbox="media/how-to-access-data-lakehouse/endpoint-selection-full.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
+    :::image source="media/how-to-access-data-lakehouse/endpoint-selection.png" lightbox="media/how-to-access-data-lakehouse/endpoint-selection.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
 
 1. Once you're able to successfully navigate to the SQL analytics endpoint, this navigation step confirms that mirroring ran successfully at least once.
 
@@ -43,7 +43,7 @@ Next, use Lakehouse to extend the number of tools you can use to analyze your Co
 
 1. Select the **Create** option.
 
-    :::image source="media/how-to-access-data-lakehouse/create-option.png" lightbox="media/how-to-access-data-lakehouse/create-option.png" alt-text="Screenshot of the option to 'Create' a new resource in the Fabric portal.":::
+    :::image source="media/how-to-access-data-lakehouse/create-option.png" lightbox="media/how-to-access-data-lakehouse/create-option-full.png" alt-text="Screenshot of the option to 'Create' a new resource in the Fabric portal.":::
 
 1. If the option to create an **Lakehouse** account isn't initially available, select **See all**.
 
