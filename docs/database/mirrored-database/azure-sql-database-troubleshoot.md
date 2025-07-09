@@ -83,6 +83,18 @@ If you remove Azure SQL Database SAMI permissions or permissions are not set up 
 1. Select the **Manage Permissions** option.
 1. Enter the name of the Azure SQL Database logical server name. Provide **Read** and **Write** permissions.
 
+## Errors from stale permissions with Microsoft Entra logins
+
+Before using Microsoft Entra ID authentication, review the limitations in [Microsoft Entra server principals](/azure-sql/database/authentication-azure-ad-logins?view=azuresql-db&preserve-view=true#limitations-and-remarks). 
+
+Database users created using Microsoft Entra logins can experience delays when being granted roles and permissions. As this feature is still in public preview, the following commands should be used to address these issues.
+- [Drop the user](/sql/t-sql/statements/drop-user-transact-sql?view=sql-server-ver17&preserve-view=true) from the user database.
+- Execute DBCC FREESYSTEMCACHE('TokenAndPermUserStore') to clear security caches on the database.
+- Execute DBCC FLUSHAUTHCACHE to clear the federated authentication context cache.
+- [Create the user](/azure-sql/database/authentication-azure-ad-logins?view=azuresql-db#create-user-from-login&preserve-view=true) based on the login.
+
+
+
 ## Related content
 
 - [Limitations of Microsoft Fabric Data Warehouse](../../data-warehouse/limitations.md)
