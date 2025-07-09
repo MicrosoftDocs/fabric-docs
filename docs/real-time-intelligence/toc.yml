@@ -779,8 +779,8 @@ items:
   items:
   - name: What is Activator?
     href: data-activator/activator-introduction.md
-  - name: Get started with Activator
-    href: data-activator/activator-get-started.md
+  - name: Create and activate an Activator rule
+    href: activator-tutorial.md
   - name: Get data for Activator
     items:
     - name: Get data from Power BI
@@ -819,10 +819,6 @@ items:
     - name: Activator throttling
       href: data-activator/activator-throttling-effects.md
       displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
-  - name: Tutorial
-    items:
-    - name: Activator tutorial using sample data
-      href: data-activator/activator-tutorial.md
 - name: Monitor
   items:
     - name: Eventhouse monitoring
