@@ -71,9 +71,9 @@ Create a JSON payload that will be converted to base64 in the API request. The E
 
 Use the [API templates in GitHub](https://github.com/microsoft/fabric-event-streams/blob/main/API%20Templates/eventstream-definition.json) to help define your Eventstream body.
 
-For detailed definitions (e.g., AzureEventHubSourceProperties), see [this reference](/rest/api/fabric/eventstream/topology/get-eventstream-topology?tabs=HTTP#definitions), it provides a full list of property structures you may need. 
+You can refer to [this Swagger document](/rest/api/fabric/eventstream/topology/get-eventstream-topology?tabs=HTTP#definitions) for details on each API property, and it also guides you in defining an Eventstream API payload.
 
-If you're using **Eventhouse direct ingestion mode** destination, ensure that the `mappingRuleName` property is correctly specified. For detailed instructions on creating ingestion mappings, see [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
+If you're using **Eventhouse direct ingestion mode** destination, ensure that the `connectionName` and `mappingRuleName` property is correctly specified. To find the correct `connectionName`, navigate to your Eventhouse KQL database, select **Data streams**, and copy the desired `connectionName`. For detailed instructions on creating ingestion mappings, see [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
 
 For more details about defining an Eventstream item, check out [Eventstream item definition](#eventstream-item-definition) section.
 
@@ -288,7 +288,7 @@ To define an Eventstream destination in the API body, make sure each field and p
 | `properties` | Object         | Other settings specific to the selected destination type. | Required    | Example for `Eventhouse` type: `"dataIngestionMode"`, `"workspaceId"`, `"itemId"`, `"databaseName"`  |
 | `inputNodes` | Array         | A reference to the input nodes for the destination, such as your Eventstream name or an operator name. | Required     | Example: `eventstream-1`   |
 
-Again, if you're using **Eventhouse direct ingestion mode** destination, ensure that the `mappingRuleName` property is correctly specified. For detailed instructions on creating ingestion mappings, see [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
+Again, if you're using **Eventhouse direct ingestion mode** destination, ensure that the `connectionName` and `mappingRuleName` property is correctly specified. To find the correct `connectionName`, navigate to your Eventhouse KQL database, select **Data streams**, and copy the desired `connectionName`. For detailed instructions on creating ingestion mappings, see [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
 
 ---
 
