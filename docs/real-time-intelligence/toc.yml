@@ -636,6 +636,8 @@ items:
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: real-time-intelligence-consumption.md
+  - name: Understand Eventhouse compute usage
+    href: eventhouse-compute-observability.md
 - name: Model data
   items:
   - name: Get started with digital twin builder
