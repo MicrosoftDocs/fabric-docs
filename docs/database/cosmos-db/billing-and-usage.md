@@ -1,5 +1,5 @@
 ---
-title: Billing and utilization reporting for Cosmos DB in Microsoft Fabric (Preview)
+title: Billing and Utilization Reporting for Cosmos DB Database (Preview)
 titleSuffix: Microsoft Fabric
 description: Learn about customer billing for compute and storage, and how to monitor usage using the Fabric Capacity Metrics App.
 author: jilmal
