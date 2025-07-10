@@ -7,7 +7,7 @@ ms.author: sidandrews
 ms.topic: how-to
 ms.date: 07/10/2025
 appliesto:
-- &#x2705; Cosmos DB in Fabric
+- ✅ Cosmos DB in Fabric
 ---
 
 # Access mirrored Cosmos DB data from Lakehouse in Microsoft Fabric
