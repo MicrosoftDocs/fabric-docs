@@ -65,6 +65,14 @@ items:
       href: monitor-paused-capacity.md
     - name: Understand the metrics app calculations
       href: metrics-app-calculations.md
+  - name: Capacity troubleshooting guides
+    items:
+    - name: Monitor and identify capacity usage
+      href: capacity-planning-troubleshoot-consumption.md
+    - name: Determine source of report slowness
+      href: capacity-planning-troubleshoot-throttling.md
+    - name: Diagnose and resolve capacity limit errors
+      href: capacity-planning-troubleshoot-errors.md 
   - name: Chargeback app
     items:
     - name: What is Microsoft Fabric Chargeback app (preview)?
