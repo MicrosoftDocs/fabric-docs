@@ -5,13 +5,22 @@ author: luitwieler
 ms.author: jeluitwi
 ms.reviewer: dougklo
 ms.topic: concept-article
-ms.date: 06/19/2025
+ms.date: 07/10/2025
 ms.custom: dataflow
 ---
 
 # Best practices for getting the best performance with Dataflow Gen2
 
 This article provides best practices for optimizing the performance of Dataflow Gen2 in Fabric Data Factory. By following these guidelines, you can enhance the efficiency and speed of your data integration processes.
+
+## What you'll learn
+
+In this article, you'll discover:
+
+- **Key performance optimization areas**: Understanding the three critical components (data source, dataflow engine, and data destination) that impact your dataflow performance
+- **Core optimization techniques**: How to leverage Fast Copy, query folding, and staging to maximize efficiency
+- **Real-world scenarios**: Nine common performance challenges and their specific solutions
+- **Best practices**: Actionable guidance for different data integration patterns and use cases
 
 ## What are the key areas to focus on for performance optimization?
 
@@ -29,7 +38,9 @@ Data transformation is the process of converting data from one structure to anot
 
 ### Staging data and warehouse compute
 
-Staging data is a technique used to improve performance by temporarily storing intermediate results in a staging area. Dataflow gen2 comes with a staging Lakehouse and a staging Warehouse, which can be used to perform transformations more efficiently. By staging data, you can use the compute resources of these staging areas to break down complex dataflows into manageable steps, reducing overall processing time. This break down is particularly useful for large datasets or complex transformations that would otherwise take a long time to execute in a single step. You can consider staging locations as temporary storage area that allows you to fold transformations. This approach is especially beneficial when working with data sources that don't support query folding or when transformations are too complex to be pushed down to the source system. To apply staging effectively, you can keep an eye on the folding indicators in the dataflow editor to ensure that your transformations are being pushed down to the source. If you notice that a transformation isn't folding, consider splitting the query into two queries and apply the transformation in the second query. Endable staging on the first query to perform the transformation in the staging Lakehouse or Warehouse compute. This approach allows you to take advantage of the compute resources available in the staging areas while ensuring that your dataflow remains efficient and responsive.
+Staging data is a technique used to improve performance by temporarily storing intermediate results in a staging area. Dataflow Gen2 comes with a staging Lakehouse and a staging Warehouse, which can be used to perform transformations more efficiently. By staging data, you can use the compute resources of these staging areas to break down complex dataflows into manageable steps, reducing overall processing time. This break down is particularly useful for large datasets or complex transformations that would otherwise take a long time to execute in a single step. You can consider staging locations as temporary storage area that allows you to fold transformations. This approach is especially beneficial when working with data sources that don't support query folding or when transformations are too complex to be pushed down to the source system. To apply staging effectively, you can keep an eye on the folding indicators in the dataflow editor to ensure that your transformations are being pushed down to the source. If you notice that a transformation isn't folding, consider splitting the query into two queries and apply the transformation in the second query. Enable staging on the first query to perform the transformation in the staging Lakehouse or Warehouse compute. This approach allows you to take advantage of the compute resources available in the staging areas while ensuring that your dataflow remains efficient and responsive.
+
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/enable-staging.png" alt-text="Enable staging in Dataflow Gen2":::
 
 ## Scenarios and what optimizations to consider
 
@@ -39,9 +50,11 @@ When working with Dataflow Gen2, it's essential to understand the various scenar
 
 In this scenario, you notice that data movement between your data source and the staging area or to your final destination is taking longer than expected. Several factors could be involved, such as network latency, large dataset sizes, or inefficient data transfer methods.
 
-In this case, consider evaluating the data movement path and optimizing it for better performance. One approach is to use Fast Copy for high-throughput data transfer, which can significantly reduce runtime. Fast Copy is designed to handle large volumes of data efficiently, minimizing the overhead associated with traditional data transfer methods. However, be cautious: if you add transformations in the same query as a Fast Copy operation, it can disable Fast Copy if the transformations don't fold to the source system. In such cases, consider separating the query into two steps: one for the Fast Copy operation and another for the transformations using the staging Lakehouse or Warehouse compute. This approach allows you to take advantage of Fast Copy for high-throughput data movement while performing the necessary transformations in a separate step.
+In this case, consider evaluating the data movement path and optimizing it for better performance. One approach is to use Fast Copy for high-throughput data transfer, which can significantly reduce runtime. Fast Copy is designed to handle large volumes of data efficiently, minimizing the overhead associated with traditional data transfer methods. However, be cautious: if you add transformations in the same query as a Fast Copy operation, it can disable Fast Copy if the transformations don't fold to the source system. In such cases, consider separating the query into two steps: one for the Fast Copy operation and another for the transformations using the staging Lakehouse or Warehouse compute. This approach allows you to take advantage of Fast Copy for high-throughput data movement while performing the necessary transformations in a separate step. Learn more about [Fast Copy](./dataflows-gen2-fast-copy.md).
 
-::::image type="content" source="media/dataflow-gen2-performance-best-practices/settings-fastcopy.png" alt-text="Enable Fast Copy in Dataflow Gen2":::
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/settings-fastcopy.png" alt-text="Enable Fast Copy in Dataflow Gen2":::
+
+You can enable Fast Copy in the dataflow settings. This setting is by default enabled, but you can also require Fast Copy to be used in your dataflow. This setting ensures that Fast Copy is used for the selected query and that it is optimized for performance. If the Fast Copy can not be used, the dataflow will fail if you require Fast Copy. If you don't require Fast Copy, the dataflow will still run, but it will not take advantage of the performance benefits of Fast Copy and fall back to the default data movement method.
 
 :::image type="content" source="media/dataflow-gen2-performance-best-practices/require-fastcopy.png" alt-text="Require Fast Copy in Dataflow Gen2":::
 
@@ -51,7 +64,25 @@ In this scenario, you have a dataflow with multiple complex transformations, suc
 
 In this case, consider breaking down the dataflow into smaller, more manageable steps. Instead of performing all transformations in a single query, you can stage the data in a staging Lakehouse or Warehouse and then apply the transformations in subsequent queries. This approach allows you to apply the compute resources of the staging area for complex transformations, reducing the overall execution time. Additionally, ensure that your transformations are designed to fold to the source system whenever possible, as this can significantly improve performance by reducing the amount of data transferred and processed in Dataflow Gen2. If you notice that certain transformations don't fold, consider splitting them into separate queries and applying them after staging the data.
 
-:::image type="content" source="media/dataflow-gen2-performance-best-practices/enable-staging.png" alt-text="Enable staging in Dataflow Gen2":::
+In the image below, you can see how the folding indicators in the dataflow editor can help you identify which transformations are being pushed down to the source system.
+
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/folding-indicators-non-folding.png" alt-text="Folding indicators in Dataflow Gen2":::
+
+To implement staging effectively, you can split the dataflow into two queries. You do this by right-clicking on the first step that doesn't fold to the source system and selecting "extract previous ..." option. This action creates a new query that stages the data in the staging Lakehouse or Warehouse compute, allowing you to perform the transformation in a separate step. This approach helps you take advantage of the compute resources available in the staging areas while ensuring that your dataflow remains efficient and responsive.
+
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/folding-indicators-extract-previous.png" alt-text="Extract previous in Dataflow Gen2":::
+
+Then provide a name for the new query and click "OK". 
+
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/extract-previous-query-name.png" alt-text="Extract previous query name in Dataflow Gen2":::
+
+Now with the new query created, you can check if staging is enabled for the first query. If staging is not enabled, you can enable it by selecting the "Enable staging" option in the query settings. This action allows you to perform transformations in the staging Lakehouse or Warehouse compute, optimizing the performance of your dataflow. Staging the second query is optional, but it can further improve performance by allowing you to perform additional transformations in the staging area before writing the final output to the destination.
+
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/staging-and-fast-copy-enabled.png" alt-text="Staging and Fast Copy enabled in Dataflow Gen2":::
+
+If you now look at the folding indicators in the dataflow editor, you can see that the transformations in the first query are being pushed down to the source system. The second query may not reflect the same folding indicators, as it is only during runtime aware of the staging area and the transformations that can be pushed down to the staging area. 
+
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/folding-indicators-to-source.png" alt-text="Folding indicators in Dataflow Gen2 all green":::
 
 ### Consideration 3: The impact on staging on datamovement when using Lakehouse as a destination
 
@@ -73,7 +104,7 @@ In this case, consider using parameterization to limit the size of data previews
 
 ### Consideration 6: Dataflow gen2 runtime characteristics compared to Dataflow Gen1
 
-In this scenario, you notice that the performance of Dataflow Gen2 is slower than that of Dataflow Gen1, particularly in terms of execution time and resource usage. This preformance difference can be due to several factors, including the differences in optimization techniques and output formats used in Dataflow Gen2.
+In this scenario, you notice that the performance of Dataflow Gen2 is slower than that of Dataflow Gen1, particularly in terms of execution time and resource usage. This performance difference can be due to several factors, including the differences in optimization techniques and output formats used in Dataflow Gen2.
 
 Dataflow Gen2 emits data in Delta Parquet format when you use staging or lakehouse destinations, which is different from Dataflow Gen1's CSV output. While Delta Parquet might result in longer ETL runtimes compared to CSV, it enables powerful downstream capabilities such as Direct Lake, Lakehouses, and Warehouses, allowing these services to consume data efficiently without additional processing or cost. This means that while the initial execution time may be longer, the overall performance and efficiency of downstream processes can be significantly improved and can lead to better long-term performance of your data integration workflows.
 
@@ -85,7 +116,7 @@ In this case, consider using incremental refresh or the pattern to incrementally
 
 ### Consideration 8: I'm using a gateway to connect to my on-premises data source and I want to optimize the performance of my dataflow
 
-In this scenario, you're using a gateway to connect to your on-premises data source, and you want to optimize the performance of your dataflow. Gateways can introduce additional latency and overhead, which can impact the overall performance of your dataflow. 
+In this scenario, you're using a gateway to connect to your on-premises data source, and you want to optimize the performance of your dataflow. Gateways can introduce additional latency and overhead, which can impact the overall performance of your dataflow.
 
 In this case, consider splitting your dataflow into two separate dataflows: one for data movement from the on-premises data source to a data destination (such as a Lakehouse or Warehouse) and another for transformations and final output. This approach allows you to optimize the data movement step by leveraging Fast Copy for high-throughput data transfer, while keeping the transformation step focused on processing the data efficiently and reducing the overall execution time. By separating the data movement and transformation steps, you can reduce the impact of gateway latency and capacity limitations. The reason for this is that the gateway is running the entire dataflow, and if the dataflow is complex or has many transformations, it can lead to slower performance as the gateway processes all the transformations on the computer hosting the gateway. By splitting the dataflow, you can ensure that the gateway is only responsible for the data movement step, which can significantly improve performance and reduce execution time.
 
