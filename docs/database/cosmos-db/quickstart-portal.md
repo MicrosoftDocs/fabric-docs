@@ -5,8 +5,10 @@ description: Get started quickly with Cosmos DB in Microsoft Fabric by creating 
 author: seesharprun
 ms.author: sidandrews
 ms.topic: quickstart
-ms.date: 07/03/2025
+ms.date: 07/10/2025
 ms.search.form: Databases Get Started
+appliesto:
+- ✅ Cosmos DB in Fabric
 ---
 
 # Quickstart: Create a Cosmos DB database in Microsoft Fabric (preview)
