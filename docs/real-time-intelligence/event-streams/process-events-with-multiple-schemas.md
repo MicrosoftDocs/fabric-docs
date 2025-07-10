@@ -1,5 +1,5 @@
 ---
-title:  Enhancing events processing with multiple-schema support
+title:  Enhancing events processing with multiple-schema inferencing
 description: Provides information on using the multiple schema feature to process and preview events in Microsoft Fabric Eventstream.
 ms.reviewer: spelluru
 ms.author: xujiang1
