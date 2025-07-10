@@ -18,7 +18,6 @@ The Hdfs for Pipeline connector is supported in Data Factory for [!INCLUDE [prod
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Data pipeline** <br>- [Copy activity](connector-hdfs-for-pipeline-copy-activity.md) (source/destination)<br>- GetMetadata activity<br>- Delete | None<br> On-premises<br> Virtual network | Anonymous        |
-| **Copy job** (source/destination)                                                     | None<br> On-premises<br> Virtual network | Anonymous        |
 
 ## Related content
 

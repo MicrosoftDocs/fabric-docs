@@ -18,9 +18,9 @@ The Azure SQL Database connector is supported in Data Factory for [!INCLUDE [pro
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-azure-sql-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- GetMetadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> OAuth2<br> Service principal |
+| **Data pipeline** <br>- [Copy activity](connector-azure-sql-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> OAuth2<br> Service principal |
 | **Dataflow Gen2** (source/destination)                                                 | None<br> On-premises<br> Virtual network | Basic<br> Organizational account |
-| **Copy job** (source/destination) <br>- Full load<br>- Append | None<br> On-premises<br> Virtual network | Basic<br> OAuth2<br> Service principal |
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load (Preview)<br>- Append<br>- Merge | None<br> On-premises<br> Virtual network | Basic<br> OAuth2<br> Service principal |
 
 ## Related content
 

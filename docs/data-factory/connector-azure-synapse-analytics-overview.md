@@ -18,9 +18,9 @@ The Azure Synapse Analytics connector is supported in Data Factory for [!INCLUDE
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-azure-synapse-analytics-copy-activity.md) (source/destination)<br>- Lookup activity<br>- GetMetadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal |
+| **Data pipeline** <br>- [Copy activity](connector-azure-synapse-analytics-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal |
 | **Dataflow Gen2** (source/-)                                                           | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal |
-| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append<br>- Override | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal |
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append<br>- Merge | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal |
 
 
 ## Related content

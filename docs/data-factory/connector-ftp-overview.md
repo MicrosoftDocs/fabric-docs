@@ -18,8 +18,7 @@ The FTP connector is supported in Data Factory for [!INCLUDE [product-name](../i
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-ftp-copy-activity.md) (source/destination)<br>- Lookup activity<br>- GetMetadata activity<br>- Delete | None<br> On-premises<br> Virtual network | Anonymous<br> Basic |
-| **Copy job** (source/destination)                                                     | None<br> On-premises<br> Virtual network | Anonymous<br> Basic |
+| **Data pipeline** <br>- [Copy activity](connector-ftp-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete | None<br> On-premises<br> Virtual network | Anonymous<br> Basic |
 
 ## Related content
 
