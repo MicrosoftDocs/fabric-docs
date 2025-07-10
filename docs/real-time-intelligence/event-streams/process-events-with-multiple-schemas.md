@@ -32,7 +32,7 @@ This feature is useful for the following scenarios:
 
 ## How to enable multiple-schema support
 
-To use this feature, you need to enable multiple-schema support in your eventstream. You can enable it in both new and existing eventstream. 
+To use this feature, you need to enable multiple-schema inferencing in your eventstream. You can enable it in both new and existing eventstream. 
 1. Open your eventstream and go to **Settings**, and then select **Schema**.
 1. Turn on **Multiple schema support** and select **Apply**.
 
