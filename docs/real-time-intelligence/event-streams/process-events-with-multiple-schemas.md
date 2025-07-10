@@ -147,7 +147,7 @@ A: When this feature is enabled in an existing eventstream and you switch to Edi
 
 ## Limitations
 
-- Currently, when an eventstream has multiple-schema support enabled, CI/CD and REST APIs for this eventstream may not function as expected. 
+- Currently, when an eventstream has multiple-schema inferencing enabled, CI/CD and REST APIs for this eventstream may not function as expected. 
 
 ## Related content
 
