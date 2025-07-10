@@ -23,6 +23,4 @@ The MongoDB connector is supported in Data Factory for [!INCLUDE [product-name](
 
 ## Related content
 
-To learn about how to connect to MongoDB, go to [Set up your MongoDB connection](connector-mongodb.md).
-
 To learn more about the copy activity configuration for MongoDB in data pipelines, go to [Configure in a data pipeline copy activity](connector-mongodb-copy-activity.md).

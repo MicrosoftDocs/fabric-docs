@@ -23,6 +23,4 @@ The SFTP connector is supported in Data Factory for [!INCLUDE [product-name](../
 
 ## Related content
 
-To learn about how to connect to SFTP, go to [Set up your SFTP connection](connector-sftp.md).
-
 To learn about the copy activity configuration for SFTP in data pipelines, go to [Configure SFTP in a copy activity](connector-sftp-copy-activity.md).

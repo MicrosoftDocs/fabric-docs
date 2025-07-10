@@ -23,6 +23,4 @@ The FTP connector is supported in Data Factory for [!INCLUDE [product-name](../i
 
 ## Related content
 
-To learn about how to connect to FTP, go to [Set up your FTP connection](connector-ftp.md).
-
 To learn more about the copy activity configuration for FTP in data pipelines, go to [Configure in a data pipeline copy activity](connector-ftp-copy-activity.md).
