@@ -4,7 +4,7 @@ description: Learn about the open mirrored databases partner ecosystem in Micros
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: tinglee, sbahadur, ulrichchrist, maraki-ketema
-ms.date: 05/03/2025
+ms.date: 07/10/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -14,7 +14,7 @@ no-loc: [Copilot]
 
 [Open mirroring in Microsoft Fabric](open-mirroring.md) is designed to be extensible, customizable, and open. It's a powerful feature that extends Mirroring in Fabric based on open Delta Lake table format. This capability enables any data providers to write change data directly into a mirrored database item in Microsoft Fabric.
 
-The following are the open mirroring partners who have already built solutions to integrate with Microsoft Fabric.
+The following are the open mirroring partners who have solutions ready to integrate with Microsoft Fabric.
 
 ## Oracle GoldenGate 23ai
 
@@ -61,15 +61,33 @@ For more information, see [ASAPIO Integration Add-on, Fabric Connector](https://
 
 ## Theobald
 
-Theobald Xtract Universal is an SAP-certified data integration solution supporting all standard SAP applications like SAP S/4HANA, SAP ECC and SAP BW. Starting with version 2025.3.26.15 it now supports open mirroring for [change data capture from SAP into Microsoft Fabric](https://aka.ms/mirroring/theobald-mirroring-overview).
+Theobald Xtract Universal is an SAP-certified data integration solution supporting all standard SAP applications like SAP S/4HANA, SAP ECC, and SAP BW. Starting with version 2025.3.26.15 it now supports open mirroring for [change data capture from SAP into Microsoft Fabric](https://aka.ms/mirroring/theobald-mirroring-overview).
 
 For more information on Theobald Xtract Universal, see [Theobald Xtract Universal](https://aka.ms/mirroring/theobald-xtract-universal-overview).
 
-### CluedIn
+## CluedIn
 
 CluedIn is a Master Data Management and data quality platform that enables enterprises to unify, clean, and govern their data at scale. By integrating with Open Mirroring, CluedIn streamlines the ingestion and harmonization of enterprise data, ensuring it remains accurate, consistent, and ready for analytics in Fabric.
 
 For more information on CluedIn for Microsoft Fabric, see [Microsoft Fabric & CluedIn](https://aka.ms/mirroring/cluedin).
+
+## Cloud Services
+
+Cloud Services help customers build data warehouse solutions that are robust and easy to maintain and scale. In their latest innovation, the Open Mirroring solution for Salesforce offers customers a powerful, scalable, and cost-effective way to bring CRM data into Fabric. 
+
+For more information on Cloud Services, see [Seamless Salesforce Integration with Open Mirroring](https://cs-worldwide.com/seamless-salesforce-integration-with-microsoft-fabric-open-mirroring-in-action/). 
+
+## Quadrant Technologies
+
+QMigrator is a data migration and data replication tool that enables enterprises to move data from many sources to many targets, including Fabric. QMigrator's Fabric integration solution enables clients to replicate the data from operation database like DB2, Oracle, MySQL, and SQL Server to Fabric using Open Mirroring.
+
+For more information about QMigrator, see [QMigrator and Fabric](https://qmigrator.ai/Fabric). 
+
+## CData
+
+CData Sync brings Open Mirroring support to over 150 enterprise data sources with minimal configuration, for both on-premises and in the cloud. Open Mirroring with Sync helps organizations reflect data changes from critical sources like SAP, NetSuite, Salesforce, and SQL Server directly into Fabric for immediate analysis. 
+
+For more information, see [CData Sync's Open Mirroring release blog](https://www.cdata.com/blog/sync-expands-ms-fabric-support-open-mirroring). 
 
 ## Related content
 
