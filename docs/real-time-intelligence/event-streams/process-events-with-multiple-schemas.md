@@ -7,7 +7,7 @@ author: wenyang
 ms.topic: how-to
 ms.custom:
 ms.date: 06/25/2025
-ms.search.form: Enhancing events processing with multiple-schema support
+ms.search.form: Enhancing events processing with multiple-schema inferencing
 ---
 
 # Enhancing events processing with multiple-schema inferencing (preview)
