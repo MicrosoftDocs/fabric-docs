@@ -56,7 +56,7 @@ Select the schema name to view all columns (i.e., fields) in the schema. If any 
 
 ## Using different schemas in transformation paths
 
-The multiple-schema feature enables the capability that different schemas can be used in different transformation paths. When configuring the first operator node after the default stream, select an **Input schema**. 
+The multiple-schema inferencing feature enables the capability that different schemas can be used in different transformation paths. When configuring the first operator node after the default stream, select an **Input schema**. 
 
 :::image type="content" source="./media/process-events-with-multiple-schemas/select-input-schema.png" alt-text="Screenshot showing how to select input schema in first node." lightbox="./media/process-events-with-multiple-schemas/select-input-schema.png":::
 
