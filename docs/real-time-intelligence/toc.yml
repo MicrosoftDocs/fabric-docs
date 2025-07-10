@@ -171,7 +171,7 @@ items:
       items:
       - name: Process events using event processor
         href: event-streams/process-events-using-event-processor-editor.md
-      - name: Multiple-schema support
+      - name: Multiple-schema inferencing
         href: event-streams/process-events-with-multiple-schemas.md
       - name: Process events using SQL code editor
         href: event-streams/process-events-using-sql-code-editor.md
