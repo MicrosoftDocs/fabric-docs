@@ -7,7 +7,7 @@ ms.author: sidandrews
 ms.topic: how-to
 ms.date: 07/10/2025
 appliesto:
-- &#x2705; Cosmos DB in Fabric
+- ✅ Cosmos DB in Fabric
 ---
 
 # Query cross-database data in Cosmos DB in Microsoft Fabric (preview)

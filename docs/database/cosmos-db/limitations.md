@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.date: 07/10/2025
 ms.search.form: Databases Limitations
 appliesto:
-- &#x2705; Cosmos DB in Fabric
+- ✅ Cosmos DB in Fabric
 ---
 
 # Limitations in Cosmos DB in Microsoft Fabric (preview)

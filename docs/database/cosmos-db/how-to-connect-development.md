@@ -9,7 +9,7 @@ ms.date: 07/10/2025
 zone_pivot_group_filename: database/cosmos-db/zone-pivot-groups.json
 zone_pivot_groups: dev-lang-core
 appliesto:
-- &#x2705; Cosmos DB in Fabric
+- ✅ Cosmos DB in Fabric
 ---
 
 # How to connect to Cosmos DB in Microsoft Fabric from your local development environment (preview)
