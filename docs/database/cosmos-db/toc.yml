@@ -31,6 +31,8 @@ items:
         href: how-to-continuous-integration-deployment.md
       - name: Monitor activity and performance
         href: how-to-monitor.md
+      - name: Billing and usage reporting
+        href: billing-and-usage.md
   - name: Design secure solutions
     items:
       - name: Security best practices
