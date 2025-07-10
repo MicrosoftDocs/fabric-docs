@@ -31,11 +31,11 @@ In the rule definition pane on the right side of the screen, find **Action** sec
 
 Once you enter all of the required information, select **Save** to save the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. To test the rule, select **Test action**. To start the rule, select **Start** from the top menu bar and to stop the rule, select **Stop.** **Stop** only appears while a rule is active.
 
-## Pass values to parameters defined in Fabric items (Preview)
+## Pass parameter values to Fabric items (Preview)
 
-You can now pass values from the data source to the activated Fabric item. To pass parameter values in Activator portal, select **Edit action**, enter the parameter name and type exactly as how they are defined in the Fabric item. The parameter values can be entered manually or by selecting dynamic properties from the data source.
+You can now pass values to the parameters defined in the activated Fabric item. To pass parameter values in Activator portal, select **Edit action**, enter the parameter name and type exactly as how they are defined in the Fabric item. The parameter values can be entered manually or by selecting dynamic properties from the data source.
 
-### Passing parameter values to rules created outside of Activator portal
+### Pass parameter values via rules created outside of Activator portal
 
 If you are setting up an Activator rule from one of the embedded experiences such as Power BI, Real-Time Hub, or Data Pipeline, you can create the rule first. After the rule is created, you can click **Open** Activator to edit the parameter values:
 
