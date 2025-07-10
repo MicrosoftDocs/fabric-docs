@@ -20,6 +20,7 @@ This article lists current limitations for Cosmos DB in Fabric.
 ## Quotas and limits
 
 - Databases support a maximum of **25** containers.
+- Databases support an autoscale maximum of 10,000 RU/s per container.
 
 ## Regional availability
 
