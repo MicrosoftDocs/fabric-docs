@@ -22,15 +22,7 @@ Data agent in Microsoft Fabric transforms enterprise data into conversational Q&
 > [!IMPORTANT]  
 > This feature is in [preview](../fundamentals/preview.md). You should use the latest beta/preview version of the [Azure AI Agents Python SDK](https://pypi.org/project/azure-ai-agents/1.1.0b3/).
 
-## Prerequisites
-
-- [A paid F2 or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
-- [Fabric data agent tenant settings](./data-agent-tenant-settings.md) is enabled.
-- [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- At least one of the following resources: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
-- [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
+[!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 - Developers and end users in Azure AI Foundry must at least have the `AI Developer` Role-Based Access Control (RBAC) role.
 
 ## How it works
