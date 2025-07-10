@@ -72,7 +72,7 @@ To implement staging effectively, you can split the dataflow into two queries. Y
 
 :::image type="content" source="media/dataflow-gen2-performance-best-practices/folding-indicators-extract-previous.png" alt-text="Extract previous in Dataflow Gen2":::
 
-Then provide a name for the new query and click "OK". 
+Then provide a name for the new query and click "OK".
 
 :::image type="content" source="media/dataflow-gen2-performance-best-practices/extract-previous-query-name.png" alt-text="Extract previous query name in Dataflow Gen2":::
 
@@ -83,6 +83,8 @@ Now with the new query created, you can check if staging is enabled for the firs
 If you now look at the folding indicators in the dataflow editor, you can see that the transformations in the first query are being pushed down to the source system. The second query may not reflect the same folding indicators, as it is only during runtime aware of the staging area and the transformations that can be pushed down to the staging area. 
 
 :::image type="content" source="media/dataflow-gen2-performance-best-practices/folding-indicators-to-source.png" alt-text="Folding indicators in Dataflow Gen2 all green":::
+
+To learn more about query folding, go to [Query folding](/power-query/query-folding-basics) to learn about how to optimize your dataflow transformations and ensure that they are being pushed down to the source system.
 
 ### Consideration 3: The impact on staging on datamovement when using Lakehouse as a destination
 
