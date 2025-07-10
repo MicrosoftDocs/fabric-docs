@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 07/07/2025
+ms.date: 07/10/2025
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -15,9 +15,6 @@ ms.collection: ce-skilling-ai-copilot
 The Microsoft Fabric Capacity Metrics app's compute page provides an overview of your capacity's performance, showing data for the last 14 days. It's divided into the three visuals listed in the following sections. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
 
 At the top of each page, the **Capacity Name** field allows you to select the capacity the app shows results for.
-
-
-## Multimetric ribbon chart
 
 ## Cards
 
