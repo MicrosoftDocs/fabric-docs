@@ -12,7 +12,7 @@ ms.custom:
 
 # Salesforce objects connector overview
 
-The Salesforce objects connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Salesforce objects connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 

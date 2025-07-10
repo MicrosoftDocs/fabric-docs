@@ -12,7 +12,7 @@ ms.custom:
 
 # FTP connector overview
 
-The FTP connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The FTP connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 

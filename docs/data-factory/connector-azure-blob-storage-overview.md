@@ -12,7 +12,7 @@ ms.custom:
 
 # Azure Blob Storage connector overview
 
-The Azure Blob Storage connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Azure Blob Storage connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 

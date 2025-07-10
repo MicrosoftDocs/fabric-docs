@@ -11,7 +11,7 @@ ms.custom:
 
 # Hdfs for Pipeline connector overview
 
-The Hdfs for Pipeline connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Hdfs for Pipeline connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 

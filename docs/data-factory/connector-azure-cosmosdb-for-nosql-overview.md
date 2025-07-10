@@ -12,7 +12,7 @@ ms.custom:
 
 # Azure Cosmos DB for NoSQL connector overview
 
-The Azure Cosmos DB for NoSQL connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Azure Cosmos DB for NoSQL connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 

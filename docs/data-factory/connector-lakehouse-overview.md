@@ -12,7 +12,7 @@ ms.custom:
 
 # Lakehouse connector overview
 
-The Lakehouse connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Lakehouse connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 
