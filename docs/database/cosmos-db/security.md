@@ -9,7 +9,7 @@ ms.date: 07/10/2025
 ms.custom: security-horizontal-2025
 ai-usage: ai-generated
 appliesto:
-- &#x2705; Cosmos DB in Fabric
+- ✅ Cosmos DB in Fabric
 ---
 
 # Secure your Cosmos DB in Microsoft Fabric database (preview)

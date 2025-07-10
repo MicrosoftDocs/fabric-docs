@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 07/10/2025
 ms.search.form: Databases replication to OneLake
 appliesto:
-- &#x2705; Cosmos DB in Fabric
+- ✅ Cosmos DB in Fabric
 ---
 
 # Mirror OneLake in Cosmos DB database in Microsoft Fabric (preview)

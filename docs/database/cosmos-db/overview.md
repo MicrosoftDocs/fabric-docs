@@ -8,7 +8,7 @@ ms.topic: overview
 ms.date: 07/10/2025
 ms.search.form: Databases Overview
 appliesto:
-- &#x2705; Cosmos DB in Fabric
+- ✅ Cosmos DB in Fabric
 ---
 
 # What is Cosmos DB in Microsoft Fabric (preview)?

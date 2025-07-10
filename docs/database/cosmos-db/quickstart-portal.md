@@ -8,7 +8,7 @@ ms.topic: quickstart
 ms.date: 07/10/2025
 ms.search.form: Databases Get Started
 appliesto:
-- &#x2705; Cosmos DB in Fabric
+- ✅ Cosmos DB in Fabric
 ---
 
 # Quickstart: Create a Cosmos DB database in Microsoft Fabric (preview)
