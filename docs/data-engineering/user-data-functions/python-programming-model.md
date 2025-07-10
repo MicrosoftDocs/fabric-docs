@@ -69,8 +69,8 @@ You can define input parameters for the function such as primitive data types li
 | **Object**	| pandas DataFrame|
 | **Object** or **Array of Objects** | pandas Series|
 
->![NOTE]
-> To use pandas DataFrame and Series types, select **Library management** in fabric portal for your user data function and update `fabric-user-data-function` version to 1.0.0. 
+>[!NOTE]
+> To use pandas DataFrame and Series types, select **Library management** in Fabric portal for your user data function and update `fabric-user-data-function` version to 1.0.0. 
 
 Example of request body for input types supported:
 ```json
