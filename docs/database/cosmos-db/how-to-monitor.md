@@ -5,7 +5,9 @@ description: Find out how to monitor your Cosmos DB database in Microsoft Fabric
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/03/2025
+ms.date: 07/10/2025
+appliesto:
+- ✅ Cosmos DB in Fabric
 ---
 
 # Monitor Cosmos DB in Microsoft Fabric (preview)

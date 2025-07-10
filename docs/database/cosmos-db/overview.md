@@ -17,7 +17,7 @@ Cosmos DB in Microsoft Fabric is an AI-optimized NoSQL database with a simplifie
 
 ## Why Cosmos DB in Fabric? 
 
-- **Optimized for semi-structured data**: Cosmos DB in Fabric is a database workload optimized for semi-structured data. You can use Cosmos DB and SQL DB in Fabric together to store both semi-structured and relational data. With various databases available, you can unify your data platform and analytics experience across your entire application solution. Cosmos DB comes with built-in AI capabilities like full-text search, hybrid search, and vector indexing. 
+- **Optimized for semi-structured data**: Cosmos DB in Fabric is a database workload optimized for semi-structured data. You can use Cosmos DB database and SQL database in Fabric together to store both semi-structured and relational data. With various databases available, you can unify your data platform and analytics experience across your entire application solution. Cosmos DB comes with built-in AI capabilities like full-text search, hybrid search, and vector indexing. 
 
 - **Autonomous**: Cosmos DB in Fabric comes with autonomous defaults optimized for most application workloads. Existing applications can connect to Cosmos DB by specifying the Fabric-supplied connection string and using Microsoft Entra authentication. Your host applications can use various identity types, like human identities, application identities, or workload identities, to connect to the database in a secure manner.  
 
@@ -27,7 +27,7 @@ Cosmos DB in Microsoft Fabric is an AI-optimized NoSQL database with a simplifie
   
   - Querying data across Cosmos DB and other Fabric-native databases in a single unified query 
 
-  - Serving high value One Lake data back to the app with low latency and high concurrency/reliability, without the need to do reverse ETL 
+  - Serving high-value OneLake data back to the app with low latency and high concurrency/reliability, eliminating the need for reverse ETL
   
   - Generating vector embeddings from chunked data in Fabric One Lake 
   
