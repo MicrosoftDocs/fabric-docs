@@ -5,8 +5,10 @@ description: Learn about the current limitations and restrictions when using Cos
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/03/2025
+ms.date: 07/10/2025
 ms.search.form: Databases Limitations
+appliesto:
+- ✅ Cosmos DB in Fabric
 ---
 
 # Limitations in Cosmos DB in Microsoft Fabric (preview)

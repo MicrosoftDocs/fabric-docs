@@ -5,7 +5,9 @@ description: Understand how to set up continuous integration and deployment for 
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 06/06/2025
+ms.date: 07/10/2025
+appliesto:
+- ✅ Cosmos DB in Fabric
 ---
 
 # Configure continuous integration and continuous deployment for Cosmos DB in Microsoft Fabric (preview)
