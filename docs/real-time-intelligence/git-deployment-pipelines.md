@@ -32,7 +32,7 @@ For details on setting up Git integration, see [Get started with Git integration
 - [Eventhouse and KQL database](git-eventhouse-kql-database.md)
 - [KQL querysets](git-kql-queryset.md)
 - [Real-Time dashboards](git-real-time-dashboard.md)
-- Activator - Details coming soon. 
+- [Activator](git-activator.md)
 
 ## Deployment Pipelines
 
