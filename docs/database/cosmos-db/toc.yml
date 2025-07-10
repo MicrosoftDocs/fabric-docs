@@ -20,6 +20,8 @@ items:
     items:
       - name: Mirror to OneLake
         href: mirror-onelake.md
+      - name: Create Power BI reports
+        href: create-reports.md
       - name: Access data from a lakehouse
         href: how-to-access-data-lakehouse.md
       - name: Index vector data
@@ -31,6 +33,8 @@ items:
         href: how-to-continuous-integration-deployment.md
       - name: Monitor activity and performance
         href: how-to-monitor.md
+      - name: Billing and usage reporting
+        href: billing-and-usage.md
   - name: Design secure solutions
     items:
       - name: Security best practices
