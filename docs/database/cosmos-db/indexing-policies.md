@@ -5,8 +5,10 @@ description: Use custom indexing policies to fine tune the performance of Cosmos
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/07/2025
+ms.date: 07/10/2025
 ai-usage: ai-generated
+appliesto:
+- &#x2705; Cosmos DB in Fabric
 ---
 
 # Indexing policies in Cosmos DB in Microsoft Fabric (preview)

@@ -5,7 +5,9 @@ description: Explore how to index vector data in your Cosmos DB database within 
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 06/06/2025
+ms.date: 07/10/2025
+appliesto:
+- &#x2705; Cosmos DB in Fabric
 ---
 
 # Index vector data in Cosmos DB in Microsoft Fabric (preview)

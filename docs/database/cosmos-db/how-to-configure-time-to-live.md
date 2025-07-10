@@ -5,10 +5,12 @@ description: Configure a time-to-live (TTL) value that automatically purges item
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/07/2025
+ms.date: 07/10/2025
 ai-usage: ai-assisted
 zone_pivot_group_filename: database/cosmos-db/zone-pivot-groups.json
 zone_pivot_groups: dev-lang-core
+appliesto:
+- &#x2705; Cosmos DB in Fabric
 ---
 
 # Configure time to live (TTL) in Cosmos DB in Microsoft Fabric (preview)
