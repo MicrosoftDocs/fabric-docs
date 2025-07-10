@@ -5,7 +5,9 @@ description: Learn how to configure authentication for Cosmos DB databases in Mi
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 06/06/2025
+ms.date: 07/10/2025
+appliesto:
+- ✅ Cosmos DB in Fabric
 ---
 
 # Configure authentication to Cosmos DB in Microsoft Fabric (preview)
