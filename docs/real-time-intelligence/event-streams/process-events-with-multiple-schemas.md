@@ -12,7 +12,7 @@ ms.search.form: Enhancing events processing with multiple-schema inferencing
 
 # Enhancing events processing with multiple-schema inferencing (preview)
 
-The multiple-schema feature in Microsoft Fabric event streams supports inferring multiple schemas from various sources and eventstream itself, enabling you to design different data transformation paths by picking up one of the inferred schemas with rich flexibility. This allows for seamless data integration and processing, catering to complex and multiple data shapes environment. It addresses the challenges previously encountered with single-schema inference.
+The multiple-schema inferencing feature in Microsoft Fabric event streams supports inferring multiple schemas from various sources and eventstream itself, enabling you to design different data transformation paths by picking up one of the inferred schemas with rich flexibility. This allows for seamless data integration and processing, catering to complex and multiple data shapes environment. It addresses the challenges previously encountered with single-schema inferencing.
 
 This feature is useful for the following scenarios:
 
