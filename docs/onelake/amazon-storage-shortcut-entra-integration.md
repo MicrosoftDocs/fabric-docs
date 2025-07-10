@@ -3,12 +3,12 @@ title: Integrate Microsoft Entra with AWS S3 using Service Principal Authenticat
 description: Learn how to integrate Microsoft Entra with AWS S3 using Service Principal authentication for secure access to S3 buckets with unified identity management and OIDC-based authentication.
 author: SnehaGunda
 ms.topic: how-to
-ms.date: 07/07/2025
+ms.date: 07/10/2025
 ms.author: sngun
 ms.reviewer: sngun
 ---
 
-# Integrate Microsoft Entra with AWS S3 shortcuts using Service Principal Authentication
+# Integrate Microsoft Entra with AWS S3 shortcuts using service principal authentication
 
 You can integrate Microsoft Entra with AWS S3 using the Service Principal Name (SPN) approach. This integration enables seamless, secure access to S3 buckets using Microsoft Entra credentials, simplifying identity
 management and enhancing security.
@@ -39,7 +39,7 @@ In the following sections you'll configure Microsoft Entra ID, AWS IAM, and Micr
 
 ## Configure Microsoft Entra ID
 
-### Step1: Register an Microsoft Entra application
+### Step1: Register a Microsoft Entra application
 
 * Sign in to [Azure portal](https://portal.azure.com/) and navigate to **Microsoft Entra ID**.
 
@@ -47,7 +47,7 @@ In the following sections you'll configure Microsoft Entra ID, AWS IAM, and Micr
 
   * **Name**: Enter a name for your application such as *S3AccessServicePrincipal.*
 
-  * **Redirect URL**: Leave it blank or set to <https://localhost> if necessary.
+  * **Redirect URL**: Leave it blank or set to `https://localhost` if necessary.
 
   * Select **Register** to register your application.
 
