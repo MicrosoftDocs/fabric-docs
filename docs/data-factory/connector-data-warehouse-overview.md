@@ -10,9 +10,9 @@ ms.custom:
   - connectors
 ---
 
-# Data warehouse connector overview
+# Data Warehouse connector overview
 
-The Data warehouse connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Data Warehouse connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 
@@ -24,6 +24,6 @@ The Data warehouse connector is supported in Data Factory for [!INCLUDE [product
 
 ## Related content
 
-To learn about how to connect to Data warehouse, go to [Set up your Data warehouse connection](connector-data-warehouse.md).
+To learn about how to connect to Data Warehouse, go to [Set up your Data Warehouse connection](connector-data-warehouse.md).
 
 To learn more about the copy activity configuration for Data Warehouse in data pipelines, go to [Configure in a data pipeline copy activity](connector-data-warehouse-copy-activity.md).

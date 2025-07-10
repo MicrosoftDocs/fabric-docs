@@ -10,9 +10,9 @@ ms.custom:
   - connectors
 ---
 
-# KQL database connector overview
+# KQL Database connector overview
 
-The KQL database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The KQL Database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 
@@ -23,6 +23,6 @@ The KQL database connector is supported in Data Factory for [!INCLUDE [product-n
 
 ## Related content
 
-To learn about how to connect to KQL database, go to [Set up your KQL database connection](connector-kql-database.md).
+To learn about how to connect to KQL Database, go to [Set up your KQL Database connection](connector-kql-database.md).
 
 To learn about the copy activity configuration for KQL Database in data pipelines, go to [Configure KQL Database in a copy activity](connector-kql-database-copy-activity.md).

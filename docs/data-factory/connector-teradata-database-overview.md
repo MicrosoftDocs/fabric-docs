@@ -10,7 +10,7 @@ ms.custom:
   - connectors
 ---
 
-# Teradata database connector overview
+# Teradata database connector overview (Preview)
 
 The Teradata database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 

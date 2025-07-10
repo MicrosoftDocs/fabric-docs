@@ -10,7 +10,7 @@ ms.custom:
   - connectors
 ---
 
-# SQL database connector overview
+# SQL database connector overview (Preview)
 
 The SQL database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
