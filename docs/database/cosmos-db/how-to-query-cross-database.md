@@ -5,7 +5,9 @@ description: Learn how to query data across multiple Cosmos DB databases in Micr
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/09/2025
+ms.date: 07/10/2025
+appliesto:
+- ✅ Cosmos DB in Fabric
 ---
 
 # Query cross-database data in Cosmos DB in Microsoft Fabric (preview)
