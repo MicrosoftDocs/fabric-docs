@@ -5,8 +5,10 @@ description: Learn how data is automatically mirrored from Cosmos DB database in
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/03/2025
+ms.date: 07/10/2025
 ms.search.form: Databases replication to OneLake
+appliesto:
+- ✅ Cosmos DB in Fabric
 ---
 
 # Mirror OneLake in Cosmos DB database in Microsoft Fabric (preview)
