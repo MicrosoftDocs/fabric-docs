@@ -9,7 +9,7 @@ metadata:
   ms.date: 07/10/2025
   ai-usage: ai-assisted
   appliesto:
-  - &#x2705; Cosmos DB in Fabric
+  - ✅ Cosmos DB in Fabric
 title: Frequently asked questions for Cosmos DB in Microsoft Fabric (preview)
 summary: |
   [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
