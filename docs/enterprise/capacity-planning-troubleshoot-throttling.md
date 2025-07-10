@@ -6,7 +6,7 @@ ms.author: juliacawthra
 ms.reviewer: cnovak
 ms.topic: troubleshooting
 ms.custom:
-ms.date: 07/03/2025
+ms.date: 07/10/2025
 ---
 
 # Troubleshooting guide: Determine source of report slowness
@@ -66,7 +66,7 @@ The following table explains the steps in Stage 1:
 | **2** | Open the **Microsoft Fabric Capacity Metrics** app. | The [Metrics app](metrics-app.md) shows usage and performance data for capacities (Premium or Fabric capacities). It shows if the capacity is overloaded during the time of the issue. You need contributor or admin access to the capacity to view this. |
 | **3** | In the Metrics app report, go to the [**Compute** page](metrics-app-compute-page.md). | The **Compute** page is the main dashboard for capacity performance. It shows an overview of the capacity’s usage over the last 14 days, including visuals for utilization and throttling. This page has a top section with charts and a bottom section with a table of items. |
 | **4** | Select the relevant **Capacity Name** from the drop-down filter. | This loads data for the specific capacity where the slowness was reported (as identified in step 1). All visuals now reflect this capacity’s metrics. |
-| **5** | Make sure the **CU** tab in the **Multimetric ribbon** chart (top-left) is visible and the **CU % over time** line chart is displayed (under the **Utilization** tab on the **Compute** page). | The [multimetric ribbon chart](metrics-app-compute-page.md#multi-metric-ribbon-chart) lets you pick a date, and the CU % over time [**Utilization**](metrics-app-compute-page.md#utilization) chart shows the percentage of capacity used over time. Together, these help you check if the capacity exceeds its limits. |
+| **5** | Make sure the **CU** tab in the **Multimetric ribbon** chart (top-left) is visible and the **CU % over time** line chart is displayed (under the **Utilization** tab on the **Compute** page). | The [multimetric ribbon chart](metrics-app-compute-page.md#multimetric-ribbon-chart) lets you pick a date, and the CU % over time [**Utilization**](metrics-app-compute-page.md#utilization) chart shows the percentage of capacity used over time. Together, these help you check if the capacity exceeds its limits. |
 | **6** | Check the *y*-axis of the **CU % over time** chart. If the CU% values go far above 200%, select the logarithmic scale button (top-right of the chart); otherwise, use the linear scale. | A [logarithmic scale](metrics-app-compute-page.md#utilization) makes it easier to see details when there are extreme spikes (like 500% usage) by compressing the *y*-axis. If usage is only slightly above 100%, the linear scale is enough. |
 | **7** | Use the date from step 1 to **filter the report**: select that date on the multimetric ribbon chart’s *x*-axis. This filters the visuals to that specific day (24-hour period). | Focusing on the day of the incident lets you zoom into the time period of interest. The **CU %** chart on the [**Utilization**](metrics-app-compute-page.md#utilization) tab and other visuals now show data only for the day the slowness occurred. |
 | **8** | On the **CU % over time** chart, **zoom in on the timeframe of the slowness**. Adjust the time slicer (below the chart) to narrow down to the specific hour or minute window the user reported the issue. | The chart typically shows data points at 30-second intervals. By zooming into the specific timeframe, you see exactly what the capacity usage is when the user experienced slowness. Look for any sharp peaks around that time. |
