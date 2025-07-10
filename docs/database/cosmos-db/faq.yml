@@ -6,8 +6,10 @@ metadata:
   author: seesharprun
   ms.author: sidandrews
   ms.topic: faq
-  ms.date: 07/03/2025
+  ms.date: 07/10/2025
   ai-usage: ai-assisted
+  appliesto:
+  - &#x2705; Cosmos DB in Fabric
 title: Frequently asked questions for Cosmos DB in Microsoft Fabric (preview)
 summary: |
   [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
