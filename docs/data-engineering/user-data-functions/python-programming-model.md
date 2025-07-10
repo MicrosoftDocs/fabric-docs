@@ -19,7 +19,7 @@ A user data functions item contains one or many functions you can invoke from th
 
 - The `fabric.functions` library provides the code you need to create user data functions in Python. You can see this library being imported in your first function template when you create a new user data functions item.
 
-- The method `fn.UserDataFunctions()` provides the execution context. It's added at the beginning of the code file in all new user data functions items, before any function definitions.
+- The method `fn.UserDataFunctions()` provides the execution context found at the beginning of the code file in all new user data functions items, before any function definitions.
 
   **Example:**
   ```python
@@ -30,7 +30,7 @@ A user data functions item contains one or many functions you can invoke from th
   udf = fn.UserDataFunctions()
   ```
 
-- Every function is identified with a `@udf.function()` decorator. This decorator will define if your function can be invoked individually from the portal or an external invoker.
+- Every function is identified with a `@udf.function()` decorator. This decorator defines if your function can be invoked individually from the portal or an external invoker.
 
   **Invokable function example**
   ```python
@@ -167,7 +167,7 @@ To reference a connection to a data source, you need to use the `@udf.connection
 
 The arguments for `@udf.connection` are:
 
-- `argName`, the name of the variable the connection will use in your function.
+- `argName`, the name of the variable the connection uses in your function.
 - `alias`, the alias of the connection you added with the **Manage connections** menu.
 - If `argName` and `alias` have the same value, you can use `@udf.connection("<alias and argName for the data connection>")`.
 
@@ -233,8 +233,8 @@ def raise_userthrownerror(age: int)-> str:
 ```
 
 This `UserThrownError` method takes two parameters:
-- `Message`: This string will be returned as the error message to the application that is invoking this function.
-- A dictionary of properties that will be returned to the application that is invoking this function.
+- `Message`: This string is returned as the error message to the application that is invoking this function.
+- A dictionary of properties is returned to the application that is invoking this function.
 
 ## Next steps
 - [Reference API documentation](/python/api/fabric-user-data-functions/fabric.functions)
