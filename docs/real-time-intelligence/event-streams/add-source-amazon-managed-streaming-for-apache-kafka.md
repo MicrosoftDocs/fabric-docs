@@ -44,6 +44,9 @@ After you complete these steps, the Amazon MSK Kafka source is available for vis
 
 :::image type="content" source="./media/add-source-amazon-msk-kafka/live-view.png" alt-text="Screenshot that shows Amazon MSK Kafka source in Live view." lightbox="./media/add-source-apache-kafka/live-view.png":::
 
+To preview events from this Amazon MSK Kafka source, ensure that the key used to create the cloud connection has **read permission** for consumer groups prefixed with prefixed with **preview-**.
+
+:::image type="content" source="./media/add-source-amazon-msk-kafka/data-preview.png" alt-text="Screenshot that shows Amazon MSK Kafka source data preview." lightbox="./media/add-source-apache-kafka/data-preview.png":::
 
 ## Related content
 
