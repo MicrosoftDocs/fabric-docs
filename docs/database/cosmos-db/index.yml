@@ -8,7 +8,9 @@ metadata:
   author: seesharprun
   ms.author: sidandrews
   ms.topic: landing-page
-  ms.date: 06/06/2025
+  ms.date: 07/10/2025
+  appliesto:
+  - ✅ Cosmos DB in Fabric
 landingContent:
   - title: Overview
     linkLists:
