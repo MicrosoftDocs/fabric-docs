@@ -127,7 +127,7 @@ In this case, if you use the inferred schema in a transformation path, make sure
 
 A: Editing an inferred schema modifies Eventstream's interpretation of your incoming data structure and type but does not alter the actual data values and types. Use this function when you determine that the inferred schema is not consistent with your real data format and structure, and you need accurate column (i.e., field) types for downstream operators’ configuration. To apply changes to the data itself (e.g., renaming fields, converting types) when processing data, use the **Managed Field** operator in the transformation path.
 
-**Q: What if the schema of my data in the existing source changes after schema inference?**  
+**Q: What if the schema of my data in the existing source changes after it’s been inferred?**  
 
 A: If the data structure changes (for example, new fields added, data type changes, etc.) in a source, a new schema is inferred when this new data is previewed in this eventstream as schema is inferred from the previewed data. You can review and use the new schema in Edit mode. Or the new schema can be used to organize the previewed data in Live view. If your previous schema is used in an operator or destination, and the eventstream is published, your previous schema is retained and can still be viewed in edit mode. 
 
