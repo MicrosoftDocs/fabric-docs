@@ -44,6 +44,7 @@ If you are setting up an Activator rule from one of the embedded experiences suc
 
 :::image type="content" source="media/activator-trigger-fabric-items/pass-parameters-from-real-time-hub.png" alt-text="Screenshot showing creating storage event trigger from Real Time hub." lightbox="media/activator-trigger-fabric-items/pass-parameters-from-real-time-hub.png":::
 
+### Types of parameters
 
 Activator enables passing parameters in string, boolean, and number (float). Follow the guidelines to pass number and boolean,:
 
