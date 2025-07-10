@@ -10,15 +10,14 @@ ms.custom:
   - connectors
 ---
 
-# Teradata database connector overview (Preview)
-
+# Teradata database connector overview
 The Teradata database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-teradata-copy-activity.md) (source/destination)<br>- Lookup activity        | On-premises<br> Virtual network | Basic<br> Windows |
+| **Data pipeline (Preview)** <br>- [Copy activity](connector-teradata-copy-activity.md) (source/destination)<br>- Lookup activity        | On-premises<br> Virtual network | Basic<br> Windows |
 | **Dataflow Gen2** (source/destination)                                                 | On-premises<br> Virtual network | Basic<br> Windows |
 
 ## Related content
