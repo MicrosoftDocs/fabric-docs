@@ -33,9 +33,9 @@ Once you enter all of the required information, select **Save** to save the [!IN
 
 ## Pass values to parameters defined in Fabric items (Preview)
 
-You can now pass values from the data source to the activated Fabric item. To pass parameter values, select **Edit action**, enter the parameter name and type exactly as how they are defined in the Fabric item. The parameter values can be entered manually or by selecting dynamic properties from the data source.
+You can now pass values from the data source to the activated Fabric item. To pass parameter values in Activator portal, select **Edit action**, enter the parameter name and type exactly as how they are defined in the Fabric item. The parameter values can be entered manually or by selecting dynamic properties from the data source.
 
-### Limitations on passing parameter values
+### Passing parameter values to rules created outside of Activator portal
 
 If you are setting up an Activator rule from one of the embedded experiences such as Power BI, Real-Time Hub, or Data Pipeline, you can create the rule first. After the rule is created, you can click **Open** Activator to edit the parameter values:
 
@@ -47,7 +47,7 @@ If you are setting up an Activator rule from one of the embedded experiences suc
 
 Activator enables passing parameters in string, boolean, and number (float). Follow the guidelines to pass number and boolean,:
 
-* Number
+**Number**
 
 | Input Value | Result | Valid value? | Notes |
 | --- | --- | --- | --- |
@@ -59,7 +59,7 @@ Activator enables passing parameters in string, boolean, and number (float). Fol
 | null or whitespace | 0 | No |  |	
 | any other string | 0 | No |  |	
 			
-* Boolean
+**Boolean**
 
 | Input Value | Result | Valid value? | Notes |
 | --- | --- | --- | --- |
