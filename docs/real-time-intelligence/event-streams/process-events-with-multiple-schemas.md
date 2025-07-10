@@ -30,7 +30,7 @@ This feature is useful for the following scenarios:
 
 - Access to a workspace with **Contributor** or higher permissions where your eventstream is located.
 
-## How to enable multiple-schema support
+## How to enable multiple-schema inferencing
 
 To use this feature, you need to enable multiple-schema inferencing in your eventstream. You can enable it in both new and existing eventstream. 
 1. Open your eventstream and go to **Settings**, and then select **Schema**.
