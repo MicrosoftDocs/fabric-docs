@@ -45,7 +45,6 @@ Activator doesn't support passing parameters to all Fabric items. However, you c
 
 ## Related content
 
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:

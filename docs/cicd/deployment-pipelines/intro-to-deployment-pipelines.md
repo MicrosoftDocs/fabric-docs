@@ -67,6 +67,8 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Data Warehouse items:
 
   * [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
+  * Mirrored Azure Databricks Catalog *(preview)*
+
 
 * Power BI items:
 
