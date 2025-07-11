@@ -18,6 +18,18 @@ This article shows you how to add an activator destination to an eventstream.
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - If you already have an activator you want to use, access to the workspace where your activator is located with Contributor or higher permissions.
+- Each event in the source must consist of a JSON dictionary.
+- One of the dictionary keys must represent a unique object ID.
+
+    Here's an example of an event that meets these criteria:
+    
+    ```json
+    {
+    "PackageID": "PKG123",
+    "Temperature": 25
+    }
+    ```
+    In this example, *PackageID* is the unique ID.
 
 ## Add activator as a destination
 
