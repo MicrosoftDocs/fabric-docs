@@ -1,17 +1,16 @@
 ---
-title: Create Power BI Reports From Cosmos DB Data
+title: Create Power BI Reports Using Cosmos DB Database (Preview)
 titleSuffix: Microsoft Fabric
-description: Learn to create Power BI reports from Cosmos DB data in Microsoft Fabric.
+description: Create reports and a semantic model within Power BI using data from your Cosmos DB database in Microsoft Fabric during the preview.
 author: jilmal
 ms.author: jmaldonado
 ms.topic: how-to
 ms.date: 07/11/2025
-ai-usage: ai-generated
 ---
 
-# Create Power BI reports from your Cosmos DB data
+# Create Power BI reports using Cosmos DB in Microsoft Fabric (preview)
 
-With Cosmos DB in Microsoft Fabric, you can easily build interactive Power BI reports on top of your NoSQL data. This guide shows you how to configure your semantic model and build a report directly in Power BI either from the browser or Power BI Desktop.
+With Cosmos DB in Microsoft Fabric, you can build interactive Power BI reports using your NoSQL data. In this guide, you build a report directly in Power BI using a semantic model you configured in Power BI.
 
 ## Prerequisites
 
@@ -32,7 +31,7 @@ Start by accessing the SQL analytics endpoint for the Cosmos DB in Fabric databa
 
 1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint**.
 
-    :::image source="media/how-to-access-data-lakehouse/endpoint-selection.png" lightbox="media/how-to-access-data-lakehouse/endpoint-selection.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
+    :::image source="media/how-to-create-reports/endpoint-selection.png" lightbox="media/how-to-create-reports/endpoint-selection.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
 
 1. Once you're able to successfully navigate to the SQL analytics endpoint, this navigation step confirms that mirroring ran successfully at least once.
 
@@ -40,12 +39,16 @@ Start by accessing the SQL analytics endpoint for the Cosmos DB in Fabric databa
 
 Before you can build a report, you must configure the default semantic model for your Cosmos DB artifact.
 
-1. Once, you have landed in the SQL analytics endpoint, go to the **Reporting** tab in the ribbon and select **Manage default semantic model**.
+1. From within the **SQL analytics** endpoint page, navigate to the **Reporting** tab in the ribbon.
 
-2. Select the desired tables you want to expose in your report, then save your selection.
+1. Select **Manage default semantic model**.
+
+1. Select the desired tables you want to expose in your report.
+
+1. **Save** your selection.
 
 > [!NOTE]
-> By default, semantic models are empty. If you skip this step, attempts to create a report will result in an error.
+> By default, semantic models are empty. If you skip this step, any attempt to create a Power BI report results in an error due to an empty semantic model.
 
 ## Build a report
 
@@ -53,29 +56,51 @@ Once your semantic model is configured, you can create a Power BI report in a fe
 
 **Option 1: From the SQL analytics endpoint**
 
-1. In the SQL analytics endpoint, select the **Reporting** tab and choose **New Report**.
-2. Click **Continue** to open Power BI with your selected tables.
+1. In the SQL analytics endpoint, select the **Reporting** tab.
 
-**Option 2: From the Create tab in Fabric**
+1. Select **New Report**.
 
-1. Navigate to the **Create** tab in Microsoft Fabric.
-2. Select **Pick a published semantic model** and choose your Cosmos DB semantic model as the data source.
+1. Select **Continue** to open Power BI with the tables previously configured in your semantic model.
 
-**Option 3: From Power BI desktop**
-
-1. Select **OneLake catalog**.
-2. Find and select the Cosmos DB semantic model you configured.
+> [!TIP]
+> Alternatively, you can create the Power BI report using one of two techniques:
+>
+> 1. Create tab in the Fabric portal:
+> 
+>     1. Navigate to the **Create** tab in Microsoft Fabric.
+> 
+>     1. Select **Pick a published semantic model**.
+> 
+>     1. Find and select the Cosmos DB semantic model you previously configured.
+> 
+> 1. Power BI desktop:
+> 
+>     1. Select **OneLake catalog**.
+> 
+>     1. Find and select the Cosmos DB semantic model you previously configured.
+>
 
 ## Design your report
 
-Once Power BI opens, you can:
- - Drag and drop fields from the **Data** pane to build visuals.
- - Use Copilot to generate visuals automatically:
-   - Click the **Copilot** button in the toolbar.
-   - Choose **Suggest content** for a new report page.
-   - Review the suggestions and click **Create** to add them to your report.
+Using the Power BI editor, you can design a report to your specifications.
 
-You now have a Power BI report connected to your Cosmos DB data in Fabric. Customize the visuals, apply filters, and explore your data to gain insights all within the Fabric ecosystem.
+1. In the Power BI editor, drag fields from the **Data** pane to the report surface.
+
+1. Select the **Copilot** option in the menu.
+
+1. Select **Suggest content** for a new report page.
+
+1. Review and observe the Copilot-generated suggestions.
+
+1. Select **Create** to add them to your report.
+
+> [!TIP]
+> With this new Power BI report connected to Cosmos DB data in Fabric, you can try these following actions to gain insights within the Fabric ecosystem:
+>
+> - Customize the visuals
+> - Apply filters
+> - Explore your data using new visualizations
+>
 
 ## Related content
 
