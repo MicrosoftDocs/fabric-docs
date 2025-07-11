@@ -59,6 +59,18 @@ This article lists current limitations for Cosmos DB in Fabric.
 
 - Once vector indexing and vector search are enabled on a container, they can't be disabled.
 
+## Full text indexing
+
+- Multi-language support is only supported with the following languages:
+
+  - `en-US` (English)
+  
+  - `de-DE` (German)
+  
+  - `es-ES` (Spanish)
+  
+  - `fr-FR` (French)
+
 ## Related content
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)

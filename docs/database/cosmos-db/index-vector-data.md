@@ -4,7 +4,7 @@ titleSuffix: Microsoft Fabric
 description: Explore how to index vector data in your Cosmos DB database within Microsoft Fabric during the preview, including setup and optimization tips.
 author: seesharprun
 ms.author: sidandrews
-ms.topic: how-to
+ms.topic: concept-article
 ms.date: 07/11/2025
 show_latex: true
 appliesto:
@@ -17,7 +17,7 @@ appliesto:
 
 Cosmos DB in Microsoft Fabric now offers efficient vector indexing and search. This feature is designed to handle multi-modal, high-dimensional vectors, enabling efficient and accurate vector search at any scale. You can now store vectors directly in the documents alongside your data. Each document in your database can contain not only traditional schema-free data, but also multi-modal high-dimensional vectors as other properties of the documents. This colocation of data and vectors allows for efficient indexing and searching, as the vectors are stored in the same logical unit as the data they represent. Keeping vectors and data together simplifies data management, AI application architectures, and the efficiency of vector-based operations.
 
-Cosmos DB in Microsoft Fabric offers the flexibility it offers in choosing the vector indexing method:
+Cosmos DB in Fabric offers the flexibility it offers in choosing the vector indexing method:
 
 - A "flat" or k-nearest neighbors exact search (sometimes called brute-force) can provide 100% retrieval recall for smaller, focused vector searches. especially when combined with query filters and partition-keys.
 
@@ -39,11 +39,11 @@ A vector store or vector database is a database designed to store and manage vec
 
 In a vector store, vector search algorithms are used to index and query embeddings. Some well-known vector search algorithms include Hierarchical Navigable Small World (HNSW), Inverted File (IVF), DiskANN, etc. Vector search is a method that helps you find similar items based on their data characteristics rather than by exact matches on a property field. This technique is useful in applications such as searching for similar text, finding related images, making recommendations, or even detecting anomalies. It's used to query the [vector embeddings](/azure/ai-services/openai/concepts/understand-embeddings) of your data that you created by using a machine learning model by using an embeddings API. Examples of embeddings APIs are [Azure OpenAI Embeddings](/azure/ai-services/openai/how-to/embeddings) or [Hugging Face on Azure](https://azure.microsoft.com/solutions/hugging-face-on-azure/). Vector search measures the distance between the data vectors and your query vector. The data vectors that are closest to your query vector are the ones that are found to be most similar semantically.
 
-In the Integrated Vector Database in Cosmos DB in Microsoft Fabric, embeddings can be stored, indexed, and queried alongside the original data. This approach eliminates the extra cost of replicating data in a separate pure vector database. Moreover, this architecture keeps the vector embeddings and original data together, which better facilitates multi-modal data operations, and enables greater data consistency, scale, and performance.
+In the Integrated Vector Database in Cosmos DB in Fabric, embeddings can be stored, indexed, and queried alongside the original data. This approach eliminates the extra cost of replicating data in a separate pure vector database. Moreover, this architecture keeps the vector embeddings and original data together, which better facilitates multi-modal data operations, and enables greater data consistency, scale, and performance.
 
 ## Container vector policies
 
-Performing vector search with Cosmos DB in Microsoft Fabric requires you to define a vector policy for the container. This policy provides essential information for the database engine to conduct efficient similarity search for vectors found in the container's documents. This configuration also informs the vector indexing policy of necessary information, should you choose to specify one. The following information is included in the contained vector policy:
+Performing vector search with Cosmos DB in Fabric requires you to define a vector policy for the container. This policy provides essential information for the database engine to conduct efficient similarity search for vectors found in the container's documents. This configuration also informs the vector indexing policy of necessary information, should you choose to specify one. The following information is included in the contained vector policy:
 
 - `path`: the property containing the vector (required).
 

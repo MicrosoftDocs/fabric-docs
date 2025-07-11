@@ -138,8 +138,6 @@ landingContent:
         links:
           - text: Mirror to OneLake
             url: cosmos-db/mirror-onelake.md
-          - text: Index vector data
-            url: cosmos-db/index-vector-data.md
       - linkListType: how-to-guide
         links:
           - text: Access data from a lakehouse
@@ -154,6 +152,18 @@ landingContent:
         links:
           - text: NoSQL query language
             url: /nosql/query/overview?context=/fabric/context/context-database
+
+  # Card
+  - title: Build AI applications with Cosmos DB database
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Index vector data
+            url: cosmos-db/index-vector-data.md
+          - text: Full text indexing and search
+            url: cosmos-db/full-text-indexing.md
+          - text: Hybrid search
+            url: cosmos-db/hybrid-search.md
 
   # Card 
   - title: Deploy and monitor Cosmos DB database

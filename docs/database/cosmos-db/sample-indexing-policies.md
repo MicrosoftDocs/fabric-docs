@@ -107,6 +107,121 @@ This policy disables indexing for the container, which is useful for write-heavy
 }
 ```
 
+
+## Vector indexing policy
+
+This policy enables vector indexing on the `/vector` property, allowing efficient similarity searches using cosine distance on three-dimensional `float32` vectors.
+
+```json
+{
+  "vectorEmbeddings": [
+    {
+      "path": "/vector",
+      "dataType": "float32",
+      "distanceFunction": "cosine",
+      "dimensions": 3
+    },
+  ]
+}
+```
+
+## Full text indexing policy
+
+This policy configures the `/text` property for full text search using English language analysis, allowing efficient text search queries.
+
+```json
+{
+  "defaultLanguage": "en-US",
+  "fullTextPaths": [
+    {
+      "path": "/text",
+      "language": "en-US"
+    }
+  ]
+}
+```
+
+## Full text indexing with excluded system property
+
+This policy enables full text indexing on the `/text` property while excluding the system property `_etag` from indexing.
+
+```json
+{
+  "indexingMode": "consistent",
+  "automatic": true,
+  "includedPaths": [
+    {
+      "path": "/*"
+    }
+  ],
+  "excludedPaths": [
+    {
+      "path": "/\"_etag\"/?"
+    },
+  ],
+  "fullTextIndexes": [
+    {
+      "path": "/text"
+    }
+  ]
+}
+```
+
+## Full text indexing on multiple properties
+
+This policy enables full text indexing on both the `/text1` and `/text2` properties using English language analysis, allowing efficient text search queries across multiple fields.
+
+```json
+{
+  "defaultLanguage": "en-US",
+  "fullTextPaths": [
+    {
+      "path": "/text1",
+      "language": "en-US"
+    },
+    {
+      "path": "/text2",
+      "language": "en-US"
+    }
+  ]
+}
+```
+
+## Sample full text and vector policy for hybrid search
+
+This policy combines full text and vector indexing to enable hybrid search capabilities, allowing efficient text and vector similarity queries within the same container.
+
+```json
+{
+  "indexingMode": "consistent",
+  "automatic": true,
+  "includedPaths": [
+    {
+      "path": "/*"
+    }
+  ],
+  "excludedPaths": [
+    {
+      "path": "/\"_etag\"/?"
+    },
+    {
+      "path": "/vector/*"
+    }
+  ],
+  "fullTextIndexes": [
+    {
+      "path": "/text"
+    }
+  ],
+  "vectorIndexes": [
+    {
+      "path": "/vector",
+      "type": "DiskANN"
+    }
+  ]
+}
+```
+
 ## Related content
 
 - [Review indexing policies in Cosmos DB in Microsoft Fabric](indexing-policies.md)
