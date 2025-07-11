@@ -10,7 +10,7 @@ ms.date: 07/10/2025
 
 ## Prerequisites
 
-- [A paid F2 or higher Fabric capacity resource](/enterprise/fabric-features#features-list)
+- [A paid F2 or higher Fabric capacity resource](../../enterprise/fabric-features.md#features-parity-list)
 - [Fabric data agent tenant settings](../data-agent-tenant-settings.md) is enabled.
 - [Copilot tenant switch](../data-agent-tenant-settings.md) is enabled.
 - [Cross-geo processing for AI](../data-agent-tenant-settings.md) is enabled.

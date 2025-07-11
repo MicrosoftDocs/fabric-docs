@@ -56,7 +56,7 @@ As part of the Always-On feature, you can additionally configure your minimum co
 
 [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
 
-For instructions on how to enable minimum consumption, see [Enable minimum consumption](manage-monitor-eventhouse.md#enable-minimum-consumption).
+For instructions on how to enable always-on, see [Enable always-on](manage-monitor-eventhouse.md#enable-always-on).
 
 ## Related content
 
