@@ -21,10 +21,11 @@ The following **Job scheduler** actions are available for materialized lake view
 
 |Action|Description|
 |---------|---------|
-|Run on demand Item Job|Run MLV lineage as an on demand job.|
 |Create Item Schedule|Create schedule to run lineage in MLV.|
+|List Item Job Instances|Lists all job instances corresponding a lakehouse|
 |Get Item Job Instance|Get details such as status of a run in MLV.|
 |Cancel Item Job Instance|Cancel an ongoing job run of lineage in MLV.|
+|Run on demand Item Job|Run MLV lineage as an on demand job.|
 
 For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 
@@ -121,6 +122,61 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehous
     "id": "<owner_id>",
     "type": "User"
   }
+}
+```
+
+### List Item Job Instances
+
+Lists all job instances corresponding a Lakehouse.
+
+**Sample request**:
+
+**URI**: 
+```http
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspace_id}/lakehouses/{lakehouse_id}/jobs/instances
+```
+
+With optional parameter:
+```http
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouse_id}/jobs/instances?continuationToken={continuation_token}
+```
+
+**Headers**:
+```rest
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
+```rest
+{
+  "value": [
+    {
+      "id": "<job_instance_id_1>",
+      "itemId": "<lakehouse_id>",
+      "jobType": "<job_type>",
+      "invokeType": "Manual",
+      "status": "<status>",
+      "rootActivityId": "<root_activity_id>",
+      "startTimeUtc": "2024-06-22T06:35:00.7812154",
+      "endTimeUtc": "2024-06-22T06:35:00.8033333",
+      "failureReason": null
+    },
+    {
+      "id": "<job_instance_id_1>",
+      "itemId": "<lakehouse_id>",
+      "jobType": "<job_type>",
+      "invokeType": "Manual",
+      "status": "<status>",
+      "rootActivityId": "root_activity_id",
+      "startTimeUtc": "2024-06-22T06:35:00.7812154",
+      "endTimeUtc": "2024-06-22T07:35:00.8033333",
+      "failureReason": null
+    }
+  ],
+  "continuationToken": "<continuation_token>",
+  "continuationUri": "https://api.fabric.microsoft.com/v1/workspaces/{workspace_id}/lakehouses/{lakehouse_id}/jobs/instances?continuationToken={continuation_token}"
 }
 ```
 
