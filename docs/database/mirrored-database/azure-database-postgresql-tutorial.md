@@ -73,18 +73,12 @@ You can accomplish this by specifying a [database role](#use-a-database-role) fo
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
-1. Navigate to the **Create** pane. Select the **Create** icon.
+1. Navigate to the **Create** pane or click **New item** button. Select the **Create** icon.
 1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure Database for PostgreSQL (preview)**.
-1. Either select **Azure Database for PostgreSQL** under **New sources** to create a new connection for your source flexible server or select an existing connection under **OneLake catalog**.
-1. In the **New source** page, insert your flexible server name and database, then you can either select existing connection credentials or insert database role and password created in the previous step.
-1. Leave the **Use encrypted connection** checkbox selected and **Allow this connection to be utilized with either on-premises or VNet data gateways** unselected.
-1. Select **Connect**.
-1. In the **Choose data** select the database tables you want to replicate in the Mirrored database in Fabric.
-    - If any error or warning message will be displayed in this page, see [Troubleshoot Fabric mirrored databases from Azure Database for PostgreSQL flexible server](azure-database-postgresql-troubleshoot.md).
 
 ## Connect to your Azure Database for PostgreSQL flexible server
 
-Next, connect to the Azure Database for PostgreSQL flexible server from Fabric. The following steps guide you through the process of creating the connection to your Azure Database for PostgreSQL flexible server:
+The following steps guide you through the process of creating the connection to your Azure Database for PostgreSQL flexible server:
 
 1. Under **New sources**, select **Azure Database for PostgreSQL (preview)**. Or, select an existing Azure Database for PostgreSQL flexible server connection from the OneLake hub.
 1. If you selected **New connection**, enter the connection details to the Azure Database for PostgreSQL flexible server.
@@ -92,6 +86,7 @@ Next, connect to the Azure Database for PostgreSQL flexible server from Fabric. 
    - **Database**: Enter the name of your Azure Database for PostgreSQL flexible server.
    - **Connection**: Create new connection.
    - **Connection name**: An automatic name is provided. You can change it.
+   - **Data Gateway**: select an available [VNET Data Gateway]()
    - **Authentication kind** (only Basic is available in the current preview):
        - Basic (PostgreSQL Authentication)
 1. Select **Connect**.
