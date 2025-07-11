@@ -5,7 +5,7 @@ description: Learn how authentication works using data plane roles for Cosmos DB
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/11/2025
+ms.date: 07/14/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
