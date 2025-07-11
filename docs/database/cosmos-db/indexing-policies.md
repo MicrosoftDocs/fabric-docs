@@ -224,12 +224,14 @@ Here's an example of an indexing policy with a vector index:
 > [!IMPORTANT]
 > The vector path should be added to the `excludedPaths` section of the indexing policy to ensure optimized performance for insertion. Not adding the vector path to `excludedPaths` will result in higher RU charge and latency for vector insertions.
 >
-> A vector indexing policy must also be on the path defined in the container's vector policy. For more information, see [vector policies]().
+> A vector indexing policy must also be on the path defined in the container's vector policy. For more information, see [vector policies](index-vector-data.md#vector-indexing-policies).
 >
 
 ## Spatial indexes
 
-When you define a spatial path in the indexing policy, you should define which index ```type``` should be applied to that path. Possible types for spatial indexes include:
+When you define a spatial path in the indexing policy, you should define which index `type` should be applied to that path.
+
+Possible types for spatial indexes include:
 
 - Point
 
@@ -242,62 +244,65 @@ When you define a spatial path in the indexing policy, you should define which i
 Cosmos DB, by default, won't create any spatial indexes. If you would like to use spatial SQL built-in functions, you should create a spatial index on the required properties. See [this section](sql-query-geospatial-index.md) for indexing policy examples for adding spatial indexes.
 
 ## Tuple indexes
-Tuple Indexes are useful when performing filtering on multiple fields within an array element. Tuple indexes are defined in the includedPaths section of the indexing policy using the tuple specifier “[]”. 
+
+Tuple Indexes are useful when performing filtering on multiple fields within an array element. Tuple indexes are defined in the includedPaths section of the indexing policy using the tuple specifier `[]`. 
 
 > [!NOTE]
-> Unlike with included or excluded paths, you can't create a path with the /* wildcard. Every tuple path needs to end with “/?”. If a tuple in a tuple path doesn't exist in an item, a value will be added to the index to indicate that the tuple is undefined.
+> Unlike with included or excluded paths, you can't create a path with the `/*` wildcard. Every tuple path needs to end with `/?`. If a tuple in a tuple path doesn't exist in an item, a value will be added to the index to indicate that the tuple is undefined.
 
-Array tuple paths will be defined in the includedPaths section and will be using the following notation.
+Array tuple paths will be defined in the includedPaths section and will be using the following notation: `<path prefix>/[]/{<tuple 1>, <tuple 2> … <tuple n>}/?`
 
-`<path prefix>/[]/{<tuple 1>, <tuple 2> … <tuple n>}/?`
+Consider these important notes:
 
-Note that:
-- The first part, the path Prefix, is the path that is common between the tuples. It is the path from root to array.  In our example it is “/events”.
-- Next is the array wildcard specifier “[]”. All array tuple paths should have an array wildcard specifier before the tuple specifier “{}”. 
-- Next is specifying the tuples using the tuple specifier “{}”. 
-- Tuples will be separated by comma.  
+- The first part, the path prefix, is the path that is common between the tuples. It is the path from root to array.  In our example it is `/events`.
+
+- Next is the array wildcard specifier `[]`. All array tuple paths should have an array wildcard specifier before the tuple specifier `{}`. 
+
+- Next is specifying the tuples using the tuple specifier `{}`. 
+
+- Tuples will be separated by a comma.  
+
 - Tuple needs to use the same path specification as other index paths with a few exceptions:  
-- Tuples should not start with the leading “/”. 
-- Tuples should not have array wildcards. 
-- Tuples should not end “?” or “*”
-- “?” is the last segment in a tuple path and should be specified immediately after the tuple specifier segment. 
 
-For example, 
+  - Tuples should not start with the leading `/`. 
+  
+  - Tuples should not have array wildcards. 
+  
+  - Tuples should not end `?` or `*`
+  
+  - `?` is the last segment in a tuple path and should be specified immediately after the tuple specifier segment. 
 
-`/events/[]/{name, category}/?`
+For example, this is a valid tuple path specification: `/events/[]/{name, category}/?`
 
-These are a few examples of *valid* array tuple paths:
 
+Here are a few additional valid examples of array tuple paths:
+
+```json
+[  
+  { "path": "/events/[]/{name/first, name/last}/?" }, 
+  { "path": "/events/[]/{name/first, category}/?" }, 
+  { "path": "/events/[]/{name/first, category/subcategory}/?" }, 
+  { "path": "/events/[]/{name/[1]/first, category}/?" }, 
+  { "path": "/events/[]/{[1], [3]}/?" }, 
+  { "path": "/city/[1]/events/[]/{name, category}/?" } 
+]
 ```
-    “includedPaths”:[  
-        {“path”: “/events/[]/{name/first, name/last}/?”}, 
-        {“path”: “/events/[]/{name/first, category}/?”}, 
-        {“path”: “/events/[]/{name/first, category/subcategory}/?”}, 
-        {“path”: “/events/[]/{name/[1]/first, category}/?”}, 
-        {“path”: “/events/[]/{[1], [3]}/?”}, 
-        {“path”: “/city/[1]/events/[]/{name, category}/?”} 
-    ]
-```
 
-These are a few examples of *invalid* array tuple paths
-- `/events/[]/{name/[]/first, category}/?`
-    - One of the tuples has array wildcard
-- `/events/[]/{name, category}/*`
-    - The last segment in array tuple path should be “?” and not * 
--  `/events/[]/{{name, first},category}/?`
-    - The tuple specifier is nested
-- `/events/{name, category}/?`
-    - The array wildcard is missing before the tuple specifier 
-- `/events/[]/{/name,/category}/?`
-    - Tuples start with leading `/` 
-- `/events/[]/{name/?,category/?}/?`
-    - Tuples end with an `?` 
-- `/city/[]/events/[]/{name, category}/?`
-    - The path prefix as 2 array wildcards 
+Here are a few examples of *invalid* array tuple paths with explanations:
+
+| Invalid path | Explanation |
+| --- | --- |
+| `/events/[]/{name/[]/first, category}/?` | One of the tuples has array wildcard |
+| `/events/[]/{name, category}/*` | The last segment in array tuple path should be `?` and not `*` |
+| `/events/[]/{{name, first},category}/?` | The tuple specifier is nested |
+| `/events/{name, category}/?` | The array wildcard is missing before the tuple specifier |
+| `/events/[]/{/name,/category}/?` | Tuples must start with a leading `/` |
+| `/events/[]/{name/?,category/?}/?` | Tuples must end with an `?` |
+| `/city/[]/events/[]/{name, category}/?` | The path prefix as 2 array wildcards |
 
 ## Composite indexes
 
-Queries that have an `ORDER BY` clause with two or more properties require a composite index. You can also define a composite index to improve the performance of many equality and range queries. By default, no composite indexes are defined so you should [add composite indexes](how-to-manage-indexing-policy.md#composite-index) as needed.
+Queries that have an `ORDER BY` clause with two or more properties require a composite index. You can also define a composite index to improve the performance of many equality and range queries. By default, no composite indexes are defined so you should add composite indexes as needed.
 
 Unlike with included or excluded paths, you can't create a path with the `/*` wildcard. Every composite path has an implicit `/?` at the end of the path that you don't need to specify. Composite paths lead to a scalar value that is the only value included in the composite index. If a path in a composite index doesn't exist in an item or leads to a nonscalar value, a value is added to the index to indicate that the path is undefined.
 
@@ -308,9 +313,9 @@ When defining a composite index, you specify:
 - The order (ascending or descending).
 
 > [!NOTE]
-> When you add a composite index, the query will utilize existing range indexes until the new composite index addition is complete. Therefore, when you add a composite index, you might not immediately observe performance improvements. It is possible to track the progress of index transformation [by using one of the SDKs](how-to-manage-indexing-policy.md).
+> When you add a composite index, the query will utilize existing range indexes until the new composite index addition is complete. Therefore, when you add a composite index, you might not immediately observe performance improvements. It is possible to track the progress of index transformation by using one of the SDKs.
 
-### ORDER BY queries on multiple properties:
+### `ORDER BY` queries on multiple properties:
 
 The following considerations are used when using composite indexes for queries with an `ORDER BY` clause with two or more properties.
 
@@ -322,14 +327,14 @@ The following considerations are used when using composite indexes for queries w
 
 Consider the following example where a composite index is defined on properties name, age, and _ts:
 
-| **Composite Index**     | **Sample `ORDER BY` Query**      | **Supported by Composite Index?** |
+| Composite Index | Sample `ORDER BY` Query | Supported by Composite Index? |
 | ----------------------- | -------------------------------- | -------------- |
-| ```(name ASC, age ASC)```   | ```SELECT * FROM c ORDER BY c.name ASC, c.age asc``` | ```Yes```            |
-| ```(name ASC, age ASC)```   | ```SELECT * FROM c ORDER BY c.age ASC, c.name asc```   | ```No```             |
-| ```(name ASC, age ASC)```    | ```SELECT * FROM c ORDER BY c.name DESC, c.age DESC``` | ```Yes```            |
-| ```(name ASC, age ASC)```     | ```SELECT * FROM c ORDER BY c.name ASC, c.age DESC``` | ```No```             |
-| ```(name ASC, age ASC, timestamp ASC)``` | ```SELECT * FROM c ORDER BY c.name ASC, c.age ASC, timestamp ASC``` | ```Yes```            |
-| ```(name ASC, age ASC, timestamp ASC)``` | ```SELECT * FROM c ORDER BY c.name ASC, c.age ASC``` | ```No```            |
+| `(name ASC, age ASC)` | `SELECT * FROM c ORDER BY c.name ASC, c.age asc` | `Yes` |
+| `(name ASC, age ASC)` | `SELECT * FROM c ORDER BY c.age ASC, c.name asc` | `No` |
+| `(name ASC, age ASC)` | `SELECT * FROM c ORDER BY c.name DESC, c.age DESC` | `Yes` |
+| `(name ASC, age ASC)` | `SELECT * FROM c ORDER BY c.name ASC, c.age DESC` | `No` |
+| `(name ASC, age ASC, timestamp ASC)` | `SELECT * FROM c ORDER BY c.name ASC, c.age ASC, timestamp ASC` | `Yes` |
+| `(name ASC, age ASC, timestamp ASC)` | `SELECT * FROM c ORDER BY c.name ASC, c.age ASC` | `No` |
 
 You should customize your indexing policy so you can serve all necessary `ORDER BY` queries.
 
@@ -369,16 +374,16 @@ The following considerations are used when creating composite indexes for querie
 
 Consider the following examples where a composite index is defined on properties name, age, and timestamp:
 
-| **Composite Index**     | **Sample Query**      | **Supported by Composite Index?** |
+| Composite Index | Sample Query | Supported by Composite Index? |
 | ----------------------- | -------------------------------- | -------------- |
-| ```(name ASC, age ASC)```   | ```SELECT * FROM c WHERE c.name = "John" AND c.age = 18``` | ```Yes```            |
-| ```(name ASC, age ASC)```   | ```SELECT * FROM c WHERE c.name = "John" AND c.age > 18```   | ```Yes```             |
-| ```(name ASC, age ASC)```   | ```SELECT COUNT(1) FROM c WHERE c.name = "John" AND c.age > 18```   | ```Yes```             |
-| ```(name DESC, age ASC)```    | ```SELECT * FROM c WHERE c.name = "John" AND c.age > 18``` | ```Yes```            |
-| ```(name ASC, age ASC)```     | ```SELECT * FROM c WHERE c.name != "John" AND c.age > 18``` | ```No```             |
-| ```(name ASC, age ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.name = "John" AND c.age = 18 AND c.timestamp > 123049923``` | ```Yes```            |
-| ```(name ASC, age ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.name = "John" AND c.age < 18 AND c.timestamp = 123049923``` | ```No```            |
-| ```(name ASC, age ASC) and (name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.name = "John" AND c.age < 18 AND c.timestamp > 123049923``` | ```Yes```            |
+| `(name ASC, age ASC)` | `SELECT * FROM c WHERE c.name = "John" AND c.age = 18` | `Yes` |
+| `(name ASC, age ASC)` | `SELECT * FROM c WHERE c.name = "John" AND c.age > 18` | `Yes` |
+| `(name ASC, age ASC)` | `SELECT COUNT(1) FROM c WHERE c.name = "John" AND c.age > 18` | `Yes` |
+| `(name DESC, age ASC)` | `SELECT * FROM c WHERE c.name = "John" AND c.age > 18` | `Yes` |
+| `(name ASC, age ASC)` | `SELECT * FROM c WHERE c.name != "John" AND c.age > 18` | `No` |
+| `(name ASC, age ASC, timestamp ASC)` | `SELECT * FROM c WHERE c.name = "John" AND c.age = 18 AND c.timestamp > 123049923` | `Yes` |
+| `(name ASC, age ASC, timestamp ASC)` | `SELECT * FROM c WHERE c.name = "John" AND c.age < 18 AND c.timestamp = 123049923` | `No` |
+| `(name ASC, age ASC) and (name ASC, timestamp ASC)` | `SELECT * FROM c WHERE c.name = "John" AND c.age < 18 AND c.timestamp > 123049923` | `Yes` |
 
 ### Queries with a filter and ORDER BY
 
@@ -453,15 +458,15 @@ The following considerations apply when creating composite indexes to optimize a
 - All considerations for creating composite indexes for `ORDER BY` queries with multiple properties and queries with filters on multiple properties still apply.
 
 
-| **Composite Index**                      | **Sample `ORDER BY` Query**                                  | **Supported by Composite Index?** |
+| Composite Index | Sample `ORDER BY` Query | Supported by Composite Index? |
 | ---------------------------------------- | ------------------------------------------------------------ | --------------------------------- |
-| ```(name ASC, timestamp ASC)```          | ```SELECT * FROM c WHERE c.name = "John" ORDER BY c.name ASC, c.timestamp ASC``` | `Yes` |
-| ```(name ASC, timestamp ASC)```          | ```SELECT * FROM c WHERE c.name = "John" AND c.timestamp > 1589840355 ORDER BY c.name ASC, c.timestamp ASC``` | `Yes` |
-| ```(timestamp ASC, name ASC)```          | ```SELECT * FROM c WHERE c.timestamp > 1589840355 AND c.name = "John" ORDER BY c.timestamp ASC, c.name ASC``` | `No` |
-| ```(name ASC, timestamp ASC)```          | ```SELECT * FROM c WHERE c.name = "John" ORDER BY c.timestamp ASC, c.name ASC``` | `No`  |
-| ```(name ASC, timestamp ASC)```          | ```SELECT * FROM c WHERE c.name = "John" ORDER BY c.timestamp ASC``` | ```No```   |
-| ```(age ASC, name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.age ASC, c.name ASC,c.timestamp ASC``` | `Yes` |
-| ```(age ASC, name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.timestamp ASC``` | `No` |
+| `(name ASC, timestamp ASC)` | `SELECT * FROM c WHERE c.name = "John" ORDER BY c.name ASC, c.timestamp ASC` | `Yes` |
+| `(name ASC, timestamp ASC)` | `SELECT * FROM c WHERE c.name = "John" AND c.timestamp > 1589840355 ORDER BY c.name ASC, c.timestamp ASC` | `Yes` |
+| `(timestamp ASC, name ASC)` | `SELECT * FROM c WHERE c.timestamp > 1589840355 AND c.name = "John" ORDER BY c.timestamp ASC, c.name ASC` | `No` |
+| `(name ASC, timestamp ASC)` | `SELECT * FROM c WHERE c.name = "John" ORDER BY c.timestamp ASC, c.name ASC` | `No` |
+| `(name ASC, timestamp ASC)` | `SELECT * FROM c WHERE c.name = "John" ORDER BY c.timestamp ASC` | `No` |
+| `(age ASC, name ASC, timestamp ASC)` | `SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.age ASC, c.name ASC,c.timestamp ASC` | `Yes` |
+| `(age ASC, name ASC, timestamp ASC)` | `SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.timestamp ASC` | `No` |
 
 ### Queries with a filter and an aggregate 
 
@@ -475,17 +480,18 @@ The following considerations apply when creating composite indexes to optimize a
 - The property in the aggregate system function should be defined last in the composite index.
 - The `order` (`ASC` or `DESC`) doesn't matter.
 
-| **Composite Index**                      | **Sample Query**                                  | **Supported by Composite Index?** |
+| Composite Index | Sample Query | Supported by Composite Index? |
 | ---------------------------------------- | ------------------------------------------------------------ | --------------------------------- |
-| ```(name ASC, timestamp ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name = "John"``` | `Yes` |
-| ```(timestamp ASC, name ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name = "John"``` | `No` |
-| ```(name ASC, timestamp ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name > "John"``` | `No` |
-| ```(name ASC, age ASC, timestamp ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name = "John" AND c.age = 25``` | `Yes` |
-| ```(age ASC, timestamp ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name = "John" AND c.age > 25``` | `No` |
+| `(name ASC, timestamp ASC)` | `SELECT AVG(c.timestamp) FROM c WHERE c.name = "John"` | `Yes` |
+| `(timestamp ASC, name ASC)` | `SELECT AVG(c.timestamp) FROM c WHERE c.name = "John"` | `No` |
+| `(name ASC, timestamp ASC)` | `SELECT AVG(c.timestamp) FROM c WHERE c.name > "John"` | `No` |
+| `(name ASC, age ASC, timestamp ASC)` | `SELECT AVG(c.timestamp) FROM c WHERE c.name = "John" AND c.age = 25` | `Yes` |
+| `(age ASC, timestamp ASC)` | `SELECT AVG(c.timestamp) FROM c WHERE c.name = "John" AND c.age > 25` | `No` |
 
 ### Composite indexes with an array wildcard
 
 Below is an example for a composite index that contains an array wildcard.
+
 ```json
 {  
     "automatic":true,
