@@ -261,7 +261,7 @@ Consider these important rules for array tuples:
 
 - After the first part, the tuple should include the array wildcard specifier `[]`. All array tuple paths should have an array wildcard specifier before the tuple specifier `{}`.
 
-- In the next part, is specifying the tuples using the tuple specifier `{}`.
+- The next part specify tuples using the tuple specifier `{}`.
 
 - Tuple needs to use the same path specification as other index paths with a few exceptions:
 
