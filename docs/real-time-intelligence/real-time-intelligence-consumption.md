@@ -37,7 +37,7 @@ Capacity is a dedicated set of resources that is available at a given time to be
 > For example, a database using 4 virtual cores that is active for 30 seconds will use 120 seconds of Capacity Units.
 
 > [!NOTE]
-> If your KQL database is a subitem of an eventhouse, the Eventhouse UpTime is relfected in the eventhouse item and the database item isn't shown in the list.
+> If your KQL database is a subitem of an eventhouse, the Eventhouse UpTime is reflected in the eventhouse item and the database item isn't shown in the list.
 
 ### Monitor Eventhouse UpTime
 
