@@ -47,13 +47,13 @@ The Eventhouse ribbon is your quick-access action bar, offering a convenient way
 
 ### Enable always-on
 
-Always-on prevents your eventhouse from suspending the service due to inactivity. For highly time-sensitive systems this prevents the latency of re-activating the eventhouse.
+Always-on prevents your eventhouse from suspending the service due to inactivity. For highly time-sensitive systems, it prevents the latency of re-activating the eventhouse.
 
 1. From the ribbon, select **Always-On**
 2. In the **Always-On** pane, select the option to **Enable** the feature
 
-#### Enable miniumum consumption
-In addition to **Always-On** you can optionally set the Minimum consumption. This sets a minimum available capacity unit (CU) size for an eventhouse. After enabling **Always-On** you will have the option to enable **Minimum consumption**
+#### Enable minimum consumption
+In addition to **Always-On** you can optionally set the Minimum consumption. This sets a minimum available capacity unit (CU) size for an eventhouse. After you enable **Always-On**, you have the option to enable **Minimum consumption**
 
 1. In the **Always-On** pane, select **Minimum consumption**
 1. In the **Minimum consumption** pane, select the size corresponding to the [minimum available CU](eventhouse.md#minimum-consumption) size you want to apply to this eventhouse, and then select **Done**.
@@ -105,9 +105,9 @@ The system overview page provides a snapshot of the current state of the eventho
     * **Eventhouse storage**: Shows the storage capacity of the eventhouse. The storage capacity is divided into categories:
         * **Original size**: The uncompressed original data size of the eventhouse.
         * **Compressed size**: The compressed data size of the eventhouse.
-        * **Premium**: The amount of Premium storage utilized. This is the high-performance storage tier for your most active data, ensuring the fastest possible access for real-time processing and analysis. If all data isn't stored in the Premium cache, query latency may be negatively impacted. For more information, review your [caching policy](data-policies.md#caching-policy).
+        * **Premium**: The amount of Premium storage utilized. This tier is the high-performance storage tier for your most active data, ensuring the fastest possible access for real-time processing and analysis. If all data isn't stored in the Premium cache, query latency might be negatively impacted. For more information, review your [caching policy](data-policies.md#caching-policy).
 
-    * **Storage resources**: Shows a snapshot of the storage breakdown by database. You can drilldown into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
+    * **Storage resources**: Shows a snapshot of the storage breakdown by database. You can drill down into each database from the bar to see the details. You can adjust a databases storage usage by configuring its [caching policy](data-policies.md#caching-policy).
 
     * **Activity in minutes**: Shows the duration in minutes to run compute operations such as queries and commands. It's important to note that compute minutes don't directly correspond to compute units, which represent the actual processing time consumed by these operations.
 
@@ -154,7 +154,7 @@ The databases overview page provides a summary of all the databases in the event
 
 ## View Workspace monitoring
 
-You can access the read-only Workspace monitoring database from the Evenhouse explorer pane. Workspace monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
+You can access the read-only Workspace monitoring database from the Eventhouse explorer pane. Workspace monitoring provides a set of tables that you can query to get insights into the usage and performance of your eventhouse. For more information about the monitoring data that you can query, see [Eventhouse monitoring](monitor-eventhouse.md).
 
 > [!NOTE]
 >
