@@ -67,7 +67,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: Billing and usage reporting
-            url: billing-and-usage.md
+            url: billing-usage.md
   - title: AI applications
     linkLists:
       - linkListType: concept

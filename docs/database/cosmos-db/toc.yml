@@ -38,7 +38,7 @@ items:
       - name: Monitor activity and performance
         href: how-to-monitor.md
       - name: Billing and usage reporting
-        href: billing-and-usage.md
+        href: billing-usage.md
   - name: Design secure solutions
     items:
       - name: Security best practices
