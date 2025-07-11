@@ -21,7 +21,7 @@ items:
       - name: Mirror to OneLake
         href: mirror-onelake.md
       - name: Create Power BI reports
-        href: create-reports.md
+        href: how-to-create-reports.md
       - name: Access data from a lakehouse
         href: how-to-access-data-lakehouse.md
   - name: Build AI applications
