@@ -19,7 +19,7 @@ The Oracle database connector is supported in Data Factory for [!INCLUDE [produc
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Data pipeline** <br>- [Copy activity](connector-oracle-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Script activity| On-premises | Basic           |
-| **Dataflow Gen2** (source/destination)                                                 | On-premises | Basic           |
+| **Dataflow Gen2** (source/-)                                                 | On-premises | Basic           |
 | **Copy job** (source/destination) <br>- Full load<br>- Append | On-premises | Basic           |
 
 > [!NOTE]
