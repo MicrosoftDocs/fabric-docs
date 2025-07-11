@@ -18,7 +18,7 @@ The SQL Server database connector is supported in Data Factory for [!INCLUDE [pr
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-sql-server-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal<br> Windows |
+| **Data pipeline** <br>- [Copy activity](connector-sql-server-copy-activity.md) (source/-)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal |
 | **Dataflow Gen2** (source/destination)                                                 | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal<br> Windows |
 | **Copy job** (source/destination)  <br>- Full load<br>- Incremental load (Preview)<br>- Append<br>- Merge | None<br> On-premises<br> Virtual network | Basic<br> Service principal |
 

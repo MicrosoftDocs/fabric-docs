@@ -18,9 +18,9 @@ The Oracle database connector is supported in Data Factory for [!INCLUDE [produc
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-oracle-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Script | On-premises<br> Virtual network | Basic           |
-| **Dataflow Gen2** (source/destination)                                                 | On-premises<br> Virtual network | Basic           |
-| **Copy job** (source/destination) <br>- Full load<br>- Append | On-premises<br> Virtual network | Basic           |
+| **Data pipeline** <br>- [Copy activity](connector-oracle-database-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Script activity| On-premises | Basic           |
+| **Dataflow Gen2** (source/destination)                                                 | On-premises | Basic           |
+| **Copy job** (source/destination) <br>- Full load<br>- Append | On-premises | Basic           |
 
 > [!NOTE]
 >To use Oracle connector in date pipelines, install [Oracle Client for Microsoft Tools (OCMT)](https://www.oracle.com/database/technologies/appdev/ocmt.html) on the computer running on-premises data gateway. For detailed steps, go to [Prerequisites](connector-oracle-database.md#prerequisites).

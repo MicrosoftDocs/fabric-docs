@@ -18,7 +18,7 @@ The SFTP connector is supported in Data Factory for [!INCLUDE [product-name](../
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Data pipeline** <br>- [Copy activity](connector-sftp-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete | None<br> On-premises<br> Virtual network | Basic           |
+| **Data pipeline** <br>- [Copy activity](connector-sftp-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity| None<br> On-premises<br> Virtual network | Basic           |
 
 ## Related content
 
