@@ -45,14 +45,19 @@ This article lists current limitations for Cosmos DB in Fabric.
 
 ## Vector search
 
-- `quantizedFlat` and `diskANN` indexes require at least 1,000 vectors to be indexed to ensure that the quantization is accurate. If fewer than 1,000 vectors are indexed, then a full-scan is used instead and RU charges may be higher. 
-- Vectors indexed with the `flat` index type can be at most 505 dimensions. Vectors indexed with the `quantizedFlat` or `DiskANN` index type can be at most 4,096 dimensions.
-- The rate of vector insertions should be limited. Very large ingestion (in excess of 5M vectors) may require additional index build time. 
-- The vector search feature is not currently supported on the existing containers. To use it, a new container must be created, and the container-level vector embedding policy must be specified.
-- Shared throughput databases are unsupported.
-- At this time, vector indexing and search is not supported on accounts with Analytical Store (and Synapse Link) and Shared Throughput.
-- Once vector indexing and search is enabled on a container, it cannot be disabled.
+- `quantizedFlat` and `diskANN` indexes require at least 1,000 vectors to be indexed to ensure that the quantization is accurate. If fewer than 1,000 vectors are indexed, then a full-scan is used instead and RU charges might be higher. 
 
+- Vectors indexed with the `flat` index type can be at most 505 dimensions. Vectors indexed with the `quantizedFlat` or `DiskANN` index type can be at most 4,096 dimensions.
+
+- The rate of vector insertions should be limited. Large ingestion, in excess of 5,000,000 vectors, could require extra index build time. 
+
+- The vector search feature isn't currently supported on the existing containers. To use it, a new container must be created, and the container-level vector embedding policy must be specified.
+
+- Shared throughput databases are unsupported.
+
+- At this time, vector indexing and vector search aren't supported on accounts with Analytical Store, Azure Synapse Link, or shared throughput.
+
+- Once vector indexing and vector search are enabled on a container, they can't be disabled.
 
 ## Related content
 
