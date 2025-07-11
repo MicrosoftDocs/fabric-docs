@@ -26,23 +26,23 @@ landingContent:
       - linkListType: how-to-guide
         links:
         - text: Create alerts from a Real-Time Dashboard
-          url: data-activator/activator-get-data-real-time-dashboard.md
+          url: activator-get-data-real-time-dashboard.md
         - text: Create alerts from a KQL Queryset
-          url: data-activator/activator-alert-queryset.md
+          url: activator-alert-queryset.md
         - text: Set alerts on eventstreams in Real-Time hub
-          url: ../real-time-hub/set-alerts-data-streams.md?context=/fabric/context/context-rti&pivots=fabric
+          url: ../../real-time-hub/set-alerts-data-streams.md?context=/fabric/context/context-rti&pivots=fabric
         - text: Set alerts on Fabric workspace item events in Real-Time hub
-          url: ../real-time-hub/set-alerts-fabric-workspace-item-events.md?context=/fabric/context/context-rti&pivots=fabric
+          url: ../../real-time-hub/set-alerts-fabric-workspace-item-events.md?context=/fabric/context/context-rti&pivots=fabric
         - text: Set alerts on Fabric OneLake events in Real-Time hub
-          url: ../real-time-hub/set-alerts-fabric-onelake-events.md?context=/fabric/context/context-rti&pivots=fabric
+          url: ../../real-time-hub/set-alerts-fabric-onelake-events.md?context=/fabric/context/context-rti&pivots=fabric
         - text: Set alerts on Fabric Job events in Real-Time hub
-          url: ../real-time-hub/set-alerts-fabric-job-events.md?context=/fabric/context/context-rti&pivots=fabric
+          url: ../../real-time-hub/set-alerts-fabric-job-events.md?context=/fabric/context/context-rti&pivots=fabric
         - text: Set alerts on Azure Blob Storage events in Real-Time hub
-          url: ../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
+          url: ../../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
         - text: Create alerts on Power BI reports
-          url: data-activator/activator-get-data-power-bi.md
+          url: activator-get-data-power-bi.md
         - text: Get data from eventstreams
-          url: event-streams/add-destination-activator.md
+          url: ../event-streams/add-destination-activator.md
 
   - title: Create objects and triggers
     linkLists:

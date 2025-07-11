@@ -46,7 +46,7 @@ The following error codes represent problems that can occur when [!INCLUDE [fabr
 
 ### IncorrectDataFormat
 
-The eventstream item connected to your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] object contains data in a format that isn't recognized by [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. To resolve the problem, review the data in your eventstream item to ensure that it's in JSON dictionary format.
+The eventstream item connected to your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] object contains data in a format that isn't recognized by [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. To resolve the problem, review the data in your eventstream item to ensure that it's in JSON dictionary format, as described in the [Get data from eventstreams](../event-streams/add-destination-activator.md) article.
 
 ## Rule evaluation error codes
 
