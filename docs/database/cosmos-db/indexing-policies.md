@@ -253,15 +253,15 @@ Tuple Indexes are useful when performing filtering on multiple fields within an 
 
 Array tuple paths are defined in the `includedPaths` section using the following notation: `<path prefix>/[]/{<tuple 1>, <tuple 2>, …, <tuple n>}/?`
 
-Consider these important notes:
+Consider these important rules for array tuples:
+
+- Each part of the tuple is separated by a comma.
 
 - The first part, the path prefix, is the path that is common between the tuples. It's the path from root to array. In our example, it's `/events`.
 
-- Next is the array wildcard specifier `[]`. All array tuple paths should have an array wildcard specifier before the tuple specifier `{}`.
+- After the first part, the tuple should include the array wildcard specifier `[]`. All array tuple paths should have an array wildcard specifier before the tuple specifier `{}`.
 
-- Next is specifying the tuples using the tuple specifier `{}`.
-
-- Tuples are separated by a comma.
+- In the next part, is specifying the tuples using the tuple specifier `{}`.
 
 - Tuple needs to use the same path specification as other index paths with a few exceptions:
 
