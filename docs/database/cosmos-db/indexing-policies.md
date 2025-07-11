@@ -269,7 +269,7 @@ Consider these important rules for array tuples:
 
   - Tuples shouldn't have array wildcards.
 
-  - Tuples shouldn't end `?` or `*`
+  - Tuples shouldn't end with `?` or `*`.
 
   - `?` is the last segment in a tuple path and should be specified immediately after the tuple specifier segment.
 
