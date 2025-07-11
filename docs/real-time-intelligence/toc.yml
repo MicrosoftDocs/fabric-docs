@@ -787,8 +787,10 @@ items:
   items:
   - name: What is Activator?
     href: data-activator/activator-introduction.md
-  - name: Create and activate an Activator rule
-    href: data-activator/activator-tutorial.md
+  - name: Tutorials
+    items: 
+    - name: Create and activate an Activator rule
+      href: data-activator/activator-tutorial.md
   - name: Create alerts
     items:
     - name: Create alerts from a Real-Time Dashboard
@@ -797,13 +799,13 @@ items:
       href: data-activator/activator-alert-queryset.md
     - name: Set alerts on eventstreams in Real-Time hub
       href: ../real-time-hub/set-alerts-data-streams.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Set alerts on Fabric workspace item events in Real-Time hub
+    - name: Set alerts on workspace item events
       href: ../real-time-hub/set-alerts-fabric-workspace-item-events.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Set alerts on Fabric OneLake events in Real-Time hub
+    - name: Set alerts on OneLake events
       href: ../real-time-hub/set-alerts-fabric-onelake-events.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Set alerts on Fabric Job events in Real-Time hub
+    - name: Set alerts on Job events
       href: ../real-time-hub/set-alerts-fabric-job-events.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Set alerts on Azure Blob Storage events in Real-Time hub
+    - name: Set alerts on Azure Blob Storage events
       href: ../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
     - name: Create alerts on Power BI reports
       href: data-activator/activator-get-data-power-bi.md
