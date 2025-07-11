@@ -5,7 +5,7 @@ description: Learn about customer billing for compute and storage, and how to mo
 author: jilmal
 ms.author: jmaldonado
 ms.topic: concept-article
-ms.date: 07/10/2025
+ms.date: 07/11/2025
 ai-usage: ai-generated
 ---
 
@@ -14,8 +14,6 @@ ai-usage: ai-generated
 The article explains compute usage reporting of the Cosmos DB database in Microsoft Fabric.
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, see [Understand your Azure bill on a Fabric capacity](../../enterprise/azure-billing.md).
-
-After September 1, 2025, compute and data storage for Cosmos DB are charged to your Fabric capacity.
 
 ## Capacity
 

@@ -5,7 +5,7 @@ description: Learn to create Power BI reports from Cosmos DB data in Microsoft F
 author: jilmal
 ms.author: jmaldonado
 ms.topic: concept-article
-ms.date: 07/10/2025
+ms.date: 07/11/2025
 ai-usage: ai-generated
 ---
 
