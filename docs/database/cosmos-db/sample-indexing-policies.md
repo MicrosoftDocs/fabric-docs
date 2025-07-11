@@ -5,7 +5,7 @@ description: Explore sample custom indexing policies that fine tune the performa
 author: seesharprun
 ms.author: sidandrews
 ms.topic: sample
-ms.date: 07/10/2025
+ms.date: 07/14/2025
 ai-usage: ai-generated
 appliesto:
 - ✅ Cosmos DB in Fabric

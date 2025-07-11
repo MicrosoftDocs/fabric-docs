@@ -5,7 +5,7 @@ description: Automatically purge items after a specified amount of time using th
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/10/2025
+ms.date: 07/14/2025
 ai-usage: ai-generated
 appliesto:
 - ✅ Cosmos DB in Fabric
