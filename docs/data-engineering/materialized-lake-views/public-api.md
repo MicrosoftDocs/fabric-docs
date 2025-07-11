@@ -210,8 +210,4 @@ Refer to the following content for more information on Fabric REST APIs.
 ### Documentation
 
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
-- [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
-
-### Tutorials
-
 - [Job Scheduler APIs in Fabric](/rest/api/fabric/core/job-scheduler)
