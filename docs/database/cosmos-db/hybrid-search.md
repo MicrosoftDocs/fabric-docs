@@ -76,7 +76,7 @@ Review this sample indexing policy with both full text and vector indexes:
 
 Hybrid search queries can be executed by using the [`RRF`](/nosql/query/rrf) system function in an `ORDER BY RANK` clause that includes both a `VECTORDISTANCE` function and `FULLTEXTSCORE`. For example, a parameterized query to find the top *k* most relevant results would look like:
 
-```sql
+```nosql
 SELECT TOP @k
   *
 FROM
@@ -87,7 +87,7 @@ ORDER BY
 
 Suppose you have a document that has vector embeddings stored in each document in the property `c.vector` and text data contained in the property c.text. To get the 10 most relevant documents using Hybrid search, the query can be written as:
 
-```sql
+```nosql
 SELECT TOP 10
   * 
 FROM
@@ -100,7 +100,7 @@ ORDER BY
 
 You can optionally specify an array of *weights* to affect how important each component score is in the `RRF` function. For example, if you have two component scores (`VECTORDISTANCE` and `FULLTEXTSCORE`) and want to weight the vector search twice as important as the BM25 scoring, you can add the array of numbers `[2, 1]` as the last argument to `RRF` as shown here:
 
-```sql
+```nosql
 SELECT TOP 10
   *
 FROM

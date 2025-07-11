@@ -190,7 +190,7 @@ Here are examples of valid vector index policies:
 
 Once you created a container with the desired vector policy, and inserted vector data into the container, you can conduct a vector search using the [built-in `VECTORDISTANCE` function](/nosql/query/vectordistance) in a query. An example of a NoSQL query that projects the similarity score as the alias `score`, and sorts in order of most-similar to least-similar:
 
-```sql
+```nosql
 SELECT TOP 10
   c.title,
   VECTORDISTANCE(c.contentVector, [1,2,3]) AS score 
