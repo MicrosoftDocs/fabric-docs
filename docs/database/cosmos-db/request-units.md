@@ -16,7 +16,7 @@ appliesto:
 
 Cosmos DB in Microsoft Fabric normalizes the cost of all database operations using Request Units (or RUs, for short) and measures cost based on throughput (Request Units per second, RU/s).
 
-Request unit is a performance currency abstracting the system resources such as processing (CPU), input/output operations (IOPS), and memory that are required to perform the database operations supported by Cosmos DB in Fabric. Whether the database operation is a write, point read, or query, operations are always measured in RUs. 
+Request unit is a performance currency abstracting the system resources such as processing (CPU), input/output operations (IOPS), and memory that are required to perform the database operations supported by Cosmos DB in Fabric. Whether the database operation is a write, point read, or query, operations are always measured in RUs.
 
 For example, a point read is the name use to refer to fetching a single item by its ID and partition key value. A point read for a 1-KB item is equivalent to one Request Unit (RU).
 

@@ -23,9 +23,9 @@ To learn more about Cosmos DB in Fabric, watch this demo from Microsoft Build 20
 
 ## Why Cosmos DB in Fabric? 
 
-- **Optimized for semi-structured data**: Cosmos DB in Fabric is a database workload optimized for semi-structured data. You can use Cosmos DB database and SQL database in Fabric together to store both semi-structured and relational data. With various databases available, you can unify your data platform and analytics experience across your entire application solution. Cosmos DB comes with built-in AI capabilities like full-text search, hybrid search, and vector indexing. 
+- **Optimized for semi-structured data**: Cosmos DB in Fabric is a database workload optimized for semi-structured data. You can use Cosmos DB database and SQL database in Fabric together to store both semi-structured and relational data. With various databases available, you can unify your data platform and analytics experience across your entire application solution. Cosmos DB comes with built-in AI capabilities like full-text search, hybrid search, and vector indexing.
 
-- **Autonomous**: Cosmos DB in Fabric comes with autonomous defaults optimized for most application workloads. Existing applications can connect to Cosmos DB by specifying the Fabric-supplied connection string and using Microsoft Entra authentication. Your host applications can use various identity types, like human identities, application identities, or workload identities, to connect to the database in a secure manner.  
+- **Autonomous**: Cosmos DB in Fabric comes with autonomous defaults optimized for most application workloads. Existing applications can connect to Cosmos DB by specifying the Fabric-supplied connection string and using Microsoft Entra authentication. Your host applications can use various identity types, like human identities, application identities, or workload identities, to connect to the database in a secure manner.
 
 - **Integrated**: Data in Cosmos DB is automatically made available in Fabric OneLake in the Delta Parquet format. Since the data is surfaced in OneLake, the platform allows you to use Cosmos DB in various integrated scenarios including, but not limited to: 
 

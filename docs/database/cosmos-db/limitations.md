@@ -45,11 +45,11 @@ This article lists current limitations for Cosmos DB in Fabric.
 
 ## Vector search
 
-- `quantizedFlat` and `diskANN` indexes require at least 1,000 vectors to be indexed to ensure that the quantization is accurate. If fewer than 1,000 vectors are indexed, then a full-scan is used instead and RU charges might be higher. 
+- `quantizedFlat` and `diskANN` indexes require at least 1,000 vectors to be indexed to ensure that the quantization is accurate. If fewer than 1,000 vectors are indexed, then a full-scan is used instead and RU charges might be higher.
 
 - Vectors indexed with the `flat` index type can be at most 505 dimensions. Vectors indexed with the `quantizedFlat` or `DiskANN` index type can be at most 4,096 dimensions.
 
-- The rate of vector insertions should be limited. Large ingestion, in excess of 5,000,000 vectors, could require extra index build time. 
+- The rate of vector insertions should be limited. Large ingestion, in excess of 5,000,000 vectors, could require extra index build time.
 
 - The vector search feature isn't currently supported on the existing containers. To use it, a new container must be created, and the container-level vector embedding policy must be specified.
 

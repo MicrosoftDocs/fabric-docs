@@ -21,7 +21,7 @@ Autoscale provisioned throughput is well suited for mission-critical workloads t
 
 Azure Cosmos DB databases and containers that are configured with autoscale provisioned throughput have the following benefits:
 
-- **Simple:** Autoscale removes the complexity of managing RU/s with custom scripting or manually scaling capacity. 
+- **Simple:** Autoscale removes the complexity of managing RU/s with custom scripting or manually scaling capacity.
 
 - **Scalable:** Databases and containers automatically scale the provisioned throughput as needed. There's no disruption to client connections, applications, or to Azure Cosmos DB SLAs.
 
@@ -55,21 +55,21 @@ Autoscale in Cosmos DB can be used for various workloads. The use cases of autos
 
 - **New applications:** If you're developing a new application and not sure about the throughput (RU/s) you need, autoscale makes it easy to get started. You can start with the autoscale entry point of $100 - 1000 RU/s$, monitor your usage, and determine the right RU/s over time.
 
-- **Infrequently used applications:** If you have an application, which is only used for a few hours several times a day, week, or month—such as a low-volume application/web/blog site. Autoscale adjusts the capacity to handle peak usage and scales down when it's over. 
+- **Infrequently used applications:** If you have an application, which is only used for a few hours several times a day, week, or month—such as a low-volume application/web/blog site. Autoscale adjusts the capacity to handle peak usage and scales down when it's over.
 
-- **Development and test workloads:** If you or your team use Azure Cosmos DB databases and containers during work hours, but don't need them on nights or weekends, autoscale helps save cost by scaling down to a minimum when not in use. 
+- **Development and test workloads:** If you or your team use Azure Cosmos DB databases and containers during work hours, but don't need them on nights or weekends, autoscale helps save cost by scaling down to a minimum when not in use.
 
-- **Scheduled production workloads/queries:** If you have a series of scheduled requests, operations, or queries that you want to run during idle periods, you can do that easily with autoscale. When you need to run the workload, the throughput automatically scales to needed value and scales down afterward. 
+- **Scheduled production workloads/queries:** If you have a series of scheduled requests, operations, or queries that you want to run during idle periods, you can do that easily with autoscale. When you need to run the workload, the throughput automatically scales to needed value and scales down afterward.
 
-Building a custom solution to these problems not only requires an enormous amount of time, but also introduces complexity in your application's configuration or code. Autoscale enables the above scenarios out of the box and removes the need for custom or manual scaling of capacity. 
+Building a custom solution to these problems not only requires an enormous amount of time, but also introduces complexity in your application's configuration or code. Autoscale enables the above scenarios out of the box and removes the need for custom or manual scaling of capacity.
 
 ## Under the hood
 
-When configuring containers and databases with autoscale, you specify the maximum throughput `Tmax` required. Azure Cosmos DB scales the throughput `T` such $0.1*Tmax <= T <= Tmax$. For example, if you set the maximum throughput to `20000` RU/s, the throughput scales between `2000` to `20000` RU/s. Because scaling is automatic and instantaneous, at any point in time, you can consume up to the provisioned `Tmax` with no delay. 
+When configuring containers and databases with autoscale, you specify the maximum throughput `Tmax` required. Azure Cosmos DB scales the throughput `T` such $0.1*Tmax <= T <= Tmax$. For example, if you set the maximum throughput to `20000` RU/s, the throughput scales between `2000` to `20000` RU/s. Because scaling is automatic and instantaneous, at any point in time, you can consume up to the provisioned `Tmax` with no delay.
 
 Each hour, you're billed for the highest throughput `T` the system scaled to within the hour. When dynamic scaling is enabled, scaling is based on the RU/s usage at each physical partition and region. As each partition and region scale independently, this pattern can lead to cost savings for nonuniform workloads, as unnecessary scale-ups are avoided.
 
-The entry point for autoscale maximum throughput `Tmax` starts at `1000` RU/s, which scales between $100 - 1000 RU/s$. You can set `Tmax` in increments of `1000` RU/s and change the value at any time.  
+The entry point for autoscale maximum throughput `Tmax` starts at `1000` RU/s, which scales between $100 - 1000 RU/s$. You can set `Tmax` in increments of `1000` RU/s and change the value at any time.
 
 For example, if we have a collection with **`1000` RU/s** and **`2`** partitions, each partition can go up to **`500` RU/s**. For one hour of activity, the utilization would be similar to this table:
 
