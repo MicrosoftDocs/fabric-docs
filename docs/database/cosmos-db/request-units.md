@@ -5,7 +5,7 @@ description: Learn how request units function as a currency and how to estimate 
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/11/2025
+ms.date: 07/14/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---

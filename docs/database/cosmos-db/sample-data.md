@@ -5,7 +5,7 @@ description: Explore the sample data set and schema that is available for use in
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/10/2025
+ms.date: 07/14/2025
 ai-usage: ai-generated
 appliesto:
 - ✅ Cosmos DB in Fabric
