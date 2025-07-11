@@ -13,7 +13,7 @@ ms.search.form: MLV REST API
 
 The Microsoft Fabric REST API provides a service endpoint for management of Fabric items. This article describes the REST APIs available for materialized lake views REST APIs and their usage.
 
->[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+[!INCLUDE [preview-note](./includes/materialized-lake-views-preview-note.md)]
 
 With materialized lake view APIs, data engineers and citizen developers can automate their own pipelines. These APIs also make it easy for users to manage Fabric materialized lake views and integrate it with other tools and systems.
 
