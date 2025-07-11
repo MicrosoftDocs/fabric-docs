@@ -53,6 +53,8 @@ items:
     items:
       - name: Configure container
         href: how-to-configure-container.md
+      - name: Indexing
+        href: indexing.md
       - name: Indexing policies
         href: indexing-policies.md
       - name: Customize indexing policy

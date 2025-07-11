@@ -144,7 +144,9 @@ landingContent:
             url: cosmos-db/how-to-access-data-lakehouse.md
       - linkListType: concept
         links:
-          - text: Modify indexing policies
+          - text: Explore indexing
+            url: cosmos-db/indexing.md
+          - text: Manage indexing policies
             url: cosmos-db/indexing-policies.md
           - text: Configure time to live (TTL)
             url: cosmos-db/time-to-live.md
