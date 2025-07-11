@@ -6,6 +6,8 @@ author: jilmal
 ms.author: jmaldonado
 ms.topic: how-to
 ms.date: 07/14/2025
+appliesto:
+- ✅ Cosmos DB in Fabric
 ---
 
 # Create Power BI reports using Cosmos DB in Microsoft Fabric (preview)

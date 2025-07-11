@@ -7,6 +7,8 @@ ms.author: jmaldonado
 ms.topic: concept-article
 ms.date: 07/14/2025
 show_latex: true
+appliesto:
+- ✅ Cosmos DB in Fabric
 ---
 
 # Billing and utilization data for Cosmos DB in Microsoft Fabric (preview)
