@@ -6,7 +6,7 @@ ms.author: scottpolly
 author: s-polly
 ms.topic: tutorial
 ms.custom:
-ms.date: 04/25/2025
+ms.date: https://synapseaisolutionsa.z13.web.core.windows.net/data/bankcustomerchurn/churn.csv
 ---
 
 # Tutorial Part 1: Use Apache Spark to ingest data into a Microsoft Fabric lakehouse

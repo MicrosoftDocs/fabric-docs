@@ -41,7 +41,7 @@ IS_CUSTOM_DATA = False  # if TRUE, dataset has to be uploaded manually
 
 if not IS_CUSTOM_DATA:
     # Specify the remote URL where the data is hosted
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/bankcustomerchurn"
     
     # List of data files to download
     file_list = ["churn.csv"]
