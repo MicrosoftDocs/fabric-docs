@@ -10,8 +10,6 @@ items:
     items:
       - name: Create a database
         href: quickstart-portal.md
-      - name: Connect from your dev environment
-        href: how-to-authenticate.md
       - name: Sample data
         href: sample-data.md
       - name: Query cross-database

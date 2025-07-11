@@ -28,10 +28,6 @@ landingContent:
         links:
           - text: Create a database
             url: quickstart-portal.md
-      - linkListType: how-to-guide
-        links:
-          - text: Connect from local environment
-            url: how-to-authenticate.md
   - title: Query
     linkLists:
       - linkListType: how-to-guide
