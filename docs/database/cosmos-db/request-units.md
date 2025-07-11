@@ -31,20 +31,20 @@ You can categorize common database operations into specific types and make reaso
 | Query operation | Consumes a variable number of RUs, potentially more than point operations |
 
 :::image type="complex" source="media/request-units/conceptual-diagram.png" alt-text="Diagram illustrating various database operations and how they consume request units.":::
-The diagram is divided into two main sections:
-
-1. The left section explains that usage is expressed in Request Units (RUs), which are calculated based on percentages of memory, CPU, and IOPS. Icons above a box labeled "Request Unit (RUs)" visually represents these resources.
-
-1. The right section shows that database operations consume a variable number of RUs. It lists five operations: Read, Insert, Upsert, Delete, and Query.
-
-    1. "Read" is shown as consuming one RU.
-
-    1. "Insert," "Upsert," and "Delete" each show a variable number of RUs, indicated by multiple icons and dashed lines.
-
-    1. "Query" is shown as consuming a variable number of RUs, with a longer dashed line and multiple icons.
-
-The diagram visually connects the resource usage box to the database operations, illustrating that each operation consumes RUs based on its resource requirements.
-:::end-image:::
+  The diagram is divided into two main sections:
+  
+  1. The left section explains that usage is expressed in Request Units (RUs), which are calculated based on percentages of memory, CPU, and IOPS. Icons above a box labeled "Request Unit (RUs)" visually represents these resources.
+  
+  1. The right section shows that database operations consume a variable number of RUs. It lists five operations: Read, Insert, Upsert, Delete, and Query.
+  
+      1. "Read" is shown as consuming one RU.
+  
+      1. "Insert," "Upsert," and "Delete" each show a variable number of RUs, indicated by multiple icons and dashed lines.
+  
+      1. "Query" is shown as consuming a variable number of RUs, with a longer dashed line and multiple icons.
+  
+  The diagram visually connects the resource usage box to the database operations, illustrating that each operation consumes RUs based on its resource requirements.
+:::image-end:::
 
 To manage and plan capacity, Cosmos DB in Fabric ensures that the number of RUs for a given database operation over a given dataset is deterministic. You can examine the response header to track the number of RUs consumed by any database operation. When you understand the factors that affect RU charges and your application's throughput requirements, you can run your application cost effectively. The next section details the previously mentioned factors that affect RU consumption.
 
