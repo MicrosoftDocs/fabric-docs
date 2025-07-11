@@ -11,7 +11,7 @@ items:
       - name: Create a database
         href: quickstart-portal.md
       - name: Connect from your dev environment
-        href: how-to-connect-development.md
+        href: how-to-authenticate.md
       - name: Sample data
         href: sample-data.md
       - name: Query cross-database
@@ -45,10 +45,10 @@ items:
     items:
       - name: Security best practices
         href: security.md
-      - name: Authenticate from Azure services
-        href: how-to-authenticate-azure.md
       - name: Authorization
-        href: how-to-configure-authorization.md
+        href: authorization.md
+      - name: Authenticate from Azure services
+        href: how-to-authenticate.md
   - name: Manage resources
     items:
       - name: Configure container

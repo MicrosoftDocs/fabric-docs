@@ -1,26 +1,31 @@
 ---
-title: Connect From Development Environment
+title: Authenticate to Cosmos DB Database From Azure Services (Preview)
 titleSuffix: Microsoft Fabric
-description: Use Microsoft Entra authentication and the Azure SDK to connect to Cosmos DB in Microsoft Fabric from an Azure Functions host.
+description: Use Microsoft Entra authentication and the Azure SDK to connect to Cosmos DB in Microsoft Fabric during the preview.
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/10/2025
-zone_pivot_group_filename: database/cosmos-db/zone-pivot-groups.json
-zone_pivot_groups: dev-lang-core
+ms.date: 07/11/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
 
-# How to connect to Cosmos DB in Microsoft Fabric from your local development environment (preview)
+# Authenticate to Cosmos DB in Microsoft Fabric from Azure host services (preview)
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
-In this guide, you connect to an existing Cosmos DB database in Microsoft Fabric using the Azure SDK.
+Cosmos DB in Microsoft Fabric primarily relies on Microsoft Entra ID authentication and built-in data plane roles to manage authentication and authorization. In this guide, you use Microsoft Entra ID and your signed-in account to connect to a Cosmos DB in Fabric database.
+
+> [!IMPORTANT]
+> The steps are similar to the process used to authenticate if you're using a [service principal](/entra/identity-platform/app-objects-and-service-principals), [group](/entra/fundamentals/concept-learn-about-groups), or other type of Microsoft Entra ID identity. To grant a service principal the ability to connect to Microsoft Fabric and your Cosmos DB database, enable the **"Service principals can use Fabric APIs** setting in the Fabric tenant. For more information, see [Microsoft Fabric tenant settings](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis).
 
 ## Prerequisites
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
+
+- An identity with the **Read** permission for the database in Fabric
+
+  - For more information on Fabric permissions, see [access controls](authorization.md#access-controls).
 
 - Azure CLI
 
@@ -211,4 +216,4 @@ while (iterator.HasMoreResults)
 ## Related content
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
-- [Quickstart: Create a Cosmos DB database workload in Microsoft Fabric](quickstart-portal.md)
+- [Manage authorization in Cosmos DB in Microsoft Fabric](authorization.md)

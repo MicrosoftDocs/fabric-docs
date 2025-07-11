@@ -5,7 +5,7 @@ description: Learn about the current limitations and restrictions when using Cos
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/10/2025
+ms.date: 07/11/2025
 ms.search.form: Databases Limitations
 appliesto:
 - ✅ Cosmos DB in Fabric
@@ -22,6 +22,7 @@ This article lists current limitations for Cosmos DB in Fabric.
 ## Quotas and limits
 
 - Databases support a maximum of **25** containers.
+
 - Databases support an autoscale maximum of 10,000 RU/s per container.
 
 ## Regional availability
@@ -29,8 +30,11 @@ This article lists current limitations for Cosmos DB in Fabric.
 - The following regions aren't* supported as **capacity** regions during the preview. These regions can be selected as your **home** region, but the paired **capacity** region must be selected from a supported region not included in this list:
 
   - West US 3
+
   - Central US
+
   - South Central US
+
   - Switzerland North
 
 ## Data

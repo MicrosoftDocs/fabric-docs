@@ -32,7 +32,7 @@ sections:
       - question: |
           How do I connect to Cosmos DB in Microsoft Fabric?
         answer: |
-          Microsoft Fabric exposes an endpoint that is compatible with the various Azure Cosmos DB for NoSQL software development kits (SDKs). These SDKs along with the corresponding Azure Identity library should be used to connect to the database directly using Microsoft Entra authentication. For more information, see [connect from your local development environment to Cosmos DB in Microsoft Fabric](how-to-connect-development.md).
+          Microsoft Fabric exposes an endpoint that is compatible with the various Azure Cosmos DB for NoSQL software development kits (SDKs). These SDKs along with the corresponding Azure Identity library should be used to connect to the database directly using Microsoft Entra authentication. For more information, see [connect to Cosmos DB in Microsoft Fabric using Microsoft Entra ID](how-to-authenticate.md).
       - question: |
           What query language can I use to query data in Cosmos DB in Microsoft Fabric?
         answer: |

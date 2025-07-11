@@ -31,7 +31,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Connect from local environment
-            url: how-to-connect-development.md
+            url: how-to-authenticate.md
   - title: Query
     linkLists:
       - linkListType: how-to-guide
@@ -82,10 +82,12 @@ landingContent:
         links:
           - text: Security baseline
             url: security.md
-          - text: Authenticate from Azure services
-            url: how-to-authenticate-azure.md
           - text: Authorization
-            url: how-to-configure-authorization.md
+            url: authorization.md
+      - linkListType: concept
+        links:
+          - text: Authenticate from Azure services
+            url: how-to-authenticate.md
   - title: Manage resources
     linkLists:
       - linkListType: concept
