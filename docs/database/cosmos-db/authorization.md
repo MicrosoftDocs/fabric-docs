@@ -67,9 +67,9 @@ Or, if you prefer, you can map to the Azure role-based access control permission
 
 | | Azure Cosmos DB for NoSQL role | Scope |
 | --- | --- | --- |
-| **Read** | `["Microsoft.DocumentDB/databaseAccounts/readMetadata", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/read", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/executeQuery", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/readChangeFeed"]` | Database |
-| **ReadAll** | `["Microsoft.DocumentDB/databaseAccounts/readMetadata", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/read", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/executeQuery", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/readChangeFeed"]` | Database |
-| **Write** | `["Microsoft.DocumentDB/databaseAccounts/readMetadata","Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/*", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/*"]` | Database |
+| **Read** | `[ "Microsoft.DocumentDB/databaseAccounts/readMetadata", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/read", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/executeQuery", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/readChangeFeed" ]` | Database |
+| **ReadAll** | `[ "Microsoft.DocumentDB/databaseAccounts/readMetadata", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/read", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/executeQuery", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/readChangeFeed" ]` | Database |
+| **Write** | `[ "Microsoft.DocumentDB/databaseAccounts/readMetadata", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/*", "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/*" ]` | Database |
 
 > [!NOTE]
 > For more information on Azure Cosmos DB for NoSQL roles, see [Azure Cosmos DB for NoSQL data plane security](/azure/cosmos-db/nosql/reference-data-plane-security).
