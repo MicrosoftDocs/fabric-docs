@@ -75,6 +75,18 @@ This article lists current limitations for Cosmos DB in Fabric.
   
   - `fr-FR` (French)
 
+## Authorization
+
+- Setting Fabric [item permissions](../../security/permission-model.md#item-permissions) is currently not supported.
+
+## Configuration
+
+- Modifying the throughput of an existing container isn't supported.
+
+## Programmability
+
+- Stored procedures, triggers, or user-defined functions aren't supported.
+
 ## Related content
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)

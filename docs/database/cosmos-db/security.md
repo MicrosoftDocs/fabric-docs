@@ -5,7 +5,7 @@ description: Review the fundamentals of securing Cosmos DB in Microsoft Fabric f
 author: seesharprun
 ms.author: sidandrews
 ms.topic: best-practice
-ms.date: 07/10/2025
+ms.date: 07/11/2025
 ms.custom: security-horizontal-2025
 ai-usage: ai-generated
 appliesto:
@@ -22,7 +22,7 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 
 ## Identity management
 
-- **Use managed identities to access your account from other Azure services**: Managed identities eliminate the need to manage credentials by providing an automatically managed identity in Microsoft Entra ID. Use managed identities to securely access Cosmos DB from other Azure services without embedding credentials in your code. While Cosmos DB in Fabric supports multiple types of identity types (service principals), managed identities are the preferred choice as they don't require your solution to handle credentials directly. For more information, see [authenticate from Azure host services](how-to-authenticate-azure.md).
+- **Use managed identities to access your account from other Azure services**: Managed identities eliminate the need to manage credentials by providing an automatically managed identity in Microsoft Entra ID. Use managed identities to securely access Cosmos DB from other Azure services without embedding credentials in your code. While Cosmos DB in Fabric supports multiple types of identity types (service principals), managed identities are the preferred choice as they don't require your solution to handle credentials directly. For more information, see [authenticate from Azure host services](how-to-authenticate.md).
 
 - **Use Entra authentication to query, create, and access items within a container while developing solutions**: Access items within Cosmos DB containers using your human identity and Microsoft Entra authentication. Enforce least privilege access for querying, creating, and other operations. This control helps secure your data operations. For more information, see [connect securely from your development environment](how-to-authenticate.md).
 
@@ -41,5 +41,5 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 ## Related content
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
-- [Connect using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate.md)
-- [Authenticate from Azure host services to Cosmos DB in Microsoft Fabric](how-to-authenticate-azure.md)
+- [Authenticate using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate-azure.md)
+- [Manage authorization in Cosmos DB in Microsoft Fabric](authorization.md)

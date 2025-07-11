@@ -6,6 +6,8 @@ author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
 ms.date: 07/11/2025
+zone_pivot_group_filename: database/cosmos-db/zone-pivot-groups.json
+zone_pivot_groups: dev-lang-core
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
@@ -16,9 +18,9 @@ appliesto:
 
 Cosmos DB in Microsoft Fabric primarily relies on Microsoft Entra ID authentication and built-in data plane roles to manage authentication and authorization. In this guide, you configure built-in data plane roles for a Cosmos DB in Fabric database. You can configure access to your Cosmos DB using workspace roles in Microsoft Fabric access controls.
 
-The access controls at two different levels work together. For example, to [connect](how-to-connect-development.md) to a database, a user must have at least the **Read** permission on the Fabric database item.
+The access controls at two different levels work together. For example, to [connect](how-to-authenticate.md) to a database, a user must have at least the **Read** permission on the Fabric database item.
 
-## Access control
+## Access controls
 
 In Fabric, you control access using Fabric [workspace roles](../../security/permission-model.md#workspace-roles). Fabric workspace roles manage who can do what in a Microsoft Fabric workspace.
 
