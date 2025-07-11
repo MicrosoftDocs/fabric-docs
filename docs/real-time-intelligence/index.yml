@@ -135,8 +135,6 @@ landingContent:
           links:
           - text: Get data from Power BI
             url: data-activator/activator-get-data-power-bi.md
-          - text: Get data from Eventstreams
-            url: data-activator/activator-get-data-eventstreams.md
         - linkListType: how-to-guide
           links:
           - text: Activate Fabric items
