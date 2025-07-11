@@ -126,18 +126,18 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehous
 
 ### List Item Job Instances
 
-Lists all job instances corresponding a Lakehouse.
+Lists all job instances corresponding a Lakehouse. Response items with jobType RefreshMaterializedLakeViews correspons to the runs related to materialized lake views.
 
 **Sample request**:
 
 **URI**: 
 ```http
-GET https://api.fabric.microsoft.com/v1/workspaces/{workspace_id}/lakehouses/{lakehouse_id}/jobs/instances
+GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances
 ```
 
 With optional parameter:
 ```http
-GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouse_id}/jobs/instances?continuationToken={continuation_token}
+GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances?continuationToken={continuation_token}
 ```
 
 **Headers**:
