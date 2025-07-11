@@ -5,7 +5,7 @@ description: Learn about the benefits and use cases for autoscale throughput in 
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/11/2025
+ms.date: 07/14/2025
 show_latex: true
 appliesto:
 - ✅ Cosmos DB in Fabric
