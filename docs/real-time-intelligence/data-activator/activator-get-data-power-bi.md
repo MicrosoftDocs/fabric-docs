@@ -125,7 +125,8 @@ In the previous example, you set up an alert using the Add alert option for a ti
     :::image type="content" source="media/activator-get-data-power-bi/upgrade-to-advanced-alert.png" alt-text="Screenshot showing the upgrade window." lightbox="media/activator-get-data-power-bi/upgrade-to-advanced-alert.png":::      
 1. **Save** the updated definition, or **save and start** the updated alert. 
 
-    :::image type="content" source="media/activator-get-data-power-bi/save-button.png" alt-text="Screenshot showing the Alert window showing the Save button." lightbox="media/activator-get-data-power-bi/save-button.png"::: 
+    :::image type="content" source="media/activator-get-data-power-bi/save-button.png" alt-text="Screenshot showing the Alert window showing the Save button." lightbox="media/activator-get-data-power-bi/save-button.png":::
+   
     If you save the alert without starting, you can start the alert using the **Start** button in the same window (**Definition**), or **Start** button on the ribbon.
 
     :::image type="content" source="media/activator-get-data-power-bi/start-button.png" alt-text="Screenshot showing the Start button." lightbox="media/activator-get-data-power-bi/start-button.png"::: 
