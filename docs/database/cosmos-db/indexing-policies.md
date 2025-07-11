@@ -116,7 +116,7 @@ Any indexing policy has to include the root path `/*` as either an included or a
 
 All explicitly included paths have values added to the index for each item in the container, even if the path is undefined for a given item.
 
-See [this section](how-to-manage-indexing-policy.md#indexing-policy-examples) for indexing policy examples for including and excluding paths.
+For more information, see [sample indexing policies](sample-indexing-policies.md).
 
 ## Include/exclude precedence
 
@@ -165,7 +165,7 @@ Here are some rules for included and excluded paths precedence in Cosmos DB:
 ```
 
 > [!IMPORTANT]
-> A full text indexing policy must be on the path defined in the container's full text policy. For more information, see [full text search](full-text-search.md).
+> A full text indexing policy must be on the path defined in the container's full text policy. For more information, see [full text search](full-text-indexing.md).
 
 ## Vector indexes
 
