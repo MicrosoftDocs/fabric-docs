@@ -72,7 +72,9 @@ EventhouseMetrics
 This command shows the percentage of the ingestion capacity being used by the current eventhouse compute size. A few takeaways from this number:
 
 - If you're taking up consistently 70% or more of the ingestion capacity at the current size, the compute is sized based on ingestion. It means that unless the ingestion pattern changed, you continue to run at this compute size or larger, irrelevant of other activity.
-- If this percentage consistently drops below 70%, it means that the compute is sized based on other factors. They could be the minimum capacity settings, cache utilization, or query load on the eventhouse. This setting is also available in the [Workspace Monitoring Dashboard](https://blog.fabric.microsoft.com/blog/introducing-template-dashboards-for-workspace-monitoring?ft=All) in the **EH | Table Ingestions** tab.
+- If this percentage consistently drops below 70%, it means that the compute is sized based on other factors. They could be the minimum capacity settings, cache utilization, or query load on the eventhouse.
+
+This setting is also available in the [Workspace Monitoring Dashboard](https://blog.fabric.microsoft.com/blog/introducing-template-dashboards-for-workspace-monitoring?ft=All) in the **EH | Table Ingestions** tab.
 
 :::image type="content" source="media/eventhouse-capacity-observability/table-ingestion-tab.png" alt-text="Screenshot of the Workspace Monitoring Dashboard showing ingestion statistics." lightbox="media/eventhouse-capacity-observability/table-ingestion-tab.png":::
 
