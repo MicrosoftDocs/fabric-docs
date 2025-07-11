@@ -84,5 +84,5 @@ Now, use the **Indexing Policy** section to customize how indexing works for you
 ## Related content
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
-- [Connect from your local development environment to Cosmos DB in Microsoft Fabric](how-to-connect-development.md)
+- [Connect using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate.md)
 - [Frequently asked questions about Cosmos DB in Microsoft Fabric](faq.yml)

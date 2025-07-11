@@ -105,4 +105,4 @@ Finally, use Spark within a notebook to write Python queries for your mirrored d
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Query data cross-database with Cosmos DB in Microsoft Fabric](how-to-query-cross-database.md)
-- [Connect from your local development environment to Cosmos DB in Microsoft Fabric](how-to-connect-development.md)
+- [Connect using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate.md)

@@ -110,4 +110,4 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Review the sample data set](sample-data.md)
-- [Connect from your local development environment to Cosmos DB in Microsoft Fabric](how-to-connect-development.md)
+- [Connect using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate.md)
