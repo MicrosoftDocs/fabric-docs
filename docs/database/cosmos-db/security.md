@@ -41,5 +41,5 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 ## Related content
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
-- [Authenticate using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate-azure.md)
+- [Authenticate using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate.md)
 - [Manage authorization in Cosmos DB in Microsoft Fabric](authorization.md)
