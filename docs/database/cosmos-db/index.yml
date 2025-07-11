@@ -54,12 +54,12 @@ landingContent:
         links:
           - text: Mirror to OneLake
             url: mirror-onelake.md
+          - text: Index vector data
+            url: index-vector-data.md
       - linkListType: how-to-guide
         links:
           - text: Access data from a lakehouse
             url: how-to-access-data-lakehouse.md
-          - text: Index vector data
-            url: how-to-index-vector-data.md
   - title: Deploy and monitor
     linkLists:
       - linkListType: how-to-guide
