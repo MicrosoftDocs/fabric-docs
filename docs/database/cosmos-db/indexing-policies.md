@@ -378,13 +378,13 @@ The following considerations are used when creating composite indexes for querie
 
 - Filter expressions can use multiple composite indexes.
 
-- The properties in the query's filter should match the properties in composite index. If a property is in the composite index but isn't included in the query as a filter, the query won't utilize the composite index.
+- The properties in the query's filter should match the properties in composite index. If a property is in the composite index but isn't included in the query as a filter, the query doesn't utilize the composite index.
 
-- If a query has other properties in the filter that aren't defined in a composite index, then a combination of composite and range indexes are used to evaluate the query. This requires fewer RUs than exclusively using range indexes.
+- When a query filters on properties not included in a composite index, a combination of composite and range indexes are used to evaluate the query. This approach consumes fewer RUs than relying solely on range indexes.
 
 - If a property has a range filter (`>`, `<`, `<=`, `>=`, or `!=`), then this property should be defined last in the composite index. If a query has more than one range filter, it might benefit from multiple composite indexes.
 
-- When creating a composite index to optimize queries with multiple filters, the `ORDER` of the composite index has no impact on the results. This property is optional.
+- When creating a composite index to optimize queries with multiple filters, the `ORDER` of the composite index has no effect on the results. This property is optional.
 
 Consider the following examples where a composite index is defined on properties name, age, and timestamp:
 
@@ -498,7 +498,7 @@ ORDER BY
 
 The following considerations apply when creating composite indexes to optimize a query with a filter and `ORDER BY` clause:
 
-- If you don't define a composite index on a query with a filter on one property and a separate `ORDER BY` clause using a different property, the query will still succeed. However, the RU cost of the query can be reduced with a composite index, particularly if the property in the `ORDER BY` clause has a high cardinality.
+- If you don't define a composite index on a query with a filter on one property and a separate `ORDER BY` clause using a different property, the query still succeeds. However, the RU cost of the query can be reduced with a composite index, particularly if the property in the `ORDER BY` clause has a high cardinality.
 
 - If the query filters on properties, these properties should be included first in the `ORDER BY` clause.
 
@@ -544,7 +544,7 @@ The following considerations apply when creating composite indexes to optimize a
 
 ### Composite indexes with an array wildcard
 
-Below is an example for a composite index that contains an array wildcard.
+Here's an example for a composite index that contains an array wildcard:
 
 ```json
 {
@@ -574,33 +574,33 @@ Below is an example for a composite index that contains an array wildcard.
 An example query that can benefit from this composite index is:
 
 ```nosql
-SELECT
-  r.id
+SELECT VALUE
+  p.id
 FROM
-  root r
+  products p
 JOIN
-  ch IN r.children
+  t IN p.tags
 WHERE
-  r.familyname = 'Anderson' AND
-  ch.age > 20
+  p.category = 'apparel' AND
+  p.order > 20
 ```
 
 ## Modifying the indexing policy
 
-A container's indexing policy can be updated at any time [by using the Azure portal or one of the supported SDKs](how-to-manage-indexing-policy.md). An update to the indexing policy triggers a transformation from the old index to the new one, which is performed online and in-place (so no extra storage space is consumed during the operation). The old indexing policy is efficiently transformed to the new policy without affecting the write availability, read availability, or the throughput provisioned on the container. Index transformation is an asynchronous operation, and the time it takes to complete depends on the provisioned throughput, the number of items and their size. If multiple indexing policy updates have to be made, it's recommended to do all the changes as a single operation in order to have the index transformation complete as quickly as possible.
+An update to the indexing policy triggers a transformation from the old index to the new one. This transformation is performed in place and online. No extra storage space is consumed during the operation. The old indexing policy is efficiently transformed to the new policy without affecting the write availability, read availability, or the throughput provisioned on the container. Index transformation is an asynchronous operation, and the time it takes to complete depends on the provisioned throughput, the number of items and their size. If you need to make multiple indexing policy updates, perform all the changes in a single operation. This approach allows the index transformation to complete more quickly.
 
 > [!IMPORTANT]
 > Index transformation is an operation that consumes [request units](request-units.md). You can track the progress and consumption of the index transformation operation by using one of the SDKs.
 
-There's no impact to write availability during any index transformations. The index transformation uses your provisioned RUs but at a lower priority than your CRUD operations or queries.
+There's no effect on write availability during any index transformations. The index transformation uses your provisioned RUs but at a lower priority than your CRUD operations or queries.
 
-There's no impact to read availability when adding new indexed paths. Queries will only utilize new indexed paths once an index transformation is complete. In other words, when adding a new indexed path, queries that benefit from that indexed path has the same performance before and during the index transformation. After the index transformation is complete, the query engine will begin to use the new indexed paths.
+There's no effect on read availability when adding new indexed paths. Queries use new indexed paths only after the index transformation completes. In other words, when adding a new indexed path, queries that benefit from that indexed path has the same performance before and during the index transformation. After the index transformation is complete, the query engine will begin to use the new indexed paths.
 
-When removing indexed paths, you should group all your changes into one indexing policy transformation. If you remove multiple indexes and do so in one single indexing policy change, the query engine provides consistent and complete results throughout the index transformation. However, if you remove indexes through multiple indexing policy changes, the query engine won't provide consistent or complete results until all index transformations complete. Most developers don't drop indexes and then immediately try to run queries that utilize these indexes so, in practice, this situation is unlikely.
+When removing indexed paths, you should group all your changes into one indexing policy transformation. If you remove multiple indexes and do so in one single indexing policy change, the query engine provides consistent and complete results throughout the index transformation. However, if you remove indexes through multiple indexing policy changes, the query engine doesn't provide consistent or complete results until all index transformations complete. Most developers don't drop indexes and then immediately try to run queries that utilize these indexes. In practice, this situation is unlikely.
 
-When you drop an indexed path, the query engine will immediately stop using it, and will do a full scan instead. Where possible, you should always try to group multiple index removals into one single indexing policy modification.
+When you drop an indexed path, the query engine immediately stops using it and performs a full scan instead. Where possible, always group multiple index removals into a single indexing policy modification.
 
-Removing an index takes effect immediately, whereas adding a new index takes some time as it requires an indexing transformation. When replacing one index with another (for example, replacing a single property index with a composite-index) make sure to add the new index first and then wait for the index transformation to complete **before** you remove the previous index from the indexing policy. Otherwise this will negatively affect your ability to query the previous index and might break any active workloads that reference the previous index.
+Removing an index takes effect immediately, whereas adding a new index takes some time as it requires an indexing transformation. Make sure to add the new index first and then wait for the index transformation to complete **before** you remove the previous index from the indexing policy when replacing one index with another. For example, follow this strategy when replacing a single property index with a composite-index. Otherwise, this misstep negatively affects your ability to query the previous index and might break any active workloads that reference the previous index.
 
 ## Indexing policies and TTL
 
