@@ -45,7 +45,7 @@ items:
         href: security.md
       - name: Authorization
         href: authorization.md
-      - name: Authenticate from Azure services
+      - name: Authenticate with Microsoft Entra ID
         href: how-to-authenticate.md
   - name: Manage resources
     items:
