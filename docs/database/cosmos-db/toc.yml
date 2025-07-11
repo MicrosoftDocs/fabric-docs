@@ -24,8 +24,14 @@ items:
         href: create-reports.md
       - name: Access data from a lakehouse
         href: how-to-access-data-lakehouse.md
+  - name: Build AI applications
+    items:
       - name: Index vector data
-        href: how-to-index-vector-data.md
+        href: index-vector-data.md
+      - name: Full text indexing and search
+        href: full-text-indexing.md
+      - name: Hybrid search
+        href: hybrid-search.md
   - name: Deploy and monitor
     items:
       - name: Implement continuous integration and deployment
@@ -59,6 +65,10 @@ items:
         href: time-to-live.md
       - name: Configure time to live (TTL)
         href: how-to-configure-time-to-live.md
+      - name: Request units
+        href: request-units.md
+      - name: Autoscale throughput
+        href: autoscale-throughput.md
   - name: Write queries
     href: nosql-query/toc.yml
   - name: Troubleshoot

@@ -142,8 +142,6 @@ landingContent:
         links:
           - text: Access data from a lakehouse
             url: cosmos-db/how-to-access-data-lakehouse.md
-          - text: Index vector data
-            url: cosmos-db/how-to-index-vector-data.md
       - linkListType: concept
         links:
           - text: Explore indexing
@@ -156,6 +154,18 @@ landingContent:
         links:
           - text: NoSQL query language
             url: /nosql/query/overview?context=/fabric/context/context-database
+
+  # Card
+  - title: Build AI applications with Cosmos DB database
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Index vector data
+            url: cosmos-db/index-vector-data.md
+          - text: Full text indexing and search
+            url: cosmos-db/full-text-indexing.md
+          - text: Hybrid search
+            url: cosmos-db/hybrid-search.md
 
   # Card 
   - title: Deploy and monitor Cosmos DB database
