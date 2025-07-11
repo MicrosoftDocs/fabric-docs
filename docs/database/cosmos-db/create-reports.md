@@ -73,7 +73,7 @@ Once Power BI opens, you can:
  - Use Copilot to generate visuals automatically:
    - Click the **Copilot** button in the toolbar.
    - Choose **Suggest content** for a new report page.
-   - Review the suggestions and click **Create** to add them to your report. 
+   - Review the suggestions and click **Create** to add them to your report.
 
 You now have a Power BI report connected to your Cosmos DB data in Fabric. Customize the visuals, apply filters, and explore your data to gain insights all within the Fabric ecosystem.
 
