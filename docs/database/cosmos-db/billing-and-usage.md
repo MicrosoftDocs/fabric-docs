@@ -11,7 +11,7 @@ ai-usage: ai-generated
 
 # Billing and utilization reporting for Cosmos DB in Microsoft Fabric (preview)
 
-The article explains compute usage reporting of the Cosmos DB database in Microsoft Fabric.
+The article explains compute usage reporting of the Cosmos DB database in Microsoft Fabric. 
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, see [Understand your Azure bill on a Fabric capacity](../../enterprise/azure-billing.md).
 
@@ -37,23 +37,23 @@ In simple terms, **100 RU/second corresponds to 0.067 CUs/hour**. For customers 
 
 Reference this for Fabric SKU sizing estimations for Cosmos DB in Fabric.
 
-| SKU | CU | RU/s |
-| --- | --- | --- |
-| F2 | 2 | 2,985.07 |
-| F4 | 4 | 5,970.15 |
-| F8 | 8 | 11,940.30 |
-| F16 | 16 | 23,880.60 |
-| F32 | 32 | 47,761.19 |
-| F64 | 64 | 95,522.39 |
-| F128 | 128 | 191,044.78 |
-| F256 | 256 | 382,089.55 |
-| F512 | 512 | 764,179.10 |
+| SKU   | CU   | RU/s        |
+|-------|------|-------------|
+| F2    | 2    | 2,985.07    |
+| F4    | 4    | 5,970.15    |
+| F8    | 8    | 11,940.30   |
+| F16   | 16   | 23,880.60   |
+| F32   | 32   | 47,761.19   |
+| F64   | 64   | 95,522.39   |
+| F128  | 128  | 191,044.78  |
+| F256  | 256  | 382,089.55  |
+| F512  | 512  | 764,179.10  |
 | F1024 | 1024 | 1,528,358.21|
 | F2048 | 2048 | 3,056,716.42|
 
-For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to approximately 95,500 RU/s.
+For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to approximately 95,500 RU/s.  
 
-To learn more about Fabric capacity planning, see [Microsoft Fabric plan your capacity size](../../enterprise/plan-capacity.md).
+To learn more about Fabric capacity planning, see [Microsoft Fabric plan your capacity size](../../enterprise/plan-capacity.md). 
 
 ## Autoscale Throughput
 
@@ -67,7 +67,7 @@ The cost for Cosmos DB in Fabric is the summation of compute cost and storage co
 
 ## Usage Reporting
 
-The [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) offers a centralized view of capacity consumption across all Fabric workloads. It enables administrators to track usage trends, monitor workload performance, and ensure consumption aligns with the purchased capacity.
+The [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) offers a centralized view of capacity consumption across all Fabric workloads. It enables administrators to track usage trends, monitor workload performance, and ensure consumption aligns with the purchased capacity. 
 
 To get started, a capacity admin must install the app. After installation, access can be granted to others in the organization for broader visibility. For more details, refer to [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md) 
 
