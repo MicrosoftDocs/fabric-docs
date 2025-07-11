@@ -10,7 +10,7 @@ metadata:
   ms.topic: landing-page
   ms.date: 07/10/2025
   appliesto:
-  - ✅ Cosmos DB in Fabric
+    - ✅ Cosmos DB in Fabric
 landingContent:
   - title: Overview
     linkLists:
@@ -58,6 +58,8 @@ landingContent:
         links:
           - text: Access data from a lakehouse
             url: how-to-access-data-lakehouse.md
+          - text: Create Power BI reports
+            url: how-to-create-reports.md
   - title: Deploy and monitor
     linkLists:
       - linkListType: how-to-guide
@@ -66,6 +68,10 @@ landingContent:
             url: how-to-continuous-integration-deployment.md
           - text: Monitor activity and performance
             url: how-to-monitor.md
+      - linkListType: concept
+        links:
+          - text: Billing and usage reporting
+            url: billing-and-usage.md
   - title: AI applications
     linkLists:
       - linkListType: concept

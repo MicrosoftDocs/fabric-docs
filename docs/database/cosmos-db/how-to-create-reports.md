@@ -4,7 +4,7 @@ titleSuffix: Microsoft Fabric
 description: Learn to create Power BI reports from Cosmos DB data in Microsoft Fabric.
 author: jilmal
 ms.author: jmaldonado
-ms.topic: concept-article
+ms.topic: how-to
 ms.date: 07/11/2025
 ai-usage: ai-generated
 ---
