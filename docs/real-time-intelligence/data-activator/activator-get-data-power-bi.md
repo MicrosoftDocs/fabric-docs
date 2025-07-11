@@ -18,17 +18,12 @@ You can create alerts in Power BI on dashboards and reports to monitor changes i
 - Integrating with Power Automate workflows  
 - Expanding alert capabilities to meet specific business needs
 
+This article describes how to access Power BI report alerts and refine those alerts in Activator.
+
 > [!IMPORTANT]
 > - This article shows you how to create an alert in a Power BI **report, not a dashboard**. 
 > - In Activator, an **alert** is referred to as a **rule**.
 
-You can get data for use in Activator from many sources. This article describes how to access Power BI report alerts and refine those alerts in Activator:
-
-- Fine tune your rule
-- Set complex conditions that are more granular than Power BI allows
-- Trigger Power Automate flows when your rule is activated
-
-For detailed steps on creating and editing rules, see [Create rules](activator-create-activators.md).
 
 ## Prerequisites
 
@@ -106,7 +101,7 @@ In the previous example, you set up an alert using the Add alert option for a ti
     :::image type="content" source="media/activator-get-data-power-bi/second-alert-definition.png" alt-text="Screenshot showing the Alerts window with the second alert definition." lightbox="media/activator-get-data-power-bi/second-alert-definition.png":::                
 1. To minimize the second alert window, select at the top of it. The **Alerts** window should show the alerts you have created so far. 
 
-    :::image type="content" source="media/activator-get-data-power-bi/two-alerts.png" alt-text="Screenshot showing the Alerts window with both the alerts." lightbox="media/activator-get-data-power-bi/two-alerrts.png":::       
+    :::image type="content" source="media/activator-get-data-power-bi/two-alerts.png" alt-text="Screenshot showing the Alerts window with both the alerts." lightbox="media/activator-get-data-power-bi/two-alerts.png":::       
 
 ## Edit alerts in the Activator 
     
