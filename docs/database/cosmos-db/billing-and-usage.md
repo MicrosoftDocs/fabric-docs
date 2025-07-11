@@ -6,7 +6,7 @@ author: jilmal
 ms.author: jmaldonado
 ms.topic: concept-article
 ms.date: 07/11/2025
-show_latext: true
+show_latex: true
 ---
 
 # Billing and utilization data for Cosmos DB in Microsoft Fabric (preview)
