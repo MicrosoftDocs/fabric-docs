@@ -195,8 +195,5 @@ Retry-after: 60
 ```
 
 ## Related content
-Refer to the following content for more information on Fabric REST APIs.
-
-### Documentation
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [Job Scheduler APIs in Fabric](/rest/api/fabric/core/job-scheduler)
