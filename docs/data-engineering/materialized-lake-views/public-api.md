@@ -13,7 +13,7 @@ ms.search.form: MLV REST API
 
 The Microsoft Fabric REST API provides a service endpoint for management of Fabric items. This article describes the REST APIs available for materialized lake views REST APIs and their usage.
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+>[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 With materialized lake view APIs, data engineers and citizen developers can automate their own pipelines. These APIs also make it easy for users to manage Fabric materialized lake views and integrate it with other tools and systems.
 
@@ -52,15 +52,12 @@ Before you use the other REST APIs, you need to have the bearer token.
 >In the following examples, ensure the word 'Bearer ' (with a space) precedes the access token itself. When using an API client and selecting 'Bearer Token' as the authentication type, 'Bearer ' is automatically inserted for you, and only requires the access token to be provided.
 
 ### Option 1: Using MSAL.Net
-
 Refer to the [Get Token section of the Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart#get-token) as an example of how to obtain the MSAL authorization token.
-
 Use MSAL.Net to acquire a Microsoft Entra ID token for Fabric service with the following scopes: _Workspace.ReadWrite.All_, _Item.ReadWrite.All_. For more information about token acquisition with MSAL.Net to, see [Token Acquisition - Microsoft Authentication Library for .NET](/entra/msal/dotnet/acquiring-tokens/overview).
 
 Copy the token from the _AccessToken_ property and replace the _&lt;access-token&gt;_ placeholder in the following examples with the token.
 
 ### Option 2: Using the Fabric portal
-
 Sign in to the Fabric portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
 
 ```azurecli
@@ -70,21 +67,17 @@ powerBIAccessToken
 Copy the token and replace the _&lt;access-token&gt;_ placeholder in the following examples with the token.
 
 ## Materialized lake views REST API usage examples
-
 Use the following instructions to test usage examples for specific materialized lake views public APIs and verify the results.
 
 ### Run on demand item job
-
 Run MLV lineage as an on demand job. Spark job starts executing after a successful request.
 
 **Request**
-
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances?jobType=RefreshMaterializedLakeViews
 ```
 
 **Sample response**:
-
 ```
 Location: https://api.fabric.microsoft.com/v1/workspaces/4b218778-e7a5-4d73-8187-f10824047715/lakehouses/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b
 
@@ -99,22 +92,19 @@ Create schedule to run lineage in MLV.
 
 **Sample request**:
 
-**URI**: 
-```http
-GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules```
+**URI**:
+```http 
+POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules
+```
 
 **Headers**:
-
-```rest
+```
 {
   "Authorization": "Bearer <access-token>", "Content-Type": "application/json"
 }
 ```
 
-**Sample request**:
-```http
-POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules```
-````
+**Request body**:
 ```rest
 {
   "enabled": true,
@@ -129,14 +119,12 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 ```
 
 **Sample response**:
-
 ```
-Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules/235faf08-6ca0-488d-a2ca-6d706d530ebc
+Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules/<schedule_id>
 ```
-
 ```rest
 {
-  "id": "235faf08-6ca0-488d-a2ca-6d706d530ebc",
+  "id": "<schedule_id>",
   "enabled": true,
   "createdDateTime": "2024-04-28T05:35:20.5366667",
   "configuration": {
@@ -147,24 +135,22 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehous
     "interval": 10
   },
   "owner": {
-    "id": "8eedb1b0-3af8-4b17-8e7e-663e61e12211",
+    "id": "<owner_id>",
     "type": "User"
   }
 }
 ```
 
 ### Get Item Job Instance
-
 Get details such as status of a run in MLV.
 
 **Sample request**:
 
 **URI**: 
 ```http
-GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances/{jobInstanceId}```
-
+GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances/{jobInstanceId}
+```
 **Headers**:
-
 ```rest
 {
   "Authorization": "Bearer <access-token>"
@@ -172,7 +158,6 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 ```
 
 **Sample response**:
-
 ```rest
 {
   "id": "<id>",
@@ -188,17 +173,15 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 ```
 
 ### Cancel item job instance
-
 Cancel an ongoing job run of lineage in MLV.
 
 **Sample request**:
 
 **URI**: 
 ```http
-POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules/{jobInstanceId}/cancel```
-
+POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules/{jobInstanceId}/cancel
+```
 **Headers**:
-
 ```rest
 {
   "Authorization": "Bearer <access-token>"
@@ -206,17 +189,14 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 ```
 
 **Sample response**:
-
 ```
 Location: https://api.fabric.microsoft.com/v1/workspaces/<worksapceId>/lakehouses/<lakehouseId>/jobs/instances/<jobInstanceId>
 Retry-after: 60
 ```
 
 ## Related content
-
 Refer to the following content for more information on Fabric REST APIs.
 
 ### Documentation
-
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [Job Scheduler APIs in Fabric](/rest/api/fabric/core/job-scheduler)
