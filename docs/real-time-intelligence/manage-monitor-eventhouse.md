@@ -45,11 +45,16 @@ D. **Details area**: The [details area](#view-eventhouse-details) provides addit
 
 The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, enable minimum consumption, add databases, add plugins, and collapse or expand the details area.
 
-### Enable minimum consumption
+### Enable always-on
 
-Minimum consumption sets a minimum available capacity unit (CU) size for an eventhouse.
+Always-on prevents your eventhouse from suspending the service due to inactivity. For highly time-sensitive systems this prevents the latency of re-activating the eventhouse.
 
-1. From the ribbon, select **Minimum consumption**
+1. From the ribbon, select **Always-On**
+2. In the **Always-On** pane, select the option to **Enable** the feature
+
+In addition to **Always-On** you can optionally set the Minimum consumption. This sets a minimum available capacity unit (CU) size for an eventhouse.
+
+1. In the **Always-On** pane, select **Minimum consumption**
 1. In the **Minimum consumption** pane, select the size corresponding to the [minimum available CU](eventhouse.md#minimum-consumption) size you want to apply to this eventhouse, and then select **Done**.
 
     The following table maps the size to the minimum [capacity units](../admin/capacity-settings.md) allotted to the eventhouse:
