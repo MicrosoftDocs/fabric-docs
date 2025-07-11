@@ -103,11 +103,11 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 
 **Sample response**:
 ```
-Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules/<schedule_id>
+Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules/<scheduleId>
 ```
 ```rest
 {
-  "id": "<schedule_id>",
+  "id": "<scheduleId>",
   "enabled": true,
   "createdDateTime": "2024-04-28T05:35:20.5366667",
   "configuration": {
@@ -118,7 +118,7 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehous
     "interval": 10
   },
   "owner": {
-    "id": "<owner_id>",
+    "id": "<ownerId>",
     "type": "User"
   }
 }
@@ -137,7 +137,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 
 With optional parameter:
 ```http
-GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances?continuationToken={continuation_token}
+GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances?continuationToken={continuationToken}
 ```
 
 **Headers**:
@@ -152,30 +152,30 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 {
   "value": [
     {
-      "id": "<job_instance_id_1>",
-      "itemId": "<lakehouse_id>",
-      "jobType": "<job_type>",
+      "id": "<jobInstanceId_1>",
+      "itemId": "<lakehouseId>",
+      "jobType": "<jobType>",
       "invokeType": "Manual",
       "status": "<status>",
-      "rootActivityId": "<root_activity_id>",
+      "rootActivityId": "<rootActivityId>",
       "startTimeUtc": "2024-06-22T06:35:00.7812154",
       "endTimeUtc": "2024-06-22T06:35:00.8033333",
       "failureReason": null
     },
     {
-      "id": "<job_instance_id_1>",
-      "itemId": "<lakehouse_id>",
-      "jobType": "<job_type>",
+      "id": "<jobInstanceId_2>",
+      "itemId": "<lakehouseId>",
+      "jobType": "<jobType>",
       "invokeType": "Manual",
       "status": "<status>",
-      "rootActivityId": "root_activity_id",
+      "rootActivityId": "rootActivityId",
       "startTimeUtc": "2024-06-22T06:35:00.7812154",
       "endTimeUtc": "2024-06-22T07:35:00.8033333",
       "failureReason": null
     }
   ],
-  "continuationToken": "<continuation_token>",
-  "continuationUri": "https://api.fabric.microsoft.com/v1/workspaces/{workspace_id}/lakehouses/{lakehouse_id}/jobs/instances?continuationToken={continuation_token}"
+  "continuationToken": "<continuationToken>",
+  "continuationUri": "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/jobs/instances?continuationToken={continuationToken}"
 }
 ```
 
@@ -241,7 +241,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 
 **Sample response**:
 ```
-Location: https://api.fabric.microsoft.com/v1/workspaces/4b218778-e7a5-4d73-8187-f10824047715/lakehouses/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b
+Location: https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/lakehouses/<lakehouseId>/jobs/instances/<jobInstanceId>
 
 Retry-After: 60
 ```
