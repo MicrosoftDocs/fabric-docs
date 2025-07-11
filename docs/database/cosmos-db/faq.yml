@@ -20,13 +20,13 @@ sections:
       - question: |
           What is Cosmos DB in Microsoft Fabric?
         answer: |
-          Microsoft Fabric is an enterprise-ready, end-to-end data platform. Fabric unifies data movement, databases, data engineering, data science, real-time intelligence, BI with copilot, and application development. You no longer need to put together these services individually from multiple vendors. 
+          Microsoft Fabric is an enterprise-ready, end-to-end data platform. Fabric unifies data movement, databases, data engineering, data science, real-time intelligence, BI with copilot, and application development. You no longer need to put together these services individually from multiple vendors.
 
           Cosmos DB in Microsoft Fabric is an AI-optimized NoSQL database, automatically configured to meet your application needs through a simplified experience. Developers can use Cosmos DB in Fabric to build AI applications with ease, without managing complex database settings. Cosmos DB in Microsoft Fabric is based on [Azure Cosmos DB](/azure/cosmos-db/nosql), which provides dynamic scaling, high availability, and reliability for the database.
 
-          Cosmos DB is a new addition to the Databases workload in Fabric. You can now store semi-structured NoSQL data in Cosmos DB in Fabric. Semi-structured data can be stored alongside your relational data in SQL databases in Fabric, enabling a unified data platform for your applications.  
+          Cosmos DB is a new addition to the Databases workload in Fabric. You can now store semi-structured NoSQL data in Cosmos DB in Fabric. Semi-structured data can be stored alongside your relational data in SQL databases in Fabric, enabling a unified data platform for your applications.
 
-          Cosmos DB data is made available to Fabric OneLake automatically. This integration provides deep integration of Cosmos DB with the rest of Fabric platform, enabling seamless analytics, Real-time intelligence, User Data Functions (UDFs), GraphQL, Data Science and BI with Copilot, and data agents all in one place.  
+          Cosmos DB data is made available to Fabric OneLake automatically. This integration provides deep integration of Cosmos DB with the rest of Fabric platform, enabling seamless analytics, Real-time intelligence, User Data Functions (UDFs), GraphQL, Data Science and BI with Copilot, and data agents all in one place.
 
           For more information, see [Cosmos DB in Microsoft Fabric](overview.md).
       - question: |
@@ -36,7 +36,7 @@ sections:
       - question: |
           What query language can I use to query data in Cosmos DB in Microsoft Fabric?
         answer: |
-          Cosmos DB in Microsoft Fabric primarily supports the NoSQL query language for querying data. 
+          Cosmos DB in Microsoft Fabric primarily supports the NoSQL query language for querying data.
 
           The NoSQL query language provides a powerful, American National Standards Institute (ANSI) Structured Query Language (SQL)-like syntax for working with JSON data. This language is designed to be familiar to users with SQL experience, while also supporting the flexibility and hierarchical nature of JSON documents.
 

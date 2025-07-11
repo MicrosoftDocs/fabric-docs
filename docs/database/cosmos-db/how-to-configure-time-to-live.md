@@ -48,7 +48,7 @@ First, use the Fabric portal to set the container-level TTL.
 1. Select **Save** to persist your changes.
 
     > [!TIP]
-    > For more information on various time-to-live (TTL) configuration values, see [time-to-live](time-to-live.md#example-ttl-configurations). 
+    > For more information on various time-to-live (TTL) configuration values, see [time-to-live](time-to-live.md#example-ttl-configurations).
 
 ## Set at item level
 

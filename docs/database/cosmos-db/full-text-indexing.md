@@ -14,7 +14,7 @@ appliesto:
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
-Cosmos DB in Microsoft Fabric offers a powerful Full Text Search feature as generally available. This feature is designed to enhance the native search capabilities of your apps without needing an external search service for basic full text search. 
+Cosmos DB in Microsoft Fabric offers a powerful Full Text Search feature as generally available. This feature is designed to enhance the native search capabilities of your apps without needing an external search service for basic full text search.
 
 ## What is full text search?
 
@@ -50,7 +50,7 @@ To use full text search capabilities, you should first define two policies:
 
 - A full text index added to the indexing policy that enables efficient search.
 
-You can run full text search queries without these policies, but they don't use the full text index and could consume more request units (RUs). Without this policy, full text searches can also take longer to execute. Defining full text container and index policies is recommended. 
+You can run full text search queries without these policies, but they don't use the full text index and could consume more request units (RUs). Without this policy, full text searches can also take longer to execute. Defining full text container and index policies is recommended.
 
 ### Full text policy
 
@@ -91,7 +91,7 @@ Defining multiple text paths is easily done by adding another element to the `fu
 
 #### Multi-language support
 
-Multi-language support allows you to index and search text in languages beyond English. It applies language-specific tokenization, stemming, and stopword removal for more accurate search results. 
+Multi-language support allows you to index and search text in languages beyond English. It applies language-specific tokenization, stemming, and stopword removal for more accurate search results.
 
 > [!NOTE]
 > Multi-language support is in early preview. Performance and quality of search might be different than full text search in English. For example, stopword removal is only available for English (en-us) at this time. The functionality is subject to change through the evolution of the preview.
@@ -204,7 +204,7 @@ WHERE
 
 #### `FULLTEXTSCORE`
 
-In this example, we want to obtain the first 10 results where "mountain" and "bicycle" are included, and sorted by order of relevance. That is, documents that have these terms more often should appear higher in the list. 
+In this example, we want to obtain the first 10 results where "mountain" and "bicycle" are included, and sorted by order of relevance. That is, documents that have these terms more often should appear higher in the list.
 
 ```nosql
 SELECT TOP 10
