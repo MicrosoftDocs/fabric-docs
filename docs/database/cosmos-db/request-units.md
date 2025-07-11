@@ -46,7 +46,7 @@ The diagram is divided into two main sections:
 The diagram visually connects the resource usage box to the database operations, illustrating that each operation consumes RUs based on its resource requirements.
 :::end-image:::
 
-To manage and plan capacity, Cosmos DB in Fabric ensures that the number of RUs for a given database operation over a given dataset is deterministic. You can examine the response header to track the number of RUs consumed by any database operation. When you understand the factors that affect RU charges and your application's throughput requirements, you can run your application cost effectively. The next section details the aforementioned factors that affect RU consumption.
+To manage and plan capacity, Cosmos DB in Fabric ensures that the number of RUs for a given database operation over a given dataset is deterministic. You can examine the response header to track the number of RUs consumed by any database operation. When you understand the factors that affect RU charges and your application's throughput requirements, you can run your application cost effectively. The next section details the previously mentioned factors that affect RU consumption.
 
 ## Considerations
 
