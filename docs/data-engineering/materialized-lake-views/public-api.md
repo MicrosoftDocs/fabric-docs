@@ -69,23 +69,6 @@ Copy the token and replace the _&lt;access-token&gt;_ placeholder in the followi
 ## Materialized lake views REST API usage examples
 Use the following instructions to test usage examples for specific materialized lake views public APIs and verify the results.
 
-### Run on demand item job
-Run MLV lineage as an on demand job. Spark job starts executing after a successful request.
-
-**Request**
-```http
-POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances?jobType=RefreshMaterializedLakeViews
-```
-
-**Sample response**:
-```
-Location: https://api.fabric.microsoft.com/v1/workspaces/4b218778-e7a5-4d73-8187-f10824047715/lakehouses/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b
-
-Retry-After: 60
-```
-
-With `location`, you can use [Get Item Job Instance](/rest/api/fabric/core/job-scheduler/get-item-job-instance) to view job status or use [Cancel Item Job Instance](/rest/api/fabric/core/job-scheduler/cancel-item-job-instance) to cancel the current lineage run.
-
 ### Create Item Schedule
 
 Create schedule to run lineage in MLV.
@@ -142,7 +125,7 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehous
 ```
 
 ### Get Item Job Instance
-Get details such as status of a run in MLV.
+Get details such as status and id corresponsing to a run in MLV.
 
 **Sample request**:
 
@@ -193,6 +176,22 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 Location: https://api.fabric.microsoft.com/v1/workspaces/<worksapceId>/lakehouses/<lakehouseId>/jobs/instances/<jobInstanceId>
 Retry-after: 60
 ```
+### Run on demand item job
+Run MLV lineage as an on demand job. Spark job starts executing after a successful request.
+
+**Request**
+```http
+POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances?jobType=RefreshMaterializedLakeViews
+```
+
+**Sample response**:
+```
+Location: https://api.fabric.microsoft.com/v1/workspaces/4b218778-e7a5-4d73-8187-f10824047715/lakehouses/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b
+
+Retry-After: 60
+```
+
+With `location`, you can use [Get Item Job Instance](/rest/api/fabric/core/job-scheduler/get-item-job-instance) to view job status or use [Cancel Item Job Instance](/rest/api/fabric/core/job-scheduler/cancel-item-job-instance) to cancel the current lineage run.
 
 ## Related content
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
