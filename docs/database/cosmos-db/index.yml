@@ -58,8 +58,6 @@ landingContent:
         links:
           - text: Access data from a lakehouse
             url: how-to-access-data-lakehouse.md
-          - text: Index vector data
-            url: how-to-index-vector-data.md
   - title: Deploy and monitor
     linkLists:
       - linkListType: how-to-guide
@@ -68,6 +66,16 @@ landingContent:
             url: how-to-continuous-integration-deployment.md
           - text: Monitor activity and performance
             url: how-to-monitor.md
+  - title: AI applications
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Index vector data
+            url: index-vector-data.md
+          - text: Full text indexing and search
+            url: full-text-indexing.md
+          - text: Hybrid search
+            url: hybrid-search.md
   - title: Security
     linkLists:
       - linkListType: concept
@@ -86,6 +94,10 @@ landingContent:
             url: indexing-policies.md
           - text: Time to live (TTL)
             url: time-to-live.md
+          - text: Request units
+            url: request-units.md
+          - text: Autoscale throughput
+            url: autoscale-throughput.md
       - linkListType: how-to-guide
         links:
           - text: Configure container
