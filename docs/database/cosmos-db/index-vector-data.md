@@ -47,7 +47,7 @@ Performing vector search with Cosmos DB in Fabric requires you to define a vecto
 
 - `datatype`: the data type of the vector property. Supported types are `float32` (default), `int8`, and `uint8`.
 
-- `dimensions`: The dimensionality or length of each vector in the path. All vectors in a path should have the same number of dimensions. (default 1536).
+- `dimensions`: The dimensionality or length of each vector in the path. All vectors in a path should have the same number of dimensions. (default `1536`).
 
 - `distanceFunction`: The metric used to compute distance/similarity. Supported metrics are:
 
