@@ -99,7 +99,9 @@ Create schedule to run lineage in MLV.
 
 **Sample request**:
 
-**URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules```
+**URI**: 
+```http
+GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules```
 
 **Headers**:
 
@@ -110,8 +112,10 @@ Create schedule to run lineage in MLV.
 ```
 
 **Sample request**:
-POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules
-
+```http
+POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules```
+````
+```rest
 {
   "enabled": true,
   "configuration": {
@@ -122,6 +126,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
     "interval": 10
   }
 }
+```
 
 **Sample response**:
 
@@ -154,7 +159,9 @@ Get details such as status of a run in MLV.
 
 **Sample request**:
 
-**URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances/{jobInstanceId}```
+**URI**: 
+```http
+GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances/{jobInstanceId}```
 
 **Headers**:
 
@@ -186,7 +193,9 @@ Cancel an ongoing job run of lineage in MLV.
 
 **Sample request**:
 
-**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules/{jobInstanceId}/cancel```
+**URI**: 
+```http
+POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules/{jobInstanceId}/cancel```
 
 **Headers**:
 
