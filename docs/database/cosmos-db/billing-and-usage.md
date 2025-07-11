@@ -5,7 +5,7 @@ description: Learn about billing concepts for compute and storage and how to mon
 author: jilmal
 ms.author: jmaldonado
 ms.topic: concept-article
-ms.date: 07/11/2025
+ms.date: 07/14/2025
 show_latex: true
 ---
 
