@@ -46,25 +46,25 @@ The diagram is divided into two main sections:
 The diagram visually connects the resource usage box to the database operations, illustrating that each operation consumes RUs based on its resource requirements.
 :::end-image:::
 
-To manage and plan capacity, Cosmos DB in Fabric ensures that the number of RUs for a given database operation over a given dataset is deterministic. You can examine the response header to track the number of RUs consumed by any database operation. When you understand the [factors that affect RU charges](request-units.md#request-unit-considerations) and your application's throughput requirements, you can run your application cost effectively.
+To manage and plan capacity, Cosmos DB in Fabric ensures that the number of RUs for a given database operation over a given dataset is deterministic. You can examine the response header to track the number of RUs consumed by any database operation. When you understand the [factors that affect RU charges](#considerations) and your application's throughput requirements, you can run your application cost effectively.
 
-## Request Unit considerations
+## Considerations
 
 While you estimate the number of RUs consumed by your workload, consider the following factors:
 
-* **Item size**: As the size of an item increases, the number of RUs consumed to read or write the item also increases.
+- **Item size**: As the size of an item increases, the number of RUs consumed to read or write the item also increases.
 
-* **Item indexing**: By default, each item is automatically indexed. Fewer RUs are consumed if you choose not to index some of your items in a container.
+- **Item indexing**: By default, each item is automatically indexed. Fewer RUs are consumed if you choose not to index some of your items in a container.
 
-* **Item property count**: Assuming the default indexing is on all properties, the number of RUs consumed to write an item increases as the item property count increases.
+- **Item property count**: Assuming the default indexing is on all properties, the number of RUs consumed to write an item increases as the item property count increases.
 
-* **Indexed properties**: An index policy on each container determines which properties are indexed by default. To reduce the RU consumption for write operations, limit the number of indexed properties.
+- **Indexed properties**: An index policy on each container determines which properties are indexed by default. To reduce the RU consumption for write operations, limit the number of indexed properties.
 
-* **Data consistency**: The strong and bounded staleness consistency levels consume approximately two times more RUs while performing read operations when compared to that of other relaxed consistency levels.
+- **Data consistency**: The strong and bounded staleness consistency levels consume approximately two times more RUs while performing read operations when compared to that of other relaxed consistency levels.
 
-* **Type of reads**: Point reads cost fewer RUs than queries.
+- **Type of reads**: Point reads cost fewer RUs than queries.
 
-* **Query patterns**: The complexity of a query affects how many RUs are consumed for an operation. Factors that affect the cost of query operations include:
+- **Query patterns**: The complexity of a query affects how many RUs are consumed for an operation. Factors that affect the cost of query operations include:
 
   * The number of query results
   * The number of predicates
@@ -76,9 +76,9 @@ While you estimate the number of RUs consumed by your workload, consider the fol
 
   The same query on the same data always costs the same number of RUs on repeated executions.
 
-* **Script usage**: As with queries, stored procedures and triggers consume RUs based on the complexity of the operations that are performed. As you develop your application, inspect the request charge header to better understand how much RU capacity each operation consumes.
+- **Script usage**: As with queries, stored procedures and triggers consume RUs based on the complexity of the operations that are performed. As you develop your application, inspect the request charge header to better understand how much RU capacity each operation consumes.
 
-## Request units and multiple regions
+## Multiple regions
 
 If you assign *'R'* RUs on a Cosmos DB in Fabric container (or database), Cosmos DB in Fabric ensures that *'R'* RUs are available in *each* region associated with your Cosmos DB in Fabric account. You can't selectively assign RUs to a specific region. The RUs provisioned on a Cosmos DB in Fabric container (or database) are provisioned in all the regions associated with your Cosmos DB in Fabric account.
 
