@@ -96,6 +96,8 @@ landingContent:
             url: time-to-live.md
           - text: Request units
             url: request-units.md
+          - text: Autoscale throughput
+            url: autoscale-throughput.md
       - linkListType: how-to-guide
         links:
           - text: Configure container

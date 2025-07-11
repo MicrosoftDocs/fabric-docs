@@ -6,7 +6,6 @@ author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
 ms.date: 07/11/2025
-show_latex: true
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
@@ -90,3 +89,4 @@ Your choice of consistency model also affects the throughput. You can get approx
 ## Related content
 
 - [Configure a container in Cosmos DB in Microsoft Fabric](how-to-configure-container.md)
+- [Explore autoscale throughput in Cosmos DB in Microsoft Fabric](autoscale-throughput.md)

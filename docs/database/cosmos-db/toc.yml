@@ -65,6 +65,8 @@ items:
         href: how-to-configure-time-to-live.md
       - name: Request units
         href: request-units.md
+      - name: Autoscale throughput
+        href: autoscale-throughput.md
   - name: Write queries
     href: nosql-query/toc.yml
   - name: Troubleshoot
