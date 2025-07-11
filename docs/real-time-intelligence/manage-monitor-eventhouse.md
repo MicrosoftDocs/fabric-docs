@@ -52,7 +52,10 @@ Always-on prevents your eventhouse from suspending the service due to inactivity
 1. From the ribbon, select **Always-On**
 2. In the **Always-On** pane, select the option to **Enable** the feature
 
-In addition to **Always-On** you can optionally set the Minimum consumption. This sets a minimum available capacity unit (CU) size for an eventhouse.
+    > [!NOTE]
+    >
+#### Enable miniumum consumption
+In addition to **Always-On** you can optionally set the Minimum consumption. This sets a minimum available capacity unit (CU) size for an eventhouse. After enabling **Always-On** you will have the option to enable **Minimum consumption**
 
 1. In the **Always-On** pane, select **Minimum consumption**
 1. In the **Minimum consumption** pane, select the size corresponding to the [minimum available CU](eventhouse.md#minimum-consumption) size you want to apply to this eventhouse, and then select **Done**.
