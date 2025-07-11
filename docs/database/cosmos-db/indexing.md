@@ -55,7 +55,7 @@ This conceptual tree represents the sample JSON item:
     - *`city`*: `Athens`
 
 :::image type="complex" source="media/indexing/tree.png" alt-text="Diagram of the tree representation of an item in Cosmos DB.":::
-A tree diagram showing a root node with three branches: "locations", "headquarters," and "exports." "Locations" splits into two numbered nodes, each with two location-related subnodes ("Germany/Berlin" and "France/Paris"). "Headquarters" has "Belgium" for its location and "employees" ("250"). "Exports" splits into two numbered nodes, each with a "city" subnode ("Moscow" and "Athens").
+A tree diagram showing a root node with three branches: "locations", "headquarters," and "exports." "Locations" splits into two numbered nodes, each with two location-related subnodes ("Germany or Berlin" and "France or Paris"). "Headquarters" has "Belgium" for its location and "employees" ("250"). "Exports" splits into two numbered nodes, each with a "city" subnode ("Moscow" and "Athens").
 :::end-image:::
 
 Pay attention to how arrays are encoded in the tree: every entry in an array gets an intermediate node labeled with the index of that entry within the array. For example, the first entry is `0` and the second entry is `1`.
