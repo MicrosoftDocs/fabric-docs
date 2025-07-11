@@ -5,7 +5,7 @@ description: Create a custom indexing policy for a container within a database i
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/10/2025
+ms.date: 07/14/2025
 ai-usage: ai-assisted
 zone_pivot_group_filename: database/cosmos-db/zone-pivot-groups.json
 zone_pivot_groups: dev-lang-core

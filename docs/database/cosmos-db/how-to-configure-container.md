@@ -5,7 +5,7 @@ description: Learn how to configure containers in your Cosmos DB database in Mic
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/10/2025
+ms.date: 07/14/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---

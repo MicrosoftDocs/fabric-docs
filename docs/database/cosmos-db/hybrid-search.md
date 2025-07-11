@@ -5,7 +5,7 @@ description: Combine vector search with full text search in Cosmos DB in Microso
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/11/2025
+ms.date: 07/14/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
