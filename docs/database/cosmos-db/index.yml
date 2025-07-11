@@ -94,6 +94,8 @@ landingContent:
             url: indexing-policies.md
           - text: Time to live (TTL)
             url: time-to-live.md
+          - text: Request units
+            url: request-units.md
       - linkListType: how-to-guide
         links:
           - text: Configure container
