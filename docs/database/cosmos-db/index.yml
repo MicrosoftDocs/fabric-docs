@@ -28,10 +28,6 @@ landingContent:
         links:
           - text: Create a database
             url: quickstart-portal.md
-      - linkListType: how-to-guide
-        links:
-          - text: Connect from local environment
-            url: how-to-authenticate.md
   - title: Query
     linkLists:
       - linkListType: how-to-guide
@@ -71,7 +67,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: Billing and usage reporting
-            url: billing-and-usage.md
+            url: billing-usage.md
   - title: AI applications
     linkLists:
       - linkListType: concept
@@ -92,7 +88,7 @@ landingContent:
             url: authorization.md
       - linkListType: concept
         links:
-          - text: Authenticate from Azure services
+          - text: Authenticate with Microsoft Entra ID
             url: how-to-authenticate.md
   - title: Manage resources
     linkLists:
