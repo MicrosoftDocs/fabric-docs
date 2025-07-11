@@ -5,8 +5,9 @@ description: Learn about the current limitations and restrictions when using Cos
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/11/2025
+ms.date: 07/14/2025
 ms.search.form: Databases Limitations
+ms.custom: references_regions
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
@@ -23,7 +24,7 @@ This article lists current limitations for Cosmos DB in Fabric.
 
 - Databases support a maximum of **25** containers.
 
-- Databases support an autoscale maximum of 10,000 RU/s per container.
+- Databases support a maximum of **10,000** request units per second (RU/s).
 
 ## Regional availability
 
