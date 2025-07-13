@@ -1,8 +1,8 @@
 ---
 title: How to train models with SynapseML
 description: Learn how to train models with SynapseML
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
 ms.topic: how-to
