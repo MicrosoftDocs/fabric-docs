@@ -36,7 +36,7 @@ The sample end-to-end solution includes these components:
 
 * **Real-Time Dashboard**: A Real-Time Dashboard provides an up-to-the-second snapshot of various goals and data points in a collection of tiles. Each tile has an underlying query and a visual representation. It allows you to visualize data in real-time, providing insights and enabling data exploration. Read more about [Real-Time dashboards](dashboard-real-time-create.md).
 
-* **Power BI**: is used to create real-time reports that display data from Eventstreams and KQL Databases managed by Real-Time Intelligence.
+* **Power BI**: Use Power BI to create real-time reports that display data from Eventstreams and KQL Databases managed by Real-Time Intelligence.
 
 * **Activator**: is a no-code experience in Microsoft Fabric for automatically taking actions when patterns or conditions are detected in changing data.
 
@@ -49,10 +49,10 @@ These steps show how to create an end-to-end sample using the bike rental sample
     * From the Real-Time Hub:
 
         1. Select **Real-Time** from the left navigation bar. The **Real-Time hub** opens.
-        1. On the **Jumpstart your experience using sample scenarios** section, click the **Bicycle rentals** tile.
+        1. On the Jumpstart your experience using sample scenarios section, select the **Bicycle rentals** tile.
 
         >[!NOTE]
-        > If you already have streaming data in your Real Time Intelligence solution, this option is not available. Navigate to the Real-Time Intelligence Workload page to access the experience instead.
+        > If you already have streaming data in your Real-Time Intelligence solution, this option isn't available. Go to the Real-Time Intelligence workload page to use the experience instead.
 
     * From the Real-Time Intelligence Workload:
 
@@ -68,7 +68,7 @@ These steps show how to create an end-to-end sample using the bike rental sample
 1. Select the sample items to create. By default, all items are selected.
 
     > [!NOTE]
-    > Real-time Dashboard, Report, Queryset, and Activator are optional and can be cleared. However, we recommend creating the entire component set for the best experience.
+    > Real-Time Dashboard, Report, Queryset, and Activator are optional and can be cleared. However, we recommend creating the entire component set for the best experience.
 
     :::image type="content" source="media/sample-end-to-end-solution/configure-bike-end-to-end-sample.png" alt-text="Screenshot of the Configure samples window showing the selected items and the Destination Location." lightbox="media/sample-end-to-end-solution/configure-bike-end-to-end-sample.png":::
 
