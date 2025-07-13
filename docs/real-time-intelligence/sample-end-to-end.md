@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 04/29/2025
+ms.date: 07/13/2025
 #customer intent: As a data analyst, I want to create an end-to-end real-time solution so that I can understand how Real-Time Intelligence components work together.
 ---
 
@@ -44,9 +44,22 @@ The sample end-to-end solution includes these components:
 
 These steps show how to create an end-to-end sample using the bike rental sample data.
 
-1. Select **Real-Time** from the left navigation bar. The **Real-Time hub** opens.
+1. Access the end-to-end sample from the Real-Time Hub or from the Real-Time Intelligence Workload:
 
-1. On the **Jumpstart your experience using sample scenarios** section, click the **Bicycle rentals** tile.
+    * From the Real-Time Hub:
+
+        1. Select **Real-Time** from the left navigation bar. The **Real-Time hub** opens.
+        1. On the **Jumpstart your experience using sample scenarios** section, click the **Bicycle rentals** tile.
+
+        >[!NOTE]
+        > If you already have streaming data in your Real Time Intelligence solution, this option is not available. Navigate to the Real-Time Intelligence Workload page to access the experience instead.
+
+    * From the Real-Time Intelligence Workload:
+
+        1. Select **Workloads** from the left navigation bar, and then **Real-Time Intelligence**.
+        1. On the **Real-Time Intelligence samples** tile, select **Get started**.
+
+    :::image type="content" source="media/sample-end-to-end-solution/create-end-to-end-samples.png" alt-text="Screenshot of the Create samples window showing the bike rental data and Get started button.":::
 
 1. In the **Create samples** window, select **Get started** with bike rental data.
 
