@@ -3,7 +3,7 @@ title: Overview of Copilot for Data Science and Data Engineering in Microsoft Fa
 description: Learn about Copilot for Data Science and Data Engineering, an AI assistant that helps analyze and visualize data.
 author: SnehaGunda
 ms.author: sngun
-ms.reviewer: franksolomon
+ms.reviewer: jburchel
 ms.topic: overview
 ms.custom:
   - build-2023
