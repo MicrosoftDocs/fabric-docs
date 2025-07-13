@@ -122,6 +122,17 @@ Schema options on publish only apply when the update method is replace. When you
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/fixed-schema.png" alt-text="Screenshot of the Schema options on publish option, with Fixed schema selected.":::
 
+## Parameterization
+
+[Parameters](/power-query/power-query-query-parameters.md) are a core experience within Dataflow Gen2. Once a parameter is created or you use the "Always allow" setting, an input widget will be made available to define the table or file name for you destination.
+
+![Screenshot of the data destination experience where the table name is using a parameter called "TableName" and the input widget is shown](media/dataflow-gen2-data-destinations-and-managed-settings/parameter-table-name.png)
+
+> [!NOTE]
+> Parameters in the data destination can also be leveraged directly through the M script created for the queries related to it. You can manually alter the script of your data destination queries to leverage the parameters to meet your requirements.
+> However, the user interface currently only supports parameterization for the table or file name field.
+
+
 ## Supported data source types per destination
 
 | Supported data types per storage location | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output | Fabric SQL Database (SQL) Output |
