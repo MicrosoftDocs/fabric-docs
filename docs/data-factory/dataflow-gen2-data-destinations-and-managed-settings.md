@@ -124,7 +124,7 @@ Schema options on publish only apply when the update method is replace. When you
 
 ## Parameterization
 
-[Parameters](/power-query/power-query-query-parameters.md) are a core experience within Dataflow Gen2. Once a parameter is created or you use the "Always allow" setting, an input widget is made available to define the table or file name for your destination.
+[Parameters](power-query/power-query-query-parameters.md) are a core experience within Dataflow Gen2. Once a parameter is created or you use the "Always allow" setting, an input widget is made available to define the table or file name for your destination.
 
 ![Screenshot of the data destination experience where the table name is using a parameter called "TableName" and the input widget is shown](media/dataflow-gen2-data-destinations-and-managed-settings/parameter-table-name.png)
 
