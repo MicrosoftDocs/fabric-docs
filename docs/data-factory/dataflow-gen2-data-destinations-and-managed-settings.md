@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 05/09/2025
+ms.date: 07/13/2025
 ms.custom: dataflows
 ---
 
@@ -53,7 +53,7 @@ When you choose a file-based destination like SharePoint, you need to specify a 
 
 * File name: The name of the file that will be created in the destination. By default, the file name is the same as your query name.
 * File format: The format of the file that will be created in the destination.
-* File origin: The encoding that will be used to create the file in the destination. By default, the file origin is set to **UTF-8**.
+* File origin: The encoding that used to create the file in the destination. By default, the file origin is set to **UTF-8**.
 * File delimiter: The delimiter that will be used to create the file in the destination. By default, the file delimiter is set to **Comma**.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/file-destinations-settings.png" alt-text="Screenshot of the File destination settings window with the file name, file format, file origin, and file delimiter settings displayed.":::
@@ -124,12 +124,12 @@ Schema options on publish only apply when the update method is replace. When you
 
 ## Parameterization
 
-[Parameters](/power-query/power-query-query-parameters.md) are a core experience within Dataflow Gen2. Once a parameter is created or you use the "Always allow" setting, an input widget will be made available to define the table or file name for you destination.
+[Parameters](/power-query/power-query-query-parameters.md) are a core experience within Dataflow Gen2. Once a parameter is created or you use the "Always allow" setting, an input widget is made available to define the table or file name for your destination.
 
 ![Screenshot of the data destination experience where the table name is using a parameter called "TableName" and the input widget is shown](media/dataflow-gen2-data-destinations-and-managed-settings/parameter-table-name.png)
 
 > [!NOTE]
-> Parameters in the data destination can also be leveraged directly through the M script created for the queries related to it. You can manually alter the script of your data destination queries to leverage the parameters to meet your requirements.
+> Parameters in the data destination can also be applied directly through the M script created for the queries related to it. You can manually alter the script of your data destination queries to apply the parameters to meet your requirements.
 > However, the user interface currently only supports parameterization for the table or file name field.
 
 
