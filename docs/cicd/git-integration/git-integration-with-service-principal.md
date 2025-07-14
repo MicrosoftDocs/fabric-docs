@@ -109,9 +109,11 @@ Consider the following scenarios when registering your app in step 1.
 |Fabric and application in one tenant, DevOps in seperated tenant|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
 |Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
 
+For more information see [How and why applications are added to Microsoft Entra ID](/entra/identity-platform/how-applications-are-added) and [Tenancy in Microsoft Entra ID](/entra/identity-platform/single-and-multi-tenant-apps).
+
 ## Appendix: Edit service principal connection details
 When you need to update your service principal details, for example, update service principal key, use the following instructions:
-
+)
 1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Locate the cloud connection that you previously created in the steps above.
 2. Edit the connection with the updated settings.
 
