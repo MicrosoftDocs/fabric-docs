@@ -27,7 +27,7 @@ To access the job scheduler:
 1. Select the item’s contextual menu.
 1. Choose **Settings** or **Schedule** to open the job scheduler interface.
 
-### Set up a schedule
+### Set up your schedule
 
 After you open the scheduler for an item:
 
@@ -35,9 +35,7 @@ After you open the scheduler for an item:
 1. Use the configuration panel to set when and how often the job runs.
 1. Save your schedule to activate it.
 
-## Scheduling options
-
-Set up jobs to run on different recurrence patterns:
+Choose how often you want the job to run, and specify the start and end times. The scheduler supports various recurrence types, including minute-based, hourly, daily, weekly, monthly, and specific dates or weekdays of a month.
 
 | Recurrence type | Details and options |
 | --- | --- |
@@ -50,24 +48,22 @@ Set up jobs to run on different recurrence patterns:
 
 If your configuration doesn't match a valid time, the scheduler skips that run and waits for the next valid time.
 
-### Time constraints
-
-When you set up a schedule, keep in mind:
+To ensure your schedule is valid:
 
 - Set a valid start and end time for your schedule.
 - Make sure the end time is after the start time.
 - The scheduler automatically handles special cases like daylight saving time and invalid dates (for example, February 30).
 
-## Managing multiple schedulers
+## Manage multiple schedules
 
-Create and manage multiple schedulers for a single item. Use different schedulers to run jobs at different times or with different settings.
+Create and manage multiple schedules for a single item. Use different schedules to run jobs at different times or with different settings.
 
-1. On the **Schedule** screen, view, add, and edit multiple scheduler configurations for each item.
-1. Select the scheduler you want to manage, or create a new one for different job types or timing needs.
+1. On the **Schedule** screen, view, add, and edit multiple schedule configurations for each item.
+1. Select the schedule you want to manage, or create a new one for different job types or timing needs.
 
 :::image type="content" source="media/job-scheduler/job-scheduler-multiple.png" alt-text="Screenshot of multiple scheduler configurations for a single item in Microsoft Fabric.":::
 
-## Automating schedules with CI/CD
+## Automate schedules with CI/CD
 
 The job scheduler supports CI/CD integration, so you can deploy and manage schedules as part of your development workflow.
 
@@ -84,7 +80,7 @@ When you deploy an item, its schedules are automatically included, so you don't 
 
 ## Summary
 
-The job scheduler in Microsoft Fabric lets you automate recurring jobs, manage multiple schedules for each item, and integrate scheduling into your CI/CD workflows. Use it to streamline your data analytics process, and make sure your jobs run reliably and efficiently.
+The job scheduler in Microsoft Fabric lets you automate recurring jobs, manage multiple schedules for each item, and integrate scheduling into your CI/CD workflows. Use it to streamline your data analytics process, and make sure your jobs run reliably and efficiently. 
 
 ## Related content
 
