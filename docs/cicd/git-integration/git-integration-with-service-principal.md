@@ -24,6 +24,8 @@ To register an application with your Microsoft Entra tenant and use it to integr
 
 Register your application with Microsoft Entra ID, and create a secret by following the directions in [Register your app](/power-bi/developer/embedded/register-app#register-your-app). Confirm that your organization's policies allow the creation of client secrets and their use for token acquisition. Be sure to save the secret, as it will be required in a later step. 
 
+If you application resides in a tenant that is not the same as the home for your Azure DevOps instance, see [Multi-tenant considerations](#multi-tenat-considerations-for-service-principal-creation) below.
+
  >[!NOTE]
 >Be sure to save the secret. It will be used in the later steps.
 
@@ -91,7 +93,21 @@ To create the source control connection, use the following details and steps.
 9. After adding the connection, you need to click on **connect** and complete the git connection details. For more information see [Connect to a workspace](git-get-started.md#connect-to-a-workspace)
 
 
+## Multi-tenat considerations for service principal creation
+To access resources that are secured by a Microsoft Entra tenant, your application must be represented by a security principal. When you create your application, the service principal is auto-created on the tenant which the application resides.
 
+In cases where your applications tenant is differnt than the home tenant of your Azure DevOps instance, you will need to create the service prinicipal, in the Azure DevOps tenant. This requires granting the application admin consent.  For more information, see [Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent).
+
+Consider the following scenarios when registering your app in step 1.
+
+ :::image type="content" source="media/git-integration-with-service-principal/multi-tenant-1.png" alt-text="Diagram showing where ADO may reside." lightbox="media/git-integration-with-service-principal/multi-tenant-1.png":::
+
+|Scenario|Application registered as| service principal creation|
+|-----|-----|
+|Fabric, DevOps, application all in same tenant|Accounts in this organizational directory only - single tenant apps|No additiona requirements|
+|DevOps and application in same tenant|Accounts in this organizational directory only - single tenant apps|No additiona requirements|
+|Fabric and application in one tenant, DevOps in seperated tenant|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
+|Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
 
 ## Appendix: Edit service principal connection details
 When you need to update your service principal details, for example, update service principal key, use the following instructions:
