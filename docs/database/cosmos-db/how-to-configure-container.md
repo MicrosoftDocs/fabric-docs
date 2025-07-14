@@ -23,7 +23,7 @@ While many features are automatically enabled and built-in to Cosmos DB in Micro
 [!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
 
 > [!NOTE]
-> Currently, databases do not support offer replacement for containers, meaning you cannot change a container's throughput after it has been created.]
+> Databases do not support offer replacement for containers, meaning you cannot change a container's throughput after it has been created.
 
 ## Update settings
 
