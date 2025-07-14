@@ -1,14 +1,14 @@
 ---
 title: Developer admin settings
 description: Learn how to configure developer admin settings in Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 05/08/2025
 LocalizationGroup: Administration
 ---
 
@@ -31,11 +31,34 @@ Learn about the [Embed for your customers](/power-bi/developer/embedded/embedded
 
 ## Service principals can use Fabric APIs
 
+>[!NOTE]
+>This setting is being rolled out and might not be available in your tenant. Once removed, these settings will replace it:
+>* [Service principals can create workspaces, connections, and deployment pipelines](#service-principals-can-create-workspaces-connections-and-deployment-pipelines)
+>* [Service principals can call Fabric public APIs](#service-principals-can-call-fabric-public-apis)
+
 Web apps registered in Microsoft Entra ID use an assigned [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Power BI APIs without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group.
 
-You can control who can access service principals by creating dedicated security groups and using these groups in any Power BI tenant level-settings.
+## Service principals can create workspaces, connections, and deployment pipelines
 
-To learn more, see [Embed Power BI content with service principal and an application secret](/power-bi/developer/embedded/embed-service-principal).
+Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access these Fabric APIs that aren't protected by a Fabric permission model.
+
+* [Create Workspace](/rest/api/fabric/core/workspaces/create-workspace)
+
+* [Create Connection](/rest/api/fabric/core/connections/create-connection)
+
+* [Create Deployment Pipeline](/rest/api/fabric/core/deployment-pipelines/create-deployment-pipeline)
+
+To allow an app to use service principal authentication, its service principal must be included in an allowed security group. You can control who can access service principals by creating dedicated security groups and using these groups in other tenant settings.
+
+This setting is disabled by default for new customers.
+
+## Service principals can call Fabric public APIs
+
+Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Fabric public APIs that include create, read, update, and delete (CRUD) operations, and are protected by a Fabric permission model.
+
+To allow an app to use service principal authentication, its service principal must be included in an allowed security group. You can control who can access service principals by creating dedicated security groups and using these groups in other tenant settings.
+
+This setting is enabled by default for new customers.
 
 ## Allow service principals to create and use profiles
 

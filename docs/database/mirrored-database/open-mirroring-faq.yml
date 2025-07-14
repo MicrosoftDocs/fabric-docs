@@ -4,16 +4,14 @@ metadata:
   description: This article answers frequently asked questions about open mirrored databases in Microsoft Fabric.
   author: WilliamDAssafMSFT
   ms.author: wiassaf
-  ms.reviewer: tinglee, sbahadur
-  ms.date: 11/18/2024
+  ms.reviewer: tinglee, sbahadur, maraki-ketema
+  ms.date: 06/04/2025
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.topic: faq
 title: "Frequently asked questions for open mirroring in Microsoft Fabric"
 summary: |
   This article answers frequently asked questions about open mirroring in Microsoft Fabric.
-
-  [!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
 
 sections:
   - name: Features and capabilities
@@ -38,6 +36,10 @@ sections:
         What are the replication statuses?
       answer: 
         See [Monitor Fabric Mirror replication](monitor.md).
+    - question: | 
+        What are the supported data file formats?
+      answer: 
+        You can upload parquet or delimited text data files, including CSV files. For more information, see [Supported file formats](open-mirroring-landing-zone-format.md#data-file-and-format-in-the-landing-zone).
   - name: Cost management
     questions:
     - question: |

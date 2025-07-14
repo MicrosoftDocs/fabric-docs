@@ -1,8 +1,8 @@
 ---
 title: About private Links for secure access to Fabric
 description: Learn about the Azure private link feature to provide secure access to Fabric using Azure Networking private endpoints. Data is sent privately instead of over the internet.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: conceptual
 ms.custom:
@@ -90,8 +90,8 @@ You can use Dataflow gen2 to get data, transform data, and publish dataflow via 
 
 When you connect to Pipeline via private link, you can use the data pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize data pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
 
-### ML Model, Experiment, and AI skill
-ML Model, Experiment, and AI skill supports private link. 
+### ML Model, Experiment, and Data agent
+ML Model, Experiment, and Data agent supports private link. 
 
 ### Power BI
 
@@ -147,7 +147,7 @@ There are several considerations to keep in mind while working with private endp
 
 * Tenant migration is blocked when Private Link is turned on in the Fabric admin portal.
 
-* Customers can't connect to Fabric resources in multiple tenants from a single virtual network, but rather only the last tenant to set up Private Link.
+* Customers can't connect to Fabric resources in multiple tenants from the same network location (depends on where you configure DNS records), but rather only the last tenant to set up Private Link.
 
 * Private link doesn't support in Trial capacity. When accessing Fabric via Private Link traffic, trial capacity doesn't work.
   

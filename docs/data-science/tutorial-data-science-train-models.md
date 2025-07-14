@@ -5,7 +5,7 @@ ms.reviewer: None
 ms.author: sgilley
 author: sdgilley
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 06/04/2024
 ---
 

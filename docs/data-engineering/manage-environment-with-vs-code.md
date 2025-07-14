@@ -7,13 +7,14 @@ author: qixwang
 ms.topic: overview
 ms.date: 07/29/2024
 ms.search.form: VSCodeExtension
+ms.custom: sfi-image-nochange
 ---
 
 # Explore and inspect Spark environments with Visual Studio Code
 
 Microsoft Fabric environments is a consolidated item for all your hardware and software settings. In an environment, you can select different Spark runtimes, configure your compute resources, install libraries from public repositories or local directory and more. To learn more, see [Create, configure, and use an environment in Fabric](create-and-use-environment.md).
 
-Once an environment is created, you can explore and inspect it in Visual Studio Code (VS Code) with the Synapse extension. A new node called **Environment** is available in VS Code. Expand the **Environments** node to see all the environments in your workspace.
+Once an environment is created, you can explore and inspect it in Visual Studio (VS) Code with the Fabric Data Engineering VS Code extension. A new node called **Environment** is available in VS Code. Expand the **Environments** node to see all the environments in your workspace.
 
 :::image type="content" source="media\vscode\list-env.png" alt-text="Screenshot showing environment artifact list.":::
 

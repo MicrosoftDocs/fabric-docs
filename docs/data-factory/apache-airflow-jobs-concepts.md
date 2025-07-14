@@ -2,10 +2,10 @@
 title: What is Apache Airflow job?
 description: Learn about when to use Apache Airflow job, basic concepts, and supported regions.
 ms.topic: conceptual
-ms.custom:
+ms.custom: airflows
 author: nabhishek
 ms.author: abnarain
-ms.date: 04/16/2024
+ms.date: 06/23/2025
 ---
 
 # What is Apache Airflow Job?
@@ -43,25 +43,47 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 - Australia East
 - Australia Southeast
 - Brazil South
-- Canada East
 - Canada Central
+- Canada East
+- Central India
+- Central US
 - East Asia
 - East US
+- East US 2
+- France Central
 - Germany West Central
+- Indonesia Central (Coming soon)
+- Israel Central
+- Italy North
 - Japan East
 - Japan West
+- Korea Central
+- Malaysia West (Coming soon)
+- Mexico Central
+- New Zealand North (Coming soon)
 - North Europe
+- Norway East
+- Poland Central
+- Qatar Central (Coming soon)
+- Spain Central (Coming soon)
 - South Africa North
 - South Central US
 - South India
 - Southeast Asia
 - Sweden Central
+- Switzerland North
 - Switzerland West
+- Taiwan North (Coming soon)
+- Taiwan Northwest (Coming soon)
+- UAE North
 - UK South
 - UK West
-- West Central US
 - West Europe
 - West US
+- West US 2
+- West US 3
+
+ 
 
 ## Supported Apache Airflow versions
 
@@ -72,7 +94,7 @@ Microsoft Fabric hosted Apache Airflow job offer a range of powerful features, i
 - 3.12
 
 > [!NOTE]
-> Changing the Apache Airflow version within an existing Apache Airflow job is not supported. Instead, the recommended solution is to create a new Apache Airflow job with the desired version
+> Changing the Apache Airflow version within an existing Apache Airflow job is currently not supported. Instead, the recommended solution is to create a new Apache Airflow job with the desired version
 
 ## Related Content
 

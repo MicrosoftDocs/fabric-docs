@@ -4,7 +4,7 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 03/14/2025
+ms.date: 07/03/2025
 ms.topic: troubleshooting
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -25,6 +25,7 @@ Review the troubleshooting section of frequently asked questions for each data s
 - [Troubleshoot Mirroring Snowflake](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric)
 - [FAQ about Mirroring Azure Databricks](azure-databricks-faq.yml)
 - [Troubleshoot mirroring from Fabric SQL database (preview)](../sql/mirroring-troubleshooting.md) and [FAQ for Mirroring Fabric SQL database (preview)](../sql/mirroring-faq.yml)
+- [Troubleshoot Fabric mirrored databases From SQL Server](sql-server-troubleshoot.md) and [FAQ for Mirroring SQL Server in Microsoft Fabric](sql-server-faq.yml)
 
 Review limitations documentation for each data source:
 
@@ -32,8 +33,9 @@ Review limitations documentation for each data source:
 - [Limitations in Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](azure-sql-managed-instance-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (Preview)](azure-database-postgresql-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)](azure-cosmos-db-limitations.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-limitations.md)
 - [Limitations in Microsoft Fabric mirrored databases from Snowflake](snowflake-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases From SQL Server](sql-server-limitations.md)
 - [Limitations in mirroring from Fabric SQL database](../sql/mirroring-limitations.md)
 
 ## Changes to Fabric capacity
@@ -45,6 +47,24 @@ Review limitations documentation for each data source:
 | Fabric capacity scaling       | Mirroring continues. If you scale down the capacity, be aware that the OneLake storage for the mirrored data is free up to a limit based on the capacity size, thus scaling down the capacity may incur additional storage charge. Learn more from [Cost of mirroring](overview.md#cost-of-mirroring). |
 | Fabric capacity throttled     | Wait until the overload state is over or update your capacity. Mirroring will continue once the capacity is restored. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). |
 | Fabric trial capacity expired | Mirroring is stopped. To retain your mirrored database, purchase Fabric capacity. Learn more from [Fabric trial capacity expires](../../fundamentals/fabric-trial.md#the-trial-expires). |
+
+## Data doesn't appear to be replicating
+
+If you observe a delay in the appearance of mirrored data, check the following:
+
+- **Mirroring status:** In the [Fabric portal monitoring page](monitor.md#monitor-from-the-fabric-portal) of the mirrored database, check the status of mirrored database and specific tables, and the "**Last completed**" column which indicates the last time that Fabric refreshes the mirrored table from source. Empty means the table is not yet mirrored. 
+
+  If you enable the workspace monitoring, you can check the mirroring execution latency in addition, by querying the `ReplicatorBatchLatency` value from the [mirrored database operation logs](monitor-logs.md).
+
+  For source types like [Azure SQL Database](azure-sql-database-troubleshoot.md#t-sql-queries-for-troubleshooting), [Azure SQL Managed Instance](azure-sql-managed-instance-troubleshoot.md#t-sql-queries-for-troubleshooting) and [Azure Database for PostgreSQL](azure-database-postgresql-troubleshoot.md#sql-queries-for-troubleshooting), follow the specific instruction to also check the source database configuration and status.
+
+- **Data in OneLake:** Mirroring continuously replicates your data into OneLake in Delta Lake table format. To validate if the data lands in OneLake properly, you can create a shortcut from the mirrored tables into a Lakehouse, then build notebooks with Spark queries to query the data. Learn more about [Explore with notebooks](explore-onelake-shortcut.md).
+
+- **Data in SQL analytics endpoint:** You can query mirrored data through the SQL analytics endpoint of the mirrored database or a Lakehouse with a shortcut to the mirrored data. When you see a delay, validate the mirroring status and data in OneLake as mentioned above first. If the data shows up in OneLake but not in SQL analytics endpoint, it may be caused by a delay in [metadata sync](../../data-warehouse/sql-analytics-endpoint-performance.md) in SQL analytics endpoint. 
+
+  You can manually force a refresh of the automatic metadata scanning. On the page for the SQL analytics endpoint, select the **Refresh** button as shown in the following image. Wait for some time then query the data again to check.
+  
+  :::image type="content" source="media/troubleshoot/sql-endpoint-refresh-button.png" alt-text="Screenshot from the Fabric portal of how to force a refresh for SQL analytics endpoint metadata scanning." lightbox="media/troubleshoot/sql-endpoint-refresh-button.png":::
 
 ## Stop replication
 
@@ -80,6 +100,7 @@ This section contains general Mirroring troubleshooting steps.
 
 1. Check your connection details are correct, server name, database name, username, and password.
 1. Check the server is not behind a firewall or private virtual network. Open the appropriate firewall ports.
+    - Some mirrored sources support virtual network data gateway or on-premises data gateways, consult the source's documentation for support of this feature.
 
 #### No views are replicated
 
@@ -97,11 +118,7 @@ Currently, views are not supported. Only replicating regular tables are supporte
 
 #### Some of the data in my column appears to be truncated
 
-The Fabric warehouse does not support **VARCHAR(max)** it only currently supports **VARCHAR(8000)**.
-
-#### Data doesn't appear to be replicating
-
-In the **Monitoring** page, the date shown is the last time data was successfully replicated.
+The SQL analytics endpoint does not support **VARCHAR(max)** it only currently supports **VARCHAR(8000)**.
 
 #### I can't change the source database
 

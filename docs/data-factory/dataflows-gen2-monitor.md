@@ -3,9 +3,9 @@ title: An overview of refresh history and monitoring for dataflows.
 description: An overview of refresh history and monitoring for dataflows features.
 author: luitwieler
 ms.topic: conceptual
-ms.custom:
 ms.date: 12/18/2024
 ms.author: jeluitwi
+ms.custom: dataflows, sfi-image-nochange
 ---
 
 # View refresh history and monitor your dataflows
@@ -14,7 +14,7 @@ Monitoring your dataflow refreshes is key in ensuring that your dataflows are ru
 
 ## Refresh history
 
-Refresh history is available using the drop-down menu in your workspace. You can access it by selecting the **Refresh History** button.
+Refresh history is available using the drop-down menu in your workspace. You can access it by selecting the **Recent runs** button.
 
 :::image type="content" source="./media/dataflows-gen2-monitor/open-refresh-history.png" alt-text="Screenshot of the dataflow dropdown box with Refresh history emphasized." lightbox="./media/dataflows-gen2-monitor/open-refresh-history.png":::
 
@@ -69,11 +69,14 @@ This screen gives you more clarity in what happened during the activity. For exa
 - Start and End time
 - Duration
 - Activity statistics:
-  - Output destinations:
-    - Endpoints contacted
+  - Endpoints contacted
     - Volume processed by the connector
+      - Bytes read
+      - Rows read
+      - Bytes written
+      - Rows written
 
-To investigate what happened, you can drill down into an activity or table. The following screen provides you with general information about the refresh and errors. If you're drilling into an activity, you're presented with how much data got processed and sent to your output destination.
+To investigate what happened, you can drill down into an activity or table. The following screen provides you with general information about the refresh and errors. If you're drilling into an activity, you're presented with how much data got processed and sent to your output destination. Some connectors report on the number of rows and some report on the number of bytes. The statistics are shown in the **Activity statistics** section.
 
 ## Monitoring hub
 

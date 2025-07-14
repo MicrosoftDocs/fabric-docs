@@ -35,7 +35,7 @@ sections:
       - question: |
          Does mirroring work without exposing my Azure SQL Managed Instance to the internet?
         answer:
-          In the current preview, your SQL managed instance needs to have a public endpoint, be open for inbound access from Azure cloud, and it needs to be allowed to contact Azure storage to be able to export data. Private endpoints are currently not supported.
+          Yes. If your Azure SQL Managed Instance is not publicly accessible, you can use virtual network data gateway or on-premises data gateway to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via a private endpoint. Learn more from the [Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md).
       - question: |
           How do I manage connections? 
         answer: 

@@ -5,8 +5,8 @@ ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: troubleshooting
-ms.custom:
 ms.date: 12/19/2023
+ms.custom: connectors
 ---
 
 # Troubleshoot the delimited text format connector in Data Factory in Microsoft Fabric

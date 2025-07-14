@@ -1,7 +1,7 @@
 ### YamlMime:FAQ
 metadata:
-  title: "Frequently asked questions for mirrored databases from Azure Databricks (preview) in Microsoft Fabric (Preview)"
-  description: This article answers frequently asked questions about mirrored databases from Azure Databricks (preview) in Microsoft Fabric (Preview).
+  title: "Frequently asked questions for mirrored databases from Azure Databricks in Microsoft Fabric"
+  description: This article answers frequently asked questions about mirrored databases from Azure Databricks in Microsoft Fabric.
   author: WilliamDAssafMSFT
   ms.author: wiassaf
   ms.reviewer: sheppardshep, whhender
@@ -9,9 +9,9 @@ metadata:
   ms.subservice: data-warehouse
   ms.topic: faq
   ms.date: 09/21/2024
-title: "Frequently asked questions for mirrored databases from Azure Databricks (Preview) in Microsoft Fabric"
+title: "Frequently asked questions for mirrored databases from Azure Databricks in Microsoft Fabric"
 summary: |
-  This article answers frequently asked questions about mirrored databases from Azure Databricks (Preview) in Microsoft Fabric.
+  This article answers frequently asked questions about mirrored databases from Azure Databricks in Microsoft Fabric.
 
 sections:
   - name: Troubleshooting
@@ -43,7 +43,7 @@ additionalContent: |
   ## Related content
 
   - [What is Mirroring in Fabric?](overview.md) 
-  - [Mirroring Azure Databricks (Preview) Tutorial](azure-databricks-tutorial.md)
+  - [Mirroring Azure Databricks Tutorial](azure-databricks-tutorial.md)
   - [Secure Fabric mirrored databases from Azure Databricks](azure-databricks-security.md)
   - [Limitations](azure-databricks-limitations.md)
-  - [Mirroring Azure Databricks Unity Catalog (Preview)](azure-databricks.md)
+  - [Mirroring Azure Databricks Unity Catalog](azure-databricks.md)

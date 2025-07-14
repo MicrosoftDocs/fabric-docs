@@ -4,7 +4,7 @@ description: This article describes how data pipelines storage event triggers wo
 author: kromerm
 ms.author: makromer
 ms.topic: concept-article
-ms.custom:
+ms.custom: pipelines
 ms.date: 02/13/2025
 ---
 
@@ -84,5 +84,4 @@ You might notice the use of a _?_ after the _pipeline()_ object reference, which
 
 ## Related content
 
-- [Create a Reflex trigger](../real-time-intelligence/data-activator/activator-get-started.md#create-an-activator-item)
 - [Microsoft Fabric eventstreams](../real-time-analytics/event-streams/overview.md)

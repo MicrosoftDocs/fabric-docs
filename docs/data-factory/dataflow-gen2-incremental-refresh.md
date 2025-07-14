@@ -3,8 +3,9 @@ title: Incremental refresh in Dataflow Gen2
 description: Learn about the incremental refresh feature in Dataflow Gen2 in Data Factory for Microsoft Fabric.
 author: luitwieler
 ms.topic: concept-article
-ms.date: 04/18/2025
+ms.date: 05/09/2025
 ms.author: jeluitwi
+ms.custom: dataflows
 ---
 
 # Incremental refresh in Dataflow Gen2
@@ -24,6 +25,7 @@ To use incremental refresh in Dataflow Gen2, you need to meet the following prer
 
 The following data destinations are supported for incremental refresh:
 
+- Fabric Lakehouse (preview)
 - Fabric Warehouse
 - Azure SQL Database
 - Azure Synapse Analytics
@@ -124,6 +126,14 @@ Some settings are considered advanced and aren't required for most scenarios.
 This setting is optional and specifies whether the query used for incremental refresh must fully fold. If this setting is enabled, the query used for incremental refresh must fully fold. In other words, the query must be fully pushed down to the source system. If this setting is disabled, the query used for incremental refresh doesn't need to fully fold. In this case, the query can be partially pushed down to the source system. We **strongly** recommend enabling this setting to improve performance to avoid retrieving unnecessary and unfiltered data.
 
 ## Limitations
+
+### Lakehouse is supported comes with additional caveats
+
+When working with lakehouse as a data destination, you need to be aware of the following limitations:
+
+- Maximum number of concurrent evaluations is 10. This means that the dataflow can only evaluate 10 buckets in parallel. If you have more than 10 buckets, you need to limit the number of buckets or limit the number of concurrent evaluations.
+:::image type="content" source="./media/dataflows-gen2-incremental-refresh/dataflow-concurrency-control.png" alt-text="Screenshot of the dataflow concurrency control settings.":::
+- When you write to a lakehouse, the dataflow maintains it owns bookkeeping of the files that are written to the lakehouse. This is in line with the standard lakehouse pattern. However, this means that if other writers like Spark or other processes write to the same table, it may cause issues with the incremental refresh. We recommend that you don't use other writers to write to the same table while using incremental refresh. If you do, you need to ensure that the other writers don't interfere with the incremental refresh process. Processes like table maintenance and vacuuming are not supported either while using incremental refresh.
 
 ### The data destination must be set to a fixed schema
 

@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 03/19/2025
 ---
 
-# Add Azure Event Grid Namespace source to an eventstream (Preview)
+# Add Azure Event Grid Namespace source to an eventstream (preview)
 This article shows you how to add an Azure Event Grid Namespace source to an eventstream. 
 
 ## Prerequisites
@@ -48,8 +48,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 ## Configure Azure Event Grid connector
 [!INCLUDE [azure-event-grid-source-connector](./includes/azure-event-grid-source-connector.md)]
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 
 ## View updated eventstream

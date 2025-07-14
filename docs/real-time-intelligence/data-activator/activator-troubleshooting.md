@@ -46,7 +46,7 @@ The following error codes represent problems that can occur when [!INCLUDE [fabr
 
 ### IncorrectDataFormat
 
-The eventstream item connected to your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] object contains data in a format that isn't recognized by [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. To resolve the problem, review the data in your eventstream item to ensure that it's in JSON dictionary format, as described in [Get data for Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from eventstreams](activator-get-data-eventstreams.md).
+The eventstream item connected to your [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] object contains data in a format that isn't recognized by [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]. To resolve the problem, review the data in your eventstream item to ensure that it's in JSON dictionary format, as described in the [Get data from eventstreams](../event-streams/add-destination-activator.md) article.
 
 ## Rule evaluation error codes
 
@@ -113,9 +113,7 @@ This error code means that you have a rule that sends a Teams alert, and that th
 ## Related content
 
 * [What is [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]?](activator-introduction.md)
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
 * [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from Power BI](activator-get-data-power-bi.md)
-* [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from eventstreams](activator-get-data-eventstreams.md)
 * [Assign data to objects in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-assign-data-objects.md)
 * [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]activators](activator-create-activators.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)

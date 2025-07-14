@@ -2,8 +2,8 @@
 title:  Visualize data in a Power BI report
 description: Learn how to visualize data from a KQL queryset in a Power BI report.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 11/19/2024

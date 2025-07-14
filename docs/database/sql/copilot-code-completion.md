@@ -7,7 +7,8 @@ ms.reviewer: yoleichen, wiassaf
 ms.date: 04/09/2025
 ms.topic: how-to
 ms.collection:
-  - ce-skilling-ai-copilot
+- ce-skilling-ai-copilot
+ms.custom: sfi-image-nochange
 ---
 
 # How to use the Microsoft Copilot code completion in Fabric in the SQL database workload (Preview)

@@ -4,9 +4,10 @@ description: This article explains the overview of using REST.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 07/01/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # REST connector overview
@@ -23,7 +24,7 @@ The REST connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | Anonymous|
+| **Copy activity (source/destination)** | None <br> On-premises | Anonymous <br>Basic <br>Organizational account <br>Service principal |
 
 To learn about how to connect to REST data in data pipelines, go to [Set up your REST connection](connector-rest.md#set-up-your-connection-in-a-data-pipeline).
 

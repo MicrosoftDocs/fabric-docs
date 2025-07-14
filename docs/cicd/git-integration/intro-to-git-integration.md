@@ -1,8 +1,8 @@
 ---
 title: Overview of Fabric Git integration
 description: An introduction to integrating Git version control with the Fabric Application lifecycle management (ALM) tool
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
@@ -49,7 +49,7 @@ Before you enable Git integration, make sure you review the following privacy st
 
 The following Git providers are supported:
 
-* [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant
+* [Azure DevOps](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant
 * [GitHub](https://github.com/) (cloud versions only)
 * [GitHub Enterprise](https://github.com/enterprise) (cloud versions only)
 
@@ -68,9 +68,9 @@ The following items currently support Git integration:
 
 * Data Factory items:
 
-  * [Copy Job](../../data-factory/cicd-copy-job.md#get-started-with-git-integration-for-copy-job) *(preview)*
+  * [Copy Job](../../data-factory/cicd-copy-job.md#git-integration-for-copy-job) *(preview)*
   * [Dataflow gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
-  * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
+  * [Data pipeline](../../data-factory/cicd-pipelines.md)
   * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-git-integration)
   * Mount ADF *(preview)*
   * [Variable library](../variable-library/variable-library-cicd.md#variable-libraries-and-git-integration) *(preview)*
@@ -78,15 +78,16 @@ The following items currently support Git integration:
 * Real-time Intelligence items:
 
   * [Activator](../../real-time-intelligence/git-deployment-pipelines.md) *(preview)*
-  * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md#eventhouse-files)
-  * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md)
-  * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md#kql-database-files)
-  * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md#kql-queryset-files)
-  * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md#real-time-dashboard-files)
+  * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [EventStream](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
 
 * Data Warehouse items:
 
   * [Warehouse](../../data-warehouse/source-control.md#git-integration) *(preview)*
+  * Mirrored Azure Databricks Catalog *(preview)*
 
 * Power BI items:
 

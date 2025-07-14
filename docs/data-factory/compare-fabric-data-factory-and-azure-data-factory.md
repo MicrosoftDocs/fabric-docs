@@ -1,88 +1,98 @@
 ---
 title: Differences between Data Factory in Fabric and Azure
-description: This article provides information about compare differences between Azure Data Factory and Data Factory in Microsoft Fabric
+description: Compare Azure Data Factory and Fabric Data Factory features to choose the right data integration solution for your enterprise.
 author: pennyzhou-msft
 ms.author: xupzhou
-ms.topic: how-to
-ms.date: 12/18/2024
+ms.topic: concept-article
+ms.date: 07/02/2025
 ms.custom:
-  - template-how-to
-  - buyild-2023
+  - template-concept
+  - build-2023
+  - pipelines
 ms.search.form: Pipeline Activity Overview
+ai-usage: ai-assisted
 ---
 
-# Getting from Azure Data Factory to Data Factory in Microsoft Fabric
+# Differences between Azure Data Factory and Fabric Data Factory
 
-Data Factory in Microsoft Fabric is the next generation of Azure Data Factory which provides cloud-scale data movement and data transformation services that allow you to solve the most complex ETL scenarios. It's intended to make your experience easy to use, powerful, and truly enterprise-grade. This article compares the differences between Azure Data Factory and Data Factory in Microsoft Fabric.
+[Data Factory in Microsoft Fabric](data-factory-overview.md) is the next generation of [Azure Data Factory](/azure/data-factory/introduction), built to handle your most complex data integration challenges with a simpler, more powerful approach.
 
-## Feature mapping
+This guide helps you understand the key differences between these two services, so you can make the right choice for your enterprise. We'll walk you through what's new, what's different, and what advantages Fabric brings to the table.
 
-In the modern experience of Data Factory in Fabric, there are some different features concepts compared to Azure Data Factory. Detail features mapping is presented as the table below.
+Ready to explore your migration options? Check out our [migration guide](migrate-from-azure-data-factory.md).
 
-|Azure Data Factory |Data Factory in Fabric |Description |
+## Compare features side by side
+
+Here's how the core features stack up between Azure Data Factory and Fabric Data Factory. We've highlighted what's changed, what's new, and what stays the same.
+
+|[Azure Data Factory](/azure/data-factory/introduction) |[Data Factory in Fabric](data-factory-overview.md) |What's different |
 |:---|:---|:---|
-|Pipeline |Data pipeline | Data pipeline in Fabric is better integrated with the unified data platform including Lakehouse, Data warehouse, and more. |
-|Mapping dataflow  |Dataflow Gen2 | Dataflow Gen2 provides easier experience to build transformation. We are in progress of letting more functions of mapping dataflow supported in Dataflow Gen2 |
-|Activities |Activities|We are in progress to make more activities of ADF supported in Data Factory in Fabric. Data Factory in Fabric also has some newly attracted activities like Office 365 Outlook activity. Details are in [Activity overview](activity-overview.md).|
-|Dataset |Not Applicable|Data Factory in Fabric doesn’t have dataset concepts. Connection is used for connecting each data source and pull data. |
-|Linked Service |Connections |Connections have similar functionality as linked service, but connections in Fabric have more intuitive way to create. |
-|Triggers |Schedule triggers and file event triggers |Fabric can use the scheduler and Reflex events to automatically run pipelines. File event triggers are supported natively in pipelines in Microsoft Fabric Data Factory.  |
-|Publish |Save, Run |For pipeline in Fabric, you don’t need to publish to save the content. Instead, you can use Save button to save the content directly. When you select Run button, it saves the content before running pipeline. |
-|Autoresolve and Azure Integration runtime |Not Applicable |In Fabric, we don’t have the concept of Integration runtime. |
-|Self-hosted integration runtimes |On-premises Data Gateway |On-premises Data Gateway enables access to on-premises data via the Fabric Data Factory. Details are in [How to access on-premises data sources in Data Factory for Microsoft Fabric](how-to-access-on-premises-data.md). |
-|Azure-SSIS integration runtimes |To be determined |The capability in Fabric hasn’t confirmed the roadmap and design. |
-|MVNet and Private End Point |To be determined |The capability in Fabric hasn’t confirmed the roadmap and design.|
-|Expression language |Expression language |Expression language is similar in ADF and Fabric. |
-|Authentication type in linked service |Authentication kind in connection |Authentication kind in Fabric pipeline already supported popular authentication types in ADF, and more authentication kinds are added. |
-|CI/CD |CI/CD |CI/CD capability in Fabric Data Factory will be coming soon. |
-|Export and Import ARM |Save as |Save as is available in Fabric pipeline to duplicate a pipeline. |
-|Monitoring |Monitoring, Run history |The monitoring hub in Fabric has more advanced functions and modern experience like monitoring across different workspaces for better insights. |
+|Pipeline |Data pipeline | **Better integration**: Data pipelines in Fabric work seamlessly with Lakehouse, Data Warehouse, and other Fabric services right out of the box. |
+|Mapping data flow  |Dataflow Gen2 | **Easier to use**: Dataflow Gen2 gives you a simpler experience for building transformations. We're adding more mapping dataflow features to Gen2 all the time. |
+|Activities |Activities|**More activities coming**: We're working to bring all your favorite ADF activities to Fabric. Plus, you get new ones like the Office 365 Outlook activity that aren't available in ADF. See our [Activity overview](activity-overview.md) for details.|
+|Dataset |Connections only|**Simpler approach**: No more complex dataset configurations. For Data Factory in Fabric you use connections to link to your data sources and start working. |
+|Linked Service |Connections |**More intuitive**: Connections work like linked services but are easier to set up and manage. |
+|Triggers |Schedule and file event triggers |**Built-in scheduling**: Use Fabric's scheduler and Reflex events to automatically run your pipelines. File event triggers work natively in Fabric without extra setup. |
+|Publish |Save and Run |**No publishing step**: In Fabric, skip the publish step entirely. Just select Save to store your work, or select Run to save and execute your pipeline immediately. |
+|Autoresolve and Azure Integration runtime |Not needed |**Simplified architecture**: No need to manage integration runtimes. Fabric handles the compute for you. |
+|Self-hosted integration runtimes |On-premises Data Gateway |**Same on-premises access**: Connect to your on-premises data using the familiar On-premises Data Gateway. Learn more in our [on-premises data access guide](how-to-access-on-premises-data.md). |
+|Azure-SSIS integration runtimes |To be determined |**Future capability in Fabric**: We're still working on the design for SSIS integration in Fabric. |
+|Managed virtual networks and private endpoints |To be determined. |**Future capability in Fabric**: We're still working on integration for managed virtual networks and private endpoints in Fabric.|
+|Expression language |Expression language |**Same expressions**: Your existing expression knowledge transfers directly. The syntax is nearly identical. |
+|Authentication types |Authentication kinds |**More options**: All your popular ADF authentication methods work in Fabric, plus we've added new authentication types. |
+|CI/CD |CI/CD |**Coming soon**: Full CI/CD capabilities are on the way for Fabric Data Factory. |
+|ARM export/import |Save as |**Quick duplication**: In Fabric, use "Save as" to quickly duplicate pipelines for development or testing. |
+|Monitoring |Monitoring hub + Run history |**Advanced monitoring**: The monitoring hub offers a modern experience with cross-workspace insights and better drill-down capabilities. |
 
-## Data pipeline of data factory in Microsoft Fabric
+## What makes Fabric Data Factory special
 
-There are many exciting features of data pipeline in Data Factory of Microsoft Fabric. Leveraging these features, you can feel the power of pipeline in Fabric.  
+Data Factory in Microsoft Fabric isn't just an upgrade—it's a whole new way to think about data integration. Here are some of the standout features that make Fabric Data Factory a game changer:
 
-### Lakehouse/Datawarehouse integration
+### Native Lakehouse and Data Warehouse integration
 
-Lakehouse and Data Warehouse are available as source and destination in Pipeline of Fabric, so it’s extremely convenient for you to build your own projects integrated with Lakehouse and Datawarehouse.
+One of the biggest advantages of Fabric Data Factory is how it connects with your data platforms. Lakehouse and Data Warehouse work as both sources and destinations in your pipelines, making it easy to build integrated data projects.
 
    :::image type="content" source="media/connector-differences/source.png" alt-text="Screenshot showing lakehouse and data warehouse source tab.":::
 
    :::image type="content" source="media/connector-differences/destination.png" alt-text="Screenshot showing lakehouse and data warehouse destination tab.":::
 
-### Office 365 outlook activity
+### Smart email notifications with Office 365
 
-Office 365 outlook activity provides an intuitive and simple way to send customized email notification about info of pipeline and activity, and output of pipeline by easy configuration.
+Need to keep your team in the loop? The Office 365 Outlook activity lets you send customized email notifications about pipeline runs, activity status, and results—all with simple configuration. No more checking dashboards constantly or writing custom notification code.
 
 :::image type="content" source="media/connector-differences/office-365-run.png" alt-text="Screenshot showing that office 365 outlook activity.":::
 
-### Get data experience
+### Streamlined data connection experience
 
-A modern and easy Get Data experience is provided in Data Factory in Fabric, so it’s super-fast for you to set up your copy pipeline and create a new connection.
+Fabric's modern **Get data** experience makes it quick to set up copy pipelines and create new connections. You'll spend less time configuring and more time getting your data where it needs to go.
 
 :::image type="content" source="media/connector-differences/copy-data-source.png" alt-text="Screenshot showing that A modern and easy Get Data experience.":::
 
 :::image type="content" source="media/connector-differences/create-new-connection.png" alt-text="Screenshot showing that how to create a new connection.":::
 
-### Modern monitoring experience
+### Next-level monitoring and insights
 
-With the combined capabilities of the monitoring hub and the items of Data Factory, such as data flows and data pipelines, we can get a full view of all the workloads and drill into any activity within a data factory experience. It’s also convenient for you to do the cross-workspace analysis through monitoring hub.
+The monitoring experience in Fabric Data Factory is where you'll really see the difference. The monitoring hub gives you a complete view of all your workloads, and you can drill down into any activity for detailed insights. Cross-workspace analysis is built right in, so you can see the big picture across your entire organization.
 
 :::image type="content" source="./media/connector-differences/monitoring-hub.png" alt-text="Screenshot showing the monitoring hub and the items of Data Factory.":::
 
-The pipeline copy monitoring results provide breakdown detail of the Copy activity. By selecting the run details button (with the **glasses icon** highlighted) to view the run details. Expand the **Duration breakdown**, you can know the time duration of each stage in copy activity.
+When you're troubleshooting copy activities, you'll love the detailed breakdown view. Select the run details button (the glasses icon) to see exactly what happened. The Duration breakdown shows you how long each stage took, making performance optimization easier.
 
 :::image type="content" source="./media/connector-differences/details-of-copy-activity.png" alt-text="Screenshot showing the pipeline copy monitoring results provides breakdown detail of copy activity.":::
 
 :::image type="content" source="./media/connector-differences/duration-breakdown.png" alt-text="Screenshot showing copy data details.":::
 
-### Save as
+### Quick pipeline duplication
 
-Save as in Fabric pipeline provides a convenient way for you to duplicate an existing pipeline for other development purposes.
+Need to create a similar pipeline? The **Save as** feature lets you duplicate any existing pipeline in seconds. It's perfect for creating development versions, testing variations, or setting up similar workflows.
 
 :::image type="content" source="./media/connector-differences/save-as-button.png" alt-text="Screenshot showing save as in Fabric pipeline.":::
 
-## Related content
+## Next steps
 
-- [Differences between Dataflow Gen1 Gen2](dataflows-gen2-overview.md)
-- [Build your first data integration](transform-data.md)
+Ready to make the switch? Here are some resources to help you get started:
+
+- [Migrate from Azure Data Factory to Data Factory in Microsoft Fabric](migrate-from-azure-data-factory.md)
+- [Get the full overview of Data Factory in Microsoft Fabric](data-factory-overview.md)
+- [Learn about Dataflow Gen2 differences](dataflows-gen2-overview.md)
+- [Build your first data integration in Fabric](transform-data.md)

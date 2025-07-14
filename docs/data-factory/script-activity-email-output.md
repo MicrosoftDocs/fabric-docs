@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: abnarain
 author: nabhishek
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 12/18/2024
 ---
 

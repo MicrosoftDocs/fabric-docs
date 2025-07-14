@@ -2,10 +2,10 @@
 title: Create a database shortcut
 description: Learn how to create a database shortcut to data in another KQL Database or in Azure Data Explorer in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/19/2024
 ms.search.form: KQL Database
 #Customer intent: To create a database shortcut in Real-Time Intelligence.
@@ -38,6 +38,12 @@ A data consumer can create a database shortcut in Real-Time Intelligence from an
 
 * **Cost**: The cost of cold cache can be dramatically lower than of hot cache.
 * **Performance**: Data in hot cache is queried faster, particularly for range queries that scan large amounts of data.
+
+> [!IMPORTANT]
+> The database shortcut setup requires a profound level of trust between the involved parties i.e. leader database and the database shortcut (follower).
+The database shortcut can be established even if the leader cluster is behind a virtual network (VNet) or has public access disabled.
+Ensure that the security posture of this setup is thoroughly reviewed and deemed acceptable before proceeding.
+
 
 Select the desired tab that corresponds with the way you'd like to create a shortcut. 
 

@@ -76,7 +76,7 @@ OneLake security allows users to define granular role-based security to data sto
 
 OneLake security replaces the existing OneLake data access roles (preview) feature that was released in April 2024.
 
-Fabric users in the Admin, Member, or Contributor roles can create OneLake security roles to grant users access to data within an item. Each role has four components:
+Fabric users in the Admin or Member roles can create OneLake security roles to grant users access to data within an item. Each role has four components:
 
 * **Data**: The tables or folders that users can access.
 * **Permission**: The permissions that users have on the data.
@@ -91,7 +91,15 @@ Learn more about creating OneLake security roles for [Tables and folders](./tabl
 
 OneLake data access roles is a feature that enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, and assign them to users or groups. The access permissions determine what folders users see when accessing the lake view of the data through the lakehouse UX, notebooks, or OneLake APIs.  
 
+> [!IMPORTANT]
+> Starting in August 2025, Contributors will no longer have sufficient permissions to view or manage OneLake data access roles. 
+
 Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that aren't part of a data access role can see no data in that lakehouse.
+
+>[!NOTE]
+>To access shortcut data, users need the ReadAll permission on the target lakehouse in addition to access through a OneLake data access role.
+>
+>If you use Power BI semantic models or T-SQL to access shortcuts, keep in mind that the calling user’s identity isn't passed to the shortcut target path. Instead, the calling item owner’s identity is passed, which delegates access to the calling user.
 
 Learn more about creating data access roles in [Get started with data access roles](./get-started-data-access-roles.md).
 

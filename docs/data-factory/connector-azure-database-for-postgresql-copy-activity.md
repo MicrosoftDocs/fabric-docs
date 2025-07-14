@@ -4,9 +4,11 @@ description: This article explains how to copy data using Azure Database for Pos
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/19/2023
-ms.custom:
+ms.date: 05/08/2025
+ms.custom: 
+  - pipelines
   - template-how-to
+  - connectors
 ---
 
 # Configure Azure Database for PostgreSQL in a copy activity
@@ -37,7 +39,7 @@ Go to **Source** tab to configure your copy activity source. See the following c
 The following three properties are **required**:
 
 - **Connection**: Select an Azure Database for PostgreSQL connection from the connection list. If no connection exists, then create a new Azure Database for PostgreSQL connection.
-- **Connection type**: Select **Azure Database for PostgreSQL**.
+
 - **Use query**: Select **Table** to read data from the specified table or select **Query** to read data using queries.
     - If you select **Table**:
       - **Table**: Select the table from the drop-down list or select **Enter manually** to manually enter it to read data. 
@@ -51,6 +53,8 @@ The following three properties are **required**:
         > In PostgreSQL, the entity name is treated as case-insensitive if not quoted.
           
           :::image type="content" source="./media/connector-azure-database-for-postgresql/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::    
+
+- **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. When you select version 2.0, the connector uses SSL require mode if you encrypt the connection. For more details about SSL mode, go to this [article](https://www.npgsql.org/doc/security.html?tabs=tabid-1#encryption-ssltls).
 
 Under **Advanced**, you can specify the following fields:
 
@@ -92,12 +96,17 @@ Go to **Destination** tab to configure your copy activity destination. See the f
 The following three properties are **required**:
 
 - **Connection**: Select an Azure Database for PostgreSQL connection from the connection list. If no connection exists, then create a new Azure Database for PostgreSQL connection.
-- **Connection type**: Select **Azure Database for PostgreSQL**.
+
 - **Table**: Select the table from the drop-down list or select **Enter manually** to enter it to write data. 
+
+- **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. When you select version 2.0, the connector uses SSL require mode if you encrypt the connection. For more details about SSL mode, go to this [article](https://www.npgsql.org/doc/security.html?tabs=tabid-1#encryption-ssltls).
 
 Under **Advanced**, you can specify the following fields:
 
-- **Write method**: Select the method used to write data into Azure Database for PostgreSQL. Select from **Copy command** (default, which is more performant) and **Bulk insert**.
+- **Write method**: Select the method used to write data into Azure Database for PostgreSQL. Select from **Copy command** (default, which is more performant), **Bulk insert** and **Upsert** (for version 2.0).
+    -  **Upsert**: Choose this option if your source data has both inserts and updates.
+        - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination.
+        :::image type="content" source="./media/connector-azure-database-for-postgresql/upsert.png" alt-text="Screenshot showing key columns." :::
 
 - **Pre-copy script**: Specify a SQL query for the copy activity to execute before you write data into Azure Database for PostgreSQL in each run. You can use this property to clean up the preloaded data.
 
@@ -143,8 +152,8 @@ The following table contains more information about the copy activity in Azure D
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
 |**Connection**|Your connection to the source data store.|< your Azure Database for PostgreSQL connection >|Yes|connection|
-|**Connection type** |Your source connection type. |**Azure Database for PostgreSQL** |Yes|/|
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.|• **Table** <br>• **Query** |Yes |• typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - schema<br>&nbsp; - table<br>• query|
+|**Version** |The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. When you select version 2.0, the connector uses SSL require mode if you encrypt the connection. For more details about SSL mode, go to this [article](https://www.npgsql.org/doc/security.html?tabs=tabid-1#encryption-ssltls). |• 2.0 <br> • 1.0 |Yes|version: <br>• 2.0 <br> • 1.0 |
 |**Query timeout (minutes)** | The wait time before terminating the attempt to execute a command and generating an error, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes). For more information, see [CommandTimeout](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_CommandTimeout). |timespan |No |queryTimeout|
 | **Partition names** | The list of physical partitions that needs to be copied. If you use a query to retrieve the source data, hook `?AdfTabularPartitionName` in the WHERE clause.  | < your partition names > | No | partitionNames | 
 | **Partition column name** | The name of the source column **in integer or date/datetime type** (`int`, `smallint`, `bigint`, `date`, `timestamp without time zone`, `timestamp with time zone` or `time without time zone`) that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column. | < your partition column names > | No | partitionColumnName | 
@@ -157,9 +166,10 @@ The following table contains more information about the copy activity in Azure D
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
 |**Connection**|Your connection to the destination data store.|< your Azure Database for PostgreSQL connection >|Yes|connection|
-|**Connection type** |Your destination connection type. |**Azure Database for PostgreSQL** |Yes|/|
 |**Table**|Your destination data table to write data.| < name of your destination table > |Yes |typeProperties (under *`typeProperties`* -> *`sink`*):<br>&nbsp; - schema<br>&nbsp; - table<br>|
-|**Write method**|The method used to write data into Azure Database for PostgreSQL.|• **Copy command** (default)<br>• **Bulk insert**<br>|No|writeMethod:<br>• CopyCommand<br>• BulkInsert|
+|**Version** |The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. When you select version 2.0, the connector uses SSL require mode if you encrypt the connection. For more details about SSL mode, go to this [article](https://www.npgsql.org/doc/security.html?tabs=tabid-1#encryption-ssltls). |• 2.0 <br> • 1.0 |Yes|version: <br>• 2.0 <br> • 1.0 |
+|**Write method**|The method used to write data into Azure Database for PostgreSQL.|• **Copy command** (default)<br>• **Bulk insert**<br>• **Upsert** (for version 2.0)|No|writeMethod:<br>• CopyCommand<br>• BulkInsert <br>• Upsert|
+|**Key columns**|Choose which column is used to determine if a row from the source matches a row from the destination.|< your key column> |No|keys|
 |**Pre-copy script**|A SQL query for the copy activity to execute before you write data into Azure Database for PostgreSQL in each run. You can use this property to clean up the preloaded data.|< your pre-copy script >|No|preCopyScript|
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out.|timespan<br>(the default is **00:30:00** - 30 minutes)|No|writeBatchTimeout|
 |**Write batch size**| The number of rows loaded into Azure Database for PostgreSQL per batch.|integer<br>(the default is 1,000,000)|No|writeBatchSize|

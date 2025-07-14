@@ -1,10 +1,11 @@
 ---
 title: How to handle schema drift in Dataflow Gen2
 description: This article describes how to handle schema drift using global options and destination settings from Data Factory for Microsoft Fabric.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: concept-article
 ms.date: 9/19/2024
+ms.custom: dataflows
 ---
 
 # How to handle schema drift in Dataflow Gen2

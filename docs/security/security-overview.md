@@ -1,11 +1,11 @@
 ---
 title: Security in Microsoft Fabric
 description: Learn how Microsoft Fabric security works, and what features are available.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
 ms.custom:
-ms.date: 08/18/2024
+ms.date: 05/11/2025
 ---
 
 # Security in Microsoft Fabric
@@ -106,6 +106,8 @@ You can get the list of Fabric IPs from [Service tags on-premises](/azure/virtua
 ## Secure Data
 
 In Fabric, all data that is stored in OneLake is encrypted at rest. All data at rest is stored in your home region, or in one of your capacities at a remote region of your choice so that you can meet data at rest sovereignty regulations. For more information, see [Microsoft Fabric security fundamentals](security-fundamentals.md).
+
+You can use [workspace customer managed keys](workspace-customer-managed-keys.md) to add another layer of encryption to the data in your Fabric workspaces. With workspace customer managed keys, you can use your [Azure Key Vault](/azure/key-vault/general/overview) keys to encrypt the Microsoft encryption key.
 
 ### Understand tenants in multiple geographies
 

@@ -1,10 +1,11 @@
 ---
 title: Slowly changing dimension type 1
 description: A tutorial and pattern on how to accomplish a slowly changing dimension type 1 solution using Data Factory and Dataflow Gen2 inside of Microsoft Fabric.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: tutorial
 ms.date: 9/18/2024
+ms.custom: dataflows
 ---
 
 # How to implement slowly changing dimension type 1 using Power Query
@@ -85,6 +86,6 @@ You can also use Merge tables as another example to match your need. We present 
 
 ## Slowly changing dimension type 2
 
-With slowly changing dimension type 2, historical data is maintained by adding a new row when a dimension changes and properly denoting this new row as current while denoting the newly historical record accordingly. Using this technique to implement slowly changing dimension type 1 not only preserves historic data, but it also offers information about when data changes. Maintaining historical data enables data analysts and data scientists to explore operational changes, perform A/B testing, and empower informed decision-making.
+With slowly changing dimension type 2, historical data is maintained by adding a new row when a dimension changes and properly denoting this new row as current while denoting the newly historical record accordingly. Using this technique to implement slowly changing dimension type 2 not only preserves historic data, but it also offers information about when data changes. Maintaining historical data enables data analysts and data scientists to explore operational changes, perform A/B testing, and empower informed decision-making.
 
 Dataflow Gen2 in Fabric Data Factory makes it visual and easy to implement slowly changing dimension Type 1 patterns. You can also achieve slowly changing dimension Type 2 pattern as described in [Slowly changing dimension type 2](slowly-changing-dimension-type-two.md).

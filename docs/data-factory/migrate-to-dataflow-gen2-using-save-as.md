@@ -1,12 +1,13 @@
 ---
 title: Migrate to Dataflow Gen2 (CI/CD) using Save As (Preview)
 description: This article describes the procedure for migrating Dataflow Gen1, Dataflow Gen2, and Dataflow Gen2 (CI/CD) to Dataflow Gen2 (CI/CD) in Data Factory.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
 ms.date: 4/21/2025
 ms.custom:
   - template-how-to
+  - dataflows
 ---
 
 # Migrate to Dataflow Gen2 (CI/CD) using Save As (Preview)
@@ -15,13 +16,16 @@ Data Factory in Microsoft Fabric now includes a Save As feature that lets you pe
 
 ## Save a Dataflow Gen2 or Gen2 (CI/CD) as a new Dataflow Gen2 (CI/CD)
 
+>[!IMPORTANT]
+>Saving from Gen2 (CI/CD) is still in preview.
+
 You can now use the new Save As feature to save a Dataflow Gen2 or Dataflow Gen2 (CI/CD) to a new Dataflow Gen2 (CI/CD). To use the Save As feature:
 
 1. In your workspace, select the ellipsis (...) next to an existing dataflow, and select **Save as Dataflow Gen2 (CI/CD)** in the context menu.
 
    :::image type="content" source="media/migrate-to-dataflow-gen2-using-save-as/select-save-as.png" alt-text="Screenshot of the context menu under the ellipsis, showing the Save as Dataflow Gen2 (CI/CD) option.":::
 
-2. In the **Save as** dialog, optionally change the default **Name**, and then select **Create**.
+1. In the **Save as** dialog, optionally change the default **Name**, and then select **Create**.
 
    :::image type="content" source="media/migrate-to-dataflow-gen2-using-save-as/create-new-dataflow.png" alt-text="Screenshot of the save as option where you can enter the name of the dataflow.":::
 
@@ -31,9 +35,9 @@ You can now use the new Save As feature to save a Dataflow Gen2 or Dataflow Gen2
 
    :::image type="content" source="media/migrate-to-dataflow-gen2-using-save-as/enter-credentials.png" alt-text="Screenshot showing where to enter your credentials for the new dataflow." lightbox="media/migrate-to-dataflow-gen2-using-save-as/enter-credentials.png":::
 
-3. Close the new Dataflow Gen2 (CI/CD), or select **Save** or **Save and run**.
+1. Close the new Dataflow Gen2 (CI/CD), or select **Save** or **Save and run**.
 
-## Save a Dataflow Gen1 as a new Dataflow Gen2 (CI/CD)
+## Save a Dataflow Gen1 as a new Dataflow Gen2 (CI/CD) (Preview)
 
 You can also use the new Save As feature to save a Dataflow Gen1 to a new Dataflow Gen2 (CI/CD). To learn more, go to [Migrate from Dataflow Gen1 to Dataflow Gen2](dataflow-gen2-migrate-from-dataflow-gen1.md).  
 
@@ -41,11 +45,11 @@ To use the Save As feature:
 
 1. In your workspace, select the ellipsis (...) next to an existing dataflow, and select **Save as Dataflow Gen2** in the context menu.
 
-2. In the **Save as** dialog, optionally change the default **Name**, and then select **Create**.
+1. In the **Save as** dialog, optionally change the default **Name**, and then select **Create**.
 
-   The new Dataflow Gen2 (CI/CD) is opened, enabling you to review and make any changes.
+1. The new Dataflow Gen2 (CI/CD) is opened, enabling you to review and make any changes.
 
-3. Close the new Dataflow Gen2 (CI/CD), or select **Save** or **Save and run**.
+1. Close the new Dataflow Gen2 (CI/CD), or select **Save** or **Save and run**.
 
 ## Known limitations
 

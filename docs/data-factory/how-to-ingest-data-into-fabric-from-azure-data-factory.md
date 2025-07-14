@@ -5,6 +5,7 @@ author: mirabile-s
 ms.author: seanmirabile
 ms.topic: conceptual
 ms.date: 09/16/2024
+ms.custom: pipelines, sfi-image-nochange
 ---
 
 # How to ingest data into Fabric using the Azure Data Factory Copy activity

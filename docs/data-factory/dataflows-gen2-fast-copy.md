@@ -5,6 +5,7 @@ author: dearandyxu
 ms.topic: article
 ms.date: 4/21/2025
 ms.author: yexu
+ms.custom: dataflows, sfi-image-nochange
 ---
 
 # Fast copy in Dataflow Gen2

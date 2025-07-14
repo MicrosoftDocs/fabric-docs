@@ -6,6 +6,7 @@ ms.author: wiassaf
 ms.reviewer: imotiwala, chweb, anithaa
 ms.date: 11/19/2024
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 ---
 # Explore data in your mirrored database with notebooks
 
@@ -17,11 +18,12 @@ Notebooks are a powerful code item for you to develop Apache Spark jobs and mach
 
 - Complete the tutorial to create a mirrored database from your source database.
     - [Tutorial: Configure Microsoft Fabric mirrored database for Azure Cosmos DB (Preview)](azure-cosmos-db-tutorial.md)
-    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-tutorial.md)
+    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-tutorial.md)
     - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database-tutorial.md)
     - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance (Preview)](azure-sql-managed-instance-tutorial.md)
     - [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](snowflake-tutorial.md)
-
+    - [Tutorial: Configure Microsoft Fabric mirrored databases from SQL Server](sql-server-tutorial.md)
+    - [Tutorial: Create an open mirrored database](open-mirroring-tutorial.md)
 
 ## Create a shortcut
 

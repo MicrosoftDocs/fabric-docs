@@ -1,5 +1,5 @@
 ---
-title: "Limitations in Microsoft Fabric Mirrored Databases From Azure Databricks (Preview)"
+title: "Limitations in Microsoft Fabric Mirrored Databases From Azure Databricks"
 description: Learn about limitations for Azure Databricks mirroring in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -9,7 +9,7 @@ ms.topic: overview
 ms.custom: references_regions
 ---
 
-# Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)
+# Limitations in Microsoft Fabric mirrored databases from Azure Databricks
 
 This article lists current limitations with mirrored Azure Databricks in Microsoft Fabric.
 
@@ -83,6 +83,9 @@ Here's a list of regions that support mirroring for Azure Databricks Catalog:
     - East US2
     - North Central US
     - West US
+    - West US 2
+    - West US 3
+ 
    :::column-end:::
    :::column span="":::
     **Middle East and Africa**:
@@ -90,12 +93,13 @@ Here's a list of regions that support mirroring for Azure Databricks Catalog:
     - South Africa North
     - South Africa West
     - UAE North
+    - Israel Central
    :::column-end:::
 :::row-end:::
 
 ## Related content
 
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-tutorial.md)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-tutorial.md)
 - [Secure Fabric mirrored databases from Azure Databricks](azure-databricks-security.md)
 - [Review the FAQ](azure-databricks-faq.yml)
-- [Mirroring Azure Databricks Unity Catalog (Preview)](azure-databricks.md)
+- [Mirroring Azure Databricks Unity Catalog](azure-databricks.md)

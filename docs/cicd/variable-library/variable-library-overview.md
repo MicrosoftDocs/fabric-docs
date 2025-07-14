@@ -1,8 +1,8 @@
 ---
 title: Fabric Application lifecycle management Variable library
 description: Learn how to use the Fabric Application lifecycle management (ALM) Variable library tool to customize your stages.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview
@@ -72,9 +72,10 @@ When you create an alternative value set, the new value set is created with poin
 
 The following items support the Variable library:
 
-* [Data pipeline](../../data-factory/variable-library-integration-with-data-pipelines.md)
+* [Data pipeline (preview)](../../data-factory/variable-library-integration-with-data-pipelines.md)
 <!--- * [Lakehouse](../../data-engineering/lakehouse-overview.md)
 * Notebook --->
+* [Assign variables to shortcuts (preview)](../../onelake/assign-variables-to-shortcuts.md)
 
 ## Considerations and limitations
 

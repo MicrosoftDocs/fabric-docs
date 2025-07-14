@@ -3,8 +3,8 @@ title: Limitations of Fabric Data Warehouse
 description: This article contains a list of current limitations in Microsoft Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: joanpo
-ms.date: 04/06/2025
+ms.reviewer: joanpo, ajagadish
+ms.date: 05/19/2025
 ms.topic: conceptual
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
@@ -22,7 +22,6 @@ These limitations apply only to Warehouse and SQL analytics endpoint items in Fa
 Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. More functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/blog/announcing-the-fabric-roadmap?ft=All).
 
 - Data warehousing is not supported for *multiple* geographies at this time.
-- Currently, parquet files that are no longer needed are not removed from storage by garbage collection.
 
 For more limitations in specific areas, see:
 
@@ -58,6 +57,8 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 - If you add a foreign key constraint between tables in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you won't be able to make any further schema changes (for example, adding the new columns). If you don't see the Delta Lake columns with the types that should be supported in [!INCLUDE [fabric-se](includes/fabric-se.md)], check if there is a foreign key constraint that might prevent updates on the table. 
 
 - For information and recommendations on performance of the [!INCLUDE [fabric-se](includes/fabric-se.md)], see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
+
+- Scalar UDFs are supported when inlineable. For more information, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true) and [Scalar UDF inlining](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=fabric&preserve-view=true).
 
 ## Known issues
 

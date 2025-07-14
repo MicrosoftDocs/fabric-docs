@@ -4,9 +4,9 @@ description: Understand what customers can expect from the metrics app experienc
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: amapatil # Microsoft alias
-ms.date: 04/27/2025
+ms.date: 05/05/2025
 ms.topic: conceptual
-ms.search.form: SQL database Billing and Utilization
+ms.search.form: SQL database Billing and Utilization, Databases Billing and Utilization
 ---
 # Billing and utilization reporting for SQL database in Microsoft Fabric
 
@@ -59,11 +59,11 @@ For example, the following sample bill in this example is calculated as follows:
 |:--|:--|:--|:--|:--|
 | 00:00–0:05 | 2 | 3 | vCores used | Used 2 vCores for 300 seconds. CPU was higher than memory, so billing is based on vCore usage. Calculation: 2 × 300 × 2.611 = 783 CU seconds. |
 | 0:05–0:15  | 1 | 6 | Memory used | Used 6 GB memory for 600 seconds. Memory exceeded CPU, so billing is based on memory usage. Memory-to-vCore ratio: 6 GB = 2 vCores. Calculation: 2 × 600 × 2.611 = 3,133 CU seconds. |
-| 0:15–0:30  | 0 | 2 | Minimum memory allocated | Minimum 2 GB memory is allocated to keep the database ready, even when idle. Memory-to-vCore ratio: 2 GB = 0.57 vCore. Calculation: 0.57 × 900 × 2.611 = 1,566 CU seconds. |
+| 0:15–0:30  | 0 | 2 | Minimum memory allocated | Minimum 2 GB memory is allocated to keep the database ready, even when idle. Memory-to-vCore ratio: 2 GB = 0.57 vCore. Calculation: 0.57 × 900 × 2.611 = 1,574 CU seconds. |
 | 0:30–0:60  | 0 | 0 | No compute billed after 15 minutes of inactivity | No activity for 15 minutes, so all compute, including CPU and memory, is released. Compute billing stops. Calculation: 0 CU seconds. |
 
 
-Total Estimated CU seconds: 5482 CU seconds 
+Total Estimated CU seconds: 5490 CU seconds 
 
 ### Storage billing example
 

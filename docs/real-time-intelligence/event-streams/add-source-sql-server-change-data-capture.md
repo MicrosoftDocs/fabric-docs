@@ -6,16 +6,16 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 5/23/2025
 ms.search.form: Source and Destination
 ---
 
 # Add SQL Server on VM DB (CDC) source to an eventstream
 
-This article shows you how to add a SQL Server on VM DB Change Data Capture (CDC) source to an eventstream. 
+This article shows you how to add a SQL Server on VM DB Change Data Capture (CDC) source to an eventstream.
 
 The SQL Server on VM DB (CDC) source connector for Fabric event streams allows you to capture a snapshot of the current data in a SQL Server database on VM. Currently, SQL Server on VM DB (CDC) is supported from the following services where the databases can be accessed publicly:
-- **SQL Server on Azure Virtual Machines**
+- [SQL Server on Azure Virtual Machines](/azure/azure-sql/virtual-machines/windows/sql-vm-create-portal-quickstart)
 - **Amazon RDS for SQL Server**
 - **Amazon RDS Custom for SQL Server**
 - **Google Cloud SQL for SQL Server**
@@ -33,8 +33,6 @@ Once the SQL Server on VM DB (CDC) source is added to the eventstream, it monito
 - A running SQL Server on VM database. 
 - Your SQL Server on VM database must be configured to allow public access.  
 - Enable CDC in your SQL Server on VM database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server). 
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Enable CDC in your SQL Server on VM database
 

@@ -1,12 +1,12 @@
 ---
-title:  Get data from Azure Event Hubs
+title: Get data from Azure Event Hubs
 description: Learn how to create a connection to Event Hubs and get data into your KQL database in Real-Time Intelligence.
 ms.reviewer: guregini
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
-ms.custom:
-ms.date: 11/19/2024
+ms.custom: sfi-image-nochange
+ms.date: 02/27/2025
 ms.search.form: Get data in a KQL Database, Data connection
 ---
 # Get data from Azure Event Hubs
@@ -102,7 +102,7 @@ Whether you have created a new cloud connection, or you're using an existing one
 
     |**Setting** | **Description** | **Example value**|
     |---|---|---|
-    | Consumer group | The relevant consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups?context=/fabric/context/context). After adding a new consumer group, you'll then need to select this group from the drop-down.|  *NewConsumer*
+    | Consumer group | The relevant consumer group defined in your event hub. For more information, see [consumer groups](/azure/event-hubs/event-hubs-features#consumer-groups?context=/fabric/context/context). After adding a new consumer group, you'll then need to select this group from the dropdown.|  *NewConsumer*
     | **More parameters** |
     | Compression | Data compression of the events, as coming from the event hub. Options are None (default), or Gzip compression. | *None*
     | Event system properties |  For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations?context=/fabric/context/context). If there are multiple records per event message, the system properties are added to the first one. See [event system properties](#event-system-properties).|
@@ -128,12 +128,8 @@ To complete the ingestion process, select **Finish**.
 
 :::image type="content" source="media/get-data-event-hub/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-azure-storage/inspect-data.png":::
 
-Optionally:
+[!INCLUDE [get-data-inspect-formats](includes/get-data-inspect-formats.md)]
 
-* Select **Command viewer** to view and copy the automatic commands generated from your inputs.
-* Change the automatically inferred data format by selecting the desired format from the dropdown. Data is read from the event hub in form of [EventData](/dotnet/api/microsoft.servicebus.messaging.eventdata?context=/fabric/context/context) objects. Supported formats are CSV, JSON, PSV, SCsv, SOHsv TSV, TXT, and TSVE.
-* [Edit columns](#edit-columns).
-* Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
 * If the data you see in the preview window isn't complete, you might need more data to create a table with all necessary data fields. Use the following commands to fetch new data from your event hub:
 
   * **Discard and fetch new data**: discards the data presented and searches for new events.
@@ -156,21 +152,7 @@ To correctly decode the event payload:
 1. Map the `Body` field of the captured event to a column of type `dynamic` in the destination table.
 1. Apply an [update policy](/azure/data-explorer/kusto/management/updatepolicy?context=/fabric/context/context) that converts the byte array into a readable string using the [unicode_codepoints_to_string()](/azure/data-explorer/kusto/query/unicode-codepoints-to-string-function?context=/fabric/context/context) function.
 
-### Advanced options based on data type
-
-**Tabular (CSV, TSV, PSV)**:
-
-* If you're ingesting tabular formats in an *existing table*, you can select **Advanced** > **Keep table schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
-* To use the first row as column names, select  **Advanced** > **First row is column header**.
-
-    :::image type="content" source="media/get-data-event-hub/advanced-csv.png" alt-text="Screenshot of advanced CSV options.":::
-
-**JSON**:
-
-* To determine column division of JSON data, select **Advanced** > **Nested levels**, from 1 to 100.
-* If you select **Advanced** > **Skip JSON lines with errors**, the data is ingested in JSON format. If you leave this check box unselected, the data is ingested in multijson format.
-
-    :::image type="content" source="media/get-data-event-hub/advanced-json.png" alt-text="Screenshot of advanced JSON options.":::
+[!INCLUDE [get-data-process-event-advanced-options-data-type](includes/get-data-process-event-advanced-options-data-type.md)]
 
 ## Summary
 

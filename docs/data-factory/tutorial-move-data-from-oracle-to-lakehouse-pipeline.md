@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: lle
 author: lrtoyou1223
 ms.topic: tutorial
-ms.custom:
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 05/17/2024
 ms.search.form: Pipeline Tutorials
 ---
@@ -56,7 +56,7 @@ In this session, you start to build your data pipeline by following below steps 
    
    :::image type="content" source="media/copy-data-activity/oracle-datasource.png" alt-text="Screenshot showing how to select the data source.":::
 
-   b. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-data-stores-in-data-pipeline).
+   b. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-connectors-in-fabric).
    
       :::image type="content" source="media/copy-data-activity/configure-connection-details-new.png" alt-text="Screenshot showing New connection page.":::
 

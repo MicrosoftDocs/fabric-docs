@@ -2,8 +2,8 @@
 title: Create a KQL queryset
 description: Learn how to create a KQL queryset to query the data in your KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 11/19/2024

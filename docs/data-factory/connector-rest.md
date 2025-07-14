@@ -4,9 +4,11 @@ description: This article provides information about how to do create a REST con
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 07/01/2025
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # How to create REST connection
@@ -20,8 +22,9 @@ This REST connector supports the following authentication types for copy and Dat
 |Authentication type |Copy |Dataflow Gen2 (Web API) |
 |:---|:---|:---|
 |Anonymous| √| √|
-|Basic| | √|
-|Organizational account| | √|
+|Basic| √| √|
+|Organizational account| √| √|
+|Service principal| √| |
 |Windows| | √|
 
 ## Set up your connection in Dataflow Gen2
