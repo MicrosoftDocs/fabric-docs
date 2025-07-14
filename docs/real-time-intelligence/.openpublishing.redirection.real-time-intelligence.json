@@ -1,6 +1,26 @@
 {
   "redirections": [   
     {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/activator-basic-concepts.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-introduction",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/activator-get-data-real-time-hub.md",
+      "redirect_url": "/fabric/real-time-hub/set-alerts-data-streams",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/activator-get-data-eventstreams.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-destination-activator",
+      "redirect_document_id": false
+    },        
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/activator-get-started.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-tutorial",
+      "redirect_document_id": false
+    },    
+    {
       "redirect_url": "/fabric/context/context-rti.json",
       "source_path_from_root": "/docs/context/context-rta.json.yml",
       "redirect_document_id": false
