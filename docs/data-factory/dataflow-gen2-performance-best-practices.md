@@ -44,7 +44,7 @@ Staging data is a technique used to improve performance by temporarily storing i
 
 ## Scenarios and what optimizations to consider
 
-When working with Dataflow Gen2, it's essential to understand the various scenarios you might encounter and how to optimize performance in each case. The following considerations provide practical guidance on how to apply the best practices discussed earlier in this article to real-world situations. By tailoring your approach based on the specific characteristics of your data and transformations, you can achieve optimal performance in your data integration workflows. Here are some common scenarios you might encounter when working with Dataflow Gen2, along with recommended actions to optimize performance. These scenarios are examples of how to apply the best practices discussed earlier in this article to real-world situations. Be aware that performance optimization is an ongoing process and very specific to your scenario. You might need to adjust your approach based on the specific characteristics of your own data and transformations.
+When working with Dataflow Gen2, it's essential to understand the various scenarios you might encounter and how to optimize performance in each case. The following considerations provide practical guidance on how to apply the best practices to real-world situations. By tailoring your approach based on the specific characteristics of your data and transformations, you can achieve optimal performance in your data integration workflows. Here are some common scenarios you might encounter when working with Dataflow Gen2, along with recommended actions to optimize performance. Be aware that performance optimization is an ongoing process and very specific to your scenario. You might need to adjust your approach based on the specific characteristics of your own data and transformations.
 
 ### Consideration 1: Improve data movement with Fast Copy
 
@@ -98,11 +98,30 @@ In this scenario, you're working on a dataflow with large datasets, and the desi
 
 In this case, consider using parameterization to limit the size of data previews. By applying filters based on parameters, such as a date range or specific IDs, you can reduce the amount of data displayed in the design-time environment. This approach helps keep the design environment responsive and efficient, allowing you to focus on authoring and testing your dataflow without being hindered by large data previews. Additionally, you can adjust the parameters during runtime to retrieve the full dataset when needed.
 
+For example, if you're working with a large transactional dataset, you can create a parameter that filters the data based on a specific date range. This way, during design-time, you only see a subset of the data that is relevant to your current work. When you're ready to run the dataflow, you can adjust the parameter to include the full dataset, ensuring that your data integration processes remain efficient and responsive. Below is an example of how to set up a parameter in Dataflow Gen2:
+
+- Select the "Manage Parameters" tab in the dataflow editor.
+- Add a new parameter by clicking the "Add parameter" button.
+
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/add-parameter.png" alt-text="Add parameter in Dataflow Gen2":::
+
+- Fill out the parameter details, such as name, type, and value. For example, you can create a parameter named "DesignDateFilter" of type "DateTime" with a default value that limits the data preview to a specific date range.
+
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/design-date-filter.png" alt-text="Design date filter parameter in Dataflow Gen2":::
+
+- Apply the parameter in your dataflow queries by using it in the filter conditions. For example, you can filter the data based on the "DesignDateFilter" parameter to limit the data preview to a specific date range. In this case we filter the data to only include records where the "Date" column is greater than the "DesignDateFilter" parameter.
+
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/apply-filter-on-col.png" alt-text="Apply filter on column in Dataflow Gen2":::
+
+- Now you can use the "DesignDateFilter" parameter in your dataflow queries to limit the data preview during design-time. When you're ready to run the dataflow, you can adjust the parameter value to include the full dataset, ensuring that your data integration processes remain efficient and responsive.
+
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/select-parameter-as-value-for-filtering.png" alt-text="Select parameter as value for filtering in Dataflow Gen2":::
+
 ### Consideration 5: Dataflow gen2 runtime characteristics compared to Dataflow Gen1
 
 In this scenario, you notice that the performance of Dataflow Gen2 is slower than that of Dataflow Gen1, particularly in terms of execution time and resource usage. This performance difference can be due to several factors, including the differences in optimization techniques and output formats used in Dataflow Gen2.
 
-Dataflow Gen2 emits data in Delta Parquet format when you use staging or lakehouse destinations, which is different from Dataflow Gen1's CSV output. While Delta Parquet might result in longer ETL runtimes compared to CSV, it enables powerful downstream capabilities such as Direct Lake, Lakehouses, and Warehouses, allowing these services to consume data efficiently without additional processing or cost. This means that while the initial execution time may be longer, the overall performance and efficiency of downstream processes can be significantly improved and can lead to better long-term performance of your data integration workflows.
+Dataflow Gen2 emits data in Delta Parquet format when you use staging or lakehouse destinations, which is different from Dataflow Gen1's CSV output. While Delta Parquet might result in longer ETL runtimes compared to CSV, it enables powerful downstream capabilities such as Direct Lake, Lakehouses, and Warehouses, allowing these services to consume data efficiently without additional processing or cost. This means that while the initial execution time may be longer, the overall performance and efficiency of downstream processes can be significantly improved and can lead to better long-term performance of your data integration workflows. Learn more about [Delta Parquet format](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake).
 
 ### Consideration 6: Optimizing refresh time for large transactional datasets using incremental refresh
 
