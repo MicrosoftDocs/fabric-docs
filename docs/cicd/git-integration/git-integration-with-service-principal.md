@@ -104,8 +104,8 @@ Consider the following scenarios when registering your app in step 1.
 
 |Scenario|Application registered as| service principal creation|
 |-----|-----|
-|Fabric, DevOps, application all in same tenant|Accounts in this organizational directory only - single tenant apps|No additiona requirements|
-|DevOps and application in same tenant|Accounts in this organizational directory only - single tenant apps|No additiona requirements|
+|Fabric, DevOps, application all in same tenant|Accounts in this organizational directory only - single tenant apps|No additional requirements|
+|DevOps and application in same tenant|Accounts in this organizational directory only - single tenant apps|No additional requirements|
 |Fabric and application in one tenant, DevOps in seperated tenant|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
 |Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
 
