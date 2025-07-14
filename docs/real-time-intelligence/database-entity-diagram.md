@@ -22,6 +22,10 @@ For information about workspace lineage in Fabric, see [Lineage](../governance/l
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with view permissions
 
+For users who want to turn on the ingestion details:
+* Database Admin or Database Monitor permissions to view ingestion details in the entity diagram. For more information, see [Role-based access control](/kusto/access-control/role-based-access-control?view=microsoft-fabric&preserve-view=true).
+
+
 ## Open entity diagram view
 
 To access the view, browse to your desired KQL database and select **Entity diagram**.
