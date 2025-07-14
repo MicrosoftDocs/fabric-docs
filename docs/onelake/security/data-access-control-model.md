@@ -274,7 +274,7 @@ The next table specifies whether the corresponding shortcut scenario supports On
 | Shortcut in a lakehouse pointing to a table located in a **data warehouse** | Not supported. | OneLake doesn't support defining security permissions in data warehouses. Access is determined based on the ReadAll permission instead.|
 | Shortcut in a lakehouse pointing to a table located in a **KQL database** | Not supported. | OneLake doesn't support defining security permissions in KQL databases. Access is determined based on the ReadAll permission instead.|
 
-### OneLake security in external (multi-cloud) shortcuts
+### OneLake security in external (multicloud) shortcuts
 
 OneLake supports defining permissions for shortcuts such as [ADLS, S3, and Dataverse shortcuts](../onelake-shortcuts.md). In this case, the permissions are applied on top of the delegated authorization model enabled for this type of shortcut.
 
@@ -336,7 +336,7 @@ RLS combines with an OR between SQL statements. Like CLS, any RLS rules unioned 
 
 * To query data from a Spark notebook using Spark SQL, the user must have at least Viewer access in the workspace they are querying.
 
-* Spark notebooks require that the environment be 3.5 or higher and using Fabric runtim 1.3.
+* Spark notebooks require that the environment be 3.5 or higher and using Fabric runtime 1.3.
 
 * OneLake security does not work with [private link protection](../../security/security-private-links-overview.md). 
 
