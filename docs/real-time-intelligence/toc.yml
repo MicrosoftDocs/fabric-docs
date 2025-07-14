@@ -760,6 +760,8 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
+    - name: Generate Real-Time Dashboard Using Copilot?context=/fabric/context/context-rti&pivots=fabric
+      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
     - name: Real-Time Dashboard permissions
@@ -837,7 +839,7 @@ items:
       displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
   - name: Troubleshoot errors
     href: data-activator/activator-troubleshooting.md
-- name: Copilot for Real-Time Intelligence
+- name: Analayze data with Copilot
   items:
     - name: Copilot for Writing KQL Queries
       href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
