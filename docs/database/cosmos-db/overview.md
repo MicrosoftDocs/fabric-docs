@@ -19,7 +19,7 @@ Cosmos DB in Microsoft Fabric is an AI-optimized NoSQL database with a simplifie
 
 To learn more about Cosmos DB in Fabric, watch this demo from Microsoft Build 2025 walking through building a chat-enabled storefront, storing NoSQL data, generating recommendations, and applying AI insights—all in one unified platform.
 
-[!VIDEO https://youtu.be/_OywQvAr7xE]
+> [!VIDEO https://www.youtube.com/embed/_OywQvAr7xE]
 
 ## Why Cosmos DB in Fabric? 
 
