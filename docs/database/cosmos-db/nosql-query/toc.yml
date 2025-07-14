@@ -1,0 +1,430 @@
+### YamlMime:TOC
+items:
+  - name: NoSQL query language
+    displayName: introduction, welcome, start, getting started
+    href: /nosql/query/overview?context=/fabric/context/context-database
+  - name: Work with JSON
+    displayName: get started, quickstart, first query, JSON, JSON documents, JSON arrays, JSON objects
+    href: /nosql/query/get-started-json?context=/fabric/context/context-database
+  - name: Create subqueries
+    displayName: subqueries, subquery
+    href: /nosql/query/subquery?context=/fabric/context/context-database
+  - name: Perform self-joins
+    displayName: self-joins, join
+    href: /nosql/query/join?context=/fabric/context/context-database
+  - name: Constants
+    displayName: literals, values
+    href: /nosql/query/constants?context=/fabric/context/context-database
+  - name: Scalar expressions
+    displayName: scalar values
+    href: /nosql/query/scalar?context=/fabric/context/context-database
+  - name: Subqueries
+    displayName: clause, subquery
+    href: /nosql/query/subquery?context=/fabric/context/context-database
+  - name: Clauses
+    displayName: clauses, expressions
+    expanded: true
+    items:
+      - name: FROM
+        displayName: clause, from
+        href: /nosql/query/from?context=/fabric/context/context-database
+      - name: GROUP BY
+        displayName: by, clause, group, group by, group-by, groupby
+        href: /nosql/query/group-by?context=/fabric/context/context-database
+      - name: OFFSET LIMIT
+        displayName: clause, limit, offset, offset limit, offset-limit, offsetlimit
+        href: /nosql/query/offset-limit?context=/fabric/context/context-database
+      - name: ORDER BY RANK
+        displayName: by, clause, order, order by rank, order-by-rank, orderbyrank, rank
+        href: /nosql/query/order-by-rank?context=/fabric/context/context-database
+      - name: ORDER BY
+        displayName: by, clause, order, order by, order-by, orderby
+        href: /nosql/query/order-by?context=/fabric/context/context-database
+      - name: SELECT
+        displayName: clause, select
+        href: /nosql/query/select?context=/fabric/context/context-database
+      - name: WHERE
+        displayName: clause, where
+        href: /nosql/query/where?context=/fabric/context/context-database
+  - name: Keywords
+    displayName: keywords, reserved words
+    expanded: true
+    items:
+      - name: BETWEEN
+        displayName: between, keyword
+        href: /nosql/query/between?context=/fabric/context/context-database
+  - name: Functions
+    displayName: commands, operators
+    expanded: true
+    items:
+      - name: Mathematical functions
+        items:
+          - name: ABS
+            displayName: abs, mathematical
+            href: /nosql/query/abs?context=/fabric/context/context-database
+          - name: ACOS
+            displayName: acos, mathematical
+            href: /nosql/query/acos?context=/fabric/context/context-database
+          - name: ASIN
+            displayName: asin, mathematical
+            href: /nosql/query/asin?context=/fabric/context/context-database
+          - name: ATAN
+            displayName: atan, mathematical
+            href: /nosql/query/atan?context=/fabric/context/context-database
+          - name: ATN2
+            displayName: 2, atn, atn 2, atn2, mathematical
+            href: /nosql/query/atn2?context=/fabric/context/context-database
+          - name: CEILING
+            displayName: ceiling, mathematical
+            href: /nosql/query/ceiling?context=/fabric/context/context-database
+          - name: COS
+            displayName: cos, mathematical
+            href: /nosql/query/cos?context=/fabric/context/context-database
+          - name: COT
+            displayName: cot, mathematical
+            href: /nosql/query/cot?context=/fabric/context/context-database
+          - name: DEGREES
+            displayName: degrees, mathematical
+            href: /nosql/query/degrees?context=/fabric/context/context-database
+          - name: EXP
+            displayName: exp, mathematical
+            href: /nosql/query/exp?context=/fabric/context/context-database
+          - name: FLOOR
+            displayName: floor, mathematical
+            href: /nosql/query/floor?context=/fabric/context/context-database
+          - name: INTADD
+            displayName: intadd, mathematical
+            href: /nosql/query/intadd?context=/fabric/context/context-database
+          - name: INTBITAND
+            displayName: intbitand, mathematical
+            href: /nosql/query/intbitand?context=/fabric/context/context-database
+          - name: INTBITLEFTSHIFT
+            displayName: intbitleftshift, mathematical
+            href: /nosql/query/intbitleftshift?context=/fabric/context/context-database
+          - name: INTBITNOT
+            displayName: intbitnot, mathematical
+            href: /nosql/query/intbitnot?context=/fabric/context/context-database
+          - name: INTBITOR
+            displayName: intbitor, mathematical
+            href: /nosql/query/intbitor?context=/fabric/context/context-database
+          - name: INTBITRIGHTSHIFT
+            displayName: intbitrightshift, mathematical
+            href: /nosql/query/intbitrightshift?context=/fabric/context/context-database
+          - name: INTBITXOR
+            displayName: intbitxor, mathematical
+            href: /nosql/query/intbitxor?context=/fabric/context/context-database
+          - name: INTDIV
+            displayName: intdiv, mathematical
+            href: /nosql/query/intdiv?context=/fabric/context/context-database
+          - name: INTMOD
+            displayName: intmod, mathematical
+            href: /nosql/query/intmod?context=/fabric/context/context-database
+          - name: INTMUL
+            displayName: intmul, mathematical
+            href: /nosql/query/intmul?context=/fabric/context/context-database
+          - name: INTSUB
+            displayName: intsub, mathematical
+            href: /nosql/query/intsub?context=/fabric/context/context-database
+          - name: LOG
+            displayName: log, mathematical
+            href: /nosql/query/log?context=/fabric/context/context-database
+          - name: LOG10
+            displayName: 10, log, log 10, log10, mathematical
+            href: /nosql/query/log10?context=/fabric/context/context-database
+          - name: NUMBERBIN
+            displayName: mathematical, numberbin
+            href: /nosql/query/numberbin?context=/fabric/context/context-database
+          - name: PI
+            displayName: mathematical, pi
+            href: /nosql/query/pi?context=/fabric/context/context-database
+          - name: POWER
+            displayName: mathematical, power
+            href: /nosql/query/power?context=/fabric/context/context-database
+          - name: RADIANS
+            displayName: mathematical, radians
+            href: /nosql/query/radians?context=/fabric/context/context-database
+          - name: RAND
+            displayName: mathematical, rand
+            href: /nosql/query/rand?context=/fabric/context/context-database
+          - name: ROUND
+            displayName: mathematical, round
+            href: /nosql/query/round?context=/fabric/context/context-database
+          - name: SIGN
+            displayName: mathematical, sign
+            href: /nosql/query/sign?context=/fabric/context/context-database
+          - name: SIN
+            displayName: mathematical, sin
+            href: /nosql/query/sin?context=/fabric/context/context-database
+          - name: SQRT
+            displayName: mathematical, sqrt
+            href: /nosql/query/sqrt?context=/fabric/context/context-database
+          - name: SQUARE
+            displayName: mathematical, square
+            href: /nosql/query/square?context=/fabric/context/context-database
+          - name: TAN
+            displayName: mathematical, tan
+            href: /nosql/query/tan?context=/fabric/context/context-database
+          - name: TRUNC
+            displayName: mathematical, trunc
+            href: /nosql/query/trunc?context=/fabric/context/context-database
+      - name: Array functions
+        items:
+          - name: ARRAY_CONCAT
+            displayName: array, array concat, array-concat, arrayconcat, concat
+            href: /nosql/query/array-concat?context=/fabric/context/context-database
+          - name: ARRAY_CONTAINS_ALL
+            displayName: all, array, array contains all, array-contains-all, arraycontainsall, contains
+            href: /nosql/query/array-contains-all?context=/fabric/context/context-database
+          - name: ARRAY_CONTAINS_ANY
+            displayName: any, array, array contains any, array-contains-any, arraycontainsany, contains
+            href: /nosql/query/array-contains-any?context=/fabric/context/context-database
+          - name: ARRAY_CONTAINS
+            displayName: array, array contains, array-contains, arraycontains, contains
+            href: /nosql/query/array-contains?context=/fabric/context/context-database
+          - name: ARRAY_LENGTH
+            displayName: array, array length, array-length, arraylength, length
+            href: /nosql/query/array-length?context=/fabric/context/context-database
+          - name: ARRAY_SLICE
+            displayName: array, array slice, array-slice, arrayslice, slice
+            href: /nosql/query/array-slice?context=/fabric/context/context-database
+          - name: CHOOSE
+            displayName: array, choose
+            href: /nosql/query/choose?context=/fabric/context/context-database
+          - name: OBJECTTOARRAY
+            displayName: array, objecttoarray
+            href: /nosql/query/objecttoarray?context=/fabric/context/context-database
+          - name: SETINTERSECT
+            displayName: array, setintersect
+            href: /nosql/query/setintersect?context=/fabric/context/context-database
+          - name: SETUNION
+            displayName: array, setunion
+            href: /nosql/query/setunion?context=/fabric/context/context-database
+      - name: Aggregation functions
+        items:
+          - name: AVG
+            displayName: aggregation, avg
+            href: /nosql/query/avg?context=/fabric/context/context-database
+          - name: COUNT
+            displayName: aggregation, count
+            href: /nosql/query/count?context=/fabric/context/context-database
+          - name: MAX
+            displayName: aggregation, max
+            href: /nosql/query/max?context=/fabric/context/context-database
+          - name: MIN
+            displayName: aggregation, min
+            href: /nosql/query/min?context=/fabric/context/context-database
+          - name: SUM
+            displayName: aggregation, sum
+            href: /nosql/query/sum?context=/fabric/context/context-database
+      - name: String functions
+        items:
+          - name: CONCAT
+            displayName: concat, string
+            href: /nosql/query/concat?context=/fabric/context/context-database
+          - name: CONTAINS
+            displayName: contains, string
+            href: /nosql/query/contains?context=/fabric/context/context-database
+          - name: ENDSWITH
+            displayName: endswith, string
+            href: /nosql/query/endswith?context=/fabric/context/context-database
+          - name: INDEX-OF
+            displayName: index, index of, index-of, of, string
+            href: /nosql/query/index-of?context=/fabric/context/context-database
+          - name: LEFT
+            displayName: left, string
+            href: /nosql/query/left?context=/fabric/context/context-database
+          - name: LENGTH
+            displayName: length, string
+            href: /nosql/query/length?context=/fabric/context/context-database
+          - name: LOWER
+            displayName: lower, string
+            href: /nosql/query/lower?context=/fabric/context/context-database
+          - name: LTRIM
+            displayName: ltrim, string
+            href: /nosql/query/ltrim?context=/fabric/context/context-database
+          - name: REGEXMATCH
+            displayName: regexmatch, string
+            href: /nosql/query/regexmatch?context=/fabric/context/context-database
+          - name: REPLACE
+            displayName: replace, string
+            href: /nosql/query/replace?context=/fabric/context/context-database
+          - name: REPLICATE
+            displayName: replicate, string
+            href: /nosql/query/replicate?context=/fabric/context/context-database
+          - name: REVERSE
+            displayName: reverse, string
+            href: /nosql/query/reverse?context=/fabric/context/context-database
+          - name: RIGHT
+            displayName: right, string
+            href: /nosql/query/right?context=/fabric/context/context-database
+          - name: RTRIM
+            displayName: rtrim, string
+            href: /nosql/query/rtrim?context=/fabric/context/context-database
+          - name: STARTSWITH
+            displayName: startswith, string
+            href: /nosql/query/startswith?context=/fabric/context/context-database
+          - name: STRINGEQUALS
+            displayName: string, stringequals
+            href: /nosql/query/stringequals?context=/fabric/context/context-database
+          - name: STRINGJOIN
+            displayName: string, stringjoin
+            href: /nosql/query/stringjoin?context=/fabric/context/context-database
+          - name: STRINGSPLIT
+            displayName: string, stringsplit
+            href: /nosql/query/stringsplit?context=/fabric/context/context-database
+          - name: STRINGTOARRAY
+            displayName: string, stringtoarray
+            href: /nosql/query/stringtoarray?context=/fabric/context/context-database
+          - name: STRINGTOBOOLEAN
+            displayName: string, stringtoboolean
+            href: /nosql/query/stringtoboolean?context=/fabric/context/context-database
+          - name: SUBSTRING
+            displayName: string, substring
+            href: /nosql/query/substring?context=/fabric/context/context-database
+          - name: TOSTRING
+            displayName: string, tostring
+            href: /nosql/query/tostring?context=/fabric/context/context-database
+          - name: TRIM
+            displayName: string, trim
+            href: /nosql/query/trim?context=/fabric/context/context-database
+          - name: UPPER
+            displayName: string, upper
+            href: /nosql/query/upper?context=/fabric/context/context-database
+      - name: Date and time functions
+        items:
+          - name: DATETIMEADD
+            displayName: and, date, date and time, date-and-time, dateandtime, datetimeadd, time
+            href: /nosql/query/datetimeadd?context=/fabric/context/context-database
+          - name: DATETIMEBIN
+            displayName: and, date, date and time, date-and-time, dateandtime, datetimebin, time
+            href: /nosql/query/datetimebin?context=/fabric/context/context-database
+          - name: DATETIMEDIFF
+            displayName: and, date, date and time, date-and-time, dateandtime, datetimediff, time
+            href: /nosql/query/datetimediff?context=/fabric/context/context-database
+          - name: DATETIMEFROMPARTS
+            displayName: and, date, date and time, date-and-time, dateandtime, datetimefromparts, time
+            href: /nosql/query/datetimefromparts?context=/fabric/context/context-database
+          - name: DATETIMEPART
+            displayName: and, date, date and time, date-and-time, dateandtime, datetimepart, time
+            href: /nosql/query/datetimepart?context=/fabric/context/context-database
+          - name: DATETIMETOTICKS
+            displayName: and, date, date and time, date-and-time, dateandtime, datetimetoticks, time
+            href: /nosql/query/datetimetoticks?context=/fabric/context/context-database
+          - name: DATETIMETOTIMESTAMP
+            displayName: and, date, date and time, date-and-time, dateandtime, datetimetotimestamp, time
+            href: /nosql/query/datetimetotimestamp?context=/fabric/context/context-database
+          - name: GETCURRENTDATETIME
+            displayName: and, date, date and time, date-and-time, dateandtime, getcurrentdatetime, time
+            href: /nosql/query/getcurrentdatetime?context=/fabric/context/context-database
+          - name: GETCURRENTDATETIMESTATIC
+            displayName: and, date, date and time, date-and-time, dateandtime, getcurrentdatetimestatic, time
+            href: /nosql/query/getcurrentdatetimestatic?context=/fabric/context/context-database
+          - name: GETCURRENTTICKS
+            displayName: and, date, date and time, date-and-time, dateandtime, getcurrentticks, time
+            href: /nosql/query/getcurrentticks?context=/fabric/context/context-database
+          - name: GETCURRENTTICKSSTATIC
+            displayName: and, date, date and time, date-and-time, dateandtime, getcurrentticksstatic, time
+            href: /nosql/query/getcurrentticksstatic?context=/fabric/context/context-database
+          - name: GETCURRENTTIMESTAMP
+            displayName: and, date, date and time, date-and-time, dateandtime, getcurrenttimestamp, time
+            href: /nosql/query/getcurrenttimestamp?context=/fabric/context/context-database
+          - name: GETCURRENTTIMESTAMPSTATIC
+            displayName: and, date, date and time, date-and-time, dateandtime, getcurrenttimestampstatic, time
+            href: /nosql/query/getcurrenttimestampstatic?context=/fabric/context/context-database
+          - name: TICKSTODATETIME
+            displayName: and, date, date and time, date-and-time, dateandtime, tickstodatetime, time
+            href: /nosql/query/tickstodatetime?context=/fabric/context/context-database
+          - name: TIMESTAMPTODATETIME
+            displayName: and, date, date and time, date-and-time, dateandtime, time, timestamptodatetime
+            href: /nosql/query/timestamptodatetime?context=/fabric/context/context-database
+      - name: Item functions
+        items:
+          - name: DOCUMENTID
+            displayName: documentid, item
+            href: /nosql/query/documentid?context=/fabric/context/context-database
+      - name: Full text search functions
+        items:
+          - name: FULLTEXTCONTAINS
+            displayName: full, full text search, full-text-search, fulltextcontains, fulltextsearch, search, text
+            href: /nosql/query/fulltextcontains?context=/fabric/context/context-database
+          - name: FULLTEXTCONTAINSALL
+            displayName: full, full text search, full-text-search, fulltextcontainsall, fulltextsearch, search, text
+            href: /nosql/query/fulltextcontainsall?context=/fabric/context/context-database
+          - name: FULLTEXTCONTAINSANY
+            displayName: full, full text search, full-text-search, fulltextcontainsany, fulltextsearch, search, text
+            href: /nosql/query/fulltextcontainsany?context=/fabric/context/context-database
+          - name: FULLTEXTSCORE
+            displayName: full, full text search, full-text-search, fulltextscore, fulltextsearch, search, text
+            href: /nosql/query/fulltextscore?context=/fabric/context/context-database
+          - name: RRF
+            displayName: full, full text search, full-text-search, fulltextsearch, rrf, search, text
+            href: /nosql/query/rrf?context=/fabric/context/context-database
+      - name: Conditional functions
+        items:
+          - name: IIF
+            displayName: conditional, iif
+            href: /nosql/query/iif?context=/fabric/context/context-database
+      - name: Type checking functions
+        items:
+          - name: IS_ARRAY
+            displayName: array, checking, is, is array, is-array, isarray, type, type checking, type-checking, typechecking
+            href: /nosql/query/is-array?context=/fabric/context/context-database
+          - name: IS_BOOL
+            displayName: bool, checking, is, is bool, is-bool, isbool, type, type checking, type-checking, typechecking
+            href: /nosql/query/is-bool?context=/fabric/context/context-database
+          - name: IS_DEFINED
+            displayName: checking, defined, is, is defined, is-defined, isdefined, type, type checking, type-checking, typechecking
+            href: /nosql/query/is-defined?context=/fabric/context/context-database
+          - name: IS_FINITE_NUMBER
+            displayName: checking, finite, is, is finite number, is-finite-number, isfinitenumber, number, type, type checking, type-checking, typechecking
+            href: /nosql/query/is-finite-number?context=/fabric/context/context-database
+          - name: IS_INTEGER
+            displayName: checking, integer, is, is integer, is-integer, isinteger, type, type checking, type-checking, typechecking
+            href: /nosql/query/is-integer?context=/fabric/context/context-database
+          - name: IS_NULL
+            displayName: checking, is, is null, is-null, isnull, null, type, type checking, type-checking, typechecking
+            href: /nosql/query/is-null?context=/fabric/context/context-database
+          - name: IS_NUMBER
+            displayName: checking, is, is number, is-number, isnumber, number, type, type checking, type-checking, typechecking
+            href: /nosql/query/is-number?context=/fabric/context/context-database
+          - name: IS_OBJECT
+            displayName: checking, is, is object, is-object, isobject, object, type, type checking, type-checking, typechecking
+            href: /nosql/query/is-object?context=/fabric/context/context-database
+          - name: IS_PRIMITIVE
+            displayName: checking, is, is primitive, is-primitive, isprimitive, primitive, type, type checking, type-checking, typechecking
+            href: /nosql/query/is-primitive?context=/fabric/context/context-database
+          - name: IS_STRING
+            displayName: checking, is, is string, is-string, isstring, string, type, type checking, type-checking, typechecking
+            href: /nosql/query/is-string?context=/fabric/context/context-database
+          - name: STRINGTONULL
+            displayName: checking, stringtonull, type, type checking, type-checking, typechecking
+            href: /nosql/query/stringtonull?context=/fabric/context/context-database
+          - name: STRINGTONUMBER
+            displayName: checking, stringtonumber, type, type checking, type-checking, typechecking
+            href: /nosql/query/stringtonumber?context=/fabric/context/context-database
+          - name: STRINGTOOBJECT
+            displayName: checking, stringtoobject, type, type checking, type-checking, typechecking
+            href: /nosql/query/stringtoobject?context=/fabric/context/context-database
+      - name: Spatial functions
+        items:
+          - name: ST_AREA
+            displayName: area, spatial, st, st area, st-area, starea
+            href: /nosql/query/st-area?context=/fabric/context/context-database
+          - name: ST_DISTANCE
+            displayName: distance, spatial, st, st distance, st-distance, stdistance
+            href: /nosql/query/st-distance?context=/fabric/context/context-database
+          - name: ST_INTERSECTS
+            displayName: intersects, spatial, st, st intersects, st-intersects, stintersects
+            href: /nosql/query/st-intersects?context=/fabric/context/context-database
+          - name: ST_ISVALID
+            displayName: isvalid, spatial, st, st isvalid, st-isvalid, stisvalid
+            href: /nosql/query/st-isvalid?context=/fabric/context/context-database
+          - name: ST_ISVALIDDETAILED
+            displayName: isvaliddetailed, spatial, st, st isvaliddetailed, st-isvaliddetailed, stisvaliddetailed
+            href: /nosql/query/st-isvaliddetailed?context=/fabric/context/context-database
+          - name: ST_WITHIN
+            displayName: spatial, st, st within, st-within, stwithin, within
+            href: /nosql/query/st-within?context=/fabric/context/context-database
+          - name: VECTORDISTANCE
+            displayName: spatial, vectordistance
+            href: /nosql/query/vectordistance?context=/fabric/context/context-database
