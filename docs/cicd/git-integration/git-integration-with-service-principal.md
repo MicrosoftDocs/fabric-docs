@@ -104,10 +104,10 @@ Consider the following scenarios when registering your app in step 1.
 
 |Scenario|Application registered as| service principal creation|
 |-----|-----|
-|Fabric, DevOps, application all in same tenant|Accounts in this organizational directory only - single tenant apps|No additional requirements|
-|DevOps and application in same tenant|Accounts in this organizational directory only - single tenant apps|No additional requirements|
-|Fabric and application in one tenant, DevOps in seperated tenant|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
-|Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
+|1 - Fabric, DevOps, application all in same tenant|Accounts in this organizational directory only - single tenant apps|No additional requirements|
+|2 - DevOps and application in same tenant|Accounts in this organizational directory only - single tenant apps|No additional requirements|
+|3 - Fabric and application in one tenant, DevOps in seperated tenant|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
+|4 - Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
 
 For more information see [How and why applications are added to Microsoft Entra ID](/entra/identity-platform/how-applications-are-added) and [Tenancy in Microsoft Entra ID](/entra/identity-platform/single-and-multi-tenant-apps).
 
