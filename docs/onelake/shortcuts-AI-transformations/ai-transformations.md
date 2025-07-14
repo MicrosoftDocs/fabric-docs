@@ -1,5 +1,4 @@
----
-# Required metadata
+---# Required metadata
 # For more information, see https://learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata
 # For valid values of ms.service, ms.prod, and ms.topic, see https://learn.microsoft.com/en-us/help/platform/metadata-taxonomies
 
@@ -12,7 +11,7 @@ ms.topic: how-to
 ms.date:     07/14/2025
 ---
 
- AI-powered transforms in OneLake shortcut transformations
+ # AI-powered transforms in OneLake shortcut transformations
 
 > [!IMPORTANT]
 > AI transforms for OneLake shortcuts are currently **Public Preview**. Features and behavior may change before general availability.
