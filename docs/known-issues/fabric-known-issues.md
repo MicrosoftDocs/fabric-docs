@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 07/11/2025
+ms.date: 07/14/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +20,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1193  | Data Factory | [Pipeline control flow activities don't show the completion dependency](./known-issue-1193-pipeline-control-flow-activities-not-show-completion.md) | July 14, 2025 |
 |  1192  | Power BI | [Excel Power BI add-in fails in Excel web](./known-issue-1192-excel-power-bi-add-in-fails-excel-web.md) | July 11, 2025 |
 |  1191  | Power BI | [Unable to access SQL analytics endpoint views with access denied error](./known-issue-1191-sql-analytics-endpoint-views-access-denied-error.md) | July 4, 2025 |
 |  1183  | Power BI | [Snowflake connector index outside the bounds error](./known-issue-1183-snowflake-connector-index-outside-bounds-error.md) | June 27, 2025 |
@@ -124,7 +125,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  454  | Data Warehouse | [Warehouse's object explorer doesn't support case-sensitive object names](./known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md)  |  July 10, 2023  | Fixed: June 12, 2025 |
 |  1031  | Administration & Management | [Git integration undo action appears after initial sync fails](./known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md) | February 20, 2025 | Fixed: June 6, 2025 |
 |  1136  | OneLake | [Scrolling through workspaces in OneLake Catalog doesn't work](./known-issue-1136-scrolling-workspaces-onelake-catalog-not-work.md) | May 19, 2025 | Fixed: June 4, 2025 |
-|  1004  | Data Engineering | [Notebook and SJD job statuses are in progress in monitor hub](./known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md) | January 29, 2025 | Fixed: May 27, 2025 |
 
 ## Related content
 
