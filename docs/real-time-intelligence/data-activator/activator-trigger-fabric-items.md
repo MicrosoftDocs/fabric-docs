@@ -46,7 +46,7 @@ If you are setting up an Activator rule from one of the embedded experiences suc
 
 ### Types of parameters
 
-Activator enables passing parameters in string, boolean, and number (float). Follow the guidelines to pass number and boolean,:
+Activator enables passing parameters in string, boolean, and number (float). Follow the guidelines to pass number and boolean:
 
 **Number**
 
@@ -78,7 +78,7 @@ Activator enables passing parameters in string, boolean, and number (float). Fol
 
 
 > [!NOTE]
-> Make sure the parameter name and type are defined exactly the same as defined the activated Fabric item. If you have any feedback or ideas regarding this feature, share it on [Activator community](https://aka.ms/ActivatorCommunity)
+> Make sure the parameter name and type are defined exactly the same as defined the activated Fabric item. If you have any feedback or ideas regarding this feature, share it on [Activator community](https://aka.ms/ActivatorCommunity).
 
 
 ## Related content
