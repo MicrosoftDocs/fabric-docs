@@ -132,6 +132,14 @@ GraphQL operations are made up of requests performed on API for GraphQL items by
 | User Data Functions Static Storage Iterative Read | Read operations for internal function metadata stored in a service-managed OneLake account. This operation is executed every time the User Data Functions are listed. | OneLake Iterative Read Operations | OneLake Iterative Read Operations | Background |
 | User Data Functions Static Storage Other Operations | Storage operations for related to various function metadata in a service-managed OneLake account. | OneLake Other Operations | OneLake Other Operations | Background |
 
+### ML Model Endpoint
+
+Description linking to [ML Model endpoint docs](../data-science/model-endpoints.md).
+
+| Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
+| ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
+| Model Endpoint                            | TBD      | ML model | ML Model Endpoint Capacity Usage CU | Background |
+
 ### OneLake
 
 One Lake compute operations represent the transactions performed on One Lake items. The consumption rate for each operation varies depending on its type. For more details, refer to [One Lake consumption](../onelake/onelake-consumption.md).
