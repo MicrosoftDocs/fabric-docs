@@ -35,6 +35,8 @@ Once you enter all of the required information, select **Save** to save the [!IN
 
 You can now pass values to the parameters defined in the activated Fabric item. To pass parameter values in Activator portal, select **Edit action**, enter the parameter name and type exactly as how they are defined in the Fabric item. The parameter values can be entered manually or by selecting dynamic properties from the data source.
 
+:::image type="content" border="true" source="media/activator-trigger-fabric-items/pass-parameter.png" alt-text="Screenshot showing Activator card with a parameter.":::
+
 ### Pass parameter values via rules created outside of Activator portal
 
 If you are setting up an Activator rule from one of the embedded experiences such as Power BI, Real-Time Hub, or Data Pipeline, you can create the rule first. After the rule is created, you can click **Open** Activator to edit the parameter values:
