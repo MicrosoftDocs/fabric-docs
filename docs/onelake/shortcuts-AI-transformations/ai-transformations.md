@@ -68,7 +68,3 @@ AI-powered transforms are currently available in these regions:
 
 Additional regions will be added over time.
 
-## Next steps
-
-- [Create a OneLake shortcut](../onelake/create-shortcut.md)  
-- [Work with Delta tables in Fabric](../delta/delta-overview.md)
