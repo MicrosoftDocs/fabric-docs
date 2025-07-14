@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: ''
 ms.custom:
 ms.topic: how-to
-ms.date: 02/02/2025
+ms.date: 07/14/2025
 LocalizationGroup: Premium
 ---
 
@@ -52,7 +52,7 @@ Follow these steps to change the default capacity region when you're creating a 
 
 # [Trial](#tab/trial)
 
-Trial capacities are created in your home region and don't support Multi-Geo.
+Trial capacities are available in multiple geos. Your home region is used as the default region.
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
