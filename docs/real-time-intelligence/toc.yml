@@ -29,42 +29,44 @@ items:
     href: architecture-medallion.md
   - name: End to end sample
     href: sample-end-to-end.md
-  - name: End to end tutorial - Real-Time-Intelligence
+  - name: Tutorials
     items:
-    - name: End to end tutorial - Introduction
-      href: tutorial-introduction.md
-    - name: 1- Set up Eventhouse
-      href: tutorial-1-resources.md
-    - name: 2- Get data in the Real-Time hub
-      href: tutorial-2-get-real-time-events.md
-    - name: 3- Transform data in your KQL database
-      href: tutorial-3-transform-kql-database.md
-    - name: 4- Query streaming data using KQL
-      href: tutorial-4-query-data.md
-    - name: 5- Create a Real-Time dashboard
-      href: tutorial-5-create-dashboard.md
-    - name: 6- Create a Power BI report
-      href: tutorial-6-power-bi-report.md
-    - name: 7- Set an alert on your event stream
-      href: tutorial-7-set-alert.md
-    - name: 8- Clean up resources
-      href: tutorial-8-clean-up-resources.md
-  - name: Digital twin builder in Real-Time Intelligence tutorial
-    items: 
-      - name: Digital twin builder in Real-Time Intelligence tutorial - Introduction
-        href: digital-twin-builder/tutorial-rti-0-introduction.md
-      - name: 1- Upload contextual data
-        href: digital-twin-builder/tutorial-rti-1-upload-contextual-data.md
-      - name: 2- Get and process streaming data
-        href: digital-twin-builder/tutorial-rti-2-get-streaming-data.md
-      - name: 3- Build the ontology
-        href: digital-twin-builder/tutorial-rti-3-build-ontology.md
-      - name: 4- Project to Eventhouse
-        href: digital-twin-builder/tutorial-rti-4-project-eventhouse.md
-      - name: 5- Query and visualize data
-        href: digital-twin-builder/tutorial-rti-5-query-and-visualize.md
-      - name: 6- Clean up resources
-        href: digital-twin-builder/tutorial-rti-6-clean-up-resources.md
+    - name: End to end tutorial - Real-Time-Intelligence
+      items:
+      - name: End to end tutorial - Introduction
+        href: tutorial-introduction.md
+      - name: 1- Set up Eventhouse
+        href: tutorial-1-resources.md
+      - name: 2- Get data in the Real-Time hub
+        href: tutorial-2-get-real-time-events.md
+      - name: 3- Transform data in your KQL database
+        href: tutorial-3-transform-kql-database.md
+      - name: 4- Query streaming data using KQL
+        href: tutorial-4-query-data.md
+      - name: 5- Create a Real-Time dashboard
+        href: tutorial-5-create-dashboard.md
+      - name: 6- Create a Power BI report
+        href: tutorial-6-power-bi-report.md
+      - name: 7- Set an alert on your event stream
+        href: tutorial-7-set-alert.md
+      - name: 8- Clean up resources
+        href: tutorial-8-clean-up-resources.md
+    - name: Digital twin builder in Real-Time Intelligence tutorial
+      items: 
+        - name: Digital twin builder in Real-Time Intelligence tutorial - Introduction
+          href: digital-twin-builder/tutorial-rti-0-introduction.md
+        - name: 1- Upload contextual data
+          href: digital-twin-builder/tutorial-rti-1-upload-contextual-data.md
+        - name: 2- Get and process streaming data
+          href: digital-twin-builder/tutorial-rti-2-get-streaming-data.md
+        - name: 3- Build the ontology
+          href: digital-twin-builder/tutorial-rti-3-build-ontology.md
+        - name: 4- Project to Eventhouse
+          href: digital-twin-builder/tutorial-rti-4-project-eventhouse.md
+        - name: 5- Query and visualize data
+          href: digital-twin-builder/tutorial-rti-5-query-and-visualize.md
+        - name: 6- Clean up resources
+          href: digital-twin-builder/tutorial-rti-6-clean-up-resources.md
 - name: User flows
   items:
   - name: "Discover and respond to events"
