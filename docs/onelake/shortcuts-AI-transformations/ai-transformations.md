@@ -3,8 +3,8 @@
 # For more information, see https://learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata
 # For valid values of ms.service, ms.prod, and ms.topic, see https://learn.microsoft.com/en-us/help/platform/metadata-taxonomies
 
-title: Onelake shortcuts AI transformations
-description: Onelake shortcuts AI transformations
+title: OneLake shortcuts AI transformations
+description: OneLake shortcuts AI transformations
 author:      miquelladeboer # GitHub alias
 ms.author:   mideboer # Microsoft alias
 ms.service: fabric
@@ -50,7 +50,7 @@ Customer feedback stored in a data lake may contain sensitive details (names, em
 ## How it works
 
 1. **Create a shortcut**  
-   Reference a folder of `.txt` files in Azure Data Lake, Amazon S3, or another Onelake shortcuts source.  
+   Reference a folder of `.txt` files in Azure Data Lake, Amazon S3, or another OneLake shortcuts source.  
 2. **Select an AI transform**  
    Pick one of the supported transforms during shortcut creation.  
 3. **Automatic sync**  
