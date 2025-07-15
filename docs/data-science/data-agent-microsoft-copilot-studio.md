@@ -15,7 +15,7 @@ ms.collection: ce-skilling-ai-copilot
 
 # Consume a Fabric Data Agent in Microsoft Copilot Studio (preview)
 
-Microsoft Copilot Studio is a graphical, low-code platform fr building custom AI agents that understand natural language, answer user inquiries, and perform actions such as automating tasks. These agents can then be deployed across channels such as Microsoft Teams, websites, and Microsoft 365 Copilot.
+Microsoft Copilot Studio is a graphical, low-code platform for building custom AI agents that understand natural language, answer user inquiries, and perform actions such as automating tasks. These agents can then be deployed across channels such as Microsoft Teams, websites, and Microsoft 365 Copilot.
 
 One of the ways to consume a Fabric data agent is by adding it to a custom AI agent in Microsoft Copilot Studio as a connected agent. This connected agents setup enables agent-to-agent collaboration, allowing the custom AI agent in Copilot Studio to securely access enterprise data through the Fabric data agent and ground its responses in organizational knowledge for improved accuracy, relevance, and context.
 
@@ -48,7 +48,7 @@ One of the ways to consume a Fabric data agent is by adding it to a custom AI ag
 
 :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-agents.png" alt-text="Screenshot showing the first step to add agents to Copilot Studio." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-agents.png":::
 
-6. Select Microsoft Fabric from the **Connect an existing agent** category.
+6. Select Microsoft Fabric from the **Choose how you want to extend your agent** category.
 
 :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-add-fabric.png" alt-text="Screenshot showing the Fabric as connected agents category." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-add-fabric.png":::
 
@@ -71,7 +71,7 @@ One of the ways to consume a Fabric data agent is by adding it to a custom AI ag
 
 :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-fabric-added.png" alt-text="Screenshot showing the list of Fabric data agents added to Copilot Studio." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-fabric-added.png":::
 
-11. Select the connected Fabric data agent. Under additional details, you can optionally decide the authentication of the Fabric data agent to be the **User authentication** or **Copilot author authentication**.
+11. Select the connected Fabric data agent. Under additional details, you can optionally decide the authentication of the Fabric data agent to be the **User authentication** or **Agent author authentication**.
 
 :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-fabric-authentication.png" alt-text="Screenshot showing the authentication for Fabric data agent in MCS." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-fabric-authentication.png":::
 
@@ -88,9 +88,11 @@ One of the ways to consume a Fabric data agent is by adding it to a custom AI ag
 > [!NOTE]
 > The ability to use the custom agent with connected Fabric data agent is not currently supported in Microsoft 365 Copilot.
 
-15. To publish to Teams, select Teams and Microsoft 365 Copilot from the list of channels. This opens the window on left, select **Add channel** to enable this channel. Once done, the **See agent in Teams** will be active. You can select it which will prompt you top Microsoft Teams.
+15. To publish to Teams, select Teams and Microsoft 365 Copilot from the list of channels. This opens the window on left, select **Add channel** to enable this channel. Once done, the **See agent in Teams** will be active. You can select it which will prompt you to Microsoft Teams.
 
 :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-teams-channels.png" alt-text="Screenshot showing the publish process to Teams." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-teams-channels.png":::
+
+16. This will then launch Microsoft Teams where you will be able to ask questions from the custom AI agent and get answers.
 
 
 
