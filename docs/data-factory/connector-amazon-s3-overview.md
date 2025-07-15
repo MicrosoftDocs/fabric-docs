@@ -19,7 +19,7 @@ This Amazon S3 connector is supported in Data Factory for [!INCLUDE [product-nam
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Data pipeline** <br>- [Copy activity](connector-amazon-s3-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity | None<br> On-premises<br> Virtual network | Access Key      |
-| **Copy job** (source/destination) <br>- Full load<br>- Incremental load (Preview) <br>- Append<br>- Override | None<br> On-premises<br> Virtual network | Access Key      |
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load <br>- Append<br>- Override | None<br> On-premises<br> Virtual network | Access Key      |
 
 
 ## Related content
