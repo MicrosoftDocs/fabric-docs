@@ -96,7 +96,7 @@ To create the source control connection, use the following details and steps.
 ## Multi-tenat considerations for service principal creation
 To access resources that are secured by a Microsoft Entra tenant, your application must be represented by a security principal. When you create your application, the service principal is auto-created on the tenant which the application resides.
 
-In cases where your applications tenant is differnt than the home tenant of your Azure DevOps instance, you will need to create the service prinicipal, in the Azure DevOps tenant. Consider the following scenarios when registering your app in step 1 and see the examples below on how to do this using either Azure CLI or PowerShell.
+In cases where your applications tenant is different than the home tenant of your Azure DevOps instance, you will need to create the service prinicipal, in the Azure DevOps tenant. Consider the following scenarios when registering your app in step 1 and see the examples below on how to do this using either Azure CLI or PowerShell.
 
  :::image type="content" source="media/git-integration-with-service-principal/multi-tenant-1.png" alt-text="Diagram showing where ADO may reside." lightbox="media/git-integration-with-service-principal/multi-tenant-1.png":::
 
