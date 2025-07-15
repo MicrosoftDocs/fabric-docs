@@ -233,7 +233,7 @@ items:
         href: event-streams/build-report-from-iot-hub.md
       - name: Explore and transform bike-sharing data for KQL database integration
         href: event-streams/transform-sample-data-and-route-to-kql.md
-    - name: Eventstream Query Lanaguage Reference
+    - name: Eventstream Query Language Reference
       items:
       - name: Built-in Functions
         items:
