@@ -4,7 +4,7 @@ description: Overview of the Fabric User data functions programming model for Py
 ms.author: sumuth
 author: mksuni
 ms.topic: overview
-ms.date: 03/31/2025
+ms.date: 07/7/2025
 ms.search.form: Write new user data functions items
 ---
 
@@ -19,7 +19,7 @@ A user data functions item contains one or many functions you can invoke from th
 
 - The `fabric.functions` library provides the code you need to create user data functions in Python. You can see this library being imported in your first function template when you create a new user data functions item.
 
-- The method `fn.UserDataFunctions()` provides the execution context. It's added at the beginning of the code file in all new user data functions items, before any function definitions.
+- The method `fn.UserDataFunctions()` provides the execution context found at the beginning of the code file in all new user data functions items, before any function definitions.
 
   **Example:**
   ```python
@@ -30,7 +30,7 @@ A user data functions item contains one or many functions you can invoke from th
   udf = fn.UserDataFunctions()
   ```
 
-- Every function is identified with a `@udf.function()` decorator. This decorator will define if your function can be invoked individually from the portal or an external invoker.
+- Every function is identified with a `@udf.function()` decorator. This decorator defines if your function can be invoked individually from the portal or an external invoker.
 
   **Invokable function example**
   ```python
@@ -58,14 +58,46 @@ A user data functions item contains one or many functions you can invoke from th
 
 You can define input parameters for the function such as primitive data types like str, int, float, etc. The supported input data types are:
 
-| **JSON Type** | **Python Data type** |
-| ------------------- | ------------------------ |
-| **String**| str|
+| **JSON Type** | **Python Data type** | 
+| ------------------- | ------------------------ | 
+| **String**| str |
 | **Datetime string** | datetime |
 | **Boolean** | bool |
 | **Numbers**| int, float |
 | **Array** | list[], example list[int]|
-| **Object**	| dict |
+| **Object**	| dict|
+| **Object**	| pandas DataFrame|
+| **Object** or **Array of Objects** | pandas Series|
+
+>[!NOTE]
+> To use pandas DataFrame and Series types, select **Library management** in Fabric portal for your user data function and update `fabric-user-data-function` version to 1.0.0. 
+
+Example of request body for input types supported:
+```json
+{
+  "name": "Alice",                          // String (str)
+  "signup_date": "2025-07-08T13:44:40Z",    // Datetime string (datetime)
+  "is_active": true,                        // Boolean (bool)
+  "age": 30,                                // Number (int)
+  "height": 5.6,                            // Number (float)
+  "favorite_numbers": [3, 7, 42],           // Array (list[int])
+  "profile": {                              // Object (dict)
+    "email": "alice@example.com",
+    "location": "Sammamish"
+  },
+  "sales_data": {                           // Object (pandas DataFrame)
+    "2025-07-01": {"product": "A", "units": 10},
+    "2025-07-02": {"product": "B", "units": 15}
+  },
+  "weekly_scores": [                        // Object or Array of Objects (pandas Series)
+    {"week": 1, "score": 88},
+    {"week": 2, "score": 92},
+    {"week": 3, "score": 85}
+  ]
+}
+
+```
+
 
 ## Supported output types
 
@@ -80,6 +112,45 @@ The supported output data types are:
 | list[data-type], for example list[int]|
 | dict |
 | None|
+|pandas Series|
+|pandas DataFrame|
+
+## How to write an async function
+
+Add async decorator with your function definition in your code. With an `async` function you can improve responsiveness and efficiency of your application by handling multiple tasks at once. They are ideal for managing high volumes of I/O-bound operations.  This example function reads a CSV file from a lakehouse using pandas. Function takes file name as an input parameter. 
+
+```python
+import pandas as pd 
+
+# Replace the alias "<My Lakehouse alias>" with your connection alias.
+@udf.connection(argName="myLakehouse", alias="<My Lakehouse alias>")
+@udf.function()
+async def read_csv_from_lakehouse(myLakehouse: fn.FabricLakehouseClient, csvFileName: str) -> str:
+
+    # Connect to the Lakehouse
+    connection = myLakehouse.connectToFilesAsync()   
+
+    # Download the CSV file from the Lakehouse
+    csvFile = connection.get_file_client(csvFileName)
+
+    downloadFile = await csvFile.download_file()
+    csvData = await downloadFile.readall()
+    
+    # Read the CSV data into a pandas DataFrame
+    from io import StringIO
+    df = pd.read_csv(StringIO(csvData.decode('utf-8')))
+
+    # Display the DataFrame    
+    result="" 
+    for index, row in df.iterrows():
+        result=result + "["+ (",".join([str(item) for item in row]))+"]"
+    
+    # Close the connection
+    csvFile.close()
+    connection.close()
+
+    return f"CSV file read successfully.{result}"
+```
 
 ## Data connections to Fabric data sources
 
@@ -96,7 +167,7 @@ To reference a connection to a data source, you need to use the `@udf.connection
 
 The arguments for `@udf.connection` are:
 
-- `argName`, the name of the variable the connection will use in your function.
+- `argName`, the name of the variable the connection uses in your function.
 - `alias`, the alias of the connection you added with the **Manage connections** menu.
 - If `argName` and `alias` have the same value, you can use `@udf.connection("<alias and argName for the data connection>")`.
 
@@ -162,8 +233,8 @@ def raise_userthrownerror(age: int)-> str:
 ```
 
 This `UserThrownError` method takes two parameters:
-- `Message`: This string will be returned as the error message to the application that is invoking this function.
-- A dictionary of properties that will be returned to the application that is invoking this function.
+- `Message`: This string is returned as the error message to the application that is invoking this function.
+- A dictionary of properties is returned to the application that is invoking this function.
 
 ## Next steps
 - [Reference API documentation](/python/api/fabric-user-data-functions/fabric.functions)
