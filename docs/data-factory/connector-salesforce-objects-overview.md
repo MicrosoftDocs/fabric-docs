@@ -24,6 +24,6 @@ The Salesforce objects connector is supported in Data Factory for [!INCLUDE [pro
 
 ## Related content
 
-To learn about how to connect to Salesforce objects, go to [Set up your Salesforce connection](connector-salesforce-objects.md).
+To learn about how to connect to Salesforce objects, go to [Set up your Salesforce objects connection](connector-salesforce-objects.md).
 
 To learn more about the copy activity configuration for Salesforce objects in data pipelines, go to [Configure in a data pipeline copy activity](connector-salesforce-copy-activity.md).
