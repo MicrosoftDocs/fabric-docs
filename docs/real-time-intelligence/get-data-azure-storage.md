@@ -18,15 +18,12 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
 
     [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
-    > [!NOTE]
-    >
-    > A continuous ingestion stream can affect your billing. For more information, see [Eventhouse and KQL Database consumption](real-time-intelligence-consumption.md).
-    
 * **One-time ingestion**: Use this method to retrieve data from Azure Storage as a one-time operation.
 
 > [!NOTE]
 >
-> Ingestion (continous and one-time) from an Azure Storage account using a [private link](/azure/private-link/private-link-overview) is not supported.
+> * A continuous ingestion stream can affect your billing. For more information, see [Eventhouse and KQL Database consumption](real-time-intelligence-consumption.md).
+> * Ingestion (continous and one-time) from an Azure Storage account using a [private link](/azure/private-link/private-link-overview) is not supported.
 
 ## Prerequisites
 
@@ -34,11 +31,11 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
 * A [KQL database](create-database.md) with editing permissions.
 * An Azure [storage account](/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal).
 
-### Fabric prerequisites for continuous ingestion
+### Prerequisites for continuous ingestion
 
-* A [workspace identity](../security/workspace-identity.md). *My Workspace* isn't supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
+* A Fabric [workspace identity](../security/workspace-identity.md). *My Workspace* isn't supported. If necessary, [Create a new Workspace](../fundamentals/create-workspaces.md).
 
-### Azure prerequisites for continuous ingestion
+In Azure:
 
 * [Register the Event Grid resource provider](/azure/event-grid/subscribe-to-partner-events) with your Azure subscription.
 * Assign [Storage Blob Data Reader](/azure/role-based-access-control/built-in-roles) role permissions to the workspace identity.
