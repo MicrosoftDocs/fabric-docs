@@ -87,7 +87,7 @@
       },
       {
         "source_path_from_root": "/docs/data-science/how-to-consume-data-agent.md",
-        "redirect_url": "/fabric/data-science/data-agent-mcs",
+        "redirect_url": "/fabric/data-science/data-agent-microsoft-copilot-studio",
         "redirect_document_id": true
       }      
     ]
