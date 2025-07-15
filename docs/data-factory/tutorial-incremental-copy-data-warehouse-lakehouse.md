@@ -15,11 +15,9 @@ ai-usage: ai-assisted
 
 In this tutorial, you'll learn how to copy only new or changed data from your Data Warehouse to a Lakehouse. This approach is called incremental loading, and it's helpful when you want to keep your data up-to-date without copying everything each time.
 
-Here's the high-level solution diagram:
+Here's the high-level design of the solution:
 
 :::image type="content" source="media/tutorial-incremental-copy-data-warehouse-lakehouse/logic-introduction.png" alt-text="Diagram showing incrementally load data logic.":::
-
-Here's how to build this solution:
 
 1. **Pick a watermark column**.
 	Choose one column in your source table that helps track new or changed records. This column usually contains values that increase when rows are added or updated (like a timestamp or ID). We'll use the highest value in this column as our "watermark" to know where we left off.
@@ -130,7 +128,9 @@ END
 
 1. Go to [Power BI](https://app.powerbi.com/).
 
-1. Select the Power BI icon in the bottom left of the screen, then select **Fabric** to open your Fabric workspace.
+1. Select the Power BI icon in the bottom left of the screen, then select **Fabric**.
+
+1. Select **My workspace** to open your Fabric workspace.
 
 1. Select **+ New Item**, then select **Data pipeline**, and then enter a pipeline name to create a new pipeline.
 
@@ -142,18 +142,15 @@ END
 
 In this step, you'll create a lookup activity to get the last watermark value. We'll get the default value `1/1/2010 12:00:00 AM` that we set earlier.
 
-1. Select **Add pipeline activity** and select **Lookup** from the drop-down list.
+1. Select **Pipeline activity** and select **Lookup** from the drop-down list.
 
 1. Under the **General** tab, rename this activity to **LookupOldWaterMarkActivity**.
 
 1. Under the **Settings** tab, configure the following:
-    - **Data store type**: Select **Workspace**.
-    - **Workspace data store type**: Select **Data Warehouse**.
-    - **Data Warehouse**: Select your Data Warehouse.
+    - **Connection**: Under **Warehouse** select **Browse all**, and select your data warehouse from the list.
     - **Use query**: Choose **Table**.
     - **Table**: Choose *dbo.watermarktable*.
     - **First row only**: Selected.
-
 
     :::image type="content" source="media/tutorial-incremental-copy-data-warehouse-lakehouse/lookup-old-watermark.png" alt-text="Screenshot showing lookup old watermark.":::
 
@@ -166,9 +163,7 @@ In this step, you'll create a lookup activity to get the new watermark value. Yo
 1. Under the **General** tab, rename this activity to **LookupNewWaterMarkActivity**.
 
 1. Under the **Settings** tab, configure the following:
-    - **Data store type**: Select **Workspace**.
-    - **Workspace data store type**: Select **Data Warehouse**.
-    - **Data Warehouse**: Select your Data Warehouse.
+    - **Connection**: Under **Warehouse** select **Browse all**, and select your data warehouse from the list or select your data warehouse from **Fabric item connections**.
     - **Use query**: Choose **Query**.
     - **Query**: Enter the following query to pick the maximum last modified time as the new watermark:
 
@@ -192,9 +187,8 @@ In this step, you'll add a copy activity to copy the incremental data between th
     :::image type="content" source="media/tutorial-incremental-copy-data-warehouse-lakehouse/connect-lookup-copy.png" alt-text="Screenshot showing connecting lookup and copy activities.":::
 
 1. Under the **Source** tab, configure the following:
-    - **Data store type**: Select **Workspace**.
-    - **Workspace data store type**: Select **Data Warehouse**.
-    - **Data Warehouse**: Select your Data Warehouse.
+    - **Connection**: Under **Warehouse** select **Browse all**, and select your data warehouse from the list or select your data warehouse from **Fabric item connections**.
+    - **Warehouse**: Select your warehouse.
     - **Use query**: Choose **Query**.
     - **Query**: Enter the following query to copy incremental data between the last watermark and new watermark.
 
@@ -205,8 +199,7 @@ In this step, you'll add a copy activity to copy the incremental data between th
     :::image type="content" source="media/tutorial-incremental-copy-data-warehouse-lakehouse/copy-source.png" alt-text="Screenshot showing copy source configuration.":::
 
 1. Under the **Destination** tab, configure the following:
-    - **Data store type**: Select **Workspace**.
-    - **Workspace data store type**: Select **Lakehouse**.
+    - **Connection**: Under **Lakehouse** select **Browse all**, and select your lakehouse from the list or select your lakehouse from **Fabric item connections**.
     - **Lakehouse**: Select your Lakehouse.
     - **Root folder**: Choose **Files**.
     - **File path**: Choose the folder where you want to store your copied data. Select **Browse** to select your folder. For the file name, open **Add dynamic content** and enter `@CONCAT('Incremental-', pipeline().RunId, '.txt')` in the opened window to create file names for your copied data file in Lakehouse.
