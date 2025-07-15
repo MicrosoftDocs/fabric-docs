@@ -710,7 +710,7 @@ items:
   items:
   - name: Copilot for Writing KQL Queries
     displayName: KQL queryset, kusto query language, natural language
-    href: ../fundamentals/copilot-for-writing-queries.md
+    href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
@@ -760,7 +760,7 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
-    - name: Generate Real-Time Dashboard Using Copilot?context=/fabric/context/context-rti&pivots=fabric
+    - name: Generate Real-Time Dashboard Using Copilot
       href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
@@ -839,7 +839,7 @@ items:
       displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
   - name: Troubleshoot errors
     href: data-activator/activator-troubleshooting.md
-- name: Query and visualize data with Copilot
+- name: Analyze data with Copilot
   items:
     - name: Copilot for Writing KQL Queries
       href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
