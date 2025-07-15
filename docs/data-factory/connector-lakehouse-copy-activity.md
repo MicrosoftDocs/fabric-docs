@@ -4,7 +4,7 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/21/2025
+ms.date: 07/15/2025
 ms.custom:
   - pipelines
   - template-how-to
@@ -184,6 +184,25 @@ For example, the type for *PersonID* column in source is int, and you can change
 > Editing the destination type currently is not supported when your source is decimal type.
 
 If you choose Binary as your file format, mapping isn't supported.
+
+#### Data type mapping for Lakehouse table
+
+When copying data from Lakehouse table, the following mappings are used from Lakehouse table data types to interim data types used by the service internally.
+
+| Lakehouse table data type | Interim service data type |
+|---------------------|------------------|
+| string              | UTF8             |
+| long                | INT64            |
+| integer             | INT32            |
+| short               | INT_16           |
+| byte                | INT_8            |
+| float               | FLOAT            |
+| double              | DOUBLE           |
+| decimal             | DECIMAL          |
+| boolean             | BOOLEAN          |
+| binary              | BINARY           |
+| date                | DATE             |
+| timestamp           | INT96            |
 
 ### Settings
 
