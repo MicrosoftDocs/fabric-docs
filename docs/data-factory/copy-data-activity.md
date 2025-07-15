@@ -21,7 +21,7 @@ The Copy activity works by connecting to your data sources and destinations, the
 1. **Provides monitoring**: Tracks the copy operation and provides detailed logs and metrics for troubleshooting and optimization.
 
 > [!TIP]
-> If you only need to copy your data, and don't need transformations, a **Copy job** might be a better option for you. Copy jobs provide a simplified experience for data movement scenarios that don't require creating a full data pipeline. See: [the Copy jobs overview](what-is-copy-job.md) or [use our decision table to compare Copy activity and Copy job](../fundamentals/decision-guide-pipeline-dataflow-spark#copy-activity-copy-job-dataflow-eventstream-and-spark-properties.md).
+> If you only need to copy your data, and don't need transformations, a **Copy job** might be a better option for you. Copy jobs provide a simplified experience for data movement scenarios that don't require creating a full data pipeline. See: [the Copy jobs overview](what-is-copy-job.md) or [use our decision table to compare Copy activity and Copy job](../fundamentals/decision-guide-pipeline-dataflow-spark.md#copy-activity-copy-job-dataflow-eventstream-and-spark-properties).
 
 ## Prerequisites
 
