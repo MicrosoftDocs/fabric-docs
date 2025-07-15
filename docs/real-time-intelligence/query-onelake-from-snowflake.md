@@ -13,8 +13,6 @@ ms.date: 07/15/2025
 
 This article explains how to query Fabric OneLake Delta Tables from Snowflake using the [Snowflake connector for Microsoft Fabric](/fabric/data-factory/connector-snowflake-overview?view=microsoft-fabric&preserve-view=true).
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
