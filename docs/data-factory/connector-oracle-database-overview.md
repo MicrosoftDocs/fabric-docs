@@ -23,7 +23,7 @@ The Oracle database connector is supported in Data Factory for [!INCLUDE [produc
 | **Copy job** (source/destination) <br>- Full load<br>- Append | On-premises | Basic           |
 
 > [!NOTE]
->To use Oracle connector in date pipelines, install [Oracle Client for Microsoft Tools (OCMT)](https://www.oracle.com/database/technologies/appdev/ocmt.html) on the computer running on-premises data gateway. For detailed steps, go to [Prerequisites](connector-oracle-database.md#prerequisites).
+>To use Oracle connector in data pipelines, install [Oracle Client for Microsoft Tools (OCMT)](https://www.oracle.com/database/technologies/appdev/ocmt.html) on the computer running on-premises data gateway. For detailed steps, go to [Prerequisites](connector-oracle-database.md#prerequisites).
 
 ## Related content
 
