@@ -4,7 +4,7 @@ description: A known issue is posted where a service report is missing table too
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/04/2025
+ms.date: 07/11/2025
 ms.custom: known-issue-1163
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1163
 
 When you open a report in the service, you can switch to edit mode. In edit mode, the field list shows up on the left side of the page. When you hover over a table in the field list, you don't see the tooltip that shows the name and description of the field.
 
-**Status:** Open
+**Status:** Fixed: July 11, 2025
 
 **Product Experience:** Power BI
 
