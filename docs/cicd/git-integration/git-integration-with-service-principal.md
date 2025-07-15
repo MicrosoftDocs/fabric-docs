@@ -109,6 +109,36 @@ Consider the following scenarios when registering your app in step 1.
 |3 - Fabric and application in one tenant, DevOps in seperated tenant|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
 |4 - Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
 
+You can create the service principal in the Azure DevOps tenant in several ways.  The following shows how to do this with Azure CLI and PowerShell.  Both examples assume that your application is in tenant A and Azure DevOps is in tenant B.
+
+#### [Azure CLI](#tab/AzureCLI)
+
+ 
+ ```azurecli
+
+ az login --tenant <your-tenant-id>
+
+ az ad sp create --id <app id>
+ ```
+
+ Where:
+    --tenant is the tenant ID of Azure DevOps tenant (tenant B)
+    -- id &lt;app id&gt; is the client ID of the application in tenant A
+
+#### [PowerShell](#tab/PowerShell)
+
+    ```powershell
+    Connect-MgGraph -TenantId "<Tenant B ID>" -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All"
+ 
+ 
+    New-MgServicePrincipal -AppId "12345678-abcd-9876-zyxw-abcdef123456" 
+    ```
+
+Where:
+    -TenantID is the tenant ID of Azure DevOps tenant (tenant B)
+    -AppID is the client ID of the application in tenant A
+---
+
 For more information see [How and why applications are added to Microsoft Entra ID](/entra/identity-platform/how-applications-are-added) and [Tenancy in Microsoft Entra ID](/entra/identity-platform/single-and-multi-tenant-apps).
 
 ## Appendix: Edit service principal connection details
