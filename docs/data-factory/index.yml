@@ -34,6 +34,8 @@ landingContent:
             url: pricing-overview.md
           - text: Migrate to Data Factory in Fabric
             url: upgrade-paths.md
+          - text: Compare Azure Data Factory to Data Factory in Fabric
+            url: compare-fabric-data-factory-and-azure-data-factory.md
       - linkListType: learn
         links:
           - text: Data Factory training
@@ -49,7 +51,7 @@ landingContent:
           url: pipeline-support.md
 
   # Card
-  - title: Connect on-premises to the cloud
+  - title: Connect on-premises from the cloud
     linkLists:
       - linkListType: how-to-guide
         links:

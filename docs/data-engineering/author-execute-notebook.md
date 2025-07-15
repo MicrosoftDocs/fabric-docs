@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.search.form: Develop and run notebooks
 ms.date: 05/29/2025
 ---
@@ -91,10 +91,10 @@ The IntelliSense features are at different levels of maturity for different lang
 > You must have an active Apache Spark session to use IntelliSense code completion.
 
 #### Enhance Python Development with Pylance
- 
+
 > [!NOTE]
 > Currently, the feature is in preview.
- 
+
 Pylance, a powerful and feature-rich language server, is now available in Fabric notebook. Pylance makes Python development easier with smart completions, better error detection, and improved code insights. Key improvements include smarter autocompletion, enhanced lambda support, parameter suggestions, improved hover information, better docstring rendering, and error highlighting. With Pylance, writing Python and PySpark code becomes faster, more accurate, and more efficient.
 
 ### Code snippets
@@ -268,7 +268,6 @@ Select **Cancel all** to cancel the running cells or cells waiting in the queue.
 
 :::image type="content" source="media\author-execute-notebook\cancel-all-stop-session.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\cancel-all-stop-session.png":::
 
-
 ### Reference run
 
 #### Reference run a Notebook
@@ -304,7 +303,7 @@ Examples:
 
 - To run *script_file.py* from the built-in resources with specific variables: ``` %run -b script_file.py { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true, "parameterString": "abc" } ```
 
-> [!NOTE] 
+> [!NOTE]
 > If the command doesn't contain **-b/--builtin**, it attempts to find and execute notebook item inside the same workspace rather than the built-in resources.
 
 Usage example for nested run case:
@@ -348,14 +347,24 @@ In the pop-up, there's an option to reset the timeout to x minutes or hours.
 
 Take your pick in how long you want an uninterrupted session, and hit apply. The session timeout resets itself with the new value and you're good to go!
 
-You can also set timeout as following:
+You can also set timeout as described in:
 
 - [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
-- [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md#spark-session-configuration-magic-command)
+- [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command)
 
-**How do ABT and Idle Session Timeout impact long-running Fabric Notebook executions?**
+**Stay signed in:** During login, if you see the **Stay signed in** dialog, select **Yes** to deactivate the idle session timeout for your current session.
 
-If your tenant uses Activity-Based Timeout (ABT) enabled, long-running interactive jobs in Fabric notebooks may be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, nonmanaged devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
+> [!IMPORTANT]
+> Do not select the **Don’t show this again** checkbox, as this will lock in your sign-in settings permanently. Note that this option might not appear if your tenant admin has disabled the Keep Me Signed In (KMSI) setting.
+
+**Request a policy change:** If you need a longer session duration, ask your tenant admin to extend the idle session timeout duration policy. They can do this by navigating to Org Settings > Security & Privacy > Idle Session Timeout within the M365 Admin Center.
+
+> [!NOTE]
+> Selecting KMSI and/or extending the idle session timeout duration time will extend the risk of an unlocked machine being accessed.
+
+**How do ABT and idle session timeout impact long-running Fabric Notebook executions?**
+
+If your tenant uses activity-based timeout (ABT), long-running interactive jobs in Fabric notebooks may be impacted by Microsoft 365's idle session timeout policy. This security feature is designed to sign out users on inactive, nonmanaged devices, even if a notebook job is still running. While activity in other Microsoft 365 apps can keep the session alive, idle devices are signed out by design.
 
 **Why are users signed out even when a notebook job is still running?**
 
@@ -555,6 +564,30 @@ You can personalize your Spark session with the magic command **%%configure**. F
 > - The standard Spark configuration properties must be used in the "conf" body. Fabric doesn't support first level reference for the Spark configuration properties.
 > - Some special Spark properties, including "spark.driver.cores", "spark.executor.cores", "spark.driver.memory", "spark.executor.memory", and "spark.executor.instances" don't take effect in "conf" body.
 
+You can also use `%%configure` magic command to dynamically inject configuration values from the [Variable Library](../cicd/variable-library/variable-library-overview.md) into your notebook.
+
+```json
+%%configure
+{
+  "defaultLakehouse": {
+    "name": {
+      "variableName": "$(/**/myVL/LHname)" 
+    },
+    "id": {
+      "variableName": "$(/**/myVL/LHid)"
+    },
+    "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>"
+  }
+}
+```
+
+In this example:
+- `myVL` is the name of your Variable Library.
+- `LHname` and `LHid` are variable keys defined in the library.
+- These values are resolved at runtime depending on the active environment (e.g. Dev, Test, Prod).
+
+This allows you to switch configurations like default lakehouse without modifying your notebook code.
+
 ## Parameterized session configuration from a pipeline
 
 Parameterized session configuration allows you to replace the value in %%configure magic with the pipeline run notebook activity parameters. When preparing %%configure code cell, you can override default values (also configurable, 4 and "2000" in the below example) with an object like this:
@@ -637,7 +670,7 @@ customizedLogger.critical("customized critical message")
 
 ## View the history of input commands
 
-Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook. 
+Fabric notebook support magic command ```%history``` to print the input command history that executed in the current session, comparing to the standard Jupyter Ipython command the ```%history``` works for multiple languages context in notebook.
 
 ``` %history [-n] [range [range ...]] ```
 
@@ -707,4 +740,3 @@ To find all shortcut keys, select **View** on the notebook ribbon, and then sele
 
 - [Notebook visualization](notebook-visualization.md)
 - [Introduction of Fabric NotebookUtils](notebook-utilities.md)
-

@@ -5,8 +5,8 @@ ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
-ms.custom:
-ms.date: 11/11/2024
+ms.custom: sfi-image-nochange
+ms.date: 07/03/2025
 ---
 
 # Configure high concurrency mode for Fabric notebooks
@@ -81,6 +81,8 @@ By default, all the Fabric workspaces are enabled with high concurrency mode. Us
 1. You can view the session status, type, and ID in the **status bar**. Select the **Session ID** to explore the jobs executed in this high concurrency session and to view logs of the spark session on the monitoring detail page.
 
    :::image type="content" source="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png" alt-text="Screenshot showing the session details of a high concurrency session in the Notebook menu." lightbox="media\high-concurrency-mode-for-notebooks\monitoring-front-door.png":::
+
+You can also configure high concurrency mode for notebooks in pipelines and use [session tags to group shared sessions](configure-high-concurrency-session-notebooks-in-pipelines.md#use-session-tag-in-notebook-to-group-shared-sessions).
 
 ## Monitoring and debugging notebooks running in high concurrency session
 

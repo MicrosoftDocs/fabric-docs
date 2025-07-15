@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 07/01/2024
+ms.date: 07/09/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -14,18 +14,16 @@ ms.custom:
 
 The Salesforce objects connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities                                                                 | Gateway                        | Authentication   |
+|----------------------------------------------------------------------------------------|--------------------------------|------------------|
+| **Dataflow Gen2** (source/-)                                                 | None<br> On-premises<br> Virtual network | Organizational account |
+| **Data pipeline** <br>- [Copy activity](connector-salesforce-copy-activity.md) (source/destination)<br>- Lookup activity        | None<br> On-premises<br> Virtual network | Organizational account |
+| **Copy job** (source/destination) <br>- Full load<br>- Append | None<br> On-premises<br> Virtual network | Organizational account |
 
-For information on how to connect to Salesforce objects in Dataflow Gen2, go to [Set up your Salesforce objects connection](connector-salesforce-objects.md).
+## Related content
 
-## Support in data pipelines
-
-The Salesforce objects connector supports the following capabilities in data pipelines:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | Organizational account |
-| **Lookup activity** | None <br> On-premises | Organizational account |
+To learn about how to connect to Salesforce objects, go to [Set up your Salesforce objects connection](connector-salesforce-objects.md).
 
 To learn more about the copy activity configuration for Salesforce objects in data pipelines, go to [Configure in a data pipeline copy activity](connector-salesforce-copy-activity.md).

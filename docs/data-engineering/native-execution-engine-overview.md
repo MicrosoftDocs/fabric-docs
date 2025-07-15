@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 01/06/2025
 ---
 
@@ -194,8 +194,6 @@ You can also select on the query description for the Apache Spark query executio
 While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts performance for Apache Spark jobs, it currently has the following limitations:
 
 ### Existing limitations
-
-- **Unsupported Delta features: Deletion vectors**: Deletion vectors in Delta Lake are not currently supported. Queries relying on this feature will automatically fall back to the standard Spark engine.  
 
 - **Incompatible Spark features**: Native execution engine does not currently support user-defined functions (UDFs), the `array_contains` function, or structured streaming. If these functions or unsupported features are used either directly or through imported libraries, Spark will revert to its default engine.
 

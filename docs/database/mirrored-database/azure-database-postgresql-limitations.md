@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure Da
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scoriani
-ms.date: 03/31/2025
+ms.date: 07/15/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -20,8 +20,9 @@ For troubleshooting, see:
 
 ## Server level limitations
 
+- Fabric Mirroring is supported for PostgreSQL versions 14, 15, 16, and 17.
 - Servers in the Burstable Compute Tier are currently not supported. 
-- Servers with High Availability enabled or with established Read Replicas are currently not supported.
+- Servers with High Availability enabled are currently not supported.
 
 ## Database level limitations
 
@@ -33,18 +34,15 @@ For troubleshooting, see:
 
 ## Permissions in the source database
 
-- Permissions defined in Azure Database for PostgreSQL flexible server are not propagated to the replicated data in Fabric OneLake.
-- To successfully configure Mirroring for Azure Database for PostgreSQL flexible server, the database role used to connect to the source server must be granted the `azure_cdc_admin` role and `REPLICATION` privilege. Here's an example of how you create a dedicated database role for mirroring:
+<!-- Maintain similar content in docs\database\mirrored-database\azure-database-postgresql-tutorial.md -->
 
-    ```sql
-    CREATE ROLE fabric_user  CREATEDB CREATEROLE LOGIN REPLICATION PASSWORD '<strong password>';
-    GRANT azure_pg_admin TO fabric_user;
-    ```
+- Permissions defined in Azure Database for PostgreSQL flexible server are not propagated to the replicated data in Fabric OneLake.
+- To successfully configure Mirroring for Azure Database for PostgreSQL flexible server, the database role used to connect to the source server must be granted the permissions needed for Fabric mirroring in the database. You must grant the `CREATEDB`, `CREATEROLE`, `LOGIN`, `REPLICATION`, and `azure_cdc_admin` permissions to a new role named `fabric_user`. For a sample script, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL](azure-database-postgresql-tutorial.md#use-a-database-role).
+- The `fabric_user` database role also needs to be `owner` of the tables in the source database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE xxx OWNER TO fabric_user;`. When switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html). 
 
 ## Network and connectivity security
 
-- Mirroring is currently not supported for Azure Database for PostgreSQL flexible servers using Azure virtual network integration or Private Endpoints.
-- To connect to the source Azure Database for PostgreSQL flexible server, you need to [Enable public access](/azure/postgresql/flexible-server/how-to-networking-servers-deployed-public-access-enable-public-access?tabs=portal-enable-public-access) and [Allow all Azure IP addresses](/azure/postgresql/flexible-server/concepts-networking-public#use-public-access-networking-with-azure-database-for-postgresql-flexible-server).
+- If your Flexible Server is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for PostgreSQL flexible server via a private endpoint or is allowed by the firewall rule.
 - The Azure Database for PostgreSQL flexible server's [System Assigned Managed Identity (SAMI) needs to be enabled](/azure/postgresql/flexible-server/how-to-configure-managed-identities-system-assigned) and must be the primary identity.
 
 ## Table level

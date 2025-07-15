@@ -4,7 +4,7 @@ description: A known issue is posted where the data warehouse in second workspac
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/18/2025
+ms.date: 06/12/2025
 ms.custom: known-issue-1103
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1103
 
 You can associate two workspaces with Git. You can either create the second workspace manually or use the **Branch out to another workspace** feature. If you have a data warehouse in one of the workspaces, you can't update the data warehouse from Git.
 
-**Status:** Open
+**Status:** Fixed: June 12, 2025
 
 **Product Experience:** Data Warehouse
 

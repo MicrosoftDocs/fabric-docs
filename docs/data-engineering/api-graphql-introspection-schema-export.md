@@ -54,7 +54,7 @@ To learn more about introspection, see the [GraphQL Foundation's official docume
 
 ## Export schema
 
-Another way to retrieve schema information is using the GraphQL schema export. It works directly from the Fabric portal. Open your API for GraphQL and select **Export schema**. And your browser will download an SDL (Schema Definition Language) file with full schema. You can then use this SDL file in any development tool or service. 
+Another way to retrieve schema information is using the GraphQL schema export. It works directly from the Fabric portal. Open your API for GraphQL and select **Export schema**. And your browser will download an SDL (Schema Definition Language) file with full schema. You can then use this SDL file in any development tool or service such as, for example, integrating with [Azure API Management](api-graphql-azure-api-management.md). 
 
 ![Screenshot that shows the export schema button.](media/api-graphql-introspection-schema-export/export-schema.png)
 
@@ -62,3 +62,4 @@ Another way to retrieve schema information is using the GraphQL schema export. I
 
 - [Fabric API for GraphQL Editor](api-graphql-editor.md)
 - [Fabric API for GraphQL schema view and Schema explorer](graphql-schema-view.md)
+- [Integrate with Azure API Management (APIM)](api-graphql-azure-api-management.md)

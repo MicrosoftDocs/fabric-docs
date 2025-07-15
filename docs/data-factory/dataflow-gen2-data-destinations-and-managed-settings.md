@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 05/09/2025
+ms.date: 07/13/2025
 ms.custom: dataflows
 ---
 
@@ -53,7 +53,7 @@ When you choose a file-based destination like SharePoint, you need to specify a 
 
 * File name: The name of the file that will be created in the destination. By default, the file name is the same as your query name.
 * File format: The format of the file that will be created in the destination.
-* File origin: The encoding that will be used to create the file in the destination. By default, the file origin is set to **UTF-8**.
+* File origin: The encoding that's used to create the file in the destination. By default, the file origin is set to **UTF-8**.
 * File delimiter: The delimiter that will be used to create the file in the destination. By default, the file delimiter is set to **Comma**.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/file-destinations-settings.png" alt-text="Screenshot of the File destination settings window with the file name, file format, file origin, and file delimiter settings displayed.":::
@@ -113,7 +113,7 @@ Most destinations support both append and replace as update methods. However, Fa
 
 Schema options on publish only apply when the update method is replace. When you append data, changes to the schema aren't possible.
 
-* **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination flow when you make any changes to your query. When the dataflow is refreshed, your table is dropped and recreated. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
+* **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination wizard when you make any changes to your query. When a refresh detects a discrepancy between the destination schema and the expected schema, the table is dropped and then recreated to align with the expected schema. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 
 * **Fixed schema**: When you choose fixed schema, schema changes aren't possible. When the dataflow gets refreshed, only the rows in the table are dropped and replaced with the output data from the dataflow. Any relationships or measures on the table stay intact. If you make any changes to your query in the dataflow, the dataflow publish fails if it detects that the query schema doesn't match the data destination schema. Use this setting when you don't plan to change the schema and have relationships or measure added to your destination table.
 
@@ -121,6 +121,17 @@ Schema options on publish only apply when the update method is replace. When you
 > When loading data into the warehouse, only fixed schema is supported.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/fixed-schema.png" alt-text="Screenshot of the Schema options on publish option, with Fixed schema selected.":::
+
+## Parameterization
+
+[Parameters](/power-query/power-query-query-parameters) are a core experience within Dataflow Gen2. Once a parameter is created or you use the "Always allow" setting, an input widget is made available to define the table or file name for your destination.
+
+![Screenshot of the data destination experience where the table name is using a parameter called "TableName" and the input widget is shown.](media/dataflow-gen2-data-destinations-and-managed-settings/parameter-table-name.png)
+
+> [!NOTE]
+> Parameters in the data destination can also be applied directly through the M script created for the queries related to it. You can manually alter the script of your data destination queries to apply the parameters to meet your requirements.
+> However, the user interface currently only supports parameterization for the table or file name field.
+
 
 ## Supported data source types per destination
 
@@ -138,6 +149,8 @@ Schema options on publish only apply when the update method is replace. When you
 | Time                             | Yes | Yes | No  | No | No   | Yes |
 | Type                             | No  | No  | No  | No  | No  | No  |
 | Structured (List, Record, Table) | No  | No  | No  | No  | No  | No  |
+
+When working with data types such as currency or percentage, we typically convert them to their decimal equivalents for most destinations. However, when reconnecting to these destinations and following the existing table path, you might encounter difficulties mapping, for example, currency to a decimal column. In such cases, try changing the data type in the editor to decimal, as this will facilitate easier mapping to the existing table and column.
 
 ## Advanced topics
 

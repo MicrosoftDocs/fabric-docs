@@ -64,7 +64,15 @@ items:
     - name: Fabric data agent SDK
       href: fabric-data-agent-sdk.md
     - name: Evaluate a Fabric data agent
-      href: evaluate-data-agent.md      
+      href: evaluate-data-agent.md
+    - name: Configure your Fabric data agent
+      items:
+        - name: Data agent configurations
+          href: data-agent-configurations.md
+        - name: Best practices for configuring data agents 
+          href: data-agent-configuration-best-practices.md
+        - name: How to configure a data agent
+          href: develop-iterative-process-data-agent.md
     - name: How to consume a Fabric data agent
       items:
         - name: Consume a data agent from Azure AI foundry (preview)

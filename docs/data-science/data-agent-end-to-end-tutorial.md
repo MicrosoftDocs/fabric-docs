@@ -1,9 +1,9 @@
 ---
 title: Fabric data agent scenario (preview)
 description: Learn how to configure a Fabric data agent on the AdventureWorks dataset.
-author: fbsolo-ms1
+author: jonburchel
 ms.author: amjafari
-ms.reviewer: franksolomon
+ms.reviewer: jburchel
 reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
@@ -19,15 +19,7 @@ This article describes how to set up a data agent in Microsoft Fabric, using a l
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-## Prerequisites
-
-- [A paid F2 or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
-- [Fabric data agent tenant settings](./data-agent-tenant-settings.md) is enabled.
-- [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- At least one of these: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
-- [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
+[!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
 ## Create a lakehouse with AdventureWorksLH
 
@@ -44,7 +36,7 @@ If you already have an instance of AdventureWorksLH in a lakehouse (or a warehou
     ```python
     import pandas as pd
     from tqdm.auto import tqdm
-    base = "https://synapseaisolutionsa.blob.core.windows.net/public/AdventureWorks"
+    base = "https://synapseaisolutionsa.z13.web.core.windows.net/data/AdventureWorks"
     
     # load list of tables
     df_tables = pd.read_csv(f"{base}/adventureworks.csv", names=["table"])

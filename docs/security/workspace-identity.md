@@ -1,8 +1,8 @@
 ---
 title: Workspace identity
 description: Learn about workspace identity in Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 08/28/2024
@@ -69,6 +69,9 @@ The following sections describe who can use the workspace identity, and how you 
 ### Access control
 
 Workspace identity can be [created and deleted by workspace admins](#create-and-manage-a-workspace-identity). The workspace identity has the workspace contributor role on the workspace.
+
+> [!WARNING]
+> Workspace identity is an automatically managed service principal created by Fabric users. Access to this identity should be carefully managed and monitored, as any individual given access to the identity is allowed to assume it.
 
 Workspace identity is supported for authentication to target resources in connections. Only users with an admin, member, or contributor role in the workspace can configure the workspace identity for authentication in connections.
 

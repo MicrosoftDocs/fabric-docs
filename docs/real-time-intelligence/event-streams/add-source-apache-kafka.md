@@ -24,8 +24,6 @@ Apache Kafka is an open-source, distributed platform for building scalable, real
 - An Apache Kafka cluster running. 
 - Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network.  
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 
 ## Add Apache Kafka as a source 
 
