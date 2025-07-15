@@ -122,20 +122,20 @@ You can create the service principal in the Azure DevOps tenant in several ways.
  ```
 
  Where:
-    --tenant is the tenant ID of Azure DevOps tenant (tenant B)
+    --tenant is the tenant ID of Azure DevOps tenant (tenant B) </br>
     -- id &lt;app id&gt; is the client ID of the application in tenant A
 
 #### [PowerShell](#tab/PowerShell)
 
-    ```powershell
-    Connect-MgGraph -TenantId "<Tenant B ID>" -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All"
+ ```powershell
+ Connect-MgGraph -TenantId "<Tenant B ID>" -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All"
  
  
-    New-MgServicePrincipal -AppId "12345678-abcd-9876-zyxw-abcdef123456" 
-    ```
+ New-MgServicePrincipal -AppId "12345678-abcd-9876-zyxw-abcdef123456" 
+ ```
 
-Where:
-    -TenantID is the tenant ID of Azure DevOps tenant (tenant B)
+ Where:
+    -TenantID is the tenant ID of Azure DevOps tenant (tenant B)</br>
     -AppID is the client ID of the application in tenant A
 ---
 
