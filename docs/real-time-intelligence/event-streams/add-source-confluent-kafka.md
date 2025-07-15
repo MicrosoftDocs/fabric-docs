@@ -43,9 +43,10 @@ After you complete these steps, the Confluent Cloud for Apache Kafka source is a
 
 :::image type="content" source="./media/add-source-confluent-kafka/live-view.png" alt-text="Screenshot that shows Confluent Cloud for Apache Kafka source in Live view." lightbox="./media/add-source-confluent-kafka/live-view.png":::
 
-To preview events from this Confluent Cloud for Apache Kafka source, ensure that the API key used to create the cloud connection has **read permission** for consumer groups prefixed with **preview-**. If the API key was created using a **user account**, no additional steps are required, as this type of key already has full access to your Confluent Cloud for Apache Kafka resources, including read permission for consumer groups prefixed with **preview-**. However, if the key was created using a **service account**, you need to manually **grant read permission** to consumer groups prefixed with **preview-** in order to preview events.
-
-:::image type="content" source="./media/add-source-confluent-kafka/data-preview.png" alt-text="Screenshot that shows Confluent Cloud for Apache Kafka source data preview." lightbox="./media/add-source-confluent-kafka/data-preview.png":::
+> [!NOTE]
+> To preview events from this Confluent Cloud for Apache Kafka source, ensure that the API key used to create the cloud connection has **read permission** for consumer groups prefixed with **"preview-"**. If the API key was created using a **user account**, no additional steps are required, as this type of key already has full access to your Confluent Cloud for Apache Kafka resources, including read permission for consumer groups prefixed with **"preview-"**. However, if the key was created using a **service account**, you need to manually **grant read permission** to consumer groups prefixed with **"preview-"** in order to preview events.
+>
+> :::image type="content" source="./media/add-source-confluent-kafka/data-preview.png" alt-text="Screenshot that shows Confluent Cloud for Apache Kafka source data preview." lightbox="./media/add-source-confluent-kafka/data-preview.png":::
 
 ## Related content
 

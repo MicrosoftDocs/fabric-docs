@@ -48,9 +48,10 @@ After you complete these steps, the Apache Kafka source is available for visuali
 
 :::image type="content" source="./media/add-source-apache-kafka/live-view.png" alt-text="Screenshot that shows Apache Kafka source in Live view." lightbox="./media/add-source-apache-kafka/live-view.png":::
 
-To preview events from this Apache Kafka source, ensure that the key used to create the cloud connection has **read permission** for consumer groups prefixed with **preview-**.
-
-:::image type="content" source="./media/add-source-apache-kafka/data-preview.png" alt-text="Screenshot that shows Apache Kafka source data preview." lightbox="./media/add-source-apache-kafka/data-preview.png":::
+> [!NOTE]
+> To preview events from this Apache Kafka source, ensure that the key used to create the cloud connection has **read permission** for consumer groups prefixed with **"preview-"**. 
+>
+> :::image type="content" source="./media/add-source-apache-kafka/data-preview.png" alt-text="Screenshot that shows Apache Kafka source data preview." lightbox="./media/add-source-apache-kafka/data-preview.png":::
 
 
 ## Related content
