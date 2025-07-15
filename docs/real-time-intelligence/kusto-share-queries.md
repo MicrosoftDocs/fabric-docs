@@ -26,7 +26,7 @@ To copy and share the queries you create, follow these steps:
 
     :::image type="content" source="media/kusto-share-queries/copy.png" alt-text="Screenshot of the Copy query dialog box.":::
 1. Select the desired action(s) from the list in the dialog box:
-    1. Copy a link that can be used to run the query.
+    1. Copy a deep link that can be used to run the query.
         :::image type="content" source="media/kusto-share-queries/link.png" alt-text="Screenshot of the copy query link in the dialog box":::
     1. Copy the text of the query.
         :::image type="content" source="media/kusto-share-queries/code.png" alt-text="Screenshot of the copy query code in the dialog box":::
