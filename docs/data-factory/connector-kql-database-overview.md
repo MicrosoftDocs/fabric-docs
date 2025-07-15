@@ -4,7 +4,7 @@ description: This article explains the overview of using KQL Database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 07/09/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -12,19 +12,17 @@ ms.custom:
 
 # KQL Database connector overview
 
-This KQL Database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The KQL Database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-To learn about how to connect to a KQL database in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-kql-database.md#set-up-your-connection-in-dataflow-gen2).
+| Supported capabilities                                                                 | Gateway                        | Authentication   |
+|----------------------------------------------------------------------------------------|--------------------------------|------------------|
+| **Dataflow Gen2** (source/destination)                                                 | None<br> On-premises<br> Virtual network | Organizational account |
+| **Data pipeline** <br>- [Copy activity](connector-kql-database-copy-activity.md) (source/destination)<br>- Lookup activity        | None<br> On-premises<br> Virtual network | Organizational account |
 
-## Support in data pipelines
+## Related content
 
-The KQL Database connector supports the following capabilities in data pipelines.
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | User Auth |
-| **Lookup activity** | None <br> On-premises | User Auth |
+To learn about how to connect to KQL Database, go to [Set up your KQL Database connection](connector-kql-database.md).
 
 To learn about the copy activity configuration for KQL Database in data pipelines, go to [Configure KQL Database in a copy activity](connector-kql-database-copy-activity.md).
