@@ -96,9 +96,7 @@ To create the source control connection, use the following details and steps.
 ## Multi-tenat considerations for service principal creation
 To access resources that are secured by a Microsoft Entra tenant, your application must be represented by a security principal. When you create your application, the service principal is auto-created on the tenant which the application resides.
 
-In cases where your applications tenant is differnt than the home tenant of your Azure DevOps instance, you will need to create the service prinicipal, in the Azure DevOps tenant. This requires granting the application admin consent.  For more information, see [Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent).
-
-Consider the following scenarios when registering your app in step 1.
+In cases where your applications tenant is differnt than the home tenant of your Azure DevOps instance, you will need to create the service prinicipal, in the Azure DevOps tenant. Consider the following scenarios when registering your app in step 1 and see the examples below on how to do this using either Azure CLI or PowerShell.
 
  :::image type="content" source="media/git-integration-with-service-principal/multi-tenant-1.png" alt-text="Diagram showing where ADO may reside." lightbox="media/git-integration-with-service-principal/multi-tenant-1.png":::
 
@@ -109,7 +107,7 @@ Consider the following scenarios when registering your app in step 1.
 |3 - Fabric and application in one tenant, DevOps in seperated tenant|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
 |4 - Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multi-tenant apps|[Grant admin consent to create SP](/entra/identity/enterprise-apps/grant-admin-consent?pivots=portal#construct-the-url-for-granting-tenant-wide-admin-consent)|
 
-You can create the service principal in the Azure DevOps tenant in several ways.  The following shows how to do this with Azure CLI and PowerShell.  Both examples assume that your application is in tenant A and Azure DevOps is in tenant B.
+You can create the service principal in the Azure DevOps tenant using one of the examples below.  The following shows how to do this with Azure CLI and PowerShell.  Both examples assume that your application is in tenant A and Azure DevOps is in tenant B.
 
 #### [Azure CLI](#tab/AzureCLI)
 
