@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure Database for 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scoriani, maghan
-ms.date: 07/07/2025
+ms.date: 07/15/2025
 ms.topic: tutorial
 ---
 
@@ -23,8 +23,7 @@ ms.topic: tutorial
     - [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../../admin/tenant-settings-index.md#onelake-settings)
 - You need to have a member or admin role in your workspace when create a mirrored database from the Fabric portal. During creation, the managed identity of Azure Database for PostgreSQL is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
-- Networking requirements for Fabric to access your Azure Database for PostgreSQL flexible server:
-    - Check your networking requirements for Fabric to access your Azure Database for PostgreSQL flexible server: If your Flexible Server is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for PostgreSQL flexible server via a private endpoint or is allowed by the firewall rule.
+- If your Flexible Server is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for PostgreSQL flexible server via a private endpoint or is allowed by the firewall rule.
 
 ## Prepare your Azure Database for PostgreSQL
 
@@ -72,7 +71,7 @@ You can accomplish this by specifying a [database role](#use-a-database-role) fo
 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
-1. Navigate to the **Create** pane or click **New item** button. Select the **Create** icon.
+1. Navigate to the **Create** pane or select the **New item** button. Select the **Create** icon.
 1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure Database for PostgreSQL (preview)**.
 
 ## Connect to your Azure Database for PostgreSQL flexible server
@@ -89,7 +88,7 @@ The following steps guide you through the process of creating the connection to 
    - **Authentication kind** (only Basic is available in the current preview):
        - Basic (PostgreSQL Authentication)
     - Leave **Use encrypted connection** checkbox selected, and **This connection can be used with on-premises data gateway and VNET data gateway** unselected.
-1. Click **Connect**.
+1. Select **Connect**.
 
 ## Start mirroring process
 

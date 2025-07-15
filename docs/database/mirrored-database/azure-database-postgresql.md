@@ -4,7 +4,7 @@ description: Learn about the mirrored databases from Azure Database for PostgreS
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scoriani
-ms.date: 03/21/2025
+ms.date: 07/15/2025
 ms.topic: conceptual
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -44,6 +44,8 @@ Each mirrored database in Azure Database for PostgreSQL flexible server has an a
 In addition to the [SQL query editor](../../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling that can query the SQL analytics endpoint, including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot. 
 
 ## Network requirements
+
+<!-- Maintain similar content in docs\database\mirrored-database\azure-database-postgresql-tutorial.md and docs\database\mirrored-database\azure-database-postgresql-limitations.md -->
 
 If your Flexible Server is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for PostgreSQL flexible server via a private endpoint or is allowed by the firewall rule.
 
