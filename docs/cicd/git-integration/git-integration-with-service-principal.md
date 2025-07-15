@@ -116,27 +116,21 @@ You can create the service principal in the Azure DevOps tenant in several ways.
  
  ```azurecli
 
- az login --tenant <your-tenant-id>
+ az login --tenant <your-tenant-id> # where --tenant is the tenant ID of Azure DevOps tenant (tenant B)
 
- az ad sp create --id <app id>
+ az ad sp create --id <app id> # where --id <app id> is the client ID of the application in tenant A
  ```
-
- Where:
-    --tenant is the tenant ID of Azure DevOps tenant (tenant B) </br>
-    -- id &lt;app id&gt; is the client ID of the application in tenant A
-
 #### [PowerShell](#tab/PowerShell)
 
  ```powershell
- Connect-MgGraph -TenantId "<Tenant B ID>" -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All"
+ Connect-MgGraph -TenantId "<Tenant B ID>" -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All" # Where -TenantID is the tenant ID of Azure DevOps tenant (tenant B)
  
  
- New-MgServicePrincipal -AppId "12345678-abcd-9876-zyxw-abcdef123456" 
+ New-MgServicePrincipal -AppId "12345678-abcd-9876-zyxw-abcdef123456" # Where -AppID is the client ID of the application in tenant A
  ```
 
- Where:
-    -TenantID is the tenant ID of Azure DevOps tenant (tenant B)</br>
-    -AppID is the client ID of the application in tenant A
+   
+   
 ---
 
 For more information see [How and why applications are added to Microsoft Entra ID](/entra/identity-platform/how-applications-are-added) and [Tenancy in Microsoft Entra ID](/entra/identity-platform/single-and-multi-tenant-apps).
