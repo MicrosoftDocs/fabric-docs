@@ -36,6 +36,32 @@ To create Variable library items in Fabric, you need:
 
 Before you create a Variable library, make sure you understand who will have [permission](./variable-library-permissions.md) to access it.
 
+
+## Security Considerations and Permissions Management for Fabric Variable Libraries
+
+Fabric Variable Libraries are powerful constructs that enable centralized management of variables across multiple Fabric items. However, this flexibility introduces critical security considerations. Since Variable Libraries themselves are Fabric items, they are governed by their own permission sets, which may differ from those of the items that consume their variables. This discrepancy can lead to scenarios where a user has write access to a Variable Library but lacks any access to the consuming item. 
+
+In such cases, the user could maliciously or inadvertently alter variable values, thereby influencing the behavior of downstream items—potentially mounting attacks or causing data integrity issues.
+
+To mitigate these risks, two key practices are essential:
+
+   1. **Strict Permission Controls**: Administrators must carefully manage write permissions on Variable Libraries, ensuring that only trusted users or services can modify them. This includes avoiding overly permissive access and regularly auditing permission assignments.
+   2. **Trusted Library References**: Items should only reference variables from libraries that are explicitly designated as trusted. This trust model should be enforced through governance policies and tooling that validate the source of variable references during development and deployment.
+ 
+Failure to implement these controls can result in unauthorized users—who may have write access to a Variable Library but no access to the consuming item—modifying variable values in ways that intentionally or unintentionally alter the behavior of downstream items. This creates a potential attack vector where malicious updates to shared variables could compromise the integrity, security, or functionality of dependent Fabric items.
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Create a Variable library item
 
 You can create a Variable library item from the Fabric home page or from inside your workspace.
