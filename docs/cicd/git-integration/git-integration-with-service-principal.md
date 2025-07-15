@@ -124,7 +124,7 @@ You can create the service principal in the Azure DevOps tenant using one of the
  Connect-MgGraph -TenantId "<Tenant B ID>" -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All" # Where -TenantID is the tenant ID of Azure DevOps tenant (tenant B)
  
  
- New-MgServicePrincipal -AppId "12345678-abcd-9876-zyxw-abcdef123456" # Where -AppID is the client ID of the application in tenant A
+ New-MgServicePrincipal -AppId "00001111-aaaa-2222-bbbb-3333cccc4444" # Where -AppID is the client ID of the application in tenant A
  ```
 
    
