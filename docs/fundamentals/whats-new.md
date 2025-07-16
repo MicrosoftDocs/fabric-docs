@@ -344,6 +344,8 @@ For older updates, review the [Microsoft Fabric What's New archive](whats-new-ar
 |May 2025|**Extracting deeper insights with Fabric data agents in Copilot in Power BI**|You can use [Fabric data agents in Copilot in Power BI](https://blog.fabric.microsoft.com/blog/extracting-deeper-insights-with-fabric-data-agents-in-copilot-in-power-bi?ft=All) to connect to more data sources and extract richer insights in Power BI. For more information, see [Create a Fabric data agent](../data-science/how-to-create-data-agent.md).|
 |May 2025|**Accelerate AI on Oracle databases with Open Mirroring, Fabric Data Agent, and Azure AI Foundry**|[Accelerate AI on Oracle databases with Open Mirroring, Fabric Data Agent, and Azure AI Foundry](https://blog.fabric.microsoft.com/blog/accelerate-ai-on-oracle-databases-with-open-mirroring-fabric-data-agent-and-azure-ai-foundry?ft=All) shows how to integrate Oracle databases with Microsoft Fabric and Azure AI Foundry for advanced analytics and AI scenarios. For more information, see [Open Mirroring in Fabric](https://aka.ms/mirroring/open-mirroring-docs).|
 
+<a id="cosmos-db-in-microsoft-fabric"></a>
+
 ## Cosmos DB in Microsoft Fabric (Preview)
 
 This section summarizes recent improvements and features for [Cosmos DB in Microsoft Fabric](../database/cosmos-db/overview.md).
@@ -351,6 +353,8 @@ This section summarizes recent improvements and features for [Cosmos DB in Micro
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
 |July 2025|**Cosmos DB in Microsoft Fabric (preview)**|The preview of [Cosmos DB in Microsoft Fabric](../database/cosmos-db/overview.md) is now available to all users. Since its announcement at Microsoft Build 2025, several new capabilities have been added, including [vector indexing and search](../database/cosmos-db/index-vector-data.md). For more information, see [Announcing Cosmos DB in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/announcing-cosmos-db-in-microsoft-fabric-preview-with-exciting-new-features?ft=All). To get started, see [Quickstart: Create a Cosmos DB database in Microsoft Fabric (preview)](../database/cosmos-db/quickstart-portal.md).|
+
+<a id="sql-database-in-microsoft-fabric"></a>
 
 ## SQL database in Microsoft Fabric (Preview)
 
