@@ -5,7 +5,7 @@ description: Learn about the current limitations and restrictions when using Cos
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 07/16/2025
 ms.search.form: Databases Limitations
 ms.custom: references_regions
 appliesto:
@@ -22,13 +22,15 @@ This article lists current limitations for Cosmos DB in Fabric.
 
 ## Quotas and limits
 
-- Databases support a maximum of **25** containers.
+- Containers support a maximum autoscale throughput of **10,000** request units per second (RU/s). 
 
-- Databases support a maximum of **10,000** request units per second (RU/s).
+- Containers created in the Fabric portal are automatically allocated **5,000** RU/s. Containers created using a software development kit (SDK) can be set up to the maximum allowed autoscale throughput.
+
+- Container throughput can't be changed once the container is created.
 
 ## Regional availability
 
-- The following regions aren't* supported as **capacity** regions during the preview. These regions can be selected as your **home** region, but the paired **capacity** region must be selected from a supported region not included in this list:
+- The following regions aren't supported as Cosmos DB in Fabric regions. These regions can be your **home** region, but can't contain Fabric capacity used for Cosmos DB in Fabric:
 
   - West US 3
 
@@ -79,10 +81,6 @@ This article lists current limitations for Cosmos DB in Fabric.
 ## Authorization
 
 - Setting Fabric [item permissions](../../security/permission-model.md#item-permissions) is currently not supported.
-
-## Configuration
-
-- Modifying the throughput of an existing container isn't supported.
 
 ## Programmability
 
