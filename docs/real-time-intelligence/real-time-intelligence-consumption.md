@@ -37,7 +37,7 @@ Capacity is a dedicated set of resources that is available at a given time to be
 > For example, a database using 4 virtual cores that is active for 30 seconds will use 120 seconds of Capacity Units.
 
 > [!NOTE]
-> If your KQL database is a subitem of an eventhouse, the Eventhouse UpTime is relfected in the eventhouse item and the database item isn't shown in the list.
+> If your KQL database is a subitem of an eventhouse, the Eventhouse UpTime is reflected in the eventhouse item and the database item isn't shown in the list.
 
 ### Monitor Eventhouse UpTime
 
@@ -65,7 +65,7 @@ Storage is billed separately from your Fabric or Power BI Premium Capacity units
 * **OneLake Cache Storage** is premium storage that is utilized to provide the fastest query response times. When you set the [cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context-rti&pivots=fabric), you affect this storage tier. For instance, if you typically query back seven days then you can set the cache retention to seven days for best performance. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) premium tier.
 
 > [!NOTE]
-> Enabling [minimum consumption](manage-monitor-eventhouse.md#enable-minimum-consumption) means that you aren't charged for *OneLake Cache Storage*. When minimum capacity is set, the eventhouse is always active resulting in 100% Eventhouse UpTime.
+> Enabling [always-on](manage-monitor-eventhouse.md#enable-always-on) means that you aren't charged for *OneLake Cache Storage*. When minimum capacity is set, the eventhouse is always active resulting in 100% Eventhouse UpTime.
 
 * **OneLake Standard Storage** is standard storage that is used to persist and store all queryable data. When you set the [retention policy](data-policies.md#data-retention-policy), you affect this storage tier. For instance, if you need to maintain 365 days of queryable data you can set the retention to 365 days. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) hot tier.
 

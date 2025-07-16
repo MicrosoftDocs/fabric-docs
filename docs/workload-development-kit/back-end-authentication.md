@@ -47,7 +47,7 @@ The main authentication checks performed for the SubjectAndAppToken are:
 
     ```json
     {
-    "aud": "api://localdevinstance/00001111-aaaa-2222-bbbb-3333cccc4444/Fabric.WorkloadSample/123",
+    "aud": "api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample/123",
     "iss": "https://sts.windows.net/12345678-77f3-4fcc-bdaa-487b920cb7ee/",
     "iat": 1700047232,
     "nbf": 1700047232,
@@ -72,7 +72,7 @@ The main authentication checks performed for the SubjectAndAppToken are:
 
     ```json
     {
-    "aud": "api://localdevinstance/00001111-aaaa-2222-bbbb-3333cccc4444/Fabric.WorkloadSample/123",
+    "aud": "api://localdevinstance/aaaabbbb-0000-cccc-1111-dddd2222eeee/Fabric.WorkloadSample/123",
     "iss": "https://sts.windows.net/12345678-77f3-4fcc-bdaa-487b920cb7ee/",
     "iat": 1700050446,
     "nbf": 1700050446,

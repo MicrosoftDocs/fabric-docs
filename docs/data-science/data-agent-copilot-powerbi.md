@@ -1,9 +1,9 @@
 ---
 title: Consume a data agent from Copilot in Power BI (preview)
 description: Learn how to consume a data agent from Copilot in Power BI.
-author: fbsolo-ms1
+author: jonburchel
 ms.author: amjafari
-ms.reviewer: franksolomon
+ms.reviewer: jburchel
 reviewer: midesa
 ms.service: fabric
 ms.subservice: data-science
@@ -56,13 +56,8 @@ After you select an item, that selected item is attached to your question. Then,
 
 :::image type="content" source="./media/data-agent-copilot-powerbi/attached-data-agent.png" alt-text="Screenshot showing data agent is attached to the copilot in power bi." lightbox="./media/data-agent-copilot-powerbi/attached-data-agent.png":::
 
-Copilot might not return a useful answer to a question outside the scope of the data agent you added. In these cases, you must explicitly indicate that the topic changed, so that Copilot can perform a new search across the
+Copilot might not return a useful answer to a question outside the scope of the data agent you added. In these cases, you must explicitly indicate that the topic changed, so that Copilot can perform a new search across these resources: Power BI semantic model, Power BI Report, and Fabric data agent.
 
-- Power BI Semantic Model
-- Power BI Report
-- Fabric Data Agent
-
-resources.
 
 ## Interaction flow with a Fabric Data Agent
 
@@ -77,5 +72,5 @@ When you select a Fabric Data Agent, Copilot in Power BI proceeds with these ste
 ## Related content
 
 - [Data agent concept](concept-data-agent.md)
-- [Data agent scenario](data-agent-scenario.md)
+- [Data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
 - [Fabric data agent sharing](data-agent-sharing.md)

@@ -149,7 +149,9 @@ Create a rule that alerts you if the transit time in delivery exceeds a threshol
 
     :::image type="content" source="media/activator-tutorial/start-rule.png" alt-text="Screenshot that shows the Start button on the ribbon selected." lightbox="media/activator-tutorial/start-rule.png":::
 
-    You created your first object and rule. As next steps, you might try setting up some other rules on the *Package2* object. When you're ready to try using Fabric Activator on your own data, follow the steps in the [Get data for Fabric Activator](activator-get-data-eventstreams.md) article.
+    You created your first object and rule. As next steps, you might try setting up some other rules on the *Package2* object. 
+
+    When you're ready to try using Fabric Activator on your own data, follow the steps in the [Get data for Fabric Activator](../event-streams/add-destination-activator.md) article.
 
 ## Clean up resources
 
