@@ -5,7 +5,7 @@ description: Explore how to index vector data in your Cosmos DB database within 
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 07/16/2025
 show_latex: true
 appliesto:
 - ✅ Cosmos DB in Fabric
@@ -97,6 +97,8 @@ The container vector policy can be described as JSON objects. Here are two examp
   ]
 }
 ```
+
+For more information and examples of settings a container vector policy, see [vector indexing policy samples](sample-indexing-policies.md#vector-indexing-policy).
 
 ## Vector indexing policies
 
