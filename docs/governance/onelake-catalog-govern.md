@@ -80,7 +80,7 @@ The Your data estate insights provide an overview of the content you've created 
 | **Items by last refresh** | Shows you how current your data is. Regularly refreshing items ensures that data remains current and relevant, and reduces the risk of outdated or unused items cluttering up the system. Review the list of items that haven’t been refreshed recently to identify outdated items and reduce maintenance costs.|
 | **Items last refreshed more than 4 months ago** | Data that hasn't been refreshed in over four months is likely to be stale and could indicate a refresh problem. |
 | **Items by your last access date** | Reviewing rarely visited items helps you identify outdated or unused data. This can help you reduce the number of unnecessary items and free up resources for more relevant content. |
-| **Items that failed last refresh by type** | Shows you the number and type of your data items that failed to successfully refrsh on their most recent refresh attempt. |
+| **Items that failed last refresh by type** | Shows you the number and type of your data items that failed to successfully refresh on their most recent refresh attempt. |
 
 #### Sensitivity label coverage
 
