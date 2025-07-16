@@ -21,7 +21,7 @@ You can create alerts in Power BI on dashboards and reports to monitor changes i
 This article describes how to access Power BI report alerts and refine those alerts in Activator.
 
 > [!IMPORTANT]
-> - This article shows you how to create an alert in a Power BI **report, not a dashboard**. 
+> - This article shows you how to create an alert in a Power BI **report, not a dashboard**. To learn how to set alerts on a dashboard, see [Set alerts on a Power BI dashboard](/power-bi/create-reports/service-set-data-alerts).
 > - In Activator, an **alert** is referred to as a **rule**.
 
 
@@ -35,7 +35,7 @@ Before you begin, ensure you have the following prerequisites:
 ## Create an alert for a report
 First, let's see how to set an alert for a report using the **Set alert** button on the ribbon for the report. When you use this option, it shows all the measures associated with the report. You use one of the measures to set an alert. Here are the detailed steps: 
 
-1. Select **Set alert** bitton on the ribbon at the top. You see the **Alerts** pane on the right. 
+1. Select **Set alert** button on the ribbon at the top. You see the **Alerts** pane to the right. 
 
     :::image type="content" source="media/activator-get-data-power-bi/global-set-alert-button.png" alt-text="Screenshot showing the Set Alert button on the ribbon or Add alert button in the Alerts window." lightbox="media/activator-get-data-power-bi/global-set-alert-button.png":::   
 
@@ -46,7 +46,7 @@ First, let's see how to set an alert for a report using the **Set alert** button
 
     :::image type="content" source="media/activator-get-data-power-bi/select-save-location.png" alt-text="Screenshot showing the Alerts window with the link to change the location highlighted." lightbox="media/activator-get-data-power-bi/select-save-location.png":::       
 1. On the **Select the location of your alerts** window, do these steps:
-    1. For **Workspace**, select the workspace where you want to save the Activator item that will contain the alerts you are going to create. 
+    1. For **Workspace**, select the workspace where you want to save the Activator item that will contain the alerts you're going to create. 
     1. For **Item**, select **Create a new activator item** or select an existing activator item. The following screenshot shows the first option. 
     1. If you selected **Create a new activator item** option, for **Item name**, select a name for the activator item. 
     1. Then, select **Confirm**. 
@@ -65,7 +65,7 @@ First, let's see how to set an alert for a report using the **Set alert** button
 1. After you select the measure, you see the same user interface as you did when you set up the first alert. Follow the same steps to define a condition and an action (send notification) for the second alert. Then, select **Apply**. Here's an example: 
 
     :::image type="content" source="media/activator-get-data-power-bi/second-alert-definition.png" alt-text="Screenshot showing the Alerts window with the second alert definition." lightbox="media/activator-get-data-power-bi/second-alert-definition.png":::                
-1. To minimize the second alert window, select at the top of it. The **Alerts** window should show the alert you have created. 
+1. To minimize the second alert window, select at the top of it. The **Alerts** window should show the alert you created. 
 
     :::image type="content" source="media/activator-get-data-power-bi/two-alerts.png" alt-text="Screenshot showing the Alerts window with both the alerts." lightbox="media/activator-get-data-power-bi/two-alerts.png":::       
 
