@@ -5,7 +5,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 03/19/2025
+ms.date: 07/16/2025
 ---
 
 # Get events from Azure Event Grid namespace into Fabric Real-Time hub (Preview)

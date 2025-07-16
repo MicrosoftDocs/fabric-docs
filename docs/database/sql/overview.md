@@ -142,6 +142,6 @@ Fabric SQL database doesn't support the Azure SQL Database elastic pools concept
 ## Related content
 
 - [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)
-- [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
 - [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)  
 - [What is the SQL analytics endpoint for a SQL database in Fabric?](sql-analytics-endpoint.md)
