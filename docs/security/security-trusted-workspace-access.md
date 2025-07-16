@@ -235,18 +235,26 @@ Semantic models in import mode support trusted workspace access to storage accou
 
 When using trusted workspace access, it's important to be aware of these restrictions and considerations.
 
-#### General Restrictions
+#### Supported scenarios
 
-* **Supported Capacities**: Trusted workspace access is supported for workspaces in any Fabric F SKU capacity.
-* **Supported Fabric items**: Trusted workspace access is supported in OneLake shortcuts, data pipelines, semantic models, and the T-SQL COPY statement. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md).
-* **Authentication Methods**: Only *organizational account*, *service principal*, and *workspace identity* authentication methods can be used for authentication to storage accounts for trusted workspace access in shortcuts, pipelines, and semantic models.
-* **Workspace migration**: If a workspace with a workspace identity is migrated to a non-Fabric capacity, or to a non-F SKU Fabric capacity, trusted workspace access will stop working after an hour.
+* **Fabric capacities**: Trusted workspace access is supported for workspaces in any Fabric F SKU capacity.
+* **Fabric items**: Trusted workspace access is supported in OneLake shortcuts, data pipelines, semantic models, and the T-SQL COPY statement. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md).
+
+
+#### Authentication
+
+Only *organizational account*, *service principal*, and *workspace identity* authentication methods can be used for authentication to storage accounts for trusted workspace access in shortcuts, pipelines, and semantic models, with the following restrictions:
+
+* **Workspace identity:** When creating connections in **Manage connections and gateways**, Workspace identity is the only supported authentication method. Using organizational account or service principal authentication methods will cause **Test connection** to fail . <!--Is this a "Known issue" that will be fixed?-->
+* **Service principal and organizational accounts:** To connect to a firewall-enabled storage account using a service principal or an organizational account, you can create a connection using the shortcut, pipeline, or Power BI quick reports experience. Then later, you can bind this connection to a semantic model or another shortcut or pipeline.
+* **Personal cloud connections:** For semantic models that use personal cloud connections, Workspace identity is the only supported authentication method. We recommend replacing personal cloud connections with shared cloud connections.
 
 #### Access and Connectivity
 
-* **Public Access**: Trusted workspace access only works when public access is enabled from selected virtual networks and IP addresses or when public access is disabled.
-* **Resource Instance Rules**: Resource instance rules for Fabric workspaces must be created through ARM templates. Creation through the Azure portal UI is not supported.
-* **Connection Status**: Connections to firewall-enabled storage accounts will have the status "Offline" in Manage connections and gateways.
+* **Migration:** If a workspace with a workspace identity is migrated to a non-Fabric capacity, or to a non-F SKU Fabric capacity, trusted workspace access will stop working after an hour.
+* **Public Access:** Trusted workspace access only works when public access is enabled from selected virtual networks and IP addresses or when public access is disabled.
+* **Resource Instance Rules:** Resource instance rules for Fabric workspaces must be created through ARM templates. Creation through the Azure portal UI is not supported.
+* **Connection Status:** Connections to firewall-enabled storage accounts will have the status "Offline" in Manage connections and gateways.
 
 #### Limitations
 
