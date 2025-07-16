@@ -32,18 +32,19 @@ To create Variable library items in Fabric, you need:
 
   These switches can be enabled by the tenant admin, capacity admin, or workspace admin, depending on your [organization's settings](../../admin/delegate-settings.md).
 
-## Security Considerations and Permissions Management for Fabric Variable Libraries
+## Security considerations and permissions management for Fabric Variable Libraries
 
-Fabric Variable Libraries are powerful constructs that enable centralized management of variables across multiple Fabric items. However, this flexibility introduces critical security considerations. Since Variable Libraries themselves are Fabric items, they are governed by their own permission sets, which may differ from those of the items that consume their variables. This discrepancy can lead to scenarios where a user has write access to a Variable Library but lacks any access to the consuming item. 
+Fabric Variable Libraries are powerful constructs that enable centralized management of variables across multiple Fabric items. However, this flexibility introduces critical security considerations. Since Variable Libraries themselves are Fabric items, they're governed by their own [permission](./variable-library-permissions.md) sets, which might differ from those of the items that consume their variables. This discrepancy can lead to scenarios where a user has write access to a Variable Library but lacks any access to the consuming item.
 
-In such cases, the user could maliciously or inadvertently alter variable values, thereby influencing the behavior of downstream items—potentially mounting attacks or causing data integrity issues.
+In such cases, users can maliciously or inadvertently alter variable values, influencing the behavior of dependent items—potentially mounting attacks or causing data integrity issues.
 
-To mitigate these risks, two key practices are essential:
+### Mitigating the risks
+To mitigate these risks, follow these two key practices:
 
-   1. **Strict Permission Controls**: Administrators must carefully manage write permissions on Variable Libraries, ensuring that only trusted users or services can modify them. This includes avoiding overly permissive access and regularly auditing permission assignments.
-   2. **Trusted Library References**: Items should only reference variables from libraries that are explicitly designated as trusted. This trust model should be enforced through governance policies and tooling that validate the source of variable references during development and deployment.
+   1. **Strict Permission Controls**: Administrators must carefully manage write [permissions](./variable-library-permissions.md) on Variable Libraries, ensuring that only trusted users or services can modify them. This includes avoiding overly permissive access and regularly auditing permission assignments.
+   2. **Trusted Library References**: Items should only reference variables from libraries that are explicitly designated as trusted. This trust model should be enforced through governance policies that validate the source of variable references during development and deployment.
  
-Failure to implement these controls can result in unauthorized users—who may have write access to a Variable Library but no access to the consuming item—modifying variable values in ways that intentionally or unintentionally alter the behavior of downstream items. This creates a potential attack vector where malicious updates to shared variables could compromise the integrity, security, or functionality of dependent Fabric items.
+Failure to implement these controls can result in unauthorized users modifying variable values in ways that intentionally or unintentionally alter the behavior of dependent items. This creates a potential attack vector where malicious updates to shared variables could compromise the integrity, security, or functionality of dependent Fabric items.
 
 For more information see, [Variable library permissions](./variable-library-permissions.md).
 
