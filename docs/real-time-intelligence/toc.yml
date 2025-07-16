@@ -29,6 +29,8 @@ items:
     href: architecture-medallion.md
   - name: End to end sample
     href: sample-end-to-end.md
+- name: Tutorials
+  items:
   - name: End to end tutorial - Real-Time-Intelligence
     items:
     - name: End to end tutorial - Introduction
@@ -231,7 +233,7 @@ items:
         href: event-streams/build-report-from-iot-hub.md
       - name: Explore and transform bike-sharing data for KQL database integration
         href: event-streams/transform-sample-data-and-route-to-kql.md
-    - name: Eventstream Query Lanaguage Reference
+    - name: Eventstream Query Language Reference
       items:
       - name: Built-in Functions
         items:
@@ -710,7 +712,7 @@ items:
   items:
   - name: Copilot for Writing KQL Queries
     displayName: KQL queryset, kusto query language, natural language
-    href: ../fundamentals/copilot-for-writing-queries.md
+    href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
@@ -760,6 +762,8 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
+    - name: Generate Real-Time Dashboard Using Copilot
+      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
     - name: Real-Time Dashboard permissions
@@ -837,6 +841,12 @@ items:
       displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
   - name: Troubleshoot errors
     href: data-activator/activator-troubleshooting.md
+- name: Analyze data with Copilot
+  items:
+    - name: Copilot for Writing KQL Queries
+      href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
+    - name: Generate Real-Time Dashboard Using Copilot
+      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
 - name: Monitor
   items:
     - name: Eventhouse monitoring

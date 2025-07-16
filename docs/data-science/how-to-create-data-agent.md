@@ -122,14 +122,7 @@ The agent presents both the result and the intermediate steps that it took to re
 
 Additionally, the Fabric data agent provides the generated code used to query the corresponding data source, offering further insight into how the response was constructed.
 
-These queries are designed exclusively for querying data. Operations that involve
-
-- data creation
-- data updates
-- data deletions
-- any type of data change
-
-aren't allowed, to protect the integrity of your data.
+These queries are designed exclusively for querying data. Operations that involve data creation, data updates, data deletions, any type of data change aren't allowed, to protect the integrity of your data.
 
 At any point, you can select the **Clear chat** button to clear the chat, as shown in the following screenshot:
 
@@ -214,4 +207,5 @@ After you publish the Fabric data agent, you'll have two versions of it. One ver
 ## Related content
 
 - [Data agent concept](concept-data-agent.md)
-- [Data agent scenario](data-agent-scenario.md)
+- [Data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
+
