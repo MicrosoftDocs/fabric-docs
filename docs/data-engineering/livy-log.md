@@ -59,7 +59,7 @@ None
 ### Sample request
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/none/logs?type=livy&meta=true
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/application/none/logs?type=livy&meta=true
 ```
 
 Status code: 200
@@ -115,7 +115,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 ### Sample request
 
 ``` HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/none/logs?type=livy
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/application/none/logs?type=livy
 ```
 
 ## Definitions
