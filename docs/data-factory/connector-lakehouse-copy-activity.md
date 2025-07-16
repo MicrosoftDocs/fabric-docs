@@ -191,18 +191,18 @@ When copying data from Lakehouse table, the following mappings are used from Lak
 
 | Lakehouse table data type | Interim service data type |
 |---------------------|------------------|
-| string              | UTF8             |
-| long                | INT64            |
-| integer             | INT32            |
-| short               | INT_16           |
-| byte                | INT_8            |
-| float               | FLOAT            |
-| double              | DOUBLE           |
-| decimal             | DECIMAL          |
-| boolean             | BOOLEAN          |
-| binary              | BINARY           |
-| date                | DATE             |
-| timestamp           | INT96            |
+| string              | String           |
+| long                | Int64            |
+| integer             | Int32            |
+| short               | Int16            |
+| byte                | SByte            |
+| float               | Single           |
+| double              | Double           |
+| decimal             | Decimal          |
+| boolean             | Boolean          |
+| binary              | ByteArray        |
+| date                | Date             |
+| timestamp           | DateTime         |
 
 ### Settings
 
