@@ -7,12 +7,11 @@ ms.topic: how-to
 ms.custom: FY25Q1-Linter
 ms.date: 07/16/2025
 ms.search.form: Data Activator PBI Onramp
-ai-usage: ai-assisted
 #customer intent: As a Power BI user I want to learn how to get data from Power BI alerts into Activator where I can continue refining the alert.
 ---
 
 # Create an alert in Power BI report
-You can create alerts in Power BI on dashboards and reports to monitor changes in data values and receive notifications via email or Teams. Once your alert is ready, you can open it in Fabric Activator to refine it further with advanced capabilities like:
+You can create alerts in Power BI reports to monitor changes in data values and receive notifications via email or Teams. Once your alert is ready, you can open it in Fabric Activator to refine it further with advanced capabilities like:
 
 - Setting more granular conditions
 - Integrating with Power Automate workflows  
