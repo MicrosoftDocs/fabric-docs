@@ -7,6 +7,7 @@ author: spelluru
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 06/08/2025
+ms.update-cycle: 180-days
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Get started

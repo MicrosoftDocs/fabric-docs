@@ -6,6 +6,7 @@ ms.author: sngun
 ms.reviewer: alpowers
 ms.topic: overview
 ms.date: 02/13/2025
+ms.update-cycle: 180-days
 ms.custom:
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
