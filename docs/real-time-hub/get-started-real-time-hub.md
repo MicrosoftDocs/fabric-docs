@@ -22,7 +22,7 @@ This article provides guidance on getting started with Fabric Real-Time hub.
 ## Real-Time hub page
 On the **Real-Time hub** page, you see the **All data streams** section, where you see all the streams and tables you can access. Streams are the outputs from [Fabric eventstreams](../real-time-intelligence/event-streams/overview.md) and tables are from Kusto Query Language (KQL) databases that you can access.
 
-The following sections provides details about the **All data streams** table, such as columns, filters, and other features available on the table. 
+The following sections provide details about the **All data streams** table, such as columns, filters, and other features available on the table. 
 
 ### Columns
 
