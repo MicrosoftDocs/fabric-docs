@@ -72,7 +72,7 @@ Triggers in Fabric Data Factory allow you to invoke a pipeline from many differe
 
 1. To view the triggers that are part of your pipeline, you can use "Triggers > View triggers" from the pipeline menu
 
-   :::image type="content" source="media/pipeline-storage-event-triggers/manage-triggers.png" alt-text="Screenshot showing the details of the Reflex object.":::
+   :::image type="content" source="media/pipeline-storage-event-triggers/manage-triggers.png" alt-text="Screenshot showing the manage trigger rules pane.":::
 
 ## Setting expression values with the trigger file name and folder name
 
