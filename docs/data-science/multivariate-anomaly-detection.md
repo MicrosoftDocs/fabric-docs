@@ -7,7 +7,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
-ms.date: 04/10/2025
+ms.date: 07/16/2025
 ms.collection: ce-skilling-ai-copilot
 ---
 
