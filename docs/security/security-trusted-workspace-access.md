@@ -249,18 +249,20 @@ With trusted workspace access configured, AzCopy copy jobs can access data store
 
 #### Steps
 
-1. Login to AzCopy with the principal which has access to the Azure Storage account and Fabric item. Select the subscription containing your firewall-enabled Azure Storage account. 
-```azcopy
-azcopy login
-```
+1. Log in to AzCopy with the principal that has access to the Azure Storage account and Fabric item. Select the subscription containing your firewall-enabled Azure Storage account. 
+
+   ```azcopy
+   azcopy login
+   ```
 
 2. Build your AzCopy command. You'll need the copy source, destination, and at least one parameter.  
     - **source-path**: A file or directory in your firewall-enabled Azure Storage account.  
     - **destination-path**: The landing zone in OneLake for your data.  For example, the /Files folder in a lakehouse.
     - **--trusted-microsoft-suffixes**: Must include "fabric.microsoft.com".  
-```azcopy
-azcopy copy "https://<source-account-name>.blob.core.windows.net/<source-container>/<source-path>" "https://onelake.dfs.fabric.microsoft.com/<destination-workspace>/<destination-path>" --trusted-microsoft-suffixes "fabric.microsoft.com"
-```
+
+   ```azcopy
+   azcopy copy "https://<source-account-name>.blob.core.windows.net/<source-container>/<source-path>" "https://onelake.dfs.fabric.microsoft.com/<destination-workspace>/<destination-path>" --trusted-microsoft-suffixes "fabric.microsoft.com"
+   ```
 
 3. Run the copy command.  AzCopy will use the identity you logged in with above to access both OneLake and Azure Storage. The copy operation is synchronous so when the command returns, all files are copied.  For more information about using AzCopy with OneLake, see [AzCopy](/fabric/onelake/onelake-azcopy).  
 
