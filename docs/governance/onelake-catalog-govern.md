@@ -27,11 +27,13 @@ The first time you open the govern tab, it might take a few moments for the insi
 ## Open the govern tab
 
 To get to the govern tab, select the [OneLake catalog icon in the Fabric navigation pane](./onelake-catalog-overview.md) and then select the govern tab.
+
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png" alt-text="Screenshot showing how to open govern tab in the OneLake catalog." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-tab-open.png":::
 
 ## Scope the insights and recommended actions by domain
 
 If your organization has defined domains, you can use the OneLake catalog's [domain selector](./onelake-catalog-explore.md#scope-the-catalog-to-a-particular-domain) to choose a specific domain or subdomain. This will scope the insights and recommended actions to items that reside within the selected domain.
+
 :::image type="content" source="./media/onelake-catalog-govern/onelake-catalog-govern-domains-selector.png" alt-text="Screenshot showing how to select a domain in the OneLake catalog." lightbox="./media/onelake-catalog-govern/onelake-catalog-govern-domains-selector.png":::
 
 ## Get insights about the governance status of your data
