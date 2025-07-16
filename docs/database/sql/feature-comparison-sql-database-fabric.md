@@ -180,5 +180,5 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 ## Related content
 
 - [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)
-- [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
 - [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)
