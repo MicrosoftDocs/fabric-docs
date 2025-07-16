@@ -2,10 +2,10 @@
 title: Billing and Utilization Data For Cosmos DB Database (Preview)
 titleSuffix: Microsoft Fabric
 description: Learn about billing concepts for compute and storage and how to monitor usage for Cosmos DB in Microsoft Fabric during the preview.
-author: jilmal
-ms.author: jmaldonado
+author: seesharprun
+ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 07/16/2025
 show_latex: true
 appliesto:
 - ✅ Cosmos DB in Fabric
@@ -61,13 +61,11 @@ For more information about Fabric capacity planning, see [plan your capacity siz
 
 ## Autoscale
 
-Cosmos DB in Fabric uses autoscale throughput with a default autoscale maximum of `1000` RU/s. This means that throughput scales between `100` and `1000` RU/s. Consumption is scaled in increments of `100` RU/s equivalent to `0.067` CU/hr.
+Consider an example where you manually set the autoscale throughput to `1000` RU/s. This means that throughput scales between `100` and `1000` RU/s. Consumption is scaled in increments of `100` RU/s equivalent to `0.067` CU/hr.
 
 In an autoscale setup, the current throughput (`T`) automatically adjusts between 10% and 100% of the maximum throughput (`Tmax`), following the formula $0.1*T_{max} \leq T \leq T_{max}$. You can set the autoscale maximum throughput for each container as needed.
 
-## Storage costs
-
-The cost for Cosmos DB in Fabric is the summation of compute cost and storage cost. Compute cost is based on RU/s utilized as described in the previous sections. The actual storage cost is the total storage required by the data and indexes.
+Cosmos DB in Fabric uses autoscale throughput with a default autoscale maximum of `5000` RU/s if deployed using the Fabric portal. If you deploy using the SDK, you can set the autoscale limit up to `10000` RU/s. For more information, see [throughput limitations](limitations.md#quotas-and-limits).
 
 ## Reporting
 
