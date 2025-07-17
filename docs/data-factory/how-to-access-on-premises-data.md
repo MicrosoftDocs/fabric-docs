@@ -166,4 +166,4 @@ In this example, we'll show you how to connect a [Copy job](what-is-copy-job.md#
 
 - [Connector overview](connector-overview.md)
 - [On-premises data gateway considerations for output destinations](gateway-considerations-output-destinations.md)
-- [Known issues in Fabric - including the on-premises data gateway](../known-issues/fabric-known-issues.md)
+- [Known issues in Fabric - including the on-premises data gateway](https://support.fabric.microsoft.com/known-issues/)

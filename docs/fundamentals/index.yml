@@ -98,7 +98,7 @@ landingContent:
           - text: Use the integrated Help pane
             url: fabric-help-pane.md
           - text: Check for known issues
-            url: ../get-started/fabric-known-issues.md
+            url: https://support.fabric.microsoft.com/known-issues/
           - text: Contact Support
             url: /power-bi/support/service-support-options
    
