@@ -34,7 +34,7 @@ Parameters in Dataflow Gen2 allow you to dynamically control and customize dataf
 * **Monitoring hub does not display information about the parameters passed during the invocation of the dataflow.**
 * **Staged queries will only keep the last data refresh of a Dataflow stored in the Staging Lakehouse.** Users are able to look at the data from the Staging Lakehouse using the Dataflows connector to determine what was data is stored. Defining data destinations when using the public parameters mode is highly encouraged.
 * **When submitting a duplicated request for the same parameter values, only the first request will be accepted and subsequent will be rejected until the first request finishes its evaluation.**
-* **In the context of Data destinations, parameters cannot be used to change the mapping schema.** The Dataflow refresh will apply all mappings and data destination settings that were saved by the Dataflow during the authoring stage. Check out the article for more information on [data destinations and managed settings in Dataflow Gen2](dataflow-gen2-data-destinations-and-managed-settings.md).
+* **In the context of data destinations, parameters cannot be used to change the mapping schema.** The Dataflow refresh will apply all mappings and data destination settings that were saved by the Dataflow during the authoring stage. Check out the article for more information on [data destinations and managed settings in Dataflow Gen2](dataflow-gen2-data-destinations-and-managed-settings.md).
 
 ## Enable the public parameter mode
 
