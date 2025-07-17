@@ -7,7 +7,7 @@ title:       OneLake shortcuts AI transformations # Add a title for the browser 
 description: AI transformations in OneLake shortcuts# Add a meaningful description for search results
 author:      miquelladeboer # GitHub alias
 ms.author:   mideboer # Microsoft alias
-ms.service:  Shortcuts # Add the ms.service or ms.prod value
+# ms.service:  Shortcuts # Add the ms.service or ms.prod value
 # ms.prod:   # To use ms.prod, uncomment it and delete ms.service
 ms.topic:    how-to # Add the ms.topic value
 ms.date:     07/16/2025
