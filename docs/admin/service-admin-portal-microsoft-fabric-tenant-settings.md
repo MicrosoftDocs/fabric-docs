@@ -62,6 +62,10 @@ For more information, see [Mirroring Azure Databricks Unity Catalog](../database
 
 For more information, see [What is a Variable library? (preview)](../cicd/variable-library/variable-library-overview.md).
 
+## ML model endpoints for real-time predictions (preview)
+
+For more information, see [Serve real-time predictions with ML model endpoints](../data-science/model-endpoints.md).
+
 ## Users can be informed of upcoming conferences featuring Microsoft Fabric when they are logged in to Fabric
 
 When this feature is enabled, users who are signed in to Fabric in your org can receive notifications in the Fabric UI about upcoming conferences that feature Microsoft Fabric. This feature has no impact on billing or security. The setting is enabled by default.
