@@ -6,7 +6,7 @@ author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
 ms.date: 07/17/2025
-ms.search.form: Databases replication to OneLake, Integrate Cosmos DB with other services
+ms.search.form: Databases replication to OneLake,Integrate Cosmos DB with other services
 show_latex: true
 appliesto:
 - ✅ Cosmos DB in Fabric

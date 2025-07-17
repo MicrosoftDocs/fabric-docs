@@ -6,7 +6,7 @@ author: seesharprun
 ms.author: sidandrews
 ms.topic: overview
 ms.date: 07/17/2025
-ms.search.form: Databases Overview, Cosmos DB Overview
+ms.search.form: Databases Overview,Cosmos DB Overview
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
