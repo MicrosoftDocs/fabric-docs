@@ -3,17 +3,18 @@ title: Differences between Dataflow Gen1 and Dataflow Gen2
 description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory for Microsoft Fabric.
 author: luitwieler
 ms.topic: overview
-ms.date: 07/09/2025
+ms.date: 07/17/2025
 ms.author: jeluitwi
 ms.search.form: DataflowGen2 Overview
 ms.custom: dataflows
+ai-usage: ai-assisted
 ---
 
 # What is Dataflow Gen2?
 
-Dataflows are a cloud-based tool that helps you prepare and transform your data without writing code. Think of them as your personal data assistant that can connect to hundreds of different data sources, clean up messy data, and deliver it exactly where you need it.
+Dataflows are a cloud-based tool that help you prepare and transform data without writing code. They provide a low-code interface for ingesting data from hundreds of data sources, transforming your data using 300+ data transformations, and loading the resulting data into multiple destinations. Think of them as your personal data assistant that can connect to hundreds of different data sources, clean up messy data, and deliver it exactly where you need it. Whether you're a citizen or professional developer, dataflows empower you with a modern data integration experience to ingest, prepare and transform data from a rich set of data sources including databases, data warehouse, Lakehouse, real-time data, and more.
 
-Dataflow Gen2 is the newer, more powerful version that works alongside the original Power BI Dataflow (now called Gen1). If you're starting fresh, we recommend Dataflow Gen2 for its enhanced features and better performance.
+Dataflow Gen2 is the newer, more powerful version that works alongside the original Power BI Dataflow (now called Gen1). Built using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that's available across several Microsoft products and services such as Excel, Power BI, Power Platform, and Dynamics 365, Dataflow Gen2 provides enhanced features, better performance, and fast copy capabilities to quickly ingest and transform data. If you're starting fresh, we recommend Dataflow Gen2 for its enhanced features and better performance.
 
 ## What can you do with dataflows?
 
@@ -96,6 +97,21 @@ To learn more about connecting dataflows with data pipelines, see [dataflow acti
 ### High-performance computing
 
 Just like Dataflow Gen1, Dataflow Gen2 uses an advanced compute engine to handle large amounts of data efficiently. To make this work, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace and uses them to store and access data, improving performance for all your dataflows.
+
+## Copilot for Dataflow Gen2
+
+Dataflow Gen2 integrates with Microsoft Copilot in Fabric to provide AI-powered assistance for creating data integration solutions using natural language prompts. Copilot helps you streamline your dataflow development process by allowing you to use conversational language to perform data transformations and operations.
+
+- **Get data from sources**: Use the "Get data from" starter prompt to connect to various data sources like OData, databases, and files
+- **Transform data with natural language**: Apply transformations using conversational prompts such as:
+  - "Only keep European customers"
+  - "Count the total number of employees by City"
+  - "Only keep orders whose quantities are above the median value"
+- **Create sample data**: Use Azure OpenAI to generate sample data for testing and development
+- **Undo operations**: Type or select "Undo" to remove the last applied step
+- **Validate and review**: Each Copilot action appears as a response card with corresponding steps in the Applied steps list
+
+For more information, see [Copilot for Dataflow Gen2](copilot-fabric-data-factory-get-started.md#get-started-with-copilot-for-dataflow-gen2).
 
 ## What do you need to use dataflows?
 
