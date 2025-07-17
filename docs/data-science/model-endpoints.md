@@ -41,7 +41,7 @@ Model endpoints have the following properties:
 
 | **Property** | **Description** | **Default** |
 |---|---|---|
-| **Default version** | This property (`Yes` or `No`) indicates whether the version is set as the model's default for serving real-predictions. You can [customize the default version](#managing-model-endpoints) in the model's settings. | `No` |
+| **Default version** | This property (`Yes` or `No`) indicates whether the version is set as the model's default for serving real-predictions. You can [customize the default version](#manage-model-endpoints) in the model's settings. | `No` |
 | **Status** | This property indicates whether the endpoint is ready to serve predictions. The status can be `Inactive`, `Activating`, `Active`, `Deactivating`, or `Failed`. Only active endpoints can serve predictions. | `Inactive` |
 | **Auto sleep** | This property (`On` or `Off`) indicates whether the endpoint, once active, should scale down capacity usage to zero in the absence of traffic. If auto sleep is on, then the endpoint enters an idle state after five minutes without incoming requests. The first call to wake up an idle endpoint involves a short delay. | `On` |
 
@@ -66,7 +66,7 @@ Every endpoint has a status indicating whether it’s ready to serve real-time p
 
 > [!NOTE]
 >
-> ML models can support active endpoints for up to five versions at once. To serve predictions from a sixth version, you must first [deactivate an active endpoint](#deactivating-model-endpoints).
+> ML models can support active endpoints for up to five versions at once. To serve predictions from a sixth version, you must first [deactivate an active endpoint](#deactivate-model-endpoints).
 
 ## Manage model endpoints
 
