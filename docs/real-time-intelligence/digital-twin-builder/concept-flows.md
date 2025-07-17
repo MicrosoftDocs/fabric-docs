@@ -3,7 +3,7 @@ title: Digital twin builder (preview) flow
 description: Understand how digital twin builder (preview) flow items work.
 author: baanders
 ms.author: baanders
-ms.date: 04/16/2025
+ms.date: 06/17/2025
 ms.topic: concept-article
 ---
 
@@ -17,13 +17,11 @@ Digital twin builder flows can run either on-demand or on a defined schedule. Fo
 
 ## Flows as child items
 
-In [Microsoft Fabric terminology](../../fundamentals/fabric-terminology.md), an *item* represents a set of capabilities within a specific experience.
+In [Microsoft Fabric terminology](../../fundamentals/fabric-terminology.md), an *item* is a set of capabilities within a specific experience.
 
-Some Fabric items, like lakehouses and data warehouses, have child items associated with them. For instance, the lakehouse item includes two child items: the *semantic model (default)* and the *SQL analytics endpoint*. This parent-child relationship is visible in the workspace UI, as shown in the following image.
+Some Fabric items have child items associated with them, and the parent-child relationship is visible from the Fabric workspace. For more information about items in the Fabric workspace, see [Workspaces in Microsoft Fabric and Power BI](../../fundamentals/workspaces.md).
 
-:::image type="content" source="media/concept-flows/fabric-children.png" alt-text="Screenshot of items in a Microsoft Fabric workspace." lightbox="media/concept-flows/fabric-children.png":::
-
-Similarly, each digital twin builder (preview) item can have child items of the type *Digital Twin Builder Flow (preview)*. 
+*Digital Twin Builder Flow (preview)* items appear in the Fabric workspace as children of the *Digital Twin Builder (preview)* item.
 
 ## On-demand digital twin builder flow
 
