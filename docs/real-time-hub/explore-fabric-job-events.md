@@ -59,7 +59,25 @@ This section shows the artifacts using Job events. Here are the columns and thei
 | Microsoft.Fabric.ItemJobSucceeded | Raised when the job completes successfully. |     
 | Microsoft.Fabric.ItemJobFailed | Raised when the job fails, including job getting stuck or canceled. |
 
-
+### Supported item types
+| Item type |
+| --------------- | 
+| Data Pipeline |
+| Notebook |
+| Lakehouse |
+| Warehouse |
+| Sql Analytics Endpoint |
+| Spark Job Definition |
+| CopyJob |
+| Dataflow gen2 |
+| DBT Item |
+| Digital Operations |
+| MLExperiment |
+| GraphIndex |
+| Digital Twin Builder |
+| Digital Twin Builder Flow |
+| Databricks |
+| Sustainability Data Manager |
 
 ### Schemas
 An event has the following top-level data:
