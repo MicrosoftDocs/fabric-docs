@@ -1,12 +1,12 @@
 ---
 title: Serve real-time predictions with ML model endpoints (Preview)
 description: Learn how to serve real-time predictions seamlessly from ML models with secure, scalable, and fully managed online endpoints.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: erenorbey
+author: erenorbey
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.date: 05/28/2025
+ms.date: 07/16/2025
 
 ms.search.form: ML model endpoints
 ---
@@ -17,7 +17,7 @@ ms.search.form: ML model endpoints
 
 Microsoft Fabric lets you serve real-time predictions from ML models with secure, scalable, and easy-to-use online endpoints. These endpoints are available as built-in properties of most Fabric models—and they require no setup to kick off fully managed real-time deployments.
 
-You can activate, configure, and query model endpoints with a [public-facing REST API](https://aka.ms/fabric/model-endpoint-sdk). You can also get started directly from the Fabric interface, using a low-code experience to activate model endpoints and preview predictions instantly.
+You can activate, configure, and query model endpoints with a [public-facing REST API](https://aka.ms/fabric/model-endpoint-api). You can also get started directly from the Fabric interface, using a low-code experience to activate model endpoints and preview predictions instantly.
 
 :::image type="content" source="media/model-endpoints/overview.jpg" alt-text="Screenshot showing an ML model in Fabric with a built-in endpoint property for serving real-time predictions." lightbox="media/model-endpoints/overview.jpg":::
 
@@ -116,7 +116,7 @@ You can deactivate endpoints for multiple versions at once from the model’s se
 
 ## Related content
 
-- Manage and query endpoints programmatically with the [ML model endpoint REST API](https://aka.ms/fabric/model-endpoint-sdk).
+- Manage and query endpoints programmatically with the [ML model endpoint REST API](https://aka.ms/fabric/model-endpoint-api).
 - Generate batch predictions with the [`PREDICT` function](./model-scoring-predict.md) in Fabric notebooks.
 - Learn more about [model training and experimentation](./model-training-overview.md) in Fabric.
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

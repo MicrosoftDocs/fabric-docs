@@ -134,7 +134,7 @@ GraphQL operations are made up of requests performed on API for GraphQL items by
 
 ### ML Model Endpoint
 
-Description linking to [ML Model endpoint docs](../data-science/model-endpoints.md).
+[ML Model endpoint docs](../data-science/model-endpoints.md) allow you to serve real-time predictions seamlessly. Behind the scenes, Fabric spins up and manages the underlying container infrastructure to host your model.
 
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
