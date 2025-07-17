@@ -12,7 +12,7 @@ ms.date: 07/13/2025
 
 # End-to-end sample
 
-This article explains how to use the End-to-end sample solution to automatically create a collection of sample components. It lets you explore the main features of Real-Time Intelligence with sample data. It provides a comprehensive end-to-end solution, demonstrating how Real-Time Intelligence components work together to stream, analyze, visualize, and alert real-time data in a real-world context.
+This article explains how to use the End-to-end Real-Time Intelligence sample solution to automatically create a collection of sample RTI components. It lets you explore the main features of Real-Time Intelligence using sample data. It provides a comprehensive end-to-end solution, demonstrating how Real-Time Intelligence components work together to stream, analyze, visualize, and alert real-time data in a real-world context.
 
 > [!Tip]
 > To implement this solution with your data, follow the [end-to-end tutorial](tutorial-introduction.md).
@@ -24,7 +24,7 @@ The sample data sets help you understand how to use Real-Time Intelligence compo
 
 ## Components of the end-to-end sample
 
-The sample end-to-end solution includes these components:
+The sample end-to-end solution includes these RTI components:
 
 * **Eventstream**: An Eventstream is the engine for data ingestion and processing of your real-time data into Microsoft Fabric. You can transform your data and route it via filters to various destinations. Read more about [event streams](event-streams/overview.md).
 
@@ -44,22 +44,9 @@ The sample end-to-end solution includes these components:
 
 These steps show how to create an end-to-end sample using the bike rental sample data.
 
-1. Access the end-to-end sample from the Real-Time Hub or from the Real-Time Intelligence Workload:
+1. Select **Workloads** from the left navigation bar, and then **Real-Time Intelligence**.
 
-    * From the Real-Time Hub:
-
-        1. Select **Real-Time** from the left navigation bar. The **Real-Time hub** opens.
-        1. On the Jumpstart your experience using sample scenarios section, select the **Bicycle rentals** tile.
-
-        >[!NOTE]
-        > If you already have streaming data in your Real-Time Intelligence solution, this option isn't available. Go to the Real-Time Intelligence workload page to use the experience instead.
-
-    * From the Real-Time Intelligence Workload:
-
-        1. Select **Workloads** from the left navigation bar, and then **Real-Time Intelligence**.
-        1. On the **Real-Time Intelligence samples** tile, select **Get started**.
-
-    :::image type="content" source="media/sample-end-to-end-solution/create-end-to-end-samples.png" alt-text="Screenshot of the Create samples window showing the bike rental data and Get started button.":::
+1. On the **Real-Time Intelligence samples** tile, select **Get started**.
 
 1. In the **Create samples** window, select **Get started** with bike rental data.
 
