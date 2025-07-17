@@ -314,6 +314,11 @@
         "source_path_from_root": "/docs/data-factory/copy-job-support.md",
         "redirect_url": "/fabric/data-factory/connector-overview",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/fundamentals/copilot-fabric-data-factory.md",
+        "redirect_url": "/fabric/data-factory/copilot-fabric-data-factory",
+        "redirect_document_id": true
       }
     ]
 }
