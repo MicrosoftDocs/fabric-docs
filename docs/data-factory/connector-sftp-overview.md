@@ -4,7 +4,7 @@ description: This article provides the overview of connecting to and using SFTP 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 07/09/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -14,19 +14,12 @@ ms.custom:
 
 The SFTP connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support the SFTP connector in Dataflow Gen2.
+| Supported capabilities                                                                 | Gateway                        | Authentication   |
+|----------------------------------------------------------------------------------------|--------------------------------|------------------|
+| **Data pipeline** <br>- [Copy activity](connector-sftp-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity| None<br> On-premises<br> Virtual network | Basic           |
 
-## Support in data pipelines
-
-The SFTP connector supports the following capabilities in data pipelines:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | Basic |
-| **Lookup activity** | None <br> On-premises | Basic |
-| **GetMetadata activity** | None <br> On-premises | Basic |
-| **Delete activity** | None <br> On-premises | Basic |
+## Related content
 
 To learn about the copy activity configuration for SFTP in data pipelines, go to [Configure SFTP in a copy activity](connector-sftp-copy-activity.md).

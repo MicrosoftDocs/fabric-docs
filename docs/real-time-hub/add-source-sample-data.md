@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 07/16/2025
 ---
 
 # Get events from sample data sources into Real-Time hub
