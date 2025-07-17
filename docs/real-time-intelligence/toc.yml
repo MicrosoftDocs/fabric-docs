@@ -31,7 +31,7 @@ items:
     href: sample-end-to-end.md
 - name: Tutorials
   items:
-  - name: End to end tutorial - Real-Time-Intelligence
+  - name: End to end tutorial
     items:
     - name: End to end tutorial - Introduction
       href: tutorial-introduction.md
@@ -51,9 +51,9 @@ items:
       href: tutorial-7-set-alert.md
     - name: 8- Clean up resources
       href: tutorial-8-clean-up-resources.md
-  - name: Digital twin builder in Real-Time Intelligence tutorial
+  - name: Digital twin builder tutorial
     items: 
-      - name: Digital twin builder in Real-Time Intelligence tutorial - Introduction
+      - name: Digital twin builder tutorial - Introduction
         href: digital-twin-builder/tutorial-rti-0-introduction.md
       - name: 1- Upload contextual data
         href: digital-twin-builder/tutorial-rti-1-upload-contextual-data.md
