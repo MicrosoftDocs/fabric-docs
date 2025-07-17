@@ -22,6 +22,9 @@ While many features are automatically enabled and built-in to Cosmos DB in Micro
 
 [!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
 
+> [!NOTE]
+> Databases do not support offer replacement for containers, meaning you cannot change a container's throughput after it has been created.
+
 ## Update settings
 
 First, use the **Settings** section for a container to customize and observe the most common options including, but not limited to time-to-live (TTL), geospatial configuration, and partitioning.
