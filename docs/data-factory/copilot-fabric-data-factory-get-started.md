@@ -129,7 +129,7 @@ Use these steps to summarize a pipeline with Copilot for Data Factory:
 
 Copilot empowers you to troubleshoot any pipeline with error messages. You can use Copilot as an assistant for pipeline error messages on the Fabric Monitor page or the pipeline authoring page. The steps below show you how to access the pipeline Copilot to troubleshoot your pipeline from the Fabric Monitor page; however, you can also use these steps from the pipeline authoring page.
 
-1. Go to the Fabric Monitor page and select filters to show pipelines with failures, as shown below:
+1. Go to the Fabric Monitor page and select filters to show pipelines with failures.
 
 1. Select the Copilot icon beside the failed pipeline.
 
