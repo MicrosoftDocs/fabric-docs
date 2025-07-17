@@ -4,7 +4,7 @@ description: A known issue is posted where the deletion of managed private endpo
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/15/2025
+ms.date: 07/16/2025
 ms.custom: known-issue-1102
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1102
 
 When you delete your Fabric workspace, the managed virtual networks (VNets) and their associated managed private endpoints (MPEs) for Key Vault resources remain undeleted if connected to a locked Key Vault. You can't delete the MPEs until a Key Vault administrator removes the delete lock.
 
-**Status:** Open
+**Status:** Fixed: July 16, 2025
 
 **Product Experience:** Data Engineering
 
