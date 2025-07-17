@@ -5,7 +5,8 @@ description: Use Microsoft Entra authentication and the Azure SDK to connect to 
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 07/17/2025
+ms.search.form: Get Started with Cosmos DB
 zone_pivot_group_filename: database/cosmos-db/zone-pivot-groups.json
 zone_pivot_groups: dev-lang-core
 appliesto:
