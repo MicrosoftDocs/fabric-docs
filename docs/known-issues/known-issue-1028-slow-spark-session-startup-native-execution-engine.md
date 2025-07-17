@@ -4,7 +4,7 @@ description: A known issue is posted where the Spark session startup is intermit
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 02/19/2025
+ms.date: 07/16/2025
 ms.custom: known-issue-1028
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1028
 
 Your Spark session startup is intermittently slow when Native Execution Engine is enabled. You might also receive an error during Spark session startup.
 
-**Status:** Open
+**Status:** Fixed: July 16, 2025
 
 **Product Experience:** Data Engineering
 
