@@ -48,7 +48,7 @@ These steps show how to create an end-to-end sample using the bike rental sample
 
 1. On the **Real-Time Intelligence samples** tile, select **Get started** to open the end to end experience.
 
-    :::image type="content" source="media/sample-end-to-end-solution/get-started-end-to-end-rti-samples-sml.png" alt-text="Screenshot of the RTI workload page with the Sample end to end experience tile highlighted." lightbox="media/sample-end-to-end-solution/get-started-end-to-end-rti-samples-lrg.png":::
+    :::image type="content" source="media/sample-end-to-end-solution/get-started-end-to-end-samples-sml.png" alt-text="Screenshot of the RTI workload page with the Sample end to end experience tile highlighted." lightbox="media/sample-end-to-end-solution/get-started-end-to-end-samples-lrg.png":::
 
 1. In the **Create samples** window, select **Get started** with bike rental data.
 
