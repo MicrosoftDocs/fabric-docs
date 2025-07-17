@@ -30,7 +30,7 @@ To ensure that conditional access for Fabric works as intended and expected, it'
   * Azure Data Explorer
   * Azure SQL Database
   * Azure Storage
-  * Azure Synapse Analytics
+  * Azure Cosmos DB
 
 * If you create a restrictive policy (such as one that blocks access for all apps except Power BI), certain features, such as dataflows, won't work.
 
