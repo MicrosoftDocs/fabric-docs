@@ -23,6 +23,8 @@ items:
     href: onelake-shortcuts.md
   - name: Shortcuts file transformations
     href: ./shortcuts-file-transformations/transformations.md
+  - name: Shortcuts AI transformations
+    href: ./Shortcuts-ai-transformations/ai-transformations.md
   - name: Create a OneLake shortcut
     href: create-onelake-shortcut.md
   - name: Create an ADLS Gen2 shortcut
