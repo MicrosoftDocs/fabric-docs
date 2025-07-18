@@ -7,7 +7,6 @@ metadata:
   title: Microsoft Fabric enterprise documentation
   description: Brose the Microsoft Fabric enterprise documentation.
   ms.service: fabric  #Required; use either service or product per approved list. 
-  ms.subservice: enterprise
   ms.topic: landing-page
   author: JulCsc
   ms.author: juliacawthra
