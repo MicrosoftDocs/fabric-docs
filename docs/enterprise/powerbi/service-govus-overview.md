@@ -144,20 +144,20 @@ If a release is planned for an environment, we include the quarter of estimated 
 
 |Feature |GCC |GCC High |DoD|
 |------|------|------|------|
-|[Azure B2B collaboration between government and commercial cloud](service-admin-azure-ad-b2b.md)<sup>1</sup>|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)
-|[Template apps](/power-bi/connect-data/service-template-apps-overview)<sup>2</sup>|![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)| ![Image of "Available" button.](../media/yes.png)|
-|[Embed in SharePoint Online by using the Power BI web part](/sharepoint/dev/spfx/web-parts/overview-client-side-web-parts)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|
-|[Data Loss Prevention policies](/fabric/governance/data-loss-prevention-overview)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)|
-|[Data Protection (MIP labels)](./service-security-sensitivity-label-overview.md)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)|
-|[Dataflows - Direct Query](/power-bi/transform-model/dataflows/dataflows-configure-consume) | ![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)|Not planned |
-|[Dataflows - SQL Compute engine optimization](/power-bi/transform-model/dataflows/dataflows-premium-features) | ![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)|Not planned |
+|[Azure B2B collaboration between government and commercial cloud](service-admin-azure-ad-b2b.md)<sup>1</sup>|✅|✅
+|[Template apps](/power-bi/connect-data/service-template-apps-overview)<sup>2</sup>|✅ |✅| ✅|
+|[Embed in SharePoint Online by using the Power BI web part](/sharepoint/dev/spfx/web-parts/overview-client-side-web-parts)|✅|✅|
+|[Data Loss Prevention policies](/fabric/governance/data-loss-prevention-overview)|✅ |✅|
+|[Data Protection (MIP labels)](./service-security-sensitivity-label-overview.md)|✅ |✅|
+|[Dataflows - Direct Query](/power-bi/transform-model/dataflows/dataflows-configure-consume) | ✅ |✅|Not planned |
+|[Dataflows - SQL Compute engine optimization](/power-bi/transform-model/dataflows/dataflows-premium-features) | ✅ |✅|Not planned |
 | Datamarts  |Not planned |Not planned |Not planned |
-|[Power BI tab in Teams](/power-bi/collaborate-share/service-collaborate-microsoft-teams)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|
-|[Large models](service-premium-large-models.md) | ![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)| Not planned |
-|[Call Quality Data Connector](/microsoftteams/cqd-power-bi-connector)| ![Image of "Available" button.](../media/yes.png)<sup>3</sup> | ![Image of "Available" button.](../media/yes.png)<sup>3</sup> | ![Image of "Available" button.](../media/yes.png)<sup>3</sup> |
-|[Bring your own storage (Azure Data Lake Gen 2)](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration)|![Image of "Not available" button.](../media/no.png)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|
-|[Autoscale](service-premium-auto-scale.md) |![Image of "Not available" button.](../media/no.png) |![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png) |
-|[Azure Maps](/azure/azure-maps/power-bi-visual-get-started) |![Image of "Not available" button.](../media/no.png) |![Image of "Not available" button.](../media/no.png) |![Image of "Not available" button.](../media/no.png) |
+|[Power BI tab in Teams](/power-bi/collaborate-share/service-collaborate-microsoft-teams)|✅|✅|
+|[Large models](service-premium-large-models.md) | ✅ |✅| Not planned |
+|[Call Quality Data Connector](/microsoftteams/cqd-power-bi-connector)| ✅<sup>3</sup> | ✅<sup>3</sup> | ✅<sup>3</sup> |
+|[Bring your own storage (Azure Data Lake Gen 2)](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration)|❌|✅|
+|[Autoscale](service-premium-auto-scale.md) |❌ |✅ |✅ |
+|[Azure Maps](/azure/azure-maps/power-bi-visual-get-started) |❌ |❌ |❌ |
 
 
 <sup>1</sup> Although B2B collaboration is available for GCC, external users must be issued a license in that environment. Commercial cloud licenses aren't valid in GCC. For more information about known limitations with B2B collaboration for US government, see [Compare Azure Government and global Azure](/azure/azure-government/compare-azure-government-global-azure#azure-active-directory-premium-p1-and-p2).

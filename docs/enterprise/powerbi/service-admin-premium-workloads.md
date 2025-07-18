@@ -45,8 +45,6 @@ You can tune the behavior of the workloads, by configuring workload settings for
 
 2. From the page header, select **...** > **Settings** > **Admin portal**.
 
-   :::image type="content" source="../includes/media/admin-portal-settings/power-bi-settings-menu.png" alt-text="Settings menu with admin portal selected.":::
-
 3. Go to **Capacity settings** and from the **Power BI Premium** tab, select a capacity.
 
 4. Expand **Workloads**.
@@ -215,7 +213,7 @@ Power BI Premium supports additional Analysis Services server properties. To rev
 
 The Analysis Services XMLA-based server properties setting is enabled by default. When enabled, workspace admins can modify behaviors for an individual workspace. Modified properties apply only to that workspace. To toggle the Analysis Services server properties setting, follow the steps below.
 
-1. Go to your [capacity settings](.//power-bi/admin/service-admin-portal-capacity-settings).
+1. Go to your [capacity settings](/power-bi/admin/service-admin-portal-capacity-settings).
 
 2. Select the capacity you want to disable the *Analysis Services server properties* in.
 
@@ -245,7 +243,7 @@ Outbound connectivity is turned on by default. It allows paginated reports to ma
 
 To get to the outbound connectivity settings, follow these steps:
 
-1. In Power BI service, navigate to the [admin portal](.//power-bi/admin/service-admin-portal#how-to-get-to-the-admin-portal).
+1. In Power BI service, navigate to the [admin portal](/power-bi/admin/service-admin-portal#how-to-get-to-the-admin-portal).
 
 2. From the **Power BI Premium** tab, select the capacity you want to disable the paginated reports outbound requests for.
 
