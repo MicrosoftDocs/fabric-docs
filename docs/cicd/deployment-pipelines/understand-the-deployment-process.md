@@ -110,17 +110,16 @@ Autobinding works only with items that are supported by deployment pipelines and
 
 Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item connected to it in the other pipeline. For example, if you have a report in the test stage of pipeline *A* that's connected to a semantic model in the test stage of pipeline *B*, deployment pipelines recognizes this connection.
 
+>[!NOTE]
+>Each pipeline must have the same number of stages. So for example, if pipeline *A* has 3 stages, then pipeline *B* must also have 3 stages.  Pipeline *A* cannot have 3 stages and pipeline *B* 5 stages. 
+
 Here's an example with illustrations that to help demonstrate how autobinding across pipelines works:
 
-1. You have a semantic model in the development stage of pipeline A.
-
-1. You also have a report in the development stage of pipeline B.
-
-1. Your report in pipeline B is connected to your semantic model in pipeline A. Your report depends on this semantic model.
-
-1. You deploy the report in pipeline B from the development stage to the test stage.
-
-1. The deployment succeeds or fails, depending on whether or not you have a copy of the semantic model it depends on in the test stage of pipeline A:
+- You have a semantic model in the development stage of pipeline A.
+- You also have a report in the development stage of pipeline B.
+- Your report in pipeline B is connected to your semantic model in pipeline A. Your report depends on this semantic model.
+- You deploy the report in pipeline B from the development stage to the test stage.
+- The deployment succeeds or fails, depending on whether or not you have a copy of the semantic model it depends on in the test stage of pipeline A:
 
     * *If you have a copy of the semantic model the report depends on in the test stage of pipeline A*:
 
