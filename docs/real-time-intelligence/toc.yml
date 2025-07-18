@@ -812,6 +812,8 @@ items:
       displayName: capacity, usage, consumption, billing
     - name: Activator throttling
       href: data-activator/activator-throttling-effects.md
+    - name: Activator query frequency
+      href: data-activator/activator-query-frequency.md      
       displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
   - name: Create alerts
     items:
