@@ -798,7 +798,7 @@ items:
   - name: Concepts
     items:
     - name: Core Concepts
-      href: core-concepts.md
+      href: data-activator/core-concepts.md
     - name: Activator rules
       href: data-activator/activator-rules-overview.md
     - name: Detection conditions for Activator
