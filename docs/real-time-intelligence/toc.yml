@@ -791,14 +791,14 @@ items:
   items:
   - name: What is Activator?
     href: data-activator/activator-introduction.md
+  - name: Core concepts
+    href: data-activator/core-concepts.md
   - name: Tutorials
     items: 
     - name: Create and activate an Activator rule
       href: data-activator/activator-tutorial.md
   - name: Concepts
     items:
-    - name: Core Concepts
-      href: data-activator/core-concepts.md
     - name: Activator rules
       href: data-activator/activator-rules-overview.md
     - name: Detection conditions for Activator

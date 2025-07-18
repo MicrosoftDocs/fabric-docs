@@ -102,4 +102,4 @@ For instance, a toll station might track vehicles (object IDs) as they pass thro
 There are also limits based on the number of distinct object IDs (number of packages) being tracked within the lookback window. 
 
 ## Next step
-See [Tutorial: Create and activate a Fabric Activator rule](activator-tutorial.md).
+See topics in the **Concepts** section. For example, [Activator rules](activator-rules-overview.md).
