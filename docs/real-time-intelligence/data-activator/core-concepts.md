@@ -11,46 +11,68 @@ ms.date: 07/18/2025
 ---
 
 # Core concepts
+Microsoft Fabric Activator operates as a high-performance, state-aware rules engine designed for low-latency evaluation of streaming events. At its core, Activator processes real-time events emitted via eventstream, evaluates rule conditions per logical object, and initiates downstream actions in response to state transitions. For an overview of Fabric Activator, see [Introduction to Fabric Activator](activator-introduction.md).
 
 The following concepts are used to build and trigger automated actions and responses in Fabric Activator. 
 
-## Events and eventstreams
+## Event sources and events
 Fabric Activator treats all data sources as streams of events. An event represents an observation about the state of an object and typically includes an identifier for the object, a timestamp, and values of the fields being monitored.
 
-Eventstreams vary in frequency. For example, IoT sensors emit events multiple times per second, and logistics systems generate events sporadically, such as when packages are scanned at shipping locations.
+Events ingested into Activator originate from:
 
-An eventstream is a specific item type in Microsoft Fabric. The Eventstreams feature within the Real-Time Intelligence workload allows you to ingest, transform, and route real-time events—without writing any code. Fabric Activator monitors the eventstream and automatically takes action when defined patterns or thresholds are detected.
+- Eventstream, which supports multiple upstream sources (for example, Azure Event Hubs, IoT Hub, Blob Storage triggers). An Eventstream is a specific item type in Microsoft Fabric, which allows you to ingest, transform, and route real-time events without writing any code. Fabric Activator monitors the eventstream and automatically takes action when defined patterns or thresholds are detected. Activator can also subscribe to two or more eventstreams to observe data changes. Eventstreams vary in frequency. For example, IoT sensors emit events multiple times per second, and logistics systems generate events sporadically, such as when packages are scanned at shipping locations.
+- Fabric events. For example, Fabric workspace item events are discrete Fabric events that occur when changes are made to your Fabric Workspace. These changes include creating, updating, or deleting a Fabric item.
+- Azure events. For example, Azure Blob Storage events are triggered when a client creates, replaces, deletes a blob, etc. 
+- Power BI report. In this case, events are periodic observations based on the refresh schedule of a Power BI semantic model (formerly known as a dataset). These observations might occur daily or weekly, forming a slow-moving eventstream.
+- Fabric Real-Time dashboard. 
 
-Even data from Power BI is treated as an eventstream. In this case, events are periodic observations based on the refresh schedule of a Power BI semantic model (formerly known as a dataset). These observations might occur daily or weekly, forming a slow-moving eventstream.
+Each event contains:
+
+- A timestamp
+- A payload (structured or semi-structured data)
+- One or more attributes used for object identification (for example, device_id, bikepoint_id)
 
 ## Objects
-
 In Fabric Activator, the entities you monitor are called business objects, which can be either physical or conceptual. Examples include physical objects such as freezers, vehicles, packages, and users, and conceptual objects such as advertising campaigns, customer accounts, user sessions.
 
 To model a business object in Activator, you connect one or more eventstream, select a column to serve as the object ID, and specify the fields you want to treat as properties of the object.
 
 The term **object instance** refers to a specific example of a business object such as a particular freezer, vehicle, or user session. In contrast, object typically refers to the general definition or class (for example, “freezer” as a type). The term population is used to the full set of object instances being monitored.
 
-## Rules
+The object creation is implicit: Activator groups events using a designated object key. Rules are scoped to objects, meaning all evaluation logic is object-aware and independent across instances. For example, a rule monitoring `bikepoint_id` creates distinct logical evaluations for each unique bike station.
 
+## Rules
 Rules define the conditions you want to detect on your objects and the actions to take when those conditions are met. For example, a rule on a freezer object might detect when the temperature rises above a safe threshold and automatically send an email alert to the assigned technician.
 
-There are three types of rules you can create:
+Rules in Activator can be stateless or stateful:
 
-- **Event-based rules**: Triggered by individual events as they occur in the eventstream.
-- **Object event rules**: Triggered when events are added to a specific object instance.
-- **Object property rules**: Triggered based on the current state or properties of an object instance.
+- **Stateless rules** evaluate each event in isolation (e.g., value < 50).
+- **Stateful rules** maintain memory across events per object (for example, value DECREASES, BECOMES, EXIT RANGE)
 
-When a rule’s conditions are met and an action is initiated, then the rule is said to be activated.
+Stateful evaluation relies on:
+
+- **Delta detection**: Tracks changes between prior and current event values.
+- **Temporal sequencing**: Evaluates time-based conditions like absence of events (heartbeat detection)
+- **State transitions**: Rules only fire on entry into a new state, preventing repeated firings in unchanged conditions
+
+Each rule condition is compiled into an execution graph that is evaluated continuously, in-memory, and near-instantly. The system is optimized for sub-second decisioning latency after event arrival.
+
+### Actions 
+When a rule’s conditions are met and an action is initiated, then the rule is said to be activated. The supported targets for actions include: 
+
+- Fabric data pipelines (for data movement, enrichment)
+- Fabric notebooks (for machine-learning scoring, diagnostics)
+- Power Automate flows (for business process integration)
+- Teams notifications (using template-based messaging)
+
+Activator emits a trigger message with the current object state and rule metadata, and actions are non-blocking, taht is, and Activator does not wait for completions of actions to enable scalable asynchronous flows.
 
 ## Properties
-
 Properties are useful when you want to reuse logic across multiple rules. For example, on a freezer object, you might define a property that calculates a temperature average over a one-hour period. Once defined, this property can be referenced in multiple rules, such as those that detect overheating, temperature fluctuations, or maintenance thresholds—without duplicating the logic.
 
 By centralizing logic in properties, you make your rules easier to manage, more consistent, and easier to update over time.
 
 ## Lookback period 
-
 Fabric Activator needs to track historical data to ensure that correct actions can be computed. The duration of historical data that is queried is known as the **lookback period**.
 
 The lookback period is determined by:

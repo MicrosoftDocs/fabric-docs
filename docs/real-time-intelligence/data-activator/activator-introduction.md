@@ -17,7 +17,7 @@ Fabric Activator is a no-code and low-latency event detection engine that automa
 
 From detecting anomalies in IoT telemetry to reacting to operational changes in supply chains or public infrastructure, Activator transforms raw event data into automated, intelligent responses. It enables organizations to move from passive monitoring to proactive, event-driven decision-making, a shift critical in high-velocity data environments.
 
-## Core architecture elements
+## Core architecture 
 Activator is the event detection and rules engine at the heart of Fabric Real-Time intelligence stack. Architecturally, it acts as an intelligent observer - consuming high-velocity data streams, evaluating rule conditions in near real-time, and initiating automated downstream actions based on changes in event states.
 
 It fits into a reactive, event-driven architecture where data flows continuously, and decisions are made based on stateful evaluations of event data in near real-time.
