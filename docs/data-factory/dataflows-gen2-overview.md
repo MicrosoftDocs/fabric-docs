@@ -96,7 +96,7 @@ To learn more about connecting dataflows with data pipelines, see [dataflow acti
 
 ### High-performance computing
 
-Just like Dataflow Gen1, Dataflow Gen2 uses an advanced compute engine to handle large amounts of data efficiently. To make this work, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace and uses them to store and access data, improving performance for all your dataflows.
+Dataflow Gen2 uses advanced compute Fabric SQL Compute engines to handle large amounts of data efficiently. To make this work, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace and uses them to store and access data, improving performance for all your dataflows.
 
 ## Copilot for Dataflow Gen2
 
