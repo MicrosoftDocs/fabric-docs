@@ -5,6 +5,7 @@ author: markingmyname
 ms.author: maghan
 ms.reviewer: yoleichen, wiassaf
 ms.date: 04/09/2025
+ms.update-cycle: 180-days
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot

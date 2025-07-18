@@ -8,6 +8,7 @@ ms.custom:
   - tenant-setting
 ms.topic: how-to
 ms.date: 05/19/2025
+ms.update-cycle: 180-days
 LocalizationGroup: Administration
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
