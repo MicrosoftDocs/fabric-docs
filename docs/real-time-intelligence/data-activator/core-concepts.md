@@ -37,7 +37,7 @@ In Fabric Activator, the entities you monitor are called business objects, which
 
 To model a business object in Activator, you connect one or more eventstream, select a column to serve as the object ID, and specify the fields you want to treat as properties of the object.
 
-The term **object instance** refers to a specific example of a business object such as a particular freezer, vehicle, or user session. In contrast, object typically refers to the general definition or class (for example, “freezer” as a type). The term population is used to the full set of object instances being monitored.
+The term **object instance** refers to a specific example of a business object such as a particular freezer, vehicle, or user session. In contrast, object typically refers to the general definition or class (for example, freezer as a type). The term population is used to the full set of object instances being monitored.
 
 The object creation is implicit: Activator groups events using a designated object key. Rules are scoped to objects, meaning all evaluation logic is object-aware and independent across instances. For example, a rule monitoring `bikepoint_id` creates distinct logical evaluations for each unique bike station.
 
@@ -46,7 +46,7 @@ Rules define the conditions you want to detect on your objects and the actions t
 
 Rules in Activator can be stateless or stateful:
 
-- **Stateless rules** evaluate each event in isolation (e.g., value < 50).
+- **Stateless rules** evaluate each event in isolation (for example, value < 50).
 - **Stateful rules** maintain memory across events per object (for example, value DECREASES, BECOMES, EXIT RANGE)
 
 Stateful evaluation relies on:
@@ -55,7 +55,7 @@ Stateful evaluation relies on:
 - **Temporal sequencing**: Evaluates time-based conditions like absence of events (heartbeat detection)
 - **State transitions**: Rules only fire on entry into a new state, preventing repeated firings in unchanged conditions
 
-Each rule condition is compiled into an execution graph that is evaluated continuously, in-memory, and near-instantly. The system is optimized for sub-second decisioning latency after event arrival.
+Each rule condition is compiled into an execution graph that is evaluated continuously, in-memory, and near-instantly. The system is optimized for subsecond decisioning latency after event arrival.
 
 ### Actions 
 When a rule’s conditions are met and an action is initiated, then the rule is said to be activated. The supported targets for actions include: 
@@ -65,7 +65,7 @@ When a rule’s conditions are met and an action is initiated, then the rule is 
 - Power Automate flows (for business process integration)
 - Teams notifications (using template-based messaging)
 
-Activator emits a trigger message with the current object state and rule metadata, and actions are non-blocking, taht is, and Activator does not wait for completions of actions to enable scalable asynchronous flows.
+Activator emits a trigger message with the current object state and rule metadata, and actions are nonblocking, that is, and Activator doesn't wait for completions of actions to enable scalable asynchronous flows.
 
 ## Properties
 Properties are useful when you want to reuse logic across multiple rules. For example, on a freezer object, you might define a property that calculates a temperature average over a one-hour period. Once defined, this property can be referenced in multiple rules, such as those that detect overheating, temperature fluctuations, or maintenance thresholds—without duplicating the logic.
