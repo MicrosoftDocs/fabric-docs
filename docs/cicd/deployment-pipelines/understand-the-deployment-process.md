@@ -111,7 +111,7 @@ Autobinding works only with items that are supported by deployment pipelines and
 Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item connected to it in the other pipeline. For example, if you have a report in the test stage of pipeline *A* that's connected to a semantic model in the test stage of pipeline *B*, deployment pipelines recognizes this connection.
 
 >[!NOTE]
->Each pipeline must have the same number of stages. So for example, if pipeline *A* has 3 stages, then pipeline *B* must also have 3 stages.  Pipeline *A* cannot have 3 stages and pipeline *B* 5 stages. 
+>Each pipeline must have the same number of stages. So for example, if pipeline *A* has 3 stages, then pipeline *B* must also have 3 stages.  Pipeline *A* cannot have 3 stages and pipeline *B* 5 stages for autobinding to succeed. 
 
 Here's an example with illustrations that to help demonstrate how autobinding across pipelines works:
 
