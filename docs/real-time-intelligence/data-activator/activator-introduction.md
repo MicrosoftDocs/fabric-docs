@@ -177,4 +177,4 @@ Here are a few real-world scenarios where you can use Fabric Activator:
 
 
 ## Next step
-Ready to get started? [Create and activate your first Fabric Activator rule](activator-tutorial.md) with our step-by-step tutorial.
+See [Tutorial: Create and activate a Fabric Activator rule](activator-tutorial.md).
