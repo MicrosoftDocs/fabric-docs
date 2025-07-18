@@ -65,6 +65,19 @@ Activator instances are deployed per workspace and bound to specific data source
 | Fabric events  | Supplies events that are happening within Fabric like refreshing of a semantic model or failing of a pipeline​ |
 | Notebooks      | Notebook execution can be triggered by an Activator |
 
+### Activator as an orchestrator
+Effective use of Activator in enterprise-grade real-time architectures requires intentional orchestration across Microsoft Fabric components and performance tuning for event volume, object cardinality, and rule complexity. This section explores how to orchestrate Activator with other services and how to optimize detection logic and runtime behavior to support low-latency, cost-efficient automation at scale.
+
+Activator plays a central role in event-driven pipelines by evaluating data at the point of arrival and triggering actions downstream. Typical **orchestration patterns** include:
+
+| Pattern                                | Flow Description                                                                                                                 |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Ingestion → Detection → Transformation | Events flow from Eventstream into Activator, which triggers a Data Pipeline to enrich or move the data.                          |
+| Ingestion → Detection → Notification   | Activator triggers Power Automate to send alerts or push status into Teams, Outlook, or ServiceNow.                              |
+| Ingestion → Detection → Model Scoring  | Activator triggers a Notebook to score an ML model or perform advanced analytics based on real-time anomalies.                   |
+| Feedback Loop with Activator (planned) | Activator-generated insights (e.g., sensitivity labels) are fed into Activator rules, enabling semantically enriched automation. |
+
+
 ## Core concepts
 Microsoft Fabric Activator operates as a high-performance, state-aware rules engine designed for low-latency evaluation of streaming events. At its core, Activator processes real-time events emitted via eventstream, evaluates rule conditions per logical object, and initiates downstream actions in response to state transitions. For an overview of Fabric Activator, see [Introduction to Fabric Activator](activator-introduction.md).
 
