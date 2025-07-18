@@ -9,7 +9,7 @@ ms.search.form: product-reflex
 ms.date: 7/18/2025
 ---
 
-# Query Frequency in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
+# Query frequency in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
 Some Fabric Activator rules work by running regular queries on the rule's data source. This article explains how to set the query frequency, and how to determine the right query frequency for your rule.
 
