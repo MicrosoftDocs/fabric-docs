@@ -19,6 +19,13 @@ The deployment process lets you clone content from one stage in the deployment p
 
 During deployment, Microsoft Fabric copies the content from the source stage to the target stage. The connections between the copied items are kept during the copy process. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content might take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the portal, but you can't use the content in the target stage.
 
+After the initial deployment:
+
+- the gateway associated with the target item is not automatically mapped to the corresponding data source.
+- You need to manually configure this mapping through the target item's settings page
+- After configuring verify that the data refresh completes successfully.
+- Subsequent deployments do not alter or reset this gateway configuration.
+
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). You can learn more about this process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
 > [!NOTE]
