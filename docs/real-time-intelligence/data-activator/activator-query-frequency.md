@@ -9,7 +9,7 @@ ms.search.form: product-reflex
 ms.date: 7/18/2025
 ---
 
-# Setting the Query Frequency in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules
+# Setting the query frequency in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules
 
 ## Query frequency in Fabric Activator
 
