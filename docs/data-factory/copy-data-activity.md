@@ -109,7 +109,7 @@ To learn how to configure your general settings, see [General](activity-overview
 
 1. In **Connection**, select an existing connection, or select **More** to create a new connection.
 
-   :::image type="content" source="media/copy-data-activity/configure-source-connection-in-pipeline-new.png" alt-text="Screenshot showing where to select New." lightbox="media/copy-data-activity/configure-source-connection-in-pipeline.png":::
+   :::image type="content" source="media/copy-data-activity/configure-source-connection-in-pipeline-new.png" alt-text="Screenshot showing where to select New." lightbox="media/copy-data-activity/configure-source-connection-in-pipeline-new.png":::
 
    1. Choose the data source type from the pop-up window. You'll use Azure SQL Database as an example. Select **Azure SQL Database**, and then select **Continue**.
 
@@ -117,7 +117,7 @@ To learn how to configure your general settings, see [General](activity-overview
 
    1. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-connectors-in-fabric).
 
-      :::image type="content" source="media/copy-data-activity/configure-connection-details-new.png" alt-text="Screenshot showing New connection page." lightbox="media/copy-data-activity/configure-connection-details.png":::
+      :::image type="content" source="media/copy-data-activity/configure-connection-details-new.png" alt-text="Screenshot showing New connection page." lightbox="media/copy-data-activity/configure-connection-details-new.png":::
 
    1. Once your connection is created, it takes you back to the data pipeline page. Then select **Refresh** to get the connection that you created from the drop-down list. You could also choose an existing Azure SQL Database connection from the drop-down directly if you already created it before. The **Test connection** and **Edit** capabilities are available for each selected connection. Then select **Azure SQL Database** in **Connection** type.
 
@@ -128,10 +128,6 @@ To learn how to configure your general settings, see [General](activity-overview
 ### Configure your destination under the destination tab
 
 1. In **Connection** select an existing connection, or select **More** to create a new connection. It could be either your internal first class data store from your workspace, such as Lakehouse, or your external data stores. In this example, we use Lakehouse.
-
-1. Choose to use **Lakehouse** in **Workspace data store type**. Select **+ New**, and it takes you to the Lakehouse creation page. Specify your Lakehouse name and then select **Create**.
-
-   :::image type="content" source="media/copy-data-activity/create-lakehouse-new.png" alt-text="Screenshot showing Lakehouse creation." lightbox="media/copy-data-activity/create-lakehouse.png":::
 
 1. Once your connection is created, it takes you back to the data pipeline page. Then select **Refresh** to get the connection that you created from the drop-down list. You could also choose an existing Lakehouse connection from the drop-down directly if you already created it before.
 
