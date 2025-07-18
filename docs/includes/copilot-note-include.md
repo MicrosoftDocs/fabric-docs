@@ -5,6 +5,7 @@ author: snehagunda
 ms.author: sngun
 ms.topic: include
 ms.date: 01/17/2024
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---

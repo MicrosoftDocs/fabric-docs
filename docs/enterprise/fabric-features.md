@@ -6,6 +6,7 @@ ms.author: juliacawthra
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
 ms.date: 05/11/2025
+ms.update-cycle: 180-days
 ---
 
 # Microsoft Fabric features parity

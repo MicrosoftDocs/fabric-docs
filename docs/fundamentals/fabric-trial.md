@@ -8,6 +8,7 @@ ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
 ms.date: 05/06/2025
+ms.update-cycle: 180-days
 ---
 
 # Microsoft Fabric trial capacity
