@@ -1086,4 +1086,4 @@
     - name: Data Factory limitations
       href: data-factory-limitations.md
     - name: Fabric known issues
-      href: ../get-started/fabric-known-issues.md?toc=/fabric/data-factory/toc.json
+      href: https://support.fabric.microsoft.com/known-issues/
