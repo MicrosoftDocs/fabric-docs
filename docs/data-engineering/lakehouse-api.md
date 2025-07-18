@@ -32,7 +32,7 @@ The Microsoft Fabric Rest API provides service endpoint for the CRUD operation o
 
 ## Lakehouse CRUD
 
-Use the following API to perform creation, modifications, and removal of the lakehouse inside a workspace. For detailed API parameters and request examples, see the [Create Lakehouse REST API documentation](https://learn.microsoft.com/en-us/rest/api/fabric/lakehouse/items).
+Use the following API to perform creation, modifications, and removal of the lakehouse inside a workspace. For detailed API parameters and request examples, see the [Create Lakehouse REST API documentation](/rest/api/fabric/lakehouse/items).
 
 ### Create a lakehouse
 
