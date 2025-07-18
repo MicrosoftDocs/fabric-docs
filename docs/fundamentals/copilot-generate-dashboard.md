@@ -7,6 +7,7 @@ ms.reviewer: mibar
 ms.topic: how-to
 ms.custom:
 ms.date: 06/19/2025
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
