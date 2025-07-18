@@ -1,4 +1,4 @@
----
+﻿---
 title: Using Autoscale with Power BI Premium
 description: Learn how to configure an Azure subscription to use with Autoscale and then enable Autoscale in the Power BI Admin portal.
 author: JulCsc
@@ -28,8 +28,8 @@ The following sections describe the steps in detail.
 
 >[!NOTE]
 >
->* Autoscale isn’t available for Microsoft 365 Government Community Cloud (GCC), due to the use of the commercial Azure cloud. For more information about which features are available and which are not, see [Power BI feature availability for U.S. Government customers](service-govus-overview.md#power-bi-feature-availability).
->* [Power BI Embedded](../developer/embedded/embedded-analytics-power-bi.md) doesn't provide an out-of-the-box vertical Autoscale feature. To learn about alternative Autoscale options for Power BI Embedded, see [Autoscaling in Power BI Embedded](../developer/embedded/azure-pbie-scale-capacity.md#autoscale-your-capacity).
+>* Autoscale isnâ€™t available for Microsoft 365 Government Community Cloud (GCC), due to the use of the commercial Azure cloud. For more information about which features are available and which are not, see [Power BI feature availability for U.S. Government customers](service-govus-overview.md#power-bi-feature-availability).
+>* [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi) doesn't provide an out-of-the-box vertical Autoscale feature. To learn about alternative Autoscale options for Power BI Embedded, see [Autoscaling in Power BI Embedded](/power-bi/developer/embedded/azure-pbie-scale-capacity#autoscale-your-capacity).
 
 ## Configure an Azure subscription to use with Autoscale
 
@@ -101,3 +101,4 @@ To disable Autoscale, follow these steps:
 * [Power BI Premium Per User FAQ](service-premium-per-user-faq.yml)
 
 * [Add or change Azure subscription administrators](/azure/cost-management-billing/manage/add-change-subscription-administrator)
+

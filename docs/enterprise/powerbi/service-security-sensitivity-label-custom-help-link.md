@@ -36,3 +36,4 @@ If a user has more than one label policy, the custom URL is always taken from th
 ## Related content
 
 * [Sensitivity labels in Power BI](service-security-sensitivity-label-overview.md)
+

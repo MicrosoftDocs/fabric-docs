@@ -1,4 +1,4 @@
----
+﻿---
 title: Sensitivity labels from Microsoft Purview Information Protection in Power BI
 description: Learn how sensitivity labels from Microsoft Purview Information Protection work in Power BI
 author: JulCsc
@@ -155,7 +155,7 @@ Export fails if a label can't be applied when data is exported to a file. To che
 
 ## Sensitivity label inheritance in Analyze in Excel
 
-When you create a PivotTable in Excel with a live connection to a Power BI semantic model (you can do this either from Power BI through [Analyze In Excel](../collaborate-share/service-analyze-in-excel.md) or from [Excel](https://support.microsoft.com/office/create-a-pivottable-from-power-bi-datasets-31444a04-9c38-4dd7-9a45-22848c666884?ui=en-US&rs=en-US&ad=US)), the semantic model's sensitivity label is inherited and applied to your Excel file, along with any associated protection. If the label on the semantic model later changes to a more restrictive one, the label applied on the linked Excel file will automatically update upon data refresh.
+When you create a PivotTable in Excel with a live connection to a Power BI semantic model (you can do this either from Power BI through [Analyze In Excel](/power-bi/collaborate-share/service-analyze-in-excel) or from [Excel](https://support.microsoft.com/office/create-a-pivottable-from-power-bi-datasets-31444a04-9c38-4dd7-9a45-22848c666884?ui=en-US&rs=en-US&ad=US)), the semantic model's sensitivity label is inherited and applied to your Excel file, along with any associated protection. If the label on the semantic model later changes to a more restrictive one, the label applied on the linked Excel file will automatically update upon data refresh.
 
 ![Screenshot of Excel showing sensitivity label inherited from semantic model via live connection.](media/service-security-sensitivity-label-overview/live-connection-inheritance.png)
 
@@ -172,9 +172,9 @@ You can embed Power BI reports, dashboards, and visuals in business applications
 
 The following embedding scenarios are supported:
 
-* [Embed for your organization](../developer/embedded/embed-sample-for-your-organization.md)
-* Microsoft 365 apps (for example, [Teams](../collaborate-share/service-embed-report-microsoft-teams.md) and [SharePoint](../collaborate-share/service-embed-report-spo.md))
-* [Secure URL embedding](../collaborate-share/service-embed-secure.md) (embedding from the Power BI service)
+* [Embed for your organization](/power-bi/developer/embedded/embed-sample-for-your-organization)
+* Microsoft 365 apps (for example, [Teams](/power-bi/collaborate-share/service-embed-report-microsoft-teams) and [SharePoint](/power-bi/collaborate-share/service-embed-report-spo))
+* [Secure URL embedding](/power-bi/collaborate-share/service-embed-secure) (embedding from the Power BI service)
 
 ## Sensitivity labels in paginated reports
 
@@ -304,3 +304,4 @@ This article provided an overview of data protection in Power BI. The following 
 * [Using Microsoft Defender for Cloud Apps controls in Power BI](/fabric/governance/service-security-using-defender-for-cloud-apps-controls)
 * [Protection metrics report](/fabric/governance/use-microsoft-purview-hub)
 * [Power BI implementation planning: Information protection for Power BI](/power-bi/guidance/powerbi-implementation-planning-info-protection)
+

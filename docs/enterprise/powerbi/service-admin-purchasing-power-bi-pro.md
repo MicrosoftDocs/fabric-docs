@@ -1,4 +1,4 @@
----
+﻿---
 title: Purchase Power BI and assign licenses.
 description: Learn how to purchase Power BI and assign user licenses to users so they can access content and collaborate with others in the Power BI service.
 author: JulCsc
@@ -77,6 +77,7 @@ Self-service purchase, subscription, and license management capabilities for Fab
 
 - [Power BI licensing in your organization](service-admin-licensing-organization.md)
 
-- [Sign up for Power BI as an individual](../fundamentals/service-self-service-signup-for-power-bi.md)
+- [Sign up for Power BI as an individual](/power-bi/fundamentals/service-self-service-signup-for-power-bi)
 
 More questions? [Try asking the Power BI Community.](https://community.powerbi.com/)
+

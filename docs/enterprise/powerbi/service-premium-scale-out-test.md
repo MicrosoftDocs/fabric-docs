@@ -1,4 +1,4 @@
----
+﻿---
 title: Power BI semantic model scale-out test
 description: Learn how test the Power BI semantic model scale-out feature after it's enabled
 author: JulCsc
@@ -120,3 +120,4 @@ If you followed step 3, you're connected to the read-write semantic model. You c
 * [Synchronize scale-out replicas](service-premium-scale-out-sync-replica.md)
 
 >* [Compare semantic model scale-out replicas](service-premium-scale-out-app.md)
+

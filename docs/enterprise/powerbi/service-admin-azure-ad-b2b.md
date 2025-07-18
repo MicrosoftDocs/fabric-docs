@@ -1,4 +1,4 @@
----
+﻿---
 title: Distribute content to external guest users with Microsoft Entra B2B
 description: Power BI enables sharing content with external guest users through Microsoft Entra Business-to-business (Microsoft Entra B2B).
 author: JulCsc
@@ -16,10 +16,10 @@ LocalizationGroup: Administration
 
 Power BI enables sharing content with external guest users through Microsoft Entra Business-to-Business (Microsoft Entra B2B). By using Microsoft Entra B2B, your organization enables and governs sharing with external users in a central place.
 
-Another way to share content with external guest users is in-place semantic model sharing with Power BI. This allows you share content with external guest users that they can then access in their own home tenant. For more information about in-place semantic model sharing, see [About Power BI in-place semantic model sharing with guest users in external organizations](../collaborate-share/service-dataset-external-org-share-about.md).
+Another way to share content with external guest users is in-place semantic model sharing with Power BI. This allows you share content with external guest users that they can then access in their own home tenant. For more information about in-place semantic model sharing, see [About Power BI in-place semantic model sharing with guest users in external organizations](/power-bi/collaborate-share/service-dataset-external-org-share-about).
 
 
-This article provides a basic introduction to Microsoft Entra B2B in Power BI. For more information, see [Distribute Power BI content to external guest users using Microsoft Entra B2B](../guidance/whitepaper-azure-b2b-power-bi.md).
+This article provides a basic introduction to Microsoft Entra B2B in Power BI. For more information, see [Distribute Power BI content to external guest users using Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
 
 ## Enable Invite external users to your organization setting
 
@@ -162,11 +162,11 @@ You can use Power BI's B2B capabilities across Microsoft Azure clouds by configu
 
 There are some limitations to the B2B experience that you should be aware of:
 
-* Guest users may already have a Power BI license that was assigned to them through their own organization. But “Bring your own license” doesn’t work across different Microsoft Azure clouds for B2B guest users. A new license has to be assigned to these guest users by the provider tenant. 
+* Guest users may already have a Power BI license that was assigned to them through their own organization. But â€œBring your own licenseâ€ doesnâ€™t work across different Microsoft Azure clouds for B2B guest users. A new license has to be assigned to these guest users by the provider tenant. 
 
 * New external users can't be invited to the organization through Power BI sharing, permissions, and subscription experiences.
 
-* On the Home page, the “From external orgs” tab won't list content shared from other clouds.
+* On the Home page, the â€œFrom external orgsâ€ tab won't list content shared from other clouds.
 
 * Cross-cloud sharing doesn't work when sharing with a security group. For instance, if a user using Power BI in a national cloud invites a security group from the public cloud or vice versa, access isn't granted. This is because the service can't resolve the members of these groups across clouds.
 
@@ -184,8 +184,8 @@ There are also Microsoft Entra ID settings that can limit what external guest us
   * [Use Conditional Access to allow or block access](/azure/active-directory/conditional-access/concept-conditional-access-cloud-apps)
 
 Additionally, to use in-place semantic model sharing, tenant admins need to enable the following settings: 
-* [Guest users can work with shared semantic models in their own tenants](../collaborate-share/service-dataset-external-org-share-admin.md#guest-users-can-work-with-shared-semantic-models-in-their-own-tenants)
-* [Allow specific users to turn on external data sharing](../collaborate-share/service-dataset-external-org-share-admin.md#allow-specific-users-to-turn-on-external-data-sharing) 
+* [Guest users can work with shared semantic models in their own tenants](/power-bi/collaborate-share/service-dataset-external-org-share-admin#guest-users-can-work-with-shared-semantic-models-in-their-own-tenants)
+* [Allow specific users to turn on external data sharing](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-specific-users-to-turn-on-external-data-sharing) 
 
 ## Considerations and Limitations
 
@@ -212,7 +212,8 @@ Additionally, to use in-place semantic model sharing, tenant admins need to enab
 
 ## Related content
 
-* For more detailed info, including how row-level security works, check out the whitepaper: [Distribute Power BI content to external guest users using Microsoft Entra B2B](../guidance/whitepaper-azure-b2b-power-bi.md).
+* For more detailed info, including how row-level security works, check out the whitepaper: [Distribute Power BI content to external guest users using Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
 * For information about Microsoft Entra B2B, see [What is Microsoft Entra B2B collaboration?](/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b/)
-* For information about in-place semantic model sharing, see [Power BI in-place semantic model sharing with guest users in external organizations (preview)](../collaborate-share/service-dataset-external-org-share-about.md).
+* For information about in-place semantic model sharing, see [Power BI in-place semantic model sharing with guest users in external organizations (preview)](/power-bi/collaborate-share/service-dataset-external-org-share-about).
 * For information about government clouds, see [Power BI for US Government](service-govus-overview.md).
+

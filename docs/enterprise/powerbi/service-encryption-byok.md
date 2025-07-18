@@ -1,4 +1,4 @@
----
+﻿---
 title: Bring your own encryption keys for Power BI
 description: Learn how to use your own encryption keys (BYOK) in Power BI Premium to gain more control and help meet compliance requirements.
 author: JulCsc
@@ -29,8 +29,8 @@ To use BYOK, you must upload data to the Power BI service from a Power BI Deskto
     >[!NOTE]
     >For Excel workbooks stored in SharePoint and OneDrive, you can use [Customer Key](/purview/customer-key-set-up#onboard-to-customer-key-for-sharepoint-and-onedrive).
 - [Push semantic models](/rest/api/power-bi/pushdatasets)
-- [Streaming semantic models](../connect-data/service-real-time-streaming.md#set-up-your-real-time-streaming-semantic-model-in-power-bi)
-- [Power BI metrics](../create-reports/service-goals-introduction.md) don't currently support BYOK
+- [Streaming semantic models](/power-bi/connect-data/service-real-time-streaming#set-up-your-real-time-streaming-semantic-model-in-power-bi)
+- [Power BI metrics](/power-bi/create-reports/service-goals-introduction) don't currently support BYOK
 
 BYOK applies only to semantic models. Push semantic models, Excel files, and CSV files that users can upload to the service aren't encrypted using your own key. To identify which items are stored in your workspaces, use the following PowerShell command:
 
@@ -141,7 +141,7 @@ Before you enable BYOK, keep the following considerations in mind:
 
 - You can't *directly* move a workspace that uses BYOK from a capacity in Power BI Premium to a shared capacity. You must first move the workspace to a capacity that doesn't have BYOK enabled.
 
-- If you move a workspace that uses BYOK from a capacity in Power BI Premium to a shared capacity, reports and semantic models become inaccessible since they're encrypted with the Key. To avoid this situation, you must first move the workspace to a capacity that doesn’t have BYOK enabled.
+- If you move a workspace that uses BYOK from a capacity in Power BI Premium to a shared capacity, reports and semantic models become inaccessible since they're encrypted with the Key. To avoid this situation, you must first move the workspace to a capacity that doesnâ€™t have BYOK enabled.
 
 ### Enable BYOK
 
@@ -226,12 +226,13 @@ Power BI provides additional cmdlets to help manage BYOK in your tenant:
 
 - [Overview of Power BI PowerShell cmdlet module.](/powershell/power-bi/overview)
 
-- [Ways to share your work in Power BI.](../collaborate-share/service-how-to-collaborate-distribute-dashboards-reports.md)
+- [Ways to share your work in Power BI.](/power-bi/collaborate-share/service-how-to-collaborate-distribute-dashboards-reports)
 
-- [Filter a report using query string parameters in the URL.](../collaborate-share/service-url-filters.md)
+- [Filter a report using query string parameters in the URL.](/power-bi/collaborate-share/service-url-filters)
 
-- [Embed with report web part in SharePoint Online.](../collaborate-share/service-embed-report-spo.md)
+- [Embed with report web part in SharePoint Online.](/power-bi/collaborate-share/service-embed-report-spo)
 
-- [Publish to web from Power BI.](../collaborate-share/service-publish-to-web.md)
+- [Publish to web from Power BI.](/power-bi/collaborate-share/service-publish-to-web)
 
 - [What is Power BI Premium?](service-premium-what-is.md)
+

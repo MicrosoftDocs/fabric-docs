@@ -1,4 +1,4 @@
----
+﻿---
 title: Power BI Security
 description: Learn how Power BI relates to Microsoft Entra ID and other Azure services. 
 author: JulCsc
@@ -58,7 +58,7 @@ For more information, see [Microsoft Trust Center, Products and services that ru
 
 As described earlier, on-premises AD servers use a Power BI sign-in to map to a UPN for credentials. However, users must understand the sensitivity of the data they share. After you securely connect to a data source, and then share reports, dashboards, or semantic models with others, the recipients are granted access to the report. Recipients don't have to sign in to the data source.
 
-An exception is connecting to **SQL Server Analysis Services** using the **On-premises data gateway**. Dashboards are cached in Power BI, but access to underlying reports or semantic models initiates authentication for each user that attempts to access the report or semantic model. Access will only be granted if the user has sufficient credentials to access the data. For more information, see [On-premises data gateway in-depth](../connect-data/service-gateway-onprem-indepth.md).
+An exception is connecting to **SQL Server Analysis Services** using the **On-premises data gateway**. Dashboards are cached in Power BI, but access to underlying reports or semantic models initiates authentication for each user that attempts to access the report or semantic model. Access will only be granted if the user has sufficient credentials to access the data. For more information, see [On-premises data gateway in-depth](/power-bi/connect-data/service-gateway-onprem-indepth).
 
 ## Enforcing TLS version usage
 
@@ -69,3 +69,4 @@ This enforcement is implemented by administratively setting registry keys. For e
 **Power BI Desktop** requires TLS (Transport Layer Security) version 1.2 (or higher) to secure your endpoints. Web browsers and other client applications that use TLS versions earlier than TLS 1.2 won't be able to connect. If a newer version of TLS is required, Power BI Desktop respects the registry key settings described in those articles, and only creates connections meeting the version requirement of TLS allowed based on those registry settings, when present.
 
 For more information about setting these registry keys, see [Transport Layer Security (TLS) registry settings](/windows-server/security/tls/tls-registry-settings).
+

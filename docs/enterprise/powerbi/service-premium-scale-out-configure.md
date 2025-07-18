@@ -1,4 +1,4 @@
----
+﻿---
 title: Configure Power BI semantic model scale-out
 description: Learn how configure Power BI semantic model scale-out by using the Power BI REST API
 author: JulCsc
@@ -161,3 +161,4 @@ Invoke-PowerBIRestMethod -Url "groups/$workspaceId/datasets/$datasetId" -Method 
 * [Synchronize scale-out replicas](service-premium-scale-out-sync-replica.md)
 
 * [Compare semantic model scale-out replicas](service-premium-scale-out-app.md)
+

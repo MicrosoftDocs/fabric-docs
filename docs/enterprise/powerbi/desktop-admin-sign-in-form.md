@@ -1,4 +1,4 @@
----
+﻿---
 title: How admins can manage the Power BI Desktop sign-in form
 description: Learn how you can manage the initial sign-in form when opening Power BI Desktop by using registry keys.
 author: JulCsc
@@ -33,3 +33,4 @@ valueName: ShowLeadGenDialog
 A value of 0 disables the dialog.
 
 More questions? [Ask the Power BI Community](https://community.powerbi.com)
+

@@ -1,4 +1,4 @@
----
+﻿---
 title: About self-service sign-ups and purchases 
 description: Overview information for admins about self-service options for Power BI.
 author: JulCsc
@@ -46,3 +46,4 @@ This article is an overview of self-service in Power BI. To learn how to enable 
 ## Related content
 
 [How-to instructions for enabling and disabling self-service sign-up and purchasing of licenses and subscriptions](/microsoft-365/commerce/subscriptions/manage-self-service-purchases-admins).
+

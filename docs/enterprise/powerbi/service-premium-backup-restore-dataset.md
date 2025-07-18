@@ -1,4 +1,4 @@
----
+﻿---
 title: How to Backup and restore Power BI Premium semantic models
 description: Learn about the backup and restore feature for semantic models with a Power BI Premium or Premium Per User license.
 author: JulCsc
@@ -29,7 +29,7 @@ You can perform offline backups, downloading the files from your ADLS Gen2 stora
 
 :::image type="content" source="media/service-premium-backup-restore-datasets/premium-backup-restore-datasets-02.png" alt-text="Screenshot of Azure Storage Explorer with a backup selected. A portion of the Power BI window shows the settings dialog.":::
 
-To learn how to configure Power BI to use an ADLS Gen2 storage account, see [configuring dataflow storage to use Azure Data Lake Gen 2](../transform-model/dataflows/dataflows-azure-data-lake-storage-integration.md).
+To learn how to configure Power BI to use an ADLS Gen2 storage account, see [configuring dataflow storage to use Azure Data Lake Gen 2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration).
 
 ### Multi-geo considerations
 
@@ -124,4 +124,5 @@ When using the **Backup and Restore** feature with Power BI, keep the following 
 
 * [Semantic model connectivity with the XMLA endpoint](service-premium-connect-tools.md)
 
-* [Configuring tenant and workspace storage](../transform-model/dataflows/dataflows-azure-data-lake-storage-integration.md)
+* [Configuring tenant and workspace storage](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration)
+

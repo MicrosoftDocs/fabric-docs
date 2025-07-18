@@ -1,4 +1,4 @@
----
+﻿---
 title: Automate Power BI Premium workspace and semantic model tasks with service principals
 description: Learn how to use service principals for automating Power BI Premium workspace and semantic model management tasks.
 author: JulCsc
@@ -15,7 +15,7 @@ LocalizationGroup: Premium
 
 Service principals are a Microsoft Entra ID *app registration* you create within your tenant to perform unattended resource and service level operations. They're a unique type of user identity with an app name, application ID, tenant ID, and *client secret* or certificate for a password.
 
-Power BI Premium uses the same service principal functionality as Power BI Embedded. To learn more, see [Embedding Power BI content with service principals](../developer/embedded/embed-service-principal.md).
+Power BI Premium uses the same service principal functionality as Power BI Embedded. To learn more, see [Embedding Power BI content with service principals](/power-bi/developer/embedded/embed-service-principal).
 
 In Power BI Premium, you can use service principals with the [XMLA (XML Analysis) endpoint](service-premium-connect-tools.md) to automate semantic model management tasks such as provisioning workspaces, deploying models, and semantic model refresh with:
 
@@ -24,9 +24,9 @@ In Power BI Premium, you can use service principals with the [XMLA (XML Analysis
 - Azure Logic Apps.
 - Custom client applications.
 
-Only [new workspaces](../collaborate-share/service-new-workspaces.md) support XMLA endpoint connections by using service principals. Classic workspaces aren't supported. A service principal has only those permissions necessary to perform tasks on workspaces where it's assigned. Permissions are assigned through workspace access, much like regular UPN (user principal name) accounts.
+Only [new workspaces](/power-bi/collaborate-share/service-new-workspaces) support XMLA endpoint connections by using service principals. Classic workspaces aren't supported. A service principal has only those permissions necessary to perform tasks on workspaces where it's assigned. Permissions are assigned through workspace access, much like regular UPN (user principal name) accounts.
 
-To perform write operations, the capacity's Semantic models workload must have the [XMLA endpoint enabled for read-write operations](service-premium-connect-tools.md#enable-xmla-read-write). Semantic models published from Power BI Desktop should have the [enhanced metadata format](../connect-data/desktop-enhanced-dataset-metadata.md) feature enabled.
+To perform write operations, the capacity's Semantic models workload must have the [XMLA endpoint enabled for read-write operations](service-premium-connect-tools.md#enable-xmla-read-write). Semantic models published from Power BI Desktop should have the [enhanced metadata format](/power-bi/connect-data/desktop-enhanced-dataset-metadata) feature enabled.
 
 ## Create a service principal
 
@@ -115,3 +115,4 @@ db.Model.SaveChanges();
 - [Azure Automation](/azure/automation)  
 - [Azure Logic Apps](/azure/logic-apps/)  
 - [Power BI REST APIs](/rest/api/power-bi/)
+

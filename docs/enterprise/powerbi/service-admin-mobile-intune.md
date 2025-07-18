@@ -1,4 +1,4 @@
----
+﻿---
 title: Configure mobile apps with Microsoft Intune
 description: Learn how to configure the Power BI mobile apps with Microsoft Intune. This includes how to add and deploy the application and how to create a mobile application policy to control security. 
 author: JulCsc
@@ -61,6 +61,7 @@ To understand how your end users can use the Power BI app on their device, revie
 ## Related content
 
 - [How to create and assign app protection policies](/mem/intune/apps/app-protection-policies)
-- [What are the Power BI mobile apps](../consumer/mobile/mobile-apps-for-mobile-devices.md)  
+- [What are the Power BI mobile apps](/power-bi/consumer/mobile/mobile-apps-for-mobile-devices)  
 
 More questions? [Ask the Power BI Community](https://community.powerbi.com/)
+

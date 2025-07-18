@@ -1,4 +1,4 @@
----
+﻿---
 title: Semantic model connectivity and management with the XMLA endpoint in Power BI
 description: Describes Power BI Premium and Premium Per User semantic model connectivity from client applications and tools by using the XMLA endpoint.
 author: JulCsc
@@ -43,31 +43,31 @@ Using the XMLA endpoint is subject to:
 
 Common applications and tools used with Azure Analysis Services and SQL Server Analysis Services that are now supported by Power BI Premium semantic models:
 
-**Microsoft Excel** – Excel PivotTables are one of the most common tools used to summarize, analyze, explore, and present summary data from Power BI semantic models. Read-only is required for query operations. Requires the Click-to-Run version of Office 16.0.13612.10000 or higher.
+**Microsoft Excel**â€¯â€“ Excel PivotTables are one of the most common tools used to summarize, analyze, explore, and present summary data from Power BI semantic models. Read-only is required for query operations. Requires the Click-to-Run version of Office 16.0.13612.10000 or higher.
 
-**Visual Studio with Analysis Services projects** – Known as SQL Server Data Tools(SSDT). SSDT is an enterprise grade model authoring tool for Analysis Services tabular models. All Visual Studio 2017 and later editions including the free Community edition support Analysis Services projects extensions. Requires extension version 2.9.14 or higher to deploy tabular models to a Premium workspace. The model must be at the 1500 or higher compatibility level to deploy. Requires XMLA read-write on the semantic models workload. To learn more, see [Tools for Analysis Services](/analysis-services/tools-and-applications-used-in-analysis-services?view=power-bi-premium-current&preserve-view=true).
+**Visual Studio with Analysis Services projects** â€“ Known as SQL Server Data Tools(SSDT). SSDT is an enterprise grade model authoring tool for Analysis Services tabular models. All Visual Studio 2017 and later editions including the free Community edition support Analysis Services projects extensions. Requires extension version 2.9.14 or higher to deploy tabular models to a Premium workspace. The model must be at the 1500 or higher compatibility level to deploy. Requires XMLA read-write on the semantic models workload. To learn more, see [Tools for Analysis Services](/analysis-services/tools-and-applications-used-in-analysis-services?view=power-bi-premium-current&preserve-view=true).
 
-**SQL Server Management Studio (SSMS)** - Supports DAX, MDX, and XMLA queries. Perform fine-grain refresh operations and scripting of semantic model metadata using the [Tabular Model Scripting Language](/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference) (TMSL). Requires read-only for query operations. Requires read-write for scripting metadata. Requires SSMS version **18.9** or higher. [Download SSMS](/sql/ssms/download-sql-server-management-studio-ssms).
+**SQL Server Management Studio (SSMS)**â€¯- Supports DAX, MDX, and XMLA queries. Perform fine-grain refresh operations and scripting of semantic model metadata using the [Tabular Model Scripting Language](/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference) (TMSL). Requires read-only for query operations. Requires read-write for scripting metadata. Requires SSMS version **18.9** or higher. [Download SSMS](/sql/ssms/download-sql-server-management-studio-ssms).
 
-**SQL Server Profiler** – SQL Server Profiler installs with SSMS, it allows tracing and debugging of semantic model events. Although officially deprecated for SQL Server, Profiler is still included in SSMS and remains supported for Analysis Services and Power BI. Requires SQL Server Profiler version **18.9** or higher. Users must specify the semantic model ([initial catalog](#initial-catalog)) when connecting with the XMLA endpoint. To learn more, see [SQL Server Profiler for Analysis Services](/analysis-services/instances/use-sql-server-profiler-to-monitor-analysis-services?view=power-bi-premium-current&preserve-view=true).
+**SQL Server Profiler**â€¯â€“ SQL Server Profiler installs with SSMS, it allows tracing and debugging of semantic model events. Although officially deprecated for SQL Server, Profiler is still included in SSMS and remains supported for Analysis Services and Power BI. Requires SQL Server Profiler version **18.9** or higher. Users must specify the semantic model ([initial catalog](#initial-catalog)) when connecting with the XMLA endpoint. To learn more, seeâ€¯[SQL Server Profiler for Analysis Services](/analysis-services/instances/use-sql-server-profiler-to-monitor-analysis-services?view=power-bi-premium-current&preserve-view=true).
 
-**Analysis Services Deployment Wizard** – Installed with SSMS, this tool provides deployment of Visual Studio authored tabular model projects to Analysis Services and Premium workspaces. It can be run interactively or from the command line for automation. XMLA read-write is required. To learn more, see [Analysis Services Deployment Wizard](/analysis-services/deployment/deploy-model-solutions-using-the-deployment-wizard?view=power-bi-premium-current&preserve-view=true).
+**Analysis Services Deployment Wizard** â€“ Installed with SSMS, this tool provides deployment of Visual Studio authored tabular model projects to Analysis Services and Premium workspaces. It can be run interactively or from the command line for automation. XMLA read-write is required. To learn more, see [Analysis Services Deployment Wizard](/analysis-services/deployment/deploy-model-solutions-using-the-deployment-wizard?view=power-bi-premium-current&preserve-view=true).
 
-**PowerShell cmdlets** – Use Analysis Services cmdlets to automate semantic model management tasks like refresh operations. Requires XMLA read-write. Requires version **21.1.18256** or higher of the [SqlServer PowerShell module](https://www.powershellgallery.com/packages/SqlServer/). Azure Analysis Services cmdlets in the Az.AnalysisServices module aren't supported for Power BI semantic models. To learn more, see [Analysis Services PowerShell Reference](/analysis-services/powershell/analysis-services-powershell-reference?view=power-bi-premium-current&preserve-view=true).
+**PowerShell cmdlets**â€¯â€“ Use Analysis Services cmdlets to automate semantic model management tasks like refresh operations. Requires XMLA read-write. Requires version **21.1.18256** or higher of the [SqlServer PowerShell module](https://www.powershellgallery.com/packages/SqlServer/). Azure Analysis Services cmdlets in the Az.AnalysisServices module aren't supported for Power BI semantic models. To learn more, see [Analysis Services PowerShell Reference](/analysis-services/powershell/analysis-services-powershell-reference?view=power-bi-premium-current&preserve-view=true).
 
-**Power BI Report Builder** - A tool for authoring paginated reports. Create a report definition that specifies the data to retrieve, where to get it, and how to display it. You can preview your report in Report Builder and then publish your report to the Power BI service. Requires XMLA read-only. To learn more, see [Power BI Report Builder](../paginated-reports/report-builder-power-bi.md).
+**Power BI Report Builder** - A tool for authoring paginated reports. Create a report definition that specifies the data to retrieve, where to get it, and how to display it. You can preview your report in Report Builder and then publish your report to the Power BI service. Requires XMLA read-only. To learn more, see [Power BI Report Builder](/power-bi/paginated-reports/report-builder-power-bi).
 
 **Tabular Editor 2.x** - An open-source tool for creating, maintaining, and managing tabular models using an intuitive, lightweight editor. A hierarchical view shows all objects in your tabular model. Organizes objects by display folders with support for multi-select property editing and DAX syntax highlighting. Requires XMLA read-only for query operations. Requires read-write for metadata operations. To learn more, see [Tabular Editor 2.x](https://github.com/TabularEditor/tabulareditor).
 
-**DAX Studio** – An open-source tool for DAX authoring, diagnosis, performance tuning, and analysis. Features include object browsing, integrated tracing, query execution breakdowns with detailed statistics, DAX syntax highlighting and formatting. Requires XMLA read-only for query operations. To learn more, see [daxstudio.org](https://daxstudio.org/).
+**DAX Studio** â€“ An open-source tool for DAX authoring, diagnosis, performance tuning, and analysis. Features include object browsing, integrated tracing, query execution breakdowns with detailed statistics, DAX syntax highlighting and formatting. Requires XMLA read-only for query operations. To learn more, see [daxstudio.org](https://daxstudio.org/).
 
 **ALM Toolkit** - An open-source schema compare tool for Power BI semantic models, most often used for application lifecycle management (ALM) scenarios. Perform deployment across environments and retain incremental refresh historical data. Diff and merge metadata files, branches, and repos. Reuse common definitions between semantic models. Requires read-only for query operations. Requires read-write for metadata operations. To learn more, see [alm-toolkit.com](http://alm-toolkit.com/).
 
-**Third party** - Includes client data visualization applications and tools that can connect to, query, and consume semantic models in Premium workspaces. Most tools require the latest versions of MSOLAP client libraries, but some can use ADOMD. Read-only or read-write XMLA endpoint is dependent on the operations.
+**Third party**â€¯- Includes client data visualization applications and tools that can connect to, query, and consume semantic models in Premium workspaces. Most tools require the latest versions of MSOLAP client libraries, but some can use ADOMD. Read-only or read-write XMLA endpoint is dependent on the operations.
 
 ### Client libraries
 
-Client applications and tools don't communicate directly with the XMLA endpoint. Instead, they use *client libraries* as an abstraction layer. These are the same client libraries that applications use to connect to Azure Analysis Services and SQL Server Analysis Services. Microsoft applications like Excel, SQL Server Management Studio (SSMS), and Analysis Services projects extension for Visual Studio install all three client libraries and update them along with regular application and extension updates. Developers can use the client libraries to build custom applications. In some cases, particularly with third-party applications, if not installed with the application, it might be necessary to install newer versions of the client libraries. Client libraries are updated monthly. To learn more, see [Client libraries for connecting to Analysis Services](/azure/analysis-services/analysis-services-data-providers).
+Client applications and tools don't communicate directly with the XMLA endpoint. Instead, they use *client libraries* as an abstraction layer. These are the same client libraries that applications use to connect to Azure Analysis Services and SQL Server Analysis Services. Microsoft applications like Excel, SQL Server Management Studio (SSMS), and Analysis Services projects extension for Visual Studio install all three client libraries and update them along with regular application and extension updates. Developers can use the client libraries to build custom applications. In some cases, particularly with third-party applications, if not installed with the application, it might be necessary to install newer versions of the client libraries. Client libraries are updated monthly. To learn more, seeâ€¯[Client libraries for connecting to Analysis Services](/azure/analysis-services/analysis-services-data-providers).
 
 ## Optimize semantic models for write operations by enabling large models
 
@@ -102,7 +102,7 @@ Applications connecting to the workspace use the URL as if it were an Analysis S
 `powerbi://api.powerbi.com/v1.0/contoso.com/Sales Workspace`.
 
 > [!NOTE]
-> Connecting to a [**My Workspace**](../consumer/end-user-workspaces.md#types-of-workspaces) by using the XMLA endpoint is currently not supported.
+> Connecting to a [**My Workspace**](/power-bi/consumer/end-user-workspaces#types-of-workspaces) by using the XMLA endpoint is currently not supported.
 
 #### B2B and guest users
 
@@ -132,7 +132,7 @@ With some tools, such as SQL Server Profiler, you must specify an *Initial Catal
 
 ### Duplicate workspace names
 
-[Workspaces](../collaborate-share/service-new-workspaces.md) in Power BI validation prevents the creation or renaming of workspaces with duplicate names. When connecting to a workspace with the same name as another workspace, you might get the following message:
+[Workspaces](/power-bi/collaborate-share/service-new-workspaces) in Power BI validation prevents the creation or renaming of workspaces with duplicate names. When connecting to a workspace with the same name as another workspace, you might get the following message:
 
 **Cannot connect to `powerbi://api.powerbi.com/v1.0/[tenant name]/[workspace name]`.**
 
@@ -153,7 +153,7 @@ When you connect to a workspace, changes from new, deleted, and renamed semantic
 The following semantic models aren't accessible by using the XMLA endpoint. These semantic models won't appear under the workspace in SSMS or in other tools:
 
 - Semantic models based on a live connection to an Azure Analysis Services or SQL Server Analysis Services model.
-- Semantic models based on a live connection to a Power BI semantic model in another workspace. To learn more, see [Intro to semantic models across workspaces](../connect-data/service-datasets-across-workspaces.md).
+- Semantic models based on a live connection to a Power BI semantic model in another workspace. To learn more, see [Intro to semantic models across workspaces](/power-bi/connect-data/service-datasets-across-workspaces).
 - Semantic models with Push data by using the REST API.
 - Semantic models in My Workspace.
 - Excel workbook semantic models.
@@ -277,9 +277,9 @@ To learn more about using SSMS to script metadata, see:
 
 ## Semantic model refresh
 
-The XMLA endpoint enables a wide range of scenarios for fine-grain refresh capabilities using SSMS, automation with PowerShell, [Azure Automation](/azure/automation/automation-intro), and [Azure Functions](/azure/azure-functions/functions-overview) using TOM. For example, you can refresh certain [incremental refresh](../connect-data/incremental-refresh-overview.md) historical partitions without having to reload all historical data.
+The XMLA endpoint enables a wide range of scenarios for fine-grain refresh capabilities using SSMS, automation with PowerShell, [Azure Automation](/azure/automation/automation-intro), and [Azure Functions](/azure/azure-functions/functions-overview) using TOM. For example, you can refresh certain [incremental refresh](/power-bi/connect-data/incremental-refresh-overview) historical partitions without having to reload all historical data.
 
-Unlike configuring refresh in the Power BI service, refresh operations through the XMLA endpoint are not limited to 48 refreshes per day, and the [scheduled refresh timeout](../connect-data/refresh-troubleshooting-refresh-scenarios.md#scheduled-refresh-time-out) is not imposed.
+Unlike configuring refresh in the Power BI service, refresh operations through the XMLA endpoint are not limited to 48 refreshes per day, and the [scheduled refresh timeout](/power-bi/connect-data/refresh-troubleshooting-refresh-scenarios#scheduled-refresh-time-out) is not imposed.
 
 Date, time, and status for semantic model refresh operations that include a write transaction through the XMLA endpoint are recorded and shown in semantic model Refresh history.
 
@@ -296,7 +296,7 @@ Analysis Services [DMVs](/analysis-services/instances/use-dynamic-management-vie
 
 ### Enhanced metadata
 
-XMLA write operations on semantic models authored in Power BI Desktop and published to a Premium workspace require enhanced metadata. To learn more, see [Enhanced semantic model metadata](../connect-data/desktop-enhanced-dataset-metadata.md).
+XMLA write operations on semantic models authored in Power BI Desktop and published to a Premium workspace require enhanced metadata. To learn more, see [Enhanced semantic model metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata).
 
 > [!CAUTION]
 > At this time, a write operation on a semantic model authored in Power BI Desktop prevents it from being downloaded back as a PBIX file. Be sure to retain your original PBIX file.
@@ -331,7 +331,7 @@ When applications connect to a workspace, access through XMLA endpoints is logge
 |Edited Power BI semantic model from an external application     |  EditDatasetFromExternalApplication        |
 |Deleted Power BI semantic model from an external application      |  DeleteDatasetFromExternalApplication        |
 
-To learn more, see [Auditing Power BI](../admin/service-admin-auditing.md).
+To learn more, see [Auditing Power BI](/power-bi/admin/service-admin-auditing).
 
 ## Considerations and limitations
 
@@ -341,6 +341,7 @@ To learn more, see [Auditing Power BI](../admin/service-admin-auditing.md).
 
 For more information related to this article, see:
 
-- [Power BI usage scenarios: Advanced data model management](../guidance/powerbi-implementation-planning-usage-scenario-advanced-data-model-management.md)
+- [Power BI usage scenarios: Advanced data model management](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-advanced-data-model-management)
 - Questions? [Try asking the Power BI Community](https://community.powerbi.com/)
 - Suggestions? [Contribute ideas to improve Power BI](https://ideas.powerbi.com/)
+

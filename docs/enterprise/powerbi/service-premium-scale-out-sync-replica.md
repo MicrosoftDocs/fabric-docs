@@ -1,4 +1,4 @@
----
+﻿---
 title: Synchronize a Power BI semantic model scale-out replicas
 description: Learn how to sync a Power BI semantic model replicas when using the Power BI semantic model scale-out feature
 author: JulCsc
@@ -50,7 +50,7 @@ else
 
 ```
 
-If the sync status API returns an empty response or if **scaleOutStatus** is set to **“Unavailable”**, try to load the semantic model's read-write replica or perform a refresh on the model to get the latest sync status.
+If the sync status API returns an empty response or if **scaleOutStatus** is set to **â€œUnavailableâ€**, try to load the semantic model's read-write replica or perform a refresh on the model to get the latest sync status.
 
 To learn more, see [Datasets - Get Query Scale Out Sync Status In Group](/rest/api/power-bi/datasets/get-query-scale-out-sync-status-in-group) in the Power BI REST API reference.
 
@@ -170,3 +170,4 @@ To learn more, see [Datasets - Trigger Query Scale Out Sync In Group](/rest/api/
 * [Tutorial: Test semantic model scale-out](service-premium-scale-out-test.md)
 
 * [Compare semantic model scale-out replicas](service-premium-scale-out-app.md)
+

@@ -1,4 +1,4 @@
----
+﻿---
 title: Get licenses for users in your organization. 
 description: Overview of how administrators sign up, purchase, and manage Power BI and Fabric licenses and subscriptions.
 author: JulCsc
@@ -18,10 +18,10 @@ There are two ways for users to get a license, from an administrator or by using
 
 Billing administrators can sign up for the Power BI service and Fabric. After signing up and purchasing a subscription or a free trial, Billing, License, and User administrators assign licenses to users in their organization.
 
-If you give them permissions, users in your organization can get one of the organization's licenses simply by signing in to Power BI (app.powerbi.com) or Fabric (app.fabric.microsoft.com). When a user signs in, they automatically receive a license. Administrators can set these permissions by following [Enable and disable self-service](../enterprise/service-admin-disable-self-service.md).
+If you give them permissions, users in your organization can get one of the organization's licenses simply by signing in to Power BI (app.powerbi.com) or Fabric (app.fabric.microsoft.com). When a user signs in, they automatically receive a license. Administrators can set these permissions by following [Enable and disable self-service](/power-bi/enterprise/service-admin-disable-self-service).
 
 > [!NOTE]
-> If you're an individual, you can sign up for your own free, Pro, Premium Per User, trial licenses or trial of a Fabric capacity. This process is called *self-service.* To learn more, see [the self-service process](../fundamentals/service-self-service-signup-purchase-for-power-bi.md). 
+> If you're an individual, you can sign up for your own free, Pro, Premium Per User, trial licenses or trial of a Fabric capacity. This process is called *self-service.* To learn more, see [the self-service process](/power-bi/fundamentals/service-self-service-signup-purchase-for-power-bi). 
 
 ## Fabric and the Power BI service
 
@@ -34,9 +34,9 @@ Fabric and the Power BI service are both SaaS platforms and require licenses and
 
 Use of the Power BI service requires a license and a capacity. 
 
-- [Per user license](../fundamentals/service-features-license-type.md#power-bi-service-licenses) - Per user licenses, allow users to work in the Power BI service. The options are Fabric (Free), Pro, and Premium Per User (PPU).
+- [Per user license](/power-bi/fundamentals/service-features-license-type#power-bi-service-licenses) - Per user licenses, allow users to work in the Power BI service. The options are Fabric (Free), Pro, and Premium Per User (PPU).
 
-- [Capacity subscription](../fundamentals/service-features-license-type.md#premium-capacity) - There are two types of Power BI subscriptions for organizations: standard and Premium. Premium provides enhancements to Power BI, and a comprehensive portfolio of [Premium features](service-premium-features.md). Power BI Premium is a tenant-level Microsoft 365 subscription, available in a choice of SKUs (Stock Keeping Units).
+- [Capacity subscription](/power-bi/fundamentals/service-features-license-type#premium-capacity) - There are two types of Power BI subscriptions for organizations: standard and Premium. Premium provides enhancements to Power BI, and a comprehensive portfolio of [Premium features](service-premium-features.md). Power BI Premium is a tenant-level Microsoft 365 subscription, available in a choice of SKUs (Stock Keeping Units).
 
 Each Microsoft 365 E5 subscription includes standard capacity and a Pro license. 
 
@@ -132,5 +132,6 @@ A Microsoft 365 E5 subscription includes Power BI Pro licenses. To learn how to 
 - [Purchase and assign Power BI Pro licenses](service-admin-purchasing-power-bi-pro.md)
 - [About self-service sign-up](/microsoft-365/admin/misc/self-service-sign-up)
 - [Business subscriptions and billing documentation](/microsoft-365/commerce/)
-- [Find Power BI users that are signed in](../admin/service-admin-access-usage.md)
+- [Find Power BI users that are signed in](/power-bi/admin/service-admin-access-usage)
 - [Self service FAQ](/microsoft-365/commerce/subscriptions/self-service-purchase-faq)
+

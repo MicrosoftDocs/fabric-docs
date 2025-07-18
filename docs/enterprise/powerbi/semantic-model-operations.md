@@ -1,4 +1,4 @@
----
+﻿---
 title: Semantic model operation logs
 description: View a set of GraphQL operation logs that you can query in your Fabric workspace monitoring database.
 author: JulCsc
@@ -61,3 +61,4 @@ This table lists the semantic model logs. For more information on the events and
 | XmlaObjectPath | string | Object path. A comma-separated list of parents, starting with the object's parent. |
 | XmlaProperties | string | Properties of the XMLA request |
 | XmlaSessionId | string | Analysis services session identifier |
+

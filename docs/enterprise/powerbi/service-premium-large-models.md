@@ -1,4 +1,4 @@
----
+﻿---
 title: Large semantic models in Power BI Premium
 description: The large semantic model storage format allows semantic models in Power BI Premium to grow beyond 10 GB in size.
 author: JulCsc
@@ -32,7 +32,7 @@ Large semantic models in the service don't affect the Power BI Desktop model upl
 
 Steps here describe enabling large semantic models for a new model published to the service. For existing semantic models, only step 3 is necessary.
 
-1. Create a model in Power BI Desktop. If your semantic model becomes larger and progressively consumes more memory, be sure to configure [Incremental refresh](../connect-data/incremental-refresh-overview.md).
+1. Create a model in Power BI Desktop. If your semantic model becomes larger and progressively consumes more memory, be sure to configure [Incremental refresh](/power-bi/connect-data/incremental-refresh-overview).
 
 2. Publish the model as a semantic model to the service.
 
@@ -155,7 +155,7 @@ Keep in mind the following restrictions when using large semantic models:
 
 * **Setting maximum semantic model size**: Maximum semantic model size can be set by administrators. For more information, see *Max Memory* in [Datasets](service-admin-premium-workloads.md#semantic-models).
 
-* **Refreshing large semantic models**: Semantic models that are close to half the size of the capacity size (for example, a 12-GB semantic model on a 25-GB capacity size) may exceed the available memory during refreshes. Using the [enhanced refresh REST API](../connect-data/asynchronous-refresh.md) or the [XMLA endpoint](service-premium-connect-tools.md), you can perform fine grained data refreshes, so that the memory needed by the refresh can be minimized to fit within your capacity's size.
+* **Refreshing large semantic models**: Semantic models that are close to half the size of the capacity size (for example, a 12-GB semantic model on a 25-GB capacity size) may exceed the available memory during refreshes. Using the [enhanced refresh REST API](/power-bi/connect-data/asynchronous-refresh) or the [XMLA endpoint](service-premium-connect-tools.md), you can perform fine grained data refreshes, so that the memory needed by the refresh can be minimized to fit within your capacity's size.
 
 * **Push semantic models**: Push semantic models don't support the large semantic model storage format.
 
@@ -235,13 +235,14 @@ The following links provide information that can be useful for working with larg
 > [Azure Premium Files Storage](/azure/storage/files/storage-files-planning#storage-tiers)
 
 > [!div class="nextstepaction"]
-> [Configure Multi-Geo support for Power BI Premium](../admin/service-admin-premium-multi-geo.md)
+> [Configure Multi-Geo support for Power BI Premium](/power-bi/admin/service-admin-premium-multi-geo)
 
 > [!div class="nextstepaction"]
 > [Bring your own encryption keys for Power BI](service-encryption-byok.md)
 
 > [!div class="nextstepaction"]
-> [Incremental refresh for semantic models](../connect-data/incremental-refresh-overview.md)
+> [Incremental refresh for semantic models](/power-bi/connect-data/incremental-refresh-overview)
 
 > [!div class="nextstepaction"]
 > [Power BI Premium Generation 2](service-premium-what-is.md).
+

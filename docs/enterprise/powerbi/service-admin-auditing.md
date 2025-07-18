@@ -112,7 +112,7 @@ $activities[0]
 ```
 
 > [!NOTE]
-> A PowerShell sample is available to help you learn how to filter and retrieve Power BI activity log events. For more information, see [Access the Power BI activity log](../guidance/admin-activity-log.md).
+> A PowerShell sample is available to help you learn how to filter and retrieve Power BI activity log events. For more information, see [Access the Power BI activity log](/power-bi/guidance/admin-activity-log).
 
 ## Related content
 
@@ -120,4 +120,5 @@ $activities[0]
 
 * [Operation list](/fabric/admin/operation-list)
 
-* [Access the Power BI activity log](../guidance/admin-activity-log.md)
+* [Access the Power BI activity log](/power-bi/guidance/admin-activity-log)
+

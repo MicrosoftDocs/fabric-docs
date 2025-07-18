@@ -1,4 +1,4 @@
----
+﻿---
 title: How to apply sensitivity labels in Power BI
 description: Learn how to apply sensitivity labels on your Power BI reports, dashboards, semantic models, dataflows, and .pbix files.
 author: JulCsc
@@ -128,3 +128,4 @@ This article described how to apply sensitivity labels in Power BI. The followin
 - [Overview of sensitivity labels in Power BI](./service-security-sensitivity-label-overview.md)
 - [Enable sensitivity labels in Fabric and Power BI](./service-security-enable-data-sensitivity-labels.md)
 - [Using Microsoft Defender for Cloud Apps controls in Power BI](/fabric/governance/service-security-using-defender-for-cloud-apps-controls)
+

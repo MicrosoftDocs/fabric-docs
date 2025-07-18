@@ -1,4 +1,4 @@
----
+﻿---
 title: Understand Power BI Desktop privacy levels
 description: Power BI Desktop privacy levels
 author: JulCsc
@@ -65,3 +65,4 @@ The following table describes privacy level settings:
 - [Power BI implementation planning: Content creator security planning](/power-bi/guidance/powerbi-implementation-planning-security-content-creator-planning#privacy-levels)
 - Questions? [Try asking the Power BI Community](https://community.powerbi.com/)
 - Suggestions? [Contribute ideas to improve Power BI](https://ideas.powerbi.com/)
+

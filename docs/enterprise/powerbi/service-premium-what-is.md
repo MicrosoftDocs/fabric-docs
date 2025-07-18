@@ -1,4 +1,4 @@
----
+﻿---
 title: What is Power BI Premium?
 description: Power BI Premium provides streamlined use and management of capacities for your organization.
 author: JulCsc
@@ -39,10 +39,10 @@ Power BI Premium is a tenant-level Microsoft 365 subscription, available in two 
 |               |P                                 |EM       |
 |---------------|----------------------------------|---------|
 |**Range**      |P1-P5                             |EM1-EM3  |
-|**Use**        |Enterprise features and embedding |Organizational embedding ([embed for your organization](../developer/embedded/embedded-analytics-power-bi.md#embed-for-your-organization)) |
+|**Use**        |Enterprise features and embedding |Organizational embedding ([embed for your organization](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-organization)) |
 |**Commitment** |Monthly or yearly                 |Yearly   |
 |**Billing**    |Monthly                           |Monthly  |
-|**Additional information**    |Includes a license to install [Power BI Report Server](../report-server/get-started.md) on-premises |EM1 and EM2 SKUs are available only through volume licensing plans. You can't purchase them directly.         |
+|**Additional information**    |Includes a license to install [Power BI Report Server](/power-bi/report-server/get-started) on-premises |EM1 and EM2 SKUs are available only through volume licensing plans. You can't purchase them directly.         |
 
 ## Workspaces
 
@@ -52,7 +52,7 @@ Capacity administrators automatically have their My workspaces assigned to Premi
 
 ## Semantic model SKU limitation
 
-With *Power BI Premium* and [Power BI Embedded](../developer/embedded/embedded-analytics-power-bi.md), there are memory limits and other constraints for each SKU listed in the table below.
+With *Power BI Premium* and [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi), there are memory limits and other constraints for each SKU listed in the table below.
 
 | SKU | Max memory (GB)<sup>1, 2</sup> | Max concurrent DirectQuery connections (per semantic model)<sup>1</sup> | Max DirectQuery parallelism<sup>3</sup> | Live connection (per second)<sup>1</sup> | Max memory per query (GB)<sup>1</sup> | Model refresh parallelism | Direct Lake rows per table (in millions)<sup>1, 4</sup>  | Max Direct Lake model size on OneLake (GB)<sup>1, 4</sup> |
 | ---   | --- | --- | --- | -------    | -- | ----- | ------ | --------- |
@@ -88,13 +88,13 @@ Semantic model operations such as queries are subject to individual memory limit
 
 ## Refreshes
 
-Power BI Premium and [Power BI Embedded](../developer/embedded/embedded-analytics-power-bi.md) don't require cumulative memory limits, and therefore concurrent semantic model refreshes don't contribute to resource constraints. However, refreshing individual semantic models is governed by existing capacity memory and CPU limits, and the model refresh parallelism limit for the SKU, as described in [Capacities and SKUs](#capacities-and-skus).
+Power BI Premium and [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi) don't require cumulative memory limits, and therefore concurrent semantic model refreshes don't contribute to resource constraints. However, refreshing individual semantic models is governed by existing capacity memory and CPU limits, and the model refresh parallelism limit for the SKU, as described in [Capacities and SKUs](#capacities-and-skus).
 
 You can schedule and run as many refreshes as required at any given time, and the Power BI service will run those refreshes at the time scheduled as a best effort.
 
 ## Monitoring
 
-When monitoring Power BI Premium and [Power BI Embedded](../developer/embedded/embedded-analytics-power-bi.md), you only need to take into consideration one aspect: *how much CPU your capacity requires to serve the load at any moment*. To monitor your capacity, use the [Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app) app.
+When monitoring Power BI Premium and [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi), you only need to take into consideration one aspect: *how much CPU your capacity requires to serve the load at any moment*. To monitor your capacity, use the [Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app) app.
 
 To install the app, see [Install the Microsoft Fabric capacity metrics app](/fabric/enterprise/metrics-app-install). You can learn how to use the app in the article [Microsoft Fabric Capacity Metrics](/fabric/enterprise/metrics-app).
 
@@ -102,11 +102,11 @@ Here's what happens when you exceed your CPU limit per the SKU size you purchase
 
 * **Power BI Premium** - If enabled, [autoscale](service-premium-auto-scale.md) kicks in. If autoscale isn't enabled, your capacity throttles its [interactive operations](/fabric/enterprise/fabric-operations#interactive-operations).
 
-* **[Power BI Embedded](../developer/embedded/embedded-analytics-power-bi.md)** - Your capacity throttles its [interactive operations](/fabric/enterprise/fabric-operations#interactive-and-background-operations). To autoscale in Power BI Embedded, see [Autoscaling in Power BI Embedded](../developer/embedded/azure-pbie-scale-capacity.md#autoscale-your-capacity).
+* **[Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi)** - Your capacity throttles its [interactive operations](/fabric/enterprise/fabric-operations#interactive-and-background-operations). To autoscale in Power BI Embedded, see [Autoscaling in Power BI Embedded](/power-bi/developer/embedded/azure-pbie-scale-capacity#autoscale-your-capacity).
 
 ## Paginated reports
 
-When using *Power BI Premium* and [Power BI Embedded](../developer/embedded/embedded-analytics-power-bi.md), Power BI [paginated reports](../paginated-reports/paginated-reports-report-builder-power-bi.md) benefit from the architectural and engineering improvements reflected in Power BI Premium.
+When using *Power BI Premium* and [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi), Power BI [paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi) benefit from the architectural and engineering improvements reflected in Power BI Premium.
 
 * **Memory** - There's no memory management for Paginated reports.
 
@@ -156,7 +156,7 @@ The following known limitations currently apply to Power BI Premium.
     * Semantic models created in Power BI service from CSV files.
     * Semantic models in the [admin monitoring workspace](/fabric/admin/monitoring-workspace) and usage metrics models.
     * Semantic models that still use 1103 compatibility level.
-    * [Push semantic models](../connect-data/service-real-time-streaming.md#push-semantic-model).
+    * [Push semantic models](/power-bi/connect-data/service-real-time-streaming#push-semantic-model).
     * Semantic models that use deprecated features such as content packs.
 
 ## Related content
@@ -165,4 +165,5 @@ The following known limitations currently apply to Power BI Premium.
 
 * [Managing Premium capacities](service-premium-capacity-manage.md)
 
-* [Power BI Embedded](../developer/embedded/embedded-analytics-power-bi.md)
+* [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi)
+

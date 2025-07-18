@@ -1,4 +1,4 @@
----
+﻿---
 title: Power BI semantic model scale-out
 description: Learn how Power BI semantic model scale-out improves your Power BI performance by reducing semantic model query and refresh times
 author: JulCsc
@@ -13,7 +13,7 @@ LocalizationGroup: Premium
 
 # Power BI semantic model scale-out
 
-Semantic model scale-out helps Power BI deliver fast performance while your reports and dashboards are consumed by a large audience. Semantic model scale-out uses your Premium capacity to host one or more read-only *replicas* of your *primary* semantic model. By increasing throughput, the read-only replicas ensure performance doesn’t slow down when multiple users submit queries at the same time.
+Semantic model scale-out helps Power BI deliver fast performance while your reports and dashboards are consumed by a large audience. Semantic model scale-out uses your Premium capacity to host one or more read-only *replicas* of your *primary* semantic model. By increasing throughput, the read-only replicas ensure performance doesnâ€™t slow down when multiple users submit queries at the same time.
 
 When Power BI creates read-only replicas, it separates them from the primary read-write semantic model. The read-only replicas serve Power BI report and dashboard queries, and the read-write semantic model is used when write and refresh operations are performed. During write and refresh operations, the read-only replicas continue to serve your reports and dashboard queries without being disrupted. By default, the read-only and read-write semantic models are automatically synchronized so that the read-only replicas are kept up-to-date. However, you can disable automatic sync, and choose to synchronize manually at the command line or by script.
 
@@ -52,7 +52,7 @@ By default, scale-out is enabled for your tenant, but it's not enabled for seman
 * Your workspace resides on a Power BI Premium [capacity](service-premium-what-is.md#capacities-and-skus):
     * Premium Per User (PPU)
     * Power BI Premium P SKUs
-    * Power BI A SKUs for Power BI Embedded (also known as [embed for your customers](../developer/embedded/embedded-analytics-power-bi.md#embed-for-your-customers)).
+    * Power BI A SKUs for Power BI Embedded (also known as [embed for your customers](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers)).
     * Fabric F SKUs
 
 * The [Large semantic model storage format](service-premium-large-models.md) setting is enabled.
@@ -85,11 +85,11 @@ When scale-out is enabled, the following connections are retained:
 
 * By default, Power BI Desktop connects to a read-only replica.
 
-* [Live connection](./../connect-data/desktop-report-lifecycle-datasets.md) reports connect to a read-only replica.
+* [Live connection](.//power-bi/connect-data/desktop-report-lifecycle-datasets) reports connect to a read-only replica.
 
 * XMLA client applications connect to the read-write semantic model by default.
 
-* Refreshes in the Power BI service and refreshes using the [Enhanced Refresh REST API](./../connect-data/asynchronous-refresh.md) connect to the read-write semantic model.
+* Refreshes in the Power BI service and refreshes using the [Enhanced Refresh REST API](.//power-bi/connect-data/asynchronous-refresh) connect to the read-write semantic model.
 
 You can connect to a read-only replica or the read-write semantic model by appending one of the following strings to the semantic model's URL:
 
@@ -100,7 +100,7 @@ You can connect to a read-only replica or the read-write semantic model by appen
 
 Power BI semantic model scale-out is enabled by default for a tenant. Power BI tenant admins can disable this setting. To disable semantic model scale-out for the tenant, do the following:
 
-1. Go to your [tenant settings](./../admin/service-admin-portal-about-tenant-settings.md).
+1. Go to your [tenant settings](.//power-bi/admin/service-admin-portal-about-tenant-settings).
 
 2. In **Scale-out settings**, expand **Scale-out queries for large semantic models**.
 
@@ -131,7 +131,7 @@ Power BI semantic model scale-out is enabled by default for a tenant. Power BI t
 
 * Discovering role memberships using the [Dynamic Management View (DMV)](/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services) TMSCHEMA_ROLE_MEMBERSHIPS rowset, doesn't return any results when run against the read-only replica.
 
-* Reports that use a [Live connection](../connect-data/service-live-connect-dq-datasets.md#live-connection) always connect to the read-only replica, even if the connection string uses `?readwrite`. However, in Power BI Desktop, live connection reports using `?readwrite` connect to the read-write replica.
+* Reports that use a [Live connection](/power-bi/connect-data/service-live-connect-dq-datasets#live-connection) always connect to the read-only replica, even if the connection string uses `?readwrite`. However, in Power BI Desktop, live connection reports using `?readwrite` connect to the read-write replica.
 
 * The DBSCHEMA_CATALOGS and DISCOVER_XML_METADATA the [Dynamic Management View (DMV)](/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services) rowsets, return read-write replica information when using `?readonly` in the connection string.
 
@@ -155,3 +155,4 @@ Power BI semantic model scale-out is enabled by default for a tenant. Power BI t
 * [Synchronize scale-out replicas](service-premium-scale-out-sync-replica.md)
 
 * [Compare semantic model scale-out replicas](service-premium-scale-out-app.md)
+

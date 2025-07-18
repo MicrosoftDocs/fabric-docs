@@ -1,4 +1,4 @@
----
+﻿---
 title: How to configure workloads in Power BI Premium
 description: Learn how to configure workloads in a Power BI Premium capacity.
 author: JulCsc
@@ -60,7 +60,7 @@ You can tune the behavior of the workloads, by configuring workload settings for
 Use the [Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app) to monitor your capacity's activity.
 
 > [!IMPORTANT]
-> If your Power BI Premium capacity is experiencing high resource usage, resulting in performance or reliability issues, you can receive notification emails to identify and resolve the issue. This can be a streamlined way to troubleshoot overloaded capacities. For more information, see [Notifications](../admin/service-admin-premium-capacity-notifications.md).
+> If your Power BI Premium capacity is experiencing high resource usage, resulting in performance or reliability issues, you can receive notification emails to identify and resolve the issue. This can be a streamlined way to troubleshoot overloaded capacities. For more information, see [Notifications](/power-bi/admin/service-admin-premium-capacity-notifications).
 
 ## AI (Preview)
 
@@ -70,7 +70,7 @@ The AI workload lets you use cognitive services and Automated Machine Learning i
 |---------------------------------|----------------------------------------|
 | **Max Memory (%)**<sup>1</sup> | The maximum percentage of available memory that AI processes can use in a capacity. |
 | **Allow usage from Power BI Desktop** | This setting is reserved for future use and doesn't appear in all tenants. |
-| **Allow building machine learning models** | Specifies whether business analysts can train, validate, and invoke machine learning models directly in Power BI. For more information, see [Automated Machine Learning in Power BI (Preview)](../transform-model/dataflows/dataflows-machine-learning-integration.md). |
+| **Allow building machine learning models** | Specifies whether business analysts can train, validate, and invoke machine learning models directly in Power BI. For more information, see [Automated Machine Learning in Power BI (Preview)](/power-bi/transform-model/dataflows/dataflows-machine-learning-integration). |
 | **Enable parallelism for AI requests** | Specifies whether AI requests can run in parallel. |
 
 <sup>1</sup> *Premium* doesn't require memory settings to be changed. Memory in Premium is automatically managed by the underlying system.
@@ -215,7 +215,7 @@ Power BI Premium supports additional Analysis Services server properties. To rev
 
 The Analysis Services XMLA-based server properties setting is enabled by default. When enabled, workspace admins can modify behaviors for an individual workspace. Modified properties apply only to that workspace. To toggle the Analysis Services server properties setting, follow the steps below.
 
-1. Go to your [capacity settings](./../admin/service-admin-portal-capacity-settings.md).
+1. Go to your [capacity settings](.//power-bi/admin/service-admin-portal-capacity-settings).
 
 2. Select the capacity you want to disable the *Analysis Services server properties* in.
 
@@ -245,7 +245,7 @@ Outbound connectivity is turned on by default. It allows paginated reports to ma
 
 To get to the outbound connectivity settings, follow these steps:
 
-1. In Power BI service, navigate to the [admin portal](./../admin/service-admin-portal.md#how-to-get-to-the-admin-portal).
+1. In Power BI service, navigate to the [admin portal](.//power-bi/admin/service-admin-portal#how-to-get-to-the-admin-portal).
 
 2. From the **Power BI Premium** tab, select the capacity you want to disable the paginated reports outbound requests for.
 
@@ -267,8 +267,9 @@ The paginated reports workload is enabled automatically, and is always enabled.
 
 * [Power BI Premium](service-premium-what-is.md)
 
-* [Self-service data prep in Power BI with Dataflows](../transform-model/dataflows/dataflows-introduction-self-service.md)
+* [Self-service data prep in Power BI with Dataflows](/power-bi/transform-model/dataflows/dataflows-introduction-self-service)
 
-* [What are paginated reports in Power BI?](../paginated-reports/paginated-reports-report-builder-power-bi.md)
+* [What are paginated reports in Power BI?](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 
-* [Automatic page refresh in Power BI Desktop (preview)](../create-reports/desktop-automatic-page-refresh.md)
+* [Automatic page refresh in Power BI Desktop (preview)](/power-bi/create-reports/desktop-automatic-page-refresh)
+

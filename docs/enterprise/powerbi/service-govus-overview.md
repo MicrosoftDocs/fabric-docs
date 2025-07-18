@@ -1,4 +1,4 @@
----
+﻿---
 title: Power BI for US government customers - Overview
 description: US government customers can add a Power BI subscription to their Microsoft 365 government plan. Learn how to sign up, connect, and review feature availability in this service description. 
 author: JulCsc
@@ -46,7 +46,7 @@ After you deploy Microsoft 365, you can add a Power BI Pro subscription. To buy 
 > [!IMPORTANT]
 > Power BI US Government isn't available as a *Free* license. If you've purchased Power BI Premium, you don't have to assign licenses to users to allow them to consume content published to a Premium capacity. For all other access, including access to the admin portal and the ability to publish content to the Premium capacity, each user must be assigned a *Pro* or *Premium Per User (PPU)* license. If a user account has been assigned a Free license, the user is authorized to access only the commercial cloud and will encounter authentication and access issues.
 > 
-> To review the differences between license types, see [Power BI service features by license type](../fundamentals/service-features-license-type.md).
+> To review the differences between license types, see [Power BI service features by license type](/power-bi/fundamentals/service-features-license-type).
 >
 
 ## Sign in to Power BI for US government
@@ -70,7 +70,7 @@ To use the Power BI service, you must allow connections to required endpoints on
 
 The following table lists the required endpoints to add to your allowlist to enable connection to the Power BI service for general site usage. These endpoints are unique to the US government cloud. The Power BI service requires only Transmission Control Protocol (TCP) port 443 to be opened for the listed endpoints. 
 
-The endpoints for getting data, dashboard and report integration, Power BI visuals, and other optional services aren’t unique to the US government cloud. 
+The endpoints for getting data, dashboard and report integration, Power BI visuals, and other optional services arenâ€™t unique to the US government cloud. 
 
 To add these URLs to your allowlist also, see [Add Power BI URLs to your allowlist](/fabric/security/power-bi-allow-list-urls).
 
@@ -105,7 +105,7 @@ Azure is distributed across multiple clouds. By default, you can enable firewall
 * US DoD East
 * US DoD Central
 
-To get the US government cloud IP ranges, download the [Azure IP Ranges and Service Tags – US Government Cloud](https://www.microsoft.com/download/details.aspx?id=57063) file. Ranges are listed for both Power BI and Power Query.
+To get the US government cloud IP ranges, download the [Azure IP Ranges and Service Tags â€“ US Government Cloud](https://www.microsoft.com/download/details.aspx?id=57063) file. Ranges are listed for both Power BI and Power Query.
 
 For more information about Microsoft Azure Government cloud services, see [Azure Government documentation](/azure/azure-government/).
 
@@ -117,7 +117,7 @@ You can use Power BI's B2B capabilities across Microsoft Azure clouds by configu
 
 There are some limitations to the B2B experience that you should be aware of:
 
-* Guest users may already have a Power BI license that was assigned to them through their own organization. But “Bring your own license” doesn’t work across different Microsoft Azure clouds. A new license has to be assigned to these guest users by the provider tenant. 
+* Guest users may already have a Power BI license that was assigned to them through their own organization. But â€œBring your own licenseâ€ doesnâ€™t work across different Microsoft Azure clouds. A new license has to be assigned to these guest users by the provider tenant. 
 
 * New external users can be invited to the organization through Power BI sharing, permissions, and subscription experiences.
 
@@ -145,17 +145,17 @@ If a release is planned for an environment, we include the quarter of estimated 
 |Feature |GCC |GCC High |DoD|
 |------|------|------|------|
 |[Azure B2B collaboration between government and commercial cloud](service-admin-azure-ad-b2b.md)<sup>1</sup>|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)
-|[Template apps](../connect-data/service-template-apps-overview.md)<sup>2</sup>|![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)| ![Image of "Available" button.](../media/yes.png)|
+|[Template apps](/power-bi/connect-data/service-template-apps-overview)<sup>2</sup>|![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)| ![Image of "Available" button.](../media/yes.png)|
 |[Embed in SharePoint Online by using the Power BI web part](/sharepoint/dev/spfx/web-parts/overview-client-side-web-parts)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|
 |[Data Loss Prevention policies](/fabric/governance/data-loss-prevention-overview)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)|
 |[Data Protection (MIP labels)](./service-security-sensitivity-label-overview.md)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)|
-|[Dataflows - Direct Query](../transform-model/dataflows/dataflows-configure-consume.md) | ![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)|Not planned |
-|[Dataflows - SQL Compute engine optimization](../transform-model/dataflows/dataflows-premium-features.md) | ![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)|Not planned |
+|[Dataflows - Direct Query](/power-bi/transform-model/dataflows/dataflows-configure-consume) | ![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)|Not planned |
+|[Dataflows - SQL Compute engine optimization](/power-bi/transform-model/dataflows/dataflows-premium-features) | ![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)|Not planned |
 | Datamarts  |Not planned |Not planned |Not planned |
-|[Power BI tab in Teams](../collaborate-share/service-collaborate-microsoft-teams.md)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|
+|[Power BI tab in Teams](/power-bi/collaborate-share/service-collaborate-microsoft-teams)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|
 |[Large models](service-premium-large-models.md) | ![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png)| Not planned |
 |[Call Quality Data Connector](/microsoftteams/cqd-power-bi-connector)| ![Image of "Available" button.](../media/yes.png)<sup>3</sup> | ![Image of "Available" button.](../media/yes.png)<sup>3</sup> | ![Image of "Available" button.](../media/yes.png)<sup>3</sup> |
-|[Bring your own storage (Azure Data Lake Gen 2)](../transform-model/dataflows/dataflows-azure-data-lake-storage-integration.md)|![Image of "Not available" button.](../media/no.png)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|
+|[Bring your own storage (Azure Data Lake Gen 2)](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration)|![Image of "Not available" button.](../media/no.png)|![Image of "Available" button.](../media/yes.png)|![Image of "Available" button.](../media/yes.png)|
 |[Autoscale](service-premium-auto-scale.md) |![Image of "Not available" button.](../media/no.png) |![Image of "Available" button.](../media/yes.png) |![Image of "Available" button.](../media/yes.png) |
 |[Azure Maps](/azure/azure-maps/power-bi-visual-get-started) |![Image of "Not available" button.](../media/no.png) |![Image of "Not available" button.](../media/no.png) |![Image of "Not available" button.](../media/no.png) |
 
@@ -174,3 +174,4 @@ For more information about support for Power BI components in Power Apps, see [P
 * Article: [Microsoft Power Apps US Government](/power-platform/admin/powerapps-us-government)
 * Article: [Power Automate US Government](/power-automate/us-govt)
 * Video: [Power BI US Government](/shows/azure/cognitive-services-hdinsight-power-bi-on-azure-government) demo
+

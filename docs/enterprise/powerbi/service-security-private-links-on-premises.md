@@ -1,4 +1,4 @@
----
+﻿---
 title: Private endpoints for secure access to Power BI for on-premises clients
 description: Use the Azure private link feature to provide secure access to Power BI using Azure Networking private endpoints, for on-premises clients. Data is sent privately instead of over the Internet.
 author: DandanZhang
@@ -136,3 +136,4 @@ The Power BI service URL is translated into the private IP that's assigned to th
 - [Azure DNS Private Resolver](/azure/dns/dns-private-resolver-get-started-portal)
 
 More questions? [Ask the Power BI Community](https://community.powerbi.com).
+

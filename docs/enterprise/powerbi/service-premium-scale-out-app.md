@@ -1,4 +1,4 @@
----
+﻿---
 title: Compare Power BI semantic model scale-out replicas
 description: Learn how to compare Power BI semantic model replicas when using the Power BI semantic model scale-out feature
 author: JulCsc
@@ -142,3 +142,4 @@ Console.Read();
 * [Tutorial: Test semantic model scale-out](service-premium-scale-out-test.md)
 
 * [Synchronize scale-out replicas](service-premium-scale-out-sync-replica.md)
+

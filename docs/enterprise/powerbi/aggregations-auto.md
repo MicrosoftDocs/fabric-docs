@@ -1,4 +1,4 @@
----
+﻿---
 title: Automatic aggregations overview
 description: Learn about how to use automatic aggregations to optimize query performance for DirectQuery semantic models.
 author: JulCsc
@@ -12,14 +12,14 @@ LocalizationGroup: Admin
 ---
 # Automatic aggregations
 
-Automatic aggregations use state-of-the-art machine learning (ML) to continuously optimize DirectQuery semantic models for maximum report query performance. Automatic aggregations are built on top of existing [user-defined aggregations](../transform-model/aggregations-advanced.md) infrastructure first introduced with composite models for Power BI. Unlike user-defined aggregations, automatic aggregations don’t require extensive data modeling and query-optimization skills to configure and maintain. Automatic aggregations are both self-training and self-optimizing. They enable model owners of any skill level to improve query performance, providing faster report visualizations for large models.
+Automatic aggregations use state-of-the-art machine learning (ML) to continuously optimize DirectQuery semantic models for maximum report query performance. Automatic aggregations are built on top of existing [user-defined aggregations](/power-bi/transform-model/aggregations-advanced) infrastructure first introduced with composite models for Power BI. Unlike user-defined aggregations, automatic aggregations donâ€™t require extensive data modeling and query-optimization skills to configure and maintain. Automatic aggregations are both self-training and self-optimizing. They enable model owners of any skill level to improve query performance, providing faster report visualizations for large models.
 
 With automatic aggregations:
 
 - Report visualizations are faster - An optimal percentage of report queries are returned by an automatically maintained in-memory aggregations cache instead of backend data source systems. Outlier queries that aren't returned by the in-memory cache are passed directly to the data source using DirectQuery.
 - Balanced architecture - When compared to pure DirectQuery mode, most query results are returned by the Power BI query engine and in-memory aggregations cache. Query processing load on data source systems at peak reporting times can be significantly reduced, which means increased scalability in the data source backend.
 - Easy setup - Model owners can enable automatic aggregations training and schedule one or more refreshes for the model. With the first training and refresh, automatic aggregations begin creating an aggregations framework and optimal aggregations. The system automatically tunes itself over time.
-- Fine-tuning – With a simple and intuitive user interface in the model settings, you can estimate the performance gains for a different percentage of queries returned from the in-memory aggregations cache and make adjustments for even greater gains. A single slide bar control helps you easily fine-tune your environment.
+- Fine-tuning â€“ With a simple and intuitive user interface in the model settings, you can estimate the performance gains for a different percentage of queries returned from the in-memory aggregations cache and make adjustments for even greater gains. A single slide bar control helps you easily fine-tune your environment.
 
 ## Requirements
 
@@ -92,7 +92,7 @@ Regularly scheduled refreshes throughout the day (or week) ensure aggregations d
 
 #### Training on demand
 
-As mentioned earlier, a training cycle may not complete within the time limits of a single data refresh cycle. If you don’t want to wait until the next scheduled refresh cycle that includes training, you can also trigger automatic aggregations training on-demand by selecting **Train and Refresh Now** in model Settings. By using **Train and Refresh Now** triggers both a training operation and a refresh operation. Check the model Refresh history to see if the current operation is finished before running another on-demand training and refresh operation, if necessary.
+As mentioned earlier, a training cycle may not complete within the time limits of a single data refresh cycle. If you donâ€™t want to wait until the next scheduled refresh cycle that includes training, you can also trigger automatic aggregations training on-demand by selecting **Train and Refresh Now** in model Settings. By using **Train and Refresh Now** triggers both a training operation and a refresh operation. Check the model Refresh history to see if the current operation is finished before running another on-demand training and refresh operation, if necessary.
 
 #### Refresh history
 
@@ -116,21 +116,21 @@ When scheduling refresh, you can specify email notifications if there are refres
 
 ## User-defined and automatic aggregations
 
-[User-defined aggregations](../transform-model/aggregations-advanced.md) in Power BI can be manually configured based on hidden aggregated tables in the model. Configuring user-defined aggregations is often complex, requiring a greater level of data-modeling and query-optimization skills. Automatic aggregations on the other hand eliminate this complexity as part of an AI-driven system. Unlike user-defined aggregations that remain static, Power BI continuously maintains query logs and from those logs determines query patterns based on machine learning (ML) predictive modeling algorithms. Pre-aggregated data is calculated and stored in-memory based on query pattern analysis. With automatic aggregations, models are both self-training and self-optimizing. As client report query patterns change, automatic aggregations adjust, prioritizing and caching those aggregations used most often.
+[User-defined aggregations](/power-bi/transform-model/aggregations-advanced) in Power BI can be manually configured based on hidden aggregated tables in the model. Configuring user-defined aggregations is often complex, requiring a greater level of data-modeling and query-optimization skills. Automatic aggregations on the other hand eliminate this complexity as part of an AI-driven system. Unlike user-defined aggregations that remain static, Power BI continuously maintains query logs and from those logs determines query patterns based on machine learning (ML) predictive modeling algorithms. Pre-aggregated data is calculated and stored in-memory based on query pattern analysis. With automatic aggregations, models are both self-training and self-optimizing. As client report query patterns change, automatic aggregations adjust, prioritizing and caching those aggregations used most often.
 
-Because automatic aggregations are built on top of the existing user-defined aggregations infrastructure, it's possible to use both user-defined and automatic aggregations together in the same model. Skilled data modelers can define aggregations for tables using DirectQuery, Import (with or without Incremental refresh), or Dual storage modes, while at the same time having the benefits of more automatic aggregations for queries over DirectQuery connections that don’t hit the user-defined aggregation tables. This flexibility enables balanced architectures that can reduce query loads and avoid bottlenecks.
+Because automatic aggregations are built on top of the existing user-defined aggregations infrastructure, it's possible to use both user-defined and automatic aggregations together in the same model. Skilled data modelers can define aggregations for tables using DirectQuery, Import (with or without Incremental refresh), or Dual storage modes, while at the same time having the benefits of more automatic aggregations for queries over DirectQuery connections that donâ€™t hit the user-defined aggregation tables. This flexibility enables balanced architectures that can reduce query loads and avoid bottlenecks.
 
 Aggregations created in the in-memory cache by the automatic aggregations training algorithm are identified as `System` aggregations. The training algorithm creates and deletes only those `System` aggregations as reporting queries are analyzed and adjustments are made to maintain the optimal aggregations for the model. Both user-defined and automatic aggregations are refreshed with refresh. Only those aggregations created by automatic aggregations and marked as system-generated aggregations are included in automatic aggregations processing.
 
 ## Query caching and automatic aggregations
 
-Power BI Premium also supports [Query caching in Power BI Premium/Embedded](../connect-data/power-bi-query-caching.md) to maintain query results. Query caching is a different feature from automatic aggregations. With query caching, Power BI Premium uses its local caching service to implement caching, whereas automatic aggregations are implemented at the model level. With query caching, the service only caches queries for the initial report page load, therefore query performance isn't improved when users interact with a report. In contrast, automatic aggregations optimize most report queries by pre-caching aggregated query results, including those queries generated when users interact with reports. Query caching and automatic aggregations can both be enabled for a model, but it's likely not necessary.
+Power BI Premium also supports [Query caching in Power BI Premium/Embedded](/power-bi/connect-data/power-bi-query-caching) to maintain query results. Query caching is a different feature from automatic aggregations. With query caching, Power BI Premium uses its local caching service to implement caching, whereas automatic aggregations are implemented at the model level. With query caching, the service only caches queries for the initial report page load, therefore query performance isn't improved when users interact with a report. In contrast, automatic aggregations optimize most report queries by pre-caching aggregated query results, including those queries generated when users interact with reports. Query caching and automatic aggregations can both be enabled for a model, but it's likely not necessary.
 
 ## Monitor with Azure Log Analytics
 
-Azure Log Analytics (LA) is a service within Azure Monitor which Power BI can use to save activity logs. With Azure Monitor suite, you can collect, analyze, and act on telemetry data from your Azure and on-premises environments. It offers long-term storage, an ad-hoc query interface, and API access to allow data export and integration with other systems. To learn more, see [Using Azure Log Analytics in Power BI](../transform-model/log-analytics/desktop-log-analytics-overview.md).
+Azure Log Analytics (LA) is a service within Azure Monitor which Power BI can use to save activity logs. With Azure Monitor suite, you can collect, analyze, and act on telemetry data from your Azure and on-premises environments. It offers long-term storage, an ad-hoc query interface, and API access to allow data export and integration with other systems. To learn more, see [Using Azure Log Analytics in Power BI](/power-bi/transform-model/log-analytics/desktop-log-analytics-overview).
 
-If Power BI is configured with an Azure LA account, as described in [Configuring Azure Log Analytics for Power BI](../transform-model/log-analytics/desktop-log-analytics-configure.md), you can analyze the success rate of your automatic aggregations. Among other things, you can determine if report queries are answered from the in-memory cache.
+If Power BI is configured with an Azure LA account, as described in [Configuring Azure Log Analytics for Power BI](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure), you can analyze the success rate of your automatic aggregations. Among other things, you can determine if report queries are answered from the in-memory cache.
 
 To use this ability, [download the PBIT template](https://aka.ms/byola_pbit_as) and connect it to your log analytics account, as described in this [Power BI blog post](https://powerbi.microsoft.com/blog/announcing-long-term-usage-and-performance-insights-public-preview/). In the report, you can view data at three different levels: Summary view, DAX query level view, and SQL query level view.
 
@@ -229,14 +229,14 @@ Power BI maintains the model configuration outside of the model. The presence of
 
 When using automatic aggregations, keep the following in mind:
 
-- Aggregations do not support [Dynamic M Query Parameters](../connect-data/desktop-dynamic-m-query-parameters.md).
+- Aggregations do not support [Dynamic M Query Parameters](/power-bi/connect-data/desktop-dynamic-m-query-parameters).
 - The SQL queries generated during the initial training phase can generate significant load for the data warehouse. If training keeps finishing incomplete and you can verify on the data warehouse side that the queries are encountering a timeout, consider temporarily scaling up your data warehouse to meet the training demand.
 - Aggregations stored in the in-memory aggregations cache may not be calculated on the most recent data at the data source. Unlike pure DirectQuery, and more like regular import tables, there's a latency between updates at the data source and aggregations data stored in the in-memory aggregations cache. While there will always be some degree of latency, it can be mitigated through an effective refresh schedule.
 - To further optimize performance, set all dimension tables to **Dual mode** and leave fact tables in DirectQuery mode.
 - Automatic aggregations aren't available with Power BI Pro, Azure Analysis Services, or SQL Server Analysis Services.  
 - Power BI doesn't support downloading models with automatic aggregations enabled. If you uploaded or published a Power BI Desktop (*.pbix*) file to Power BI and then enabled automatic aggregations, you can no longer download the PBIX file. Make sure you keep a copy of the PBIX file locally.
 - Automatic aggregations with external tables in Azure Synapse Analytics isn't supported. You can enumerate external tables in Synapse by using the following SQL query: `SELECT SCHEMA_NAME(schema_id) AS schema_name, name AS table_name FROM sys.external_tables`.
-- Automatic aggregations are only available for models using enhanced metadata. If you want to enable automatic aggregations for an older model, upgrade the model to enhanced metadata first. To learn more, see [Using enhanced model metadata](../connect-data/desktop-enhanced-dataset-metadata.md).
+- Automatic aggregations are only available for models using enhanced metadata. If you want to enable automatic aggregations for an older model, upgrade the model to enhanced metadata first. To learn more, see [Using enhanced model metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata).
 - Don't enable automatic aggregations if the DirectQuery data source is configured for single sign-on and uses dynamic data views or security controls to limit the data a user is allowed to access. Automatic aggregations aren't aware of these data source-level controls, which makes it impossible to ensure correct data is provided on a per user basis. Training will log a warning in the refresh history that it detected a data source configured for single sign-on and skipped the tables that use this data source. If possible, disable SSO for these data sources to take full advantage of the optimized query performance automatic aggregations can provide.
 - Don't enable automatic aggregations if the model contains only hybrid tables to avoid unnecessary processing overhead. A hybrid table uses both import partitions and a DirectQuery partition. A common scenario is incremental refresh with real-time data in which a DirectQuery partition fetches transactions from the data source that occurred after the last data refresh. However, Power BI imports aggregations during refresh. Automatic aggregations can't include transactions that occurred after the last data refresh. Training will log a warning in the refresh history that it detected and skipped hybrid tables.
 - Calculated columns aren't considered for automatic aggregations. If you use a calculated column in DirectQuery mode, such as by using the `COMBINEVALUES` DAX function to create a relationship based on multiple columns from two DirectQuery tables, the corresponding report queries won't hit the in-memory aggregations cache.
@@ -254,6 +254,7 @@ Power BI has a vibrant community where MVPs, BI pros, and peers share expertise 
 ## Related content
 
 - [Configure automatic aggregations](aggregations-auto-configure.md)  
-- [User-defined aggregations](../transform-model/aggregations-advanced.md)  
-- [DirectQuery in Power BI](../connect-data/desktop-directquery-about.md)  
+- [User-defined aggregations](/power-bi/transform-model/aggregations-advanced)  
+- [DirectQuery in Power BI](/power-bi/connect-data/desktop-directquery-about)  
 - [Analysis Services client libraries](/analysis-services/client-libraries?view=power-bi-premium-current&preserve-view=true)  
+

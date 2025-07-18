@@ -1,4 +1,4 @@
----
+﻿---
 title: Sign up for Power BI with a new Microsoft 365 trial
 description: Learn how to sign up for a Microsoft 365 trial to access Power BI when you don't have a work or school email account.
 author: JulCsc
@@ -37,21 +37,22 @@ To follow along, sign up for an Office 365 E5 trial [on the Microsoft 365 web si
 
 You created a new onmicrosoft.com business account and started a free trial of Office 365. Your trial includes Power BI Pro. 
 
-A different way to try Power BI is to sign up for a trial of Microsoft 365. During the sign-up process, create an onmicrosoft.com account. Use the onmicrosoft.com account to [sign up for a trial of the Power BI service as an individual](../fundamentals/service-self-service-signup-purchase-for-power-bi.md).
+A different way to try Power BI is to sign up for a trial of Microsoft 365. During the sign-up process, create an onmicrosoft.com account. Use the onmicrosoft.com account to [sign up for a trial of the Power BI service as an individual](/power-bi/fundamentals/service-self-service-signup-purchase-for-power-bi).
 
 ## Important considerations
 
 If you have any issues when you sign in with the new account credentials, try using a private browser session.
 
-When you use this sign-up method, you create a new organizational tenant, and you become the User and Billing administrator of the tenant. For more information, see [What is Power BI administration](../admin/service-admin-administering-power-bi-in-your-organization.md). You can add new users to your tenant, then share with them, as described in the [Microsoft 365 admin documentation](https://support.office.com/article/Add-users-individually-to-Office-365---Admin-Help-1970f7d6-03b5-442f-b385-5880b9c256ec).
+When you use this sign-up method, you create a new organizational tenant, and you become the User and Billing administrator of the tenant. For more information, see [What is Power BI administration](/power-bi/admin/service-admin-administering-power-bi-in-your-organization). You can add new users to your tenant, then share with them, as described in the [Microsoft 365 admin documentation](https://support.office.com/article/Add-users-individually-to-Office-365---Admin-Help-1970f7d6-03b5-442f-b385-5880b9c256ec).
 
 If you'd like to use email with this new business account, enable email for your new account in Outlook. Alternatively, you can access your onmicrosoft email by going to the [Microsoft account sign-in page](https://account.microsoft.com/) and entering your email address and password. Use the [Microsoft 365 portal](https://portal.office.com) and select **Admin** to update the email or add an alternate email address. 
 
 ## Related content
 
 - [Try or buy a Microsoft 365 for business subscription](/microsoft-365/commerce/try-or-buy-microsoft-365)
--  [What is Power BI administration?](../admin/service-admin-administering-power-bi-in-your-organization.md)  
+-  [What is Power BI administration?](/power-bi/admin/service-admin-administering-power-bi-in-your-organization)  
 - [Power BI licensing in your organization](service-admin-licensing-organization.md)  
-- [Signing up for Power BI as an individual](../fundamentals/service-self-service-signup-purchase-for-power-bi.md)
+- [Signing up for Power BI as an individual](/power-bi/fundamentals/service-self-service-signup-purchase-for-power-bi)
 
 More questions? [Ask the Power BI Community](https://community.powerbi.com/)
+
