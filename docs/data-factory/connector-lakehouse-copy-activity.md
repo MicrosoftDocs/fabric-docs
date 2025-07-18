@@ -204,6 +204,30 @@ When copying data from Lakehouse table, the following mappings are used from Lak
 | date                | Date             |
 | timestamp           | DateTime         |
 
+When copying data to Lakehouse table, the following mappings are used from interim data types used by the service internally to supported delta destination data types.
+
+| Interim service data type | Supported delta destination type |
+|---------------------|------------------|
+| Bool             | boolean             |
+| SByte            | byte                |
+| Byte             | short               |
+| Int16            | short               |
+| UInt16           | integer             |
+| Int32            | integer             |
+| UInt32           | long                |
+| Int64            | long                |
+| UInt64           | Decimal(20,0)       |
+| float            | float               |
+| double           | double              |
+| GUID             | string              |
+| Date             | date                |
+| TimeSpan         | Not supported       |
+| DateTime         | timestamp           |
+| DateTimeOffset   | timestamp           |
+| String           | string              |
+| byte[]           | binary              |
+| Decimal          | decimal             |
+
 ### Settings
 
 For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
