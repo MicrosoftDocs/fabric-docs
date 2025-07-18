@@ -1,8 +1,8 @@
 ---
 title: Setting the query frequency of Activator rules
 description: Explains how to alter the frequency with which Activator monitors rules created from certain data sources.
-author: 
-ms.author: jamesdhutton
+author: jamesdhutton
+ms.author: jameshutton
 ms.topic: overview
 ms.custom: 
 ms.search.form: product-reflex
@@ -17,7 +17,7 @@ Some Fabric Activator rules work by running regular queries on the rule's data s
 
 ## Data sources that have a query frequency
 
-Activator rules created from the the following data source types have a query frequency:
+Activator rules created from the following data source types have a query frequency:
 
 - Power BI reports
 - KQL Querysets
@@ -32,12 +32,12 @@ To set the query frequency for your rule:
 3. Go to the "Manage Source" tab.
 4. Set the value of "Run query every" to your desired query frequency.
 
-:::image type="content" source="media/activator-query-freqency/activator-set-query-frequency.png" alt-text="Screenshot of the query frequency value in the data source for an Activator rule":::
+:::image type="content" source="media/activator-query-frequency/activator-set-query-frequency.png" alt-text="Screenshot of the query frequency value in the data source for an Activator rule":::
 
 ## Determining the right query frequency
 
 To determine the right query frequency for your rule's data source, you should consider the following factors:
 
-- **How often your data source changes**: the more often your data changes, the more often you will want to query it.
+- **How often your data source changes**: the more often your data changes, the more often you should query it.
 - **How quickly you need your rules to activate**: the more often you query your data, the sooner Activator will activate your rule after your rule's condition is met.
-- **Capacity usage**: querying your data consumes Fabric Capacity, so the more often you query your data, the more Fabric Capacity you will use.
+- **Capacity usage**: querying your data consumes Fabric Capacity. The more often you query your data, the more Fabric Capacity you'll use.
