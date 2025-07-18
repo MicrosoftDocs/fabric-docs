@@ -216,7 +216,7 @@ When copying data to Lakehouse table, the following mappings are used from inter
 | Int32            | integer             |
 | UInt32           | long                |
 | Int64            | long                |
-| UInt64           | Decimal(20,0)       |
+| UInt64           | decimal(20,0)       |
 | float            | float               |
 | double           | double              |
 | GUID             | string              |
