@@ -9,11 +9,9 @@ ms.search.form: product-reflex
 ms.date: 7/18/2025
 ---
 
-# Setting the query frequency in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules
+# Query frequency in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
 
-## Query frequency in Fabric Activator
-
-Some Fabric Activator rules work by running regular queries on the rule's data source. You can set how often Activator runs these queries. This article explains how to set the query frequency, and how to determine the right query frequency for your data source.
+Some Fabric Activator rules work by running regular queries on the rule's data source. This article explains how to set the query frequency, and how to determine the right query frequency for your rule.
 
 ## Data sources that have a query frequency
 
@@ -36,7 +34,7 @@ To set the query frequency for your rule:
 
 ## Determining the right query frequency
 
-To determine the right query frequency for your rule's data source, you should consider the following factors:
+To determine the right query frequency for your rule, you should consider the following factors:
 
 - **How often your data source changes**: the more often your data changes, the more often you should query it.
 - **How quickly you need your rules to activate**: the more often you query your data, the sooner Activator will activate your rule after your rule's condition is met.
