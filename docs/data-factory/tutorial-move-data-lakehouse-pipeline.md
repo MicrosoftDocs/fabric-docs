@@ -66,19 +66,13 @@ In this session, you start to build your data pipeline by following below steps 
 
 ### Configure your destination under the destination tab
 
-1. In **Connection** select an existing connection, or select **More** and then search for your lakehouse. and it navigates you to the Lakehouse creation page. Specify your Lakehouse name and then select **Create**.
+1. In **Connection** select an existing connection, or select **More** and then search for your lakehouse.
 
 1. Once your connection is created successfully, it takes you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Lakehouse connection from the drop-down directly if you already created it before.
 
-   :::image type="content" source="media/copy-data-activity/destination-connection-in-pipeline.png" alt-text="Screenshot showing selecting connection." lightbox="media/copy-data-activity/destination-connection-in-pipeline.png":::
-
 1. Specify a table or set up the file path to define the file or folder as the destination. Here select **Tables** and specify a table to write data.
 
-   :::image type="content" source="media/copy-data-activity/configure-destination-file-settings-in-pipeline.png" alt-text="Screenshot showing where to find Table settings." lightbox="media/copy-data-activity/configure-destination-file-settings-in-pipeline.png":::
-
 1. Expand **Advanced** for more advanced settings.
-
-   :::image type="content" source="media/copy-data-activity/configure-destination-file-details-in-pipeline.png" alt-text="Screenshot of Advanced options." lightbox="media/copy-data-activity/configure-destination-file-details-in-pipeline.png":::
 
 Now you can either save your data pipeline with this single copy activity or continue to design your data pipeline.
 
