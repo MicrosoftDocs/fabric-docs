@@ -9,6 +9,7 @@ ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
 ms.date: 03/25/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As an Analyst, I want to create a Fabric data agent that relies on generative AI, that my colleagues and I can use to have conversations about our data.

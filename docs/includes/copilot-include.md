@@ -6,6 +6,7 @@ ms.author: wiassaf
 ms.topic: include
 ms.custom:
 ms.date: 05/09/2024
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---

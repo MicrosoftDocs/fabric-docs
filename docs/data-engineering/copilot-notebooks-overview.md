@@ -12,6 +12,7 @@ ms.custom:
   - ignite-2023-fabric
   - copilot-learning-hub
 ms.date: 05/06/2025
+ms.update-cycle: 180-days
 ms.search.form: Data Science Overview
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot

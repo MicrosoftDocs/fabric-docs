@@ -7,6 +7,7 @@ ms.topic: reference
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
 ms.date: 07/09/2025
+ms.update-cycle: 180-days
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->

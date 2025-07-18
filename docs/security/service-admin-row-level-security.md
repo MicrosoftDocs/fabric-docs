@@ -7,6 +7,7 @@ ms.reviewer: ''
 
 ms.topic: how-to
 ms.date: 03/08/2025
+ms.update-cycle: 180-days
 ms.custom: 'sfi-image-nochange'
 LocalizationGroup: Administration
 ms.collection: ce-skilling-ai-copilot
