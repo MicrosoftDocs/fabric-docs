@@ -839,6 +839,8 @@ items:
     - name: Activator throttling
       href: data-activator/activator-throttling-effects.md
       displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
+    - name: Activator query frequency
+      href: data-activator/activator-query-frequency.md
   - name: Troubleshoot errors
     href: data-activator/activator-troubleshooting.md
 - name: Analyze data with Copilot
