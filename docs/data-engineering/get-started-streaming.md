@@ -21,7 +21,6 @@ Use the following Python script to create a streaming Delta table in a lakehouse
 1. Use the following Python code that uses Spark structured streaming to get data in a lakehouse table.
 
    ```python
-
    from pyspark.sql import SparkSession
 
    if __name__ == "__main__":
