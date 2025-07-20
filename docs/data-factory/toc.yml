@@ -7,6 +7,10 @@
       href: data-factory-overview.md
     - name: What's new in Data Factory
       href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric
+    - name: What is Copilot in Fabric in the Data Factory workload? 
+      href: copilot-fabric-data-factory.md
+    - name: Get started with Copilot in Fabric in the Data Factory workload
+      href: copilot-fabric-data-factory-get-started.md
     - name: Guided Data Factory lab
       href: guided-lab-experience.md
     - name: Data Factory training

@@ -19,7 +19,7 @@ Real-Time hub is single, tenant-wide, unified, logical place for streaming data-
 
 Each user in the tenant can view and edit all the events or streams that they have access to. Real-Time hub makes it so easy to collaborate and develop streaming applications within one place.  
 
-:::image type="content" source="./includes/media/launch-get-events-experience/select-real-time-hub.png" alt-text="Screenshot that shows how to launch Connect to data source experience." :::
+:::image type="content" source="./includes/media/launch-get-events-experience/select-real-time-hub.png" alt-text="Screenshot that shows how to launch Connect to data source experience." lightbox="./includes/media/launch-get-events-experience/select-real-time-hub.png":::
 
 ## Numerous connectors to ingest data from a wide variety of sources
 

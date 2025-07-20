@@ -4,7 +4,8 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 07/14/2025
+ms.date: 07/16/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -20,6 +21,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  1197  | Data Factory | [Pipeline can't load some tables in semantic model refresh activity](./known-issue-1197-pipeline-not-load-tables-semantic-model-refresh-activity.md) | July 16, 2025 |
+|  1195  | Power BI | [Paginated reports might experience loading issues in Firefox browser](./known-issue-1195-paginated-reports-experience-issues-firefox-browser.md) | July 16, 2025 |
+|  1194  | Data Factory | [Pipeline switch activity throws validation error](./known-issue-1194-pipeline-switch-activity-validation-error.md) | July 16, 2025 |
 |  1193  | Data Factory | [Pipeline control flow activities don't show the completion dependency](./known-issue-1193-pipeline-control-flow-activities-not-show-completion.md) | July 14, 2025 |
 |  1192  | Power BI | [Excel Power BI add-in fails in Excel web](./known-issue-1192-excel-power-bi-add-in-fails-excel-web.md) | July 11, 2025 |
 |  1191  | Power BI | [Unable to access SQL analytics endpoint views with access denied error](./known-issue-1191-sql-analytics-endpoint-views-access-denied-error.md) | July 4, 2025 |
@@ -37,7 +41,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1167  | Data Factory | [Refreshes have slow performance and timeouts for Dataflows Gen2 with CI/CD](./known-issue-1167-refreshes-slow-performance-timeouts-dataflows-gen-2.md) | June 4, 2025 |
 |  1164  | Real-Time Intelligence | [Inaccurate usage data displayed for digital twin builder usage in Capacity Metrics App](./known-issue-1164-inaccurate-data-digital-twin-builder-usage-capacity-metrics-app.md) | June 4, 2025 |
 |  1162  | Data Warehouse | [Deleting a classic item or creating a classic item when you use a deleted item's name fails](./known-issue-1162-deleting-creating-classic-item-use-deleted-items-name-fails.md) | June 4, 2025 |
-|  1160  | Data Engineering | [Pipeline notebook activity monitoring page is empty for T-SQL notebook](./known-issue-1160-pipeline-monitoring-page-empty-t-sql-notebook.md) | June 3, 2025 |
 |  1158  | Power BI | [New query replicas in Azure Analysis Services fail to start](./known-issue-1158-new-query-replicas-azure-analysis-services-fail-start.md) | June 3, 2025 |
 |  1156  | Data Warehouse | [Data warehouse doesn't load with version mismatch error](./known-issue-1156-data-warehouse-not-load-version-mismatch-error.md) | June 2, 2025 |
 |  1155  | Real-Time Intelligence | [Publish of eventstream with streaming connector source fails](./known-issue-1155-publish-eventstream-streaming-connector-source-fails.md) | June 2, 2025 |
@@ -61,7 +64,6 @@ Select the **Title** to view more information about that specific known issue.
 |  1118  | Power BI | [Execution details of semantic model refresh activity unavailable in Monitor hub](./known-issue-1118-execution-details-model-refresh-unavailable-monitor-hub.md) | May 1, 2025 |
 |  1107  | Real-Time Intelligence | [Cross-region capacity migration might fail if items weren't deleted successfully](./known-issue-1107-cross-region-capacity-migration-fail-items-not-deleted-successfully.md) | April 22, 2025 |
 |  1106  | Real-Time Intelligence | [Eventstream real-time weather connector fails to load map in edit mode](./known-issue-1106-eventstream-weather-connector-fails-load-map-edit-mode.md) | April 18, 2025 |
-|  1102  | Data Engineering | [Deletion of managed private endpoint connected to Key Vault doesn't work](./known-issue-1102-deletion-private-endpoint-connected-key-vault-not-work.md) | April 15, 2025 |
 |  1101  | Power BI | [Vertica connector throws invalid conversion error](./known-issue-1101-vertica-connector-throws-invalid-conversion-error.md) | April 15, 2025 |
 |  1092  | Data Factory | [Delayed data availability in SQL analytics endpoint when using a pipeline](./known-issue-1092-delayed-data-availability-analytics-endpoint-pipeline.md) | April 11, 2025 |
 |  1090  | Data Engineering | [PyPI packages in User data functions don't show in Library Management](./known-issue-1090-pypi-packages-functions-not-show-library-management.md) | April 9, 2025 |
@@ -78,9 +80,7 @@ Select the **Title** to view more information about that specific known issue.
 |  1056  | Data Factory | [Database mirroring error that source table doesn't exist](./known-issue-1056-database-mirroring-error-source-table-not-exist.md) | March 18, 2025 |
 |  1058  | OneLake | [Workspaces created during Fabric preview only support limited OneLake features](./known-issue-1058-workspaces-created-during-preview-limited-onelake-features.md) | March 12, 2025 |
 |  1055  | Data Factory | [Spark Job Definition activity incorrectly shows failure status](./known-issue-1055-spark-job-definition-activity-incorrectly-shows-failure-status.md) | March 12, 2025 |
-|  1028  | Data Engineering | [Slow Spark session startup caused by Native Execution Engine](./known-issue-1028-slow-spark-session-startup-native-execution-engine.md) | February 19, 2025 |
 |  1027  | Data Factory | [Mirroring fails for tables with unique index on unsupported data type](./known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md) | February 19, 2025 |
-|  1017  | Data Engineering | [Unsupported error for legacy timestamp in Fabric Runtime 1.3](./known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md) | February 5, 2025 |
 |  1002  | Power BI | [Reports that use functions with RLS don't work](./known-issue-1002-reports-functions-rls-not-work.md) | January 28, 2025 |
 |  991  | Data Factory | [Apache Airflow job creation shows Fabric upgrade message](./known-issue-991-apache-airflow-job-creation-upgrade-message.md) | January 13, 2025 |
 |  989  | Data Factory | [Local data access isn't allowed for pipeline using on-premises data gateway](./known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md) | January 13, 2025 |
@@ -102,6 +102,10 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  1160  | Data Engineering | [Pipeline notebook activity monitoring page is empty for T-SQL notebook](./known-issue-1160-pipeline-monitoring-page-empty-t-sql-notebook.md) | June 3, 2025 | Fixed: July 16, 2025 |
+|  1102  | Data Engineering | [Deletion of managed private endpoint connected to Key Vault doesn't work](./known-issue-1102-deletion-private-endpoint-connected-key-vault-not-work.md) | April 15, 2025 | Fixed: July 16, 2025 |
+|  1028  | Data Engineering | [Slow Spark session startup caused by Native Execution Engine](./known-issue-1028-slow-spark-session-startup-native-execution-engine.md) | February 19, 2025 | Fixed: July 16, 2025 |
+|  1017  | Data Engineering | [Unsupported error for legacy timestamp in Fabric Runtime 1.3](./known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md) | February 5, 2025 | Fixed: July 16, 2025 |
 |  1163  | Power BI | [Service report is missing table tooltips in the field list in edit mode](./known-issue-1163-service-report-missing-table-tooltips-field-list-edit-mode.md) | June 4, 2025 | Fixed: July 11, 2025 |
 |  1112  | Data Engineering | [User data functions option not visible in data pipelines functions activity](./known-issue-1112-functions-option-not-visible-pipelines-functions-activity.md) | April 22, 2025 | Fixed: July 11, 2025 |
 |  1168  | Power BI | [Text Analytics AI Functions fail](./known-issue-1168-text-analytics-ai-functions-fail.md) | June 12, 2025 | Fixed: July 3, 2025 |

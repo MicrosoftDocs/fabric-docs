@@ -9,6 +9,7 @@ ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
 ms.date: 05/09/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 #customer intent: As an Analyst, I want to consume a Fabric data agent within Microsoft Copilot Studio.
 ---
@@ -23,7 +24,6 @@ One of the ways to consume a Fabric data agent is by adding it to a custom AI ag
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 - Microsoft 365 Copilot license and a user license for each individual who will be building and managing custom agents.
-
 
 ## How to add a Fabric data agent to the custom AI agent in Copilot Studio
 
@@ -94,9 +94,3 @@ One of the ways to consume a Fabric data agent is by adding it to a custom AI ag
 
 16. This will then launch Microsoft Teams where you will be able to ask questions from the custom AI agent and get answers.
 -->
-
-
-
-
-
-

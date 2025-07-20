@@ -5,7 +5,7 @@ description: Query data using "best matching 25" scoring in Cosmos DB in Microso
 author: seesharprun
 ms.author: sidandrews
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 07/16/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
@@ -88,6 +88,8 @@ Defining multiple text paths is easily done by adding another element to the `fu
 
 > [!IMPORTANT]
 > Wild card characters (`*`, `[]`) aren't currently supported in the full text policy or full text index.
+
+For more information and examples of settings a full text policy, see [full text indexing policy samples](sample-indexing-policies.md#full-text-indexing-policy).
 
 #### Multi-language support
 
