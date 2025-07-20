@@ -44,7 +44,7 @@ Create a Real-Time Dashboard to visualize and explore insights quickly with real
 
 - [Use parameters in Real-Time Dashboards](dashboard-parameters.md) to filter data dynamically.
 - [Real-Time Dashboard permissions](dashboard-permissions.md) to control who can view or edit your dashboards.
-- [Customize Real-Time Dashboard visuals](dashboard-custom-visuals.md) to suit your needs, including charts, graphs, and tables. The tiles are interactive, so you can drill down into data and explore specific data points in detail.
+- [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md) to suit your needs, including charts, graphs, and tables. The tiles are interactive, so you can drill down into data and explore specific data points in detail.
 - [Apply conditional formatting](dashboard-conditional-formatting.md) to highlight important data trends or anomalies.
 - [Create alerts for Real-Time Dashboards](data-activator/activator-get-data-real-time-dashboard.md) to trigger notifications when specific rule conditions are met.
 
