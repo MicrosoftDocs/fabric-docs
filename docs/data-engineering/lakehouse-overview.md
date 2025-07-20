@@ -21,7 +21,7 @@ Microsoft Fabric Lakehouse is a data architecture platform for storing, managing
 When you create a Lakehouse in Microsoft Fabric, a [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) is automatically generated. This endpoint provides a read-only, relational interface over your Delta tables, allowing users to explore and query data using T-SQL. While it offers a familiar SQL experience, it doesn't support the full T-SQL capabilities of a traditional transactional data warehouse. The endpoint also includes a default semantic model, making it easier to use the Lakehouse data in Power BI for reporting and visualization. Together, this setup enables a streamlined experience from data ingestion to analysis and reporting.
 
 > [!NOTE]
-> Only the tables in Delta format are available in the SQL analytics endpoint. Parquet, CSV, and other formats can not be queried using the SQL analytics endpoint. If you don't see your table, you will need convert it to Delta format.
+> Only the tables in Delta format are available in the SQL analytics endpoint. Parquet, CSV, and other formats can't be queried using the SQL analytics endpoint. If you don't see your table, you'll need convert it to Delta format.
 
 ## Automatic table discovery and registration
 
@@ -33,7 +33,7 @@ A data engineer can interact with the lakehouse and the data within the lakehous
 
 - **The Lakehouse explorer**: The explorer is the main Lakehouse interaction page. You can load data in your Lakehouse, explore data in the Lakehouse using the object explorer, set MIP labels & various other things. Learn more about the explorer experience: [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md).
 
-- **Notebooks**: Data engineers can use the notebook to write code to read, transform and write directly to Lakehouse as tables and/or folders. You can learn more about how to use notebooks for Lakehouse: [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md) and [How to use a notebook to load data into your lakehouse](lakehouse-notebook-load-data.md).
+- **Notebooks**: Data engineers can use the notebook to write code to read, transform, and write directly to Lakehouse as tables and/or folders. You can learn more about how to use notebooks for Lakehouse: [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md) and [How to use a notebook to load data into your lakehouse](lakehouse-notebook-load-data.md).
 
 - **Pipelines**: Data engineers can use data integration tools such as pipeline copy tool to pull data from other sources and land into the Lakehouse. Find more information on how to use the copy activity: [How to copy data using copy activity](../data-factory/copy-data-activity.md).
 
