@@ -1,7 +1,7 @@
 ---
 title: What is Real-Time Dashboards?
 description: Learn about Real-Time Dashboards in Microsoft Fabric.
-ms.reviewer: mbar
+ms.reviewer: mibar
 ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: overview
