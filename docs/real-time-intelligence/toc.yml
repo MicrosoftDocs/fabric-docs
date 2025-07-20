@@ -29,6 +29,8 @@ items:
     href: architecture-medallion.md
   - name: End to end sample
     href: sample-end-to-end.md
+  - name: Real-Time Dashboards Overview
+    href: real-time-dashboards-overview.md
 - name: Tutorials
   items:
   - name: End to end tutorial - Real-Time-Intelligence
