@@ -5,6 +5,7 @@ author: ukchrist
 ms.topic: tutorial
 ms.date: 12/18/2024
 ms.author: ulrichchrist
+ms.custom: pipelines, sfi-image-nochange
 ---
 
 # Change data capture from SAP to Microsoft Fabric OneLake with Azure Data Factory

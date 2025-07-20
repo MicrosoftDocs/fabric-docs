@@ -4,7 +4,7 @@ description: A known issue is posted where User data functions option not visibl
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/22/2025
+ms.date: 07/11/2025
 ms.custom: known-issue-1112
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1112
 
 In a data pipelines, you can create and run a user data functions activity. For this issue, you might not see the functions activity.
 
-**Status:** Open
+**Status:** Fixed: July 11, 2025
 
 **Product Experience:** Data Engineering
 

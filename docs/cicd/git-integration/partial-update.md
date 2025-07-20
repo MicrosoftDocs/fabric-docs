@@ -1,8 +1,8 @@
 ---
 title: Manual updates with Git integration
 description: Learn how to update your workspace manually when there's an internal inconsistency, and how to resolve issues that prevent successful updates.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd

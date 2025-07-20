@@ -4,7 +4,7 @@ description: A known issue is posted where pipelines don't support Role property
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 08/23/2024
+ms.date: 05/08/2025
 ms.custom: known-issue-817
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-817
 
 Pipelines don't support **Role** property for Snowflake connector.
 
-**Status:** Open
+**Status:** Fixed: May 8, 2025
 
 **Product Experience:** Data Factory
 

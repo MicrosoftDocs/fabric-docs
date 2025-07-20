@@ -11,8 +11,8 @@ metadata:
   ms.custom:
   ms.topic: landing-page
   ms.collection: collection
-  author: shsagir
-  ms.author: shsagir
+  author: spelluru
+  ms.author: spelluru
   ms.date: 01/22/2025
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -121,7 +121,7 @@ landingContent:
             url: create-empty-table.md
           - text: Manage a KQL database
             url: data-management.md
-          - text: Create a shortcut to access data in OneLake
+          - text: Create a shortcut to OneLake
             url: onelake-shortcuts.md
 
   # Card
@@ -135,8 +135,6 @@ landingContent:
           links:
           - text: Get data from Power BI
             url: data-activator/activator-get-data-power-bi.md
-          - text: Get data from Eventstreams
-            url: data-activator/activator-get-data-eventstreams.md
         - linkListType: how-to-guide
           links:
           - text: Activate Fabric items
@@ -145,9 +143,29 @@ landingContent:
             url: data-activator/activator-get-data-real-time-dashboard.md
           - text: Alert on a KQL Queryset
             url: data-activator/activator-alert-queryset.md
+  
+    # Card
+  - title: Model data
+    linkLists:
+        - linkListType: overview
+          links:
+          - text: What is digital twin builder (preview)?
+            url: digital-twin-builder/overview.md
+        - linkListType: get-started
+          links:
+          - text: Digital twin builder (preview) tutorial
+            url: digital-twin-builder/tutorial-0-introduction.md
+        - linkListType: concept
+          links:
+          - text: Modeling your data in digital twin builder (preview)
+            url: digital-twin-builder/concept-modeling.md
+          - text: Mapping data to entities
+            url: digital-twin-builder/concept-mapping.md
+          - text: Digital twin builder flow (preview)
+            url: digital-twin-builder/concept-flows.md
 
   # Card
-  - title: Analyze and model data
+  - title: Analyze and train data
     linkLists:
         - linkListType: how-to-guide
           links:
@@ -171,6 +189,8 @@ landingContent:
             url: notebooks.md
           - text: Use a notebook with Apache Spark to query a KQL database
             url: spark-connector.md
+          - text: Use a notebook with Kqlmagic to query a KQL database
+            url: notebook-kql-magic.md
 
   # Card
   - title: Monitor Eventhouse metrics and logs

@@ -1,8 +1,8 @@
 ---
 title: Introduction to CI/CD in Microsoft Fabric
 description: An overview of the CI/CD continuous integration, continuous deployment as part of the Application lifecycle management (ALM) cycle process in Microsoft Fabric.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.custom:
 ms.topic: concept-article

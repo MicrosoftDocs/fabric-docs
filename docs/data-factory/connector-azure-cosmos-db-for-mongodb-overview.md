@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 05/07/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Azure Cosmos DB for MongoDB connector overview

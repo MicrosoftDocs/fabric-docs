@@ -4,7 +4,7 @@ description: A known issue is posted where you can't read data warehouse tables 
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/22/2025
+ms.date: 05/06/2025
 ms.custom: known-issue-1108
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1108
 
 You can try to read a data warehouse table from a Spark notebook in Fabric. If you have a `not null` constraint on the table, you receive an error, and the notebook execution fails.
 
-**Status:** Open
+**Status:** Fixed: May 6, 2025
 
 **Product Experience:** Data Warehouse
 

@@ -4,7 +4,7 @@ description: A known issue is posted where Snowflake Implementation="2.0" connec
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/15/2025
+ms.date: 05/08/2025
 ms.custom: known-issue-1100
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1100
 
 In the March 2025 update of Power BI Desktop, the Snowflake connector `Implementation="2.0"` flag is added by default. When this flag is enabled, views aren't visible in both Power BI Desktop and Power BI service.
 
-**Status:** Open
+**Status:** Fixed: May 8, 2025
 
 **Product Experience:** Power BI
 

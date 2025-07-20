@@ -2,8 +2,8 @@
 title: Share queries
 description: Learn how to share KQL queries in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 03/05/2025

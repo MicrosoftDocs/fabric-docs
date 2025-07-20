@@ -5,8 +5,9 @@ ms.reviewer: whhender
 ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
-ms.custom:
 ms.date: 12/18/2024
+ms.custom: 
+    - dataflows
 ---
 
 # Dataflow Gen2 pricing for Data Factory in Microsoft Fabric
@@ -46,7 +47,7 @@ Learn more at [Virtual Network Data Gateways Pricing and Billing](/data-integrat
 
 ## Changes to Microsoft Fabric workload consumption rate
 
-Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](/fabric/release-plan/data-factory) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.
+Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](https://aka.ms/fabricrm) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.
 
 ## Compute estimated costs using the Fabric Metrics App
 

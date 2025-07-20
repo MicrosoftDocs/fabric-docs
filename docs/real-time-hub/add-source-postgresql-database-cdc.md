@@ -5,7 +5,8 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-  - references_regions
+- references_regions
+- sfi-image-nochange
 ms.date: 11/18/2024
 ---
 

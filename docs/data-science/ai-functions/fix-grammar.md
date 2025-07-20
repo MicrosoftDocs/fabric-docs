@@ -1,8 +1,8 @@
 ---
 title: Fix grammar with the `ai.fix_grammar` function
 description: Learn how to use the `ai.fix_grammar` to correct the spelling, grammar, and punctuation of input text.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to

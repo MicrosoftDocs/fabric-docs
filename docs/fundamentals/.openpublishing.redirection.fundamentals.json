@@ -31,6 +31,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/fundamentals/fabric-help-pane.md",
+            "redirect_url": "/fabric/fundamentals/fabric-home",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/known-issues/known-issue-549-making-model-changes-semantic-model-might-not-work.md",
             "redirect_url": "/fabric/get-started/fabric-known-issues",
             "redirect_document_id": false
@@ -1062,6 +1067,191 @@
         },
         {
             "source_path_from_root": "/docs/known-issues/known-issue-1020-dataflow-connector-not-show-dataflows-view-permissions.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-810-inserting-nulls-tables-fail-incorrect-error.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-842-warehouse-exports-pipelines-fail.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-844-intermittent-refresh-failure-gateway.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-872-data-warehouses-not-show-button-friendly-names.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-891-warehouse-tables-not-accessible-updatable.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-895-dataverse-shortcut-creation-read-fails-org-moved.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-940-pipeline-copy-kusto-on-premises-data-gateway-not-work.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-877-pipeline-connection-fails-role-removed.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-923-tenant-migrations-paused-january-2025.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-967-pipeline-activities-not-save-warehouse-connection.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-968-export-data-option-disabled-qa-visual.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-974-show-table-kql-queryset-editor-fails.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-976-export-to-data-disabled-visual-calculation.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-979-sql-databases-not-available-private-link.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1023-preview-destination-data-pipeline-copy-activity-fails.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1024-copy-job-item-deletion-fails-error.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1029-surge-protection-rules-not-visible-capacity-settings.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1045-live-connection-local-model-resets-report-content-desktop.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1046-custom-visuals-dialog-api-not-work-desktop.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1047-ai-skill-creation-fails-tenant-settings-restricted-security-groups.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1062-workspace-identity-tagged-preview-adls-gen2-connections.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1063-pipeline-activities-fail-dynamics-dataverse-connections-opdg.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1067-environment-rest-api-updates-workflow-break.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1070-virtual-network-data-gateway-not-start-certain-regions.md",
+            "redirect_url": "/fabric/get-started/fabric-known-issues",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/known-issues/known-issue-1075-multitasking-dataflow-gen2-ci-cd-enabled.md",
             "redirect_url": "/fabric/get-started/fabric-known-issues",
             "redirect_document_id": false
         },

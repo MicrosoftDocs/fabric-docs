@@ -1,8 +1,8 @@
 ---
 title: Impact analysis
 description: Learn how to visualize and analyze the downstream impact of making changes to Fabric items.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
 ms.custom: 
 ms.date: 05/23/2023

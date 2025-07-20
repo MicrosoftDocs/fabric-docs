@@ -4,7 +4,7 @@ description: A known issue is posted where a FeatureNotAvailableError error in N
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 02/28/2025
+ms.date: 06/12/2025
 ms.custom: known-issue-1033
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1033
 
 You see an unexpected error banner message in the **Network Security** tab of **Workspace Settings**. The error message doesn't have any effect on functionality.
 
-**Status:** Open
+**Status:** Fixed: June 12, 2025
 
 **Product Experience:** Administration & Management
 

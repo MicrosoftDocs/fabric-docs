@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
 ms.date: 03/31/2025
 ---
@@ -839,6 +839,37 @@ With ``` notebookutils.runtime.context ``` you can get the context information o
 notebookutils.runtime.context
 ```
 
+The table below outlines the properties.
+
+| **Parameter** | **Explanation** | 
+|---|---|
+| `currentNotebookName` | The name of the current notebook |
+| `currentNotebookId` | The unique ID of the current notebook |
+| `currentWorkspaceName` | The name of the current workspace |
+| `currentWorkspaceId` | The ID of the current workspace |
+| `defaultLakehouseName` | The display name of the default lakehouse, if defined |
+| `defaultLakehouseId` | The ID of the default lakehouse, if defined |
+| `defaultLakehouseWorkspaceName` | The workspace name of the default lakehouse, if defined |
+| `defaultLakehouseWorkspaceId` | The workspace ID of the default lakehouse, if defined |
+| `currentRunId` | In a reference run, the current run ID |
+| `parentRunId` | In a reference run with nested runs, this is the parent run ID |
+| `rootRunId` | In a reference run with nested runs, this is the root run ID |
+| `isForPipeline` | Whether the run is for a pipeline |
+| `isReferenceRun` | Whether the current run is a reference run |
+| `referenceTreePath` | The tree structure of nested reference runs, used only for the snapshot hierarchy in the monitoring L2 page |
+| `rootNotebookId` | (Only in reference run) The ID of the root notebook in a reference run. |
+| `rootNotebookName` | (Only in reference run) The name of the root notebook in a reference run. |
+| `rootWorkspaceId` | (Only in reference run) The workspace ID of the root notebook in a reference run. |
+| `rootWorkspaceName` | (Only in reference run) The workspace name of the root notebook in a reference run. |
+| `activityId` | The Livy job ID for the current activity |
+| `hcRepId` | The REPL ID in High Concurrency Mode |
+| `clusterId` | The identity of the Synapse Spark cluster |
+| `poolName` | The name of the Spark pool being used |
+| `environmentId` | The environment ID where the job is running |
+| `environmentWorkspaceId` | The workspace ID of the environment |
+| `userId` | The user ID of the current user |
+| `userName` | The user name of the current user |
+
 ## Session management
 
 ### Stop an interactive session
@@ -862,6 +893,100 @@ notebookutils.session.restartPython()
 > [!NOTE]
 > - In the notebook reference run case, ```restartPython()``` only restarts the Python interpreter of the current notebook that being referenced.
 > - In rare case, the command may fail due to the Spark reflection mechanism, adding retry can mitigate the problem.
+
+## Variable library utilities
+
+> [!NOTE]
+> "Variable Library utilities" in Notebooks is in Preview.
+
+Variable libraries allow you to avoid hardcoding values in your notebook code. You can update the values in the library instead of modifying the code. The notebook references the variable library to retrieve those values. This approach simplifies the reuse of code across teams and projects by utilizing a centrally managed library. 
+
+Run the following commands for an overview of the available methods:
+
+```python
+notebookutils.variableLibrary.help()
+```
+
+**Output**
+```console
+[Preview] notebookutils.variableLibrary is a utility to Variable Library.
+
+Below is overview about the available methods:
+
+get(variableReference: String): String
+-> Run the variable value with type.
+getLibrary(variableLibraryName: String): VariableLibrary
+-> Get the variable library.
+Use notebookutils.variableLibrary.help("methodName") for more info about a method.
+
+```
+
+### Define the variable in your Variable Library
+
+Define the variables first before using ```notebookutils.variableLibrary```.
+
+:::image type="content" source="media\notebook-utilities\variable-library.png" alt-text="Screenshot of variables list in variable library." lightbox="media\notebook-utilities\variable-library.png":::
+
+### Retrieve the variable library from the Notebook
+
+```python
+samplevl = notebookutils.variableLibrary.getLibrary("sampleVL")
+
+samplevl.test_int
+samplevl.test_str
+```
+
+```scala
+val samplevl = notebookutils.variableLibrary.getLibrary("sampleVL")
+
+samplevl.test_int
+samplevl.test_str
+```
+
+```r
+samplevl <- notebookutils.variableLibrary.getLibrary("sampleVL")
+
+samplevl.test_int
+samplevl.test_str
+```
+
+Example for dynamically using the variable.
+
+```python
+samplevl = notebookutils.variableLibrary.getLibrary("sampleVL")
+
+file_path = f"abfss://{samplevl.Workspace_name}@onelake.dfs.fabric.microsoft.com/{samplevl.Lakehouse_name}.Lakehouse/Files/<FileName>.csv" 
+df = spark.read.format("csv").option("header","true").load(file_path) 
+
+display(df) 
+
+```
+
+### Access a single variable by reference
+
+```python
+notebookutils.variableLibrary.get("$(/**/samplevl/test_int)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_str)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
+```
+
+```scala
+notebookutils.variableLibrary.get("$(/**/samplevl/test_int)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_str)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
+```
+
+```r
+notebookutils.variableLibrary.get("$(/**/samplevl/test_int)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_str)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
+```
+
+> [!NOTE] 
+> - The ```notebookutils.variableLibrary``` API only supports accessing variable libraries within the same workspace.
+> - Retrieving variable libraries across workspaces is not supported in child notebooks during a reference run.
+> - The notebook code references the variables defined in the active value set of the Variable Library. 
+
 
 ## Known issue 
 

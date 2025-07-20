@@ -1,5 +1,5 @@
 ---
-title: AutoML in Fabric
+title: AutoML in Fabric concepts (preview)
 description: Use AutoML in Fabric to automate the ML workflow (preview)
 ms.topic: overview
 ms.author: ssalgado
@@ -9,7 +9,7 @@ reviewer: midesa
 ms.date: 03/18/2024
 ---
 
-# AutoML in Fabric (preview)
+# AutoML in Fabric (preview) concepts
 
 AutoML (Automated Machine Learning) is a collection of methods and tools that automate machine learning model training and optimization with little human involvement. The aim of AutoML is to simplify and speed up the process of choosing the best machine learning model and hyperparameters for a given dataset, which usually demands much skill and computing power.
 

@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 11/19/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # ServiceNow connector overview

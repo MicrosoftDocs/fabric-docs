@@ -66,7 +66,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|spark
 ### Sample request 1: Get details of a specific job in a Spark application
 
 ```
-GET https://api.fabric.microsoft.com/v1/workspaces/00bb0307-033d-415b-9917-e0b19df28539/notebooks/46884990-6ea1-4dbf-93e5-daf2608930d6/livySessions/b90eee82-765c-4393-b3da-2a11eeb73b34/applications/application_1742369571479_0001/jobs/1 
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/applications/application_1742369571479_0001/jobs/1 
 ```
 
 ### Sample response 1
@@ -105,7 +105,7 @@ Status code: 200
 ### Sample request 2: Get details of a specific SQL query in a Spark application
 
 ```
-GET  https://api.fabric.microsoft.com/v1/workspaces/00bb0307-033d-415b-9917-e0b19df28539/notebooks/46884990-6ea1-4dbf-93e5-daf2608930d6/livySessions/b90eee82-765c-4393-b3da-2a11eeb73b34/applications/application_1742369571479_0001/sql/1?details=false 
+GET  https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/applications/application_1742369571479_0001/sql/1?details=false 
 ```
 
 ### Sample response 2
@@ -134,8 +134,9 @@ Status code: 200
 ### Sample request 3: Get event log of a specific attempt in a Spark application
 
 ```
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/application_1741176604085_0001/1/logs  
+GET https://api.fabric.microsoft.com/v1/workspaces/ddddeeee-3333-ffff-4444-aaaa5555bbbb/notebooks/eeeeffff-4444-aaaa-5555-bbbb6666cccc/livySessions/ffffaaaa-5555-bbbb-6666-cccc7777dddd/applications/application_1741176604085_0001/1/logs  
 ```
 
-### Sample response 3: Not shown because it is unreadable code
+### Sample response 3
 
+Not shown because it is unreadable code

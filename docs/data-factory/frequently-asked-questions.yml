@@ -5,7 +5,7 @@ metadata:
   author: kromerm
   ms.author: makromer
   ms.topic: faq
-  ms.custom:
+  ms.custom: configuration
   ms.date: 06/10/2024
 title: Data Factory in Microsoft Fabric FAQ
 summary: |
@@ -49,7 +49,7 @@ sections:
       - question: |
           Where can I find more information about upcoming features planned for the Data Factory in Microsoft Fabric?
         answer: |
-          [What's new and planned for Data Factory in Microsoft Fabric](https://learn.microsoft.com/fabric/release-plan/data-factory) provides insights into upcoming features and their estimated release timelines over the next few months.
+          [What's new and planned for Data Factory in Microsoft Fabric](https://aka.ms/fabricrm) provides insights into upcoming features and their estimated release timelines over the next few months.
 
   - name: Data pipelines
     questions:

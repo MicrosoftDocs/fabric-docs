@@ -1,12 +1,12 @@
 ---
 title: Data source management
 description: Learn how to add and remove data sources, and how to manage users.
-ms.reviewer: DougKlopfenstein
-ms.author: mideboer
-author: miquelladeboer
+ms.reviewer: whhender
+ms.author: abnarain
+author: abnarain
 ms.topic: how-to
-ms.custom:
-ms.date: 12/18/2024
+ms.date: 6/4/2025
+ms.custom: connectors
 ---
 
 # Data source management
@@ -48,6 +48,17 @@ ms.date: 12/18/2024
    :::image type="content" source="media/data-source-management/settings.png" alt-text="Screenshot of new connection success message.":::
 
 You can now use this data source to include data from Azure SQL in the supported [!INCLUDE [product-name](../includes/product-name.md)] items.
+
+### Allow cloud connection usage on gateway
+
+At the bottom of the connection creation dialog a new setting with the label **This connection can be used with on-premise data gateways and VNet data gateways** is present. Checking the box for this setting enables you 
+
+**When the setting is left unchecked** for the evaluation of a Fabric item that uses a gateway, the evaluation fails as the shareable cloud connection doesn't have the permissions to be used in the context of a gateway evaluation.
+In contrast, **when the setting is checked** the shareable cloud connection can be used by gateway based evaluations.
+
+>[!CAUTION]
+>The *allow connection usage on gateway* setting is present when creating cloud connections through Dataflow Gen2, but not currently enforced. This means that all shareable cloud connections will be used through a gateway if a gateway is present.
+>We're aware of this behavior and are working on a fix to only allow the usage of this connection on a gateway when this setting is checked. 
 
 ## Remove a data source
 
@@ -164,16 +175,16 @@ By default, any user in Fabric can share their connections if they have the foll
 
 Sharing a connection in Fabric is sometimes needed for collaboration within the same workload or when sharing the workload with others. Connection sharing in Fabric makes this easy by providing a secure way to share connections with others for collaboration, but without exposing the secrets at any time. These connections can only be used within the Fabric environment.
 
-If your organization does not allow for connection sharing or wants to limit the sharing of connections, a tenant admin can restrict sharing as a tenant policy. The policy allows you to block sharing within the entire tenant.
+If your organization doesn't allow for connection sharing or wants to limit the sharing of connections, a tenant admin can restrict sharing as a tenant policy. The policy allows you to block sharing within the entire tenant.
 
 > [!NOTE]
 > This restriction can result in limitations of multiple users being unable to collaborate within the same workloads.
-> Disabling connection sharing does not impact connections that have already been shared.
+> Disabling connection sharing doesn't impact connections that have already been shared.
 
 How to enable the setting
 1.	You must have sufficient privileges from the Power BI Service Administrator role.
 3.	In Power BI or Fabric go to settings and the manage connections and gateways page.
-4.	In the top right, turn on the toggle for tenant administation.
+4.	In the top right, turn on the toggle for tenant administration.
 
 :::image type="content" source="media/data-source-management/tenant-administration.png" alt-text="Screenshot showing the tenant administration toggle in the Manage connections and gateways page.":::
 
@@ -184,6 +195,7 @@ How to enable the setting
 5.	If you want, you can allowlist individual users by searching for them a selecting Add. All the users in the list below can share connections.
 
 :::image type="content" source="media/data-source-management/manage-cloud-connection-sharing-on.png" alt-text="Screenshot showing the manage cloud connection sharing feature toggled on.":::
+
 
 ## Related content
 

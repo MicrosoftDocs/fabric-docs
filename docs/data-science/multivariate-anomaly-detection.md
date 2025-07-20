@@ -2,12 +2,13 @@
 title: Analyze time series
 description: Use SynapseML and Azure AI services for multivariate anomaly detection.
 ms.topic: overview
-ms.custom:
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.custom: sfi-ropc-nochange
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
 ms.date: 04/10/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 

@@ -4,7 +4,7 @@ description: Learn about the T-SQL data types supported the SQL analytics endpoi
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, jovanpop
-ms.date: 04/06/2025
+ms.date: 06/06/2025
 ms.topic: conceptual
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
@@ -58,7 +58,7 @@ For T-SQL data types that aren't currently supported, some alternatives are avai
 | **xml** | No equivalent. |
 | **User-defined type (CLR)** | No equivalent. |
 
-Unsupported data types can still be used in T-SQL code for variables, or any in-memory use in session. Creating tables or views that persist data on disk with any of these types isn't allowed.
+Unsupported data types can still be used in T-SQL code for variables, parameters or outputs of functions and stored procedures, or any in-memory use in session. Creating tables or views that persist data on disk with any of these types isn't allowed.
 
 For a guide to create a table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Create tables](create-table.md).
 

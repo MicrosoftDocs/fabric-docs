@@ -1,11 +1,11 @@
 ---
 title: Conditional access
 description: Learn how to configure conditional access for Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/27/2025
+ms.date: 06/04/2025
 ---
 
 # Conditional access in Fabric
@@ -20,23 +20,24 @@ For more information on the full capabilities of Conditional Access, see the art
 
 ## Configure conditional access for Fabric
 
-To ensure that conditional access for Fabric works as intended and expected, it's recommended to adhere to the following best practices:
+To ensure a smooth and secure experience across Microsoft Fabric and its connected services, we recommend setting up one common conditional access policy. This helps:
 
-* Configure a single, common, conditional access policy for the Power BI Service, Azure Data Explorer, Azure SQL Database, Azure Storage and Cosmos DB. Having a single, common policy significantly reduces unexpected prompts that might arise from different policies being applied to downstream services, and the consistent security posture provides the best user experience in Microsoft Fabric and its related products.
+* Reduce unexpected sign-in prompts caused by different policies on downstream services.
+* Maintain a consistent security setup across all tools.
+* Improve the overall user experience.
 
-    The products to include in the policy are the following:
+  The products to include in the policy are:
 
-    **Product**
-    * Power BI Service
-    * Azure Data Explorer
-    * Azure SQL Database
-    * Azure Storage
-    * Cosmos DB
+  * Power BI Service
+  * Azure Data Explorer
+  * Azure SQL Database
+  * Azure Storage
+  * Azure Cosmos DB
 
-* If you create a restrictive policy (such as one that blocks access for all apps except Power BI), certain features, such as dataflows, won't work.
+* If your policy is too restrictive—for example, if it blocks all apps except Power BI— some features, such as dataflows, may not work.
 
 > [!NOTE]
-> If you already have a conditional access policy configured for Power BI, be sure to include the other products listed above in your existing Power BI policy, otherwise conditional access may not operate as intended in Fabric.
+> If you already have a conditional access policy configured for Power BI, be sure to include the products listed above in your existing Power BI policy, otherwise conditional access may not operate as intended in Fabric.
 
 The following steps show how to configure a conditional access policy for Microsoft Fabric.
 
@@ -46,9 +47,9 @@ The following steps show how to configure a conditional access policy for Micros
 1. On the Security | Getting started page, choose **Conditional Access**.
 1. On the Conditional Access | Overview page, select **+Create new policy**.
 1. Provide a name for the policy.
-1. Under **Assignments**, select the **Users** field. Then, on the Include tab, choose **Select users and groups**, and then check the **Users and groups** checkbox. The **Select users and groups** pane opens, and you can search for and select a Microsoft Entra user or group for conditional access. When done, click **Select**.
-1. Place your cursor in the **Target resources** field and choose **Cloud apps** from the drop-down menu. Then, on the Include tab, choose **Select apps** and place your cursor in the **Select** field. In the **Select** side pane that appears, find and select **Power BI Service**, **Azure Data Explorer**, **Azure SQL Database**, and **Azure Storage**. When you've selected all four items, close the side pane by clicking **Select**.
-1. Under **Access controls**, put your cursor in the **Grant** field. In the **Grant** side pane that appears, configure the policy you want to apply, and then click **Select**.
+1. Under **Assignments**, select the **Users** field. Then, on the Include tab, choose **Select users and groups**, and then check the **Users and groups** checkbox. The **Select users and groups** pane opens, and you can search for and select a Microsoft Entra user or group for conditional access and **Select** it.
+1. Place your cursor in the **Target resources** field and choose **Cloud apps** from the drop-down menu. Then, on the Include tab, choose **Select apps** and place your cursor in the **Select** field. In the **Select** side pane that appears, find and select **Power BI Service**, **Azure Data Explorer**, **Azure SQL Database**, **Azure Storage**, and **Azure Cosmos DB**. Once you select all five items, close the side pane by clicking **Select**.
+1. Under **Access controls**, put your cursor in the **Grant** field. In the **Grant** side pane that appears, configure the policy you want to apply, and **Select**.
 1. Set the **Enable policy** toggle to **On**, then select **Create**.
 
 ## Related content

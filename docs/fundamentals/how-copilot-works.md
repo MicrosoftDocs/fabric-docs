@@ -5,6 +5,7 @@ author: denglishbi
 ms.author: daengli
 ms.reviewer: sngun
 ms.topic: conceptual
+ms.collection: ce-skilling-ai-copilot
 ms.date: 04/16/2025
 ---
 
@@ -260,7 +261,7 @@ It's important to keep the following considerations in mind when you use Copilot
 > [!WARNING]
 > To mitigate the risks of these limitations and considerations, and the fact that Copilot, LLMs, and generative AI are nascent technology, you *should not* use Copilot in Fabric for autonomous, high-risk, or business-critical processes and decision-making.
 
-For more information, see [Security guidance for LLMs](/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/security/security-recommend).
+For more information, see [Security guidance for LLMs](/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/security/security-plan-llm-application).
 
 Once the Azure OpenAI Service processes the input and produces a response, it returns this response as an output to Copilot.
 
@@ -331,7 +332,7 @@ To mitigate risks or challenges from LLM hallucinations in Copilot, consider the
 
 - Test items with Copilot before you allow these items to be used with it. Certain items require certain preparatory tasks to ensure that they work well with Copilot.
 
-- Avoid using Copilot in [autonomous, high-risk, or business-critical decision-making processes](/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/security/security-recommend).
+- Avoid using Copilot in [autonomous, high-risk, or business-critical decision-making processes](/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/security/security-plan-llm-application).
 
 > [!IMPORTANT]
 > Additionally, review the [supplemental preview terms for Fabric](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), which include terms of use for Microsoft Generative AI Service Previews. While you can try and experiment with these preview features, we recommend that you don't use Copilot features in preview in production solutions.

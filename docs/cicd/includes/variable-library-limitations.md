@@ -1,8 +1,8 @@
 ---
 title: Include file for Variable library limitations
 description: This file lists all the considerations limitations to consider when working with Variable libraries. 
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.topic: include
 ms.custom: 
 ms.date: 03/16/2025

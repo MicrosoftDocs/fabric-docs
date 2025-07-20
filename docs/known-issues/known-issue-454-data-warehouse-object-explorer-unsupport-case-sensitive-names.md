@@ -4,14 +4,15 @@ description: A known issue is posted where the Data Warehouse Object Explorer do
 author: jessicammoss
 ms.author: anirmale
 ms.topic: troubleshooting 
-ms.date: 07/10/2023
+ms.date: 06/12/2025
 ms.custom: known-issue-454
 ---
 
 # Known issue - The Data Warehouse Object Explorer doesn't support case-sensitive object names
-The object explorer fails to display the Fabric Data Warehouse objects (ex. tables, views, etc.) when have same noncase sensitive name (ex. table1 and Table1). In case there are two objects with same name, one displays in the object explorer. but, if there's three or more objects, nothing gets display. The objects show and can be used from system views (ex. sys.tables). The objects aren't available in the object explorer.
 
-**Status:** Open
+The object explorer fails to display the Fabric Data Warehouse objects (ex. tables, views, etc.) when have same noncase sensitive name (ex. table1 and Table1). In case there are two objects with same name, one displays in the object explorer. If there's three or more objects, nothing gets display. The objects show and can be used from system views (ex. sys.tables). The objects aren't available in the object explorer.
+
+**Status:** Fixed: June 12, 2025
 
 **Product Experience:** Data Warehouse
 

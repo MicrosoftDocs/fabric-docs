@@ -5,7 +5,9 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom: template-how-to
+ms.custom:
+  - template-how-to
+  - connectors
 ---
 
 # Azure SQL Managed Instance connector overview

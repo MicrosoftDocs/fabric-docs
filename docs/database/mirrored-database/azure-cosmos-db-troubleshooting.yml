@@ -8,7 +8,7 @@ metadata:
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.topic: faq
-  ms.date: 03/17/2024
+  ms.date: 05/07/2025
 title: |
   Troubleshoot Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
 summary: |
@@ -43,9 +43,11 @@ sections:
       - question: |
           Why is replication not working and I'm getting "internal server error" when I select "monitor replication"?
         answer: |
-          Replication could be working and you're observing a transient error if Azure Cosmos DB is throttling requests from Fabric. Additionally, there might be a limitation of mirroring with Azure Cosmos DB causing this issue. For more information, see [Azure Cosmos DB mirroring limitations](azure-cosmos-db-limitations.md).
+          If using Entra ID for authentication, please verify the required role-based access control permissions have been added. For more information, see [Azure Cosmos DB mirroring security limitations](azure-cosmos-db-limitations.md#security-limitations).
+
+          Otherwise, replication could be working and you're observing a transient error if Azure Cosmos DB is throttling requests from Fabric. Additionally, there might be a limitation of mirroring with Azure Cosmos DB causing this issue. For more information, see [Azure Cosmos DB mirroring limitations](azure-cosmos-db-limitations.md).
           
-          Refresh the Fabric portal and determine if the problem is automatically resolved. Also, you can stop and start replication. If none of these options work, [open a support ticket](/power-bi/support/service-support-options).
+          Refresh the Fabric portal and determine if the problem is automatically resolved. Also, you can deselect and reselect affected containers to stop and restart replication. If none of these options work, [open a support ticket](/power-bi/support/service-support-options).
       - question: |
           How can I be sure Fabric is replicating data from Azure Cosmos DB?
         answer: |
@@ -56,7 +58,7 @@ sections:
       - question: |
           The "monitor replication" pane includes tables with no rows replicated after a significant amount of time. Is replication stuck?
         answer: |
-          Replication is likely stuck. Stop and restart replication as a first step. If this step doesn't work, [open a support ticket](/power-bi/support/service-support-options).
+          Replication is likely stuck. Deselect the affected container and re-select to restart replication as a first step. If this step doesn't work, [open a support ticket](/power-bi/support/service-support-options).
       - question: |
           Why can't I find any tables in the SQL analytics endpoint?
         answer: |
@@ -78,9 +80,9 @@ sections:
         answer: |
           Data warehouse can't handle JSON string columns greater than 8 KB in size. Nested data represented as a JSON string in SQL analytics endpoint or warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message. For more information, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
       - question: |
-          Why am I getting an "Invalid column name" error in the "monitor replication" pane?
+          Does Cosmos DB mirroring support column names with special characters?
         answer: |
-          Mirroring doesn't support containers that contain items with property names containing either whitespaces or wild-card characters. This limitation causes mirroring for the specific container to fail. Other containers within the same databases can still successfully mirror. For more information, see [replication limitations](azure-cosmos-db-limitations.md#replication-limitations).
+          Yes, column names with white spaces or wildcard characters like `=, ;, {}, (), \n, \t` are supported.
 additionalContent: |
   ## Related content
 

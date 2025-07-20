@@ -1,15 +1,15 @@
 ---
-title: Create materialized views
+title: Create and edit materialized views
 description: Learn how to run an aggregation query over a source table using materialized views in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 11/19/2024
 ms.search.form: Data management
 ---
-# Create materialized views
+# Create and edit materialized views
 
 A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. There are two types of materialized views:
 
@@ -42,6 +42,17 @@ For more information on the `.create materialized-view` command, see [.create ma
     Materialized views appear under **Materialized views** in the **Explorer** pane.
 
     :::image type="content" source="media/materialized-view/mv-object-tree.png" alt-text="Screenshot of Explorer pane showing the database entities in Real-Time Intelligence. The dropdown list of materialized views is highlighted.":::
+
+## View, edit, or delete a materialized view
+
+To view, edit, or delete an existing materialized view, follow these steps:
+1. In the **Explorer** pane, expand the **Materialized views** section, and click on the three dots next to the desired materialized view.
+1. From the dropdown menu, choose either:
+   1. **Show materialized view script** to view the materialized view script.
+   1. **Edit with code** to edit the materialized view script in the **Explore your data** window.
+   1. **Delete**
+    :::image type="content" source="media/materialized-view/drop-down-menu-materialized.png" alt-text="Screenshot of dropdown menu." lightbox="media/materialized-view/drop-down-menu-materialized.png":::
+1. If you modified the materialized view script, select **Run** to apply the changes.
 
 ## Related content
 

@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: bwoody
 ms.date: 03/04/2025
 ms.topic: tutorial
-ms.search.form: Get Started
+ms.search.form: Get Started, Databases Get Started
 ---
 
 # SQL database in Fabric tutorial introduction

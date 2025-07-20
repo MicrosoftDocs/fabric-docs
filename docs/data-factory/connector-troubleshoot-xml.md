@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: troubleshooting
-ms.custom:
+ms.custom: connectors
 ms.date: 11/15/2023
 ---
 

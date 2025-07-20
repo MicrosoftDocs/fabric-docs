@@ -91,6 +91,8 @@
                 "real-time-intelligence/event-streams/**/*.yml": "rti-eventstream",
                 "real-time-intelligence/data-activator/**/*.md": "rti-activator",
                 "real-time-intelligence/data-activator/**/*.yml": "rti-activator",
+                "real-time-intelligence/digital-twin-builder/**/*.yml": "rti-digital-twin-builder",
+                "real-time-intelligence/digital-twin-builder/**/*.md": "rti-digital-twin-builder",
                 "security/**/*.md": "security",
                 "security/**/*.yml": "security",
                 "workload-development-kit/**/*.md": "workload-development-kit",

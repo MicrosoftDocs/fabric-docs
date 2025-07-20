@@ -6,6 +6,7 @@ ms.author: abnarain
 author: abnarain
 ms.topic: tutorial
 ms.date: 12/18/2024
+ms.custom: airflows, sfi-image-nochange
 ---
 
 # Tutorial: Run a Fabric data pipeline and notebook using Apache Airflow DAGs

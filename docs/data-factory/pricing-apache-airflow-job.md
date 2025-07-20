@@ -6,6 +6,7 @@ ms.author: abnarain
 author: nabhishek
 ms.topic: conceptual
 ms.date: 11/15/2023
+ms.custom: airflows
 ---
 
 # Apache Airflow job pricing for Data Factory in Microsoft Fabric
@@ -37,7 +38,7 @@ Since Apache Airflow job support autoscaling for better performance and scalabil
 
 ## Changes to Microsoft Fabric workload consumption rate
 
-Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](/fabric/release-plan/data-factory) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.
+Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](https://aka.ms/fabricrm) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.
 
 ## Compute estimated costs using the Fabric Metrics App
 
@@ -51,8 +52,6 @@ The following table can be utilized as a template to compute estimated costs usi
 |Effective CU-hours billed      | Base / (60*60)  CU-hour | Extra / (60*60)  CU-hour |
 
 **Total Apache Airflow job cost** = (Base + Extra CU-hour) * (Fabric capacity per unit price)
-
-
 
 ## Related content
 

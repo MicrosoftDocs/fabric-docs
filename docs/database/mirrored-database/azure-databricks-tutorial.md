@@ -1,14 +1,14 @@
 ---
-title: "Microsoft Fabric Mirrored Databases From Azure Databricks (Preview) Tutorial"
+title: "Microsoft Fabric Mirrored Databases From Azure Databricks Tutorial"
 description: Learn how to create a mirrored database from Azure Databricks in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sheppardshep, mspreshah
-ms.date: 02/26/2025
+ms.date: 07/01/2025
 ms.topic: tutorial
 ---
 
-# Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks (Preview)
+# Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks
 
 [Database mirroring in Microsoft Fabric](overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. This guide helps you establish a mirrored database from Azure Databricks, which creates a read-only, continuously replicated copy of your Azure Databricks data in OneLake.
 
@@ -17,7 +17,6 @@ ms.topic: tutorial
 - You must enable external data access on the metastore. For more information, see [Enable external data access on the metastore](/azure/databricks/external-access/admin#enable-external-data-access-on-the-metastore).
 - Create or use an existing Azure Databricks workspace with Unity Catalog enabled.
 - You must have the `EXTERNAL USE SCHEMA` privilege on the schema in Unity Catalog that contains the tables that will be accessed from Fabric. 
-- Turn on the [tenant setting](../../admin/tenant-settings-index.md) "Mirrored Azure Databricks Catalog (Preview)" at the tenant or capacity level for this feature.
 - You need to use Fabric's permissions model to set access controls for catalogs, schemas, and tables in Fabric.
 - Azure Databricks workspaces can't be behind a private endpoint.
 
@@ -35,7 +34,7 @@ Follow these steps to create a new mirrored database from your Azure Databricks 
    - To access Azure Data Lake Storage (ADLS) Gen2 accounts behind a firewall, you must follow the steps to [Enable network security access for your Azure Data Lake Storage Gen2 account](#enable-network-security-access-for-your-azure-data-lake-storage-gen2-account) later in this article.
 1. Once you connect to an Azure Databricks workspace, on the **Choose tables from a Databricks catalog** page, you're able to select the catalog, schemas, and tables via the inclusion/exclusion list that you want to add and access from Microsoft Fabric. Pick the catalog and its related schemas and tables that you want to add to your Fabric workspace.
    - You can only see the catalogs/schemas/tables that you have access to as per the privileges that are granted to them as per the privilege model described at [Unity Catalog privileges and securable objects](/azure/databricks/data-governance/unity-catalog/manage-privileges/privileges).
-   - By default, the **Automatically sync future catalog changes for the selected schema** is enabled. For more information, see [Mirroring Azure Databricks Unity Catalog (Preview)](azure-databricks.md#metadata-sync).
+   - By default, the **Automatically sync future catalog changes for the selected schema** is enabled. For more information, see [Mirroring Azure Databricks Unity Catalog](azure-databricks.md#metadata-sync).
    - When you have made your selections, select **Next**.
 1. By default, the name of the item will be the name of the catalog you're trying to add to Fabric. On the **Review and create** page, you can review the details and optionally change the mirrored database item name, which must be unique in your workspace. Select **Create**.
 1. A Databricks catalog item is created and for each table, a corresponding Databricks type shortcut is also created.
@@ -116,7 +115,7 @@ This section guides you on configuring network security for your Azure Data Lake
 ## Related content
 
 - [Secure Fabric mirrored databases from Azure Databricks](azure-databricks-security.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
-- [Frequently asked questions for mirrored databases from Azure Databricks (Preview) in Microsoft Fabric](azure-databricks-faq.yml)
-- [Mirroring Azure Databricks Unity Catalog (Preview)](azure-databricks.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-limitations.md)
+- [Frequently asked questions for mirrored databases from Azure Databricks in Microsoft Fabric](azure-databricks-faq.yml)
+- [Mirroring Azure Databricks Unity Catalog](azure-databricks.md)
 - [Control external access to data in Unity Catalog](/azure/databricks/data-governance/unity-catalog/access-open-api)

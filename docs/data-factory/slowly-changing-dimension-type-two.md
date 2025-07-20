@@ -6,6 +6,7 @@ ms.author: miescobar
 ms.reviewer: whhender
 ms.topic: tutorial
 ms.date: 09/16/2024
+ms.custom: dataflows
 ---
 
 # Slowly changing dimension type 2

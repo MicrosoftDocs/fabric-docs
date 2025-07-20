@@ -2,8 +2,8 @@
 title: Real-Time Intelligence tutorial part 3- Transform data in a KQL Database
 description: Learn how to use an update policy to transform data in a KQL Database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: tutorial
 ms.date: 11/19/2024
 ms.subservice: rti-core

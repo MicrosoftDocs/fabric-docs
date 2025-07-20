@@ -4,7 +4,7 @@ description: A known issue is posted where performing multiple installations of 
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/31/2024
+ms.date: 05/09/2025
 ms.custom: known-issue-795
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-795
 
 You might face an issue with Data Factory pipelines when performing multiple installations on the on-premises data gateway. The issue occurs when you install the on-premises data gateway that supports pipelines, and then downgrade the on-premises data gateway version to a version that doesn't support pipelines. Finally, you upgrade the on-premises data gateway version to support pipelines. You then receive an error when you run a Data Factory pipeline using the on-premises data gateway.
 
-**Status:** Open
+**Status:** Fixed: May 9, 2025
 
 **Product Experience:** Data Factory
 

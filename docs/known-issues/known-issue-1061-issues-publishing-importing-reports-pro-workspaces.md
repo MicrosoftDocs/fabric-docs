@@ -4,7 +4,7 @@ description: A known issue is posted where you might see issues publishing or im
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 03/21/2025
+ms.date: 05/19/2025
 ms.custom: known-issue-1061
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1061
 
 You have a Power BI Pro workspace. You might encounter issues when publishing or importing Power BI report with a .pbix extension into your workspace.
 
-**Status:** Open
+**Status:** Fixed: May 19, 2025
 
 **Product Experience:** Power BI
 

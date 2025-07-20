@@ -1,8 +1,8 @@
 ---
 title: Create folders in workspaces
 description: "Learn how to create a folder inside a workspace to enable users to efficiently organize and manage items in the workspace."
-author: paulinbar
-ms.author: painbar
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: yicw, mesrivas,liud
 ms.topic: how-to
 ms.custom: fabric

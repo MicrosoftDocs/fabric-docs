@@ -1,8 +1,8 @@
 ---
 title: Git integration workspaces
 description: Learn how to develop an app using Git branches to work in your own isolated workspace environment and improve collaboration with your team.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd

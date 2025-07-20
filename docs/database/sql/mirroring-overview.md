@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: nzagorac
 ms.date: 01/16/2025
 ms.topic: conceptual
-ms.search.form: SQL database replication to OneLake
+ms.search.form: SQL database replication to OneLake, Databases replication to OneLake
 ---
 # Mirroring Fabric SQL database in Microsoft Fabric (preview)
 

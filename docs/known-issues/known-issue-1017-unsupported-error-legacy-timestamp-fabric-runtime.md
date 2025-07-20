@@ -4,7 +4,7 @@ description: A known issue is posted where there's an unsupported error for lega
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 02/05/2025
+ms.date: 07/16/2025
 ms.custom: known-issue-1017
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1017
 
 When using the native execution engine in Fabric Runtime 1.3, you might encounter an error if your data contains legacy timestamps. This issue arises due to compatibility challenges introduced when Spark 3.0 transitioned to the Java 8 date/time API, which uses the Proleptic Gregorian calendar (SQL ISO standard). Earlier Spark versions utilized a hybrid Julian-Gregorian calendar, resulting in potential discrepancies when processing timestamp data created by different Spark versions.
 
-**Status:** Open
+**Status:** Fixed: July 16, 2025
 
 **Product Experience:** Data Engineering
 

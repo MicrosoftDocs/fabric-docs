@@ -37,7 +37,7 @@ To review the permissions granted to a mirrored database, its SQL analytics endp
 If you have the **Share** permission for a mirrored database, you can also use the **Manage permissions** page to grant or revoke permissions. To view existing recipients, select the context menu (**...**) at the end of each row to add or remove specific permission. 
 
 > [!NOTE]
-> When mirroring data from Azure SQL Database or Azure SQL Managed Instance, its System Assigned Managed Identity needs to have "Read and write" permission to the mirrored database. If you create the mirrored database from the Fabric portal, the permission is granted automatically. If you use API to create the mirrored database, make sure you grant the permission following above instruction. You can search the recipient by specifying the name of your Azure SQL Database logical server or Azure SQL Managed Instance.
+> When mirroring data from Azure SQL Database, Azure SQL Managed Instance, Azure Database for PostgreSQL or SQL Server 2025, its System Assigned Managed Identity needs to have "Read and write" permission to the mirrored database. If you create the mirrored database from the Fabric portal, the permission is granted automatically. If you use API to create the mirrored database, make sure you grant the permission following above instruction. You can search the recipient by specifying the name of your Azure SQL Database logical server or Azure SQL Managed Instance.
 
 ## Known issues
 The sharing dialog for a mirrored database provides the option to subscribe to OneLake events. Currently, permission to subscribe to OneLake events is granted along with the Read All OneLake data permission.

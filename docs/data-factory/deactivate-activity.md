@@ -4,7 +4,7 @@ description: Learn how to deactivate an activity to exclude from pipeline run an
 author: kromerm
 ms.author: makromer
 ms.topic: conceptual
-ms.custom:
+ms.custom: pipelines
 ms.date: 11/15/2023
 ---
 

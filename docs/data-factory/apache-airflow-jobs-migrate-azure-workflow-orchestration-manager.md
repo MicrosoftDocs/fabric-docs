@@ -6,6 +6,7 @@ ms.author: abnarain
 author: abnarain
 ms.topic: how-to
 ms.date: 07/26/2024
+ms.custom: airflows
 ---
 
 # Migrate to Apache Airflow job in Microsoft Fabric

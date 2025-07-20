@@ -1,11 +1,11 @@
 ---
 title: Metadata scanning overview
 description: Learn how metadata scanning can help you govern your organizations Fabric data.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
-ms.date: 05/01/2024
+ms.date: 06/10/2025
 ---
 
 # Metadata scanning overview
@@ -19,9 +19,9 @@ For a more extensive list of the artifact and subartifact metadata that metadata
 The following are the scanner APIs. They support both public and sovereign clouds.
 
 * [GetModifiedWorkspaces](/rest/api/power-bi/admin/workspace-info-get-modified-workspaces)
-* [WorkspaceGetInfo](/rest/api/power-bi/admin/workspace-info-post-workspace-info)
-* [WorkspaceScanStatus](/rest/api/power-bi/admin/workspace-info-get-scan-status)
-* [WorkspaceScanResult](/rest/api/power-bi/admin/workspace-info-get-scan-result)
+* [PostWorkspaceInfo](/rest/api/power-bi/admin/workspace-info-post-workspace-info)
+* [GetScanStatus](/rest/api/power-bi/admin/workspace-info-get-scan-status)
+* [GetScanResult](/rest/api/power-bi/admin/workspace-info-get-scan-result)
 
 > [!IMPORTANT]
 > The app you develop for scanning can authenticate by using either a standard delegated admin access token or a service principal. The two authentication paths are mutually exclusive. **When running under a service principal, there must be no Power BI admin-consent-required permissions set on your app**. For more information, see [Enable service principal authentication for admin APIs](../admin/enable-service-principal-admin-apis.md).
@@ -32,7 +32,7 @@ The following are the scanner APIs. They support both public and sovereign cloud
 
 * **Enable service principal authentication for admin read-only APIs**. Service principal is an authentication method that can be used to let a Microsoft Entra application access Microsoft Fabric content and APIs. See [Enable service principal authentication for admin APIs](../admin/enable-service-principal-admin-apis.md).
 
-* **Run metadata scanning**: See [Run metadata scanning](./metadata-scanning-run.md) for a walkthrough that demonstrates a how to run a scan.
+* **Run metadata scanning**: See [Run metadata scanning](./metadata-scanning-run.md) for a walk-through that demonstrates how to run a scan.
 
 ## Licensing
 
@@ -40,7 +40,7 @@ Metadata scanning requires no special license. It works for all of your tenant's
 
 ## Related content
 
-* [Set up metadata scanning](../admin/metadata-scanning-setup.md).
-* [Enable service principal authentication for admin APIs](../admin/enable-service-principal-admin-apis.md).
+* [Set up metadata scanning](../admin/metadata-scanning-setup.md)
+* [Enable service principal authentication for admin APIs](../admin/enable-service-principal-admin-apis.md)
 * [Run metadata scanning](./metadata-scanning-run.md)
-* Learn about [Power BI REST Admin APIs](/rest/api/power-bi/admin).
+* Learn about [Power BI REST Admin APIs](/rest/api/power-bi/admin)

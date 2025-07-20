@@ -4,7 +4,7 @@ description: A known issue is posted where updating an eventstream with an Event
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 02/21/2025
+ms.date: 05/19/2025
 ms.custom: known-issue-1032
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1032
 
 You can create an eventstream that uses an Eventhouse as a destination. You configure the Eventhouse destination to use direct ingestion mode. When you try to update that eventstream, you might receive an error. The eventstream is still updated successfully.
 
-**Status:** Open
+**Status:** Fixed: May 19, 2025
 
 **Product Experience:** Real-Time Intelligence
 

@@ -1,11 +1,12 @@
 ---
 title: Azure Key Vault Reference overview (Preview)
 description: Learn about Azure Key Vault Reference in Microsoft Fabric
-ms.author: adija
-author: adityajain2408
+ms.author: abnarain
+author: nabhishek
 ms.topic: overview
 ms.date: 04/28/2025
 ms.search.form: Azure Key Vault Reference overview
+ms.custom: configuration
 ---
 
 # Azure Key Vault references overview (Preview)

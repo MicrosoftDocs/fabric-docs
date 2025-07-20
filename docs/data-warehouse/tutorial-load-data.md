@@ -6,6 +6,7 @@ ms.author: wiassaf
 ms.reviewer: scbradl
 ms.date: 04/06/2025
 ms.topic: tutorial
+ms.custom: sfi-image-nochange
 ---
 
 # Tutorial: Load data with T-SQL into a Warehouse

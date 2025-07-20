@@ -7,6 +7,7 @@ ms.reviewer: sosivara
 ms.date: 04/06/2025
 ms.topic: conceptual
 ms.search.form: Warehouse billing and utilization
+ms.custom: sfi-image-nochange
 ---
 
 # Billing and utilization reporting in Fabric Data Warehouse

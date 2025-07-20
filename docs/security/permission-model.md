@@ -1,11 +1,11 @@
 ---
 title: Permission model
 description: Learn how permissions work in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
 ms.custom:
-ms.date: 06/27/2024
+ms.date: 05/22/2025
 ---
 
 # Permission model
@@ -49,7 +49,9 @@ Different Fabric items have different permissions. To learn more about the permi
 
 * [Semantic model](/power-bi/connect-data/service-datasets-permissions)
 
-* [warehouse](../data-warehouse/share-warehouse-manage-permissions.md)
+* [Warehouse](../data-warehouse/share-warehouse-manage-permissions.md)
+
+* [SQL database](../database/sql/security-overview.md)
 
 * [Data Factory](../data-factory/data-factory-overview.md)
 

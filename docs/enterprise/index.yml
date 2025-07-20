@@ -9,8 +9,8 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list. 
   ms.subservice: enterprise
   ms.topic: landing-page
-  author: KesemSharabi
-  ms.author: kesharab
+  author: JulCsc
+  ms.author: juliacawthra
   ms.date: 05/23/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new

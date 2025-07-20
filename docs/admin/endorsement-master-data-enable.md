@@ -1,8 +1,8 @@
 ---
 title: "Enable master data endorsement"
 description: "This article shows Microsoft Fabric administrators how to enable master data endorsement on their tenant."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change

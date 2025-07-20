@@ -1,8 +1,8 @@
 ---
 title: Read data from semantic models and write data that semantic models can consume using Spark
 description: Learn how to read from semantic models and write data that can be used in semantic models using Spark.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: marcozo
 reviewer: eisber
 ms.topic: how-to

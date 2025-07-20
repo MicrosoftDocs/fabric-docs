@@ -4,7 +4,8 @@ description: Learn about privacy, security, and responsible AI use for Copilot i
 author: snehagunda
 ms.author: sngun
 ms.reviewer: guptamaya, maghan
-ms.date: 04/09/2025
+ms.date: 06/25/2025
+ms.update-cycle: 180-days
 ms.topic: conceptual
 ms.collection:
   - ce-skilling-ai-copilot
@@ -104,6 +105,10 @@ Grounding data might include a combination of dataset schema, specific data poin
 Interactions with Copilot are specific to each user. This means that Copilot can only access data that the current user has permission to access, and its outputs are only visible to that user unless that user shares the output with others, such as sharing a generated Power BI report or generated code. Copilot doesn't use data from other users in the same tenant or other tenants.
 
 Copilot uses Azure OpenAI—not OpenAI's publicly available services—to process all data, including user inputs, grounding data, and Copilot outputs. Copilot currently uses a combination of GPT models, including GPT 3.5. Microsoft hosts the OpenAI models in Microsoft's Azure environment and the Service doesn't interact with any services by OpenAI (for example, ChatGPT or the OpenAI API). Your data isn't used to train models and isn't available to other customers. Learn more about [Azure OpenAI](/azure/ai-services/openai/overview).
+
+### Abuse monitoring of prompts
+
+Copilot and AI experiences in Fabric are currently **not** onboarded to any automated abuse monitoring of your prompts. This means that we currently do not process any customer prompts for monitoring of abusive content. This also means that no retention of prompts is in place for this purpose.
 
 ### Data residency and compliance
 

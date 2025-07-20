@@ -4,7 +4,7 @@ description: A known issue is posted where SQL analytics endpoint table queries 
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/24/2024
+ms.date: 05/07/2025
 ms.custom: known-issue-789
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-789
 
 When creating a delta table, you can use [run length encoding (RLE)](https://en.wikipedia.org/wiki/Run-length_encoding). If the delta writer uses RLE on the table you try to query in the SQL analytics endpoint, you receive an error.
 
-**Status:** Open
+**Status:** Fixed: May 7, 2025
 
 **Product Experience:** Data Engineering
 

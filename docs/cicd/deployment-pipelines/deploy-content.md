@@ -1,8 +1,8 @@
 ---
 title: Fabric Application lifecycle management (ALM) deployment pipelines deploy content
 description: Learn how to deploy content to an empty or to nonempty stage using the Fabric Application lifecycle management (ALM) deployment pipeline tool.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
@@ -69,6 +69,8 @@ Fabric items are often related to or dependent on other items. Dashboards, repor
 
 If you don't want to deploy everything from that stage, you can select only specific items for deployment. Since dashboards, reports, semantic models, and dataflows can have dependencies, you can use the select related button to see all the items that the selected item is dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
 
+
+
 ##### [New selective deploy method](#tab/new-ui)
 
  The deploy button shows the number of items selected for deployment.
@@ -98,7 +100,13 @@ When deploying workspaces that contain folders, the following rules apply:
 
 #### Backwards deployment
 
-You might sometimes want to deploy content to a previous stage. For example, if you assign an existing workspace to a production stage and then deploy it backwards, first to the test stage, and then to the development stage. Deploying to a previous stage works only if the previous stage is empty.
+You might sometimes want to deploy content to a previous stage. 
+
+>[!NOTE]
+> 
+>Be aware that backward deployment is only possible when deploying all the items.  This means that you can't selectively deploy items backwards, you must deploy all the items in order to do backward deployment.
+
+For example, if you assign an existing workspace to a production stage and then deploy it backwards, first to the test stage, and then to the development stage. Deploying to a previous stage works only if the previous stage is empty.
 
 :::image type="content" source="./media/deploy-content/backwards-deploy.png" alt-text="A screenshot showing how to change the stage you deploy to.":::
 

@@ -2,11 +2,11 @@
 title: Manage and monitor a KQL database
 description: Learn how to manage and monitor a KQL database and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 03/24/2025
+ms.date: 05/06/2025
 ms.search.form: Database
 #customer intent: As a user, I want to learn how to manage and monitor a KQL  database so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -114,22 +114,26 @@ The database activity tracker displays the number of rows loaded into the databa
 | Item| Description|
 |---|---|
 | **Ingestion** | The number of rows loaded into the database in the selected time range. Select **Ingestion** to view only ingestion data. Select again to view both query and ingestion data. |
-| **Queries** | The number of queries that ran in the database in the selected time range. Select **Queries**  to view only query data. Select again to view both query and ingestion data . <br></br> If there are failed, throttled, or canceled queries, you can open the drop-down menu to view them as a percentage compared to the total queries. <br></br> :::image type="content" source="media/create-database/queries-cancelled-menu.png" alt-text="Screenshot of percentage of querires completed.":::|
+| **Queries** | The number of queries that ran in the database in the selected time range. Select **Queries**  to view only query data. Select again to view both query and ingestion data . <br></br> If there are failed, throttled, or canceled queries, you can open the dropdown menu to view them as a percentage compared to the total queries. <br></br> :::image type="content" source="media/create-database/queries-cancelled-menu.png" alt-text="Screenshot of percentage of queries completed.":::|
 | **Last run** | The time when the histogram was last generated.|
-| Time range | The time range of the histogram display. Set ranges for one hour, six hours, three days, 7 days, or 30 days. |
+| Time range | The time range of the histogram display. Set ranges for one hour, six hours, three days, seven days, or 30 days. |
 | Interval | Set the data aggregation interval for the histogram display. Set intervals by one minute, five minutes, one hour, 12 hours, one day, three days, and 30 days. |
 | Refresh | Refresh your histogram manually.|
 | Histogram | The query and ingestion data display side by side, each with their own vertical scale. The ingestion scale is on the left, and the query scale is on the right of the histogram.<br><br/>The ingestion histogram displays data by the interval chosen, and displays in UTC time. Hover over the histogram to display total rows ingested and total queries per status. |
 
 ### Data insights
 
-This section of the database page main area displays a list of tables in the database, with the tabs showing the following information:
+This section of the database page main area displays a list of tables in the database, a preview of the data, and query insights.
+
+:::image type="content" source="media/create-database/query-insights.png" alt-text="Screenshot of the database overview page highlighting the query insights area." lightbox="media/create-database/query-insights.png":::
+
+The tabs and graphs show the following information:
 
 | Tab | Description|
 |---|---|
 | **Tables** | View table information as **Cards** or as a **List**. Cards and lists view table name, *Compressed size*, *Last ingestion*, and *OneLake availability* or latency. </br></br>* Cards uniquely display a histogram of the database ingestion over the past seven days, the number of rows ingested in the last ingestion, and the table creator profile. </br></br>* The list view display also shows total *Row count*, *Original size*, *Compressed size*, *Last ingestion*, *Caching*, *Retention*, *OneLake* status, and *Created on*. To explore a specific table, select the name of this table from the list. For more information, see [Manage and monitor a table](manage-monitor-table.md). |
 | **Data preview** | Shows a preview of the top records ingested for each table. Displays *IngestionTime*, *TableName*, and *Record*. Select **Columns** to select columns and values for a Pivot view. You can also search for keywords and use the filter tables option.|
-| **Query insights - top 100 queries** | Shows the top queries that can be sorted according to most recent, longest duration, highest CPU usage, highest cold storage usage, or highest memory peak usage. To sort, use the **Top by:** menu. </br></br>  :::image type="content" source="media/create-database/queries-top-by-menu.png" alt-text="Screenshot of queries menu to see percentage of querires completed."::: |
+| **Query insights** | Shows query duration, cache hit misses over time, and top queries.<br></br>* **Queries duration (sec) percentiles over time**: The query duration percentiles represent the duration values in seconds or milliseconds, below which 50%, 75%, and 90% of the query durations fall, respectively. To see the query duration details at a specific point in time, hover over the graph and the details pop up.<br></br>* **Cache hit misses over time (%)**: High cache miss percentage indicates requested data wasn't in cache, leading to longer query durations.<br></br>* **Top queries**: A list of queries that can be sorted according to most recent, longest duration, highest CPU usage, highest cold storage usage, or highest memory peak usage. You can also filter the queries by complete, failed, throttled, or canceled. To sort, use the **Top by:** menu.</br> :::image type="content" source="media/create-database/queries-top-by-menu.png" alt-text="Screenshot of queries menu to see percentage of queries completed."::: |
 
 ## Database details
 

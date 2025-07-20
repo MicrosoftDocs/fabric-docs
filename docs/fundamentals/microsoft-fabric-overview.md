@@ -8,7 +8,7 @@ ms.topic: overview
 ms.custom:
 - build 2024
 ms.search.form: product-trident
-ms.date: 01/22/2025
+ms.date: 05/06/2025
 ---
 
 # What is Microsoft Fabric?
@@ -16,6 +16,10 @@ ms.date: 01/22/2025
 Microsoft Fabric is an enterprise-ready, end-to-end analytics platform. It unifies data movement, data processing, ingestion, transformation, real-time event routing, and report building. It supports these capabilities with integrated services like Data Engineering, Data Factory, Data Science, Real-Time Intelligence, Data Warehouse, and Databases.
 
 Fabric provides a seamless, user-friendly SaaS experience. It integrates separate components into a cohesive stack. It centralizes data storage with OneLake and embeds AI capabilities, eliminating the need for manual integration. With Fabric, you can efficiently transform raw data into actionable insights.
+
+> [!NOTE]
+> * The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is a free, hands-on training designed for analysts working with Power BI and Microsoft Fabric. You can get hands-on experience on how to analyze data, build reports, using Fabric. It covers key concepts like working with lakehouses, creating reports, and analyzing data in the Fabric environment.
+> * Join our new Microsoft Fabric user panel to share your feedback and help shape Fabric and Power BI. Participate in surveys and 1:1 sessions with the product team. Learn more and sign up [Fabric user panel](feedback.md#fabric-user-panel).
 
 ## Capabilities of Fabric
 
@@ -57,7 +61,7 @@ Fabric offers the following workloads, each customized for a specific role and t
 
 * **Industry Solutions** - Fabric provides industry-specific data solutions that address unique industry needs and challenges, and include data management, analytics, and decision-making. For more information, see [Industry Solutions in Microsoft Fabric](/industry/industry-data-solutions-fabric).
 
-* **Real-Time Intelligence** -  Real-time Intelligence is an end-to-end solution for event-driven scenarios, streaming data, and data logs. It enables the extraction of insights, visualization, and action on data in motion by handling data ingestion, transformation, storage, analytics, visualization, tracking, AI, and real-time actions. The [Real-Time hub](#real-time-hub-the-unification-of-data-streams) in Real-Time Intelligence provides a wide variety of no-code connectors, converging into a catalog of organizational data that is protected, governed, and integrated across Fabric. For more information, see [What is Real-Time Intelligence in Fabric?](../real-time-intelligence/overview.md).
+* **Real-Time Intelligence** -  Real-time Intelligence is an end-to-end solution for event-driven scenarios, streaming data, and data logs. It enables the extraction of insights, visualization, and action on data in motion by handling data ingestion, transformation, storage, modeling, analytics, visualization, tracking, AI, and real-time actions. The [Real-Time hub](#real-time-hub-the-unification-of-data-streams) in Real-Time Intelligence provides a wide variety of no-code connectors, converging into a catalog of organizational data that is protected, governed, and integrated across Fabric. For more information, see [What is Real-Time Intelligence in Fabric?](../real-time-intelligence/overview.md).
 
 * **Data Engineering** - Fabric Data Engineering provides a Spark platform with great authoring experiences.  It enables you to create, manage, and optimize infrastructures for collecting, storing, processing, and analyzing vast data volumes.  Fabric Spark's integration with Data Factory allows you to schedule and orchestrate notebooks and Spark jobs. For more information, see [What is Data engineering in Microsoft Fabric?](../data-engineering/data-engineering-overview.md)
 

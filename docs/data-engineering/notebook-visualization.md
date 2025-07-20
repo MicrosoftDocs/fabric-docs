@@ -12,23 +12,23 @@ ms.date: 11/20/2024
 
 # Notebook visualization in Microsoft Fabric
 
-Microsoft Fabric is an integrated analytics service that accelerates time to insight across data warehouses and big data analytics systems. Data visualization in notebooks is a key component that allows you to gain insight into your data. It helps make large and small data easier for humans to understand. It also makes it easier to detect patterns, trends, and outliers in groups of data.
+Microsoft Fabric is an integrated analytics service that accelerates time to insights across data warehouses and big data systems. Data visualization in notebooks is a key feature that allows you to gain insight into your data, helping users identify patterns, trends, and outliers with ease.
 
-When you use Apache Spark in Fabric, there are various built-in options to help you visualize your data, including Fabric notebook chart options, and access to popular open-source libraries.
+When working with Apache Spark in Fabric, you have built-in options for visualizing data, including Fabric notebook chart features and access to popular open-source libraries.
 
-When using a Fabric notebook, you can turn your tabular results view into a customized chart using chart options. Here, you can visualize your data without having to write any code.
+Fabric notebooks also allow you to convert tabular results into customized charts without writing any code, enabling a more intuitive and seamless data exploration experience.
 
 ## Built-in visualization command -  display() function
 
-The Fabric built-in visualization function allows you to turn Apache Spark DataFrames, Pandas DataFrames, and SQL query results into rich format data visualizations.
+The Fabric built-in visualization function enables you to transform Apache Spark DataFrames, Pandas DataFrames, and SQL query results into rich, interactive data visualizations.
 
-You can use the _display_ function on dataframes that created in PySpark and Scala on Spark DataFrames or Resilient Distributed Datasets (RDD) functions to produce the rich dataframe table view and chart view.
+Using the _display_ function, you can render PySpark and Scala Spark DataFrames or Resilient Distributed Datasets (RDDs) as dynamic tables or charts.
 
 You can specify the row count of the dataframe being rendered. The default value is **1000**. Notebook _display_ output widget supports to view and profile **10000** rows of a dataframe at most.
 
   :::image type="content" source="media\notebook-visualization\specify-range.png" alt-text="Screenshot of an example of specifying range." lightbox="media\notebook-visualization\specify-range.png":::
 
-You can use the filter function on the global toolbar to filter the data that mapping with your customized rule efficiently, the condition is applied to the specified column, and the filter result reflects on both table view and chart view.
+You can use the filter function on the global toolbar to apply customized rules to your data. The filter condition is applied to a specified column, and the results are reflected in both the table and chart views.
 
   :::image type="content" source="media\notebook-visualization\customize-columns.png" alt-text="Screenshot of an example of customizing columns." lightbox="media\notebook-visualization\customize-columns.png":::
 
@@ -38,8 +38,8 @@ The output of SQL statement adopts the same output widget with _display()_ by de
 
 #### Free selection support on table view
 
-**Table** view is rendered by default when using _display()_ command. The rich dataframe preview in the notebook offers a free selection function designed to enhance the data analysis experience through flexible and intuitive selection capabilities. This feature allows users to interact with dataframes more efficiently and gain deeper insights with ease.
- 
+By default, the **Table View** is rendered when using the _display()_ command in a Fabric notebook. The rich dataframe preview offers an intuitive free selection function, designed to enhance the data analysis experience by enabling flexible, interactive selection options. This feature allows users to efficiently navigate and explore dataframes with ease.
+
 - **Column selection**
   - **Single column**: Click the column header to select the entire column.
   - **Multiple columns**: After selecting a single column, press and hold the 'Shift' key, then click another column header to select multiple columns.
@@ -68,19 +68,19 @@ The output of SQL statement adopts the same output widget with _display()_ by de
 
 1. You can view the cell details by clicking on the cell of the table. This feature is useful when the dataframe contains long string type of contents.
 
-### New rich dataframe chart view
+### Enhanced Rich DataFrame Chart View
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+The improved chart view in the _display()_ command offers a more intuitive and dynamic way to visualize your data.
 
-The improved chart view is available on _display()_ command. It provides a more intuitive and powerful experience for visualizing your data by using the _display()_ command.
+Key Enhancements:
 
-1. Now you can add up to **5** charts in one display() output widget by clicking **New chart**, allowing you to create multiple charts based on different columns, and compare charts easily.
+1. **Multi-Chart Support**: Add up to **five** charts within a single _display()_ output widget by selecting **New Chart**, enabling easy comparisons across different columns.
 
-1. You can get a list of chart recommendations based on the target dataframe when creating new charts. You can choose to edit a recommended chart or build your own chart from scratch.
+1. **Smart Chart Recommendations**: Get a list of suggested charts based on your DataFrame. Choose to edit a recommended visualization or create a custom chart from scratch.
 
     ![Animated GIF of suggested charts.](media\notebook-visualization\suggested-charts.gif)
 
-1. You can now customize your visualization by specifying the following settings. The setting options might change according to the selected chart type:
+1. **Flexible Customization**: Personalize your visualizations with adjustable settings that adapt based on the selected chart type. 
 
    |Category |**Basic settings** | **Description** |
    |---|---|---|
@@ -94,9 +94,10 @@ The improved chart view is available on _display()_ command. It provides a more 
    |Other |Series group | Use this configuration to determine the groups for the aggregation. |
    |Other |Aggregation | Use this method to aggregate data in your visualization. |
    |Other |Stacked | Configure the display style of result. |
+   |Other |Missing and NULL values | Configure how missing or NULL chart values are displayed. |
 
    > [!NOTE]
-   > By default the _display(df)_ function only takes the first 1,000 rows of the data to render the charts. Select **Aggregation over all results** and then select **Apply** to apply the chart generation from the whole dataframe. A Spark job is triggered when the chart setting changes. It might take several minutes to complete the calculation and render the chart.
+   > Additionally, you can specify the number of rows displayed, with a default setting of 1,000. The notebook _display_ output widget supports viewing and profiling up to 10,000 rows of a DataFrame. Select **Aggregation over all results** and then select **Apply** to apply the chart generation from the whole dataframe. A Spark job is triggered when the chart setting changes. It might take several minutes to complete the calculation and render the chart.
 
    |Category |**Advanced settings** | **Description** |
    |---|---|---|
@@ -113,44 +114,17 @@ The improved chart view is available on _display()_ command. It provides a more 
 
     :::image type="content" source="media\notebook-visualization\configure-charts.png" alt-text="Screenshot of an example of configuring charts." lightbox="media\notebook-visualization\configure-charts.png":::
 
-1. You can easily **rename**, **duplicate**, or **delete** charts in the chart tab menu.
+1. You can easily **rename**, **duplicate**, **delete**, or **move** charts in the chart tab menu. You can also drag and drop tabs to reorder them. The first tab will be displayed as the default when the notebook is opened. 
 
     :::image type="content" source="media\notebook-visualization\operate-charts.png" alt-text="Screenshot of an example of operating charts." lightbox="media\notebook-visualization\operate-charts.png":::
 
-2. An interactive toolbar is available in the new chart experience when user hovers on a chart. Support operations like zoom in, zoom out, select to zoom, reset, panning, etc.
+2. An interactive toolbar is available in the new chart experience when user hovers on a chart. Support operations like zoom in, zoom out, select to zoom, reset, panning, annotation editing, etc.
 
     :::image type="content" source="media\notebook-visualization\chart-toolbar.png" alt-text="Screenshot of an example of chart toolbar." lightbox="media\notebook-visualization\chart-toolbar.png":::
 
-### Legacy chart view
+    Here is an example of chart annotation.
 
- > [!NOTE]
- > The legacy chart view will be deprecated after the new chart view finishes preview.
-
-![Animated GIF of chart view.](media\notebook-visualization\chart-view.gif)
-
-1. You can switch back to the legacy chart view by toggling off **'New visualization'**. The new experience is enabled by default.
-
-    :::image type="content" source="media\notebook-visualization\new-visualization-toggle.png" alt-text="Screenshot of an example of new visualization toggle." lightbox="media\notebook-visualization\new-visualization-toggle.png":::
-
-1. Once you have a rendered table view, switch to the **Chart** view.
-
-1. Fabric notebook automatically recommends charts based on the target dataframe, to make the chart meaningful with data insights.
-
-1. You can now customize your visualization by specifying the following values:
-
-   | **Configuration** | **Description** |
-   |---|---|
-   | Chart type | The display function supports a wide range of chart types, including bar charts, scatter plots, line graphs, and more. |
-   | Key | Specify the range of values for the x-axis. |
-   | Value | Specify the range of values for the y-axis values. |
-   | Series group | Use this configuration to determine the groups for the aggregation. |
-   | Aggregation | Use this method to aggregate data in your visualization. |
-  
-    The configurations are autosaved in the Notebook output content.
-   > [!NOTE]
-   > By default the _display(df)_ function only take the first 1,000 rows of the data to render the charts. Select **Aggregation over all results** and then select **Apply** to apply the chart generation from the whole dataframe. A Spark job is triggered when the chart setting changes. It might take several minutes to complete the calculation and render the chart.
-
-1. When the job is complete, you can view and interact with your final visualization.
+    :::image type="content" source="media\notebook-visualization\chart-annotation.png" alt-text="Screenshot of an example of chart annotation." lightbox="media\notebook-visualization\chart-annotation.png":::
 
 ## display() summary view
 

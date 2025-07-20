@@ -4,7 +4,7 @@ description: A known issue is posted where you can't connect to semantic model f
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 10/23/2024
+ms.date: 06/25/2025
 ms.custom: known-issue-893
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-893
 
 You can consume Power BI semantic models in Excel by connecting to the semantic model in Excel or choosing the **Analyze in Excel** option from the Power BI service. Either way, when you try to make the connection, you receive an error message and can't properly connect.
 
-**Status:** Open
+**Status:** Fixed: June 25, 2025
 
 **Product Experience:** Power BI
 

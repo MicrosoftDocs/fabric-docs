@@ -1,8 +1,8 @@
 ---
 title: The Microsoft Fabric deployment pipelines process
 description: Understand how deployment pipelines, the Fabric Application lifecycle management (ALM) tool, works.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: Lee
 ms.service: fabric
 ms.subservice: cicd
@@ -413,7 +413,7 @@ The lowest deployment pipeline permission is *pipeline admin*, and it's required
 |------------------------------|---------------------|---------|
 |**Pipeline admin** |<ul><li>View the pipeline​</li><li>Share the pipeline with others</li><li>Edit and delete the pipeline</li><li>Unassign a workspace from a stage</li><li>Can see workspaces that are tagged as assigned to the pipeline in Power BI service</li></ul> |Pipeline access doesn't grant permissions to view or take actions on the workspace content. |
 |**Workspace viewer**<br>(and pipeline admin) |<ul><li>Consume content</li><li>Unassign a workspace from a stage</li></ul> |Workspace members assigned the Viewer role without *build* permissions, can't access the semantic model or edit workspace content. |
-|**Workspace contributor**<br>(and pipeline admin) |<ul><li>Consume content​</li><li>Compare stages</li><li>View semantic models</li><li>Unassign a workspace from a stage</li><li>Deploy items (except in GCC) (must be at least a contributor in both source and target workspaces)</li></ul> |   |
+|**Workspace contributor**<br>(and pipeline admin) |<ul><li>Consume content​</li><li>Compare stages</li><li>View semantic models</li><li>Unassign a workspace from a stage</li><li>Deploy items (must be at least a contributor in both source and target workspaces)</li></ul> |   |
 |**Workspace member**<br>(and pipeline admin) |<ul><li>View workspace content​</li><li>Compare stages</li><li>Deploy items (must be at least a contributor in both source and target workspaces)</li><li>Update semantic models</li><li>Unassign a workspace from a stage</li><li>Configure semantic model rules (you must be the semantic model owner)</li></ul> |If the *block republish and disable package refresh* setting located in the tenant *semantic model security* section is enabled, only semantic model owners are able to update semantic models. |
 |**Workspace admin**<br>(and pipeline admin) |<ul><li>View workspace content​</li><li>Compare stages</li><li>Deploy items</li><li>Assign workspaces to a stage</li><li>Update semantic models</li><li>Unassign a workspace from a stage</li><li>Configure semantic model rules (you must be the semantic model owner)</li></ul> |   |
 

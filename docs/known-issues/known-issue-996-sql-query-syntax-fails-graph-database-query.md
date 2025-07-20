@@ -4,7 +4,7 @@ description: A known issue is posted where some SQL query syntax fails in a grap
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 01/28/2025
+ms.date: 05/09/2025
 ms.custom: known-issue-996
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-996
 
 When you try to run a query against a graph database in the Fabric SQL editor, some graph database syntax doesn't work.
 
-**Status:** Open
+**Status:** Fixed: May 9, 2025
 
 **Product Experience:** Databases
 

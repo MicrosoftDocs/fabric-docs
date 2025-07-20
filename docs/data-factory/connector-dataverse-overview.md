@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 09/25/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Dataverse connector overview

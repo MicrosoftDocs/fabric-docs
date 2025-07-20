@@ -4,7 +4,7 @@ description: A known issue is posted where API for GraphQL query fails when usin
 author: jessicamo
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/25/2025
+ms.date: 06/27/2025
 ms.custom: known-issue-1113
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1113
 
 You can use a variable for a parameter in a GraphQL query. If the parameter is a float value, the query fails with an error.
 
-**Status:** Open
+**Status:** Fixed: June 27, 2025
 
 **Product Experience:** Data Engineering
 

@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
-ms.custom:
+ms.custom: configuration
 ms.date: 12/18/2024
 ---
 

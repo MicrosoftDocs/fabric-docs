@@ -1,10 +1,10 @@
 ---
 title: Find your Fabric home region
 description: Learn how to find what your Fabric home region is.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: overview
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 06/25/2024
 ---
 

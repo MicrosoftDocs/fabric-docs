@@ -4,7 +4,7 @@ description: A known issue is posted where data warehouse deployment using deplo
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 07/05/2024
+ms.date: 05/08/2025
 ms.custom: known-issue-774
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-774
 
 You can use Fabric Data Factory deployment pipelines to deploy data warehouses. When you deploy data warehouse related items from one workspace to another, the data warehouse connection breaks.
 
-**Status:** Open
+**Status:** Fixed: May 8, 2025
 
 **Product Experience:** Data Factory
 

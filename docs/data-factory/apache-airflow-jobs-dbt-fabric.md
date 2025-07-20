@@ -5,8 +5,7 @@ ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
 ms.topic: how-to
-ms.custom:
-# ms.custom:
+ms.custom: airflows
 ms.date: 05/24/2024
 ---
 
@@ -47,8 +46,8 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
 - [dbt-fabric](https://pypi.org/project/dbt-fabric/): This package is used to create dbt project, which can then be deployed to a [Fabric Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup)
 
   ```bash
-     astronomer-cosmos==1.0.3
-     dbt-fabric==1.5.0
+  astronomer-cosmos==1.10.1
+  dbt-fabric==1.9.5   
   ```
 
 ### [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job.](#create-a-dbt-project-in-the-fabric-managed-storage-provided-by-the-apache-airflow-job)
@@ -155,6 +154,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
    from pathlib import Path
    from datetime import datetime
    from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
+   from airflow import DAG
 
    DEFAULT_DBT_ROOT_PATH = Path(__file__).parent.parent / "dags" / "nyc_taxi_green"
    DBT_ROOT_PATH = Path(os.getenv("DBT_ROOT_PATH", DEFAULT_DBT_ROOT_PATH))

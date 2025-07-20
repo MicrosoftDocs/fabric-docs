@@ -4,7 +4,7 @@ description: Understand how to use custom actions to trigger Power Automate flow
 author: spelluru
 ms.author: spelluru
 ms.topic: concept-article
-ms.custom: FY25Q1-Linter
+ms.custom: FY25Q1-Linter, sfi-image-nochange
 ms.search.form: Data Activator Custom Actions
 ms.date: 12/12/2024
 #customer intent: As a Fabric user I want to learn to use custom actions to trigger Power Automate flows.
@@ -101,7 +101,6 @@ When your rule activates, it calls your flow, sending it the values of the input
 
 ## Related content
 
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
 * [Create [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rules in design mode](activator-create-activators.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 

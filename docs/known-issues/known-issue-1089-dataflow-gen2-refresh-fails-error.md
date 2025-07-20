@@ -4,7 +4,7 @@ description: A known issue is posted where Dataflow Gen2 refresh fails with Powe
 author: kfollis
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/08/2025
+ms.date: 05/08/2025
 ms.custom: known-issue-1089
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1089
 
 Your Dataflow Gen2 dataflow doesn't refresh correctly in cross-tenant scenarios. The refresh fails with a PowerBIEntityNotFound and returns a status code of 403 or 404.
 
-**Status:** Open
+**Status:** Fixed: May 8, 2025
 
 **Product Experience:** Power BI
 

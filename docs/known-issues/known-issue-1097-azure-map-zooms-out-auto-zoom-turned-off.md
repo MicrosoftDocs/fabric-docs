@@ -4,7 +4,7 @@ description: A known issue is posted where an Azure map zooms out automatically 
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 04/15/2025
+ms.date: 05/20/2025
 ms.custom: known-issue-1097
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1097
 
 You can add a reference layer to an Azure map. You can turn the auto zoom off for the reference layer. In the Power BI Service, the Azure Map automatically zooms out.
 
-**Status:** Open
+**Status:** Fixed: May 20, 2025
 
 **Product Experience:** Power BI
 

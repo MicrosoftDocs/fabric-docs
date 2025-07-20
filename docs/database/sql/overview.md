@@ -4,9 +4,9 @@ description: Learn about SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaur
-ms.date: 03/18/2025
+ms.date: 05/29/2025
 ms.topic: overview
-ms.search.form: product-databases, SQL database Overview
+ms.search.form: product-databases, SQL database Overview, Databases Overview
 ---
 # SQL database in Microsoft Fabric (Preview)
 
@@ -124,8 +124,7 @@ You can use the Fabric portal to easily [create a GraphQL API](graphql-api.md) f
 
 You can use the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) to monitor the SQL database usage and consumption in non-trial Fabric capacities.
 
-> [!NOTE]
-> During the current preview, no billing will occur for SQL database in Fabric, but billing metrics will still flow for tracking purposes.
+For more information, see [Billing and utilization reporting for SQL database in Microsoft Fabric](usage-reporting.md).
 
 ## Mirroring for Azure SQL Database
 
@@ -143,6 +142,6 @@ Fabric SQL database doesn't support the Azure SQL Database elastic pools concept
 ## Related content
 
 - [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)
-- [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
 - [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)  
 - [What is the SQL analytics endpoint for a SQL database in Fabric?](sql-analytics-endpoint.md)

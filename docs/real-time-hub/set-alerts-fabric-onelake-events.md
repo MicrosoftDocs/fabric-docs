@@ -19,7 +19,7 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 - Events you want to monitor.
 - Conditions you want to look for in the events.
-- Action you want Data Activator to take.
+- Action you want Activator to take.
 
 ### Using the events list
 

@@ -4,7 +4,7 @@ description: Learn about the mirrored databases from Azure Cosmos DB in Microsof
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 11/19/2024
+ms.date: 05/07/2025
 ms.topic: overview
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -94,14 +94,17 @@ To mirror a database, it should already be provisioned in Azure. You must enable
 - You can only mirror each database individually at a time. You can choose which database to mirror.
 - You can mirror the same database multiple times within the same workspace. As a best practice, a single copy of database can be reused across lakehouses, warehouses, or other mirrored databases. You shouldn't need to set up multiple mirrors to the same database.
 - You can also mirror the same database across different Fabric workspaces or tenants.
+- You can select which containers to mirror within your database.
 - Changes to Azure Cosmos DB containers, such as adding new containers and deleting existing ones, are replicated seamlessly to Fabric. You can start mirroring an empty database with no containers, for example, and mirroring seamlessly picks up the containers added at a later point in time.
 
 ### Support for nested data
 
 Nested data is shown as a JSON string in SQL analytics endpoint tables. You can use `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` in T-SQL queries or views to expand this data selectively. If you're using Power Query, you can also apply the `ToJson` function to expand this data.
 
+Through auto schema inference, nested data can be flattened through `OPENJSON` without having to explicitely define the nested schema. This is especially useful for workloads with dynamic or unpredictable nested schemas. For more information, see [how to query nested data](azure-cosmos-db-how-to-query-nested.md).
+
 > [!NOTE]
-> Fabric has a limitation for string columns of 8 KB in size. For more information, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
+> Fabric has a limitation for string columns of 8 KB in size. For more information and our current workaround, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
 
 ### Handle schema changes
 
@@ -119,15 +122,22 @@ Azure Cosmos DB supports case-insensitive column names, based on the JSON standa
 
 For example, if the Azure Cosmos DB item has `addressName` and `AddressName` as unique properties, Fabric tables have corresponding `addressName` and `AddressName_1` columns. For more information, see [replication limitations](azure-cosmos-db-limitations.md#replication-limitations).
 
+### Support for AI Workloads
+
+Azure Cosmos DB Mirroring supports accounts that use vector search and indexing, allowing AI and machine learning workloads to take full advantage of Microsoft Fabric’s powerful analytics—while continuing to leverage Azure Cosmos DB’s high-performance vector capabilities.
+
+For more details, explore the documentation on [Vector Search and Indexing for Cosmos DB](/azure/cosmos-db/nosql/vector-search) and [Fabric Data Science and AI Experiences](../../data-science/index.yml).
+
 ## Security
 
-Connections to your source database are based on account keys for your Azure Cosmos DB accounts. If you rotate or regenerate the keys, you need to update the connections to ensure replication works. For more information, see [connections](../../data-factory/connector-azure-cosmosdb-for-nosql.md).
+You can connect to a source acocunt using Microsoft Entra ID and role-based access control or account-level keys.
 
-Account keys aren't directly visible to other Fabric users once the connection is set up. You can limit who has access to the connections created in Fabric. Writes aren't permitted to Azure Cosmos DB database either from the data explorer or analytics endpoint in your mirrored database.
+If you use keys and rotate or regenerate the keys, you need to update the connections to ensure replication works. For more information, see [connections](../../data-factory/connector-azure-cosmosdb-for-nosql.md). Account keys aren't directly visible to other Fabric users once the connection is set up. You can limit who has access to the connections created in Fabric. Writes aren't permitted to Azure Cosmos DB database either from the data explorer or analytics endpoint in your mirrored database. Mirroring doesn't currently support authentication using read-only account keys.
 
-Mirroring doesn't currently support authentication using read-only account keys, single-sign on (SSO) with Microsoft Entra IDs and role-based access control, or managed identities.
+For Microsoft Entra ID authentication, the following RBAC permissions are required: `Microsoft.DocumentDB/databaseAccounts/readMetadata` &amp; `Microsoft.DocumentDB/databaseAccounts/readAnalytics`. For more information, see [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
 
-Once the data is replicated into Fabric OneLake, you need to secure access to this data.
+> [!TIP]
+> Once data is replicated into Fabric OneLake, you should also secure access to this data.
 
 ### Data protection features
 
