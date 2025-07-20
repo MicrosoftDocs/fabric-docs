@@ -16,6 +16,8 @@ This quickstart explains how to create a Spark Job Definition that contains Pyth
 
 ## Create a Python script
 
+Use the following Python script to create a streaming Delta table in a lakehouse using Apache Spark. The script reads a stream of generated data (one row per second) and writes it in append mode to a Delta table named `streamingtable`. It stores the data and checkpoint info in the specified lakehouse.
+
 1. Use the following Python code that uses Spark structured streaming to get data in a lakehouse table.
 
    ```python
