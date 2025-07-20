@@ -13,6 +13,8 @@ ms.date: 07/15/2025
 
 This article explains how to query Fabric OneLake Delta Tables from Snowflake using the [Snowflake connector for Microsoft Fabric](/fabric/data-factory/connector-snowflake-overview?view=microsoft-fabric&preserve-view=true).
 
+:::image type="content" source="media/query-onelake-from-snowflake/workflow.png" alt-text="Screenshot of the workflow diagram including data ingestion, analyzing, and exporting to snowflake":::
+
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
@@ -22,8 +24,11 @@ This article explains how to query Fabric OneLake Delta Tables from Snowflake us
 1. Create your environment in Fabric:
     1. Create an EventHouse and an EventStream.
     1. Use *Sample data* to create a Lakehouse and set the EventHub as the desternation to generate a new table.
+    :::image type="content" source="media/query-onelake-from-snowflake/data-source.png" alt-text="Screenshot of the optional data sources":::
+    :::image type="content" source="media/query-onelake-from-snowflake/diagram.png" alt-text="Screenshot of the data flow":::
 1. Enable **OneLake Availability**:
     1. In the EventHouse KQL database, turn on OneLake availability.
+    :::image type="content" source="media/query-onelake-from-snowflake/onelake.png" alt-text="Screenshot of the OneLake availability toggle in the EventHouse KQL database.":::
 1. Optimize Sync Timing:
     1. Set a low latency target rate to avoid long delays. Default can be up to 3 hours.
     1. Run this KQL query to set the target rate:
@@ -32,8 +37,10 @@ This article explains how to query Fabric OneLake Delta Tables from Snowflake us
     ```
 1. Create a Lakehouse:
     1. In your Lakehouse, select Tables > **New shortcut**.
+    :::image type="content" source="media/query-onelake-from-snowflake/shortcut.png" alt-text="Screenshot of the New Shortcut option in the dropdown menu":::
     1. Choose **Microsoft OneLake** as the source.
     1. Navigate to and select the KQL database and table you created in the EventHouse.
+    :::image type="content" source="media/query-onelake-from-snowflake/using-shortcut.png" alt-text="Screenshot of connecting the new shortcut to the data":::
 
 ## Configure Snowflake
 
