@@ -1018,7 +1018,9 @@
   - name: Best practices
     items:
     - name: Copy performance for SQL databases
-      href: copy-performance-sql-databases.md    
+      href: copy-performance-sql-databases.md  
+    - name: Dataflow Gen2 performance and scalability
+      href: dataflow-gen2-performance-best-practices.md  
   - name: Extensibility
     items:
       - name: Connector certification
