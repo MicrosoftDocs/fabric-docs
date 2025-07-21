@@ -26,11 +26,11 @@ Power BI Premium provides enhancements to Power BI, and a comprehensive portfoli
 
 ## Capacities and SKUs
 
-[!INCLUDE [what is capacity](/power-bi/includes/what-is-capacity)]
+[!INCLUDE [what is capacity](/powerbi-repo/includes/what-is-capacity)]
 
-[!INCLUDE [capacity and SKUs](/power-bi/includes/capacity-and-skus)]
+[!INCLUDE [capacity and SKUs](/powerbi-repo/includes/capacity-and-skus)]
 
-[!INCLUDE [Power BI capacity and SKUs](/power-bi/includes/capacity-table)]
+[!INCLUDE [Power BI capacity and SKUs](/powerbi-repo/includes/capacity-table)]
 
 ## Subscriptions and licensing
 

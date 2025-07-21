@@ -117,14 +117,10 @@ items:
       href: powerbi/service-admin-purchasing-power-bi-pro.md         
     - name: Organizational licenses
       href: powerbi/service-admin-licensing-organization.md
-    - name: View and manage user licenses
-      href: powerbi/service-admin-manage-licenses.md
     - name: Disable self-service sign-up
       href: powerbi/service-admin-disable-self-service.md
     - name: Sign up with a Microsoft 365 Trial
-      href: powerbi/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial.md
-    - name: Alternate email address for Power BI
-      href: powerbi/service-admin-alternate-email-address-for-power-bi.md  
+      href: powerbi/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial.md 
   - name: Power BI sovereign clouds
     expanded: false
     items:

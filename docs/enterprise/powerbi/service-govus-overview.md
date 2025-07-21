@@ -131,16 +131,15 @@ The following table lists features of Power BI that aren't yet available in a pa
 
 | Key | Description |
 |-----|------|
-|![Image of an "Available" button, a checkmark indicating that the listed item is available.](../media/yes.png)|The feature is available in the environment, and any exceptions are defined in footnotes.|
-|![Image of a "Not available" button, an "x" sign indicating that the listed item is not available.](../media/no.png)| The feature isn't available in the environment, and we don't have an estimated time frame for delivery.|
+|✅|The feature is available in the environment, and any exceptions are defined in footnotes.|
+|❌| The feature isn't available in the environment, and we don't have an estimated time frame for delivery.|
 | | |
 
 If a release is planned for an environment, we include the quarter of estimated availability.
 
 > [!NOTE]
 > US Government customers who operate in an air-gapped cloud should consult feature parity documentation in that environment to discover feature availability.
->
->
+
 
 |Feature |GCC |GCC High |DoD|
 |------|------|------|------|

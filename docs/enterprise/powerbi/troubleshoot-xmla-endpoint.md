@@ -169,7 +169,7 @@ When connecting to a Power BI workspace with SSMS, ensure the following:
 
 ### Query execution in SSMS
 
-When connected to a workspace in a [Power BI Premium](/power-bi/enterprise/service-premium-what-is) or a [Power BI Embedded](.././developer/embedded/embedded-analytics-power-bi.md) capacity, SQL Server Management Studio may display the following error:
+When connected to a workspace in a [Power BI Premium](/power-bi/enterprise/service-premium-what-is) or a [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi) capacity, SQL Server Management Studio may display the following error:
 
 ```
 Executing the query ...

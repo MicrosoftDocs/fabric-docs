@@ -30,7 +30,7 @@ sections:
         answer: |
           Premium Per User (PPU) gives organizations a way to license premium features on a per-user basis. PPU includes all Power BI Pro license capabilities, including features like AI, and other capabilities that were only available with a Premium capacity. With a PPU license, you don't need a separate Power BI Pro license because all Pro license capabilities are included. 
 
-          You can use a Power BI [individual trial](../fundamentals/service-self-service-signup-for-power-bi.md) to try PPU as long as your organization doesn't disable individual trials with the [Allow users to try Power BI paid features tenant setting](../admin/service-admin-portal-help-support.md#allow-users-to-try-power-bi-paid-features).
+          You can use a Power BI [individual trial](/power-bi/fundamentals/service-self-service-signup-for-power-bi) to try PPU as long as your organization doesn't disable individual trials with the [Allow users to try Power BI paid features tenant setting](/power-bi/admin/service-admin-portal-help-support#allow-users-to-try-power-bi-paid-features).
 
           The following table compares the features of Premium Per User (PPU) with Premium capacity:
 
@@ -119,7 +119,7 @@ sections:
 
           * The export API for PPU is available for paginated reports, with a limit of one call every 5 minutes, per user. Power BI reports aren't supported.
 
-          * The [Export Power BI report to file](../developer/embedded/export-to.md) REST API isn't supported for PPU.
+          * The [Export Power BI report to file](/power-bi/developer/embedded/export-to) REST API isn't supported for PPU.
 
           * The number of refreshes isn't restricted.
 
@@ -145,10 +145,10 @@ additionalContent: |
  >[Planning a Power BI Enterprise Deployment whitepaper](https://aka.ms/PBIEnterpriseDeploymentWP)
 
  >[!div class="nextstepaction"]
- >[Extended Pro Trial activation](../fundamentals/service-self-service-signup-for-power-bi.md)
+ >[Extended Pro Trial activation](/power-bi/fundamentals/service-self-service-signup-for-power-bi)
 
  >[!div class="nextstepaction"]
- >[Power BI Embedded FAQ](../developer/embedded/embedded-faq.yml)
+ >[Power BI Embedded FAQ](/power-bi/developer/embedded/embedded-faq)
 
  >[!div class="nextstepaction"]
  >[The Power BI Community](https://community.powerbi.com/)

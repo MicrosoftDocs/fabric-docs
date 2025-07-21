@@ -85,11 +85,11 @@ When scale-out is enabled, the following connections are retained:
 
 * By default, Power BI Desktop connects to a read-only replica.
 
-* [Live connection](.//power-bi/connect-data/desktop-report-lifecycle-datasets) reports connect to a read-only replica.
+* [Live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets) reports connect to a read-only replica.
 
 * XMLA client applications connect to the read-write semantic model by default.
 
-* Refreshes in the Power BI service and refreshes using the [Enhanced Refresh REST API](.//power-bi/connect-data/asynchronous-refresh) connect to the read-write semantic model.
+* Refreshes in the Power BI service and refreshes using the [Enhanced Refresh REST API](/power-bi/connect-data/asynchronous-refresh) connect to the read-write semantic model.
 
 You can connect to a read-only replica or the read-write semantic model by appending one of the following strings to the semantic model's URL:
 
@@ -100,7 +100,7 @@ You can connect to a read-only replica or the read-write semantic model by appen
 
 Power BI semantic model scale-out is enabled by default for a tenant. Power BI tenant admins can disable this setting. To disable semantic model scale-out for the tenant, do the following:
 
-1. Go to your [tenant settings](.//power-bi/admin/service-admin-portal-about-tenant-settings).
+1. Go to your [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
 
 2. In **Scale-out settings**, expand **Scale-out queries for large semantic models**.
 
