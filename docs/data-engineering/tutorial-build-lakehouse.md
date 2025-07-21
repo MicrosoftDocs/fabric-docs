@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
 - FY25Q1-Linter
 - sfi-image-nochange
-ms.date: 07/25/2024
+ms.date: 07/18/2025
 # Customer Intent: As a data engineer, I want to use lakehouses to transform data and build reports using Power BI and Fabric.
 ---
 
@@ -73,7 +73,7 @@ In this section, you ingest sample customer data into the lakehouse.
 
    :::image type="content" source="media\tutorial-build-lakehouse\query-settings-add-destination.png" alt-text="Screenshot of the query settings pane, showing where to enter the name and select the data destination." lightbox="media\tutorial-build-lakehouse\query-settings-add-destination.png":::
 
-1. In this tutorial, you associated the customer data with a lakehouse. If you have other data items that you want to associate with the lakehouse, you can add them:
+1. In this tutorial, you associated the customer data with a lakehouse. If you create a dataflow from the lakehouse, the uploaded data will automatically be linked to the default lakehouse. If you're creating the dataflow separately, you can associate it manually using the following steps. This step is optional and only needed if a lakehouse isn't already associated:
 
    1. From the menu items, select **Add data destination** and select **Lakehouse**. From the **Connect to data destination** screen, sign into your account if necessary and select **Next**.
 

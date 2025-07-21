@@ -9,12 +9,13 @@ ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
 ms.date: 05/09/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 #customer intent: As an Analyst, I want to consume a Fabric data agent within Microsoft Copilot Studio.
 ---
 
 # Consume a Fabric Data Agent in Microsoft Copilot Studio (preview)
-
+<!--
 Microsoft Copilot Studio is a graphical, low-code platform for building custom AI agents that understand natural language, answer user inquiries, and perform actions such as automating tasks. These agents can then be deployed across channels such as Microsoft Teams, websites, and Microsoft 365 Copilot.
 
 One of the ways to consume a Fabric data agent is by adding it to a custom AI agent in Microsoft Copilot Studio as a connected agent. This connected agents setup enables agent-to-agent collaboration, allowing the custom AI agent in Copilot Studio to securely access enterprise data through the Fabric data agent and ground its responses in organizational knowledge for improved accuracy, relevance, and context.
@@ -92,3 +93,4 @@ One of the ways to consume a Fabric data agent is by adding it to a custom AI ag
 :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-teams-channels.png" alt-text="Screenshot showing the publish process to Teams." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-teams-channels.png":::
 
 16. This will then launch Microsoft Teams where you will be able to ask questions from the custom AI agent and get answers.
+-->

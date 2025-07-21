@@ -5,6 +5,7 @@ author: denglishbi
 ms.author: daengli
 ms.reviewer: guptamaya, maghan
 ms.date: 05/27/2025
+ms.update-cycle: 180-days
 ms.service: fabric
 ms.topic: overview
 ms.collection:

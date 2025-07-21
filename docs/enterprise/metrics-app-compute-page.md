@@ -6,6 +6,7 @@ ms.author: juliacawthra
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 07/10/2025
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---

@@ -5,6 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun
 ms.date: 07/16/2025
+ms.update-cycle: 180-days
 ms.topic: whats-new
 ms.collection:
   - ce-skilling-ai-copilot
