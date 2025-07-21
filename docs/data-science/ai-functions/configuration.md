@@ -28,7 +28,7 @@ By default, AI functions are powered by Fabric's built-in AI endpoint. The LLM's
 
 | **Parameter** | **Description** | **Default** |
 |---|---|---|
-| **`model_deployment_name`**<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../ai-services/ai-services-overview#azure-openai-service). | **gpt-4o-mini** |
+| **`model_deployment_name`**<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). | **gpt-4o-mini** |
 | **`embedding_deployment_name`**<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | **text-embedding-ada-002** |
 | **`temperature`**<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between **0.0** and **1.0** that designates the temperature of the underlying model. Higher temperatures increase the randomness or creativity of the model's outputs. | **0.0** |
 | **`seed`**<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | **openai.NOT_GIVEN** |
@@ -108,7 +108,7 @@ You can substitute your own values for the deployment name, subscription key, en
 
 | **Parameter** | **Description** |
 |---|---|
-| **`deployment_name`** | A string value that designates the custom name of your model deployment in Azure OpenAI or Azure AI Foundry. In the Azure portal, this value appears under **Resource Management > Model Deployments**. In the Azure AI Foundry portal, the value appears on the **Deployments** page. You can choose from the [models supported by Fabric](https://learn.microsoft.com/en-us/fabric/data-science/ai-services/ai-services-overview#azure-openai-service). By default, the native Fabric LLM endpoint deployment is set to **gpt-4o-mini**. |
+| **`deployment_name`** | A string value that designates the custom name of your model deployment in Azure OpenAI or Azure AI Foundry. In the Azure portal, this value appears under **Resource Management > Model Deployments**. In the Azure AI Foundry portal, the value appears on the **Deployments** page. You can choose from the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). By default, the native Fabric LLM endpoint deployment is set to **gpt-4o-mini**. |
 | **`subscription_key`** | An API key used for authentication with your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. |
 | **`URL`**| A URL designating the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: "https://your-openai-endpoint.openai.azure.com/". |
 | **`temperature`** | A numeric value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. By default, the Fabric LLM endpoint's temperature is set to **0.0**. |
