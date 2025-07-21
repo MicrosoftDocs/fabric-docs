@@ -1256,6 +1256,646 @@
             "redirect_document_id": false
         },
         {
+                "source_path_from_root": "/docs/known-issues/known-issue-1002-reports-functions-rls-not-work.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1025-environment-git-integration-imports-libraries-not-work.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1028-slow-spark-session-startup-native-execution-engine.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1032-eventstream-updates-eventhouse-destination-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1033-error-network-security-tab-workspace-settings.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1039-sync-warehouse-sql-endpoint-fail-west-europe.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1043-pub-sub-subscriptions-disappear-api-response-creation.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1051-eventstream-data-sources-inactivated-not-reactivated.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1055-spark-job-definition-activity-incorrectly-shows-failure-status.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1056-database-mirroring-error-source-table-not-exist.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1058-workspaces-created-during-preview-limited-onelake-features.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1059-copilot-installation-script-not-included-notebook.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1061-issues-publishing-importing-reports-pro-workspaces.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1069-sql-analytics-endpoint-sync-failure-column-mapping-enabled.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1077-failure-scale-azure-analysis-services-add-admins.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1078-not-install-open-on-premises-data-gateway-windows-update.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1079-pipelines-fail-missing-capacity-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1080-data-pipeline-run-fails-user-auth-token-errors.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1083-dataflow-gen2-refresh-fails-type-mismatch-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1085-spark-job-submission-failure-library-management-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1087-pipeline-not-copy-empty-table-lakehouse.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1089-dataflow-gen2-refresh-fails-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1090-pypi-packages-functions-not-show-library-management.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1091-new-card-visual-conditional-formatting-rules-not-work.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1092-delayed-data-availability-analytics-endpoint-pipeline.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1097-azure-map-zooms-out-auto-zoom-turned-off.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1100-snowflake-implementation-connector-not-display-views.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1101-vertica-connector-throws-invalid-conversion-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1102-deletion-private-endpoint-connected-key-vault-not-work.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1103-data-warehouse-second-workspace-sync-git.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1104-visual-warning-style-preset-not-found.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1106-eventstream-weather-connector-fails-load-map-edit-mode.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1107-cross-region-capacity-migration-fail-items-not-deleted-successfully.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1108-not-read-data-warehouse-tables-notebook.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1112-functions-option-not-visible-pipelines-functions-activity.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1113-api-graphql-query-fails-variables-float-value.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1114-insert-statements-tables-different-data-warehouses-fail.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1117-gateway-causes-lakehouse-tables-null-values.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1118-execution-details-model-refresh-unavailable-monitor-hub.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1119-large-semantic-model-conversion-view-mode.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1120-recommended-tiles-home-page-stretched-customer-images.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1121-sql-analytics-endpoint-queries-return-empty-results.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1122-report-selection-not-work-viva-goals.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1123-reenabling-azure-sql-database-mirroring-fails.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1124-digital-twin-builder-mapping-fails-concurrent-update-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1125-explore-mode-digital-twin-builder-unexpectedly-empty.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1126-function-queries-failures-dataflow-gen2-refresh.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1128-failure-save-run-dataflow-gen2-deployed-git-integration.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1131-sql-database-creation-fails-tenant-setting.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1132-spark-job-fails-memory-error-timestamp-type.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1133-deleted-oneLake-shortcuts-visible-empty-file.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1134-multiple-dataflow-staging-items-created-workspace.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1135-throttling-issues-mirrored-azure-databricks-catalog-shortcuts.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1136-scrolling-workspaces-onelake-catalog-not-work.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1137-failure-deploying-user-data-functions-welcome-templates.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1138-credential-update-google-analytics-connections-fails.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1142-sql-editor-copilot-code-completion-feature-high-usage.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1143-error-dremio-connector-dremio-function.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1144-java-error-saving-delta-table-fabric-1-3.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1146-service-error-privacy-level-challenge-power-query.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1147-button-slicer-formatting-broken-service-may-desktop.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1148-dynamics-365-kql-query-not-save-reports.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1149-next-button-connection-authoring-greyed-out.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1151-disabling-workspace-encryption-setting-not-work.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1155-publish-eventstream-streaming-connector-source-fails.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1156-data-warehouse-not-load-version-mismatch-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1158-new-query-replicas-azure-analysis-services-fail-start.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1160-pipeline-monitoring-page-empty-t-sql-notebook.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1162-deleting-creating-classic-item-use-deleted-items-name-fails.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1163-service-report-missing-table-tooltips-field-list-edit-mode.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1164-inaccurate-data-digital-twin-builder-usage-capacity-metrics-app.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1165-digital-twin-builder-item-creation-fails-duplicate-names.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1166-power-bi-reports-not-show-viva-goals.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1167-refreshes-slow-performance-timeouts-dataflows-gen-2.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1168-text-analytics-ai-functions-fail.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1169-service-principal-public-api-calls-fail-variables-shortcut.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1170-disabled-sql-database-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1171-onelake-shortcut-creation-read-fail-bad-request-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1172-dataflow-default-destination-azure-fails-publish.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1173-data-agent-consumption-incorrectly-reported.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1177-verified-answers-home-copilot-not-found-search.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1178-google-big-query-connection-issues-optional-parameters.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1179-copilot-button-unavailable-power-bi-desktop.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1180-inability-create-new-vnet-data-gateway-save-button.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1181-onelake-catalog-item-details-lineage-tab-button-disappears.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1183-snowflake-connector-index-outside-bounds-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1184-lakehouse-table-maintenance-fail.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1191-sql-analytics-endpoint-views-access-denied-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1192-excel-power-bi-add-in-fails-excel-web.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-1193-pipeline-control-flow-activities-not-show-completion.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-643-tables-not-available-semantic-model.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-835-managed-private-endpoint-connection-fail.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-893-not-connect-semantic-model-analyze-excel.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-954-create-configure-delete-mirror-fails.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-965-sql-database-creation-fails-create-child-items-same-name.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-985-direct-lake-query-cancellation-fall-back-directquery.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-986-direct-lake-query-cancellation-cancel-queries.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-988-data-activator-events-not-ingested-reflex-events.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-990-kql-database-loads-continuously-without-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-991-apache-airflow-job-creation-upgrade-message.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
+                "source_path_from_root": "/docs/known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+                {
+                "source_path_from_root": "/docs/known-issues/known-issue-1194-pipeline-switch-activity-validation-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+                {
+                "source_path_from_root": "/docs/known-issues/known-issue-1195-paginated-reports-experience-issues-firefox-browser.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+                {
+                "source_path_from_root": "/docs/known-issues/known-issue-1197-pipeline-not-load-tables-semantic-model-refresh-activity.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/get-started/copilot-faq-fabric.yml",
             "redirect_url": "/fabric/fundamentals/copilot-faq-fabric",
             "redirect_document_id": false
