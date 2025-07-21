@@ -93,7 +93,7 @@ To create the source control connection, use the following details and steps.
 9. After adding the connection, you need to click on **connect** and complete the git connection details. For more information, see [Connect to a workspace](git-get-started.md#connect-to-a-workspace)
 
 
-## Multi-tenant considerations for service principal creation
+## Multitenant considerations for service principal creation
 To access resources secured by a Microsoft Entra tenant, your application must have a security principal. When you create your application, the service principal is autocreated on the tenant where the application resides.
 
 In cases where your applications tenant is different than the home tenant of your Azure DevOps instance, you'll need to create the service principal, in the Azure DevOps tenant. Consider the following scenarios when registering your app in step 1 and see the examples.
