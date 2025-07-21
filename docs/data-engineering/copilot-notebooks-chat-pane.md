@@ -6,6 +6,7 @@ ms.author: sngun
 ms.topic: how-to
 ms:custom:
 ms.date: 06/10/2025
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 #CustomerIntent: As a Data Scientist, or Data engineer, I want to use Copilot for Data Science and Data Engineering to increase my productivity and help answer questions I have about my data to use with notebooks.

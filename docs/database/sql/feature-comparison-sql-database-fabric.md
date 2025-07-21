@@ -3,8 +3,8 @@ title: "Features comparison: Azure SQL Database and SQL database (preview)"
 description: This article compares the database engine features of Azure SQL Database and SQL database in Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: nzagorac, antho, sukkaur, drskwier
-ms.date: 06/26/2025
+ms.reviewer: nzagorac, antho, sukkaur, drskwier, jovanpop
+ms.date: 07/21/2025
 ms.topic: conceptual
 ms.search.form: SQL database Overview
 ---
@@ -66,6 +66,7 @@ The following table lists the major features of SQL Server and provides informat
 | [Full-text search (FTS)](/sql/relational-databases/search/full-text-search) |  Yes, but third-party filters and word breakers aren't supported | No |
 | [Functions](/sql/t-sql/functions/functions) | Most, see individual functions |  Most, see individual functions |
 | [In-memory optimization](/sql/relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization) | Yes in [Premium and Business Critical service tiers](/azure/azure-sql/database/in-memory-oltp-overview?view=azuresql-db&preserve-view=true).</br> Limited support for non-persistent In-Memory OLTP objects such as memory-optimized table variables in [Hyperscale service tier](/azure/azure-sql/database/service-tier-hyperscale). | No |
+| [Intelligent query processing](/sql/relational-databases/performance/intelligent-query-processing?view=azuresqldb-current&preserve-view=true) | Yes | Yes |
 | [Language elements](/sql/t-sql/language-elements/language-elements-transact-sql) | Most, see individual elements | Most, see individual elements  |
 | [Ledger](/sql/relational-databases/security/ledger/ledger-overview) | Yes | No |
 | [Linked servers](/sql/relational-databases/linked-servers/linked-servers-database-engine) | Yes, only as a target | Yes, only as a target |
@@ -179,5 +180,5 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 ## Related content
 
 - [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)
-- [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
 - [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)

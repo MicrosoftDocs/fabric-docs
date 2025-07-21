@@ -8,6 +8,7 @@ author: ssalgadodev
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
 ms.date: 06/30/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 

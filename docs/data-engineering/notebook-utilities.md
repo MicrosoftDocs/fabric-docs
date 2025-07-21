@@ -894,6 +894,100 @@ notebookutils.session.restartPython()
 > - In the notebook reference run case, ```restartPython()``` only restarts the Python interpreter of the current notebook that being referenced.
 > - In rare case, the command may fail due to the Spark reflection mechanism, adding retry can mitigate the problem.
 
+## Variable library utilities
+
+> [!NOTE]
+> "Variable Library utilities" in Notebooks is in Preview.
+
+Variable libraries allow you to avoid hardcoding values in your notebook code. You can update the values in the library instead of modifying the code. The notebook references the variable library to retrieve those values. This approach simplifies the reuse of code across teams and projects by utilizing a centrally managed library. 
+
+Run the following commands for an overview of the available methods:
+
+```python
+notebookutils.variableLibrary.help()
+```
+
+**Output**
+```console
+[Preview] notebookutils.variableLibrary is a utility to Variable Library.
+
+Below is overview about the available methods:
+
+get(variableReference: String): String
+-> Run the variable value with type.
+getLibrary(variableLibraryName: String): VariableLibrary
+-> Get the variable library.
+Use notebookutils.variableLibrary.help("methodName") for more info about a method.
+
+```
+
+### Define the variable in your Variable Library
+
+Define the variables first before using ```notebookutils.variableLibrary```.
+
+:::image type="content" source="media\notebook-utilities\variable-library.png" alt-text="Screenshot of variables list in variable library." lightbox="media\notebook-utilities\variable-library.png":::
+
+### Retrieve the variable library from the Notebook
+
+```python
+samplevl = notebookutils.variableLibrary.getLibrary("sampleVL")
+
+samplevl.test_int
+samplevl.test_str
+```
+
+```scala
+val samplevl = notebookutils.variableLibrary.getLibrary("sampleVL")
+
+samplevl.test_int
+samplevl.test_str
+```
+
+```r
+samplevl <- notebookutils.variableLibrary.getLibrary("sampleVL")
+
+samplevl.test_int
+samplevl.test_str
+```
+
+Example for dynamically using the variable.
+
+```python
+samplevl = notebookutils.variableLibrary.getLibrary("sampleVL")
+
+file_path = f"abfss://{samplevl.Workspace_name}@onelake.dfs.fabric.microsoft.com/{samplevl.Lakehouse_name}.Lakehouse/Files/<FileName>.csv" 
+df = spark.read.format("csv").option("header","true").load(file_path) 
+
+display(df) 
+
+```
+
+### Access a single variable by reference
+
+```python
+notebookutils.variableLibrary.get("$(/**/samplevl/test_int)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_str)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
+```
+
+```scala
+notebookutils.variableLibrary.get("$(/**/samplevl/test_int)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_str)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
+```
+
+```r
+notebookutils.variableLibrary.get("$(/**/samplevl/test_int)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_str)")
+notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
+```
+
+> [!NOTE] 
+> - The ```notebookutils.variableLibrary``` API only supports accessing variable libraries within the same workspace.
+> - Retrieving variable libraries across workspaces is not supported in child notebooks during a reference run.
+> - The notebook code references the variables defined in the active value set of the Variable Library. 
+
+
 ## Known issue 
 
 - When using runtime version above 1.2 and run ``` notebookutils.help() ```, the listed **fabricClient**, **PBIClient** APIs are not supported for now, will be available in the further. Additionally, the **Credentials** API isn't supported in Scala notebooks for now.

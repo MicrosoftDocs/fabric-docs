@@ -4,7 +4,7 @@ description: A known issue is posted where the pipeline notebook activity monito
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/03/2025
+ms.date: 07/16/2025
 ms.custom: known-issue-1160
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1160
 
 You can add a T-SQL notebook into a data pipeline as a notebook activity. Once you execute the pipelines, you can open the result panel. If you select the MonitorURL in the result panel, you see an empty page instead of the snapshot of the notebook execution.
 
-**Status:** Open
+**Status:** Fixed: July 16, 2025
 
 **Product Experience:** Data Engineering
 

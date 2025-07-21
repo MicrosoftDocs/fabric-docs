@@ -1,8 +1,7 @@
 items:
 - name: Fabric Databases documentation
   href: index.yml
-- name: SQL database in Fabric 
-  expanded: true
+- name: SQL database in Fabric
   items:
   - name: Overview
     href: sql/overview.md
@@ -28,8 +27,6 @@ items:
       href: sql/copilot-faq.yml
   - name: Get started
     items: 
-    - name: Connect to your SQL database
-      href: sql/connect.md
     - name: 1. Enable SQL database in Fabric
       href: sql/enable.md
     - name: 2. Create a SQL database
@@ -76,8 +73,18 @@ items:
       href: sql/backup.md
     - name: Restore
       href: sql/restore.md
+  - name: Deploy
+    items: 
+    - name: Options to create a SQL database
+      href: sql/create-options.md
+    - name: Deploy via REST API
+      href: sql/deploy-rest-api.md
+    - name: Deploy via Fabric CLI
+      href: sql/deploy-cli.md
   - name: Develop
     items:
+    - name: Connect to your SQL database
+      href: sql/connect.md
     - name: SQL Query editor
       href: ./sql/query-editor.md
     - name: Source control
@@ -86,8 +93,6 @@ items:
       href: sql/deployment-pipelines.md
     - name: SqlPackage
       href: sql/sqlpackage.md
-    - name: Deploy via REST API
-      href: sql/deploy-rest-api.md
     - name: Connect App Service to SQL database in Fabric
       href: sql/tutorial-service-connector.md
   - name: Load data into a SQL database
@@ -148,12 +153,16 @@ items:
     items: 
     - name: T-SQL Reference for Fabric
       href: /sql/t-sql/language-reference?view=fabric&preserve-view=true
+  - name: Resources
+    items: 
+    - name: SQL database in Fabric Community
+      href: https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion
+    - name: What's new in SQL database in Fabric?
+      href: ../fundamentals/whats-new.md#sql-database-in-microsoft-fabric
+- name: Cosmos DB in Fabric
+  href: cosmos-db/toc.yml
 - name: Resources
-  items: 
-  - name: SQL database in Fabric Community
-    href: https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion
-  - name: What's new in SQL database in Fabric?
-    href: ../fundamentals/whats-new.md#fabric-databases
+  items:
   - name: Contribute to Fabric docs
     href: /contribute/
   - name: Help

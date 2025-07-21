@@ -4,7 +4,7 @@ description: A known issue is posted where digital twin builder item creation fa
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 06/06/2025
+ms.date: 07/03/2025
 ms.custom: known-issue-1165
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1165
 
 An error occurs during item creation in digital twin builder when the chosen item name is already in use by another customer.
 
-**Status:** Open
+**Status:** Fixed: July 3, 2025
 
 **Product Experience:** Real-Time Intelligence
 

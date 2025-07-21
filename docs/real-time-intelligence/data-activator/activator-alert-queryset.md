@@ -154,5 +154,4 @@ TableForReflex
 ## Related content
 
 * [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md)
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
 * [KQL quick reference guide](/kusto/query/kql-quick-reference)

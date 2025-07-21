@@ -9,6 +9,7 @@ ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
 ms.date: 03/25/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As an Analyst, I want to create a Fabric data agent that relies on generative AI, that my colleagues and I can use to have conversations about our data.
@@ -21,15 +22,7 @@ With a data agent in Microsoft Fabric, you can create conversational AI experien
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-## Prerequisites
-
-- [A paid P SKU or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
-- [Fabric data agent tenant settings](./data-agent-tenant-settings.md) is enabled.
-- [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- At least one of these: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
-- [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
+[!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
 ## End-to-End Flow for creating and consuming Fabric data agents
 
@@ -130,14 +123,7 @@ The agent presents both the result and the intermediate steps that it took to re
 
 Additionally, the Fabric data agent provides the generated code used to query the corresponding data source, offering further insight into how the response was constructed.
 
-These queries are designed exclusively for querying data. Operations that involve
-
-- data creation
-- data updates
-- data deletions
-- any type of data change
-
-aren't allowed, to protect the integrity of your data.
+These queries are designed exclusively for querying data. Operations that involve data creation, data updates, data deletions, any type of data change aren't allowed, to protect the integrity of your data.
 
 At any point, you can select the **Clear chat** button to clear the chat, as shown in the following screenshot:
 
@@ -222,4 +208,5 @@ After you publish the Fabric data agent, you'll have two versions of it. One ver
 ## Related content
 
 - [Data agent concept](concept-data-agent.md)
-- [Data agent scenario](data-agent-scenario.md)
+- [Data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
+

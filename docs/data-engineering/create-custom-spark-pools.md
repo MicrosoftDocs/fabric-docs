@@ -6,7 +6,7 @@ ms.author: saravi
 author: santhoshravindran7
 ms.topic: how-to
 ms.custom:
-ms.date: 06/05/2025
+ms.date: 07/03/2025
 ---
 
 # How to create custom Spark pools in Microsoft Fabric
@@ -38,7 +38,7 @@ To create or manage the Spark pool associated with your workspace:
 
    :::image type="content" source="media\workspace-admin-settings\custom-pool-auto-scale.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation.":::
 
-1. You can also choose to enable dynamic executor allocation for your Spark pool, which automatically determines the optimal number of executors within the user-specified maximum bound. This feature adjusts the number of executors based on data volume, resulting in improved performance and resource utilization.
+1. You can adjust the number of executors using a slider. Each executor is a Spark process that runs tasks and holds data in memory. Increasing executors can improve parallelism, but it also increases the size and startup time of the cluster. You can also choose to enable dynamic executor allocation for your Spark pool, which automatically determines the optimal number of executors within the user-specified maximum bound. This feature adjusts the number of executors based on data volume, resulting in improved performance and resource utilization.
 
 These custom pools have a default autopause duration of 2 minutes. Once the autopause duration is reached, the session expires and the clusters are unallocated. You're charged based on the number of nodes and the duration for which the custom Spark pools are used.
 

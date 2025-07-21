@@ -4,7 +4,7 @@ description: A known issue is posted where you see throttling issues with Mirror
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting  
-ms.date: 05/09/2025
+ms.date: 07/03/2025
 ms.custom: known-issue-1135
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-1135
 
 If you're using the Mirrored Azure Databricks catalog, you might experience throttling issues with shortcuts due to a recently introduced throttling limit.
 
-**Status:** Open
+**Status:** Fixed: July 3, 2025
 
 **Product Experience:** OneLake
 

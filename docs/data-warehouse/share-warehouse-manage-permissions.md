@@ -3,8 +3,8 @@ title: Share Your Warehouse and Manage Permissions
 description: Learn how to share your warehouse in Microsoft Fabric and manage its user permissions.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: mesrivas
-ms.date: 04/09/2025
+ms.reviewer: mesrivas, fresantos
+ms.date: 07/14/2025
 ms.topic: how-to
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
@@ -59,6 +59,11 @@ Here's more detail about each of the permissions provided:
 
 - **"Build reports on the default dataset" is selected ("Build" permissions)** - The shared recipient can build reports on top of the default semantic model that is connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] to create Power BI reports on this data from the OneLake catalog or Power BI Desktop. The **Build** checkbox is selected by default, but can be unchecked.
 
+- - **Monitor** – Users with **Monitor** permission can query Dynamic Management Views (DMVs), such as `sys.dm_exec_requests`, query text, system connections, sessions, and Insights views. This permission is typically required for operational monitoring, troubleshooting, and performance analysis.
+
+- **Audit** – Users with **Audit** permission can enable, configure, and query audit logs. With this permission, users can access auditing data to review activity history, monitor compliance, and support security investigations.
+
+
 ## Manage permissions
 
 The **Manage permissions** page shows the list of users who have been given access by either assigning to Workspace roles or item permissions.
@@ -81,7 +86,7 @@ The following table lists which permission each role has by default and whether 
 | Build | Admin, Member, Contributor | Yes |
 | Write | Admin, Member, Contributor | No |
 | Monitor | Admin, Member, Contributor | N/A - can't be granted on its own |
-| Audit| Admin | N/A - can't be granted on its own |
+| Audit | Admin | N/A - can't be granted on its own |
 | Reshare | Admin, Member | N/A - can't be granted on its own |
 | Restore | Admin | No |
 

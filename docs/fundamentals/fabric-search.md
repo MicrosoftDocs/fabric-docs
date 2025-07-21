@@ -14,7 +14,7 @@ When you're new to [!INCLUDE [product-name](../includes/product-name.md)], you h
 
 ## Search for content
 
-At the top of Home, the global search box finds items by title, name, or keyword. Sometimes, the fastest way to find an item is to search for it. For example, if a dashboard you didn't use in a while isn't showing up on your Home canvas. Or, if your colleague shared something with you, but you don't remember what it's named or what type of content they shared. Sometimes, you might have so much content that it's easier to search for it rather than scrolling or sorting.
+At the top of Home, the global search box finds items by title, name, or [tag](/fabric/governance/tags-overview). Sometimes, the fastest way to find an item is to search for it. For example, if a dashboard you didn't use in a while isn't showing up on your Home canvas. Or, if your colleague shared something with you, but you don't remember what it's named or what type of content they shared. Sometimes, you might have so much content that it's easier to search for it rather than scrolling or sorting.
 
 > [!NOTE]
 > Global search might not be available in all regions. See [Considerations and limitations](#considerations-and-limitations) for more detail.
@@ -23,7 +23,7 @@ At the top of Home, the global search box finds items by title, name, or keyword
 
 Search is available from Home and also most other areas of [!INCLUDE [product-name](../includes/product-name.md)]. Just look for the search box or search icon. :::image type="icon" source="./media/fabric-search/fabric-search-icon.png":::
 
-In the **Search** field, type all or part of the name of an item, creator, keyword, or workspace. You can even enter your colleague's name to search for content that they shared with you. The search finds matches in all the items that you own or have access to. 
+In the **Search** field, type all or part of the name of an item, creator, tag, or workspace. You can even enter your colleague's name to search for content that they shared with you. The search finds matches in all the items that you own or have access to. 
 
 :::image type="content" source="./media/fabric-search/power-bi-search-field-new.png" alt-text="Screenshot of a search field with the term Sales in it.":::
 

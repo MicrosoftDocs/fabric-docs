@@ -5,6 +5,7 @@ author: denglishbi
 ms.author: daengli
 ms.reviewer: sngun
 ms.topic: conceptual
+ms.collection: ce-skilling-ai-copilot
 ms.date: 04/16/2025
 ---
 

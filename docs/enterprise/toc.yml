@@ -51,6 +51,10 @@ items:
       href: metrics-app-storage-page.md
     - name: Understand the metrics app timepoint page
       href: metrics-app-timepoint-page.md
+    - name: Understand the metrics app timepoint summary page (preview)
+      href: metrics-app-timepoint-summary-page.md
+    - name: Understand the metrics app timepoint item detail page (preview)
+      href: metrics-app-timepoint-item-detail-page.md
     - name: Understand the metrics app Autoscale compute for Spark page
       href: metrics-app-feature-autoscale-page.md
     - name: Understand Autoscale compute for Spark detail page
@@ -61,6 +65,14 @@ items:
       href: monitor-paused-capacity.md
     - name: Understand the metrics app calculations
       href: metrics-app-calculations.md
+  - name: Capacity troubleshooting guides
+    items:
+    - name: Monitor and identify capacity usage
+      href: capacity-planning-troubleshoot-consumption.md
+    - name: Determine source of report slowness
+      href: capacity-planning-troubleshoot-throttling.md
+    - name: Diagnose and resolve capacity limit errors
+      href: capacity-planning-troubleshoot-errors.md 
   - name: Chargeback app
     items:
     - name: What is Microsoft Fabric Chargeback app (preview)?

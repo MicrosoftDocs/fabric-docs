@@ -1,7 +1,7 @@
 ---
 title: Follow along with a built-in notebook in the platform
 description: Steps to access built-in sample notebooks for tutorials.
-author: fbsolo-ms1
+author: jonburchel
 ms.author: sfranksolomon
 ms.topic: include
 ms.date: 01/22/2024

@@ -5,26 +5,27 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 3/11/2025
+ms.date: 7/04/2025
 ms.search.form: fabric's manage private endpoints
 ms.custom: reference_regions, sfi-image-nochange
 ---
 
-# Connect to Azure resources securely using managed private endpoints (Public Preview)
+# Connect to Azure resources securely using managed private endpoints
 
 Managed Private Endpoint is a network security feature of the Fabric platform that allows Fabric items to securely access data sources behind a firewall or not accessible from the public internet. By integrating Eventstream with the Managed Private Endpoint, a managed virtual network is automatically created for Eventstream, allowing you to securely connect to your Azure resources within a private network. This feature ensures that your data is securely transmitted over a private network.
+
+Currently, Eventstream supports Managed Private Endpoint connections to **Azure Event Hubs** and **Azure IoT Hub** only.
 
 The following diagram shows a sample architecture for connecting Eventstream to Azure event hub within a virtual network:
 
 :::image type="content" source="media/set-up-private-endpoint/private-network-architecture.png" alt-text="A screenshot of the Eventstream private network architecture." lightbox="media/set-up-private-endpoint/private-network-architecture.png":::
 
-## Supported data sources and regions
+## What's new in GA
 
-* **Supported data sources**: In alignment with the Managed Private Endpoints in Fabric, Eventstream only supports private connections for the following Azure resources:
-  * **Azure Event Hubs**
-  * **Azure IoT Hub**
+The General Availability (GA) release includes several improvements over the public preview:
 
-* **Supported regions for Eventstream managed virtual network**: The table blow lists regions where Eventstream managed virtual network are available.
+1. **Production-ready and improved error messages**: Managed Private Endpoint is now fully supported, offering a more stable and reliable experience. The GA release includes clearer error messages and enhanced diagnostics to make troubleshooting easier.
+1. **Expanded Region Availability**: You can now create managed private endpoints in the following regions:
 
     | Americas                     | Europe                     | Middle East | Africa             | Asia Pacific                    |
     |:-----------------------------|:---------------------------|:------------|:-------------------|:--------------------------------|
@@ -36,6 +37,9 @@ The following diagram shows a sample architecture for connecting Eventstream to 
     | North Central US             | UK South                   |             |                    | Korea Central                   |
     | West US                      |                            |             |                    |                                 |
     | West US 2                    |                            |             |                    |                                 |
+
+1. **Improved UI Indicators**: Once an Azure source is securely connected via a managed private endpoint, Eventstream now displays an icon confirming the secure connection.
+  :::image type="content" source="media/set-up-private-endpoint/private-endpoint-ui.png" alt-text="A screenshot of showing private endpoint indicator on Eventstream UI." lightbox="media/set-up-private-endpoint/private-endpoint-ui.png":::
 
 To learn more about the Managed Private Endpoints and supported data sources, visit [Managed Private Endpoints for Fabric](/fabric/security/security-managed-private-endpoints-overview).
 
@@ -57,7 +61,7 @@ Setting up a private connection in Eventstream is straightforward. Follow these 
 
 * In the Fabric workspace, go to the **Workspace settings** and navigate to the **Network security** section.
 * Select **Create** to add a new private endpoint.
-* For the **Resource identifier**, enter the resource ID of your Azure Event Hubs such as `/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/my-resourcegroup/providers/Microsoft.EventHub/namespaces/my-eh-namespace`.
+* For the **Resource identifier**, enter the resource ID of your Azure Event Hubs such as `/subscriptions/a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1/resourceGroups/my-resourcegroup/providers/Microsoft.EventHub/namespaces/my-eh-namespace`.
 * For **Target Sub-resource**, select **Azure Event Hub**.
 * Select **Create** to finalize the private endpoint creation.
 
@@ -90,8 +94,10 @@ By following these steps, you have a fully operational Eventstream running over 
 ## Limitations
 
 * The **Data Preview** feature may not be available for data sources that aren't publicly accessible when connected through a managed private endpoint. However, the data is securely transmitted and flows correctly to the Eventstream.
+  :::image type="content" source="media/set-up-private-endpoint/private-endpoint-data-preview.png" alt-text="A screenshot of data preview not supported for managed private endpoint." lightbox="media/set-up-private-endpoint/private-endpoint-data-preview.png":::
 
 ## Related content
-- [Network security in Fabric](/fabric/security/security-overview)
-- [Managed Private Endpoints](/fabric/security/security-managed-private-endpoints-overview)
-- [Create Managed Private Endpoints](/fabric/security/security-managed-private-endpoints-create)
+
+* [Network security in Fabric](/fabric/security/security-overview)
+* [Managed Private Endpoints](/fabric/security/security-managed-private-endpoints-overview)
+* [Create Managed Private Endpoints](/fabric/security/security-managed-private-endpoints-create)

@@ -213,7 +213,19 @@ items:
       href: ../known-issues/fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
-    - name: Snowflake connector index outside the bounds error 
+    - name: Pipeline can't load some tables in semantic model refresh activity
+      href: ../known-issues/known-issue-1197-pipeline-not-load-tables-semantic-model-refresh-activity.md
+    - name: Paginated reports might experience loading issues in Firefox browser
+      href: ../known-issues/known-issue-1195-paginated-reports-experience-issues-firefox-browser.md
+    - name: Pipeline switch activity throws validation error
+      href: ../known-issues/known-issue-1194-pipeline-switch-activity-validation-error.md
+    - name: Pipeline control flow activities don't show the completion dependency
+      href: ../known-issues/known-issue-1193-pipeline-control-flow-activities-not-show-completion.md
+    - name: Excel Power BI add-in fails in Excel web
+      href: ../known-issues/known-issue-1192-excel-power-bi-add-in-fails-excel-web.md
+    - name: Unable to access SQL analytics endpoint views with access denied error
+      href: ../known-issues/known-issue-1191-sql-analytics-endpoint-views-access-denied-error.md
+    - name: Snowflake connector index outside the bounds error
       href: ../known-issues/known-issue-1183-snowflake-connector-index-outside-bounds-error.md
     - name: Lakehouse table maintenance fails for schema enabled lakehouses
       href: ../known-issues/known-issue-1184-lakehouse-table-maintenance-fail.md

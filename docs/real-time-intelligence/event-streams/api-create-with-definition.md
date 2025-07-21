@@ -165,7 +165,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items
 ## Sample response
 
 ```http
-  Location: https://api.fabric.microsoft.com/v1/operations/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
+  Location: https://api.fabric.microsoft.com/v1/operations/aaaabbbb-0000-cccc-1111-dddd2222eeee
   x-ms-operation-id: aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
   Retry-After: 30
 ```

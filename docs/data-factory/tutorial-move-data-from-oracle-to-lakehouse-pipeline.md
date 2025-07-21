@@ -67,12 +67,10 @@ In this session, you start to build your data pipeline by following below steps 
 1. Choose your destination type. It could be either your internal first class data store from your workspace, such as Lakehouse, or your external data stores. You use Lakehouse as an example.
 
 1. Choose to use **Lakehouse** in **Workspace data store type**. Select **+ New**, and it navigates you to the Lakehouse creation page. Specify your Lakehouse name and then select **Create**.
-   
+
     :::image type="content" source="media/copy-data-activity/create-lakehouse-new.png" alt-text="Screenshot showing Lakehouse creation.":::
 
 1. Specify a table or set up the file path to define the file or folder as the destination. Here select **Tables** and specify a table to write data.
-
-   :::image type="content" source="media/copy-data-activity/configure-destination-file-settings-in-pipeline.png" alt-text="Screenshot showing where to find Table settings." lightbox="media/copy-data-activity/configure-destination-file-settings-in-pipeline.png":::
 
 ## Run and schedule your data pipeline
 

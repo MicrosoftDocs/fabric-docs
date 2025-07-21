@@ -43,10 +43,12 @@ After you complete these steps, the Confluent Cloud for Apache Kafka source is a
 
 :::image type="content" source="./media/add-source-confluent-kafka/live-view.png" alt-text="Screenshot that shows Confluent Cloud for Apache Kafka source in Live view." lightbox="./media/add-source-confluent-kafka/live-view.png":::
 
-## Limitations
+> [!NOTE]
+> To preview events from this Confluent Cloud for Apache Kafka source, ensure that the API key used to create the cloud connection has **read permission** for consumer groups prefixed with **"preview-"**. If the API key was created using a **user account**, no additional steps are required, as this type of key already has full access to your Confluent Cloud for Apache Kafka resources, including read permission for consumer groups prefixed with **"preview-"**. However, if the key was created using a **service account**, you need to manually **grant read permission** to consumer groups prefixed with **"preview-"** in order to preview events.
+>
+> For Confluent Cloud for Apache Kafka sources, preview is supported for messages in Confluent **AVRO** format when the data is encoded using Confluent Schema Registry. If the data is not encoded using Confluent Schema Registry, only **JSON** formatted messages can be previewed.
 
-* Confluent Cloud for Apache Kafka with JSON and Avro formats, using schema registry, is currently not supported.
-* Decoding data from Confluent Cloud for Apache Kafka using the Confluent Schema Registry is currently not supported. 
+:::image type="content" source="./media/add-source-confluent-kafka/data-preview.png" alt-text="Screenshot that shows Confluent Cloud for Apache Kafka source data preview." lightbox="./media/add-source-confluent-kafka/data-preview.png":::
 
 ## Related content
 
