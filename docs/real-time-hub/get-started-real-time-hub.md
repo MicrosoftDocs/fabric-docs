@@ -24,6 +24,18 @@ On the **Real-Time hub** page, you see the **All data streams** section, where y
 
 The following sections provide details about the **All data streams** table, such as columns, filters, and other features available on the table. 
 
+### Cards 
+
+| Card | Description |
+| ---- | ----------- |
+| Subscribe to OneLake events | Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.md#configure-and-create-an-eventstream). |
+| Act on Job events | Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for OneLake](set-alerts-fabric-onelake-events.md#set-alert-for-onelake-events) |
+| Visualize data | Provides a shortcut to create a dashboard based on data in a KQL table. |
+| Explore data in motion | Provides a shortcut to preview data in a data source. For more information, see [Preview data streams](preview-data-streams.md). |
+| Connect weather data | Provides a shortcut to create a data streams based on real-time weather data. For more information, see [Real-Time weather source](add-source-real-time-weather.md) |
+| Learn from a tutorial | Links to the [Fabric Real-Time intelligence tutorial](../real-time-intelligence/tutorial-introduction.md) that has a module on using the Real-Time hub. |
+| Case study | Links to a [case study](https://www.microsoft.com/customers/story/1770346240728000716-elcome-microsoft-copilot-consumer-goods-en-united-arab-emirates). 
+
 ### All data streams
 The **All data streams** table on the Real-Time hub page shows you all the eventstreams and KQL tables you have access to. The following sections provide more detail on this table.
 
@@ -114,7 +126,7 @@ You can connect to these resources and create eventstreams that show up on **My 
 :::image type="content" source="./media/get-started-real-time-hub/microsoft-sources-menu.png" alt-text="Screenshot that shows the Microsoft sources page in Real-Time hub." lightbox="./media/get-started-real-time-hub/microsoft-sources-menu.png":::
 
 ## Fabric events page
-The **Fabric events page** shows you the list of system events generated in **Fabric** that you can access. You can **create eventstreams** for events from your Fabric workspaces. You can also set up an alert to send notifications via email, Teams etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Fabric workspace item events.
+The **Fabric events page** shows you the list of system events generated in **Fabric** that you can access. You can **create eventstreams** for events from your Fabric workspaces. You can also set up an alert to send notifications via email, Teams, etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Fabric workspace item events.
 
 - [Fabric Workspace Item](create-streams-fabric-workspace-item-events.md) 
 - [Explore Fabric events in Real-Time hub](explore-fabric-events.md).
@@ -123,7 +135,7 @@ The **Fabric events page** shows you the list of system events generated in **Fa
 :::image type="content" source="./media/get-started-real-time-hub/fabric-events-page.png" alt-text="Screenshot that shows the Fabric events page in Real-Time hub." lightbox="./media/get-started-real-time-hub/fabric-events-page.png":::
 
 ## Azure events page
-The **Azure events page** shows you the list of system events generated in **Azure** that you can access. You can **create eventstreams** for events from your Azure blob storage. You can also set up an alert to send notifications via email, Teams etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Azure Blob Storage events.
+The **Azure events page** shows you the list of system events generated in **Azure** that you can access. You can **create eventstreams** for events from your Azure blob storage. You can also set up an alert to send notifications via email, Teams, etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Azure Blob Storage events.
 
 See following articles to learn how to **setup alerts** on Fabric events:
 
