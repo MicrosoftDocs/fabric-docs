@@ -61,7 +61,7 @@ sections:
       - question: |
           How do I migrate my Power BI Premium content to Fabric?
         answer: |
-          To transfer your content to Fabric, you need to reassign your workspaces to a Fabric capacity. Workspaces can be assigned to a new capacity in the [admin portal](service-admin-premium-manage.md#assign-from-the-admin-portal) or the [workspace pane](/fabric/get-started/workspaces#license-mode). To accelerate the transfer process, admins can [reassign workspaces to a Fabric capacity in bulk](/power-bi/enterprise/service-admin-premium-manage#assign-from-the-admin-portal). 
+          To transfer your content to Fabric, you need to reassign your workspaces to a Fabric capacity. Workspaces can be assigned to a new capacity in the admin portal. 
 
       - question: |
           If I take no action, is my Power BI Premium capacity be automatically converted to a Fabric capacity?   
