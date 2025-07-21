@@ -109,7 +109,7 @@ This evaluation means that we run all the queries in the dataflow in a manner th
 
 ## Just in time publishing
 
-Dataflow Gen2 with CI/CD introduces an automated "just in time" publishing model to streamline your workflow. When you save a dataflow in the editor, your changes are immediately saved and published, making them available for the next refresh or execution. Using **Save and run** both publishs and refreshes the dataflow in a single step.
+Dataflow Gen2 with CI/CD introduces an automated "just in time" publishing model to streamline your workflow. When you save a dataflow in the editor, your changes are immediately saved and published, making them available for the next refresh or execution. Using **Save and run** both publishes and refreshes the dataflow in a single step.
 
 When you sync changes from Git or use deployment pipelines, the updated dataflow is saved in your workspace but not immediately published. Instead, the next time you trigger a refresh (either manually or on a schedule), the system automatically attempts to publish the latest saved version before running the refresh. If publishing fails (for example, due to validation errors), the system reports the error in refresh history.
 
