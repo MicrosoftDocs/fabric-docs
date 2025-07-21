@@ -37,13 +37,13 @@ For an example of application registration and service principal creation, see [
 
  1. Log in to your Azure DevOps organization
  2. Browse to **Organization settings -> User -> Add users**
- 3. Select to add the service principal  
- 4. Navigate to relevant Azure DevOps project settings -> Teams  
+ 3. Select to add the service principal 
+ 4. Navigate to relevant Azure DevOps project settings -> Teams 
  5. Add the service principal to relevant team
 
 
 ## Step 3: Create Azure DevOps source control connection
-Next, we create the Azure DevOps source control connection.  The following information is required to complete this step.
+Next, we create the Azure DevOps source control connection. The following information is required to complete this step.
 
 ### Obtain the tenant ID 
 To obtain the tenant ID, use the following steps.
@@ -75,8 +75,8 @@ To create the source control connection, use the following details and steps.
 |Display Name|The name of the source control connection. It should be unique.|
 |Azure DevOps URL|The url to your repository in Azure DevOps.|
 |Authentication method|The authentication method for the connection. Service Principal should be selected|
-|Tenant ID|The ID of the tenant where Azure DevOps is located.  See the [Obtain the tenant ID](#obtain-the-tenant-id) section.|
-|Service principal ID|The Application (client) Id from the app overview in the Azure portal.  See the [Obtain Service Principal ID](#obtain-the-service-principal-id) section.|
+|Tenant ID|The ID of the tenant where Azure DevOps is located. See the [Obtain the tenant ID](#obtain-the-tenant-id) section.|
+|Service principal ID|The Application (client) Id from the app overview in the Azure portal. See the [Obtain Service Principal ID](#obtain-the-service-principal-id) section.|
 |Service principal key|That's the secret obtained in step 1.|
 
 1. From a workspace, select **workspace settings**
@@ -107,7 +107,7 @@ In cases where your applications tenant is different than the home tenant of you
 |3 - Fabric and application in one tenant, DevOps in a seperate tenant|Accounts in any organizational directory - multi-tenant apps|Create SP in Azure DevOps tenant. See examples below.|
 |4 - Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multi-tenant apps|Create SP in Azure DevOps tenant. See examples below.|
 
-You can create the service principal in the Azure DevOps tenant using one of the examples below.  The following shows how to do this with Azure CLI and PowerShell.  Both examples assume that your application is in tenant A and Azure DevOps is in tenant B.
+You can create the service principal in the Azure DevOps tenant using one of the examples below. The following shows how to do this with Azure CLI and PowerShell. Both examples assume that your application is in tenant A and Azure DevOps is in tenant B.
 
 #### [Azure CLI](#tab/AzureCLI)
 
@@ -127,8 +127,8 @@ You can create the service principal in the Azure DevOps tenant using one of the
  New-MgServicePrincipal -AppId "00001111-aaaa-2222-bbbb-3333cccc4444" # Where -AppID is the client ID of the application in tenant A
  ```
 
-   
-   
+  
+  
 ---
 
 For more information, see [How and why applications are added to Microsoft Entra ID](/entra/identity-platform/how-applications-are-added) and [Tenancy in Microsoft Entra ID](/entra/identity-platform/single-and-multi-tenant-apps).
