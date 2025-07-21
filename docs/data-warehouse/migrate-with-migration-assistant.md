@@ -72,7 +72,7 @@ The AI-assisted migration features of the Migration Assistant to fix migration i
 
 1. Open the metadata migration summary in full screen view for better readability. Apply filters on object types to filter specific kind of objects.
 
-   :::image type="content" source="media/migrate-with-migration-assistant/show-migrated-objects-full-screen.png" alt-text="Screenshot of the full screen view of the Migration Assistant's metadata migration sumamary of migrated objects." lightbox="media/migrate-with-migration-assistant/show-migrated-objects-full-screen.png":::
+   :::image type="content" source="media/migrate-with-migration-assistant/show-migrated-objects-full-screen.png" alt-text="Screenshot of the full screen view of the Migration Assistant's metadata migration summary of migrated objects." lightbox="media/migrate-with-migration-assistant/show-migrated-objects-full-screen.png":::
 
 ### Fix problems using Migration Assistant
 
