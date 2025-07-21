@@ -29,8 +29,8 @@ Follow these steps to use the Semantic model refresh activity in your pipeline:
 ### Create the activity
 
 1. Start by creating a new pipeline in your workspace. 
-2. Before you add the Semantic model refresh activity, make sure you have a connection to your Power BI datasets.
-3. Find "Semantic model refresh" from the **Add pipeline activity** home screen card and select it, or pick it from the **Activities** bar to add it to the pipeline canvas.
+1. Before you add the Semantic model refresh activity, make sure you have a connection to your Power BI datasets.
+1. Find "Semantic model refresh" from the **Add pipeline activity** home screen card and select it, or pick it from the **Activities** bar to add it to the pipeline canvas.
 
    Creating the activity from the home screen card:
    
@@ -40,7 +40,7 @@ Follow these steps to use the Semantic model refresh activity in your pipeline:
 
    :::image type="content" source="media/semantic-model-refresh-activity/create-semantic-model-refresh-activity-from-activity-bar.png" alt-text="Screenshot showing how to add a new Semantic model refresh activity to a pipeline from the Activities bar.":::
 
-4. Select the new Semantic model refresh activity on the pipeline editor canvas if it isn't already selected.
+1. Select the new Semantic model refresh activity on the pipeline editor canvas if it isn't already selected.
 
    :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-refresh-activity-general-settings.png" lightbox="media/semantic-model-refresh-activity/semantic-model-refresh-activity-general-settings.png" alt-text="Screenshot showing the General settings for the Semantic model refresh activity.":::
 
@@ -48,19 +48,19 @@ Follow these steps to use the Semantic model refresh activity in your pipeline:
 
 ### Semantic model refresh activity settings
 
-5. Select the **Settings** tab in the activity properties pane.Use the **Connection** dropdown to pick an existing connection, or create and configure a new connection to Power BI.
+1. Select the **Settings** tab in the activity properties pane.Use the **Connection** dropdown to pick an existing connection, or create and configure a new connection to Power BI.
 
    :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-refresh-activity-settings.png" alt-text="Screenshot showing the Semantic model refresh activity's main settings page.":::
 
-6. When you select **+ New** to make a new connection, a dialogappears where you can enter the **Connection name** and your credentials for the **Authorization kind** you choose.
+1. When you select **+ New** to make a new connection, a dialog appears where you can enter the **Connection name** and your credentials for the **Authorization kind** you choose.
 
    :::image type="content" source="media/semantic-model-refresh-activity/create-new-connection-dialog.png" lightbox="media/semantic-model-refresh-activity/create-new-connection-dialog.png" alt-text="Screenshot showing the dialog to create a new connection to Power BI.":::
 
-7. After you create a connection, you'll see it in the dropdown menu. If it doesn't show up right away, click **Refresh**. Then, select your connection.
+1. After you create a connection, you'll see it in the dropdown menu. If it doesn't show up right away, select **Refresh**. Then, select your connection.
 
    :::image type="content" source="media/semantic-model-refresh-activity/select-connection.png" alt-text="Screenshot showing where to select the Power BI connection for the semantic model refresh.":::
 
-8. Select your **Workspace** and **Dataset** to finish setting up the activity. For more options, open the **Advanced** section.
+1. Select your **Workspace** and **Dataset** to finish setting up the activity. For more options, open the **Advanced** section.
 
    - In **Advanced**, you'll see **Wait on completion** turned *on* by default. This option lets the activity wait until the refresh finishes before moving on.
    - You can also set values for **Max parallelism** and **Retry Count**, and choose whether to commit the refresh all at once (**Transactional**) or in batches (**Partial Batch**).
