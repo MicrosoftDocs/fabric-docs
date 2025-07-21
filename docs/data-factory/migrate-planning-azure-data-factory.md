@@ -1,7 +1,7 @@
 ---
 title: Planning your migration from Azure Data Factory
 description: This article helps you plan your migration from Azure Data Factory to Fabric Data Factory.
-ms.reviewer: jonburchel
+ms.reviewer: jburchel
 ms.author: makromer
 author: kromerm
 ms.topic: conceptual

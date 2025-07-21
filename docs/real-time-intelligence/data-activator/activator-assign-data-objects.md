@@ -51,8 +51,7 @@ To assign an eventstream to multiple objects, for each object follow the procedu
 
 ## Related content
 
-* [Get data for [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] from eventstreams](activator-get-data-eventstreams.md)
-* [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
+* [Fabric Activator tutorial using sample data](activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
 

@@ -8,6 +8,7 @@ author: ssalgadodev
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
 ms.date: 11/15/2023
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 # Azure AI services in SynapseML with bring your own key

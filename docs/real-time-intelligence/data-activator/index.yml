@@ -21,16 +21,28 @@ landingContent:
           - text: What is Activator?
             url: activator-introduction.md
 
-  - title: Get Data
+  - title: Create alerts
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Get data from Power BI
-            url: activator-get-data-power-bi.md
-          - text: Get data from eventstreams
-            url: activator-get-data-eventstreams.md
-          - text: Get data from Real-Time Hub
-            url: activator-get-data-real-time-hub.md                    
+        - text: Create alerts from a Real-Time Dashboard
+          url: activator-get-data-real-time-dashboard.md
+        - text: Create alerts from a KQL Queryset
+          url: activator-alert-queryset.md
+        - text: Set alerts on eventstreams in Real-Time hub
+          url: ../../real-time-hub/set-alerts-data-streams.md?context=/fabric/context/context-rti&pivots=fabric
+        - text: Set alerts on Fabric workspace item events in Real-Time hub
+          url: ../../real-time-hub/set-alerts-fabric-workspace-item-events.md?context=/fabric/context/context-rti&pivots=fabric
+        - text: Set alerts on Fabric OneLake events in Real-Time hub
+          url: ../../real-time-hub/set-alerts-fabric-onelake-events.md?context=/fabric/context/context-rti&pivots=fabric
+        - text: Set alerts on Fabric Job events in Real-Time hub
+          url: ../../real-time-hub/set-alerts-fabric-job-events.md?context=/fabric/context/context-rti&pivots=fabric
+        - text: Set alerts on Azure Blob Storage events in Real-Time hub
+          url: ../../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
+        - text: Create alerts on Power BI reports
+          url: activator-get-data-power-bi.md
+        - text: Get data from eventstreams
+          url: ../event-streams/add-destination-activator.md
 
   - title: Create objects and triggers
     linkLists:

@@ -79,6 +79,16 @@
         "source_path_from_root": "/docs/data-science/how-to-create-ai-skill.md",
         "redirect_url": "/fabric/data-science/how-to-create-data-agent",
         "redirect_document_id": true
-      }
+      },
+      {
+        "source_path_from_root": "/docs/data-science/data-agent-scenario.md",
+        "redirect_url": "/fabric/data-science/data-agent-end-to-end-tutorial",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/how-to-consume-data-agent.md",
+        "redirect_url": "/fabric/data-science/data-agent-microsoft-copilot-studio",
+        "redirect_document_id": true
+      }      
     ]
 }

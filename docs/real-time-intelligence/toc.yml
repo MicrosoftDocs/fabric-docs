@@ -29,7 +29,9 @@ items:
     href: architecture-medallion.md
   - name: End to end sample
     href: sample-end-to-end.md
-  - name: End to end tutorial - Real-Time-Intelligence
+- name: Tutorials
+  items:
+  - name: End to end tutorial
     items:
     - name: End to end tutorial - Introduction
       href: tutorial-introduction.md
@@ -49,9 +51,9 @@ items:
       href: tutorial-7-set-alert.md
     - name: 8- Clean up resources
       href: tutorial-8-clean-up-resources.md
-  - name: Digital twin builder in Real-Time Intelligence tutorial
+  - name: Digital twin builder tutorial
     items: 
-      - name: Digital twin builder in Real-Time Intelligence tutorial - Introduction
+      - name: Digital twin builder tutorial - Introduction
         href: digital-twin-builder/tutorial-rti-0-introduction.md
       - name: 1- Upload contextual data
         href: digital-twin-builder/tutorial-rti-1-upload-contextual-data.md
@@ -231,7 +233,7 @@ items:
         href: event-streams/build-report-from-iot-hub.md
       - name: Explore and transform bike-sharing data for KQL database integration
         href: event-streams/transform-sample-data-and-route-to-kql.md
-    - name: Eventstream Query Lanaguage Reference
+    - name: Eventstream Query Language Reference
       items:
       - name: Built-in Functions
         items:
@@ -710,7 +712,7 @@ items:
   items:
   - name: Copilot for Writing KQL Queries
     displayName: KQL queryset, kusto query language, natural language
-    href: ../fundamentals/copilot-for-writing-queries.md
+    href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
   - name: KQL Queryset
     items:
     - name: Create a KQL queryset
@@ -760,6 +762,8 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
+    - name: Generate Real-Time Dashboard Using Copilot
+      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Create a Real-Time Dashboard
       href: dashboard-real-time-create.md
     - name: Real-Time Dashboard permissions
@@ -787,34 +791,16 @@ items:
   items:
   - name: What is Activator?
     href: data-activator/activator-introduction.md
-  - name: Create and activate an Activator rule
-    href: data-activator/activator-tutorial.md
-  - name: Get data for Activator
+  - name: Tutorials
+    items: 
+    - name: Create and activate an Activator rule
+      href: data-activator/activator-tutorial.md
+  - name: Concepts
     items:
-    - name: Get data from Power BI
-      href: data-activator/activator-get-data-power-bi.md
-    - name: Get data from Eventstreams
-      href: data-activator/activator-get-data-eventstreams.md
-    - name: Get data from Real-Time Hub
-      href: data-activator/activator-get-data-real-time-hub.md
-  - name: Create Activator objects and rules
-    items:
-    - name: Overview of Activator rules
+    - name: Activator rules
       href: data-activator/activator-rules-overview.md
-    - name: Create rules and activations
-      href: data-activator/activator-create-activators.md
-    - name: Assign data to Activator objects
-      href: data-activator/activator-assign-data-objects.md
-    - name: Trigger Fabric items
-      href: data-activator/activator-trigger-fabric-items.md
     - name: Detection conditions for Activator
       href: data-activator/activator-detection-conditions.md
-    - name: Create alerts from a Real-Time Dashboard
-      href: data-activator/activator-get-data-real-time-dashboard.md
-    - name: Create alerts from a KQL Queryset
-      href: data-activator/activator-alert-queryset.md
-    - name: Use custom actions to trigger Power Automate flows
-      href: data-activator/activator-trigger-power-automate-flows.md
     - name: Activator rule latency
       href: data-activator/activator-latency.md
     - name: Activator limitations
@@ -822,11 +808,47 @@ items:
     - name: Activator capacity usage
       href: data-activator/activator-capacity-usage.md
       displayName: capacity, usage, consumption, billing
-    - name: Troubleshoot errors
-      href: data-activator/activator-troubleshooting.md
     - name: Activator throttling
       href: data-activator/activator-throttling-effects.md
+    - name: Activator query frequency
+      href: data-activator/activator-query-frequency.md      
       displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
+  - name: Create alerts
+    items:
+    - name: Create alerts from a Real-Time Dashboard
+      href: data-activator/activator-get-data-real-time-dashboard.md
+    - name: Create alerts from a KQL Queryset
+      href: data-activator/activator-alert-queryset.md
+    - name: Set alerts on eventstreams in Real-Time hub
+      href: ../real-time-hub/set-alerts-data-streams.md?context=/fabric/context/context-rti&pivots=fabric
+    - name: Set alerts on workspace item events
+      href: ../real-time-hub/set-alerts-fabric-workspace-item-events.md?context=/fabric/context/context-rti&pivots=fabric
+    - name: Set alerts on OneLake events
+      href: ../real-time-hub/set-alerts-fabric-onelake-events.md?context=/fabric/context/context-rti&pivots=fabric
+    - name: Set alerts on Job events
+      href: ../real-time-hub/set-alerts-fabric-job-events.md?context=/fabric/context/context-rti&pivots=fabric
+    - name: Set alerts on Azure Blob Storage events
+      href: ../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
+    - name: Create alerts on Power BI reports
+      href: data-activator/activator-get-data-power-bi.md
+    - name: Get data from eventstreams
+      href: event-streams/add-destination-activator.md
+    - name: Create rules and activations
+      href: data-activator/activator-create-activators.md
+    - name: Assign data to Activator objects
+      href: data-activator/activator-assign-data-objects.md
+    - name: Trigger Fabric items
+      href: data-activator/activator-trigger-fabric-items.md
+    - name: Use custom actions to trigger Power Automate flows
+      href: data-activator/activator-trigger-power-automate-flows.md
+  - name: Troubleshoot errors
+    href: data-activator/activator-troubleshooting.md
+- name: Analyze data with Copilot
+  items:
+    - name: Copilot for Writing KQL Queries
+      href: ../fundamentals/copilot-for-writing-queries.md?context=/fabric/context/context-rti&pivots=fabric
+    - name: Generate Real-Time Dashboard Using Copilot
+      href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
 - name: Monitor
   items:
     - name: Eventhouse monitoring

@@ -4,7 +4,7 @@ description: Learn about the mirrored databases from Azure Database for PostgreS
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scoriani
-ms.date: 03/21/2025
+ms.date: 07/15/2025
 ms.topic: conceptual
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -45,9 +45,9 @@ In addition to the [SQL query editor](../../data-warehouse/sql-query-editor.md),
 
 ## Network requirements
 
-Currently, Mirroring doesn't support Azure Database for PostgreSQL flexible server behind an Azure Virtual Network or private networking. If you have your flexible server instance behind a private network, you can't enable Azure Database for PostgreSQL flexible server mirroring.
+<!-- Maintain similar content in docs\database\mirrored-database\azure-database-postgresql-tutorial.md and docs\database\mirrored-database\azure-database-postgresql-limitations.md -->
 
-You need to update your Azure Database for PostgreSQL flexible server firewall rules to [Allow public network access](/azure/postgresql/flexible-server/how-to-networking-servers-deployed-public-access-enable-public-access), and enable the [Allow Azure services](/azure/postgresql/flexible-server/concepts-networking-public#allow-all-azure-ip-addresses) option to connect to your Azure Database for PostgreSQL flexible server.
+If your Flexible Server is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for PostgreSQL flexible server via a private endpoint or is allowed by the firewall rule.
 
 ## Active transactions, workloads, and replicator engine behaviors
 

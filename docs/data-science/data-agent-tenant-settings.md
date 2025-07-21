@@ -9,8 +9,8 @@ ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "how-to".
 ms.date: 07/16/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
-
 ---
 
 # Configure Fabric data agent tenant setting

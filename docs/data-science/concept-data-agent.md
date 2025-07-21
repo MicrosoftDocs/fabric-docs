@@ -10,6 +10,7 @@ ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "conceptual".
 ms.date: 03/25/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Fabric data agent Concepts
 
@@ -101,5 +102,5 @@ The Fabric data agent is currently in public preview and it has limitations. Upd
 
 ## Related content
 
-- [Fabric data agent scenario](data-agent-scenario.md)
+- [Fabric data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
 - [Create a Fabric data agent](how-to-create-data-agent.md)

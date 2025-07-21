@@ -51,6 +51,10 @@ items:
       href: metrics-app-storage-page.md
     - name: Understand the metrics app timepoint page
       href: metrics-app-timepoint-page.md
+    - name: Understand the metrics app timepoint summary page (preview)
+      href: metrics-app-timepoint-summary-page.md
+    - name: Understand the metrics app timepoint item detail page (preview)
+      href: metrics-app-timepoint-item-detail-page.md
     - name: Understand the metrics app Autoscale compute for Spark page
       href: metrics-app-feature-autoscale-page.md
     - name: Understand Autoscale compute for Spark detail page
