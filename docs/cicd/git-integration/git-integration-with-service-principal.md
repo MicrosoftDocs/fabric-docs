@@ -52,7 +52,7 @@ To obtain the tenant ID, use the following steps.
 2. Navigate to Microsoft Entra ID (Azure Active Directory)
 3. Under the "Overview" section, you see your "Tenant ID" listed.
  
- :::image type="content" source="media/git-integration-with-service-principal/tenant-id-3.png" alt-text="Screenshot of tenant id in Azure portal." lightbox="media/git-integration-with-service-principal/tenant-id-3.png":::
+ :::image type="content" source="media/git-integration-with-service-principal/tenant-id-3.png" alt-text="Screenshot of tenant ID in Azure portal." lightbox="media/git-integration-with-service-principal/tenant-id-3.png":::
 
 For other ways to obtain the tenant ID, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
 
