@@ -57,6 +57,7 @@ Activator enables passing parameters in string, boolean, and number (float). Fol
 | `123,45` | 0 | No | Invalid in en-US (comma not decimal) |	
 | null or whitespace | 0 | No |  |	
 | any other string | 0 | No |  |	
+
 **Boolean**
 
 | Input Value | Result | Valid value? | Notes |
