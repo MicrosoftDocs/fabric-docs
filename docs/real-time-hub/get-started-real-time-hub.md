@@ -5,7 +5,7 @@ author: mystina
 ms.author: majia
 ms.topic: quickstart
 ms.custom:
-ms.date: 07/16/2025
+ms.date: 07/21/2025
 ---
 
 # Get started with Fabric Real-Time hub
@@ -24,8 +24,10 @@ On the **Real-Time hub** page, you see the **All data streams** section, where y
 
 The following sections provide details about the **All data streams** table, such as columns, filters, and other features available on the table. 
 
-### Columns
+### All data streams
+The **All data streams** table on the Real-Time hub page shows you all the eventstreams and KQL tables you have access to. The following sections provide more detail on this table.
 
+#### Columns
 The **All data streams** table has the following columns:
 
 | Column | Description |
@@ -37,7 +39,9 @@ The **All data streams** table has the following columns:
 | Endorsement | Endorsement status of the parent artifact. |
 | Sensitivity | Sensitivity status of the parent artifact. |
 
-### Filters
+:::image type="content" source="./media/get-started-real-time-hub/all-data-streams-section.png" alt-text="Screenshot that shows the All data streams section of the Real-Time hub page." lightbox="./media/get-started-real-time-hub/all-data-streams-section.png":::
+
+#### Filters
 
 The following filters are available at the top for you to narrow down easily to the desired stream:
 
@@ -51,11 +55,11 @@ The following filters are available at the top for you to narrow down easily to 
 > [!NOTE]
 > To see streams and tables from only your workspace, select **My workspace** for the **Workspace** filter. 
 
-### Search
+#### Search
 Using the **search** text window, you can search your streams/events by typing in the name of stream.
 
 
-### Actions
+#### Actions
 
 Here are the actions available on streams from eventstreams from the **All data streams** page. Move the mouse over the data stream, select **... (ellipsis)** to see the actions.
 
@@ -86,7 +90,7 @@ It allows for easy connectivity to external data streams including Kafka connect
 
 There are two ways you can get to the **Data sources** page:
 
-- By selecting **+ Add data** on the **Real-Time hub** pages.
+- By selecting **+ Add data** on the **Real-Time hub** page.
 
     :::image type="content" source="media/get-started-real-time-hub/connect-to-data-source-button.png" alt-text="Screenshot that shows the Connect to data source button." lightbox="./media/get-started-real-time-hub/connect-to-data-source-button.png":::
 - By selecting **+ Data sources** under **Connect to** category on the left navigation menu.
