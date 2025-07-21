@@ -38,7 +38,7 @@ Copilot in the Data Factory workload offers different capabilities depending on 
 
 **With Data pipelines, you can:**
 
-- **Pipeline Generation**: Using natural language, you can describe your desired pipeline, or upload an image with a data pipeline, and Copilot understands the intent and generates the necessary Data pipeline activities
+- **Pipeline Generation**: Using natural language, you can describe your desired pipeline, and Copilot understands the intent and generates the necessary Data pipeline activities
 - **Error message assistant**: Troubleshoot Data pipeline issues with clear error explanation capability and actionable troubleshooting guidance
 - **Summarize Pipeline**: Explain your complex pipeline with a summary of content and relations of activities within the Pipeline
 
