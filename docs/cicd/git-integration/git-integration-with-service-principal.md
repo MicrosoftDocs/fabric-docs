@@ -24,7 +24,7 @@ To register an application with your Microsoft Entra tenant and use it to integr
 
 Register your application with Microsoft Entra ID, and create a secret by following the directions in [Register your app](/power-bi/developer/embedded/register-app#register-your-app). Confirm that your organization's policies allow the creation of client secrets and their use for token acquisition. Be sure to save the secret, it is required in a later step. 
 
-If your application resides in a tenant that isn't the same as the home for your Azure DevOps instance, see [Multi-tenant considerations](#multi-tenant-considerations-for-service-principal-creation).
+If your application resides in a tenant that isn't the same as the home for your Azure DevOps instance, see [Multitenant considerations](#multitenant-considerations-for-service-principal-creation).
 
  >[!NOTE]
 >Be sure to save the secret. It's used in the later steps.
