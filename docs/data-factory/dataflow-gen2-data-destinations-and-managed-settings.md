@@ -111,7 +111,7 @@ Most destinations support both append and replace as update methods. However, Fa
 
 ### Schema options on publish
 
-Schema options on publish only apply when the update method is replace. When you append data, changes to the schema aren't possible.
+Schema options on publish only apply when the update method is **replace**. When you append data, changes to the schema aren't possible.
 
 * **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination wizard when you make any changes to your query. When a refresh detects a discrepancy between the destination schema and the expected schema, the table is dropped and then recreated to align with the expected schema. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 
@@ -203,10 +203,15 @@ To vacuum your Delta tables in Lakehouse, follow these steps:
 
 * **Retention period**: Set a retention interval of at least seven days to ensure that old snapshots and uncommitted files aren't prematurely removed, which could disrupt concurrent table readers and writers.
 * **Regular maintenance**: Schedule regular vacuuming as part of your data maintenance routine to keep your Delta tables optimized and ready for analytics.
+* **Incremental refreshes**: If you're using incremental refreshes, ensure that vacuuming is turned off as it can interfere with the incremental refresh process. 
 
 By incorporating vacuuming into your data maintenance strategy, you can ensure that your Lakehouse destination remains efficient, cost-effective, and reliable for your dataflow operations.
 
 For more detailed information on table maintenance in Lakehouse, refer to the [Delta table maintenance documentation](/fabric/data-engineering/lakehouse-table-maintenance).
+
+### Lakehouse MDSync
+
+When using Lakehouse as a data destination, we automatically perform a metadata sync operation when finished writing data to the Lakehouse. This operation ensures that the metadata of the Delta table is up-to-date and reflects the latest changes made during the dataflow refresh. This sync operation is crucial for maintaining the integrity and consistency of the data in the Lakehouse, especially when multiple dataflows or processes are writing and reading from the same Delta table. This operation is performed in the background and is typically quick, allowing for seamless data updates without significant delays. The metadata sync operation is part of the overall dataflow refresh process.
 
 ### Nullable
 
