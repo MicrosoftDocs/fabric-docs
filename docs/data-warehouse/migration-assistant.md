@@ -3,7 +3,7 @@ title: Migration Assistant for Fabric Data Warehouse
 description: This article explains the Migration Assistant experience for Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: anphil
+ms.reviewer: anphil, prlangad
 ms.date: 06/23/2025
 ms.topic: concept-article
 ms.search.form: Migration Assistant
