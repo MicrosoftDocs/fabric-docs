@@ -142,5 +142,5 @@ If you already have any type of dataflow (Gen1, Gen2, or Gen2 CI/CD), Data Facto
 Ready to learn more? Check out these helpful resources:
 
 - [Monitor your dataflows](dataflows-gen2-monitor.md) - Track refresh history and performance
-- [Save drafts as you work](dataflows-gen2-save-draft.md) - Learn about the auto-save feature
+- [Save drafts as you work](dataflows-gen2-save-draft.md) - Learn about the autosave feature
 - [Migrate from Gen1 to Gen2](move-dataflow-gen1-to-dataflow-gen2.md) - Step-by-step migration guide
