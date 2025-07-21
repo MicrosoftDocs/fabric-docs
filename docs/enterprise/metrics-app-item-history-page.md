@@ -1,5 +1,5 @@
 ---
-title: Understand the metrics app item history page
+title: Understand the metrics app item history page (preview)
 description: Learn how to read the Microsoft Fabric Capacity metrics app's item history page.
 author: JulCsc
 ms.author: juliacawthra
@@ -11,7 +11,9 @@ no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Understand the metrics app item history page
+# Understand the metrics app item history page (preview)
+
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 This page provides compute usage analysis through slicers and dynamic visuals for last 30 days. It presents high-level consumption trends alongside detailed item-level metrics, enabling users to explore and monitor operational and billing data effectively.
 
