@@ -111,7 +111,7 @@ Most destinations support both append and replace as update methods. However, Fa
 
 ### Schema options on publish
 
-Schema options on publish only apply when the update method is replace. When you append data, changes to the schema aren't possible.
+Schema options on publish only apply when the update method is **replace**. When you append data, changes to the schema aren't possible.
 
 * **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination wizard when you make any changes to your query. When a refresh detects a discrepancy between the destination schema and the expected schema, the table is dropped and then recreated to align with the expected schema. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 

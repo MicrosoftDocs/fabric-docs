@@ -52,11 +52,11 @@ In this scenario, you notice that data movement between your data source and the
 
 In this case, consider evaluating the data movement path and optimizing it for better performance. One approach is to use Fast Copy for high-throughput data transfer, which can significantly reduce runtime. Fast Copy is designed to handle large volumes of data efficiently, minimizing the overhead associated with traditional data transfer methods. However, be cautious: if you add transformations in the same query as a Fast Copy operation, it can disable Fast Copy if the transformations don't fold to the source system. In such cases, consider separating the query into two steps: one for the Fast Copy operation and another for the transformations using the staging Lakehouse or Warehouse compute. This approach allows you to take advantage of Fast Copy for high-throughput data movement while performing the necessary transformations in a separate step. Learn more about [Fast Copy](./dataflows-gen2-fast-copy.md).
 
-:::image type="content" source="media/dataflow-gen2-performance-best-practices/settings-fastcopy.png" alt-text="Screenshot of the Options dialog showing the location to enable Fast Copy in Dataflow Gen2.":::
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/settings-fast-copy.png" alt-text="Screenshot of the Options dialog showing the location to enable Fast Copy in Dataflow Gen2.":::
 
 You can enable Fast Copy in the dataflow settings. This setting is by default enabled, but you can also require Fast Copy to be used in your dataflow. This setting ensures that Fast Copy is used for the selected query and that it's optimized for performance. If the Fast Copy can't be used, the dataflow fails if you require Fast Copy. If you don't require Fast Copy, the dataflow still runs, but it doesn't take advantage of the performance benefits of Fast Copy and falls back to the default data movement method.
 
-:::image type="content" source="media/dataflow-gen2-performance-best-practices/require-fastcopy.png" alt-text="Screenshot showing the location of the Require Fast Copy option for Dataflow Gen2.":::
+:::image type="content" source="media/dataflow-gen2-performance-best-practices/require-fast-copy.png" alt-text="Screenshot showing the location of the Require Fast Copy option for Dataflow Gen2.":::
 
 ### Consideration 2: Improve execution time for complex transformations using staging
 
@@ -86,7 +86,7 @@ If you now look at the folding indicators in the dataflow editor, the transforma
 
 To learn more about how to optimize your dataflow transformations and ensure that they are being pushed down to the source system, go to [Query folding](/power-query/query-folding-basics).
 
-### Consideration 3: The impact on staging on datamovement when using Lakehouse as a destination
+### Consideration 3: The impact on staging on data movement when using Lakehouse as a destination
 
 In this scenario, you're using a Lakehouse destination for your dataflow, and you have enabled staging to perform transformations before writing the final output. However, you notice that the overall refresh time is longer than expected, and you want to optimize the performance of this process.
 

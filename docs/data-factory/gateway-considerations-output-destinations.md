@@ -1,5 +1,5 @@
 ---
-title: On-premise and VNET data gateway considerations for data destinations in Dataflow Gen2
+title: On-premises and VNET data gateway considerations for data destinations in Dataflow Gen2
 description: Describes multiple considerations and limitations when using a data gateway and the data destination feature inside of Dataflow Gen2
 author: luitwieler
 ms.author: jeluitwi
@@ -8,7 +8,7 @@ ms.custom: dataflows, sfi-image-nochange
 ms.date: 06/05/2025
 ---
 
-# On-premise and VNET data gateway considerations for data destinations in Dataflow Gen2
+# On-premises and VNET data gateway considerations for data destinations in Dataflow Gen2
 
 This article lists the limitations and considerations when using the Data Gateway with data destinations scenarios in Dataflow Gen2.
 
