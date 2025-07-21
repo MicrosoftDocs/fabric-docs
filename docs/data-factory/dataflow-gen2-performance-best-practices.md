@@ -19,12 +19,12 @@ In this article, you'll discover:
 
 - **Key performance optimization areas**: Understanding the three critical components (data source, dataflow engine, and data destination) that impact your dataflow performance
 - **Core optimization techniques**: How to leverage Fast Copy, query folding, and staging to maximize efficiency
-- **Real-world scenarios**: Nine common performance challenges and their specific solutions
+- **Real-world scenarios**: Common performance challenges and their specific solutions
 - **Best practices**: Actionable guidance for different data integration patterns and use cases
 
 ## What are the key areas to focus on for performance optimization?
 
-Within the dataflow end to end experience, there are several key areas to focus on for performance optimization. These areas include the data source, the dataflow engine, and the data destination. Each of these components and the paths in between play a crucial role in the overall performance of your dataflow, and optimizing them can lead to significant improvements in execution time and resource utilization.
+Within the dataflow end to end experience, there are several key areas to focus on for performance optimization. These areas include the data movement, the dataflow engine, and the data transformations. Each of these components and the paths in between play a crucial role in the overall performance of your dataflow, and optimizing them can lead to significant improvements in execution time and resource utilization.
 
 :::image type="content" source="media/dataflow-gen2-performance-best-practices/dataflow-backend-overview.png" alt-text="Diagram of the Dataflow Gen2 backend overview.":::
 
@@ -140,3 +140,7 @@ In this case, consider splitting your dataflow into two separate dataflows: one 
 In this scenario, you're using dataflow connectors to consume data from your dataflow, and you want to optimize your data integration processes. Dataflow connectors can provide a convenient way to access and consume data.
 
 In this case, consider using data destinations instead of dataflow connectors for consuming data from your dataflow. Data destinations, such as Lakehouses and Warehouses, are designed to efficiently store and serve data, allowing you to apply their capabilities for downstream consumption. A major benefit of using data destinations is that they often serve more generic ways of connecting to data, such as the SQL endpoint or use the Direct Lake capabilities, which can significantly improve performance and reduce resource consumption.
+
+## Conclusion
+
+By following these best practices and considering the specific characteristics of your data and transformations, you can optimize the performance of Dataflow Gen2 in Fabric Data Factory. Whether you're working with large datasets, complex transformations, or specific data integration patterns, these guidelines provide actionable insights to enhance the efficiency and speed of your data integration processes. Remember that performance optimization is an ongoing process, and you may need to adjust your approach based on the evolving needs of your data integration workflows. By continuously monitoring and optimizing your dataflows, you can ensure that they remain efficient and responsive to your business requirements.
