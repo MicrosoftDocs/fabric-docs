@@ -6,7 +6,7 @@ ms.author: ssalgado
 author: ssalgadodev
 ms.reviewer: midesa
 reviewer: midesa
-ms.date: 03/18/2024
+ms.date: 07/21/2025
 ---
 
 # Hyperparameter tuning (preview)
