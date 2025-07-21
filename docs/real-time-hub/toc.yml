@@ -134,7 +134,7 @@ items:
 - name: Register and use schemas in event-driven applications
   items:
   - name: What is Schema Registry?
-    href: schema-registry-overview.md
+    href: ../real-time-intelligence/schema-sets/schema-registry-overview.md?context=/fabric/context/context-rti&pivots=fabric
   - name: Add an event schema
     href: add-event-schema.md
   - name: Use schemas in eventstreams

@@ -712,7 +712,9 @@ items:
         href: /rest/api/fabric/digitaltwinbuilderflow/items
   - name: Event schema sets
     items:
-    - name: What's a schema set? 
+    - name: Schema Registry in Real-Time hub
+      href: ../../real-time-hub/schema-registry-overview.md?context=/fabric/context/context-rti&pivots=fabric
+    - name: Schem sets overview
       href: schema-sets/schema-sets-overview.md
     - name: Create and manage event schema sets
       href: schema-sets/create-manage-event-schema-sets.md
