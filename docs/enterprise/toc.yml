@@ -59,6 +59,8 @@ items:
       href: metrics-app-feature-autoscale-page.md
     - name: Understand Autoscale compute for Spark detail page
       href: metrics-app-feature-autoscale-detail-page.md
+    - name: Understand the metrics app Item history page
+      href: metrics-app-item-history-page.md
     - name: Plan your capacity size
       href: plan-capacity.md    
     - name: Monitor a paused capacity
