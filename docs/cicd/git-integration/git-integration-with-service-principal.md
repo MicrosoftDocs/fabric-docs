@@ -11,7 +11,7 @@ ms.date: 05/11/2025
 
 # Azure DevOps - Git Integration with service principal (preview)
 
-This article provides a step-by-step guide on how to set up a service principal for integrating Microsoft Fabric with Azure DevOps. This will allow the Fabric user to perform git operation using a service principal. To automate Git Integration by using APIs with a service principal see [Automate Git integration by using APIs](git-automation.md)
+This article provides a step-by-step guide on how to set up a service principal for integrating Microsoft Fabric with Azure DevOps. This integration allows the Fabric user to perform git operation using a service principal. To automate Git Integration by using APIs with a service principal see [Automate Git integration by using APIs](git-automation.md)
 
 ## Prerequisites
 
@@ -22,12 +22,12 @@ To register an application with your Microsoft Entra tenant and use it to integr
 
 ## Step 1: Register an application with Microsoft Entra ID
 
-Register your application with Microsoft Entra ID, and create a secret by following the directions in [Register your app](/power-bi/developer/embedded/register-app#register-your-app). Confirm that your organization's policies allow the creation of client secrets and their use for token acquisition. Be sure to save the secret, as it will be required in a later step. 
+Register your application with Microsoft Entra ID, and create a secret by following the directions in [Register your app](/power-bi/developer/embedded/register-app#register-your-app). Confirm that your organization's policies allow the creation of client secrets and their use for token acquisition. Be sure to save the secret, it is required in a later step. 
 
-If your application resides in a tenant that is not the same as the home for your Azure DevOps instance, see [Multi-tenant considerations](#multi-tenant-considerations-for-service-principal-creation) below.
+If your application resides in a tenant that isn't the same as the home for your Azure DevOps instance, see [Multi-tenant considerations](#multi-tenant-considerations-for-service-principal-creation).
 
  >[!NOTE]
->Be sure to save the secret. It will be used in the later steps.
+>Be sure to save the secret. It is used in the later steps.
 
 For more information, see [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals) and [Security best practices for application properties in Microsoft Entra ID](/entra/identity-platform/security-best-practices-for-app-registration).
 
@@ -43,18 +43,18 @@ For an example of application registration and service principal creation, see [
 
 
 ## Step 3: Create Azure DevOps source control connection
-Next, we'll create the Azure DevOps source control connection.  The following information is required to complete this step.
+Next, we create the Azure DevOps source control connection.  The following information is required to complete this step.
 
 ### Obtain the tenant ID 
 To obtain the tenant ID, use the following steps.
 
 1. Go to the [Azure portal](https://portal.azure.com) and sign in with your credentials. 
 2. Navigate to Microsoft Entra ID (Azure Active Directory)
-3. Under the "Overview" section, you'll see your "Tenant ID" listed.
+3. Under the "Overview" section, you see your "Tenant ID" listed.
  
  :::image type="content" source="media/git-integration-with-service-principal/tenant-id-3.png" alt-text="Screenshot of tenant id in Azure portal." lightbox="media/git-integration-with-service-principal/tenant-id-3.png":::
 
-For additional ways to obtain the tenant ID, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
+For other ways to obtain the tenant ID, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
 
 ### Obtain the Service Principal ID
 To obtain the Service principal ID, use the following steps.
@@ -94,7 +94,7 @@ To create the source control connection, use the following details and steps.
 
 
 ## Multi-tenant considerations for service principal creation
-To access resources that are secured by a Microsoft Entra tenant, your application must be represented by a security principal. When you create your application, the service principal is autocreated on the tenant which the application resides.
+To access resources secured by a Microsoft Entra tenant, your application must have a security principal. When you create your application, the service principal is autocreated on the tenant where the application resides.
 
 In cases where your applications tenant is different than the home tenant of your Azure DevOps instance, you'll need to create the service principal, in the Azure DevOps tenant. Consider the following scenarios when registering your app in step 1 and see the examples below on how to do this using either Azure CLI or PowerShell.
 
@@ -104,7 +104,7 @@ In cases where your applications tenant is different than the home tenant of you
 |-----|-----|
 |1 - Fabric, DevOps, application all in same tenant|Accounts in this organizational directory only - single tenant apps|No additional requirements|
 |2 - DevOps and application in same tenant|Accounts in this organizational directory only - single tenant apps|No additional requirements|
-|3 - Fabric and application in one tenant, DevOps in seperate tenant|Accounts in any organizational directory - multi-tenant apps|Create SP in Azure DevOps tenant. See examples below.|
+|3 - Fabric and application in one tenant, DevOps in a seperate tenant|Accounts in any organizational directory - multi-tenant apps|Create SP in Azure DevOps tenant. See examples below.|
 |4 - Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multi-tenant apps|Create SP in Azure DevOps tenant. See examples below.|
 
 You can create the service principal in the Azure DevOps tenant using one of the examples below.  The following shows how to do this with Azure CLI and PowerShell.  Both examples assume that your application is in tenant A and Azure DevOps is in tenant B.
@@ -136,7 +136,7 @@ For more information, see [How and why applications are added to Microsoft Entra
 ## Appendix: Edit service principal connection details
 When you need to update your service principal details, for example, update service principal key, use the following instructions:
 )
-1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Locate the cloud connection that you previously created in the steps above.
+1. In [Fabric settings](../../fundamentals/fabric-settings.md), navigate to **Manage Connections and Gateways**. Locate the cloud connection that you previously created.
 2. Edit the connection with the updated settings.
 
  :::image type="content" source="media/git-integration-with-service-principal/edit-connection-1.png" alt-text="Screenshot of editing the connection details." lightbox="media/git-integration-with-service-principal/edit-connection-1.png":::
