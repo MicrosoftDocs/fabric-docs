@@ -3,26 +3,26 @@ title: Cross-Tenant Access (CTA) for Providers
 description: What is cross-tenant access for providers?
 author: meenalsri
 ms.author: mesrivas
-ms.reviewer: prlangad, wiassaf
+ms.reviewer: juliacawthra, prlangad, wiassaf
 ms.topic: article
-ms.date: 07/15/2025
+ms.date: 07/21/2025
 ---
 
 # What is cross-tenant access for providers?
 
-The cross-tenant access feature allows provider tenants to share data stored in their Fabric data warehouses and SQL analytics endpoints with guest tenants. This feature is useful for organizations that need to share data with guest tenants. For example, when company A stores Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant. This article is aimed at providers who want to set up cross-tenant access.
+The cross-tenant access feature allows provider tenants to share data stored in their Fabric warehouse items and SQL analytics endpoints with guest tenants. This feature is useful for organizations that need to share data with guest tenants. For example, when company A stores Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant. This article is aimed at providers who want to set up cross-tenant access.
 
 > [!IMPORTANT]
-> * Cross-tenant access for Fabric Data Warehouses is in a limited preview for providers. To register as a provider of cross tenant data, fill out the [Cross-tenant access in Fabric DW Limited Preview Form](https://forms.office.com/r/ipHQwXudXk).
+> * Cross-tenant access for Fabric Data Warehouse is in a limited preview for providers. To register as a provider of cross tenant data, fill out the [Cross-tenant access in Fabric DW Limited Preview Form](https://forms.office.com/r/ipHQwXudXk).
 > * To use cross tenant access as a guest, you need to follow the steps listed in [Cross-tenant access for guests](cross-tenant-access.md) and work with a trusted provider.
 
 ## How it works
 
-Cross tenant access allows guest tenants to access data stored in a provider's data warehouse and SQL analytics endpoint. When the provider enables principals from the guest tenant to use this feature, Fabric creates corresponding service principals for each guest in the provider's tenant. The provider then grants permission’s on the warehouse to these service principals. Guests with permissions can access data warehouse endpoints using their own Entra ID identity credentials with tools such as SQL Server Management Studio (SSMS). To do that, guests authenticate with their home organization and are authorized to access data warehouse endpoints.
+Cross tenant access allows guest tenants to access data stored in a provider's warehouse item and SQL analytics endpoint. When the provider enables principals from the guest tenant to use this feature, Fabric creates corresponding service principals for each guest in the provider's tenant. The provider then grants permission’s on the warehouse to these service principals. Guests with permissions can access [warehouse TDS endpoints](../data-warehouse/connectivity.md) using their own Entra ID identity credentials with tools such as SQL Server Management Studio (SSMS). To do that, guests authenticate with their home organization and are authorized to access a warehouse.
 
-Unlike B2B, use of cross-tenant access in Fabric data warehouses doesn't grant guests access to the providers directory. Providers don't need to manage individual guest users, when providers configure a group for cross-tenant access, the group membership is managed by the guest tenant.  
+Unlike B2B, use of cross-tenant access in Fabric warehouse items doesn't grant guests access to the providers directory. Providers don't need to manage individual guest users, when providers configure a group for cross-tenant access, the group membership is managed by the guest tenant.  
 
-Unlike the external data sharing feature in Fabric, which allows providers to share OneLake data in-place with another Fabric tenant, this feature allows providers to share data warehouses with guests that don't have Fabric.
+Unlike the external data sharing feature in Fabric, which allows providers to share OneLake data in-place with another Fabric tenant, this feature allows providers to share warehouse items with guests that don't have Fabric.
 
 ## Responsibilities of the provider
 
@@ -32,7 +32,7 @@ Unlike the external data sharing feature in Fabric, which allows providers to sh
 
 1. When you enable guest principals for cross-tenant access, Fabric creates corresponding service principals for each guest in the provider's tenant, and groups for each guest group. The provider must grant a workspace role or permissions on the warehouse to these service principals.
 
-1. Guest principals will access the cross-tenant data warehouse by using a TDS endpoint and will need a connection string to the data warehouse. The provider must provide this connection string to the guests. The connection string for cross-tenant access differs from the connection string used for access within a tenant.
+1. Guest principals will access the cross-tenant warehouse item by using a TDS endpoint and will need a connection string to the warehouse. The provider must provide this connection string to the guests. The connection string for cross-tenant access differs from the connection string used for access within a tenant.
 
 ## Configure the guest principals for cross-tenant access
 
@@ -159,7 +159,7 @@ When this API is called, the groups and service principals created for guest pri
 
 ## Grant workspace role or permission’s to service principals
 
-Permitted users from the provider tenant can grant a workspace role to the groups or service principals created to represent the guest principals by using the Add workspace role assignment REST API or Fabric UI. They can also share the data warehouse with groups and service principals.
+Permitted users from the provider tenant can grant a workspace role to the groups or service principals created to represent the guest principals by using the Add workspace role assignment REST API or Fabric UI. They can also share the warehouse item with groups and service principals.
 
 ## Get SQL connection string that can be used by guest principals
 
@@ -213,11 +213,11 @@ Permitted users from the provider tenant can call this API to get the SQL connec
 
 ## Responsibilities of the guest
 
- - Ensure you trust the provider before consenting to use the cross-tenant access feature of Fabric data warehouses with the provider. Guest tenants must follow the steps listed in [cross-tenant access for guests](cross-tenant-access.md) article.
+ - Ensure you trust the provider before consenting to use the cross-tenant access feature of Fabric Data Warehouse with the provider. Guest tenants must follow the steps listed in [cross-tenant access for guests](cross-tenant-access.md) article.
 
  - The guest tenant is responsible for creating and managing Microsoft Entra groups that are configured for cross-tenant access.
 
- - The guest tenant is responsible for managing conditional access or MFA policies for their users. These policies are applied when then guest users attempt to access cross-tenant data warehouses.
+ - The guest tenant is responsible for managing conditional access or MFA policies for their users. These policies are applied when then guest users attempt to access cross-tenant warehouse items.
 
 ## Restrictions and considerations
 
@@ -230,9 +230,9 @@ Permitted users from the provider tenant can call this API to get the SQL connec
 
  - The guest tenant is responsible for creating and managing Microsoft Entra groups that are configured for cross-tenant access.
 
- - Fabric performs group expansion for the guest groups that were configured for cross-tenant access every hour. This means that if a user is added to a group in the guest tenant and the group is already configured for cross-tenant access, it may take up to 1 hour for this user to be able to access the cross-tenant data warehouse.
+ - Fabric performs group expansion for the guest groups that were configured for cross-tenant access every hour. This means that if a user is added to a group in the guest tenant and the group is already configured for cross-tenant access, it may take up to 1 hour for this user to be able to access the cross-tenant warehouse item.
 
- - If a guest derives their permissions via membership of a group, it may take up to 1 hour for permission changes to be reflected on the data warehouse. If users are directly granted permissions (that is, not through a group), the permission changes on the data warehouse are reflected immediately.
+ - If a guest derives their permissions via membership of a group, it may take up to 1 hour for permission changes to be reflected on the warehouse. If users are directly granted permissions (that is, not through a group), the permission changes on the warehouse item are reflected immediately.
 
  - Resource limits and recycling of SPNs - The service-principals and groups created for cross-tenant users impact resource limits in the provider tenant. Refer to Microsoft Entra ID limits for more details. Fabric allows you to create up to 100,000 service principals for cross tenant access, but it's possible that your resource limits are exhausted before this. If a guest doesn't log in to a warehouse over a period of five days, we remove the service principal associated with this guest principal to control resource limits.
 
@@ -240,7 +240,7 @@ Permitted users from the provider tenant can call this API to get the SQL connec
 
  - When a guest tenant revokes consent, guests lose access to warehouses in the provider tenant within a day. However, existing sessions are unaffected.
 
- - In certain circumstances, guest principals may not be able to access cross-tenant data warehouses for several hours after the guest principal is configured for cross-tenant access.
+ - In certain circumstances, guest principals may not be able to access cross-tenant warehouse items for several hours after the guest principal is configured for cross-tenant access.
 
  - If cross-tenant mapping exceeds a 113 character limit, authentication to the warehouse does not succeed. This is due to [Self-service password reset policies in Microsoft Entra ID](/entra/identity/authentication/concept-sspr-policy#password-policies-that-only-apply-to-cloud-user-accounts).
 
