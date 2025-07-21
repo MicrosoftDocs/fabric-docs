@@ -48,7 +48,7 @@ Follow these steps to use the Semantic model refresh activity in your pipeline:
 
 ### Semantic model refresh activity settings
 
-1. Select the **Settings** tab in the activity properties pane.Use the **Connection** dropdown to pick an existing connection, or create and configure a new connection to Power BI.
+1. Select the **Settings** tab in the activity properties pane. Use the **Connection** dropdown to pick an existing connection, or create and configure a new connection to Power BI.
 
    :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-refresh-activity-settings.png" alt-text="Screenshot showing the Semantic model refresh activity's main settings page.":::
 
