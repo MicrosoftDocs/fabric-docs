@@ -45,7 +45,7 @@ If you're experiencing mirroring problems, perform the following database level 
 
     The key columns to look for here are the `table_name` and `state`. Any value besides `4` indicates a potential problem. (Tables shouldn't sit for too long in statuses other than `4`)
 
-1. If replication is still not working, verify that the correct SAMI object has permissions (see [SPN permissions](#spn-permissions)).
+1. If replication is still not working, verify that the correct SAMI object has permissions (see [SAMI permissions](#sami-permissions)).
     1. In the Fabric portal, select the "..." ellipses option on the mirrored database item.
     1. Select the **Manage Permissions** option.
     1. Confirm that the Azure SQL Managed Instance name shows with Read, Write permissions.
@@ -65,15 +65,15 @@ User Assigned Managed Identity (UAMI) isn't supported. If you add a UAMI, it bec
 
 - Remove all UAMIs. Verify that the SAMI is enabled.
 
-## SPN permissions
+## SAMI permissions
 
-Don't remove Azure SQL Managed Instance service principal name (SPN) contributor permissions on Fabric mirrored database item.
+The System Assigned Managed Identity (SAMI) of the Azure SQL Managed Instance needs to have **Read** and **Write** permissions on the mirrored database item in Microsoft Fabric. When you create the mirrored database from the Fabric portal, the permission is granted automatically. If you encounter error `Unable to grant required permission to the source server. User does not have permission to reshare` during the setup, ensure you have a member or admin role in the workspace with sufficient privilege. When you [use API](mirrored-database-rest-api.md) to create the mirrored database, make sure you grant the permission explicitly.
 
-If you accidentally remove the SPN permission, mirroring Azure SQL Managed Instance won't function as expected. No new data can be mirrored from the source database.
+Don't remove SAMI **Read** and **Write** permissions on Fabric mirrored database item. If you accidentally remove the permissions, mirroring Azure SQL Managed Instance won't function as expected. No new data can be mirrored from the source database.
 
-If you remove Azure SQL Managed Instance SPN permissions or permissions aren't set up correctly, use the following steps.
+If you remove Azure SQL Managed Instance SAMI permissions or permissions aren't set up correctly, use the following steps.
 
-1. Add the SPN as a user by selecting the `...` ellipses option on the mirrored managed instance item.
+1. Add the SAMI as a user by selecting the `...` ellipses option on the mirrored managed instance item.
 1. Select the **Manage Permissions** option.
 1. Enter the Azure SQL Managed Instance public endpoint. Provide **Read** and **Write** permissions.
 

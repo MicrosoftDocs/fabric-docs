@@ -8,6 +8,7 @@ reviewer: amhjf
 ms.topic: how-to
 ms.custom:
 ms.date: 04/24/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 

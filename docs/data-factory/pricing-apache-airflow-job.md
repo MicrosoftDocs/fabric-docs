@@ -53,8 +53,6 @@ The following table can be utilized as a template to compute estimated costs usi
 
 **Total Apache Airflow job cost** = (Base + Extra CU-hour) * (Fabric capacity per unit price)
 
-
-
 ## Related content
 
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)

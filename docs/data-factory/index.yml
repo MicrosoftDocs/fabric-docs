@@ -51,7 +51,7 @@ landingContent:
           url: pipeline-support.md
 
   # Card
-  - title: Connect on-premises to the cloud
+  - title: Connect on-premises from the cloud
     linkLists:
       - linkListType: how-to-guide
         links:

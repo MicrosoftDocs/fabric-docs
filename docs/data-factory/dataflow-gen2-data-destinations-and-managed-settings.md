@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 05/09/2025
+ms.date: 07/13/2025
 ms.custom: dataflows
 ---
 
@@ -53,7 +53,7 @@ When you choose a file-based destination like SharePoint, you need to specify a 
 
 * File name: The name of the file that will be created in the destination. By default, the file name is the same as your query name.
 * File format: The format of the file that will be created in the destination.
-* File origin: The encoding that will be used to create the file in the destination. By default, the file origin is set to **UTF-8**.
+* File origin: The encoding that's used to create the file in the destination. By default, the file origin is set to **UTF-8**.
 * File delimiter: The delimiter that will be used to create the file in the destination. By default, the file delimiter is set to **Comma**.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/file-destinations-settings.png" alt-text="Screenshot of the File destination settings window with the file name, file format, file origin, and file delimiter settings displayed.":::
@@ -111,7 +111,7 @@ Most destinations support both append and replace as update methods. However, Fa
 
 ### Schema options on publish
 
-Schema options on publish only apply when the update method is replace. When you append data, changes to the schema aren't possible.
+Schema options on publish only apply when the update method is **replace**. When you append data, changes to the schema aren't possible.
 
 * **Dynamic schema**: When choosing dynamic schema, you allow for schema changes in the data destination when you republish the dataflow. Because you aren't using managed mapping, you still need to update the column mapping in the dataflow destination wizard when you make any changes to your query. When a refresh detects a discrepancy between the destination schema and the expected schema, the table is dropped and then recreated to align with the expected schema. Your dataflow refresh might cause the removal of relationships or measures that were added previously to your table.
 
@@ -121,6 +121,17 @@ Schema options on publish only apply when the update method is replace. When you
 > When loading data into the warehouse, only fixed schema is supported.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/fixed-schema.png" alt-text="Screenshot of the Schema options on publish option, with Fixed schema selected.":::
+
+## Parameterization
+
+[Parameters](/power-query/power-query-query-parameters) are a core experience within Dataflow Gen2. Once a parameter is created or you use the "Always allow" setting, an input widget is made available to define the table or file name for your destination.
+
+![Screenshot of the data destination experience where the table name is using a parameter called "TableName" and the input widget is shown.](media/dataflow-gen2-data-destinations-and-managed-settings/parameter-table-name.png)
+
+> [!NOTE]
+> Parameters in the data destination can also be applied directly through the M script created for the queries related to it. You can manually alter the script of your data destination queries to apply the parameters to meet your requirements.
+> However, the user interface currently only supports parameterization for the table or file name field.
+
 
 ## Supported data source types per destination
 
@@ -192,10 +203,15 @@ To vacuum your Delta tables in Lakehouse, follow these steps:
 
 * **Retention period**: Set a retention interval of at least seven days to ensure that old snapshots and uncommitted files aren't prematurely removed, which could disrupt concurrent table readers and writers.
 * **Regular maintenance**: Schedule regular vacuuming as part of your data maintenance routine to keep your Delta tables optimized and ready for analytics.
+* **Incremental refreshes**: If you're using incremental refreshes, ensure that vacuuming is turned off as it can interfere with the incremental refresh process. 
 
 By incorporating vacuuming into your data maintenance strategy, you can ensure that your Lakehouse destination remains efficient, cost-effective, and reliable for your dataflow operations.
 
 For more detailed information on table maintenance in Lakehouse, refer to the [Delta table maintenance documentation](/fabric/data-engineering/lakehouse-table-maintenance).
+
+### Lakehouse MDSync
+
+When using Lakehouse as a data destination, we automatically perform a metadata sync operation when finished writing data to the Lakehouse. This operation ensures that the metadata of the Delta table is up-to-date and reflects the latest changes made during the dataflow refresh. This sync operation is crucial for maintaining the integrity and consistency of the data in the Lakehouse, especially when multiple dataflows or processes are writing and reading from the same Delta table. This operation is performed in the background and is typically quick, allowing for seamless data updates without significant delays. The metadata sync operation is part of the overall dataflow refresh process.
 
 ### Nullable
 

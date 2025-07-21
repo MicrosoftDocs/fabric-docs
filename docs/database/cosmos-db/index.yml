@@ -1,0 +1,119 @@
+### YamlMime:Landing
+title: Cosmos DB in Microsoft Fabric documentation (preview)
+summary: Learn how to use the Cosmos DB database workload in Microsoft Fabric for your NoSQL and AI applications.
+metadata:
+  title: Cosmos DB Database Documentation Preview
+  titleSuffix: Microsoft Fabric
+  description: Learn how to use the Cosmos DB database workload in Microsoft Fabric for your NoSQL and AI applications.
+  author: seesharprun
+  ms.author: sidandrews
+  ms.topic: landing-page
+  ms.date: 07/17/2025
+  ms.search.form: Databases Overview,Cosmos DB Overview
+  appliesto:
+    - ✅ Cosmos DB in Fabric
+landingContent:
+  - title: Overview
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Overview
+            url: overview.md
+          - text: FAQ
+            url: faq.yml
+          - text: Limitations
+            url: limitations.md
+  - title: Get started
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Create a database
+            url: quickstart-portal.md
+  - title: Query
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Cross-database queries
+            url: how-to-query-cross-database.md
+      - linkListType: reference
+        links:
+          - text: NoSQL query language
+            url: /nosql/query/overview?context=/fabric/context/context-database
+          - text: Work with JSON
+            url: /nosql/query/get-started-json?context=/fabric/context/context-database
+          - text: Create subqueries
+            url: /nosql/query/subquery?context=/fabric/context/context-database
+          - text: Perform self-joins
+            url: /nosql/query/join?context=/fabric/context/context-database
+  - title: Integrate
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Mirror to OneLake
+            url: mirror-onelake.md
+      - linkListType: how-to-guide
+        links:
+          - text: Access data from a lakehouse
+            url: how-to-access-data-lakehouse.md
+          - text: Create Power BI reports
+            url: how-to-create-reports.md
+  - title: Deploy and monitor
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Implement continuous integration and deployment
+            url: how-to-continuous-integration-deployment.md
+          - text: Monitor activity and performance
+            url: how-to-monitor.md
+      - linkListType: concept
+        links:
+          - text: Billing and usage reporting
+            url: billing-usage.md
+  - title: AI applications
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Index vector data
+            url: index-vector-data.md
+          - text: Full text indexing and search
+            url: full-text-indexing.md
+          - text: Hybrid search
+            url: hybrid-search.md
+  - title: Security
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Security baseline
+            url: security.md
+          - text: Authorization
+            url: authorization.md
+      - linkListType: concept
+        links:
+          - text: Authenticate with Microsoft Entra ID
+            url: how-to-authenticate.md
+  - title: Manage resources
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Indexing
+            url: indexing.md
+          - text: Indexing policies
+            url: indexing-policies.md
+          - text: Time to live (TTL)
+            url: time-to-live.md
+          - text: Request units
+            url: request-units.md
+          - text: Autoscale throughput
+            url: autoscale-throughput.md
+      - linkListType: how-to-guide
+        links:
+          - text: Configure container
+            url: how-to-configure-container.md
+          - text: Customize indexing policy
+            url: how-to-customize-indexing-policy.md
+          - text: Configure time to live (TTL)
+            url: how-to-configure-time-to-live.md
+      - linkListType: sample
+        links:
+          - text: Indexing policy samples
+            url: sample-indexing-policies.md

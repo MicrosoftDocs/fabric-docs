@@ -247,7 +247,7 @@ Direct Lake semantic models present some considerations and limitations.
 > The capabilities and features of Direct Lake semantic models are evolving rapidly. Be sure to check back periodically to review the latest list of considerations and limitations.
 
 
-|Consideration / limitation  |Direct Lake on OneLake  |Direct Lake on SQL endpoints  |
+|Consideration / limitation  |Direct Lake on OneLake  |Direct Lake on SQL (analytics endpoint)  |
 |---------|---------|---------|
 |When the SQL analytics endpoint enforces row-level security, DAX queries are processed differently depending on the type of Direct Lake mode employed. <br><br>When Direct Lake on OneLake is employed, queries will succeed, and SQL based RLS is not applied. Direct Lake on OneLake requires the user has access to the files in OneLake, which doesn’t observe SQL based RLS. |Queries will succeed.         |Yes, unless fallback is disabled in which case queries will fail.         |
 |If a table in the semantic model is based on a (non-materialized) SQL view, DAX queries are processed differently depending on the type of Direct Lake mode employed.<br><br>Direct Lake on SQL endpoints will fallback to DirectQuery in this case.<br><br>It isn't supported to create a Direct Lake on OneLake table based on a non-materialized SQL view. You can instead use a lakehouse materialized view because Delta tables are created. Alternatively, use a different storage mode such as Import or DirectLake for tables based on non-materialized SQL views. |Not applicable         |Yes, unless fallback is disabled in which case queries will fail.         |
@@ -265,10 +265,11 @@ Direct Lake semantic models present some considerations and limitations.
 |Your Fabric SKU determines the maximum available memory per Direct Lake semantic model for the capacity. When the limit is exceeded, queries to the semantic model might be slower due to excessive paging in and out of the model data.     |Yes |Yes|
 |Creating a Direct Lake semantic model in a workspace that is in a different region of the data source workspace isn't supported. For example, if the Lakehouse is in West Central US, then you can only create semantic models from this Lakehouse in the same region. A workaround is to create a Lakehouse in the other region's workspace and shortcut to the tables before creating the semantic model. To find what region you are in, see [find your Fabric home region](/fabric/admin/find-fabric-home-region).     |Yes |Yes|
 |Embedding reports requires a [V2 embed token](/power-bi/developer/embedded/generate-embed-token).     |Yes |Not supported|
-|Direct Lake doesn't support service principal profiles for authentication.     |Not supported |Yes|
+|Service principal profiles for authentication.     |Not supported |Not supported|
 |Power BI Direct Lake semantic models can be created and queried by Service Principals and Viewer role membership with Service Principals is supported, but the default Direct Lake semantic models on lakehouse/warehouse don't support this scenario.     |Yes         |Yes         |
-|Shortcuts in a lakehouse can be used as data sources for semantic model tables.     |Not supported during public preview         |Yes         |
-|Direct Lake models are not supported in personal workspaces (My Workspace).     |Not supported         |Not supported         |
+|Shortcuts in a lakehouse can be used as data sources for semantic model tables.     |Not supported during public preview         |Supported         |
+|Create Direct Lake models in personal workspaces (My Workspace).     |Not supported         |Not supported         |
+|Deployment pipeline rules to rebind data source.   |Not supported   |Supported   |
 
 
 ## Related content
