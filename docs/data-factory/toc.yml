@@ -807,6 +807,8 @@
     items:
     - name: Concepts
       items:
+      - name: What are Dataflows Gen2
+        href: dataflows-gen2-overview.md
       - name: Data source management
         href: data-source-management.md
       - name: Dataflow Gen2 destinations and managed settings
@@ -1035,8 +1037,6 @@
       href: frequently-asked-questions.yml
     - name: Gateway considerations for data destinations in Dataflow Gen2
       href: gateway-considerations-output-destinations.md
-    - name: Getting from Dataflow Gen1 to Gen2
-      href: dataflows-gen2-overview.md
     - name: Pipeline activities troubleshooting guide
       href: pipeline-troubleshoot-guide.md
     - name: Connectors
