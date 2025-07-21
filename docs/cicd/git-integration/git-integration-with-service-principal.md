@@ -104,8 +104,8 @@ In cases where your applications tenant is different than the home tenant of you
 |-----|-----|
 |1 - Fabric, DevOps, application all in same tenant|Accounts in this organizational directory only - single tenant apps|No  other requirements|
 |2 - DevOps and application in same tenant|Accounts in this organizational directory only - single tenant apps|No  other requirements|
-|3 - Fabric and application in one tenant, DevOps in a separate tenant|Accounts in any organizational directory - multi-tenant apps|Create SP in Azure DevOps tenant. See examples.|
-|4 - Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multi-tenant apps|Create SP in Azure DevOps tenant. See examples.|
+|3 - Fabric and application in one tenant, DevOps in a separate tenant|Accounts in any organizational directory - multitenant apps|Create SP in Azure DevOps tenant. See examples.|
+|4 - Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multitenant apps|Create SP in Azure DevOps tenant. See examples.|
 
 You can create the service principal in the Azure DevOps tenant using one of the examples. The following examples show how to do this with Azure CLI and PowerShell. Both examples assume that your application is in tenant A and Azure DevOps is in tenant B.
 
