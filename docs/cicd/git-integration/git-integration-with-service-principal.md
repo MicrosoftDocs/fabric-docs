@@ -63,7 +63,7 @@ To obtain the Service principal ID, use the following steps.
 2. Navigate to Microsoft Entra ID (Azure Active Directory)
 3. On the left, select **App registrations**
 4. Navigating to the app and select the Overview tab
-5. Use the **Application (client) Id** for the **Service Principal ID**
+5. Use the **Application (client) ID** for the **Service Principal ID**
 
 :::image type="content" source="./media/git-integration-with-service-principal/tenant-id.png" alt-text="Screenshot showing where to find the tenant ID in the Azure portal.":::
 
@@ -76,7 +76,7 @@ To create the source control connection, use the following details and steps.
 |Azure DevOps URL|The url to your repository in Azure DevOps.|
 |Authentication method|The authentication method for the connection. Service Principal should be selected|
 |Tenant ID|The ID of the tenant where Azure DevOps is located. See the [Obtain the tenant ID](#obtain-the-tenant-id) section.|
-|Service principal ID|The Application (client) Id from the app overview in the Azure portal. See the [Obtain Service Principal ID](#obtain-the-service-principal-id) section.|
+|Service principal ID|The Application (client) ID from the app overview in the Azure portal. See the [Obtain Service Principal ID](#obtain-the-service-principal-id) section.|
 |Service principal key|That's the secret obtained in step 1.|
 
 1. From a workspace, select **workspace settings**
