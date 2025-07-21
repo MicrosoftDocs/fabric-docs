@@ -4,12 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: jessicammoss
 ms.author: jessicamo
 ms.topic: troubleshooting    
-<<<<<<< HEAD
-ms.date: 07/16/2025
-ms.update-cycle: 180-days
-=======
 ms.date: 07/21/2025
->>>>>>> c72ad10e61712058fc3f8211cfde7e4fbea78e66
 ms.collection: ce-skilling-ai-copilot
 ---
 
