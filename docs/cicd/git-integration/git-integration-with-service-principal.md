@@ -27,7 +27,7 @@ Register your application with Microsoft Entra ID, and create a secret by follow
 If your application resides in a tenant that isn't the same as the home for your Azure DevOps instance, see [Multi-tenant considerations](#multi-tenant-considerations-for-service-principal-creation).
 
  >[!NOTE]
->Be sure to save the secret. It is used in the later steps.
+>Be sure to save the secret. It's used in the later steps.
 
 For more information, see [Application and service principal objects in Microsoft Entra ID](/entra/identity-platform/app-objects-and-service-principals) and [Security best practices for application properties in Microsoft Entra ID](/entra/identity-platform/security-best-practices-for-app-registration).
 
@@ -96,7 +96,7 @@ To create the source control connection, use the following details and steps.
 ## Multi-tenant considerations for service principal creation
 To access resources secured by a Microsoft Entra tenant, your application must have a security principal. When you create your application, the service principal is autocreated on the tenant where the application resides.
 
-In cases where your applications tenant is different than the home tenant of your Azure DevOps instance, you'll need to create the service principal, in the Azure DevOps tenant. Consider the following scenarios when registering your app in step 1 and see the examples below.
+In cases where your applications tenant is different than the home tenant of your Azure DevOps instance, you'll need to create the service principal, in the Azure DevOps tenant. Consider the following scenarios when registering your app in step 1 and see the examples.
 
  :::image type="content" source="media/git-integration-with-service-principal/multi-tenant-4.png" alt-text="Diagram showing where ADO may reside." lightbox="media/git-integration-with-service-principal/multi-tenant-4.png":::
 
@@ -104,10 +104,10 @@ In cases where your applications tenant is different than the home tenant of you
 |-----|-----|
 |1 - Fabric, DevOps, application all in same tenant|Accounts in this organizational directory only - single tenant apps|No  other requirements|
 |2 - DevOps and application in same tenant|Accounts in this organizational directory only - single tenant apps|No  other requirements|
-|3 - Fabric and application in one tenant, DevOps in a separate tenant|Accounts in any organizational directory - multi-tenant apps|Create SP in Azure DevOps tenant. See examples below.|
-|4 - Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multi-tenant apps|Create SP in Azure DevOps tenant. See examples below.|
+|3 - Fabric and application in one tenant, DevOps in a separate tenant|Accounts in any organizational directory - multi-tenant apps|Create SP in Azure DevOps tenant. See examples.|
+|4 - Fabric, DevOps, and application all reside in different tenants|Accounts in any organizational directory - multi-tenant apps|Create SP in Azure DevOps tenant. See examples.|
 
-You can create the service principal in the Azure DevOps tenant using one of the examples below. The following examples show how to do this with Azure CLI and PowerShell. Both examples assume that your application is in tenant A and Azure DevOps is in tenant B.
+You can create the service principal in the Azure DevOps tenant using one of the examples. The following examples show how to do this with Azure CLI and PowerShell. Both examples assume that your application is in tenant A and Azure DevOps is in tenant B.
 
 #### [Azure CLI](#tab/AzureCLI)
 
