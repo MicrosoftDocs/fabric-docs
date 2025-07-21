@@ -1880,6 +1880,21 @@
                 "redirect_url": "/fabric/get-started/fabric-known-issues",
                 "redirect_document_id": false
         },
+                {
+                "source_path_from_root": "/docs/known-issues/known-issue-1194-pipeline-switch-activity-validation-error.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+                {
+                "source_path_from_root": "/docs/known-issues/known-issue-1195-paginated-reports-experience-issues-firefox-browser.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
+                {
+                "source_path_from_root": "/docs/known-issues/known-issue-1197-pipeline-not-load-tables-semantic-model-refresh-activity.md", 
+                "redirect_url": "/fabric/get-started/fabric-known-issues",
+                "redirect_document_id": false
+        },
         {
             "source_path_from_root": "/docs/get-started/copilot-faq-fabric.yml",
             "redirect_url": "/fabric/fundamentals/copilot-faq-fabric",
