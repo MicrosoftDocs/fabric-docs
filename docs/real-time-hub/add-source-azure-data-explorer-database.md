@@ -21,7 +21,7 @@ You can get events from an Azure Data Explorer table into Real-Time hub using th
 
 5. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure Data Explorer DB** tile. 
 
-    :::image type="content" source="./media/add-source-azure-data-explorer-database/select-azure-data-explorer-database.png" alt-text="Screenshot that shows the selection of Azure Data Explorer database as the source type in the Data sources page.":::
+    :::image type="content" source="./media/add-source-azure-data-explorer-database/select-azure-data-explorer-database.png" alt-text="Screenshot that shows the selection of Azure Data Explorer database as the source type in the Data sources page." lightbox="./media/add-source-azure-data-explorer-database/select-azure-data-explorer-database.png":::
 
 ## Configure and connect to the Azure Data Explorer table
 [!INCLUDE [azure-data-explorer-connector](../real-time-intelligence/event-streams/includes/azure-data-explorer-connector.md)]
