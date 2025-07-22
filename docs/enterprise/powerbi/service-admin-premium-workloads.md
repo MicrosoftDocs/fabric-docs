@@ -221,7 +221,7 @@ The Analysis Services XMLA-based server properties setting is enabled by default
 
 4. Under *semantic models*, select the setting you want for the **Observe XMLA-based workspace settings (which might override capacity settings)** switch.
 
-    :::image type="content" source="media/service-admin-premium-workloads/disable-xmla.png" alt-text="Screenshot that shows the admin setting for disabling the analysis services server properties.":::
+    :::image type="content" source="media/service-admin-premium-workloads/disable-xml-analysis.png" alt-text="Screenshot that shows the admin setting for disabling the analysis services server properties.":::
 
 ## Dataflows
 

@@ -17,7 +17,7 @@ This article describes the US government enrollment process for the Power BI ser
 
 The Power BI service has a special US government version, which is part of the [Microsoft 365 Government plans](https://www.microsoft.com/microsoft-365/government/compare-office-365-government-plans?rtc=1). The enrollment process that this article describes is different from the process for the commercial version of the Power BI service.
 
-For more information, see [Power BI for United States government customers](service-govus-overview.md).
+For more information, see [Power BI for United States government customers](service-government-us-overview.md).
 
 >[!IMPORTANT]
 >To maintain continuity of data access, US government customers must complete an explicit request for onboarding the following US government clouds:
@@ -86,7 +86,7 @@ To start the allowlist process, contact your Microsoft account team for assistan
 ## Related content
 
 >[!div class="nextstepaction"]
->[Overview of Power BI for US government](service-govus-overview.md)
+>[Overview of Power BI for US government](service-government-us-overview.md)
 
 >[!div class="nextstepaction"]
 >[How do I buy Microsoft 365 Government?](/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/microsoft-365-government-how-to-buy#how-do-i-buy-microsoft-365-government)

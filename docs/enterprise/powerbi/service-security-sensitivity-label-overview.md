@@ -198,7 +198,7 @@ Power BI restricts permission to change or remove sensitivity labels from Purvie
 
 Sensitivity labels are supported for tenants in global (public) clouds, and the following national/regional clouds:
 
-* [US Government](service-govus-overview.md#power-bi-feature-availability): GCC, GCC High, DoD
+* [US Government](service-government-us-overview.md#power-bi-feature-availability): GCC, GCC High, DoD
 * China
 
 Sensitivity labels aren't currently supported in other national/regional clouds.

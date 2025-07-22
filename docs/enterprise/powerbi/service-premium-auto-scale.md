@@ -28,7 +28,7 @@ The following sections describe the steps in detail.
 
 >[!NOTE]
 >
->* Autoscale isnâ€™t available for Microsoft 365 Government Community Cloud (GCC), due to the use of the commercial Azure cloud. For more information about which features are available and which are not, see [Power BI feature availability for U.S. Government customers](service-govus-overview.md#power-bi-feature-availability).
+>* Autoscale isnâ€™t available for Microsoft 365 Government Community Cloud (GCC), due to the use of the commercial Azure cloud. For more information about which features are available and which are not, see [Power BI feature availability for U.S. Government customers](service-government-us-overview.md#power-bi-feature-availability).
 >* [Power BI Embedded](/power-bi/developer/embedded/embedded-analytics-power-bi) doesn't provide an out-of-the-box vertical Autoscale feature. To learn about alternative Autoscale options for Power BI Embedded, see [Autoscaling in Power BI Embedded](/power-bi/developer/embedded/azure-pbie-scale-capacity#autoscale-your-capacity).
 
 ## Configure an Azure subscription to use with Autoscale

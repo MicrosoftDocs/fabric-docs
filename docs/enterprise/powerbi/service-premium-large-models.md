@@ -26,7 +26,7 @@ Large semantic models in the service don't affect the Power BI Desktop model upl
 > Power BI Premium does support large semantic models. Enable the **Large semantic model storage format** option to use semantic models in Power BI Premium that are larger than the default limit.
 
 > [!NOTE]
-> Large semantic models in Power BI Premium aren't available in the Power BI service for U.S. Government DoD customers. For more information about which features are available, and which aren't, see [Power BI feature availability for U.S. Government customers](service-govus-overview.md#power-bi-feature-availability).
+> Large semantic models in Power BI Premium aren't available in the Power BI service for U.S. Government DoD customers. For more information about which features are available, and which aren't, see [Power BI feature availability for U.S. Government customers](service-government-us-overview.md#power-bi-feature-availability).
 
 ## Enable large semantic models
 

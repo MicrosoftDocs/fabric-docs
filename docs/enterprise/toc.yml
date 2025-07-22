@@ -124,10 +124,10 @@ items:
   - name: Power BI sovereign clouds
     expanded: false
     items:
-    - name: Power BI for US Government
-      href: powerbi/service-govus-overview.md
-    - name: Enroll a US Government organization
-      href: powerbi/service-govus-signup.md
+    - name: Power BI for US government
+      href: powerbi/service-government-us-overview.md
+    - name: Enroll a US government organization
+      href: powerbi/service-government-us-signup.md
     - name: Power BI in China
       href: powerbi/regions-power-bi-china-cloud.md
   - name: Premium
@@ -152,7 +152,7 @@ items:
       - name: Semantic model connectivity with the XMLA endpoint
         href: powerbi/service-premium-connect-tools.md                 
       - name: Troubleshoot XMLA endpoint connectivity
-        href: powerbi/troubleshoot-xmla-endpoint.md
+        href: powerbi/troubleshoot-xml-analysis-endpoint.md
       - name: Power BI Premium FAQ
         href: powerbi/service-premium-faq.yml
   - name: Information protection

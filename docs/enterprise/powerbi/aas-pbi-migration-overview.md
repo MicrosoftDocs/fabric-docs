@@ -135,7 +135,7 @@ Before beginning a migration, first ensure [prerequisites](#prerequisites) are m
 
     For example, if creating a new migration connection with a new PPU workspace, the Create AAS migration flyout should look like the below image:
 
-    :::image type="content" source="media/azure-analysis-services-migration-overview/create-migration-flyout.png" alt-text="Screenshot of Create migration flyout.":::
+    :::image type="content" source="media/azure-analysis-services-migration-overview/create-migration-fly-out.png" alt-text="Screenshot of Create migration flyout.":::
 
 1. Verify your settings, and then select **Create**.
 
@@ -181,7 +181,7 @@ Redirection can take some time. You can leave the page and continue to use Power
 
 The **Server Redirection** flyout shows the status of redirection.
 
-:::image type="content" source="media/azure-analysis-services-migration-overview/dataset-migration-redirection-status-flyout.png" alt-text="Redirection status flyout.":::
+:::image type="content" source="media/azure-analysis-services-migration-overview/dataset-migration-redirection-status-fly-out.png" alt-text="Redirection status flyout.":::
 
 To disable server redirection, on the **Azure Analysis Services to Power BI Premium** page, under **All migrations**, simply move the **Server Redirection Enabled** slider to Off.
 
