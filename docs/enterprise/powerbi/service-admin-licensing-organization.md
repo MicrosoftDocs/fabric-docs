@@ -104,7 +104,7 @@ You might want to distribute content to users who are outside of your organizati
 
 - The guest user must have the proper licensing in place to view the shared content.
 
-For more information about guest user access, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](service-admin-azure-ad-b2b.md).
+For more information about guest user access, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](service-admin-entra-b2b.md).
 
 ## Other articles for admins
 

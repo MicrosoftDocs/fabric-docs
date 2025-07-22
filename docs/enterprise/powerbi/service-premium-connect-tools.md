@@ -83,7 +83,7 @@ By default, Premium capacity or Premium Per User semantic model workloads have t
 1. In the Admin portal, select **Capacity settings** > **Power BI Premium** > capacity name.
 1. Expand **Workloads**. In the **XMLA Endpoint** setting, select **Read Write**. The XMLA Endpoint setting applies to *all workspaces and semantic models* assigned to the capacity.
 
-    :::image type="content" source="media/service-premium-connect-tools/xmla-endpoint-enable.png" alt-text="Screenshot showing the XMLA endpoint settings. Read write is selected.":::
+    :::image type="content" source="media/service-premium-connect-tools/xml-analysis-endpoint-enable.png" alt-text="Screenshot showing the XMLA endpoint settings. Read write is selected.":::
 
 ### To enable read-write for Premium Per User
 
@@ -120,7 +120,7 @@ To determine the primary domain name and ID of a tenant, sign into the Azure por
 
 In workspace **Settings** > **Premium** > **Workspace Connection**, select **Copy**.
 
-:::image type="content" source="media/service-premium-connect-tools/xmla-endpoint-workspace-connection.png" alt-text="Screenshot showing the settings page. The workspace connection section is highlighted.":::
+:::image type="content" source="media/service-premium-connect-tools/xml-analysis-endpoint-workspace-connection.png" alt-text="Screenshot showing the settings page. The workspace connection section is highlighted.":::
 
 ## Connection requirements
 
@@ -168,7 +168,7 @@ In addition to the XMLA Endpoint property being enabled read-write by the capaci
 
 **Allow XMLA endpoints and Analyze in Excel with on-premises semantic models** is an Integration setting.
 
-:::image type="content" source="media/service-premium-connect-tools/allow-xmla-endpoints.png" alt-text="Integration setting allow XMLA endpoints.":::
+:::image type="content" source="media/service-premium-connect-tools/allow-xml-analysis-endpoints.png" alt-text="Integration setting allow XMLA endpoints.":::
 
 **Users can work with semantic models in Excel using a live connection** is an Export and sharing setting.
 
@@ -240,7 +240,7 @@ Deploying a tabular model project in Visual Studio to a Premium workspace is muc
 
 To deploy a tabular model project authored in Visual Studio, set the workspace connection URL in the project **Deployment Server** property. In Visual Studio, in **Solution Explorer**, right-click the project > **Properties**. In the **Server** property, paste the workspace connection URL.
 
-:::image type="content" source="media/service-premium-connect-tools/xmla-endpoint-ssdt-deploy-property.png" alt-text="Screenshot of the configuration window. Server is highlighted in the main pane. OK is selected.":::
+:::image type="content" source="media/service-premium-connect-tools/xml-analysis-endpoint-ssdt-deploy-property.png" alt-text="Screenshot of the configuration window. Server is highlighted in the main pane. OK is selected.":::
 
 When the Deployment Server property is specified, the project can be deployed.
 
@@ -248,7 +248,7 @@ When the Deployment Server property is specified, the project can be deployed.
 
 Processing fails because unlike deploying to an Azure or SQL Server Analysis Server instance, where you are prompted for data source credentials as part of the deployment operation, when deploying to a Premium workspace data source credentials cannot be specified as part of the deployment operation. Instead, after metadata deployment has succeeded and the semantic model is created, data source credentials are then specified in the Power BI Service in semantic model settings. In the workspace, select **Semantic models** > **Settings** > **Data source credentials** > **Edit credentials**.
 
-:::image type="content" source="media/service-premium-connect-tools/xmla-endpoint-datasource-credentials.png" alt-text="Screenshot showing data source credentials dialog. Fields that can be edited are highlighted.":::
+:::image type="content" source="media/service-premium-connect-tools/xml-analysis-endpoint-datasource-credentials.png" alt-text="Screenshot showing data source credentials dialog. Fields that can be edited are highlighted.":::
 
 When data source credentials are specified, you can then refresh the semantic model in the Power BI service, configure schedule refresh, or process (refresh) from SQL Server Management Studio to load data into the semantic model.
 
@@ -264,11 +264,11 @@ Using SSMS to connect to a workspace is just like connecting to an Azure or SQL 
 
 2. In **Server Type**, select **Analysis Services**. In **Server name**, enter the workspace URL. In **Authentication**, select **Active Directory - Universal with MFA**, and then in **User name**, enter your organizational user ID.
 
-    :::image type="content" source="media/service-premium-connect-tools/xmla-endpoint-connect-server.png" alt-text="Screenshot of the connect to server dialog. Server type, name and authentication are highlighted. Connect is selected.":::
+    :::image type="content" source="media/service-premium-connect-tools/xml-analysis-endpoint-connect-server.png" alt-text="Screenshot of the connect to server dialog. Server type, name and authentication are highlighted. Connect is selected.":::
 
 When connected, the workspace is shown as an Analysis Services server, and semantic models in the workspace are shown as databases.  
 
-:::image type="content" source="media/service-premium-connect-tools/xmla-endpoint-ssms.png" alt-text="Screenshot of the Microsoft SQL Server Management Studio window. Object Explorer is in the main pane.":::
+:::image type="content" source="media/service-premium-connect-tools/xml-analysis-endpoint-ssms.png" alt-text="Screenshot of the Microsoft SQL Server Management Studio window. Object Explorer is in the main pane.":::
 
 To learn more about using SSMS to script metadata, see:
 

@@ -201,7 +201,7 @@ To find the automatic page refresh setting:
 
 3. Scroll down to the **Semantic models** section.
 
-:::image type="content" source="media/service-admin-premium-workloads/powerbi-permium-automatic-page-refresh.png" alt-text="Screenshot that shows the admin setting for automatic refresh interval.":::
+:::image type="content" source="media/service-admin-premium-workloads/powerbi-premium-automatic-page-refresh.png" alt-text="Screenshot that shows the admin setting for automatic refresh interval.":::
 
 Queries created by automatic page refresh go directly to the data source, so it's important to consider reliability and load on those sources when allowing automatic page refresh in your organization.
 

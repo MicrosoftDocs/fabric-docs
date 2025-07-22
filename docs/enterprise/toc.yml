@@ -103,7 +103,7 @@ items:
   - name: Bring your own encryption keys
     href: powerbi/service-encryption-byok.md
   - name: Using Microsoft Entra B2B
-    href: powerbi/service-admin-azure-ad-b2b.md
+    href: powerbi/service-admin-entra-b2b.md
   - name: High availability and failover FAQ
     href: powerbi/service-admin-failover.yml
   - name: Migrate from Azure Analysis Services

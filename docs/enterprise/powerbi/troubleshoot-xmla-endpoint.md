@@ -65,7 +65,7 @@ It's also valid to specify the app ID without the tenant ID. However, in this ca
 
 ### Connecting with Microsoft Entra B2B
 
-With support for Microsoft Entra business-to-business (B2B) in Power BI, you can provide external guest users with access to semantic models over the XMLA endpoint. Make sure the [Share content with external users](/fabric/admin/service-admin-portal-export-sharing) setting is enabled in the Power BI Admin portal. To learn more, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](service-admin-azure-ad-b2b.md).
+With support for Microsoft Entra business-to-business (B2B) in Power BI, you can provide external guest users with access to semantic models over the XMLA endpoint. Make sure the [Share content with external users](/fabric/admin/service-admin-portal-export-sharing) setting is enabled in the Power BI Admin portal. To learn more, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](service-admin-entra-b2b.md).
 
 ## Deploying a semantic model
 
@@ -77,11 +77,11 @@ In the default configuration, Visual Studio attempts to process the model as par
 
 If Power BI cannot bind your new semantic model to data source credentials, you will receive an error stating "Cannot process database. Reason: Failed to save modifications to the server." with the error code "DMTS_DatasourceHasNoCredentialError", as shown below:
 
-:::image type="content" source="media/troubleshoot-xmla-endpoint/deploy-refresh-error.png" alt-text="Model deployment error":::
+:::image type="content" source="media/troubleshoot-xml-analysis-endpoint/deploy-refresh-error.png" alt-text="Model deployment error":::
 
 To avoid the processing failure, set the **Deployment Options** > **Processing Options** to **Do not Process**, as shown in the following image. Visual Studio  then deploys only metadata. You can then configure the data source credentials, and click on **Refresh now** for the semantic model in the Power BI user interface.
 
-:::image type="content" source="media/troubleshoot-xmla-endpoint/do-not-process.png" alt-text="Do not process option":::
+:::image type="content" source="media/troubleshoot-xml-analysis-endpoint/do-not-process.png" alt-text="Do not process option":::
 
 ### New project from an existing semantic model
 
@@ -125,13 +125,13 @@ Just as there are multiple data source types, there are also multiple partition 
 
 Impersonation settings you can define for provider data sources are not relevant for Power BI. Power BI uses a different mechanism based on semantic model settings to manage data source credentials. For this reason, make sure you select **Service Account** if you are creating a Provider Data Source.
 
-:::image type="content" source="media/troubleshoot-xmla-endpoint/impersonate-services-account.png" alt-text="Impersonate service account":::
+:::image type="content" source="media/troubleshoot-xml-analysis-endpoint/impersonate-services-account.png" alt-text="Impersonate service account":::
 
 ### Fine-grained processing
 
 When triggering a scheduled refresh or on-demand refresh in Power BI, Power BI typically refreshes the entire semantic model. In many cases, it's more efficient to perform refreshes more selectively. You can perform fine-grained processing tasks in SQL Server Management Studio (SSMS) as shown below, or by using third-party tools or scripts.
 
-:::image type="content" source="media/troubleshoot-xmla-endpoint/process-tables.png" alt-text="Process tables in SSMS":::
+:::image type="content" source="media/troubleshoot-xml-analysis-endpoint/process-tables.png" alt-text="Process tables in SSMS":::
 
 ### Overrides in Refresh TMSL command
 
@@ -163,7 +163,7 @@ The remote server returned an error: (400) Bad Request. (System)
 
 When connecting to a Power BI workspace with SSMS, ensure the following:
 
-- The XMLA endpoint setting is enabled for your tenant's capacity. To learn more, see  [Enable XMLA read-write](service-premium-connect-tools.md#enable-xmla-read-write).
+- The XMLA endpoint setting is enabled for your tenant's capacity. To learn more, see  [Enable XMLA read-write](service-premium-connect-tools.md#enable-xml-analysis-read-write).
 - The [Allow XMLA endpoints and Analyze in Excel with on-premises semantic models](service-premium-connect-tools.md#security) setting is enabled in Tenant settings.
 - You're using the latest version of SSMS. [Download the latest](/sql/ssms/download-sql-server-management-studio-ssms).
 
@@ -262,7 +262,7 @@ This is due to a known issue in the app services REST API. This will be resolved
 When republishing a live connected semantic model utilizing the Analysis Services connector, the following error, "**There is an existing report/semantic model with the same name. Please delete or rename the existing semantic model and retry.**"
  may be shown.
 
-:::image type="content" source="media/troubleshoot-xmla-endpoint/couldnt-publish-to-power-bi.png" alt-text="Couldn't publish to Power BI error.":::
+:::image type="content" source="media/troubleshoot-xml-analysis-endpoint/couldnt-publish-to-power-bi.png" alt-text="Couldn't publish to Power BI error.":::
 
 This is due to the semantic model being published having a different connection string but having the same name as the existing semantic model. To resolve this issue, either delete or rename the existing semantic model. Also be sure to republish any apps that are dependent on the report. If necessary, downstream users should be informed to update any bookmarks with the new report address to ensure they access the latest report.  
 
@@ -270,7 +270,7 @@ This is due to the semantic model being published having a different connection 
 
 Users trying to create a new Live Connected model or open an existing Live Connected model, using the March 2024 or later versions of Power BI Desktop, may encounter an error similar to the following: "**_We couldn't connect to your model in the Power BI service. The dataset may have been deleted, renamed, moved, or it is possible that you don't have permission to access it._**"
 
-:::image type="content" source="media/troubleshoot-xmla-endpoint/cannot-load-model.png" alt-text="Screenshot of cannot load model error.":::
+:::image type="content" source="media/troubleshoot-xml-analysis-endpoint/cannot-load-model.png" alt-text="Screenshot of cannot load model error.":::
 
 The error may occur when a proxy is configured in the user's environment and the proxy is preventing access to the Power BI service. Beginning with the March 2024 version of Power BI Desktop, the userâ€™s environment must allow connections to the Power BI service at endpoint ***.pbidedicated.windows.net** or the corresponding Power BI service endpoints for sovereign clouds.
 

@@ -143,7 +143,7 @@ If a release is planned for an environment, we include the quarter of estimated 
 
 |Feature |GCC |GCC High |DoD|
 |------|------|------|------|
-|[Azure B2B collaboration between government and commercial cloud](service-admin-azure-ad-b2b.md)<sup>1</sup>|✅|✅
+|[Azure B2B collaboration between government and commercial cloud](service-admin-entra-b2b.md)<sup>1</sup>|✅|✅
 |[Template apps](/power-bi/connect-data/service-template-apps-overview)<sup>2</sup>|✅ |✅| ✅|
 |[Embed in SharePoint Online by using the Power BI web part](/sharepoint/dev/spfx/web-parts/overview-client-side-web-parts)|✅|✅|
 |[Data Loss Prevention policies](/fabric/governance/data-loss-prevention-overview)|✅ |✅|

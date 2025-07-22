@@ -68,11 +68,11 @@ The following steps show you how to enable and associate Autoscale with the reso
 
 1. Select **Manage Autoscale**  to enable and configure **Autoscale**. The **Autoscale settings** pane appears. Select  **Enable Autoscale**.
 
-    :::image type="content" source="media/service-premium-auto-scale/service-premium-auto-scale-settings-p2.png" alt-text="Screenshot of selecting the Autoscale settings page. The enable Autoscale check box is highlighted.":::
+    :::image type="content" source="media/service-premium-auto-scale/service-premium-auto-scale-settings.png" alt-text="Screenshot of selecting the Autoscale settings page. The enable Autoscale check box is highlighted.":::
 
 1. Select the Azure subscription to use with Autoscale. Only subscriptions available to the current user are displayed, which is why you must be at least a *contributor* for the subscription. Once your subscription is selected, choose the **Resource group** you created in the previous section, from the list of resource groups available to the subscription. Assign the maximum number of v-cores to use for Autoscale, and then select **Save**.
 
-    :::image type="content" source="media/service-premium-auto-scale/service-premium-auto-scale-settings-p2-02.png" alt-text="Screenshot of the Autoscale settings page showing subscription, resource group and Autoscale max settings..":::
+    :::image type="content" source="media/service-premium-auto-scale/service-premium-auto-scale-settings-maximum.png" alt-text="Screenshot of the Autoscale settings page showing subscription, resource group and Autoscale max settings..":::
 
 1. Power BI applies your changes, then closes the pane and returns the view to **Capacity settings** with the settings you applied.
 

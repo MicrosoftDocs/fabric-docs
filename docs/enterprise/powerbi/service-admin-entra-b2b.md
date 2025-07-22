@@ -60,11 +60,11 @@ Follow these steps to send an invite in the Azure portal.
 
 1. Under **Manage**, select **Users** > **All users** > **New guest user**.
 
-    ![Screenshot of the Azure portal with the New guest user option called out.](media/service-admin-azure-ad-b2b/azure-ad-portal-new-guest-user.png)
+    ![Screenshot of the Azure portal with the New guest user option called out.](media/service-admin-entra-b2b/entra-portal-new-guest-user.png)
 
 1. Scroll down and enter an **email address** and **personal message**.
 
-    ![Screenshot of the New Guest User dialog with the email and message fields called out.](media/service-admin-azure-ad-b2b/azure-ad-portal-invite-message.png)
+    ![Screenshot of the New Guest User dialog with the email and message fields called out.](media/service-admin-entra-b2b/entra-portal-invite-message.png)
 
 1. Select **Invite**.
 
@@ -72,17 +72,17 @@ To invite more than one guest user, use PowerShell or create a bulk invite in Mi
 
 The guest user must select **Get Started** in the email invitation they receive. The guest user is then added to the organization.
 
-![Screenshot of the Guest user email invitation with Get Started called out.](media/service-admin-azure-ad-b2b/guest-user-invite-email.png)
+![Screenshot of the Guest user email invitation with Get Started called out.](media/service-admin-entra-b2b/guest-user-invite-email.png)
 
 ### Ad hoc invites
 
 To invite an external user at any time, add them to your dashboard or report through the share feature or to your app through the access page. Here's an example of what to do when inviting an external user to use an app.
 
-![Screenshot of an external user added to the App access list in Power B I.](media/service-admin-azure-ad-b2b/power-bi-app-access.png)
+![Screenshot of an external user added to the App access list in Power B I.](media/service-admin-entra-b2b/power-bi-app-access.png)
 
 The guest user gets an email indicating that you shared the app with them.
 
-![Screenshot of the email that guest user receives when the app has been shared.](media/service-admin-azure-ad-b2b/guest-user-invite-email-2.png)
+![Screenshot of the email that guest user receives when the app has been shared.](media/service-admin-entra-b2b/guest-user-invite-email-2.png)
 
 The guest user must sign in with their organization email address. They'll receive a prompt to accept the invitation after signing in. After they sign in, the app opens for the guest user. To return to the app, they should bookmark the link or save the email.
 
@@ -94,11 +94,11 @@ If you have access to more than one tenant, you can switch between tenants using
 
 1. Select your profile picture to open your account manager and choose **Switch**.
 
-   :::image type="content" source="media/service-admin-azure-ad-b2b/tenant-switcher-link.png" alt-text="Screenshot of the tenant switcher link in the Fabric account manager pane.":::
+   :::image type="content" source="media/service-admin-entra-b2b/tenant-switcher-link.png" alt-text="Screenshot of the tenant switcher link in the Fabric account manager pane.":::
 
 1. In the **Switch tenant (preview)** dialog, open the dropdown menu and choose the tenant you want to navigate to.
 
-   :::image type="content" source="media/service-admin-azure-ad-b2b/tenant-switcher-selector.png" alt-text="Screenshot of the tenant switcher selector where you can choose which tenant you want to switch to.":::
+   :::image type="content" source="media/service-admin-entra-b2b/tenant-switcher-selector.png" alt-text="Screenshot of the tenant switcher selector where you can choose which tenant you want to switch to.":::
 
    > [!NOTE]
    > The dropdown list displays a maximum of 50 tenants.
@@ -107,7 +107,7 @@ If you have access to more than one tenant, you can switch between tenants using
 
 The discoverability for B2B content feature in Power BI makes accessing shared B2B content easy for consumers. Power BI users who are guest users in any other tenant have a tab on their home page (in their home tenant) called *From external orgs*. When you select the tab, it lists all the items shared with you from external tenants that you can access as a guest user. You can filter and sort through the list to find content easily, and see which organization is sharing a specific item with you. When you select an item on the tab, a new window opens and takes you to the relevant provider tenant where you can access the item.
 
-![Screenshot of the Azure portal with the from external orgs tab called out.](media/service-admin-azure-ad-b2b/from-external-orgs-tab.png)
+![Screenshot of the Azure portal with the from external orgs tab called out.](media/service-admin-entra-b2b/from-external-orgs-tab.png)
 
 ## Licensing
 
@@ -151,7 +151,7 @@ To help allowed guests sign in to Power BI, provide them with the Tenant URL. To
 
 2. Look for the value next to **Tenant URL**. Share the tenant URL with your allowed guest users.
 
-    ![Screenshot of the About Power B I dialog with the guest user Tenant U R L called out.](media/service-admin-azure-ad-b2b/power-bi-about-dialog.png)
+    ![Screenshot of the About Power B I dialog with the guest user Tenant U R L called out.](media/service-admin-entra-b2b/power-bi-about-dialog.png)
 
 ## Cross-cloud B2B
 
@@ -213,7 +213,7 @@ Additionally, to use in-place semantic model sharing, tenant admins need to enab
 ## Related content
 
 * For more detailed info, including how row-level security works, check out the whitepaper: [Distribute Power BI content to external guest users using Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
-* For information about Microsoft Entra B2B, see [What is Microsoft Entra B2B collaboration?](/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b/)
+* For information about Microsoft Entra B2B, see [What is Microsoft Entra B2B collaboration?](/azure/active-directory/active-directory-b2b-what-is-entra-b2b/)
 * For information about in-place semantic model sharing, see [Power BI in-place semantic model sharing with guest users in external organizations (preview)](/power-bi/collaborate-share/service-dataset-external-org-share-about).
 * For information about government clouds, see [Power BI for US Government](service-govus-overview.md).
 
