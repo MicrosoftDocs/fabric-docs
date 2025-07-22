@@ -141,7 +141,7 @@ Top use cases for this view include:
   - The **Success** status is standard SQL database behavior when the capacity is not throttled.
   - The **Rejected** status can occur because of resource limitations due to capacity throttling.
 
-- Identification of SQL queries(statements) that consumed many resources: sort the table by **Total CU(s)** descending by timestamp and artifact. 
+- Identification of SQL queries(statements) that consumed many resources: sort the table by **Total CU(s)** descending by timestamp and item. 
 
 #### Considerations
 
