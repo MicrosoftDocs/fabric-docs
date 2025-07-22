@@ -5,15 +5,13 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 07/22/2025
 ---
 
 # Analyze data streams in Real-Time hub
 There are two types of data streams in Real-Time hub: **Stream** and **Table**. This article shows how to analyze streams and tables in Real-Time hub.
 
-:::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/stream-types.png" alt-text="Screenshot that shows the types of streams available in Real-Time hub.":::
-
-
+:::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/stream-types.png" alt-text="Screenshot that shows the types of streams available in Real-Time hub." lightbox="./media/analyze-data-streams-using-kql-table-queries/stream-types.png":::
 
 ## Analyze streams
 To analyze a stream whose parent is an eventstream, do the following steps:
@@ -30,12 +28,12 @@ In Real-Time hub, when you get events from the [supported sources](supported-sou
 - **Connect data source** wizard:
 
     At the end of creating this stream, on the **Review + connect** page, you see the **Open eventstream** link to open the eventstream associated with the stream in an editor.
--**All data streams** and **My data stream** pages: 
+-**Recent streaming data** section of the Real-Time hub page
 
     Move the mouse over a stream whose parent is an eventstream, and select the **Open** link, or select **... (ellipsis)**, and then select **Open eventstream**.
 - **Detail page**:
 
-    Select a stream whose parent is an eventstream on the **All data streams** page to see a stream detail page. On this page, select **Open eventstream** link on the ribbon.  
+    Select a stream whose parent is an eventstream to see a stream detail page. On this page, select **Open eventstream** link on the ribbon.  
 
 ### Add Eventhouse destination to the eventstream
 
@@ -59,10 +57,10 @@ After you open an eventstream in the editor, you can [add an Eventhouse destinat
 
 You can open the KQL database that's associated with a table by using one of the following ways: 
 
-- On the **All data streams** page, move the mouse over a data stream of table type, and select the **Open** link, or select **... (ellipsis)**, and then select **Open KQL Database**. 
+- In the **Recent streaming data** section of the Real-Time hub page, move the mouse over a data stream of table type, and select the **Open** link, or select **... (ellipsis)**, and then select **Open KQL Database**. 
 
     :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/open-kql-database-list.png" alt-text="Screenshot that shows the Open KQL Database links for a stream of type Table." :::   
-- Select a KQL table on the **All data streams** page to see a table detail page. On this page, you can select **Open KQL Database** link on the ribbon. 
+- In the **Recent streaming data** section of the Real-Time hub page, select a KQL table to see a table detail page. On this page, you can select **Open KQL Database** link on the ribbon. 
 
     :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/open-kql-database-detail.png" alt-text="Screenshot that shows the Open KQL Database links for a stream of type Table from the detail view." :::   
 
