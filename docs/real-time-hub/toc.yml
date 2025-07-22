@@ -87,8 +87,6 @@ items:
     href: endorse-data-streams.md
   - name: Explore all data streams
     href: explore-all-data-streams.md
-  - name: Explore my data streams
-    href: explore-my-data-streams.md
   - name: Explore Microsoft sources
     href: explore-microsoft-sources.md
   - name: Subscribe permission for Fabric/Azure events

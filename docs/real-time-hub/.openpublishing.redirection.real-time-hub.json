@@ -4,6 +4,11 @@
       "source_path_from_root": "/docs/real-time-hub/whats-new.md",
       "redirect_url": "/fabric/fundamentals/whats-new#real-time-intelligence-in-microsoft-fabric",
       "redirect_document_id": false
-    }
+    },
+    {
+      "source_path_from_root": "/docs/real-time-hub/explore-my-data-streams.md",
+      "redirect_url": "/fabric/real-time-hub/explore-all-data-streams",
+      "redirect_document_id": false
+    }    
   ]
 }

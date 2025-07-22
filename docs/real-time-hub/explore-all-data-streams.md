@@ -10,7 +10,7 @@ ms.date: 11/18/2024
 
 # Explore All data streams in Fabric Real-Time hub
 
-When you navigate to Real-Time hub in Fabric, you can view data streams in different ways. For more information, see [Explore streams in Fabric Real-Time hub](explore-data-streams.md). This article covers the Real-Time hub **All data streams** page which allows you to see all data streams that you can access that are actively running in Fabric. Data streams include Fabric eventstreams and Kusto Query Language (KQL) tables.
+When you navigate to Real-Time hub in Fabric, you can view data streams in different ways. This article covers the Real-Time hub **All data streams** page which allows you to see all data streams that you can access that are actively running in Fabric. Data streams include Fabric eventstreams and Kusto Query Language (KQL) tables.
 
 
 
