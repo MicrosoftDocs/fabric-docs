@@ -5,7 +5,7 @@ author: mystina
 ms.author: majia
 ms.topic: quickstart
 ms.custom:
-ms.date: 07/16/2025
+ms.date: 07/21/2025
 ---
 
 # Get started with Fabric Real-Time hub
@@ -20,11 +20,26 @@ This article provides guidance on getting started with Fabric Real-Time hub.
 [!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
 
 ## Real-Time hub page
-On the **Real-Time hub** page, you see the **All data streams** section, where you see all the streams and tables you can access. Streams are the outputs from [Fabric eventstreams](../real-time-intelligence/event-streams/overview.md) and tables are from Kusto Query Language (KQL) databases that you can access.
+On the **Real-Time hub** page, there are two sections. 
 
-The following sections provide details about the **All data streams** table, such as columns, filters, and other features available on the table. 
+In the first section at the top, you see **cards or tiles** that provide a quick way to performing the tasks:
 
-### Columns
+:::image type="content" source="./media/get-started-real-time-hub/cards.png" alt-text="Screenshot that shows cards at the top of the Real-Time hub page." lightbox="./media/get-started-real-time-hub/cards.png":::
+
+
+| Card | Description |
+| ---- | ----------- |
+| Subscribe to OneLake events | Provides a shortcut to create streams based on Fabric OneLake events. For details, see [Subscribe to OneLake events](create-streams-fabric-onelake-events.md#configure-and-create-an-eventstream). |
+| Act on Job events | Provides a shortcut to create alerts on Fabric events. For more information, [Set alerts for OneLake](set-alerts-fabric-onelake-events.md#set-alert-for-onelake-events) |
+| Visualize data | Provides a shortcut to create a dashboard based on data in a KQL table. |
+| Explore data in motion | Provides a shortcut to preview data in a data source. For more information, see [Preview data streams](preview-data-streams.md). |
+| Connect weather data | Provides a shortcut to create a data streams based on real-time weather data. For more information, see [Real-Time weather source](add-source-real-time-weather.md) |
+| Learn from a tutorial | Links to the [Fabric Real-Time intelligence tutorial](../real-time-intelligence/tutorial-introduction.md) that has a module on using the Real-Time hub. |
+| Case study | Links to a [case study](https://www.microsoft.com/customers/story/1770346240728000716-elcome-microsoft-copilot-consumer-goods-en-united-arab-emirates). 
+
+In the **All data streams** section at the bottom, you see all the streams and tables you can access. Streams are the outputs from [Fabric eventstreams](../real-time-intelligence/event-streams/overview.md) and tables are from Kusto Query Language (KQL) databases that you can access. 
+
+:::image type="content" source="./media/get-started-real-time-hub/all-data-streams-section.png" alt-text="Screenshot that shows the All data streams section of the Real-Time hub page." lightbox="./media/get-started-real-time-hub/all-data-streams-section.png":::
 
 The **All data streams** table has the following columns:
 
@@ -37,7 +52,6 @@ The **All data streams** table has the following columns:
 | Endorsement | Endorsement status of the parent artifact. |
 | Sensitivity | Sensitivity status of the parent artifact. |
 
-### Filters
 
 The following filters are available at the top for you to narrow down easily to the desired stream:
 
@@ -51,13 +65,9 @@ The following filters are available at the top for you to narrow down easily to 
 > [!NOTE]
 > To see streams and tables from only your workspace, select **My workspace** for the **Workspace** filter. 
 
-### Search
-Using the **search** text window, you can search your streams/events by typing in the name of stream.
+Using the **search** text window, you can search your streams by typing in the name of stream.
 
-
-### Actions
-
-Here are the actions available on streams from eventstreams from the **All data streams** page. Move the mouse over the data stream, select **... (ellipsis)** to see the actions.
+Here are the **actions** available on streams from eventstreams from the **All data streams** page. Move the mouse over the data stream, select **... (ellipsis)** to see the actions.
 
 | Action | Description |
 | ------ | ----------- |
@@ -72,7 +82,7 @@ Here are the actions available on a KQL table from the **All data streams** page
 | Action | Description |
 | ------ | ----------- |
 | Explore data | Explore data in the KQL table. |
-| Create real-time dashboard (Preview) |[Create a real-time dashboard](../real-time-intelligence/dashboard-real-time-create.md) based on data in the KQL table. |
+| Create real-time dashboard (Preview) |[Create a Real-Time Dashboard with Copilot](/fabric/fundamentals/copilot-generate-dashboard) based on data in the KQL table. |
 | Open KQL Database | Open parent KQL Database of the KQL table. |
 | Endorse | Endorse parent KQL Database of the KQL table. For more information, see [Endorse data streams](endorse-data-streams.md). |
 
@@ -86,7 +96,7 @@ It allows for easy connectivity to external data streams including Kafka connect
 
 There are two ways you can get to the **Data sources** page:
 
-- By selecting **+ Add data** on the **Real-Time hub** pages.
+- By selecting **+ Add data** on the **Real-Time hub** page.
 
     :::image type="content" source="media/get-started-real-time-hub/connect-to-data-source-button.png" alt-text="Screenshot that shows the Connect to data source button." lightbox="./media/get-started-real-time-hub/connect-to-data-source-button.png":::
 - By selecting **+ Data sources** under **Connect to** category on the left navigation menu.
@@ -110,7 +120,7 @@ You can connect to these resources and create eventstreams that show up on **My 
 :::image type="content" source="./media/get-started-real-time-hub/microsoft-sources-menu.png" alt-text="Screenshot that shows the Microsoft sources page in Real-Time hub." lightbox="./media/get-started-real-time-hub/microsoft-sources-menu.png":::
 
 ## Fabric events page
-The **Fabric events page** shows you the list of system events generated in **Fabric** that you can access. You can **create eventstreams** for events from your Fabric workspaces. You can also set up an alert to send notifications via email, Teams etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Fabric workspace item events.
+The **Fabric events page** shows you the list of system events generated in **Fabric** that you can access. You can **create eventstreams** for events from your Fabric workspaces. You can also set up an alert to send notifications via email, Teams, etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Fabric workspace item events.
 
 - [Fabric Workspace Item](create-streams-fabric-workspace-item-events.md) 
 - [Explore Fabric events in Real-Time hub](explore-fabric-events.md).
@@ -119,7 +129,7 @@ The **Fabric events page** shows you the list of system events generated in **Fa
 :::image type="content" source="./media/get-started-real-time-hub/fabric-events-page.png" alt-text="Screenshot that shows the Fabric events page in Real-Time hub." lightbox="./media/get-started-real-time-hub/fabric-events-page.png":::
 
 ## Azure events page
-The **Azure events page** shows you the list of system events generated in **Azure** that you can access. You can **create eventstreams** for events from your Azure blob storage. You can also set up an alert to send notifications via email, Teams etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Azure Blob Storage events.
+The **Azure events page** shows you the list of system events generated in **Azure** that you can access. You can **create eventstreams** for events from your Azure blob storage. You can also set up an alert to send notifications via email, Teams, etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Azure Blob Storage events.
 
 See following articles to learn how to **setup alerts** on Fabric events:
 

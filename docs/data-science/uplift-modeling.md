@@ -7,7 +7,7 @@ ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 01/29/2024
+ms.date: 07/16/2025
 #customer intent: As a data scientist, I want to build an uplift model so I can estimate causal impact.
 ---
 
