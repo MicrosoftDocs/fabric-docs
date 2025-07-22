@@ -21,12 +21,14 @@ This article explains how to query Fabric OneLake Delta Tables from Snowflake us
 
 ## Set up Fabric demo data
 
-1. Create your environment in Fabric:
-    1. Create an EventHouse and an EventStream.
-    1. Use *Sample data* to create a Lakehouse and set the EventHub as the desternation to generate a new table.
-    :::image type="content" source="media/query-onelake-from-snowflake/data-source.png" alt-text="Screenshot of the optional data sources":::
-    :::image type="content" source="media/query-onelake-from-snowflake/diagram.png" alt-text="Screenshot of the data flow":::
-1. Enable **OneLake Availability**:
+1. First, create your environment in Fabric:
+    1. Select your workspace from the left navigation bar.
+    1. Create a new evenstream from a existing data source or from the sample data. For a step-by-step guide see [create an eventstream](event-streams/create-manage-an-eventstream.md).
+    :::image type="content" source="media/query-onelake-from-snowflake/data-source.png" alt-text="Screenshot of optional data sources in Fabric.":::
+    1. Create an eventhouse and connect it to the evenstream you created previously. For a step-by-step guide see [create an eventhouse](create-eventhouse.md).
+    1. Create a new lakehouse using the **Sample data** and set the eventhub as the destination to generate a new table.  
+    :::image type="content" source="media/query-onelake-from-snowflake/diagram.png" alt-text="Diagram that shows the data flow in Fabric.":::
+1. Then, enable **OneLake Availability**:
     1. In the EventHouse KQL database, turn on OneLake availability.
     :::image type="content" source="media/query-onelake-from-snowflake/onelake.png" alt-text="Screenshot of the OneLake availability toggle in the EventHouse KQL database.":::
 1. Optimize Sync Timing:
@@ -39,6 +41,7 @@ This article explains how to query Fabric OneLake Delta Tables from Snowflake us
     1. In your Lakehouse, select Tables > **New shortcut**.
     :::image type="content" source="media/query-onelake-from-snowflake/shortcut.png" alt-text="Screenshot of the New Shortcut option in the dropdown menu":::
     1. Choose **Microsoft OneLake** as the source.
+    :::image type="content" source="media/query-onelake-from-snowflake/create-shortcut.png" alt-text="Screenshot of the Microsoft Onelake tile for creating the shortcut.":::
     1. Navigate to and select the KQL database and table you created in the EventHouse.
     :::image type="content" source="media/query-onelake-from-snowflake/using-shortcut.png" alt-text="Screenshot of connecting the new shortcut to the data":::
 
