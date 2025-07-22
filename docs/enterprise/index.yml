@@ -86,11 +86,11 @@ landingContent:
       - linkListType: concept
         links:                
           - text: Power BI for US government
-            url: powerbi/service-govus-overview.md
+            url: powerbi/service-government-us-overview.md
       - linkListType: how-to-guide
         links:        
           - text: Enroll a US government organization
-            url: powerbi/service-govus-signup.md
+            url: powerbi/service-government-us-signup.md
 
 
   # Card (optional)
