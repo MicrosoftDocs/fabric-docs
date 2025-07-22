@@ -286,7 +286,7 @@ Date, time, and status for semantic model refresh operations that include a writ
 >[!NOTE]
 >Refresh operations performed by the XMLA endpoint don't automatically refresh tile caches. Tile caches are only refreshed when a user accesses the report.
 
-:::image type="content" source="media/service-premium-connect-tools/refresh-history-via-xmla.png" alt-text="Screenshot showing the refresh history screen. The item, via XMLA endpoint, is highlighted.":::
+:::image type="content" source="media/service-premium-connect-tools/refresh-history-via-xml-analysis.png" alt-text="Screenshot showing the refresh history screen. The item, via XMLA endpoint, is highlighted.":::
 
 ## Dynamic Management Views (DMV)
 

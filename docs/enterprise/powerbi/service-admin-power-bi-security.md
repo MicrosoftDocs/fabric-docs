@@ -26,11 +26,11 @@ The Power BI service is built on **Azure**, Microsoft's cloud computing infrastr
 
 The **WFE** cluster uses Microsoft Entra ID to authenticate clients, and provide tokens for subsequent client connections to the Power BI service. Power BI uses the **Azure Traffic Manager** (Traffic Manager) to direct user traffic to the nearest datacenter. Traffic Manager directs requests using the DNS record of the client attempting to connect, authenticate, and to download static content and files. Power BI uses the **Azure Content Delivery Network** (CDN) to efficiently distribute the necessary static content and files to users based on geographical locale.
 
-![Diagram showing the Power BI Architecture focused on the WFE cluster.](media/service-admin-power-bi-security/pbi-security-v2-web-front-end.png)
+![Diagram showing the Power BI Architecture focused on the WFE cluster.](media/service-admin-power-bi-security/power-bi-security-v2-web-front-end.png)
 
 The **Back-End** cluster determines how authenticated clients interact with the Power BI service. The **Back-End** cluster manages visualizations, user dashboards, semantic models, reports, data storage, data connections, data refresh, and other aspects of interacting with the Power BI service. The **Gateway Role** acts as a gateway between user requests and the Power BI service. Users don't interact directly with any roles other than the **Gateway Role**. **Azure API Management**  eventually handles the **Gateway Role**.
 
-![Diagram showing the Power BI architecture diagram focused on the Back-End cluster.](media/service-admin-power-bi-security/pbi_security_v2_backend_updated.png)
+![Diagram showing the Power BI architecture diagram focused on the Back-End cluster.](media/service-admin-power-bi-security/power-bi-security-v2-backend-updated.png)
 
 > [!IMPORTANT]
 > Only **Azure API Management** and **Gateway** roles are accessible through the public Internet. They provide authentication, authorization, DDoS protection, throttling, load balancing, routing, and other capabilities.

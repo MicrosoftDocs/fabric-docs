@@ -163,7 +163,7 @@ The remote server returned an error: (400) Bad Request. (System)
 
 When connecting to a Power BI workspace with SSMS, ensure the following:
 
-- The XMLA endpoint setting is enabled for your tenant's capacity. To learn more, see  [Enable XMLA read-write](service-premium-connect-tools.md#enable-xml-analysis-read-write).
+- The XMLA endpoint setting is enabled for your tenant's capacity. To learn more, see  [Enable XMLA read-write](service-premium-connect-tools.md#enable-xmla-read-write).
 - The [Allow XMLA endpoints and Analyze in Excel with on-premises semantic models](service-premium-connect-tools.md#security) setting is enabled in Tenant settings.
 - You're using the latest version of SSMS. [Download the latest](/sql/ssms/download-sql-server-management-studio-ssms).
 
@@ -262,7 +262,7 @@ This is due to a known issue in the app services REST API. This will be resolved
 When republishing a live connected semantic model utilizing the Analysis Services connector, the following error, "**There is an existing report/semantic model with the same name. Please delete or rename the existing semantic model and retry.**"
  may be shown.
 
-:::image type="content" source="media/troubleshoot-xml-analysis-endpoint/couldnt-publish-to-power-bi.png" alt-text="Couldn't publish to Power BI error.":::
+:::image type="content" source="media/troubleshoot-xml-analysis-endpoint/cannot-publish-to-power-bi.png" alt-text="Couldn't publish to Power BI error.":::
 
 This is due to the semantic model being published having a different connection string but having the same name as the existing semantic model. To resolve this issue, either delete or rename the existing semantic model. Also be sure to republish any apps that are dependent on the report. If necessary, downstream users should be informed to update any bookmarks with the new report address to ensure they access the latest report.  
 

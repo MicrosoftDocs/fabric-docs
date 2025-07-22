@@ -123,7 +123,7 @@ Before beginning a migration, first ensure [prerequisites](#prerequisites) are m
 
 1. In Power BI, select **Settings** > **Azure Analysis Services migrations**.
 
-    :::image type="content" source="media/aas-powerbi-migration-overview/settings-manage-azure-as-migrations.png" alt-text="Screenshot shown Manage Azure AS migrations in settings menu.":::
+    :::image type="content" source="media/azure-analysis-services-migration-overview/settings-manage-azure-as-migrations.png" alt-text="Screenshot shown Manage Azure AS migrations in settings menu.":::
 
 1. On the **Azure Analysis Services to Power BI Premium** page, select **+ New Migration**.
 
@@ -135,7 +135,7 @@ Before beginning a migration, first ensure [prerequisites](#prerequisites) are m
 
     For example, if creating a new migration connection with a new PPU workspace, the Create AAS migration flyout should look like the below image:
 
-    :::image type="content" source="media/aas-powerbi-migration-overview/create-migration-flyout.png" alt-text="Screenshot of Create migration flyout.":::
+    :::image type="content" source="media/azure-analysis-services-migration-overview/create-migration-flyout.png" alt-text="Screenshot of Create migration flyout.":::
 
 1. Verify your settings, and then select **Create**.
 
@@ -147,7 +147,7 @@ Before beginning a migration, first ensure [prerequisites](#prerequisites) are m
 
 1. In **Migration Details**, verify your Azure Analysis Services server and Power BI Premium workspace settings. Any prerequisites not met are shown. Model databases on the server that can be migrated are shown in **Semantic models**.
 
-    :::image type="content" source="media/aas-powerbi-migration-overview/migration-details2.png" alt-text="Screenshot of migration details.":::
+    :::image type="content" source="media/azure-analysis-services-migration-overview/migration-details.png" alt-text="Screenshot of migration details.":::
 
 1. For each model database you want to migrate, under **Include in Migration**, toggle the slider button to **Yes**.
 
@@ -161,11 +161,11 @@ Before beginning a migration, first ensure [prerequisites](#prerequisites) are m
 
 On the **Migration Details** page, in **Semantic models**, select the model database you are migrating to show the **Migration Details** flyout. The flyout shows important details about your migration including status and migration progress. Remember, migration can take some time depending on the size and complexity of the model database being migrated.
 
-:::image type="content" source="media/aas-powerbi-migration-overview/dataset-migration-details-progress.png" alt-text="Model migration details showing progress.":::
+:::image type="content" source="media/azure-analysis-services-migration-overview/dataset-migration-details-progress.png" alt-text="Model migration details showing progress.":::
 
 When the migration process is completed, any issues are shown.
 
-:::image type="content" source="media/aas-powerbi-migration-overview/dataset-migration-details-complete.png" alt-text="Model migration details showing completion.":::
+:::image type="content" source="media/azure-analysis-services-migration-overview/dataset-migration-details-complete.png" alt-text="Model migration details showing completion.":::
 
 #### Enable redirection
 
@@ -173,15 +173,15 @@ After a migration has successfully completed, you can then enable server redirec
 
 To enable redirection, on the **Azure Analysis Services to Power BI Premium** page, under **All migrations**, for the migration pair you want to redirect, in the **Server redirection enabled** column, set the slider to **Enable**.
 
-:::image type="content" source="media/aas-powerbi-migration-overview/dataset-migration-enable-redirection2.png" alt-text="Enable redirection.":::
+:::image type="content" source="media/azure-analysis-services-migration-overview/dataset-migration-enable-redirection.png" alt-text="Enable redirection.":::
 
 Redirection can take some time. You can leave the page and continue to use Power BI while redirection is in process. To check the status of server redirection, select **More options**, and then select **Redirection status**.
 
-:::image type="content" source="media/aas-powerbi-migration-overview/dataset-migration-redirection-status2.png" alt-text="Check redirection status from More options menu.":::
+:::image type="content" source="media/azure-analysis-services-migration-overview/dataset-migration-redirection-status.png" alt-text="Check redirection status from More options menu.":::
 
 The **Server Redirection** flyout shows the status of redirection.
 
-:::image type="content" source="media/aas-powerbi-migration-overview/dataset-migration-redirection-status-flyout.png" alt-text="Redirection status flyout.":::
+:::image type="content" source="media/azure-analysis-services-migration-overview/dataset-migration-redirection-status-flyout.png" alt-text="Redirection status flyout.":::
 
 To disable server redirection, on the **Azure Analysis Services to Power BI Premium** page, under **All migrations**, simply move the **Server Redirection Enabled** slider to Off.
 
@@ -191,7 +191,7 @@ If you have reports in the Power BI service that connected to and queried your d
 
 To rebind reports, on the **Azure Analysis Services to Power BI Premium** page, under **All migrations** > **Azure Analysis Services server**, select your server migration. Then, on the **Migration details** page, for your newly migrated model, select **Rebind reports**.
 
-:::image type="content" source="media/aas-powerbi-migration-overview/dataset-migration-details-rebind2.png" alt-text="Migration server connection":::
+:::image type="content" source="media/azure-analysis-services-migration-overview/dataset-migration-details-rebind.png" alt-text="Migration server connection":::
 
 The rebind operation can take a few minutes to complete. To check the status of your rebind, select **Rebind status**.
 

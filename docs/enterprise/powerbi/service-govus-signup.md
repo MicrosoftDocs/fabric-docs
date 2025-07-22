@@ -58,7 +58,7 @@ After this process is complete, follow the steps for existing Microsoft 365 Gove
 
 1. Under **My Organization is**, select your organization type.
 
-   ![Screenshot showing a portion of the organization information form. The organization type menu is expanded, and the options are highlighted.](media/service-govus-signup/government-community-cloud-trial-signup.png)
+   ![Screenshot showing a portion of the organization information form. The organization type menu is expanded, and the options are highlighted.](media/service-government-united-states-signup/government-community-cloud-trial-signup.png)
 
 1. Enter your business address and agree to the **Office 365 terms and conditions**.
 1. Select **Submit** to start the onboarding process. Your Microsoft representative or partner can help with any questions.

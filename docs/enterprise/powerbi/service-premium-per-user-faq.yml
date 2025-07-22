@@ -14,7 +14,7 @@ title: Power BI Premium Per User
 summary: |
   Organizations can use Power BI **Premium Per User** to license Premium features on a per-user basis. Premium Per User (PPU) includes all Power BI Pro license capabilities, and includes features such as XMLA endpoints, AI, and other capabilities only available to Premium subscribers. 
   
-  ![Screenshot showing the License mode information panel. Premium per user is selected.](media/service-premium-per-user-faq/premium-per-user-faq-01b.png)
+  ![Screenshot showing the License mode information panel. Premium per user is selected.](media/service-premium-per-user-faq/premium-per-user-license-mode.png)
   
   The following sections describe using Premium Per User (PPU), administrative considerations, and expectations from a Premium Per User (PPU) license.
   
@@ -79,13 +79,13 @@ sections:
         answer: |
            When a workspace is marked as a Premium Per User (PPU) workspace, it displays a diamond icon, as shown in the following image:
 
-           ![Screenshot showing a Premium workspace. An arrow points to the diamond icon.](media/service-premium-per-user-faq/premium-per-user-faq-03.png)    
+           ![Screenshot showing a Premium workspace. An arrow points to the diamond icon.](media/service-premium-per-user-faq/premium-per-user.png)    
 
            A Premium Per User (PPU) license is required to access content in a Premium Per User (PPU) workspace or app. This requirement includes scenarios where users are accessing the content through the XMLA endpoint, Analyze in Excel, Composite Models, and so on. You can give access to a workspace to users who don't have a PPU license. If they're eligible, a prompt for a trial license appears. If they aren’t eligible, an admin must assign a license.
 
            The following table describes who can access content with PPU.
 
-           ![Screenshot of a chart showing accessibility to content by license type.](media/service-premium-per-user-faq/premium-per-user-faq-04.png)   
+           ![Screenshot of a chart showing accessibility to content by license type.](media/service-premium-per-user-faq/premium-per-user-view-access.png)   
 
            Premium Per User (PPU) works with Power BI embedded, in the same way as a Power BI Pro license. You can embed the content, and each user needs a PPU license to view it.
 

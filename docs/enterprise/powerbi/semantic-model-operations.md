@@ -1,6 +1,6 @@
 ﻿---
 title: Semantic model operation logs
-description: View a set of GraphQL operation logs that you can query in your Fabric workspace monitoring database.
+description: View a set of semantic  model operation logs that you can query in your Fabric workspace monitoring database.
 author: JulCsc
 ms.author: juliacawthra
 ms.service: powerbi

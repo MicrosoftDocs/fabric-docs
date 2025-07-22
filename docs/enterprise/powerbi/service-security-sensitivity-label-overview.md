@@ -69,7 +69,7 @@ When you apply a sensitivity label to Power BI content and files, it's similar t
 
 Here's a quick example of how sensitivity labels in Power BI work. The image below shows how a sensitivity label is applied on a report in the Power BI service, then how the data from the report is exported to an Excel file, and finally how the sensitivity label and its protections persist in the exported file.
 
-![Animated gif showing application and persistence of sensitivity labels](media/service-security-sensitivity-label-overview/ApplyLabelandProtection.gif)
+![Animated gif showing application and persistence of sensitivity labels](media/service-security-sensitivity-label-overview/apply-label-protection.gif)
 
 The sensitivity labels you apply to content persist and roam with the content as it's used and shared throughout Power BI. You can use the labeling to generate usage reports and to see activity data for your sensitive content.
 
@@ -98,7 +98,7 @@ When new reports and dashboards are created in the Power BI service, they automa
 
 The following image shows how a semantic model's sensitivity label is automatically applied on a new report that is built on top of the semantic model.
 
-![Animated gif showing inheritance of sensitivity labels](media/service-security-sensitivity-label-overview/InheritanceUponCreation.gif)
+![Animated gif showing inheritance of sensitivity labels](media/service-security-sensitivity-label-overview/inheritance-upon-creation.gif)
 
 > [!NOTE]
 > If for any reason the sensitivity label can't be applied on the new report or dashboard, Power BI **will not** block creation of the new item.
@@ -188,7 +188,7 @@ Sensitivity labels are supported in deployment pipelines. See the [deployment pi
 
 Sensitivity labels can be viewed on reports and dashboards in the Power BI mobile apps. An icon near the name of the report or dashboard indicates that it has a sensitivity label, and the type of label and its description can be found in the report or dashboard's info box.
 
-![Screen shot of sensitivity label in mobile app](media/service-security-sensitivity-label-overview/mobile-app-sensitivity-label2.png)
+![Screen shot of sensitivity label in mobile app](media/service-security-sensitivity-label-overview/mobile-app-sensitivity-label.png)
 
 ## Label change enforcement
 

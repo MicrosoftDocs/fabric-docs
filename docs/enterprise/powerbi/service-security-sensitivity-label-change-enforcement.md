@@ -39,7 +39,7 @@ To avoid this situation, the Power BI admin can enable the **Allow workspace adm
 
 To enable this setting, go to: **Admin portal > Tenant settings > Information protection**.
 
-![Screenshot tenant switch allowing workspace admins to override automatically set sensitivity labels.](media/service-security-sensitivity-label-change-enforcement/lce-relaxations-allow-workspace-admins-tenant-switch.png)
+![Screenshot tenant switch allowing workspace admins to override automatically set sensitivity labels.](media/service-security-sensitivity-label-change-enforcement/relaxations-allow-workspace-admins-tenant-switch.png)
 
 ## Related content
 

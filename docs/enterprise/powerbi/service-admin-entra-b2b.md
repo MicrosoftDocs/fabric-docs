@@ -213,7 +213,7 @@ Additionally, to use in-place semantic model sharing, tenant admins need to enab
 ## Related content
 
 * For more detailed info, including how row-level security works, check out the whitepaper: [Distribute Power BI content to external guest users using Microsoft Entra B2B](/power-bi/guidance/whitepaper-azure-b2b-power-bi).
-* For information about Microsoft Entra B2B, see [What is Microsoft Entra B2B collaboration?](/azure/active-directory/active-directory-b2b-what-is-entra-b2b/)
+* For information about Microsoft Entra B2B, see [What is Microsoft Entra B2B collaboration?](/entra/external-id/what-is-b2b)
 * For information about in-place semantic model sharing, see [Power BI in-place semantic model sharing with guest users in external organizations (preview)](/power-bi/collaborate-share/service-dataset-external-org-share-about).
 * For information about government clouds, see [Power BI for US Government](service-govus-overview.md).
 

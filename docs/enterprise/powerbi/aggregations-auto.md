@@ -216,7 +216,7 @@ namespace AutoAggs
 
 Executing this snippet outputs automatic aggregations tables currently included in the model in a console.
 
-:::image type="content" source="media/aggregations-automatic/auto-aggs-code.png" alt-text="Screenshot of the output the snippet showing auto aggs tables that exist in the model.":::
+:::image type="content" source="media/aggregations-automatic/auto-aggregations-code.png" alt-text="Screenshot of the output the snippet showing auto aggregations tables that exist in the model.":::
 
 Keep in mind, aggregations tables are constantly changing as training operations determine the optimal aggregations to include in the in-memory aggregations cache.
 

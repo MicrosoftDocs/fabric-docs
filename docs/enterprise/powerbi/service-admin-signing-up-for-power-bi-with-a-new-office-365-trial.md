@@ -30,10 +30,10 @@ To follow along, sign up for an Office 365 E5 trial [on the Microsoft 365 web si
 1. On the Office 365 E5 option, select **Try for free**.
 1. Follow the prompts to set up your trial. Enter a non-work and non-school email address, and select **Next** > **Set up account**.  
 
-    :::image type="content" source="media/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial/power-bi-set-up-account.png" alt-text="Screenshot showing the message that the email address doesn't work. Set up account is highlighted.":::
+    :::image type="content" source="media/service-admin-sign-up-power-bi-new-office-365-trial/power-bi-set-up-account.png" alt-text="Screenshot showing the message that the email address doesn't work. Set up account is highlighted.":::
 
 1. After completing the sign-up process, Microsoft displays your new user name and domain, for example, *pradtannak@yourcompany.onmicrosoft.com*. Create a password, and then select **Next**.
-   :::image type="content" source="media/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial/office-365-trial-setup-password.png" alt-text="Screenshot showing the newly created user name and domain name with input boxes for entering and confirming a password. Next is highlighted.":::
+   :::image type="content" source="media/service-admin-sign-up-power-bi-new-office-365-trial/office-365-trial-setup-password.png" alt-text="Screenshot showing the newly created user name and domain name with input boxes for entering and confirming a password. Next is highlighted.":::
 
 You created a new onmicrosoft.com business account and started a free trial of Office 365. Your trial includes Power BI Pro. 
 
