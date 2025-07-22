@@ -20,11 +20,12 @@ This article provides guidance on getting started with Fabric Real-Time hub.
 [!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
 
 ## Real-Time hub page
-On the **Real-Time hub** page, you see the **All data streams** section, where you see all the streams and tables you can access. Streams are the outputs from [Fabric eventstreams](../real-time-intelligence/event-streams/overview.md) and tables are from Kusto Query Language (KQL) databases that you can access.
+On the **Real-Time hub** page, there are two sections. 
 
-The following sections provide details about the **All data streams** table, such as columns, filters, and other features available on the table. 
+In the first section at the top, you see **cards or tiles** that provide a quick way to performing the tasks:
 
-### Cards 
+:::image type="content" source="./media/get-started-real-time-hub/cards.png" alt-text="Screenshot that shows cards at the top of the Real-Time hub page." lightbox="./media/get-started-real-time-hub/cards.png":::
+
 
 | Card | Description |
 | ---- | ----------- |
@@ -36,10 +37,10 @@ The following sections provide details about the **All data streams** table, suc
 | Learn from a tutorial | Links to the [Fabric Real-Time intelligence tutorial](../real-time-intelligence/tutorial-introduction.md) that has a module on using the Real-Time hub. |
 | Case study | Links to a [case study](https://www.microsoft.com/customers/story/1770346240728000716-elcome-microsoft-copilot-consumer-goods-en-united-arab-emirates). 
 
-### All data streams
-The **All data streams** table on the Real-Time hub page shows you all the eventstreams and KQL tables you have access to. The following sections provide more detail on this table.
+In the **All data streams** section at the bottom, you see all the streams and tables you can access. Streams are the outputs from [Fabric eventstreams](../real-time-intelligence/event-streams/overview.md) and tables are from Kusto Query Language (KQL) databases that you can access. 
 
-#### Columns
+:::image type="content" source="./media/get-started-real-time-hub/all-data-streams-section.png" alt-text="Screenshot that shows the All data streams section of the Real-Time hub page." lightbox="./media/get-started-real-time-hub/all-data-streams-section.png":::
+
 The **All data streams** table has the following columns:
 
 | Column | Description |
@@ -51,9 +52,6 @@ The **All data streams** table has the following columns:
 | Endorsement | Endorsement status of the parent artifact. |
 | Sensitivity | Sensitivity status of the parent artifact. |
 
-:::image type="content" source="./media/get-started-real-time-hub/all-data-streams-section.png" alt-text="Screenshot that shows the All data streams section of the Real-Time hub page." lightbox="./media/get-started-real-time-hub/all-data-streams-section.png":::
-
-#### Filters
 
 The following filters are available at the top for you to narrow down easily to the desired stream:
 
@@ -67,13 +65,9 @@ The following filters are available at the top for you to narrow down easily to 
 > [!NOTE]
 > To see streams and tables from only your workspace, select **My workspace** for the **Workspace** filter. 
 
-#### Search
-Using the **search** text window, you can search your streams/events by typing in the name of stream.
+Using the **search** text window, you can search your streams by typing in the name of stream.
 
-
-#### Actions
-
-Here are the actions available on streams from eventstreams from the **All data streams** page. Move the mouse over the data stream, select **... (ellipsis)** to see the actions.
+Here are the **actions** available on streams from eventstreams from the **All data streams** page. Move the mouse over the data stream, select **... (ellipsis)** to see the actions.
 
 | Action | Description |
 | ------ | ----------- |
