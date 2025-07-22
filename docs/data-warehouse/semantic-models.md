@@ -4,7 +4,7 @@ description: Learn more about Power BI semantic models in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: chweb, salilkanade, pvenkat
-ms.date: 07/16/2025
+ms.date: 07/22/2025
 ms.topic: conceptual
 ms.search.form: Default semantic model overview # This article's title should not change. If so, contact engineering.
 ---
@@ -82,7 +82,7 @@ To create a Power BI semantic model using Direct Lake mode, follow these steps:
 
 1. In the **Fabric portal**, create a new semantic model based on the desired item:
    - Open the lakehouse and select **New Power BI semantic model** from the ribbon.
-   - Alternatively, open a Warehouse or Lakehouse's SQL analytics endpoint, select **New semantic model**. 
+   - Alternatively, open the relevant item, such as your warehouse or SQL analytics endpoint, select **New semantic model**. 
 1. Enter a name for the new semantic model, select a workspace to save it in, and pick the tables to include. Then select **Confirm**.
 1. The new Power BI semantic model can be [edited in the workspace](/power-bi/transform-model/service-edit-data-models), where you can add relationships, measures, rename tables and columns, choose how values are displayed in report visuals, and much more. If the model view does not show after creation, check the pop-up blocker of your browser.
 1. To edit the Power BI semantic model later, select **Open data model** from the semantic model context menu or item details page to edit the semantic model further.
