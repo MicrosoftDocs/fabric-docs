@@ -11,9 +11,9 @@ ms.date: 07/21/2025
 
 # Create models with Automated ML (preview)
 
-Automated Machine Learning (AutoML) encompasses a set of techniques and tools designed to streamline the process of training and optimizing machine learning models with minimal human intervention. The primary objective of AutoML is to simplify and accelerate the selection of the most suitable machine learning model and hyperparameters for a given dataset, a task that typically demands considerable expertise and computational resources. Within the Fabric framework, data scientists can leverage the ```flaml.AutoML``` module to automate various aspects of their machine learning workflows.
+Automated Machine Learning (AutoML) encompasses a set of techniques and tools designed to streamline the process of training and optimizing machine learning models with minimal human intervention. The primary objective of AutoML is to simplify and accelerate the selection of the most suitable machine learning model and hyperparameters for a given dataset, a task that typically demands considerable expertise and computational resources. Within the Fabric framework, data scientists can use the ```flaml.AutoML``` module to automate various aspects of their machine learning workflows.
 
-In this article, we will delve into the process of generating AutoML trials directly from code using a Spark dataset. Additionally, we will explore methods for converting this data into a Pandas dataframe and discuss techniques for parallelizing your experimentation trials.
+In this article, we delve into the process of generating AutoML trials directly from code using a Spark dataset. Additionally, we explore methods for converting this data into a Pandas dataframe and discuss techniques for parallelizing your experimentation trials.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -21,13 +21,13 @@ In this article, we will delve into the process of generating AutoML trials dire
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-* Create a new [Fabric environment](../data-engineering/create-and-use-environment.md) or ensure you are running on the Fabric Runtime 1.2 (Spark 3.4 (or higher) and Delta 2.4)
+* Create a new [Fabric environment](../data-engineering/create-and-use-environment.md) or ensure you're running on the Fabric Runtime 1.2 (Spark 3.4 (or higher) and Delta 2.4)
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
 ## Load and prepare data
 
-In this section, we'll specify the download settings for the data and then save it to the lakehouse.
+In this section, we specify the download settings for the data and then save it to the lakehouse.
 
 ### Download data
 
@@ -84,11 +84,11 @@ This code assumes that the data file has been downloaded and is located in the s
 
 ### Prepare the data
 
-In this section, we'll perform data cleaning and feature engineering on the dataset.
+In this section, we perform data cleaning and feature engineering on the dataset.
 
 #### Clean data
 
-First, we define a function to clean the data, which includes dropping rows with missing data, removing duplicate rows based on specific columns, and dropping unnecessary columns.
+First, we define a function to clean the data, which includes dropping rows with missing data, remove duplicate rows based on specific columns, and drop unnecessary columns.
 
 ```python
 # Define a function to clean the data
@@ -150,7 +150,7 @@ This step allows you to inspect the resulting DataFrame with the applied transfo
 
 ### Save to lakehouse
 
-Now, we will save the cleaned and feature-engineered dataset to the lakehouse.
+Now, we save the cleaned and feature-engineered dataset to the lakehouse.
 
 ```python
 # Create PySpark DataFrame from Pandas
@@ -162,9 +162,9 @@ Here, we take the cleaned and transformed PySpark DataFrame, ```df_clean```, and
 
 ### Create test and training datasets
 
-Next, we will create the test and training datasets from the cleaned and feature-engineered data.
+Next, we create the test and training datasets from the cleaned and feature-engineered data.
 
-In the provided code section, we load a cleaned and feature-engineered dataset from the lakehouse using Delta format, split it into training and testing sets with an 80-20 ratio, and prepare the data for machine learning. This preparation involves importing the ```VectorAssembler``` from PySpark ML to combine feature columns into a single "features" column. Subsequently, we use the ```VectorAssembler``` to transform the training and testing datasets, resulting in ```train_data``` and ```test_data``` DataFrames that contain the target variable "Exited" and the feature vectors. These datasets are now ready for use in building and evaluating machine learning models.
+In the provided code section, we load a cleaned and feature-engineered dataset from the lakehouse using Delta format, split it into training and testing sets with an 80-20 ratio, and prepare the data for machine learning. This preparation involves importing the ```VectorAssembler``` from PySpark ML to combine feature columns into a single "features" column. Later, we use the ```VectorAssembler``` to transform the training and testing datasets, resulting in ```train_data``` and ```test_data``` DataFrames that contain the target variable "Exited" and the feature vectors. These datasets are now ready for use in building and evaluating machine learning models.
 
 ```python
 # Import the necessary library for feature vectorization
@@ -190,7 +190,7 @@ test_data = featurizer.transform(test_raw)["Exited", "features"]
 
 ## Train baseline model
 
-Using the featurized data, we'll train a baseline machine learning model, configure MLflow for experiment tracking, define a prediction function for metrics calculation, and finally, view and log the resulting ROC AUC score.
+Using the featurized data, we train a baseline machine learning model, configure MLflow for experiment tracking, define a prediction function for metrics calculation, and finally, view and log the resulting ROC AUC score.
 
 ### Set logging level
 
@@ -256,11 +256,11 @@ From here, we can see that our resulting model achieves a ROC AUC score of 84%.
 
 ## Create an AutoML trial with FLAML
 
-In this section, we'll create an AutoML trial using the FLAML package, configure the trial settings, convert the Spark dataset to a Pandas on Spark dataset, run the AutoML trial, and view the resulting metrics.
+In this section, we create an AutoML trial using the FLAML package, configure the trial settings, convert the Spark dataset to a Pandas on Spark dataset, run the AutoML trial, and view the resulting metrics.
 
 ### Configure the AutoML trial
 
-Here, we import the necessary classes and modules from the FLAML package and create an instance of AutoML, which will be used to automate the machine learning pipeline.
+Here, we import the necessary classes and modules from the FLAML package and create an instance of AutoML, which is used to automate the machine learning pipeline.
 
 ```python
 # Import the AutoML class from the FLAML package
@@ -325,7 +325,7 @@ print('Training duration of the best run: {0:.4g} s'.format(automl.best_config_t
 
 ## Parallelize your AutoML trial with Apache Spark
 
-In scenarios where your dataset can fit into a single node and you want to leverage the power of Spark for running multiple parallel AutoML trials simultaneously, you can follow these steps:
+In scenarios where your dataset can fit into a single node and you want to use the power of Spark for running multiple parallel AutoML trials simultaneously, you can follow these steps:
 
 ### Convert to Pandas dataframe
 
@@ -340,7 +340,7 @@ Here, we convert the ```train_raw``` Spark DataFrame into a Pandas DataFrame nam
 
 ### Configure parallelization settings
 
-Set ```use_spark``` to ```True``` to enable Spark-based parallelism. By default, FLAML will launch one trial per executor. You can customize the number of concurrent trials by using the ```n_concurrent_trials``` argument.
+Set ```use_spark``` to ```True``` to enable Spark-based parallelism. By default, FLAML launches one trial per executor. You can customize the number of concurrent trials by using the ```n_concurrent_trials``` argument.
 
 ```python
 settings = {
@@ -355,13 +355,13 @@ settings = {
 
 }
 ```
-In these settings, we specify that we want to utilize Spark for parallelism by setting ```use_spark``` to ```True```. We also set the number of concurrent trials to 3, meaning that three trials will run in parallel on Spark.
+In these settings, we specify that we want to utilize Spark for parallelism by setting ```use_spark``` to ```True```. We also set the number of concurrent trials to 3, meaning that three trials run in parallel on Spark.
 
 To learn more about how to parallelize your AutoML trails, you can visit the [FLAML documentation for parallel Spark jobs](https://microsoft.github.io/FLAML/docs/Examples/Integrate%20-%20Spark#parallel-spark-jobs).
 
 ### Run the AutoML trial in parallel
 
-Now, we will run the AutoML trial in parallel with the specified settings. We will use a nested MLflow run to track the experiment within the existing MLflow run context.
+Now, we run the AutoML trial in parallel with the specified settings. We use a nested MLflow run to track the experiment within the existing MLflow run context.
 
 ```python
 '''The main FLAML AutoML API'''
