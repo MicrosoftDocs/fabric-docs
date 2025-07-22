@@ -255,7 +255,7 @@ In order to keep the tables at the best state for best performance, perform bin-
 The table maintenance commands *OPTIMIZE* and *VACUUM* can be used within notebooks and Spark Job Definitions, and then orchestrated using platform capabilities. Lakehouse in Fabric offers a functionality to use the user interface to perform ad-hoc table maintenance as explained in the [Delta Lake table maintenance](lakehouse-table-maintenance.md) article.
 
 > [!IMPORTANT]
-> Properly designing the table physical structure, based on the ingestion frequency and expected read patterns, is likely more important than running the optimization commands described in this section.
+> Designing the table's physical structure based on ingestion frequency and read patterns is often more important than the optimization commands in this section.
 
 ### Control V-Order when optimizing a table
 
