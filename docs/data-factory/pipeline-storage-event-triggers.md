@@ -10,8 +10,6 @@ ms.date: 07/16/2025
 
 # Data pipelines event triggers in Data Factory
 
-## Introduction
-
 Triggers in Fabric Data Factory allow you to invoke a pipeline from many different events including file events, job events, and workspace events. A common use case for invoking Data Factory data pipelines is to trigger a pipeline upon events like file arrival and file delete. For customers moving from Azure Data Factory (ADF) to Microsoft Fabric, using ADLS/Blob storage events is common. New Fabric users not previously familiar with ADF might generally use file events from OneLake. Triggers in Fabric Data Factory use Fabric platform capabilities including eventstreams and Data Activator alerts. Inside of the Fabric Data Factory pipeline design canvas, there's a trigger button used to create and manage a Data Activator alert for your pipeline, or you can create the trigger directly from the Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] Real-Time Intelligence experience.
 
 ## How to set storage event triggers on a pipeline
