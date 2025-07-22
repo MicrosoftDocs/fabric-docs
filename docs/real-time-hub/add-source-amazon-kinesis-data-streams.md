@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 07/22/2025
 ---
 
 # Add Amazon Kinesis Data Streams as source in Real-Time hub
@@ -23,7 +23,7 @@ This article describes how to add Amazon Kinesis Data Streams as an event source
 
 ## Add Amazon Kinesis Data Streams as a source
 
-1. On the **Select a data source** screen, select **Kinesis Data Streams**.
+1. On the **Data sources** page, select **Kinesis Data Streams**.
 
    :::image type="content" border="true" source="media/add-source-amazon-kinesis-data-streams/select-external-source.png" alt-text="A screenshot of selecting Kinesis Data Streams.":::
 1. On the **Connect** screen, to create a connection, select **New connection**.
@@ -55,7 +55,7 @@ This article describes how to add Amazon Kinesis Data Streams as an event source
 ## View data stream details
 
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Confluent Cloud Kafka source. To close the wizard, select **Close** at the bottom of the page.
-1. In Real-Time hub, select **My data streams**. To see the new data stream, refresh the page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+2. You should see the stream in the **Recent streaming data** section of the **Real-Time hub** home page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 ## Related content
 
