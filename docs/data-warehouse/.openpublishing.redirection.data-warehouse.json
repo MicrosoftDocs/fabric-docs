@@ -44,6 +44,16 @@
         "source_path_from_root": "/docs/data-warehouse/settings-context-menus.md",
         "redirect_url": "/fabric/data-warehouse/tutorial-introduction",
         "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/default-power-bi-semantic-model.md",
+        "redirect_url": "/fabric/data-warehouse/semantic-models",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/data-modeling-defining-relationships.md",
+        "redirect_url": "/fabric/data-warehouse/semantic-models",
+        "redirect_document_id": false
       }
     ]
 }
