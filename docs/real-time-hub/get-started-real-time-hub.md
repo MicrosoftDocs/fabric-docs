@@ -82,7 +82,7 @@ Here are the actions available on a KQL table from the **All data streams** page
 | Action | Description |
 | ------ | ----------- |
 | Explore data | Explore data in the KQL table. |
-| Create real-time dashboard (Preview) |[Create a real-time dashboard](../real-time-intelligence/dashboard-real-time-create.md) based on data in the KQL table. |
+| Create real-time dashboard (Preview) |[Create a Real-Time Dashboard with Copilot](/fabric/fundamentals/copilot-generate-dashboard) based on data in the KQL table. |
 | Open KQL Database | Open parent KQL Database of the KQL table. |
 | Endorse | Endorse parent KQL Database of the KQL table. For more information, see [Endorse data streams](endorse-data-streams.md). |
 

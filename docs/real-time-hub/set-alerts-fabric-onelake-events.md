@@ -4,7 +4,7 @@ description: This article describes how to set alerts on OneLake events in Real-
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 11/13/2024
+ms.date: 07/22/2025
 ---
 
 # Set alerts on OneLake events in Real-Time hub
@@ -12,6 +12,10 @@ ms.date: 11/13/2024
 This article describes how to set alerts on OneLake events in Real-Time hub.
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+
+## Navigate to Real-Time hub
+
+[!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
 
 ## Launch the Set alert page
 
