@@ -47,7 +47,7 @@ Use the following commands to enable or override V-Order writes as needed for yo
 >   - Set the Spark property `spark.sql.parquet.vorder.default` to true`.  
 >   - Switch resource profiles to **`readHeavyforSpark`** or **`ReadHeavy`** profiles. This profile automatically enables V-Order for better read performance.
 
-In Fabric runtime 1.3 and higher versions, the `spark.sql.parquet.vorder.enable` setting is removed. As V-Order is applied automatically during Delta optimization using OPTIMIZE statements, there's no need to manually enable this setting in newer runtime versions. If you're migrating code from an earlier runtime version, you can remove this setting, as the engine ow handles it automatically.
+In Fabric runtime 1.3 and higher versions, the `spark.sql.parquet.vorder.enable` setting is removed. As V-Order is applied automatically during Delta optimization using OPTIMIZE statements, there's no need to manually enable this setting in newer runtime versions. If you're migrating code from an earlier runtime version, you can remove this setting, as the engine now handles it automatically.
 
 - [Learn more about resource profiles](configure-resource-profile-configurations.md)
 
