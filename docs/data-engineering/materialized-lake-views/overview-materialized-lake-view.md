@@ -32,7 +32,7 @@ Materialized lake views in Microsoft Fabric facilitate the implementation of a M
 
 The following features aren't yet available for MLVs in Microsoft Fabric:
 
-* Declarative syntax support for PySpark is on the roadmap and will be available in future updates. In the meantime, you can use Spark SQL syntax to create and refresh tables.
+* Declarative syntax support for PySpark is on the roadmap and will be available in future updates. In the meantime, you can use Spark SQL syntax to create and refresh MLVs.
 * Incremental refresh capabilities are planned for upcoming releases to enhance data freshness and efficiency. Currently, all refresh operations are performed as full refreshes.
 * API support for managing MLVs is currently not supported.
 * Cross-lakehouse lineage and execution features are being actively explored for future integration.
