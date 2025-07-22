@@ -109,6 +109,8 @@ items:
       href: copilot-power-bi-privacy-security.md
     - name: Responsible use in Real-Time Intelligence
       href: copilot-real-time-intelligence-privacy-security.md
+    - name: Manage data security & compliance with Purview 
+      href: /purview/ai-copilot-fabric?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
   - name: Copilot in Fabric experiences
     items:
     - name: Copilot for Data Factory
