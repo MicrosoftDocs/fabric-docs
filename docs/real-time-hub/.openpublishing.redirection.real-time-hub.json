@@ -9,6 +9,11 @@
       "source_path_from_root": "/docs/real-time-hub/explore-my-data-streams.md",
       "redirect_url": "/fabric/real-time-hub/explore-all-data-streams",
       "redirect_document_id": false
-    }    
+    },
+    {
+      "source_path_from_root": "/docs/real-time-hub/explore-data-streams.md",
+      "redirect_url": "/fabric/real-time-hub/explore-all-data-streams",
+      "redirect_document_id": false
+    }        
   ]
 }

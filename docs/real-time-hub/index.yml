@@ -116,8 +116,6 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Explore streams
-            url: explore-data-streams.md
           - text: Explore Azure events
             url: explore-azure-events.md
           - text: Explore Fabric events
