@@ -39,19 +39,17 @@ Once you select a property or eventstream, you see a preview of the values for a
 
 ### Make a new Activator rule
 
-To create a new rule, from the ribbon, select **New rule**. Give it a new name by selecting the default rule name and editing it. The **Monitor** section of the rule is prepopulated with the data that you selected in Step 1.
-
-:::image type="content" source="media/activator-create-activators/activator-create-triggers-design-mode-01.png" alt-text="Screenshot of creating a new rule.":::
+To create a new rule, select the stream you just added and you should see a "Create rule" pane on the right hand side. The **Monitor** section of the rule is prepopulated with the data stream that you selected.
 
 ### Define the condition to detect
 
 Next, choose the type of condition that you want to detect. You can use conditions that check:
 
-- when a numeric value goes over or below a threshold (for example, temperature is greater than 30),
-- when a logical true/false value changes (for example, HasFault becomes True), or 
-- when a string value changes (for example, Status changes from InCompliance).
+- on each event, do an action
+- on each event when a value is met, do an action
+- on each event grouped by a field, do an action (for example, on each PackageId event when Temperature is greater than 30)
 
-:::image type="content" source="media/activator-create-activators/activator-create-triggers-design-mode-04.png" alt-text="Screenshot of choosing the alert condition.":::
+Finally, select whether you want the action performed to send you an email or send you a Teams message and clicke "Create". The conditions and actions selected can be modified later on.
 
 The charts in the Definition tab updates to show a sample of the events that meet the conditions that you set.
 
