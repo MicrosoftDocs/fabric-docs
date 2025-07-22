@@ -20,7 +20,7 @@ __V-Order is a write time optimization to the parquet file format__ that enables
 
 Power BI and SQL engines make use of Microsoft Verti-Scan technology and V-Ordered parquet files to achieve in-memory like data access times. Spark and other non-Verti-Scan compute engines also benefit from the V-Ordered files with an average of 10% faster read times, with some scenarios up to 50%.
 
-V-Order works by applying special sorting, row group distribution, dictionary encoding and compression on parquet files, thus requiring less network, disk, and CPU resources in compute engines to read it, providing cost efficiency and performance. V-Order sorting has a 15% impact on average write times but provides up to 50% more compression.
+V-Order optimizes Parquet files through sorting, row group distribution, encoding, and compression—reducing resource usage and improving performance and cost efficiency. While it adds ~15% to write times, it can boost compression by up to 50%. V-Order sorting has a 15% impact on average write times but provides up to 50% more compression.
 
 It's __100% open-source parquet format compliant__; all parquet engines can read it as a regular parquet files. Delta tables are more efficient than ever; features such as Z-Order are compatible with V-Order. Table properties and optimization commands can be used to control the V-Order of its partitions.
 
@@ -47,7 +47,7 @@ Use the following commands to enable or override V-Order writes as needed for yo
 >   - Setting the Spark property `spark.sql.parquet.vorder.default=true`  
 >   - Switching to the **`readHeavyforSpark`** or **`ReadHeavy`** resource profiles, which automatically enable V-Order for better read performance.
 
-Starting with Fabric runtime 1.3, the `spark.sql.parquet.vorder.enable` setting has been removed, as V-Order is applied automatically during Delta optimization using OPTIMIZE statements. There's no need to manually enable this setting in newer runtime versions. If you're migrating code from a previous runtime version, you can remove this setting, the functionality is now handled natively by the engine.
+Starting with Fabric runtime 1.3, the `spark.sql.parquet.vorder.enable` setting is removed, as V-Order is applied automatically during Delta optimization using OPTIMIZE statements. There's no need to manually enable this setting in newer runtime versions. If you're migrating code from a previous runtime version, you can remove this setting, the functionality is handled by the engine.
 
 - [Learn more about resource profiles](configure-resource-profile-configurations.md)
 
@@ -120,7 +120,7 @@ sparkR.conf("spark.sql.parquet.vorder.default", "false")
 ### Enable V-Order writing in Apache Spark session
 
 > [!IMPORTANT]
-> When enabled at the session level. All parquet writes are made with V-Order enabled. This includes non-Delta parquet tables and Delta tables with the ```parquet.vorder.default``` table property set to either ```true``` or ```false```.
+> When enabled at the session level. All parquet writes are made with V-Order enabled which, includes non-Delta parquet tables and Delta tables with the ```parquet.vorder.default``` table property set to either ```true``` or ```false```.
 
 # [Spark SQL](#tab/sparksql)
 
@@ -175,7 +175,7 @@ ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.default" = "false");
 ALTER TABLE person UNSET TBLPROPERTIES("delta.parquet.vorder.default");
 ```
 
-After you enable or disable V-Order using table properties, only future writes to the table are affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, read the "Control V-Order when optimizing a table" section below.
+After you enable or disable V-Order using table properties, only future writes to the table are affected. Parquet files keep the ordering used when it was created. To change the current physical structure to apply or remove V-Order, see how to [Control V-Order when optimizing a table](#control-v-order-when-optimizing-a-table).
 
 ### Controlling V-Order directly on write operations
 
