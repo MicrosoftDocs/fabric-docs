@@ -200,7 +200,7 @@ When copying data from Lakehouse table, the following mappings are used from Lak
 | double              | Double           |
 | decimal             | Decimal          |
 | boolean             | Boolean          |
-| binary              | ByteArray        |
+| binary              | Byte array       |
 | date                | Date             |
 | timestamp           | DateTime         |
 
@@ -208,7 +208,7 @@ When copying data to Lakehouse table, the following mappings are used from inter
 
 | Interim service data type | Supported delta destination type |
 |---------------------|------------------|
-| Bool             | boolean             |
+| Boolean          | boolean             |
 | SByte            | byte                |
 | Byte             | short               |
 | Int16            | short               |
@@ -216,16 +216,16 @@ When copying data to Lakehouse table, the following mappings are used from inter
 | Int32            | integer             |
 | UInt32           | long                |
 | Int64            | long                |
-| UInt64           | decimal(20,0)       |
-| float            | float               |
-| double           | double              |
+| UInt64           | decimal (20,0)      |
+| Single           | float               |
+| Double           | double              |
 | GUID             | string              |
 | Date             | date                |
 | TimeSpan         | Not supported       |
 | DateTime         | timestamp           |
 | DateTimeOffset   | timestamp           |
 | String           | string              |
-| byte[]           | binary              |
+| Byte array       | binary              |
 | Decimal          | decimal             |
 
 ### Settings
