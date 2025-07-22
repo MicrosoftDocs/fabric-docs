@@ -45,9 +45,9 @@ Use the following commands to enable or override V-Order writes as needed for yo
 >  
 > * If your workload is read-heavy—such as interactive queries or dashboarding—you can enable V-Order by:  
 >   - Setting the Spark property `spark.sql.parquet.vorder.default=true`  
->   - Switching to the **`readHeavyforSpark`** or **`ReadHeavy`** resource profiles, which automatically enable V-Order for better read performance.
+>   - Switching resource profiles to **`readHeavyforSpark`** or **`ReadHeavy`** profiles, which automatically enable V-Order for better read performance.
 
-Starting with Fabric runtime 1.3, the `spark.sql.parquet.vorder.enable` setting is removed, as V-Order is applied automatically during Delta optimization using OPTIMIZE statements. There's no need to manually enable this setting in newer runtime versions. If you're migrating code from a previous runtime version, you can remove this setting, the functionality is handled by the engine.
+In Fabric runtime 1.3 and higher versions, the `spark.sql.parquet.vorder.enable` setting is removed. Because V-Order is applied automatically during Delta optimization using OPTIMIZE statements. There's no need to manually enable this setting in newer runtime versions. If you're migrating code from a previous runtime version, you can remove this setting, the functionality is handled by the engine.
 
 - [Learn more about resource profiles](configure-resource-profile-configurations.md)
 
@@ -272,7 +272,7 @@ OPTIMIZE <table|fileOrFolderPath> WHERE <predicate> [ZORDER  BY (col_name1, col_
 
 When ZORDER and VORDER are used together, Apache Spark performs bin-compaction, ZORDER, VORDER sequentially.
 
-The following commands bin-compact and rewrite all affected files using the TBLPROPERTIES setting. If TBLPROPERTIES is set true to V-Order, all affected files are written as V-Order. If TBLPROPERTIES is unset or set to false to V-Order, it inherits the session setting; so in order to remove V-Order from the table, set the session configuration to false.
+The following commands bin-compact and rewrite all affected files using the TBLPROPERTIES setting. If TBLPROPERTIES is set true to V-Order, all affected files are written as V-Order. If TBLPROPERTIES is unset or set to false, it inherits the session setting. To remove V-Order from the table, set the session configuration to false.
 
 ```sql
 %%sql 
