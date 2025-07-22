@@ -21,12 +21,8 @@ Variable libraries make it easy to manage configurations across different stages
 
 Variable libraries and their values can be deployed in deployment pipelines to manage variable values across different stages. 
 
-<<<<<<< HEAD
-
-=======
 :::image type="content" source="./media/variable-library-cicd/set-variable-library-1.png" alt-text="Screenshot of deployment pipeline." lightbox="media/variable-library-cicd/set-variable-library-1.png":::
 :::
->>>>>>> 486391af6d2dc99cdfd0593453fe7059ade0923c
 
 The following is important information to remember:
 

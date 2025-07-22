@@ -199,7 +199,7 @@ In this step, we create our pipeline and declare our variables.
 5. Click on the canvas so that the focus is off of **Copy data**.
 6. At the bottom, select **Library variables (preview)**.
 
-   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-10.png" alt-text="Screenshot of adding copy data to canvas." lightbox="media/tutorial-variable-library/create-new-pipeline-10.png":::
+   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-10.png" alt-text="Screenshot of the variable library." lightbox="media/tutorial-variable-library/create-new-pipeline-10.png":::
 
 7. Click **New** and add the variables that are in the table below.
 
@@ -309,11 +309,11 @@ In this step, we configure our destination connection for our pipeline.
 
   1. In the *Deployment_Pipeline_Var* select the **Test** stage.
 
-   :::image type="content" source="media/tutorial-variable-library/set-active-set-1.png" alt-text="Screenshot of setting active set in deployment pipeline." lightbox="media/tutorial-variable-library/set-active-set-1.png":::
+   :::image type="content" source="media/tutorial-variable-library/set-active-set-1.png" alt-text="Screenshot of test stage." lightbox="media/tutorial-variable-library/set-active-set-1.png":::
 
   2. On the bottom, click on **WS Variables**.
 
-   :::image type="content" source="media/tutorial-variable-library/set-active-set-2.png" alt-text="Screenshot of setting active set in deployment pipeline." lightbox="media/tutorial-variable-library/set-active-set-2.png":::
+   :::image type="content" source="media/tutorial-variable-library/set-active-set-2.png" alt-text="Screenshot of WS variables." lightbox="media/tutorial-variable-library/set-active-set-2.png":::
 
   3. On the test stage, click the **...** and select **Set as active**.  Click the **Set as Active** button.
 
