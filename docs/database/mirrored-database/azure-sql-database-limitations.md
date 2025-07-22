@@ -122,4 +122,3 @@ For troubleshooting, see:
 ## Related content
 
 - [Monitor Fabric mirrored database replication](monitor.md)
-- [Model data in the default Power BI semantic model in Microsoft Fabric](/fabric/data-warehouse/model-default-power-bi-dataset)

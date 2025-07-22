@@ -4,7 +4,7 @@ description: Learn about options to connect to your SQL database in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaurk, imotiwala, maghan
-ms.date: 04/18/2025
+ms.date: 07/22/2025
 ms.topic: how-to
 ms.search.form: product-databases, Connect to SQL database
 ---
@@ -45,8 +45,8 @@ To find the SQL connection string for your **Fabric SQL database**:
 
 To find the SQL connection string for the **SQL analytics endpoint** of your Fabric SQL database:
 
-- Go to the settings of your SQL database item, then select **SQL endpoint**.
-- Or, select the `...` menu, then select **Copy SQL connection string**.
+- Go to the settings of your SQL database item, then select **Connection strings**.
+- Or, select the `...` menu, then select **SQL endpoint**, then copy the **SQL connection string**.
 
 ## Open in button to connect
 
