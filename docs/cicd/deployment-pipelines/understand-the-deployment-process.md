@@ -76,11 +76,21 @@ Deploying content from a working production pipeline to a stage that has an exis
 
 * Deploying updated content to replace some of the content already there.
 
+After the initial deployment:
+
+- the gateway associated with the target item is not automatically mapped to the corresponding data source.
+- You need to manually configure this mapping through the target item's settings page
+- After configuring verify that the data refresh completes successfully.
+- Subsequent deployments do not alter or reset this gateway configuration.
+
 ### Deployment process
 
 When content from the source stage is copied to the target stage, Fabric identifies existing content in the target stage and overwrites it. To identify which content item needs to be overwritten, deployment pipelines uses the connection between the parent item and its clones. This connection is kept when new content is created. The overwrite operation only overwrites the content of the item. The item's ID, URL, and permissions remain unchanged.
 
 In the target stage, [item properties that aren't copied](understand-the-deployment-process.md#item-properties-that-are-not-copied), remain as they were before deployment. New content and new items are copied from the source stage to the target stage.
+
+
+
 
 ## Autobinding
 
