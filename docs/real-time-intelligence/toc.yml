@@ -29,8 +29,6 @@ items:
     href: architecture-medallion.md
   - name: End to end sample
     href: sample-end-to-end.md
-  - name: Real-Time Dashboards Overview
-    href: real-time-dashboards-overview.md
 - name: Tutorials
   items:
   - name: End to end tutorial - Real-Time-Intelligence
@@ -764,6 +762,8 @@ items:
   items:
   - name: Real-Time Dashboards
     items:
+    - name: Real-Time Dashboards Overview
+      href: real-time-dashboards-overview.md
     - name: Generate Real-Time Dashboard Using Copilot
       href: ../fundamentals/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
     - name: Create a Real-Time Dashboard
