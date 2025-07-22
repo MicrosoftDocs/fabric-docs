@@ -4,7 +4,7 @@ description: This article describes how to set up continuous integration and del
 author: linda33wj
 ms.author: jingwang
 ms.topic: how-to
-ms.date: 03/20/2025
+ms.date: 07/16/2025
 ---
 
 # CI/CD for mirrored databases in Fabric
@@ -33,7 +33,7 @@ When you commit the mirrored database item to the Git repo, a folder is created 
 :::image type="content" source="media/mirrored-database-cicd/representation-in-git.png" alt-text="Screenshot of mirrored database representation in Git.":::
 
 > [!NOTE]
-> Only the mirrored database item is tracked in Git. SQL Analytics endpoint, default semantic model, and other child items (for example, created views) aren't tracked.
+> Only the mirrored database item is tracked in Git. The SQL analytics endpoint, views, and other child items aren't tracked.
 
 ## Mirrored database in deployment pipelines
 

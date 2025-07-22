@@ -57,18 +57,13 @@ You can also create shortcuts from your Lakehouse to your Databricks catalog ite
 
 ## Create a semantic model
 
-> [!TIP]
-> For the best experience, it's recommended that you use Microsoft Edge Browser for Semantic Modeling Tasks.
+You can create a Power BI semantic model based on your mirrored item, and manually add/remove tables. For more information about creating and managing semantic models, see [Create a Power BI semantic model](../../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model).
 
-Learn more about the [default Power BI semantic model](../../data-warehouse/semantic-models.md#understand-whats-in-the-default-power-bi-semantic-model).
-
-In addition to the default Power BI semantic model, you have the option of updating the default Power BI semantic model if you choose to add/remove tables from the model or create a new Semantic Model. To update the Default semantic model:
-
-1. Navigate to your Mirrored Azure Databricks item in your workspace.
-1. Select the **SQL analytics endpoint** from the dropdown list in the toolbar.
-1. Under **Reporting**, select **Manage default semantic model**.
+For the best experience, it's recommended that you use Microsoft Edge Browser for Semantic Modeling Tasks.
 
 ### Manage your semantic model relationships
+
+Once you've created a new semantic model based on your mirrored database,
 
 1. Select **Model Layouts** from the **Explorer** in your workspace.
 1. Once Model layouts are selected, you're presented with a graphic of the tables that were included as part of the Semantic Model.

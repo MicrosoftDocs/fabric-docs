@@ -146,7 +146,7 @@ Consider implementing a snowflake dimension when:
 - You need to [track historical changes](#manage-historical-change) at higher levels of granularity.
 
 > [!NOTE]
-> Bear in mind that a hierarchy in a Power BI semantic model can only be based on columns from a single semantic model table. Therefore, a snowflake dimension should deliver a denormalized result by using a view that joins the snowflake tables together.
+> Bear in mind that a hierarchy in a semantic model can only be based on columns from a single semantic model table. Therefore, a snowflake dimension should deliver a denormalized result by using a view that joins the snowflake tables together.
 
 ### Hierarchies
 
@@ -189,7 +189,7 @@ For unbalanced hierarchies, facts always relate to the dimension grain. For exam
 Querying parent-child hierarchies can be complex and slow, especially for large dimensions. While the source system might store relationships as parent-child, we recommend that you _naturalize_ the hierarchy. In this instance, naturalize means to transform and store the hierarchy levels in the dimension as columns.
 
 > [!TIP]
-> If you choose not to naturalize the hierarchy, you can still create a hierarchy based on a parent-child relationship in a Power BI semantic model. However, this approach isn't recommended for large dimensions. For more information, see [Understanding functions for parent-child hierarchies in DAX](/dax/understanding-functions-for-parent-child-hierarchies-in-dax).
+> If you choose not to naturalize the hierarchy, you can still create a hierarchy based on a parent-child relationship in a semantic model. However, this approach isn't recommended for large dimensions. For more information, see [Understanding functions for parent-child hierarchies in DAX](/dax/understanding-functions-for-parent-child-hierarchies-in-dax).
 
 #### Ragged hierarchies
 

@@ -34,9 +34,9 @@ Creating semantic models with Direct Lake tables is in public preview, and you n
 
 To create a semantic model with Direct Lake tables, take the following steps.
 
-1.	Open **Power BI Desktop** and select **OneLake catalog**
-2.	Select a **Lakehouse** or **Warehouse** and press **Connect**
-3.	Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
+1.    Open **Power BI Desktop** and select **OneLake catalog**
+2.    Select a **Lakehouse** or **Warehouse** and press **Connect**
+3.    Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
 
 The semantic model is created in the Fabric workspace and now you are live editing the semantic model in Power BI Desktop.
 
@@ -50,8 +50,8 @@ Semantic models with Direct Lake tables created in Power BI Desktop use **Direct
 
 To add Direct Lake tables from other Fabric artifacts, take the following steps.
 
-1.	While live editing a Direct Lake on OneLake semantic model in Power BI Desktop, open the **OneLake catalog** and select another **Lakehouse** or **Warehouse**
-2.	In the dialog, select the tables you want to include then press **OK**
+1.    While live editing a Direct Lake on OneLake semantic model in Power BI Desktop, open the **OneLake catalog** and select another **Lakehouse** or **Warehouse**
+2.    In the dialog, select the tables you want to include then press **OK**
 
 The tables are added to your semantic model and you can continue live editing 
 
@@ -59,8 +59,8 @@ The tables are added to your semantic model and you can continue live editing
 
 To edit a semantic model with Direct Lake tables later, take the following steps.
 
-1.	In a **new instance of Power BI Desktop**, open the **OneLake ** and select the **Power BI semantic model**
-2.	Select the **Connect drop-down button** and choose **Edit**.
+1.    In a **new instance of Power BI Desktop**, open the **OneLake ** and select the **Power BI semantic model**
+2.    Select the **Connect drop-down button** and choose **Edit**.
 
 Now you are live editing the semantic model.
 
@@ -69,8 +69,8 @@ Now you are live editing the semantic model.
 
 Alternatively, if you have [exported the semantic model to a Power BI Project (PBIP)](direct-lake-power-bi-project.md), take the following steps.
 
-1.	Double-click the PBIP file on in the Power BI Project (PBIP) folder
-2.	Or, in Power BI Desktop choose **File** then **Open** and navigate to the **PBIP file in the Power BI Project (PBIP)** folder
+1.    Double-click the PBIP file on in the Power BI Project (PBIP) folder
+2.    Or, in Power BI Desktop choose **File** then **Open** and navigate to the **PBIP file in the Power BI Project (PBIP)** folder
 
 ## Live editing in Power BI Desktop differences
 
@@ -82,8 +82,8 @@ The report view is removed when live editing, unless you are [live editing with 
 
 To create a report, follow these steps in Power BI Desktop.
 
-1.	Go to **File** then **Blank report** to open a new instance of Power BI Desktop
-2.	Open the **OneLake catalog** and choose the **Power BI semantic model** you are live editing (it should show at the top of the list) and press **Connect**
+1.    Go to **File** then **Blank report** to open a new instance of Power BI Desktop
+2.    Open the **OneLake catalog** and choose the **Power BI semantic model** you are live editing (it should show at the top of the list) and press **Connect**
 
 Now you can create the report. Save the PBIX file and publish to the Fabric workspace when ready.
 
@@ -165,9 +165,8 @@ Now the semantic model is using Direct Lake on OneLake. If there are issues, you
 
 Live edit of semantic models in Direct Lake mode in Power BI Desktop is currently in preview. Keep the following in mind:
 
-* You can't edit default semantic models.
 * You can't transform data using Power Query editor. In the Lakehouse, you can use a dataflow to perform Power Query transformations.
-* You can’t have multiple data sources when using Direct Lake on SQL. Add data to the Fabric data source used by semantic model. Multiple data sources are supported for Direct Lake on OneLake storage mode.
+* You can't have multiple data sources when using Direct Lake on SQL. Add data to the Fabric data source used by semantic model. Multiple data sources are supported for Direct Lake on OneLake storage mode.
 * You can't publish the Power BI Project (PBIP) from Power BI Desktop. You can use Fabric Deployment mechanisms such as Fabric Git Integration or Fabric Item APIs to publish your local PBIP files to a Fabric workspace.
 * You can't validate RLS roles from Power BI Desktop. You can validate the role in the service.
 * Service-created model diagram layouts aren't displayed in Power BI Desktop, and layouts created in Power BI Desktop aren't persisted in the Power BI service.

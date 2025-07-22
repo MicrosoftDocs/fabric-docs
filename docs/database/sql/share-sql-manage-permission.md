@@ -47,7 +47,7 @@ You must be an admin or a member in your workspace to share a SQL database item 
 
 ## Manage permissions
 
-To review item permissions granted to a SQL database, its SQL analytics endpoint, or its default semantic model, navigate to one of these items in the workspace and select the **Manage permissions** quick action.
+To review item permissions granted to a SQL database, its SQL analytics endpoint, or a semantic model, navigate to one of these items in the workspace and select the **Manage permissions** quick action.
 
 If you have the **Share** permission for a SQL database, you can also use the **Manage permissions** page for the database to grant or revoke permissions.
 
