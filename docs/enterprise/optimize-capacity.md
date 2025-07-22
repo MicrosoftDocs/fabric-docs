@@ -75,7 +75,7 @@ When surge protection is active, background jobs are rejected. This means there'
 
 The experiences and items in Fabric work differently, so you don't necessarily optimize them in the same way. This section lists Fabric items according to experience, and actions you can take to optimize them.
 
-<a id="synapse-data-warehouse">
+<a id="synapse-data-warehouse"></a>
 
 ### Fabric Data Warehouse
 
