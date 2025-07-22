@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 03/19/2025
+ms.date: 07/22/2025
 ---
 
 # Get Fabric workspace item events in Real-Time hub
@@ -55,7 +55,7 @@ You can create streams for Fabric workspace item events in Real-Time hub using o
 ## Fabric events page
 
 1. In Real-Time hub, select **Fabric events** on the left navigation menu.
-1. Move the mouse over **Workspace events**, and select the **+** (plus) link, or select **... (ellipsis)** and then select **Create Eventstream**.
+1. Move the mouse over **Workspace item events**, and select the **+** (plus) link, or select **... (ellipsis)** and then select **Create Eventstream**.
 
     :::image type="content" source="./media/create-streams-fabric-workspace-item-events/fabric-events-menu.png" alt-text="Screenshot that shows the Real-Time hub Fabric events page.":::
 
@@ -82,8 +82,8 @@ You can create streams for Fabric workspace item events in Real-Time hub using o
 
     :::image type="content" source="./media/create-streams-fabric-workspace-item-events/review-create-success.png" alt-text="Screenshot that shows the Review + connect page with links to open the eventstream." lightbox="./media/create-streams-fabric-workspace-item-events/review-create-success.png":::
 
-## View stream from the All data streams page
-Select **My data streams** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 
+## View stream from the Real-Time hub page
+Select **Real-Time hub** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 
 
 :::image type="content" source="./media/create-streams-fabric-workspace-item-events/verify-data-stream.png" alt-text="Screenshot that shows the All data streams page with the generated stream." lightbox="./media/create-streams-fabric-workspace-item-events/verify-data-stream.png":::
 
