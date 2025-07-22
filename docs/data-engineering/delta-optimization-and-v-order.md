@@ -231,7 +231,7 @@ DeltaTable.createOrReplace(spark)\
 
 Analytical workloads on Big Data processing engines such as Apache Spark perform most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and its configurations, play a critical role on performance. Ingesting data into data lake tables might have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small file problem."
 
-Optimize Write is a Delta Lake on Microsoft Fabric and Azure Synapse Analytics feature in the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data. The target file size can be changed per workload requirements using configurations.
+Optimize Write is a Delta Lake feature in Fabric and Synapse that reduces file count and increases individual file size during writes in Apache Spark. The target file size can be changed per workload requirements using configurations.
 
 The feature is __enabled by default__ in Microsoft Fabric [Runtime for Apache Spark](./runtime.md). To learn more about Optimize Write usage scenarios, read the article [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark).
 
@@ -247,7 +247,7 @@ As Delta tables change, performance and storage cost efficiency tend to degrade 
 
 - New data added to the table might skew data.
 - Batch and streaming data ingestion rates might bring in many small files.
-- Update and delete operations eventually create read overhead; parquet files are immutable by design, so Delta tables adds new parquet files with the changeset, further amplifying  the issues imposed by the first two items.
+- Update and delete operations add read overhead. Parquet files are immutable by design, as Delta tables adds new parquet files with the changeset, it further amplifies the issues imposed by the first two items.
 - No longer needed data files and log files available in the storage.
 
 In order to keep the tables at the best state for best performance, perform bin-compaction, and vacuuming operations in the Delta tables. Bin-compaction is achieved by the [OPTIMIZE](https://docs.delta.io/latest/optimizations-oss.html) command; it merges all changes into bigger, consolidated parquet files. Dereferenced storage clean-up is achieved by the [VACUUM](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) command.
