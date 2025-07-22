@@ -49,7 +49,7 @@ Next, choose the type of condition that you want to detect. You can use conditio
 - on each event when a value is met, do an action
 - on each event grouped by a field, do an action (for example, on each PackageId event when Temperature is greater than 30)
 
-Finally, select whether you want the action performed to send you an email or send you a Teams message and clicke "Create". The conditions and actions selected can be modified later on.
+Finally, select whether you want the action performed to send you an email or send you a Teams message and click "Create". The conditions and actions selected can be modified later on.
 
 The charts in the Definition tab updates to show a sample of the events that meet the conditions that you set.
 
