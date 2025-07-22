@@ -5,13 +5,11 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 07/22/2025
 ---
 
 # View details of data streams in Fabric Real-Time hub
-You can view details of a data stream in **Real-Time hub** from the  **All data streams** page or from the **My data streams** page.
-
-
+On the Real-Time hub page, you see all data streams at the bottom of the page. To view details of a data stream, select it from the table. 
 
 ## View details of a stream
 
@@ -119,7 +117,6 @@ This section shows two relationships of the table: Upstream, Parent.
 
 ## Related content
 
-- [Explore data streams](explore-data-streams.md)
 - [Preview data streams](preview-data-streams.md)
 - [Endorse data streams](endorse-data-streams.md)
 - [Explore fabric events](explore-fabric-events.md)
