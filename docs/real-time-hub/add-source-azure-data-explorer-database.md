@@ -5,7 +5,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 03/21/2025
+ms.date: 07/21/2025
 ---
 
 # Get events from Azure Data Explorer database table into Fabric Real-Time hub
@@ -19,9 +19,9 @@ You can get events from an Azure Data Explorer table into Real-Time hub using th
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-5. On the **Data sources** page, search for **Azure Data Explorer DB**, and then select **Connect** on the **Azure Data Explorer DB** tile. 
+5. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure Data Explorer DB** tile. 
 
-    :::image type="content" source="./media/add-source-azure-data-explorer-database/select-azure-data-explorer-database.png" alt-text="Screenshot that shows the selection of Azure Data Explorer database as the source type in the Data sources page.":::
+    :::image type="content" source="./media/add-source-azure-data-explorer-database/select-azure-data-explorer-database.png" alt-text="Screenshot that shows the selection of Azure Data Explorer database as the source type in the Data sources page." lightbox="./media/add-source-azure-data-explorer-database/select-azure-data-explorer-database.png":::
 
 ## Configure and connect to the Azure Data Explorer table
 [!INCLUDE [azure-data-explorer-connector](../real-time-intelligence/event-streams/includes/azure-data-explorer-connector.md)]
@@ -30,9 +30,7 @@ You can get events from an Azure Data Explorer table into Real-Time hub using th
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure Data Explorer table as a source. To close the wizard, select **Finish** at the bottom of the page.
 
     :::image type="content" source="./media/add-source-azure-data-explorer-database/review-create-success.png" alt-text="Screenshot that shows the Review + connect page with links to open eventstream and close the wizard." lightbox="./media/add-source-azure-data-explorer-database/review-create-success.png":::
-2. You should see the stream on the **All data streams** and **My data streams** pages. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
-
-    :::image type="content" source="./media/add-source-azure-data-explorer-database/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub All data streams page with the stream you just created.":::
+2. You should see the stream on the **All data streams** section of the **Real-Time hub** home page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 ## Related content
 

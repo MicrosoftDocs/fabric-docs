@@ -8,7 +8,8 @@ metadata:
   author: seesharprun
   ms.author: sidandrews
   ms.topic: landing-page
-  ms.date: 07/14/2025
+  ms.date: 07/17/2025
+  ms.search.form: Databases Overview,Cosmos DB Overview
   appliesto:
     - ✅ Cosmos DB in Fabric
 landingContent:

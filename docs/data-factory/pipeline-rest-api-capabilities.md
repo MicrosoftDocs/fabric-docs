@@ -8,11 +8,11 @@ ms.custom: pipelines
 ms.date: 10/24/2024
 ---
 
-# REST API capabilities for data pipelines in Fabric Data Factory
+# REST API capabilities for pipelines in Fabric Data Factory
 
-Fabric Data Factory provides a robust set of APIs that enable users to automate and manage their data pipelines efficiently. These APIs allow for seamless integration with various data sources and services, enabling users to create, update, and monitor their data workflows programmatically. The APIs support a wide range of operations, including pipeline CRUD (Create, Read, Update, and Delete), scheduling, and monitoring. This makes it easier for users to manage their data integration processes.
+Fabric Data Factory offers a powerful set of APIs that make it easy to automate and manage your pipelines. You can connect to different data sources and services, and build, update, or monitor your workflows with just a few lines of code. The APIs cover everything from creating and editing pipelines to scheduling and tracking them — so you can keep your data flowing smoothly without the hassle.
 
-## API use cases for data pipelines
+## API use cases for pipelines
 
 The APIs for pipelines in Fabric Data Factory can be used in various scenarios:
 

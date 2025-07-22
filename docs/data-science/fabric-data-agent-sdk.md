@@ -9,6 +9,7 @@ ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
 ms.date: 03/25/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As a code first user, I want to consume Fabric Data Agent using its Python SDK.
@@ -47,5 +48,5 @@ For more information about the sample notebooks that show how to use the Fabric 
 ## Related content
 
 - [Fabric data agent creation](concept-data-agent.md)
-- [Fabric data agent scenario](data-agent-scenario.md)
+- [Fabric data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
 - [Fabric data agent sharing](data-agent-sharing.md)

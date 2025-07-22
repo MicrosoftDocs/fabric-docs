@@ -6,6 +6,7 @@ ms.author: sngun
 ms.reviewer: 'guptamaya'
 ms.topic: conceptual
 ms.date: 05/11/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 

@@ -2,10 +2,10 @@
 title: Create Power BI Reports Using Cosmos DB Database (Preview)
 titleSuffix: Microsoft Fabric
 description: Create reports and a semantic model within Power BI using data from your Cosmos DB database in Microsoft Fabric during the preview.
-author: jilmal
-ms.author: jmaldonado
+author: seesharprun
+ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 07/16/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---

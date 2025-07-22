@@ -9,6 +9,7 @@ ms.topic: overview
 ms.custom:
   - references_regions
 ms.date: 11/29/2024
+ms.update-cycle: 180-days
 ms.search.form:
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot

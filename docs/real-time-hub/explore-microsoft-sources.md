@@ -61,7 +61,7 @@ Here are the actions available on resources in the **Microsoft sources** page. W
 
 :::image type="content" source="./media/explore-microsoft-sources/actions.png" alt-text="Screenshot that shows the actions available for resources on the Real-Time hub Microsoft sources page." lightbox="./media/explore-microsoft-sources/actions.png":::
 
-For more information, see [Microsoft sources](supported-sources.md#microsoft-sources).
+For more information, see [Microsoft sources](supported-sources.md#azure-sources).
 
 ## Related content
 

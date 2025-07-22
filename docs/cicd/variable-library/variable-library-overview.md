@@ -74,7 +74,7 @@ The following items support the Variable library:
 
 * [Data pipeline (preview)](../../data-factory/variable-library-integration-with-data-pipelines.md)
 * [Shortcut for Lakehouse (preview)](../../onelake/assign-variables-to-shortcuts.md)
-* [Notebook - NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities) and [%%configure](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
+* Notebook (preview) - [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities) and [%%configure](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
 
 ## Considerations and limitations
 

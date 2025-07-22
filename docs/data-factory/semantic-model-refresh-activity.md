@@ -5,32 +5,32 @@ author: n0elleli
 ms.author: noelleli
 ms.topic: how-to
 ms.custom: pipelines
-ms.date: 05/06/2025
+ms.date: 07/09/2025
 ---
 
 # Use the Semantic model refresh activity to refresh a Power BI Dataset
 
-This guide shows you how to use the Semantic model refresh activity to create connections to your Power BI semantic model datasets and refresh them from a data pipeline in Data Factory for Microsoft Fabric.
+This guide shows you how to use the Semantic model refresh activity to connect to your Power BI semantic model datasets and refresh them from a data pipeline in Data Factory for Microsoft Fabric.
 
    > [!NOTE]
-   > This activity only works for user-created semantic models. 
+   > This activity works only with semantic models you create yourself. 
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+Before you start, make sure you have:
 
 - A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace with **Power BI Premium**, **Premium Per User**, or **Power BI Embedded capacities**.
 
 ## Add a Semantic model refresh activity to a pipeline with UI
 
-To use a Semantic model refresh activity in a pipeline, complete the following steps:
+Follow these steps to use the Semantic model refresh activity in your pipeline: 
 
 ### Create the activity
 
-1. Create a new pipeline in your workspace.
-1. Before you use the Semantic model refresh activity, you need a connection to your Power BI datasets.
-1. Search for Semantic model refresh from the home screen card and select it, or select the activity from the **Activities** bar to add it to the pipeline canvas.
+1. Start by creating a new pipeline in your workspace. 
+1. Before you add the Semantic model refresh activity, make sure you have a connection to your Power BI datasets.
+1. Find "Semantic model refresh" from the **Add pipeline activity** home screen card and select it, or pick it from the **Activities** bar to add it to the pipeline canvas.
 
    Creating the activity from the home screen card:
    
@@ -48,38 +48,38 @@ To use a Semantic model refresh activity in a pipeline, complete the following s
 
 ### Semantic model refresh activity settings
 
-1. Select the **Settings** tab in the activity properties pane, then use the **Connection** dropdown to select an existing connection, or create and configure a new connection to Power BI.
+1. Select the **Settings** tab in the activity properties pane. Use the **Connection** dropdown to pick an existing connection, or create and configure a new connection to Power BI.
 
    :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-refresh-activity-settings.png" alt-text="Screenshot showing the Semantic model refresh activity's main settings page.":::
 
-1. When you choose **+ New** to create a new connection, you see the connection creation dialog where you can provide the **Connection name** and credentials for the **Authorization kind** that you choose.
+1. When you select **+ New** to make a new connection, a dialog appears where you can enter the **Connection name** and your credentials for the **Authorization kind** you choose.
 
    :::image type="content" source="media/semantic-model-refresh-activity/create-new-connection-dialog.png" lightbox="media/semantic-model-refresh-activity/create-new-connection-dialog.png" alt-text="Screenshot showing the dialog to create a new connection to Power BI.":::
 
-1. After you create a connection, you can find it in the dropdown menu. If you don't see it, select **Refresh**. Then select your connection.
+1. After you create a connection, you'll see it in the dropdown menu. If it doesn't show up right away, select **Refresh**. Then, select your connection.
 
    :::image type="content" source="media/semantic-model-refresh-activity/select-connection.png" alt-text="Screenshot showing where to select the Power BI connection for the semantic model refresh.":::
 
-1. Select your **Workspace** and **Dataset** to configure the rest of the activity. Find more configuration options under **Advanced**.
+1. Select your **Workspace** and **Dataset** to finish setting up the activity. For more options, open the **Advanced** section.
 
-   - Under **Advanced**, you have the option to select **Wait on completion**, that by default is turned *on*. Users can choose this option where we will poll for the completion of the process, allowing to wait for the completion of the refresh before proceeding.
-   - You can also input values for **Max parallelism** and **Retry Count**, whether to commit the refreshes when the complete (**Transactional**) or in batches **Partial Batch**.
+   - In **Advanced**, you'll see **Wait on completion** turned *on* by default. This option lets the activity wait until the refresh finishes before moving on.
+   - You can also set values for **Max parallelism** and **Retry Count**, and choose whether to commit the refresh all at once (**Transactional**) or in batches (**Partial Batch**).
 
    > [!NOTE]
-   > By default, when you run the semantic model refresh activity, the behavior of the refresh type from the pipeline activity is set to "full".
-
+   > By default, the semantic model refresh activity runs a full refresh when triggered from the pipeline.
+   
    :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-wait-on-completion.png" alt-text="Screenshot showing where to provide additional details after selecting the connection for the activity.":::
 
 ## Choose tables and partitions to refresh
 
-Optionally, you can optimize your semantic model refresh by choosing just the tables and the partitions in those tables that you wish to refresh as opposed to a full model refresh. You will find the settings to choose optional table and partition refresh under settings. Each of these properties supports parameterization using the pipeline expression builder.
+You can make your semantic model refresh faster by picking only the tables and the partitions you want to refresh, instead of refreshing the whole model. You'll find these options under settings. You can also use the pipeline expression builder to set these properties with parameters.
 
 :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-tables.png" alt-text="Screenshot showing the option to refresh specific tables.":::
 :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-partitions.png" alt-text="Screenshot showing the option to refresh specific partitions.":::
 
 ## Save and run or schedule the pipeline
 
-Although the Semantic model refresh activity is typically used with other activities, it can be run directly as is. After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
+You can run the Semantic model refresh activity on its own or as part of a larger pipeline. Once you've set up all the activities you need, go to the **Home** tab at the top of the pipeline editor and click the save button to save your pipeline. Select **Run** to start it right away, or **Schedule** to set it to run later. You can also check the run history or adjust other settings here.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
