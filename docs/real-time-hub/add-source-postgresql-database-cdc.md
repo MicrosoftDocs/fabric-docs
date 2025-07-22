@@ -130,7 +130,7 @@ You can get events from an Azure Database for PostgreSQL CDC into Real-Time hub 
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected PostgreSQL Database CDC as a source. To close the wizard, select **Finish** at the bottom of the page.
 
     :::image type="content" source="./media/add-source-postgresql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review + connect success page." lightbox="./media/add-source-postgresql-database-cdc/review-create-success.png":::
-1. You should see the stream on the **All data streams** section of the **Real-Time hub** home page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+1. You should see the stream in the **Recent streaming data** section of the **Real-Time hub** home page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 
 ## Related content
