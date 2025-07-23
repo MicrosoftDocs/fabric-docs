@@ -5,7 +5,7 @@ author: ptyx507x
 ms.author: miescobar
 ms.reviewer: whhender
 ms.topic: tutorial
-ms.date: 07/22/2025
+ms.date: 07/23/2025
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -16,11 +16,13 @@ ai-usage: ai-assisted
 >You can [download the Power Query Template file](https://github.com/microsoft/DataFactory/raw/main/Slowly%20Changing%20Dimension%20Type%202.pqt) with the complete Slowly changing dimension type 2 pattern solution to follow along with this tutorial.
 >To learn more about using a Power Query template file, check out the documentation article on [Power Query Templates](/power-query/power-query-template).
 
-Slowly changing dimension type 2 is a data warehousing technique that tracks historical changes to dimension data. When an attribute value changes, the system creates a new record with a unique identifier while keeping the original record intact. This approach preserves a complete audit trail of all changes, allowing you to see exactly what the data looked like at any specific point in time—whether you need to analyze last month's sales by the regions that existed then, or track how employee assignments evolved over the course of a year. This article demonstrates how to implement this concept using Dataflow Gen2 inside of Data Factory for Microsoft Fabric.
+Slowly changing dimension type 2 is a data warehousing technique that tracks changes to dimension data over time. When a value changes, the system creates a new record with a unique identifier while keeping the original record. This approach preserves a complete history of all changes, so you can see exactly what the data looked like at any point in time.
+
+For example, you can analyze last month's sales by the regions that existed then, or track how employee assignments changed over the course of a year. This article shows you how to implement this concept using Dataflow Gen2 inside of Data Factory for Microsoft Fabric.
 
 ## Solution architecture
 
-To implement a slowly changing dimension type 2, first decide which fields in your source table will be used to detect new or changed records.
+To implement slowly changing dimension type 2, first decide which fields in your source table you'll use to detect new or changed records.
 
 :::image type="content" border="true" source="../data-factory/media/slowly-changing-dimension-type-two/diagram-architecture.png" alt-text="Diagram showcasing the components or processes to make the slowly changing dimension type 2 happen in Dataflow.":::
 
@@ -32,7 +34,7 @@ The architecture needs at least four main components:
 * **Dimension table update logic**: Uses the identified changes to add new records and update existing ones in the dimension table.
 
 >[!NOTE]
->This solution uses Dataflow Gen2 in Microsoft Data Factory. While you can change and modify the logic to fit your specific needs, this tutorial aims to show you an easy way to accomplish the slowly changing dimension type 2 pattern using a low-code and visual solution like Dataflow Gen2.
+>This solution uses Dataflow Gen2 in Microsoft Data Factory. While you can change and modify the logic to fit your needs, this tutorial shows you an easy way to accomplish the slowly changing dimension type 2 pattern using a low-code and visual solution like Dataflow Gen2.
 
 ## Source table
 
@@ -43,7 +45,7 @@ The tutorial starts with a sample source table for employees that contains four 
 |312|	Vance|	DeLeon|	Southwest|
 |331|	Adrian|	King|	Northwest|
  
-The data in this table is expected to change. People can change their last names or the region where they're assigned to work.
+The data in this table is expected to change. People can change their last names or the region where they work.
 
 ## Dimension table
 
@@ -63,7 +65,7 @@ Here's the definition of the schema for this table and a description of the fiel
 |RepSourceID|Number|A natural key from the source table that represents an identifier for an employee|
 |FirstName|Text|The first name of the employee. This field comes from the Source table|
 |LastName|Text|The last name of the employee. This field comes from the Source table|
-|Region|Text| The region in which the employee works. This field comes from the Source table|
+|Region|Text|The region in which the employee works. This field comes from the Source table|
 |StartDate|Date|Date stamp that establishes when the record becomes effective|
 |EndDate|Date|Date stamp that establishes until when the record is effective|
 |IsCurrent|Logical|Flag to denote if the record is current or not. True represents that the record is current|
@@ -130,6 +132,7 @@ In the dialog, group by the Hash column and select the Operation for the new Cou
 >When you compare the source table against the dimension table, you'll find what new records need to be added to the dimension table.
 
 Select the **Source** query, go to the Home tab in the ribbon and select the option to *Merge queries as new* inside the Combine group. Rename this query to Compare.
+
 In the Merge dialog, pick the **AggregatedDimHash** in the "Right table for merge" dropdown and select the Hash columns from both tables while leaving the default *Join kind* of Left outer.
 
 :::image type="content" border="true" source="../data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-column.png" alt-text="Screenshot of the Merge dialog showing the settings to merge the dimension and source tables using the hash columns from both.":::
@@ -159,6 +162,7 @@ This creates a list and in the ribbon you'll now see the statistics options wher
 :::image type="content" border="true" source="../data-factory/media/slowly-changing-dimension-type-two/list-tool-maximum.png" alt-text="Screenshot of the List tools contextual menu in the Power Query editor ribbon highlighting the Maximum option from the statistics operations.":::
 
 Add another custom step after the previous step and replace the formula for this step of your query with the formula below. This formula calculates the max value from the SalesRepID and adds one to it, or establishes the value one as the seed for new records if your table doesn't contain any records
+
 ```try #"Calculated maximum" +1 otherwise 1```
 
 The output of the LastID query for this example is the number four.
@@ -168,7 +172,8 @@ The output of the LastID query for this example is the number four.
 >[!IMPORTANT]
 >``#"Calculated maximum"`` represents the name of your previous step. If this isn't the exact name of your query, modify the formula to reflect the name of your previous step.
 
-Reference the **CompareStoM** query where you had the single record for Adrian King in the Northwest region and call this new query "NewRecords". 
+Reference the **CompareStoM** query where you had the single record for Adrian King in the Northwest region and call this new query "NewRecords".
+
 Add a new Index column through the Add column tab in the ribbon that starts from the number zero.
 
 :::image type="content" border="true" source="../data-factory/media/slowly-changing-dimension-type-two/add-index-column.png" alt-text="Screenshot of the Index column entry point from within the Add column menu of the ribbon in the Power Query Editor.":::
@@ -203,6 +208,7 @@ Using the original Dimension query (Dimension), perform a new **Merge queries as
 :::image type="content" border="true" source="../data-factory/media/slowly-changing-dimension-type-two/merge-by-hash-with-left-anti-dim-source-tables.png" alt-text="Screenshot of Merge dialog with the Dimension and Source tables using the hash columns as column pairs and the left anti join kind being selected as the join kind.":::
 
 The output is a table with records that are no longer used in the Source table. Expand the newly created column with table values and expand only the Hash column, then delete it.
+
 Rename the query to **RecordsToUpdate**.
 
 You now need to update the records from the Dimension table to reflect this change in the source table. The changes are straightforward and require you to update the values on the EndDate and IsCurrent fields. To do this, right-select the IsCurrent field and select the option to **Replace values...**. In the Replace value dialog, replace the value TRUE with FALSE.
