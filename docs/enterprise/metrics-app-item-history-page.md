@@ -11,19 +11,19 @@ ms.date: 07/21/2025
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-The **Item history** page in the Microsoft Fabric Capacity Metrics app provides compute usage analysis through slicers and dynamic visuals for last 30 days. It presents high-level consumption trends alongside detailed item-level metrics, enabling users to explore and monitor operational and billing data effectively.
+The **Item history** page in the Microsoft Fabric Capacity Metrics app provides compute usage analysis through slicers and dynamic visuals for the last 30 days. It presents high-level consumption trends alongside detailed item-level metrics, enabling users to explore and monitor operational and billing data effectively.
 
 ## Slicers
 
 - **Capacity name**: Select a capacity. The app displays information related to the selected capacity.
-- **Workspace**: Select one or more workspace names to filter data specific to selected workspaces.
+- **Workspace**: Select one or more workspace names to filter data specific to the selected workspaces.
 - **Experience**: Select the Fabric experience you want to see results for.
 - **Operation**: Select the operation name you want to see results for. 
 - **Run by**: Select the username you want to see results for.
 - **Billing type**: Select Billable or Non-billable to filter activities accordingly in the app.
 
 > [!NOTE]
-> This page has Start Date and End Date filters in the filter pane, enabling users to select a specific time period for which they want to analyze the data. Additionally, when users select a Start Date and End Date with only a one-day difference, the trends visuals on the page allows users to drill down into the data at an hourly level for the selected day.
+> This page has Start Date and End Date filters in the filter pane, enabling users to select a specific time period for which they want to analyze the data. Additionally, when users select a Start Date and End Date with only a one-day difference, the trends visuals on the page allow users to drill down into the data at an hourly level for the selected day.
 
 The page is divided into two sections:
 
@@ -34,8 +34,8 @@ The page is divided into two sections:
 
 This view shows the aggregated usage for selected fields from slicers.
 
-- **CU (s) by workspace**: Displays the names of workspaces along with their corresponding CU (s). The values shown are based on the slicer selections at the top of the page.
-- **CU (s) by item**: Displays the names of items along with their corresponding CU (s). The values shown are based on the slicer selections at the top of the page.
+- **CU(s) by workspace**: Displays the names of workspaces along with their corresponding CU(s). The values shown are based on the slicer selections at the top of the page.
+- **CU(s) by item**: Displays the names of items along with their corresponding CU(s). The values shown are based on the slicer selections at the top of the page.
 
 
 ### CU % over time
@@ -44,34 +44,34 @@ This view shows the aggregated usage for selected fields from slicers.
   - Background operations cover backend processes that aren't directly triggered by users, such as data refreshes.
 - **Interactive %**: Red columns represent the percent of CU consumption used during interactive operations in a 30-second period. This column refers to billable operations.
   - Interactive operations cover a wide range of resources triggered by users. These operations are associated with interactive page loads.
-- **CU % Limit**: A grey dotted line that shows the threshold of the allowed percent of CU consumption for the selected capacity. Columns that stretch above this line, represent timepoints where the capacity is overloaded.
+- **CU % Limit**: A grey dotted line that shows the threshold of the allowed percent of CU consumption for the selected capacity. Columns that stretch above this line represent timepoints where the capacity is overloaded.
 
-###*Workspace details
+### Workspace details
 
-This visual shows the aggregated workspace level usage metrics, more fields from the optional columns can be added for deeper insights:
+This visual shows the aggregated workspace-level usage metrics; additional optional fields can be added for deeper insights.
 
-- **Pass rate**: Operations having status as success divided by operations having status other then success (excluding InProgress operations).
-- **Views**: Number of operation counts.
+- **Pass rate**: Operations with a status of Success divided by those with a status other than Success (excluding InProgress operations).
+- **Views**: Number of operations.
 - **% Compute**: Percentage of capacity units consumed by a Workspace, Item, Operation relative to all capacities the user is an admin of, based on applied filter context.
 
 ## Item history
 
 This section offers a detailed evaluation of usage metrics for the slicer-selected fields.
 
-- **Status trends vs throttling**: This chart displays to number of operations by status and a horizontal Throttling (s) line with data points plotted by date.
+- **Status trends vs throttling**: This chart displays the number of operations by status and a horizontal Throttling (s) line with data points plotted by date.
 - **Scheduling frequency**: This chart displays the number of operations by date.
 - **% breakdown by status**: This visual presents the percentage distribution of operations based on their completion status. Statuses include Invalid, Cancelled, InProgress, Success, and Failure.
-- **CU (s) by date**: This visual displays CU (s) by date.
+- **CU(s) by date**: This visual displays CU(s) by date.
 - **Duration (s) by date**: This visual displays Duration (s) by date.
-- **CU (s) by operation and date**: This visual displays CU (s) by oepration and date.
-- **CU (s) by item kind and date**: This visual displays CU (s) by item kind and date.
-- **CU (s) by experience and date**: This visual displays CU (s) by experience and date.
+- **CU(s) by operation and date**: This visual displays CU(s) by operation and date.
+- **CU(s) by item kind and date**: This visual displays CU(s) by item kind and date.
+- **CU(s) by experience and date**: This visual displays CU(s) by experience and date.
 
-### Operation details
+### Item details
 
-This view outlines detailed item-level usage data, more fields from the optional columns can be added for deeper insights.
+This view outlines detailed item-level usage data; additional optional fields can be added for deeper insights.
 
-- **% Compute**: Percentage of capacity units consumed by a Item, Operation, Status, Date scheduled relative to all capacities the user is an admin of, based on applied filter context.
-- **Date scheduled**: Datetime when the operation triggered.
-- **Status**: Shows different status (Invalid, Cancelled, InProgress, Success, Failure).
+- **% Compute**: Percentage of capacity units consumed by an item, operation, status, date scheduled relative to all items the user is an admin of, based on applied filter context.
+- **Date scheduled**: Datetime when the operation was triggered.
+- **Status**: Shows different statuses (Invalid, Cancelled, InProgress, Success, Failure).
 - **Throttling (s)**:  The number of seconds of throttling applied due to capacity overload.
