@@ -591,12 +591,28 @@
         href: connector-sap-bw-message-server-overview.md
       - name: Set up your connection
         href: connector-sap-bw-message-server.md
+    - name: SAP BW Open Hub Application Server
+      items:
+      - name: SAP BW Open Hub Application Server - Overview
+        href: connector-sap-bw-open-hub-application-server-overview.md
+    - name: SAP BW Open Hub Message Server
+      items:
+      - name: SAP BW Open Hub Message Server - Overview
+        href: connector-sap-bw-open-hub-message-server-overview.md
     - name: SAP HANA database
       items:
       - name: SAP HANA database - Overview
         href: connector-sap-hana-overview.md
       - name: Set up your connection
         href: connector-sap-hana.md
+    - name: SAP Table Application Server
+      items:
+      - name: SAP Table Application Server - Overview
+        href: connector-sap-table-application-server-overview.md
+    - name: SAP Table Message Server
+      items:
+      - name: SAP Table Message Server - Overview
+        href: connector-sap-table-message-server-overview.md      
     - name: ServiceNow
       items:
       - name: ServiceNow - Overview
