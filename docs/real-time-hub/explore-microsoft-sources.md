@@ -1,20 +1,20 @@
 ---
-title: Explore Microsoft sources in Fabric Real-Time hub
+title: Explore Azure sources in Fabric Real-Time hub
 description: This article shows how to explore Microsoft sources in Fabric Real-Time hub. It provides details on the Microsoft sources page in the Real-Time hub user interface.
 author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 07/22/2025
 ---
 
-# Explore Microsoft sources in Fabric Real-Time hub
+# Explore Azure sources (Microsoft sources) in Fabric Real-Time hub
 
-When you navigate to Real-Time hub in Fabric, you see the following three tabs in the user interface (UI). This article covers the **Microsoft sources** page.
+This article covers information available in the **Microsoft sources** page of the Fabric Real-Time hub.
 
 ## Microsoft sources page
 
-**Microsoft sources** page shows you all the Microsoft data sources you can access. They include sources of the following types.
+In **Fabric Real-Time hub**, select **Azure sources** on the left menu. The **Microsoft sources** page shows you all the Microsoft data sources you can access. They include sources of the following types.
 
 [!INCLUDE [microsoft-sources](./includes/microsoft-sources.md)]
 
