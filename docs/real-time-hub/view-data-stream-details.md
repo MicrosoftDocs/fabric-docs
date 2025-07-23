@@ -9,11 +9,15 @@ ms.date: 07/22/2025
 ---
 
 # View details of data streams in Fabric Real-Time hub
-On the Real-Time hub page, you see all data streams at the bottom of the page. To view details of a data stream, select it from the table. 
+On the Real-Time hub page, you see all data streams at the bottom of the page in a table. Select the stream to view details. 
 
 ## View details of a stream
 
-On the **All data streams** or **My data streams** page, select the stream whose parent is an eventstream.
+On the hub page, in the **Recent streaming section**, select the stream from the table whose parent is an eventstream.
+
+:::image type="content" source="./media/view-data-stream-details/select-data-stream.png" alt-text="Screenshot that shows the hub page with a data stream selected." lightbox="./media/view-data-stream-details/select-data-stream.png":::
+
+You should see the **Stream detail** page: 
 
 :::image type="content" source="./media/view-data-stream-details/stream-details.png" alt-text="Screenshot that shows the Stream detail view page." lightbox="./media/view-data-stream-details/stream-details.png":::
 
@@ -71,7 +75,7 @@ This section shows three relationships of the stream: Upstream, Parent, and Down
 
 ## View details of a Kusto Query Language (KQL) table
 
-On the **All data streams** page, select a KQL table to see its details.
+On the hub page, in the **Recent streaming data** section, select a KQL table to see its details.
 
 :::image type="content" source="./media/view-data-stream-details/kql-table-details.png" alt-text="Screenshot that shows the detail view page for a KQL table in the data streams." lightbox="./media/view-data-stream-details/kql-table-details.png":::
 
