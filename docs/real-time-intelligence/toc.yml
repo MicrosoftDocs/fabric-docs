@@ -713,13 +713,13 @@ items:
   - name: Event schema sets
     items:
     - name: Schema Registry in Real-Time hub
-      href: ../../real-time-hub/schema-registry-overview.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Schem sets overview
-      href: schema-sets/schema-sets-overview.md
+      href: schema-registry-overview.md
     - name: Create and manage event schema sets
       href: schema-sets/create-manage-event-schema-sets.md
-    - name: Create and manage schemas
+    - name: Create and manage schemas in schemas sets
       href: schema-sets/create-manage-event-schemas.md
+    - name: Create a schema in Real-Time hub
+      href: ../real-time-hub/add-event-schema.md
     - name: Use schemas in eventstreams
       href: schema-sets/use-event-schemas.md
 - name: Analyze and train data

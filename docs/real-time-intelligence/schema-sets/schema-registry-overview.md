@@ -7,9 +7,12 @@ ms.topic: overview
 ms.date: 07/02/2025
 ---
 
-# What is Schema Registry in Fabric Real-Time hub? 
+# What is Schema Registry (preview) in Fabric Real-Time hub? 
 
 Schema Registry is a centralized repository for managing and organizing data schemas within Fabric Real-Time Intelligence. It provides a structured framework for defining, validating, and evolving schemas used in event-driven architectures to describe events.
+
+> [!NOTE]
+> This feature is currently in preview.
 
 ## Why use Schema Registry?
 Schema Registry in Fabric Real-Time Intelligence helps improve data quality, consistency, and control across your event-driven workflows. 
