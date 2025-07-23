@@ -113,6 +113,7 @@ For customized libraries, you can upload the lib files to the [**Built-in resour
 
 You may need to restart the kernel to use the updated packages.
 
+
 To better understand and use similar commands clearly, please refer to the table below.
 
 | **Command/Syntax** | **Main purpose** | **How it works in Jupyter Notebook** | **Typical use case** | **Notes**|
