@@ -11,7 +11,7 @@ ms.date: 07/23/2025
 
 # Use the **Invoke pipeline activity** to run another pipeline
 
-The Fabric **Invoke pipeline activity** can execute another [!INCLUDE [product-name](../includes/product-name.md)] pipeline. You can use it to orchestrate the execution of one or multiple pipelines from within a single pipeline. This is useful for organizing, reusing, and managing complex workflows. The invoke pipeline activity can be very helpful in making reusable, modular pipepline patterns by calling other pipelines that have a specific purpose.
+The Fabric **Invoke pipeline activity** can execute another [!INCLUDE [product-name](../includes/product-name.md)] pipeline. You can use it to orchestrate the execution of one or multiple pipelines from within a single pipeline. This is useful for organizing, reusing, and managing complex workflows. The invoke pipeline activity can be very helpful in making reusable, modular pipeline patterns by calling other pipelines that have a specific purpose.
 
 ## Prerequisites
 
