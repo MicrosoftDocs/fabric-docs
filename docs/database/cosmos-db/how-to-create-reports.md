@@ -5,7 +5,7 @@ description: Create reports and a semantic model within Power BI using data from
 author: seesharprun
 ms.author: sidandrews
 ms.topic: how-to
-ms.date: 07/16/2025
+ms.date: 07/22/2025
 appliesto:
 - ✅ Cosmos DB in Fabric
 ---
@@ -31,7 +31,7 @@ Start by accessing the SQL analytics endpoint for the Cosmos DB in Fabric databa
     > [!IMPORTANT]
     > For this guide, the existing Cosmos DB database has the [sample data set](sample-data.md) already loaded. The remaining query examples in this guide assume that you're using the same data set for this database.
 
-1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint**.
+1. In the menu bar, select the **Cosmos DB** list and then select **SQL Endpoint** to switch to the SQL analytics endpoint.
 
     :::image source="media/how-to-create-reports/endpoint-selection.png" lightbox="media/how-to-create-reports/endpoint-selection.png" alt-text="Screenshot of the endpoint selection option in the menu bar for a database in Cosmos DB in Fabric.":::
 
@@ -39,14 +39,12 @@ Start by accessing the SQL analytics endpoint for the Cosmos DB in Fabric databa
 
 ## Configure your semantic model
 
-Before you can build a report, you must configure the default semantic model for your Cosmos DB artifact.
+Before you can build a report, you must configure a new semantic model for your Cosmos DB item.
 
-1. From within the **SQL analytics** endpoint page, navigate to the **Reporting** tab in the ribbon.
-
-1. Select **Manage default semantic model**.
-
+1. In the menu bar, select the **Cosmos DB** list and then select **SQL analytics endpoint** to switch to the SQL analytics endpoint.
+1. Select the **Reporting** tab. 
+1. In the ribbon, select **New semantic model**.
 1. Select the desired tables you want to expose in your report.
-
 1. **Save** your selection.
 
 > [!NOTE]

@@ -5,9 +5,9 @@ ms.topic: overview
 ms.custom:
 ms.author: ssalgado
 author: ssalgadodev
-ms.reviewer: midesa
-reviewer: midesa
-ms.date: 03/18/2024
+ms.reviewer: pimorano
+reviewer: pimorano
+ms.date: 07/22/2025
 ---
 
 # Code-first AutoML in Fabric (preview)
