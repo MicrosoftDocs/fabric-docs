@@ -1,8 +1,8 @@
 ---
 title: Git Integration with Service Principal
 description: Learn how to integrate Git with a service principal in Microsoft Fabric for streamlined CI/CD workflows.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.topic: how-to
 ms.date: 05/11/2025
@@ -34,11 +34,16 @@ For more information, see [Application and service principal objects in Microsof
 For an example of application registration and service principal creation, see [Register a Microsoft Entra app and create a service principal](/entra/identity-platform/howto-create-service-principal-portal).
 
 ## Step 2: Assign service principal to a DevOps organization
+After creating our application and the service principal, we need to add it to our Azure DevOps organization to grant access to resources.
 
  1. Log in to your Azure DevOps organization
  2. Browse to **Organization settings -> User -> Add users**
  3. Select to add the service principal 
- 4. Navigate to relevant Azure DevOps project settings -> Teams 
+
+ 
+ :::image type="content" source="media/git-integration-with-service-principal/dev-ops-1.png" alt-text="Screenshot of the Azure DevOps portal." lightbox="media/git-integration-with-service-principal/dev-ops-1.png":::
+
+ 4. Navigate to relevant Azure DevOps **project settings** -> **Teams** 
  5. Add the service principal to relevant team
 
 
