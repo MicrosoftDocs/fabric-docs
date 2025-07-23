@@ -34,8 +34,8 @@ The page is divided into two sections:
 
 This view shows the aggregated usage for selected fields from slicers.
 
-- **CU(s) by workspace**: Displays the names of workspaces along with their corresponding CU(s). The values shown are based on the slicer selections at the top of the page.
-- **CU(s) by item**: Displays the names of items along with their corresponding CU(s). The values shown are based on the slicer selections at the top of the page.
+- **CU(s) by workspace**: Displays the names of workspaces along with their corresponding Capacity Units(CUs). The values shown are based on the slicer selections at the top of the page.
+- **CU(s) by item**: Displays the names of items along with their corresponding CUs. The values shown are based on the slicer selections at the top of the page.
 
 
 ### CU % over time
@@ -48,9 +48,9 @@ This view shows the aggregated usage for selected fields from slicers.
 
 ### Workspace details
 
-This visual shows the aggregated workspace-level usage metrics; additional optional fields can be added for deeper insights.
+This visual shows the aggregated workspace-level usage metrics; more optional fields can be added for deeper insights.
 
-- **Pass rate**: Operations with a status of Success divided by those with a status other than Success (excluding InProgress operations).
+- **Pass rate**: Operations with a status of success divided by those operations with a status other than success (excluding InProgress operations).
 - **Views**: Number of operations.
 - **% Compute**: Percentage of capacity units consumed by a Workspace, Item, Operation relative to all capacities the user is an admin of, based on applied filter context.
 
@@ -60,18 +60,18 @@ This section offers a detailed evaluation of usage metrics for the slicer-select
 
 - **Status trends vs throttling**: This chart displays the number of operations by status and a horizontal Throttling (s) line with data points plotted by date.
 - **Scheduling frequency**: This chart displays the number of operations by date.
-- **% breakdown by status**: This visual presents the percentage distribution of operations based on their completion status. Statuses include Invalid, Cancelled, InProgress, Success, and Failure.
-- **CU(s) by date**: This visual displays CU(s) by date.
-- **Duration (s) by date**: This visual displays Duration (s) by date.
-- **CU(s) by operation and date**: This visual displays CU(s) by operation and date.
-- **CU(s) by item kind and date**: This visual displays CU(s) by item kind and date.
-- **CU(s) by experience and date**: This visual displays CU(s) by experience and date.
+- **% breakdown by status**: This visual presents the percentage distribution of operations based on their completion status. Statuses include invalid, canceled, inprogress, success, and failure.
+- **CU(s) by date**: This visual displays CUs by date.
+- **Duration (s) by date**: This visual displays Duration by date.
+- **CU(s) by operation and date**: This visual displays CUs by operation and date.
+- **CU(s) by item kind and date**: This visual displays CUs by item kind and date.
+- **CU(s) by experience and date**: This visual displays CUs by experience and date.
 
 ### Item details
 
-This view outlines detailed item-level usage data; additional optional fields can be added for deeper insights.
+This view outlines detailed item-level usage data; more optional fields can be added for deeper insights.
 
 - **% Compute**: Percentage of capacity units consumed by an item, operation, status, date scheduled relative to all items the user is an admin of, based on applied filter context.
 - **Date scheduled**: Datetime when the operation was triggered.
-- **Status**: Shows different statuses (Invalid, Cancelled, InProgress, Success, Failure).
+- **Status**: Shows different statuses (invalid, canceled, inprogress, success, failure).
 - **Throttling (s)**:  The number of seconds of throttling applied due to capacity overload.
