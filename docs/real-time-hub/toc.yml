@@ -77,8 +77,6 @@ items:
     href: fabric-events-capacity-consumption.md
 - name: Discover and manage data streams and events
   items:
-  - name: Explore data streams
-    href: explore-data-streams.md
   - name: View data stream details
     href: view-data-stream-details.md
   - name: Preview data streams
@@ -87,8 +85,6 @@ items:
     href: endorse-data-streams.md
   - name: Explore all data streams
     href: explore-all-data-streams.md
-  - name: Explore my data streams
-    href: explore-my-data-streams.md
   - name: Explore Microsoft sources
     href: explore-microsoft-sources.md
   - name: Subscribe permission for Fabric/Azure events
