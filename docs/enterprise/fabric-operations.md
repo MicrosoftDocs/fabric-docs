@@ -122,11 +122,11 @@ GraphQL operations are made up of requests performed on API for GraphQL items by
 
 ### Fabric User Data Functions
 
-[Fabric User Data Functions](https://aka.ms/ms-fabric-functions-docs) operations are made up of requests initiated by the Fabric portal, other Fabric artifacts, or client applications. Each request and response operation incurs a charge for the function execution, internal storage of the function metadata in OneLake, and associated read and write operations in OneLake.
+[Fabric User Data Functions](https://aka.ms/ms-fabric-functions-docs) operations are made up of requests initiated by the Fabric portal, other Fabric artifacts, or client applications. Each operation incurs a charge for the function execution, internal storage of the function metadata in OneLake, and associated read and write operations in OneLake.
 
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
-| User Data Functions Execution    | Compute charge for the execution of the function inside of the User Data Functions artifact. Memory consumption is allocated with a fixed 2GB used every second.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
+| User Data Functions Execution    | Compute charge for the execution of the function inside of the User Data Functions item. This operation results from running a function after a request from the Fabric portal, another Fabric item, or an external application.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
 | User Data Functions Static Storage | Static storage of internal function metadata in a service-managed OneLake account. This is calculated with the compressed size of the User Data Functions item metadata. This is the cost of creating User Data Functions items even if they’re not used.  | OneLake Storage | OneLake Storage | Background |
 | User Data Functions Static Storage Read | Read operation of internal function metadata stored in a service-managed OneLake account. This operation is executed every time a function is executed after a period of inactivity. | OneLake Read Operations | OneLake Read Operations | Background |
 | User Data Functions Static Storage Write | Writes and updates of internal function metadata stored in a system-managed OneLake account. This operation is executed every time the User Data Functions item is published. | OneLake Write Operations | OneLake Write Operations | Background |

@@ -57,7 +57,7 @@ One of the ways to consume a Fabric data agent is by adding it to a custom AI ag
 :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-connector.png" alt-text="Screenshot showing to add the Fabric connector to Copilot Studio." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-connector.png":::
 
 > [!NOTE]
-> Ensure to publish your Fabric data agent prior to adding to your custom AI agent in Copilot Studio.
+> Ensure to publish your Fabric data agent prior to adding to your custom AI agent in Copilot Studio. The Fabric data agent and Microsoft Copilot resources should be on the same tenant, and both Microsoft Fabric and Microsoft Copilot should be signed in with the same account.
 
 8. From the list of Fabric data agents you have access to, select the data agent that you want to connect to the custom AI agent in Copilot Studio and select **Next**. The selected data agent will work together with the custom AI agent to handle specific workflows.
 
