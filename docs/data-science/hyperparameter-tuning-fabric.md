@@ -6,16 +6,16 @@ ms.author: ssalgado
 author: ssalgadodev
 ms.reviewer: midesa
 reviewer: midesa
-ms.date: 03/18/2024
+ms.date: 07/21/2025
 ---
 
 # Hyperparameter tuning (preview)
 
-Hyperparameter tuning is the process of finding the optimal values for the parameters that are not learned by the machine learning model during training, but rather set by the user before the training process begins. These parameters are commonly referred to as hyperparameters, and examples include the learning rate, the number of hidden layers in a neural network, the regularization strength, and the batch size.
+Hyperparameter tuning is the process of finding the optimal values for the parameters that aren't learned by the machine learning model during training, but rather set by the user before the training process begins. These parameters are commonly referred to as hyperparameters, and examples include the learning rate, the number of hidden layers in a neural network, the regularization strength, and the batch size.
 
 The performance of a machine learning model can be highly sensitive to the choice of hyperparameters, and the optimal set of hyperparameters can vary greatly depending on the specific problem and dataset. Hyperparameter tuning is therefore a critical step in the machine learning pipeline, as it can have a significant impact on the model's accuracy and generalization performance.
 
-In Fabric, data scientists can leverage ```FLAML```, a lightweight Python library for efficient automation of machine learning and AI operations, for their hyperparameter tuning requirements. Within Fabric notebooks, users can call ```flaml.tune``` for economical hyperparameter tuning.
+In Fabric, data scientists can use ```FLAML```, a lightweight Python library for efficient automation of machine learning and AI operations, for their hyperparameter tuning requirements. Within Fabric notebooks, users can call ```flaml.tune``` for economical hyperparameter tuning.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -25,13 +25,13 @@ There are three essential steps to use  ```flaml.tune``` to finish a basic tunin
 
 1. Specify the tuning objective with respect to the hyperparameters.
 1. Specify a search space of the hyperparameters.
-1. Specify tuning constraints, including constraints on the resource budget to do the tuning, constraints on the configurations, or/and constraints on a (or multiple) particular metric(s).
+1. Specify tuning constraints, including constraints on the resource budget to do the tuning, constraints on the configurations, or/and constraints on a (or multiple) particular metrics.
 
 ### Tuning objective
 
 The first step is to specify your tuning objective. To do this, you should first specify your evaluation procedure with respect to the hyperparameters in a user-defined function ```evaluation_function```. The function requires a hyperparameter configuration as input. It can simply return a metric value in a scalar or return a dictionary of metric name and metric value pairs.
 
-In the example below, we can define an evaluation function with respect to 2 hyperparameters named ```x``` and ```y```.
+In the example below, we can define an evaluation function with respect to two hyperparameters named ```x``` and ```y```.
 
 ```python
 import time
@@ -51,7 +51,7 @@ def evaluate_config(config: dict):
 
 ### Search space
 
-Next, we will specify the search space of hyperparameters. In the search space, you need to specify valid values for your hyperparameters and how these values are sampled (e.g., from a uniform distribution or a log-uniform distribution). In the example below, we can provide the search space for the hyperparameters ```x``` and ```y```. The valid values for both are integers ranging from [1, 100,000]. These hyperparameters are sampled uniformly in the specified ranges.
+Next, we specify the search space of hyperparameters. In the search space, you need to specify valid values for your hyperparameters and how these values are sampled (for example, from a uniform distribution or a log-uniform distribution). In the example that follows, we can provide the search space for the hyperparameters ```x``` and ```y```. The valid values for both are integers ranging from [1, 100,000]. These hyperparameters are sampled uniformly in the specified ranges.
 
 ```python
 from flaml import tune
@@ -66,7 +66,7 @@ config_search_space = {
 tune.run(..., config=config_search_space, ...)
 ```
 
-With FLAML, users can customize the domain for a particular hyperparameter. This allows users to specify a ***type*** and ***valid range*** to sample parameters from. FLAML supports the following hyperparameter types: float, integer, and categorical. You can see this example below for commonly used domains:
+With FLAML, users can customize the domain for a particular hyperparameter. This allows users to specify a ***type*** and ***valid range*** to sample parameters from. FLAML supports the following hyperparameter types: float, integer, and categorical. You can see the following example for commonly used domains:
 
 ```python
 config = {
@@ -118,7 +118,7 @@ To learn more about how you can customize domains within your search space, visi
 
 ### Tuning constraints
 
-The last step is to specify constraints of the tuning task. One notable property of ```flaml.tune``` is that it is able to complete the tuning process within a required resource constraint. To do this, a user can provide resource constraints in terms of wall-clock time (in seconds) using the ```time_budget_s``` argument or in terms of the number of trials using the ```num_samples``` argument. 
+The last step is to specify constraints of the tuning task. One notable property of ```flaml.tune``` is that it's able to complete the tuning process within a required resource constraint. To do this, a user can provide resource constraints in terms of wall-clock time (in seconds) using the ```time_budget_s``` argument or in terms of the number of trials using the ```num_samples``` argument. 
 
 ```python
 # Set a resource constraint of 60 seconds wall-clock time for the tuning.
@@ -135,7 +135,7 @@ To learn more about addition configuration constraints, you can visit [the FLAML
 
 ### Putting it together
 
-Once we've defined our tuning criteria, we can execute the tuning trial. To track the results of our trial, we can leverage [MLFlow autologging](../data-science/mlflow-autologging.md) to capture the metrics and parameters for each of these runs. This code will capture the entire hyperparameter tuning trial, highlighting each of the hyperparameter combinations that were explored by FLAML.
+Once we've defined our tuning criteria, we can execute the tuning trial. To track the results of our trial, we can use [MLFlow autologging](../data-science/mlflow-autologging.md) to capture the metrics and parameters for each of these runs. This code captures the entire hyperparameter tuning trial, highlighting each of the hyperparameter combinations that were explored by FLAML.
 
 ```python
 import mlflow
@@ -154,11 +154,11 @@ with mlflow.start_run(nested=True, run_name="Child Run: "):
 ```
 
 > [!NOTE]
-> When MLflow autologging is enabled, metrics, parameters and models should be logged automatically as MLFlow runs. However, this varies by the framework. Metrics and parameters for specific models may not be logged. For example, no metrics will be logged for XGBoost , LightGBM , Spark  and SynapseML models. You can learn more about what metrics and parameters are captured from each framework using the [MLFlow autologging documentation](https://mlflow.org/docs/2.7.1/tracking.html#automatic-logging).
+> When MLflow autologging is enabled, metrics, parameters, and models should be logged automatically as MLFlow runs. However, this varies by the framework. Metrics and parameters for specific models might not be logged. For example, no metrics are logged for XGBoost, LightGBM, Spark,  and SynapseML models. You can learn more about what metrics and parameters are captured from each framework using the [MLFlow autologging documentation](https://mlflow.org/docs/2.7.1/tracking.html#automatic-logging).
 
 ## Parallel tuning with Apache Spark
 
-The ```flaml.tune``` functionality supports tuning both Apache Spark and single-node learners. In addition, when tuning single-node learners (e.g. Scikit-Learn learners), you can also parallelize the tuning to speed up your tuning process by setting ```use_spark = True```. For Spark clusters, by default, FLAML will launch one trial per executor. You can also customize the number of concurrent trials by using the ```n_concurrent_trials``` argument.
+The ```flaml.tune``` functionality supports tuning both Apache Spark and single-node learners. In addition, when tuning single-node learners (for example, Scikit-Learn learners), you can also parallelize the tuning to speed up your tuning process by setting ```use_spark = True```. For Spark clusters, by default, FLAML launches one trial per executor. You can also customize the number of concurrent trials by using the ```n_concurrent_trials``` argument.
 
 ```python
 
@@ -179,7 +179,7 @@ To learn more about how to parallelize your tuning trails, you can visit the [FL
 
 ## Visualize results
 
-The ```flaml.visualization``` module provides utility functions for plotting the optimization process using Plotly. By leveraging Plotly, users can interactively explore their AutoML experiment results. To use these plotting functions, simply provide your optimized ```flaml.AutoML``` or ```flaml.tune.tune.ExperimentAnalysis``` object as an input.
+The ```flaml.visualization``` module provides utility functions for plotting the optimization process using Plotly. By using Plotly, users can interactively explore their AutoML experiment results. To use these plotting functions, provide your optimized ```flaml.AutoML``` or ```flaml.tune.tune.ExperimentAnalysis``` object as an input.
 
 You can use the following functions within your notebook:
 

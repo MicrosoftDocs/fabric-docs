@@ -73,8 +73,6 @@
                 "data-science/**/*.yml": "data-science",
                 "data-warehouse/**/*.md": "data-warehouse",
                 "data-warehouse/**/*.yml": "data-warehouse",
-                "enterprise/**/*.md": "enterprise",
-                "enterprise/**/*.yml": "enterprise",
                 "get-started/**/*.yml": "get-started",
                 "get-started/**/*.md": "get-started",
                 "fundamentals/**/*.yml": "get-started",
