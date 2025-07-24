@@ -22,4 +22,4 @@ Before you start, you must complete the following prerequisites:
 - Gather Username and password to connect to the MQTT broker.  
 - Ensure that the MQTT broker is publicly accessible and not restricted by a firewall or a virtual network. 
 
-To learn how to configure this setup and stream your MQTT data through **Azure Event Grid**, see [Add Azure Event Grid Namespace as a source to an eventstream (preview)](add-source-azure-event-grid.md). 
+To learn how to configure this setup and stream your MQTT data through **Azure Event Grid**, see [Add Azure Event Grid Namespace as a source to an eventstream (preview)](../add-source-azure-event-grid.md). 
