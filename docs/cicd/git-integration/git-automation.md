@@ -381,6 +381,7 @@ $adoSPConnection = @{
 }
 
 #Note: AzureDevOps for UserPrincipal is not supported (since it requires interactive OAuth2)
+```
 
 **Sample request**
 
@@ -433,10 +434,6 @@ POST https://api.fabric.microsoft.com/v1/connections
     "skipTestConnection": false
   }
 }
-```
-
-
-
 ```
 
 #### [GitHub](#tab/github)
