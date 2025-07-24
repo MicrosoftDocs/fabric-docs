@@ -11,9 +11,9 @@ ms.reviewer: sharmaanshul
 #CustomerIntent: As a Fabric RTI AI developer, I want to use the RTI MCP server to create AI agents and AI applications that use Eventhouse and KQL databases to query and analyze real-time data.
 ---
 
-# Use MCP with Fabric RTI Eventhouse (preview)
+# Use the Fabric RTI MCP Server with Eventhouse (preview)
 
-Learn how to use the Model Context Protocol (MCP) with Fabric RTI Eventhouse to execute KQL queries against the KQL Databases in your Eventhouse backend. This integration provides a unified interface for AI agents to query, reason, and act on real-time data.
+Learn how to use the Model Context Protocol (MCP) with Fabric Real-Time Intelligence (RTI) Eventhouse to execute KQL queries against the KQL Databases in your Eventhouse backend. The RTI MCP integration provides a unified interface for AI agents to query, reason, and act on real-time data.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -38,6 +38,6 @@ Get started using the instructions documented in the [MCP for RTI server](https:
 
 ## Related content
 
-- [MCP for RTI server](https://aka.ms/rti.mcp.repo)
+- [What is the Fabric RTI MCP Server (preview)?](mcp-overview.md)
+- [Fabric RTI MCP Server overview](https://github.com/microsoft/fabric-rti-mcp/?tab=readme-ov-file#-overview)
 - [Eventhouse overview](eventhouse.md)
-- [KQL database](create-database.md)

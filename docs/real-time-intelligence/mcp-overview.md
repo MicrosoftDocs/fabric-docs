@@ -4,7 +4,6 @@ description: Model Context Protocol (MCP) for RTI is a fully open-source impleme
 ms.reviewer: sharmaanshul
 author: spelluru
 ms.author: spelluru
-ms.service: rti-core
 ms.topic: overview 
 ms.date: 07/14/2025
 ms.search.form: MCP, RTI, AI
@@ -62,7 +61,7 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 
 ## Supported RTI components
 
-[Eventhouse](mcp-rti-eventhouse.md) - Run KQL queries against the KQL databases in your [Eventhouse](eventhouse.md) backend. This unified interface lets AI agents query, reason, and act on real-time data.
+[Eventhouse](mcp-eventhouse.md) - Run KQL queries against the KQL databases in your [Eventhouse](eventhouse.md) backend. This unified interface lets AI agents query, reason, and act on real-time data.
 
 Support for more RTI components for comprehensive analytics is **coming soon**, including:
 
