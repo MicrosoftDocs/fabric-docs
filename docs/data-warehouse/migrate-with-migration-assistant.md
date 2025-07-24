@@ -3,8 +3,8 @@ title: Migrate Data with the Migration Assistant for Fabric Data Warehouse
 description: This tutorial provides a step-by-step guide for the Migration Assistant experience for Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: anphil, pvenkat
-ms.date: 04/30/2025
+ms.reviewer: anphil, pvenkat, prlangad
+ms.date: 07/21/2025
 ms.topic: how-to
 ms.search.form: Migration Assistant
 ---
@@ -69,6 +69,10 @@ The AI-assisted migration features of the Migration Assistant to fix migration i
    :::image type="content" source="media/migrate-with-migration-assistant/show-migrated-objects-list.png" alt-text="Screenshot from the Fabric portal of the Migration Assistant's metadata migration summary and the list of migrated objects." lightbox="media/migrate-with-migration-assistant/show-migrated-objects-list.png":::
 
    The **State** column indicates if the object's metadata was adjusted during the translation to be supported in Fabric Warehouse. For example, you might see that certain column datatypes or T-SQL language constructs are automatically converted to the ones that are supported in Fabric. The **Details** column shows the information about the adjustments that were made to the objects. 
+
+1. Open the metadata migration summary in full screen view for better readability. Apply filters on object types to filter specific kind of objects.
+
+   :::image type="content" source="media/migrate-with-migration-assistant/show-migrated-objects-full-screen.png" alt-text="Screenshot of the full screen view of the Migration Assistant's metadata migration summary of migrated objects." lightbox="media/migrate-with-migration-assistant/show-migrated-objects-full-screen.png":::
 
 ### Fix problems using Migration Assistant
 

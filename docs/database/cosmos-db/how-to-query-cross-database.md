@@ -14,7 +14,7 @@ appliesto:
 
 [!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
 
-The mirrored SQL Analytics endpoint makes it possible to create queries across two distinct Cosmos DB in Microsoft Fabric containers or databases. In this guide, you create a query that spans two Cosmos DB in Fabric databases.
+The mirrored SQL analytics endpoint makes it possible to create queries across two distinct Cosmos DB in Microsoft Fabric containers or databases. In this guide, you create a query that spans two Cosmos DB in Fabric databases.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ The mirrored SQL Analytics endpoint makes it possible to create queries across t
 
 [!INCLUDE[Prerequisites - Existing container](includes/prerequisite-existing-container.md)]
 
-- At least one other SQL Analytics endpoint for a second Cosmos DB in Fabric database artifact
+- At least one other SQL analytics endpoint for a second Cosmos DB in Fabric database item.
 
 ## Open the SQL analytics endpoint for the first database
 
@@ -74,7 +74,7 @@ Now, connect to the mirrored SQL analytics endpoint for a second Cosmos DB in Fa
 
 1. While still in the analytics endpoint page, select **+ Warehouses** from the menu bar.
 
-1. Add another SQL analytics endpoint item for the second Fabric artifact you want to query.
+1. Add another SQL analytics endpoint item for the second Fabric item you want to query.
 
 1. Open another new query editor and then run a test query. Again, ensure that you see the expected data.
 

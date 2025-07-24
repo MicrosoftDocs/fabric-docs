@@ -36,7 +36,7 @@ The transformation is executed by **Fabric Spark compute**, which **copies** the
 | Microsoft Fabric SKU | Capacity or Trial that supports **Lakehouse** workloads. |
 | OneLake shortcut | A shortcut targeting a folder that contains _homogeneous_ CSV files. |
 | Workspace role | **Contributor** or higher. |
-| Preview enablement | Your Fabric admin must enable **Shortcut transformations (preview)** in the Admin portal. |
+
 
 ## Supported sources and destinations
 

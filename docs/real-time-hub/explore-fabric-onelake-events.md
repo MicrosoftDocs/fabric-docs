@@ -4,7 +4,7 @@ description: This article shows how to explore OneLake events in Fabric Real-Tim
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 11/17/2024
+ms.date: 07/22/2025
 ---
 
 # Explore OneLake events in Fabric Real-Time hub

@@ -1,12 +1,12 @@
 ---
 title: 'Tutorial: Use R to predict churn'
 description: This tutorial shows a data science work flow in R, with an end-to-end example of building a model to predict churn.
-ms.reviewer: None
-ms.author: sgilley
-author: sdgilley
+ms.reviewer: amjafari
+ms.author: jburchel
+author: jonburchel
 ms.topic: tutorial
 ms.custom:
-ms.date: 01/22/2024
+ms.date: 07/11/2025
 #customer intent: As a data scientist, I want to build a machine learning model by using R so I can predict customer churn.
 ---
 
@@ -106,7 +106,7 @@ This code downloads a publicly available version of the dataset, and then stores
 library(fs)
 library(httr)
 
-remote_url <- "https://sdkstorerta.blob.core.windows.net/churnblob"
+remote_url <- "https://synapseaisolutionsa.z13.web.core.windows.net/data/bankcustomerchurn/churn.csv"
 file_list <- c("churn.csv")
 download_path <- "/lakehouse/default/Files/churn/raw"
 

@@ -215,7 +215,7 @@ Within a workspace, Fabric items can have permissions configured separately from
 
 ### Lakehouse SQL analytics endpoint permissions
 
-SQL analytics endpoint is a warehouse that is automatically generated from a lakehouse in Microsoft Fabric. A customer can transition from the "Lake" view of the lakehouse (which supports data engineering and Apache Spark) to the "SQL" view of the same lakehouse. Learn more about SQL analytics endpoint in [Data Warehouse documentation: SQL analytics endpoint](../../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
+SQL analytics endpoint is automatically generated from a lakehouse in Microsoft Fabric. It enables users to query lakehouse data using familiar T-SQL syntax. This endpoint supports the data engineering (Lake view with Apache Spark) and relational (SQL view) experiences on the same lakehouse. To learn more, see [SQL analytics endpoint in Data Warehouse documentation](../../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
 
 | **SQL analytics endpoint permission** | **Users can view files via OneLake endpoint?** | **Users can write files via OneLake endpoint?** | **Users can read data via SQL analytics endpoint?** |
 |----------|----------|----------|--------------|
