@@ -61,7 +61,7 @@ There are several ways to register schemas in Fabric Real-Time intelligence:
 You can register schemas using Fabric Real-Time hub user interface (UI) or Schema sets UI. For more information, see [Create and manage event schemas](create-manage-event-schemas.md). 
 
 ### Schema versioning
-Versioning is supported in Schema Registry within Fabric Real-Time Intelligence. However, the system doesn't guarantee a semantic version. Also, there is no check to see if a schema is actually changed. Any edits to an existing schema are treated as a new version. As described earlier, there are not compatibility checks or native support for schema evolution yet. For more information, see [Update a schema](create-manage-event-schemas.md#update-an-event-schema).
+Versioning is supported in Schema Registry within Fabric Real-Time Intelligence. However, the system doesn't guarantee a semantic version. Also, there's no check to see if a schema is actually changed. Any edits to an existing schema are treated as a new version. As described earlier, there aren't compatibility checks or native support for schema evolution yet. For more information, see [Update a schema](create-manage-event-schemas.md#update-an-event-schema).
 
 
 ## Related content
