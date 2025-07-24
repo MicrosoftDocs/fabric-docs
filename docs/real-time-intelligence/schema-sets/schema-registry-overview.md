@@ -1,15 +1,17 @@
 ---
-title: Schema Registry in Fabric Real-Time hub
-description: Learn about Schema Registry in Fabric Real-Time hub. 
+title: Event Schema Registry in Microsoft Fabric Real-Time Intelligence
+description: Learn about Event Schema Registry in Microsoft Fabric. Discover how this centralized repository manages data schemas and improves data quality.
 author: spelluru
-ms.author: spelluru
+contributors: 
 ms.topic: overview
-ms.date: 07/02/2025
+ms.date: 07/24/2025
+ms.author: spelluru
+ms.reviewer: spelluru
 ---
 
 # What is Schema Registry (preview) in Fabric Real-Time hub? 
 
-Schema Registry is a centralized repository for managing and organizing data schemas within Fabric Real-Time Intelligence. It provides a structured framework for defining, validating, and evolving schemas used in event-driven architectures to describe events.
+Schema Registry is a centralized repository for managing and organizing data schemas within Fabric Real-Time Intelligence. It provides a structured framework for defining, validating, and evolving schemas that are used in event-driven architectures to describe events.
 
 > [!NOTE]
 > This feature is currently in preview.
@@ -36,17 +38,20 @@ Schema Registry helps you maintain data integrity, enable reuse across services,
 Here are the key benefits of using Schema Registry: 
 
 - **Centralized management**: Store all your schemas in one location for easy access and governance.
-- **Version control**: Track schema evolution and maintain backward compatibility.
+- **Version control**: Track evolution of schema and maintain backward compatibility.
 - **Validation**: Ensure data consistency across your event-driven applications.
 - **Integration**: Seamlessly connect with Fabric Real-Time Intelligence services.
 
-## Schema sets
+## Key concepts 
+This section describes key concepts of Schema Registry. 
+
+### Schema sets
 With Schema Registry, you can organize one or more related schemas into schema sets, enabling logical grouping and centralized access control. You can manage who can view, edit, or modify schemas at the group level, making it easier to govern schema usage across teams or projects. 
 
-## Schema formats
+### Schema formats
 Currently, the Schema Registry supports **Avro** schema format.
 
-## Schema registration
+### Schema registration
 There are several ways to register schemas in Fabric Real-Time intelligence: 
 
 - Use the visual UI builder to create your schema step by step.
@@ -54,9 +59,18 @@ There are several ways to register schemas in Fabric Real-Time intelligence:
 - Paste your schema directly in the Code View 
 
 You can register schemas using Fabric Real-Time hub user interface (UI) or Schema sets UI. For more information, see [Create and manage event schemas](create-manage-event-schemas.md). 
- 
 
-## Next steps
-- If you're using real-time hub, see [Create and manage event schemas in Real-Time hub](../../real-time-hub/add-event-schema.md).
-- If you're using schema sets, first [create a schema set](create-manage-event-schema-sets.md), and then see [Create schemas in a schema set](create-manage-event-schemas.md).
+### Schema versioning
+Versioning is supported in Schema Registry within Fabric Real-Time Intelligence. However, the system doesn't guarantee a semantic version. Also, there is no check to see if a schema is actually changed. Any edits to an existing schema are treated as a new version. As described earlier, there are not compatibility checks or native support for schema evolution yet. For more information, see [Update a schema](create-manage-event-schemas.md#update-an-event-schema).
+
+
+## Related content
+See the following articles:
+
+**For Real-Time hub users:**
+[Create and manage event schemas in Real-Time hub](create-manage-event-schemas-real-time-hub.md)
+
+**For Schema sets users:**
+1. [Create a schema set](create-manage-event-schema-sets.md)
+2. [Create schemas in a schema set](create-manage-event-schemas.md)
 

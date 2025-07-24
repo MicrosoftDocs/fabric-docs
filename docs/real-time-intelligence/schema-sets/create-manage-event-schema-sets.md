@@ -1,16 +1,16 @@
 ---
-title: Create and manage event schema sets
+title: Create and Manage Event Schema Sets
 description: Learn about how to create and manage an event schema set in Fabric Real-Time Intelligence.
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 07/02/2025
+ms.date: 07/24/2025
 ms.search.form: Schema set
 #customer intent: As a user, I want to learn how to create an event schema set in Real-Time Intelligence.
 ---
 # Create and manage event schema sets in Microsoft Fabric
-In this article, you learn how to create an event schema set in Fabric and add a schema to it. 
+In this article, you learn how to create and manage event schema sets in Microsoft Fabric Real-Time Intelligence. Event schema sets help you organize and standardize data structures (schemas) for your real-time analytics workflows, making it easier to process and analyze streaming data consistently.
 
 ## Create a schema set
 
@@ -19,7 +19,7 @@ In this article, you learn how to create an event schema set in Fabric and add a
 1. On the **My workspace** page, select **+ New item** on the command bar. 
 1. On the **New item** page, search for **Eventstream**, and then select **Eventstream**. 
 
-    :::image type="content" source="./media/create-manage-event-schema-sets/new-item-event-schema-set.png" alt-text="Screenshot that shows the New item page with Event schema set (preview) selected." lightbox="./media/create-manage-event-schema-sets/new-item-event-schema-set.png":::
+    :::image type="content" source="./media/create-manage-event-schema-sets/new-item-event-schema-set.png" alt-text="Screenshot of the New item page with Event schema set (preview) selected." lightbox="./media/create-manage-event-schema-sets/new-item-event-schema-set.png":::
 1. In the **New event schema set (preview)** window, enter a **name** for the schema set, and then select **Create**.
 
     :::image type="content" source="./media/create-manage-event-schema-sets/new-schema-set-window.png" alt-text="Screenshot that shows the New event schema set (preview) window." lightbox="./media/create-manage-event-schema-sets/new-schema-set-window.png":::

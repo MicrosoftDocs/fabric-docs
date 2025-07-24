@@ -716,12 +716,14 @@ items:
       href: schema-sets/schema-registry-overview.md
     - name: Create and manage event schema sets
       href: schema-sets/create-manage-event-schema-sets.md
-    - name: Create and manage schemas in schemas sets
+    - name: Create and manage schemas in schema sets
       href: schema-sets/create-manage-event-schemas.md
-    - name: Create a schema in Real-Time hub
-      href: ../real-time-hub/add-event-schema.md
+    - name: Create and manage schemas in Real-Time hub
+      href: schema-sets/create-manage-event-schemas-real-time-hub.md
     - name: Use schemas in eventstreams
       href: schema-sets/use-event-schemas.md
+    - name: Known limitations
+      href: schema-sets/schema-registry-limitations.md      
 - name: Analyze and train data
   items:
   - name: Copilot for Writing KQL Queries

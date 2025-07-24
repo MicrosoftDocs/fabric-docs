@@ -132,9 +132,21 @@ items:
   - name: What is Schema Registry?
     href: ../real-time-intelligence/schema-sets/schema-registry-overview.md?context=/fabric/context/context-rti&pivots=fabric
   - name: Add an event schema
-    href: add-event-schema.md
+    href: ../real-time-intelligence/schema-sets/create-manage-event-schemas-real-time-hub.md?context=/fabric/context/context-rti&pivots=fabric
   - name: Use schemas in eventstreams
     href: ../real-time-intelligence/schema-sets/use-event-schemas.md?context=/fabric/context/context-rti&pivots=fabric
+  - name: Schema Registry in Real-Time hub
+    href: ../real-time-intelligence/schema-sets/schema-registry-overview.md
+  - name: Create and manage event schema sets
+    href: ../real-time-intelligence/schema-sets/create-manage-event-schema-sets.md
+  - name: Create and manage schemas in schema sets
+    href: ../real-time-intelligence/schema-sets/create-manage-event-schemas.md
+  - name: Create and manage schemas in Real-Time hub
+    href: ../real-time-intelligence/schema-sets/create-manage-event-schemas-real-time-hub.md
+  - name: Use schemas in eventstreams
+    href: ../real-time-intelligence/schema-sets/use-event-schemas.md
+  - name: Known limitations
+    href: ../real-time-intelligence/schema-sets/schema-registry-limitations.md        
 - name: User flows
   items:
   - name: Discover and respond to events
