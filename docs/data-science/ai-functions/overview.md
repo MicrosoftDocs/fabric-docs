@@ -44,40 +44,36 @@ It's seamless to incorporate these functions as part of data-science and data-en
 
 ## Getting started with AI functions
 
-Using AI functions in Fabric notebooks requires certain custom packages, which are preinstalled on the Fabric runtime. For the latest features and bugfixes, you can run the following code to install and import the most up-to-date packages. Afterward, you can use AI functions with pandas or PySpark, depending on your preference.
+AI functions are preinstalled on the Fabric PySpark runtime. For the pure-python environment you may install Pandas AI Functions.
 
-This code cell installs the AI functions library and its dependencies.
+The following code cells install the AI functions library and its dependencies.
 
-> [!WARNING]
-> The PySpark configuration cell takes a few minutes to finish executing. We appreciate your patience.
+# [pandas in Fabric runtime](#tab/pandas)
 
-# [pandas](#tab/pandas)
+```python
+# Pandas AI Functions requires openai version 1.30 or higher
+%pip install -q --force-reinstall openai==1.30 2>/dev/null
+
+# AI functions are preinstalled on the Fabric PySpark runtime
+```
+
+# [pandas in Python runtime](#tab/pandas)
 
 ```python
 # Install fixed version of packages
-%pip install -q --force-reinstall openai==1.30 httpx==0.27.0
+%pip install -q --force-reinstall openai==1.30 2>/dev/null
 
 # Install latest version of SynapseML-core
-%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.11-spark3.5/synapseml_core-1.0.11.dev1-py2.py3-none-any.whl
+%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12-spark3.5/synapseml_core-1.0.12.dev1-py2.py3-none-any.whl 2>/dev/null
 
 # Install SynapseML-Internal .whl with AI functions library from blob storage:
-%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.11.1-spark3.5/synapseml_internal-1.0.11.1.dev1-py2.py3-none-any.whl
+%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12.2-spark3.5/synapseml_internal-1.0.12.2.dev1-py2.py3-none-any.whl 2>/dev/null
 ```
 
 # [PySpark](#tab/pyspark)
 
 ```python
-%%configure -f
-{
-    "name": "synapseml",
-    "conf": {
-        "spark.jars.packages": "com.microsoft.azure:synapseml_2.12:1.0.11-spark3.5,com.microsoft.azure:synapseml-internal_2.12:1.0.11.1-spark3.5",
-        "spark.jars.repositories": "https://mmlspark.azureedge.net/maven",
-        "spark.jars.excludes": "org.scala-lang:scala-reflect,org.apache.spark:spark-tags_2.12,org.scalactic:scalactic_2.12,org.scalatest:scalatest_2.12,com.fasterxml.jackson.core:jackson-databind",
-        "spark.yarn.user.classpath.first": "true",
-        "spark.sql.parquet.enableVectorizedReader": "false"
-    }
-}
+# AI functions are preinstalled on the Fabric PySpark runtime
 ```
 
 ---
@@ -101,9 +97,6 @@ tqdm.pandas()
 
 ```python
 from synapse.ml.spark.aifunc.DataFrameExtensions import AIFunctions
-from synapse.ml.services.openai import OpenAIDefaults
-defaults = OpenAIDefaults()
-defaults.set_deployment_name("gpt-35-turbo-0125")
 ```
 
 ---
