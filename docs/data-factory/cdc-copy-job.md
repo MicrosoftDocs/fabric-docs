@@ -42,6 +42,7 @@ Supported destination store:
    - Azure SQL DB
    - On-premises SQL Server
    - Azure SQL Managed Instance
+   - SQL Database in Fabric (Preview)
 
 ## How to get started:
 
