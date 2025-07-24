@@ -9,6 +9,7 @@ ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
 ms.date: 07/23/2025
 ms.update-cycle: 180-days
+ai-usage: ai-assisted
 ---
 
 # Try Microsoft Fabric for free
