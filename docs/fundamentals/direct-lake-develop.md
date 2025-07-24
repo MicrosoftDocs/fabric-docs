@@ -15,23 +15,28 @@ This article describes design topics relevant to developing Direct Lake semantic
 
 ## Create the model
 
-You use the Fabric portal to create a Direct Lake semantic model in a workspace. It's a simple process that involves selecting which tables from a single lakehouse or warehouse to add to the semantic model.
+You can create a Direct Lake semantic model in [Power BI Desktop](direct-lake-power-bi-desktop.md) or from many Fabric items in the browser. For example, from an open Lakehouse you can choose **New semantic model** to create a new semantic model in Direct Lake storage mode.
 
-You can then use the [web modeling experience](/power-bi/transform-model/service-edit-data-models) to further develop the semantic model. This experience allows you to create relationships between tables, create measures and calculation groups, mark date tables, and set properties for model and its objects (like column formats). You can also set up model [row-level security (RLS)](#rules-in-the-semantic-model) by defining roles and rules, and by adding members (Microsoft Entra user accounts or security groups) to those roles.
+You can use either [Power BI Desktop](direct-lake-power-bi-desktop.md) or [web modeling](direct-lake-web-modeling.md) in the browser to edit the semantic model to add relationships, rename fields, add measures, and other semantic modeling tasks.
 
-Alternatively, you can continue the development of your model by using an XMLA-compliant tool, like SQL Server Management Studio (SSMS) (version 19.1 or later) or open-source, community tools. For more information, see [Model write support with the XMLA endpoint](#model-write-support-with-the-xmla-endpoint) later in this article.
+Alternatively, as with any Power BI semantic model, you can continue the development of your model by using an XMLA-compliant tool, like SQL Server Management Studio (SSMS) (version 19.1 or later) or open-source, community tools. For more information, see [Model write support with the XMLA endpoint](#model-write-support-with-the-xmla-endpoint) later in this article. Fabric notebooks can also programatically create and edit semantic models with [semantic link](../data-science/semantic-link-overview) and semantic link labs.
 
 > [!TIP]
 > You can learn how to create a lakehouse, a Delta table, and a basic Direct Lake semantic model by completing [this tutorial](direct-lake-create-lakehouse.md).
 
 ### Model tables
 
-Model tables are based on either a table or a view of the SQL analytics endpoint. However, avoid using views whenever possible. That's because queries to a model table based on a view will always [fall back to DirectQuery mode](../fundamentals/direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
+Model tables are based on either a table or a view of the SQL analytics endpoint. However, avoid using views whenever possible. That's because queries to a model table based on a view will always [fall back to DirectQuery mode](../fundamentals/direct-lake-overview.md#directquery-fallback), which might result in slower query performance. 
+
+> [!WARNING]
+> Views can only be used in Direct Lake on SQL, and not available to be used in Direct Lake on OneLake.
 
 Tables should include columns for filtering, grouping, sorting, and summarizing, in addition to columns that support model relationships. While unnecessary columns don't affect semantic model query performance (because they won't be loaded into memory), they result in a larger storage size in OneLake and require more compute resources to load and maintain.
 
 > [!WARNING]
 > Using columns that apply [dynamic data masking (DDM)](../data-warehouse/dynamic-data-masking.md) in Direct Lake semantic models is not supported.
+
+Import tables can be added to semantic models with Direct Lake on OneLake tables. Calculated tables can be added as long as they do not not reference a Direct Lake table. Calculation groups can be added.
 
 To learn how to select which tables to include in your Direct Lake semantic model, see [Edit tables for Direct Lake semantic models](direct-lake-edit-tables.md).
 
@@ -175,17 +180,6 @@ When you connect to a Direct Lake semantic model with the XMLA endpoint, the met
 ## Post-publication tasks
 
 After you publish a Direct Lake semantic model, you should complete some setup tasks. For more information, see [Manage Direct Lake semantic models](../fundamentals/direct-lake-manage.md#post-publication-tasks).
-
-## Unsupported features
-
-The following model features aren't supported by Direct Lake semantic models:
-
-- Calculated tables referencing tables or columns in Direct Lake storage mode
-- Calculated columns referencing tables or columns in Direct Lake storage mode
-- Hybrid tables
-- User-defined aggregations
-- Composite models, in that you can't combine Direct Lake storage mode tables with DirectQuery or Dual storage mode tables _in the same model_. However, you can use Power BI Desktop to create a live connection to a Direct Lake semantic model and then extend it with new measures, and from there you can click the option to **make changes to this model** to add new tables (using Import, DirectQuery, or Dual storage mode). This action creates a DirectQuery connection to the semantic model in Direct Lake mode, so the tables show as DirectQuery storage mode, but this storage mode is not indicating fallback to DirectQuery. Only the connection between this new model and the Direct Lake model is DirectQuery and queries still utilize Direct Lake to get data from OneLake.  For more information, see [Build a composite model on a semantic model](/power-bi/transform-model/desktop-composite-models#building-a-composite-model-on-a-semantic-model-or-model).
-- Columns based on SQL analytics endpoint columns that apply dynamic data masking.
 
 ## Related content
 
