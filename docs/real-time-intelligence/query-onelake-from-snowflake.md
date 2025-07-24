@@ -11,7 +11,7 @@ ms.date: 07/15/2025
 
 # Query Fabric OneLake Delta Tables from Snowflake
 
-This article explains how to query Fabric OneLake Delta Tables from Snowflake using the [Snowflake connector for Microsoft Fabric](/fabric/data-factory/connector-snowflake-overview?view=microsoft-fabric&preserve-view=true).
+This article explains how to query Fabric Onelake tables from Snowflake, which would commonly be used in scenarios where you would like to make your streaming data available from Fabric in your existing Snowflake environment with minimal data movement.
 
 :::image type="content" source="media/query-onelake-from-snowflake/workflow.png" alt-text="Screenshot of the workflow diagram including data ingestion, analyzing, and exporting to snowflake":::
 
