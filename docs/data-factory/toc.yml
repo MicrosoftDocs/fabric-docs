@@ -56,7 +56,7 @@
         - name: Copy job
           items:
           - name: Load 1 TB of CSV data to a Lakehouse table
-            href: pricing-scenario-copy-job-csv-to-lakehouse.md
+            href: pricing-scenario-copy-job.md
     - name: Keyboard shortcuts
       href: keyboard-shortcuts.md
   - name: Get started
