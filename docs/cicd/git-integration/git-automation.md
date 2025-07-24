@@ -381,6 +381,62 @@ $adoSPConnection = @{
 }
 
 #Note: AzureDevOps for UserPrincipal is not supported (since it requires interactive OAuth2)
+
+**Sample request**
+
+```http
+POST https://api.fabric.microsoft.com/v1/connections
+
+{
+  "displayName": "<CONNECTION NAME>",
+  "connectivityType": "ShareableCloud",
+  "connectionDetails": {
+    "creationMethod": "AzureDevOpsSourceControl.Contents",
+    "type": "AzureDevOpsSourceControl",
+    "parameters": [
+     {
+      "dataType": "Text",
+      "name": "url",
+      "value": "<Repo url in Azure DevOps>”
+     }
+    ]
+  },
+  "credentialDetails": {
+    "credentials": {
+      "credentialType": "ServicePrincipal",
+      "tenantId": “<SP tenant (directory) id (Guid)>”,
+      "servicePrincipalClientId": “<SP APP (client) id (Guid)>”,
+      "servicePrincipalSecret": “<SP Secret>”
+    }
+  }
+}
+ 
+```
+
+**Sample response:**
+
+```json
+{
+  "allowConnectionUsageInGateway": false,
+  "id": "********-****-****-****-c13b543982ac",
+  "displayName": "<CONNECTION NAME>",
+  "connectivityType": "ShareableCloud",
+  "connectionDetails": {
+    "path": "<Repo url in Azure DevOps>",
+    "type": "AzureDevOpsSourceControl"
+  },
+  "privacyLevel": "Organizational",
+  "credentialDetails": {
+    "credentialType": "ServicePrincipal",
+    "singleSignOnType": "None",
+    "connectionEncryption": "NotEncrypted",
+    "skipTestConnection": false
+  }
+}
+```
+
+
+
 ```
 
 #### [GitHub](#tab/github)
