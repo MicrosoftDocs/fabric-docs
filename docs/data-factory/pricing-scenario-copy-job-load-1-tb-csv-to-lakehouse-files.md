@@ -1,5 +1,5 @@
 ---
-title: Pricing scenario - Copy job load 1 TB of CSV data to Lakehouse files
+title: Pricing scenario - Copy job load 1 TB of CSV data to a Lakehouse table
 description: This article provides an example pricing scenario for loading 1 TB of CSV data to Lakehouse files with binary copy using Copy job in Data Factory in Microsoft Fabric.
 ms.reviewer: whhender
 ms.author: yexu
@@ -9,15 +9,15 @@ ms.custom: configuration
 ms.date: 07/24/2025
 ---
 
-# Pricing scenario using a copy job to load 1 TB of CSV data to Lakehouse files
+# Pricing scenario using a Copy job to load 1 TB of CSV data to a Lakehouse table
 
-In this scenario, a Copy job was used to load 1 TB of CSV data stored in Azure Data Lake Storage (ADLS) Gen2 to Lakehouse files in Microsoft Fabric.
+In this scenario, a Copy job was used to load 1 TB of CSV data stored in Azure Data Lake Storage (ADLS) Gen2 to a Lakehouse table in Microsoft Fabric.
 
 The prices used in the following example are hypothetical and don’t intend to imply exact actual pricing. These are just to demonstrate how you can estimate, plan, and manage cost for Data Factory projects in Microsoft Fabric. Also, since Fabric capacities are priced uniquely across regions, we use the pay-as-you-go pricing for a Fabric capacity at US West 2 (a typical Azure region), at $0.18 per CU per hour. Refer here to [Microsoft Fabric - Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/) to explore other Fabric capacity pricing options.
 
 ## Configuration
 
-To accomplish this scenario, you need to create a pipeline with the following configuration:
+To accomplish this scenario, you need to create a Copy job with the following configuration:
 
 1. Upload 1 TB CSV files to your ADLS Gen2 account.
 2. Create and run a Copy job using its built-in incremental copy mode to move the 1 TB files to your Fabric Lakehouse.
