@@ -409,9 +409,7 @@ Compare the ProdVS.jason and the TestVS.json files in the valueSets folder and c
 
 You can edit these values in the Git repository and update them to the workspace.
 
-## Considerations and limitations
 
- [!INCLUDE [limitations](../includes/variable-library-limitations.md)]
 
 ## Related content
 
