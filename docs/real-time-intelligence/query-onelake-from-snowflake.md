@@ -11,7 +11,7 @@ ms.date: 07/15/2025
 
 # Query Fabric OneLake Delta Tables from Snowflake
 
-This article explains how to query Fabric Onelake tables from Snowflake, which would commonly be used in scenarios where you would like to make your streaming data available from Fabric in your existing Snowflake environment with minimal data movement.
+This article explains how to query Fabric Onelake tables from Snowflake, in scenarios where you would like to make your streaming data available from Fabric in your existing Snowflake environment with minimal data movement.
 
 :::image type="content" source="media/query-onelake-from-snowflake/workflow.png" alt-text="Screenshot of the workflow diagram including data ingestion, analyzing, and exporting to snowflake":::
 
@@ -23,9 +23,9 @@ This article explains how to query Fabric Onelake tables from Snowflake, which w
 
 1. First, create your environment in Fabric:
     1. Select your workspace from the left navigation bar.
-    1. Create a new evenstream from a existing data source or from the sample data. For a step-by-step guide see [create an eventstream](event-streams/create-manage-an-eventstream.md).
+    1. Create a new evenstream from an existing data source or from the sample data. For a step-by-step guide, see [create an eventstream](event-streams/create-manage-an-eventstream.md).
     :::image type="content" source="media/query-onelake-from-snowflake/data-source.png" alt-text="Screenshot of optional data sources in Fabric.":::
-    1. Create an eventhouse and connect it to the evenstream you created previously. For a step-by-step guide see [create an eventhouse](create-eventhouse.md).
+    1. Create an eventhouse and connect it to the evenstream you created previously. For a step-by-step guide, see [create an eventhouse](create-eventhouse.md).
     1. Create a new lakehouse using the **Sample data** and set the eventhub as the destination to generate a new table.  
     :::image type="content" source="media/query-onelake-from-snowflake/diagram.png" alt-text="Diagram that shows the data flow in Fabric.":::
 1. Then, enable **OneLake Availability**:
