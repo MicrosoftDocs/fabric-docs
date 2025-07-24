@@ -713,7 +713,7 @@ items:
   - name: Event schema sets
     items:
     - name: Schema Registry in Real-Time hub
-      href: schema-registry-overview.md
+      href: schema-sets/schema-registry-overview.md
     - name: Create and manage event schema sets
       href: schema-sets/create-manage-event-schema-sets.md
     - name: Create and manage schemas in schemas sets

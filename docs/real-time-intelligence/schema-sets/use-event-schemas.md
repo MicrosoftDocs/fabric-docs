@@ -14,7 +14,21 @@ ms.search.form: Schema set
 
 ## Supported sources
 
+### Custom endpoint
+
+### Azure SQL Database (CDC)
+
+### Azure Event Hubs
+
 ## Supported destinations
+At this stage, schema-validated events can only be sent to: 
+
+- Eventhouse (push mode) 
+- Custom app or endpoint
+- Another stream (derived stream)
+
+Separsely, you can send validated events to another stream (Derived Streams). 
+
 
 ## Related content
 

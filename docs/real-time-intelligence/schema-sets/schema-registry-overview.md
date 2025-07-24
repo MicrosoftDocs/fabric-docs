@@ -53,7 +53,7 @@ There are several ways to register schemas in Fabric Real-Time intelligence:
 - Upload a file containing your schema definition.
 - Paste your schema directly in the Code View 
 
-You can register schemas using Fabric Real-Time hub user interface (UI) or Schema sets UI. For more information, see [Create and manage event schemas](create-manage-event-schema.md). 
+You can register schemas using Fabric Real-Time hub user interface (UI) or Schema sets UI. For more information, see [Create and manage event schemas](create-manage-event-schemas.md). 
  
 
 ## Next steps
