@@ -11,36 +11,53 @@ ms.date: 07/23/2025
 ms.update-cycle: 180-days
 ---
 
-# Microsoft Fabric trial capacity
+# Try Microsoft Fabric for free
 
-Microsoft Fabric is provided free of charge when you sign up for a Microsoft Fabric trial capacity. Your use of the Microsoft Fabric trial capacity includes access to the Fabric product workloads and the resources to create and host Fabric items. The Fabric trial lasts for 60 days unless canceled sooner.
+The Microsoft Fabric trial gives you **free, full-featured access for 60 days** to explore everything Fabric has to offer—across data engineering, data science, real-time analytics, business intelligence, and more. Whether you're new to Fabric or coming from the product to learn more, this trial is your gateway to understanding how Fabric brings all your data and analytics tools together in one place.
 
-With Fabric, you can:
+> **Quick start**: [Start your Fabric trial](#start-your-fabric-trial)
 
-- Create [Workspaces](workspaces.md) (folders) for projects that support Fabric capabilities
-- Share Fabric items, such as semantic models, warehouses, and notebooks, and collaborating on them with other Fabric users
-- Create analytics solutions using Fabric items
+## What's included—and what's not
 
-> [!NOTE]
-> * If you're ready to purchase Fabric, visit the [Purchase Fabric page](../enterprise/buy-subscription.md).
-> * The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is a free, hands-on training designed for analysts working with Power BI and Microsoft Fabric. You can get hands-on experience on how to analyze data, build reports, using Fabric. It covers key concepts like working with lakehouses, creating reports, and analyzing data in the Fabric environment.
-
-## Overview of the trial capacity
-
-When you start a trial of a Fabric capacity, your trial [capacity](../enterprise/licenses.md#capacity) is configured with either 4 capacity units, giving you the equivalent of an F4 capacity, or 64 capacity units, giving you the equivalent of an F64 capacity.
+Your trial is configured with either an F4 [capacity](../enterprise/licenses.md#capacity) (4 capacity units) or an F64 capacity (64 capacity units) and behaves like a Premium Per User (PPU) license. 
 
 > [!NOTE]
 > If your trial currently has 4 capacity units, you might be eligible to increase to 64 capacity units. For more information, see [Increase trial capacity](#increase-trial-capacity).
 
-One trial of a Fabric capacity offers you the following features:
+With your trial capacity, you can:
 
-- Full access to all of the Fabric workloads and features
-  - However, there are a few key Fabric features that aren't available on trial capacities, such as [Copilot](./copilot-faq-fabric.yml), [trusted workspace access](../security/security-trusted-workspace-access.md), or [private link](../security/security-private-links-overview.md)
-- OneLake storage up to 1 TB
-- A license similar to Premium Per User (PPU)
-- One capacity per trial
-  - Other Fabric capacity trials can be started until a maximum, set by Microsoft, is met
-- The ability for users to create Fabric items and collaborate with others in the Fabric trial capacity
+- Use all Fabric workloads, including **Data Factory**, **Synapse Data Engineering**, **Real-Time Analytics**, and **Power BI**.
+- Create and share **semantic models**, **pipelines**, **notebooks**, **reports**, and more.
+- Collaborate in **workspaces** and monitor usage with the **Microsoft Fabric Capacity Metrics app**.
+- Store up to **1 TB of data** in OneLake.
+
+However, some features are not available:
+
+- Copilot and Trusted Workspace Access are not supported.
+- Private Link is disabled.
+- Region selection is not available—trial capacity is automatically created in your tenant’s home region.
+- Only one trial capacity per user is allowed.
+
+> [!NOTE]
+> The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is a free, hands-on training designed for analysts working with Power BI and Microsoft Fabric. You can get hands-on experience on how to analyze data, build reports, using Fabric. It covers key concepts like working with lakehouses, creating reports, and analyzing data in the Fabric environment.
+
+## When your Fabric trial ends
+
+Your Microsoft Fabric trial lasts for 60 days, unless you cancel it earlier. As the trial nears its end, you’ll see notifications in the Fabric portal and in the **Capacity settings** page of the Admin portal, helping you track how much time remains.
+
+Once the trial expires:
+
+- Access to the trial capacity is revoked. Any workspaces assigned to the trial capacity will no longer be accessible unless they are reassigned to a paid capacity.
+- Fabric items (like reports, notebooks, and pipelines) remain in your tenant, but they become inactive until reassigned to a valid capacity.
+- You will not lose your data. All content remains stored in OneLake and can be reactivated by assigning it to a paid Fabric capacity.
+- You can upgrade at any time to a paid Fabric SKU (F64 or higher) to continue using your workspaces and items without interruption.
+
+Read more about [ending your trial](#end-a-fabric-trial).
+
+> [!TIP]
+> To check your trial status or expiration date, go to **Admin portal > Capacity settings > Trial**.
+
+If you’re ready to continue using Fabric, visit the [Purchase Fabric page](../enterprise/buy-subscription.md) to explore your options.
 
 To learn more about limitations and get answers to frequently asked questions about the Fabric trial, see [the FAQ](#frequently-asked-questions).
 
@@ -98,9 +115,9 @@ You can join a trial started by a coworker by adding your workspace to that exis
 
 For more information, see [Sharing trial capacities](#share-trial-capacities).
 
-## Begin using your trial
+## Start using your trial
 
-To begin using your trial of a Fabric capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you. If you, as the Capacity administrator, enable **Contributor permissions**, then others can also assign their workspaces to your trial capacity. For more information about sharing, see [Share trial capacities](#share-trial-capacities).
+To start using your trial of a Fabric capacity, add items to **My workspace** or create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that capacity. Invite colleagues to those workspaces so they can share the trial experience with you. If you, as the Capacity administrator, enable **Contributor permissions**, then others can also assign their workspaces to your trial capacity. For more information about sharing, see [Share trial capacities](#share-trial-capacities).
 
 - **Existing Power BI users**: If you're an existing Power BI user, jump to [Start the Fabric trial](#start-the-fabric-capacity-trial). 
   - If you're already enrolled in a Power BI trial, you don't see the option to **Start trial** or **Free trial** in your Account manager.
