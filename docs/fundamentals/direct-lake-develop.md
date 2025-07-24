@@ -26,12 +26,12 @@ Alternatively, as with any Power BI semantic model, you can continue the develop
 
 ### Model tables
 
-Model tables are based on either a table or a view of the SQL analytics endpoint. However, avoid using views whenever possible. That's because queries to a model table based on a view will always [fall back to DirectQuery mode](../fundamentals/direct-lake-overview.md#directquery-fallback), which might result in slower query performance. 
+Model tables are based on either a table or a view of the SQL analytics endpoint. However, avoid using views whenever possible. Queries to a model table based on a view [fall back to DirectQuery mode](../fundamentals/direct-lake-overview.md#directquery-fallback), which may result in slower query performance. 
 
 > [!WARNING]
 > Views can only be used in Direct Lake on SQL, and not available to be used in Direct Lake on OneLake.
 
-Tables should include columns for filtering, grouping, sorting, and summarizing, in addition to columns that support model relationships. While unnecessary columns don't affect semantic model query performance (because they won't be loaded into memory), they result in a larger storage size in OneLake and require more compute resources to load and maintain.
+Tables should include columns for filtering, grouping, sorting, and summarizing, in addition to columns that support model relationships. Unnecessary columns don't affect semantic model query performance because they don't load into memory, but they result in a larger storage size in OneLake and neeed more compute resources to load and maintain.
 
 > [!WARNING]
 > Using columns that apply [dynamic data masking (DDM)](../data-warehouse/dynamic-data-masking.md) in Direct Lake semantic models is not supported.
@@ -47,7 +47,7 @@ For more information about columns to include in your semantic model tables, see
 When you have requirements to deliver subsets of model data to different users, you can enforce data-access rules. You enforce rules by setting up object-level security (OLS) and/or row-level security (RLS) in the [SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or in the semantic model.
 
 > [!NOTE]
-> The topic of _enforcing data-access rules_ is different, yet related, to _setting permissions_ for content consumers, creators, and users who will manage the semantic model (and related Fabric items). For more information about setting permissions, see [Manage Direct Lake semantic models](../fundamentals/direct-lake-manage.md#set-fabric-item-permissions).
+> The topic of _enforcing data-access rules_ is different, yet related, to _setting permissions_ for content consumers, creators, and users who manage the semantic model (and related Fabric items). For more information about setting permissions, see [Manage Direct Lake semantic models](../fundamentals/direct-lake-manage.md#set-fabric-item-permissions).
 
 ### Object-level security (OLS)
 
@@ -64,7 +64,7 @@ RLS involves restricting access to subsets of data in tables. For example, you m
 For a SQL analytics endpoint, you can set up RLS to [control access to rows in an endpoint table](../data-warehouse/row-level-security.md).
 
 > [!IMPORTANT]
-> When a query uses any table that has RLS in the SQL analytics endpoint, it will fall back to DirectQuery mode. Query performance might be slower.
+> When a query uses any table that has RLS in the SQL analytics endpoint, it falls back to DirectQuery mode. Query performance might be slower.
 
 For a semantic model, you can set up RLS to [control access to rows in model tables](../security/service-admin-row-level-security.md). RLS can be set up in the [web modeling experience](/power-bi/transform-model/service-edit-data-models) or by using a third-party tool.
 
@@ -74,8 +74,8 @@ The [reason to develop Direct Lake semantic models](../fundamentals/direct-lake-
 
 The following steps approximate how queries are evaluated (and whether they fail). The benefits of Direct Lake storage mode are only possible when the fifth step is achieved.
 
-1. If the query contains any table or column that's restricted by semantic model OLS, an error result is returned (report visual will fail to render).
-1. If the query contains any column that's restricted by SQL analytics endpoint CLS (or the table is denied), an error result is returned (report visual will fail to render).
+1. If the query contains any table or column that's restricted by semantic model OLS, an error result is returned (report visuals fail to render).
+1. If the query contains any column that's restricted by SQL analytics endpoint CLS (or the table is denied), an error result is returned (report visuals fail to render).
     1. If the cloud connection uses SSO (default), CLS is determined by the access level of the report consumer.
     1. If the cloud connection uses a fixed identity, CLS is determined by the access level of the fixed identity.
 1. If the query contains any table in the SQL analytics endpoint that enforces RLS or a view is used, the query falls back to DirectQuery mode.
@@ -118,13 +118,13 @@ In either case, it's strongly recommended that the cloud connection uses a fixed
 
 #### Rules in the SQL analytics endpoint
 
-It's appropriate to enforce data-access rules in the SQL analytics endpoint when the semantic model [cloud connection](../fundamentals/direct-lake-manage.md#set-up-the-cloud-connection) uses [single sign-on (SSO)](../fundamentals/direct-lake-manage.md#single-sign-on). That's because the identity of the user is delegated to query the SQL analytics endpoint, ensuring that queries return only the data the user is allowed to access. It's also appropriate to enforce data-access rules at this level when users will query the SQL analytics endpoint directly for other workloads (for example, to create a Power BI paginated report, or export data).
+It's appropriate to enforce data-access rules in the SQL analytics endpoint when the semantic model [cloud connection](../fundamentals/direct-lake-manage.md#set-up-the-cloud-connection) uses [single sign-on (SSO)](../fundamentals/direct-lake-manage.md#single-sign-on). That's because the identity of the user is delegated to query the SQL analytics endpoint, ensuring that queries return only the data the user is allowed to access. It's also appropriate to enforce data-access rules at this level when users query the SQL analytics endpoint directly for other workloads (for example, to create a Power BI paginated report, or export data).
 
-Notably, however, a semantic model query will fall back to DirectQuery mode when it includes any table that enforces RLS in the SQL analytics endpoint. Consequently, the semantic model might never cache data into memory to achieve high performance queries.
+Notably, however, a semantic model query falls back to DirectQuery mode when it includes any table that enforces RLS in the SQL analytics endpoint. So, the semantic model might never cache data into memory to achieve high performance queries.
 
 #### Rules at both layers
 
-Data-access rules can be enforced at both layers. However, this approach involves extra complexity and management overhead. In this case, it's strongly recommended that the cloud connection uses a fixed identity instead of SSO.
+Data-access rules can be enforced at both layers. However, this approach involves extra complexity and management overhead. In this case, it's recommended that the cloud connection uses a fixed identity instead of SSO.
 
 ### Comparison of data-access rule options
 
@@ -140,7 +140,7 @@ The following table compares data data-access setup options.
 
 Here are recommended practices related to enforcing data-access rules:
 
-- If different users must be restricted to subsets of data, whenever viable, enforce RLS only at the semantic model layer. That way, users will benefit from high performance in-memory queries. In this case, it's strongly recommended that the cloud connection uses a fixed identity instead of SSO.
+- If different users must be restricted to subsets of data, whenever viable, enforce RLS only at the semantic model layer. That way, users benefit from high performance in-memory queries. In this case, it's strongly recommended that the cloud connection uses a fixed identity instead of SSO.
 - If possible, avoid enforcing OLS and CLS at either layer because it results in errors in report visuals. Errors can lead to confusion or concern for users. For summarizable columns, consider creating measures that return BLANK in certain conditions instead of CLS (if possible).
 
 ## Model write support with the XMLA endpoint
