@@ -8,13 +8,14 @@ ms.custom:
 ms.date: 03/19/2025
 ---
 
-# Add Azure Event Grid Namespace source to an eventstream (preview)
+# Add Azure Event Grid namespace to an eventstream for real-Time event and MQTT data ingestion (preview)
 This article shows you how to add an Azure Event Grid Namespace source to an eventstream. 
 
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Member or higher permissions. 
-- Enable [managed identity](/azure/event-grid/event-grid-namespace-managed-identity) on the Event Grid namespace. 
+- Enable [managed identity]() on the Event Grid namespace. 
+- Create or have an Azure Event Grid namespace with [managed dentity](/azure/event-grid/event-grid-namespace-managed-identity) enabled. 
 - Enable [MQTT](/azure/event-grid/mqtt-publish-and-subscribe-portal) and [routing](/azure/event-grid/mqtt-routing) on the Event Grid namespace, if you want to receive Message Queuing Telemetry Transport (MQTT) data. 
 - [Create an eventstream](create-manage-an-eventstream.md) if you don't have one. 
 
