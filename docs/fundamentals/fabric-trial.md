@@ -13,15 +13,15 @@ ms.update-cycle: 180-days
 
 # Try Microsoft Fabric for free
 
-The Microsoft Fabric trial gives you **free, full-featured access for 60 days** to explore everything Fabric has to offer—across data engineering, data science, real-time analytics, business intelligence, and more. Whether you're new to Fabric or coming from the product to learn more, this trial is your gateway to understanding how Fabric brings all your data and analytics tools together in one place.
+The Microsoft Fabric trial gives you **free access for 60 days** to explore everything Fabric has to offer—across data engineering, data science, real-time analytics, business intelligence, and more. Whether you're new to Fabric or coming from the product to learn more, this trial is your gateway to understanding how Fabric brings all your data and analytics tools together in one place.
 
-> **Quick start**: [Start your Fabric trial](#start-the-fabric-capacity-trial).
+> **Quick start**: [Set up your Fabric trial](#start-the-fabric-capacity-trial) | [Start using your Fabric trial](#start-using-your-trial)
 
 ## What's included—and what's not
 
 Your trial is configured with either an F4 [capacity](../enterprise/licenses.md#capacity) (4 capacity units) or an F64 capacity (64 capacity units) and behaves like a Premium Per User (PPU) license. 
 
-> [!NOTE]
+> [!TIP]
 > If your trial currently has 4 capacity units, you might be eligible to increase to 64 capacity units. For more information, see [Increase trial capacity](#increase-trial-capacity).
 
 With your trial capacity, you can:
@@ -31,11 +31,11 @@ With your trial capacity, you can:
 - Collaborate in **workspaces** and monitor usage with the **Microsoft Fabric Capacity Metrics app**.
 - Store up to **1 TB of data** in OneLake.
 
-However, some features are not available:
+However, some features aren't available:
 
-- Copilot and Trusted Workspace Access are not supported.
+- Copilot and Trusted Workspace Access aren't supported.
 - Private Link is disabled.
-- Region selection is not available—trial capacity is automatically created in your tenant’s home region.
+- Region selection isn't available—trial capacity is automatically created in your tenant’s home region.
 - Only one trial capacity per user is allowed.
 
 > [!NOTE]
@@ -63,14 +63,15 @@ To learn more about limitations and get answers to frequently asked questions ab
 
 <a id="start-the-fabric-capacity-trial"></a>
 
-## Start your Fabric capacity trial
+## Set up your Fabric capacity trial
 
 You can start a trial several different ways. The first two methods make you the Capacity administrator of the trial capacity.  
 
-- **Method 1**: Start a new trial capacity from the Account manager
-- **Method 2**: Trigger a new trial capacity by trying to use a Fabric feature
-- **Method 3**: Join an existing trial capacity
+- [**Method 1**](#method-1): Start a new trial capacity from the Account manager.
+- [**Method 2**](#method-2): Trigger a new trial capacity by trying to use a Fabric feature.
+- [**Method 3**](#other-ways-to-start-a-microsoft-fabric-trial): Join an existing trial capacity.
 
+<a id="method-1"></a>
 ### Method 1: Start a new trial capacity from the Account manager
 
 You can sign up for a trial capacity. You manage who else can use your trial by giving coworkers permission to create workspaces in your trial capacity. Assigning workspaces to the trial capacity automatically adds coworkers (with roles in those workspaces) to the trial capacity. To start your Fabric capacity trial and become the Capacity administrator of that trial, follow these steps:
@@ -98,6 +99,7 @@ You can sign up for a trial capacity. You manage who else can use your trial by 
 
 Congratulations. You now have a Fabric trial capacity that includes a Power BI individual trial (if you didn't already have a Power BI *paid* license) and a Fabric trial capacity. To share your capacity, see [Share trial capacities.](#share-trial-capacities)
 
+<a id="method-2"></a>
 ### Method 2: Trigger a Fabric trial by trying to use a Fabric feature
 
 If your organization enabled self-service, attempting to use a Fabric feature launches a Fabric trial. If your Fabric administrator enabled Microsoft Fabric for the tenant but you still don't have access to a Fabric-enabled capacity, follow these steps:
