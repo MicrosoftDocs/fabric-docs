@@ -6,13 +6,13 @@ ms.author: xujiang1
 author: wenyang
 ms.topic: how-to
 ms.custom:
-ms.date: 11/21/2024
+ms.date: 07/24/2025
 ms.search.form: Pause and Resume
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
 ---
 
-# Pause and resume data streams (preview)
+# Pause and resume data streams
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
