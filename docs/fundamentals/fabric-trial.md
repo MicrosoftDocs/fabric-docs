@@ -15,7 +15,7 @@ ms.update-cycle: 180-days
 
 The Microsoft Fabric trial gives you **free, full-featured access for 60 days** to explore everything Fabric has to offer—across data engineering, data science, real-time analytics, business intelligence, and more. Whether you're new to Fabric or coming from the product to learn more, this trial is your gateway to understanding how Fabric brings all your data and analytics tools together in one place.
 
-> **Quick start**: [Start your Fabric trial](#start-your-fabric-trial)
+> **Quick start**: [Start your Fabric trial](#start-the-fabric-capacity-trial).
 
 ## What's included—and what's not
 
