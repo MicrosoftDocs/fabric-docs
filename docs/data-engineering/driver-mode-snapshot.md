@@ -33,7 +33,7 @@ Driver Mode Snapshot behavior is controlled through several Spark configuration 
 | Configuration | Type | Default | Description |
 |---------------|------|---------|-------------|
 | `spark.microsoft.delta.snapshot.driverMode.maxLogSize` | Long | 8MB | Maximum Delta Log size (bytes) to process in driver mode (per table/version) |
-| `spark.microsoft.delta.snapshot.driverMode.maxLogFileCount` | Integer | 10 | Maximum number of Delta Log files to process in driver mode |
+| `spark.microsoft.delta.snapshot.driverMode.maxLogFileCount` | Integer | 10 | Maximum number of Delta Log files to process in driver mode (per table/version) |
 
 ## Performance Benefits
 
@@ -59,14 +59,14 @@ spark.read.format("delta").load(path).count()
 
 Driver Mode Snapshot is most beneficial for:
 
-- **Small Delta Logs**: Tables with manageable log sizes
+- **Small Delta Logs**
 - **Low-Latency Requirements**: Applications requiring fast snapshot loading
 
 ### When to Avoid
 
 Consider traditional mode for:
 
-- **Large Delta Logs**: Tables exceeding size/file count limits
+- **Large Delta Logs**
 - **Memory-Constrained Drivers**: Environments with limited driver memory
 
 ### Configuration Recommendations

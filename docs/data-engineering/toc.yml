@@ -257,7 +257,7 @@ items:
     - name: Automated Statistics for Delta Tables
       href: automated-table-statistics.md	
     - name: Delta Driver Mode Snapshot
-      href: driver_mode_snapshot.md
+      href: driver-mode-snapshot.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
