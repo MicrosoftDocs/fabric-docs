@@ -19,7 +19,7 @@ You can create a Direct Lake semantic model in [Power BI Desktop](direct-lake-po
 
 You can use either [Power BI Desktop](direct-lake-power-bi-desktop.md) or [web modeling](direct-lake-web-modeling.md) in the browser to edit the semantic model to add relationships, rename fields, add measures, and other semantic modeling tasks.
 
-Alternatively, as with any Power BI semantic model, you can continue the development of your model by using an XMLA-compliant tool, like SQL Server Management Studio (SSMS) (version 19.1 or later) or open-source, community tools. For more information, see [Model write support with the XMLA endpoint](#model-write-support-with-the-xmla-endpoint) later in this article. Fabric notebooks can also programatically create and edit semantic models with [semantic link](../data-science/semantic-link-overview) and semantic link labs.
+Alternatively, as with any Power BI semantic model, you can continue the development of your model by using an XMLA-compliant tool, like SQL Server Management Studio (SSMS) (version 19.1 or later) or open-source, community tools. For more information, see [Model write support with the XMLA endpoint](#model-write-support-with-the-xmla-endpoint) later in this article. Fabric notebooks can also programatically create and edit semantic models with [semantic link](fabric/data-science/semantic-link-overview) and semantic link labs.
 
 > [!TIP]
 > You can learn how to create a lakehouse, a Delta table, and a basic Direct Lake semantic model by completing [this tutorial](direct-lake-create-lakehouse.md).
