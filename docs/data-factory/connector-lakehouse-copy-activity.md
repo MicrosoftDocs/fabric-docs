@@ -4,7 +4,7 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/21/2025
+ms.date: 07/15/2025
 ms.custom:
   - pipelines
   - template-how-to
@@ -184,6 +184,49 @@ For example, the type for *PersonID* column in source is int, and you can change
 > Editing the destination type currently is not supported when your source is decimal type.
 
 If you choose Binary as your file format, mapping isn't supported.
+
+#### Data type mapping for Lakehouse table
+
+When copying data from Lakehouse table, the following mappings are used from Lakehouse table data types to interim data types used by the service internally.
+
+| Lakehouse table data type | Interim service data type |
+|---------------------|------------------|
+| string              | String           |
+| long                | Int64            |
+| integer             | Int32            |
+| short               | Int16            |
+| byte                | SByte            |
+| float               | Single           |
+| double              | Double           |
+| decimal             | Decimal          |
+| boolean             | Boolean          |
+| binary              | Byte array       |
+| date                | Date             |
+| timestamp           | DateTime         |
+
+When copying data to Lakehouse table, the following mappings are used from interim data types used by the service internally to supported delta destination data types.
+
+| Interim service data type | Supported delta destination type |
+|---------------------|------------------|
+| Boolean          | boolean             |
+| SByte            | byte                |
+| Byte             | short               |
+| Int16            | short               |
+| UInt16           | integer             |
+| Int32            | integer             |
+| UInt32           | long                |
+| Int64            | long                |
+| UInt64           | decimal (20,0)      |
+| Single           | float               |
+| Double           | double              |
+| GUID             | string              |
+| Date             | date                |
+| TimeSpan         | Not supported       |
+| DateTime         | timestamp           |
+| DateTimeOffset   | timestamp           |
+| String           | string              |
+| Byte array       | binary              |
+| Decimal          | decimal             |
 
 ### Settings
 
