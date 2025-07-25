@@ -23,7 +23,7 @@ Before getting started, follow the pre-requisite steps shown below.
 
 ## Prerequisite
 
-To use Snowflake on Azure to write or read Iceberg tables with OneLake, your Snowflake account's identity in Entra ID needs to be able to communicate with Fabric. Enable the Fabric tenant-level settings that allow service principals to [call Fabric APIs](/rest/api/fabric/articles/identity-support.md#service-principal-tenant-setting) and to [call OneLake APIs](./security/get-started-security.md#allow-apps-running-outside-of-fabric-to-access-data-via-onelake).
+To use Snowflake on Azure to write or read Iceberg tables with OneLake, your Snowflake account's identity in Entra ID needs to be able to communicate with Fabric. Enable the Fabric tenant-level settings that allow service principals to [call Fabric APIs](/rest/api/fabric/articles/identity-support#service-principal-tenant-setting) and to [call OneLake APIs](./security/get-started-security.md#allow-apps-running-outside-of-fabric-to-access-data-via-onelake).
 
 ## Write an Iceberg table to OneLake using Snowflake on Azure
 
