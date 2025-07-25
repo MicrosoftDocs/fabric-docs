@@ -205,7 +205,7 @@ Enable incremental refresh on your query and create a second query that referenc
 
 Make sure you set up the window and bucket size correctly. We don't guarantee that staged data stays available outside the bucket range.
 
-Another option is to use the incremental amass pattern. Check out our guide: [Incremental amass data with Dataflow Gen2](./tutorial-setup-incremental-refresh-with-dataflows-gen2.md)
+Another option is to use the incremental amass pattern. Check out our guide: [Incremental amass data with Dataflow Gen2](./tutorial-setup-incremental-refresh-with-dataflows-gen2.md).
 
 ### How do I know if my query has incremental refresh enabled?
 

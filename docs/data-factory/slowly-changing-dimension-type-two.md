@@ -277,4 +277,4 @@ You can read more about how to set a data destination for your query and load th
 :::image type="content" source="../data-factory/media/slowly-changing-dimension-type-two/final-diagram-view.png" alt-text="Diagram view that shows the final solution with the data destination logic incorporated into it." lightbox="../data-factory/media/slowly-changing-dimension-type-two/final-diagram-view.png":::
 
 >[!NOTE]
->In Dataflow Gen2 you can leverage a staging mechanism at the query level. Read more about the [staging mechanism in Dataflow Gen2](../data-factory/data-in-staging-artifacts.md)
+>In Dataflow Gen2 you can leverage a staging mechanism at the query level. Read more about the [staging mechanism in Dataflow Gen2](../data-factory/data-in-staging-artifacts.md).
