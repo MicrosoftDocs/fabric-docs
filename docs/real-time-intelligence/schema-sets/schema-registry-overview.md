@@ -1,6 +1,6 @@
 ---
-title: Event Schema Registry in Microsoft Fabric Real-Time Intelligence
-description: Learn about Event Schema Registry in Microsoft Fabric. Discover how this centralized repository manages data schemas and improves data quality.
+title: Schema Registry in Fabric Real-Time Intelligence
+description: Learn about Schema Registry in Microsoft Fabric Real-Time Intelligence. This centralized repository manages data schemas, improves data quality, and enables schema validation for event-driven architectures.
 author: spelluru
 contributors: 
 ms.topic: overview
@@ -9,14 +9,14 @@ ms.author: spelluru
 ms.reviewer: spelluru
 ---
 
-# What is Schema Registry (preview) in Fabric Real-Time hub? 
+# Schema Registry in Fabric Real-Time Intelligence (preview)
 
-Schema Registry is a centralized repository for managing and organizing data schemas within Fabric Real-Time Intelligence. It provides a structured framework for defining, validating, and evolving schemas that are used in event-driven architectures to describe events.
+Schema Registry in Fabric Real-Time Intelligence is a centralized repository for managing and organizing data schemas. This feature provides a structured framework for defining, validating, and evolving schemas used in event-driven architectures, helping you improve data quality and maintain consistency across your real-time workflows.
 
 > [!NOTE]
 > This feature is currently in preview.
 
-## Why use Schema Registry?
+## Benefits of using Schema Registry
 Schema Registry in Fabric Real-Time Intelligence helps improve data quality, consistency, and control across your event-driven workflows. 
 
 Registering a schema means defining what your data should look like, what fields it should have, what types of values are expected, and how it’s structured. 
