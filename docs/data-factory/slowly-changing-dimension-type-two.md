@@ -161,7 +161,7 @@ This creates a list and in the ribbon you'll now see the statistics options wher
 
 :::image type="content" border="true" source="../data-factory/media/slowly-changing-dimension-type-two/list-tool-maximum.png" alt-text="Screenshot of the List tools contextual menu in the Power Query editor ribbon highlighting the Maximum option from the statistics operations.":::
 
-Add another custom step after the previous step and replace the formula for this step of your query with the formula below. This formula calculates the max value from the SalesRepID and adds one to it, or establishes the value one as the seed for new records if your table doesn't contain any records
+Add another custom step after the previous step and replace the formula for this step of your query with the formula below. This formula calculates the max value from the SalesRepID and adds one to it, or establishes the value one as the seed for new records if your table doesn't contain any records:
 
 ```try #"Calculated maximum" +1 otherwise 1```
 
