@@ -25,7 +25,7 @@ Driver Mode Snapshot behavior is controlled through several Spark configuration 
 
 | Configuration | Type | Default | Description |
 |---------------|------|---------|-------------|
-| `spark.microsoft.delta.snapshot.driverMode.enabled` | Boolean | | Enables/disables Driver Mode Snapshot |
+| `spark.microsoft.delta.snapshot.driverMode.enabled` | Boolean | `false` | Enables/disables Driver Mode Snapshot |
 | `spark.microsoft.delta.snapshot.driverMode.fallback.enabled` | Boolean | `true` | Enables automatic fallback to Spark mode on errors |
 
 ### Size Limits
