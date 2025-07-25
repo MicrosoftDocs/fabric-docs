@@ -499,18 +499,6 @@ items:
             href: /stream-analytics-query/where-azure-stream-analytics
           - name: WITH
             href: /stream-analytics-query/with-azure-stream-analytics
-      - name: Time Management
-        items:
-          - name: Time Management Overview
-            href: /stream-analytics-query/time-management-azure-stream-analytics
-          - name: System.Timestamp
-            href: /stream-analytics-query/system-timestamp-stream-analytics
-          - name: TIMESTAMP BY
-            href: /stream-analytics-query/timestamp-by-azure-stream-analytics
-          - name: Time Skew Policies
-            href: /stream-analytics-query/time-skew-policies-azure-stream-analytics
-      - name: Event Delivery Guarantees
-        href: /stream-analytics-query/event-delivery-guarantees-azure-stream-analytics
   - name: Get data in an Eventhouse
     items:
     - name: Get data overview
