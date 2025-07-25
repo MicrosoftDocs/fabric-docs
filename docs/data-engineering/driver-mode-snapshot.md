@@ -45,6 +45,9 @@ Driver Mode Snapshot behavior is controlled through several Spark configuration 
 ### Basic Usage
 
 ```scala
+// Enable/Disable driver mode snapshot
+spark.conf.set("spark.microsoft.delta.snapshot.driverMode.enabled", "true") // "false" to disable
+
 // Set size limits (example values)
 spark.conf.set("spark.microsoft.delta.snapshot.driverMode.maxLogSize", "4MB")
 spark.conf.set("spark.microsoft.delta.snapshot.driverMode.maxLogFileCount", "10")
