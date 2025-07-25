@@ -11,7 +11,7 @@ ms.date: 07/24/2025
 
 ---
 
-# Driver Mode Snapshot Documentation
+# Driver Mode Snapshot
 
 ## Overview
 
