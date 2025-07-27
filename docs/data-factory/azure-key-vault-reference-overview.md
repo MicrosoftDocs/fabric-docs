@@ -14,12 +14,12 @@ ms.custom: configuration
 >[!NOTE]
 >Azure Key Vault references in Fabric are available as a preview feature.
 
-[Azure Key Vault (AKV)](/azure/key-vault/general/overview) is Microsoft’s cloud service for storing secrets, keys, and certificates centrally, so that applications never need to embed credentials in code or configuration. **Azure Key Vault** references extend this model to Microsoft Fabric. Instead of pasting passwords or connection strings into Fabric, you create a reference to the secret that lives in your vault; Fabric fetches the value just-in-time whenever a data connection in Fabric workloads needs it. 
+[Azure Key Vault (AKV)](/azure/key-vault/general/overview) is Microsoft’s cloud service for storing secrets, keys, and certificates centrally, so you don’t have to hardcode them into your apps. With Azure Key Vault references in Microsoft Fabric, you can just point to a secret in your vault instead of copying and pasting credentials. Fabric grabs the secret automatically whenever it’s needed for a data connection.
 
 ## How Azure Key Vault references work
-When you add an Azure Key Vault reference in Fabric, the service records the vault URI and the secret name by using Microsoft Entra ID OAuth 2.0 consent. During the consent flow, you grant Fabric’s system-assigned managed identity **Get** and **List** permissions on the specified secrets; the secret values themselves never leave the key vault. 
+When you add an Azure Key Vault reference in Fabric, you’re just telling Fabric where to find the secret—using the vault’s link and the name of the secret. The service records the vault URI and the secret name by using Microsoft Entra ID OAuth 2.0 consent. During the consent flow, you grant Fabric’s system-assigned managed identity **Get** and **List** permissions on the specified secrets; the secret values themselves never leave the key vault.
 
-Since Fabric stores only an encrypted access token, no secret material is written to disk or sent through the browser. At run time, the Fabric connector’s engine resolves the reference, retrieves the current secret value, and inserts it into the connector’s connection string entirely in memory. The secret is held just long enough to establish the connection and is then discarded. 
+Fabric doesn’t store the secret itself, just an encrypted token. When it’s time to connect to your data, Fabric quietly grabs the secret, uses it to build the connection, and then lets it go. Nothing is saved to disk or sent through your browser. The secret is held just long enough to establish the connection and is then discarded.
 
 ## Prerequisites
 

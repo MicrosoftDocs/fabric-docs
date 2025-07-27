@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: overview
-ms.date: 04/25/2025
+ms.date: 07/23/2025
 ms.search.form: product-data-factory
 ms.custom: connectors
 ---
@@ -180,7 +180,11 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | [Samsara](/power-query/connectors/samsara) | ✓/− |  |  |
 | [SAP BW Application Server](connector-sap-bw-application-server-overview.md) | ✓/− |  |  |
 | [SAP BW Message Server](connector-sap-bw-message-server-overview.md) | ✓/− |  |  |
+| [SAP BW Open Hub Application Server](connector-sap-bw-open-hub-application-server-overview.md) |  | ✓/− |  |
+| [SAP BW Open Hub Message Server](connector-sap-bw-open-hub-message-server-overview.md) |  | ✓/− |  |
 | [SAP HANA database](connector-sap-hana-overview.md) | ✓/− | ✓/✓ | ✓/− |
+| [SAP Table Application Server](connector-sap-table-application-server-overview.md) |  | ✓/− |  |
+| [SAP Table Message Server](connector-sap-table-message-server-overview.md) |  | ✓/− |  |
 | [ServiceNow](connector-servicenow-overview.md) |  | ✓/− |  |
 | [SFTP](connector-sftp-overview.md) |  | ✓/✓ |  |
 | [SharePoint folder](connector-sharepoint-folder-overview.md) | ✓/✓ |  |  |
