@@ -35,6 +35,14 @@ Get started using the instructions documented in the [MCP for RTI server](https:
 1. Test the MCP server.
 1. Start analyzing data with AI agents and natural language prompts.
 
+## Example: VS Code Co-pilot agent retrieving data from Eventhouse
+
+Prompt: `Provide a simple linechart based on the weather data found in the Eventhouse databases and the temperature per location for the last two days. Aggregate the average temperature per location per hour.`
+
+Response:
+
+:::image type="content" source="media/mcp/mcp-eventhouse-example.png" alt-text="Screenshot of the VS Code Co-Pilot agent displaying a line chart.":::
+
 ## Related content
 
 - [What is the Fabric RTI MCP Server (preview)?](mcp-overview.md)
