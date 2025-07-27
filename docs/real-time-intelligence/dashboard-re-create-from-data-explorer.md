@@ -24,7 +24,7 @@ Microsoft Fabric Real-Time Dashboards provide a modern alternative to Azure Data
 
 :::image type="content" source="media/real-time-dashboard/example-dashboard.png" alt-text="Screenshot of a Fabric Real-Time Intelligence dashboard displaying multiple tiles.":::
 
-## *Why re-create your ADX dashboards in Fabric?
+## Why re-create your ADX dashboards in Fabric?
 
 Your organization might have multiple ADX dashboards that are used frequently to analyze and visualize critical data. 
 
@@ -43,7 +43,7 @@ The benefits of moving these dashboards to Fabric include:
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [Azure Data Explorer cluster](/azure/data-explorer/create-cluster-database-portal)
 
-## Re-create your dashboards
+## How to re-create your dashboards
 
 Follow these steps to re-create your existing Azure Data Explorer dashboards to Fabric Real-Time Dashboards:
 
