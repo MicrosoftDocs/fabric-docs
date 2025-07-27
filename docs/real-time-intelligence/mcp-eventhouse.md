@@ -28,16 +28,21 @@ For the full list of available tools and natural language query examples, see [o
 
 ## Getting started
 
-Get started using the instructions documented in the [MCP for RTI server](https://github.com/microsoft/fabric-rti-mcp/) implementation repository.
+Get started using the instructions documented in the [MCP for RTI server](https://github.com/microsoft/fabric-rti-mcp/) implementation repository. These are the main steps:
 
-1. Prerequisites
+1. Prerequisites: An Eventhouse with a KQL database and tables.
 1. Install the MCP server
 1. Test the MCP server
-1. Authenticate
-1. Use the MCP server with Eventhouse
+1. Start analyzing data with AI agents and natural language prompts
 
 ## Related content
 
 - [What is the Fabric RTI MCP Server (preview)?](mcp-overview.md)
 - [Fabric RTI MCP Server overview](https://github.com/microsoft/fabric-rti-mcp/?tab=readme-ov-file#-overview)
 - [Eventhouse overview](eventhouse.md)
+
+<!--- references (blogs): 
+
+-  https://blog.fabric.microsoft.com/en-us/blog/introducing-mcp-support-for-real-time-intelligence-rti/ 
+- 
+- (AND https://sandervandevelde.wordpress.com/2025/07/05/getting-started-with-the-model-context-protocol-for-microsoft-fabric-rti-in-github-copilot/ and  --->

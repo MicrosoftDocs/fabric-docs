@@ -33,9 +33,7 @@ MCP uses a client-server architecture, so AI models can interact with external t
 
 ## Scenarios for using the Fabric RTI MCP Server
 
-The most common scenario for using the RTI MCP Server is to connect to it from an existing AI client, such as xxxxx. The client can then use all the available tools to access and interact with RTI resources using natural language. For example, you could use GitHub Copilot agent mode with the RTI MCP Server to list KQL databases or run KQL queries on RTI Eventhouses. 
-
-In more advanced scenarios, some developers may create their own MCP servers to offer custom tools, resources, and prompts for specific tasks that involve RTI components. If you're building an MCP server that needs to connect with Fabric RTI, you can use the Fabric RTI MCP Server tools from your MCP server.
+The most common scenario for using the RTI MCP Server is to connect to it from an existing AI client, such as Cline, Claude, and Visual Studio. The client can then use all the available tools to access and interact with RTI resources using natural language. For example, you could use GitHub Copilot agent mode with the RTI MCP Server to list KQL databases or run KQL queries on RTI Eventhouses.
 
 ## Key features
 
@@ -70,9 +68,13 @@ Support for more RTI components for comprehensive analytics is **coming soon**, 
 * Richer, real-time visualization tools
 * [Activator](data-activator/activator-introduction.md) integration for proactive insights
 
-
 ## Related content
 
-- [Use MCP with Fabric RTI Eventhouse](mcp-eventhouse.md)
-- [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/)
-- [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
+* [Use MCP with Fabric RTI Eventhouse](mcp-eventhouse.md)
+* [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/)
+* [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
+
+<!--- This is a placeholder for the MCP content resources: 
+Blog 1
+Blog 2
+ --->
