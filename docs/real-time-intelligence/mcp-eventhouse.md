@@ -31,9 +31,9 @@ For the full list of available tools and natural language query examples, see [o
 Get started using the instructions documented in the [MCP for RTI server](https://github.com/microsoft/fabric-rti-mcp/) implementation repository. These are the main steps:
 
 1. Prerequisites: An Eventhouse with a KQL database and tables.
-1. Install the MCP server
-1. Test the MCP server
-1. Start analyzing data with AI agents and natural language prompts
+1. Install the MCP server.
+1. Test the MCP server.
+1. Start analyzing data with AI agents and natural language prompts.
 
 ## Related content
 
