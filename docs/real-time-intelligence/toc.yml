@@ -770,7 +770,7 @@ items:
       displayName: trigger, activator, reflex
       href: ./data-activator/activator-get-data-real-time-dashboard.md
     - name: Re-create a Data Explorer Dashboard
-      href: dashboard-re-create-from-data-explorer 
+      href: dashboard-re-create-from-data-explorer.md 
   - name: Power BI
     items:
     - name: Visualize data in a Power BI report
