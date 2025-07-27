@@ -9,6 +9,9 @@ ms.search.form: MCP, RTI, AI, Eventhouse
 ms.reviewer: sharmaanshul
 
 #CustomerIntent: As a Fabric RTI AI developer, I want to use the RTI MCP server to create AI agents and AI applications that use Eventhouse and KQL databases to query and analyze real-time data.
+
+<!--- references (blogs): https://sandervandevelde.wordpress.com/2025/07/05/getting-started-with-the-model-context-protocol-for-microsoft-fabric-rti-in-github-copilot/ and  --->
+
 ---
 
 # Use the Fabric RTI MCP Server with Eventhouse (preview)
@@ -35,9 +38,11 @@ Get started using the instructions documented in the [MCP for RTI server](https:
 1. Test the MCP server.
 1. Start analyzing data with AI agents and natural language prompts.
 
-## Example: VS Code Co-pilot agent retrieving data from Eventhouse
+## Example: VS Code Copilot agent retrieving sample weather Eventhouse data
 
-Prompt: `Provide a simple linechart based on the weather data found in the Eventhouse databases and the temperature per location for the last two days. Aggregate the average temperature per location per hour. Reverse-geocode each location in a human readable location.`
+Prompt:
+
+`Provide a simple linechart based on the weather data found in the Eventhouse databases and the temperature per location for the last two days. Aggregate the average temperature per location per hour. Reverse-geocode each location in a human readable location.`
 
 Response:
 
@@ -48,9 +53,3 @@ Response:
 - [What is the Fabric RTI MCP Server (preview)?](mcp-overview.md)
 - [Fabric RTI MCP Server overview](https://github.com/microsoft/fabric-rti-mcp/?tab=readme-ov-file#-overview)
 - [Eventhouse overview](eventhouse.md)
-
-<!--- references (blogs): 
-
--  https://blog.fabric.microsoft.com/en-us/blog/introducing-mcp-support-for-real-time-intelligence-rti/ 
-- 
-- (AND https://sandervandevelde.wordpress.com/2025/07/05/getting-started-with-the-model-context-protocol-for-microsoft-fabric-rti-in-github-copilot/ and  --->
