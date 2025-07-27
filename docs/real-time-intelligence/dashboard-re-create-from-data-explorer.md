@@ -1,5 +1,6 @@
 ---
 title: Re-create a Real-Time Dashboard from your Azure Data Explorer dashboards.
+description: Learn how to migrate your Azure Data Explorer dashboards to Fabric Real-Time Dashboards while keeping your data in place.
 ms.reviewer: mbar
 author: spelluru
 ms.author: spelluru
@@ -17,21 +18,17 @@ ms.search.form:
 
 # Re-create Azure Data Explorer dashboards as Fabric Real-Time Dashboards
 
-This article guides you through replicating your existing Azure Data Explorer (ADX) dashboards as Real-Time Dashboards in Microsoft Fabric. You'll learn how to migrate your dashboards while keeping your data in its current location, taking advantage of Fabric's enhanced features and capabilities.
+This article guides you through replicating your existing Azure Data Explorer (ADX) dashboards as Real-Time Dashboards in Microsoft Fabric. You'll learn how to re-create your dashboards while keeping your data in its current location.
+
+Microsoft Fabric Real-Time Dashboards provide a modern alternative to Azure Data Explorer dashboards with enhanced features and better integration with the Fabric ecosystem. The process allows you to preserve your existing queries and visualizations while gaining access to improved functionality.
 
 :::image type="content" source="media/real-time-dashboard/example-dashboard.png" alt-text="Screenshot of a Fabric Real-Time Intelligence dashboard displaying multiple tiles.":::
 
-Microsoft Fabric Real-Time Dashboards provide a modern alternative to Azure Data Explorer dashboards with enhanced features and better integration with the Fabric ecosystem. The migration process allows you to preserve your existing queries and visualizations while gaining access to improved functionality.
+## *Why re-create your ADX dashboards in Fabric?
 
-**Key benefits of this migration:**
-- Maintain your existing data architecture
-- Access enhanced sharing and collaboration features
-- Benefit from improved security and governance
-- Integrate with the broader Fabric analytics platform
+Your organization might have multiple ADX dashboards that are used frequently to analyze and visualize critical data. 
 
-**Why move your ADX dashboards to Fabric?**
-
-Your organization might have multiple ADX dashboards that are used frequently to analyze and visualize critical data. The benefits of moving these dashboards to Fabric include:
+The benefits of moving these dashboards to Fabric include:
 
 * **Retain your data in place**: Keep your existing data architecture intact. Fabric connects directly to your Azure Data Explorer clusters, so you don't need to move your data.
 
@@ -44,7 +41,7 @@ Your organization might have multiple ADX dashboards that are used frequently to
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* An [Azure Data Explorer cluster](https://learn.microsoft.com/azure/data-explorer/create-cluster-database-portal)
+* An [Azure Data Explorer cluster](/azure/data-explorer/create-cluster-database-portal)
 
 ## Re-create your dashboards
 
