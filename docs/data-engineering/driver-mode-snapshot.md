@@ -11,38 +11,36 @@ ms.date: 07/24/2025
 
 ---
 
-# Driver Mode Snapshot
-
-## Overview
+# Driver mode snapshot
 
 **Driver Mode Snapshot** enables loading Delta table snapshots in the driver process, rather than using distributed Spark operations. This approach can provide significant performance improvements for snapshot loading operations, especially for small Delta logs.
 
-## Configuration Options
+## Configuration options
 
 Driver Mode Snapshot behavior is controlled through several Spark configuration options:
 
-### Core Configuration
+### Core configuration
 
 | Configuration | Type | Default | Description |
 |---------------|------|---------|-------------|
 | `spark.microsoft.delta.snapshot.driverMode.enabled` | Boolean | `false` | Enables/disables Driver Mode Snapshot |
-| `spark.microsoft.delta.snapshot.driverMode.fallback.enabled` | Boolean | `true` | Enables automatic fallback to Spark mode on errors |
+| `spark.microsoft.delta.snapshot.driverMode.fallback.enabled` | Boolean | `true` | Enables automatic fallback to traditional mode on errors |
 
-### Size Limits
+### Size limits
 
 | Configuration | Type | Default | Description |
 |---------------|------|---------|-------------|
 | `spark.microsoft.delta.snapshot.driverMode.maxLogSize` | Long | 8MB | Maximum Delta Log size (bytes) to process in driver mode (per table/version) |
 | `spark.microsoft.delta.snapshot.driverMode.maxLogFileCount` | Integer | 10 | Maximum number of Delta Log files to process in driver mode (per table/version) |
 
-## Performance Benefits
+## Performance benefits
 
 1. **Reduced Latency**: Eliminates Spark job scheduling overhead
 2. **Local Processing**: All operations occur on the driver, reducing network I/O
 
-## Usage Examples
+## Usage examples
 
-### Basic Usage
+### Basic usage
 
 ```scala
 // Enable/Disable driver mode snapshot
@@ -56,37 +54,33 @@ spark.conf.set("spark.microsoft.delta.snapshot.driverMode.maxLogFileCount", "10"
 spark.read.format("delta").load(path).count()
 ```
 
-## Best Practices
+## Best practices
 
-### When to Use
+### When to use
 
-Driver Mode Snapshot is most beneficial for:
+Driver Mode Snapshot is optimized for seamless operation and is recommended to enhance performance of cold queries. Its default size limits ensure it's applied only to small delta logs, where it delivers the greatest benefit.
 
-- **Small Delta Logs**
-- **Low-Latency Requirements**: Applications requiring fast snapshot loading
-
-### When to Avoid
+### When to avoid
 
 Consider traditional mode for:
 
-- **Large Delta Logs**
 - **Memory-Constrained Drivers**: Environments with limited driver memory
 
-### Configuration Recommendations
+### Configuration recommendations
 
-1. **Start Conservative**: Begin with default size limits and increase based on monitoring
-2. **Enable Fallback**: Always enable fallback in production environments (default)
+- **Start Conservative**: Begin with default size limits and increase based on monitoring
+- **Enable Fallback**: Always enable fallback in production environments (default)
 
 ## Troubleshooting
 
-1. **Driver OOM Errors**
-   - Reduce `maxLogSize` and `maxLogFileCount` limits or disable Driver mode
-   - Consider increasing driver node size
+- **Driver OOM Errors**
+  - Reduce `maxLogSize` and `maxLogFileCount` limits or disable Driver mode
+  - Consider increasing driver node size
 
-2. **Fallback to traditional mode**
-   - Check logs for fallback reasons. Look for log messages containing "Driver mode error"
-   - Review size limit configuration. Look for log messages containing "Log size check"
+- **Fallback to traditional mode**
+  - Check logs for fallback reasons. Look for log messages containing "Driver mode error"
+  - Review size limit configuration. Look for log messages containing "Log size check"
 
-3. **Performance Issues**
-   - Compare with traditional Spark mode performance
-   - Adjust configuration based on workload characteristics
+- **Performance Issues**
+  - Compare with traditional Spark mode performance
+  - Adjust configuration based on workload characteristics
