@@ -277,7 +277,7 @@
       },
       {
         "source_path_from_root": "/docs/data-factory/change-data-capture-from-sap-to-onelake-with-azure-data-factory.md",
-        "redirect_url": "/azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory",
+        "redirect_url": "/azure/data-factory/change-data-capture-from-sap-to-onelake-with-azure-data-factory",
         "redirect_document_id": false
       },
       {
