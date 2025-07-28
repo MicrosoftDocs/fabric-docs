@@ -50,7 +50,7 @@ No installation is required when working with PySpark, as AI Functions are alrea
 
 The following code cells include all the necessary installation commands.
 
-pandas (PySpark environment)
+# [pandas (PySpark environment)](#tab/pandas)
 
 ```python
 # Pandas AI Functions requires openai version 1.30 or higher
@@ -59,7 +59,7 @@ pandas (PySpark environment)
 # AI functions are preinstalled on the Fabric PySpark runtime
 ```
 
-pandas (Python environment)
+# [pandas (Python environment)](#tab/pandas-python)
 
 ```python
 # Install fixed version of packages
