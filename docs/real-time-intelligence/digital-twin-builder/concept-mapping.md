@@ -64,8 +64,7 @@ Mapping allows you to add an entity type to your digital twin builder (preview) 
 
 1. Create an entity type. In this step, you create an entity type from either the *Generic* entity type, or one of the provided [system types](#system-types). Add a name to the entity type that fits your use case.
 
-    >[!TIP]
-    > Entity type names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
+    Entity type names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
 
 1. Map and model data for this entity type. In this step, you define how data maps from a Fabric lakehouse to properties on the instances of this entity type. If you're creating an entity type for the first time, the columns mapped from your source table become modeled properties on your entity instances after a mapping is saved or run. If your entity type already has properties, you can hydrate the entity instances with data from a source table.
 
