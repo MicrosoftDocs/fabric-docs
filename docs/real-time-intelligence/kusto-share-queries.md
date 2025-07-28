@@ -69,6 +69,7 @@ To use a shared query, follow these steps:
 1. Then either:
     1. Close the query without saving it.
     1. Select **Save to** and then **New KQL queryset** or **Existing KQL queryset**.
+    
     :::image type="content" source="media/kusto-share-queries/save-shared-query.png" alt-text="Screenshot of the Save query dropdown.":::
 
 ## Export query data to CSV
@@ -79,7 +80,7 @@ To export the query results to a CSV file, follow these steps:
 
 1. Select **Export to CSV**.
 
-    :::image type="content" source="media/kusto-share-queries/export-to-csv.png" alt-text="Screenshot of the export to CSV button." lightbox="media/kusto-share-queries/export-to-csv.png":::
+    :::image type="content" source="media/kusto-share-queries/export-to-csv.png" alt-text="Screenshot of the export to CSV button.":::
 
 ## Next step
 
