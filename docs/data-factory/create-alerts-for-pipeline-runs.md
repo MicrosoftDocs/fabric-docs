@@ -58,5 +58,5 @@ Once configured, select **Apply** to set your schedule. You can view or edit the
 
 ## Related content
 
-- [How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
-- [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
+- [Use Fabric Activator to create alerts](../real-time-intelligence/data-activator/activator-tutorial.md)
+- [Learn more about the Outlook email activity](outlook-activity.md)
