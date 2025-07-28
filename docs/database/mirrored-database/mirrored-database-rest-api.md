@@ -4,7 +4,7 @@ description: This article describes the available REST APIs for Fabric mirroring
 author: xuyangit1
 ms.author: xuyan
 ms.reviewer: wiassaf
-ms.date: 05/08/2025
+ms.date: 07/28/2025
 ms.topic: conceptual
 ms.custom: sfi-ropc-nochange
 ---
@@ -44,16 +44,12 @@ Body:
 }
 ```
 
-The payload property in previous JSON body is Base64 encoded. You can use [Base64 Encode and Decode](https://www.base64encode.org/) to encode. The original JSON definition examples for different types of sources follow:
+The `payload` property in previous JSON body is Base64 encoded. You can use [Base64 Encode and Decode](https://www.base64encode.org/) to encode. 
 
-- [JSON definition example of Snowflake](#json-definition-example-of-snowflake)
-- [JSON definition example of Azure SQL Database](#json-definition-example-of-azure-sql-database)
-- [JSON definition example of Azure SQL Managed Instance](#json-definition-example-of-azure-sql-managed-instance)
-- [JSON definition example of Azure Database for PostgreSQL flexible server](#json-definition-example-of-azure-database-postgresql)
-- [JSON definition example of Azure Cosmos DB](#json-definition-example-of-azure-cosmos-db)
-- [JSON definition example of open mirroring](#json-definition-example-of-open-mirroring)
+The original JSON definition examples are as follows. For more information about the mirrored database item definition, including a breakdown of the definition structure, see [Mirrored database item definition](/rest/api/fabric/articles/item-management/definitions/mirrored-database-definition).
 
-If you want to replicate selective tables instead of all the tables in the specified database, refer to [JSON definition example of replicating specified tables](#json-definition-example-of-replicating-specified-tables).
+- [JSON definition example of replicating entire database](#json-definition-example-of-replicating-entire-database)
+- [JSON definition example of replicating specified tables](#json-definition-example-of-replicating-specified-tables)
 
 > [!IMPORTANT]
 > To mirror data from Azure SQL Database, Azure SQL Managed Instance, Azure Database for PostgreSQL or SQL Server 2025, you need to also do the following before start mirroring:
@@ -64,179 +60,19 @@ If you want to replicate selective tables instead of all the tables in the speci
 > [!NOTE]
 > `defaultSchema` property indicates whether to replicate the schema hierarchy from the source database.
 
-### JSON definition example of Snowflake
+### JSON definition example of replicating entire database
+
+To mirror all the tables from the source database:
 
 ```json
 {
     "properties": {
         "source": {
-            "type": "Snowflake",
+            "type": "<your source type>",
             "typeProperties": {
                 "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
                 "database": "xxxx"
             }
-        },
-        "target": {
-            "type": "MountedRelationalDatabase",
-            "typeProperties": {
-                "defaultSchema": "xxxx",
-                "format": "Delta"
-            }
-        }
-    }
-}
-```
-
-### JSON definition example of Azure SQL Database
-
-```json
-{
-    "properties": {
-        "source": {
-            "type": "AzureSqlDatabase",
-            "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
-            }
-        },
-        "target": {
-            "type": "MountedRelationalDatabase",
-            "typeProperties": {
-                "defaultSchema": "xxxx",
-                "format": "Delta"
-            }
-        }
-    }
-}
-```
-
-### JSON definition example of Azure SQL Managed Instance
-
-```json
-{
-    "properties": {
-        "source": {
-            "type": "AzureSqlMI",
-            "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
-            }
-        },
-        "target": {
-            "type": "MountedRelationalDatabase",
-            "typeProperties": {
-                "defaultSchema": "xxxx",
-                "format": "Delta"
-            }
-        }
-    }
-}
-```
-
-<a id="json-definition-example-of-azure-database-postgresql"></a>
-
-### JSON definition example of Azure Database for PostgreSQL flexible server
-
-```json
-{
-    "properties": {
-        "source": {
-            "type": "AzurePostgreSql",
-            "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
-            }
-        },
-        "target": {
-            "type": "MountedRelationalDatabase",
-            "typeProperties": {
-                "defaultSchema": "xxxx",
-                "format": "Delta"
-            }
-        }
-    }
-}
-```
-
-
-### JSON definition example of Azure Cosmos DB
-
-```json
-{
-    "properties": {
-        "source": {
-            "type": "CosmosDb",
-            "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
-                "database": "xxxx"
-            }
-        },
-        "target": {
-            "type": "MountedRelationalDatabase",
-            "typeProperties": {
-                "defaultSchema": "xxxx",
-                "format": "Delta"
-            }
-        }
-    }
-}
-```
-
-### JSON definition example of SQL Server 2025 mirrored database
-
-This sample applies only to Fabric Mirroring for SQL Server 2025.
-
-```json
-{
-    "properties": {
-        "source": {
-            "type": "SqlServer2025",
-            "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
-                "database": "xxxx"
-            }
-        },
-        "target": {
-            "type": "MountedRelationalDatabase",
-            "typeProperties": {
-                "defaultSchema": "xxxx",
-                "format": "Delta"
-            }
-        }
-    }
-}
-```
-
-### JSON definition example of SQL Server 2016-2022 mirrored database
-
-This sample applies to Fabric Mirroring for SQL Server 2016-2022.
-
-```json
-{
-    "properties": {
-        "source": {
-            "type": "MSSQL",
-            "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
-                "database": "xxxx"
-            }
-        },
-        "target": {
-            "type": "MountedRelationalDatabase",
-            "typeProperties": {
-                "defaultSchema": "xxxx",
-                "format": "Delta"
-            }
-        }
-    }
-}
-```
-
-### JSON definition example of open mirroring
-
-```json
-{
-    "properties": {
-        "source": {
-            "type": "GenericMirror",
-            "typeProperties": {}
         },
         "target": {
             "type": "MountedRelationalDatabase",
@@ -251,7 +87,7 @@ This sample applies to Fabric Mirroring for SQL Server 2016-2022.
 
 ### JSON definition example of replicating specified tables
 
-The previous examples apply to the scenario that automatically replicates all the tables in the specified database. If you want to specify the tables to replicate, you can specify the `mountedTables` property, as in the following example.
+To mirror selective tables from the source database, you can specify the `mountedTables` property as in the following example.
 
 ```json
 {
@@ -554,4 +390,5 @@ The .NET SDK that supports Fabric mirroring is available at [Microsoft Fabric .N
 
 ## Related content
 
-- [REST API - Items](/rest/api/fabric/core/items)
+- [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
+- [Mirrored database item definition](/rest/api/fabric/articles/item-management/definitions/mirrored-database-definition)
