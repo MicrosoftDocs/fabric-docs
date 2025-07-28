@@ -19,7 +19,7 @@ The Snowflake connector is supported in Data Factory for [!INCLUDE [product-name
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account |
-| **Data pipeline**<br>- [Copy activity](xxx.md) (source/destination) <br>- Lookup activity  <br>- Script activity |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account |
+| **Data pipeline**<br>- [Copy activity](connector-snowflake-copy-activity.md) (source/destination) <br>- Lookup activity  <br>- Script activity |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account |
 | **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account |
 
 ## Related content
