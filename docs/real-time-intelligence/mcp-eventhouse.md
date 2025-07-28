@@ -1,5 +1,5 @@
 ---
-title: Use the Fabric RTI Model Context Protocol (MCP) Server with Eventhouse
+title: Use the Fabric RTI Model Context Protocol (MCP) Server With Eventhouse
 description: Learn how to use Model Context Protocol (MCP) with Eventhouse to create AI agents and applications that analyze real-time data. Get started now!
 author: spelluru
 ms.author: spelluru
@@ -17,7 +17,7 @@ Learn how to use the Model Context Protocol (MCP) with Fabric Real-Time Intellig
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
-The Fabric RTI MCP Server enables AI agents or AI applications to interact with Eventhouse by providing tools through the MCP interface. This allows you to:
+The Fabric RTI MCP Server enables AI agents or AI applications to interact with an Eventhouse by providing tools through the MCP interface. Using the RTI MCP Server with Eventhouse, you can:
 
 * Query and analyze the data in KQL databases.
 * Use natural language queries that get translated to KQL queries.
@@ -26,16 +26,16 @@ The Fabric RTI MCP Server enables AI agents or AI applications to interact with 
 
 For the full list of available tools and natural language query examples, see [overview](https://github.com/microsoft/fabric-rti-mcp/?tab=readme-ov-file#-overview) in the Fabric RTI MCP Server repository.
 
-## Getting started
+## Get started
 
-Get started using the instructions documented in the [MCP for RTI server](https://github.com/microsoft/fabric-rti-mcp/) repository. These are the main steps:
+Get started using the instructions documented in the [MCP for RTI server](https://github.com/microsoft/fabric-rti-mcp/) repository. The main steps are:
 
 1. Prerequisites: An Eventhouse with a KQL database and tables or an Azure Data Explore (ADX) cluster.
 1. Install the MCP server.
 1. Test the MCP server.
 1. Start analyzing data with AI agents and natural language prompts.
 
-## Example: VS Code Github Copilot agent retrieving sample weather Eventhouse data
+## Example: VS Code GitHub Copilot agent retrieving sample weather Eventhouse data
 
 Prompt:
 
