@@ -26,7 +26,7 @@ To pin a query to a dashboard for continuous monitoring, follow these steps:
 
 1. Select **Pin to dashboard**.
 
-    :::image type="content" source="media/kusto-share-queries/pin-dashboard.png" alt-text="Screenshot of the pin to dashboard button."  ":::
+    :::image type="content" source="media/kusto-share-queries/pin-dashboard.png" alt-text="Screenshot of the pin to dashboard button.":::
 
 1. In the **Pin query to dashboard** pane:
     1. Select an existing dashboard or create a new dashboard.
