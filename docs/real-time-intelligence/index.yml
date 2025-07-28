@@ -211,3 +211,16 @@ landingContent:
               url: monitor-logs-ingestion-results.md
             - text: Query logs
               url: monitor-logs-query.md
+  
+  # Card
+  - title: Build AI Agents
+    linkLists:
+        - linkListType: overview
+          links:
+            - text: Fabric RTI MCP Server (preview)
+              url: mcp-overview.md 
+        - linkListType: how-to-guide
+          links:
+          - text: Use MCP with Eventhouse
+            url:  mcp-eventhouse.md
+              

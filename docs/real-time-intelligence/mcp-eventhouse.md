@@ -1,5 +1,5 @@
 ---
-title: Use Model Context Protocol with Eventhouse for real-time AI
+title: Use the Fabric RTI Model Context Protocol (MCP) Server with Eventhouse
 description: Learn how to use Model Context Protocol (MCP) with Eventhouse to create AI agents and applications that analyze real-time data. Get started now!
 author: spelluru
 ms.author: spelluru

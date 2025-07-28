@@ -1,5 +1,5 @@
 ---
-title: What is Model Context Protocol (MCP)?
+title: What is the Fabric Real-Time Intelligence Model Context Protocol (MCP) Server?
 description: Model Context Protocol (MCP) for RTI is a fully open-source implementation for Microsoft Fabric Real-Time Intelligence (RTI). It enables AI agents to interact with RTI components like Eventhouse.
 ms.reviewer: sharmaanshul
 author: spelluru

@@ -854,7 +854,7 @@ items:
 - name: Build AI Agents
   displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
   items: 
-    - name: MCP for RTI Overview
+    - name: Fabric RTI MCP Server (preview)
       href: mcp-overview.md 
     - name: Use MCP with Eventhouse
       href: mcp-eventhouse.md
