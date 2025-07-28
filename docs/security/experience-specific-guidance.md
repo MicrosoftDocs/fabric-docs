@@ -348,7 +348,7 @@ Customers can also achieve geo-redundancy by deploying identical Eventstream wor
 
 Platform refers to the underlying shared services and architecture that apply to all workloads. This section walks you through the recovery procedures for shared experiences. It covers variable libraries.
 
-### Variable libraries
+### Variable library
 Microsoft Fabric Variable libraries enable developers to customize and share item configurations within a workspace, streamlining content lifecycle management. From a disaster recovery standpoint, variable library users must proactively protect against a regional disaster. This can be done through Fabric Git integration, which ensures that after a regional disaster, a user's Variable library remains available.  To recover a variable library, we recommend the following:
 
  - Use Fabric Git integration to synchronize your Variable library with your ADO repo. In case of disaster, you can use the repository to rebuild the Variable library in the new workspace you created. Steps:
