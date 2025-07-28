@@ -18,7 +18,7 @@ The Azure Database for PostgreSQL connector is supported in Data Factory for [!I
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
-| **Data pipeline**<br>- [Copy activity](connector-azure-database-for-postgresql-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Basic |
+| **Data pipeline**<br>- [Copy activity](connector-azure-database-for-postgresql-copy-activity.md) (source/destination) <br>- Lookup activity <br>- Script activity (only supported in version 2.0)    |None<br> On-premises<br> Virtual network |Basic |
 | **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append |None<br> On-premises<br> Virtual network |Basic |
 
 ## Related content
