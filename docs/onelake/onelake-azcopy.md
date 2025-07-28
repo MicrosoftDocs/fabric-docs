@@ -18,10 +18,6 @@ AzCopy is a powerful command-line utility designed to facilitate the transfer of
 
 AzCopy is optimized for data plane operations at scale and large scale data movement. When you copy data between storage accounts (including OneLake), data moves directly from storage server to storage server, minimizing performance bottlenecks. AzCopy is also easy-to-use and reliable, with built-in mechanisms to handle network interruptions and retries. With AzCopy, it's easy to upload data to OneLake, or load data from existing sources directly into your items in Fabric!  
 
-## Trusted workspace access and AzCopy
-
-Trusted workspace access lets you access firewall-enabled Azure Storage accounts securely by configuring a resource instance rule on an Azure Storage account.  This rule lets your specific Fabric workspace access the storage account's firewall from select Fabric experiences, like shortcuts, pipelines, and AzCopy.  By configuring trusted workspace access, AzCopy can copy data from a firewall-enabled Azure Storage account into OneLake without affecting the firewall protections.  Learn more at [trusted workspace access](/fabric/security/security-trusted-workspace-access).  
-
 ## Getting Started
 
 If you're new to AzCopy, you can learn how to download and get started with AzCopy at [Get started with AzCopy](/azure/storage/common/storage-use-azcopy-v10).
