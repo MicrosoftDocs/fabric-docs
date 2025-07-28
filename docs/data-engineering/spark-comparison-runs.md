@@ -42,6 +42,59 @@ For anomaly Spark applications run, potential cause is listed in the comparison 
 
 :::image type="content" source="media\spark-comparison-runs\anomaly-spark-applications-run.png" alt-text="Screenshot showing anomaly spark applications run." lightbox="media\spark-comparison-runs\anomaly-spark-applications-run.png":::
 
+
+| **API Metric Name** | **Description** (All time-related metrics are measured in seconds, and all byte-related metrics are measured in bytes) |
+| --- | --- |
+| Shuffle Write Records| Total number of rows shuffle write. |
+| Allocated executors | min -> max allocated executors Get from TJS API. |
+| Anomaly | anomaly.IsAnomaly && anomaly.IsPositiveAnomaly?yes:no |
+| Expected duration | Anomaly.expectedValue |
+| Potential Causes | Anomaly.rootcause.data |
+| TotalDuration | Total duration of the Spark application. |
+| JobCount | Number of jobs executed. |
+| QueryCount | Number of SQL queries processed. |
+| TaskCount | Total number of tasks executed. |
+| ReadRows | Total number of rows read. |
+| WriteRows | Total number of rows written. |
+| JoinCount | Number of join operations. |
+| ScanCount | Number of scan operations. |
+| FilterCount | Number of filter operations. |
+| UnionCount | Number of union operations. |
+| CollectCount | Number of collect operations. |
+| HashAggregateCount | Number of hash aggregate operations. |
+| ExchangeCount | Number of shuffle exchanges.|
+| ShuffleReadLocalBytes | Bytes read from local shuffle data. |
+| ShuffleReadRemoteBytes | Bytes read from remote shuffle data.|
+| ShuffleWriteBytes | Bytes written for shuffles. |
+| ReadBytes | Total bytes read.|
+| WriteBytes | Total bytes written. |
+| MemorySpilledBytes | Bytes spilled to memory. |
+| DiskSpilledBytes | Bytes spilled to disk. |
+| GCTime | Time spent in garbage collection (seconds). |
+| StageCount | Number of stages completed. |
+| ShuffleMapStageCount | Number of shuffle map stages. |
+| ResultStageCount | Number of result stages. |
+| CompilationTime | Time spent compiling (seconds).|
+| ExecutionTime | Total execution time (seconds). |
+| IdleTime | Total idle time (seconds). |
+| CoreAllocation | Average number of cores allocated. |
+| UtilizationPercentage | Percentage of core utilization. |
+| TaskDuration | Duration of all tasks combined (seconds). |
+| ShuffleTime | Time spent in shuffle operations (seconds). ShuffleTime = ShuffleReadTime + ShuffleWriteTime |
+| IOTime | Time spent in I/O operations (seconds). IOTime = ReadTime + WriteTime |
+| CPUTime | Time spent by CPU on tasks (seconds). |
+| ShuffleReadTime | Time spent reading shuffle data (seconds). |
+| ShuffleWriteTime | Time spent writing shuffle data (seconds). |
+| ReadTime | Time spent reading data (seconds). |
+| WriteTime | Time spent writing data (seconds). |
+| SerializationTime | Time spent serializing data (seconds). |
+| DeserializeTime | Time spent deserializing data (seconds). |
+| ExecutorComputingTime | Computing time spent by executors (seconds). |
+| ApplicationRunTime | Total application runtime (seconds). |
+| OverheadTime | Time spent in overhead (seconds).|
+| QueueingTime | Time elapsed between when the job was submitted by the user (submitTime) and when the GJS system began processing the job (startTime) (seconds). |
+| StartingTime | Time elapsed between the GJS system's recorded job start (startTime) and the actual application execution start time (seconds). |
+
 ## Related content
 
 The next step after viewing the details of an Apache Spark application is to view **Spark job progress** below the Notebook cell. You can refer to:
