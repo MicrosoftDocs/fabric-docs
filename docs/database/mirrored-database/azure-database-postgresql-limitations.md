@@ -98,7 +98,7 @@ For troubleshooting, see:
 
 ## Supported regions
 
-[!INCLUDE [fabric-mirroredpg-supported-regions](includes/fabric-mirroredpg-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Next step
 
