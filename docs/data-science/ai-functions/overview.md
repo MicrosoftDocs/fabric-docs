@@ -44,11 +44,13 @@ It's seamless to incorporate these functions as part of data-science and data-en
 
 ## Getting started with AI functions
 
-AI functions are preinstalled on the Fabric PySpark runtime. For the pure-python environment you may install Pandas AI Functions.
+When working with pandas, the openai package must be installed. In the Python environment, the AI Functions package must also be installed.
 
-The following code cells install the AI functions library and its dependencies.
+No installation is required when working with PySpark, as AI Functions are already preinstalled in the PySpark environment.
 
-# [pandas in Fabric runtime](#tab/pandas)
+The following code cells include all the necessary installation commands.
+
+pandas (PySpark environment)
 
 ```python
 # Pandas AI Functions requires openai version 1.30 or higher
@@ -57,7 +59,7 @@ The following code cells install the AI functions library and its dependencies.
 # AI functions are preinstalled on the Fabric PySpark runtime
 ```
 
-# [pandas in Python runtime](#tab/pandas)
+pandas (Python environment)
 
 ```python
 # Install fixed version of packages
