@@ -15,7 +15,7 @@ ms.date: 07/24/2025
 
 In this article, you learn how to create an S3 compatible shortcut inside a Fabric lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
-S3 compatible shortcuts can take advantage of file caching to reduce egress costs associated with cross-cloud data access. For more information, see [OneLake shortcuts > Caching](onelake-shortcuts.md#caching). Only key or secret authentication is supported for S3-compatible sources; Entra-based OAuth, Service Principal, and RoleArn are not supported.
+S3 compatible shortcuts can take advantage of file caching to reduce egress costs associated with cross-cloud data access. For more information, see [OneLake shortcuts Caching](onelake-shortcuts.md#caching). Currently only key or secret authentication is supported for S3-compatible sources. Entra-based OAuth, Service Principal, and RoleArn are not yet supported.
 
 ## Prerequisites
 
