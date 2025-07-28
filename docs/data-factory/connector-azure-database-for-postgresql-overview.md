@@ -14,19 +14,13 @@ ms.custom:
 
 The Azure Database for PostgreSQL connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Data pipeline**<br>- [Copy activity](connector-azure-database-for-postgresql-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Basic |
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append |None<br> On-premises<br> Virtual network |Basic |
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Azure Database for PostgreSQL in Dataflow Gen2.
-
-## Support in data pipelines
-
-The Azure Database for PostgreSQL connector supports the following capabilities in data pipelines:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | Basic |
-| **Lookup activity** | None <br> On-premises | Basic |
-| **Script activity** (only supported in version 2.0) | None <br> On-premises | Basic |
+## Related content
 
 To learn more about the copy activity configuration for Azure Database for PostgreSQL in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-database-for-postgresql-copy-activity.md).
