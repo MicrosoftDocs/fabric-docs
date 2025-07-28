@@ -4,14 +4,11 @@ description: Learn how to use Model Context Protocol (MCP) with Eventhouse to cr
 author: spelluru
 ms.author: spelluru
 ms.topic: how-to 
-ms.date: 07/14/2025
+ms.date: 07/28/2025
 ms.search.form: MCP, RTI, AI, Eventhouse
 ms.reviewer: sharmaanshul
 
 #CustomerIntent: As a Fabric RTI AI developer, I want to use the RTI MCP server to create AI agents and AI applications that use Eventhouse and KQL databases to query and analyze real-time data.
-
-<!--- references (blogs): https://sandervandevelde.wordpress.com/2025/07/05/getting-started-with-the-model-context-protocol-for-microsoft-fabric-rti-in-github-copilot/ and  --->
-
 ---
 
 # Use the Fabric RTI MCP Server with Eventhouse (preview)
@@ -22,7 +19,7 @@ Learn how to use the Model Context Protocol (MCP) with Fabric Real-Time Intellig
 
 The Fabric RTI MCP Server enables AI agents or AI applications to interact with Eventhouse by providing tools through the MCP interface. This allows you to:
 
-* Query and analyze the data in KQL databases in the Eventhouse.
+* Query and analyze the data in KQL databases.
 * Use natural language queries that get translated to KQL queries.
 * Discover KQL database schemas and metadata dynamically.
 * Sample data.
@@ -31,14 +28,14 @@ For the full list of available tools and natural language query examples, see [o
 
 ## Getting started
 
-Get started using the instructions documented in the [MCP for RTI server](https://github.com/microsoft/fabric-rti-mcp/) implementation repository. These are the main steps:
+Get started using the instructions documented in the [MCP for RTI server](https://github.com/microsoft/fabric-rti-mcp/) repository. These are the main steps:
 
-1. Prerequisites: An Eventhouse with a KQL database and tables.
+1. Prerequisites: An Eventhouse with a KQL database and tables or an Azure Data Explore (ADX) cluster.
 1. Install the MCP server.
 1. Test the MCP server.
 1. Start analyzing data with AI agents and natural language prompts.
 
-## Example: VS Code Copilot agent retrieving sample weather Eventhouse data
+## Example: VS Code Github Copilot agent retrieving sample weather Eventhouse data
 
 Prompt:
 
@@ -50,6 +47,6 @@ Response:
 
 ## Related content
 
-- [What is the Fabric RTI MCP Server (preview)?](mcp-overview.md)
-- [Fabric RTI MCP Server overview](https://github.com/microsoft/fabric-rti-mcp/?tab=readme-ov-file#-overview)
-- [Eventhouse overview](eventhouse.md)
+* [What is the Fabric RTI MCP Server (preview)?](mcp-overview.md)
+* [Fabric RTI MCP Server overview](https://github.com/microsoft/fabric-rti-mcp/?tab=readme-ov-file#-overview)
+* [Eventhouse overview](eventhouse.md)
