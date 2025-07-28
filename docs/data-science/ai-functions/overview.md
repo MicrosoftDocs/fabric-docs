@@ -72,12 +72,6 @@ pandas (Python environment)
 %pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12.2-spark3.5/synapseml_internal-1.0.12.2.dev1-py2.py3-none-any.whl 2>/dev/null
 ```
 
-# [PySpark](#tab/pyspark)
-
-```python
-# AI functions are preinstalled on the Fabric PySpark runtime
-```
-
 ---
 
 This code cell imports the AI functions library and its dependencies. The pandas cell also imports an optional Python library to display progress bars that track the status of every AI function call.
