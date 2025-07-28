@@ -50,7 +50,7 @@ No installation is required when working with PySpark, as AI Functions are alrea
 
 The following code cells include all the necessary installation commands.
 
-# [pandas (PySpark environment)](#tab/pandas)
+# [pandas (PySpark environment)](#tab/pandas-pyspark)
 
 ```python
 # Pandas AI Functions requires openai version 1.30 or higher
