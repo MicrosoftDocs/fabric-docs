@@ -42,6 +42,7 @@ For anomaly Spark applications run, potential cause is listed in the comparison 
 
 :::image type="content" source="media\spark-comparison-runs\anomaly-spark-applications-run.png" alt-text="Screenshot showing anomaly spark applications run." lightbox="media\spark-comparison-runs\anomaly-spark-applications-run.png":::
 
+The following table describes the comparison metrics and their definitions: 
 
 | **API Metric Name** | **Description** (All time-related metrics are measured in seconds, and all byte-related metrics are measured in bytes) |
 | --- | --- |
