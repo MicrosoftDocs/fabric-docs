@@ -42,6 +42,8 @@ Staging data is a technique used to improve performance by temporarily storing i
 
 :::image type="content" source="media/dataflow-gen2-performance-best-practices/enable-staging.png" alt-text="Screenshot showing how to enable staging in Dataflow Gen2.":::
 
+When you have data that's already staged in the Lakehouse or Warehouse and you apply more transformations that fully fold in following queries, then the dataflow will write the output to the staging Warehouse. This can be faster than writing to the staging Lakehouse because the dataset can be written in parallel by DW and will undergo fewer network hops with their corresponding serialization steps.
+
 ## Scenarios and what optimizations to consider
 
 When working with Dataflow Gen2, it's essential to understand the various scenarios you might encounter and how to optimize performance in each case. The following considerations provide practical guidance on how to apply the best practices to real-world situations. By tailoring your approach based on the specific characteristics of your data and transformations, you can achieve optimal performance in your data integration workflows. Here are some common scenarios you might encounter when working with Dataflow Gen2, along with recommended actions to optimize performance. Be aware that performance optimization is an ongoing process and very specific to your scenario. You might need to adjust your approach based on the specific characteristics of your own data and transformations.
