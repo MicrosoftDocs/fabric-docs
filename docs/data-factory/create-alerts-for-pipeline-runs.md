@@ -6,13 +6,14 @@ ms.author: makromer
 ms.topic: conceptual
 ms.custom: pipelines
 ms.date: 07/24/2025
+author: kromerm
 ---
 
 # Concept: Create alerts for pipeline runs
 
 Operationalizing your Fabric Data Factory pipelines means more than scheduling or setting trigger events to invoke your pipelines. A well-run operationalized data integration project includes proactive monitoring and alerting upon pipeline events, mainly succeed and failed. This allows you to actively monitor the health of your pipelines both at the activity level and the pipeline level.
 
-> [!VIDEO [<embedded_video_source>](https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=3410e513-faef-4b15-8a46-7487a8086f85)]
+> [!VIDEO (https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=3410e513-faef-4b15-8a46-7487a8086f85)]
 
 ## Activity level alerts
 
@@ -42,11 +43,11 @@ Perhaps you'd rather actively monitor the entirety of your pipeline (create, del
 
 1. Next step is to select the action you'd like to take such as sending an email or Teams notification upon pipeline events
 
-:::image type="content" source="media/create-alerts/data-activator-job-rule.png" alt-text="Screenshot showing an activator job rule.":::
+:::image type="content" source="media/create-alerts/data-activator-rule.png" alt-text="Screenshot showing an activator job rule.":::
 
 1. Final step is to configure your notification and that's it! You're done!
 
-:::image type="content" source="media/create-alerts/data-activator-job-email.png" alt-text="Screenshot showing an activator email setting.":::
+:::image type="content" source="media/create-alerts/data-activator-email.png" alt-text="Screenshot showing an activator email setting.":::
 
 
 ## Related content
