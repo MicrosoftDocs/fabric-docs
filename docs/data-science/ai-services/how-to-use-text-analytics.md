@@ -1,5 +1,5 @@
 ---
-title: Use Text Analytics with REST API
+title: Use Azure AI Language with REST API
 description: How to use prebuilt text analytics in Fabric with REST API
 ms.author: larryfr
 author: Blackmist
@@ -14,32 +14,76 @@ ms.collection: ce-skilling-ai-copilot
 ---
 
 
-# Use prebuilt Text Analytics in Fabric with REST API and SynapseML (preview)
+# Use Azure AI Language in Fabric with REST API and SynapseML (preview)
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Text Analytics](/azure/ai-services/language-service/) is an [Azure AI services](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
+[Azure AI Language](/azure/ai-services/language-service/) is an [Azure AI service](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
 
-This tutorial demonstrates using text analytics in Fabric with RESTful API to:
+In this article, you'll learn how to use Azure AI Language services directly in Microsoft Fabric to analyze text. By the end of this article, you'll be able to:
 
--   Detect sentiment labels at the sentence or document level.
--   Identify the language for a given text input.
--   Extract key phases from a text.
--   Identify different entities in text and categorize them into predefined classes or types.
+-   Detect sentiment labels at the sentence or document level
+-   Identify the language for a given text input
+-   Extract key phrases from a text
+-   Identify different entities in text and categorize them into predefined classes or types
+
+## What you'll build
+
+You'll create a Fabric notebook that can process text and extract insights using Azure AI Language services. The tutorial provides working code examples that you can run immediately and customize for your own text analysis needs.
 
 
 ## Prerequisites
 
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
+
+> [!TIP]
+> **New to Fabric?** If you don't have a workspace set up yet:
+> 1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com)
+> 2. Create a new workspace or use an existing one
+> 3. In your workspace, select **+ New** > **Notebook** to create a new notebook
+> 4. Make sure the **Data Science** experience is selected in the workspace settings
+
+The code samples in this tutorial use libraries that are pre-installed in Microsoft Fabric notebooks:
+
+- **SynapseML**: Pre-installed in Fabric notebooks for machine learning capabilities
+- **PySpark**: Available by default in Fabric Spark compute
+- **Standard Python libraries**: `json`, `uuid` are part of Python standard library
+
+For REST API calls, you'll need to install the `requests` library if it's not already available:
+
+```python
+%pip install requests
+```
+
+> [!NOTE]
+> Microsoft Fabric notebooks come with many common libraries pre-installed. The SynapseML library, which provides the MLflow integration and text analytics capabilities, is automatically available in the Spark environment.
+
+## Choose your approach
+
+This tutorial provides two ways to use Azure AI Language services in Fabric:
+
+- **REST API approach**: Direct HTTP calls to the service (recommended for beginners)
+- **SynapseML approach**: Using Spark DataFrames for larger-scale processing
+
+> [!TIP]
+> **New users should start with the REST API approach** as it's easier to understand and debug. The SynapseML approach is better for processing large datasets with Spark.
+
 # [Rest API](#tab/rest)
+
+### Step 1: Set up authentication and endpoints
+
+Copy and paste this code into the first cell of your Fabric notebook to set up the connection to Azure AI Language services:
 
 ``` python
 # Get workload endpoints and access token
 
 from synapse.ml.mlflow import get_mlflow_env_config
 import json
+import requests
+import uuid
 
 mlflow_env_configs = get_mlflow_env_config()
-access_token = access_token = mlflow_env_configs.driver_aad_token
+access_token = mlflow_env_configs.driver_aad_token
 prebuilt_AI_base_host = mlflow_env_configs.workload_endpoint + "cognitive/textanalytics/"
 print("Workload endpoint for AI service: \n" + prebuilt_AI_base_host)
 
@@ -59,19 +103,31 @@ def printresponse(response):
             result = response.json()
             print(json.dumps(result, indent=2, ensure_ascii=False))
         except:
-            print(f"pasre error {response.content}")
+            print(f"parse error {response.content}")
     else:
         print(response.headers)
         print(f"error message: {response.content}")
 ```
 
+> [!IMPORTANT]
+> Run this cell first! It sets up the authentication and helper functions needed for all the text analytics examples below. You should see a workload endpoint URL printed when it runs successfully.
+
 # [SynapseML](#tab/synapseml)
+
+### Step 1: Import required libraries
+
+Copy and paste this code into the first cell of your Fabric notebook:
 
 ``` Python
 import synapse.ml.core
 from synapse.ml.cognitive.language import AnalyzeText
 from pyspark.sql.functions import col
+
+# Note: 'spark' and 'display()' are automatically available in Fabric notebooks
 ```
+
+> [!IMPORTANT]
+> Run this cell first! It imports the libraries needed for all the SynapseML examples below.
 
 ---
 
@@ -82,10 +138,13 @@ from pyspark.sql.functions import col
 
 The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
 
+### Step 2: Analyze sentiment of text
+
+Copy this code into a new cell in your notebook to analyze the sentiment of a sample text:
+
 ``` python
-import requests
+# Sentiment analysis example
 from pprint import pprint
-import uuid
 
 post_body = {
     "kind": "SentimentAnalysis",
@@ -111,7 +170,13 @@ response = requests.post(service_url, json=post_body, headers=post_headers)
 printresponse(response)
 
 ```
-### Output
+
+> [!TIP]
+> You can replace the text in the "text" field with your own content to analyze. The service will return sentiment scores and identify which parts of the text are positive, negative, or neutral.
+
+#### Expected output
+
+When you run this code successfully, you should see output similar to this:
 
 ```
     HTTP 200
@@ -567,3 +632,5 @@ display(result)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
 - [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-sdk-synapse.md)
 - [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-sdk-synapse.md)
+- [SynapseML GitHub repository](https://github.com/microsoft/SynapseML) - Source code and documentation for SynapseML
+- [Azure AI Language documentation](/azure/ai-services/language-service/) - Complete reference for Azure AI Language service

@@ -27,6 +27,13 @@ This sample shows use, with RESTful APIs, of the prebuilt Azure AI translator, i
 
 ## Prerequisites
 
+[!INCLUDE [prerequisites](../includes/prerequisites.md)]
+
+A [Microsoft Fabric notebook](../../data-engineering/how-to-use-notebook.md). This article shows how to use the prebuilt Azure AI Translator service within Fabric notebooks.
+
+> [!NOTE]
+> The required libraries (`synapse.ml.mlflow`, `synapse.ml.services`, `requests`, `json`, and `uuid`) are pre-installed in Microsoft Fabric notebook environments. No additional installation is required. For more information about SynapseML in Fabric, see [Install a different version of SynapseML on Fabric](../install-synapseml.md).
+
 # [Rest API](#tab/rest)
 
 ``` python
