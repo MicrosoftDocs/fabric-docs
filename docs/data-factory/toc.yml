@@ -881,6 +881,8 @@
       href: copy-job-rest-api-capabilities.md    
   - name: Data gateway
     items:
+    - name: "Business continuity and disaster recovery (BCDR) for gateways"
+      href: /data-integration/gateways-business-continuity-disaster-recovery?toc=/fabric/data-factory/toc.json
     - name: On-premises data gateways docs
       items:
       - name: "What is an on-premises data gateway?"
@@ -969,6 +971,8 @@
           href: /data-integration/vnet/manage-data-gateways?toc=/fabric/data-factory/toc.json 
         - name: Use virtual network data gateway in Fabric with Dataflows Gen 2
           href: /data-integration/vnet/use-data-gateways-dfgen2-fabric?toc=/fabric/data-factory/toc.json 
+        - name: Use virtual network data gateway in Fabric with Pipeline
+          href: /data-integration/vnet/use-data-gateways-pipeline-fabric?toc=/fabric/data-factory/toc.json
         - name: Use virtual network data gateway in Power BI
           href: /data-integration/vnet/use-data-gateways-sources-power-bi?toc=/fabric/data-factory/toc.json 
         - name: Use virtual network data gateway in Power Platform dataflows
