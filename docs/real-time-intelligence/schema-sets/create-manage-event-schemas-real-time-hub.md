@@ -1,5 +1,5 @@
 ---
-title: Create and manage event schemas in Real-Time hub
+title: Create and Manage Event Schemas in Real-Time Hub
 description: Learn about how to create and manage event schemas in Fabric Real-Time hub. 
 ms.author: spelluru
 author: spelluru

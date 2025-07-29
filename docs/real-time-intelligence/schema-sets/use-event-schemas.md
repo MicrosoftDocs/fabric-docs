@@ -11,11 +11,10 @@ ms.search.form: Schema set
 ---
 
 # Use schemas in eventstreams (Fabric Real-Time intelligence)
-You can use schema registered with Schema Registy in eventstreams with the following event sources: 
+You can use schema registered with Schema Registry in eventstreams with the following event sources: 
 
 - Custom app or endpoint
-- Azure SQL Database (CDC)
-- Azure Event Hubs
+- Azure SQL Database Change Data Capture (CDC)
 
 When you use event schemas in an eventstream, only the following destinations are supported:
 
@@ -27,12 +26,12 @@ When you use event schemas in an eventstream, only the following destinations ar
 > You can't enable schema support for existing eventstreams. You must enable schema support when you create an eventstream. 
 
 ## Custom endpoint
-Let's see how to associate schemas with a custom endpoing source in an eventstream.  
+Let's see how to associate schemas with a custom endpoint source in an eventstream.  
 
 1. First, when adding a custom endpoint source to an eventstream, enable schema association. 
 
     :::image type="content" source="./media/use-event-schemas/enable-schema-custom-endpoint.png" alt-text="Screenshot of Custom endpoint source with an option to associated schemas." lightbox="./media/use-event-schemas/enable-schema-custom-endpoint.png":::
-1. To associate with a new schema or an existing schema from a schema registy, select **Associate event schema** on the ribbon.
+1. To associate with a new schema or an existing schema from a schema registry, select **Associate event schema** on the ribbon.
 
     :::image type="content" source="./media/use-event-schemas/associate-event-schema-button.png" alt-text="Screenshot of eventstream editor with Associate event schema button on the ribbon selected." lightbox="./media/use-event-schemas/associate-event-schema-button.png":::
 1. To use an existing schema, select **Choose from event schema registry**, and follow these steps:
@@ -58,11 +57,21 @@ Let's see how to associate schemas with a custom endpoing source in an eventstre
         Enter the JSON code into the editor. 
 
         :::image type="content" source="./media/create-manage-event-schemas/code-editor-schema-json.png" alt-text="Screenshot that shows the JSON code in the code editor to build a schema." lightbox="./media/create-manage-event-schemas/code-editor-schema-json.png":::                    
-1. 
+
 
 ## Azure SQL Database (CDC)
+Ingest change data from Azure SQL databases with automatic table schema registration via CDC into Eventstream. 
 
-## Azure Event Hubs
+1. When adding an Azure SQL Database CDC source, enable **event schema association**.       
+1. For **Workspace**, select a Fabric workspace for the schema set. 
+1. For **Schema set**, **+ Create** is selected by default. You can change it to select an existing event schema set. 
+1. If you selected the **+ Create** option in the previous step, enter a name for the schema set. 
+
+    :::image type="content" source="./media/use-event-schemas/azure-sql-db-cdc-enable-schema.png" alt-text="Screenshot that shows the schema setting for an Azure SQL Database CDC source." lightbox="./media/use-event-schemas/azure-sql-db-cdc-enable-schema.png":::             
+1. On the **Review + connect** page, you see the status of schema creation. 
+
+    :::image type="content" source="./media/use-event-schemas/sql-db-cdc-review-connect.png" alt-text="Screenshot that shows the review + connect page for the Azure SQL Database CDC source." lightbox="./media/use-event-schemas/sql-db-cdc-review-connect.png.png":::             
+1. 
 
 ## Supported destinations
 At this stage, schema-validated events can only be sent to: 
@@ -70,8 +79,6 @@ At this stage, schema-validated events can only be sent to:
 - Eventhouse (push mode) 
 - Custom app or endpoint
 - Another stream (derived stream)
-
-Separsely, you can send validated events to another stream (Derived Streams). 
 
 
 ## Related content
