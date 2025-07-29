@@ -1,13 +1,13 @@
 ---
 title: Tenant settings index
 description: Index to Fabric tenant settings.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: reference
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
-ms.date: 07/09/2025
-ms.update-cycle: 180-days
+ms.date: 07/29/2025
+						 
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -23,7 +23,6 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 | Setting name | Description |
 |------|-------|
 |[Users can create Fabric items](fabric-switch.md)|Users can use production-ready features to create Fabric items. Turning off this setting doesn't impact users' ability to create Power BI items. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2247554)|
-|Users can create and use ADF Mount items (preview)|Users can connect and test existing ADF pipelines in Microsoft Fabric. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2250738)|
 |[Users can create Healthcare Cohort items (preview)](/industry/healthcare/healthcare-data-solutions/discover-and-build-cohorts-overview)|Users can explore and create healthcare cohorts using natural language from the multi-modal healthcare data estate provided by the Healthcare solutions item. The data may contain Protected Health Information (PHI). Collaborators with workspace access can view, build on, and modify the healthcare cohort items within that workspace.<br><br>By turning this setting on, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2257737).|
 |[User data functions (preview)](/fabric/data-engineering/user-data-functions/user-data-functions-overview)|Developers can use Fabric user data functions to author, host, and manage serverless data functions that have been optimized for Fabric.     Data functions are authored using custom code that can seamlessly access Microsoft Fabric items such as Data Warehouses and Lakehouses. When this setting is turned on, data functions can be called from client applications, data pipelines, etc. for code agility and productivity.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2265753)|
 |[SQL database (preview)](../database/sql/overview.md)|Users can create SQL databases.  [Learn More](https://aka.ms/fabricsqldb)|
@@ -34,6 +33,8 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Users can discover and use metrics (preview)](./service-admin-portal-goals-settings.md#metric-sets-setting-preview)|Turn on this setting to let users in the organization search for, view, and use metrics. They can use metrics to create new items, such as reports, across Fabric. By turning this setting on, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2262241).<br><br>If turned off, any metrics and metric sets created will be hidden until this setting is turned on again. Semantic models underlying metric sets and downstream items created from metrics will always be visible.|
 |[Users can create variable libraries (preview)](/fabric/cicd/variable-library/variable-library-overview)|Turn on this setting to allow users to create variable libraries and their related value sets.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2301210)|
 |[Users can be informed of upcoming conferences featuring Microsoft Fabric when they are logged in to Fabric](./service-admin-portal-microsoft-fabric-tenant-settings.md#users-can-be-informed-of-upcoming-conferences-featuring-microsoft-fabric-when-they-are-logged-in-to-fabric)|Attending conferences can help your data teams learn in-depth about how to best use the Fabric platform for your business needs and build professional relationships with community members, Microsoft engineering and product teams, and the Fabric Customer Advisory Team (CAT). These conferences may be organized and hosted by third parties.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2306100)|
+|ML models can serve real-time predictions from API endpoints (preview)|With this setting on, users can get real-time predictions from model and version endpoints. Even with real-time endpoints turned off, batch predictions can still be generated.  [Learn More](https://aka.ms/MLModelEndpointsLearnMore)|
+|Cosmos DB NoSQL (Preview)|Build modern, cloud apps using a fully managed NoSQL database.  [Learn More](https://aka.ms/fabriccosmosdb)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 
@@ -313,7 +314,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 
 | Setting name | Description |
 |------|-------|
-|[Users can use Copilot and other AI features powered by Azure OpenAI](../fundamentals/copilot-fabric-overview.md#enable-copilot)|When this setting is enabled, users can access the features powered by Azure OpenAI, including Copilot, Data agent, AI functions and AI services. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262239)<br><br>For customers in the EU Data Boundary, this setting adheres to Microsoft Fabric's EU Data Boundary commitments.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262243)<br><br>By enabling this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2262241).|
+|Users can use Copilot and other features powered by Azure OpenAI|When this setting is enabled, users can access the features powered by Azure OpenAI, including Copilot. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262239)<br><br>For customers in the EU Data Boundary, this setting adheres to Microsoft Fabric's EU Data Boundary commitments.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262243)<br><br>By enabling this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2262241).|
 |[Users can access a standalone, cross-item Power BI Copilot experience (preview)](/power-bi/create-reports/copilot-chat-with-data-standalone)|When this setting is turned on, users will be able to access a Copilot experience that allows them to find, analyze, and discuss different Fabric items in a dedicated tab available via the Power BI navigation pane. This setting requires the following tenant setting to be enabled: "Users can use Copilot and other features powered by Azure OpenAI."  [Learn More](https://go.microsoft.com/fwlink/?linkid=2306434)|
 |[Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](../fundamentals/copilot-fabric-overview.md#enable-copilot)|This setting is only applicable for customers who want to use Copilot and AI features in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of EU Data Boundary and US.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262085)<br><br>When this setting is enabled, data sent to Azure OpenAI can be processed outside your capacity's geographic boundary or national cloud boundary. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262242)<br><br>By enabling this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2262241).|
 |[Capacities can be designated as Fabric Copilot capacities](./service-admin-portal-copilot.md#capacities-can-be-designated-as-fabric-copilot-capacities)|With this setting on, capacity admins can designate capacities as Fabric Copilot capacities. Copilot capacities are special capacity types that allow your organization to consolidate users' Copilot usage and billing on a single capacity.  [Learn More](https://aka.ms/fcctenant)<br><br>When users use Copilot features, capacity admins can see the names of the items associated with users' Copilot activity.  [Learn More](https://aka.ms/fccusage)|
