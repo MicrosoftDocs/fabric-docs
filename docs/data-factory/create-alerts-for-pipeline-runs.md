@@ -18,21 +18,38 @@ Operationalizing your Fabric Data Factory pipelines means more than scheduling o
 
 Let's start at the pipeline activity level. To create alerts at the activity level, you'll add either an Outlook (to send email) or a Teams (to send a Teams message) activity after the activity that you wish to actively monitor.
 
-:::image type="content" source="media/create-alerts/pipeline-outlook.png" alt-text="Screenshot showing an activity activity pipeline run with an alert.":::
+:::image type="content" source="media/create-alerts/pipeline-outlook.png" alt-text="Screenshot showing an activity pipeline run with an alert.":::
 
 ## Pipeline level alerts
 
+Perhaps you'd rather actively monitor the entirety of your pipeline (create, delete, update) or the status of the pipeline run (succeed, fail). That's very easy in Fabric as well. You can follow these steps below:
 
+1. Go to your Fabric Workspace and create a new Activator item
 
-## On-demand data pipeline run
+:::image type="content" source="media/create-alerts/data-activator-tile.png" alt-text="Screenshot showing an activator item.":::
 
+1. Once the Activator item is ready, choose the Get Data tile
 
-> [!TIP]
-> when scheduling a data pipeline, the interface requires specifying both a start and an end date. This design ensures that all scheduled pipelines have a defined execution period.  Currently, there's no built-in option to set a schedule without an end date.
-> To maintain an ongoing schedule, you can set the end date far into the future, such as several years ahead. for example **2099-01-01** This approach effectively keeps the pipeline running indefinitely, allowing you to manage or adjust the schedule as needed over time.
+:::image type="content" source="media/create-alerts/data-activator-get-data.png" alt-text="Screenshot showing an activator get data tile."::: 
+
+1. Pipelines are invoked from schedules and triggers as job events. So you'll pick job events next.
+
+:::image type="content" source="media/create-alerts/data-activator-job-events.png" alt-text="Screenshot showing an activator job event.":::
+
+1. Now you can pick which pipeline you wish to actively monitor and which event you are interested in
+
+:::image type="content" source="media/create-alerts/data-activator-pipeline.png" alt-text="Screenshot showing an activator pipeline selected.":::
+
+1. Next step is to select the action you'd like to take such as sending an email or Teams notification upon pipeline events
+
+:::image type="content" source="media/create-alerts/data-activator-job-rule.png" alt-text="Screenshot showing an activator job rule.":::
+
+1. Final step is to configure your notification and that's it! You're done!
+
+:::image type="content" source="media/create-alerts/data-activator-job-email.png" alt-text="Screenshot showing an activator email setting.":::
 
 
 ## Related content
 
-- [How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
-- [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
+- [How to monitor data pipeline runs in [Fabric Monitor Hub](monitor-pipeline-runs.md)
+- [Tutorial: Create pipeline alerts in Activator](../real-time-intelligence/data-activator/activator-tutorial.md)
