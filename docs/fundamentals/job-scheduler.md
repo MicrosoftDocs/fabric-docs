@@ -5,7 +5,7 @@ ms.reviewer: zhaya
 author: JulCsc
 ms.author: juliacawthra
 ms.topic: conceptual
-ms.date: 07/14/2025
+ms.date: 07/29/2025
 
 #customer intent: As a Fabric user, I want to understand how to use the job scheduler to automate tasks and manage schedules for my items in Fabric.
 
@@ -23,9 +23,11 @@ The job scheduler is a built-in tool that lets you schedule jobs to run automati
 
 To access the job scheduler:
 
-1. Open your Fabric workspace and locate the item (like a dataset, pipeline, or report) you want to schedule.
+1. Open your Fabric workspace and locate the item you want to schedule (for example, Notebook).
 1. Select the item’s contextual menu.
-1. Choose **Settings** or **Schedule** to open the job scheduler interface.
+1. Select **Schedule** from the menu to open the job scheduler interface. 
+
+You can also access the scheduler from within an item's settings by selecting the **Schedule** label. 
 
 ### Set up your schedule
 
