@@ -90,7 +90,11 @@ Hover the mouse over a schema in the list, and select **... (ellipsis)**. You se
 
 If you select **Open event schema set**, you see the event schema opened in the schema set user interface where you can also add schemas, update schemas, or delete schemas. For more information, see [Create and manage event schemas in schema sets](create-manage-event-schemas.md). 
 
-If you select **Endorse**, you see a window that lets you set the endorsement level for the schema. Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. It can be difficult to identify trustworthy and authoritative items. Endorsement is a way to make it easier for users to find the high-quality items they need. For more information, see [Endorsement in Fabric](../fundamentals/endorsement-promote-certify.md).
+:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/schema-set-user-interface.png" alt-text="Screenshot that shows the schema opened in the schema set editor." lightbox="./media/create-manage-event-schemas-real-time-hub/schema-set-user-interface.png":::   
+
+If you select **Endorse**, you see a window that lets you set the endorsement level for the schema. Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. It can be difficult to identify trustworthy and authoritative items. Endorsement is a way to make it easier for users to find the high-quality items they need. For more information, see [Endorsement in Fabric](../../fundamentals/endorsement-promote-certify.md).
+
+:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/endorse.png" alt-text="Screenshot that shows the endorsement user interface." lightbox="./media/create-manage-event-schemas-real-time-hub/schema-actions.png":::        
 
 ## Related content
 
