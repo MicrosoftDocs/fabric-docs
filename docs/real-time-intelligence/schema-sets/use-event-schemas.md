@@ -67,10 +67,10 @@ Ingest change data from Azure SQL databases with automatic table schema registra
 1. For **Schema set**, **+ Create** is selected by default. You can change it to select an existing event schema set. 
 1. If you selected the **+ Create** option in the previous step, enter a name for the schema set. 
 
-    :::image type="content" source="./media/use-event-schemas/azure-sql-database-cdc-enable-schema.png" alt-text="Screenshot that shows the schema setting for an Azure SQL Database CDC source." lightbox="./media/use-event-schemas/azure-sql-database-cdc-enable-schema.png":::             
+    :::image type="content" source="./media/use-event-schemas/azure-sql-database-enable-schema.png" alt-text="Screenshot that shows the schema setting for an Azure SQL Database CDC source." lightbox="./media/use-event-schemas/azure-sql-database-enable-schema.png":::             
 1. On the **Review + connect** page, you see the status of schema creation. 
 
-    :::image type="content" source="./media/use-event-schemas/sql-database-cdc-review-connect.png" alt-text="Screenshot that shows the review + connect page for the Azure SQL Database CDC source." lightbox="./media/use-event-schemas/sql-database-cdc-review-connect.png":::             
+    :::image type="content" source="./media/use-event-schemas/sql-database-review-connect.png" alt-text="Screenshot that shows the review + connect page for the Azure SQL Database CDC source." lightbox="./media/use-event-schemas/sql-database-review-connect.png":::             
 
 
 ## Supported destinations
