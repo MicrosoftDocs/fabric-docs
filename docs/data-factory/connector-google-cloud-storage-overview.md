@@ -14,7 +14,7 @@ ms.custom:
 
 This Google Cloud Storage connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Supported capabilitie
+## Supported capabilities
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
