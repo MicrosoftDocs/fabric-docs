@@ -151,7 +151,7 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | [MongoDB Atlas SQL](connector-mongodb-atlas-sql-overview.md) | ✓/− |  |  |
 | [MongoDB for Pipeline](connector-mongodb-overview.md) |  | ✓/✓ |  |
 | [MySQL database](connector-mysql-database-overview.md) | ✓/− | ✓/− | ✓/− |
-| [OData](connector-odata-overview.md) | ✓/− | ✓/− |  |
+| [OData](connector-odata-overview.md) | ✓/− | ✓/− | ✓/− |
 | [Odbc](connector-odbc-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [OneStream](/power-query/connectors/onestream) | ✓/− |  |  |
 | [OpenSearch Project (Beta)](/power-query/connectors/opensearch-project) | ✓/− |  |  |

@@ -20,7 +20,7 @@ The IBM Db2 database connector is supported in Data Factory for [!INCLUDE [produ
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|On-premises |Basic<br> Windows |
 | **Data pipeline**<br>- Copy activity (source/-) <br>- Lookup activity    |On-premises |Basic |
-| **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Basic |
+| **Copy job** (source/-) <br>- Full load | On-premises |Basic |
 
 ## Related content
 
