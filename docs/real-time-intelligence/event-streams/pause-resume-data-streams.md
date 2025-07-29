@@ -6,13 +6,13 @@ ms.author: xujiang1
 author: wenyang
 ms.topic: how-to
 ms.custom:
-ms.date: 11/21/2024
+ms.date: 07/24/2025
 ms.search.form: Pause and Resume
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-streams-standard-enhanced
 ---
 
-# Pause and resume data streams (preview)
+# Pause and resume data streams
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
@@ -68,10 +68,13 @@ Here's a detailed table of the nodes that support pause and resume functionality
 
 | Node                                                      | Type          | Supports Pause and Resume | Resume Options                              |
 |-----------------------------------------------------------|---------------|---------------------------|---------------------------------------------|
+| Azure Data Explorer Database (preview)                    | Source        | YES                       | - When streaming was last stopped           |
 | Azure Event Hubs                                          | Source        | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
-| Azure Service Bus                                         | Source        | YES                       | - When streaming was last stopped           |
+| Azure Event Grid Namespace (preview)                      | Source        | NO                        |                                             |
+| Azure Service Bus (preview)                               | Source        | YES                       | - When streaming was last stopped           |
 | Azure IoT Hub                                             | Source        | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
 | Sample Data                                               | Source        | YES                       | - Now                                       |
+| Real-time weather (preview)                               | Source        | YES                       | - When streaming was last stopped           |
 | Azure SQL Database CDC                                    | Source        | YES                       | - When streaming was last stopped           |
 | PostgreSQL Database CDC                                   | Source        | YES                       | - When streaming was last stopped           |
 | MySQL Database CDC                                        | Source        | YES                       | - When streaming was last stopped           |
@@ -81,18 +84,20 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Google Cloud Pub/Sub                                      | Source        | YES                       | - When streaming was last stopped           |
 | Amazon Kinesis Data Streams                               | Source        | YES                       | - When streaming was last stopped           |
 | Confluent Kafka                                           | Source        | YES                       | - When streaming was last stopped           |
-| Apache Kafka                                              | Source        | YES                       | - When streaming was last stopped           |
+| Apache Kafka (preview)                                            | Source        | YES                       | - When streaming was last stopped           |
 | Amazon MSK Kafka                                          | Source        | YES                       | - When streaming was last stopped           |
-| Custom App                                                | Source        | NO                        |                                             |
+| Custom endpoint (i.e., Custom App in standard capability) | Source        | NO                        |                                             |
 | Fabric Workspace events source                            | Source        | NO                        |                                             |
 | Fabric OneLake events                                     | Source        | NO                        |                                             |
 | Fabric Job events                                         | Source        | NO                        |                                             |
 | Azure Blob storage                                        | Source        | NO                        |                                             |
+| MQTT (preview)                                            | Source        | YES                       | - When streaming was last stopped           |
+| Solace PubSub+ (preview)                                  | Source        | YES                       | - When streaming was last stopped           |
 | Lakehouse                                                 | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
-| Eventhouse (Event processing before ingestion)          | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
-| Custom App                                                | Destination   | NO                        |                                             |
-| Eventhouse (Direct Ingestion)                           | Destination   | NO                        |                                             |
-| Fabric Activator                                          | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                          |
+| Eventhouse (Event processing before ingestion)            | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time |
+| Custom endpoint (i.e., Custom App in standard capability) | Destination   | NO                        |                                             |
+| Eventhouse (Direct Ingestion)                             | Destination   | NO                        |                                             |
+| Fabric Activator (preview)                                | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                          |
 | Derived stream                                            | Destination   | NO                        |                                             |
 
 
