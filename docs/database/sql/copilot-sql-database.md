@@ -76,6 +76,8 @@ Here are the current limitations of Microsoft Copilot in Microsoft Fabric in the
 - People who can meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
 - Microsoft Copilot in Microsoft Fabric in the SQL database workload isn't currently available if Private Link is enabled and Public Access is turned off in the tenant setting.
 
+- Copilot side cart is not supported when Private Link is enabled and blocked public access is enabled at the tenant level.
+
 ## Related content
 
 - [How to use the Copilot code completion for Copilot in Fabric in SQL database](copilot-code-completion.md)
