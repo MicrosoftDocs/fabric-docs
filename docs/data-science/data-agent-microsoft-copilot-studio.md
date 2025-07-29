@@ -79,7 +79,11 @@ One of the ways to consume a Fabric data agent is by adding it to a custom AI ag
 
 13. You could use the built-in test chat pane on the right to ask questions and get answers. This helps you to validate the performance of the custom AI agent to ensure it invokes the connected Fabric data agents to get answers and further fine-tune its behavior.
 
-14. You can publish the custom AI agent and then navigate to the **Channels** to select your desired consumption channel.
+14. Ensure that you have enabled generative AI orchestration. To do this, select **Settings** that is located on the top of the chat pane and under **Orchestration**, select the first one.
+
+:::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-orchestrator.png" alt-text="Screenshot showing the agent setting in MCS." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-orchestrator.png":::
+
+15. You can publish the custom AI agent and then navigate to the **Channels** to select your desired consumption channel.
 
 :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-publish.png" alt-text="Screenshot showing to publish custom agent in MCS." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-publish.png":::
 
