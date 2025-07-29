@@ -1,8 +1,8 @@
 ---
 title: Use Azure AI Language with REST API
 description: How to use prebuilt text analytics in Fabric with REST API
-ms.author: larryfr
-author: Blackmist
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
@@ -27,14 +27,10 @@ In this article, you'll learn how to use Azure AI Language services directly in 
 -   Extract key phrases from a text
 -   Identify different entities in text and categorize them into predefined classes or types
 
-## What you'll build
-
-You'll create a Fabric notebook that can process text and extract insights using Azure AI Language services. The tutorial provides working code examples that you can run immediately and customize for your own text analysis needs.
-
 
 ## Prerequisites
 
-[!INCLUDE [prerequisites](includes/prerequisites.md)]
+[!INCLUDE [prerequisites](../includes/prerequisites.md)]
 
 > [!TIP]
 > **New to Fabric?** If you don't have a workspace set up yet:
