@@ -18,8 +18,6 @@ items:
     items:
       - name: Mirror to OneLake
         href: mirror-onelake.md
-  - name: Use the SQL analytics endpoint
-    items:
       - name: Create Power BI reports
         href: how-to-create-reports.md
       - name: Access data from a lakehouse
