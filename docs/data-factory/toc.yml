@@ -98,7 +98,7 @@
       - name: Fabric Dataflows for Mapping Data Flow users
         href: guide-to-dataflows-for-mapping-data-flow-users.md
       - name: How to ingest data from Azure Data Factory to Fabric
-        href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
+        href: /azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory?toc=/fabric/data-factory/toc.json
     - name: Dataflows
       items:    
       - name: Migrate from Dataflow Gen1 to Dataflow Gen2
@@ -120,11 +120,7 @@
       - name: Module 2 - Transform data with a dataflow
         href: tutorial-end-to-end-dataflow.md
       - name: Module 3 - Automate and send notification
-        href: tutorial-end-to-end-integration.md
-    - name: SAP CDC to Fabric OneLake using ADF
-      href: change-data-capture-from-sap-to-onelake-with-azure-data-factory.md
-    - name: How to ingest data from ADF to Fabric
-      href: how-to-ingest-data-into-fabric-from-azure-data-factory.md      
+        href: tutorial-end-to-end-integration.md    
   - name: Connectors
     items:
     - name: Connector overview
@@ -595,12 +591,28 @@
         href: connector-sap-bw-message-server-overview.md
       - name: Set up your connection
         href: connector-sap-bw-message-server.md
+    - name: SAP BW Open Hub Application Server
+      items:
+      - name: SAP BW Open Hub Application Server - Overview
+        href: connector-sap-bw-open-hub-application-server-overview.md
+    - name: SAP BW Open Hub Message Server
+      items:
+      - name: SAP BW Open Hub Message Server - Overview
+        href: connector-sap-bw-open-hub-message-server-overview.md
     - name: SAP HANA database
       items:
       - name: SAP HANA database - Overview
         href: connector-sap-hana-overview.md
       - name: Set up your connection
         href: connector-sap-hana.md
+    - name: SAP Table Application Server
+      items:
+      - name: SAP Table Application Server - Overview
+        href: connector-sap-table-application-server-overview.md
+    - name: SAP Table Message Server
+      items:
+      - name: SAP Table Message Server - Overview
+        href: connector-sap-table-message-server-overview.md      
     - name: ServiceNow
       items:
       - name: ServiceNow - Overview
