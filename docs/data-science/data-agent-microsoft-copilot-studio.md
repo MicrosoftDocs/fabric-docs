@@ -71,7 +71,7 @@ One of the ways to consume a Fabric data agent is by adding it to a custom AI ag
 
 :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-fabric-added.png" alt-text="Screenshot showing the list of Fabric data agents added to Copilot Studio." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-fabric-added.png":::
 
-11. Select the connected Fabric data agent. Under additional details, you can optionally decide the authentication of the Fabric data agent to be the **User authentication** or **Agent author authentication**.
+11. Select the connected Fabric data agent. Under additional details, you can optionally decide the authentication of the Fabric data agent to be the **User authentication** or **Agent author authentication**. If you select **User authentication** as the authentication, you need to ensure that users have access to the Fabric data agent and its underlying data sources.
 
 :::image type="content" source="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-fabric-authentication.png" alt-text="Screenshot showing the authentication for Fabric data agent in MCS." lightbox="./media/data-agent-microsoft-copilot-studio/microsoft-copilot-studio-fabric-authentication.png":::
 
