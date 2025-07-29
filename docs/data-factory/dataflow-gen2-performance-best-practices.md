@@ -5,7 +5,7 @@ author: luitwieler
 ms.author: jeluitwi
 ms.reviewer: dougklo
 ms.topic: concept-article
-ms.date: 07/10/2025
+ms.date: 07/29/2025
 ms.custom: dataflow
 ---
 
@@ -42,6 +42,8 @@ Staging data is a technique used to improve performance by temporarily storing i
 
 :::image type="content" source="media/dataflow-gen2-performance-best-practices/enable-staging.png" alt-text="Screenshot showing how to enable staging in Dataflow Gen2.":::
 
+When you have data that's already staged in the Lakehouse or Warehouse and you apply more transformations that fully fold in following queries, then the dataflow will write the output to the staging Warehouse. This can be faster than writing to the staging Lakehouse because the dataset can be written in parallel by DW and will undergo fewer network hops with their corresponding serialization steps.
+
 ## Scenarios and what optimizations to consider
 
 When working with Dataflow Gen2, it's essential to understand the various scenarios you might encounter and how to optimize performance in each case. The following considerations provide practical guidance on how to apply the best practices to real-world situations. By tailoring your approach based on the specific characteristics of your data and transformations, you can achieve optimal performance in your data integration workflows. Here are some common scenarios you might encounter when working with Dataflow Gen2, along with recommended actions to optimize performance. Be aware that performance optimization is an ongoing process and very specific to your scenario. You might need to adjust your approach based on the specific characteristics of your own data and transformations.
@@ -54,7 +56,7 @@ In this case, consider evaluating the data movement path and optimizing it for b
 
 :::image type="content" source="media/dataflow-gen2-performance-best-practices/settings-fast-copy.png" alt-text="Screenshot of the Options dialog showing the location to enable Fast Copy in Dataflow Gen2.":::
 
-You can enable Fast Copy in the dataflow settings. This setting is by default enabled, but you can also require Fast Copy to be used in your dataflow. This setting ensures that Fast Copy is used for the selected query and that it's optimized for performance. If the Fast Copy can't be used, the dataflow fails if you require Fast Copy. If you don't require Fast Copy, the dataflow still runs, but it doesn't take advantage of the performance benefits of Fast Copy and falls back to the default data movement method.
+You can enable Fast Copy in the dataflow settings. This setting is by default enabled, but you can also require Fast Copy to be used for a specific query in your dataflow. To do this, select the **Require Fast Copy** option in the query settings. This action ensures that Fast Copy is used for the selected query and that it ignores the minimum size threshold for Fast Copy. This setting is particularly useful when you want to ensure that Fast Copy is used for specific queries, regardless of the data size or other conditions. If you require Fast Copy, make sure that the data source is compatible with Fast Copy and that the transformations in the query can be pushed down to the source system. If you require Fast Copy on a query that is not compatible with Fast Copy, the dataflow will fail. If you don't require Fast Copy, the dataflow still runs, but it can fall back to the default data movement method, which might not be as efficient as Fast Copy. This flexibility allows you to optimize your dataflow based on the specific requirements of your data integration processes.
 
 :::image type="content" source="media/dataflow-gen2-performance-best-practices/require-fast-copy.png" alt-text="Screenshot showing the location of the Require Fast Copy option for Dataflow Gen2.":::
 
@@ -96,7 +98,7 @@ In this case, the data movement from the staging Warehouse to the Lakehouse dest
 
 In this scenario, you're working on a dataflow with large datasets, and the design-time experience is slow due to the size of the data previews. This process can make it difficult to author and test your dataflow effectively.
 
-In this case, consider using parameterization to limit the size of data previews. By applying filters based on parameters, such as a date range or specific IDs, you can reduce the amount of data displayed in the design-time environment. This approach helps keep the design environment responsive and efficient, allowing you to focus on authoring and testing your dataflow without being hindered by large data previews. Additionally, you can adjust the parameters during runtime to retrieve the full dataset when needed.
+In this case, consider using either schema view or parameterization to limit the size of data previews. By applying filters based on parameters, such as a date range or specific IDs, you can reduce the amount of data displayed in the design-time environment. This approach helps keep the design environment responsive and efficient, allowing you to focus on authoring and testing your dataflow without being hindered by large data previews. Additionally, you can adjust the parameters during runtime to retrieve the full dataset when needed.
 
 For example, if you're working with a large transactional dataset, you can create a parameter that filters the data based on a specific date range. This way, during design-time, you only see a subset of the data that is relevant to your current work. When you're ready to run the dataflow, you can adjust the parameter to include the full dataset, ensuring that your data integration processes remain efficient and responsive. The following example shows how to set up a parameter in Dataflow Gen2:
 
@@ -116,6 +118,9 @@ For example, if you're working with a large transactional dataset, you can creat
 5. Now you can use the **DesignDateFilter** parameter in your dataflow queries to limit the data preview during design-time. When you're ready to run the dataflow, you can adjust the parameter value to include the full dataset, ensuring that your data integration processes remain efficient and responsive.
 
     :::image type="content" source="media/dataflow-gen2-performance-best-practices/select-parameter-as-value-for-filtering.png" alt-text="Screenshot of the Filter rows dialog with the DesignDateFilter as the parameter used as a filter.":::
+
+Another option is to use the schema view, which allows you to see the structure of your data without loading the entire dataset. This view provides a high-level overview of the data types and columns in your dataset, enabling you to design and test your dataflow without being affected by large data previews. To switch to schema view, select the **Schema view** option in the dataflow editor.
+    :::image type="content" source="media/dataflow-gen2-performance-best-practices/enable-schema-view.png" alt-text="Screenshot of the dataflow editor with the Schema view option emphasized.":::
 
 ### Consideration 5: Dataflow gen2 runtime characteristics compared to Dataflow Gen1
 
