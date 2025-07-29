@@ -31,7 +31,7 @@ First, go to the Fabric portal and create a new Cosmos DB database within your w
 
 1. Select the **Create** option.
 
-    :::image source="media/quickstart-portal/create-option.png" lightbox="media/quickstart-portal/create-option.png" alt-text="Screenshot of the option to 'Create' a new resource in the Fabric portal.":::
+    :::image source="media/quickstart-portal/create-option-full.png" lightbox="media/quickstart-portal/create-option-full.png" alt-text="Screenshot of the option to 'Create' a new resource in the Fabric portal.":::
 
 1. If the option to create an **Cosmos DB** account isn't initially available, select **See all**.
 
