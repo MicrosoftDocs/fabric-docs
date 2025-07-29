@@ -25,11 +25,11 @@ Let's start at the pipeline activity level. To create alerts at the activity lev
 
 Perhaps you'd rather actively monitor the entirety of your pipeline (create, delete, update) or the status of the pipeline run (succeed, fail). That's very easy in Fabric as well. You can follow these steps below:
 
-1. Go to your Fabric Workspace and create a new Activator item
+1. Go to your Fabric Workspace and create a new Activator item.
 
 :::image type="content" source="media/create-alerts/data-activator-tile.png" alt-text="Screenshot showing an activator item.":::
 
-1. Once the Activator item is ready, choose the Get Data tile
+1. Once the Activator item is ready, choose the Get Data tile.
 
 :::image type="content" source="media/create-alerts/data-activator-get-data.png" alt-text="Screenshot showing an activator get data tile."::: 
 
@@ -37,11 +37,11 @@ Perhaps you'd rather actively monitor the entirety of your pipeline (create, del
 
 :::image type="content" source="media/create-alerts/data-activator-job-events.png" alt-text="Screenshot showing an activator job event.":::
 
-1. Now you can pick which pipeline you wish to actively monitor and which event you are interested in
+1. Now you can pick which pipeline you wish to actively monitor and which event you're interested in.
 
 :::image type="content" source="media/create-alerts/data-activator-pipeline.png" alt-text="Screenshot showing an activator pipeline selected.":::
 
-1. Next step is to select the action you'd like to take such as sending an email or Teams notification upon pipeline events
+1. Next step is to select the action you'd like to take such as sending an email or Teams notification upon pipeline events.
 
 :::image type="content" source="media/create-alerts/data-activator-rule.png" alt-text="Screenshot showing an activator job rule.":::
 
