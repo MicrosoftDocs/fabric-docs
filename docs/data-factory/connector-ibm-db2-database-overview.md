@@ -14,17 +14,14 @@ ms.custom:
 
 The IBM Db2 database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|On-premises |Basic<br> Windows |
+| **Data pipeline**<br>- Copy activity (source/-) <br>- Lookup activity    |On-premises |Basic |
+| **Copy job** (source/-) <br>- Full load | On-premises |Basic |
 
-For information on how to connect to an IBM Db2 database in Dataflow Gen2, go to [Set up your IBM Db2 database connection](connector-ibm-db2-database.md).
+## Related content
 
-
-## Support in data pipelines
-
-The IBM Db2 database connector supports the following capabilities in data pipelines:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/-)** | On-premises | Basic |
-| **Lookup activity** | On-premises | Basic |
+For information on how to connect to an IBM Db2 database, go to [Set up your IBM Db2 database connection](connector-ibm-db2-database.md).
