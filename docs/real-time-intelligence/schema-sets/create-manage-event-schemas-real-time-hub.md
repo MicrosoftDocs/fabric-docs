@@ -14,7 +14,7 @@ In this article, you lean how to register or add a schema in Fabric Real-Time hu
 
 ## Navigate to Real-Time hub
 
-[!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
+[!INCLUDE [navigate-to-real-time-hub](../../real-time-hub/includes/navigate-to-real-time-hub.md)]
 
 ## Event schema registry page
 
@@ -33,7 +33,7 @@ This page mainly has the list of schemas with the following columns.
 
 It also has a search box at the top where you can enter text to search for your schema.  
 
-Using the filter drop-down lists, you can filter schemas by item owner, item name, or Fabric workspace. 
+Using the filter drop-down lists, you can filter schemas by schema set owner , schema set name, or Fabric workspace. 
 
 Now, let's see how to add an event schema using the **+ New event schema** button. 
 
@@ -44,7 +44,7 @@ Now, let's see how to add an event schema using the **+ New event schema** butto
     1. Specify a **name** for the event schema set. 
     1. Optionally, enter a description for the event schema set. 
 1. Use one of the following options to create a schema. 
-    - If you have a schema JSON file, select **Upload** to upload the file. For a sample file, see the [Sample schema file](#download-an-event-schema) section. 
+    - If you have a schema JSON file, select **Upload** to upload the file. For a sample file, see the [Sample schema file](create-manage-event-schemas.md#download-an-event-schema) section. 
 
         :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/upload-button.png" alt-text="Screenshot that shows the upload option to create a schema." lightbox="./media/create-manage-event-schemas-real-time-hub/upload-button.png" :::
     - Start building a schema manually by selecting **Add row**. For each row, select the **field type**, **field name**, and optionally enter a **description**. 
@@ -82,6 +82,15 @@ Now, let's see how to add an event schema using the **+ New event schema** butto
     To add more schemas to the schema set, select **+ New event schema** at the top of the page.
     
 
+## View or endorse schema set
+
+Hover the mouse over a schema in the list, and select **... (ellipsis)**. You see two actions: **Open event schema set** and **Endorse**. 
+
+:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/schema-actions.png" alt-text="Screenshot that shows the actions available on the schema." lightbox="./media/create-manage-event-schemas-real-time-hub/schema-actions.png":::        
+
+If you select **Open event schema set**, you see the event schema opened in the schema set user interface where you can also add schemas, update schemas, or delete schemas. For more information, see [Create and manage event schemas in schema sets](create-manage-event-schemas.md). 
+
+If you select **Endorse**, you see a window that lets you set the endorsement level for the schema. Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. It can be difficult to identify trustworthy and authoritative items. Endorsement is a way to make it easier for users to find the high-quality items they need. For more information, see [Endorsement in Fabric](../fundamentals/endorsement-promote-certify.md).
 
 ## Related content
 
