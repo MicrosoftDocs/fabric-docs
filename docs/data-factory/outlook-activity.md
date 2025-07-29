@@ -25,9 +25,12 @@ To get started, you must complete the following prerequisites:
 
 ## Add an Office 365 Outlook activity to a pipeline with UI
 
-To use an Office 365 Outlook activity in a pipeline, complete the following steps:
+>[!TIP]
+>If you're using outlook activities to nofity for failure, use a new outlook activity for each activity you want to monitor.
+>
+>If you attach more than one activity to the outlook activity, all connected statuses must be met to trigger the activity. For example, if you have two copy activities, both connected to an outlook activity 'on failure', both activities must fail to trigger the outlook activity. If only one fails, the outlook activity will not be triggered.
 
-### Creating the activity
+To use an Office 365 Outlook activity in a pipeline, complete the following steps:
 
 1. Create a new pipeline in your workspace.
 1. Search for Office 365 Outlook in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. It might be necessary to expand the activities list on the far right side of the pane, or the Outlook icon can be compressed without labeling text beneath it, as shown in this image, depending on the window width of your browser.
@@ -51,10 +54,6 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 1. Once connected, you can choose to provide details for the email, including its recipients, subject, body. You can also include **Advanced** details such as a custom from address, CC and BCC recipients, sensitivity, and a custom reply-to address. All of the fields support [dynamic expressions](expression-language.md).
 
    :::image type="content" source="media/outlook-activity/email-settings.png" alt-text="Screenshot showing the Office 365 Outlook activity Settings tab, after signing in, with the Post in options dropdown expanded to show its available options.":::
-
->[!TIP]
->If you're using outlook activities to nofity for failure, use a new outlook activity for each activity you want to monitor.
->If you attach more than one activity to the outlook activity, all connected statuses must be met to trigger the activity. For example, if you have two copy activities, both connected to an outlook activity 'on failure', both activities must fail to trigger the outlook activity. If only one fails, the outlook activity will not be triggered.
 
 ## Save and run or schedule the pipeline
 
