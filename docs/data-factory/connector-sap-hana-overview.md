@@ -14,16 +14,14 @@ ms.custom:
 
 The SAP HANA database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|On-premises |Basic<br> Windows |
+| **Data pipeline**<br>- Copy activity (source/-) <br>- Lookup activity    |On-premises |Basic<br> Windows |
+| **Copy job** (source/-) <br>- Full load |On-premises |Basic<br> Windows |
 
-For information on how to connect to an SAP HANA database in Dataflow Gen2, go to [Set up your SAP HANA database connection](connector-sap-hana.md).
+## Related content
 
-## Support in data pipelines
-
-The SAP HANA database connector supports the following capabilities in data pipelines:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/-)** | On-premises | Basic<br> Windows |
-| **Lookup activity** | On-premises | Basic<br>Windows |
+For information on how to connect to an SAP HANA, go to [Set up your SAP HANA database connection](connector-sap-hana.md).
