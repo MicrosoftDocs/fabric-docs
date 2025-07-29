@@ -356,9 +356,10 @@ Microsoft Fabric Variable libraries enable developers to customize and share ite
      1. Connect your workspace to Git repo as described in [here](../cicd/git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo).
      2. Make sure to keep the WS and the repo synched with [Commit](../cicd/git-integration/git-get-started.md#commit-changes-to-git) and [Update](../cicd/git-integration/git-get-started.md#update-workspace-from-git).
      3. Recovery - In case of disaster, use the repository to rebuild the Variable library in a new workspace:
-     - In the newly created workspace, connect and sync to your Azure ADO repo again.
-     - All Fabric items in this repository are automatically downloaded to your new Workspace.
-     - After syncing your items from Git, open your Variable Libraries in the new workspace and manually select the desired [active value set](../cicd/variable-library/get-started-variable-libraries.md#add-a-value-set).
+
+ - In the newly created workspace, connect and sync to your Azure ADO repo again.
+ - All Fabric items in this repository are automatically downloaded to your new Workspace.
+ - After syncing your items from Git, open your Variable Libraries in the new workspace and manually select the desired [active value set](../cicd/variable-library/get-started-variable-libraries.md#add-a-value-set).
 
 ## Related information
 
