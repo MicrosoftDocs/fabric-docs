@@ -3,7 +3,7 @@ title: Mapping data to entity types
 description: Understand the mapping feature in digital twin builder (preview).
 author: baanders
 ms.author: baanders
-ms.date: 04/25/2025
+ms.date: 07/28/2025
 ms.topic: concept-article
 ---
 
@@ -68,6 +68,9 @@ Mapping allows you to add an entity type to your digital twin builder (preview) 
     > Entity type names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
 
 1. Map and model data for this entity type. In this step, you define how data maps from a Fabric lakehouse to properties on the instances of this entity type. If you're creating an entity type for the first time, the columns mapped from your source table become modeled properties on your entity instances after a mapping is saved or run. If your entity type already has properties, you can hydrate the entity instances with data from a source table.
+
+    >[!NOTE]
+    > Decimal type precision in the source data isn't perfectly conserved when the data's imported into digital twin builder.
 
 1. (Optional) Define time series properties in the entity type, and link time series data to the entity instances. If you have time series data to link to your entity instances, you can directly map that time series data to the entity instance and digital twin builder contextualizes it with the rest of the entity instance's data. Your time series data is modeled as time series properties on your entity type.
 
