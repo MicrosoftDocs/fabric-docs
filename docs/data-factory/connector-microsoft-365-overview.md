@@ -18,7 +18,7 @@ The Microsoft 365 connector is supported in Data Factory for [!INCLUDE [product-
 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
-| **Data pipeline**<br>- [Copy activity](connector-microsoft-365-copy-activity.md) (source/-)      |On-premises<br> Virtual network |Service principal |
+| **Data pipeline**<br>- [Copy activity](connector-microsoft-365-copy-activity.md) (source/-)      |None<br> Virtual network |Service principal |
 
 ## Related content
 
