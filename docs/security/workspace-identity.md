@@ -12,7 +12,7 @@ ms.date: 08/28/2024
 
 A Fabric workspace identity is an automatically managed service principal that can be associated with a Fabric workspace. Fabric workspaces with a workspace identity can securely read or write to firewall-enabled Azure Data Lake Storage Gen2 accounts through [trusted workspace access](../security/security-trusted-workspace-access.md) for OneLake shortcuts. Fabric items can use the identity when connecting to resources that support Microsoft Entra authentication. Fabric uses workspace identities to obtain Microsoft Entra tokens without the customer having to manage any credentials.
 
-Workspace identities can be created in the workspace settings of any workspace except My workspaces. A workspace identity is automatically assigned the workspace contributor role and has access to workspace items.
+Workspace identities can be created in the workspace settings of any workspace except My workspaces.
 
 When you create a workspace identity, Fabric creates a service principal in Microsoft Entra ID to represent the identity. An accompanying app registration is also created. Fabric automatically manages the credentials associated with workspace identities, thereby preventing credential leaks and downtime due to improper credential handling.
 
@@ -40,7 +40,7 @@ The sections of the workspace identity configuration are described in the follow
 |:-------|:-----|
 | **Name** | Workspace identity name. The workspace identity name is the same as the workspace name.|
 | **ID** | The workspace identity GUID. This is a unique identifier for the identity. |
-| **Role** | The workspace role assigned to the identity. Workspace identities are automatically assigned the contributor role upon creation. |
+| **Role** | The workspace role assigned to the identity. |
 | **State** | The state of the workspace. Possible values: *Active*, *Inactive*, *Deleting*, *Unusable*, *Failed*, *DeleteFailed* |
 
 ### Authorized users
@@ -68,7 +68,7 @@ The following sections describe who can use the workspace identity, and how you 
 
 ### Access control
 
-Workspace identity can be [created and deleted by workspace admins](#create-and-manage-a-workspace-identity). The workspace identity has the workspace contributor role on the workspace.
+Workspace identity can be [created and deleted by workspace admins](#create-and-manage-a-workspace-identity). By default, the workspace identity is not granted any workspace role.
 
 > [!WARNING]
 > Workspace identity is an automatically managed service principal created by Fabric users. Access to this identity should be carefully managed and monitored, as any individual given access to the identity is allowed to assume it.
