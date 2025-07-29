@@ -5,7 +5,7 @@ author: luitwieler
 ms.author: jeluitwi
 ms.reviewer: dougklo
 ms.topic: concept-article
-ms.date: 07/10/2025
+ms.date: 07/29/2025
 ms.custom: dataflow
 ---
 
@@ -96,7 +96,7 @@ In this case, the data movement from the staging Warehouse to the Lakehouse dest
 
 In this scenario, you're working on a dataflow with large datasets, and the design-time experience is slow due to the size of the data previews. This process can make it difficult to author and test your dataflow effectively.
 
-In this case, consider using parameterization to limit the size of data previews. By applying filters based on parameters, such as a date range or specific IDs, you can reduce the amount of data displayed in the design-time environment. This approach helps keep the design environment responsive and efficient, allowing you to focus on authoring and testing your dataflow without being hindered by large data previews. Additionally, you can adjust the parameters during runtime to retrieve the full dataset when needed.
+In this case, consider using either schema view or parameterization to limit the size of data previews. By applying filters based on parameters, such as a date range or specific IDs, you can reduce the amount of data displayed in the design-time environment. This approach helps keep the design environment responsive and efficient, allowing you to focus on authoring and testing your dataflow without being hindered by large data previews. Additionally, you can adjust the parameters during runtime to retrieve the full dataset when needed.
 
 For example, if you're working with a large transactional dataset, you can create a parameter that filters the data based on a specific date range. This way, during design-time, you only see a subset of the data that is relevant to your current work. When you're ready to run the dataflow, you can adjust the parameter to include the full dataset, ensuring that your data integration processes remain efficient and responsive. The following example shows how to set up a parameter in Dataflow Gen2:
 
@@ -116,6 +116,9 @@ For example, if you're working with a large transactional dataset, you can creat
 5. Now you can use the **DesignDateFilter** parameter in your dataflow queries to limit the data preview during design-time. When you're ready to run the dataflow, you can adjust the parameter value to include the full dataset, ensuring that your data integration processes remain efficient and responsive.
 
     :::image type="content" source="media/dataflow-gen2-performance-best-practices/select-parameter-as-value-for-filtering.png" alt-text="Screenshot of the Filter rows dialog with the DesignDateFilter as the parameter used as a filter.":::
+
+Another option is to use the schema view, which allows you to see the structure of your data without loading the entire dataset. This view provides a high-level overview of the data types and columns in your dataset, enabling you to design and test your dataflow without being affected by large data previews. To switch to schema view, select the **Schema view** option in the dataflow editor.
+    :::image type="content" source="media/dataflow-gen2-performance-best-practices/enable-schema-view.png" alt-text="Screenshot of the dataflow editor with the Schema view option emphasized.":::
 
 ### Consideration 5: Dataflow gen2 runtime characteristics compared to Dataflow Gen1
 
