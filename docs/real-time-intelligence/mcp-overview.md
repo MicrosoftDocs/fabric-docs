@@ -13,9 +13,9 @@ ms.search.form: MCP, RTI, AI
 
 # What is the Fabric RTI MCP Server (preview)?
 
-Integrating Model Context Protocol (MCP) with Real-Time Intelligence (RTI) lets you get AI-driven insights and actions in real time. The MCP server lets AI agents or AI applications interact with Fabric RTI by providing tools through the MCP interface, so you can query and analyze data easily.
+Integrating Model Context Protocol (MCP) with Real-Time Intelligence (RTI) lets you get AI-driven insights and actions in real time. The MCP server lets AI agents or AI applications interact with Fabric RTI or Azure Data Explorer (ADX) by providing tools through the MCP interface, so you can query and analyze data easily.
 
-MCP support for RTI is a full open-source [MCP server](https://github.com/microsoft/fabric-rti-mcp/) implementation for Microsoft Fabric Real-Time Intelligence (RTI).
+MCP support for RTI and ADX is a full open-source [MCP server](https://github.com/microsoft/fabric-rti-mcp/) implementation for Microsoft Fabric Real-Time Intelligence (RTI).
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -25,7 +25,7 @@ MCP support for RTI is a full open-source [MCP server](https://github.com/micros
 
 ## Scenarios
 
-The most common scenario for using the RTI MCP Server is to connect to it from an existing AI client, such as Cline, Claude, and Github copilot. The client can then use all the available tools to access and interact with RTI resources using natural language. For example, you could use GitHub Copilot agent mode with the RTI MCP Server to list KQL databases or run natural language queries on RTI Eventhouses.
+The most common scenario for using the RTI MCP Server is to connect to it from an existing AI client, such as Cline, Claude, and Github copilot. The client can then use all the available tools to access and interact with RTI or ADX resources using natural language. For example, you could use GitHub Copilot agent mode with the RTI MCP Server to list KQL databases or ADX clusters or run natural language queries on RTI Eventhouses.
 
 ## Architecture
 
@@ -57,7 +57,7 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 
 > [!NOTE]
 >
-> You can also use the Fabric RTI MCP Server to run KQL queries against the clusters in your [Azure Data Explorer](/azure/data-explorer.md) backend.
+> You can also use the Fabric RTI MCP Server to run KQL queries against the clusters in your [Azure Data Explorer](/azure/data-explorer/) backend.
 
 Support for more RTI components for comprehensive analytics is **coming soon**, including:
 
@@ -67,6 +67,7 @@ Support for more RTI components for comprehensive analytics is **coming soon**, 
 
 ## Related content
 
-* [Use MCP with Fabric RTI Eventhouse](mcp-eventhouse.md)
+* [Use MCP with Fabric RTI Eventhouse (preview)](mcp-eventhouse.md)
+* [Use MCP Servers with Azure Data Explorer (preview)](/azure/data-explorer/integrate-mcp-servers)
 * [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/)
 * [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
