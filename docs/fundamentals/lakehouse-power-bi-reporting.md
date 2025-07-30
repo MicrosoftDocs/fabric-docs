@@ -10,17 +10,19 @@ ms.date: 04/24/2024
 ms.search.form: Direct Lake Power BI Reporting
 ---
 
-# How Direct Lake mode works with Power BI reporting
+# Building reports
 
-Semantic models with Direct Lake tables can be used like any other Power BI semantic model. You can create Power BI reports, Power BI explorations, or run any Data Analysis eXpression (DAX) query. 
+Semantic models with Direct Lake tables can be used like any other Power BI semantic model. You can create Power BI reports, Power BI explorations, and run any Data Analysis eXpression (DAX) query. 
 
-When a Power BI report shows data in visuals, it requests it from the semantic model. With Direct Lake mode, the semantic model accesses the OneLake delta table to consume data and return it to the Power BI report. For efficiency, the semantic model can keep some recently accessed data in the cache. With Direct Lake on SQL, when the semantic model can't use Direct Lake it can fall back to DirectQuery and access the data via the SQL analytics endpoint. This behavior is controlled by the **Direct Lake behavior** property.
+When a Power BI report shows data in visuals, it requests it from the semantic model. With Direct Lake mode, the semantic model accesses the OneLake delta table to consume data and return it to the Power BI report. For efficiency, the semantic model can keep some recently accessed data in the cache. 
+
+With Direct Lake on SQL, when the semantic model can't use Direct Lake it can fall back to DirectQuery and access the data via the SQL analytics endpoint. This behavior is controlled by the **Direct Lake behavior** property.
 
 ## Creating a report
-Creating a report from a Power BI semantic model in the workspace is easy. The report is live connected to a semantic model. In a live connection the report can be created and edited without editing the semantic model itself. You need at least Build permission on the semantic model. 
+Creating a report from a Power BI semantic model is easy. The report live connects to the semantic model. In a live connection the report can be created and edited without editing the semantic model itself. You need at least Build permission on the semantic model to live connect. 
 
 ### Power BI Desktop
-Power BI Desktop can live connect to any semantic model in the Power BI service to create a report only. 
+Power BI Desktop can live connect to any semantic model in the Power BI service to create a report. 
 
 > [!NOTE]
 > Live connect is different from live editing a semantic model in Power BI Desktop. Live connect is also different than having a local semantic model with import or DirectQuery tables and report together. 
@@ -63,7 +65,7 @@ The semantic model can use single sign-on (SSO) or a fixed identity to access On
 
 Viewer role or higher can be granted via [workspace roles](/fabric/fundamentals/roles-workspaces) or individually to any Fabric item, semantic model, or report.
 
-Also, with fixed identity, row-level security defined in the semantic model to limit the data the report consumer sees while maintaining Direct Lake mode. 
+Also, with fixed identity, row-level security defined in the semantic model can limit the data the report consumer sees while maintaining Direct Lake mode. 
 
 ### Consumption scenarios
 With all these options it may be hard to know what to do. Here are some common scenarios. 
