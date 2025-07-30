@@ -30,14 +30,11 @@ In this article, you'll learn how to use Azure AI Language services directly in 
 
 ## Prerequisites
 
-[!INCLUDE [prerequisites](../includes/prerequisites.md)]
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-> [!TIP]
-> **New to Fabric?** If you don't have a workspace set up yet:
-> 1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com)
-> 2. Create a new workspace or use an existing one
-> 3. In your workspace, select **+ New** > **Notebook** to create a new notebook
-> 4. Make sure the **Data Science** experience is selected in the workspace settings
+* Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
+* Obtain an Azure AI services key by following [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).  Copy the value of the key to use in the code samples below.
 
 The code samples in this tutorial use libraries that are pre-installed in Microsoft Fabric notebooks:
 
