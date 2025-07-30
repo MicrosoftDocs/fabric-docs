@@ -84,7 +84,7 @@ FROM OPENROWSET(BULK 'https://onelake.dfs.fabric.microsoft.com/<workspaceId>/<la
 Replace `<workspaceId>` and `<lakehouseId>` with the workspace and lakehouse GUIDs that you can find in the Fabric workspace URI. Make sure that you are referencing the files in the /Files section of a lakehouse.
 
 > [!IMPORTANT]
-> Reading files from Fabric OneLake storage using the OPENROWSET function is currently in [preview](/fabric/fundamentals/preview).
+> Reading files from Fabric OneLake storage using the OPENROWSET function is currently in [preview](/fabric/fundamentals/preview). See the [limitations](/sql/t-sql/statements/copy-into-transact-sql.md#limitations-for-onelake-as-source) that are applicable both to `COPY INTO` and `OPENROWSET(BULK)`.
 
 <a id="reading-custom-text-files"></a>
 
