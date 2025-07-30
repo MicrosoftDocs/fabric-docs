@@ -19,7 +19,7 @@ When a Power BI report shows data in visuals, it requests it from the semantic m
 With Direct Lake on SQL, when the semantic model can't use Direct Lake it can fall back to DirectQuery and access the data via the SQL analytics endpoint. This behavior is controlled by the **Direct Lake behavior** property.
 
 ## Creating a report
-Creating a report from a Power BI semantic model is easy. The report live connects to the semantic model. In a live connection the report can be created and edited without editing the semantic model itself. You need at least Build permission on the semantic model to live connect. 
+Creating a report from a Power BI semantic model is easy. The report live connects to the semantic model. In a live connection, the report can be created and edited without editing the semantic model itself. You need at least Build permission on the semantic model to live connect. 
 
 ### Power BI Desktop
 Power BI Desktop can live connect to any semantic model in the Power BI service to create a report. 
@@ -32,12 +32,12 @@ Power BI Desktop can live connect to any semantic model in the Power BI service 
 3. Select **Power BI semantic models**
 4. Select the semantic model with the Direct Lake tables and then **Connect**
 
-You are now live connected to the semantic model and start creating the report. Learn more about Power BI reports at the [Power BI reporting documenation](/power-bi/create-reports/). Save the PBIX file locally and publish to any workspace when ready to see it online and share with others.
+You are now live connected to the semantic model and start creating the report. Learn more about Power BI reports at the [Power BI reporting documentation](/power-bi/create-reports/). Save the file locally and publish to any workspace when ready to see it online and share with others.
 
 In Power BI Desktop, report measures can be created in a live connected report to add a calculation without adding measures to the semantic model itself.
 
 ### Power BI service or Fabric portal
-Create a report actions in the web live connect to any semantic model in the Power BI service to create a report only. There are many paths.
+The Power BI service or Fabric portal has many paths to create a report with a live connection to a semantic model. Here are a few of the paths to create a report.
 
 - Use the context menu (...) of a semantic model in a workspace choose **Create report**
 - From **Home** choose **New report**, then **Pick a published semantic model** and select the semantic model with Direct lake tables
@@ -63,42 +63,42 @@ The semantic model in Direct Lake mode is consuming data from the OneLake on dem
 
 The semantic model can use single sign-on (SSO) or a fixed identity to access OneLake data of a Fabric item. With SSO, the report consumers need access to the data in the Fabric item. With a fixed identity, report consumers need viewer role or higher on the semantic model and report, or access granted to the report via an [app](/power-bi/collaborate-share/service-create-distribute-apps).
 
-Viewer role or higher can be granted via [workspace roles](/fabric/fundamentals/roles-workspaces) or individually to any Fabric item, semantic model, or report.
+_Viewer_ role or higher can be granted via [workspace roles](/fabric/fundamentals/roles-workspaces) or individually to any Fabric item, semantic model, or report.
 
 Also, with fixed identity, row-level security defined in the semantic model can limit the data the report consumer sees while maintaining Direct Lake mode. 
 
 ### Consumption scenarios
-With all these options it may be hard to know what to do. Here are some common scenarios. 
+Here are some common scenarios to demonstrate how to use these different permission options.
 
-#### Permission to view report only
+#### Permissions to view report only
 Use a fixed identity to the Fabric item on the semantic model, and publish the report.
 
 - **App option:** Publish an app from the workspace with the report. Only give report consumers permission in the app.
 
-- **Item option**: Grant report consumers viewer role on both the report and semantic model individually.
+- **Item option**: Grant report consumers _viewer_ role on both the report and semantic model individually.
 
-- **Workspace option:** Publish the report and semantic model to their own workspace, seperate from the soruce Fabric item, and grant report consumers viewer role on the workspace. This gives them viewer permission to all new items added to that workspace.
+- **Workspace option:** Publish the report and semantic model to their own workspace, separate from the source Fabric item, and grant report consumers _viewer_ role on the workspace. Workspace roles apply to all items in the workspace, including new items are added later.
 
-#### Permission to view report and create their own reports only
+#### Permissions to view report and create their own reports only
 Use a fixed identity to the Fabric item on the semantic model, and publish the report.
 
-- **App option:** Publish an app from the workspace with the report. Give report consumers permission in the app, with the advanced option to include build permission to creat their own reports.
+- **App option:** Publish an app from the workspace with the report. Give report consumers permission in the app, with the advanced option to include _build_ permission to create their own reports.
 
-- **Item option**: Grant report consumers viewer role on both the report and semantic model individually. Include build access on the semantic model.
+- **Item option**: Grant report consumers _viewer_ role on both the report and semantic model individually. Include _build_ access on the semantic model.
 
-- **Workspace option:** Publish the report and semantic model to their own workspace, separate from the soruce Fabric item, and grant report consumers viewer role on the workspace. This gives them viewer permission to all new items added to that workspace. Include build access on the semantic model.
+- **Workspace option:** Publish the report and semantic model to their own workspace, separate from the soruce Fabric item, and grant report consumers _viewer_ role on the workspace. Workspace roles apply to all items in the workspace, including new items are added later. Include _build_ access on the semantic model.
 
-#### Permission to view report, create their own reports, use the SQL analytics endpoint, and access the delta tables directly
+#### Permissions to view report, create their own reports, use the SQL analytics endpoint, and access the delta tables directly
 Use SSO to the Fabric item on the semantic model, and publish the report.
 
-- **App option:** Publish an app from the workspace with the report. Give report consumers permission in the app, with the advanced option to include build permission to creat their own reports. In addition, make sure the users have ReadAll permission on the Fabric item.
+- **App option:** Publish an app from the workspace with the report. Give report consumers permission in the app, with the advanced option to include _build_ permission to creat their own reports. In addition, make sure the users have _ReadAll_ permission on the Fabric item.
 
-- **Item option**: Grant report consumers viewer role on both the report and semantic model individually. Include build access on the semantic model. In addition, make sure the users have ReadAll permission on the Fabric item.
+- **Item option**: Grant report consumers _viewer_ role on both the report and semantic model individually. Include _build_ access on the semantic model. In addition, make sure the users have _ReadAll_ permission on the Fabric item.
 
-- **Workspace option:** Publish the report and semantic model to the workspace with the source Fabric item, and grant report consumers viewer role on the workspace. This gives them viewer permission to all new items added to that workspace. Include build access on the semantic model and ReadAll access on the Fabric item.
+- **Workspace option:** Publish the report and semantic model to the workspace with the source Fabric item, and grant report consumers _viewer_ role on the workspace. Workspace roles apply to all items in the workspace, including new items are added later. Include _build_ access on the semantic model and ReadAll access on the Fabric item.
 
-#### Permission to view and edit the report, semantic model, and Fabric items in the workspace
-Use SSO to the Fabric item on the semantic model, and publish the report. Grant the users any [workspace roles](/fabric/fundamentals/roles-workspaces) higher than viewer. 
+#### Permissions to view and edit the report, semantic model, and Fabric items in the workspace
+Use SSO to the Fabric item on the semantic model, and publish the report. Grant the users any [workspace roles](/fabric/fundamentals/roles-workspaces) higher than _viewer_. 
 
 ## Related content
 
