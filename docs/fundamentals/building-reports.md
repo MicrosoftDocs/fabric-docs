@@ -86,7 +86,7 @@ Use a fixed identity to the Fabric item on the semantic model, and publish the r
 
 - **Item option**: Grant report consumers _viewer_ role on both the report and semantic model individually. Include _build_ access on the semantic model.
 
-- **Workspace option:** Publish the report and semantic model to their own workspace, separate from the soruce Fabric item, and grant report consumers _viewer_ role on the workspace. Workspace roles apply to all items in the workspace, including new items are added later. Include _build_ access on the semantic model.
+- **Workspace option:** Publish the report and semantic model to their own workspace, separate from the source Fabric item, and grant report consumers _viewer_ role on the workspace. Workspace roles apply to all items in the workspace, including new items are added later. Include _build_ access on the semantic model.
 
 #### Permissions to view report, create their own reports, use the SQL analytics endpoint, and access the delta tables directly
 Use SSO to the Fabric item on the semantic model, and publish the report.
