@@ -45,7 +45,7 @@ items:
       href: metrics-app.md
     - name: Install the Microsoft Fabric Capacity Metrics app
       href: metrics-app-install.md
-    - name: Understand the Microsoft Fabric Capacity Metrics app health page
+    - name: Understand the Microsoft Fabric Capacity Metrics app health page (preview)
       href: metrics-app-health-page.md
     - name: Understand the Microsoft Fabric Capacity Metrics app compute page
       href: metrics-app-compute-page.md
