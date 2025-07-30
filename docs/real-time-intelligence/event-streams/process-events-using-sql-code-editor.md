@@ -11,8 +11,12 @@ ms.search.form: Event Processor
 ---
 
 # Process events using SQL code editor (preview) 
-SQL code editor aka SQL operator (preview) is a new data transformation capability within Fabric Eventstream. SQL operators provide code editing experience where you can easily define your own custom data transformation logic using simple SQL expressions. This article describes how to use SQL code editor for data transformations in Eventstream.  
+SQL code editor aka SQL operator (preview) is a new data transformation capability within Fabric Eventstream. SQL operators provide code editing experience where you can easily define your own custom data transformation logic using simple SQL expressions. This article describes how to use SQL code editor for data transformations in Eventstream.
 
+> [!NOTE]
+> Eventstream artifact names that include underscores (_) or dot (.) are not compatible with the SQL operator.
+> For the best experience, please create a new Eventstream without using underscores or dots in the artifact name.
+ 
 ## Prerequisites 
 Before you start, you must complete the following prerequisites: 
 
@@ -113,8 +117,11 @@ To perform stream processing operations on your data streams using SQL operator,
 
     :::image type="content" source="./media/process-events-using-sql-code-editor/complete.png" alt-text="Screenshot that shows the completed eventstream." lightbox="./media/process-events-using-sql-code-editor/complete.png":::        
 ## Limitations
-The SQL operator is designed to centralize all your transformation logic in one place.
+1. The SQL operator is designed to centralize all your transformation logic in one place.
 As a result, it cannot be used alongside other built-in operators within the same processing path. Chaining multiple SQL operators in a single path is also not supported. Additionally, the SQL operator can only output data to the destination node in the topology.
+
+2. Currently, authoring Eventstream topologies is only supported through the user interface (UX).
+REST API support for the SQL operator is planned and will be available in upcoming releases.
 ## Related content
 
 - [Add and manage destinations in an eventstream](./add-manage-eventstream-destinations.md).
