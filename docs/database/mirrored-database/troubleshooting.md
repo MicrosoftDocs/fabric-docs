@@ -4,7 +4,7 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 07/22/2025
+ms.date: 07/30/2025
 ms.topic: troubleshooting
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -118,7 +118,7 @@ Currently, views are not supported. Only replicating regular tables are supporte
 
 #### Some of the data in my column appears to be truncated
 
-The SQL analytics endpoint doesn't support **VARCHAR(max)** it only currently supports **VARCHAR(8000)**. A workaround is to use [data warehouse](/fabric/data-warehouse/data-warehousing"https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehousing#fabric-data-warehouse") that supports VARCHAR(MAX) up to 1MB. You can copy the data from the tables mirrored in OneLake into the warehouse by creating a [copy job](/fabric/data-factory/create-copy-job"https://learn.microsoft.com/en-us/fabric/data-factory/create-copy-job") or using the T-SQL [COPY INTO](/fabric/data-warehouse/ingest-data-copy"https://learn.microsoft.com/en-us/fabric/data-warehouse/ingest-data-copy") statement in a notebook scheduled to run periodically.
+The SQL analytics endpoint doesn't support **VARCHAR(max)** it only currently supports **VARCHAR(8000)**. A workaround is to use a [warehouse](../../data-warehouse/data-warehousing.md#fabric-data-warehouse), which supports **varchar(max)** up to 1MB. You can copy the data from the tables mirrored in OneLake into the warehouse by creating a [copy job](../../data-factory/create-copy-job.md) or using the T-SQL [COPY INTO](../../data-warehouse/ingest-data-copy) statement in a notebook scheduled to run periodically.
 
 #### I can't change the source database
 
