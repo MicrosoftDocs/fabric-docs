@@ -16,11 +16,11 @@ Power BI Desktop can create and edit Power BI semantic models with Direct Lake t
 
 **Version history** is available and automatically creates a version each time you start a live editing session, so you undo an accidental change. **Git integration** is also available for semantic models, giving you full control over changes. And **deployment pipelines** can also be used to only live edit a semantic model in a development workspace before pushing to a production workspace.
 
-In a semantic model with import tables, the data is downloaded and locally available on your computer. In a semantic model with Direct Lake tables, the data remains in the OneLake. When visuals use data, the semantic model provides the data from where it is stored. 
+In a semantic model with import tables, the data is downloaded and locally available on your computer. In a semantic model with Direct Lake tables, the data remains in the OneLake. When visuals use data, the semantic model provides the data from where it is stored. Learn more about [Direct Lake query performance](/fabric/fundamentals/direct-lake-understand-storage).
 
-Metadata for the semantic model that is the information about the tables columns, measures, relationships, and all other semantic modeling features, can be downloaded, with the data, as a **PBIX file** for semantic models not using Direct Lake tables. Metadata for the semantic model when you include Direct Lake tables can also be downloaded, without the data, using the **Power BI Project (PBIP)** format.
+Metadata for the semantic model that is the information about the tables columns, measures, relationships, and all other semantic modeling features, can be downloaded, with the data, as a **PBIX file** for semantic models not using Direct Lake tables. Metadata for the semantic model when you include Direct Lake tables can also be downloaded, without the data, using the **Power BI Project (PBIP)** format. Learn more about [Direct Lake with PBIP](/fabric/fundamentals/direct-lake-power-bi-project)
 
-Power BI reports can be created from all semantic models from Power BI Desktop with a live connection by choosing a **Power BI semantic model** from the **OneLake catalog** and selecting **Connect**. Reports can also be created in the Fabric workspace from many places, including the right-click context menu and choosing **create a report**.
+Power BI reports can be created from all semantic models from Power BI Desktop with a live connection by choosing a **Power BI semantic model** from the **OneLake catalog** and selecting **Connect**. Reports can also be created in the Fabric workspace from many places, including the right-click context menu and choosing **create a report**. Learn more about [building reports](/fabric/fundamentals/building-reports).
 
 This article discusses more details about live editing in Power BI Desktop, and how to create and add Direct Lake tables to a semantic model in Power BI Desktop.
 
@@ -35,31 +35,31 @@ Creating semantic models with Direct Lake tables is in public preview, and you n
 To create a semantic model with Direct Lake tables, take the following steps.
 
 1.    Open **Power BI Desktop** and select **OneLake catalog**
-2.    Select a **Lakehouse** or **Warehouse** and press **Connect**
+2.    Select a Fabric item, such as a **Lakehouse** or **Warehouse**, and press **Connect**
 3.    Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
 
 The semantic model is created in the Fabric workspace and now you are live editing the semantic model in Power BI Desktop.
 
 Semantic models with Direct Lake tables created in Power BI Desktop use **Direct Lake on OneLake** storage mode. The differences between Direct Lake on OneLake and Direct Lake on SQL are explained in the [Overview](direct-lake-overview.md).
 
-> [!Note]
-> Adding shortcut tables may cause an error. To use a shortcut table with Direct Lake on OneLake, onboarding to the early access or limited preview version of [OneLake security](/fabric/onelake/security/get-started-security#onelake-security-preview) is required. Using any table in a Lakehouse with only the public preview of OneLake security is not supported and will result in an error.
+:::image type="content" source="media\direct-lake-power-bi-desktop\power-bi-desktop-direct-lake-create.png" alt-text="Screenshot of Power BI Desktop when creating a semantic model with tables in Direct Lake storage mode." lightbox="media\direct-lake-power-bi-desktop\power-bi-desktop-direct-lake-create.png":::
 
+## Add Direct Lake tables from other Fabric items
 
-## Add Direct Lake tables from other Fabric artifacts
+To add Direct Lake tables from other Fabric items, take the following steps.
 
-To add Direct Lake tables from other Fabric artifacts, take the following steps.
-
-1.    While live editing a Direct Lake on OneLake semantic model in Power BI Desktop, open the **OneLake catalog** and select another **Lakehouse** or **Warehouse**
+1.    While live editing a Direct Lake on OneLake semantic model in Power BI Desktop, open the **OneLake catalog** and select another Fabric item, such as a **Lakehouse** or **Warehouse**
 2.    In the dialog, select the tables you want to include then press **OK**
 
-The tables are added to your semantic model and you can continue live editing 
+The tables are added to your semantic model and you can continue live editing. 
+
+:::image type="content" source="media\direct-lake-power-bi-desktop\power-bi-desktop-direct-lake-add.png" alt-text="Screenshot of Power BI Desktop when adding tables in Direct Lake storage mode." lightbox="media\direct-lake-power-bi-desktop\power-bi-desktop-direct-lake-add.png":::
 
 ## Live edit a semantic model with Direct Lake tables
 
 To edit a semantic model with Direct Lake tables later, take the following steps.
 
-1.    In a **new instance of Power BI Desktop**, open the **OneLake ** and select the **Power BI semantic model**
+1.    In a **new instance of Power BI Desktop**, open the **OneLake catalog** and select the **Power BI semantic model**
 2.    Select the **Connect drop-down button** and choose **Edit**.
 
 Now you are live editing the semantic model.
@@ -86,6 +86,8 @@ To create a report, follow these steps in Power BI Desktop.
 2.    Open the **OneLake catalog** and choose the **Power BI semantic model** you are live editing (it should show at the top of the list) and press **Connect**
 
 Now you can create the report. Save the PBIX file and publish to the Fabric workspace when ready.
+
+Learn more about [building reports](/fabric/fundamentals/building-reports).
 
 ### Table view
 
@@ -165,20 +167,16 @@ Now the semantic model is using Direct Lake on OneLake. If there are issues, you
 
 Live edit of semantic models in Direct Lake mode in Power BI Desktop is currently in preview. Keep the following in mind:
 
-* You can't transform data using Power Query editor. In the Lakehouse, you can use a dataflow to perform Power Query transformations.
+* You can't transform data using Power Query editor. In the source Fabric item there may be transformation options, such as using Power Query in Dataflows.
 * You can't have multiple data sources when using Direct Lake on SQL. Add data to the Fabric data source used by semantic model. Multiple data sources are supported for Direct Lake on OneLake storage mode.
 * You can't publish the Power BI Project (PBIP) from Power BI Desktop. You can use Fabric Deployment mechanisms such as Fabric Git Integration or Fabric Item APIs to publish your local PBIP files to a Fabric workspace.
 * You can't validate RLS roles from Power BI Desktop. You can validate the role in the service.
-* Service-created model diagram layouts aren't displayed in Power BI Desktop, and layouts created in Power BI Desktop aren't persisted in the Power BI service.
-* Signing off during editing could lead to unexpected errors.
+* You can't sign off during live editing without unexpected errors.
 * You can open external tools, but the external tool must manage authentication to the remote semantic model.
-* Changing the data category to *barcode* won't allow reports linked to the semantic model to be filtered by barcodes.
-* Externally shared semantic models aren't eligible for live edit.
-* Adding shortcut tables may cause an error. To use a shortcut table with Direct Lake on OneLake, onboarding to the early access or limited preview version of [OneLake security](/fabric/onelake/security/get-started-security#onelake-security-preview) is required. Using any table in a Lakehouse with only the public preview of OneLake security is not supported and will result in an error.
+* You can change the data category to *barcode*, but it won't allow reports linked to the semantic model to be filtered by barcodes.
+* You can't live edit externally shared semantic models.
 
 In addition to the current known issues and limitations of Direct Lake.
-
-
 
 ## Related content
 
