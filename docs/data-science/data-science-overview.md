@@ -106,4 +106,4 @@ For more information about semantic link, visit the [What is semantic link?](sem
 - Visit [Machine learning experiment](machine-learning-experiment.md) to learn more about tracking experiments
 - Visit [Machine learning model](machine-learning-model.md) to learn more about model management
 - Visit [Score models with PREDICT](model-scoring-predict.md) to learn more about batch scoring with Predict
-- Serve Lakehouse predictions to Power BI with [Direct lake Mode](../fundamentals/lakehouse-power-bi-reporting.md)
+- Serve Lakehouse predictions to Power BI with [Direct Lake](../fundamentals/building-reports.md)
