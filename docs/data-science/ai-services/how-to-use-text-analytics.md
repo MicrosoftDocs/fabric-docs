@@ -1,5 +1,5 @@
 ---
-title: Use Azure AI Language with REST API
+title: Use prebuilt Text Analytics with REST API
 description: How to use prebuilt text analytics in Fabric with REST API
 ms.author: scottpolly
 author: s-polly
@@ -34,7 +34,9 @@ In this article, you'll learn how to use Azure AI Language services directly in 
 
 * Create [a new notebook](../../data-engineering/how-to-use-notebook.md).
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
-* Obtain an Azure AI services key by following [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).  Copy the value of the key to use in the code samples below.
+
+> [!NOTE]
+> This tutorial uses Microsoft Fabric's built-in prebuilt AI services, which handle authentication automatically. You don't need to obtain a separate Azure AI services key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 The code samples in this tutorial use libraries that are pre-installed in Microsoft Fabric notebooks:
 
@@ -63,9 +65,12 @@ This tutorial provides two ways to use Azure AI Language services in Fabric:
 
 # [Rest API](#tab/rest)
 
-### Step 1: Set up authentication and endpoints
+###  Set up authentication and endpoints
 
 Copy and paste this code into the first cell of your Fabric notebook to set up the connection to Azure AI Language services:
+
+> [!NOTE]
+> This code uses Fabric's built-in authentication. The `get_mlflow_env_config()` function automatically retrieves your workspace credentials and connects to the prebuilt AI services. No API key is required.
 
 ``` python
 # Get workload endpoints and access token
@@ -107,7 +112,7 @@ def printresponse(response):
 
 # [SynapseML](#tab/synapseml)
 
-### Step 1: Import required libraries
+### Import required libraries
 
 Copy and paste this code into the first cell of your Fabric notebook:
 
@@ -131,13 +136,15 @@ from pyspark.sql.functions import col
 
 The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
 
-### Step 2: Analyze sentiment of text
+### Analyze sentiment of text
 
 Copy this code into a new cell in your notebook to analyze the sentiment of a sample text:
 
 ``` python
 # Sentiment analysis example
 from pprint import pprint
+
+
 
 post_body = {
     "kind": "SentimentAnalysis",
