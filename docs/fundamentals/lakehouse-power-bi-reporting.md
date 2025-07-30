@@ -73,23 +73,29 @@ With all these options it may be hard to know what to do. Here are some common s
 #### Permission to view report only
 Use a fixed identity to the Fabric item on the semantic model, and publish the report.
 
-**App option:** Publish an app from the workspace with the report. Only give report consumers permission in the app.
-**Item option**: Grant report consumers viewer role on both the report and semantic model individually.
-**Workspace option:** Publish the report and semantic model to their own workspace, seperate from the soruce Fabric item, and grant report consumers viewer role on the workspace. This gives them viewer permission to all new items added to that workspace.
+- **App option:** Publish an app from the workspace with the report. Only give report consumers permission in the app.
+
+- **Item option**: Grant report consumers viewer role on both the report and semantic model individually.
+
+- **Workspace option:** Publish the report and semantic model to their own workspace, seperate from the soruce Fabric item, and grant report consumers viewer role on the workspace. This gives them viewer permission to all new items added to that workspace.
 
 #### Permission to view report and create their own reports only
 Use a fixed identity to the Fabric item on the semantic model, and publish the report.
 
-**App option:** Publish an app from the workspace with the report. Give report consumers permission in the app, with the advanced option to include build permission to creat their own reports.
-**Item option**: Grant report consumers viewer role on both the report and semantic model individually. Include build access on the semantic model.
-**Workspace option:** Publish the report and semantic model to their own workspace, separate from the soruce Fabric item, and grant report consumers viewer role on the workspace. This gives them viewer permission to all new items added to that workspace. Include build access on the semantic model.
+- **App option:** Publish an app from the workspace with the report. Give report consumers permission in the app, with the advanced option to include build permission to creat their own reports.
+
+- **Item option**: Grant report consumers viewer role on both the report and semantic model individually. Include build access on the semantic model.
+
+- **Workspace option:** Publish the report and semantic model to their own workspace, separate from the soruce Fabric item, and grant report consumers viewer role on the workspace. This gives them viewer permission to all new items added to that workspace. Include build access on the semantic model.
 
 #### Permission to view report, create their own reports, use the SQL analytics endpoint, and access the delta tables directly
 Use SSO to the Fabric item on the semantic model, and publish the report.
 
-**App option:** Publish an app from the workspace with the report. Give report consumers permission in the app, with the advanced option to include build permission to creat their own reports. In addition, make sure the users have ReadAll permission on the Fabric item.
-**Item option**: Grant report consumers viewer role on both the report and semantic model individually. Include build access on the semantic model. In addition, make sure the users have ReadAll permission on the Fabric item.
-**Workspace option:** Publish the report and semantic model to the workspace with the source Fabric item, and grant report consumers viewer role on the workspace. This gives them viewer permission to all new items added to that workspace. Include build access on the semantic model and ReadAll access on the Fabric item.
+- **App option:** Publish an app from the workspace with the report. Give report consumers permission in the app, with the advanced option to include build permission to creat their own reports. In addition, make sure the users have ReadAll permission on the Fabric item.
+
+- **Item option**: Grant report consumers viewer role on both the report and semantic model individually. Include build access on the semantic model. In addition, make sure the users have ReadAll permission on the Fabric item.
+
+- **Workspace option:** Publish the report and semantic model to the workspace with the source Fabric item, and grant report consumers viewer role on the workspace. This gives them viewer permission to all new items added to that workspace. Include build access on the semantic model and ReadAll access on the Fabric item.
 
 #### Permission to view and edit the report, semantic model, and Fabric items in the workspace
 Use SSO to the Fabric item on the semantic model, and publish the report. Grant the users any [workspace roles](/fabric/fundamentals/roles-workspaces) higher than viewer. 
