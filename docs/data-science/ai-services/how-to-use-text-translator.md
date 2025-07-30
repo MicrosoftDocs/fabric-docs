@@ -1,8 +1,8 @@
 ---
 title: Use Azure AI Translator with REST API
 description: How to use prebuilt Azure AI translator in Fabric with REST API
-ms.author: larryfr
-author: Blackmist
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
@@ -27,9 +27,9 @@ This sample shows use, with RESTful APIs, of the prebuilt Azure AI translator, i
 
 ## Prerequisites
 
-[!INCLUDE [prerequisites](includes/prerequisites.md)]
+[!INCLUDE [prerequisites](../includes/prerequisites.md)]
 
-* Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+* Create [a new notebook](../../data-engineering/how-to-use-notebook.md).
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 * Obtain an Azure AI services key by following [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).  Copy the value of the key to use in the code samples below.
 

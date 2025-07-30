@@ -30,9 +30,9 @@ In this article, you'll learn how to use Azure AI Language services directly in 
 
 ## Prerequisites
 
-[!INCLUDE [prerequisites](includes/prerequisites.md)]
+[!INCLUDE [prerequisites](../includes/prerequisites.md)]
 
-* Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+* Create [a new notebook](../../data-engineering/how-to-use-notebook.md).
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 * Obtain an Azure AI services key by following [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).  Copy the value of the key to use in the code samples below.
 
