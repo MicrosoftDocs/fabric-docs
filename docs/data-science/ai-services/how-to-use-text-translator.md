@@ -27,9 +27,11 @@ This sample shows use, with RESTful APIs, of the prebuilt Azure AI translator, i
 
 ## Prerequisites
 
-[!INCLUDE [prerequisites](../includes/prerequisites.md)]
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-A [Microsoft Fabric notebook](../../data-engineering/how-to-use-notebook.md). This article shows how to use the prebuilt Azure AI Translator service within Fabric notebooks.
+* Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
+* Obtain an Azure AI services key by following [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).  Copy the value of the key to use in the code samples below.
 
 > [!NOTE]
 > The required libraries (`synapse.ml.mlflow`, `synapse.ml.services`, `requests`, `json`, and `uuid`) are pre-installed in Microsoft Fabric notebook environments. No additional installation is required. For more information about SynapseML in Fabric, see [Install a different version of SynapseML on Fabric](../install-synapseml.md).
