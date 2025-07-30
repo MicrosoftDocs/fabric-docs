@@ -12,7 +12,7 @@ ms.search.form: Direct Lake Power BI Reporting
 
 # Building reports
 
-Semantic models with Direct Lake tables can be used like any other Power BI semantic model. You can create Power BI reports, Power BI explorations, and run any Data Analysis eXpression (DAX) query. 
+Semantic models with Direct Lake tables can be used like any other Power BI semantic model. You can create Power BI reports, Power BI explorations, and run Data Analysis eXpression (DAX) queries. 
 
 When a Power BI report shows data in visuals, it requests it from the semantic model. With Direct Lake mode, the semantic model accesses the OneLake delta table to consume data and return it to the Power BI report. For efficiency, the semantic model can keep some recently accessed data in the cache. 
 
