@@ -4,7 +4,7 @@ description: Learn how to browse the contents of files and discover their schema
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: jovanpop
-ms.date: 04/06/2025
+ms.date: 07/30/2025
 ms.topic: how-to
 ms.search.form: Ingesting data
 ---
@@ -13,7 +13,10 @@ ms.search.form: Ingesting data
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-The OPENROWSET function allows you to read the contents of Parquet or CSV files and return the data as a set of rows. 
+The OPENROWSET function allows you to read the contents of Parquet or CSV files and return the data as a set of rows. The files can be stored in Azure Blob Storage, Azure Data Lake Storage, or Fabric OneLake.
+
+> [!IMPORTANT]
+> Reading files from Fabric OneLake storage using the OPENROWSET function is currently in [preview](/fabric/fundamentals/preview).
 
 You can use this feature to inspect the file contents before loading them into your data warehouse table. With OPENROWSET, you can easily explore the files you ingest into your Fabric Warehouse, understand the columns you're ingesting, and determine their types. 
 
@@ -63,16 +66,32 @@ FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/cura
 ```
 
 If the file contains line-delimited text where each line represents a valid JSON document, the `OPENROWSET` function can be used to read it directly.
+
 You don't need to specify the `FORMAT` option explicitly. The `OPENROWSET` will automatically infer the JSONL format based on common file extensions such as `.jsonl`, `.ldjson`, or `.ndjson` in the URI. However, if you're using a different file extension for this format, you must specify `FORMAT = 'jsonl'` to ensure correct parsing.
 
 > [!Note]
 > The the `JSONL` format is currently in [preview](../fundamentals/preview.md).
 
+## Read files in Fabric OneLake
+
+The `OPENROWSET(BULK)` function enables you to read the files stored in Fabric OneLake. If your file is stored in the Files section of a lakehouse, you can read this file using the fillowing syntax:
+
+```sql
+SELECT TOP 10 * 
+FROM OPENROWSET(BULK 'https://onelake.dfs.fabric.microsoft.com/<workspaceId>/<lakehouseId>/Files/latest/bing_covid-19_data.jsonl') AS data
+```
+
+Replace `<workspaceId>` and `<lakehouseId>` with the workspace and lakehouse GUIDs that you can find in the Fabric workspace URI. Make sure that you are referencing the files in the `/Files` section of a lakehouse.
+
+> [!IMPORTANT]
+> Reading files from Fabric OneLake storage using the OPENROWSET function is currently in [preview](/fabric/fundamentals/preview). See the [limitations](/sql/t-sql/statements/copy-into-transact-sql#limitations-for-onelake-as-source) that are applicable both to `COPY INTO` and `OPENROWSET(BULK)`.
+
 <a id="reading-custom-text-files"></a>
 
 ## Read custom text files
 
-The `OPENROWSET(BULK)` function allows you to define various options for reading custom text files.
+The `OPENROWSET(BULK)` function allows you to define various options for reading custom text files. 
+
 For example, you can specify values for `ROWTERMINATOR` and `FIELDTERMINATOR` to indicate the underlying file format.
 
 ```sql
