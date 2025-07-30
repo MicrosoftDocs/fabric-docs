@@ -13,7 +13,7 @@ ms.search.form: Ingesting data
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-The OPENROWSET function allows you to read the contents of Parquet or CSV files and return the data as a set of rows. The files can be stored in Azure Blob Storage, Azure Data Lake Storage or Fabric OneLake.
+The OPENROWSET function allows you to read the contents of Parquet or CSV files and return the data as a set of rows. The files can be stored in Azure Blob Storage, Azure Data Lake Storage, or Fabric OneLake.
 
 > [!IMPORTANT]
 > Reading files from Fabric OneLake storage using the OPENROWSET function is currently in [preview](/fabric/fundamentals/preview).
@@ -84,7 +84,7 @@ FROM OPENROWSET(BULK 'https://onelake.dfs.fabric.microsoft.com/<workspaceId>/<la
 Replace `<workspaceId>` and `<lakehouseId>` with the workspace and lakehouse GUIDs that you can find in the Fabric workspace URI. Make sure that you are referencing the files in the /Files section of a lakehouse.
 
 > [!IMPORTANT]
-> Reading files from Fabric OneLake storage using the OPENROWSET function is currently in [preview](/fabric/fundamentals/preview). See the [limitations](/sql/t-sql/statements/copy-into-transact-sql.md#limitations-for-onelake-as-source) that are applicable both to `COPY INTO` and `OPENROWSET(BULK)`.
+> Reading files from Fabric OneLake storage using the OPENROWSET function is currently in [preview](/fabric/fundamentals/preview). See the [limitations](/sql/t-sql/statements/copy-into-transact-sql#limitations-for-onelake-as-source) that are applicable both to `COPY INTO` and `OPENROWSET(BULK)`.
 
 <a id="reading-custom-text-files"></a>
 
