@@ -1979,6 +1979,11 @@
             "source_path_from_root": "/docs/get-started/apply-sensitivity-labels.md",
             "redirect_url": "/fabric/fundamentals/apply-sensitivity-labels",
             "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/fundamentals/lakehouse-power-bi-reporting.md",
+            "redirect_url": "/fabric/fundamentals/building-reports",
+            "redirect_document_id": true
         }
     ]
 }
