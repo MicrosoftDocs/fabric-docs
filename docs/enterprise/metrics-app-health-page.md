@@ -32,7 +32,7 @@ Each section plays a role in helping you filter, summarize, and investigate capa
 
 ## Slicers
 
-Use the slicers at the top of the page to filter the data:
+To filter data, use the slicers at the top of the page:
 
 * **Capacity name**: Select one or more capacities to view data specific to the selected capacities in the report.
 * **SKU**: Select the SKU of capacities you want the page to display results for.
@@ -48,7 +48,7 @@ This section contains key performance indicators (KPIs) that provide an overview
 
 * **\# Capacities**: Total number of capacities, which you have access to.
 * **Avg. Utilization %**: Average utilization % across selected capacities for last 24 or 1 hour.
-* **\# Throttled capacities**: Number of capacities that have at least one 30-second window where interactive delay % was above 100%. It also displays number of capacities throttled in last seeven days.
+* **\# Throttled capacities**: Number of capacities that have at least one 30-second window where interactive delay % was above 100%. It also displays number of capacities throttled in last seven days.
 * **\# Interactive rejected capacities**: Number of capacities that have at least one 30-second window where interactive rejection % was above 100%. It also displays number of capacities faced interactive rejection in last seven days.
 * **\# Background rejected capacities**: Number of capacities that have at least one 30-second window where background rejection % was above 100%. It also displays number of capacities faced background rejection in last seven days.
 
@@ -109,6 +109,6 @@ Once there, manually select a capacity using the **Capacity Name** slicer
 
 ## Next Steps
 
-* [What is the Microsoft Fabric Capacity Metrics app?](metrics-app.md)
+* [Understand the Microsoft Fabric Capacity Metrics app](metrics-app.md)
 * [Understand the Compute Page](metrics-app-compute-page.md)
 * [Understand the metrics app storage page](metrics-app-storage-page.md)
