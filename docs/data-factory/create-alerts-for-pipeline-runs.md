@@ -13,8 +13,6 @@ author: kromerm
 
 Operationalizing your Fabric Data Factory pipelines means more than scheduling or setting trigger events to invoke your pipelines. A well-run operationalized data integration project includes proactive monitoring and alerting upon pipeline events, mainly succeed and failed. This allows you to actively monitor the health of your pipelines both at the activity level and the pipeline level.
 
-[!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=3410e513-faef-4b15-8a46-7487a8086f85]
-
 ## Activity level alerts
 
 Let's start at the pipeline activity level. To create alerts at the activity level, you'll add either an Outlook (to send email) or a Teams (to send a Teams message) activity after the activity that you wish to actively monitor.
