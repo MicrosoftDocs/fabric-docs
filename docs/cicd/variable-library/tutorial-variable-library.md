@@ -103,8 +103,6 @@ Next, we create the 3 Lakehouses that will be used with the variable library.
 12. Once it is created, on the left, click on the *Source LHs with Variables* workspace.
 13. The *Source LHs with variables* should look like the screenshot below.
 
-  :::image type="content" source="media/tutorial-variable-library/create-workspace-1.png" alt-text="Screenshot of how the workspace should look." lightbox="media/tutorial-variable-library/create-workspace-1.png":::
-
 ### Get the Workspace IDs and Object IDs for Lakehouses
 In this step, we get the unique identifiers that will be used in our variable library.
 
@@ -276,9 +274,6 @@ In this step, we configure our destination connection for our pipeline.
   Now, we create our deployment pipeline.
 
   1. In the *Source LHs with Variables* workspace, at the top, click **create deployment pipeline**
-
-   :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-1.png" alt-text="Screenshot of creating a new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-1.png":::
-
   2. Name the pipeline, *Deployment_Pipeline_Var* and click **Next**.
 
    :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-2.png" alt-text="Screenshot of creating a naming the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-2.png":::
