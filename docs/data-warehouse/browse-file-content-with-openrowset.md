@@ -4,7 +4,7 @@ description: Learn how to browse the contents of files and discover their schema
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: jovanpop
-ms.date: 04/06/2025
+ms.date: 07/30/2025
 ms.topic: how-to
 ms.search.form: Ingesting data
 ---
@@ -81,7 +81,7 @@ SELECT TOP 10 *
 FROM OPENROWSET(BULK 'https://onelake.dfs.fabric.microsoft.com/<workspaceId>/<lakehouseId>/Files/latest/bing_covid-19_data.jsonl') AS data
 ```
 
-Replace `<workspaceId>` and `<lakehouseId>` with the workspace and lakehouse GUIDs that you can find in the Fabric workspace URI. Make sure that you are referencing the files in the /Files section of a lakehouse.
+Replace `<workspaceId>` and `<lakehouseId>` with the workspace and lakehouse GUIDs that you can find in the Fabric workspace URI. Make sure that you are referencing the files in the `/Files` section of a lakehouse.
 
 > [!IMPORTANT]
 > Reading files from Fabric OneLake storage using the OPENROWSET function is currently in [preview](/fabric/fundamentals/preview). See the [limitations](/sql/t-sql/statements/copy-into-transact-sql#limitations-for-onelake-as-source) that are applicable both to `COPY INTO` and `OPENROWSET(BULK)`.
@@ -90,7 +90,8 @@ Replace `<workspaceId>` and `<lakehouseId>` with the workspace and lakehouse GUI
 
 ## Read custom text files
 
-The `OPENROWSET(BULK)` function allows you to define various options for reading custom text files.
+The `OPENROWSET(BULK)` function allows you to define various options for reading custom text files. 
+
 For example, you can specify values for `ROWTERMINATOR` and `FIELDTERMINATOR` to indicate the underlying file format.
 
 ```sql
