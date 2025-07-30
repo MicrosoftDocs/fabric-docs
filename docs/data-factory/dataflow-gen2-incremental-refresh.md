@@ -161,7 +161,7 @@ When working with lakehouse as a data destination, be aware of these limitations
 
   But here's the catch: if other tools (like Spark) or processes also write to the same table, they can interfere with incremental refresh. We recommend avoiding other writers while using incremental refresh.
 
-  If you must use other writers, make sure they don't conflict with the incremental refresh process. Also, table maintenance and vacuuming operations aren't supported during incremental refresh.
+  If you must use other writers, make sure they don't conflict with the incremental refresh process. Also, table maintenance like OPTIMIZE or REORG TABLE operations aren't supported for tables that use incremental refresh.
 
 ### The data destination must be set to a fixed schema
 

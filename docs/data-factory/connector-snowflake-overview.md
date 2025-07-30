@@ -14,18 +14,17 @@ ms.custom:
 
 The Snowflake connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-To learn about how to connect to a Snowflake database in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-snowflake.md#set-up-your-connection-in-dataflow-gen2).
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account |
+| **Data pipeline**<br>- [Copy activity](connector-snowflake-copy-activity.md) (source/destination) <br>- Lookup activity  <br>- Script activity |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account |
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append |None<br> On-premises<br> Virtual network |Snowflake<br> Microsoft Account |
 
-## Support in data pipelines
+## Related content
 
-The Snowflake connector supports the following capabilities in data pipelines.
+To learn about how to connect to a Snowflake database in Dataflow Gen2, go to [Set up your Snowflake connection](connector-snowflake.md).
 
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | Snowflake <br> Microsoft Account  |
-| **Lookup activity** | None <br> On-premises | Snowflake <br> Microsoft Account |
-| **Script activity** | None <br> On-premises | Snowflake <br> Microsoft Account |
 
 To learn about the copy activity configuration for Snowflake in data pipelines, go to [Configure Snowflake in a copy activity](connector-snowflake-copy-activity.md).

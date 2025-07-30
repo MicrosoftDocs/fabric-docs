@@ -20,6 +20,7 @@ The Azure Cosmos DB for NoSQL connector is supported in Data Factory for [!INCLU
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/-)                                                           | None<br> On-premises<br> Virtual network | Account key<br> Organizational account |
 | **Data pipeline** <br>- [Copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md) (source/destination)<br>- Lookup activity        | None<br> On-premises<br> Virtual network | Account key<br> Organizational account|
+| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Merge|None<br> On-premises<br> Virtual network |Account key<br> Organizational account |
 
 ## Related content
 
