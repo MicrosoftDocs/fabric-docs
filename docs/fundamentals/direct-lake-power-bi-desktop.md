@@ -14,7 +14,7 @@ LocalizationGroup: Admin
 
 Power BI Desktop can create and edit Power BI semantic models with Direct Lake tables. Semantic models with Direct Lake tables are created in, and edited from, the Fabric workspace, not on your local machine, so when using Power BI Desktop, you **live edit** the semantic model where it is. There's no publish action as changes made in Power BI Desktop happen to the semantic model in the Fabric workspace. This experience is the same as when you're editing the semantic model in the web, or in the Fabric workspace, by choosing the **Open data model** action. 
 
-**Version history** is available and automatically creates a version each time you start a live editing session, so you undo an accidental change. **Git integration** is also available for semantic models, giving you full control over changes. And **deployment pipelines** can also be used to only live edit a semantic model in a development workspace before pushing to a production workspace.
+**Version history** is available and automatically creates a version each time you start a live editing session, so you can undo an accidental change. **Git integration** is also available for semantic models, giving you full control over changes. And **deployment pipelines** can also be used to only live edit a semantic model in a development workspace before pushing to a production workspace.
 
 In a semantic model with import tables, the data is downloaded and locally available on your computer. In a semantic model with Direct Lake tables, the data remains in the OneLake. When visuals use data, the semantic model provides the data from where it is stored. Learn more about [Direct Lake query performance](/fabric/fundamentals/direct-lake-understand-storage).
 
