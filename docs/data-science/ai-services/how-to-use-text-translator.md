@@ -34,7 +34,7 @@ This sample shows use, with RESTful APIs, of the prebuilt Azure AI translator, i
 * Obtain an Azure AI services key by following [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).  Copy the value of the key to use in the code samples below.
 
 > [!NOTE]
-> The required libraries (`synapse.ml.mlflow`, `synapse.ml.services`, `requests`, `json`, and `uuid`) are pre-installed in Microsoft Fabric notebook environments. No additional installation is required. For more information about SynapseML in Fabric, see [Install a different version of SynapseML on Fabric](../install-synapseml.md).
+> The required libraries (`synapse.ml.mlflow`, `synapse.ml.services`, `requests`, `json`, and `uuid`) are preinstalled in Microsoft Fabric notebook environments. No other installation is required. For more information about SynapseML in Fabric, see [Install a different version of SynapseML on Fabric](../install-synapseml.md).
 
 # [Rest API](#tab/rest)
 

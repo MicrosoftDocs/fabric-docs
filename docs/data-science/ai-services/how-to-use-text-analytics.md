@@ -20,7 +20,7 @@ ms.collection: ce-skilling-ai-copilot
 
 [Azure AI Language](/azure/ai-services/language-service/) is an [Azure AI service](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
 
-In this article, you'll learn how to use Azure AI Language services directly in Microsoft Fabric to analyze text. By the end of this article, you'll be able to:
+In this article, you learn how to use Azure AI Language services directly in Microsoft Fabric to analyze text. By the end of this article, you are able to:
 
 -   Detect sentiment labels at the sentence or document level
 -   Identify the language for a given text input
@@ -38,20 +38,20 @@ In this article, you'll learn how to use Azure AI Language services directly in 
 > [!NOTE]
 > This tutorial uses Microsoft Fabric's built-in prebuilt AI services, which handle authentication automatically. You don't need to obtain a separate Azure AI services key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
-The code samples in this tutorial use libraries that are pre-installed in Microsoft Fabric notebooks:
+The code samples in this tutorial use libraries that are preinstalled in Microsoft Fabric notebooks:
 
-- **SynapseML**: Pre-installed in Fabric notebooks for machine learning capabilities
+- **SynapseML**: Preinstalled in Fabric notebooks for machine learning capabilities
 - **PySpark**: Available by default in Fabric Spark compute
 - **Standard Python libraries**: `json`, `uuid` are part of Python standard library
 
-For REST API calls, you'll need to install the `requests` library if it's not already available:
+For REST API calls, you need to install the `requests` library if it's not already available:
 
 ```python
 %pip install requests
 ```
 
 > [!NOTE]
-> Microsoft Fabric notebooks come with many common libraries pre-installed. The SynapseML library, which provides the MLflow integration and text analytics capabilities, is automatically available in the Spark environment.
+> Microsoft Fabric notebooks come with many common libraries preinstalled. The SynapseML library, which provides the MLflow integration and text analytics capabilities, is automatically available in the Spark environment.
 
 ## Choose your approach
 
@@ -108,7 +108,7 @@ def printresponse(response):
 ```
 
 > [!IMPORTANT]
-> Run this cell first! It sets up the authentication and helper functions needed for all the text analytics examples below. You should see a workload endpoint URL printed when it runs successfully.
+> Run this cell first! It sets up the authentication and helper functions needed for all the text analytics following examples. You should see a workload endpoint URL printed when it runs successfully.
 
 # [SynapseML](#tab/synapseml)
 
@@ -134,7 +134,7 @@ from pyspark.sql.functions import col
 
 # [Rest API](#tab/rest)
 
-The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
+The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral, and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
 
 ### Analyze sentiment of text
 
@@ -172,11 +172,11 @@ printresponse(response)
 ```
 
 > [!TIP]
-> You can replace the text in the "text" field with your own content to analyze. The service will return sentiment scores and identify which parts of the text are positive, negative, or neutral.
+> You can replace the text in the "text" field with your own content to analyze. The service returns sentiment scores and identify which parts of the text are positive, negative, or neutral.
 
 #### Expected output
 
-When you run this code successfully, you should see output similar to this:
+When you run the following code successfully, you should see output similar to this:
 
 ```
     HTTP 200
@@ -306,7 +306,7 @@ When you run this code successfully, you should see output similar to this:
 # [SynapseML](#tab/synapseml)
 
 The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document & sentences
-within it for positive, neutral and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
+within it for positive, neutral, and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
 
 ``` Python
 df = spark.createDataFrame([
