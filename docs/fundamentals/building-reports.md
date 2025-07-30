@@ -32,14 +32,14 @@ Power BI Desktop can live connect to any semantic model in the Power BI service 
 3. Select **Power BI semantic models**
 4. Select the semantic model with the Direct Lake tables and then **Connect**
 
-You are now live connected to the semantic model and start creating the report. Learn more about Power BI reports at the [Power BI reporting documentation](/power-bi/create-reports/). Save the file locally and publish to any workspace when ready to see it online and share with others.
+You are now live connected to the semantic model and can start creating the report. Learn more about Power BI reports at the [Power BI reporting documentation](/power-bi/create-reports/). Save the file locally and publish to any workspace when ready to see it online and share with others.
 
 In Power BI Desktop, report measures can be created in a live connected report to add a calculation without adding measures to the semantic model itself.
 
 ### Power BI service or Fabric portal
 The Power BI service or Fabric portal has many paths to create a report with a live connection to a semantic model. Here are a few of the paths to create a report.
 
-- Use the context menu (...) of a semantic model in a workspace choose **Create report**
+- Use the context menu (...) of a semantic model in a workspace, then choose **Create report**
 - From **Home** choose **New report**, then **Pick a published semantic model** and select the semantic model with Direct lake tables
 - From **OneLake catalog** filter to **Data** and **Semantic model**, then **Create a blank report** from the top bar
 - After clicking on a semantic model, in the semantic model details page, choose **Create a blank report**
