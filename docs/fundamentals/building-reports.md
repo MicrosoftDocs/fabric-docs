@@ -91,7 +91,7 @@ Use a fixed identity to the Fabric item on the semantic model, and publish the r
 #### Permissions to view report, create their own reports, use the SQL analytics endpoint, and access the delta tables directly
 Use SSO to the Fabric item on the semantic model, and publish the report.
 
-- **App option:** Publish an app from the workspace with the report. Give report consumers permission in the app, with the advanced option to include _build_ permission to creat their own reports. In addition, make sure the users have _ReadAll_ permission on the Fabric item.
+- **App option:** Publish an app from the workspace with the report. Give report consumers permission in the app, with the advanced option to include _build_ permission to create their own reports. In addition, make sure the users have _ReadAll_ permission on the Fabric item.
 
 - **Item option**: Grant report consumers _viewer_ role on both the report and semantic model individually. Include _build_ access on the semantic model. In addition, make sure the users have _ReadAll_ permission on the Fabric item.
 
