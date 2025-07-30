@@ -50,11 +50,11 @@ The Power BI service or Fabric portal has many paths to create a report with a l
 Any of these actions create a Power BI report in the web browser.
 
 ### Other reporting options
-There are many other ways to use Power BI semantic models. Here are a few other options
+There are many other ways to use Power BI semantic models. Here are a few of the other options.
 
-- [Explore](/power-bi/consumer/explore-data-service)
-- Paginated reports are created in from the context menu or details page of a semantic model or by using Power BI Report Builder
-- [DAX queries](/dax/dax-queries) can be run from the web or in Power BI Desktop using [DAX query view](/power-bi/transform-model/dax-query-view)
+- [Explore](/power-bi/consumer/explore-data-service) are created from the context menu or details page of a semantic model in the Power BI service
+- [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi) are created from the context menu or details page of a semantic model in the Power BI service
+- [DAX queries](/dax/dax-queries) can be run from the context menu or details page of a semantic model in the Power BI service, or in Power BI Desktop using [DAX query view](/power-bi/transform-model/dax-query-view)
 - [Excel with Power BI add-on pane](/power-bi/collaborate-share/service-analyze-in-excel) can be used to create refreshable pivot tables or flat tables of data from a semantic model
 
 ## Setting permissions for report consumption
@@ -77,7 +77,7 @@ Use a fixed identity to the Fabric item on the semantic model, and publish the r
 
 - **Item option**: Grant report consumers _viewer_ role on both the report and semantic model individually.
 
-- **Workspace option:** Publish the report and semantic model to their own workspace, separate from the source Fabric item, and grant report consumers _viewer_ role on the workspace. [workspace roles](/fabric/fundamentals/roles-workspaces) apply to all items in the workspace, including new items are added later.
+- **Workspace option:** Publish the report and semantic model to their own workspace, separate from the source Fabric item, and grant report consumers _viewer_ role on the workspace. [Workspace roles](/fabric/fundamentals/roles-workspaces) apply to all items in the workspace, including new items are added later.
 
 #### Permissions to view report and create their own reports only
 Use a fixed identity to the Fabric item on the semantic model, and publish the report.
@@ -86,7 +86,7 @@ Use a fixed identity to the Fabric item on the semantic model, and publish the r
 
 - **Item option**: Grant report consumers _viewer_ role on both the report and semantic model individually. Include _build_ access on the semantic model.
 
-- **Workspace option:** Publish the report and semantic model to their own workspace, separate from the source Fabric item, and grant report consumers _viewer_ role on the workspace. [workspace roles](/fabric/fundamentals/roles-workspaces) apply to all items in the workspace, including new items added later. Include _build_ access on the semantic model.
+- **Workspace option:** Publish the report and semantic model to their own workspace, separate from the source Fabric item, and grant report consumers _viewer_ role on the workspace. [Workspace roles](/fabric/fundamentals/roles-workspaces) apply to all items in the workspace, including new items added later. Include _build_ access on the semantic model.
 
 #### Permissions to view report, create their own reports, use the SQL analytics endpoint, and access the delta tables directly
 Use SSO to the Fabric item on the semantic model, and publish the report.
@@ -95,7 +95,7 @@ Use SSO to the Fabric item on the semantic model, and publish the report.
 
 - **Item option**: Grant report consumers _viewer_ role on both the report and semantic model individually. Include _build_ access on the semantic model. In addition, make sure the users have _ReadAll_ permission on the Fabric item.
 
-- **Workspace option:** Publish the report and semantic model to the workspace with the source Fabric item, and grant report consumers _viewer_ role on the workspace. [workspace roles](/fabric/fundamentals/roles-workspaces) apply to all items in the workspace, including new items added later. Include _build_ access on the semantic model and ReadAll access on the Fabric item.
+- **Workspace option:** Publish the report and semantic model to the workspace with the source Fabric item, and grant report consumers _viewer_ role on the workspace. [Workspace roles](/fabric/fundamentals/roles-workspaces) apply to all items in the workspace, including new items added later. Include _build_ access on the semantic model and ReadAll access on the Fabric item.
 
 #### Permissions to view and edit the report, semantic model, and Fabric items in the workspace
 Use SSO to the Fabric item on the semantic model, and publish the report. Grant the users any [workspace roles](/fabric/fundamentals/roles-workspaces) higher than _viewer_. 
