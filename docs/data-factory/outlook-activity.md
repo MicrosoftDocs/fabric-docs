@@ -42,7 +42,6 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 >If you're using outlook activities to nofity for failure, use a new outlook activity for each activity you want to monitor.
 >
 >If you attach more than one activity to the outlook activity, all connected statuses must be met to trigger the activity. For example, if you have two copy activities, both connected to an outlook activity 'on failure', both activities must fail to trigger the outlook activity. If only one fails, the outlook activity will not be triggered.
-> For more information see [the conditional paths documentation](tutorial-pipeline-failure-error-handling.md#conditional-paths)
 
 ## Office 365 Outlook activity settings
 
