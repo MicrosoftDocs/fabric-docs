@@ -109,5 +109,6 @@ Once there, manually select a capacity using the **Capacity Name** slicer
 
 ## Next Steps
 
-* [Understand the Compute Page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-compute)
-* [Understand the Storage Page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-storage)
+* [What is the Microsoft Fabric Capacity Metrics app?](metrics-app.md)
+* [Understand the Compute Page](metrics-app-compute-page.md)
+* [Understand the metrics app storage page](metrics-app-storage-page.md)
