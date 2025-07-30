@@ -64,6 +64,8 @@ To edit a semantic model with Direct Lake tables later, take the following steps
 
 Now you're live editing the semantic model.
 
+:::image type="content" source="media\direct-lake-power-bi-desktop\power-bi-desktop-direct-lake-edit.png" alt-text="Screenshot of Power BI Desktop when editing a semantic model with tables in Direct Lake storage mode later." lightbox="media\direct-lake-power-bi-desktop\power-bi-desktop-direct-lake-edit.png":::
+
 > [!NOTE]
 > Semantic models with Direct Lake storage modes are supported. Selecting a semantic model with tables in other storage modes results in an error.
 
