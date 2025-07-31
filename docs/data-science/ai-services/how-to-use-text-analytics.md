@@ -95,8 +95,6 @@ def print_response(response):
         print(f"Error: {response.status_code}, {response.content}")
 ```
 
-> [!IMPORTANT]
-> Run this cell first! It sets up the authentication and helper functions needed for all the text analytics following examples. You should see a workload endpoint URL printed when it runs successfully.
 
 # [SynapseML](#tab/synapseml)
 
@@ -112,8 +110,6 @@ from pyspark.sql.functions import col
 # Note: 'spark' and 'display()' are automatically available in Fabric notebooks
 ```
 
-> [!IMPORTANT]
-> Run this cell first! It imports the libraries needed for all the SynapseML examples below.
 
 ---
 
