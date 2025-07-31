@@ -17,8 +17,6 @@ The native execution engine significantly elevates query performance while minim
 
 The Native Execution Engine is based on two key OSS components: [Velox](https://github.com/facebookincubator/velox), a C++ database acceleration library introduced by Meta, and [Apache Gluten (incubating)](https://github.com/apache/incubator-gluten), a middle layer responsible for offloading JVM-based SQL engines’ execution to native engines introduced by Intel.
 
-> [!NOTE]
-> The native execution engine is currently in public preview. For more information, see the current [limitations](#limitations). **We encourage you to enable the Native Execution Engine on your workloads at no additional cost. You'll benefit from faster job execution without paying more - effectively, you pay less for the same work.**
 
 ## When to use the native execution engine
 
