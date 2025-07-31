@@ -65,7 +65,7 @@ First, we'll create a workspace and Lakehouse that will be used as our initial s
 
  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-2.png" alt-text="Screenshot of Copy data into lakehouse." lightbox="media/tutorial-variable-library/create-new-pipeline-2.png":::
 
-10. Select **Public Holidays*.
+10. Select **Public Holidays**.
 
  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-3.png" alt-text="Screenshot of using Public Holidays sample data." lightbox="media/tutorial-variable-library/create-new-pipeline-3.png":::
 
@@ -133,9 +133,9 @@ Now, we create the variable library.
 
 |Name|Type|Default value set|
 |-----|-----|-----|
-|Source_LH|string|&lt;guid of SourceLH_Stage lakeshoue&gt;|
+|Source_LH|string|&lt;guid of SourceLH_Stage lakehouse&gt;|
 |Source_WSID|string|&lt;guid of SourceLH_Stage workspace&gt;|
-|Destination_LH|string|&lt;guid of SourceLH_Dev lakeshoue&gt;|
+|Destination_LH|string|&lt;guid of SourceLH_Dev lakehouse&gt;|
 |Destination_WSID|string|&lt;guid of SourceLH_Dev workspace&gt;|
 |SourceTable_Name|String|Processed|
 |DestinationTable_Name|String|DevCopiedData|
@@ -148,7 +148,7 @@ Now, we create the variable library.
 ### Create Alternate value sets
 In this step, we add the alternate value sets to our variable library.
 
-1. In the **WS Variables* variable library, on the right, click **Add value set**.
+1. In the **WS Variables** variable library, on the right, click **Add value set**.
 2. Enter *Test VS* for the name and click **Create**.
 3. Create variables for each item in the table.
 4. Once you're done, click **Save** and **Agree**.
@@ -266,7 +266,7 @@ In this step, we configure our destination connection for our pipeline.
 
  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-19.png" alt-text="Screenshot of dynamic content for destination table name." lightbox="media/tutorial-variable-library/create-new-pipeline-19.png":::
 
-12. Now that the destination connection is set up, save the pipeline and click **Run** at the top. You should see it successfully run.
+13. Now that the destination connection is set up, save the pipeline and click **Run** at the top. You should see it successfully run.
 
  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-20.png" alt-text="Screenshot of pipeline run." lightbox="media/tutorial-variable-library/create-new-pipeline-20.png":::
 
@@ -327,21 +327,21 @@ In this step, we configure our destination connection for our pipeline.
 ### Verify and test the variable library
 Now that we have set up the variable library and set all of the active sets for each stage of the deployment pipeline, we can verify this. 
 
-1. In the *Source LHs with Variables* workspace, click on the *SourceLHs_Dev** Lakehouse.
+1. In the *Source LHs with Variables* workspace, click on the **SourceLHs_Dev** Lakehouse.
 2. At the top, change the connection from **Lakehouse** to **SQL analytics endpoint**.
 3. On the left, expand **Schemas** > **dbo** > **Tables**.
 4. You should see **DevCopiedData** Table.
 
  :::image type="content" source="media/tutorial-variable-library/verify-1.png" alt-text="Screenshot of DevCopiedData table." lightbox="media/tutorial-variable-library/verify-1.png":::
 
-5. Now, switch to the *SourceLHs_Test* Lakeshouse.
+5. Now, switch to the *SourceLHs_Test* Lakehouse.
 6. Repeat the steps above. You shouldn't see the **TestCopiedData** because we have not run the pipeline yet with the *Test VS* active set.
-7. Now, switch to the *SourceLHs_Prod* Lakeshouse.
+7. Now, switch to the *SourceLHs_Prod* Lakehouse.
 8. Repeat the steps above. You shouldn't see the **ProdCopiedData** because we have not run the pipeline yet with the *Prod VS* active set.
 9. Switch to the *Deployment_Pipeline_Var* select the **Test** stage.
 10. At the bottom, select the *Pipeline_Deploy*.
 11. At the top, click **Run**. This should complete successfully.
-12. Now, switch to the *SourceLHs_Test* Lakeshouse.
+12. Now, switch to the *SourceLHs_Test* Lakehouse.
 13. At the top, change the connection from **Lakehouse** to **SQL analytics endpoint**.
 14. On the left, expand **Schemas** > **dbo** > **Tables**.
 15. You should see **TestCopiedData** Table.
@@ -351,7 +351,7 @@ Now that we have set up the variable library and set all of the active sets for 
 16. Switch to the *Deployment_Pipeline_Var* select the **Production** stage.
 17. At the bottom, select the *Pipeline_Deploy*.
 18. At the top, click **Run**. This should complete successfully.
-19. Now, switch to the *SourceLHs_Prod* Lakeshouse.
+19. Now, switch to the *SourceLHs_Prod* Lakehouse.
 20. At the top, change the connection from **Lakehouse** to **SQL analytics endpoint**.
 21. On the left, expand **Schemas** > **dbo** > **Tables**.
 22. You should see **ProdCopiedData** Table.
