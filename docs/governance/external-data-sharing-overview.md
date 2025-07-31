@@ -26,7 +26,7 @@ Users who are allowed to create external data shares can share data residing in 
 External data share links don't work for users who are in the tenant where the external data share was created. They work only for users in external tenants. To share data from OneLake storage accounts with users in the same tenant, use [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
 > [!NOTE]
-> Cross-tenant data access is enabled via a dedicated Fabric-to-Fabric authentication mechanism and does not require [Entra B2B guest user access](/power-bi/enterprise/service-admin-azure-ad-b2b).
+> Cross-tenant data access is enabled via a dedicated Fabric-to-Fabric authentication mechanism and does not require [Entra B2B guest user access](/fabric/enterprise/powerbi/service-admin-entra-b2b).
 
 ## Supported Fabric item types
 
