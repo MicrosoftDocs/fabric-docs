@@ -213,7 +213,7 @@ landingContent:
               url: monitor-logs-query.md
   
   # Card
-  - title: Build AI Agents
+  - title: Build AI agents
     linkLists:
         - linkListType: overview
           links:

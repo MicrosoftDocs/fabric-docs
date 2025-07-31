@@ -25,7 +25,7 @@ MCP support for RTI and ADX is a full open-source [MCP server](https://github.co
 
 ## Scenarios
 
-The most common scenario for using the RTI MCP Server is to connect to it from an existing AI client, such as Cline, Claude, and Github copilot. The client can then use all the available tools to access and interact with RTI or ADX resources using natural language. For example, you could use GitHub Copilot agent mode with the RTI MCP Server to list KQL databases or ADX clusters or run natural language queries on RTI Eventhouses.
+The most common scenario for using the RTI MCP Server is to connect to it from an existing AI client, such as Cline, Claude, and GitHub copilot. The client can then use all the available tools to access and interact with RTI or ADX resources using natural language. For example, you could use GitHub Copilot agent mode with the RTI MCP Server to list KQL databases or ADX clusters or run natural language queries on RTI Eventhouses.
 
 ## Architecture
 
@@ -41,15 +41,16 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 
 ## Key features
 
-**Real-Time Data Access**: Retrieval of data from KQL databases in seconds.
 
-**Natural Language Interfaces**: Users or agents ask questions in plain English or other languages, and the system turns them into optimized queries (NL2KQL).
+**Real-Time Data Access**: Retrieve data from KQL databases in seconds.
 
-**Schema Discovery**: MCP servers show schema and metadata, so agents can learn data structures dynamically.
+**Natural Language Interfaces**: Ask questions in plain English or other languages, and the system turns them into optimized queries (NL2KQL).
 
-**Plug-and-Play Integration**: MCP clients like GitHub Copilot, Claude, and Cline connect to RTI with minimal setup because of standardized APIs and discovery mechanisms.
+**Schema Discovery**: Discover schema and metadata, so you can learn data structures dynamically.
 
-**Local Language Inference**: Use your preferred language to work with your data.
+**Plug-and-Play Integration**: Connect MCP clients like GitHub Copilot, Claude, and Cline to RTI with minimal setup because of standardized APIs and discovery mechanisms.
+
+**Local Language Inference**: Work with your data in your preferred language.
 
 ## Supported RTI components
 
@@ -59,11 +60,12 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 >
 > You can also use the Fabric RTI MCP Server to run KQL queries against the clusters in your [Azure Data Explorer](/azure/data-explorer/) backend.
 
-Support for more RTI components for comprehensive analytics is **coming soon**, including:
+<!-- Support for more RTI components for comprehensive analytics is **coming soon**, including:
 
 * Expanded support for [Eventstream](event-streams/overview.md)
 * Richer, real-time visualization tools
 * [Activator](data-activator/activator-introduction.md) integration for proactive insights
+-->
 
 ## Related content
 
