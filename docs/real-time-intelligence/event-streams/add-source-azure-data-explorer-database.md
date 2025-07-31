@@ -36,5 +36,9 @@ On the **Select a data source** page, search for and select **Connect** on the *
     > [!NOTE] 
     > When the Azure Data Explorer DB streaming connector starts, it captures only new table changes. Historical table data aren't streamed into Eventstream. 
 
+## Limitations
+
+- The maximum size of the result set returned by an Azure Data Explorer query is 64 MB, with a limit of 500,000 records. For details, see [Azure Data Explorer query limits](/kusto/concepts/query-limits?view=azure-data-explorer)
+
 ## Related content
 To learn how to add other sources to an eventstream, see the following article: [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md).
