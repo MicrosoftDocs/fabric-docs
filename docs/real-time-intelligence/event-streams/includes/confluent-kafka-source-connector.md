@@ -30,13 +30,13 @@ ms.date: 06/23/2025
 1. Scroll to see the **Configure Confluent Cloud for Apache Kafka data source** section on the page. Enter the information to complete the configuration of the Confluent data source. 
     1. For **Topic name**, enter a topic name from your Confluent Cloud. You can create or manage your topic in the Confluent Cloud Console. 
     1. For **Consumer group**, enter a consumer group of your Confluent Cloud. It provides you with the dedicated consumer group for getting the events from Confluent Cloud cluster. 
-    1. For **Reset auto offset** setting, select either **Earliest** or **Latest**：
+    1. For **Reset auto offset** setting, select one of the following values:
         - **Earliest** – the earliest data available from your Confluent cluster.
         - **Latest** – the latest available data.
         - **None** – Do not automatically set the offset.
 
         > [!NOTE]
-        > The **None** option is not available during this creation step. If a committed offset exists and you want to use **None**, you can first complete the configuration and then update the setting in the Eventstream edit mode. 
+        > The **None** option isn't available during this creation step. If a committed offset exists and you want to use **None**, you can first complete the configuration and then update the setting in the Eventstream edit mode. 
 
             :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings."::: 
 1. Depending on whether your data is encoded using Confluent Schema Registry:
