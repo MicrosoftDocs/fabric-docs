@@ -27,7 +27,7 @@ Fabric doesn’t store the secret itself, just an encrypted token. When it’s t
 - You need an [Azure subscription](https://azure.microsoft.com/free/) with [Azure Key Vault](/azure/key-vault/quick-create-portal) resource to test this feature.
 - Read the [Azure Key Vault quick start guide on learn.microsoft.com](/azure/key-vault/secrets/quick-create-portal) to learn more about creating an AKV resource.
 - The Azure Key Vault needs to be accessible from public network.
-- The creator of Azure Key Vault reference connection, must have atleast [Key Vault Certificate User](/azure/role-based-access-control/built-in-roles/security#key-vault-certificate-user) permission on the Key Vault.
+- The creator of Azure Key Vault reference connection must have at least [Key Vault Certificate User](/azure/role-based-access-control/built-in-roles/security#key-vault-certificate-user) permission on the Key Vault.
 
 
 ## Supported connectors and authentication types
