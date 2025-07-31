@@ -181,7 +181,7 @@ WHERE DATEPART(YEAR, updated) = '2023';
 
 ### Ingest data from CSV/Parquet/JSONL file
 
-You can use the `OPENROWSET` function as a source in order to ingest data Parquet, CSV, or JSON files from storage:
+You can use the `OPENROWSET` function as a source in order to ingest Parquet, CSV, or JSON files from storage:
 
 ```sql
 INSERT INTO dbo.bing_covid19_data_2023
