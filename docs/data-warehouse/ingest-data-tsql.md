@@ -181,7 +181,7 @@ WHERE DATEPART(YEAR, updated) = '2023';
 
 ### Ingest data from CSV/Parquet/JSONL file
 
-You can use the `OPENROWSET` function as a source in order to ingest data Parquet, CSv or JSON files from storage:
+You can use the `OPENROWSET` function as a source in order to ingest data Parquet, CSV, or JSON files from storage:
 
 ```sql
 INSERT INTO dbo.bing_covid19_data_2023
@@ -202,10 +202,10 @@ INSERT INTO dbo.bing_covid19_data_2023
 SELECT *
 FROM OPENROWSET(BULK 'https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{lakehouseId}/Files/year=*/month=*/*.parquet') AS data
 WHERE data.filepath(1) = '2022'
-ANDD data.filepath(3) = '3'
+AND data.filepath(2) = '3'
 ```
 
-Replace {workspaceId} and {lakehouseId} with the corresponding workspace and lakehouse GUIDs.
+Replace `{workspaceId}` and `{lakehouseId}` with the corresponding workspace and lakehouse GUIDs.
 This example builds on the previous one that reads data from Azure Data Lake Storage. Use this approach when you need to transform source data—such as converting values, joining with other tables, or reading specific partitions. In such cases, using `INSERT ... SELECT` provides the flexibility to apply transformations during data ingestion.
 
 <a id="ingesting-data-from-tables-on-different-warehouses-and-lakehouses"></a>
