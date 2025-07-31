@@ -74,12 +74,12 @@ The following tables contain more information about the copy activity in Cassand
 |**Connection** |Your connection to the source data store.|< your Cassandra connection >|Yes|connection|
 |**Use query** |The way to read data from Cassandra. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.| • **Table**<br>  • **Query** |No| / |
 | For ***Table*** | | | | |
-|**Keyspace** |Name of the keyspace or schema in Cassandra database.|< your keyspace >| No |keyspace|
-|**table name** |Name of the table in Cassandra database to read data.|< your table name >| No |tableName|
+|**Keyspace** |Name of the keyspace or schema in Cassandra database.|< your keyspace >| No (if **Query** is specified) |keyspace|
+|**Table** |Name of the table in Cassandra database to read data.|< your table name >| No (if **Query** is specified) |tableName|
 | For ***Query*** | | | | |
-| **Query** | Use the custom CQL query to read data. | < CQL queries > | No | query |
+| **Query** | Use the custom CQL query to read data. | < CQL queries > | No (if **Keyspace** and **Table** are specified) | query |
 | | | | | |
-| **Consistency level** | The consistency level specifies how many replicas must respond to a read request before returning data to the client application. Cassandra checks the specified number of replicas for data to satisfy the read request. See [Configuring data consistency](https://docs.datastax.com/en/cassandra/2.1/cassandra/dml/dml_config_consistency_c.html) for details.<br/><br/>Allowed values are: **ONE** (default), **TWO**, **THREE**, **QUORUM**, **ALL**, **LOCAL_QUORUM**, **EACH_QUORUM**, and **LOCAL_ONE**. | < your consistency level > | No |consistencyLevel:<br>• one <br>• two <br>• three <br>• quorum <br>• all <br>• local_quorum <br>• each_quorum <br>• local_one|
+| **Consistency level** | The consistency level specifies how many replicas must respond to a read request before returning data to the client application. Cassandra checks the specified number of replicas for data to satisfy the read request. See [Configuring data consistency](https://docs.datastax.com/en/cassandra/2.1/cassandra/dml/dml_config_consistency_c.html) for details.<br/><br/>Allowed values are: **ONE** (default), **TWO**, **THREE**, **QUORUM**, **ALL**, **LOCAL_QUORUM**, **EACH_QUORUM**, and **LOCAL_ONE**. | < your consistency level > | No |consistencyLevel:<br>• one (default) <br>• two <br>• three <br>• quorum <br>• all <br>• local_quorum <br>• each_quorum <br>• local_one|
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. |• Name <br>• Value | No | additionalColumns:<br> • name<br>• value|
 
 ## Related content
