@@ -1,8 +1,8 @@
 ---
 title: Microsoft Fabric preview information
 description: This article explains what public preview means in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
+author: SnehaGunda
+ms.author: sngun
 ms.topic: conceptual
 ms.date: 09/22/2024
 ---

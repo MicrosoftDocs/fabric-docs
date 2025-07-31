@@ -1,9 +1,8 @@
 ---
 title: "Direct Lake overview"
 description: "Learn about Direct Lake storage mode in Microsoft Fabric and when you should use it."
-author: peter-myers
-ms.author: phseamar
-ms.reviewer: davidi
+author: JulCsc
+ms.author: juliacawthra
 ms.date: 04/25/2025
 ms.topic: conceptual
 ms.custom: fabric-cat

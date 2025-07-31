@@ -26,6 +26,9 @@ Fabric doesn’t store the secret itself, just an encrypted token. When it’s t
 - A Microsoft Fabric tenant account with an active subscription. [Create an account for free](/fabric/fundamentals/fabric-trial).
 - You need an [Azure subscription](https://azure.microsoft.com/free/) with [Azure Key Vault](/azure/key-vault/quick-create-portal) resource to test this feature.
 - Read the [Azure Key Vault quick start guide on learn.microsoft.com](/azure/key-vault/secrets/quick-create-portal) to learn more about creating an AKV resource.
+- The Azure Key Vault needs to be accessible from public network.
+- The creator of Azure Key Vault reference connection must have at least [Key Vault Certificate User](/azure/role-based-access-control/built-in-roles/security#key-vault-certificate-user) permission on the Key Vault.
+
 
 ## Supported connectors and authentication types
 | Supported Connector | Category | Account key | Basic (Username/Password) | Token (Shared Access Signature or Personal Access Token) | Service Principal |
@@ -48,7 +51,7 @@ Fabric doesn’t store the secret itself, just an encrypted token. When it’s t
 - Azure Key Vault references can be used only with cloud connections.
 - Virtual network data gateways and on-premises data gateways aren’t supported.
 - Fabric Lineage view isn't available for AKV references.
-- You can’t create or use AKV references with connection from the "Modern Get Data” pane in Fabric items. Learn how to [create Azure Key Vault references](../data-factory/azure-key-vault-reference-configure.md) in Fabric from "Manage Connections & Gateways". 
+- You can’t create AKV references with connection from the "Modern Get Data” pane in Fabric items. Learn how to [create Azure Key Vault references](../data-factory/azure-key-vault-reference-configure.md) in Fabric from "Manage Connections & Gateways". 
 - Azure Key Vault references in Fabric always retrieve the current (latest) version of a secret; Azure Key Vault credential versioning is not supported. 
 
 ## Related Content
