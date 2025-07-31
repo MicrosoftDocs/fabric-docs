@@ -35,11 +35,11 @@ Get started using the instructions documented in the [MCP for RTI server](https:
 1. Test the MCP server.
 1. Start analyzing data with AI agents and natural language prompts.
 
-## Example: VS Code GitHub Copilot agent retrieving sample weather Eventhouse data
+## Example: Analyze your data
 
 Example prompt:
 
-'I have data about user executed commands in ProcessEvents table, can you sample few rows and classify the executed commands with threat tolerance of low/med/high. Provide a tabular view of the overall summary.`
+'I have data about user executed commands in the ProcessEvents table. Sample a few rows and classify the executed commands with a threat tolerance of low/med/high, and provide a tabular view of the overall summary.`
 
 Response:
 
