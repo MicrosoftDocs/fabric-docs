@@ -17,7 +17,7 @@ In this article, you learn how to create and manage event schema sets in Microso
 1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com/).
 1. Select **My workspace** on the left navigation bar.
 1. On the **My workspace** page, select **+ New item** on the command bar. 
-1. On the **New item** page, search for **Eventstream**, and then select **Eventstream**. 
+1. On the **New item** page, search for **Event schema set**, and then select **Event Schema Set (preview)**. 
 
     :::image type="content" source="./media/create-manage-event-schema-sets/new-item-event-schema-set.png" alt-text="Screenshot of the New item page with Event schema set (preview) selected." lightbox="./media/create-manage-event-schema-sets/new-item-event-schema-set.png":::
 1. In the **New event schema set (preview)** window, enter a **name** for the schema set, and then select **Create**.
@@ -34,6 +34,6 @@ Once you have at least one schema in the schema set, you can configure settings 
 
 
 ## Next step
-Now, add a schema to the event schema set by following instructions from [Create and manage event schemas](create-manage-event-schemas.md).
+Now, add a schema to the event schema set by following instructions from [Create and manage event schemas in schema sets](create-manage-event-schemas.md).
 
 

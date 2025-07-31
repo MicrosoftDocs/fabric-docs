@@ -22,18 +22,27 @@ On the left navigation bar, select **Event schema registry**. On the **Event sch
 
 :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/schema-registry-page.png" alt-text="Screenshot of the Schema Registry page in Fabric Real-Time hub." lightbox="./media/create-manage-event-schemas-real-time-hub/schema-registry-page.png":::
 
+### Columns
 This page mainly has the list of schemas with the following columns.
 
-- **Name**. Name of the schema. 
-- **Event schema set**. The schema set that contains the schema. 
-- **Updated** - The date and time at which the schema was updated last. 
-- **Owner** - Owner of the schema.
-- **Workspace** - The workspace that contains the schema set. 
-- **Endorsement** - The endorsement status of the schema. 
+| Column            | Description                                         |
+|-------------------|-----------------------------------------------------|
+| Name          | Name of the schema.                                 |
+| Event schema set | The schema set that contains the schema.         |
+| Updated       | The date and time at which the schema was updated last. |
+| Owner         | Owner of the schema.                                |
+| Workspace     | The workspace that contains the schema set.         |
+| Endorsement   | The endorsement status of the schema.               |
 
+### Search
 It also has a search box at the top where you can enter text to search for your schema.  
 
-Using the filter drop-down lists, you can filter schemas by schema set owner , schema set name, or Fabric workspace. 
+### Filters
+Using the filter drop-down lists, you can filter schemas by using the following filters.
+
+- Schema set owner 
+- Schema set name
+- Fabric workspace 
 
 Now, let's see how to add an event schema using the **+ New event schema** button. 
 
@@ -97,4 +106,4 @@ If you select **Endorse**, you see a window that lets you set the endorsement le
 :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/endorse.png" alt-text="Screenshot that shows the endorsement user interface." lightbox="./media/create-manage-event-schemas-real-time-hub/schema-actions.png":::        
 
 ## Related content
-
+To learn how to use schemas in Fabric eventstreams, see [Use schemas in eventstreams](use-event-schemas.md).

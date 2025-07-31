@@ -17,7 +17,6 @@ As Schema Registry in Fabric Real-Time Intelligence (RTI) is currently in public
 - You can't combine schema-enabled sources with nonschema sources in the same Eventstream
 - A limited set of input sources are supported. During public preview, schema registration is only available for these input sources: 
     - Custom Endpoint 
-    - Azure Event Hubs 
     - Azure SQL Change Data Capture (CDC) 
 - A limited set of destinations are supported. Today, schema-validated events can only be written to: 
     - Eventhouse (Push Mode) 

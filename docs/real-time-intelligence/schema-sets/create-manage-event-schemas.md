@@ -54,7 +54,7 @@ If you don't have an event schema set, create one by following instructions from
 
     To add more schemas to the schema set, select **+ New event schema** at the top of the page.
     
-    :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button.png" alt-text="Screenshot that shows the New event schema button." lightbox="./media/create-manage-event-schemas/new-event-schema-button.png":::      
+    :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button-2.png" alt-text="Screenshot that shows the New event schema button." lightbox="./media/create-manage-event-schemas/new-event-schema-button-2.png":::      
 
 ## Download an event schema
 
@@ -138,3 +138,4 @@ You can see the history of creation and update of the schema in the **History** 
 
 ## Related content
 
+To learn how to use schemas in Fabric eventstreams, see [Use schemas in eventstreams](use-event-schemas.md).

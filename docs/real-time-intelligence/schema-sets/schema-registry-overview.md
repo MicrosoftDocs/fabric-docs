@@ -34,19 +34,11 @@ Using schemas not only improves data quality but also gives you better control b
 
 Schema Registry helps you maintain data integrity, enable reuse across services, and establish access controls—all key to building reliable and scalable real-time data solutions in Fabric Real-Time intelligence. 
 
-### Key benefits
-Here are the key benefits of using Schema Registry: 
-
-- **Centralized management**: Store all your schemas in one location for easy access and governance.
-- **Version control**: Track evolution of schema and maintain backward compatibility.
-- **Validation**: Ensure data consistency across your event-driven applications.
-- **Integration**: Seamlessly connect with Fabric Real-Time Intelligence services.
-
 ## Key concepts 
 This section describes key concepts of Schema Registry. 
 
 ### Schema sets
-With Schema Registry, you can organize one or more related schemas into schema sets, enabling logical grouping and centralized access control. You can manage who can view, edit, or modify schemas at the group level, making it easier to govern schema usage across teams or projects. 
+With Schema Registry, you can organize one or more related schemas into schema sets, enabling logical grouping and centralized access control. You can manage who can view, edit, or modify schemas at the group level, making it easier to govern schema usage across teams or projects. For more information, see [Create and manage event schema sets](create-manage-event-schema-sets.md).
 
 ### Schema formats
 Currently, the Schema Registry supports **Avro** schema format.
