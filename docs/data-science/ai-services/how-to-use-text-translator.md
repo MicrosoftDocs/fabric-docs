@@ -7,7 +7,7 @@ ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
-ms.date: 02/10/2025
+ms.date: 07/31/2025
 ms.update-cycle: 180-days
 ms.search.form:
 ms.collection: ce-skilling-ai-copilot
