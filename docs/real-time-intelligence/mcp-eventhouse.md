@@ -37,9 +37,9 @@ Get started using the instructions documented in the [MCP for RTI server](https:
 
 ## Example: VS Code GitHub Copilot agent retrieving sample weather Eventhouse data
 
-Prompt:
+Example prompt:
 
-`Provide a simple linechart based on the weather data found in the Eventhouse databases and the temperature per location for the last two days. Aggregate the average temperature per location per hour. Reverse-geocode each location in a human readable location.`
+'I have data about user executed commands in ProcessEvents table, can you sample few rows and classify the executed commands with threat tolerance of low/med/high. Provide a tabular view of the overall summary.`
 
 Response:
 
