@@ -152,10 +152,10 @@ payload = {
 } 
 
 response = requests.post(service_url, json=payload, headers=auth_headers)
-print_response(response)
+
 
 # Output all information of the request process
-printresponse(response)
+print_response(response)
 
 ```
 
