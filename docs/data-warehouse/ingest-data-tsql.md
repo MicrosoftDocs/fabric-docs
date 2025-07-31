@@ -201,8 +201,7 @@ You can use the `OPENROWSET` function as a source in order to ingest data from F
 INSERT INTO dbo.bing_covid19_data_2023
 SELECT *
 FROM OPENROWSET(BULK 'https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{lakehouseId}/Files/year=*/month=*/*.parquet') AS data
-WHERE data.filepath(1) = '2022'
-AND data.filepath(2) = '3'
+WHERE data.filepath(1) = '2023'
 ```
 
 Replace `{workspaceId}` and `{lakehouseId}` with the corresponding workspace and lakehouse GUIDs.
