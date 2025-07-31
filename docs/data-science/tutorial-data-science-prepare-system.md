@@ -30,7 +30,7 @@ Each tutorial in the Get Started end-to-end series is available as a Jupyter not
     1. Download your notebook(s).  Make sure to download the files by using the "Raw" file link in GitHub.
         * For the **Get started** notebooks, download the notebook(.ipynb) files from the parent folder: [data-science-tutorial](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial). The Get Started tutorial series uses the following notebooks:
             * [Ingest data into Fabric lakehouse using Apache Spark](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/1-ingest-data.ipynb)
-            * [Explore and clense data](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/2-explore-cleanse-data.ipynb)
+            * [Explore and clean data](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/2-explore-cleanse-data.ipynb)
             * [Train and register a machine learning model](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/3-train-evaluate.ipynb)
             * [Score the trained model](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/4-predict.ipynb)
 
