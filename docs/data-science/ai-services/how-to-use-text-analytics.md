@@ -65,7 +65,7 @@ This article provides two ways to use Azure AI Language services in Fabric:
 Copy and paste this code into the first cell of your Fabric notebook to set up the connection to Azure AI Language services:
 
 > [!NOTE]
-> This code uses Fabric's built-in authentication. The `get_mlflow_env_config()` function automatically retrieves your workspace credentials and connects to the prebuilt AI services. No API key is required.
+> This code uses Fabric's built-in authentication. The `get_fabric_env_config ` function automatically retrieves your workspace credentials and connects to the prebuilt AI services. No API key is required.
 
 ``` python
 # Get workload endpoints and access token
