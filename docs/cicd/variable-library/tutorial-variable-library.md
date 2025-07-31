@@ -155,9 +155,9 @@ In this step, we add the alternate value sets to our variable library.
 
 |Name|Type|Default value set|
 |-----|-----|-----|
-|Source_LH|string|&lt;guid of SourceLH_Dev lakeshoue&gt;|
+|Source_LH|string|&lt;guid of SourceLH_Dev lakehouse&gt;|
 |Source_WSID|string|&lt;guid of SourceLH_Dev workspace&gt;|
-|Destination_LH|string|&lt;guid of SourceLH_Test lakeshoue&gt;|
+|Destination_LH|string|&lt;guid of SourceLH_Test lakehouse&gt;|
 |Destination_WSID|string|&lt;guid of SourceLH_Test workspace&gt;|
 |SourceTable_Name|String|DevCopiedData|
 |DestinationTable_Name|String|TestCopiedData|
@@ -170,9 +170,9 @@ In this step, we add the alternate value sets to our variable library.
 
 |Name|Type|Default value set|
 |-----|-----|-----|
-|Source_LH|string|&lt;guid of SourceLH_Test lakeshoue&gt;|
+|Source_LH|string|&lt;guid of SourceLH_Test lakehouse&gt;|
 |Source_WSID|string|&lt;guid of SourceLH_Test workspace&gt;|
-|Destination_LH|string|&lt;guid of SourceLH_Prod lakeshoue&gt;|
+|Destination_LH|string|&lt;guid of SourceLH_Prod lakehouse&gt;|
 |Destination_WSID|string|&lt;guid of SourceLH_Prod workspace&gt;|
 |SourceTable_Name|String|TestCopiedData|
 |DestinationTable_Name|String|ProdCopiedData|
