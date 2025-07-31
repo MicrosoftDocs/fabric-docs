@@ -1,36 +1,71 @@
 ---
-title: Use Text Analytics with REST API
+title: Use prebuilt Text Analytics with REST API
 description: How to use prebuilt text analytics in Fabric with REST API
-ms.author: larryfr
-author: Blackmist
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
-ms.date: 11/15/2023
+ms.date: 07/31/2025
 ms.update-cycle: 180-days
 ms.search.form:
 ms.collection: ce-skilling-ai-copilot
 ---
 
 
-# Use prebuilt Text Analytics in Fabric with REST API and SynapseML (preview)
+# Use Azure AI Language text analytics in Fabric with REST API and SynapseML (preview)
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Text Analytics](/azure/ai-services/language-service/) is an [Azure AI services](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
+[Azure AI Language](/azure/ai-services/language-service/) is an [Azure AI service](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
 
-This tutorial demonstrates using text analytics in Fabric with RESTful API to:
+In this article, you learn how to use Azure AI Language services directly in Microsoft Fabric to analyze text. By the end of this article, you are able to:
 
--   Detect sentiment labels at the sentence or document level.
--   Identify the language for a given text input.
--   Extract key phases from a text.
--   Identify different entities in text and categorize them into predefined classes or types.
+-   Detect sentiment labels at the sentence or document level
+-   Identify the language for a given text input
+-   Extract key phrases from a text
+-   Identify different entities in text and categorize them into predefined classes or types
 
 
 ## Prerequisites
 
+[!INCLUDE [prerequisites](../includes/prerequisites.md)]
+
+* Create [a new notebook](../../data-engineering/how-to-use-notebook.md).
+* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
+
+> [!NOTE]
+> This article uses Microsoft Fabric's built-in prebuilt AI services, which handle authentication automatically. You don't need to obtain a separate Azure AI services key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+
+The code samples in this article use libraries that are preinstalled in Microsoft Fabric notebooks:
+
+- **SynapseML**: Preinstalled in Fabric notebooks for machine learning capabilities
+- **PySpark**: Available by default in Fabric Spark compute
+- **Standard Python libraries**: `json`, `uuid` are part of Python standard library
+
+
+> [!NOTE]
+> Microsoft Fabric notebooks come with many common libraries preinstalled. The SynapseML library, which provides the MLflow integration and text analytics capabilities, is automatically available in the Spark environment.
+
+## Choose your approach
+
+This article provides two ways to use Azure AI Language services in Fabric:
+
+- **REST API approach**: Direct HTTP calls to the service (recommended for beginners)
+- **SynapseML approach**: Using Spark DataFrames for larger-scale processing
+
+> [!TIP]
+> **New users should start with the REST API approach** as it's easier to understand and debug. The SynapseML approach is better for processing large datasets with Spark.
+
 # [Rest API](#tab/rest)
+
+###  Set up authentication and endpoints
+
+Copy and paste this code into the first cell of your Fabric notebook to set up the connection to Azure AI Language services:
+
+> [!NOTE]
+> This code uses Fabric's built-in authentication. The `get_fabric_env_config ` function automatically retrieves your workspace credentials and connects to the prebuilt AI services. No API key is required.
 
 ``` python
 # Get workload endpoints and access token
@@ -60,13 +95,21 @@ def print_response(response):
         print(f"Error: {response.status_code}, {response.content}")
 ```
 
+
 # [SynapseML](#tab/synapseml)
+
+### Import required libraries
+
+Copy and paste this code into the first cell of your Fabric notebook:
 
 ``` Python
 import synapse.ml.core
 from synapse.ml.cognitive.language import AnalyzeText
 from pyspark.sql.functions import col
+
+# Note: 'spark' and 'display()' are automatically available in Fabric notebooks
 ```
+
 
 ---
 
@@ -75,7 +118,11 @@ from pyspark.sql.functions import col
 
 # [Rest API](#tab/rest)
 
-The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
+The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral, and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
+
+### Analyze sentiment of text
+
+Copy this code into a new cell in your notebook to analyze the sentiment of a sample text:
 
 ``` python
 payload = {
@@ -96,10 +143,19 @@ payload = {
 } 
 
 response = requests.post(service_url, json=payload, headers=auth_headers)
+
+
+# Output all information of the request process
 print_response(response)
 
 ```
-### Output
+
+> [!TIP]
+> You can replace the text in the "text" field with your own content to analyze. The service returns sentiment scores and identify which parts of the text are positive, negative, or neutral.
+
+#### Expected output
+
+When you run the following code successfully, you should see output similar to this:
 
 ```
 {
@@ -228,7 +284,7 @@ print_response(response)
 # [SynapseML](#tab/synapseml)
 
 The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document & sentences
-within it for positive, neutral and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
+within it for positive, neutral, and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
 
 ``` Python
 df = spark.createDataFrame([
@@ -278,6 +334,7 @@ response = requests.post(service_url, json=payload, headers=auth_headers)
 
 # Output all information of the request process
 print_response(response)
+
 ```
 ### Output
 
@@ -435,6 +492,7 @@ response = requests.post(service_url, json=payload, headers=auth_headers)
 
 # Output all information of the request process
 print_response(response)
+
 ```
 ### Output
 
@@ -477,6 +535,7 @@ print_response(response)
     "modelVersion": "2025-02-01"
   }
 }
+
 
 ```
 
@@ -548,3 +607,5 @@ display(result)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
 - [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-sdk-synapse.md)
 - [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-sdk-synapse.md)
+- [SynapseML GitHub repository](https://github.com/microsoft/SynapseML) - Source code and documentation for SynapseML
+- [Azure AI Language documentation](/azure/ai-services/language-service/) - Complete reference for Azure AI Language service
