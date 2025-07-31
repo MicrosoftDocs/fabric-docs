@@ -14,7 +14,7 @@ ms.collection: ce-skilling-ai-copilot
 ---
 
 
-# Use Azure AI Language in Fabric with REST API and SynapseML (preview)
+# Use Azure AI Language text analytics in Fabric with REST API and SynapseML (preview)
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
@@ -36,26 +36,21 @@ In this article, you learn how to use Azure AI Language services directly in Mic
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
 > [!NOTE]
-> This tutorial uses Microsoft Fabric's built-in prebuilt AI services, which handle authentication automatically. You don't need to obtain a separate Azure AI services key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+> This article uses Microsoft Fabric's built-in prebuilt AI services, which handle authentication automatically. You don't need to obtain a separate Azure AI services key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
-The code samples in this tutorial use libraries that are preinstalled in Microsoft Fabric notebooks:
+The code samples in this article use libraries that are preinstalled in Microsoft Fabric notebooks:
 
 - **SynapseML**: Preinstalled in Fabric notebooks for machine learning capabilities
 - **PySpark**: Available by default in Fabric Spark compute
 - **Standard Python libraries**: `json`, `uuid` are part of Python standard library
 
-For REST API calls, you need to install the `requests` library if it's not already available:
-
-```python
-%pip install requests
-```
 
 > [!NOTE]
 > Microsoft Fabric notebooks come with many common libraries preinstalled. The SynapseML library, which provides the MLflow integration and text analytics capabilities, is automatically available in the Spark environment.
 
 ## Choose your approach
 
-This tutorial provides two ways to use Azure AI Language services in Fabric:
+This article provides two ways to use Azure AI Language services in Fabric:
 
 - **REST API approach**: Direct HTTP calls to the service (recommended for beginners)
 - **SynapseML approach**: Using Spark DataFrames for larger-scale processing
