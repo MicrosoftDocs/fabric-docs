@@ -53,7 +53,7 @@ Each tutorial in the Get Started end-to-end series is available as a Jupyter not
 
     1. If the imported notebook includes output, select the **Edit** menu, then select **Clear all outputs**.
 
-    :::image type="content" source="media\tutorial-data-science-prepare-system\clear-outputs.png" alt-text="Screenshot shows the edit menu option to clear all outputs." lightbox="media\tutorial-data-science-prepare-system\clear-outputs.png":::
+        :::image type="content" source="media\tutorial-data-science-prepare-system\clear-outputs.png" alt-text="Screenshot shows the edit menu option to clear all outputs." lightbox="media\tutorial-data-science-prepare-system\clear-outputs.png":::
 
 * <a name="open-sample-notebook"></a> Open the sample notebook (when available) in the Data Science workload:
 
