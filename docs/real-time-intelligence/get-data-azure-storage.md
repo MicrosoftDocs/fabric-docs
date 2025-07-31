@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 07/15/2025
+ms.date: 07/31/2025
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -23,7 +23,11 @@ In this article, you learn how to get data from Azure Storage (ADLS Gen2 contain
 > [!NOTE]
 >
 > * A continuous ingestion stream can affect your billing. For more information, see [Eventhouse and KQL Database consumption](real-time-intelligence-consumption.md).
-> * Ingestion (continous and one-time) from an Azure Storage account using a [private link](/azure/private-link/private-link-overview) is not supported.
+
+
+> [!WARNING]
+>
+> Ingestion from an Azure Storage account (continous and one-time) using a [private link](/azure/private-link/private-link-overview) is not supported.
 
 ## Prerequisites
 
@@ -112,6 +116,10 @@ Set the source to get data.
         | Subscription | The storage account subscription. |
         | Blob storage account | Storage account name. |
         | Container | The storage container containing the file you want to ingest. |
+
+        > [!NOTE] 
+        >
+        > Using a [private link](/azure/private-link/private-link-overview) is not supported.
 
     1. In the **Connection** field, open the dropdown and select **+ New connection**, then **Save** > **Close**. The connection settings are prepopulated.
 
