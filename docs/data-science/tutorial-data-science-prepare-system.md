@@ -6,7 +6,7 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: tutorial
 ms.custom:
-ms.date: 01/10/2025
+ms.date: 07/31/2025
 ---
 
 # Prepare your system for data science tutorials
