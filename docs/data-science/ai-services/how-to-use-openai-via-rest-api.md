@@ -1,12 +1,11 @@
 ---
 title: Use Azure OpenAI with REST API
 description: How to use prebuilt Azure OpenAI in Fabric with REST API
-ms.author: larryfr
-author: Blackmist
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
-ms.custom:
 ms.date: 02/14/2025
 ms.update-cycle: 180-days
 ms.search.form:
