@@ -181,7 +181,7 @@ WHERE DATEPART(YEAR, updated) = '2023';
 
 ### Ingest data from CSV/Parquet/JSONL file
 
-You can use the `OPENROWSET` function as a source in order to ingest data from Azure Data Lake or Azure Blob storage:
+You can use the `OPENROWSET` function as a source in order to ingest data Parquet, CSv or JSON files from storage:
 
 ```sql
 INSERT INTO dbo.bing_covid19_data_2023
@@ -190,7 +190,23 @@ FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/cura
 WHERE DATEPART(YEAR, updated) = '2023';
 ```
 
+You can read multiple files by using wildcards like `*.parquet`, or by targeting partitioned directories such as `/year=*/month=*`. To optimize performance, apply filters in the WHERE clause to eliminate unnecessary rows and partitions during query execution.
 These example is similar to those used in [ingestion with COPY INTO](ingest-data-copy.md). The COPY INTO command is easier to use, especially for straightforward source-to-destination data loads. However, if you need to transform source data (such as converting values or joining with other tables), using INSERT ... SELECT gives you the flexibility to perform transformations during ingestion.
+
+### Ingest data from OneLake
+
+You can use the `OPENROWSET` function as a source in order to ingest data from Fabric OneLake storage:
+
+```sql
+INSERT INTO dbo.bing_covid19_data_2023
+SELECT *
+FROM OPENROWSET(BULK 'https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{lakehouseId}/Files/year=*/month=*/*.parquet') AS data
+WHERE data.filepath(1) = '2022'
+ANDD data.filepath(3) = '3'
+```
+
+Replace {workspaceId} and {lakehouseId} with the corresponding workspace and lakehouse GUIDs.
+This example builds on the previous one that reads data from Azure Data Lake Storage. Use this approach when you need to transform source data—such as converting values, joining with other tables, or reading specific partitions. In such cases, using `INSERT ... SELECT` provides the flexibility to apply transformations during data ingestion.
 
 <a id="ingesting-data-from-tables-on-different-warehouses-and-lakehouses"></a>
 
