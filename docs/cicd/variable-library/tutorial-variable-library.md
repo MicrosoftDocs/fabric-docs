@@ -217,28 +217,28 @@ In this step, we create our pipeline and declare our variables.
 ### Configure the source connection for the *Pipeline_Deploy* pipeline
 In this step, we configure our source connection for our pipeline.
 
-1. In the *Source LHs with Variables* workspace, on the *Pipeline_Depoy*.
-1. On the canvas, select **Copy Data** so the focus is on **Copy Data**.
-2. At the bottom click on **Source**.
-3. Under **Source > Connection**, select **Use dynamic content**.
-4. On the right, click **...** and select **Library variables preview**
-5. Select **SourceLH**. It will populate the box with `@pipeline().libraryVariables.SourceLH`. Click **Ok**
+ 1. In the *Source LHs with Variables* workspace, on the *Pipeline_Depoy*.
+ 2. On the canvas, select **Copy Data** so the focus is on **Copy Data**.
+ 3. At the bottom click on **Source**.
+ 4. Under **Source > Connection**, select **Use dynamic content**.
+ 5. On the right, click **...** and select **Library variables preview**
+ 6. Select **SourceLH**. It will populate the box with `@pipeline().libraryVariables.SourceLH`. Click **Ok**
 
  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-12.png" alt-text="Screenshot of dynamic content for connection source." lightbox="media/tutorial-variable-library/create-new-pipeline-12.png":::
 
-6. Under **Source > Workspace**, select **Use dynamic content**.
-7. On the right, click **...** and select **Library variables preview**
-8. Select **SourceWSID**. It will populate the box with `@pipeline().libraryVariables.SourceWSID`. Click **Ok**
+ 7. Under **Source > Workspace**, select **Use dynamic content**.
+ 8. On the right, click **...** and select **Library variables preview**
+ 9. Select **SourceWSID**. It will populate the box with `@pipeline().libraryVariables.SourceWSID`. Click **Ok**
 
  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-14.png" alt-text="Screenshot of dynamic content for workspace source." lightbox="media/tutorial-variable-library/create-new-pipeline-14.png":::
 
-9. Under **Source > Tables**, place a check in **Enter manually**, click on the **table name** box and select **Use dynamic content**.
-10. On the right, click **...** and select **Library variables preview**
-11. Select **SourceTableName**. It will populate the box with `@pipeline().libraryVariables.SourceTableName`. Click **Ok**
+ 10. Under **Source > Tables**, place a check in **Enter manually**, click on the **table name** box and select **Use dynamic content**.
+ 11. On the right, click **...** and select **Library variables preview**
+ 12. Select **SourceTableName**. It will populate the box with `@pipeline().libraryVariables.SourceTableName`. Click **Ok**
 
  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-15.png" alt-text="Screenshot of dynamic content for table name." lightbox="media/tutorial-variable-library/create-new-pipeline-15.png":::
 
-12. Now that the source connection is set up we can test it. Click **Preview data** and on the right, click **Okay** on the fly-out. Once it populates, you can close the data preview.
+ 13. Now that the source connection is set up we can test it. Click **Preview data** and on the right, click **Okay** on the fly-out. Once it populates, you can close the data preview.
 
  :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-16.png" alt-text="Screenshot of preview data for the source connection." lightbox="media/tutorial-variable-library/create-new-pipeline-16.png":::
 
