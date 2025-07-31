@@ -77,6 +77,8 @@
       href: how-to-access-on-premises-data.md
     - name: Monitoring activity in Data Factory
       href: monitor-data-factory.md
+    - name: Create Alerts for Pipelines
+      href: create-alerts-for-pipeline-runs.md
     - name: Bring Azure Data Factory to Fabric
       href: tutorial-bring-azure-data-factory-to-fabric.md      
   - name: Migrate to Fabric
