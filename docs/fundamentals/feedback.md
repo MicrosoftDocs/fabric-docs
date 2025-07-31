@@ -1,8 +1,8 @@
 ---
 title: Learn about Microsoft Fabric feedback
 description: Learn about giving feedback about Microsoft Fabric to Microsoft.
-author: KesemSharabi
-ms.author: kesharab
+author: SnehaGunda
+ms.author: sngun
 ms.topic: overview
 ms.date: 05/08/2025
 ---
