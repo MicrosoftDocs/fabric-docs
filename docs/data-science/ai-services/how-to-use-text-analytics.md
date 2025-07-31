@@ -151,8 +151,8 @@ payload = {
     }
 } 
 
-post_headers["x-ms-workload-resource-moniker"] = str(uuid.uuid1())
-response = requests.post(service_url, json=post_body, headers=post_headers)
+response = requests.post(service_url, json=payload, headers=auth_headers)
+print_response(response)
 
 # Output all information of the request process
 printresponse(response)
@@ -343,6 +343,7 @@ response = requests.post(service_url, json=payload, headers=auth_headers)
 
 # Output all information of the request process
 print_response(response)
+
 ```
 ### Output
 
@@ -500,6 +501,7 @@ response = requests.post(service_url, json=payload, headers=auth_headers)
 
 # Output all information of the request process
 print_response(response)
+
 ```
 ### Output
 
@@ -542,6 +544,7 @@ print_response(response)
     "modelVersion": "2025-02-01"
   }
 }
+
 
 ```
 
