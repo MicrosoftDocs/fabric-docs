@@ -38,7 +38,7 @@ ms.date: 06/23/2025
         > [!NOTE]
         > The **None** option isn't available during this creation step. If a committed offset exists and you want to use **None**, you can first complete the configuration and then update the setting in the Eventstream edit mode. 
 
-            :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings."::: 
+    :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings."::: 
 1. Depending on whether your data is encoded using Confluent Schema Registry:
    - If not encoded, select **Next**. On the **Review and create** screen, review the summary, and then select **Add** to complete the setup.
    - If encoded, proceed to the next step: [Connect to Confluent schema registry to decode data (preview)](#connect-to-confluent-schema-registry-to-decode-data-preview)
