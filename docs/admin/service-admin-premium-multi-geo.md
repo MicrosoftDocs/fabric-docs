@@ -52,7 +52,9 @@ Follow these steps to change the default capacity region when you're creating a 
 
 # [Trial](#tab/trial)
 
-Trial capacities are available in multiple geos (see [Start a new trial capacity from the Account manager](../fundamentals/fabric-trial.md), step 4). Your home region is used as the default region.
+Trial capacities are available in multiple geos. Your home region is used as the default region.
+
+For information about selecting a region for your trial capacity, see [Start a new trial capacity from the Account manager](../fundamentals/fabric-trial.md), step 4.
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
