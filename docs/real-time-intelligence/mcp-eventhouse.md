@@ -43,7 +43,7 @@ Example prompt:
 
 Response:
 
-:::image type="content" source="media/mcp/mcp-eventhouse-example.png" alt-text="Screenshot of the VS Code Co-Pilot agent displaying a line chart.":::
+:::image type="content" source="media/mcp/mcp-eventhouse-example-small.png" alt-text="Screenshot of the VS Code Copilot agent displaying a summary of the user executed commands." lightbox="media/mcp/mcp-eventhouse-example.png":::
 
 ## Related content
 
