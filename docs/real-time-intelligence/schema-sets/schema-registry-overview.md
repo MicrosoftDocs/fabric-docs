@@ -7,6 +7,9 @@ ms.topic: overview
 ms.date: 07/24/2025
 ms.author: spelluru
 ms.reviewer: spelluru
+ms.custom:
+  - ai-gen-docs-bap
+  - ai-gen-title
 ---
 
 # Schema Registry in Fabric Real-Time Intelligence (preview)
