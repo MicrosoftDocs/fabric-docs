@@ -1,8 +1,8 @@
 ---
 title: Enable workspace monitoring
 description: Enable workspace monitoring in Microsoft Fabric and create an Eventhouse database to gain insights into the usage and performance of your workspace.
-author: KesemSharabi
-ms.author: kesharab
+author: SnehaGunda
+ms.author: sngun
 ms.topic: how-to
 ms.custom:
 ms.date: 09/02/2024

@@ -6,7 +6,7 @@ metadata:
   author: seesharprun
   ms.author: sidandrews
   ms.topic: faq
-  ms.date: 07/14/2025
+  ms.date: 07/16/2025
   ai-usage: ai-assisted
   appliesto:
   - ✅ Cosmos DB in Fabric
@@ -51,19 +51,13 @@ sections:
           - Microsoft Entra authentication for secure access
           - Data encryption at rest and in transit
 
-          You can also enhance security by implementing more measures, such as:
-
-          - Customer-managed keys for encryption at rest
-          - Network isolation and private endpoints
-
           For more information, see [security for Cosmos DB in Microsoft Fabric](security.md).
   - name: Troubleshooting
     questions:
       - question: |
           Why is Cosmos DB isn't available as an option when I select Fabric => Workspaces => New Item?
         answer: |
-          By default, preview features aren't enabled in your Fabric workspace. To enable Cosmos DB in Fabric, use the Admin portal's tenant settings to enable the Cosmos DB (../../includes/feature-preview-note.md
-          For more information, see, [tenant settings](../../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings).
+          By default, preview features aren't enabled in your Fabric workspace. To enable Cosmos DB in Fabric, use the Admin portal's tenant settings to enable the Cosmos DB database feature. For more information, see, [tenant settings](../../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 
           If you can't enable the feature, ensure that your current role has the necessary permissions to modify tenant settings.
 

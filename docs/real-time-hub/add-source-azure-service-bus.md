@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 07/16/2025
 ---
 
 # Get events from Azure Service Bus into Real-Time hub (preview)
@@ -24,7 +24,7 @@ This article describes how to get events from an Azure Service Bus queue or a to
 You can get events from an Azure Service Bus into Real-Time hub in one of the ways:
 
 - [Using the **Data sources** page](#data-sources-page)
-- [Using the **Microsoft sources** page](#microsoft-sources-page)
+- [Using the **Microsoft sources** page](#azure-sources-page)
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
@@ -34,16 +34,16 @@ You can get events from an Azure Service Bus into Real-Time hub in one of the wa
     
     Now, follow instructions from the [Connect to Azure Service Bus](#connect-to-azure-service-bus) section.
 
-## Microsoft sources page
+## Azure sources page
 
-1. In Real-Time hub, select **Microsoft sources** on the left navigation menu. You can use the search box to the type your resource name or use filters (Source, Subscription, Resource group, Region) to search for your resource. 
+1. In Real-Time hub, select **Azure sources** on the left navigation menu. You can use the search box to the type your resource name or use filters (Source, Subscription, Resource group, Region) to search for your resource. 
 1. For **Source** at the top, select **Azure Service Bus** from the drop-down list. 
 1. For **Subscription**, select an **Azure subscription** that has the resource group with your queue to topic's subscription.
 1. For **Resource group**, select a **resource group** that has your queue or topic's subscription.
 1. For **Region**, select a location where your Service Bus queue or topic's subscription is located.
 1. Now, move the mouse over the name of the Service Bus queue that you want to connect to Real-Time hub in the list of Service Bus namespaces, and select the **Connect** button, or select **... (ellipsis)**, and then select **Connect data source**.
 
-    :::image type="content" source="./media/add-source-azure-service-bus/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show Service Bus namespaces and the connect button for a namespace." lightbox="./media/add-source-azure-service-bus/microsoft-sources-connect-button.png":::
+    :::image type="content" source="./media/add-source-azure-service-bus/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Azure sources page with filters to show Service Bus namespaces and the connect button for a namespace." lightbox="./media/add-source-azure-service-bus/microsoft-sources-connect-button.png":::
 
 ## Connect to Azure Service Bus
 
@@ -86,7 +86,9 @@ You can get events from an Azure Service Bus into Real-Time hub in one of the wa
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Service Bus resource as a source. To close the wizard, select **Finish** at the bottom of the page.
 
     :::image type="content" source="./media/add-source-azure-service-bus/review-create-success.png" alt-text="Screenshot that shows the Review + connect page with links to open eventstream and close the wizard." lightbox="./media/add-source-azure-service-bus/review-create-success.png":::
-2. You should see the stream on the **All data streams** and **My data streams** pages. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+2. You should see the stream in the **Recent streaming data** section of the **Real-Time hub** home page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+
+    :::image type="content" source="./media/add-source-azure-service-bus/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub All data streams page with the stream you just created." lightbox="./media/add-source-azure-service-bus/verify-data-stream.png":::
 
 ## Related content
 

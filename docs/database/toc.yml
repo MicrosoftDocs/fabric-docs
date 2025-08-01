@@ -158,7 +158,7 @@ items:
     - name: SQL database in Fabric Community
       href: https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion
     - name: What's new in SQL database in Fabric?
-      href: ../fundamentals/whats-new.md#fabric-databases
+      href: ../fundamentals/whats-new.md#sql-database-in-microsoft-fabric
 - name: Cosmos DB in Fabric
   href: cosmos-db/toc.yml
 - name: Resources

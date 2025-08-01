@@ -19,7 +19,7 @@ To limit and protect access to firewall-enabled storage accounts from certain Fa
 > [!NOTE]
 > Trusted workspace access is **generally available**, but can only be used in F SKU capacities. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md). Trusted workspace access is not supported in Trial capacities.
 
-This article shows you how to:
+You can use trusted workspace access in OneLake shortcuts, data pipelines, semantic models, and the T-SQL COPY statement only. This article shows you how to:
 
 * [Configure trusted workspace access](#configure-trusted-workspace-access-in-adls-gen2) in an ADLS Gen2 storage account.
 
@@ -97,8 +97,9 @@ There are several ways to use trusted workspace access to access your data from 
 * You can [create a new ADLS shortcut](#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access) in a Fabric Lakehouse to start analyzing your data with Spark, SQL, and Power BI.
 
 * You can [create a data pipeline](#create-a-data-pipeline-to-a-storage-account-with-trusted-workspace-access) that leverages trusted workspace access to directly access a firewall-enabled ADLS Gen2 account.
-  
+
 * You can use a T-SQL Copy statement that leverages trusted workspace access to ingest data into a Fabric warehouse.
+
 * You can use a semantic model (import mode) to leverage trusted workspace access and create models and reports on the data.
 
 The following sections show you how to use these methods.
@@ -230,16 +231,15 @@ Semantic models in import mode support trusted workspace access to storage accou
 4. Under cloud connections, select a data connection for the ADLS Gen2 storage account (this connection can have workspace identity, service principal, and organizational account as the authentication method)
 5. Select **Apply** and then refresh the model to finalize the configuration.
 
-
 ### Restrictions and Considerations
 
 When using trusted workspace access, it's important to be aware of these restrictions and considerations.
 
 #### Authentication and access considerations
 
-* **Authentication methods:** Only organizational account, service principal, and workspace identity authentication methods can be used for authentication to storage accounts for trusted workspace access in shortcuts, pipelines, and shortcuts.
-* **Service principal and organizational accounts:** To connect to a firewall-enabled storage account using a service principal or an organizational account, you can create a connection using the shortcut, pipeline, or Power BI quick reports experience. Then later, you can bind this connection to a semantic model or another shortcut or pipeline.
-* **Personal cloud connections:** For semantic models that use personal cloud connections, Workspace identity is the only supported authentication method. We recommend replacing personal cloud connections with shared cloud connections.
+* **Authentication methods:** Only organizational account, service principal, and workspace identity authentication methods can be used for authentication to storage accounts for trusted workspace access in shortcuts and pipelines.
+* **Service principal and organizational accounts:** To use service principal or organizational accounts as the authentication method in connections to a firewall-enabled storage account, you can create a connection using the shortcut, pipeline, or Power BI quick reports experience. Then later, you can bind this connection to semantic models, as well as other shortcuts and pipelines.
+* **Personal cloud connections:** For semantic models that use personal cloud connections, Workspace identity is the only supported authentication method for trusted access to storage. We recommend replacing personal cloud connections with shared cloud connections.
 * **Conditional Access policies:** If your organization has a Microsoft Entra Conditional Access policy for workload identities that includes all service principals, trusted workspace access won't work. In such instances, you need to exclude specific Fabric workspace identities from the Conditional Access policy for workload identities.
 * **Manage connections and gateways:**
    * When creating connections in **Manage connections and gateways** settings in the portal, Workspace identity is the only supported authentication method. Using organizational account or service principal authentication methods will cause **Test connection** to fail .

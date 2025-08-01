@@ -5,8 +5,9 @@ description: Review the fundamentals of securing Cosmos DB in Microsoft Fabric f
 author: seesharprun
 ms.author: sidandrews
 ms.topic: best-practice
-ms.date: 07/14/2025
+ms.date: 07/17/2025
 ms.custom: security-horizontal-2025
+ms.search.form: Cosmos DB database security
 ai-usage: ai-generated
 appliesto:
 - ✅ Cosmos DB in Fabric
@@ -31,12 +32,6 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 ## User permissions
 
 - **Configure least-permissive Fabric workspace access**: User permissions are enforced based on the current level of workspace access. If a user is removed from the Fabric workspace, they also automatically lose access to the associated Cosmos DB database and underlying data. For more information, see [Fabric permission model](../../security/permission-model.md).
-
-- **Use private links to access your database**: Configure private access from a specific virtual network to the workspace that hosts your Cosmos DB database. This configuration ensures that data is only accessible to authorized applications and users within the defined network. For more information, see [use private links](../../security/protect-inbound-traffic.md#private-links).
-
-## Data protection
-
-- **Consider customer-managed keys for encryption at rest**: Cosmos DB database in Fabric automatically encrypts data at rest using service-managed keys. For an extra layer of security, use customer-managed keys to control encryption with your own keys. For more information, see [manage customer-managed keys](../../security/workspace-customer-managed-keys.md).
 
 ## Related content
 

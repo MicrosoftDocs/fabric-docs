@@ -4,7 +4,7 @@ description: This article shows how to explore OneLake events in Fabric Real-Tim
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 11/17/2024
+ms.date: 07/22/2025
 ---
 
 # Explore OneLake events in Fabric Real-Time hub
@@ -89,8 +89,8 @@ The `data` object has the following properties:
 | `blobUrl` | string | Blob URL to the path of the file. | `https://onelake.blob.fabric.microsoft.com/55556666-ffff-7777-aaaa-8888bbbb9999 < 66667777-aaaa-8888-bbbb-9999cccc0000/Files/FolderA/File1.txt` |
 | `url` | string | OneLake URL to the path of the file. | `https://onelake.dfs.fabric.microsoft.com/eeeeeeee-4444-5555-6666-ffffffffffff < aaaaaaaa-6666-7777-8888-bbbbbbbbbbbb/Files/FolderA/File1.txt` |
 | `api` | string | The operation that triggered the event. | `CreateFile` |
-| `clientRequestId` | string | A client-provided request ID for the storage API operation. | `00001111-aaaa-2222-bbbb-3333cccc4444` |
-| `requestId` | string | Service-generated request ID for the storage API operation. | `11112222-bbbb-3333-cccc-4444dddd5555` |
+| `clientRequestId` | string | A client-provided request ID for the storage API operation. | `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
+| `requestId` | string | Service-generated request ID for the storage API operation. | `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
 | `contentOffset` | number | The offset in bytes of a write operation taken at the point where the event-triggering application completed writing to the file. | 0 |
 | `sequencer` | string | An opaque string value representing the logical sequence of events. | `00000000000004420000000000028963` |
 

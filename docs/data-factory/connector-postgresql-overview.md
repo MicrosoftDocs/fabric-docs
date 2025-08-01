@@ -14,18 +14,16 @@ ms.custom:
 
 The PostgreSQL database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Basic |
+| **Data pipeline**<br>- [Copy activity](connector-postgresql-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Basic |
+| **Copy job** (source/-) <br>- Full load<br>- Incremental load|None<br> On-premises<br> Virtual network |Basic |
 
-For information on how to connect to a PostgreSQL database in Dataflow Gen2, go to [Set up your PostgreSQL database connection](connector-postgresql.md).
+## Related content
 
-## Support in Data pipeline
-
-The PostgreSQL database connector supports the following capabilities in Data pipeline:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/-)** | None <br> On-premises  | Basic |
-| **Lookup activity** | None <br> On-premises  | Basic |
+For information on how to connect to a PostgreSQL database, go to [Set up your PostgreSQL database connection](connector-postgresql.md).
 
 To learn more about the copy activity configuration for PostgreSQL database in Data pipeline, go to [Configure in a data pipeline copy activity](connector-postgresql-copy-activity.md).

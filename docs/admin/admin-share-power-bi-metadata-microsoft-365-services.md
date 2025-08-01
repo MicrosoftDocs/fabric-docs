@@ -49,7 +49,9 @@ By default, Fabric data is available only in the region where the Fabric tenant 
 > [!NOTE]
 > The second toggle is visible only when the main sharing toggle is enabled.
 
-![Screenshot of Users can see Microsoft Fabric metadata in Microsoft 365 tenant setting.](media/admin-share-power-bi-metadata-microsoft-365-services/m365-share.png)
+![Screenshot of users can see Microsoft Fabric metadata in Microsoft 365 tenant setting.](media/admin-share-power-bi-metadata-microsoft-366.png)
+
+
 
 ## Data that is shared with Microsoft 365
 

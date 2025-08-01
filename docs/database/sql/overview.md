@@ -47,12 +47,10 @@ With your SQL database in Fabric, you don't need to piece together different ser
 
 The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS). To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 
-SQL database in Fabric creates three items in your Fabric workspace:
+Creating a new SQL database in Fabric creates these items in your Fabric workspace:
 
 - Data in your SQL database is automatically replicated of into the [OneLake](../../onelake/onelake-overview.md) and converted to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
-
 - A [SQL analytics endpoint](sql-analytics-endpoint.md)
-- A [default semantic model](../../data-warehouse/default-power-bi-semantic-model.md)
 
 In addition to the [Fabric SQL database Query Editor](query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
 
@@ -60,7 +58,7 @@ In addition to the [Fabric SQL database Query Editor](query-editor.md), there's 
 
 Sharing enables ease of access control and management, while security controls like row level security (RLS) and object level security (OLS), and more make sure you can control access to sensitive information. Sharing also enables secure and democratized decision-making across your organization.
 
-By sharing your SQL database, you can grant other users or a group of users access to a database without giving access to the workspace and the rest of its items. When someone shares a database, they also grant access to the SQL analytics endpoint and associated default semantic model.
+By sharing your SQL database, you can grant other users or a group of users access to a database without giving access to the workspace and the rest of its items. When someone shares a database, they also grant access to the SQL analytics endpoint.
 
 Access the Sharing dialog with the **Share** button next to the database name in the **Workspace** view. Shared databases can be found through **OneLake** **Data Hub** or the **Shared with Me** section in Microsoft Fabric.
 
@@ -142,6 +140,6 @@ Fabric SQL database doesn't support the Azure SQL Database elastic pools concept
 ## Related content
 
 - [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)
-- [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
 - [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)  
 - [What is the SQL analytics endpoint for a SQL database in Fabric?](sql-analytics-endpoint.md)

@@ -9,6 +9,7 @@ ms.topic: overview
 ms.custom:
   - references_regions
 ms.date: 11/29/2024
+ms.update-cycle: 180-days
 ms.search.form:
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -137,9 +138,11 @@ An online shop owner uses SynapseML and Spark to categorize millions of products
 
 The expected cost for Spark usage is 1000 CUs. The expected cost for OpenAI usage is about 300 CUs.
 
-To test the new logic, first iterate it in a Spark notebook interactive run. For the operation name of the run, use "Notebook Interactive Run." The owner expects to see an all-up usage of 1300 CUs under "Notebook Interactive Run," with the Spark billing meter accounting for the entire usage.​
+To test the new logic, first iterate it in a Spark notebook interactive run. For the operation name of the run, use "Notebook Run." The owner expects to see an all-up usage of 1300 CUs under "Notebook Run," with the Spark billing meter accounting for the entire usage.​
 
 Once the shop owner validates the logic, the owner sets up the regular run and expects to see an all-up usage of 1300 CUs under the operation name "Spark Job Scheduled Run," with the Spark billing meter accounting for the entire usage.​
+
+According to [Spark compute usage reporting](../../data-engineering/billing-capacity-management-for-spark.md#spark-compute-usage-reporting), all Spark related operations are classified as [background operations](../../enterprise/fabric-operations.md#background-operations).
 
 ## Related content
 - [Use prebuilt Azure OpenAI in Fabric](how-to-use-openai-sdk-synapse.md)

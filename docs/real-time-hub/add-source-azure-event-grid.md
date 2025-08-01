@@ -5,7 +5,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 03/19/2025
+ms.date: 07/16/2025
 ---
 
 # Get events from Azure Event Grid namespace into Fabric Real-Time hub (Preview)
@@ -34,7 +34,7 @@ You can get events from an Azure Event Grid namespace into Real-Time hub using t
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Event Grid namespace as a source. To close the wizard, select **Finish** at the bottom of the page.
 
     :::image type="content" source="./media/add-source-azure-event-grid/review-create-success.png" alt-text="Screenshot that shows the Review + connect page with links to open eventstream and close the wizard." lightbox="./media/add-source-azure-event-grid/review-create-success.png":::
-2. You should see the stream on the **All data streams** and **My data streams** pages. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+2. You should see the stream in the **Recent streaming data** section of the **Real-Time hub** page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
     :::image type="content" source="./media/add-source-azure-event-grid/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub All data streams page with the stream you just created." lightbox="./media/add-source-azure-event-grid/verify-data-stream.png":::
 

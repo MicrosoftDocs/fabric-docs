@@ -23,10 +23,6 @@ Start by selecting an existing Activator rule or [creating a rule](activator-cre
 
 In the rule definition pane on the right side of the screen, find **Action** section to define the action when chosen condition is met. Select **Fabric item** as the action type and select a specific item from the [OneLake Data Hub](../../governance/onelake-catalog-overview.md) pop-up window.
 
-:::image type="content" source="media/activator-trigger-fabric-items/data-activator-fabric-item.png" alt-text="Screenshot showing Fabric item selected from the Type dropdown.":::
-
-:::image type="content" border="true" source="media/activator-trigger-fabric-items/data-activator-fabric-item-select-item.png" alt-text="Screenshot showing Activator Action card with a notebook being selected.":::
-
 ## Test, start, or stop an [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule
 
 Once you enter all of the required information, select **Save** to save the [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] rule. To test the rule, select **Test action**. To start the rule, select **Start** from the top menu bar and to stop the rule, select **Stop.** **Stop** only appears while a rule is active.
@@ -61,7 +57,7 @@ Activator enables passing parameters in string, boolean, and number (float). Fol
 | `123,45` | 0 | No | Invalid in en-US (comma not decimal) |	
 | null or whitespace | 0 | No |  |	
 | any other string | 0 | No |  |	
-			
+
 **Boolean**
 
 | Input Value | Result | Valid value? | Notes |
