@@ -87,10 +87,11 @@ Your warehouse will now record the selected audit events and store the logs secu
     PATCH https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/warehouses/<warehouseId>/settings/sqlAudit
     content-type: application/json
     Authorization: Bearer <BEARER_TOKEN>
-    {
+    
+{
         "state": "Enabled",
         "retentionDays": "0"
-    }
+}
     ```
 
     - Replace `<workspaceId>` and `<warehouseId>` with the corresponding Fabric workspace and warehouse IDs. To find these values, visit your warehouse in the Fabric portal.
@@ -99,6 +100,11 @@ Your warehouse will now record the selected audit events and store the logs secu
     - Replace `<BEARER_TOKEN>` with your [bearer token](#obtain-your-power-bi-bearer-token).
     - Setting `state` to "Enabled" activates auditing (use "Disabled" to turn it off).
     - The `retentionDays` parameter is set to `0` by default for unlimited retention.
+    
+> [!IMPORTANT]
+>In the extension example above, it is crucial to include an empty line immediately after providing the token. This empty line signals the extension where the HTTP headers end and the API command body begins, allowing it to correctly distinguish between the two.
+
+    
 1. Select **Send Request**.
 
 #### Check audit log status with the REST API
