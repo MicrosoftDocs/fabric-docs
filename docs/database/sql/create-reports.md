@@ -29,7 +29,7 @@ Once the sample data is loaded, switch over to the SQL analytics endpoint via th
 1. Choose **Confirm** once you name your Power BI semantic model and picked the tables you want to include. You can change the tables picked later.
 
 > [!NOTE]
-> This semantic model adds tables in Direct Lake on SQL storage mode. Learn more about Direct Lake at aka.ms/DirectLake. Consider using Power BI Desktop instead to use Direct Lake on OneLake storage mode.
+> This semantic model adds tables in Direct Lake on SQL storage mode. Learn more about Direct Lake at [aka.ms/DirectLake](https://aka.ms/DirectLake). Consider using Power BI Desktop instead to use Direct Lake on OneLake storage mode.
 
 Once Power BI opens, your semantic model is ready to develop. Rename tables and columns to report friendly names, add calculations, and create relationships between the tables. To learn more about Power BI semantic modeling, see [Transform, shape, and model data in Power BI](/power-bi/transform-model/).
 
