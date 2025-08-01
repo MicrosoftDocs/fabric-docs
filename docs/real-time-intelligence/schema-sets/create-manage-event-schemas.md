@@ -54,7 +54,7 @@ If you don't have an event schema set, create one by following instructions from
 
     To add more schemas to the schema set, select **+ New event schema** at the top of the page.
     
-    :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button-2.png" alt-text="Screenshot that shows the New event schema button." lightbox="./media/create-manage-event-schemas/new-event-schema-button-2.png":::      
+    :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button-2.png" alt-text="Screenshot that shows the New event schema button after the first schema is created." lightbox="./media/create-manage-event-schemas/new-event-schema-button-2.png":::      
 
 ## Download an event schema
 
