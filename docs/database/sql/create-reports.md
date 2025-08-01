@@ -26,7 +26,7 @@ It's easy to quickly create reports with SQL database in Fabric. In this walkthr
 Once the sample data is loaded, switch over to the SQL analytics endpoint via the dropdown menu at the top right of the window.
 
 1. Select the **Reporting** menu from the ribbon, then **New semantic model**.
-1. Choose **Confirm** once you have named your Power BI semantic model and picked the tables you want to include. You can change the tables picked later.
+1. Choose **Confirm** once you name your Power BI semantic model and picked the tables you want to include. You can change the tables picked later.
 
 > [!NOTE]
 > This semantic model adds tables in Direct Lake on SQL storage mode. Learn more about Direct Lake at aka.ms/DirectLake. Consider using Power BI Desktop instead to use Direct Lake on OneLake storage mode.
@@ -40,13 +40,13 @@ When ready, create a report to visualize this data.
 
 ## Build a new report in Power BI Desktop (preview)
 
-You can also connect to your SQL database in Microsoft Fabric directly from [Power BI Desktop](/power-bi/create-reports/service-the-report-editor-take-a-tour). This is currently a preview feature.
+You can also connect to your SQL database in Microsoft Fabric directly from [Power BI Desktop](/power-bi/create-reports/service-the-report-editor-take-a-tour). This feature is in preview.
 
 First, in Power BI Desktop, verify the preview feature is enabled.
 
 1. Select **File** -> **Options and Settings** -> **Options**. Under **GLOBAL**, select **Preview features**.
 1. Verify that **Connect to Fabric SQL Databases** option is checked.
-2. To use Direct Lake storage mode, also verify that **Create semantic models in Direct Lake storage mode from one or more Fabric artifacts** option is checked. Learn more about this preview feature, see [Direct Lake in Power BI Desktop (preview)](/fabric/fundamentals/direct-lake-power-bi-desktop).
+2. To use Direct Lake storage mode, also verify that **Create semantic models in Direct Lake storage mode from one or more Fabric artifacts** option is checked. To learn more about this preview feature, see [Direct Lake in Power BI Desktop (preview)](/fabric/fundamentals/direct-lake-power-bi-desktop).
 
 You can use your SQL database data in Direct Lake, import, or DirectQuery storage mode depending on how you connect to your SQL database from Power BI Desktop. 
 
@@ -55,7 +55,7 @@ You can use your SQL database data in Direct Lake, import, or DirectQuery storag
     1. In the **Home** tab, select the **OneLake catalog** drop-down. Select **SQL database**.
     1. Select your SQL database. Select **Connect**.
     2. Choose the tables and give your Power BI semantic model a name and workspace to be created in, then select **OK**.
-    1. You are now live editing the Power BI semantic model with the tables in Direct Lake on OneLake storage mode. For more information on live editing and Direct Lake, see [Direct Lake in Power BI Desktop (preview)](/fabric/fundamentals/direct-lake-power-bi-desktop).
+    1. You're now live editing the Power BI semantic model with the tables in Direct Lake on OneLake storage mode. For more information on live editing and Direct Lake, see [Direct Lake in Power BI Desktop (preview)](/fabric/fundamentals/direct-lake-power-bi-desktop).
     2. Optionally, you can return to the OneLake catalog and include tables from other Fabric items, such as Lakehouses, Warehouses, and other SQL databases.
     
 - Connect from **Get data**:
@@ -63,7 +63,7 @@ You can use your SQL database data in Direct Lake, import, or DirectQuery storag
     1. In the **Home** tab, select **Get data**. Select **More...**. 
     1. In the **Get Data** window, select **Microsoft Fabric**. 
     1. Select **SQL database**. Select **Connect**.
-    1. Select your SQL database. Select **Connect**. You'll authenticate to your Fabric workspace.
+    1. Select your SQL database. Select **Connect**. You authenticate to your Fabric workspace.
     1. In **Navigator** page, select the desired tables in your SQL database. Select **Load**. 
     1. Choose **Import** or **DirectQuery**. For more information on this option, see [Use DirectQuery](/power-bi/connect-data/desktop-use-directquery).
     
