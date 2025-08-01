@@ -3,33 +3,26 @@ title: Classification tasks using SynapseML
 description: Perform the same classification task with and without SynapseML.
 ms.topic: how-to
 ms.custom: 
-ms.author: ssalgado
-author: ssalgadodev
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
-
-
-ms.date: 12/28/2023
+ms.date: 04/23/2025
 ---
+
 # Classification tasks using SynapseML
 
-In this article, you perform the same classification task in two
-different ways: once using plain **`pyspark`** and once using the
-**`synapseml`** library.  The two methods yield the same performance,
-but highlights the simplicity of using `synapseml` compared to `pyspark`.
+This article shows how to perform a specific classification task with two methods. One method uses plain **`pyspark`**, and one method uses the **`synapseml`** library. Although the methods yield the same performance, they highlight the simplicity of `synapseml` as compared to `pyspark`.
 
-The task is to predict whether a customer's review of a book sold on
-Amazon is good (rating > 3) or bad based on the text of the review. You
-accomplish it by training LogisticRegression learners with different
-hyperparameters and choosing the best model.
+The task described in this article predicts whether or not a specific customer review of book sold on Amazon is good (rating > 3) or bad, based on the review text. To build the task, you train **LogisticRegression** learners with different hyperparameters, and then choose the best model.
 
 ## Prerequisites
 
-Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+Attach your notebook to a lakehouse. On the left side, you can select **Add** to add an existing lakehouse, or you can create a new lakehouse.
 
 ## Setup
 
-Import necessary Python libraries and get a spark session.
+Import the necessary Python libraries, and get a Spark session:
 
 ```python
 from pyspark.sql import SparkSession
@@ -40,7 +33,7 @@ spark = SparkSession.builder.getOrCreate()
 
 ## Read the data
 
-Download and read in the data.
+Download, and read in the data:
 
 ```python
 rawData = spark.read.parquet(
@@ -51,11 +44,7 @@ rawData.show(5)
 
 ## Extract features and process data
 
-Real data is more complex than the above dataset. It's common
-for a dataset to have features of multiple types, such as text, numeric, and
-categorical. To illustrate how difficult it's to work with these
-datasets, add two numerical features to the dataset: the **word count** of the review and the **mean word length**.
-
+Real data has more complexity, compared to the dataset we downloaded earlier. A dataset often has features of multiple types - for example, text, numeric, and categorical. To show the difficulties of working with these datasets, add two numerical features to the dataset: the **word count** of the review and the **mean word length**:
 
 ```python
 from pyspark.sql.functions import udf
@@ -77,7 +66,6 @@ wordLengthUDF = udf(wordLength, DoubleType())
 wordCountUDF = udf(wordCount, IntegerType())
 ```
 
-
 ```python
 from synapse.ml.stages import UDFTransformer
 
@@ -91,7 +79,6 @@ wordCountTransformer = UDFTransformer(
 )
 ```
 
-
 ```python
 from pyspark.ml import Pipeline
 
@@ -104,28 +91,22 @@ data = (
 )
 ```
 
-
 ```python
 data.show(5)
 ```
 
 ## Classify using pyspark
 
-To choose the best LogisticRegression classifier using the `pyspark`
-library, you need to *explicitly* perform the following steps:
+To choose the best LogisticRegression classifier using the `pyspark` library, you must *explicitly* perform these steps:
 
-1. Process the features:
-   * Tokenize the text column
-   * Hash the tokenized column into a vector using hashing
-   * Merge the numeric features with the vector
-2. Process the label column: cast it into the proper type.
-3. Train multiple LogisticRegression algorithms on the `train` dataset
-   with different hyperparameters
-4. Compute the area under the ROC curve for each of the trained models
-   and select the model with the highest metric as computed on the
-   `test` dataset
-5. Evaluate the best model on the `validation` set
-
+1. Process the features
+   - Tokenize the text column
+   - Hash the tokenized column into a vector using hashing
+   - Merge the numeric features with the vector
+1. To process the label column, cast that column into the proper type
+1. Train multiple LogisticRegression algorithms on the `train` dataset, with different hyperparameters
+1. Compute the area under the ROC curve for each of the trained models, and select the model with the highest metric as computed on the `test` dataset
+1. Evaluate the best model on the `validation` set
 
 ```python
 from pyspark.ml.feature import Tokenizer, HashingTF
@@ -151,7 +132,6 @@ processedData = assembledData.select("label", "features").withColumn(
     "label", assembledData.label.cast(IntegerType())
 )
 ```
-
 
 ```python
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
@@ -187,20 +167,13 @@ print(evaluator.evaluate(scoredVal))
 
 ## Classify using SynapseML
 
-The steps needed with `synapseml` are simpler:
+The `synapseml` option involves simpler steps:
 
-1. The **`TrainClassifier`** Estimator featurizes the data internally,
-   as long as the columns selected in the `train`, `test`, `validation`
-   dataset represent the features
+1. The **`TrainClassifier`** Estimator internally featurizes the data, as long as the columns selected in the `train`, `test`, `validation` dataset represent the features
 
-2. The **`FindBestModel`** Estimator finds the best model from a pool of
-   trained models by finding the model that performs best on the `test`
-   dataset given the specified metric
+1. The **`FindBestModel`** Estimator finds the best model from a pool of trained models. To do this, it finds the model that performs best on the `test` dataset given the specified metric
 
-3. The **`ComputeModelStatistics`** Transformer computes the different
-   metrics on a scored dataset (in our case, the `validation` dataset)
-   at the same time
-
+1. The **`ComputeModelStatistics`** Transformer computes the different metrics on a scored dataset (in our case, the `validation` dataset) at the same time
 
 ```python
 from synapse.ml.train import TrainClassifier, ComputeModelStatistics
@@ -231,8 +204,9 @@ print(
     + "{0:.2f}%".format(metrics.first()["AUC"] * 100)
 )
 ```
+
 ## Related content
 
-- [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
+- [How to use the k-NN (K-Nearest-Neighbors) model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
 - [How to use ONNX with SynapseML - Deep Learning](onnx-overview.md)
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)

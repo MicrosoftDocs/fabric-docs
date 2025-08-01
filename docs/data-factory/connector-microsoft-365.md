@@ -6,7 +6,9 @@ ms.author: xupzhou
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
-  - template-how-to
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # How to create a Microsoft 365 connection

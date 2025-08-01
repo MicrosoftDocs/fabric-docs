@@ -20,9 +20,6 @@ The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fab
 
 [!INCLUDE [azure-cosmos-db-cdc-source-prerequisites-connection-details](./includes/azure-cosmos-db-cdc-source-prerequisites-connection-details.md)]
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
-
 ## Add Azure Cosmos DB (CDC) as a source
 
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]

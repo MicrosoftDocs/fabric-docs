@@ -1,12 +1,11 @@
 ---
-title: Clone tables in the Fabric portal
+title: Clone Tables in the Fabric Portal
 description: How to clone tables in the Warehouse in the Fabric portal.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 09/20/2024
+ms.date: 04/06/2025
 ms.topic: how-to
-ms.custom:
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 # Tutorial: Clone tables in the Fabric portal
@@ -17,7 +16,7 @@ A zero-copy clone creates a replica of the table by copying the metadata, while 
 
 ## Clone table as of current state
 
-When you select the table, and select on more options, you get the **Clone table** menu. This menu is also available via **Table tools** in the ribbon.
+When you select the table, and select more options, you get the **Clone table** menu. This menu is also available via **Table tools** in the ribbon.
 
 :::image type="content" source="media/tutorial-clone-table-portal/clone-table-contextmenu-entrypoint.png" alt-text="Screenshot showing the entry point for clone table context menu.":::
 
@@ -46,5 +45,5 @@ The default naming pattern for cloned objects is `source_table_name-Clone`. The 
 ## Related content
 
 - [Clone table in Microsoft Fabric](clone-table.md)
-- [Tutorial: Clone table using T-SQL](tutorial-clone-table.md)
+- [Tutorial: Clone a table with T-SQL in Warehouse](tutorial-clone-table.md)
 - [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true)

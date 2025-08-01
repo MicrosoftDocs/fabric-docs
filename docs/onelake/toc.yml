@@ -9,26 +9,34 @@ items:
   items:
   - name: Bring your data to OneLake with Lakehouse
     href: create-lakehouse-onelake.md
-  - name: Implement medallion lakehouse architecture
-    href: onelake-medallion-lakehouse-architecture.md
   - name: Transform with Apache Spark and query data with SQL
     href: onelake-onecopy-quickstart.md
   - name: Connect to ADLS and transform data with Azure Databricks
     href: onelake-shortcuts-adb-quickstart.md
   - name: Ingest data and analyze with Azure Databricks
     href: onelake-open-access-quickstart.md
+  - name: Understand medallion lakehouse architecture
+    href: onelake-medallion-lakehouse-architecture.md
 - name: Shortcuts
   items:
   - name: What are shortcuts?
     href: onelake-shortcuts.md
+  - name: Shortcuts file transformations
+    href: ./shortcuts-file-transformations/transformations.md
+  - name: Shortcuts AI transformations
+    href: ./Shortcuts-ai-transformations/ai-transformations.md
   - name: Create a OneLake shortcut
     href: create-onelake-shortcut.md
   - name: Create an ADLS Gen2 shortcut
     href: create-adls-shortcut.md
+  - name: Create a Blob Storage shortcut
+    href: create-blob-shortcut.md
   - name: Create an Amazon S3 shortcut
     href: create-s3-shortcut.md
   - name: Create an Amazon S3 compatible shortcut
     href: create-s3-compatible-shortcut.md
+  - name: S3 shortcut Entra integration
+    href: amazon-storage-shortcut-entra-integration.md  
   - name: Create a Google Cloud Storage shortcut
     href: create-gcs-shortcut.md
   - name: Create shortcuts to on-premises data
@@ -37,8 +45,12 @@ items:
     href: onelake-iceberg-tables.md
   - name: Shortcut security
     href: onelake-shortcut-security.md
+  - name: Manage cloud connections
+    href: manage-shortcut-connections.md
   - name: Access OneLake shortcuts in an Apache Spark notebook
     href: access-onelake-shortcuts.md
+  - name: Assign variables to shortcuts
+    href: assign-variables-to-shortcuts.md
   - name: Use shortcuts REST API
     href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
 - name: Open access
@@ -63,11 +75,13 @@ items:
     href: onelake-azure-hdinsight.md
   - name: PowerShell
     href: onelake-powershell.md
-- name: Secure and manage data
+  - name: AzCopy
+    href: onelake-azcopy.md
+- name: Secure and manage data access
   items:
   - name: OneLake security overview
     href: ./security/get-started-security.md
-  - name: Onelake security features
+  - name: OneLake security features
     items:
     - name: Table and folder security
       href: ./security/table-folder-security.md
@@ -105,6 +119,8 @@ items:
     href: onelake-file-explorer.md
   - name: Release notes
     href: onelake-file-explorer-release-notes.md
+- name: Get the size of OneLake items
+  href: how-to-get-item-size.md
 - name: Discover data in the OneLake catalog
   href: ../governance/onelake-catalog-overview.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
 - name: Billing and consumption

@@ -1,8 +1,8 @@
 ---
 title: Get started using deployment pipelines, the Fabric Application lifecycle management (ALM) tool
 description: Learn how to use deployment pipelines, the Fabric Application lifecycle management (ALM) tool.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
@@ -53,7 +53,7 @@ To create a pipeline from anywhere in Fabric:
 
 1. Select **Create pipeline**, or **+ New pipeline**.
 
-### [Create a pipeline from a workspace in Power BI](#tab/from-workspace)
+### [Create a pipeline from a workspace](#tab/from-workspace)
 
 From Power BI, you also have the option of creating a pipeline from inside an existing workspace, if you're the admin of that [workspace](../../fundamentals/create-workspaces.md).
 

@@ -2,19 +2,19 @@
 title: Interpretability - Tabular SHAP explainer
 description: Use Kernel SHAP to explain a tabular classification model.
 ms.topic: overview
-ms.custom: 
-ms.author: ssalgado
-author: ssalgadodev
-ms.reviewer: jessiwang
+ms.custom:
+ms.author: scottpolly
+author: s-polly
+ms.reviewer: fsolomon
 reviewer: JessicaXYWang
-ms.date: 05/08/2023
+ms.date: 04/05/2025
 ---
+
 # Interpretability - Tabular SHAP explainer
 
-In this example, we use Kernel SHAP to explain a tabular classification model built from the Adults Census dataset.
+This example uses Kernel SHAP to explain a tabular classification model built from the Adults Census dataset.
 
-First we import the packages and define some UDFs we need later.
-
+Import the required packages, and define the UDFs we need later:
 
 ```python
 import pyspark
@@ -32,15 +32,11 @@ spark = SparkSession.builder.getOrCreate()
 
 from synapse.ml.core.platform import *
 
-
-
-
 vec_access = udf(lambda v, i: float(v[i]), FloatType())
 vec2array = udf(lambda vec: vec.toArray().tolist(), ArrayType(FloatType()))
 ```
 
-Now let's read the data and train a binary classification model.
-
+Read the data, and train a binary classification model:
 
 ```python
 df = spark.read.parquet(
@@ -88,8 +84,7 @@ pipeline = Pipeline(stages=[strIndexer, onehotEnc, vectAssem, lr])
 model = pipeline.fit(training)
 ```
 
-After the model is trained, we randomly select some observations to be explained.
-
+After the model is trained, randomly select some observations to explain:
 
 ```python
 explain_instances = (
@@ -98,8 +93,7 @@ explain_instances = (
 display(explain_instances)
 ```
 
-We create a TabularSHAP explainer, set the input columns to all the features the model takes, specify the model and the target output column we're trying to explain. In this case, we're trying to explain the "probability" output, which is a vector of length 2, and we're only looking at class 1 probability. Specify targetClasses to `[0, 1]` if you want to explain class 0 and 1 probability at the same time. Finally we sample 100 rows from the training data for background data, which is used for integrating out features in Kernel SHAP.
-
+Create a TabularSHAP explainer, set the input columns to all the features the model takes. Next, specify the model and the target output column we want to explain. Here, we want to explain the "probability" output, which is a vector of length 2, and we only look at class 1 probability. Specify targetClasses of **`[0, 1]`** to explain class 0 and 1 probability at the same time. Finally, sample 100 rows from the training data for background data, which is used for integrating out features in Kernel SHAP:
 
 ```python
 shap = TabularSHAP(
@@ -115,9 +109,16 @@ shap = TabularSHAP(
 shap_df = shap.transform(explain_instances)
 ```
 
-Once we have the resulting dataframe, we extract the class 1 probability of the model output, the SHAP values for the target class, the original features and the true label. Then we convert it to a pandas dataframe for visualization.
-For each observation, the first element in the SHAP values vector is the base value (the mean output of the background dataset), and each of the following element is the SHAP values for each feature.
+With the resulting dataframe, extract
 
+- the class 1 probability of the model output
+- the SHAP values for the target class
+- the original features
+- the true label
+
+Then, convert the dataframe to a pandas dataframe for visualization.
+
+For each observation, the first element in the SHAP values vector is the base value (the mean output of the background dataset). Each of the following element is the SHAP values for each feature:
 
 ```python
 shaps = (
@@ -134,8 +135,7 @@ pd.set_option("display.max_colwidth", None)
 shaps_local
 ```
 
-We use plotly subplot to visualize the SHAP values.
-
+Use plotly subplot to visualize the SHAP values:
 
 ```python
 from plotly.subplots import make_subplots
@@ -179,6 +179,5 @@ fig.show()
 
 ## Related content
 
-- [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)
-- [How to use SynapseML for multivariate anomaly detection](isolation-forest-multivariate-anomaly-detection.md)
-- [How to Build a Search Engine with SynapseML](create-a-multilingual-search-engine-from-forms.md)
+- [How to use SynapseML for multivariate anomaly detection](./isolation-forest-multivariate-anomaly-detection.md)
+- [How to Build a Search Engine with SynapseML](./create-a-multilingual-search-engine-from-forms.md)

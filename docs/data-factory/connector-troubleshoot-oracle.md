@@ -7,7 +7,7 @@ ms.subservice: data-movement
 ms.topic: troubleshooting
 ms.date: 11/07/2024
 ms.author: jianleishen
-ms.custom: has-adal-ref, synapse
+ms.custom: has-adal-ref, synapse, connectors
 ---
 
 # Troubleshoot the Oracle connector in Azure Data Factory and Azure Synapse

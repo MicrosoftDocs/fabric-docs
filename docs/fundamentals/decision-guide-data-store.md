@@ -5,11 +5,10 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun, scbradl
 ms.topic: concept-article
-ms.date: 12/19/2024
+ms.date: 06/04/2025
 ms.custom:
-  - FY25Q1-Linter
-ms.search.form: Choose a Data Store, SQL database Overview
-#customer intent: As a data engineer, I want to understand the different data store options and their use cases in Fabric so that I can make an informed decision for my data storage needs.
+- FY25Q1-Linter
+ms.search.form: Choose a Data Store, Databases datastore decision guide
 ---
 
 # Microsoft Fabric decision guide: choose a data store
@@ -41,26 +40,26 @@ Use this information to compare Fabric data stores such as warehouse, lakehouse,
 
 \* Spark supports reading from tables using shortcuts, doesn't yet support accessing views, stored procedures, functions etc.
 
-|  Table 2 of 2 | **[Fabric SQL database](../database/sql/overview.md)** |  **[Power BI Datamart](/power-bi/transform-model/datamarts/datamarts-overview)** |
-|---|:---:|:---:|
-| **Data volume** | 4 TB | Up to 100 GB |
-| **Type of data** | Structured,<br>semi-structured,<br>unstructured | Structured |
-| **Primary developer persona** | AI developer, App developer, database developer, DB admin | Data scientist, data analyst |
-| **Primary dev skill** | SQL | No code, SQL |
-| **Data organized by** | Databases, schemas, tables | Database, tables, queries |
-| **Read operations** | T-SQL | Spark, T-SQL |
-| **Write operations** | T-SQL | Dataflows, T-SQL |
-| **Multi-table transactions** | Yes, full ACID compliance | No |
-| **Primary development interface** | SQL scripts | Power BI |
-| **Security** | Object level, RLS, CLS, DDL/DML, dynamic data masking | Built-in RLS editor |
-| **Access data via shortcuts** | Yes | No |
-| **Can be a source for shortcuts** | Yes (tables) | No |
-| **Query across items** | Yes | No |
-| **Advanced analytics** | T-SQL analytical capabilities, data replicated to delta parquet in OneLake for analytics | Interface for data processing with automated performance tuning |
-| **Advanced formatting support** | Table support for OLTP, JSON, vector, graph, XML, spatial, key-value | Tables defined using PARQUET, CSV, AVRO, JSON, and any Apache Hive compatible file format |
-| **Ingestion latency**| Available instantly for querying |  Available instantly for querying |
-
 \*\* Column-level security available on the Lakehouse through a SQL analytics endpoint, using T-SQL.
+
+|  Table 2 of 2 | **[Fabric SQL database](../database/sql/overview.md)** |
+|---|:---:|
+| **Data volume** | 4 TB |
+| **Type of data** | Structured,<br>semi-structured,<br>unstructured |
+| **Primary developer persona** | AI developer, App developer, database developer, DB admin |
+| **Primary dev skill** | SQL |
+| **Data organized by** | Databases, schemas, tables |
+| **Read operations** | T-SQL |
+| **Write operations** | T-SQL |
+| **Multi-table transactions** | Yes, full ACID compliance |
+| **Primary development interface** | SQL scripts |
+| **Security** | Object level, RLS, CLS, DDL/DML, dynamic data masking |
+| **Access data via shortcuts** | Yes |
+| **Can be a source for shortcuts** | Yes (tables) |
+| **Query across items** | Yes |
+| **Advanced analytics** | T-SQL analytical capabilities, data replicated to delta parquet in OneLake for analytics |
+| **Advanced formatting support** | Table support for OLTP, JSON, vector, graph, XML, spatial, key-value |
+| **Ingestion latency**| Available instantly for querying |
 
 ## Scenarios
 
@@ -82,17 +81,11 @@ Rob decides to use a [**lakehouse**](../data-engineering/lakehouse-overview.md),
 
 ### Scenario 3
 
-Ash, a citizen developer, is a Power BI developer. They're familiar with Excel, Power BI, and Office. They need to build a data product for a business unit. They know they don't quite have the skills to build a data warehouse or a lakehouse, and those seem like too much for their needs and data volumes. They review the details in the previous table and see that the primary decision points are their own skills and their need for a self service, no code capability, and data volume under 100 GB.
-
-Ash works with business analysts familiar with Power BI and Microsoft Office, and knows that they already have a Premium capacity subscription. As they think about their larger team, they realize the primary consumers of this data are analysts, familiar with no-code and SQL analytical tools. Ash decides to use a [**Power BI datamart**](/power-bi/transform-model/datamarts/datamarts-overview), which allows the team to interact build the capability fast, using a no-code experience. Queries can be executed via Power BI and T-SQL, while also allowing any Spark users in the organization to access the data as well.
-
-### Scenario 4
-
 Daisy is business analyst experienced with using Power BI to analyze supply chain bottlenecks for a large global retail chain. They need to build a scalable data solution that can handle billions of rows of data and can be used to build dashboards and reports that can be used to make business decisions. The data comes from plants, suppliers, shippers, and other sources in various structured, semi-structured, and unstructured formats.
 
 Daisy decides to use an [**Eventhouse**](../real-time-intelligence/eventhouse.md) because of its scalability, quick response times, advanced analytics capabilities including time series analysis, geospatial functions, and fast direct query mode in Power BI. Queries can be executed using Power BI and KQL to compare between current and previous periods, quickly identify emerging problems, or provide geo-spatial analytics of land and maritime routes.
 
-### Scenario 5
+### Scenario 4
 
 Kirby is an application architect experienced in developing .NET applications for operational data. They need a high concurrency database with full ACID transaction compliance and strongly enforced foreign keys for relational integrity. Kirby wants the benefit of automatic performance tuning to simplify day-to-day database management.
 

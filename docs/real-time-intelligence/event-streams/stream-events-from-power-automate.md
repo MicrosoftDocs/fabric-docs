@@ -104,7 +104,7 @@ In this section, you'll learn how to design a workflow that periodically generat
 
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/connection-string.png" alt-text="Screenshot showing how to get connection string." lightbox="media/stream-events-from-power-automate-and-logic-app/connection-string.png" :::
    
-1. After the new connection created and returned to event hub Parameters configuration, select **Enter custom value** from the drop-down menu of the **Event Hub Name** and enter the event hub name which can copy from Eventstream Custom endpoint.
+1. After the new connection created and returned to event hub Parameters configuration, select **Enter custom value** from the dropdown menu of the **Event Hub Name** and enter the event hub name which can copy from Eventstream Custom endpoint.
 
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/event-hub-name.png" alt-text="Screenshot showing how to get Event Hubs name." lightbox="media/stream-events-from-power-automate-and-logic-app/event-hub-name.png" :::
 

@@ -1,22 +1,22 @@
 ---
-title: Connectivity to data warehousing
-description: Follow steps to connect SSMS to data warehousing in your Microsoft Fabric workspace.
+title: Warehouse Connectivity
+description: Follow steps to connect SSMS to a warehouse item in your Microsoft Fabric workspace.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, dhsundar, jacinda-eng
-ms.date: 02/24/2025
+ms.date: 07/28/2025
 ms.topic: how-to
-ms.custom:
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
+ms.custom: sfi-image-nochange
 ---
 
-# Connectivity to data warehousing in Microsoft Fabric
+# Warehouse connectivity in Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-In [!INCLUDE [product-name](../includes/product-name.md)], a Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is accessible through a Tabular Data Stream, or TDS endpoint, familiar to all modern web applications that interact with [a SQL Server TDS endpoint](/sql/relational-databases/security/networking/tds-8). This is referred to as the SQL Connection String within the [!INCLUDE [product-name](../includes/product-name.md)] user interface.
+In [!INCLUDE [product-name](../includes/product-name.md)], a Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is accessible through a Tabular Data Stream, or TDS endpoint, familiar to all modern web applications that interact with [a SQL Server TDS endpoint](/sql/relational-databases/security/networking/tds-8). This is referred to as the **SQL connection string** within [!INCLUDE [product-name](../includes/product-name.md)] settings.
 
-This article provides a how-to on connecting to your [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+This article provides a how-to on connecting to your [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)], or to the snapshot of a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 To get started, you must complete the following prerequisites:
 
@@ -57,7 +57,7 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
    :::image type="content" source="media/connectivity/object-explorer-connect-menu.png" alt-text="Screenshot showing where to select Database Engine on the Connect menu.":::
 
-1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication. Remember that only Microsoft Entra multifactor authentication (MFA) is supported, via the option **Microsoft Entra MFA**.
+1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication.
 
    :::image type="content" source="media/connectivity/connect-server-window.png" alt-text="Screenshot showing the Connect to server window.":::
 
@@ -75,7 +75,7 @@ A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-s
 1. Choose entities.
 1. Load Data - choose a data connectivity mode: [import or DirectQuery](/power-bi/connect-data/desktop-directquery-about).
 
-For more information, see [Create reports in [!INCLUDE [product-name](../includes/product-name.md)]](create-reports.md).
+For more information, see [Create reports on data warehousing in Microsoft Fabric](create-reports.md).
 
 ## Connect using OLE DB
 
@@ -84,6 +84,28 @@ We support connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or 
 ## Connect using ODBC
 
 [!INCLUDE [product-name](../includes/product-name.md)] supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using ODBC. Make sure you're running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Microsoft Entra ID (formerly Azure Active Directory) authentication. Only ODBC 18 or higher versions are supported.
+
+## Connect using Fabric Python Notebook
+
+[Fabric Python Notebooks](../data-engineering/using-python-experience-on-notebook.md) (preview) offer the [ability to run T-SQL code with the T-SQL magic command](../data-engineering/tsql-magic-command-notebook.md). In the following steps, connect to a warehouse item in Fabric using the `%%tsql` magic command:
+
+1. Create a notebook in your workspace with the language set to Python.
+1. In a cell, use the `%%tsql` magic command. The cell type automatically changes to `T-SQL`. 
+
+   In the following sample, replace `<warehouse>` with the name of your warehouse item. The `-type` parameter should be `Warehouse`.
+   
+   ```python
+   %%tsql -artifact <warehouse> -type Warehouse
+   ```
+
+   Then include your T-SQL command. For example, to run a query from a warehouse named `Contoso`:
+
+   ```python
+   %%tsql -artifact Contoso -type Warehouse
+   SELECT * FROM wh.DimDate;
+   ```
+
+For more possibilities to query your data with T-SQL inside Python Notebooks, see [Run T-SQL code in Fabric Python notebooks](../data-engineering/tsql-magic-command-notebook.md). To see the full syntax, use the `%tsql?` command. This command displays the help information for the T-SQL magic command, including the available parameters and their descriptions.
 
 ## Connect using JDBC
 
@@ -171,4 +193,4 @@ We recommend adding retries in your applications/ETL jobs to build resiliency. F
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric](entra-id-authentication.md)
 - [Add Fabric URLs to your allowlist](../security/fabric-allow-list-urls.md)
-- [Azure IP ranges and service tags for public clouds](https://www.microsoft.com/en-us/download/details.aspx?id=56519)
+- [Azure IP ranges and service tags for public clouds](https://www.microsoft.com/download/details.aspx?id=56519)

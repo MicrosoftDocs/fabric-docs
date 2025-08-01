@@ -2,11 +2,11 @@
 title: Create an eventhouse
 description: Learn about how to create an eventhouse for data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 03/17/2025
+ms.date: 05/11/2025
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to create an eventhouse for data storage in Real-Time Intelligence so that I can effectively manage my data.
 ---
@@ -32,7 +32,7 @@ In this article, you learn how to create an eventhouse, add new databases to an 
     > [!NOTE]
     > The eventhouse name can contain alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
-1. The [system overview](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse) opens in the main view area of the newly created eventhouse.
+1. The [system overview](manage-monitor-eventhouse.md#view-system-overview) opens in the main view area of the newly created eventhouse.
 
     :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of system overview in the main view area." lightbox="media/eventhouse/choose-eventhouse.png":::
 

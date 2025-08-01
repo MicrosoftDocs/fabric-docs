@@ -4,17 +4,19 @@ description: Learn more about Microsoft Entra authentication, an alternative to 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: frnuson, kadejo, jaszymas
-ms.date: 02/14/2025
+ms.date: 04/06/2025
 ms.topic: conceptual
 ms.custom:
-  - fabric-cat
+- fabric-cat
+- sfi-image-nochange
+- sfi-ropc-nochange
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Microsoft Entra authentication as an alternative to SQL authentication
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-This article covers technical methods that users and customers can employ to transition from SQL authentication to [Microsoft Entra authentication](/entra/identity/authentication/overview-authentication) within Microsoft Fabric. Microsoft Entra authentication is an alternative to usernames and passwords via SQL authentication for signing in to the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the lakehouse or the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. Microsoft Entra authentication is advisable and vital for creating a secure data platform.
+This article covers technical methods that users and customers can employ to transition from SQL authentication to [Microsoft Entra authentication](/entra/identity/authentication/overview-authentication) within Microsoft Fabric. Microsoft Entra authentication is an alternative to usernames and passwords via SQL authentication to the [!INCLUDE [fabric-se](includes/fabric-se.md)] or the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. Microsoft Entra authentication is advisable and vital for creating a secure data platform.
 
 This article focuses on Microsoft Entra authentication as an alternative to SQL authentication in Microsoft Fabric items such as a Warehouse or Lakehouse SQL analytics endpoint.
 
@@ -152,10 +154,10 @@ For a java code snippet using JDBC with SPN-based authentication, see [fabrictoo
 This library [Microsoft.Data.SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient/6.0.1) is the newer, cross-platform data provider for SQL Server, intended to replace the older `System.Data.SqlClient` which was Windows-only. 
 
 Supported platforms:
--	.NET 8.0 and later
--	.NET Framework 4.6.2 and later
+   - .NET 8.0 and later
+   - .NET Framework 4.6.2 and later
 
-[Microsoft.Data.SqlClient](/sql/connect/ado-net/introduction-microsoft-data-sqlclient-namespace) is a union of the two `System.Data.SqlClient` components, providing a set of classes for accessing SQL Database Engine databases. `Microsoft.Data.SqlClient` is recommended for all new development.
+The [Microsoft.Data.SqlClient namespace](/sql/connect/ado-net/introduction-microsoft-data-sqlclient-namespace) is a union of the two `System.Data.SqlClient` components, providing a set of classes for accessing SQL Database Engine databases. `Microsoft.Data.SqlClient` is recommended for all new development.
 
   | Authentication Mode   | More information                         |
   |:-------------------------------|:--------------------------------------------------|

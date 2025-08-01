@@ -109,18 +109,18 @@ Internal OneLake shortcuts allow you to reference data within existing Fabric it
 * Semantic models
 * SQL databases
 * Warehouses
-* Warehouse snapshots
 
 The shortcut can point to a folder location within the same item, across items within the same workspace, or even across items in different workspaces. When you create a shortcut across items, the item types don't need to match. For instance, you can create a shortcut in a lakehouse that points to data in a data warehouse.
 
 When a user accesses data through a shortcut to another OneLake location, OneLake uses the identity of the calling user to authorize access to the data in the target path of the shortcut. This user must have permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When accessing shortcuts through Power BI semantic models or T-SQL, the calling user’s identity is not passed through to the shortcut target. The calling item owner’s identity is passed instead, delegating access to the calling user.
+> When users access shortcuts through Power BI semantic models or T-SQL, the calling user’s identity is not passed through to the shortcut target. The calling item owner’s identity is passed instead, delegating access to the calling user.
 
-### ADLS shortcuts
+<a id="adls-shortcuts"></a>
+### Azure Data Lake Storage shortcuts
 
-When you create shortcuts to ADLS Gen2 storage accounts, the target path can point to any folder within the hierarchical namespace. At a minimum, the target path must include a container name.
+When you create shortcuts to Azure Data Lake Storage (ADLS) Gen2 storage accounts, the target path can point to any folder within the hierarchical namespace. At a minimum, the target path must include a container name.
 
 > [!NOTE]
 > You must have hierarchical namespaces enabled on your ADLS Gen 2 storage account.
@@ -128,18 +128,41 @@ When you create shortcuts to ADLS Gen2 storage accounts, the target path can poi
 #### Access
 
 ADLS shortcuts must point to the DFS endpoint for the storage account.
+
 Example: `https://accountname.dfs.core.windows.net/`
 
-If your storage account is protected by a storage firewall, you can configure trusted service access. For more information, see [Trusted Workspace Access](..\security\security-trusted-workspace-access.md)
+If your storage account is protected by a storage firewall, you can configure trusted service access. For more information, see [Trusted workspace access](..\security\security-trusted-workspace-access.md)
 
 #### Authorization
 
-ADLS shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the ADLS shortcut and all access to that shortcut is authorized using that credential. The supported delegated types are Organizational account, Account Key, Shared Access Signature (SAS), and Service Principal.
+ADLS shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the ADLS shortcut and all access to that shortcut is authorized using that credential. ADLS shortcuts support the following delegated authorization types:
 
-- **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
-- **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute
-- **Service Principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
-- **Workspace Identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on storage account
+- **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Service principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Workspace identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute.
+
+Microsoft Entra ID delegated authorization types (organizational account, service principal, or workspace identity) require the **Generate a user delegation key** action at the storage account level. This action is included as part of the Storage Blob Data Reader, Storage Blob Data Contributor, Storage Blob Data Owner, and Delegator roles. If you don't want to give a user reader, contributor, or owner permissions for the whole storage account, assign them the Delegator role instead. Then, define detailed data access rights using [Access control lists (ACLs) in Azure Data Lake Storage](/azure/storage/blobs/data-lake-storage-access-control).
+
+>[!IMPORTANT]
+>The **Generate a user delegation key** requirement is not currently enforced when a workspace identity is configured for the workspace and the ADLS shortcut auth type is Organizational Account, Service Principal or Workspace Identity. However, this behavior will be restricted in the future. We recommend making sure that all delegated identities have the **Generate a user delegation key** action to ensure that your users' access isn't affected when this behavior changes.
+
+### Azure Blob Storage shortcuts
+
+#### Access
+
+Azure Blob Storage shortcut can point to the account name or URL for the Storage account.
+
+Example: `accountname` or `https://accountname.blob.core.windows.net/`
+
+#### Authorization
+
+Blob storage shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the shortcut and all access to that shortcut is authorized using that credential. Blob shortcuts support the following delegated authorization types:
+
+- **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Service principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Workspace identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
+- **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute.
 
 ### S3 shortcuts
 
@@ -173,7 +196,7 @@ S3 shortcuts support S3 buckets that use S3 Bucket Keys for SSE-KMS encryption. 
 
 ### Google Cloud Storage shortcuts
 
-Shortcuts can be created to Google Cloud Storage(GCS) using the XML API for GCS.  When you create shortcuts to Google Cloud Storage, the target path must contain a bucket name at a minimum. You can also restrict the scope of the shortcut by further specifying the prefix/folder you want to point to within the storage hierarchy. 
+Shortcuts can be created to Google Cloud Storage(GCS) using the XML API for GCS. When you create shortcuts to Google Cloud Storage, the target path must contain a bucket name at a minimum. You can also restrict the scope of the shortcut by further specifying the prefix/folder you want to point to within the storage hierarchy. 
 
 > [!NOTE]
 > GCS shortcuts are read-only. They don't support write operations regardless of the user's permissions.
@@ -200,7 +223,10 @@ If the global endpoint was used in the connection for the shortcut, the account 
 
 ### Dataverse shortcuts
 
-Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. This integration is accomplished through shortcuts, which can be created in two ways: through the PowerApps maker portal or through Fabric directly.
+Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. This integration is accomplished through shortcuts, which can be created in two ways: through the PowerApps maker portal, or through Fabric directly.
+
+> [!NOTE]
+> Dataverse shortcuts are read-only. They don't support write operations regardless of the user's permissions.
 
 #### Creating shortcuts through PowerApps maker portal
 
@@ -210,28 +236,28 @@ For more information, see [Dataverse direct integration with Microsoft Fabric](h
 
 #### Creating shortcuts through Fabric
 
-Fabric users can also create shortcuts to Dataverse. From the create shortcuts UX, users can select **Dataverse**, supply their environment URL, and browse the available tables. This experience allows users to choose which tables to bring into Fabric rather than bringing in all tables.
+Fabric users can also create shortcuts to Dataverse. When users create shortcuts, they can select **Dataverse**, supply their environment URL, and browse the available tables. This experience allows users to choose which tables to bring into Fabric rather than bringing in all tables.
 
 > [!NOTE]
-> Dataverse tables must first be available in the Dataverse Managed Lake before they are visible in the Fabric create shortcuts UX. If your tables are not visible from Fabric, use the **Link to Microsoft Fabric** feature from the PowerApps maker portal.
+> Dataverse tables must first be available in the Dataverse Managed Lake before they're visible in the Fabric create shortcuts UX. If your tables aren't visible from Fabric, use the **Link to Microsoft Fabric** feature from the PowerApps maker portal.
 
 #### Authorization
 
 Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut, and all access to that shortcut is authorized using that credential. The supported delegated credential type is organizational account (OAuth2). The organizational account must have the system administrator permission to access data in Dataverse Managed Lake.
 
 > [!NOTE]
-> Service principals added to the fabric workspace must have the admin role to authorize the Dataverse shortcut.
+> Dataverse shortcuts don't currently support Service Principals as an authenticaion type.
 
 ## Caching
 
-Shortcut caching can reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace. Subsequent read requests are served from cache rather than the remote storage provider. The retention period for cached files can be set from 1-28 days.  Each time the file is accessed, the retention period is reset. If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will then be stored in cache. If a file hasn’t been accessed for more than the selected retention period, it is purged from the cache. Individual files greater than 1GB in size are not cached.
+Shortcut caching can reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace. Subsequent read requests are served from cache rather than the remote storage provider. The retention period for cached files can be set from 1-28 days. Each time the file is accessed, the retention period is reset. If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will then be stored in cache. If a file hasn’t been accessed for more than the selected retention period, it's purged from the cache. Individual files greater than 1 GB in size aren't cached.
 
 > [!NOTE]
 > Shortcut caching is currently supported for GCS, S3, S3 compatible, and on-premises data gateway shortcuts.
 
 To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and select the **Retention Period**.
 
-The cache can also be cleared at any time. From the same settings page, select the **Reset cache** button. This removes all files from the shortcut cache in this workspace.
+The cache can also be cleared at any time. From the same settings page, select the **Reset cache** button. This action removes all files from the shortcut cache in this workspace.
 
 :::image type="content" source="media\onelake-shortcuts\shortcut-cache-settings.png" alt-text="Screenshot of workspace settings panel with OneLake tab selected." lightbox="media\onelake-shortcuts\shortcut-cache-settings.png":::
 
@@ -260,7 +286,7 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 :::image type="content" source="media\onelake-shortcuts\lineage-view.png" alt-text="Screenshot of the lineage view screen to visualize shortcut relationship." lightbox="media\onelake-shortcuts\lineage-view.png":::
 
 > [!NOTE]
-> The lineage view is scoped to a single workspace. Shortcuts to locations outside the selected workspace won't appear.
+> The lineage view is scoped to a single workspace. Shortcuts to locations outside the selected workspace don't appear.
 
 ## Limitations and considerations
 
@@ -274,8 +300,8 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
 - More shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models isn't currently available.
-- A Fabric shortcut syncs with the source almost instantly, but propagation time may vary due to data source performance, cached views, or network connectivity issues.
-- It may take up to a minute for the Table API to recognize new shortcuts.
+- A Fabric shortcut syncs with the source almost instantly, but propagation time might vary due to data source performance, cached views, or network connectivity issues.
+- It might take up to a minute for the Table API to recognize new shortcuts.
 - OneLake shortcuts don't support connections to ADLS Gen2 storage accounts that use managed private endpoints. For more information, see [managed private endpoints for Fabric.](../security/security-managed-private-endpoints-overview.md#limitations-and-considerations)
 
 ## Related content

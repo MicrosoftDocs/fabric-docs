@@ -1,16 +1,16 @@
 ---
 title: Fabric data agent tenant settings (preview)
 description: Learn how to configure Fabric data agent tenant settings for Power BI Semantic Models.
-author: fbsolo-ms1
-ms.author: amjafari
-ms.reviewer: franksolomon
+author: jonburchel
+ms.author: jburchel
+ms.reviewer: amjafari
 reviewer: amjafari
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: concept-article #Don't change; maybe should change to "how-to".
-ms.date: 03/14/2025
+ms.date: 07/21/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
-
 ---
 
 # Configure Fabric data agent tenant setting
@@ -29,6 +29,9 @@ To configure the required settings, you need administrative privileges to access
    - In the Admin Portal, select **Tenant settings** from the left-hand navigation pane.
 
 Once you are in **Tenant Settings**, you can proceed with enabling the necessary configurations.
+
+> [!NOTE]
+> The tenant settings might need up to one hour to take effect after you enable them.
 
 ## Enable Copilot and Azure OpenAI tenant switch
 

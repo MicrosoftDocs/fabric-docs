@@ -1,13 +1,13 @@
 ---
 title: Get started with Git integration
 description: Learn how to connect a workspace to a Git repository and branch, commit changes to the repo or workspace and sync.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: how-to
-ms.date: 01/05/2025
+ms.topic: quickstart
+ms.date: 03/05/2025
 ms.custom:
 ms.search.form: Connect to a Git repo, Update from Git, Commit changes to Git, Introduction to Git integration
 #customer intent: As a developer, I want to connect my workspace to a Git repo so that I can collaborate with others and leverage source control.
@@ -26,7 +26,7 @@ We recommend reading the [overview of Git integration](./intro-to-git-integratio
 
 ## Prerequisites
 
-[!INCLUDE [github-prereqs](../../includes/github-prereqs.md)]
+[!INCLUDE [github-prereqs](../includes/github-prereqs.md)]
 
 ## Connect a workspace to a Git repo
 
@@ -120,7 +120,7 @@ To commit your changes to the Git branch, follow these steps:
 1. Select the **Source control** icon. This icon shows the number of uncommitted changes.
     :::image type="content" source="./media/git-get-started/source-control-number.png" alt-text="Screenshot of source control icon with the number 2 indicating that there are two changes to commit.":::
 1. Select the **Changes** from the **Source control** panel.
-   A list appears with all the items you changed, and an icon indicating if the item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, *conflict* :::image type="icon" source="./media/git-get-started/conflict-icon.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
+   A list appears with all the items you changed, and an icon indicating if the item is *new* :::image type="icon" source="./media/git-get-started/new-commit-icon.png":::, *modified* :::image type="icon" source="./media/git-get-started/modified-commit-icon.png":::, *conflict* :::image type="icon" source="./media/git-get-started/conflict-icon.png":::, *same change* :::image type="icon" source="./media/git-get-started/warning.png":::, or *deleted* :::image type="icon" source="./media/git-get-started/deleted-commit-icon.png":::.
 1. Select the items you want to commit. To select all items, check the top box.
 1. Add a comment in the box. If you don't add a comment, a default message is added automatically.
 1. Select **Commit**.
@@ -191,7 +191,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
- [!INCLUDE [limitations](../../includes/git-limitations.md)]
+ [!INCLUDE [limitations](../includes/git-limitations.md)]
 
 ## Related content
 

@@ -1,12 +1,12 @@
 ---
 title: Apply tags to items in Fabric
 description: "Learn how to apply tags to items in Microsoft Fabric."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change
-ms.date: 03/31/2025
+ms.date: 05/05/2025
 
 #customer intent: As a data creator, I want to apply tags to my items so as to facilitate data management and discovery.
 
@@ -47,7 +47,12 @@ You must have write permissions on an item to be able to apply tags to it or rem
 
 1. When done, close the settings pane. For Power BI items, select **Save** or **Apply**.
 
+## Apply or remove tags programmatically using APIs
+
+Tags can applied to or removed from items programmatically using APIs. For more information, see [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags).
+
 ## Related content
 
 * [Tags overview](tags-overview.md).md)
 * [Create and manage a set of tags](tags-define.md)
+* [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags)

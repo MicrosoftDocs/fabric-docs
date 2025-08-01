@@ -1,14 +1,15 @@
 ---
 title: Use Azure AI services in Fabric
 description: Overview of using Azure AI services in Fabric.
-ms.author: franksolomon
-author: Blackmist
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: overview
 ms.custom:
   - references_regions
 ms.date: 11/29/2024
+ms.update-cycle: 180-days
 ms.search.form:
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -37,14 +38,13 @@ Fabric provides two options to use Azure AI services:
 ## Prebuilt AI models in Fabric (preview)
 
 > [!NOTE]
-> Prebuilt AI models are currently available in preview and offered for free, with a limit on the number of concurrent requests per user. For Open AI models, the limit is 20 requests per minute per user.
+> Prebuilt AI models are currently available in preview and offered for free, with a limit on the number of concurrent requests per user. For OpenAI models, the limit is 20 requests per minute per user.
 
 ### [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/)
 
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md). [SynapseML](how-to-use-openai-sdk-synapse.md)
 
-- GPT-35-turbo: GPT-3.5 models can understand and generate natural language or code. The most capable and cost effective model in the GPT-3.5 family is GPT-3. The `5 Turbo` option, which is optimized for chat, works well for traditional completion tasks as well. The `gpt-35-turbo-0125` model supports up to 16,385 input tokens and 4,096 output tokens.
-- gpt-4 family: `gpt-4-32k` is supported.
+- gpt-4 family: `gpt-4o` and `gpt-4o-mini` are supported.
 - text-embedding-ada-002 (version 2), embedding model that can be used with embedding API requests. The maximum accepted request token is 8,191, and the returned vector has dimensions of 1,536.
 
 ### [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) 
@@ -87,17 +87,17 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 ## Consumption rate
 
 > [!NOTE]
-> The billing for prebuilt AI services in Fabric became effective on November 1st, 2024, as part of your existing Power BI Premium or Fabric Capacity.
+> The billing for prebuilt AI services in Fabric became effective on November 1, 2024, as part of your existing Power BI Premium or Fabric Capacity.
 
 A request for prebuilt AI services consumes Fabric Capacity Units. This table defines how many capacity units (CU) are consumed when an AI service is used.
 
 ### Consumption rate for OpenAI language models
 
-| **Models** | **Context** | **Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
+| **Models** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
 |---|---|---|---|
-|GPT-4o-2024-08-06 Global Deployment |128 K|84.03 CU seconds |336.13 CU seconds|
-|GPT-4| 32 K |2,016.81 CU seconds |4,033.61 CU seconds|
-|GPT-3.5-Turbo-0125 |16K|16.81 CU seconds |50.42 CU seconds|
+|GPT-4o-2024-05-13 Global |128 K|84.03 CU seconds |336.13 CU seconds|
+|GPT-4o-mini-0718 Global |128 K|5.04 CU seconds |20.17 CU seconds|
+
 
 ### Consumption rate for OpenAI embedding models
 
@@ -126,7 +126,7 @@ A request for prebuilt AI services consumes Fabric Capacity Units. This table de
 
 ## Changes to AI services in Fabric consumption rate
 
-Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in the Microsoft Release Notes or the Microsoft Fabric Blog. If any change to a AI service in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use, customers can use the cancellation options available for the chosen payment method.
+Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in the Microsoft Release Notes or the Microsoft Fabric Blog. If any change to an AI service in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use, customers can use the cancellation options available for the chosen payment method.
 
 ## Monitor the Usage
 
@@ -138,9 +138,11 @@ An online shop owner uses SynapseML and Spark to categorize millions of products
 
 The expected cost for Spark usage is 1000 CUs. The expected cost for OpenAI usage is about 300 CUs.
 
-To test the new logic, first iterate it in a Spark notebook interactive run. For the operation name of the run, use "Notebook Interactive Run." The owner expects to see an all-up usage of 1300 CUs under "Notebook Interactive Run," with the Spark billing meter accounting for the entire usage.​
+To test the new logic, first iterate it in a Spark notebook interactive run. For the operation name of the run, use "Notebook Run." The owner expects to see an all-up usage of 1300 CUs under "Notebook Run," with the Spark billing meter accounting for the entire usage.​
 
 Once the shop owner validates the logic, the owner sets up the regular run and expects to see an all-up usage of 1300 CUs under the operation name "Spark Job Scheduled Run," with the Spark billing meter accounting for the entire usage.​
+
+According to [Spark compute usage reporting](../../data-engineering/billing-capacity-management-for-spark.md#spark-compute-usage-reporting), all Spark related operations are classified as [background operations](../../enterprise/fabric-operations.md#background-operations).
 
 ## Related content
 - [Use prebuilt Azure OpenAI in Fabric](how-to-use-openai-sdk-synapse.md)

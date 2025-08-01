@@ -3,7 +3,7 @@ title: Data obfuscation in Data Factory with Delphix Compliance Services
 description: This article describes how to use Delphix Compliance Services masking APIs to obfuscate data in Data Factory in Microsoft Fabric.
 author: ptyx507
 ms.topic: how-to
-ms.custom:
+ms.custom: configuration
 ms.date: 11/15/2023
 ms.author: miescobar
 ---
@@ -48,7 +48,7 @@ Import the data source that contains sensitive data that you would like masked.
 
 :::image type="content" source="media/data-obfuscation/choose-data-source.png" alt-text="Screenshot of the Choose data source dialog in Power Query." lightbox="media/data-obfuscation/choose-data-source.png":::
 
-The mapping table is where you configure what fields to mask, and which Delphix masking algorithms to use. In the **Query Settings** pane, right-click on the gear icon. Enter the column names where sensitive data resides in **Original Column**. Enter the corresponding Delphix algorithm in **Algorithm**. Details on available algorithms can be found in the [Delphix documentation](https://maskingdocs.delphix.com/Securing_Sensitive_Data/Algorithms/Algorithms_Introduction/).
+The mapping table is where you configure what fields to mask, and which Delphix masking algorithms to use. In the **Query Settings** pane, right-click on the gear icon. Enter the column names where sensitive data resides in **Original Column**. Enter the corresponding Delphix algorithm in **Algorithm**. Details on available algorithms can be found in the [Delphix documentation](https://maskingdocs.delphix.com/6.0.17/Securing_Sensitive_Data/Algorithms/Algorithms_Introduction/).
 
 Delphix’s out-of-the-box masking algorithms can be customized, or new algorithms can be defined if needed. All Delphix masking algorithms replace sensitive data with fictitious, yet realistic values, and do so consistently across data sets.
 
@@ -69,4 +69,4 @@ Your data is now ready to be used safely by end users. The data is masked consis
 ## Related content
 
 - [Delphix free preview page](https://www.delphix.com/solutions/azure-trial)
-- [Delphix documentation](https://maskingdocs.delphix.com/Securing_Sensitive_Data/Algorithms/Algorithms_Introduction/)
+- [Delphix documentation](https://maskingdocs.delphix.com/6.0.17/Securing_Sensitive_Data/Algorithms/Algorithms_Introduction/)

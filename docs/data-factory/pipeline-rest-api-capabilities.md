@@ -4,15 +4,15 @@ description: This article describes the available REST APIs for pipelines in Mic
 author: conxu-ms
 ms.author: conxu
 ms.topic: conceptual
-ms.custom:
+ms.custom: pipelines
 ms.date: 10/24/2024
 ---
 
-# REST API capabilities for data pipelines in Fabric Data Factory
+# REST API capabilities for pipelines in Fabric Data Factory
 
-Fabric Data Factory provides a robust set of APIs that enable users to automate and manage their data pipelines efficiently. These APIs allow for seamless integration with various data sources and services, enabling users to create, update, and monitor their data workflows programmatically. The APIs support a wide range of operations, including pipeline CRUD (Create, Read, Update, and Delete), scheduling, and monitoring. This makes it easier for users to manage their data integration processes.
+Fabric Data Factory offers a powerful set of APIs that make it easy to automate and manage your pipelines. You can connect to different data sources and services, and build, update, or monitor your workflows with just a few lines of code. The APIs cover everything from creating and editing pipelines to scheduling and tracking them — so you can keep your data flowing smoothly without the hassle.
 
-## API use cases for data pipelines
+## API use cases for pipelines
 
 The APIs for pipelines in Fabric Data Factory can be used in various scenarios:
 
@@ -49,13 +49,16 @@ The following examples show how to to create, update, and manage pipelines using
 
 Before you use the other REST APIs, you need to have the bearer token.
 
+>[!IMPORTANT]
+>In the following examples, ensure the word 'Bearer ' (with a space) precedes the access token itself. When using an API client and selecting 'Bearer Token' as the authentication type, 'Bearer ' is automatically inserted for you, and only requires the access token to be provided.
+
 ### Option 1: Using MSAL.Net
 
 Refer to the [Get Token section of the Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart#get-token) as an example of how to obtain the MSAL authorization token.
 
 Use MSAL.Net to acquire a Microsoft Entra ID token for Fabric service with the following scopes: _Workspace.ReadWrite.All_, _Item.ReadWrite.All_. For more information about token acquisition with MSAL.Net to, see [Token Acquisition - Microsoft Authentication Library for .NET](/entra/msal/dotnet/acquiring-tokens/overview).
 
-Copy the _Application ID_ (also called the _ClientId_)  you copied earlier and use it for _ClientId_ variable in the following examples.
+Copy the token from the _AccessToken_ property and replace the _&lt;access-token&gt;_ placeholder in the following examples with the token.
 
 ### Option 2: Using the Fabric portal
 
@@ -65,7 +68,7 @@ Sign in to the Fabric portal for the Tenant you want to test on, and press F12 t
 powerBIAccessToken
 ```
 
-Copy the token and use it for the _ClientId_ variable in the following examples.
+Copy the token and replace the _&lt;access-token&gt;_ placeholder in the following examples with the token.
 
 ## Create a pipeline
 
@@ -79,7 +82,7 @@ Create a pipeline in a specified workspace.
 
 ```rest
 {
-  "Authorization": "<bearer-token>",
+  "Authorization": "Bearer <access-token>",
   "Content-Type": "application/json"
 }
 ```
@@ -118,7 +121,7 @@ Create a pipeline with a base64 definition in a specified workspace.
 
 ```rest
 {
-  "Authorization": "<bearer-token>",
+  "Authorization": "Bearer <access-token>",
   "Content-Type": "application/json"
 }
 ```
@@ -167,7 +170,7 @@ Returns properties of specified pipeline.
 
 ```rest
 {
-  "Authorization": "<bearer-token>"
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -195,7 +198,7 @@ Returns the pipeline item definition.
 
 ```rest
 {
-  "Authorization": "<Your bearer-token>"
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -226,13 +229,13 @@ Updates the properties of the pipeline.
 
 **Sample request**:
 
-**URI**: ```PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}``` 
+**URI**: ```PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}```
 
 **Headers**:
 
 ```rest
 {
-  "Authorization": "<bearer-token>",
+  "Authorization": "Bearer <access-token>",
   "Content-Type": "application/json"
 }
 ```
@@ -271,7 +274,7 @@ Updates the pipeline item definition.
 
 ```rest
 {
-  "Authorization": "<bearer-token>",
+  "Authorization": "Bearer <access-token>",
   "Content-Type": "application/json"
 }
 ```
@@ -312,7 +315,7 @@ Deletes the specified pipeline.
 
 ```rest
 {
-  "Authorization": "<bearer-token>"
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -334,7 +337,7 @@ Runs on-demand pipeline job instance.
 
 ```rest
 {
-  "Authorization": "<bearer-token>"
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -368,7 +371,7 @@ Gets singular pipeline’s job instance.
 
 ```rest
 {
-  "Authorization": "<bearer-token>"
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -400,7 +403,7 @@ Cancel a pipeline’s job instance.
 
 ```rest
 {
-  "Authorization": "<bearer-token>"
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -427,9 +430,10 @@ Body:
 ```
 
 > [!NOTE]
-> "job id" is the same id created and used in the Job Scheduler Public APIs
+> "job id" is the same ID created and used in the Job Scheduler Public APIs
 
 Response 200:
+
 ```json
 [
     {
@@ -465,16 +469,16 @@ Response 200:
 ]
 ```
 
-## Service Principal Name (SPN) Support 
+## Service Principal Name (SPN) Support
 
-Service Principal Name (SPN) is a security identity feature used by applications or services to access specific resources. In Fabric Data Factory, SPN support is crucial for enabling secure and automated access to data sources. Here are some key points about SPN support: 
+Service Principal Name (SPN) is a security identity feature used by applications or services to access specific resources. In Fabric Data Factory, SPN support is crucial for enabling secure and automated access to data sources. Here are some key points about SPN support:
 
 - **Authentication**: SPNs are used to authenticate applications or services when accessing data sources. This ensures that only authorized entities can access the data.
 - **Configuration**: To use SPNs, you need to create a service principal in Azure and grant it the necessary permissions to access the data source. For example, if you're using a data lake, the service principal needs storage blob data reader access.
-- **Connection**: When setting up a data connection in Fabric Data Factory, you can choose to authenticate using a service principal. This involves providing the tenant ID, client ID, and client secret of the service principal. 
-- **Security**: Using SPNs enhances security by avoiding the use of hardcoded credentials in your dataflows. It also allows for better management of access permissions and auditing of access activities. 
+- **Connection**: When setting up a data connection in Fabric Data Factory, you can choose to authenticate using a service principal. This involves providing the tenant ID, client ID, and client secret of the service principal.
+- **Security**: Using SPNs enhances security by avoiding the use of hardcoded credentials in your dataflows. It also allows for better management of access permissions and auditing of access activities.
 
-For more detailed information on how to set up and use SPNs in Fabric Data Factory, refer to [SPN support in Data Factory](service-principals.md). 
+For more detailed information on how to set up and use SPNs in Fabric Data Factory, refer to [SPN support in Data Factory](service-principals.md).
 
 ## Current limitations
 
@@ -488,7 +492,7 @@ Refer to the following content for more information on REST APIs for data pipeli
 
 ### Documentation
 
-- [Fabric data pipeline public REST API](pipeline-rest-api.md)
+- [Fabric data pipeline public REST API](pipeline-rest-api-capabilities.md)
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
 

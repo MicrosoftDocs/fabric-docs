@@ -1,15 +1,16 @@
 ---
-title: "Dimensional modeling in Microsoft Fabric Warehouse"
-description: "Learn about dimensional modeling in Microsoft Fabric Warehouse."
+title: "Dimensional Modeling"
+description: "Learn about dimensional modeling in Microsoft Fabric Data Warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: drubiolo, chweb
-ms.date: 06/21/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom: fabric-cat
+ms.custom:
+  - fabric-cat
 ---
 
-# Dimensional modeling in Microsoft Fabric Warehouse
+# Dimensional modeling in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -32,7 +33,7 @@ A star schema design is optimized for analytic query workloads. For this reason,
 
 The reason why it's called a star schema is because a fact table forms the center of a star while the related dimension tables form the points of the star.
 
-:::image type="content" source="media/dimensional-modeling-overview/star-schema.svg" alt-text="Diagram shows an illustration of a star schema for sales facts. There are five dimensions, each located at a point of the star." border="false":::
+:::image type="content" source="media/dimensional-modeling-overview/star-schema.svg" alt-text="Diagram shows an illustration of a star schema for sales facts. There are five dimensions, each located at a point of the star.":::
 
 A star schema often contains multiple fact tables, and therefore multiple stars.
 
@@ -49,7 +50,9 @@ However, in specific circumstances it might not be the best approach. For exampl
 > [!IMPORTANT]
 > When you use Power Query to define a dimensional model in the semantic model, you aren't able to [manage historical change](dimensional-modeling-dimension-tables.md#manage-historical-change), which might be necessary to analyze the past accurately. If that's a requirement, you should create a data warehouse and allow periodic ETL processes to capture and appropriately store dimension changes.
 
-## Planning for a data warehouse
+<a id="planning-for-a-data-warehouse"></a>
+
+## Plan for a data warehouse
 
 You should approach the creation of a data warehouse and the design of a dimension model as a serious and important undertaking. That's because the data warehouse is a core component of your data platform. It should form a solid foundation that supports analytics and reporting—and therefore decision making—for your entire organization.
 

@@ -1,12 +1,11 @@
 ---
-title: Ingest data into your Warehouse using the COPY statement
+title: Ingest Data into Your Warehouse Using the COPY Statement
 description: Follow steps to ingest data into a Warehouse with the COPY statement in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: procha
-ms.date: 12/30/2024
+ms.reviewer: procha, jovanpop-msft
+ms.date: 04/24/2025
 ms.topic: how-to
-ms.custom:
 ms.search.form: Ingesting data
 ---
 
@@ -19,7 +18,9 @@ The COPY statement is the primary way to ingest data into [!INCLUDE [fabric-dw](
 This tutorial shows data ingestion examples for a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table using the T-SQL `COPY` statement. It uses the Bing COVID-19 sample data from the Azure Open Datasets. For details about this data, including its schema and usage rights, see [Bing COVID-19](/azure/open-datasets/dataset-bing-covid-19?tabs=azure-storage).
 
 > [!NOTE]
-> To learn more about the T-SQL COPY statement including more examples and the full syntax, see [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
+> [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also enables you to use [BULK INSERT](/sql/t-sql/statements/bulk-insert-transact-sql?view=fabric&preserve-view=true) statement for data ingestion. The `COPY INTO` statement is the recommended statement for the new ingestion code, while the `BULK INSERT` statement enables you to reuse the code that you are using in SQL Server or Azure SQL Database.
+> 
+> To learn more about the T-SQL `COPY` statement including more examples and the full syntax, see [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
 
 ## Create a table
 
@@ -91,7 +92,9 @@ WITH (
 );
 ```
 
-## <a id="checking-the-results"></a> Check the results
+<a id="checking-the-results"></a>
+
+## Check the results
 
 The COPY statement completes by ingesting 4,766,736 rows into your new table. You can confirm the operation ran successfully by running a query that returns the total number of rows in your table:
 

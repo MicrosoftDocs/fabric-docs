@@ -1,8 +1,8 @@
 ---
 title: Protect inbound traffic
 description: Understand the difference between private links and Microsoft Entra Conditional and decide which is best for your organization.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
 ms.date: 07/17/2024
@@ -46,7 +46,7 @@ Conditional access policies help you protect your data and applications without 
 
 * Use Multifactor Authentication (MFA).
 
-* Restrict traffic based on parameters such as country of origin or device type.
+* Restrict traffic based on parameters such as country/region of origin or device type.
 
 Fabric doesn't support other authentication methods such as account keys or SQL authentication, which rely on usernames and passwords.
 

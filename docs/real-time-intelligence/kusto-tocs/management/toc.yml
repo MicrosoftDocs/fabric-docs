@@ -222,6 +222,32 @@ items:
     - name: .show materialized-view(s) details
       displayName: show materialized view details
       href: /kusto/management/materialized-views/materialized-view-show-details-command?view=microsoft-fabric&preserve-view=true
+  - name: Graphs
+    items:
+    - name: Persistent graph overview
+      href: /kusto/management/graph/graph-persistent-overview?view=microsoft-fabric&preserve-view=true
+    - name: Graph models overview
+      href: /kusto/management/graph/graph-model-overview?view=microsoft-fabric&preserve-view=true
+    - name: .create-or-alter graph_model
+      href: /kusto/management/graph/graph-model-create-or-alter?view=microsoft-fabric&preserve-view=true
+    - name: .drop graph_model
+      href: /kusto/management/graph/graph-model-drop?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_model
+      href: /kusto/management/graph/graph-model-show?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_models
+      href: /kusto/management/graph/graph-models-show?view=microsoft-fabric&preserve-view=true
+    - name: Graph snapshot overview
+      href: /kusto/management/graph/graph-snapshot-overview?view=microsoft-fabric&preserve-view=true
+    - name: .make graph_snapshot
+      href: /kusto/management/graph/graph-snapshot-make?view=microsoft-fabric&preserve-view=true
+    - name: .drop graph_snapshot
+      href: /kusto/management/graph/graph-snapshot-drop?view=microsoft-fabric&preserve-view=true
+    - name: .drop graph_snapshots
+      href: /kusto/management/graph/graph-snapshots-drop?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_snapshot
+      href: /kusto/management/graph/graph-snapshot-show?view=microsoft-fabric&preserve-view=true
+    - name: .show graph_snapshots
+      href: /kusto/management/graph/graph-snapshots-show?view=microsoft-fabric&preserve-view=true
   - name: Stored query results
     items:
     - name: Stored query results
@@ -716,6 +742,23 @@ items:
   - name: .ingest inline command
     displayName: .ingest inline
     href: /kusto/management/data-ingestion/ingest-inline?view=microsoft-fabric&preserve-view=true
+  - name: Queued ingestion commands
+    items:
+    - name: Queued ingestion commands overview
+      displayName: Queued ingestion commands, ingest from folders, ingest from files, ingest from storage
+      href: /kusto/management/data-ingestion/queued-ingestion-overview?view=microsoft-fabric&preserve-view=true
+    - name: Queued ingestion commands use case
+      displayName: Queued ingestion historical data ingestion
+      href: /kusto/management/data-ingestion/queued-ingestion-use-case?view=microsoft-fabric&preserve-view=true
+    - name: .ingest-from-storage-queued command
+      displayName: .ingest-from-storage-queued, ingest from storage command
+      href: /kusto/management/data-ingestion/ingest-from-storage-queued?view=microsoft-fabric&preserve-view=true
+    - name: .list blobs command
+      href: /kusto/management/data-ingestion/list-blobs?view=microsoft-fabric&preserve-view=true
+    - name: .cancel queued ingestion operation command
+      href: /kusto/management/data-ingestion/cancel-queued-ingestion-operation-command?view=microsoft-fabric&preserve-view=true
+    - name: .show queued ingestion operation command
+      href: /kusto/management/data-ingestion/show-queued-ingestion-operations?view=microsoft-fabric&preserve-view=true
   - name: Streaming ingestion
     items:
     - name: Streaming ingestion and schema changes

@@ -3,17 +3,18 @@ title: ONNX - Inference on Spark
 description: Use SynapseML to build a LightGBM model, convert it to ONNX format, then perform inference.
 ms.topic: how-to
 ms.custom: 
-ms.author: ssalgado
-author: ssalgadodev
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
-ms.date: 06/28/2023
+ms.date: 04/08/2025
 ---
-# ONNX Inference on Spark
 
-In this example, you train a LightGBM model and convert the model to [ONNX](https://onnx.ai/) format. Once converted, you use the model to infer some test data on Spark.
+# ONNX inference on Spark
 
-This example uses the following Python packages and versions:
+In this example, you train a LightGBM model, and convert that model to the [ONNX](https://onnx.ai/) format. Once converted, you use the model to infer some test data on Spark.
+
+This example uses these Python packages and versions:
 
 - `onnxmltools==1.7.0`
 - `lightgbm==3.2.1`
@@ -21,12 +22,12 @@ This example uses the following Python packages and versions:
 ## Prerequisites
 
 - Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
-- You may need to install `onnxmltools` by adding `!pip install onnxmltools==1.7.0` in a code cell and then running the cell.
-
+- You might need to install `onnxmltools`. To do this, add `!pip install onnxmltools==1.7.0` in a notebook code cell, and then run that cell.
+- You might need to install `lightgbm`. To do this, add `!pip install lightgbm==3.2.1` in a notebook code cell, and then run that cell.
 
 ## Load the example data
 
-To load the example data, add the following code examples to cells in your notebook and then run the cells:
+To load the example data, add these code examples to cells in your notebook, and then run those cells:
 
 ```python
 from pyspark.sql import SparkSession
@@ -50,7 +51,7 @@ df = (
 display(df)
 ```
 
-The output should look similar to the following table, though the values and number of rows may differ:
+The output should look similar to the following table. The specific columns shown, the number of rows, and the actual values in the table might differ:
 
 | Interest Coverage Ratio | Net Income Flag | Equity to Liability |
 | ----- | ----- | ----- |
@@ -92,7 +93,7 @@ model = model.fit(train_data)
 
 ## Convert the model to ONNX format
 
-The following code exports the trained model to a LightGBM booster and then converts it to ONNX format:
+The following code exports the trained model to a LightGBM booster, and then converts the model to the ONNX format:
 
 ```python
 import lightgbm as lgb
@@ -115,7 +116,7 @@ booster = lgb.Booster(model_str=booster_model_str)
 model_payload_ml = convertModel(booster, len(feature_cols))
 ```
 
-After conversion, load the ONNX payload into an `ONNXModel` and inspect the model inputs and outputs:
+After conversion, load the ONNX payload into an `ONNXModel`, and inspect the model inputs and outputs:
 
 ```python
 from synapse.ml.onnx import ONNXModel
@@ -126,8 +127,7 @@ print("Model inputs:" + str(onnx_ml.getModelInputs()))
 print("Model outputs:" + str(onnx_ml.getModelOutputs()))
 ```
 
-Map the model input to the input dataframe's column name (FeedDict), and map the output dataframe's column names to the model outputs (FetchDict).
-
+Map the model input to the column name (FeedDict) of the input dataframe, and map the column names of the output dataframe to the model outputs (FetchDict):
 
 ```python
 onnx_ml = (
@@ -140,7 +140,7 @@ onnx_ml = (
 
 ## Use the model for inference
 
-To perform inference with the model, the following code creates test data and transforms the data through the ONNX model.
+To perform inference with the model, the following code creates test data, and transforms the data through the ONNX model:
 
 ```python
 from pyspark.ml.feature import VectorAssembler
@@ -166,7 +166,7 @@ testDf = (
 display(onnx_ml.transform(testDf))
 ```
 
-The output should look similar to the following table, though the values and number of rows may differ:
+The output should look similar to the following table, though the values and number of rows might differ:
 
 | Index | Features | Prediction | Probability |
 | ----- | ----- | ----- | ----- |

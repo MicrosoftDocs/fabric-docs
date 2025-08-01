@@ -2,8 +2,8 @@
 title: Enable Python plugin in Real-Time Intelligence
 description: Learn how to enable the Python plugin in your KQL database.
 ms.reviewer: adieldar
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 12/25/2024

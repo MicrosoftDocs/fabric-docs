@@ -3,8 +3,8 @@ title: "Limitations for Microsoft Fabric Mirrored Databases From Snowflake"
 description: Learn about the limitations of mirrored databases from Snowflake in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: imotiwala, shaween18
-ms.date: 01/27/2025
+ms.reviewer: imotiwala, sbahadur
+ms.date: 04/24/2025
 ms.topic: conceptual
 ---
 
@@ -22,10 +22,6 @@ Current limitations in the Microsoft Fabric mirrored databases from Snowflake ar
   - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over will be determined by taking the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list will not be mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you're prevented from selecting more than 500 tables.
 
-## Network and firewall
-
-- Currently, Mirroring does not support Snowflake instances behind a virtual network or private networking. If your Snowflake instance is behind a private network, you can't enable Snowflake mirroring.
-
 ## Security
 
 - Snowflake authentication via username/password and Entra (single sign on (SSO)) are supported.
@@ -39,7 +35,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Snowflake ar
 
 ## Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Related content
 

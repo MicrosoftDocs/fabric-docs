@@ -5,7 +5,7 @@ items:
   href: cicd-overview.md
 - name: "Tutorial: End to end lifecycle management"
   href: cicd-tutorial.md
-- name: CI/CD workflow options in Fabric
+- name: "CI/CD workflow options in Fabric"
   href: manage-deployment.md
 - name: Continuous integration with Git
   items:
@@ -17,8 +17,6 @@ items:
     href: git-integration/git-integration-process.md
   - name: "Manage Git branches"
     href: git-integration/manage-branches.md
-  - name: Automate Git integration
-    href: git-integration/git-automation.md
   - name: Handle errors and conflicts
     items:
     - name: Resolve conflicts
@@ -31,6 +29,10 @@ items:
       href: git-integration/license-change.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
+  - name: Automate Git integration
+    items:
+    - name: Automate Git integration using REST APIs
+      href: git-integration/git-automation.md
 - name: Continuous Deployment with deployment pipelines
   items:
   - name: Introduction to deployment pipelines
@@ -41,20 +43,42 @@ items:
     href: deployment-pipelines/get-started-with-deployment-pipelines.md
   - name: Understand the deployment process
     href: deployment-pipelines/understand-the-deployment-process.md
-  - name: Assign a workspace
-    href: deployment-pipelines/assign-pipeline.md
-  - name: Compare content in different stages
-    href: deployment-pipelines/compare-pipeline-content.md  
-  - name: Deploy content to a stage
-    href: deployment-pipelines/deploy-content.md
-  - name: Deployment history
-    href: deployment-pipelines/deployment-history.md
-  - name: Create deployment rules
-    href: deployment-pipelines/create-rules.md
-  - name: Automate deployment pipelines for Power BI items only
-    href: deployment-pipelines/pipeline-automation.md
-  - name: Automate deployment pipelines for Fabric
-    href: deployment-pipelines/pipeline-automation-fabric.md
+  - name: Deployment pipeline concepts
+    items:
+    - name: Assign a workspace
+      href: deployment-pipelines/assign-pipeline.md
+    - name: Compare content in different stages
+      href: deployment-pipelines/compare-pipeline-content.md  
+    - name: Deploy content to a stage
+      href: deployment-pipelines/deploy-content.md
+    - name: Deployment history
+      href: deployment-pipelines/deployment-history.md
+    - name: Create deployment rules
+      href: deployment-pipelines/create-rules.md
+    - name: Automate deployment pipelines for Power BI items only
+      href: deployment-pipelines/pipeline-automation.md
+    - name: Automate deployment pipelines for Fabric
+      href: deployment-pipelines/pipeline-automation-fabric.md
+- name: Variable libraries
+  items:
+  - name: What is a Variable library?
+    href: variable-library/variable-library-overview.md
+  - name: Create and use a variable library
+    href: variable-library/get-started-variable-libraries.md
+  - name: Concepts
+    items:
+    - name: Variable names and types
+      href: variable-library/variable-types.md
+    - name: Permissions
+      href: variable-library/variable-library-permissions.md
+    - name: "CI/CD and Variable libraries"
+      href: variable-library/variable-library-cicd.md
+    - name: Automate Variable library management
+      href: variable-library/automate-variable-library.md
+  - name: "Tutorial: Variable libraries in CI/CD"
+    href: variable-library/tutorial-variable-library.md
+  - name: Variable library FAQ and Troubleshooting
+    href: variable-library/variable-library-troubleshoot.md
 - name: Lifecycle management best practices
   href: best-practices-cicd.md
 - name: Frequently asked questions

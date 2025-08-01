@@ -1,10 +1,10 @@
 ---
-title: Manage objects in your Fabric Data Warehouse
+title: Manage Objects in Your Fabric Data Warehouse
 description: Learn about the object explorer in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: pvenkat
-ms.date: 02/13/2025
+ms.date: 04/06/2025
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: how-to
@@ -23,7 +23,7 @@ This article describes warehouse management tasks you can accomplish in the **Ex
 
 The **Explorer** provides a hierarchical view of the warehouse objects, including schemas, tables, views, stored procedures, and more. The objects are organized by schema then object type.
 
-:::image type="content" source="media/manage-objects/explorer-new-table.png" alt-text="Screenshot from the Fabric portal of the Explorer window of a warehouse.":::
+:::image type="content" source="media/manage-objects/explorer-new-table.png" alt-text="Screenshot from the Fabric portal of the Explorer window of a warehouse." lightbox="media/manage-objects/explorer-new-table.png":::
 
 ## Search and filter objects in the explorer
 
@@ -47,7 +47,7 @@ Use **Explorer** to create, alter, and drop objects using T-SQL templates. You c
 
 You can manage your warehouse objects in other tools, including [SQL Server Management Studio (SSMS)](connectivity.md#get-started-with-sql-server-management-studio-ssms) or the [SQL Database Projects extension](/sql/azure-data-studio/extensions/sql-database-project-extension?view=fabric&preserve-view=true) in [Visual Studio Code](https://visualstudio.microsoft.com/downloads/). The SQL Projects extension enables capabilities for source control, database testing, and schema validation. To connect to your warehouse, see [Connectivity to data warehousing in Microsoft Fabric](connectivity.md).
 
-For more information on source control for warehouses in Microsoft Fabric, including Git integration and deployment pipelines, see [Source Control with Warehouse](source-control.md).
+For more information on source control for warehouses in Microsoft Fabric, including Git integration and deployment pipelines, see [Source control with Warehouse](source-control.md).
 
 ## Queries
 
@@ -55,7 +55,7 @@ Users can manage their queries efficiently under "My Queries" and "Shared Querie
 
 - **My Queries** is a personal space where users can save and organize their own queries. 
 
-- **Shared Queries** is a collaborative space where users can share their queries with team members to access, review, and execute shared queries. Anyone with Viewer and higher permissions at a workspace level can view and edit shared queries.
+- **Shared Queries** is a collaborative space where users can share their queries with team members to access, review, and execute shared queries. Anyone with Contributor and higher permissions at a workspace level can view and edit shared queries.
 
 ## Related content
 

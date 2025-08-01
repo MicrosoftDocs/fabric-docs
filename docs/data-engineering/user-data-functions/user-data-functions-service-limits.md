@@ -37,6 +37,7 @@ The following list details the service limits for User Data Functions items.
 | Request execution timeout | 240 seconds | The maximum amount of time a function can run for. |
 | Response size limit | 30 MB | The maximum size of the response's return value of a function. | 
 | Log retention | 30 days | The number of days that historical invocation logs are retained for by default. | 
+| Private library max size | 28.6 MB | The maximum size of a `.whl` file uploaded to the Library Management experience as a private library. | 
 
 ## Next steps
 - [Create a new User Data Functions item from the Fabric portal](./create-user-data-functions-portal.md) or by using [the VS Code extension](./create-user-data-functions-vs-code.md).

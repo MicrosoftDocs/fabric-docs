@@ -1,70 +1,98 @@
 ---
 title: Data science tutorial - get started
 description: Learn about the Data science tutorial, including an overview of the steps you follow through the series and details about the end-to-end scenario.
-ms.reviewer: None
-ms.author: sgilley
-author: sdgilley
+ms.reviewer: amjafari
+ms.author: scottpolly
+author: s-polly
 ms.topic: tutorial
 ms.custom:
-ms.date: 03/01/2024
+ms.date: 04/21/2025
 ---
 
 # Data science end-to-end scenario: introduction and architecture
 
-This set of tutorials demonstrates a sample end-to-end scenario in the Fabric data science experience. You implement each step from data ingestion, cleansing, and preparation, to training machine learning models and generating insights, and then consume those insights using visualization tools like Power BI.
+These tutorials present a complete end-to-end scenario in the Fabric data science experience. They cover each step, from
 
+- Data ingestion
+- Data cleaning
+- Data preparation
 
+to
 
-If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md).
+- Machine learning model training
+- Insight generation
+
+and then cover consumption of those insights with visualization tools - for example, Power BI.
+
+People new to Microsoft Fabric should visit [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md).
 
 ## Introduction
 
-The lifecycle of a Data science project typically includes (often, iteratively) the following steps:
+A data science project lifecycle typically includes these steps:
 
-- Business understanding
-- Data acquisition
-- Data exploration, cleansing, preparation, and visualization
-- Model training and experiment tracking
-- Model scoring and generating insights.
+- Understand the business rules
+- Acquire the data
+- Explore, clean, prepare, and visualize the data
+- Train the model and track the experiment
+- Score the model and generate insights
 
-The goals and success criteria of each stage depend on collaboration, data sharing and documentation. The Fabric data science experience consists of multiple native-built features that enable collaboration, data acquisition, sharing, and consumption in a seamless way.
+The steps often proceed iteratively. The goals and success criteria of each stage depend on collaboration, data sharing, and documentation. The Fabric data science experience involves multiple native-built features that enable seamless collaboration, data acquisition, sharing, and consumption.
 
-In these tutorials, you take the role of a data scientist who has been given the task to explore, clean, and transform a dataset containing the churn status of 10,000 customers at a bank. You then build a machine learning model to predict which bank customers are likely to leave.
+These tutorials place you in the role of a data scientist who must explore, clean, and transform a dataset that contains the churn status of 10,000 bank customers. You then build a machine learning model to predict which bank customers will likely leave.
 
-You'll learn to perform the following activities:
+You perform the following activities in the tutorials:
 
-1. Use the Fabric notebooks for data science scenarios.
-1. Ingest data into a Fabric lakehouse using Apache Spark.
-1. Load existing data from the lakehouse delta tables.
-1. Clean and transform data using Apache Spark and Python based tools.
-1. Create experiments and runs to train different machine learning models.
-1. Register and track trained models using MLflow and the Fabric UI.
-1. Run scoring at scale and save predictions and inference results to the lakehouse.
-1. Visualize predictions in Power BI using DirectLake.
+1. Use the Fabric notebooks for data science scenarios
+1. Use Apache Spark to ingest data into a Fabric lakehouse
+1. Load existing data from the lakehouse delta tables
+1. Use Apache Spark and Python-based tools to clean and transform data
+1. Create experiments and runs to train different machine learning models
+1. Use MLflow and the Fabric UI to register and track trained models
+1. Run scoring at scale, and save predictions and inference results to the lakehouse
+1. Use DirectLake to visualize predictions in Power BI
 
 ## Architecture
 
-In this tutorial series, we showcase a simplified end-to-end data science scenario that involves:
+This tutorial series showcases a simplified end-to-end data science scenario involving:
 
-1. [Ingesting data from an external data source](tutorial-data-science-ingest-data.md).
-1. [Explore and clean data](tutorial-data-science-explore-notebook.md).
-1. [Train and register machine learning models](tutorial-data-science-train-models.md).
-1. [Perform batch scoring and save predictions](tutorial-data-science-batch-scoring.md).
-1. [Visualize prediction results in Power BI](tutorial-data-science-create-report.md).
+1. [Data ingestion from an external data source](tutorial-data-science-ingest-data.md).
+1. [Data exploration and cleaning](tutorial-data-science-explore-notebook.md).
+1. [Machine learning model training and registration](tutorial-data-science-train-models.md).
+1. [Batch scoring and prediction saving](tutorial-data-science-batch-scoring.md).
+1. [Prediction result visualization in Power BI](tutorial-data-science-create-report.md).
 
 :::image type="content" source="media/tutorial-data-science-introduction/data-science-scenario.png" alt-text="Diagram of the Data science end-to-end scenario components." lightbox="media/tutorial-data-science-introduction/data-science-scenario.png":::
 
 ### Different components of the data science scenario
 
-**Data sources** - Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data from. Using Fabric Notebooks you can ingest data from the built-in Lakehouse, Data Warehouse, semantic models, and various Apache Spark and Python supported custom data sources. This tutorial series focuses on ingesting and loading data from a lakehouse.
+**Data sources** - To ingest data with Fabric, you can easily and quickly connect to Azure Data Services, other cloud platforms, and on-premises data resources. With Fabric Notebooks, you can ingest data from these resources:
 
-**Explore, clean, and prepare** - The data science experience on Fabric supports data cleansing, transformation, exploration, and featurization by using built-in experiences on Spark as well as Python based tools like Data Wrangler and SemPy Library. This tutorial will showcase data exploration using Python library `seaborn` and data cleansing and preparation using Apache Spark.
+- Built-in Lakehouses
+- Data Warehouses
+- Semantic models
+- Various Apache Spark data sources
+- Various data sources that support Python
 
-**Models and experiments** - Fabric enables you to train, evaluate, and score machine learning models by using built-in experiment and model items with seamless integration with [**MLflow**](https://mlflow.org/docs/latest/index.html) for experiment tracking and model registration/deployment. Fabric also features capabilities for model prediction at scale (PREDICT) to gain and share business insights.
+This tutorial series focuses on data ingestion and loading from a lakehouse.
 
-**Storage** - Fabric standardizes on [Delta Lake](https://docs.delta.io/latest/index.html), which means all the engines of Fabric can interact with the same dataset stored in a lakehouse. This storage layer allows you to store both structured and unstructured data that support both file-based storage and tabular format. The datasets and files stored can be easily accessed via all Fabric experience items like notebooks and pipelines.
+**Explore, clean, and prepare** - The Fabric data science experience supports data cleaning, transformation, exploration, and featurization. It uses built-in Spark experiences and Python-based tools - for example, Data Wrangler and SemPy Library. This tutorial showcases data exploration with the `seaborn` Python library, and data cleaning and preparation with Apache Spark.
 
-**Expose analysis and insights** - Data from a lakehouse can be consumed by Power BI, industry leading business intelligence tool, for reporting and visualization. Data persisted in the lakehouse can also be visualized in notebooks using Spark or Python native visualization libraries like `matplotlib`, `seaborn`, `plotly`, and more. Data can also be visualized using the SemPy library that supports built-in rich, task-specific visualizations for the semantic data model, for dependencies and their violations, and for classification and regression use cases.
+**Models and experiments** - With Fabric, you can train, evaluate, and score machine learning models with built-in experiments. To register and deploy your models, and track experiments, [**MLflow**](https://mlflow.org/docs/latest/index.html) offers seamless integration with Fabric as a way to model items. To build and share business insights, Fabric offers other features for model prediction at scale (PREDICT), to build and share business insights.
+
+**Storage** - Fabric standardizes on [Delta Lake](https://docs.delta.io/latest/index.html), which means all Fabric engines can interact with the same dataset stored in a lakehouse. With that storage layer, you can store both structured and unstructured data that support both file-based storage and tabular format. You can easily access the datasets and stored files through all Fabric experience items - for example, notebooks and pipelines.
+
+**Expose analysis and insights** - Power BI, an industry-leading business intelligence tool, can consume lakehouse data for report and visualization generation. In notebook resources, Python or Spark native visualization libraries
+
+- `matplotlib`
+- `seaborn`
+- `plotly`
+- etc.
+
+can visualize data persisted in a lakehouse. The SemPy library also supports data visualization. This library supports built-in rich, task-specific visualizations for
+
+- The semantic data model
+- Dependencies and their violations
+- Classification and regression use cases
 
 ## Next step
 

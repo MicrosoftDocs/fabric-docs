@@ -1,8 +1,8 @@
 ---
 title: About private Links for secure access to Fabric
 description: Learn about the Azure private link feature to provide secure access to Fabric using Azure Networking private endpoints. Data is sent privately instead of over the internet.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: conceptual
 ms.custom:
@@ -90,8 +90,8 @@ You can use Dataflow gen2 to get data, transform data, and publish dataflow via 
 
 When you connect to Pipeline via private link, you can use the data pipeline to load data from any data source with public endpoints into a private-link-enabled Microsoft Fabric lakehouse. Customers can also author and operationalize data pipelines with activities, including Notebook and Dataflow activities, using the private link. However, copying data from and into a Data Warehouse isn't currently possible when Fabric's private link is enabled.
 
-### ML Model, Experiment, and AI skill
-ML Model, Experiment, and AI skill supports private link. 
+### ML Model, Experiment, and Data agent
+ML Model, Experiment, and Data agent supports private link. 
 
 ### Power BI
 
@@ -122,14 +122,8 @@ Limitations:
 
 ### Healthcare data solutions (preview)
 
-Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. Within a tenant that has been enabled with a private link, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data.  This includes the ability to ingest healthcare data form various sources, such as Azure Storage accounts, and more.
+Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. Within a tenant that has been enabled with a private link, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. This includes the ability to ingest healthcare data form various sources, such as Azure Storage accounts, and more.
 
-### Azure and Fabric Events
-Azure and Fabric events support private link such that when the **Block Public Internet Access** tenant setting is enabled:
-- Any new configuration to consume Azure events, like Azure Blob Storage events, would be blocked.
-- Existing configurations that are consuming Azure events will start losing any new events.
-
-### Other Fabric items
 
 Other Fabric items, such as Eventstream, don't currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 
@@ -153,20 +147,22 @@ There are several considerations to keep in mind while working with private endp
 
 * Tenant migration is blocked when Private Link is turned on in the Fabric admin portal.
 
-* Customers can't connect to Fabric resources in multiple tenants from a single virtual network, but rather only the last tenant to set up Private Link.
+* Customers can't connect to Fabric resources in multiple tenants from the same network location (depends on where you configure DNS records), but rather only the last tenant to set up Private Link.
 
-* Private link doesn't support in Trial capacity. When accessing Fabric via Private Link traffic, trial capacity won't work.
+* Private link doesn't support in Trial capacity. When accessing Fabric via Private Link traffic, trial capacity doesn't work.
   
 * Any uses of external images or themes aren't available when using a private link environment.
 
-* Each private endpoint can be connected to one tenant only.  You can't set up a private link to be used by more than one tenant.
+* Each private endpoint can be connected to one tenant only. You can't set up a private link to be used by more than one tenant.
 
 * **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. [Learn more about this scenario](/data-integration/gateway/service-gateway-install#related-considerations). VNet data gateways will work. For more information, see [these considerations](/data-integration/gateway/service-gateway-install#related-considerations).
 
 * **For non-PowerBI (PowerApps or LogicApps) Gateway users**: The on-premises data gateway isn't supported when Private Link is enabled. We recommend exploring the use of the [VNET data gateway](/data-integration/vnet/overview), which can be used with private links.
 
-* Private Links won't work with VNet Data Gateway download diagnostics.
+* Private Links doesn't work with VNet Data Gateway download diagnostics.
 
+* The Microsoft Fabric Capacity Metrics app doesn't support Private Link.
+  
 * Private links resource REST APIs don't support tags.
 
 * The following URLs must be accessible from the client browser:

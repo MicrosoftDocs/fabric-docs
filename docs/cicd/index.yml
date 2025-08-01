@@ -1,18 +1,18 @@
 ### YamlMime:Landing
 
-title: Lifecycle management documentation in Microsoft Fabric # < 60 chars
+title: Microsoft Fabric lifecycle management documentation # < 60 chars
 summary: Microsoft Fabric's lifecycle management tools enable efficient product development, continuous updates, fast releases, and ongoing feature enhancements. # < 160 chars
 
 metadata:
-  title: Microsoft Fabric's lifecycle management tools enable efficient product development, continuous updates, fast releases, and ongoing feature enhancements. # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: description # Required; article description that is displayed in search results. < 160 chars.
+  title: Microsoft Fabric lifecycle management documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Microsoft Fabric's lifecycle management tools enable efficient product development, continuous updates, fast releases, and ongoing feature enhancements. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: fabric  #Required; use either service or product per approved list. 
   ms.subservice: cicd
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: mberdugo #Required; your GitHub user alias, with correct capitalization.
-  ms.author: monaberdugo #Required; microsoft alias of author; optional team alias.
-  ms.date: 11/23/2024 #Required; mm/dd/yyyy format.
+  author: billmath #Required; your GitHub user alias, with correct capitalization.
+  ms.author: billmath #Required; microsoft alias of author; optional team alias.
+  ms.date: 1/23/2025 #Required; mm/dd/yyyy format.
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -24,30 +24,52 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Lifecycle management?
+          - text: What is CI/CD Lifecycle management?
             url: ./cicd-overview.md 
           - text: What is Git integration?
             url: git-integration/intro-to-git-integration.md 
           - text: What is deployment pipelines?
             url: deployment-pipelines/intro-to-deployment-pipelines.md  
-          - text: Lifecycle management best practices
-            url:  ./best-practices-cicd.md                                  
-
+          - text: What is a Variable library?
+            url: variable-library/variable-library-overview.md
+                          
   # Card 
   - title: Get started
     linkLists:
-      - linkListType: get-started
+      - linkListType: quickstart
         links:
           - text: Get started with Git integration
             url: git-integration/git-get-started.md
           - text: Get started with deployment pipelines
-            url: deployment-pipelines/get-started-with-deployment-pipelines.md            
+            url: deployment-pipelines/get-started-with-deployment-pipelines.md
+          - text: Get started with Variable libraries
+            url: variable-library/get-started-variable-libraries.md            
       - linkListType: concept
         links:
           - text: Git integration concepts
             url: git-integration/git-integration-process.md
           - text: The deployment pipelines process
             url: deployment-pipelines/understand-the-deployment-process.md
+          - text: Variable library variable types
+            url: variable-library/variable-types.md
+      - linkListType: reference
+        links:
+          - text: Frequently asked questions about the Fabric lifecycle management tools
+            url: faq.yml
+          - text: Troubleshoot lifecycle management issues
+            url: troubleshoot-cicd.md
+
+  # Card 
+  - title: What's new in CI/CD?
+    linkLists:
+      - linkListType: whats-new
+        links:
+          - text: Variable libraries
+            url: variable-library/variable-library-overview.md
+          - text: Deployment pipelines new interface
+            url: deployment-pipelines/deployment-pipelines-new-ui.md
+          - text: Supported items
+            url: deployment-pipelines/intro-to-deployment-pipelines.md
 
   # Card 
   - title: How to guides
@@ -58,7 +80,25 @@ landingContent:
             url: git-integration/manage-branches.md
           - text: Resolve conflicts in Git
             url: git-integration/conflict-resolution.md
-          - text: Automate deployment pipelines
-            url: deployment-pipelines/pipeline-automation.md
+          - text: Lifecycle management best practices
+            url:  ./best-practices-cicd.md 
+      - linkListType: tutorial
+        links:
           - text: Lifecycle management tutorial
             url: cicd-tutorial.md
+
+  # Card
+  - title: Automate lifecycle management workflows using APIs
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Automate Git workflows
+            url: git-integration/git-automation.md
+          - text: Automate deployment pipelines
+            url: deployment-pipelines/pipeline-automation-fabric.md
+          - text: Automate Variable libraries
+            url: variable-library/automate-variable-library.md
+      - linkListType: reference
+        links:
+          - text: Fabric REST APIs
+            url: /rest/api/fabric/articles/using-fabric-apis

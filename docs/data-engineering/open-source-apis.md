@@ -14,7 +14,7 @@ Fabric Spark History Server APIs follow the same structure, query parameters, an
 
 > [!NOTE]
 >
-> The /applications endpoint, which retrieves a list of all applications, is the only endpoint not supported here. However, you can obtain a list of Spark applications for a specific Fabric workspace or item using other available monitoring APIs.
+> The /applications endpoint, which retrieves a list of all applications, and the /version endpoint, which gets the current Spark version, are the only endpoints not supported here. However, as an alternative of /applications endpoint, you can obtain a list of Spark applications for a specific Fabric workspace or item using other available monitoring APIs.
 
 ## Permissions
 
@@ -28,6 +28,29 @@ Item.Read.All or Item.ReadWrite.All or one of the following three groups (accord
 - SparkJobDefinition.Read.All or SparkJobDefinition.ReadWrite.All
 - Lakehouse.Read.All or Lakehouse.ReadWrite.All
 
+## Microsoft Entra supported identities
+
+This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-support) listed in this section.
+
+| Identity | Support |
+| --- | --- |
+| User | Yes |
+| [Service principal](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) and [Managed identities](/entra/identity/managed-identities-azure-resources/overview) | Yes |
+
+## Interface
+
+With attemptId:
+
+```HTTP
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/{attemptId}/...
+```
+
+Without attemptId:
+
+```HTTP
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobDefinitions|lakehouses/{itemId}/livySessions/{livyId}/applications/{appId}/...
+```
+
 ## URI parameters
 
 | Name | In | Required | Type | Description |
@@ -38,21 +61,12 @@ Item.Read.All or Item.ReadWrite.All or one of the following three groups (accord
 | appId | path | True | string | The Spark application ID, like application_1704417105000_0001. |
 | attemptId | path | False | int | The attempt ID of that application ID. If not specified, the ID of last attempt is used. |
 
-## Microsoft Entra supported identities
-
-This API supports the Microsoft [identities](/rest/api/fabric/articles/identity-support) listed in this section.
-
-| Identity | Support |
-| --- | --- |
-| User | Yes |
-| [Service principal](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) and [Managed identities](/entra/identity/managed-identities-azure-resources/overview) | Yes |
-
 ## Examples
 
-### Sample request for Spark jobs
+### Sample request 1: Get details of a specific job in a Spark application
 
 ```
-GET https://api.fabric.microsoft.com/v1/workspaces/00bb0307-033d-415b-9917-e0b19df28539/notebooks/46884990-6ea1-4dbf-93e5-daf2608930d6/livySessions/b90eee82-765c-4393-b3da-2a11eeb73b34/applications/application_1742369571479_0001/jobs/1 
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/applications/application_1742369571479_0001/jobs/1 
 ```
 
 ### Sample response 1
@@ -88,8 +102,10 @@ Status code: 200
 } 
 ```
 
+### Sample request 2: Get details of a specific SQL query in a Spark application
+
 ```
-GET  https://api.fabric.microsoft.com/v1/workspaces/00bb0307-033d-415b-9917-e0b19df28539/notebooks/46884990-6ea1-4dbf-93e5-daf2608930d6/livySessions/b90eee82-765c-4393-b3da-2a11eeb73b34/applications/application_1742369571479_0001/sql/1?details=false 
+GET  https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/applications/application_1742369571479_0001/sql/1?details=false 
 ```
 
 ### Sample response 2
@@ -115,14 +131,12 @@ Status code: 200
 } 
 ```
 
-### Sample request for event log
+### Sample request 3: Get event log of a specific attempt in a Spark application
 
 ```
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/application_1741176604085_0001/1/logs  
+GET https://api.fabric.microsoft.com/v1/workspaces/ddddeeee-3333-ffff-4444-aaaa5555bbbb/notebooks/eeeeffff-4444-aaaa-5555-bbbb6666cccc/livySessions/ffffaaaa-5555-bbbb-6666-cccc7777dddd/applications/application_1741176604085_0001/1/logs  
 ```
-## Next steps
 
-- [Livy Log](../data-engineering/livy-log.md)
-- [Executor Log](../data-engineering/executor-log.md)
-- [Driver log](../data-engineering/driver-log.md)
-- [Open-Source APIs ](../data-engineering/open-source-apis.md)
+### Sample response 3
+
+Not shown because it is unreadable code

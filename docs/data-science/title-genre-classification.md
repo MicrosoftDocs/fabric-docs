@@ -1,18 +1,18 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a text classification model'
 description: This tutorial demonstrates training and evaluating a text classification model by using a sample dataset of metadata for digitized books.
-ms.author: lagayhar 
-author: lgayhardt
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: None
 ms.topic: tutorial
-ms.custom:
-ms.date: 01/22/2024
+ms.custom: sfi-image-nochange
+ms.date: 04/16/2025
 #customer intent: As a data scientist, I want to build a text classification model so I can predict a category based on a single attribute.
 ---
 
 # Tutorial: Create, evaluate, and score a text classification model
 
-This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow for a text classification model, in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario uses word2vec and logistic regression, on Spark, to determine the genre of a book from the British Library book dataset, solely based on the book's title.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow for a text classification model, in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario uses both Word2vec natural language processing (NLP), and logistic regression, on Spark, to determine the genre of a book from the British Library book dataset. The determination is solely based on the title of the book.
 
 This tutorial covers these steps:
 
@@ -20,18 +20,18 @@ This tutorial covers these steps:
 > * Install custom libraries
 > * Load the data
 > * Understand and process the data with exploratory data analysis
-> * Train a machine learning model with word2vec and logistic regression, and track experiments by with MLflow and the Fabric autologging feature
+> * Train a machine learning model with both Word2vec NLP and logistic regression, and track experiments with MLflow and the Fabric autologging feature
 > * Load the machine learning model for scoring and predictions
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-- If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+- If you don't have a Microsoft Fabric lakehouse, follow the steps in the [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md) resource to create one.
 
 ## Follow along in a notebook
 
-You can choose one of these options to follow along in a notebook:
+To follow along in a notebook, you have these options:
 
 - Open and run the built-in notebook.
 - Upload your notebook from GitHub.
@@ -52,15 +52,15 @@ The sample **Title genre classification** notebook accompanies this tutorial.
 
 ## Step 1: Install custom libraries
 
-For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install libraries.
+For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install a library.
 
-* Use the inline installation capabilities (`%pip` or `%conda`) of your notebook to install a library, in your current notebook only.
-* Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
+* To install a library, in your current notebook only, use the inline installation capabilities (`%pip` or `%conda`) of your notebook.
+* As an alternative, you can create a Fabric environment, and install libraries from public sources or upload custom libraries to it. Then, your workspace admin can attach the environment as the default for the workspace. At that point, all the libraries in the environment become available for use in all notebooks and all Spark job definitions in that workspace. For more information about environments, visit the [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment) resource.
 
-For the classification model, use the `wordcloud` library to represent the word frequency in text, where the size of a word represents its frequency. For this tutorial, use `%pip install` to install `wordcloud` in your notebook.
+For the classification model, use the `wordcloud` library to represent the word frequency in text. In `wordcloud` resources, the size of a word represents its frequency. For this tutorial, use `%pip install` to install `wordcloud` in your notebook.
 
 > [!NOTE]
-> The PySpark kernel restarts after `%pip install` runs. Install the needed libraries before you run any other cells.
+> The PySpark kernel restarts after `%pip install` runs. Install the libraries you need before you run any other cells.
 
 ```python
 # Install wordcloud for text visualization by using pip
@@ -69,14 +69,16 @@ For the classification model, use the `wordcloud` library to represent the word 
 
 ## Step 2: Load the data
 
-The dataset has metadata about books from the British Library that a collaboration between the library and Microsoft digitized. The metadata is classification information to indicate whether a book is fiction or nonfiction. With this dataset, the goal is to train a classification model that determines the genre of a book, only based on its title.
+The British Library book dataset has metadata about books from the British Library. A collaboration between the library and Microsoft digitized the original resources that became the dataset. The metadata is classification information that indicates whether or not a book is fiction or nonfiction. The following diagram shows a row sample of the dataset.
 
 |BL record ID|Type of resource|Name|Dates associated with name|Type of name|Role|All names|Title|Variant titles|Series title|Number within series|Country of publication|Place of publication|Publisher|Date of publication|Edition|Physical description|Dewey classification|BL shelfmark|Topics|Genre|Languages|Notes|BL record ID for physical resource|classification_id|user_id|created_at|subject_ids|annotator_date_pub|annotator_normalised_date_pub|annotator_edition_statement|annotator_genre|annotator_FAST_genre_terms|annotator_FAST_subject_terms|annotator_comments|annotator_main_language|annotator_other_languages_summaries|annotator_summaries_language|annotator_translation|annotator_original_language|annotator_publisher|annotator_place_pub|annotator_country|annotator_title|Link to digitized book|annotated|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |014602826|Monograph|Yearsley, Ann|1753-1806|person||More, Hannah, 1745-1833 [person]; Yearsley, Ann, 1753-1806 [person]|Poems on several occasions [With a prefatory letter by Hannah More.]||||England|London||1786|Fourth edition MANUSCRIPT note|||Digital Store 11644.d.32|||English||003996603||||||||||||||||||||||False|
 |014602830|Monograph|A, T.||person||Oldham, John, 1653-1683 [person]; A, T. [person]|A Satyr against Vertue. (A poem: supposed to be spoken by a Town-Hector [By John Oldham. The preface signed: T. A.])||||England|London||1679||15 pages (4°)||Digital Store 11602.ee.10. (2.)|||English||000001143||||||||||||||||||||||False|
 
-Define the following parameters so that you can apply this notebook on different datasets:
+With this dataset, our goal is to train a classification model that determines the genre of a book, based only on the book title.
+
+Define the following parameters, to apply this notebook on different datasets:
 
 ```python
 IS_CUSTOM_DATA = False  # If True, the user must manually upload the dataset
@@ -93,17 +95,17 @@ EXPERIMENT_NAME = "sample-aisample-textclassification"  # MLflow experiment name
 
 ### Download the dataset and upload to the lakehouse
 
-This code downloads a publicly available version of the dataset, and then stores it in a Fabric lakehouse.
+The following code snippet downloads a publicly available version of the dataset, and then stores it in a Fabric lakehouse:
 
 > [!IMPORTANT]
-> [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Failure to do so will result in an error.
+> [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Failure to do so resultS in an error.
 
 ```python
 if not IS_CUSTOM_DATA:
     # Download demo data files into the lakehouse, if they don't exist
     import os, requests
 
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Title_Genre_Classification"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/Title_Genre_Classification"
     fname = "blbooksgenre.csv"
     download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
 
@@ -123,7 +125,7 @@ if not IS_CUSTOM_DATA:
 
 ### Import required libraries
 
-Before any processing, you need to import required libraries, including the libraries for [Spark](https://spark.apache.org/) and [SynapseML](https://aka.ms/AboutSynapseML):
+Before any processing, you must import the required libraries, including the libraries for [Spark](https://spark.apache.org/) and [SynapseML](https://aka.ms/AboutSynapseML):
 
 ```python
 import numpy as np
@@ -152,7 +154,7 @@ import mlflow
 
 ### Define hyperparameters
 
-Define some hyperparameters for model training.
+The following code snippet defines the necessary hyperparameters for model training:
 
 > [!IMPORTANT]
 > Modify these hyperparameters only if you understand each parameter.
@@ -176,7 +178,9 @@ ts = time.time()
 
 ### Set up MLflow experiment tracking
 
-Autologging extends the MLflow logging capabilities. Autologging automatically captures the input parameter values and output metrics of a machine learning model as you train it. You then log this information to the workspace. In the workspace, you can access and visualize the information with the MLflow APIs, or the corresponding experiment, in the workspace. To learn more about autologging, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
+Autologging extends the MLflow logging capabilities. Autologging automatically captures the input parameter values and output metrics of a machine learning model as you train it. You then log this information to the workspace. In the workspace, you can access and visualize the information with the MLflow APIs, or the corresponding experiment, in the workspace. For more information about autologging, visit the [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging) resource.
+
+To disable Microsoft Fabric autologging in a notebook session, call `mlflow.autolog()` and set `disable=True`:
 
 ```python
 # Set up Mlflow for experiment tracking
@@ -184,8 +188,6 @@ Autologging extends the MLflow logging capabilities. Autologging automatically c
 mlflow.set_experiment(EXPERIMENT_NAME)
 mlflow.autolog(disable=True)  # Disable Mlflow autologging
 ```
-
-To disable Microsoft Fabric autologging in a notebook session, call `mlflow.autolog()` and set `disable=True`:
 
 ### Read raw date data from the lakehouse
 
@@ -203,7 +205,7 @@ display(raw_df.limit(20))
 
 ### Prepare the data
 
-Remove the duplicates to clean the data:
+To clean the data, remove the duplicates:
 
 ```python
 df = (
@@ -229,7 +231,7 @@ df = cb.fit(df).transform(df)
 display(df.limit(20))
 ```
 
-Split the paragraphs and sentences into smaller units, to tokenize the dataset. This way, it becomes easier to assign meaning. Then, remove the stopwords to improve the performance. Stopword removal involves removal of words that commonly occur across all documents in the corpus. Stopword removal is one of the most commonly used preprocessing steps in natural language processing (NLP) applications.
+To tokenize the dataset, split the paragraphs and sentences into smaller units. This way, it becomes easier to assign meaning. Next, remove the stopwords to improve the performance. Stopword removal involves removal of words that commonly occur across all documents in the corpus. Stopword removal is one of the most commonly used preprocessing steps in natural language processing (NLP) applications. The following code snippet covers these steps:
 
 ```python
 # Text transformer
@@ -244,7 +246,9 @@ token_df = pipeline.fit(df).transform(df)
 display(token_df.limit(20))
 ```
 
-Display the wordcloud library for each class. A wordcloud library is a visually prominent presentation of keywords that appear frequently in text data. The wordcloud library is effective because the rendering of keywords forms a cloudlike color picture, to better capture the main text data at a glance. [Learn more about wordcloud](https://github.com/amueller/word_cloud).
+Display the wordcloud library for each class. A wordcloud library presents keywords that appear frequently in text data, is a visually prominent presentation. The wordcloud library is effective because the keyword rendering forms a cloudlike color picture, to better capture the main text data at a glance. Visit [this resource](https://github.com/amueller/word_cloud) for more information about wordcloud.
+
+The following code snippet covers these steps:
 
 ```python
 # WordCloud
@@ -273,7 +277,7 @@ for label in LABELS:
     plt.imshow(wordcloud, interpolation="bilinear")
 ```
 
-Finally, use word2vec to vectorize the text. The word2vec technique creates a vector representation of each word in the text. Words used in similar contexts, or that have semantic relationships, are captured effectively through their closeness in the vector space. This closeness indicates that similar words have similar word vectors.
+Finally, use Word2vec NLP to vectorize the text. The Word2vec NLP technique creates a vector representation of each word in the text. Words used in similar contexts, or that have semantic relationships, are captured effectively through their closeness in the vector space. This closeness indicates that similar words have similar word vectors. The following code snippet covers these steps:
 
 ```python
 # Label transformer
@@ -302,6 +306,8 @@ With the data in place, define the model. In this section, you train a logistic 
 
 ### Prepare training and test datasets
 
+The following code snippet splits the dataset:
+
 ```python
 # Split the dataset into training and testing
 (train_df, test_df) = vec_df.randomSplit((0.8, 0.2), seed=42)
@@ -309,9 +315,9 @@ With the data in place, define the model. In this section, you train a logistic 
 
 ### Track machine learning experiments
 
-A machine learning experiment is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code.
+Machine learning experiment tracking manages all the experiments and their components - for example, parameters, metrics, models, and other artifacts. Tracking enables the organization and management of all the components that a specific machine learning experiment requires. It also enables the easy reproduction of past results with saved experiments. Visit [Machine learning experiments in Microsoft Fabric](./machine-learning-experiment.md) for more information.
 
-Machine learning experiment tracking manages all the experiments and their components, for example parameters, metrics, models, and other artifacts. Tracking enables organization of all the required components of a specific machine learning experiment. It also enables the easy reproduction of past results with saved experiments. [Learn more about machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment).
+A machine learning experiment is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code. The following code snippet covers these steps:
 
 ```python
 # Build the logistic regression classifier
@@ -326,7 +332,7 @@ lr = (
 
 ### Tune hyperparameters
 
-Build a grid of parameters to search over the hyperparameters. Then build a cross-evaluator estimator, to produce a `CrossValidator` model:
+Build a grid of parameters to search over the hyperparameters. Then build a cross-evaluator estimator, to produce a `CrossValidator` model, as shown in the following code snippet:
 
 ```python
 # Build a grid search to select the best values for the training parameters
@@ -357,7 +363,7 @@ crossval = CrossValidator(
 
 ### Evaluate the model
 
-We can evaluate the models on the test dataset, to compare them. A well trained model should demonstrate high performance, on the relevant metrics, when run against the validation and test datasets.
+We can evaluate the models on the test dataset, to compare them. A well-trained model should demonstrate high performance, on the relevant metrics, when run against the validation and test datasets. The following code snippet covers these steps:
 
 ```python
 def evaluate(model, df):
@@ -372,7 +378,7 @@ def evaluate(model, df):
 
 ### Track experiments by using MLflow
 
-Start the training and evaluation process. Use MLflow to track all experiments, and log parameters, metrics, and models. All this information is logged under the experiment name in the workspace.
+Start the training and evaluation process. Use MLflow to track all experiments, and log the parameters, metrics, and models. In the workspace, all of this information is logged under the experiment name. The following code snippet covers these steps:
 
 ```python
 with mlflow.start_run(run_name="lr"):
@@ -440,11 +446,11 @@ To view your experiments:
 
 ## Step 5: Score and save prediction results
 
-Microsoft Fabric allows users to operationalize machine learning models with the `PREDICT` scalable function. This function supports batch scoring (or batch inferencing) in any compute engine. You can create batch predictions straight from a notebook or the item page for a particular model. To learn more about PREDICT and how to use it in Fabric, see [Machine learning model scoring with PREDICT in Microsoft Fabric](https://aka.ms/fabric-predict).
+Microsoft Fabric allows users to operationalize machine learning models with the scalable `PREDICT` function. This function supports batch scoring (or batch inferencing) in any compute engine. You can create batch predictions straight from a notebook or from the item page for a particular model. For more information about the `PREDICT` function, and how to use it in Fabric, visit [Machine learning model scoring with PREDICT in Microsoft Fabric](./model-scoring-predict.md).
 
-From the preceding evaluation results, model 1 has the largest metrics for both Area Under the Precision-Recall Curve (AUPRC) and for Area Under the Curve Receiver Operating Characteristic (AUC-ROC). Therefore, you should use model 1 for prediction.
+From our evaluation results, model 1 has the largest metrics for both Area Under the Precision-Recall Curve (AUPRC) and for Area Under the Curve Receiver Operating Characteristic (AUC-ROC). Therefore, you should use model 1 for prediction.
 
-The AUC-ROC measure is widely used to measure binary classifiers performance. However, it sometimes becomes more appropriate to evaluate the classifier based on AUPRC measurements. The AUC-ROC chart visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). The AUPRC curve combines precision (positive predictive value or PPV) and recall (true positive rate or TPR) in a single visualization.
+The AUC-ROC measure is widely used to measure binary classifiers performance. However, it sometimes becomes more appropriate to evaluate the classifier based on AUPRC measurements. The AUC-ROC chart visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). The AUPRC curve combines both precision (positive predictive value or PPV) and recall (true positive rate or TPR) in a single visualization. The following code snippets cover these steps:
 
 ```python
 # Load the best model

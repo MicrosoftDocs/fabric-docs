@@ -40,9 +40,9 @@ highlightedContent:
       itemType: concept
       url: fundamentals/copilot-fabric-overview.md 
     # Card
-    - title: Build solutions with taskflows
-      itemType: tutorial
-      url: fundamentals/task-flow-overview.md     
+    - title: Fabric roadmap - What's upcoming
+      itemType: whats-new
+      url: https://aka.ms/fabricrm   
     # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
@@ -224,9 +224,6 @@ conceptualContent:
           - url: real-time-intelligence/kusto-query-set.md
             itemType: how-to-guide
             text: Transform data in a KQL queryset
-          - url: data-science/tutorial-data-science-explore-notebook.md
-            itemType: tutorial
-            text: Transform data in a notebook using Data Wrangler
           - url: data-warehouse/query-warehouse.md
             itemType: how-to-guide
             text: Transform data in a warehouse
@@ -236,6 +233,9 @@ conceptualContent:
           - url: real-time-intelligence/event-streams/process-events-using-event-processor-editor.md
             itemType: overview
             text: Transform data with eventstreams
+          - url: real-time-intelligence/digital-twin-builder/overview.md
+            itemType: overview
+            text: Model data with digital twin builder (preview)
           footerLink:
             url: real-time-intelligence/event-streams/overview.md
             text: See more
@@ -341,9 +341,9 @@ conceptualContent:
           - url: fundamentals/whats-new.md
             itemType: whats-new
             text: What's new in Microsoft Fabric?
-          - url: /fabric/release-plan/
+          - url: https://aka.ms/fabricrm
             itemType: concept
-            text: Microsoft Fabric release plans
+            text: Microsoft Fabric roadmap
           - url: https://blog.fabric.microsoft.com/blog
             itemType: concept
             text: Microsoft Fabric updates blog
@@ -351,7 +351,7 @@ conceptualContent:
             itemType: how-to-guide
             text: Custom visuals change log
           footerLink:
-            url: /fabric/release-plan/
+            url: https://aka.ms/fabricrm
             text: See more
     - title: Develop in Fabric # < 60 chars (Optional; Remove if not applicable.)
       summary: Build your solutions using Fabric, utilize the Workload Development Kit, set up CI/CD pipelines and Git integration, and develop with REST and JavaScript APIs. # < 160 chars (Optional; Remove if not applicable.)
@@ -404,7 +404,7 @@ conceptualContent:
         # Card
         - title: Developer tools
           links:
-            - url: admin/fabric-command-line-interface.md
+            - url: /fabric/admin/fabric-command-line-interface
               itemType: concept
               text: Fabric command line interface
             - url: https://registry.terraform.io/providers/microsoft/fabric/latest/docs/guides/getting_started
@@ -458,6 +458,12 @@ conceptualContent:
             - url: https://community.fabric.microsoft.com/t5/Community-News/Fabric-Community-Update-March-2024/td-p/3744214
               itemType: concept
               text: Signup for the Fabric newsletter
+            - url: fundamentals/feedback.md#fabric-user-panel
+              itemType: concept
+              text: Microsoft Fabric user panel
+            - url: https://aka.ms/LearnFAIAD
+              itemType: concept
+              text: Register for Fabric Analyst in a Day workshop
         # Card
         - title: Get involved
           links:

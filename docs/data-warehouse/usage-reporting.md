@@ -1,13 +1,13 @@
 ---
-title: Data warehouse billing and utilization reporting
+title: Data Warehouse Billing and Utilization Reporting
 description: Learn more about utilization reporting for the data warehouse, including capacity and compute usage reporting.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
-ms.date: 08/22/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Warehouse billing and utilization
+ms.custom: sfi-image-nochange
 ---
 
 # Billing and utilization reporting in Fabric Data Warehouse
@@ -22,7 +22,7 @@ For more information about monitoring current and historical query activity, see
 
 ## Capacity
 
-In Fabric, based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across all Fabric workloads. For more information on licenses supported, see [Microsoft Fabric licenses](../enterprise/licenses.md).
+In Fabric, based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across all Fabric workloads. For more information on licenses supported, see [Microsoft Fabric concepts and licenses](../enterprise/licenses.md).
 
 Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different resources consume CUs at different times.
 
@@ -74,7 +74,7 @@ In general, similar to Power BI, [operations are classified either as interactiv
 
 This table in the Microsoft Fabric Capacity Metrics app provides a detailed view of utilization at specific timepoints. The amount of capacity provided by the given SKU per 30-second period is shown along with the breakdown of interactive and background operations. The interactive operations table represents the list of operations that were executed at that timepoint.
 
-The **Background operations** table might appear to display operations that were executed much before the selected timepoint. This is due to background operations undergoing 24-hour [smoothing](../data-warehouse/compute-capacity-smoothing-throttling.md). For example, the table displays all operations that were executed and still being smoothed at a selected timepoint.
+The **Background operations** table might appear to display operations that were executed much before the selected timepoint. This is due to background operations undergoing 24-hour [smoothing](compute-capacity-smoothing-throttling.md). For example, the table displays all operations that were executed and still being smoothed at a selected timepoint.
 
 Top use cases for this view include:
 
@@ -120,7 +120,7 @@ Consider the following usage reporting nuances:
 
 - Cross database reporting: When a T-SQL query joins across multiple warehouses (or across a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and a [!INCLUDE [fabric-se](includes/fabric-se.md)]), usage is reported against the originating resource.
 - Queries on system catalog views and dynamic management views are billable queries.
-- **Duration(s)** field reported in Fabric Capacity Metrics App is for informational purposes only. It reflects the statement execution duration. Duration might not include the complete end-to-end duration for rendering results back to the web application like the [SQL Query Editor](sql-query-editor.md) or client applications like [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) and [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio).
+- **Duration(s)** field reported in Fabric Capacity Metrics App is for informational purposes only. It reflects the statement execution duration. Duration might not include the complete end-to-end duration for rendering results back to the web application like the [SQL Query Editor](sql-query-editor.md) or client applications like [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) and [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 
 ## Next step
 

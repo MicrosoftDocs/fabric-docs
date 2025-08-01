@@ -1,12 +1,11 @@
 ---
-title: "Data warehouse tutorial: Introduction"
+title: "Data Warehouse Tutorial: Introduction"
 description: "Learn about the purpose of the tutorial, the end-to-end scenario and architecture, the sample data, and the data model."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 12/29/2024
+ms.date: 04/06/2025
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Tutorial: Introduction
@@ -55,7 +54,7 @@ In this tutorial, you take on the role of a [!INCLUDE [fabric-dw](includes/fabri
 
 **Transform and store** - [!INCLUDE [product-name](../includes/product-name.md)] standardizes on Delta Lake format, which means all the engines of [!INCLUDE [product-name](../includes/product-name.md)] can read and work on the same data stored in OneLake - no need for data duplicity. This storage allows you to build a data warehouse or data mesh based on your organizational need. For transformation, you can choose either low-code or no-code experience with pipelines/dataflows or use T-SQL for a code first experience.
 
-**Consume** - Data from the warehouse can be consumed by Power BI, the industry leading business intelligence tool, for reporting and visualization. Each warehouse comes with a built-in TDS endpoint for easily connecting to and querying data from other reporting tools, when needed. When a warehouse is created, a secondary item, called a default semantic model, is generated at the same time with the same name. You can use the default semantic model to start visualizing data with just a couple of steps.
+**Consume** - Data from the warehouse can be consumed by Power BI, the industry leading business intelligence tool, for reporting and visualization. Each warehouse comes with a built-in TDS endpoint for easily connecting to and querying data from other reporting tools, when needed. As part of this tutorial, you will create a semantic model on your sample warehouse to start visualizing data in a star schema with just a couple of steps.
 
 ## Sample data
 

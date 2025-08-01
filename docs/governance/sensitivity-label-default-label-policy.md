@@ -1,8 +1,8 @@
 ---
 title: Default label policy in Power BI and Fabric
 description: Learn how to ensure comprehensive protection and governance of sensitive data by enabling a default label policy for Power BI and Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: powerbi
 ms.subservice: powerbi-eim
 ms.topic: conceptual
@@ -71,7 +71,7 @@ Where:
 * Default labeling in Fabric Power BI covers most common scenarios, but there might be some less common flows that still allow users to open or create unlabeled *.pbix* files or Fabric items.
 * Default label policy settings for Fabric and Power BI are independent of the default label policy settings for files and email.
 * Default labeling in Fabric and Power BI isn't supported for service principals and APIs. Service principals and APIs aren't subject to default label policies.
-* Default label policies in Fabric and Power BI aren't supported for [external guest users (Microsoft Entra B2B)](/power-bi/enterprise/service-admin-azure-ad-b2b). When a B2B user opens or creates an unlabeled *.pbix* file in Power BI Desktop or Fabric or Power BI item in Fabric, no default label is applied automatically.
+* Default label policies in Fabric and Power BI aren't supported for [external guest users (Microsoft Entra B2B)](/fabric/enterprise/powerbi/service-admin-entra-b2b). When a B2B user opens or creates an unlabeled *.pbix* file in Power BI Desktop or Fabric or Power BI item in Fabric, no default label is applied automatically.
 
 ## Related content
 

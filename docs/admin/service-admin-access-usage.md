@@ -1,11 +1,11 @@
 ---
 title: Find users who have signed in
 description: Learn how to see who has signed into Power BI, and how to use the Microsoft Entra ID access and usage reports.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.topic: how-to
 ms.date: 09/22/2024
 LocalizationGroup: Administration

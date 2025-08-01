@@ -1,6 +1,6 @@
 ---
-title: Manage the environment through public APIs
-description: This article gives an overview of the public APIs of the environment. Also describe the best practice of using the environment APIs.
+title: Manage the Environment Through Public APIs
+description: This article gives an overview of the public APIs of the environment. It also describes the best practice of using the environment APIs.
 ms.author: shuaijunye
 author: ShuaijunYe
 ms.topic: how-to
@@ -13,40 +13,37 @@ ms.search.form: Manage the environment through public APIs
 The Microsoft Fabric REST API provides a service endpoint for the create, read, update, and delete (CRUD) operations of a Fabric item. This article describes the available environment REST APIs and their usage.
 
 > [!IMPORTANT]
->
-> - The new release includes new APIs, API deprecations, and changes of API response/request contract. The table at following section summarizes all API changes.
-> - The APIs that are about to be deprecated will continue the support until June 30, 2025. The changes of response/request contract will be effective immediately once the release lands.
->
+> The new release includes new APIs, API deprecations, and changes of API response/request contract. The table in the following section summarizes all API changes.
 
 ## Summary of environment APIs
 
 |Category|API|Description|Note|
 |---------|---------|---------|---------|
-|Item operation|Create environment |Create a new empty environment in the workspace.|No change|
-|Item operation|Create environment with Definition |Create a new environment with Definition.|**New API**|
-|Item operation|Delete environment |Delete an existing environment.|No change|
-|Item operation|List environment|Get the list of environment in a workspace.|No change|
-|Item operation|Get environment|Get the metadata of an environment. The response includes the status of the environment.|**Response contract update**|
-|Item operation|Get environment Definition|Get the definition of an environment. |**New API**|
-|Item operation|Update environment|Update the metadata of an environment, like name and description.|No change|
-|Item operation|Update environment definition|Update the definition of an environment.|**New API**|
-|Item operation|Publish environment|Trigger the publish of the environment with current pending changes.|**Response contract update**|
-|Item operation|Cancel publish environment|Cancel an ongoing publish of the environment|No change|
-|Staging|List staging libraries|Get the full staging library list. This list includes the published and pending libraries.|**Response contract update**|
-|Staging|Import external libraries|Upload external libraries as an environment.yml file into environment. It overrides the list of existing external libraries in environment.|**New API**|
-|Staging|Export external libraries|Get the full external libraries as an environment.yml file.|**New API**|
-|Staging|Remove external library|Delete an external library from an environment. This API accepts one library at a time|**New API**|
-|Staging|Upload custom library|Upload a custom package in environment. This API allows one file upload at a time. The supported file formats are .jar, .py, .whl, and .tar.gz.|**New API**|
-|Staging|Delete custom library|Delete a custom package from the environment. Put the custom package full name with the extension in the API request to get it removed.|**New API**|
-|Staging|Upload staging libraries|Adding one custom library or one/multiple public library in the environment.|**To be Deprecated**|
-|Staging|Delete staging libraries|Delete one staging custom library or all public library.|**To be Deprecated**|
-|Staging|List staging Spark settings|Get the full staging compute configurations. The staging configurations include the published and pending compute configurations.|**Response contract update**|
-|Staging|Update Spark settings|Update the compute configurations and Spark properties for an environment|**Request/response contract update**|
-|Published|List published libraries|Get the libraries that are published and effective in Spark sessions.|**Response contract update**|
-|Published|List published Spark setting|Get the Spark compute configurations and Spark properties that are published and effective in Spark sessions.|**Response contract update**|
-|Published|Export external libraries|Get the published external libraries as an environment.yml file.|**New API**|
+|Item operation|Create environment |Create a new empty environment in the workspace.|No change.|
+|Item operation|Create environment with definition |Create a new environment with definition.|New API.|
+|Item operation|Delete environment |Delete an existing environment.|No change.|
+|Item operation|List environment|Get the list of environments in a workspace.|No change.|
+|Item operation|Get environment|Get the metadata of an environment. The response includes the status of the environment.|Response contract update.|
+|Item operation|Get environment definition|Get the definition of an environment. |New API.|
+|Item operation|Update environment|Update the metadata of an environment, like name and description.|No change.|
+|Item operation|Update environment definition|Update the definition of an environment.|New API.|
+|Item operation|Publish environment|Trigger the publish operation of the environment with current pending changes.|Response contract update.|
+|Item operation|Cancel publish environment|Cancel an ongoing publish operation of the environment.|No change.|
+|Staging|List staging libraries|Get the full staging library list. This list includes the published and pending libraries.|Response contract update.|
+|Staging|Import external libraries|Upload external libraries as an *environment.yml* file into environment. It overrides the list of existing external libraries in an environment.|New API.|
+|Staging|Export external libraries|Get the full external libraries as an *environment.yml* file.|New API.|
+|Staging|Remove external library|Delete an external library from an environment. This API accepts one library at a time.|New API.|
+|Staging|Upload custom library|Upload a custom package in environment. This API allows one file upload at a time. The supported file formats are .jar, .py, .whl, and .tar.gz.|New API.|
+|Staging|Delete custom library|Delete a custom package from the environment. Put the custom package full name with the extension in the API request to get it removed.|New API.|
+|Staging|Upload staging libraries|Add one custom library or one/multiple public library in the environment.|To be no longer supported.|
+|Staging|Delete staging libraries|Delete one staging custom library or all public libraries.|To be no longer supported.|
+|Staging|List staging Spark settings|Get the full staging compute configurations. The staging configurations include the published and pending compute configurations.|Response contract update.|
+|Staging|Update Spark settings|Update the compute configurations and Spark properties for an environment.|Request/response contract update.|
+|Published|List published libraries|Get the libraries that are published and effective in Spark sessions.|Response contract update.|
+|Published|List published Spark setting|Get the Spark compute configurations and Spark properties that are published and effective in Spark sessions.|Response contract update.|
+|Published|Export external libraries|Get the published external libraries as an *environment.yml* file.|New API.|
 
-Learn more about the existing environment public APIs in [Item APIs - Environment](/rest/api/fabric/environment/items)
+To learn more about the existing environment public APIs, see [Item APIs - Environment](/rest/api/fabric/environment/items).
 
 ## Environment public API update details
 
@@ -54,10 +51,10 @@ This section describes the upcoming updates for existing APIs.
 
 ### Get Environment
 
-In the response of Get Environment API, the 'startTime' will become 'startDateTime' and the 'endTime' will become 'endDateTime'. They represent the start/end time of publish operation.
+In the response of the Get Environment API, `startTime` changes to `startDateTime` and `endTime` changes to `endDateTime`. The properties represent the start and end times of the publish operation.
 
 > [!NOTE]
-> 'startTime' and 'endTime' are using the **Date-Time** format, while the 'startDateTime' and 'endDateTime' will be **String**, which is in UTC and using the YYYY-MM-DDTHH:mm:ssZ format.
+> The `startTime` and `endTime` properties use the *Date-Time* format. The `startDateTime` and `endDateTime` properties change to `String`, which is in UTC and uses the *YYYY-MM-DDTHH:mm:ssZ* format.
 >
 
 - Interface
@@ -124,7 +121,7 @@ In the response of Get Environment API, the 'startTime' will become 'startDateTi
 
 ### Publish environment
 
-Publish environment API will support long running operations starting from the release, the contract of the response will change. The endpoint remains the same for sending requests.
+The Publish Environment API supports long-running operations starting from the release, but the response contract changes. The endpoint remains the same for sending requests.
 
 - Interface
 
@@ -156,15 +153,15 @@ Publish environment API will support long running operations starting from the r
 
     ```HTTP
 
-    Location: https://api.fabric.microsoft.com/v1/operations/abcdef00-9d7e-469a-abf1-fca847a0ea69
-    x-ms-operation-id: abcdef00-9d7e-469a-abf1-fca847a0ea69
+    Location: https://api.fabric.microsoft.com/v1/operations/aaaabbbb-0000-cccc-1111-dddd2222eeee
+    x-ms-operation-id: aaaabbbb-0000-cccc-1111-dddd2222eeee
     Retry-After: 60
 
     ```
 
 ### List staging/published libraries
 
-These two APIs can get the full list of staging/published libraries of the environment. The endpoints remain the same for sending requests, while the libraries will be returned with different structure.
+These two APIs can get the full list of staging/published libraries of the environment. The endpoints remain the same for sending requests. The libraries return with different structures.
 
 - Interfaces
 
@@ -244,7 +241,7 @@ These two APIs can get the full list of staging/published libraries of the envir
 
 ### List staging/published Spark settings
 
-These two APIs can get the Spark compute configurations and properties of the environment. The endpoints remain the same for sending requests, while the configurations will be returned with different structure. The Spark properties will be changed to a list.
+These two APIs can get the Spark compute configurations and properties of the environment. The endpoints remain the same for sending requests. The configurations return with different structures. The Spark properties change to a list.
 
 - Interfaces
 
@@ -315,12 +312,12 @@ These two APIs can get the Spark compute configurations and properties of the en
 
 ### Update Spark settings
 
-This API is for updating the Spark compute and properties of an Environment, the contract of Spark property in request and response will be updated once the release lands.
+This API is used for updating the Spark compute and properties of an environment. The contract of the Spark property in request and response updates after the release is available.
 
 - Original sample request
 
     ```HTTP
-    PATCH https://api.fabric.microsoft.com/v1/workspaces/f089354e-8366-4e18-aea3-4cb4a3a50b48/environments/707cfd07-cbf1-41da-aad7-dd157ddb8c11/staging/sparkcompute
+    PATCH https://api.fabric.microsoft.com/v1/workspaces/bbbbcccc-1111-dddd-2222-eeee3333ffff/environments/ccccdddd-2222-eeee-3333-ffff4444aaaa/staging/sparkcompute
 
     {
       "instancePool": {
@@ -347,7 +344,7 @@ This API is for updating the Spark compute and properties of an Environment, the
 - New sample request
 
     ```HTTP
-    PATCH https://api.fabric.microsoft.com/v1/workspaces/f089354e-8366-4e18-aea3-4cb4a3a50b48/environments/707cfd07-cbf1-41da-aad7-dd157ddb8c11/staging/sparkcompute
+    PATCH https://api.fabric.microsoft.com/v1/workspaces/bbbbcccc-1111-dddd-2222-eeee3333ffff/environments/ccccdddd-2222-eeee-3333-ffff4444aaaa/staging/sparkcompute
 
     {
       "instancePool": {
@@ -433,15 +430,13 @@ This API is for updating the Spark compute and properties of an Environment, the
 ## Environment public API use cases
 
 > [!IMPORTANT]
->
 > The new APIs and contract changes aren't included in this section.
->
 
-This section demonstrates how to use the currently available APIs to achieve specific goals. You can replace the `{WORKSPACE_ID}` and `{ARTIFACT_ID}` in the following examples with appropriate values.
+This section demonstrates how to use the currently available APIs to achieve specific goals. You can replace the `{WORKSPACE_ID}` and `{ARTIFACT_ID}` properties in the following examples with appropriate values.
 
 ### Create a new environment
 
-You can create a new empty environment using the following API.
+To create a new empty environment, use the following API.
 
 - Sample request
 
@@ -456,11 +451,11 @@ You can create a new empty environment using the following API.
 
 ### Manage staging libraries
 
-You can use the upload/delete staging libraries APIs to manage the library section in the environment
+You can use the upload and delete staging libraries APIs to manage the library section in the environment.
 
 #### Check the published libraries for the environment
 
-Before adding/deleting library, you can use the get published libraries API to check what libraries are currently effective.
+Before you add or delete a library, use the Get Published Libraries API to check which libraries are currently effective.
 
 - Sample request
 
@@ -490,14 +485,14 @@ Before adding/deleting library, you can use the get published libraries API to c
     }
     ```
 
-#### Uploading the libraries
+#### Upload the libraries
 
-The API for uploading staging library accepts one file at a time. The supported file types are *.whl*, *.jar*, *.tar.gz*, *.py* and *environment.yml* for public library. You can specify the file via the multipart/form-data content-type.
+The API for uploading staging libraries accepts one file at a time. The supported file types are *.whl*, *.jar*, *.tar.gz*, *.py*, and *environment.yml* for public libraries. You can specify the file via the multipart/form-data content type.
 
 > [!NOTE]
+> To manipulate the public library more efficiently, we recommend that you compose all the expected libraries from PyPI and Conda in an *environment.yml* file.
 >
-> - In order to manipulate the public library more efficiently, it's highly recommended composing all expected libraries from PyPI and conda in an ***environment.yml*** file.
-> - The uploading API allows up to 200-MB file in one request, library that exceeds this size limit is currently not supported in public API.
+>The uploading API allows up to a 200-MB file in one request. A library that exceeds this size limit currently isn't supported in public APIs.
 
 - Sample requests
 
@@ -505,14 +500,14 @@ The API for uploading staging library accepts one file at a time. The supported 
     POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries
     ```
 
-#### Deleting the libraries
+#### Delete the libraries
 
 By specifying the full library file name with the type suffix, you can delete one library at a time.
 
 > [!NOTE]
+> If you specify *environment.yml* as the file to delete, you remove all public libraries.
 >
-> - If you specify `environment.yml` as the file to be deleted, you're removing all public libraries.
-> - If you want to remove a subset of existing public library, please use the [upload library](environment-public-api.md#uploading-the-libraries) instead and upload an *environment.yml* that contains only the expected libraries. The uploaded *environment.yml* replaces the existing public library section entirely.
+> If you want to remove a subset of an existing public library, use [upload library](environment-public-api.md#upload-the-libraries) instead and upload an *environment.yml* file that contains only the expected libraries. The uploaded *environment.yml* file replaces the existing public library section entirely.
 
 - Sample requests
 
@@ -526,7 +521,7 @@ You can use the update staging Spark compute to manage the Spark compute.
 
 #### Check the published Spark compute for the environment
 
-Before changing the configurations for the environment, you can use the get published Spark compute API to check what Spark compute configurations are currently effective.
+Before you change the configurations for the environment, use the Get Published Spark Compute API to check what Spark compute configurations are currently effective.
 
 - Sample request
 
@@ -560,11 +555,11 @@ Before changing the configurations for the environment, you can use the get publ
 
 #### Update the compute configurations
 
-You can update the Spark runtime, switch to another pool, refine compute configuration and add/remove Spark properties through editing the request body of this API.
+You can update the Spark runtime, switch to another pool, refine compute configuration, and add or remove Spark properties through editing the request body of this API.
 
-You can switch the attached pool by specifying the pool name and pool. Specify the pool name as `Starter Pool` to switch the pool to default settings. To get the full list of the available custom pools of the workspace by REST API, see [Custom Pools - List Workspace Custom Pools](/rest/api/fabric/spark/custom-pools/list-workspace-custom-pools)
+You can switch the attached pool by specifying the pool name and pool. Specify the pool name as `Starter Pool` to switch the pool to default settings. To get the full list of the available custom pools of the workspace by REST API, see [Custom Pools - List Workspace Custom Pools](/rest/api/fabric/spark/custom-pools/list-workspace-custom-pools).
 
-If you want to remove an existing Spark property, you need to specify the value as `null` with the key that you want to remove, as showing in the following example.
+If you want to remove an existing Spark property, specify the value as `null` with the key that you want to remove.
 
 - Sample request
 
@@ -594,21 +589,21 @@ If you want to remove an existing Spark property, you need to specify the value 
 
 ### Make the changes effective
 
-Using the following sets of APIs to publish the changes.
+Use the following sets of APIs to publish the changes.
 
-#### Prepare for a publish
+#### Prepare for a publish operation
 
-The environment can accept one publish at a time. Before publishing your environment, you can validate the status of the environment and have a final review of the staging changes. Once the environment is published successfully, all configurations in the staging state become effective.
+The environment can accept one publish operation at a time. Before you publish your environment, validate the status of the environment and have a final review of the staging changes. After the environment is published successfully, all configurations in the staging state become effective.
 
-- **Step 1: get the metadata of the environment**
+- **Step 1:** Get the metadata of the environment.
 
     ```http
     GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/
     ```
 
-    In the response body, you can tell clearly the state of the environment. Make sure there's no ongoing publish before you move to next step.
+    In the response body, you can clearly tell the state of the environment. Make sure that no publish operation is ongoing before you move to the next step.
 
-- **Step 2: get the staging libraries/Spark compute to have a final review**
+- **Step 2:** Get the staging libraries/Spark compute to have a final review.
 
     ```http
     GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/libraries
@@ -616,9 +611,9 @@ The environment can accept one publish at a time. Before publishing your environ
     GET https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/environments/{{ARTIFACT_ID}}/staging/sparkcompute
     ```
 
-#### Trigger the publish of the environment
+#### Trigger the publish operation of the environment
 
-The changes you made in for the staging libraries and Spark compute are cached but require publishing to become effective. Follow the following example to trigger the publish.
+The changes that you made for the staging libraries and Spark compute are cached, but they require publishing to become effective. Use the next example to trigger the publish operation.
 
 - Sample request
 
@@ -647,7 +642,7 @@ The changes you made in for the staging libraries and Spark compute are cached b
     }   
     ```
 
-During the publish, you can also call following API to **cancel** it.
+During the publish operation, you can also call the following API to cancel it.
 
 - Sample request
 
@@ -657,5 +652,5 @@ During the publish, you can also call following API to **cancel** it.
 
 ## Related content
 
-- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).
-- [Item APIs - Environment](https://aka.ms/EnvironmentRESTAPISwaggerPage).
+- [Create, configure, and use an environment in Fabric](create-and-use-environment.md)
+- [Item APIs - Environment](https://aka.ms/EnvironmentRESTAPISwaggerPage)

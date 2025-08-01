@@ -15,6 +15,8 @@ ms.date: 11/19/2024
 
 After deploying an API for GraphQL in Fabric, you may want to understand how the API is being used by clients and troubleshoot errors in case there are any problems with the API. Use the Fabric GraphQL monitoring dashboard to visualize, monitor, and troubleshoot your GraphQL API request activity. This feature is currently in preview. This article explains how to enable monitoring and use the dashboard's components effectively.
 
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+
 ## Prerequisites
 
 * Enabled **workspace monitoring**. For more information, see [**Workspace Monitoring Overview**](..\get-started\workspace-monitoring-overview.md) and follow the steps to **enable workspace monitoring**.

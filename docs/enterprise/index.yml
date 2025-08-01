@@ -7,11 +7,10 @@ metadata:
   title: Microsoft Fabric enterprise documentation
   description: Brose the Microsoft Fabric enterprise documentation.
   ms.service: fabric  #Required; use either service or product per approved list. 
-  ms.subservice: enterprise
   ms.topic: landing-page
-  author: KesemSharabi
-  ms.author: kesharab
-  ms.date: 05/23/2023
+  author: JulCsc
+  ms.author: juliacawthra
+  ms.date: 07/18/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -28,6 +27,23 @@ landingContent:
           - text: Buy a Microsoft Fabric subscription
             url: buy-subscription.md
 
+  - title: Capacity operation
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Pause and resume your capacity
+            url: pause-resume.md
+          - text: Scale your capacity
+            url: scale-capacity.md
+          - text: Use the Chargeback app (preview)
+            url: chargeback-app.md 
+          - text: Troubleshoot capacity issues
+            url: capacity-planning-troubleshoot-consumption.md
+      - linkListType: concept
+        links:
+          - text: Throttling policy
+            url: throttling.md   
+
   - title: Microsoft Fabric Capacity Metrics app
     linkLists:
       - linkListType: overview
@@ -43,12 +59,80 @@ landingContent:
           - text: Understand the Microsoft Fabric Capacity Metrics app timepoint page
             url: metrics-app-timepoint-page.md
 
-  - title: Capacity operation
+  - title: Microsoft Fabric SKU Estimator (preview)
     linkLists:
-      - linkListType: how-to-guide
+      - linkListType: overview
         links:
-          - text: Pause and resume your capacity
-            url: pause-resume.md
-          - text: Scale your capacity
-            url: scale-capacity.md         
-            
+          - text: What is the Fabric SKU Estimator (preview)?
+            url: fabric-sku-estimator.md
+      - linkListType: tutorial
+        links:
+          - text: Scenario for the Fabric SKU Estimator (preview)
+            url: fabric-sku-estimator-scenario.md
+      - linkListType: whats-new
+        links:
+          - text: Release notes
+            url: fabric-sku-estimator-release-notes.md    
+
+  # Card (optional)
+  - title: Power BI Premium
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Introducing Power BI Premium
+            url: powerbi/service-premium-what-is.md
+          - text: Power BI Premium features
+            url: powerbi/service-premium-features.md           
+      - linkListType: concept
+        links:                
+          - text: Power BI for US government
+            url: powerbi/service-government-us-overview.md
+      - linkListType: how-to-guide
+        links:        
+          - text: Enroll a US government organization
+            url: powerbi/service-government-us-signup.md
+
+
+  # Card (optional)
+  - title: Information protection
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Data protection in Power BI
+            url: powerbi/service-security-data-protection-overview.md
+      - linkListType: concept
+        links:   
+          - text: Sensitivity labels
+            url: powerbi/service-security-sensitivity-label-overview.md                           
+      - linkListType: how-to-guide
+        links:            
+          - text: Enable sensitivity labels
+            url: powerbi/service-security-enable-data-sensitivity-labels.md
+          - text: Apply sensitivity labels
+            url: powerbi/service-security-apply-data-sensitivity-labels.md           
+
+  # Card (optional)
+  - title: Security
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Power BI Security
+            url: powerbi/service-admin-power-bi-security.md
+      - linkListType: concept
+        links:            
+          - text: Power BI Desktop privacy levels
+            url: powerbi/desktop-privacy-levels.md                      
+      - linkListType: how-to-guide
+        links:                    
+          - text: Use service tags
+            url: powerbi/service-premium-service-tags.md
+          - text: Bring your own encryption keys
+            url: powerbi/service-encryption-byok.md
+
+  # Card (optional)
+  - title: Automation tools
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: PowerShell cmdlets, REST APIs, and .NET Client library
+            url: powerbi/service-admin-reference.md                    

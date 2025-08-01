@@ -24,8 +24,6 @@ This article shows you how to add Amazon Kinesis Data Streams source to an event
 - An Amazon Web Services (AWS) account with the Kinesis Data Streams service enabled.
 - Your Amazon Kinesis data stream must be publicly accessible and not be behind a firewall or secured in a virtual network.
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 
 ## Add Amazon Kinesis Data Streams as a source
 
@@ -49,6 +47,12 @@ To implement this newly added Amazon Kinesis Data Stream source, select **Publis
 
 :::image type="content" source="./media/add-source-amazon-kinesis-data-streams/live-view.png" alt-text="Screenshot that shows Amazon Kinesis Data Streams source in Live view." lightbox="./media/add-source-amazon-kinesis-data-streams/live-view.png":::
 
+> [!NOTE]
+> To preview events from this Amazon Kinesis Data Stream source, ensure that the Access key used to create the cloud connection has **read permission** for consumer groups prefixed with **"preview-"**.
+>
+> For Amazon Kinesis Data Stream source, only messages in **JSON** format can be previewed.
+
+:::image type="content" source="./media/add-source-amazon-kinesis-data-streams/data-preview.png" alt-text="Screenshot that shows Amazon Kinesis Data Streams source data preview." lightbox="./media/add-source-amazon-kinesis-data-streams/data-preview.png":::
 
 ## Related content
 

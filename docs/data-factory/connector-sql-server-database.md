@@ -1,12 +1,13 @@
 ---
 title: Set up your SQL Server database connection
 description: This article provides information about how to create a SQL Server database connection in Microsoft Fabric.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
-ms.date: 01/23/2025
+ms.date: 04/18/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your SQL Server database connection
@@ -22,6 +23,7 @@ The SQL Server database connector supports the following authentication types fo
 |:---|:---|:---|
 |Basic (Username/Password)| √ | √ |
 |Organizational account| n/a | √ |
+|Service principal | √ (Only for [SQL Server on Azure VMs](/azure/azure-sql/virtual-machines))| √ |
 |Windows| √ (When use on-premises data gateway) | √ |
 
 ## Set up your connection in Dataflow Gen2

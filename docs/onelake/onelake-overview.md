@@ -12,7 +12,7 @@ ms.date: 07/25/2024
 
 # OneLake, the OneDrive for data
 
-OneLake is a single, unified, logical data lake for your whole organization. A data Lake processes large volumes of data from various sources. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. OneLake brings customers:
+OneLake is a single, unified, logical data lake for your whole organization. A data lake processes large volumes of data from various sources. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. OneLake brings customers:
 
 - **One data lake** for the entire organization
 - **One copy of data** for use with multiple analytical engines

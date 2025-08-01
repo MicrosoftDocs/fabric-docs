@@ -2,10 +2,13 @@
 title: Dataflow activity
 description: Learn how to add a Dataflow activity to a pipeline and use it to run a Dataflow Gen2.
 ms.reviewer: xupxhou
-ms.author: whhender
-author: whhender
+ms.author: miescobar
+author: ptyx507x
 ms.topic: how-to
-ms.date: 03/18/2025
+ms.date: 5/13/2025
+ms.custom:
+   - pipelines
+   - dataflows
 ---
 
 # Use the Dataflow activity to run a Dataflow Gen2
@@ -42,9 +45,16 @@ Select the **Settings** tab, then select an existing workspace and dataflow to r
 
    :::image type="content" source="media/dataflow-activity/select-a-dataflow.png" alt-text="Screenshot showing the dropdown with a list of dataflows to select in the Dataflow activity Settings tab":::
 
-The notification option is disabled for now, but the feature is coming soon.
+The notification option is not currently available.
 
    :::image type="content" source="media/dataflow-activity/dataflow-settings.png" alt-text="Screenshot showing the Dataflow activity Settings tab, and highlighting the tab.":::
+
+>[!NOTE]
+>Public parameters mode and support for parameters to be passed to a Dataflow is a preview feature only available for Dataflow Gen2 with CI/CD support. Additionally, parameterizing the DataflowId in the dataflow pipeline activity settings will only support the legacy Dataflow Gen2 version without CICD support. I.e. you cannot invoke Dataflows w/CICD support using parameterization of the DataflowId. This is only a temporary limitation until all Dataflows are converted to the new CICD enabled version.
+
+Inside the Dataflow parameters section you are able to enter the name of the parameter that you wish to pass as well as the type and value that you wish to pass.
+
+For more information on how to enable the Dataflow parameters capability on your Dataflow Gen2, check the article on [Public parameters for Dataflow Gen2](dataflow-parameters.md).
 
 ## Save and run or schedule the pipeline
 

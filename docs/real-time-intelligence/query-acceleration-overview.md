@@ -1,23 +1,21 @@
 ---
-title: Query acceleration for OneLake shortcuts - overview (preview)
+title: Query acceleration for OneLake shortcuts - overview
 description: Overview on learning how to use the query acceleration policy over OneLake shortcuts to improve query performance and reduce latency for external delta tables.
 ms.reviewer: sharmaanshul
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: conceptual
 ms.custom:
 ms.date: 11/19/2024
 # Customer intent: Learn how to use the query acceleration policy to accelerate queries over shortcuts and external delta tables.
 ---
-# Query acceleration for OneLake shortcuts - overview (preview)
+# Query acceleration for OneLake shortcuts - overview
 
 OneLake shortcuts are references from an Eventhouse that point to internal Fabric or external sources. This kind of shortcut is later accessed for query in [KQL querysets](create-query-set.md) by using the [`external_table()` function](/kusto/query/external-table-function). Queries run over OneLake shortcuts can be less performant than on data that is ingested directly to Eventhouses due to various factors such as network calls to fetch data from storage, the absence of indexes, and more. 
 
 Query acceleration allows specifying a policy on top of external delta tables that defines the number of days to cache data for high-performance queries. 
 
 Query acceleration is supported in Eventhouse over delta tables from [OneLake shortcuts](onelake-shortcuts.md), Azure Data Lake Store Gen1, Amazon S3, Google Cloud Services, Azure blob storage external tables, and all destinations supported by OneLake shortcuts.
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 > [!NOTE]
 > * If you have compliance considerations that require you to store data in a specific region, make sure your Eventhouse capacity is in the same region as your external table or shortcut data.
@@ -46,7 +44,7 @@ The initial process of query acceleration is dependent on the size of the extern
 ## Limitations
 
 * The number of columns in the external table can't exceed 900.
-* Query performance over accelerated external delta tables which have partitions may not be optimal during preview.
+* Query performance over accelerated external delta tables with more than 2.5 million data files may not be optimal.
 * The feature assumes delta tables with static advanced features, for example column mapping doesn't change, partitions don't change, and so on. To change advanced features, first disable the policy, and once the change is made, re-enable the policy.
 * Schema changes on the delta table must also be followed with the respective `.alter` external delta table schema, which might result in acceleration starting from scratch if there was breaking schema change.
 * Index-based pruning isn't supported for partitions.
@@ -60,6 +58,6 @@ Charges related to query acceleration will appear in the Fabric [metrics app](..
 
 ## Related content
 
-* [Query acceleration over OneLake shortcuts (preview)](query-acceleration.md)
+* [Query acceleration over OneLake shortcuts](query-acceleration.md)
 * [OneLake shortcuts](onelake-shortcuts.md)
 * [Query acceleration policy](https://go.microsoft.com/fwlink/?linkid=2296196)

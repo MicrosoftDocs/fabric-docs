@@ -177,48 +177,58 @@ items:
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring
     items:
-      - name: Spark monitoring APIs
+      - name: Apache Spark Core Monitoring Features
         items: 
-        - name: Overview
-          href: spark-monitoring-api-overview.md
-        - name: Open source APIs
-          href: open-source-apis.md
-        - name: Livy log
-          href: livy-log.md
-        - name: Executor log
-          href: executor-log.md
-        - name: Driver log
-          href: driver-log.md          
-  - name: Apache Spark monitoring overview
-    href: spark-monitoring-overview.md
-  - name: Run series analysis overview
-    href: run-series-analyisis-overview.md
-  - name: Apache Spark Advisor
-    href: spark-advisor-introduction.md
-  - name: Monitoring hub - Browse Spark applications
-    href: browse-spark-applications-monitoring-hub.md
-  - name: Browse item's recent runs
-    href: spark-item-recent-runs.md
-  - name: Monitor Spark jobs in a notebook 
-    href: spark-monitor-debug.md
-  - name: Monitor Spark job definitions
-    href: monitor-spark-job-definitions.md
-  - name: Monitor Spark application
-    href: spark-detail-monitoring.md
-  - name: Monitor Apache Spark applications resource utilization 
-    href: monitor-spark-resource-utilization.md
-  - name: Monitor run series
-    href: apache-spark-monitor-run-series.md
-  - name: Navigate the Apache Spark history server
-    href: apache-spark-history-server.md  
-  - name: Monitor Spark capacity consumption
-    href: monitor-spark-capacity-consumption.md
-  - name: Collect Spark logs and metrics with Azure Log Analytics
-    href: azure-fabric-diagnostic-emitters-log-analytics.md
-  - name: Collect Spark logs and metrics with Azure Storage Account
-    href: azure-fabric-diagnostic-emitters-azure-storage.md
-  - name: Collect Spark logs and metrics with Azure Event Hubs 
-    href: azure-fabric-diagnostic-emitters-azure-event-hub.md
+         - name: Apache Spark monitoring Overview
+           href: spark-monitoring-overview.md
+         - name: Monitor Spark Capacity Consumption
+           href: monitor-spark-capacity-consumption.md
+         - name: Browse Spark Applications in the Monitoring Hub
+           href: browse-spark-applications-monitoring-hub.md
+         - name: View Recent Spark Runs for Items
+           href: spark-item-recent-runs.md
+         - name: Monitor Spark Jobs within Notebooks
+           href: spark-monitor-debug.md
+         - name: Monitor Spark Job Definition Runs
+           href: monitor-spark-job-definitions.md
+         - name: Leverage the Apache Spark Advisor
+           href: spark-advisor-introduction.md
+      - name: Spark Application Run Series Analysis
+        items: 
+         - name: Run series analysis Overview
+           href: run-series-analyisis-overview.md
+         - name: Monitor run series
+           href: apache-spark-monitor-run-series.md
+      - name: Single Spark Application Monitoring
+        items: 
+         - name: Monitor a Single Spark Application
+           href: spark-detail-monitoring.md
+         - name: Monitor Apache Spark Resource Utilization
+           href: monitor-spark-resource-utilization.md       
+         - name: Navigate the Apache Spark History Server
+           href: apache-spark-history-server.md   
+      - name: Single Spark Application Monitoring APIs
+        items: 
+          - name: Overview
+            href: spark-monitoring-api-overview.md
+          - name: Open-source APIs
+            href: open-source-apis.md
+          - name: Livy log APIs
+            href: livy-log.md
+          - name: Driver log APIs
+            href: driver-log.md
+          - name: Executor log APIs
+            href: executor-log.md
+          - name: Resource usage APIs
+            href: resource-usage-apis.md
+      - name: Collecting Spark Logs & Metrics
+        items: 
+          - name: Collect Logs & Metrics with Azure Log Analytics
+            href: azure-fabric-diagnostic-emitters-log-analytics.md
+          - name: Collect Logs & Metrics with Azure Storage Account
+            href: azure-fabric-diagnostic-emitters-azure-storage.md
+          - name: Collect Logs & Metrics with Azure Event Hubs
+            href: azure-fabric-diagnostic-emitters-azure-event-hub.md
   - name: Spark Connectors
     items:
     - name: Data warehouse and lakehouse connector
@@ -244,6 +254,10 @@ items:
       href: lakehouse-table-maintenance.md
     - name: Delta optimization and V-Order
       href: delta-optimization-and-v-order.md
+    - name: Automated Statistics for Delta Tables
+      href: automated-table-statistics.md	
+    - name: Delta Driver Mode Snapshot
+      href: driver-mode-snapshot.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
@@ -275,6 +289,10 @@ items:
     href: author-notebook-format-code.md
   - name: Author and run T-SQL in notebook
     href: author-tsql-notebook.md
+  - name: Python vs. PySpark Notebooks
+    href: fabric-notebook-selection-guide.md
+  - name: T-SQL magic command in Python Notebook
+    href: tsql-magic-command-notebook.md
 - name: Environments
   items:
   - name: Create, configure and use an environment
@@ -299,7 +317,7 @@ items:
       href: set-up-fabric-vs-code-extension.md
     - name: Develop user data functions in VS Code
       href: ./user-data-functions/create-user-data-functions-vs-code.md
-  - name: Synapse VS Code extension
+  - name: Fabric Data Engineering VS Code extension
     items:
     - name: Overview
       href: setup-vs-code-extension.md
@@ -343,26 +361,48 @@ items:
   items:
    - name: What is API for GraphQL?
      href: api-graphql-overview.md
-   - name: Create an API for GraphQL
-     href: get-started-api-graphql.md
    - name: API for GraphQL editor
      href: api-graphql-editor.md
    - name: Schema view and explorer
      href: graphql-schema-view.md
-   - name: Manage relationships
-     href: manage-relationships-graphql.md
-   - name: Connect applications
-     href: connect-apps-api-graphql.md
-   - name: Query multiple data sources
-     href: multiple-data-sources-graphql.md
-   - name: Monitoring GraphQL operations
-     href: graphql-operations.md
-   - name: Monitoring dashboard and logging (preview)
-     href: graphql-monitor-log.md
-   - name: Frequently asked questions
-     href: graphql-faq.yml  
+   - name: Data aggregation
+     href: api-graphql-aggregations.md
+   - name: Introspection and schema export
+     href: api-graphql-introspection-schema-export.md 
+   - name: GraphQL source control and deployment pipelines (preview)
+     href: graphql-source-control-and-deployment.md     
+   - name: How tos
+     items:
+      - name: Create an API for GraphQL
+        href: get-started-api-graphql.md  
+      - name: Manage relationships
+        href: manage-relationships-graphql.md
+      - name: Query multiple data sources
+        href: multiple-data-sources-graphql.md
+      - name: Connect applications
+        href: connect-apps-api-graphql.md
+      - name: Use Service Principals
+        href: api-graphql-service-principal.md
+      - name: Use Stored procedures
+        href: api-graphql-stored-procedures.md
+      - name: Integrate with Azure API Management (APIM)
+        href: api-graphql-azure-api-management.md     
+      - name: Connect AI Agents with a local Model Context Protocol (MCP) server
+        href: api-graphql-local-model-context-protocol.md     
+   - name: Monitoring  
+     items:
+      - name: Monitoring dashboard and logging (preview)
+        href: graphql-monitor-log.md
+      - name: Monitoring GraphQL operations
+        href: graphql-operations.md
+   - name: Performance best practices
+     href: api-graphql-performance.md
+   - name: Pricing
+     href: api-graphql-pricing.md     
    - name: Limitations
      href: api-graphql-limits.md
+   - name: Frequently asked questions
+     href: graphql-faq.yml  
 - name: Partner integration
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
@@ -378,7 +418,9 @@ items:
    - name: Integration with Fabric data pipelines
      href: ./user-data-functions/create-functions-activity-data-pipelines.md
    - name: Integration with Fabric notebooks
-     href: ./notebook-utilities.md
+     href: ./notebook-utilities.md#user-data-function-udf-utilities
+   - name: Manage public and private libraries
+     href: ./user-data-functions/how-to-manage-libraries.md
    - name: Service details and limitations
      href: ./user-data-functions/user-data-functions-service-limits.md
    - name: Source control and deployment pipelines
@@ -389,3 +431,40 @@ items:
      href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: View logs
      href: ./user-data-functions/view-function-logs.md
+- name: Materialized lake views (preview)
+  items:
+  - name: Overview
+    href: ./materialized-lake-views/overview-materialized-lake-view.md
+  - name: Get started
+    items:  
+    - name: Quick start guide
+      href: ./materialized-lake-views/get-started-with-materialized-lake-views.md
+    - name: Create materialized lake views
+      href: ./materialized-lake-views/create-materialized-lake-view.md
+    - name: Refresh materialized lake views
+      href: ./materialized-lake-views/refresh-materialized-lake-view.md
+  - name: Manage
+    items:  
+    - name: View lineage
+      href: ./materialized-lake-views/view-lineage.md
+    - name: Schedule materialized lake views
+      href: ./materialized-lake-views/schedule-lineage-run.md
+    - name: Run history of materialized lake views
+      href: ./materialized-lake-views/run-history.md
+    - name: Operational run details
+      href: ./materialized-lake-views/operational-run-details.md
+  - name: Data quality
+    items:  
+    - name: Data quality in materialized lake views
+      href: ./materialized-lake-views/data-quality.md
+    - name: Data quality report
+      href: ./materialized-lake-views/data-quality-reports.md
+  - name: Monitor
+    items:  
+    - name: Monitor materialized lake views
+      href: ./materialized-lake-views/monitor-materialized-lake-views.md
+  - name: Tutorial
+    items: 
+    - name: Tutorial - medallion architecture with materialized lake views
+      href: ./materialized-lake-views/tutorial.md
+

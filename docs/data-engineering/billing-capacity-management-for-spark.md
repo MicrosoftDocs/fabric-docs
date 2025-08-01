@@ -22,6 +22,25 @@ You as a user could purchase a Fabric capacity from Azure by specifying using an
 For Apache Spark for Fabric, every CU purchased translates to 2 Apache Spark VCores. For example if you purchase a Fabric capacity F128, this translates to 256 SparkVCores. A Fabric capacity is shared across all the workspaces added to it and in which the total Apache Spark compute allowed gets shared across all the jobs submitted from all the workspaces associated to a capacity. 
 To understand about the different SKUs, cores allocation and throttling on Spark, see [Concurrency limits and queueing in Apache Spark for Microsoft Fabric](spark-job-concurrency-and-queueing.md).
 
+## Autoscale Billing for Spark
+
+**Autoscale Billing for Spark** introduces a flexible, pay-as-you-go billing model for Spark workloads in Microsoft Fabric. With this model enabled, Spark jobs use dedicated serverless resources instead of consuming compute from Fabric capacity. This serverless option optimizes cost and provides scalability without resource contention.
+
+When enabled, **Autoscale Billing** allows you to set a maximum Capacity Unit (CU) limit, which controls your budget and resource allocation. The billing for Spark jobs is based solely on the compute used during job execution, with no idle compute costs. The cost per Spark job remains the same (0.5 CU Hour), and you are only charged for the runtime of active jobs.
+
+### Key Benefits of Autoscale Billing:
+- **Cost Efficiency**: Pay only for the Spark job runtime.
+- **Independent Scaling**: Spark workloads scale independently of other workload demands.
+- **Enterprise-Ready**: Integrates with Azure Quota Management for flexible scaling.
+
+### How Autoscale Billing Works:
+- Spark jobs no longer consume CU from the Fabric capacity but instead use serverless resources.
+- A max CU limit can be set to align with budget or governance policies, ensuring predictable costs.
+- Once the CU limit is reached, Spark jobs will either queue (for batch jobs) or throttle (for interactive jobs).
+- There is no idle compute cost, and only active job compute usage is billed.
+
+For more detailed information, see the [Autoscale Billing for Spark Overview](autoscale-billing-for-spark-overview.md).
+
 ## Spark compute configuration and purchased capacity
 
 Apache Spark compute for Fabric offers two options when it comes to compute configuration. 
@@ -68,11 +87,23 @@ Consider the following scenario:
 * Extending this example to a scenario where there is another Capacity C2 which hosts a Fabric Workspace W2 and lets say that this Workspace contains a Spark job definition (SJD1) and Lakehouse (LH2). 
 
   * If the Spark Job Definition (SDJ2) from Workspace (W2) reads data from lakehouse (LH1) the usage is reported against the Capacity C2 which is associated with the Workspace (W2) hosting the item.
-  * If the Notebook (NB1) performs a read operation from Lakehouse(LH2), the capacity consumption is reported against the Capacity C1 which is powering the workspace W1 that hosts the notebook item. 
+  * If the Notebook (NB1) performs a read operation from Lakehouse(LH2), the capacity consumption is reported against the Capacity C1 which is powering the workspace W1 that hosts the notebook item.
+
+When **Autoscale Billing** is enabled for Spark, the usage is reported against the **Autoscale for Spark Capacity CU** meter. This separate meter tracks the compute usage directly and is reflected in the **Cost Analysis** section of your Azure subscription, allowing administrators to monitor costs specifically associated with Spark workloads using Autoscale Billing.
+
+### Tracking Autoscale Billing in Azure Cost Analysis:
+After enabling Autoscale Billing, use Azure’s built-in cost management tools to track the spend:
+
+1. Navigate to the **Azure portal**.
+2. Select the **Subscription** linked to your Fabric capacity.
+3. In the subscription page, go to **Cost Analysis**.
+4. Filter by the resource (Fabric capacity) and use the meter: **Autoscale for Spark Capacity Usage CU**.
+5. View real-time compute spend for Spark workloads using Autoscale Billing.
 
 ## Related content
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-overview.md)
 * [Apache Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+* [Autoscale Billing for Spark Overview](autoscale-billing-for-spark-overview.md)
 * [Install the Premium metrics app](/power-bi/enterprise/service-premium-install-app)
 * [Use the Premium metrics app](/power-bi/enterprise/service-premium-metrics-app)

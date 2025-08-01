@@ -3,23 +3,23 @@ title: Install a different version of SynapseML on Microsoft Fabric
 description: Instruction of how to install SynapseML on Fabric
 ms.topic: how-to
 ms.custom:
-ms.author: ssalgado
-author: ssalgadodev
-ms.reviewer: jessiwang
+ms.author: scottpolly
+author: s-polly
+ms.reviewer: fsolomon
 reviewer: JessicaXYWang
-ms.date: 06/12/2023
+ms.date: 04/05/2025
 ---
+
 # Install a different version of SynapseML on Fabric
 
-SynapseML is preinstalled on Fabric. If you want to use another version, you can install it with %%configure.
+SynapseML is preinstalled on Fabric. You can install other versions with %%configure.
 
 > [!NOTE]
-> Fabric notebook does not officially support %%configure for now, and there's no guarantee of service-level agreement or future compatibility with official releases.
+> Fabric notebook doesn't officially support %%configure for now, and there's no guarantee of service-level agreement or future compatibility with official releases.
 
 ## Install SynapseML with %%configure
 
-The following example installs SynapseML v0.11.1 on Fabric. To use the example, paste it into a code cell in a notebook and run the cell.
-
+The following example installs SynapseML v0.11.1 on Fabric. To use the example, paste it into a code cell in a notebook and run the cell:
 
 ```python
 %%configure -f
@@ -38,13 +38,12 @@ The following example installs SynapseML v0.11.1 on Fabric. To use the example, 
 
 ## Check SynapseML version
 
-To verify that the installation was successful, run the following code in a cell. The version number returned should match the version number you installed (0.11.1).
+To verify a successful installation, run the following code in a cell. The version number returned should match the version number you installed (0.11.1).
 
 ```python
 import synapse.ml.cognitive
 print(f"SynapseML cognitive version: {synapse.ml.cognitive.__version__}")
 ```
-
 
 ```python
 import synapse.ml.lightgbm
@@ -53,6 +52,6 @@ print(f"SynapseML lightgbm version: {synapse.ml.lightgbm.__version__}")
 
 ## Related content
 
-- [How to use LightGBM with SynapseML](lightgbm-overview.md)
+- [How to use LightGBM with SynapseML](./lightgbm-overview.md)
 - [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
-- [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
+- [How to perform the same classification task with and without SynapseML](./classification-before-and-after-synapseml.md)

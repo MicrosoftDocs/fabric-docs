@@ -1,24 +1,23 @@
 ---
-title: Hyperparameter tuning
+title: Hyperparameter tuning - Fighting Breast Cancer
 description: Identify the best combination of hyperparameters for your chosen classifiers with SynapseML.
 ms.topic: overview
 ms.custom:
-ms.author: ssalgado
-author: ssalgadodev
-ms.reviewer: jessiwang
+ms.author: scottpolly
+author: s-polly
+ms.reviewer: fsolomon
 reviewer: JessicaXYWang
 
-
-
-ms.date: 05/08/2023
+ms.date: 04/04/2025
 ---
-# HyperParameterTuning - Fighting Breast Cancer
 
-This tutorial shows how SynapseML can be used to identify the best combination of hyperparameters for your chosen classifiers, ultimately resulting in more accurate and reliable models. In order to demonstrate this, we'll show how to perform distributed randomized grid search hyperparameter tuning to build a model to identify breast cancer. 
+# HyperParameterTuning - fighting breast cancer
 
-## 1 - Set up dependencies
-Start by importing pandas and setting up our Spark session.
+This tutorial shows how to use SynapseML to identify the best combination of hyperparameters for chosen classifiers, to build more accurate and reliable models. The tutorial shows how to perform distributed randomized grid search hyperparameter tuning to build a model that identifies breast cancer.
 
+## Set up the dependencies
+
+Import pandas and set up a Spark session:
 
 ```python
 import pandas as pd
@@ -28,8 +27,7 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder.getOrCreate()
 ```
 
-Next, read the data and split it into tuning and test sets.
-
+Read the data, and split it into tuning and test sets:
 
 ```python
 data = spark.read.parquet(
@@ -39,8 +37,7 @@ tune, test = data.randomSplit([0.80, 0.20])
 tune.limit(10).toPandas()
 ```
 
-Define the models to be used.
-
+Define the models to use:
 
 ```python
 from synapse.ml.automl import TuneHyperparameters
@@ -58,11 +55,9 @@ smlmodels = [logReg, randForest, gbt]
 mmlmodels = [TrainClassifier(model=model, labelCol="Label") for model in smlmodels]
 ```
 
-## 2 - Find the best model using AutoML
+## Use AutoML to find the best model
 
-Import SynapseML's AutoML classes from `synapse.ml.automl`.
-Specify the hyperparameters using the `HyperparamBuilder`. Add either `DiscreteHyperParam` or `RangeHyperParam` hyperparameters. `TuneHyperparameters` will randomly choose values from a uniform distribution:
-
+Import the SynapseML AutoML classes from `synapse.ml.automl`. Specify the hyperparameters with `HyperparamBuilder`. Add either `DiscreteHyperParam` or `RangeHyperParam` hyperparameters. `TuneHyperparameters` randomly chooses values from a uniform distribution:
 
 ```python
 from synapse.ml.automl import *
@@ -81,8 +76,7 @@ print(searchSpace)
 randomSpace = RandomSpace(searchSpace)
 ```
 
-Next, run TuneHyperparameters to get the best model.
-
+Run TuneHyperparameters to get the best model:
 
 ```python
 bestModel = TuneHyperparameters(
@@ -96,17 +90,16 @@ bestModel = TuneHyperparameters(
 ).fit(tune)
 ```
 
-## 3 - Evaluate the model
-We can view the best model's parameters and retrieve the underlying best model pipeline
+## Evaluate the model
 
+View the parameters of the best model, and retrieve the underlying best model pipeline:
 
 ```python
 print(bestModel.getBestModelInfo())
 print(bestModel.getBestModel())
 ```
 
-We can score against the test set and view metrics.
-
+Score against the test set, and view the metrics:
 
 ```python
 from synapse.ml.train import ComputeModelStatistics
@@ -115,6 +108,7 @@ prediction = bestModel.transform(test)
 metrics = ComputeModelStatistics().transform(prediction)
 metrics.limit(10).toPandas()
 ```
+
 ## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)

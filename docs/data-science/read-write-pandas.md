@@ -1,13 +1,13 @@
 ---
 title: Read and write data with Pandas
 description: Learn how to read and write lakehouse data in a notebook using Pandas, a popular Python library for data exploration and processing.
-ms.author: franksolomon
-author: fbsolo-ms1
-ms.reviewer: erenorbey
-reviewer: orbey
+ms.author: scottpolly
+author: s-polly
+ms.reviewer: vimeland
+reviewer: s-polly
 ms.topic: how-to
 ms.custom:
-ms.date: 04/19/2024
+ms.date: 07/16/2025
 ms.search.form: Read and Write Pandas
 ---
 
@@ -99,8 +99,8 @@ import pandas as pd
  
 # Read an Excel file from your Lakehouse into a Pandas DataFrame
 # Replace LAKEHOUSE_PATH and FILENAME with your own values. Also need to add correct filepath after Files/ if file is placed in different folders
-# if using default lakehouse that attached to the notebook use the code to replace below: df = pandas.read_excel("/lakehouse/default/Files/FILENAME.xlsx") 
-df = pandas.read_excel("/LAKEHOUSE_PATH/Files/FILENAME.xlsx") 
+# if using default lakehouse that attached to the notebook use the code to replace below: df = pd.read_excel("/lakehouse/default/Files/FILENAME.xlsx") 
+df = pd.read_excel("/LAKEHOUSE_PATH/Files/FILENAME.xlsx") 
 display(df) 
 ```
 
@@ -121,7 +121,7 @@ import pandas as pd
  
 # Read a JSON file from your Lakehouse into a Pandas DataFrame
 # Replace LAKEHOUSE_PATH and FILENAME with your own values
-df = pandas.read_json("/LAKEHOUSE_PATH/Files/FILENAME.json") 
+df = pd.read_json("/LAKEHOUSE_PATH/Files/FILENAME.json") 
 display(df) 
 ```
 

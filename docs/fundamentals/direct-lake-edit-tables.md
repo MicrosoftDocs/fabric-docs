@@ -1,8 +1,8 @@
 ---
 title: Edit tables for Direct Lake semantic models
 description: Describes editing tables Direct Lake semantic models.
-author: davidiseminger 
-ms.author: davidi
+author: JulCsc
+ms.author: juliacawthra
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
@@ -76,10 +76,11 @@ The following image shows the **New semantic model** dialog.
 
 :::image type="content" source="media/direct-lake-edit-tables/direct-lake-edit-tables-04.png" alt-text="Screenshot of create new semantic model." lightbox="media/direct-lake-edit-tables/direct-lake-edit-tables-04.png":::
 
+<a id="default-semantic-model"></a>
 
-### Default semantic model
+### Semantic model
 
-There are some differences for the default Power BI semantic model in Direct Lake mode. Refer to the [default Power BI semantic models in Microsoft Fabric](/fabric/data-warehouse/semantic-models) article for more information about the differences.
+There are some differences for the Power BI semantic model in Direct Lake mode. For more information about the differences, see [Power BI semantic models in Microsoft Fabric](/fabric/data-warehouse/semantic-models).
 
 ## Creating relationships between tables
 

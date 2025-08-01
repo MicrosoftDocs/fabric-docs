@@ -1,13 +1,13 @@
 ---
-title: Ingest data into your Warehouse using data pipelines
+title: Ingest Data into Your Warehouse Using Data Pipelines
 description: Follow steps to ingest data into a Warehouse with data pipelines in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
-ms.date: 04/24/2024
+ms.date: 04/06/2025
 ms.topic: how-to
-ms.custom:
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
+ms.custom: sfi-image-nochange
 ---
 # Ingest data into your Warehouse using data pipelines
 
@@ -23,7 +23,7 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 ## Create a data pipeline
 
 1. To create a new pipeline navigate to your workspace, select the **+New** button, and select **Data pipeline**.
-    :::image type="content" source="media/ingest-data-pipelines/new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New Item button, under the Get data section. The Data pipeline button is highlighted.":::
+    :::image type="content" source="media/ingest-data-pipelines/new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New Item button, under the Get data section. The Data pipeline button is highlighted." lightbox="media/ingest-data-pipelines/new-data-pipeline.png":::
 1. To create a new pipeline navigate to your workspace, select the **+ New item** button, and select **Data pipeline**.
     - In your workspace, select **+ New Item** and look for the **Data pipeline** card in the **Get data** section. 
     - Or, select **Create** in the navigation pane. Look for the **Data pipeline** card in the **Data Factory** section.
@@ -56,7 +56,7 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
  
 1. The last page in the assistant offers a summary of the copy activity. Select the option **Start data transfer immediately** and select **Save + Run**. 
 
-    :::image type="content" source="media/ingest-data-pipelines/run-immediately.png" alt-text="Screenshot showing the option to start the data transfer operation immediately, and the buttons Back and Save + Run.":::
+    :::image type="content" source="media/ingest-data-pipelines/run-immediately.png" alt-text="Screenshot showing the option to start the data transfer operation immediately, and the buttons Back and Save + Run." lightbox="media/ingest-data-pipelines/run-immediately.png":::
 
 1. You are directed to the pipeline canvas area, where a new Copy Data activity is already configured for you. The pipeline starts to run automatically. You can monitor the status of your pipeline in the **Output** pane: 
 
@@ -66,7 +66,7 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
 For more on data ingestion into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], visit:
 
-- [Ingesting data into the Warehouse](ingest-data.md)
+- [Ingest data into the Warehouse](ingest-data.md)
 - [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
 - [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md)
 

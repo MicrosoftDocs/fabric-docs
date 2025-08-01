@@ -6,6 +6,7 @@ ms.author: abnarain
 author: abnarain
 ms.topic: tutorial
 ms.date: 12/18/2024
+ms.custom: airflows, sfi-image-nochange
 ---
 
 # Tutorial: Run a Fabric data pipeline and notebook using Apache Airflow DAGs
@@ -19,14 +20,10 @@ In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric i
 
 To get started, you must complete the following prerequisites:
 
-- Enable Apache Airflow Job in your Tenant.
 
   > [!NOTE]
-  > Since Apache Airflow job is in preview, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it. Additionally, make sure Apache Airflow job is available in the capacity region you are using for your workspace. For more information, see [available capacity regions](../data-factory/apache-airflow-jobs-concepts.md#region-availability-public-preview).
+  > Make sure Apache Airflow job is available in the capacity region you are using for your workspace. For more information, see [available capacity regions](../data-factory/apache-airflow-jobs-concepts.md#region-availability).
 
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Job (preview)' section.
-  2. Select Apply.
-     :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - [Create a Microsoft Entra ID app](/azure/active-directory/develop/quickstart-register-app) if you don't have one.
 
@@ -86,7 +83,7 @@ client_id={client_id}
 &response_type=code
 &redirect_uri={redirect_uri}
 &response_mode=query
-&scope=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%2FItem.Read.All%20offline_access 
+&scope=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%20https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Read.All%20offline_access 
 &state=12345
 &code_challenge=YTFjNjI1OWYzMzA3MTI4ZDY2Njg5M2RkNmVjNDE5YmEyZGRhOGYyM2IzNjdmZWFhMTQ1ODg3NDcxY2Nl
 &code_challenge_method=S256
@@ -167,12 +164,12 @@ Apache Airflow connection is used to store the credentials required to authentic
       - **clientSecret**: (Optional, only required for web apps) The client secret of the app registration.
       - **scopes**: (Required) Space separated string of scopes required for the app to access the Microsoft Fabric APIs.
 
-      Copy the following json object format, update the values and paste it in the Extra field.
+      Copy the following json object format, update the values, remove the comment and paste it in the Extra field.
       ```json
       {
          "tenantId": "{tenant}",
-         "scopes": "https://api.fabric.microsoft.com/Notebook.Execute.All https://api.fabric.microsoft.com/Notebook.Read.All offline_access",
-         "clientSecret": "{client-secret}", // (Optional) NOTE: Only required for web apps
+         "scopes": "https://api.fabric.microsoft.com/Item.Execute.All https://api.fabric.microsoft.com/Item.Read.All offline_access",
+         "clientSecret": "{client-secret}" // (Optional) NOTE: Only required for web apps.
       }
       ```
        
@@ -186,33 +183,33 @@ Create a new DAG file in the 'dags' folder in Fabric managed storage with the fo
 - `fabric_conn_id`: The connection ID you created in the previous step.
 - `workspace_id`: The workspace ID where the item is located.
 - `item_id`: The item ID of the item you want to run. For example, a Notebook ID or a Pipeline ID.
-- `job_type`: The type of item you want to run. For example, for notebook use "RunNotebook" and for pipeline use "Pipeline".
+- `job_type`: The type of item you want to run. For example, for notebook use "RunNotebook", for Spark Job Definitions use "sparkjob" and for pipelines use "Pipeline". This is case sensitive.
 - `wait_for_termination`: If set to True, the operator waits for the item run to complete before proceeding to the next task.
 - `deferrable`: If set to True, the operator can free up resources while waiting for the item run to complete.
 
 ```python
- from airflow import DAG
- from datetime import datetime
- from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemOperator
+from airflow import DAG
+from datetime import datetime
+from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemOperator
 
- with DAG(
-     dag_id="Run_Fabric_Item",
-     schedule_interval="@daily",
-     start_date=datetime(2023, 8, 7),
-     catchup=False,
- ) as dag:
+with DAG(
+  dag_id="Run_Fabric_Item",
+  schedule_interval="@daily",
+  start_date=datetime(2023, 8, 7),
+  catchup=False,
+) as dag:
 
-      run_fabric_item = FabricRunItemOperator(
-         task_id="run_fabric_item",
-         fabric_conn_id="fabric_conn",
-         workspace_id="<workspace_id>",
-         item_id="<item_id>",
-         job_type="<job_type>",
-         wait_for_termination=True,
-         deferrable=True,
-     )
+  run_fabric_item = FabricRunItemOperator(
+    task_id="run_fabric_item",
+    fabric_conn_id="fabric_conn",
+    workspace_id="<workspace_id>",
+    item_id="<item_id>",
+    job_type="<job_type>",
+    wait_for_termination=True,
+    deferrable=True,
+  )
 
-     run_fabric_item
+  run_fabric_item
 ```
 
 ## Create a plugin file for the custom operator

@@ -1,41 +1,37 @@
 ---
-title: On-premises data gateway considerations for data destinations in Dataflow Gen2
+title: On-premises and VNET data gateway considerations for data destinations in Dataflow Gen2
 description: Describes multiple considerations and limitations when using a data gateway and the data destination feature inside of Dataflow Gen2
-author: nikkiwaghani
-ms.author: nikkiwaghani
+author: luitwieler
+ms.author: jeluitwi
 ms.topic: conceptual
-ms.custom:
-ms.date: 12/18/2024
+ms.custom: dataflows, sfi-image-nochange
+ms.date: 06/05/2025
 ---
 
-# On-premises data gateway considerations for data destinations in Dataflow Gen2
+# On-premises and VNET data gateway considerations for data destinations in Dataflow Gen2
 
 This article lists the limitations and considerations when using the Data Gateway with data destinations scenarios in Dataflow Gen2.
 
-## Network issues with port 1433
+## Network issues with port 1433 when referencing queries
 
-When using Microsoft Fabric Dataflow Gen2 with an on-premises data gateway, you might encounter issues with the dataflow refresh process. The underlying problem occurs when the gateway is unable to connect to the dataflow staging Lakehouse in order to read the data before copying it to the desired data destination. This issue can occur regardless of the type of data destination being used.
+When using Microsoft Fabric Dataflow Gen2 with an on-premises data gateway, you might encounter issues with the dataflow refresh process. The underlying problem occurs when the gateway is unable to connect to the dataflow staging Lakehouse in order to read the data before using it in the query that referenced the staged data. Typically, this issue arises when the firewall rules on the gateway server or the customer's proxy servers aren't configured to allow outbound traffic to the required endpoints over port 1433.
 
-During the overall dataflow refresh, the tables refresh can show as "Succeeded," but the activities section shows as *"Failed"*. The error details for the activity `WriteToDatabaseTableFrom_...` indicate the following error:
+In the following scenarios we expect the dataflow refresh on the gateway to succeed without access to port 1433:
+
+- When the dataflow contains a single query that writes to a Lakehouse, and no other queries reference that query.
+- When Fast Copy is disabled.
+- When the dataflow contains multiple queries, but none of them reference each other.
+
+However, in other scenarios, such as when multiple queries reference each other, the dataflow refresh might fail due to network issues related to port 1433. This failure occurs because the dataflow engine needs to read data from the staging Lakehouse using the TDS protocol over port 1433. During the overall dataflow refresh, the tables refresh can show as "Succeeded," but the activities section shows as *"Failed"*. The error details for the activity `WriteToDatabaseTableFrom_...` indicate the following error:
 
 ```Mashup Exception Error: Couldn't refresh the entity because of an issue with the mashup document MashupException.Error: Microsoft SQL: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - An attempt was made to access a socket in a way forbidden by its access permissions.) Details: DataSourceKind = Lakehouse;DataSourcePath = Lakehouse;Message = A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - An attempt was made to access a socket in a way forbidden by its access permissions.);ErrorCode = -2146232060;Number = 10013```
 
 >[!NOTE]
->From an architectural perspective, the dataflow engine uses an outbound HTTPS (port 443) endpoint to write data into a Lakehouse. However, reading data from the Lakehouse requires the use of the TDS protocol (TCP over port 1433). This protocol is utilized to copy the data from the staging lakehouse to the data destination. This explains why the Tables Load step succeeds while the data destination activity fails, even when both lakehouses are in the same OneLake instance.
+>From an architectural perspective, the dataflow engine uses an outbound HTTPS (port 443) endpoint to write data into a Lakehouse. However, reading data from the Lakehouse requires the use of the TDS protocol (TCP over port 1433). This protocol is utilized to copy the data from the staging lakehouse to the referenced query for further processing. This explains why the first query succeeds, while the query referencing the first query might fail, even when both lakehouses are in the same OneLake instance.
 
 ### Troubleshooting
 
-To troubleshoot the issue, follow these steps:
-
-1. Confirm that the dataflow is configured with a data destination.
-
-   :::image type="content" source="media/gateway-considerations-output-destination/dataflow-output-configuration.png" alt-text="Screenshot of the Power Query editor with the Lakehouse data destination emphasized." lightbox="media/gateway-considerations-output-destination/dataflow-output-configuration.png":::
-
-2. Verify that the dataflow refresh fails, with tables refresh showing as *"Succeeded"* and activities showing as *"Failed"*.
-
-   :::image type="content" source="media/gateway-considerations-output-destination/refresh-history-failure.png" alt-text="Screenshot of the dataflow details with tables showing succeeded and activities failed." lightbox="media/gateway-considerations-output-destination/refresh-history-failure.png":::
-
-3. Review the error details for the Activity `WriteToDatabaseTableFrom_...`, which provides information about the encountered error.
+To troubleshoot the issue, review the error details for the failed table or activity, which provides information about the encountered error.
 
    :::image type="content" source="media/gateway-considerations-output-destination/refresh-history-detail.png" alt-text="Screenshot of the WriteToDatabaseTablefrom activity showing the error message." lightbox="media/gateway-considerations-output-destination/refresh-history-detail.png":::
 
@@ -61,26 +57,6 @@ The entire endpoint name looks similar to the following example:
 
 `x6eps4xrq2xudenlfv6naeo3i4-l27nd6wdk4oephe4gz4j7mdzka.datawarehouse.pbidedicated.windows.net`
 
-### Workaround: Split dataflow in a separate ingest and load dataflow
+### Workaround: Combine multiple queries into one or disable staging for the queries
 
-If you're unable to update the firewall rules, you can split the dataflow into two separate dataflows. The first dataflow is responsible for ingesting the data into the staging lakehouse. The second dataflow is responsible for loading the data from the staging lakehouse into the data destination. This workaround isn't ideal, as it requires the use of two separate dataflows, but it can be used as a temporary solution until the firewall rules can be updated.
-
-To implement this workaround, follow these steps:
-
-1. Remove the data destination from your current dataflow that ingests data via your gateway.
-
-    :::image type="content" source="media/gateway-considerations-output-destination/remove-destination.png" alt-text="Screenshot of the Power Query editor with the Lakehouse data destination being removed." lightbox="media/gateway-considerations-output-destination/remove-destination.png":::
-
-1. Create a new dataflow that uses the dataflow connector to connect to the ingested dataflow. This dataflow is responsible for ingesting the data from staging into the data destination.
-
-    :::image type="content" source="media/gateway-considerations-output-destination/get-data-dataflow-connector.png" alt-text="Screenshot of the Power Query editor with the Get Data option selected, and the Dataflow connector option emphasized." lightbox="media/gateway-considerations-output-destination/get-data-dataflow-connector.png":::
-
-    :::image type="content" source="media/gateway-considerations-output-destination/dataflow-connector-get-data.png" alt-text="Screenshot of the Get Data dialog with the Dataflow connector option selected." lightbox="media/gateway-considerations-output-destination/dataflow-connector-get-data.png":::
-
-1. Set the data destination to be the data destination of your choice for this new dataflow.
-
-    :::image type="content" source="media/gateway-considerations-output-destination/set-data-destination.png" alt-text="Screenshot of the Power Query editor with the Lakehouse data destination being set." lightbox="media/gateway-considerations-output-destination/set-data-destination.png":::
-
-1. Optionally, you can disable staging for this new dataflow. This change prevents the data from being copied to the staging lakehouse again and instead copies the data directly from the ingested dataflow to the data destination.
-
-    :::image type="content" source="media/gateway-considerations-output-destination/disable-staging.png" alt-text="Screenshot of the Power Query editor with the staging option being disabled." lightbox="media/gateway-considerations-output-destination/disable-staging.png":::
+If you're unable to update the firewall rules, you can combine the queries that reference each other into a single query or disable staging on all the queries being referenced. While this isn't a final solution and might impact performance with complex transformations, but it can be used as a temporary solution until the firewall rules can be updated.

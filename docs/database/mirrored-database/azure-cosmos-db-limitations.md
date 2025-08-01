@@ -4,7 +4,7 @@ description: This article includes a list of limitations and quotas for Microsof
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 12/06/2024
+ms.date: 05/07/2025
 ms.topic: limits-and-quotas
 ms.custom:
   - references_regions
@@ -37,7 +37,7 @@ Mirroring is only available for the Azure Cosmos DB account types listed here.
 
 ### Supported regions
 
-[!INCLUDE [fabric-mirroreddb-supported-regions](../includes/fabric-mirroreddb-supported-regions.md)]
+[!INCLUDE [fabric-mirroreddb-supported-regions](includes/fabric-mirroreddb-supported-regions.md)]
 
 ## Account and database limitations
 
@@ -51,7 +51,11 @@ Mirroring is only available for the Azure Cosmos DB account types listed here.
 
 ## Security limitations
 
-- Azure Cosmos DB read-write account keys are the only supported mechanism to connect to the source account. Read-only account keys, managed identities, and passwordless authentication with role-based access control aren't supported.
+- Azure Cosmos DB read-write account keys and Microsoft Entra ID authentication with role-based access control are the only supported mechanisms to connect to the source account. Read-only account keys and managed identities aren't supported.
+  - For Microsoft Entra ID authentication, the following role-based access control permissions are required:
+    - `Microsoft.DocumentDB/databaseAccounts/readMetadata`
+    - `Microsoft.DocumentDB/databaseAccounts/readAnalytics`  
+  - For more information, see [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
 - You must update the connection credentials for Fabric mirroring if the account keys are rotated. If you don't update the keys, mirroring fails. To resolve this failure, stop replication, update the credentials with the newly rotated keys, and then restart replication.
 - Fabric users with access to the workspace automatically inherit access to the mirror database. However, you can granularly control workspace and tenant level access to manage access for users in your organization.
 - You can directly share the mirrored database in Fabric.
@@ -95,12 +99,14 @@ Mirroring is only available for the Azure Cosmos DB account types listed here.
 
 - Nested JSON objects in Azure Cosmos DB items are represented as JSON strings in warehouse tables.
 - Commands such as `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` are available to expand JSON string data selectively.
+  - Auto schema inference through `OPENJSON` allows you to flatten and explore nested data with unknown or unpredictable nested schemas. For more information, see [how to query nested data](azure-cosmos-db-how-to-query-nested.md).
 - PowerQuery includes `ToJson` to expand JSON string data selectively.
 - Mirroring doesn't have schema constraints on the level of nesting. For more information, see [Azure Cosmos DB analytical store schema constraints](/azure/cosmos-db/analytical-store-introduction#schema-constraints).
 
 ## Data warehouse limitations
 
 - Warehouse can't handle JSON string columns greater than 8 KB in size. The error message for this scenario is **"JSON text is not properly formatted. Unexpected character '"' is found at position"**.
+  - A current workaround is to create a shortcut of your mirrored database in Fabric Lakehouse and utilize a Spark Notebook to query your data to avoid this limitation.
 - Nested data represented as a JSON string in SQL analytics endpoint and warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message.
 
 ## Mirrored item limitations

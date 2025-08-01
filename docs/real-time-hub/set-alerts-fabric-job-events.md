@@ -4,7 +4,7 @@ description: This article describes how to set alerts on Job events in Real-Time
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 11/13/2024
+ms.date: 07/22/2025
 ---
 
 # Set alerts on Job events in Real-Time hub
@@ -13,13 +13,18 @@ This article describes how to set alerts on Job events in Real-Time hub.
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
+## Navigate to Real-Time hub
+
+[!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
+
+
 ## Launch the Set alert page
 
 Do steps from one of the following sections, which opens a side panel where you can configure the following options:
 
 - Events you want to monitor.
 - Conditions you want to look for in the events.
-- Action you want Data Activator to take.
+- Action you want Activator to take.
 
 ### Using the events list
 

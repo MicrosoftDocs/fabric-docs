@@ -6,7 +6,7 @@ ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
 ms.custom:
-ms.date: 12/30/2024
+ms.date: 07/03/2025
 ---
 # What is Apache Spark compute in Microsoft Fabric?
 
@@ -22,11 +22,14 @@ Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platf
 
 :::image type="content" source="media/spark-compute/starter-pool-configuration.png" alt-text="Image of a table showing starter pool configuration.":::
 
-Starter pools have Apache Spark clusters that are always on and ready for your requests. They use medium nodes that dynamically scale up based on your Spark job needs.
+Starter pools have Apache Spark clusters with sessions that are always on and ready for your requests. They use medium nodes that dynamically scale up based on your Spark job needs.
 
 :::image type="content" source="media/spark-compute/starter-pool.png" alt-text="Diagram showing the high-level design of starter pools.":::
 
 When you use a Starter Pool **without any extra library dependencies or custom Spark properties**, your session typically starts in **5 to 10 seconds**. This fast startup is possible because the cluster is already running and doesn't require  provisioning time.
+
+> [!NOTE]
+> Starter pools are only supported for Medium Node sizes, and selecting any other node sizes, or customizing compute configurations will result in on-demand session start experience which could take from 2 - 5 minutes
 
 However, there are several scenarios where your session might take longer to start:
 
@@ -51,12 +54,11 @@ Here are a few example scenarios to illustrate potential start times:
 | **Network security + library dependencies**        | 2 – 5 minutes + 30 seconds – 5 min (for libraries)                |
 
 
-
 When it comes to billing and capacity consumption, you're charged for the capacity consumption when you start executing your notebook or Apache Spark job definition. You aren't charged for the time the clusters are idle in the pool.
 
 :::image type="content" source="media/spark-compute/starter-pool-billing-states-high-level.png" alt-text="Diagram showing the high-level stages in billing of starter pools." lightbox="media/spark-compute/starter-pool-billing-states-high-level.png":::
 
-For example, if you submit a notebook job to a starter pool, you're billed only for the time period where the notebook session is active. The billed time doesn't include the idle time or the time taken to personalize the session with the Spark context.
+For example, if you submit a notebook job to a starter pool, you're billed only for the time period where the notebook session is active. The billed time doesn't include the idle time or the time taken to personalize the session with the Spark context. To learn more, see how to [configurestarter pools in Fabric](configure-starter-pools.md).
 
 ## Spark pools
 
@@ -81,7 +83,7 @@ Spark pools are billed like starter pools; you don't pay for the custom Spark po
 
 For example, if you submit a notebook job to a custom Spark pool, you're only charged for the time period when the session is active. The billing for that notebook session stops once the Spark session has stopped or expired. You aren't charged for the time taken to acquire cluster instances from the cloud or for the time taken for initializing the Spark context.
 
-Possible custom pool configurations for F64 based on the previous example:
+Possible custom pool configurations for F64 based on the previous example. Smaller node sizes have capacity spread across more nodes, so the max number of nodes are higher. Whereas larger nodes are resource-rich, so fewer nodes are needed:
 
 | Fabric capacity SKU | Capacity units | Max Spark VCores with Burst Factor | Node size | Max number of nodes |
 |--|--|--|--|--|
@@ -91,10 +93,8 @@ Possible custom pool configurations for F64 based on the previous example:
 | F64 | 64 | 384 | X-Large | 12 |
 | F64 | 64 | 384 | XX-Large | 6 |
 
-
-
 > [!NOTE]
-> To create custom pools, you need **admin** permissions for the workspace. And the Microsoft Fabric capacity admin must grant permissions to allow workspace admins to size their custom Spark pools. To learn more, see [Get started with custom Spark pools in Fabric](create-custom-spark-pools.md)
+> To create custom pools, you need **admin** permissions for the workspace. And the Microsoft Fabric capacity admin must grant permissions to allow workspace admins to size their custom Spark pools. To learn more, see [Get started with custom Spark pools in Fabric.](create-custom-spark-pools.md)
 
 ## Nodes
 

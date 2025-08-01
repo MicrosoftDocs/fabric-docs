@@ -7,7 +7,7 @@ ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
 ms.date: 12/02/2024
-#customer intent: As a Fabric user I want to learn about Activator limitations.
+#customer intent: As a Fabric user I want to learn about Activator limitations so that I can know when I can use it appropriately.
 ---
 
 # [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] limitations
@@ -36,7 +36,7 @@ To ensure no gaps in functionality, create new activator items and recreate your
 
 ### How to check if your item needs to be migrated
 
-If the item shows Data and Design mode tabs in the lower left corner of the item, it needs to be migrated. If the Data and Design tabs are visible, recreate your rules in a new item to get all the newest capabilities.
+If the item shows Data and Design mode tabs in the lower left corner of the item, it needs to be migrated. If the Data and Design tabs are visible, [recreate your rules in a new item](activator-create-activators.md) to get all the newest capabilities.
 
 :::image type="content" source="media/activator-limitations/activator-migration.png" alt-text="Screenshot showing the screen with Data and Design. ":::
 
@@ -94,7 +94,13 @@ For more information, see [Limitations on charts with a time axis](activator-get
 
 ## Allowed recipients of email notifications
 
-Each recipient of an email notification must have an internal email address. The recipient must belong to the organization that owns the Fabric tenant. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] doesn't allow email notifications to be sent to either external email addresses or guest email addresses.
+Each recipient of an email notification must have an internal email address. The recipient must belong to the same domain as the creator or other verified domains on creator's Microsoft Entra tenant. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] doesn't allow email notifications to be sent to either external email addresses or guest email addresses.
+
+To check if the recipient's domain is one of the verified domains, visit [Azure portal](https://portal.azure.com) and search for **Microsoft Entra ID**. Once landed in Microsoft Entra ID, select **Custom domain names** in the left panel and check if recipient's domain is listed there.
+
+## Allowed chats and channel for Teams notifications
+
+For Teams group chats, only recently active chats are enabled for selection. If the chat you are looking for isn't displayed in Activator, send a message to the chat to ensure it's recently active. Additionally, for Teams channels, only shared channels are displayed and available. Sending messages to [private channels](https://aka.ms/TeamsPrivateChannel) isn't enabled.
 
 ## Maximum data for rule processing limits
 
@@ -117,12 +123,12 @@ Each recipient of an email notification must have an internal email address. The
 
 ## Maximum number of [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items
 
-Your organization might have up to 250 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items per region. If you try to create more than this number of items, you receive an error message. To resolve the error, either:
+Your organization might have up to 500 [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items per region. If you try to create more than this number of items, you receive an error message. To resolve the error, either:
 
 * Use an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item instead of creating a new item, or
 * Delete some of your existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items.
 
-## Application Life Cycle limitations
+## Application Lifecycle limitations
 
 The following components are currently not supported in Activator ALM:
 * Eventstream  (rolling out)
@@ -133,7 +139,6 @@ The following components are currently not supported in Activator ALM:
 
 ## Related content
 
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
 * [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-detection-conditions.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 * [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

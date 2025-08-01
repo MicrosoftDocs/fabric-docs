@@ -28,7 +28,7 @@ To set default libraries, you have to be the administrator of the workspace. As 
 
 1. [Create a new environment](create-and-use-environment.md#create-an-environment)
 2. [Install the required libraries in the environment](environment-manage-library.md)
-3. [Attach this environment as the workspace default](create-and-use-environment.md#attach-an-environment-as-workspace-default)
+3. [Attach this environment as the workspace default](create-and-use-environment.md#attach-an-environment-as-a-workspace-default)
 
 When your notebooks and Spark job definitions are attached to the **Workspace settings**, they start sessions with the libraries installed in the workspace's default environment.
 
@@ -75,6 +75,7 @@ The inline commands for managing Python libraries are disabled in notebook pipel
 > [!NOTE]
 >
 > The `%pip install` may lead to inconsistent results from time to time. It's recommended to install library in an environment and use it in the pipeline.
+> The `%pip install` command is currently not supported in High Concurrency mode.
 > In notebook reference runs, inline commands for managing Python libraries are not supported. To ensure the correctness of execution, it is recommended to remove these inline commands from the referenced notebook.
 
 We recommend `%pip` instead of `!pip`. `!pip` is an IPython built-in shell command, which has the following limitations:

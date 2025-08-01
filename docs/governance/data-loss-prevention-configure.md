@@ -1,8 +1,8 @@
 ---
 title: "Configure data loss prevention policies for Microsoft Fabric"
 description: "Learn how to configure Purview data loss prevention policies for Microsoft Fabric."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.subservice: governance
 ms.topic: how-to #Don't change

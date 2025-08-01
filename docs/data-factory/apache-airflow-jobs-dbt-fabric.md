@@ -5,8 +5,7 @@ ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
 ms.topic: how-to
-ms.custom:
-# ms.custom:
+ms.custom: airflows
 ms.date: 05/24/2024
 ---
 
@@ -24,16 +23,6 @@ This tutorial illustrates how to create an Apache Airflow DAG that uses dbt to t
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
-
-- Enable Apache Airflow Job in your Tenant.
-
-  > [!NOTE]
-  > Since Apache Airflow job is in preview state, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it.
-
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand "Users can create and use Apache Airflow Job (preview)" section.
-
-  2. Select Apply.
-     :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
 
 - [Create the Service Principal](/entra/identity-platform/howto-create-service-principal-portal). Add the service principal as the `Contributor` in the workspace where you create data warehouse.
 
@@ -57,8 +46,8 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
 - [dbt-fabric](https://pypi.org/project/dbt-fabric/): This package is used to create dbt project, which can then be deployed to a [Fabric Data Warehouse](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup)
 
   ```bash
-     astronomer-cosmos==1.0.3
-     dbt-fabric==1.5.0
+  astronomer-cosmos==1.10.1
+  dbt-fabric==1.9.5   
   ```
 
 ### [Create a dbt project in the Fabric managed storage provided by the Apache Airflow job.](#create-a-dbt-project-in-the-fabric-managed-storage-provided-by-the-apache-airflow-job)
@@ -165,6 +154,7 @@ Create a file `requirements.txt` in the `dags` folder. Add the following package
    from pathlib import Path
    from datetime import datetime
    from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
+   from airflow import DAG
 
    DEFAULT_DBT_ROOT_PATH = Path(__file__).parent.parent / "dags" / "nyc_taxi_green"
    DBT_ROOT_PATH = Path(os.getenv("DBT_ROOT_PATH", DEFAULT_DBT_ROOT_PATH))

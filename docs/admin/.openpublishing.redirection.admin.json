@@ -31,6 +31,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/docs/admin/service-admin-portal-protection-metrics.md",
+            "redirect_url": "/fabric/governance/use-microsoft-purview-hub",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/admin/service-admin-portal-content-pack-app.md",
             "redirect_url": "/fabric/admin/service-admin-portal-app",
             "redirect_document_id": false
@@ -44,6 +49,11 @@
             "source_path_from_root": "/docs/admin/metadata-scanning-enable-read-only-apis.md",
             "redirect_url": "/fabric/admin/enable-service-principal-admin-apis",
             "redirect_document_id": false
-        }                     
+        },
+        {
+            "source_path_from_root": "/docs/admin/fabric-command-line-interface.md",
+            "redirect_url": "/rest/api/fabric/articles/fabric-command-line-interface",
+            "redirect_document_id": false
+        }                                
     ]
 }

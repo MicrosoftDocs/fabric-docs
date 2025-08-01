@@ -3,11 +3,12 @@ title: Use AI services with SynapseML in Microsoft Fabric
 description: Enrich your data with artificial intelligence (AI) in Azure Synapse Analytics using pretrained models from Azure AI services.
 ms.topic: how-to
 ms.custom: 
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
 ms.date: 12/12/2023
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 
@@ -392,7 +393,7 @@ display(
 
 ## Get information from arbitrary web APIs
 
-With HTTP on Spark, you can use any web service in your big data pipeline. The following code sample uses the [World Bank API](http://api.worldbank.org/v2/country/) to get information about various countries around the world.
+With HTTP on Spark, you can use any web service in your big data pipeline. The following code sample uses the [World Bank API](http://api.worldbank.org/v2/country/) to get information about various countries/regions around the world.
 
 ```python
 # Use any requests from the python requests library

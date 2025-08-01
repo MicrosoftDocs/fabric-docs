@@ -6,6 +6,7 @@ ms.author: jaszymas
 ms.reviewer: wiassaf
 ms.date: 11/20/2024
 ms.topic: conceptual
+ms.custom: sfi-image-nochange
 ---
 # Protect sensitive data in SQL database with Microsoft Purview protection policies
 

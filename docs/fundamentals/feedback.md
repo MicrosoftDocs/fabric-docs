@@ -1,10 +1,10 @@
 ---
 title: Learn about Microsoft Fabric feedback
 description: Learn about giving feedback about Microsoft Fabric to Microsoft.
-author: KesemSharabi
-ms.author: kesharab
+author: SnehaGunda
+ms.author: sngun
 ms.topic: overview
-ms.date: 04/30/2024
+ms.date: 05/08/2025
 ---
 
 # Learn about Microsoft Fabric feedback
@@ -34,6 +34,26 @@ There are a few ways you can give feedback while engaging with the Microsoft Fab
 * [Issues](https://community.fabric.microsoft.com/t5/Issues/idb-p/Issues) - Discuss issues and workarounds with the community.
 
 * [Community Feedback](https://community.fabric.microsoft.com/t5/Community-Feedback/bd-p/community-feedback) - Give feedback about Microsoft Fabric and vote for publicly submitted feedback. Top known feedback items remain available in the new portal.
+
+## Fabric user panel
+
+Join the [Microsoft Fabric user panel](https://ux.microsoft.com/Panel/FabricUserPanel?utm_campaign=Fabric%20CAT%20User%20Research%20Panel&utm_source=Fabric%20Documentation&utm_medium=Link) to help shape the future of Microsoft Fabric and Power BI. By signing up, you can share real-world experiences and feedback with the Fabric and Power BI product teams through surveys and 1:1 meetings. This is an opportunity to engage directly with the engineering team behind Fabric and Power BI. Your input plays a key role in improving the tools and experiences we build.
+
+To sign up for the user panel, use the following steps:
+
+* Select **Get Started** from the user panel site.
+
+* You need a personal or corporate Microsoft account (MSA/Live ID). If you don't have one, [sign up for a new account](https://signup.live.com/?lic=1). To learn more, see how to [create a new Microsoft account](https://support.microsoft.com/en-us/account-billing/how-to-create-a-new-microsoft-account-a84675c3-3e9e-17cf-2911-3d56b15c0aaf).
+
+* Fill out the form with your details. The demographic questions are optional and can be skipped.
+
+* You are asked to review and accept a general **Participant Waiver** covering confidentiality, feedback use, and privacy. Review the waiver in detail before submitting.
+
+* After signing up, visit the [user panel](https://aka.ms/FabricUserPanel) site to manage your membership and answer a few optional Fabric-related questions. These questions help us customize communications and feedback invites based on your interests and usage.
+
+* For each Fabric study or campaign that you'd be a good fit for, you will receive a formal email invite with details on the study and how to participate.
+
+We value your input and look forward to having you in the Fabric User Panel!
 
 ## What kind of feedback is best?
 

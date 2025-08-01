@@ -5,7 +5,7 @@ author: nabhishek
 ms.author: abnarain
 ms.reviewer: whhender
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 12/18/2024
 ---
 
@@ -40,7 +40,7 @@ To use a WebHook activity in a pipeline, complete the following steps:
 
 Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
-### Web activity settings
+### WebHook activity settings
 
 1. Select the **Settings** tab, select an existing connection from the **Connection** dropdown, or create a new connection, and specify its configuration details.
 
@@ -49,6 +49,15 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 1. When you create a new connection, you see the connection creation dialog where you can provide the base URL and credentials to connect.
 
    :::image type="content" source="media/webhook-activity/create-new-connection.png" alt-text="Screenshot showing the new connection dialog for the WebHook activity.":::
+
+### Using On-premises or VNET data gateway
+1. When creating your connection, you can now choose to use either an on-premises data gateway (OPDG) or a VNET data gateway. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md).
+
+1. If you would like to use a VNET gateway, refer to [how to create a VNET data gateway](/data-integration/vnet/create-data-gateways).
+
+1. Once you have successfully created and configured your gateway, it should appear under the Data Gateway dropdown in the connection dialog.
+
+	:::image type="content" source="media/webhook-activity/create-new-data-gateway.png" alt-text="Screenshot showing the data gateway connection dialog for the WebHook activity.":::   
 
 1. After choosing or creating your connection, complete the remaining required fields, add any required headers, or set any advanced settings. The WebHook activity only supports the POST method.
 

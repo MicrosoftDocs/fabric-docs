@@ -1,10 +1,10 @@
 ---
 title: Overview of managed virtual networks in Microsoft Fabric
 description: Learn about managed virtual networks in Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 05/30/2024
 ---
 

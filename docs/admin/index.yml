@@ -9,8 +9,8 @@ metadata:
   ms.service: fabric
   ms.subservice: admin
   ms.topic: landing-page
-  author: KesemSharabi
-  ms.author: kesharab
+  author: msmimart
+  ms.author: mimart
   ms.date: 02/08/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -49,9 +49,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: About tenant settings
-            url: tenant-settings-index.md
-          - text: Fabric command line interface (CLI)
-            url: fabric-command-line-interface.md            
+            url: tenant-settings-index.md      
       - linkListType: how-to-guide
         links:
           - text: Set up git integration

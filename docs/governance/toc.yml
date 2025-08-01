@@ -17,6 +17,8 @@ items:
     href: onelake-catalog-overview.md
   - name: Find and explore data
     href: onelake-catalog-explore.md
+  - name: View item details
+    href: onelake-catalog-item-details.md
   - name: Govern your data
     href: onelake-catalog-govern.md
 - name: Microsoft Purview
@@ -28,10 +30,8 @@ items:
         href: /purview/register-scan-fabric-tenant?context=/fabric/governance/context/context-purview
       - name: Connect cross-tenant
         href: /purview/register-scan-fabric-tenant-cross-tenant?context=/fabric/governance/context/context-purview
-  - name: Microsoft Purview Hub - Admins
+  - name: Microsoft Purview hub
     href: use-microsoft-purview-hub.md
-  - name: Microsoft Purview Hub - Data owners
-    href: use-microsoft-purview-hub-data-owners.md
   - name: Information protection
     items:
     - name: Information protection in Microsoft Fabric

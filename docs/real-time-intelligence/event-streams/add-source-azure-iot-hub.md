@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
@@ -73,7 +73,7 @@ Before you start, you must complete the following prerequisites:
 
 Follow these steps to add an Azure IoT hub as your eventstream source:
 
-1. In the Eventstream editor, expand the **New source** drop-down menu within the node and choose **Azure IoT Hub**.
+1. In the Eventstream editor, expand the **New source** dropdown menu within the node and choose **Azure IoT Hub**.
 
    :::image type="content" source="./media/add-iot-hub-source/add-iot-hub-source.png" alt-text="Screenshot that shows where to add an Azure IoT Hub source in the eventstream.":::
 
@@ -93,7 +93,7 @@ Follow these steps to add an Azure IoT hub as your eventstream source:
 
    :::image type="content" source="./media/add-iot-hub-source/create-new-cloud-connection.png" alt-text="Screenshot that shows where to create a new cloud connection.":::
 
-    1. Select **Create new connection** from the drop-down menu, fill in the **Connection settings** and **Connection credentials** of your Azure IoT Hub, and then select **Create**.
+    1. Select **Create new connection** from the dropdown menu, fill in the **Connection settings** and **Connection credentials** of your Azure IoT Hub, and then select **Create**.
 
         :::image type="content" source="./media/add-iot-hub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows where to configure a new cloud connection." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png":::
 

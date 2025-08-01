@@ -1,28 +1,24 @@
 ---
-title: Caching in Fabric data warehousing
-description: Learn more about fully transparent caching in Fabric Data Warehouse.
+title: In-memory and disk caching
+description: Learn more about fully transparent in-memory and disk caching in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: fipopovi
-ms.date: 04/24/2024
-ms.topic: overview
-ms.custom:
+ms.reviewer: fipopovi, emtehran
+ms.date: 06/11/2025
+ms.topic: conceptual
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
-# Caching in Fabric data warehousing
+# In-memory and disk caching
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Retrieving data from the data lake is crucial input/output (IO) operation with substantial implications for query performance. Fabric Data Warehouse employs refined access patterns to enhance data reads from storage and elevate query execution speed. Additionally, it intelligently minimizes the need for remote storage reads by leveraging local caches.
 
-Caching is a technique that improves the performance of data processing applications by reducing the IO operations. Caching stores frequently accessed data and metadata in a faster storage layer, such as local memory or local SSD disk, so that subsequent requests can be served more quickly, directly from the cache. If a particular set of data has been previously accessed by a query, any subsequent queries will retrieve that data directly from the in-memory cache. This approach significantly diminishes IO latency, as local memory operations are notably faster compared to fetching data from remote storage.
+Caching is a technique that improves the performance of data processing applications by reducing the IO operations. Caching stores frequently accessed data and metadata in a faster storage layer, such as local memory or local SSD disk, so that subsequent requests can be served more quickly, directly from the cache. If a particular set of data has been previously accessed by a query, any subsequent queries retrieve that data directly from the in-memory cache. This approach significantly diminishes IO latency, as local memory operations are notably faster compared to fetching data from remote storage.
 
-Caching is fully transparent to the user. Irrespective of the origin, whether it be a warehouse table, a OneLake shortcut, or even OneLake shortcut that references to non-Azure services, the query caches all the data it accesses.
+In-memory and disk caching in Fabric Data Warehouse is fully transparent to the user. Irrespective of the origin, whether it be a warehouse table, a OneLake shortcut, or even OneLake shortcut that references to non-Azure services, the query caches all the data it accesses.
 
-There are two types of caches that are described later in this article:
-
-- In-memory cache
-- Disk cache
+There are two types of caches that are described later in this article, [in-memory cache](#in-memory-cache) and [disk cache](#disk-cache). [Result set caching](result-set-caching.md) is covered in another article.
 
 ## In-memory cache
 
@@ -42,13 +38,13 @@ Certain datasets are too large to be accommodated within an in-memory cache. To 
 
 :::image type="content" source="media/caching/populating-in-memory-and-ssd-cache.png" alt-text="Diagram displaying how in-memory and SSD cache are populated.":::
 
-Given that the in-memory cache has a smaller capacity compared to the SSD cache, data that is removed from the in-memory cache remains within the SSD cache for an extended period. When subsequent query requests this data, it is retrieved from the SSD cache into the in-memory cache at a significantly quicker rate than if fetched from remote storage, ultimately providing you with more consistent query performance.
+Given that the in-memory cache has a smaller capacity compared to the SSD cache, data that is removed from the in-memory cache remains within the SSD cache for an extended period. When subsequent query requests this data, it's retrieved from the SSD cache into the in-memory cache significantly quicker than if fetched from remote storage, ultimately providing you with more consistent query performance.
 
 :::image type="content" source="media/caching/populating-in-memory-cache-from-ssd-cache.png" alt-text="Diagram displaying how in-memory cache is populated from SSD cache.":::
 
 ## Cache management
 
-Caching remains consistently active and operates seamlessly in the background, requiring no intervention on your part. Disabling caching is not needed, as doing so would inevitably lead to a noticeable deterioration in query performance.
+Caching remains consistently active and operates seamlessly in the background, requiring no intervention on your part. Disabling caching isn't needed, as doing so would inevitably lead to a noticeable deterioration in query performance.
 
 The caching mechanism is orchestrated and upheld by the [!INCLUDE [product-name](../includes/product-name.md)] itself, and it doesn't offer users the capability to manually clear the cache.
 
@@ -58,4 +54,5 @@ When the cache reaches its capacity threshold and fresh data is being read for t
 
 ## Related content
 
+- [Result set caching (preview)](result-set-caching.md)
 - [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)

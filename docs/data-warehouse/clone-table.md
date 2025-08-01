@@ -1,12 +1,11 @@
 ---
-title: Clone table
+title: Clone Table
 description: Learn about table clones in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.date: 07/12/2024
+ms.date: 07/17/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 # Clone table in Microsoft Fabric
@@ -21,7 +20,7 @@ ms.search.form: Warehouse Clone table # This article's title should not change. 
 - Table clones help to create historical reports that reflect the state of data as it existed as of a specific point-in-time in the past.
 - Table clones at a specific point in time can preserve the state of data at specific business points in time.
 
-You can use the [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true) T-SQL commands to create a table clone. For a tutorial, see [Tutorial: Clone table using T-SQL](tutorial-clone-table.md) or [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md).
+You can use the [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true) T-SQL commands to create a table clone. For a tutorial, see [Tutorial: Clone a table with T-SQL in a Warehouse](tutorial-clone-table.md) or [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md).
 
 You can also query data in a warehouse as it appeared in the past, using the T-SQL `OPTION` syntax. For more information, see [Query data as it existed in the past](time-travel.md).
 
@@ -47,7 +46,7 @@ Clone of a table can be created based on either:
 
 You can also clone a group of tables at once. This can be useful for cloning a group of related tables at the same past point in time. For an example, see [Clone multiple tables at once](tutorial-clone-table-portal.md#clone-multiple-tables-at-once).
 
-You can also query data from tables as they existed in the past, using the [Time travel](time-travel.md) feature in Warehouse.
+You can also query data from tables as they existed in the past, using the [Time travel](time-travel.md) feature in Fabric Data Warehouse.
 
 ### Data retention
 
@@ -57,7 +56,7 @@ There is no limit on the number of clones created both within and across schemas
 
 ### Separate and independent
 
-Upon creation, a table clone is an independent and separate copy of the data from its source.
+Upon creation, a table clone is an independent and separate presentation of the data from the initial source.
 
 - Any changes made through DML or DDL on the source of the clone table are not reflected in the clone table.
 - Similarly, any changes made through DDL or DML on the table clone are not reflected on the source of the clone table.

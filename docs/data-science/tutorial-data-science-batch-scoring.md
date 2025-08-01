@@ -1,23 +1,21 @@
 ---
 title: "Tutorial: Perform batch scoring and save predictions"
 description: In this fourth part of the tutorial series, learn how to import a trained and registered model and perform batch predictions on a test dataset.
-ms.reviewer: None
-ms.author: sgilley
-author: sdgilley
+ms.reviewer: amjafari
+ms.author: scottpolly
+author: s-polly
 ms.topic: tutorial
 ms.custom:
-ms.date: 10/16/2023
+ms.date: 04/25/2025
 ---
 
 # Tutorial Part 4: Perform batch scoring and save predictions to a lakehouse
 
-In this tutorial, you'll learn to import the registered LightGBMClassifier model that was trained in part 3 using the Microsoft Fabric MLflow model registry, and perform batch predictions on a test dataset loaded from a lakehouse.
+This tutorial shows how to import the registered LightGBMClassifier model that you built in [part 3](./tutorial-data-science-train-models.md). That tutorial used the Microsoft Fabric MLflow model registry to train the model, and then perform batch predictions on a test dataset loaded from a lakehouse.
 
+With Microsoft Fabric, you can operationalize machine learning models with the scalable **PREDICT** function. That function supports batch scoring in any compute engine. You can generate batch predictions directly from a Microsoft Fabric notebook, or from the item page of a given model. For more information about the PREDICT function, visit [this](https://aka.ms/fabric-predict) resource.
 
-
-Microsoft Fabric allows you to operationalize machine learning models with a scalable function called PREDICT, which supports batch scoring in any compute engine. You can generate batch predictions directly from a Microsoft Fabric notebook or from a given model's item page. Learn about [PREDICT](https://aka.ms/fabric-predict).  
-
-To generate batch predictions on the test dataset, you'll use version 1 of the trained LightGBM model that demonstrated the best performance among all trained machine learning models. You'll load the test dataset into a spark DataFrame and create an MLFlowTransformer object to generate batch predictions. You can then invoke the PREDICT function using one of following three ways:
+To generate batch predictions on the test dataset, use version 1 of the trained LightGBM model. That version showed the best performance among all trained machine learning models. You load the test dataset into a spark DataFrame, and create an MLFlowTransformer object to generate batch predictions. You can then invoke the PREDICT function using one of these techniques:
 
 > [!div class="checklist"]
 >
@@ -29,7 +27,7 @@ To generate batch predictions on the test dataset, you'll use version 1 of the t
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-This part 4 of 5 in the tutorial series. To complete this tutorial, first complete:
+This is part 4 of a five part tutorial series. To complete this tutorial, first complete:
 
 * [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
 * [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
@@ -48,8 +46,7 @@ This part 4 of 5 in the tutorial series. To complete this tutorial, first comple
 
 ## Load the test data
 
-Load the test data that you saved in Part 3.
-
+In the following code snippet, load the test data that you saved in Part 3:
 
 ```python
 df_test = spark.read.format("delta").load("Tables/df_test")
@@ -58,16 +55,17 @@ display(df_test)
 
 ### PREDICT with the Transformer API
 
-To use the Transformer API from SynapseML, you'll need to first create an MLFlowTransformer object.
+To use the Transformer API from SynapseML, you must first create an MLFlowTransformer object.
 
 ### Instantiate MLFlowTransformer object
 
-The MLFlowTransformer object is a wrapper around the MLFlow model that you registered in Part 3. It allows you to generate batch predictions on a given DataFrame. To instantiate the MLFlowTransformer object, you'll need to provide the following parameters:
+The MLFlowTransformer object serves as a wrapper around the MLFlow model that you registered in Part 3. It allows you to generate batch predictions on a given DataFrame. To instantiate the MLFlowTransformer object, you must provide the following parameters:
 
-- The columns from the test DataFrame that you need as input to the model (in this case, you would need all of them).
-- A name for the new output column (in this case, predictions).
-- The correct model name and model version to generate the predictions (in this case, `lgbm_sm` and version 1).
+- The test DataFrame columns that the model needs as input (in this case, the model needs all of them)
+- A name for the new output column (in this case, **predictions**)
+- The correct model name and model version to generate the predictions (in this case, `lgbm_sm` and version 1)
 
+The following code snippet handles these steps:
 
 ```python
 from synapse.ml.predict import MLFlowTransformer
@@ -80,8 +78,7 @@ model = MLFlowTransformer(
 )
 ```
 
-Now that you have the MLFlowTransformer object, you can use it to generate batch predictions.
-
+Now that you have the MLFlowTransformer object, you can use it to generate batch predictions, as shown in the following code snippet:
 
 ```python
 import pandas
@@ -92,7 +89,7 @@ display(predictions)
 
 ### PREDICT with the Spark SQL API
 
-The following code invokes the PREDICT function with the Spark SQL API.
+The following code snippet uses the Spark SQL API to invoke the PREDICT function:
 
 ```python
 from pyspark.ml.feature import SQLTransformer 
@@ -111,7 +108,7 @@ display(sqlt.transform(df_test))
 
 ### PREDICT with a user-defined function (UDF)
 
-The following code invokes the PREDICT function with a PySpark UDF.
+The following code snippet uses a PySpark UDF to invoke the PREDICT function:
 
 ```python
 from pyspark.sql.functions import col, pandas_udf, udf, lit
@@ -122,11 +119,12 @@ features = df_test.columns
 
 display(df_test.withColumn("predictions", my_udf(*[col(f) for f in features])))
 ```
-Note that you can also generate PREDICT code from a model's item page. Learn about [PREDICT](https://aka.ms/fabric/predict-from-model-item).
+
+You can also generate PREDICT code from the item page of a model. For more information about the PREDICT function, visit [this](https://aka.ms/fabric/predict-from-model-item) resource.
 
 ## Write model prediction results to the lakehouse
 
-Once you have generated batch predictions, write the model prediction results back to the lakehouse.  
+After you generate batch predictions, write the model prediction results back to the lakehouse as shown in the following code snippet:  
 
 ```python
 # Save predictions to lakehouse to be used for generating a Power BI report
@@ -136,7 +134,6 @@ print(f"Spark DataFrame saved to delta table: {table_name}")
 ```
 
 <!-- nbend -->
-
 
 ## Next step
 

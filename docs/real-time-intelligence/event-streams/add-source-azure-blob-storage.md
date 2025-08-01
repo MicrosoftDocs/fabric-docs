@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 2/05/2024
 ms.search.form: Source and Destination
 ---
@@ -69,8 +69,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 ## Configure and connect to Azure Blob Storage events
 
 [!INCLUDE [azure-blob-storage-connector](includes/azure-blob-storage-source-connector.md)]
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## View updated eventstream
 

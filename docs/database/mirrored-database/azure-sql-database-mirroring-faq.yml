@@ -1,15 +1,14 @@
 ### YamlMime:FAQ
 metadata:
-  title: "Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric"
-  description: This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric.
-  author: WilliamDAssafMSFT
-  ms.author: wiassaf
-  ms.reviewer: imotiwala
-  ms.service: fabric
-  ms.subservice: data-warehouse
-  ms.custom:
-  ms.topic: faq
-  ms.date: 10/11/2024
+   title: Frequently Asked Questions for Mirroring Azure SQL Database in Microsoft Fabric
+   description: This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric.
+   author: WilliamDAssafMSFT
+   ms.author: wiassaf
+   ms.reviewer: imotiwala, jingwang
+   ms.date: 07/03/2025
+   ms.service: fabric
+   ms.subservice: data-warehouse
+   ms.topic: faq
 title: "Frequently asked questions for Mirroring Azure SQL Database in Microsoft Fabric"
 summary: |
   This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric.
@@ -44,7 +43,7 @@ sections:
       - question: |
           How do I manage connections? 
         answer: 
-          Select the settings cog, then select on **Manage connection and gateways**. You can also delete existing connections from this page.
+          Select the settings cog, then select **Manage connection and gateways**. You can also delete existing connections from this page.
 
       - question: |
           Can Power BI reports on mirrored data use direct lake mode?
@@ -71,12 +70,12 @@ sections:
       - question: |
           What are the replication statuses? 
         answer: 
-          See [Monitor Fabric Mirror replication](monitor.md).
+          See [Monitor Fabric mirrored database replication](monitor.md).
 
       - question: |
           Can Azure SQL Database mirroring be accessed through the Power BI Gateway or behind a firewall? 
         answer: 
-          Currently, access through the Power BI Gateway or behind a firewall is unsupported.
+          If your Azure SQL Database is not publicly accessible and doesn't allow Azure services to connect to it, you can [set up virtual network data gateway or on-premises data gateway to mirror the data](azure-sql-database.md#mirroring-azure-sql-database-behind-firewall). For more information, see [Security requirements](azure-sql-database-how-to-data-security.md).
 
       - question: |
           What steps does restarting the Mirroring include? 
@@ -105,8 +104,13 @@ sections:
 
       - question: |
           What happens to Mirroring in an event of planned or unplanned Geo failover? 
-        answer: 
-          Mirroring is disabled in an event of geo failover, whether planned or unplanned, as there are potential data loss scenarios. If this occurs, create a new mirror and configure it to point to the new logical SQL server and Azure SQL Database.
+        answer: |
+          When you create the mirrored database, connect to the read-write listener of the SQL failover group. This way you would not need to recreate the mirrored database after the failover.
+
+          Once the mirrored database is created, go to the workspace item list, and select **Manage Permissions** for the mirrored database. Add the System Assigned Managed Identity (SAMI) for both the primary and secondary logical server of the failover group to have read/write access. If you create the mirrored database from the Fabric portal, the SAMI of the primary server should already be added automatically.
+
+          When failover happens, replication is disabled automatically. However, if you open the mirrored database in the Fabric portal, you won't see any difference, but new data won't arrive. To recover, select **Stop Replication**, then **Start Replication**, to restart the replication process. This will resync every table from scratch. The same is required after failing back.
+          
   - name: Security
     questions:
       - question: |
@@ -142,7 +146,7 @@ sections:
       - question: |
           What are licensing options for Fabric Mirroring? 
         answer:
-          A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../../enterprise/licenses.md).
+          A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric concepts and licenses](../../enterprise/licenses.md).
 
   - name: Stop or pause Fabric Mirroring
     questions:
@@ -160,12 +164,12 @@ sections:
       - question: | 
           What if I stop or pause my Fabric capacity?
         answer: |
-          The Fabric capacity needs to be active and running. A paused or deleted capacity will impact Mirroring and no data will be replicated.
+          The Fabric capacity needs to be active and running. A paused or deleted capacity will affect Mirroring and no data will be replicated.
 
 additionalContent: |
 
   ## Related content
 
   - [What is Mirroring in Fabric?](overview.md)
-  - [Azure SQL Database mirroring in Microsoft Fabric](azure-sql-database.md)
+  - [Mirroring Azure SQL Database](azure-sql-database.md)
   - [Troubleshoot Fabric mirrored databases from Azure SQL Database](azure-sql-database-troubleshoot.md).

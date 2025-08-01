@@ -1,8 +1,8 @@
 ---
 title: Learn about editing semantic models in Direct Lake in Power BI Desktop (preview)
 description: Describes using Power BI Desktop to edit semantic models in Power BI Desktop.
-author: davidiseminger
-ms.author: davidi
+author: DataZoeMS
+ms.author: zoedouglas
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
@@ -12,154 +12,150 @@ LocalizationGroup: Admin
 ---
 # Direct Lake in Power BI Desktop (preview)
 
-Semantic models using Direct Lake mode access OneLake data directly, which requires running the Power BI Analysis Services engine in a workspace with a Fabric capacity. Semantic models using import or DirectQuery mode can have the Power BI Analysis Services engine running locally on your computer by using Power BI Desktop for creating and editing the semantic model. Once published, such models operate using Power BI Analysis Services in the workspace. 
+Power BI Desktop can create and edit Power BI semantic models with Direct Lake tables. Semantic models with Direct Lake tables are created in, and edited from, the Fabric workspace, not on your local machine, so when using Power BI Desktop, you **live edit** the semantic model where it is. There's no publish action as changes made in Power BI Desktop happen to the semantic model in the Fabric workspace. This experience is the same as when you're editing the semantic model in the web, or in the Fabric workspace, by choosing the **Open data model** action. 
 
-To facilitate editing Direct Lake semantic models in Power BI Desktop, you can now perform a **live edit** of a semantic model in Direct Lake mode, enabling Power BI Desktop to make changes to the model by using the Power BI Analysis Services engine in the Fabric workspace.
+**Version history** is available and automatically creates a version each time you start a live editing session, so you can undo an accidental change. **Git integration** is also available for semantic models, giving you full control over changes. And **deployment pipelines** can also be used to only live edit a semantic model in a development workspace before pushing to a production workspace.
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-01.png" alt-text="Diagram of semantic model edit process with Direct Lake in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-01.png":::
+In a semantic model with import tables, the data is downloaded and locally available on your computer. In a semantic model with Direct Lake tables, the data remains in the OneLake. When visuals use data, the semantic model provides the data from where it is stored. Learn more about [Direct Lake query performance](/fabric/fundamentals/direct-lake-understand-storage).
 
+Metadata for the semantic model that is the information about the tables columns, measures, relationships, and all other semantic modeling features, can be downloaded, with the data, as a **PBIX file** for semantic models not using Direct Lake tables. Metadata for the semantic model when you include Direct Lake tables can also be downloaded, without the data, using the **Power BI Project (PBIP)** format. Learn more about [Direct Lake with PBIP](/fabric/fundamentals/direct-lake-power-bi-project)
+
+Power BI reports can be created from all semantic models from Power BI Desktop with a live connection by choosing a **Power BI semantic model** from the **OneLake catalog** and selecting **Connect**. Reports can also be created in the Fabric workspace from many places, including the right-click context menu and choosing **create a report**. Learn more about [building reports](/fabric/fundamentals/building-reports).
+
+This article discusses more details about live editing in Power BI Desktop, and how to create and add Direct Lake tables to a semantic model in Power BI Desktop.
 
 ## Enable preview feature
 
-Live editing semantic models in Direct Lake mode with **Power BI Desktop** is enabled by default. You can disable this feature by turning off the **Live edit of Power BI semantic models in Direct Lake mode** preview selection, found in **Options and Settings > Options > Preview features**. 
+Live editing semantic models in Direct Lake mode with Power BI Desktop is enabled by default. You can disable this feature by turning off the **Live edit of Power BI semantic models in Direct Lake mode** preview selection, found in **Options** and Settings** > **Options** > **Preview features**.
 
-## Live edit a semantic model in Direct Lake mode
+Creating semantic models with Direct Lake tables is in public preview, and you need to enable it. You can enable this feature by turning on **Create semantic models in Direct Lake storage mode from one or more Fabric artifacts** preview selection, found in **Options and Settings** > **Options** > **Preview features**.
 
-To perform a live edit of a semantic model in Direct Lake mode, take the following steps. 
+## Create a semantic model with Direct Lake tables
 
-1.	Open **Power BI Desktop** and select **OneLake data hub**:
+To create a semantic model with Direct Lake tables, take the following steps.
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-02.png" alt-text="Screen shot of OneLake data hub banner item in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-02.png":::
+1.    Open **Power BI Desktop** and select **OneLake catalog**
+2.    Select a Fabric item, such as a **Lakehouse** or **Warehouse**, and press **Connect**
+3.    Give your semantic model a name, pick a Fabric workspace for it, and select the tables to include. Then press **OK**.
 
-You can also open the **OneLake data hub** from a blank report, as shown in the following image:
+The semantic model is created in the Fabric workspace and now you're live editing the semantic model in Power BI Desktop.
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-03.png" alt-text="Screen shot of OneLake data hub ribbon item in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-03.png":::
+Semantic models with Direct Lake tables created in Power BI Desktop use **Direct Lake on OneLake** storage mode. The differences between Direct Lake on OneLake and Direct Lake on SQL are explained in the [Overview](direct-lake-overview.md).
 
-2.	Search for a semantic model in Direct Lake mode, expand the **Connect** button and select **Edit**.
+:::image type="content" source="media\direct-lake-power-bi-desktop\power-bi-desktop-direct-lake-create.png" alt-text="Screenshot of Power BI Desktop when creating a semantic model with tables in Direct Lake storage mode." lightbox="media\direct-lake-power-bi-desktop\power-bi-desktop-direct-lake-create.png":::
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-04.png" alt-text="Screen shot of searching for a semantic model for Direct Lake mode in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-04.png":::
+## Add Direct Lake tables from other Fabric items
 
-> [!NOTE]
-> Selecting a semantic model that is not in Direct Lake mode will result in an error.
-> 
-3.	The selected semantic model opens for editing at which point you are in live edit mode, as demonstrated in the following screenshot.
+To add Direct Lake tables from other Fabric items, take the following steps.
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-05.png" alt-text="Screen shot of semantic model opening for editing in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-05.png":::
+1.    While live editing a Direct Lake on OneLake semantic model in Power BI Desktop, open the **OneLake catalog** and select another Fabric item, such as a **Lakehouse** or **Warehouse**
+2.    In the dialog, select the tables you want to include then press **OK**
 
-4.	You can edit your semantic model using Power BI Desktop, enabling you to make changes directly to the selected semantic model. Changes include all modeling tasks, such as renaming tables/columns, [creating measures](/power-bi/transform-model/desktop-measures), and [creating calculation groups](/power-bi/transform-model/calculation-groups). [DAX query view](/power-bi/transform-model/dax-query-view) is available to run DAX queries to preview data and test measures before saving them to the model.
+The tables are added to your semantic model and you can continue live editing. 
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-06.png" alt-text="Screen shot of adding calculation groups and other available tasks in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-06.png":::
+:::image type="content" source="media\direct-lake-power-bi-desktop\power-bi-desktop-direct-lake-add.png" alt-text="Screenshot of Power BI Desktop when adding tables in Direct Lake storage mode." lightbox="media\direct-lake-power-bi-desktop\power-bi-desktop-direct-lake-add.png":::
 
-> [!NOTE]
-> Notice that the **Save** option is disabled, because you don’t need to save. Every change you make is immediately applied to the selected semantic model in the workspace.
-> 
-In the title bar, you can see the workspace and semantic model name with links to open these items in the Fabric portal.
+## Live edit a semantic model with Direct Lake tables
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-07.png" alt-text="Screen shot of semantic model matching issue." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-07.png":::
+To edit a semantic model with Direct Lake tables later, take the following steps.
 
-When you connect and live edit a semantic model. During the preview it's not possible to select an existing report to edit, and the **[Report view](/power-bi/create-reports/desktop-report-view)** is hidden. You can open an existing report or create a new one by live connecting to this semantic model in another instance of Power BI Desktop or in the workspace. You can write DAX queries in the workspace with DAX query view in the web. And you can visually explore the data with the new [explore your data](/power-bi/consumer/explore-data-service) feature in the workspace.
+1.    In a **new instance of Power BI Desktop**, open the **OneLake catalog** and select the **Power BI semantic model**
+2.    Select the **Connect drop-down button** and choose **Edit**.
 
+Now you're live editing the semantic model.
 
-## Automatically save your changes
-
-As you make changes to your semantic model, your changes are automatically saved and the **Save** button is disabled when in Live edit mode. Changes are permanent with no option to undo. 
-
-If two or more users are live editing the same semantic model and a conflict occurs, Power BI Desktop alerts one of the users, shown in the following image, and refreshes the model to the latest version. Any changes you were trying to make will need to be performed again after the refresh.
-
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-08.png" alt-text="Screen shot of error saving semantic model in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-08.png":::
-
-## Edit tables
-
-Changes to the tables and columns in the OneLake data source, typically a Lakehouse or Warehouse, like import or DirectQuery data sources, aren't automatically reflected in the semantic model. To update the semantic model with the latest schema, such as getting column changes in existing tables or to add or remove tables, go to **Transform data > Data source settings > Edit Tables**. 
-
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-09.png" alt-text="Screen shot of editing tables of a semantic model in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-09.png":::
-
-Learn more about [Edit tables for Direct Lake semantic models](./direct-lake-edit-tables.md). 
-
-## Use refresh
-
-Semantic models in Direct Lake mode automatically reflect the latest data changes in the delta tables when *Keep your direct Lake data up to date* is enabled. When disabled, you can manually refresh your semantic model using Power BI Desktop **Refresh** button to ensure it targets the latest version of your data. This is also sometimes called *reframing*.
-
-
-## Export to a Power BI Project
-
-To support professional enterprise development workflows of semantic models in Direct Lake mode, you can export the definition of your semantic model after opening it for editing, which provides a local copy of the semantic model and report metadata that you can use with Fabric deployment mechanisms such as [Fabric Git Integration](../cicd/git-integration/intro-to-git-integration.md). The Power BI Desktop report view becomes enabled letting you view and edit the local report, publish directly from Power BI Desktop isn't available but you can publish using Git integration. The **Save** button is also enabled to save the local model metadata and report in the Power BI Project folder.
-
-Navigate to **File > Export > Power BI Project** and export it as a [Power BI Project file (PBIP)](/power-bi/developer/projects/projects-overview).
-
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-10.png" alt-text="Screen shot of opening a Power BI Project in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-10.png":::
-
-By default, the PBIP file is exported to the `%USERPROFILE%\Microsoft Fabric\repos\[Workspace Name]` folder. However, you can choose a different location during the export process.
-
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-11.png" alt-text="Screen shot choosing a different path location for a Power BI Project file." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-11.png":::
-
-Selecting **Export** opens the folder containing the PBIP files of the exported semantic model along with an empty report.
-
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-12.png" alt-text="Screen shot of exported folder containing the files of an exported semantic model in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-12.png":::
-
-After exporting you should open a new instance of Power BI Desktop and open the exported PBIP file to continue editing with a Power BI Project. When you open the PBIP file, Power BI Desktop prompts you to either create a new semantic model in a Fabric workspace, or select an existing semantic model for **remote modeling**.
-
-### Remote modeling with a Power BI Project
-
-When working on a Power BI Project (PBIP) with a semantic model that can't run on the local Power BI Analysis Services engine, such as Direct Lake mode, Power BI Desktop requires to be connected to a semantic model in a Fabric workspace, a remote semantic model. Like *live edit*, all changes you make are immediately applied to the semantic model in the workspace. However, unlike live edit, you can save your semantic model and report definitions to local PBIP files that can later be deployed to a Fabric workspace using a deployment mechanism such as [Fabric Git Integration](../cicd/git-integration/intro-to-git-integration.md).
-
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-13.png" alt-text="Diagram of remote semantic model modeling with a Power BI Project in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-13.png":::
+:::image type="content" source="media\direct-lake-power-bi-desktop\power-bi-desktop-direct-lake-edit.png" alt-text="Screenshot of Power BI Desktop when editing a semantic model with tables in Direct Lake storage mode later." lightbox="media\direct-lake-power-bi-desktop\power-bi-desktop-direct-lake-edit.png":::
 
 > [!NOTE]
-> Semantic models in Direct Lake mode, when exported to a Git repository using [Fabric Git Integration](../cicd/git-integration/intro-to-git-integration.md), can be edited using Power BI Desktop. To do so, make sure at least one report is connected to the semantic model, then open the report's exported [definition.pbir](/power-bi/developer/projects/projects-overview#definitionpbr) file to edit both the report and the semantic model.
-> 
+> Semantic models with Direct Lake storage modes are supported. Selecting a semantic model with tables in other storage modes results in an error.
 
-### Open your Power BI Project
+Alternatively, if you have [exported the semantic model to a Power BI Project (PBIP)](direct-lake-power-bi-project.md), take the following steps.
 
-When opening a Power BI Project (PBIP) that require a remote semantic model, Power BI Desktop prompts you to either create a new semantic model or select an existing semantic model in a Fabric workspace.
+1.    Double-click the PBIP file on in the Power BI Project (PBIP) folder
+2.    Or, in Power BI Desktop choose **File** then **Open** and navigate to the **PBIP file in the Power BI Project (PBIP)** folder
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-14.png" alt-text="Screen shot of setting up the remote model for the Power BI Project." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-14.png":::
+## Live editing in Power BI Desktop differences
 
-If you select an existent semantic model and the definition differs, Power BI Desktop warns you before overwriting, as shown in the following image.
+Live editing in Power BI Desktop is different than editing a local model with import and DirectQuery tables, and different than editing a report with a live connection. 
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-15.png" alt-text="Screen shot of semantic model issues in Power BI Desktop." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-15.png":::
+### Report view
+
+The report view is removed when live editing, unless you're [live editing with Power BI Project (PBIP)](direct-lake-power-bi-project.md). 
+
+To create a report, follow these steps in Power BI Desktop.
+
+1.    Go to **File** then **Blank report** to open a new instance of Power BI Desktop
+2.    Open the **OneLake catalog** and choose the **Power BI semantic model** you're live editing (it should show at the top of the list) and press **Connect**
+
+Now you can create the report. Save the file and publish to the Fabric workspace when ready.
+
+Learn more about [building reports](/fabric/fundamentals/building-reports).
+
+### Table view
+
+The table view is also removed when live editing, unless you have a [calculation group](https://aka.ms/calculationgroups) or [calculated table](/power-bi/transform-model/desktop-calculated-tables) in the semantic model. These derived tables use import storage mode. Calculated tables without direct references to Direct Lake table columns are allowed. A common example is using [INFO.VIEW DAX functions](/dax/info-functions-dax#infoview-dax-functions) to self-document the semantic model. 
 
 > [!NOTE]
-> You can select the same semantic model you exported the PBIP from. However, the best practice when working with a PBIP that requires a remote semantic model is for each developer to work on their own private remote semantic model to avoid conflicts with changes from other developers.
-> 
+> Import tables from any data source can be added to the semantic model with Direct Lake on OneLake tables using XMLA. Live editing semantic models with import and Direct Lake tables in Power BI Desktop isn't yet supported.
 
-Selecting the title bar displays both the PBIP file location and the remote semantic model living in a Fabric workspace, shown in the following image.
+### Saving
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-16.png" alt-text="Screen shot of semantic model file location." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-16.png":::
+As you make changes to your semantic model, your changes are automatically saved and the **Save** button is disabled when in Live edit mode. Changes made in Power BI Desktop automatically happen to the semantic model in the Fabric workspace. 
 
-A local setting will be saved in the Power BI Project files with the configured semantic model, next time you open the PBIP, you won't see the prompt, and Fabric semantic model will be overwritten with the metadata from the semantic model in the Power BI Project files.
+[Version history](/power-bi/transform-model/service-semantic-model-version-history) creates a version at the beginning of each live editing session if you need to revert a change. There's no undo action available as you make changes. [Git integration](/fabric/cicd/git-integration/intro-to-git-integration?tabs=azure-devops) or using [deployment pipelines](/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines) to first live edit in a development workspace then pushing to a production environment are also available to live edit without impacting downstream users.
 
-### Change remote semantic model
+There's no local file created but if you would like a local copy of the metadata, you can [export to a Power BI Project (PBIP)](direct-lake-power-bi-project.md) and continue live editing with a **Save** button for the local metadata. You can utilize local Git techniques to undo changes. To export to Power BI Project (PBIP), go to **File** then **Export**, and choose **Power BI Project (PBIP)**.
 
-During the **preview**, if you wish to switch the remote semantic model in the PBIP you must navigate to the `\*.SemanticModel\.pbi\localSettings.json` file. There, you can either modify the *remoteModelingObjectId* property to the ID of the semantic model you want to connect to, or remove the property altogether. Upon reopening the PBIP, Power BI Desktop connects to the new semantic model or prompts you to create or select an existing semantic model.
+If two or more users are live editing the same semantic model and a conflict occurs, Power BI Desktop alerts one of the users, and syncs the model to the latest version. Any changes you were trying to make will need to be performed again after the model sync. This behavior is the same behavior as [editing data models in the Power BI service](/power-bi/transform-model/service-edit-data-models), also called web modeling.
 
-:::image type="content" source="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-17.png" alt-text="Screen shot of semantic model ID." lightbox="media/direct-lake-power-bi-desktop/direct-lake-power-bi-desktop-17.png":::
+### Refresh
 
-> [!NOTE]
-> The configuration described in this section is intended solely for local development and should not be used for deployment across different environments.
-> 
-## Common uses for Direct Lake in Power BI Desktop
+Selecting the Refresh button when live editing a semantic model with Direct Lake tables performs a schema refresh and reframe the Direct Lake tables. 
 
-**Scenario:** I’m getting errors when opening the Direct Lake semantic model for Edit with Power BI Desktop.
+The schema refresh checks the tables definitions in the model and compares it to the same named table in the data source for any changes to columns. Changes detected from the data source, in this case a Fabric artifact, are made to the semantic model. For example, a column was added to a table. Changing the table or column name in the semantic model in Power BI Desktop persist after a refresh. 
 
-**Solution:** Review all the [requirements and permissions](#requirements-and-permissions). If you met all the requirements, check whether you can edit the semantic modeling using [web modeling](/power-bi/transform-model/service-edit-data-models).
+Changing a table or column name at the data source removes the table or column on the next schema refresh. You can use [TMDL view](/power-bi/transform-model/desktop-tmdl-view) to see the SourceLineageTag property and update it to the new name to avoid the semantic model removing it on schema refresh.
 
-**Scenario:** I lost the connection to the remote semantic model and can't recover it. Have I lost my changes?
+Another way to perform a schema refresh is to return to [Edit tables](/fabric/fundamentals/direct-lake-edit-tables) and click **OK**. Go to **Transform data drop-down** then **Data source settings** and click **Edit tables**.
 
-**Solution:** All your changes are immediately applied to the remote semantic model. You can always close Power BI Desktop and restart the editing session with the semantic model you were working on.
+Scheduled refresh in the Fabric workspace only reframe the Direct Lake tables without a schema refresh. Learn more about [refresh in Power BI](/power-bi/connect-data/refresh-data).
 
-**Scenario:** I exported to Power BI Project (PBIP). Can I select the same semantic model I was live editing?
+### Power BI Project (PBIP)
 
-**Solution:** You can, but you should be careful. If each developer is working on their local PBIP and all select the same semantic model as a remote model, they'll overwrite each other's changes. The best practice when working with a PBIP is for each developer to have their own isolated copy of the Direct Lake semantic model.
+When working on a Power BI Project (PBIP) with a semantic model with Direct Lake tables, Power BI Desktop needs to connect to a semantic model in a Fabric workspace, also termed as a remote semantic model. Remote modeling is live editing, as all changes you make are immediately applied to the semantic model in the workspace. In addition, you can save your semantic model and report definitions, or metadata, to your local PBIP files. The PBIP files can later be deployed to a Fabric workspace using a deployment mechanism such as Fabric Git Integration. Learn more about [remote modeling with Power BI Project (PBIP)](direct-lake-power-bi-project.md)
 
-**Scenario:** I’m live editing the Direct Lake semantic model and can't create field parameters.
+### Name in header links
 
-**Solution:** When live editing a semantic model, Report View isn't available, which is required for the field parameters UI. You can export to a Power BI Project (PBIP) and open it to access Report View and the field parameters UI.
+Selecting the name of the semantic model in the top left corner of Power BI Desktop expands to show the location of the semantic model in the Fabric workspace. Selecting the workspace name or semantic model name navigates you to them in the web. Version history is also available.
 
-**Scenario:** I made changes to the semantic model using an external tool, but I don't see those changes reflected in Power BI Desktop.
+### TMDL view
 
-**Solution:** Changes made by external tools are applied to the remote semantic model, but these changes will only become visible in Power BI Desktop after either the next modeling change is made within Power BI Desktop, or the semantic model is refreshed.
+TMDL (Tabular Model Definition Language) view can be used with Direct Lake semantic models. The TMDL scripts aren't saved unless you're live editing with a [Power BI Project (PBIP)](direct-lake-power-bi-project.md). Learn more about [TMDL view](/power-bi/transform-model/desktop-tmdl-view). 
 
+### DAX query view
+
+DAX (Data Analysis Expressions) query view can be used with Direct Lake semantic models. The DAX queries aren't saved unless you're live editing with a [Power BI Project (PBIP)](direct-lake-power-bi-project.md). Learn more about [DAX query view](/power-bi/transform-model/dax-query-view). 
+
+
+## Migrating Direct Lake on SQL semantic models to Direct Lake on OneLake
+
+If you already have an existing **Direct Lake on SQL** semantic model and want to migrate to **Direct Lake on OneLake**, you can by using **TMDL view**. Direct Lake on OneLake offers the advantage of having tables from multiple sources and no fallback to DirectQuery. 
+
+These migration steps aren't recommended if you're using SQL analytics endpoint views in the Direct Lake on SQL semantic model. 
+
+To change to Direct Lake on OneLake, follow these steps.
+
+1. **Live edit** the semantic model you want to migrate in Power BI Desktop.
+2. In the header, open the drop-down on the name and choose **Version history** to make a version to return to, if you want to have that option.
+3. Go to **TMDL view**.
+4. Drag the **Semantic model** node into the editor to script the entire model.
+5. Find the **Expression** toward the bottom of the script.
+6. Change <code>Sql.Database("SQL endpoint connection string", "ID of the SQL analytics endpoint")</code> to <code>AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/ID of the workspace/ID of the lakehouse or warehouse")</code>.
+7. If the source is a **Lakehouse without schemas**, remove all <code>schemaName</code> property references. Select **Find** in the ribbon to find one. Select it and use <code>CTRL+SHIFT+L</code> to select them all, then <code>CTRL+SHIFT+K</code> to remove all the lines at once.
+8. Then click **Apply**.
+9. On success, go to **Model view** to **Refresh** the model. You may need to go to the model in the web to adjust credentials in the **Settings** page.
+
+Now the semantic model is using Direct Lake on OneLake. If there are issues, you can restore to the version you created to return to Direct Lake on SQL storage mode.
 
 ## Requirements and permissions
 
@@ -169,27 +165,20 @@ During the **preview**, if you wish to switch the remote semantic model in the P
 * User must have *Viewer* permission on the lakehouse. Learn more in the [lakehouse article](/fabric/data-engineering/workspace-roles-lakehouse).
 * This feature is unavailable for users with a free license.
 
-
-
-
 ## Considerations and limitations
 
-Live edit of semantic models in Direct Lake mode in Power BI Desktop is currently in preview. Keep the following in mind:
+Live edit of semantic models in Direct Lake mode in Power BI Desktop is currently in preview.
 
-* You can't edit default semantic models.
-* You can't transform data using Power Query editor. In the Lakehouse you can use a dataflow to perform Power Query transformations.
-* You can’t have multiple data sources. You can shortcut to or add additional data to Lakehouse or Warehouse data sources to use in the semantic model.
+* You can't transform data using Power Query editor. In the source Fabric item there may be transformation options, such as using Power Query in Dataflows.
+* You can't have multiple data sources when using Direct Lake on SQL. Add data to the Fabric data source used by semantic model. Multiple data sources are supported for Direct Lake on OneLake storage mode.
 * You can't publish the Power BI Project (PBIP) from Power BI Desktop. You can use Fabric Deployment mechanisms such as Fabric Git Integration or Fabric Item APIs to publish your local PBIP files to a Fabric workspace.
 * You can't validate RLS roles from Power BI Desktop. You can validate the role in the service.
-* Service-created model diagram layouts aren't displayed in Power BI Desktop, and layouts created in Power BI Desktop aren't persisted in the Power BI service.
-* Signing off during editing could lead to unexpected errors.
+* You can't sign off during live editing without unexpected errors.
 * You can open external tools, but the external tool must manage authentication to the remote semantic model.
-* Changing the data category to *barcode* won't allow reports linked to the semantic model to be filtered by barcodes.
-* Externally shared semantic models aren't eligible for live edit.
+* You can change the data category to *barcode*, but reports linked to the semantic model can't filter by barcodes.
+* You can't live edit externally shared semantic models.
 
-Additionally, please consider the current known issues and limitations of Direct Lake.
-
-
+In addition to the current known issues and limitations of Direct Lake.
 
 ## Related content
 

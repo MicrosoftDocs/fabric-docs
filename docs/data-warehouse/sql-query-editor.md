@@ -1,15 +1,15 @@
 ---
-title: Query using the SQL query editor
+title: Query Using the SQL Query Editor
 description: Learn how to use the SQL query editor.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad, jacindaeng
-ms.date: 09/20/2024
+ms.date: 04/06/2025
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: how-to
-ms.custom:
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
+ms.custom: sfi-image-nochange
 ---
 # Query using the SQL query editor
 
@@ -67,7 +67,7 @@ You can use **Save as table** to save your query results into a table. Select th
 
    :::image type="content" source="media/sql-query-editor/save-as-table.png" alt-text="Screenshot showing how to use Save as table menu.":::
 
-#### Open in Excel 
+#### Open in Excel
 
 The **Open in Excel** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to work with the results in Microsoft Excel on your local computer.
 
@@ -87,7 +87,7 @@ Once you have successfully signed in, you'll see the data presented in the sprea
 
 #### Explore this data (preview)
 
-**Explore this data (preview)** provides the capability to perform ad-hoc exploration of your query results. With this feature, you can launch a side-by-side matrix and visual view to better understand any trends or patterns behind your query results before diving into building a full Power BI report. For more information, see [Explore your data in the Power BI service](/power-bi/consumer/explore-data-service).
+**Explore this data (preview)** provides the capability to perform ad hoc exploration of your query results. With this feature, you can launch a side-by-side matrix and visual view to better understand any trends or patterns behind your query results before diving into building a full Power BI report. For more information, see [Explore your data in the Power BI service](/power-bi/consumer/explore-data-service).
 
 #### Visualize results
 
@@ -97,7 +97,7 @@ Once you have successfully signed in, you'll see the data presented in the sprea
 
 #### Copy
 
-The **Copy** dropdown allows you to copy the results and/or column names in the data grid. You can choose to copy results with column names, just copy the results only, or just copy the column names only. 
+The **Copy** dropdown list allows you to copy the results and/or column names in the data grid. You can choose to copy results with column names, just copy the results only, or just copy the column names only. 
 
    :::image type="content" source="media/sql-query-editor/copy-dropdown.png" alt-text="Screenshot showing the options in the Copy dropdown menu." lightbox="media/sql-query-editor/copy-dropdown.png":::
 
@@ -176,7 +176,7 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - T-SQL statements that use the T-SQL `OPTION` syntax are not currently supported in the **Explore this data** or **Visualize results** options with DirectQuery mode. The workaround is to create visualizations in Power BI Desktop using **Import** mode. 
 
-- The following table summarizes the expected behavior will not match with [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio):
+- The following table summarizes the expected behavior will not match with [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true):
 
    | **Scenario** | **Supported in SSMS/ADS** | **Supported in SQL query editor in Fabric portal** |
    |---|---|---|

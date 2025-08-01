@@ -1,8 +1,8 @@
 ---
 title: Workspaces in Microsoft Fabric and Power BI
 description: Learn about workspaces, which are collections of items such as lakehouses, warehouses, and reports built to deliver key metrics for your organization.
-author: paulinbar
-ms.author: painbar
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: yicw, mesrivas,liud
 ms.topic: conceptual
 ms.custom:
@@ -136,7 +136,7 @@ In the Workspace settings pane, select **Other** > **Remove this workspace**.
 
 ## Administering and auditing workspaces
 
-Administration for workspaces is in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins decide who in an organization can create workspaces and distribute apps. Read about [managing users' ability to create workspaces](../admin/portal-workspace.md#create-workspaces-new-workspace-experience) in the "Workspace settings" article.
+Administration for workspaces is in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins decide who in an organization can create workspaces and distribute apps. Read about [managing users' ability to create workspaces](../admin/portal-workspace.md#create-workspaces) in the "Workspace settings" article.
 
 Admins can also see the state of all the workspaces in their organization. They can manage, recover, and even delete workspaces. Read about [managing the workspaces themselves](../admin/portal-workspaces.md) in the "Admin portal" article.
 
@@ -152,6 +152,15 @@ Admins can also see the state of all the workspaces in their organization. They 
 | Updated [!INCLUDE [product-name](../includes/product-name.md)] folder access| UpdateFolderAccess |
 
 Read more about [[!INCLUDE [product-name](../includes/product-name.md)] auditing](/power-bi/admin/service-admin-auditing).
+
+## Sign-in problems
+
+See the following table if you have trouble signing in.
+
+| Message | Meaning | How to fix |
+|---|---|---|
+|`browser_storage_unsupported`| Your browser is blocking access to storage, which is required for signing in.| - Check your browser’s privacy settings.<br>- Make sure cookies and local storage (like `sessionStorage` or `localStorage`) are allowed.<br>- Try disabling any extensions that might block storage access. |
+|`cluster_resolution_failure_401`|Your network or proxy is blocking authentication headers needed to connect to the service.|- Ask your IT admin to add **app.powerbi.com** to the allowlist of your proxy or firewall. This helps your network keep the necessary login information in place when trying to connect to the service. |
 
 ## Considerations and limitations
 

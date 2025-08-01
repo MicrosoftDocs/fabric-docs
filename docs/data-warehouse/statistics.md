@@ -4,12 +4,11 @@ description: Learn how to use the statistics features.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: emtehran
-ms.date: 09/10/2024
+ms.date: 04/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
-# Statistics in Fabric data warehousing
+# Statistics in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -74,7 +73,9 @@ The following T-SQL objects can also be used to check both manually created and 
 
 Whenever you issue a query and query optimizer requires statistics for plan exploration, [!INCLUDE [product-name](../includes/product-name.md)] automatically creates those statistics if they don't already exist. Once statistics have been created, query optimizer can utilize them in estimating the plan costs of the triggering query. In addition, if the query engine determines that existing statistics relevant to query no longer accurately reflect the data, those statistics are automatically refreshed. Because these automatic operations are done synchronously, you can expect the query duration to include this time if the needed statistics do not yet exist or significant data changes have happened since the last statistics refresh. 
 
-### <a id="to-verify-automatic-statistics-at-querytime"></a> Verify automatic statistics at querytime
+<a id="to-verify-automatic-statistics-at-querytime"></a>
+
+### Verify automatic statistics at querytime
 
 There are various cases where you can expect some type of automatic statistics. The most common are histogram-based statistics, which are requested by the query optimizer for columns referenced in GROUP BYs, JOINs, DISTINCT clauses, filters (WHERE clauses), and ORDER BYs. For example, if you want to see the automatic creation of these statistics, a query will trigger creation if statistics for `COLUMN_NAME` do not yet exist. For example:
 

@@ -12,9 +12,7 @@ items:
   - name: Governance and compliance documentation
     href: ../governance/index.yml      
   - name: Security documentation
-    href: ../security/index.yml    
-  - name: Fabric command line interface (CLI)
-    href: fabric-command-line-interface.md       
+    href: ../security/index.yml         
 - name: Get started
   items:
   - name: Enable Fabric for your organization
@@ -40,6 +38,8 @@ items:
       href: monitoring-workspace.md
     - name: Feature usage and adoption report
       href: feature-usage-adoption.md
+    - name: Content sharing report
+      href: content-sharing.md
   - name: Use the Monitoring hub
     href: monitoring-hub.md 
   - name: Track user activities
@@ -68,8 +68,6 @@ items:
     href: service-admin-portal-users.md
   - name: View audit logs
     href: service-admin-portal-audit-logs.md
-  - name: View information protection metrics
-    href: service-admin-portal-protection-metrics.md
   - name: View refresh summary
     href: service-admin-portal-refresh-summary.md
   - name: View usage metrics
@@ -123,8 +121,8 @@ items:
       href: service-admin-portal-discovery.md
     - name: App settings
       href: service-admin-portal-app.md
-    - name: How to switch an AI skill tenant
-      href: ../data-science/ai-skill-tenant-switch.md
+    - name: Fabric data agent tenant settings (preview)
+      href: ../data-science/data-agent-tenant-settings.md
     - name: Copilot settings
       href: service-admin-portal-copilot.md
     - name: Integration settings
@@ -153,6 +151,8 @@ items:
       href: service-admin-portal-dataset-security.md
     - name: Advanced networking 
       href: service-admin-portal-advanced-networking.md
+    - name: Encryption 
+      href: service-admin-portal-encryption.md
     - name: Metrics settings
       href: service-admin-portal-goals-settings.md
     - name: User experience experiments

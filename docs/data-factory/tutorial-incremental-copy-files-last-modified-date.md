@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
-ms.custom:
+ms.custom: pipelines
 ms.date: 08/05/2024
 ms.search.form: Pipeline tutorials
 ---

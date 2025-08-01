@@ -1,12 +1,11 @@
 ---
-title: How to implement dynamic data masking in Fabric Data Warehouse
+title: How to Implement Dynamic Data Masking in Fabric Data Warehouse
 description: Learn how to implement dynamic data masking in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: dhsundar
 ms.date: 10/09/2024
 ms.topic: how-to
-ms.custom:
 ---
 
 # How to implement dynamic data masking in Fabric Data Warehouse
@@ -70,7 +69,7 @@ Before you begin, make sure you have the following:
 
 Once the dynamic data masking rules are applied, you can test the masking by querying the table with a test user who does not have the Administrator, Member, or Contributor rights on the workspace, or elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
-1. Sign in to a tool like Azure Data Studio or SQL Server Management Studio as the test user, for example TestUser@contoso.com.
+1. Sign in to a tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true) as the test user, for example TestUser@contoso.com.
 1. As the test user, run a query against the table. The masked data is displayed according to the rules you defined.
     ```sql
     SELECT * FROM dbo.EmployeeData;

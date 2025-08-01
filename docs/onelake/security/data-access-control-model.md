@@ -6,7 +6,8 @@ ms.author: yuturchi
 author: yuturchi
 ms.topic: concept-article
 ms.custom:
-  - onelake-data-access-public-preview-april-2024
+- onelake-data-access-public-preview-april-2024
+- sfi-image-nochange
 ms.date: 03/25/2025
 #customer intent: As a OneLake user, I want to understand how OneLake secures data with role-based access control and the impact on Fabric permissions so that I can protect data stored and accessed in OneLake.
 ---
@@ -15,7 +16,12 @@ ms.date: 03/25/2025
 
 OneLake security uses role assignments to apply permissions to its members. You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. Every member in the user group gets the assigned role. If someone is in two or more security groups or Microsoft 365 groups, they get the highest level of permission that is provided by the roles. If you nest user groups and assign a role to a group, all of the contained users have permissions.
 
-OneLake security enables users to define data access roles for **Lakehouse Items** only.
+OneLake security enables users to define data access roles for the following Fabric items only.
+
+| Fabric item | Supported |
+| ---- | --- |
+| Lakehouse | Yes |
+| Azure Databricks Mirrored Catalog | Yes |
 
 OneLake security restricts data access for users with workspace **Viewer** or read access to a lakehouse. It doesn't apply to workspace Admins, Members, or Contributors. As a result, OneLake security supports only Read level of permissions.
 
@@ -209,7 +215,7 @@ Within a workspace, Fabric items can have permissions configured separately from
 
 ### Lakehouse SQL analytics endpoint permissions
 
-SQL analytics endpoint is a warehouse that is automatically generated from a lakehouse in Microsoft Fabric. A customer can transition from the "Lake" view of the lakehouse (which supports data engineering and Apache Spark) to the "SQL" view of the same lakehouse. Learn more about SQL analytics endpoint in [Data Warehouse documentation: SQL analytics endpoint](../../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
+SQL analytics endpoint is automatically generated from a lakehouse in Microsoft Fabric. It enables users to query lakehouse data using familiar T-SQL syntax. This endpoint supports the data engineering (Lake view with Apache Spark) and relational (SQL view) experiences on the same lakehouse. To learn more, see [SQL analytics endpoint in Data Warehouse documentation](../../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
 
 | **SQL analytics endpoint permission** | **Users can view files via OneLake endpoint?** | **Users can write files via OneLake endpoint?** | **Users can read data via SQL analytics endpoint?** |
 |----------|----------|----------|--------------|
@@ -253,14 +259,12 @@ The SQL analytics endpoint is a warehouse. For more information about its permis
 
 ### OneLake security in internal shortcuts
 
-For any folder in a lakehouse, permissions always inherit to all [internal shortcuts](../onelake-shortcuts.md) where this folder is defined as target.
-
-When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut. As a result, this user must have OneLake security permissions in the target location to read the data.
+Security set on a OneLake folder always flows across any [internal shortcuts](../onelake-shortcuts.md) to restrict access to the shortcut source path. When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut. As a result, this user must have OneLake security permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When accessing shortcuts through **Power BI semantic models** or **T-SQL**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user.
+> When accessing shortcuts through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines in Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. The calling item owner's identity is passed instead, delegating access to the calling user. To resolve this, use **Power BI semantic models in DirectLake over OneLake mode** or **T-SQL in User's identity mode**.
 
-Defining OneLake security permissions for the internal shortcut isn't allowed and must be defined on the target folder located in the target item. The target item must be an item type that supports OneLake security roles. Currently, only Lakehouse supports OneLake security roles.
+Defining OneLake security permissions for the internal shortcut isn't allowed and must be defined on the target folder located in the target item. The target item must be an item type that supports OneLake security roles. If the target item does not support OneLake security, the user's access is evaluated based on whether they have the Fabric ReadAll permission on the target item. Users do not need Fabric Read permission on an item in order to access it through a shortcut.
 
 The next table specifies whether the corresponding shortcut scenario supports OneLake security permissions.
 
@@ -271,7 +275,7 @@ The next table specifies whether the corresponding shortcut scenario supports On
 | Shortcut in a lakehouse pointing to a table located in a **data warehouse** | Not supported. | OneLake doesn't support defining security permissions in data warehouses. Access is determined based on the ReadAll permission instead.|
 | Shortcut in a lakehouse pointing to a table located in a **KQL database** | Not supported. | OneLake doesn't support defining security permissions in KQL databases. Access is determined based on the ReadAll permission instead.|
 
-### OneLake security in external shortcuts (ADLS, S3, Dataverse)
+### OneLake security in external (multicloud) shortcuts
 
 OneLake supports defining permissions for shortcuts such as [ADLS, S3, and Dataverse shortcuts](../onelake-shortcuts.md). In this case, the permissions are applied on top of the delegated authorization model enabled for this type of shortcut.
 
@@ -284,7 +288,9 @@ Suppose user1 creates an S3 shortcut in a lakehouse pointing to a folder in an A
 | No | Yes | No |
 | Yes | No | No |
 
-The OneLake security permissions can be defined either for the entire scope of the shortcut or for selected subfolders. Permissions set on a folder inherit recursively to all subfolders, even if the subfolder is within the shortcut.
+The OneLake security permissions can be defined either for the entire scope of the shortcut or for selected subfolders. Permissions set on a folder inherit recursively to all subfolders, even if the subfolder is within the shortcut. Security set on an external shortcut applies only to access on that shortcut path directly. Additional internal shortcuts pointing to an external shortcut still require the user to have access to the original external shortcut.
+
+Unlike other types of access in OneLake security, a user accessing an external shortcut will require Fabric Read permission on the data item where the external shortcut resides. This is necessary for securely resolving the connection to the external system. 
 
 Learn more about S3, ADLS, and Dataverse shortcuts in [OneLake shortcuts](../onelake-shortcuts.md).
 
@@ -328,6 +334,12 @@ RLS combines with an OR between SQL statements. Like CLS, any RLS rules unioned 
 * If you add a distribution list to a role in OneLake security, the SQL endpoint can't resolve the members of the list to enforce access. The result is that users appear not to be members of the role when they access the SQL endpoint.
 
 * Semantic models don't support shortcuts pointing to other lakehouses that don't have OneLake security enabled.
+
+* To query data from a Spark notebook using Spark SQL, the user must have at least Viewer access in the workspace they are querying.
+
+* Spark notebooks require that the environment be 3.5 or higher and using Fabric runtime 1.3.
+
+* OneLake security does not work with [private link protection](../../security/security-private-links-overview.md). 
 
 * The following table provides the limitations of OneLake data access roles.
 

@@ -1,15 +1,14 @@
 ---
-title: Data types
+title: Data Types in Fabric Data Warehouse
 description: Learn about the T-SQL data types supported the SQL analytics endpoint and Warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, jovanpop
-ms.date: 03/19/2025
+ms.date: 06/06/2025
 ms.topic: conceptual
-ms.custom:
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
-# Data types in Microsoft Fabric
+# Data types in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -59,7 +58,7 @@ For T-SQL data types that aren't currently supported, some alternatives are avai
 | **xml** | No equivalent. |
 | **User-defined type (CLR)** | No equivalent. |
 
-Unsupported data types can still be used in T-SQL code for variables, or any in-memory use in session. Creating tables or views that persist data on disk with any of these types isn't allowed.
+Unsupported data types can still be used in T-SQL code for variables, parameters or outputs of functions and stored procedures, or any in-memory use in session. Creating tables or views that persist data on disk with any of these types isn't allowed.
 
 For a guide to create a table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Create tables](create-table.md).
 
@@ -89,4 +88,4 @@ The columns that have the types that aren't listed in the table aren't represent
 
 ## Related content
 
-- [T-SQL Surface Area in Microsoft Fabric](tsql-surface-area.md)
+- [T-SQL Surface Area in Fabric Data Warehouse](tsql-surface-area.md)

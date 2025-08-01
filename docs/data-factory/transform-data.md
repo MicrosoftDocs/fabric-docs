@@ -6,6 +6,9 @@ ms.author: noelleli
 author: n0elleli
 ms.topic: quickstart
 ms.custom:
+- dataflows
+- pipelines
+- sfi-image-nochange
 ms.date: 12/18/2024
 ---
 
@@ -24,7 +27,7 @@ To get started, you must have the following prerequisites:
 
 ## Dataflows compared to pipelines
 
-Dataflows Gen2 lets you to use a low-code interface and 300+ data and AI-based transformations to you easily clean, prep, and transform data with more flexibility than any other tool. Data Pipelines enable rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.  In a pipeline, you can create logical groupings of activities that perform a task, which might include calling a Dataflow to clean and prep your data. While there's some functionality overlap between the two, the choice of which to use for a specific scenario depends on whether you require the full richness of pipelines or can use the simpler but more limited capabilities of dataflows. For more information, see the [Fabric decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md#copy-activity-dataflow-and-spark-properties)
+Dataflows Gen2 lets you to use a low-code interface and 300+ data and AI-based transformations to you easily clean, prep, and transform data with more flexibility than any other tool. Data Pipelines enable rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.  In a pipeline, you can create logical groupings of activities that perform a task, which might include calling a Dataflow to clean and prep your data. While there's some functionality overlap between the two, the choice of which to use for a specific scenario depends on whether you require the full richness of pipelines or can use the simpler but more limited capabilities of dataflows. For more information, see the [Fabric decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md)
 
 ## Transform data with dataflows
 

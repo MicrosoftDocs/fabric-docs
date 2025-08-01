@@ -102,7 +102,7 @@ Connect to the Azure Open Datasets container, and load the Predictive Maintenanc
 import os, requests
 DATA_FOLDER = "Files/predictive_maintenance/"  # Folder that contains the dataset
 DATA_FILE = "predictive_maintenance.csv"  # Data file name
-remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/MachineFaultDetection"
+remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/MachineFaultDetection"
 file_list = ["predictive_maintenance.csv"]
 download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
 

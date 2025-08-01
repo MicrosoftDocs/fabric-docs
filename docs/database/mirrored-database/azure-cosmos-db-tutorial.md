@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from Azure Cosmos DB in 
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 11/19/2024
+ms.date: 05/07/2025
 ms.topic: tutorial
 no-loc: [Copilot]
 ---
@@ -65,15 +65,21 @@ Next, connect the source database to the mirrored database.
     | --- | --- |
     | **Azure Cosmos DB endpoint** | URL endpoint for the source account. |
     | **Connection name** | Unique name for the connection. |
-    | **Authentication kind** | Select *Account key*. |
+    | **Authentication kind** | Select *Account key* or *Organizational account*. |
     | **Account Key** | Read-write key for the source account. |
+    | **Organizational account** | Access token from Microsoft Entra ID. |
 
     :::image type="content" source="media/azure-cosmos-db-tutorial/connection-configuration.png" alt-text="Screenshot of the new connection dialog with credentials for an Azure Cosmos DB for NoSQL account." lightbox="media/azure-cosmos-db-tutorial/connection-configuration.png":::
 
-1. Select **Connect**. Then, select a database to mirror.
-
     > [!NOTE]
-    > All containers in the database are mirrored.
+    > For Microsoft Entra ID authentication, the following RBAC permissions are required:
+    >
+    > - `Microsoft.DocumentDB/databaseAccounts/readMetadata`
+    > - `Microsoft.DocumentDB/databaseAccounts/readAnalytics`
+    >
+    > For more information, see [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
+
+2. Select **Connect**. Then, select a database to mirror. Optionally, select specific containers to mirror.
 
 ## Start mirroring process
 

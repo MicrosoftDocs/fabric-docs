@@ -1,15 +1,21 @@
 ---
 title: Migrate from Azure Synapse Data Explorer to Fabric (preview)
 description: Learn about migrating from Azure Synapse Data Explorer to Microsoft Fabric, including key considerations and different migration scenarios.
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.reviewer: sharmaanshul
 ms.topic: how-to
 ms.date: 03/26/2025
 #customer intent: As a data engineer, I want to understand the migration process from Azure Synapse Data Explorer to Fabric Eventhouse so that I can effectively transition my workloads.
 ---
 
+
 # Migrate from Azure Synapse Data Explorer to Fabric Eventhouse (preview)
+
+> [!IMPORTANT]
+> Azure Synapse Analytics Data Explorer (Preview) will be retired on October 7, 2025. After this date, workloads running on Synapse Data Explorer will be deleted, and the associated application data will be lost. We highly recommend [migrating to Eventhouse](/fabric/real-time-intelligence/migrate-synapse-data-explorer) in Microsoft Fabric.
+
+The Microsoft Cloud Accelerate Factory (CAF) program accepts customer nominations from the Microsoft account team, to help customers migrate to Fabric. CAF provides hands-on keyboard resources at no-cost to the customer. Hands-On keyboard resources are assigned for 6-8 weeks with an agreed scope. Customers can also use [this form](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0PMD-G9mq1Kry22u32eGOtUQ1pWQVIyUU9USDBXSjUwQ1E0NEJCMExORC4u) to request help directly from Microsoft.
 
 While Azure Synapse provides [Data Explorer](/azure/synapse-analytics/data-explorer/data-explorer-overview), Fabric offers [Eventhouses](eventhouse.md), [KQL databases](create-database.md), and [KQL querysets](create-query-set.md). Eventhouses in Fabric are designed to ingest, store, and analyze real-time data streams. They provide a scalable, high-performance, and cost-effective solution for processing and analyzing real-time data.
 
@@ -67,12 +73,12 @@ The migration process is performed using Fabric REST API endpoints. The recommen
 1. **Validate**: Use the [Validate migration to Eventhouse](migrate-api-validate-synapse-data-explorer.md) endpoint to check whether the Azure Synapse Analytics Data Explorer cluster can be migrated to an eventhouse.
 1. **Migrate**: Use the [Migrate to Eventhouse](migrate-api-to-eventhouse.md) with the `migrationSourceClusterUrl` payload to create an eventhouse with the migration source cluster URL. The process runs asynchronously to create a new eventhouse and migrate all databases from the source cluster to the eventhouse.
 1. **Monitor**: Use the [Monitor migration progress](migrate-api-to-eventhouse.md#monitor-migration-progress) to track the progress of your migration.
-1. **Verify**: Verify the migration by checking the [eventhouse state](manage-monitor-eventhouse.md#view-system-overview-details-for-an-eventhouse) is **Running**, and that the migrated databases appear in the [KQL database list](manage-monitor-eventhouse.md#view-all-databases-in-an-eventhouse).
+1. **Verify**: Verify the migration by checking the [eventhouse state](manage-monitor-eventhouse.md#view-system-overview) is **Running**, and that the migrated databases appear in the [KQL database list](manage-monitor-eventhouse.md#view-databases-overview).
 
     > [!IMPORTANT]
     > Make sure to update queries and ingestion processes to point to new [Eventhouse endpoints](access-database-copy-uri.md#copy-uri) within 90 days of migration. After 90 days, the source cluster is deleted and its endpoints stop redirecting to the eventhouse and it will not be recoverable.
 
-The API endpoints can be called directly or in an automated PowerShell script. A sample PowerShell script is available in the [Microsoft Fabric GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/migrate-synapse-to-eventhouse.ps1). To run the script, in addition to the [prerequisites](#prerequisites), you must have the Az PowerShell module with at least version '2.64.0', which you can install by running 'Install-Module az' in PowerShell.
+The API endpoints can be called directly or in an automated PowerShell script. A sample PowerShell script is available in the [Microsoft Fabric GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/MigrateFromAzureToEventhouse.ps1). To run the script, in addition to the [prerequisites](#prerequisites), you must have the Az PowerShell module with at least version '2.64.0', which you can install by running 'Install-Module az' in PowerShell.
 
 ## Related content
 

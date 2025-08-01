@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.date: 3/11/2025
+ms.date: 4/08/2025
 ms.search.form: Eventstreams authentication
 ---
 
@@ -20,11 +20,14 @@ In this article, you learn how to enable identity in Azure Logic Apps, assign wo
 
 ## Prerequisites
 
-Before you start, you must complete the following prerequisites:
+Before you begin, make sure the following prerequisites are met:
 
-- An Eventstream item in the workspace with Custom Endpoint source. Refer to [this guide](add-source-custom-app.md) for adding Custom Endpoint to Eventstream.
-- An Azure Logic Apps workflow with HTTP trigger.
-- Access to a workspace with **Contributor** or higher permissions where your eventstream is located.
+- Your **Tenant Admin** enabled the following two settings in the Admin portal. [Learn more](/power-bi/developer/embedded/embed-service-principal)
+  - Service principals can create workspaces, connections, and deployment pipelines
+  - Service principals can call Fabric public APIs
+- You have **Member** or higher permissions in the workspace. It's required to manage workspace access and assign the necessary permissions to your Azure resource identity.
+- An Eventstream item in your workspace with a Custom Endpoint source. Refer to [this guide](add-source-custom-app.md) for instructions on how to add a Custom Endpoint to Eventstream.
+- An Azure Logic Apps workflow configured with an HTTP trigger.
 
 ## Step 1: Enable Managed Identity in Azure Logic Apps
 

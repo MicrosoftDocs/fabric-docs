@@ -1,22 +1,24 @@
 ---
-title: "How To: Use the Copilot Code Completion for SQL Database"
-description: Learn more about Microsoft Copilot Code Completion feature for SQL database in Microsoft Fabric, to ask questions specific about your database.
+title: How To Use the Microsoft Copilot Code Completion in Microsoft Fabric in the SQL database workload
+description: Learn more about Microsoft Copilot Code Completion feature in Microsoft Fabric in the SQL database workload, to ask questions specific about your database.
 author: markingmyname
-ms.author:  maghan
+ms.author: maghan
 ms.reviewer: yoleichen, wiassaf
-ms.date: 3/31/2025
+ms.date: 04/09/2025
+ms.update-cycle: 180-days
 ms.topic: how-to
 ms.collection:
-  - ce-skilling-ai-copilot
+- ce-skilling-ai-copilot
+ms.custom: sfi-image-nochange
 ---
 
-# How to: Use the Copilot Code Completion for SQL database in Fabric
+# How to use the Microsoft Copilot code completion in Fabric in the SQL database workload (Preview)
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-Copilot for SQL database includes a code completion feature with Copilot.
+Copilot in Fabric in the SQL database workload includes a code completion feature with Copilot.
 
-As you start writing T-SQL code or comments in the editor, Copilot for SQL database uses your database schema and query tab context to complement the existing IntelliSense with inline code suggestions.
+As you start writing T-SQL code or comments in the editor, Copilot in Fabric SQL database uses your database schema and query tab context to complement the existing IntelliSense with inline code suggestions.
 
 - The completions can come in varied lengths - sometimes the completion of the current line, and sometimes a whole new block of code.
 - The code completions support all types of T-SQL queries: data definition language (DDL), data query language (DQL), and data manipulation language (DML).
@@ -36,7 +38,7 @@ As you start writing T-SQL code or comments in the editor, Copilot for SQL datab
 
 ## How can code completions help you?
 
-Code completion enhances your productivity and workflow in Copilot for SQL database by reducing the cognitive load of writing T-SQL code. It accelerates code writing, prevents syntax errors and typos, and improves code quality. It provides helpful, context-rich suggestions directly within the query editor. Whether you're new or experienced with T-SQL, code completion helps you save time and energy with writing code, and focus on designing, optimizing, and testing your database.
+Code completion enhances your productivity and workflow in Copilot in Fabric SQL database by reducing the cognitive load of writing T-SQL code. It accelerates code writing, prevents syntax errors and typos, and improves code quality. It provides helpful, context-rich suggestions directly within the query editor. Whether you're new or experienced with T-SQL, code completion helps you save time and energy with writing code, and focus on designing, optimizing, and testing your database.
 
 ## Key capabilities
 
@@ -44,6 +46,8 @@ Code completion enhances your productivity and workflow in Copilot for SQL datab
 - **Generate suggestions from comments**: Guide Copilot using comments that describe your code logic and purpose using natural language. Leave the comment at the beginning of the query and Copilot generates the corresponding query.
 
 ## Get started
+
+To begin using the Copilot Code Completion feature, follow these steps to enable and utilize its capabilities effectively in the SQL query editor.
 
 1. Start writing your query in the SQL query editor within the database. As you type, Copilot provides real-time code suggestions and completions of your query by presenting a dimmed ghost text.
 
@@ -61,7 +65,7 @@ Code completion enhances your productivity and workflow in Copilot for SQL datab
 
 ## Related content
 
-- [What is Copilot for SQL database in Microsoft Fabric?](copilot.md)
-- [How to: Use the Copilot Chat Pane for SQL database in Fabric](copilot-chat-pane.md)
-- [How to: Use the Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md)
-- [Privacy, security, and responsible use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
+- [What is Copilot Copilot in Fabric in SQL database?](copilot.md)
+- [How to use the Copilot chat pane in Fabric in SQL database](copilot-chat-pane.md)
+- [How to use the Copilot explain and fix quick action features in Fabric in SQL database](copilot-quick-actions.md)
+- [Privacy, security, and responsible AI use of Copilot in Microsoft Fabric](../../fundamentals/copilot-privacy-security.md)

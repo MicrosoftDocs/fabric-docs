@@ -6,20 +6,20 @@ ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
 ms.date: 01/16/2025
 ms.topic: how-to
-ms.search.form: product-databases, Get Started
+ms.search.form: product-databases, Get Started, Databases Get Started for SQL
 ---
 # Create a SQL database in the Fabric portal
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-In this tutorial, you'll create a new [SQL database in Fabric](overview.md).
+In this tutorial, create a new [SQL database in Fabric](overview.md).
 
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-    - Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, you'll receive an error message "SQL database failed to create."
-- You must be a member of the Admin or Member roles for the workspace to create a SQL database.
+    - Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, you receive an error message "SQL database failed to create."
 - You can use an existing workspace or [create a new Fabric workspace](../../fundamentals/workspaces.md).
+- You must be a member of the [Admin or Member roles for the workspace](../../fundamentals/give-access-workspaces.md) to create a SQL database. 
 
 ## Create new SQL database in Fabric
 
@@ -33,9 +33,6 @@ In this tutorial, you'll create a new [SQL database in Fabric](overview.md).
    - **Connection strings** option shows the SQL database connection string that is required when you want to [connect](connect.md) using [SQL Server Management Studio](https://aka.ms/ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), or other external tools.
 1. Consider adding your new database to source control. For more information, see [SQL database source control integration in Microsoft Fabric](source-control.md#add-the-fabric-sql-database-to-source-control).
 
-> [!NOTE]
-> You can also [deploy a SQL database in Fabric with the REST API](deploy-rest-api.md).
-
 ## Next step
 
 > [!div class="nextstepaction"]
@@ -45,3 +42,4 @@ In this tutorial, you'll create a new [SQL database in Fabric](overview.md).
 
 - [Connect to your SQL database in Microsoft Fabric](connect.md)
 - [Ingest data into SQL database via data pipelines](load-data-pipelines.md)
+- [Options to create a SQL database in the Fabric portal](create-options.md)
