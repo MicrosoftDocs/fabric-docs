@@ -70,7 +70,7 @@ Optionally, insert an expression into the input fields. If you select an input f
 #### Pass an input field to your flow
 
 1. Move your cursor into the **Body Content** field, select **fx**.
-1. Search for the **triggerBody** function or copy and paste this function: triggerBody()?['customProperties/NAME_OF_INPUT_FIELD']. Replace NAME_OF_INPUT_FIELD with one of the **Input fields** that you created earlier. In this example, we use *T**ask name.*
+1. Search for the **triggerBody** function or copy and paste this function: `triggerBody()?['customProperties/NAME_OF_INPUT_FIELD']`. Replace **NAME_OF_INPUT_FIELD** with one of the **Input fields** that you created earlier. In this example, we use *Task name*.
 
     You can use any predefined input field you create in Power Automate functions. 
 
