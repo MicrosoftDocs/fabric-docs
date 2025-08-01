@@ -87,12 +87,12 @@ Microsoft Fabric's hosted Apache Airflow job comes with a variety of helpful fea
 
 - 2.10.5
 
-## Support Python version
+## Supported Python version
 
 - 3.12
 
 > [!NOTE]
-> Changing the Apache Airflow version within an existing Apache Airflow job is currently not supported. If you need a different version, just create a new Apache Airflow job with the  version you want. 
+> Changing the Apache Airflow version within an existing Apache Airflow job is currently not supported. If you need a different Apache Airflow version, create a new Apache Airflow job with the updated version you want. 
 
 
 ## Related Content
