@@ -4,7 +4,7 @@ description: Learn how to create a mirrored database from Azure Databricks in Mi
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sheppardshep, mspreshah
-ms.date: 07/01/2025
+ms.date: 07/31/2025
 ms.topic: tutorial
 ---
 
@@ -100,16 +100,24 @@ This section guides you on configuring network security for your Azure Data Lake
 
    For more information and steps to grant ADLS access, see [ADLS Access control](/azure/storage/blobs/data-lake-storage-access-control#how-to-set-acls).
       
-1. Enable [Trusted Workspace Access](../../security/security-trusted-workspace-access.md) to access firewall-enabled Azure Data Lake Storage (ADLS) Gen2 accounts in a secure manner.
+1. Enable [Trusted Workspace Access](../../security/security-trusted-workspace-access.md) to access firewall-enabled Azure Data Lake Storage (ADLS) Gen2 accounts in a secure manner. Trusted workspace access requires creating a connection directly to the ADLS storage account which can be used independently of the Azure Databricks workspace connection. For more information, see [Secure Fabric mirrored databases from Azure Databricks](azure-databricks-security.md#use-trusted-workspace-access-to-access-firewall-enabled-adls-storage).
 
 1. A shortcut to Unity Catalog tables is created for the tables whose storage account name matches the storage account specified in the ADLS connection. For any tables whose storage account name doesn't match the storage account specified in the ADLS connection, shortcuts for those tables won't be created. 
 
 > [!IMPORTANT]
 > If you plan to use the ADLS connection outside the Mirrored Azure Databricks catalog item scenarios, you need to also give the **Storage Blob Delegator** role on the storage account.
 
+## Enable OneLake security on the Mirrored Databricks item
+
+Map Unity Catalog (UC) policies to Microsoft OneLake security by following these steps: 
+
+1. **Sync the Entra Group and apply permissions in Unity Catalog.** In Azure Databricks, use Automatic Identity Management to sync a Microsoft Entra ID group and grant it the necessary Unity Catalog privileges, for example, USE, BROWSE, SELECT on the relevant catalog/tables.
+1. **Assign a OneLake Data Access Role.** In the Fabric workspace, create a data access role for the newly mirrored data. Add the same Entra group to this role and grant it read access to the OneLake shortcuts corresponding to the Azure Databricks tables. You can get started with table level security right away by in the **Manage OneLake security** button in the ribbon. Ensure you keep access configurations synchronized as catalog structures and permissions evolve. For more information, see the [OneLake data access control model (preview)](../../onelake/security/data-access-control-model.md).
+
 ## Related content
 
 - [Secure Fabric mirrored databases from Azure Databricks](azure-databricks-security.md)
+- [Blog: Secure Mirrored Azure Databricks Data in Fabric with OneLake security](https://blog.fabric.microsoft.com/blog/secure-mirrored-azure-databricks-data-in-fabric-with-onelake-security)
 - [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-limitations.md)
 - [Frequently asked questions for mirrored databases from Azure Databricks in Microsoft Fabric](azure-databricks-faq.yml)
 - [Mirroring Azure Databricks Unity Catalog](azure-databricks.md)
