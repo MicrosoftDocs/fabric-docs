@@ -25,7 +25,7 @@ This article discusses more details about live editing in Power BI Desktop, and 
 
 ## Enable preview feature
 
-Live editing semantic models in Direct Lake mode with Power BI Desktop is enabled by default. You can disable this feature by turning off the **Live edit of Power BI semantic models in Direct Lake mode** preview selection, found in **Options** and Settings** > **Options** > **Preview features**.
+Live editing semantic models in Direct Lake mode with Power BI Desktop is enabled by default. You can disable this feature by turning off the **Live edit of Power BI semantic models in Direct Lake mode** preview selection, found in **Options and Settings** > **Options** > **Preview features**.
 
 Creating semantic models with Direct Lake tables is in public preview, and you need to enable it. You can enable this feature by turning on **Create semantic models in Direct Lake storage mode from one or more Fabric artifacts** option, found in Power BI Desktop's **Options and Settings** > **Options** > **Preview features**.
 
