@@ -181,6 +181,13 @@ The following tables contain more information about a copy activity in Data Ware
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
 |**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br> true or false|
 
+### Using Fabric Warehouse as a Sink with Staging Enabled
+If the staging storage location has a firewall enabled, access issues may occur.
+#### Workarounds
+- **Different Regions**:  
+  If the Fabric capacity and staging storage are in different regions, ensure the regional Data Factory and Azure SQL IP addresses are allowed in the storage location firewall to enable connectivity.
+- **Same Region**:  
+  If the Fabric capacity and staging storage are in the same region and access issues persist, choose an alternative staging storage location in a different region than the Fabric capacity.
 ## Related content
 
 - [Data Warehouse connector overview](connector-data-warehouse-overview.md)
