@@ -138,8 +138,8 @@ When using the data destination feature, the settings defined to load the data t
 ```M code 
 shared #"Orders by Region_DataDestination" = let
   Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
-  Navigation_1 = Pattern{[workspaceId = WorkspaceId]}[Data],
-  Navigation_2 = Navigation_1{[lakehouseId = LakehouseId]}[Data],
+  Navigation_1 = Pattern{[workspaceId = "cfafbeb1-8037-4d0c-896e-a46fb27ff229"]}[Data],
+  Navigation_2 = Navigation_1{[lakehouseId = "b218778-e7a5-4d73-8187-f10824047715"]}[Data],
   TableNavigation = Navigation_2{[Id = "Orders by Region", ItemKind = "Table"]}?[Data]?
 in
   TableNavigation;
