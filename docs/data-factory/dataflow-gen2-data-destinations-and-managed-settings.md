@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: how-to
-ms.date: 07/17/2025
+ms.date: 08/03/2025
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -129,6 +129,31 @@ Schema options on publish only apply when the update method is **replace**. When
 > [!NOTE]
 > Parameters in the data destination can also be applied directly through the M script created for the queries related to it. You can manually alter the script of your data destination queries to apply the parameters to meet your requirements.
 > However, the user interface currently only supports parameterization for the table or file name field.
+
+##  Mashup script for data destination queries
+
+When using the data destination feature, the settings defined to load the data to your destination are defined in the mashup document of your Dataflow. The Dataflow application fundamentally creates 2 components:
+* **A query that contains the navigation steps to your destination**. It follows the pattern of your initial query name with a suffix of **_DataDestination**. For example:
+
+```M code 
+shared #"Orders by Region_DataDestination" = let
+  Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
+  Navigation_1 = Pattern{[workspaceId = WorkspaceId]}[Data],
+  Navigation_2 = Navigation_1{[lakehouseId = LakehouseId]}[Data],
+  TableNavigation = Navigation_2{[Id = "Orders by Region", ItemKind = "Table"]}?[Data]?
+in
+  TableNavigation;
+``` 
+
+* **A DataDestinations record that contains the logic to be used for how to load data to your destination**. This record a pointer to the query that containts the navigation steps to your destination as well as the overall destination settings such as update methods, schema options and what Kind of target the destination is such as a Table or other kind. Fr example:
+
+```M code
+[DataDestinations = {[Definition = [Kind = "Reference", QueryName = "Orders by Region_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
+```
+
+These pieces of M scripts are not visible inside of the Dataflow application, but you can access this information through:
+* [Fabric REST API for GET Dataflow definition](/rest/api/fabric/dataflow/items/get-dataflow-definition)
+* [Mashup.pq document when using the Git integration](dataflow-gen2-cicd-and-git-integration.md)  
 
 
 ## Supported data source types per destination
