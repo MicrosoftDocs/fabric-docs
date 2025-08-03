@@ -132,7 +132,7 @@ Schema options on publish only apply when the update method is **replace**. When
 
 ##  Mashup script for data destination queries
 
-When using the data destination feature, the settings defined to load the data to your destination are defined in the mashup document of your Dataflow. The Dataflow application fundamentally creates 2 components:
+When using the data destination feature, the settings defined to load the data to your destination are defined in the mashup document of your Dataflow. The Dataflow application fundamentally creates two components:
 * **A query that contains the navigation steps to your destination**. It follows the pattern of your initial query name with a suffix of **_DataDestination**. For example:
 
 ```M code 
@@ -145,13 +145,13 @@ in
   TableNavigation;
 ``` 
 
-* **A DataDestinations record that contains the logic to be used for how to load data to your destination**. This record a pointer to the query that containts the navigation steps to your destination as well as the overall destination settings such as update methods, schema options and what Kind of target the destination is such as a Table or other kind. Fr example:
+* **A DataDestinations record that contains the logic to be used for how to load data to your destination**. The record has pointer to the query that contains the navigation steps to your destination and the overall destination settings such as update methods, schema options and what Kind of target the destination is such as a Table or other kind. For example:
 
 ```M code
 [DataDestinations = {[Definition = [Kind = "Reference", QueryName = "Orders by Region_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
 ```
 
-These pieces of M scripts are not visible inside of the Dataflow application, but you can access this information through:
+These pieces of M scripts aren't visible inside of the Dataflow application, but you can access this information through:
 * [Fabric REST API for GET Dataflow definition](/rest/api/fabric/dataflow/items/get-dataflow-definition)
 * [Mashup.pq document when using the Git integration](dataflow-gen2-cicd-and-git-integration.md)  
 
