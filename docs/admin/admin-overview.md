@@ -138,3 +138,5 @@ This section provides a high level list of some of the admin capabilities mentio
 * [Security overview](../security/security-overview.md)
 
 * [Governance and compliance overview](../governance/governance-compliance-overview.md)
+
+* [CI/CD workflow options in Fabric](../cicd/manage-deployment.md)

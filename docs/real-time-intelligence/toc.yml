@@ -851,6 +851,13 @@ items:
       href: monitor-logs-ingestion-results.md
     - name: Query logs
       href: monitor-logs-query.md
+- name: Build AI agents
+  displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
+  items: 
+    - name: Fabric RTI MCP Server (preview)
+      href: mcp-overview.md 
+    - name: Use MCP with Eventhouse
+      href: mcp-eventhouse.md
 - name: Migrate
   items:
   - name: From Azure Synapse Data Explorer
