@@ -21,7 +21,7 @@ Trusted access to Storage accounts and authentication with workspace identity ca
 This article describes how to use the workspace identity to authenticate when connecting OneLake shortcuts, Data Pipelines, Semantic Models, and Dataflows Gen2 (CI/CD) to data sources. The target audience is data engineers and anyone interested in establishing a secure connection between Fabric items and data sources.
 
 ## Supported data sources
-For the most up to date information about Fabric connectors with support for workspace identity authentication, refer to [Fabric Connector Overview](../data-factory/connector-overview.md)
+For the most up-to-date information about Fabric connectors with support for workspace identity authentication, refer to [Fabric Connector Overview](../data-factory/connector-overview.md)
 You can also create a new connection in *Manage Connections and Gateways* and review the supported connection types.
 
 ## Authenticate with workspace identity
@@ -100,7 +100,8 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 2. Follow the steps listed in [Connect to ADLS Gen2 from Power Query Online](/power-query/connectors/data-lake-storage#connect-to-azure-data-lake-storage-gen2-from-power-query-online)
 3. Select Workspace Identity as the authentication method
    
-[!NOTE] Workspace identity is only supported for Dataflows Gen2 with deployment pipelines and Public API.
+> [!NOTE]
+> Workspace identity is only supported for Dataflows Gen2 with deployment pipelines and Public API.
 
 
 ## Considerations and limitations
@@ -121,7 +122,7 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 * Checking the status of a connection that has workspace identity as the authentication method isn't supported.
 
-* If your organization has an Microsoft Entra Conditional Access policy for workload identities that includes all service principals, then each Fabric workspace identity should be excluded from the Conditional Access policy for workload identities. Otherwise, workspace identities won't work.
+* If your organization has a Microsoft Entra Conditional Access policy for workload identities that includes all service principals, then each Fabric workspace identity should be excluded from the Conditional Access policy for workload identities. Otherwise, workspace identities won't work.
 
 * Workspace identity isn't compatible with cross-tenant requests.
 
