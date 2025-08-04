@@ -181,7 +181,7 @@ The following tables contain more information about a copy activity in Data Ware
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
 |**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br> true or false|
 
-### Using Fabric Warehouse as a Sink with Staging Enabled
+### Using Fabric Warehouse as a sink with staging enabled
 If the staging storage location has a firewall enabled, access issues may occur.
 #### Workarounds
 - **Different Regions**:  
