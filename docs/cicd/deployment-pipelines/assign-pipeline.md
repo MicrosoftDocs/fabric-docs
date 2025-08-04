@@ -70,7 +70,7 @@ To assign a workspace to a deployment pipeline stage, follow these steps:
 If you attempt to delete a workspace via the workspace settings, and that workspace is currently assigned to a [Deployment Pipeline](intro-to-deployment-pipelines.md), the 
 deletion fails.  
 
-  :::image type="content" source="media/deploy-content/remove-1.png" alt-text="Screenshot of error attempting to remove a workspace assigned to a deployment pipeline." lightbox="media/deploy-content/remove-1.png":::
+  :::image type="content" source="media/assign-pipeline/remove-1.png" alt-text="Screenshot of error attempting to remove a workspace assigned to a deployment pipeline." lightbox="media/assign-pipeline/remove-1.png":::
 
 To remove the workspace, you can return to the workspace page and click the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where they can unassign the workspace and then remove it.
 
