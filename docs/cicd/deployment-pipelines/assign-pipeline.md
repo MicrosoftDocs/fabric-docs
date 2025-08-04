@@ -66,6 +66,19 @@ To assign a workspace to a deployment pipeline stage, follow these steps:
 
 ---
 
+## Remove a workspace in a deployment pipeline
+If you attempt to delete a workspace via the workspace settings, and that workspace is currently assigned to a [Deployment Pipeline](intro-to-deployment-pipelines.md), the 
+deletion fails.  
+
+  :::image type="content" source="media/deploy-content/remove-1.png" alt-text="Screenshot of error attempting to remove a workspace assigned to a deployment pipeline." lightbox="media/deploy-content/remove-1.png":::
+
+To remove the workspace, you can return to the workspace page and click the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where they can unassign the workspace and then remove it.
+
+If you do not have permissions to [unassign](#unassign-a-workspace-from-a-deployment-pipeline-stage) the workspace, you will need to conact someone with administratibe rights on the deployment pipeline to perform the unassignment.
+
+>[!IMPORTANT]
+>If the only person with access to the deployment pipeline has left the organization, then a tenant global administrator will need to use an API to release the workspace. See [How to delete a pipeline that doesn't have an owner](../troubleshoot-cicd.md#how-can-i-delete-a-pipeline-that-doesnt-have-an-owner-an-orphaned-pipeline). 
+
 ## Unassign a workspace from a deployment pipeline stage
 
 You can unassign a workspace from any deployment pipeline stage. If you want to assign a different workspace to a deployment pipeline stage, you first have to unassign the current workspace from that stage.
