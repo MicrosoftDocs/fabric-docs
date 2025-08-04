@@ -6,7 +6,7 @@ ms.author: mimart
 ms.service: fabric
 ms.subervice: security
 ms.topic: how-to #Don't change
-ms.date: 04/08/2025
+ms.date: 08/04/2025
 
 #customer intent: As a data engineer, I want to authenticate using workspace identity so that my Fabric items can connect with data sources securely.
 
@@ -18,7 +18,7 @@ A Fabric workspace identity is an automatically managed service principal that c
 
 Trusted access to Storage accounts and authentication with workspace identity can be combined together. You can use workspace identity as the authentication method to access storage accounts that have public access restricted to selected virtual networks and IP addresses.
 
-This article describes how to use the workspace identity to authenticate when connecting OneLake shortcuts, Data Pipelines, Semantic Models, and Dataflows Gen2 (CI/CD) to data sources. The target audience is data engineers and anyone interested in establishing a secure connection between Fabric items and data sources.
+This article describes how to use the workspace identity to authenticate when connecting OneLake shortcuts, data pipelines, semantic models, and Dataflows Gen2 (CI/CD) to data sources. The target audience is data engineers and anyone interested in establishing a secure connection between Fabric items and data sources.
 
 ## Supported data sources
 For the most up-to-date information about Fabric connectors with support for workspace identity authentication, refer to [Fabric Connector Overview](../data-factory/connector-overview.md)
@@ -39,7 +39,7 @@ You must be a workspace admin to be able to create and manage a workspace identi
 
 When the workspace identity has been created, the tab displays the workspace identity details and the list of authorized users.
 
-Workspace identity can be [created and deleted by workspace admins](./workspace-identity.md). Admins, members, and contributors in the workspace can configure the identity as the authentication method in connections that are used in OneLake shortcuts, Data Pipelines, Semantic Models, and Dataflows Gen2.
+Workspace identity can be [created and deleted by workspace admins](./workspace-identity.md). Admins, members, and contributors in the workspace can configure the identity as the authentication method in connections that are used in OneLake shortcuts, data pipelines, semantic models, and Dataflows Gen2.
 
 For more detail, see [Create and manage a workspace identity](./workspace-identity.md#create-and-manage-a-workspace-identity).
 
@@ -108,15 +108,15 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 * Workspace identity can be created in workspaces associated with any capacity (except for My workspaces).
   
-* Workspace identity can be used for authentication in any capacity that supports OneLake shortcuts, Data Pipelines, Semantic Models, or Dataflows Gen2.
+* Workspace identity can be used for authentication in any capacity that supports OneLake shortcuts, data pipelines, semantic models, or Dataflows Gen2.
 
 * Trusted workspace access to firewall-enabled Storage accounts is supported in any F capacity.
 
 * You can create connections with workspace-identity-based authentication in the *Manage Gateways and Connections* experience.
 
-* If you reuse connections configured with the workspace identity authentication method in Fabric items other than OneLake shortcuts, Data Pipelines, Semantic Models, or Dataflows Gen2, or in other workspaces, they might not work.
+* If you reuse connections configured with the workspace identity authentication method in Fabric items other than OneLake shortcuts, data pipelines, semantic models, or Dataflows Gen2, or in other workspaces, they might not work.
 
-* Connections with workspace-identity-authentication can only be used in OneLake shortcuts, Data Pipelines, Semantic Models, or Dataflows Gen2.
+* Connections with workspace-identity-authentication can only be used in OneLake shortcuts, data pipelines, semantic models, or Dataflows Gen2.
 
 * If you create a connection in the *Manage Gateways and Connections* experience, you might see a banner stating that the workspace identity authentication type is only supported in data pipelines and OneLake shortcuts. This is a known issue that will be resolved with future releases.
 
