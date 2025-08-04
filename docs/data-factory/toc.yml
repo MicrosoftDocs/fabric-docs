@@ -997,7 +997,7 @@
             href: web-activity.md
           - name: WebHook activity
             href: webhook-activity.md
-      - name: Data pipeline runs
+      - name: Run, schedule, or trigger pipelines
         href: pipeline-runs.md
       - name: Pipeline run alerts
         href: create-alerts-for-pipeline-runs.md
@@ -1018,8 +1018,6 @@
             href: expression-language.md
       - name: REST API capabilities
         href: pipeline-rest-api-capabilities.md
-      - name: Storage event triggers
-        href: pipeline-storage-event-triggers.md
       - name: Tutorials
         items:
           - name: Run a Script activity and send output by email
