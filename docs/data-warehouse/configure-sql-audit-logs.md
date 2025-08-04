@@ -4,7 +4,7 @@ description: Step-by-step instructions to enable and configure SQL audit logs on
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: fresantos
-ms.date: 07/15/2025
+ms.date: 08/01/2025
 ms.topic: how-to
 ms.search.form: Warehouse SQL Audit Logs # This article's title should not change. If so, contact engineering.
 ---
@@ -87,6 +87,7 @@ Your warehouse will now record the selected audit events and store the logs secu
     PATCH https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/warehouses/<warehouseId>/settings/sqlAudit
     content-type: application/json
     Authorization: Bearer <BEARER_TOKEN>
+    
     {
         "state": "Enabled",
         "retentionDays": "0"
@@ -99,6 +100,10 @@ Your warehouse will now record the selected audit events and store the logs secu
     - Replace `<BEARER_TOKEN>` with your [bearer token](#obtain-your-power-bi-bearer-token).
     - Setting `state` to "Enabled" activates auditing (use "Disabled" to turn it off).
     - The `retentionDays` parameter is set to `0` by default for unlimited retention.
+    
+   > [!IMPORTANT]
+   > In the extension example code, you must include an empty line immediately after providing the bearer token. This empty line signals the extension where the HTTP headers end and the API command body begins, allowing it to correctly distinguish between the two.
+    
 1. Select **Send Request**.
 
 #### Check audit log status with the REST API

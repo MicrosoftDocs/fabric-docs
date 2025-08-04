@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: conceptual
 ms.custom:
-ms.date: 08/28/2024
+ms.date: 08/01/2025
 ---
 
 # Workspace identity
@@ -24,7 +24,9 @@ While Fabric workspace identities share some similarities with Azure managed ide
 ## Create and manage a workspace identity
 
 You must be a workspace admin to be able to create and manage a workspace identity. The workspace you're creating the identity for can't be a **My Workspace**.
-1. Navigate to the workspace and open the workspace settings.
+1. Sign in to the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
+1. Select **Workspaces**, and then select the workspace you want to create a workspace identity for.
+1. In the workspace, select the **Workspace settings** (gear) icon.
 1. Select the **Workspace identity** tab.
 1. Select the **+ Workspace identity** button.
 
