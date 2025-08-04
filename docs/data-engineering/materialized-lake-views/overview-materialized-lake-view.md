@@ -22,11 +22,11 @@ Materialized lake views in Microsoft Fabric facilitate the implementation of a M
 * **Visualization and monitoring**: Developers can visualize lineage across all entities in lakehouse, view the dependencies, and track its execution progress. The processing pipeline is optimized for performance by updating the data in the appropriate sequence, managing optimal parallel paths, and refreshing only the parts of the lineage that have changed. This feature offers an integrated data quality report that highlights data quality trends. Additionally, alerts can be configured based on any condition related to data quality rule violations.
 
 > [!NOTE]
-> - This feature will be rolling out in North Central US, South India, North Europe, West Europe Regions in next few weeks.
+> - This feature will be rolling out in North Central US, South India Capacity Regions in next few weeks.
 > - This feature is currently available in UK South, Canada East, France Central, Germany West Central, Israel Central, Italy North, Norway East, Poland Central,
  South Africa North, Spain Central, Sweden Central, Switzerland North, Canada Central, UK West, Switzerland West, Australia East, Australia Southeast, Brazil South,
  Central India, Central US, East Asia, East US, East US 2, Japan East, Japan West, Korea Central, Mexico Central, Southeast Asia, UAE North, West US, West US 2
- West US 3 Regions.
+ West US 3, North Europe, West Europe Capacity Regions.
 
 ## Current limitations
 
