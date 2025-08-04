@@ -19,10 +19,10 @@ Once a capacity of interest is identified, you can drill through to the **Comput
 > [!NOTE]
 > You see only the capacities for which you have **admin access**.
 
-The health page has two views:
+The **Health** page has two views:
 
 - **Last 24 hours**: Displays metrics aggregated over the past 24 hours.
-- **Last 1 hour**: Displays near real-time insights over the past 60 minutes.
+- **Last one hour**: Displays near real-time insights over the past 60 minutes.
 
 The **Health** page is divided into the following sections:
 
@@ -90,20 +90,20 @@ The matrix includes the following fields:
 
 ## Navigate to Compute or Storage pages
 
-Choose a specific capacity from the capacity breakdown table to navigate to compute and storage pages. This selection allows for a detailed examination and understanding of the compute and storage resources usage of the capacity. 
+Choose a specific capacity from the capacity breakdown table to navigate to **Compute** and **Storage** pages. This selection allows for a detailed examination and understanding of the compute and storage resources usage of the capacity. 
 
-There are two ways to navigate to these pages:
+There are two ways to navigate to these pages: drilling through and direct navigation.
 
-- **Drill-through from the Health page**:
+- Drill through from the **Health** page:
   - **Option 1**: Right-click a capacity row and choose **Drill through > Compute** or **Storage**.
-  - **Option 2**: Select a capacity from the **Capacity Breakdown** visual and select the **Explore** button.
+  - **Option 2**: Select a capacity from the **Capacity Breakdown** visual, then select the **Explore** button.
   
   In both cases, the selected capacity is automatically passed as a filter.
 
-- **Direct navigation**: Use the **Navigation** pane at the top of the page to go to the **Compute** or **Storage** page. Once there, manually select a capacity using the **Capacity name** slicer.
+- Direct navigation: Use the **Navigation** pane at the top of the page to go to the **Compute** or **Storage** page. Once there, manually select a capacity using the **Capacity name** slicer.
 
 ## Related content
 
-- [Understand the Microsoft Fabric Capacity Metrics app](metrics-app.md)
+- [What is the Microsoft Fabric Capacity Metrics app?](metrics-app.md)
 - [Understand the Compute page](metrics-app-compute-page.md)
-- [Understand the metrics app Storage page](metrics-app-storage-page.md)
+- [Understand the Storage page](metrics-app-storage-page.md)
