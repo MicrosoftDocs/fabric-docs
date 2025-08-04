@@ -98,6 +98,5 @@ When designing pipelines, consider these recommendations:
 ## Next steps
 
 - [Create your first pipeline](create-first-pipeline-with-sample-data.md)
-- [Data pipeline runs](pipeline-runs.md)
-- [Pipeline activities](pipeline-activities.md)
-- [Schedule and trigger pipelines](pipeline-triggers.md)
+- [Pipeline activities](activity-overview.md)
+- [Run, schedule, and trigger pipelines](pipeline-runs.md)
