@@ -10,7 +10,7 @@ ms.date: 08/04/2025
 
 # Find your Fabric home region
 
-A Fabric home region is the Azure datacenter region linked to your Fabric tenant, chosen when your account is created. Knowing your home region is important for understanding [workload and feature availability](region-availability.md), as well as data residency, performance, and compliance.
+A Fabric home region is the Azure datacenter region linked to your Fabric tenant, chosen when your tenant was created. Knowing your home region is important for understanding [workload and feature availability](region-availability.md), as well as data residency, performance, and compliance.
 
 To find your Fabric home region, follow these steps:
 
