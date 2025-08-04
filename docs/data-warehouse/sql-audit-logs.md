@@ -4,7 +4,7 @@ description: Learn more about SQL Audit Logs on Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: fresantos
-ms.date: 07/15/2025
+ms.date: 08/04/2025
 ms.topic: concept-article
 ms.search.form: Warehouse SQL Audit Logs # This article's title should not change. If so, contact engineering.
 ---
@@ -50,9 +50,9 @@ Workspace Admins can grant **Audit queries** permissions to an item using the sh
 
 ## Database-level audit action groups and actions
 
-To make audit log configuration more accessible, the Fabric Data Warehouse Audit Logs UI uses friendly names to help non-SQL Admins and other users easily understand the events being captured.
+To make audit log configuration more accessible, the Fabric portal uses friendly names to help non-SQL Admins and other users easily understand captured Fabric Data Warehouse events.
 
-These friendly names are mapped to the underlying SQL Audit action groups. The table below serves as a reference, outlining this mapping and providing a description for each group.
+These friendly names are mapped to the underlying SQL Audit action groups. The following table serves as a reference.
 
 | Friendly Name | Action Group Name | Description |
 |---|---|---|
