@@ -56,7 +56,7 @@ Here are the supported OneLake events:
 
 | Event type name | Description |
 | --------------- | ----------- |
-| Microsoft.Fabric.OneLake.FileCreated | Raised when a file is created or replaced in OneLake. |
+| Microsoft.Fabric.OneLake.FileCreated | Raised when a file is created or updated in OneLake. |
 | Microsoft. Fabric.OneLake.FileDeleted | Raised when a file is deleted in OneLake. |
 | Microsoft. Fabric.OneLake.FileRenamed | Raised when a file is renamed in OneLake. | 
 | Microsoft.Fabric.OneLake.FolderCreated | Raised created when a folder is created in OneLake. | 
