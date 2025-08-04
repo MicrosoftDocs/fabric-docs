@@ -17,7 +17,6 @@
             href: copilot-fabric-data-factory.md
           - name: Get started with Copilot in Fabric in the Data Factory workload
             href: copilot-fabric-data-factory-get-started.md
-      
       - name: Pricing in Data Factory
         items: 
           - name: Pricing overview
@@ -903,8 +902,10 @@
             href: dataflow-parameters.md
           - name: Saving a draft of your dataflow
             href: dataflows-gen2-save-draft.md
-  - name: Manage your pipelines
+  - name: Orchestrate your workflows
     items:
+      - name: What is a data pipeline?
+        href: pipeline-overview.md
       - name: Pipeline activity overview
         href: activity-overview.md 
       - name: Apache Airflow Job
