@@ -143,7 +143,7 @@ deletion will fail.
 
 To remove the workspace, you can return to the workspace page and click the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where they can unassign the workspace and then remove it.
 
-For more information, see [Remove a workspace from a deployment pipeline](../cicd/deployment-pipelines/deploy-content.md#remove-a-workspace-in-a-deployment-pipeline)
+For more information, see [Remove a workspace from a deployment pipeline](../cicd/deployment-pipelines/assign-pipeline.md#remove-a-workspace-in-a-deployment-pipeline)
 
 
 
