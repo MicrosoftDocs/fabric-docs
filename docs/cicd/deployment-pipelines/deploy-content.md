@@ -87,7 +87,7 @@ Unsupported items are also shown in this list. Unsupported items can't be deploy
 
 >[!NOTE]
 >
-> * You can't deploy a Fabric item to the next stage if the items it's dependent on don't exist in the stage you are deploying to. For example, deploying a report without a semantic model will fail, unless the semantic model already exists in the target stage.
+> * You can't deploy a Fabric item to the next stage if the items it's dependent on don't exist in the stage you are deploying to. For example, deploying a report without a semantic model fails, unless the semantic model already exists in the target stage.
 > * You might get unexpected results if you choose to deploy an item without the item it's dependent on. This can happen when a semantic model or a dataflow in the target stage has changed and is no longer identical to the one in the stage you're deploying from.
 
 When deploying workspaces that contain folders, the following rules apply:
@@ -99,17 +99,17 @@ When deploying workspaces that contain folders, the following rules apply:
 * The folder hierarchy of paired items is updated only during deployment. During assignment, after the pairing process, the hierarchy of paired items isn't updated yet.
 
 #### Remove a workspace in a deployment pipeline
-If you attempt to delete a workspace via the workspace settings, and that workspace is currently assigned to a [Deployment Pipeline](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md), the 
-deletion will fail.  
+If you attempt to delete a workspace via the workspace settings, and that workspace is currently assigned to a [Deployment Pipeline](intro-to-deployment-pipelines.md), the 
+deletion fails.  
 
   :::image type="content" source="media/deploy-content/remove-1.png" alt-text="Screenshot of error attempting to remove a workspace assigned to a deployment pipeline." lightbox="media/deploy-content/remove-1.png":::
 
 To remove the workspace, you can return to the workspace page and click the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where they can unassign the workspace and then remove it.
 
-If you do not have permissions to unassign the workspace, you will need to conact someone with administratibe rights on the on that Deployment pipeline to perform the unassignment.
+If you do not have permissions to unassign the workspace, you will need to conact someone with administratibe rights on the deployment pipeline to perform the unassignment.
 
 >[!IMPORTANT]
->If the only person with access to the deployment pipeline has left the organization, then a tenant global administrator will need to use an API to release the workspace. See [How to delete a pipeline that doesn't have an owner](troubleshoot-cicd.md#how-can-i-delete-a-pipeline-that-doesnt-have-an-owner-an-orphaned-pipeline) 
+>If the only person with access to the deployment pipeline has left the organization, then a tenant global administrator will need to use an API to release the workspace. See [How to delete a pipeline that doesn't have an owner](../troubleshoot-cicd.md#how-can-i-delete-a-pipeline-that-doesnt-have-an-owner-an-orphaned-pipeline) 
 
 #### Backwards deployment
 
@@ -125,7 +125,7 @@ For example, if you assign an existing workspace to a production stage and then 
 
 ### Review your deployment and leave a note
 
-After selecting which content to deploy, a pop-up window lists all the items you're about to deploy. You can review the list and add a note, or comment, to the deployment. Adding a note is optional, but it's highly recommended as the notes are added to the [deployment history](deployment-history.md). With a note for each deployment, reviewing the history of your pipelines becomes more meaningful.
+After selecting which content to deploy, a pop-up window lists all the items you're about to deploy. You can review the list and add a note, or comment, to the deployment. Adding a note is optional, but it's recommended as the notes are added to the [deployment history](deployment-history.md). With a note for each deployment, reviewing the history of your pipelines becomes more meaningful.
 
 To leave a note, expand the **Add a note** option and write your note in the text box. When you're ready to deploy, select **Deploy**.
 
@@ -133,7 +133,7 @@ To leave a note, expand the **Add a note** option and write your note in the tex
 
 ## Deploy content from one stage to another
 
-Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. Though you can have up to 10 different stages in the pipeline, a typical workflow for moving content is development to test stage, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
+Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is done after you performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. Though you can have up to 10 different stages in the pipeline, a typical workflow for moving content is development to test stage, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-from-one-stage-to-another) section.
 
 When you deploy content to a stage that already has other content in it, select the items you want to deploy. An item that is paired with another item in the source stage (the paired item name appears on the last column) is overwritten by it.
 
@@ -141,7 +141,7 @@ Relationships between the items aren't kept. Therefore, if you deploy a report t
 
 To deploy content to the next stage in the deployment pipeline, select the items and then select the deploy button.
 
-When reviewing the test and production stage cards, you can see the last deployment date and time. This indicates the last time content was deployed to the stage.
+When reviewing the test and production stage cards, you can see the last deployment date and time. The last deployment date and time shows the last time content was deployed to the stage.
 
 The deployment time is useful for establishing when a stage was last updated. It can also be helpful if you want to track time between test and production deployments.
 
