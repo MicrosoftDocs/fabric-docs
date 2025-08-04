@@ -98,19 +98,6 @@ When deploying workspaces that contain folders, the following rules apply:
 * Deploying only some items in a folder updates the *structure* of all items in the folder in the stage being deployed to, even though the items themselves aren't deployed.
 * The folder hierarchy of paired items is updated only during deployment. During assignment, after the pairing process, the hierarchy of paired items isn't updated yet.
 
-#### Remove a workspace in a deployment pipeline
-If you attempt to delete a workspace via the workspace settings, and that workspace is currently assigned to a [Deployment Pipeline](intro-to-deployment-pipelines.md), the 
-deletion fails.  
-
-  :::image type="content" source="media/deploy-content/remove-1.png" alt-text="Screenshot of error attempting to remove a workspace assigned to a deployment pipeline." lightbox="media/deploy-content/remove-1.png":::
-
-To remove the workspace, you can return to the workspace page and click the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where they can unassign the workspace and then remove it.
-
-If you do not have permissions to unassign the workspace, you will need to conact someone with administratibe rights on the deployment pipeline to perform the unassignment.
-
->[!IMPORTANT]
->If the only person with access to the deployment pipeline has left the organization, then a tenant global administrator will need to use an API to release the workspace. See [How to delete a pipeline that doesn't have an owner](../troubleshoot-cicd.md#how-can-i-delete-a-pipeline-that-doesnt-have-an-owner-an-orphaned-pipeline). 
-
 #### Backwards deployment
 
 You might sometimes want to deploy content to a previous stage. 
