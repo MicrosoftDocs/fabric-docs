@@ -128,14 +128,9 @@ Your organization might have up to 500 [!INCLUDE [fabric-activator](../includes/
 * Use an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item instead of creating a new item, or
 * Delete some of your existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items.
 
-## Application Lifecycle limitations
+## Lifecycle management limitations
 
-The following components are currently not supported in Activator ALM:
-* Eventstream  (rolling out)
-* Real Time Hub Fabric Events (rolling out)
-* Real-Time Hub Azure Storage events - not supported
-* Data Pipelines (as target action) 
-* Power BI
+Activators on Azure Blob Storage events do not currently work with Microsoft Fabric's lifecycle management tools. If you include an Activator on Azure Blob Storage events in a deployment pipeline, or in a workspace with Git integration, then you will get an error message when you attemps to deploy or commit the Activator item.
 
 ## Related content
 
