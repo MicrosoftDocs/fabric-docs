@@ -65,6 +65,9 @@ Select the stage to deploy from and then select the deployment button. The deplo
 
 If you don't want to deploy everything from that stage, you can select specific items for deployment. Select the **Show more** link, and then select the items you wish to deploy. When you select the **Deploy** button, only the selected items are deployed to the next stage.
 
+>[!NOTE]
+>Items cannot be selected for deployment across workspace folders in the default stage view. However switching to [flat list view](#flat-list-view) allows you to select items for deployment across workspace folders.
+
 Fabric items are often related to or dependent on other items. Dashboards, reports, semantic models, dataflows, Lakehouses, and Warehouses are all examples of items that can be related to or dependent on other items. To include all items that are related to the item you want to deploy, use the select related button. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
 
 If you don't want to deploy everything from that stage, you can select only specific items for deployment. Since dashboards, reports, semantic models, and dataflows can have dependencies, you can use the select related button to see all the items that the selected item is dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
@@ -101,7 +104,7 @@ When deploying workspaces that contain folders, the following rules apply:
 #### Flat list view
 With the current view of the folders hierarchy, you can select for deployment only items in the same folder level. You cannot select items across folders.
  
-Flat list view is a new feature of deployment pipelines that allows you to select items regardless of it's location. With the flat list view, you can now select items across folders, regarding their location in the workspace.
+Flat list view is an added feature of deployment pipelines that allows you to select items regardless of it's location. With the flat list view, you can now select items across folders, regarding their location in the workspace.
 
 The following are important to keep in mind when using the flat list view.
 
