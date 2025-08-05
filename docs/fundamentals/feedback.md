@@ -37,7 +37,7 @@ There are a few ways you can give feedback while engaging with the Microsoft Fab
 
 ## Fabric user panel
 
-Join the [Microsoft Fabric user panel](https://ux.microsoft.com/Panel/FabricUserPanel?utm_campaign=generic&utm_source=direct%20invite&utm_medium=email) to help shape the future of Microsoft Fabric and Power BI. By signing up, you can share real-world experiences and feedback with the Fabric and Power BI product teams through surveys and 1:1 meetings. This is a free opportunity to engage directly with the engineering team behind Fabric and Power BI. Your input plays a key role in improving the tools and experiences we build.
+Join the [Microsoft Fabric user panel](https://aka.ms/JoinFabricUserPanel) to help shape the future of Microsoft Fabric and Power BI. By signing up, you can share real-world experiences and feedback with the Fabric and Power BI product teams through surveys and 1:1 meetings. This is a free opportunity to engage directly with the engineering team behind Fabric and Power BI. Your input plays a key role in improving the tools and experiences we build.
 
 To sign up for our Fabric User Panel, use the following steps:
 
