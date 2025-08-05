@@ -72,7 +72,7 @@ deletion fails.
 
   :::image type="content" source="media/assign-pipeline/remove-1.png" alt-text="Screenshot of error attempting to remove a workspace assigned to a deployment pipeline." lightbox="media/assign-pipeline/remove-1.png":::
 
-To remove the workspace, you can return to the workspace page and click the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where they can unassign the workspace and then remove it.
+To remove the workspace, you can return to the workspace page and click the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where you can unassign the workspace and then remove it.
 
 If you do not have permissions to [unassign](#unassign-a-workspace-from-a-deployment-pipeline-stage) the workspace, you will need to conact someone with administratibe rights on the deployment pipeline to perform the unassignment.
 
