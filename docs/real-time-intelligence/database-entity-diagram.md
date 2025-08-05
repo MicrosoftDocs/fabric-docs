@@ -5,7 +5,7 @@ ms.reviewer: guregini
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
-ms.date: 11/04/2024
+ms.date: 08/05/2025
 ms.search.form: KQL Database
 #Customer intent: Learn how to use the entity diagram in KQL database to manage and optimize database relationships and dependencies.
 ---
