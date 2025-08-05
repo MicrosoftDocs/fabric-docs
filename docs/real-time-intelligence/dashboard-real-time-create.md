@@ -60,7 +60,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. In the upper tool bar, select **New data source** > **Eventhouse / KQL Database**.
 
-    :::image type="content" source="media/real-time-dashboard/eventhouse.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with eventhouse/kql database highlighted.":::
+    :::image type="content" source="media/real-time-dashboard/event-house.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with eventhouse/kql database highlighted.":::
 
 1. In the **OneLake catalog** window, select a KQL database to connect to your KQL queryset, and then select **Connect**.
 
