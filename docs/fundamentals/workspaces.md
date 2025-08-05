@@ -129,10 +129,23 @@ As an admin for a workspace, you can delete it. When you delete the workspace, e
 
 In the Workspace settings pane, select **Other** > **Remove this workspace**.
 
+
+
+
 :::image type="content" source="media/workspaces/remove-workspace.png" alt-text="Screenshot showing deleting workspace." lightbox="media/workspaces/remove-workspace.png":::
 
 > [!WARNING]
 > If the workspace you're deleting has a workspace identity, that workspace identity will be irretrievably lost. In some scenarios this could cause Fabric items relying on the workspace identity for trusted workspace access or authentication to break. For more information, see [Delete a workspace identity](../security/workspace-identity.md#deleting-the-identity).
+
+#### Remove a workspace in a deployment pipeline
+If you attempt to delete a workspace via the workspace settings, and that workspace is currently assigned to a [Deployment Pipeline](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md), the 
+deletion will fail.  
+
+To remove the workspace, you can return to the workspace page and click the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where you can unassign the workspace and then remove it.
+
+For more information, see [Remove a workspace from a deployment pipeline](../cicd/deployment-pipelines/assign-pipeline.md#remove-a-workspace-in-a-deployment-pipeline)
+
+
 
 ## Administering and auditing workspaces
 
