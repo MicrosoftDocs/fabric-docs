@@ -16,7 +16,7 @@ ai-usage: ai-assisted
 
 # What is Copilot in Fabric in the Data Factory workload?
 
-This article provides an overview of Copilot in the Data Factory workload, including its features and benefits. Microsoft Copilot in the Data Factory workload is an AI-enhanced toolset that empowers customers to use natural language to articulate their requirements for creating data integration solutions using [Dataflow Gen2](../data-factory/data-factory-overview.md#dataflows). The Copilot in the Data Factory workload operates like a subject-matter expert (SME) collaborating with you to design your data flows, supporting both citizen and professional data wranglers in streamlining their workflows.
+This article provides an overview of Copilot in the Data Factory workload, including its features and benefits. Microsoft Copilot in the Data Factory workload is an AI-enhanced toolset that empowers customers to use natural language to articulate their requirements for creating data integration solutions using [Dataflow Gen2](../data-factory/dataflows-gen2-overview.md). The Copilot in the Data Factory workload operates like a subject-matter expert (SME) collaborating with you to design your data flows, supporting both citizen and professional data wranglers in streamlining their workflows.
 
 Before your business can start using Copilot capabilities in Fabric, your administrator must enable Copilot in Microsoft Fabric (see [Copilot Fabric Overview](../fundamentals/copilot-fabric-overview.md#enable-copilot).
 

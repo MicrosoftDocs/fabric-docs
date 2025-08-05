@@ -7,56 +7,56 @@ ms.reviewer: makromer
 ms.topic: overview
 ms.custom: configuration, sfi-image-nochange
 ms.search.form: product-data-integration, Data_Factory_Overview, product-data-factory
-ms.date: 12/18/2024
+ms.date: 07/22/2025
+ai-usage: ai-assisted
 ---
 
 # What is Data Factory in Microsoft Fabric?
 
-Data Factory empowers you with a modern data integration experience to ingest, prepare and transform data from a rich set of data sources (for example, databases, data warehouse, Lakehouse, real-time data, and more). Whether you are a citizen or professional developer, you will be able to transform the data with intelligent transformations and leverage a rich set of activities. We can create pipelines to execute one or more activities, access data sources or services through connections, and after creating a pipeline, we can add triggers to automatically run our processes at specific times or in response to changing scenarios. With Data Factory in Microsoft Fabric, we are bringing fast copy  (data movement) capabilities to both dataflows and data pipelines. With Fast Copy, you can move data between your favorite data stores blazing fast. Most importantly, Fast Copy enables you to bring data to your Lakehouse and Data Warehouse in Microsoft Fabric for analytics.
+Data Factory in Microsoft Fabric tackles one of today's biggest business challenges: turning scattered data into actionable insights. Your organization's valuable data lives in different places: databases, files, cloud services, and legacy systems—making it hard to get a complete picture of your business. Data Factory breaks down these data silos by connecting to over 150 data sources, moving data at scale, and transforming it into formats that work for analytics and decision-making. Whether you're a business user building your first dataflow or a developer creating complex pipelines, you'll find the right tools to bring your data together, clean it up, and make it ready for analysis in your Lakehouse or Data Warehouse.
 
-There are several high-level features Data Factory implements: dataflows, pipelines, the Copy jobs, and Apache Airflow jobs.
+Data Factory in Fabric provides data integration for your data platform to help your teams move faster, collaborate better, and make smarter decisions based on complete, up-to-date information.
 
-- Dataflows enable you to leverage more than 300 transformations in the dataflows designer, letting you transform data easier and with more flexibility than any other tool - including smart AI-based data transformations.
-- Data pipelines enable you to leverage the out-of-the-box rich data orchestration capabilities to compose flexible data workflows that meet your enterprise needs.
-- Copy jobs enable you to quickly and easily move data from any of the hundreds of supported connectors in Fabric, with a simple user interface and minimal learning curve.
-- Apache Airflow jobs enable you to use the full breadth of the Apache Airflow Workflow Orchestration Manager capabilities and leverage your existing workflows within Data Factory.
+## What's data integration?
 
-## Dataflows
+Data integration is the process of bringing all your data together so you can access it and analyze it. Data integration is a key part of any business that's ready to make data-driven decisions.
 
-Dataflows provide a low-code interface for ingesting data from hundreds of data sources, transforming your data using 300+ data transformations. You can then load the resulting data into multiple destinations, such as Azure SQL databases and more. Dataflows can be run repeatedly using manual or scheduled refresh, or as part of a data pipeline orchestration.
+ETL is one aspect of data integration. ETL stands for Extract, Transform, Load. It's a process that takes information from many different sources, transforms it into a format that can be analyzed, and loads it into a destination system for more analysis or reporting. Implementing an ETL process in a business's data platform improves data consistency, quality, and accessibility. So let's talk about each phase:
 
-Dataflows are built using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that's available today across several Microsoft products and services such as Excel, Power BI, Power Platform, Dynamics 365 Insights applications, and more. Power Query empowers all users, from citizen to professional data integrators, to perform data ingestion and data transformations across their data estate. Perform joins, aggregations, data cleansing, custom transformations, and much more all from an easy-to-use, highly visual, low-code UI.
+- **Extract**: This is the process of reading data from your sources and moving it to a central storage location. Sources can be anything from databases to files, APIs, websites, etc.
+- **Transform**: This is the process of cleaning, enriching, and transforming your data into a format that can be easily analyzed. For example, you might want to compare sales data coming from a SQL database and scanned, historical sales documents. After extracting the data, you need to transform the data from each source so it's in the same format, check the data to make sure there are no corruptions or duplicates, and then combine the data into a single dataset.
+- **Load**: This is the process of writing the transformed data to a destination system, like a data warehouse or a data lake. The destination system is where you can run queries and reports on your data.
 
-:::image type="content" source="media/data-factory-overview/dataflow-experience.png" alt-text="Screenshot of the Power BI user interface showing the dataflow experience." lightbox="media/data-factory-overview/dataflow-experience.png":::
+But what if you already have good, clean data? Being able to access your data where it lives and surface it to your analytics tools is another key aspect of data integration. Mirroring in Fabric provides an easy experience to break down data silos between technology solutions.
 
-## Data pipelines
+And powerful tools to manage your data integration processes are essential to make sure your data is always up-to-date, and that you can respond to changes in your data sources or business requirements.
 
-Data pipelines enable powerful workflow capabilities at cloud-scale. With data pipelines, you can build complex workflows that can refresh your dataflow, move PB-size data, and define sophisticated control flow pipelines.
+## Data factory is a powerful data integration solution
 
-Use data pipelines to build complex ETL and data factory workflows that can perform many different tasks at scale. Control flow capabilities are built into data pipelines that allow you to build workflow logic, which provides loops and conditionals.
+Data Factory allows you to connect to your data, move it, transform it, and orchestrate your data movement and transformation tasks from one place.
 
-Add a configuration-driven copy activity together with your low-code dataflow refresh in a single pipeline for an end-to-end ETL data pipeline. You can even add code-first activities for Spark Notebooks, SQL scripts, stored procs, and more.
+- **Connect to your data** - Whether on-premises or in the cloud, Data Factory allows you to connect to your data sources and destinations. It supports a wide range of data sources, including databases, data lakes, file systems, APIs, and more. See [available connectors](connector-overview.md) for a complete list of supported data sources and destinations.
+- **Move data** - Data Factory provides several methods to move data from source to destination, or provide easy access to existing data, depending on your needs.
+    - [Copy activity](copy-data-activity.md) - the most common way to move data from one place to another. It supports a wide range of data sources and destinations, and allows you to copy data in parallel for better performance.
+    - [Copy job](what-is-copy-job.md) - a way to copy data from one place to another without the need to create a pipeline.
+    - Mirroring - create a near real-time replica of your operational database within OneLake in Microsoft Fabric to make your analytics and reporting easier.
+- **Transform**: Data Factory provides activities to connect you to your custom transformation scripts or the powerful dataflows designer.
+    - [Pipeline activities](activity-overview.md#data-transformation-activities) - Fabric notebook, HDInsight activity, Spark job definition, stored procedure, SQL scripts, and more. These activities allow you to run custom code or scripts to transform your data.
+    - [Dataflows](dataflows-gen2-overview.md) - transform your data using a low-code interface with over 300 transformations. You can perform joins, aggregations, data cleansing, custom transformations, and much more.
+- **Orchestrate**: Data Factory allows you to create pipelines that can run multiple data movements, transformations, and other activities in a single workflow. You can schedule these pipelines to run at specific times or trigger them based on events. Pipelines can include control flow logic, such as loops and conditionals, to handle complex workflows and even integrate with Apache Airflow.
 
-:::image type="content" source="media/data-factory-overview/data-pipelines.png" alt-text="Screenshot of the user interface showing copy activity." lightbox="media/data-factory-overview/data-pipelines.png":::
+And for all these tools, Copilot in Fabric is there to help you get started and assist you in building your dataflows and pipelines. Copilot can help you with everything from writing queries to creating dataflows to building pipelines. For more information, see [Copilot in Fabric in the Data Factory workload](copilot-fabric-data-factory.md).
 
-## Copy jobs
+## What do you need to get started?
 
-Data pipelines in Data Factory implement the Copy activity, which supports the full flexibility and integration with other activities in traditional pipelines, but also involves a learning curve, which can impose challenges and create barriers for new users who want to rapidly instrument the movement of data from source to destination. The Copy job was introduced to simplify the copy process and make moving data quick and easy for a broad range of scenarios that don't require further instrumentation or integration with other activities.
-
-:::image type="content" source="media/copy-job/copy-job-mode.png" alt-text="Screenshot of the user interface showing a Copy job." lightbox="media/copy-job/copy-job-mode.png":::
-
-Learn more about how to use the Copy job to move your data with ease in [What is Copy job](what-is-copy-job.md).
-
-## Apache Airflow jobs
-
-Many Data Factory users are familiar with Apache Airflow. The Apache Airflow job is the next generation of Data Factory's Workflow Orchestration Manager. It's a simple and efficient way to create and manage Apache Airflow orchestration jobs, enabling you to run Directed Acyclic Graphs (DAGs) at scale with ease. It empowers you with a modern data integration experience to ingest, prepare and transform data from a rich set of data sources for example, databases, data warehouse, Lakehouse, real-time data, and more.
-
-While there are many things you can do with Apache Airflow, the following image shows an example of a running simple Hello World Python script using the feature:
-
-:::image type="content" source="media/apache-airflow-jobs/boilerplate-directed-acyclic-graph.png" alt-text="Screenshot of the user interface showing an Apache Airflow job." lightbox="media/apache-airflow-jobs/boilerplate-directed-acyclic-graph.png":::
-
-Learn more and get started with the Apache Airflow job in [What is Apache Airflow job](apache-airflow-jobs-concepts.md)
+- A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. If you don't have one, you can [create a free account](https://azure.microsoft.com/free/).
+- A [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace. [Learn how to create a workspace.](../fundamentals/create-workspaces.md)
+- Access to [Power BI](https://app.powerbi.com/).
 
 ## Related content
 
-To get started with [!INCLUDE [product-name](../includes/product-name.md)], go to [Quickstart: Create your first Dataflow Gen2 to get and transform data](create-first-dataflow-gen2.md).
+For more information, and to get started with [!INCLUDE [product-name](../includes/product-name.md)], follow these guides:
+
+- [Guided data factory lab](https://regale.cloud/Microsoft/play/4344/fabric-data-factory#/0/0) - demo of Data Factory in Fabric
+- [What can you connect to?](connector-overview.md) - all available sources and destinations for Data Factory
+- [End-to-end Data Factory tutorial](tutorial-end-to-end-introduction.md) - we'll guide you through the whole ETL process, from data ingestion to transformation and loading into a destination system

@@ -32,8 +32,8 @@ For a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] solution, you can use
 
 Specifically, you can:
 
-- Use [data pipelines](../data-factory/data-factory-overview.md#data-pipelines) to build workflows to orchestrate the ETL process. Data pipelines can execute SQL scripts, stored procedures, and more.
-- Use [dataflows](../data-factory/data-factory-overview.md#dataflows) to develop low-code logic to ingest data from hundreds of data sources. Dataflows support combining data from multiple sources, transforming data, and then loading it to a destination, like a dimensional model table. Dataflows are built by using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that's available today across many Microsoft products, including Microsoft Excel and Power BI Desktop.
+- Use [data pipelines](../data-factory/pipeline-runs.md) to build workflows to orchestrate the ETL process. Data pipelines can execute SQL scripts, stored procedures, and more.
+- Use [dataflows](../data-factory/dataflows-gen2-overview.md) to develop low-code logic to ingest data from hundreds of data sources. Dataflows support combining data from multiple sources, transforming data, and then loading it to a destination, like a dimensional model table. Dataflows are built by using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that's available today across many Microsoft products, including Microsoft Excel and Power BI Desktop.
 
 > [!NOTE]
 > ETL development can be complex, and development can be challenging. It's estimated that 60-80 percent of a data warehouse development effort is dedicated to the ETL process.

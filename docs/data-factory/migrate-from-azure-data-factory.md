@@ -58,7 +58,7 @@ The following table lists features supported in Azure Data Factory and Fabric Da
 | Execute a [SQL Server Integration Services (SSIS)](/azure/data-factory/how-to-invoke-ssis-package-ssis-activity) package to perform data integration and transformation operations | Yes | Planned |
 | **Data transformation** |||
 | Visually designed data transformations using Apache Spark clusters with [Mapping Dataflows](/azure/data-factory/concepts-data-flow-overview) to create and manage data transformation processes through a graphical interface | Yes | No<sup>2</sup> |
-| Visually designed data transformations using the Fabric compute engine with the intuitive graphical interface of Power Query in [Dataflow Gen2](data-factory-overview.md#dataflows) | No | Yes |
+| Visually designed data transformations using the Fabric compute engine with the intuitive graphical interface of Power Query in [Dataflow Gen2](dataflows-gen2-overview.md) | No | Yes |
 | **Connectivity** |||
 | Support for all [Data Factory data sources](/power-query/connectors) | Yes | In progress<sup>3</sup> |
 | **Scalability** |||

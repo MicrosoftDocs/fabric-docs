@@ -126,7 +126,7 @@ To allow data to become available to other Fabric engines, the KQL database sync
 
 ### Data Factory
 
-This section is concerned with optimizations for [dataflows](../data-factory/data-factory-overview.md#dataflows) and [data pipelines](../data-factory/data-factory-overview.md#data-pipelines) in Data Factory.
+This section is concerned with optimizations for [dataflows](../data-factory/dataflows-gen2-overview.md) and [data pipelines](../data-factory/pipeline-runs.md) in Data Factory.
 
 All operations are background operations, and they're [smoothed](../data-warehouse/compute-capacity-smoothing-throttling.md#smoothing) over a 24-hour period.
 
