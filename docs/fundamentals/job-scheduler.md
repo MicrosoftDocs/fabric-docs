@@ -29,7 +29,7 @@ To access the job scheduler:
 
 You can also access the scheduler from within an item's settings by selecting the **Schedule** label. 
 
-### Set up your schedule
+## Set up your schedule
 
 After you open the scheduler for an item:
 
@@ -55,6 +55,9 @@ To ensure your schedule is valid:
 - Set a valid start and end time for your schedule.
 - Make sure the end time is after the start time.
 - The scheduler automatically handles special cases like daylight saving time and invalid dates (for example, February 30).
+
+> [!IMPORTANT]
+> Schedules become expired if a user doesn't log in to Fabric for 90 consecutive days. For more information, see [Refresh tokens in the Microsoft identity platform](/entra/identity-platform/refresh-tokens).
 
 ## Manage multiple schedules
 
