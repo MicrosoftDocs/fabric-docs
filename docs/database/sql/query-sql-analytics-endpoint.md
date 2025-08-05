@@ -27,7 +27,7 @@ Every Fabric SQL database is created with a paired SQL analytics endpoint. This 
 
 The SQL analytics endpoint can be queried with T-SQL multiple ways:
 
-- The first is via the workspace. Every SQL database is paired with a default semantic model and a SQL analytics endpoint. The semantic model and the SQL analytics endpoint always show up together with the SQL database in item listing of the workspace. You can access any of them by selecting them by name from the list.
+- The first is via the workspace. Every SQL database is paired with a SQL analytics endpoint. The SQL analytics endpoint always display under the SQL database in item in the workspace list. You can access any of them by selecting them by name from the list.
         :::image type="content" source="media/query-sql-analytics-endpoint/workspace-item-list.png" alt-text="Screenshot from the Fabric portal showing the workspace item list, and the three objects created with a SQL database.":::
 - The SQL analytics endpoint can also be accessed from within the SQL query editor. This can be especially useful when toggling between the database and the SQL analytics endpoint. Use the pulldown in the upper right corner to change from the editor to the analytics endpoint.  
         :::image type="content" source="media/query-sql-analytics-endpoint/sql-database-sql-analytics-endpoint-dropdown.png" alt-text="Screenshot from the Fabric portal showing the query editor's dropdown list containing the SQL database and SQL analytics endpoint options.":::

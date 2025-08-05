@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 11/18/2024
+ms.date: 07/21/2025
 ---
 
 # Add Azure IoT Hub as source in Real-Time hub
@@ -84,9 +84,7 @@ You can get events from an Azure IoT hub into Real-Time hub in one of the ways:
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream with the selected Azure IoT hub as a source. To close the wizard, select **Finish** at the bottom of the page.
 
     :::image type="content" source="./media/add-source-azure-iot-hub/review-create-success.png" alt-text="Screenshot that shows the Review + connect page with links to open eventstream and close the wizard." lightbox="./media/add-source-azure-iot-hub/review-create-success.png":::
-2. You should see the stream on the **All data streams** and **My data streams** pages. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
-
-    :::image type="content" source="./media/add-source-azure-iot-hub/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub All data streams page with the stream you just created." lightbox="./media/add-source-azure-iot-hub/verify-data-stream.png":::
+2. You should see the stream in the **Recent streaming data** section of the **Real-Time hub** home page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 
 ## Related content

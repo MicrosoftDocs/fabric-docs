@@ -75,7 +75,7 @@ sections:
       - question: |
           Can Azure SQL Database mirroring be accessed through the Power BI Gateway or behind a firewall? 
         answer: 
-          If your Azure SQL Database is not publicly accessible and doesn't allow Azure services to connect to it, you can [set up virtual network data gateway or on-premises data gateway to mirror the data](azure-sql-database.md#mirroring-azure-sql-database-behind-firewall-preview). For more information, see [Security requirements](azure-sql-database-how-to-data-security.md).
+          If your Azure SQL Database is not publicly accessible and doesn't allow Azure services to connect to it, you can [set up virtual network data gateway or on-premises data gateway to mirror the data](azure-sql-database.md#mirroring-azure-sql-database-behind-firewall). For more information, see [Security requirements](azure-sql-database-how-to-data-security.md).
 
       - question: |
           What steps does restarting the Mirroring include? 

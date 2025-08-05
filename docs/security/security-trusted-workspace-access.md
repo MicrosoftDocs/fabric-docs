@@ -27,11 +27,9 @@ This article shows you how to:
 
 * [Create a data pipeline](#create-a-data-pipeline-to-a-storage-account-with-trusted-workspace-access) to connect directly to a firewall-enabled ADLS Gen2 account that has trusted workspace access enabled.
   
-* [Use the T-SQL COPY statement](#use-the-t-sql-copy-statement-to-ingest-data-into-a-warehouse) to ingest data into your Warehouse from a firewall-enabled ADLS Gen2 account that has trusted workspace access enabled.
+* Use the T-SQL COPY statement to ingest data into your Warehouse from a firewall-enabled ADLS Gen2 account that has trusted workspace access enabled.
   
-* [Create a semantic model](#create-a-semantic-model-with-trusted-workspace-access) in import mode to connect to a firewall-enabled ADLS Gen2 account that has trusted workspace access enabled.
-
-* [Load data with AzCopy](#load-data-using-azcopy-and-trusted-workspace-access) from a firewall-enabled Azure Storage account into OneLake.  
+* Create a semantic model in import mode to connect to a firewall-enabled ADLS Gen2 account that has trusted workspace access enabled.
 
 ## Configure trusted workspace access in ADLS Gen2
 
@@ -99,12 +97,10 @@ There are several ways to use trusted workspace access to access your data from 
 * You can [create a new ADLS shortcut](#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access) in a Fabric Lakehouse to start analyzing your data with Spark, SQL, and Power BI.
 
 * You can [create a data pipeline](#create-a-data-pipeline-to-a-storage-account-with-trusted-workspace-access) that leverages trusted workspace access to directly access a firewall-enabled ADLS Gen2 account.
-  
+
 * You can use a T-SQL Copy statement that leverages trusted workspace access to ingest data into a Fabric warehouse.
 
 * You can use a semantic model (import mode) to leverage trusted workspace access and create models and reports on the data.
-
-* You can [use AzCopy](#load-data-using-azcopy-and-trusted-workspace-access) to performantly load data from a firewall-enabled Azure Storage account to OneLake. 
 
 The following sections show you how to use these methods.
 
@@ -235,41 +231,10 @@ Semantic models in import mode support trusted workspace access to storage accou
 4. Under cloud connections, select a data connection for the ADLS Gen2 storage account (this connection can have workspace identity, service principal, and organizational account as the authentication method)
 5. Select **Apply** and then refresh the model to finalize the configuration.
 
-### Load data using AzCopy and trusted workspace access
-
-With trusted workspace access configured, AzCopy copy jobs can access data stored in a firewall-enabled Azure Storage account, letting you performantly load data from Azure Storage to OneLake.  
-
-#### Prerequisites
-
-* A Fabric workspace associated with a Fabric capacity. See [Workspace identity](./workspace-identity.md).
-* Install AzCopy and log in with the principal used for authentication. See [Get started with AzCopy](/azure/storage/common/storage-use-azcopy-v10).
-* Create a workspace identity associated with the Fabric workspace.
-* The principal used for authentication in the shortcut should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope, or a Storage Blob Delegator role at the storage account scope together with access at the folder level within the container. Access at the folder level can be provided through an RBAC role at the container level or through specific folder-level access.
-* Configure a [resource instance rule](#configure-trusted-workspace-access-in-adls-gen2) for the storage account.
-
-#### Steps
-
-1. Log in to AzCopy with the principal that has access to the Azure Storage account and Fabric item. Select the subscription containing your firewall-enabled Azure Storage account. 
-
-   ```azcopy
-   azcopy login
-   ```
-
-2. Build your AzCopy command. You'll need the copy source, destination, and at least one parameter.  
-    - **source-path**: A file or directory in your firewall-enabled Azure Storage account.  
-    - **destination-path**: The landing zone in OneLake for your data.  For example, the /Files folder in a lakehouse.
-    - **--trusted-microsoft-suffixes**: Must include "fabric.microsoft.com".  
-
-   ```azcopy
-   azcopy copy "https://<source-account-name>.blob.core.windows.net/<source-container>/<source-path>" "https://onelake.dfs.fabric.microsoft.com/<destination-workspace>/<destination-path>" --trusted-microsoft-suffixes "fabric.microsoft.com"
-   ```
-
-3. Run the copy command.  AzCopy will use the identity you logged in with above to access both OneLake and Azure Storage. The copy operation is synchronous so when the command returns, all files are copied.  For more information about using AzCopy with OneLake, see [AzCopy](/fabric/onelake/onelake-azcopy).  
-
 ### Restrictions and Considerations
 
 * Trusted workspace access is supported for workspaces in any Fabric F SKU capacity.
-* You can only use trusted workspace access in OneLake shortcuts, data pipelines, semantic models, the T-SQL COPY statement, and AzCopy. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md). 
+* You can only use trusted workspace access in OneLake shortcuts, data pipelines, semantic models, and the T-SQL COPY statement. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md).
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity, or to a non-F SKU Fabric capacity, trusted workspace access will stop working after an hour.
 * Pre-existing shortcuts created before October 10, 2023 don't support trusted workspace access.
 * Connections for trusted workspace access can be created in **Manage connections and gateways**; however, workspace identity is the only supported authentication method. Test connection will fail if organizational account or service principal authentication methods are used.

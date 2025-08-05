@@ -40,11 +40,10 @@ Mirroring in Fabric provides an easy experience to speed the time-to-value for i
 
 The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level. To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
 
-Mirroring creates three items in your Fabric workspace:
+Mirroring creates these items in your Fabric workspace:
 
 - Mirroring manages the replication of data and metadata into [OneLake](../../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
 - A [SQL analytics endpoint](../../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md)
-- A [Default semantic model](../../data-warehouse/semantic-models.md)
 
 In addition to the [SQL query editor](../../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
 
@@ -98,7 +97,7 @@ Once data is in the landing zone with the proper format, replication will start 
 
 Sharing enables ease of access control and management, while security controls like Row-level security (RLS) and Object level security (OLS), and more make sure you can control access to sensitive information. Sharing also enables secure and democratized decision-making across your organization.
 
-By sharing, users grant other users or a group of users access to a mirrored database without giving access to the workspace and the rest of its items. When someone shares a mirrored database, they also grant access to the SQL analytics endpoint and associated default semantic model.
+By sharing, users grant other users or a group of users access to a mirrored database without giving access to the workspace and the rest of its items. When someone shares a mirrored database, they also grant access to the SQL analytics endpoint.
 
 For more information, see [Share your mirrored database and manage permissions](share-and-manage-permissions.md).
 
@@ -157,6 +156,5 @@ You can also directly create and manage a [SQL database in Microsoft Fabric (Pre
 ## Related content
 
 - [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)
-- [Model data in the default Power BI semantic model in Microsoft Fabric](../../data-warehouse/model-default-power-bi-dataset.md)
 - [What is the SQL analytics endpoint for a lakehouse?](../../data-engineering/lakehouse-sql-analytics-endpoint.md)
 - [Direct Lake overview](../../fundamentals/direct-lake-overview.md)
