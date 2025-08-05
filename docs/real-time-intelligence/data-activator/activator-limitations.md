@@ -130,7 +130,7 @@ Your organization might have up to 500 [!INCLUDE [fabric-activator](../includes/
 
 ## Lifecycle management limitations
 
-Activators on Azure Blob Storage events do not currently work with Microsoft Fabric's lifecycle management tools. If you include an Activator on Azure Blob Storage events in a deployment pipeline, or in a workspace with Git integration, then you will get an error message when you attemps to deploy or commit the Activator item.
+Activators on Azure Blob Storage events do not currently work with Microsoft Fabric's lifecycle management tools. If you include an Activator on Azure Blob Storage events in a deployment pipeline, or in a workspace with Git integration, then you will get an error message when you attempt to deploy or commit the Activator item.
 
 ## Related content
 
