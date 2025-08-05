@@ -74,7 +74,7 @@ Select the tab that corresponds with your desired data source type.
 
     :::image type="content" source="media/real-time-dashboard/azure-data.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with azure data explorer highlighted.":::
 
-## [Azure Monitor](#tab/azure-data-explorer-cluster)
+## [Azure Monitor](#tab/azure-data-monitor)
 
 1. Open your Real-Time dashboard.
 
