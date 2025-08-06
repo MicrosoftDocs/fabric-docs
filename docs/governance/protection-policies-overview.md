@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: concept-article #Don't change
-ms.date: 11/21/2024
+ms.date: 08/06/2025
 
 #customer intent: As a security admin, Fabric admin, Fabric user, or business decision maker, I want to learn about how protection policies control access to items in Fabric. 
 
@@ -32,6 +32,12 @@ As mentioned, the policy blocks access to the item for all users and groups that
 > [!NOTE]
 > A protection policy doesn't apply to a label issuer. That is, the user that last applied a label associated with a protection policy to an item won't be denied access to that item, even if they aren't specified in the policy. For example, if a protection policy is associated with label A, and a user applies label A to an item, that user will be able to access the item even if they're not specified in the policy.
 
+## View an item's restricted users 
+
+In the Fabric admin portal, you can use the OneLake catalog to view an item's permissions and determine which users are restricted from accessing it. The Permissions tab in the item's details is visible to you if you have a role of Admin or Member in the workspace containing the item.
+
+To view an item's permissions in the Fabric admin portal, open the **OneLake catalog**, ocate the item (optionally filter by workspace), and select its name to open the item details. Then, select the **Permissions** tab to see the list of users and groups that have access to the item, including those restricted by a protection policy.
+
 ## Use cases
 
 The following are examples of where protection policies could be useful: 
@@ -45,7 +51,7 @@ Protection policies for Fabric are generally configured by an organization's Pur
 
 ## Requirements
 
-*  A Microsoft 365 E3/E5 license as required for sensitivity labels from Microsoft Purview Information Protection. For more information, see [Microsoft Purview Information Protection: Sensitivity labeling](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#microsoft-purview-information-protection-sensitivity-labeling).
+*  A Microsoft 365 E3/E5 license is required for sensitivity labels from Microsoft Purview Information Protection. For more information, see [Microsoft Purview Information Protection: Sensitivity labeling](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#microsoft-purview-information-protection-sensitivity-labeling).
 
 * At least one "appropriately configured" sensitivity label from Microsoft Purview Information Protection must exist in the tenant. "Appropriately configured" in the context of protection policies for Fabric means that when the label was configured, it was scoped to **Files & other data assets**, and its protection settings were set to include **Control access** (for information about sensitivity label configuration, see [Create and configure sensitivity labels and their policies](/purview/create-sensitivity-labels)). Only such "appropriately configured" sensitivity labels can be used to create the protection policies for Fabric.
 
@@ -53,7 +59,9 @@ Protection policies for Fabric are generally configured by an organization's Pur
 
 ## Supported item types
 
-Protection policies are supported for all native Fabric items types, and for Power BI semantic models. All other Power BI item types aren't currently supported.
+Protection policies are supported for all native Fabric item types, including lakehouses, notebooks, pipelines, and other core Fabric assets. 
+
+Additionally, protection policies are supported for Power BI semantic models. Other Power BI item types, such as reports and dashboards, aren't currently supported.
 
 ## Considerations and limitations
 
@@ -65,7 +73,7 @@ Protection policies are supported for all native Fabric items types, and for Pow
 
 * ALM pipelines won't work in scenarios where a user creates an ALM pipeline in a workspace that contains an item protected by a protection policy that doesn't include the user.
 
-* After a policy has been created, it may take up to 30 minutes for it to start detecting and protecting items labeled with the sensitivity label that was associated with the policy.
+* After a policy has been created, it may take up to 24 hours for it to start detecting and protecting items labeled with the sensitivity label that was associated with the policy.
 
 ## Related content
 

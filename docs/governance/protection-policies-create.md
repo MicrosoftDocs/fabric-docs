@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to #Don't change
-ms.date: 11/21/2024
+ms.date: 08/06/2025
 
 #customer intent: As a security admin or Fabric admin, I want to learn how to create protection policies for Microsoft Fabric. 
 
@@ -60,7 +60,7 @@ To create a protection policy, the following requirements must be met:
 
     You have two options:
 
-    * **Allow users to retain read access** - Any users or groups added under this control setting will retain read permissions to resources with the selected sensitivity label if they already have it. Any other permissions they have on the item will be removed.
+    * **Allow users to retain read access** - Any users or groups added under this control setting will retain read permissions to resources with the selected sensitivity label if they already have it. Any other permissions they have on the item will be removed. This feature is in preview for Fabric, and the "read only" experience may differ across workloads. 
     * **Allow users to retain full control** - Any users or groups added under this control setting will retain full control of the labeled item if they already have it, or any other permissions they might have.
 
     You can select either one option or both options. For each control, select **Add users and groups** to specify which users and/or groups the control should apply to.
@@ -82,9 +82,9 @@ To create a protection policy, the following requirements must be met:
   
     :::image type="content" source="./media/protection-policies-create/review-policy-settings.png" alt-text="Screenshot of review and finish page in protection policy configuration.":::
 
-1. You'll be informed that your new protection policy has been created and that it can take up to 30 minutes for the new policy to start detecting and protecting items labeled with the sensitivity label you chose.
+1. You'll be informed that your new protection policy has been created and that it can take up to 24 hours for the new policy to start detecting and protecting items labeled with the sensitivity label you chose.
 
-    :::image type="content" source="./media/protection-policies-create/policy-created-notice.png" alt-text="Screenshot showing the policy created notice.":::
+<!-- TODO: NEED NEW SCREENSHOT OR NOTE ABOUT 24 HRS IN UI -->    :::image type="content" source="./media/protection-policies-create/policy-created-notice.png" alt-text="Screenshot showing the policy created notice.":::
 
 Your new policy now appears in the list of protection policies. Select it to confirm that all the details are correct.
 
