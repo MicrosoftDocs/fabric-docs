@@ -55,8 +55,8 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 {
   "enabled": true,
   "configuration": {
-    "startDateTime": "2030-04-28T00:00:00",
-    "endDateTime": "2030-04-30T23:59:00",
+    "startDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
+    "endDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
     "localTimeZoneId": "Central Standard Time",
     "type": "Cron",
     "interval": 10
@@ -76,10 +76,10 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehous
 {
   "id": "<scheduleId>",
   "enabled": true,
-  "createdDateTime": "2030-04-28T05:35:20.5366667",
+  "createdDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
   "configuration": {
-    "startDateTime": "2030-04-28T00:00:00",
-    "endDateTime": "2030-04-30T23:59:00",
+    "startDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
+    "endDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
     "localTimeZoneId": "Central Standard Time",
     "type": "Cron",
     "interval": 10
@@ -109,10 +109,10 @@ Status code:
 {
   "id": "<scheduleId>",
   "enabled": true,
-  "createdDateTime": "2044-04-28T05:35:20.5366667",
+  "createdDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
   "configuration": {
-    "startDateTime": "2030-04-28T00:00:00",
-    "endDateTime": "2030-04-30T23:59:00",
+    "startDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
+    "endDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
     "localTimeZoneId": "Central Standard Time",
     "type": "Cron",
     "interval": 10
@@ -152,7 +152,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 **Sample response**:
 
 Status code:
-202
+202 Accepted 
 ```
 Location: https://api.fabric.microsoft.com/v1/workspaces/<WORKSPACE_ID>/lakehouses/<LAKEHOUSE_ID>/jobs/instances/<jobInstanceId>
 
@@ -172,6 +172,9 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 ```
 
 **Sample response**:
+
+Status code:
+200
 ```rest
 {
   "value": [
@@ -181,9 +184,9 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
       "jobType": "RefreshMaterializedLakeViews",
       "invokeType": "Manual",
       "status": "<status>",
-      "rootActivityId": "<rootActivityId>",
-      "startTimeUtc": "2030-06-22T06:35:00.7812154",
-      "endTimeUtc": "2030-06-22T06:35:00.8033333",
+      "rootActivityId": "<rootActivityId_1>",
+      "startTimeUtc": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
+      "endTimeUtc": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
       "failureReason": null
     },
     {
@@ -192,9 +195,9 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
       "jobType": "RefreshMaterializedLakeViews",
       "invokeType": "Scheduled",
       "status": "<status>",
-      "rootActivityId": "rootActivityId",
-      "startTimeUtc": "2030-06-22T06:35:00.7812154",
-      "endTimeUtc": "2030-06-22T07:35:00.8033333",
+      "rootActivityId": "rootActivityId_2",
+      "startTimeUtc": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
+      "endTimeUtc": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
       "failureReason": null
     }
   ]
@@ -220,9 +223,9 @@ Status code:
 {
   "id": "<id>",
   "itemId": "<itemId>",
-  "jobType": "Refresh",
-  "invokeType": "Manual",
-  "status": "Completed",
+  "jobType": "RefreshMaterializedLakeViews",
+  "invokeType": "<invokeType>",
+  "status": "<status>",
   "rootActivityId": "<rootActivityId>",
   "startTimeUtc": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
   "endTimeUtc": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
@@ -243,7 +246,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 **Sample response**:
 
 Status code:
-201
+202 Accepted
 ```
 Location: https://api.fabric.microsoft.com/v1/workspaces/<worksapceId>/lakehouses/<LAKEHOUSE_ID>/jobs/instances/<jobInstanceId>
 Retry-after: 60
