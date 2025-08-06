@@ -176,7 +176,7 @@ For older general availability (GA) announcements, review the [Microsoft Fabric 
 This section summarizes new Microsoft Fabric community opportunities for prospective and current influencers and MVPs.
 
 > [!NOTE]
-> Join us in Vienna, Austria at the [European Microsoft Fabric Community Conference on 15-18 Sep 2025](https://www.sharepointeurope.com/european-microsoft-fabric-community-conference/). [Register](http://aka.ms/fce) with code `FABCOMM` to save &euro;200! Early bird pricing ends July 31st!
+> Join us in Vienna, Austria at the [European Microsoft Fabric Community Conference on 15-18 Sep 2025](https://www.sharepointeurope.com/european-microsoft-fabric-community-conference/). [Register](https://aka.ms/fce) with code `FABCOMM` to save &euro;200! Early bird pricing ends July 31st!
 
 - Sign up for the Fabric Community Newsletter: visit [Fabric Community News](https://community.fabric.microsoft.com/t5/Community-News/bd-p/fbc_communitynews) and select **Subscribe** from the **Options** menu.
 - Join a local [Fabric User Group](https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups) or [join a local event](https://community.fabric.microsoft.com/t5/custom/page/page-id/UnifiedSearchPage?tabName=events).
