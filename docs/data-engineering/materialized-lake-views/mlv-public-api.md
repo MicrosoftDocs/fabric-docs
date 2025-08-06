@@ -16,7 +16,7 @@ The Microsoft Fabric REST API provides a service endpoint for management of Fabr
 
 With materialized lake view APIs, data engineers and citizen developers can automate their own pipelines. These APIs also make it easy for users to manage Fabric materialized lake views and integrate it with other tools and systems.
 
-The following **Job scheduler** actions are available for materialized lake views with user  authentication:
+The following **Job scheduler** actions are available for materialized lake views with user authentication:
 
 |Action|Description|
 |---------|---------|
