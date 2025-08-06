@@ -12,13 +12,13 @@ ai-usage: ai-assisted
 
 # Pipeline overview
 
-Pipelines in Microsoft Fabric Data Factory help you orchestrate and automate your data workflows. A pipeline is a logical grouping of activities that together perform a task. For example, a pipeline could contain a set of activities that ingest and clean log data, and then kick off a data flow to analyze the log data. The pipeline allows you to manage the activities as a set instead of each one individually. You deploy and schedule the pipeline instead of the activities independently.
+Pipelines in Microsoft Fabric Data Factory help you orchestrate and automate your data workflows. A pipeline is a logical grouping of activities that together perform a task. For example, a pipeline could contain a set of activities that ingest and clean log data, and then kick off a data flow to analyze the log data.
 
-The activities in a pipeline define actions to perform on your data. You can use pipelines to move data, transform it, and coordinate complex workflows across your organization. An activity can take zero or more input datasets and produce one or more output datasets, creating a flexible framework for end-to-end data-driven workflows.
+The pipeline allows you to manage the activities as a set instead of each one individually. You deploy and schedule the pipeline instead of the activities independently.
 
 ## When to use pipelines
 
-Pipelines solve common data challenges by automating repetitive tasks and ensuring consistent data processing. Here's how a pipeline can solve this challenge:
+Pipelines solve common data challenges by automating repetitive tasks and ensuring consistent data processing.
 
 Let's say you're a retail company that needs to process daily sales data from multiple stores. Each day, you need to:
 
@@ -32,11 +32,11 @@ A pipeline automates this entire workflow. It runs on schedule, handles errors g
 
 ## Key pipeline components
 
-Pipelines consist of several key components that work together to create powerful data workflows. Understanding these components helps you design effective pipelines for your data processing needs. The main components include [activities](#activities) that perform the actual work, [triggers](#pipeline-runs-and-scheduling) that determine when pipelines run, control flow features that add logic and intelligence, and [parameters](#parameters-and-variables) that make your pipelines flexible and reusable.
+Pipelines consist of several key components that work together to create powerful data workflows. The main components include [activities](#activities) that perform the work and add logic to your pipeline, [schedules or triggers](#pipeline-runs-and-scheduling) that determine when pipelines run, and [parameters](#parameters-and-variables) that make your pipelines flexible and reusable.
 
 ### Activities
 
-Activities are the building blocks of your pipeline. Each activity performs a specific task:
+Activities are the building blocks of your pipeline. Each activity performs a specific task, and there are three main types of activities:
 
 - [**Data movement activities**](activity-overview.md#data-movement-activities): Copy data between different sources and destinations
 - [**Data transformation activities**](activity-overview.md#data-transformation-activities): Clean, aggregate, and reshape your data

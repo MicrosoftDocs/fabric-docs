@@ -26,7 +26,7 @@ You can start pipeline runs in three ways:
 
     :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab.":::
 
-- **Event-based runs**: Use event triggers to start your pipeline when specific events occur, such as new files arriving in a data lake or changes in a database.
+- [**Event-based runs**](#event-based-data-pipeline-runs): Use event triggers to start your pipeline when specific events occur, such as new files arriving in a data lake or changes in a database.
 
     :::image type="content" source="media/pipeline-runs/event-based-run.png" alt-text="Screenshot showing where to select Trigger to add event-based run triggers on the home tab.":::
 
@@ -36,7 +36,7 @@ To manually trigger a data pipeline run, select **Run** found in the top banner 
 
 :::image type="content" source="media/pipeline-runs/trigger-pipeline-run.png" alt-text="Screenshot showing where to select Run on the Home tab.":::
 
-You are prompted to save your changes before triggering the pipeline run. Select **Save and run** to continue.
+You're prompted to save your changes before triggering the pipeline run. Select **Save and run** to continue.
 
 :::image type="content" source="media/pipeline-runs/save-run-pipeline.png" alt-text="Screenshot showing the Save and run prompt." lightbox="media/pipeline-runs/save-run-pipeline.png":::
 
@@ -59,7 +59,7 @@ When you schedule a data pipeline run, you can choose the frequency that your pi
 :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab.":::
 
 > [!TIP]
-> When scheduling a pipeline, you must set both a start and end date. There is no option for an open-ended schedule. To keep a pipeline running long-term, set the end date far in the future (for example, **2099-01-01**). You can update or stop the schedule at any time.
+> When scheduling a pipeline, you must set both a start and end date. There's no option for an open-ended schedule. To keep a pipeline running long-term, set the end date far in the future (for example, **2099-01-01**). You can update or stop the schedule at any time.
 
 On the Schedule configuration page, you can specify a schedule frequency, start and end dates and times, and time zone.
 
