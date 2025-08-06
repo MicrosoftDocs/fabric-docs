@@ -41,7 +41,7 @@ For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 
 ## Examples of REST API usage with Materialized lake views
 
-Use the following APIs to perform scheduling, executing, getting details and removal of jobs in materialized lake views.
+Use the following APIs to schedule, execute, get/remove job/schedule jobs in materialized lake views.
 
 ### Create Schedule for MLV in Lakehouse
 
@@ -126,7 +126,7 @@ Status code:
 
 ### Delete Schedule for MLV in Lakehouse
 
-Delete an existing schedule for MLV
+Delete an existing schedule for MLV.
 
 **Sample request**:
 
