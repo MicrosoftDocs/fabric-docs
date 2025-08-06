@@ -21,12 +21,12 @@ The following **Job scheduler** actions are available for materialized lake view
 |Action|Description|
 |---------|---------|
 |Create Schedule for MLV in Lakehouse|Create schedule to run lineage in MLV.|
-|Get Schedule Details for MLV in Lakehouse|Get schedules for MLV.|
-|Delete Schedule for MLV in Lakehouse|Delete schedules for MLV.|
-|Run on demand Job for MLV in Lakehouse|Run MLV lineage as an on demand job.|
-|List Job Instances for MLV in Lakehouse|Lists all job instances created for MLV |
-|Get Job Instance for MLV in Lakehouse|Get details such as status of a run in MLV.|
-|Cancel Job Instance for MLV in Lakehouse|Cancel an ongoing job run of lineage in MLV.|
+|Get Schedule for MLV in Lakehouse|Get schedule details for MLV lineage.|
+|Delete Schedule for MLV in Lakehouse|Delete schedule created for MLV lineage.|
+|Run On Demand Job for MLV in Lakehouse|Run MLV lineage as an on demand job.|
+|List Job Instances for MLV in Lakehouse|List all job instances created for MLV lineage. |
+|Get Job Instance for MLV in Lakehouse|Get job instance details of MLV lineage execution such as status.|
+|Cancel Job Instance for MLV in Lakehouse|Cancel an ongoing execution of lineage job in MLV.|
 
 For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 
@@ -45,7 +45,7 @@ Use the following APIs to schedule, execute, get/remove job/schedule jobs in mat
 
 ### Create Schedule for MLV in Lakehouse
 
-Create a new schedule to run lineage in MLV. 
+Create a new schedule to run lineage in MLV. Currently, MLV UI supports only one schedule per MLV lineage.
 
 **Sample request**:
 
@@ -257,6 +257,7 @@ Retry-after: 60
 - Service Principal authentication is not currently supported for MLV.
 - Be informed of the limits on number of schedules supported per lakehouse by [Job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule).
 - Be informed of the limits on completed and active jobs displayed by [Job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations).
+- Currently, MLV UI supports only one schedule per MLV lineage.
 
 ## Related content
 
