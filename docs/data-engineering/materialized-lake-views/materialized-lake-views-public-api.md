@@ -33,7 +33,7 @@ The following **Job scheduler** actions are available for materialized lake view
 For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 
 > [!NOTE]
-> These scenarios only cover materialized lake views-unique usage examples. Fabric item common API examples are not covered here.
+> These scenarios only cover materialized lake views-unique usage examples. Fabric item common API examples aren't covered here.
 
 ## Prerequisites
 
@@ -256,7 +256,7 @@ Status code:
 
 ### Get Job Instance details for MLV in Lakehouse
 
-Get details such as status and id corresponsing to a run in MLV.
+Get details such as status and id corresponding to a run in MLV.
 
 **Sample request**:
 
@@ -305,10 +305,10 @@ Retry-after: 60
 
 ## Current limitations
 
-- Service Principal authentication is not currently supported for MLV.
+- Service Principal authentication isn't currently supported for MLV.
 - Be informed of the limits on number of schedules supported per lakehouse by [Job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule).
 - Be informed of the limits on completed and active jobs displayed by [Job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations).
-- Currently, MLV supports only one schedule per lineage. Creation of additional schedules for MLV could break the UI and would require the user to delete all existing schedules to recover the UI.
+- Currently, MLV supports only one schedule per lineage. Creation of more schedules for MLV could break the UI and would require the user to delete all existing schedules to recover the UI.
 
 ## Related content
 
