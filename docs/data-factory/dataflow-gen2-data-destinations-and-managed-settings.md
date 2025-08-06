@@ -145,7 +145,7 @@ in
   TableNavigation;
 ``` 
 
-* **A DataDestinations record that contains the logic to be used for how to load data to your destination**. The record has pointer to the query that contains the navigation steps to your destination and the overall destination settings such as update methods, schema options and what Kind of target the destination is such as a Table or other kind. For example:
+* **A DataDestinations attribute record for the query that contains the logic to be used for how to load data to your destination**. The record has pointer to the query that contains the navigation steps to your destination and the overall destination settings such as update methods, schema options and what Kind of target the destination is such as a Table or other kind. For example:
 
 ```M code
 [DataDestinations = {[Definition = [Kind = "Reference", QueryName = "Orders by Region_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
