@@ -51,10 +51,7 @@ Create a new schedule to run lineage in MLV.
 
 ```http 
 POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules
-```
 
-**Request body**:
-```rest
 {
   "enabled": true,
   "configuration": {
