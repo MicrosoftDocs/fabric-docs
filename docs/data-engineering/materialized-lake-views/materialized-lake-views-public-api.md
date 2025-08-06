@@ -37,7 +37,7 @@ For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 
 ## Prerequisites
 
-- To use the Fabric REST API, you need to [register an application with Microsoft Entra ID](/rest/api/fabric/articles/get-started) and [get Microsoft Entra token for Fabric service](/rest/api/fabric/articles/get-started/fabric-api-quickstart). Then use that token in the authorization header of the API call.
+- To use the Fabric REST API, you need to [register an application with Microsoft Entra ID and get Microsoft Entra token for Fabric service](/rest/api/fabric/articles/get-started/fabric-api-quickstart). Then use that token in the authorization header of the API call.
 - Fabric REST APIs for MLV support [Microsoft Entra users](/fabric/admin/service-admin-portal-developer#service-principals-can-call-fabric-public-apis). The authorization method and [scope](/rest/api/fabric/articles/scopes#specific-fabric-rest-apis-scopes) assigned in invoking REST APIs should be chosen based on how the REST APIs are accessed.
 - Fabric Rest API defines a unified endpoint for operations and provide access to various operations on lineage. Replace placeholders such as `{WORKSPACE_ID}`, `{LAKEHOUSE_ID}`, and payload details with appropriate values when invoking the API requests.
 
