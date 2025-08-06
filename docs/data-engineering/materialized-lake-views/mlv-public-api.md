@@ -256,7 +256,7 @@ Retry-after: 60
 
 - Service Principal authentication is not currently supported for MLV.
 - Be informed of the limits on number of schedules supported per lakehouse by [Job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule).
-- Be informed of the limits on job completed and active items supported by [Job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations).
+- Be informed of the limits on completed and active jobs displayed by [Job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations).
 
 ## Related content
 
