@@ -48,7 +48,7 @@ pandas_df = spark_df.toPandas()
 > Modifying the version of a specific package could potentially break other packages that depend on it. For instance, downgrading `azure-storage-blob` might cause problems with `Pandas` and various other libraries that rely on `Pandas`, including `mssparkutils`, `fsspec_wrapper`, and `notebookutils`.
 > You can view the list of preinstalled packages and their versions for each runtime [here](../data-engineering/runtime.md).
 
-These code samples demonstrate Pandas operations to read and write various file formats. These samples are not intended to be run sequentially as in a tutorial, but rather to be copied and pasted into your own notebook as needed.
+These code samples demonstrate Pandas operations to read and write various file formats. These samples aren't intended to be run sequentially as in a tutorial, but rather to be copied and pasted into your own notebook as needed.
 
 > [!NOTE]
 > You must replace the file paths in these code samples. Pandas supports both relative paths, as shown here, and full ABFS paths. You can retrieve and copy paths of either type from the interface using the previous steps.
