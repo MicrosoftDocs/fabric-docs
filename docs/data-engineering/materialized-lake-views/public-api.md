@@ -5,7 +5,7 @@ ms.topic: conceptual
 author: rkottackal
 ms.author: rkottackal
 ms.reviewer: nijelsf
-ms.date: 07/11/2025
+ms.date: 08/06/2025
 ms.search.form: MLV REST API
 ---
 
@@ -20,11 +20,13 @@ The following **Job scheduler** actions are available for materialized lake view
 
 |Action|Description|
 |---------|---------|
-|Create Item Schedule|Create schedule to run lineage in MLV.|
-|List Item Job Instances|Lists all job instances corresponding a lakehouse|
-|Get Item Job Instance|Get details such as status of a run in MLV.|
-|Cancel Item Job Instance|Cancel an ongoing job run of lineage in MLV.|
-|Run on demand Item Job|Run MLV lineage as an on demand job.|
+|Create Schedule for MLV in Lakehouse|Create schedule to run lineage in MLV.|
+|Get Schedule Details for MLV in Lakehouse|Get schedules for MLV.|
+|Delete Schedule for MLV in Lakehouse|Delete schedules for MLV.|
+|Run on demand Job for MLV in Lakehouse|Run MLV lineage as an on demand job.|
+|List Job Instances for MLV in Lakehouse|Lists all job instances created for MLV |
+|Get Job Instance for MLV in Lakehouse|Get details such as status of a run in MLV.|
+|Cancel Job Instance for MLV in Lakehouse|Cancel an ongoing job run of lineage in MLV.|
 
 For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 
@@ -33,7 +35,7 @@ For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 
 ## Prerequisites
 
-* Fabric MLV REST APIs support [Microsoft Entra users and service principals](/fabric/admin/service-admin-portal-developer#service-principals-can-call-fabric-public-apis). The authorization method and [scope](/rest/api/fabric/articles/scopes#specific-fabric-rest-apis-scopes) assigned in invoking REST APIs should be chosen based on how the REST APIs are accessed.
+* Fabric MLV REST APIs support Microsoft Entra User based access and not Service Principal [Microsoft Entra users and service principals](/fabric/admin/service-admin-portal-developer#service-principals-can-call-fabric-public-apis). The authorization method and [scope](/rest/api/fabric/articles/scopes#specific-fabric-rest-apis-scopes) assigned in invoking REST APIs should be chosen based on how the REST APIs are accessed.
 * To use the Fabric REST API, you first need to [register an application with Microsoft Entra ID](/rest/api/fabric/articles/get-started/) and [get Microsoft Entra token for Fabric service](/rest/api/fabric/articles/get-started/fabric-api-quickstart). You can then use that token in the authorization header of the REST API call.
 * The Fabric Rest API defines a unified endpoint for operations. Replace the placeholders such as `{WORKSPACE_ID}` and `{LAKEHOUSE_ID}` and payload details with appropriate values when you follow the examples in this article.
 
@@ -69,7 +71,7 @@ Copy the token and replace the _&lt;access-token&gt;_ placeholder in the followi
 ## Materialized lake views REST API usage examples
 Use the following instructions to test usage examples for specific materialized lake views public APIs and verify the results.
 
-### Create Item Schedule
+### Create Schedule for MLV in Lakehouse
 
 Create schedule to run lineage in MLV.
 
@@ -124,7 +126,30 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehous
 }
 ```
 
-### List Item Job Instances
+### Get Schedule Details for MLV in Lakehouse
+Get schedules for MLV
+
+### Delete Schedule for MLV in Lakehouse
+Delete schedules for MLV
+
+### Run on demand Job for MLV in Lakehouse
+Run MLV lineage as an on demand job. Spark job starts executing after a successful request.
+
+**Request**
+```http
+POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances?jobType=RefreshMaterializedLakeViews
+```
+
+**Sample response**:
+```
+Location: https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/lakehouses/<lakehouseId>/jobs/instances/<jobInstanceId>
+
+Retry-After: 60
+```
+
+With `location`, you can use [Get Item Job Instance](/rest/api/fabric/core/job-scheduler/get-item-job-instance) to view job status or use [Cancel Item Job Instance](/rest/api/fabric/core/job-scheduler/cancel-item-job-instance) to cancel the current lineage run.
+
+### List Job Instances for MLV in Lakehouse
 
 Lists all job instances corresponding a Lakehouse. Response items with jobType RefreshMaterializedLakeViews correspons to the runs related to materialized lake views.
 
@@ -179,7 +204,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 }
 ```
 
-### Get Item Job Instance
+### Get Job Instance details for MLV in Lakehouse
 Get details such as status and id corresponsing to a run in MLV.
 
 **Sample request**:
@@ -210,7 +235,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 }
 ```
 
-### Cancel item job instance
+### Cancel Job Instance for MLV in Lakehouse
 Cancel an ongoing job run of lineage in MLV.
 
 **Sample request**:
@@ -231,22 +256,6 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 Location: https://api.fabric.microsoft.com/v1/workspaces/<worksapceId>/lakehouses/<lakehouseId>/jobs/instances/<jobInstanceId>
 Retry-after: 60
 ```
-### Run on demand item job
-Run MLV lineage as an on demand job. Spark job starts executing after a successful request.
-
-**Request**
-```http
-POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/instances?jobType=RefreshMaterializedLakeViews
-```
-
-**Sample response**:
-```
-Location: https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/lakehouses/<lakehouseId>/jobs/instances/<jobInstanceId>
-
-Retry-After: 60
-```
-
-With `location`, you can use [Get Item Job Instance](/rest/api/fabric/core/job-scheduler/get-item-job-instance) to view job status or use [Cancel Item Job Instance](/rest/api/fabric/core/job-scheduler/cancel-item-job-instance) to cancel the current lineage run.
 
 ## Related content
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
