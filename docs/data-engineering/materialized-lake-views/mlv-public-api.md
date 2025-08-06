@@ -69,11 +69,12 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 
 Status code:
 201 Created
-```
+
+```http
 Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules/<scheduleId>
 ```
 
-```http
+```json
 {
   "id": "<scheduleId>",
   "enabled": true,
@@ -118,7 +119,7 @@ PATCH https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{
 Status code:
 200 OK`
 
-```http
+```json
 {
   "id": "<scheduleId>",
   "enabled": true,
@@ -151,7 +152,8 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 
 Status code:
 200 OK
-```http
+
+```json
 {
   "id": "<scheduleId>",
   "enabled": true,
@@ -198,10 +200,10 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 **Sample response**:
 
 Status code:
-202 Accepted 
-```
-Location: https://api.fabric.microsoft.com/v1/workspaces/<WORKSPACE_ID>/lakehouses/<LAKEHOUSE_ID>/jobs/instances/<jobInstanceId>
+202 Accepted
 
+```http
+Location: https://api.fabric.microsoft.com/v1/workspaces/<WORKSPACE_ID>/lakehouses/<LAKEHOUSE_ID>/jobs/instances/<jobInstanceId>
 Retry-After: 60
 ```
 
@@ -221,7 +223,8 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 
 Status code:
 200
-```http
+
+```json
 {
   "value": [
     {
@@ -265,7 +268,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 Status code:
 200
 
-```http
+```json
 {
   "id": "<id>",
   "itemId": "<itemId>",
@@ -293,7 +296,8 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 
 Status code:
 202 Accepted
-```
+
+```http
 Location: https://api.fabric.microsoft.com/v1/workspaces/<worksapceId>/lakehouses/<LAKEHOUSE_ID>/jobs/instances/<jobInstanceId>
 Retry-after: 60
 ```
