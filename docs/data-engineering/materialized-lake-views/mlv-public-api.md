@@ -73,7 +73,7 @@ Status code:
 Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules/<scheduleId>
 ```
 
-```rest
+```http
 {
   "id": "<scheduleId>",
   "enabled": true,
@@ -118,7 +118,7 @@ PATCH https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{
 Status code:
 200 OK`
 
-```rest
+```http
 {
   "id": "<scheduleId>",
   "enabled": true,
@@ -151,7 +151,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 
 Status code:
 200 OK
-```rest
+```http
 {
   "id": "<scheduleId>",
   "enabled": true,
@@ -221,7 +221,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 
 Status code:
 200
-```rest
+```http
 {
   "value": [
     {
@@ -265,7 +265,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LA
 Status code:
 200
 
-```rest
+```http
 {
   "id": "<id>",
   "itemId": "<itemId>",
