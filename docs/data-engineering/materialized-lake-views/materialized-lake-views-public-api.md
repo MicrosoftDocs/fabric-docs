@@ -41,13 +41,13 @@ For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 - Fabric REST APIs for MLV support [Microsoft Entra users](/fabric/admin/service-admin-portal-developer#service-principals-can-call-fabric-public-apis). The authorization method and [scope](/rest/api/fabric/articles/scopes#specific-fabric-rest-apis-scopes) assigned in invoking REST APIs should be chosen based on how the REST APIs are accessed.
 - Fabric Rest API defines a unified endpoint for operations and provide access to various operations on lineage. Replace placeholders such as `{WORKSPACE_ID}`, `{LAKEHOUSE_ID}`, and payload details with appropriate values when invoking the API requests.
 
-## Examples of REST API usage with Materialized lake views
+## Examples of REST API usage with materialized lake views
 
 Use the following APIs to schedule, run, get/remove job/schedule jobs in materialized lake views.
 
 ### Create Schedule for MLV in Lakehouse
 
-Create a new schedule to run lineage in MLV. Currently, MLV UI supports only one schedule per MLV lineage. Use [Update Schedule](#update-schedule-for-mlv-in-lakehouse) to update an existing schedule.
+Create a new schedule to run lineage in MLV. Currently, MLV supports only one active schedule per lineage. Use [Update Schedule](#update-schedule-for-mlv-in-lakehouse) to update an existing schedule.
 
 **Sample request**:
 
@@ -96,7 +96,7 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehous
 
 ### Update Schedule for MLV in Lakehouse
 
-Update an existing schedule to run lineage in MLV. Currently, MLV supports only one schedule per lineage.
+Update an existing schedule to run lineage in MLV. Currently, MLV supports only one active schedule per lineage.
 
 **Sample request**:
 
@@ -303,12 +303,12 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/<worksapceId>/lakehouse
 Retry-after: 60
 ```
 
-## Current limitations
+## Known limitations
 
-- Service Principal authentication isn't currently supported for MLV.
-- Be informed of the limits on number of schedules supported per lakehouse by [Job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule).
-- Be informed of the limits on completed and active jobs displayed by [Job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations).
-- Currently, MLV supports only one schedule per lineage. Creation of more schedules for MLV could break the UI and would require the user to delete all existing schedules to recover the UI.
+- *Service Principal Authentication:* Currently, Materialized Lake Views (MLV) do not support authentication via service principals.
+- *Schedule Limits per Lakehouse:*  The [Job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule) enforces limits on the number of schedules that can be configured per lakehouse. Users should plan accordingly to avoid exceeding these limits.
+- *Entity Display Limits:* The [Job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations) interface displays a limited number of completed and active jobs. This may affect visibility into historical or concurrent job executions.
+- *Single Schedule per Lineage:* MLV supports only one active schedule per lineage. Attempting to create more schedules for the same lineage may result in UI instability. If the UI becomes unresponsive due to multiple schedules, users must delete all existing schedules to restore functionality.
 
 ## Related content
 
