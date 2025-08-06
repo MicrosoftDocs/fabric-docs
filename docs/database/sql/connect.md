@@ -4,7 +4,7 @@ description: Learn about options to connect to your SQL database in Microsoft Fa
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, sukkaurk, imotiwala, maghan
-ms.date: 07/28/2025
+ms.date: 08/06/2025
 ms.topic: how-to
 ms.search.form: product-databases, Connect to SQL database
 ---
@@ -109,6 +109,11 @@ bcp bcptest in "c:\temp\sample.dat" -S <your_server>.database.fabric.microsoft.c
    ```python
    %%tsql -artifact Contoso -type SQLDatabase
    SELECT * FROM SalesLT.Customer;
+   ```
+1. You can also bind the results to a dataframe with the `-bind` argument:
+
+   ```python
+   %%tsql -artifact Contoso -type SQLDatabase -bind df2
    ```
 
 For more possibilities to query your data with T-SQL inside Python Notebooks, see [Run T-SQL code in Fabric Python notebooks](../../data-engineering/tsql-magic-command-notebook.md). To see the full syntax, use the `%tsql?` command. This command displays the help information for the T-SQL magic command, including the available parameters and their descriptions.
