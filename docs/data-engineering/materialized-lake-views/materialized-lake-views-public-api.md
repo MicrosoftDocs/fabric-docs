@@ -305,9 +305,9 @@ Retry-after: 60
 
 ## Known limitations
 
-- *Service Principal Authentication:* Currently, Materialized Lake Views (MLV) do not support authentication via service principals.
+- *Service Principal Authentication:* Currently, Materialized Lake Views (MLV) don't support authentication via service principals.
 - *Schedule Limits per Lakehouse:*  The [Job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule) enforces limits on the number of schedules that can be configured per lakehouse. Users should plan accordingly to avoid exceeding these limits.
-- *Entity Display Limits:* The [Job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations) interface displays a limited number of completed and active jobs. This may affect visibility into historical or concurrent job executions.
+- *Entity Display Limits:* The [Job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations) interface displays a limited number of completed and active jobs. This limitation may affect visibility into historical or concurrent job executions.
 - *Single Schedule per Lineage:* MLV supports only one active schedule per lineage. Attempting to create more schedules for the same lineage may result in UI instability. If the UI becomes unresponsive due to multiple schedules, users must delete all existing schedules to restore functionality.
 
 ## Related content
