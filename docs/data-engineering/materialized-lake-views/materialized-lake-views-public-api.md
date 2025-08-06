@@ -1,6 +1,6 @@
 ---
 title: Manage Fabric materialized lake views with public APIs
-description: Learn about the Fabric materialized lake views public APIs.
+description: Learn about public APIs for Fabric materialized lake views.
 ms.topic: conceptual
 author: rkottackal
 ms.author: rkottackal
@@ -9,6 +9,7 @@ ms.date: 08/06/2025
 ms.search.form: MLV REST API
 ---
 
+# Manage and refresh materialized lake views in Fabric with APIs
 
 The Microsoft Fabric REST API provides a service endpoint for management of Fabric items. This article describes the REST APIs available for materialized lake views REST APIs and their usage.
 
@@ -36,13 +37,13 @@ For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
 
 ## Prerequisites
 
-- To use the Fabric REST API, you need to [register an application with Microsoft Entra ID](/rest/api/fabric/articles/get-started/) and [get Microsoft Entra token for Fabric service](/rest/api/fabric/articles/get-started/fabric-api-quickstart). Then use that token in the authorization header of the API call.
+- To use the Fabric REST API, you need to [register an application with Microsoft Entra ID](/rest/api/fabric/articles/get-started) and [get Microsoft Entra token for Fabric service](/rest/api/fabric/articles/get-started/fabric-api-quickstart). Then use that token in the authorization header of the API call.
 - Fabric REST APIs for MLV support [Microsoft Entra users](/fabric/admin/service-admin-portal-developer#service-principals-can-call-fabric-public-apis). The authorization method and [scope](/rest/api/fabric/articles/scopes#specific-fabric-rest-apis-scopes) assigned in invoking REST APIs should be chosen based on how the REST APIs are accessed.
 - Fabric Rest API defines a unified endpoint for operations and provide access to various operations on lineage. Replace placeholders such as `{WORKSPACE_ID}`, `{LAKEHOUSE_ID}`, and payload details with appropriate values when invoking the API requests.
 
 ## Examples of REST API usage with Materialized lake views
 
-Use the following APIs to schedule, execute, get/remove job/schedule jobs in materialized lake views.
+Use the following APIs to schedule, run, get/remove job/schedule jobs in materialized lake views.
 
 ### Create Schedule for MLV in Lakehouse
 
@@ -95,7 +96,7 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehous
 
 ### Update Schedule for MLV in Lakehouse
 
-Update an existing schedule to refresh lineage in MLV. Currently, MLV supports only one schedule per lineage.
+Update an existing schedule to run lineage in MLV. Currently, MLV supports only one schedule per lineage.
 
 **Sample request**:
 
