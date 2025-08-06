@@ -4,7 +4,7 @@ description: This article describes how to get OneLake events as a Fabric events
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 04/06/2025
+ms.date: 07/22/2025
 # Customer intent: I want to know how to create eventstreams for OneLake events in Fabric Real-Time hub. 
 ---
 
@@ -108,12 +108,12 @@ Move the mouse over **OneLake events**, and select the **Create Eventstream** li
 
     :::image type="content" source="./media/create-streams-onelake-events/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open the eventstream." lightbox="./media/create-streams-onelake-events/review-create-success.png":::
 
-## View stream from the All data streams page
+## View stream from the Real-Time hub page
+Select **Real-Time hub** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 
 
-1. In **Real-Time hub**, select **My data streams** or **All data streams**.
-1. Confirm that you see the stream you created.
+:::image type="content" source="./media/create-streams-onelake-events/verify-stream.png" alt-text="Screenshot that shows data stream in the My data streams page." lightbox="./media/create-streams-onelake-events/verify-stream.png":::
 
-    :::image type="content" source="./media/create-streams-onelake-events/verify-stream.png" alt-text="Screenshot that shows data stream in the My data streams page." lightbox="./media/create-streams-onelake-events/verify-stream.png":::
+For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 
 ## Related content
 

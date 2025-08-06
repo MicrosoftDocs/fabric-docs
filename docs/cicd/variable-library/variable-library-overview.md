@@ -73,9 +73,8 @@ When you create an alternative value set, the new value set is created with poin
 The following items support the Variable library:
 
 * [Data pipeline (preview)](../../data-factory/variable-library-integration-with-data-pipelines.md)
-<!--- * [Lakehouse](../../data-engineering/lakehouse-overview.md)
-* Notebook --->
-* [Assign variables to shortcuts (preview)](../../onelake/assign-variables-to-shortcuts.md)
+* [Shortcut for Lakehouse (preview)](../../onelake/assign-variables-to-shortcuts.md)
+* Notebook (preview) - [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities) and [%%configure](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
 
 ## Considerations and limitations
 

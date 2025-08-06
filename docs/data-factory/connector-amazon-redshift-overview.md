@@ -14,17 +14,16 @@ ms.custom:
 
 The Amazon Redshift connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-To learn about how to connect to Amazon Redshift in Dataflow Gen2, go to [Set up your Amazon Redshift connection](connector-amazon-redshift.md).
+| Supported capabilities                                                                 | Gateway                        | Authentication   |
+|----------------------------------------------------------------------------------------|--------------------------------|------------------|
+| **Dataflow Gen2** (source/-)                                                           | None<br> Virtual network        | Amazon Redshift<br> Microsoft Account |
+| **Data pipeline** <br>- [Copy activity](connector-amazon-redshift-copy-activity.md) (source/-)<br>- Lookup activity        | None<br> Virtual network        | Amazon Redshift |
 
-## Support in data pipelines
+## Related content
 
-The Amazon Redshift connector supports the following capabilities in data pipelines:
+To learn about how to connect to Amazon Redshift, go to [Set up your Amazon Redshift connection](connector-amazon-redshift.md).
 
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/-)** | None | Amazon Redshift |
-| **Lookup activity** | None | Amazon Redshift |
 
 To learn more about the copy activity configuration for Amazon Redshift in data pipelines, go to [Configure in a data pipeline copy activity](connector-amazon-redshift-copy-activity.md).

@@ -97,8 +97,9 @@ There are several ways to use trusted workspace access to access your data from 
 * You can [create a new ADLS shortcut](#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access) in a Fabric Lakehouse to start analyzing your data with Spark, SQL, and Power BI.
 
 * You can [create a data pipeline](#create-a-data-pipeline-to-a-storage-account-with-trusted-workspace-access) that leverages trusted workspace access to directly access a firewall-enabled ADLS Gen2 account.
-  
+
 * You can use a T-SQL Copy statement that leverages trusted workspace access to ingest data into a Fabric warehouse.
+
 * You can use a semantic model (import mode) to leverage trusted workspace access and create models and reports on the data.
 
 The following sections show you how to use these methods.
@@ -230,11 +231,10 @@ Semantic models in import mode support trusted workspace access to storage accou
 4. Under cloud connections, select a data connection for the ADLS Gen2 storage account (this connection can have workspace identity, service principal, and organizational account as the authentication method)
 5. Select **Apply** and then refresh the model to finalize the configuration.
 
-
 ### Restrictions and Considerations
 
 * Trusted workspace access is supported for workspaces in any Fabric F SKU capacity.
-* You can only use trusted workspace access in OneLake shortcuts, data pipelines, semantic models, and the T-SQL COPY statement. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md). 
+* You can only use trusted workspace access in OneLake shortcuts, data pipelines, semantic models, and the T-SQL COPY statement. To securely access storage accounts from Fabric Spark, see [Managed private endpoints for Fabric](./security-managed-private-endpoints-overview.md).
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity, or to a non-F SKU Fabric capacity, trusted workspace access will stop working after an hour.
 * Pre-existing shortcuts created before October 10, 2023 don't support trusted workspace access.
 * Connections for trusted workspace access can be created in **Manage connections and gateways**; however, workspace identity is the only supported authentication method. Test connection will fail if organizational account or service principal authentication methods are used.

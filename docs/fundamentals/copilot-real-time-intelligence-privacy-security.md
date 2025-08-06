@@ -7,6 +7,7 @@ ms.reviewer: mibar
 ms.topic: conceptual
 ms.custom:
 ms.date: 11/19/2024
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---

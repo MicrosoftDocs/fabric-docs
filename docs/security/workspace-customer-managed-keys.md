@@ -30,7 +30,7 @@ A [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-f
 
 Fabric uses the *Fabric Platform CMK* app to access your Azure Key Vault. For the app to work, a [service principal](/entra/identity-platform/app-objects-and-service-principals?tabs=browser#service-principal-object) must be created for the tenant. This process is performed by a user that has Microsoft Entra ID privileges, such as a [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
 
-Follow the instructions in [Create an enterprise application from a multitenant application in Microsoft Entra ID](/entra/identity/enterprise-apps/create-service-principal-cross-tenant) to create a service principal for an application called *Fabric Platform CMK* in your Microsoft Entra ID tenant.
+Follow the instructions in [Create an enterprise application from a multitenant application in Microsoft Entra ID](/entra/identity/enterprise-apps/create-service-principal-cross-tenant) to create a service principal for an application called *Fabric Platform CMK* with app ID *61d6811f-7544-4e75-a1e6-1c59c0383311* in your Microsoft Entra ID tenant.
 
 ### Step 3: Configure Azure Key Vault
 
@@ -66,7 +66,7 @@ To create an Azure Key Vault key, follow the instructions in [Create a key vault
 
 Fabric only supports [versionless customer-managed keys](/azure/key-vault/keys/how-to-configure-key-rotation#key-rotation-policy), which are keys in the `https://{vault-name}.vault.azure.net/{key-type}/{key-name}` format. Fabric checks the key vault daily for a new version, and uses the latest version available. To avoid having a period where you can't access data in the workspace after a new key is created, wait 24 hours before disabling the older version.
 
-Your key must be an *RSA* key. The supported sizes are:
+Key Vault must have both soft-delete and purge protection enabled and the key must be of *RSA* type. The supported key sizes are:
 
 * 2,048 bit
 * 3,072 bit

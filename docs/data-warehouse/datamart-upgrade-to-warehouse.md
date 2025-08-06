@@ -4,7 +4,7 @@ description: This tutorial provides a step-by-step guide to upgrade Power BI Dat
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 05/19/2025
+ms.date: 07/16/2025
 ms.topic: how-to
 ---
 # Upgrade a Power BI Datamart to a Warehouse
@@ -52,22 +52,14 @@ You have two options for upgrading an existing datamart to a warehouse:
     :::image type="content" source="media/datamart-upgrade-to-warehouse/import-from-a-power-query-template.png" alt-text="Screenshot from the Fabric portal of a new Dataflow Gen2, highlighting the Import from a Power Query template link.":::
 
 1. Select **Save & run**, which will both publish your dataflow and start a refresh of your data loaded into the Fabric warehouse.
-1. Connect your Power BI reports and dashboards to your Fabric Data Warehouse via the Default Semantic Model or as a data source. 
+1. Connect your Power BI reports and dashboards to your Fabric Data Warehouse via the semantic model, or as a data source. 
 
-## Optimize your data mart for Fabric Data Warehouse
+> [!NOTE]
+> [!INCLUDE [default-semantic-model-retirement](../includes/default-semantic-model-retirement.md)]
 
-The following are tips to optimize your upgraded datamart as a Fabric warehouse. Although optional, these topics can be helpful depending on what type of datamart features your organization is using.
+## Edit semantic models on your Fabric Data Warehouse
 
-### Enable the custom semantic model in your Fabric Data Warehouse
-
-Datamarts automatically add all tables to the default Power BI semantic model. In Fabric Data Warehouse, the default behavior does not automatically add tables and views to the default Power BI semantic model. This ensures the background sync will not get triggered. This will also disable some actions like "New Measure", "Create Report", and "Analyze in Excel". 
-
-If you want to change this default behavior:
-
-1. In the settings of the warehouse or SQL analytics endpoint, enable the **Sync the default Power BI semantic model** setting. This restarts the background sync that incurs some consumption costs. 
-1. Open the **Manage default Power BI semantic model** in the ribbon. 
-1. Manually pick tables and views to be added to semantic model. 
-1. Recreate any measures, relationships, or other business semantics as needed. 
+In Fabric Data Warehouse, the semantic model does not inherit all tables and views when created.
 
 To learn more on how to edit data models in the Power BI service, see [Edit Data Models](/power-bi/transform-model/service-edit-data-models).
 
@@ -76,6 +68,10 @@ Alternatively, you can script out RLS definitions from the datamart and reapply 
 1. To script out the Tabular Model Scripting Language (TMSL) schema of the semantic model, you can use [SQL Server Management Studio (SSMS)](https://aka.ms/ssms). To connect, use the semantic model's connection string, which looks like `powerbi://api.powerbi.com/v1.0/myorg/myusername`. 
     - You can find the connection string for your semantic model in **Settings**, under **Server settings**. 
 1. Generate an XMLA script of the semantic model via SSMS's **Script** context menu action. For more information, see [Dataset connectivity with the XMLA endpoint](/power-bi/enterprise/service-premium-connect-tools#connect-with-ssms).
+
+## Optimize your data mart for Fabric Data Warehouse
+
+The following are tips to optimize your upgraded datamart as a Fabric warehouse. Although optional, these topics can be helpful depending on what type of datamart features your organization is using.
 
 ### Script out and re-create row-level security (RLS) 
 
@@ -94,6 +90,6 @@ This can improve the performance and efficiency of your dataflows and reduce the
 
 ## Related content
 
-- [Default Power BI semantic models in Microsoft Fabric](semantic-models.md)
+- [Power BI semantic models in Microsoft Fabric](semantic-models.md)
 - [Row-level security in Fabric data warehousing](row-level-security.md)
 - [Datamart tenant settings](../admin/service-admin-portal-datamart.md)

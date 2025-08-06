@@ -5,14 +5,14 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 07/16/2025
 ai-usage: ai-assisted
 ---
 
 # Supported sources for Fabric Real-Time hub
 This article explains the supported sources for Fabric Real-Time hub, enabling you to create data streams from Microsoft and external sources. Learn how to leverage these sources to set alerts and take actions based on events.
 
-## Microsoft sources
+## Azure sources
 
 [!INCLUDE [microsoft-sources](./includes/microsoft-sources.md)]
 

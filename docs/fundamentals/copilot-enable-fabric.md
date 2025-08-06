@@ -7,6 +7,7 @@ ms.reviewer: shlindsay
 ms.custom:
 ms.topic: conceptual
 ms.date: 04/02/2025
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---

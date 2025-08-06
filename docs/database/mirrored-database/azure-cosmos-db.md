@@ -45,11 +45,10 @@ Mirrored databases are an item in **Fabric Data Warehousing** distinct from the 
 
 :::image type="content" source="media/azure-cosmos-db/fabric-mirroring-cosmos-db.svg" alt-text="Diagram of Fabric Mirroring for Azure Cosmos DB.":::
 
-Every Mirrored Azure Cosmos DB database has three items you can interact with in your Fabric workspace:  
+Every Mirrored Azure Cosmos DB item creates these items you can interact with in your Fabric workspace:  
 
 - The mirrored database item. Mirroring manages the replication of data into [OneLake](../../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
 - [SQL analytics endpoint](../../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md), which is automatically generated
-- [Default semantic model](../../data-warehouse/semantic-models.md), which is automatically generated
 
 ### Mirrored database
 
@@ -69,7 +68,7 @@ In addition to the [SQL query editor](../../data-warehouse/sql-query-editor.md),
 
 ### Semantic model
 
-The default semantic model is an automatically provisioned Power BI Semantic Model. This feature enables business metrics to be created, shared, and reused. For more information, see [semantic models](../../data-warehouse/datasets.md).
+You can create a Power BI Semantic Model on the database to allow business metrics to be created, shared, and reused. For more information, see [Create a Power BI semantic model](../../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model).
 
 ## How does near real-time replication work?
 
@@ -124,7 +123,7 @@ For example, if the Azure Cosmos DB item has `addressName` and `AddressName` as 
 
 ### Support for AI Workloads
 
-Azure Cosmos DB Mirroring supports accounts that use vector search and indexing, allowing AI and machine learning workloads to take full advantage of Microsoft Fabric’s powerful analytics—while continuing to leverage Azure Cosmos DB’s high-performance vector capabilities.
+Azure Cosmos DB Mirroring supports accounts that use vector search and indexing, allowing AI and machine learning workloads to take full advantage of Microsoft Fabric's powerful analytics—while continuing to leverage Azure Cosmos DB's high-performance vector capabilities.
 
 For more details, explore the documentation on [Vector Search and Indexing for Cosmos DB](/azure/cosmos-db/nosql/vector-search) and [Fabric Data Science and AI Experiences](../../data-science/index.yml).
 

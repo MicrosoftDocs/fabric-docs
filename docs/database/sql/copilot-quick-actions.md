@@ -5,6 +5,7 @@ author: yoleichen
 ms.author: yoleichen
 ms.reviewer: maghan, wiassaf
 ms.date: 05/19/2025
+ms.update-cycle: 180-days
 ms.topic: how-to
 ms.collection:
 - ce-skilling-ai-copilot

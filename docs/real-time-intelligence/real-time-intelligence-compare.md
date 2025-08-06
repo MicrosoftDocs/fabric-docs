@@ -7,6 +7,7 @@ author: spelluru
 ms.topic: overview
 ms.custom:
 ms.date: 06/25/2025
+ms.update-cycle: 180-days
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Overview
