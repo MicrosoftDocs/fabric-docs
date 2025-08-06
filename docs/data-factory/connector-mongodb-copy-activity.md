@@ -4,7 +4,7 @@ description: This article explains how to copy data using MongoDB.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/29/2025
+ms.date: 08/06/2025
 ms.custom: 
   - pipelines
   - template-how-to
@@ -88,25 +88,25 @@ For **Mapping** tab configuration, see [Configure your mappings under mapping ta
 
 When copying data from MongoDB, the following mappings are used from MongoDB data types to interim data types used by the service internally. 
 
-| MongoDB data type | Interim service data type (for version 1.1) | Interim service data type (for version 1.0) |
-|-------------------|---------------------------------------------|---------------------------------------------|
-| Date              | DateTime                                    | String                                      |
-| ObjectId          | String                                      | String                                      |
-| Decimal128        | String                                      | String                                      |
-| TimeStamp         | The most significant 32 bits -> DateTime<br>The least significant 32 bits -> Int32  | Int32           |
-| String            | String                                      | String                                      |
-| Array             | Array                                       | Array                                       |
-| Double            | Double                                      | String                                      |
-| Int32             | Int32                                       | String                                      |
-| Int64             | Int64                                       | String                                      |
-| Boolean           | Boolean                                     | Boolean                                     |
-| NullData          | Null                                        | Null                                        |
-| Document          | Dictionary                                  | Dictionary                                  |
-| javaScript        | String                                      | String                                      |
-| Regex             | String                                      | String                                      |
-| minKey            | String                                      | Int32                                       |
-| maxKey            | String                                      | Int32                                       |
-| Binary            | GUID (when SubType is "04" )<br>String      | String                        |
+| MongoDB data type     | Interim service data type (for version 1.1)                | Interim service data type (for version 1.0) |
+|----------------------|------------------------------------------------------------|---------------------------------------------|
+| Date                 | DateTime                                                   | Int64                                       |
+| ObjectId             | String                                                     | String                                      |
+| Decimal128           | String                                                     | String                                      |
+| TimeStamp            | The most significant 32 bits -> DateTime<br>The least significant 32 bits -> Int64 | The most significant 32 bits -> Int64<br>The least significant 32 bits -> Int64                                     |
+| String               | String                                                     | String                                      |
+| Array                | Array                                                      | Array                                       |
+| Double               | Double                                                     | Double                                      |
+| Int32                | Int64                                                      | Int64                                       |
+| Int64                | Int64                                                      | Int64                                       |
+| Boolean              | Boolean                                                    | Boolean                                     |
+| Null                 | Null                                                       | Null                                        |
+| Document             | Dictionary                                                 | Dictionary                                  |
+| JavaScript           | String                                                     | String                                      |
+| Regular Expression   | String                                                     | String                                      |
+| Min key              | String                                                     | Int64                                       |
+| Max key              | String                                                     | Int64                                       |
+| Binary               | GUID (when SubType is "04" )<br>String                     | String                                      |
 
 ### Settings
 
@@ -116,9 +116,10 @@ For **Settings** tab configuration, go to [Configure your other settings under s
 
 The table below shows the feature differences between various versions.
 
-| Version 1.1 | Version 1.0|
-|--------------|-------------|
-| The following mappings are used from MongoDB data types to interim service data types.<br><br>Date -> DateTime<br>TimeStamp -> The most significant 32 bits -> DateTime; The least significant 32 bits -> Int32<br>Double -> Double<br>Int32 -> Int32<br>Int64 -> Int64<br>minKey -> String<br>maxKey -> String<br>Binary -> GUID (when SubType is "04") / String | The following mappings are used from MongoDB data types to interim service data types.<br><br>Date -> String<br>TimeStamp -> Int32<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>minKey -> Int32<br>maxKey -> Int32<br>Binary -> String |
+| Version 1.1 | Version 1.0 |
+|-------------|-------------|
+| The following mappings are used from MongoDB data types to interim service data types.<br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Double -> Double<br>Int32 -> Int64<br>Int64 -> Int64<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String | The following mappings are used from MongoDB data types to interim service data types.<br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String |
+
 
 ## Table summary
 

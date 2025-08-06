@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure Cosmos DB for Mo
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/07/2024
+ms.date: 08/06/2024
 ms.custom: 
   - pipelines
   - template-how-to
@@ -80,6 +80,39 @@ Under **Advanced**, you can specify the following fields:
 ### Mapping
 
 For **Mapping** tab configuration, see [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). Mapping is not supported when both source and destination are hierarchical data.
+
+#### Data type mapping for Azure Cosmos DB for MongoDB
+
+When copying data from Azure Cosmos DB for MongoDB, the following mappings are used from Azure Cosmos DB for MongoDB data types to interim data types used by the service internally. 
+
+| Azure Cosmos DB for MongoDB data type | Interim service data type (for version 1.1) | Interim service data type (for version 1.0) |
+|-------------------|---------------------------------------------|---------------------------------------------|
+| Date                 | DateTime                                                   | Int64                                       |
+| ObjectId             | String                                                     | String                                      |
+| Decimal128           | String                                                     | String                                      |
+| TimeStamp            | The most significant 32 bits -> DateTime<br>The least significant 32 bits -> Int64 | The most significant 32 bits -> Int64<br>The least significant 32 bits -> Int64                                     |
+| String               | String                                                     | String                                      |
+| Array                | Array                                                      | Array                                       |
+| Double               | Double                                                     | Double                                      |
+| Int32                | Int64                                                      | Int64                                       |
+| Int64                | Int64                                                      | Int64                                       |
+| Boolean              | Boolean                                                    | Boolean                                     |
+| Null                 | Null                                                       | Null                                        |
+| Document             | Dictionary                                                 | Dictionary                                  |
+| JavaScript           | String                                                     | String                                      |
+| Regular Expression   | String                                                     | String                                      |
+| Min key              | String                                                     | Int64                                       |
+| Max key              | String                                                     | Int64                                       |
+| Binary               | GUID (when SubType is "04" )<br>String                     | String                                      |
+
+
+### Differences between Azure Cosmos DB for MongoDB versions
+
+The table below shows the feature differences between various versions.
+
+| Version 1.1 | Version 1.0 |
+|-------------|-------------|
+| The following mappings are used from  Azure Cosmos DB for MongoDB data types to interim service data types.<br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Double -> Double<br>Int32 -> Int64<br>Int64 -> Int64<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String | The following mappings are used from Azure Cosmos DB for MongoDB data types to interim service data types.<br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String |
 
 ### Settings
 
