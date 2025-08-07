@@ -17,7 +17,7 @@ The Microsoft Fabric REST API provides a service endpoint for management of Fabr
 
 With materialized lake view APIs, data engineers and citizen developers can automate their own pipelines. These APIs also make it easy for users to manage Fabric materialized lake views (MLV) and integrate it with other tools and systems.
 
-The following **Job scheduler** actions are available for materialized lake views with user authentication:
+The following **Job scheduler** actions are available for materialized lake views with user authentication and `{jobType}` as 'RefreshMaterializedLakeViews'.
 
 |Action|Description|
 |---------|---------|
@@ -48,7 +48,7 @@ Use the following APIs to schedule, run, get/remove job/schedule jobs in materia
 
 ### Create Schedule for MLV in Lakehouse
 
-Create a new schedule to run lineage in MLV. Currently, MLV supports only one active schedule per lineage. Use [Update Schedule](#update-schedule-for-mlv-in-lakehouse) to update an existing schedule.
+Create a new schedule to run lineage in MLV. For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule?tabs=HTTP). Currently, MLV supports only one active schedule per lineage. Use [Update Schedule](#update-schedule-for-mlv-in-lakehouse) to update an existing schedule.
 
 **Sample request**:
 
@@ -97,7 +97,7 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehous
 
 ### Update Schedule for MLV in Lakehouse
 
-Update an existing schedule to run lineage in MLV. Currently, MLV supports only one active schedule per lineage.
+Update an existing schedule to run lineage in MLV. For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler/update-item-schedule?tabs=HTTP). Currently, MLV supports only one active schedule per lineage.
 
 **Sample request**:
 
@@ -142,7 +142,7 @@ Status code:
 
 ### Get Schedule for MLV in Lakehouse
 
-Get details of an existing schedule for MLV.
+Get details of an existing schedule for MLV. For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler/get-item-schedule?tabs=HTTP).
 
 **Sample request**:
 
@@ -176,7 +176,7 @@ Status code:
 
 ### Delete Schedule for MLV in Lakehouse
 
-Delete an existing schedule for MLV.
+Delete an existing schedule for MLV. For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler/delete-item-schedule?tabs=HTTP).
 
 **Sample request**:
 
@@ -191,7 +191,7 @@ Status code:
 
 ### List Schedules for MLV in Lakehouse
 
-List schedules created for MLV lineage.
+List schedules created for MLV lineage. For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler/list-item-schedules?tabs=HTTP).
 
 **Sample request**:
 
@@ -255,7 +255,7 @@ Status code:
 
 ### Run On Demand Job for MLV in Lakehouse
 
-Run MLV lineage as an on demand job. Spark job starts executing after a successful request.
+Run MLV lineage as an on demand job. Spark job starts executing after a successful request. For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job?tabs=HTTP).
 
 **Sample request**:
 
@@ -277,7 +277,7 @@ With `location`, you can use [Get Item Job Instance](/rest/api/fabric/core/job-s
 
 ### List Job Instances for MLV in Lakehouse
 
-Lists job instances for MLV in a Lakehouse.
+Lists job instances for MLV in a Lakehouse. For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP).
 
 **Sample request**:
 
@@ -321,7 +321,7 @@ Status code:
 
 ### Get Job Instance details for MLV in Lakehouse
 
-Get details such as status and id corresponding to a run in MLV.
+Get details such as status and id corresponding to a run in MLV. For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler/get-item-job-instance?tabs=HTTP).
 
 **Sample request**:
 
@@ -350,7 +350,7 @@ Status code:
 
 ### Cancel Job Instance for MLV in Lakehouse
 
-Cancel an ongoing job run of lineage in MLV.
+Cancel an ongoing job run of lineage in MLV. For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler/cancel-item-job-instance?tabs=HTTP).
 
 **Sample request**:
 
