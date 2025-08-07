@@ -17,7 +17,7 @@ The Microsoft Fabric REST API provides a service endpoint for management of Fabr
 
 With materialized lake view APIs, data engineers and citizen developers can automate their own pipelines. These APIs also make it easy for users to manage Fabric materialized lake views (MLV) and integrate it with other tools and systems.
 
-The following **Job scheduler** actions are available for materialized lake views with user authentication and `{jobType}` as 'RefreshMaterializedLakeViews'.
+The following **Job scheduler** actions are available for materialized lake views with user authentication.
 
 |Action|Description|
 |---------|---------|
@@ -31,7 +31,7 @@ The following **Job scheduler** actions are available for materialized lake view
 |[Get Item Job Instance](#get-job-instance-details-for-mlv-in-lakehouse)|Get job instance details of MLV lineage in Lakehouse execution such as status.|
 |[Cancel Item Job Instance](#cancel-job-instance-for-mlv-in-lakehouse)|Cancel an ongoing run of MLV lineage in Lakehouse.|
 
-For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
+For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler) with `{jobType}` as 'RefreshMaterializedLakeViews'.
 
 > [!NOTE]
 > These scenarios only cover materialized lake views-unique usage examples. Fabric item common API examples aren't covered here.
