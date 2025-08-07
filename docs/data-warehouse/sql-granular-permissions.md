@@ -29,6 +29,22 @@ For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](incl
 
 - `CREATE USER` cannot be explicitly executed currently. When `GRANT` or `DENY` is executed, the user is created automatically. The user will not be able to connect until sufficient workspace level rights are given.
 
+## Grant granular SELECT permissions on SCHEMA
+```sql
+GRANT SELECT ON SCHEMA::[<schema>] TO [<principal_name>];
+```
+
+## Grant Openrowset Permissions
+To use the `OPENROWSET` function with external data sources, the following permissions are required:
+
+`ADMINISTER DATABASE BULK OPERATIONS` must be granted to the executing principal:
+
+```sql
+  GRANT ADMINISTER DATABASE BULK OPERATIONS TO [<principal_name>];
+```
+
+If the target storage account is private, the principal must also have the **Storage Blob Data Reader** role (or higher) assigned at the container or storage account level.
+
 ## View my permissions
 
 When a user connects to the SQL connection string, they can view the permissions available to them using the [sys.fn_my_permissions](/sql/relational-databases/system-functions/sys-fn-my-permissions-transact-sql?view=fabric&preserve-view=true) function.
