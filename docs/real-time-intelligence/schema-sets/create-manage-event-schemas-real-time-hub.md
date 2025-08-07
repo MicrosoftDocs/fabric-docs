@@ -1,5 +1,8 @@
 ---
 title: Create and Manage Event Schemas in Fabric Real-Time Hub
+ms.subservice: rti-hub
+ms.service: fabric
+ms.reviewer: spelluru
 description: Learn how to create and manage event schemas in Fabric Real-Time Hub with step-by-step guidance for registration, schema building, and organization.
 #customer intent: As a user, I want to learn how to add a schema to a schema set.
 ms.author: spelluru
@@ -11,8 +14,9 @@ ms.custom:
   - ai-seo-date:08/07/2025
   - ai-gen-description
 ms.date: 08/07/2025
-ms.search.form: Schema set
+ms.search.form: Schema Registry
 ---
+
 # Create and manage event schemas in Fabric Real-Time hub
 In this article, you lean how to register or add a schema in Fabric Real-Time hub. 
 

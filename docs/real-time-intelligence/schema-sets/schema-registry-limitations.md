@@ -1,6 +1,9 @@
 ---
 title: Schema Registry Limits in Fabric Real-Time Intelligence
-description: Learn about Schema Registry limitations in Fabric Real-Time Intelligence. Discover preview restrictions, supported sources, destinations, and how non-conforming events are handled in Microsoft Fabric.
+ms.subservice: rti-hub
+ms.service: fabric
+description: Understand the limitations of Schema Registry in Fabric Real-Time Intelligence, including supported sources, destinations, and handling of non-conforming events.
+#customer intent: As a data engineer, I want to understand the current limitations of Schema Registry in Fabric Real-Time Intelligence so that I can plan my data streaming implementation effectively.
 author: spelluru
 contributors: null
 ms.topic: overview
@@ -12,7 +15,9 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:08/07/2025
   - ai-gen-description
+ms.search.form: Schema Registry
 ---
+
 
 # Schema Registry - known limitations
 As Schema Registry in Fabric Real-Time Intelligence is currently in public preview. This article provides some important limitations to be aware of. 
