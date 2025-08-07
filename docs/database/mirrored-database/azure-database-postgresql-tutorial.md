@@ -19,7 +19,7 @@ ms.topic: tutorial
     - As a tutorial, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure Database for PostgreSQL flexible server](/azure/postgresql/flexible-server/how-to-restore-latest-restore-point).
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - The Fabric capacity needs to be active and running. A paused or deleted capacity also stops Mirroring and no data will be replicated.
-- Ensure the following Fabric tenant settings are enabled. To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
+- Fabric tenant settings are required. Ensure the following two [Fabric Tenant settings](../../admin/about-tenant-settings.md) are enabled:
     - [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../../admin/tenant-settings-index.md#onelake-settings)
 - You need to have a member or admin role in your workspace when create a mirrored database from the Fabric portal. During creation, the managed identity of Azure Database for PostgreSQL is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
