@@ -105,6 +105,9 @@ When copying data from Azure Cosmos DB for MongoDB, the following mappings are u
 | Max key              | String                                                     | Int64                                       |
 | Binary               | GUID (when SubType is "04" )<br>String                     | String                                      |
 
+### Settings
+
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ### Differences between Azure Cosmos DB for MongoDB versions
 
@@ -113,10 +116,6 @@ The table below shows the feature differences between various versions.
 | Version 1.1 | Version 1.0 |
 |-------------|-------------|
 | The following mappings are used from  Azure Cosmos DB for MongoDB data types to interim service data types.<br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Double -> Double<br>Int32 -> Int64<br>Int64 -> Int64<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String | The following mappings are used from Azure Cosmos DB for MongoDB data types to interim service data types.<br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String |
-
-### Settings
-
-For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 
