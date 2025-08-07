@@ -117,9 +117,9 @@ To find an event schema, you can enter text in the **Search** box in the **Event
 You can modify schemas after registering them with Fabric Real-Time intelligence.
 
 > [!NOTE]
->  Fabric doesn't perform compatibility checks when you update a schema, which means any changes you make could be break existing pipelines. For example, removing required fields or changing field types may cause errors in pipelines or downstream services expecting the original structure. 
+>  Fabric doesn't perform compatibility checks when you update a schema, which means any changes you make could be break existing pipelines. For example, removing required fields or changing field types might cause errors in pipelines or downstream services expecting the original structure. 
 > 
-> Because of this, we recommend that you add a new schema where needed, instead of modifying an existing one. You can then update your pipelines and configurations to use the new schema, test everything, and retire the old version once you’ve confirmed that everything works correctly. 
+> Because of this behavior, we recommend that you add a new schema where needed, instead of modifying an existing one. You can then update your pipelines and configurations to use the new schema, test everything, and retire the old version once you confirm that everything works correctly. 
 
 1. To update an event schema and create a new version of the schema, select **Update**. 
 
