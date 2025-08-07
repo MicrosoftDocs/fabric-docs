@@ -277,7 +277,7 @@ With `location`, you can use [Get Item Job Instance](/rest/api/fabric/core/job-s
 
 ### List Job Instances for MLV in Lakehouse
 
-Lists job instances for MLV in a Lakehouse. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP). Please note that the job status returned reflects the status shown in Monitor Hub.
+Lists job instances for MLV in a Lakehouse. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP). Note that the job status returned reflects the status shown in Monitor Hub.
 
 **Sample request**:
 
@@ -321,7 +321,7 @@ Status code:
 
 ### Get Job Instance details for MLV in Lakehouse
 
-Get details such as status and id corresponding to a run in MLV. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/get-item-job-instance?tabs=HTTP). Please note that the job status returned reflects the status shown in Monitor Hub.
+Get details such as status and id corresponding to a run in MLV. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/get-item-job-instance?tabs=HTTP). Note that the job status returned reflects the status shown in Monitor Hub.
 
 **Sample request**:
 
@@ -374,7 +374,7 @@ Retry-after: 60
 - *Schedule Limits per Lakehouse:*  The [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule) enforces limits on the number of schedules that can be configured per lakehouse. Users should plan accordingly to avoid exceeding these limits.
 - *Entity Display Limits:* The [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations) interface displays a limited number of completed and active jobs. This limitation may affect visibility into historical or concurrent job executions.
 - *Single Schedule per Lineage:* MLV supports only one active schedule per lineage. Attempting to create more schedules for the same lineage may result in UI instability. If the UI becomes unresponsive due to multiple schedules, users must delete all existing schedules to restore functionality.
-- *Job Status Display:* The job status returned by [list item job instances](#list-job-instances-for-mlv-in-lakehouse) and [get item job instance](#get-job-instance-details-for-mlv-in-lakehouse) APIs reflects the status shown in Monitor Hub. This may differ from the status displayed on the MLV [run history](./run-history.md#following-are-the-possible-states-for-a-run-in-lineage-view).
+- *Job Status Display:* The job status returned by [list item job instances](#list-job-instances-for-mlv-in-lakehouse) and [get item job instance](#get-job-instance-details-for-mlv-in-lakehouse) APIs reflects the status shown in Monitor Hub. This status may differ from the status displayed on the MLV [run history](./run-history.md#following-are-the-possible-states-for-a-run-in-lineage-view).
 
 ## Related content
 
