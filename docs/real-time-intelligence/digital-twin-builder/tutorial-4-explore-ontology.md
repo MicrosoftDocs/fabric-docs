@@ -93,7 +93,7 @@ The ontology data for a digital twin builder (preview) item is stored in a Fabri
 
 Follow these steps to view your domain data.
 
-1. Go to your Fabric workspace and identify the SQL endpoint of the lakehouse associated with your digital twin builder item. The SQL endpoint has the same name as your digital twin builder item with a *dtdm* extension, so in this case it's called *Contoso_Energydtdm*.
+1. Go to your Fabric workspace and identify the SQL endpoint of the lakehouse associated with your digital twin builder item. The SQL endpoint has the same name as your digital twin builder item with a *dtdm* extension, so in this case it's called *TutorialDTBdtdm*.
 
     :::image type="content" source="media/tutorial/sql-endpoint.png" alt-text="Screenshot of selecting the SQL endpoint.":::
 
