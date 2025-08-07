@@ -13,16 +13,8 @@ In this part of the tutorial, you build a digital twin ontology that models the 
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Create new digital twin builder item in Fabric
-
-1. Go to your Fabric workspace. 
-1. Select **New item**.
-1. Search for the *Digital Twin Builder (preview)* item, and select it.
-
-    :::image type="content" source="media/tutorial/new-digital-twin-builder.png" alt-text="Screenshot of Digital Twin Builder item.":::
-
-1. Enter *BusModel* as the name for your item and select **Create**. 
-1. Wait for your digital twin builder item to be created. Once your digital twin builder item is ready, it opens to the semantic canvas.
+<!--## Create new digital twin builder item in Fabric (title in include)-->
+[!INCLUDE [Create digital twin builder](../includes/create-digital-twin-builder.md)]
 
 In the semantic canvas, you can add entity types and relationship types to define an ontology.
 
