@@ -15,15 +15,9 @@ Digital twin builder (preview) is a [Microsoft Fabric](../../fundamentals/micros
 
 This tutorial walks you through building a scenario ontology in digital twin builder for the fictional company Contoso Energy. It focuses on digital twin builder's capabilities for modeling and contextualizing data from multiple sources, and finishes with a Power BI dashboard to visualize the data.
 
-## Prerequisites
+<!--## Prerequisites (title in include)-->
+[!INCLUDE [Prerequisites for digital twin builder](../includes/digital-twin-builder-prerequisites.md)]
 
-* A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* Digital twin builder (preview) enabled on your tenant.
-    - [Fabric administrators](../../admin/roles.md) can grant access to digital twin builder in the [admin portal](../../admin/admin-center.md). In the [tenant settings](../../admin/tenant-settings-index.md), enable *Digital Twin Builder (preview).*
-
-        :::image type="content" source="media/tutorial/prereq-tenant-setting.png" alt-text="Screenshot of enabling digital twin builder in the admin portal.":::
-
-    - The tenant can't have [Autoscale Billing for Spark](../../data-engineering/autoscale-billing-for-spark-overview.md) enabled, as digital twin builder isn't compatible with it. This setting is also managed in the [admin portal](../../admin/admin-center.md). 
 * The latest Power BI desktop app on your machine (step 5 of the tutorial requires use of the desktop app, **not** the Power BI service in Fabric). You can get it here: [Download Power BI](https://www.microsoft.com/power-platform/products/power-bi/downloads?msockid=2612a5667524602e3f9bb50b74976110). 
 
 ## Understand the Contoso Energy scenario
