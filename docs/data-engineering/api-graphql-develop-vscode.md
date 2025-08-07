@@ -261,7 +261,7 @@ Configure Microsoft Entra ID authentication for your application:
 export const AUTH_CONFIG = {
     clientId: "<Enter_the_Application_Id_Here>",
     tenantId: "<Enter_the_Tenant_Id_Here>",
-    clientSecret: "<Enter_the_Client_Secret_Here>",
+    clientSecret: "<Enter_the_Client_Secret_Here>", //optional
 }
 export const GRAPHQL_ENDPOINT = '<Enter_the_GraphQL_Endpoint_Here>';
 ```
