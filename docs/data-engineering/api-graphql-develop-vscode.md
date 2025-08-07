@@ -1,6 +1,6 @@
 ---
-title: Develop GraphQL applications on VSCoder
-description: Learn how to develop GraphQL applications in VSCode leveraging local development tools including auto-completion, code generation, and IntelliSense
+title: Develop GraphQL applications on VSCode
+description: Learn how to develop GraphQL applications in VSCode using local development tools including autocompletion, code generation, and IntelliSense
 ms.reviewer: sngun
 ms.author: sngun
 author: edlima
@@ -10,9 +10,9 @@ ms.search.form: Develop GraphQL applications on VSCode
 ms.date: 08/07/2025
 ---
 
-# Develop GraphQL applications on VSCode
+# Develop GraphQL applications on Visual Studio Code
 
-Learn how to build a front-end application with React, Apollo Client, and TypeScript that integrates with a GraphQL API hosted in Microsoft Fabric. This tutorial covers setting up local development tools including auto-completion, code generation, and IntelliSense for an optimal developer experience.
+Learn how to build a front-end application with React, Apollo Client, and TypeScript that integrates with a GraphQL API hosted in Microsoft Fabric. This tutorial covers setting up local development tools including autocompletion, code generation, and IntelliSense for an optimal developer experience.
 
 ## Prerequisites
 
@@ -54,13 +54,13 @@ cd fabric-samples/docs-samples/data-engineering/GraphQL/React-Apollo-TS
 
 ### Install dependencies
 
-Install the required packages for GraphQL development, auto-completion and code generation:
+Install the required packages for GraphQL development, autocompletion and code generation:
 
 ```bash
 npm install
 ```
 
-### Install VS Code extension
+### Install Visual Studio Code extension
 
 Install the [GraphQL: Language Feature Support](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql) extension in Visual Studio Code to enable syntax highlighting, validation, and IntelliSense for GraphQL operations.
 
@@ -70,12 +70,12 @@ You can obtain your GraphQL schema in two ways:
 
 ### Option 1: Export schema as static file
 
-1. In your Fabric GraphQL API, select **Export Schema**.
+1. In your Fabric GraphQL API, select **Export Schema** from the ribbon.
 2. Save the `schema.graphql` file to your project root directory.
 
 ### Option 2: Use remote endpoint
 
-1. Copy the GraphQL endpoint URL from your Fabric API.
+1. Access the GraphQL API you created in the Fabric Portal.
 2. Obtain an authorization token:
    - Open your browser's developer tools (F12)
    - Navigate to the Console tab
@@ -91,7 +91,7 @@ IntelliSense provides real-time code suggestions, error detection, and field val
 
 Create a configuration file at your project root:
 
-### For static schema file
+### Using static schema file
 
 Create `.graphqlrc.yml`:
 
@@ -100,7 +100,7 @@ schema: './schema.graphql'
 documents: 'src/**/*.{ts,tsx,graphql,gql}'
 ```
 
-### For remote endpoint
+### Using remote endpoint
 
 Create `graphql.config.yml`:
 
@@ -117,7 +117,7 @@ documents: src/**/*.{ts,tsx,graphql,gql}
 - **schema**: Specifies the location of your GraphQL schema
 - **documents**: Defines which files should have IntelliSense support
 
-After creating the configuration file, restart VS Code to ensure changes take effect.
+After creating the configuration file, restart Visual Studio Code to ensure changes take effect.
 
 ## Step 5: Set up code generation
 
@@ -161,7 +161,7 @@ Add the code generation script to your `package.json`:
 
 ## Step 6: Write GraphQL operations
 
-Create `.graphql` files in your `src` directory to define your queries and mutations. IntelliSense will provide autocompletion and validation.
+Create `.graphql` files in your `src` directory to define your queries and mutations. IntelliSense provides autocompletion and validation.
 
 ### Example query
 
@@ -211,7 +211,7 @@ Run the code generation command to create TypeScript types and React hooks:
 npm run codegen
 ```
 
-Upon successful completion, you'll see generated code in `src/generated/graphql.tsx` containing:
+Upon successful completion, you have the generated code in `src/generated/graphql.tsx` containing:
 
 - TypeScript interfaces for all GraphQL types
 - Strongly-typed React hooks for each operation
@@ -276,7 +276,7 @@ Start your development server:
 npm run dev
 ```
 
-Your application will launch in the browser. You'll be prompted to sign in with your Microsoft credentials to access the GraphQL API data.
+Your application will launch in the browser. You are prompted to sign in with your Microsoft credentials to access the GraphQL API data. After that you are able to see the details from your Fabric SQL database `Customers` table.
 
 ## Related content
 
