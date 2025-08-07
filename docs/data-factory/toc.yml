@@ -77,6 +77,8 @@
       href: how-to-access-on-premises-data.md
     - name: Monitoring activity in Data Factory
       href: monitor-data-factory.md
+    - name: Create Alerts for Pipelines
+      href: create-alerts-for-pipeline-runs.md
     - name: Bring Azure Data Factory to Fabric
       href: tutorial-bring-azure-data-factory-to-fabric.md      
   - name: Migrate to Fabric
@@ -237,12 +239,6 @@
         href: connector-azure-files-overview.md 
       - name: Configure in a data pipeline Copy activity 
         href: connector-azure-files-copy-activity.md 
-    - name: Azure HDInsight on AKS Trino
-      items:
-      - name: Azure HDInsight on AKS Trino - Overview
-        href: connector-azure-hdinsight-on-aks-trino-overview.md
-      - name: Set up your connection
-        href: connector-azure-hdinsight-on-aks-trino.md
     - name: Azure SQL database
       items:
       - name: Azure SQL database - Overview

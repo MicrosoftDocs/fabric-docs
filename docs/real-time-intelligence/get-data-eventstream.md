@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 05/12/2025
+ms.date: 07/31/2025
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -17,6 +17,10 @@ In this article, you learn how to get data from an existing eventstream into eit
 You can ingest data from default or derived streams. A derived stream is created following the addition of a series of stream operations to the eventstream, such as **Filter** or **Manage Fields**. For more information, see [Eventstream concepts](event-streams/create-default-derived-streams.md#concepts).
 
 To get data from a new eventstream, see [Get data from a new eventstream](event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-a-new-eventstream).
+
+> [!WARNING]
+>
+> * Ingestion from an eventstream using a [private link](/azure/private-link/private-link-overview) is not supported.
 
 ## Prerequisites
 

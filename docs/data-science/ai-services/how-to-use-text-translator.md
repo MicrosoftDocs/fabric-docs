@@ -1,13 +1,13 @@
 ---
 title: Use Azure AI Translator with REST API
 description: How to use prebuilt Azure AI translator in Fabric with REST API
-ms.author: larryfr
-author: Blackmist
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
-ms.date: 02/10/2025
+ms.date: 07/31/2025
 ms.update-cycle: 180-days
 ms.search.form:
 ms.collection: ce-skilling-ai-copilot
@@ -27,27 +27,55 @@ This sample shows use, with RESTful APIs, of the prebuilt Azure AI translator, i
 
 ## Prerequisites
 
+[!INCLUDE [prerequisites](../includes/prerequisites.md)]
+
+* Create [a new notebook](../../data-engineering/how-to-use-notebook.md).
+* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
+
+> [!NOTE]
+> This article uses Microsoft Fabric's built-in prebuilt AI services, which handle authentication automatically. You don't need to obtain a separate Azure AI services key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+
+
+The code samples in this article use libraries that are preinstalled in Microsoft Fabric notebooks:
+
+- **SynapseML**: Preinstalled in Fabric notebooks for machine learning capabilities
+  - `synapse.ml.core` - Core SynapseML functionality
+  - `synapse.ml.fabric.service_discovery` - Fabric service discovery utilities
+  - `synapse.ml.fabric.token_utils` - Authentication token utilities
+  - `synapse.ml.services` - AI services integration (includes Translate, Transliterate classes)
+- **PySpark**: Available by default in Fabric Spark compute
+  - `pyspark.sql.functions` - DataFrame transformation functions (`col`, `flatten`)
+- **Standard Python libraries**: Built into Python runtime
+  - `json` - JSON parsing and formatting
+  - `requests` - HTTP client for REST API calls
+
+
 # [Rest API](#tab/rest)
 
 ``` python
 # Get workload endpoints and access token
 
-from synapse.ml.mlflow import get_mlflow_env_config
+from synapse.ml.fabric.service_discovery import get_fabric_env_config
+from synapse.ml.fabric.token_utils import TokenUtils
 import json
+import requests
 
-mlflow_env_configs = get_mlflow_env_config()
-access_token = access_token = mlflow_env_configs.driver_aad_token
-prebuilt_AI_base_host = mlflow_env_configs.workload_endpoint + "cognitive/texttranslation/"
-print("Workload endpoint for AI service: \n" + prebuilt_AI_base_host)
+
+fabric_env_config = get_fabric_env_config().fabric_env_config
+auth_header = TokenUtils().get_openai_auth_header()
 
 # Make a RESTful request to AI service
+prebuilt_AI_base_host = fabric_env_config.ml_workload_endpoint + "cognitive/texttranslation/"
+print("Workload endpoint for AI service: \n" + prebuilt_AI_base_host)
 
-post_headers = {
-    "Content-Type" : "application/json",
-    "Authorization" : "Bearer {}".format(access_token),
+service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2022-05-01"
+print("Service URL: \n" + service_url)
+
+auth_headers = {
+    "Authorization" : auth_header
 }
 
-def printresponse(response):
+def print_response(response):
     print(f"HTTP {response.status_code}")
     if response.status_code == 200:
         try:
@@ -78,17 +106,13 @@ Text translation is the core operation of the Translator service.
 
 
 ``` python
-import requests
-import uuid
-
 service_url = prebuilt_AI_base_host + "translate?api-version=3.0&to=fr"
 post_body = [{'Text':'Hello, friend.'}]
 
-post_headers["x-ms-workload-resource-moniker"] = str(uuid.uuid1())
-response = requests.post(service_url, json=post_body, headers=post_headers)
+response = requests.post(service_url, json=post_body, headers=auth_headers)
 
 # Output all information of the request process
-printresponse(response)
+print_response(response)
 ```
 
 ### Output
@@ -149,11 +173,10 @@ post_body = [
     {"Text":"さようなら"}
 ]
 
-post_headers["x-ms-workload-resource-moniker"] = str(uuid.uuid1())
-response = requests.post(service_url, json=post_body, headers=post_headers)
+response = requests.post(service_url, json=post_body, headers=auth_headers)
 
 # Output all information of the request process
-printresponse(response)
+print_response(response)
 ```
 ### Output
 ```
@@ -204,11 +227,10 @@ Returns a list of languages that Translator operations support.
 ``` python
 service_url = prebuilt_AI_base_host + "languages?api-version=3.0"
 
-post_headers["x-ms-workload-resource-moniker"] = str(uuid.uuid1())
-response = requests.get(service_url, headers=post_headers)
+response = requests.get(service_url, headers=auth_headers)
 
 # Output all information of the request process
-printresponse(response)
+print_response(response)
 ```
 
 # [SynapseML](#tab/synapseml)
@@ -219,9 +241,7 @@ No steps for SynapseML in this section.
 
 ## Related content
 
-- [Use prebuilt Text Analytics in Fabric with REST API](how-to-use-text-analytics.md)
-- [Use prebuilt Text Analytics in Fabric with SynapseML](how-to-use-text-analytics.md)
-- [Use prebuilt Azure AI Translator in Fabric with SynapseML](how-to-use-text-translator.md)
+- [Use prebuilt Text Analytics in Fabric with REST API and SynapseML](how-to-use-text-analytics.md)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
 - [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-sdk-synapse.md)
 - [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-sdk-synapse.md)

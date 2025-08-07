@@ -103,7 +103,7 @@ items:
         href: event-streams/edit-publish.md
       - name: Route events based on content
         href: event-streams/route-events-based-on-content.md
-    - name: Add sources to eventstreams
+    - name: Add source connectors to eventstreams
       items:
       - name: Add and manage an event source
         href: event-streams/add-manage-eventstream-sources.md
@@ -157,7 +157,7 @@ items:
         href: event-streams/add-source-mqtt.md
       - name: Solace PubSub+
         href: event-streams/add-source-solace-pub-sub.md
-    - name: Add destinations to eventstreams
+    - name: Add destination connectors to eventstreams
       items:
       - name: Add and manage a destination
         href: event-streams/add-manage-eventstream-destinations.md
@@ -851,6 +851,13 @@ items:
       href: monitor-logs-ingestion-results.md
     - name: Query logs
       href: monitor-logs-query.md
+- name: Build AI agents
+  displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
+  items: 
+    - name: Fabric RTI MCP Server (preview)
+      href: mcp-overview.md 
+    - name: Use MCP with Eventhouse
+      href: mcp-eventhouse.md
 - name: Migrate
   items:
   - name: From Azure Synapse Data Explorer
