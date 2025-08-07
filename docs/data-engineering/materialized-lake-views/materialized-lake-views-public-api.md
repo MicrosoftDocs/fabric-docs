@@ -374,7 +374,7 @@ Retry-after: 60
 - *Schedule Limits per Lakehouse:*  The [Job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule) enforces limits on the number of schedules that can be configured per lakehouse. Users should plan accordingly to avoid exceeding these limits.
 - *Entity Display Limits:* The [Job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations) interface displays a limited number of completed and active jobs. This limitation may affect visibility into historical or concurrent job executions.
 - *Single Schedule per Lineage:* MLV supports only one active schedule per lineage. Attempting to create more schedules for the same lineage may result in UI instability. If the UI becomes unresponsive due to multiple schedules, users must delete all existing schedules to restore functionality.
-- *Job Status Display:* The job status returned by [List Item Job Instances](#list-job-instances-for-mlv-in-lakehouse) and [Get Item Job Instance](#get-job-instance-details-for-mlv-in-lakehouse) APIs reflects the status shown in Monitor Hub. This may differ from the status displayed on the MLV [run history](/materialized-lake-views/run-history.md#following-are-the-possible-states-for-a-run-in-lineage-view).
+- *Job Status Display:* The job status returned by [List Item Job Instances](#list-job-instances-for-mlv-in-lakehouse) and [Get Item Job Instance](#get-job-instance-details-for-mlv-in-lakehouse) APIs reflects the status shown in Monitor Hub. This may differ from the status displayed on the MLV [run history](./run-history.md#following-are-the-possible-states-for-a-run-in-lineage-view).
 
 ## Related content
 
