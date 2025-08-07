@@ -5,7 +5,7 @@ ms.topic: conceptual
 author: rkottackal
 ms.author: rkottackal
 ms.reviewer: nijelsf
-ms.date: 08/06/2025
+ms.date: 08/07/2025
 ms.search.form: MLV REST API
 ---
 
@@ -25,6 +25,7 @@ The following **Job scheduler** actions are available for materialized lake view
 |[Update Item Schedule](#update-schedule-for-mlv-in-lakehouse)|Update existing schedule for MLV lineage in MLV.|
 |[Get Item Schedule](#get-schedule-for-mlv-in-lakehouse)|Get schedule details for MLV lineage in Lakehouse.|
 |[Delete Item Schedule](#delete-schedule-for-mlv-in-lakehouse)|Delete schedule created for MLV lineage in Lakehouse.|
+|[List Item Schedules](#list-schedule-for-mlv-in-lakehouse)|List schedules created for MLV lineage in Lakehouse.|
 |[Run On Demand Item Job](#run-on-demand-job-for-mlv-in-lakehouse)|Run MLV lineage in Lakehouse as an on demand job.|
 |[List Item Job Instances](#list-job-instances-for-mlv-in-lakehouse)|List all job instances created for MLV lineage in Lakehouse. |
 |[Get Item Job Instance](#get-job-instance-details-for-mlv-in-lakehouse)|Get job instance details of MLV lineage in Lakehouse execution such as status.|
@@ -57,8 +58,8 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{L
 {
   "enabled": true,
   "configuration": {
-    "startDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
-    "endDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
+    "startDateTime": "YYYY-MM-DDTHH:mm:ss",
+    "endDateTime": "YYYY-MM-DDTHH:mm:ss",
     "localTimeZoneId": "Central Standard Time",
     "type": "Cron",
     "interval": 10
@@ -81,8 +82,8 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehous
   "enabled": true,
   "createdDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
   "configuration": {
-    "startDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
-    "endDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
+    "startDateTime": "YYYY-MM-DDTHH:mm:ss",
+    "endDateTime": "YYYY-MM-DDTHH:mm:ss",
     "localTimeZoneId": "Central Standard Time",
     "type": "Cron",
     "interval": 10
@@ -106,8 +107,8 @@ PATCH https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{
 {
   "enabled": true,
   "configuration": {
-    "startDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
-    "endDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
+    "startDateTime": "YYYY-MM-DDTHH:mm:ss",
+    "endDateTime": "YYYY-MM-DDTHH:mm:ss",
     "localTimeZoneId": "Central Standard Time",
     "type": "Cron",
     "interval": 10
@@ -126,8 +127,8 @@ Status code:
   "enabled": true,
   "createdDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
   "configuration": {
-    "startDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
-    "endDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
+    "startDateTime": "YYYY-MM-DDTHH:mm:ss",
+    "endDateTime": "YYYY-MM-DDTHH:mm:ss",
     "localTimeZoneId": "Central Standard Time",
     "type": "Cron",
     "interval": 10
@@ -160,8 +161,8 @@ Status code:
   "enabled": true,
   "createdDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
   "configuration": {
-    "startDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
-    "endDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
+    "startDateTime": "YYYY-MM-DDTHH:mm:ss",
+    "endDateTime": "YYYY-MM-DDTHH:mm:ss",
     "localTimeZoneId": "Central Standard Time",
     "type": "Cron",
     "interval": 10
@@ -187,6 +188,70 @@ DELETE https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/
 
 Status code:
 200 OK
+
+### List Schedules for MLV in Lakehouse
+
+List schedules created for MLV lineage.
+
+**Sample request**:
+
+```http
+GET https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehouses/{LAKEHOUSE_ID}/jobs/RefreshMaterializedLakeViews/schedules
+```
+
+**Sample response**:
+
+Status code:
+200 OK
+
+```json
+{
+  "value": [
+    {
+      "id": "<scheduleId_1",
+      "enabled": true,
+      "createdDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
+      "configuration": {
+        "startDateTime": "YYYY-MM-DDTHH:mm:ss",
+        "endDateTime": "YYYY-MM-DDTHH:mm:ss",
+        "localTimeZoneId": "Central Standard Time",
+        "type": "Weekly",
+        "weekdays": [
+          "Monday",
+          "Tuesday"
+        ],
+        "times": [
+          "HH:mm",
+          "HH:mm"
+        ]
+      },
+      "owner": {
+        "id": "<ownerid>",
+        "type": "User"
+      }
+    },
+    {
+      "id": "scheduleId_2",
+      "enabled": true,
+      "createdDateTime": "YYYY-MM-DDTHH:mm:ss.xxxxxxx",
+      "configuration": {
+        "startDateTime": "YYYY-MM-DDTHH:mm:ss",
+        "endDateTime": "YYYY-MM-DDTHH:mm:ss",
+        "localTimeZoneId": "Central Standard Time",
+        "type": "Daily",
+        "times": [
+          "HH:mm",
+          "HH:mm"
+        ]
+      },
+      "owner": {
+        "id": "<ownerid>",
+        "type": "User"
+      }
+    }
+  ]
+}
+```
 
 ### Run On Demand Job for MLV in Lakehouse
 
