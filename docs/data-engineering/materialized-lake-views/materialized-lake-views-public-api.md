@@ -25,7 +25,7 @@ The following **job scheduler** actions are available for materialized lake view
 |[Update Item Schedule](#update-schedule-for-mlv-in-lakehouse)|Update existing schedule for MLV lineage in MLV.|
 |[Get Item Schedule](#get-schedule-for-mlv-in-lakehouse)|Get schedule details for MLV lineage in Lakehouse.|
 |[Delete Item Schedule](#delete-schedule-for-mlv-in-lakehouse)|Delete schedule created for MLV lineage in Lakehouse.|
-|[List Item Schedules](#list-schedule-for-mlv-in-lakehouse)|List schedules created for MLV lineage in Lakehouse.|
+|[List Item Schedules](#list-schedules-for-mlv-in-lakehouse)|List schedules created for MLV lineage in Lakehouse.|
 |[Run On Demand Item Job](#run-on-demand-job-for-mlv-in-lakehouse)|Run MLV lineage in Lakehouse as an on demand job.|
 |[List Item Job Instances](#list-job-instances-for-mlv-in-lakehouse)|List all job instances created for MLV lineage in Lakehouse. |
 |[Get Item Job Instance](#get-job-instance-details-for-mlv-in-lakehouse)|Get job instance details of MLV lineage in Lakehouse execution such as status.|
