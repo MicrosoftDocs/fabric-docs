@@ -47,10 +47,10 @@ The following table describes the comparison metrics and their definitions:
 | **API Metric Name** | **Description** (All time-related metrics are measured in seconds, and all byte-related metrics are measured in bytes) |
 | --- | --- |
 | Shuffle Write Records| Total number of rows shuffle write. |
-| Allocated executors | min -> max allocated executors Get from TJS API. |
-| Anomaly | anomaly.IsAnomaly && anomaly.IsPositiveAnomaly?yes:no |
-| Expected duration | Anomaly.expectedValue |
-| Potential Causes | Anomaly.rootcause.data |
+| Allocated executors | Minimum to maximum number of executors allocated during the run. |
+| Anomaly | Indicates whether the current run is considered a slow run. |
+| Expected duration | Predicted duration for the current run, based on historical data. |
+| Potential Causes | Root causes contributing to the anomaly, along with their estimated contribution percentages. |
 | TotalDuration | Total duration of the Spark application. |
 | JobCount | Number of jobs executed. |
 | QueryCount | Number of SQL queries processed. |
