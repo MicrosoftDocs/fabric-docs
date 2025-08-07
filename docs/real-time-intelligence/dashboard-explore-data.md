@@ -6,7 +6,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 08/07/2025
 ---
 # Explore data in Real-Time Dashboard tiles
 
