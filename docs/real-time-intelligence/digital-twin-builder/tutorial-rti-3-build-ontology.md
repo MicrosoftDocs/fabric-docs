@@ -9,7 +9,7 @@ ms.topic: tutorial
 
 # Digital twin builder (preview) in Real-Time Intelligence tutorial part 3: Build the ontology
 
-In this part of the tutorial, you build a digital twin ontology that models the bus and bus stop data. You create a digital twin builder (preview) item, and define entity types for the buses and stops. Then, you map the data from the *Tutorial* lakehouse to the entity instances, and define relationship types between the entity types to further contextualize the data.
+In this part of the tutorial, you build a digital twin ontology that models the bus and bus stop data. You create a digital twin builder (preview) item, and define entity types for the buses and stops. Then, you map the data from the *TutorialLH* lakehouse to the entity instances, and define relationship types between the entity types to further contextualize the data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -45,7 +45,7 @@ Next, map some non-timeseries data to the Bus entity type. These fields are stat
 
     :::image type="content" source="media/tutorial-rti/add-data.png" alt-text="Screenshot of adding a data mapping.":::
 
-1. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *Tutorial* lakehouse, and the *bus_data_processed* table.
+1. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *TutorialLH* lakehouse, and the *bus_data_processed* table.
       
     :::image type="content" source="media/tutorial-rti/bus-data-source.png" alt-text="Screenshot of the bus data source.":::
 
@@ -97,7 +97,7 @@ Next, map some time series data to the Bus entity type. These properties are str
 
     :::image type="content" source="media/tutorial-rti/bus-add-data-time.png" alt-text="Screenshot of adding a new bus mapping.":::
 
-1. Open **Select lakehouse table** to select a data source for your mapping. Again, select your tutorial workspace, the *Tutorial* lakehouse, and the *bus_data_processed* table. Select **Choose data source**.
+1. Open **Select lakehouse table** to select a data source for your mapping. Again, select your tutorial workspace, the *TutorialLH* lakehouse, and the *bus_data_processed* table. Select **Choose data source**.
 1. This time, switch the **Property type** to **Timeseries properties**.
 1. Under **Mapped Properties**, select the edit icon.
 
@@ -141,7 +141,7 @@ Next, create a second entity type to represent a bus stop.
 Next, map some non-timeseries data to the Stop entity type. The stop data doesn't contain any time series data, only static data about the bus stops and their locations. Later, when you link the Stop and Bus entity types together, this data is used to enrich the bus fact data with dimensional data.
 
 1. In the **Entity configuration** pane, open the **Mappings** tab and select **Add data**.
-1. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *Tutorial* lakehouse, and the *stops_data* table.
+1. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *TutorialLH* lakehouse, and the *stops_data* table.
 
     Select **Choose data source**.
 1. For the **Property type**, leave the default selection of **Non-timeseries properties**. 
