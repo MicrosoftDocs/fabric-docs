@@ -125,7 +125,7 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 The workload meter associated with the task determines the charges for prebuilt AI services in Fabric. For example, if AI service usage is derived from a Spark workload, the AI usage is grouped together and billed under the Spark billing meter on [Fabric Capacity Metrics app](../../enterprise/metrics-app-compute-page.md).
 
 > [!NOTE]
-> The billing for prebuilt AI services does not support the [Autoscale spark billing](../../data-engineering/autoscale-billing-for-spark-overview.md). 
+> The billing for prebuilt AI services does not support the [Autoscale Spark billing](../../data-engineering/autoscale-billing-for-spark-overview.md).
 
 ### Example
 
