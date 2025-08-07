@@ -37,9 +37,6 @@ Fabric provides two options to use Azure AI services:
 
 ## Prebuilt AI models in Fabric (preview)
 
-> [!NOTE]
-> Prebuilt AI models are currently available in preview and offered for free, with a limit on the number of concurrent requests per user. For OpenAI models, the limit is 20 requests per minute per user.
-
 ### [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/)
 
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md). [SynapseML](how-to-use-openai-sdk-synapse.md)
@@ -86,11 +83,6 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 
 ## Consumption rate
 
-> [!NOTE]
-> The billing for prebuilt AI services in Fabric became effective on November 1, 2024, as part of your existing Power BI Premium or Fabric Capacity.
-
-A request for prebuilt AI services consumes Fabric Capacity Units. This table defines how many capacity units (CU) are consumed when an AI service is used.
-
 ### Consumption rate for OpenAI language models
 
 | **Models** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
@@ -131,6 +123,9 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 ## Monitor the Usage
 
 The workload meter associated with the task determines the charges for prebuilt AI services in Fabric. For example, if AI service usage is derived from a Spark workload, the AI usage is grouped together and billed under the Spark billing meter on [Fabric Capacity Metrics app](../../enterprise/metrics-app-compute-page.md).
+
+> [!NOTE]
+> The billing for prebuilt AI services does not support the [Autoscale spark billing](../../data-engineering/autoscale-billing-for-spark-overview.md). 
 
 ### Example
 
