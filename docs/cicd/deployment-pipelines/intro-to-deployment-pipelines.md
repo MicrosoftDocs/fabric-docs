@@ -157,7 +157,7 @@ Folders enable users to efficiently organize and manage workspace items in a fam
 
 With the current view of the folders hierarchy, you can select for deployment, only items in the same folder level. You cannot select items across folders.
  
-Flat list view is an added feature of deployment pipelines that allows you to select items regardless of it's location. With the flat list view, you can now select items across folders, regarding their location in the workspace. For more information, see [flat list view](deploy-content.md#flat-list-view).
+Flat list view of deployment pipelines allows you to select items regardless of it's location. With the flat list view, you can select items across folders, regarding their location in the workspace. For more information, see [flat list view](deploy-content.md#flat-list-view).
 
 To deploy content to another stage, at least one item must be selected. When you deploy content from one stage to another, the items being copied from the source stage overwrite the paired item in the stage you're in according to the [pairing rules](./assign-pipeline.md#item-pairing). Items that don't exist in the source stage remain as is.
 
