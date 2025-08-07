@@ -224,4 +224,4 @@ This feature is especially useful when:
 ## Next steps
 
 - [Use the Fabric data agent SDK](./fabric-data-agent-sdk.md)
-- [Access sample notebooks on how to use the data agent SDK](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/Fabric-Data-Agent-SDK/Samples)
+- [Access sample notebooks on how to use the data agent SDK](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-agent-sdk)
