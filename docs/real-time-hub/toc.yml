@@ -129,24 +129,18 @@ items:
       href: set-alerts-azure-blob-storage-events.md
 - name: Register and use schemas in event-driven applications
   items:
-  - name: What is Schema Registry?
-    href: ../real-time-intelligence/schema-sets/schema-registry-overview.md?context=/fabric/context/context-rti&pivots=fabric
-  - name: Add an event schema
-    href: ../real-time-intelligence/schema-sets/create-manage-event-schemas-real-time-hub.md?context=/fabric/context/context-rti&pivots=fabric
-  - name: Use schemas in eventstreams
-    href: ../real-time-intelligence/schema-sets/use-event-schemas.md?context=/fabric/context/context-rti&pivots=fabric
   - name: Schema Registry in Real-Time hub
-    href: ../real-time-intelligence/schema-sets/schema-registry-overview.md
+    href: ../real-time-intelligence/schema-sets/schema-registry-overview.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Create and manage event schema sets
-    href: ../real-time-intelligence/schema-sets/create-manage-event-schema-sets.md
+    href: ../real-time-intelligence/schema-sets/create-manage-event-schema-sets.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Create and manage schemas in schema sets
-    href: ../real-time-intelligence/schema-sets/create-manage-event-schemas.md
+    href: ../real-time-intelligence/schema-sets/create-manage-event-schemas.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Create and manage schemas in Real-Time hub
-    href: ../real-time-intelligence/schema-sets/create-manage-event-schemas-real-time-hub.md
+    href: ../real-time-intelligence/schema-sets/create-manage-event-schemas-real-time-hub.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Use schemas in eventstreams
-    href: ../real-time-intelligence/schema-sets/use-event-schemas.md
+    href: ../real-time-intelligence/schema-sets/use-event-schemas.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json
   - name: Known limitations
-    href: ../real-time-intelligence/schema-sets/schema-registry-limitations.md        
+    href: ../real-time-intelligence/schema-sets/schema-registry-limitations.md?toc=/fabric/real-time-hub/toc.json&bc=/fabric/real-time-hub/breadcrumb/toc.json                  
 - name: User flows
   items:
   - name: Discover and respond to events

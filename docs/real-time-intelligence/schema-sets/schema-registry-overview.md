@@ -4,7 +4,7 @@ description: Learn about Schema Registry in Microsoft Fabric Real-Time Intellige
 author: spelluru
 contributors: 
 ms.topic: overview
-ms.date: 07/24/2025
+ms.date: 08/07/2025
 ms.author: spelluru
 ms.reviewer: spelluru
 ms.custom:

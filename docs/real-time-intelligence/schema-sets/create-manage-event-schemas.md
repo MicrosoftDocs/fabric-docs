@@ -5,7 +5,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 07/24/2025
+ms.date: 08/07/2025
 ms.search.form: Schema set
 #customer intent: As a user, I want to learn how to add a schema to a schema set. 
 ---
@@ -30,7 +30,7 @@ If you don't have an event schema set, create one by following instructions from
     
     :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button-2.png" alt-text="Screenshot that shows the New event schema button for a schema set with at least one schema." lightbox="./media/create-manage-event-schemas/new-event-schema-button-2.png":::    
 1. On the **New event schema** page, follow these instructions:
-    1. Specify a **name** for the event schema set. 
+    1. Specify a **name** for the event schema set. The name must contain fewer than **256 UTF-8 characters**
     1. Optionally, enter a description for the event schema set. 
 1. Use one of the following options to create a schema. 
     - If you have a schema JSON file, select **Upload** to upload the file. For a sample file, see the [Sample schema file](#download-an-event-schema) section. 

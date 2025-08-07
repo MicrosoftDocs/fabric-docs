@@ -5,7 +5,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 07/24/2025
+ms.date: 08/07/2025
 ms.search.form: Schema set
 #customer intent: As a user, I want to learn how to add a schema to a schema set. 
 ---

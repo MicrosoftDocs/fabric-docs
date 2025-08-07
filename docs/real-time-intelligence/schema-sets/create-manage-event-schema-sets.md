@@ -5,7 +5,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 07/24/2025
+ms.date: 08/07/2025
 ms.search.form: Schema set
 #customer intent: As a user, I want to learn how to create an event schema set in Real-Time Intelligence.
 ---
@@ -20,7 +20,7 @@ In this article, you learn how to create and manage event schema sets in Microso
 1. On the **New item** page, search for **Event schema set**, and then select **Event Schema Set (preview)**. 
 
     :::image type="content" source="./media/create-manage-event-schema-sets/new-item-event-schema-set.png" alt-text="Screenshot of the New item page with Event schema set (preview) selected." lightbox="./media/create-manage-event-schema-sets/new-item-event-schema-set.png":::
-1. In the **New event schema set (preview)** window, enter a **name** for the schema set, and then select **Create**.
+1. In the **New event schema set (preview)** window, enter a **name** for the schema set, and then select **Create**. The name must contain fewer than **256 UTF-8 characters**. 
 
     :::image type="content" source="./media/create-manage-event-schema-sets/new-schema-set-window.png" alt-text="Screenshot that shows the New event schema set (preview) window." lightbox="./media/create-manage-event-schema-sets/new-schema-set-window.png":::
 1. Creation of the new event schema set in your workspace can take a few seconds. After the schema set is created, you're directed to the main editor where you can start with adding a schema to the schema set. 

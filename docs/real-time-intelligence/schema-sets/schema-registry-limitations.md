@@ -4,7 +4,7 @@ description: Learn about limitations of Event Schema Registry in Microsoft Fabri
 author: spelluru
 contributors: 
 ms.topic: overview
-ms.date: 07/24/2025
+ms.date: 08/07/2025
 ms.author: spelluru
 ms.reviewer: spelluru
 ---
