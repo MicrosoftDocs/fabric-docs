@@ -381,7 +381,7 @@ items:
         href: multiple-data-sources-graphql.md
       - name: Connect applications
         href: connect-apps-api-graphql.md
-      - name: Develop GraphQL applications in VSCode
+      - name: Develop GraphQL applications on VSCode
         href: api-graphql-develop-vscode.md
       - name: Use Service Principals
         href: api-graphql-service-principal.md
