@@ -35,14 +35,14 @@ On the left navigation bar, select **Event schema registry**. On the **Event sch
 
 This page mainly has the list of schemas with the following columns.
 
-| Column           | Description                                          |
-|------------------|------------------------------------------------------|
-| Name             | Name of the schema.                                  |
-| Event schema set | The schema set that contains the schema.             |
-| Updated          | The date and time at which the schema was updated last. |
-| Owner            | Owner of the schema.                                 |
-| Workspace        | The workspace that contains the schema set.          |
-| Endorsement      | The endorsement status of the schema.                |
+| Column           | Description                                                      |
+| ---------------- | ---------------------------------------------------------------- |
+| Name             | Name of the schema.                                              |
+| Event schema set | The schema set that contains the schema.                         |
+| Updated          | The date and time at which the schema was updated last.         |
+| Owner            | Owner of the schema.                                             |
+| Workspace        | The workspace that contains the schema set.                      |
+| Endorsement      | The endorsement status of the schema.                            |
 
 ### Search
 
@@ -61,33 +61,41 @@ Now, let's see how to add an event schema using the **+ New event schema** butto
 ## Add a new event schema
 
 1. On the **Event schema registry** page, select **+New event schema** button.
+
 1. On the **New event schema** page, follow these instructions:
+
     1. Specify a **name** for the event schema set.
-    1. Optionally, enter a description for the event schema set. 
+    1. Optionally, enter a description for the event schema set.
+
 1. Use one of the following options to create a schema.
 
-    - If you have a schema JSON file, select **Upload** to upload the file. For a sample file, see the [Sample schema file](create-manage-event-schemas.md#download-an-event-schema) section. 
+    - If you have a schema JSON file, select **Upload** to upload the file. For a sample file, see the [Sample schema file](create-manage-event-schemas.md#download-an-event-schema) section.
 
-        :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/upload-button.png" alt-text="Screenshot that shows the upload option to create a schema." lightbox="./media/create-manage-event-schemas-real-time-hub/upload-button.png" :::
+        :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/upload-button.png" alt-text="Screenshot that shows the upload option to create a schema." lightbox="./media/create-manage-event-schemas-real-time-hub/upload-button.png":::
+
     - Start building a schema manually by selecting **Add row**. For each row, select the **field type**, **field name**, and optionally enter a **description**. 
     
         :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/build-schema.png" alt-text="Screenshot that shows the manual way of building a schema." lightbox="./media/create-manage-event-schemas-real-time-hub/build-schema.png":::            
     
     - To build a schema by entering JSON code, select **Code editor** option as shown in the following image. If you see the message: **If you choose to use the code editor to create your schema, note that you won’t be able to switch back to the UI builder**, select **Edit**. 
 
-        :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/code-editor-schema.png" alt-text="Screenshot that shows the code editor to build a schema." lightbox="./media/create-manage-event-schemas-real-time-hub/code-editor-schema.png":::   
+        :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/code-editor-schema.png" alt-text="Screenshot that shows the code editor to build a schema." lightbox="./media/create-manage-event-schemas-real-time-hub/code-editor-schema.png":::
 
-        Enter the JSON code into the editor. 
+        Enter the JSON code into the editor.
 
-        :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/code-editor-schema-json.png" alt-text="Screenshot that shows the JSON code in the code editor to build a schema." lightbox="./media/create-manage-event-schemas-real-time-hub/code-editor-schema-json.png":::                    
+        :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/code-editor-schema-json.png" alt-text="Screenshot that shows the JSON code in the code editor to build a schema." lightbox="./media/create-manage-event-schemas-real-time-hub/code-editor-schema-json.png":::
+
 1. Now, in the right pane, follow these steps:
+
     1. **To use an existing schema set**:
+
         1. Select the Fabric workspace that has the schema set.
         1. Select the schema set where you want to save the schema.
 
             :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/use-existing-schema-set.png" alt-text="Screenshot that shows the right pane where you select an existing schema set." lightbox="./media/create-manage-event-schemas-real-time-hub/use-existing-schema-set.png":::
 
     1. **To create a new schema set**:
+
         1. Select the Fabric workspace where you want to create the schema set.
         1. In the drop-down list for **Event schema set**, select **Create**.
 
@@ -117,7 +125,7 @@ If you select **Open event schema set**, you see the event schema opened in the 
 
 :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/schema-set-user-interface.png" alt-text="Screenshot that shows the schema opened in the schema set editor." lightbox="./media/create-manage-event-schemas-real-time-hub/schema-set-user-interface.png":::
 
-If you select **Endorse**, you see a window that lets you set the endorsement level for the schema. Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. It can be difficult to identify trustworthy and authoritative items. Endorsement is a way to make it easier for users to find the high-quality items they need. For more information, see [Endorsement in Fabric](/fundamentals/endorsement-promote-certify).
+If you select **Endorse**, you see a window that lets you set the endorsement level for the schema. Organizations often have large numbers of Microsoft Fabric items available for sharing and reuse by their Fabric users. It can be difficult to identify trustworthy and authoritative items. Endorsement is a way to make it easier for users to find the high-quality items they need. For more information, see [Endorsement in Fabric](../../fundamentals/endorsement-promote-certify.md).
 
 :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/endorse.png" alt-text="Screenshot that shows the endorsement user interface." lightbox="./media/create-manage-event-schemas-real-time-hub/endorse.png":::
 
