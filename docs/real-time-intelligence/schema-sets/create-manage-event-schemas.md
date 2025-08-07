@@ -17,28 +17,33 @@ ms.search.form: Schema Registry
 ---
 
 # Create and manage event schemas in schema sets
-In this article, you lean how to add a schema to a schema set in Fabric. 
+
+In this article, you lean how to add a schema to a schema set in Fabric.
 
 ## Prerequisites
+
 If you don't have an event schema set, create one by following instructions from [Create an event schema set](create-manage-event-schema-sets.md).
 
 ## Add an event schema
 
 1. If you aren't on the schema set page already, navigate to the Fabric workspace, and select the event schema set. 
 
-    :::image type="content" source="./media/create-manage-event-schemas/select-schema-set.png" alt-text="Screenshot that shows My Workspace with an event schema set selected." lightbox="./media/create-manage-event-schemas/select-schema-set.png":::    
-1. Select **+ New event schema**. 
+    :::image type="content" source="./media/create-manage-event-schemas/select-schema-set.png" alt-text="Screenshot that shows My Workspace with an event schema set selected." lightbox="./media/create-manage-event-schemas/select-schema-set.png":::
 
-    If you're trying to add the first schema to the schema set, you see the following screen: 
+1. Select **+ New event schema**.
 
-    :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button.png" alt-text="Screenshot that shows the New event schema button." lightbox="./media/create-manage-event-schemas/new-event-schema-button.png":::    
+    If you're trying to add the first schema to the schema set, you see the following screen:
+
+    :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button.png" alt-text="Screenshot that shows the New event schema button." lightbox="./media/create-manage-event-schemas/new-event-schema-button.png":::
 
     If you're trying to add a schema to a schema set that has at least one schema in it, you see the following screen:
-    
-    :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button-2.png" alt-text="Screenshot that shows the New event schema button for a schema set with at least one schema." lightbox="./media/create-manage-event-schemas/new-event-schema-button-2.png":::    
+
+    :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button-2.png" alt-text="Screenshot that shows the New event schema button for a schema set with at least one schema." lightbox="./media/create-manage-event-schemas/new-event-schema-button-2.png":::
+
 1. On the **New event schema** page, follow these instructions:
     1. Specify a **name** for the event schema set. The name must contain fewer than **256 UTF-8 characters**
-    1. Optionally, enter a description for the event schema set. 
+    1. Optionally, enter a description for the event schema set.
+
 1. Use one of the following options to create a schema. 
     - If you have a schema JSON file, select **Upload** to upload the file. For a sample file, see the [Sample schema file](#download-an-event-schema) section. 
 
@@ -54,22 +59,23 @@ If you don't have an event schema set, create one by following instructions from
         Enter the JSON code into the editor. 
 
         :::image type="content" source="./media/create-manage-event-schemas/code-editor-schema-json.png" alt-text="Screenshot that shows the JSON code in the code editor to build a schema." lightbox="./media/create-manage-event-schemas/code-editor-schema-json.png":::                    
-1. Select **Finish** to start creating the schema. 
-1. You see the editor for the event schema set as shown in the following image: 
+1. Select **Finish** to start creating the schema.
 
-    :::image type="content" source="./media/create-manage-event-schemas/editor.png" alt-text="Screenshot that shows the editor for the event schema." lightbox="./media/create-manage-event-schemas/editor.png":::       
+1. You see the editor for the event schema set as shown in the following image:
+
+    :::image type="content" source="./media/create-manage-event-schemas/editor.png" alt-text="Screenshot that shows the editor for the event schema." lightbox="./media/create-manage-event-schemas/editor.png":::
 
     To add more schemas to the schema set, select **+ New event schema** at the top of the page.
-    
-    :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button-2.png" alt-text="Screenshot that shows the New event schema button after the first schema is created." lightbox="./media/create-manage-event-schemas/new-event-schema-button-2.png":::      
+
+    :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button-2.png" alt-text="Screenshot that shows the New event schema button after the first schema is created." lightbox="./media/create-manage-event-schemas/new-event-schema-button-2.png":::
 
 ## Download an event schema
 
-You can download a schema file of an existing schema in the schema set to your computer by using the **Download** button on the ribbon. 
+You can download a schema file of an existing schema in the schema set to your computer by using the **Download** button on the ribbon.
 
 :::image type="content" source="./media/create-manage-event-schemas/download-button.png" alt-text="Screenshot that shows the Download button on the ribbon in an event schema editor." lightbox="./media/create-manage-event-schemas/download-button.png"::: 
 
-Here's a sample file that you can upload to add an event schema to a schema set. 
+Here's a sample file that you can upload to add an event schema to a schema set.
 
 ```json
 {
@@ -106,42 +112,47 @@ Here's a sample file that you can upload to add an event schema to a schema set.
 ```
 
 ## Delete an event schema
-To delete an event schema, select the **Trash** icon next to the event schema in the **Event schemas** pane. 
 
-:::image type="content" source="./media/create-manage-event-schemas/delete-schema-button.png" alt-text="Screenshot that shows the Trash button next to an event schema in the Event schemas pane." lightbox="./media/create-manage-event-schemas/delete-schema-button.png":::   
+To delete an event schema, select the **Trash** icon next to the event schema in the **Event schemas** pane.
+
+:::image type="content" source="./media/create-manage-event-schemas/delete-schema-button.png" alt-text="Screenshot that shows the Trash button next to an event schema in the Event schemas pane." lightbox="./media/create-manage-event-schemas/delete-schema-button.png":::
 
 ## Find an event schema
+
 To find an event schema, you can enter text in the **Search** box in the **Event schemas** pane.
 
 ## Update an event schema
+
 You can modify schemas after registering them with Fabric Real-Time intelligence.
 
 > [!NOTE]
->  Fabric doesn't perform compatibility checks when you update a schema, which means any changes you make could be break existing pipelines. For example, removing required fields or changing field types might cause errors in pipelines or downstream services expecting the original structure. 
-> 
-> Because of this behavior, we recommend that you add a new schema where needed, instead of modifying an existing one. You can then update your pipelines and configurations to use the new schema, test everything, and retire the old version once you confirm that everything works correctly. 
+> Fabric doesn't perform compatibility checks when you update a schema, which means any changes you make could be break existing pipelines. For example, removing required fields or changing field types might cause errors in pipelines or downstream services expecting the original structure.
+>
+> Because of this behavior, we recommend that you add a new schema where needed, instead of modifying an existing one. You can then update your pipelines and configurations to use the new schema, test everything, and retire the old version once you confirm that everything works correctly.
 
-1. To update an event schema and create a new version of the schema, select **Update**. 
+1. To update an event schema and create a new version of the schema, select **Update**.
 
-    :::image type="content" source="./media/create-manage-event-schemas/update-button.png" alt-text="Screenshot that shows the Update button on the ribbon in an event schema editor." lightbox="./media/create-manage-event-schemas/update-button.png"::: 
-1. In the **Update event schema** window, update the schema, and select **Finish**. 
+    :::image type="content" source="./media/create-manage-event-schemas/update-button.png" alt-text="Screenshot that shows the Update button on the ribbon in an event schema editor." lightbox="./media/create-manage-event-schemas/update-button.png":::
 
-    :::image type="content" source="./media/create-manage-event-schemas/update-event-schema.png" alt-text="Screenshot that shows the Update event schema window." lightbox="./media/create-manage-event-schemas/update-event-schema.png"::: 
+1. In the **Update event schema** window, update the schema, and select **Finish**.
 
-    You notice that a new version of the schema is created in the schema set. 
+    :::image type="content" source="./media/create-manage-event-schemas/update-event-schema.png" alt-text="Screenshot that shows the Update event schema window." lightbox="./media/create-manage-event-schemas/update-event-schema.png":::
 
-    :::image type="content" source="./media/create-manage-event-schemas/version-2.png" alt-text="Screenshot that shows v2 of the schema." lightbox="./media/create-manage-event-schemas/version-2.png"::: 
+    You notice that a new version of the schema is created in the schema set.
+
+    :::image type="content" source="./media/create-manage-event-schemas/version-2.png" alt-text="Screenshot that shows v2 of the schema." lightbox="./media/create-manage-event-schemas/version-2.png":::
 
 ## View versions of an event schema
+
 Use the **version** drop-down list to select the version of the schema you want to view.
 
-:::image type="content" source="./media/create-manage-event-schemas/version-drop-down-list.png" alt-text="Screenshot that shows versions of the schema." lightbox="./media/create-manage-event-schemas/version-drop-down-list.png"::: 
+:::image type="content" source="./media/create-manage-event-schemas/version-drop-down-list.png" alt-text="Screenshot that shows versions of the schema." lightbox="./media/create-manage-event-schemas/version-drop-down-list.png":::
 
 ## View history of an event schema
-You can see the history of creation and update of the schema in the **History** section of **Details** pane to the right. 
 
-:::image type="content" source="./media/create-manage-event-schemas/history-pane.png" alt-text="Screenshot that shows History section of the Details pane to the right." lightbox="./media/create-manage-event-schemas/history-pane.png"::: 
+You can see the history of creation and update of the schema in the **History** section of **Details** pane to the right.
 
+:::image type="content" source="./media/create-manage-event-schemas/history-pane.png" alt-text="Screenshot that shows History section of the Details pane to the right." lightbox="./media/create-manage-event-schemas/history-pane.png":::
 
 ## Related content
 
