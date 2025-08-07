@@ -1,13 +1,17 @@
 ---
-title: Create and Manage Event Schemas in Real-Time Hub
-description: Learn about how to create and manage event schemas in Fabric Real-Time hub. 
+title: Create and Manage Event Schemas in Fabric Real-Time Hub
+description: Learn how to create and manage event schemas in Fabric Real-Time Hub with step-by-step guidance for registration, schema building, and organization.
+#customer intent: As a user, I want to learn how to add a schema to a schema set.
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:08/07/2025
+  - ai-gen-description
 ms.date: 08/07/2025
 ms.search.form: Schema set
-#customer intent: As a user, I want to learn how to add a schema to a schema set. 
 ---
 # Create and manage event schemas in Fabric Real-Time hub
 In this article, you lean how to register or add a schema in Fabric Real-Time hub. 

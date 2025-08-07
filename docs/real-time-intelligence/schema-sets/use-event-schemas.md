@@ -1,13 +1,17 @@
 ---
-title: Use schemas in eventstreams
-description: Learn about how to use schemas in eventstreams
+title: Use Schemas in Eventstreams - Fabric Real-Time Intelligence
+description: Learn how to use schemas in eventstreams with Fabric Real-Time Intelligence. Configure schema support for custom endpoints, Azure SQL Database CDC sources, and discover supported destinations for schema-validated events.
+#customer intent: As a user, I want to learn how to use event schemas in eventstreams in Real-Time Intelligence.
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:08/07/2025
+  - ai-gen-description
 ms.date: 08/07/2025
 ms.search.form: Schema set
-#customer intent: As a user, I want to learn how to use event schemas in eventstreams in Real-Time Intelligence.
 ---
 
 # Use schemas in eventstreams (Fabric Real-Time intelligence)

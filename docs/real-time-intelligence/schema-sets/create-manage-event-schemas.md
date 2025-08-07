@@ -1,13 +1,16 @@
 ---
-title: Create and manage event schemas
-description: Learn about how to create and manage event schemas in a schema set. 
+title: Create and Manage Event Schemas in Fabric Schema Sets
+description: Create and manage event schemas in Fabric Schema Sets with ease. Learn step-by-step instructions to add, update, and delete schemas in your schema sets for seamless data management.
+#customer intent: As a user, I want to learn how to add a schema to a schema set.
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
+  - ai-gen-docs-bap
+  - ai-gen-description
+  - ai-seo-date:08/07/2025
 ms.date: 08/07/2025
 ms.search.form: Schema set
-#customer intent: As a user, I want to learn how to add a schema to a schema set. 
 ---
 # Create and manage event schemas in schema sets
 In this article, you lean how to add a schema to a schema set in Fabric. 

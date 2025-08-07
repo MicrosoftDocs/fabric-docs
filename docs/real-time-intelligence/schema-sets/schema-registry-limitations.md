@@ -1,16 +1,21 @@
 ---
-title: Event Schema Registry limitations
-description: Learn about limitations of Event Schema Registry in Microsoft Fabric.
+title: Schema Registry Limits in Fabric Real-Time Intelligence
+description: Learn about Schema Registry limitations in Fabric Real-Time Intelligence. Discover preview restrictions, supported sources, destinations, and how non-conforming events are handled in Microsoft Fabric.
 author: spelluru
-contributors: 
+contributors: null
 ms.topic: overview
 ms.date: 08/07/2025
 ms.author: spelluru
 ms.reviewer: spelluru
+ms.custom:
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:08/07/2025
+  - ai-gen-description
 ---
 
 # Schema Registry - known limitations
-As Schema Registry in Fabric Real-Time Intelligence (RTI) is currently in public preview. This article provides some important limitations to be aware of. 
+As Schema Registry in Fabric Real-Time Intelligence is currently in public preview. This article provides some important limitations to be aware of. 
 
 ## Limitations
 - You can't enable schema mode on existing eventstreams Schema support must be enabled when the Eventstream is created and can't be unset after creation. You can't retroactively add schema registration to an existing eventstream. To use registered schemas, you need to create a new Eventstream. You can't combine schema-enabled sources with nonschema sources in the same Eventstream 
