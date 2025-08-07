@@ -277,7 +277,7 @@ With `location`, you can use [Get Item Job Instance](/rest/api/fabric/core/job-s
 
 ### List Job Instances for MLV in Lakehouse
 
-Lists job instances for MLV in a Lakehouse. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP). Note that the job status returned reflects the status shown in Monitor Hub.
+Lists job instances for MLV in a Lakehouse. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP). The job status returned reflects the status shown in Monitor Hub.
 
 **Sample request**:
 
@@ -321,7 +321,7 @@ Status code:
 
 ### Get Job Instance details for MLV in Lakehouse
 
-Get details such as status and id corresponding to a run in MLV. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/get-item-job-instance?tabs=HTTP). Note that the job status returned reflects the status shown in Monitor Hub.
+Get details such as status and id corresponding to a run in MLV. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/get-item-job-instance?tabs=HTTP). The job status returned reflects the status shown in Monitor Hub.
 
 **Sample request**:
 
