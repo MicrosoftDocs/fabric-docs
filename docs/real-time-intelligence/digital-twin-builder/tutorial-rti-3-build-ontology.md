@@ -77,7 +77,7 @@ Next, map some non-timeseries data to the Bus entity type. These fields are stat
 
     :::image type="content" source="media/tutorial-rti/bus-save-non-time.png" alt-text="Screenshot of saving the bus non-time series mapping.":::
 
-1. Switch to the **Scheduling** tab and select **Run now** to apply the mapping.
+1. Switch to the **Scheduling** tab and select **Run** to apply the mapping.
 
     :::image type="content" source="media/tutorial-rti/bus-run-now.png" alt-text="Screenshot of running the bus mapping.":::
 
@@ -125,7 +125,7 @@ Next, map some time series data to the Bus entity type. These properties are str
 
     :::image type="content" source="media/tutorial-rti/bus-save-time.png" alt-text="Screenshot of saving the bus time series mapping.":::
 
-1. Switch to the **Scheduling** tab and select **Run now** under the new time series mapping to apply it.
+1. Switch to the **Scheduling** tab and select **Run** under the new time series mapping to apply it.
 
 ## Add Stop entity type
 
@@ -166,7 +166,7 @@ Next, map some non-timeseries data to the Stop entity type. The stop data doesn'
 
     :::image type="content" source="media/tutorial-rti/stop-save-non-time.png" alt-text="Screenshot of saving the stop mapping.":::
 
-1. Switch to the **Scheduling** tab and select **Run now** to apply the mapping.
+1. Switch to the **Scheduling** tab and select **Run** to apply the mapping.
 
 ## Define relationship type
 
@@ -188,7 +188,7 @@ Next, create a relationship type to represent that a Bus *goesTo* a Stop.
 
     :::image type="content" source="media/tutorial-rti/relationship-create.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-rti/relationship-create.png":::
 
-1. In the **Scheduling** section that appears, select **Run now** to apply the relationship type.
+1. In the **Scheduling** section that appears, select **Run** to apply the relationship type.
 
 Now your Bus and Stop entity types are visible in the canvas with a relationship type between them. Together, these elements form the ontology for the tutorial scenario.
 
@@ -206,7 +206,7 @@ As a final step, confirm that all your data mappings ran successfully. Each mapp
 
     :::image type="content" source="media/tutorial-rti/manage-operations-2.png" alt-text="Screenshot of four completed operations.":::
 
-1. If any of the operations failed, check the box next to its name and select **Run now** to rerun it.
+1. If any of the operations failed, check the box next to its name and select **Run** to rerun it.
 
 Wait for all mappings to complete before you move on to the next part of the tutorial. In the next part, you project the ontology that you mapped to an eventhouse, to support further data analysis and visualization.
 
