@@ -42,22 +42,8 @@ You should now see five tables in the **Explorer** pane of your lakehouse, under
 
 You now have sample data available in your *GettingStartedRawData* lakehouse. You use the data in this lakehouse throughout this tutorial.
 
-## Create new digital twin builder item in Fabric
-
->[!NOTE]
-> Recall from the [tutorial prerequisites](tutorial-0-introduction.md#prerequisites) that digital twin builder (preview) must be enabled on your Fabric tenant.
-
-1. Navigate to your Fabric workspace. 
-1. Select **New item**.
-1. Search for the *Digital Twin Builder (preview)* item, and select it.
-
-    :::image type="content" source="media/tutorial/new-digital-twin-builder.png" alt-text="Screenshot of Digital Twin Builder item.":::
-1. Name your item *Contoso_Energy* and select **Create**. 
-
-    >[!TIP]
-    >Digital twin builder names can include numbers, letters, and underscores (no spaces or dashes).
-
-1. Wait for your digital twin builder item to be created. Once your digital twin builder item is ready, it opens to the semantic canvas.
+<!--## Create new digital twin builder item in Fabric (title in include)-->
+[!INCLUDE [Create digital twin builder](../includes/create-digital-twin-builder.md)]
 
 In the semantic canvas, you define a domain ontology in the next tutorial section.
 
