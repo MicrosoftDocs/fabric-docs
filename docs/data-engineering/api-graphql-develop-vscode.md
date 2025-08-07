@@ -280,7 +280,7 @@ Your application will launch in the browser. You are prompted to sign in with yo
 
 ## Related content
 
-- [Microsoft Fabric GraphQL API overview](graphql-api-overview.md)
-- [Connect applications to Fabric API for GraphQL](connect-applications-fabric-api-graphql.md)
+- [Microsoft Fabric GraphQL API overview](api-graphql-overview.md)
+- [Connect applications to Fabric API for GraphQL](connect-apps-api-graphql.md)
 - [Apollo Client documentation](https://www.apollographql.com/docs/react/)
 - [GraphQL Code Generator documentation](https://the-guild.dev/graphql/codegen)

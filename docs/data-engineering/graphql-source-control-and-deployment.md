@@ -79,8 +79,8 @@ When you commit the API for GraphQL item to the Git repo, the API for GraphQL de
 
 You can find more information about the GraphQL API definition format, syntax and examples on the Fabric control plane APIs documentation:
 
-* [GraphQL API definition](rest/api/fabric/articles/item-management/definitions/graphql-api-definition.md)
-* [Create a GraphQLApi with public definition example](rest/api/fabric/graphqlapi/items/create-graphqlapi.md?tabs=HTTP#create-a-graphqlapi-with-public-definition-example)
+* [GraphQL API definition](/rest/api/fabric/articles/item-management/definitions/graphql-api-definition)
+* [Create a GraphQLApi with public definition example](/rest/api/fabric/graphqlapi/items/create-graphqlapi?tabs=HTTP#create-a-graphqlapi-with-public-definition-example)
 
 
 ## API for GraphQL in deployment pipeline
