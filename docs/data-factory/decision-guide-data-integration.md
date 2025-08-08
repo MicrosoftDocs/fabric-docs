@@ -47,7 +47,7 @@ For the list of supported connectors across Copy job, Copy activity, and Dataflo
 
 ## Orchestration strategies
 
-| | [**Pipeline**](/fabric/data-factory/pipeline-overview) | [**Apache Airflow Job**](/fabric/data-factory/apache-airflow-jobs-concepts) |
+| | [**Pipeline**](/fabric/data-factory/data-factory-overview.md#data-pipelines) | [**Apache Airflow Job**](/fabric/data-factory/apache-airflow-jobs-concepts) |
 |---|---|---|
 | **Use Case** | Low Code Orchestration | Code-first Orchestration |
 | **Flagship Scenarios** | Logical grouping of several activities together to perform a task. | Python Code-Centric Authoring |
@@ -77,7 +77,7 @@ For the list of supported connectors across Copy job, Copy activity, and Dataflo
 
 Review these scenarios to help you choose which data integration strategy to use in Microsoft Fabric.
 
-## Scenario 1
+### Scenario 1
 
 Hanna is a database administrator for a financial services company. She manages multiple critical SQL Server databases that power the organization's trading applications. The business needs near real-time access to this transactional data for regulatory reporting and risk analysis. However, Hanna needs to avoid impacting the performance of the production systems.
 
@@ -85,7 +85,7 @@ Hanna's challenge is providing analytics teams with up-to-date data without crea
 
 Hanna reviews the options and chooses **Mirroring** as the ideal solution. With Mirroring, she can set up near real-time data replication from her SQL Server databases to Microsoft Fabric with minimal configuration. The mirrored data becomes available in OneLake as Delta tables, enabling downstream analytics without affecting source system performance. Mirroring provides the turnkey setup she needs, automatically managing the complexity of data replication while ensuring business continuity.
 
-## Scenario 2
+### Scenario 2
 
 Charlie is a data integrator at a retail company. He's responsible for consolidating sales data from multiple regional databases into a central data warehouse. The company operates across different time zones, and each region's database uses change data capture (CDC) to track inventory and sales transactions. Charlie needs a solution that can handle the initial full load of historical data and then switch to incremental updates based on CDC.
 
@@ -93,7 +93,7 @@ Charlie wants a no-code, wizard-driven approach that lets him select multiple ta
 
 Charlie evaluates the options and selects **Copy Job** as his preferred approach. Copy Job provides the multi-table selection capability he needs, supports both watermark-based and native CDC incremental copying, and offers an intuitive wizard interface. The out-of-the-box functionality lets him configure the entire data replication process without writing code, and the automatic detection of CDC-enabled tables simplifies the setup process.
 
-## Scenario 3
+### Scenario 3
 
 Rukmina is a data engineer at a manufacturing company. She needs to migrate large volumes of historical production data from an on-premises Oracle database to a new Fabric Warehouse. The migration involves copying hundreds of tables with millions of records, and she needs to implement a medallion architecture with bronze, silver, and gold layers. Rukmina has experience with SQL but prefers low-code solutions when possible.
 
@@ -101,7 +101,7 @@ The project requires her to copy raw data to the bronze layer, then apply lightw
 
 Rukmina reviews the available options and chooses **Copy Activity in Pipelines**. This approach gives her the drag-and-drop interface she prefers while providing the scalability needed for large data volumes. Copy Activity supports the 50+ connectors she needs for various source systems, and the pipeline framework lets her orchestrate the movement between medallion layers. With copy activity, she can implement both historical and incremental data refresh patterns while maintaining the performance required for petabyte-scale operations.
 
-## Scenario 4
+### Scenario 4
 
 Julian is a business analyst with strong SQL skills. He needs to orchestrate a complex data processing workflow that involves multiple steps: extracting data from various systems, running data quality checks, performing transformations, loading data into multiple destinations, and sending notifications to stakeholders. The workflow needs to run on a schedule and handle dependencies between different activities.
 
@@ -109,7 +109,7 @@ Julian's organization uses a mix of Azure services and on-premises systems, and 
 
 Julian evaluates the options and selects **Data Pipeline** as the best fit for his requirements. Data Pipeline provides the visual canvas and drag-and-drop activities he needs to build complex orchestration workflows. The solution supports logical grouping of activities, dependency management, and scheduling capabilities. With 50+ connectors and various activity types (copy, lookup, stored procedure, web, etc.), Data Pipeline gives him the flexibility to coordinate diverse tasks while maintaining the low-code approach he prefers.
 
-## Scenario 5
+### Scenario 5
 
 Darshan is a data scientist with extensive Python experience. He needs to build and maintain complex data processing workflows that integrate machine learning models, custom algorithms, and various external APIs. His organization's data science team prefers code-first approaches and wants to leverage their existing Python expertise, including custom libraries and advanced orchestration patterns.
 
@@ -117,7 +117,7 @@ Darshan needs a solution that supports Python-based directed acyclic graphs (DAG
 
 Darshan reviews the options and chooses **Apache Airflow Jobs** as the ideal solution. This code-first approach lets his team use their Python expertise while building sophisticated data processing workflows. Apache Airflow Jobs provides the DAG-based orchestration they're familiar with, supports 100+ connectors through the Airflow ecosystem, and lets them implement custom business logic using Python. The managed service approach eliminates infrastructure concerns while preserving the flexibility and power of Apache Airflow.
 
-## Scenario 6
+### Scenario 6
 
 René is a data scientist at a research university. She needs to perform complex data analysis and transformation tasks on large datasets stored across multiple formats and sources. Her work involves statistical analysis, machine learning model development, and custom data processing algorithms that require the full power of distributed computing.
 
@@ -125,7 +125,7 @@ René works with structured and unstructured data including CSV files, JSON docu
 
 René evaluates her options and chooses **Notebooks** as her primary tool. Notebooks provide the code-first environment she needs with full access to Spark's distributed computing capabilities. She can work with hundreds of Spark libraries, implement complex transformations using multiple languages (Python, Scala, SQL, R), and use the interactive development environment for data exploration. The notebook interface lets her combine code, visualizations, and documentation while providing the high-performance compute needed for her large-scale data processing requirements.
 
-## Scenario 7
+### Scenario 7
 
 Ako is a business analyst at a healthcare organization. She needs to integrate data from multiple sources including databases, web services, and file systems to create clean, business-ready datasets. Ako has extensive experience with Power Query from her work in Excel and Power BI, and she prefers visual, no-code interfaces for data preparation tasks.
 
@@ -140,7 +140,7 @@ Now that you understand which service to use, you can start building your data i
 - [Get started with Mirroring](/fabric/database/mirrored-database/overview)
 - [Create a Copy Job](/fabric/data-factory/create-copy-job)
 - [Create a Copy Activity](/fabric/data-factory/copy-data-activity)
-- [Get started with Data Pipelines](/fabric/data-factory/pipeline-overview)
+- [Get started with Data Pipelines](/fabric/data-factory/data-factory-overview.md#data-pipelines)
 - [Get started with Apache Airflow Jobs](/fabric/data-factory/apache-airflow-jobs-concepts)
 - [Create and use Notebooks](/fabric/data-engineering/how-to-use-notebook)
 - [Create a dataflow](/fabric/data-factory/tutorial-dataflows-gen2-pipeline-activity#create-a-dataflow)
