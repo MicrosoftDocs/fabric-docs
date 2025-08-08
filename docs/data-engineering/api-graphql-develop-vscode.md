@@ -117,7 +117,7 @@ After creating the configuration file, restart Visual Studio Code to ensure chan
 
 ## Step 5: Set up code generation
 
-GraphQL code generation automatically creates strongly-typed TypeScript interfaces and React hooks from your schema and operations, reducing errors and improving development efficiency. Its primary purpose is to enhance type safety and streamline development in GraphQL projects, particularly when working with strongly-typed languages like TypeScript.
+GraphQL code generation automatically creates strongly typed TypeScript interfaces and React hooks from your schema and operations, reducing errors and improving development efficiency. Its primary purpose is to enhance type safety and streamline development in GraphQL projects, particularly when working with strongly typed languages like TypeScript.
 
 ### Create codegen configuration
 
@@ -210,7 +210,7 @@ npm run codegen
 Upon successful completion, you have the generated code in `src/generated/graphql.tsx` containing:
 
 - TypeScript interfaces for all GraphQL types
-- Strongly-typed React hooks for each operation
+- Strongly typed React hooks for each operation
 - Input and output type definitions
 
 ## Step 8: Use generated code in your React components
