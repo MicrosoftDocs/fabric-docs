@@ -10,7 +10,7 @@ ms.custom:
 - migration
 ai-usage: ai-assisted
 ---
-# Microsoft Fabric Migration Overview
+# Microsoft Fabric Migration overview
 
 Microsoft Fabric provides a unified analytics platform, and migrating your data and workloads to Fabric can help you take advantage of its integrated capabilities. This page summarizes all migration-related articles in the documentation, grouped by migration source.
 
