@@ -29,6 +29,8 @@ items:
   items:
   - name: Decision guide - copy activity, copy job, dataflow, or Spark
     href: decision-guide-pipeline-dataflow-spark.md
+  - name: Decision guide - data integration strategy
+    href: ../data-factory/decision-guide-data-integration.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
   - name: Decision guide - choose a data store
     href: decision-guide-data-store.md
   - name: Decision guide - Warehouse and Lakehouse

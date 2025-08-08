@@ -13,6 +13,8 @@ items:
     href: sql/decision-guide.md
   - name: "Decision guide: Choose a data store"
     href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
+  - name: "Decision guide: Choose a data integration strategy"
+    href: ../data-factory/decision-guide-data-integration.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: Copilot
     items:
     - name: What is Copilot in Fabric SQL database? 
