@@ -27,7 +27,7 @@ landingContent:
           - text: What is Data engineering?
             url: data-engineering-overview.md
           - text: What is a lakehouse?
-            url: lakehouse-overview.
+            url: lakehouse-overview.md
       - linkListType: concept
         links:
           - text: Workspace roles and permissions
@@ -209,7 +209,7 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Get started with materialized lake views
-            url: materialized-lake-views/get-started-materialized-lake-views.md
+            url: materialized-lake-views/get-started-with-materialized-lake-views.md
           - text: Implement Medallion architecture with materialized lake views
             url: materialized-lake-views/tutorial.md
           - text: Manage materialized lake views
