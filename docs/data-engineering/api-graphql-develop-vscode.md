@@ -79,7 +79,7 @@ You can obtain your GraphQL schema in two ways:
 2. Obtain an authorization token using PowerShell with [Get-PowerBIAccessToken](/powershell/module/microsoftpowerbimgmt.profile/get-powerbiaccesstoken)
 
 > [!NOTE]
->While the remote endpoint will always option will always provide the most up to date schema, the retrieved token is temporary and expires hourly. They should be used for testing and development purposes only, whenever possible use a static file to avoid issues with token expiration.
+>While the remote endpoint option will always provide the most up to date schema, the retrieved token is temporary and expires hourly. They should be used for testing and development purposes only, whenever possible use a static file to avoid issues with token expiration.
 
 ## Step 4: Configure IntelliSense and autocompletion
 
