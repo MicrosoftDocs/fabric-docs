@@ -83,7 +83,7 @@ You can obtain your GraphQL schema in two ways:
 
 ## Step 4: Configure IntelliSense and autocompletion
 
-IntelliSense provides real-time code suggestions, error detection, and field validation, significantly improving development productivity and code quality.
+IntelliSense provides real-time code suggestions, error detection, and field validation, all based on the GraphQL API schema, significantly improving development productivity and code quality.
 
 Create a configuration file at your project root:
 
@@ -117,7 +117,7 @@ After creating the configuration file, restart Visual Studio Code to ensure chan
 
 ## Step 5: Set up code generation
 
-GraphQL code generation automatically creates strongly-typed TypeScript interfaces and React hooks from your schema and operations, reducing errors and improving development efficiency.
+GraphQL code generation automatically creates strongly-typed TypeScript interfaces and React hooks from your schema and operations, reducing errors and improving development efficiency. Its primary purpose is to enhance type safety and streamline development in GraphQL projects, particularly when working with strongly-typed languages like TypeScript.
 
 ### Create codegen configuration
 
