@@ -27,9 +27,13 @@ landingContent:
           - text: What is Data engineering?
             url: data-engineering-overview.md
           - text: What is a lakehouse?
-            url: lakehouse-overview.md
+            url: lakehouse-overview.
+      - linkListType: concept
+        links:
           - text: Workspace roles and permissions
             url: workspace-roles-lakehouse.md
+          - text: Workspace roles and permissions
+            url: ../fundamentals/decision-guide-data-store.md
 
   # Card 
   - title: Get started with lakehouse
@@ -119,22 +123,22 @@ landingContent:
   # Card 
   - title: VS Code integration
     linkLists:
+      - linkListType: concept
+        links:
+          - text: What is Data Engineering VS Code extension?
+            url: setup-vs-code-extension.md
       - linkListType: how-to-guide
         links:
           - text: Use notebooks from VS Code
             url: author-notebook-with-vs-code.md
           - text: Use container image from VS Code
             url: set-up-vs-code-extension-with-docker-image.md
-          - text: Use notebooks from VS Code with resource
-            url: author-notebook-resource-with-vs-code.md
           - text: Use Spark job definitions from VS Code
             url: author-sjd-with-vs-code.md
           - text: Explore lakehouse from VS Code
             url: explore-lakehouse-with-vs-code.md
           - text: Develop notebook from VS Code web experience
             url: author-notebook-with-vs-code-web.md
-          - text: Develop notebook with Fabric runtime
-            url: fabric-runtime-in-vscode.md
 
   # Card 
   - title: Apache Spark
@@ -143,9 +147,7 @@ landingContent:
         links:
           - text: Apache Spark job definition
             url: spark-job-definition.md
-          - text: Spark monitoring overview
-            url: spark-monitoring-overview.md
-          - text: Apache Spark advisor
+          - text: What is Apache Spark advisor?
             url: spark-advisor-introduction.md
       - linkListType: get-started
         links:
@@ -163,8 +165,6 @@ landingContent:
             url: library-management.md
           - text: How to use Fabric MSSparkUtils
             url: microsoft-spark-utilities.md
-          - text: Configure capacity settings
-            url: capacity-settings-management.md
 
   # Card 
   - title: Get started with environment
@@ -181,8 +181,6 @@ landingContent:
             url: environment-manage-library.md
           - text: Environment Git integration and deployment pipeline
             url: environment-git-and-deployment-pipeline.md
-          - text: Manage the environment through public APIs
-            url: environment-public-api.md
           - text: Migrate libraries and Spark properties to an environment
             url: environment-workspace-migration.md   
 # Card 
@@ -207,12 +205,12 @@ landingContent:
       - linkListType: overview
         links:
           - text: What are materialized lake views?
-            url: materialized-lake-views/materialized-views-overview.md
+            url: materialized-lake-views/overview-materialized-lake-view.md
       - linkListType: get-started
         links:
           - text: Get started with materialized lake views
-            url: materialized-lake-views/get-started-create-materialized-views.md
+            url: materialized-lake-views/get-started-materialized-lake-views.md
           - text: Implement Medallion architecture with materialized lake views
             url: materialized-lake-views/tutorial.md
           - text: Manage materialized lake views
-            url: create-materialized-lake-view.md
+            url: materialized-lake-views/create-materialized-lake-view.md
