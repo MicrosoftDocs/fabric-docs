@@ -76,14 +76,10 @@ You can obtain your GraphQL schema in two ways:
 ### Option 2: Use remote endpoint
 
 1. Access the GraphQL API you created in the Fabric Portal.
-2. Obtain an authorization token:
-   - Open your browser's developer tools (F12)
-   - Navigate to the Console tab
-   - Execute: `powerBIAccessToken`
-   - Copy the returned token value
+2. Obtain an authorization token using PowerShell with [Get-PowerBIAccessToken](/powershell/module/microsoftpowerbimgmt.profile/get-powerbiaccesstoken)
 
 > [!NOTE]
->The token obtained from the browser console should be used for testing and development purposes only, whenever possible use a static file.
+>While the remote endpoint will always option will always provide the most up to date schema, the retrieved token is temporary and expires hourly. They should be used for testing and development purposes only, whenever possible use a static file to avoid issues with token expiration.
 
 ## Step 4: Configure IntelliSense and autocompletion
 
