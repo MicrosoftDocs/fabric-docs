@@ -40,7 +40,7 @@
         "redirect_url": "/fabric/data-factory/pipeline-rest-api-capabilities",
         "redirect_document_id": false
       },
-            {
+      {
         "source_path_from_root": "/docs/data-factory/git-integration-deployment-pipelines.md",
         "redirect_url": "/fabric/data-factory/cicd-pipelines",
         "redirect_document_id": false
@@ -111,8 +111,8 @@
         "redirect_document_id": false
       },
       {
-        "source_path_from_root": "/docs/data-factory/connector-kusto-dataflows.md",
-        "redirect_url": "/fabric/data-factory/connector-azure-data-explorer",
+        "source_path_from_root": "/docs/data-factory/cost-estimation-from-azure-data-factory-to-fabric-pipeline.md",
+        "redirect_url": "/fabric/data-factory/pricing-overview",
         "redirect_document_id": false
       },
       {
