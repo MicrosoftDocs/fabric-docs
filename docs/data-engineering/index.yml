@@ -207,11 +207,11 @@ landingContent:
       - linkListType: overview
         links:
           - text: What are materialized lake views?
-            url: materialized-views-overview.md
+            url: materialized-lake-views/materialized-views-overview.md
       - linkListType: get-started
         links:
           - text: Get started with materialized lake views
-            url: get-started-create-materialized-views.md
+            url: materialized-lake-views/get-started-create-materialized-views.md
           - text: Implement Medallion architecture with materialized lake views
             url: materialized-lake-views/tutorial.md
           - text: Manage materialized lake views
