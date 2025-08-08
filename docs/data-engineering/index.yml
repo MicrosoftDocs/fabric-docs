@@ -91,7 +91,7 @@ landingContent:
           - text: Author and run T-SQL Notebooks
             url: author-tsql-notebook.md
   # Card 
-  - title: API for GraphQL
+  - title: Query with API for GraphQL
     linkLists:
       - linkListType: overview
         links:
@@ -135,7 +135,7 @@ landingContent:
             url: author-notebook-with-vs-code-web.md
 
   # Card 
-  - title: Apache Spark
+  - title: Apache Spark for Data Engineering
     linkLists:
       - linkListType: concept
         links:
@@ -178,7 +178,7 @@ landingContent:
           - text: Migrate libraries and Spark properties to an environment
             url: environment-workspace-migration.md   
 # Card 
-  - title: Livy API
+  - title: Fabric Livy API
     linkLists:
       - linkListType: overview
         links:
@@ -194,7 +194,7 @@ landingContent:
             url: get-started-api-livy-batch.md
 
 # Card 
-  - title: Materialized lake views 
+  - title: Optimize with Materialized lake views 
     linkLists:
       - linkListType: overview
         links:
