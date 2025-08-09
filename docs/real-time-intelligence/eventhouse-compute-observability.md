@@ -41,7 +41,7 @@ To understand where the hot cache is being consumed, drill down to specific tabl
 
 ```
 .show tables details
-| summarize HotExtentSize=format\_bytes(sum(HotOriginalSize),2)
+| summarize HotExtentSize=format_bytes(sum(HotOriginalSize),2)
 ```
 
 :::image type="content" source="media/eventhouse-capacity-observability/show-table-details.png" alt-text="Screenshot of the show table details command." lightbox="media/eventhouse-capacity-observability/show-table-details.png":::
