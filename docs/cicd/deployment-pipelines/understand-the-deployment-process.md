@@ -204,7 +204,7 @@ In Deployment pipelines, folders are considered part of an item’s name (an ite
 
 With the current view of the folders hierarchy, you can select for deployment, only items in the same folder level. You cannot select items across folders.
  
-Flat list view of deployment pipelines allows you to select items regardless of it's location. With the flat list view, you can select items across folders, regarding their location in the workspace. For more information, see [flat list view](deploy-content.md#flat-list-view).
+Flat list view of deployment pipelines allows you to select items regardless of its location. With the flat list view, you can select items across folders, regarding their location in the workspace. For more information, see [flat list view](deploy-content.md#flat-list-view).
 
 ### Identify items that were moved to different folders
 
