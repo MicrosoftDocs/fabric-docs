@@ -104,7 +104,7 @@ When deploying workspaces that contain folders, the following rules apply:
 #### Flat list view
 With the current view of the folders hierarchy, you can select for deployment, only items in the same folder level. You cannot select items across folders.
  
-Flat list view is an added feature of deployment pipelines that allows you to select items regardless of it's location. With the flat list view, you can now select items across folders, regarding their location in the workspace.
+Flat list view is an added feature of deployment pipelines that allows you to select items regardless of its location. With the flat list view, you can now select items across folders, regarding their location in the workspace.
 
 The following are important to keep in mind when using the flat list view.
 
