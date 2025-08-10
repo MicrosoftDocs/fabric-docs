@@ -1,11 +1,12 @@
 ---
 title: Configure AKV references
 description: How to configure Azure Key Vault reference in Microsoft Fabric
-ms.author: adija
-author: adityajain2408
+ms.author: abnarain
+author: nabhishek
 ms.topic: how-to
 ms.date: 04/28/2025
 ms.search.form: Configure Azure Key Vault references
+ms.custom: configuration
 ---
 # Configure Azure Key Vault references
 >[!NOTE]

@@ -1,8 +1,8 @@
 ---
 title: Use the Monitor hub
 description: Understand the Microsoft Fabric monitor hub and the information it provides.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
 ms.date: 11/04/2024
 ---

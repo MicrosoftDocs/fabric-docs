@@ -1,8 +1,8 @@
 ---
 title: View refresh summary
 description: Learn how to view your capacity's refresh history and investigate refresh errors.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 
 ms.custom:

@@ -1,11 +1,12 @@
 ---
 title: Planning your migration from Azure Data Factory
 description: This article helps you plan your migration from Azure Data Factory to Fabric Data Factory.
-ms.reviewer: jonburchel
+ms.reviewer: jburchel
 ms.author: makromer
 author: kromerm
 ms.topic: conceptual
 ms.date: 01/30/2025
+ms.custom: configuration
 ---
 
 # Planning your migration from Azure Data Factory
@@ -74,13 +75,13 @@ In ADF, Data Flows are built on the Synapse Spark infrastructure and defined usi
 
 Triggers signal ADF to execute a pipeline based upon a wall-clock time schedule, tumbling window time slices, file-based events, or custom events. These features are similar in Fabric although the underlying implementation is different.
 
-In Fabric, _triggers_ only exist as a pipeline concept. The larger framework that pipeline triggers use in Fabric is known as _Data Activator_, which is an event and alerting subsystem of the Real-time Intelligence features in Fabric.
+In Fabric, _triggers_ only exist as a pipeline concept. The larger framework that pipeline triggers use in Fabric is known as _Activator_, which is an event and alerting subsystem of the Real-time Intelligence features in Fabric.
 
 :::image type="content" source="media/migrate-planning-azure-data-factory/azure-data-factory-triggers.png" alt-text="Screenshot showing the Triggers page in Azure Data Factory.":::
 
-Fabric Data Activator has _alerts_ that can be used to create file event and custom event triggers. While schedule triggers are a separate entity in Fabric known as _schedules_. These schedules are at a platform-level in Fabric, and not specific to pipelines. They also aren't referred to as _triggers_ in Fabric.
+Fabric Activator has _alerts_ that can be used to create file event and custom event triggers. While schedule triggers are a separate entity in Fabric known as _schedules_. These schedules are at a platform-level in Fabric, and not specific to pipelines. They also aren't referred to as _triggers_ in Fabric.
 
-To migrate your triggers from ADF to Fabric, think about rebuilding your schedule triggers simply as schedules that are properties of your Fabric pipelines. And for all other trigger types, use the Triggers button inside the Fabric pipeline or use Data Activator natively in Fabric.
+To migrate your triggers from ADF to Fabric, think about rebuilding your schedule triggers simply as schedules that are properties of your Fabric pipelines. And for all other trigger types, use the Triggers button inside the Fabric pipeline or use Activator natively in Fabric.
 
 :::image type="content" source="media/migrate-planning-azure-data-factory/add-trigger.png" alt-text="Screenshot showing the Add trigger button in the Data Factory in Fabric pipeline editor.":::
 

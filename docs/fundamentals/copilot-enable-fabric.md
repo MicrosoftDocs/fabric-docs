@@ -7,6 +7,7 @@ ms.reviewer: shlindsay
 ms.custom:
 ms.topic: conceptual
 ms.date: 04/02/2025
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -21,7 +22,7 @@ The following screenshot shows the tenant setting where Copilot can be enabled o
 
 :::image type="content" source="media/copilot-enable-fabric/enable-copilot.png" alt-text="Screenshot showing the tenant setting where copilot can be enabled and disabled.":::
 
-Copilot in Microsoft Fabric is rolling out gradually, ensuring all customers with paid Fabric capacities (F2 or higher) gain access. It automatically appears as a new setting in the Fabric admin portal when available for your tenant. Once billing starts for the Copilot in Fabric experiences, Copilot usage will count against your existing Fabric capacity.
+Copilot in Microsoft Fabric is rolling out gradually, ensuring all customers with paid Fabric capacities (F2 or higher) gain access. It automatically appears as a new setting in the [Fabric admin portal](https://app.fabric.microsoft.com/admin-portal) when available for your tenant. Once billing starts for the Copilot in Fabric experiences, Copilot usage will count against your existing Fabric capacity.
 
 > [!WARNING]
 > Enabling Copilot in Fabric for your entire tenant without adequate planning and preparation can lead to higher Fabric capacity utilization and other potential risks. Consider enabling Copilot in Fabric for specific security groups and workspaces only after you take the appropriate steps to prepare.
@@ -34,7 +35,7 @@ Enabling Copilot in Fabric involves several prerequisites and steps, as describe
 
 | **Step** | **Where you take this step** | **Description**
 |---|---|---
-| 1 | Azure portal | You must have a supported SKU to use Copilot in Fabric. Pro and PPU workspaces don't support Copilot consumption.
+| 1 | Azure portal | You must have a supported SKU to use Copilot in Fabric. Pro and PPU workspaces don't directly support Copilot features. To use Copilot in these workspaces, you must enable a [Fabric Copilot capacity](../enterprise/fabric-copilot-capacity.md) and assign the workspace to that capacity.
 | 2 | Azure portal | Your Fabric capacity must be [in a supported region](../admin/region-availability.md) to enable Copilot in Fabric.
 | 3 | Microsoft 365 admin center | You should [create and manage one or more security groups](/power-platform/admin/control-user-access#create-a-security-group-and-add-members-to-the-security-group) for users who are allowed to use Copilot in Fabric. Using security groups is a good way to ensure that you limit rollout to some—and not all—users, for instance, after they have completed prerequisite training.
 | 4 | Fabric tenant settings | You must enable the relevant [Copilot tenant settings](../admin/service-admin-portal-copilot.md), including the settings [*Users can use Copilot and other features powered by Azure OpenAI*](../admin/service-admin-portal-copilot.md#users-can-use-copilot-and-other-features-powered-by-azure-openai) and [*Data sent to Azure OpenAI can be processed outside your capacity’s geographic region, compliance boundary, or national cloud instance*](../admin/service-admin-portal-copilot.md#data-sent-to-azure-openai-can-be-processed-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance).<br><br>You can choose to enable Copilot for only select security groups. Copilot in Fabric is enabled by default for the entire tenant.
@@ -44,9 +45,6 @@ Enabling Copilot in Fabric involves several prerequisites and steps, as describe
 
 > [!NOTE]
 > You don't need to enable Fabric to use Copilot in Power BI. You can enable Copilot for the Power BI workload without enabling the other Fabric workloads; for instance, if you have a P SKU.
-
-> [!IMPORTANT]
-> When scaling from a smaller capacity to F64 or above, allow up to 24 hours for Copilot for Power BI to activate.
 
 See the article [Overview of Copilot in Fabric](copilot-fabric-overview.md) for details on its functionality across workloads, data security, privacy compliance, and responsible AI use.
 

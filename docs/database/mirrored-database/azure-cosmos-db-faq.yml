@@ -9,7 +9,7 @@ metadata:
   ms.subservice: data-warehouse
   ms.custom:
   ms.topic: faq
-  ms.date: 03/18/2024
+  ms.date: 05/07/2025
 title: |
   Frequently asked questions for Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
 summary: | 
@@ -101,15 +101,15 @@ sections:
       - question: |
           What authentication methods are allowed to Azure Cosmos DB accounts?
         answer: |
-          Only read-write account keys are supported.
+          Only read-write account keys and Microsoft Entra ID are supported.
       - question: |
           Can I use single sign-on and role-based access control as authentication for mirroring Azure Cosmos DB?
         answer: |
-          No, only read-write account keys are supported at this time.
+          Yes. For more information, see [security limitations](azure-cosmos-db-limitations.md#security-limitations).
       - question: |
           Can I use managed identities as authentication for mirroring Azure Cosmos DB?
         answer: |
-          No, only read-write account keys are supported at this time.
+          No, only read-write account keys and Microsoft Entra ID are supported at this time.
       - question: |
           What happens if I rotate my Azure Cosmos DB account keys?
         answer: |
@@ -119,7 +119,7 @@ sections:
       - question: |
           Can I select specific containers within an Azure Cosmos DB database for mirroring?
         answer: |
-          No, when you mirror a database from Azure Cosmos DB, all containers are replication into Fabric OneLake.
+          Yes, when you mirror a database from Azure Cosmos DB, you can choose which containers are replicated into Fabric OneLake. You can also reconfigure the selected containers at any time for your mirrored item.
       - question: |
           Can I use mirroring to replicate a single Azure Cosmos DB database multiple times?
         answer: |
@@ -186,7 +186,7 @@ sections:
       - question: |
           Does Azure Cosmos DB mirroring support nested data?
         answer: |
-          Yes, nested data is flattened in OneLake as a JSON string. Use `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` to flatten the data for view. For more information, see [nested data](azure-cosmos-db-limitations.md#nested-data).
+          Yes, nested data is flattened in OneLake as a JSON string. Use `OPENJSON`, `CROSS APPLY`, and `OUTER APPLY` to flatten the data for view. For more information, see [nested data](azure-cosmos-db-limitations.md#nested-data). For a step-by-step tutorial, see [how to query nested data](azure-cosmos-db-how-to-query-nested.md).
       - question: |
           Does Azure Cosmos DB mirroring support automatic flattening.
         answer: |
@@ -222,9 +222,9 @@ sections:
         answer: |
           Replication doesn't support the concepts of **pause** or **resume**. Stopping replication completely halts replication and selecting **restart replication** in the Fabric portal starts replication entirely from scratch. Restarting replication replaces the OneLake data with the latest data instead of incrementally updating it.
       - question: |
-          Why can't I find an option to configure replication for a mirrored Azure Cosmos DB database?
+          How can I configure replication for a mirrored Azure Cosmos DB database?
         answer: |
-          Mirroring for Azure Cosmos DB automatically mirrors all containers within the selected database. Because of this nuance, the Fabric portal doesn't contain an option to configure specific replication options for Azure Cosmos DB.
+          The Fabric portal contains an option to configure specific replication options.
       - question: |
           What does each replication status message mean for replicated Azure Cosmos DB data?
         answer: |
@@ -254,7 +254,7 @@ sections:
       - question: |
           Can I configure Azure Cosmos DB mirroring programatically?
         answer: |
-          No, support for automated mirroring configuring is currently not available.
+          Yes, support for automated mirroring configuring is available. To learn more about Microsoft Fabric Mirroring Rest APIs, visit [the documentation here](mirrored-database-rest-api.md).
       - question: |
           Is built-in continuous integration or deployment (CI/CD) available for Azure Cosmos DB mirroring?
         answer: |

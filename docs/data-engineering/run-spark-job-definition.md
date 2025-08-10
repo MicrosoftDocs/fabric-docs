@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 10/20/2023
 ms.search.form: spark_job_definition
 ---

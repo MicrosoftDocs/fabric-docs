@@ -17,7 +17,7 @@ This article covers the T-SQL language syntax capabilities of [!INCLUDE [product
 For SQL database in Fabric, see [Features comparison: Azure SQL Database and SQL database in Microsoft Fabric (preview)](../database/sql/feature-comparison-sql-database-fabric.md) and [Limitations in SQL database (preview)](../database/sql/limitations.md).
 
 > [!NOTE]
-> For more information on upcoming feature development for Fabric Data Warehouse, see the [Fabric Data Warehouse release plan](/fabric/release-plan/data-warehouse).
+> For more information on upcoming feature development for Fabric Data Warehouse, see the [Fabric Data Warehouse release plan](https://aka.ms/fabricrm).
 
 ## T-SQL surface area
 

@@ -1,8 +1,8 @@
 ---
 title: Use parameters in Real-Time Dashboards
 description: Learn how to use parameters in Real-Time Dashboards.
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.reviewer: gabil
 ms.topic: how-to
 ms.custom:
@@ -102,7 +102,7 @@ StormEvents
 | top 5 by TotalEvents
 ```
 
-Once saved, the time range filter shows up on the dashboard. Now it can be used to filter the data on the card. You can filter your dashboard by selecting from the drop-down: **Time range** (last x minutes/hours/days) or a **Custom time range**.
+Once saved, the time range filter shows up on the dashboard. Now it can be used to filter the data on the card. You can filter your dashboard by selecting from the dropdown: **Time range** (last x minutes/hours/days) or a **Custom time range**.
 
 :::image type="content" source="media/dashboard-parameters/time-range.png" alt-text="filter using custom time range.":::
 

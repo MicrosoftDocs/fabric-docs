@@ -5,6 +5,7 @@ author: jianleishen
 ms.topic: troubleshooting
 ms.date: 11/26/2024
 ms.author: jianleishen
+ms.custom: connectors
 ---
 
 # Troubleshoot connector issues with Data Factory in Fabric

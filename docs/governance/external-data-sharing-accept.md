@@ -1,10 +1,10 @@
 ---
 title: Accept an external data share
 description: Learn how to accept an external data share.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/19/2024
 ---
 

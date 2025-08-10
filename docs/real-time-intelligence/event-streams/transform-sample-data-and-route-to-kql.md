@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/17/2023
 ms.search.form: Eventstreams Tutorials
 ---
@@ -48,7 +48,7 @@ Follow these steps to create an eventstream in your workspace:
 
 ## Add a KQL destination with event processor
 
-1. On the Eventstream canvas, expand the **New destination** drop-down menu and choose **KQL Database**. Enter the necessary details of your KQL Database.
+1. On the Eventstream canvas, expand the **New destination** dropdown menu and choose **KQL Database**. Enter the necessary details of your KQL Database.
 
     :::image type="content" source="./media/transform-sample-data-and-to-kql/add-kql-db.png" alt-text="Screenshot that shows where add KQL Database in eventstream." lightbox="./media/transform-sample-data-and-to-kql/add-kql-db.png":::
 

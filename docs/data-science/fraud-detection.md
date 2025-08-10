@@ -1,12 +1,12 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a fraud detection model'
 description: This tutorial shows the data science workflow for building a model that detects credit card fraud.
-ms.author: lagayhar 
+ms.author: lagayhar
 author: lgayhardt
 ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 01/14/2025
 #customer intent: As a data scientist, I want to build a machine learning model so I can detect future fraudulent transactions.
 ---
@@ -116,7 +116,7 @@ if not IS_CUSTOM_DATA:
     # Download data files into the lakehouse if they're not already there
     import os, requests
 
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/Credit_Card_Fraud_Detection"
     fname = "creditcard.csv"
     download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
 

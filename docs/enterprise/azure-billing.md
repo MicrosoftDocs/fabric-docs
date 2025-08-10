@@ -1,11 +1,11 @@
 ---
 title: Understand your Fabric capacity Azure bill
 description: Learn how to navigate your Azure bill for A Fabric capacity.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/29/2025
+ms.date: 06/06/2025
 ---
 
 # Understand your Azure bill on a Fabric capacity
@@ -29,9 +29,7 @@ In Microsoft Cost Management, your cost analysis and invoice show multiple meter
 | Data Warehouse Capacity Usage CU               | Represents the Fabric Data Warehouse usage on your capacity                         | GA |
 | Dataflows High Scale Compute Capacity Usage CU | Represents the Dataflows High Scale Compute used for staging items on your capacity | GA |
 | Dataflows Standard Compute Capacity Usage CU   | Represents the Dataflows Standard Compute usage on your capacity                    | GA |
-| Digital Twin Builder                           | Represents Digital Twin Builder on your capacity                                    | GA |
-| Digital Twin Builder Operation                 | Represents Digital Twin Builder Operation on your capacity                          | GA |
-| Digital Twin Builder Query                     | Represents Digital Twin Builder Query on your capacity                              | GA |
+| Digital Twin Builder Operation Capacity Usage CU | Represents the on-demand and scheduled digital twin builder flow operations usage on your capacity | Preview |
 | Eventhouse                                     | Represents Row Level Eventhouse on your capacity                                    | GA |
 | Eventstream Capacity Usage CU                  | Represents the ingestion or processing usage for eventstreams on your capacity      | GA |
 | Eventstream Connector                          | Represents Eventstream Row Level Connector EV your capacity                         | GA |

@@ -6,6 +6,7 @@ ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
 ms.date: 11/19/2024
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 ---
 
 # How to: Access mirrored Azure Cosmos DB data in Lakehouse and notebooks from Microsoft Fabric (Preview)

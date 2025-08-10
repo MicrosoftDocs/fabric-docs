@@ -1,8 +1,8 @@
 ---
 title: Include file for the OneLake shortcut Real-Time Intelligence
 description: Include file for the OneLake shortcut in Real-Time Intelligence
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: include
 ms.custom:
 ms.date: 10/28/2024

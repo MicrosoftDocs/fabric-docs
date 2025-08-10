@@ -1,8 +1,8 @@
 ---
 title: Git integration process
 description: Understand how Microsoft Fabric interacts with Git on Azure Repos or GitHub, what permissions are needed, and how to sync.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
@@ -196,6 +196,7 @@ In each section, the changed items are listed with an icon indicating the status
 - :::image type="icon" source="./media/git-integration-process/modified-icon.png"::: modified
 - :::image type="icon" source="./media/git-integration-process/deleted-icon.png" ::: deleted
 - :::image type="icon" source="./media/git-integration-process/conflict-icon.png"::: conflict
+- :::image type="icon" source="./media/git-integration-process/warning.png"::: same-changes
 
 The Refresh button :::image type="icon" source="./media/git-integration-process/refresh-icon.png"::: on top of the panel updates the list of changes and updates.
 

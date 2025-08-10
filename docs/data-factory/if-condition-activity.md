@@ -5,7 +5,7 @@ author: kromerm
 ms.author: makromer
 ms.reviewer: whhender
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines
 ms.date: 12/18/2024
 ---
 
@@ -44,6 +44,9 @@ Select the **Activities** tab and provide a dynamic boolean **Expression** for t
 After providing the expression for the If Condition, selecting the pencil icon beside each case (True/False) allows you to add as many activities as necessary to be conditionally executed whenever the expression evaluates.
 
 :::image type="content" source="media/if-condition-activity/provide-if-condition-expression-and-configure-activities.png" lightbox="media/if-condition-activity/provide-if-condition-expression-and-configure-activities.png" alt-text="Screenshot showing the If Condition Activity settings tab and showing where to provide the Expression and choose Activities for when the expression evaluates to True or False.":::
+
+>[!TIP]
+>For more examples and information about the expression lauguage, see: [Expressions and functions for Data Factory in Microsoft Fabric](expression-language.md)
 
 ## Save and run or schedule the pipeline
 

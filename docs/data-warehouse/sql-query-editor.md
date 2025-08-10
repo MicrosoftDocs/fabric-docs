@@ -9,6 +9,7 @@ ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: how-to
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
+ms.custom: sfi-image-nochange
 ---
 # Query using the SQL query editor
 

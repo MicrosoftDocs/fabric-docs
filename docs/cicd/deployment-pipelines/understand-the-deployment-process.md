@@ -1,8 +1,8 @@
 ---
 title: The Microsoft Fabric deployment pipelines process
 description: Understand how deployment pipelines, the Fabric Application lifecycle management (ALM) tool, works.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: Lee
 ms.service: fabric
 ms.subservice: cicd
@@ -76,11 +76,21 @@ Deploying content from a working production pipeline to a stage that has an exis
 
 * Deploying updated content to replace some of the content already there.
 
+After the initial deployment:
+
+- the gateway associated with the target item is not automatically mapped to the corresponding data source.
+- You need to manually configure this mapping through the target item's settings page
+- After configuring verify that the data refresh completes successfully.
+- Subsequent deployments do not alter or reset this gateway configuration.
+
 ### Deployment process
 
 When content from the source stage is copied to the target stage, Fabric identifies existing content in the target stage and overwrites it. To identify which content item needs to be overwritten, deployment pipelines uses the connection between the parent item and its clones. This connection is kept when new content is created. The overwrite operation only overwrites the content of the item. The item's ID, URL, and permissions remain unchanged.
 
 In the target stage, [item properties that aren't copied](understand-the-deployment-process.md#item-properties-that-are-not-copied), remain as they were before deployment. New content and new items are copied from the source stage to the target stage.
+
+
+
 
 ## Autobinding
 
@@ -110,17 +120,16 @@ Autobinding works only with items that are supported by deployment pipelines and
 
 Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item connected to it in the other pipeline. For example, if you have a report in the test stage of pipeline *A* that's connected to a semantic model in the test stage of pipeline *B*, deployment pipelines recognizes this connection.
 
+>[!NOTE]
+>Each pipeline must have the same number of stages. So for example, if pipeline *A* has 3 stages, then pipeline *B* must also have 3 stages.  Pipeline *A* cannot have 3 stages and pipeline *B* 5 stages for autobinding to succeed. 
+
 Here's an example with illustrations that to help demonstrate how autobinding across pipelines works:
 
-1. You have a semantic model in the development stage of pipeline A.
-
-1. You also have a report in the development stage of pipeline B.
-
-1. Your report in pipeline B is connected to your semantic model in pipeline A. Your report depends on this semantic model.
-
-1. You deploy the report in pipeline B from the development stage to the test stage.
-
-1. The deployment succeeds or fails, depending on whether or not you have a copy of the semantic model it depends on in the test stage of pipeline A:
+- You have a semantic model in the development stage of pipeline A.
+- You also have a report in the development stage of pipeline B.
+- Your report in pipeline B is connected to your semantic model in pipeline A. Your report depends on this semantic model.
+- You deploy the report in pipeline B from the development stage to the test stage.
+- The deployment succeeds or fails, depending on whether or not you have a copy of the semantic model it depends on in the test stage of pipeline A:
 
     * *If you have a copy of the semantic model the report depends on in the test stage of pipeline A*:
 
@@ -413,7 +422,7 @@ The lowest deployment pipeline permission is *pipeline admin*, and it's required
 |------------------------------|---------------------|---------|
 |**Pipeline admin** |<ul><li>View the pipeline​</li><li>Share the pipeline with others</li><li>Edit and delete the pipeline</li><li>Unassign a workspace from a stage</li><li>Can see workspaces that are tagged as assigned to the pipeline in Power BI service</li></ul> |Pipeline access doesn't grant permissions to view or take actions on the workspace content. |
 |**Workspace viewer**<br>(and pipeline admin) |<ul><li>Consume content</li><li>Unassign a workspace from a stage</li></ul> |Workspace members assigned the Viewer role without *build* permissions, can't access the semantic model or edit workspace content. |
-|**Workspace contributor**<br>(and pipeline admin) |<ul><li>Consume content​</li><li>Compare stages</li><li>View semantic models</li><li>Unassign a workspace from a stage</li><li>Deploy items (except in GCC) (must be at least a contributor in both source and target workspaces)</li></ul> |   |
+|**Workspace contributor**<br>(and pipeline admin) |<ul><li>Consume content​</li><li>Compare stages</li><li>View semantic models</li><li>Unassign a workspace from a stage</li><li>Deploy items (must be at least a contributor in both source and target workspaces)</li></ul> |   |
 |**Workspace member**<br>(and pipeline admin) |<ul><li>View workspace content​</li><li>Compare stages</li><li>Deploy items (must be at least a contributor in both source and target workspaces)</li><li>Update semantic models</li><li>Unassign a workspace from a stage</li><li>Configure semantic model rules (you must be the semantic model owner)</li></ul> |If the *block republish and disable package refresh* setting located in the tenant *semantic model security* section is enabled, only semantic model owners are able to update semantic models. |
 |**Workspace admin**<br>(and pipeline admin) |<ul><li>View workspace content​</li><li>Compare stages</li><li>Deploy items</li><li>Assign workspaces to a stage</li><li>Update semantic models</li><li>Unassign a workspace from a stage</li><li>Configure semantic model rules (you must be the semantic model owner)</li></ul> |   |
 

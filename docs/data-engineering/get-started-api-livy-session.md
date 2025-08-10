@@ -6,7 +6,8 @@ ms.author: guyhay
 author: GuyHay
 ms.topic: how-to
 ms.search.form: Get started with Session jobs with the Livy API for Data Engineering
-ms.date: 04/30/2025
+ms.date: 05/05/2025
+ms.custom: sfi-image-nochange
 ---
 
 # Use the Livy API to submit and execute session jobs
@@ -86,27 +87,27 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
             # Create a ConfidentialClientApplication instance
             app = ConfidentialClientApplication(
-                client_id=client_id,
-                client_credential=client_secret,
-                authority=authority
+                client_id = client_id,
+                client_credential = client_secret,
+                authority = authority
             )
 
             # Acquire a token using the client credentials flow
-            result = app.acquire_token_for_client(scopes=[audience])
+            result = app.acquire_token_for_client(scopes = [audience])
 
             # Check if the token was successfully retrieved
             if "access_token" in result:
                 return result["access_token"]
             else:
-                raise Exception(f"Failed to retrieve tokexzn: {result.get('error_description', 'Unknown error')}")
+                raise Exception("Failed to retrieve token: {result.get('error_description', 'Unknown error')}")
         except Exception as e:
-            print(f"Error retrieving token: {e}", file=sys.stderr)
+            print(f"Error retrieving token: {e}", fil = sys.stderr)
             sys.exit(1)
 
     token = get_app_only_token(tenant_id, client_id, client_secret, audience)
 
-    api_base_url_mist='https://msitapi.fabric.microsoft.com/v1/'
-    livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"    
+    api_base_url = 'https://api.fabric.microsoft.com/v1/'
+    livy_base_url = api_base_url + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/batches"    
     headers = {"Authorization": "Bearer " + token}
 
     print(token)
@@ -131,14 +132,14 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     app = PublicClientApplication(
         client_id,
-            authority="https://login.microsoftonline.com/"Entra_TenantID"
+            authority = "https://login.microsoftonline.com/"Entra_TenantID"
         )
 
      result = None
 
      # If no cached tokens or user interaction needed, acquire tokens interactively
      if not result:
-     result = app.acquire_token_interactive(scopes=["https://api.fabric.microsoft.com/Lakehouse.Execute.All", "https://api.fabric.microsoft.com/Lakehouse.Read.All", "https://api.fabric.microsoft.com/Item. ReadWrite.All", "https://api.fabric.microsoft.com/Workspace.ReadWrite.All", "https://api.fabric.microsoft.com/Code.AccessStorage.All", "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All", 
+     result = app.acquire_token_interactive(scopes = ["https://api.fabric.microsoft.com/Lakehouse.Execute.All", "https://api.fabric.microsoft.com/Lakehouse.Read.All", "https://api.fabric.microsoft.com/Item. ReadWrite.All", "https://api.fabric.microsoft.com/Workspace.ReadWrite.All", "https://api.fabric.microsoft.com/Code.AccessStorage.All", "https://api.fabric.microsoft.com/Code.AccessAzureKeyvault.All", 
      "https://api.fabric.microsoft.com/Code.AccessAzureDataExplorer.All", "https://api.fabric.microsoft.com/Code.AccessAzureDataLake.All", "https://api.fabric.microsoft.com/Code.AccessFabric.All"])
 
     # Print the access token (you can use it to call APIs)
@@ -149,8 +150,8 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
     if "access_token" in result:
         access_token = result['access_token']
-        api_base_url_mist='https://api.fabric.microsoft.com/v1'
-        livy_base_url = api_base_url_mist + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/sessions"
+        api_base_url ='https://api.fabric.microsoft.com/v1'
+        livy_base_url = api_base_url + "/workspaces/"+workspace_id+"/lakehouses/"+lakehouse_id +"/livyApi/versions/2023-12-01/sessions"
         headers = {"Authorization": "Bearer " + access_token}
     ```
 
@@ -163,12 +164,12 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 1. Add another notebook cell and insert this code.
 
     ```python
-    create_livy_session = requests.post(livy_base_url, headers=headers, json={})
+    create_livy_session = requests.post(livy_base_url, headers = headers, json={})
     print('The request to create the Livy session is submitted:' + str(create_livy_session.json()))
 
     livy_session_id = create_livy_session.json()['id']
     livy_session_url = livy_base_url + "/" + livy_session_id
-    get_session_response = requests.get(livy_session_url, headers=headers)
+    get_session_response = requests.get(livy_session_url, headers = headers)
     print(get_session_response.json())
     ```
 
@@ -183,7 +184,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs. To use a Fabric Environment, simply update the prior notebook cell with this json payload.
 
 ```python
-create_livy_session = requests.post(livy_base_url, headers=headers, json={
+create_livy_session = requests.post(livy_base_url, headers = headers, json = {
     "conf" : {
         "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID""}"}
         }
@@ -198,25 +199,25 @@ create_livy_session = requests.post(livy_base_url, headers=headers, json={
     # call get session API
     livy_session_id = create_livy_session.json()['id']
     livy_session_url = livy_base_url + "/" + livy_session_id
-    get_session_response = requests.get(livy_session_url, headers=headers)
+    get_session_response = requests.get(livy_session_url, headers = headers)
 
     print(get_session_response.json())
     while get_session_response.json()["state"] != "idle":
         time.sleep(5)
-        get_session_response = requests.get(livy_session_url, headers=headers)
+        get_session_response = requests.get(livy_session_url, headers = headers)
 
     execute_statement = livy_session_url + "/statements"
-    payload_data ={
+    payload_data = {
         "code": "spark.sql(\"SELECT * FROM green_tripdata_2022_08 where fare_amount = 60\").show()",
             "kind": "spark"
         }
 
-    execute_statement_response = requests.post(execute_statement, headers=headers, json=payload_data)
+    execute_statement_response = requests.post(execute_statement, headers = headers, json = payload_data)
     print('the statement code is submitted as: ' + str(execute_statement_response.json()))
 
     statement_id = str(execute_statement_response.json()['id'])
-    get_statement = livy_session_url+ "/statements/" + statement_id
-    get_statement_response = requests.get(get_statement, headers=headers)
+    get_statement = livy_session_url + "/statements/" + statement_id
+    get_statement_response = requests.get(get_statement, headers = headers)
 
     while get_statement_response.json()["state"] != "available":
         # Sleep for 5 seconds before making the next request
@@ -224,7 +225,7 @@ create_livy_session = requests.post(livy_base_url, headers=headers, json={
         print('the statement code is submitted and running : ' + str(execute_statement_response.json()))
 
     # Make the next request
-    get_statement_response = requests.get(get_statement, headers=headers)
+    get_statement_response = requests.get(get_statement, headers = headers)
 
     rst = get_statement_response.json()['output']['data']['text/plain']
     print(rst)
@@ -243,12 +244,12 @@ create_livy_session = requests.post(livy_base_url, headers=headers, json={
 
     livy_session_id = create_livy_session.json()['id']
     livy_session_url = livy_base_url + "/" + livy_session_id
-    get_session_response = requests.get(livy_session_url, headers=headers)
+    get_session_response = requests.get(livy_session_url, headers = headers)
 
     print(get_session_response.json())
     while get_session_response.json()["state"] != "idle":
         time.sleep(5)
-        get_session_response = requests.get(livy_session_url, headers=headers)
+        get_session_response = requests.get(livy_session_url, headers = headers)
 
     execute_statement = livy_session_url + "/statements"
     payload_data = {
@@ -256,12 +257,12 @@ create_livy_session = requests.post(livy_base_url, headers=headers, json={
         "kind": "spark"
     }
 
-    execute_statement_response = requests.post(execute_statement, headers=headers, json=payload_data)
+    execute_statement_response = requests.post(execute_statement, headers = headers, json = payload_data)
     print('the statement code is submitted as: ' + str(execute_statement_response.json()))
 
     statement_id = str(execute_statement_response.json()['id'])
-    get_statement = livy_session_url+ "/statements/" + statement_id
-    get_statement_response = requests.get(get_statement, headers=headers)
+    get_statement = livy_session_url + "/statements/" + statement_id
+    get_statement_response = requests.get(get_statement, headers = headers)
 
     while get_statement_response.json()["state"] != "available":
     # Sleep for 5 seconds before making the next request
@@ -269,7 +270,7 @@ create_livy_session = requests.post(livy_base_url, headers=headers, json={
         print('the statement code is submitted and running : ' + str(execute_statement_response.json()))
 
     # Make the next request
-    get_statement_response = requests.get(get_statement, headers=headers)
+    get_statement_response = requests.get(get_statement, headers = headers)
 
     rst = get_statement_response.json()['output']['data']['text/plain']
     print(rst)
@@ -286,10 +287,10 @@ create_livy_session = requests.post(livy_base_url, headers=headers, json={
     ```python
     # call get session API with a delete session statement
 
-    get_session_response = requests.get(livy_session_url, headers=headers)
+    get_session_response = requests.get(livy_session_url, header = headers)
     print('Livy statement URL ' + livy_session_url)
 
-    response = requests.delete(livy_session_url, headers=headers)
+    response = requests.delete(livy_session_url, headers = headers)
     print (response)
     ```
 

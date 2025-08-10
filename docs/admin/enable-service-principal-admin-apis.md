@@ -1,8 +1,8 @@
 ---
 title: Enable service principal authentication for admin APIs
 description: Learn how to enable service principal authentication to permit use of read-only and update admin APIs.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
 ms.date: 02/27/2025
 

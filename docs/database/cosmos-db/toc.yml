@@ -1,0 +1,75 @@
+### YamlMime:TOC
+items:
+  - name: Overview
+    href: overview.md
+  - name: FAQ
+    displayName: Frequently asked questions
+    href: faq.yml
+  - name: Get started
+    expanded: true
+    items:
+      - name: Create a database
+        href: quickstart-portal.md
+      - name: Sample data
+        href: sample-data.md
+      - name: Query cross-database
+        href: how-to-query-cross-database.md
+  - name: Integrate with other services
+    items:
+      - name: Mirror to OneLake
+        href: mirror-onelake.md
+      - name: Create Power BI reports
+        href: how-to-create-reports.md
+      - name: Access data from a lakehouse
+        href: how-to-access-data-lakehouse.md
+  - name: Build AI applications
+    items:
+      - name: Index vector data
+        href: index-vector-data.md
+      - name: Full text indexing and search
+        href: full-text-indexing.md
+      - name: Hybrid search
+        href: hybrid-search.md
+  - name: Deploy and monitor
+    items:
+      - name: Implement continuous integration and deployment
+        displayName: CI, CD
+        href: how-to-continuous-integration-deployment.md
+      - name: Monitor activity and performance
+        href: how-to-monitor.md
+      - name: Billing and usage reporting
+        href: billing-usage.md
+  - name: Design secure solutions
+    items:
+      - name: Security best practices
+        href: security.md
+      - name: Authorization
+        href: authorization.md
+      - name: Authenticate with Microsoft Entra ID
+        href: how-to-authenticate.md
+  - name: Manage resources
+    items:
+      - name: Configure container
+        href: how-to-configure-container.md
+      - name: Indexing
+        href: indexing.md
+      - name: Indexing policies
+        href: indexing-policies.md
+      - name: Customize indexing policy
+        href: how-to-customize-indexing-policy.md
+      - name: Indexing policy samples
+        href: sample-indexing-policies.md
+      - name: Time to live (TTL)
+        href: time-to-live.md
+      - name: Configure time to live (TTL)
+        href: how-to-configure-time-to-live.md
+      - name: Request units
+        href: request-units.md
+      - name: Autoscale throughput
+        href: autoscale-throughput.md
+  - name: Write queries
+    href: nosql-query/toc.yml
+  - name: Troubleshoot
+    items:
+      - name: Limitations
+        href: limitations.md

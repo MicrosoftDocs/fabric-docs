@@ -5,19 +5,16 @@ ms.author: xujiang1
 author: xujxu 
 ms.topic: include
 ms.custom:
-ms.date: 05/21/2024
+ms.date: 07/22/2025
 ---
 
-1. On the **Select a data source** page, select **Apache Kafka**. 
-
-    :::image type="content" source="./media/apache-kafka-source-connector/select-apache-kafka.png" alt-text="Screenshot that shows the selection of Apache Kafka as the source type in the Get events wizard.":::
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/apache-kafka-source-connector/new-connection-link.png" alt-text="Screenshot that shows the selection of the New connection link on the Connect page of the Get events wizard.":::    
 1. In the **Connection settings** section, for **Bootstrap Server**, enter your Apache Kafka server address.
 
     :::image type="content" source="./media/apache-kafka-source-connector/bootstrap-server.png" alt-text="Screenshot that shows the selection of the Apache Kafka Bootstrap server field on the Connect page of the Get events wizard.":::   
-1. In the **Connection credentials** section, If you have an existing connection to the Apache Kafka cluster, select it from the drop-down list for **Connection**. Otherwise, follow these steps: 
+1. In the **Connection credentials** section, If you have an existing connection to the Apache Kafka cluster, select it from the dropdown list for **Connection**. Otherwise, follow these steps: 
     1. For **Connection name**, enter a name for the connection. 
     1. For **Authentication kind**, confirm that **API Key** is selected. 
     1. For **Key** and **Secret**, enter API key and key Secret.      

@@ -1,13 +1,13 @@
 ---
 title: Microsoft Fabric tenant settings
 description: Learn how to configure Microsoft Fabric tenant settings in Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 04/06/2025
+ms.date: 05/20/2025
 ---
 
 # Microsoft Fabric tenant settings
@@ -16,7 +16,7 @@ Microsoft Fabric tenant settings are configured in the tenant settings section o
 
 ## Users can create Fabric items
 
-For more information, see [Enable Microsoft Fabric for your organization](./fabric-switch.md)
+For more information, see [Enable Microsoft Fabric for your organization](./fabric-switch.md).
 
 ## Users can create and use ADF Mount items (preview)
 
@@ -24,11 +24,19 @@ Users can connect and test existing ADF pipelines in Microsoft Fabric. This sett
 
 ## Users can create Healthcare Cohort items (preview)
 
-For more information, see [Overview of discover and build cohorts (preview) in healthcare data solutions](/industry/healthcare/healthcare-data-solutions/discover-and-build-cohorts-overview)
+For more information, see [Overview of discover and build cohorts (preview) in healthcare data solutions](/industry/healthcare/healthcare-data-solutions/discover-and-build-cohorts-overview).
+
+## User data functions (preview)
+
+For more information, see [What is Fabric User data functions (Preview)?](../data-engineering/user-data-functions/user-data-functions-overview.md).
 
 ## SQL database (preview)
 
 For more information, see [SQL database in Microsoft Fabric (Preview)](../database/sql/overview.md).
+
+## Digital Twin Builder
+
+For more information, see [What is digital twin builder (preview)?](../real-time-intelligence/digital-twin-builder/overview.md).
 
 ## Users can discover and create org apps (preview)​
 
@@ -46,13 +54,17 @@ For more information, see [Fabric data agent creation (preview)](../data-science
 
 For more information, see [Metric sets setting (preview)](./service-admin-portal-goals-settings.md#metric-sets-setting-preview).
 
-## Graph Intelligence (preview)
+## Mirrored Azure Databricks Catalog
 
-Explore data and build algorithms with Graph.
+For more information, see [Mirroring Azure Databricks Unity Catalog](../database/mirrored-database/azure-databricks.md).
 
-## Mirrored Azure Databricks Catalog (preview)
+## Users can create variable libraries
 
-For more information, see [Mirroring Azure Databricks Unity Catalog (Preview)](../database/mirrored-database/azure-databricks.md).
+For more information, see [What is a Variable library? (preview)](../cicd/variable-library/variable-library-overview.md).
+
+## ML model endpoints for real-time predictions (preview)
+
+For more information, see [Serve real-time predictions with ML model endpoints](../data-science/model-endpoints.md).
 
 ## Users can be informed of upcoming conferences featuring Microsoft Fabric when they are logged in to Fabric
 

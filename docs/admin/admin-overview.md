@@ -1,8 +1,8 @@
 ---
 title: Administration overview
 description: This article provides a Microsoft Fabric administration overview.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
 ms.date: 08/04/2024
 ---
@@ -138,3 +138,5 @@ This section provides a high level list of some of the admin capabilities mentio
 * [Security overview](../security/security-overview.md)
 
 * [Governance and compliance overview](../governance/governance-compliance-overview.md)
+
+* [CI/CD workflow options in Fabric](../cicd/manage-deployment.md)

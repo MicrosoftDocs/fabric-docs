@@ -5,7 +5,7 @@ ms.reviewer: xupzhou
 ms.author: whhender
 author: whhender
 ms.topic: conceptual
-ms.custom:
+ms.custom: pipelines
 ms.date: 12/18/2024
 ms.search.form: Pipeline Template
 ---
@@ -107,6 +107,18 @@ From the Pipeline template gallery, click **Import template**.
    :::image type="content" source="media/templates/import-from-template-gallery.png" lightbox="media/templates/import-from-template-gallery.png" alt-text="Screenshot showing the Import template button from the Pipeline template gallery.":::
 
 This opens a file browser and allow you to select your pipeline .zip file. Select your file and click **Open**. Your template will be imported and a preview will open. Once you've selected your connections and click **Use this template** to finish importing your pipeline. 
+
+#### Semantic Model Refresh Templates 
+
+In addition to the traditional pipeline templates, Data Factory also offers Semantic Model Refresh Templates to help you automate the refresh process for Power BI semantic models. The template gallery includes several refresh scenarios, such as:
+
+* **Event-driven refreshes**: Set up an [event or action that will trigger a semantic model refresh](/fabric/data-factory/pipeline-storage-event-triggers). 
+* **Refreshing a semantic model after a dataflow runs**: trigger a semantic model refresh after each [data flow activity](/fabric/data-factory/dataflow-activity). 
+* **Scheduled refreshes**: Create a [schedule](/fabric/data-factory/pipeline-runs) to trigger a semantic model refresh, such as on a monthly or quarterly basis. 
+* **Sequencing multiple semantic model refreshes**: trigger refreshes sequentially for different semantic models. 
+Each template provides a guided setup to help you configure the refresh process within Data Pipelines.
+
+:::image type="content" source="media/templates/datapipeline-template-gallery.png" alt-text="Screen shot of the power bi semantic model refresh template gallery." lightbox="media/templates/datapipeline-template-gallery.png":::
 
    
 ## Related content

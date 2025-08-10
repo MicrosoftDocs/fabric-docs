@@ -1,11 +1,12 @@
 ---
 title: Microsoft Fabric features by SKU
 description: Learn about Fabric features parity according to the capacity type. The article lists features according to SKUs by capacity type.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: conceptual
 ms.collection: ce-skilling-ai-copilot
-ms.date: 02/02/2025
+ms.date: 05/11/2025
+ms.update-cycle: 180-days
 ---
 
 # Microsoft Fabric features parity
@@ -18,7 +19,7 @@ The following table lists Fabric features according to SKU type. The table lists
 
 | Feature                                                                                               | F SKU         | P SKUs       |
 |-------------------------------------------------------------------------------------------------------|:-------------:|:------------:|
-| [Fabric data agent](../data-science/concept-data-agent.md)                                                      | F64 or higher | &#x2705;     |
+| [Fabric data agent](../data-science/concept-data-agent.md)                                            | &#x2705;      | &#x2705;     |
 | [ARM APIs and Terraform](/azure/developer/terraform/overview-azapi-provider)                          | &#x2705;      | &#x274C;     |
 | [Copilot](../fundamentals/copilot-fabric-overview.md)                                                 | &#x2705;      | &#x2705;     |
 | [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md)<sup>1</sup>   | &#x2705;      | &#x274C;     |

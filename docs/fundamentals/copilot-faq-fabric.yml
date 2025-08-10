@@ -7,7 +7,8 @@ metadata:
   ms.reviewer: ''
   ms.custom:
   ms.topic: faq
-  ms.date: 12/17/2024
+  ms.date: 06/05/2025
+  ms.update-cycle: 180-days
   no-loc: [Copilot]
   ms.collection: ce-skilling-ai-copilot
 title: "Copilot for Microsoft Fabric and Power BI: FAQ"
@@ -17,9 +18,9 @@ summary: |
   > [!NOTE]
   >
   > - Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](../admin/service-admin-portal-copilot.md) for details. 
-  > - Your F2 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
+  > - Your F or P capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
   > - If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your Fabric tenant admin enables the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md) tenant setting in the Fabric Admin portal.
-  > - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F2 or higher, or P1 or higher) are supported.
+  > - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F2 or higher, or P1 or higher) are supported. If you're using an Azure subscription with monthly credits (such as through a Visual Studio/MSDN benefit), you may not have access to the required SKUs unless billing is enabled and the appropriate capacity is provisioned.
   > - For more information, see the article [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md).
 
 sections:
@@ -84,6 +85,10 @@ sections:
           I want to disable Copilot immediately as I'm concerned with the data storage you mentioned.
         answer: |
           Contact your help desk to get support from your IT admin.
+      - question: |
+          Why did Copilot respond with general knowledge data? 
+        answer: |
+           When a question is related to data in the semantic model, Copilot will use the semantic model to answer the question, otherwise it may answer from the [LLM's general knowledge](https://go.microsoft.com/fwlink/?linkid=2325401).
       - question: |
           I want to suggest new features. How can I do that?  
         answer: |

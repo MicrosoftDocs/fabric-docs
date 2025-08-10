@@ -1,12 +1,11 @@
 ---
 title: Operation list
 description: This article provides a list of all the operations available in Fabric.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
-ms.date: 03/02/2025
+ms.date: 05/22/2025
 ---
-
 # Operation list
 
 The following operations are available in the audit logs.
@@ -27,8 +26,8 @@ The following operations are available in the audit logs.
 | Added Power BI folder access  |  AddFolderAccess  |  Not currently used  |
 | Added Power BI group members  |  AddGroupMembers  |    |
 | Added data source to Power BI gateway  |  AddDatasourceToGateway  |    |
-| Added external resource  |  AddExternalResource  |    |
-| Added link to external resource  |  AddLinkToExternalResource  |    |
+| Added external resource  |  AddExternalResource  | Registers or connects an external resource in the Fabric workspace.   |
+| Added link to external resource  |  AddLinkToExternalResource  | Links a Fabric item to an external resource for reference or integration.    |
 | Added user to Power BI gateway cluster  |  AddUsersToGatewayCluster  |  Not currently used  |
 | Added user to Power BI gateway cluster datasource  |  AddUsersToGatewayClusterDatasource  |    |
 | Admin Get Artifacts Byuser Id | AdminGetArtifactsByuserId |   |
@@ -82,13 +81,14 @@ The following operations are available in the audit logs.
 | Convert Personal Workspace To Workspace | ConvertPersonalWorkspaceToWorkspace |   |
 | Copied Power BI dashboard | CopyDashboard |   |
 | Copied Power BI report | CopyReport |   |
+| Copilot Interaction (Request Copilot features in Fabric) | CopilotInteraction | Request Copilot features in Fabric |
 | Copy Scorecard | CopyScorecard |   |
 | Copy blob | CopyBlob | OneLake operation. Copies a source blob to a destination blob in this storage account or in another storage account. |
 | Create an SQL query from a Warehouse | CreateSqlQueryFromWarehouse |   |
 | Create Artifact | CreateArtifact |   |
 | Create Branch In Git | CreateBranchInGit | Create Branch In Git is a git provider activity, which is generated when users create branch in Git.  |
-| Create Cloud Datasource From Kind Path | CreateCloudDatasourceFromKindPath |   |
-| Create Cloud Datasource | CreateCloudDatasource |   |
+| Create Cloud Datasource From Kind Path | CreateCloudDatasourceFromKindPath | Creates a cloud-based data source using a specific resource and path.  |
+| Create Cloud Datasource | CreateCloudDatasource | Establishes a new cloud data connection to external storage or services.  |
 | Create Data Sharing | CreateDataSharing | Create a new external data share  |
 | Create Datamart | CreateDatamart | Triggered when a new Datamart is created in a Workspace   |
 | Create Dataset By Quick Share | CreateDatasetByQuickShare |   |
@@ -236,6 +236,7 @@ The following operations are available in the audit logs.
 | Deleted Power BI semantic model rows | DeleteDatasetRows | Indicates that the Push Datasets - Datasets DeleteRows API was called  |
 | Deleted Power BI semantic model | DeleteDataset |   |
 | Deleted Power BI template app or a workspace for a template app | DeleteTemplateApp |   |
+| Deleted Publish to Web Embed Code | DeleteEmbedCode |   |
 | Deleted a SQL query from a SQL analytics endpoint | DeleteSqlQueryFromSqlAnalyticsEndpointLakehouse | This audit event covers both deleting SQL and visual queries from the SQL analytics endpoint of the Lakehouse  |
 | Deleted SQL query from a Warehouse | DeleteSqlQueryFromWarehouse | Covers both deleting SQL and visual queries from the Warehouse  |
 | Deleted an organizational custom visual | DeleteOrganizationalGalleryItem |   |
@@ -670,6 +671,7 @@ The following operations are available in the audit logs.
 | Update Notebook Resource | UpdateNotebookResource | Update resources in notebook. |
 | Update Notebook Spark Property | UpdateNotebookSparkProperty |  |
 | Update Notification Settings | UpdateNotificationSettings | Update user notification settings for Notification Service Platform. |
+| Update Publish to Web Embed Code Owner | UpdateEmbedCodeOwner |  |
 | Update Report Content | UpdateReportContent |  |
 | Update Scorecard Dataset | UpdateScorecardDataset |  |
 | Update Scorecard Hierarchy | UpdateScorecardHierarchy |  |
@@ -753,6 +755,35 @@ The following operations are available in the audit logs.
 ## Considerations and limitations
 
 When capacity ID and capacity name aren't available in the audit logs, you can view them in the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md).
+
+> [!IMPORTANT]
+> **Starting July 7, 2025**, As part of our ongoing efforts to simplify audit logging and ensure consistency across Microsoft Fabric, we're **standardizing redundant artifact operations** into a single set of unified operations. This migration aligns Datamart, Warehouse, and SQL Analytics Endpoint Lakehouse actions under common names used across the Fabric platform.
+
+### What’s Changing?
+
+| Friendly Name | Old Operation Name | New Operation Name |
+|---------------|--------------------|---------------------|
+| Create Datamart | CreateDatamart | CreateArtifact |
+| Create Warehouse | CreateWarehouse | CreateArtifact |
+| Delete Datamart | DeleteDatamart | DeleteArtifact |
+| Delete Warehouse | DeleteWarehouse | DeleteArtifact |
+| Rename Datamart | RenameDatamart | UpdateArtifact |
+| Rename Warehouse | RenameWarehouse | UpdateArtifact |
+| Share Datamart | ShareDatamart | ShareArtifact |
+| Share Warehouse | ShareWarehouse | ShareArtifact |
+| Update Datamart | UpdateDatamart | UpdateArtifact |
+| Update Datamart Metadata | UpdateDatamartMetadata | UpdateArtifact |
+| Update Datamart Settings | UpdateDatamartSettings | UpdateArtifact |
+| Update Warehouse | UpdateWarehouse | UpdateArtifact |
+| Update Warehouse Metadata | UpdateWarehouseMetadata | UpdateArtifact |
+| Update Warehouse Settings | UpdateWarehouseSettings | UpdateArtifact |
+| Upsert Datamart Parameters | UpsertDatamartParameters | UpdateArtifact |
+| Upsert SQL Analytics Endpoint Lakehouse Parameters | UpsertSqlAnalyticsEndpointLakehouseParameters | UpdateArtifact |
+| Upsert Warehouse Parameters | UpsertWarehouseParameters | UpdateArtifact |
+| View Datamart | ViewDatamart | ReadArtifact |
+| View SQL Analytics Endpoint Lakehouse | ViewSqlAnalyticsEndpointLakehouse | ReadArtifact |
+| View Warehouse | ViewWarehouse | ReadArtifact |
+
 
 ## Related content
 

@@ -5,10 +5,16 @@
     items:
     - name: What is Data Factory?
       href: data-factory-overview.md
-    - name: Data Factory training
-      href: /training/paths/get-started-fabric
     - name: What's new in Data Factory
       href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric
+    - name: What is Copilot in Fabric in the Data Factory workload? 
+      href: copilot-fabric-data-factory.md
+    - name: Get started with Copilot in Fabric in the Data Factory workload
+      href: copilot-fabric-data-factory-get-started.md
+    - name: Guided Data Factory lab
+      href: guided-lab-experience.md
+    - name: Data Factory training
+      href: /training/paths/get-started-fabric
     - name: Pricing in Data Factory
       items:
       - name: Pricing overview
@@ -17,6 +23,8 @@
         href: pricing-pipelines.md
       - name: Pricing Dataflow Gen2
         href: pricing-dataflows-gen2.md
+      - name: Pricing Copy job
+        href: pricing-copy-job.md
       - name: Pricing Apache Airflow job
         href: pricing-apache-airflow-job.md
       - name: Cost estimation from Azure Data Factory to Fabric
@@ -45,6 +53,10 @@
             href: pricing-scenario-dataflows-gen2-load-6-gb-csv-to-lakehouse-table-fastcopy.md
           - name: Load 2 GB of Parquet data to a Lakehouse table through Virtual Network Data Gateway
             href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-vnet-gateway.md
+        - name: Copy job
+          items:
+          - name: Load 1 TB of CSV data to a Lakehouse table
+            href: pricing-scenario-copy-job.md
     - name: Keyboard shortcuts
       href: keyboard-shortcuts.md
   - name: Get started
@@ -59,20 +71,26 @@
       href: create-apache-airflow-jobs.md
     - name: Operationalize Data Factory
       href: transform-data.md
-    - name: Decide - Copy activity, dataflow, or Spark?
+    - name: Decide - Copy activity, Copy job, dataflow, or Spark?
       href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md
     - name: How to access on-premises Data
       href: how-to-access-on-premises-data.md
     - name: Monitoring activity in Data Factory
       href: monitor-data-factory.md
+    - name: Create Alerts for Pipelines
+      href: create-alerts-for-pipeline-runs.md
     - name: Bring Azure Data Factory to Fabric
       href: tutorial-bring-azure-data-factory-to-fabric.md      
   - name: Migrate to Fabric
     items:
+    - name: Compare Azure Data Factory to Data Factory in Fabric
+      href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Pipelines
       items:
       - name: Migrate from Azure Data Factory to Data Factory in Microsoft Fabric
-        href: migrate-from-azure-data-factory.md      
+        href: migrate-from-azure-data-factory.md  
+      - name: Bring your Azure Data Factory to Fabric
+        href: migrate-pipelines-azure-data-factory-item.md 
       - name: Planning your migration from Azure Data Factory to Fabric
         href: migrate-planning-azure-data-factory.md
       - name: Activity Continuity
@@ -82,7 +100,7 @@
       - name: Fabric Dataflows for Mapping Data Flow users
         href: guide-to-dataflows-for-mapping-data-flow-users.md
       - name: How to ingest data from Azure Data Factory to Fabric
-        href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
+        href: /azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory?toc=/fabric/data-factory/toc.json
     - name: Dataflows
       items:    
       - name: Migrate from Dataflow Gen1 to Dataflow Gen2
@@ -104,21 +122,11 @@
       - name: Module 2 - Transform data with a dataflow
         href: tutorial-end-to-end-dataflow.md
       - name: Module 3 - Automate and send notification
-        href: tutorial-end-to-end-integration.md
-    - name: SAP CDC to Fabric OneLake using ADF
-      href: change-data-capture-from-sap-to-onelake-with-azure-data-factory.md
-    - name: How to ingest data from ADF to Fabric
-      href: how-to-ingest-data-into-fabric-from-azure-data-factory.md      
+        href: tutorial-end-to-end-integration.md    
   - name: Connectors
     items:
     - name: Connector overview
       href: connector-overview.md
-    - name: Dataflow Gen2 connectors
-      href: dataflow-support.md
-    - name: Data pipeline connectors
-      href: pipeline-support.md
-    - name: Copy job connectors
-      href: copy-job-support.md
     - name: Service principal support
       href: service-principals.md
     - name: Access database
@@ -223,18 +231,14 @@
         href: connector-azure-databricks-overview.md
       - name: Set up your connection
         href: connector-azure-databricks.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-azure-databricks-copy-activity.md
     - name: Azure Files 
       items: 
       - name: Azure Files - Overview 
         href: connector-azure-files-overview.md 
       - name: Configure in a data pipeline Copy activity 
         href: connector-azure-files-copy-activity.md 
-    - name: Azure HDInsight on AKS Trino
-      items:
-      - name: Azure HDInsight on AKS Trino - Overview
-        href: connector-azure-hdinsight-on-aks-trino-overview.md
-      - name: Set up your connection
-        href: connector-azure-hdinsight-on-aks-trino.md
     - name: Azure SQL database
       items:
       - name: Azure SQL database - Overview
@@ -401,6 +405,18 @@
         href: connector-google-cloud-storage.md
       - name: Configure in a data pipeline Copy activity
         href: connector-google-cloud-storage-copy-activity.md
+    - name: Greenplum for Pipeline
+      items:
+      - name: Greenplum for Pipeline - Overview
+        href: connector-greenplum-for-pipeline-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-greenplum-for-pipeline-copy-activity.md
+    - name: Hdfs for Pipeline
+      items:
+      - name: Hdfs for Pipeline - Overview
+        href: connector-hdfs-for-pipeline-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-hdfs-for-pipeline-copy-activity.md        
     - name: Hive LLAP
       items:
       - name: Hive LLAP - Overview
@@ -571,12 +587,28 @@
         href: connector-sap-bw-message-server-overview.md
       - name: Set up your connection
         href: connector-sap-bw-message-server.md
+    - name: SAP BW Open Hub Application Server
+      items:
+      - name: SAP BW Open Hub Application Server - Overview
+        href: connector-sap-bw-open-hub-application-server-overview.md
+    - name: SAP BW Open Hub Message Server
+      items:
+      - name: SAP BW Open Hub Message Server - Overview
+        href: connector-sap-bw-open-hub-message-server-overview.md
     - name: SAP HANA database
       items:
       - name: SAP HANA database - Overview
         href: connector-sap-hana-overview.md
       - name: Set up your connection
         href: connector-sap-hana.md
+    - name: SAP Table Application Server
+      items:
+      - name: SAP Table Application Server - Overview
+        href: connector-sap-table-application-server-overview.md
+    - name: SAP Table Message Server
+      items:
+      - name: SAP Table Message Server - Overview
+        href: connector-sap-table-message-server-overview.md      
     - name: ServiceNow
       items:
       - name: ServiceNow - Overview
@@ -787,6 +819,8 @@
     items:
     - name: Concepts
       items:
+      - name: What are Dataflows Gen2
+        href: dataflows-gen2-overview.md
       - name: Data source management
         href: data-source-management.md
       - name: Dataflow Gen2 destinations and managed settings
@@ -807,6 +841,8 @@
         href: dataflow-gen2-incremental-refresh.md
       - name: Dataflow Gen2 with CICD and Git integration
         href: dataflow-gen2-cicd-and-git-integration.md
+      - name: Dataflow Gen2 public APIs
+        href: dataflow-gen2-public-apis.md
     - name: How-to
       items:
       - name: Saving a draft of your dataflow
@@ -833,10 +869,16 @@
       href: create-copy-job.md
     - name: How to monitor a Copy job
       href: monitor-copy-job.md
+    - name: Change data capture (CDC) in Copy job
+      href: cdc-copy-job.md
     - name: CI/CD for Copy job
       href: cicd-copy-job.md
+    - name: REST API Capabilities
+      href: copy-job-rest-api-capabilities.md    
   - name: Data gateway
     items:
+    - name: "Business continuity and disaster recovery (BCDR) for gateways"
+      href: /data-integration/gateways-business-continuity-disaster-recovery?toc=/fabric/data-factory/toc.json
     - name: On-premises data gateways docs
       items:
       - name: "What is an on-premises data gateway?"
@@ -925,6 +967,8 @@
           href: /data-integration/vnet/manage-data-gateways?toc=/fabric/data-factory/toc.json 
         - name: Use virtual network data gateway in Fabric with Dataflows Gen 2
           href: /data-integration/vnet/use-data-gateways-dfgen2-fabric?toc=/fabric/data-factory/toc.json 
+        - name: Use virtual network data gateway in Fabric with Pipeline
+          href: /data-integration/vnet/use-data-gateways-pipeline-fabric?toc=/fabric/data-factory/toc.json
         - name: Use virtual network data gateway in Power BI
           href: /data-integration/vnet/use-data-gateways-sources-power-bi?toc=/fabric/data-factory/toc.json 
         - name: Use virtual network data gateway in Power Platform dataflows
@@ -992,7 +1036,9 @@
   - name: Best practices
     items:
     - name: Copy performance for SQL databases
-      href: copy-performance-sql-databases.md    
+      href: copy-performance-sql-databases.md  
+    - name: Dataflow Gen2 performance and scalability
+      href: dataflow-gen2-performance-best-practices.md  
   - name: Extensibility
     items:
       - name: Connector certification
@@ -1007,10 +1053,6 @@
       href: frequently-asked-questions.yml
     - name: Gateway considerations for data destinations in Dataflow Gen2
       href: gateway-considerations-output-destinations.md
-    - name: Getting from Azure Data Factory to Data Factory in Fabric
-      href: compare-fabric-data-factory-and-azure-data-factory.md
-    - name: Getting from Dataflow Gen1 to Gen2
-      href: dataflows-gen2-overview.md
     - name: Pipeline activities troubleshooting guide
       href: pipeline-troubleshoot-guide.md
     - name: Connectors
@@ -1062,10 +1104,4 @@
     - name: Data Factory limitations
       href: data-factory-limitations.md
     - name: Fabric known issues
-      href: ../get-started/fabric-known-issues.md?toc=/fabric/data-factory/toc.json
-  - name: Reference
-    items:
-    - name: CI/CD for data pipelines
-      href: git-integration-deployment-pipelines.md
-    - name: Data pipelines REST API
-      href: pipeline-rest-api.md
+      href: https://support.fabric.microsoft.com/known-issues/

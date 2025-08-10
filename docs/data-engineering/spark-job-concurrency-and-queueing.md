@@ -90,14 +90,37 @@ If the default pool (Starter Pool) option is selected for the workspace, the fol
 
 Learn more: [Configuring Starter Pools](configure-starter-pools.md).
 
-## Job level bursting
+Admins can configure their Apache Spark pools to utilize the maximum Spark VCores available in the capacity, including the burst factor of 3× that Fabric offers for concurrent execution. For example, a workspace admin with an F64 Fabric capacity can configure their Spark pool (Starter Pool or Custom Pool) to use up to 384 Spark VCores by:
 
-Admins can configure their Apache Spark pools to utilize the max Spark cores with burst factor available for the entire capacity. For example, a workspace admin with a F64 Fabric capacity can configure their Spark pool (Starter pool or Custom pool) to 384 Spark VCores by:
+Setting Starter Pool max nodes to 48 (with Medium nodes = 8 VCores each), or
 
-- Setting Starter Pool max nodes to 48 (with 8-core nodes), or
-- Configuring a Custom Pool using XXLarge nodes (8 VCores each) with six max nodes, depending on desired sizing.
+Configuring a Custom Pool using larger nodes (e.g., XXLarge = 64 VCores each) with an appropriate node count to reach the desired capacity.
 
-With this configuration, a **single job can consume the entire burst limit**, enabling maximum performance for large-scale processing.
+With this configuration, a single Spark job can consume the entire burst capacity, which is ideal for large-scale data processing that prioritizes performance.
+
+New: Job-level bursting control via admin portal
+Capacity admins now have control over enabling or disabling job-level bursting through a new setting in the Admin Portal:
+
+Navigate to Admin Portal → Capacity Settings → Data Engineering/Science tab
+
+Use the new "Disable Job-Level Bursting" switch to prevent a single Spark job from consuming all available burst capacity
+
+> [!NOTE]
+> When job-level bursting is disabled, the Spark engine enforces that no single job can utilize all available capacity (including burst cores). This ensures that capacity remains available for concurrent jobs, improving throughput and multi-user concurrency.
+
+This feature is particularly useful in multi-tenant or high-concurrency environments, where workloads need to be balanced across multiple teams and pipelines. Admins can tune this setting based on whether the capacity is optimized for maximum job throughput (bursting enabled) or higher concurrency and fairness (bursting disabled).
+
+Example scenarios
+Bursting enabled (default):
+A large batch notebook job can consume all 384 Spark VCores in an F64 capacity, assuming no other jobs are running.
+
+Bursting disabled:
+A job may be capped at the base core limit (e.g., 128 Spark VCores for F64), allowing headroom for other jobs to start concurrently.
+
+> [!TIP]
+> For teams with diverse job types (ETL, ML, Adhoc), disabling job-level bursting can help prevent capacity monopolization and reduce job queueing delays.
+
+
 
 ## Related content
 

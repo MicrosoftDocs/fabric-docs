@@ -1,8 +1,8 @@
 ---
 title: Lifecycle management of the Microsoft Fabric Variable library
 description: Understand how to use Variable libraries in the context of lifecycle management and CI/CD.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: Lee
 ms.service: fabric
 ms.subservice: cicd
@@ -19,12 +19,23 @@ Variable libraries make it easy to manage configurations across different stages
 
 ## Variable libraries and deployment pipelines
 
-Variable libraries and their values can be deployed in deployment pipelines to manage variable values across different stages. All value sets in the Variable library are available to all stages of the deployment pipeline. The active value set for each stage is selected independently and can be changed anytime. While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the deployment pipeline. The consumer item (for example, a pipeline) automatically receives the correct value from the active value set.
+Variable libraries and their values can be deployed in deployment pipelines to manage variable values across different stages. 
 
-When you create a deployment pipeline, you can select a Variable library item to use. The selected Variable library item is stored in the deployment pipeline and is used to populate the variable values in that stage. You can also change the active value set for each stage of the deployment pipeline.
+:::image type="content" source="./media/variable-library-cicd/set-variable-library-1.png" alt-text="Screenshot of deployment pipeline." lightbox="media/variable-library-cicd/set-variable-library-1.png":::
+:::
 
-When you change the variables or value set in one stage of a deployment pipeline, the Variable library looks *different* [compared](../deployment-pipelines/compare-pipeline-content.md) to the same item in a different stage.
-For example, the following changes in the Variable library are reflected as *different* in the deployment pipeline:
+The following is important information to remember:
+
+- All **value sets** in the variable library are available to all stages of the deployment pipeline, but only one is active in a stage.
+- The **active value set** for each stage is selected independently and can be changed anytime.
+- By default, when first deployed/commited, the variable librarie's active set is, set to be the default value. You can change this by accessing the newly created variable library in the target stage/repo and changing the active set.
+
+:::image type="content" source="./media/variable-library-cicd/set-variable-library-2.png" alt-text="Screenshot of compare in deployment pipelines showing active set." lightbox="media/variable-library-cicd/set-variable-library-2.png":::
+:::
+
+- While the *selected active value set* in each stage is unaffected by deployments, the values themselves can be updated in the variable library. The consumer item in its workspace (for example, a pipeline) automatically receives the correct value from the active value set.
+
+The following operations to variables or value sets in one stage of a deployment pipeline, cause the variable library to be reflected as *different* [compared](../deployment-pipelines/compare-pipeline-content.md) to the same item in a different stage.
 
 * added, deleted, or edited variables
 * added or deleted value sets
@@ -33,7 +44,8 @@ For example, the following changes in the Variable library are reflected as *dif
 
 :::image type="content" source="./media/variable-library-cicd/variable-library-compare.png" alt-text="Screenshot of compare in deployment pipelines with the variable library showing as different in the two stages.":::
 
-Changes to the **active value set** don't register as in a *different* when you compare since the active value set is stored in the deployment pipeline, and not in the Variable library itself.
+A simple change to the **active value set** doesn't register as *different* when you compare, since the active value set is part of the item configuration, but it is not included in its definition. This is why it is not shown on the Deployment pipeline 'Compare' and not overwritten on each deployment. 
+
 
 ## Variable libraries and Git integration
 

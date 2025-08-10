@@ -1,19 +1,19 @@
 ---
-title: "Microsoft Fabric Mirrored Catalog From Azure Databricks (Preview)"
+title: "Microsoft Fabric Mirrored Catalog From Azure Databricks"
 description: Learn about the mirrored databases from Azure Databricks in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sheppardshep, whhender, mspreshah
-ms.date: 11/19/2024
+ms.date: 07/02/2025
 ms.topic: overview
 ms.search.form: Databricks overview
 ---
 
-# Mirroring Azure Databricks Unity Catalog (Preview)
+# Mirroring Azure Databricks Unity Catalog
 
 Many organizations today register their data in Unity Catalog within Azure Databricks. A mirrored Unity Catalog in Fabric enables customer to read data managed by Unity Catalog from Fabric workloads. Azure Databricks and Fabric are better together.
 
-For a tutorial on configuring your Azure Databricks Workspace for mirroring the Unity Catalog into Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-tutorial.md).
+For a tutorial on configuring your Azure Databricks Workspace for mirroring the Unity Catalog into Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-tutorial.md).
 
 [Mirrored databases in Fabric](overview.md) allow users to enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs. You can enjoy an easy-to-use product designed to simplify your analytics needs and built for openness and collaboration between Microsoft Fabric and Azure Databricks.
 
@@ -23,11 +23,10 @@ When you use Fabric to read data that is registered in Unity Catalog, there is n
 
 Mirrored catalogs are an item in Fabric Data Warehousing distinct from the Warehouse and SQL analytics endpoint.
 
-When you mirror an Azure Databricks Unity Catalog, Fabric creates three items:
+When you mirror an Azure Databricks Unity Catalog, Fabric creates these items:
 
 - Mirrored Azure Databricks item
 - A [SQL analytics endpoint on a Lakehouse](../../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md)
-- A [default semantic model](../../data-warehouse/semantic-models.md)
 
 You can access your mirrored Azure Databricks data multiple ways:
 
@@ -58,7 +57,7 @@ There are other filtration conditions that are applied to catalogs/schemas/table
 
 ## Related content
 
-- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-tutorial.md)
+- [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-tutorial.md)
 - [Secure Fabric mirrored databases from Azure Databricks](azure-databricks-security.md)
-- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks (Preview)](azure-databricks-limitations.md)
+- [Limitations in Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks-limitations.md)
 - [Review the FAQ](azure-databricks-faq.yml)

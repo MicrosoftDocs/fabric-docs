@@ -51,6 +51,8 @@ items:
       href: security-trusted-workspace-access.md
 - name: Data security
   items:
+  - name: Workspace customer managed keys
+    href: workspace-customer-managed-keys.md
   - name: Guest user sharing
     href: security-b2b.md
   - name: Customer Lockbox

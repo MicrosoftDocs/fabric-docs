@@ -50,11 +50,19 @@ When you select a timestamp link in the Date (UTC) column, the **Invocation deta
 
 Use the following code to write a log into our logging system.
 
+> [!Note]
+> Be sure to import the logging module.
 ```python
-logger.info('This is a INFO message')
-logger.warning('This is a WARNING message')
-logger.error('This is an ERROR message')
-logger.critical('This is a CRITICAL message')
+import logging
+```
+
+Call the logging function by using the following alert levels, info, warning, error and critical.
+
+```python
+logging.info('This is a INFO message')
+logging.warning('This is a WARNING message')
+logging.error('This is an ERROR message')
+logging.critical('This is a CRITICAL message')
 ```
 
 ## Next steps

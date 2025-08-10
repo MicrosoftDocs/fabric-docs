@@ -4,7 +4,7 @@ description: Learn how to create a Fabric warehouse with case-insensitive collat
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: twcyril
-ms.date: 04/06/2025
+ms.date: 05/09/2025
 ms.topic: how-to
 ---
 # How to: Create a warehouse with case-insensitive (CI) collation
@@ -62,17 +62,13 @@ You can easily create a new warehouse with case-insensitive collation using [Vis
     }
    ```
 1. Replace the placeholder values:
-   - `<workspaceID>`: Find the workspace GUID in the URL after the `/groups/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse. If your `/groups/` URL is followed by `/me/`, you're using the default workspace, and currently this feature is not supported in the default workspace. 
+   - `<workspaceID>`: Find the workspace GUID in the URL after the `/groups/` section, or by running `SELECT @@SERVERNAME` in an existing warehouse. 
    - `<bearer token>`: Obtain this by following these steps:
-      1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge or Google Chrome).
+      1. Open your Microsoft Fabric workspace in a browser (Microsoft Edge).
       1. Press **F12** to open Developer Tools. 
       1. Select the **Console** tab. If necessary, select **Expand Quick View** to reveal the console prompt `>`.
-      1. Type the command `copy(powerBIAccessToken)` and press **Enter**. While the console responds undefined, the bearer token will be copied to your clipboard.
+      1. Type the command `powerBIAccessToken` and press **Enter**. Right-click on the large unique string returned in the console and select **Copy string contents**.
       1. Paste it in place of `<bearer token>`.
-
-      > [!NOTE]
-      > In some scenarios, `copy(powerBIAccessToken)` can fail with the error `uncaught TypeError: copy is not a function` if there is any element ID named "copy" in the page. In such cases, manually remove the element ID using the following command before using the "copy" function: `document.querySelector('#copy').remove()`.
-
    - `<Warehouse name here>`: Enter the desired warehouse name.
    - `<Warehouse description here>`: Enter the desired warehouse description.
 

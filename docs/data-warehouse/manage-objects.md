@@ -55,7 +55,7 @@ Users can manage their queries efficiently under "My Queries" and "Shared Querie
 
 - **My Queries** is a personal space where users can save and organize their own queries. 
 
-- **Shared Queries** is a collaborative space where users can share their queries with team members to access, review, and execute shared queries. Anyone with Viewer and higher permissions at a workspace level can view and edit shared queries.
+- **Shared Queries** is a collaborative space where users can share their queries with team members to access, review, and execute shared queries. Anyone with Contributor and higher permissions at a workspace level can view and edit shared queries.
 
 ## Related content
 

@@ -153,8 +153,8 @@ The Publish Environment API supports long-running operations starting from the r
 
     ```HTTP
 
-    Location: https://api.fabric.microsoft.com/v1/operations/abcdef00-9d7e-469a-abf1-fca847a0ea69
-    x-ms-operation-id: abcdef00-9d7e-469a-abf1-fca847a0ea69
+    Location: https://api.fabric.microsoft.com/v1/operations/aaaabbbb-0000-cccc-1111-dddd2222eeee
+    x-ms-operation-id: aaaabbbb-0000-cccc-1111-dddd2222eeee
     Retry-After: 60
 
     ```
@@ -317,7 +317,7 @@ This API is used for updating the Spark compute and properties of an environment
 - Original sample request
 
     ```HTTP
-    PATCH https://api.fabric.microsoft.com/v1/workspaces/f089354e-8366-4e18-aea3-4cb4a3a50b48/environments/707cfd07-cbf1-41da-aad7-dd157ddb8c11/staging/sparkcompute
+    PATCH https://api.fabric.microsoft.com/v1/workspaces/bbbbcccc-1111-dddd-2222-eeee3333ffff/environments/ccccdddd-2222-eeee-3333-ffff4444aaaa/staging/sparkcompute
 
     {
       "instancePool": {
@@ -344,7 +344,7 @@ This API is used for updating the Spark compute and properties of an environment
 - New sample request
 
     ```HTTP
-    PATCH https://api.fabric.microsoft.com/v1/workspaces/f089354e-8366-4e18-aea3-4cb4a3a50b48/environments/707cfd07-cbf1-41da-aad7-dd157ddb8c11/staging/sparkcompute
+    PATCH https://api.fabric.microsoft.com/v1/workspaces/bbbbcccc-1111-dddd-2222-eeee3333ffff/environments/ccccdddd-2222-eeee-3333-ffff4444aaaa/staging/sparkcompute
 
     {
       "instancePool": {

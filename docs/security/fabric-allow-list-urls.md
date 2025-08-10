@@ -1,17 +1,21 @@
 ---
 title: Add Fabric URLs to your allowlist
 description: Learn about URL endpoints and ports with their associated linked sites to add to your allowlist for connectivity to Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 ms.service: fabric
 ms.topic: conceptual
-ms.date: 01/27/2025
+ms.date: 06/10/2025
 ---
 
 # Add Fabric URLs to your allowlist
 
+An allowlist is a security mechanism used to permit access only to specific, trusted resources. In the context of Microsoft Fabric, an allowlist ensures that your network can connect to the required and optional Fabric services by explicitly allowing traffic to and from specific URLs. This approach helps secure your environment by blocking unauthorized or unknown connections while enabling essential communication with Fabric services.
+
 This article contains the allowlist of the Microsoft Fabric URLs required for interfacing with Fabric workloads. For the Power BI allowlist, see [Add Power BI URLs to your allowlist](./power-bi-allow-list-urls.md).
+
+The URLs in the allowlist play a critical role in enabling connectivity to Fabric services. These URLs represent endpoints that your network must access for Fabric workloads to function properly. For example, they may correspond to APIs, authentication services, or other back-end systems that Fabric relies on. The URLs are used in various scenarios, such as accessing the Fabric portal, running workloads, or enabling specific features.
 
 The URLs are divided into two categories: required and optional. The required URLs are necessary for the service to work correctly. The optional URLs are used for specific features that you might not use. To use Fabric, you must be able to connect to the endpoints marked required in the tables in this article, and to any endpoints marked required on the linked sites. If the link to an external site refers to a specific section, you only need to review the endpoints in that section. You can also add endpoints that are marked optional to allowlists for specific functionality to work.
 
@@ -51,7 +55,7 @@ The **Endpoint** column lists domain names and links to external sites, which co
 |:---------|:---------|:---------|
 |**For outbound connections**|||
 |**Required**: Portal|*.powerbi.com|TCP 443|
-|**Required**: Backend APIs for Portal|*.pbidedicated.windows.net|TCP 443|
+|**Required**: Back-end APIs for Portal|*.pbidedicated.windows.net|TCP 443|
 |**Required**: Cloud pipelines|No specific endpoint is required|N/A|
 |**Optional**: On-premises data gateway login|\*.login.windows.net<br>login.live.com<br>aadcdn.msauth.net<br>login.microsoftonline.com<br>\*.microsoftonline-p.com<br>[See the documentation for Adjust communication settings for the on-premises data gateway](/data-integration/gateway/service-gateway-communication#ports)|TCP 443|
 |**Optional**: On-premises data gateway communication|*.servicebus.windows.net|TCP 443<br>TCP 5671-5672<br>TCP 9350-9354|
@@ -78,9 +82,9 @@ The **Endpoint** column lists domain names and links to external sites, which co
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
 |Inbound connections (icons)|http://res.cdn.office.net/|N/A|
-|**Required**: Notebook backend|https://\*.pbidedicated.windows.net<br>wss://\*.pbidedicated.windows.net<br>(HTTP/WebSocket)|N/A|
-|**Required**: Lakehouse backend|https://onelake.dfs.fabric.microsoft.com|N/A|
-|**Required**: Shared backend|https://*.analysis.windows.net|N/A|
+|**Required**: Notebook back end|https://\*.pbidedicated.windows.net<br>wss://\*.pbidedicated.windows.net<br>(HTTP/WebSocket)|N/A|
+|**Required**: Lakehouse back end|https://onelake.dfs.fabric.microsoft.com|N/A|
+|**Required**: Shared back end|https://*.analysis.windows.net|N/A|
 |**Required**: DE/DS extension UX|https://pbides.powerbi.com|N/A|
 |**Required**: Notebooks UX|https://aznb-ame-prod.azureedge.net|N/A|
 |**Required**: Notebooks UX|https://*.notebooks.azuresandbox.ms|N/A|

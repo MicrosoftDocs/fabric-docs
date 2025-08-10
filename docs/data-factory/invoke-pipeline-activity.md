@@ -5,14 +5,13 @@ ms.reviewer: whhender
 ms.author: makromer
 author: kromerm
 ms.topic: how-to
-ms.custom:
-ms.date: 04/01/2025
+ms.custom: pipelines
+ms.date: 07/23/2025
 ---
 
 # Use the **Invoke pipeline activity** to run another pipeline
 
-The Fabric **Invoke pipeline activity** can execute another [!INCLUDE [product-name](../includes/product-name.md)] pipeline. You can use it to orchestrate the execution of one or multiple pipelines from within a single pipeline.
-
+The Fabric **Invoke pipeline activity** can execute another [!INCLUDE [product-name](../includes/product-name.md)] pipeline. You can use it to orchestrate the execution of one or multiple pipelines from within a single pipeline. This is useful for organizing, reusing, and managing complex workflows. The invoke pipeline activity can be very helpful in making reusable, modular pipeline patterns by calling other pipelines that have a specific purpose.
 
 ## Prerequisites
 
@@ -22,7 +21,7 @@ To get started, you must complete the following prerequisites:
 - A workspace is created.
 
 > [!NOTE]
-> There are currently two Invoke Pipeline activities (legacy and preview). The legacy invoke pipeline only supports Fabric pipelines in the same workspace as your parent pipeline. You can also only monitor the parent pipeline and can't invoke ADF (Azure Data Factory) or Synapse pipelines using the legacy activity. Using the new preview Invoke pipeline activity allows you to invoke pipelines across Fabric workspaces, from ADF or Synapse, and monitor child pipelines. There's a current known limitation with the preview activity that prohibits the use of pipeline return values. **This issue is still being fixed and is temporary**.
+> There are currently two Invoke Pipeline activities (legacy and preview). The legacy invoke pipeline only supports Fabric pipelines in the same workspace as your parent pipeline. You can also only monitor the parent pipeline and can't invoke ADF (Azure Data Factory) or Synapse pipelines using the legacy activity. Using the new preview Invoke pipeline activity allows you to invoke pipelines across Fabric workspaces, from ADF or Synapse, and monitor child pipelines.
 
 ## Add an **Invoke pipeline activity** to a pipeline with UI
 

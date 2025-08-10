@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 02/24/2023
 ms.search.form: Monitor Spark application details
 ---
@@ -110,10 +110,6 @@ In the Item snapshots screen, you can:
 - View the Breadcrumb to see the path from the selected item to the root.
 
 :::image type="content" source="media\spark-detail-monitoring\related-items.png" alt-text="Screenshot showing the related items for spark application." lightbox="media\spark-detail-monitoring\related-items.png":::
-
-> [!NOTE]
->
-> The Notebook snapshots feature currently doesn't support notebooks that are in a running state or in a high-concurrency Spark session.
 
 ## Diagnostics
 

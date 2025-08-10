@@ -1,8 +1,8 @@
 ---
 title: Microsoft Fabric release management
 description: Learn about the Microsoft Fabric release management and deployment process.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: conceptual
 ms.date: 01/13/2025
 ---

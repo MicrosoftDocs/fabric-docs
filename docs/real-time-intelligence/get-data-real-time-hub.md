@@ -2,11 +2,11 @@
 title: Get data from Real-Time hub (preview)
 description: Learn how to get data from Real-Time hub in a KQL database in Real-time Intelligence.
 ms.reviewer: aksdi
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 02/27/2025
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -26,7 +26,7 @@ In this article, you learn how to get events from Real-Time hub into either a ne
 * A [KQL database](create-database.md) with editing permissions
 * An [eventstream](event-streams/create-manage-an-eventstream.md) with a data source
 
-## Source
+## Step 1: Source
 
 To get data from Real-Time hub, you need to select a Real-time stream from Real-time data hub as your data source. You can select Real-Time hub in the following ways:
 
@@ -40,7 +40,7 @@ On the lower ribbon of your KQL database, either:
 
 * Select a data stream from the Real-Time hub stream list.
 
-## Configure
+## Step 2: Configure
 
 1. Select a target table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
@@ -65,7 +65,7 @@ On the lower ribbon of your KQL database, either:
 
 [!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
 
-## Inspect
+## Step 3: Inspect
 
 The **Inspect** tab opens with a preview of the data.
 
@@ -73,12 +73,7 @@ To complete the ingestion process, select **Finish**.
 
 :::image type="content" source="media/get-data-real-time-hub/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-real-time-hub/inspect-data.png":::
 
-Optionally:
-
-* Select **Command viewer** to view and copy the automatic commands generated from your inputs.
-* Change the automatically inferred data format by selecting the desired format from the dropdown. Data is read from the hub in the form of [EventData](/dotnet/api/microsoft.servicebus.messaging.eventdata?context=/fabric/context/context) objects. Supported formats are Avro, Apache Avro, CSV, JSON, ORC, Parquet, PSV, RAW, SCsv, SOHsv, TSV, TXT, and TSVE.
-* [Edit columns](#edit-columns).
-* Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
+[!INCLUDE [get-data-inspect-formats](includes/get-data-inspect-formats.md)]
 
 [!INCLUDE [get-data-edit-columns](includes/get-data-edit-columns.md)]
 
@@ -88,7 +83,7 @@ Optionally:
 
 [!INCLUDE [get-data-process-event-advanced-options-data-type](includes/get-data-process-event-advanced-options-data-type.md)]
 
-## Summary
+## Step 4: Summary
 
 In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to query, drop the ingested data, or see a dashboard of your ingestion summary. Select **Close** to close the window.
 

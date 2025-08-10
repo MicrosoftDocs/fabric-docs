@@ -1,11 +1,12 @@
 ---
 title: Fabric operations
 description: Understand the Microsoft Fabric operations.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/20/2025
+ms.date: 06/17/2025
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -51,7 +52,7 @@ When more details regarding the consumption rate are available, a link to the do
 This section is divided into Fabric experience. Each experience had a table that lists its operations.
 
 >[!IMPORTANT]
->Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft's [Release Notes](/fabric/release-plan/) or [Microsoft Fabric blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers might use the cancellation options available for the chosen payment method.
+>Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft's [Release Notes](https://aka.ms/fabricrm) or [Microsoft Fabric blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers might use the cancellation options available for the chosen payment method.
 
 ### Copilot in Fabric
 
@@ -121,16 +122,24 @@ GraphQL operations are made up of requests performed on API for GraphQL items by
 
 ### Fabric User Data Functions
 
-[Fabric User Data Functions](https://aka.ms/ms-fabric-functions-docs) operations are made up of requests initiated by the Fabric portal, other Fabric artifacts, or client applications. Each request and response operation incurs a charge for the function execution, internal storage of the function metadata in OneLake, and associated read and write operations in OneLake.
+[Fabric User Data Functions](https://aka.ms/ms-fabric-functions-docs) operations are made up of requests initiated by the Fabric portal, other Fabric artifacts, or client applications. Each operation incurs a charge for the function execution, internal storage of the function metadata in OneLake, and associated read and write operations in OneLake.
 
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
-| User Data Functions Execution    | Compute charge for the execution of the function inside of the User Data Functions artifact. Memory consumption is allocated with a fixed 2GB used every second.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
+| User Data Functions Execution    | Compute charge for the execution of the function inside of the User Data Functions item. This operation results from running a function after a request from the Fabric portal, another Fabric item, or an external application.  | User Data Functions | User Data Function Execution (CU/s)  | Interactive |
 | User Data Functions Static Storage | Static storage of internal function metadata in a service-managed OneLake account. This is calculated with the compressed size of the User Data Functions item metadata. This is the cost of creating User Data Functions items even if they’re not used.  | OneLake Storage | OneLake Storage | Background |
 | User Data Functions Static Storage Read | Read operation of internal function metadata stored in a service-managed OneLake account. This operation is executed every time a function is executed after a period of inactivity. | OneLake Read Operations | OneLake Read Operations | Background |
 | User Data Functions Static Storage Write | Writes and updates of internal function metadata stored in a system-managed OneLake account. This operation is executed every time the User Data Functions item is published. | OneLake Write Operations | OneLake Write Operations | Background |
 | User Data Functions Static Storage Iterative Read | Read operations for internal function metadata stored in a service-managed OneLake account. This operation is executed every time the User Data Functions are listed. | OneLake Iterative Read Operations | OneLake Iterative Read Operations | Background |
 | User Data Functions Static Storage Other Operations | Storage operations for related to various function metadata in a service-managed OneLake account. | OneLake Other Operations | OneLake Other Operations | Background |
+
+### ML Model Endpoint
+
+[ML Model endpoint docs](../data-science/model-endpoints.md) allow you to serve real-time predictions seamlessly. Behind the scenes, Fabric spins up and manages the underlying container infrastructure to host your model.
+
+| Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
+| ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
+| Model Endpoint                            | TBD      | ML model | ML Model Endpoint Capacity Usage CU | Background |
 
 ### OneLake
 
@@ -190,7 +199,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Eventstream](#eventstream), [Azure and Fabric events](#azure-and-fabric-events) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder (preview)](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
 #### Azure and Fabric events
 
@@ -200,6 +209,17 @@ You can find the consumption rates for Azure and Fabric events in [Azure and Fab
 | ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
 | Event Operations | Publish, delivery, and filtering operations          | Multiple | Real-Time Intelligence - Event Operations         | Background |
 | Event Listener   | Uptime of the event listener                         | Multiple | Real-Time Intelligence – Event Listener and Alert | Background |
+
+#### Digital twin builder (preview)
+
+You can find the consumption rates for digital twin builder (preview) in [Digital twin builder (preview) capacity consumption, usage reporting, and billing](../real-time-intelligence/digital-twin-builder/resources-capacity-usage.md).
+
+>[!NOTE]
+> The meters for digital twin builder are currently in preview and may be subject to change.
+
+| Operation        | Description                 | Item     | Azure billing meter              | Type       |
+| ---------------- | --------------------------- | -------- | -------------------------------- | ---------- |
+| Digital Twin Builder Operation | Usage for on-demand and scheduled digital twin builder flow operations.  | Digital twin builder flow | Digital Twin Builder Operation Capacity Usage CU | Background |
 
 #### Eventstream
 
@@ -232,6 +252,8 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
 | Spark job scheduled run | Batch job runs triggered by notebook scheduled events   | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job pipeline run  | Batch job runs triggered by pipeline                    | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job VS Code run   | Spark job definition submitted from VS Code             | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
+| Materialized lake view run |  Users schedule Materialized lake view runs        | Lakehouse | Spark Memory Optimized Capacity Usage CU          | Background |
+| Shortcut Transformations   | Shortcut Transformations created in the Lakehouse             | Lakehouse | Spark Memory Optimized Capacity Usage CU          | Background |
 
 ## Related content
 

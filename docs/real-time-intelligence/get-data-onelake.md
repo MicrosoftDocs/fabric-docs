@@ -2,11 +2,11 @@
 title: Get data from OneLake
 description: Learn how to get data from OneLake into a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
-ms.custom:
-ms.date: 03/13/2025
+ms.custom: sfi-image-nochange
+ms.date: 05/12/2025
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -20,30 +20,40 @@ In this article, you learn how to get data from OneLake into either a new or exi
 * A [Lakehouse](../data-engineering/create-lakehouse.md)
 * A [KQL database](create-database.md) with editing permissions
 
-## Source
+## Step 1: Source
 
-1. On the lower ribbon of your KQL database, select **Get Data**.
+Select OneLake as your data source, as follows:
 
-    In the **Get data** window, the **Source** tab is selected.
+1. On the lower ribbon of your KQL database, select **Get Data** to open the **Source** tab of the *Get data* window.
 
-1. Select the data source from the available list. In this example, you're ingesting data from **OneLake**.
+1. Select the data source. In this example, you're ingesting data from **OneLake** or from the list in the embedded **OneLake catalog**.
 
-    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
+    :::image type="content" source="media/get-data-onelake/get-data-onelake-catalog.png" alt-text="Screenshot of the Select a data source window with both the Onelake tile and the embedded Onelake catalog options highlighted." lightbox="media/get-data-onelake/get-data-onelake-catalog.png":::
 
-## Configure
+    >[!NOTE]
+    >
+    > When you select a source from the list in the embedded OneLake catalog, you can use the category buttons or filter by keyword to search for a specific source.
+
+## Step 2: Configure
+
+Pick a destination table and configure the source, as follows:
 
 1. Select a target table. If you want to ingest data into a new table, select **+New table** and enter a table name.
 
     > [!NOTE]
     > Table names can be up to 1,024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
-1. Choose your **Workspace**, **Lakehouse**, and **File** from the dropdowns.
+1. Select a OneLake file to ingest:
+
+    * When you select **OneLake** as your source, you must specify the **Workspace**, **Lakehouse**, and **File** from the dropdowns.
+
+    * When you select the embedded **OneLake catalog** as your source, the **Workspace** and **Lakehouse** are automatically populated. You must specify the **File** to ingest.
 
     :::image type="content" source="media/get-data-onelake/configure-tab.png" alt-text="Screenshot of configure tab with Workspace, Lakehouse, and File dropdowns." lightbox="media/get-data-onelake/configure-tab.png":::
 
 1. Select **Next**.
 
-## Inspect
+## Step 3: Inspect
 
 The **Inspect** tab opens with a preview of the data.
 
@@ -61,7 +71,7 @@ To complete the ingestion process, select **Finish**.
 
 [!INCLUDE [get-data-process-event-advanced-options-data-type](includes/get-data-process-event-advanced-options-data-type.md)]
 
-## Summary
+## Step 4: Summary
 
 In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to query, drop the ingested data, or see a dashboard of your ingestion summary.
 

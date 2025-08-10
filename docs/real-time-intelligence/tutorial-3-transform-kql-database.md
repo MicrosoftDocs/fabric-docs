@@ -2,8 +2,8 @@
 title: Real-Time Intelligence tutorial part 3- Transform data in a KQL Database
 description: Learn how to use an update policy to transform data in a KQL Database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: tutorial
 ms.date: 11/19/2024
 ms.subservice: rti-core
@@ -26,7 +26,7 @@ In this step, you move the raw data table into a Bronze folder to organize the d
 1. Copy/paste the following command to alter table to move table into a Bronze folder.
 
     ```kusto
-    .alter table RawData (BikepointID:string,Street:string,Neighbourhood:string,Latitude:dynamic,Longitude:dynamic,No_Bikes:long,No_Empty_Docks:long,Timestamp:datetime) with (folder="Bronze")
+    .alter table RawData (BikepointID:string,Street:string,Neighbourhood:string,Latitude:real,Longitude:real,No_Bikes:long,No_Empty_Docks:long,Timestamp:datetime) with (folder="Bronze")
     ```
 
 ## Create target table
@@ -36,7 +36,7 @@ In this step, you create a target table that will be used to store the data that
 1. Copy/paste the following command to create a new table called **TransformedData** with a specified schema.
 
     ```kusto
-    .create table TransformedData (BikepointID: int, Street: string, Neighbourhood: string, Latitude: dynamic, Longitude: dynamic, No_Bikes: long, No_Empty_Docks: long, Timestamp: datetime, BikesToBeFilled: long, Action: string) with (folder="Silver")
+    .create table TransformedData (BikepointID: int, Street: string, Neighbourhood: string, Latitude: real, Longitude: real, No_Bikes: long, No_Empty_Docks: long, Timestamp: datetime, BikesToBeFilled: long, Action: string) with (folder="Silver")
     ```
 
 1. Run the command to create the table.

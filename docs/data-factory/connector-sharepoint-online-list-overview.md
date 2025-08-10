@@ -7,25 +7,23 @@ ms.topic: how-to
 ms.date: 04/01/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # SharePoint Online List connector overview
 
 The SharePoint Online List connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-To learn about how to connect to a SharePoint Online List in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-sharepoint-online-list.md#set-up-your-connection-in-dataflow-gen2).
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Organizational account<br> Service principal<br> Workspace identity |
+| **Data pipeline**<br>- [Copy activity](connector-sharepoint-online-list-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Organizational account<br> Service principal <br>Workspace identity|
+| **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Organizational account<br> Service principal<br>Workspace identity |
 
-## Support in data pipelines
+## Related content
 
-The SharePoint Online List connector supports the following capabilities in data pipelines:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/-)** | None <br> On-premises | Organizational account <br> Service principal |
-| **Lookup activity** | None <br> On-premises | Organizational account <br> Service principal |
-
-To learn about how to connect to a SharePoint Online List in data pipelines, go to [Set up your SharePoint Online List connection](connector-sharepoint-online-list.md#set-up-your-connection-in-a-data-pipeline).
+To learn about how to connect to a SharePoint Online List, go to [Set up your SharePoint Online List connection](connector-sharepoint-online-list.md).
 
 To learn about the copy activity configuration for a SharePoint Online List in data pipelines, go to [Configure SharePoint Online List in a copy activity](connector-sharepoint-online-list-copy-activity.md).

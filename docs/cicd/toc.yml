@@ -17,8 +17,6 @@ items:
     href: git-integration/git-integration-process.md
   - name: "Manage Git branches"
     href: git-integration/manage-branches.md
-  - name: Automate Git integration
-    href: git-integration/git-automation.md
   - name: Handle errors and conflicts
     items:
     - name: Resolve conflicts
@@ -31,6 +29,10 @@ items:
       href: git-integration/license-change.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
+  - name: Automate Git integration
+    items:
+    - name: Automate Git integration using REST APIs
+      href: git-integration/git-automation.md
 - name: Continuous Deployment with deployment pipelines
   items:
   - name: Introduction to deployment pipelines

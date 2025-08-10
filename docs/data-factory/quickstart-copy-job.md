@@ -6,6 +6,7 @@ ms.author: krirukm
 ms.reviewer: whhender
 ms.topic: quickstart  #Don't change
 ms.date: 04/29/2025
+ms.custom: copy-job
 
 #customer intent: As a Data Factory user I want to quickly try the Copy job functionality so that I can evaluate it for my own environment and start learning the tool.
 

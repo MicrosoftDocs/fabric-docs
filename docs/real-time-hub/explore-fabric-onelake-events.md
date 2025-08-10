@@ -4,14 +4,14 @@ description: This article shows how to explore OneLake events in Fabric Real-Tim
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 11/17/2024
+ms.date: 07/22/2025
 ---
 
 # Explore OneLake events in Fabric Real-Time hub
 
 OneLake events inform you about changes in your data lake, such as the creation, modification, or deletion of files and folders.
 
-Real-Time Hub enables you to discover and subscribe to these changes within OneLake, allowing you to react instantly. For instance, you can monitor changes in Lakehouse files and folders and utilize Data Activator's alerting capabilities to set up alerts based on specific conditions and define actions to take when those conditions are met. This article guides you on how to explore OneLake events using the Real-Time Hub
+Real-Time Hub enables you to discover and subscribe to these changes within OneLake, allowing you to react instantly. For instance, you can monitor changes in Lakehouse files and folders and utilize Activator's alerting capabilities to set up alerts based on specific conditions and define actions to take when those conditions are met. This article guides you on how to explore OneLake events using the Real-Time Hub
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
@@ -43,7 +43,7 @@ This section shows the artifacts using OneLake events. Here are the columns and 
 | Column | Description |
 | ------ | ------------ |
 | Name | Name of the artifact that's using OneLake events. |
-| Type | Artifact type – Data Activator or Eventstream |
+| Type | Artifact type – Activator or Eventstream |
 | Workspace | Workspace where the artifact lives. |
 | Source | Name of the workspace that is source of the events. |
 
@@ -56,7 +56,7 @@ Here are the supported OneLake events:
 
 | Event type name | Description |
 | --------------- | ----------- |
-| Microsoft.Fabric.OneLake.FileCreated | Raised when a file is created or replaced in OneLake. |
+| Microsoft.Fabric.OneLake.FileCreated | Raised when a file is created or updated in OneLake. |
 | Microsoft. Fabric.OneLake.FileDeleted | Raised when a file is deleted in OneLake. |
 | Microsoft. Fabric.OneLake.FileRenamed | Raised when a file is renamed in OneLake. | 
 | Microsoft.Fabric.OneLake.FolderCreated | Raised created when a folder is created in OneLake. | 
@@ -89,8 +89,8 @@ The `data` object has the following properties:
 | `blobUrl` | string | Blob URL to the path of the file. | `https://onelake.blob.fabric.microsoft.com/55556666-ffff-7777-aaaa-8888bbbb9999 < 66667777-aaaa-8888-bbbb-9999cccc0000/Files/FolderA/File1.txt` |
 | `url` | string | OneLake URL to the path of the file. | `https://onelake.dfs.fabric.microsoft.com/eeeeeeee-4444-5555-6666-ffffffffffff < aaaaaaaa-6666-7777-8888-bbbbbbbbbbbb/Files/FolderA/File1.txt` |
 | `api` | string | The operation that triggered the event. | `CreateFile` |
-| `clientRequestId` | string | A client-provided request ID for the storage API operation. | `00001111-aaaa-2222-bbbb-3333cccc4444` |
-| `requestId` | string | Service-generated request ID for the storage API operation. | `11112222-bbbb-3333-cccc-4444dddd5555` |
+| `clientRequestId` | string | A client-provided request ID for the storage API operation. | `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
+| `requestId` | string | Service-generated request ID for the storage API operation. | `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
 | `contentOffset` | number | The offset in bytes of a write operation taken at the point where the event-triggering application completed writing to the file. | 0 |
 | `sequencer` | string | An opaque string value representing the logical sequence of events. | `00000000000004420000000000028963` |
 

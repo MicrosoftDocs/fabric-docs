@@ -1,8 +1,8 @@
 ---
 title: Overview of Fabric deployment pipelines
 description: An introduction to deployment pipelines in the Fabric Application lifecycle management (ALM) tool. Learn which items can be deployed, the structure of a pipeline, and how to pair items.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview
@@ -47,9 +47,9 @@ When you deploy content from one pipeline stage to another, the copied content c
 
 * Data Factory items:
 
-  * [Copy Job](../../data-factory/cicd-copy-job.md#get-started-with-deployment-pipelines-for-git) *(preview)*
+  * [Copy Job](../../data-factory/cicd-copy-job.md#deployment-pipelines-for-git) *(preview)*
   * [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
-  * [Data pipeline](../../data-factory/git-integration-deployment-pipelines.md)
+  * [Data pipeline](../../data-factory/cicd-pipelines.md)
   * [Mirrored database](../../database/mirrored-database/mirrored-database-cicd.md#mirrored-database-in-deployment-pipelines)
   * Mount ADF *(preview)*
   * [Variable library](../variable-library/variable-library-cicd.md#variable-libraries-and-deployment-pipelines) *(preview)*
@@ -57,6 +57,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Real-time Intelligence items:
 
   * [Activator](../../real-time-intelligence/git-deployment-pipelines.md) *(preview)*
+  * [Digital twin builder](../../real-time-intelligence/digital-twin-builder/overview.md) *(preview)*
   * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md)
   * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
   * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
@@ -66,6 +67,8 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Data Warehouse items:
 
   * [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)*
+  * Mirrored Azure Databricks Catalog *(preview)*
+
 
 * Power BI items:
 

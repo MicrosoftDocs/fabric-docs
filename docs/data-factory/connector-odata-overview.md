@@ -7,25 +7,23 @@ ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # OData connector overview
 
 This OData connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-To learn about how to connect to OData in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-odata.md#set-up-your-connection-in-dataflow-gen2).
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Anonymous<br> Basic<br> Organizational account |
+| **Data pipeline**<br>- [Copy activity](connector-odata-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Anonymous<br> Basic |
+| **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Anonymous<br> Basic |
 
-## Support in data pipelines
+## Related content
 
-The OData connector supports the following capabilities in data pipelines:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/-)** | None <br> On-premises | Anonymous<br> Basic |
-| **Lookup activity** | None <br> On-premises | Anonymous<br> Basic |
-
-To learn about how to connect to OData in data pipelines, go to [Set up your OData connection](connector-odata.md#set-up-your-connection-in-a-data-pipeline).
+To learn about how to connect to OData, go to [Set up your OData connection](connector-odata.md).
 
 To learn about the copy activity configuration for Azure Blob Storage in data pipelines, go to [Configure OData in a copy activity](connector-odata-copy-activity.md).

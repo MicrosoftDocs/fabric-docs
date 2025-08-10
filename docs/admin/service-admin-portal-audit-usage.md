@@ -1,8 +1,8 @@
 ---
 title: Audit and usage admin settings
 description: Learn how to configure Fabric audit and usage admin settings.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.custom:
   - tenant-setting

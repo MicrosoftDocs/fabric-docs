@@ -48,7 +48,7 @@ At this point, the API is ready but it's not exposing any data. APIs for GraphQL
    * **Single sign-on (SSO)**: use client credentials to connect to data sources, which means the authenticated API user must have access to the underlying data source. For example, if you're exposing Lakehouse data to your API clients, the authenticated user needs to have access to both the API and the Lakehouse. More specifically, *Execute* permissions to the GraphQL API (*Run Queries and Mutations* option when adding direct access permissions) and read or write permissions required in the data source of choice, accordingly. Alternatively, the user can be added as workspace member with a *contributor role* where both the API and data source items are located, which will give the required access to both items from a single location. For more information, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
    * **Saved credentials**: use saved credentials to connect to data sources, which means the authenticated API user doesn't require direct access to the data source. A saved credential is shared to access the data between the API and underlying tables in the data source. For example, if you're exposing Lakehouse data to your API clients the authenticated user just need to have direct access to the API (*Run Queries and Mutations* option when adding direct access permissions) and not the Lakehouse. A saved credential is used to connect the API to the data source and is shared by all authenticated API users. This option is required if you're exposing an Azure data source such as an Azure SQL database via GraphQL. After selecting OK, you'll be prompted to create a new saved credential after choosing a data source in the next step if there isn't a saved credential for it already in place.
 
-   Once selected these options are enforced for all data sources subsequently added to the API. It's not possible to mix single-sign on and saved credentials in the same API. Furthermore, while you can use User Principal Names (UPNs) or Service Principal Names (SPNs) to connect to your API, service principals only support single-sign on (SSO) currently. User principals can leverage either SSO or saved credentials, depending on your security requirements.
+   Once selected these options are enforced for all data sources subsequently added to the API. It's not possible to mix single-sign on and saved credentials in the same API. You can use User Principal Names (UPNs) or Service Principal Names (SPNs) to connect to your API, leveraging either SSO or saved credentials depending on your security requirements.
    
    > [!NOTE]
    >API for GraphQL requires client applications to use Microsoft Entra ID for authentication. Your client application must be registered and configured adequately to execute API calls against Fabric. The app registered in Microsoft Entra ID requires *GraphQLApi.Execute.All* API permissions for the Power BI service. You can find an end-to-end tutorial with instructions and sample code for both user principals and service principals at [Connect Applications](connect-apps-api-graphql.md).
@@ -61,7 +61,7 @@ At this point, the API is ready but it's not exposing any data. APIs for GraphQL
 
    :::image type="content" source="media/get-started-api-graphql/get-data-choose-data.png" alt-text="Screenshot of the Get data screen showing the Choose data list." lightbox="media/get-started-api-graphql/get-data-choose-data.png":::
 
-5. Select the checkboxes next to the individual tables or stored procedures you want to expose in the API. To select all the objects in a folder, select the checkbox with the data source name at the top.
+5. Select the checkboxes next to the individual tables, views, or stored procedures you want to expose in the API. To select all the objects in a folder, select the checkbox with the data source name at the top.
 
    :::image type="content" source="media/get-started-api-graphql/get-data-selected.png" alt-text="Screenshot of the Choose data list with a folder selected, which automatically selects all items inside that folder." lightbox="media/get-started-api-graphql/get-data-selected.png":::
 
@@ -73,9 +73,6 @@ At this point, the API is ready but it's not exposing any data. APIs for GraphQL
 
 Your API for GraphQL is now ready to accept connections and requests. You can use the API editor to test and prototype GraphQL queries and the Schema explorer to verify the data types and fields exposed in the API.
 
-> [!NOTE]
-> Currently there is a limitation attaching API for GraphQL to existing Azure SQL Database connections available in the OneLake catalog. This limitation will be lifted in an upcoming release. To work around this limitation, create a new connection to Azure SQL Database instead of choosing an existing one from the catalog.
-
 ## Permissions summary
 
 The table below summarizes the different supported permutations and minimum required permissions for clients accessing the GraphQL API:
@@ -85,7 +82,7 @@ The table below summarizes the different supported permutations and minimum requ
 |User Principal (UPN)|Single sign-on (SSO)| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the UPN at the data source|*GraphQLApi.Execute.All*|
 |Service Principal (SPN)|Single sign-on (SSO)| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the SPN at the data source|Not Applicable|
 |User Principal (UPN)|Saved credentials| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the saved credential (connection) at the data source|*GraphQLApi.Execute.All*|
-|Service Principal (SPN)|Saved credentials| Currently not supported|Currently not supported|Currently not supported|
+|Service Principal (SPN)|Saved credentials| *Run Queries and Mutations* at the API level|Appropriate Read/Write permissions granted to the SPN at the data source|Not Applicable|
 
 
 ## Related content

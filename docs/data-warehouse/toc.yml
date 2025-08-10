@@ -75,7 +75,7 @@ items:
   - name: Manage objects in a warehouse
     href: manage-objects.md
   - name: Primary, foreign, and unique keys
-    href: table-constraints.md
+    href: table-constraints.md    
   - name: Source control with Warehouse
     href: source-control.md
   - name: SQL analytics endpoint performance
@@ -88,17 +88,23 @@ items:
     href: transactions.md 
   - name: Warehouse performance
     href: guidelines-warehouse-performance.md
-  - name: How to
+  - name: Warehouse snapshots
+    href: warehouse-snapshot.md
+    displayName: Snapshot
+  - name: How to  
     items:    
     - name: Create a sample warehouse 
-      href: create-warehouse-sample.md
+      href: create-warehouse-sample.md      
+    - name: Create and manage a warehouse snapshot
+      href: create-manage-warehouse-snapshot.md
+      displayName: Create a warehouse snapshot
     - name: Analyze with range bands
       href: analyze-range-bands.md
     - name: Datamart upgrade to warehouse
       href: datamart-upgrade-to-warehouse.md
     - name: Generate unique identifiers
-      href: generate-unique-identifiers.md
-    - name: Use Case-insensitive collation
+      href: generate-unique-identifiers.md      
+    - name: Use case-insensitive collation
       href: collation.md
       displayName: case insensitive collation
 - name: Dimensional modeling
@@ -129,10 +135,6 @@ items:
   items:
   - name: Semantic models
     href: semantic-models.md
-  - name: Model data in the default Power BI semantic model
-    href: default-power-bi-semantic-model.md          
-  - name: Define relationships in data models
-    href: data-modeling-defining-relationships.md
   - name: Create reports in the Power BI service
     href: reports-power-bi-service.md    
 - name: Collaborate, share, and manage security
@@ -328,6 +330,24 @@ items:
       - name: Limitations 
         displayName: Limitations in mirrored Snowflake
         href: ../database/mirrored-database/snowflake-limitations.md
+  - name: Mirroring SQL Server
+    items: 
+      - name: Mirrored databases from SQL Server
+        href: ../database/mirrored-database/sql-server.md
+      - name: SQL Server tutorial
+        href: ../database/mirrored-database/sql-server-tutorial.md
+      - name: FAQ about mirrored SQL Server
+        displayName: Frequently asked questions about mirrored SQL Server
+        href: ../database/mirrored-database/sql-server-faq.yml
+      - name: Secure data 
+        displayName: Securing data in mirrored SQL Server
+        href: ../database/mirrored-database/sql-server-security.md
+      - name: Limitations 
+        displayName: Limitations in mirrored SQL Server
+        href: ../database/mirrored-database/sql-server-limitations.md
+      - name: Troubleshoot 
+        displayName: Troubleshoot mirrored SQL Server
+        href: ../database/mirrored-database/sql-server-troubleshoot.md
   - name: Open mirroring 
     items:
       - name: Open mirroring overview
@@ -351,10 +371,13 @@ items:
     href: ../database/mirrored-database/troubleshooting.md           
 - name: Manage performance
   items:
+  - name: In-memory and disk caching
+    href: caching.md
+  - name: Result set caching
+    href: result-set-caching.md
+    displayName: result set caching
   - name: Statistics
     href: statistics.md
-  - name: Caching
-    href: caching.md
   - name: V-Order 
     href: v-order.md
 - name: Monitor the warehouse
@@ -390,9 +413,11 @@ items:
   items:
   - name: Migration Assistant
     href: migration-assistant.md
-  - name: Migration Assistant guide for Azure Synapse Analytics SQL pools
+  - name: Migration Assistant guide for Azure Synapse Analytics
     href: migrate-with-migration-assistant.md
-  - name: Planning and strategy for migration from Azure Synapse Analytics
+  - name: Extract DAC from a dedicated SQL pool
+    href: extract-data-tier-application-synapse-dedicated-sql-pool.md
+  - name: Planning for migration from Azure Synapse Analytics
     href: migration-synapse-dedicated-sql-pool-warehouse.md
   - name: Methods for migration from Azure Synapse Analytics
     href: migration-synapse-dedicated-sql-pool-methods.md

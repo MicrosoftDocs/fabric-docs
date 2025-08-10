@@ -1,12 +1,12 @@
 ---
 title: Train and evaluate a time series forecasting model
 description: This is an AI sample for training and evaluating a time series forecasting model; we develop a program to forecast time series data that has seasonal cycles.
-ms.author: lagayhar 
+ms.author: lagayhar
 author: lgayhardt
 ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 01/14/2025
 ---
 
@@ -102,7 +102,7 @@ The data source consists of 15 `.csv` files. These files contain property sales 
 
 
 ```python
-URL = "https://synapseaisolutionsa.blob.core.windows.net/public/NYC_Property_Sales_Dataset/"
+URL = "https://synapseaisolutionsa.z13.web.core.windows.net/data/NYC_Property_Sales_Dataset/"
 TAR_FILE_NAME = "nyc_property_sales.tar"
 DATA_FOLDER = "Files/NYC_Property_Sales_Dataset"
 TAR_FILE_PATH = f"/lakehouse/default/{DATA_FOLDER}/tar/"

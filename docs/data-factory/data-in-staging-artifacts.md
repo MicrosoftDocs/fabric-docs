@@ -5,6 +5,7 @@ author: Luitwieler
 ms.author: jeluitwi
 ms.topic: concept-article
 ms.date: 08/05/2024
+ms.custom: dataflows
 ---
 
 # Data in Dataflow Gen2 staging artifacts
