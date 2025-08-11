@@ -29,7 +29,7 @@ This security feature only applies to Dataflows Gen2 with CI/CD support, which c
 
 ### How can I check what connections have the `allowConnectionUsageInGateway` enabled?
   When using the Fabric portal, you can review all your connections through the [Manage Connections and Gateways portal](data-source-management.md) or review the connections used in your Dataflow Gen2 with CI/CD through the [manage connections dialog](/power-query/manage-connections).
-  </br>
+
   Alternatively you can use the [List connections endpoint of the Fabric REST API](/rest/api/fabric/core/connections/list-connections) and look for the field with the name `allowConnectionUsageInGateway`.
 
 ### How can I tell if my Dataflow Gen2 with CI/CD would be impacted by the enforcement of this security feature?
