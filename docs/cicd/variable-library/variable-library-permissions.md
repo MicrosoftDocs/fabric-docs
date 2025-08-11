@@ -1,8 +1,8 @@
 ---
 title: The Microsoft Fabric Variable library permissions
 description: Understand who can access Variable libraries and their values.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: Lee
 ms.service: fabric
 ms.subservice: cicd

@@ -3,8 +3,8 @@ title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter noteboo
 description: This article shows how to use SemPy to calculate measures in Power BI semantic models.
 ms.reviewer: alsavelv
 reviewer: alsavelv
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: jburchel
+author: jonburchel
 ms.topic: tutorial
 ms.custom:
 ms.date: 09/27/2023
@@ -122,9 +122,6 @@ The function `evaluate_measure` allows you to supply identifiers of multiple mea
 ```python
 fabric.evaluate_measure(dataset, measure=["Average Selling Area Size", "Total Stores"], groupby_columns=["Store[Chain]", "Store[DistrictName]"])
 ```
-
-> [!NOTE]
-> You may need to use **fabric.refresh_dataset()** to get the updated model data. This will refresh the semantic model.
 
 ## Use Power BI XMLA connector
 

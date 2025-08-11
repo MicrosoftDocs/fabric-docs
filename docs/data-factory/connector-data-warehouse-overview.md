@@ -4,29 +4,26 @@ description: This article explains the overview of using Data Warehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 07/09/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Data Warehouse connector overview
 
 The Data Warehouse connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-To learn about how to connect to a Data Warehouse in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-data-warehouse.md#set-up-your-connection-in-dataflow-gen2).
+| Supported capabilities                                                                 | Gateway                        | Authentication   |
+|----------------------------------------------------------------------------------------|--------------------------------|------------------|
+| **Dataflow Gen2** (source/destination)                                                 | None<br> On-premises<br> Virtual network | Organizational account |
+| **Data pipeline** <br>- [Copy activity](connector-data-warehouse-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Organizational account |
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append | None<br> On-premises<br> Virtual network | Organizational account |
 
-## Support in data pipeline
+## Related content
 
-The Data Warehouse connector supports the following capabilities in data pipelines:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | User Auth  |
-| **Lookup activity** | None <br> On-premises |User Auth |
-| **GetMetadata activity** | None <br> On-premises |User Auth |
-| **Script activity** | None <br> On-premises |User Auth |
-| **Stored Procedure Activity** | None <br> On-premises |User Auth |
+To learn about how to connect to Data Warehouse, go to [Set up your Data Warehouse connection](connector-data-warehouse.md).
 
 To learn more about the copy activity configuration for Data Warehouse in data pipelines, go to [Configure in a data pipeline copy activity](connector-data-warehouse-copy-activity.md).

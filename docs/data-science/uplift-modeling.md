@@ -1,13 +1,13 @@
 ---
 title: 'Tutorial: Create, train, and evaluate an uplift model'
 description: This tutorial describes creation, training, and evaluation of uplift models and application of uplift modeling techniques.
-ms.author: lagayhar 
+ms.author: lagayhar
 author: lgayhardt
 ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
-ms.custom:
-ms.date: 01/29/2024
+ms.custom: sfi-image-nochange
+ms.date: 07/16/2025
 #customer intent: As a data scientist, I want to build an uplift model so I can estimate causal impact.
 ---
 

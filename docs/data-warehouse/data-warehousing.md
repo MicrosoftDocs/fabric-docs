@@ -86,6 +86,5 @@ For more detailed decision guidance, see [Microsoft Fabric decision guide: Choos
 - [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
-- [Introduction to Power BI datamarts](/power-bi/transform-model/datamarts/datamarts-overview)
 - [Create reports on data warehousing in Microsoft Fabric](create-reports.md)
 - [Source control with Warehouse (preview)](source-control.md)

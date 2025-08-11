@@ -1,8 +1,8 @@
 ---
 title: "Protection policies in Microsoft Fabric"
 description: "This article describes Microsoft Purview protection policies in Microsoft Fabric."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.topic: concept-article #Don't change
 ms.date: 11/21/2024

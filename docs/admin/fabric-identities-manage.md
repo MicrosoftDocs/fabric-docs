@@ -1,14 +1,14 @@
 ---
 title: "Manage Fabric identities"
 description: "Learn how to view, understand info, and manage Fabric identities as a Fabric administrator."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
 ms.date: 06/21/2024
 
+ms.custom: sfi-image-nochange
 #customer intent: As a Fabric administrator, I want understand what's on the Fabric identities tab so that I can monitor and govern all the Fabric identities in my organization.
-
 ---
 
 # Manage Fabric identities

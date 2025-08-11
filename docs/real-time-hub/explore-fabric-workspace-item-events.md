@@ -5,7 +5,7 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 03/18/2025
+ms.date: 07/22/2025
 ---
 
 # Explore Fabric workspace item events in Fabric Real-Time hub

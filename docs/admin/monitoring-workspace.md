@@ -1,8 +1,8 @@
 ---
 title: What is the admin monitoring workspace?
 description: Understand the Microsoft Fabric monitoring workspace and the reports it holds.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
 ms.custom:
 ms.date: 09/17/2024

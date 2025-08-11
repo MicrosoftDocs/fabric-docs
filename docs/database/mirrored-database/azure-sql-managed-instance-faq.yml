@@ -8,7 +8,7 @@ metadata:
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.topic: faq
-  ms.date: 11/18/2024
+  ms.date: 08/11/2025
 title: "Frequently asked questions for Mirroring Azure SQL Managed Instance in Microsoft Fabric (Preview)"
 summary: |
   This article answers frequently asked questions about Mirroring Azure SQL Managed Instance in Microsoft Fabric.
@@ -35,7 +35,7 @@ sections:
       - question: |
          Does mirroring work without exposing my Azure SQL Managed Instance to the internet?
         answer:
-          In the current preview, your SQL managed instance needs to have a public endpoint, be open for inbound access from Azure cloud, and it needs to be allowed to contact Azure storage to be able to export data. Private endpoints are currently not supported.
+          Yes. If your Azure SQL Managed Instance is not publicly accessible, you can use virtual network data gateway or on-premises data gateway to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via a private endpoint. Learn more from the [Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md).
       - question: |
           How do I manage connections? 
         answer: 
@@ -67,11 +67,6 @@ sections:
           What are the replication statuses? 
         answer: 
           See [Monitor Fabric Mirror replication](monitor.md).
-
-      - question: |
-          Can Azure SQL Managed Instance database mirroring be accessed through the Power BI Gateway or VNET data gateway? 
-        answer: 
-          Currently, this is unsupported.
 
       - question: |
            What happens if I remove a table from Mirroring?

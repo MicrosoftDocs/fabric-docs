@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer:
 ms.topic: product-comparison
 ms.custom:
-ms.search.form: SQL database Overview
+ms.search.form: SQL database Overview, Databases decision guide for SQL
 ms.date: 02/13/2025
 ---
 # Microsoft Fabric decision guide: choose a SQL database
@@ -64,5 +64,5 @@ Arin chooses [Azure SQL Database Hyperscale](/azure/azure-sql/database/service-t
 
 - [Features comparison: Azure SQL Database and SQL database in Fabric (preview)](feature-comparison-sql-database-fabric.md)
 - [Engage with the Fabric Community for SQL database](https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion)
-- [What's new in Fabric Databases](../../fundamentals/whats-new.md#fabric-databases)
+- [What's new in Fabric Databases](../../fundamentals/whats-new.md#sql-database-in-microsoft-fabric)
 - [Frequently asked questions for SQL database in Microsoft Fabric (preview)](faq.yml)

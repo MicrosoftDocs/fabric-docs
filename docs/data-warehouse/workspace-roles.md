@@ -4,7 +4,7 @@ description: Learn about the roles you can use to manage user access within a wo
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, jacindaeng
-ms.date: 04/06/2025
+ms.date: 06/26/2025
 ms.topic: conceptual
 ms.search.form: Warehouse roles and permissions, Workspace roles and permissions # This article's title should not change. If so, contact engineering.
 ---
@@ -20,7 +20,7 @@ Assigning users to the various workspace roles provides the following capabiliti
 
 | Workspace role   |  Description |
 |---|---|
-|**Admin**|Grants the user CONTROL access for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.<br/><br/>Allows the user to see workspace-scoped session, [monitor connections and requests in DMVs via TSQL](monitor-using-dmv.md), and [KILL](/sql/t-sql/language-elements/kill-transact-sql?view=fabric&preserve-view=true) sessions.|
+|**Admin**|Grants the user CONTROL access for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.<br/><br/>Allows the user to see workspace-scoped session and to [monitor connections and requests in DMVs via TSQL](monitor-using-dmv.md).|
 |**Member**|Grants the user CONTROL access for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.|
 |**Contributor**|Grants the user CONTROL access for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.|
 |**Viewer**|Grants the user CONNECT and ReadData permissions for each [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] within the workspace. Viewers have SQL permissions to read data from tables/views using T-SQL. For more information, see [SQL granular permissions in Microsoft Fabric](sql-granular-permissions.md).|

@@ -1,11 +1,11 @@
 ﻿---
 title: Sensitivity label support for paginated reports
 description: Learn about using sensitivity labels from Microsoft Purview Information Protection with paginated reports.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
 ms.custom:
-ms.date: 04/01/2024
+ms.date: 05/18/2024
 LocalizationGroup: Data from files
 ---
 # Sensitivity label support for paginated reports
@@ -14,7 +14,7 @@ Sensitivity labels can be applied to paginated reports hosted in the Power BI se
 
 When you export data from a labeled paginated report to a supported file type (Excel, PDF, PPTX, and Word), the sensitivity label on the paginated report is applied to the exported file.
 
-Sensitivity labels on paginated reports are included in protection metrics (as part of the Report count), and can be audited (label-change audits only) and modified by public APIs, just like labels on regular Power BI reports.
+Sensitivity labels on paginated reports are included in the Purview hub report (as part of the count of sensitivity labels on reports), and can be audited (label-change audits only) and modified by public APIs, just like labels on regular Power BI reports.
 
 ## Considerations and limitations
 

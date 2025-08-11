@@ -2,8 +2,8 @@
 title: The Microsoft Purview hub in Microsoft Fabric
 description: This article describes how Fabric administrators can use the Microsoft Purview hub in Microsoft Fabric to monitor and govern their organization's data estate.
 ms.reviewer: antonfr
-ms.author: painbar
-author: paulinbar
+ms.author: mimart
+author: msmimart
 ms.topic: how-to 
 ms.custom: 
 ms.date: 12/08/2024

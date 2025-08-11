@@ -1,8 +1,8 @@
 ---
 title: Command logs
 description: View and analyze the log of commands run on an Eventhouse KQL database within Real-Time Intelligence.
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: reference
 ms.custom:
 ms.date: 11/06/2024

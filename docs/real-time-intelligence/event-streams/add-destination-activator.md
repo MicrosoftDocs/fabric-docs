@@ -18,8 +18,18 @@ This article shows you how to add an activator destination to an eventstream.
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - If you already have an activator you want to use, access to the workspace where your activator is located with Contributor or higher permissions.
+- Each event in the source must consist of a JSON dictionary.
+- One of the dictionary keys must represent a unique object ID.
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
+    Here's an example of an event that meets these criteria:
+    
+    ```json
+    {
+    "PackageID": "PKG123",
+    "Temperature": 25
+    }
+    ```
+    In this example, *PackageID* is the unique ID.
 
 ## Add activator as a destination
 
@@ -29,7 +39,7 @@ To add an activator destination to a default stream or derived stream, follow th
 
    :::image type="content" border="true" source="./media/add-destination-activator-enhanced/add-destination.png" alt-text="A screenshot of the Add destination dropdown list with Activator highlighted.":::
 
-    You can also select **Transform events or add destination** tile on the canvas, and select **Activator** from the drop-down list. 
+    You can also select **Transform events or add destination** tile on the canvas, and select **Activator** from the dropdown list. 
 
    :::image type="content" source="media/add-destination-activator-enhanced/add-destination-canvas.png" alt-text="Screenshot that shows the canvas for an eventstream with New destination, Activator menu selected.":::
 

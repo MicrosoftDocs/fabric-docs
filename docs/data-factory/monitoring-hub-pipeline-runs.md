@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: chugu
 author: chugugrace
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 11/15/2023
 ---
 

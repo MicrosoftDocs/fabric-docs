@@ -19,6 +19,11 @@
             "source_path_from_root": "/docs/security/disaster-recovery-guide.md",
             "redirect_url": "/azure/reliability/reliability-fabric",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/security/conditional-access.md",
+            "redirect_url": "/fabric/security/security-conditional-access",
+            "redirect_document_id": false
         }
     ]
 }

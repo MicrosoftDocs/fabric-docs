@@ -1,20 +1,18 @@
 ---
-title: Real-Time Dashboard permissions (preview)
+title: Real-Time Dashboard permissions
 description: Learn how to share Real-Time Dashboards without giving access to the underlying data source.
 ms.reviewer: yaschust
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 05/15/2025
 ---
-# Real-Time Dashboard permissions (preview)
+# Real-Time Dashboard permissions
 
-Real-Time Dashboards are powerful tools for visualizing and analyzing data from various sources. For more information on Real-Time Dashboards, see [Create a Real-Time Dashboard (preview)](dashboard-real-time-create.md).
+Real-Time Dashboards are powerful tools for visualizing and analyzing data from various sources. For more information on Real-Time Dashboards, see [Create a Real-Time Dashboard](dashboard-real-time-create.md).
 
 In this article, you learn how to grant permissions and control access to data sources when sharing your real-time dashboards with other users.
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 There are two types of permissions:
 
@@ -136,5 +134,5 @@ There are a few ways to revoke a user’s access permissions.
 
 ## Related content
 
-* [Create a Real-Time Dashboard (preview)](dashboard-real-time-create.md)
+* [Create a Real-Time Dashboard](dashboard-real-time-create.md)
 * [Share items in Microsoft Fabric](../fundamentals/share-items.md)

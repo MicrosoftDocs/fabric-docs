@@ -7,6 +7,7 @@ ms.reviewer: kecona
 ms.date: 04/06/2025
 ms.topic: conceptual
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
+ms.custom: sfi-image-nochange
 ---
 # Delta Lake logs in Warehouse in Microsoft Fabric
 

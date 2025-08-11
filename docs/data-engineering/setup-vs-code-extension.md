@@ -35,13 +35,13 @@ After you have installed the required software, you must update the operating sy
    For example, if you install JDK at this path `C:\Program Files\Java\jdk-1.8`, set the *JAVA_HOME* variable value to that path.
 
 4. Under **System variables** look for the variable **Path** and double click that row. Add the following folder paths to the **Path** variable, by clicking the **New** button and adding the folder path:
-    - `%JAVA_HOME%/bin`
+    - `%JAVA_HOME%\bin`
    
    *For Conda add the following subfolders of the Conda installation. Add the full folder paths for theese subfolders*
-    - `\miniconda3\condsbin`
+    - `\miniconda3\condabin`
     - `\miniconda3\Scripts`
 
-    For example: `C:\Users\john.doe\AppData\Local\miniconda3\condsbin`
+    For example: `C:\Users\john.doe\AppData\Local\miniconda3\condabin`
 
 ### macOS
 

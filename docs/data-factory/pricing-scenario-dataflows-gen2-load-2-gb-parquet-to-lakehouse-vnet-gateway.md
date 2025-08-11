@@ -5,8 +5,10 @@ ms.reviewer: whhender
 ms.author: lle
 author: lrtoyou1223
 ms.topic: conceptual
-ms.custom:
 ms.date: 10/25/2024
+ms.custom: 
+    - dataflows
+    - configuration
 ---
 
 # Pricing scenario using Dataflow Gen2 and Virtual Network Data Gateway to load 2 GB of Parquet data to a Lakehouse table

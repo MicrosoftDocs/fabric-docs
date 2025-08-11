@@ -1,11 +1,11 @@
 ---
 title: Discover and explore Fabric items using OneLake catalog's explore tab
 description: Learn how to discover, explore, manage, and use your organization's Fabric items in the OneLake catalog.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 03/31/2025
+ms.date: 05/29/2025
 ms.custom: 
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to use OneLake catalog's Explore to discover, manage, and use the content I need.
 ---
@@ -19,7 +19,7 @@ OneLake catalog's explore tab helps you find, explore, and use the Fabric items 
 The explore tab provides
 
 * [A list of all Fabric items you have access to in your organization](#find-items-in-the-items-list).
-* [An item details view that enables you to drill down on an item without leaving the context of the explore tab](#view-item-details).
+* [An item details view that enables you to drill down on an item without leaving the context of the explore tab](./onelake-catalog-item-details.md).
 * [Filters and selectors to help you find the content you're looking for](#filter-the-items-list).
 * [A way to scope the catalog to display only items of a particular domain](#scope-the-catalog-to-a-particular-domain).
 * [An options menu for item actions](#open-an-items-options-menu)
@@ -125,63 +125,16 @@ To display the options menu, hover over the item whose options menu you want to 
 
 ## Open an item for editing or viewing
 
-You can open the item for editing or viewing (depending on the item type) from both the items list and from the [item details view](#view-item-details).
+You can open the item for editing or viewing (depending on the item type) from both the items list and from the [item details view](./onelake-catalog-item-details.md).
 
 * To open the item for editing or viewing from the items list, hover over the item and select the **Open** icon that appears.
 
     :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-edit-view-mode.png" alt-text="Screenshot of an item's open icon in the OneLake catalog." border="false" lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-edit-view-mode.png":::
 
-* To open the item for editing or viewing from the [item details view](#view-item-details), select the **Open** button in the view.
+* To open the item for editing or viewing from the [item details view](./onelake-catalog-item-details.md), select the **Open** button in the view.
 
 ## View item details
-
-The items details view enables you to drill down and explore items. Select an item in the items list display its details.
-
-The item details view has a number of tabs that to help you explore your selected item. The tabs are described in the following sections.
-
-To open the item for editing or viewing (depending on the item type), select **Open**.
-
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-item-details-view.png" alt-text="Screenshot of the explore tab item details view.":::
-
-### Overview tab
-
-The overview tab shows the following information:
-
-* **Location**: The workspace the item is located in. Selecting the workspace navigates to the workspace.
-* **Data freshness**: Last refresh or update time.
-* **Owner**: The item owner. Selecting the owner opens an email to them.
-* **Sensitivity label**: The name of the sensitivity label applied to the item, if any.
-
-Data items such as semantic models and lakehouses show the underlying table and column schema for exploration purposes.
-
-* To help locate the table or column you're looking for, use the Filter by keyword box.
-* To further explore a table or column using [Power BI's exploration experience](/power-bi/consumer/explore-data-service), hover over it and select the binoculars icon.
-
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-overview-tab.png" alt-text="Screenshot of the explore tab item view overview tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-overview-tab.png":::
-
-### Lineage tab
-
-The lineage tab shows you the upstream and downstream items in the item's lineage. Metadata about the upstream and downstream items is also show, such as location, relation (upstream or downstream), etc. Lineage can be displayed in either a list view (shown in the image that follows) or in a graphical view.
-
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-lineage-tab.png" alt-text="Screenshot of the explore tab item view lineage tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-lineage-tab.png":::
-
-For more information about lineage, see [Lineage in Fabric](./lineage.md).
-
-### Monitor tab
-
-The monitor tab displays activities for the item. Press **Show** on a record to see the details of that activity. The monitor tab is available for items types supported by the [monitor hub](../admin/monitoring-hub.md).
-
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-monitor-tab.png" alt-text="Screenshot of the explore tab item view monitor tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-monitor-tab.png":::
-
-### Permissions tab
-
-The permissions tab is available if you're a member of the Admin or Member workspace roles. The permissions tab shows who has direct access to the item, what links exist that permit access to the item, what related items enable access to the item, and what access requests are pending. You can grant or modify user permissions, audit links and remove them if necessary, and approve or reject access requests.
-
-The subtabs available on the permissions tab vary slightly from item type to item type. To see the actions you can perform on the rows of each subtab, hover over the row and select **More options (...)**.
-
-You can use the filter to sharpen the focus of your search.
-
-:::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-permissions-tab.png" alt-text="Screenshot of the explore tab item view permissions tab." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-permissions-tab.png":::
+When you select an item from the items list, its detailed information appears in a dedicated pane alongside your current view. This in-context view allows you to quickly browse through item metadata, lineage, and permissions without losing your place in the item list, making it easy to compare and find the most suitable items. For a comprehensive understanding of how item details are presented and the various ways you can access them, refer to [View item details](./onelake-catalog-item-details.md).
 
 ## Considerations and limitations
 
@@ -190,6 +143,7 @@ You can use the filter to sharpen the focus of your search.
 ## Related content
 
 * [OneLake catalog overview](./onelake-catalog-overview.md)
+* [View item details](./onelake-catalog-item-details.md)
 * [Monitor and improve your data's governance posture with the OneLake catalog](./onelake-catalog-govern.md)
 * [Endorsement](./endorsement-overview.md)
 * [Fabric domains](./domains.md)

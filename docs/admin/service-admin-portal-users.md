@@ -1,8 +1,8 @@
 ---
 title: Manage users
 description: Learn how to manage Power BI users in the Microsoft 365 admin center by accessing the Users tab in the Fabric Admin portal.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.custom:
   - admin-portal
 ms.topic: how-to

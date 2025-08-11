@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: seanmirabile
 author: Mirabile-S
 ms.topic: best-practice
-ms.custom:
+ms.custom: pipelines
 ms.date: 05/03/2024
 ---
 

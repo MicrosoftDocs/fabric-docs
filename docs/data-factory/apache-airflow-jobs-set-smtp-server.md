@@ -5,7 +5,7 @@ ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
 ms.topic: how-to
-ms.custom:
+ms.custom: airflows, sfi-image-nochange
 ms.date: 03/25/2024
 ---
 
@@ -30,25 +30,25 @@ To enable email notifications and alerts, you need to set up a Simple Mail Trans
 
 - Once you have the prerequisites, you can configure the Apache Airflow Job to use your SMTP server or service. Edit the `Airflow configurations` section, with the following fields:
 
-  - **AIRFLOW_SMTP_SMTP_HOST**: The hostname or IP address of your SMTP server or service.
-  - **AIRFLOW_SMTP_SMTP_STARTTLS**: Whether to use TLS (Transport Layer Security) encryption when connecting to your SMTP server or service. Set this config to True if your SMTP server or service supports TLS, or False otherwise.
-  - **AIRFLOW_SMTP_SMTP_SSL**: Whether to use SSL (Secure Sockets Layer) encryption when connecting to your SMTP server or service. Set this config to True if your SMTP server or service requires SSL, or False otherwise.
-  - **AIRFLOW_SMTP_SMTP_USER**: The username for your SMTP server or service. This username is usually your email address, or an API key if you're using SendGrid.
-  - **AIRFLOW_SMTP_SMTP_PASSWORD**: The password for your SMTP server or service. This password is usually your email password, or an app password if you're using Gmail.
-  - **AIRFLOW_SMTP_SMTP_PORT**: The port number for your SMTP server or service. This port is usually 25, 465, or 587, depending on the encryption method and the SMTP service.
-  - **AIRFLOW_SMTP_SMTP_MAIL_FROM**: The email address that you want to use as the sender of the notifications and alerts. This mail can be the same as your SMTP username, or a different one if your SMTP service allows it.
+  - **AIRFLOW__SMTP__SMTP_HOST**: The hostname or IP address of your SMTP server or service.
+  - **AIRFLOW__SMTP__SMTP_STARTTLS**: Whether to use TLS (Transport Layer Security) encryption when connecting to your SMTP server or service. Set this config to True if your SMTP server or service supports TLS, or False otherwise.
+  - **AIRFLOW__SMTP__SMTP_SSL**: Whether to use SSL (Secure Sockets Layer) encryption when connecting to your SMTP server or service. Set this config to True if your SMTP server or service requires SSL, or False otherwise.
+  - **AIRFLOW__SMTP__SMTP_USER**: The username for your SMTP server or service. This username is usually your email address, or an API key if you're using SendGrid.
+  - **AIRFLOW__SMTP__SMTP_PASSWORD**: The password for your SMTP server or service. This password is usually your email password, or an app password if you're using Gmail.
+  - **AIRFLOW__SMTP__SMTP_PORT**: The port number for your SMTP server or service. This port is usually 25, 465, or 587, depending on the encryption method and the SMTP service.
+  - **AIRFLOW__SMTP__SMTP_MAIL_FROM**: The email address that you want to use as the sender of the notifications and alerts. This mail can be the same as your SMTP username, or a different one if your SMTP service allows it.
 
   If you're using Gmail, refer to the following values.
 
   | Airflow Configuration         | Gmail                |
   | ----------------------------- | -------------------- |
-  | AIRFLOW_SMTP_SMTP_HOST      | smtp.gmail.com       |
-  | AIRFLOW_SMTP_SMTP_STARTTLS  | True                 |
-  | AIRFLOW_SMTP_SMTP_SSL       | False                |
-  | AIRFLOW_SMTP_SMTP_USER      | your_email@gmail.com |
-  | AIRFLOW_SMTP_SMTP_PASSWORD  | your_app_password    |
-  | AIRFLOW_SMTP_SMTP_PORT      | 587                  |
-  | AIRFLOW_SMTP_SMTP_MAIL_FROM | your_email@gmail.com |
+  | AIRFLOW__SMTP__SMTP_HOST      | smtp.gmail.com       |
+  | AIRFLOW__SMTP__SMTP_STARTTLS  | True                 |
+  | AIRFLOW__SMTP__SMTP_SSL       | False                |
+  | AIRFLOW__SMTP__SMTP_USER      | your_email@gmail.com |
+  | AIRFLOW__SMTP__SMTP_PASSWORD  | your_app_password    |
+  | AIRFLOW__SMTP__SMTP_PORT      | 587                  |
+  | AIRFLOW__SMTP__SMTP_MAIL_FROM | your_email@gmail.com |
 
   :::image type="content" source="media/apache-airflow-jobs/airflow-smtp-configurations.png" lightbox="media/apache-airflow-jobs/airflow-smtp-configurations.png" alt-text="Screenshot presents airflow confiurations for SMTP.":::
 

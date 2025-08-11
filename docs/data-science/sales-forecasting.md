@@ -1,8 +1,8 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a sales forecasting model'
 description: This tutorial shows the data science workflow for building a model that predicts the sales for various categories of products.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: tutorial
@@ -89,7 +89,7 @@ The following code snippet downloads a publicly-available version of the dataset
 import os, requests
 if not IS_CUSTOM_DATA:
     # Download data files into the lakehouse if they're not already there
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Forecast_Superstore_Sales"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/Forecast_Superstore_Sales"
     file_list = ["Superstore.xlsx"]
     download_path = "/lakehouse/default/Files/salesforecast/raw"
 

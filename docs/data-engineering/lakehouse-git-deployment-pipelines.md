@@ -6,7 +6,7 @@ ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
 ms.custom:
-ms.date: 11/15/2023
+ms.date: 4/29/2025
 ms.search.form: lakehouse git deployment pipelines alm ci cd
 ---
 
@@ -89,7 +89,7 @@ Lakehouse deployment pipelines integration capabilities:
 * Shortcuts definitions are synced across stages in the deployment pipelines.
 * Shortcuts with external targets (ADLS Gen2, S3, etc) are the same across all stages after deployment.
 * Shortcuts with internal targets (OneLake Shortcuts) in the same workspace are automatically remapped across stages. Shortcuts that target Data Warehouse and Semantic Models are not remapped during deployment. Tables, Folders and Files are not created in the target workspace. In order for the Shortcut to be valid, those references need to be created in the target workspace after deployment.
-* On the scenario that the same Shortcut needs to target different locations on different stages. For example, in Development point to a specific Folder in Amazon S3, and in Production a different folder in ADLS Gen2. After the deployment, update the OneLake Shortcut definition in Lakehouse or directly using OneLake APIs.
+* On the scenario that the same Shortcut needs to target different locations on different stages. For example, in Development point to a specific Folder in Amazon S3, and in Production a different folder in ADLS Gen2. The recommended approach is to use variables in the Shortcut definition. To learn more about variable library and how to effectivel use it in Microsoft Fabric, read the [What is a Variable library? (preview)](../cicd/variable-library/variable-library-overview.md) article. Another option is; after the deployment, manually update the OneLake Shortcut definition in Lakehouse or directly using OneLake APIs.
 
 > [!IMPORTANT]
 > A deployment __will override the state of shortcuts in the target workspace__. All the Shortcuts in the target lakehouse are updated or deleted based on the state in the source lakehouse. New shortcuts are created in the target lakehouse. Always click on "review changes" to understand the changes that will be deployed between source and target workspaces.

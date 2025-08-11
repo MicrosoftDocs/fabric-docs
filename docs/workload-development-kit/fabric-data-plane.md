@@ -4,7 +4,7 @@ description: Learn about how to work with customer data in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept-article
-ms.custom:
+ms.custom: sfi-ropc-nochange
 ms.date: 05/21/2024
 #customer intent:
 ---

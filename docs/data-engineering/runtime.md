@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: arali
 author: ekote
 ms.topic: overview
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 01/08/2025
 ---
 
@@ -32,7 +32,7 @@ Below, you find a comprehensive comparison of key components, including Apache S
 
 |                       | **[Runtime 1.1](./runtime-1-1.md)** | **[Runtime 1.2](./runtime-1-2.md)** | **[Runtime 1.3](./runtime-1-3.md)** |
 |-----------------------|-------------------------------------|-------------------------------------|------------------------------------|
-| **Release Stage**     | EOSA                                | GA                                  | GA                                 |
+| **Release Stage**     | EOS                                    | EOSA| GA                                 |
 | **Apache Spark**      | 3.3.1                               | 3.4.1                               | 3.5.0                              |
 | **Operating System**  | Ubuntu 18.04                        | Mariner 2.0                         | Mariner 2.0                        |
 | **Java**              | 8                                   | 11                                  | 11                                 |

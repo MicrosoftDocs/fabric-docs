@@ -1,8 +1,8 @@
 ---
 title: Include file for the Edit column heading in Real-Time Intelligence
 description: Include file for the Edit column heading in the Get data hub in Real-Time Intelligence
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: include
 ms.custom: 
 ms.date: 06/26/2023

@@ -1,8 +1,8 @@
 ---
 title: Create Activator alerts from a KQL Queryset
 description: Learn how to create a Fabric Activator alert from the results of a KQL query in a KQL Queryset in Real-Time Intelligence.
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.reviewer: guregini
 ms.topic: how-to
 ms.date: 11/27/2024
@@ -154,5 +154,4 @@ TableForReflex
 ## Related content
 
 * [Query data in a KQL queryset](../../real-time-intelligence/kusto-query-set.md)
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
 * [KQL quick reference guide](/kusto/query/kql-quick-reference)

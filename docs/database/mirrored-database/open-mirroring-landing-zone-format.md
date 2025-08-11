@@ -1,10 +1,10 @@
 ---
-title: "Open Mirroring (Preview) Landing Zone Requirements and Formats"
+title: "Open Mirroring Landing Zone Requirements and Formats"
 description: Review the requirements for files in the landing for open mirroring in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: tinglee, sbahadur, maraki-ketema
-ms.date: 03/22/2025
+ms.reviewer: tinglee, sbahadur, marakiketema
+ms.date: 07/17/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -13,9 +13,7 @@ no-loc: [Copilot]
 
 This article details the landing zone and table/column operation requirements for open mirroring in Microsoft Fabric.
 
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
-
-Once you have created your open mirrored database via the Fabric portal or public API in your Fabric workspace, you get a landing zone URL in OneLake in the **Home** page of your mirrored database item. This landing zone is where your application to create a metadata file and land data in Parquet format or CSV format (uncompressed, Snappy, GZIP, ZSTD). If the data is in a CSV format, the file must have header row in the first row.
+Once you have created your open mirrored database via the Fabric portal or public API in your Fabric workspace, you get a landing zone URL in OneLake in the **Home** page of your mirrored database item. This landing zone is where your application to create a metadata file and land data in Parquet or delimited text format, including CSV. Files can be uncompressed or compressed with Snappy, GZIP, or ZSTD. For more information, see [supported data files and format](#data-file-and-format-in-the-landing-zone). 
 
 :::image type="content" source="media/open-mirroring-landing-zone-format/landing-zone-url.png" alt-text="Screenshot from the Fabric portal showing the Landing zone URL location in the Home page of the mirrored database item." lightbox="media/open-mirroring-landing-zone-format/landing-zone-url.png":::
 
@@ -28,7 +26,6 @@ For example, if you have tables (`Table A`, `Table B`, `Table C`) to be created 
 - `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/Files/LandingZone/TableA`
 - `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/Files/LandingZone/TableB`
 - `https://onelake.dfs.fabric.microsoft.com/<workspace id>/<mirrored database id>/Files/LandingZone/TableC`
-
 
 ### Metadata file in the landing zone
 
@@ -46,22 +43,129 @@ For example, to declare columns `C1` and `C2` as a compound unique key for the t
 
 If `keyColumns` or `_metadata.json` is not specified, then update/deletes are not possible. This file can be added anytime, but once added `keyColumns` can't be changed.
 
+### Events file in the landing zone
+
+If you are a partner implementing an open mirroring solution or a customer who'd like to provide additional details to us about the type of source you're mirroring into OneLake, we've added a new `_partnerEvents.json` file. This is not required but strongly recommended. 
+
+Example: 
+
+```json
+{
+  "partnerName": "testPartner",
+  "sourceInfo": {
+    "sourceType": "SQL",
+    "sourceVersion": "2019",
+    "additionalInformation": {
+      "testKey": "testValue"
+    }
+  }
+}
+
+```
+
+Requirements of the `_partnerEvents.json` file:
+
+- The `_partnerEvents.json` file should be placed at the mirrored database level in the landing zone, not per table.
+- The `sourceType` can be any descriptive string representing the source. There are no constraints on this value, for example: "SQL", "Oracle", "Salesforce", etc.
+- The `partnerName` can be set to any name of your choosing and can be representative of your organization's name. Keep the name consistent across all mirror databases.
+
 ## Data file and format in the landing zone
 
-Open mirroring supports Parquet and CSV as the landing zone file format with or without compression. Supported compression formats include Snappy, GZIP, and ZSTD.
+Open mirroring supports data intake in Parquet or delimited text formats. Files can be uncompressed or compressed with Snappy, GZIP, or ZSTD.
 
-All the Parquet and CSV files written to the landing zone have the following format:
+### Parquet requirements
+
+### Delimited text requirements
+
+- For delimited text format, the file must have header row in the first row.
+- For delimited text, provide additional information in your `_metadata.json` file. The `FileExtension` property is required. Delimited text files have the following properties and defaults:
+
+   | Property           | Description                                   | Notes                                                                 |
+   |:-------------------|:----------------------------------------------|:----------------------------------------------------------------------|
+   | `FirstRowAsHeader`   | True/false for first row header.              | Required to be `true` for delimited text files.                       |
+   | `RowSeparator`       | Character used to separate rows.              | Default is `\r\n`. Also supports `\n` and `\r`.                       |
+   | `ColumnSeparator`    | Character used to separate columns.           | Default is `,`. Also supports `;`, `|`, and `\t`.                     |
+   | `QuoteCharacter`     | Character used to quote values containing delimiters. | Default is `"`. Can also be `'` or empty string.              |
+   | `EscapeCharacter`    | Used to escape quotes inside quoted values.   | Default is `\`. Can also be `/`, `"`, or empty.                       |
+   | `NullValue`          | String representation of null values.         | Can be `""`, `"N/A"`, `"null"`, etc.                                  |
+   | `Encoding`           | Character encoding of the file.               | Default is `UTF-8`. Supports a wide range of encodings including `ascii`, `utf-16`, `windows-1252`, etc. |
+   | `SchemaDefinition`   | Defines column names, types, and nullability. | Schema evolution is not supported.                                    |
+   | `FileFormat`         | Format of the data file.                      | Defaults to `CSV` if not specified. Must be `"DelimitedText"` for formats other than CSV. |
+   | `FileExtension`      | Specifies file extension like `.tsv`, `.psv`. | Required when using `DelimitedText`.                                  |
+
+   For example, the `_metadata.json` file for a `.tsv` data file with four columns:
+
+   ```json
+   {
+   "KeyColumns": [ "id" ],
+   "ConditionalUpdateColumn": "seqNum",
+   "SchemaDefinition": {
+                "Columns": [
+                            {
+                            "Name": "id",
+                            "DataType": "Int32"
+                            },
+                            {
+                            "Name": "name",
+                            "DataType": "String",
+                            "IsNullable": true
+                            },
+                            {
+                            "Name": "age",
+                            "DataType": "Int32",
+                            "IsNullable": true
+                            },
+                            {
+                            "Name": "seqNum",
+                            "DataType": "Int64",
+                            "IsNullable": false
+                            }
+                           ]
+                },
+   "FileFormat": "DelimitedText",
+   "FileExtension": "tsv",
+   "FileFormatTypeProperties": {
+                              "FirstRowAsHeader": true,
+                              "RowSeparator": "\r\n",
+                              "ColumnSeparator": ",",
+                              "QuoteCharacter": "'",
+                              "EscapeCharacter": "\",
+                              "NullValue": "N/A",
+                              "Encoding": "UTF-8"
+                           }
+   }
+   ```
+   
+- Only delimited text formats are expected to have a data type in the file `_metadata.json`. Parquet files do not need to specify column type information. The data types currently supported:
+
+| Supported data type | Description                                                                         |
+|---------------------|------------------------------------------------------------------------------------|
+| `Double`            | A number with decimals, used when high precision is needed (for example, 3.14159). |
+| `Single`            | A number with decimals, but less precise than Double (for example, 3.14).          |
+| `Int16`             | A small whole number, typically between -32,768 and 32,767.                        |
+| `Int64`             | A very large whole number, used for big counts or IDs.                             |
+| `Int32`             | A standard whole number, commonly used for counting or indexing.                   |
+| `DateTime`          | A full date and time value (for example, 2025-06-17 14:30:00).                     |
+| `IDate`             | A calendar date without time (for example, 2025-06-17).                            |
+| `ITime`             | A time of day without a date (for example, 14:30:00).                              |
+| `String`            | Text data like names, labels, or descriptions.                                     |
+| `Boolean`           | A true or false value, often used for toggles or yes/no choices.                   |
+| `ByteArray`         | Raw binary data, such as files, images, or encoded content.                        |
+
+## Format requirements
+
+All files written to the landing zone have the following format:
 
 `<rowMarker><DataColumns>`
 
-- `rowMarker`: column name is `__rowMarker__` (including two underscores before and after `rowMarker`). `RowMaker` values and behaviors:
+- `rowMarker`: column name is `__rowMarker__` (including two underscores before and after `rowMarker`). `__rowMarker__` values and behaviors:
   
-   | RowMarker\Scenario | If row doesn't exist with same key column(s) in the destination | If row exists with same key column(s) in the destination |
+   | `__rowMarker__` (Scenario) | If row doesn't exist with same key column(s) in the destination | If row exists with same key column(s) in the destination |
    |:--|:--|:--|
-   | 0 (Insert) | Insert the row to destination | Insert the row to destination, no validation for dup key column check. |
-   | 1 (Update) | Insert the row to destination, no validation/exception to check existence of row with same key column. | Update the row with same key column. |
-   | 2 (Delete) | No data change, no validation/exception to check existence of row with same key column. | Delete the row with same key column. |
-   | 4 (Upsert) | Insert the row to destination, no validation/exception to check existence of row with same key column. | Update the row with same key column. |
+   | `0` (Insert) | Insert the row to destination | Insert the row to destination, no validation for dup key column check. |
+   | `1` (Update) | Insert the row to destination, no validation/exception to check existence of row with same key column. | Update the row with same key column. |
+   | `2` (Delete) | No data change, no validation/exception to check existence of row with same key column. | Delete the row with same key column. |
+   | `4` (Upsert) | Insert the row to destination, no validation/exception to check existence of row with same key column. | Update the row with same key column. |
 
 - Row order: All the logs in the file should be in natural order as applied in transaction. This is important for the same row being updated multiple times. Open mirroring applies the changes using the order in the files.
 
@@ -69,37 +173,40 @@ All the Parquet and CSV files written to the landing zone have the following for
 
 - File name: File name is 20 digits, like `00000000000000000001.parquet` for the first file, and `00000000000000000002.parquet` for the second. File names should be in continuous numbers. Files will be deleted by the mirroring service automatically, but the last file will be left so that the publisher system can reference it to add the next file in sequence.
 
+ > [!IMPORTANT]
+ > The `__rowMarker__` column needs to be the final column in the list
+
 ### Initial load
 
-For the initial load of data into an open mirrored database, `rowMarker` in the initial data file is optional and not recommended. Mirroring treats the entire file as an INSERT when `rowMarker` doesn't exist.
+For the initial load of data into an open mirrored database, `__rowMarker__` in the initial data file is optional and not recommended. Mirroring treats the entire file as an INSERT when `__rowMarker__` doesn't exist.
 
-For better performance and accurate metrics, `rowMarker` is a mandatory field only for incremental changes to apply update/delete/upsert operation. 
+For better performance and accurate metrics, `__rowMarker__` is a mandatory field only for incremental changes to apply update/delete/upsert operation. 
 
 ### Incremental changes
 
 Open mirroring reads incremental changes in order and applies them to the target Delta table. Order is implicit in the change log and in the order of the files.
 
-Data changes are considered as incremental changes once the `rowMarker` column is found from any row/file.
+Data changes are considered as incremental changes once the `__rowMarker__` column is found from any row/file.
 
 Updated rows must contain the full row data, with all columns. 
 
 Here is some sample parquet data of the row history to change the `EmployeeLocation` for `EmployeeID` E0001 from Redmond to Bellevue. In this scenario, the `EmployeeID` column has been marked as a key column in the [metadata file in the landing zone](#metadata-file-in-the-landing-zone).
 
 ```parquet
-__rowMarker__,EmployeeID,EmployeeLocation
-0,E0001,Redmond
-0,E0002,Redmond
-0,E0003,Redmond
-1,E0001,Bellevue
+EmployeeID,EmployeeLocation,__rowMarker__
+E0001,Redmond,0
+E0002,Redmond,0
+E0003,Redmond,0
+E0001,Bellevue,1
 ```
 
-If key columns are updated, then it should be presented by a DELETE on previous key columns and an INSERT rows with new key and data. For example, the row history to change the `rowMarker` unique identifier for `EmployeeID` E0001 to E0002. You don't need to provide all column data for a DELETE row, only the key columns. 
+If key columns are updated, then it should be presented by a DELETE on previous key columns and an INSERT rows with new key and data. For example, the row history to change the `__rowMarker__` unique identifier for `EmployeeID` E0001 to E0002. You don't need to provide all column data for a DELETE row, only the key columns. 
 
 ```parquet
-__rowMarker__,EmployeeID,EmployeeLocation
-0,E0001,Bellevue
-2,E0001,NULL
-0,E0002,Bellevue
+EmployeeID,EmployeeLocation,__rowMarker__
+E0001,Bellevue,0
+E0001,NULL,2
+E0002,Bellevue,0
 ```
 
 ## Table operations

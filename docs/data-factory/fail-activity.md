@@ -6,6 +6,7 @@ ms.author: whhender
 author: whhender
 ms.topic: how-to
 ms.date: 12/18/2024
+ms.custom: pipelines
 ---
 
 # Use the Fail activity to cause pipeline execution to fail with a customized error message and error code

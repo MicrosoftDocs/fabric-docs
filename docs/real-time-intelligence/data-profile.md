@@ -2,8 +2,8 @@
 title: Access the data profile of a table in Real-Time Intelligence
 description: Learn how to access the data profile of a table in Real-Time Intelligence.
 ms.reviewer: mibar
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 11/19/2024

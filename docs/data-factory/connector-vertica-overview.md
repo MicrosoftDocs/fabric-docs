@@ -7,6 +7,7 @@ ms.topic: how-to
 ms.date: 09/06/2024
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Vertica connector overview

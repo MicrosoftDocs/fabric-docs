@@ -4,11 +4,13 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 03/18/2025
+ms.date: 07/15/2025
 ms.custom:
+  - pipelines
   - template-how-to
   - build-2023
   - ignite-2023
+  - connectors
 ---
 
 # Configure Lakehouse in a copy activity
@@ -138,6 +140,8 @@ The following properties are **required**:
             - **Partition column name**: Select from the destination columns in schemas mapping. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab.
         
           It supports [Delta Lake time travel](https://docs.delta.io/latest/delta-batch.html#-deltatimetravel). The overwritten table has delta logs for the previous versions, which you can access in your Lakehouse. You can also copy the previous version table from Lakehouse, by specifying **Version** in the copy activity source.
+        - **Upsert (Preview)**: Insert new values to existing table and update existing values. Upsert is not supported when using partitioned Lakehouse tables.
+            - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Lakehouse Table.
 
       - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
@@ -180,6 +184,49 @@ For example, the type for *PersonID* column in source is int, and you can change
 > Editing the destination type currently is not supported when your source is decimal type.
 
 If you choose Binary as your file format, mapping isn't supported.
+
+#### Data type mapping for Lakehouse table
+
+When copying data from Lakehouse table, the following mappings are used from Lakehouse table data types to interim data types used by the service internally.
+
+| Lakehouse table data type | Interim service data type |
+|---------------------|------------------|
+| string              | String           |
+| long                | Int64            |
+| integer             | Int32            |
+| short               | Int16            |
+| byte                | SByte            |
+| float               | Single           |
+| double              | Double           |
+| decimal             | Decimal          |
+| boolean             | Boolean          |
+| binary              | Byte array       |
+| date                | Date             |
+| timestamp           | DateTime         |
+
+When copying data to Lakehouse table, the following mappings are used from interim data types used by the service internally to supported delta destination data types.
+
+| Interim service data type | Supported delta destination type |
+|---------------------|------------------|
+| Boolean          | boolean             |
+| SByte            | byte                |
+| Byte             | short               |
+| Int16            | short               |
+| UInt16           | integer             |
+| Int32            | integer             |
+| UInt32           | long                |
+| Int64            | long                |
+| UInt64           | decimal (20,0)      |
+| Single           | float               |
+| Double           | double              |
+| GUID             | string              |
+| Date             | date                |
+| TimeSpan         | Not supported       |
+| DateTime         | timestamp           |
+| DateTimeOffset   | timestamp           |
+| String           | string              |
+| Byte array       | binary              |
+| Decimal          | decimal             |
 
 ### Settings
 
@@ -253,9 +300,10 @@ The following tables contain more information about a copy activity in Lakehouse
 |**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | *(under `sink` -> `datasetSettings` -> `typeProperties`)*<br>schema |
 |**table name** |The name of the table. |\<your table name> |Yes | table |
 |  |  |  |  |  |
-|**Table action**| Append new values to an existing table or overwrite the existing data and schema in the table using the new values.|• **Append**<br>• **Overwrite**|No|tableActionOption:<br>Append or OverwriteSchema|
+|**Table action**| Append new values to an existing table, overwrite the existing data and schema in the table using the new values or insert new values to existing table and update existing values.|• **Append**<br>• **Overwrite**<br>• **Upsert**|No|tableActionOption:<br>• Append<br> • OverwriteSchema <br>• Upsert|
 |**Enable partitions**|This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".| Selected or unselected |No| partitionOption: <br> PartitionByKey or None|
 |**Partition columns**|The destination columns in schemas mapping.| \<your partition columns\> |No| partitionNameList|
+|**Key columns**|Choose which column is used to determine if a row from the source matches a row from the destination.|\<your key columns\>|Yes| keyColumns|
 |**File path**|Write data to the path to a folder/file under destination data store.|\<file path>|No|• folderPath<br>• fileName|
 | **File format** | The file format for your destination data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes when you select **Files** in **Root folder** | / |
 |**Copy behavior** | The copy behavior defined when the source is files from a file-based data store.|• **Flatten hierarchy**<br>• **Merge files**<br>• **Preserve hierarchy**<br>• **Add dynamic content** |No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|

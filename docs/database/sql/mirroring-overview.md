@@ -4,9 +4,9 @@ description: "Learn more about automatic mirroring to OneLake for SQL database i
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac
-ms.date: 01/16/2025
+ms.date: 07/02/2025
 ms.topic: conceptual
-ms.search.form: SQL database replication to OneLake
+ms.search.form: SQL database replication to OneLake, Databases replication to OneLake
 ---
 # Mirroring Fabric SQL database in Microsoft Fabric (preview)
 
@@ -16,11 +16,10 @@ Database mirroring is a feature of Microsoft Fabric to continuously replicate da
 
 SQL database in Microsoft Fabric, which uses the same SQL Database Engine as Microsoft SQL Server and is similar to Azure SQL Database, inherits most of the Fabric mirroring capabilities from Azure SQL Database. For more information, see [Mirroring Azure SQL Database to Fabric](../mirrored-database/azure-sql-database.md), but this page focuses on mirroring data from SQL database in Fabric and **differences from** Azure SQL Database mirroring.
 
-When you create a SQL database in Microsoft Fabric, three artifacts get provisioned in your Fabric workspace:
+When you create a SQL database in Microsoft Fabric, these are provisioned in your Fabric workspace:
 
 - The SQL database itself
 - The SQL analytics endpoint
-- The default semantic model
 
 To facilitate analytics scenarios, SQL database in Fabric automatically mirrors its data into Fabric OneLake, to the same workspace where the database itself resides. Mirroring starts upon creation of your SQL database in Fabric with **no user action required**. There are no settings to configure mirroring: **all** supported tables and their supported columns are mirrored as soon as they're created.
 

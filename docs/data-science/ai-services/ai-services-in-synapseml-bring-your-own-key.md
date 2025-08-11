@@ -8,11 +8,14 @@ author: ssalgadodev
 ms.reviewer: jessiwang
 reviewer: JessicaXYWang
 ms.date: 11/15/2023
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 # Azure AI services in SynapseML with bring your own key
 
-[Azure AI services](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. AI services empower developers even when they don't have direct AI or data science skills or knowledge. The goal of Azure AI services is to help developers create applications that can see, hear, speak, understand, and even begin to reason. The catalog of services within Azure AI services can be categorized into five main pillars: **Vision**, **Speech**, **Language**, **Web search**, and **Decision**.
+[SynapseML](../synapse-overview.md) is an open-source library that simplifies the creation of scalable machine learning pipelines and integrates seamlessly with Azure Synapse Analytics. It can handle various machine learning tasks such as text analytics and computer vision, and supports multiple programming languages including Python, R, Scala, Java, and .NET.
+
+[Azure AI services](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. AI services empower developers even when they don't have direct AI or data science skills or knowledge. The goal of Azure AI services is to help developers create applications that can see, hear, speak, understand, and even begin to reason. The catalog of services within Azure AI services can be categorized into five main pillars: **Vision**, **Speech**, **Language**, **Web search**, and **Decision**. Fabric uses SynapseML to provide access to these services.
 
 
 > [!NOTE] 

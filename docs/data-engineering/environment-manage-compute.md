@@ -4,7 +4,7 @@ description: A Microsoft Fabric environment contains configurations that include
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: how-to
-ms.date: 03/13/2025
+ms.date: 07/03/2025
 ms.search.form: Manage Spark compute in Environment
 ---
 
@@ -13,8 +13,6 @@ ms.search.form: Manage Spark compute in Environment
 Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. It includes starter pools and custom pools.
 
 A Fabric environment contains a collection of configurations, including Spark compute properties, that you can use to configure the Spark session after they're attached to notebooks and Spark jobs. With an environment, you have a flexible way to customize compute configurations for running your Spark jobs.
-
-In an environment, you use the **Compute** section to configure the Spark session-level properties to customize the memory and cores of executors based on workload requirements. The Spark properties set via `spark.conf.set` control application-level parameters. They aren't related to environment variables.
 
 ## Configure settings
 
@@ -36,7 +34,7 @@ As a user, you can select a pool for the environment from the list of pools avai
 
 :::image type="content" source="media\environment-introduction\environment-pool-selection.png" alt-text="Screenshot that shows where to select pools in the environment Compute section.":::
 
-After you select a pool in the **Compute** section, you can tune the cores and memory for the executors within the bounds of the node sizes and limits of the selected pool.
+After you select a pool in the **Compute** section, you can tune the cores and memory for the executors within the bounds of the node sizes and limits of the selected pool. For more information about Spark compute sizes and their cores or memory options, see [Spark compute in Fabric](spark-compute.md). Use the **Compute** section to configure the Spark session-level properties to customize the memory and cores of executors based on workload requirements. The Spark properties set via `spark.conf.set` control application-level parameters aren't related to environment variables.
 
 For example, say that you want to select a custom pool with a large node size, which is 16 Spark vCores, as the environment pool.
 
@@ -45,8 +43,6 @@ For example, say that you want to select a custom pool with a large node size, w
 1. To allocate memory to drivers and executors, under **Spark executor memory**, select **28 g**, **56 g**, or **112 g**. All are within the bounds of a large node memory limit.
 
    :::image type="content" source="media\environment-introduction\env-cores-selection.png" alt-text="Screenshot that shows where to select the number of cores in the environment Compute section.":::
-
-For more information about Spark compute sizes and their cores or memory options, see [What is Spark compute in Fabric?](spark-compute.md).
 
 ## Related content
 

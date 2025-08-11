@@ -3,22 +3,19 @@ title: "Tutorial: Configure Open Mirroring"
 description: Learn how to configure an open mirrored database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: tinglee, sbahadur, maraki-ketema, maprycem
-ms.date: 04/04/2025
+ms.reviewer: tinglee, sbahadur, marakiketema, maprycem
+ms.date: 06/04/2025
 ms.topic: tutorial
 ---
 
 # Tutorial: Configure Microsoft Fabric open mirrored databases
 
-In this tutorial, you configure an Open mirrored database in Fabric. This example guides you to create a new open mirrored database and learn how to land data into the landing zone. You'll get proficient with the concepts of open mirroring in Microsoft Fabric.
-
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
+In this tutorial, you configure an open mirrored database in Fabric. This example guides you to create a new open mirrored database and learn how to land data into the landing zone. You'll get proficient with the concepts of open mirroring in Microsoft Fabric.
 
 ## Prerequisites
 
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
     - The Fabric capacity needs to be active and running. A paused or deleted capacity will affect Mirroring and no data will be replicated.
-- During the current preview, the ability to create an open mirrored database via the Fabric portal is not available in all Fabric capacity regions.
 
 ## Create a mirrored database
 
@@ -34,7 +31,7 @@ In this section, we provide a brief overview of how to create a new open mirrore
 
 ## Start replicating data
 
-Once you've created a mirrored database, start uploading your CSV or parquet files. You can upload your initial data and future changed data sets using the Fabric portal or programmatically via the OneLake.
+Once you've created a mirrored database, start uploading your files. You can upload your initial data and future changed data sets using the Fabric portal or programmatically via the OneLake.
 
 ### Upload via the Fabric portal
 
@@ -44,10 +41,10 @@ To upload initial data and/or incremental changed data for open mirroring:
 
    :::image type="content" source="media/open-mirroring-tutorial/upload-files.png" alt-text="Screenshot from the Fabric portal of the Upload Files options on the home screen of an open mirrored database." lightbox="media/open-mirroring-tutorial/upload-files.png":::
 
-1. On the **Upload files** page, upload a Parquet or CSV file using the upload dialog in the Fabric portal.
+1. On the **Upload files** page, upload a file using the upload dialog in the Fabric portal.
    
    > [!IMPORTANT]
-   > The file name of the Parquet or CSV file needs to match the format and filename documented. For more information, see [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md).
+   > The file name of the Parquet or delimited text file needs to match the format and filename documented. For more information, see [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md).
 
 1. On the **Preview data** page, you can see a preview of the data you are about to upload. Provide the **Table name** a name and specify **Primary key column(s)**. Select **Create table**.
 
@@ -55,7 +52,7 @@ To upload initial data and/or incremental changed data for open mirroring:
 
 1. From the **Replication status** in the **Explorer**, you can see how many rows have been replicated and any errors associated with the data you are mirroring into OneLake.
 
-1. If you have changed data in a Parquet or CSV format for existing tables in your mirrored database, you can upload or drag and drop these change files. The changes are automatically reflected in OneLake. 
+1. If you have changed data in a format for existing tables in your mirrored database, you can upload or drag and drop these change files. The changes are automatically reflected in OneLake. 
 
 ### Write change data into the landing zone using other mechanisms
 
@@ -63,6 +60,7 @@ Your application can now write initial load and incremental change data into the
 
 - Follow [Connecting to Microsoft OneLake](../../onelake/onelake-access-api.md) to authorize and write to the mirrored database landing zone in OneLake, using the [ADLS Gen2 API](/rest/api/storageservices/data-lake-storage-gen2).
 - Review the [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md) specifications.
+- Use the [Open Mirroring Python SDK](https://github.com/microsoft/fabric-toolbox/tree/main/tools/OpenMirroringPythonSDK) to get started! 
 
 ## Start mirroring process
 
@@ -82,6 +80,11 @@ Your application can now write initial load and incremental change data into the
 Once mirroring is configured, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication.
 
 For more information and details on the replication states, see [Monitor Fabric mirrored database replication](monitor.md).
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Open Mirroring Python SDK](https://github.com/microsoft/fabric-toolbox/tree/main/tools/OpenMirroringPythonSDK) 
 
 ## Related content
 

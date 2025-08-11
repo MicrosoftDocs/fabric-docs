@@ -57,18 +57,34 @@ items:
   items: 
     - name: What is the Fabric data agent?
       href: concept-data-agent.md
+    - name: Fabric data agent tenant settings
+      href: data-agent-tenant-settings.md      
     - name: How to create a Fabric data agent
       href: how-to-create-data-agent.md
-    - name: Fabric data agent scenario
-      href: data-agent-scenario.md
-    - name: How to consume a Fabric data agent
-      href: how-to-consume-data-agent.md
-    - name: Fabric data agent tenant settings
-      href: data-agent-tenant-settings.md
-    - name: Fabric data agent sharing
-      href: data-agent-sharing.md
     - name: Fabric data agent SDK
       href: fabric-data-agent-sdk.md
+    - name: Evaluate a Fabric data agent
+      href: evaluate-data-agent.md
+    - name: Configure your Fabric data agent
+      items:
+        - name: Data agent configurations
+          href: data-agent-configurations.md
+        - name: Best practices for configuring data agents 
+          href: data-agent-configuration-best-practices.md
+        - name: How to configure a data agent
+          href: develop-iterative-process-data-agent.md
+    - name: How to consume a Fabric data agent
+      items:
+        - name: Consume a data agent from Azure AI foundry (preview)
+          href: data-agent-foundry.md
+        - name: Consume a data agent from Copilot in Power BI (preview)
+          href: data-agent-copilot-powerbi.md
+        - name: Consume a data agent from Microsoft Copilot Studio (preview)
+          href: data-agent-microsoft-copilot-studio.md          
+    - name: Fabric data agent end-to-end tutorial
+      href: data-agent-end-to-end-tutorial.md        
+    - name: Fabric data agent sharing
+      href: data-agent-sharing.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
@@ -179,6 +195,8 @@ items:
   items: 
    - name: AutoML overview
      href: automated-ml-fabric.md
+   - name: AutoML concepts
+     href: automated-machine-learning-fabric.md
    - name: How-to guides
      items:
      - name: Use AutoML (interface)

@@ -6,7 +6,7 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: tutorial
 ms.custom:
-ms.date: 03/21/2025
+ms.date: 06/25/2025
 ms.search.form: Eventstreams Tutorials
 ---
 
@@ -24,9 +24,9 @@ Below are the approaches that can help with this purpose before the native priva
 
 ### IP allowlist
 
-Eventstream's streaming connector in each region has a single outbound IP address. If your company’s network policy permits allowlisting this IP address, Eventstream’s connector can bring real-time data into Fabric, though the transmission occurs over a public network.
+Eventstream's streaming connector in each region has a single outbound IP address. If your company’s network policy permits allowlisting this IP address and your source has a publicly resolvable address, Eventstream’s connector can bring real-time data into Fabric, though the transmission occurs over a public network.
 
-This solution is applicable to all streaming connector sources. If you're interested in implementing this solution, kindly reach out to the product team by completing the following form: [RTI Eventstream Streaming Connector IP allowlist Request](https://aka.ms/EventStreamsConnIPWhitelistRequest)
+This solution is applicable to all streaming connector sources. If you're interested in implementing this solution, kindly reach out to the product team by completing the following form: [RTI Eventstream Streaming Connector IP allowlist Request](https://aka.ms/EventStreamsConnIPWhitelistRequest) 
 
 ### Mirror Kafka Topics to Eventstream or Azure Event Hubs
 

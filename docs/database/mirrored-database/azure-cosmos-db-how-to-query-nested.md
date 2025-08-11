@@ -4,7 +4,7 @@ description: Query nested Azure Cosmos DB JSON data in a mirrored database withi
 author: seesharprun
 ms.author: sidandrews
 ms.reviewer: anithaa, wiassaf
-ms.date: 11/19/2024
+ms.date: 05/07/2025
 ms.topic: how-to
 ---
 
@@ -189,6 +189,34 @@ Now, use the SQL analytics endpoint to create a query that can handle simple nes
             order_id varchar(100) '$.order_id',
             item_description varchar(200) '$.item_description' 
         ) as P 
+    ```
+
+## Query basic nested data with auto schema inference
+Follow steps 1-3 in the previous example. With the same data set, we can create a query to flatten the data without having to explicitly define the schema.
+
+1. Run this query to expand on the `items` array with `OPENJSON` without defining the schema. This flattens the item array one level by seperating each nested object into a new row.
+
+    ```sql
+    SELECT
+        t.name,
+        t.id,
+        t.country,
+        p.*
+    FROM OrdersDB_TestC as t 
+    CROSS APPLY OPENJSON(t.items) p
+    ```
+
+1. Run this query to further expand on the `items` array with `OPENJSON` without defining the schema. This flattens the item array two levels by seperating each property within each nested object into a new row.
+
+    ```sql
+    SELECT
+        t.name,
+        t.id,
+        t.country,
+        q.*
+    FROM OrdersDB_TestC as t 
+    CROSS APPLY OPENJSON(t.items) q
+    OUTER APPLY OPENJSON(t.items) p
     ```
 
 ## Create deeply nested data

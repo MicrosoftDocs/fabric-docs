@@ -4,7 +4,7 @@ description: This article describes how to get Job events as a Fabric eventstrea
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 11/13/2024
+ms.date: 07/22/2025
 # Customer intent: I want to know how to create eventstreams for Job events in Fabric Real-Time hub. 
 ---
 
@@ -13,7 +13,7 @@ This article describes how to get Job events as an eventstream in Fabric Real-Ti
 
 Real-Time hub allows you to discover and subscribe to changes produced when Fabric runs a job. For example, you can react to changes when refreshing a semantic model, running a scheduled pipeline, or running a notebook. Each of these activities can generate a corresponding job, which in turn generates a set of corresponding job events. 
 
-Job events allow you to monitor job results in time and set up alerts using Data Activator alerting capabilities. For example, when the scheduler triggers a new job, or a job fails, you can receive an email alert. This way, even if you aren't in front of the computer, you can still get the information you care about. 
+Job events allow you to monitor job results in time and set up alerts using Activator alerting capabilities. For example, when the scheduler triggers a new job, or a job fails, you can receive an email alert. This way, even if you aren't in front of the computer, you can still get the information you care about. 
 
 With Fabric event streams, you can capture these Job events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Job events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your Job.
 
@@ -97,12 +97,13 @@ Move the mouse over **Job events**, and select the **Create Eventstream** link o
 
     :::image type="content" source="./media/create-streams-fabric-job-events/review-create-success.png" alt-text="Screenshot that shows the Review and create page with links to open the eventstream." lightbox="./media/create-streams-fabric-job-events/review-create-success.png":::
 
-## View stream from the All data streams page
+## View stream from the Real-Time hub page
+Select **Real-Time hub** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 
 
-1. In **Real-Time hub**, select **My data streams** or **All data streams**.
-1. Confirm that you see the stream you created.
+:::image type="content" source="./media/create-streams-fabric-job-events/verify-stream.png" alt-text="Screenshot that shows data stream in the My data streams page." lightbox="./media/create-streams-fabric-job-events/verify-stream.png":::
 
-    :::image type="content" source="./media/create-streams-fabric-job-events/verify-stream.png" alt-text="Screenshot that shows data stream in the My data streams page." lightbox="./media/create-streams-fabric-job-events/verify-stream.png":::
+For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+
 
 ## Related content
 

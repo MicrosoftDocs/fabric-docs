@@ -6,6 +6,9 @@ ms.author: noelleli
 author: n0elleli
 ms.topic: quickstart
 ms.custom:
+- dataflows
+- pipelines
+- sfi-image-nochange
 ms.date: 12/18/2024
 ---
 

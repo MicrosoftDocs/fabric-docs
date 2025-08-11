@@ -19,11 +19,10 @@ Column-level security (CLS) is a feature of OneLake security (preview) that allo
 ## Prerequisites
 
 * A Lakehouse in OneLake with OneLake data access roles turned on. For more information, see [Get started with OneLake data access roles](get-started-data-access-roles.md).
-
-  >[!IMPORTANT]
-  >To access OneLake security features during preview, add the following feature flags to the end of the Fabric URL in your browser:
-  >
-  >*&tridentOneLakeSecurity=1&rowLevelSecurity=1&columnLevelSecurity=1&DmsUniversalSecurity=1*
+* A Lakehouse with [schemas enabled](../../data-engineering/lakehouse-schemas.md).
+* Switch the SQL Analytics Endpoint on the lakehouse to "User's identity" mode through the **Security** tab.
+* For creating semantic models, use the steps to create a [DirectLake model](../../fundamentals/direct-lake-power-bi-desktop.md).
+* For a full list of limitations, see the [known limitations section.](./data-access-control-model.md#onelake-security-limitations)
 
 ## Enforce column-level security
 
