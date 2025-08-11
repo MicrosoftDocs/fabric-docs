@@ -23,7 +23,8 @@ Whether you're ingesting terabytes of streaming data or running high-performance
 - ✅ **Fine-tuned Spark configs** – Avoid trial-and-error tuning and reduce operational overhead.
 
 > [!NOTE]
-> All **new Fabric workspaces** are now defaulted to the `writeHeavy` profile for optimal ingestion performance. This includes default configurations tailored for large-scale ETL and streaming data workflows.
+> * All **new Fabric workspaces** are now defaulted to the `writeHeavy` profile for optimal ingestion performance. This includes default configurations tailored for large-scale ETL and streaming data workflows.
+> * If the writeHeavy profile is used, VOrder is disabled by default and must be manually enabled. 
 
 ## Available resource profiles
 
@@ -80,14 +81,19 @@ This approach provides runtime flexibility to change behavior based on job logic
 
 ## What happens by default?
 
-All newly created workspaces in Microsoft Fabric default to the writeHeavy profile. This ensures:
+All newly created workspaces in Microsoft Fabric default to the `writeHeavy` profile. This ensures:
 
 - Efficient handling of data ingestion pipelines  
 - Optimized throughput for batch and streaming jobs  
 - Better out-of-the-box performance for common ETL workloads
-  
+
 If your workload differs (e.g., interactive queries, dashboard serving), you can update the default settings at the environment level or override them dynamically during execution.
 
+> ⚠️ **Important:**  
+> On all new Fabric workspaces, **`VOrder` is disabled by default** (`spark.sql.parquet.vorder.default=false`).  
+> This default configuration is optimized for **write-heavy data engineering workloads**, enabling greater performance during ingestion and transformation at scale.  
+>  
+> For read-optimized scenarios (e.g., Power BI dashboards or interactive Spark queries), consider switching to the **`readHeavyforSpark`** or **`readHeavyForPBI`** resource profiles or modify the properties by enabling  `VOrder` and improve query performance from PowerBI and Datawarehouse workloads
 
 ## Related content
 

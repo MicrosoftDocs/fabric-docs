@@ -6,7 +6,8 @@ ms.author: jejiang
 ms.topic: overview
 ms.date: 09/11/2024
 ms.custom:
-  - template-howto
+- template-howto
+- sfi-image-nochange
 ms.search.form: Spark history server to debug apps
 ---
 

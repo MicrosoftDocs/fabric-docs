@@ -3,8 +3,8 @@ title: Migration Assistant for Fabric Data Warehouse
 description: This article explains the Migration Assistant experience for Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: anphil
-ms.date: 04/06/2025
+ms.reviewer: anphil, prlangad
+ms.date: 06/23/2025
 ms.topic: concept-article
 ms.search.form: Migration Assistant
 ---
@@ -86,7 +86,7 @@ The workarounds for some of the common unsupported features:
 | :-- | :-- |
 | SQL authentication | Replace SQL authentication users with [Microsoft Entra authentication as an alternative to SQL authentication](entra-id-authentication.md). |
 | Column-level encryption | Use alternative ways to protect your data such as implementing encryption at the application layer and [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md) for obfuscating sensitive data. |
-| Scalar functions | Use alternative workarounds such as stored procedures, inline table-valued functions, or common table expressions. |
+| Scalar functions | Scalar user-defined functions (UDFs) are not currently migrated by the Migration Assistant. Scalar UDFs are supported in Fabric Data Warehouse, but only when inlineable (currently in preview). For more information, see [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?view=fabric&preserve-view=true) and [Scalar UDF inlining](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=fabric&preserve-view=true). |
 | Identity columns | Use alternative methods to assign a unique identifier. For examples, see [Generate unique identifiers in a warehouse table in Microsoft Fabric](generate-unique-identifiers.md) |
 | Temp tables | Use regular tables. |
 

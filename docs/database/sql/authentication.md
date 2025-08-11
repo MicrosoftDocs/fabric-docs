@@ -20,7 +20,7 @@ To successfully authenticate to a SQL database, a Microsoft Entra user, a [servi
 To find the connection string to your SQL database in Fabric, see [Connect to your SQL database in Microsoft Fabric](connect.md).
 
 > [!NOTE]
-> To enable [service principals](/entra/identity-platform/app-objects-and-service-principals) to connect to Fabric and to SQL databases, you also need to enable the [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis) Fabric tenant setting. To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
+> To enable [service principals](/entra/identity-platform/app-objects-and-service-principals) to connect to Fabric and to SQL databases, you also need to enable the [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis) Fabric tenant setting. To learn how to enable tenant settings, see [Fabric Tenant settings](../../admin/about-tenant-settings.md).
 
 ## Connect to a SQL database using Microsoft Entra authentication
 
@@ -99,7 +99,7 @@ DECLARE @objectId UNIQUEIDENTIFIER = '<unique identifier sid>'; -- principal's o
 DECLARE @castObjectId NVARCHAR(MAX) = CONVERT(VARCHAR(MAX), CONVERT (VARBINARY(16), @objectId), 1);
 
 -- Construct command: CREATE USER [@groupName] WITH SID = @castObjectId, TYPE = X;
-DECLARE @cmd NVARCHAR(MAX) = N'CREATE USER [' + @principal_name + '] WITH SID = ' + @castObjectId + ', TYPE = X;'
+DECLARE @cmd NVARCHAR(MAX) = N'CREATE USER [' + @group_name + '] WITH SID = ' + @castObjectId + ', TYPE = X;'
 EXEC (@cmd);
 ```
 

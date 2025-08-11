@@ -36,6 +36,16 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/pipeline-rest-api.md",
+        "redirect_url": "/fabric/data-factory/pipeline-rest-api-capabilities",
+        "redirect_document_id": false
+      },
+            {
+        "source_path_from_root": "/docs/data-factory/git-integration-deployment-pipelines.md",
+        "redirect_url": "/fabric/data-factory/cicd-pipelines",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/move-data-lakehouse-copy-assistant.md",
         "redirect_url": "/fabric/data-factory/tutorial-move-data-lakehouse-copy-assistant",
         "redirect_document_id": false
@@ -266,6 +276,16 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/change-data-capture-from-sap-to-onelake-with-azure-data-factory.md",
+        "redirect_url": "/azure/data-factory/change-data-capture-from-sap-to-onelake-with-azure-data-factory",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory.md",
+        "redirect_url": "/azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory",
+        "redirect_document_id": false
+      }, 
+      {
         "source_path_from_root": "/docs/data-factory/certification-submission.md",
         "redirect_url": "/fabric/data-factory/connector-certification",
         "redirect_document_id": false
@@ -289,6 +309,26 @@
         "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-managed-instance-overview.md",
         "redirect_url": "/fabric/data-factory/connector-azure-sql-managed-instance-overview",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/dataflow-support.md",
+        "redirect_url": "/fabric/data-factory/connector-overview",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/pipeline-support.md",
+        "redirect_url": "/fabric/data-factory/connector-overview",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/copy-job-support.md",
+        "redirect_url": "/fabric/data-factory/connector-overview",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/fundamentals/copilot-fabric-data-factory.md",
+        "redirect_url": "/fabric/data-factory/copilot-fabric-data-factory",
+        "redirect_document_id": true
       }
     ]
 }

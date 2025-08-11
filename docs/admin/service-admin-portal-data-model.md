@@ -1,8 +1,8 @@
 ---
 title: Data model tenant settings
 description: Learn how to configure data model settings as the Fabric administrator.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 
 ms.custom:

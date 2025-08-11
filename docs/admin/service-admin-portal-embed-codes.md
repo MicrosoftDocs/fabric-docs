@@ -1,14 +1,12 @@
 ---
 title: Manage embed codes
 description: Learn how to manage Power BI embed codes.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: ''
-
-ms.custom:
-  - admin-portal
+author: msmimart
+ms.author: mimart
+ms.reviewer: Ben.Zulauf
+ms.custom: admin-portal
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 05/22/2025
 LocalizationGroup: Administration
 ---
 
@@ -29,6 +27,20 @@ Disabling the embed codes is described in [Publish to web](service-admin-portal-
 ## Delete embed codes
 
 To delete embed codes, select the codes you want to delete and then select **Delete**.
+
+## Transfer embed code ownership
+
+Embed codes are linked directly to the publisher who creates them. This means that if the publisher loses access to the workspace where a report is published, users can no longer view the embedded report. When a publisher leaves a workspace or an organization, Tenant admins can reassign ownership through the Admin portal, thereby restoring user access. 
+
+To change ownership from the Admin portal, follow these steps:
+
+1. On the **Embed codes** page, select **Change ownership**. 
+
+   :::image type="content" source="media/service-admin-portal-embed-codes/admin-portal-embed-1.png" alt-text="Screenshot of the highlighted Change Ownership button and menu.":::  
+
+1. Choose the new embed code owner from the dropdown menu, then select **OK**.
+
+   :::image type="content" source="media/service-admin-portal-embed-codes/admin-portal-embed.png" alt-text="Screenshot of the Change Ownership dialog.":::
 
 ## Related content
 

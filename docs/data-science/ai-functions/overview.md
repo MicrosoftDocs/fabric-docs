@@ -1,12 +1,12 @@
 ---
 title: Transform and enrich data seamlessly with AI functions
 description: Learn how to use AI functions in Fabric to transform and enrich data with lightweight LLM-powered code.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.date: 02/26/2025
+ms.date: 05/18/2025
 
 ms.search.form: AI functions
 ---
@@ -33,54 +33,43 @@ It's seamless to incorporate these functions as part of data-science and data-en
 ## Prerequisites
 
 - To use AI functions with Fabric's built-in AI endpoint, your administrator needs to enable [the tenant switch for Copilot and other features powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
-- You also need an F2 or higher SKU or a P SKU. If you use a trial SKU, you can also bring your own Azure Open AI resource.
 - Depending on your location, you may need to enable a tenant setting for cross-geo processing. Learn more [here](../../get-started/copilot-fabric-overview.md#available-regions-for-azure-openai-service).
-
+- You also need an F2 or higher SKU or a P SKU. If you use a trial SKU, you can bring your own Azure Open AI resource.
 
 > [!NOTE]
 >
 > - AI functions are supported in the [Fabric 1.3 runtime](../../data-engineering/runtime-1-3.md) and higher.
-> - By default, AI functions are currently powered by the **gpt-3.5-turbo (0125)** model. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
-> - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
-> - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
+> - AI functions use the **gpt-4o-mini (2024-07-18)** model by default. To learn more about billing and consumption rates, visit [this article](../ai-services/ai-services-overview.md).
+> - Most of the AI functions are optimized for use on English-language texts.
 
 ## Getting started with AI functions
 
-Use of the AI functions library in a Fabric notebook currently requires certain custom packages. The following code installs and imports those packages. Afterward, you can use AI functions with pandas or PySpark, depending on your preference.
+When working with pandas, the openai package must be installed. In the Python environment, the AI Functions package must also be installed.
 
-This code cell installs the AI functions library and its dependencies.
+No installation is required when working with PySpark, as AI Functions are already preinstalled in the PySpark environment.
 
-> [!WARNING]
-> The PySpark configuration cell takes a few minutes to finish executing. We appreciate your patience.
+The following code cells include all the necessary installation commands.
 
-# [pandas](#tab/pandas)
+# [pandas (PySpark environment)](#tab/pandas-pyspark)
+
+```python
+# Pandas AI Functions requires openai version 1.30 or higher
+%pip install -q --force-reinstall openai==1.30 2>/dev/null
+
+# AI functions are preinstalled on the Fabric PySpark runtime
+```
+
+# [pandas (Python environment)](#tab/pandas-python)
 
 ```python
 # Install fixed version of packages
-%pip install -q openai==1.30
-%pip install -q --force-reinstall httpx==0.27.0
+%pip install -q --force-reinstall openai==1.30 2>/dev/null
 
 # Install latest version of SynapseML-core
-%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.9/synapseml_core-1.0.9-py2.py3-none-any.whl
+%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12-spark3.5/synapseml_core-1.0.12.dev1-py2.py3-none-any.whl 2>/dev/null
 
 # Install SynapseML-Internal .whl with AI functions library from blob storage:
-%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.10.0-spark3.4-6-0cb46b55-SNAPSHOT/synapseml_internal-1.0.10.0.dev1-py2.py3-none-any.whl
-```
-
-# [PySpark](#tab/pyspark)
-
-```python
-%%configure -f
-{
-    "name": "synapseml",
-    "conf": {
-        "spark.jars.packages": "com.microsoft.azure:synapseml_2.12:1.0.10-spark3.5,com.microsoft.azure:synapseml-internal_2.12:1.0.10.0-spark3.5",
-        "spark.jars.repositories": "https://mmlspark.azureedge.net/maven",
-        "spark.jars.excludes": "org.scala-lang:scala-reflect,org.apache.spark:spark-tags_2.12,org.scalactic:scalactic_2.12,org.scalatest:scalatest_2.12,com.fasterxml.jackson.core:jackson-databind",
-        "spark.yarn.user.classpath.first": "true",
-        "spark.sql.parquet.enableVectorizedReader": "false"
-    }
-}
+%pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12.2-spark3.5/synapseml_internal-1.0.12.2.dev1-py2.py3-none-any.whl 2>/dev/null
 ```
 
 ---
@@ -104,9 +93,6 @@ tqdm.pandas()
 
 ```python
 from synapse.ml.spark.aifunc.DataFrameExtensions import AIFunctions
-from synapse.ml.services.openai import OpenAIDefaults
-defaults = OpenAIDefaults()
-defaults.set_deployment_name("gpt-35-turbo-0125")
 ```
 
 ---

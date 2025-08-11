@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 03/18/2025
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
@@ -37,8 +37,6 @@ This article shows you how to add a lakehouse as a destination to an eventstream
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Access to the workspace where your lakehouse is located with Contributor or higher permissions.
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add a lakehouse as a destination
 
@@ -116,8 +114,6 @@ Before you start, you must complete the following prerequisites:
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Get access to a workspace with Contributor or above permissions where your lakehouse is located.
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## Add a lakehouse as a destination
 

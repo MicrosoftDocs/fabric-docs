@@ -4,15 +4,12 @@ description: This article describes how to set up continuous integration and del
 author: linda33wj
 ms.author: jingwang
 ms.topic: how-to
-ms.date: 03/20/2025
+ms.date: 07/16/2025
 ---
 
 # CI/CD for mirrored databases in Fabric
 
 This article explains how Git integration and deployment pipelines work for mirrored databases in Microsoft Fabric. Learn how to set up a connection to your repository, manage your mirrored databases through Git, and deploy them across different environments.
-
-> [!NOTE]
-> This CI/CD instruction doesn't apply to mirrored database from Azure Databricks.
 
 ## Mirrored database Git integration
 
@@ -36,7 +33,7 @@ When you commit the mirrored database item to the Git repo, a folder is created 
 :::image type="content" source="media/mirrored-database-cicd/representation-in-git.png" alt-text="Screenshot of mirrored database representation in Git.":::
 
 > [!NOTE]
-> Only the mirrored database item is tracked in Git. SQL Analytics endpoint, default semantic model, and other child items (for example, created views) aren't tracked.
+> Only the mirrored database item is tracked in Git. The SQL analytics endpoint, views, and other child items aren't tracked.
 
 ## Mirrored database in deployment pipelines
 
@@ -50,7 +47,7 @@ Take the following steps to deploy your mirrored database using deployment pipel
 
 3. Select, view, and compare items including mirrored database between different stages.
 
-4. Select **Deploy** to deploy your mirrored database across the stages. You may see warning saying the item (SQL analytics endpoint) is not supported, ignore and continue.
+4. Select **Deploy** to deploy your mirrored database across the stages. You may see warning saying the item (SQL analytics endpoint) is not supported, ignore and continue
 
    :::image type="content" source="media/mirrored-database-cicd/deployment-pipeline.png" alt-text="Screenshot of deployment pipeline for mirrored database.":::
 

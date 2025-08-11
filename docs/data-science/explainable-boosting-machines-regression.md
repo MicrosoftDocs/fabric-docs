@@ -1,8 +1,8 @@
 ---
 title: Train regression models using explainable boosting machines (preview)
 description: Learn how to train regression models using explainable boosting machines
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: midesa
 reviewer: midesa
 ms.topic: how-to

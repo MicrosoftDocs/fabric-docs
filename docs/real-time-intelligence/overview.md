@@ -2,8 +2,8 @@
 title: What is Real-Time Intelligence
 description: Learn about Real-Time Intelligence in Microsoft Fabric.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: overview
 ms.custom:
 ms.date: 11/19/2024
@@ -24,7 +24,7 @@ organization-wide data catalog.
 
 Once you seamlessly connect any stream of data, the entire SaaS solution
 becomes accessible. Real-Time Intelligence handles data ingestion,
-transformation, storage, analytics, visualization, tracking, AI, and
+transformation, storage, modeling, analytics, visualization, tracking, AI, and
 real-time actions. Your data remains protected, governed, and integrated
 across your organization, seamlessly aligning with all Fabric offerings.
 Real-Time Intelligence transforms your data into a dynamic, actionable
@@ -34,7 +34,7 @@ resource that drives value across the entire organization.
 
 Real-Time Intelligence can be used for data analysis, immediate visual
 insights, centralization of data in motion for an organization, actions
-on data, efficient querying, transformation, and storage of large
+on data, efficient querying, transformation, modeling, and storage of large
 volumes of structured or unstructured data. Whether you need to evaluate
 data from IoT systems, system logs, free text, semi structured data, or
 contribute data for consumption by others in your organization,
@@ -131,9 +131,17 @@ semi-structured, and unstructured data. The language is expressive, easy
 to read and understand the query intent, and optimized for authoring
 experiences.
 
+### Model data
+
+Digital twin builder (preview) is a low-code/no-code experience for modeling your data as an ontology that digitally represents your physical environment. Modeling your assets and processes can help optimize physical operations using data, in a way that's accessible to operational decision-makers.
+
+With digital twin builder, you can map data into your ontology from a variety of source systems, including Fabric OneLake, and define system-wide or site-wide semantic relationships to contextualize your data. Digital twin builder includes out-of-the-box visualization and query experiences to explore your modeled data, and uses the power of Microsoft Fabric to analyze large data sets like time series data and maintenance records that might stretch back over days, weeks, or months.  
+
+Digital twin builder data can also be connected to Power BI or Real-Time dashboards for additional visualization and customized reporting of your modeled data.
+
 ### Visualize data insights
 
-These data insights can be visualized in KQL querysets, Real-Time
+Data insights can be visualized in KQL querysets, Real-Time
 dashboards and Power BI reports, with seconds from data ingestion to
 insights. Visualization options range from no-code to fully specialized
 experiences, giving value to both the novice and expert insights

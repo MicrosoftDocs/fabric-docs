@@ -1,25 +1,27 @@
 ---
-title: "Deploy a SQL database via REST API"
-description: Learn how to deploy a new SQL database in Microsoft Fabric using REST API.
+title: "Create a SQL database with the REST API"
+description: Learn how to deploy a new SQL database in Microsoft Fabric with the REST API.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: dlevy
-ms.date: 03/03/2025
+ms.date: 07/02/2025
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor
 ---
-# Create a SQL database in Microsoft Fabric via REST API
+# Create a SQL database with the REST API for Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-The Fabric platform has a rich set of REST APIs that can be used to deploy and manage resources. Those APIs can be used to deploy Fabric SQL databases. This article and sample script demonstrate a basic PowerShell script that can be used to deploy a Fabric SQL database and add data to it.
+You can use the [Fabric REST API](/rest/api/fabric/articles/) to deploy and manage resources, include SQL databases in Fabric. 
+
+This article and sample script demonstrate how to use PowerShell to call the Fabric REST API to deploy a Fabric SQL database.
 
 ## Prerequisites
 
 - You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
-- Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
-- [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
-- You must be a member of the Admin or Member roles for the workspace to create a SQL database.
+    - Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md). If you don't, you receive an error message "SQL database failed to create."
+- You can use an existing workspace or [create a new Fabric workspace](../../fundamentals/workspaces.md).
+- You must be a member of the [Admin or Member roles for the workspace](../../fundamentals/give-access-workspaces.md) to create a SQL database. 
 - Install the golang version of [SQLCMD](/sql/tools/sqlcmd/sqlcmd-utility). Run `winget install sqlcmd` on Windows to install. For other operating systems, see [aka.ms/go-sqlcmd](https://aka.ms/go-sqlcmd).
 - PowerShell 5.1 or [PowerShell 7.4 and higher](/powershell/scripting/install/installing-powershell-on-windows)
 - The Az PowerShell module. Run `Install-Module az` in PowerShell to install.
@@ -238,3 +240,4 @@ Write-Output 'Cleaned up: '$databaseProperties.DatabaseName
 
 - [Microsoft Fabric REST API references - Microsoft Fabric REST APIs](/rest/api/fabric/articles/)
 - [Identity support for logging into the Microsoft Fabric - Microsoft Fabric REST APIs](/rest/api/fabric/articles/identity-support)
+- [Options to create a SQL database in the Fabric portal](create-options.md)

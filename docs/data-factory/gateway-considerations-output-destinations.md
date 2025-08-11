@@ -1,22 +1,28 @@
 ---
-title: On-premise and VNET data gateway considerations for data destinations in Dataflow Gen2
+title: On-premises and VNET data gateway considerations for data destinations in Dataflow Gen2
 description: Describes multiple considerations and limitations when using a data gateway and the data destination feature inside of Dataflow Gen2
-author: nikkiwaghani
-ms.author: nikkiwaghani
+author: luitwieler
+ms.author: jeluitwi
 ms.topic: conceptual
-ms.custom:
-ms.date: 04/30/2025
+ms.custom: dataflows, sfi-image-nochange
+ms.date: 06/05/2025
 ---
 
-# On-premise and VNET data gateway considerations for data destinations in Dataflow Gen2
+# On-premises and VNET data gateway considerations for data destinations in Dataflow Gen2
 
 This article lists the limitations and considerations when using the Data Gateway with data destinations scenarios in Dataflow Gen2.
 
 ## Network issues with port 1433 when referencing queries
 
-When using Microsoft Fabric Dataflow Gen2 with an on-premises data gateway, you might encounter issues with the dataflow refresh process. The underlying problem occurs when the gateway is unable to connect to the dataflow staging Lakehouse in order to read the data before using it in the query that referenced the staged data. This issue is no longer a problem if you have a single query that isn't referencing staged data and writes to a data destination.
+When using Microsoft Fabric Dataflow Gen2 with an on-premises data gateway, you might encounter issues with the dataflow refresh process. The underlying problem occurs when the gateway is unable to connect to the dataflow staging Lakehouse in order to read the data before using it in the query that referenced the staged data. Typically, this issue arises when the firewall rules on the gateway server or the customer's proxy servers aren't configured to allow outbound traffic to the required endpoints over port 1433.
 
-During the overall dataflow refresh, the tables refresh can show as "Succeeded," but the activities section shows as *"Failed"*. The error details for the activity `WriteToDatabaseTableFrom_...` indicate the following error:
+In the following scenarios we expect the dataflow refresh on the gateway to succeed without access to port 1433:
+
+- When the dataflow contains a single query that writes to a Lakehouse, and no other queries reference that query.
+- When Fast Copy is disabled.
+- When the dataflow contains multiple queries, but none of them reference each other.
+
+However, in other scenarios, such as when multiple queries reference each other, the dataflow refresh might fail due to network issues related to port 1433. This failure occurs because the dataflow engine needs to read data from the staging Lakehouse using the TDS protocol over port 1433. During the overall dataflow refresh, the tables refresh can show as "Succeeded," but the activities section shows as *"Failed"*. The error details for the activity `WriteToDatabaseTableFrom_...` indicate the following error:
 
 ```Mashup Exception Error: Couldn't refresh the entity because of an issue with the mashup document MashupException.Error: Microsoft SQL: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - An attempt was made to access a socket in a way forbidden by its access permissions.) Details: DataSourceKind = Lakehouse;DataSourcePath = Lakehouse;Message = A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - An attempt was made to access a socket in a way forbidden by its access permissions.);ErrorCode = -2146232060;Number = 10013```
 

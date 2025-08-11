@@ -1,8 +1,8 @@
 ---
 title: User experience experiments admin settings
 description: Learn how to configure user experience experiments admin settings in Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 ms.custom:
   - tenant-setting

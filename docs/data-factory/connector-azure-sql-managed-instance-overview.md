@@ -5,23 +5,22 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom: template-how-to
+ms.custom:
+  - template-how-to
+  - connectors
 ---
 
 # Azure SQL Managed Instance connector overview
 
 The Azure SQL Managed Instance connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Data pipeline
+## Supported capabilities
 
-The Azure SQL Managed Instance connector supports the following capabilities in Data pipeline:
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Data pipeline**<br>- [Copy activity](connector-azure-sql-managed-instance-copy-activity.md) (source/destination) <br>- Lookup activity<br>- Get Metadata activity <br>- Script activity<br>- Stored procedure activity |None<br> On-premises<br> Virtual network |Basic<br> Organizational account<br> Service principal |
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- CDC<br>- Append<br>- Merge |None<br> On-premises<br> Virtual network |Basic<br> Organizational account<br> Service principal |
 
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | --- |
-| **Copy activity (source/destination)** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
-| **Lookup activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
-| **GetMetadata activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
-| **Script activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
-| **Stored procedure activity** | None <br> On-premises | Basic<br>Organizational account<br>Service principal |
+## Related content
 
 To learn more about the copy activity configuration for Azure SQL Managed Instance in Data pipeline, go to [Configure in a data pipeline copy activity](connector-azure-sql-managed-instance-copy-activity.md).

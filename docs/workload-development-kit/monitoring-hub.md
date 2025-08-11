@@ -4,7 +4,7 @@ description: Learn how to use the monitoring hub in the Microsoft Fabric Workloa
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 05/21/2024
 ---
 

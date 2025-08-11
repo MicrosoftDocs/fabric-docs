@@ -5,6 +5,7 @@ author: ptyx507x
 ms.topic: conceptual
 ms.date: 9/16/2024
 ms.author: miescobar
+ms.custom: connectors
 ---
 
 # Providing user documentation for your custom connector

@@ -1,8 +1,8 @@
 ---
 title: Microsoft Fabric quotas
 description: Learn how to view and manage your Microsoft Fabric quota which sets the number of Capacity Units (CUs) your subscribed capacity has.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: how-to
 ms.date: 04/06/2025
 
@@ -20,6 +20,8 @@ This article explains how to view and increase your quotas, using the Azure port
 * To view your Fabric quota, you need an Azure account with the contributor role, or another role that includes *contributor* access.
 
 * To manage your Fabric quota, you need the permissions listed in [Quota Request Operator](/azure/role-based-access-control/built-in-roles/management-and-governance#quota-request-operator)
+  
+* Before provisioning your first capacity or if your quota is 0, register the Microsoft.Fabric resource provider using the [Azure Resource Provider instructions](/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider)
 
 ## View your Fabric CU quota
 

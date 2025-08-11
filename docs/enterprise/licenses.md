@@ -1,8 +1,8 @@
 ---
 title: Microsoft Fabric concepts
 description: Understand Microsoft Fabric concepts such as tenants, capacities, and SKUs.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
 ms.date: 11/28/2024
@@ -58,7 +58,7 @@ The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU)
 | F1024 | 1024 | P5/A8 | 128 |
 | F2048 | 2048 | - | 256 |
 
-<sup>*</sup>SKUs that are smaller than F64 require a Pro or Premium Per User (PPU) license, or a Power BI individual trial to consume Power BI content.
+<sup>*</sup>In the Power BI [Embed for your organization](/power-bi/developer/embedded/embedded-analytics-power-bi#embed-for-your-customers) scenario, and Embedding in Microsoft 365 apps such as Sharepoint online and PowerPoint, SKUs smaller than F64 require a Pro or Premium Per User (PPU) license, or a Power BI individual trial to consume Power BI content.
 
 ### Workspace
 

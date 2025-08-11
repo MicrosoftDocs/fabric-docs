@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
@@ -96,8 +96,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 ## Configure and connect to MySQL DB (CDC) 
 
 [!INCLUDE [mysql-database-cdc-connector](./includes/mysql-database-cdc-source-connector.md)]
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## View updated eventstream
 1. You see the MySQL DB (CDC) source added to your eventstream in **Edit mode**.

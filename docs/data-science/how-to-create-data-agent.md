@@ -1,14 +1,15 @@
 ---
 title: Create a Fabric data agent (preview)
 description: Learn how to create a Fabric data agent.
-author: fbsolo-ms1
-ms.author: amjafari
-ms.reviewer: franksolomon
+ms.author: scottpolly
+author: s-polly
+ms.reviewer: amjafari
 reviewer: midesa
 ms.service: fabric
 ms.subservice: data-science
 ms.topic: how-to #Don't change
 ms.date: 03/25/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 
 #customer intent: As an Analyst, I want to create a Fabric data agent that relies on generative AI, that my colleagues and I can use to have conversations about our data.
@@ -17,19 +18,11 @@ ms.collection: ce-skilling-ai-copilot
 
 # Create a Fabric data agent (preview)
 
-With a data agent in Microsoft Fabric, you can create conversational AI experiences that answer questions about data stored in lakehouses, warehouses, Power BI semantic models, and KQL databases in Fabric. Your data insights become accessible. Your colleagues can ask questions in plain English and receive data-driven answers, even if they aren’t AI experts or deeply familiar with the data.
+With a data agent in Microsoft Fabric, you can create conversational AI experiences that answer questions about data stored in lakehouses, warehouses, Power BI semantic models, and KQL databases in Fabric. Your data insights become accessible. Your colleagues can ask questions in plain English and receive data-driven answers, even if they aren't AI experts or deeply familiar with the data.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-## Prerequisites
-
-- [A paid F2 or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
-- [Fabric data agent tenant settings](./data-agent-tenant-settings.md) is enabled.
-- [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- At least one of these: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
-- [Power BI semantic models via XMLA endpoints tenant switch](./data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
+[!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
 ## End-to-End Flow for creating and consuming Fabric data agents
 
@@ -90,7 +83,7 @@ However, questions like these are out of scope:
 - "Why is our factory productivity lower in Q2 2024?"
 - "What is the root cause of our sales spike?"
 
-These questions are currently out of scope because they require complex reasoning, correlation analysis, or external factors not directly available in the database. The Fabric data agent currently doesn't perform advanced analytics, machine learning, or causal inference. It simply retrieves and processes structured data based on the user’s query.
+These questions are currently out of scope because they require complex reasoning, correlation analysis, or external factors not directly available in the database. The Fabric data agent currently doesn't perform advanced analytics, machine learning, or causal inference. It simply retrieves and processes structured data based on the user's query.
 
 When you ask a question, the Fabric data agent uses the Azure OpenAI Assistant API to process the request. The flow operates this way:
 
@@ -130,14 +123,7 @@ The agent presents both the result and the intermediate steps that it took to re
 
 Additionally, the Fabric data agent provides the generated code used to query the corresponding data source, offering further insight into how the response was constructed.
 
-These queries are designed exclusively for querying data. Operations that involve
-
-- data creation
-- data updates
-- data deletions
-- any type of data change
-
-aren't allowed, to protect the integrity of your data.
+These queries are designed exclusively for querying data. Operations that involve data creation, data updates, data deletions, any type of data change aren't allowed, to protect the integrity of your data.
 
 At any point, you can select the **Clear chat** button to clear the chat, as shown in the following screenshot:
 
@@ -193,7 +179,7 @@ You can enhance the accuracy of the Fabric data agent responses when you provide
 
 When you provide the AI with sample query/question pairs, it references these examples when it answers future questions. Matching new queries to the most relevant examples helps the AI incorporate business-specific logic, and respond effectively to commonly asked questions. This functionality enables fine-tuning for individual data sources, and ensures generation of more accurate SQL or KQL queries.
 
-Power BI semantic model data don't support adding sample query/question pairs at this time. However, for supported data sources such as lakehouse, warehouse, and KQL databases, providing more examples can significantly improve the AI’s ability to generate precise queries when its default performance needs adjustment.
+Power BI semantic model data don't support adding sample query/question pairs at this time. However, for supported data sources such as lakehouse, warehouse, and KQL databases, providing more examples can significantly improve the AI's ability to generate precise queries when its default performance needs adjustment.
 
 > [!TIP]
 > A diverse set of example queries enhances the ability of a Fabric data agent to generate accurate and relevant SQL/KQL queries.
@@ -217,9 +203,10 @@ After you test the performance of your Fabric data agent across various question
 
 This step opens a window that asks for a description of the Fabric data agent. Here, provide a detailed description of what the Fabric data agent does. These details guide your colleagues about the functionality of the Fabric data agent, and assist other AI systems/orchestrators to effectively invoke the Fabric data agent.
 
-After you publish the Fabric data agent, you'll have two versions of it. One version is the current draft version, which you can continue to refine and improve. The second version is the published version, which you can share with your colleagues who want to query the Fabric data agent to get answers to their questions. You can incorporate feedback from your colleagues into your current draft version as you develop it, to further enhance the Fabric data agent’s performance.
+After you publish the Fabric data agent, you'll have two versions of it. One version is the current draft version, which you can continue to refine and improve. The second version is the published version, which you can share with your colleagues who want to query the Fabric data agent to get answers to their questions. You can incorporate feedback from your colleagues into your current draft version as you develop it, to further enhance the Fabric data agent's performance.
 
 ## Related content
 
 - [Data agent concept](concept-data-agent.md)
-- [Data agent scenario](data-agent-scenario.md)
+- [Data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
+

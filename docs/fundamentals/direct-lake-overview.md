@@ -1,9 +1,8 @@
 ---
 title: "Direct Lake overview"
 description: "Learn about Direct Lake storage mode in Microsoft Fabric and when you should use it."
-author: peter-myers
-ms.author: phseamar
-ms.reviewer: davidi
+author: JulCsc
+ms.author: juliacawthra
 ms.date: 04/25/2025
 ms.topic: conceptual
 ms.custom: fabric-cat
@@ -77,7 +76,7 @@ The following table compares Direct Lake storage mode to Import and DirectQuery 
 | Calculated tables |Yes – but calculations can't refer to columns of tables in Direct Lake mode. |No – except [calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters), which implicitly create calculated tables | Yes | No – calculated tables use Import storage mode even when they refer to other tables in DirectQuery mode |
 | Calculated columns |Yes – but calculations can't refer to columns of tables in Direct Lake mode.| No  | Yes | Yes |
 | Hybrid tables | No |No | Yes | Yes |
-| Model table partitions | No – however [partitioning](direct-lake-understand-storage.md#table-partitioning) can be done at the Delta table level | No – however [partitioning](direct-lake-understand-storage.md#table-partitioning) can be done at the Delta table level | Yes – either automatically created by incremental refresh, or [manually created](/power-bi/connect-data/incremental-refresh-xmla#partitions) by using the XMLA endpoint | No  |
+| Model table partitions | No – however partitioning can be done at the Delta table level | No – however partitioning can be done at the Delta table level | Yes – either automatically created by incremental refresh, or [manually created](/power-bi/connect-data/incremental-refresh-xmla#partitions) by using the XMLA endpoint | No  |
 | User-defined aggregations | No |No  | Yes – Import aggregation tables on DirectQuery tables are supported | Yes |
 | SQL analytics endpoint object-level security or column-level security | No |Yes – but might produce errors when permission is denied | Yes – but must duplicate permissions with semantic model object-level security | Yes – but queries might produce errors when permission is denied |
 | SQL analytics endpoint row-level security (RLS) |No | Yes – but queries will fall back to DirectQuery mode | Yes – but must duplicate permissions with semantic model RLS | Yes |
@@ -235,7 +234,7 @@ Direct Lake semantic models require a [Fabric capacity license](../enterprise/li
 
 <sup>1</sup> For Direct Lake semantic models, _Max Memory_ represents the upper memory resource limit for how much data can be paged in. For this reason, it's not a guardrail because exceeding it doesn't result in a fallback to DirectQuery mode; however, it can have a performance impact if the amount of data is large enough to cause excessive paging in and out of the model data from the OneLake data.
 
-If exceeded, the _Max model size on disk/OneLake_ causes all queries to the semantic model to fall back to DirectQuery mode. All other guardrails presented in the table are evaluated per query. It's therefore important that you [optimize your Delta tables](direct-lake-understand-storage.md#delta-table-optimization) and [Direct Lake semantic model](direct-lake-develop.md#develop-direct-lake-semantic-models) to avoid having to unnecessarily scale up to a higher Fabric SKU.
+If exceeded, the _Max model size on disk/OneLake_ causes all queries to the semantic model to fall back to DirectQuery mode. All other guardrails presented in the table are evaluated per query. It's therefore important that you [optimize your Delta tables](direct-lake-understand-storage.md) and [Direct Lake semantic model](direct-lake-develop.md#develop-direct-lake-semantic-models) to avoid having to unnecessarily scale up to a higher Fabric SKU.
 
 Additionally, _Capacity unit_ and _Max memory per query limits_ apply to Direct Lake semantic models. For more information, see [Capacities and SKUs](/power-bi/enterprise/service-premium-what-is#capacities-and-skus).
 
@@ -247,7 +246,7 @@ Direct Lake semantic models present some considerations and limitations.
 > The capabilities and features of Direct Lake semantic models are evolving rapidly. Be sure to check back periodically to review the latest list of considerations and limitations.
 
 
-|Consideration / limitation  |Direct Lake on OneLake  |Direct Lake on SQL endpoints  |
+|Consideration / limitation  |Direct Lake on OneLake  |Direct Lake on SQL (analytics endpoint)  |
 |---------|---------|---------|
 |When the SQL analytics endpoint enforces row-level security, DAX queries are processed differently depending on the type of Direct Lake mode employed. <br><br>When Direct Lake on OneLake is employed, queries will succeed, and SQL based RLS is not applied. Direct Lake on OneLake requires the user has access to the files in OneLake, which doesn’t observe SQL based RLS. |Queries will succeed.         |Yes, unless fallback is disabled in which case queries will fail.         |
 |If a table in the semantic model is based on a (non-materialized) SQL view, DAX queries are processed differently depending on the type of Direct Lake mode employed.<br><br>Direct Lake on SQL endpoints will fallback to DirectQuery in this case.<br><br>It isn't supported to create a Direct Lake on OneLake table based on a non-materialized SQL view. You can instead use a lakehouse materialized view because Delta tables are created. Alternatively, use a different storage mode such as Import or DirectLake for tables based on non-materialized SQL views. |Not applicable         |Yes, unless fallback is disabled in which case queries will fail.         |
@@ -256,7 +255,7 @@ Direct Lake semantic models present some considerations and limitations.
 |Direct Lake storage mode tables don't support complex Delta table column types. Binary and GUID semantic types are also unsupported. You must convert these data types into strings or other supported data types.     |Not supported         |Not supported         |
 |Table relationships require the data types of related columns to match.     |Yes |Yes|
 |One-side columns of relationships must contain unique values. Queries fail if duplicate values are detected in a one-side column.     |Yes |Yes|
-|[Auto data/time intelligence in Power BI Desktop](/power-bi/transform-model/desktop-auto-date-time) isn't supported. [Marking your own date table as a date table](/power-bi/transform-model/desktop-date-tables) is supported.     |Yes |Yes|
+|[Auto date/time intelligence in Power BI Desktop](/power-bi/transform-model/desktop-auto-date-time) to create relationships using only the date part of a datetime column. Note: [Marking your own date table as a date table](/power-bi/transform-model/desktop-date-tables) and creating relationships using date columns is supported.      |Supported |Not supported|
 |The length of string column values is limited to 32,764 Unicode characters.     |Yes |Yes|
 |Non-numeric floating point values, such as *NaN* (not a number), aren't supported.     |Yes |Yes|
 |[Publish to web from Power BI](/power-bi/collaborate-share/service-publish-to-web) using a service principal is only supported when using a [fixed identity for the Direct Lake semantic model](/fabric/fundamentals/direct-lake-manage).     |Yes |Yes|
@@ -265,16 +264,18 @@ Direct Lake semantic models present some considerations and limitations.
 |Your Fabric SKU determines the maximum available memory per Direct Lake semantic model for the capacity. When the limit is exceeded, queries to the semantic model might be slower due to excessive paging in and out of the model data.     |Yes |Yes|
 |Creating a Direct Lake semantic model in a workspace that is in a different region of the data source workspace isn't supported. For example, if the Lakehouse is in West Central US, then you can only create semantic models from this Lakehouse in the same region. A workaround is to create a Lakehouse in the other region's workspace and shortcut to the tables before creating the semantic model. To find what region you are in, see [find your Fabric home region](/fabric/admin/find-fabric-home-region).     |Yes |Yes|
 |Embedding reports requires a [V2 embed token](/power-bi/developer/embedded/generate-embed-token).     |Yes |Not supported|
-|Direct Lake doesn't support service principal profiles for authentication.     |Not supported |Yes|
-|Power BI Direct Lake semantic models can be created and queried by Service Principals and Viewer role membership with Service Principals is supported, but the default Direct Lake semantic models on lakehouse/warehouse don't support this scenario.     |Yes         |         |
-|Shortcuts in a lakehouse can be used as data sources for semantic model tables.     |Not supported during public preview         |Yes         |
+|Service principal profiles for authentication.     |Not supported |Not supported|
+|Power BI Direct Lake semantic models can be created and queried by Service Principals and Viewer role membership with Service Principals is supported, but the default Direct Lake semantic models on lakehouse/warehouse don't support this scenario.     |Yes         |Yes         |
+|Shortcuts in a lakehouse can be used as data sources for semantic model tables.     |Not supported during public preview         |Supported         |
+|Create Direct Lake models in personal workspaces (My Workspace).     |Not supported         |Not supported         |
+|Deployment pipeline rules to rebind data source.   |Not supported   |Supported   |
 
 
 ## Related content
 
 - [Develop Direct Lake semantic models](direct-lake-develop.md)
 - [Manage Direct Lake semantic models](direct-lake-manage.md)
-- [Understand storage for Direct Lake semantic models](direct-lake-understand-storage.md)
+- [Understand Direct Lake query performance](direct-lake-understand-storage.md)
 - [Create a lakehouse for Direct Lake](direct-lake-create-lakehouse.md)
 - [Analyze query processing for Direct Lake semantic models](direct-lake-analyze-query-processing.md)
 

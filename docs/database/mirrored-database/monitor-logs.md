@@ -4,7 +4,7 @@ description: View a set of Mirrored database operation logs that you can query i
 author: linda33wj
 ms.author: jingwang
 ms.topic: reference
-ms.date: 01/20/2025
+ms.date: 05/12/2025
 ---
 
 # Mirrored database operation logs (Preview)
@@ -13,12 +13,14 @@ Mirrored database operation logs are part of the [workspace monitoring](../../fu
 
 ## Mirrored database table execution logs
 
-Mirrored database table-level logs provide detailed information about the mirroring execution, complementing the glance view of [Mirrored Database monitoring](monitor.md). You can use those logs to:
+Mirrored database table-level logs provide detailed information about the mirroring execution, complementing the glance view of monitoring from the Fabric portal. You can use those logs to:
 
 - Understand the amount of data replicated over time for the mirrored databases/tables.
 - Track additions and removals of tables for mirroring.
 - Monitor the mirroring status and diagnose failures.
 - Measure the time and latency for initial snapshots and incremental data replication.
+
+Learn more about how to [use workspace monitoring](monitor.md#use-workspace-monitoring) to monitor your mirrored database.
 
 The following table describes the columns stored in the **MirroredDatabaseTableExecution** table:
 
@@ -54,9 +56,10 @@ The following table describes the columns stored in the **MirroredDatabaseTableE
 
 ## Sample queries
 
-You can find sample queries in the [fabric-samples](https://github.com/microsoft/fabric-samples) GitHub repository.
+You can find sample queries in the [fabric-samples](https://github.com/microsoft/fabric-samples/tree/main/workspace-monitoring/Mirrored%20database%20operations) GitHub repository.
 
 ## Related content
 
 * [What is workspace monitoring?](../../fundamentals/workspace-monitoring-overview.md)
 * [Enable monitoring in your workspace](../../fundamentals/enable-workspace-monitoring.md)
+* [Monitor Fabric mirrored database replication](monitor.md)

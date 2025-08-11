@@ -6,15 +6,16 @@ author: conxu-ms
 ms.author: conxu
 ms.topic: how-to
 ms.date: 10/01/2024
+ms.custom: pipelines
 ---
 
 # CI/CD for pipelines in Data Factory in Microsoft Fabric
 
-In Fabric Data Factory, continuous integration and continuous development (CI/CD) automates the integration, testing, and deployment of code changes to ensure efficient and reliable development.
+In Fabric Data Factory, CI/CD (continuous integration and continuous development) helps teams work faster and more reliably by automatically handling code changes—from testing to deployment.
 
-In Fabric, there are two features we currently support in collaboration with the Application Lifecycle Management (ALM) team: Git Integration and deployment pipelines. These features allow users to import/export workspace resources with individual updates.
+Right now, Fabric supports two key features for CI/CD, built in partnership with the Application Lifecycle Management (ALM) team: Git integration and deployment pipelines. These tools let you import and export workspace resources one at a time, so you can update only what you need.
 
-The Fabric Data Factory CI/CD solution deviates from the Azure Data Factory model where whole factory updates using ARM template export methodology is preferred. This change in methodology allows customers to selectively choose which pipelines to update without pausing the whole factory. Both Git integration (bring-your-own Git) and deployment pipelines (built-in CI/CD) use the concept of associated a single workspace with a single environment. You need to map out different workspaces to your different environments such as development, test, and production.
+Unlike Azure Data Factory, which typically updates the entire factory using ARM templates, Fabric’s approach gives you more control. You can update specific pipelines without pausing everything. Both Git integration (bring your own Git) and deployment pipelines (built-in CI/CD) link one workspace to one environment. So, you’ll want to set up separate workspaces for development, testing, and production.
 
 ## Why developers use CI/CD
 
@@ -47,7 +48,7 @@ There are a few key workflow essentials to understand when working with Git.
 - **Pull requests (PRs)**: PRs allow users to propose, review, and discuss changes before integration.
 - **Merging**: This occurs when changes are approved. Git integrates these changes, continuously updating the project.
 
-## Deployment pipelines for Git
+## Deployment pipelines
 
 Deployment pipelines are tightly integrated with Git. When a developer pushes code changes to the Git repository, it triggers the CI/CD pipeline. This integration ensures that the latest code changes are always tested and deployed automatically.
 
@@ -59,7 +60,7 @@ Deployment pipelines consist of multiple stages and jobs within each stage. Typi
 
 Deployment pipelines automate the entire process of building, testing, and deploying code. This automation reduces the risk of human error, speeds up the development process, and ensures code changes are consistently and reliably delivered to production.
 
-## Get started with Git integration for Data Factory pipelines
+## Get started with Git integration for pipelines
 
 Take the following steps to set up Git integration for your pipelines in Data Factory:
 

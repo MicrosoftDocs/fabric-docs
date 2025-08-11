@@ -1,10 +1,10 @@
 ---
 title: Azure IoT Hub connector for Fabric event streams
-description: The include files has the common content for configuring an Azure IoT Hub connector for Fabric event streams and Real-Time hub. 
+description: The include files has the common content for configuring an Azure IoT Hub connector for Fabric event streams and Real-Time hub.
 ms.author: xujiang1
 author: xujxu
 ms.topic: include
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
 ---
 
@@ -19,7 +19,7 @@ ms.date: 11/18/2024
 
     :::image type="content" source="./media/azure-iot-hub-source-connector/iot-hub-name.png" alt-text="Screenshot that shows the connection settings for the IoT hub with the name of the IoT hub." :::        
 1. In the **Connection credentials** section, do these steps:
-    1. If there's an existing connection, select it from the drop-down list. If not, confirm that **Create new connection** is selected for this option.
+    1. If there's an existing connection, select it from the dropdown list. If not, confirm that **Create new connection** is selected for this option.
     1. For **Connection name**, enter a name for the connection to the IoT hub.
     1. For **Authentication method**, confirm that **Shared Access Key** is selected.
     1. For **Shared Access Key Name**, enter the name of the shared access key. 

@@ -1,8 +1,8 @@
 ---
 title: Automate Variable library  APIs
 description: Learn how to automate Variable libraries in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
 ms.date: 04/04/2025

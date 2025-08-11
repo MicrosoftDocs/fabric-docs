@@ -1,8 +1,8 @@
 ---
 title: Q&A admin settings
 description: Learn how to configure Q&A admin settings in Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 
 ms.custom:

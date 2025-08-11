@@ -1,12 +1,13 @@
 ---
 title: Set up your Azure Databricks connection
 description: This article provides information about how to create an Azure Databricks connection in Microsoft Fabric.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 04/07/2025
 ms.custom:
   - template-how-to
+  - connectors
 ---
 
 # Set up your Azure Databricks connection
@@ -20,7 +21,7 @@ The Azure Databricks connector supports the following authentication types for c
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Username/Password| n/a | √ |
-|Personal Access Token| n/a | √ |
+|Personal Access Token| √ | √ |
 |Microsoft Entra ID| n/a | √ |
 
 ## Set up your connection in Dataflow Gen2
@@ -31,7 +32,3 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 - To connect to the Azure Databricks connector from Power Query, go to [Connect to Databricks data from Power Query Online](/power-query/connectors/databricks-azure#connect-to-databricks-data-from-power-query-online).
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
-
-## Set up your connection in a data pipeline
-
-Data Factory in Microsoft Fabric doesn't currently support Azure Databricks in data pipelines.

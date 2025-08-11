@@ -5,14 +5,14 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 07/22/2025
 ---
 
 # Explore Fabric events in Fabric Real-Time hub
 
 This article describes columns on the **Fabric events** page and actions available for each event. 
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-menu.png" alt-text="Screenshot that shows the Real-Time hub Fabric events page." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-menu.png":::
+:::image type="content" source="./media/explore-fabric-events/fabric-events-page.png" alt-text="Screenshot that shows the Real-Time hub Fabric events page." lightbox="./media/explore-fabric-events/fabric-events-page.png":::
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
@@ -25,7 +25,7 @@ Fabric events have the following columns:
 | Name | Name of event type group. Currently, only **Fabric workspace item events** are supported.|
 | Description | Description of event type group. |
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-columns.png" alt-text="Screenshot that shows the selection of columns on the Fabric events page." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-columns.png":::
+:::image type="content" source="./media/explore-fabric-events/columns.png" alt-text="Screenshot that shows the selection of columns on the Fabric events page." lightbox="./media/explore-fabric-events/columns.png":::
 
 ## Actions
 
@@ -36,7 +36,7 @@ Here are the actions available on each event type group. When you move the mouse
 | Create eventstream | This action creates an eventstream on the selected event type group with all Event types selected. For more information, see [Get Fabric workspace item events](create-streams-fabric-workspace-item-events.md). |
 | Set alert | This action sets an alert on the selected event type group. For more information, see [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md). |
 
-:::image type="content" source="./media/explore-data-streams/real-time-hub-fabric-events-actions.png" alt-text="Screenshot that shows the Real-Time hub Fabric events page with actions highlighted." lightbox="./media/explore-data-streams/real-time-hub-fabric-events-actions.png":::
+:::image type="content" source="./media/explore-fabric-events/actions.png" alt-text="Screenshot that shows the actions on the Fabric events page." lightbox="./media/explore-fabric-events/actions.png":::
 
 ## Related content
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md)

@@ -3,11 +3,12 @@ title: Functions activity
 description: Learn how to add a Functions activity to a pipeline and use it to run Azure Functions.
 ms.reviewer: shaween18
 ms.author: abnarain
-author: nabhishek
+author: ssindhub
 ms.topic: how-to
-ms.custom:
-  - Fabcon-2024
-ms.date: 09/30/2024
+ms.custom: 
+  - pipelines
+  - Build-2025
+ms.date: 05/21/2024
 ---
 
 # Use the Functions activity to run Fabric user data functions and Azure Functions
@@ -57,6 +58,18 @@ Under the **Settings** tab, you can choose the **Fabric user data functions** op
 Under the **Settings** tab, you can choose the **Azure function** option to run your functions. You can choose either an existing or create a new **Azure Function connection**, provide a **Function relative URL** that points to the relative path to the Azure App function within the Azure Function connection, and an HTTP **Method** to be submitted to the URL. You can also specify as many additional **Headers** as required for the function you're executing.
 
 :::image type="content" source="media/functions-activity/azure-function-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Function activity.":::
+
+## Using On-premises or VNET data gateway
+When creating a new Fabric user data function connection or Azure function connection, you can now choose to use either an on-premises data gateway (OPDG) or a VNET data gateway. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md).
+
+If you would like to use a VNET gateway, refer to [how to create a VNET data gateway](/data-integration/vnet/create-data-gateways).
+
+Once you have successfully created and configured your gateway, it should appear under the Data Gateway dropdown in the connection dialog.
+
+:::image type="content" source="media/functions-activity/create-new-connection-with-data-gateway-user-data-function.png" alt-text="Screenshot showing the data gateway connection dialog for the User Data Function activity.":::
+
+:::image type="content" source="media/functions-activity/create-new-connection-with-data-gateway-azure-function.png" alt-text="Screenshot showing the data gateway connection dialog for the Azure Function activity.":::
+
 
 ## Save and run or schedule the pipeline
 

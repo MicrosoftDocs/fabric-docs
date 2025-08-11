@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: yexu
 author: dearandyxu
 ms.topic: how-to
-ms.custom:
+ms.custom: pipelines
 ms.date: 12/18/2024
 ---
 
@@ -46,6 +46,8 @@ Select the **Source** tab, and select an existing connection from the **Connecti
 :::image type="content" source="media/delete-data-activity/choose-delete-data-source-and-configure.png" alt-text="Screenshot showing the Delete data activity Source tab highlighted, and highlighting where to create a new connection.":::
 
 The example in the previous image shows a blob storage connection, but each connection type has its own configuration details specific to the data source selected.
+
+If you are using wildcard characters, allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder or file name has wildcard or this escape character inside.
 
 ## Supported data stores
 

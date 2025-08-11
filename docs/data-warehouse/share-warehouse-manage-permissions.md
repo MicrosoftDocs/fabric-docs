@@ -3,10 +3,11 @@ title: Share Your Warehouse and Manage Permissions
 description: Learn how to share your warehouse in Microsoft Fabric and manage its user permissions.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: mesrivas
-ms.date: 04/09/2025
+ms.reviewer: mesrivas, fresantos
+ms.date: 07/14/2025
 ms.topic: how-to
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
+ms.custom: sfi-image-nochange
 ---
 # Share your data and manage permissions
 
@@ -35,7 +36,7 @@ The following animated gif reviews the steps to select a warehouse to share, sel
 
    :::image type="content" source="media/share-warehouse-manage-permissions/recipient-open-shared-warehouse.png" alt-text="Screenshot showing the shared user's email notification of a shared warehouse." lightbox="media/share-warehouse-manage-permissions/recipient-open-shared-warehouse.png":::
 
-1. Depending on the level of access the shared recipient has been granted, the shared recipient is now able to connect to the [!INCLUDE [fabric-se](includes/fabric-se.md)], query the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], build reports, or read data through Spark.
+1. Depending on the level of access the shared recipient has been granted, the shared recipient is now able to connect to the [!INCLUDE [fabric-se](includes/fabric-se.md)], query the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], or read data through Spark.
 
 ## Fabric security roles
 
@@ -44,7 +45,7 @@ Here's more detail about each of the permissions provided:
 - **If no additional permissions are selected** - The shared recipient by default receives "Read" permission, which only allows the recipient to *connect* to the [!INCLUDE [fabric-se](includes/fabric-se.md)], the equivalent of CONNECT permissions in SQL Server. The shared recipient won't be able to query any table or view or execute any function or stored procedure unless they're provided access to objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using T-SQL [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true) statement.
 
    > [!TIP]
-   > **ReadData** (used by the warehouse for T-SQL permissions), **ReadAll** (used by OneLake and the SQL analytics endpoint), and **Build** (used by Power BI) are separate permissions that do not overlap.
+   > **ReadData** (used by the warehouse for T-SQL permissions) and **ReadAll** (used by OneLake and the SQL analytics endpoint) are separate permissions that do not overlap.
 
 - **"Read all data using SQL" is selected ("ReadData" permissions)** - The shared recipient can read all the tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in read-only mode. The shared recipient can also choose to copy the [!INCLUDE [fabric-se](includes/fabric-se.md)] provided and connect to a client tool to run these queries. **ReadData** is the equivalent of *db_datareader* role in SQL Server. If you want to further restrict and provide granular access to some objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], you can do this using T-SQL `GRANT`/`REVOKE`/`DENY` statements.
 
@@ -56,7 +57,10 @@ Here's more detail about each of the permissions provided:
 
    For example, a user with **ReadAll** permissions can query the data in `FactSale` with a Spark query in a new notebook.
 
-- **"Build reports on the default dataset" is selected ("Build" permissions)** - The shared recipient can build reports on top of the default semantic model that is connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] to create Power BI reports on this data from the OneLake catalog or Power BI Desktop. The **Build** checkbox is selected by default, but can be unchecked.
+- **Monitor** – Users with **Monitor** permission can query Dynamic Management Views (DMVs), such as `sys.dm_exec_requests`, query text, system connections, sessions, and Insights views. This permission is typically required for operational monitoring, troubleshooting, and performance analysis.
+
+- **Audit** – Users with **Audit** permission can enable, configure, and query audit logs. With this permission, users can access auditing data to review activity history, monitor compliance, and support security investigations.
+
 
 ## Manage permissions
 
@@ -77,10 +81,9 @@ The following table lists which permission each role has by default and whether 
 | Read | Admin, Member, Contributor, Viewer| Yes |
 | ReadData | Admin, Member, Contributor, Viewer | Yes |
 | ReadAll | Admin, Member, Contributor | Yes |
-| Build | Admin, Member, Contributor | Yes |
 | Write | Admin, Member, Contributor | No |
 | Monitor | Admin, Member, Contributor | N/A - can't be granted on its own |
-| Audit| Admin | N/A - can't be granted on its own |
+| Audit | Admin | N/A - can't be granted on its own |
 | Reshare | Admin, Member | N/A - can't be granted on its own |
 | Restore | Admin | No |
 
@@ -89,7 +92,6 @@ You can choose to add or remove permissions using **Manage permissions**:
 - **Remove access** removes all item permissions.
 - **Remove ReadData** removes the **ReadData** permissions.
 - **Remove ReadAll** removes **ReadAll** permissions.
-- **Remove Build** removes **Build** permissions on the corresponding default semantic model.
 
 :::image type="content" source="media/share-warehouse-manage-permissions/remove-readall-manage-permissions.png" alt-text="Screenshot showing a user removing the ReadAll permission of a shared recipient." lightbox="media/share-warehouse-manage-permissions/remove-readall-manage-permissions.png":::
 

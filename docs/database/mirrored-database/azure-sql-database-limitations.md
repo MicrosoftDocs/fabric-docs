@@ -3,8 +3,8 @@ title: "Limitations and Behaviors for Fabric Mirrored Databases From Azure SQL D
 description: A detailed list of limitations for mirrored databases from Azure SQL Database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: imotiwala, sbahadur, drskwier
-ms.date: 03/31/2025
+ms.reviewer: imotiwala, sbahadur, drskwier, ajayj
+ms.date: 06/03/2025
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -26,6 +26,8 @@ For troubleshooting, see:
   - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
 - `.dacpac` deployments to Azure SQL Database require the publish property `/p:DoNotAlterReplicatedObjects=False` to enable modifications to any mirrored tables. For more about publish settings available for `.dacpac` deployments, see the [SqlPackage publish documentation](/sql/tools/sqlpackage/sqlpackage-publish).
+
+- Azure SQL Database cannot be mirrored if [delayed transaction durability](/sql/relational-databases/logs/control-transaction-durability?view=azuresqldb-current&preserve-view=true) is enabled for the database.
 
 ## Permissions in the source database
 
@@ -120,4 +122,3 @@ For troubleshooting, see:
 ## Related content
 
 - [Monitor Fabric mirrored database replication](monitor.md)
-- [Model data in the default Power BI semantic model in Microsoft Fabric](/fabric/data-warehouse/model-default-power-bi-dataset)

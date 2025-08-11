@@ -1,8 +1,8 @@
 ---
 title: Mandatory label policy in Fabric and Power BI
 description: Learn how organizations can require users to apply sensitivity labels to items with a mandatory label policy in Fabric and Power BI.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.subservice: governance
 ms.topic: conceptual
@@ -73,7 +73,7 @@ Where:
 * Mandatory labeling in Fabric and Power BI covers most common scenarios, but there might be some less common flows that still allow a user to create or edit unlabeled content.
 * The mandatory label policy setting for Fabric and Power BI is independent of the mandatory label policy setting for files and email.
 * Mandatory labeling in Fabric and Power BI isn't supported for service principals and APIs. Service principals and APIs aren't subject to mandatory label policies.
-* Mandatory labeling in Fabric and Power BI isn't supported for [external guest users (B2B users)](/power-bi/enterprise/service-admin-azure-ad-b2b). B2B users aren't subject to mandatory label policies.
+* Mandatory labeling in Fabric and Power BI isn't supported for [external guest users (B2B users)](/fabric/enterprise/powerbi/service-admin-entra-b2b). B2B users aren't subject to mandatory label policies.
 
 ## Related content
 

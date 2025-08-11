@@ -3,8 +3,8 @@ title: "Source Control with Warehouse (Preview)"
 description: "Learn how to use source control with Microsoft Fabric Warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: salilkanade
-ms.date: 04/06/2025
+ms.reviewer: salilkanade, pvenkat
+ms.date: 07/16/2025
 ms.topic: conceptual
 ---
 
@@ -101,13 +101,15 @@ For more information about the Fabric deployment pipelines process, see [Introdu
     - Rename the new table to the name of the old table using [sp_rename](/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?view=fabric&preserve-view=true).
     - Modify the definition of the old table in the SQL database project in the *exact* same way. The SQL database project of the warehouse in source control and the live warehouse should now match.
 - Currently, do not create a Dataflow Gen2 with an output destination to the warehouse. Committing and updating from Git would be blocked by a new item named `DataflowsStagingWarehouse` that appears in the repository.
-- SQL analytics endpoint is not supported with Git integration.
+- Fabric Git integration does not support the SQL analytics endpoint item.
+- Cross item dependencies, item sequencing, and synchronization gaps between the SQL analytics endpoint and warehouse impact the "branching out to a new/existing workspace" and "switching to a different branch" workflows during development and continuous integration.
 
 #### Limitations for deployment pipelines
 
 - Currently, if you use `ALTER TABLE` to add a constraint or column in the database project, the table will be dropped and recreated when deploying, resulting in data loss.
 - Currently, do not create a Dataflow Gen2 with an output destination to the warehouse. Deployment would be blocked by a new item named `DataflowsStagingWarehouse` that appears in the deployment pipeline.
-- The SQL analytics endpoint is not supported in deployment pipelines.
+- Fabric Deployment pipelines do not support the SQL analytics endpoint item.
+- Cross item dependencies, item sequencing, and synchronization gaps between the SQL analytics endpoint and warehouse impact Fabric Deployment Pipelines workflows.
 
 ## Related content
 

@@ -4,7 +4,7 @@ description: "In this tutorial, learn how to create a Direct Lake semantic model
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: scbradl
-ms.date: 04/06/2025
+ms.date: 07/15/2025
 ms.topic: tutorial
 ---
 
@@ -29,13 +29,7 @@ In this task, learn how to create a Direct Lake semantic model based the `Wide W
 
 1. Open the `Wide World Importers` warehouse.
 
-1. Select the **Reporting** tab.
-
-   :::image type="content" source="media/tutorial-power-bi-report/select-reporting-ribbon.png" alt-text="Screenshot of the Fabric portal, highlighting the Reporting ribbon.":::
-
-1. On the **Reporting** ribbon, select **New semantic model**.
-
-   :::image type="content" source="media/tutorial-power-bi-report/reporting-ribbon-new-semantic-model.png" alt-text="Screenshot of the Reporting ribbon, highlighting the New semantic model option.":::
+1. Select **New semantic model**.
 
 1. In the **New semantic model** window, in the **Direct Lake semantic model name** box, enter `Sales Model`.
 

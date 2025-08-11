@@ -7,7 +7,8 @@ ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
-ms.date: 04/22/2025
+ms.date: 05/06/2025
+ms.update-cycle: 180-days
 ---
 
 # Microsoft Fabric trial capacity
@@ -21,7 +22,8 @@ With Fabric, you can:
 - Create analytics solutions using Fabric items
 
 > [!NOTE]
-> If you're ready to purchase Fabric, visit the [Purchase Fabric page](../enterprise/buy-subscription.md).
+> * If you're ready to purchase Fabric, visit the [Purchase Fabric page](../enterprise/buy-subscription.md).
+> * The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is a free, hands-on training designed for analysts working with Power BI and Microsoft Fabric. You can get hands-on experience on how to analyze data, build reports, using Fabric. It covers key concepts like working with lakehouses, creating reports, and analyzing data in the Fabric environment.
 
 ## Overview of the trial capacity
 

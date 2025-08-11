@@ -1,13 +1,14 @@
 ---
 title: Use the end-to-end AI samples
 description: Understand the capabilities of the Synapse Data Science experience and examples of how machine learning models can address your common business problems.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: amjafari
 reviewer: amhjf
 ms.topic: how-to
 ms.custom:
 ms.date: 04/24/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 

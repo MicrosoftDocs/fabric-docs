@@ -6,6 +6,7 @@ ms.author: abnarain
 author: abnarain
 ms.topic: how-to
 ms.date: 11/18/2024
+ms.custom: airflows, sfi-image-nochange
 ---
 
 # Use Azure OpenAI to turn whiteboard sketches into Apache Airflow DAGs

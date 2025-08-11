@@ -68,8 +68,6 @@ items:
     href: service-admin-portal-users.md
   - name: View audit logs
     href: service-admin-portal-audit-logs.md
-  - name: View information protection metrics
-    href: service-admin-portal-protection-metrics.md
   - name: View refresh summary
     href: service-admin-portal-refresh-summary.md
   - name: View usage metrics
@@ -153,6 +151,8 @@ items:
       href: service-admin-portal-dataset-security.md
     - name: Advanced networking 
       href: service-admin-portal-advanced-networking.md
+    - name: Encryption 
+      href: service-admin-portal-encryption.md
     - name: Metrics settings
       href: service-admin-portal-goals-settings.md
     - name: User experience experiments
