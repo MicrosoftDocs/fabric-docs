@@ -833,7 +833,7 @@
         href: dataflows-gen2-monitor.md
       - name: Dataflow Gen2 refresh
         href: dataflow-gen2-refresh.md
-      - name: Public parameters in Dataflow Gen2 (Preview)
+      - name: Public parameters in Dataflow Gen2
         href: dataflow-parameters.md
       - name: Data in Dataflow Gen2 staging
         href: data-in-staging-artifacts.md
