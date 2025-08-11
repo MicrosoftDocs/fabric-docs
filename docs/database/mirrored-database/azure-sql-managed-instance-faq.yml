@@ -8,7 +8,7 @@ metadata:
   ms.service: fabric
   ms.subservice: data-warehouse
   ms.topic: faq
-  ms.date: 11/18/2024
+  ms.date: 08/11/2025
 title: "Frequently asked questions for Mirroring Azure SQL Managed Instance in Microsoft Fabric (Preview)"
 summary: |
   This article answers frequently asked questions about Mirroring Azure SQL Managed Instance in Microsoft Fabric.
@@ -67,11 +67,6 @@ sections:
           What are the replication statuses? 
         answer: 
           See [Monitor Fabric Mirror replication](monitor.md).
-
-      - question: |
-          Can Azure SQL Managed Instance database mirroring be accessed through the Power BI Gateway or VNET data gateway? 
-        answer: 
-          Currently, this is unsupported.
 
       - question: |
            What happens if I remove a table from Mirroring?
