@@ -5,12 +5,7 @@ ms.reviewer: tzgitlin
 author: spelluru
 ms.author: spelluru
 ms.topic: how-to
-ms.custom:
-<<<<<<< HEAD
 ms.date: 08/11/2025
-=======
-ms.date: 06/19/2025
->>>>>>> de7eb6f9cad177b88512c9201a510b2869951269
 ms.search.form: product-kusto, Real-Time Dashboard
 ---
 # Create a Real-Time Dashboard
