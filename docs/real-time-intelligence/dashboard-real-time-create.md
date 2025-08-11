@@ -47,7 +47,6 @@ If you aren't able to edit a dashboard, ensure that you are in the Editing mode.
 
 :::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view." lightbox="media/real-time-dashboard/edit-mode.png":::
 
-
 ## Add data source
 
 Data sources are reusable references to a specific database in the same workspace as the Real-Time Dashboard. Different tiles can be based on different data sources.
@@ -56,9 +55,9 @@ Data sources are reusable references to a specific database in the same workspac
 
     :::image type="content" source="media/real-time-dashboard/new-data-source.png" alt-text="Screenshot of adding a new data source to a Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric.":::
 1. In the **Connect Azure Data Explorer cluster** window, follow these steps:
-    1. Enter the **Connection URI** for your Azure Data Explorer cluster. 
-    1. Select a **database** in the cluster. 
-    1. Select **Create**. 
+    1. Enter the **Connection URI** for your Azure Data Explorer cluster.
+    1. Select a **database** in the cluster.
+    1. Select **Create**.
 
         :::image type="content" source="media/real-time-dashboard/connect-azure-data-explorer-cluster.png" alt-text="Screenshot of the Connect Azure Data Explorer cluster window.":::  
 1. On the **Create new data source** page, enter a display name for the data source, and select **Add**. 
@@ -67,11 +66,11 @@ Data sources are reusable references to a specific database in the same workspac
 
 ## Add tile
 
-Dashboard tiles use Kusto Query Language snippets to retrieve data and render visuals. Each tile/query can support a single visual.
+Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generate visuals. Each tile or query is designed to support a single visual representation.
 
 1. Select **Add tile** from the dashboard canvas or the top menu bar.
 
-    :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button.":::   
+    :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button.":::
 1. In the **Query** pane,
     1. Select the data source from the dropdown menu.
     1. Type the query, and the select **Run**. For more information about generating queries that use parameters, see [Use parameters in your query](dashboard-parameters.md#use-parameters-in-your-query).
@@ -84,7 +83,7 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
     :::image type="content" source="media/real-time-dashboard/visual-formatting.png" alt-text="Screenshot of visual formatting pane in Real-Time Dashboards." lightbox="media/real-time-dashboard/visual-formatting.png":::
 1. Select the **Save** icon.
 
-    :::image type="content" source="media/real-time-dashboard/save-button.png" alt-text="Screenshot showing the selection of the Save button on the ribbon." lightbox="media/real-time-dashboard/visual-formatting.png":::    
+    :::image type="content" source="media/real-time-dashboard/save-button.png" alt-text="Screenshot showing the selection of the Save button on the ribbon." lightbox="media/real-time-dashboard/visual-formatting.png":::
 
 ## Add tile from a queryset
 
@@ -94,14 +93,32 @@ You can add tiles to your dashboard directly from queries written in a KQL query
 1. [Write a query](kusto-query-set.md#write-a-query).
 1. Select **Pin to dashboard**.
 
-    :::image type="content" source="media/real-time-dashboard/queryset-pin-query.png" alt-text="Screenshot of the pin query to dashboard button in a queryset query."  lightbox="media/real-time-dashboard/queryset-pin-query.png":::
+    :::image type="content" source="media/real-time-dashboard/pin-to-dashboard.png" alt-text="Screenshot of the pin query to dashboard button in a queryset query."  lightbox="media/real-time-dashboard/queryset-pin-query.png":::
 1. In the **Pin query to dashboard** window, do the following:
+
+    :::image type="content" source="media/real-time-dashboard/query-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
+
     1. Select an existing dashboard or create a new dashboard.
     1. Name your dashboard tile.
     1. Optionally, select **Open dashboard after tile creation** to view your dashboard immediately after creation.
     1. Select **Create**.
 
-        :::image type="content" source="media/real-time-dashboard/pin-query-dashboard.png" alt-text="Screenshot of the Pin query to dashboard window.":::
+## Edit tile
+
+Editing the underlying query of a tile is only possible in editing mode.
+
+1. On the tile you want to edit, select the **Edit tile** pencil icon.
+
+    :::image type="content" source="media/real-time-dashboard/edit-tile.png" alt-text="Screenshot of the Edit tile pencil icon in Real-Time Dashboards tile.":::
+
+1. In the edit tile page, you can edit the query and visual formatting options.
+1. The explorer pane on the left side allows you to explore the data source, view the available tables, functions etc. and help you build your query.
+
+    :::image type="content" source="media/real-time-dashboard/explorer-pane.png" alt-text="Screenshot of the explorer pane in Real-Time Dashboards.":::
+
+1. Select the **Copilot** icon and describe in natural language what you want to visualize. Copilot will generate a query which you can edit as needed. For more information, see [Use Copilot for writing KQL quries](../fundamentals/copilot-for-writing-queries.md).
+
+    :::image type="content" source="media/real-time-dashboard/copilot.png" alt-text="Screenshot of the Copilot icon in Real-Time Dashboards.":::
 
 ## Add page
 
@@ -158,23 +175,6 @@ You can view the query in either editing or viewing mode.
 
     > [!NOTE]
     > Any edits made to the query using this flow won't be reflected in the original Real-Time Dashboard.
-
-## Edit tile
-
-Editing the underlying query of a tile is only possible in editing mode.
-
-1. On the tile you want to edit, select the **Edit tile** pencil icon.
-
-    :::image type="content" source="media/real-time-dashboard/edit-tile.png" alt-text="Screenshot of the Edit tile pencil icon in Real-Time Dashboards tile.":::
-
-1. In the edit tile page, you can edit the query and visual formatting options.
-1. The explorer pane on the left side allows you to explore the data source and select tables and/or columns to add to the query.
-
-    :::image type="content" source="media/real-time-dashboard/explorer-pane.png" alt-text="Screenshot of the explorer pane in Real-Time Dashboards.":::
-
-1. Select the **Copilot** icon and describe in natural language what you want to visualize. Copilot will generate a query based on your data source and visual type, which you can edit as needed. For more information, see [Use Copilot for writing KQL quries](../fundamentals/copilot-for-writing-queries.md).
-
-    :::image type="content" source="media/real-time-dashboard/copilot.png" alt-text="Screenshot of the Copilot icon in Real-Time Dashboards.":::
 
 ## Enable auto refresh
 
