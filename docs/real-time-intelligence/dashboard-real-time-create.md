@@ -148,7 +148,7 @@ The **Up** and **Down** arrows navigate through the list in the following ways:
 
 ## View query
 
-You can view the query in either editing or viewing mode. Editing the underlying query of a tile is only possible in editing mode.
+You can view the query in either editing or viewing mode.
 
 1. On the tile you want to explore, select the **More menu [...]** > **View query**.
 
@@ -161,6 +161,19 @@ You can view the query in either editing or viewing mode. Editing the underlying
 
 > [!NOTE]
 > Any edits made to the query using this flow won't be reflected in the original Real-Time Dashboard.
+
+## Edit tile
+
+Editing the underlying query of a tile is only possible in editing mode.
+
+1. On the tile you want to edit, select the **Edit tile** pencil icon.
+
+    :::image type="content" source="media/real-time-dashboard/edit-tile.png" alt-text="Screenshot of the Edit tile pencil icon in Real-Time Dashboards tile.":::
+
+1. In the active pane, you can edit the query and visual formatting options.
+1. The explorer pane on the left side allows you to explore the data source and select tables and/or columns to add to the query.
+
+    :::image type="content" source="media/real-time-dashboard/explorer-pane.png" alt-text="Screenshot of the explorer pane in Real-Time Dashboards.":::
 
 ## Enable auto refresh
 
