@@ -25,7 +25,7 @@ When your Dataflow Gen2 with CI/CD uses a Gateway (on-premises or virtual networ
 This security feature only applies to Dataflows Gen2 with CI/CD support, which can reference shareable cloud connections.
 
 ### What type of connections can have this new `allowConnectionUsageInGateway` setting?
-  Only shareable cloud connections that can have this new setting.
+  Only shareable cloud connections can have this new setting.
 
 ### How can I check what connections have the `allowConnectionUsageInGateway` enabled?
   When using the Fabric portal, you can review all your connections through the [Manage Connections and Gateways portal](data-source-management.md) or review the connections used in your Dataflow Gen2 with CI/CD through the [manage connections dialog](/power-query/manage-connections).
@@ -44,3 +44,5 @@ Using the Fabric REST API, you can:
 * [GET the Dataflow item definition](/rest/api/fabric/dataflow/items/get-dataflow-definition)
 * Extract the connection information from the `queryMetadata.json` and confirm that a gateway is referenced in the file
 * Compare the connection information from the Dataflow against the list of shareable cloud connections from the [List connections endpoint of the Fabric REST API](/rest/api/fabric/core/connections/list-connections) where the `allowConnectionUsageInGateway` setting isn't Enabled
+
+If you determine that your Dataflow Gen2 with CI/CD uses a gateway and references a connection with the setting disabled, you can take action either to remove the gateway from your dataflow, modify the connection so it can be used in gateways or replace the connection in your dataflow altogether with a gateway connection.
