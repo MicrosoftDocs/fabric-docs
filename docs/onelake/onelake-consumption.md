@@ -32,19 +32,19 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 |---|---|---|---|
 | **OneLake Read via Redirect** | OneLake Read via Redirect | Every 4 MB, per 10,000* | 104 CU seconds |
 | **OneLake Write via Redirect** | OneLake Write via Redirect | Every 4 MB, per 10,000* | 1626 CU seconds |
+| **OneLake Other Operations via Redirect** | OneLake Other Operations via Redirect | Per 10,000 | 104 CU seconds |
 | **OneLake Iterative Read via Redirect** | OneLake Iterative Read via Redirect | Per 10,000 | 1626 CU seconds |
 | **OneLake Iterative Write via Redirect** | OneLake Iterative Write via Redirect | Per 100 | 1300 CU seconds |
-| **OneLake Other Operations via Redirect** | OneLake Other Operations via Redirect | Per 10,000 | 104 CU seconds |
 
-This table defines CU consumption when OneLake data is accessed using applications that proxy requests.
+This table defines CU consumption when OneLake data is accessed using applications that proxy requests, which match the rate for transactions via redirect.  
 
 | **Operation in Metrics App** | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 |---|---|---|---|
-| **OneLake Read via Proxy** | OneLake Read via Proxy | Every 4 MB, per 10,000* | 306 CU seconds |
-| **OneLake Write via Proxy** | OneLake Write via Proxy | Every 4 MB, per 10,000* | 2650 CU seconds |
-| **OneLake Iterative Read via Proxy** | OneLake Iterative Read via Proxy | Per 10,000 | 4798 CU seconds |
-| **OneLake Iterative Write via Proxy** | OneLake Iterative Write via Proxy | Per 100 | 2117.95 CU seconds |
-| **OneLake Other Operations** | OneLake Other Operations | Per 10,000 | 306 CU seconds |
+| **OneLake Read via Proxy** | OneLake Read via Proxy | Every 4 MB, per 10,000* | 104 CU seconds |
+| **OneLake Write via Proxy** | OneLake Write via Proxy | Every 4 MB, per 10,000* | 1626 CU seconds |
+| **OneLake Other Operations** | OneLake Other Operations | Per 10,000 | 104 CU seconds |
+| **OneLake Iterative Read via Proxy** | OneLake Iterative Read via Proxy | Per 10,000 | 1626 CU seconds |
+| **OneLake Iterative Write via Proxy** | OneLake Iterative Write via Proxy | Per 100 | 1300 CU seconds |
 
 *For files > 4 MB in size, OneLake counts a transaction for every 4 MB block of data read or written. For files < 4 MB, a full transaction is counted. For example, if you do 10,000 read operations via Redirect and each file read is 16 MB in size, your capacity consumption is 40,000 transactions or 416 CU seconds.
 
@@ -80,19 +80,19 @@ This table defines CU consumption when disaster recovery is enabled and OneLake 
 |---|---|---|---|
 | **OneLake BCDR Read via Redirect** | OneLake BCDR Read via Redirect | Every 4 MB, per 10,000 | 104 CU seconds |
 | **OneLake BCDR Write via Redirect** | OneLake BCDR Write via Redirect | Every 4 MB, per 10,000 | 3056 CU seconds |
+| **OneLake BCDR Other Operations Via Redirect** | OneLake BCDR Other Operations Via Redirect | Per 10,000 | 104 CU seconds |
 | **OneLake BCDR Iterative Read via Redirect** | OneLake BCDR Iterative Read via Redirect | Per 10,000 | 1626 CU seconds |
 | **OneLake BCDR Iterative Write via Redirect** | OneLake BCDR Iterative Write via Redirect | Per 100 | 2730 CU seconds |
-| **OneLake BCDR Other Operations Via Redirect** | OneLake BCDR Other Operations Via Redirect | Per 10,000 | 104 CU seconds |
 
 This table defines CU consumption when disaster recovery is enabled and OneLake data is accessed using applications that proxy requests.
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 |---|---|---|---|
-| **OneLake BCDR Read via Proxy** | OneLake BCDR Read via Proxy | Every 4 MB, per 10,000 | 306 CU seconds |
-| **OneLake BCDR Write via Proxy** | OneLake BCDR Write via Proxy | Every 4 MB, per 10,000 | 3870 CU seconds |
-| **OneLake BCDR Iterative Read via Proxy** | OneLake BCDR Iterative Read via Proxy | Per 10,000 | 4798 CU seconds |
-| **OneLake BCDR Iterative Write via Proxy** | OneLake BCDR Iterative Write via Proxy | Per 100 | 3415.5 CU seconds |
-| **OneLake BCDR Other Operations** | OneLake BCDR Other Operations | Per 10,000 | 306 CU seconds |
+| **OneLake BCDR Read via Proxy** | OneLake BCDR Read via Proxy | Every 4 MB, per 10,000 | 104 CU seconds |
+| **OneLake BCDR Write via Proxy** | OneLake BCDR Write via Proxy | Every 4 MB, per 10,000 | 3056 CU seconds |
+| **OneLake BCDR Other Operations** | OneLake BCDR Other Operations | Per 10,000 | 104 CU seconds |
+| **OneLake BCDR Iterative Read via Proxy** | OneLake BCDR Iterative Read via Proxy | Per 10,000 | 1636 CU seconds |
+| **OneLake BCDR Iterative Write via Proxy** | OneLake BCDR Iterative Write via Proxy | Per 100 | 2730 CU seconds |
 
 ## OneLake security
 
