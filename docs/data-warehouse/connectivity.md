@@ -4,7 +4,7 @@ description: Follow steps to connect SSMS to a warehouse item in your Microsoft 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, dhsundar, jacinda-eng
-ms.date: 07/28/2025
+ms.date: 08/06/2025
 ms.topic: how-to
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
@@ -103,6 +103,11 @@ We support connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or 
    ```python
    %%tsql -artifact Contoso -type Warehouse
    SELECT * FROM wh.DimDate;
+   ```
+1. You can also bind the results to a dataframe with the `-bind` argument:
+
+   ```python
+   %%tsql -artifact Contoso -type Warehouse -bind df2
    ```
 
 For more possibilities to query your data with T-SQL inside Python Notebooks, see [Run T-SQL code in Fabric Python notebooks](../data-engineering/tsql-magic-command-notebook.md). To see the full syntax, use the `%tsql?` command. This command displays the help information for the T-SQL magic command, including the available parameters and their descriptions.

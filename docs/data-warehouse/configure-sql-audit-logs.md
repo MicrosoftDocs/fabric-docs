@@ -10,7 +10,7 @@ ms.search.form: Warehouse SQL Audit Logs # This article's title should not chang
 ---
 # How to configure SQL audit logs in Fabric Data Warehouse (Preview)
 
-**Applies to:** [!INCLUDE [fabric-dw.md](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw.md](includes/applies-to-version/fabric-dw.md)]
 
 Auditing in Fabric Data Warehouse provides enhanced security and compliance capabilities by tracking and recording database events. 
 

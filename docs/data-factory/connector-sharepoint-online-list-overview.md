@@ -19,8 +19,8 @@ The SharePoint Online List connector is supported in Data Factory for [!INCLUDE 
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Organizational account<br> Service principal<br> Workspace identity |
-| **Data pipeline**<br>- [Copy activity](connector-sharepoint-online-list-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Organizational account<br> Service principal |
-| **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Organizational account<br> Service principal |
+| **Data pipeline**<br>- [Copy activity](connector-sharepoint-online-list-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Organizational account<br> Service principal <br>Workspace identity|
+| **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Organizational account<br> Service principal<br>Workspace identity |
 
 ## Related content
 

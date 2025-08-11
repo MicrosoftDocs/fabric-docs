@@ -150,7 +150,7 @@ Content-type: application/json
 
 Apache Airflow connection is used to store the credentials required to authenticate with Microsoft Fabric APIs.
 
-1. Navigate to "View Airflow connections" to add a new Apace Airflow connection.
+1. Navigate to "View Airflow connections" to add a new Apache Airflow connection.
    :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
 2. Add a new connection and fill the following details:
