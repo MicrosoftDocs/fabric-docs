@@ -19,13 +19,6 @@ Machine learning experiments allow data scientists to log parameters, code versi
 
 In this article, you learn more about how data scientists can interact with and use machine learning experiments to organize their development process and to track multiple runs.
 
-This diagram illustrates the components of a machine learning experiment. The experiment contains runs, and a run can be saved as a machine learning model.
-
-```mermaid
-graph LR;
-    A[Experiment] -- contains --> B(Run);
-    B -- can be saved as a --> C(Model);
-```
 
 ## Prerequisites
 
