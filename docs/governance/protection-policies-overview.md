@@ -36,7 +36,7 @@ As mentioned, the policy blocks access to the item for all users and groups that
 
 In the Fabric admin portal, you can use the OneLake catalog to view an item's permissions and determine which users are restricted from accessing it. The Permissions tab in the item's details is visible to you if you have a role of Admin or Member in the workspace containing the item.
 
-To view an item's permissions in the Fabric admin portal, open the **OneLake catalog**, ocate the item (optionally filter by workspace), and select its name to open the item details. Then, select the **Permissions** tab to see the list of users and groups that have access to the item, including those restricted by a protection policy.
+To view an item's permissions in the Fabric admin portal, open the **OneLake catalog**, locate the item (optionally filter by workspace), and select its name to open the item details. Then, select the **Permissions** tab to see the list of users and groups that have access to the item, including those restricted by a protection policy.
 
 ## Use cases
 
