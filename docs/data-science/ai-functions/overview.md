@@ -104,7 +104,7 @@ Each of the following functions allows you to invoke Fabric's built-in AI endpoi
 > [!TIP]
 > Learn how to [customize the configuration](./configuration.md) of AI functions.
 
-### Calculate similarity with `ai.similarity`
+### Calculate similarity with ai.similarity
 
 The `ai.similarity` function invokes AI to compare input text values with a single common text value, or with pairwise text values in another column. The output similarity score values are relative, and they can range from `-1` (opposites) to `1` (identical). A score of `0` indicates that the values are completely unrelated in meaning. Get [detailed instructions](./similarity.md) about the use of `ai.similarity`.
 
@@ -144,7 +144,7 @@ display(similarity)
 
 ---
 
-### Categorize text with `ai.classify`
+### Categorize text with ai.classify
 
 The `ai.classify` function invokes AI to categorize input text according to custom labels you choose. For more information about the use of `ai.classify`, go to [this article](./classify.md).
 
@@ -184,7 +184,7 @@ display(categories)
 
 ---
 
-### Detect sentiment with `ai.analyze_sentiment`
+### Detect sentiment with ai.analyze_sentiment
 
 The `ai.analyze_sentiment` function invokes AI to identify whether the emotional state expressed by input text is positive, negative, mixed, or neutral. If AI can't make this determination, the output is left blank. Get [more detailed instructions](./analyze-sentiment.md) about the use of `ai.analyze_sentiment`.
 
@@ -226,7 +226,7 @@ display(sentiment)
 
 ---
 
-### Extract entities with `ai.extract`
+### Extract entities with ai.extract
 
 The `ai.extract` function invokes AI to scan input text and extract specific types of information that are designated by labels you choose. For example, locations or names. Get [more detailed instructions](./extract.md) about the use of `ai.extract`.
 
@@ -264,7 +264,7 @@ display(df_entities)
 
 ---
 
-### Fix grammar with `ai.fix_grammar`
+### Fix grammar with ai.fix_grammar
 
 The `ai.fix_grammar` function invokes AI to correct the spelling, grammar, and punctuation of input text. Get [more detailed instructions](./fix-grammar.md) about the use of `ai.fix_grammar`.
 
@@ -304,7 +304,7 @@ display(corrections)
 
 ---
 
-### Summarize text with `ai.summarize`
+### Summarize text with ai.summarize
 
 The `ai.summarize` function invokes AI to generate summaries of input text (either values from a single column of a DataFrame, or row values across all the columns). Get [more detailed instructions](./summarize.md) about the use of `ai.summarize`.
 
@@ -362,7 +362,7 @@ display(summaries)
 
 ---
 
-### Translate text with `ai.translate`
+### Translate text with ai.translate
 
 The `ai.translate` function invokes AI to translate input text to a new language of your choice. Get [more detailed instructions](./translate.md) about the use of `ai.translate`.
 
@@ -402,7 +402,7 @@ display(translations)
 
 ---
 
-### Answer custom user prompts with `ai.generate_response`
+### Answer custom user prompts with ai.generate_response
 
 The `ai.generate_response` function invokes AI to generate custom text based on your own instructions. Get [more detailed instructions](./generate-response.md) about the use of `ai.generate_response`.
 

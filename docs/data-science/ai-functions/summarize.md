@@ -1,6 +1,6 @@
 ---
-title: Summarize Text with the `ai.summarize` Function
-description: Learn how to to produce summaries of input text by using the `ai.summarize` function.
+title: Summarize Text with the ai.summarize Function
+description: Learn how to to produce summaries of input text by using the ai.summarize function.
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: erenorbey
@@ -11,9 +11,9 @@ ms.date: 02/26/2025
 ms.search.form: AI functions
 ---
 
-# Summarize text with the `ai.summarize` function
+# Summarize text with the ai.summarize function
 
-The `ai.summarize` function uses generative AI to produce summaries of input text with a single line of code. The function can either summarize values from one column of a DataFrame or values across all the columns.
+The `ai.summarize` function uses generative AI to produce summaries of input text. It uses only a single line of code. The function can either summarize values from one column of a DataFrame or values across all the columns.
 
 AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
@@ -25,7 +25,7 @@ AI functions turbocharge data engineering by putting the power of Fabric's built
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
-## Use `ai.summarize` with pandas
+## Use ai.summarize with pandas
 
 The `ai.summarize` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To summarize each row value from that column alone, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column. You can also call the `ai.summarize` function on an entire DataFrame to summarize values across all the columns.
 

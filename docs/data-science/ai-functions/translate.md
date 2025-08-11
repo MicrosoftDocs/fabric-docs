@@ -1,6 +1,6 @@
 ---
-title: Translate Text with the `ai.translate` Function
-description: Learn how to use the `ai.translate` function to translate input text into a new language of your choice.
+title: Translate Text with the ai.translate Function
+description: Learn how to use the ai.translate function to translate input text into a new language of your choice.
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: erenorbey
@@ -11,9 +11,9 @@ ms.date: 02/26/2025
 ms.search.form: AI functions
 ---
 
-# Translate text with the `ai.translate` function
+# Translate text with the ai.translate function
 
-The `ai.translate` function uses generative AI to translate input text into a new language (of your choice) with a single line of code.
+The `ai.translate` function uses generative AI to translate input text into a new language (of your choice). It uses only a single line of code.
 
 AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
@@ -25,7 +25,7 @@ AI functions turbocharge data engineering by putting the power of Fabric's built
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
-## Use `ai.translate` with pandas
+## Use ai.translate with pandas
 
 The `ai.translate` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To translate each input row into a target language of your choice, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column.
 
@@ -66,7 +66,7 @@ df["translations"] = df["text"].ai.translate("spanish")
 display(df)
 ```
 
-## Use `ai.translate` with PySpark
+## Use ai.translate with PySpark
 
 The `ai.translate` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify an existing input column name as a parameter, along with a target language.
 

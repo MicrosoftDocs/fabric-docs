@@ -1,6 +1,6 @@
 ---
-title: Categorize Text with the `ai.classify` Function
-description: Learn how to categorize input text according to custom labels by using the `ai.classify` function.
+title: Categorize Text with the ai.classify Function
+description: Learn how to categorize input text according to custom labels by using the ai.classify function.
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: erenorbey
@@ -11,9 +11,9 @@ ms.date: 02/26/2025
 ms.search.form: AI functions
 ---
 
-# Categorize text with the `ai.classify` function
+# Categorize text with the ai.classify function
 
-The `ai.classify` function uses generative AI to categorize input text according to custom labels you choose, with a single line of code.
+The `ai.classify` function uses generative AI to categorize input text according to custom labels you choose. It uses only a single line of code.
 
 AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
@@ -25,7 +25,7 @@ AI functions turbocharge data engineering by putting the power of Fabric's built
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
-## Use `ai.classify` with pandas
+## Use ai.classify with pandas
 
 The `ai.classify` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To assign user-provided labels to each input row, call the function on a text column of a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html).
 
@@ -66,7 +66,7 @@ df["category"] = df['descriptions'].ai.classify("kitchen", "bedroom", "garage", 
 display(df)
 ```
 
-## Use `ai.classify` with PySpark
+## Use ai.classify with PySpark
 
 The `ai.classify` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify the name of an existing input column as a parameter, along with a list of classification labels.
 

@@ -1,6 +1,6 @@
 ---
-title: Fix Grammar with the `ai.fix_grammar` Function
-description: Learn how to correct the spelling, grammar, and punctuation of input text by using the `ai.fix_grammar` function.
+title: Fix Grammar with the ai.fix_grammar Function
+description: Learn how to correct the spelling, grammar, and punctuation of input text by using the ai.fix_grammar function.
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: erenorbey
@@ -11,9 +11,9 @@ ms.date: 02/26/2025
 ms.search.form: AI functions
 ---
 
-# Fix grammar with the `ai.fix_grammar` function
+# Fix grammar with the ai.fix_grammar function
 
-The `ai.fix_grammar` function uses generative AI to correct the spelling, grammar, and punctuation of input text, with a single line of code.
+The `ai.fix_grammar` function uses generative AI to correct the spelling, grammar, and punctuation of input text. It uses only a single line of code.
 
 AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
@@ -25,7 +25,7 @@ AI functions turbocharge data engineering by putting the power of Fabric's built
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
-## Use `ai.fix_grammar` with pandas
+## Use ai.fix_grammar with pandas
 
 The `ai.fix_grammar` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To correct the spelling, grammar, and punctuation of each row of input, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column.
 
@@ -61,7 +61,7 @@ df["corrections"] = df["text"].ai.fix_grammar()
 display(df)
 ```
 
-## Use `ai.fix_grammar` with PySpark
+## Use ai.fix_grammar with PySpark
 
 The `ai.fix_grammar` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify the name of an existing input column as a parameter.
 

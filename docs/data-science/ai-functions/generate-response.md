@@ -1,6 +1,6 @@
 ---
-title: Answer Custom User Prompts with the `ai.generate_response` Function
-description: Learn how to generate custom text responses based on your own instruction by using the `ai.generate_response` function.
+title: Answer Custom User Prompts with the ai.generate_response Function
+description: Learn how to generate custom text responses based on your own instruction by using the ai.generate_response function.
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: erenorbey
@@ -11,9 +11,9 @@ ms.date: 02/26/2025
 ms.search.form: AI functions
 ---
 
-# Answer custom user prompts with the `ai.generate_response` function
+# Answer custom user prompts with the ai.generate_response function
 
-The `ai.generate_response` function uses generative AI to generate custom text responses that are based on your own instructions, with a single line of code.
+The `ai.generate_response` function uses generative AI to generate custom text responses that are based on your own instructions. It uses only a single line of code.
 
 AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
@@ -25,7 +25,7 @@ AI functions turbocharge data engineering by putting the power of Fabric's built
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
-## Use `ai.generate_response` with pandas
+## Use ai.generate_response with pandas
 
 The `ai.generate_response` function extends the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) class. The `ai.generate_response` function differs from the other AI functions, because those functions extend the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class.
 
@@ -35,13 +35,13 @@ The function returns a pandas Series that contains custom text responses for eac
 
 ### Syntax
 
-# [Generating responses with a simple prompt](#tab/simple-prompt)
+# [Generate responses with a simple prompt](#tab/simple-prompt)
 
 ```python
 df["response"] = df.ai.generate_response(prompt="Instructions for a custom response based on all column values")
 ```
 
-# [Generating responses with a template prompt](#tab/template-prompt)
+# [Generate responses with a template prompt](#tab/template-prompt)
 
 ```python
 df["response"] = df.ai.generate_response(prompt="Instructions for a custom response based on specific {column1} and {column2} values", is_prompt_template=True)
@@ -62,7 +62,7 @@ The function returns a [pandas DataFrame](https://pandas.pydata.org/docs/referen
 
 ### Example
 
-# [Generating responses with a simple prompt](#tab/simple-prompt)
+# [Generate responses with a simple prompt](#tab/simple-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -78,7 +78,7 @@ df["response"] = df.ai.generate_response("Write a short, punchy email subject li
 display(df)
 ```
 
-# [Generating responses with a template prompt](#tab/template-prompt)
+# [Generate responses with a template prompt](#tab/template-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -96,7 +96,7 @@ display(df)
 
 ---
 
-## Use `ai.generate_response` with PySpark
+## Use ai.generate_response with PySpark
 
 The `ai.generate_response` function is also available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify the name of an existing input column as a parameter. You must also specify a string-based prompt, and a Boolean that indicates whether that prompt should be treated as a format string.
 
@@ -104,13 +104,13 @@ The function returns a new DataFrame, with custom responses for each input text 
 
 ### Syntax
 
-# [Generating responses with a simple prompt](#tab/simple-prompt)
+# [Generate responses with a simple prompt](#tab/simple-prompt)
 
 ```python
 df.ai.generate_response(prompt="Instructions for a custom response based on all column values", output_col="response")
 ```
 
-# [Generating responses with a template prompt](#tab/template-prompt)
+# [Generate responses with a template prompt](#tab/template-prompt)
 
 ```python
 df.ai.generate_response(prompt="Instructions for a custom response based on specific {column1} and {column2} values", is_prompt_template=True, output_col="response")
@@ -133,7 +133,7 @@ The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/ap
 
 ### Example
 
-# [Generating responses with a simple prompt](#tab/simple-prompt)
+# [Generate responses with a simple prompt](#tab/simple-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
@@ -149,7 +149,7 @@ responses = df.ai.generate_response(prompt="Write a short, punchy email subject 
 display(responses)
 ```
 
-# [Generating responses with a template prompt](#tab/template-prompt)
+# [Generate responses with a template prompt](#tab/template-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes. 
