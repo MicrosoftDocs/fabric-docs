@@ -86,14 +86,13 @@ Select the tab that corresponds with your desired data source type.
 
     **To enter your connection parameters**:
 
-    :::image type="content" source="media/kusto-query-set/connect-to-monitor.png" alt-text="Screenshot of the connection window showing an Azure Monitor URI. The Connect cluster button is highlighted.":::
     1. Enter your **Subscription ID**. You can find the ID in the Azure portal by selecting **Subscriptions** > your subscription name > copy the Subscription ID from the resource Overview tab.
 
-    1. Select the **Resource Group** from the drop-down list. Select the resource group that contains your Application Insights or Log Analytics resource.
+    1. Select the **Resource Group** that contains your Application Insights or Log Analytics database.
 
     1. Enter the **Workspace Name** for Log Analytics or the **Application Insights app name** for Application Insights. You can find the name in the Azure portal by selecting the Application Insights or Log Analytics resource.
 
-    1. Select the **Application Insights** or **Log Analytics** resource from the drop-down list. This list is populated with the resources in your selected resource group.
+    1. Select the **Application Insights** or **Log Analytics** database from the drop-down list. This list is populated with the databases in your selected database group.
 
     **To enter a full connection URI**:
 
