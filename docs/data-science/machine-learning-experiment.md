@@ -34,18 +34,20 @@ You can create a machine learning experiment directly from the fabric user inter
 To create a machine learning experiment from the UI:
 
 1. Create a new workspace or select an existing one.
-1. You can create a new item through the workspace or by using Create.
-    1. Workspace:
-        1. Select your workspace.
-        1. Select **New item**.
-        1. Select **Experiment** under *Analyze and train data*.
+1. In the upper left of your workspace, select **New item**. Under **Analyze and train data**, select **Experiment** .
+    
           :::image type="content" source="media/machine-learning-experiment/new-item.png" alt-text="Screenshot showing where to select Experiment in your workspace." lightbox="media/machine-learning-experiment/new-item.png":::
-    1. Create button:
-        1. Select **Create**, which can be found in **...** from the vertical menu.
+OR
+
+  1. Select **Create**, which can be found in **...** from the vertical menu.
+
           :::image type="content" source="media/machine-learning-experiment/create.png" alt-text="Screenshot of create button." lightbox="media/machine-learning-experiment/create.png":::
-        1. Select **Experiment** under *Data Science*.
+
+    1. Under **Data Science**, select **Experiment**.
+    
           :::image type="content" source="media/machine-learning-experiment/create-2.png" alt-text="Screenshot showing where to select Experiment after selecting create." lightbox="media/machine-learning-experiment/create-2.png":::
-1. Provide an experiment name and select **Create**. This action creates an empty experiment within your workspace.
+
+    1. Provide an experiment name and select **Create**. This action creates an empty experiment within your workspace.
 
 After creating the experiment, you can start adding runs to track run metrics and parameters.
 
