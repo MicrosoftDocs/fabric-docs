@@ -1,6 +1,6 @@
 ---
 title: Decision Guide for Data Movement and Transformation
-description: Identify the best strategy for your data volume, workload, and skill level with our Microsoft Fabric data integration decision guide.
+description: Identify the best strategy for your data volume, workload, and skill level with our Microsoft Fabric data integration decision guide, and compare data integration strategies like Mirrored Database, Copy Job, Copy Activity, Pipelines, Apache Airflow Job, Notebooks, and Dataflow Gen2.
 author: whhender
 ms.author: whhender
 ms.reviewer: whhender
@@ -11,11 +11,9 @@ ai-usage: ai-assisted
 
 # Microsoft Fabric decision guide: choose a data integration strategy
 
-Use this chart to compare data integration services like Mirrored Database, Copy Job, Copy Activity, Data Pipeline, Apache Airflow Job, Notebooks, and Dataflow Gen2. Compare them based on your use case, data type, data volume, user role, skill level, and other capabilities.
+Microsoft Fabric has a comprehensive suite of tools to handle data and analytics workloads efficiently. With so many options available, it can be challenging to pick the right tool for your specific needs. This decision guide provides a roadmap to help you select the right strategy.
 
 :::image type="content" source="media/decision-guide-data-integration/decision-guide.svg" alt-text="Screenshot of data integration workflow diagram showing columns for data movement, orchestration, and transformation." lightbox="media/decision-guide-data-integration/decision-guide.svg":::
-
-Microsoft Fabric has a comprehensive suite of tools to handle data and analytics workloads efficiently. With so many options available, it can be challenging to pick the right tool for your specific needs. This decision guide provides a roadmap to help you select the right strategy.
 
 To choose the right data integration service in Microsoft Fabric, consider these questions:
 
@@ -107,7 +105,7 @@ Julian is a business analyst with strong SQL skills. He needs to orchestrate a c
 
 Julian's organization uses a mix of Azure services and on-premises systems, and the workflow requires both data movement and orchestration logic. He needs to coordinate activities like running stored procedures, calling web APIs, moving files, and executing other pipelines. While Julian is comfortable with SQL and basic scripting, he prefers a visual, low-code approach for building and maintaining these complex workflows.
 
-Julian evaluates the options and selects **Data Pipeline** as the best fit for his requirements. Data Pipeline provides the visual canvas and drag-and-drop activities he needs to build complex orchestration workflows. The solution supports logical grouping of activities, dependency management, and scheduling capabilities. With 50+ connectors and various activity types (copy, lookup, stored procedure, web, etc.), Data Pipeline gives him the flexibility to coordinate diverse tasks while maintaining the low-code approach he prefers.
+Julian evaluates the options and selects **Pipelines** as the best fit for his requirements. Pipelines provide the visual canvas and drag-and-drop activities he needs to build complex orchestration workflows. The solution supports logical grouping of activities, dependency management, and scheduling capabilities. With 50+ connectors and various activity types (copy, lookup, stored procedure, web, etc.), Pipelines give him the flexibility to coordinate diverse tasks while maintaining the low-code approach he prefers.
 
 ### Scenario 5
 
@@ -140,7 +138,7 @@ Now that you understand which service to use, you can start building your data i
 - [Get started with Mirroring](/fabric/database/mirrored-database/overview)
 - [Create a Copy Job](/fabric/data-factory/create-copy-job)
 - [Create a Copy Activity](/fabric/data-factory/copy-data-activity)
-- [Get started with Data Pipelines](/fabric/data-factory/data-factory-overview.md#data-pipelines)
+- [Get started with Pipelines](/fabric/data-factory/data-factory-overview.md#data-pipelines)
 - [Get started with Apache Airflow Jobs](/fabric/data-factory/apache-airflow-jobs-concepts)
 - [Create and use Notebooks](/fabric/data-engineering/how-to-use-notebook)
 - [Create a dataflow](/fabric/data-factory/tutorial-dataflows-gen2-pipeline-activity#create-a-dataflow)
