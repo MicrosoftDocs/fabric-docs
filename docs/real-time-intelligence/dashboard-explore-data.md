@@ -25,29 +25,29 @@ You explore data from each tile in the dashboard. Select the **Explore Data** ic
 
 ## Explore data with Copilot
 
-From the dashboard, you can explore the data in the tile using Copilot, [interact](#interact-with-the-visual) with the visual, manually set up the [visual options](#configure-visual-options), view the [tabular results](#view-the-tablur-results), and see the [underlying query](#view-the-underlying-query) before and after the data exploration.
-
-Using the storm events data set as an example, the following instructions show how to explore data in a tile using Copilot.
-
-##[Visual tab](#visual/states)
-
-:::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-tile.png" alt-text="Screenshot of the visual tab showing a pie chart of the storm event types.":::
-
-##[Table tab](#table/states)
-
-:::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-table.png" alt-text="Screenshot of the table tab showing the storm even types in tabular format.":::
-
-##[Query tab](#query/states)
-
-:::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-query.png" alt-text="Screenshot of the visual tab showing the KQL query that is run to display the visual and table results.":::
-
----
+From the dashboard, you can explore the data in the tile using Copilot, for example, to change the time frame, filter by a column or value, calculate an average or total, or group by a column. In addition, you can interact with the visual and manually set up the [visual options](#configure-visual-options). Each time you explore the data with Copilot, the results of the visual, table, and underlying query update and you can save the insights as a new tile in the dashboard. Using the storm events sample data as an example, the following instructions show you how to explore data in a tile using Copilot.
 
 1. In your Fabric workspace, select a Real-Time Dashboard.
 
 1. On the tile you want to explore, select the **Explore Data** icon.
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-toolbar.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot icon highlighted.":::
+
+    The tile visual opens next to the Copilot pane. The visual shows the storm event types in the United States, and the Copilot pane is ready for your request.
+
+    # [Visual tab](#visual/states)
+
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-tile.png" alt-text="Screenshot of the visual tab showing a pie chart of the storm event types.":::
+
+    # [Table tab](#table/states)
+
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-table.png" alt-text="Screenshot of the table tab showing the storm even types in tabular format.":::
+
+    # [Query tab](#query/states)
+
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-query.png" alt-text="Screenshot of the visual tab showing the KQL query that is run to display the visual and table results.":::
+
+    ---
 
 1. In the Copilot pane, enter a question or a request about the data in the tile. For example, "Show me data for Texas only" or "Show me the top five products by revenue."
 
@@ -61,19 +61,19 @@ Using the storm events data set as an example, the following instructions show h
 
     The results now display data for Texas only in the **Visual** tab and in the table of results in the **Table** tab. In the **Query** tab, you can see the modified underlying.
 
-    ##[Visual tab](#visual/texas)
+    # [Visual tab](#visual/texas)
 
     The visual tab shows the pie chart for Texas data only.
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-visual-texas.png" alt-text="Screenshot of the visual tab showing a pie chart of the storm event types in Texas.":::
 
-    ##[Table tab](#table/states)
+    # [Table tab](#table/states)
 
     The table tab shows the tabular data for Texas data only.
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-table-texas.png" alt-text="Screenshot of the table tab showing the storm even types in Texas in tabular format.":::
 
-    ##[Query tab](#query/states)
+    # [Query tab](#query/states)
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-query-texas.png" alt-text="Screenshot of the visual tab showing the KQL query that is run to display the visual and table results.":::
 
@@ -94,11 +94,3 @@ Make manual display changes using the **Visual Options** pane.
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-visual-options.png" alt-text="Screenshot of the visual pane, showing the dropdown selector options.":::
 
     The options available depend on the type of visual you use. For example, with a bar chart, change the bar orientation, adjust axis labels, and more. With a table visual, add or remove columns, change column order, and apply sorting.
-
-## Related content
-
-* [Create a real-time dashboard](dashboard-real-time-create.md)
-* [Customize real-time dashboard visuals](dashboard-visuals-customize.md)
-* [Apply conditional formatting in real-time dashboard visuals](dashboard-conditional-formatting.md)
-* [Use parameters in real-time dashboards](dashboard-parameters.md)
-* [Real-time dashboard-specific visuals](dashboard-visuals.md)
