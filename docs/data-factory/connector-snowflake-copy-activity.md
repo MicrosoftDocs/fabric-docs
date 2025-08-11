@@ -39,6 +39,9 @@ The following properties are **required**:
 
 - **Connection**:  Select a Snowflake connection from the connection list. If the connection doesn't exist, then create a new Snowflake connection.
     - **Additional connection properties**: Specify additional connection properties which will be used in Snowflake connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs. Examples: Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).
+    
+      :::image type="content" source="./media/connector-snowflake/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
+
 - **Database**: The default database to use once connected. It should be an existing database for which the specified role has privileges.
 - **Use query**: You can choose either **Table** or **Query** as your use query. The following list describes the configuration of each setting.
     - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
@@ -106,6 +109,9 @@ The following properties are **required**:
 
 - **Connection**:  Select a Snowflake connection from the connection list. If the connection doesn't exist, then create a new Snowflake connection.
     - **Additional connection properties**: Specify additional connection properties which will be used in Snowflake connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs. Examples: Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).
+
+      :::image type="content" source="./media/connector-snowflake/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for destination.":::
+
 - **Database**: The default database to use once connected. It should be an existing database for which the specified role has privileges.
 - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
 
