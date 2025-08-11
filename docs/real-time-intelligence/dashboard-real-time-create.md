@@ -167,10 +167,14 @@ Editing the underlying query of a tile is only possible in editing mode.
 
     :::image type="content" source="media/real-time-dashboard/edit-tile.png" alt-text="Screenshot of the Edit tile pencil icon in Real-Time Dashboards tile.":::
 
-1. In the active pane, you can edit the query and visual formatting options.
+1. In the edit tile page, you can edit the query and visual formatting options.
 1. The explorer pane on the left side allows you to explore the data source and select tables and/or columns to add to the query.
 
     :::image type="content" source="media/real-time-dashboard/explorer-pane.png" alt-text="Screenshot of the explorer pane in Real-Time Dashboards.":::
+
+1. Select the **Copilot** icon and describe in natural language what you want to visualize. Copilot will generate a query based on your data source and visual type, which you can edit as needed. For more information, see [Use Copilot for writing KQL quries](../fundamentals/copilot-for-writing-queries.md).
+
+    :::image type="content" source="media/real-time-dashboard/copilot.png" alt-text="Screenshot of the Copilot icon in Real-Time Dashboards.":::
 
 ## Enable auto refresh
 
