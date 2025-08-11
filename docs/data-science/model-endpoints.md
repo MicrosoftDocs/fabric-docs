@@ -122,7 +122,7 @@ Hosting active model endpoints consume Fabric Capacity Units. The table defines 
 |---|---|---|
 |model endpoint | 1 model endpoint (version) per second | 5 CU seconds|
 
-[The Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for model endpoint operations under the name "Model Endpoint". Additionally, users are able to view a summary of their billing charges for Model Endpoint usage under the invoicing item "Machine Learning in Fabric."
+[The Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for model endpoint operations under the name "Model Endpoint". Additionally, users are able to view a summary of their billing charges for Model Endpoint usage under the invoicing item "ML Model Endpoint Capacity Usage CU".
 
 Model endpoint operation is classified as [background operations](../enterprise/fabric-operations.md#background-operations).
 
