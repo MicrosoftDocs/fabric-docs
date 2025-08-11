@@ -100,10 +100,9 @@ To enable Mirroring, you will need to connect to the Azure SQL logical server fr
    - **Connection name**: An automatic name is provided. You can change it.
    - **Data gateway:** Select the default (None) or the name of virtual network data gateway / on-prem data gateway you set up according to your scenario.
    - **Authentication kind**:
-       - Basic (SQL Authentication)
+       - Basic (SQL Authentication): Specify the username and password.
        - Organization account (Microsoft Entra ID)  
-       - Service principal
-          - You need the tenant ID, principal or application client ID, and the service principal or application key. 
+       - Service principal: Specify the service principal's tenant ID, client ID and client secret.
 1. Select **Connect**.
 
 ## Start mirroring process
