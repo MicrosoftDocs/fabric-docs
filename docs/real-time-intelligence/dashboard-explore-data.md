@@ -6,7 +6,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 08/07/2025
+ms.date: 08/11/2025
 ---
 # Explore data in real-time dashboards with Copilot
 
@@ -25,9 +25,23 @@ You explore data from each tile in the dashboard. Select the **Explore Data** ic
 
 ## Explore data with Copilot
 
-From the dashboard, you can [explore the data](#explore-data-with-copilot) in the tile using Copilot, [interact](#interact-with-the-diagram) with the visual, manually set up the [visual options](#configure-visual-options), view the [tabular results](#view-the-tablur-results), and see the [underlying query](#view-the-underlying-query).
+From the dashboard, you can explore the data in the tile using Copilot, [interact](#interact-with-the-visual) with the visual, manually set up the [visual options](#configure-visual-options), view the [tabular results](#view-the-tablur-results), and see the [underlying query](#view-the-underlying-query) before and after the data exploration.
 
-:::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-tile.png" alt-text="Screenshot of a Real-Time Dashboard explore data window.":::
+Using the storm events data set as an example, the following instructions show how to explore data in a tile using Copilot.
+
+##[Visual tab](#visual/states)
+
+:::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-tile.png" alt-text="Screenshot of the visual tab showing a pie chart of the storm event types.":::
+
+##[Table tab](#table/states)
+
+:::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-table.png" alt-text="Screenshot of the table tab showing the storm even types in tabular format.":::
+
+##[Query tab](#query/states)
+
+:::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-query.png" alt-text="Screenshot of the visual tab showing the KQL query that is run to display the visual and table results.":::
+
+---
 
 1. In your Fabric workspace, select a Real-Time Dashboard.
 
@@ -35,25 +49,39 @@ From the dashboard, you can [explore the data](#explore-data-with-copilot) in th
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-toolbar.png" alt-text="Screenshot of a Real-Time Dashboard tile showing the explore data copilot icon highlighted.":::
 
-1. In the Copilot pane, enter a question or request about the data in the tile. For example, request "Show me data for Texas only" or "Show me the top five products by revenue."
+1. In the Copilot pane, enter a question or a request about the data in the tile. For example, "Show me data for Texas only" or "Show me the top five products by revenue."
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot-request.png" alt-text="Screenshot of the explore data copilot frame with a request highlighted.":::
 
-1. Copilot shows a response with a KQL query version of your request or question. Select **View results**.
+1. Click the :::image type="icon" source="media/dashboard-explore-copilot/dashboard-explore-copilot-enter-button.png" border="false"::: enter button. Copilot shows a response with a KQL query version of your request or question.
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot-response.png" alt-text="Screenshot of the explore data copilot frame with a response highlighted.":::
 
-1. Ask Copilot more questions to refine your results or explore different aspects of the data. For example, ask "What is the trend over the last 30 days?"
+1. Select **View results**. (replace images)
 
-1. In the **Visual** tab, interact with the resulting data. Hover over data points to see details, zoom in on specific areas, and select elements to filter or highlight related data.
+    The results now display data for Texas only in the **Visual** tab and in the table of results in the **Table** tab. In the **Query** tab, you can see the modified underlying.
 
-1. Select the **Table** tab to view the tabular results of the query.  
+    ##[Visual tab](#visual/texas)
 
-1. Select the **Query** tab to view the underlying query for the response.
+    The visual tab shows the pie chart for Texas data only.
 
-   For more technical users that prefer to use the underlying Kusto Query Language (KQL) to further analyze the data, change from **Viewing** to **Editing** mode. Permissions are required. For more information about how to create custom queries, and build more complex visualizations, see [Use KQL in Real-Time Dashboards](dashboard-kql.md).
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-visual-texas.png" alt-text="Screenshot of the visual tab showing a pie chart of the storm event types in Texas.":::
 
-1. When you're ready to pin your insights to the dashboard, select **Pin to dashboard**. This action saves the current view and query as a new tile on the dashboard.
+    ##[Table tab](#table/states)
+
+    The table tab shows the tabular data for Texas data only.
+
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-table-texas.png" alt-text="Screenshot of the table tab showing the storm even types in Texas in tabular format.":::
+
+    ##[Query tab](#query/states)
+
+    :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-query-texas.png" alt-text="Screenshot of the visual tab showing the KQL query that is run to display the visual and table results.":::
+
+    ---
+
+1. Ask Copilot more questions to refine your results or explore different aspects of the data. For example, you can ask "What are the top five storm event types in Texas?" or "Show me the storm events by month."
+
+1. When you're ready to save your insights to the dashboard, select **Save to dashboard**. This action saves the current view and query as a new tile on the dashboard.
 
 ### Configure visual options manually
 
