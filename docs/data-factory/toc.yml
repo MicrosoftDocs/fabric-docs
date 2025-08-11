@@ -17,7 +17,6 @@
             href: copilot-fabric-data-factory.md
           - name: Get started with Copilot in Fabric in the Data Factory workload
             href: copilot-fabric-data-factory-get-started.md
-      
       - name: Pricing in Data Factory
         items: 
           - name: Pricing overview
@@ -243,12 +242,6 @@
                 href: connector-azure-files-overview.md
               - name: Configure in a data pipeline Copy activity
                 href: connector-azure-files-copy-activity.md
-          - name: Azure HDInsight on AKS Trino
-            items: 
-              - name: Azure HDInsight on AKS Trino - Overview
-                href: connector-azure-hdinsight-on-aks-trino-overview.md
-              - name: Set up your connection
-                href: connector-azure-hdinsight-on-aks-trino.md
           - name: Azure SQL database
             items: 
               - name: Azure SQL database - Overview

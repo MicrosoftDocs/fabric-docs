@@ -9,20 +9,12 @@ ms.topic: tutorial
 
 # Digital twin builder (preview) in Real-Time Intelligence tutorial part 3: Build the ontology
 
-In this part of the tutorial, you build a digital twin ontology that models the bus and bus stop data. You create a digital twin builder (preview) item, and define entity types for the buses and stops. Then, you map the data from the *Tutorial* lakehouse to the entity instances, and define relationship types between the entity types to further contextualize the data.
+In this part of the tutorial, you build a digital twin ontology that models the bus and bus stop data. You create a digital twin builder (preview) item, and define entity types for the buses and stops. Then, you map the data from the *TutorialLH* lakehouse to the entity instances, and define relationship types between the entity types to further contextualize the data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Create new digital twin builder item in Fabric
-
-1. Go to your Fabric workspace. 
-1. Select **New item**.
-1. Search for the *Digital Twin Builder (preview)* item, and select it.
-
-    :::image type="content" source="media/tutorial/new-digital-twin-builder.png" alt-text="Screenshot of Digital Twin Builder item.":::
-
-1. Enter *BusModel* as the name for your item and select **Create**. 
-1. Wait for your digital twin builder item to be created. Once your digital twin builder item is ready, it opens to the semantic canvas.
+<!--## Create new digital twin builder item in Fabric (title in include)-->
+[!INCLUDE [Create digital twin builder](../includes/create-digital-twin-builder.md)]
 
 In the semantic canvas, you can add entity types and relationship types to define an ontology.
 
@@ -53,7 +45,7 @@ Next, map some non-timeseries data to the Bus entity type. These fields are stat
 
     :::image type="content" source="media/tutorial-rti/add-data.png" alt-text="Screenshot of adding a data mapping.":::
 
-1. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *Tutorial* lakehouse, and the *bus_data_processed* table.
+1. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *TutorialLH* lakehouse, and the *bus_data_processed* table.
       
     :::image type="content" source="media/tutorial-rti/bus-data-source.png" alt-text="Screenshot of the bus data source.":::
 
@@ -85,7 +77,7 @@ Next, map some non-timeseries data to the Bus entity type. These fields are stat
 
     :::image type="content" source="media/tutorial-rti/bus-save-non-time.png" alt-text="Screenshot of saving the bus non-time series mapping.":::
 
-1. Switch to the **Scheduling** tab and select **Run now** to apply the mapping.
+1. Switch to the **Scheduling** tab and select **Run** to apply the mapping.
 
     :::image type="content" source="media/tutorial-rti/bus-run-now.png" alt-text="Screenshot of running the bus mapping.":::
 
@@ -105,7 +97,7 @@ Next, map some time series data to the Bus entity type. These properties are str
 
     :::image type="content" source="media/tutorial-rti/bus-add-data-time.png" alt-text="Screenshot of adding a new bus mapping.":::
 
-1. Open **Select lakehouse table** to select a data source for your mapping. Again, select your tutorial workspace, the *Tutorial* lakehouse, and the *bus_data_processed* table. Select **Choose data source**.
+1. Open **Select lakehouse table** to select a data source for your mapping. Again, select your tutorial workspace, the *TutorialLH* lakehouse, and the *bus_data_processed* table. Select **Choose data source**.
 1. This time, switch the **Property type** to **Timeseries properties**.
 1. Under **Mapped Properties**, select the edit icon.
 
@@ -133,7 +125,7 @@ Next, map some time series data to the Bus entity type. These properties are str
 
     :::image type="content" source="media/tutorial-rti/bus-save-time.png" alt-text="Screenshot of saving the bus time series mapping.":::
 
-1. Switch to the **Scheduling** tab and select **Run now** under the new time series mapping to apply it.
+1. Switch to the **Scheduling** tab and select **Run** under the new time series mapping to apply it.
 
 ## Add Stop entity type
 
@@ -149,7 +141,7 @@ Next, create a second entity type to represent a bus stop.
 Next, map some non-timeseries data to the Stop entity type. The stop data doesn't contain any time series data, only static data about the bus stops and their locations. Later, when you link the Stop and Bus entity types together, this data is used to enrich the bus fact data with dimensional data.
 
 1. In the **Entity configuration** pane, open the **Mappings** tab and select **Add data**.
-1. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *Tutorial* lakehouse, and the *stops_data* table.
+1. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *TutorialLH* lakehouse, and the *stops_data* table.
 
     Select **Choose data source**.
 1. For the **Property type**, leave the default selection of **Non-timeseries properties**. 
@@ -174,7 +166,7 @@ Next, map some non-timeseries data to the Stop entity type. The stop data doesn'
 
     :::image type="content" source="media/tutorial-rti/stop-save-non-time.png" alt-text="Screenshot of saving the stop mapping.":::
 
-1. Switch to the **Scheduling** tab and select **Run now** to apply the mapping.
+1. Switch to the **Scheduling** tab and select **Run** to apply the mapping.
 
 ## Define relationship type
 
@@ -196,7 +188,7 @@ Next, create a relationship type to represent that a Bus *goesTo* a Stop.
 
     :::image type="content" source="media/tutorial-rti/relationship-create.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-rti/relationship-create.png":::
 
-1. In the **Scheduling** section that appears, select **Run now** to apply the relationship type.
+1. In the **Scheduling** section that appears, select **Run** to apply the relationship type.
 
 Now your Bus and Stop entity types are visible in the canvas with a relationship type between them. Together, these elements form the ontology for the tutorial scenario.
 
@@ -214,7 +206,7 @@ As a final step, confirm that all your data mappings ran successfully. Each mapp
 
     :::image type="content" source="media/tutorial-rti/manage-operations-2.png" alt-text="Screenshot of four completed operations.":::
 
-1. If any of the operations failed, check the box next to its name and select **Run now** to rerun it.
+1. If any of the operations failed, check the box next to its name and select **Run** to rerun it.
 
 Wait for all mappings to complete before you move on to the next part of the tutorial. In the next part, you project the ontology that you mapped to an eventhouse, to support further data analysis and visualization.
 

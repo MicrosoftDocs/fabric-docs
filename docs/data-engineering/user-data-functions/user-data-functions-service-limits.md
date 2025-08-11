@@ -28,6 +28,8 @@ The following are current limitations for Fabric User Data Functions (preview):
 
 - **"Manage connections" only supports Fabric data sources**: The "Manage connections" feature only supports connecting to Fabric-native data sources at this moment. To learn more, visit [Connect to data sources](./connect-to-data-sources.md).
 
+- **Service principals**: Using Fabric User Data Functions as a service principal to access other items and resources is not currently supported. For example, you cannot use Fabric User Data Functions as a managed identity or workspace identity.
+
 ## Service limits
 The following list details the service limits for User Data Functions items. 
 
