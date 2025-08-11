@@ -98,8 +98,6 @@ Select the tab that corresponds with your desired data source type.
 
     1. Select **Connection URI** and enter your Connection URI in this format:
 
-        :::image type="content" source="media/real-time-dashboard/connection-uri.png" alt-text="Screenshot of the connection uri button":::
-
     > Replace \<subscription-id\>, \<resource-group-name\> and \<ai-app-name\> with your own values.
 
     For Log Analytics: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`
