@@ -39,15 +39,15 @@ To create a machine learning experiment from the UI:
     :::image type="content" source="media/machine-learning-experiment/new-item.png" alt-text="Screenshot showing where to select Experiment in your workspace." lightbox="media/machine-learning-experiment/new-item.png":::
 OR
 
-  1. Select **Create**, which can be found in **...** from the vertical menu.
+1. Select **Create**, which can be found in **...** from the vertical menu.
 
     :::image type="content" source="media/machine-learning-experiment/create.png" alt-text="Screenshot of create button." lightbox="media/machine-learning-experiment/create.png":::
 
-    1. Under **Data Science**, select **Experiment**.
+1. Under **Data Science**, select **Experiment**.
     
     :::image type="content" source="media/machine-learning-experiment/create-2.png" alt-text="Screenshot showing where to select Experiment after selecting create." lightbox="media/machine-learning-experiment/create-2.png":::
 
-    1. Provide an experiment name and select **Create**. This action creates an empty experiment within your workspace.
+1. Provide an experiment name and select **Create**. This action creates an empty experiment within your workspace.
 
 After creating the experiment, you can start adding runs to track run metrics and parameters.
 
