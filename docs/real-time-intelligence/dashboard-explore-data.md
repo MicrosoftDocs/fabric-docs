@@ -16,7 +16,7 @@ You explore and act on data without knowing the query language or other technica
 
 :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a Real-Time Dashboard showing the explore data copilot icon highlighted.":::
 
-You explore data from each tile in the dashboard. Select the **Explore Data** icon on the tile toolbar to open the tile visual next to a Copilot pane. Copilot gives you a natural language interface to interact with the data behind the visual. You can also interact with the visual, set options, view data in a table, and see the underlying query.
+You explore data from each tile in the dashboard. Select the **Explore Data** icon on the tile toolbar to open the tile visual next to a Copilot pane. Copilot gives you a natural language interface to interact with the data behind the visual. You can also interact with the visual, set [visual options](#configure-visual-options), view data in a table, and see the underlying query.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ You explore data from each tile in the dashboard. Select the **Explore Data** ic
 
 ## Explore data with Copilot
 
-From the dashboard, you can explore the data in the tile using Copilot, for example, to change the time frame, filter by a column or value, calculate an average or total, or group by a column. In addition, you can interact with the visual and manually set up the [visual options](#configure-visual-options). Each time you explore the data with Copilot, the results of the visual, table, and underlying query update and you can save the insights as a new tile in the dashboard. Using the storm events sample data as an example, the following instructions show you how to explore data in a tile using Copilot.
+Explore a tile's data using Copilot, for example, to change the time frame, filter by a column or value, calculate an average or total, or group by a column. Each time you explore the data with Copilot, the results of the visual, table, and underlying query update and you can save the insights as a new tile in the dashboard. Using the storm events sample data as an example, the following instructions show you how to explore data in a tile using Copilot.
 
 1. In your Fabric workspace, select a Real-Time Dashboard.
 
@@ -73,7 +73,7 @@ From the dashboard, you can explore the data in the tile using Copilot, for exam
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-table-texas.png" alt-text="Screenshot of the table tab showing the storm even types in Texas in tabular format.":::
 
-    # [Query tab](#tab/query)
+    # [Query](#tab/query)
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-query-texas.png" alt-text="Screenshot of the visual tab showing the KQL query that is run to display the visual and table results.":::
 
