@@ -100,7 +100,7 @@ This error code means that Fabric Activator couldn't alert the recipient of your
 
 ### FabricItemThrottled
 
-This error code means that Fabric Activator couldn't execute the Fabric job defined in your rule because there were too many activations from Fabric Activator in a given time. The article [Fabric Activator limitations](activator-limitations.md) lists the maximum number of executions per user. To resolve this problem, change the definition of your rule so that it activates less often. If you have a use case that requires higher frequency than the limit, please share the use case and the frequency required in [Activator Community](https://aka.ms/activatorcommunity).
+This error code means that Fabric Activator couldn't execute the Fabric job defined in your rule because there were too many activations from Fabric Activator in a given time. The article [Fabric Activator limitations](activator-limitations.md) lists the maximum number of executions per user. To resolve this problem, change the definition of your rule so that it activates less often. If you have a use case that requires higher frequency than the limit, share the use case and the frequency required in [Activator Community](https://aka.ms/activatorcommunity).
 
 ### BotBlockedByUser
 
@@ -116,7 +116,7 @@ This error code means that you have a rule that sends notifications a Teams chat
 
 ### ReflexAppDisabledInTenant
 
-This error code means that "Reflex - Public" application has been disabled by your organization. To resolve this problem, ask your Entra administrator to unblock the app.
+This error code means that "Reflex - Public" application was disabled by your organization. To resolve this problem, ask your Entra administrator to unblock the app.
 
 ### MessageRecipientAmbiguous
 
@@ -132,11 +132,11 @@ This error code means that you have a rule that sends a Teams alert, and that th
 
 ### TeamsChatOrChannelNotFound
 
-This error code means that Fabric Activator couldn't locate the Teams channel or chat you have defined. To resolve this problem, review your rule's **action** and make sure that it's set to a valid Teams chat/channel.
+This error code means that Fabric Activator couldn't locate the Teams channel or chat you defined. To resolve this problem, review your rule's **action** and make sure that it is set to a valid Teams chat/channel.
 
 ### FabricItemNotFound
 
-This error code means that Fabric Activator couldn't locate the Fabric item you have defined. To resolve this problem, review your rule's **action** and make sure that it's set to an existing Fabric item.
+This error code means that Fabric Activator couldn't locate the Fabric item you have defined. To resolve this problem, review your rule's **action** and make sure that it is set to an existing Fabric item.
 
 ### FabricItemExecutionUnauthorized
 
