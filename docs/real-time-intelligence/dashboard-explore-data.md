@@ -35,15 +35,15 @@ From the dashboard, you can explore the data in the tile using Copilot, for exam
 
     The tile visual opens next to the Copilot pane. The visual shows the storm event types in the United States, and the Copilot pane is ready for your request.
 
-    # [Visual tab](#visual/states)
+    ### [Visual](#tab/visual)
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-tile.png" alt-text="Screenshot of the visual tab showing a pie chart of the storm event types.":::
 
-    # [Table tab](#table/states)
+    ### [Table](#tab/table)
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-table.png" alt-text="Screenshot of the table tab showing the storm even types in tabular format.":::
 
-    # [Query tab](#query/states)
+    ### [Query](#tab/query)
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-query.png" alt-text="Screenshot of the visual tab showing the KQL query that is run to display the visual and table results.":::
 
@@ -61,19 +61,19 @@ From the dashboard, you can explore the data in the tile using Copilot, for exam
 
     The results now display data for Texas only in the **Visual** tab and in the table of results in the **Table** tab. In the **Query** tab, you can see the modified underlying.
 
-    # [Visual tab](#visual/texas)
+    ### [Visual](#tab/visual)
 
     The visual tab shows the pie chart for Texas data only.
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-visual-texas.png" alt-text="Screenshot of the visual tab showing a pie chart of the storm event types in Texas.":::
 
-    # [Table tab](#table/states)
+    ### [Table](#tab/table)
 
     The table tab shows the tabular data for Texas data only.
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-table-texas.png" alt-text="Screenshot of the table tab showing the storm even types in Texas in tabular format.":::
 
-    # [Query tab](#query/states)
+    # [Query tab](#tab/query)
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-data-explore-query-texas.png" alt-text="Screenshot of the visual tab showing the KQL query that is run to display the visual and table results.":::
 
