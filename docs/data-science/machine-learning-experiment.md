@@ -21,7 +21,11 @@ In this article, you learn more about how data scientists can interact with and 
 
 This diagram illustrates the components of a machine learning experiment. The experiment contains runs, and a run can be saved as a machine learning model.
 
-:::image type="content" source="media/machine-learning-experiment/ml-experiment-conceptual-diagram.png" alt-text="Diagram showing the relationship between experiment, run, and model." lightbox="media/machine-learning-experiment/ml-experiment-conceptual-diagram.png":::
+```mermaid
+graph LR;
+    A[Experiment] -- contains --> B(Run);
+    B -- can be saved as a --> C(Model);
+```
 
 ## Prerequisites
 
