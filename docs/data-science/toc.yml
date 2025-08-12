@@ -219,6 +219,8 @@ items:
   items:
     - name: Score models with PREDICT
       href: model-scoring-predict.md
+    - name: Serve real-time predictions with ML model endpoints
+      href: model-endpoints.md
 - name: Secure and manage ML items
   items:
     - name: Disaster recovery for ML items

@@ -151,3 +151,4 @@ Congratulations! You're now ready to start using the warehouse.
 ## Related content
 
 - [Fabric Migration Assistant for Data Warehouse](migration-assistant.md)
+- [Microsoft Fabric Migration Overview](../fundamentals/migration.md)
