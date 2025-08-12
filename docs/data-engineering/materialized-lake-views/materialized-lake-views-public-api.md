@@ -48,7 +48,7 @@ Use the following APIs to schedule, run, retrieve, and remove jobs/schedules for
 
 ### Create Schedule for MLV in Lakehouse
 
-Create a new schedule to periodicallt refresh MLV lineage. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule?tabs=HTTP). Currently, MLV supports only one active refresh schedule per lineage. Use [Update Schedule](#update-schedule-for-mlv-in-lakehouse) to update an existing schedule.
+Create a new schedule to periodically refresh MLV lineage. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule?tabs=HTTP). Currently, MLV supports only one active refresh schedule per lineage. Use [Update Schedule](#update-schedule-for-mlv-in-lakehouse) to update an existing schedule.
 
 **Sample request**:
 
@@ -255,7 +255,7 @@ Status code:
 
 ### Run On Demand Job for MLV in Lakehouse
 
-Trigger an immediate refresh of MLV lineage in Lakhouse using an on-demand job. Spark job starts executing after a successful request. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job?tabs=HTTP).
+Trigger an immediate refresh of MLV lineage in Lakehouse using an on-demand job. Spark job starts executing after a successful request. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job?tabs=HTTP).
 
 **Sample request**:
 
@@ -372,7 +372,7 @@ Retry-after: 60
 
 - *Service Principal Authentication:* Currently, Materialized Lake Views (MLV) don't support authentication via service principals.
 - *Schedule Limits per Lakehouse:*  The [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule) enforces limits on the number of schedules that can be configured per lakehouse. Users should plan accordingly to avoid exceeding these limits.
-- *Single Schedule per Lineage:* MLV supports only one active refresh schedule per lineage. Attempting to create more than one refresh schedules for the a lineage may result in UI instability. If the UI becomes unresponsive due to multiple schedules, users must delete all existing schedules to restore functionality.
+- *Single Schedule per Lineage:* MLV supports only one active refresh schedule per lineage. Attempting to create more than one refresh schedules for a lineage may result in UI instability. If the UI becomes unresponsive due to multiple schedules, users must delete all existing schedules to restore functionality.
 - *Entity Display Limits:* The [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations) interface displays a limited number of completed and active jobs. This limitation may affect visibility into historical or concurrent job executions.
 - *Job Status Display:* The job status returned by [list item job instances](#list-job-instances-for-mlv-in-lakehouse) and [get item job instance](#get-job-instance-details-for-mlv-in-lakehouse) APIs reflects the status shown in Monitor Hub. This status may differ from the status displayed on the MLV [run history](./run-history.md#following-are-the-possible-states-for-a-run-in-lineage-view).
 
