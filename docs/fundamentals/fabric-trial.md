@@ -48,7 +48,7 @@ Your Microsoft Fabric trial lasts for 60 days, unless you cancel it earlier. As 
 
 Once the trial expires:
 
-- Access to the trial capacity is revoked. Any workspaces assigned to the trial capacity will no longer be accessible unless they are reassigned to a paid capacity.
+- Access to the trial capacity is revoked. Any workspaces assigned to the trial capacity are assigned to a Pro license. You can still access the workspace and work with Power BI items, but Fabric items become inactive. 
 - Fabric items (like reports, notebooks, and pipelines) remain in your tenant, but they become inactive until reassigned to a valid capacity.
 - You will not lose your data. All content remains stored in OneLake and can be reactivated by assigning it to a paid Fabric capacity.
 - You can upgrade at any time to a paid Fabric SKU (F64 or higher) to continue using your workspaces and items without interruption.
@@ -75,7 +75,7 @@ You can start a trial several different ways. The first two methods make you the
 <a id="method-1"></a>
 ### Method 1: Start a new trial capacity from the Account manager
 
-You can sign up for a trial capacity. You manage who else can use your trial by giving coworkers permission to create workspaces in your trial capacity. Assigning workspaces to the trial capacity automatically adds coworkers (with roles in those workspaces) to the trial capacity. To start your Fabric capacity trial and become the Capacity administrator of that trial, follow these steps:
+You can sign up for a trial capacity. You manage who else can assign workspaces to your trial capacity by adjusting the **Contributor** permissions setting for your trial capacity. Assigning workspaces to the trial capacity lets any user who has roles in those workspaces create Fabric items. To start your Fabric capacity trial and become the Capacity administrator of that trial, follow these steps:
 
 1. To open your Account manager, select the tiny photo from the upper-right corner of the [Fabric homepage](https://app.fabric.microsoft.com/home?pbi_source=learn-get-started-fabric-trial). 
 
@@ -135,11 +135,11 @@ To see the status of your trial, open your Account manager again and look for th
 
 ## Share trial capacities
 
-Each standard trial of a Fabric capacity includes 64 capacity units. The person who starts the trial becomes the Capacity administrator for that trial capacity. Other users on the same tenant can also start a Fabric trial and become the Capacity administrator for their own trial capacity. Hundreds of customers can use each trial capacity. But, Microsoft sets a limit on the number of trial capacities that can be created on a single tenant. To help others in your organization try out Fabric, share your trial capacity. There are several ways to share.  
+Each standard trial of a Fabric capacity includes either 4 capacity units or 64 capacity units. The person who starts the trial becomes the Capacity administrator for that trial capacity. Other users on the same tenant can also start a Fabric trial and become the Capacity administrator for their own trial capacity. Hundreds of customers can use each trial capacity. But, Microsoft sets a limit on the number of trial capacities that can be created on a single tenant. To help others in your organization try out Fabric, share your trial capacity. There are several ways to share.  
 
 ### Share by enabling Contributor permissions
 
-Enabling the **Contributor permissions** setting allows other users to assign their workspaces to your trial capacity. If you're the Capacity or Fabric administrator, enable this setting from the Admin portal.
+Enabling the **Contributor permissions** setting allows other users to assign their workspaces to your trial capacity. If you're the Capacity or Fabric administrator, adjust this setting from the Admin portal.
 
 1. From the top right section of the Fabric menubar, select the cog icon to open **Settings**.
 1. Select **Admin portal** > **Trial**. **Enabled for the entire organization** is set by default.
@@ -148,7 +148,7 @@ Enabling **Contributor permissions** means that any user with an Admin role in a
 
 ### Share by assigning workspaces
 
-If you're the Capacity administrator, assign the trial capacity to multiple workspaces. Anyone with access to one of those workspaces is now also participating in the Fabric capacity trial.
+If you're the Capacity administrator, assign the trial capacity to multiple workspaces. Anyone with access to one of those workspaces can now use the Fabric capacity trial.
 
 1. Open **Workspaces** and select the name of a Premium workspace.
 1. Select **Workspace settings**, then **License info**.
