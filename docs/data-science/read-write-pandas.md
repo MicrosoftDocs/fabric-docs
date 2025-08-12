@@ -139,6 +139,61 @@ import pandas as pd
 df.to_json("/LAKEHOUSE_PATH/Files/FILENAME.json") 
 ```
 
+## Working with Delta tables
+
+Delta tables are the default table format in Microsoft Fabric and are stored in the **Tables** section of your Lakehouse. Unlike files, Delta tables require a two-step process to work with pandas: first read the table into a Spark DataFrame, then convert it to a pandas DataFrame.
+
+### Read data from a Delta table
+
+```Python
+# Read a Delta table from your Lakehouse into a pandas DataFrame
+# Replace TABLE_NAME with your own table name
+spark_df = spark.read.format("delta").load("Tables/TABLE_NAME")
+pandas_df = spark_df.toPandas()
+display(pandas_df)
+```
+
+You can also read Delta tables using Spark SQL syntax:
+
+```Python
+# Alternative method using Spark SQL
+spark_df = spark.sql("SELECT * FROM TABLE_NAME")
+pandas_df = spark_df.toPandas()
+display(pandas_df)
+```
+
+### Write pandas DataFrame to a Delta table
+
+```Python
+# Convert pandas DataFrame to Spark DataFrame, then save as Delta table
+# Replace TABLE_NAME with your desired table name
+spark_df = spark.createDataFrame(pandas_df)
+spark_df.write.format("delta").mode("overwrite").saveAsTable("TABLE_NAME")
+```
+
+You can also save to a specific path in the Tables section:
+
+```Python
+# Save to a specific path in the Tables section
+spark_df = spark.createDataFrame(pandas_df)
+spark_df.write.format("delta").mode("overwrite").save("Tables/TABLE_NAME")
+```
+
+### Write modes for Delta tables
+
+When writing to Delta tables, you can specify different modes:
+
+```Python
+# Overwrite the entire table
+spark_df.write.format("delta").mode("overwrite").saveAsTable("TABLE_NAME")
+
+# Append new data to existing table
+spark_df.write.format("delta").mode("append").saveAsTable("TABLE_NAME")
+```
+
+> [!NOTE]
+> Delta tables created in the **Tables** section of your Lakehouse are automatically discoverable and can be queried using Spark SQL. They also appear in the Lakehouse explorer interface.
+
 ## Related content
 
 - Use Data Wrangler to [clean and prepare your data](data-wrangler.md)
