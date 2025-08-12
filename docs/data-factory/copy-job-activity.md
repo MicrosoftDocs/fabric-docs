@@ -48,10 +48,6 @@ Here's how to set up your Copy job activity.
 
 Now you can use the Copy job item in your pipeline to move your data!
 
-## Known limitations
-
-- Drop any known limitations here as we head to PuPr
-
 ## Related content
 
 - [How to create a Copy job in Data Factory](/fabric/data-factory/create-copy-job)
