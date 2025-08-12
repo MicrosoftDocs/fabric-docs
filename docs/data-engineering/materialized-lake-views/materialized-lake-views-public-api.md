@@ -21,15 +21,15 @@ The following **job scheduler** actions are available for materialized lake view
 
 |Action|Description|
 |---------|---------|
-|[Create Item Schedule](#create-schedule-for-mlv-in-lakehouse)|Create schedule to run MLV lineage in Lakehouse.|
-|[Update Item Schedule](#update-schedule-for-mlv-in-lakehouse)|Update existing schedule for MLV lineage in MLV.|
-|[Get Item Schedule](#get-schedule-for-mlv-in-lakehouse)|Get schedule details for MLV lineage in Lakehouse.|
-|[Delete Item Schedule](#delete-schedule-for-mlv-in-lakehouse)|Delete schedule created for MLV lineage in Lakehouse.|
-|[List Item Schedules](#list-schedules-for-mlv-in-lakehouse)|List schedules created for MLV lineage in Lakehouse.|
-|[Run On Demand Item Job](#run-on-demand-job-for-mlv-in-lakehouse)|Run MLV lineage in Lakehouse as an on demand job.|
-|[List Item Job Instances](#list-job-instances-for-mlv-in-lakehouse)|List all job instances created for MLV lineage in Lakehouse. |
-|[Get Item Job Instance](#get-job-instance-details-for-mlv-in-lakehouse)|Get job instance details of MLV lineage in Lakehouse execution such as status.|
-|[Cancel Item Job Instance](#cancel-job-instance-for-mlv-in-lakehouse)|Cancel an ongoing run of MLV lineage in Lakehouse.|
+|[Create Item Schedule](#create-schedule-for-mlv-in-lakehouse)|Create a new schedule to refresh MLV lineage in Lakehouse.|
+|[Update Item Schedule](#update-schedule-for-mlv-in-lakehouse)|Update an existing schedule for refreshing MLV lineage.|
+|[Get Item Schedule](#get-schedule-for-mlv-in-lakehouse)|Get details for an existing schedule to refresh MLV lineage in Lakehouse.|
+|[Delete Item Schedule](#delete-schedule-for-mlv-in-lakehouse)|Delete a schedule for refresh of MLV lineage in Lakehouse.|
+|[List Item Schedules](#list-schedules-for-mlv-in-lakehouse)|List schedules created for refresh of MLV lineage in Lakehouse.|
+|[Run On Demand Item Job](#run-on-demand-job-for-mlv-in-lakehouse)|Refresh MLV lineage in Lakehouse as an on demand job.|
+|[List Item Job Instances](#list-job-instances-for-mlv-in-lakehouse)|List all job instances created for refresh of MLV lineage in Lakehouse.|
+|[Get Item Job Instance](#get-job-instance-details-for-mlv-in-lakehouse)|Get job instance details for completed refresh of MLV lineage in Lakehouse such as status.|
+|[Cancel Item Job Instance](#cancel-job-instance-for-mlv-in-lakehouse)|Cancel an ongoing refresh of MLV lineage in Lakehouse.|
 
 For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler) with `{jobType}` as 'RefreshMaterializedLakeViews'.
 
@@ -44,11 +44,11 @@ For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler) w
 
 ## Examples of REST API usage with materialized lake views
 
-Use the following APIs to schedule, run, retrieve, and remove jobs/schedules in materialized lake views.
+Use the following APIs to schedule, run, retrieve, and remove jobs/schedules for refresh of materialized lake views lineage.
 
 ### Create Schedule for MLV in Lakehouse
 
-Create a new schedule to run lineage in MLV. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule?tabs=HTTP). Currently, MLV supports only one active schedule per lineage. Use [Update Schedule](#update-schedule-for-mlv-in-lakehouse) to update an existing schedule.
+Create a new schedule to periodicallt refresh MLV lineage. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule?tabs=HTTP). Currently, MLV supports only one active refresh schedule per lineage. Use [Update Schedule](#update-schedule-for-mlv-in-lakehouse) to update an existing schedule.
 
 **Sample request**:
 
@@ -97,7 +97,7 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/{WORKSPACE_ID}/lakehous
 
 ### Update Schedule for MLV in Lakehouse
 
-Update an existing schedule to run lineage in MLV. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/update-item-schedule?tabs=HTTP). Currently, MLV supports only one active schedule per lineage.
+Update an existing refresh schedule for MLV lineage. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/update-item-schedule?tabs=HTTP). Currently, MLV supports only one active schedule per lineage.
 
 **Sample request**:
 
@@ -142,7 +142,7 @@ Status code:
 
 ### Get Schedule for MLV in Lakehouse
 
-Get details of an existing schedule for MLV. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/get-item-schedule?tabs=HTTP).
+Get details of an existing MLV lineage refresh schedule. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/get-item-schedule?tabs=HTTP).
 
 **Sample request**:
 
@@ -176,7 +176,7 @@ Status code:
 
 ### Delete Schedule for MLV in Lakehouse
 
-Delete an existing schedule for MLV. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/delete-item-schedule?tabs=HTTP).
+Delete an existing refresh schedule for MLV lineage. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/delete-item-schedule?tabs=HTTP).
 
 **Sample request**:
 
@@ -191,7 +191,7 @@ Status code:
 
 ### List Schedules for MLV in Lakehouse
 
-List schedules created for MLV lineage. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-schedules?tabs=HTTP).
+List all refresh schedules created for MLV lineage. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-schedules?tabs=HTTP).
 
 **Sample request**:
 
@@ -255,7 +255,7 @@ Status code:
 
 ### Run On Demand Job for MLV in Lakehouse
 
-Run MLV lineage as an on demand job. Spark job starts executing after a successful request. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job?tabs=HTTP).
+Trigger an immediate refresh of MLV lineage in Lakhouse using an on-demand job. Spark job starts executing after a successful request. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/run-on-demand-item-job?tabs=HTTP).
 
 **Sample request**:
 
@@ -277,7 +277,7 @@ With `location`, you can use [Get Item Job Instance](/rest/api/fabric/core/job-s
 
 ### List Job Instances for MLV in Lakehouse
 
-Lists job instances for MLV in a Lakehouse. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP). The job status returned reflects the status shown in Monitor Hub.
+Lists job instances executed for MLV lineage refresh in a Lakehouse. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP). The job status returned reflects the status shown in Monitor Hub.
 
 **Sample request**:
 
@@ -321,7 +321,7 @@ Status code:
 
 ### Get Job Instance details for MLV in Lakehouse
 
-Get details such as status and id corresponding to a run in MLV. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/get-item-job-instance?tabs=HTTP). The job status returned reflects the status shown in Monitor Hub.
+Get execution details such as status and id for a specific MLV lineage refresh job instance. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/get-item-job-instance?tabs=HTTP). The job status returned reflects the status shown in Monitor Hub.
 
 **Sample request**:
 
@@ -350,7 +350,7 @@ Status code:
 
 ### Cancel Job Instance for MLV in Lakehouse
 
-Cancel an ongoing job run of lineage in MLV. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/cancel-item-job-instance?tabs=HTTP).
+Cancel an ongoing refresh MLV lineage job. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/cancel-item-job-instance?tabs=HTTP).
 
 **Sample request**:
 
@@ -372,8 +372,8 @@ Retry-after: 60
 
 - *Service Principal Authentication:* Currently, Materialized Lake Views (MLV) don't support authentication via service principals.
 - *Schedule Limits per Lakehouse:*  The [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule) enforces limits on the number of schedules that can be configured per lakehouse. Users should plan accordingly to avoid exceeding these limits.
+- *Single Schedule per Lineage:* MLV supports only one active refresh schedule per lineage. Attempting to create more than one refresh schedules for the a lineage may result in UI instability. If the UI becomes unresponsive due to multiple schedules, users must delete all existing schedules to restore functionality.
 - *Entity Display Limits:* The [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations) interface displays a limited number of completed and active jobs. This limitation may affect visibility into historical or concurrent job executions.
-- *Single Schedule per Lineage:* MLV supports only one active schedule per lineage. Attempting to create more schedules for the same lineage may result in UI instability. If the UI becomes unresponsive due to multiple schedules, users must delete all existing schedules to restore functionality.
 - *Job Status Display:* The job status returned by [list item job instances](#list-job-instances-for-mlv-in-lakehouse) and [get item job instance](#get-job-instance-details-for-mlv-in-lakehouse) APIs reflects the status shown in Monitor Hub. This status may differ from the status displayed on the MLV [run history](./run-history.md#following-are-the-possible-states-for-a-run-in-lineage-view).
 
 ## Related content
