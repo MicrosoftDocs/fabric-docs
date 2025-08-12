@@ -19,8 +19,8 @@ This Dataverse connector is supported in Data Factory for [!INCLUDE [product-nam
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Organizational account<br> Service principal<br> Workspace identity |
-| **Data pipeline**<br>- [Copy activity](connector-dataverse-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Organizational account<br> Service principal |
-| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Merge|None<br> On-premises<br> Virtual network |Organizational account<br> Service principal |
+| **Data pipeline**<br>- [Copy activity](connector-dataverse-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Organizational account<br> Service principal<br> Workspace identity |
+| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Merge|None<br> On-premises<br> Virtual network |Organizational account<br> Service principal<br> Workspace identity |
 
 
 ## Related content

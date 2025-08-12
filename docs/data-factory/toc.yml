@@ -3,19 +3,31 @@ items:
     href: index.yml
   - name: Overview
     items:
-      - name: What is Data Factory?
-        href: data-factory-overview.md
-      - name: What's new in Data Factory
-        href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric
-      - name: What is Copilot in Fabric in the Data Factory workload?
-        href: copilot-fabric-data-factory.md
-      - name: Get started with Copilot in Fabric in the Data Factory workload
-        href: copilot-fabric-data-factory-get-started.md
-      - name: Guided Data Factory lab
-        href: guided-lab-experience.md
-      - name: Data Factory training
-        href: /training/paths/get-started-fabric
-      - name: Pricing in Data Factory
+    - name: What is Data Factory?
+      href: data-factory-overview.md
+    - name: What's new in Data Factory
+      href: ../fundamentals/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric
+    - name: What is Copilot in Fabric in the Data Factory workload? 
+      href: copilot-fabric-data-factory.md
+    - name: Get started with Copilot in Fabric in the Data Factory workload
+      href: copilot-fabric-data-factory-get-started.md
+    - name: Guided Data Factory lab
+      href: guided-lab-experience.md
+    - name: Data Factory training
+      href: /training/paths/get-started-fabric
+    - name: Pricing in Data Factory
+      items:
+      - name: Pricing overview
+        href: pricing-overview.md
+      - name: Pricing data pipelines
+        href: pricing-pipelines.md
+      - name: Pricing Dataflow Gen2
+        href: pricing-dataflows-gen2.md
+      - name: Pricing Copy job
+        href: pricing-copy-job.md
+      - name: Pricing Apache Airflow job
+        href: pricing-apache-airflow-job.md
+      - name: Pricing examples
         items:
           - name: Pricing overview
             href: pricing-overview.md
