@@ -42,7 +42,7 @@ You can seamlessly incorporate these functions as part of data-science and data-
 > - AI functions use the *gpt-4o-mini (2024-07-18)* model by default. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Most of the AI functions are optimized for use on English-language texts.
 
-## Get started with AI functions
+## Getting started with AI functions
 
 When you use pandas, the OpenAI package must be installed. In the Python environment, the AI Functions package must also be installed.
 
