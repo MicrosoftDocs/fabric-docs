@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/19/2024
 ms.search.form: KQL Database
 #Customer intent: To create a database shortcut in Real-Time Intelligence.

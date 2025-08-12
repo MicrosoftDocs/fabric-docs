@@ -4,7 +4,7 @@ description: This article provides information about how to create a Salesforce 
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 07/02/2024
+ms.date: 06/16/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -13,7 +13,6 @@ ms.custom:
 # Set up your Salesforce objects connection
 
 This article outlines the steps to create a Salesforce objects connection.
-
 
 ## Supported authentication types
 

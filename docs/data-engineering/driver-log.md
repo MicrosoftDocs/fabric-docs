@@ -77,7 +77,7 @@ None
 ### Sample request
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/applications/application_1741176604085_0001/logs?type=driver&meta=true&fileName=stderr 
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/applications/application_1741176604085_0001/logs?type=driver&meta=true&fileName=stderr 
 ```
 
 ### Sample response
@@ -157,7 +157,7 @@ None
 ### Sample request
 
 ``` HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/application_1725346176782_0001/logs?type=rollingdriver &meta=true&filenamePrefix=stderr
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/application/application_1725346176782_0001/logs?type=rollingdriver &meta=true&filenamePrefix=stderr
 ```
 
 ### Sample response
@@ -231,7 +231,7 @@ https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/notebooks|sparkJobD
 | containerId | query | False | string | The specific driver container ID. Leave it not specified if you aren't sure what the driver container ID is. |
 | isDownload | query | False | bool | True to download the log file as a stream. Default as false. |
 | isPartial | query | False | bool | Only take effect when isDownload is true. True to download a part of file content according to the given offset and size. Default as false to download the whole file. |
-| offset, size   | query | False  | long | The starting offset (in byte) and the size (in byte) to read the file content. Only take effect when isDownload = true and isPartial = true <br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br>- For size, the default value is 1M (1024*1024) bytes. |
+| offset, size   | query | False  | long | The starting offset (in byte) and the size (in byte) to read the file content. Only take effect when isDownload = true and isPartial = true <br>- For offset, it starts from 0. The valid range is 0 to 20,000. The default value is 0.<br>- For size, the default value is 1M (1024*1024) bytes. <br> *Note that the parameter "offset" is only valid while the Spark application is still running. Once the application stops running, the parameter will have no effect. Consider using rolling driver logs instead.* |
 
 ### Request body
 
@@ -248,7 +248,7 @@ None
 ### Sample request
 
 ``` HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/6e335e92-a2a2-4b5a-970a-bd6a89fbb765/notebooks/cfafbeb1-8037-4d0c-896e-a46fb27ff229/livySessions/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/application/application_1731308630223_0001/logs?type=driver&fileName=stderr&isDownload=true&isPartial=true&offset=100&size=1000
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/bbbbcccc-1111-dddd-2222-eeee3333ffff/livySessions/ccccdddd-2222-eeee-3333-ffff4444aaaa/application/application_1731308630223_0001/logs?type=driver&fileName=stderr&isDownload=true&isPartial=true&offset=100&size=1000
 ```
 
 ## Definitions 

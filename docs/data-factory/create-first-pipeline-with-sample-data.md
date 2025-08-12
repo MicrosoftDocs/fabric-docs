@@ -5,47 +5,46 @@ ms.author: whhender
 ms.reviewer: xupzhou
 author: whhender
 ms.topic: quickstart
-ms.custom: pipelines
-ms.date: 02/25/2025
+ms.custom: pipelines, sfi-image-nochange
+ms.date: 06/23/2025
 ms.search.form: Pipeline Tutorials
+ai-usage: ai-assisted
 ---
 
 # Quickstart: Create your first pipeline to copy data
 
-In this quickstart, you build a data pipeline to move a Sample dataset to the Lakehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Lakehouse.
+In this quickstart, you'll build a data pipeline that moves a sample dataset into a Lakehouse. It's a simple way to see how pipeline copy activities work and how to load data into a Lakehouse.
+
+>[!TIP]
+>You can also use a [Copy job](quickstart-copy-job.md) to move data from one place to another. Check out [this decision guide](../fundamentals/decision-guide-pipeline-dataflow-spark.md) to help you pick the right tool.
 
 ## Prerequisites
 
-To get started, you must complete the following prerequisites:
+Before you begin, make sure you have the following setup:
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription. [Create a free account](https://azure.microsoft.com/free/).
 - Make sure you have a [!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace: [Create a workspace](../fundamentals/create-workspaces.md).
 
 ## Create a data pipeline
 
-1. Navigate to [Power BI](https://app.powerbi.com/).
-1. Select the Power BI icon in the bottom left of the screen, then select **Fabric** to open homepage of Microsoft Fabric.
+1. Go to [Power BI](https://app.powerbi.com/).
+1. Select the Power BI icon in the lower left, then choose **Fabric** to open the Microsoft Fabric homepage.
 
-1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you created a new workspace in the prior Prerequisites section, use this one.
+1. Go to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you made a new workspace as a prerequisite, use that one.
 
    :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
 
-1. Select **New item** and choose Data pipeline, then input a pipeline name to create a new pipeline.
+1. Select **New item**, pick **Data pipeline**, and enter a name for your pipeline.
 
    :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
-  :::image type="content" source="media/create-first-pipeline/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
+   :::image type="content" source="media/create-first-pipeline/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
-## Copy data using pipeline
+## Copy data with your data pipeline
 
-In this session, you start to build your first pipeline by following below steps about copying from a sample dataset provided by pipeline into Lakehouse.
-
-### Step 1: Start with the Copy data assistant
-
-1. After selecting **Copy data assistant** on the canvas,  the **Copy assistant** tool will be opened to get started.
+1. In your data pipeline, select **Copy data assistant**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/copy-data-button.png" alt-text="Screenshot showing the Copy data button.":::
 
-### Step 2: Configure your source
 
 1. Choose the **Sample data** tab at the top of the data source browser page, then select the **Public Holidays** sample data, and then **Next**.
 
@@ -55,9 +54,7 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/sample-data-preview.png" alt-text="Screenshot showing the sample data for the Public Holidays sample data.":::
 
-### Step 3: Configure your destination
-
-1. Select **Lakehouse**.
+1. To configure your destination, select **Lakehouse**.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/lakehouse-destination.png" alt-text="Screenshot showing the selection of the Lakehouse destination in the Copy data assistant.":::
 
@@ -69,13 +66,11 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/configure-lakehouse-tables.png" lightbox="media/create-first-pipeline-with-sample-data/configure-lakehouse-tables.png" alt-text="Screenshot showing the Connect to data destination page of the Copy data assistant with Tables selected and a table name for the sample data provided.":::
 
-### Step 4: Review and create your copy activity
-
-1. Review your copy activity settings in the previous steps and select **Save + run** to finish. Or you can revisit the previous steps in the tool to edit your settings, if needed. If you just want to save but not run the pipeline, you can deselect the **Start data transfer immediately** checkbox.
+1. Review your copy activity settings, then select **Save + run** to finish. You can go back and change any settings if you need to. If you just want to save your pipeline without running it right away, clear the **Start data transfer immediately** checkbox.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/review-create-activity.png" alt-text="Screenshot of the Review + create page of the Copy data assistant highlighting source and destination.":::
 
-1. The Copy activity is added to your new data pipeline canvas. All settings including advanced settings for the activity are available in the tabs below the pipeline canvas when the created **Copy data** activity is selected.
+1. The Copy activity now appears in your pipeline. When you select the **Copy data** activity, you'll see all its settings—including advanced options—in the tabs below the canvas.
 
    :::image type="content" source="media/create-first-pipeline/complete-copy-activity.png" alt-text="Screenshot showing the completed Copy activity with the Copy activity settings tabs highlighted.":::
 
@@ -85,27 +80,23 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/save-and-run.png" lightbox="media/create-first-pipeline-with-sample-data/save-and-run.png" alt-text="Screenshot showing the Run button on the Home tab, and the Save and run prompt displayed.":::
 
-1. You can monitor the running process and check the results on the **Output** tab below the pipeline canvas. Select link for the activity name in your output to view the run details.
+1. You can watch your pipeline run and see the results on the **Output** tab below the canvas. To check the details, select the activity name in the output list.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/run-details-button.png" lightbox="media/create-first-pipeline-with-sample-data/run-details-button.png" alt-text="Screenshot showing the Output tab of the pipeline run in-progress with the Details button highlighted in the run status.":::
 
-1. The run details show how much data was read and written and various other details about the run.
+1. The run details page shows how much data your pipeline read and wrote, along with other helpful info about the run.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/run-details.png" alt-text="Screenshot showing the run details window.":::
 
-1. You can also schedule the pipeline to run with a specific frequency as required. Here's an example showing a schedule for the pipeline set to run every 15 minutes.
+1. You can set your pipeline to run on a schedule. For example, select **Schedule** to open the scheduling options, then pick how often you want it to run—for example, every 15 minutes.
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
 
 ## Related content
-The pipeline in this sample shows you how to copy sample data to Lakehouse.  You learned how to:
 
-> [!div class="checklist"]
-> - Create a data pipeline.
-> - Copy data with the Copy Assistant.
-> - Run and schedule your data pipeline.
+This quickstart walked you through copying sample data into a Lakehouse using a data pipeline as a simple way to get hands-on with pipelines and see how easy it is to move data.
 
-Next, advance to learn more about monitoring your pipeline runs.
+Next, learn how to monitor your pipeline runs and keep an eye on your data.
 
 > [!div class="nextstepaction"]
 > [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)

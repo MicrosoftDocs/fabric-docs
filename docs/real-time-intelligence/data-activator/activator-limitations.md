@@ -94,7 +94,9 @@ For more information, see [Limitations on charts with a time axis](activator-get
 
 ## Allowed recipients of email notifications
 
-Each recipient of an email notification must have an internal email address. The recipient must belong to the organization that owns the Fabric tenant. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] doesn't allow email notifications to be sent to either external email addresses or guest email addresses.
+Each recipient of an email notification must have an internal email address. The recipient must belong to the same domain as the creator or other verified domains on creator's Microsoft Entra tenant. [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] doesn't allow email notifications to be sent to either external email addresses or guest email addresses.
+
+To check if the recipient's domain is one of the verified domains, visit [Azure portal](https://portal.azure.com) and search for **Microsoft Entra ID**. Once landed in Microsoft Entra ID, select **Custom domain names** in the left panel and check if recipient's domain is listed there.
 
 ## Allowed chats and channel for Teams notifications
 
@@ -126,18 +128,19 @@ Your organization might have up to 500 [!INCLUDE [fabric-activator](../includes/
 * Use an existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] item instead of creating a new item, or
 * Delete some of your existing [!INCLUDE [fabric-activator](../includes/fabric-activator.md)] items.
 
-## Application Lifecycle limitations
+## Lifecycle management limitations
 
-The following components are currently not supported in Activator ALM:
-* Eventstream  (rolling out)
-* Real Time Hub Fabric Events (rolling out)
-* Real-Time Hub Azure Storage events - not supported
-* Data Pipelines (as target action) 
+Activator items do not currently work with Microsoft Fabric’s lifecycle management tools if they use either of these data sources:
+
+* Azure Blob Storage Events
 * Power BI
+  
+If you include an Activator item with one of these sources in a deployment pipeline or a Git-integrated workspace, you will see an error when you try to deploy or commit the Activator item.
+
+Support for these data sources is planned for a future release.
 
 ## Related content
 
-* [Get started with [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-get-started.md)
 * [Detection conditions in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](activator-detection-conditions.md)
 * [[!INCLUDE [fabric-activator](../includes/fabric-activator.md)] tutorial using sample data](activator-tutorial.md)
 * [What is Microsoft Fabric?](../../fundamentals/microsoft-fabric-overview.md)

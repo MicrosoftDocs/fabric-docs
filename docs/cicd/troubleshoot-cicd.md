@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.service: fabric
 ms.subservice: cicd
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 02/27/2025
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---

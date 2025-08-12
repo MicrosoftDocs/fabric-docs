@@ -7,8 +7,8 @@ ms.service: fabric
 ms.topic: how-to
 ms.date: 06/21/2024
 
+ms.custom: sfi-image-nochange
 #customer intent: As a Fabric administrator, I want understand what's on the Fabric identities tab so that I can monitor and govern all the Fabric identities in my organization.
-
 ---
 
 # Manage Fabric identities

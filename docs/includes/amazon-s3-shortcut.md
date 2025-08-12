@@ -4,7 +4,7 @@ description: Include file for Amazon S3 shortcut in Microsoft Fabric.
 author: spelluru
 ms.author: spelluru
 ms.topic: include
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 07/16/2023
 ---
 ## Select a source

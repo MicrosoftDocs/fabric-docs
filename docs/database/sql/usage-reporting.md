@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: amapatil # Microsoft alias
 ms.date: 05/05/2025
 ms.topic: conceptual
-ms.search.form: SQL database Billing and Utilization
+ms.search.form: SQL database Billing and Utilization, Databases Billing and Utilization
 ---
 # Billing and utilization reporting for SQL database in Microsoft Fabric
 
@@ -141,7 +141,7 @@ Top use cases for this view include:
   - The **Success** status is standard SQL database behavior when the capacity is not throttled.
   - The **Rejected** status can occur because of resource limitations due to capacity throttling.
 
-- Identification of SQL queries(statements) that consumed many resources: sort the table by **Total CU(s)** descending by timestamp and artifact. 
+- Identification of SQL queries(statements) that consumed many resources: sort the table by **Total CU(s)** descending by timestamp and item. 
 
 #### Considerations
 

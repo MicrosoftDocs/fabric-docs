@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: arali
 author: ekote
 ms.topic: overview
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 01/08/2025
 ---
 

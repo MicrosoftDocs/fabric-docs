@@ -11,6 +11,11 @@ ms.date: 05/27/2025
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
+## July 2025 - v0.2.0
+
+- Real-time - Eventstream calculations have been fully revamped.
+- Private Preview - Export to Excel - Export your inputs and estimates as an Excel file.
+
 ## May 2025 - v0.1.2
 
 - Real-time - Updated the consumption model to more accurately represent the diversity of scenarios. You now need to input the number of jobs.

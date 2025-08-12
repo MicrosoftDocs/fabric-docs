@@ -3,7 +3,7 @@ title: Troubleshooting digital twin builder (preview)
 description: This article provides troubleshooting suggestions for digital twin builder (preview).
 author: baanders
 ms.author: baanders
-ms.date: 04/29/2025
+ms.date: 08/04/2025
 ms.topic: concept-article
 ---
 
@@ -32,7 +32,7 @@ For more information about the Monitor hub, see [Use the Monitor hub](../../admi
 
 ### Entity instances and time series data missing from explorer
 
-What to do when the Explore mode view appears empty after mapping data to entities:
+What to do when the Explore mode view appears empty after mapping data to entity instances:
 * Use the **Manage operations** tab to verify that mapping operations are completed successfully. If they failed, rerun them (starting with failed non-time series operations first, then time series operations).
 
     :::image type="content" source="media/resources-troubleshooting/operations-completed.png" alt-text="Screenshot of completed operations in the Manage operations tab.":::
@@ -46,10 +46,10 @@ What to do when the Explore mode view appears empty after mapping data to entiti
 ### Entity instances missing time series data
 
 What to do when an entity instance in the Explore view is missing time series data in the **Charts** tab:
-* The tab might appear empty because the time series mapping for the entity ran before the non-time series mapping completed. Try creating a new time series mapping with the same source table, and running it with incremental mapping **disabled**.
-* Time series data might be missing because the link property for the time series mapping doesn't exactly match the entity property. In the time series mapping configuration, verify that the **Link with entity property** fields have exactly matching values. If they don't, redo the mapping so that the values match.
+* The tab might appear empty because the time series mapping for the entity type ran before the non-time series mapping completed. Try creating a new time series mapping with the same source table, and running it with incremental mapping **disabled**.
+* Time series data might be missing because the link property for the time series mapping doesn't exactly match the entity type property. In the time series mapping configuration, verify that the **Link with entity property** fields have exactly matching values. If they don't, redo the mapping so that the values match.
 
-    :::image type="content" source="media/resources-troubleshooting/define-link.png" alt-text="Screenshot of defining the link between entity property and time series.":::
+    :::image type="content" source="media/resources-troubleshooting/define-link.png" alt-text="Screenshot of defining the link between entity type property and time series.":::
 
 ## Troubleshoot operation failures
 

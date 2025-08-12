@@ -119,7 +119,7 @@ sections:
       - question: |
           Can I select specific containers within an Azure Cosmos DB database for mirroring?
         answer: |
-          Yes, when you mirror a database from Azure Cosmos DB, you can choose which containers are replicated into Fabric OneLake. You can also reconfigure the selected containers at any time for your mirrored artifact.
+          Yes, when you mirror a database from Azure Cosmos DB, you can choose which containers are replicated into Fabric OneLake. You can also reconfigure the selected containers at any time for your mirrored item.
       - question: |
           Can I use mirroring to replicate a single Azure Cosmos DB database multiple times?
         answer: |

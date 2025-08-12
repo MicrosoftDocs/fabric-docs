@@ -2,8 +2,8 @@
 title: Task flows overview
 description: This article gives an overview of task flows and task flow terminology.
 ms.reviewer: liud
-ms.author: painbar
-author: paulinbar
+author: SnehaGunda
+ms.author: sngun
 ms.topic: conceptual
 ms.date: 05/06/2025
 

@@ -5,7 +5,8 @@ author: SnehaGunda
 ms.author: sngun
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.custom:
-ms.date: 06/10/2025
+ms.date: 06/19/2025
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 #CustomerIntent: As a data scientist, data engineer, or business analyst using notebooks in Microsoft Fabric, I want to understand the capabilities of the Chat-magics library to enhance my notebook interactions.
@@ -14,7 +15,7 @@ ms.collection: ce-skilling-ai-copilot
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
-The Chat-magics Python library enhances your data science and engineering workflow in Microsoft Fabric notebooks. It seamlessly integrates with the Fabric environment, and allows execution of specialized IPython magic commands in a notebook cell, to provide real-time outputs. IPython magic commands and more background on usage can be found here: https://ipython.readthedocs.io/en/stable/interactive/magics.html#. 
+The Chat-magics Python library enhances your data science and engineering workflow in Microsoft Fabric notebooks. It seamlessly integrates with the Fabric environment, and allows execution of specialized IPython magic commands in a notebook cell, to provide real-time outputs. IPython magic commands and more background on usage can be found here: https://ipython.readthedocs.io/en/stable/interactive/magics.html#.
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 

@@ -2,8 +2,8 @@
 title: Work with task flows
 description: This show how to work with the task flow - add tasks, assign items to tasks, connect tasks, etc.
 ms.reviewer: liud
-ms.author: painbar
-author: paulinbar
+author: SnehaGunda
+ms.author: sngun
 ms.topic: how-to
 ms.date: 05/06/2025
 

@@ -6,8 +6,9 @@ ms.author: xupzhou
 ms.topic: how-to
 ms.date: 04/01/2025
 ms.custom:
-  - template-how-to
-  - connectors
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # Set up your SharePoint Online List connection

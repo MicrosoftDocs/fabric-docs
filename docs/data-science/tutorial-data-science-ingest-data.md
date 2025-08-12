@@ -1,12 +1,12 @@
 ---
 title: "Tutorial: Ingest data into a lakehouse"
 description: In this first part of the tutorial series, learn how to ingest a dataset into a Fabric lakehouse in delta lake format.
-ms.reviewer: None
+ms.reviewer: amjafari
 ms.author: scottpolly
 author: s-polly
 ms.topic: tutorial
 ms.custom:
-ms.date: 04/25/2025
+ms.date: 07/11/2025
 ---
 
 # Tutorial Part 1: Use Apache Spark to ingest data into a Microsoft Fabric lakehouse
@@ -94,7 +94,7 @@ The following code snippet downloads a publicly available version of the dataset
 import os, requests
 if not IS_CUSTOM_DATA:
 # Download demo data files into lakehouse if not exist
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/bankcustomerchurn"
     file_list = [DATA_FILE]
     download_path = f"{DATA_ROOT}/{DATA_FOLDER}/raw"
 

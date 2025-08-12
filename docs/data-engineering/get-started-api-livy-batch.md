@@ -7,6 +7,7 @@ author: GuyHay
 ms.topic: how-to
 ms.search.form: Get started with batch jobs with the Livy API for Data Engineering
 ms.date: 03/14/2025
+ms.custom: sfi-image-nochange
 ---
 
 # Use the Livy API to submit and execute Livy batch jobs

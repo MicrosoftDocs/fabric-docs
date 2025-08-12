@@ -5,7 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 11/17/2023
 ms.search.form: Eventstreams Tutorials
 ---

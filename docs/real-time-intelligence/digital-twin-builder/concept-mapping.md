@@ -1,22 +1,22 @@
 ---
-title: Mapping data to entities
+title: Mapping data to entity types
 description: Understand the mapping feature in digital twin builder (preview).
 author: baanders
 ms.author: baanders
-ms.date: 04/25/2025
+ms.date: 07/28/2025
 ms.topic: concept-article
 ---
 
-# Mapping data to entities in digital twin builder (preview)
+# Mapping data to entity types in digital twin builder (preview)
 
-The *mapping* feature within digital twin builder (preview) allows users to begin creating an ontology with semantically rich entities, and hydrate it with data from various source systems in a simplified manner.
+The *mapping* feature within digital twin builder (preview) allows users to begin creating an ontology with semantically rich entity types, and hydrate its instances with data from various source systems in a simplified manner.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 With mapping, you can:
-* Build your ontology by creating semantically rich entities
-* Map data from various systems through a Fabric lakehouse to entities in your ontology
-* Link and contextualize time series data directly to your entities
+* Build your ontology by creating semantically rich entity types
+* Map data from various systems through a Fabric lakehouse to entity instances modeled by the entity types from your ontology
+* Link and contextualize time series data directly to your entity instances
 * Enable a unified semantic layer
 
 >[!TIP]
@@ -26,7 +26,7 @@ With mapping, you can:
 
 Here are the key concepts for mapping in digital twin builder (preview).
 
-* *Mapping*: Mapping in digital twin builder provides a model for an entity and hydrates it with data from your Fabric lakehouse. When configuring a mapping, you must select a source table and the property type of the data you're bringing. Depending on the property type you select, you need to set certain configuration details. Mappings can be edited, deleted, and scheduled. Each mapping has its own card in the **Mappings** tab of the entity configuration pane, and an associated schedule that's visible from the **Scheduling** tab.
+* *Mapping*: Mapping in digital twin builder creates the entity type that models entity instances, and hydrates instances of that entity type with data from your Fabric lakehouse. When configuring a mapping, you must select a source table and the property type of the data you're bringing. Depending on the property type you select, you need to set certain configuration details. Mappings can be edited, deleted, and scheduled. Each mapping has its own card in the **Mappings** tab of the entity configuration pane, and an associated schedule that's visible from the **Scheduling** tab.
 
     :::image type="content" source="media/concept-mapping/mappings-scheduling-tab.png" alt-text="Screenshot of the Mappings tab." lightbox="media/concept-mapping/mappings-scheduling-tab.png":::
 
@@ -38,13 +38,13 @@ Here are the key concepts for mapping in digital twin builder (preview).
 
 * *Time series properties*: Time series properties are specific measurements or observations recorded with a timestamp over an interval of time. These columns usually contain numerical values corresponding to the property being tracked over time.
 
-    * *Time series link property*: A time series link property is one column from your time series data whose values **exactly match** the values from a modeled entity property. It can be used to contextualize your time series data with your existing entity data.
+    * *Time series link property*: A time series link property is one column from your time series data whose values **exactly match** a property type that was defined in the entity type. It can be used to contextualize your time series data with your existing entity instance data.
 
     * *Incremental processing*: Incremental processing maps data incrementally as it becomes available. This approach helps save processing time and improve overall workflow efficiency. This option is recommended for time series data.
 
 * *Digital twin builder flow*: Digital twin builder flow items can be used to schedule and view operations within digital twin builder, including mappings and contextualization jobs, both independently and in groups. To view all digital twin builder flows, select the **Manage operations** button in the semantic canvas ribbon. For more information about digital twin builder flow items, see [Digital twin builder (preview) flow](concept-flows.md).
 
-* *Filter*: A filter can be applied to a source table while mapping to select a subset of rows from the source table to map to the entity, based on specified column criteria. The following operators are available: 
+* *Filter*: A filter can be applied to a source table while mapping to select a subset of rows from the source table to map to the entity instance, based on specified column criteria. The following operators are available: 
     * *Is greater than or equal to (>=)*
     * *Is less than or equal to (<=)*
     * *Is greater than (>)*
@@ -60,16 +60,18 @@ Here are the key concepts for mapping in digital twin builder (preview).
 
 ## About the mapping process
 
-Mapping allows you to add an entity to your digital twin builder (preview) ontology and hydrate it with data. Here are the steps involved in this process:
+Mapping allows you to add an entity type to your digital twin builder (preview) ontology and hydrate instances of it with data. Here are the steps involved in this process:
 
-1. Create an entity. In this step, you create an entity from either the *Generic* entity type, or one of the provided [system types](#system-types). Add a name to the entity that fits your use case.
+1. Create an entity type. In this step, you create an entity type from either the *Generic* entity type, or one of the provided [system types](#system-types). Add a name to the entity type that fits your use case.
 
-    >[!TIP]
-    > Entity names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
+    Entity type names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
 
-1. Map and model data on this entity. In this step, you map data from a Fabric lakehouse to properties on your entity. If you're creating an entity for the first time, the columns mapped from your source table become modeled properties on your entity after a mapping is saved or run. If your entity already has properties, you can hydrate the entity with data from a source table.
+1. Map and model data for this entity type. In this step, you define how data maps from a Fabric lakehouse to properties on the instances of this entity type. If you're creating an entity type for the first time, the columns mapped from your source table become modeled properties on your entity instances after a mapping is saved or run. If your entity type already has properties, you can hydrate the entity instances with data from a source table.
 
-1. (Optional) Link time series data to the entity. If you have time series data to link to your entity, you can directly map that time series data to the entity and digital twin builder contextualizes it with the rest of the entity's data. Your time series data is modeled as time series properties on your entity.
+    >[!NOTE]
+    > Decimal type precision in the source data isn't perfectly conserved when the data's imported into digital twin builder.
+
+1. (Optional) Define time series properties in the entity type, and link time series data to the entity instances. If you have time series data to link to your entity instances, you can directly map that time series data to the entity instance and digital twin builder contextualizes it with the rest of the entity instance's data. Your time series data is modeled as time series properties on your entity type.
 
     >[!IMPORTANT]
     >Before mapping your time series data, make sure that you modeled at least one non-time series property that exactly matches a column in your time series data. 
@@ -78,12 +80,12 @@ During mapping, here are the actions that are supported and not supported.
 
 | Component | Supported actions | Unsupported actions |
 |---|---|---|
-| Entities | - Create an entity | - Rename an entity after data is mapped |
+| Entity types | - Create an entity type | - Rename an entity type after data is mapped |
 | Properties | - Create non-time series and time series properties<br>- Map a source column to a property<br>- Unmap a source column from a property <br>- Filter your source table during mapping | - Delete a modeled property<br> - Rename a modeled property<br> - Map a source column of a different data type than originally defined |
 
 ## System types
 
-*System types* are predefined entity types that you can select when defining your entity in order to quickly associate it with a set of relevant properties. When you don't have specific models you want to import or create, system types offer built-in options that are automatically included with digital twin builder (preview).
+*System types* are predefined entity types that you can select when defining your entity type in order to quickly associate it with a set of relevant properties. When you don't have specific models you want to import or create, system types offer built-in options that are automatically included with digital twin builder (preview).
 
 System type options range across a series of concepts with built-in properties common to objects of this type. These properties are optional and can be extended with your own custom properties if needed. System types are a quick way to get started in building out ontological concepts, easing the challenge of conceptualizing an initial flow of how a system might function.
 
@@ -97,7 +99,7 @@ The following table shows the system types available in digital twin builder (pr
 |---|---|---|---|
 | Equipment | - `DisplayName`: The name of the equipment <br>- `SerialNumber`: A serial number related to the equipment <br>- `Manufacturer`: The model and manufacturer of the equipment | A physical piece of equipment, typically used as part of a process or system to fulfill a role. | - Cutting machine <br>- Screwdriver <br>- Truck <br>- Pump | 
 | Material | - `DisplayName`: The name of the material <br>- `Type`: Specifies what kind of material | Individual objects used as reagents and typically refined into products. | - Steel <br>- Raw ore (to be used) <br>- Water <br>- Hydrogen | 
-| Sensor | - `DisplayName`: The name of the sensor <br>- `Type`: Specifies what kind of sensor <br>- `Frequency`: Specifies how often this measurement is taken | A reader that collects measurement associated with another entity (like equipment) | - Lat/Long <br>- Temperature <br>- Pressure |
+| Sensor | - `DisplayName`: The name of the sensor <br>- `Type`: Specifies what kind of sensor <br>- `Frequency`: Specifies how often this measurement is taken | A reader that collects measurement associated with another entity type (like equipment) | - Lat/Long <br>- Temperature <br>- Pressure |
 | Process | - `DisplayName`: The name of the process <br>- `Type`: Specifies what kind of process | An act of doing something. | - Boiling water <br>- Assembling a product with the help of equipment <br>- Producing an item <br>- Booking an appointment <br>- Buying an item |
 | Product | - `DisplayName`: The name of the product <br>- `SKU`: A unique identifier or product number related to the product. | A manufactured good, normally the final product of a process, using materials created from equipment. | - Tissue paper <br>- Raw ore (to be sold) <br>- Manufactured widgets |
 | Site | - `DisplayName`: The name of the site <br>- `Location`: A locale of the site | A location or place, normally housing physical objects such as equipment, materials, and products. | - A factory building <br>- An office in a building <br>- 47°38'31"N 122°07'38"W |
@@ -105,31 +107,31 @@ The following table shows the system types available in digital twin builder (pr
 
 ### Choosing a system type
 
-System types are accessible when [creating a new entity](model-manage-mappings.md#create-an-entity) in digital twin builder (preview).
+System types are accessible when [creating a new entity type](model-manage-mappings.md#create-an-entity-type) in digital twin builder (preview).
 
-While adding an entity, you see a dialogue with the *Generic* type and a list of the other system types.  
+While adding an entity type, you see a dialogue with the *Generic* type and a list of the other system types.  
 
 :::image type="content" source="media/concept-mapping/system-types-list.png" alt-text="Screenshot of the system types list.":::
 
 ### Mapping data with a system type
 
-After an entity is created with a system type, it's accessible from the semantic canvas for mapping. The mapping process is the same whether you're using a system type or a generic entity type, except that system types have more built-in properties available for use within the mapping step.
+After an entity type is created using a system type, it's accessible from the semantic canvas for mapping. The mapping process is the same whether you're using a system type or a generic entity type, except that system types have more built-in properties available for use within the mapping step.
 
-:::image type="content" source="media/concept-mapping/system-types-properties.png" alt-text="Screenshot of the entity with a system type." lightbox="media/concept-mapping/system-types-properties.png":::
+:::image type="content" source="media/concept-mapping/system-types-properties.png" alt-text="Screenshot of the entity type with a system type." lightbox="media/concept-mapping/system-types-properties.png":::
 
 ## Example ontology 
 
-By building out entities with mapping and relationships, you can create a series of ontological links like the ones in the following example. 
+By building out entity types with mapping and relationship types, you can create a series of ontological links like the ones in the following example. 
 
 :::image type="content" source="media/concept-mapping/example.png" alt-text="Screenshot of an example ontology." lightbox="media/concept-mapping/example-zoom.png":::
 
 The semantic canvas contains three system types: Process, Equipment, and Sensor. They're related as follows:
-* The Equipment entity has a relationship of *hasProcess* that points to the relevant Process. 
-* The Equipment entity shares a *hasSensor* relationship with the Sensor. 
+* The Equipment entity type has a relationship type of *hasProcess* that points to the relevant Process. 
+* The Equipment entity type shares a *hasSensor* relationship type with the Sensor. 
 
 This scenario represents a basic ontological map of a process, involving a single piece of equipment and a sensor attached to this equipment. 
 
 ## Related content
 
 * [Modeling data in digital twin builder (preview)](concept-modeling.md)
-* [Manage entities and mapping](model-manage-mappings.md)
+* [Manage entity types and mapping](model-manage-mappings.md)

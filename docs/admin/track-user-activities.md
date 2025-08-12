@@ -23,7 +23,7 @@ To access the audit logs, go to [Microsoft Purview](https://compliance.microsoft
 
 You can search the audit logs using the Microsoft Purview filters. When you combine filters, the search results show only items that match all of the filter criteria. This section lists some of the available filters. For more information, review the [Microsoft Purview documentation](/purview).
 
-* **Date and time range** - Search the logs by date range using the *Start date* and *End date* fields. The default selection is the past seven days. The display presents the date and time in UTC format. The maximum date range that you can specify is 90 days.
+* **Date and time range** - Search the logs by date range using the *Start date* and *End date* fields. The default selection is the past seven days. The display presents the date and time in UTC format. For the maximum date range supported, please visit [Microsoft Purview documentation](https://aka.ms/PurviewAuditRetentionPolicies).
 
 * **Activities** - Your search returns the selected activities.
 

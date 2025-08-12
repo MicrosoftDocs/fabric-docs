@@ -1,12 +1,12 @@
 ---
-title:  Get data from Azure Event Hubs
+title: Get data from Azure Event Hubs
 description: Learn how to create a connection to Event Hubs and get data into your KQL database in Real-Time Intelligence.
 ms.reviewer: guregini
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
-ms.custom:
-ms.date: 02/27/2025
+ms.custom: sfi-image-nochange
+ms.date: 08/04/2025
 ms.search.form: Get data in a KQL Database, Data connection
 ---
 # Get data from Azure Event Hubs
@@ -18,6 +18,10 @@ To stream data from Event Hubs into Real-Time Intelligence, you go through two m
 The second step takes place in Real-Time Intelligence in Fabric, where you connect a KQL database to the event hub and configure the schema for incoming data. This step creates two connections. The first connection, called a "cloud connection," connects Microsoft Fabric to the event hub instance. The second connection connects the "cloud connection" to your KQL database. Once you finish configuring the event data and schema, the streamed data is available to query using a [KQL Queryset](kusto-query-set.md).
 
 To get data from Event Hubs using Eventstream, see [Add Azure Event Hubs source to an eventstream](event-streams/add-source-azure-event-hubs.md).
+
+> [!WARNING]
+>
+> Ingestion from an Event Hub using a [private link](/azure/private-link/private-link-overview) is not supported.
 
 ## Prerequisites
 

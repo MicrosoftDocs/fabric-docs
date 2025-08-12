@@ -1,8 +1,8 @@
 ---
 title: Share items in Microsoft Fabric
 description: "Learn how to share an item and manage permission of an item in Microsoft Fabric."
-author: paulinbar
-ms.author: painbar
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: yicw, mesrivas
 ms.topic: how-to
 ms.date: 04/06/2025
@@ -135,7 +135,7 @@ In some cases, you need to grant permission directly instead of sharing link, su
 
 ## Item permission model
 
-Depending on the item being shared, you may find a different set of permissions that you can grant to recipients when you share. Read permission is always granted during sharing, so the recipient can discover the shared item in the OneSource data hub and open it.
+Depending on the item being shared, you may find a different set of permissions that you can grant to recipients when you share. Read permission is always granted during sharing, so the recipient can discover the shared item in the OneLake catalog and open it.
 
 |Permission granted while sharing|Effect|
 |--- | --- |

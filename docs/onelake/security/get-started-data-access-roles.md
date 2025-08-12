@@ -14,6 +14,9 @@ ms.date: 03/17/2025
 
 OneLake data access roles enable you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, then assign these roles to users or groups. The access permissions determine the folders that users see when accessing the lake view of the data, either through the lakehouse UX, notebooks, or OneLake APIs.  
 
+> [!IMPORTANT]
+> Starting in August 2025, Contributors will no longer have sufficient permissions to view or manage OneLake data access roles. 
+
 Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that aren't part of a data access role see no data in that lakehouse.
 
 > [!NOTE]

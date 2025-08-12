@@ -19,7 +19,7 @@ To delete the data from this tutorial, follow these steps:
     * the eventhouse with the KQL database
     * the eventstream
     * the digital twin builder (preview) item
-        * the associated lakehouse with all of its mapping and relationship data
+        * the associated lakehouse with all of its entity types and relationship types, mapping, and entity instance and relationship instance data
     * the Fabric notebook
     * the Real-Time Dashboard
 

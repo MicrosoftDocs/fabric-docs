@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang
 ms.topic: how-to
-ms.custom: video--3yFtlZBpqs
+ms.custom: video--3yFtlZBpqs, sfi-image-nochange
 ms.date: 09/23/2024
 ---
 

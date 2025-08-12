@@ -8,6 +8,7 @@ metadata:
   ms.custom:
   ms.topic: faq
   ms.date: 06/05/2025
+  ms.update-cycle: 180-days
   no-loc: [Copilot]
   ms.collection: ce-skilling-ai-copilot
 title: "Copilot for Microsoft Fabric and Power BI: FAQ"
@@ -84,6 +85,10 @@ sections:
           I want to disable Copilot immediately as I'm concerned with the data storage you mentioned.
         answer: |
           Contact your help desk to get support from your IT admin.
+      - question: |
+          Why did Copilot respond with general knowledge data? 
+        answer: |
+           When a question is related to data in the semantic model, Copilot will use the semantic model to answer the question, otherwise it may answer from the [LLM's general knowledge](https://go.microsoft.com/fwlink/?linkid=2325401).
       - question: |
           I want to suggest new features. How can I do that?  
         answer: |

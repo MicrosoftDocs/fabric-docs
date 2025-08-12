@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 12/24/2024
 ms.search.form: Notebooks
 ---

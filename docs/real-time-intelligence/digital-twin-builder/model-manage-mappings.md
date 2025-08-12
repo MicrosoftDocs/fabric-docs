@@ -1,19 +1,19 @@
 ---
-title: Manage entities and mappings
+title: Manage entity types and mappings
 description: Create and manage mappings in digital twin builder (preview).
 author: baanders
 ms.author: baanders
-ms.date: 05/02/2025
+ms.date: 05/28/2025
 ms.topic: how-to
 ---
 
-# Manage entities and mappings
+# Manage entity types and mappings
 
-The *mapping* feature within digital twin builder (preview) allows users to begin creating an ontology with semantically rich entities, and hydrate it with data from various source systems. For conceptual information about the mapping feature in digital twin builder, see [Mapping data to entities in digital twin builder (preview)](concept-mapping.md). After you map data, you can complete the ontology by performing [contextualization](model-perform-contextualization.md).
+The *mapping* feature within digital twin builder (preview) allows users to begin creating an ontology with semantically rich entity types, and hydrate it with data from various source systems. For conceptual information about the mapping feature in digital twin builder, see [Mapping data to entity types in digital twin builder (preview)](concept-mapping.md). After you map data, you can complete the ontology by performing [contextualization](model-perform-contextualization.md).
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-This document describes how to create entities and manage their data mappings in digital twin builder (preview).
+This document describes how to create entity types and manage their data mappings in digital twin builder (preview).
 
 ## Prerequisites
 
@@ -21,30 +21,34 @@ This document describes how to create entities and manage their data mappings in
 * Your desired data in a [Fabric lakehouse](../../data-engineering/lakehouse-overview.md) with the necessary ETL done.
     * Time series data should be in *columnar* format. Columnar time series data is structured so that each column represents a different variable or attribute, while each row corresponds to a specific timestamp. 
     * Digital twin builder supports source columns with the following data types: `bigint`, `boolean`, `char`, `date`, `datetime`, `decimal`, `double`, `float`, `integer`, `long`, `short`, `smallint`, `string`, `timestamp`, `timestampint64`, `tinyint`.
+
+        >[!NOTE]
+        > Decimal type precision in the source data isn't perfectly conserved when the data's imported into digital twin builder.
+
 * A [digital twin builder (preview) item](tutorial-1-set-up-resources.md#create-new-digital-twin-builder-item-in-fabric).
 
-## Create an entity
+## Create an entity type
 
 1. Select **Add entity** in the [semantic canvas](concept-semantic-canvas.md) of digital twin builder (preview).
 
-    :::image type="content" source="media/model-manage-mappings/create-add.png" alt-text="Screenshot of adding an entity.":::
+    :::image type="content" source="media/model-manage-mappings/create-add.png" alt-text="Screenshot of adding an entity type.":::
 
-1. Select a [system type](concept-mapping.md#system-types), or select *Generic* to create a custom entity. Then, select a name for your entity. Each entity within a namespace must have a unique name.
+1. Select a [system type](concept-mapping.md#system-types), or select *Generic* to create a custom entity type. Then, select a name for your entity type. Each entity type within a namespace must have a unique name.
 
     >[!NOTE]
-    > Entity names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
+    > Entity type names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
 
-    :::image type="content" source="media/model-manage-mappings/create-type.png" alt-text="Screenshot of naming an entity.":::
+    :::image type="content" source="media/model-manage-mappings/create-type.png" alt-text="Screenshot of naming an entity type.":::
 
-1. View the empty entity on the semantic canvas.
+1. View the empty entity type on the semantic canvas.
 
-    :::image type="content" source="media/model-manage-mappings/create-view.png" alt-text="Screenshot of the created entity.":::
+    :::image type="content" source="media/model-manage-mappings/create-view.png" alt-text="Screenshot of the created entity type.":::
 
-## Map non-time series data to an entity
+## Map non-time series data to an entity type
 
 First, map non-time series data. Non-time series mappings must be run before time series mappings.
 
-1. With the entity selected in the **Entities** pane, you see the **Entity configuration** pane for the entity. Select the **Mappings** tab and select **Add data**.
+1. With the entity type selected in the **Entities** pane, you see the **Entity configuration** pane for the entity type. Select the **Mappings** tab and select **Add data**.
 
     :::image type="content" source="media/model-manage-mappings/map-non-time-add.png" alt-text="Screenshot of adding a new data mapping.":::
 1. Select a lakehouse table from your OneLake to use as the source table for your mapping. Select **Choose data source**.
@@ -61,13 +65,13 @@ First, map non-time series data. Non-time series mappings must be run before tim
 
 1. Select the **Property type** of the source data. Only one property type can be selected per mapping. For example, say that *contoso_sample_data* contains descriptive attributes about tanks. The mapping for that data contains **Non-time series** properties.
 
-    :::image type="content" source="media/model-manage-mappings/map-non-time-type.png" alt-text="Screenshot of selecting a property type in the entity configuration options.":::
+    :::image type="content" source="media/model-manage-mappings/map-non-time-type.png" alt-text="Screenshot of selecting a property type in the entity type configuration options.":::
 
 1. Configure the **Unique ID** for each record of ingested data. You can select one or more columns for the unique ID, but we recommend a minimum set of columns.
 
     :::image type="content" source="media/model-manage-mappings/map-non-time-unique-id.png" alt-text="Screenshot of defining the unique ID.":::
 
-1. For the **Mapped properties**, configure the columns from the source table that you want to model on your entity. 
+1. For the **Mapped properties**, configure the columns from the source table that you want to model on your entity type. 
 
     :::image type="content" source="media/model-manage-mappings/map-non-time-properties.png" alt-text="Screenshot of mapping properties.":::
 
@@ -75,7 +79,7 @@ First, map non-time series data. Non-time series mappings must be run before tim
 
     * Optionally, you can map a column in your source data table to the *DisplayName* property. This step provides a friendly name for each of your entity instances in downstream experiences.
 
-    * Optionally, you can choose a new name for your source column to be shown when it's modeled on your entity.
+    * Optionally, you can choose a new name for your source column to be shown when it's modeled on your entity instances.
 
         >[!NOTE]
         > Custom column names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
@@ -86,16 +90,16 @@ First, map non-time series data. Non-time series mappings must be run before tim
 
     :::image type="content" source="media/model-manage-mappings/map-non-time-save.png" alt-text="Screenshot of saving mapped properties.":::
 
-1. Go to the **Scheduling** tab and select **Run now** to run the mapping. Running the mapping models the identified properties on your entity. **Once properties have been modeled, they can't be deleted and their names can't be changed.**
+1. Go to the **Scheduling** tab and select **Run** to run the mapping. Running the mapping models the identified properties on your entity instances. **Once properties have been modeled, they can't be deleted and their names can't be changed.**
 
     :::image type="content" source="media/model-manage-mappings/map-non-time-run.png" alt-text="Screenshot of running the mapping.":::
 
-## Map time series data to an entity
+## Map time series data to an entity type
 
 >[!IMPORTANT]
-> Before you map time series data to an entity, make sure your non-time series mapping ran successfully. 
+> Before you map time series data to an entity type, make sure your non-time series mapping ran successfully. 
 >
->Also, make sure you mapped one non-time series property on the entity that can be used to contextualize your time series data. This non-time series property should exactly match a column in your time series data.
+>Also, make sure you mapped one non-time series property on the entity type that can be used to contextualize your time series data. This non-time series property should exactly match a column in your time series data.
 
 1. Select the **Mappings** tab in the entity configuration pane, and select **Add data** to begin creating a mapping. 
 
@@ -109,7 +113,7 @@ First, map non-time series data. Non-time series mappings must be run before tim
 
     :::image type="content" source="media/model-manage-mappings/map-time-properties.png" alt-text="Screenshot of configuring the time series properties.":::
     
-1. Configure the **Link with entity property** by selecting a column from your time series data that **exactly matches** values from a modeled entity property. This process allows digital twin builder (preview) to contextualize your time series data with the existing entity instances. 
+1. Configure the **Link with entity property** by selecting a column from your time series data that **exactly matches** a property type that was defined in the entity type. This process allows digital twin builder (preview) to contextualize your time series data with the existing entity instances.
 
     >[!TIP]
     > If you don't see a non-time series property available to use, make sure to map a non-time series property first, and then return to this step.
@@ -123,24 +127,24 @@ First, map non-time series data. Non-time series mappings must be run before tim
 
 1. Select **Save** to save your time series mapping.
 
-    :::image type="content" source="media/model-manage-mappings/map-time-save.png" alt-text="Screenshot of entity configuration options after configuring the link property.":::
+    :::image type="content" source="media/model-manage-mappings/map-time-save.png" alt-text="Screenshot of entity type configuration options after configuring the link property.":::
 
-1. Go to the **Scheduling** tab and select **Run now** to run the mapping.
+1. Go to the **Scheduling** tab and select **Run** to run the mapping.
 
 ## Manage mappings
 
 Here are the actions available for mapping management.
 
-* View mapping: All mappings that you create for a particular entity can be viewed under the **Mappings** tab in the entity configuration pane when that entity is selected. They can also be viewed in the digital twin builder (preview) flows view by selecting **Manage operations** from the ribbon.
+* View mapping: All mappings that you create for a particular entity type can be viewed under the **Mappings** tab in the entity configuration pane when that entity type is selected. They can also be viewed in the digital twin builder (preview) flows view by selecting **Manage operations** from the ribbon.
 
     :::image type="content" source="media/model-manage-mappings/mappings-manage-operations.png" alt-text="Screenshot of the Mappings tab and Manage operations button.":::
 
 * Edit mapping: To edit a mapping, modify any part of the configuration in the entity configuration pane. Verify all configurations to avoid unintended results and save your changes.
 
     >[!NOTE]
-    > Entity and property names aren't editable. You can, however, remove a source column from the mapping.
+    > Entity type names and property names aren't editable. You can, however, remove a source column from the mapping.
 
-* Delete mapping: To delete a mapping, select the trash icon in the top right corner of the desired mapping card. Deleting this mapping doesn't delete the underlying data that was mapped with that job, or delete any properties from the entity, but it removes the mapping from the semantic canvas.
+* Delete mapping: To delete a mapping, select the trash icon in the top right corner of the desired mapping card. Deleting this mapping doesn't delete the underlying data that was mapped with that job, or delete any properties from the entity type, but it removes the mapping from the semantic canvas.
 
     :::image type="content" source="media/model-manage-mappings/delete.png" alt-text="Screenshot of deleting a mapping.":::
 
@@ -150,21 +154,21 @@ Here are the actions available for mapping management.
 
     :::image type="content" source="media/tutorial/configure-schedule.png" alt-text="Screenshot of the schedule options.":::
 
-## Deactivate an entity
+## Deactivate an entity type
 
-You can deactivate an entity if it was misconfigured or is no longer needed. Deactivating an entity removes the entity and its mapping configurations from the semantic canvas, and removes entity instances and time series from the [explorer](explore-search-visualize.md).
+You can deactivate an entity type if it was misconfigured or is no longer needed. Deactivating an entity type removes the entity type and its mapping configurations from the semantic canvas, and removes entity instances and time series from the [explorer](explore-search-visualize.md).
 
-When deactivating entities, keep the following notes in mind:
+When deactivating entity types, keep the following notes in mind:
 
-* Before you deactivate an entity, first delete all relationships associated with it.
+* Before you deactivate an entity type, first delete all relationship types associated with it.
 * When instances and time series are removed from the digital twin builder, they're only soft-deleted within the [base layer](concept-modeling.md#storage-and-access). 
-* To permanently delete the instances and time series associated with an entity, use Fabric tools to query all records that are soft-deleted from the base layer, and delete them.
+* To permanently delete the instances and time series associated with an entity type, use Fabric tools to query all records that are soft-deleted from the base layer, and delete them.
 
-To deactivate an entity, hover over its name in the semantic canvas and select **...** next to its name. Select **Deactivate entity**.
+To deactivate an entity type, hover over its name in the semantic canvas and select **...** next to its name. Select **Deactivate entity**.
 
-:::image type="content" source="media/model-manage-mappings/deactivate-entity.png" alt-text="Screenshot of deactivating an entity.":::
+:::image type="content" source="media/model-manage-mappings/deactivate-entity.png" alt-text="Screenshot of deactivating an entity type.":::
 
 ## Related content
 
-* [Mapping data to entities in digital twin builder (preview)](concept-mapping.md)
+* [Mapping data to entity types in digital twin builder (preview)](concept-mapping.md)
 * [Perform contextualization](model-perform-contextualization.md)

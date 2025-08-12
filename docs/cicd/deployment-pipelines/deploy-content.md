@@ -65,9 +65,14 @@ Select the stage to deploy from and then select the deployment button. The deplo
 
 If you don't want to deploy everything from that stage, you can select specific items for deployment. Select the **Show more** link, and then select the items you wish to deploy. When you select the **Deploy** button, only the selected items are deployed to the next stage.
 
+>[!NOTE]
+>Items cannot be selected for deployment across workspace folders in the default stage view. However switching to [flat list view](#flat-list-view) allows you to select items for deployment across workspace folders.
+
 Fabric items are often related to or dependent on other items. Dashboards, reports, semantic models, dataflows, Lakehouses, and Warehouses are all examples of items that can be related to or dependent on other items. To include all items that are related to the item you want to deploy, use the select related button. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
 
 If you don't want to deploy everything from that stage, you can select only specific items for deployment. Since dashboards, reports, semantic models, and dataflows can have dependencies, you can use the select related button to see all the items that the selected item is dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
+
+
 
 ##### [New selective deploy method](#tab/new-ui)
 
@@ -96,9 +101,29 @@ When deploying workspaces that contain folders, the following rules apply:
 * Deploying only some items in a folder updates the *structure* of all items in the folder in the stage being deployed to, even though the items themselves aren't deployed.
 * The folder hierarchy of paired items is updated only during deployment. During assignment, after the pairing process, the hierarchy of paired items isn't updated yet.
 
+#### Flat list view
+With the current view of the folders hierarchy, you can select for deployment, only items in the same folder level. You cannot select items across folders.
+ 
+Flat list view is an added feature of deployment pipelines that allows you to select items regardless of its location. With the flat list view, you can now select items across folders, regarding their location in the workspace.
+
+The following are important to keep in mind when using the flat list view.
+
+- To enable the feature there's a toggle at the top of the stage content area.
+- Once in flat list view, an additional **location** column is shown and contains the full path of an item.
+- The **select related** button works only in a flat list view (it's enabled when at least one item is selected). Therefore, if you are in the folders view, and click this button, then the view will automatically move to the flat list view.
+- If you are in the flat list view, selected some items for deployment,  and then moved back to folder view, the selection is reset to none. This behavior also applies to filtering items.
+
+ :::image type="content" source="media/deploy-content/flat-list-1.png" alt-text="Screenshot of the flat list view in a deployment pipeline." lightbox="media/deploy-content/flat-list-1.png":::
+
 #### Backwards deployment
 
-You might sometimes want to deploy content to a previous stage. For example, if you assign an existing workspace to a production stage and then deploy it backwards, first to the test stage, and then to the development stage. Deploying to a previous stage works only if the previous stage is empty.
+You might sometimes want to deploy content to a previous stage. 
+
+>[!NOTE]
+> 
+>Be aware that backward deployment is only possible when deploying all the items.  This means that you can't selectively deploy items backwards, you must deploy all the items in order to do backward deployment.
+
+For example, if you assign an existing workspace to a production stage and then deploy it backwards, first to the test stage, and then to the development stage. Deploying to a previous stage works only if the previous stage is empty.
 
 :::image type="content" source="./media/deploy-content/backwards-deploy.png" alt-text="A screenshot showing how to change the stage you deploy to.":::
 

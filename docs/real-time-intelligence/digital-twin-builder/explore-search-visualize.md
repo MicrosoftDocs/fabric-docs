@@ -3,7 +3,7 @@ title: Search and visualize your modeled data
 description: Learn about ways to explore your data in digital twin builder (preview).
 author: baanders
 ms.author: baanders
-ms.date: 05/02/2025
+ms.date: 07/01/2025
 ms.topic: how-to
 ---
 
@@ -13,7 +13,7 @@ In digital twin builder (preview), the *explorer* lets you identify assets from 
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-Access the explorer by switching into **Explore** mode with the view selector in the [semantic canvas](concept-semantic-canvas.md#view-selector).
+Access the explorer by selecting **Explore entity instances** from the menu ribbon in the [semantic canvas](concept-semantic-canvas.md#menu-ribbon).
 
 :::image type="content" source="media/explore-search-visualize/explorer.png" alt-text="Screenshot of the explorer.":::
 
@@ -31,9 +31,13 @@ Here are the top scenarios for using the explorer:
 
 ## Access the explorer
 
-You can access the explorer from the digital twin builder (preview) homepage, by using the view selector in the top right corner to select **Explore**.
+You can access the explorer from the digital twin builder (preview) semantic canvas, by selecting **Explore entity instances** from the menu ribbon.
 
 :::image type="content" source="media/explore-search-visualize/access.png" alt-text="Screenshot of selecting the explorer view.":::
+
+To leave the explorer and return to the semantic canvas, select **Home** in the top left corner of the explorer view.
+
+:::image type="content" source="media/explore-search-visualize/explorer-home.png" alt-text="Screenshot of selecting Home.":::
 
 ## Explore assets
 
@@ -41,7 +45,7 @@ The explorer contains multiple view options.
 
 ### Card view
 
-The *card view* displays all assets in list format. You can see details such as name, entity, and properties associated with each asset. The card view is the explorer's default view.
+The *card view* displays all assets in list format. You can see details such as name, entity type, and properties associated with each asset. The card view is the explorer's default view.
 
 :::image type="content" source="media/explore-search-visualize/explorer.png" alt-text="Screenshot of the explorer." lightbox="media/explore-search-visualize/explorer.png":::
 
@@ -67,12 +71,12 @@ You can change the data in the chart by selecting different time series properti
 
 ## Use entity and keyword search
 
-In the Card view, the entity selector and keyword search box allow you to find matches in your assets across the *Entity*, *Name*, and *Unique ID* fields.
+In the Card view, the entity type selector and keyword search box allow you to find matches in your assets across the *Entity*, *Name*, and *Unique ID* fields.
 
 :::image type="content" source="media/explore-search-visualize/search.png" alt-text="Screenshot of the keyword search.":::
 
 ### Use advanced query
 
-The no-code advanced query builder allows you to filter the card view even further, by querying based entity properties and allowing you to add multiple filters.
+The no-code advanced query builder allows you to filter the card view even further, by querying based on entity type properties and allowing you to add multiple filters.
 
 :::image type="content" source="media/explore-search-visualize/advanced-query.png" alt-text="Screenshot of the advanced query experience.":::

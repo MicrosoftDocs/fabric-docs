@@ -4,7 +4,7 @@ description: Learn about managed virtual networks in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: conceptual
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 05/30/2024
 ---
 
@@ -35,7 +35,7 @@ Fabric workspaces that are provisioned with a dedicated virtual network provide 
 
 Managed virtual networks are provisioned for a Fabric workspace when
 
-* Managed private endpoints, which provide secure **oubound** access, are added to a workspace. Workspace admins can create and delete managed private endpoint connections from the workspace settings of a Fabric workspace.
+* Managed private endpoints, which provide secure **outbound** access, are added to a workspace. Workspace admins can create and delete managed private endpoint connections from the workspace settings of a Fabric workspace.
 
     :::image type="content" source="./media/security-managed-vnets-fabric-overview/creating-private-endpoint-animation.gif" alt-text="Animated illustration of the process of creating a private endpoint in Microsoft Fabric.":::
 

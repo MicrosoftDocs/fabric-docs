@@ -1,15 +1,15 @@
 ---
-title: Native execution engine for Fabric Spark
+title: Native execution engine for Fabric Data Engineering
 description: How to enable and use the native execution engine to execute Apache Spark jobs for faster and cheaper data processing in Microsoft Fabric.
 ms.reviewer: snehagunda
 ms.author: sngun
 author: SnehaGunda
 ms.topic: conceptual
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 01/06/2025
 ---
 
-# Native execution engine for Fabric Spark
+# Native execution engine for Fabric Data Engineering
 
 The native execution engine is a groundbreaking enhancement for Apache Spark job executions in Microsoft Fabric. This vectorized engine optimizes the performance and efficiency of your Spark queries by running them directly on your lakehouse infrastructure. The engine's seamless integration means it requires no code modifications and avoids vendor lock-in. It supports Apache Spark APIs and is compatible with **[Runtime 1.3 (Apache Spark 3.5)](./runtime-1-3.md)**, and works with both Parquet and Delta formats. Regardless of your data's location within OneLake, or if you access data via shortcuts, the native execution engine maximizes efficiency and performance.
 
@@ -17,8 +17,6 @@ The native execution engine significantly elevates query performance while minim
 
 The Native Execution Engine is based on two key OSS components: [Velox](https://github.com/facebookincubator/velox), a C++ database acceleration library introduced by Meta, and [Apache Gluten (incubating)](https://github.com/apache/incubator-gluten), a middle layer responsible for offloading JVM-based SQL engines’ execution to native engines introduced by Intel.
 
-> [!NOTE]
-> The native execution engine is currently in public preview. For more information, see the current [limitations](#limitations). **We encourage you to enable the Native Execution Engine on your workloads at no additional cost. You'll benefit from faster job execution without paying more - effectively, you pay less for the same work.**
 
 ## When to use the native execution engine
 

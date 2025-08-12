@@ -13,6 +13,8 @@ items:
     href: fabric-terminology.md
   - name: What's New
     href: whats-new.md
+  - name: Migration to Microsoft Fabric
+    href: migration.md
 - name: Get started
   items:
   - name: End-to-end tutorials
@@ -109,14 +111,20 @@ items:
       href: copilot-power-bi-privacy-security.md
     - name: Responsible use in Real-Time Intelligence
       href: copilot-real-time-intelligence-privacy-security.md
+    - name: Manage data security & compliance with Purview 
+      href: /purview/ai-copilot-fabric?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
   - name: Copilot in Fabric experiences
     items:
     - name: Copilot for Data Factory
-      href: copilot-fabric-data-factory.md
+      href: copilot-fabric-data-factory.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
     - name: Copilot for Data Warehouse
-      href: ../data-warehouse/copilot.md
+      href: ../data-warehouse/copilot.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/breadcrumb/toc.json
     - name: Copilot for Real-Time Intelligence
-      href: copilot-real-time-intelligence.md
+      items:
+        - name: Copilot for Writing KQL Queries
+          href: copilot-for-writing-queries.md
+        - name: Generate Real-Time Dashboard Using Copilot
+          href: copilot-generate-dashboard.md
     - name: Copilot for Data Science and Data Engineering
       items:
       - name: Copilot for Data Science and Data Engineering
@@ -135,7 +143,7 @@ items:
   items:
   - name: Direct Lake overview
     href: direct-lake-overview.md
-  - name: Understand storage for Direct Lake
+  - name: Understand Direct Lake query performance
     href: direct-lake-understand-storage.md
   - name: Direct Lake in Power BI Desktop (preview)
     href: direct-lake-power-bi-desktop.md 
@@ -155,8 +163,8 @@ items:
     href: direct-lake-fixed-identity.md
   - name: Analyze query processing
     href: direct-lake-analyze-query-processing.md
-  - name: Direct Lake mode and PBI reporting
-    href: lakehouse-power-bi-reporting.md
+  - name: Building reports
+    href: building-reports.md
 - name: Promote or certify items
   href: endorsement-promote-certify.md
 - name: Share items
@@ -205,292 +213,8 @@ items:
   href: service-connect-fabric-release-plan.md
 - name: Known issues
   items:
-    - name: Active known issues for Fabric + Power BI - chart
+    - name: Active known issues for Fabric + Power BI
       href: ../known-issues/fabric-known-issues.md
-    - name: Active known issues for Fabric and Power BI - interactive report
-      href: https://support.fabric.microsoft.com/known-issues
-    - name: Service principal based public API calls fail with variables in shortcut payloads
-      href: ../known-issues/known-issue-1169-service-principal-public-api-calls-fail-variables-shortcut.md
-    - name: Text Analytics AI Functions fail
-      href: ../known-issues/known-issue-1168-text-analytics-ai-functions-fail.md
-    - name: Power BI reports don't show in Viva Goals
-      href: ../known-issues/known-issue-1166-power-bi-reports-not-show-viva-goals.md
-    - name: Digital twin builder item creation fails on duplicate names
-      href: ../known-issues/known-issue-1165-digital-twin-builder-item-creation-fails-duplicate-names.md
-    - name: Refreshes have slow performance and timeouts for Dataflows Gen2 with CI/CD
-      href: ../known-issues/known-issue-1167-refreshes-slow-performance-timeouts-dataflows-gen-2.md
-    - name: Inaccurate usage data displayed for digital twin builder usage in Capacity Metrics App
-      href: ../known-issues/known-issue-1164-inaccurate-data-digital-twin-builder-usage-capacity-metrics-app.md
-    - name: Service report is missing table tooltips in the field list in edit mode
-      href: ../known-issues/known-issue-1163-service-report-missing-table-tooltips-field-list-edit-mode.md
-    - name: Deleting a classic item or creating a classic item when you use a deleted item's name fails
-      href: ../known-issues/known-issue-1162-deleting-creating-classic-item-use-deleted-items-name-fails.md
-    - name: Pipeline notebook activity monitoring page is empty for T-SQL notebook
-      href: ../known-issues/known-issue-1160-pipeline-monitoring-page-empty-t-sql-notebook.md
-    - name: New query replicas in Azure Analysis Services fail to start
-      href: ../known-issues/known-issue-1158-new-query-replicas-azure-analysis-services-fail-start.md
-    - name: Data warehouse doesn't load with version mismatch error
-      href: ../known-issues/known-issue-1156-data-warehouse-not-load-version-mismatch-error.md
-    - name: Publish of eventstream with streaming connector source fails
-      href: ../known-issues/known-issue-1155-publish-eventstream-streaming-connector-source-fails.md
-    - name: Next button in connection authoring is greyed out
-      href: ../known-issues/known-issue-1149-next-button-connection-authoring-greyed-out.md
-    - name: Disabling the Workspace encryption setting doesn't work
-      href: ../known-issues/known-issue-1151-disabling-workspace-encryption-setting-not-work.md
-    - name: Dynamics 365 and KQL query doesn't save reports
-      href: ../known-issues/known-issue-1148-dynamics-365-kql-query-not-save-reports.md
-    - name: Button slicer formatting broken in service or May Desktop
-      href: ../known-issues/known-issue-1147-button-slicer-formatting-broken-service-may-desktop.md
-    - name: Service error on privacy level challenge for power query
-      href: ../known-issues/known-issue-1146-service-error-privacy-level-challenge-power-query.md
-    - name: Py4JJavaError when saving delta table on Fabric 1.3
-      href: ../known-issues/known-issue-1144-java-error-saving-delta-table-fabric-1-3.md
-    - name: Error with Dremio Connector using Dremio.DatabasesV370 function
-      href: ../known-issues/known-issue-1143-error-dremio-connector-dremio-function.md
-    - name: SQL editor Copilot code completion feature might cause high usage
-      href: ../known-issues/known-issue-1142-sql-editor-copilot-code-completion-feature-high-usage.md
-    - name: Credential update in Google Analytics connections fails with JSON error
-      href: ../known-issues/known-issue-1138-credential-update-google-analytics-connections-fails.md
-    - name: Transient failure for deploying User data functions welcome templates
-      href: ../known-issues/known-issue-1137-failure-deploying-user-data-functions-welcome-templates.md
-    - name: Scrolling through workspaces in OneLake Catalog doesn't work
-      href: ../known-issues/known-issue-1136-scrolling-workspaces-onelake-catalog-not-work.md
-    - name: Explore mode within digital twin builder unexpectedly empty
-      href: ../known-issues/known-issue-1125-explore-mode-digital-twin-builder-unexpectedly-empty.md
-    - name: Digital twin builder mapping fails with concurrent update error
-      href: ../known-issues/known-issue-1124-digital-twin-builder-mapping-fails-concurrent-update-error.md
-    - name: Throttling issues with the Mirrored Azure Databricks catalog shortcuts
-      href: ../known-issues/known-issue-1135-throttling-issues-mirrored-azure-databricks-catalog-shortcuts.md
-    - name: Multiple dataflow staging items created in workspace
-      href: ../known-issues/known-issue-1134-multiple-dataflow-staging-items-created-workspace.md
-    - name: Deleted OneLake Shortcuts still visible as empty file
-      href: ../known-issues/known-issue-1133-deleted-oneLake-shortcuts-visible-empty-file.md
-    - name: Spark job fails with out of memory error when using timestamp type
-      href: ../known-issues/known-issue-1132-spark-job-fails-memory-error-timestamp-type.md
-    - name: SQL database creation fails due to tenant setting
-      href: ../known-issues/known-issue-1131-sql-database-creation-fails-tenant-setting.md
-    - name: Failure to Save and Run Dataflow Gen2 dataflows deployed with Git integration
-      href: ../known-issues/known-issue-1128-failure-save-run-dataflow-gen2-deployed-git-integration.md
-    - name: Function queries cause failures in Dataflow Gen2 refresh
-      href: ../known-issues/known-issue-1126-function-queries-failures-dataflow-gen2-refresh.md
-    - name: Reenabling Azure SQL database mirroring fails
-      href: ../known-issues/known-issue-1123-reenabling-azure-sql-database-mirroring-fails.md
-    - name: Power BI report selection doesn't work in Viva Goals
-      href: ../known-issues/known-issue-1122-report-selection-not-work-viva-goals.md
-    - name: Recommended tiles on the home page appear stretched for customer images
-      href: ../known-issues/known-issue-1120-recommended-tiles-home-page-stretched-customer-images.md
-    - name: Large semantic model storage format conversion stays in view mode
-      href: ../known-issues/known-issue-1119-large-semantic-model-conversion-view-mode.md
-    - name: SQL analytics endpoint queries return empty results
-      href: ../known-issues/known-issue-1121-sql-analytics-endpoint-queries-return-empty-results.md
-    - name: Execution details of semantic model refresh activity unavailable in Monitor hub
-      href: ../known-issues/known-issue-1118-execution-details-model-refresh-unavailable-monitor-hub.md
-    - name: Gateway causes lakehouse tables with null values
-      href: ../known-issues/known-issue-1117-gateway-causes-lakehouse-tables-null-values.md
-    - name: API for GraphQL query fails when using variables with float value
-      href: ../known-issues/known-issue-1113-api-graphql-query-fails-variables-float-value.md
-    - name: Insert statements across tables in different data warehouses fail
-      href: ../known-issues/known-issue-1114-insert-statements-tables-different-data-warehouses-fail.md
-    - name: User data functions option not visible in data pipelines functions activity
-      href: ../known-issues/known-issue-1112-functions-option-not-visible-pipelines-functions-activity.md
-    - name: Can't read data warehouse tables from a notebook
-      href: ../known-issues/known-issue-1108-not-read-data-warehouse-tables-notebook.md
-    - name: Cross-region capacity migration might fail if items weren't deleted successfully
-      href: ../known-issues/known-issue-1107-cross-region-capacity-migration-fail-items-not-deleted-successfully.md
-    - name: Eventstream real-time weather connector fails to load map in edit mode
-      href: ../known-issues/known-issue-1106-eventstream-weather-connector-fails-load-map-edit-mode.md
-    - name: Power BI visual warning about style preset not found
-      href: ../known-issues/known-issue-1104-visual-warning-style-preset-not-found.md
-    - name: Data warehouse in second workspace out of sync from Git
-      href: ../known-issues/known-issue-1103-data-warehouse-second-workspace-sync-git.md
-    - name: Deletion of managed private endpoint connected to Key Vault doesn't work
-      href: ../known-issues/known-issue-1102-deletion-private-endpoint-connected-key-vault-not-work.md
-    - name: Vertica connector throws invalid conversion error
-      href: ../known-issues/known-issue-1101-vertica-connector-throws-invalid-conversion-error.md
-    - name: Snowflake Implementation="2.0" connector doesn't display views
-      href: ../known-issues/known-issue-1100-snowflake-implementation-connector-not-display-views.md
-    - name: Azure map zooms out automatically even with auto zoom turned off
-      href: ../known-issues/known-issue-1097-azure-map-zooms-out-auto-zoom-turned-off.md
-    - name: Delayed data availability in SQL analytics endpoint when using a pipeline
-      href: ../known-issues/known-issue-1092-delayed-data-availability-analytics-endpoint-pipeline.md
-    - name: New card visual conditional formatting rules don't work
-      href: ../known-issues/known-issue-1091-new-card-visual-conditional-formatting-rules-not-work.md
-    - name: PyPI packages in User data functions don't show in Library Management
-      href: ../known-issues/known-issue-1090-pypi-packages-functions-not-show-library-management.md
-    - name: Pipeline can't copy an empty table to lakehouse
-      href: ../known-issues/known-issue-1087-pipeline-not-copy-empty-table-lakehouse.md
-    - name: Spark job submission failure with Library Management error
-      href: ../known-issues/known-issue-1085-spark-job-submission-failure-library-management-error.md
-    - name: Dataflow Gen2 refresh fails with PowerBIEntityNotFound error
-      href: ../known-issues/known-issue-1089-dataflow-gen2-refresh-fails-error.md
-    - name: Dataflow Gen2 refresh fails with type mismatch error
-      href: ../known-issues/known-issue-1083-dataflow-gen2-refresh-fails-type-mismatch-error.md
-    - name: Data pipeline run fails due to user auth token errors
-      href: ../known-issues/known-issue-1080-data-pipeline-run-fails-user-auth-token-errors.md
-    - name: Pipelines fail with missing capacity error
-      href: ../known-issues/known-issue-1079-pipelines-fail-missing-capacity-error.md
-    - name: Can't install or open on-premises data gateway after Windows update
-      href: ../known-issues/known-issue-1078-not-install-open-on-premises-data-gateway-windows-update.md
-    - name: Failure to scale AAS server or add admins through Azure portal
-      href: ../known-issues/known-issue-1077-failure-scale-azure-analysis-services-add-admins.md
-    - name: Eventstream sample data sources created from Real-Time hub are inactive
-      href: ../known-issues/known-issue-1076-eventstream-sample-data-sources-real-time-hub-inactive.md
-    - name: Multitasking for Dataflow Gen2 with CI/CD was inadvertently enabled
-      href: ../known-issues/known-issue-1075-multitasking-dataflow-gen2-ci-cd-enabled.md
-    - name: Environment REST API update no longer happening
-      href: ../known-issues/known-issue-1067-environment-rest-api-updates-workflow-break.md
-    - name: Environment Git integration imports for libraries don't work
-      href: ../known-issues/known-issue-1025-environment-git-integration-imports-libraries-not-work.md
-    - name: SQL analytics endpoint sync failure when columnMapping is enabled
-      href: ../known-issues/known-issue-1069-sql-analytics-endpoint-sync-failure-column-mapping-enabled.md
-    - name: Pipeline activities fail with Dynamics or Dataverse connections through OPDG
-      href: ../known-issues/known-issue-1063-pipeline-activities-fail-dynamics-dataverse-connections-opdg.md
-    - name: Virtual network data gateway doesn't start certain regions
-      href: ../known-issues/known-issue-1070-virtual-network-data-gateway-not-start-certain-regions.md
-    - name: Workspace identity tagged as preview for ADLS Gen2 connections
-      href: ../known-issues/known-issue-1062-workspace-identity-tagged-preview-adls-gen2-connections.md
-    - name: Issues publishing or importing reports in Pro workspaces
-      href: ../known-issues/known-issue-1061-issues-publishing-importing-reports-pro-workspaces.md
-    - name: Eventstream data sources might be inactivated and can't be reactivated
-      href: ../known-issues/known-issue-1051-eventstream-data-sources-inactivated-not-reactivated.md
-    - name: Copilot installation script not included in notebook
-      href: ../known-issues/known-issue-1059-copilot-installation-script-not-included-notebook.md
-    - name: Database mirroring error that source table doesn't exist
-      href: ../known-issues/known-issue-1056-database-mirroring-error-source-table-not-exist.md
-    - name: Workspaces created during Fabric preview only support limited OneLake features
-      href: ../known-issues/known-issue-1058-workspaces-created-during-preview-limited-onelake-features.md
-    - name: Spark Job Definition activity incorrectly shows failure status
-      href: ../known-issues/known-issue-1055-spark-job-definition-activity-incorrectly-shows-failure-status.md
-    - name: Custom visuals using dialog or download API don't work in February Desktop
-      href: ../known-issues/known-issue-1046-custom-visuals-dialog-api-not-work-desktop.md
-    - name: Data Agent creation fails when tenant settings restricted to security groups
-      href: ../known-issues/known-issue-1047-ai-skill-creation-fails-tenant-settings-restricted-security-groups.md
-    - name: Live connection to local model conversion resets report content in February Desktop
-      href: ../known-issues/known-issue-1045-live-connection-local-model-resets-report-content-desktop.md
-    - name: Pub/Sub subscriptions disappear from API response after creation
-      href: ../known-issues/known-issue-1043-pub-sub-subscriptions-disappear-api-response-creation.md
-    - name: Sync for data warehouse and SQL analytics endpoint fail in West Europe
-      href: ../known-issues/known-issue-1039-sync-warehouse-sql-endpoint-fail-west-europe.md
-    - name: FeatureNotAvailableError error in Network Security tab of Workspace Settings
-      href: ../known-issues/known-issue-1033-error-network-security-tab-workspace-settings.md
-    - name: Lakehouse ALM operations fail for Git using public APIs in UK South
-      href: ../known-issues/known-issue-1035-lakehouse-alm-fail-git-public-apis-uk-south.md
-    - name: Existing preview surge protection rules aren't visible in Capacity settings
-      href: ../known-issues/known-issue-1029-surge-protection-rules-not-visible-capacity-settings.md
-    - name: Eventstream updates with Eventhouse destination causes error
-      href: ../known-issues/known-issue-1032-eventstream-updates-eventhouse-destination-error.md
-    - name: Git integration undo action appears after initial sync fails
-      href: ../known-issues/known-issue-1031-git-integration-undo-initial-sync-fails-delete-items.md
-    - name: Slow Spark session startup caused by Native Execution Engine
-      href: ../known-issues/known-issue-1028-slow-spark-session-startup-native-execution-engine.md
-    - name: Mirroring fails for tables with unique index on unsupported data type
-      href: ../known-issues/known-issue-1027-mirroring-fails-tables-unique-index-unsupported-type.md
-    - name: CopyJob item deletion fails with error
-      href: ../known-issues/known-issue-1024-copy-job-item-deletion-fails-error.md
-    - name: Preview destination data on a pipeline's copy activity fails
-      href: ../known-issues/known-issue-1023-preview-destination-data-pipeline-copy-activity-fails.md
-    - name: Unsupported error for legacy timestamp in Fabric Runtime 1.3
-      href: ../known-issues/known-issue-1017-unsupported-error-legacy-timestamp-fabric-runtime.md
-    - name: Notebook and SJD job statuses are in progress in monitor hub
-      href: ../known-issues/known-issue-1004-notebook-sjd-job-statuses-in-progress-monitor-hub.md
-    - name: Copilot sidecar chat fails with certain private link settings
-      href: ../known-issues/known-issue-1003-copilot-sidecar-chat-fails-private-link-settings.md
-    - name: Reports that use functions with RLS don't work
-      href: ../known-issues/known-issue-1002-reports-functions-rls-not-work.md
-    - name: Some SQL query syntax fails in a graph database query
-      href: ../known-issues/known-issue-996-sql-query-syntax-fails-graph-database-query.md
-    - name: KQL database loads continuously without an error
-      href: ../known-issues/known-issue-990-kql-database-loads-continuously-without-error.md
-    - name: Apache Airflow job creation shows Fabric upgrade message
-      href: ../known-issues/known-issue-991-apache-airflow-job-creation-upgrade-message.md
-    - name: Local data access isn't allowed for pipeline using on-premises data gateway
-      href: ../known-issues/known-issue-989-local-data-not-allowed-pipeline-on-premises-data-gateway.md
-    - name: Data activator events aren't ingested for Reflex events
-      href: ../known-issues/known-issue-988-data-activator-events-not-ingested-reflex-events.md
-    - name: Direct Lake query cancellation might cancel other queries
-      href: ../known-issues/known-issue-986-direct-lake-query-cancellation-cancel-queries.md
-    - name: Direct Lake query cancellation causes model to fall back to DirectQuery
-      href: ../known-issues/known-issue-985-direct-lake-query-cancellation-fall-back-directquery.md
-    - name: SQL databases not available with private link through January 2025
-      href: ../known-issues/known-issue-979-sql-databases-not-available-private-link.md
-    - name: Create report doesn't work on Eventhouse monitoring KQL database
-      href: ../known-issues/known-issue-975-create-report-not-work-eventhouse-monitoring-kql-database.md
-    - name: Show table command in KQL Queryset editor fails
-      href: ../known-issues/known-issue-974-show-table-kql-queryset-editor-fails.md
-    - name: Export-to-data disabled for a visual with visual calculation
-      href: ../known-issues/known-issue-976-export-to-data-disabled-visual-calculation.md
-    - name: Export data option is disabled for Q&A visual in the service
-      href: ../known-issues/known-issue-968-export-data-option-disabled-qa-visual.md
-    - name: Pipeline activities don't save if their data warehouse connection is changed
-      href: ../known-issues/known-issue-967-pipeline-activities-not-save-warehouse-connection.md
-    - name: SQL database creation fails to create child items when item with same name exists
-      href: ../known-issues/known-issue-965-sql-database-creation-fails-create-child-items-same-name.md
-    - name: Creation failure for Copy job item in empty workspace
-      href: ../known-issues/known-issue-957-creation-failure-copy-job-item-empty-workspace.md
-    - name: Create, configure, or delete a mirror fails
-      href: ../known-issues/known-issue-954-create-configure-delete-mirror-fails.md
-    - name: Intermittent failures on deployment of Sustainability solution
-      href: ../known-issues/known-issue-945-intermittent-failures-deployment-sustainability-solution.md
-    - name: Line chart value-axis zoom sliders don't work with markers enabled
-      href: ../known-issues/known-issue-938-line-chart-value-axis-zoom-sliders-not-work-markers-enabled.md
-    - name: The default environment's resources folder doesn't work in notebooks
-      href: ../known-issues/known-issue-922-default-environment-resources-folder-not-work-notebooks.md
-    - name: Tenant migration requests stopped
-      href: ../known-issues/known-issue-923-tenant-migrations-paused-january-2025.md
-    - name: SQL analytics endpoint tables lose statistics
-      href: ../known-issues/known-issue-910-sql-analytics-endpoint-tables-lose-statistics.md
-    - name: SQL analytics endpoint tables lose permissions
-      href: ../known-issues/known-issue-909-sql-analytics-endpoint-tables-lose-permissions.md
-    - name: Data warehouse data preview might fail if multiple data warehouse items
-      href: ../known-issues/known-issue-903-warehouse-preview-fail-multiple-warehouse.md
-    - name: OneLake Shared Access Signature (SAS) can't read cross-region shortcuts
-      href: ../known-issues/known-issue-897-onelake-sas-not-read-cross-region-shortcuts.md
-    - name: Pipeline fails when getting a token to connect to Kusto
-      href: ../known-issues/known-issue-894-pipeline-fails-getting-token-connect-kusto.md
-    - name: Can't connect to semantic model from Excel or use Analyze in Excel
-      href: ../known-issues/known-issue-893-not-connect-semantic-model-analyze-excel.md
-    - name: Spark jobs might fail due to Runtime 1.3 updates for GA
-      href: ../known-issues/known-issue-883-spark-jobs-fail-runtime-updates.md
-    - name: Premium capacity doesn't add excess usage into carry forward
-      href: ../known-issues/known-issue-878-premium-capacity-not-add-usage-carry-forward.md
-    - name: Data pipeline connection fails after connection creator role is removed
-      href: ../known-issues/known-issue-877-pipeline-connection-fails-role-removed.md
-    - name: Pipeline fails when copying data to data warehouse with staging
-      href: ../known-issues/known-issue-856-pipeline-fails-when-copy-data-warehouse.md
-    - name: Monitoring hub displays incorrect queued duration
-      href: ../known-issues/known-issue-837-monitoring-hub-displays-incorrect-queued-duration.md
-    - name: Managed private endpoint connection could fail
-      href: ../known-issues/known-issue-835-managed-private-endpoint-connection-fail.md
-    - name: Subscriptions and exports with maps might produce wrong results
-      href: ../known-issues/known-issue-819-subscriptions-exports-maps-wrong-results.md
-    - name: Pipelines don't support Role property for Snowflake connector
-      href: ../known-issues/known-issue-817-pipelines-not-support-role-property-snowflake-connector.md
-    - name: Pipeline deployment fails when parent contains deactivated activity
-      href: ../known-issues/known-issue-816-pipeline-deployment-fails-parent-deactivated-activity.md
-    - name: Multiple installations of on-premises data gateway causes pipelines to fail
-      href: ../known-issues/known-issue-795-multiple-installations-data-gateway-pipelines-fail.md
-    - name: SQL analytics endpoint table queries fail due to RLE
-      href: ../known-issues/known-issue-789-sql-endpoint-table-queries-fail-rle.md
-    - name: Data warehouse deployment using deployment pipelines fails
-      href: ../known-issues/known-issue-774-data-warehouse-deployment-using-pipelines-fails.md
-    - name: SQL analytics endpoint table sync fails when table contains linked functions
-      href: ../known-issues/known-issue-767-sql-endpoint-table-sync-fails-table-linked-functions.md
-    - name: Copy activity from Oracle to lakehouse fails for Number data type
-      href: ../known-issues/known-issue-757-copy-activity-oracle-lakehouse-fails-number-type.md
-    - name: Pipeline using XML format copy gets stuck
-      href: ../known-issues/known-issue-726-pipeline-xml-format-copy-stuck.md
-    - name: West India region doesn't support on-premises data gateway for data pipelines
-      href: ../known-issues/known-issue-717-west-india-region-not-support-on-premises-gateway-pipelines.md
-    - name: OneLake under-reports transactions in the Other category
-      href: ../known-issues/known-issue-718-onelake-under-reports-transactions-other-category.md
-    - name: Tables not available to add in Power BI semantic model
-      href: ../known-issues/known-issue-643-tables-not-available-semantic-model.md
-    - name: User column incorrectly shows as System in Fabric capacity metrics app
-      href: ../known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md
-    - name: InProgress status shows in Fabric capacity metrics app for completed queries
-      href: ../known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md
-    - name: Warehouse's object explorer doesn't support case-sensitive object names
-      href: ../known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md
 - name: Resources
   items:
     - name: Icons

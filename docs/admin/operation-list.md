@@ -6,7 +6,6 @@ ms.author: mimart
 ms.topic: conceptual
 ms.date: 05/22/2025
 ---
-
 # Operation list
 
 The following operations are available in the audit logs.
@@ -237,6 +236,7 @@ The following operations are available in the audit logs.
 | Deleted Power BI semantic model rows | DeleteDatasetRows | Indicates that the Push Datasets - Datasets DeleteRows API was called  |
 | Deleted Power BI semantic model | DeleteDataset |   |
 | Deleted Power BI template app or a workspace for a template app | DeleteTemplateApp |   |
+| Deleted Publish to Web Embed Code | DeleteEmbedCode |   |
 | Deleted a SQL query from a SQL analytics endpoint | DeleteSqlQueryFromSqlAnalyticsEndpointLakehouse | This audit event covers both deleting SQL and visual queries from the SQL analytics endpoint of the Lakehouse  |
 | Deleted SQL query from a Warehouse | DeleteSqlQueryFromWarehouse | Covers both deleting SQL and visual queries from the Warehouse  |
 | Deleted an organizational custom visual | DeleteOrganizationalGalleryItem |   |
@@ -755,6 +755,35 @@ The following operations are available in the audit logs.
 ## Considerations and limitations
 
 When capacity ID and capacity name aren't available in the audit logs, you can view them in the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md).
+
+> [!IMPORTANT]
+> **Starting July 7, 2025**, As part of our ongoing efforts to simplify audit logging and ensure consistency across Microsoft Fabric, we're **standardizing redundant artifact operations** into a single set of unified operations. This migration aligns Datamart, Warehouse, and SQL Analytics Endpoint Lakehouse actions under common names used across the Fabric platform.
+
+### What’s Changing?
+
+| Friendly Name | Old Operation Name | New Operation Name |
+|---------------|--------------------|---------------------|
+| Create Datamart | CreateDatamart | CreateArtifact |
+| Create Warehouse | CreateWarehouse | CreateArtifact |
+| Delete Datamart | DeleteDatamart | DeleteArtifact |
+| Delete Warehouse | DeleteWarehouse | DeleteArtifact |
+| Rename Datamart | RenameDatamart | UpdateArtifact |
+| Rename Warehouse | RenameWarehouse | UpdateArtifact |
+| Share Datamart | ShareDatamart | ShareArtifact |
+| Share Warehouse | ShareWarehouse | ShareArtifact |
+| Update Datamart | UpdateDatamart | UpdateArtifact |
+| Update Datamart Metadata | UpdateDatamartMetadata | UpdateArtifact |
+| Update Datamart Settings | UpdateDatamartSettings | UpdateArtifact |
+| Update Warehouse | UpdateWarehouse | UpdateArtifact |
+| Update Warehouse Metadata | UpdateWarehouseMetadata | UpdateArtifact |
+| Update Warehouse Settings | UpdateWarehouseSettings | UpdateArtifact |
+| Upsert Datamart Parameters | UpsertDatamartParameters | UpdateArtifact |
+| Upsert SQL Analytics Endpoint Lakehouse Parameters | UpsertSqlAnalyticsEndpointLakehouseParameters | UpdateArtifact |
+| Upsert Warehouse Parameters | UpsertWarehouseParameters | UpdateArtifact |
+| View Datamart | ViewDatamart | ReadArtifact |
+| View SQL Analytics Endpoint Lakehouse | ViewSqlAnalyticsEndpointLakehouse | ReadArtifact |
+| View Warehouse | ViewWarehouse | ReadArtifact |
+
 
 ## Related content
 

@@ -8,6 +8,7 @@ ms.custom:
   - tenant-setting
 ms.topic: how-to
 ms.date: 05/19/2025
+ms.update-cycle: 180-days
 LocalizationGroup: Administration
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
@@ -38,13 +39,15 @@ When this setting is enabled, users can access the features powered by Azure Ope
 
 :::image type="content" source="./media/service-admin-portal-copilot/enable-copilot.png" alt-text="Screenshot showing the tenant setting where copilot can be enabled and disabled." lightbox="./media/service-admin-portal-copilot/enable-copilot.png":::
 
-This setting can be managed at both the tenant and the capacity levels. For more information, see [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md).
+This setting can be managed at both the tenant and the capacity levels. When this setting is enabled, the service may execute background jobs at no charge to the tenant capacity to support end user experiences. For more information, see [Overview of Copilot in Fabric](../fundamentals/copilot-fabric-overview.md).
 
 **Default:** Enabled
 
 ## Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance
 
-This setting is only applicable for customers who want to use Copilot and AI features in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. The following screenshot shows how to make this setting:
+This setting is only applicable for customers who want to use Copilot and AI features in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. When this setting is enabled, service background jobs may execute across geographic boundaries at no charge to the tenant capacity to support end user experiences.  
+  
+The following screenshot shows how to make this setting:
 
 :::image type="content" source="./media/service-admin-portal-copilot/fabric-copilot-data-processed.png" alt-text="Screenshot showing the tenant setting for data processing outside the capacity's region." lightbox="./media/service-admin-portal-copilot/fabric-copilot-data-processed.png":::
 
@@ -54,7 +57,7 @@ For more information, visit the [Available regions](../fundamentals/copilot-fabr
 
 ## Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance
 
-This setting is only applicable for customers who want to use Copilot in Notebooks and the AI Skill Feature in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. The following screenshot shows how to make this setting:
+This setting is only applicable for customers who want to use Copilot in Notebooks and the Data agent Feature in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. The following screenshot shows how to make this setting:
 
 :::image type="content" source="media/service-admin-portal-copilot/fabric-copilot-storage-tenant-setting.png" alt-text="Screenshot of Fabric Copilot Storage setting in the admin portal." lightbox="./media/service-admin-portal-copilot/fabric-copilot-storage-tenant-setting.png":::
 
@@ -64,7 +67,7 @@ For more information, visit the [Available regions](../fundamentals/copilot-fabr
 
 ## Conversation history stored outside your capacity's geographic region, compliance boundary, or national cloud instance
 
-Note that this setting is **only** applicable for customers who want to use [Copilot in Notebooks](../data-engineering/copilot-notebooks-overview.md) and Fabric [data agents](../data-science/concept-data-agent.md) (formerly known as AI Skill) powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. 
+Note that this setting is **only** applicable for customers who want to use [Copilot in Notebooks](../data-engineering/copilot-notebooks-overview.md) and Fabric [data agents](../data-science/concept-data-agent.md) (formerly known as Data agent) powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. 
 
 In order to use fully conversational agentic AI experiences, the agent needs to store conversation history across user sessions. This ensures that the AI agent keeps context about what a user asked in previous sessions and is a desired behavior in many agentic experiences. Experiences such as Copilot in Notebooks and Fabric data agents are AI experiences that store conversation history across the user's sessions. **This history is stored inside the Azure security boundary, in the same region and in the same Azure OpenAI resources that process all your Fabric AI requests.** The difference in this case is that the conversation history is stored for as log as the user allows. For experiences that don't store conversation history across sessions, no data is stored. Prompts are only processed by Azure OpenAI resources that Fabric uses.
 

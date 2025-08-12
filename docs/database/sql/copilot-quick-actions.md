@@ -5,9 +5,11 @@ author: yoleichen
 ms.author: yoleichen
 ms.reviewer: maghan, wiassaf
 ms.date: 05/19/2025
+ms.update-cycle: 180-days
 ms.topic: how-to
 ms.collection:
-  - ce-skilling-ai-copilot
+- ce-skilling-ai-copilot
+ms.custom: sfi-image-nochange
 ---
 
 # How to use the Copilot Explain and Fix quick action features in Fabric in the SQL database workload (Preview)

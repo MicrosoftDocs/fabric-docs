@@ -1,15 +1,15 @@
 ---
-title: 'Digital twin builder (preview) tutorial: Add entities and map data'
-description: Define entities in digital twin builder (preview) and map data to them.
+title: 'Digital twin builder (preview) tutorial: Add entity types and map data'
+description: Define entity types in digital twin builder (preview) and map data to entity instances.
 author: baanders
 ms.author: baanders
 ms.date: 05/01/2025
 ms.topic: tutorial
 ---
 
-# Digital twin builder (preview) tutorial part 2: Add entities and map data
+# Digital twin builder (preview) tutorial part 2: Add entity types and map data
 
-In this part of the tutorial, you define entities in digital twin builder (preview) and map data to them. The entities include:
+In this part of the tutorial, you define entity types in digital twin builder (preview) and map data to entity instances. The entity types include:
 * *Distiller*
 * *Condenser*
 * *Reboiler*
@@ -17,39 +17,39 @@ In this part of the tutorial, you define entities in digital twin builder (previ
 * *Technician*
 * *MaintenanceRequest*
 
-For each entity, you map property and/or time series data from the sample tables to the entity's properties in digital twin builder.
+For each entity type, you configure how property and/or time series data is mapped from the sample tables to the entity instances' properties in digital twin builder.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Add the Distiller entity
+## Add the Distiller entity type
 
-In this section, you define the first entity in the sample ontology, *Distiller*.
+In this section, you define the first entity type in the sample ontology, *Distiller*.
 
 1. In the semantic canvas of digital twin builder (preview), select **Add entity**.
 
     :::image type="content" source="media/tutorial/add-entity.png" alt-text="Screenshot of Add entity button.":::
-1. Select the *Equipment* system type. System types are built-in entity types that you can select when defining an entity, to automatically associate it with a set of relevant properties that are common to objects of this type.
+1. Select the *Equipment* system type. System types are built-in entity types that you can select when defining an entity type, to automatically associate it with a set of relevant properties that are common to objects of this type.
 
-    Enter *Distiller* for the entity name and select **Add entity**.
+    Enter *Distiller* for the entity type name and select **Add entity**.
 
     :::image type="content" source="media/tutorial/distiller-entity-type.png" alt-text="Screenshot of selecting the Equipment entity type for the distiller.":::
-1. After a few minutes, the *Distiller* entity is now visible on the canvas.
+1. After a few minutes, the *Distiller* entity type is now visible on the canvas.
 
-    :::image type="content" source="media/tutorial/distiller-entity.png" alt-text="Screenshot of the distiller entity in the canvas.":::
+    :::image type="content" source="media/tutorial/distiller-entity.png" alt-text="Screenshot of the distiller entity type in the canvas.":::
 
 ## Map data to the Distiller
 
-Next, map some data to your *Distiller* entity. 
+Next, map some data to your *Distiller* entity type. 
 
-The mapping feature in digital twin builder (preview) is the first step to creating an ontology with semantically rich entities. During mapping, you hydrate your entities with data from various source systems. 
+The mapping feature in digital twin builder (preview) is the first step to creating an ontology with semantically rich entity types. During mapping, you hydrate your entity instances with data from various source systems. 
 
-You can add both time series and non-time series properties to an entity. When mapping both types of property to an entity, you must map at least one non-time series property before you can map time series properties. Then, link the non-time series and time series data together by matching a non-time series property from the entity with a column from the time series data. The values in the time series column must **exactly** match data that's mapped to the entity property.
+You can add both time series and non-time series properties to an entity type. When mapping both types of property to an entity type, you must map at least one non-time series property before you can map time series properties. Then, link the non-time series and time series data together by matching a non-time series property from the entity type with a column from the time series data. The values in the time series column must **exactly** match data that's mapped to the entity type property.
 
 ### Map non-timeseries properties
 
 Start by mapping the asset metadata.
 
-1. Select your entity on the canvas or in the entity list pane to open the **Entity configuration** pane. 
+1. Select your entity type on the canvas or in the entity type list pane to open the **Entity configuration** pane. 
 1. In the pane, go to the **Mappings** tab. Select **Add data** to create a new mapping.
 
     :::image type="content" source="media/tutorial/add-data.png" alt-text="Screenshot of adding a mapping.":::
@@ -64,7 +64,7 @@ Start by mapping the asset metadata.
     :::image type="content" source="media/tutorial/distiller-filter.png" alt-text="Screenshot of applying a filter to the distiller data.":::
 
     The button text now shows **Filter applied**.
-1. Next, select the **Property type** of the data you're mapping. This first mapping deals with asset metadata for the *Distiller* entity, so choose **Non-timeseries properties**. 
+1. Next, select the **Property type** of the data you're mapping. This first mapping deals with asset metadata for the *Distiller* entity type, so choose **Non-timeseries properties**. 
 
     :::image type="content" source="media/tutorial/property-type.png" alt-text="Screenshot of selecting the property type.":::
 1. Under **Unique Id**, select the edit icon (shaped like a pencil) to choose a unique ID for your data. The unique ID is created out of one or more columns from your source data, and is used by digital twin builder to uniquely identify each row of ingested data. Choose **ID** as the unique ID for this data, and select **Ok** to save and close the modal.
@@ -72,37 +72,37 @@ Start by mapping the asset metadata.
     :::image type="content" source="media/tutorial/unique-id.png" alt-text="Screenshot of the unique ID options.":::
 1. Under **Mapped properties**, select the edit icon to map properties from your source table.
 
-    The **Map properties** pane lets you select a column from your source data on the left side, and map it to a new property on your entity on the right side. By default, selecting a column name from the source data on the left side fills in the right side automatically with a matching name for the entity property, but you can enter a new name for the property on the right side if you want the entity property to be named something different than its name in the source data.
+    The **Map properties** pane lets you select a column from your source data on the left side, and map it to a new property on your entity type on the right side. By default, selecting a column name from the source data on the left side fills in the right side automatically with a matching name for the entity type property, but you can enter a new name for the property on the right side if you want the entity type property to be named something different than its name in the source data.
 
     Define the following property mappings:
     1. Where **DisplayName** is automatically provided on the right side as a property to map, select **Name** as the source column on the left side.
     1. Leave **Manufacturer** and **SerialNumber** unmapped.
     1. Select **+ Add entity property** to add a new property. Select **ID** as the source column on the left side, and edit the property on the right side to be *DistillerId*.
-    1. Add a new entity property. Select **SiteId** as the source column on the left side, and leave the *SiteId* that fills automatically as the property to map on the right side.
-    1. Add a new entity property. Select **NumberOfTrays** as the source column on the left side, and leave the *NumberOfTrays* that fills automatically as the property to map on the right side.
+    1. Add a new entity type property. Select **SiteId** as the source column on the left side, and leave the *SiteId* that fills automatically as the property to map on the right side.
+    1. Add a new entity type property. Select **NumberOfTrays** as the source column on the left side, and leave the *NumberOfTrays* that fills automatically as the property to map on the right side.
 
         :::image type="content" source="media/tutorial/map-properties.png" alt-text="Screenshot of the mapped properties.":::
-1. Check the box to acknowledge that once these properties are applied, they can't be renamed or removed from the entity.
+1. Check the box to acknowledge that once these properties are applied, they can't be renamed or removed from the entity type.
 1. Select **Apply** to save your properties. Then select **Save** to save your mapping.
 
     :::image type="content" source="media/tutorial/save-mapping.png" alt-text="Screenshot of the mapping and Save button.":::
-1. Go to the **Scheduling** tab to run your mapping job. Under the name of your mapping job, select **Run now**.
+1. Go to the **Scheduling** tab to run your mapping job. Under the name of your mapping job, select **Run**.
 
-    :::image type="content" source="media/tutorial/run-now.png" alt-text="Screenshot of the Run now button.":::
+    :::image type="content" source="media/tutorial/run-now.png" alt-text="Screenshot of the Run button.":::
 
 1. Check the status of your mapping job in the **Manage operations** tab. Wait for the status to say **Completed** before proceeding to the next section (you might need to refresh the content a few times).
 
-    :::image type="content" source="media/tutorial/manage-operations-distiller.png" alt-text="Screenshot of the Manage operations button from the distiller entity.":::
+    :::image type="content" source="media/tutorial/manage-operations-distiller.png" alt-text="Screenshot of the Manage operations button from the distiller entity type.":::
 
-    :::image type="content" source="media/tutorial/manage-operations-tab-distiller.png" alt-text="Screenshot of the Manage operations tab with the distiller entity mapping.":::
+    :::image type="content" source="media/tutorial/manage-operations-tab-distiller.png" alt-text="Screenshot of the Manage operations tab with the distiller entity type mapping.":::
 
 When the mapping is done running, entity instances are created and hydrated with the non-time series data.
 
 ### Map time series properties
 
-Next, map some time series data. For the *Distiller* entity, there are four time series properties coming from the time series data table that need to be added. After they are added, you link the time series data to the entity instances that you mapped in the previous step, by specifying a link property that exactly matches values across the time series and non-time series data.
+Next, map some time series data. For the *Distiller* entity type, there are four time series properties coming from the time series data table that need to be added. After they are added, you link the time series data to the entity instances that you mapped in the previous step, by specifying a link property that exactly matches values across the time series and non-time series data.
 
-1. Go back to the **Configure** view and reselect the **Distiller** entity. In the **Entity configuration** pane, reopen the **Mappings** tab.
+1. Select **Home** to return to the semantic canvas, and reselect the **Distiller** entity type. In the **Entity configuration** pane, reopen the **Mappings** tab.
 1. Select **Add data** to create a new mapping for the time series data.
 1. Open **Select lakehouse table** to select a data source for your mapping. From your tutorial workspace, select the *GettingStartedRawData* lakehouse and the *timeseries* table.
 
@@ -122,17 +122,17 @@ Next, map some time series data. For the *Distiller* entity, there are four time
     1. Use **+ Add entity property** to add four time series properties from these source columns: **RefluxRatio**, **MainTowerPressure**, **FeedFlowRate**, and **FeedTrayTemperature**. Leave the default matching names that populate on the right side.
 
          :::image type="content" source="media/tutorial/map-timeseries-properties.png" alt-text="Screenshot of the mapped time series properties.":::
-    1. Check the box to acknowledge that once these properties are applied, they can't be renamed or removed from the entity.
+    1. Check the box to acknowledge that once these properties are applied, they can't be renamed or removed from the entity type.
     1. Select **Apply**.
 
-1. Next, link the time series data to the entity data. Under **Link with entity property**, select the edit icon. This process requires you to select an entity property and a matching column from your time series data table. The source column selected from the time series data must **exactly match** data that is mapped to the selected entity property. This process ensures correct contextualization of your entity and time series data. 
+1. Next, link the time series data to the entity instance data. Under **Link with entity property**, select the edit icon. This process requires you to select an entity type property and a matching column from your time series data table. The source column selected from the time series data must **exactly match** data that is mapped to the selected property on the entity type. This process ensures correct contextualization of your entity instance data and time series data. 
     1. For **Choose entity property**, select **DistillerId**. Under **Select column from timeseries data...**, select the **assetId** column from your time series data.
 
          :::image type="content" source="media/tutorial/define-link.png" alt-text="Screenshot of the link options.":::
     1. Select **Apply** to save and close the modal.
 
 1. Make sure **Incremental mapping** is enabled, then select **Save** to save your mapping job. Confirm when prompted that you want to save the incremental mapping.
-1. Go to the **Scheduling** tab to run your mapping job. Locate the new mapping job (it ends in *TimeSeries*) and select **Run now**.
+1. Go to the **Scheduling** tab to run your mapping job. Locate the new mapping job (it ends in *TimeSeries*) and select **Run**.
 
 Next, add a schedule for the timeseries mapping so that it refreshes the data automatically. Here you create a schedule that runs every five minutes.
 1. Go to the **Scheduling** tab. Under the name of your time series run, toggle on the switch for **Schedule flow**. This displays a schedule selector. Expand the dropdown menu and select **Create flow**.
@@ -156,33 +156,33 @@ Next, add a schedule for the timeseries mapping so that it refreshes the data au
 
     :::image type="content" source="media/tutorial/distiller-schedule.png" alt-text="Screenshot of the configured distiller schedule.":::
 
-1. Now all properties of the *Distiller* are mapped. To verify, select the **Properties** tab and confirm that your entity looks like this in the semantic canvas:
+1. Now all properties of the *Distiller* are mapped. To verify, select the **Properties** tab and confirm that your entity type looks like this in the semantic canvas:
 
-    :::image type="content" source="media/tutorial/distiller-entity-two-mappings.png" alt-text="Screenshot of the distiller entity showing two mappings.":::
+    :::image type="content" source="media/tutorial/distiller-entity-two-mappings.png" alt-text="Screenshot of the distiller entity type showing two mappings.":::
 
 1. Check the status of your time series mapping in the **Manage operations** tab. Wait for the status to say **Completed** before proceeding to the next section (you might need to refresh the content a few times).
 
-    :::image type="content" source="media/tutorial/manage-operations-distiller.png" alt-text="Screenshot of the Manage operations button from the distiller entity.":::
+    :::image type="content" source="media/tutorial/manage-operations-distiller.png" alt-text="Screenshot of the Manage operations button from the distiller entity type.":::
 
     :::image type="content" source="media/tutorial/manage-operations-tab-distiller-2.png" alt-text="Screenshot of the Manage operations tab with the distiller time series mapping.":::
 
     >[!TIP]
     >If you see a status of **Failed** for your mapping job, try rerunning it. If you continue to experience issues, see [Troubleshooting digital twin builder (preview)](resources-troubleshooting.md#troubleshoot-operation-failures) for help.
 
-Now the *Distiller* entity and its mappings are complete. 
+Now the *Distiller* entity type and its mappings are complete. 
 
-## Add other ontology entities
+## Add other entity types
 
-Now that the *Distiller* entity is created, it's time to populate the ontology with the remaining entities from the source data: *Condenser*, *Reboiler*, *Process*, *Technician*, and *MaintenanceRequest*. The entity creation steps are similar to the steps for the *Distiller* entity, but the property specifics differ for each entity type.
+Now that the *Distiller* entity type is created, it's time to populate the ontology with the remaining entity types from the source data: *Condenser*, *Reboiler*, *Process*, *Technician*, and *MaintenanceRequest*. The entity type creation steps are similar to the steps for the *Distiller* entity type, but the property specifics differ for each entity type.
 
 ### Condenser
 
-To create the *Condenser* entity:
-1. In the semantic canvas, select **Add entity** from the ribbon. Using the *Equipment* entity type, create an entity named *Condenser*.
+To create the *Condenser* entity type:
+1. In the semantic canvas, select **Add entity** from the ribbon. Using the *Equipment* system type, create an entity type named *Condenser*.
 
     :::image type="content" source="media/tutorial/condenser-entity-type.png" alt-text="Screenshot of selecting the Equipment entity type for the condenser.":::
 
-1. In the **Mappings** tab of the new entity, select **Add data**. There are two mappings for this entity: one non-timeseries mapping and one timeseries mapping.
+1. In the **Mappings** tab of the new entity type, select **Add data**. There are two mappings for this entity type: one non-timeseries mapping and one timeseries mapping.
 1. Create the following mappings. Remember that all source tables are in your tutorial workspace and the *GettingStartedRawData* lakehouse.
 
     | Source table | Filter (case-sensitive) | Property type | Link/Unique ID | Mapped properties | Save and run notes |
@@ -192,13 +192,13 @@ To create the *Condenser* entity:
 
 1. When you're finished mapping the *Condenser*, it should look like this:
 
-    :::image type="content" source="media/tutorial/condenser-entity.png" alt-text="Screenshot of the Condenser entity.":::
+    :::image type="content" source="media/tutorial/condenser-entity.png" alt-text="Screenshot of the Condenser entity type.":::
 
 ### Reboiler
 
-To create the *Reboiler* entity:
-1. In the semantic canvas, select **Add entity** from the ribbon. Using the *Equipment* entity type, create an entity named *Reboiler*.
-1. In the **Mappings** tab of the new entity, select **Add data**. There are two mappings for this entity: one non-timeseries mapping and one timeseries mapping.
+To create the *Reboiler* entity type:
+1. In the semantic canvas, select **Add entity** from the ribbon. Using the *Equipment* system type, create an entity type named *Reboiler*.
+1. In the **Mappings** tab of the new entity type, select **Add data**. There are two mappings for this entity type: one non-timeseries mapping and one timeseries mapping.
 1. Create the following mappings:
 
     | Source table | Filter (case-sensitive) | Property type | Link/Unique ID | Mapped properties | Save and run notes |
@@ -208,13 +208,13 @@ To create the *Reboiler* entity:
 
 1. When you're finished mapping the *Reboiler*, it should look like this:
 
-    :::image type="content" source="media/tutorial/reboiler-entity.png" alt-text="Screenshot of the Reboiler entity.":::
+    :::image type="content" source="media/tutorial/reboiler-entity.png" alt-text="Screenshot of the Reboiler entity type.":::
 
 ### Process
 
-To create the *Process* entity:
-1. In the semantic canvas, select **Add entity** from the ribbon. Using the *Process* entity type, create an entity named *Process*.
-1. In the **Mappings** tab of the new entity, select **Add data**. There's one non-timeseries mapping for this entity.
+To create the *Process* entity type:
+1. In the semantic canvas, select **Add entity** from the ribbon. Using the *Process* system type, create an entity type named *Process*.
+1. In the **Mappings** tab of the new entity, select **Add data**. There's one non-timeseries mapping for this entity type.
 1. Create the following mapping:
 
     | Source table | Filter (case-sensitive) | Property type | Link/Unique ID | Mapped properties | Save and run notes |
@@ -223,13 +223,13 @@ To create the *Process* entity:
 
 1. When you're finished mapping the *Process*, it should look like this:
 
-    :::image type="content" source="media/tutorial/process-entity.png" alt-text="Screenshot of the Process entity.":::
+    :::image type="content" source="media/tutorial/process-entity.png" alt-text="Screenshot of the Process entity type.":::
 
 ### Technician
 
-To create the *Technician* entity:
-1. In the semantic canvas, select **Add entity** from the ribbon. Using the *Generic* entity type, create an entity named *Technician*.
-1. In the **Mappings** tab of the new entity, select **Add data**. There's one non-timeseries mapping for this entity.
+To create the *Technician* entity type:
+1. In the semantic canvas, select **Add entity** from the ribbon. Using the *Generic* system type, create an entity type named *Technician*.
+1. In the **Mappings** tab of the new entity, select **Add data**. There's one non-timeseries mapping for this entity type.
 1. Create the following mappings:
 
     | Source table | Filter (case-sensitive) | Property type | Link/Unique ID | Mapped properties | Save and run notes |
@@ -237,13 +237,13 @@ To create the *Technician* entity:
     | *technicians* | None | Non-timeseries properties | **Unique Id:** Id | - Map **name** as **DisplayName** <br>- Map **email** as *Email* <br>- Map **Id** as *TechnicianId* | After the mapping is created and saved, go to the **Scheduling** tab and run it. |
 1. When you're finished mapping the *Technician*, it should look like this:
 
-    :::image type="content" source="media/tutorial/technician-entity.png" alt-text="Screenshot of the Technician entity.":::
+    :::image type="content" source="media/tutorial/technician-entity.png" alt-text="Screenshot of the Technician entity type.":::
 
 ### MaintenanceRequest
 
-To create the *MaintenanceRequest* entity:
-1. In the semantic canvas, select **Add entity** from the ribbon. Using the *Generic* entity type, create an entity named *MaintenanceRequest*.
-2. In the **Mappings** tab of the new entity, select **Add data**. There's one non-timeseries mapping for this entity.
+To create the *MaintenanceRequest* entity type:
+1. In the semantic canvas, select **Add entity** from the ribbon. Using the *Generic* system type, create an entity type named *MaintenanceRequest*.
+2. In the **Mappings** tab of the new entity, select **Add data**. There's one non-timeseries mapping for this entity type.
 1. Create the following mappings:
 
     | Source table | Filter (case-sensitive) | Property type | Link/Unique ID | Mapped properties | Save and run notes |
@@ -251,13 +251,13 @@ To create the *MaintenanceRequest* entity:
     | *maintenancerequests* | None | Non-timeseries properties | **Unique Id:** WorkorderId | - Leave the **DisplayName** property unmapped. <br>- Map **EquipmentId** as *EquipmentId* <br>- Map **Site** as *SiteId* <br>- Map **Status** as *Status* <br>- Map **TechnicianId** as *TechnicianId* <br>- Map **WorkorderId** as *WorkOrderId* |  After the mapping is created and saved, go to the **Scheduling** tab and run it. |
 1. When you're finished mapping the *MaintenanceRequest*, it should look like this:
 
-    :::image type="content" source="media/tutorial/maintenance-request-entity.png" alt-text="Screenshot of the Maintenance Request entity.":::
+    :::image type="content" source="media/tutorial/maintenance-request-entity.png" alt-text="Screenshot of the Maintenance Request entity type.":::
 
-Now all the entities are created. Your semantic canvas should contain the following six entities: *Distiller*, *Condenser*, *Reboiler*, *Process*, *Technician*, and *MaintenanceRequest*.
+Now all the entity types are created. Your semantic canvas should contain the following six entity types: *Distiller*, *Condenser*, *Reboiler*, *Process*, *Technician*, and *MaintenanceRequest*.
 
 ## Check the status of your mappings
 
-Now that all the entity mappings are added, check the status of the mapping operations to verify that they completed successfully.
+Now that all the entity type mappings are added, check the status of the mapping operations to verify that they completed successfully.
 
 Select the **Manage operations** button.
 
@@ -275,4 +275,4 @@ Wait for all mappings to complete before you move on to the next part of the tut
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 3: Define relationships](tutorial-3-define-relationships.md)
+> [Tutorial part 3: Define relationship types](tutorial-3-define-relationships.md)

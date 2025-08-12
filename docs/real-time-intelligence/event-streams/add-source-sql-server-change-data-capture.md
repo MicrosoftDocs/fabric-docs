@@ -34,8 +34,6 @@ Once the SQL Server on VM DB (CDC) source is added to the eventstream, it monito
 - Your SQL Server on VM database must be configured to allow public access.  
 - Enable CDC in your SQL Server on VM database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server). 
 
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 ## Enable CDC in your SQL Server on VM database
 
 1. Enable CDC for the database.

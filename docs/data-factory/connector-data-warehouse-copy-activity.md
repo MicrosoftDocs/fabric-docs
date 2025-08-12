@@ -4,7 +4,7 @@ description: This article explains how to copy data using Data Warehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 06/26/2025
 ms.custom: 
   - pipelines
   - template-how-to
@@ -141,6 +141,8 @@ For example, the type for *ID* column in source is int, and you can change it to
 
 :::image type="content" source="media/connector-data-warehouse/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
+If you choose varchar or varbinary type for the destination column, you can specify the length for the type. The length should be larger than 0 and smaller than 8000 or be MAX (indicates a maximum storage size of 2³¹-1 bytes). The default value is 8000. For more information, see this [article](../data-warehouse/data-types.md#data-types-in-warehouse).
+
 ### Settings
 
 For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
@@ -179,6 +181,13 @@ The following tables contain more information about a copy activity in Data Ware
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
 |**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br> true or false|
 
+### Using Fabric Warehouse as a sink with staging enabled
+If the staging storage location has a firewall enabled, access issues may occur.
+#### Workarounds
+- **Different Regions**:  
+  If the Fabric capacity and staging storage are in different regions, ensure the regional Data Factory and Azure SQL IP addresses are allowed in the storage location firewall to enable connectivity.
+- **Same Region**:  
+  If the Fabric capacity and staging storage are in the same region and access issues persist, choose an alternative staging storage location in a different region than the Fabric capacity.
 ## Related content
 
 - [Data Warehouse connector overview](connector-data-warehouse-overview.md)

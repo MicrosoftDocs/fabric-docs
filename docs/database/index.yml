@@ -12,7 +12,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
   ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 11/20/2024
+  ms.date: 07/14/2025
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -25,6 +25,8 @@ landingContent:
         links:
           - text: SQL database in Fabric
             url: sql/overview.md
+          - text: Cosmos DB database in fabric
+            url: cosmos-db/overview.md
   # Card 
   - title: Decision guides and feature comparisons
     linkLists:
@@ -96,3 +98,81 @@ landingContent:
         links:
           - text: What is a Lakehouse?
             url: ../data-engineering/lakehouse-overview.md
+
+  # Card 
+  - title: Get started with Cosmos DB database
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Create a database
+            url: cosmos-db/quickstart-portal.md
+      - linkListType: how-to-guide
+        links:
+          - text: Run cross-database queries
+            url: cosmos-db/how-to-query-cross-database.md
+          - text: Review sample data set
+            url: cosmos-db/sample-data.md
+      - linkListType: reference
+        links:
+          - text: FAQ
+            url: cosmos-db/faq.yml
+
+  # Card 
+  - title: Secure Cosmos DB database
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Security baseline
+            url: cosmos-db/security.md
+          - text: Authorization
+            url: cosmos-db/authorization.md
+      - linkListType: how-to-guide
+        links:            
+          - text: Authenticate using Microsoft Entra ID
+            url: cosmos-db/how-to-authenticate.md
+
+  # Card 
+  - title: Query and tune Cosmos DB database
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Mirror to OneLake
+            url: cosmos-db/mirror-onelake.md
+      - linkListType: how-to-guide
+        links:
+          - text: Access data from a lakehouse
+            url: cosmos-db/how-to-access-data-lakehouse.md
+      - linkListType: concept
+        links:
+          - text: Explore indexing
+            url: cosmos-db/indexing.md
+          - text: Manage indexing policies
+            url: cosmos-db/indexing-policies.md
+          - text: Configure time to live (TTL)
+            url: cosmos-db/time-to-live.md
+      - linkListType: reference
+        links:
+          - text: NoSQL query language
+            url: /nosql/query/overview?context=/fabric/context/context-database
+
+  # Card
+  - title: Build AI applications with Cosmos DB database
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Index vector data
+            url: cosmos-db/index-vector-data.md
+          - text: Full text indexing and search
+            url: cosmos-db/full-text-indexing.md
+          - text: Hybrid search
+            url: cosmos-db/hybrid-search.md
+
+  # Card 
+  - title: Deploy and monitor Cosmos DB database
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Implement continuous integration and deployment
+            url: cosmos-db/how-to-continuous-integration-deployment.md
+          - text: Monitor activity and performance
+            url: cosmos-db/how-to-monitor.md

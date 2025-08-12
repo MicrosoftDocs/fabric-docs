@@ -256,6 +256,8 @@ items:
       href: delta-optimization-and-v-order.md
     - name: Automated Statistics for Delta Tables
       href: automated-table-statistics.md	
+    - name: Delta Driver Mode Snapshot
+      href: driver-mode-snapshot.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
@@ -289,6 +291,8 @@ items:
     href: author-tsql-notebook.md
   - name: Python vs. PySpark Notebooks
     href: fabric-notebook-selection-guide.md
+  - name: T-SQL magic command in Python Notebook
+    href: tsql-magic-command-notebook.md
 - name: Environments
   items:
   - name: Create, configure and use an environment
@@ -382,7 +386,9 @@ items:
       - name: Use Stored procedures
         href: api-graphql-stored-procedures.md
       - name: Integrate with Azure API Management (APIM)
-        href: api-graphql-azure-api-management.md         
+        href: api-graphql-azure-api-management.md     
+      - name: Connect AI Agents with a local Model Context Protocol (MCP) server
+        href: api-graphql-local-model-context-protocol.md     
    - name: Monitoring  
      items:
       - name: Monitoring dashboard and logging (preview)
@@ -401,8 +407,6 @@ items:
   items:
    - name: Esri - ArcGIS GeoAnalytics (preview)
      href: spark-arcgis-geoanalytics.md
-   - name: Simba - ODBC Data Connector (Preview)
-     href: simba-odbc-data-connector.md
 - name: User data functions (preview)
   items:
    - name: Overview
@@ -427,3 +431,40 @@ items:
      href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: View logs
      href: ./user-data-functions/view-function-logs.md
+- name: Materialized lake views (preview)
+  items:
+  - name: Overview
+    href: ./materialized-lake-views/overview-materialized-lake-view.md
+  - name: Get started
+    items:  
+    - name: Quick start guide
+      href: ./materialized-lake-views/get-started-with-materialized-lake-views.md
+    - name: Create materialized lake views
+      href: ./materialized-lake-views/create-materialized-lake-view.md
+    - name: Refresh materialized lake views
+      href: ./materialized-lake-views/refresh-materialized-lake-view.md
+  - name: Manage
+    items:  
+    - name: View lineage
+      href: ./materialized-lake-views/view-lineage.md
+    - name: Schedule materialized lake views
+      href: ./materialized-lake-views/schedule-lineage-run.md
+    - name: Run history of materialized lake views
+      href: ./materialized-lake-views/run-history.md
+    - name: Operational run details
+      href: ./materialized-lake-views/operational-run-details.md
+  - name: Data quality
+    items:  
+    - name: Data quality in materialized lake views
+      href: ./materialized-lake-views/data-quality.md
+    - name: Data quality report
+      href: ./materialized-lake-views/data-quality-reports.md
+  - name: Monitor
+    items:  
+    - name: Monitor materialized lake views
+      href: ./materialized-lake-views/monitor-materialized-lake-views.md
+  - name: Tutorial
+    items: 
+    - name: Tutorial - medallion architecture with materialized lake views
+      href: ./materialized-lake-views/tutorial.md
+

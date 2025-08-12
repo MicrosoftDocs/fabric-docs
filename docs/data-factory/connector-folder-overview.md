@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 07/09/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -14,11 +14,13 @@ ms.custom:
 
 The Folder connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities                                                                 | Gateway                        | Authentication   |
+|----------------------------------------------------------------------------------------|--------------------------------|------------------|
+| **Dataflow Gen2** (source/-)                                                 | On-premises                    | Windows          |
+| **Data pipeline** <br>- Copy activity (source/destination)<br>- Lookup activity<br>- Get Metadata activity <br>- Delete activity | On-premises                    | Windows          |
 
-For information on how to connect to a folder in Dataflow Gen2, go to [Set up your Folder connection](connector-folder.md).
+## Related content
 
-## Support in data pipelines
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support the Folder connector in data pipelines.
+To learn about how to connect to Folder, go to [Set up your Folder connection](connector-folder.md).

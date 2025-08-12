@@ -45,11 +45,10 @@ Mirrored databases are an item in **Fabric Data Warehousing** distinct from the 
 
 :::image type="content" source="media/azure-cosmos-db/fabric-mirroring-cosmos-db.svg" alt-text="Diagram of Fabric Mirroring for Azure Cosmos DB.":::
 
-Every Mirrored Azure Cosmos DB database has three items you can interact with in your Fabric workspace:  
+Every Mirrored Azure Cosmos DB item creates these items you can interact with in your Fabric workspace:  
 
 - The mirrored database item. Mirroring manages the replication of data into [OneLake](../../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
 - [SQL analytics endpoint](../../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md), which is automatically generated
-- [Default semantic model](../../data-warehouse/semantic-models.md), which is automatically generated
 
 ### Mirrored database
 
@@ -69,7 +68,7 @@ In addition to the [SQL query editor](../../data-warehouse/sql-query-editor.md),
 
 ### Semantic model
 
-The default semantic model is an automatically provisioned Power BI Semantic Model. This feature enables business metrics to be created, shared, and reused. For more information, see [semantic models](../../data-warehouse/datasets.md).
+You can create a Power BI Semantic Model on the database to allow business metrics to be created, shared, and reused. For more information, see [Create a Power BI semantic model](../../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model).
 
 ## How does near real-time replication work?
 
@@ -124,28 +123,20 @@ For example, if the Azure Cosmos DB item has `addressName` and `AddressName` as 
 
 ### Support for AI Workloads
 
-Azure Cosmos DB Mirroring supports accounts that use vector search and indexing, allowing AI and machine learning workloads to take full advantage of Microsoft Fabric’s powerful analytics—while continuing to leverage Azure Cosmos DB’s high-performance vector capabilities.
+Azure Cosmos DB Mirroring supports accounts that use vector search and indexing, allowing AI and machine learning workloads to take full advantage of Microsoft Fabric's powerful analytics—while continuing to leverage Azure Cosmos DB's high-performance vector capabilities.
 
 For more details, explore the documentation on [Vector Search and Indexing for Cosmos DB](/azure/cosmos-db/nosql/vector-search) and [Fabric Data Science and AI Experiences](../../data-science/index.yml).
 
 ## Security
 
-Connections to your source database are based on account keys for your Azure Cosmos DB accounts. If you rotate or regenerate the keys, you need to update the connections to ensure replication works. For more information, see [connections](../../data-factory/connector-azure-cosmosdb-for-nosql.md).
+You can connect to a source acocunt using Microsoft Entra ID and role-based access control or account-level keys.
 
-Account keys aren't directly visible to other Fabric users once the connection is set up. You can limit who has access to the connections created in Fabric. Writes aren't permitted to Azure Cosmos DB database either from the data explorer or analytics endpoint in your mirrored database.
+If you use keys and rotate or regenerate the keys, you need to update the connections to ensure replication works. For more information, see [connections](../../data-factory/connector-azure-cosmosdb-for-nosql.md). Account keys aren't directly visible to other Fabric users once the connection is set up. You can limit who has access to the connections created in Fabric. Writes aren't permitted to Azure Cosmos DB database either from the data explorer or analytics endpoint in your mirrored database. Mirroring doesn't currently support authentication using read-only account keys.
 
-In addition to account keys, single-sign on (SSO) with Microsoft Entra IDs and role-based access control can also be used to connect to the source account.
+For Microsoft Entra ID authentication, the following RBAC permissions are required: `Microsoft.DocumentDB/databaseAccounts/readMetadata` &amp; `Microsoft.DocumentDB/databaseAccounts/readAnalytics`. For more information, see [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
 
-> [!NOTE]
-> For Microsoft Entra ID authentication, the following RBAC permissions are required:
-> `Microsoft.DocumentDB/databaseAccounts/readMetadata`
-> `Microsoft.DocumentDB/databaseAccounts/readAnalytics`
-> 
-> To learn more, please visit our [data plane role-based access control documentation](/azure/cosmos-db/nosql/how-to-grant-data-plane-access).
-
-Mirroring doesn't currently support authentication using read-only account keys or managed identities.
-
-Once the data is replicated into Fabric OneLake, you need to secure access to this data.
+> [!TIP]
+> Once data is replicated into Fabric OneLake, you should also secure access to this data.
 
 ### Data protection features
 

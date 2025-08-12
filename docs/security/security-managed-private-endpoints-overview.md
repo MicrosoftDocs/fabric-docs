@@ -4,7 +4,7 @@ description: Learn about managed private endpoints for Microsoft Fabric.
 author: msmimart
 ms.author: danzhang
 ms.topic: conceptual
-ms.custom: references_regions
+ms.custom: references_regions, sfi-image-nochange
 ms.date: 05/12/2025
 ---
 

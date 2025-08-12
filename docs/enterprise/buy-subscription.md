@@ -35,9 +35,9 @@ Microsoft Fabric has an array of capacities that you can buy. The capacities are
 
 Microsoft Fabric operates on two types of SKUs:
 
-* **Azure** - Billed per second with no commitment. To save costs, you can make a [yearly reservation](/azure/cost-management-billing/reservations/fabric-capacity).
+* **Azure** (F capacities, which can only be purchased through the Azure portal) - Billed per second with no commitment. To save costs, you can make a [yearly reservation](/azure/cost-management-billing/reservations/fabric-capacity).
 
-* **Microsoft 365** - Billed monthly or yearly, with a monthly commitment.
+* **Microsoft 365** (Power BI Premium P capacities, which are [only available to customers who have them on an active Enterprise Agreement](https://powerbi.microsoft.com/blog/important-update-coming-to-power-bi-premium-licensing/)) - Billed monthly or yearly, with a monthly commitment.
 
 ## Azure SKUs
 

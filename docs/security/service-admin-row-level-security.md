@@ -7,7 +7,8 @@ ms.reviewer: ''
 
 ms.topic: how-to
 ms.date: 03/08/2025
-ms.custom: ''
+ms.update-cycle: 180-days
+ms.custom: 'sfi-image-nochange'
 LocalizationGroup: Administration
 ms.collection: ce-skilling-ai-copilot
 no-loc: [Copilot]
@@ -94,15 +95,15 @@ To return to normal viewing, select **Back to Row-Level Security**.
 > [!NOTE]
 > The Test as role feature doesn't work for DirectQuery models with Single Sign-On (SSO) enabled. Additionally, not all aspects of a report can be validated in the Test as role feature including Q&A visualizations, Quick insights visualizations, and Copilot.
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-usernames.md)]
+[!INCLUDE [include-short-name](../includes/row-level-security-username.md)]
 
 ## Using RLS with workspaces in Power BI
 
 If you publish your Power BI Desktop report to a [workspace](/power-bi/collaborate-share/service-new-workspaces) in the Power BI service, the RLS roles are applied to members who are assigned to the **Viewer** role in the workspace. Even if  **Viewers** are given Build permissions to the semantic model, RLS still applies. For example, if Viewers with Build permissions use [Analyze in Excel](/power-bi/collaborate-share/service-analyze-in-excel), their view of the data is restricted by RLS. Workspace members assigned **Admin**, **Member**, or **Contributor** have edit permission for the semantic model and, therefore, RLS doesn’t apply to them. If you want RLS to apply to people in a workspace, you can only assign them the **Viewer** role. Read more about [roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
 
-[!INCLUDE [include-short-name](~/../powerbi-repo/powerbi-docs/includes/rls-limitations.md)]
+[!INCLUDE [include-short-name](../includes/row-level-security-limitations.md)]
 
-[!INCLUDE [include-short-name](~/../powerbi-repo//powerbi-docs/includes/rls-faq.md)]
+[!INCLUDE [include-short-name](../includes/row-level-security-faq.md)]
 
 ## Related content
 

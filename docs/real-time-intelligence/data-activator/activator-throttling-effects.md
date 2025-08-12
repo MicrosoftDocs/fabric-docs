@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: rti-activator
 ms.topic: concept-article
 ms.date: 11/12/2024
-ms.custom: ""
+ms.custom: "sfi-image-nochange"
 ---
 
 # Understanding how Fabric capacity throttling impacts Activator

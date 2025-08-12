@@ -1,8 +1,8 @@
 ---
 title: Give Users Access to Workspaces
 description: "Learn how to give others access to workspaces, and how to modify their access."
-author: paulinbar
-ms.author: painbar
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: 
 ms.topic: how-to
 ms.custom: 
@@ -31,13 +31,17 @@ After you [create a workspace](create-workspaces.md) in [!INCLUDE [product-name]
 
    :::image type="content" source="media/workspace-access/workspace-manage-access-add-button.png" alt-text="Screenshot of add button in manage access panel.":::
 
-1. Enter name or email, select a [role](roles-workspaces.md), and select **Add**. You can add security groups, distribution lists, Microsoft 365 groups, or individuals to these workspaces as admins, members, contributors, or viewers. If you have the Member role, you can only add others to the Member, Contributor, or Viewer roles.
-
+1. Enter name or email, select a [role](roles-workspaces.md), and select **Add**. You can add security groups, mail-enabled security groups, distribution lists, Microsoft 365 groups, or individuals to these workspaces as admins, members, contributors, or viewers. If you have the member role, you can only add others to the member, contributor, or viewer roles.
+   
    :::image type="content" source="media/workspace-access/workspace-manage-access-add-people-panel.png" alt-text="Screenshot of add people panel.":::
 
 1. You can view and modify access later if needed. Use the **Search** box to search for people or groups who already have access to this workspace. To modify access, select the dropdown arrow and select a role.
 
    :::image type="content" source="media/workspace-access/workspace-manage-access-edit-role.png" alt-text="Screenshot of modify role in a workspace.":::
+
+## Workspace access limits
+
+Each workspace will be limited to a maximum of 1,000 users or groups in workspace roles (Admin, Member, Contributor, Viewer). This change does not affect the number of users within a group itself. For example, if there is a workspace with one group, that group can have over 1,000 users. The limitation also covers external guests. Workspace admins or members attempting to add users or groups after this limit is reached, will get an error in the workspace access flow. 
 
 ## Related content
 

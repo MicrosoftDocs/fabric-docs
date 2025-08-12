@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
-ms.custom: pipelines
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 12/18/2024
 ms.search.form: Pipeline Copy Assistant
 ---
@@ -48,25 +48,17 @@ In this session, you start to build your data pipeline by following below steps 
 
 ### Configure your source under the source tab
 
-1. Select **+ New** beside the **Connection** to create a connection to your data source.
-
-   :::image type="content" source="media/copy-data-activity/configure-source-connection-in-pipeline.png" alt-text="Screenshot showing where to select New." lightbox="media/copy-data-activity/configure-source-connection-in-pipeline.png":::
+1. In **Connection**, select an existing connection, or select **More** to create a new connection.
 
    1. Choose the data source type from the pop-up window. You'll use Azure SQL Database as an example. Select **Azure SQL Database**, and then select **Continue**.
-   
+
       :::image type="content" source="media/copy-data-activity/choose-azure-sql-database-connection-in-pipeline.png" alt-text="Screenshot showing how to select the data source." lightbox="media/copy-data-activity/choose-azure-sql-database-connection-in-pipeline.png":::
 
    1. It navigates to the connection creation page. Fill in the required connection information on the panel, and then select **Create**. For the details of connection creation for each type of data source, you can refer to each [connector article](connector-overview.md#supported-connectors-in-fabric).
-   
-      :::image type="content" source="media/copy-data-activity/configure-connection-details.png" alt-text="Screenshot showing New connection page." lightbox="media/copy-data-activity/configure-connection-details.png":::
 
    1. Once your connection is created successfully, it takes you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Azure SQL Database connection from the drop-down directly if you already created it before. The capabilities of **Test connection** and **Edit** are available to each selected connection. Then select **Azure SQL Database** in **Connection** type.
-   
-      :::image type="content" source="media/copy-data-activity/refresh-source-connection-in-pipeline.png" alt-text="Screenshot showing where to refresh your connection." lightbox="media/copy-data-activity/refresh-source-connection-in-pipeline.png":::
 
 1. Specify a table to be copied. Select **Preview data** to preview your source table. You can also use **Query** and **Stored procedure** to read data from your source.
-
-   :::image type="content" source="media/copy-data-activity/specify-source-data.png" alt-text="Screenshot showing source table settings options." lightbox="media/copy-data-activity/specify-source-data.png":::
 
 1. Expand **Advanced** for more advanced settings.
 
@@ -74,25 +66,13 @@ In this session, you start to build your data pipeline by following below steps 
 
 ### Configure your destination under the destination tab
 
-1. Choose your destination type. It could be either your internal first class data store from your workspace, such as Lakehouse, or your external data stores. You'll use Lakehouse as an example.
-
-   :::image type="content" source="media/copy-data-activity/configure-destination-connection-in-pipeline.png" alt-text="Screenshot showing where to select destination type." lightbox="media/copy-data-activity/configure-destination-connection-in-pipeline.png":::
-
-1. Choose to use **Lakehouse** in **Workspace data store type**. Select **+ New**, and it navigates you to the Lakehouse creation page. Specify your Lakehouse name and then select **Create**.
-
-   :::image type="content" source="media/copy-data-activity/create-lakehouse.png" alt-text="Screenshot showing Lakehouse creation." lightbox="media/copy-data-activity/create-lakehouse.png":::
+1. In **Connection** select an existing connection, or select **More** and then search for your lakehouse.
 
 1. Once your connection is created successfully, it takes you back to the data pipeline page. Then select **Refresh** to fetch the connection that you created from the drop-down list. You could also choose an existing Lakehouse connection from the drop-down directly if you already created it before.
 
-   :::image type="content" source="media/copy-data-activity/destination-connection-in-pipeline.png" alt-text="Screenshot showing selecting connection." lightbox="media/copy-data-activity/destination-connection-in-pipeline.png":::
-
 1. Specify a table or set up the file path to define the file or folder as the destination. Here select **Tables** and specify a table to write data.
 
-   :::image type="content" source="media/copy-data-activity/configure-destination-file-settings-in-pipeline.png" alt-text="Screenshot showing where to find Table settings." lightbox="media/copy-data-activity/configure-destination-file-settings-in-pipeline.png":::
-
 1. Expand **Advanced** for more advanced settings.
-
-   :::image type="content" source="media/copy-data-activity/configure-destination-file-details-in-pipeline.png" alt-text="Screenshot of Advanced options." lightbox="media/copy-data-activity/configure-destination-file-details-in-pipeline.png":::
 
 Now you can either save your data pipeline with this single copy activity or continue to design your data pipeline.
 

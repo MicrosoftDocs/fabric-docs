@@ -109,7 +109,6 @@ Internal OneLake shortcuts allow you to reference data within existing Fabric it
 * Semantic models
 * SQL databases
 * Warehouses
-* Warehouse snapshots
 
 The shortcut can point to a folder location within the same item, across items within the same workspace, or even across items in different workspaces. When you create a shortcut across items, the item types don't need to match. For instance, you can create a shortcut in a lakehouse that points to data in a data warehouse.
 

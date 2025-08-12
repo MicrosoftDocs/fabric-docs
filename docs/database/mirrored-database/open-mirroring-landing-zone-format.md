@@ -3,8 +3,8 @@ title: "Open Mirroring Landing Zone Requirements and Formats"
 description: Review the requirements for files in the landing for open mirroring in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: tinglee, sbahadur, maraki-ketema
-ms.date: 06/06/2025
+ms.reviewer: tinglee, sbahadur, marakiketema
+ms.date: 07/17/2025
 ms.topic: conceptual
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -77,9 +77,9 @@ Open mirroring supports data intake in Parquet or delimited text formats. Files 
 
 ### Delimited text requirements
 
-1. If the data is in a delimited text format, the file must have header row in the first row.
-1. For delimited text, provide additional information in your `_metadata.json` file. The `FileExtension` property is required. Delimited text files have the following properties and defaults:
-    
+- For delimited text format, the file must have header row in the first row.
+- For delimited text, provide additional information in your `_metadata.json` file. The `FileExtension` property is required. Delimited text files have the following properties and defaults:
+
    | Property           | Description                                   | Notes                                                                 |
    |:-------------------|:----------------------------------------------|:----------------------------------------------------------------------|
    | `FirstRowAsHeader`   | True/false for first row header.              | Required to be `true` for delimited text files.                       |
@@ -136,6 +136,21 @@ Open mirroring supports data intake in Parquet or delimited text formats. Files 
    }
    ```
    
+- Only delimited text formats are expected to have a data type in the file `_metadata.json`. Parquet files do not need to specify column type information. The data types currently supported:
+
+| Supported data type | Description                                                                         |
+|---------------------|------------------------------------------------------------------------------------|
+| `Double`            | A number with decimals, used when high precision is needed (for example, 3.14159). |
+| `Single`            | A number with decimals, but less precise than Double (for example, 3.14).          |
+| `Int16`             | A small whole number, typically between -32,768 and 32,767.                        |
+| `Int64`             | A very large whole number, used for big counts or IDs.                             |
+| `Int32`             | A standard whole number, commonly used for counting or indexing.                   |
+| `DateTime`          | A full date and time value (for example, 2025-06-17 14:30:00).                     |
+| `IDate`             | A calendar date without time (for example, 2025-06-17).                            |
+| `ITime`             | A time of day without a date (for example, 14:30:00).                              |
+| `String`            | Text data like names, labels, or descriptions.                                     |
+| `Boolean`           | A true or false value, often used for toggles or yes/no choices.                   |
+| `ByteArray`         | Raw binary data, such as files, images, or encoded content.                        |
 
 ## Format requirements
 

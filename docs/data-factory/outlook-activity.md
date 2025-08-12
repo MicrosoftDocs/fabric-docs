@@ -27,8 +27,6 @@ To get started, you must complete the following prerequisites:
 
 To use an Office 365 Outlook activity in a pipeline, complete the following steps:
 
-### Creating the activity
-
 1. Create a new pipeline in your workspace.
 1. Search for Office 365 Outlook in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. It might be necessary to expand the activities list on the far right side of the pane, or the Outlook icon can be compressed without labeling text beneath it, as shown in this image, depending on the window width of your browser.
 
@@ -40,7 +38,12 @@ To use an Office 365 Outlook activity in a pipeline, complete the following step
 
 Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
-### Office 365 Outlook activity settings
+>[!TIP]
+>If you're using outlook activities to nofity for failure, use a new outlook activity for each activity you want to monitor.
+>
+>If you attach more than one activity to the outlook activity, all connected statuses must be met to trigger the activity. For example, if you have two copy activities, both connected to an outlook activity 'on failure', both activities must fail to trigger the outlook activity. If only one fails, the outlook activity will not be triggered.
+
+## Office 365 Outlook activity settings
 
 1. Select the **Settings** tab, then select **Sign in** to sign in to your Office 365 account.
 

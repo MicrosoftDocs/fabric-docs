@@ -5,13 +5,13 @@ ms.reviewer: whhender
 ms.author: noelleli
 author: n0elleli
 ms.topic: how-to
-ms.custom: pipelines
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 12/18/2024
 ---
 
 # How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]
 
-In this how-to guide, you learn the different ways to review and monitor your pipeline runs.
+This guide walks you through ways to check in on your pipeline runs, or monitor your pipeline runs. Whether you're just curious about how things are going or need to troubleshoot something specific, we’ll show you how to track progress, spot issues early, and make sure everything’s running smoothly. Monitoring helps you stay in control so that you can catch problems before they grow and keep your workflows on track.
 
 ## Monitor data pipeline runs
 
@@ -71,7 +71,7 @@ In this how-to guide, you learn the different ways to review and monitor your pi
 
 ## Gantt view
 
-A Gantt chart is a view that lets you see the run history over a time range. If you switch to a Gantt view, all pipeline runs are grouped by name, displayed as bars relative to how long the run took.
+Switching to the Gantt view gives you a clear, visual way to track your pipeline runs over time. Each run shows up as a bar, grouped by pipeline name, and the length of the bar shows how long the run took. It’s a great way to spot patterns, compare durations, and quickly see what’s running when. This view makes monitoring easier so that you can catch delays, overlaps, or anything unusual at a glance.
 
 :::image type="content" source="media/monitor-pipeline-runs/gantt-view.png" alt-text="Screenshot showing where to switch between views.":::
 

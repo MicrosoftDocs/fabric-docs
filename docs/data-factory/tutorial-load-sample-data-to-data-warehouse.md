@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
-ms.custom: pipelines
+ms.custom: pipelines, sfi-image-nochange
 ms.date: 02/25/2025
 ms.search.form: Pipeline Tutorials
 ---

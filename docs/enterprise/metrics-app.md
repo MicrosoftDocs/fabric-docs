@@ -5,7 +5,7 @@ author: julcsc
 ms.author: juliacawthra
 ms.topic: conceptual
 ms.custom:
-ms.date: 05/21/2025
+ms.date: 06/19/2025
 ---
 
 # What is the Microsoft Fabric Capacity Metrics app?
@@ -38,7 +38,7 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following con
 - When the capacity state remains unchanged during the selected dates or the past 14 days, it won't appear in the System Event table.
 - Updates from version 1 to version 1.1 are installed in a new workspace.
 - Sampling might occur while exporting data from the Export Data page. See second and third bullet in [Considerations and limitations](/power-bi/visuals/power-bi-visualization-export-data?tabs=powerbi-desktop#considerations-and-limitations).
-- Editing the semantic model of the Microsoft Fabric Capacity Metrics app using external model authoring tools, isn't supported.
+- The semantic model used by the Microsoft Fabric Capacity Metrics application is only supported for use by the reports provided in the application. Any consumption from, usage of, or modification of the semantic model is not supported.
 - The cumulative consumption of CU seconds for a specific item over the past 14 days is displayed in the *CU (s)* column of the [matrix by item and operation](metrics-app-compute-page.md#matrix-by-item-and-operation) table. If the item was moved from another workspace to the current workspace in the last 14 days, the cumulative consumption of CU seconds for the item in the previous workspace is included in the *CU (s)* column.
 - The Microsoft Fabric Capacity Metrics app doesn't support environments that use [private links](../security/security-private-links-overview.md).
 - The threshold values on throttling visuals don't reflect applied surge protection settings. To view the actual [surge protection](surge-protection.md) thresholds, refer to the Admin Portal in the Power BI service.

@@ -7,6 +7,7 @@ ms.reviewer: procha
 ms.date: 04/06/2025
 ms.topic: how-to
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
+ms.custom: sfi-image-nochange
 ---
 # Ingest data into your Warehouse using data pipelines
 

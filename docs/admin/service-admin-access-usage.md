@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: ''
 
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.topic: how-to
 ms.date: 09/22/2024
 LocalizationGroup: Administration

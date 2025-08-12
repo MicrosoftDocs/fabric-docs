@@ -4,12 +4,12 @@ description: Learn from samples and examples of querying a warehouse using time 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish # Microsoft alias
-ms.date: 10/23/2024
+ms.date: 06/20/2025
 ms.topic: how-to
 ---
 # How to: Query using time travel at the statement level
 
-In Microsoft Fabric, the capability to [time travel](time-travel.md) unlocks the ability to query the prior versions of data without the need to generate multiple data copies, saving on storage costs. This article describes how to query warehouse tables using time travel at the statement level, using the T-SQL [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) and the [FOR TIMESTAMP AS OF](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#for-timestamp) syntax. This feature is currently in preview.
+In Microsoft Fabric, the capability to [time travel](time-travel.md) unlocks the ability to query the prior versions of data without the need to generate multiple data copies, saving on storage costs. This article describes how to query warehouse tables using time travel at the statement level, using the T-SQL [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) and the [FOR TIMESTAMP AS OF](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#for-timestamp) syntax.
 
 Warehouse tables can be queried up to a retention period of thirty calendar days using the `OPTION` clause, providing the date format `yyyy-MM-ddTHH:mm:ss[.fff]`.
 
@@ -121,6 +121,39 @@ OPTION (FOR TIMESTAMP AS OF '2024-05-01T21:55:27.513');
 - If an underlying table of a view is altered without changing the view, time travel queries on the view can return the data from before the table change, as expected.
 - When the underlying table of a view is dropped and recreated without modifying the view, data for time travel queries is only available from the time after the table was recreated.
 
+### Time travel for DML operations
+
+Data Manipulation Language (DML) is used to insert, create and populate the tables by manipulating and transforming the existing data. The [OPTION clause](/sql/t-sql/queries/option-clause-transact-sql?view=fabric&preserve-view=true) and `OPTION (FOR TIMESTAMP AS OF ... ` can be used along with DML operations such as `INSERT INTO ... SELECT`, `CREATE TABLE AS SELECT` (CTAS), and `SELECT INTO`.
+
+```sql
+/*Time travel for INSERT INTO...SELECT*/
+INSERT INTO dbo.Fact_Sale_History 
+(SalesKey, StockItemKey, Quantity, Description, UnitPrice, InvoiceDateKey)
+SELECT 
+    SaleKey AS SalesKey,
+    StockItemKey,
+    Quantity,
+    Description,
+    UnitPrice,
+    InvoiceDateKey
+FROM dbo.[Fact_Sale]
+OPTION (FOR TIMESTAMP AS OF '2025-06-18T19:55:13.853');
+```
+
+```sql
+/*Time travel for CREATE TABLE AS SELECT*/
+CREATE TABLE dbo.SalesHistory AS 
+SELECT * FROM dbo.fact_sale 
+OPTION (FOR TIMESTAMP AS OF '2025-06-18T19:55:13.853');
+```
+
+```sql
+/*Time travel for SELECT INTO*/
+SELECT * INTO dbo.SalesHistory1 
+FROM dbo.fact_sale 
+OPTION (FOR TIMESTAMP AS OF '2025-06-18T19:55:13.853');
+```
+
 ## Limitations
 
 For more information on time travel at the statement level limitations with `FOR TIMESTAMP AS OF`, see [Time travel Limitations](time-travel.md#limitations).
@@ -128,3 +161,4 @@ For more information on time travel at the statement level limitations with `FOR
 ## Related content
 
 - [Query data as it existed in the past](time-travel.md)
+

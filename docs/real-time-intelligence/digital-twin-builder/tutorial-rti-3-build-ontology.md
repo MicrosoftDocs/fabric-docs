@@ -1,6 +1,6 @@
 ---
 title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Build the ontology'
-description: Build an ontology in digital twin builder (preview) by creating entities, mapping data, and creating relationships.
+description: Build an ontology in digital twin builder (preview) by creating entity types, mapping data, and creating relationship types.
 author: baanders
 ms.author: baanders
 ms.date: 04/28/2025
@@ -9,51 +9,43 @@ ms.topic: tutorial
 
 # Digital twin builder (preview) in Real-Time Intelligence tutorial part 3: Build the ontology
 
-In this part of the tutorial, you build a digital twin ontology that models the bus and bus stop data. You create a digital twin builder (preview) item, and define entities for the buses and stops. Then, you map the data from the *Tutorial* lakehouse to the entities, and define relationships between the entities to further contextualize the data.
+In this part of the tutorial, you build a digital twin ontology that models the bus and bus stop data. You create a digital twin builder (preview) item, and define entity types for the buses and stops. Then, you map the data from the *TutorialLH* lakehouse to the entity instances, and define relationship types between the entity types to further contextualize the data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Create new digital twin builder item in Fabric
+<!--## Create new digital twin builder item in Fabric (title in include)-->
+[!INCLUDE [Create digital twin builder](../includes/create-digital-twin-builder.md)]
 
-1. Go to your Fabric workspace. 
-1. Select **New item**.
-1. Search for the *Digital Twin Builder (preview)* item, and select it.
+In the semantic canvas, you can add entity types and relationship types to define an ontology.
 
-    :::image type="content" source="media/tutorial/new-digital-twin-builder.png" alt-text="Screenshot of Digital Twin Builder item.":::
+## About entity types and relationship types
 
-1. Enter *BusModel* as the name for your item and select **Create**. 
-1. Wait for your digital twin builder item to be created. Once your digital twin builder item is ready, it opens to the semantic canvas.
+In digital twin builder (preview), an *entity type* is a category that defines a concept within a domain-specific ontology. The entity type definition serves as a blueprint for individual entity instances of that entity type, and specifies common characteristics shared across all instances within that category. Here you define two entity types for the sample scenario: Bus and Stop.
 
-In the semantic canvas, you can add entities and relationships to define an ontology.
+After you create an entity type, you can map data to it to hydrate the entity instances with data from various source systems. You can add both time series and non-time series properties to an entity type. When mapping both types of property to an entity type, you must map at least one non-time series property before you can map time series properties. Then, link the non-time series and time series data together by matching a non-time series property from the entity type with a column from the time series data. The values in the time series column must **exactly** match data that's mapped to the property on the entity type.
 
-## About entities and relationships
+After your entity types are defined and mapped, you can create *relationship types* between them to define how they're related to each other. In this tutorial, a Bus *goesTo* a Stop.
 
-In digital twin builder (preview), an *entity* is a category that defines a concept within a domain-specific ontology. The entity definition serves as a blueprint for individual entity instances of that entity, and specifies common characteristics shared across all instances within that category. Here you define two entities for the sample scenario: Bus and Stop.
+## Add Bus entity type
 
-After you create an entity, you can map data to it to hydrate the entity with data from various source systems. You can add both time series and non-time series properties to an entity. When mapping both types of property to an entity, you must map at least one non-time series property before you can map time series properties. Then, link the non-time series and time series data together by matching a non-time series property from the entity with a column from the time series data. The values in the time series column must **exactly** match data that's mapped to the entity property.
-
-After your entities are defined and mapped, you can create *relationships* between them to define how they're related to each other. In this tutorial, a Bus *goesTo* a Stop.
-
-## Add Bus entity
-
-First, create a new entity for the bus.
+First, create a new entity type for the bus.
 1. In the semantic canvas of digital twin builder (preview), select **Add entity**.
 
     :::image type="content" source="media/tutorial-rti/add-entity.png" alt-text="Screenshot of Add entity button.":::
 
-1. Leave the *Generic* system type selected, and enter *Bus* for the entity name. Select **Add entity**.
-1. The *Bus* entity is created and becomes visible on the canvas.
+1. Leave the *Generic* system type selected, and enter *Bus* for the entity type name. Select **Add entity**.
+1. The *Bus* entity type is created and becomes visible on the canvas.
 
-    :::image type="content" source="media/tutorial-rti/bus-entity.png" alt-text="Screenshot of Bus entity.":::
+    :::image type="content" source="media/tutorial-rti/bus-entity.png" alt-text="Screenshot of Bus entity type.":::
 
 ### Map non-timeseries bus data
 
-Next, map some non-timeseries data to the Bus entity. These fields are static properties that identify a bus and its visit to a certain stop.
+Next, map some non-timeseries data to the Bus entity type. These fields are static properties that identify a bus and its visit to a certain stop.
 1. In the **Entity configuration** pane, switch to the **Mappings** tab and select **Add data**.
 
     :::image type="content" source="media/tutorial-rti/add-data.png" alt-text="Screenshot of adding a data mapping.":::
 
-1. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *Tutorial* lakehouse, and the *bus_data_processed* table.
+1. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *TutorialLH* lakehouse, and the *bus_data_processed* table.
       
     :::image type="content" source="media/tutorial-rti/bus-data-source.png" alt-text="Screenshot of the bus data source.":::
 
@@ -65,17 +57,17 @@ Next, map some non-timeseries data to the Bus entity. These fields are static pr
 
     :::image type="content" source="media/tutorial-rti/bus-unique-id.png" alt-text="Screenshot of the bus unique ID.":::
 
-1. Under **Mapped properties**, select the edit icon to choose which properties from your source data to map to the bus entity.
+1. Under **Mapped properties**, select the edit icon to choose which properties from your source data to map to the bus entity type.
 
-    The **Map properties** page lets you select a column from your source data on the left side, and map it to a new property on your entity on the right side. By default, selecting a column name from the source data on the left side fills in the right side automatically with a matching name for the entity property, but you can enter a new name for the property on the right side if you want the entity property to be named something different than what it's called in the source data.
+    The **Map properties** page lets you select a column from your source data on the left side, and map it to a new property on your entity type on the right side. By default, selecting a column name from the source data on the left side fills in the right side automatically with a matching name for the entity type property, but you can enter a new name for the property on the right side if you want the entity type property to be named something different than what it's called in the source data.
 
-    The page loads with a *DisplayName* property for the entity, which is unmapped to any column in the source data. Leave the *DisplayName* property unmapped as it is, and select **Add entity property** to add new properties to the mapping.
+    The page loads with a *DisplayName* property for the entity type, which is unmapped to any column in the source data. Leave the *DisplayName* property unmapped as it is, and select **Add entity property** to add new properties to the mapping.
 
-    :::image type="content" source="media/tutorial-rti/bus-map-properties-non-time-1.png" alt-text="Screenshot of the unmapped display name and adding an entity property.":::
+    :::image type="content" source="media/tutorial-rti/bus-map-properties-non-time-1.png" alt-text="Screenshot of the unmapped display name and adding an entity type property.":::
 
-    Map the following entity properties:
-    - Select **TripId** from the dropdown menu in the left column, and edit the box across from it in the right column to read *TripId_static*. This action creates a property on the bus entity named *TripId_static*, which gets its value from the **TripId** property in the source data.
-    - Select **StopCode** from the dropdown menu in the left column, and edit the box across from it in the right column to read *StopCode_static*. This action creates a property on the bus entity named *StopCode_static*, which gets its value from the **StopCode** property in the source data.
+    Map the following entity type properties:
+    - Select **TripId** from the dropdown menu in the left column, and edit the box across from it in the right column to read *TripId_static*. This action creates a property on the bus entity type named *TripId_static*, which gets its value from the **TripId** property in the source data.
+    - Select **StopCode** from the dropdown menu in the left column, and edit the box across from it in the right column to read *StopCode_static*. This action creates a property on the bus entity type named *StopCode_static*, which gets its value from the **StopCode** property in the source data.
    
     Check the box to acknowledge that properties can't be renamed or removed, and select **Apply**.
 
@@ -85,7 +77,7 @@ Next, map some non-timeseries data to the Bus entity. These fields are static pr
 
     :::image type="content" source="media/tutorial-rti/bus-save-non-time.png" alt-text="Screenshot of saving the bus non-time series mapping.":::
 
-1. Switch to the **Scheduling** tab and select **Run now** to apply the mapping.
+1. Switch to the **Scheduling** tab and select **Run** to apply the mapping.
 
     :::image type="content" source="media/tutorial-rti/bus-run-now.png" alt-text="Screenshot of running the bus mapping.":::
 
@@ -93,23 +85,23 @@ Next, map some non-timeseries data to the Bus entity. These fields are static pr
 
 1. Check the status of your mapping job in the **Manage operations** tab. Wait for the status to say **Completed** before proceeding to the next section (the operation might take several minutes to begin running from the queue, and several more minutes to complete once it starts, so you might need to refresh the content a few times).
 
-    :::image type="content" source="media/tutorial-rti/manage-operations-bus.png" alt-text="Screenshot of the Manage operations button from the bus entity.":::
+    :::image type="content" source="media/tutorial-rti/manage-operations-bus.png" alt-text="Screenshot of the Manage operations button from the bus entity type.":::
 
-    :::image type="content" source="media/tutorial-rti/manage-operations-tab-bus.png" alt-text="Screenshot of the Manage operations tab with the bus entity mapping.":::
+    :::image type="content" source="media/tutorial-rti/manage-operations-tab-bus.png" alt-text="Screenshot of the Manage operations tab with the bus entity type mapping.":::
 
 ### Map time series bus data
 
-Next, map some time series data to the Bus entity. These properties are streamed into the data source from the Eventstream sample data, and they contain information about the bus's location and movements.
+Next, map some time series data to the Bus entity type. These properties are streamed into the data source from the Eventstream sample data, and they contain information about the bus's location and movements.
 
-1. Go back to the **Configure** view and reselect the **Bus** entity. In the **Entity configuration** pane, reopen the **Mappings** tab. Select **Add data** to add a new mapping.
+1. Select **Home** to return to the semantic canvas, and reselect the **Bus** entity type. In the **Entity configuration** pane, reopen the **Mappings** tab. Select **Add data** to add a new mapping.
 
     :::image type="content" source="media/tutorial-rti/bus-add-data-time.png" alt-text="Screenshot of adding a new bus mapping.":::
 
-1. Open **Select lakehouse table** to select a data source for your mapping. Again, select your tutorial workspace, the *Tutorial* lakehouse, and the *bus_data_processed* table. Select **Choose data source**.
+1. Open **Select lakehouse table** to select a data source for your mapping. Again, select your tutorial workspace, the *TutorialLH* lakehouse, and the *bus_data_processed* table. Select **Choose data source**.
 1. This time, switch the **Property type** to **Timeseries properties**.
 1. Under **Mapped Properties**, select the edit icon.
 
-    The page loads with a *Timestamp* property for the entity, which is unmapped to any column in the source data. *Timestamp* requires a mapping, so select **ActualTime** from the corresponding dropdown menu on the left side. Then, select **Add entity property** to add new properties to the mapping.
+    The page loads with a *Timestamp* property for the entity type, which is unmapped to any column in the source data. *Timestamp* requires a mapping, so select **ActualTime** from the corresponding dropdown menu on the left side. Then, select **Add entity property** to add new properties to the mapping.
 
     Map the following properties. When you select these property names from the source columns on the left side, leave the default matching names that populate on the right side.
     - **ScheduleTime**
@@ -123,7 +115,7 @@ Next, map some time series data to the Bus entity. These properties are streamed
     :::image type="content" source="media/tutorial-rti/bus-map-properties-time.png" alt-text="Screenshot of the mapped time series bus properties.":::
 
 1. Check the box to acknowledge that properties can't be renamed or removed, and select **Apply**.
-1. Next, link your time series data to this entity. This process requires you to select an entity property and a matching column from your time series data table. The column selected from the time series data must **exactly** match data that is mapped to the selected entity property. This process ensures correct contextualization of your entity and time series data. 
+1. Next, link your time series data to this entity type. This process requires you to select an entity type property and a matching column from your time series data table. The column selected from the time series data must **exactly** match data that is mapped to the selected property on your entity type. This process ensures correct contextualization of your entity instance and time series data. 
 
     Under **Link with entity property**, select the edit icon. 
 
@@ -133,23 +125,23 @@ Next, map some time series data to the Bus entity. These properties are streamed
 
     :::image type="content" source="media/tutorial-rti/bus-save-time.png" alt-text="Screenshot of saving the bus time series mapping.":::
 
-1. Switch to the **Scheduling** tab and select **Run now** under the new time series mapping to apply it.
+1. Switch to the **Scheduling** tab and select **Run** under the new time series mapping to apply it.
 
-## Add Stop entity
+## Add Stop entity type
 
-Next, create a second entity to represent a bus stop.
+Next, create a second entity type to represent a bus stop.
 1. In the semantic canvas, select **Add entity**.
-1. Leave the *Generic* system type selected, and enter *Stop* for the entity name. Select **Add entity**.
-1. After a few minutes, the *Stop* entity is now visible on the canvas.
+1. Leave the *Generic* system type selected, and enter *Stop* for the entity type name. Select **Add entity**.
+1. After a few minutes, the *Stop* entity type is now visible on the canvas.
 
-    :::image type="content" source="media/tutorial-rti/stop-entity.png" alt-text="Screenshot of Stop entity.":::
+    :::image type="content" source="media/tutorial-rti/stop-entity.png" alt-text="Screenshot of Stop entity type.":::
 
 ### Map non-timeseries stop data
 
-Next, map some non-timeseries data to the Stop entity. The stop data doesn't contain any time series data, only static data about the bus stops and their locations. Later, when you link the Stop and Bus entities together, this data is used to enrich the bus fact data with dimensional data.
+Next, map some non-timeseries data to the Stop entity type. The stop data doesn't contain any time series data, only static data about the bus stops and their locations. Later, when you link the Stop and Bus entity types together, this data is used to enrich the bus fact data with dimensional data.
 
 1. In the **Entity configuration** pane, open the **Mappings** tab and select **Add data**.
-1. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *Tutorial* lakehouse, and the *stops_data* table.
+1. Open **Select lakehouse table** to select a data source for your mapping. Select your tutorial workspace, the *TutorialLH* lakehouse, and the *stops_data* table.
 
     Select **Choose data source**.
 1. For the **Property type**, leave the default selection of **Non-timeseries properties**. 
@@ -174,15 +166,15 @@ Next, map some non-timeseries data to the Stop entity. The stop data doesn't con
 
     :::image type="content" source="media/tutorial-rti/stop-save-non-time.png" alt-text="Screenshot of saving the stop mapping.":::
 
-1. Switch to the **Scheduling** tab and select **Run now** to apply the mapping.
+1. Switch to the **Scheduling** tab and select **Run** to apply the mapping.
 
-## Define relationship
+## Define relationship type
 
-Next, create a relationship to represent that a Bus *goesTo* a Stop.
+Next, create a relationship type to represent that a Bus *goesTo* a Stop.
 
-1. In the semantic canvas, highlight the **Bus** entity and select **Add relationship**.
+1. In the semantic canvas, highlight the **Bus** entity type and select **Add relationship**.
 
-    :::image type="content" source="media/tutorial-rti/add-relationship.png" alt-text="Screenshot of adding a relationship.":::
+    :::image type="content" source="media/tutorial-rti/add-relationship.png" alt-text="Screenshot of adding a relationship type.":::
 
 1. In the **Relationship configuration** pane, enter the following information:
     - **First entity**: Bus
@@ -194,11 +186,11 @@ Next, create a relationship to represent that a Bus *goesTo* a Stop.
     
     Select **Create**.
 
-    :::image type="content" source="media/tutorial-rti/relationship-create.png" alt-text="Screenshot of the relationship configuration." lightbox="media/tutorial-rti/relationship-create.png":::
+    :::image type="content" source="media/tutorial-rti/relationship-create.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-rti/relationship-create.png":::
 
-1. In the **Scheduling** section that appears, select **Run now** to apply the relationship.
+1. In the **Scheduling** section that appears, select **Run** to apply the relationship type.
 
-Now your Bus and Stop entities are visible in the canvas with a relationship between them. Together, these elements form the ontology for the tutorial scenario.
+Now your Bus and Stop entity types are visible in the canvas with a relationship type between them. Together, these elements form the ontology for the tutorial scenario.
 
 :::image type="content" source="media/tutorial-rti/ontology.png" alt-text="Screenshot of the ontology." lightbox="media/tutorial-rti/ontology-crop.png":::
 
@@ -214,7 +206,7 @@ As a final step, confirm that all your data mappings ran successfully. Each mapp
 
     :::image type="content" source="media/tutorial-rti/manage-operations-2.png" alt-text="Screenshot of four completed operations.":::
 
-1. If any of the operations failed, check the box next to its name and select **Run now** to rerun it.
+1. If any of the operations failed, check the box next to its name and select **Run** to rerun it.
 
 Wait for all mappings to complete before you move on to the next part of the tutorial. In the next part, you project the ontology that you mapped to an eventhouse, to support further data analysis and visualization.
 

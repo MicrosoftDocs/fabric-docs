@@ -8,6 +8,7 @@ reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
 ms.date: 05/07/2025
+ms.update-cycle: 180-days
 ms.search.form:
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -52,7 +53,7 @@ from synapse.ml.services.openai import *
 
 # [OpenAI Python SDK < 1.0.0](#tab/python0)
 
-GPT-4o and GPT-4o-mini are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
+Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. GPT-4o and GPT-4o-mini are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
 
 ``` Python
 import openai
@@ -108,11 +109,13 @@ for chunk in response:
 
 # [OpenAI Python SDK >=1.0.0](#tab/python1)
 
-GPT-4o and GPT-4o-mini are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
+Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. GPT-4o and GPT-4o-mini are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
 
 
 ```Python
 import openai
+
+os.environ["OPENAI_API_VERSION"] = "2023-05-15"
 
 response = openai.chat.completions.create(
     model='gpt-4o', # model could be one of {gpt-4o or gpt-4o-mini}
@@ -137,7 +140,7 @@ print(f"{response.choices[0].message.role}: {response.choices[0].message.content
 
 # [SynapseML](#tab/synapseml)
 
-GPT-4o and GPT-4o-mini models are language models that are optimized for conversational interfaces.
+Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. GPT-4o and GPT-4o-mini models are language models that are optimized for conversational interfaces.
 
 `deployment_name` could be one of:
 
@@ -195,7 +198,7 @@ display(
 
 # [OpenAI Python SDK < 1.0.0](#tab/python0)
 
-An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs. For example, if two texts are similar, their vector representations should also be similar.
+Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs. For example, if two texts are similar, their vector representations should also be similar.
 
 The example demonstrated here showcases how to obtain embeddings and isn't intended as a tutorial.
 
@@ -238,7 +241,46 @@ print(embeddings)
 ```
 # [OpenAI Python SDK >=1.0.0](#tab/python1)
 
-openai.Embedding is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs. For example, if two texts are similar, their vector representations should also be similar.
+
+The example demonstrated here showcases how to obtain embeddings and isn't intended as a tutorial.
+
+``` Python
+response = openai.embeddings.create(
+         input="The food was delicious and the waiter...",
+         model="text-embedding-ada-002"  # Or another embedding model
+     )
+
+print(response)
+```
+
+### Output
+
+```
+    CreateEmbeddingResponse(
+        data=[
+            Embedding(
+                embedding=[
+                    0.0022756962571293116,
+                    -0.009305915795266628,
+                    0.01574261300265789,
+                    ...
+                    -0.015387134626507759,
+                    -0.019424352794885635,
+                    -0.0028009789530187845
+                ],
+                index=0,
+                object='embedding'
+        )
+        ],
+        model='text-embedding-ada-002',
+        object='list',
+        usage=Usage(
+            prompt_tokens=8,
+            total_tokens=8
+        )
+    )
+```
 
 # [SynapseML](#tab/synapseml)
 

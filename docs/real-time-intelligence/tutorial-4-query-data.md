@@ -5,8 +5,9 @@ ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
-ms.custom:
-ms.date: 03/23/2025
+ms.custom: sfi-image-nochange
+ms.date: 06/08/2025
+ms.update-cycle: 180-days
 ms.subservice: rti-core
 ms.collection: ce-skilling-ai-copilot
 ms.search.form: Get started
@@ -17,14 +18,13 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 3: Transform data in a KQL database](tutorial-3-transform-kql-database.md).
 
-In this part of the tutorial, you learn how to query your streaming data. You use a few different methods to query- using T-SQL, by using `explain` to convert SQL to KQL. You use the Copilot to generate a KQL query, and also write KQL queries. You also use KQL queries to visualize the data in a time chart.
-    
+In this part of the tutorial, you query streaming data using a few different methods. You write a KQL query to visualize data in a time chart and you create an aggregation query using a materialized view. You also query data by using T-SQL and by using `explain` to convert SQL to KQL. Finally, you use Copilot to generate a KQL query.
 
 ## Write a KQL query
 
 The name of the table you created from the update policy in a previous step is *TransformedData*. Use this table name (case-sensitive) as the data source for your query.
 
-- Enter the following query. Then press **Shift + Enter** to run the query.
+- Enter the following query, and then press **Shift + Enter** to run the query.
 
     ```kusto
     TransformedData
@@ -39,9 +39,9 @@ The name of the table you created from the update policy in a previous step is *
 
 ## Create a materialized view
 
-In this step, you create a materialized view, which returns an up-to-date result of the aggregation query (always fresh). Querying a materialized view is more performant than running the aggregation directly over the source table.
+In this step, you create a materialized view, which returns an up-to-date result of the aggregation query. Querying a materialized view is faster than running the aggregation directly over the source table.
 
-1. Copy/paste and run the following command to create a materialized view that shows the most recent number of bikes at each bike station:
+1. Copy and paste, then run the following command to create a materialized view that shows the most recent number of bikes at each bike station.
 
     ``` kusto
     .create-or-alter materialized-view with (folder="Gold") AggregatedData on table TransformedData
@@ -51,7 +51,7 @@ In this step, you create a materialized view, which returns an up-to-date result
     }
     ```
 
-1. Copy/paste and run the following query to see the data in the materialized view visualized as a column chart:
+1. Copy and paste, then run the following query to see the data in the materialized view as a column chart.
 
     ```kusto
     AggregatedData
@@ -59,18 +59,17 @@ In this step, you create a materialized view, which returns an up-to-date result
     | render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)
     ```
 
-You'll use this query in a later step to create a Real-Time dashboard.
+You use this query in a later step to create a real-time dashboard.
 
 > [!IMPORTANT]
 > If you missed any of the steps used to create the tables, update policy, function, or materialized views, use this script to create all required resources: [Tutorial commands script](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-intelligence/tutorial-commands-script.kql).
 
-
 ## Query using T-SQL
 
-The query editor supports the use of T-SQL. 
+The query editor supports the use of T-SQL.
 
-- Enter the following query. Then press **Shift + Enter** to run the query.
-    
+- Enter the following query, and then press **Shift + Enter** to run the query.
+
     ```kusto
     SELECT top(10) *
     FROM AggregatedData
@@ -81,7 +80,7 @@ This query returns the top 10 bike stations with the most bikes, sorted in desce
 
 ## Convert a SQL query to KQL
 
-To get the equivalent KQL for a T-SQL SELECT statement, add the keyword `explain` before the query. The output will be the KQL version of the query, which can then be copied and run in the KQL query editor.
+To get the equivalent KQL for a T-SQL SELECT statement, add the keyword `explain` before the query. The output shows the KQL version of the query, which you can copy and run in the KQL query editor.
 
 - Enter the following query. Then press **Shift + Enter** to run the query.
 
@@ -92,34 +91,36 @@ To get the equivalent KQL for a T-SQL SELECT statement, add the keyword `explain
     ORDER BY No_Bikes DESC
     ```
 
-This query returns a KQL equivalent of the T-SQL query you entered. The KQL query is displayed in the output pane. Try copy/pasting the output and running the query. Note that this query may not be written in optimized KQL.
-    
+This query returns a KQL equivalent of the T-SQL query you enter. The KQL query appears in the output pane. Try copying and pasting the output, and then run the query. This query might not be written in optimized KQL.
+
 ## Use Copilot to generate a KQL query
 
-If you're new to writing KQL, you can ask a question in natural language and Copilot will generate the KQL query for you.
+If you're new to writing KQL, you can ask a question in natural language and Copilot generates the KQL query for you.
 
 1. In the KQL queryset, select the **Copilot** icon from the menu bar.
+
 1. Enter a question in natural language. For example, "Which station has the most bikes right now. Use the materialized view for the most updated data." It can help to include the name of the materialized view in your question.
 
-    The copilot will suggest a query based on your question.
-1. Select the **Insert** button to insert the query into the KQL editor.
+    The Copilot suggests a query based on your question.
 
-    :::image type="content" source="media/tutorial/copilot.png" alt-text="Screenshot of copilot dialog.":::
+1. Select the **Insert** button to add the query to the KQL editor.
+
+    :::image type="content" source="media/tutorial/copilot.png" alt-text="Screenshot of Copilot dialog showing a generated KQL query and the Insert button.":::
 
 1. Select **Run** to run the query.
 
-You can ask follow-up questions or change the scope of your query. Use this feature to help you learn KQL and to generate queries quickly.
+Ask follow-up questions or change the scope of your query. Use this feature to learn KQL and generate queries quickly.
 
 ## Related content
 
-For more information about tasks performed in this tutorial, see:
+For more information about tasks in this tutorial, see:
 
 * [Write a query](kusto-query-set.md#write-a-query)
 * [render operator](/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer?context=/fabric/context/context&pivots=fabric)
 * [Materialized views overview](/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric&preserve-view=true)
 * [Create materialized views](materialized-view.md)
 * [Query data using T-SQL](/kusto/query/t-sql?view=microsoft-fabric&preserve-view=true)
-* [Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence.md)
+* [Copilot for Writing KQL Queries](../fundamentals/copilot-for-writing-queries.md)
 
 ## Next step
 

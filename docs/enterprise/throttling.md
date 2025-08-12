@@ -23,6 +23,7 @@ Fabric is designed to deliver fast performance to its customers. Tasks that migh
 ### Bursting
 To ensure fast performance, Fabric uses _bursting_ to let operations run as fast as they can. Bursting allows operations to temporarily use more compute than the provisioned compute for the capacity SKU. Because of bursting, users get results quickly without waiting. Bursting also enables a smaller capacity to run larger operations that would normally require a more expensive capacity. 
 
+
 ### Smoothing
 To avoid penalizing users when operations benefit from bursting, Fabric _smooths_, or averages, the CU usage of an operation over a longer timeframe. This behavior ensures users can enjoy consistently fast performance without experiencing throttling. 
 
@@ -35,6 +36,9 @@ An operation's utilization type determines the number of timepoints used for smo
 Due to smoothing, only a portion of the CU usage for an operation applies to any individual timepoint, which reduces throttling overall. Smoothed CU usage accumulates as operations run. Smoothed usage is paid for by _future capacity_, which is the CUs available in future timepoints, because the capacity is running continuously. 
 
 Bursting and smoothing work together to make it easier for capacity users to do their work. For example, users typically spend time scheduling jobs and spreading them out across the day. With smoothing, the compute cost for background jobs is smoothed over 24-hours. This means scheduled jobs can all run simultaneously without causing any spikes that would otherwise block jobs from starting. At the same time, users can enjoy consistently fast performance without waiting for slow jobs to complete or wasting time managing job schedules.
+
+>[!NOTE]
+>Bursting and smoothing are not supported when a capacity admin has enabled Autoscale Billing for Spark. In this scenario, Spark usage operates in a Pay-As-You-Go mode, and the concepts of bursting and smoothing do not apply.
 
 ## Throttle triggers and throttle stages
 

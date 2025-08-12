@@ -6,7 +6,7 @@ author: s-polly
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 08/12/2024
 
 ms.search.form: Data Wrangler

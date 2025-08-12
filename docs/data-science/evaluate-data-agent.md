@@ -12,14 +12,9 @@ ms.date: 05/06/2025
 
 Evaluation with the Fabric SDK allows you to programmatically test how well your Data Agent responds to natural language questions. Using a simple Python interface, you can define ground truth examples, run evaluations, and analyze results—all within your notebook environment. This helps you validate accuracy, debug errors, and confidently improve your agent before deploying it to production.
 
-## Prerequisites
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-- [A paid F2 or higher Fabric capacity resource](../fundamentals/copilot-fabric-overview.md#available-regions-for-azure-openai-service)
-- [Fabric data agent tenant settings](./data-agent-tenant-settings.md) is enabled.
-- [Copilot tenant switch](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo processing for AI](./data-agent-tenant-settings.md) is enabled.
-- [Cross-geo storing for AI](./data-agent-tenant-settings.md) is enabled.
-- At least one of the following data sources: A warehouse, a lakehouse, one or more Power BI semantic models, or a KQL database with data.
+[!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
 ## Install the data agent SDK
 
@@ -229,4 +224,4 @@ This feature is especially useful when:
 ## Next steps
 
 - [Use the Fabric data agent SDK](./fabric-data-agent-sdk.md)
-- [Access sample notebooks on how to use the data agent SDK](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/Fabric-Data-Agent-SDK/Samples)
+- [Access sample notebooks on how to use the data agent SDK](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-agent-sdk)

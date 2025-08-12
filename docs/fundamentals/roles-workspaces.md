@@ -1,8 +1,8 @@
 ---
 title: Roles in workspaces in Microsoft Fabric
 description: Learn about the different roles you can assign to workspace users to grant access to read, write, edit, and more.
-author: paulinbar
-ms.author: painbar
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: yicw, mesrivas
 ms.topic: conceptual
 ms.date: 05/01/2025
@@ -29,9 +29,9 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 | Add or remove people, including other admins.                                                                                                                   | &#x2705; |          |             |          |
 | Add members or others with lower permissions.                                                                                                                   | &#x2705; | &#x2705; |             |          |
 | Allow others to reshare items.<sup>1</sup>                                                                                                                      | &#x2705; | &#x2705; |             |          |
+| Create or modify database items.                                                                                                                            | &#x2705; | &#x2705; | &#x2705;    |          |
 | Create or modify database mirroring items.                                                                                                                      | &#x2705; | &#x2705; | &#x2705;    |          |
 | Create or modify warehouse items.                                                                                                                               | &#x2705; | &#x2705; | &#x2705;    |          |
-| Create or modify SQL database items.                                                                                                                            | &#x2705; | &#x2705; | &#x2705;    |          |
 | View and read content of data pipelines, notebooks, Spark job definitions, ML models and experiments, and eventstreams.                                        | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | View and read content of KQL databases, KQL query-sets, digital twin builder items, and real-time dashboards.                                                                               | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |
 | Connect to SQL analytics endpoint of Lakehouse or the Warehouse                                                                                                 | &#x2705; | &#x2705; | &#x2705;    | &#x2705; |

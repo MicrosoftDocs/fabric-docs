@@ -5,21 +5,21 @@ author: dearandyxu
 ms.author: yexu
 ms.topic: how-to
 ms.date: 05/19/2025
-ms.search.form: copy-job-tutorials 
-ms.custom: copy-job
+ms.search.form: copy-job-tutorials
+ms.custom: copy-job, sfi-image-nochange
 ---
 
 # Monitor a Copy job in Data Factory for Microsoft Fabric
 
-After you execute a Copy job in Data Factory for Microsoft Fabric, you can monitor its progress and metrics through either the [Copy job panel](#monitor-in-the-copy-job-panel) or the [Monitoring hub](#monitor-in-the-monitoring-hub) in Data Factory. The Monitoring hub acts as a centralized portal for reviewing all Copy job runs.
+After you run a Copy job in Data Factory for Microsoft Fabric, you can monitor its progress and metrics through either the [Copy job panel](#monitor-in-the-copy-job-panel) or the [Monitoring hub](#monitor-in-the-monitoring-hub) in Data Factory. The Monitoring hub gives you one place to check on all your Copy job runs.
 
 ## Monitor in the Copy job panel
 
-After you initiate a Copy job, you can immediately track its progress and metrics in its job panel. The display consistently shows data from the most recent runs, reporting on the following metrics:
+After you initiate a Copy job, you can immediately track its progress and metrics in its job panel. The display shows data from the most recent runs, reporting on the following metrics:
 
 - Status
-- Row read
-- Row written
+- Rows read
+- Rows written
 - Throughput
 
 :::image type="content" source="media/copy-job/monitor-copy-job-panel-overview.png" lightbox="media/copy-job/monitor-copy-job-panel-overview.png" alt-text="Screenshot overview showing the monitoring area of the Copy job panel.":::
@@ -56,7 +56,7 @@ You can also select **View run history** to see a list of prior runs:
 
 ## Monitor in the Monitoring hub
 
-The Monitoring hub serves as a central portal for overseeing all your Copy job runs. There are two ways to access the Monitoring hub:
+The Monitoring hub is your go-to place for checking on all your Copy job runs. You can get there in two ways:
 
 - On the main Fabric navigation pane on the left of the Fabric site, select **Monitor**.
 

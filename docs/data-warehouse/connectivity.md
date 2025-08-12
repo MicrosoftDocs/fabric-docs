@@ -4,9 +4,10 @@ description: Follow steps to connect SSMS to a warehouse item in your Microsoft 
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, dhsundar, jacinda-eng
-ms.date: 05/07/2025
+ms.date: 08/06/2025
 ms.topic: how-to
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
+ms.custom: sfi-image-nochange
 ---
 
 # Warehouse connectivity in Microsoft Fabric
@@ -83,6 +84,33 @@ We support connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or 
 ## Connect using ODBC
 
 [!INCLUDE [product-name](../includes/product-name.md)] supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using ODBC. Make sure you're running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Microsoft Entra ID (formerly Azure Active Directory) authentication. Only ODBC 18 or higher versions are supported.
+
+## Connect using Fabric Python Notebook
+
+[Fabric Python Notebooks](../data-engineering/using-python-experience-on-notebook.md) (preview) offer the [ability to run T-SQL code with the T-SQL magic command](../data-engineering/tsql-magic-command-notebook.md). In the following steps, connect to a warehouse item in Fabric using the `%%tsql` magic command:
+
+1. Create a notebook in your workspace with the language set to Python.
+1. In a cell, use the `%%tsql` magic command. The cell type automatically changes to `T-SQL`. 
+
+   In the following sample, replace `<warehouse>` with the name of your warehouse item. The `-type` parameter should be `Warehouse`.
+   
+   ```python
+   %%tsql -artifact <warehouse> -type Warehouse
+   ```
+
+   Then include your T-SQL command. For example, to run a query from a warehouse named `Contoso`:
+
+   ```python
+   %%tsql -artifact Contoso -type Warehouse
+   SELECT * FROM wh.DimDate;
+   ```
+1. You can also bind the results to a dataframe with the `-bind` argument:
+
+   ```python
+   %%tsql -artifact Contoso -type Warehouse -bind df2
+   ```
+
+For more possibilities to query your data with T-SQL inside Python Notebooks, see [Run T-SQL code in Fabric Python notebooks](../data-engineering/tsql-magic-command-notebook.md). To see the full syntax, use the `%tsql?` command. This command displays the help information for the T-SQL magic command, including the available parameters and their descriptions.
 
 ## Connect using JDBC
 

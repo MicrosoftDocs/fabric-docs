@@ -5,7 +5,7 @@ ms.reviewer: abnarain
 ms.author: abnarain
 author: abnarain
 ms.topic: tutorial
-ms.custom: airflows
+ms.custom: airflows, sfi-image-nochange
 ms.date: 12/18/2024
 ---
 

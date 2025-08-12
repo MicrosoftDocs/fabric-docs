@@ -2,8 +2,8 @@
 title: Take ownership of Fabric items
 description: This article explains how to take ownership of Fabric items when current owner credentials are no longer valid or accessible.
 ms.reviewer: sakjai
-ms.author: mimart
-author: msmimart
+author: SnehaGunda
+ms.author: sngun
 ms.topic: how-to
 ms.date: 01/31/2025
 #customer intent: As a member of a workspace that has items that no longer work correctly because the current owner has left the organization, I want to know how to take over ownership of such items and make other changes to get the items working again.

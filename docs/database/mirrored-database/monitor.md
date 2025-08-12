@@ -4,8 +4,9 @@ description: Learn about monitoring mirrored database replication in Microsoft F
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem, cynotebo
-ms.date: 05/12/2025
+ms.date: 07/22/2025
 ms.topic: conceptual
+ms.custom: sfi-image-nochange
 ---
 # Monitor Fabric mirrored database replication
 
@@ -24,8 +25,8 @@ The following are the possible statuses for the replication:
 
 | **Monitor** | **Status** |
 |:--|:--|
-| Database level | **Running**: Replication is currently running bringing snapshot and change data into OneLake.<br/>**Running with warning**: Replication is running, with transient errors.<br/>**Stopping/Stopped**: Replication has stopped.<br/>**Error**: Fatal error in replication that can't be recovered.|
-| Table level | **Running**: Data is replicating.<br/>**Running with warning**: Warning of nonfatal error with replication of the data from the table.<br/>**Stopping/Stopped**: Replication has stopped.<br/>**Error**: Fatal error in replication for that table.|
+| Database level | **Running**: Replication is currently running bringing snapshot and change data into OneLake.<br/>**Running with warning**: Replication is running, with transient errors.<br/>**Stopping/Stopped**: Replication has stopped.<br/>**Failed**: Fatal error in replication that can't be recovered.<br/>**Paused**: Replication is paused. It happens when you pause and resume the Fabric capacity. Learn more from [Changes to Fabric capacity](troubleshooting.md#changes-to-fabric-capacity). |
+| Table level | **Running**: Data is replicating.<br/>**Running with warning**: Warning of nonfatal error with replication of the data from the table.<br/>**Stopping/Stopped**: Replication has stopped.<br/>**Failed**: Fatal error in replication for that table. |
 
 ## Monitor programmatically
 
