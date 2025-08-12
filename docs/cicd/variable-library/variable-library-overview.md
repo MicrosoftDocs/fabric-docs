@@ -1,5 +1,5 @@
 ---
-title: Fabric Application Lifecycle Management Variable library
+title: Fabric Application Lifecycle Management Variable Library
 description: Learn how to use a Microsoft Fabric application lifecycle management (ALM) variable library to customize your release stages.
 author: billmath
 ms.author: billmath
@@ -8,12 +8,12 @@ ms.subservice: cicd
 ms.topic: overview
 ms.date: 01/22/2025
 ms.search.form: Variable library overview
-#customer intent: As a developer, I want to learn how to use a Fabric application lifecycle management (ALM) variable library to customize my release stages so that I can manage my content lifecycle.
+#customer intent: As a developer, I want to learn how to use a Fabric application lifecycle management (ALM) variable library to customize my release stages, so that I can manage my content lifecycle.
 ---
 
 # What is a variable library (preview)?
 
-A Microsoft Fabric variable library is a bucket of variables that other items in the workspace can consume. It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline. It presents a unified approach for efficient management of item configurations within a workspace, to help ensure scalability and consistency across lifecycle stages.
+A Microsoft Fabric variable library is a bucket of variables that other items in the workspace can consume as part of application lifecycle management (ALM). It functions as an item within the workspace that contains a list of variables, along with their respective values for each stage of the release pipeline. It presents a unified approach for efficient management of item configurations within a workspace, to help ensure scalability and consistency across lifecycle stages.
 
 For example, a variable library can contain variables that hold values for:
 
@@ -23,15 +23,15 @@ For example, a variable library can contain variables that hold values for:
 
 Value resolution in the consumer item isn't necessarily tied to its deployment. Rather, each consumer item resolves the value based on its own context.
 
-The variable library experience differs based on the variable type, but all variable libraries allow you to define and manage variables that other items can use.
+The experience of a variable library differs based on the variable type, but all variable libraries allow you to define and manage variables that other items can use.
 
 A Fabric variable library:
 
 * Is compatible with continuous integration and continuous delivery (CI/CD) processes. This compatibility allows [integration with Git](../git-integration/intro-to-git-integration.md#supported-items) and deployment through [deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md#supported-items).
-* Supports automation via Microsoft Fabric public APIs.
+* Supports automation via Fabric public APIs.
 
 > [!NOTE]
-> The Microsoft Fabric variable library item is currently in preview.
+> The Fabric variable library item is currently in preview.
 
 ## Benefits
 
@@ -51,7 +51,7 @@ Variable libraries provide a centralized way to manage configurations across the
 
 ## Variable library structure
 
-Variable libraries contain one or more variables. Each variable has a name, a type, and [default value](#default-value). You can also add a note to each variable to describe its purpose or how to use it.
+Variable libraries contain one or more variables. Each variable has a name, type, and [default value](#default-value). You can also add a note to each variable to describe its purpose or how to use it.
 
 :::image type="content" source="./media/variable-library-overview/define-values.png" alt-text="Screenshot of a variable library with several variables and their core components.":::
 
@@ -77,7 +77,7 @@ The following items support the variable library:
 
 * [Data pipeline (preview)](../../data-factory/variable-library-integration-with-data-pipelines.md)
 * [Shortcut for a lakehouse (preview)](../../onelake/assign-variables-to-shortcuts.md)
-* [Notebook] (preview), through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities) and [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
+* Notebook (preview), through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities) and [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
 
 ## Limitations
 

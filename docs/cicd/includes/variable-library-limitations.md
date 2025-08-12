@@ -15,7 +15,7 @@ ms.date: 03/16/2025
   * The total number of cells in the alternative value sets is less than 10,000.
   * The item's size doesn't exceed 1 MB.
   
-  These requirements are validated when you saves changes.
+  These requirements are validated when you save changes.
 * The note field can have up to 2,048 characters.
 * The value-set description field can have up to 2,048 characters.
 
