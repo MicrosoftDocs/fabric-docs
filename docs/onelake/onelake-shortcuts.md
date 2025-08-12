@@ -244,10 +244,7 @@ Fabric users can also create shortcuts to Dataverse. When users create shortcuts
 
 #### Authorization
 
-Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut, and all access to that shortcut is authorized using that credential. The supported delegated credential type is organizational account (OAuth2). The organizational account must have the system administrator permission to access data in Dataverse Managed Lake.
-
-> [!NOTE]
-> Dataverse shortcuts don't currently support Service Principals as an authenticaion type.
+Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut, and all access to that shortcut is authorized using that credential. The supported delegated credential types are organizational account (OAuth2) and Service Principal. The account must have the system administrator permission to access data in Dataverse Managed Lake.
 
 ## Caching
 
