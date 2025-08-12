@@ -112,7 +112,7 @@ You can substitute your own values for the deployment name, subscription key, en
 |---|---|
 | `deployment_name` | A string value that designates the custom name of your model deployment in Azure OpenAI or Azure AI Foundry. In the Azure portal, this value appears under **Resource Management > Model Deployments**. In the Azure AI Foundry portal, the value appears on the **Deployments** page. You can choose from the [models that Fabric supports](../ai-services/ai-services-overview.md#azure-openai-service). By default, the native Fabric LLM endpoint deployment is set to **gpt-4o-mini**. |
 | `subscription_key` | An API key used for authentication with your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. |
-| `URL`| A URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: https://your-openai-endpoint.openai.azure.com/. |
+| `URL`| A URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: `https://your-openai-endpoint.openai.azure.com/`. |
 | `temperature` | A numeric value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. By default, the Fabric LLM endpoint's temperature is set to `0.0`. |
 
 You can retrieve and print each of the `OpenAIDefaults` parameters with the next code sample:
