@@ -27,8 +27,6 @@
         href: pricing-copy-job.md
       - name: Pricing Apache Airflow job
         href: pricing-apache-airflow-job.md
-      - name: Cost estimation from Azure Data Factory to Fabric
-        href: cost-estimation-from-azure-data-factory-to-fabric-pipeline.md
       - name: Pricing examples
         items:
         - name: Data pipelines
