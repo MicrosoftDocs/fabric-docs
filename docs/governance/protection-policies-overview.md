@@ -21,7 +21,7 @@ The target audience for this article is security and compliance admins, Fabric a
 
 Each protection policy for Fabric is associated with a sensitivity label. The policy controls access to an item that has the associated label by allowing users and groups specified in the policy to retain permissions they have on the item, while blocking access for everyone else. The policy can:
 
-* Allow specified users and groups to retain *read* permission on labeled items if they have it. Any other permissions they have on the item will be removed.
+* Allow specified users and groups to retain *read* permission on labeled items if they have it. Any other permissions they have on the item will be removed. This feature is in preview for Fabric, and the "read only" experience may differ across workloads.
 
     and/or
 
