@@ -701,6 +701,8 @@
         href: azure-machine-learning-activity.md
       - name: Copy activity
         href: copy-data-activity.md
+      - name: Copy job activity
+        href: copy-job-activity.md
       - name: Dataflow activity
         href: dataflow-activity.md
       - name: Deactivate an activity
