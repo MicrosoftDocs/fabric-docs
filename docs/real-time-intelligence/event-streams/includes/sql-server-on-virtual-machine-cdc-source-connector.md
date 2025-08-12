@@ -34,7 +34,7 @@ ms.date: 10/23/2024
     - Use `dbo.test.*` to select all tables whose names start with `dbo.test`.  
     - Use `dbo\.(test1|test2)` to select `dbo.test1` and `dbo.test2`.  
 
-    You can mix both formats using commas. Up to 100 tables can be entered, with each table name (including the schema name) limited to 128 characters if using full table identifiers directly.
+    You can mix both formats using commas. The total character limit for the entire entry is **102,400** characters.
 1. You may expand **Advanced settings** to configure the **Decimal handling mode**, which specifies how the connector handles `DECIMAL` and `NUMERIC` column values:
 
       - `Precise`: Represents values using exact decimal types (for example, Java `BigDecimal`) to ensure full precision and accuracy in data representation.

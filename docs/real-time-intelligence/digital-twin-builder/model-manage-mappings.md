@@ -90,7 +90,7 @@ First, map non-time series data. Non-time series mappings must be run before tim
 
     :::image type="content" source="media/model-manage-mappings/map-non-time-save.png" alt-text="Screenshot of saving mapped properties.":::
 
-1. Go to the **Scheduling** tab and select **Run now** to run the mapping. Running the mapping models the identified properties on your entity instances. **Once properties have been modeled, they can't be deleted and their names can't be changed.**
+1. Go to the **Scheduling** tab and select **Run** to run the mapping. Running the mapping models the identified properties on your entity instances. **Once properties have been modeled, they can't be deleted and their names can't be changed.**
 
     :::image type="content" source="media/model-manage-mappings/map-non-time-run.png" alt-text="Screenshot of running the mapping.":::
 
@@ -129,7 +129,7 @@ First, map non-time series data. Non-time series mappings must be run before tim
 
     :::image type="content" source="media/model-manage-mappings/map-time-save.png" alt-text="Screenshot of entity type configuration options after configuring the link property.":::
 
-1. Go to the **Scheduling** tab and select **Run now** to run the mapping.
+1. Go to the **Scheduling** tab and select **Run** to run the mapping.
 
 ## Manage mappings
 

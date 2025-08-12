@@ -62,11 +62,11 @@ You need to configure your Key Vault so that Fabric can access it. This step is 
 
 To create an Azure Key Vault key, follow the instructions in [Create a key vault using the Azure portal](/azure/key-vault/general/quick-create-portal).
 
-## Key Vault requirements
+### Key Vault requirements
 
 Fabric only supports [versionless customer-managed keys](/azure/key-vault/keys/how-to-configure-key-rotation#key-rotation-policy), which are keys in the `https://{vault-name}.vault.azure.net/{key-type}/{key-name}` format. Fabric checks the key vault daily for a new version, and uses the latest version available. To avoid having a period where you can't access data in the workspace after a new key is created, wait 24 hours before disabling the older version.
 
-Key Vault must have both soft-delete and purge protection enabled and the key must be of *RSA* type. The supported key sizes are:
+Key Vault and Managed HSM must have both soft-delete and purge protection enabled and the key must be of RSA or RSA-HSM type. The supported key sizes are:
 
 * 2,048 bit
 * 3,072 bit
@@ -76,7 +76,7 @@ For more information, see [About keys](/azure/key-vault/keys/about-keys).
 
 ## Enable encryption using customer-managed keys
 
-Follow the steps in this section to use customer-managed keys in your Fabric workspace.
+After completing the prerequisites, follow the steps in this section to enable customer-managed keys in your Fabric workspace.
 
 1. From your Fabric workspace, select **Workspace settings**.
 
@@ -104,8 +104,6 @@ To disable encrypting the workspace using a customer-managed key, go to *Workspa
 
 You can't disable customer-managed keys while encryption for any of the Fabric items in your workspace is in progress.
 
-Encryption is currently available in selected regions and will only work for workspaces using capacities in those regions.
-
 ## Considerations and limitations
 
 Before you configure your Fabric workspace with a customer-managed key, consider the following limitations:
@@ -126,17 +124,17 @@ Before you configure your Fabric workspace with a customer-managed key, consider
 * When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace. To use unsupported items, create them in a different workspace that does not have this feature enabled. 
 
 * The data listed below isn't protected with customer-managed keys:
-
+ 
+  * Lakehouse column names, table format, table compression, SQL endpoint. Once you enable CMK, no SQL endpoint is created for the Lakehouse created within that workspace.
   * All data stored in the Spark Clusters (data stored in temp discs as part of  shuffle or data spills or RDD caches in a spark application) are not protected. This includes all the Spark Jobs from Notebooks, Lakehouses, Spark Job Definitions, Lakehouse Table Load and Maintenance jobs, Shortcut Transforms, Fabric Materialized View Refresh.
   * The job logs stored in the history server
-  * Libraries attached as part of environments or added as part of the Spark session customization using magic commands are not protected 
-  * Lakehouse column names, table format, table compression, SQL endpoint
+  * Libraries attached as part of environments or added as part of the Spark session customization using magic commands are not protected
   * Metadata generated when creating a Data pipeline and Copy job, such as DB name, table, schema
   * Metadata of ML model and experiment, like the model name, version, metrics
 
-* CMK is only supported in the following regions: East US, Germany West Central, North Central US, North Europe, South Central US, Southeast Asia, UAE North, UK South, West Europe, and West US. To use CMK, your home region and capacity must be in a supported region.
+* CMK is only supported in all public regions.
 
-* CMK is supported on all [F SKUs](../enterprise/licenses.md).
+* CMK is supported on all [F SKUs](../enterprise/licenses.md). Trial capacities cannot be used for encryption using CMK. CMK cannot be enabled for workspaces that have BYOK enabled and CMK workspaces cannot be moved to capacities for which BYOK is enabled either.
 
 * CMK can be enabled using the Fabric portal and does not have API support.
 
