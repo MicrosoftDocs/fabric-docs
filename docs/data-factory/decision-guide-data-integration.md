@@ -1,6 +1,6 @@
 ---
 title: Decision Guide for Data Movement and Transformation
-description: Identify the best strategy for your data volume, workload, and skill level with our Microsoft Fabric data integration decision guide, and compare data integration strategies like Mirrored Database, Copy Job, Copy Activity, Pipelines, Apache Airflow Job, Notebooks, and Dataflow Gen2.
+description: Identify the best strategy for your workload and skill level with our Microsoft Fabric data integration decision guide, and compare data integration strategies like Mirrored Database, Copy Job, Copy Activity, Pipelines, Apache Airflow Job, Notebooks, and Dataflow Gen2.
 author: whhender
 ms.author: whhender
 ms.reviewer: whhender
@@ -24,8 +24,6 @@ To choose the right data integration service in Microsoft Fabric, consider these
 - **What type of data workload are you working with?** Is it batch, bulk, incremental, or near real-time?
 
 - **What kind of data transformation do you need?** Are you doing light transformations or complex ones?
-
-- **What is your expected data volume?** Are you handling low or high data volumes?
 
 For the list of supported connectors across Copy job, Copy activity, and Dataflow Gen 2, see the [connector overview](/fabric/data-factory/connector-overview).
 
