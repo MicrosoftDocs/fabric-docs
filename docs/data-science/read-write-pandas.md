@@ -144,12 +144,22 @@ df.to_json("/LAKEHOUSE_PATH/Files/FILENAME.json")
 
 Delta tables are the default table format in Microsoft Fabric and are stored in the **Tables** section of your Lakehouse. Unlike files, Delta tables require a two-step process to work with pandas: first read the table into a Spark DataFrame, then convert it to a pandas DataFrame.
 
+> [!NOTE]
+> To follow the steps in this section, you need a Delta table in your Lakehouse. If you don't have one, you can create a test table from the **churn.csv** file by running this code in your notebook:
+> ```python
+> # Create a test Delta table from the churn.csv file
+> df = pd.read_csv("/lakehouse/default/Files/churn.csv")
+> spark_df = spark.createDataFrame(df)
+> spark_df.write.format("delta").mode("overwrite").saveAsTable("churn_table")
+> ```
+> This creates a Delta table named **churn_table** that you can use for testing the examples below.
+
 ### Read data from a Delta table
 
 ```Python
 # Read a Delta table from your Lakehouse into a pandas DataFrame
-# Replace TABLE_NAME with your own table name
-spark_df = spark.read.format("delta").load("Tables/TABLE_NAME")
+# This example uses the churn_table created above
+spark_df = spark.read.format("delta").load("Tables/churn_table")
 pandas_df = spark_df.toPandas()
 display(pandas_df)
 ```
@@ -158,7 +168,7 @@ You can also read Delta tables using Spark SQL syntax:
 
 ```Python
 # Alternative method using Spark SQL
-spark_df = spark.sql("SELECT * FROM TABLE_NAME")
+spark_df = spark.sql("SELECT * FROM churn_table")
 pandas_df = spark_df.toPandas()
 display(pandas_df)
 ```
