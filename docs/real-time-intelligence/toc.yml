@@ -629,6 +629,10 @@ items:
           href: query-acceleration-overview.md
         - name: Accelerate queries over OneLake shortcuts
           href: query-acceleration.md
+      - name: External tools
+        items: 
+        - name: Query Fabric OneLake Delta tables from Snowflake
+          href: query-onelake-from-snowflake.md
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: real-time-intelligence-consumption.md

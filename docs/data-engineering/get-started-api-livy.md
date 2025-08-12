@@ -101,7 +101,7 @@ A Lakehouse artifact is required to access the Livy endpoint. Once the Lakehouse
 
 The endpoint of the Livy API would follow this pattern:
 
-<https://api.fabric.microsoft.com/v1/workspaces/><ws_id>/lakehouses/<lakehouse_id>/livyapi/versions/2023-12-01/
+`https://api.fabric.microsoft.com/v1/workspaces/><ws_id>/lakehouses/<lakehouse_id>/livyapi/versions/2023-12-01/`
 
 The URL is appended with either \<sessions> or \<batches> depending on what you choose.
 
