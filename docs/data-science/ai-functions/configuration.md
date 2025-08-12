@@ -13,7 +13,9 @@ ms.search.form: AI functions
 
 # Customize the configuration of AI functions
 
-AI functions, currently in preview, allow users to harness the power of Microsoft Fabric's native large language models (LLMs) to [transform and enrich their enterprise data](./overview.md). AI functions are designed to work out-of-the-box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
+AI functions, currently in preview, allow users to harness the power of Microsoft Fabric's native large language models (LLMs) to [transform and enrich their enterprise data](./overview.md).
+
+AI functions are designed to work out-of-the-box, with the underlying model and settings configured by default. Users who want more flexible configurations, however, can customize their solutions with a few extra lines of code.
 
 > [!IMPORTANT]
 > This feature is in [preview](../../get-started/preview.md), for use in the [Fabric Runtime 1.3](../../data-engineering/runtime-1-3.md) and higher.
@@ -22,18 +24,18 @@ AI functions, currently in preview, allow users to harness the power of Microsof
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts.
 > - During the initial rollout of AI functions, users are temporarily limited to 1,000 requests per minute with Fabric's built-in AI endpoint.
 
-## Customizing AI functions with pandas
+## Customize AI functions with pandas
 
 By default, AI functions are powered by Fabric's built-in AI endpoint. The LLM's settings are globally configured in the `aifunc.Conf` class. If you work with AI functions in pandas, you can use the `aifunc.Conf` class to modify some or all of these settings:
 
 | Parameter | Description | Default |
 |---|---|---|
-| `model_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). | **gpt-4o-mini** |
-| `embedding_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | **text-embedding-ada-002** |
+| `model_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). | `gpt-4o-mini` |
+| `embedding_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` |
 | `temperature`<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between `0.0` and `1.0` that designates the temperature of the underlying model. Higher temperatures increase the randomness or creativity of the model's outputs. | `0.0` |
-| `seed`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | **openai.NOT_GIVEN** |
-| `timeout`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no timeout. | **None** |
-| `max_concurrency`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). | **4** |
+| `seed`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | `openai.NOT_GIVEN` |
+| `timeout`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no timeout. | None |
+| `max_concurrency`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). | `4` |
 
 The next code sample shows how to override `aifunc.Conf` settings globally, so that they apply to all AI function calls in a given session:
 
@@ -79,7 +81,7 @@ To substitute a custom Azure OpenAI LLM resource in place of the native Fabric L
 ```python
 from openai import AzureOpenAI
 
-# Example of creating a custom client
+# Example of how to create a custom client:
 client = AzureOpenAI(
     api_key="your-api-key",
     azure_endpoint="https://your-openai-endpoint.openai.azure.com/",
@@ -87,12 +89,12 @@ client = AzureOpenAI(
     max_retries=aifunc.session.max_retries,  # Default: sys.maxsize ~= 9e18
 )
 
-aifunc.setup(client)  # Set the client for all functions
+aifunc.setup(client)  # Set the client for all functions.
 ```
 
-## Customizing AI functions with PySpark
+## Customize AI functions with PySpark
 
-If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. As an example, the following code sample uses placeholder values to show how you can override the built-in Fabric AI endpoint with a custom Azure OpenAI LLM deployment:
+If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to modify the underlying language model that powers the functions. As an example, the following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Azure OpenAI LLM deployment:
 
 ```python
 from synapse.ml.services.openai import OpenAIDefaults
@@ -108,9 +110,9 @@ You can substitute your own values for the deployment name, subscription key, en
 
 | Parameter | Description |
 |---|---|
-| `deployment_name` | A string value that designates the custom name of your model deployment in Azure OpenAI or Azure AI Foundry. In the Azure portal, this value appears under **Resource Management > Model Deployments**. In the Azure AI Foundry portal, the value appears on the **Deployments** page. You can choose from the [models supported by Fabric](../ai-services/ai-services-overview.md#azure-openai-service). By default, the native Fabric LLM endpoint deployment is set to **gpt-4o-mini**. |
+| `deployment_name` | A string value that designates the custom name of your model deployment in Azure OpenAI or Azure AI Foundry. In the Azure portal, this value appears under **Resource Management > Model Deployments**. In the Azure AI Foundry portal, the value appears on the **Deployments** page. You can choose from the [models that Fabric supports](../ai-services/ai-services-overview.md#azure-openai-service). By default, the native Fabric LLM endpoint deployment is set to **gpt-4o-mini**. |
 | `subscription_key` | An API key used for authentication with your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. |
-| `URL`| A URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: "https://your-openai-endpoint.openai.azure.com/". |
+| `URL`| A URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: https://your-openai-endpoint.openai.azure.com/. |
 | `temperature` | A numeric value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. By default, the Fabric LLM endpoint's temperature is set to `0.0`. |
 
 You can retrieve and print each of the `OpenAIDefaults` parameters with the next code sample:

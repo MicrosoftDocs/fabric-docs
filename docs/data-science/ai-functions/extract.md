@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Extract entities with the ai.extract function
 
-The `ai.extract` function uses generative AI to scan input text and extract specific types of information designated by labels you choose (For example, locations or names). It uses only a single line of code.
+The `ai.extract` function uses generative AI to scan input text and extract specific types of information designated by labels you choose (for example: locations or names). It uses only a single line of code.
 
 AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
@@ -27,7 +27,7 @@ AI functions turbocharge data engineering by putting the power of Fabric's built
 
 ## Use ai.extract with pandas
 
-The `ai.extract` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column to extract custom entity types from each row of input.
+The `ai.extract` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To extract custom entity types from each row of input, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column.
 
 Unlike other AI functions, `ai.extract` returns a pandas DataFrame, instead of a Series, with a separate column for each specified entity type that contains extracted values for each input row.
 

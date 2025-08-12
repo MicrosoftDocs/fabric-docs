@@ -13,7 +13,7 @@ ms.search.form: AI functions
 
 # Detect sentiment with the ai.analyze_sentiment function
 
-The `ai.analyze_sentiment` function uses generative AI to detect the emotional state expressed by input text. It uses only a single line of code. It can detect whether the emotional state of the input text is positive, negative, mixed, or neutral.  If the function can't determine the sentiment, it leaves the output blank.
+The `ai.analyze_sentiment` function uses generative AI to detect the emotional state expressed by input text. It uses only a single line of code. It can detect whether the emotional state of the input text is positive, negative, mixed, or neutral. If the function can't determine the sentiment, it leaves the output blank.
 
 AI functions turbocharge data engineering by putting the power of Fabric's built-in large languages models into your hands. To learn more, visit [this overview article](./overview.md).
 
@@ -27,7 +27,7 @@ AI functions turbocharge data engineering by putting the power of Fabric's built
 
 ## Use ai.analyze_sentiment with pandas
 
-The `ai.analyze_sentiment` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. Call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column to detect the sentiment of each input row.
+The `ai.analyze_sentiment` function extends the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class. To detect the sentiment of each input row, call the function on a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) text column.
 
 The function returns a pandas Series that contains sentiment labels, which can be stored in a new column of the DataFrame.
 

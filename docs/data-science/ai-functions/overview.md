@@ -15,7 +15,7 @@ ms.search.form: AI functions
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-With Microsoft Fabric, all business professionals (from developers to analysts) can get more value from their enterprise data through Generative AI. They can use experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and [Fabric data agents](../how-to-create-data-agent.md). Thanks to a new set of AI functions for data engineering, Fabric users can take advantage of industry-leading large language models (LLMs) to seamlessly transform and enrich data.
+With Microsoft Fabric, all business professionals (from developers to analysts) can get more value from their enterprise data through Generative AI. They can use experiences like [Copilot](../../get-started/copilot-notebooks-overview.md) and [Fabric data agents](../how-to-create-data-agent.md). Because of a new set of AI functions for data engineering, Fabric users can take advantage of industry-leading large language models (LLMs) to seamlessly transform and enrich data.
 
 AI functions use the power of generative AI for summarization, classification, text generation, and more. With a single line of code, users can:
 
@@ -28,7 +28,7 @@ AI functions use the power of generative AI for summarization, classification, t
 - [Translate text with `ai.translate`](#translate-text-with-aitranslate): Translate input text into another language.
 - [Answer custom user prompts with `ai.generate_response`](#answer-custom-user-prompts-with-aigenerate_response): Generate responses based on your own instructions.
 
-You can seamlessly incorporate these functions as part of data-science and data-engineering workflows, whether you're working with pandas or Spark. There is no detailed configuration and no complex infrastructure management. You don't need any specific technical expertise.
+You can seamlessly incorporate these functions as part of data-science and data-engineering workflows, whether you're working with pandas or Spark. There's no detailed configuration and no complex infrastructure management. You don't need any specific technical expertise.
 
 ## Prerequisites
 
@@ -42,33 +42,33 @@ You can seamlessly incorporate these functions as part of data-science and data-
 > - AI functions use the *gpt-4o-mini (2024-07-18)* model by default. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Most of the AI functions are optimized for use on English-language texts.
 
-## Getting started with AI functions
+## Get started with AI functions
 
-When working with pandas, the openai package must be installed. In the Python environment, the AI Functions package must also be installed.
+When you use pandas, the OpenAI package must be installed. In the Python environment, the AI Functions package must also be installed.
 
-No installation is required when working with PySpark, because AI Functions are preinstalled in the PySpark environment.
+No installation is required when you use PySpark, because AI Functions are preinstalled in the PySpark environment.
 
 The following code cells include all the necessary installation commands.
 
 # [pandas (PySpark environment)](#tab/pandas-pyspark)
 
 ```python
-# Pandas AI Functions requires openai version 1.30 or higher
+# Pandas AI Functions requires openai version 1.30 or higher.
 %pip install -q --force-reinstall openai==1.30 2>/dev/null
 
-# AI functions are preinstalled on the Fabric PySpark runtime
+# AI functions are preinstalled on the Fabric PySpark runtime.
 ```
 
 # [pandas (Python environment)](#tab/pandas-python)
 
 ```python
-# Install fixed version of packages
+# Install the fixed version of packages.
 %pip install -q --force-reinstall openai==1.30 2>/dev/null
 
-# Install latest version of SynapseML-core
+# Install the latest version of SynapseML-core.
 %pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12-spark3.5/synapseml_core-1.0.12.dev1-py2.py3-none-any.whl 2>/dev/null
 
-# Install SynapseML-Internal .whl with AI functions library from blob storage:
+# Install SynapseML-Internal .whl with the AI functions library from blob storage:
 %pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12.2-spark3.5/synapseml_internal-1.0.12.2.dev1-py2.py3-none-any.whl 2>/dev/null
 ```
 
@@ -97,7 +97,7 @@ from synapse.ml.spark.aifunc.DataFrameExtensions import AIFunctions
 
 ---
 
-## Applying AI functions
+## Apply AI functions
 
 Each of the following functions allows you to invoke Fabric's built-in AI endpoint to transform and enrich data with a single line of code. You can use AI functions to analyze pandas DataFrames or Spark DataFrames.
 
@@ -106,7 +106,7 @@ Each of the following functions allows you to invoke Fabric's built-in AI endpoi
 
 ### Calculate similarity with ai.similarity
 
-The `ai.similarity` function invokes AI to compare input text values with a single common text value, or with pairwise text values in another column. The output similarity score values are relative, and they can range from `-1` (opposites) to `1` (identical). A score of `0` indicates that the values are completely unrelated in meaning. Get [detailed instructions](./similarity.md) about the use of `ai.similarity`.
+The `ai.similarity` function invokes AI to compare input text values with a single common text value, or with pairwise text values in another column. The output similarity score values are relative, and they can range from `-1` (opposites) to `1` (identical). A score of `0` indicates that the values are unrelated in meaning. Get [detailed instructions](./similarity.md) about the use of `ai.similarity`.
 
 #### Sample usage
 
