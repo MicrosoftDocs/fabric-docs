@@ -45,7 +45,7 @@ For the list of supported connectors across Copy job, Copy activity, and Dataflo
 
 ## Orchestration strategies
 
-| | [**Pipeline**](/fabric/data-factory/data-factory-overview.md#data-pipelines) | [**Apache Airflow Job**](/fabric/data-factory/apache-airflow-jobs-concepts) |
+| | [**Pipeline**](data-factory-overview.md#data-pipelines) | [**Apache Airflow Job**](/fabric/data-factory/apache-airflow-jobs-concepts) |
 |---|---|---|
 | **Use Case** | Low Code Orchestration | Code-first Orchestration |
 | **Flagship Scenarios** | Logical grouping of several activities together to perform a task. | Python Code-Centric Authoring |
@@ -85,7 +85,7 @@ Hanna reviews the options and chooses **Mirroring** as the ideal solution. With 
 
 ### Scenario 2
 
-Charlie is a data integrator at a retail company. He's responsible for consolidating sales data from multiple regional databases into a central data warehouse. The company operates across different time zones, and each region's database uses change data capture (CDC) to track inventory and sales transactions. Charlie needs a solution that can handle the initial full load of historical data and then switch to incremental updates based on CDC.
+Charlie is a data analyst at a retail company. He's responsible for consolidating sales data from multiple regional databases into a central data warehouse. The company operates across different time zones, and each region's database uses change data capture (CDC) to track inventory and sales transactions. Charlie needs a solution that can handle the initial full load of historical data and then switch to incremental updates based on CDC.
 
 Charlie wants a no-code, wizard-driven approach that lets him select multiple tables from various regional SQL Server instances, perform the initial bulk migration, and then automatically maintain up-to-date data through CDC-based incremental loads. The solution needs to handle both inserts and updates, and should merge changes into the destination without manual intervention.
 
@@ -138,7 +138,7 @@ Now that you understand which service to use, you can start building your data i
 - [Get started with Mirroring](/fabric/database/mirrored-database/overview)
 - [Create a Copy Job](/fabric/data-factory/create-copy-job)
 - [Create a Copy Activity](/fabric/data-factory/copy-data-activity)
-- [Get started with Pipelines](/fabric/data-factory/data-factory-overview.md#data-pipelines)
+- [Get started with Pipelines](data-factory-overview.md#data-pipelines)
 - [Get started with Apache Airflow Jobs](/fabric/data-factory/apache-airflow-jobs-concepts)
 - [Create and use Notebooks](/fabric/data-engineering/how-to-use-notebook)
 - [Create a dataflow](/fabric/data-factory/tutorial-dataflows-gen2-pipeline-activity#create-a-dataflow)
