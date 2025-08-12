@@ -85,17 +85,17 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 
 ### Consumption rate for OpenAI language models
 
-| **Models** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
-|---|---|---|---|
-|GPT-4o-2024-05-13 Global |128 K|84.03 CU seconds |336.13 CU seconds|
-|GPT-4o-mini-0718 Global |128 K|5.04 CU seconds |20.17 CU seconds|
+| **Models** | **Deployment Name** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** |
+|---|---|---|---|---|
+|GPT-4o-2024-05-13 Global | `gpt-4o` | 128 K | 84.03 CU seconds | 336.13 CU seconds |
+|GPT-4o-mini-0718 Global | `gpt-4o-mini` | 128 K| 5.04 CU seconds | 20.17 CU seconds |
 
 
 ### Consumption rate for OpenAI embedding models
 
-| **Models** | **Operation Unit of Measure** | **Consumption rate** |
-|---|---|---|
-|text-embedding-ada-002 | 1,000 Tokens|3.36 CU seconds|
+| **Models** | **Deployment Name** | **Context (Tokens)** | **Input (Per 1,000 Tokens)** |
+|---|---|---|---|
+| Ada | `text-embedding-ada-002` | 8192 | 3.36 CU seconds |
 
 ### Consumption rate for Text Analytics
 
