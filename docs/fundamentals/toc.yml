@@ -13,6 +13,8 @@ items:
     href: fabric-terminology.md
   - name: What's New
     href: whats-new.md
+  - name: Migration to Microsoft Fabric
+    href: migration.md
 - name: Get started
   items:
   - name: End-to-end tutorials
