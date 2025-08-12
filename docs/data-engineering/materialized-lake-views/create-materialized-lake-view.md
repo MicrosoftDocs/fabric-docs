@@ -142,6 +142,7 @@ DROP MATERIALIZED LAKE VIEW customers_enriched;
 
 ## Current limitations
 
+* The Schema name will full capitals is not supported and is a known limitation, you can continue to use Create MLVs without full caps in Schema name.
 * Spark properties set at the session level aren't applied during scheduled lineage refresh.
 * The creation of materialized lake view with delta time-travel isn't supported.
 * DML statements aren't supported with materialized lake views.
