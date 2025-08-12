@@ -97,7 +97,7 @@ items:
       href: sql/tutorial-service-connector.md
   - name: Load data into a SQL database
     items:
-    - name: Load data with data pipelines
+    - name: Load data with pipelines
       href: sql/load-data-pipelines.md
     - name: Load data with Fabric Dataflow Gen2
       href: sql/dataflows.md

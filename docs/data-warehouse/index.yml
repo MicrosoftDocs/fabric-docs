@@ -53,7 +53,7 @@ landingContent:
             url: semantic-models.md
           - text: Load data into the Lakehouse
             url: ../data-engineering/load-data-lakehouse.md
-          - text: How to copy data using Copy activity in Data pipeline
+          - text: How to copy data using Copy activity in Pipeline
             url: ../data-factory/copy-data-activity.md
           - text: How to move data into Lakehouse via Copy assistant
             url: ../data-factory/tutorial-move-data-lakehouse-copy-assistant.md

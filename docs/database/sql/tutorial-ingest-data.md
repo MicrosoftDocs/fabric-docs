@@ -16,7 +16,7 @@ ms.custom: sfi-image-nochange
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-You can input data into the SQL database in Fabric using Transact-SQL (T-SQL) statements, and you can also import data into your database using other Microsoft Fabric components, such as the Dataflow Gen2 feature or data pipelines. For development, you can connect with any tool that supports the Tabular Data Stream (TDS) protocol, such as Visual Studio Code or SQL Server Management Studio.
+You can input data into the SQL database in Fabric using Transact-SQL (T-SQL) statements, and you can also import data into your database using other Microsoft Fabric components, such as the Dataflow Gen2 feature or pipelines. For development, you can connect with any tool that supports the Tabular Data Stream (TDS) protocol, such as Visual Studio Code or SQL Server Management Studio.
 
 To begin this section, you can use the SalesLT sample data provided as a starting point.
 
@@ -111,7 +111,7 @@ The following steps use a T-SQL script to create a schema, table, and data for t
 
 ## Insert data using a Microsoft Fabric Pipeline
 
-Another way you can import data into and export data out of your SQL database in Fabric is to use a Microsoft Fabric Data Pipeline. Data pipelines offer an alternative to using commands, instead using a graphical user interface. A data pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allow you to manage extract, transform, and load (ETL) activities instead of managing each one individually.
+Another way you can import data into and export data out of your SQL database in Fabric is to use a pipeline. Pipelines offer an alternative to using commands, instead using a graphical user interface. A pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allow you to manage extract, transform, and load (ETL) activities instead of managing each one individually.
 
 Microsoft Fabric Pipelines can contain a Dataflow. [Dataflow Gen2](../../data-factory/create-first-dataflow-gen2.md) uses a Power Query interface that allows you to perform transformations and other operations on the data. You'll use this interface to bring in data from the *Northwind Traders* company, which Contoso partners with. They're currently using the same suppliers, so you'll import their data and show the names of these suppliers using a view that you'll create in another step in this tutorial.
 

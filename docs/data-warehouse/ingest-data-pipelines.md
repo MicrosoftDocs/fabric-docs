@@ -1,6 +1,6 @@
 ---
-title: Ingest Data into Your Warehouse Using Data Pipelines
-description: Follow steps to ingest data into a Warehouse with data pipelines in Microsoft Fabric.
+title: Ingest Data into Your Warehouse Using Pipelines
+description: Follow steps to ingest data into a Warehouse with pipelines in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
@@ -9,30 +9,26 @@ ms.topic: how-to
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
 ---
-# Ingest data into your Warehouse using data pipelines
+# Ingest data into your Warehouse using pipelines
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-Data pipelines offer an alternative to using the COPY command through a graphical user interface. A data pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allow you to manage extract, transform, and load (ETL) activities instead of managing each one individually.
+Pipelines offer an alternative to using the COPY command through a graphical user interface. A pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allow you to manage extract, transform, and load (ETL) activities instead of managing each one individually.
 
 In this tutorial, you'll create a new pipeline that loads sample data into a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
 > [!NOTE]
 > Some features from Azure Data Factory are not available in [!INCLUDE [product-name](../includes/product-name.md)], but the concepts are interchangeable. You can learn more about Azure Data Factory and Pipelines on [Pipelines and activities in Azure Data Factory and Azure Synapse Analytics](/azure/data-factory/concepts-pipelines-activities). For a quickstart, visit [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md).
 
-## Create a data pipeline
+<a id="create-a-data-pipeline"></a>
 
-1. To create a new pipeline navigate to your workspace, select the **+New** button, and select **Data pipeline**.
-    :::image type="content" source="media/ingest-data-pipelines/new-data-pipeline.png" alt-text="Screenshot of the top section of the user's workspace showing the New Item button, under the Get data section. The Data pipeline button is highlighted." lightbox="media/ingest-data-pipelines/new-data-pipeline.png":::
-1. To create a new pipeline navigate to your workspace, select the **+ New item** button, and select **Data pipeline**.
-    - In your workspace, select **+ New Item** and look for the **Data pipeline** card in the **Get data** section. 
-    - Or, select **Create** in the navigation pane. Look for the **Data pipeline** card in the **Data Factory** section.
+## Create a pipeline
 
+1. To create a new pipeline navigate to your workspace, select the **+ New item** button, and in the **Get data** section, select **Pipeline**.
 1. In the **New pipeline** dialog, provide a name for your new pipeline and select **Create**.
-
 1. You'll land in the pipeline canvas area, where you see options to get started.
 
-    :::image type="content" source="media/ingest-data-pipelines/start-building-data-pipeline.png" alt-text="Screenshot showing the three options to select for starting ingestion." lightbox="media/ingest-data-pipelines/start-building-data-pipeline.png":::
+    :::image type="content" source="media/ingest-data-pipelines/start-building-pipeline.png" alt-text="Screenshot showing the three options to select for starting ingestion." lightbox="media/ingest-data-pipelines/start-building-pipeline.png":::
 
     Pick the **Copy data assistant** option to launch the **Copy assistant**.
 

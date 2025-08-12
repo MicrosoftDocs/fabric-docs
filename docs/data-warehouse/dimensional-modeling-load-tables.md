@@ -32,7 +32,7 @@ For a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] solution, you can use
 
 Specifically, you can:
 
-- Use [data pipelines](../data-factory/data-factory-overview.md#data-pipelines) to build workflows to orchestrate the ETL process. Data pipelines can execute SQL scripts, stored procedures, and more.
+- Use [pipelines](../data-factory/data-factory-overview.md#data-pipelines) to build workflows to orchestrate the ETL process. Pipelines can execute SQL scripts, stored procedures, and more.
 - Use [dataflows](../data-factory/data-factory-overview.md#dataflows) to develop low-code logic to ingest data from hundreds of data sources. Dataflows support combining data from multiple sources, transforming data, and then loading it to a destination, like a dimensional model table. Dataflows are built by using the familiar [Power Query](/power-query/power-query-what-is-power-query) experience that's available today across many Microsoft products, including Microsoft Excel and Power BI Desktop.
 
 > [!NOTE]
@@ -99,8 +99,8 @@ Here are some transformations that your ETL process could perform.
 You can load tables in a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] by using the following [data ingestion options](ingest-data.md#data-ingestion-options).
 
 - **[COPY INTO (T-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true):** This option is useful when the source data comprise Parquet or CSV files stored in an external Azure storage account, like [ADLS Gen2](/azure/storage/blobs/data-lake-storage-introduction) or [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
-- **Data pipelines:** In addition to orchestrating the ETL process, data pipelines can include activities that run T-SQL statements, perform lookups, or copy data from a data source to a destination.
-- **Dataflows:** As an alternative to data pipelines, dataflows provide a code-free experience to transform and clean data.
+- **Pipelines:** In addition to orchestrating the ETL process, pipelines can include activities that run T-SQL statements, perform lookups, or copy data from a data source to a destination.
+- **Dataflows:** As an alternative to pipelines, dataflows provide a code-free experience to transform and clean data.
 - **Cross-warehouse ingestion:** When data is stored in the same workspace, cross-warehouse ingestion allows joining different warehouse or lakehouse tables. It supports T-SQL commands like `INSERT...SELECT`, `SELECT INTO`, and `CREATE TABLE AS SELECT (CTAS)`. These commands are especially useful when you want to transform and load data from staging tables within the same workspace. They're also set-based operations, which is likely to be the most efficient and fastest way to load dimensional model tables.
 
 > [!TIP]
@@ -245,7 +245,7 @@ Lastly, if fact data was inserted by using a special dimension member (like _Unk
 For more information about loading data into a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see:
 
 - [Ingest data into the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](ingest-data.md)
-- [Ingest data into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using data pipelines](ingest-data-pipelines.md)
+- [Ingest data into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using pipelines](ingest-data-pipelines.md)
 - [Ingest data into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using the COPY statement](ingest-data-copy.md)
 - [Ingest data into your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using Transact-SQL](ingest-data-tsql.md)
 - [Tutorial: Set up dbt for Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](tutorial-setup-dbt.md)
