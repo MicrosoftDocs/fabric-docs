@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.custom:
 ms.date: 08/06/2025
 ms.search.form: Read and Write Pandas
+ai-usage: ai-assisted
 ---
 
 # How to read and write data with Pandas in Microsoft Fabric
