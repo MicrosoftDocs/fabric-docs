@@ -27,11 +27,11 @@ Mirroring is designed to be simple and free, but it won't cover every advanced s
 
 ## Data movement decision guide
 
-| **Capability** | **Mirroring** | **Copy job** | **Copy Activity (Pipeline)** |
+| | **Mirroring** | **Copy job** | **Copy Activity (Pipeline)** |
 | --- | --- | --- | --- |
-| Sources | Databases + third-party integration into Open Mirroring | All supported data sources and formats | All supported data sources and formats |
-| Destinations | Tabular format in Fabric OneLake (read-only) | All supported destinations and formats | All supported destinations and formats |
-| Flexibility | Simple setup with fixed behavior | Easy to use + Advanced options | Advanced and fully customizable options |
+| **Sources** | Databases + third-party integration into Open Mirroring | All supported data sources and formats | All supported data sources and formats |
+| **Destinations** | Tabular format in Fabric OneLake (read-only) | All supported destinations and formats | All supported destinations and formats |
+| **Flexibility** | Simple setup with fixed behavior | Easy to use + Advanced options | Advanced and fully customizable options |
 
 | **Capability** | **Mirroring** | **Copy job** | **Copy Activity (Pipeline)** |
 | --- | :---: | :---: | :---: |
