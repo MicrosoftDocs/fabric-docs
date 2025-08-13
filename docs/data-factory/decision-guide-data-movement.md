@@ -28,51 +28,6 @@ Mirroring is designed to be simple and free, but it won't cover every advanced s
 ## Data movement decision guide
 
 | **Capability** | **Mirroring** | **Copy job** | **Copy Activity (Pipeline)** |
-| --- | :---: | :---: | :---: |
-| Sources | Databases + third-party integration into Open Mirroring | All supported data sources and formats | All supported data sources and formats |
-| Destinations | Tabular format in Fabric OneLake (read-only) | All supported destinations and formats | All supported destinations and formats |
-| Flexibility | Simple setup with fixed behavior | Easy to use + Advanced options | Advanced and fully customizable options |
-| Custom scheduling |  | X | X |
-| Table and Column management |  | X | X |
-| Copy behavior: Append, Upsert, Override |  | X | X |
-| Advanced observability + auditing |  | X | X |
-| Copy modes |  |  |  |
-| CDC-based continuous replication | X | X |  |
-| Batch or bulk copy |  | X | X |
-| Native support for Incremental copy (watermark-based) |  | X |  |
-| Copy using user defined query |  |  | X |
-| Use cases |  |  |  |
-| Continuous Replication for analytics and reporting | X | X |  |
-| Metadata driven ELT/ETL for data warehousing |  | X | X |
-| Data consolidation |  | X | X |
-| Data migration / Data backup / Data sharing |  | X | X |
-| Free of cost | X |  |  |
-| Predictable performance |  | X | X |
-
-| **Capability** | **Mirroring** | **Copy job** | **Copy Activity (Pipeline)** |
-| --- | --- | --- | --- |
-| Sources | Databases + third-party integration into Open Mirroring | All supported data sources and formats | All supported data sources and formats |
-| Destinations | Tabular format in Fabric OneLake (read-only) | All supported destinations and formats | All supported destinations and formats |
-| Flexibility | Simple setup with fixed behavior | Easy to use + Advanced options | Advanced and fully customizable options |
-| --- | :---: | :---: | :---: |
-| Custom scheduling |  | X | X |
-| Table and Column management |  | X | X |
-| Copy behavior: Append, Upsert, Override |  | X | X |
-| Advanced observability + auditing |  | X | X |
-| Copy modes |  |  |  |
-| CDC-based continuous replication | X | X |  |
-| Batch or bulk copy |  | X | X |
-| Native support for Incremental copy (watermark-based) |  | X |  |
-| Copy using user defined query |  |  | X |
-| Use cases |  |  |  |
-| Continuous Replication for analytics and reporting | X | X |  |
-| Metadata driven ELT/ETL for data warehousing |  | X | X |
-| Data consolidation |  | X | X |
-| Data migration / Data backup / Data sharing |  | X | X |
-| Free of cost | X |  |  |
-| Predictable performance |  | X | X |
-
-| **Capability** | **Mirroring** | **Copy job** | **Copy Activity (Pipeline)** |
 | --- | --- | --- | --- |
 | Sources | Databases + third-party integration into Open Mirroring | All supported data sources and formats | All supported data sources and formats |
 | Destinations | Tabular format in Fabric OneLake (read-only) | All supported destinations and formats | All supported destinations and formats |
