@@ -11,7 +11,7 @@ ms.custom: dataflows
 
 # Using cloud connections through gateways
 
-When creating a shareable cloud connection through Dataflow Gen2 with CI/CD or the [manage and connections portal](data-source-management.md), the setting with the label ***This connection can be used with on-premise data gateways, and VNet data gateways*** is a security feature that allows you to determine if you shareable cloud connection can be used on a gateway (on-premises or virtual network).
+When creating a shareable cloud connection through Dataflow Gen2 with CI/CD or the [manage and connections portal](data-source-management.md), the setting with the label ***This connection can be used with on-premise data gateways, and VNet data gateways*** is a security feature that allows you to determine if your shareable cloud connection can be used on a gateway (on-premises or virtual network).
 
 When your Dataflow Gen2 with CI/CD uses a Gateway (on-premises or virtual network), shareable cloud connections referenced by your Dataflow Gen2 that don't have this setting enabled results in a query execution error.
 
