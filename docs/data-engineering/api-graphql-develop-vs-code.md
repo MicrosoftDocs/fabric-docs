@@ -1,16 +1,16 @@
 ---
-title: Develop GraphQL applications on VSCode
+title: Develop GraphQL Applications on VSCode
 description: Learn how to develop GraphQL applications in VSCode using local development tools including autocompletion, code generation, and IntelliSense
 ms.reviewer: sngun
 ms.author: sngun
 author: edlima
 ms.topic: how-to
 ms.custom:
-ms.search.form: Develop GraphQL applications on VSCode
+ms.search.form: Develop GraphQL Applications on VSCode
 ms.date: 08/07/2025
 ---
 
-# Develop GraphQL applications on Visual Studio Code
+# Develop GraphQL applications on Microsoft Visual Studio Code
 
 Learn how to build a front-end application with React, Apollo Client, and TypeScript that integrates with a GraphQL API hosted in Microsoft Fabric. This tutorial covers setting up local development tools including autocompletion, code generation, and IntelliSense for an optimal developer experience.
 
