@@ -5,7 +5,7 @@ ms.reviewer: whhender
 ms.author: abnarain
 author: abnarain
 ms.topic: how-to
-ms.date: 6/4/2025
+ms.date: 8/12/2025
 ms.custom: connectors
 ---
 
@@ -58,7 +58,7 @@ In contrast, **when the setting is checked** the shareable cloud connection can 
 
 >[!CAUTION]
 >The *allow connection usage on gateway* setting is present when creating cloud connections through Dataflow Gen2, but not currently enforced. This means that all shareable cloud connections will be used through a gateway if a gateway is present.
->We're aware of this behavior and are working on a fix to only allow the usage of this connection on a gateway when this setting is checked. 
+>We will be introducing enforcement of this security boundary in the coming months with leading communication to provide users time to mitigate potential impact beforehand. 
 
 ## Remove a data source
 
