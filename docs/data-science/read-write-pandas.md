@@ -209,7 +209,7 @@ spark_df.write.format("delta").mode("append").saveAsTable("TABLE_NAME")
 ```
 
 > [!NOTE]
-> Delta tables created in the **Tables** section of your Lakehouse are automatically discoverable without requiring any additional registration or configuration steps, and can be queried using Spark SQL. They also appear in the Lakehouse explorer interface (you may need to refresh the Lakehouse explorer to see recent changes).
+> Delta tables created in the **Tables** section of your Lakehouse are discoverable without any additional registration or configuration steps, and can be queried using Spark SQL. They also appear in the Lakehouse explorer interface (you may need to refresh the Lakehouse explorer to see recent changes).
 
 ## Related content
 
