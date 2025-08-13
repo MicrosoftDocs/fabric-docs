@@ -821,6 +821,8 @@
         href: dataflows-gen2-overview.md
       - name: Data source management
         href: data-source-management.md
+      - name: Using cloud connections through gateways
+        href: dataflow-gen2-cloud-connection-gateway-use.md
       - name: Dataflow Gen2 destinations and managed settings
         href: dataflow-gen2-data-destinations-and-managed-settings.md
       - name: Dataflow Gen2 default destination
