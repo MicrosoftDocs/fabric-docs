@@ -62,7 +62,7 @@ You can create a variable library item from the Fabric home page or from inside 
 
    :::image type="content" source="./media/get-started-variable-libraries/create-from-home.png" alt-text="Screenshot of the Fabric interface that shows the location of variable libraries in the data factory section." lightbox="./media/get-started-variable-libraries/create-from-home.png":::
 
-1. Name the new variable library and then select **Create**. Make sure that the name conforms to the required [naming conventions](./variable-types.md#variable-library-item-name).
+1. Name the new variable library and then select **Create**. Make sure that the name conforms to the required [naming conventions](./variable-types.md#variable-library-name).
 
 ### [Workspace](#tab/workspace)
 
@@ -71,7 +71,7 @@ You can create a variable library item from the Fabric home page or from inside 
 
    :::image type="content" source="./media/get-started-variable-libraries/create-from-workspace.png" alt-text="Screenshot of the Fabric interface for creating a variable library item from an existing workspace." lightbox="./media/get-started-variable-libraries/create-from-workspace.png":::
 
-1. Name the new variable library and then select **Create**. Make sure that the name conforms to the required [naming conventions](./variable-types.md#variable-library-item-name).
+1. Name the new variable library and then select **Create**. Make sure that the name conforms to the required [naming conventions](./variable-types.md#variable-library-name).
 
 ---
 

@@ -219,7 +219,7 @@ In these steps, you create your pipeline and declare your variables:
 
 1. Under **Get data**, select **Data pipeline**.
 
-   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-6.png" alt-text="Screenshot of the tile for creating a new data pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-6.png":::
+   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-6.png" alt-text="Screenshot of the tile for a data pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-6.png":::
 
 1. Enter the name **Pipeline_Deploy**, and then select **Create**.
 

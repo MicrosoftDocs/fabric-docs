@@ -26,7 +26,7 @@ This article provides solutions for common errors and problems that you might en
 
 **Cause**: The **Create** icon is available only if the **Users can create variable libraries** [tenant switch](../../admin/service-admin-portal-microsoft-fabric-tenant-settings.md) is enabled in the admin portal.
 
-**Solution**: If you're an admin, go to the admin portal and enable the **Users can create variable libraries** tenant switch. If you're not an admin, contact your admin. Wait awhile, refresh the browser, clean the cache, and check again. Note that that the change can take up to an hour to take effect.
+**Solution**: If you're an admin, go to the admin portal and enable the **Users can create variable libraries** tenant switch. If you're not an admin, contact your admin. Wait awhile, refresh the browser, clean the cache, and check again. Note that the change can take up to an hour to take effect.
 
 :::image type="content" source="./media/variable-library-troubleshoot/create-variable-library-enabled.png" alt-text="Screenshot of the tenant switch that enables users to create variable libraries.":::
 
@@ -36,7 +36,7 @@ This article provides solutions for common errors and problems that you might en
 
 **Cause**: The name of the variable library isn't valid.
 
-**Solution**: Rename the variable library according to [naming conventions](./variable-types.md#variable-library-item-name).
+**Solution**: Rename the variable library according to [naming conventions](./variable-types.md#variable-library-name).
 
 ### I can't save my variable library
 
@@ -52,7 +52,7 @@ This article provides solutions for common errors and problems that you might en
 **Solution**: Depending on the cause, you can try the following solutions:
 
 - Review the errors on the validation pane and fix them so that no required value is missing or mismatched with the variable type.
-- Ensure that all variables and value sets are named according to the [naming conventions](./variable-types.md#variable-library-item-name).
+- Ensure that all variables and value sets are named according to the [naming conventions](./variable-types.md#variable-library-name).
 - Reduce the size of the variable library item to less than 1 MB by removing unused variables or by splitting the variable list into several variable libraries.
 
 ## Deployment pipeline failure
