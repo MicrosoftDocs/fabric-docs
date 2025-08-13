@@ -61,9 +61,9 @@ If you don't have an event schema set, create one by following instructions from
         :::image type="content" source="./media/create-manage-event-schemas/code-editor-schema-json.png" alt-text="Screenshot that shows the JSON code in the code editor to build a schema." lightbox="./media/create-manage-event-schemas/code-editor-schema-json.png":::                    
 1. Select **Finish** to start creating the schema.
 
-1. You see the editor for the event schema set as shown in the following image:
+1. You see the editor for the event schema set. To add more schemas to the schema set, select **+ New event schema** at the top of the page.
 
-    To add more schemas to the schema set, select **+ New event schema** at the top of the page.
+    :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button-2.png" alt-text="Screenshot that shows the New event schema button for a schema set after you created the schema." lightbox="./media/create-manage-event-schemas/new-event-schema-button-2.png":::    
 
 ## Download an event schema
 
