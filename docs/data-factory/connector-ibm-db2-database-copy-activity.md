@@ -36,7 +36,7 @@ The following properties are supported for IBM Db2 database under the **Source**
 The following properties are **required**:
 
 - **Connection**: Select an IBM Db2 database connection from the connection list. If the connection doesn't exist, then create a new IBM Db2 database connection.
-    - **Additional connection properties**: Specify additional connection properties which will be used in IBM Db2 database connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs. Examples: Package collection. For more information, see this [article](https://www.ibm.com/docs/en/db2-for-zos/12.0.0?topic=plan-specifying-package-collection).
+    - **Additional connection properties**: Specify additional connection properties which will be used in IBM Db2 database connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs, for example, Package collection. For more information, see this [article](https://www.ibm.com/docs/en/db2-for-zos/12.0.0?topic=plan-specifying-package-collection).
 
       :::image type="content" source="./media/connector-ibm-db2-database/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
 
@@ -56,6 +56,14 @@ Under **Advanced**, you can specify the following fields:
 
 - **Additional columns**: Add more data columns to store source files' relative path or static value. Expression is supported for the latter.
 
+### Mapping
+
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+
+### Settings
+
+For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
 ## Table summary
 
 The following tables contain more information about a copy activity in an IBM Db2 database.
@@ -65,7 +73,7 @@ The following tables contain more information about a copy activity in an IBM Db
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the source data store.|< your IBM Db2 database connection >|Yes|connection|
-|**Additional connection properties** |Additional connection properties, provided as a dictionary of key-value pairs. Examples: Package collection. For more information, see this [article](https://www.ibm.com/docs/en/db2-for-zos/12.0.0?topic=plan-specifying-package-collection).|• Name<br>• Value|No |connectionProperties|
+|**Additional connection properties** |Additional connection properties, provided as a dictionary of key-value pairs, for example, Package collection. For more information, see this [article](https://www.ibm.com/docs/en/db2-for-zos/12.0.0?topic=plan-specifying-package-collection).|• Name<br>• Value|No |connectionProperties|
 |**Use query** |The way to read data from IBM Db2 database. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.| • **Table**<br>  • **Query** |No| / |
 | For ***Table*** | | | | |
 |**schema name** |Name of the schema.|< your schema name >| No |schema|
