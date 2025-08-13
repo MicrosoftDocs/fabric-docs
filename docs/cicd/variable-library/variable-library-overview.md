@@ -18,7 +18,7 @@ A Microsoft Fabric variable library is a bucket of variables that other items in
 For example, a variable library can contain variables that hold values for:
 
 * An integer to be used in a wait activity in a pipeline.
-* A lakehouse reference to be the source in *copy data* activity. Each value is used in a different pipeline, based on the release stage of the pipeline.
+* A lakehouse reference to be the source in a *copy data* activity. Each value is used in a different pipeline, based on the release stage of the pipeline.
 * A lakehouse reference to be configured as a notebook default lakehouse. Each value is used in a different pipeline, based on the release stage of the notebook.
 
 Value resolution in the consumer item isn't necessarily tied to its deployment. Rather, each consumer item resolves the value based on its own context.
@@ -51,7 +51,7 @@ Variable libraries provide a centralized way to manage configurations across the
 
 ## Variable library structure
 
-Variable libraries contain one or more variables. Each variable has a name, type, and [default value](#default-value). You can also add a note to each variable to describe its purpose or how to use it.
+Variable libraries contain one or more variables. Each variable has a name, type, and default value. You can also add a note to each variable to describe its purpose or how to use it.
 
 :::image type="content" source="./media/variable-library-overview/define-values.png" alt-text="Screenshot of a variable library with several variables and their core components.":::
 
@@ -79,7 +79,7 @@ The following items support the variable library:
 * [Shortcut for a lakehouse (preview)](../../onelake/assign-variables-to-shortcuts.md)
 * Notebook (preview), through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities) and [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
 
-## Limitations
+## Considerations and limitations
 
 [!INCLUDE [limitations](../includes/variable-library-limitations.md)]
 

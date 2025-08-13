@@ -25,7 +25,6 @@ You can use Microsoft Fabric variable libraries to manage configurations across 
 You can deploy variable libraries and their values in deployment pipelines to manage variable values across stages.
 
 :::image type="content" source="./media/variable-library-cicd/set-variable-library-1.png" alt-text="Screenshot of a deployment pipeline." lightbox="media/variable-library-cicd/set-variable-library-1.png":::
-:::
 
 Remember this important information:
 
@@ -34,7 +33,6 @@ Remember this important information:
 - When you first deploy or commit a variable library, the library's active set has the default value. You can change this value by accessing the newly created variable library in the target stage or repository and changing the active set.
 
   :::image type="content" source="./media/variable-library-cicd/set-variable-library-2.png" alt-text="Screenshot of the command for changing an active value set from the default to an alternative value set in a deployment pipeline." lightbox="media/variable-library-cicd/set-variable-library-2.png":::
-  :::
 
 - Although deployments don't affect the *selected active value set* in each stage, you can update the values themselves in the variable library. The consumer item in its workspace (for example, a pipeline) automatically receives the correct value from the active value set.
 
@@ -68,7 +66,7 @@ The schema for the variable library item is a JSON object that contains four par
 
 The variable library folder contains a subfolder called `valueSets`. This folder contains a JSON file for each value set. This JSON file contains only the variable values for *non-default* values in that value set.
 
-For more information about the value set file, including an example, see the [value set example](/rest/api/fabric/articles/item-management/definitions/variable-library-definition#valueset).
+For more information about the value set file, see the [value set example](/rest/api/fabric/articles/item-management/definitions/variable-library-definition#valueset).
 
 Values for variables not in this file are taken from the default value set.
 

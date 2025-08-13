@@ -25,8 +25,6 @@ Each variable in the variable library has the following properties:
 - Default value set
 - Alternative value sets (optional)
 
-This article covers the name and type properties.
-
 > [!NOTE]
 > The Fabric variable library item is currently in preview.
 
@@ -65,7 +63,7 @@ Value set names have the same restrictions as [variable names](#variable-name).
 Before you can add a value to a variable, you must define the variable type.
 The variables in the variable library can be any of the following types:
 
-- **String**: Any character. Can be null or empty.
+- **String**: Any character. Can be `null` or empty.
 - **Boolean**: `True` or `False`.
 - **DateTime**: Date and time represented as the ISO 8601 standard *yyyy-MM-ddTHH:mm:ss.xxxZ*, where:
   - *yyyy-MM-dd* is the four-digit year, followed by the two-digit month and two-digit day.

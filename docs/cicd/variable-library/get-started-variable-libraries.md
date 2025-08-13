@@ -103,7 +103,7 @@ To add a new variable to the library:
 * To add another alternative value set, select **Add value set**.
 
 > [!NOTE]
-> Selecting **Save** after editing any variable in the variable library triggers an error validation check to make sure all the variable names and values are valid. You must fix any errors before you save the changes.
+> Selecting **Save** after editing any variable in the variable library triggers an error validation check to make sure that all the variable names and values are valid. You must fix any errors before you save the changes.
 
 ### Add a value set
 
@@ -113,7 +113,7 @@ To add another value set that you can use in a different stage:
 
 1. Name the value set. Make sure that it follows the [naming conventions](./variable-types.md#variable-types). Give it a description (optional) of up to 2,048 characters.
 
-1. Select **Set as active** if you want to use this value to be the currently active value set in this workspace.
+1. If you want to use this value to be the currently active value set in this workspace, select **Set as active**.
 
 1. Enter values for all the variables in the variable library.
 

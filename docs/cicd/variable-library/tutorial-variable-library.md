@@ -29,6 +29,10 @@ In this tutorial, you:
 > * Change the active value set in the target stage of the deployment pipeline.
 > * Show that the value of the variable complies with the active value set in each stage.
 
+The following diagram shows the workspace layout for this tutorial.
+
+:::image type="content" source="media/tutorial-variable-library/conceptual-variable-library-1.png" alt-text="Diagram of a workspace layout." lightbox="media/tutorial-variable-library/conceptual-variable-library-1.png":::
+
 > [!NOTE]
 > The Fabric variable library item is currently in preview.
 
@@ -41,8 +45,6 @@ In this tutorial, you:
   * **Users can create variable libraries**
 
   The tenant admin, capacity admin, or workspace admin can enable these switches, depending on your [organization's settings](../../admin/delegate-settings.md).
-
-  :::image type="content" source="media/tutorial-variable-library/conceptual-variable-library-1.png" alt-text="Diagram of a workspace layout." lightbox="media/tutorial-variable-library/conceptual-variable-library-1.png":::
 
 ## Create the Stage LHs workspace, SourceLH_Stage lakehouse with sample data, and Pipeline_Stage pipeline
 
@@ -64,7 +66,7 @@ First, create a workspace and lakehouse to use as your initial staging data:
 
       :::image type="content" source="media/tutorial-variable-library/create-lakehouse-1.png" alt-text="Screenshot of the tile for selecting a lakehouse as a new item." lightbox="media/tutorial-variable-library/create-lakehouse-1.png":::
 
-   1. Enter a name for the lakehouse (**SourceLH_Stage**), and then select **Create**.
+   1. Enter the name **SourceLH_Stage**, and then select **Create**.
 
 1. Create a pipeline:
 
@@ -88,7 +90,7 @@ First, create a workspace and lakehouse to use as your initial staging data:
 
       :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-4.png" alt-text="Screenshot of details for a pipeline destination." lightbox="media/tutorial-variable-library/create-new-pipeline-4.png":::
 
-   1. On the **Review + Save** page, select **Save + Run**.
+   1. On the **Review + save** page, select **Save + Run**.
 
       :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-5.png" alt-text="Screenshot of the page for saving and running a pipeline." lightbox="media/tutorial-variable-library/create-new-pipeline-5.png":::
 
@@ -114,7 +116,7 @@ Next, create the three lakehouses to use with the variable library:
 
    1. Under **Store data**, select **Lakehouse**.
 
-   1. Enter a name for the lakehouse (**SourceLH_Dev**), and then select **Create**.
+   1. Enter the name **SourceLH_Dev**, and then select **Create**.
 
 1. Create the second lakehouse by following the preceding steps. Name it **SourceLH_Test**.
 
@@ -192,7 +194,7 @@ In these steps, you add the alternate value sets to your variable library:
 
 1. Create the second value set:
 
-   1. Select **Add Value set**.
+   1. Select **Add value set**.
 
    1. Enter **Prod VS** for the name, and then select **Create**.
 
@@ -254,13 +256,13 @@ In these steps, you configure the source connection for your pipeline:
 
 1. In the **Source LHs with Variables** workspace, go to **Pipeline_Deploy**.
 
-1. On the canvas, select **Copy Data** so that the focus is on **Copy Data**.
+1. On the canvas, select **Copy data** so that the focus is on **Copy data**.
 
 1. Select **Source**.
 
 1. Configure **SourceLH**:
 
-   1. Under **Source** > **Connection**, select **Use dynamic content**.
+   1. Under **Source** > **Connection**, select **Add dynamic content**.
 
    1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
 
@@ -270,7 +272,7 @@ In these steps, you configure the source connection for your pipeline:
 
 1. Configure **SourceWSID**:
 
-   1. Under **Source** > **Workspace**, select **Use dynamic content**.
+   1. Under **Source** > **Workspace ID**, select **Add dynamic content**.
 
    1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
 
@@ -280,7 +282,7 @@ In these steps, you configure the source connection for your pipeline:
 
 1. Configure **SourceTableName**:
 
-   1. Under **Source** > **Tables**, select **Enter manually**, select **Table name**, and then select **Use dynamic content**.
+   1. Under **Source** > **Table**, select **Enter manually**, select **Table name**, and then select **Add dynamic content**.
 
    1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
 
@@ -298,13 +300,13 @@ In these steps, you configure the destination connection for your pipeline:
 
 1. In the **Source LHs with Variables** workspace, go to **Pipeline_Deploy**.
 
-1. On the canvas, select **Copy Data** so that the focus is on **Copy Data**.
+1. On the canvas, select **Copy data** so that the focus is on **Copy data**.
 
 1. Select **Destination**.
 
 1. Configure **SourceLH**:
 
-   1. Under **Destination** > **Connection**, select **Use dynamic content**.
+   1. Under **Destination** > **Connection**, select **Add dynamic content**.
 
    1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
 
@@ -314,7 +316,7 @@ In these steps, you configure the destination connection for your pipeline:
 
 1. Configure **DestinationWSID**:
 
-   1. Under **Destination** > **Workspace**, select **Use dynamic content**.
+   1. Under **Destination** > **Workspace ID**, select **Add dynamic content**.
 
    1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
 
@@ -324,7 +326,7 @@ In these steps, you configure the destination connection for your pipeline:
 
 1. Configure **DestinationTableName**:
 
-   1. Under **Destination** > **Tables**, select **Enter manually**, select **Table name**, and then select **Use dynamic content**.
+   1. Under **Destination** > **Table**, select **Enter manually**, select **Table name**, and then select **Add dynamic content**.
 
    1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
 
@@ -352,7 +354,7 @@ Now, create your deployment pipeline:
 
 1. For the **Development** stage:
 
-   1. In the dropdown list, select **Source LHs with Variables** for the workspace. Select the **Assign** check mark.
+   1. In the dropdown list, select **Source LHs with Variables** for the workspace. Then select the **Assign** check mark.
 
       :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-4.png" alt-text="Screenshot of selecting the workspace for a new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-4.png":::
 
@@ -380,7 +382,7 @@ Now, create your deployment pipeline:
 
 In these steps, you configure the active set for each stage in your deployment pipeline:
 
-1. Configure the **Test** stage:
+1. Configure the active set for the **Test** stage:
 
    1. On the sidebar, select the **Deployment_Pipeline_Var** pipeline.
 
@@ -400,7 +402,7 @@ In these steps, you configure the active set for each stage in your deployment p
 
    1. Select **Save** > **Agree**.
 
-1. Configure the **Prod** stage:
+1. Configure the active set for the **Prod** stage:
 
    1. On the sidebar, select the **Deployment_Pipeline_Var** pipeline.
 
@@ -482,7 +484,7 @@ To see how the variable library is [represented in Git](./variable-library-cicd.
 
 1. On the [Source control](../git-integration/git-get-started.md#commit-changes-to-git) pane, select **Commit** to push the workspace content to the Git repository.
 
-   The Git repo has a folder for each item in the workspace. The variable library item is represented by a folder called **WS variables.VariableLibrary**. For more information about the contents of this folder, see [Variable library CI/CD](./variable-library-cicd.md).
+   The Git repo has a folder for each item in the workspace. A folder called **WS variables.VariableLibrary** represents the variable library item. For more information about the contents of this folder, see [Variable library CI/CD](./variable-library-cicd.md).
 
 1. Compare the **ProdVS.json** and **TestVS.json** files in the **valueSets** folder. Confirm that the `overrides` variable is set to the different values. You can edit these values directly in the UI or by editing this file in Git and updating it to the workspace.
 
