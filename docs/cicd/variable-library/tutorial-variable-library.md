@@ -52,7 +52,7 @@ First, create a workspace and lakehouse to use as your initial staging data:
 
 1. On the sidebar, select **Workspace**.
 
-1. [Create a workspace](../../fundamentals/create-workspaces.md). Call it **Sources LHs**.
+1. [Create a workspace](../../fundamentals/create-workspaces.md). Call it **Stage LHs**.
 
    :::image type="content" source="media/tutorial-variable-library/new-workspace-1.png" alt-text="Screenshot of the button for creating a new workspace." lightbox="media/tutorial-variable-library/new-workspace-1.png":::
 
@@ -207,7 +207,7 @@ In these steps, you add the alternate value sets to your variable library:
       |`SourceTable_Name`|String|`TestCopiedData`|
       |`DestinationTable_Name`|String|`ProdCopiedData`|
 
-      :::image type="content" source="media/tutorial-variable-library/create-variable-library-5.png" alt-text="Screenshot the finished alternate values in a variable library." lightbox="media/tutorial-variable-library/create-variable-library-5.png":::
+      :::image type="content" source="media/tutorial-variable-library/create-variable-library-5.png" alt-text="Screenshot of the finished alternate values in a variable library." lightbox="media/tutorial-variable-library/create-variable-library-5.png":::
 
    1. Select **Save** > **Agree**.
 
@@ -252,7 +252,7 @@ In these steps, you create your pipeline and declare your variables:
 
 In these steps, you configure the source connection for your pipeline:
 
-1. In the **Source LHs with Variables** workspace, go to **Pipeline_Depoy**.
+1. In the **Source LHs with Variables** workspace, go to **Pipeline_Deploy**.
 
 1. On the canvas, select **Copy Data** so that the focus is on **Copy Data**.
 
@@ -262,7 +262,7 @@ In these steps, you configure the source connection for your pipeline:
 
    1. Under **Source** > **Connection**, select **Use dynamic content**.
 
-   1. Select the ellipsis (**...**), and then select **Library variables preview**.
+   1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
 
    1. Select **SourceLH**. It populates the box with `@pipeline().libraryVariables.SourceLH`. Select **OK**.
 
@@ -272,31 +272,31 @@ In these steps, you configure the source connection for your pipeline:
 
    1. Under **Source** > **Workspace**, select **Use dynamic content**.
 
-   1. Select the ellipsis (**...**), and then select **Library variables preview**.
+   1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
 
    1. Select **SourceWSID**. It populates the box with `@pipeline().libraryVariables.SourceWSID`. Select **OK**.
 
-      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-14.png" alt-text="Screenshot of dynamic content for workspace source." lightbox="media/tutorial-variable-library/create-new-pipeline-14.png":::
+      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-14.png" alt-text="Screenshot of the pane for adding dynamic content for a workspace source." lightbox="media/tutorial-variable-library/create-new-pipeline-14.png":::
 
 1. Configure **SourceTableName**:
 
    1. Under **Source** > **Tables**, select **Enter manually**, select **Table name**, and then select **Use dynamic content**.
 
-   1. Select the ellipsis (**...**), and then select **Library variables preview**.
+   1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
 
    1. Select **SourceTableName**. It populates the box with `@pipeline().libraryVariables.SourceTableName`. Select **OK**.
 
-      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-15.png" alt-text="Screenshot of dynamic content for table name." lightbox="media/tutorial-variable-library/create-new-pipeline-15.png":::
+      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-15.png" alt-text="Screenshot of the pane for adding dynamic content for a table name." lightbox="media/tutorial-variable-library/create-new-pipeline-15.png":::
 
 1. Now that the source connection is set up, you can test it. Select **Preview data**, and then select **OK** on the flyout. After the data is populated, you can close the data preview.
 
-   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-16.png" alt-text="Screenshot of preview data for the source connection." lightbox="media/tutorial-variable-library/create-new-pipeline-16.png":::
+   :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-16.png" alt-text="Screenshot of the data preview for a source connection." lightbox="media/tutorial-variable-library/create-new-pipeline-16.png":::
 
 ## Configure the destination connection for the Pipeline_Deploy pipeline
 
 In these steps, you configure the destination connection for your pipeline:
 
-1. In the **Source LHs with Variables** workspace, go to **Pipeline_Depoy**.
+1. In the **Source LHs with Variables** workspace, go to **Pipeline_Deploy**.
 
 1. On the canvas, select **Copy Data** so that the focus is on **Copy Data**.
 
@@ -306,35 +306,35 @@ In these steps, you configure the destination connection for your pipeline:
 
    1. Under **Destination** > **Connection**, select **Use dynamic content**.
 
-   1. Select the ellipsis (**...**), and then select **Library variables preview**.
+   1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
 
    1. Select **SourceLH**. It populates the box with `@pipeline().libraryVariables.DestinationLH`. Select **OK**.
 
-      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-17.png" alt-text="Screenshot of dynamic content for connection destination." lightbox="media/tutorial-variable-library/create-new-pipeline-17.png":::
+      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-17.png" alt-text="Screenshot of the pane for adding dynamic content for a connection destination." lightbox="media/tutorial-variable-library/create-new-pipeline-17.png":::
 
 1. Configure **DestinationWSID**:
 
    1. Under **Destination** > **Workspace**, select **Use dynamic content**.
 
-   1. Select the ellipsis (**...**), and then select **Library variables preview**.
+   1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
 
-   1. Select **DestinationWSID**. It will populate the box with `@pipeline().libraryVariables.DestinationWSID`. Select **Ok**.
+   1. Select **DestinationWSID**. It populates the box with `@pipeline().libraryVariables.DestinationWSID`. Select **OK**.
 
-      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-18.png" alt-text="Screenshot of dynamic content for workspace destination." lightbox="media/tutorial-variable-library/create-new-pipeline-18.png":::
+      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-18.png" alt-text="Screenshot of the pane for adding dynamic content for a workspace destination." lightbox="media/tutorial-variable-library/create-new-pipeline-18.png":::
 
 1. Configure **DestinationTableName**:
 
    1. Under **Destination** > **Tables**, select **Enter manually**, select **Table name**, and then select **Use dynamic content**.
 
-   1. Select the ellipsis (**...**), and then select **Library variables preview**.
+   1. Select the ellipsis (**...**), and then select **Library variables (preview)**.
 
    1. Select **DestinationTableName**. It populates the box with `@pipeline().libraryVariables.DestinationTableName`. Select **OK**.
 
-      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-19.png" alt-text="Screenshot of dynamic content for destination table name." lightbox="media/tutorial-variable-library/create-new-pipeline-19.png":::
+      :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-19.png" alt-text="Screenshot of the pane for adding dynamic content for a destination table name." lightbox="media/tutorial-variable-library/create-new-pipeline-19.png":::
 
 1. Now that the destination connection is set up, save the pipeline and select **Run**. Confirm that it successfully runs.
 
-    :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-20.png" alt-text="Screenshot of pipeline run." lightbox="media/tutorial-variable-library/create-new-pipeline-20.png":::
+    :::image type="content" source="media/tutorial-variable-library/create-new-pipeline-20.png" alt-text="Screenshot of a pipeline run." lightbox="media/tutorial-variable-library/create-new-pipeline-20.png":::
 
 ## Create the deployment pipeline
 
@@ -344,21 +344,21 @@ Now, create your deployment pipeline:
 
 1. Name the pipeline **Deployment_Pipeline_Var**, and then select **Next**.
 
-   :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-2.png" alt-text="Screenshot of creating a naming the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-2.png":::
+   :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-2.png" alt-text="Screenshot of the pane for naming a new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-2.png":::
 
-1. In the deployment pipeline, select **Create and Continue**.
+1. In the deployment pipeline, select **Create and continue**.
 
-   :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-3.png" alt-text="Screenshot of the deployment pipeline - create and continue." lightbox="media/tutorial-variable-library/create-deployment-pipeline-3.png":::
+   :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-3.png" alt-text="Screenshot that shows the button for creating a deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-3.png":::
 
 1. For the **Development** stage:
 
    1. In the dropdown list, select **Source LHs with Variables** for the workspace. Select the **Assign** check mark.
 
-      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-4.png" alt-text="Screenshot of selecting the workspace for the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-4.png":::
+      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-4.png" alt-text="Screenshot of selecting the workspace for a new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-4.png":::
 
    1. Select **Continue**. The stage should now be populated with the items from the workspace.
 
-      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-5.png" alt-text="Screenshot of development part of the deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-5.png":::
+      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-5.png" alt-text="Screenshot of the development part of a deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-5.png":::
 
 1. For the **Test** stage:
 
@@ -366,7 +366,7 @@ Now, create your deployment pipeline:
 
    1. Select the **Deploy** button. Select **Deploy** again. The **Test** stage should now be populated.
 
-      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-6.png" alt-text="Screenshot of test part of the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-6.png":::
+      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-6.png" alt-text="Screenshot of the test part of a new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-6.png":::
 
 1. For the **Production** stage:
 
@@ -374,7 +374,7 @@ Now, create your deployment pipeline:
 
    1. Select the **Deploy** button. Select **Deploy** again. The **Production** stage should now be populated.
 
-      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-7.png" alt-text="Screenshot of production part of the new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-7.png":::
+      :::image type="content" source="media/tutorial-variable-library/create-deployment-pipeline-7.png" alt-text="Screenshot of the production part of a new deployment pipeline." lightbox="media/tutorial-variable-library/create-deployment-pipeline-7.png":::
 
 ## Set the variable library's active set for each stage
 
@@ -382,19 +382,23 @@ In these steps, you configure the active set for each stage in your deployment p
 
 1. Configure the **Test** stage:
 
-   1. In the **Deployment_Pipeline_Var** pipeline, select the **Test** stage.
+   1. On the sidebar, select the **Deployment_Pipeline_Var** pipeline.
 
-      :::image type="content" source="media/tutorial-variable-library/set-active-set-1.png" alt-text="Screenshot of test stage." lightbox="media/tutorial-variable-library/set-active-set-1.png":::
+   1. Select the **Test** stage.
+
+      :::image type="content" source="media/tutorial-variable-library/set-active-set-1.png" alt-text="Screenshot of the test stage." lightbox="media/tutorial-variable-library/set-active-set-1.png":::
 
    1. Select **WS Variables**.
 
-      :::image type="content" source="media/tutorial-variable-library/set-active-set-2.png" alt-text="Screenshot of WS variables." lightbox="media/tutorial-variable-library/set-active-set-2.png":::
-
    1. Select the ellipsis (**...**), and then select **Set as active**. Select the **Set as Active** button.
 
-      :::image type="content" source="media/tutorial-variable-library/set-active-set-3.png" alt-text="Screenshot of setting active set in deployment pipeline." lightbox="media/tutorial-variable-library/set-active-set-3.png":::
+      :::image type="content" source="media/tutorial-variable-library/set-active-set-2.png" alt-text="Screenshot of a variable library, with selections for setting the test stage as active." lightbox="media/tutorial-variable-library/set-active-set-2.png":::
 
-   1. Select **Save**, and then select **Agree**.
+      The active set is now configured.
+
+      :::image type="content" source="media/tutorial-variable-library/set-active-set-3.png" alt-text="Screenshot of a configured active set in a deployment pipeline." lightbox="media/tutorial-variable-library/set-active-set-3.png":::
+
+   1. Select **Save** > **Agree**.
 
 1. Configure the **Prod** stage:
 
@@ -406,13 +410,13 @@ In these steps, you configure the active set for each stage in your deployment p
 
    1. Select the ellipsis (**...**), and then select **Set as active**. Select the **Set as Active** button.
 
-   1. Select **Save**, and then select **Agree**.
+   1. Select **Save** > **Agree**.
 
 ## Verify and test the variable library
 
 Now that you set up the variable library and configured all of the active sets for each stage of the deployment pipeline, you can verify them:
 
-1. Check the the **SourceLHs_Dev** lakehouse:
+1. Check the **SourceLHs_Dev** lakehouse:
 
    1. In the **Source LHs with Variables** workspace, select the **SourceLHs_Dev** lakehouse.
 
@@ -422,7 +426,7 @@ Now that you set up the variable library and configured all of the active sets f
 
    1. Confirm that the **DevCopiedData** table appears.
 
-      :::image type="content" source="media/tutorial-variable-library/verify-1.png" alt-text="Screenshot of DevCopiedData table." lightbox="media/tutorial-variable-library/verify-1.png":::
+      :::image type="content" source="media/tutorial-variable-library/verify-1.png" alt-text="Screenshot of the area for tables in the explorer." lightbox="media/tutorial-variable-library/verify-1.png":::
 
 1. Switch to the **SourceLHs_Test** lakehouse and repeat the preceding steps.
 
@@ -450,7 +454,7 @@ Now that you set up the variable library and configured all of the active sets f
 
    1. Confirm that the **TestCopiedData** table appears.
 
-      :::image type="content" source="media/tutorial-variable-library/verify-2.png" alt-text="Screenshot of TestCopiedData table." lightbox="media/tutorial-variable-library/verify-2.png":::
+      :::image type="content" source="media/tutorial-variable-library/verify-2.png" alt-text="Screenshot of the area for tables and a data preview in the explorer." lightbox="media/tutorial-variable-library/verify-2.png":::
 
 1. Check the **Production** stage of the **Deployment_Pipeline_Var** pipeline:
 
@@ -474,9 +478,7 @@ Now that you set up the variable library and configured all of the active sets f
 
 To see how the variable library is [represented in Git](./variable-library-cicd.md), or to edit the variables from a Git repository:
 
-1. [Connect the workspace to a Git repository](../git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo).
-
-1. In the workspace, select **Source control** and [connect](../git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo) the workspace to a Git repository.
+1. In the workspace, select **Source control** and [connect the workspace to a Git repository](../git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo).
 
 1. On the [Source control](../git-integration/git-get-started.md#commit-changes-to-git) pane, select **Commit** to push the workspace content to the Git repository.
 
