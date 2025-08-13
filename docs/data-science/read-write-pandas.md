@@ -147,6 +147,7 @@ Delta tables are the default table format in Microsoft Fabric and are stored in 
 > [!NOTE]
 > To follow the steps in this section, you need a Delta table in your Lakehouse. Follow the steps in [Download dataset and upload to lakehouse](tutorial-data-science-ingest-data.md#download-dataset-and-upload-to-lakehouse) to add the **churn.csv** file to your Lakehouse, then create a test table from the **churn.csv** file by running this code in your notebook:
 
+### Create a test Delta table
 
 ```python
 import pandas as pd
