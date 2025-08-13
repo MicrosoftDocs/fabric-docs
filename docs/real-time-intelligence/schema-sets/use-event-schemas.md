@@ -40,7 +40,7 @@ Let's see how to associate schemas with a custom endpoint source in an eventstre
 
 1. First, when adding a custom endpoint source to an eventstream, enable schema association.
 
-    :::image type="content" source="./media/use-event-schemas/enable-schema-custom-endpoint.png" alt-text="Screenshot of Custom endpoint source with an option to associated schemas." lightbox="./media/use-event-schemas/enable-schema-custom-endpoint.png":::
+    :::image type="content" source="./media/use-event-schemas/enable-schema-custom-endpoint.png" alt-text="Screenshot of Custom endpoint source with an option to associate schemas." lightbox="./media/use-event-schemas/enable-schema-custom-endpoint.png":::
 
 1. To associate with a new schema or an existing schema from a schema registry, select **Associate event schema** on the ribbon.
 
@@ -124,6 +124,4 @@ At this stage, schema-validated events can only be sent to:
 - Eventhouse (push mode)
 - Custom app or endpoint
 - Another stream (derived stream)
-
-## Related content
 

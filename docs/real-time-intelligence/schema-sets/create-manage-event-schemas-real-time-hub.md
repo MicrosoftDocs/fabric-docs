@@ -87,14 +87,14 @@ Now, let's see how to add an event schema using the **+ New event schema** butto
 
 1. Now, in the right pane, follow these steps:
 
-    1. **To use an existing schema set**:
+    - **To use an existing schema set**:
 
         1. Select the Fabric workspace that has the schema set.
         1. Select the schema set where you want to save the schema.
 
             :::image type="content" source="./media/create-manage-event-schemas-real-time-hub/use-existing-schema-set.png" alt-text="Screenshot that shows the right pane where you select an existing schema set." lightbox="./media/create-manage-event-schemas-real-time-hub/use-existing-schema-set.png":::
 
-    1. **To create a new schema set**:
+    - **To create a new schema set**:
 
         1. Select the Fabric workspace where you want to create the schema set.
         1. In the drop-down list for **Event schema set**, select **Create**.

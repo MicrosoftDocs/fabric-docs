@@ -77,6 +77,6 @@ See the following articles:
 
 **For Schema sets users:**
 
-1. [Create a schema set](create-manage-event-schema-sets.md)
-1. [Create schemas in a schema set](create-manage-event-schemas.md)
+- [Create a schema set](create-manage-event-schema-sets.md)
+- [Create schemas in a schema set](create-manage-event-schemas.md)
 

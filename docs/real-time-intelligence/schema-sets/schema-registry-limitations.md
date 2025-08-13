@@ -21,7 +21,7 @@ ms.search.form: Schema Registry
 
 # Schema Registry - known limitations
 
-As Schema Registry in Fabric Real-Time Intelligence is currently in public preview. This article provides some important limitations to be aware of.
+Schema Registry in Fabric Real-Time Intelligence is currently in preview. This article provides some important limitations to be aware of.
 
 ## Limitations
 

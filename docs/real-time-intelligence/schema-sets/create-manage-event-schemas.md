@@ -63,11 +63,7 @@ If you don't have an event schema set, create one by following instructions from
 
 1. You see the editor for the event schema set as shown in the following image:
 
-    :::image type="content" source="./media/create-manage-event-schemas/editor.png" alt-text="Screenshot that shows the editor for the event schema." lightbox="./media/create-manage-event-schemas/editor.png":::
-
     To add more schemas to the schema set, select **+ New event schema** at the top of the page.
-
-    :::image type="content" source="./media/create-manage-event-schemas/new-event-schema-button-2.png" alt-text="Screenshot that shows the New event schema button after the first schema is created." lightbox="./media/create-manage-event-schemas/new-event-schema-button-2.png":::
 
 ## Download an event schema
 
@@ -126,7 +122,7 @@ To find an event schema, you can enter text in the **Search** box in the **Event
 You can modify schemas after registering them with Fabric Real-Time intelligence.
 
 > [!NOTE]
-> Fabric doesn't perform compatibility checks when you update a schema, which means any changes you make could be break existing pipelines. For example, removing required fields or changing field types might cause errors in pipelines or downstream services expecting the original structure.
+> Fabric doesn't perform compatibility checks when you update a schema, which means any changes you make could break existing pipelines. For example, removing required fields or changing field types might cause errors in pipelines or downstream services expecting the original structure.
 >
 > Because of this behavior, we recommend that you add a new schema where needed, instead of modifying an existing one. You can then update your pipelines and configurations to use the new schema, test everything, and retire the old version once you confirm that everything works correctly.
 
