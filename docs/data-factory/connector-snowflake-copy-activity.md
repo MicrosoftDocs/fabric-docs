@@ -38,7 +38,7 @@ The following properties are supported for Snowflake under the **Source** tab of
 The following properties are **required**:
 
 - **Connection**:  Select a Snowflake connection from the connection list. If the connection doesn't exist, then create a new Snowflake connection.
-    - **Additional connection properties**: Specify additional connection properties which will be used in Snowflake connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs. Examples: Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).
+    - **Additional connection properties**: Specify additional connection properties which will be used in Snowflake connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs, for example, Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).
     
       :::image type="content" source="./media/connector-snowflake/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
 
@@ -108,7 +108,7 @@ The following properties are supported for Snowflake under the **Destination** t
 The following properties are **required**:
 
 - **Connection**:  Select a Snowflake connection from the connection list. If the connection doesn't exist, then create a new Snowflake connection.
-    - **Additional connection properties**: Specify additional connection properties which will be used in Snowflake connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs. Examples: Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).
+    - **Additional connection properties**: Specify additional connection properties which will be used in Snowflake connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs, for example, Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).
 
       :::image type="content" source="./media/connector-snowflake/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for destination.":::
 
@@ -193,7 +193,7 @@ The following tables contain more information about the copy activity in Snowfla
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
-|**Additional connection properties** |Additional connection properties, provided as a dictionary of key-value pairs. Examples: Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).|• Name<br>• Value|No |connectionProperties|
+|**Additional connection properties** |Additional connection properties, provided as a dictionary of key-value pairs, for example, Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).|• Name<br>• Value|No |connectionProperties|
 |**Database** |Your database that you use as source.|< your database > |Yes|database|
 |**Use query** |The way to read data from Snowflake.|• Table <br> • Query |No |• table<br>• query|
 |**Table** | The name of the table to read data. |< name of your source table>|Yes |schema <br> table|
@@ -210,7 +210,7 @@ The following tables contain more information about the copy activity in Snowfla
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the destination data store.|< your connection > |Yes|connection|
-|**Additional connection properties** |Additional connection properties, provided as a dictionary of key-value pairs. Examples: Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).|• Name<br>• Value|No |connectionProperties|
+|**Additional connection properties** |Additional connection properties, provided as a dictionary of key-value pairs, for example, Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).|• Name<br>• Value|No |connectionProperties|
 |**Database** |Your database that you use as destination.|< your database> |Yes|/|
 |**Table** | Your destination data table. |< name of your destination table>|Yes |• schema <br> • table|
 |**Pre-copy script**|A SQL query for the Copy activity to run before writing data into Snowflake in each run. Use this property to clean up the preloaded data.	|< your pre-copy script>|NO|preCopyScript|
