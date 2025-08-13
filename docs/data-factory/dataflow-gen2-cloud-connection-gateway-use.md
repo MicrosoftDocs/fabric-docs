@@ -16,7 +16,7 @@ When creating a shareable cloud connection through Dataflow Gen2 with CI/CD or t
 When your Dataflow Gen2 with CI/CD uses a Gateway (on-premises or virtual network), shareable cloud connections referenced by your Dataflow Gen2 that don't have this setting enabled results in a query execution error.
 
 >[!IMPORTANT]
->The *allow connection usage on gateway* setting is present when creating cloud connections through Dataflow Gen2, but not currently enforced. This means that all shareable cloud connections will be used through a gateway if a gateway is present. The product group is aware of this behavior and is working on a fix to only allow the usage of this connection on a gateway when this setting is checked.
+>The *allow connection usage on gateway* setting is present when creating cloud connections through Dataflow Gen2, but not currently enforced. This means that all shareable cloud connections will be used through a gateway if a gateway is present. The product group is aware of this behavior and will be introducing enforcement of this security boundary in the coming months with leading communication to provide users time to mitigate potential impact beforehand.
 >Read more about connections from the article on [data source management](data-source-management.md).
 
 ## Frequently asked questions
@@ -45,4 +45,5 @@ Using the Fabric REST API, you can:
 * Extract the connection information from the `queryMetadata.json` and confirm that a gateway is referenced in the file
 * Compare the connection information from the Dataflow against the list of shareable cloud connections from the [List connections endpoint of the Fabric REST API](/rest/api/fabric/core/connections/list-connections) where the `allowConnectionUsageInGateway` setting isn't Enabled
 
-If you determine that your Dataflow Gen2 with CI/CD uses a gateway and references a connection with the setting disabled, you can take action either to remove the gateway from your dataflow, modify the connection so it can be used in gateways or replace the connection in your dataflow altogether with a gateway connection.
+If you determine that your Dataflow Gen2 with CI/CD uses gateway connection or gateway-allowed cloud connection by "unlinking" the connection in question via the manage connections dialog within the dataflow, modify the connection so it can be used in gateways or replace the connection in your dataflow altogether with a gateway connection.
+
