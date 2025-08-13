@@ -36,7 +36,7 @@ This security feature only applies to Dataflows Gen2 with CI/CD support, which c
 
 This enforcement and security feature only applies to Dataflows Gen2 with CI/CD that use a Gateway (on-premises or virtual network) and have at least one shareable cloud connection.
 
-Using the Fabric portal, you can open a Dataflow to check if it uses a Gateway by selecting the *Options* button from the Home tab of the ribbon. Once the *Options* dialog opens, you can select the section of *Data Load* inside the Dataflow category. In this option, you can see what gateway is selecting. If no gateway is selected, it appears as (none).
+Using the Fabric portal, you can open a Dataflow to check if it uses a Gateway by selecting the *Options* button from the Home tab of the ribbon. Once the *Options* dialog opens, you can select the *Data Load* section inside the Dataflow category. In this section, you can see what gateway is selecting. If no gateway is selected, it appears as (none).
 
 ![Screenshot of the options dialog showing how a gateway with the name LocalGateway4 appears have been selected](media/dataflow-gen2-cloud-connection-gateway-use/options-dialog-gateway.png)
 
