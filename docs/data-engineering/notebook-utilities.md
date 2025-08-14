@@ -583,9 +583,9 @@ notebookutils.credentials.getToken('audience Key')
 
 **Considerations:**
 
-- Token scopes with 'pbi' as audience are may change over time. The scopes listed below are currently supported.
+- Token scopes with 'pbi' as audience may change over time. The scopes listed below are currently supported.
 
-- When calling *notebookutils.credentials.getToken("pbi")*, the returned token has limited scope if the notebook is running under a service principal. The token will not have the full Fabric service scope. If the notebook is running under the user identity, the token still has the full Fabric service scope, but this may change with security improvements. To ensure that the token has the full Fabric service scope, use MSAL authentication instead of the *notebookutils.credentials.getToken* API. For more information, see [Authenticate with Microsoft Entra ID](/entra/msal/python/).
+- When you call *notebookutils.credentials.getToken("pbi")*, the returned token has limited scope if the notebook is running under a service principal. The token will not have the full Fabric service scope. If the notebook is running under the user identity, the token still has the full Fabric service scope, but this may change with security improvements. To ensure that the token has the full Fabric service scope, use MSAL authentication instead of the *notebookutils.credentials.getToken* API. For more information, see [Authenticate with Microsoft Entra ID](/entra/msal/python/).
 
 - The Following are the list of scopes that the token will have when calling *notebookutils.credentials.getToken* with the audience key *pbi* under the service principal identity:
   - Lakehouse.ReadWrite.All
