@@ -769,6 +769,8 @@
           href: expression-language.md
       - name: Data pipeline runs
         href: pipeline-runs.md
+      - name: Schedule pipeline
+        href: schedule-pipeline.md
       - name: Storage event triggers
         href: pipeline-storage-event-triggers.md
       - name: Variable library integration (Preview)
