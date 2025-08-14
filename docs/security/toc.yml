@@ -41,6 +41,16 @@ items:
         href: security-workspace-level-private-links-support.md
       - name: Set up and use workspace-level private links
         href: security-workspace-level-private-links-set-up.md
+      - name: Cross-workspace communication
+        items:
+        - name: About cross-workspace communication
+          href: security-cross-workspace-communication.md
+        - name: Examples using managed private endpoints
+          items:
+            - name: Access a lakehouse from Notebooks
+              href: security-workspace-private-links-example-notebook.md
+            - name: Access a notebook from a pipeline
+              href: security-workspace-private-links-example-pipeline.md
     - name: Service tags
       href: security-service-tags.md
     - name: Microsoft Entra Conditional Access
