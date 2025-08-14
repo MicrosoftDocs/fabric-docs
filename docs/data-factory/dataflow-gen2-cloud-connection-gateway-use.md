@@ -5,7 +5,7 @@ author: ptyx507x
 ms.author: miescobar
 ms.reviewer: whhender
 ms.topic: conceptual
-ms.date: 08/11/2025
+ms.date: 08/13/2025
 ms.custom: dataflows
 ---
 
@@ -45,8 +45,8 @@ Using the Fabric REST API, you can:
 * Extract the connection information from the `queryMetadata.json` and confirm that a gateway is referenced in the file
 * Compare the connection information from the Dataflow against the list of shareable cloud connections from the [List connections endpoint of the Fabric REST API](/rest/api/fabric/core/connections/list-connections) where the `allowConnectionUsageInGateway` setting isn't Enabled
 
-If you determine that your Dataflow Gen2 with CI/CD uses gateway and a gateway-allowed cloud connection, you can take either of the following steps: 
-* **Replace the connection in your dataflow with a gateway connection** - this requires no other changes to the dataflow, but does require the user to have access to the data source credentials.
-* **Modify the connection so that it can be used in gateways** - this requires the user to be an owner of the connection, and they should be aware of the security considerations of enabling this feature.
-* **Remove the gateway from your dataflow** - this only works if the dataflow doesn't use any other connections on that gateway.
+If you determine that your Dataflow Gen2 with CI/CD uses gateway and a gateway-disallowed cloud connection, you can take either of the following steps: 
+* **Replace the connection in your dataflow with a gateway connection**: this requires no other changes to the dataflow, but does require you to have access to the data source credentials.
+* **Modify the connection so that it can be used in gateways**: this requires you to be an owner of the connection and be aware of the security considerations of enabling this feature.
+* **Remove the gateway from your dataflow**: this only works if the dataflow doesn't use any other connections on that gateway.
 
