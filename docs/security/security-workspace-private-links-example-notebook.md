@@ -16,7 +16,7 @@ ms.date: 08/13/2025
 
 A managed private endpoint can be used to establish [cross-workspace communication](security-cross-workspace-communication.md) between an open workspace and a workspace that [restricts inbound public access](security-workspace-level-private-links-set-up.md#step-8-deny-public-access-to-the-workspace). For example, if you want to access a lakehouse in an inbound restricted workspace from a notebook in an open workspace, you can set up a managed private endpoint (MPE) to establish a secure connection between the two workspaces.
 
-:::image type="content" source="./media/security-workspace-private-links-example-notebook/access-via-managed-private-endpoint.png" alt-text="Diagram illustrating how managed private endpoints can establish connection to a workspace set to deny public access." border="false":::  
+:::image type="content" source="media/security-workspace-private-links-example-notebook/access-via-managed-private-endpoint.png" alt-text="Diagram illustrating how managed private endpoints can establish connection to a workspace set to deny public access." lightbox="media/security-workspace-private-links-example-notebook/access-via-managed-private-endpoint.png" border="false":::
 
 In this diagram, the open workspace (Workspace 1) has a managed private endpoint that connects to the restricted workspace (Workspace 2). This setup allows the notebook in Workspace 1 to securely access the lakehouse and read Delta tables in Workspace 2 without exposing them to public access.
 
@@ -54,11 +54,11 @@ For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.mic
 
 The `targetPrivateLinkResourceId` is the resource ID of the private link in the restricted workspace. To create a managed private endpoint to the target workspace, you need the private link service Resource ID of the target workspace. 
 
-:::image type="content" source="./media/security-workspace-private-links-example-notebook/create-managed-private-endpoint-api.png" alt-text="Image showing the create MPE API":::
+:::image type="content" source="media/security-workspace-private-links-example-notebook/create-managed-private-endpoint-api.png" alt-text="Image showing the create MPE API" lightbox="media/security-workspace-private-links-example-notebook/create-managed-private-endpoint-api.png":::
 
 You can find this Resource ID in Azure by viewing the Resource JSON for the workspace. Ensure that the workspace ID in the JSON matches the intended target workspace.
 
-:::image type="content" source="./media/security-cross-workspace-communication/resource-json.png" alt-text="Screenshot showing how to get the private link resource ID in the resource json file." :::
+:::image type="content" source="media/security-workspace-private-links-example-notebook/resource-json.png" alt-text="Screenshot showing how to get the private link resource ID in the resource json file." lightbox="media/security-workspace-private-links-example-notebook/resource-json.png":::
 
 The private link service owner for Workspace 2 needs to approve the managed private endpoint request in **Azure private link center** > **Pending connections**. 
 
@@ -73,7 +73,7 @@ Create a lakehouse in the target (restricted) workspace by using the following C
 
    For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb/lakehouses`
 
-   :::image type="content" source="./media/security-workspace-private-links-example-notebook/create-in-target-workspace.png" alt-text="Image showing creating a lakehouse in the target workspace":::
+   :::image type="content" source="media/security-workspace-private-links-example-notebook/create-in-target-workspace.png" alt-text="Image showing creating a lakehouse in the target workspace" lightbox="media/security-workspace-private-links-example-notebook/create-in-target-workspace.png":::
 
 ## Step 4: Upload a Delta Table to the lakehouse
 
@@ -81,7 +81,7 @@ Use Azure Storage Explorer to upload your Delta Table folder into the restricted
 
 1. Go to Azure Storage Explorer, select the connection icon in the left menu, and then select **ADLS Gen2 container or directory**.
 
-      :::image type="content" source="./media/security-workspace-private-links-example-notebook/select-resource.png" alt-text="Image showing selecting the resource.":::
+      :::image type="content" source="media/security-workspace-private-links-example-notebook/select-resource.png" alt-text="Image showing selecting the resource." lightbox="media/security-workspace-private-links-example-notebook/select-resource.png":::
 
 1. Sign in using OAuth. 
 
@@ -93,13 +93,13 @@ Use Azure Storage Explorer to upload your Delta Table folder into the restricted
 
    For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb/bbbbbbbb-1111-2222-3333-cccccccccccc`
 
-   :::image type="content" source="./media/security-workspace-private-links-example-notebook/enter-connection-info.png" alt-text="Image showing entering the connection info.":::
+   :::image type="content" source="media/security-workspace-private-links-example-notebook/enter-connection-info.png" alt-text="Image showing entering the connection info." lightbox="media/security-workspace-private-links-example-notebook/enter-connection-info.png":::
 
 1. Select **Connect**. The storage should now be displayed in the explorer view. 
 
 1. Under the **Tables** folder, upload the Delta table you want to use. This example uses the *customers* table.
 
-   :::image type="content" source="./media/security-workspace-private-links-example-notebook/upload-folder.png" alt-text="Image showing the upload folder option.":::
+   :::image type="content" source="media/security-workspace-private-links-example-notebook/upload-folder.png" alt-text="Image showing the upload folder option." lightbox="media/security-workspace-private-links-example-notebook/upload-folder.png":::
 
 ## Step 5: Create a notebook in the source workspace
 

@@ -20,11 +20,11 @@ By default, a workspace with [restricted inbound public access](security-workspa
 
 A managed private endpoint establishes a trust relationship from the source workspace (Workspace 1 in the diagram) to the target workspace (Workspace 2), allowing connections from the source workspace to the target workspace. A managed private endpoint can be created via the workspace settings in the [Fabric portal](security-managed-private-endpoints-create.md) or [API](/rest/api/fabric/core/managed-private-endpoints/create-workspace-managed-private-endpoint?tabs=HTTP).
 
-:::image type="content" source="./media/security-cross-workspace-communication/access-via-managed-private-endpoint.png" alt-text="Diagram illustrating how managed private endpoints can establish connection to a workspace set to deny public access." border="false":::
+:::image type="content" source="media/security-cross-workspace-communication/access-via-managed-private-endpoint.png" alt-text="Diagram illustrating how managed private endpoints can establish connection to a workspace set to deny public access." lightbox="media/security-cross-workspace-communication/access-via-managed-private-endpoint.png" border="false":::
 
 To create a managed private endpoint to the target workspace, you need the private link service Resource ID of the target workspace. You can find this Resource ID in Azure by viewing the Resource JSON for the workspace. Ensure that the workspace ID in the JSON matches the intended target workspace.
 
-:::image type="content" source="./media/security-cross-workspace-communication/resource-json.png" alt-text="Screenshot showing how to get the private link resource ID in the resource json file." :::
+:::image type="content" source="./media/security-cross-workspace-communication/resource-json.png" alt-text="Screenshot showing how to get the private link resource ID in the resource json file." lightbox="media/security-cross-workspace-communication/resource-json.png":::
 
 The private link service owner for Workspace 2 needs to approve the managed private endpoint request in **Azure private link center** > **Pending connections**. 
 
@@ -49,7 +49,7 @@ You can use a virtual network data gateway or an on-premises data gateway (OPDG)
 
 The following diagram illustrates how the connection is established using a virtual network data gateway:
 
-:::image type="content" source="./media/security-cross-workspace-communication/virtual-network-data-gateway.png" alt-text="Diagram illustrating a connection using a virtual network data gateway." border="false":::  
+:::image type="content" source="./media/security-cross-workspace-communication/virtual-network-data-gateway.png" alt-text="Diagram illustrating a connection using a virtual network data gateway." lightbox="media/security-cross-workspace-communication/virtual-network-data-gateway.png" border="false":::  
 
 For an example, see [Accessing a lakehouse in a restricted workspace from a notebook in an open workspace](./security-workspace-private-links-example-notebook.md).
 
@@ -57,7 +57,7 @@ For an example, see [Accessing a lakehouse in a restricted workspace from a note
 
 The following diagram illustrates how the connection is established using an on-premises data gateway:
 
-:::image type="content" source="./media/security-cross-workspace-communication/on-premises-data-gateway.png" alt-text="Diagram illustrating a connection using an on-premises data gateway." border="false":::  
+:::image type="content" source="./media/security-cross-workspace-communication/on-premises-data-gateway.png" alt-text="Diagram illustrating a connection using an on-premises data gateway." lightbox="media/security-cross-workspace-communication/on-premises-data-gateway.png" border="false":::  
 
 For an example of how to set up cross-workspace communication using an on-premises data gateway, see [Accessing a lakehouse in a restricted workspace from a notebook in an open workspace](./security-workspace-private-links-example-notebook.md).
 
