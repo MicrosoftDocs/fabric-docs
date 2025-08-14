@@ -33,7 +33,7 @@ items:
       href: security-private-links-use.md
     - name: Workspace-level protection
       items:
-      - name: manage admin access to inbound protection settings
+      - name: Manage admin access to inbound protection settings
         href: security-workspace-enable-inbound-access-protection.md
       - name: About workspace-level private links
         href: security-workspace-level-private-links-overview.md
