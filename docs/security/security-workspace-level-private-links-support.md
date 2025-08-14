@@ -234,10 +234,7 @@ A virtual network data gateway must be used for every dataflow connector. The vi
 ## Supported and unsupported tools
 
 - Workspace-level private link connections are supported via REST API.
-- The Fabric portal doesn't currently support workspace-level private links. If a workspace allows public access, the Fabric portal continues to function using public connectivity. If a workspace is configured to deny inbound public access, the Fabric portal displays an "Access restricted" page:
-
-:::image type="content" source="./media/security-workspace-level-private-links-support/access-restricted-error.png" alt-text="Screenshot of the access restricted page." lightbox="./media/security-workspace-level-private-links-support/access-restricted-error.png" border="false":::
-
+- The Fabric portal doesn't currently support workspace-level private links. If a workspace allows public access, the Fabric portal continues to function using public connectivity. If a workspace is configured to deny inbound public access, the Fabric portal displays an **Access restricted** page.
 - SQL Server Management Studio is supported for connecting to warehouses via private link.
 - Storage Explorer can be used with workspace-level private links.
 - Azure Storage Explorer, PowerShell, AzCopy, and other Azure Storage tools can connect to OneLake via a private link.
