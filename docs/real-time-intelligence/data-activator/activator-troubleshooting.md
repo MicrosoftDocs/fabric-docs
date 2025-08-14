@@ -88,11 +88,19 @@ The following error codes represent problems that can occur when Fabric Activato
 
 ### UserNotFound
 
-This error code means that Fabric Activator couldn't locate the recipient of your rule's email or Teams alert. To resolve this problem, review the recipient field on your rule's **action** card and make sure that it's set to a valid member of your organization.
+This error code means that Fabric Activator couldn't locate the recipient of your rule's email or Teams alert. To resolve this problem, review the recipient field on your rule's **action** and make sure that it's set to a valid member of your organization.
+
+### EmptyEmailPropertyForUser
+
+This error code means that Fabric Activator couldn't execute the test action because your email address is not defined in your Azure profile. To resolve this problem, add your email address to your Azure profile.
 
 ### RecipientThrottled
 
 This error code means that Fabric Activator couldn't alert the recipient of your rule because the recipient receives too many messages from Fabric Activator. The article [Fabric Activator limitations](activator-limitations.md) lists the maximum number of messages that you can send from a rule. To resolve this problem, change the definition of your rule so that it activates less often.
+
+### FabricItemThrottled
+
+This error code means that Fabric Activator couldn't execute the Fabric job defined in your rule because there were too many activations from Fabric Activator in a given time. The article [Fabric Activator limitations](activator-limitations.md) lists the maximum number of executions per user. To resolve this problem, change the definition of your rule so that it activates less often. If you have a use case that requires higher frequency than the limit, share the use case and the frequency required in [Activator Community](https://aka.ms/activatorcommunity).
 
 ### BotBlockedByUser
 
@@ -102,6 +110,18 @@ This error code means that you have a rule that sends a Teams alert, and the rec
 
 This error code means that you have a rule that sends a Teams alert, and your Teams administrator blocks the Fabric Activator app. To resolve this problem, ask your Teams administrator to unblock the Fabric Activator Teams app.
 
+### BotNotInstalledInTeamsChatOrChannel
+
+This error code means that you have a rule that sends notifications a Teams chat or channel. To resolve this problem, make sure Fabric Activator bot is installed in the target chat or channel. 
+
+### ReflexAppDisabledInTenant
+
+This error code means that "Reflex - Public" application was disabled by your organization. To resolve this problem, ask your Entra administrator to unblock the app.
+
+### MessageRecipientAmbiguous
+
+This error code means that the notification couldn't be delivered because multiple users share the same email address or UPN (user principal name). To resolve this problem, reach out to your Entra administrator to resolve the ambiguity.
+
 ### OfficeSubscriptionMissing
 
 This error code means that Fabric Activator couldn't send the alert on your rule because you don't have a Microsoft Office subscription. To resolve the problem, get a Microsoft Office subscription.
@@ -109,6 +129,22 @@ This error code means that Fabric Activator couldn't send the alert on your rule
 ### TeamsDisabled
 
 This error code means that you have a rule that sends a Teams alert, and that the administrator of your Microsoft Entra tenant blocks the Microsoft Teams service principal (SP). To resolve the problem, contact your Microsoft Entra administrator and request that they unblock the Teams SP.
+
+### TeamsChatOrChannelNotFound
+
+This error code means that Fabric Activator couldn't locate the Teams channel or chat you defined. To resolve this problem, review your rule's **action** and make sure that it is set to a valid Teams chat/channel.
+
+### FabricItemNotFound
+
+This error code means that Fabric Activator couldn't locate the Fabric item you have defined. To resolve this problem, review your rule's **action** and make sure that it is set to an existing Fabric item.
+
+### FabricItemExecutionUnauthorized
+
+This error code means that there was an unauthorized error while executing the Fabric item. To resolve this problem, reselect the Fabric item and save the rule again.
+
+### FabricItemExecutionNoPermissions
+
+This error code means that there was a permission error while executing the Fabric Item. To resolve this problem, verify your access rights to the Fabric item or contact the Fabric item’s creator to request the necessary permissions.
 
 ## Common issues, symptoms, and remediations
 While Activator abstracts away much of the complexity behind real-time event processing, implementations at scale might encounter data, configuration, or orchestration-related issues that require systematic troubleshooting. This section provides a deep dive into how to identify, analyze, and resolve common operational problems in Activator.

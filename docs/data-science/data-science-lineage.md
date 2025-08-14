@@ -1,8 +1,8 @@
 ---
 title: Data science lineage
 description: Learn how the Microsoft Fabric lineage view helps you answer questions about data changes and report updates.
-ms.author: larryfr
-author: Blackmist
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: midesa
 reviewer: midesa
 ms.topic: conceptual

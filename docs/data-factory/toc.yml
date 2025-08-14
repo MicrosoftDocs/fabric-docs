@@ -27,8 +27,6 @@
         href: pricing-copy-job.md
       - name: Pricing Apache Airflow job
         href: pricing-apache-airflow-job.md
-      - name: Cost estimation from Azure Data Factory to Fabric
-        href: cost-estimation-from-azure-data-factory-to-fabric-pipeline.md
       - name: Pricing examples
         items:
         - name: Data pipelines
@@ -53,6 +51,10 @@
             href: pricing-scenario-dataflows-gen2-load-6-gb-csv-to-lakehouse-table-fastcopy.md
           - name: Load 2 GB of Parquet data to a Lakehouse table through Virtual Network Data Gateway
             href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-vnet-gateway.md
+        - name: Copy job
+          items:
+          - name: Load 1 TB of CSV data to a Lakehouse table
+            href: pricing-scenario-copy-job.md
     - name: Keyboard shortcuts
       href: keyboard-shortcuts.md
   - name: Get started
@@ -73,6 +75,8 @@
       href: how-to-access-on-premises-data.md
     - name: Monitoring activity in Data Factory
       href: monitor-data-factory.md
+    - name: Create Alerts for Pipelines
+      href: create-alerts-for-pipeline-runs.md
     - name: Bring Azure Data Factory to Fabric
       href: tutorial-bring-azure-data-factory-to-fabric.md      
   - name: Migrate to Fabric
@@ -94,7 +98,7 @@
       - name: Fabric Dataflows for Mapping Data Flow users
         href: guide-to-dataflows-for-mapping-data-flow-users.md
       - name: How to ingest data from Azure Data Factory to Fabric
-        href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
+        href: /azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory?toc=/fabric/data-factory/toc.json
     - name: Dataflows
       items:    
       - name: Migrate from Dataflow Gen1 to Dataflow Gen2
@@ -116,11 +120,7 @@
       - name: Module 2 - Transform data with a dataflow
         href: tutorial-end-to-end-dataflow.md
       - name: Module 3 - Automate and send notification
-        href: tutorial-end-to-end-integration.md
-    - name: SAP CDC to Fabric OneLake using ADF
-      href: change-data-capture-from-sap-to-onelake-with-azure-data-factory.md
-    - name: How to ingest data from ADF to Fabric
-      href: how-to-ingest-data-into-fabric-from-azure-data-factory.md      
+        href: tutorial-end-to-end-integration.md    
   - name: Connectors
     items:
     - name: Connector overview
@@ -237,12 +237,6 @@
         href: connector-azure-files-overview.md 
       - name: Configure in a data pipeline Copy activity 
         href: connector-azure-files-copy-activity.md 
-    - name: Azure HDInsight on AKS Trino
-      items:
-      - name: Azure HDInsight on AKS Trino - Overview
-        href: connector-azure-hdinsight-on-aks-trino-overview.md
-      - name: Set up your connection
-        href: connector-azure-hdinsight-on-aks-trino.md
     - name: Azure SQL database
       items:
       - name: Azure SQL database - Overview
@@ -591,12 +585,28 @@
         href: connector-sap-bw-message-server-overview.md
       - name: Set up your connection
         href: connector-sap-bw-message-server.md
+    - name: SAP BW Open Hub Application Server
+      items:
+      - name: SAP BW Open Hub Application Server - Overview
+        href: connector-sap-bw-open-hub-application-server-overview.md
+    - name: SAP BW Open Hub Message Server
+      items:
+      - name: SAP BW Open Hub Message Server - Overview
+        href: connector-sap-bw-open-hub-message-server-overview.md
     - name: SAP HANA database
       items:
       - name: SAP HANA database - Overview
         href: connector-sap-hana-overview.md
       - name: Set up your connection
         href: connector-sap-hana.md
+    - name: SAP Table Application Server
+      items:
+      - name: SAP Table Application Server - Overview
+        href: connector-sap-table-application-server-overview.md
+    - name: SAP Table Message Server
+      items:
+      - name: SAP Table Message Server - Overview
+        href: connector-sap-table-message-server-overview.md      
     - name: ServiceNow
       items:
       - name: ServiceNow - Overview
@@ -811,6 +821,8 @@
         href: dataflows-gen2-overview.md
       - name: Data source management
         href: data-source-management.md
+      - name: Using cloud connections through gateways
+        href: dataflow-gen2-cloud-connection-gateway-use.md
       - name: Dataflow Gen2 destinations and managed settings
         href: dataflow-gen2-data-destinations-and-managed-settings.md
       - name: Dataflow Gen2 default destination
@@ -865,6 +877,8 @@
       href: copy-job-rest-api-capabilities.md    
   - name: Data gateway
     items:
+    - name: "Business continuity and disaster recovery (BCDR) for gateways"
+      href: /data-integration/gateways-business-continuity-disaster-recovery?toc=/fabric/data-factory/toc.json
     - name: On-premises data gateways docs
       items:
       - name: "What is an on-premises data gateway?"
@@ -953,6 +967,8 @@
           href: /data-integration/vnet/manage-data-gateways?toc=/fabric/data-factory/toc.json 
         - name: Use virtual network data gateway in Fabric with Dataflows Gen 2
           href: /data-integration/vnet/use-data-gateways-dfgen2-fabric?toc=/fabric/data-factory/toc.json 
+        - name: Use virtual network data gateway in Fabric with Pipeline
+          href: /data-integration/vnet/use-data-gateways-pipeline-fabric?toc=/fabric/data-factory/toc.json
         - name: Use virtual network data gateway in Power BI
           href: /data-integration/vnet/use-data-gateways-sources-power-bi?toc=/fabric/data-factory/toc.json 
         - name: Use virtual network data gateway in Power Platform dataflows

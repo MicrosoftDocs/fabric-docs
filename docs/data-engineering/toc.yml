@@ -256,6 +256,8 @@ items:
       href: delta-optimization-and-v-order.md
     - name: Automated Statistics for Delta Tables
       href: automated-table-statistics.md	
+    - name: Delta Driver Mode Snapshot
+      href: driver-mode-snapshot.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
@@ -291,6 +293,8 @@ items:
     href: fabric-notebook-selection-guide.md
   - name: T-SQL magic command in Python Notebook
     href: tsql-magic-command-notebook.md
+  - name: Fabric Notebook known limitation
+    href: notebook-limitation.md
 - name: Environments
   items:
   - name: Create, configure and use an environment

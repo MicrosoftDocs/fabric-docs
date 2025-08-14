@@ -6,7 +6,7 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: how-to
 ms.custom:
-ms.date: 05/29/2025
+ms.date: 08/12/2025
 #customer intent: As a data engineer, I want to understand how I can use AzCopy to copy data in or out of OneLake easily and with the best performance, from a variety of sources.
 ---
 
@@ -20,7 +20,7 @@ AzCopy is optimized for data plane operations at scale and large scale data move
 
 ## Trusted workspace access and AzCopy
 
-Trusted workspace access lets you access firewall-enabled Azure Storage accounts securely by configuring a resource instance rule on an Azure Storage account.  This rule lets your specific Fabric workspace access the storage account's firewall from select Fabric experiences, like shortcuts, pipelines, and AzCopy.  By configuring trusted workspace access, AzCopy can copy data from a firewall-enabled Azure Storage account into OneLake without affecting the firewall protections.  Learn more at [trusted workspace access](/fabric/security/security-trusted-workspace-access).  
+Trusted workspace access lets you access firewall-enabled Azure Storage accounts securely by configuring a resource instance rule on an Azure Storage account. This rule lets your specific Fabric workspace access the storage account's firewall from select Fabric experiences, like shortcuts, pipelines, and AzCopy. By configuring trusted workspace access, AzCopy can copy data from a firewall-enabled Azure Storage account into OneLake without affecting the firewall protections. Learn more at [trusted workspace access](/fabric/security/security-trusted-workspace-access).  
 
 ## Getting Started
 

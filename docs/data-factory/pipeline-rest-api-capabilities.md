@@ -331,7 +331,7 @@ Runs on-demand pipeline job instance.
 
 **Sample request**:
 
-**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/instances?jobType=Refresh```
+**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/instances?jobType=Pipeline```
 
 **Headers**:
 
@@ -381,7 +381,7 @@ Gets singular pipeline’s job instance.
 {
   "id": "<id>",
   "itemId": "<itemId>",
-  "jobType": "Refresh",
+  "jobType": "Pipeline",
   "invokeType": "Manual",
   "status": "Completed",
   "rootActivityId": "<rootActivityId>",

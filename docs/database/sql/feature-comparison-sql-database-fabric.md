@@ -3,8 +3,8 @@ title: "Features comparison: Azure SQL Database and SQL database (preview)"
 description: This article compares the database engine features of Azure SQL Database and SQL database in Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: nzagorac, antho, sukkaur, drskwier
-ms.date: 07/09/2025
+ms.reviewer: nzagorac, antho, sukkaur, drskwier, jovanpop
+ms.date: 07/21/2025
 ms.topic: conceptual
 ms.search.form: SQL database Overview
 ---
@@ -75,7 +75,7 @@ The following table lists the major features of SQL Server and provides informat
 | [Modifying system data](/sql/relational-databases/databases/system-databases) | No | No |
 | [OPENDATASOURCE](/sql/t-sql/functions/opendatasource-transact-sql)| No | No |
 | [OPENQUERY](/sql/t-sql/functions/openquery-transact-sql)| No | No |
-| [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql)|Yes, only to import from Azure Blob storage | No |
+| [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql)|Yes, only to import from Azure Blob storage | Yes, with [OPENROWSET BULK function](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric&preserve-view=true) (preview) |
 | [Operators](/sql/t-sql/language-elements/operators-transact-sql) | Most, see individual operators | Most, see individual operators |
 | [Optimized locking](/sql/relational-databases/performance/optimized-locking) | Yes | Yes |
 | [Recovery models](/sql/relational-databases/backup-restore/recovery-models-sql-server) | Full Recovery only | Full Recovery only |
