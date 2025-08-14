@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun
-ms.date: 08/06/2025
+ms.date: 08/14/2025
 ms.update-cycle: 180-days
 ms.topic: whats-new
 ms.collection:
@@ -399,6 +399,7 @@ This section summarizes recent improvements and features for [Fabric Data Wareho
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|August 2025|**SET SHOWPLAN_XML support**|The [SET SHOWPLAN_XML T-SQL syntax](/sql/t-sql/statements/set-showplan-xml-transact-sql?view=fabric&preserve-view=true) is now generally available for Fabric Data Warehouse and SQL analytics endpoint. Use this session-level statement and its visualizer counterpart in SQL Server Management Studio to get insight into query plan information.|
 |July 2025|**OneLake as a Source for COPY INTO and OPENROWSET (Preview)**|[COPY INTO and OPENROWSET now support reading directly from OneLake paths in Fabric Data Warehouse (preview)](https://blog.fabric.microsoft.com/blog/announcing-public-preview-onelake-as-a-source-for-copy-into-and-openrowset?ft=All), enabling SQL-based data ingestion and ad hoc querying from Lakehouse folders without external storage or complex setup. For more information, see [Ingest data into the Warehouse](../data-warehouse/ingest-data.md).|
 |July 2025|**Visual SQL Audit Logs configuration**|[A new visual experience for configuring, enabling, and managing SQL Audit Logs in Fabric Warehouse is now available](https://blog.fabric.microsoft.com/blog/experience-the-new-visual-sql-audit-logs-configuration-in-fabric-warehouse?ft=All), allowing you to set up and customize auditing directly from the Fabric portal. For more information, see [SQL audit logs in Fabric Data Warehouse (Preview)](../data-warehouse/sql-audit-logs.md). To get started, see [Configure SQL audit logs in Fabric Data Warehouse](../data-warehouse/configure-sql-audit-logs.md?tabs=browser).|
 |July 2025|**JSON Lines support in OPENROWSET (Preview)**|[JSON Lines (JSONL) support in the OPENROWSET(BULK) function](https://blog.fabric.microsoft.com/blog/public-preview-json-lines-support-in-openrowset-for-fabric-data-warehouse-and-lakehouse-sql-endpoints?ft=All) for Fabric Data Warehouse and SQL analytics endpoints is now in preview, allowing you to query external data in JSONL format. For more information, see [OPENROWSET (BULK) (Transact-SQL)](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric&preserve-view=true).|
