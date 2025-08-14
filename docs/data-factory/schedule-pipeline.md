@@ -11,19 +11,15 @@ ms.date: 08/14/2025
 
 # Concept: Schedule pipeline
 
-A data pipeline run occurs when a data pipeline is executed. This means that the activities in your data pipeline ran and were executed to completion. For example, running a data pipeline with a **Copy data** activity performs that action and copy your data. Each data pipeline run has its own unique pipeline run ID.
+With Data Factory pipelines, once you've completed designing your logic and testing your pipelines with manual runs, you'll next want to automate the execution of your pipeline logic. We provide several options to do this including scheduling and triggering based on events. In this article, will introduce you to the concept of scheduling your pipelines via a wall-clock scheduler. Scheduling pipelines in Data Factory ensures that your workflows run automatically, reliably, and at the right time without manual intervention. By setting up schedules, you can align data movement, data processing, and data transformation with business requirements—such as refreshing reports before the start of the workday, syncing systems during off-peak hours, or meeting compliance deadlines. Automated scheduling reduces operational overhead, minimizes the risk of missed or delayed runs, and enables consistent, predictable data delivery.
 
-:::image type="content" source="media/pipeline-runs/copy-data-activity.png" alt-text="Screenshot showing a copy data activity pipeline run.":::
+## Create or manage your schedules
 
-A data pipeline run can be triggered one of two ways, either on-demand or by setting up a schedule. A scheduled pipeline is able to run based on the time and frequency that you set.
+In Fabric Data Factory, each pipeline contains the schedules inside the pipeline definition. Open your pipeline designer and you'll see Schedule button on the Home ribbon.
 
-## On-demand data pipeline run
+:::image type="content" source="media/schedule-pipeline/toolbar.png" alt-text="Screenshot showing where to select Schedule on the Home ribbon.":::
 
-To manually trigger a data pipeline run, select **Run** found in the top banner of the **Home** tab.
 
-:::image type="content" source="media/pipeline-runs/trigger-pipeline-run.png" alt-text="Screenshot showing where to select Run on the Home tab.":::
-
-You are prompted to save your changes before triggering the pipeline run. Select **Save and run** to continue.
 
 :::image type="content" source="media/pipeline-runs/save-run-pipeline.png" alt-text="Screenshot showing the Save and run prompt." lightbox="media/pipeline-runs/save-run-pipeline.png":::
 
