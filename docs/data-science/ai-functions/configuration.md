@@ -1,13 +1,12 @@
----
+﻿---
 title: Customize the configuration of AI functions
 description: Learn how to configure AI functions in Fabric for custom use, modifying the underlying LLM or other related settings.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.date: 02/26/2025
-
 ms.search.form: AI functions
 ---
 
