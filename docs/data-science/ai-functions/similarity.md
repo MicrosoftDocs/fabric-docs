@@ -1,13 +1,12 @@
----
+﻿---
 title: Calculate similarity with the `ai.similarity` function
 description: Learn how to use the `ai.similarity` function to compare string values and calculate semantic similarity scores.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.date: 02/26/2025
-
 ms.search.form: AI functions
 ---
 

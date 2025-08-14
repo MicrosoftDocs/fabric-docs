@@ -1,13 +1,12 @@
----
+﻿---
 title: Translate text with the `ai.translate` function
 description: Learn how to use the `ai.translate` function to translate input text to a new language of your choosing.
-ms.author: scottpolly
-author: s-polly
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: erenorbey
 reviewer: orbey
 ms.topic: how-to
 ms.date: 02/26/2025
-
 ms.search.form: AI functions
 ---
 
