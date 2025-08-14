@@ -1,9 +1,9 @@
----
+﻿---
 title: Create AutoML trials in Fabric
 description: Learn how to use AutoML to easily fit models to  your data (preview)
 ms.topic: how-to
-ms.author: ssalgado
-author: ssalgadodev
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: midesa
 reviewer: midesa
 ms.date: 07/21/2025
