@@ -133,4 +133,4 @@ Create a notebook and connect it to the restricted lakehouse as follows:
 
 * [About private links](./security-private-links-overview.md)
 * [Set up and use workspace-level private links](./security-workspace-level-private-links-set-up.md)
-* [Microsoft Fabric multi-workspace APIs](./security-fabric-multi-workspace-api-overview.md)
+<!-- * [Microsoft Fabric multi-workspace APIs](./security-fabric-multi-workspace-api-overview.md) -->

@@ -65,4 +65,4 @@ For an example of how to set up cross-workspace communication using an on-premis
 
 * [About private links](./security-private-links-overview.md)
 * [Workspace-level private links overview](./security-workspace-level-private-links-overview.md)
-* [Microsoft Fabric multi-workspace APIs](./security-fabric-multi-workspace-api-overview.md)
+<!-- * [Microsoft Fabric multi-workspace APIs](./security-fabric-multi-workspace-api-overview.md) -->
