@@ -27,10 +27,20 @@ items:
     items:
     - name: Protect inbound traffic
       href: protect-inbound-traffic.md
-    - name: About private links
+    - name: About tenant-level private links
       href: security-private-links-overview.md
-    - name: Set up and use private links
+    - name: Set up and use tenant-level private links
       href: security-private-links-use.md
+    - name: Workspace-level protection
+      items:
+      - name: Manage admin access to inbound protection settings
+        href: security-workspace-enable-inbound-access-protection.md
+      - name: About workspace-level private links
+        href: security-workspace-level-private-links-overview.md
+      - name: Supported scenarios and limitations
+        href: security-workspace-level-private-links-support.md
+      - name: Set up and use workspace-level private links
+        href: security-workspace-level-private-links-set-up.md
     - name: Service tags
       href: security-service-tags.md
     - name: Microsoft Entra Conditional Access
