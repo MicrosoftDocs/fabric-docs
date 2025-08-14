@@ -144,7 +144,7 @@ The next step is to create a private endpoint for Fabric.
     |Settings |	Value |
     |-------------------|---------|
     |**NETWORKING** ||
-    |Virtual network| Select virtual network name you created earlier (for example *vnet-1*). |
+    |Virtual network| Select the virtual network name you created earlier (for example *vnet-1*). |
     |Subnet	| Select the subnet name you created earlier (for example *subnet-1*). |
     |**PRIVATE DNS INTEGRATION** ||
     |Integrate with private DNS zone| Select **Yes**. |
@@ -186,7 +186,7 @@ Finally, you can optionally disable public access for Fabric.
 If you disable public access for Fabric, certain constraints on access to Fabric services are put into place, as described in the next section.
 
 > [!IMPORTANT]
-> When you turn on *Block Internet Access*, some unsupported Fabric items become disabled. Learn full list of limitations and considerations in [About private links](./security-private-links-overview.md)
+> When you turn on *Block Internet Access*, some unsupported Fabric items become disabled. Learn the full list of limitations and considerations in [About private links](./security-private-links-overview.md).
 
 To disable public access for Fabric, sign in to [Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-security-security-private-links-use) as an administrator, and navigate to the **Admin portal**. Select **Tenant settings** and scroll to the **Advanced networking** section. Enable the toggle button in the **Block Public Internet Access** tenant setting.
 
