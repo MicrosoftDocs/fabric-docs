@@ -190,12 +190,12 @@ You can use the workspace communication policy API even if no private link is se
 
 | Tenant-level public access setting | Private link type | Access from | Allowed to get or set workspace communication policy API? |
 |--|--|--|--|
-| Allowed (Block public access is off) | Tenant-level | Public internet or network with a tenant-level private link set up | Yes, using `api.fabric.microsoft.com` endpoint or workspace-specific FQDN. |
-| Allowed (Block public access is off) | Workspace-level | Network with a workspace-level private link set up | Yes, using `api.fabric.microsoft.com` endpoint, only if the client allows outbound public access.<br>Not accessible using workspace-specific FQDN. |
+| Allowed (Block public access is off) | Tenant-level | Public internet or network with a tenant-level private link | Yes, using `api.fabric.microsoft.com` endpoint or workspace-specific FQDN. |
+| Allowed (Block public access is off) | Workspace-level | Network with a workspace-level private link | Yes, using `api.fabric.microsoft.com` endpoint, only if the client allows outbound public access.<br>Not accessible using workspace-specific FQDN. |
 | Restricted (Block public access is on) | None | Public internet | No. |
-| Restricted (Block public access is on) | Tenant-level | Network with a tenant-level private link set up | Yes, using `api.fabric.microsoft.com` endpoint or workspace-specific FQDN. |
-| Restricted (Block public access is on) | Workspace-level | Network with a workspace-level private link set up | No. |
-| Restricted (Block public access is on) | Tenant- and workspace-level | Network with a tenant-level private link set up and workspace-level private link set up | Yes, using `api.fabric.microsoft.com` endpoint. |
+| Restricted (Block public access is on) | Tenant-level | Network with a tenant-level private link | Yes, using `api.fabric.microsoft.com` endpoint or workspace-specific FQDN. |
+| Restricted (Block public access is on) | Workspace-level | Network with a workspace-level private link | No. |
+| Restricted (Block public access is on) | Tenant- and workspace-level | Network with a tenant-level private link and workspace-level private link | Yes, using `api.fabric.microsoft.com` endpoint. |
 
 ## Related content
 
