@@ -435,6 +435,8 @@
         href: connector-ibm-db2-database-overview.md
       - name: Set up your connection
         href: connector-ibm-db2-database.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-ibm-db2-database-copy-activity.md
     - name: Impala
       items:
       - name: Impala - Overview

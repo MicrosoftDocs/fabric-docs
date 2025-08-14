@@ -86,6 +86,8 @@ items:
     href: tsql-surface-area.md
   - name: Transactions
     href: transactions.md 
+  - name: Warehouse collation
+    href: collation.md
   - name: Warehouse performance
     href: guidelines-warehouse-performance.md
   - name: Warehouse snapshots
@@ -104,9 +106,6 @@ items:
       href: datamart-upgrade-to-warehouse.md
     - name: Generate unique identifiers
       href: generate-unique-identifiers.md      
-    - name: Use case-insensitive collation
-      href: collation.md
-      displayName: case insensitive collation
 - name: Dimensional modeling
   items:
   - name: Overview

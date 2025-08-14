@@ -122,7 +122,7 @@ Fabric supports these connectors in Dataflow Gen2, data pipelines, and Copy job.
 | Hexagon PPM Smart API | ✓/− |  |  |
 | [Hive LLAP](connector-hive-llap-overview.md) | ✓/− |  |  |
 | [HTTP](connector-http-overview.md) |  | ✓/✓ |  |
-| [IBM Db2 database](connector-ibm-db2-database-overview.md) | ✓/− | ✓/✓ |✓/−  |
+| [IBM Db2 database](connector-ibm-db2-database-overview.md) | ✓/− | ✓/− |✓/−  |
 | IBM Netezza | ✓/− |  |  |
 | [Impala](connector-impala-overview.md) | ✓/− |  |  |
 | Indexima | ✓/− |  |  |
