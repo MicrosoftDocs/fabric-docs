@@ -248,6 +248,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 - The cross-workspace reference notebook is supported by **runtime version 1.2 and above**.
 - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), use `notebookutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
+- Reference run allows child notebooks to run only if they use the same lakehouse as the parent, inherit the parent's lakehouse, or neither defines one. The execution will be blocked if the child specifies a different lakehouse to parent notebook. To bypass this check, set `useRootDefaultLakehouse: True`.
 
 ### Reference run multiple notebooks in parallel
 
