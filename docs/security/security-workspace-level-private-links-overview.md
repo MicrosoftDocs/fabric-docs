@@ -49,10 +49,6 @@ The diagram illustrates the following key points about workspace-level private l
 * You can restrict public access to a workspace with or without a private link. If public access is restricted and no private link exists, the workspace is inaccessible from all networks. However, a workspace admin can use the communication policy API to modify the inbound access rule.
 
 * A workspace-level private link is used to establish a private link connection to a specific workspace. It can't be used to connect to another workspace. In the configuration shown in the diagram, a connection to Workspace 2 from VNet A isn't allowed. On the other hand, connections to Workspaces 3 and 4 from VNet A are possible if VNet A allows outbound public access in the client network settings.
-<!-->
-> [!NOTE]
-> To learn how to connect from one workspace to another, see [cross-workspace communication](./security-cross-workspace-communication.md).
--->
 
 ## Connecting to workspaces
 
@@ -82,4 +78,3 @@ The workspace FQDN must be constructed correctly using the workspace object ID w
 
 * [Supported scenarios and limitations for workspace-level private links](./security-workspace-level-private-links-support.md)
 * [About private links](./security-private-links-overview.md)
-* [Microsoft Fabric multi-workspace APIs](./security-fabric-multi-workspace-api-overview.md)
