@@ -12,40 +12,40 @@ ms.date: 08/13/2025
 
 ---
 
-# Cross-tenant Connections using workspace-level private links
+# Cross-tenant connections using workspace-level private links
 
 Workspace-level private links can be used to establish secure connections between workspaces in different Azure tenants, allowing for controlled data sharing and collaboration while maintaining strict security boundaries. To establish a connection from one tenant to a Fabric workspace in another tenant, you first create a Private Link service in the same tenant as your Fabric workspace. Then, in the tenant that requires access, you create a private endpoint that connects to the Fabric workspace using the established Private Link service. The following diagram illustrates this setup.
 
-:::image type="content" source="media/security-cross-tenant-communication/cross-tenant-workspace-private-link.png" alt-text="Diagram showing a private endpoint in Tenant 1 that connects to the private link service for the Fabric workspace in Tenant 2.":::
+:::image type="content" source="media/security-cross-tenant-communication/cross-tenant-workspace-private-link.png" alt-text="Diagram showing a private endpoint in Tenant 1 that connects to the private link service for the Fabric workspace in Tenant 2." lightbox="media/security-cross-tenant-communication/cross-tenant-workspace-private-link.png"  border="false":::
 
 In this diagram:
 
 * **Tenant 1** is the tenant that requires access. In this tenant, you create a virtual network, a virtual machine, and a private endpoint that is used to connect to the workspace in Tenant 2. Then you configure DNS to ensure proper name resolution.
 * **Tenant 2** contains the Fabric workspace that Tenant 1 needs to access. In Tenant 2, you create the Private Link service for the workspace. 
 
-## Step 1. Create a workspace in Fabric
+## Step 1: Create a workspace in Fabric
 
 In Tenant 2, [create a workspace in Fabric](/fabric/fundamentals/create-workspaces). Make sure the workspace is assigned to a Fabric capacity. You can check assignment by going to the workspace settings and selecting **License info**, as described in Step 1 of [Reassign a workspace to a different capacity](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity-1).
 
-## Step 2. Create the Private Link service in Azure
+## Step 2: Create the Private Link service in Azure
 
 In Tenant 2, follow these steps to create the Private Link service for the new workspace. Once it's created, copy the private link service resource ID for use in [Step 5. Create a private endpoint](#step-5-create-a-private-endpoint).
 
 [!INCLUDE [create-private-link-service](includes/create-private-link-service.md)]
 
-## Step 3. Create a virtual network
+## Step 3: Create a virtual network
 
 In Tenant 1, follow these steps to create a virtual network.
 
 [!INCLUDE [create-virtual-network](includes/create-virtual-network.md)]
 
-## Step 4. Create a virtual machine
+## Step 4: Create a virtual machine
 
 In Tenant 1, follow these steps to create a virtual machine.
 
 [!INCLUDE [create-virtual-machine](includes/create-virtual-machine.md)]
 
-## Step 5. Create a private endpoint
+## Step 5: Create a private endpoint
 
 In Tenant 1, create a managed private endpoint in the virtual network you set up in [Step 3](#step-3-create-a-virtual-network). Configure this private endpoint to connect to the Private Link service you created in [Step 2](#step-2-create-the-private-link-service-in-azure).
 
@@ -88,7 +88,7 @@ In Tenant 1, create a managed private endpoint in the virtual network you set up
 
 In Tenant 2, the private link service owner for the workspace must approve the managed private endpoint request in Azure Network Foundation.
 
-:::image type="content" source="media/security-cross-tenant-communication/network-foundation-pending-connections.png" alt-text="Screenshot showing the network connections pending approval.":::
+:::image type="content" source="media/security-cross-tenant-communication/network-foundation-pending-connections.png" alt-text="Screenshot showing the network connections pending approval." lightbox="media/security-cross-tenant-communication/network-foundation-pending-connections.png":::
 
 ## Step 7: Configure DNS
 
@@ -105,7 +105,7 @@ In Tenant 1, configure DNS to resolve the Fabric workspace fully qualified domai
 
 1. Select the **DNS configuration** tab. Note the DNS records that are required for the private endpoint.
 
-   :::image type="content" source="media/security-cross-tenant-communication/dns-configuration.png" alt-text="Screenshot showing the DNS configuration for the private endpoint.":::
+   :::image type="content" source="media/security-cross-tenant-communication/dns-configuration.png" alt-text="Screenshot showing the DNS configuration for the private endpoint." lightbox="media/security-cross-tenant-communication/dns-configuration.png":::
 
 1. Create a private DNS zone *privatelink.fabric.microsoft.com*. 
 

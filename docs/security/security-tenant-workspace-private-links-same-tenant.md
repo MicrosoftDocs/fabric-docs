@@ -29,7 +29,7 @@ When both tenant-level and workspace-level private links are configured in the s
 
 The following diagram illustrates how access is controlled in different scenarios. 
 
-:::image type="content" source="./media/security-tenant-workspace-private-links-same-tenant/network-architecture.png" alt-text="Diagram illustrating the network architecture for private links at the tenant and workspace level." border="false":::
+:::image type="content" source="./media/security-tenant-workspace-private-links-same-tenant/network-architecture.png" alt-text="Diagram illustrating the network architecture for private links at the tenant and workspace level." lightbox="media/security-tenant-workspace-private-links-same-tenant/network-architecture.png" border="false":::
 
 In the diagram, the Fabric tenant is configured to block public access, and the two workspaces are configured with workspace-level private links.
 
