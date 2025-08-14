@@ -24,6 +24,6 @@ The IBM Db2 database connector is supported in Data Factory for [!INCLUDE [produ
 
 ## Related content
 
-To learn about how to connect to IBM Db2 database, go to go to [Set up your IBM Db2 database connection](connector-ibm-db2-database.md).
+To learn about how to connect to IBM Db2 database, go to [Set up your IBM Db2 database connection](connector-ibm-db2-database.md).
 
 To learn about the copy activity configuration for IBM Db2 database in data pipelines, go to [Configure IBM Db2 database in a copy activity](connector-ibm-db2-database-copy-activity.md).
