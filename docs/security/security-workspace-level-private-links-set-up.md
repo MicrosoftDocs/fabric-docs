@@ -201,4 +201,3 @@ You can use the workspace communication policy API even if no private link is se
 
 * [About private links](./security-private-links-overview.md)
 * [Workspace-level private links overview](./security-workspace-level-private-links-overview.md)
-* [Microsoft Fabric multi-workspace APIs](./security-fabric-multi-workspace-api-overview.md)

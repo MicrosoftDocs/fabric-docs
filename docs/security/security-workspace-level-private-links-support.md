@@ -16,10 +16,11 @@ ms.date: 08/13/2025
 
 
 Workspace-level private links in Microsoft Fabric provide a secure way to connect to specific workspace resources over a private network. This article explains which scenarios and item types are supported, highlights current limitations, and offers guidance on best practices and troubleshooting for using workspace-level private links.
-
+<!--
 > [!NOTE]
 > - For information about connecting one workspace to another workspace, see [cross-workspace communication](./security-cross-workspace-communication.md). 
 > - For details about API calls that return information from multiple workspaces, see [Multi-workspace APIs](./security-fabric-multi-workspace-api-overview.md). 
+-->
 
 ## Supported item types for workspace-level private link
 
@@ -66,7 +67,7 @@ APIs with endpoints containing `v1/workspaces/{workspaceId}` support workspace-l
 * [OneLake Data Access Security - Create Or Update Data Access Roles - REST API (Core)](/rest/api/fabric/core/onelake-data-access-security) 
 * [OneLake Shortcuts - REST API (Core)](/rest/api/fabric/core/onelake-shortcuts)
     * From a restricted workspace, you can create shortcuts to other data sources such as external storage, or through trusted access.
-    * When you create a shortcut to another restricted workspace, you need to create a managed private endpoint and get approval from the target workspace private link service owner in Azure. For more information, see [Cross-workspace communication](./security-cross-workspace-communication.md).
+    * When you create a shortcut to another restricted workspace, you need to create a managed private endpoint and get approval from the target workspace private link service owner in Azure. <!--For more information, see [Cross-workspace communication](./security-cross-workspace-communication.md).-->
 * [Tags - REST API (Core)](/rest/api/fabric/core/tags)
 * [Workspaces - REST API (Core)](/rest/api/fabric/core/workspaces)
 * [External Data Shares Provider - REST API (Core)](/rest/api/fabric/core/external-data-shares-provider): The recipient needs to use the workspace fully qualified domain name (FQDN) to access the shared OneLake URL.
@@ -251,7 +252,7 @@ A virtual network data gateway must be used for every dataflow connector. The vi
 - Limit of workspace PLS you can create per tenant: 500. Create a support ticket if you need to increase this limit.
 - Up to 10 workspace private link services can be created per minute.
 - For Data Engineering workloads:
-   - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).
+   - To query Lakehouse files or tables from a workspace that has workspace-level private link enabled, you must create a cross-workspace managed private endpoint connection to access resources in the other workspace. <!--For instructions, see [Cross workspace communication](security-cross-workspace-communication.md).-->
    - You can use either relative or full paths to query files or tables within the same workspace, or use a cross-workspace managed private endpoint connection to access them from another workspace.
 
 ## Common errors and troubleshooting
@@ -289,4 +290,4 @@ When trying to set a workspace to restrict public access, users encounter the fo
 
 * [About private links](./security-private-links-overview.md)
 * [Set up and use workspace-level private links](./security-workspace-level-private-links-set-up.md)
-* [Microsoft Fabric multi-workspace APIs](./security-fabric-multi-workspace-api-overview.md)
+<!--* [Microsoft Fabric multi-workspace APIs](./security-fabric-multi-workspace-api-overview.md)-->
