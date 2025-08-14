@@ -6,7 +6,7 @@ author: sdgilley
 ms.author: sgilley
 ms.topic: overview
 ms.custom:
-ms.date: 11/15/2023
+ms.date: 08/15/2025
 ms.search.form: R Language
 ---
 

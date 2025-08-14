@@ -5,7 +5,7 @@ ms.reviewer: ssalgadodev
 author: JessicaXYWang
 ms.author: jessiwang
 ms.topic: conceptual
-ms.date: 12/05/2023
+ms.date: 08/15/2025
 ---
 
 # What is SynapseML?
