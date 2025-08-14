@@ -41,6 +41,8 @@ items:
         href: security-workspace-level-private-links-support.md
       - name: Set up and use workspace-level private links
         href: security-workspace-level-private-links-set-up.md
+      - name: Multi-workspace communication
+        href: security-fabric-multi-workspace-api-overview.md
     - name: Service tags
       href: security-service-tags.md
     - name: Microsoft Entra Conditional Access
