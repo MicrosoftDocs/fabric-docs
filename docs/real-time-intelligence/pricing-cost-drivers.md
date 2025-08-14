@@ -16,54 +16,52 @@ Eventhouse is a fully managed analytics platform for real-time analysis of large
 
 To help understand the cost of using Eventhouse, this article uses the metric **cost per GB ingested**. This metric is the **total cost** (capacity and storage) divided by the **total original sized data ingested** during that period.
 
-A representative snapshot of Eventhouse in **June 2025** is used to ground the example analysis. The following sections show the main results from the [analysis](#cost-per-gb-ingested-analysis), explain [what drives](#what-drives-cost-per-gb-ingested) the cost variations, and how users can [optimize cost per GB ingested](#a-closer-look-at-key-cost-drivers) without compromising performance.
+A representative snapshot of Eventhouse in **July 2025** is used to ground the example analysis. The following sections show the main results from the [analysis](#cost-per-gb-ingested-analysis), explain [what drives](#what-drives-cost-per-gb-ingested) the cost variations, and how users can [optimize cost per GB ingested](#a-closer-look-at-key-cost-drivers) without compromising performance.
 
 > [!NOTE]
 >
 > * All cost figures in this article show list prices and don't include discounts or commitment-based savings.
-> * For the purpose of this example analysis, cost per GB is expressed in [**Capacity Units**](https://learn.microsoft.com/en-us/fabric/enterprise/licenses#capacity).
+> * For the purpose of this example analysis, cost per GB is expressed in Sample Cost Units (SCUs), where each SCU represents a generic cost unit, for example, one US cent.
 > * An explanation of how **Capacity Units** are calculated for Eventhouse, can be found in [Eventhouse and KQL Database consumption](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/real-time-intelligence-consumption).
-> * For list prices and how to calculate them, see [Fabric Capacity Estimator](pricing-calculator.md).
+> * For list prices and how to calculate them, see [Fabric Capacity Estimator](https://www.microsoft.com/microsoft-fabric/capacity-estimator).
 
-## Cost per GB ingested analysis
+## Cost per GB ingested use cases
+The cost per GB of your Fabric Eventhouse vary based on the scenario and the settings that you configure. There are many scenarios where both the performance needs and cost requirements are exceeded. Here we will walk trough two different scenarios of production Eventhouses running in Microsoft Fabric.
 
-The chart below shows **median daily GB ingested** in original size (Y-axis) vs. **median cost per GB ingested** (X-axis) for each cost group. Bubble size represents the group’s share of total data ingested into the service.
+### Scenario: Large On-Time ingestion with infrequest access
+In this scenario a customer ingested around 1TB of data and ran around 600 queries in a 2 hour period. With activity being limited to those 2 hours they used only 23 CU hours on that day. Adding in the standard storage cost for that day (~0.4 SCUs) and the hot cache storage (23 SCUs), the cost per GB ingested ends up being around 0.57 SCUs per gb ingested.  
 
-:::image type="content" source="media/price-cost-drivers/cost-graph.png" alt-text="Screenshot of bubble chart showing cost per GB ingested in Azure Data Explorer clusters.":::
+In this scenario the customer continues to pay for the storage cost but only has to pary for compute capacity when they run additional queries or ingest additional data. Making this an extremely cost effecient option for customers.
 
-Cost per GB ingested varies across clusters, but several patterns stand out:
+### Scenario: Continous Ingestion with continous quereis
+In this scenario a customer is ingesting arount 2.5TB/day and running around 10,500 queries. This scenario can result in higher cost per gb ingested so lets first outline some of the decisions made that drove down their cost in this scenario:
 
-* **Most data (>75%)** is ingested at a cost between **2 and 10 SCUs per GB** (before discounts).
+1. Because the cluster is continously ingesting data the UpTime for the cluster is going to be 100%. If you do not enable always-on in these scenarios you will continue to pay for hot cache storage which can drive up your cost. So enabling Always-on means that even if you don't have activity you will be charged for the compute capacity but it also means you will not be charged for the hot cache storage. So for a very active Eventhouse you should enable Always-on.
+2. One of the factors that affect the size of your Eventhouse compute is how much hot cache you store. So only keeping the data you need for the majority of your queries in hot cache can optimize the size of compute that you are charged for.
+3. With Always-On you have the option to also set the Minimum Capacity. This is intended for handling unexpected load where you still need high performance at that moment. For steady workloads, allow our auto-scale mechanism to run compute at the most optimal size by just enabling Always-On but not enabling Minimum Capacity.
 
-* **Less than 5% of the data** is ingested at **less than 2 SCUs per GB**.
+For this scenario, these are the major factors that helped drive a very effecient workload in Eventhouse. For this Eventhouse, ingesting 2.5TB/day and running 10,500 queries, resulted in 817 CU hours on that day. Adding in standard storage cost of 100 SCUs for that day the cost per GB ingested ends up being around 6 SCUs per gb ingested.
 
-* Even within the same usage category (or "bubble"), you see significant variation. For example, in the largest bubble, one cluster ingests at **2 SCUs per GB**, while another reaches **10 SCUs per GB**. That's a **5X difference**. The next sections explain the key reasons for this variation.
+## Scenario Sumamry
+The two scenarios above represent two completely different use-cases but also two common scenarios that we see in Eventhouse. These numbers come from real clusters in Microst Fabric and show that when tuned to your specific needs, cost per gb ingested in Eventhouse is more than competitive with similar data analytics products.
 
-* Clusters with **higher cost per GB are less common** and usually have **lower ingestion volumes**. In general, smaller data volumes mean higher cost per GB.
-  
-> [!IMPORTANT]
->
-> The bubble graph shows that cost per GB ingested varies across clusters. This variation doesn't indicate good or bad practices. It reflects different scenarios, configurations, and usage patterns for the service.
->
-> For example, one cluster might retain data longer for compliance, which increases storage costs. Another might use update policies that process data during ingestion, which raises compute usage. These scenarios are intentional design choices aligned with specific goals, and they naturally affect cost per GB.
-
-## What drives cost per GB ingested
+## Drivers for cost per GB ingested
 
 These key factors are behind the variations in cost per GB ingested per cluster:
 
-* **Storage duration**: The longer you store data, the higher the cost. See [retention policy](/kusto/management/show-table-retention-policy-command?view=azure-data-explorer&preserve-view=true).
+* **Storage duration**: The longer you store data, the higher the cost. See [retention policy](/docs/real-time-intelligence/data-management.md#data-retention-policy).
 
 * **High CPU usage**: Actions like heavy queries, data processing, or transformations cause high CPU usage.
 
-* **Cache settings**: Caching more data boosts performance but can increase costs. See [cache policy](/kusto/management/cache-policy?view=azure-data-explorer&preserve-view=true).
+* **Cache settings**: Caching more data boosts performance but can increase costs. See [cache policy](/docs/real-time-intelligence/data-management.md#caching-policy).
 
-* **Cold data usage**: Queries that access cold data trigger read transactions and add to cost. See [hot and cold cache](/kusto/management/cache-policy?view=azure-data-explorer&preserve-view=true).
+* **Cold data usage**: Queries that access cold data trigger read transactions and add to cost. See [hot and cold cache](/docs/real-time-intelligence/data-management.md#caching-policy).
 
-* **Data transformation and optimization**: Features like Update Policies, Materialized Views, and Partitioning consume CPU resources and can raise cost. See [Update policies](/kusto/management/update-policy?view=azure-data-explorer&preserve-view=true), [Materialized views](/kusto/management/materialized-views/materialized-view-overview?view=azure-data-explorer&preserve-view=true), and [partitions](/kusto/management/partitioning-policy?view=azure-data-explorer&preserve-view=true).
+* **Data transformation and optimization**: Features like Update Policies, Materialized Views, and Partitioning consume CPU resources and can raise cost. See [Update policies](/docs/real-time-intelligence/table-update-policy.md), [Materialized views](/docs/real-time-intelligence/materialized-view.md), and [partitions](https://learn.microsoft.com/kusto/management/partitioning-policy?view=microsoft-fabric).
 
 * **Ingestion volume**: Clusters operate more cost-effectively at higher ingestion volumes.
 
-* **Streaming vs. Queued ingestion**: Each has a different cost profile depending on the use case. See [streaming](/kusto/management/streaming-ingestion-policy?view=azure-data-explorer&preserve-view=true) and [Queued](/kusto/management/data-ingestion/queued-ingestion-overview?view=azure-data-explorer&preserve-view=true).
+* **Streaming vs. Queued ingestion**: Each has a different cost profile depending on the use case. See [streaming](https://learn.microsoft.com/en-us/kusto/management/data-ingestion/streaming-ingestion-schema-changes) and [Queued](https://learn.microsoft.com/kusto/management/data-ingestion/queued-ingestion-overview).
 
 * **Schema design**: Wide tables with many columns need more compute and storage resources, which raises costs.
 
@@ -79,13 +77,13 @@ This section explores the key factors that influence the cost per GB ingested in
 
 In ADX, all ingested data is stored in persistent storage. Each table and materialized view has a **retention policy** that defines how long the data is kept. The longer the data is retained, the higher the cost, based on Azure Storage pricing. When you need long-term storage, like for compliance, the cost per GB ingested increases because it includes ongoing storage expense.
 
-### Cluster size
+### Compute size
 
-* Cluster size is the number of machines (nodes) in the cluster. Each machine adds cost, depending on its type (SKU). **Autoscale** adjusts the cluster size based on CPU usage, so the system can optimize cost and performance by avoiding idle or redundant resources.
+* Compute size is the number of cores in the cluster. Each core adds cost when the Eventhouse is active. **Autoscale** adjusts the compute size based on CPU usage, so the system can optimize cost and performance by avoiding idle or redundant resources.
 
-* Autoscale adjusts the cluster size to ensure cached data fits within the available SSD space. As a result, a large cache can increase cluster size and if CPU usage is low, this may lead to a higher cost per GB. See the [Cache tab](data-explorer-insights.md#cache-tab) [Clusters Insight tool](data-explorer-insights.md#cache-tab) for more information on optimizing the cache size.
+* Autoscale adjusts the compute size to ensure cached data fits within the available SSD space. As a result, a large cache can increase cluster size and if CPU usage is low, this may lead to a higher cost per 
 
-* Clusters that run many queries or do CPU-heavy tasks like Materialized Views, Update Policies, or Partitioning can scale the cluster, raising the cost per GB. Note that these features can significantly increase query performance and reduce query CPU usage and thus improve overall efficiency.
+* Eventhouses that run many queries or do CPU-heavy tasks like Materialized Views, Update Policies, or Partitioning can scale the cluster, raising the cost per GB. Note that these features can significantly increase query performance and reduce query CPU usage and thus improve overall efficiency.
 
 > [!NOTE]
 >
