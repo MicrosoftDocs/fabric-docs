@@ -1,6 +1,6 @@
 ---
 title: Tenant settings index
-description: Index to Fabric tenant settings.
+description: A comprehensive index of Microsoft Fabric tenant settings in the Fabric admin portal, including descriptions and links to relevant documentation.
 author: msmimart
 ms.author: mimart
 ms.topic: reference
