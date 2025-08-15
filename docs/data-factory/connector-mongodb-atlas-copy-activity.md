@@ -96,13 +96,11 @@ When copying data from MongoDB Atlas, the following mappings are used from Mongo
 | Decimal128             | String                                                                         | String                                                                        |
 | TimeStamp              | The most significant 32 bits -> DateTime<br>The least significant 32 bits -> Int32 | The most significant 32 bits -> Int64<br>The least significant 32 bits -> Int64 |
 | String                 | String                                                                         | String                                                                        |
-| Array                  | Array                                                                          | Array                                                                         |
 | Double                 | Double                                                                         | String                                                                        |
 | Int32                  | Int32                                                                          | String                                                                        |
 | Int64                  | Int64                                                                          | String                                                                        |
 | Boolean                | Boolean                                                                        | Boolean                                                                       |
 | Null                   | Null                                                                           | Null                                                                          |
-| Document               | Dictionary                                                                     | Dictionary                                                                    |
 | JavaScript             | String                                                                         | String                                                                        |
 | Regular Expression     | String                                                                         | String                                                                        |
 | Min key                | String                                                                         | Int64                                                                         |

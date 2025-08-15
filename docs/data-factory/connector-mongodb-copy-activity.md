@@ -95,13 +95,11 @@ When copying data from MongoDB, the following mappings are used from MongoDB dat
 | Decimal128           | String                                                     | String                                      |
 | TimeStamp            | The most significant 32 bits -> DateTime<br>The least significant 32 bits -> Int64 | The most significant 32 bits -> Int64<br>The least significant 32 bits -> Int64                                     |
 | String               | String                                                     | String                                      |
-| Array                | Array                                                      | Array                                       |
 | Double               | Double                                                     | Double                                      |
 | Int32                | Int64                                                      | Int64                                       |
 | Int64                | Int64                                                      | Int64                                       |
 | Boolean              | Boolean                                                    | Boolean                                     |
 | Null                 | Null                                                       | Null                                        |
-| Document             | Dictionary                                                 | Dictionary                                  |
 | JavaScript           | String                                                     | String                                      |
 | Regular Expression   | String                                                     | String                                      |
 | Min key              | String                                                     | Int64                                       |
