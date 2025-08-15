@@ -134,7 +134,7 @@ To enable the semantic model to connect to the lakehouse in the restricted works
 
 1. Verify the gateway binding. In the Semantic Model settings, refresh the page. The OPDG should now be shown as the active gateway.
 
-      :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/verify-gateway-binding.png" alt-text="Screenshot of verify-gateway-binding" lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/verify-gateway-binding.png":::
+      :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/verify-gateway-binding.png" alt-text="Screenshot of verify gateway binding." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/verify-gateway-binding.png":::
 
 1. Refresh the dataset and build a report.
 

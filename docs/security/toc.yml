@@ -62,7 +62,7 @@ items:
                     - name: Access a lakehouse from Power BI using OPDG
                       href: security-workspace-private-links-example-on-premises-data-gateway.md
                     - name: Access a lakehouse from Power BI using VNet gateway
-                      href: security-workspace-private-links-example-powerbi-vnet.md
+                      href: security-workspace-private-links-example-power-bi-virtual-network.md
             - name: Multi-workspace communication
               href: security-fabric-multi-workspace-api-overview.md
         - name: Add Fabric URLs to your allowlist

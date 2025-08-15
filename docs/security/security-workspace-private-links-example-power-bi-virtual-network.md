@@ -16,7 +16,7 @@ ms.date: 08/13/2025
 
 A Virtual Network (VNet) gateway can be used to establish cross-workspace communication between an open workspace and a workspace that [restricts inbound public access](security-workspace-level-private-links-set-up.md#step-8-deny-public-access-to-the-workspace). For example, if you want to access a lakehouse in an inbound restricted workspace from Power BI reports and semantic models in an open workspace, you can set up a VNet gateway. A VNet gateway is deployed within an Azure virtual network and acts as a secure bridge between your data resources and Fabric cloud services.
 
-:::image type="content" source="media/security-workspace-private-links-example-powerbi-vnet/vnet-data-gateway.png" alt-text="Diagram illustrating a connection using an on-premises data gateway." border="false":::  
+:::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/virtual-network-data-gateway.png" alt-text="Diagram illustrating a connection using an on-premises data gateway." border="false":::  
 
 In this diagram, the open workspace (Workspace 1) contains Power BI reports and a semantic model that is bound to a VNet gateway. The VNet gateway enables the connection to the lakehouse in the inbound restricted workspace. This setup allows Power BI reports and semantic models in Workspace 1 to securely access the lakehouse in Workspace 2 without exposing it to public access.
 
@@ -63,7 +63,7 @@ Create a lakehouse in the target workspace and upload a Delta table to it by fol
 
 1. Add data to the lakehouse by using Azure Storage Explorer to upload your Delta table folder into the lakehouse. In Azure Storage Explorer, select **ADLS Gen2 container or directory**.  
 
-   :::image type="content" source="media/security-workspace-private-links-example-powerbi-vnet/select-resource.png" alt-text="Screenshot of selecting the resource." lightbox="media/security-workspace-private-links-example-powerbi-vnet/select-resource.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/select-resource.png" alt-text="Screenshot of selecting the resource." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/select-resource.png":::
 
 1. Sign in. In the **Enter Connection Info** page, enter a display name for the storage and enter the blob container URL in the following format:
 
@@ -77,7 +77,7 @@ Create a lakehouse in the target workspace and upload a Delta table to it by fol
 
 1. Under the **Tables** folder, upload the Delta table you want to use (for example, the `customers` table).
    
-   :::image type="content" source="media/security-workspace-private-links-example-powerbi-vnet/upload-folder.png" alt-text="Screenshot of the upload folder pane." lightbox="media/security-workspace-private-links-example-powerbi-vnet/upload-folder.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/upload-folder.png" alt-text="Screenshot of the upload folder pane." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/upload-folder.png":::
 
 ## Step 3: Create a semantic model in the open workspace
 
@@ -93,11 +93,11 @@ Now that you have a lakehouse in the restricted workspace, you can create a sema
 
 1. Before executing the semantic model creation, edit the data source to reference the restricted lakehouse’s connection string and lakehouse ID. Convert the file (for example, `definition/tables/customers.tmdl`) from the semantic model definition from Base64 to JSON and copy the output.
 
-   :::image type="content" source="media/security-workspace-private-links-example-powerbi-vnet/convert-json-copy.png" alt-text="Screenshot of converting from Base64 to JSON." lightbox="media/security-workspace-private-links-example-powerbi-vnet/convert-json-copy.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/convert-json-copy.png" alt-text="Screenshot of converting from Base64 to JSON." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/convert-json-copy.png":::
 
 1. Update the source with the restricted lakehouse’s connection string and database ID. Then convert the JSON back to Base64 and use it in your semantic model creation request.
 
-   :::image type="content" source="media/security-workspace-private-links-example-powerbi-vnet/convert-back.png" alt-text="Screenshot of converting JSON back to Base64." lightbox="media/security-workspace-private-links-example-powerbi-vnet/convert-back.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/convert-back.png" alt-text="Screenshot of converting JSON back to Base64." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/convert-back.png":::
 
 1. Use the Get Lakehouse API to retrieve the connection string and lakehouse ID:
 
@@ -113,11 +113,11 @@ To enable the semantic model to connect to the lakehouse in the restricted works
 
 1. In the Power BI semantic model settings, turn on the toggle under **Gateway Connections**.
 
-   :::image type="content" source="media/security-workspace-private-links-example-powerbi-vnet/gateway-connections.png" alt-text="Screenshot of enabling gateway connections." lightbox="media/security-workspace-private-links-example-powerbi-vnet/gateway-connections.png" :::
+   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/gateway-connections.png" alt-text="Screenshot of enabling gateway connections." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/gateway-connections.png" :::
 
 1. In the Fabric portal settings, go to **Manage Connections and Gateways**. Create a VNet gateway using the **Virtual Network** and **Subnet** created in the resource group you're using.
 
-   :::image type="content" source="media/security-workspace-private-links-example-powerbi-vnet/create-gateway.png" alt-text="Screenshot of creating a VNet gateway." lightbox="media/security-workspace-private-links-example-powerbi-vnet/create-gateway.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/create-gateway.png" alt-text="Screenshot of creating a VNet gateway." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/create-gateway.png":::
 
    > [!NOTE]
    > For the **Subnet**, make sure the **Microsoft.PowerPlatform/vnetaccesslinks** delegation is attached: In the **Virtual Network** settings, select the subnet, and under **Subnet Delegation**, choose **Microsoft.PowerPlatform/vnetaccesslinks**.
@@ -128,7 +128,7 @@ To enable the semantic model to connect to the lakehouse in the restricted works
 
 1. In Power BI, create the VNet gateway SQL Server connection. Use the lakehouse server name and lakehouse ID as the database, authenticate using OAuth2, and copy the resulting Connection ID.
 
-   :::image type="content" source="media/security-workspace-private-links-example-powerbi-vnet/gateway-connection-settings.png" alt-text="Screenshot of settings connection name." lightbox="media/security-workspace-private-links-example-powerbi-vnet/gateway-connection-settings.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/gateway-connection-settings.png" alt-text="Screenshot of settings connection name." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/gateway-connection-settings.png":::
 
 1. Use the Bind Gateway API to bind the semantic model to the gateway ID and connection ID:
 
@@ -138,12 +138,12 @@ To enable the semantic model to connect to the lakehouse in the restricted works
 
 1. Verify the gateway binding: In the semantic model settings, refresh the page. The VNet gateway should now be shown as the active gateway.
 
-      :::image type="content" source="media/security-workspace-private-links-example-powerbi-vnet/verify-gateway-binding.png" alt-text="Screenshot of verify-gateway-binding" lightbox="media/security-workspace-private-links-example-powerbi-vnet/verify-gateway-binding.png":::
+      :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/verify-gateway-binding.png" alt-text="Screenshot of verify gateway binding." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/verify-gateway-binding.png":::
 
 1. Refresh the dataset.
 
-   :::image type="content" source="media/security-workspace-private-links-example-powerbi-vnet/refresh-dataset.png" alt-text="Screenshot of refresh dataset." lightbox="media/security-workspace-private-links-example-powerbi-vnet/refresh-dataset.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/refresh-dataset.png" alt-text="Screenshot of refresh dataset." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/refresh-dataset.png":::
 
 1. Build a report using the semantic model. The report should now be able to access the lakehouse data in the restricted workspace through the VNet gateway.
 
-   :::image type="content" source="media/security-workspace-private-links-example-powerbi-vnet/run-report.png" alt-text="Screenshot of building a report." lightbox="media/security-workspace-private-links-example-powerbi-vnet/run-report.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/run-report.png" alt-text="Screenshot of building a report." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/run-report.png":::
