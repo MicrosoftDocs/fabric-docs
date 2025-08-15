@@ -56,10 +56,10 @@ You can connect your Fabric workspace to a Git repository from the **Workspace s
 
 4. When you make modifications to the Fabric data agent in a Git-connected workspace, the changes are detected and the data agent’s status in the Source control pane will change to Uncommitted changes. These modifications can include:
 
-  - Changing the schema selection.
-  - Updating AI instructions or data source instructions.
-  - Editing example queries.
-  - Publishing the data agent or updating its publishing description.
+    - Changing the schema selection.
+    - Updating AI instructions or data source instructions.
+    - Editing example queries.
+    - Publishing the data agent or updating its publishing description.
 
 Any change—whether functional or descriptive—causes the data agent to become out of sync with the linked Git repository. The workspace items with changes will appear under the Changes tab in the Source control pane. You can review these changes, compare them to the committed version, and commit them back to the Git repository to synchronize.
 
@@ -163,6 +163,7 @@ This approach supports both the functional requirement of enabling consumption a
 ### Limitations and considerations
 
 - Only workspaces connected to a Git repository can use Git-based ALM features.
+- Service principals are supported in the Fabric data agent only as part of ALM scenarios. If you need to interact with a data agent outside of ALM workflows, service principal is not supported.
 - Deployment pipelines require that the source and target workspaces are in the same tenant.
 - Large numbers of frequent commits can impact repository size and performance.
 
