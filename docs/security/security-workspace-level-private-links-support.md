@@ -51,9 +51,35 @@ Review the following considerations when working with unsupported item types.
 
 * Existing lakehouses and warehouses use a default semantic model that doesn't support workspace-level private links, which prevents you from blocking public access to the workspace. You can bypass this default semantic model limitation by configuring the workspace to block public access first, and then creating a lakehouse or warehouse.
 
-* While Data Pipelines and Copy Jobs are generally supported, the following scenario is currently not supported:
-  **Gateway-based connections:** Data Pipelines and Copy Jobs cannot use connections that rely on on-premises data gateway or VNet data gateway infrastructure.
-  > **Note:** This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
+* Lakehouses with schemas aren't supported when a workspace-level private link is enabled for a workspace.
+
+* Using fully qualified paths with workspace and lakehouse names can cause a socket timeout exception. To access files, use relative paths for the current lakehouse or use a fully qualified path with the workspace and lakehouse GUIDs. Use the following guidelines for correct path usage.
+
+   * Incorrect path: 
+
+     `Path: abfss://<YourWorkspace>@onelake.dfs.fabric.microsoft.com/<YourLakehouse>.Lakehouse/Files/people.csv`
+
+     This path fails because the Spark session's default configuration can't resolve paths using display names.
+
+   * Correct paths:
+
+      * Relative path:
+
+         `Path: Files/people.csv`
+
+         Use this path for files within your current Lakehouse.
+
+      * Fully Qualified Path (with GUIDs):
+
+         `Path: abfss://<YourWorkspaceID>@onelake.dfs.fabric.microsoft.com/<YourLakehouseID>/Files/people.csv`
+
+         Use this path to access data in a different workspace or when a fully qualified path is required.
+
+* Spark connector for SQL DW isn't currently supported when a workspace-level private link is enabled for a workspace.
+
+* Data Pipelines and Copy Jobs are generally supported. However, the following scenario isn't currently supported:
+
+   * **Gateway-based connections:** Data Pipelines and Copy Jobs can't use connections that rely on an on-premises data gateway or a virtual network (VNet) data gateway infrastructure. This limitation applies specifically to gateway-dependent connections. Standard cloud-based connections continue to work normally with these features.
 
 ## Supported APIs
 
