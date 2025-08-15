@@ -4,7 +4,7 @@ description: This article explains how to configure Parquet format in the data p
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 08/12/2025
 ms.custom:
   - template-how-to
 ---
@@ -65,6 +65,56 @@ Under **Advanced** settings in the **Destination** tab, the following Parquet fo
 
 - **Max rows per file**: When writing data into a folder, you can choose to write to multiple files and specify the maximum rows per file. Specify the maximum rows that you want to write per file.
 - **File name prefix**: Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, the file name prefix is auto generated. This property doesn't apply when the source is a file based store or a partition option enabled data store.
+
+### Data type mapping for Parquet
+
+When copying data from the source connector in Parquet format, the following mappings are used from Parquet data types to interim data types used by the service internally.
+
+| Parquet logical type | Parquet physical type                  | Interim service data type |
+|---------------------|----------------------------------------|----------------------|
+| null                | BOOLEAN                                | Boolean              |
+| INT(8, true)        | INT32                                  | SByte                |
+| INT(8, false)       | INT32                                  | Byte                 |
+| INT(16, true)       | INT32                                  | Int16                |
+| INT(16, false)      | INT32                                  | UInt16               |
+| INT(32, true)       | INT32                                  | Int32                |
+| INT(32, false)      | INT32                                  | UInt32               |
+| INT(64, true)       | INT64                                  | Int64                |
+| INT(64, false)      | INT64                                  | UInt64               |
+| null                | FLOAT                                  | Single               |
+| null                | DOUBLE                                 | Double               |
+| DECIMAL             | INT32, INT64, FIXED_LEN_BYTE_ARRAY or BYTE_ARRAY | Decimal      |
+| DATE                | INT32                                  | Date                 |
+| TIME                | INT32 or INT64                         | DateTime             |
+| TIMESTAMP           | INT64                                  | DateTime             |
+| ENUM                | BYTE_ARRAY                             | String               |
+| UUID                | FIXED_LEN_BYTE_ARRAY                   | GUID                 |
+| null                | BYTE_ARRAY                             | Byte array           |
+| STRING              | BYTE_ARRAY                             | String               |
+
+When copying data to the destination connector in Parquet format, the following mappings are used from interim data types used by the service internally to Parquet data types.
+
+| Interim service data type | Parquet logical type | Parquet physical type         |
+|----------------------|---------------------|-------------------------------|
+| Boolean              | null                | BOOLEAN                       |
+| SByte                | INT                 | INT32                         |
+| Byte                 | INT                 | INT32                         |
+| Int16                | INT                 | INT32                         |
+| UInt16               | INT                 | INT32                         |
+| Int32                | INT                 | INT32                         |
+| UInt32               | INT                 | INT32                         |
+| Int64                | INT                 | INT64                         |
+| UInt64               | INT                 | INT64                         |
+| Single               | null                | FLOAT                         |
+| Double               | null                | DOUBLE                        |
+| DateTime             | null                | INT96                         |
+| DateTimeOffset       | null                | INT96                         |
+| Date                 | DATE                | INT32                         |
+| TimeSpan             | TIME                | INT64                         |
+| Decimal              | DECIMAL             | INT32, INT64 or FIXED_LEN_BYTE_ARRAY |
+| GUID                 | STRING              | BYTE_ARRAY                    |
+| String               | STRING              | BYTE_ARRAY                    |
+| Byte array           | null                | BYTE_ARRAY                    |
 
 ## Table summary
 
