@@ -161,7 +161,7 @@ Copilot inline code completion is an AI-powered feature that helps you to write 
 
 * Copilot features in the Data Science experience are currently scoped to notebooks. These features include the Copilot chat pane, IPython magic commands that can be used within a code cell, and automatic code suggestions as you type in a code cell. Copilot can also read Power BI semantic models using an integration of semantic link.
 
-* If your tenant is configured with Azure Private Link and Block Public Internet Access enabled, the Copilot Chat (sidecar chat) experience will not function. Copilot’s inline code suggestions and quick actions may still work, but chat interactions will fail to load.
+* If your tenant is configured with private link, the Copilot chat (sidecar chat) experience will not function. Copilot’s inline code suggestions and quick actions may still work, but chat interactions will fail to load.
 
 * Copilot has two key intended uses:
 
