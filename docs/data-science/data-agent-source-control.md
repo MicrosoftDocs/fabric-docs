@@ -36,7 +36,7 @@ Microsoft Fabric Git integration synchronizes a Fabric workspace with a Git repo
 
 For more information on the Git integration process, you can refer to the following:
 
-- [What is Microsoft Fabric Git integration?](https://learn.microsoft.com/fabric/cicd/git-integration/intro-to-git-integration?tabs=azure-devops)
+- [What is Microsoft Fabric Git integration?](../cicd/git-integration/intro-to-git-integration.md?tabs=azure-devops)
 - [Basic concepts in Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-integration-process?tabs=Azure%2Cazure-devops)
 - [Get started with Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git)
 
