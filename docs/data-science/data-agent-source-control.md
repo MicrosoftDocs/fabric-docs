@@ -44,7 +44,7 @@ For more information on the Git integration process, you can refer to the follow
 
 You can connect your Fabric workspace to a Git repository from the **Workspace settings** page. This lets you commit and sync changes directly from Fabric.
 
-1. See [Get started with Git integration](ttps://learn.microsoft.com/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git) for detailed steps to connect to a Git repository in Azure DevOps or GitHub.
+1. See [Get started with Git integration](https://learn.microsoft.com/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git) for detailed steps to connect to a Git repository in Azure DevOps or GitHub.
 
 2. After connecting to the Git repository, your workspace items, including Fabric data agents, appear in the Source control panel. In the status bar at the bottom left, you can see the name of the connected branch, the time of the last sync, and the Git commit ID.
 
