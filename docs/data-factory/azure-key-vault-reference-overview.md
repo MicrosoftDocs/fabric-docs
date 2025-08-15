@@ -18,6 +18,7 @@ ms.custom: configuration
 
 ## How Azure Key Vault references work
 When you configure an Azure Key Vault reference in Fabric, you're creating a secure pointer to your secret rather than storing the secret itself. Here's how the process works:
+
 **Initial Setup:**
 Fabric records only the vault URI, secret name from your Key Vault and user auth / OAuth2.0 credential for connecting to the Azure Key Vault (AKV). You must grant your the user identity **Get** and **List** permissions in the specified AKV. Importantly, the actual secret values are never stored within Fabric.
 
