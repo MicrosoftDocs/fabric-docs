@@ -46,7 +46,7 @@ You can connect your Fabric workspace to a Git repository from the **Workspace s
 
 1. See [Get started with Git integration](ttps://learn.microsoft.com/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CAzure%2Ccommit-to-git) for detailed steps to connect to a Git repository in Azure DevOps or GitHub.
 
-2. After connecting to the Git repository, your workspace items, including Fabric data agents, appear in the Source control panel.
+2. After connecting to the Git repository, your workspace items, including Fabric data agents, appear in the Source control panel. In the status bar at the bottom left, you can see the name of the connected branch, the time of the last sync, and the Git commit ID.
 
 :::image type="content" source="./media/data-agent-cicd/data-agent-git-source-control.png" alt-text="Screenshot showing the source control in general." lightbox="./media/data-agent-cicd/data-agent-git-source-control.png":::
 
@@ -83,16 +83,16 @@ At the root, the data agent content is stored under the **files** folder. Inside
 
 :::image type="content" source="./media/data-agent-cicd/git-branch-config-all.png" alt-text="Screenshot showing all the config for data agent." lightbox="./media/data-agent-cicd/git-branch-config-all.png":::
 
-Inside the **config** folder, the **publish_info.json** contains the publishing description for the data agent. This file can be updated to change the description that appears when the agent is published.
+Inside the **config** folder, the **publish_info.json** contains the publishing description for the data agent. This file can be updated to change the description that appears when the data agent is published.
 
 :::image type="content" source="./media/data-agent-cicd/git-config-publish-info.png" alt-text="Screenshot showing the publish file in git." lightbox="./media/data-agent-cicd/git-config-publish-info.png":::
 
 The **draft folder** contains the configuration files corresponding to the draft version of the data agent and the **published folder** contains the configuration files for the published version of the data agent. The **draft folder** contains:
 
 - **Data source folders** where there is one folder for each data source used by the data agent.
-  - Lakehouse or warehouse data sources: Folder names start with `lakehouse-tables-` or `warehouse-tables-`, followed by the name of the lakehouse or warehouse.
-  - Semantic model data sources: Folder names start with `semantic-model-`, followed by the name of the semantic model.
-  - KQL database data sources: Folder names start with `kusto-`, followed by the name of KQL database.
+  - **Lakehouse or warehouse data sources**: Folder names start with `lakehouse-tables-` or `warehouse-tables-`, followed by the name of the lakehouse or warehouse.
+  - **Semantic model data sources**: Folder names start with `semantic-model-`, followed by the name of the semantic model.
+  - **KQL database data sources**: Folder names start with `kusto-`, followed by the name of KQL database.
 
 :::image type="content" source="./media/data-agent-cicd/git-config-draft.png" alt-text="Screenshot showing the draft folder." lightbox="./media/data-agent-cicd/git-config-draft.png":::
 
@@ -106,15 +106,16 @@ Each data source folder contains **datasource.json** and **fewshots.json**. Howe
 
 The **datasource.json** defines the configuration for that data source, including:
 
-- dataSourceInstructions – Instructions provided for that data source.
-- Schema map — A complete list of tables and columns from the data source.
-  - Each table has an `is_selected` property. If `true`, the table is included and if `false`, it means the table is not selected and will not be used.
-  - Column entries may also show `is_selected`, but column-level selection isn’t supported. If a table is selected, all of its columns are included regardless of the column `is_selected` value. If a table is not selected (`is_selected`: `false` at the table level), none of the columns are considered despite that `is_selected` is set to `true` at the column level.
+- `dataSourceInstructions` which represents the instructions provided for that data source.
+- `displayName` which shows the name of the data source.
+- `elements` which refers to the schema map and includes a complete list of tables and columns from the data source.
+  - Each table has an `is_selected` property. If `true`, the table is included and if `false`, it means the table is not selected and will not be used by the data agent.
+  - Column entries also show `is_selected`, but column-level selection isn’t currently supported. If a table is selected, all of its columns are included regardless of the column `is_selected` value. If a table is not selected (`is_selected`: `false` at the table level), none of the columns are considered despite that `is_selected` is set to `true` at the column level.
 - Type conventions:
 
-  - If the type is a data source, it is simply the data source type (for example: "type": "lakehouse_tables").
-  - If the type is a table, it ends with .table (for example: "type": "lakehouse_tables.table").
-  - If the type is a column, it ends with .column (for example: "type": "lakehouse_tables.column").
+  - If the type is a data source, it is simply the data source type (for example: `"type": "lakehouse_tables"`).
+  - If the type is a table, it ends with .table (for example: `"type": "lakehouse_tables.table"`).
+  - If the type is a column, it ends with .column (for example: `"type": "lakehouse_tables.column"`).
 
 :::image type="content" source="./media/data-agent-cicd/git-config-draft-lakehouse-config.png" alt-text="Screenshot showing the lakehouse config." lightbox="./media/data-agent-cicd/git-config-draft-lakehouse-config.png":::
 
@@ -136,6 +137,19 @@ Deployment pipelines provide a controlled way to move data agents between worksp
 1. Develop a new data agent or update an existing one in the development workspace.
 2. Promote the changes to the test workspace for validation.
 3. Promote the tested changes to the production workspace where it will available to end users.
+
+:::image type="content" source="./media/data-agent-cicd/select-deployment-pipeline.png" alt-text="Screenshot showing the deployment pipeline setup." lightbox="./media/data-agent-cicd/select-deployment-pipeline.png":::
+
+Before deploying, you need to assign a workspace to each stage in the deployment pipeline: development, test, and production. If you don’t assign a workspace to the test or production stage, the workspaces will be automatically created. The automatically created workspaces are named after the development workspace, with [test] or [prod] appended.
+
+:::image type="content" source="./media/data-agent-cicd/test-workspace.png" alt-text="Screenshot showing the dev to test." lightbox="./media/data-agent-cicd/test-workspace.png":::
+
+To deploy changes:
+- In the pipeline, go to the stage you want to deploy from (for example, development).
+- Select the items in the workspace that you want to deploy.
+- Select Deploy to promote them to the next stage.
+
+:::image type="content" source="./media/data-agent-cicd/deployment-test.png" alt-text="Screenshot showing the deployment from dev to test was successful." lightbox="./media/data-agent-cicd/deployment-test.png":::
 
 You can review a deployment plan before applying changes, ensuring that only intended updates are promoted. For more information, see [Get started with deployment pipelines](https://learn.microsoft.com/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines?tabs=from-fabric%2Cnew-ui).
 
