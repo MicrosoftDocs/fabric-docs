@@ -160,7 +160,7 @@ You can review a deployment plan before applying changes, ensuring that only int
 
 Publishing a Fabric data agent makes it available for use across all different consumption channels, including Copilot for Power BI, Microsoft Copilot Studio, and Azure AI Foundry Services.
 
-- To assess and consume the data agent across these channels, the data agent must be published; unpublished data agents are not accessible for consumption. In order to follow the best practices in accordance with deployment pipeline, note that: 
+- To assess and consume the data agent across these channels, the data agent must be published; unpublished data agents are not accessible for consumption even if they are in production workspace. In order to follow the best practices in accordance with deployment pipeline, note that: 
 
 - Publishing from a development workspace should be limited to authorized users only who are working on data agent development and want to assess its performance across different consumption channels. Access to this workspace must be restricted so that unfinished or experimental data agents are not exposed to broader audiences.
 - End users should access data agents that are published from the production workspace only, ensuring they interact with stable, approved versions of the data agent.
@@ -170,9 +170,10 @@ This approach supports both the functional requirement of enabling consumption a
 ### Best practices
 
 - Use a dedicated branch for development work on data agents, and merge to main after code review. 
-- Keep related resources (datasets, notebooks, pipelines) in the same workspace for easier promotion.
+- Keep related resources (data sources, data agents, notebooks, pipelines) in the same workspace for easier promotion.
 - Test data agent changes in the test workspace before promoting to production.
 - Use descriptive commit messages to make history easier to understand.
+- Do not directly make changes to the published folder in the Git repository.
 
 ### Limitations and considerations
 
