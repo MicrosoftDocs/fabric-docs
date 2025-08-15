@@ -1,5 +1,5 @@
 ---
-title: "Source Control, CI/CD, and ALM for Fabric Data Agent (preview)"
+title: "Source Control, CI/CD, and ALM for Fabric data agent (preview)"
 description: "Learn how to use source control, CI/CD and ALM with Microsoft Fabric data agent."
 ms.author: amjafari
 author: amjafari
