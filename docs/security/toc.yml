@@ -55,10 +55,20 @@ items:
                   href: security-tenant-workspace-private-links-same-tenant.md
                 - name: Cross-tenant communication
                   href: security-cross-tenant-communication.md
+            - name: Multi-workspace communication
+              href: security-fabric-multi-workspace-api-overview.md
         - name: Add Fabric URLs to your allowlist
           href: fabric-allow-list-urls.md
         - name: Add Power BI URLs to your allowlist
           href: power-bi-allow-list-urls.md
+    - name: Service tags
+      href: security-service-tags.md
+    - name: Microsoft Entra Conditional Access
+      href: security-conditional-access.md
+    - name: Add Fabric URLs to your allowlist
+      href: fabric-allow-list-urls.md
+    - name: Add Power BI URLs to your allowlist
+      href: power-bi-allow-list-urls.md
     - name: Outbound
       items:
       - name: Overview of managed VNets
