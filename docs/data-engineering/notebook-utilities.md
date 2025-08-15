@@ -1009,6 +1009,8 @@ notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
 
 - The Python notebook doesn't support the **stop**, **restartPython** APIs when using notebookutils.session utility for session management.
 
+- Currently SPN is not supported for variable library utilities.
+
 ## Related content
 
 - [Microsoft Spark Utilities (MSSparkUtils) for Fabric](microsoft-spark-utilities.md)
