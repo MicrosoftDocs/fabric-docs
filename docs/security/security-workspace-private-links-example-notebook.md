@@ -54,7 +54,7 @@ For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.mic
 
 The `targetPrivateLinkResourceId` is the resource ID of the private link in the restricted workspace. To create a managed private endpoint to the target workspace, you need the private link service Resource ID of the target workspace. 
 
-:::image type="content" source="media/security-workspace-private-links-example-notebook/create-managed-private-endpoint-api.png" alt-text="Image showing the create MPE API" lightbox="media/security-workspace-private-links-example-notebook/create-managed-private-endpoint-api.png":::
+:::image type="content" source="media/security-workspace-private-links-example-notebook/create-managed-private-endpoint-api.png" alt-text="Screenshot showing the create MPE API." lightbox="media/security-workspace-private-links-example-notebook/create-managed-private-endpoint-api.png":::
 
 You can find this Resource ID in Azure by viewing the Resource JSON for the workspace. Ensure that the workspace ID in the JSON matches the intended target workspace.
 
@@ -73,15 +73,13 @@ Create a lakehouse in the target (restricted) workspace by using the following C
 
    For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb/lakehouses`
 
-   :::image type="content" source="media/security-workspace-private-links-example-notebook/create-in-target-workspace.png" alt-text="Image showing creating a lakehouse in the target workspace" lightbox="media/security-workspace-private-links-example-notebook/create-in-target-workspace.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-notebook/create-in-target-workspace.png" alt-text="Screenshot showing creating a lakehouse in the target workspace." lightbox="media/security-workspace-private-links-example-notebook/create-in-target-workspace.png":::
 
 ## Step 4: Upload a Delta Table to the lakehouse
 
 Use Azure Storage Explorer to upload your Delta Table folder into the restricted lakehouse's managed storage.
 
 1. Go to Azure Storage Explorer, select the connection icon in the left menu, and then select **ADLS Gen2 container or directory**.
-
-      :::image type="content" source="media/security-workspace-private-links-example-notebook/select-resource.png" alt-text="Image showing selecting the resource." lightbox="media/security-workspace-private-links-example-notebook/select-resource.png":::
 
 1. Sign in using OAuth. 
 
@@ -93,13 +91,13 @@ Use Azure Storage Explorer to upload your Delta Table folder into the restricted
 
    For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb/bbbbbbbb-1111-2222-3333-cccccccccccc`
 
-   :::image type="content" source="media/security-workspace-private-links-example-notebook/enter-connection-info.png" alt-text="Image showing entering the connection info." lightbox="media/security-workspace-private-links-example-notebook/enter-connection-info.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-notebook/enter-connection-info.png" alt-text="Screenshot showing entering the connection info." lightbox="media/security-workspace-private-links-example-notebook/enter-connection-info.png":::
 
 1. Select **Connect**. The storage should now be displayed in the explorer view. 
 
 1. Under the **Tables** folder, upload the Delta table you want to use. This example uses the *customers* table.
 
-   :::image type="content" source="media/security-workspace-private-links-example-notebook/upload-folder.png" alt-text="Image showing the upload folder option." lightbox="media/security-workspace-private-links-example-notebook/upload-folder.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-notebook/upload-folder.png" alt-text="Screenshot showing the upload folder option." lightbox="media/security-workspace-private-links-example-notebook/upload-folder.png":::
 
 ## Step 5: Create a notebook in the source workspace
 

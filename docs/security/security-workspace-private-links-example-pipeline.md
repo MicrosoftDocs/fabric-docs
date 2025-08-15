@@ -35,7 +35,7 @@ Create a lakehouse in the target (restricted) workspace by using the following C
 
    `POST https://{workspaceid}.z{xy}.w.api.fabric.microsoft.com/workspaces/{workspaceID}/lakehouses`
 
-   :::image type="content" source="media/security-workspace-private-links-example-pipeline/create-in-target-workspace.png" alt-text="Image showing creating a lakehouse." lightbox="media/security-workspace-private-links-example-pipeline/create-in-target-workspace.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-pipeline/create-in-target-workspace.png" alt-text="Screenshot showing creating a lakehouse." lightbox="media/security-workspace-private-links-example-pipeline/create-in-target-workspace.png":::
 
 ## Step 3: Create a managed private endpoint
 
@@ -51,7 +51,7 @@ For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.mic
 
 The `targetPrivateLinkResourceId` is the resource ID of the private link in the restricted workspace. To create a managed private endpoint to the target workspace, you need the private link service Resource ID of the target workspace. 
 
-:::image type="content" source="media/security-workspace-private-links-example-pipeline/create-managed-private-endpoint-api.png" alt-text="Image showing the create MPE API" lightbox="media/security-workspace-private-links-example-pipeline/create-managed-private-endpoint-api.png":::
+:::image type="content" source="media/security-workspace-private-links-example-pipeline/create-managed-private-endpoint-api.png" alt-text="Screenshot showing the create managed private endpoint API." lightbox="media/security-workspace-private-links-example-pipeline/create-managed-private-endpoint-api.png":::
 
 You can find this Resource ID in Azure by viewing the Resource JSON for the workspace. Ensure that the workspace ID in the JSON matches the intended target workspace.
 
@@ -65,22 +65,21 @@ Use Azure Storage Explorer to upload your Delta table folder into the restricted
 
 1. Go to Azure Storage Explorer, select the connection icon in the left menu, and then select **ADLS Gen2 container or directory**.
 
-      :::image type="content" source="media/security-workspace-private-links-example-pipeline/select-resource.png" alt-text="Image showing where to select a resource." lightbox="media/security-workspace-private-links-example-pipeline/select-resource.png":::
+1. Sign in using OAuth.
 
-1. Sign in using OAuth. 
 1. Enter a display name for the storage and enter the blob container URL in the following format:
 
       `https://{workspaceID}.z{xy}.onelake.fabric.microsoft.com/{workspaceID}/{lakehouseID}`
 
       Where: `workspaceID` is the workspace ID without dashes and `{xy}` is the first two characters of the workspace ID.
 
-      :::image type="content" source="media/security-workspace-private-links-example-pipeline/enter-connection-info.png" alt-text="Image showing where to enter the connection info."lightbox="media/security-workspace-private-links-example-pipeline/enter-connection-info.png":::
+      :::image type="content" source="media/security-workspace-private-links-example-pipeline/enter-connection-info.png" alt-text="Screenshot showing where to enter the connection information." lightbox="media/security-workspace-private-links-example-pipeline/enter-connection-info.png":::
 
 1. Select **Connect**. The storage should now be displayed in the explorer view.
 
 1. Under the **Tables** folder, upload the Delta table you want to use. This example uses the *customers* table.
 
-      :::image type="content" source="media/security-workspace-private-links-example-pipeline/upload-folder.png" alt-text="Image showing where to use the upload folder option."lightbox="media/security-workspace-private-links-example-pipeline/upload-folder.png":::
+      :::image type="content" source="media/security-workspace-private-links-example-pipeline/upload-folder.png" alt-text="Screenshot showing where to use the upload folder option." lightbox="media/security-workspace-private-links-example-pipeline/upload-folder.png":::
 
 ## Step 5: Create a Notebook in the restricted workspace
 
@@ -88,11 +87,11 @@ Create a notebook that reads from the table and writes to a new table. To do so,
 
 1. In the open workspace, create a lakehouse with the same table and a similar notebook using the UI.
  
-   :::image type="content" source="media/security-workspace-private-links-example-pipeline/load-file-new-table.png" alt-text="Screenshot showing the load file to new table page."lightbox="media/security-workspace-private-links-example-pipeline/load-file-new-table.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-pipeline/load-file-new-table.png" alt-text="Screenshot showing the load file to new table page." lightbox="media/security-workspace-private-links-example-pipeline/load-file-new-table.png":::
 
 1. Connect the lakehouse in the notebook, and run the script for creating a new table.
 
-   :::image type="content" source="media/security-workspace-private-links-example-pipeline/run-script.png" alt-text="Screenshot showing running the script for creating a new table."lightbox="media/security-workspace-private-links-example-pipeline/run-script.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-pipeline/run-script.png" alt-text="Screenshot showing running the script for creating a new table." lightbox="media/security-workspace-private-links-example-pipeline/run-script.png":::
 
    ```
    df = spark("SELECT * FROM Lakehouse_Open.customers")
@@ -125,11 +124,11 @@ Create a notebook that reads from the table and writes to a new table. To do so,
 1. Add a Notebook Activity.
 1. In Settings, create a Connection.
 
-   :::image type="content" source="media/security-workspace-private-links-example-pipeline/connect-data-source.png" alt-text="Screenshot showing the connect data source page."lightbox="media/security-workspace-private-links-example-pipeline/connect-data-source.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-pipeline/connect-data-source.png" alt-text="Screenshot showing the connect data source page." lightbox="media/security-workspace-private-links-example-pipeline/connect-data-source.png":::
 
 1. Select the restricted workspace.
 
-   :::image type="content" source="media/security-workspace-private-links-example-pipeline/select-protected-workspace.png" alt-text="Screenshot showing selecting the restricted workspace."lightbox="media/security-workspace-private-links-example-pipeline/select-protected-workspace.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-pipeline/select-protected-workspace.png" alt-text="Screenshot showing selecting the restricted workspace." lightbox="media/security-workspace-private-links-example-pipeline/select-protected-workspace.png":::
 
 1. Add the Notebook ID as parameter.
 
@@ -137,7 +136,7 @@ Create a notebook that reads from the table and writes to a new table. To do so,
 
 1. In the pipeline parameters, input the actual notebook ID from the restricted workspace.  
 
-   :::image type="content" source="media/security-workspace-private-links-example-pipeline/pipeline-parameters-notebook-id.png" alt-text="Screenshot showing where to add the notebook ID."lightbox="media/security-workspace-private-links-example-pipeline/pipeline-parameters-notebook-id.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-pipeline/pipeline-parameters-notebook-id.png" alt-text="Screenshot showing where to add the notebook ID." lightbox="media/security-workspace-private-links-example-pipeline/pipeline-parameters-notebook-id.png":::
 
 1. Save the pipeline and copy the pipeline ID 
 
@@ -153,7 +152,7 @@ Create a notebook that reads from the table and writes to a new table. To do so,
 
 1. Wait for the run status to complete. You can check the status in the Monitor page in the Microsoft Fabric portal.
  
-   :::image type="content" source="media/security-workspace-private-links-example-pipeline/monitor.png" alt-text="Screenshot showing the Monitor page."lightbox="media/security-workspace-private-links-example-pipeline/monitor.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-pipeline/monitor.png" alt-text="Screenshot showing the Monitor page." lightbox="media/security-workspace-private-links-example-pipeline/monitor.png":::
 
 
 ## Step 8: Verify Table Creation
